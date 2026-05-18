@@ -1,0 +1,52 @@
+{
+  "experiment": 32,
+  "name": "cross_family_nib",
+  "source_model": "gpt2-small-117M",
+  "target_model": "Qwen2.5-0.5B-494M",
+  "source_vocab": 50257,
+  "target_vocab": 151936,
+  "source_arch": "GPT-2 (abs-pos, MHA, GELU, LayerNorm)",
+  "target_arch": "Qwen2 (RoPE, GQA, SwiGLU, RMSNorm)",
+  "d_abi": 256,
+  "d_abi_note": "fixed shared dimension -- same for both models",
+  "seed": 42,
+  "domain_steps": 500,
+  "update_steps": 1000,
+  "calibration_steps": 1200,
+  "n_align_sentences": 2000,
+  "alignment_method": "sentence-level mean-pool Procrustes (cross-tokenizer)",
+  "ppl_native_qwen": 11.824,
+  "ppl_calibrated_qwen": 13.694,
+  "nib_l2": {
+    "n_positions": 2460,
+    "mean_js": 0.01123,
+    "mean_top1_agree": 0.9057,
+    "mean_top5_overlap": 0.8701,
+    "mean_entropy_diff": 0.2348,
+    "js_pass": true,
+    "top1_pass": true,
+    "top5_pass": true,
+    "entropy_pass": true,
+    "pass": true,
+    "thresholds": {
+      "js": 0.1,
+      "top1": 0.68,
+      "top5": 0.86,
+      "entropy_diff": 0.35
+    }
+  },
+  "overall_pass": true,
+  "elapsed_min": 15.6,
+  "thresholds": {
+    "js_threshold": 0.1,
+    "top1_threshold": 0.68,
+    "top5_threshold": 0.86,
+    "entropy_diff_threshold": 0.35,
+    "n_logit_chunks": 5,
+    "calibration_steps": 1200,
+    "kd_weight": 0.9,
+    "kd_temp": 2.0,
+    "n_align_sentences": 2000
+  },
+  "claim": "Domain knowledge encoded in GPT-2-small's ABI space transfers to Qwen2.5-0.5B via orthogonal Procrustes rotation with sentence-level alignment, achieving NIB distributional equivalence in Qwen's native 151936-token vocabulary. Source and target models differ in tokenizer, architecture, training data, and organisation -- genuine cross-family migration."
+}

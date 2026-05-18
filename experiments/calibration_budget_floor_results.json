@@ -1,0 +1,207 @@
+{
+  "domains": {
+    "python": {
+      "domain": "python",
+      "budget_curve": [
+        {
+          "steps": 0,
+          "js": 0.00689,
+          "top1": 0.9443,
+          "top5": 0.9256,
+          "entropy_diff": 0.1708,
+          "pass": true,
+          "r_squared": 0.93244
+        }
+      ],
+      "margin_stats": {
+        "mean": 0.0037564895742894433,
+        "median": 0.0008193003013730049,
+        "p10": 1.3998370559420438e-05,
+        "p25": 9.585532825440168e-05
+      },
+      "floor_steps": 0,
+      "margin_mean": 0.0037564895742894433,
+      "r_squared": 0.93244
+    },
+    "wikitext": {
+      "domain": "wikitext",
+      "budget_curve": [
+        {
+          "steps": 0,
+          "js": 0.00271,
+          "top1": 0.935,
+          "top5": 0.9434,
+          "entropy_diff": 0.0946,
+          "pass": true,
+          "r_squared": 0.85981
+        }
+      ],
+      "margin_stats": {
+        "mean": 0.005723995942815568,
+        "median": 0.002700299955904484,
+        "p10": 7.697080145590008e-05,
+        "p25": 0.0006656183395534754
+      },
+      "floor_steps": 0,
+      "margin_mean": 0.005723995942815568,
+      "r_squared": 0.85981
+    },
+    "markdown": {
+      "domain": "markdown",
+      "budget_curve": [
+        {
+          "steps": 0,
+          "js": 0.01168,
+          "top1": 0.9045,
+          "top5": 0.9043,
+          "entropy_diff": 0.202,
+          "pass": true,
+          "r_squared": 0.88449
+        }
+      ],
+      "margin_stats": {
+        "mean": 0.0031825436955248477,
+        "median": 0.0008636191487312317,
+        "p10": 3.210533759556711e-05,
+        "p25": 0.00017823533562477678
+      },
+      "floor_steps": 0,
+      "margin_mean": 0.0031825436955248477,
+      "r_squared": 0.88449
+    },
+    "sql": {
+      "domain": "sql",
+      "budget_curve": [
+        {
+          "steps": 0,
+          "js": 0.08673,
+          "top1": 0.774,
+          "top5": 0.7613,
+          "entropy_diff": 0.3191,
+          "pass": false,
+          "r_squared": 0.828
+        },
+        {
+          "steps": 50,
+          "js": 0.08011,
+          "top1": 0.789,
+          "top5": 0.7856,
+          "entropy_diff": 0.2779,
+          "pass": false,
+          "r_squared": 0.828
+        },
+        {
+          "steps": 100,
+          "js": 0.06951,
+          "top1": 0.8037,
+          "top5": 0.7994,
+          "entropy_diff": 0.2581,
+          "pass": false,
+          "r_squared": 0.828
+        },
+        {
+          "steps": 200,
+          "js": 0.06206,
+          "top1": 0.8191,
+          "top5": 0.8078,
+          "entropy_diff": 0.2405,
+          "pass": false,
+          "r_squared": 0.828
+        },
+        {
+          "steps": 400,
+          "js": 0.04968,
+          "top1": 0.8467,
+          "top5": 0.8249,
+          "entropy_diff": 0.2165,
+          "pass": false,
+          "r_squared": 0.828
+        },
+        {
+          "steps": 800,
+          "js": 0.04115,
+          "top1": 0.8687,
+          "top5": 0.8382,
+          "entropy_diff": 0.1979,
+          "pass": false,
+          "r_squared": 0.828
+        },
+        {
+          "steps": 1600,
+          "js": 0.03627,
+          "top1": 0.8805,
+          "top5": 0.8437,
+          "entropy_diff": 0.1839,
+          "pass": false,
+          "r_squared": 0.828
+        },
+        {
+          "steps": 3200,
+          "js": 0.03218,
+          "top1": 0.8841,
+          "top5": 0.8434,
+          "entropy_diff": 0.1756,
+          "pass": false,
+          "r_squared": 0.828
+        },
+        {
+          "steps": 6400,
+          "js": 0.03178,
+          "top1": 0.8862,
+          "top5": 0.842,
+          "entropy_diff": 0.1746,
+          "pass": false,
+          "r_squared": 0.828
+        },
+        {
+          "steps": 9600,
+          "js": 0.03169,
+          "top1": 0.8858,
+          "top5": 0.8389,
+          "entropy_diff": 0.174,
+          "pass": false,
+          "r_squared": 0.828
+        }
+      ],
+      "margin_stats": {
+        "mean": 0.0017023781145380907,
+        "median": 4.0212391468230635e-05,
+        "p10": 1.036664798448328e-07,
+        "p25": 2.0418667645571986e-06
+      },
+      "floor_steps": null,
+      "margin_mean": 0.0017023781145380907,
+      "r_squared": 0.828
+    }
+  },
+  "budget_schedule": [
+    0,
+    50,
+    100,
+    200,
+    400,
+    800,
+    1600,
+    3200,
+    6400,
+    9600
+  ],
+  "correlation": {
+    "note": "3 domains floor=0 (Procrustes alone sufficient); SQL did not pass within 9600 steps without checkpoint selection",
+    "floor_zero_domains": [
+      "python",
+      "wikitext",
+      "markdown"
+    ],
+    "sql_top5_at_9600": 0.8389,
+    "sql_margin_mean": 0.0017023781145380907,
+    "qualitative": "SQL lowest margin (0.00170) requires most steps; Procrustes R2=0.828 vs others 0.860-0.932"
+  },
+  "nib_thresholds": {
+    "js": 0.1,
+    "top1": 0.68,
+    "top5": 0.86,
+    "entropy_diff": 0.35
+  },
+  "key_finding": "For 3/4 domains Procrustes alone achieves NIB. SQL (ppl=1.89 margin_median=0.00004) requires extended calibration + checkpoint selection."
+}

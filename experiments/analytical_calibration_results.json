@@ -1,0 +1,84 @@
+{
+  "post_c_raw": {
+    "method": "post_c_raw (0 steps, no analytical)",
+    "sgd_steps": 0,
+    "analytical_init": false,
+    "ppl_cal": 17.378,
+    "ppl_nat": 7.489,
+    "efficacy": 232.05,
+    "runtime_sec": 11.7,
+    "L2": {
+      "mean_js": 0.09884,
+      "mean_top1_agree": 0.7533,
+      "mean_top5_overlap": 0.6519,
+      "mean_entropy_diff": 0.4638,
+      "l2_pass": false
+    }
+  },
+  "analytical": {
+    "method": "Procrustes linear solve (0 SGD steps)",
+    "sgd_steps": 0,
+    "analytical_init": true,
+    "r_squared": 0.93995,
+    "cond_number_H_cal": 14473.7,
+    "ppl_cal": 8.1,
+    "ppl_nat": 7.489,
+    "efficacy": 108.16,
+    "runtime_sec": 56.5,
+    "L2": {
+      "mean_js": 0.00686,
+      "mean_top1_agree": 0.935,
+      "mean_top5_overlap": 0.9216,
+      "mean_entropy_diff": 0.1352,
+      "l2_pass": true
+    }
+  },
+  "anal_plus_50": {
+    "method": "analytical init + 50 KD steps",
+    "sgd_steps": 50,
+    "analytical_init": true,
+    "ppl_cal": 7.968,
+    "ppl_nat": 7.489,
+    "efficacy": 106.4,
+    "runtime_sec": 25.1,
+    "L2": {
+      "mean_js": 0.00687,
+      "mean_top1_agree": 0.9285,
+      "mean_top5_overlap": 0.9038,
+      "mean_entropy_diff": 0.1382,
+      "l2_pass": true
+    }
+  },
+  "anal_plus_200": {
+    "method": "analytical init + 200 KD steps",
+    "sgd_steps": 200,
+    "analytical_init": true,
+    "ppl_cal": 7.817,
+    "ppl_nat": 7.489,
+    "efficacy": 104.38,
+    "runtime_sec": 65.8,
+    "L2": {
+      "mean_js": 0.0064,
+      "mean_top1_agree": 0.9289,
+      "mean_top5_overlap": 0.908,
+      "mean_entropy_diff": 0.1382,
+      "l2_pass": true
+    }
+  },
+  "sgd_800_scratch": {
+    "method": "Full SGD 800 steps from transferred (standard baseline)",
+    "sgd_steps": 800,
+    "analytical_init": false,
+    "ppl_cal": 7.546,
+    "ppl_nat": 7.489,
+    "efficacy": 100.76,
+    "runtime_sec": 230.2,
+    "L2": {
+      "mean_js": 0.0083,
+      "mean_top1_agree": 0.9289,
+      "mean_top5_overlap": 0.8853,
+      "mean_entropy_diff": 0.1387,
+      "l2_pass": true
+    }
+  }
+}

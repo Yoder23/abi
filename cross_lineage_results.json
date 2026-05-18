@@ -1,0 +1,23 @@
+{
+  "test": "cross_lineage_transfer_test",
+  "source": "EleutherAI/pythia-410m",
+  "target": "gpt2-medium",
+  "source_arch": "gpt_neox",
+  "target_arch": "gpt2",
+  "d_abi": 256,
+  "domain_steps": 500,
+  "align_steps": 500,
+  "adapt_steps": 150,
+  "ppl_gpt2_pretrained": 20.584002244040317,
+  "ppl_after_align_no_domain": 10.425277306167562,
+  "ppl_cross_lineage_transfer": 8.770541165589265,
+  "ppl_gpt2_native": 7.153123873530168,
+  "cross_lineage_gain_pct": 15.872346528368702,
+  "efficacy_vs_native_pct": 87.95747197286501,
+  "abi_cos_sim_before": -0.010959448292851448,
+  "abi_cos_mult_before": 0.17535117268562317,
+  "abi_cos_sim_after": 0.8791998624801636,
+  "abi_cos_mult_after": 14.067197799682617,
+  "claim": "BREAKTHROUGH \u2014 80%+ cross-lineage efficacy. Domain knowledge transfers across model families.",
+  "elapsed_s": 234.03114438056946
+}

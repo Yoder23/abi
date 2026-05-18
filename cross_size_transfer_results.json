@@ -1,0 +1,21 @@
+{
+  "test": "cross_size_transfer_test",
+  "source_model": "gpt2 (117M)",
+  "target_model": "gpt2-medium (354M)",
+  "d_abi": 256,
+  "domain_steps": 500,
+  "align_steps": 500,
+  "adapt_steps": 100,
+  "ppl_medium_pretrained": 20.700588096541054,
+  "ppl_medium_post_alignment_no_domain": 10.018286008823406,
+  "ppl_medium_cross_transfer": 7.839769773959234,
+  "ppl_medium_native": 6.658630448450914,
+  "cross_size_gain_pct": 21.745398693404113,
+  "efficacy_vs_native_pct": 91.58849958738506,
+  "abi_cos_sim_before": -0.01088267844170332,
+  "abi_cos_mult_before": 0.1741228550672531,
+  "abi_cos_sim_after": 0.8846429586410522,
+  "abi_cos_mult_after": 14.154287338256836,
+  "claim": "BREAKTHROUGH \u2014 80%+ cross-size efficacy, backbone-size-agnostic domain modules",
+  "elapsed_s": 219.76181554794312
+}

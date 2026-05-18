@@ -1,0 +1,313 @@
+{
+  "verdict": "DOMAIN-RESTRICTED FUNCTIONAL EQUIVALENCE CONFIRMED",
+  "n_pass": 5,
+  "n_total": 5,
+  "ppl_efficacy_pct": 101.75,
+  "ppl_cal": 8.009,
+  "ppl_nat": 7.872,
+  "domain_alpha": 0.956,
+  "registry": {
+    "js_threshold": 0.1,
+    "top1_threshold": 0.68,
+    "top5_threshold": 0.86,
+    "entropy_diff_threshold": 0.35,
+    "decode_ni_margin_pp": -12.0,
+    "ni_margin_pp": -8.0,
+    "min_native_floor": 0.08,
+    "n_bootstrap": 1000,
+    "ci_level": 0.95,
+    "failure_jaccard": 0.4,
+    "pass_jaccard": 0.45,
+    "adversarial_ni_margin_pp": -12.0,
+    "kd_weight": 0.9,
+    "kd_temp": 2.0,
+    "n_seeds": 3,
+    "n_logit_chunks": 5,
+    "probe_count": 60,
+    "adv_base_count": 10,
+    "calibration_steps": 800
+  },
+  "L2_distributional": {
+    "n_positions": 2460,
+    "mean_js": 0.0084,
+    "mean_top1_agree": 0.9398,
+    "mean_top5_overlap": 0.8734,
+    "mean_entropy_diff": 0.1347,
+    "js_pass": true,
+    "top1_pass": true,
+    "top5_pass": true,
+    "entropy_pass": true,
+    "thresholds": {
+      "js": 0.1,
+      "top1": 0.68,
+      "top5": 0.86,
+      "entropy_diff": 0.35
+    },
+    "pass": true
+  },
+  "L3_decoding": {
+    "configs": {
+      "greedy": {
+        "nat_pass_pp": 12.5,
+        "cal_pass_pp": 12.5,
+        "cal_ci_95_lower": 6.67,
+        "ni_pass": true
+      },
+      "low_temp": {
+        "nat_pass_pp": 14.17,
+        "cal_pass_pp": 14.17,
+        "cal_ci_95_lower": 8.33,
+        "ni_pass": true
+      },
+      "high_temp": {
+        "nat_pass_pp": 17.5,
+        "cal_pass_pp": 18.33,
+        "cal_ci_95_lower": 11.67,
+        "ni_pass": true
+      }
+    },
+    "all_configs_pass": true,
+    "pass": true
+  },
+  "L4a_l4b_functional": {
+    "label": "greedy",
+    "n_probes": 60,
+    "n_seeds": 3,
+    "nat_pass_pp": 8.33,
+    "cal_pass_pp": 8.33,
+    "nat_ci_95": [
+      4.44,
+      12.22
+    ],
+    "cal_ci_95": [
+      4.44,
+      12.22
+    ],
+    "ni_threshold_pp": 0.33,
+    "ni_pass": true,
+    "floor_skip": false,
+    "by_difficulty": {
+      "1": {
+        "n_probes": 15,
+        "nat_pass_pp": 33.33,
+        "cal_pass_pp": 33.33
+      },
+      "2": {
+        "n_probes": 25,
+        "nat_pass_pp": 0.0,
+        "cal_pass_pp": 0.0
+      },
+      "3": {
+        "n_probes": 20,
+        "nat_pass_pp": 0.0,
+        "cal_pass_pp": 0.0
+      }
+    },
+    "nat_pass_probe_count": 5,
+    "cal_pass_probe_count": 5,
+    "failure_jaccard": 1.0,
+    "pass_jaccard": 1.0,
+    "failure_jaccard_pass": true,
+    "pass_jaccard_pass": true,
+    "pass": true
+  },
+  "L4c_adversarial": {
+    "n_variants": 30,
+    "nat_pass_pp": 0.0,
+    "cal_pass_pp": 0.0,
+    "cal_ci_95_lower_pp": 0.0,
+    "ni_threshold_pp": -12.0,
+    "ni_pass": true,
+    "variant_detail": [
+      {
+        "variant": "add_verbose",
+        "base": "add",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "add_terse",
+        "base": "add",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "add_renamed",
+        "base": "add",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "subtract_verbose",
+        "base": "subtract",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "subtract_terse",
+        "base": "subtract",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "subtract_renamed",
+        "base": "subtract",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "multiply_verbose",
+        "base": "multiply",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "multiply_terse",
+        "base": "multiply",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "multiply_renamed",
+        "base": "multiply",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "to_upper_verbose",
+        "base": "to_upper",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "to_upper_terse",
+        "base": "to_upper",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "to_upper_renamed",
+        "base": "to_upper",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "to_lower_verbose",
+        "base": "to_lower",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "to_lower_terse",
+        "base": "to_lower",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "to_lower_renamed",
+        "base": "to_lower",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "string_length_verbose",
+        "base": "string_length",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "string_length_terse",
+        "base": "string_length",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "string_length_renamed",
+        "base": "string_length",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "list_length_verbose",
+        "base": "list_length",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "list_length_terse",
+        "base": "list_length",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "list_length_renamed",
+        "base": "list_length",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "list_sum_verbose",
+        "base": "list_sum",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "list_sum_terse",
+        "base": "list_sum",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "list_sum_renamed",
+        "base": "list_sum",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "list_min_verbose",
+        "base": "list_min",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "list_min_terse",
+        "base": "list_min",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "list_min_renamed",
+        "base": "list_min",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "list_max_verbose",
+        "base": "list_max",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "list_max_terse",
+        "base": "list_max",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "list_max_renamed",
+        "base": "list_max",
+        "native_pass": false,
+        "calibrated_pass": false
+      }
+    ],
+    "pass": true
+  },
+  "test_pass_summary": {
+    "L2_distributional": true,
+    "L4a_functional_NI": true,
+    "L4b_error_identity": true,
+    "L3_decoding": true,
+    "L4c_adversarial": true
+  },
+  "timestamp": "04/26/2026 20:24:41"
+}

@@ -1,0 +1,16 @@
+# Core runtime
+torch>=2.1
+numpy
+
+# Transformers backbone (T5-large, GPT-2, Qwen2.5)
+transformers>=4.38
+sentencepiece>=0.1.99  # T5 tokenizer backend
+
+# Training/eval convenience
+tqdm
+regex
+
+# Data pipeline
+datasets>=2.18.0
+pyyaml>=6.0
+huggingface_hub>=0.22.0

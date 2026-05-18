@@ -1,0 +1,78 @@
+# ─── Model checkpoints ───────────────────────────────────────────────────────
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.npz
+paste_params.npz
+
+# ─── Python cache ─────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# ─── Development logs ────────────────────────────────────────────────────────
+*_log.txt
+*_run.log
+*_err.log
+*.log
+nib_run*.log
+nib_run*.err
+
+# ─── Intermediate / versioned experiment scripts ─────────────────────────────
+cross_arch_t5_nib_v[0-9]*.py
+cross_arch_t5_nib_v[0-9]*_log.txt
+cross_arch_t5_nib_v[0-9]*_results.json
+cross_arch_path3a_*.py
+cross_arch_path3a_*.json
+cross_arch_path3a_*.pt
+cross_arch_path3a_*.txt
+cross_arch_qwen2_v*.py
+cross_arch_nib_v[0-9]*.py
+cross_size_large_nib_v[0-9]*.py
+cross_size_nib_v[0-9]*.py
+
+# ─── Temporary / scratch ─────────────────────────────────────────────────────
+_c4_shards_tmp/
+tmp_*/
+*.tmp
+*.bak
+
+# ─── Data shards (too large for git) ─────────────────────────────────────────
+data/redpajama_raw/
+data/v6/
+_c4_shards_tmp/
+continuation_finetune_dataset.jsonl
+
+# ─── Secrets / environment ────────────────────────────────────────────────────
+.env
+*.key
+*.pem
+secrets.json
+
+# ─── IDE / OS ─────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ─── Build artifacts ─────────────────────────────────────────────────────────
+dist/
+build/
+*.egg-info/
+.pytest_cache/
+
+# ─── Test scaffolding ─────────────────────────────────────────────────────────
+test_cortana_stress/
+test_cortana_prod_stress/
+test_governor_stress/
+test_receipts_stress/
+test_semantic_stress/
+test_skills_stress/
+test_vdc_stress/
+test_verifier_mem/
+tmp_autocortana/
+tmp_guard_test/

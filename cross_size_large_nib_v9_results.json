@@ -1,0 +1,61 @@
+{
+  "experiment": 36,
+  "name": "cross_size_large_nib_v9",
+  "model": "gpt2-large",
+  "model_params_M": 774,
+  "d_model": 1280,
+  "d_abi": 640,
+  "d_abi_rule": "d_model // 2  (doubled from prior experiments)",
+  "abi_ratio": 0.5,
+  "n_layers": 36,
+  "seed": 42,
+  "batch_size": 4,
+  "domain_steps": 500,
+  "update_steps": 1000,
+  "calibration_steps": 2000,
+  "kd_method": "standard_full_vocab",
+  "kd_weight": 0.9,
+  "kd_temp": 2.0,
+  "ppl_native": 5.787,
+  "ppl_calibrated": 5.491,
+  "l2_nib": {
+    "n_positions": 2460,
+    "mean_js": 0.01212,
+    "mean_top1_agree": 0.9146,
+    "mean_top5_overlap": 0.8698,
+    "mean_entropy_diff": 0.168,
+    "js_pass": true,
+    "top1_pass": true,
+    "top5_pass": true,
+    "entropy_pass": true,
+    "pass": true,
+    "thresholds": {
+      "js": 0.1,
+      "top1": 0.68,
+      "top5": 0.86,
+      "entropy_diff": 0.35
+    }
+  },
+  "nib_pass": true,
+  "total_runtime_s": 18294.2,
+  "experiment_history": {
+    "exp27": {
+      "kd": "standard",
+      "d_abi": 320,
+      "cal_steps": 1200,
+      "top5": 0.8446
+    },
+    "exp34": {
+      "kd": "top_k_k100",
+      "d_abi": 320,
+      "cal_steps": 2000,
+      "top5": 0.8402
+    },
+    "exp36": {
+      "kd": "standard",
+      "d_abi": 640,
+      "cal_steps": 2000,
+      "top5": 0.8698
+    }
+  }
+}

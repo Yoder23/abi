@@ -1,0 +1,66 @@
+{
+  "ppl": {
+    "base_gpt2m": {
+      "py_ppl": 13.053,
+      "wiki_ppl": 44.75
+    },
+    "transferred": {
+      "py_ppl": 18.292,
+      "wiki_ppl": 20.954
+    },
+    "native": {
+      "py_ppl": 8.115,
+      "wiki_ppl": 37.405
+    },
+    "calibrated": {
+      "py_ppl": 9.194,
+      "wiki_ppl": 36.361
+    }
+  },
+  "cross_domain_l2": {
+    "calibrated_vs_native": {
+      "python": {
+        "label": "python",
+        "mean_js": 0.01075,
+        "mean_top1": 0.9187,
+        "mean_top5": 0.9019,
+        "js_pass": true,
+        "top5_pass": true
+      },
+      "wikitext": {
+        "label": "wikitext",
+        "mean_js": 0.02398,
+        "mean_top1": 0.8321,
+        "mean_top5": 0.8358,
+        "js_pass": true,
+        "top5_pass": false
+      }
+    }
+  },
+  "double_calibration": {
+    "py_parity_after_double_cal": {
+      "label": "python_after_double_cal",
+      "mean_js": 0.11451,
+      "mean_top1": 0.7557,
+      "mean_top5": 0.5776,
+      "js_pass": false,
+      "top5_pass": false
+    },
+    "wiki_parity_after_double_cal": {
+      "label": "wiki_after_double_cal",
+      "mean_js": 0.00365,
+      "mean_top1": 0.9386,
+      "mean_top5": 0.9211,
+      "js_pass": true,
+      "top5_pass": true
+    },
+    "ppl_py": 29.976,
+    "ppl_wiki": 13.995
+  },
+  "interference_summary": {
+    "wiki_ppl_delta_vs_transferred": 15.407,
+    "python_parity_intact": true,
+    "wiki_non_degradation": false,
+    "dual_parity_composable": false
+  }
+}

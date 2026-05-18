@@ -1,0 +1,52 @@
+{
+  "experiment": 39,
+  "name": "cross_arch_enc_dec_nib",
+  "source_model": "t5-large-730M",
+  "target_model": "gpt2-medium-354M",
+  "source_arch": "T5 (enc-dec, relative pos, cross-attention, ReLU FFN, 32128 vocab)",
+  "target_arch": "GPT-2-medium (dec-only, abs pos, causal MHA, GELU FFN, 50257 vocab)",
+  "d_abi": 256,
+  "d_abi_note": "fixed shared dimension -- same for all models in all experiments",
+  "prefix_len": 64,
+  "cont_len": 64,
+  "t5_mode": "prefix-LM (encoder=prefix, decoder=continuation) -- fixes Exp37 degenerate oracle",
+  "seed": 42,
+  "domain_steps": 500,
+  "calibration_steps": 1200,
+  "n_align_sentences": 2000,
+  "alignment_method": "sentence-level mean-pool Procrustes (cross-tokenizer, cross-architecture)",
+  "ppl_native_gpt2": 8.013,
+  "ppl_calibrated_gpt2": 8.576,
+  "nib_l2": {
+    "n_positions": 2460,
+    "mean_js": 0.01787,
+    "mean_top1_agree": 0.9252,
+    "mean_top5_overlap": 0.8699,
+    "mean_entropy_diff": 0.2819,
+    "js_pass": true,
+    "top1_pass": true,
+    "top5_pass": true,
+    "entropy_pass": true,
+    "pass": true,
+    "thresholds": {
+      "js": 0.1,
+      "top1": 0.68,
+      "top5": 0.86,
+      "entropy_diff": 0.35
+    }
+  },
+  "overall_pass": true,
+  "elapsed_min": 7.4,
+  "thresholds": {
+    "js_threshold": 0.1,
+    "top1_threshold": 0.68,
+    "top5_threshold": 0.86,
+    "entropy_diff_threshold": 0.35,
+    "n_logit_chunks": 5,
+    "calibration_steps": 1200,
+    "kd_weight": 0.9,
+    "kd_temp": 2.0,
+    "n_align_sentences": 2000
+  },
+  "claim": "Domain knowledge encoded in T5-large's ABI space (encoder-decoder architecture, prefix-LM mode, SentencePiece 32128 vocab, relative position encoding) transfers to GPT-2-medium (decoder-only architecture, BPE 50257 vocab, absolute position encoding) via orthogonal Procrustes rotation with sentence-level mean-pool alignment, achieving NIB distributional equivalence in GPT-2's native 50257-token vocabulary. Source and target models differ in architecture class (encoder-decoder vs decoder-only), attention mechanism (cross-attention vs causal), position encoding (relative vs absolute), and tokenizer. This closes the encoder-decoder <-> decoder-only transfer gap."
+}

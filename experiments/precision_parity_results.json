@@ -1,0 +1,243 @@
+{
+  "n_eval_chunks": 10,
+  "chunk_size": 512,
+  "n_positions": 4920,
+  "js_thresholds": [
+    0.001,
+    0.005,
+    0.01,
+    0.02,
+    0.05,
+    0.1
+  ],
+  "results": {
+    "raw_no_D": {
+      "label": "raw_no_D",
+      "n_positions": 4920,
+      "mean_js": 0.107316,
+      "mean_top1_agree": 0.73455,
+      "frac_perfect_top5": 0.04146,
+      "js_cdf": {
+        "frac_js_lt_0.001": 0.07642,
+        "frac_js_lt_0.005": 0.20264,
+        "frac_js_lt_0.01": 0.29146,
+        "frac_js_lt_0.02": 0.37663,
+        "frac_js_lt_0.05": 0.48984,
+        "frac_js_lt_0.1": 0.59939
+      },
+      "js_percentiles": {
+        "p50": 0.053117,
+        "p90": 0.290321,
+        "p95": 0.369961,
+        "p99": 0.485514,
+        "p99_9": 0.582023,
+        "max": 0.623729,
+        "mean": 0.107316
+      },
+      "entropy_quintile_js": {
+        "Q1": {
+          "entropy_range": [
+            0.0,
+            0.113
+          ],
+          "n": 984,
+          "mean_js": 0.012263,
+          "frac_identical": 0.3669,
+          "p90_js": 0.015695
+        },
+        "Q2": {
+          "entropy_range": [
+            0.113,
+            0.443
+          ],
+          "n": 984,
+          "mean_js": 0.032639,
+          "frac_identical": 0.0132,
+          "p90_js": 0.075637
+        },
+        "Q3": {
+          "entropy_range": [
+            0.443,
+            1.226
+          ],
+          "n": 984,
+          "mean_js": 0.090405,
+          "frac_identical": 0.002,
+          "p90_js": 0.238106
+        },
+        "Q4": {
+          "entropy_range": [
+            1.226,
+            2.707
+          ],
+          "n": 984,
+          "mean_js": 0.180372,
+          "frac_identical": 0.0,
+          "p90_js": 0.358838
+        },
+        "Q5": {
+          "entropy_range": [
+            2.707,
+            7.51
+          ],
+          "n": 984,
+          "mean_js": 0.220902,
+          "frac_identical": 0.0,
+          "p90_js": 0.36112
+        }
+      }
+    },
+    "procrustes_D": {
+      "label": "procrustes_D",
+      "n_positions": 4920,
+      "mean_js": 0.01109,
+      "mean_top1_agree": 0.91829,
+      "frac_perfect_top5": 0.52805,
+      "js_cdf": {
+        "frac_js_lt_0.001": 0.36341,
+        "frac_js_lt_0.005": 0.54654,
+        "frac_js_lt_0.01": 0.68699,
+        "frac_js_lt_0.02": 0.83435,
+        "frac_js_lt_0.05": 0.96077,
+        "frac_js_lt_0.1": 0.99085
+      },
+      "js_percentiles": {
+        "p50": 0.003435,
+        "p90": 0.029906,
+        "p95": 0.044999,
+        "p99": 0.097352,
+        "p99_9": 0.231485,
+        "max": 0.382843,
+        "mean": 0.01109
+      },
+      "entropy_quintile_js": {
+        "Q1": {
+          "entropy_range": [
+            0.0,
+            0.113
+          ],
+          "n": 984,
+          "mean_js": 0.000345,
+          "frac_identical": 0.9614,
+          "p90_js": 0.000248
+        },
+        "Q2": {
+          "entropy_range": [
+            0.113,
+            0.443
+          ],
+          "n": 984,
+          "mean_js": 0.002221,
+          "frac_identical": 0.6707,
+          "p90_js": 0.004456
+        },
+        "Q3": {
+          "entropy_range": [
+            0.443,
+            1.226
+          ],
+          "n": 984,
+          "mean_js": 0.010226,
+          "frac_identical": 0.1717,
+          "p90_js": 0.021012
+        },
+        "Q4": {
+          "entropy_range": [
+            1.226,
+            2.707
+          ],
+          "n": 984,
+          "mean_js": 0.020966,
+          "frac_identical": 0.0122,
+          "p90_js": 0.047473
+        },
+        "Q5": {
+          "entropy_range": [
+            2.707,
+            7.51
+          ],
+          "n": 984,
+          "mean_js": 0.021691,
+          "frac_identical": 0.001,
+          "p90_js": 0.043908
+        }
+      }
+    },
+    "sgd_800": {
+      "label": "sgd_800",
+      "n_positions": 4920,
+      "mean_js": 0.00839,
+      "mean_top1_agree": 0.93841,
+      "frac_perfect_top5": 0.46951,
+      "js_cdf": {
+        "frac_js_lt_0.001": 0.36524,
+        "frac_js_lt_0.005": 0.56362,
+        "frac_js_lt_0.01": 0.69573,
+        "frac_js_lt_0.02": 0.87642,
+        "frac_js_lt_0.05": 0.98598,
+        "frac_js_lt_0.1": 0.99817
+      },
+      "js_percentiles": {
+        "p50": 0.003267,
+        "p90": 0.02245,
+        "p95": 0.030594,
+        "p99": 0.055837,
+        "p99_9": 0.115119,
+        "max": 0.181665,
+        "mean": 0.00839
+      },
+      "entropy_quintile_js": {
+        "Q1": {
+          "entropy_range": [
+            0.0,
+            0.113
+          ],
+          "n": 984,
+          "mean_js": 0.000224,
+          "frac_identical": 0.9654,
+          "p90_js": 0.000372
+        },
+        "Q2": {
+          "entropy_range": [
+            0.113,
+            0.443
+          ],
+          "n": 984,
+          "mean_js": 0.001639,
+          "frac_identical": 0.6789,
+          "p90_js": 0.003227
+        },
+        "Q3": {
+          "entropy_range": [
+            0.443,
+            1.226
+          ],
+          "n": 984,
+          "mean_js": 0.00686,
+          "frac_identical": 0.1799,
+          "p90_js": 0.015977
+        },
+        "Q4": {
+          "entropy_range": [
+            1.226,
+            2.707
+          ],
+          "n": 984,
+          "mean_js": 0.01334,
+          "frac_identical": 0.002,
+          "p90_js": 0.028941
+        },
+        "Q5": {
+          "entropy_range": [
+            2.707,
+            7.51
+          ],
+          "n": 984,
+          "mean_js": 0.019888,
+          "frac_identical": 0.0,
+          "p90_js": 0.033657
+        }
+      }
+    }
+  }
+}

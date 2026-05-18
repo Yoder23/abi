@@ -1,0 +1,291 @@
+{
+  "experiment": "35b",
+  "name": "calibration_scaling_law_b",
+  "note": "corrected: standard KD (not Top-K), d_abi=640 for gpt2-large (not 320)",
+  "new_data": {
+    "gpt2-small/python": {
+      "model": "gpt2-small",
+      "d_model": 768,
+      "d_abi": 192,
+      "domain": "python",
+      "margin_mean": 0.003494,
+      "margin_median": 0.001073,
+      "floor_steps": 2000,
+      "budget_curve": [
+        {
+          "steps": 0,
+          "mean_js": 0.14394,
+          "mean_top1": 0.6821,
+          "mean_top5": 0.5493,
+          "mean_entropy_diff": 0.636,
+          "pass": false
+        },
+        {
+          "steps": 50,
+          "mean_js": 0.03301,
+          "mean_top1": 0.8463,
+          "mean_top5": 0.7551,
+          "mean_entropy_diff": 0.3086,
+          "pass": false
+        },
+        {
+          "steps": 200,
+          "mean_js": 0.0209,
+          "mean_top1": 0.8833,
+          "mean_top5": 0.8137,
+          "mean_entropy_diff": 0.2718,
+          "pass": false
+        },
+        {
+          "steps": 800,
+          "mean_js": 0.01242,
+          "mean_top1": 0.9093,
+          "mean_top5": 0.845,
+          "mean_entropy_diff": 0.2054,
+          "pass": false
+        },
+        {
+          "steps": 2000,
+          "mean_js": 0.00893,
+          "mean_top1": 0.9199,
+          "mean_top5": 0.867,
+          "mean_entropy_diff": 0.1823,
+          "pass": true
+        }
+      ],
+      "runtime_s": 531.1
+    },
+    "gpt2-small/wikitext": {
+      "model": "gpt2-small",
+      "d_model": 768,
+      "d_abi": 192,
+      "domain": "wikitext",
+      "margin_mean": 0.005405,
+      "margin_median": 0.002639,
+      "floor_steps": 800,
+      "budget_curve": [
+        {
+          "steps": 0,
+          "mean_js": 0.17155,
+          "mean_top1": 0.5077,
+          "mean_top5": 0.5228,
+          "mean_entropy_diff": 0.7818,
+          "pass": false
+        },
+        {
+          "steps": 50,
+          "mean_js": 0.05145,
+          "mean_top1": 0.7118,
+          "mean_top5": 0.7359,
+          "mean_entropy_diff": 0.3996,
+          "pass": false
+        },
+        {
+          "steps": 200,
+          "mean_js": 0.02004,
+          "mean_top1": 0.8122,
+          "mean_top5": 0.8291,
+          "mean_entropy_diff": 0.2503,
+          "pass": false
+        },
+        {
+          "steps": 800,
+          "mean_js": 0.00863,
+          "mean_top1": 0.8724,
+          "mean_top5": 0.886,
+          "mean_entropy_diff": 0.1836,
+          "pass": true
+        }
+      ],
+      "runtime_s": 398.4
+    },
+    "gpt2-large/python": {
+      "model": "gpt2-large",
+      "d_model": 1280,
+      "d_abi": 640,
+      "domain": "python",
+      "margin_mean": 0.003494,
+      "margin_median": 0.000875,
+      "floor_steps": 2000,
+      "budget_curve": [
+        {
+          "steps": 0,
+          "mean_js": 0.08845,
+          "mean_top1": 0.7642,
+          "mean_top5": 0.6466,
+          "mean_entropy_diff": 0.4437,
+          "pass": false
+        },
+        {
+          "steps": 50,
+          "mean_js": 0.03437,
+          "mean_top1": 0.863,
+          "mean_top5": 0.7741,
+          "mean_entropy_diff": 0.2685,
+          "pass": false
+        },
+        {
+          "steps": 200,
+          "mean_js": 0.02429,
+          "mean_top1": 0.889,
+          "mean_top5": 0.8103,
+          "mean_entropy_diff": 0.2243,
+          "pass": false
+        },
+        {
+          "steps": 800,
+          "mean_js": 0.01643,
+          "mean_top1": 0.9037,
+          "mean_top5": 0.8498,
+          "mean_entropy_diff": 0.1735,
+          "pass": false
+        },
+        {
+          "steps": 2000,
+          "mean_js": 0.01208,
+          "mean_top1": 0.9199,
+          "mean_top5": 0.8695,
+          "mean_entropy_diff": 0.1541,
+          "pass": true
+        }
+      ],
+      "runtime_s": 19321.1
+    },
+    "gpt2-large/wikitext": {
+      "model": "gpt2-large",
+      "d_model": 1280,
+      "d_abi": 640,
+      "domain": "wikitext",
+      "margin_mean": 0.006015,
+      "margin_median": 0.002791,
+      "floor_steps": 800,
+      "budget_curve": [
+        {
+          "steps": 0,
+          "mean_js": 0.06137,
+          "mean_top1": 0.7215,
+          "mean_top5": 0.7385,
+          "mean_entropy_diff": 0.4358,
+          "pass": false
+        },
+        {
+          "steps": 50,
+          "mean_js": 0.02858,
+          "mean_top1": 0.8016,
+          "mean_top5": 0.8128,
+          "mean_entropy_diff": 0.2947,
+          "pass": false
+        },
+        {
+          "steps": 200,
+          "mean_js": 0.02033,
+          "mean_top1": 0.8256,
+          "mean_top5": 0.8393,
+          "mean_entropy_diff": 0.2403,
+          "pass": false
+        },
+        {
+          "steps": 800,
+          "mean_js": 0.01299,
+          "mean_top1": 0.8695,
+          "mean_top5": 0.8666,
+          "mean_entropy_diff": 0.1707,
+          "pass": true
+        }
+      ],
+      "runtime_s": 12744.8
+    }
+  },
+  "all_data_points": [
+    {
+      "label": "gpt2-medium/python",
+      "d_model": 1024,
+      "floor_steps": 0,
+      "margin_median": 0.000819,
+      "source": "exp11"
+    },
+    {
+      "label": "gpt2-medium/wikitext",
+      "d_model": 1024,
+      "floor_steps": 0,
+      "margin_median": 0.0027,
+      "source": "exp11"
+    },
+    {
+      "label": "gpt2-medium/markdown",
+      "d_model": 1024,
+      "floor_steps": 0,
+      "margin_median": 0.000864,
+      "source": "exp11"
+    },
+    {
+      "label": "gpt2-small/python",
+      "d_model": 768,
+      "floor_steps": 2000,
+      "margin_median": 0.001073,
+      "source": "exp35"
+    },
+    {
+      "label": "gpt2-small/wikitext",
+      "d_model": 768,
+      "floor_steps": 800,
+      "margin_median": 0.002639,
+      "source": "exp35"
+    },
+    {
+      "label": "gpt2-large/python",
+      "d_model": 1280,
+      "floor_steps": 2000,
+      "margin_median": 0.000875,
+      "source": "exp35"
+    },
+    {
+      "label": "gpt2-large/wikitext",
+      "d_model": 1280,
+      "floor_steps": 800,
+      "margin_median": 0.002791,
+      "source": "exp35"
+    }
+  ],
+  "exp11_source": {
+    "python": {
+      "d_model": 1024,
+      "floor_steps": 0,
+      "margin_median": 0.000819
+    },
+    "wikitext": {
+      "d_model": 1024,
+      "floor_steps": 0,
+      "margin_median": 0.0027
+    },
+    "markdown": {
+      "d_model": 1024,
+      "floor_steps": 0,
+      "margin_median": 0.000864
+    }
+  },
+  "scaling_law_fit": {
+    "alpha": 8.6891,
+    "beta": -1.2894,
+    "gamma": 1.0722,
+    "r2": 0.0341,
+    "loocv_mae_steps": 1001.7,
+    "n_points": 7,
+    "formula": "log10(floor+1) = 8.6891 + -1.2894\u00b7log10(d_model) + 1.0722\u00b7log10(margin)"
+  },
+  "total_runtime_s": 33007.6,
+  "config": {
+    "budget_schedule": [
+      0,
+      50,
+      200,
+      800,
+      2000,
+      4000
+    ],
+    "kd_topk": null,
+    "lambda_rank5": null,
+    "kd_weight": 0.9,
+    "kd_temp": 2.0
+  }
+}

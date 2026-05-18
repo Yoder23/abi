@@ -1,0 +1,737 @@
+{
+  "verdict": "DOMAIN-RESTRICTED PARITY CONFIRMED - PROCRUSTES PASSES ALL 5 LEVELS",
+  "n_pass": 5,
+  "n_total": 5,
+  "r_squared": 0.93859,
+  "cond_number": 8181.9,
+  "ppl_cal": 9.148,
+  "ppl_nat": 8.038,
+  "efficacy_pct": 113.81,
+  "L2": {
+    "n_positions": 2460,
+    "mean_js": 0.01526,
+    "mean_top1_agree": 0.9016,
+    "mean_top5_overlap": 0.8735,
+    "mean_entropy_diff": 0.1908,
+    "js_pass": true,
+    "top1_pass": true,
+    "top5_pass": true,
+    "entropy_pass": true,
+    "thresholds": {
+      "js": 0.1,
+      "top1": 0.68,
+      "top5": 0.86,
+      "entropy_diff": 0.35
+    },
+    "pass": true
+  },
+  "L3": {
+    "configs": {
+      "greedy": {
+        "nat_pass_pp": 20.0,
+        "cal_pass_pp": 20.0,
+        "cal_ci_95_lower": 13.33,
+        "ni_pass": true
+      },
+      "low_temp": {
+        "nat_pass_pp": 20.0,
+        "cal_pass_pp": 21.67,
+        "cal_ci_95_lower": 15.0,
+        "ni_pass": true
+      },
+      "high_temp": {
+        "nat_pass_pp": 22.5,
+        "cal_pass_pp": 22.5,
+        "cal_ci_95_lower": 15.83,
+        "ni_pass": true
+      }
+    },
+    "all_configs_pass": true,
+    "pass": true
+  },
+  "L4ab": {
+    "label": "greedy",
+    "n_probes": 60,
+    "n_seeds": 3,
+    "nat_pass_pp": 15.0,
+    "cal_pass_pp": 15.0,
+    "nat_ci_95": [
+      9.44,
+      20.0
+    ],
+    "cal_ci_95": [
+      9.44,
+      20.0
+    ],
+    "ni_threshold_pp": 7.0,
+    "ni_pass": true,
+    "floor_skip": false,
+    "by_difficulty": {
+      "1": {
+        "n_probes": 15,
+        "nat_pass_pp": 53.33,
+        "cal_pass_pp": 53.33
+      },
+      "2": {
+        "n_probes": 25,
+        "nat_pass_pp": 0.0,
+        "cal_pass_pp": 0.0
+      },
+      "3": {
+        "n_probes": 20,
+        "nat_pass_pp": 5.0,
+        "cal_pass_pp": 5.0
+      }
+    },
+    "nat_pass_probe_count": 9,
+    "cal_pass_probe_count": 9,
+    "failure_jaccard": 1.0,
+    "pass_jaccard": 1.0,
+    "pass_only_native": [],
+    "pass_only_calibrated": [],
+    "per_probe_majority": {
+      "negate": {
+        "diff": 1,
+        "native_passes": 3,
+        "calibrated_passes": 3,
+        "native_majority_pass": true,
+        "calibrated_majority_pass": true
+      },
+      "double": {
+        "diff": 1,
+        "native_passes": 3,
+        "calibrated_passes": 3,
+        "native_majority_pass": true,
+        "calibrated_majority_pass": true
+      },
+      "is_zero": {
+        "diff": 1,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "max_of_two": {
+        "diff": 1,
+        "native_passes": 3,
+        "calibrated_passes": 3,
+        "native_majority_pass": true,
+        "calibrated_majority_pass": true
+      },
+      "first_element": {
+        "diff": 1,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "string_upper_v": {
+        "diff": 1,
+        "native_passes": 3,
+        "calibrated_passes": 3,
+        "native_majority_pass": true,
+        "calibrated_majority_pass": true
+      },
+      "abs_val": {
+        "diff": 1,
+        "native_passes": 3,
+        "calibrated_passes": 3,
+        "native_majority_pass": true,
+        "calibrated_majority_pass": true
+      },
+      "add_one": {
+        "diff": 1,
+        "native_passes": 3,
+        "calibrated_passes": 3,
+        "native_majority_pass": true,
+        "calibrated_majority_pass": true
+      },
+      "square_v": {
+        "diff": 1,
+        "native_passes": 3,
+        "calibrated_passes": 3,
+        "native_majority_pass": true,
+        "calibrated_majority_pass": true
+      },
+      "list_len_v": {
+        "diff": 1,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "str_len_v": {
+        "diff": 1,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "identity_v": {
+        "diff": 1,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "last_element_v": {
+        "diff": 1,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "string_lower_v": {
+        "diff": 1,
+        "native_passes": 3,
+        "calibrated_passes": 3,
+        "native_majority_pass": true,
+        "calibrated_majority_pass": true
+      },
+      "is_empty": {
+        "diff": 1,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "add": {
+        "diff": 2,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "subtract": {
+        "diff": 2,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "multiply": {
+        "diff": 2,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "to_upper": {
+        "diff": 2,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "to_lower": {
+        "diff": 2,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "string_length": {
+        "diff": 2,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "list_length": {
+        "diff": 2,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "list_sum": {
+        "diff": 2,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "list_min": {
+        "diff": 2,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "list_max": {
+        "diff": 2,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "list_reverse": {
+        "diff": 2,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "power": {
+        "diff": 2,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "average": {
+        "diff": 2,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "string_reverse": {
+        "diff": 2,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "count_char": {
+        "diff": 2,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "both_positive": {
+        "diff": 2,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "list_contains": {
+        "diff": 2,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "repeat_string": {
+        "diff": 2,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "triangular": {
+        "diff": 2,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "digit_count": {
+        "diff": 2,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "count_evens": {
+        "diff": 2,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "double_list": {
+        "diff": 2,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "remove_negatives": {
+        "diff": 2,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "celsius_to_f": {
+        "diff": 2,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "clamp": {
+        "diff": 2,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "factorial": {
+        "diff": 3,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "fibonacci": {
+        "diff": 3,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "is_even": {
+        "diff": 3,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "is_positive": {
+        "diff": 3,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "sign": {
+        "diff": 3,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "is_palindrome": {
+        "diff": 3,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "max_of_three": {
+        "diff": 3,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "all_positive": {
+        "diff": 3,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "any_negative": {
+        "diff": 3,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "gcd": {
+        "diff": 3,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "sum_of_squares": {
+        "diff": 3,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "running_sum": {
+        "diff": 3,
+        "native_passes": 3,
+        "calibrated_passes": 3,
+        "native_majority_pass": true,
+        "calibrated_majority_pass": true
+      },
+      "is_prime": {
+        "diff": 3,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "sum_digits": {
+        "diff": 3,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "count_vowels": {
+        "diff": 3,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "word_count": {
+        "diff": 3,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "flatten": {
+        "diff": 3,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "zip_sum": {
+        "diff": 3,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "merge_sorted": {
+        "diff": 3,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      },
+      "most_frequent": {
+        "diff": 3,
+        "native_passes": 0,
+        "calibrated_passes": 0,
+        "native_majority_pass": false,
+        "calibrated_majority_pass": false
+      }
+    },
+    "failure_jaccard_pass": true,
+    "pass_jaccard_pass": true,
+    "pass": true
+  },
+  "L4c": {
+    "n_variants": 30,
+    "nat_pass_pp": 0.0,
+    "cal_pass_pp": 3.33,
+    "cal_ci_95_lower_pp": 0.0,
+    "ni_threshold_pp": -12.0,
+    "ni_pass": true,
+    "variant_detail": [
+      {
+        "variant": "add_verbose",
+        "base": "add",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "add_terse",
+        "base": "add",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "add_renamed",
+        "base": "add",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "subtract_verbose",
+        "base": "subtract",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "subtract_terse",
+        "base": "subtract",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "subtract_renamed",
+        "base": "subtract",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "multiply_verbose",
+        "base": "multiply",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "multiply_terse",
+        "base": "multiply",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "multiply_renamed",
+        "base": "multiply",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "to_upper_verbose",
+        "base": "to_upper",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "to_upper_terse",
+        "base": "to_upper",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "to_upper_renamed",
+        "base": "to_upper",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "to_lower_verbose",
+        "base": "to_lower",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "to_lower_terse",
+        "base": "to_lower",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "to_lower_renamed",
+        "base": "to_lower",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "string_length_verbose",
+        "base": "string_length",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "string_length_terse",
+        "base": "string_length",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "string_length_renamed",
+        "base": "string_length",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "list_length_verbose",
+        "base": "list_length",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "list_length_terse",
+        "base": "list_length",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "list_length_renamed",
+        "base": "list_length",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "list_sum_verbose",
+        "base": "list_sum",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "list_sum_terse",
+        "base": "list_sum",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "list_sum_renamed",
+        "base": "list_sum",
+        "native_pass": false,
+        "calibrated_pass": true
+      },
+      {
+        "variant": "list_min_verbose",
+        "base": "list_min",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "list_min_terse",
+        "base": "list_min",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "list_min_renamed",
+        "base": "list_min",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "list_max_verbose",
+        "base": "list_max",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "list_max_terse",
+        "base": "list_max",
+        "native_pass": false,
+        "calibrated_pass": false
+      },
+      {
+        "variant": "list_max_renamed",
+        "base": "list_max",
+        "native_pass": false,
+        "calibrated_pass": false
+      }
+    ],
+    "pass": true
+  },
+  "test_summary": {
+    "L2_distributional": true,
+    "L4a_functional_NI": true,
+    "L4b_error_identity": true,
+    "L3_decoding": true,
+    "L4c_adversarial": true
+  },
+  "registry": {
+    "js_threshold": 0.1,
+    "top1_threshold": 0.68,
+    "top5_threshold": 0.86,
+    "entropy_diff_threshold": 0.35,
+    "decode_ni_margin_pp": -12.0,
+    "ni_margin_pp": -8.0,
+    "min_native_floor": 0.08,
+    "n_bootstrap": 1000,
+    "ci_level": 0.95,
+    "failure_jaccard": 0.4,
+    "pass_jaccard": 0.45,
+    "adversarial_ni_margin_pp": -12.0,
+    "kd_weight": 0.9,
+    "kd_temp": 2.0,
+    "n_seeds": 3,
+    "n_logit_chunks": 5,
+    "probe_count": 60,
+    "adv_base_count": 10,
+    "calibration_steps": 800
+  }
+}

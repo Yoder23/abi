@@ -1,0 +1,51 @@
+{
+  "test": "succession_test_v2",
+  "variant": "proj_in_frozen_during_backbone_update",
+  "backbone": "gpt2-medium (354.8M pretrained)",
+  "update_corpus": "WikiText-2 (3 equal chunks)",
+  "domains": [
+    "python",
+    "markdown"
+  ],
+  "num_rounds": 3,
+  "steps_per_round": 1000,
+  "total_update_steps": 3000,
+  "succession_curve": [
+    {
+      "round": 1,
+      "steps": 1000,
+      "py_zs": 9.339778054779266,
+      "md_zs": 13.733628586564237,
+      "py_ppl": 15.327786342596239,
+      "md_ppl": 42.95230863992871,
+      "cos_sim": 0.8529988527297974,
+      "cos_mult": 13.647981643676758
+    },
+    {
+      "round": 2,
+      "steps": 2000,
+      "py_zs": 23.42611037696557,
+      "md_zs": 24.223718055858736,
+      "py_ppl": 23.517744373934708,
+      "md_ppl": 81.70022636519556,
+      "cos_sim": 0.8829775452613831,
+      "cos_mult": 14.127640724182129
+    },
+    {
+      "round": 3,
+      "steps": 3000,
+      "py_zs": 16.86314520704329,
+      "md_zs": 40.91601010355279,
+      "py_ppl": 43.92542725019271,
+      "md_ppl": 135.3412656435447,
+      "cos_sim": 0.8348948359489441,
+      "cos_mult": 13.358317375183105
+    }
+  ],
+  "py_transfer_efficacy": 19.37565756667704,
+  "md_transfer_efficacy": 43.55756068077021,
+  "n_pass": 9,
+  "n_total": 10,
+  "claim_level": "PARTIAL \u2014 9/10 pass, efficacy 19.4%",
+  "elapsed_s": 2015.5148582458496
+}
