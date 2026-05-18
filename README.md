@@ -1,7 +1,36 @@
 ﻿# ABI: Frozen-Module Domain Transfer Across LLM Architectures
-## Verified Experimental Results — Research Preview Release
 
-> **Frozen ABI domain modules migrate across tested LLM architecture boundaries with NIB-verified behavioral equivalence, while keeping backbones entirely frozen and calibrating only interface projections.** Validated across decoder-only and encoder-decoder architectures, 4 model families, 117M–774M parameter scale, with domain modules surviving backbone updates at 65–304% transfer efficacy.
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
+[![License](https://img.shields.io/github/license/Yoder23/abi)](LICENSE)
+[![Reproducible](https://img.shields.io/badge/reproducible-verify__result.py-green)](verify_result.py)
+[![Research Preview](https://img.shields.io/badge/status-research__preview-orange)]()
+[![NIB Verified](https://img.shields.io/badge/NIB-verified-green)]()
+[![Verify ABI](https://github.com/Yoder23/abi/actions/workflows/verify.yml/badge.svg)](https://github.com/Yoder23/abi/actions/workflows/verify.yml)
+
+> **ABI turns domain adaptation from "fine-tune the whole model" into "move a frozen domain module and calibrate the interface."**
+
+Frozen ABI domain modules migrate across tested LLM architecture boundaries with NIB-verified behavioral equivalence, while keeping backbones entirely frozen and calibrating only interface projections. Validated across decoder-only and encoder-decoder architectures, 4 model families, 117M–774M parameter scale, with domain modules surviving backbone updates at 65–304% transfer efficacy.
+
+---
+
+## Start Here
+
+| Your goal | Action |
+|-----------|--------|
+| **Skeptical?** | `python verify_result.py` — verifies published result in < 5 seconds, no GPU |
+| **Researcher** | Read [PROOF.md](PROOF.md), [ABI_EXPERIMENTS.md](ABI_EXPERIMENTS.md) |
+| **Engineer** | Read [ABI_ARCHITECTURE.md](ABI_ARCHITECTURE.md), run `python run_abi.py` |
+| **Reproducing** | Read [ABI_REPRODUCE.md](ABI_REPRODUCE.md) for exact commands and expected output |
+| **Contributing** | Read [CONTRIBUTING.md](CONTRIBUTING.md) |
+| **Citing** | See [Citation](#citation) below |
+
+```bash
+# Fastest path: verify the published result right now
+git clone https://github.com/Yoder23/abi
+cd abi
+pip install -e .
+python verify_result.py    # < 5 seconds, no GPU, no model download
+```
 
 ---
 
@@ -22,48 +51,73 @@ This is a **research preview**: the goal is that strangers can verify the result
 
 ---
 
-## The Core Claim
+## Two Validated Results
 
-**A model can transfer domain knowledge to a second, independently initialized model by learning only a correction to the shared backbone's residual stream — with the backbone entirely frozen in both models.**
+### Result 1 — Same-Backbone ABI Reconstruction (Path 2C)
 
-This is Autonomous Basis Injection (ABI). The two models share a frozen T5-large backbone but have completely different ABI module weights (different random seeds). After calibration, the candidate's logit distributions are non-inferior to the anchor's. No teacher forward pass is needed at inference time. No logit-level distillation is required. No backbone weights are modified at any stage.
-
-The formal criterion is the Non-Inferiority Benchmark (NIB):
+Two independently initialized ABI modules on a **frozen T5-large backbone** pass the Non-Inferiority Benchmark. No backbone modification. No shared module weights. Different random seeds.
 
 | Criterion | Value | Threshold | Status |
 |-----------|-------|-----------|--------|
-| **Top-5 token agreement** | **0.8725** | >= 0.860 | **PASS** |
-| Top-1 token agreement | 0.8508 | >= 0.680 | PASS |
+| **Top-5 token agreement** | **0.8725** | ≥ 0.860 | **PASS** |
+| Top-1 token agreement | 0.8508 | ≥ 0.680 | PASS |
 | Jensen-Shannon divergence | 0.01391 | < 0.100 | PASS |
 | Entropy difference | 0.2256 | < 0.350 | PASS |
 
-All four criteria pass simultaneously. The result holds at extended evaluation (n=25, 5 independent RNG seeds): mean top-5 = 0.8549, 95% CI = [0.8425, 0.8673].
+Extended evaluation (n=25, 5 independent seeds): mean top-5 = 0.8549, 95% CI = [0.8425, 0.8673]. Reported transparently — 3 of 5 seeds fall below the single-run threshold; the mean is above the noise floor.
 
-### Cross-Architecture Transfer — Also Validated
+### Result 2 — Cross-Architecture Frozen-Module Migration (Exp 39)
 
-Exp 39 (result file: `cross_arch_enc_dec_nib_results.json`) extends the core result across the encoder-decoder ↔ decoder-only architectural boundary:
+A **T5-large-trained frozen domain module** transfers to GPT-2-medium. Only interface projections (`proj_in`, `proj_out`) are calibrated. NIB evaluated in GPT-2's native 50,257-token vocabulary.
 
 | Source | Target | Method | Top-5 | Top-1 | JS | Ent | Status |
 |--------|--------|--------|-------|-------|----|-----|--------|
-| T5-large (enc-dec, 32K vocab) | GPT-2-medium (dec-only, 50K vocab) | Procrustes + KD | **0.8699** | 0.9252 | 0.01787 | 0.2819 | **PASS** |
+| T5-large (enc-dec, 730M, 32K vocab) | GPT-2-medium (dec-only, 354M, 50K vocab) | Procrustes + KD | **0.8699** | 0.9252 | 0.01787 | 0.2819 | **PASS** |
 
-The source model (T5-large, 730M, SentencePiece, relative position encoding, cross-attention) and target model (GPT-2-medium, 354M, BPE, absolute position encoding, causal MHA) differ in architecture class, tokenizer family, vocabulary size, and position encoding scheme. The domain module trained on T5-large is transferred to GPT-2-medium via orthogonal Procrustes rotation on sentence-level mean-pooled ABI representations and 1200-step KD calibration. NIB is evaluated entirely in GPT-2's native 50257-token vocabulary. The domain module weights are not modified during calibration — only the projection matrices `proj_in` and `proj_out` are trained. Elapsed: 7.4 min (RTX 3080 Laptop).
+Source and target differ in: architecture class (enc-dec vs. dec-only), tokenizer family (SentencePiece vs. BPE), vocabulary size, and position encoding. The domain module weights are **not modified** during calibration.
 
-**Encoder-decoder ↔ decoder-only frozen-module migration: VALIDATED.**
+### Also Validated
 
-### Backbone-Update Invariance — Also Validated
+| Claim | Key metric | Result file |
+|-------|-----------|-------------|
+| GPT-2 → Qwen2.5 cross-family (Exp 32) | top-5 = 0.8701 | `cross_family_nib_results.json` |
+| T5-large backbone-update invariance (Exp 40) | efficacy = 304.3% | `cross_arch_t5_succession_results.json` |
+| GPT-2-medium backbone-update invariance | efficacy = 65.3% | `scale_validation_results.json` |
+| Cross-size 117M–774M all NIB PASS | top-5 = 0.862–0.870 | `cross_size_large_nib_v9_results.json` |
+| Pythia → GPT-2 cross-lineage | efficacy = 91.1% | `cross_lineage_results.json` |
 
-Exp 40 (result file: `cross_arch_t5_succession_results.json`) confirms that domain modules survive backbone fine-tuning for encoder-decoder architectures:
+---
 
-| Checkpoint | Python PPL |
-|------------|------------|
-| Raw T5 baseline | 63.73 |
-| Phase A domain (pre-update) | 29.61 |
-| Raw backbone after 1000-step WikiText fine-tune | 35.22 |
-| **Zero-shot: Phase A domain on updated backbone** | **25.61** |
-| Cold-start oracle (original backbone, fresh ABI) | 32.06 |
+## Claim Ladder
 
-Transfer efficacy = (35.22 − 25.61) / (35.22 − 32.06) = **304.3%** (threshold ≥ 50%). The zero-shot PPL is lower than the cold-start oracle because the WikiText update improved the backbone's general representations, which the pre-trained domain module can exploit even more effectively. Backbone-update invariance is now validated for both decoder-only (GPT-2-medium, 65% efficacy) and encoder-decoder (T5-large, 304% efficacy) architectures.
+```
+✅  Same-backbone ABI reconstruction (Path 2C, T5-large)
+✅  Decoder-only cross-family transfer (GPT-2 → Qwen2.5)
+✅  Encoder-decoder → decoder-only frozen-module migration (T5-large → GPT-2-medium)
+✅  Backbone-update invariance — encoder-decoder (T5-large, 304%)
+✅  Backbone-update invariance — decoder-only (GPT-2-medium, 65%)
+✅  Cross-lineage transfer (Pythia → GPT-2, 91.1%)
+✅  Cross-size NIB PASS, 117M–774M
+✅  Calibration scaling law (R² ≈ 0.97)
+⚠️  7B+ scale — not yet tested
+⚠️  Multilingual / medical / legal domains — not yet tested
+⚠️  Production deployment — research prototype only
+```
+
+---
+
+## Claim-to-File Map
+
+| Claim | Script | Result file |
+|-------|--------|-------------|
+| T5 same-backbone NIB | `cross_arch_t5_nib_v53.py` | `cross_arch_t5_nib_v53_results.json` |
+| GPT-2 → Qwen2.5 transfer | `cross_family_nib.py` | `cross_family_nib_results.json` |
+| T5 → GPT-2 migration | `cross_arch_enc_dec_nib.py` | `cross_arch_enc_dec_nib_results.json` |
+| T5 backbone-update invariance | `cross_arch_t5_succession.py` | `cross_arch_t5_succession_results.json` |
+| GPT-2 backbone-update invariance | `scale_validation_test.py` | `scale_validation_results.json` |
+| Cross-lineage Pythia → GPT-2 | `cross_lineage_transfer_test.py` | `cross_lineage_results.json` |
+| Cross-size 117M–774M | `cross_size_large_nib_v9.py` | `cross_size_large_nib_v9_results.json` |
+| Calibration scaling law | `calibration_scaling_law_b.py` | `calibration_scaling_law_b_results.json` |
 
 ---
 
@@ -173,41 +227,127 @@ EXPERIMENTS_INDEX.md                   <- map of every claim to script/result/me
 
 ---
 
+## Architecture Diagram
+
+```mermaid
+graph TD
+    A[frozen backbone hidden states h_19..h_24] --> B[per-tap LayerNorm × 6]
+    B --> C[concat → 6144-dim]
+    C --> D[proj_in: Linear 6144→4096]
+    D --> E[ABI LayerNorm]
+    E --> F[Domain module: 4096→16384→4096]
+    F --> G[alpha gate]
+    E --> G
+    G --> H[proj_out: Linear 4096→1024]
+    H --> I[residual injection into h_24]
+    I --> J[÷ √d_model]
+    J --> K[frozen lm_head → logits]
+```
+
+```mermaid
+graph LR
+    subgraph "Cross-Architecture Migration (Exp 39)"
+        T5[T5-large domain module\nfrozen weights]
+        P[orthogonal Procrustes\n2000 sentences]
+        KD[KD calibration\n1200 steps\nonly proj_in + proj_out trained]
+        GPT[GPT-2-medium\nNIB PASS\ntop-5=0.8699]
+        T5 --> P --> KD --> GPT
+    end
+```
+
+---
+
+## Reproducibility Matrix
+
+| Command | Time | GPU | Verifies |
+|---------|-----:|:---:|---------|
+| `python verify_result.py` | < 5 sec | no | Path 2C constants (25 checks) |
+| `python cross_arch_enc_dec_nib.py` | ~8 min | yes | Exp 39 enc-dec → dec-only |
+| `python cross_arch_t5_succession.py` | ~10 min | yes | Exp 40 backbone-update invariance |
+| `python run_abi.py` | ~4 hr | yes | Full T5 Path 2C reconstruction |
+
+Hardware tested: RTX 3080 Laptop (16 GB VRAM), Python 3.10, CUDA 12.x.
+
+---
+
 ## Documentation Map
 
 | Document | Audience | Contents |
 |----------|----------|----------|
-| [PROOF.md](PROOF.md) | Researchers, potential partners | Formal claim, proof structure, what was ruled out |
+| [PROOF.md](PROOF.md) | Researchers | Verified experimental proof artifact, what was ruled out |
+| [CLAIMS.md](CLAIMS.md) | Everyone | Canonical claim map — validated and not yet validated |
+| [SKEPTICS.md](SKEPTICS.md) | Skeptics | Direct answers to the hard questions |
 | [ABI_ARCHITECTURE.md](ABI_ARCHITECTURE.md) | Engineers | NIB math, model code, training theory, corrMSE floor |
-| [ABI_EXPERIMENTS.md](ABI_EXPERIMENTS.md) | Engineers | All 8 experiments with results and conclusions |
+| [ABI_EXPERIMENTS.md](ABI_EXPERIMENTS.md) | Engineers | Full experimental ledger (45AN–45AZ and cross-arch) |
 | [ABI_REPRODUCE.md](ABI_REPRODUCE.md) | Anyone | Exact commands and expected output at every stage |
 | [ABI_START_HERE.md](ABI_START_HERE.md) | New developers | 10-step onboarding from zero |
+| [EXPERIMENTS_INDEX.md](EXPERIMENTS_INDEX.md) | Everyone | Map of every claim to script / result JSON / metric |
+| [FAQ.md](FAQ.md) | Everyone | Common questions answered directly |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Contributors | What we want, what we don't, PR requirements |
+| [ROADMAP.md](ROADMAP.md) | Everyone | v0.1 → v0.5 plan |
 
 ---
 
 ## Requirements
 
 ```
-torch>=2.1  (with CUDA)
+torch>=2.1  (with CUDA for training; CPU ok for verify_result.py)
 transformers>=4.38
 sentencepiece>=0.1.99
 numpy
 tqdm
 ```
 
-GPU with >= 10 GB VRAM required for training. `verify_result.py` runs on CPU only.
+Or install as a package:
+
+```bash
+pip install -e .
+```
+
+GPU with ≥ 10 GB VRAM required for training. `verify_result.py` runs on CPU only.
 
 ---
 
 ## What This Means
 
-The standard approach to knowledge transfer in AI is fine-tuning: update a pretrained model's weights on new data. ABI demonstrates a different regime: **the backbone's weights need never change**. Two models can agree on domain-specific predictions while maintaining completely independent learned representations -- connected only through a correction to the shared residual stream.
+The standard approach to domain adaptation is fine-tuning: update a pretrained model's weights on new data. ABI demonstrates a different regime: **the backbone's weights need never change**. Two models can agree on domain-specific predictions while maintaining completely independent learned representations — connected only through a correction to the shared residual stream.
 
-This has direct implications for:
+```
+Standard fine-tuning:  domain A weights → baked into backbone → hard to remove
+ABI:                   domain A module  → frozen, portable   → hot-swap at zero cost
+```
 
-- **Multi-tenant deployment**: one frozen backbone, many independent ABI modules, each domain-specialized, hot-swappable at zero cost.
-- **Continual learning**: domain knowledge can be injected and revoked without touching the core model.
-- **Federated settings**: independent agents can align their domain representations without sharing raw data or model weights.
-- **Auditable AI**: because the backbone is frozen, any behavioral change is fully attributable to the ABI module. The boundary of responsibility is exact.
+Implications:
+- **Multi-tenant deployment**: one frozen backbone, many independent ABI modules, hot-swappable
+- **Continual learning**: inject and revoke domain knowledge without touching the core model
+- **Federated settings**: agents align domain representations without sharing raw data or weights
+- **Auditable AI**: behavioral changes are fully attributable to the ABI module — not the backbone
 
-The corrMSE calibration objective requires no labeled data, no teacher network at inference time, and no vocabulary-level supervision. The data pipeline is entirely self-contained.
+---
+
+## Citation
+
+```bibtex
+@software{yoder2026abi,
+  author  = {Yoder, Sam},
+  title   = {Autonomous Basis Injection: Frozen-Module Domain Transfer Across LLM Architectures},
+  year    = {2026},
+  url     = {https://github.com/Yoder23/abi},
+  version = {0.1.0}
+}
+```
+
+If citing a specific result:
+- **Path 2C (T5 same-backbone)**: cite `cross_arch_t5_nib_v53_results.json`, experiment 45AS
+- **Exp 39 (enc-dec → dec-only migration)**: cite `cross_arch_enc_dec_nib_results.json`
+- **Exp 40 (backbone-update invariance)**: cite `cross_arch_t5_succession_results.json`
+
+---
+
+## License
+
+Apache 2.0 — see [LICENSE](LICENSE).
+
+---
+
+*Research preview. Verified experimental results. Honest boundaries. Reproducible.*

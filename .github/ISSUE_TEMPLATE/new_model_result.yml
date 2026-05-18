@@ -1,0 +1,102 @@
+name: New Model / Domain Result
+description: Submit an ABI result on a new model, architecture, or domain
+labels: ["new-result"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to submit a new ABI result — a new model pair, a new domain, or a new scale.
+        Reproducible results will be considered for inclusion in the claims ledger.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What did you test?
+      placeholder: "e.g., ABI transfer from Mistral-7B to LLaMA-2-7B on medical domain"
+    validations:
+      required: true
+
+  - type: input
+    id: source_model
+    attributes:
+      label: Source model (name + size)
+      placeholder: "e.g., Mistral-7B"
+    validations:
+      required: true
+
+  - type: input
+    id: target_model
+    attributes:
+      label: Target model (name + size)
+      placeholder: "e.g., LLaMA-2-7B"
+    validations:
+      required: true
+
+  - type: input
+    id: domain
+    attributes:
+      label: Domain / dataset
+      placeholder: "e.g., PubMed abstracts"
+    validations:
+      required: true
+
+  - type: input
+    id: top5
+    attributes:
+      label: Top-5 token agreement
+      placeholder: "e.g., 0.871"
+    validations:
+      required: true
+
+  - type: input
+    id: top1
+    attributes:
+      label: Top-1 token agreement
+    validations:
+      required: true
+
+  - type: input
+    id: js
+    attributes:
+      label: Jensen-Shannon divergence
+    validations:
+      required: true
+
+  - type: input
+    id: ent
+    attributes:
+      label: Entropy difference
+    validations:
+      required: true
+
+  - type: dropdown
+    id: nib_pass
+    attributes:
+      label: NIB result
+      options:
+        - PASS (all four criteria at standard thresholds)
+        - PASS (modified thresholds — explain in notes)
+        - FAIL
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How to reproduce
+      placeholder: |
+        Exact commands to reproduce this result. Include any modifications to the standard scripts.
+    validations:
+      required: true
+
+  - type: textarea
+    id: hardware
+    attributes:
+      label: Hardware and software environment
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes

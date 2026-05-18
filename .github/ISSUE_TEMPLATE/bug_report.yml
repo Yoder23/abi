@@ -1,0 +1,51 @@
+name: Bug Report
+description: Report a bug in a script, unexpected output, or a crash
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: affected
+    attributes:
+      label: Which file or script is affected?
+      options:
+        - verify_result.py
+        - run_abi.py
+        - reproduce_abi.py
+        - cross_arch_t5_nib_v53.py
+        - cross_family_nib.py
+        - cross_arch_enc_dec_nib.py
+        - cross_arch_t5_succession.py
+        - abi/ package (models.py, training.py, evaluation.py)
+        - Other (specify below)
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      placeholder: "Describe the bug. Include error messages."
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Exact command to reproduce
+      placeholder: "e.g., python verify_result.py"
+    validations:
+      required: true
+
+  - type: textarea
+    id: env
+    attributes:
+      label: Environment
+      placeholder: "Python version, PyTorch version, CUDA version, OS"
+    validations:
+      required: true

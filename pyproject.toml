@@ -1,0 +1,60 @@
+[project]
+name = "abi-layercake"
+version = "0.1.0"
+description = "Autonomous Basis Injection for frozen-module domain transfer across LLM architectures"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [
+  { name = "Sam Yoder" }
+]
+keywords = [
+  "large-language-models",
+  "domain-adaptation",
+  "knowledge-transfer",
+  "frozen-modules",
+  "transformers",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "torch>=2.1",
+  "transformers>=4.38",
+  "sentencepiece>=0.1.99",
+  "numpy",
+  "tqdm",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7",
+  "ruff",
+]
+
+[project.urls]
+Repository = "https://github.com/Yoder23/abi"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.backends.legacy:build"
+
+[tool.setuptools.packages.find]
+include = ["abi*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

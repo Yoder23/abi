@@ -1,0 +1,82 @@
+name: Reproduction Report
+description: Report your results reproducing an ABI experiment
+labels: ["reproduction-report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for running an ABI experiment. Fill in the fields below.
+        Every reproduction report helps validate the results across hardware and environments.
+
+  - type: dropdown
+    id: experiment
+    attributes:
+      label: Which experiment did you run?
+      options:
+        - verify_result.py (Path 2C standalone verifier)
+        - cross_arch_t5_nib_v53.py (Claim 1: T5 same-backbone)
+        - cross_family_nib.py (Claim 2: GPT-2 → Qwen2.5)
+        - cross_arch_enc_dec_nib.py (Claim 3: T5-large → GPT-2-medium)
+        - cross_arch_t5_succession.py (Claim 4: T5 backbone-update invariance)
+        - scale_validation_test.py (Claim 5: GPT-2 backbone-update)
+        - run_abi.py (full T5 Path 2C training)
+        - Other (specify below)
+    validations:
+      required: true
+
+  - type: input
+    id: top5
+    attributes:
+      label: Top-5 token agreement (if applicable)
+      placeholder: "e.g., 0.8725"
+
+  - type: input
+    id: top1
+    attributes:
+      label: Top-1 token agreement (if applicable)
+      placeholder: "e.g., 0.8508"
+
+  - type: input
+    id: js
+    attributes:
+      label: Jensen-Shannon divergence (if applicable)
+      placeholder: "e.g., 0.01391"
+
+  - type: input
+    id: ent
+    attributes:
+      label: Entropy difference (if applicable)
+      placeholder: "e.g., 0.2256"
+
+  - type: dropdown
+    id: nib_pass
+    attributes:
+      label: NIB result
+      options:
+        - PASS (all four criteria)
+        - FAIL (one or more criteria)
+        - N/A (verify_result.py only)
+    validations:
+      required: true
+
+  - type: textarea
+    id: hardware
+    attributes:
+      label: Hardware
+      placeholder: "e.g., RTX 4090 24GB, 64GB RAM"
+    validations:
+      required: true
+
+  - type: textarea
+    id: env
+    attributes:
+      label: Software environment
+      placeholder: "e.g., Python 3.11, PyTorch 2.2, CUDA 12.2, Ubuntu 22.04"
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Any differences from the published result or notes
+      placeholder: "e.g., matched published result exactly / seed variance observed / different PPL"
