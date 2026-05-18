@@ -1,0 +1,133 @@
+{
+  "experiment": "45AS",
+  "model": "t5-large",
+  "protocol": "6tap_perTapLN_D4096_corrMSE_extP4",
+  "tap_layers": [
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+  ],
+  "n_taps": 6,
+  "d_abi": 4096,
+  "d_in": 6144,
+  "per_tap_ln": true,
+  "p4_steps": 6000,
+  "total_cal_steps": 16000,
+  "seed_a": 42,
+  "seed_c": 99,
+  "best_corrMSE": 0.0030467431654687973,
+  "best_step": 15466,
+  "delta_corrMSE_vs_45AQ": -0.000148,
+  "pred_top5_rate": 0.8596,
+  "phase_corrMSE_floors": {
+    "P1": 0.004552679190237541,
+    "P2": 0.0036789522241451778,
+    "P3": 0.00346607305604266,
+    "P4": 0.0034427967635565437
+  },
+  "nib_official": {
+    "rng_seed": 7777,
+    "n_chunks": 5,
+    "mean_js": 0.01391,
+    "mean_top1": 0.8508,
+    "mean_top5": 0.8725,
+    "mean_ent": 0.2256,
+    "pass": true
+  },
+  "nib_extended": {
+    "1111": {
+      "mean_js": 0.02763,
+      "mean_top1": 0.8339,
+      "mean_top5": 0.8353,
+      "mean_ent": 0.4422,
+      "pass": false
+    },
+    "2222": {
+      "mean_js": 0.01842,
+      "mean_top1": 0.8475,
+      "mean_top5": 0.8475,
+      "mean_ent": 0.2677,
+      "pass": false
+    },
+    "3333": {
+      "mean_js": 0.01679,
+      "mean_top1": 0.8508,
+      "mean_top5": 0.8542,
+      "mean_ent": 0.2381,
+      "pass": false
+    },
+    "4444": {
+      "mean_js": 0.01387,
+      "mean_top1": 0.8542,
+      "mean_top5": 0.8651,
+      "mean_ent": 0.2054,
+      "pass": true
+    }
+  },
+  "nib_combined": {
+    "n_positions": 25,
+    "mean_top5": 0.8549,
+    "std_top5": 0.0316,
+    "se_top5": 0.0063,
+    "ci_95_low": 0.8425,
+    "ci_95_high": 0.8673,
+    "ci_margin_vs_0860": -0.0175,
+    "per_rng_mean_top5": {
+      "7777": 0.8725,
+      "1111": 0.8353,
+      "2222": 0.8475,
+      "3333": 0.8542,
+      "4444": 0.8651
+    }
+  },
+  "architecture_confirmed": false,
+  "delta_top5_official_vs_45AP": 0.0122,
+  "elapsed_min": 237.4,
+  "reference": {
+    "45AP_D2048_seed99_official": {
+      "top5_official": 0.8603,
+      "corrMSE": 0.003203,
+      "per_tap_ln": false
+    },
+    "45AQ_D2048_seed456_extended": {
+      "top5_extended_mean": 0.8464,
+      "ci_95": [
+        0.833,
+        0.859
+      ],
+      "corrMSE": 0.003195,
+      "per_tap_ln": false
+    }
+  },
+  "registry": {
+    "experiment": "45AS",
+    "hypothesis": "per_tap_LN_D4096_corrMSE_extended_P4",
+    "tap_layers": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "js_threshold": 0.1,
+    "top1_threshold": 0.68,
+    "top5_threshold": 0.86,
+    "entropy_diff_threshold": 0.35,
+    "n_logit_chunks": 5,
+    "loss_type": "corrMSE",
+    "d_abi": 4096,
+    "n_taps": 6,
+    "phase1_steps": 4000,
+    "phase1_lr": 0.005,
+    "phase2_steps": 3000,
+    "phase2_lr": 0.0005,
+    "phase3_steps": 3000,
+    "phase3_lr": 5e-05,
+    "phase4_steps": 2000,
+    "phase4_lr": 5e-06
+  }
+}

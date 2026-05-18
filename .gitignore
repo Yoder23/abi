@@ -20,19 +20,6 @@ __pycache__/
 nib_run*.log
 nib_run*.err
 
-# ─── Intermediate / versioned experiment scripts ─────────────────────────────
-cross_arch_t5_nib_v[0-9]*.py
-cross_arch_t5_nib_v[0-9]*_log.txt
-cross_arch_t5_nib_v[0-9]*_results.json
-cross_arch_path3a_*.py
-cross_arch_path3a_*.json
-cross_arch_path3a_*.pt
-cross_arch_path3a_*.txt
-cross_arch_qwen2_v*.py
-cross_arch_nib_v[0-9]*.py
-cross_size_large_nib_v[0-9]*.py
-cross_size_nib_v[0-9]*.py
-
 # ─── Temporary / scratch ─────────────────────────────────────────────────────
 _c4_shards_tmp/
 tmp_*/
