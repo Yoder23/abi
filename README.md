@@ -11,6 +11,8 @@
 
 Frozen ABI domain modules migrate across tested LLM architecture boundaries with NIB-verified behavioral equivalence, while keeping backbones entirely frozen and calibrating only interface projections. Validated across decoder-only and encoder-decoder architectures, 4 model families, 117M–774M parameter scale, with domain modules surviving backbone updates at 65–304% transfer efficacy.
 
+> **Building a new model family from scratch?** See the companion [LayerCake repository](https://github.com/Yoder23/layercake) — a native modular architecture where domain modules paste bit-exactly by design, no alignment needed. ABI is for post-hoc alignment of existing or cross-architecture models. LayerCake is the clean-design starting point.
+
 ---
 
 ## Start Here
