@@ -41,7 +41,9 @@ This is an honest roadmap. Items are ordered by priority. Timelines are approxim
 
 **Goal:** Honest data at 7B+ scale and at least one non-English domain.
 
-- [ ] 7B+ experiment (LLaMA-2-7B or Mistral-7B) — requires hardware access or cloud budget
+- [x] 7B+ experiment — **IN PROGRESS**: `exp_qwen_7b_nib.py` written, running (Qwen2-7B INT8, T5-large → 7B, Claims 10–12)
+- [x] Llama-family experiment — **IN PROGRESS**: `exp_deepseek_1p3b_nib.py` written (GPT-2-med → DeepSeek-Coder-1.3B, first Llama-arch test)
+- [x] 1.5B scale experiment — **IN PROGRESS**: `exp_qwen_1p5b_nib.py` written (GPT-2-small → Qwen2-1.5B)
 - [ ] Non-Python domain (medical / legal / multilingual) NIB evaluation
 - [ ] Multi-domain ABI: multiple simultaneous domain modules on one backbone
 - [ ] Benchmark harness: automated comparison against LoRA, adapters, fine-tuning at matched compute

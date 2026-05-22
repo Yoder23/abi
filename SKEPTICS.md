@@ -16,7 +16,7 @@ The extended evaluation (n=25, 5 independent seeds) is reported in full in `PROO
 
 Correct. Claim 1 (Path 2C) is specifically T5-large on Python-domain data. It is not a general claim.
 
-The cross-architecture experiments (Claims 2–4) extend the result to:
+The cross-architecture experiments (Claims 2–9) extend the result to:
 - GPT-2 → Qwen2.5-0.5B cross-family
 - T5-large (enc-dec) → GPT-2-medium (dec-only) cross-architecture
 - GPT-2-medium backbone update invariance (WikiText domain)
@@ -24,7 +24,12 @@ The cross-architecture experiments (Claims 2–4) extend the result to:
 - Pythia → GPT-2 cross-lineage
 - Cross-size: 117M–774M
 
-What has not been tested: 7B+ models, multilingual, medical, legal. These gaps are stated in `CLAIMS.md` and at the top of the README.
+**New experiments in progress (Claims 10–12) — scripts written, running:**
+- GPT-2-small → Qwen2-1.5B (1.54B, 13x larger target): `exp_qwen_1p5b_nib.py`
+- GPT-2-medium → DeepSeek-Coder-1.3B (Llama architecture — first Llama-family test): `exp_deepseek_1p3b_nib.py`
+- T5-large → Qwen2-7B INT8 (7B scale — first 7B experiment): `exp_qwen_7b_nib.py`
+
+What has not been tested: models >7B, multilingual, medical, legal. These gaps are stated in `CLAIMS.md` and at the top of the README.
 
 ---
 

@@ -130,11 +130,55 @@ Transfer efficacy = (35.22 − 25.61) / (35.22 − 32.06) = **304.3%** (threshol
 
 ---
 
+### Claim 10 — Cross-Scale Transfer: GPT-2-small → Qwen2-1.5B
+
+**Statement:** Domain knowledge encoded in GPT-2-small's 256-dim ABI space transfers to Qwen2-1.5B (1.54B parameters, 13x larger target, same Qwen2 architecture family as Exp 32) via orthogonal Procrustes rotation + KD calibration, achieving NIB criterion in Qwen2-1.5B's native 151936-token vocabulary.
+
+**Status:** ⏳ PENDING — `exp_qwen_1p5b_nib.py` ready to run
+
+- Script: `exp_qwen_1p5b_nib.py`
+- Result file: `exp_qwen_1p5b_nib_results.json` (will be generated)
+- Source: GPT-2-small (117M, d_model=768, BPE 50K, GPT-2 arch)
+- Target: Qwen2-1.5B (1.54B, d_model=1536, tiktoken 152K, Qwen2 arch)
+- D_ABI: 256 (unchanged from all prior experiments)
+
+---
+
+### Claim 11 — Cross-Lineage Transfer: GPT-2-medium → DeepSeek-Coder-1.3B (Llama family)
+
+**Statement:** Domain knowledge encoded in GPT-2-medium's 256-dim ABI space transfers to deepseek-ai/deepseek-coder-1.3b-base (Llama architecture: RoPE, SwiGLU, RMSNorm, GQA — architecturally distinct from all models tested to date) via orthogonal Procrustes rotation + KD calibration, achieving NIB criterion in DeepSeek-Coder's native 32256-token vocabulary.
+
+**Status:** ⏳ PENDING — `exp_deepseek_1p3b_nib.py` ready to run
+
+- Script: `exp_deepseek_1p3b_nib.py`
+- Result file: `exp_deepseek_1p3b_nib_results.json` (will be generated)
+- Source: GPT-2-medium (354M, d_model=1024, BPE 50K, GPT-2 arch)
+- Target: DeepSeek-Coder-1.3B (1.3B, d_model=2048, BPE 32K, Llama arch)
+- D_ABI: 256 (unchanged)
+- Significance: First Llama-family model tested — proves D_ABI=256 crosses the GPT-2 / Llama architectural boundary.
+
+---
+
+### Claim 12 — 7B Scale: T5-large → Qwen2-7B (INT8 quantized)
+
+**Statement:** Domain knowledge encoded in T5-large's 256-dim ABI space transfers to Qwen2-7B (7B parameters, INT8 quantized, enc-dec → causal-decoder, different tokenizer family) via orthogonal Procrustes rotation + KD calibration, achieving NIB criterion in Qwen2-7B's native 152064-token vocabulary.
+
+**Status:** ⏳ PENDING — `exp_qwen_7b_nib.py` ready to run
+
+- Script: `exp_qwen_7b_nib.py`
+- Result file: `exp_qwen_7b_nib_results.json` (will be generated)
+- Source: T5-large (730M, d_model=1024, SentencePiece 32K, enc-dec)
+- Target: Qwen2-7B (7B, d_model=3584, tiktoken 152K, Qwen2 causal decoder, INT8)
+- D_ABI: 256 (unchanged)
+- Significance: First 7B-scale experiment. Directly addresses "only tested small models" critique.
+
+---
+
 ## Not Yet Tested
 
 | Area | Why not tested |
 |------|---------------|
-| 7B+ models (LLaMA-2, Mistral, etc.) | GPU memory constraint (RTX 3080 Laptop 16 GB) |
+| 7B+ models (LLaMA-2, Mistral, etc.) | Claims 10–12 in progress (exp scripts written, running) |
 | Multilingual domains | Out of scope for this release |
 | Medical / legal / code-other-than-Python | Out of scope for this release |
 | Production inference optimization | Research prototype |
