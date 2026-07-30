@@ -8,6 +8,7 @@ from abi.layercake_acquisition import (
     select_minimum_passing_budget,
     validate_labeled_extraction_record,
 )
+from abi.layercake_full_core_acquisition import _DeterministicRowSampler
 
 
 ABI_SHA = "d024de52144a2d797d0501acb7deb55575ffca7e33f72900beff599cf0a97761"
@@ -53,6 +54,29 @@ def _ledger(records):
         active_parameter_seconds=1234,
         external_hardware_used=False,
         external_hardware_description="",
+    )
+
+
+def test_balanced_sampler_equalizes_capabilities_without_adding_records():
+    rows = [
+        {"record_id": f"a-{index}", "capability": "a"}
+        for index in range(10)
+    ] + [{"record_id": "b-0", "capability": "b"}]
+    sampler = _DeterministicRowSampler(
+        rows,
+        seed=17,
+        strategy="balanced_capabilities",
+    )
+    selected = sampler.batch(20)
+    counts = {
+        capability: sum(
+            row["capability"] == capability for row in selected
+        )
+        for capability in ("a", "b")
+    }
+    assert counts == {"a": 10, "b": 10}
+    assert {row["record_id"] for row in selected}.issubset(
+        {row["record_id"] for row in rows}
     )
 
 

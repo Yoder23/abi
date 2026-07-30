@@ -23,10 +23,14 @@ from .layercake_host_v3 import load_host_model
 from .layercake_core_loader import load_layercake_core
 
 
-EVIDENCE_FORMAT = "abi-layercake-english-generalization-evidence/2"
+EVIDENCE_FORMAT = "abi-layercake-english-generalization-evidence/3"
 
 
-def _collapse_metrics(token_ids: Sequence[int], output: str) -> dict[str, Any]:
+def _collapse_metrics(
+    token_ids: Sequence[int],
+    output: str,
+    prompt_token_ids: Sequence[int] = (),
+) -> dict[str, Any]:
     repeated_runs = 0
     previous: int | None = None
     run = 0
@@ -44,8 +48,23 @@ def _collapse_metrics(token_ids: Sequence[int], output: str) -> dict[str, Any]:
         tuple(token_ids[index : index + 4])
         for index in range(max(0, len(token_ids) - 3))
     ]
+    prompt_fourgrams = {
+        tuple(prompt_token_ids[index : index + 4])
+        for index in range(max(0, len(prompt_token_ids) - 3))
+    }
+    fourgram_counts = Counter(fourgrams)
+    repeated_fourgrams_total = sum(
+        count - 1 for count in fourgram_counts.values() if count > 1
+    )
+    repeated_prompt_fourgrams = sum(
+        count - 1
+        for value, count in fourgram_counts.items()
+        if count > 1 and value in prompt_fourgrams
+    )
     repeated_fourgrams = sum(
-        count - 1 for count in Counter(fourgrams).values() if count > 1
+        count - 1
+        for value, count in fourgram_counts.items()
+        if count > 1 and value not in prompt_fourgrams
     )
     unique_ratio = len(set(token_ids)) / max(1, len(token_ids))
     collapsed = (
@@ -58,6 +77,10 @@ def _collapse_metrics(token_ids: Sequence[int], output: str) -> dict[str, Any]:
         "empty_output": not output.strip(),
         "maximum_identical_token_run": maximum_run,
         "repeated_fourgram_occurrences": repeated_fourgrams,
+        "repeated_fourgram_occurrences_total": repeated_fourgrams_total,
+        "repeated_prompt_copied_fourgram_occurrences": (
+            repeated_prompt_fourgrams
+        ),
         "unique_token_ratio": unique_ratio,
         "collapse_detected": collapsed,
         "repeated_run_events": repeated_runs,
@@ -201,7 +224,11 @@ def evaluate_generalization(
             ),
             "model_generation_seconds": model_seconds,
             "observation_seconds": time.perf_counter() - generated_started,
-            "collapse": _collapse_metrics(token_ids, output),
+            "collapse": _collapse_metrics(
+                token_ids,
+                output,
+                tokenizer.encode(str(probe["prompt"]) + "\n"),
+            ),
         }
         if source_row is not None:
             observation["source"] = source_row

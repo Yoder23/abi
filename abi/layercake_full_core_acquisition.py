@@ -9,6 +9,7 @@ fixed.  No foreign-teacher parameter is copied or retained.
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 from contextlib import nullcontext
 import copy
 import hashlib
@@ -44,6 +45,74 @@ class FullCoreAcquisitionError(RuntimeError):
     """Raised when the bounded full-core acquisition contract is violated."""
 
 
+class _DeterministicRowSampler:
+    """Draw records uniformly or give every declared capability equal weight."""
+
+    def __init__(
+        self,
+        rows: Sequence[Mapping[str, Any]],
+        *,
+        seed: int,
+        strategy: str,
+    ) -> None:
+        if strategy not in {"uniform_records", "balanced_capabilities"}:
+            raise FullCoreAcquisitionError("unknown sampling strategy")
+        if not rows:
+            raise FullCoreAcquisitionError("cannot sample an empty corpus")
+        self.rows = rows
+        self.rng = random.Random(seed)
+        self.strategy = strategy
+        self.order = list(range(len(rows)))
+        self.cursor = len(self.order)
+        self.by_capability: dict[str, list[int]] = {}
+        self.capability_cursors: dict[str, int] = {}
+        for index, row in enumerate(rows):
+            self.by_capability.setdefault(
+                str(row["capability"]), []
+            ).append(index)
+        self.capability_order = sorted(self.by_capability)
+        self.capability_cursor = len(self.capability_order)
+        for capability, indices in self.by_capability.items():
+            self.capability_cursors[capability] = len(indices)
+
+    def _next_uniform(self) -> int:
+        if self.cursor >= len(self.order):
+            self.rng.shuffle(self.order)
+            self.cursor = 0
+        index = self.order[self.cursor]
+        self.cursor += 1
+        return index
+
+    def _next_capability(self) -> str:
+        if self.capability_cursor >= len(self.capability_order):
+            self.rng.shuffle(self.capability_order)
+            self.capability_cursor = 0
+        capability = self.capability_order[self.capability_cursor]
+        self.capability_cursor += 1
+        return capability
+
+    def _next_balanced(self) -> int:
+        capability = self._next_capability()
+        indices = self.by_capability[capability]
+        cursor = self.capability_cursors[capability]
+        if cursor >= len(indices):
+            self.rng.shuffle(indices)
+            cursor = 0
+        index = indices[cursor]
+        self.capability_cursors[capability] = cursor + 1
+        return index
+
+    def batch(self, size: int) -> list[Mapping[str, Any]]:
+        if size <= 0:
+            raise FullCoreAcquisitionError("sample size must be positive")
+        selector = (
+            self._next_balanced
+            if self.strategy == "balanced_capabilities"
+            else self._next_uniform
+        )
+        return [self.rows[selector()] for _ in range(size)]
+
+
 def _manifest_sha(value: Mapping[str, Any]) -> str:
     payload = dict(value)
     payload.pop("manifest_sha256", None)
@@ -76,6 +145,7 @@ def train_full_core(
     recovery_start_step: int = 400,
     recovery_interval: int = 8,
     recovery_horizons: Sequence[int] = (8, 16, 32),
+    sampling_strategy: str = "uniform_records",
     device_name: str = "cuda",
 ) -> dict[str, Any]:
     if min(steps, batch_size, max_tokens) <= 0:
@@ -91,6 +161,11 @@ def train_full_core(
         or any(int(horizon) <= 0 for horizon in recovery_horizons)
     ):
         raise FullCoreAcquisitionError("recovery horizons must be positive")
+    if sampling_strategy not in {
+        "uniform_records",
+        "balanced_capabilities",
+    }:
+        raise FullCoreAcquisitionError("unknown sampling strategy")
 
     bundle_path = Path(bundle_path).resolve()
     layercake_root = Path(layercake_root).resolve()
@@ -191,10 +266,13 @@ def train_full_core(
         else (lambda: nullcontext())
     )
 
-    rng = random.Random(seed)
-    order = list(range(len(rows)))
-    cursor = len(order)
+    sampler = _DeterministicRowSampler(
+        rows,
+        seed=seed,
+        strategy=sampling_strategy,
+    )
     unique_seen: set[str] = set()
+    sampled_records_by_capability: Counter[str] = Counter()
     supervised_tokens_seen = 0
     raw_utf8_bytes_seen = 0
     autonomous_prefix_tokens_seen = 0
@@ -215,14 +293,10 @@ def train_full_core(
         attempted_batches += 1
         if attempted_batches > steps + 1000:
             raise FullCoreAcquisitionError("too many non-finite optimizer attempts")
-        if cursor + batch_size > len(order):
-            rng.shuffle(order)
-            cursor = 0
-        selected = [
-            rows[index]
-            for index in order[cursor : cursor + batch_size]
-        ]
-        cursor += batch_size
+        selected = sampler.batch(batch_size)
+        sampled_records_by_capability.update(
+            str(row["capability"]) for row in selected
+        )
         generated_prefixes = None
         if (
             recovery_interval > 0
@@ -415,6 +489,10 @@ def train_full_core(
             "skipped_amp_optimizer_steps": skipped_amp_steps,
             "attempted_batches": attempted_batches,
             "batch_size": batch_size,
+            "sampling_strategy": sampling_strategy,
+            "sampled_records_by_capability": dict(
+                sorted(sampled_records_by_capability.items())
+            ),
             "shared_learning_rate": shared_learning_rate,
             "cake_learning_rate": cake_learning_rate,
             "classifier_loss_weight": classifier_loss_weight,
@@ -476,6 +554,11 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument("--recovery-start-step", type=int, default=400)
     parser.add_argument("--recovery-interval", type=int, default=8)
     parser.add_argument("--recovery-horizons", default="8,16,32")
+    parser.add_argument(
+        "--sampling-strategy",
+        choices=("uniform_records", "balanced_capabilities"),
+        default="uniform_records",
+    )
     parser.add_argument("--device", choices=("cpu", "cuda"), default="cuda")
     args = parser.parse_args(argv)
     manifest = train_full_core(
@@ -500,6 +583,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             for value in args.recovery_horizons.split(",")
             if value.strip()
         ),
+        sampling_strategy=args.sampling_strategy,
         device_name=args.device,
     )
     print(

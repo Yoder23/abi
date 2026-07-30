@@ -130,3 +130,12 @@ def test_collapse_metrics_detect_repetition_without_flagging_normal_text() -> No
     assert _collapse_metrics(
         list(range(24)), "A varied and complete response."
     )["collapse_detected"] is False
+    copied = [1, 2, 3, 4, 1, 2, 3, 4, 9]
+    copied_metrics = _collapse_metrics(
+        copied,
+        "A response that repeats one required supplied identifier.",
+        [8, 1, 2, 3, 4, 7],
+    )
+    assert copied_metrics["repeated_fourgram_occurrences_total"] == 1
+    assert copied_metrics["repeated_fourgram_occurrences"] == 0
+    assert copied_metrics["collapse_detected"] is False
