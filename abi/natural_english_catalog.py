@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
+import re
 from typing import Any, Callable
 
 from .capability_segregation import LINGUISTIC_FORM, SEGREGATED_RECORD_SCHEMA
@@ -484,6 +485,57 @@ COVERAGE_V4_COACHING = {
     ),
 }
 
+COVERAGE_V5_FAMILIES = {
+    "instruction_following": {0, 1},
+    "email_drafting": {1},
+    "cake_output_realization": {3},
+}
+
+
+def _coverage_v5_prompt(probe: dict[str, Any], family: int) -> str:
+    capability = str(probe["capability"])
+    if capability == "instruction_following":
+        if family == 0:
+            answer = str(probe["evaluator"]["value"])
+        else:
+            match = re.search(
+                r"(left=[^\r\n]+\r?\nright=[^\r\n.]+)",
+                str(probe["prompt"]),
+            )
+            if match is None:
+                raise RuntimeError("cannot recover two-line exact answer")
+            answer = match.group(1)
+        return (
+            "The text between <answer> and </answer> is the complete answer. "
+            "Return that text exactly, preserving every key, equals sign, and "
+            "line break. Do not return the tags or any other text.\n"
+            f"<answer>{answer}</answer>"
+        )
+    if capability == "cake_output_realization":
+        match = re.search(
+            r"object=([^;]+); action=arrived; location=([^;]+); count=(\d+)",
+            str(probe["prompt"]),
+        )
+        if match is None:
+            raise RuntimeError("cannot recover realization fields")
+        object_name, location, count = match.groups()
+        return (
+            "Write one grammatical English sentence saying that the supplied "
+            "count of objects arrived at the supplied location. The response "
+            f"must contain the exact strings `{count}`, `{object_name}`, "
+            f"`arrived`, and `{location}`. Use the digit `{count}` rather than "
+            "spelling the number as a word. Add no other facts."
+        )
+    if capability == "email_drafting":
+        return (
+            "The following email task contains an identifier and a time. The "
+            "email body must copy both of them literally, name the recipient, "
+            "ask for confirmation, and include a greeting and closing. Keep "
+            "the entire email under 80 words.\n"
+            + str(probe["prompt"])
+        )
+    raise RuntimeError("unexpected coverage-v5 capability")
+
 
 def _v2_probe(probe: dict[str, Any]) -> dict[str, Any]:
     """Repair source-eligibility defects measured on the v6 extraction."""
@@ -557,6 +609,57 @@ def _v3_probe(probe: dict[str, Any]) -> dict[str, Any]:
 
 
 def build_catalog(catalog_version: str = "v1") -> dict[str, Any]:
+    if catalog_version == "coverage-v5":
+        base = build_catalog("v2-v3")
+        probes = []
+        for probe in base["probes"]:
+            if probe["split"] != "search":
+                continue
+            capability = str(probe["capability"])
+            if capability not in COVERAGE_V5_FAMILIES:
+                continue
+            local_index = int(
+                str(probe["probe_id"]).rsplit("-", 2)[-2]
+            )
+            family = local_index % 4
+            if family not in COVERAGE_V5_FAMILIES[capability]:
+                continue
+            updated = dict(probe)
+            updated["probe_id"] = (
+                str(updated["probe_id"]).rsplit("-", 1)[0]
+                + "-coverage-v5"
+            )
+            updated["seed"] = int(updated["seed"]) + 5_000_000
+            updated["prompt"] = _coverage_v5_prompt(updated, family)
+            updated["label_evidence_sha256"] = (
+                probe_label_evidence_sha256(updated)
+            )
+            probes.append(updated)
+        return {
+            "schema_version": PROBE_CATALOG_SCHEMA,
+            "catalog_id": "abi-natural-english-coverage-repair-v5",
+            "status": "PREREGISTERED_FAILED_V4_FAMILY_REPAIR",
+            "claim_boundary": (
+                "This search-only catalog repairs only the four source "
+                "families that failed the preregistered v4 family gate. It "
+                "changes no evaluator and imports no validation or final data."
+            ),
+            "generation": {
+                "generator": "abi.natural_english_catalog",
+                "base_catalog": (
+                    "abi-natural-english-acquisition-v2-v3"
+                ),
+                "selected_capability_families": {
+                    key: sorted(value)
+                    for key, value in COVERAGE_V5_FAMILIES.items()
+                },
+                "search_only": True,
+                "probe_count": len(probes),
+                "new_evaluators": 0,
+                "validation_or_final_probes": 0,
+            },
+            "probes": probes,
+        }
     if catalog_version == "coverage-v4":
         base = build_catalog("v2-v3")
         probes = []
@@ -614,7 +717,8 @@ def build_catalog(catalog_version: str = "v1") -> dict[str, Any]:
         }
     if catalog_version not in {"v1", "v2", "v3", "v2-v3"}:
         raise ValueError(
-            "catalog_version must be v1, v2, v3, v2-v3, or coverage-v4"
+            "catalog_version must be v1, v2, v3, v2-v3, coverage-v4, or "
+            "coverage-v5"
         )
     probes: list[dict[str, Any]] = []
     for split_index, split in enumerate(SPLITS):
@@ -739,7 +843,14 @@ def main() -> int:
     parser.add_argument("--output", required=True)
     parser.add_argument(
         "--version",
-        choices=("v1", "v2", "v3", "v2-v3", "coverage-v4"),
+        choices=(
+            "v1",
+            "v2",
+            "v3",
+            "v2-v3",
+            "coverage-v4",
+            "coverage-v5",
+        ),
         default="v1",
     )
     args = parser.parse_args()
