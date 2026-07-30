@@ -17,10 +17,10 @@ from .layercake_host import (
     CAPABILITY_TO_ROUTE,
     _canonical_json_bytes,
     _generate_host,
-    _import_layercake_runtime,
     _sha256_file,
 )
 from .layercake_host_v3 import load_host_model
+from .layercake_core_loader import load_layercake_core
 
 
 EVIDENCE_FORMAT = "abi-layercake-english-generalization-evidence/1"
@@ -144,9 +144,10 @@ def evaluate_generalization(
 
     if standalone_core_path is not None:
         device = __import__("torch").device(device_name)
-        load_student = _import_layercake_runtime(Path(layercake_root).resolve())
-        model, tokenizer, manifest = load_student(
-            Path(standalone_core_path).resolve(), device=device
+        model, tokenizer, manifest = load_layercake_core(
+            Path(standalone_core_path).resolve(),
+            layercake_root=Path(layercake_root).resolve(),
+            device=device,
         )
         if (
             manifest.get("format")

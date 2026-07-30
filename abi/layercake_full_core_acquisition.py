@@ -34,6 +34,7 @@ from .layercake_host import (
     _sha256_file,
 )
 from .layercake_host_v3 import load_english_training_rows
+from .layercake_core_loader import load_layercake_core
 
 
 ARTIFACT_FORMAT = "abi-layercake-full-english-core-acquisition/1"
@@ -96,8 +97,12 @@ def train_full_core(
     parent_path = Path(parent_path).resolve()
     canonical_abi_path = Path(canonical_abi_path).resolve()
     output_path = Path(output_path).resolve()
-    if not _is_within(parent_path, layercake_root):
-        raise FullCoreAcquisitionError("parent must belong to the sealed LayerCake tree")
+    parent_in_sealed_tree = _is_within(parent_path, layercake_root)
+    abi_root = Path(__file__).resolve().parents[1]
+    if not parent_in_sealed_tree and not _is_within(parent_path, abi_root):
+        raise FullCoreAcquisitionError(
+            "parent must belong to LayerCake or the ABI evidence tree"
+        )
     if _is_within(output_path, layercake_root):
         raise FullCoreAcquisitionError("ABI acquisition may not modify the sealed LayerCake tree")
     if output_path.exists():
@@ -126,6 +131,15 @@ def train_full_core(
     parent_checkpoint_sha = _sha256_file(parent_checkpoint_path)
     if parent_metadata["checkpoint"]["sha256"] != parent_checkpoint_sha:
         raise FullCoreAcquisitionError("sealed parent checkpoint hash changed")
+    if not parent_in_sealed_tree and (
+        parent_metadata.get("format")
+        != "abi-layercake-six-block-capacity-base/1"
+        or parent_metadata.get("canonical_semantic_abi", {}).get("sha256")
+        != _sha256_file(canonical_abi_path)
+    ):
+        raise FullCoreAcquisitionError(
+            "ABI-owned parent is not the hash-bound six-block base"
+        )
 
     device = torch.device(device_name)
     torch.manual_seed(seed)
@@ -133,8 +147,12 @@ def train_full_core(
     if device.type == "cuda":
         torch.cuda.manual_seed_all(seed)
         torch.cuda.reset_peak_memory_stats(device)
-    load_student = _import_layercake_runtime(layercake_root)
-    model, tokenizer, _ = load_student(parent_path, device=device)
+    _import_layercake_runtime(layercake_root)
+    model, tokenizer, _ = load_layercake_core(
+        parent_path,
+        layercake_root=layercake_root,
+        device=device,
+    )
     model.train()
     initial_state_sha = module_state_sha256(model)
 
