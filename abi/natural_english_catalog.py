@@ -499,9 +499,33 @@ def _v2_probe(probe: dict[str, Any]) -> dict[str, Any]:
     return updated
 
 
+def _v3_probe(probe: dict[str, Any]) -> dict[str, Any]:
+    """Repair the two remaining source-eligibility defects from natural v2."""
+
+    updated = _v2_probe(probe)
+    updated["probe_id"] = str(updated["probe_id"]).removesuffix("-v2") + "-v3"
+    updated["seed"] = int(updated["seed"]) + 1_000_000
+    capability = str(updated["capability"])
+    if capability == "abstention":
+        updated["evaluator"] = _contains_any(
+            *updated["evaluator"]["values"],
+            "cannot provide",
+            "can't provide",
+            "cannot predict",
+            "can't predict",
+            "not possible",
+            "impossible",
+            "cannot assist",
+        )
+    elif capability == "coherence":
+        updated["max_new_tokens"] = 96
+    updated["label_evidence_sha256"] = probe_label_evidence_sha256(updated)
+    return updated
+
+
 def build_catalog(catalog_version: str = "v1") -> dict[str, Any]:
-    if catalog_version not in {"v1", "v2"}:
-        raise ValueError("catalog_version must be v1 or v2")
+    if catalog_version not in {"v1", "v2", "v3"}:
+        raise ValueError("catalog_version must be v1, v2, or v3")
     probes: list[dict[str, Any]] = []
     for split_index, split in enumerate(SPLITS):
         offset = split_index * PROBES_PER_CAPABILITY_SPLIT
@@ -536,6 +560,8 @@ def build_catalog(catalog_version: str = "v1") -> dict[str, Any]:
                 probes.append(probe)
     if catalog_version == "v2":
         probes = [_v2_probe(probe) for probe in probes]
+    elif catalog_version == "v3":
+        probes = [_v3_probe(probe) for probe in probes]
     catalog = {
         "schema_version": PROBE_CATALOG_SCHEMA,
         "catalog_id": f"abi-natural-english-acquisition-{catalog_version}",
@@ -570,13 +596,27 @@ def build_catalog(catalog_version: str = "v1") -> dict[str, Any]:
                 ),
             }
         )
+    elif catalog_version == "v3":
+        catalog["generation"].update(
+            {
+                "supersedes": "abi-natural-english-acquisition-v2",
+                "v3_change_reason": (
+                    "The completed natural-v2 source survey measured valid "
+                    "refusals phrased as cannot provide/predict or not possible, "
+                    "and otherwise correct ordered-label responses truncated by "
+                    "the 40-token ceiling. V3 expands only valid abstention "
+                    "phrases and raises only coherence to 96 source tokens. No "
+                    "candidate or natural final-test output informed the change."
+                ),
+            }
+        )
     return catalog
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", required=True)
-    parser.add_argument("--version", choices=("v1", "v2"), default="v1")
+    parser.add_argument("--version", choices=("v1", "v2", "v3"), default="v1")
     args = parser.parse_args()
     output = Path(args.output)
     if output.exists():

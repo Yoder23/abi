@@ -1,0 +1,35 @@
+{
+  "archive_bytes": 6847300,
+  "archive_sha256": "85abf114ffd6455d589d8b55b740becd920bc2e4dd4f3f62fddffe4b1708af2c",
+  "available_entry_count": 14,
+  "catalog_id": "abi-natural-english-acquisition-v2",
+  "command": "survey",
+  "development_selection": true,
+  "inventory_sha256": "4bf8155ad242fbf0f34fb2c8832d6ab1a9dea7115e4f26c2d55c94d24553878f",
+  "layercake_import_or_certification_performed": false,
+  "manifest_sha256": "e9c6508d5c5c9cefe2ed637cbc938e7bbfbe393c3c5c95d7625e2d8e5322671d",
+  "path": "results\\abi_moonshot\\segregated_acquisition_v3\\phi3-natural-v2-search-validation-survey.abix",
+  "promotion_eligible_selection": false,
+  "schema_version": "abi-extraction-receipt/1",
+  "source_manifest_sha256": "997f6f103e53e370d98221f44f2c007c04c42c4dc7ee5b1caf739d2971ae7931",
+  "survey_capabilities": [
+    "abstention",
+    "cake_output_realization",
+    "clarification",
+    "coherence",
+    "conversation",
+    "domain_independent_reasoning",
+    "email_drafting",
+    "format_control",
+    "grammar",
+    "instruction_following",
+    "prompt_grounding",
+    "rewriting",
+    "summarization",
+    "tone_control"
+  ],
+  "survey_splits": [
+    "search",
+    "validation"
+  ]
+}

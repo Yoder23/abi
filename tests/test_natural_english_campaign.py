@@ -58,6 +58,28 @@ def test_natural_v2_catalog_is_reproducible_and_repairs_only_measured_tasks() ->
             }
 
 
+def test_natural_v3_changes_only_abstention_and_coherence() -> None:
+    path = ROOT / "catalogs" / "natural_english_acquisition_v3.json"
+    stored = json.loads(path.read_text(encoding="utf-8"))
+    assert stored == build_catalog("v3")
+    validated = load_probe_catalog(path)
+    assert validated["catalog_id"] == "abi-natural-english-acquisition-v3"
+    changed = {"abstention", "coherence"}
+    v2 = build_catalog("v2")["probes"]
+    for original, probe in zip(v2, validated["probes"], strict=True):
+        if probe["capability"] not in changed:
+            ignored = {"probe_id", "seed", "label_evidence_sha256"}
+            assert {
+                key: value
+                for key, value in probe.items()
+                if key not in ignored
+            } == {
+                key: value
+                for key, value in original.items()
+                if key not in ignored
+            }
+
+
 def test_natural_catalog_has_disjoint_prompt_text_and_valid_labels() -> None:
     catalog = build_catalog()
     prompts = {

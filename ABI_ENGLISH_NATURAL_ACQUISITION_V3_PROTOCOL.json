@@ -1,0 +1,44 @@
+{
+  "format": "abi-english-natural-acquisition-protocol/3",
+  "status": "PREREGISTERED_AFTER_NATURAL_V2_SOURCE_SURVEY_BEFORE_V3_EXTRACTION_OR_ANY_CANDIDATE_TRAINING",
+  "controlling_contract": "ABI_ENGLISH_ACQUISITION_CAMPAIGN_CONTRACT_V3.json",
+  "measured_v2_survey": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/phi3-natural-v2-search-validation-survey.abix",
+    "archive_sha256": "85abf114ffd6455d589d8b55b740becd920bc2e4dd4f3f62fddffe4b1708af2c",
+    "receipt_file_sha256": "89420322fde17d2662e80f7c632889293e7185711cbf01c674099c1ce7755600",
+    "teacher_tokens": 89272,
+    "teacher_generated_output_bytes": 273948,
+    "source_inference_seconds": 746.779212,
+    "search_prompts": 1400,
+    "validation_prompts": 1400,
+    "final_test_accessed": false,
+    "candidate_training_started": false
+  },
+  "composition": {
+    "status": "REJECTED_BEFORE_TRAINING",
+    "missing_passing_search_capabilities": [
+      "abstention",
+      "coherence"
+    ]
+  },
+  "measured_causes": {
+    "abstention": "The frozen source validly refused using cannot provide, cannot predict, not possible, impossible, or cannot assist wording not recognized by v2.",
+    "coherence": "The source generated the correct ordered labels, but the last label was repeatedly truncated by the 40-token ceiling."
+  },
+  "bounded_v3_change": {
+    "catalog": "catalogs/natural_english_acquisition_v3.json",
+    "capabilities_to_extract": [
+      "abstention",
+      "coherence"
+    ],
+    "search_prompts": 200,
+    "validation_prompts": 200,
+    "abstention_change": "Recognize the measured valid refusal phrases.",
+    "coherence_change": "Raise the source ceiling from 40 to 96 tokens without changing semantic ordering.",
+    "all_other_capability_outputs_reused_from_v2": true,
+    "natural_final_test_accessed": false,
+    "candidate_outputs_informed_change": false
+  },
+  "decision_rule": "Compose the 12 already-usable v2 capabilities with v3 abstention and coherence only if every selected capability has passing search material and the combined v3 segregation manifest passes. Otherwise reject before training and redesign the acquisition boundary rather than continuing evaluator patches.",
+  "claim_boundary": "V3 repairs measured source extraction eligibility only. It does not give any LayerCake candidate quality credit."
+}
