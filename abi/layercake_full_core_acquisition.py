@@ -206,14 +206,17 @@ def train_full_core(
     parent_checkpoint_sha = _sha256_file(parent_checkpoint_path)
     if parent_metadata["checkpoint"]["sha256"] != parent_checkpoint_sha:
         raise FullCoreAcquisitionError("sealed parent checkpoint hash changed")
+    allowed_abi_parent_formats = {
+        "abi-layercake-six-block-capacity-base/1",
+        "abi-layercake-three-block-depth-compression-base/1",
+    }
     if not parent_in_sealed_tree and (
-        parent_metadata.get("format")
-        != "abi-layercake-six-block-capacity-base/1"
+        parent_metadata.get("format") not in allowed_abi_parent_formats
         or parent_metadata.get("canonical_semantic_abi", {}).get("sha256")
         != _sha256_file(canonical_abi_path)
     ):
         raise FullCoreAcquisitionError(
-            "ABI-owned parent is not the hash-bound six-block base"
+            "ABI-owned parent is not an allowed hash-bound LayerCake base"
         )
 
     device = torch.device(device_name)

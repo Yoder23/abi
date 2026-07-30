@@ -104,6 +104,26 @@ def test_composed_v2_v3_catalog_matches_locked_capability_boundary() -> None:
         assert composed == expected
 
 
+def test_successor_final_v4_is_preregistered_final_only_and_disjoint() -> None:
+    path = ROOT / "catalogs" / "natural_english_successor_final_v4.json"
+    stored = json.loads(path.read_text(encoding="utf-8"))
+    assert stored == build_catalog("successor-final-v4")
+    validated = load_probe_catalog(path)
+    assert validated["status"] == "PREREGISTERED_UNOPENED_SUCCESSOR_FINAL_ONLY"
+    assert len(validated["probes"]) == len(BUILDERS) * PROBES_PER_CAPABILITY_SPLIT
+    assert {probe["split"] for probe in validated["probes"]} == {"final_test"}
+    counts = Counter(probe["capability"] for probe in validated["probes"])
+    assert set(counts.values()) == {PROBES_PER_CAPABILITY_SPLIT}
+    prior_prompts = {
+        probe["prompt"]
+        for probe in build_catalog("v2-v3")["probes"]
+    }
+    assert not (
+        prior_prompts
+        & {probe["prompt"] for probe in validated["probes"]}
+    )
+
+
 def test_coverage_v4_is_search_only_and_changes_no_evaluator() -> None:
     path = ROOT / "catalogs" / "natural_english_coverage_v4.json"
     stored = json.loads(path.read_text(encoding="utf-8"))

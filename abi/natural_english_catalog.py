@@ -609,6 +609,52 @@ def _v3_probe(probe: dict[str, Any]) -> dict[str, Any]:
 
 
 def build_catalog(catalog_version: str = "v1") -> dict[str, Any]:
+    if catalog_version == "successor-final-v4":
+        base = build_catalog("v2-v3")
+        probes = []
+        wrappers = (
+            lambda body: f"For an independent evaluation, fulfill this request: {body}",
+            lambda body: f"Complete this standalone language task: {body}",
+            lambda body: f"Respond under the stated constraints: {body}",
+            lambda body: f"Produce the requested answer and nothing extraneous: {body}",
+        )
+        for probe in base["probes"]:
+            if probe["split"] != "final_test":
+                continue
+            local_index = int(str(probe["probe_id"]).rsplit("-", 2)[-2])
+            updated = dict(probe)
+            body = str(updated["prompt"]).split(": ", 1)[-1]
+            updated["probe_id"] = (
+                f"successor-{updated['capability']}-final_test-"
+                f"{local_index:03d}-v4"
+            )
+            updated["seed"] = int(updated["seed"]) + 7_000_000
+            updated["prompt"] = wrappers[local_index % 4](body)
+            updated["label_evidence_sha256"] = (
+                probe_label_evidence_sha256(updated)
+            )
+            probes.append(updated)
+        return {
+            "schema_version": PROBE_CATALOG_SCHEMA,
+            "catalog_id": "abi-natural-english-successor-final-v4",
+            "status": "PREREGISTERED_UNOPENED_SUCCESSOR_FINAL_ONLY",
+            "claim_boundary": (
+                "This final-only catalog is preregistered before successor "
+                "training. It cannot select data, architecture, decoding, "
+                "budgets, or repairs and is a bounded functional suite rather "
+                "than an exhaustive fluency definition."
+            ),
+            "generation": {
+                "generator": "abi.natural_english_catalog",
+                "base_catalog": "abi-natural-english-acquisition-v2-v3",
+                "final_only": True,
+                "final_test_used_for_selection": False,
+                "probes_per_capability": PROBES_PER_CAPABILITY_SPLIT,
+                "capabilities": list(BUILDERS),
+                "prior_final_prompt_overlap": 0,
+            },
+            "probes": probes,
+        }
     if catalog_version == "coverage-v5":
         base = build_catalog("v2-v3")
         probes = []
@@ -717,8 +763,8 @@ def build_catalog(catalog_version: str = "v1") -> dict[str, Any]:
         }
     if catalog_version not in {"v1", "v2", "v3", "v2-v3"}:
         raise ValueError(
-            "catalog_version must be v1, v2, v3, v2-v3, coverage-v4, or "
-            "coverage-v5"
+            "catalog_version must be v1, v2, v3, v2-v3, coverage-v4, "
+            "coverage-v5, or successor-final-v4"
         )
     probes: list[dict[str, Any]] = []
     for split_index, split in enumerate(SPLITS):
@@ -850,6 +896,7 @@ def main() -> int:
             "v2-v3",
             "coverage-v4",
             "coverage-v5",
+            "successor-final-v4",
         ),
         default="v1",
     )
