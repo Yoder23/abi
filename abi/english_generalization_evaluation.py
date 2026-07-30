@@ -23,7 +23,7 @@ from .layercake_host_v3 import load_host_model
 from .layercake_core_loader import load_layercake_core
 
 
-EVIDENCE_FORMAT = "abi-layercake-english-generalization-evidence/1"
+EVIDENCE_FORMAT = "abi-layercake-english-generalization-evidence/2"
 
 
 def _collapse_metrics(token_ids: Sequence[int], output: str) -> dict[str, Any]:
@@ -65,40 +65,45 @@ def _collapse_metrics(token_ids: Sequence[int], output: str) -> dict[str, Any]:
 
 
 def _source_by_probe(
-    source_bundle_path: str | Path | None,
+    source_bundle_paths: Sequence[str | Path] | None,
     *,
     split: str,
-) -> tuple[dict[str, dict[str, Any]], dict[str, Any] | None]:
-    if source_bundle_path is None:
-        return {}, None
-    bundle = read_extraction_bundle(source_bundle_path)
-    records = {
-        str(record["record_id"]): record
-        for record in bundle["records"]
-        if record["split"] == split
-    }
+) -> tuple[dict[str, dict[str, Any]], list[dict[str, Any]]]:
     by_probe: dict[str, dict[str, Any]] = {}
-    for result in bundle["probe_results"]:
-        record = records.get(str(result["record_id"]))
-        if record is None:
-            continue
-        probe_id = str(result["probe_id"])
-        if probe_id in by_probe:
-            raise RuntimeError(f"ambiguous source evidence for {probe_id}")
-        by_probe[probe_id] = {
-            "passed": bool(result["passed"]),
-            "score": float(result["score"]),
-            "output": str(record["output"]),
-            "output_sha256": str(record["output_sha256"]),
-            "teacher_tokens": int(record["teacher_tokens"]),
-            "source_model": str(record["source_model"]),
-            "source_model_revision": str(record["source_model_revision"]),
+    identities: list[dict[str, Any]] = []
+    for source_bundle_path in source_bundle_paths or ():
+        bundle = read_extraction_bundle(source_bundle_path)
+        records = {
+            str(record["record_id"]): record
+            for record in bundle["records"]
+            if record["split"] == split
         }
-    return by_probe, {
-        "path_at_evaluation": str(Path(source_bundle_path).resolve()),
-        "archive_sha256": bundle["verification"]["archive_sha256"],
-        "manifest_sha256": bundle["verification"]["manifest_sha256"],
-    }
+        for result in bundle["probe_results"]:
+            record = records.get(str(result["record_id"]))
+            if record is None:
+                continue
+            probe_id = str(result["probe_id"])
+            if probe_id in by_probe:
+                raise RuntimeError(
+                    f"ambiguous source evidence for {probe_id}"
+                )
+            by_probe[probe_id] = {
+                "passed": bool(result["passed"]),
+                "score": float(result["score"]),
+                "output": str(record["output"]),
+                "output_sha256": str(record["output_sha256"]),
+                "teacher_tokens": int(record["teacher_tokens"]),
+                "source_model": str(record["source_model"]),
+                "source_model_revision": str(record["source_model_revision"]),
+            }
+        identities.append(
+            {
+                "path_at_evaluation": str(Path(source_bundle_path).resolve()),
+                "archive_sha256": bundle["verification"]["archive_sha256"],
+                "manifest_sha256": bundle["verification"]["manifest_sha256"],
+            }
+        )
+    return by_probe, identities
 
 
 def evaluate_generalization(
@@ -110,7 +115,7 @@ def evaluate_generalization(
     canonical_abi_path: str | Path,
     host_path: str | Path | None,
     standalone_core_path: str | Path | None,
-    source_bundle_path: str | Path | None,
+    source_bundle_paths: Sequence[str | Path] | None,
     output_path: str | Path,
     device_name: str,
     limit_per_capability: int | None = None,
@@ -136,8 +141,8 @@ def evaluate_generalization(
                 selected.append(probe)
                 counts[capability] += 1
         probes = selected
-    source, source_identity = _source_by_probe(
-        source_bundle_path, split=split
+    source, source_identities = _source_by_probe(
+        source_bundle_paths, split=split
     )
     if source and {str(probe["probe_id"]) for probe in probes} - set(source):
         raise RuntimeError("source bundle is incomplete for selected probes")
@@ -295,7 +300,7 @@ def evaluate_generalization(
             ),
             "teacher_present_at_inference": False,
         },
-        "source": source_identity,
+        "sources": source_identities,
         "observation_count": len(observations),
         "layercake_passes": layercake_passes,
         "layercake_pass_rate": layercake_passes / len(observations),
@@ -343,7 +348,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument("--canonical-abi", required=True)
     parser.add_argument("--host")
     parser.add_argument("--standalone-core")
-    parser.add_argument("--source-bundle")
+    parser.add_argument("--source-bundle", action="append", default=[])
     parser.add_argument("--output", required=True)
     parser.add_argument("--device", choices=("cpu", "cuda"), default="cuda")
     parser.add_argument("--limit-per-capability", type=int)
@@ -356,7 +361,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         canonical_abi_path=args.canonical_abi,
         host_path=args.host,
         standalone_core_path=args.standalone_core,
-        source_bundle_path=args.source_bundle,
+        source_bundle_paths=args.source_bundle,
         output_path=args.output,
         device_name=args.device,
         limit_per_capability=args.limit_per_capability,

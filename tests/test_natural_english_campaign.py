@@ -80,6 +80,28 @@ def test_natural_v3_changes_only_abstention_and_coherence() -> None:
             }
 
 
+def test_composed_v2_v3_catalog_matches_locked_capability_boundary() -> None:
+    path = ROOT / "catalogs" / "natural_english_acquisition_v2_v3.json"
+    stored = json.loads(path.read_text(encoding="utf-8"))
+    assert stored == build_catalog("v2-v3")
+    validated = load_probe_catalog(path)
+    assert (
+        validated["catalog_id"]
+        == "abi-natural-english-acquisition-v2-v3"
+    )
+    v2 = build_catalog("v2")["probes"]
+    v3 = build_catalog("v3")["probes"]
+    for v2_probe, v3_probe, composed in zip(
+        v2, v3, validated["probes"], strict=True
+    ):
+        expected = (
+            v3_probe
+            if composed["capability"] in {"abstention", "coherence"}
+            else v2_probe
+        )
+        assert composed == expected
+
+
 def test_natural_catalog_has_disjoint_prompt_text_and_valid_labels() -> None:
     catalog = build_catalog()
     prompts = {

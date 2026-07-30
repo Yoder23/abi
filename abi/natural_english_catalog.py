@@ -524,8 +524,10 @@ def _v3_probe(probe: dict[str, Any]) -> dict[str, Any]:
 
 
 def build_catalog(catalog_version: str = "v1") -> dict[str, Any]:
-    if catalog_version not in {"v1", "v2", "v3"}:
-        raise ValueError("catalog_version must be v1, v2, or v3")
+    if catalog_version not in {"v1", "v2", "v3", "v2-v3"}:
+        raise ValueError(
+            "catalog_version must be v1, v2, v3, or v2-v3"
+        )
     probes: list[dict[str, Any]] = []
     for split_index, split in enumerate(SPLITS):
         offset = split_index * PROBES_PER_CAPABILITY_SPLIT
@@ -562,6 +564,15 @@ def build_catalog(catalog_version: str = "v1") -> dict[str, Any]:
         probes = [_v2_probe(probe) for probe in probes]
     elif catalog_version == "v3":
         probes = [_v3_probe(probe) for probe in probes]
+    elif catalog_version == "v2-v3":
+        probes = [
+            (
+                _v3_probe(probe)
+                if probe["capability"] in {"abstention", "coherence"}
+                else _v2_probe(probe)
+            )
+            for probe in probes
+        ]
     catalog = {
         "schema_version": PROBE_CATALOG_SCHEMA,
         "catalog_id": f"abi-natural-english-acquisition-{catalog_version}",
@@ -610,13 +621,39 @@ def build_catalog(catalog_version: str = "v1") -> dict[str, Any]:
                 ),
             }
         )
+    elif catalog_version == "v2-v3":
+        catalog["generation"].update(
+            {
+                "composes": [
+                    "abi-natural-english-acquisition-v2",
+                    "abi-natural-english-acquisition-v3",
+                ],
+                "v2_capabilities": [
+                    capability
+                    for capability in BUILDERS
+                    if capability not in {"abstention", "coherence"}
+                ],
+                "v3_capabilities": ["abstention", "coherence"],
+                "composition_reason": (
+                    "The preregistered natural-v3 protocol authorizes v3 only "
+                    "for abstention and coherence and requires reuse of v2 for "
+                    "the other twelve capabilities. This catalog is the exact "
+                    "mixed-lineage validation and final-test surface matching "
+                    "that training composition."
+                ),
+            }
+        )
     return catalog
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", required=True)
-    parser.add_argument("--version", choices=("v1", "v2", "v3"), default="v1")
+    parser.add_argument(
+        "--version",
+        choices=("v1", "v2", "v3", "v2-v3"),
+        default="v1",
+    )
     args = parser.parse_args()
     output = Path(args.output)
     if output.exists():
