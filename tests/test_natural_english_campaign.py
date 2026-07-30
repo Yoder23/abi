@@ -32,6 +32,32 @@ def test_natural_catalog_is_reproducible_and_has_locked_depth() -> None:
     assert set(counts.values()) == {PROBES_PER_CAPABILITY_SPLIT}
 
 
+def test_natural_v2_catalog_is_reproducible_and_repairs_only_measured_tasks() -> None:
+    path = ROOT / "catalogs" / "natural_english_acquisition_v2.json"
+    stored = json.loads(path.read_text(encoding="utf-8"))
+    assert stored == build_catalog("v2")
+    validated = load_probe_catalog(path)
+    assert validated["catalog_id"] == "abi-natural-english-acquisition-v2"
+    changed = {"abstention", "domain_independent_reasoning", "format_control"}
+    v1 = {
+        (probe["split"], probe["capability"], index % 100): probe
+        for index, probe in enumerate(build_catalog("v1")["probes"])
+    }
+    for index, probe in enumerate(validated["probes"]):
+        original = v1[(probe["split"], probe["capability"], index % 100)]
+        if probe["capability"] not in changed:
+            ignored = {"probe_id", "seed", "label_evidence_sha256"}
+            assert {
+                key: value
+                for key, value in probe.items()
+                if key not in ignored
+            } == {
+                key: value
+                for key, value in original.items()
+                if key not in ignored
+            }
+
+
 def test_natural_catalog_has_disjoint_prompt_text_and_valid_labels() -> None:
     catalog = build_catalog()
     prompts = {

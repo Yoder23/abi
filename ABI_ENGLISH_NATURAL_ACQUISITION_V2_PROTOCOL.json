@@ -1,0 +1,47 @@
+{
+  "format": "abi-english-natural-acquisition-protocol/2",
+  "status": "PREREGISTERED_AFTER_V6_SOURCE_SURVEY_BEFORE_NATURAL_V2_EXTRACTION_OR_FINAL_TEST_ACCESS",
+  "controlling_contract": "ABI_ENGLISH_ACQUISITION_CAMPAIGN_CONTRACT_V3.json",
+  "measured_input": {
+    "catalog": {
+      "path": "catalogs/english_and_first_domains_certification_v6.json",
+      "file_sha256": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052"
+    },
+    "source_survey": {
+      "path": "results/abi_moonshot/segregated_acquisition_v3/phi3-v6-english-search-validation-survey.abix",
+      "archive_sha256": "b81477560f886ef79df08618956fb9f2ed721296fd5b97e1c6dec8798d68d4f1",
+      "receipt_file_sha256": "2e65bfd19d7cee8110b6a899ee601d8708782c35eec8da298cb36cc88046e43b",
+      "final_test_accessed": false
+    },
+    "composition_result": "REJECTED_BEFORE_TRAINING",
+    "missing_passing_search_capabilities": [
+      "abstention",
+      "domain_independent_reasoning",
+      "format_control"
+    ]
+  },
+  "diagnosis": {
+    "abstention": "Phi-3 correctly declined to predict the random code using the phrase 'do not have the capability', which the v6 evaluator did not recognize.",
+    "domain_independent_reasoning": "The 20-token v6 generation ceiling truncated Phi-3 before its nonce conclusion.",
+    "format_control": "Phi-3 returned semantically correct JSON inside Markdown fences despite the no-Markdown instruction.",
+    "effect_on_v6": "The survey is preserved as negative extraction evidence. No incomplete or failed-source training artifact may be silently composed from it."
+  },
+  "natural_v2_changes": {
+    "supersedes_catalog": "abi-natural-english-acquisition-v1",
+    "catalog": "catalogs/natural_english_acquisition_v2.json",
+    "abstention": "Recognize semantically valid inability language measured from the frozen source.",
+    "domain_independent_reasoning": "Increase the source generation ceiling to 96 tokens and score presence of the entailed nonce conclusion rather than exact answer-only style.",
+    "format_control": "Replace JSON with an equally strict two-line plain-text task so source eligibility is not conflated with Phi-3's Markdown prior.",
+    "all_other_prompts_and_evaluators_changed": false,
+    "natural_final_test_accessed": false,
+    "candidate_outputs_informed_change": false
+  },
+  "execution_plan": [
+    "Extract search and validation only from the frozen local Phi-3 source.",
+    "Compose only passing search records through the v3 segregation boundary.",
+    "Train the bounded three-layer full-core diagnostic without symbolic handlers.",
+    "Screen on natural validation and the disclosed v47 failure prompts.",
+    "If generative capacity remains limiting, preserve the result and test a materially larger same-interface LayerCake core rather than another nearby loss sweep."
+  ],
+  "claim_boundary": "These repairs address measured source-eligibility defects. They do not relax the final LayerCake format, fluency, source-retention, isolation, or execution gates."
+}

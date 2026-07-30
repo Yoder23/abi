@@ -452,7 +452,56 @@ CONTENT_BASIS = {
 }
 
 
-def build_catalog() -> dict[str, Any]:
+def _v2_probe(probe: dict[str, Any]) -> dict[str, Any]:
+    """Repair source-eligibility defects measured on the v6 extraction."""
+
+    updated = dict(probe)
+    updated["probe_id"] = str(updated["probe_id"]).removesuffix("-v1") + "-v2"
+    updated["seed"] = int(updated["seed"]) + 1_000_000
+    capability = str(updated["capability"])
+    if capability == "abstention":
+        updated["evaluator"] = _contains_any(
+            "cannot know",
+            "can't know",
+            "do not know",
+            "don't know",
+            "unknown",
+            "cannot determine",
+            "not enough information",
+            "unknowable",
+            "don't have the capability",
+            "do not have the capability",
+            "no way to know",
+        )
+    elif capability == "domain_independent_reasoning":
+        conclusion = str(updated["evaluator"]["value"])
+        updated["evaluator"] = _contains_all(conclusion)
+        updated["max_new_tokens"] = 96
+    elif capability == "format_control":
+        expected = dict(updated["evaluator"]["expected_values"])
+        keys = list(expected)
+        first, second = keys
+        first_value = expected[first]
+        second_value = expected[second]
+        updated["prompt"] = (
+            "Return exactly two plain-text lines and no Markdown. The first "
+            f"line must be `{first}: {first_value}` and the second line must "
+            f"be `{second}: {second_value}`."
+        )
+        updated["evaluator"] = {
+            "kind": "regex",
+            "pattern": (
+                rf"^\s*{first}:\s*{first_value}\s*\n"
+                rf"{second}:\s*{second_value}\s*$"
+            ),
+        }
+    updated["label_evidence_sha256"] = probe_label_evidence_sha256(updated)
+    return updated
+
+
+def build_catalog(catalog_version: str = "v1") -> dict[str, Any]:
+    if catalog_version not in {"v1", "v2"}:
+        raise ValueError("catalog_version must be v1 or v2")
     probes: list[dict[str, Any]] = []
     for split_index, split in enumerate(SPLITS):
         offset = split_index * PROBES_PER_CAPABILITY_SPLIT
@@ -485,9 +534,11 @@ def build_catalog() -> dict[str, Any]:
                 }
                 probe["label_evidence_sha256"] = probe_label_evidence_sha256(probe)
                 probes.append(probe)
-    return {
+    if catalog_version == "v2":
+        probes = [_v2_probe(probe) for probe in probes]
+    catalog = {
         "schema_version": PROBE_CATALOG_SCHEMA,
-        "catalog_id": "abi-natural-english-acquisition-v1",
+        "catalog_id": f"abi-natural-english-acquisition-{catalog_version}",
         "status": "PREREGISTERED_NATURAL_PARAPHRASE_ACQUISITION_CATALOG",
         "claim_boundary": (
             "This deterministic catalog tests diverse natural instruction forms "
@@ -505,18 +556,39 @@ def build_catalog() -> dict[str, Any]:
         },
         "probes": probes,
     }
+    if catalog_version == "v2":
+        catalog["generation"].update(
+            {
+                "supersedes": "abi-natural-english-acquisition-v1",
+                "v2_change_reason": (
+                "The completed v6 source survey measured semantically valid "
+                "abstention wording outside the old evaluator, truncated nonce "
+                "reasoning, and persistent JSON code fences. V2 broadens valid "
+                "abstention language, gives reasoning enough output budget, and "
+                "uses strict plain-text two-line format control. No candidate "
+                "or natural final-test output informed these changes."
+                ),
+            }
+        )
+    return catalog
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", required=True)
+    parser.add_argument("--version", choices=("v1", "v2"), default="v1")
     args = parser.parse_args()
     output = Path(args.output)
     if output.exists():
         parser.error(f"catalog is immutable: {output}")
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(
-        json.dumps(build_catalog(), indent=2, sort_keys=True, ensure_ascii=False)
+        json.dumps(
+            build_catalog(args.version),
+            indent=2,
+            sort_keys=True,
+            ensure_ascii=False,
+        )
         + "\n",
         encoding="utf-8",
     )
