@@ -1,0 +1,87 @@
+{
+  "format": "abi-english-natural-final-decision/1",
+  "status": "REJECTED_LOCKED_FINAL_CRITICAL_CAPABILITY_GATE_FAILED",
+  "decision_date": "2026-07-30",
+  "candidate": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/six-block-natural-cumulative-runtime-lexical4-v3",
+    "checkpoint_sha256": "1debc60287d68f535f2d47b132cb3bead2012a035232892eeacb66afe95390ff",
+    "metadata_file_sha256": "c1492f3e7d17f845a1c4b19ce22eef9c1629ea9044cfb909eec15d0788389493",
+    "manifest_sha256": "7b8bd150767efd489f84ca299fa392358499f189a3a0c4a6dc7f499808b247d1",
+    "teacher_present_at_inference": false,
+    "source_parameters_copied": 0,
+    "source_transformer_blocks_retained": 0,
+    "decoding_changed_after_final_access": false
+  },
+  "final_source_evidence": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/phi3-natural-v2-v3-final-test-survey.abix",
+    "archive_sha256": "06db415b3c630dbdddaebba85835f73cd19b7d03647088ee44b4e15fdfda0e01",
+    "manifest_sha256": "8240e4e51884c1b7035c5593859143e90ba638f7e345c12aa1b244a4eeed30a6",
+    "receipt_file_sha256": "dabef0a8a91cb4b70816bf805c283a9b51424e0a20e0e7897462a5f0e1881f96",
+    "records": 1400,
+    "teacher_tokens": 45912,
+    "teacher_output_bytes": 140213,
+    "splits": [
+      "final_test"
+    ],
+    "budget_count": 0,
+    "training_eligible": false,
+    "recovery_incident_disclosed": "ABI_ENGLISH_FINAL_EVIDENCE_WRITER_INCIDENT.json"
+  },
+  "final_layercake_evidence": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/six-block-natural-cumulative-runtime-lexical4-final-full1400-v3.json",
+    "file_sha256": "16c571c909964480f4528d671959f6caa5f90001afe0b85b0b823cada558f450",
+    "evidence_sha256": "fcf88b1b830a62e47b4bcc6a5196d2de2a4d7a02791d5f527137f603fdd258eb",
+    "observations": 1400,
+    "layercake_passes": 1259,
+    "layercake_pass_rate": 0.8992857142857142,
+    "source_passes": 1157,
+    "source_passing_regressions": 68,
+    "source_passing_retention_rate": 0.9412273120138289,
+    "collapse_count": 0,
+    "wall_seconds_on_cuda": 179.4851839999901
+  },
+  "capability_pass_rates": {
+    "grammar": 1.0,
+    "coherence": 1.0,
+    "prompt_grounding": 1.0,
+    "instruction_following": 0.75,
+    "conversation": 0.85,
+    "summarization": 0.84,
+    "rewriting": 0.99,
+    "clarification": 1.0,
+    "abstention": 0.95,
+    "domain_independent_reasoning": 0.97,
+    "email_drafting": 0.65,
+    "tone_control": 0.84,
+    "format_control": 1.0,
+    "cake_output_realization": 0.75
+  },
+  "locked_gate_results": {
+    "overall_functional_pass_rate_at_least_0_8": true,
+    "source_passing_retention_at_least_0_9": true,
+    "every_critical_capability_at_least_0_8": false,
+    "failed_critical_capabilities": [
+      "instruction_following"
+    ],
+    "repetition_or_generation_collapse_count_zero": true,
+    "blinded_human_fluency_at_least_0_9": false,
+    "teacher_relative_zero_regressions": false,
+    "minimum_acceptable_fluent_core_gate_passed": false,
+    "moonshot_quality_target_passed": false
+  },
+  "decision": {
+    "promoted": false,
+    "quality_equivalent_to_teacher_claimed": false,
+    "lossless_foreign_teacher_transfer_claimed": false,
+    "fluent_core_claimed": false,
+    "candidate_or_decoding_repairs_after_final_allowed": false,
+    "future_successor_requires_disjoint_preregistered_final_catalog": true,
+    "negative_evidence_preserved": true
+  },
+  "next_measured_bottlenecks": [
+    "generalized instruction adherence",
+    "teacher-passing retention for conversation, email drafting, instruction following, and summarization",
+    "six sequential blocks threaten the locked Phase-2 CPU-throughput retention invariant"
+  ],
+  "claim_boundary": "This exact candidate shows broad automatic English behavior with zero measured collapse, but it is not promoted or called fluent because one locked critical capability failed and no blinded-human or exact-candidate native CPU certificate exists."
+}
