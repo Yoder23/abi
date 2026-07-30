@@ -13,6 +13,11 @@ not: a post-certificate audit exposed 19 source-passing regressions on 28 novel
 prompt forms. A new model or capability is not certified merely because the
 pipeline can ingest it.
 
+The controlling successor contract is
+`ABI_ENGLISH_CORE_DOMAIN_SEGREGATION_CONTRACT_V2.json`. Foreign-teacher
+acquisition targets measured generation quality, sparsity, and capability
+segregation—not lossless model compression.
+
 ## Artifact lifecycle
 
 ```text
@@ -20,6 +25,9 @@ frozen source weights
         |
         v
 labeled survey + provenance
+        |
+        v
+semantic destination labels + ambiguity quarantine
         |
         v
 non-deployable .abix search material
@@ -78,13 +86,20 @@ verification commands. A production extension must additionally:
 
 1. pin source model revision and weight identity;
 2. declare user-selected capability labels and destination scopes;
-3. count raw prompts, unique UTF-8 bytes, teacher outputs, runtime token IDs,
+3. label every specialist record by domain, capability, and atomic claim or
+   skill; keep English records free of specialist labels and declared
+   unsupplied facts;
+4. provide a user-governed ontology and pass the core/domain segregation
+   manifest;
+5. count raw prompts, unique UTF-8 bytes, teacher outputs, runtime token IDs,
    logits, activations, copied/final parameters, disk, RAM, time, and hardware;
-4. use disjoint search, validation, and final catalogs;
-5. demonstrate the largest lower failing nested budget;
-6. reproduce the promoted result across three seeds or fresh hosts;
-7. show no unselected-domain material or inactive execution;
-8. certify the same final teacher-free host for quality, routing, coherence,
+6. use disjoint search, validation, and final catalogs;
+7. demonstrate the largest lower failing nested information and core-size
+   budgets;
+8. reproduce the promoted result across three seeds or fresh hosts;
+9. show core-only specialist abstention, no unselected-domain material, and no
+   inactive execution;
+10. certify the same final teacher-free host for quality, routing, coherence,
    speed, TTFO, RSS, and package identity.
 
 Source models may contribute to the same LayerCake only when record-level
@@ -97,6 +112,11 @@ Package portability is mathematically exact when archive, manifest, tensor
 payload, and installed tensor hashes match. Behavioral portability is a
 separate finite-suite claim. ABI never converts the latter into a universal
 theorem by wording.
+
+The English-core purity claim is also finite and operational. The pipeline
+rejects labeled facts, known ontology markers, core/domain payload overlap,
+selection mismatches, and ambiguous material, then promotion adds held-out
+closed-book leakage tests. This cannot prove literal zero knowledge in weights.
 
 The original `LAYERCAKE_ACQUISITION_PROTOCOL.json` remains historical. Current
 locked-suite truth lives in `ABI_MOONSHOT_CERTIFICATE_V2.json`; the later

@@ -31,6 +31,11 @@ from collections.abc import Mapping, Sequence
 from pathlib import Path, PurePosixPath
 from typing import Any
 
+from .capability_segregation import (
+    SEGREGATED_RECORD_SCHEMA,
+    validate_core_domain_segregation_manifest,
+    validate_domain_ontology,
+)
 from .layercake_acquisition import (
     ENGLISH_CORE_CAPABILITIES,
     AcquisitionAccountingError,
@@ -47,6 +52,9 @@ BUNDLE_MANIFEST_SCHEMA = "abi-capability-extraction-bundle/1"
 SURVEY_ARTIFACT_ROLE = "source_capability_survey_vault"
 LEGACY_TRAINING_ARTIFACT_ROLE = "selected_layercake_training_material"
 TRAINING_ARTIFACT_ROLE = "selected_layercake_training_material_v2"
+SEGREGATED_TRAINING_ARTIFACT_ROLE = (
+    "segregated_layercake_training_material_v3"
+)
 RETENTION_CERTIFICATE_SCHEMA = "abi-layercake-retention-certificate/1"
 
 _BUNDLE_MEMBERS = frozenset(
@@ -61,6 +69,10 @@ _BUNDLE_MEMBERS = frozenset(
         "ledger.json",
     }
 )
+_SEGREGATED_BUNDLE_MEMBERS = _BUNDLE_MEMBERS | {
+    "domain_ontology.json",
+    "segregation.json",
+}
 
 
 class CapabilityPipelineError(AcquisitionAccountingError):
@@ -883,6 +895,8 @@ def build_extraction_bundle(
     budgets: Sequence[Mapping[str, Any]],
     ledger: Mapping[str, Any],
     artifact_role: str = SURVEY_ARTIFACT_ROLE,
+    domain_ontology: Mapping[str, Any] | None = None,
+    segregation_manifest: Mapping[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Write a deterministic extraction bundle and return its exact identity."""
 
@@ -891,15 +905,19 @@ def build_extraction_bundle(
     if artifact_role not in {
         SURVEY_ARTIFACT_ROLE,
         TRAINING_ARTIFACT_ROLE,
+        SEGREGATED_TRAINING_ARTIFACT_ROLE,
     }:
         raise CapabilityPipelineError("unsupported extraction artifact_role")
     source_hashes: set[str] = set()
+    validated_sources: list[dict[str, Any]] = []
     for source in source_manifests:
         validate_source_model_manifest(source)
         source_hash = str(source["source_manifest_sha256"])
         if source_hash in source_hashes:
             raise CapabilityPipelineError(f"duplicate source manifest: {source_hash}")
         source_hashes.add(source_hash)
+        validated_sources.append(dict(source))
+    validated_sources.sort(key=lambda row: row["source_manifest_sha256"])
     validated_records: list[dict[str, Any]] = []
     record_ids: set[str] = set()
     for record in records:
@@ -917,9 +935,40 @@ def build_extraction_bundle(
     non_search_record_count = sum(
         1 for record in validated_records if record["split"] != "search"
     )
-    if artifact_role == TRAINING_ARTIFACT_ROLE and non_search_record_count:
+    training_roles = {
+        TRAINING_ARTIFACT_ROLE,
+        SEGREGATED_TRAINING_ARTIFACT_ROLE,
+    }
+    if artifact_role in training_roles and non_search_record_count:
         raise CapabilityPipelineError(
             "selected LayerCake training material may contain search records only"
+        )
+    if artifact_role == SEGREGATED_TRAINING_ARTIFACT_ROLE:
+        if domain_ontology is None or segregation_manifest is None:
+            raise CapabilityPipelineError(
+                "segregated training material requires ontology and purity manifest"
+            )
+        try:
+            validate_domain_ontology(domain_ontology)
+            validate_core_domain_segregation_manifest(
+                segregation_manifest,
+                validated_records,
+                domain_ontology=domain_ontology,
+            )
+        except AcquisitionAccountingError as exc:
+            raise CapabilityPipelineError(
+                f"core/domain segregation gate failed: {exc}"
+            ) from exc
+        if any(
+            record.get("schema_version") != SEGREGATED_RECORD_SCHEMA
+            for record in validated_records
+        ):
+            raise CapabilityPipelineError(
+                "segregated bundle contains a legacy extraction record"
+            )
+    elif domain_ontology is not None or segregation_manifest is not None:
+        raise CapabilityPipelineError(
+            "ontology and segregation manifest require artifact role v3"
         )
 
     validated_results: list[dict[str, Any]] = []
@@ -944,6 +993,34 @@ def build_extraction_bundle(
     validate_user_selection_plan(selection)
     if not set(selection["selected_source_manifest_sha256"]).issubset(source_hashes):
         raise CapabilityPipelineError("selection references a missing bundle source")
+    if artifact_role in training_roles:
+        selected_item_keys = {
+            (
+                str(item["destination_scope"]),
+                str(item["domain"]),
+                str(item["capability"]),
+                str(item["source_model"]),
+                str(item["source_model_revision"]),
+            )
+            for item in selection["selected_items"]
+        }
+        record_item_keys = {
+            (
+                str(record["destination_scope"]),
+                str(record["domain"]),
+                str(record["capability"]),
+                str(record["source_model"]),
+                str(record["source_model_revision"]),
+            )
+            for record in validated_records
+        }
+        if record_item_keys != selected_item_keys:
+            missing = sorted(selected_item_keys - record_item_keys)
+            extra = sorted(record_item_keys - selected_item_keys)
+            raise CapabilityPipelineError(
+                "training records do not exactly match user selection; "
+                f"missing={missing}, extra={extra}"
+            )
     budget_rows: list[dict[str, Any]] = []
     prior_by_split: dict[str, set[str]] = {}
     for budget in budgets:
@@ -960,7 +1037,7 @@ def build_extraction_bundle(
         raise CapabilityPipelineError("bundle ledger is missing")
 
     payload_members = {
-        "sources.json": canonical_json_bytes(source_manifests),
+        "sources.json": canonical_json_bytes(validated_sources),
         "records.jsonl": _jsonl_bytes(validated_records),
         "probe_results.json": canonical_json_bytes(validated_results),
         "inventory.json": canonical_json_bytes(inventory_rows),
@@ -968,6 +1045,17 @@ def build_extraction_bundle(
         "budgets.json": canonical_json_bytes(budget_rows),
         "ledger.json": canonical_json_bytes(ledger),
     }
+    if artifact_role == SEGREGATED_TRAINING_ARTIFACT_ROLE:
+        payload_members.update(
+            {
+                "domain_ontology.json": canonical_json_bytes(
+                    domain_ontology
+                ),
+                "segregation.json": canonical_json_bytes(
+                    segregation_manifest
+                ),
+            }
+        )
     manifest = {
         "schema_version": BUNDLE_MANIFEST_SCHEMA,
         "artifact_role": artifact_role,
@@ -976,7 +1064,22 @@ def build_extraction_bundle(
         "final_test_record_count": final_test_record_count,
         "final_test_records_allowed_for_training": False,
         "validation_records_allowed_for_training": False,
-        "training_eligible": artifact_role == TRAINING_ARTIFACT_ROLE,
+        "training_eligible": (
+            artifact_role == SEGREGATED_TRAINING_ARTIFACT_ROLE
+        ),
+        "successor_promotion_eligible": (
+            artifact_role == SEGREGATED_TRAINING_ARTIFACT_ROLE
+            and selection["promotion_eligible"]
+        ),
+        "domain_segregation_required": (
+            artifact_role == SEGREGATED_TRAINING_ARTIFACT_ROLE
+        ),
+        "absolute_zero_world_knowledge_claimed": False,
+        "bounded_core_purity_manifest_sha256": (
+            segregation_manifest["segregation_sha256"]
+            if artifact_role == SEGREGATED_TRAINING_ARTIFACT_ROLE
+            else None
+        ),
         "teacher_required_at_layercake_inference": False,
         "source_transformer_blocks_allowed_in_deployment": 0,
         "global_semantic_losslessness_claimed": False,
@@ -1030,9 +1133,13 @@ def verify_extraction_bundle(
         with zipfile.ZipFile(io.BytesIO(raw), "r") as archive:
             infos = archive.infolist()
             names = [info.filename for info in infos]
+            name_set = frozenset(names)
             if len(names) != len(set(name.casefold() for name in names)):
                 raise CapabilityPipelineError("duplicate or case-ambiguous bundle member")
-            if set(names) != _BUNDLE_MEMBERS:
+            if name_set not in {
+                _BUNDLE_MEMBERS,
+                _SEGREGATED_BUNDLE_MEMBERS,
+            }:
                 raise CapabilityPipelineError("bundle member set is not schema-closed")
             if any(
                 PurePosixPath(name).is_absolute()
@@ -1064,16 +1171,33 @@ def verify_extraction_bundle(
         SURVEY_ARTIFACT_ROLE,
         LEGACY_TRAINING_ARTIFACT_ROLE,
         TRAINING_ARTIFACT_ROLE,
+        SEGREGATED_TRAINING_ARTIFACT_ROLE,
     }:
         raise CapabilityPipelineError("invalid extraction artifact role")
+    expected_members = (
+        _SEGREGATED_BUNDLE_MEMBERS
+        if artifact_role == SEGREGATED_TRAINING_ARTIFACT_ROLE
+        else _BUNDLE_MEMBERS
+    )
+    if set(members) != expected_members:
+        raise CapabilityPipelineError(
+            "bundle member set does not match artifact role"
+        )
     if manifest.get("final_test_records_allowed_for_training") is not False:
         raise CapabilityPipelineError("final-test training boundary is missing")
-    if artifact_role == TRAINING_ARTIFACT_ROLE:
+    if artifact_role == SEGREGATED_TRAINING_ARTIFACT_ROLE:
         if manifest.get("validation_records_allowed_for_training") is not False:
             raise CapabilityPipelineError("validation training boundary is missing")
         if manifest.get("training_eligible") is not True:
             raise CapabilityPipelineError("training eligibility is missing")
-    for name, metadata in manifest.get("members", {}).items():
+    member_index = manifest.get("members")
+    if not isinstance(member_index, Mapping) or set(member_index) != (
+        set(expected_members) - {"manifest.json"}
+    ):
+        raise CapabilityPipelineError(
+            "manifest member index is not schema-exact"
+        )
+    for name, metadata in member_index.items():
         if name not in members or name == "manifest.json":
             raise CapabilityPipelineError("manifest member index is invalid")
         if metadata.get("bytes") != len(members[name]):
@@ -1085,6 +1209,8 @@ def verify_extraction_bundle(
     for source in sources:
         validate_source_model_manifest(source)
     source_hashes = {source["source_manifest_sha256"] for source in sources}
+    if manifest.get("source_manifest_sha256") != sorted(source_hashes):
+        raise CapabilityPipelineError("source manifest index is stale")
     records = [
         json.loads(line)
         for line in members["records.jsonl"].splitlines()
@@ -1101,6 +1227,8 @@ def verify_extraction_bundle(
     )
     if manifest.get("final_test_record_count") != actual_final_test_records:
         raise CapabilityPipelineError("final-test record count is stale")
+    if manifest.get("record_count") != len(records):
+        raise CapabilityPipelineError("bundle record count is stale")
     if artifact_role == LEGACY_TRAINING_ARTIFACT_ROLE and actual_final_test_records:
         raise CapabilityPipelineError(
             "training artifact contains forbidden final-test records"
@@ -1108,10 +1236,44 @@ def verify_extraction_bundle(
     actual_non_search_records = sum(
         1 for record in records if record["split"] != "search"
     )
-    if artifact_role == TRAINING_ARTIFACT_ROLE and actual_non_search_records:
+    if artifact_role in {
+        TRAINING_ARTIFACT_ROLE,
+        SEGREGATED_TRAINING_ARTIFACT_ROLE,
+    } and actual_non_search_records:
         raise CapabilityPipelineError(
             "training artifact contains forbidden validation/final-test records"
         )
+    if artifact_role == SEGREGATED_TRAINING_ARTIFACT_ROLE:
+        if manifest.get("domain_segregation_required") is not True:
+            raise CapabilityPipelineError(
+                "segregated bundle does not require domain segregation"
+            )
+        if manifest.get("absolute_zero_world_knowledge_claimed") is not False:
+            raise CapabilityPipelineError(
+                "segregated bundle makes an absolute purity claim"
+            )
+        domain_ontology = json.loads(members["domain_ontology.json"])
+        segregation_manifest = json.loads(members["segregation.json"])
+        try:
+            validate_core_domain_segregation_manifest(
+                segregation_manifest,
+                records,
+                domain_ontology=domain_ontology,
+            )
+        except AcquisitionAccountingError as exc:
+            raise CapabilityPipelineError(
+                f"verified core/domain segregation gate failed: {exc}"
+            ) from exc
+        if (
+            manifest.get("bounded_core_purity_manifest_sha256")
+            != segregation_manifest["segregation_sha256"]
+        ):
+            raise CapabilityPipelineError(
+                "bundle purity manifest identity is stale"
+            )
+    else:
+        domain_ontology = None
+        segregation_manifest = None
     results = json.loads(members["probe_results.json"])
     for result in results:
         validate_probe_result(result)
@@ -1119,12 +1281,55 @@ def verify_extraction_bundle(
             raise CapabilityPipelineError("probe result lacks its record")
         if result["source_manifest_sha256"] not in source_hashes:
             raise CapabilityPipelineError("probe result lacks its source")
+    if manifest.get("probe_result_count") != len(results):
+        raise CapabilityPipelineError("bundle probe-result count is stale")
     inventories = json.loads(members["inventory.json"])
     for inventory in inventories:
         validate_capability_inventory(inventory)
+    if manifest.get("inventory_count") != len(inventories):
+        raise CapabilityPipelineError("bundle inventory count is stale")
     selection = json.loads(members["selection.json"])
     validate_user_selection_plan(selection)
+    if manifest.get("selection_sha256") != selection["selection_sha256"]:
+        raise CapabilityPipelineError("bundle selection identity is stale")
+    if artifact_role == SEGREGATED_TRAINING_ARTIFACT_ROLE and (
+        manifest.get("successor_promotion_eligible")
+        is not selection["promotion_eligible"]
+    ):
+        raise CapabilityPipelineError(
+            "successor promotion eligibility is stale"
+        )
+    if artifact_role in {
+        TRAINING_ARTIFACT_ROLE,
+        SEGREGATED_TRAINING_ARTIFACT_ROLE,
+    }:
+        selected_item_keys = {
+            (
+                str(item["destination_scope"]),
+                str(item["domain"]),
+                str(item["capability"]),
+                str(item["source_model"]),
+                str(item["source_model_revision"]),
+            )
+            for item in selection["selected_items"]
+        }
+        record_item_keys = {
+            (
+                str(record["destination_scope"]),
+                str(record["domain"]),
+                str(record["capability"]),
+                str(record["source_model"]),
+                str(record["source_model_revision"]),
+            )
+            for record in records
+        }
+        if record_item_keys != selected_item_keys:
+            raise CapabilityPipelineError(
+                "verified training records do not exactly match user selection"
+            )
     budgets = json.loads(members["budgets.json"])
+    if manifest.get("budget_count") != len(budgets):
+        raise CapabilityPipelineError("bundle budget count is stale")
     prior_by_split: dict[str, set[str]] = {}
     for budget in budgets:
         _validate_budget_manifest(budget)
@@ -1147,7 +1352,24 @@ def verify_extraction_bundle(
         "budget_count": len(budgets),
         "promotion_eligible_selection": selection["promotion_eligible"],
         "artifact_role": artifact_role,
-        "training_eligible": artifact_role == TRAINING_ARTIFACT_ROLE,
+        "training_eligible": (
+            artifact_role == SEGREGATED_TRAINING_ARTIFACT_ROLE
+        ),
+        "historical_manifest_training_eligible": manifest.get(
+            "training_eligible"
+        ),
+        "successor_promotion_eligible": (
+            artifact_role == SEGREGATED_TRAINING_ARTIFACT_ROLE
+            and selection["promotion_eligible"]
+        ),
+        "domain_segregation_verified": (
+            artifact_role == SEGREGATED_TRAINING_ARTIFACT_ROLE
+        ),
+        "selected_domains": (
+            segregation_manifest["selected_domains"]
+            if segregation_manifest is not None
+            else []
+        ),
     }
 
 
@@ -1171,6 +1393,16 @@ def read_extraction_bundle(path: str | Path) -> dict[str, Any]:
         "selection": json.loads(members["selection.json"]),
         "budgets": json.loads(members["budgets.json"]),
         "ledger": json.loads(members["ledger.json"]),
+        "domain_ontology": (
+            json.loads(members["domain_ontology.json"])
+            if "domain_ontology.json" in members
+            else None
+        ),
+        "segregation": (
+            json.loads(members["segregation.json"])
+            if "segregation.json" in members
+            else None
+        ),
     }
 
 

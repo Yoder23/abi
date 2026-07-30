@@ -46,6 +46,26 @@ _LAZY_EXPORTS = {
         "abi.capability_pipeline",
         "verify_extraction_bundle",
     ),
+    "build_core_domain_segregation_manifest": (
+        "abi.capability_segregation",
+        "build_core_domain_segregation_manifest",
+    ),
+    "build_domain_ontology": (
+        "abi.capability_segregation",
+        "build_domain_ontology",
+    ),
+    "build_segregated_extraction_record": (
+        "abi.capability_segregation",
+        "build_segregated_extraction_record",
+    ),
+    "validate_core_domain_segregation_manifest": (
+        "abi.capability_segregation",
+        "validate_core_domain_segregation_manifest",
+    ),
+    "validate_domain_ontology": (
+        "abi.capability_segregation",
+        "validate_domain_ontology",
+    ),
 }
 
 __all__ = [
@@ -60,6 +80,11 @@ __all__ = [
     "build_source_model_manifest",
     "build_user_selection_plan",
     "verify_extraction_bundle",
+    "build_core_domain_segregation_manifest",
+    "build_domain_ontology",
+    "build_segregated_extraction_record",
+    "validate_core_domain_segregation_manifest",
+    "validate_domain_ontology",
 ]
 
 

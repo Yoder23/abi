@@ -22,7 +22,23 @@ This falsifies any claim that v47 is already a generally fluent English core.
 The CLI remains useful for reproducing the bounded result, not as a
 general-purpose source-quality assistant.
 The next campaign is preregistered in
-[`ABI_ENGLISH_SUCCESSOR_CONTRACT.json`](ABI_ENGLISH_SUCCESSOR_CONTRACT.json).
+[`ABI_ENGLISH_CORE_DOMAIN_SEGREGATION_CONTRACT_V2.json`](ABI_ENGLISH_CORE_DOMAIN_SEGREGATION_CONTRACT_V2.json).
+The earlier successor contract remains historical.
+
+### Corrected product target
+
+Extraction from a foreign transformer is not called lossless. The successor
+must retain the teacher's measured English generation quality while minimizing
+the tested LayerCake core and keeping specialist acquisition material outside
+that core. English records may contain linguistic-form tasks based on
+abstract/nonce content, supplied non-domain context, interpersonal pragmatics,
+or domain-free instructions. Specialist facts, procedures, calculations, and
+code must be labeled and packaged as separately selectable domain material.
+
+This is a bounded, falsifiable purity claim—not proof that neural weights
+contain literally zero world knowledge. Exact losslessness remains available
+afterward for LayerCake-to-LayerCake package transfer, where bytes, manifests,
+tensors, and installed payload identity can all be verified.
 
 The exact final candidate:
 
@@ -92,7 +108,8 @@ can be extracted automatically. A new source follows the governed pipeline:
 2. Survey it with a labeled, user-extendable capability catalog.
 3. Keep search, validation, and final prompts disjoint.
 4. Compose only selected records into a non-deployable `.abix` acquisition
-   bundle; reject conflicts and provenance loss.
+   bundle; require a domain ontology and passing core/domain segregation
+   manifest; reject conflicts and provenance loss.
 5. Search nested imported-information budgets and retain the adjacent failure.
 6. Train or conform the smallest tested passing LayerCake core/cake.
 7. Package domains separately, then test routing, isolation, identity,
@@ -105,15 +122,29 @@ Start with:
 C:\Python310\python.exe -m abi.moonshot --help
 ```
 
+New compositions require `--domain-ontology
+catalogs/domain_ontology_v1.json`. The checked-in ontology is a bounded starter
+for the current catalog, not an exhaustive map of a source model's knowledge.
+Generate or inspect the first fully segregated synthetic catalog with:
+
+```powershell
+C:\Python310\python.exe -m abi.certification_catalog `
+  --version v6 `
+  --output catalogs/english_and_first_domains_certification_v6.json
+```
+
+V6 has 100 search, 100 validation, and 100 sealed final-test probes for each of
+14 English and four domain capabilities. It validates the extraction,
+selection, labeling, and quarantine path; its disclosed synthetic templates
+are not sufficient evidence of broad English generalization by themselves.
+
 An `.abix` file contains teacher material. It is never a deployable cake.
 
 ## Proof boundaries
 
-“Lossless” has two distinct meanings:
-
-- package transfer is exact byte/tensor identity;
-- capability retention is bounded semantic equivalence on locked,
-  independently separated suites.
+"Lossless" is reserved for exact LayerCake package transfer. Foreign-teacher
+capability acquisition is source-relative generation-quality retention on
+locked, independently separated suites.
 
 Finite testing cannot establish semantic identity on every possible prompt or
 discover every latent domain in arbitrary weights. ABI therefore issues

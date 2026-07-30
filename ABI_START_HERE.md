@@ -1,5 +1,11 @@
 # ABI Developer Start-Here
 
+> Historical NIB reproduction guide. This document reproduces the original
+> T5-large frozen-module experiment; it is not the current ABI-to-LayerCake
+> product workflow and does not certify English fluency or domain segregation.
+> For current work, start with `README.md`, `ACTIVE_MISSION.md`, and
+> `ABI_ENGLISH_CORE_DOMAIN_SEGREGATION_CONTRACT_V2.json`.
+
 This document gets you operational in under 10 minutes. Read it top to bottom — every step matters.
 
 ---

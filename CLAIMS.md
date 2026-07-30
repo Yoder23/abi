@@ -5,6 +5,9 @@ The machine-readable authority for the current bounded release is
 certificate. `ABI_POSTCERT_GENERALIZATION_AUDIT_DECISION.json` controls the
 broader product decision.
 
+`ABI_ENGLISH_CORE_DOMAIN_SEGREGATION_CONTRACT_V2.json` controls future
+successor work. It changes no historical result.
+
 ## Certified
 
 - One exact teacher-free LayerCake candidate passes 1,700/1,700 frozen final
@@ -33,14 +36,19 @@ broader product decision.
 
 ## Exact scope qualifiers
 
-- “Minimum” means lowest passing preregistered tested nested budget, not a
+- "Minimum" means lowest passing preregistered tested nested budget, not a
   global information minimum.
-- “Lossless package transfer” means exact bytes/tensors/manifests.
-- “Semantic retention” means zero relevant regressions on the locked finite
-  suites, not every possible prompt.
-- “Domain” means the named certified capability catalog, not every fact or
+- "Lossless package transfer" means exact LayerCake
+  archives/bytes/tensors/manifests and installed payload identity.
+- Foreign-teacher acquisition is not lossless. "Semantic retention" means zero
+  relevant regressions on locked finite suites, not every possible prompt.
+- "Pure English core" means a segregated linguistic-form acquisition corpus
+  plus passing behavioral leakage tests. Literal absence of all world
+  knowledge in neural weights is not claimed.
+
+- "Domain" means the named certified capability catalog, not every fact or
   skill conventionally associated with the broad label.
-- “Independent” currently means disjoint frozen evidence and hostile
+- "Independent" currently means disjoint frozen evidence and hostile
   reproduction inside this repository, not an external organization.
 
 ## Product-level failure
@@ -62,6 +70,9 @@ about its locked synthetic catalog only.
 - Completion of the broad ABI English-product moonshot by v47
 - Assumption-free theorem-level mathematical proof over all possible models
 - Automatic transfer to a new target model without an ABI compatibility certificate
+- Lossless compression or universal recovery of a foreign transformer's
+  knowledge
+- Literal proof that an English core contains zero world knowledge
 
 See `FORMAL_UNIVERSAL_TRANSFER.md` for the conditional theorem, explicit
 expressivity/alignment assumptions, and impossibility boundary.

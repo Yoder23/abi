@@ -1,3 +1,4 @@
+import hashlib
 import io
 import json
 import zipfile
@@ -6,6 +7,7 @@ import pytest
 
 from abi.capability_pipeline import (
     CapabilityPipelineError,
+    SEGREGATED_TRAINING_ARTIFACT_ROLE,
     TRAINING_ARTIFACT_ROLE,
     build_capability_inventory,
     build_extraction_bundle,
@@ -15,8 +17,16 @@ from abi.capability_pipeline import (
     build_semantic_retention_certificate,
     build_source_model_manifest,
     build_user_selection_plan,
+    canonical_json_bytes,
     records_for_selection,
     verify_extraction_bundle,
+)
+from abi.capability_segregation import (
+    LINGUISTIC_FORM,
+    SPECIALIST_KNOWLEDGE,
+    build_core_domain_segregation_manifest,
+    build_domain_ontology,
+    build_segregated_extraction_record,
 )
 from abi.layercake_acquisition import (
     ENGLISH_CORE_CAPABILITIES,
@@ -283,6 +293,22 @@ def test_bundle_is_deterministic_schema_closed_and_tamper_evident(tmp_path):
     with pytest.raises(CapabilityPipelineError, match="member"):
         verify_extraction_bundle(tampered)
 
+    manifest = json.loads(members["manifest.json"])
+    manifest["members"].pop("ledger.json")
+    manifest.pop("manifest_sha256")
+    manifest["manifest_sha256"] = hashlib.sha256(
+        canonical_json_bytes(manifest)
+    ).hexdigest()
+    members["manifest.json"] = canonical_json_bytes(manifest)
+    incomplete_index = tmp_path / "incomplete-index.abix"
+    with zipfile.ZipFile(
+        incomplete_index, "w", compression=zipfile.ZIP_STORED
+    ) as archive:
+        for name, value in members.items():
+            archive.writestr(name, value)
+    with pytest.raises(CapabilityPipelineError, match="schema-exact"):
+        verify_extraction_bundle(incomplete_index)
+
     final_record = _record(
         source,
         capability="python_generation",
@@ -399,3 +425,131 @@ def test_retention_certificate_separates_exact_bytes_from_bounded_semantics():
     )
     assert failed["status"] == "FAIL"
     assert failed["zero_measured_source_to_layercake_regressions"] is False
+
+
+def test_v3_training_bundle_requires_and_verifies_core_domain_segregation(
+    tmp_path,
+):
+    source = _source()
+    english_records = [
+        build_segregated_extraction_record(
+            destination_scope="english_core",
+            capability=capability,
+            domain="domain_independent",
+            provenance=f"pure:{capability}",
+            split="search",
+            source_model=source["model_id"],
+            source_model_revision=source["revision"],
+            prompt=f"Respond fluently to nonce item {index}: dax wug.",
+            output=f"Fluent {capability} response for nonce item {index}.",
+            teacher_tokens=7,
+            teacher_token_counter="generated_token_ids",
+            knowledge_class=LINGUISTIC_FORM,
+            content_basis="abstract_or_nonce_content",
+            domain_labels=[],
+            domain_claims=[],
+            label_method="human_review",
+            label_evidence_sha256="c" * 64,
+            output_introduces_unsupplied_facts=False,
+        )
+        for index, capability in enumerate(sorted(ENGLISH_CORE_CAPABILITIES))
+    ]
+    chemistry = build_segregated_extraction_record(
+        destination_scope="domain_cake",
+        capability="periodic_table",
+        domain="chemistry",
+        provenance="chemistry:element-one",
+        split="search",
+        source_model=source["model_id"],
+        source_model_revision=source["revision"],
+        prompt="Name element one.",
+        output="Atomic number 1 is hydrogen.",
+        teacher_tokens=8,
+        teacher_token_counter="generated_token_ids",
+        knowledge_class=SPECIALIST_KNOWLEDGE,
+        content_basis="specialist_fact",
+        domain_labels=["chemistry"],
+        domain_claims=["periodic_table:atomic_number_1=hydrogen"],
+        label_method="human_review",
+        label_evidence_sha256="d" * 64,
+        output_introduces_unsupplied_facts=True,
+    )
+    records = [*english_records, chemistry]
+    results = [
+        *[
+            _result(source, record, suffix=str(index + 20))
+            for index, record in enumerate(english_records)
+        ],
+        _result(source, chemistry, suffix="12"),
+    ]
+    inventory = build_capability_inventory(
+        source_manifest=source,
+        records=records,
+        probe_results=results,
+        minimum_distinct_probes=1,
+        minimum_wilson_lower_bound=0,
+        qualification_splits=("search",),
+    )
+    selection = build_user_selection_plan(
+        [inventory],
+        include_english_core=True,
+        domains=["chemistry"],
+    )
+    budgets = build_nested_teacher_budgets(
+        records,
+        requested_teacher_token_budgets=[200],
+        split="search",
+        ordering_seed="segregated-v3",
+    )
+    ontology = build_domain_ontology(
+        [
+            {
+                "domain_id": "chemistry",
+                "description": "Chemical elements.",
+                "capabilities": ["periodic_table"],
+                "core_exclusion_markers": [
+                    "atomic number",
+                    "hydrogen",
+                ],
+                "label_evidence_sha256": "e" * 64,
+            }
+        ],
+        ontology_id="unit-v1",
+    )
+    segregation = build_core_domain_segregation_manifest(
+        records, domain_ontology=ontology
+    )
+    output = tmp_path / "segregated.abix"
+    result = build_extraction_bundle(
+        output,
+        source_manifests=[source],
+        records=records,
+        probe_results=results,
+        inventories=[inventory],
+        selection=selection,
+        budgets=budgets,
+        ledger={"schema_version": "test-ledger/1"},
+        artifact_role=SEGREGATED_TRAINING_ARTIFACT_ROLE,
+        domain_ontology=ontology,
+        segregation_manifest=segregation,
+    )
+    assert result["archive_bytes"] > 0
+    verified = verify_extraction_bundle(output)
+    assert verified["training_eligible"] is True
+    assert verified["domain_segregation_verified"] is True
+    assert verified["selected_domains"] == ["chemistry"]
+
+    with pytest.raises(
+        CapabilityPipelineError, match="requires ontology and purity"
+    ):
+        build_extraction_bundle(
+            tmp_path / "missing-purity.abix",
+            source_manifests=[source],
+            records=records,
+            probe_results=results,
+            inventories=[inventory],
+            selection=selection,
+            budgets=budgets,
+            ledger={"schema_version": "test-ledger/1"},
+            artifact_role=SEGREGATED_TRAINING_ARTIFACT_ROLE,
+        )

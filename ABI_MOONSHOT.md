@@ -2,6 +2,27 @@
 
 **Bounded reference status: PASS. Full English-product moonshot: OPEN.**
 
+## Corrected successor objective
+
+The controlling future-work contract is
+`ABI_ENGLISH_CORE_DOMAIN_SEGREGATION_CONTRACT_V2.json`. ABI is not trying to
+losslessly compress an arbitrary non-LayerCake teacher. It is optimizing for
+the best measured teacher-derived English generation quality at the lowest
+passing tested LayerCake core size, with specialist knowledge segregated into
+user-selectable domain artifacts.
+
+The English acquisition corpus is restricted to linguistic form and
+domain-free task behavior. Every specialist record must carry a destination
+domain, capability, atomic claim or skill, immutable source, and provenance.
+Unknown or cross-domain material is quarantined. New v3 training bundles bind
+the exact user selection, ontology, records, and segregation manifest.
+
+The phrase "pure English core" is operational and bounded. Promotion requires
+no labeled specialist material in the core corpus plus closed-book leakage and
+domain-removal tests. It does not claim that finite tests can prove literally
+zero world knowledge in a neural representation. Exact losslessness applies
+to subsequent LayerCake package transfer, not foreign-teacher acquisition.
+
 The campaign produced one teacher-free LayerCake English host and three
 independently installable signed domain cakes. The current certificate is
 `ABI_MOONSHOT_CERTIFICATE_V2.json`; it binds the deployed files, host
@@ -45,8 +66,8 @@ Four nested English budgets were preregistered. Budget 3 passed three seeds at
 teacher-output bytes. The next lower budget used 688 records and 19,497 tokens
 but failed at 1,381/1,400 with 19 source-passing regressions.
 
-The correct claim is “lowest passing tested budget,” not “globally minimal
-English.” The full source survey and the selected domain records are accounted
+The correct claim is "lowest passing tested budget," not "globally minimal
+English." The full source survey and the selected domain records are accounted
 separately. No teacher text, logits, activations, source parameters, or `.abix`
 bundle is deployed.
 

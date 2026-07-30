@@ -146,6 +146,15 @@ def build_labeled_extraction_record(
 def validate_labeled_extraction_record(record: Mapping[str, Any]) -> None:
     """Recompute hashes and enforce the destination boundary for one record."""
 
+    if record.get("schema_version") == (
+        "abi-layercake-segregated-extraction-record/2"
+    ):
+        from .capability_segregation import (
+            validate_segregated_extraction_record,
+        )
+
+        validate_segregated_extraction_record(record)
+        return
     rebuilt = build_labeled_extraction_record(
         destination_scope=record.get("destination_scope"),
         capability=record.get("capability"),

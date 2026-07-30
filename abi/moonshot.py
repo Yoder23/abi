@@ -16,6 +16,7 @@ Compose a user-selected artifact from any number of verified surveys:
     python -m abi.moonshot compose \
       --input results/abi_moonshot/qwen-survey.abix \
       --english --domains python,mathematics \
+      --domain-ontology catalogs/domain_ontology_v1.json \
       --output results/abi_moonshot/qwen-english-python-math.abix \
       --development
 """
@@ -33,7 +34,7 @@ from typing import Any
 
 from .capability_pipeline import (
     CapabilityPipelineError,
-    TRAINING_ARTIFACT_ROLE,
+    SEGREGATED_TRAINING_ARTIFACT_ROLE,
     build_capability_inventory,
     build_extraction_bundle,
     build_inventory_survey_plan,
@@ -42,6 +43,11 @@ from .capability_pipeline import (
     read_extraction_bundle,
     records_for_selection,
     verify_extraction_bundle,
+)
+from .capability_segregation import (
+    CapabilitySegregationError,
+    build_core_domain_segregation_manifest,
+    validate_domain_ontology,
 )
 from .hf_extraction import HuggingFaceCausalSource, load_probe_catalog, run_probe_catalog
 
@@ -410,6 +416,26 @@ def _survey(args: argparse.Namespace) -> dict[str, Any]:
 
 
 def _compose(args: argparse.Namespace) -> dict[str, Any]:
+    if args.domain_ontology is None:
+        raise CapabilityPipelineError(
+            "new LayerCake training compositions require --domain-ontology; "
+            "historical unsegregated bundles remain verifiable but cannot be "
+            "used to create a successor training artifact"
+        )
+    ontology_path = Path(args.domain_ontology)
+    try:
+        domain_ontology = json.loads(ontology_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise CapabilityPipelineError(
+            f"cannot read domain ontology: {ontology_path}"
+        ) from exc
+    try:
+        validate_domain_ontology(domain_ontology)
+    except CapabilitySegregationError as exc:
+        raise CapabilityPipelineError(
+            f"invalid domain ontology: {exc}"
+        ) from exc
+
     loaded = [read_extraction_bundle(path) for path in args.input]
     sources = _dedupe(
         [source for bundle in loaded for source in bundle["sources"]],
@@ -557,6 +583,15 @@ def _compose(args: argparse.Namespace) -> dict[str, Any]:
         source_extraction_devices=[],
         input_archives=input_archives,
     )
+    try:
+        segregation_manifest = build_core_domain_segregation_manifest(
+            selected_records,
+            domain_ontology=domain_ontology,
+        )
+    except CapabilitySegregationError as exc:
+        raise CapabilityPipelineError(
+            f"core/domain segregation failed: {exc}"
+        ) from exc
     output = Path(args.output)
     bundle_result = build_extraction_bundle(
         output,
@@ -567,7 +602,9 @@ def _compose(args: argparse.Namespace) -> dict[str, Any]:
         selection=selection,
         budgets=budgets,
         ledger=ledger,
-        artifact_role=TRAINING_ARTIFACT_ROLE,
+        artifact_role=SEGREGATED_TRAINING_ARTIFACT_ROLE,
+        domain_ontology=domain_ontology,
+        segregation_manifest=segregation_manifest,
     )
     receipt = {
         "schema_version": "abi-extraction-receipt/1",
@@ -578,6 +615,13 @@ def _compose(args: argparse.Namespace) -> dict[str, Any]:
         "requested_domains": _domains(args.domains),
         "source_policy": args.source_policy,
         "development_selection": args.development,
+        "artifact_role": SEGREGATED_TRAINING_ARTIFACT_ROLE,
+        "domain_ontology_sha256": domain_ontology["ontology_sha256"],
+        "core_domain_segregation_sha256": segregation_manifest[
+            "segregation_sha256"
+        ],
+        "domain_segregation_verified": True,
+        "absolute_zero_world_knowledge_claimed": False,
         "layercake_import_or_certification_performed": False,
     }
     _write_json(_receipt_path(output), receipt)
@@ -652,6 +696,14 @@ def build_parser() -> argparse.ArgumentParser:
     compose_parser.add_argument("--output", required=True)
     compose_parser.add_argument("--english", action="store_true")
     compose_parser.add_argument("--domains", default="")
+    compose_parser.add_argument(
+        "--domain-ontology",
+        required=True,
+        help=(
+            "validated JSON ontology used to fail closed on English/domain "
+            "segregation"
+        ),
+    )
     compose_parser.add_argument(
         "--source-policy",
         choices=("best_evidence", "all_qualified_sources"),

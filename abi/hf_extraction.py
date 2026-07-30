@@ -22,10 +22,42 @@ from .capability_pipeline import (
     build_probe_result,
     build_source_model_manifest,
 )
+from .capability_segregation import (
+    SEGREGATED_RECORD_SCHEMA,
+    build_segregated_extraction_record,
+)
 from .layercake_acquisition import build_labeled_extraction_record
 
 
 PROBE_CATALOG_SCHEMA = "abi-capability-probe-catalog/1"
+_SEGREGATION_LABEL_FIELDS = (
+    "record_schema",
+    "probe_id",
+    "destination_scope",
+    "capability",
+    "domain",
+    "prompt",
+    "evaluator",
+    "knowledge_class",
+    "content_basis",
+    "domain_labels",
+    "domain_claims",
+    "output_introduces_unsupplied_facts",
+)
+
+
+def probe_label_evidence_sha256(probe: dict[str, Any]) -> str:
+    """Bind a preregistered semantic label to its exact probe definition."""
+
+    basis = {field: probe.get(field) for field in _SEGREGATION_LABEL_FIELDS}
+    encoded = json.dumps(
+        basis,
+        sort_keys=True,
+        separators=(",", ":"),
+        ensure_ascii=False,
+        allow_nan=False,
+    ).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest()
 
 
 def _sha256_file(path: Path, chunk_bytes: int = 8 * 1024 * 1024) -> str:
@@ -284,6 +316,43 @@ def load_probe_catalog(path: str | Path) -> dict[str, Any]:
         seed = probe.get("seed", 0)
         if isinstance(seed, bool) or not isinstance(seed, int) or seed < 0:
             raise CapabilityPipelineError("probe seed must be non-negative")
+        segregation_fields = {
+            "knowledge_class",
+            "content_basis",
+            "domain_labels",
+            "domain_claims",
+            "label_method",
+            "label_evidence_sha256",
+            "output_introduces_unsupplied_facts",
+        }
+        present = segregation_fields & set(probe)
+        if present and present != segregation_fields:
+            missing = sorted(segregation_fields - present)
+            raise CapabilityPipelineError(
+                f"segregated probe metadata is incomplete: {missing}"
+            )
+        record_schema = probe.get("record_schema")
+        if present and record_schema != SEGREGATED_RECORD_SCHEMA:
+            raise CapabilityPipelineError(
+                "segregated probes must declare record schema v2"
+            )
+        if record_schema == SEGREGATED_RECORD_SCHEMA and not present:
+            raise CapabilityPipelineError(
+                "record schema v2 requires segregation metadata"
+            )
+        if record_schema not in (None, SEGREGATED_RECORD_SCHEMA):
+            raise CapabilityPipelineError(
+                "unsupported extraction record schema"
+            )
+        if (
+            record_schema == SEGREGATED_RECORD_SCHEMA
+            and probe.get("label_method") == "preregistered_catalog"
+            and probe.get("label_evidence_sha256")
+            != probe_label_evidence_sha256(probe)
+        ):
+            raise CapabilityPipelineError(
+                "preregistered semantic label evidence is stale"
+            )
         evaluate_output("", probe.get("evaluator"))
     return catalog
 
@@ -588,19 +657,34 @@ def run_probe_catalog(
     for probe in selected_probes:
         sample = samples_by_id[str(probe["probe_id"])]
         passed, score = evaluate_output(sample["output"], probe["evaluator"])
-        record = build_labeled_extraction_record(
-            destination_scope=probe["destination_scope"],
-            capability=probe["capability"],
-            domain=probe["domain"],
-            provenance=f"{catalog['catalog_id']}:{probe['probe_id']}",
-            split=probe["split"],
-            source_model=source.source_manifest["model_id"],
-            source_model_revision=source.source_manifest["revision"],
-            prompt=sample["rendered_prompt"],
-            output=sample["output"],
-            teacher_tokens=sample["teacher_tokens"],
-            teacher_token_counter=sample["teacher_token_counter"],
-        )
+        common = {
+            "destination_scope": probe["destination_scope"],
+            "capability": probe["capability"],
+            "domain": probe["domain"],
+            "provenance": f"{catalog['catalog_id']}:{probe['probe_id']}",
+            "split": probe["split"],
+            "source_model": source.source_manifest["model_id"],
+            "source_model_revision": source.source_manifest["revision"],
+            "prompt": sample["rendered_prompt"],
+            "output": sample["output"],
+            "teacher_tokens": sample["teacher_tokens"],
+            "teacher_token_counter": sample["teacher_token_counter"],
+        }
+        if probe.get("record_schema") == SEGREGATED_RECORD_SCHEMA:
+            record = build_segregated_extraction_record(
+                **common,
+                knowledge_class=probe["knowledge_class"],
+                content_basis=probe["content_basis"],
+                domain_labels=probe["domain_labels"],
+                domain_claims=probe["domain_claims"],
+                label_method=probe["label_method"],
+                label_evidence_sha256=probe["label_evidence_sha256"],
+                output_introduces_unsupplied_facts=probe[
+                    "output_introduces_unsupplied_facts"
+                ],
+            )
+        else:
+            record = build_labeled_extraction_record(**common)
         result = build_probe_result(
             record=record,
             source_manifest_sha256=source.source_manifest["source_manifest_sha256"],

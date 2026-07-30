@@ -7,10 +7,15 @@ from abi.capability_pipeline import (
     build_source_model_manifest,
     validate_probe_result,
 )
+from abi.capability_segregation import (
+    LINGUISTIC_FORM,
+    SEGREGATED_RECORD_SCHEMA,
+)
 from abi.hf_extraction import (
     PROBE_CATALOG_SCHEMA,
     evaluate_output,
     load_probe_catalog,
+    probe_label_evidence_sha256,
     run_probe_catalog,
 )
 from abi.layercake_acquisition import validate_labeled_extraction_record
@@ -170,3 +175,91 @@ def test_probe_run_binds_rendered_prompt_runtime_token_count_and_result():
     assert source.batch_calls == 1
     validate_labeled_extraction_record(records[0])
     validate_probe_result(results[0])
+
+
+def test_probe_catalog_requires_complete_segregation_metadata(tmp_path):
+    catalog = {
+        "schema_version": PROBE_CATALOG_SCHEMA,
+        "catalog_id": "segregated-v1",
+        "probes": [
+            {
+                "probe_id": "rewrite-1",
+                "destination_scope": "english_core",
+                "capability": "rewriting",
+                "domain": "domain_independent",
+                "split": "search",
+                "prompt": "Rewrite this.",
+                "evaluator": {"kind": "nonempty"},
+                "record_schema": SEGREGATED_RECORD_SCHEMA,
+                "knowledge_class": LINGUISTIC_FORM,
+            }
+        ],
+    }
+    path = tmp_path / "catalog.json"
+    path.write_text(json.dumps(catalog), encoding="utf-8")
+    with pytest.raises(CapabilityPipelineError, match="incomplete"):
+        load_probe_catalog(path)
+
+
+def test_probe_run_builds_semantically_labeled_v2_record():
+    catalog = {
+        "schema_version": PROBE_CATALOG_SCHEMA,
+        "catalog_id": "segregated-v1",
+        "probes": [
+            {
+                "probe_id": "rewrite-1",
+                "destination_scope": "english_core",
+                "capability": "rewriting",
+                "domain": "domain_independent",
+                "split": "search",
+                "prompt": "Rewrite this.",
+                "evaluator": {"kind": "nonempty"},
+                "record_schema": SEGREGATED_RECORD_SCHEMA,
+                "knowledge_class": LINGUISTIC_FORM,
+                "content_basis": "domain_free_instruction",
+                "domain_labels": [],
+                "domain_claims": [],
+                "label_method": "human_review",
+                "label_evidence_sha256": "c" * 64,
+                "output_introduces_unsupplied_facts": False,
+            }
+        ],
+    }
+    records, _ = run_probe_catalog(_FakeSource(), catalog)
+    assert records[0]["schema_version"] == SEGREGATED_RECORD_SCHEMA
+    assert records[0]["knowledge_class"] == LINGUISTIC_FORM
+    assert records[0]["domain_labels"] == []
+    validate_labeled_extraction_record(records[0])
+
+
+def test_preregistered_label_evidence_binds_exact_probe(tmp_path):
+    probe = {
+        "probe_id": "rewrite-locked-1",
+        "destination_scope": "english_core",
+        "capability": "rewriting",
+        "domain": "domain_independent",
+        "split": "search",
+        "prompt": "Rewrite this nonce sentence.",
+        "evaluator": {"kind": "nonempty"},
+        "record_schema": SEGREGATED_RECORD_SCHEMA,
+        "knowledge_class": LINGUISTIC_FORM,
+        "content_basis": "abstract_or_nonce_content",
+        "domain_labels": [],
+        "domain_claims": [],
+        "label_method": "preregistered_catalog",
+        "output_introduces_unsupplied_facts": False,
+    }
+    probe["label_evidence_sha256"] = probe_label_evidence_sha256(probe)
+    catalog = {
+        "schema_version": PROBE_CATALOG_SCHEMA,
+        "catalog_id": "locked-labels-v1",
+        "probes": [probe],
+    }
+    path = tmp_path / "catalog.json"
+    path.write_text(json.dumps(catalog), encoding="utf-8")
+    load_probe_catalog(path)
+
+    probe["prompt"] = "Tampered domain fact prompt."
+    path.write_text(json.dumps(catalog), encoding="utf-8")
+    with pytest.raises(CapabilityPipelineError, match="label evidence"):
+        load_probe_catalog(path)

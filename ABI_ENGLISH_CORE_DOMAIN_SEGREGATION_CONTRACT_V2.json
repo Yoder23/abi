@@ -1,0 +1,143 @@
+{
+  "format": "abi-english-core-domain-segregation-contract/2",
+  "status": "PREREGISTERED_AFTER_USER_OBJECTIVE_CORRECTION_BEFORE_SUCCESSOR_EXTRACTION_OR_TRAINING",
+  "effective_date": "2026-07-30",
+  "supersession": {
+    "supersedes_for_future_work": "ABI_ENGLISH_SUCCESSOR_CONTRACT.json",
+    "historical_contract_remains_valid_evidence": true,
+    "reason": "Foreign-teacher extraction is now optimized for measured generation quality, core sparsity, and capability segregation rather than an impossible universal lossless-compression claim."
+  },
+  "claim_vocabulary": {
+    "foreign_teacher_to_layercake": "Measured capability acquisition with bounded source-relative semantic retention; never called lossless.",
+    "layercake_to_layercake_package_transfer": "Lossless only when exact archive, manifest, tensor, and installed payload identity all verify.",
+    "smallest_core": "The lowest passing candidate on a preregistered finite nested size and imported-information frontier, paired with the largest lower failing candidate; never a global minimum.",
+    "pure_english_core": "A bounded operational claim: its acquisition corpus is restricted to linguistic-form tasks, known specialist material is excluded, and locked closed-book leakage tests pass. Literal zero world knowledge in neural weights is not claimed."
+  },
+  "objective": "Produce the lowest-size tested teacher-free LayerCake core that retains the frozen teacher's highest measured English generation quality while excluding labeled specialist and world-fact acquisition material, and package selected teacher capabilities as separately labeled immutable LayerCake domain artifacts.",
+  "english_core_scope": {
+    "included": [
+      "grammar",
+      "syntax",
+      "coherence",
+      "discourse",
+      "prompt_grounding",
+      "instruction_following",
+      "conversation",
+      "interpersonal_pragmatics",
+      "summarization_of_supplied_non_domain_text",
+      "rewriting",
+      "email_drafting_from_supplied_notes",
+      "tone_control",
+      "format_control",
+      "clarification",
+      "abstention",
+      "abstract_or_nonce_reasoning",
+      "fluent_realization_of_domain_cake_outputs"
+    ],
+    "permitted_content_bases": [
+      "abstract_or_nonce_content",
+      "supplied_non_domain_context",
+      "interpersonal_pragmatics",
+      "domain_free_instruction"
+    ],
+    "excluded": [
+      "closed_book_world_facts",
+      "specialist_facts",
+      "specialist_procedures",
+      "specialist_code",
+      "domain_labeled_calculation",
+      "teacher_identity_or_source_specific_machinery"
+    ]
+  },
+  "domain_artifact_scope": {
+    "label_granularity": [
+      "destination_domain",
+      "capability",
+      "atomic_claim_or_skill",
+      "immutable_source_revision",
+      "record_provenance"
+    ],
+    "user_selects_domains": true,
+    "unselected_domains_absent_from_training_bundle": true,
+    "ambiguous_or_cross_domain_material_policy": "quarantine",
+    "discovery_exhaustive_claimed": false,
+    "multi_source_conflict_policy": "fail_closed_until_user_selects_source_or_an_explicit_conflict_resolution_policy_is_certified"
+  },
+  "artifact_boundary": {
+    "extraction_bundle_contains_teacher_material": true,
+    "extraction_bundle_installable_as_cake": false,
+    "teacher_present_at_layercake_inference": false,
+    "source_transformer_blocks_retained": 0,
+    "final_domain_artifacts_independently_installable": true,
+    "final_core_and_domain_artifacts_immutable": true
+  },
+  "information_accounting": [
+    "raw_source_prompts",
+    "unique_prompt_utf8_bytes",
+    "teacher_generated_output_bytes",
+    "authoritative_teacher_tokens",
+    "logits_stored",
+    "hidden_activation_bytes",
+    "source_parameters_read",
+    "source_parameters_copied",
+    "final_core_parameters",
+    "final_domain_parameters_by_domain",
+    "bridge_parameters",
+    "artifact_disk_bytes",
+    "peak_cpu_ram_bytes",
+    "peak_gpu_memory_bytes",
+    "cpu_hours",
+    "gpu_hours",
+    "source_inference_hours"
+  ],
+  "search_protocol": {
+    "search_validation_final_disjoint": true,
+    "final_test_used_for_selection": false,
+    "nested_core_parameter_or_byte_frontier_required": true,
+    "nested_teacher_information_frontier_required": true,
+    "adjacent_lower_failure_required": true,
+    "minimum_distinct_prompts_per_capability_per_promotion_split": 100,
+    "minimum_repeated_observations_for_headline_configuration": 20,
+    "paired_prompt_level_comparison": true,
+    "bootstrap_confidence_intervals": true,
+    "three_seed_or_fresh_host_reproduction": true,
+    "blinded_human_pairwise_generation_audit": true
+  },
+  "segregation_gates": {
+    "all_successor_training_records_use_schema": "abi-layercake-segregated-extraction-record/2",
+    "english_domain_label_count": 0,
+    "english_domain_claim_count": 0,
+    "english_declared_unsupplied_fact_count": 0,
+    "known_ontology_marker_hits_in_english": 0,
+    "normalized_core_domain_payload_overlap": 0,
+    "unselected_domain_records_in_bundle": 0,
+    "ambiguous_or_cross_domain_records_in_bundle": 0,
+    "core_only_closed_book_specialist_behavior": "must abstain or remain below the preregistered specialist-answer threshold",
+    "selected_domain_activation": "must recover or exceed frozen-source functional quality on the same locked domain suite",
+    "inactive_domain_execution_count": 0,
+    "domain_removal_restores_core_only_behavior": true
+  },
+  "quality_and_runtime_gates": {
+    "same_exact_candidate_for_quality_and_speed": true,
+    "source_comparison_on_identical_prompts": true,
+    "source_passing_regressions": 0,
+    "per_capability_layercake_passes_at_least_source": true,
+    "human_pairwise_noninferiority_lower_confidence_bound_at_least": 0.5,
+    "no_repetition_or_generation_collapse": true,
+    "phase2_cpu_throughput_ratio_at_least": 2.0,
+    "phase2_throughput_retention_at_least": 0.95,
+    "time_to_first_output_no_worse_than_comparator": true,
+    "active_memory_lower_than_comparator": true,
+    "teacher_present_at_inference": false,
+    "source_transformer_blocks_retained": 0,
+    "same_canonical_layercake_interface": true
+  },
+  "promotion_rule": "First pass every quality, segregation, isolation, provenance, runtime, and reproduction gate on one exact teacher-free candidate. Then promote the smallest passing point on the tested nested core-size frontier and the lowest passing point on the tested imported-information frontier. If no candidate passes, preserve the negative evidence and keep the moonshot open.",
+  "current_result": {
+    "successor_extracted": false,
+    "successor_layercake_trained": false,
+    "successor_certified": false,
+    "product_moonshot_passed": false,
+    "blocking_evidence": "ABI_POSTCERT_GENERALIZATION_AUDIT_DECISION.json"
+  }
+}

@@ -1,12 +1,17 @@
 import json
 from pathlib import Path
 
-from abi.capability_pipeline import read_extraction_bundle, verify_extraction_bundle
+from abi.capability_pipeline import (
+    read_extraction_bundle,
+    verify_extraction_bundle,
+)
+from abi.capability_segregation import SEGREGATED_RECORD_SCHEMA
 from abi.certification_catalog import (
     PROBES_PER_SPLIT,
     SPLITS,
     build_certification_catalog,
 )
+from abi.hf_extraction import probe_label_evidence_sha256
 from abi.layercake_acquisition import (
     ENGLISH_CORE_CAPABILITIES,
     build_labeled_extraction_record,
@@ -17,6 +22,9 @@ from abi.moonshot import _automatic_budgets
 ROOT = Path(__file__).resolve().parents[1]
 PROTOCOL = ROOT / "LAYERCAKE_ACQUISITION_PROTOCOL.json"
 CATALOG = ROOT / "catalogs" / "development_capability_probes_v1.json"
+SEGREGATED_CATALOG = (
+    ROOT / "catalogs" / "english_and_first_domains_certification_v6.json"
+)
 SURVEY = ROOT / "results" / "abi_moonshot" / "qwen2-1.5b-development-survey.abix"
 COMPOSED = (
     ROOT / "results" / "abi_moonshot" / "qwen2-1.5b-english-python-math.abix"
@@ -124,6 +132,50 @@ def test_certification_catalog_has_locked_disjoint_depth_for_every_capability():
         and "under 80 words" in row["prompt"]
         and row["max_new_tokens"] == 160
         for row in v4_email_rows
+    )
+
+    segregated = build_certification_catalog("v6")
+    assert json.loads(
+        SEGREGATED_CATALOG.read_text(encoding="utf-8")
+    ) == segregated
+    assert segregated["generation"]["supersedes"].endswith("-v5")
+    assert all(
+        probe["record_schema"] == SEGREGATED_RECORD_SCHEMA
+        and probe["label_evidence_sha256"]
+        == probe_label_evidence_sha256(probe)
+        for probe in segregated["probes"]
+    )
+    english = [
+        probe
+        for probe in segregated["probes"]
+        if probe["destination_scope"] == "english_core"
+    ]
+    assert all(
+        probe["domain_labels"] == []
+        and probe["domain_claims"] == []
+        and probe["output_introduces_unsupplied_facts"] is False
+        for probe in english
+    )
+    reasoning = [
+        probe
+        for probe in english
+        if probe["capability"] == "domain_independent_reasoning"
+    ]
+    assert all(
+        probe["content_basis"] == "abstract_or_nonce_content"
+        and "Compute " not in probe["prompt"]
+        for probe in reasoning
+    )
+    domain = [
+        probe
+        for probe in segregated["probes"]
+        if probe["destination_scope"] == "domain_cake"
+    ]
+    assert all(
+        probe["domain_labels"] == [probe["domain"]]
+        and len(probe["domain_claims"]) == 1
+        and probe["output_introduces_unsupplied_facts"] is True
+        for probe in domain
     )
 
 

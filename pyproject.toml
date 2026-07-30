@@ -1,7 +1,7 @@
 [project]
 name = "abi-layercake"
-version = "0.1.0"
-description = "Autonomous Basis Injection for frozen-module domain transfer across LLM architectures"
+version = "0.2.0"
+description = "Measured teacher capability extraction and segregated packaging for LayerCake"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "Apache-2.0" }
@@ -12,6 +12,7 @@ keywords = [
   "large-language-models",
   "domain-adaptation",
   "knowledge-transfer",
+  "capability-segregation",
   "frozen-modules",
   "transformers",
 ]

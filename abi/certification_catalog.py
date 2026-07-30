@@ -16,7 +16,15 @@ import re
 from pathlib import Path
 from typing import Any
 
-from .hf_extraction import PROBE_CATALOG_SCHEMA
+from .capability_segregation import (
+    LINGUISTIC_FORM,
+    SEGREGATED_RECORD_SCHEMA,
+    SPECIALIST_KNOWLEDGE,
+)
+from .hf_extraction import (
+    PROBE_CATALOG_SCHEMA,
+    probe_label_evidence_sha256,
+)
 
 
 SPLITS = ("search", "validation", "final_test")
@@ -718,9 +726,125 @@ def _v5_probe(source: dict[str, Any]) -> dict[str, Any]:
     return probe
 
 
+def _domain_claim(probe: dict[str, Any]) -> str:
+    capability = probe["capability"]
+    evaluator = probe["evaluator"]
+    if capability == "python_generation":
+        return (
+            f"python_generation:{evaluator['function_name']}"
+            f"({','.join(evaluator['arguments'])})={evaluator['expression']}"
+        )
+    if capability == "elementary_algebra":
+        equation = re.search(
+            r"Solve (.+?)\. Give only", probe["prompt"]
+        )
+        if equation is None:
+            raise ValueError("unable to derive algebra claim")
+        return (
+            f"elementary_algebra:{equation.group(1)}:"
+            f"x={evaluator['value']}"
+        )
+    if capability == "periodic_table":
+        atomic_number = re.search(r"atomic number (\d+)", probe["prompt"])
+        if atomic_number is None:
+            raise ValueError("unable to derive chemistry claim")
+        return (
+            "periodic_table:atomic_number_"
+            f"{atomic_number.group(1)}={evaluator['values'][0]}"
+        )
+    if capability == "independence_days":
+        country = re.search(
+            r"day is (.+?)'s Independence Day", probe["prompt"]
+        )
+        if country is None:
+            raise ValueError("unable to derive civics claim")
+        month, day = evaluator["values"]
+        return f"independence_days:{country.group(1)}={month}_{day}"
+    raise ValueError(f"unsupported domain claim capability: {capability}")
+
+
+def _v6_probe(source: dict[str, Any]) -> dict[str, Any]:
+    """Add fail-closed semantic destinations and remove math from English."""
+
+    probe = _v5_probe(source)
+    probe["probe_id"] = probe["probe_id"].removesuffix("-v5") + "-v6"
+    probe["prompt"] = probe["prompt"].replace(
+        "Evaluation case V5-", "Evaluation case V6-", 1
+    )
+    probe["seed"] += 1_000_000
+    scope = probe["destination_scope"]
+    capability = probe["capability"]
+    if scope == "english_core":
+        if capability == "domain_independent_reasoning":
+            case = int(re.search(r"-(\d{3})-v6$", probe["probe_id"]).group(1))
+            first = f"LUMET-{case:03d}"
+            second = f"VAREL-{case:03d}"
+            conclusion = f"NISET-{case:03d}"
+            subject = f"PAVO-{case:03d}"
+            probe["prompt"] = (
+                f"Reason only from these nonce rules: every {first} is a "
+                f"{second}; every {second} is a {conclusion}; {subject} is a "
+                f"{first}. Name the class {subject} must also be in. Reply "
+                f"with exactly {conclusion}."
+            )
+            probe["evaluator"] = {"kind": "exact", "value": conclusion}
+        supplied = {
+            "grammar",
+            "coherence",
+            "summarization",
+            "rewriting",
+            "email_drafting",
+            "tone_control",
+            "format_control",
+            "cake_output_realization",
+        }
+        if capability == "conversation":
+            content_basis = "interpersonal_pragmatics"
+        elif capability == "domain_independent_reasoning":
+            content_basis = "abstract_or_nonce_content"
+        elif capability in supplied:
+            content_basis = "supplied_non_domain_context"
+        else:
+            content_basis = "domain_free_instruction"
+        probe.update(
+            {
+                "record_schema": SEGREGATED_RECORD_SCHEMA,
+                "knowledge_class": LINGUISTIC_FORM,
+                "content_basis": content_basis,
+                "domain_labels": [],
+                "domain_claims": [],
+                "label_method": "preregistered_catalog",
+                "output_introduces_unsupplied_facts": False,
+            }
+        )
+    else:
+        basis = (
+            "specialist_code"
+            if capability == "python_generation"
+            else "specialist_reasoning"
+            if capability == "elementary_algebra"
+            else "specialist_fact"
+        )
+        probe.update(
+            {
+                "record_schema": SEGREGATED_RECORD_SCHEMA,
+                "knowledge_class": SPECIALIST_KNOWLEDGE,
+                "content_basis": basis,
+                "domain_labels": [probe["domain"]],
+                "domain_claims": [_domain_claim(probe)],
+                "label_method": "preregistered_catalog",
+                "output_introduces_unsupplied_facts": True,
+            }
+        )
+    probe["label_evidence_sha256"] = probe_label_evidence_sha256(probe)
+    return probe
+
+
 def build_certification_catalog(catalog_version: str = "v1") -> dict[str, Any]:
-    if catalog_version not in {"v1", "v2", "v3", "v4", "v5"}:
-        raise ValueError("catalog_version must be v1, v2, v3, v4, or v5")
+    if catalog_version not in {"v1", "v2", "v3", "v4", "v5", "v6"}:
+        raise ValueError(
+            "catalog_version must be v1, v2, v3, v4, v5, or v6"
+        )
     probes = [*_english_probes(), *_domain_probes()]
     if catalog_version == "v2":
         probes = [_v2_probe(probe) for probe in probes]
@@ -730,6 +854,8 @@ def build_certification_catalog(catalog_version: str = "v1") -> dict[str, Any]:
         probes = [_v4_probe(probe) for probe in probes]
     elif catalog_version == "v5":
         probes = [_v5_probe(probe) for probe in probes]
+    elif catalog_version == "v6":
+        probes = [_v6_probe(probe) for probe in probes]
     return {
         "schema_version": PROBE_CATALOG_SCHEMA,
         "catalog_id": (
@@ -748,15 +874,22 @@ def build_certification_catalog(catalog_version: str = "v1") -> dict[str, Any]:
             "final_test_used_for_selection": False,
             "supersedes": (
                 f"abi-english-and-first-domains-certification-"
-                f"{'v1' if catalog_version == 'v2' else 'v2' if catalog_version == 'v3' else 'v3' if catalog_version == 'v4' else 'v4'}"
-                if catalog_version in {"v2", "v3", "v4", "v5"}
+                f"{'v1' if catalog_version == 'v2' else 'v2' if catalog_version == 'v3' else 'v3' if catalog_version == 'v4' else 'v4' if catalog_version == 'v5' else 'v5'}"
+                if catalog_version in {"v2", "v3", "v4", "v5", "v6"}
                 else None
             ),
             "v2_change_reason": (
                 "Disjoint prompt identities; semantic percent equivalence; "
                 "tone evaluation without optional addressee repetition; explicit "
                 "cake-output fields; longer and statically verified Python."
-                if catalog_version in {"v2", "v3", "v4", "v5"}
+                if catalog_version in {"v2", "v3", "v4", "v5", "v6"}
+                else None
+            ),
+            "v6_change_reason": (
+                "Semantically segregated record schema; foreign-teacher "
+                "quality objective; specialist labels and atomic claims; "
+                "nonce logic replaces arithmetic in the English core."
+                if catalog_version == "v6"
                 else None
             ),
         },
@@ -768,15 +901,23 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument(
-        "--version", choices=("v1", "v2", "v3", "v4", "v5"), default="v1"
+        "--version",
+        choices=("v1", "v2", "v3", "v4", "v5", "v6"),
+        default="v1",
     )
     args = parser.parse_args()
     catalog = build_certification_catalog(args.version)
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(
-        json.dumps(catalog, indent=2, sort_keys=True, ensure_ascii=False) + "\n",
-        encoding="utf-8",
-    )
+    with args.output.open("w", encoding="utf-8", newline="\n") as handle:
+        handle.write(
+            json.dumps(
+                catalog,
+                indent=2,
+                sort_keys=True,
+                ensure_ascii=False,
+            )
+            + "\n"
+        )
     print(
         json.dumps(
             {
