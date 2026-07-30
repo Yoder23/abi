@@ -108,6 +108,47 @@ def _selected_probe_results(
     return _dedupe(selected, "probe_result_sha256")
 
 
+def _passing_search_supplements(
+    *,
+    records: Sequence[Mapping[str, Any]],
+    probe_results: Sequence[Mapping[str, Any]],
+    selection: Mapping[str, Any],
+) -> list[dict[str, Any]]:
+    """Select only passing search rows within the exact chosen source scope."""
+
+    selected_keys = {
+        (
+            str(item["destination_scope"]),
+            str(item["domain"]),
+            str(item["capability"]),
+            str(item["source_model"]),
+            str(item["source_model_revision"]),
+        )
+        for item in selection["selected_items"]
+    }
+    result_by_record = {
+        str(result["record_id"]): result for result in probe_results
+    }
+    supplements = []
+    for record in records:
+        key = (
+            str(record["destination_scope"]),
+            str(record["domain"]),
+            str(record["capability"]),
+            str(record["source_model"]),
+            str(record["source_model_revision"]),
+        )
+        result = result_by_record.get(str(record["record_id"]))
+        if (
+            key in selected_keys
+            and record["split"] == "search"
+            and result is not None
+            and result["passed"] is True
+        ):
+            supplements.append(dict(record))
+    return supplements
+
+
 def _catalog_id(record: Mapping[str, Any]) -> str:
     provenance = str(record.get("provenance", ""))
     if ":" not in provenance:
@@ -540,6 +581,35 @@ def _compose(args: argparse.Namespace) -> dict[str, Any]:
         for result in selected_results
         if str(result["record_id"]) in passing_record_ids
     ]
+    selected_before_supplements = len(selected_records)
+    if args.include_passing_search_supplements:
+        if not args.development:
+            raise CapabilityPipelineError(
+                "passing search supplements require explicit development mode"
+            )
+        selected_records = _dedupe(
+            selected_records
+            + _passing_search_supplements(
+                records=records,
+                probe_results=probe_results,
+                selection=selection,
+            ),
+            "record_id",
+        )
+        selected_results = _selected_probe_results(
+            probe_results, selected_records
+        )
+        if any(result["passed"] is not True for result in selected_results):
+            raise CapabilityPipelineError(
+                "failed source result crossed the supplement boundary"
+            )
+        if any(record["split"] != "search" for record in selected_records):
+            raise CapabilityPipelineError(
+                "non-search record crossed the supplement boundary"
+            )
+    supplemental_record_count = (
+        len(selected_records) - selected_before_supplements
+    )
     selected_item_keys = {
         (
             str(item["destination_scope"]),
@@ -614,6 +684,12 @@ def _compose(args: argparse.Namespace) -> dict[str, Any]:
         "requested_english_core": args.english,
         "requested_domains": _domains(args.domains),
         "source_policy": args.source_policy,
+        "passing_search_supplements_included": (
+            args.include_passing_search_supplements
+        ),
+        "supplemental_passing_search_record_count": (
+            supplemental_record_count
+        ),
         "development_selection": args.development,
         "artifact_role": SEGREGATED_TRAINING_ARTIFACT_ROLE,
         "domain_ontology_sha256": domain_ontology["ontology_sha256"],
@@ -708,6 +784,14 @@ def build_parser() -> argparse.ArgumentParser:
         "--source-policy",
         choices=("best_evidence", "all_qualified_sources"),
         default="best_evidence",
+    )
+    compose_parser.add_argument(
+        "--include-passing-search-supplements",
+        action="store_true",
+        help=(
+            "in development mode, retain additional passing search records "
+            "from the exact selected source and capability scope"
+        ),
     )
     compose_parser.add_argument("--development", action="store_true")
     compose_parser.set_defaults(handler=_compose)

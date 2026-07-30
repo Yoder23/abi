@@ -16,7 +16,7 @@ from abi.layercake_acquisition import (
     ENGLISH_CORE_CAPABILITIES,
     build_labeled_extraction_record,
 )
-from abi.moonshot import _automatic_budgets
+from abi.moonshot import _automatic_budgets, _passing_search_supplements
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -29,6 +29,49 @@ SURVEY = ROOT / "results" / "abi_moonshot" / "qwen2-1.5b-development-survey.abix
 COMPOSED = (
     ROOT / "results" / "abi_moonshot" / "qwen2-1.5b-english-python-math.abix"
 )
+
+
+def test_passing_search_supplements_fail_closed_on_scope_split_and_result():
+    selection = {
+        "selected_items": [
+            {
+                "destination_scope": "english_core",
+                "domain": "domain_independent",
+                "capability": "rewriting",
+                "source_model": "teacher/model",
+                "source_model_revision": "a" * 40,
+            }
+        ]
+    }
+    common = {
+        "destination_scope": "english_core",
+        "domain": "domain_independent",
+        "capability": "rewriting",
+        "source_model": "teacher/model",
+        "source_model_revision": "a" * 40,
+    }
+    records = [
+        {**common, "record_id": "passing-search", "split": "search"},
+        {**common, "record_id": "failed-search", "split": "search"},
+        {**common, "record_id": "passing-validation", "split": "validation"},
+        {
+            **common,
+            "record_id": "wrong-source",
+            "split": "search",
+            "source_model_revision": "b" * 40,
+        },
+    ]
+    results = [
+        {"record_id": "passing-search", "passed": True},
+        {"record_id": "failed-search", "passed": False},
+        {"record_id": "passing-validation", "passed": True},
+        {"record_id": "wrong-source", "passed": True},
+    ]
+    assert _passing_search_supplements(
+        records=records,
+        probe_results=results,
+        selection=selection,
+    ) == [records[0]]
 
 
 def test_protocol_is_honestly_open_and_locks_scientific_depth():

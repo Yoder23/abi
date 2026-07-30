@@ -325,9 +325,16 @@ def test_checked_in_contract_and_ontology_lock_correct_claim_boundary() -> None:
 
 
 def test_implementation_certificate_binds_code_contract_and_catalog() -> None:
+    historical_path = (
+        ROOT / "ABI_CORE_DOMAIN_SEGREGATION_IMPLEMENTATION_CERTIFICATE.json"
+    )
+    assert hashlib.sha256(historical_path.read_bytes()).hexdigest() == (
+        "60ca048704c17e36e331afd8f6694783f56d1e06ba223d2d8ebfb9f80a1b7700"
+    )
     certificate = json.loads(
         (
-            ROOT / "ABI_CORE_DOMAIN_SEGREGATION_IMPLEMENTATION_CERTIFICATE.json"
+            ROOT
+            / "ABI_CORE_DOMAIN_SEGREGATION_IMPLEMENTATION_CERTIFICATE_V2.json"
         ).read_text(encoding="utf-8")
     )
     assert certificate["status"] == "PASS_IMPLEMENTATION_AND_CONTRACT_GATES"
