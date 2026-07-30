@@ -331,10 +331,16 @@ def test_implementation_certificate_binds_code_contract_and_catalog() -> None:
     assert hashlib.sha256(historical_path.read_bytes()).hexdigest() == (
         "60ca048704c17e36e331afd8f6694783f56d1e06ba223d2d8ebfb9f80a1b7700"
     )
+    historical_v2_path = (
+        ROOT / "ABI_CORE_DOMAIN_SEGREGATION_IMPLEMENTATION_CERTIFICATE_V2.json"
+    )
+    assert hashlib.sha256(historical_v2_path.read_bytes()).hexdigest() == (
+        "4922120a3066c6a93e2146b3015610ef98a661d42a610f0bd7cb53720415974b"
+    )
     certificate = json.loads(
         (
             ROOT
-            / "ABI_CORE_DOMAIN_SEGREGATION_IMPLEMENTATION_CERTIFICATE_V2.json"
+            / "ABI_CORE_DOMAIN_SEGREGATION_IMPLEMENTATION_CERTIFICATE_V3.json"
         ).read_text(encoding="utf-8")
     )
     assert certificate["status"] == "PASS_IMPLEMENTATION_AND_CONTRACT_GATES"
@@ -349,6 +355,9 @@ def test_implementation_certificate_binds_code_contract_and_catalog() -> None:
         certificate["domain_ontology"]["path"]: certificate[
             "domain_ontology"
         ]["file_sha256"],
+        certificate["incident_record"]["path"]: certificate[
+            "incident_record"
+        ]["sha256"],
         **certificate["implementation_files"],
     }
     for relative_path, expected_sha in bound_paths.items():

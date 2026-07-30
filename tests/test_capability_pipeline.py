@@ -346,6 +346,27 @@ def test_bundle_is_deterministic_schema_closed_and_tamper_evident(tmp_path):
             artifact_role=TRAINING_ARTIFACT_ROLE,
         )
 
+    final_vault = tmp_path / "final-evidence-vault.abix"
+    build_extraction_bundle(
+        final_vault,
+        source_manifests=[source],
+        records=[final_record],
+        probe_results=[final_result],
+        inventories=[final_inventory],
+        selection=final_plan,
+        budgets=[],
+        ledger={"schema_version": "test-ledger/1"},
+    )
+    verified_final_vault = verify_extraction_bundle(final_vault)
+    assert verified_final_vault["record_count"] == 1
+    assert verified_final_vault["budget_count"] == 0
+    assert verified_final_vault["training_eligible"] is False
+    with zipfile.ZipFile(final_vault, "r") as archive:
+        final_manifest = json.loads(archive.read("manifest.json"))
+    assert final_manifest["final_test_record_count"] == 1
+    assert final_manifest["final_test_records_allowed_for_training"] is False
+    assert final_manifest["training_eligible"] is False
+
     validation_record = _record(
         source,
         capability="python_generation",

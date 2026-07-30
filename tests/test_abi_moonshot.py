@@ -16,7 +16,11 @@ from abi.layercake_acquisition import (
     ENGLISH_CORE_CAPABILITIES,
     build_labeled_extraction_record,
 )
-from abi.moonshot import _automatic_budgets, _passing_search_supplements
+from abi.moonshot import (
+    _automatic_budgets,
+    _passing_search_supplements,
+    _survey_evidence_budgets,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -284,3 +288,40 @@ def test_automatic_budgets_start_with_complete_capability_coverage():
         if record["record_id"] in first_ids
     }
     assert covered == {"grammar", "coherence", "rewriting"}
+
+
+def test_final_only_survey_has_no_budget_and_mixed_budgets_exclude_final():
+    source = {
+        "model_id": "source",
+        "revision": "revision",
+    }
+    records = [
+        build_labeled_extraction_record(
+            destination_scope="english_core",
+            domain="domain_independent",
+            capability="grammar",
+            provenance=f"grammar-{split}",
+            source_model=source["model_id"],
+            source_model_revision=source["revision"],
+            split=split,
+            prompt=f"prompt grammar {split}",
+            output=f"output grammar {split}",
+            teacher_tokens=5,
+            teacher_token_counter="test-tokenizer",
+        )
+        for split in ("search", "validation", "final_test")
+    ]
+    final_record = records[-1]
+    assert _survey_evidence_budgets(
+        [final_record], ordering_seed="final-evidence-v1"
+    ) == []
+
+    mixed = _survey_evidence_budgets(
+        records, ordering_seed="mixed-evidence-v1"
+    )
+    assert mixed
+    assert all(
+        final_record["record_id"] not in budget["record_ids"]
+        and budget["split"] in {"search", "validation"}
+        for budget in mixed
+    )

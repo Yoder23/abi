@@ -294,6 +294,30 @@ def _automatic_budgets(
     return output
 
 
+def _survey_evidence_budgets(
+    records: Sequence[Mapping[str, Any]], *, ordering_seed: str
+) -> list[dict[str, Any]]:
+    """Build survey budgets without ever making final-test records selectable.
+
+    Final-only surveys are immutable evidence vaults, not acquisition material.
+    They therefore carry an empty budget list. Mixed survey vaults may describe
+    nested search/validation budgets, but those budgets can reference only
+    non-final records.
+    """
+
+    budget_eligible_records = [
+        record
+        for record in records
+        if record.get("split") in {"search", "validation"}
+    ]
+    if not budget_eligible_records:
+        return []
+    return _automatic_budgets(
+        budget_eligible_records,
+        ordering_seed=ordering_seed,
+    )
+
+
 def _extraction_ledger(
     sources: Sequence[Mapping[str, Any]],
     records: Sequence[Mapping[str, Any]],
@@ -416,7 +440,7 @@ def _survey(args: argparse.Namespace) -> dict[str, Any]:
     selection = build_inventory_survey_plan(inventory)
     selected_records = records_for_selection(records, selection)
     selected_results = _selected_probe_results(probe_results, selected_records)
-    budgets = _automatic_budgets(
+    budgets = _survey_evidence_budgets(
         selected_records, ordering_seed=f"{catalog['catalog_id']}:survey"
     )
     elapsed = time.perf_counter() - started
