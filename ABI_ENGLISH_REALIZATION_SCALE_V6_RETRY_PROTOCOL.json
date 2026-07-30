@@ -1,0 +1,45 @@
+{
+  "format": "abi-english-realization-scale-v6-retry-protocol/1",
+  "status": "PREREGISTERED_AFTER_WRITER_REPAIR_BEFORE_RETRY",
+  "effective_date": "2026-07-30",
+  "incident": "ABI_ENGLISH_REALIZATION_SCALE_V6_WRITER_INCIDENT.json",
+  "objective": "Repeat the unchanged realization-scale source survey after repairing only the invalid catalog label enum.",
+  "source": {
+    "model": "microsoft/Phi-3-mini-4k-instruct",
+    "revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "license": "MIT",
+    "device": "cuda"
+  },
+  "corrected_catalog": {
+    "path": "catalogs/english_realization_scale_v6.json",
+    "sha256": "6a69f126ad427921ccc3c39df4df46d976494f002fb33b6268da3cbbf8c45072",
+    "catalog_id": "abi-english-realization-scale-v6",
+    "probes": 2000,
+    "distinct_prompts": 2000,
+    "split": "search",
+    "capabilities": [
+      "rewriting",
+      "email_drafting",
+      "tone_control",
+      "cake_output_realization"
+    ],
+    "only_change_from_failed_catalog": "label_method enum and its content-addressed label evidence hashes"
+  },
+  "unchanged_source_qualification": {
+    "minimum_distinct_probes_per_capability": 500,
+    "minimum_pass_rate": 0.8,
+    "minimum_wilson_95_lower_bound": 0.78,
+    "passing_search_outputs_only": true
+  },
+  "unchanged_downstream_contract": {
+    "base_training_artifact_sha256": "f6a27cae529d990ba67f1a26bb9cd79f97ba5ca0965c9debd0fc98dab8dba820",
+    "domain_ontology": "catalogs/domain_ontology_v1.json",
+    "include_passing_search_supplements": true,
+    "candidate_seed": 9824,
+    "candidate_steps": 4000,
+    "preservation_replay_required": true,
+    "validation_gates": "ABI_ENGLISH_REALIZATION_SCALE_V6_PROTOCOL.json"
+  },
+  "decision_rule": "No output from the failed process may be reused. Run the corrected catalog from the frozen source revision, create one atomic survey vault, and continue only with passing search records under the existing segregation gate.",
+  "claim_boundary": "This retry repairs evidence serialization only. It does not broaden the data, weaken qualification, access final evidence, or erase the failed compute incident."
+}

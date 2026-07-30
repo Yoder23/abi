@@ -342,9 +342,7 @@ def build_catalog() -> dict[str, Any]:
                 "content_basis": "supplied_non_domain_context",
                 "domain_labels": [],
                 "domain_claims": [],
-                "label_method": (
-                    "preregistered_supplied-context_realization_catalog"
-                ),
+                "label_method": "preregistered_catalog",
                 "output_introduces_unsupplied_facts": False,
             }
             probe["label_evidence_sha256"] = (

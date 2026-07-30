@@ -1,0 +1,36 @@
+{
+  "format": "abi-english-realization-scale-v6-writer-incident/1",
+  "status": "FAILED_CLOSED_NO_ARCHIVE_WRITTEN",
+  "incident_date": "2026-07-30",
+  "failed_protocol": "ABI_ENGLISH_REALIZATION_SCALE_V6_PROTOCOL.json",
+  "failed_catalog": {
+    "path": "catalogs/english_realization_scale_v6.json",
+    "sha256_at_failed_run": "6e5520da4f39c23931810b52fdf93ebfca31a22ad10fe6494b1521e5ee28b121",
+    "probes": 2000,
+    "invalid_field": "label_method",
+    "invalid_value": "preregistered_supplied-context_realization_catalog"
+  },
+  "failure": {
+    "exception": "abi.capability_segregation.CapabilitySegregationError",
+    "message": "invalid label_method",
+    "failing_boundary": "build_segregated_extraction_record",
+    "output_archive_created": false,
+    "receipt_created": false,
+    "records_crossing_into_training": 0,
+    "validation_or_final_records_accessed": 0,
+    "generated_outputs_recoverable": false,
+    "source_inference_cost_credited_to_promotion": false
+  },
+  "repair": {
+    "change": "Replace the non-schema enum with the existing allowed value preregistered_catalog.",
+    "prompts_changed": false,
+    "evaluators_changed": false,
+    "capabilities_changed": false,
+    "split_changed": false,
+    "probe_count_changed": false,
+    "selection_gates_changed": false,
+    "corrected_catalog_sha256": "6a69f126ad427921ccc3c39df4df46d976494f002fb33b6268da3cbbf8c45072",
+    "regression_tests_required": true
+  },
+  "claim_boundary": "The failed source-compute attempt produced no evidence vault and earns no scientific or promotion credit. Its committed catalog lineage remains in Git history and is not silently rewritten."
+}
