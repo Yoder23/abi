@@ -1,0 +1,56 @@
+{
+  "format": "abi-english-coverage-supplement-protocol/1",
+  "status": "PREREGISTERED_AFTER_BALANCED_VALIDATION_BEFORE_V4_SOURCE_EXTRACTION",
+  "controlling_contract": "ABI_ENGLISH_ACQUISITION_CAMPAIGN_CONTRACT_V3.json",
+  "measured_decision": "ABI_ENGLISH_BALANCED_V2_DECISION.json",
+  "catalog": {
+    "path": "catalogs/natural_english_coverage_v4.json",
+    "sha256": "4417e6d90ca62e2d88282709c00100f1b02d422d46d80561595d21e320208673",
+    "search_prompts": 225,
+    "validation_prompts": 0,
+    "final_test_prompts": 0,
+    "evaluators_changed": 0
+  },
+  "selected_training_families": {
+    "instruction_following": [0, 1],
+    "rewriting": [1],
+    "email_drafting": [0, 1, 2],
+    "tone_control": [1, 3],
+    "cake_output_realization": [3]
+  },
+  "source_eligibility_gate": {
+    "minimum_passing_outputs_per_selected_family": 20,
+    "known_specialist_markers_allowed": 0,
+    "english_domain_labels_allowed": 0,
+    "english_domain_claims_allowed": 0,
+    "ambiguous_or_cross_domain_records_allowed": 0,
+    "validation_or_final_records_allowed": 0,
+    "teacher_token_counts_authoritative": true
+  },
+  "bounded_candidate_run_if_source_gate_passes": {
+    "base": "results/abi_moonshot/segregated_acquisition_v3/six-block-capacity-base-v1",
+    "architecture_change": false,
+    "sampling_strategy": "balanced_capabilities",
+    "seed": 9824,
+    "steps": 3000,
+    "batch_size": 8,
+    "shared_learning_rate": 0.00002,
+    "cake_learning_rate": 0.0001,
+    "classifier_loss_weight": 0.25,
+    "prompt_overlap_loss_weight": 1.0,
+    "recovery_start_step": 400,
+    "recovery_interval": 8,
+    "recovery_horizons": [8, 16, 32],
+    "new_teacher_logits": 0,
+    "new_teacher_hidden_activations": 0,
+    "new_teacher_or_foreign_parameters": 0
+  },
+  "decoding_rule": {
+    "baseline": "greedy",
+    "if_quality_gates_pass_but_novel_lexical_repetition_remains": "Perform exactly one no-repeat-4-gram decoding screen on the same checkpoint.",
+    "accept_only_if": "No critical or overall quality gate regresses below threshold and genuine repetition decreases.",
+    "selection_occurs_before_natural_final_test": true
+  },
+  "decision_rule": "If any selected family has fewer than 20 passing teacher outputs, do not train and repair only that measured source boundary. If all pass, compose the supplement with the immutable v2-v3 bundle and run exactly the locked candidate. Do not access natural final_test until architecture, artifact, and decoding are frozen.",
+  "claim_boundary": "This supplement responds to measured missing supervision. It is not a final-test repair, an evaluator relaxation, a domain import, or evidence that the resulting LayerCake is fluent."
+}

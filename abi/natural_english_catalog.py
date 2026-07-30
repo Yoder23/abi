@@ -451,6 +451,39 @@ CONTENT_BASIS = {
     "abstention": "domain_free_instruction",
 }
 
+COVERAGE_V4_FAMILIES = {
+    "instruction_following": {0, 1},
+    "rewriting": {1},
+    "email_drafting": {0, 1, 2},
+    "tone_control": {1, 3},
+    "cake_output_realization": {3},
+}
+
+COVERAGE_V4_COACHING = {
+    "instruction_following": (
+        "This is an exact-output task: copy every requested character and "
+        "line break, and emit nothing else."
+    ),
+    "rewriting": (
+        "Your one-sentence rewrite must include the literal word delay, the "
+        "exact supplied code, and the exact supplied review day."
+    ),
+    "email_drafting": (
+        "Keep the complete email under 80 words and include every named "
+        "person, object or code, date or time, action, greeting, and closing "
+        "exactly as supplied."
+    ),
+    "tone_control": (
+        "Preserve every supplied code, count, place, and day exactly, and use "
+        "an explicitly courteous word such as please, could, would, "
+        "appreciate, or thank."
+    ),
+    "cake_output_realization": (
+        "Use the supplied numeric count as a digit and explicitly include the "
+        "object, arrival action, and location in one sentence."
+    ),
+}
+
 
 def _v2_probe(probe: dict[str, Any]) -> dict[str, Any]:
     """Repair source-eligibility defects measured on the v6 extraction."""
@@ -524,9 +557,64 @@ def _v3_probe(probe: dict[str, Any]) -> dict[str, Any]:
 
 
 def build_catalog(catalog_version: str = "v1") -> dict[str, Any]:
+    if catalog_version == "coverage-v4":
+        base = build_catalog("v2-v3")
+        probes = []
+        for probe in base["probes"]:
+            if probe["split"] != "search":
+                continue
+            capability = str(probe["capability"])
+            if capability not in COVERAGE_V4_FAMILIES:
+                continue
+            local_index = int(
+                str(probe["probe_id"]).rsplit("-", 2)[-2]
+            )
+            if local_index % 4 not in COVERAGE_V4_FAMILIES[capability]:
+                continue
+            updated = dict(probe)
+            updated["probe_id"] = (
+                str(updated["probe_id"]).rsplit("-", 1)[0]
+                + "-coverage-v4"
+            )
+            updated["seed"] = int(updated["seed"]) + 4_000_000
+            updated["prompt"] = (
+                str(updated["prompt"])
+                + " "
+                + COVERAGE_V4_COACHING[capability]
+            )
+            updated["label_evidence_sha256"] = (
+                probe_label_evidence_sha256(updated)
+            )
+            probes.append(updated)
+        return {
+            "schema_version": PROBE_CATALOG_SCHEMA,
+            "catalog_id": "abi-natural-english-coverage-supplement-v4",
+            "status": "PREREGISTERED_TRAINING_ONLY_COVERAGE_SUPPLEMENT",
+            "claim_boundary": (
+                "This search-only supplement fills source-supervision holes "
+                "measured after the v2-v3 validation screen. It changes no "
+                "evaluator, imports no validation or final-test response, and "
+                "earns no promotion credit by itself."
+            ),
+            "generation": {
+                "generator": "abi.natural_english_catalog",
+                "base_catalog": (
+                    "abi-natural-english-acquisition-v2-v3"
+                ),
+                "selected_capability_families": {
+                    key: sorted(value)
+                    for key, value in COVERAGE_V4_FAMILIES.items()
+                },
+                "search_only": True,
+                "probe_count": len(probes),
+                "new_evaluators": 0,
+                "validation_or_final_probes": 0,
+            },
+            "probes": probes,
+        }
     if catalog_version not in {"v1", "v2", "v3", "v2-v3"}:
         raise ValueError(
-            "catalog_version must be v1, v2, v3, or v2-v3"
+            "catalog_version must be v1, v2, v3, v2-v3, or coverage-v4"
         )
     probes: list[dict[str, Any]] = []
     for split_index, split in enumerate(SPLITS):
@@ -651,7 +739,7 @@ def main() -> int:
     parser.add_argument("--output", required=True)
     parser.add_argument(
         "--version",
-        choices=("v1", "v2", "v3", "v2-v3"),
+        choices=("v1", "v2", "v3", "v2-v3", "coverage-v4"),
         default="v1",
     )
     args = parser.parse_args()

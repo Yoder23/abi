@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 from collections import Counter
 from collections.abc import Mapping, Sequence
 from pathlib import Path
@@ -23,13 +24,14 @@ from .layercake_host_v3 import load_host_model
 from .layercake_core_loader import load_layercake_core
 
 
-EVIDENCE_FORMAT = "abi-layercake-english-generalization-evidence/3"
+EVIDENCE_FORMAT = "abi-layercake-english-generalization-evidence/4"
 
 
 def _collapse_metrics(
     token_ids: Sequence[int],
     output: str,
     prompt_token_ids: Sequence[int] = (),
+    prompt: str = "",
 ) -> dict[str, Any]:
     repeated_runs = 0
     previous: int | None = None
@@ -66,11 +68,26 @@ def _collapse_metrics(
         for value, count in fourgram_counts.items()
         if count > 1 and value not in prompt_fourgrams
     )
+    output_words = re.findall(r"[\w']+", output.casefold())
+    prompt_words = re.findall(r"[\w']+", prompt.casefold())
+    output_word_fourgrams = [
+        tuple(output_words[index : index + 4])
+        for index in range(max(0, len(output_words) - 3))
+    ]
+    prompt_word_fourgrams = {
+        tuple(prompt_words[index : index + 4])
+        for index in range(max(0, len(prompt_words) - 3))
+    }
+    repeated_lexical_fourgrams = sum(
+        count - 1
+        for value, count in Counter(output_word_fourgrams).items()
+        if count > 1 and value not in prompt_word_fourgrams
+    )
     unique_ratio = len(set(token_ids)) / max(1, len(token_ids))
     collapsed = (
         not output.strip()
         or maximum_run >= 6
-        or repeated_fourgrams >= 4
+        or repeated_lexical_fourgrams >= 4
         or (len(token_ids) >= 20 and unique_ratio < 0.2)
     )
     return {
@@ -80,6 +97,9 @@ def _collapse_metrics(
         "repeated_fourgram_occurrences_total": repeated_fourgrams_total,
         "repeated_prompt_copied_fourgram_occurrences": (
             repeated_prompt_fourgrams
+        ),
+        "repeated_lexical_fourgram_occurrences": (
+            repeated_lexical_fourgrams
         ),
         "unique_token_ratio": unique_ratio,
         "collapse_detected": collapsed,
@@ -228,6 +248,7 @@ def evaluate_generalization(
                 token_ids,
                 output,
                 tokenizer.encode(str(probe["prompt"]) + "\n"),
+                str(probe["prompt"]),
             ),
         }
         if source_row is not None:

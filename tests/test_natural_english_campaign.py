@@ -8,6 +8,7 @@ from abi.english_generalization_evaluation import _collapse_metrics
 from abi.hf_extraction import load_probe_catalog, probe_label_evidence_sha256
 from abi.natural_english_catalog import (
     BUILDERS,
+    COVERAGE_V4_FAMILIES,
     PROBES_PER_CAPABILITY_SPLIT,
     SPLITS,
     build_catalog,
@@ -102,6 +103,35 @@ def test_composed_v2_v3_catalog_matches_locked_capability_boundary() -> None:
         assert composed == expected
 
 
+def test_coverage_v4_is_search_only_and_changes_no_evaluator() -> None:
+    path = ROOT / "catalogs" / "natural_english_coverage_v4.json"
+    stored = json.loads(path.read_text(encoding="utf-8"))
+    assert stored == build_catalog("coverage-v4")
+    validated = load_probe_catalog(path)
+    assert len(validated["probes"]) == 225
+    assert {probe["split"] for probe in validated["probes"]} == {"search"}
+    base = {
+        (
+            probe["capability"],
+            int(str(probe["probe_id"]).rsplit("-", 2)[-2]),
+        ): probe
+        for probe in build_catalog("v2-v3")["probes"]
+        if probe["split"] == "search"
+    }
+    observed_families = set()
+    for probe in validated["probes"]:
+        local_index = int(str(probe["probe_id"]).rsplit("-", 3)[-3])
+        original = base[(probe["capability"], local_index)]
+        assert probe["evaluator"] == original["evaluator"]
+        observed_families.add((probe["capability"], local_index % 4))
+    expected_families = {
+        (capability, family)
+        for capability, families in COVERAGE_V4_FAMILIES.items()
+        for family in families
+    }
+    assert observed_families == expected_families
+
+
 def test_natural_catalog_has_disjoint_prompt_text_and_valid_labels() -> None:
     catalog = build_catalog()
     prompts = {
@@ -139,3 +169,12 @@ def test_collapse_metrics_detect_repetition_without_flagging_normal_text() -> No
     assert copied_metrics["repeated_fourgram_occurrences_total"] == 1
     assert copied_metrics["repeated_fourgram_occurrences"] == 0
     assert copied_metrics["collapse_detected"] is False
+    repeated_phrase = "please send the note today " * 5
+    repeated_metrics = _collapse_metrics(
+        list(range(30)),
+        repeated_phrase,
+    )
+    assert (
+        repeated_metrics["repeated_lexical_fourgram_occurrences"] >= 4
+    )
+    assert repeated_metrics["collapse_detected"] is True

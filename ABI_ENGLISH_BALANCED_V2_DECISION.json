@@ -1,0 +1,60 @@
+{
+  "format": "abi-english-layercake-balanced-decision/1",
+  "status": "REJECTED_FOR_ONE_CRITICAL_COVERAGE_HOLE",
+  "candidate": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/six-block-natural-v2-v3-balanced-seed9824-steps3000-v2",
+    "checkpoint_sha256": "c1c7a85e10fe515a0b8407836effc07de977e270f2cf9b9dd29642af512832d4",
+    "manifest_sha256": "d91d263a6b2ef25680367103264ef903d1ff39e95e908bacead6a676c1cc96af",
+    "architecture": "layercake-shallow-sparse-english/2-six-block-task-cakes",
+    "teacher_present_at_inference": false
+  },
+  "training": {
+    "sampling_strategy": "balanced_capabilities",
+    "sampled_records_per_capability": 1716,
+    "all_1196_selected_records_seen": true,
+    "new_teacher_prompts_relative_to_v1": 0,
+    "new_teacher_tokens_relative_to_v1": 0,
+    "steps": 3000,
+    "wall_seconds": 452.163296099985,
+    "peak_device_memory_bytes": 2647603712
+  },
+  "held_out_validation": {
+    "evidence": "results/abi_moonshot/segregated_acquisition_v3/six-block-natural-v2-v3-balanced-validation-full1400-v2.json",
+    "evidence_file_sha256": "b7732a0b6aa0698aa5578ca6efc3ade91a92b4d809f8778b67c0c892d2836a86",
+    "evidence_sha256": "c54d495fec82e4a2c78d8564d09a140c6cbf26d836588e19bd1300877f27866e",
+    "observations": 1400,
+    "layercake_passes": 1252,
+    "layercake_pass_rate": 0.8942857142857142,
+    "source_passes": 1220,
+    "source_passing_regressions": 53,
+    "source_passing_retention_rate": 0.9565573770491803,
+    "automatic_collapse_flags_after_token_prompt_copy_correction": 51,
+    "final_test_accessed": false
+  },
+  "critical_capability_pass_rates": {
+    "grammar": 0.96,
+    "coherence": 1.0,
+    "prompt_grounding": 1.0,
+    "instruction_following": 0.82,
+    "conversation": 1.0,
+    "summarization": 0.95,
+    "rewriting": 0.75,
+    "clarification": 0.99,
+    "abstention": 1.0
+  },
+  "measured_rewriting_family_result": {
+    "family_0_layercake_passes": 25,
+    "family_1_layercake_passes": 0,
+    "family_2_layercake_passes": 25,
+    "family_3_layercake_passes": 25,
+    "family_1_source_passes": 0,
+    "family_1_teacher_passing_search_training_records": 0,
+    "interpretation": "The only critical floor failure is exactly the family with no eligible teacher supervision; another capacity or sampling sweep is not supported."
+  },
+  "decision": {
+    "promote_balanced_v2": false,
+    "new_model_sweep_authorized": false,
+    "bounded_search_only_coverage_supplement_authorized": true,
+    "natural_final_test_remains_sealed": true
+  }
+}
