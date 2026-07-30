@@ -1,0 +1,46 @@
+{
+  "format": "abi-english-cumulative-coverage-amendment/1",
+  "status": "POST_SOURCE_RESULT_AMENDMENT_BEFORE_COMPOSITION_OR_CANDIDATE_TRAINING",
+  "historical_protocols_modified": false,
+  "reason_for_amendment": "The per-supplement gate correctly rejected v4 and v5 independently, but it also discards complementary passing records. The controlling campaign contract gates the final candidate on overall quality plus nine critical capabilities, not on every source prompt family independently. A cumulative content-addressed pool is the appropriate acquisition representation: retain only teacher-passing records from every immutable search archive and let the unchanged held-out candidate gates decide whether coverage is sufficient.",
+  "input_archives": [
+    {
+      "path": "results/abi_moonshot/segregated_acquisition_v3/phi3-natural-v2-v3-english-search-training-v3.abix",
+      "archive_sha256": "79e3b448a835ba3f711b082d77bc183680887f0880f71c9c1faddc84b20d81d4"
+    },
+    {
+      "path": "results/abi_moonshot/segregated_acquisition_v3/phi3-natural-coverage-v4-search-survey.abix",
+      "archive_sha256": "c8a56b68524e3fe5383009cd9267b428bd45f21cfa08d6e275bf862e10bf31ad"
+    },
+    {
+      "path": "results/abi_moonshot/segregated_acquisition_v3/phi3-natural-coverage-v5-search-survey.abix",
+      "archive_sha256": "07a7bd810a901d620c170baf5259d9cee6e3433bce5d4ccf02abbeab5de77cdc"
+    }
+  ],
+  "composition_rules": {
+    "passing_source_outputs_only": true,
+    "search_records_only": true,
+    "validation_records_allowed": 0,
+    "final_test_records_allowed": 0,
+    "selected_domains": [],
+    "ambiguous_or_cross_domain_records_allowed": 0,
+    "known_specialist_markers_allowed": 0,
+    "duplicate_records_content_addressed": true,
+    "failed_teacher_outputs_allowed": 0
+  },
+  "measured_complementarity": {
+    "original_missing_rewriting_family": "v4 supplies 25/25 passing records",
+    "weak_instruction_families": "v5 supplies 25/25 passing records for each",
+    "email_family_1": "v4 and v5 together provide 22 passing attempts before content-addressed deduplication",
+    "cake_realization_family_3": "v5 provides 11 passing records; this remains explicit limited coverage and receives no special quality credit"
+  },
+  "candidate_rule": {
+    "base": "results/abi_moonshot/segregated_acquisition_v3/six-block-capacity-base-v1",
+    "sampling_strategy": "balanced_capabilities",
+    "all_other_training_settings": "identical_to_ABI_ENGLISH_COVERAGE_SUPPLEMENT_V4_PROTOCOL.json",
+    "candidate_runs_authorized": 1,
+    "promotion_gates": "unchanged_ABI_ENGLISH_ACQUISITION_CAMPAIGN_CONTRACT_V3.json",
+    "natural_final_test_access_before_freeze": false
+  },
+  "claim_boundary": "This is a disclosed post-source-result protocol amendment, so it is weaker than a fully preregistered source-family pass. It does not change candidate quality thresholds, evaluators, validation data, or final data and cannot itself establish fluency."
+}
