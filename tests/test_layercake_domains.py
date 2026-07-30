@@ -2,12 +2,45 @@ from __future__ import annotations
 
 import pytest
 
+from abi.capability_pipeline import SEGREGATED_TRAINING_ARTIFACT_ROLE
 from abi.layercake_domains import (
     DomainConformanceError,
     _Sampler,
     _candidate_copy_lexemes,
     _deterministic_math_rows,
+    _require_segregated_training_bundle,
 )
+
+
+def _segregated_bundle():
+    return {
+        "verification": {
+            "artifact_role": SEGREGATED_TRAINING_ARTIFACT_ROLE,
+            "training_eligible": True,
+            "domain_segregation_verified": True,
+        },
+        "segregation": {
+            "status": "PASS",
+            "absolute_zero_world_knowledge_claimed": False,
+        },
+    }
+
+
+def test_domain_trainer_accepts_only_current_segregated_material():
+    _require_segregated_training_bundle(_segregated_bundle())
+    legacy = _segregated_bundle()
+    legacy["verification"]["artifact_role"] = (
+        "selected_layercake_training_material_v2"
+    )
+    with pytest.raises(DomainConformanceError, match="segregated"):
+        _require_segregated_training_bundle(legacy)
+
+    unbounded_claim = _segregated_bundle()
+    unbounded_claim["segregation"][
+        "absolute_zero_world_knowledge_claimed"
+    ] = True
+    with pytest.raises(DomainConformanceError, match="segregation manifest"):
+        _require_segregated_training_bundle(unbounded_claim)
 
 
 def test_python_copy_lexeme_uses_declared_function_identity():

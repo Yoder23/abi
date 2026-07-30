@@ -31,10 +31,10 @@ from safetensors.torch import load_file, save_file
 
 from .artifacts import module_state_sha256
 from .capability_pipeline import (
-    CapabilityPipelineError,
-    TRAINING_ARTIFACT_ROLE,
+    SEGREGATED_TRAINING_ARTIFACT_ROLE,
     read_extraction_bundle,
 )
+from .capability_segregation import LINGUISTIC_FORM
 from .hf_extraction import evaluate_output, load_probe_catalog
 
 
@@ -717,11 +717,7 @@ def load_english_training_rows(
     """Load one nested budget of passing, search-only English records."""
 
     bundle = read_extraction_bundle(bundle_path)
-    verification = bundle["verification"]
-    if verification["artifact_role"] != TRAINING_ARTIFACT_ROLE:
-        raise LayerCakeHostError("bundle is not current training material")
-    if verification["training_eligible"] is not True:
-        raise LayerCakeHostError("bundle is not training eligible")
+    _require_segregated_training_bundle(bundle)
     budgets = bundle["budgets"]
     if budget_index < 0:
         budget_index += len(budgets)
@@ -741,6 +737,15 @@ def load_english_training_rows(
             continue
         if record["destination_scope"] != "english_core":
             continue
+        if (
+            record.get("knowledge_class") != LINGUISTIC_FORM
+            or record.get("domain_labels") != []
+            or record.get("domain_claims") != []
+            or record.get("output_introduces_unsupplied_facts") is not False
+        ):
+            raise LayerCakeHostError(
+                "non-linguistic material crossed the English training boundary"
+            )
         if record["split"] != "search":
             raise LayerCakeHostError("non-search record crossed the training boundary")
         if passed.get(str(record["record_id"])) is not True:
@@ -768,6 +773,30 @@ def load_english_training_rows(
         )
     rows.sort(key=lambda row: row["record_id"])
     return rows, budget, bundle
+
+
+def _require_segregated_training_bundle(
+    bundle: Mapping[str, Any],
+) -> None:
+    verification = bundle["verification"]
+    if (
+        verification["artifact_role"]
+        != SEGREGATED_TRAINING_ARTIFACT_ROLE
+        or verification["training_eligible"] is not True
+        or verification["domain_segregation_verified"] is not True
+    ):
+        raise LayerCakeHostError(
+            "bundle is not current segregated training material"
+        )
+    segregation = bundle.get("segregation")
+    if (
+        not isinstance(segregation, Mapping)
+        or segregation.get("status") != "PASS"
+        or segregation.get("absolute_zero_world_knowledge_claimed") is not False
+    ):
+        raise LayerCakeHostError(
+            "bundle lacks a bounded passing segregation manifest"
+        )
 
 
 def _import_layercake_runtime(layercake_root: Path):
@@ -2266,6 +2295,7 @@ def build_validation_rows(
     """Bind held-out source evidence to the exact catalog/source selected for training."""
 
     training = read_extraction_bundle(training_bundle_path)
+    _require_segregated_training_bundle(training)
     desired_capabilities = (
         set(capabilities) if capabilities is not None else set(CAPABILITY_TO_ROUTE)
     )

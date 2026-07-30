@@ -3,6 +3,7 @@ from pathlib import Path
 import pytest
 import torch
 
+from abi.capability_pipeline import SEGREGATED_TRAINING_ARTIFACT_ROLE
 from abi.layercake_host import (
     LayerCakeHostError,
     PromptIdentityBridge,
@@ -13,12 +14,42 @@ from abi.layercake_host import (
     _decode_symbolic_surface,
     _equal_record_prompt_identity_nll,
     _equal_record_prompt_overlap_ce,
+    _require_segregated_training_bundle,
     _select_next_token,
     _symbolic_surface_output,
     _symbolic_surface_tensor,
     route_for_capability,
     strip_source_chat_template,
 )
+
+
+def _segregated_bundle():
+    return {
+        "verification": {
+            "artifact_role": SEGREGATED_TRAINING_ARTIFACT_ROLE,
+            "training_eligible": True,
+            "domain_segregation_verified": True,
+        },
+        "segregation": {
+            "status": "PASS",
+            "absolute_zero_world_knowledge_claimed": False,
+        },
+    }
+
+
+def test_host_accepts_only_current_segregated_training_material():
+    _require_segregated_training_bundle(_segregated_bundle())
+    legacy = _segregated_bundle()
+    legacy["verification"]["artifact_role"] = (
+        "selected_layercake_training_material_v2"
+    )
+    with pytest.raises(LayerCakeHostError, match="segregated"):
+        _require_segregated_training_bundle(legacy)
+
+    missing_manifest = _segregated_bundle()
+    missing_manifest["segregation"] = None
+    with pytest.raises(LayerCakeHostError, match="segregation manifest"):
+        _require_segregated_training_bundle(missing_manifest)
 
 
 def test_source_chat_templates_are_removed_without_retaining_source_tokens():

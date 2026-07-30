@@ -32,6 +32,8 @@ from abi.layercake_acquisition import (
     ENGLISH_CORE_CAPABILITIES,
     build_labeled_extraction_record,
 )
+from abi.layercake_domains import load_domain_training_rows
+from abi.layercake_host import load_english_training_rows
 
 
 REVISION = "a" * 40
@@ -440,7 +442,11 @@ def test_v3_training_bundle_requires_and_verifies_core_domain_segregation(
             split="search",
             source_model=source["model_id"],
             source_model_revision=source["revision"],
-            prompt=f"Respond fluently to nonce item {index}: dax wug.",
+            prompt=(
+                "<|user|>\n"
+                f"Respond fluently to nonce item {index}: dax wug."
+                "<|end|>\n<|assistant|>\n"
+            ),
             output=f"Fluent {capability} response for nonce item {index}.",
             teacher_tokens=7,
             teacher_token_counter="generated_token_ids",
@@ -462,7 +468,10 @@ def test_v3_training_bundle_requires_and_verifies_core_domain_segregation(
         split="search",
         source_model=source["model_id"],
         source_model_revision=source["revision"],
-        prompt="Name element one.",
+        prompt=(
+            "<|user|>\nName element one."
+            "<|end|>\n<|assistant|>\n"
+        ),
         output="Atomic number 1 is hydrogen.",
         teacher_tokens=8,
         teacher_token_counter="generated_token_ids",
@@ -538,6 +547,15 @@ def test_v3_training_bundle_requires_and_verifies_core_domain_segregation(
     assert verified["training_eligible"] is True
     assert verified["domain_segregation_verified"] is True
     assert verified["selected_domains"] == ["chemistry"]
+    english_rows, _, _ = load_english_training_rows(
+        output, budget_index=0
+    )
+    domain_rows, _, _ = load_domain_training_rows(
+        output, domain="chemistry", budget_index=0
+    )
+    assert len(english_rows) == len(ENGLISH_CORE_CAPABILITIES)
+    assert len(domain_rows) == 1
+    assert domain_rows[0]["domain_id"] == "chemistry"
 
     with pytest.raises(
         CapabilityPipelineError, match="requires ontology and purity"
