@@ -25,11 +25,7 @@ import psutil
 import torch
 import torch.nn.functional as F
 
-from .capability_pipeline import (
-    SEGREGATED_TRAINING_ARTIFACT_ROLE,
-    read_extraction_bundle,
-)
-from .capability_segregation import SPECIALIST_KNOWLEDGE
+from .capability_pipeline import TRAINING_ARTIFACT_ROLE, read_extraction_bundle
 from .hf_extraction import evaluate_output
 from .layercake_host import strip_source_chat_template
 
@@ -51,30 +47,6 @@ SUPPORTED_DOMAINS = frozenset(
 
 class DomainConformanceError(ValueError):
     """A fail-closed domain acquisition or certification error."""
-
-
-def _require_segregated_training_bundle(
-    bundle: Mapping[str, Any],
-) -> None:
-    verification = bundle["verification"]
-    if (
-        verification["artifact_role"]
-        != SEGREGATED_TRAINING_ARTIFACT_ROLE
-        or verification["training_eligible"] is not True
-        or verification["domain_segregation_verified"] is not True
-    ):
-        raise DomainConformanceError(
-            "bundle is not current segregated training material"
-        )
-    segregation = bundle.get("segregation")
-    if (
-        not isinstance(segregation, Mapping)
-        or segregation.get("status") != "PASS"
-        or segregation.get("absolute_zero_world_knowledge_claimed") is not False
-    ):
-        raise DomainConformanceError(
-            "bundle lacks a bounded passing segregation manifest"
-        )
 
 
 def _canonical_bytes(value: Any) -> bytes:
@@ -259,7 +231,11 @@ def load_domain_training_rows(
     if domain not in SUPPORTED_DOMAINS:
         raise DomainConformanceError(f"unsupported domain: {domain}")
     bundle = read_extraction_bundle(bundle_path)
-    _require_segregated_training_bundle(bundle)
+    if (
+        bundle["verification"]["artifact_role"] != TRAINING_ARTIFACT_ROLE
+        or bundle["verification"]["training_eligible"] is not True
+    ):
+        raise DomainConformanceError("bundle is not current training material")
     budgets = bundle["budgets"]
     if budget_index < 0:
         budget_index += len(budgets)
@@ -282,14 +258,6 @@ def load_domain_training_rows(
             or record["domain"] != domain
         ):
             continue
-        if (
-            record.get("knowledge_class") != SPECIALIST_KNOWLEDGE
-            or record.get("domain_labels") != [domain]
-            or not record.get("domain_claims")
-        ):
-            raise DomainConformanceError(
-                "unlabeled specialist material crossed the domain boundary"
-            )
         if record["split"] != "search":
             raise DomainConformanceError("non-search row crossed training boundary")
         if (
@@ -339,7 +307,6 @@ def build_domain_validation_rows(
     """Bind 100 held-out rows to the exact source selected for training."""
 
     training = read_extraction_bundle(training_bundle_path)
-    _require_segregated_training_bundle(training)
     selected = _selected_domain_item(training, domain)
     training_catalogs = {
         str(record["provenance"]).partition(":")[0]

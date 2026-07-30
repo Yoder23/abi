@@ -45,6 +45,8 @@ Repository = "https://github.com/Yoder23/abi"
 [project.scripts]
 abi-moonshot = "abi.moonshot:main"
 abi-layercake-release = "abi.moonshot_release:main"
+abi-layercake-host-v3 = "abi.layercake_host_v3:main"
+abi-layercake-domains-v3 = "abi.layercake_domains_v3:main"
 
 [build-system]
 requires = ["setuptools>=68"]

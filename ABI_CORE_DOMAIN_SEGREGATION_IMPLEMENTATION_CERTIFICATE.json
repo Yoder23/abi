@@ -69,14 +69,14 @@
     "abi/certification_catalog.py": "dfd138e6bc7ab4d2511acfd5ff91c88f4717a0872893f0c9320c9de290a1dadc",
     "abi/hf_extraction.py": "0eca7dcabde5c765881d4884867b32b4cd859beef2ddec5da80ab0e9e2a95eb8",
     "abi/layercake_acquisition.py": "6f5d8396c4c89a6383158f6c596094246036882d2d9c854ddaab23262414d991",
-    "abi/layercake_domains.py": "05cdfaa58fff89d17345b339b280c37af3ab5a71601e70c61cec3b5967735dfd",
-    "abi/layercake_host.py": "76f658aa28b3e3c4fc0c26cca9b9235c379b98f63f02638ea25b280ea2d62131",
+    "abi/layercake_domains_v3.py": "37ae1dabcacd6926ca381bee64bb24bae230e72048ad02030c55adb7113088ba",
+    "abi/layercake_host_v3.py": "8008d57fb89363878bda48bd521b98b69aa19e0b831ae2e347b57c6ccee50d29",
     "abi/moonshot.py": "e724b4672e1ed8af0362432fbeced36061ad96e035014a35f595ba134e8c19ed"
   },
   "verification": {
     "pytest": {
       "path": "results/abi_moonshot/segregation_v2/full-pytest.xml",
-      "sha256": "c796ec91a4f587148e419dfd2a0960b825caf464fca8cbad311f77f3a3fa5022",
+      "sha256": "20e890be4deb1895e17b138881e0d586f1deec26ebc554e88d37846a9e9858bc",
       "passed": 177,
       "failed": 0,
       "warnings": 2

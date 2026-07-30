@@ -32,8 +32,8 @@ from abi.layercake_acquisition import (
     ENGLISH_CORE_CAPABILITIES,
     build_labeled_extraction_record,
 )
-from abi.layercake_domains import load_domain_training_rows
-from abi.layercake_host import load_english_training_rows
+from abi.layercake_domains_v3 import load_domain_training_rows
+from abi.layercake_host_v3 import load_english_training_rows
 
 
 REVISION = "a" * 40

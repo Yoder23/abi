@@ -3,6 +3,7 @@ from pathlib import Path
 import pytest
 import torch
 
+import abi.layercake_host_v3 as successor_host
 from abi.capability_pipeline import SEGREGATED_TRAINING_ARTIFACT_ROLE
 from abi.layercake_host import (
     LayerCakeHostError,
@@ -14,13 +15,13 @@ from abi.layercake_host import (
     _decode_symbolic_surface,
     _equal_record_prompt_identity_nll,
     _equal_record_prompt_overlap_ce,
-    _require_segregated_training_bundle,
     _select_next_token,
     _symbolic_surface_output,
     _symbolic_surface_tensor,
     route_for_capability,
     strip_source_chat_template,
 )
+from abi.layercake_host_v3 import _require_segregated_training_bundle
 
 
 def _segregated_bundle():
@@ -39,6 +40,18 @@ def _segregated_bundle():
 
 def test_host_accepts_only_current_segregated_training_material():
     _require_segregated_training_bundle(_segregated_bundle())
+    assert (
+        successor_host.train_host_delta.__globals__[
+            "load_english_training_rows"
+        ]
+        is successor_host.load_english_training_rows
+    )
+    assert (
+        successor_host.evaluate_host_semantics.__globals__[
+            "build_validation_rows"
+        ]
+        is successor_host.build_validation_rows
+    )
     legacy = _segregated_bundle()
     legacy["verification"]["artifact_role"] = (
         "selected_layercake_training_material_v2"

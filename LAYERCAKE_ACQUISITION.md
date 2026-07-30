@@ -46,11 +46,12 @@ LayerCake installation, routing, and certification
 The final English host contains no source transformer blocks. Domain cakes are
 immutable signed archives and can be installed independently.
 
-The English-core and domain-cake conformance loaders now accept only verified
-v3 segregated training bundles. They independently recheck the passing purity
-manifest and each record's semantic destination before any training row is
-materialized. Historical v1/v2 bundles remain auditable but cannot enter a new
-successor training run.
+The versioned `abi.layercake_host_v3` and `abi.layercake_domains_v3` consumers
+accept only verified v3 segregated training bundles. They independently
+recheck the passing purity manifest and each record's semantic destination
+before any training row is materialized, while reusing the frozen certified
+v47 training implementation without modifying it. Historical v1/v2 bundles
+and consumers remain auditable but cannot enter a new successor training run.
 
 ## Reference release layout
 

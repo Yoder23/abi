@@ -2,14 +2,15 @@ from __future__ import annotations
 
 import pytest
 
+import abi.layercake_domains_v3 as successor_domains
 from abi.capability_pipeline import SEGREGATED_TRAINING_ARTIFACT_ROLE
 from abi.layercake_domains import (
     DomainConformanceError,
     _Sampler,
     _candidate_copy_lexemes,
     _deterministic_math_rows,
-    _require_segregated_training_bundle,
 )
+from abi.layercake_domains_v3 import _require_segregated_training_bundle
 
 
 def _segregated_bundle():
@@ -28,6 +29,18 @@ def _segregated_bundle():
 
 def test_domain_trainer_accepts_only_current_segregated_material():
     _require_segregated_training_bundle(_segregated_bundle())
+    assert (
+        successor_domains.train_domain_candidate.__globals__[
+            "load_domain_training_rows"
+        ]
+        is successor_domains.load_domain_training_rows
+    )
+    assert (
+        successor_domains.evaluate_domain_candidate.__globals__[
+            "build_domain_validation_rows"
+        ]
+        is successor_domains.build_domain_validation_rows
+    )
     legacy = _segregated_bundle()
     legacy["verification"]["artifact_role"] = (
         "selected_layercake_training_material_v2"
