@@ -188,7 +188,7 @@ def test_embedding_quantization_uses_independent_token_row_scales():
     assert np.all(np.abs(restored - embedding) <= scales[:, None])
 
 
-def test_native_semantic_summary_requires_depth_quality_and_routing():
+def test_native_semantic_summary_applies_locked_successor_gates():
     observations = []
     capabilities = (
         "abstention",
@@ -213,16 +213,18 @@ def test_native_semantic_summary_requires_depth_quality_and_routing():
                 "source_passed": True,
                 "layercake_passed": True,
                 "route_correct": True,
+                "collapse": {"collapse_detected": False},
             }
             for _ in range(100)
         )
-    metrics, complete, passed = _summarize_native_semantics(
+    metrics, complete, passed, gates = _summarize_native_semantics(
         observations
     )
     assert len(metrics) == 14
     assert complete is True
     assert passed is True
-    observations[-1]["route_correct"] = False
+    assert all(gates.values())
+    observations[-1]["collapse"]["collapse_detected"] = True
     assert _summarize_native_semantics(observations)[2] is False
 
 

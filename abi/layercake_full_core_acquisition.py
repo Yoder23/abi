@@ -34,11 +34,38 @@ from .layercake_host import (
     _is_within,
     _sha256_file,
 )
+from .layercake_host_preservation import _load_general_rows
 from .layercake_host_v3 import load_english_training_rows
 from .layercake_core_loader import load_layercake_core
+from .symbolic_runtime import CAPABILITY_TO_ROUTE
 
 
 ARTIFACT_FORMAT = "abi-layercake-full-english-core-acquisition/1"
+
+GENERAL_TASK_TO_CAPABILITY = {
+    "summarization": "summarization",
+    "planning": "domain_independent_reasoning",
+    "continuation": "coherence",
+    "reasoning": "domain_independent_reasoning",
+    "question_answering": "prompt_grounding",
+    "explanation": "cake_output_realization",
+    "repetition_control": "coherence",
+    "comparison": "domain_independent_reasoning",
+    "coherence": "coherence",
+    "instruction_following": "instruction_following",
+    "rewrite": "rewriting",
+    "quoted_conflict": "prompt_grounding",
+    "synthetic_rule": "domain_independent_reasoning",
+    "clarification": "clarification",
+    "combine_facts": "cake_output_realization",
+    "email_from_notes": "email_drafting",
+    "conversation": "conversation",
+    "entity_reference": "prompt_grounding",
+    "distractor_resistance": "prompt_grounding",
+    "abstention": "abstention",
+    "tone_and_format": "format_control",
+    "grounded_qa": "prompt_grounding",
+}
 
 
 class FullCoreAcquisitionError(RuntimeError):
@@ -126,6 +153,34 @@ def _write_json(path: Path, value: Mapping[str, Any]) -> None:
     )
 
 
+def _general_preservation_rows(path: Path) -> list[dict[str, Any]]:
+    """Bind the locked knowledge-light curriculum to canonical cake routes."""
+
+    rows = _load_general_rows(path, split="train")
+    prepared = []
+    for row in rows:
+        task = str(row["task"])
+        capability = GENERAL_TASK_TO_CAPABILITY.get(task)
+        if capability is None:
+            raise FullCoreAcquisitionError(
+                f"general preservation task is unmapped: {task}"
+            )
+        prepared.append(
+            {
+                "record_id": f"general-preservation:{row['id']}",
+                "capability": capability,
+                "route": CAPABILITY_TO_ROUTE[capability],
+                "prompt": str(row["prompt"]),
+                "response": str(row["response"]),
+                "teacher_tokens": 0,
+                "provenance": (
+                    "sealed-layercake-knowledge-light-preservation"
+                ),
+            }
+        )
+    return prepared
+
+
 def train_full_core(
     *,
     bundle_path: str | Path,
@@ -146,6 +201,9 @@ def train_full_core(
     recovery_interval: int = 8,
     recovery_horizons: Sequence[int] = (8, 16, 32),
     sampling_strategy: str = "uniform_records",
+    general_curriculum_path: str | Path | None = None,
+    general_batch_size: int = 0,
+    general_loss_weight: float = 1.0,
     device_name: str = "cuda",
 ) -> dict[str, Any]:
     if min(steps, batch_size, max_tokens) <= 0:
@@ -161,6 +219,14 @@ def train_full_core(
         or any(int(horizon) <= 0 for horizon in recovery_horizons)
     ):
         raise FullCoreAcquisitionError("recovery horizons must be positive")
+    if general_batch_size < 0 or general_loss_weight <= 0:
+        raise FullCoreAcquisitionError(
+            "general preservation size or loss weight is invalid"
+        )
+    if (general_curriculum_path is None) != (general_batch_size == 0):
+        raise FullCoreAcquisitionError(
+            "general curriculum and positive batch size must be supplied together"
+        )
     if sampling_strategy not in {
         "uniform_records",
         "balanced_capabilities",
@@ -168,6 +234,11 @@ def train_full_core(
         raise FullCoreAcquisitionError("unknown sampling strategy")
 
     bundle_path = Path(bundle_path).resolve()
+    general_curriculum_path = (
+        Path(general_curriculum_path).resolve()
+        if general_curriculum_path is not None
+        else None
+    )
     layercake_root = Path(layercake_root).resolve()
     parent_path = Path(parent_path).resolve()
     canonical_abi_path = Path(canonical_abi_path).resolve()
@@ -190,6 +261,11 @@ def train_full_core(
     archive_sha_before = _sha256_file(bundle_path)
     rows, budget, bundle = load_english_training_rows(
         bundle_path, budget_index=budget_index
+    )
+    general_rows = (
+        _general_preservation_rows(general_curriculum_path)
+        if general_curriculum_path is not None
+        else []
     )
     verification = bundle["verification"]
     if (
@@ -274,10 +350,22 @@ def train_full_core(
         seed=seed,
         strategy=sampling_strategy,
     )
+    general_sampler = (
+        _DeterministicRowSampler(
+            general_rows,
+            seed=seed + 1_000_003,
+            strategy="uniform_records",
+        )
+        if general_rows
+        else None
+    )
     unique_seen: set[str] = set()
+    unique_general_seen: set[str] = set()
     sampled_records_by_capability: Counter[str] = Counter()
     supervised_tokens_seen = 0
+    general_supervised_tokens_seen = 0
     raw_utf8_bytes_seen = 0
+    general_raw_utf8_bytes_seen = 0
     autonomous_prefix_tokens_seen = 0
     recovery_batches = 0
     horizon_counts = {
@@ -297,6 +385,11 @@ def train_full_core(
         if attempted_batches > steps + 1000:
             raise FullCoreAcquisitionError("too many non-finite optimizer attempts")
         selected = sampler.batch(batch_size)
+        selected_general = (
+            general_sampler.batch(general_batch_size)
+            if general_sampler is not None
+            else []
+        )
         sampled_records_by_capability.update(
             str(row["capability"]) for row in selected
         )
@@ -337,6 +430,16 @@ def train_full_core(
             max_tokens=max_tokens,
             generated_prefixes=generated_prefixes,
         )
+        general_batch = (
+            _batch(
+                tokenizer,
+                selected_general,
+                device=device,
+                max_tokens=max_tokens,
+            )
+            if selected_general
+            else None
+        )
         optimizer.zero_grad(set_to_none=True)
         with autocast():
             result = model(
@@ -357,6 +460,41 @@ def train_full_core(
                 result["task_logits"], routes
             )
             loss = language_loss + classifier_loss_weight * classifier_loss
+            general_language_loss = None
+            general_classifier_loss = None
+            if general_batch is not None:
+                (
+                    general_ids,
+                    general_labels,
+                    general_attention,
+                    general_prompt_lengths,
+                    general_routes,
+                    general_observed,
+                ) = general_batch
+                general_result = model(
+                    general_ids,
+                    attention_mask=general_attention,
+                    prompt_lengths=general_prompt_lengths,
+                    task_routes=general_routes,
+                    use_cache=False,
+                )
+                general_language_loss = (
+                    _equal_record_prompt_overlap_ce(
+                        general_result["logits"],
+                        general_labels,
+                        general_ids,
+                        general_prompt_lengths,
+                        overlap_weight=prompt_overlap_loss_weight,
+                    )
+                )
+                general_classifier_loss = F.cross_entropy(
+                    general_result["task_logits"], general_routes
+                )
+                loss = loss + general_loss_weight * (
+                    general_language_loss
+                    + classifier_loss_weight
+                    * general_classifier_loss
+                )
         scale_before = scaler.get_scale()
         scaler.scale(loss).backward()
         scaler.unscale_(optimizer)
@@ -368,10 +506,19 @@ def train_full_core(
             continue
         successful_steps += 1
         unique_seen.update(str(row["record_id"]) for row in selected)
+        unique_general_seen.update(
+            str(row["record_id"]) for row in selected_general
+        )
         supervised_tokens_seen += observed
+        if general_batch is not None:
+            general_supervised_tokens_seen += general_observed
         raw_utf8_bytes_seen += sum(
             len((str(row["prompt"]) + str(row["response"])).encode("utf-8"))
             for row in selected
+        )
+        general_raw_utf8_bytes_seen += sum(
+            len((str(row["prompt"]) + str(row["response"])).encode("utf-8"))
+            for row in selected_general
         )
         if (
             successful_steps == 1
@@ -383,6 +530,16 @@ def train_full_core(
                 "total_loss": float(loss.detach()),
                 "language_loss": float(language_loss.detach()),
                 "classifier_loss": float(classifier_loss.detach()),
+                "general_language_loss": (
+                    float(general_language_loss.detach())
+                    if general_language_loss is not None
+                    else None
+                ),
+                "general_classifier_loss": (
+                    float(general_classifier_loss.detach())
+                    if general_classifier_loss is not None
+                    else None
+                ),
                 "wall_seconds": time.perf_counter() - started,
             }
             curves.append(curve)
@@ -484,6 +641,39 @@ def train_full_core(
             "source_generated_text_retained_in_deployment": False,
             "teacher_tokenizer_required_at_inference": False,
         },
+        "general_english_preservation": {
+            "enabled": general_curriculum_path is not None,
+            "path_at_training": (
+                str(general_curriculum_path)
+                if general_curriculum_path is not None
+                else None
+            ),
+            "sha256": (
+                _sha256_file(general_curriculum_path)
+                if general_curriculum_path is not None
+                else None
+            ),
+            "source": (
+                "sealed LayerCake knowledge-light supplied-context curriculum"
+                if general_curriculum_path is not None
+                else None
+            ),
+            "teacher_tokens_imported": 0,
+            "teacher_outputs_imported": 0,
+            "domain_artifacts_imported": 0,
+            "training_rows": len(general_rows),
+            "unique_rows_seen": len(unique_general_seen),
+            "all_rows_seen": (
+                len(unique_general_seen) == len(general_rows)
+                if general_rows
+                else True
+            ),
+            "claim_boundary": (
+                "This replay preserves already-certified LayerCake language "
+                "behavior. It is not source-teacher extraction, a specialist "
+                "domain cake, or evidence of absolute zero world knowledge."
+            ),
+        },
         "training": {
             "seed": seed,
             "device": str(device),
@@ -492,6 +682,11 @@ def train_full_core(
             "skipped_amp_optimizer_steps": skipped_amp_steps,
             "attempted_batches": attempted_batches,
             "batch_size": batch_size,
+            "general_preservation_batch_size": general_batch_size,
+            "total_examples_per_step": (
+                batch_size + general_batch_size
+            ),
+            "general_preservation_loss_weight": general_loss_weight,
             "sampling_strategy": sampling_strategy,
             "sampled_records_by_capability": dict(
                 sorted(sampled_records_by_capability.items())
@@ -503,7 +698,13 @@ def train_full_core(
             "weight_decay": 0.01,
             "max_tokens": max_tokens,
             "supervised_layercake_tokens_seen": supervised_tokens_seen,
+            "general_preservation_tokens_seen": (
+                general_supervised_tokens_seen
+            ),
             "raw_utf8_bytes_seen": raw_utf8_bytes_seen,
+            "general_preservation_utf8_bytes_seen": (
+                general_raw_utf8_bytes_seen
+            ),
             "self_generated_prefix_recovery": {
                 "start_step": recovery_start_step,
                 "interval": recovery_interval,
@@ -562,6 +763,13 @@ def main(argv: Sequence[str] | None = None) -> int:
         choices=("uniform_records", "balanced_capabilities"),
         default="uniform_records",
     )
+    parser.add_argument("--general-curriculum")
+    parser.add_argument(
+        "--general-batch-size", type=int, default=0
+    )
+    parser.add_argument(
+        "--general-loss-weight", type=float, default=1.0
+    )
     parser.add_argument("--device", choices=("cpu", "cuda"), default="cuda")
     args = parser.parse_args(argv)
     manifest = train_full_core(
@@ -587,6 +795,9 @@ def main(argv: Sequence[str] | None = None) -> int:
             if value.strip()
         ),
         sampling_strategy=args.sampling_strategy,
+        general_curriculum_path=args.general_curriculum,
+        general_batch_size=args.general_batch_size,
+        general_loss_weight=args.general_loss_weight,
         device_name=args.device,
     )
     print(

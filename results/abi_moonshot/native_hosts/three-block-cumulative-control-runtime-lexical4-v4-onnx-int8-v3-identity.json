@@ -1,0 +1,66 @@
+{
+  "checks": {
+    "canonical_abi_hash_matches": true,
+    "core_checkpoint_hash_matches": true,
+    "core_manifest_claim_hash_matches": true,
+    "core_metadata_file_hash_matches": true,
+    "decoding_contract_is_exact": true,
+    "foreign_source_parameters_absent": true,
+    "hash_bound_native_graph_executes": true,
+    "source_transformer_blocks_absent": true,
+    "standalone_kind_bound": true,
+    "standalone_route_bridge_absent": true,
+    "symbolic_handlers_absent": true,
+    "teacher_absent": true
+  },
+  "core_checkpoint_sha256": "91e7ec3b1d5042a50192d84cfb2c9da11ae6277d0e04d908b022ac19f349501c",
+  "core_manifest_sha256": "63e41c189bd0b7af5fa1c0599fb10f306fe1e438e2b2fba8e4435f5440cadb01",
+  "core_metadata_file_sha256": "a432060437894e2a17847f86ce2381f6f099ad6060f4cc577ddd904f841a579e",
+  "decoding": {
+    "algorithm": "greedy",
+    "allow_prompt_ngrams": false,
+    "lexical_repetition_truncation_threshold": 4,
+    "no_repeat_ngram_size": 0,
+    "prompt_identity_mixture": false,
+    "repetition_penalty": 1.0,
+    "weights_changed": false
+  },
+  "evidence_sha256": "57e3c58fdfc5296bfd3d1010eb12e64e367950ad696c41bebf77c085c57c5e06",
+  "final_test_accessed": false,
+  "format": "abi-layercake-standalone-core-native-identity/1",
+  "probe": {
+    "authoritative_generated_tokens": 7,
+    "generated_characters": 33,
+    "generated_utf8_bytes": 33,
+    "memory": {
+      "resident_bytes_after": 439431168,
+      "resident_bytes_before": 142446592
+    },
+    "output": "\"Could you please please please?\"",
+    "output_sha256": "be230acd98fb18a53f59d8305bb844d3c00f06d8b7f33346bb17dccd96925c63",
+    "persistent_state": {
+      "cache_lengths": [
+        19,
+        19,
+        19
+      ],
+      "completed_prefix_recomputation": false,
+      "prompt_encoded_once": true
+    },
+    "prompt_tokens": 12,
+    "route": 4,
+    "runtime_runner_sha256": "c76c54416bb4924eeabb57874d8eb8a8d940caaba653a68bc343ec2e83a14f72",
+    "symbolic_handler_used": false,
+    "timing": {
+      "bytes_per_second_total": 25.46204742946743,
+      "characters_per_second_total": 25.46204742946743,
+      "prefill_seconds": 0.0363698,
+      "time_to_first_output_seconds": 0.0367714,
+      "tokenization_seconds": 0.00035,
+      "total_latency_seconds": 1.2960466
+    }
+  },
+  "runtime_graph_sha256": "36cd65f06c19f19387a029faaf9e6485db9e28fb392285e787532e296d94d8fd",
+  "status": "PASS",
+  "symbolic_surface_sha256": "1c61f350ee6a26a448b2c78e260ac53326b50ebff70adfc98f119429828f77ce"
+}

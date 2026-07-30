@@ -8,7 +8,10 @@ from abi.layercake_acquisition import (
     select_minimum_passing_budget,
     validate_labeled_extraction_record,
 )
-from abi.layercake_full_core_acquisition import _DeterministicRowSampler
+from abi.layercake_full_core_acquisition import (
+    _DeterministicRowSampler,
+    _general_preservation_rows,
+)
 from abi.layercake_runtime_export import export_runtime_candidate
 
 
@@ -79,6 +82,41 @@ def test_balanced_sampler_equalizes_capabilities_without_adding_records():
     assert {row["record_id"] for row in selected}.issubset(
         {row["record_id"] for row in rows}
     )
+
+
+def test_general_preservation_rows_bind_hash_checked_tasks_to_routes(
+    tmp_path,
+):
+    import hashlib
+    import json
+
+    prompt = "Rewrite the supplied sentence."
+    response = "The supplied sentence is polished."
+    row = {
+        "id": "rewrite-1",
+        "split": "train",
+        "task": "rewrite",
+        "prompt": prompt,
+        "prompt_sha256": hashlib.sha256(prompt.encode()).hexdigest(),
+        "response": response,
+        "response_sha256": hashlib.sha256(response.encode()).hexdigest(),
+    }
+    curriculum = tmp_path / "curriculum.jsonl"
+    curriculum.write_text(json.dumps(row) + "\n", encoding="utf-8")
+    prepared = _general_preservation_rows(curriculum)
+    assert prepared == [
+        {
+            "record_id": "general-preservation:rewrite-1",
+            "capability": "rewriting",
+            "route": 8,
+            "prompt": prompt,
+            "response": response,
+            "teacher_tokens": 0,
+            "provenance": (
+                "sealed-layercake-knowledge-light-preservation"
+            ),
+        }
+    ]
 
 
 def test_runtime_export_preserves_checkpoint_and_freezes_decoding(tmp_path):

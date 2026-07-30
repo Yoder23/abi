@@ -21,8 +21,8 @@ from tokenizers import Tokenizer
 from .layercake_host import (
     LayerCakeHostError,
     _canonical_json_bytes,
-    load_english_training_rows,
 )
+from .layercake_host_v3 import load_english_training_rows
 from .layercake_host_preservation import _load_general_rows
 from .layercake_host_runtime import (
     RUNTIME_FORMAT,

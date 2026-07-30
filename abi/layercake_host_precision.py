@@ -39,6 +39,15 @@ LOCKED_CANDIDATES: dict[str, dict[str, Any]] = {
         ],
         "embedding": "int8_per_row",
     },
+    "block1-fp32-input-embedding-fp16": {
+        "nodes": [
+            "/transformer/h.1/attn/c_attn/Gemm_MatMul",
+            "/transformer/h.1/attn/c_proj/Gemm_MatMul",
+            "/transformer/h.1/mlp/c_fc/Gemm_MatMul",
+            "/transformer/h.1/mlp/c_proj/Gemm_MatMul",
+        ],
+        "embedding": "fp16",
+    },
     "block2-fp32": {
         "nodes": [
             "/transformer/h.2/attn/c_attn/Gemm_MatMul",

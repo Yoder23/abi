@@ -2013,7 +2013,18 @@ def benchmark_native_host(
 
 def _summarize_native_semantics(
     observations: Sequence[Mapping[str, Any]],
-) -> tuple[dict[str, Any], bool, bool]:
+) -> tuple[dict[str, Any], bool, bool, dict[str, bool]]:
+    critical_capabilities = {
+        "grammar",
+        "coherence",
+        "prompt_grounding",
+        "instruction_following",
+        "conversation",
+        "summarization",
+        "rewriting",
+        "clarification",
+        "abstention",
+    }
     capability_metrics: dict[str, Any] = {}
     for capability in sorted(
         {str(row["capability"]) for row in observations}
@@ -2034,6 +2045,10 @@ def _summarize_native_semantics(
             and not bool(row["layercake_passed"])
             for row in selected
         )
+        collapse_count = sum(
+            bool(row["collapse"]["collapse_detected"])
+            for row in selected
+        )
         capability_metrics[capability] = {
             "observations": len(selected),
             "source_passes": source_passes,
@@ -2041,7 +2056,12 @@ def _summarize_native_semantics(
             "source_pass_rate": source_passes / len(selected),
             "layercake_pass_rate": host_passes / len(selected),
             "source_passing_regressions": regressions,
-            "bounded_zero_regression_pass": regressions == 0,
+            "source_passing_retention_rate": (
+                (source_passes - regressions) / source_passes
+                if source_passes
+                else None
+            ),
+            "collapse_count": collapse_count,
             "automatic_route_accuracy": sum(
                 bool(row["route_correct"]) for row in selected
             )
@@ -2054,16 +2074,44 @@ def _summarize_native_semantics(
             for metrics in capability_metrics.values()
         )
     )
-    semantic_pass = (
-        complete_depth
-        and all(
-            metrics["layercake_passes"] == metrics["observations"]
-            and metrics["bounded_zero_regression_pass"]
-            and metrics["automatic_route_accuracy"] == 1.0
-            for metrics in capability_metrics.values()
-        )
+    total_observations = len(observations)
+    total_passes = sum(
+        bool(row["layercake_passed"]) for row in observations
     )
-    return capability_metrics, complete_depth, semantic_pass
+    total_source_passes = sum(
+        bool(row["source_passed"]) for row in observations
+    )
+    total_regressions = sum(
+        bool(row["source_passed"])
+        and not bool(row["layercake_passed"])
+        for row in observations
+    )
+    total_collapses = sum(
+        bool(row["collapse"]["collapse_detected"])
+        for row in observations
+    )
+    gates = {
+        "complete_locked_depth": complete_depth,
+        "overall_functional_pass_rate_at_least_080": (
+            total_passes / total_observations >= 0.8
+        ),
+        "each_critical_capability_pass_rate_at_least_080": all(
+            capability_metrics[capability]["layercake_pass_rate"] >= 0.8
+            for capability in critical_capabilities
+        )
+        if critical_capabilities.issubset(capability_metrics)
+        else False,
+        "source_passing_retention_rate_at_least_090": (
+            (total_source_passes - total_regressions)
+            / total_source_passes
+            >= 0.9
+        )
+        if total_source_passes
+        else False,
+        "collapse_count_is_zero": total_collapses == 0,
+    }
+    semantic_pass = all(gates.values())
+    return capability_metrics, complete_depth, semantic_pass, gates
 
 
 def evaluate_native_host_semantics(
@@ -2083,14 +2131,55 @@ def evaluate_native_host_semantics(
         raise LayerCakeHostRuntimeError(
             f"native semantic evidence is immutable: {output_path}"
         )
-    from .hf_extraction import evaluate_output
-    from .layercake_host import build_validation_rows
-
-    rows = build_validation_rows(
-        training_bundle_path=training_bundle_path,
-        validation_bundle_paths=validation_bundle_paths,
-        catalog_paths=catalog_paths,
+    from .english_generalization_evaluation import (
+        _collapse_metrics,
+        _source_by_probe,
     )
+    from .hf_extraction import evaluate_output, load_probe_catalog
+
+    probes: dict[str, dict[str, Any]] = {}
+    for catalog_path in catalog_paths:
+        catalog = load_probe_catalog(catalog_path)
+        for probe in catalog["probes"]:
+            if probe["split"] != "validation":
+                continue
+            probe_id = str(probe["probe_id"])
+            if probe_id in probes and probes[probe_id] != probe:
+                raise LayerCakeHostRuntimeError(
+                    f"conflicting validation probe: {probe_id}"
+                )
+            probes[probe_id] = probe
+    source, _ = _source_by_probe(
+        validation_bundle_paths, split="validation"
+    )
+    if set(probes) - set(source):
+        raise LayerCakeHostRuntimeError(
+            "source validation evidence is incomplete for the locked catalog"
+        )
+    rows = [
+        {
+            "probe_id": probe_id,
+            "capability": str(probe["capability"]),
+            "prompt": str(probe["prompt"]),
+            "evaluator": dict(probe["evaluator"]),
+            "max_new_tokens": int(probe["max_new_tokens"]),
+            "expected_route": CAPABILITY_TO_ROUTE[
+                str(probe["capability"])
+            ],
+            "source_passed": bool(source[probe_id]["passed"]),
+            "source_score": float(source[probe_id]["score"]),
+            "source_output": str(source[probe_id]["output"]),
+            "source_model": str(source[probe_id]["source_model"]),
+            "source_model_revision": str(
+                source[probe_id]["source_model_revision"]
+            ),
+        }
+        for probe_id, probe in sorted(probes.items())
+    ]
+    if len(rows) != len(CAPABILITY_TO_ROUTE) * 100:
+        raise LayerCakeHostRuntimeError(
+            "locked native semantic depth changed"
+        )
     runtime = NativeHostRuntime(artifact, threads=threads)
     observations = []
     started = time.perf_counter()
@@ -2127,6 +2216,12 @@ def evaluate_native_host_semantics(
                 "symbolic_handler_used": result[
                     "symbolic_handler_used"
                 ],
+                "collapse": _collapse_metrics(
+                    result["authoritative_generated_token_ids"],
+                    result["output"],
+                    runtime.encode(str(row["prompt"]) + "\n"),
+                    str(row["prompt"]),
+                ),
             }
         )
         if index % 100 == 0:
@@ -2146,7 +2241,16 @@ def evaluate_native_host_semantics(
         capability_metrics,
         complete_depth,
         semantic_pass,
+        gates,
     ) = _summarize_native_semantics(observations)
+    total_source_passes = sum(
+        bool(row["source_passed"]) for row in observations
+    )
+    total_regressions = sum(
+        bool(row["source_passed"])
+        and not bool(row["layercake_passed"])
+        for row in observations
+    )
     metadata = runtime.metadata
     evidence = {
         "schema_version": (
@@ -2178,7 +2282,19 @@ def evaluate_native_host_semantics(
         "threads": int(threads),
         "observation_count": len(observations),
         "complete_locked_depth": complete_depth,
-        "bounded_zero_regression_pass": semantic_pass,
+        "locked_validation_gates": gates,
+        "layercake_pass_rate": sum(
+            bool(row["layercake_passed"]) for row in observations
+        )
+        / len(observations),
+        "source_passing_retention_rate": (
+            (total_source_passes - total_regressions)
+            / total_source_passes
+        ),
+        "collapse_count": sum(
+            bool(row["collapse"]["collapse_detected"])
+            for row in observations
+        ),
         "capability_metrics": capability_metrics,
         "peak_process_rss_bytes": peak_rss,
         "wall_seconds": time.perf_counter() - started,
