@@ -1,0 +1,25 @@
+{
+  "format": "abi-english-speed-preserving-successor-decoding-lock/1",
+  "status": "PREREGISTERED_BEFORE_SUCCESSOR_VALIDATION_ACCESS",
+  "effective_date": "2026-07-30",
+  "applies_to": [
+    "depth_compressed_0_2_5",
+    "three_block_cumulative_control"
+  ],
+  "decoding": {
+    "algorithm": "greedy",
+    "no_repeat_ngram_size": 0,
+    "allow_prompt_ngrams": false,
+    "lexical_repetition_truncation_threshold": 4,
+    "prompt_identity_mixture": false
+  },
+  "basis": {
+    "previously_selected_on_prior_validation": true,
+    "prior_frozen_runtime_manifest_sha256": "7b8bd150767efd489f84ca299fa392358499f189a3a0c4a6dc7f499808b247d1",
+    "task_specific_handlers": 0,
+    "candidate_specific_thresholds": 0,
+    "new_decoding_sweep_authorized": false
+  },
+  "selection_rule": "Evaluate both candidates once on all 1,400 locked validation prompts with this identical decoding contract. Do not use the closed prior final split or unopened successor final split.",
+  "claim_boundary": "This lock reuses one general repetition-termination policy selected before the successor existed. It does not authorize prompt-specific postprocessing or candidate-specific decoding."
+}
