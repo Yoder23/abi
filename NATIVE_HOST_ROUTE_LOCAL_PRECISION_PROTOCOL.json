@@ -1,0 +1,52 @@
+{
+  "format": "abi-layercake-native-host-route-local-precision-protocol/1",
+  "status": "PREREGISTERED_AFTER_V38_SINGLE_ROUTE4_REGRESSION_AND_BEFORE_HYBRID_GRAPH_DERIVATION",
+  "purpose": "Preserve the original FP32 task-cake projections only for the empirically precision-sensitive route while retaining the faster int8 cake execution for every other route.",
+  "locked_source": {
+    "artifact": "results/abi_moonshot/native_hosts/full-budget3-longform-sequence-repaired-seed9824-v27-onnx-int8-v30-dynamic-train-output-prompt-union",
+    "runtime_graph_sha256": "51db1e54062ae0fcb32971737e20746567d6cea4fec7fb28e986c21ff2859850",
+    "host_manifest_sha256": "4927526c111ae68cf92f3966f94fc034a98c9ebd4ba6447917cc3e65c239f1a1",
+    "weights_retrained": false,
+    "vocabulary_changed": false,
+    "cake_active_every_output_token": true
+  },
+  "triggering_evidence": {
+    "v38_train_top1_agreement": 1.0,
+    "v38_functional_passes": 1399,
+    "v38_functional_rows": 1400,
+    "v38_failed_probe": "english-grounding-148-v2",
+    "v38_failed_route": 4,
+    "v38_other_route_regressions": 0,
+    "v38_quality_evidence_sha256": "da4812e5d421c9893d74bbbdba64658a606cc69b4fa9b8792bc984ea9d72e853",
+    "finding": "Quantization sensitivity is localized to route 4 by held-out evidence. No other route or capability regressed."
+  },
+  "locked_execution": {
+    "fp32_routes": [
+      4
+    ],
+    "int8_routes": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "branch_key": "authoritative inferred/requested route only",
+    "fp32_branch": "Original gathered FP32 down/up weights and original MatMul nodes.",
+    "int8_branch": "The exact v38 per-route, per-output-channel int8 construction.",
+    "branching": "Two ONNX If nodes, one per cake projection; no prompt text, benchmark ID, or evaluator state is available to the branch."
+  },
+  "screen_order": [
+    "Run all 1,400 native functional rows and require zero regressions.",
+    "Run all 420/43,089 native general rows and require at least 0.95 parent top-1 agreement.",
+    "Run physical and identity verification.",
+    "Only then run sustained and headline CPU benchmarks."
+  ],
+  "promotion": "The exact hybrid graph must pass every quality, speed, TTFT, RSS, identity, physical, adversarial, and three-seed gate.",
+  "failure": "Preserve and close route-local precision. Do not add another FP32 route unless a new held-out failure localizes there before speed is inspected.",
+  "final_test_accessed": false
+}

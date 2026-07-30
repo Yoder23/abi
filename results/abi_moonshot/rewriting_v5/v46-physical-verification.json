@@ -1,0 +1,118 @@
+{
+  "checks": {
+    "all_selected_tensors_have_consumers": true,
+    "allowed_output_ids_is_one_graph_input": true,
+    "byte_fallback_is_physically_addressable": true,
+    "duplicate_static_output_projection_absent": true,
+    "dynamic_weight_feeds_matmul_integer": true,
+    "eos_is_physically_addressable": true,
+    "expected_route_indexed_parameter_gathers": true,
+    "graph_logits_width_is_dynamic": true,
+    "input_embedding_remains_full_vocabulary": true,
+    "local_to_global_token_ids_are_unique_and_sorted": true,
+    "metadata_one_active_route_bridge": true,
+    "metadata_one_active_task_cake": true,
+    "metadata_prompt_union_is_explicit": true,
+    "no_matrix_consumes_all_installed_routes": true,
+    "one_dynamic_output_scale_gather": true,
+    "one_dynamic_output_weight_gather": true,
+    "one_dynamic_output_weight_transpose": true,
+    "one_requested_route_input": true,
+    "output_vocabulary_hash_matches": true,
+    "quantized_task_cake_has_two_route_scale_gathers": true,
+    "removed_bridge_is_explicitly_fused": true
+  },
+  "conditional_cake_execution": null,
+  "dense_all_route_matrix_nodes": [],
+  "evidence_sha256": "693cd82c04d7a4bce90f65c607f3ad0bbcd0a5b9fd955f8acd9e9a9a22deaed5",
+  "final_test_accessed": false,
+  "format": "abi-layercake-host-physical-sparse-proof/1",
+  "installed_route_bridges": 0,
+  "installed_task_cakes": 10,
+  "maximum_active_route_bridges_per_sequence": 0,
+  "maximum_active_task_cakes_per_sequence": 1,
+  "route_indexed_parameter_gathers": [
+    {
+      "installed_shape": [
+        10,
+        768
+      ],
+      "node": "/Gather_1",
+      "selected_output": "/Gather_1_output_0",
+      "weight": "onnx::Gather_1039"
+    },
+    {
+      "installed_shape": [
+        10,
+        768
+      ],
+      "node": "/Gather_2",
+      "selected_output": "/Gather_2_output_0",
+      "weight": "onnx::Gather_1050"
+    },
+    {
+      "installed_shape": [
+        10,
+        64,
+        768
+      ],
+      "node": "/Gather_3",
+      "selected_output": "/Gather_3_output_0",
+      "weight": "onnx::Gather_1061"
+    },
+    {
+      "installed_shape": [
+        10,
+        768,
+        64
+      ],
+      "node": "/Gather_4",
+      "selected_output": "/Gather_4_output_0",
+      "weight": "onnx::Gather_1072"
+    },
+    {
+      "installed_shape": [
+        10,
+        64
+      ],
+      "node": "TaskCakeDownScaleGather",
+      "selected_output": "TaskCakeDownSelectedScales",
+      "weight": "TaskCakeDownScales"
+    },
+    {
+      "installed_shape": [
+        10,
+        768
+      ],
+      "node": "TaskCakeUpScaleGather",
+      "selected_output": "TaskCakeUpSelectedScales",
+      "weight": "TaskCakeUpScales"
+    }
+  ],
+  "runtime_graph_sha256": "e66fcb82bf429d323249522c6fac69d903809138729034839a38c74246839d8f",
+  "sparse_output_vocabulary": {
+    "budget_id": "train_outputs",
+    "checks": {
+      "allowed_output_ids_is_one_graph_input": true,
+      "byte_fallback_is_physically_addressable": true,
+      "duplicate_static_output_projection_absent": true,
+      "dynamic_weight_feeds_matmul_integer": true,
+      "eos_is_physically_addressable": true,
+      "graph_logits_width_is_dynamic": true,
+      "input_embedding_remains_full_vocabulary": true,
+      "local_to_global_token_ids_are_unique_and_sorted": true,
+      "metadata_prompt_union_is_explicit": true,
+      "one_dynamic_output_scale_gather": true,
+      "one_dynamic_output_weight_gather": true,
+      "one_dynamic_output_weight_transpose": true,
+      "output_vocabulary_hash_matches": true
+    },
+    "full_token_count": 50257,
+    "logits_width": 0,
+    "mode": "train_base_union_prompt_tokens",
+    "projection_initializer": null,
+    "selected_projection_sha256": null,
+    "selected_token_count": 2511
+  },
+  "status": "PASS"
+}

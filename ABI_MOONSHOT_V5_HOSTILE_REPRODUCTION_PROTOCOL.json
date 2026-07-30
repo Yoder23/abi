@@ -1,0 +1,43 @@
+{
+  "format": "abi-layercake-hostile-reproduction-protocol/1",
+  "status": "PREREGISTERED_AFTER_COMBINED_VALIDATION_PASS_BEFORE_HOSTILE_EXECUTION_AND_FINAL_TEST_OPENING",
+  "combined_host_certificate": {
+    "path": "results/abi_moonshot/combined_host/combined-host-certificate-v1.json",
+    "file_sha256": "5d792cad0add79007eb750dd65c95d378904d48e7240e7ed503ac30b2a771c97",
+    "evidence_sha256": "e2440452f2a2f2e8eea461d97af073c27cbb760a7eacc9487efe9c639ffcbab2"
+  },
+  "repair_certificate": {
+    "path": "results/abi_moonshot/rewriting_v5/v47-repair-certificate.json",
+    "file_sha256": "50bc46ddc03e5168840751571d110efec306c2653d9bf251e503e3f76667d65a",
+    "evidence_sha256": "4e6ef0b46ab534940d47ff4188f91540db30b05c1badfeb26f4ccd1a27737b89"
+  },
+  "english_artifact_override": {
+    "path": "results/abi_moonshot/native_hosts/full-budget3-longform-sequence-repaired-seed9824-v47-v5-rewriting-repair-identity-fixed",
+    "metadata_file_sha256": "b7e60d5e264507f838e476126d0e27b3486e6222e1aac802a163987860fd954d",
+    "metadata_evidence_sha256": "569769042de70fb40ca9819643d4c90fdecfc0badd47729bca7f66d98af96d4c",
+    "runtime_graph_sha256": "e66fcb82bf429d323249522c6fac69d903809138729034839a38c74246839d8f",
+    "symbolic_surface_sha256": "54c72f6818d5cd4dc42b1873d958c806b8763eef1801e7567c2e3629a4e61574",
+    "host_manifest_sha256": "cc3e7bac89a42bcd344ddf9566aaa119f80158d61a9fe377c7277d34d73ff3a6"
+  },
+  "fresh_receiver_roots": 3,
+  "attacks": [
+    "single_byte_package_corruption",
+    "wrong_ed25519_publisher_key",
+    "duplicate_archive_member",
+    "path_traversal_archive_member",
+    "uninstalled_cake_selection",
+    "stale_native_runtime_component"
+  ],
+  "positive_controls": {
+    "strict_exact_english_generation_per_receiver": true,
+    "all_three_domain_packages_per_receiver": true,
+    "validation_output_byte_identity": true,
+    "inactive_cake_execution_delta_zero": true,
+    "domain_worker_lazy_before_selection": true,
+    "worker_shutdown_after_receiver": true,
+    "sealed_layercake_unchanged": true
+  },
+  "stop_rule": "Any accepted attack, receiver divergence, inactive execution, teacher dependency, stale component acceptance, or sealed-repository mutation blocks v5 final-test opening.",
+  "claim_boundary": "This is an in-repository hostile reproduction of the exact v47 candidate in fresh processes and registries. It is not an organizationally independent third-party audit.",
+  "final_test_accessed": false
+}

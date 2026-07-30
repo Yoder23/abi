@@ -1,0 +1,29 @@
+{
+  "archive_bytes": 448404,
+  "archive_sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+  "deterministic_rebuild_identity": true,
+  "domain": "python",
+  "evidence_sha256": "01c7935488a8b997eb9eb0525b18b166a9b53dfa5bb1a342a81838d4bfebed64",
+  "final_test_accessed": false,
+  "format": "abi-layercake-domain-package-evidence/1",
+  "key_id": "5801463b6a49f7c8a9b6dbd3e891ec68",
+  "non_executable_safetensors_only": true,
+  "package_hash": "973e16954ab2c4fb35587e15f3517bcd3129e4b7cddfbb989ca54690fd6d1a64",
+  "package_path": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_moonshot\\packages\\abi-python-token-plan-seed9824.cake",
+  "promotion_blockers": [
+    "three_seed_validation",
+    "receiver_matrix",
+    "tamper_and_lifecycle",
+    "cpu_cuda_identity",
+    "unopened_final_test"
+  ],
+  "public_key_path": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_moonshot\\packages\\abi-python-token-plan-seed9824.pub",
+  "public_key_sha256": "6fa980c963b60208877b5df19ed2f07f793f8b63e2af8f613264c3fe0e160099",
+  "seed": 9824,
+  "signed": true,
+  "source_transformer_blocks_retained": 0,
+  "status": "VALIDATION_CANDIDATE_NOT_PROMOTED",
+  "teacher_present_at_inference": false,
+  "tensor_payload_hash": "ac58835feee49441aef5fdfddd315523458ac95c53be8f41b8f309a086383242",
+  "validation_evidence_sha256": "227cd012fd7b6a71cc7d3fda9150fb6352fb3afae3d2809d384ad445d1903a05"
+}

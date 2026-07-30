@@ -54,9 +54,13 @@ import copy
 import gc
 import json
 import math
+import os
 import pathlib
 import sys
 import time
+
+os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
+os.environ.setdefault("HF_HUB_OFFLINE", "1")
 
 import numpy as np
 import torch
@@ -70,12 +74,19 @@ from transformers import (
     BitsAndBytesConfig,
 )
 
-from wikitext_cache import load_wikitext_split
+from experiment_data import (
+    hf_local_path,
+    load_local_python_text,
+    load_wikitext_text_and_sentences,
+)
 
 sys.stdout.reconfigure(line_buffering=True)
 
 ROOT   = pathlib.Path(__file__).parent
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+HF_T5_LARGE = hf_local_path("t5-large")
+HF_QWEN_7B  = hf_local_path("Qwen/Qwen2-7B")
 
 # ── Pre-registered NIB thresholds (identical to all prior experiments) ─────────
 REGISTRY = {
@@ -97,7 +108,9 @@ VOCAB_SRC   = 32128  # T5 SentencePiece vocabulary
 D_MODEL_TGT = 3584   # Qwen2-7B
 VOCAB_TGT   = 152064 # Qwen2-7B tiktoken vocabulary
 
-SEQ_LEN      = 128
+PREFIX_LEN   = 64
+CONT_LEN     = 64
+SEQ_LEN      = PREFIX_LEN + CONT_LEN
 DOMAIN_STEPS = 500
 LR_ABI       = 3e-4
 LR_CAL       = 1e-4
@@ -136,7 +149,7 @@ class T5LargeABI(nn.Module):
     """
     def __init__(self):
         super().__init__()
-        t5             = AutoModelForSeq2SeqLM.from_pretrained("t5-large", local_files_only=True)
+        t5             = AutoModelForSeq2SeqLM.from_pretrained(HF_T5_LARGE, local_files_only=True)
         self.encoder   = t5.encoder
         self.decoder   = t5.decoder
         self.lm_head   = t5.lm_head
@@ -153,31 +166,40 @@ class T5LargeABI(nn.Module):
     def encode_core(self, x):
         """Prefix-LM mode: encode with T5 encoder, then decode causal logits."""
         # x: [B, T]  — input token ids in T5 SentencePiece vocabulary
-        enc_out = self.encoder(input_ids=x)
+        B, T = x.shape
+        if T < SEQ_LEN:
+            pad = torch.zeros(B, SEQ_LEN - T, dtype=x.dtype, device=x.device)
+            x = torch.cat([x, pad], dim=1)
+        x = x[:, :SEQ_LEN]
+
+        prefix = x[:, :PREFIX_LEN]
+        cont   = x[:, PREFIX_LEN:SEQ_LEN]
+        enc_attn = (prefix != 0).long()
+        enc_out = self.encoder(input_ids=prefix, attention_mask=enc_attn)
         encoder_hidden_states = enc_out.last_hidden_state
 
-        # Decoder input = right-shifted x (prepend pad token id=0)
-        B, T = x.shape
-        dec_input = torch.zeros_like(x)
-        dec_input[:, 1:] = x[:, :-1]
+        dec_input = torch.zeros(B, CONT_LEN, dtype=x.dtype, device=x.device)
+        dec_input[:, 1:] = cont[:, :-1]
         dec_input[:, 0]  = 0  # T5 pad token as BOS for decoder
 
         dec_out = self.decoder(
             input_ids=dec_input,
             encoder_hidden_states=encoder_hidden_states,
+            encoder_attention_mask=enc_attn,
+            use_cache=False,
         )
-        h = dec_out.last_hidden_state  # [B, T, 1024]
+        h = dec_out.last_hidden_state  # [B, CONT_LEN, 1024]
         h_abi = self.abi_ln(self.proj_in(h))
-        return h, h_abi
+        return h, h_abi, cont
 
     def forward(self, x, use_domain=True):
-        h, h_abi = self.encode_core(x)
+        h, h_abi, labels = self.encode_core(x)
         h_out = h_abi + self.domain_alpha * self.domain(h_abi) if use_domain else h_abi
         correction = self.proj_out(h_out)
         # T5 scales lm_head by d_model**-0.5
         scale  = D_MODEL_SRC ** -0.5
         logits = self.lm_head(h + correction) * scale
-        return logits
+        return logits, labels
 
 
 # ── Target model: Qwen2-7B (8-bit) + ABI (d_abi=256) ─────────────────────────
@@ -196,11 +218,11 @@ class Qwen7BABI(nn.Module):
         super().__init__()
         self.backbone = backbone   # frozen 8-bit Qwen2Model
         self.lm_head  = lm_head   # frozen fp16 linear (tied to embeddings)
-        self.proj_in  = nn.Linear(D_MODEL_TGT, D_ABI, bias=False)
-        self.abi_ln   = nn.LayerNorm(D_ABI)
-        self.proj_out = nn.Linear(D_ABI, D_MODEL_TGT, bias=False)
-        self.domain   = DomainModule(D_ABI)
-        self.domain_alpha = nn.Parameter(torch.ones(1))
+        self.proj_in  = nn.Linear(D_MODEL_TGT, D_ABI, bias=False).to(DEVICE)
+        self.abi_ln   = nn.LayerNorm(D_ABI).to(DEVICE)
+        self.proj_out = nn.Linear(D_ABI, D_MODEL_TGT, bias=False).to(DEVICE)
+        self.domain   = DomainModule(D_ABI).to(DEVICE)
+        self.domain_alpha = nn.Parameter(torch.ones(1, device=DEVICE))
         nn.init.xavier_uniform_(self.proj_in.weight)
         nn.init.xavier_uniform_(self.proj_out.weight)
 
@@ -243,8 +265,12 @@ def ppl(model, tokens, use_domain=True, n_batches=50, seed_offset=0, batch=BATCH
         starts = torch.randint(0, max_start, (batch,), generator=rng)
         x = torch.stack([tokens[s : s + SEQ_LEN]     for s in starts]).to(DEVICE)
         y = torch.stack([tokens[s+1 : s + SEQ_LEN+1] for s in starts]).to(DEVICE)
-        logits = model(x, use_domain=use_domain)
-        tot += F.cross_entropy(logits.reshape(-1, logits.size(-1)), y.reshape(-1)).item()
+        out = model(x, use_domain=use_domain)
+        if isinstance(out, tuple):
+            logits, labels = out
+        else:
+            logits, labels = out, y
+        tot += F.cross_entropy(logits.reshape(-1, logits.size(-1)), labels.reshape(-1)).item()
         n += 1
     return math.exp(tot / n)
 
@@ -266,11 +292,16 @@ def cross_family_procrustes(src_model, tgt_model, align_sentences, src_tok, tgt_
             continue
         try:
             ids_src = src_tok(sent, return_tensors="pt", truncation=True,
-                              max_length=128)["input_ids"].to(DEVICE)
-            if ids_src.shape[1] < 4:
+                              max_length=SEQ_LEN, add_special_tokens=False)["input_ids"].to(DEVICE)
+            t_src = ids_src.shape[1]
+            if t_src < 8:
                 continue
-            _, h_src = src_model.encode_core(ids_src)
-            src_vecs.append(h_src[0].mean(0).cpu().float())
+            if t_src < SEQ_LEN:
+                pad = torch.zeros(1, SEQ_LEN - t_src, dtype=ids_src.dtype, device=DEVICE)
+                ids_src = torch.cat([ids_src, pad], dim=1)
+            _, h_src, _ = src_model.encode_core(ids_src)
+            real_cont_len = min(max(t_src - PREFIX_LEN, 1), CONT_LEN)
+            src_vecs.append(h_src[0, :real_cont_len].mean(0).cpu().float())
 
             ids_tgt = tgt_tok(sent, return_tensors="pt", truncation=True,
                               max_length=128)["input_ids"].to(DEVICE)
@@ -397,29 +428,25 @@ def main():
     # ── Data loading ──────────────────────────────────────────────────────────
     banner("Data loading")
     t_data  = time.time()
-    tok_src = T5Tokenizer.from_pretrained("t5-large", local_files_only=True)
-    tok_tgt = AutoTokenizer.from_pretrained("Qwen/Qwen2-7B", local_files_only=True)
+    tok_src = T5Tokenizer.from_pretrained(HF_T5_LARGE, local_files_only=True)
+    tok_tgt = AutoTokenizer.from_pretrained(HF_QWEN_7B, local_files_only=True)
     tok_tgt.pad_token = tok_tgt.eos_token
 
-    from datasets import load_dataset
-    ds_py = load_dataset("bigcode/the-stack", data_dir="data/python",
-                         split="train", streaming=True, trust_remote_code=True)
-    py_text = "\n\n".join(
-        r["content"] for _, r in zip(range(5000), ds_py) if r.get("content")
-    )[:MAX_PY]
+    py_text, py_meta = load_local_python_text(ROOT, MAX_PY)
 
     py_ids_src = tok_src(py_text, return_tensors="pt",
                          truncation=False)["input_ids"].squeeze(0)[:MAX_PY]
     py_ids_tgt = tok_tgt(py_text, return_tensors="pt",
                          truncation=False)["input_ids"].squeeze(0)[:MAX_PY]
 
-    wiki_raw   = load_wikitext_split("validation")
-    wiki_text  = " ".join(wiki_raw)
-    wiki_sentences = [s for s in wiki_text.split("\n") if len(s.strip()) >= 20]
+    _, wiki_sentences, wiki_meta = load_wikitext_text_and_sentences(
+        split="validation", min_chars=20)
 
     print(f"  {time.time()-t_data:.1f}s  "
           f"py_src={len(py_ids_src):,}  py_tgt={len(py_ids_tgt):,}  "
           f"sentences={len(wiki_sentences):,}")
+    print(f"  corpus: local_python_files={py_meta['files']}  "
+          f"wikitext_split={wiki_meta['split']} records={wiki_meta['records']}")
     print(f"  VRAM after data load: {vram_used_gb():.2f} GB")
 
     kd_weight = REGISTRY["kd_weight"]
@@ -444,7 +471,8 @@ def main():
     for step in range(DOMAIN_STEPS):
         x, y = make_batch(py_ids_src, seed=5000 + step, batch=BATCH_SRC)
         opt_a.zero_grad()
-        F.cross_entropy(src_model(x).reshape(-1, VOCAB_SRC), y.reshape(-1)).backward()
+        logits, labels = src_model(x)
+        F.cross_entropy(logits.reshape(-1, VOCAB_SRC), labels.reshape(-1)).backward()
         nn.utils.clip_grad_norm_(src_model.parameters(), 1.0)
         opt_a.step()
         if (step + 1) % 100 == 0:
@@ -478,7 +506,7 @@ def main():
     t_load = time.time()
     bnb_config = BitsAndBytesConfig(load_in_8bit=True)
     qwen7b_full = AutoModelForCausalLM.from_pretrained(
-        "Qwen/Qwen2-7B",
+        HF_QWEN_7B,
         quantization_config=bnb_config,
         device_map="auto",
         local_files_only=True,
@@ -493,7 +521,7 @@ def main():
     # ── Phase C: Native Qwen2-7B ABI oracle (Python) ──────────────────────────
     banner("Phase C — Native Qwen2-7B ABI oracle (Python, 500 steps, batch=1)")
     t_c    = time.time()
-    native = Qwen7BABI(qwen7b_backbone, qwen7b_lm_head).to(DEVICE)
+    native = Qwen7BABI(qwen7b_backbone, qwen7b_lm_head)
     for p in native.parameters():
         p.requires_grad_(False)
     # ABI components are on DEVICE; backbone is on device_map (auto)
@@ -576,7 +604,7 @@ def main():
     rotated_domain = apply_rotation_to_domain(t5_domain_cpu, R)
 
     # Build calibrated model: share frozen Qwen backbone + lm_head, fresh ABI + rotated domain
-    calibrated = Qwen7BABI(qwen7b_backbone, qwen7b_lm_head).to(DEVICE)
+    calibrated = Qwen7BABI(qwen7b_backbone, qwen7b_lm_head)
     calibrated.domain = rotated_domain.to(DEVICE)
     # proj_in and proj_out are already fresh (xavier_uniform from __init__)
 

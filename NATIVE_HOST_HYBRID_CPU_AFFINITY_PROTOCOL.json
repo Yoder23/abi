@@ -1,0 +1,125 @@
+{
+  "format": "abi-layercake-native-host-hybrid-cpu-affinity-protocol/1",
+  "status": "LOCKED_AFTER_NEGATIVE_THREAD_SWEEP_AND_BEFORE_AFFINITY_PROFILE",
+  "purpose": "Test whether Windows scheduling across the i9-12900H hybrid topology explains the sealed parent's contemporaneous throughput loss. Only process affinity and ONNX Runtime thread count may change.",
+  "triggering_evidence": {
+    "topology_evidence": "results/abi_moonshot/native_hosts/windows-cpu-topology.json",
+    "topology_evidence_sha256": "2e6465f626999d0e31294dbf366730c070cc6249ad82ec34c68d56e6c63fc3db",
+    "kernel_efficiency_class_1_logical_processors": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "kernel_efficiency_class_0_logical_processors": [
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "negative_unrestricted_thread_profile_medians_bytes_per_second": {
+      "8": 864.7978622838625,
+      "10": 900.0712317214425,
+      "12": 924.044610597713,
+      "14": 949.314818839813,
+      "16": 970.4524459995868,
+      "20": 649.2624759134742
+    }
+  },
+  "locked_parent_and_schedule": {
+    "parent_runtime_graph_sha256": "aee6337743617adc3c1e1730bc6d5d8a62e74480fe2d993feaa4be89874832b5",
+    "output_target_bytes": 128,
+    "observations": 120,
+    "distinct_prompts": 100,
+    "repeated_prompts": 20,
+    "comparator_evidence": "../layercake_release/results/moonshot/phase1/raw_runs/headline_qwen_product.json"
+  },
+  "configurations_in_execution_order": [
+    {
+      "id": "p_core_one_logical_each",
+      "logical_processors": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "intra_op_threads": 6
+    },
+    {
+      "id": "all_p_core_logicals",
+      "logical_processors": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "intra_op_threads": 12
+    },
+    {
+      "id": "one_logical_per_physical_core",
+      "logical_processors": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "intra_op_threads": 14
+    }
+  ],
+  "selection_rule": {
+    "primary": "Highest median generated UTF-8 bytes per complete-request wall second.",
+    "tie_breaker": "Lower median time to first output when median throughput differs by less than 1 percent.",
+    "required_parent_gates": [
+      "median throughput ratio versus locked Qwen at least 2.0",
+      "paired-prompt bootstrap 95 percent lower bound at least 2.0",
+      "RSS below the unchanged absolute limit",
+      "TTFT no worse than Qwen",
+      "persistent incremental cache exact"
+    ],
+    "candidate_lock": "If and only if a parent configuration passes, apply the single selected configuration unchanged to the exact v24 candidate. Candidate results cannot select a different affinity."
+  },
+  "prohibited_changes": [
+    "weights",
+    "runtime graph",
+    "quantization",
+    "decoding",
+    "prompts",
+    "comparator evidence",
+    "power plan",
+    "system-wide core parking",
+    "user process termination"
+  ],
+  "final_test_accessed": false
+}

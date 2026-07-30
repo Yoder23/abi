@@ -1,0 +1,121 @@
+{
+  "format": "abi-layercake-moonshot-final-test-protocol/2",
+  "status": "PREREGISTERED_AFTER_ALL_PREREQUISITES_BEFORE_FINAL_TEST_SOURCE_INFERENCE",
+  "final_test_open_authorized": true,
+  "catalog": {
+    "path": "catalogs/english_and_first_domains_certification_v5.json",
+    "sha256": "15feb7765c5987c859a6e139161882d56a3cf28211e1e2ff4febef802550f39c",
+    "split": "final_test",
+    "observations": 1700,
+    "search_validation_prompt_overlap": 0,
+    "historical_v4_prompt_overlap": 0
+  },
+  "prerequisites": {
+    "v5_repair_certificate": {
+      "path": "results/abi_moonshot/rewriting_v5/v47-repair-certificate.json",
+      "file_sha256": "50bc46ddc03e5168840751571d110efec306c2653d9bf251e503e3f76667d65a",
+      "evidence_sha256": "4e6ef0b46ab534940d47ff4188f91540db30b05c1badfeb26f4ccd1a27737b89"
+    },
+    "v5_hostile_reproduction": {
+      "path": "results/abi_moonshot/rewriting_v5/v47-hostile-reproduction.json",
+      "file_sha256": "371c3394a42ea3dcd8af06bb513b4d885436bb838935dfadb63f973c9f88fed4",
+      "evidence_sha256": "8ee28fcc6d3dd8d304b3d728242425638dd298947b52c0e1e2e6f91a3b242946"
+    }
+  },
+  "locked_candidate": {
+    "english_artifact": "results/abi_moonshot/native_hosts/full-budget3-longform-sequence-repaired-seed9824-v47-v5-rewriting-repair-identity-fixed",
+    "metadata_file_sha256": "b7e60d5e264507f838e476126d0e27b3486e6222e1aac802a163987860fd954d",
+    "host_manifest_sha256": "cc3e7bac89a42bcd344ddf9566aaa119f80158d61a9fe377c7277d34d73ff3a6",
+    "runtime_graph_sha256": "e66fcb82bf429d323249522c6fac69d903809138729034839a38c74246839d8f",
+    "runtime_runner_sha256": "5f14f3a3cbd95066e255b6431a932281917d6bfdcd6bfd27d7af322768ada1ff",
+    "symbolic_runtime_sha256": "c86b3155f85f591e4814df01072bde25829b23de7e5c5a3237236494b432c4da",
+    "symbolic_surface_sha256": "54c72f6818d5cd4dc42b1873d958c806b8763eef1801e7567c2e3629a4e61574",
+    "product_host_sha256": "8fc38a823486b89a57f098834b5eaa6732236483afbc8551fb530075b0ef6694",
+    "domain_worker_sha256": "ef07059b93deb1097140797533a55051fac8742f7f5213ab986f4e19a759d118",
+    "final_test_runner_sha256": "5283cbb5c26053a8a727097ce09bcb1d5224f53bf40a177b9e5e705c3e6ccadd",
+    "packages": {
+      "chemistry": {
+        "cake_id": "abi-chemistry-token-plan",
+        "path": "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.cake",
+        "archive_sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+        "public_key": "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.pub"
+      },
+      "civics": {
+        "cake_id": "abi-civics-token-plan",
+        "path": "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.cake",
+        "archive_sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+        "public_key": "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.pub"
+      },
+      "python": {
+        "cake_id": "abi-python-token-plan",
+        "path": "results/abi_moonshot/packages/abi-python-token-plan-seed9824.cake",
+        "archive_sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+        "public_key": "results/abi_moonshot/packages/abi-python-token-plan-seed9824.pub"
+      }
+    }
+  },
+  "sources": [
+    {
+      "id": "phi3",
+      "model": "microsoft/Phi-3-mini-4k-instruct",
+      "revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_manifest_sha256": "997f6f103e53e370d98221f44f2c007c04c42c4dc7ee5b1caf739d2971ae7931",
+      "license": "MIT",
+      "device": "cuda",
+      "batch_size": 8,
+      "capabilities": [
+        "cake_output_realization",
+        "clarification",
+        "coherence",
+        "domain_independent_reasoning",
+        "email_drafting",
+        "grammar",
+        "independence_days",
+        "instruction_following",
+        "periodic_table",
+        "prompt_grounding",
+        "python_generation",
+        "summarization",
+        "tone_control"
+      ],
+      "output": "results/abi_moonshot/final_test_v5/phi3-final-test.json"
+    },
+    {
+      "id": "qwen7",
+      "model": "Qwen/Qwen2-7B-Instruct",
+      "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+      "source_manifest_sha256": "011b36ad53d9e34e7515f7fb1d381bea38a6a8cbb6dcf7caff467dd36769d774",
+      "license": "Apache-2.0",
+      "device": "cuda",
+      "batch_size": 8,
+      "capabilities": [
+        "abstention",
+        "conversation",
+        "rewriting"
+      ],
+      "output": "results/abi_moonshot/final_test_v5/qwen7-final-test.json"
+    },
+    {
+      "id": "qwen1p5",
+      "model": "Qwen/Qwen2-1.5B-Instruct",
+      "revision": "ba1cf1846d7df0a0591d6c00649f57e798519da8",
+      "source_manifest_sha256": "442227df6b9b50a1ca83039d11d99fbfde4825add11b480bb50eedcdb5694ea5",
+      "license": "Apache-2.0",
+      "device": "cuda",
+      "batch_size": 8,
+      "capabilities": [
+        "format_control"
+      ],
+      "output": "results/abi_moonshot/final_test_v5/qwen1p5-final-test.json"
+    }
+  ],
+  "execution_order": [
+    "run each frozen source in a source-only process",
+    "exit every source process and release source weights",
+    "run the exact locked LayerCake host in a separate teacher-free process",
+    "write one immutable aggregate result"
+  ],
+  "pass_rule": "The same locked LayerCake host must pass all 1700 v5 final observations, match or exceed each frozen source per capability, have zero source-passing regressions, preserve exact English routes, preserve zero inactive domain execution, retain valid UTF-8, leave the sealed LayerCake repository unchanged, and contain no source teacher or transformer blocks.",
+  "claim_boundary": "Passing proves bounded semantic dominance on 1700 preregistered, disjoint v5 final-test observations spanning 14 English capabilities and three qualified domains. It does not prove universal semantic equivalence, exhaustive source knowledge extraction, exhaustive domain discovery, a global information minimum, or qualification of the closed mathematics branch.",
+  "final_test_accessed": false
+}

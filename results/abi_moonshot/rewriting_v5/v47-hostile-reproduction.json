@@ -1,0 +1,193 @@
+{
+  "attacks": [
+    {
+      "error": "domain package is not a valid archive",
+      "error_type": "ProductHostError",
+      "name": "single_byte_package_corruption",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "error": "domain package publisher identity differs",
+      "error_type": "ProductHostError",
+      "name": "wrong_ed25519_publisher_key",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "error": "domain package members are not canonical",
+      "error_type": "ProductHostError",
+      "name": "duplicate_archive_member",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "error": "domain package members are not canonical",
+      "error_type": "ProductHostError",
+      "name": "path_traversal_archive_member",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "error": "domain cake is not installed: abi-chemistry-token-plan",
+      "error_type": "ProductHostError",
+      "name": "uninstalled_cake_selection",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "error": "sparse output vocabulary is stale",
+      "error_type": "LayerCakeHostRuntimeError",
+      "name": "stale_native_runtime_component",
+      "status": "PASS_REJECTED"
+    }
+  ],
+  "claim_boundary": "This is an in-repository hostile reproduction of the exact v47 candidate in fresh processes and registries. It is not an organizationally independent third-party audit.",
+  "combined_host_certificate": {
+    "evidence_sha256": "e2440452f2a2f2e8eea461d97af073c27cbb760a7eacc9487efe9c639ffcbab2",
+    "file_sha256": "5d792cad0add79007eb750dd65c95d378904d48e7240e7ed503ac30b2a771c97",
+    "path": "results/abi_moonshot/combined_host/combined-host-certificate-v1.json"
+  },
+  "evidence_sha256": "8ee28fcc6d3dd8d304b3d728242425638dd298947b52c0e1e2e6f91a3b242946",
+  "final_test_accessed": false,
+  "format": "abi-layercake-hostile-reproduction-evidence/1",
+  "gates": {
+    "all_attacks_rejected": true,
+    "all_domain_outputs_exact": true,
+    "all_inactive_execution_zero": true,
+    "all_receiver_english_exact": true,
+    "all_workers_lazy_before_selection": true,
+    "final_test_unopened": true,
+    "sealed_layercake_unchanged": true,
+    "three_fresh_receivers": true
+  },
+  "protocol": {
+    "path": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\ABI_MOONSHOT_V5_HOSTILE_REPRODUCTION_PROTOCOL.json",
+    "sha256": "1a6d569ca709fa98660bdb389661900c98639b62ad8ed528f54f654c3645028e"
+  },
+  "receivers": [
+    {
+      "domain_results": [
+        {
+          "cake_id": "abi-chemistry-token-plan",
+          "domain": "chemistry",
+          "inactive_execution_calls": 0,
+          "output_sha256": "cf7040c6599d0c0b60adc6bcd9883d09dcdbf26db298f322c333141a5bf0629e"
+        },
+        {
+          "cake_id": "abi-civics-token-plan",
+          "domain": "civics",
+          "inactive_execution_calls": 0,
+          "output_sha256": "4c7a8e66f4261054d43b2e54180a264edac356f0a810f6767a41bc94f524c773"
+        },
+        {
+          "cake_id": "abi-python-token-plan",
+          "domain": "python",
+          "inactive_execution_calls": 0,
+          "output_sha256": "5356284bb3ed99a3de3b632aa80502fb20379255d24ab02f2481068e76e738dc"
+        }
+      ],
+      "english_exact": true,
+      "english_output": "HOSTILE-RECEIVER-0",
+      "fresh_registry": true,
+      "install_order": [
+        "abi-chemistry-token-plan",
+        "abi-civics-token-plan",
+        "abi-python-token-plan"
+      ],
+      "install_statuses": [
+        "INSTALLED",
+        "INSTALLED",
+        "INSTALLED"
+      ],
+      "receiver_index": 0,
+      "worker_lazy_before_selection": true
+    },
+    {
+      "domain_results": [
+        {
+          "cake_id": "abi-python-token-plan",
+          "domain": "python",
+          "inactive_execution_calls": 0,
+          "output_sha256": "5356284bb3ed99a3de3b632aa80502fb20379255d24ab02f2481068e76e738dc"
+        },
+        {
+          "cake_id": "abi-civics-token-plan",
+          "domain": "civics",
+          "inactive_execution_calls": 0,
+          "output_sha256": "4c7a8e66f4261054d43b2e54180a264edac356f0a810f6767a41bc94f524c773"
+        },
+        {
+          "cake_id": "abi-chemistry-token-plan",
+          "domain": "chemistry",
+          "inactive_execution_calls": 0,
+          "output_sha256": "cf7040c6599d0c0b60adc6bcd9883d09dcdbf26db298f322c333141a5bf0629e"
+        }
+      ],
+      "english_exact": true,
+      "english_output": "HOSTILE-RECEIVER-1",
+      "fresh_registry": true,
+      "install_order": [
+        "abi-python-token-plan",
+        "abi-civics-token-plan",
+        "abi-chemistry-token-plan"
+      ],
+      "install_statuses": [
+        "INSTALLED",
+        "INSTALLED",
+        "INSTALLED"
+      ],
+      "receiver_index": 1,
+      "worker_lazy_before_selection": true
+    },
+    {
+      "domain_results": [
+        {
+          "cake_id": "abi-chemistry-token-plan",
+          "domain": "chemistry",
+          "inactive_execution_calls": 0,
+          "output_sha256": "cf7040c6599d0c0b60adc6bcd9883d09dcdbf26db298f322c333141a5bf0629e"
+        },
+        {
+          "cake_id": "abi-civics-token-plan",
+          "domain": "civics",
+          "inactive_execution_calls": 0,
+          "output_sha256": "4c7a8e66f4261054d43b2e54180a264edac356f0a810f6767a41bc94f524c773"
+        },
+        {
+          "cake_id": "abi-python-token-plan",
+          "domain": "python",
+          "inactive_execution_calls": 0,
+          "output_sha256": "5356284bb3ed99a3de3b632aa80502fb20379255d24ab02f2481068e76e738dc"
+        }
+      ],
+      "english_exact": true,
+      "english_output": "HOSTILE-RECEIVER-2",
+      "fresh_registry": true,
+      "install_order": [
+        "abi-chemistry-token-plan",
+        "abi-civics-token-plan",
+        "abi-python-token-plan"
+      ],
+      "install_statuses": [
+        "INSTALLED",
+        "INSTALLED",
+        "INSTALLED"
+      ],
+      "receiver_index": 2,
+      "worker_lazy_before_selection": true
+    }
+  ],
+  "sealed_layercake": {
+    "after": {
+      "clean": true,
+      "commit": "04cf2927a16fba686cd640e18a78708e5658bbda",
+      "porcelain_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "before": {
+      "clean": true,
+      "commit": "04cf2927a16fba686cd640e18a78708e5658bbda",
+      "porcelain_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "root": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\layercake_release",
+    "unchanged": true
+  },
+  "source_transformer_blocks_retained": 0,
+  "status": "PASS",
+  "teacher_present_at_inference": false
+}

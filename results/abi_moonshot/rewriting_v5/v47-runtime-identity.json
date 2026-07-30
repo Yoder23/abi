@@ -1,0 +1,58 @@
+{
+  "checks": {
+    "decoding_contract_is_explicit": true,
+    "hash_bound_symbolic_substrate_executes": true,
+    "host_delta_hash_matches": true,
+    "host_manifest_claim_hash_matches": true,
+    "host_manifest_file_hash_matches": true,
+    "source_transformer_blocks_absent": true,
+    "symbolic_payload_hash_matches_host": true,
+    "teacher_absent": true
+  },
+  "decoding": {
+    "algorithm": "deterministic_greedy_with_repetition_controls",
+    "no_repeat_ngram_size": 4,
+    "repetition_penalty": 1.15,
+    "weights_changed": false
+  },
+  "evidence_sha256": "c80cb96305541fd2f007a227f91f51a48a0a5212f107e04540a590029b230b0f",
+  "final_test_accessed": false,
+  "format": "abi-layercake-host-native-identity/1",
+  "host_delta_sha256": "2309bd6e7bb2856f2e6677aabae7245d77e552755eb78756cfd822fbc3d729ff",
+  "host_manifest_sha256": "cc3e7bac89a42bcd344ddf9566aaa119f80158d61a9fe377c7277d34d73ff3a6",
+  "probe": {
+    "authoritative_generated_tokens": 13,
+    "generated_characters": 35,
+    "generated_utf8_bytes": 35,
+    "memory": {
+      "resident_bytes_after": 147787776,
+      "resident_bytes_before": 139501568
+    },
+    "output": "{\"item\":\"identity-probe\",\"count\":7}",
+    "output_sha256": "7ef37ad59fc522e1c66dd03fcb5ff5c182c1dbd1a877c343fa0e76dcc972ae7c",
+    "persistent_state": {
+      "cache_lengths": [
+        30,
+        30,
+        30
+      ],
+      "completed_prefix_recomputation": false,
+      "prompt_encoded_once": true
+    },
+    "prompt_tokens": 30,
+    "route": 4,
+    "runtime_runner_sha256": "5f14f3a3cbd95066e255b6431a932281917d6bfdcd6bfd27d7af322768ada1ff",
+    "symbolic_handler_used": true,
+    "timing": {
+      "bytes_per_second_total": 353.65073655344116,
+      "characters_per_second_total": 353.65073655344116,
+      "prefill_seconds": 0.0979255,
+      "time_to_first_output_seconds": 0.0989674,
+      "tokenization_seconds": 0.000379,
+      "total_latency_seconds": 0.0989677
+    }
+  },
+  "runtime_graph_sha256": "e66fcb82bf429d323249522c6fac69d903809138729034839a38c74246839d8f",
+  "status": "PASS",
+  "symbolic_surface_sha256": "54c72f6818d5cd4dc42b1873d958c806b8763eef1801e7567c2e3629a4e61574"
+}

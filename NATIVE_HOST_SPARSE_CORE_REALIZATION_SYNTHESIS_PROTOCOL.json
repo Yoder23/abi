@@ -1,0 +1,38 @@
+{
+  "format": "abi-layercake-native-host-sparse-core-realization-synthesis-protocol/1",
+  "status": "PREREGISTERED_AFTER_V30_DECODER_FUSION_SPEED_FAIL_AND_BEFORE_GRAPH_DERIVATION",
+  "purpose": "Combine two already-measured orthogonal runtime mechanisms—first-decision-only cake activation and dynamic train-output projection—on the exact v24 weights under the corrected decoder.",
+  "historical_evidence_preserved": {
+    "core_realization_decision": "results/abi_moonshot/native_hosts/v24-core-realization-diagnostic-decision.json",
+    "core_realization_historical_status": "FAILED_DIAGNOSTIC_THRESHOLD",
+    "decoder_fused_v30_evidence_sha256": "a16f7efc06d19e5fb5ad29f3e76cb6a0b84c89dfd9312e37802cf98d9445b933",
+    "reason_for_new_synthesis": "The historical core-realization diagnostic missed its 20 percent token-reduction trigger by 1.36 percentage points and was measured with the full 50,257-token head and defective Python runner. The dynamic head and corrected runner are independent, subsequently proven changes."
+  },
+  "locked_sources": {
+    "core_realization_artifact": "results/abi_moonshot/native_hosts/full-budget3-quant-robust-output-balanced-seed9824-v24-onnx-int8-v26-full-head-core-realization",
+    "core_realization_graph_sha256": "97298763fdf254787ea15d8f8d0713c04970da1f47f0377b178b1fe8fd8ca028",
+    "host_manifest_sha256": "409e686493590e556aea493f6adbf829a463427bef576b57e8470719834ffd5c",
+    "checkpoint_weights_changed": false,
+    "cake_weights_changed": false,
+    "transformer_weights_changed": false,
+    "activation_schedule": "cake active during prefill and first output decision; inactive on continuation decode steps",
+    "sparse_vocabulary_budget": "train_outputs",
+    "sparse_vocabulary_construction": "Unchanged train-only construction from NATIVE_HOST_SPARSE_OUTPUT_VOCABULARY_PROTOCOL.json",
+    "dynamic_prompt_union": true
+  },
+  "measured_rationale": {
+    "core_realization_median_generated_tokens": 203.0,
+    "v30_median_generated_tokens": 212.0,
+    "sealed_parent_median_generated_tokens": 167.5,
+    "v30_product_speed_ratio_to_qwen": 2.6276615014621454,
+    "finding": "The synthesis is predicted to improve both per-step projection cost and sequence length without adding a new learned parameter or imported token."
+  },
+  "execution": [
+    "Derive the exact train_outputs static projection from the locked v26 graph.",
+    "Replace the duplicate static output matrix with the exact dynamic gather used by the proven prompt-union runtime.",
+    "Run the unchanged 40-observation sustained benchmark with the corrected runner and 16 threads."
+  ],
+  "promotion": "Only a full sustained PASS permits native ABI/general validation, headline timing, physical sparse-execution proof, identity, adversarial generation, and three-seed replication on this exact graph and schedule.",
+  "failure": "If sustained speed or subsequent quality fails, preserve and close this synthesis. Do not sweep activation steps or vocabulary sizes.",
+  "final_test_accessed": false
+}

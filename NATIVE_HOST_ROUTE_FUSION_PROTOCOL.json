@@ -1,0 +1,41 @@
+{
+  "candidate_source": {
+    "host_manifest_sha256": "67a4e2c60eace1ca1ca540da9f6f2a429a20eda9b0997b859b112cf563bdddfa",
+    "native_validation_evidence_sha256": "7c1c1d4a5494a531f5bce8406cb3b023bfad2ebd382ffa349de608f5b09368f0",
+    "runtime_graph_sha256": "0b0a597bf273c41cbde04c0b8cc6253931cbaf7e08bf36e46f197982cabdd4b6"
+  },
+  "failed_performance_evidence": {
+    "collapse_repaired_but_speed_failed": "results/abi_moonshot/native_hosts/full-budget3-hybrid-schema-safe-seed9824-v18-onnx-int8-v4-norepeat-benchmark-128.json",
+    "median_bytes_per_second": 764.944554472286,
+    "phase2_throughput_retained_ratio": 0.6920009420338128,
+    "qwen_relative_ratio": 1.5106605612293584
+  },
+  "final_test_accessed": false,
+  "format": "abi-layercake-native-host-route-fusion-protocol/1",
+  "fusion_training": {
+    "batch_size": 4,
+    "device": "cuda",
+    "learning_rate": 0.0005,
+    "loss": "masked token-level hidden-state MSE",
+    "maximum_tokens": 192,
+    "seed": 9824,
+    "steps": 800,
+    "training_material": "budget-index-3 search rows only",
+    "weight_decay": 0.0
+  },
+  "invariants": [
+    "The frozen transformer, classifier, LoRA state, symbolic substrate, imported ABI archive, and canonical ABI remain unchanged.",
+    "The current task-cake followed by route-bridge state is the teacher; no source LLM is loaded.",
+    "Only the already installed rank-64 task-cake parameters are optimized.",
+    "The route bridge is removed from deployment after fusion.",
+    "No validation or final-test row participates in fusion training."
+  ],
+  "promotion_gates": [
+    "The immutable fused host reloads with exact hashes and zero retained route-bridge parameters.",
+    "A single-cake native graph passes physical sparse execution proof.",
+    "All 1400 locked validation rows pass with zero source regressions and route accuracy 1.0.",
+    "The exact fused native host passes the full 128-byte and 1024-byte speed, TTFT, RSS, cache, and collapse gates.",
+    "The final test remains unopened until every validation and performance prerequisite passes."
+  ],
+  "status": "PREREGISTERED_BEFORE_ROUTE_FUSION_TRAINING"
+}

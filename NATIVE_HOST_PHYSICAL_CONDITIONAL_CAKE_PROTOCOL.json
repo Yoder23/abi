@@ -1,0 +1,50 @@
+{
+  "format": "abi-layercake-native-host-physical-conditional-cake-protocol/1",
+  "status": "PREREGISTERED_AFTER_OPERATOR_PROFILE_AND_BEFORE_CONDITIONAL_GRAPH_DERIVATION",
+  "purpose": "Physically skip the capability-cake subgraph during English-core continuation instead of computing its residual and multiplying the result by zero.",
+  "locked_source": {
+    "artifact": "results/abi_moonshot/native_hosts/full-budget3-longform-sequence-repaired-seed9824-v27-onnx-int8-v30-dynamic-train-output-prompt-union",
+    "runtime_graph_sha256": "51db1e54062ae0fcb32971737e20746567d6cea4fec7fb28e986c21ff2859850",
+    "host_manifest_sha256": "4927526c111ae68cf92f3966f94fc034a98c9ebd4ba6447917cc3e65c239f1a1",
+    "base_output_token_count": 2511,
+    "weights_changed": false,
+    "vocabulary_changed": false
+  },
+  "triggering_profile": {
+    "profile_sha256": "79655cb20617365b631ffc7ede918ba64badbaa66373e3316c1af9279308079c",
+    "profiled_graph_runs": 228,
+    "task_cake_subgraph_operators_per_active_call": 26,
+    "task_cake_subgraph": {
+      "gather": 4,
+      "matrix_multiply": 2,
+      "reduce_mean": 2,
+      "normalization_and_elementwise": 18
+    },
+    "finding": "Continuation semantics require the frozen English core, but the prior scalar-zero schedule still executed every task-cake operator. Conditional graph execution can improve speed and physical sparsity simultaneously."
+  },
+  "single_allowed_graph_change": {
+    "construction": "Move the exact task-cake residual nodes and unchanged residual add into the true branch of one ONNX If. The false branch returns the identical core hidden state through Identity.",
+    "condition": "False for prompt-scan calls, true for the final prompt/first-output decision, false for every continuation decode step.",
+    "outer_graph": "The transformer, classifier, route, output projection, cache, output names, canonical ABI state, and quantized initializers remain unchanged.",
+    "forbidden": [
+      "weight changes",
+      "token-set changes",
+      "new learned modules",
+      "prompt-specific branching",
+      "quality-suite-specific branching",
+      "stored answers",
+      "retrieval",
+      "final-test access"
+    ]
+  },
+  "equivalence_gates": [
+    "active true branch logits and ABI state equal the source graph with the cake active",
+    "false branch logits and ABI state equal an independently bypassed core reference",
+    "route, task scores, and every cache tensor remain exact in both branches",
+    "all previously passed native functional and general quality gates pass on the conditional artifact"
+  ],
+  "physical_gate": "An ONNX Runtime operator trace must show task-cake branch operators execute exactly once per generated sequence and zero times during continuation.",
+  "speed_gate": "The unchanged 40-observation sustained benchmark must pass every gate, including at least 95 percent sealed-parent throughput, at least 2x Qwen median, and paired bootstrap lower bound at least 2x.",
+  "failure_rule": "If equivalence, quality, physical execution, or speed fails, preserve and close this architecture. Do not sweep active decode steps.",
+  "final_test_accessed": false
+}

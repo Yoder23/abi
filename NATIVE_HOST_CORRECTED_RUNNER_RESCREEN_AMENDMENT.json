@@ -1,0 +1,30 @@
+{
+  "format": "abi-layercake-native-host-corrected-runner-rescreen-amendment/1",
+  "status": "PREREGISTERED_AFTER_STATE_REUSE_SEMANTIC_EQUIVALENCE_AND_BEFORE_RESCREEN",
+  "historical_decision": "results/abi_moonshot/native_hosts/v27-repaired-frequency-reserve-decision.json",
+  "historical_decision_preserved": true,
+  "reason": "Every repaired-frequency timing was collected with the subsequently proven per-step token-local-map reconstruction defect. The corrected runner produced zero output-hash and zero generated-token-count mismatches across the v24/v19 40-row sustained schedule, so quality semantics are unchanged while timing evidence is materially corrected.",
+  "locked_runner": {
+    "path": "abi/layercake_host_runtime.py",
+    "sha256": "7be8c42f9822f4aaa6b91a09e7037bcf67924739dc23f8a68809c6b3863b49dc",
+    "change_protocol": "NATIVE_HOST_RUNTIME_STATE_REUSE_PROTOCOL.json"
+  },
+  "rescreen_order": [
+    {
+      "artifact": "results/abi_moonshot/native_hosts/full-budget3-longform-sequence-repaired-seed9824-v27-onnx-int8-v31-frequency128-prompt-union",
+      "reason": "Lowest preregistered repaired budget, smallest active candidate set, and best median throughput under the defective runner."
+    },
+    {
+      "artifact": "results/abi_moonshot/native_hosts/full-budget3-longform-sequence-repaired-seed9824-v27-onnx-int8-v32-frequency256-prompt-union",
+      "condition": "Only if the first artifact fails and per-token profiling shows a sequence-efficiency gain capable of offsetting its larger active candidate set."
+    },
+    {
+      "artifact": "results/abi_moonshot/native_hosts/full-budget3-longform-sequence-repaired-seed9824-v27-onnx-int8-v33-frequency512-prompt-union",
+      "condition": "Only if the second artifact passes its measured prediction test or materially reverses the corrected Pareto ordering."
+    }
+  ],
+  "first_screen": "Unchanged 40-observation, 20-distinct-prompt, 1,024-byte sustained benchmark with 16 threads.",
+  "stop_rule": "Stop at the first full sustained PASS. If the first candidate fails and the conditional evidence does not support a larger budget, close without running it.",
+  "promotion_rule": "A corrected-runner sustained PASS is necessary but not sufficient; all native quality, headline, physical, identity, adversarial, and three-seed gates remain required on the exact artifact and exact runner.",
+  "final_test_accessed": false
+}

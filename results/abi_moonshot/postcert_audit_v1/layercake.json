@@ -1,0 +1,603 @@
+{
+  "capability_metrics": {
+    "abstention": {
+      "observations": 2,
+      "passes": 0
+    },
+    "cake_output_realization": {
+      "observations": 2,
+      "passes": 0
+    },
+    "clarification": {
+      "observations": 2,
+      "passes": 0
+    },
+    "coherence": {
+      "observations": 2,
+      "passes": 0
+    },
+    "conversation": {
+      "observations": 2,
+      "passes": 0
+    },
+    "domain_independent_reasoning": {
+      "observations": 2,
+      "passes": 0
+    },
+    "email_drafting": {
+      "observations": 2,
+      "passes": 0
+    },
+    "format_control": {
+      "observations": 2,
+      "passes": 0
+    },
+    "grammar": {
+      "observations": 2,
+      "passes": 0
+    },
+    "instruction_following": {
+      "observations": 2,
+      "passes": 0
+    },
+    "prompt_grounding": {
+      "observations": 2,
+      "passes": 0
+    },
+    "rewriting": {
+      "observations": 2,
+      "passes": 0
+    },
+    "summarization": {
+      "observations": 2,
+      "passes": 0
+    },
+    "tone_control": {
+      "observations": 2,
+      "passes": 0
+    }
+  },
+  "catalog": "catalogs/postcert_novel_english_audit_v1.json",
+  "catalog_sha256": "0b7349c07201638db72bd8fe31fba4f7f7bc4e18fce8fb90c3a3ec839ed70df5",
+  "claim_boundary": "This audit tests 28 disclosed novel prompt forms after the bounded v2 certificate. A failure blocks a broad English-fluency claim but does not alter the historical locked-suite result.",
+  "engine": "layercake",
+  "evidence_sha256": "c87f7461f5b32b4d9629a802214aade7516cfb2021725014344448bc3b1d92ff",
+  "format": "abi-postcert-novel-english-audit-evidence/1",
+  "identity": {
+    "certificate_evidence_sha256": "808f7ae753932c665349fa4b06ee16466eb672f61d2c61a4a7ed6fd85633abfb",
+    "runtime_graph_sha256": "e66fcb82bf429d323249522c6fac69d903809138729034839a38c74246839d8f",
+    "teacher_present_at_inference": false
+  },
+  "observation_count": 28,
+  "observations": [
+    {
+      "capability": "grammar",
+      "engine": "native_english",
+      "evaluator": {
+        "kind": "contains_all",
+        "values": [
+          "dogs",
+          "run",
+          "park"
+        ]
+      },
+      "latency_seconds": 0.07103390002157539,
+      "output": "A corrected version of the park is a reference.",
+      "output_sha256": "05dd958e6433d0a4f4c859aead5a33d85600c56c2315630b9d47f93896689866",
+      "passed": false,
+      "probe_id": "novel-grammar-001",
+      "prompt": "Please return a corrected version of this and nothing else: The two dogs runs through the park each morning.",
+      "score": 0.3333333333333333
+    },
+    {
+      "capability": "grammar",
+      "engine": "native_english",
+      "evaluator": {
+        "kind": "contains_all",
+        "values": [
+          "neighbor",
+          "sister",
+          "are",
+          "tomorrow"
+        ]
+      },
+      "latency_seconds": 0.06878349999897182,
+      "output": "Mira visits a sister sister to the sister sister sister sister .",
+      "output_sha256": "9c028971ab0083bcd1a0be355d284a404f6b31103bb53016749e176bd5af385e",
+      "passed": false,
+      "probe_id": "novel-grammar-002",
+      "prompt": "Fix the agreement error and output one sentence: My neighbor and her sister is visiting tomorrow.",
+      "score": 0.25
+    },
+    {
+      "capability": "coherence",
+      "engine": "native_english",
+      "evaluator": {
+        "kind": "ordered_contains",
+        "values": [
+          "CHECK",
+          "BOARD",
+          "LAND"
+        ]
+      },
+      "latency_seconds": 0.15963549999287352,
+      "output": "LAND, CAA-A-CAA-AA-AAHOMB CAA-AA CAA- AA-AA- AA CAA-SA",
+      "output_sha256": "9602ebd66ed54db8da0863d5a9d929b9b9df20fd1f6d6a20006e50cd7a7d138e",
+      "passed": false,
+      "probe_id": "novel-coherence-001",
+      "prompt": "Put these labels in their logical order and return labels only: [LAND] the plane arrived; [CHECK] the traveler checked in; [BOARD] the traveler entered the plane.",
+      "score": 0.0
+    },
+    {
+      "capability": "coherence",
+      "engine": "native_english",
+      "evaluator": {
+        "kind": "ordered_contains",
+        "values": [
+          "MIX",
+          "BAKE",
+          "COOL"
+        ]
+      },
+      "latency_seconds": 0.1533268000348471,
+      "output": "COOL, CKEA-C CKEA CKEAC CKEC CKE CKEA cake CKEAcCCC",
+      "output_sha256": "6b73f36fe2a51676af007740f7de5ca44c9b1e0dba9a169216aa23b20affa61d",
+      "passed": false,
+      "probe_id": "novel-coherence-002",
+      "prompt": "Order the event codes from first to last: [COOL] let the bread rest; [MIX] combine the ingredients; [BAKE] put the dough in the oven.",
+      "score": 0.0
+    },
+    {
+      "capability": "prompt_grounding",
+      "engine": "native_english",
+      "evaluator": {
+        "kind": "contains_all",
+        "values": [
+          "Kestrel",
+          "14:30"
+        ]
+      },
+      "latency_seconds": 0.09417280001798645,
+      "output": "Projectrelrelrel review moved to 1430.",
+      "output_sha256": "2163407bb5958b108993f210e2726069c0821475d4ee67a2552191f5d8c85b3d",
+      "passed": false,
+      "probe_id": "novel-grounding-001",
+      "prompt": "Use only this memo to answer: 'Project Kestrel review moved to 14:30.' Which project and time does the memo name?",
+      "score": 0.0
+    },
+    {
+      "capability": "prompt_grounding",
+      "engine": "native_english",
+      "evaluator": {
+        "kind": "contains_all",
+        "values": [
+          "blue",
+          "locker 17"
+        ]
+      },
+      "latency_seconds": 0.09063069999683648,
+      "output": "Please forward the supplied document at your earliest convenience.",
+      "output_sha256": "0c8f0db24d6cb70dc6ed667b8b66c67cc6d652c6b80d7efafcb398e2d6a2875f",
+      "passed": false,
+      "probe_id": "novel-grounding-002",
+      "prompt": "Answer strictly from the supplied note. Note: 'The blue folder is in locker 17.' What color is the folder and where is it?",
+      "score": 0.0
+    },
+    {
+      "capability": "instruction_following",
+      "engine": "native_english",
+      "evaluator": {
+        "kind": "exact",
+        "value": "amber triangle"
+      },
+      "latency_seconds": 0.07343719998607412,
+      "output": "A amber triangle uses the amber triangle at least some place when it approaches. amber",
+      "output_sha256": "c8157ab0919b0f4eee50206dd380cb71bc034f82f64c7675388b605919a1b7ac",
+      "passed": false,
+      "probe_id": "novel-instruction-001",
+      "prompt": "Reply with exactly these two lowercase words and no punctuation: amber triangle",
+      "score": 0.0
+    },
+    {
+      "capability": "instruction_following",
+      "engine": "native_english",
+      "evaluator": {
+        "kind": "exact",
+        "value": "7-4-2"
+      },
+      "latency_seconds": 0.07325149996904656,
+      "output": "Please forward the document titled \" Do You Use? The document named me as your",
+      "output_sha256": "c11d6133b4c14768c910e71b0dbc0b39220e8e7181d46a1ad18f8513a65a3563",
+      "passed": false,
+      "probe_id": "novel-instruction-002",
+      "prompt": "Output only 7-4-2. Do not add words or formatting.",
+      "score": 0.0
+    },
+    {
+      "capability": "conversation",
+      "engine": "native_english",
+      "evaluator": {
+        "kind": "contains_any",
+        "values": [
+          "sorry",
+          "difficult",
+          "hard",
+          "help"
+        ]
+      },
+      "latency_seconds": 0.10963279998395592,
+      "output": "One review for the topic, it's completely understandable to feel that way. Keep up and communicate effectively responsible approach to deadlines.",
+      "output_sha256": "41a8cf11a8772620df175d0d3712c95efbae353e5087d7caf541e1d399783331",
+      "passed": false,
+      "probe_id": "novel-conversation-001",
+      "prompt": "I had a rough day and missed an important deadline. Respond conversationally in one or two sentences.",
+      "score": 0.0
+    },
+    {
+      "capability": "conversation",
+      "engine": "native_english",
+      "evaluator": {
+        "kind": "contains_any",
+        "values": [
+          "welcome",
+          "help",
+          "glad",
+          "hello"
+        ]
+      },
+      "latency_seconds": 0.10707959998399019,
+      "output": "Thank you. Could you please specify which I am?\nThank you. Let you. Could we see you please?",
+      "output_sha256": "9bd9741da54414b0a0c702307556f68d053bf74e3f360ac59adffb76c66036bf",
+      "passed": false,
+      "probe_id": "novel-conversation-002",
+      "prompt": "Hi, I am new here. Give me a friendly one-sentence welcome.",
+      "score": 0.0
+    },
+    {
+      "capability": "summarization",
+      "engine": "native_english",
+      "evaluator": {
+        "kind": "all_of",
+        "rules": [
+          {
+            "kind": "contains_all",
+            "values": [
+              "Rina",
+              "Tuesday",
+              "budget"
+            ]
+          },
+          {
+            "kind": "maximum_characters",
+            "value": 140
+          }
+        ]
+      },
+      "latency_seconds": 0.10396189999300987,
+      "output": "Rina's budget for the National Council in New York's financial year has been discussed.",
+      "output_sha256": "f78b6543e8303ed1f0d847b522a3f38ab4606a30fde8f4e9d774881a5afe70e6",
+      "passed": false,
+      "probe_id": "novel-summary-001",
+      "prompt": "Summarize in one short sentence: Rina finished the budget draft on Monday and will present it to the team on Tuesday.",
+      "score": 0.8333333333333333
+    },
+    {
+      "capability": "summarization",
+      "engine": "native_english",
+      "evaluator": {
+        "kind": "all_of",
+        "rules": [
+          {
+            "kind": "contains_all",
+            "values": [
+              "train",
+              "weather",
+              "18:00"
+            ]
+          },
+          {
+            "kind": "maximum_characters",
+            "value": 150
+          }
+        ]
+      },
+      "latency_seconds": 0.08809560001827776,
+      "output": "The Bad weather delayed, is really challenging and adaptable to new environments.",
+      "output_sha256": "a55fe873ccb073060e2a15c213a1e2b19c6e9f8adb0c50dfade345531a3db871",
+      "passed": false,
+      "probe_id": "novel-summary-002",
+      "prompt": "Give a concise summary: Bad weather delayed the northbound train, so its expected arrival changed from 17:10 to 18:00.",
+      "score": 0.6666666666666666
+    },
+    {
+      "capability": "rewriting",
+      "engine": "native_english",
+      "evaluator": {
+        "kind": "contains_all",
+        "values": [
+          "report",
+          "understand"
+        ]
+      },
+      "latency_seconds": 0.13522809999994934,
+      "output": "A hardrite sentence is easier to understand as a concrete record, and its description does not erase a concern that the record was wrong. Which gives the numerical result of the exact record without becoming rigid or disconnected from people.",
+      "output_sha256": "5a35a7c335a5ba6e7a40ce45629251c3af1bcbedf85da1080ecd7b3613806f21",
+      "passed": false,
+      "probe_id": "novel-rewriting-001",
+      "prompt": "Rewrite this sentence more clearly: The report is kind of hard to understand.",
+      "score": 0.5
+    },
+    {
+      "capability": "rewriting",
+      "engine": "native_english",
+      "evaluator": {
+        "kind": "contains_all",
+        "values": [
+          "please",
+          "numbers"
+        ]
+      },
+      "latency_seconds": 0.11592080001719296,
+      "output": "\nSubject: Public for the survey by this request.\nI can express my gratitude for the survey to you.\nWarm regards,\n\nWarm for mearm regards it",
+      "output_sha256": "788ce68aeeb93cb53ab4eb38fa4108c9db7e6cc59167ed613aaf4794bc3cabeb",
+      "passed": false,
+      "probe_id": "novel-rewriting-002",
+      "prompt": "Rewrite this request so it is polite and professional: Send me the numbers now.",
+      "score": 0.0
+    },
+    {
+      "capability": "email_drafting",
+      "engine": "native_english",
+      "evaluator": {
+        "kind": "contains_all",
+        "values": [
+          "Friday",
+          "agenda",
+          "confirm"
+        ]
+      },
+      "latency_seconds": 0.2486299999873154,
+      "output": "Subject: meeting. metched Friday, and would like to send a public for the sake of providing the information.\nSubject: meeting?\n\n\nDear meeting,\n\n[Your Name] meeting is this Thursday and the subject matter by this Friday. Could you provide the public for this Friday?\n\n\n[Your name here at this Friday; please send the public for sharing the",
+      "output_sha256": "e9a951912bea3e2cfe4d9e2c08c0f4586facaf59576e5809733f0f42fc4b1cc9",
+      "passed": false,
+      "probe_id": "novel-email-001",
+      "prompt": "Draft a concise email from these notes: meeting Friday; ask the recipient to confirm the agenda.",
+      "score": 0.3333333333333333
+    },
+    {
+      "capability": "email_drafting",
+      "engine": "native_english",
+      "evaluator": {
+        "kind": "contains_all",
+        "values": [
+          "invoice",
+          "April 9",
+          "attach"
+        ]
+      },
+      "latency_seconds": 0.09987299999920651,
+      "output": "A brief invoice can be named as the \"item-at\": \"item- at your earliest convenience.\"",
+      "output_sha256": "36dd6ce04956864d5376b82c8eb0476c93f2a5f4aabdce6422f0e6df9a113304",
+      "passed": false,
+      "probe_id": "novel-email-002",
+      "prompt": "Write a brief professional email: the invoice is due April 9 and the recipient should attach the receipt.",
+      "score": 0.3333333333333333
+    },
+    {
+      "capability": "tone_control",
+      "engine": "native_english",
+      "evaluator": {
+        "kind": "contains_all",
+        "values": [
+          "please",
+          "window"
+        ]
+      },
+      "latency_seconds": 0.11686100001679733,
+      "output": "renewed this window is a politely installed window. A. politely installed the window to remain open when you are updated.\nrenewed is consistent with the installed rule.",
+      "output_sha256": "11dfdb52fbd71fd0fd1a1fde0caa628ece19665fac35d4d25bba6377318019b4",
+      "passed": false,
+      "probe_id": "novel-tone-001",
+      "prompt": "Say this politely in one sentence: Close the window.",
+      "score": 0.5
+    },
+    {
+      "capability": "tone_control",
+      "engine": "native_english",
+      "evaluator": {
+        "kind": "contains_all",
+        "values": [
+          "thank",
+          "response"
+        ]
+      },
+      "latency_seconds": 0.10668259998783469,
+      "output": "B: As an example of me got into the warm professional sentence, which gives me a clear reason to have doubts about my actions.",
+      "output_sha256": "f28045267a7d1adb6896e35760d50ce642bb45cea7dc1801e1ebd601ca27c572",
+      "passed": false,
+      "probe_id": "novel-tone-002",
+      "prompt": "Turn this into a warm professional sentence: I got your response.",
+      "score": 0.0
+    },
+    {
+      "capability": "format_control",
+      "engine": "native_english",
+      "evaluator": {
+        "expected_values": {
+          "count": 3,
+          "status": "ready"
+        },
+        "kind": "json_object",
+        "required_keys": [
+          "status",
+          "count"
+        ]
+      },
+      "latency_seconds": 0.08461419999366626,
+      "output": "Jetas is described as a JSON object, which gives",
+      "output_sha256": "eba3e2d5c7f57e55d9d3482ceccdeafb545bf1914f91f37676649ab559ae0c3f",
+      "passed": false,
+      "probe_id": "novel-format-001",
+      "prompt": "Return one JSON object, with no explanation, where status is \"ready\" and count is 3.",
+      "score": 0.0
+    },
+    {
+      "capability": "format_control",
+      "engine": "native_english",
+      "evaluator": {
+        "kind": "exact",
+        "value": "ALPHA\nBETA\nGAMMA"
+      },
+      "latency_seconds": 0.10962850000942126,
+      "output": "BETA: three uppercase lines in order order order order.\n ALPHA, three upperc-A lines",
+      "output_sha256": "0a827c7702cfc6250279c6a9943a01495a338fd7c662a62d002bd0978679c8ee",
+      "passed": false,
+      "probe_id": "novel-format-002",
+      "prompt": "Print exactly three uppercase lines in this order: ALPHA, BETA, GAMMA.",
+      "score": 0.0
+    },
+    {
+      "capability": "clarification",
+      "engine": "native_english",
+      "evaluator": {
+        "kind": "regex",
+        "pattern": "(?=.*\\?)(?=.*(?:time|timezone|which Friday))"
+      },
+      "latency_seconds": 0.1454904000274837,
+      "output": "Could you specify which which which of the Book of St. Caster? Could you specify which aspects of St.Caster believe would have improvement?",
+      "output_sha256": "a1a1516b6ee162bf67cd9236b06a59616bdc4b3672661b7e176f0269da02770e",
+      "passed": false,
+      "probe_id": "novel-clarification-001",
+      "prompt": "The user says only: Book it for Friday. Ask one useful clarifying question.",
+      "score": 0.0
+    },
+    {
+      "capability": "clarification",
+      "engine": "native_english",
+      "evaluator": {
+        "kind": "regex",
+        "pattern": "(?=.*\\?)(?=.*(?:file|document|which))"
+      },
+      "latency_seconds": 0.0640961000462994,
+      "output": "The request is that which does not consume all available resources.",
+      "output_sha256": "2cc1586187a7b72e33b86c949fca3b9fc5882281bf3187665176a766f04d6775",
+      "passed": false,
+      "probe_id": "novel-clarification-002",
+      "prompt": "The request is: Send the file. Ask one concise question needed before acting.",
+      "score": 0.0
+    },
+    {
+      "capability": "abstention",
+      "engine": "native_english",
+      "evaluator": {
+        "kind": "contains_any",
+        "values": [
+          "cannot know",
+          "do not know",
+          "not provided",
+          "no information"
+        ]
+      },
+      "latency_seconds": 0.07923550001578405,
+      "output": "I can help arrange the bank password password to a private bank password that is an improvement",
+      "output_sha256": "5a211764561b63975ad72c061c084be8c0af979913ca27e6f65cd216f7e1ec3c",
+      "passed": false,
+      "probe_id": "novel-abstention-001",
+      "prompt": "No personal information is provided. What is my private bank password? Do not invent one.",
+      "score": 0.0
+    },
+    {
+      "capability": "abstention",
+      "engine": "native_english",
+      "evaluator": {
+        "kind": "contains_any",
+        "values": [
+          "cannot determine",
+          "not enough information",
+          "not provided",
+          "unknown"
+        ]
+      },
+      "latency_seconds": 0.10780489997705445,
+      "output": "As an AI, I'm unable to predict or know the exact temperature of a battery that is typically based on unpredictable processes, such",
+      "output_sha256": "2efab8c6ec86525b4b85eec78b5bf8b95db4389df00f43496a3b3cc55e81ed08",
+      "passed": false,
+      "probe_id": "novel-abstention-002",
+      "prompt": "The context is empty. State the exact temperature in my kitchen right now, and abstain if it cannot be determined.",
+      "score": 0.0
+    },
+    {
+      "capability": "domain_independent_reasoning",
+      "engine": "native_english",
+      "evaluator": {
+        "kind": "numeric_equal",
+        "value": 17
+      },
+      "latency_seconds": 0.05809509998653084,
+      "output": "22",
+      "output_sha256": "785f3ec7eb32f30b90cd0fcf3657d388b5ff4297f2f9716ff66e9b69c05ddd09",
+      "passed": false,
+      "probe_id": "novel-reasoning-001",
+      "prompt": "A box has 12 red cards and 5 blue cards. How many cards are in the box? Give the number.",
+      "score": 0.0
+    },
+    {
+      "capability": "domain_independent_reasoning",
+      "engine": "native_english",
+      "evaluator": {
+        "kind": "contains_all",
+        "values": [
+          "Lina",
+          "third"
+        ]
+      },
+      "latency_seconds": 0.09925760002806783,
+      "output": "As an AI, I'm unable to predict or know the exact location of Priya.",
+      "output_sha256": "78a29835e1c5fa613af9ab196c83feca85e7171f43bdc0fbdc24c7de12b573b1",
+      "passed": false,
+      "probe_id": "novel-reasoning-002",
+      "prompt": "Omar is first, Priya is second, and Lina is after Priya. Who is third? Answer with the name and position.",
+      "score": 0.0
+    },
+    {
+      "capability": "cake_output_realization",
+      "engine": "native_english",
+      "evaluator": {
+        "kind": "contains_all",
+        "values": [
+          "Orchid",
+          "passed",
+          "18"
+        ]
+      },
+      "latency_seconds": 0.15003199997590855,
+      "output": "The paper was called thechid C identifier C.A. identifier C. identifier C C.AA. identifierC.A.A. A.A..A. The.... The. The.",
+      "output_sha256": "923bdc7e3a05d566b00321705ca25c987304a55cd54df6bead76505e3e23f09a",
+      "passed": false,
+      "probe_id": "novel-realization-001",
+      "prompt": "Turn these structured fields into one fluent sentence: project=Orchid; tests=18; result=passed.",
+      "score": 0.0
+    },
+    {
+      "capability": "cake_output_realization",
+      "engine": "native_english",
+      "evaluator": {
+        "kind": "contains_all",
+        "values": [
+          "shipment",
+          "delayed",
+          "Monday"
+        ]
+      },
+      "latency_seconds": 0.10855389997595921,
+      "output": "The tool with the identifier CPRI arrived at NPRI arrived in NPRI at NPRPRI arrived.",
+      "output_sha256": "9000fb3eeedc53d17ad1a8f5639162d5f2f0a3d588448ec76ea638a5982ba2bf",
+      "passed": false,
+      "probe_id": "novel-realization-002",
+      "prompt": "Express this tool result naturally without adding facts: item=shipment; state=delayed; next_update=Monday.",
+      "score": 0.0
+    }
+  ],
+  "passes": 0,
+  "status": "FAIL"
+}

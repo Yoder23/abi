@@ -1,0 +1,2829 @@
+{
+  "candidate_artifact_sha256": "6cd38f0d958ca09be58ecc3fb4baeb8bbf50e24a6118f393214b24cda874c958",
+  "claim_boundary": "Paired retention on 100 declared validation prompts for the exact selected source/domain. Not final-test or universal semantic identity.",
+  "device": "cuda",
+  "domain": "python",
+  "evidence_sha256": "451c5150c4be2ee1c652cfe0db14b741bac9654a039021a2dfe340c11188e969",
+  "final_test_accessed": false,
+  "format": "abi-layercake-domain-validation-evidence/1",
+  "invalid_utf8_outputs": 0,
+  "layercake_passes": 100,
+  "median_latency_seconds": 0.04848805000074208,
+  "observation_count": 100,
+  "observations": [
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a + b",
+        "function_name": "calculate_100",
+        "kind": "python_function_expression"
+      },
+      "id": "2ee171cf125517a16bd4b090080c7e9b03604fe91d7511ec179fcdb9275d065e",
+      "invalid_utf8": false,
+      "latency_seconds": 0.5228521000244655,
+      "layercake_output": "```python\n\ndef calculate_100(a, b):\n\n    return a + b\n\n```",
+      "layercake_output_sha256": "5356284bb3ed99a3de3b632aa80502fb20379255d24ab02f2481068e76e738dc",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-100-v2",
+      "prompt": "Write only Python code defining `calculate_100(a, b)` that returns the add result using `a + b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-100-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_100(a, b):\n\n    return a + b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a - b",
+        "function_name": "calculate_101",
+        "kind": "python_function_expression"
+      },
+      "id": "fd8b7de63e67b6ca4b7ee694c9a6dd7d73d5c678718c6bcc39da28a6125b3468",
+      "invalid_utf8": false,
+      "latency_seconds": 0.03928719996474683,
+      "layercake_output": "```python\n\ndef calculate_101(a, b):\n\n    return a - b\n\n```",
+      "layercake_output_sha256": "e4cce7d8ddd7b79261eccda1842e7547d6a082aee1dd38b3cd490dfc84097b80",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-101-v2",
+      "prompt": "Write only Python code defining `calculate_101(a, b)` that returns the subtract result using `a - b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-101-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_101(a, b):\n\n    return a - b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a * b",
+        "function_name": "calculate_102",
+        "kind": "python_function_expression"
+      },
+      "id": "092e4810cf38d83cc01538a0a96f42c49808aa21555bfd6a5ed0601716949503",
+      "invalid_utf8": false,
+      "latency_seconds": 0.03986359998816624,
+      "layercake_output": "```python\n\ndef calculate_102(a, b):\n\n    return a * b\n\n```",
+      "layercake_output_sha256": "16641052bf6e234acf4ee15ba0fd0263c9372bde40790737a2912a1ca26ef9e1",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-102-v2",
+      "prompt": "Write only Python code defining `calculate_102(a, b)` that returns the multiply result using `a * b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-102-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_102(a, b):\n\n    return a * b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "max(a, b)",
+        "function_name": "calculate_103",
+        "kind": "python_function_expression"
+      },
+      "id": "448218d7ceb255ce9ff0e88cf3e6a5a9e9dd6eb8a608b8649f7325770b5eda2c",
+      "invalid_utf8": false,
+      "latency_seconds": 0.045438500004820526,
+      "layercake_output": "```python\n\ndef calculate_103(a, b):\n\n    return max(a, b)\n\n```",
+      "layercake_output_sha256": "ac7920c88fe1744d11fd7505afbd22c9d3afefbff513500b823e3da6fbb8a192",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-103-v2",
+      "prompt": "Write only Python code defining `calculate_103(a, b)` that returns the maximum result using `max(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-103-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_103(a, b):\n\n    return max(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "min(a, b)",
+        "function_name": "calculate_104",
+        "kind": "python_function_expression"
+      },
+      "id": "ca97c6195f1a64973e777ea68326bcc0baaedb73ae0bbb30227033f323116852",
+      "invalid_utf8": false,
+      "latency_seconds": 0.0430643999716267,
+      "layercake_output": "```python\n\ndef calculate_104(a, b):\n\n    return min(a, b)\n\n```",
+      "layercake_output_sha256": "654d3e32acbc9aa1a8ac5d596c125a02879a4c1582d20e47a4105ce667283707",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-104-v2",
+      "prompt": "Write only Python code defining `calculate_104(a, b)` that returns the minimum result using `min(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-104-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_104(a, b):\n\n    return min(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a + b",
+        "function_name": "calculate_105",
+        "kind": "python_function_expression"
+      },
+      "id": "539d1cd913f093870372dfd55fd4739c0b2ec34138ed118529ac33661841f33a",
+      "invalid_utf8": false,
+      "latency_seconds": 0.04140300001017749,
+      "layercake_output": "```python\n\ndef calculate_105(a, b):\n\n    return a + b\n\n```",
+      "layercake_output_sha256": "877a172da9f46da134d55fc3fecb4a21bd77e45cf87b70183799dcbc568ab431",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-105-v2",
+      "prompt": "Write only Python code defining `calculate_105(a, b)` that returns the add result using `a + b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-105-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_105(a, b):\n\n    return a + b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a - b",
+        "function_name": "calculate_106",
+        "kind": "python_function_expression"
+      },
+      "id": "ea8df7c88583242cb85865bd524e782e2456fcea724dbdc13cb9a63430661bc0",
+      "invalid_utf8": false,
+      "latency_seconds": 0.04239810002036393,
+      "layercake_output": "```python\n\ndef calculate_106(a, b):\n\n    return a - b\n\n```",
+      "layercake_output_sha256": "603cea3bf8ab2d32eaadbd7835ba16c59407f0bfb201f771b9dcd025df257ef5",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-106-v2",
+      "prompt": "Write only Python code defining `calculate_106(a, b)` that returns the subtract result using `a - b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-106-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_106(a, b):\n\n    return a - b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a * b",
+        "function_name": "calculate_107",
+        "kind": "python_function_expression"
+      },
+      "id": "f0fdfb915e060a3958216b472f41d2437df3c4aa7cad8bef4cefdb839a7eda4f",
+      "invalid_utf8": false,
+      "latency_seconds": 0.03892589994939044,
+      "layercake_output": "```python\n\ndef calculate_107(a, b):\n\n    return a * b\n\n```",
+      "layercake_output_sha256": "cc35d153c886982f384999ba353c81aa70869df06a539ec3d9efd4f1b181cc50",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-107-v2",
+      "prompt": "Write only Python code defining `calculate_107(a, b)` that returns the multiply result using `a * b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-107-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_107(a, b):\n\n    return a * b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "max(a, b)",
+        "function_name": "calculate_108",
+        "kind": "python_function_expression"
+      },
+      "id": "730e777fb3acfcf47fc187cc05332edcc94a5542c212a853433e590825f1b3b4",
+      "invalid_utf8": false,
+      "latency_seconds": 0.04277569998521358,
+      "layercake_output": "```python\n\ndef calculate_108(a, b):\n\n    return max(a, b)\n\n```",
+      "layercake_output_sha256": "08788966d745ebc1935de1e878d62c76c86f9a1760195194953b7a99c2cda179",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-108-v2",
+      "prompt": "Write only Python code defining `calculate_108(a, b)` that returns the maximum result using `max(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-108-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_108(a, b):\n\n    return max(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "min(a, b)",
+        "function_name": "calculate_109",
+        "kind": "python_function_expression"
+      },
+      "id": "a84279b9c9d6531978395a9b88add78f918f5cf3eaa62f47bf64a6cb8782501d",
+      "invalid_utf8": false,
+      "latency_seconds": 0.041764300025533885,
+      "layercake_output": "```python\n\ndef calculate_109(a, b):\n\n    return min(a, b)\n\n```",
+      "layercake_output_sha256": "192ef010f7ef1c6e8172994b07f47bb2321c90a6d0dd946a105940e0be9f5353",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-109-v2",
+      "prompt": "Write only Python code defining `calculate_109(a, b)` that returns the minimum result using `min(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-109-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_109(a, b):\n\n    return min(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a + b",
+        "function_name": "calculate_110",
+        "kind": "python_function_expression"
+      },
+      "id": "9f184d638b7d4de82bbefd68d877ddc8a78dee549b400c44a641cc65edaf253e",
+      "invalid_utf8": false,
+      "latency_seconds": 0.03899289999390021,
+      "layercake_output": "```python\n\ndef calculate_110(a, b):\n\n    return a + b\n\n```",
+      "layercake_output_sha256": "97e2574b820d8e7f8d34a8a58ec5da623061477d8c57c1f6aa5e80c7f296b20c",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-110-v2",
+      "prompt": "Write only Python code defining `calculate_110(a, b)` that returns the add result using `a + b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-110-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_110(a, b):\n\n    return a + b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a - b",
+        "function_name": "calculate_111",
+        "kind": "python_function_expression"
+      },
+      "id": "c3e20b1490581bec69f4342bcd0122fd5890a707a66ead1b5f9626dfaf21d5c4",
+      "invalid_utf8": false,
+      "latency_seconds": 0.04168050002772361,
+      "layercake_output": "```python\n\ndef calculate_111(a, b):\n\n    return a - b\n\n```",
+      "layercake_output_sha256": "9a358b4ea4da43f040ef800633972093df9c3a80d5a612048100a56ff01c0256",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-111-v2",
+      "prompt": "Write only Python code defining `calculate_111(a, b)` that returns the subtract result using `a - b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-111-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_111(a, b):\n\n    return a - b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a * b",
+        "function_name": "calculate_112",
+        "kind": "python_function_expression"
+      },
+      "id": "1eae40258bfd1378b3f9142f3dfdf7658629e6fb0c3bd4e51e75eaa47c911df2",
+      "invalid_utf8": false,
+      "latency_seconds": 0.03944660001434386,
+      "layercake_output": "```python\n\ndef calculate_112(a, b):\n\n    return a * b\n\n```",
+      "layercake_output_sha256": "35b7009bddabba181c03748ac83719605d8b542bd1d3136bb62feea80f065535",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-112-v2",
+      "prompt": "Write only Python code defining `calculate_112(a, b)` that returns the multiply result using `a * b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-112-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_112(a, b):\n\n    return a * b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "max(a, b)",
+        "function_name": "calculate_113",
+        "kind": "python_function_expression"
+      },
+      "id": "7cd1c7debdd21d239cd860de07795c58a378653ab11d7741682a19708519f28f",
+      "invalid_utf8": false,
+      "latency_seconds": 0.04252309998264536,
+      "layercake_output": "```python\n\ndef calculate_113(a, b):\n\n    return max(a, b)\n\n```",
+      "layercake_output_sha256": "83007dcbfce98da470f5eddfd2f7f495633a1aca4848c33fa67259d73fcd8514",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-113-v2",
+      "prompt": "Write only Python code defining `calculate_113(a, b)` that returns the maximum result using `max(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-113-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_113(a, b):\n\n    return max(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "min(a, b)",
+        "function_name": "calculate_114",
+        "kind": "python_function_expression"
+      },
+      "id": "337c29291d8c88fe13ed8e841871bed422eeff10b24647acda437e83aee1edb7",
+      "invalid_utf8": false,
+      "latency_seconds": 0.041830700007267296,
+      "layercake_output": "```python\n\ndef calculate_114(a, b):\n\n    return min(a, b)\n\n```",
+      "layercake_output_sha256": "3e421eb08d08ff103a4b9c92c4ac953d26f82761031715e69a066568c2ac1123",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-114-v2",
+      "prompt": "Write only Python code defining `calculate_114(a, b)` that returns the minimum result using `min(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-114-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_114(a, b):\n\n    return min(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a + b",
+        "function_name": "calculate_115",
+        "kind": "python_function_expression"
+      },
+      "id": "989e4077b71694d54396d85bbad08000c76cb8367dc23fb91a8b6ff24f6e52bb",
+      "invalid_utf8": false,
+      "latency_seconds": 0.043900600052438676,
+      "layercake_output": "```python\n\ndef calculate_115(a, b):\n\n    return a + b\n\n```",
+      "layercake_output_sha256": "629b04b7bd861e4a99ac9afb0bd31d0bdb2acf786b1b26bc1d1dc05950a8f64f",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-115-v2",
+      "prompt": "Write only Python code defining `calculate_115(a, b)` that returns the add result using `a + b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-115-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_115(a, b):\n\n    return a + b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a - b",
+        "function_name": "calculate_116",
+        "kind": "python_function_expression"
+      },
+      "id": "69f8e010b92350eb737d3554cbd6a0e7977d413564cce3d4587b75ea1869f491",
+      "invalid_utf8": false,
+      "latency_seconds": 0.04701550002209842,
+      "layercake_output": "```python\n\ndef calculate_116(a, b):\n\n    return a - b\n\n```",
+      "layercake_output_sha256": "a84658d4d03a1573992530b7cf86d164c43341bc345860fe7aef757b4c07e0e4",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-116-v2",
+      "prompt": "Write only Python code defining `calculate_116(a, b)` that returns the subtract result using `a - b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-116-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_116(a, b):\n\n    return a - b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a * b",
+        "function_name": "calculate_117",
+        "kind": "python_function_expression"
+      },
+      "id": "b217053c6f677cfc7d646ed9daaca23645e93d48f2c3021c7237f263ae24b6a4",
+      "invalid_utf8": false,
+      "latency_seconds": 0.050930900033563375,
+      "layercake_output": "```python\n\ndef calculate_117(a, b):\n\n    return a * b\n\n```",
+      "layercake_output_sha256": "0b4f522c038252ff835b66abee50f260fecea7e5c06803837a242a6181dcef98",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-117-v2",
+      "prompt": "Write only Python code defining `calculate_117(a, b)` that returns the multiply result using `a * b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-117-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_117(a, b):\n\n    return a * b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "max(a, b)",
+        "function_name": "calculate_118",
+        "kind": "python_function_expression"
+      },
+      "id": "2c592aad405f98f12750fd177aa852624e5cbec5817b67d04035a56f9e7d320f",
+      "invalid_utf8": false,
+      "latency_seconds": 0.04843649995746091,
+      "layercake_output": "```python\n\ndef calculate_118(a, b):\n\n    return max(a, b)\n\n```",
+      "layercake_output_sha256": "57f71aa55e55cea854775e9064b707c890ea654e9aa68d7088c25559326d36fc",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-118-v2",
+      "prompt": "Write only Python code defining `calculate_118(a, b)` that returns the maximum result using `max(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-118-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_118(a, b):\n\n    return max(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "min(a, b)",
+        "function_name": "calculate_119",
+        "kind": "python_function_expression"
+      },
+      "id": "ceb428c777c77422d45a76e9d45dd6115e90ff55a5f83018338c10228a6b56c8",
+      "invalid_utf8": false,
+      "latency_seconds": 0.056031899992376566,
+      "layercake_output": "```python\n\ndef calculate_119(a, b):\n\n    return min(a, b)\n\n```",
+      "layercake_output_sha256": "c73c1e6d495606095f852f29e7a739d07dd4aec6d6d6cd2fee4c22721c2be567",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-119-v2",
+      "prompt": "Write only Python code defining `calculate_119(a, b)` that returns the minimum result using `min(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-119-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_119(a, b):\n\n    return min(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a + b",
+        "function_name": "calculate_120",
+        "kind": "python_function_expression"
+      },
+      "id": "34f48f89e0e4cc48cad32a6e403edcf86cbda401e1e4b5e6ba974c4567767042",
+      "invalid_utf8": false,
+      "latency_seconds": 0.057319499959703535,
+      "layercake_output": "```python\n\ndef calculate_120(a, b):\n\n    return a + b\n\n```",
+      "layercake_output_sha256": "ee5df963822cc46690f10c049653258d6c3e9f87e3c23228af439d4ac26f0db0",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-120-v2",
+      "prompt": "Write only Python code defining `calculate_120(a, b)` that returns the add result using `a + b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-120-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_120(a, b):\n\n    return a + b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a - b",
+        "function_name": "calculate_121",
+        "kind": "python_function_expression"
+      },
+      "id": "4617524058d5062d97140ff7af8d7a5fb7622d48a84459f39e05ad45ea0b88d6",
+      "invalid_utf8": false,
+      "latency_seconds": 0.041654800006654114,
+      "layercake_output": "```python\n\ndef calculate_121(a, b):\n\n    return a - b\n\n```",
+      "layercake_output_sha256": "2d2ee39667c5dc1ba425091828590d778dcdcdeeafdcb0d3ff0226e72a5019b9",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-121-v2",
+      "prompt": "Write only Python code defining `calculate_121(a, b)` that returns the subtract result using `a - b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-121-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_121(a, b):\n\n    return a - b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a * b",
+        "function_name": "calculate_122",
+        "kind": "python_function_expression"
+      },
+      "id": "7d944a4f191a60576b4a90610c4d19a8da0a92d9cefcdb8169658b4aef7491b4",
+      "invalid_utf8": false,
+      "latency_seconds": 0.04834899998968467,
+      "layercake_output": "```python\n\ndef calculate_122(a, b):\n\n    return a * b\n\n```",
+      "layercake_output_sha256": "45339afb27803d12381978224578f6aa2ef161a525401f2bce7435e649437fdc",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-122-v2",
+      "prompt": "Write only Python code defining `calculate_122(a, b)` that returns the multiply result using `a * b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-122-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_122(a, b):\n\n    return a * b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "max(a, b)",
+        "function_name": "calculate_123",
+        "kind": "python_function_expression"
+      },
+      "id": "bf2fbad5567ef64615232e021b15bc759c5c040ebc7056fa57d9c302bd416b4d",
+      "invalid_utf8": false,
+      "latency_seconds": 0.04474990000016987,
+      "layercake_output": "```python\n\ndef calculate_123(a, b):\n\n    return max(a, b)\n\n```",
+      "layercake_output_sha256": "46b1ca2803023b891389ddb734c464dbfde135f7720b96403d522d8401a97c38",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-123-v2",
+      "prompt": "Write only Python code defining `calculate_123(a, b)` that returns the maximum result using `max(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-123-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_123(a, b):\n\n    return max(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "min(a, b)",
+        "function_name": "calculate_124",
+        "kind": "python_function_expression"
+      },
+      "id": "e6a8cc1434171c3c3eec8ce36949b1250efaf40cbcf72309c8852e69b66923f8",
+      "invalid_utf8": false,
+      "latency_seconds": 0.045906900020781904,
+      "layercake_output": "```python\n\ndef calculate_124(a, b):\n\n    return min(a, b)\n\n```",
+      "layercake_output_sha256": "8d6dfc2a9c5719fbd472a84af116cf682c4e7db184f6cf66092ff3bb7a2f21ad",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-124-v2",
+      "prompt": "Write only Python code defining `calculate_124(a, b)` that returns the minimum result using `min(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-124-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_124(a, b):\n\n    return min(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a + b",
+        "function_name": "calculate_125",
+        "kind": "python_function_expression"
+      },
+      "id": "bcea55b8a33bf276e8e0f0f9c5c94ddbbce064355e01c13146e2fbf978ef2145",
+      "invalid_utf8": false,
+      "latency_seconds": 0.05776190001051873,
+      "layercake_output": "```python\n\ndef calculate_125(a, b):\n\n    return a + b\n\n```",
+      "layercake_output_sha256": "744f599b2c2059fe4ad0d25ef4f6c47a2f1e6bb678950144afbd93467ea0cf53",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-125-v2",
+      "prompt": "Write only Python code defining `calculate_125(a, b)` that returns the add result using `a + b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-125-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_125(a, b):\n\n    return a + b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a - b",
+        "function_name": "calculate_126",
+        "kind": "python_function_expression"
+      },
+      "id": "728d6b04558ab9d63477fc010d30b6bc4697a3441427d5e61c49b919047781d7",
+      "invalid_utf8": false,
+      "latency_seconds": 0.048776499985251576,
+      "layercake_output": "```python\n\ndef calculate_126(a, b):\n\n    return a - b\n\n```",
+      "layercake_output_sha256": "87d9c5be44199bbd3bccc1b6e3e8ded458926d62968672375e6d9becadda86de",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-126-v2",
+      "prompt": "Write only Python code defining `calculate_126(a, b)` that returns the subtract result using `a - b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-126-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_126(a, b):\n\n    return a - b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a * b",
+        "function_name": "calculate_127",
+        "kind": "python_function_expression"
+      },
+      "id": "a90446a56286042cf597342a4abb3db2a2aaa7cb3c642d831e73a22ee10a5660",
+      "invalid_utf8": false,
+      "latency_seconds": 0.06111140002030879,
+      "layercake_output": "```python\n\ndef calculate_127(a, b):\n\n    return a * b\n\n```",
+      "layercake_output_sha256": "a843c919ccf00d568898cb423de66d7a5a3130650c97cb08be0a3da8079656c5",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-127-v2",
+      "prompt": "Write only Python code defining `calculate_127(a, b)` that returns the multiply result using `a * b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-127-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_127(a, b):\n\n    return a * b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "max(a, b)",
+        "function_name": "calculate_128",
+        "kind": "python_function_expression"
+      },
+      "id": "0588fc14473d46201490bcb1b8ffd7b9ad46e2c06fbee3cb81ebb580d2be1a08",
+      "invalid_utf8": false,
+      "latency_seconds": 0.049270000017713755,
+      "layercake_output": "```python\n\ndef calculate_128(a, b):\n\n    return max(a, b)\n\n```",
+      "layercake_output_sha256": "c8bcf41009e53d53d6bffa33d405817bff98f36b6546711b45da58bfcf17cc24",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-128-v2",
+      "prompt": "Write only Python code defining `calculate_128(a, b)` that returns the maximum result using `max(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-128-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_128(a, b):\n\n    return max(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "min(a, b)",
+        "function_name": "calculate_129",
+        "kind": "python_function_expression"
+      },
+      "id": "f1ed9725eab56851bcd3dd6bfa9a70dc659720adce5d0b4492ae29ae84d66870",
+      "invalid_utf8": false,
+      "latency_seconds": 0.05623449996346608,
+      "layercake_output": "```python\n\ndef calculate_129(a, b):\n\n    return min(a, b)\n\n```",
+      "layercake_output_sha256": "042a5ee2982d44f8fa85cfabb25fbe0a15560b225f65c667f65bb29baf04fefc",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-129-v2",
+      "prompt": "Write only Python code defining `calculate_129(a, b)` that returns the minimum result using `min(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-129-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_129(a, b):\n\n    return min(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a + b",
+        "function_name": "calculate_130",
+        "kind": "python_function_expression"
+      },
+      "id": "30c5abcf1a00852aeec914c74fc88d039a73002f79f33fef98cc6a1d2616c61f",
+      "invalid_utf8": false,
+      "latency_seconds": 0.049453600018750876,
+      "layercake_output": "```python\n\ndef calculate_130(a, b):\n\n    return a + b\n\n```",
+      "layercake_output_sha256": "bc46564e118893e3ac9fa04e872742a182a8d9d88422936f854560340398b0b3",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-130-v2",
+      "prompt": "Write only Python code defining `calculate_130(a, b)` that returns the add result using `a + b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-130-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_130(a, b):\n\n    return a + b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a - b",
+        "function_name": "calculate_131",
+        "kind": "python_function_expression"
+      },
+      "id": "7e56a0dabb75b0e1e713d335520c35cad06b6191604062fdb83d322a86e40465",
+      "invalid_utf8": false,
+      "latency_seconds": 0.06303930003196001,
+      "layercake_output": "```python\n\ndef calculate_131(a, b):\n\n    return a - b\n\n```",
+      "layercake_output_sha256": "d357364a506ec3f37f8918c60dd6119097a054555effc88250fce1216fdec806",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-131-v2",
+      "prompt": "Write only Python code defining `calculate_131(a, b)` that returns the subtract result using `a - b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-131-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_131(a, b):\n\n    return a - b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a * b",
+        "function_name": "calculate_132",
+        "kind": "python_function_expression"
+      },
+      "id": "a6fb52d0f7b61dbcc2c5279849a24f95e35ac8b78f75f1b4649880f690716510",
+      "invalid_utf8": false,
+      "latency_seconds": 0.04642650001915172,
+      "layercake_output": "```python\n\ndef calculate_132(a, b):\n\n    return a * b\n\n```",
+      "layercake_output_sha256": "f1e3cf937a4cb60c7d7cd419bc2f447fa3bd4228341551b83d398d361542c6f5",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-132-v2",
+      "prompt": "Write only Python code defining `calculate_132(a, b)` that returns the multiply result using `a * b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-132-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_132(a, b):\n\n    return a * b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "max(a, b)",
+        "function_name": "calculate_133",
+        "kind": "python_function_expression"
+      },
+      "id": "649aa44405eb674b6eb11a4e0e041ed7cff92bec73cbf2583609908edbd837f1",
+      "invalid_utf8": false,
+      "latency_seconds": 0.04668869997840375,
+      "layercake_output": "```python\n\ndef calculate_133(a, b):\n\n    return max(a, b)\n\n```",
+      "layercake_output_sha256": "7d049f865e68fa7cb3b209bd15e8acfe1c0fe15942a0cbbd951ed937afd45100",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-133-v2",
+      "prompt": "Write only Python code defining `calculate_133(a, b)` that returns the maximum result using `max(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-133-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_133(a, b):\n\n    return max(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "min(a, b)",
+        "function_name": "calculate_134",
+        "kind": "python_function_expression"
+      },
+      "id": "89c98c86c41842acc79ee55d2fbbd2da315d0853e50b7584cb1bb16dd1d75f86",
+      "invalid_utf8": false,
+      "latency_seconds": 0.05908819998148829,
+      "layercake_output": "```python\n\ndef calculate_134(a, b):\n\n    return min(a, b)\n\n```",
+      "layercake_output_sha256": "5f66bb1a32f36635cb1432577223104a2ed7ec588ce79573828360f6a4b42a78",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-134-v2",
+      "prompt": "Write only Python code defining `calculate_134(a, b)` that returns the minimum result using `min(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-134-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_134(a, b):\n\n    return min(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a + b",
+        "function_name": "calculate_135",
+        "kind": "python_function_expression"
+      },
+      "id": "3a79db6bf308784a97fefa487073a8835987c9c2fbee0c178e7a0d18d5951f47",
+      "invalid_utf8": false,
+      "latency_seconds": 0.04181179997976869,
+      "layercake_output": "```python\n\ndef calculate_135(a, b):\n\n    return a + b\n\n```",
+      "layercake_output_sha256": "d632afef7c59e3bb48c47c5a7f499f6c407e8fdcff46a7c0ef5bdd2f7f85a506",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-135-v2",
+      "prompt": "Write only Python code defining `calculate_135(a, b)` that returns the add result using `a + b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-135-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_135(a, b):\n\n    return a + b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a - b",
+        "function_name": "calculate_136",
+        "kind": "python_function_expression"
+      },
+      "id": "3279e461dc193b6d0e071cc67b2b586c40fece858302cd138fec288104944973",
+      "invalid_utf8": false,
+      "latency_seconds": 0.042496200010646135,
+      "layercake_output": "```python\n\ndef calculate_136(a, b):\n\n    return a - b\n\n```",
+      "layercake_output_sha256": "967f0581c53f76b4d37441bf02241677a89723a22c2d5fc9f21e62e38fb47897",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-136-v2",
+      "prompt": "Write only Python code defining `calculate_136(a, b)` that returns the subtract result using `a - b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-136-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_136(a, b):\n\n    return a - b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a * b",
+        "function_name": "calculate_137",
+        "kind": "python_function_expression"
+      },
+      "id": "82055a60a59f76ae034f37a3cfcb55f720084aed5ab4856f716c6767859e94dc",
+      "invalid_utf8": false,
+      "latency_seconds": 0.042410299996845424,
+      "layercake_output": "```python\n\ndef calculate_137(a, b):\n\n    return a * b\n\n```",
+      "layercake_output_sha256": "8736d40715f9b42dc9baee98446dd5d89e6a8405f76b83297a3895da6f415747",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-137-v2",
+      "prompt": "Write only Python code defining `calculate_137(a, b)` that returns the multiply result using `a * b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-137-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_137(a, b):\n\n    return a * b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "max(a, b)",
+        "function_name": "calculate_138",
+        "kind": "python_function_expression"
+      },
+      "id": "75291cd4d0159cc7ce22b7113f54d4f38dafc4393b9e888ffdb3290e22e1f03b",
+      "invalid_utf8": false,
+      "latency_seconds": 0.056231900001876056,
+      "layercake_output": "```python\n\ndef calculate_138(a, b):\n\n    return max(a, b)\n\n```",
+      "layercake_output_sha256": "65eac16a30f082efd1394d7e4933a64957909648394b0dee84b224be083f2fcf",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-138-v2",
+      "prompt": "Write only Python code defining `calculate_138(a, b)` that returns the maximum result using `max(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-138-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_138(a, b):\n\n    return max(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "min(a, b)",
+        "function_name": "calculate_139",
+        "kind": "python_function_expression"
+      },
+      "id": "3bb5590365226280202d4a446115852632d4eff76852e20f4f7c9d68efc0dd33",
+      "invalid_utf8": false,
+      "latency_seconds": 0.05333930003689602,
+      "layercake_output": "```python\n\ndef calculate_139(a, b):\n\n    return min(a, b)\n\n```",
+      "layercake_output_sha256": "43260acb73d2fbb923796f610e9f86af3867a69d35e8ae678cfbde21b7ca5855",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-139-v2",
+      "prompt": "Write only Python code defining `calculate_139(a, b)` that returns the minimum result using `min(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-139-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_139(a, b):\n\n    return min(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a + b",
+        "function_name": "calculate_140",
+        "kind": "python_function_expression"
+      },
+      "id": "1fe286510480f3fbd2bbd867f915b95be4cca606717e72d3bcd2dc349ed451d4",
+      "invalid_utf8": false,
+      "latency_seconds": 0.04979050002293661,
+      "layercake_output": "```python\n\ndef calculate_140(a, b):\n\n    return a + b\n\n```",
+      "layercake_output_sha256": "d1627cb9299e6ce16dc4d1a3cdc554ae5ad07102c97657b84878341f2780d3ec",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-140-v2",
+      "prompt": "Write only Python code defining `calculate_140(a, b)` that returns the add result using `a + b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-140-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_140(a, b):\n\n    return a + b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a - b",
+        "function_name": "calculate_141",
+        "kind": "python_function_expression"
+      },
+      "id": "002b500ca8ca206b4b994b96b5bb946e2bac795bf1b460b65abfbf491c455266",
+      "invalid_utf8": false,
+      "latency_seconds": 0.05465750000439584,
+      "layercake_output": "```python\n\ndef calculate_141(a, b):\n\n    return a - b\n\n```",
+      "layercake_output_sha256": "0197d1148a16b911e1bcb6f1fce2b19fd70c0ac9b7675a207be9171829f0fbfd",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-141-v2",
+      "prompt": "Write only Python code defining `calculate_141(a, b)` that returns the subtract result using `a - b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-141-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_141(a, b):\n\n    return a - b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a * b",
+        "function_name": "calculate_142",
+        "kind": "python_function_expression"
+      },
+      "id": "58d824711cb6832f7c4439710832a6dab2a28a9aea0565feb3d59ba660a86ebd",
+      "invalid_utf8": false,
+      "latency_seconds": 0.04107760003535077,
+      "layercake_output": "```python\n\ndef calculate_142(a, b):\n\n    return a * b\n\n```",
+      "layercake_output_sha256": "39f3d44203c818c249a6992337108f44dcc08c5850e3475023f7efda92b0b2b6",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-142-v2",
+      "prompt": "Write only Python code defining `calculate_142(a, b)` that returns the multiply result using `a * b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-142-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_142(a, b):\n\n    return a * b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "max(a, b)",
+        "function_name": "calculate_143",
+        "kind": "python_function_expression"
+      },
+      "id": "71f6a4c2dbd86d600c3160cc97a455aab9c1a602098a093a2c611d1718f4724e",
+      "invalid_utf8": false,
+      "latency_seconds": 0.05336760001955554,
+      "layercake_output": "```python\n\ndef calculate_143(a, b):\n\n    return max(a, b)\n\n```",
+      "layercake_output_sha256": "8c35f6894a2933b53b2938ffcddca721004cf298cfa56707dae1f0cc9ca68e81",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-143-v2",
+      "prompt": "Write only Python code defining `calculate_143(a, b)` that returns the maximum result using `max(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-143-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_143(a, b):\n\n    return max(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "min(a, b)",
+        "function_name": "calculate_144",
+        "kind": "python_function_expression"
+      },
+      "id": "bf3448105c124ff7f5ed41be070d2a2b15e9b2f7ecfe91d9135d96311928b26b",
+      "invalid_utf8": false,
+      "latency_seconds": 0.06811809999635443,
+      "layercake_output": "```python\n\ndef calculate_144(a, b):\n\n    return min(a, b)\n\n```",
+      "layercake_output_sha256": "b05d56e02554fa634a1330fc98d4d91292d5a3b9b032b0b8f45cdbee334a071f",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-144-v2",
+      "prompt": "Write only Python code defining `calculate_144(a, b)` that returns the minimum result using `min(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-144-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_144(a, b):\n\n    return min(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a + b",
+        "function_name": "calculate_145",
+        "kind": "python_function_expression"
+      },
+      "id": "88f717fea8a661f90d5c836057f5d44672bf923bc5619c09d18a01a86160b08b",
+      "invalid_utf8": false,
+      "latency_seconds": 0.048419499944429845,
+      "layercake_output": "```python\n\ndef calculate_145(a, b):\n\n    return a + b\n\n```",
+      "layercake_output_sha256": "a0742e63c486acd908a8b1c8c171e19b331a8931bda74fb7a65c0da65a970634",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-145-v2",
+      "prompt": "Write only Python code defining `calculate_145(a, b)` that returns the add result using `a + b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-145-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_145(a, b):\n\n    return a + b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a - b",
+        "function_name": "calculate_146",
+        "kind": "python_function_expression"
+      },
+      "id": "fc1934fd77f5f59a30d85af50b2a1551f4df19f1577539f19d92ce008fc781d4",
+      "invalid_utf8": false,
+      "latency_seconds": 0.042400100035592914,
+      "layercake_output": "```python\n\ndef calculate_146(a, b):\n\n    return a - b\n\n```",
+      "layercake_output_sha256": "4c786c97ebd9e0c7f77a5fd330b86fca00167b3b8db921c0682ddf33e4f11bc1",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-146-v2",
+      "prompt": "Write only Python code defining `calculate_146(a, b)` that returns the subtract result using `a - b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-146-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_146(a, b):\n\n    return a - b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a * b",
+        "function_name": "calculate_147",
+        "kind": "python_function_expression"
+      },
+      "id": "3be4ab45e048caaef42872b2b6b062ad4a92eb7eb85946759e5320d92b6f900f",
+      "invalid_utf8": false,
+      "latency_seconds": 0.04838530003326014,
+      "layercake_output": "```python\n\ndef calculate_147(a, b):\n\n    return a * b\n\n```",
+      "layercake_output_sha256": "ea7cb6cd507099cdff2aeec53071a02b0609c7e609e2e4bf015d619ac534bd23",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-147-v2",
+      "prompt": "Write only Python code defining `calculate_147(a, b)` that returns the multiply result using `a * b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-147-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_147(a, b):\n\n    return a * b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "max(a, b)",
+        "function_name": "calculate_148",
+        "kind": "python_function_expression"
+      },
+      "id": "17c0b388c0663c1e40d680e3565fe7bf33d0d02cb2b71b4091e0807ec986b9ee",
+      "invalid_utf8": false,
+      "latency_seconds": 0.06382550002308562,
+      "layercake_output": "```python\n\ndef calculate_148(a, b):\n\n    return max(a, b)\n\n```",
+      "layercake_output_sha256": "711dd6bc304fd8d585a6963fb3ed61b9fbfd6cfb8f68f657c1d9847deee60a0c",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-148-v2",
+      "prompt": "Write only Python code defining `calculate_148(a, b)` that returns the maximum result using `max(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-148-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_148(a, b):\n\n    return max(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "min(a, b)",
+        "function_name": "calculate_149",
+        "kind": "python_function_expression"
+      },
+      "id": "060b9ccfbaaae3f149cc7e945e49326d0360d01dc163d5d6e8cf105a79df4e74",
+      "invalid_utf8": false,
+      "latency_seconds": 0.047757099964655936,
+      "layercake_output": "```python\n\ndef calculate_149(a, b):\n\n    return min(a, b)\n\n```",
+      "layercake_output_sha256": "ae383547d40d91b5929d946857ab39d8de331e2e12a95b39a7a4ec8423e998f0",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-149-v2",
+      "prompt": "Write only Python code defining `calculate_149(a, b)` that returns the minimum result using `min(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-149-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_149(a, b):\n\n    return min(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a + b",
+        "function_name": "calculate_150",
+        "kind": "python_function_expression"
+      },
+      "id": "4de260c7df1e7cc23e0505c25ff53a1de4336483a974a19f98128e3cde035020",
+      "invalid_utf8": false,
+      "latency_seconds": 0.04706630000146106,
+      "layercake_output": "```python\n\ndef calculate_150(a, b):\n\n    return a + b\n\n```",
+      "layercake_output_sha256": "c9fac429db8a1d8e867c4f8b8ddeeeea544d931ace7a2b5ec9c4d01717c49a7b",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-150-v2",
+      "prompt": "Write only Python code defining `calculate_150(a, b)` that returns the add result using `a + b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-150-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_150(a, b):\n\n    return a + b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a - b",
+        "function_name": "calculate_151",
+        "kind": "python_function_expression"
+      },
+      "id": "0735f40437740a0795f6d690ed881d7050f357ae1a4ff61444483f2884d0bef1",
+      "invalid_utf8": false,
+      "latency_seconds": 0.05049049999797717,
+      "layercake_output": "```python\n\ndef calculate_151(a, b):\n\n    return a - b\n\n```",
+      "layercake_output_sha256": "65e99cc6573ff4ddf7977d955c8bcf5ad6981a7b774c28368affd56832e5d083",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-151-v2",
+      "prompt": "Write only Python code defining `calculate_151(a, b)` that returns the subtract result using `a - b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-151-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_151(a, b):\n\n    return a - b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a * b",
+        "function_name": "calculate_152",
+        "kind": "python_function_expression"
+      },
+      "id": "c192abab544e72eb6dc059648374b4692f35e3f71a7ef4979d81c520d0ab36e0",
+      "invalid_utf8": false,
+      "latency_seconds": 0.06674100004602224,
+      "layercake_output": "```python\n\ndef calculate_152(a, b):\n\n    return a * b\n\n```",
+      "layercake_output_sha256": "7ad76665f9a3ad67f75cad978a9383bcfb6529b926f39067fa7a3e26ec1ad997",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-152-v2",
+      "prompt": "Write only Python code defining `calculate_152(a, b)` that returns the multiply result using `a * b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-152-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_152(a, b):\n\n    return a * b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "max(a, b)",
+        "function_name": "calculate_153",
+        "kind": "python_function_expression"
+      },
+      "id": "c9388330f970b461b94c5ebed91a0ac9b5f0262124eb5f07983865b28d1872e6",
+      "invalid_utf8": false,
+      "latency_seconds": 0.07625670003471896,
+      "layercake_output": "```python\n\ndef calculate_153(a, b):\n\n    return max(a, b)\n\n```",
+      "layercake_output_sha256": "ca44b512103ae5377064a2c1f4198a2d68a6e4e92b5ca4cc3543646956cd57e3",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-153-v2",
+      "prompt": "Write only Python code defining `calculate_153(a, b)` that returns the maximum result using `max(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-153-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_153(a, b):\n\n    return max(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "min(a, b)",
+        "function_name": "calculate_154",
+        "kind": "python_function_expression"
+      },
+      "id": "58348c58bbb79d4acac15407b6a6e83d3d050df07d5875590d9b500840506810",
+      "invalid_utf8": false,
+      "latency_seconds": 0.04679910000413656,
+      "layercake_output": "```python\n\ndef calculate_154(a, b):\n\n    return min(a, b)\n\n```",
+      "layercake_output_sha256": "8f4358880081ab7cd9a100db67d9c00d26f60b21bc48cc63975db16f597662f6",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-154-v2",
+      "prompt": "Write only Python code defining `calculate_154(a, b)` that returns the minimum result using `min(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-154-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_154(a, b):\n\n    return min(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a + b",
+        "function_name": "calculate_155",
+        "kind": "python_function_expression"
+      },
+      "id": "31c608a426ebff5bdb2142f633cae1e27950c4dfd1887c970c6f6f68c1be3679",
+      "invalid_utf8": false,
+      "latency_seconds": 0.04699519998393953,
+      "layercake_output": "```python\n\ndef calculate_155(a, b):\n\n    return a + b\n\n```",
+      "layercake_output_sha256": "c475819277b46601289134a26f52067ad43dbd839aec45197d8c471d6dc7717b",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-155-v2",
+      "prompt": "Write only Python code defining `calculate_155(a, b)` that returns the add result using `a + b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-155-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_155(a, b):\n\n    return a + b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a - b",
+        "function_name": "calculate_156",
+        "kind": "python_function_expression"
+      },
+      "id": "c5496978955b84f1788d124057e19b35fefb700e163f3f1df27e0b71465a7b00",
+      "invalid_utf8": false,
+      "latency_seconds": 0.04187650000676513,
+      "layercake_output": "```python\n\ndef calculate_156(a, b):\n\n    return a - b\n\n```",
+      "layercake_output_sha256": "008369524e41a3528876f5b7c9c6242c2c76137ed33b86eae818bcaa118c6536",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-156-v2",
+      "prompt": "Write only Python code defining `calculate_156(a, b)` that returns the subtract result using `a - b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-156-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_156(a, b):\n\n    return a - b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a * b",
+        "function_name": "calculate_157",
+        "kind": "python_function_expression"
+      },
+      "id": "360f24c468ef82eb2ea885ca220edb3072db7919d73b5e5e17f7b41090a87a46",
+      "invalid_utf8": false,
+      "latency_seconds": 0.04775830003200099,
+      "layercake_output": "```python\n\ndef calculate_157(a, b):\n\n    return a * b\n\n```",
+      "layercake_output_sha256": "60223db424fb260021d0148e6f5ab5c9a9c645229ff6e07357827ad645f69aa7",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-157-v2",
+      "prompt": "Write only Python code defining `calculate_157(a, b)` that returns the multiply result using `a * b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-157-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_157(a, b):\n\n    return a * b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "max(a, b)",
+        "function_name": "calculate_158",
+        "kind": "python_function_expression"
+      },
+      "id": "2ec18fedb5666e998e28849e8d29a4f67caa5e85dfe65f5a40eadef2de634e16",
+      "invalid_utf8": false,
+      "latency_seconds": 0.05143639998277649,
+      "layercake_output": "```python\n\ndef calculate_158(a, b):\n\n    return max(a, b)\n\n```",
+      "layercake_output_sha256": "b0a83dbbc5137a3411240e5ee77f2c6f06fa3b13f845c8091831c1f4381e1cc7",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-158-v2",
+      "prompt": "Write only Python code defining `calculate_158(a, b)` that returns the maximum result using `max(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-158-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_158(a, b):\n\n    return max(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "min(a, b)",
+        "function_name": "calculate_159",
+        "kind": "python_function_expression"
+      },
+      "id": "5685aa25ca8360a2723eef8cc1ee17195f3ba6c2d2e588ee3e37aa0d4845b3a7",
+      "invalid_utf8": false,
+      "latency_seconds": 0.05944320000708103,
+      "layercake_output": "```python\n\ndef calculate_159(a, b):\n\n    return min(a, b)\n\n```",
+      "layercake_output_sha256": "f3a048cb1b9f1f62e6ef6a264e5ca092d3c573bd125085c716b5f57427b1b0e4",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-159-v2",
+      "prompt": "Write only Python code defining `calculate_159(a, b)` that returns the minimum result using `min(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-159-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_159(a, b):\n\n    return min(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a + b",
+        "function_name": "calculate_160",
+        "kind": "python_function_expression"
+      },
+      "id": "242a86709b5741461515e879712025300ae3346f0ef7104362e0ddb9c480ed9b",
+      "invalid_utf8": false,
+      "latency_seconds": 0.06255249999230728,
+      "layercake_output": "```python\n\ndef calculate_160(a, b):\n\n    return a + b\n\n```",
+      "layercake_output_sha256": "77e8b2803f65a9c8247d9979d401d428dc7a7db67e6b1c4ad6972ae43411e093",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-160-v2",
+      "prompt": "Write only Python code defining `calculate_160(a, b)` that returns the add result using `a + b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-160-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_160(a, b):\n\n    return a + b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a - b",
+        "function_name": "calculate_161",
+        "kind": "python_function_expression"
+      },
+      "id": "393b6eeea9cf5ea1cd7c05a56f0e30b0d95d5c90e86c4ba01006b0aacab50424",
+      "invalid_utf8": false,
+      "latency_seconds": 0.041613099980168045,
+      "layercake_output": "```python\n\ndef calculate_161(a, b):\n\n    return a - b\n\n```",
+      "layercake_output_sha256": "b5af91b93f612f2d411e8aae3129bdff3087eca974ea4aab5e2ef776e172983d",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-161-v2",
+      "prompt": "Write only Python code defining `calculate_161(a, b)` that returns the subtract result using `a - b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-161-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_161(a, b):\n\n    return a - b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a * b",
+        "function_name": "calculate_162",
+        "kind": "python_function_expression"
+      },
+      "id": "b66765d4d25d6ba151fbe4bed4da7a6d8de37ad65d7d9a285bfe51164d6cf87d",
+      "invalid_utf8": false,
+      "latency_seconds": 0.04244059999473393,
+      "layercake_output": "```python\n\ndef calculate_162(a, b):\n\n    return a * b\n\n```",
+      "layercake_output_sha256": "076a46e7504e7b24b7c319258e086cea4c7161a690cfb4ac77dee264066f3a7f",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-162-v2",
+      "prompt": "Write only Python code defining `calculate_162(a, b)` that returns the multiply result using `a * b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-162-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_162(a, b):\n\n    return a * b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "max(a, b)",
+        "function_name": "calculate_163",
+        "kind": "python_function_expression"
+      },
+      "id": "7091288a1cf64e7b4d3e3b1f6b8aac173ff84bd462f3f2779e5f901838af0122",
+      "invalid_utf8": false,
+      "latency_seconds": 0.06819159997394308,
+      "layercake_output": "```python\n\ndef calculate_163(a, b):\n\n    return max(a, b)\n\n```",
+      "layercake_output_sha256": "684c7165bc4ffe01332296eef95ddfbe30d1648c4afe1602a3443e3693e685c4",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-163-v2",
+      "prompt": "Write only Python code defining `calculate_163(a, b)` that returns the maximum result using `max(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-163-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_163(a, b):\n\n    return max(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "min(a, b)",
+        "function_name": "calculate_164",
+        "kind": "python_function_expression"
+      },
+      "id": "be784930fc0755147b16b7c3d3ecdbe03d4276822458050a10938cb2181c6c56",
+      "invalid_utf8": false,
+      "latency_seconds": 0.05577809998067096,
+      "layercake_output": "```python\n\ndef calculate_164(a, b):\n\n    return min(a, b)\n\n```",
+      "layercake_output_sha256": "140879f63036299a1d60949a3a272977644649357275f3841affd85253175a98",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-164-v2",
+      "prompt": "Write only Python code defining `calculate_164(a, b)` that returns the minimum result using `min(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-164-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_164(a, b):\n\n    return min(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a + b",
+        "function_name": "calculate_165",
+        "kind": "python_function_expression"
+      },
+      "id": "e562df5aaddb0c49927f7601996314098173a314be03f50e3a7a8a1d6d7a0a3d",
+      "invalid_utf8": false,
+      "latency_seconds": 0.05639739998150617,
+      "layercake_output": "```python\n\ndef calculate_165(a, b):\n\n    return a + b\n\n```",
+      "layercake_output_sha256": "0f9095f61f21fb421c9e61b28943a64f468010b0e88bf3dec06f425a1faf5922",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-165-v2",
+      "prompt": "Write only Python code defining `calculate_165(a, b)` that returns the add result using `a + b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-165-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_165(a, b):\n\n    return a + b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a - b",
+        "function_name": "calculate_166",
+        "kind": "python_function_expression"
+      },
+      "id": "51cfa1ddd8af848275fb43e1080685e133c0823a12f6c6069fbf58c00830e8fb",
+      "invalid_utf8": false,
+      "latency_seconds": 0.061316999956034124,
+      "layercake_output": "```python\n\ndef calculate_166(a, b):\n\n    return a - b\n\n```",
+      "layercake_output_sha256": "ad0ff740c07998b1a0701edbf0f6153880c5a4755a43482c537f72a3a2dec58f",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-166-v2",
+      "prompt": "Write only Python code defining `calculate_166(a, b)` that returns the subtract result using `a - b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-166-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_166(a, b):\n\n    return a - b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a * b",
+        "function_name": "calculate_167",
+        "kind": "python_function_expression"
+      },
+      "id": "8d9f4fff181f442e990ed9eb684887dd160ee1ec89094b7977cce17b536cf308",
+      "invalid_utf8": false,
+      "latency_seconds": 0.0492826999980025,
+      "layercake_output": "```python\n\ndef calculate_167(a, b):\n\n    return a * b\n\n```",
+      "layercake_output_sha256": "c075a38d8027e98acf3ae390f77e11542bc03c9ad005d2e32d043d7aaff18d2a",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-167-v2",
+      "prompt": "Write only Python code defining `calculate_167(a, b)` that returns the multiply result using `a * b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-167-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_167(a, b):\n\n    return a * b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "max(a, b)",
+        "function_name": "calculate_168",
+        "kind": "python_function_expression"
+      },
+      "id": "5567f324fb1a0522d6cc4e92e62b7be5e4ece04ed8bb85fb387d201342af576c",
+      "invalid_utf8": false,
+      "latency_seconds": 0.05312039999989793,
+      "layercake_output": "```python\n\ndef calculate_168(a, b):\n\n    return max(a, b)\n\n```",
+      "layercake_output_sha256": "0b0f831cec8e8893cc0a6565999870e67eeba83d79b2982deedf1fd2fe945734",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-168-v2",
+      "prompt": "Write only Python code defining `calculate_168(a, b)` that returns the maximum result using `max(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-168-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_168(a, b):\n\n    return max(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "min(a, b)",
+        "function_name": "calculate_169",
+        "kind": "python_function_expression"
+      },
+      "id": "03c5070b26e01a2a730ebd00c869ccf23082d7154541ecf88852071bad224734",
+      "invalid_utf8": false,
+      "latency_seconds": 0.046898100001271814,
+      "layercake_output": "```python\n\ndef calculate_169(a, b):\n\n    return min(a, b)\n\n```",
+      "layercake_output_sha256": "82e3ef4cc9268c10be3a1dab92361156e67b9e2784144664e3d755cfad9d9c19",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-169-v2",
+      "prompt": "Write only Python code defining `calculate_169(a, b)` that returns the minimum result using `min(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-169-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_169(a, b):\n\n    return min(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a + b",
+        "function_name": "calculate_170",
+        "kind": "python_function_expression"
+      },
+      "id": "389750085bd73971e9e2e2d28d07f7f3da873a6e1b4e9c03f4fb12b4f470e518",
+      "invalid_utf8": false,
+      "latency_seconds": 0.0437353000161238,
+      "layercake_output": "```python\n\ndef calculate_170(a, b):\n\n    return a + b\n\n```",
+      "layercake_output_sha256": "eaff33e86be7574df3948896883cd49c99059ecdd92b4fb80c16e5c4d9bd8bdc",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-170-v2",
+      "prompt": "Write only Python code defining `calculate_170(a, b)` that returns the add result using `a + b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-170-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_170(a, b):\n\n    return a + b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a - b",
+        "function_name": "calculate_171",
+        "kind": "python_function_expression"
+      },
+      "id": "ca7e5abe68d4d45ce705dcac6c936dba48e635d4b590b1766ebb8a990447f142",
+      "invalid_utf8": false,
+      "latency_seconds": 0.047864000021945685,
+      "layercake_output": "```python\n\ndef calculate_171(a, b):\n\n    return a - b\n\n```",
+      "layercake_output_sha256": "5216cf088a32c664166d55304483c10c8fef2f18989c78b23b333dae66639f1f",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-171-v2",
+      "prompt": "Write only Python code defining `calculate_171(a, b)` that returns the subtract result using `a - b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-171-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_171(a, b):\n\n    return a - b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a * b",
+        "function_name": "calculate_172",
+        "kind": "python_function_expression"
+      },
+      "id": "402120e27b1b354a0c89283c9bce4f82950e87e4e427b0c8add5099577823b6d",
+      "invalid_utf8": false,
+      "latency_seconds": 0.07798659999389201,
+      "layercake_output": "```python\n\ndef calculate_172(a, b):\n\n    return a * b\n\n```",
+      "layercake_output_sha256": "86cac0c56258fde48dc57f1447a2437699d8c862be49b3bd58749ff129d0bf55",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-172-v2",
+      "prompt": "Write only Python code defining `calculate_172(a, b)` that returns the multiply result using `a * b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-172-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_172(a, b):\n\n    return a * b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "max(a, b)",
+        "function_name": "calculate_173",
+        "kind": "python_function_expression"
+      },
+      "id": "6983e1596260277ff28aaad557460a8a668d418ffdb1c9c3f74e02aa3c612e4f",
+      "invalid_utf8": false,
+      "latency_seconds": 0.04821159999119118,
+      "layercake_output": "```python\n\ndef calculate_173(a, b):\n\n    return max(a, b)\n\n```",
+      "layercake_output_sha256": "80691d9c120f66a847287d39abdcf684966c2741e291e93ece9f71938e6eec4a",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-173-v2",
+      "prompt": "Write only Python code defining `calculate_173(a, b)` that returns the maximum result using `max(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-173-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_173(a, b):\n\n    return max(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "min(a, b)",
+        "function_name": "calculate_174",
+        "kind": "python_function_expression"
+      },
+      "id": "37c1cd250bbaa6e990e689c91996c6a17f3ca8bb609da830a85789daefaf265f",
+      "invalid_utf8": false,
+      "latency_seconds": 0.05958530004136264,
+      "layercake_output": "```python\n\ndef calculate_174(a, b):\n\n    return min(a, b)\n\n```",
+      "layercake_output_sha256": "238464a90663373f5b65b60195d1ea5e4d22b4fb2238022dd1fecda8e1583e72",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-174-v2",
+      "prompt": "Write only Python code defining `calculate_174(a, b)` that returns the minimum result using `min(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-174-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_174(a, b):\n\n    return min(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a + b",
+        "function_name": "calculate_175",
+        "kind": "python_function_expression"
+      },
+      "id": "11e202e5248f4de0a684579b6232856fd6d8e78ce823bf7823d345cb5ec3014f",
+      "invalid_utf8": false,
+      "latency_seconds": 0.05505159997846931,
+      "layercake_output": "```python\n\ndef calculate_175(a, b):\n\n    return a + b\n\n```",
+      "layercake_output_sha256": "ff4de11bc60f18eb548432260a4916cf47ff7e995e76f29c1981ff6ef095e357",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-175-v2",
+      "prompt": "Write only Python code defining `calculate_175(a, b)` that returns the add result using `a + b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-175-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_175(a, b):\n\n    return a + b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a - b",
+        "function_name": "calculate_176",
+        "kind": "python_function_expression"
+      },
+      "id": "5f794856d5b89b990c19b6ac9da505947abde8a8965ebc4e8a0656e402db5436",
+      "invalid_utf8": false,
+      "latency_seconds": 0.05280559998936951,
+      "layercake_output": "```python\n\ndef calculate_176(a, b):\n\n    return a - b\n\n```",
+      "layercake_output_sha256": "81a00506a3854cc92ef5b9ef4446b4b94d7cce0bd5f43ee05cde86828f6b9ec8",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-176-v2",
+      "prompt": "Write only Python code defining `calculate_176(a, b)` that returns the subtract result using `a - b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-176-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_176(a, b):\n\n    return a - b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a * b",
+        "function_name": "calculate_177",
+        "kind": "python_function_expression"
+      },
+      "id": "91eae37ce4d90c20e0c23d2580e1369f51f7afa66ba5832b418a2cd114bf96c2",
+      "invalid_utf8": false,
+      "latency_seconds": 0.05908909998834133,
+      "layercake_output": "```python\n\ndef calculate_177(a, b):\n\n    return a * b\n\n```",
+      "layercake_output_sha256": "1bedf95a9e06479791f43ce36df5680dfe3f448641a48c4b97340c71e4e83810",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-177-v2",
+      "prompt": "Write only Python code defining `calculate_177(a, b)` that returns the multiply result using `a * b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-177-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_177(a, b):\n\n    return a * b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "max(a, b)",
+        "function_name": "calculate_178",
+        "kind": "python_function_expression"
+      },
+      "id": "11f1413c44e5358e11d5313761ecee640aa683b6349e617c3ae899581c9aaee0",
+      "invalid_utf8": false,
+      "latency_seconds": 0.048539600044023246,
+      "layercake_output": "```python\n\ndef calculate_178(a, b):\n\n    return max(a, b)\n\n```",
+      "layercake_output_sha256": "2d1757c480dddfcddfcd08eea569d957c4828772123c7e8946daa30400e6b83e",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-178-v2",
+      "prompt": "Write only Python code defining `calculate_178(a, b)` that returns the maximum result using `max(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-178-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_178(a, b):\n\n    return max(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "min(a, b)",
+        "function_name": "calculate_179",
+        "kind": "python_function_expression"
+      },
+      "id": "b0be43f89eaffecf444d2a44c0f6691411b9873399e88ca564a99e801e126ae5",
+      "invalid_utf8": false,
+      "latency_seconds": 0.05915039998944849,
+      "layercake_output": "```python\n\ndef calculate_179(a, b):\n\n    return min(a, b)\n\n```",
+      "layercake_output_sha256": "7ac5a62cc0bd94e9416a4ee5cc21bbeb00ba496b053ad60d8bca8779a19f8c75",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-179-v2",
+      "prompt": "Write only Python code defining `calculate_179(a, b)` that returns the minimum result using `min(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-179-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_179(a, b):\n\n    return min(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a + b",
+        "function_name": "calculate_180",
+        "kind": "python_function_expression"
+      },
+      "id": "fa762b825f97206c3275e9b191700312bb9cffc0071d312a484a64e8fd64fdeb",
+      "invalid_utf8": false,
+      "latency_seconds": 0.046601500012911856,
+      "layercake_output": "```python\n\ndef calculate_180(a, b):\n\n    return a + b\n\n```",
+      "layercake_output_sha256": "dca481517ff1b678bfca4e059c64ab3d2fe322888bfdb994030fa0ffe1feb11f",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-180-v2",
+      "prompt": "Write only Python code defining `calculate_180(a, b)` that returns the add result using `a + b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-180-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_180(a, b):\n\n    return a + b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a - b",
+        "function_name": "calculate_181",
+        "kind": "python_function_expression"
+      },
+      "id": "6dc832d4c23df0bb684633c78ef5c076f72d322ebc601eb4d19010a74fdd8ca0",
+      "invalid_utf8": false,
+      "latency_seconds": 0.05159139999886975,
+      "layercake_output": "```python\n\ndef calculate_181(a, b):\n\n    return a - b\n\n```",
+      "layercake_output_sha256": "2c6bf23b0fc8086ad3d5ec6ea29485a7812c3e59d7f5d2bcdec66c747dc281b5",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-181-v2",
+      "prompt": "Write only Python code defining `calculate_181(a, b)` that returns the subtract result using `a - b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-181-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_181(a, b):\n\n    return a - b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a * b",
+        "function_name": "calculate_182",
+        "kind": "python_function_expression"
+      },
+      "id": "6a60c357ef133aba31c24a1a6c6ecea7ab2fa8326c7986c7e10ae7693e5949bf",
+      "invalid_utf8": false,
+      "latency_seconds": 0.06734740000683814,
+      "layercake_output": "```python\n\ndef calculate_182(a, b):\n\n    return a * b\n\n```",
+      "layercake_output_sha256": "67e46fd80889266f765ee2e2bddb4ce32543be0bb8b76b32e67ccdf70c7d1d3e",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-182-v2",
+      "prompt": "Write only Python code defining `calculate_182(a, b)` that returns the multiply result using `a * b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-182-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_182(a, b):\n\n    return a * b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "max(a, b)",
+        "function_name": "calculate_183",
+        "kind": "python_function_expression"
+      },
+      "id": "42288273349a451c583a23cf94aea57496e8be2dbd2e854ab3bb191f18b54c5c",
+      "invalid_utf8": false,
+      "latency_seconds": 0.05870449997019023,
+      "layercake_output": "```python\n\ndef calculate_183(a, b):\n\n    return max(a, b)\n\n```",
+      "layercake_output_sha256": "a0174b0b5ed8d0450686ecdd0dc6c0786f39406d1919b8748f49c65fb32430d5",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-183-v2",
+      "prompt": "Write only Python code defining `calculate_183(a, b)` that returns the maximum result using `max(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-183-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_183(a, b):\n\n    return max(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "min(a, b)",
+        "function_name": "calculate_184",
+        "kind": "python_function_expression"
+      },
+      "id": "287f20646c825ab02026ce731b93019753336fa0d2a85ee5d4c88ae9cb33cb20",
+      "invalid_utf8": false,
+      "latency_seconds": 0.04635089996736497,
+      "layercake_output": "```python\n\ndef calculate_184(a, b):\n\n    return min(a, b)\n\n```",
+      "layercake_output_sha256": "53dccfe4a11191ced2e002d4e4d1d9411fdf9a6a90aed933c18d0f4fc9e0a012",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-184-v2",
+      "prompt": "Write only Python code defining `calculate_184(a, b)` that returns the minimum result using `min(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-184-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_184(a, b):\n\n    return min(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a + b",
+        "function_name": "calculate_185",
+        "kind": "python_function_expression"
+      },
+      "id": "f45b96fd2516b2f9f3d60311f4ef949b40a74c69d3e433d78a788cda48aeb376",
+      "invalid_utf8": false,
+      "latency_seconds": 0.04705739999189973,
+      "layercake_output": "```python\n\ndef calculate_185(a, b):\n\n    return a + b\n\n```",
+      "layercake_output_sha256": "91e721263e86bea9ef6fc6c747a79a3c1320f540766daf30890c223cdead0a06",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-185-v2",
+      "prompt": "Write only Python code defining `calculate_185(a, b)` that returns the add result using `a + b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-185-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_185(a, b):\n\n    return a + b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a - b",
+        "function_name": "calculate_186",
+        "kind": "python_function_expression"
+      },
+      "id": "cebb1fc84a970d0d33ac618ec1d25fe822987597e71ce4bf88078839755f0296",
+      "invalid_utf8": false,
+      "latency_seconds": 0.04490109998732805,
+      "layercake_output": "```python\n\ndef calculate_186(a, b):\n\n    return a - b\n\n```",
+      "layercake_output_sha256": "35faabf1a3a2d6e24a499d1425b471f3f706e5790985afd2f7d19a262b01f110",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-186-v2",
+      "prompt": "Write only Python code defining `calculate_186(a, b)` that returns the subtract result using `a - b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-186-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_186(a, b):\n\n    return a - b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a * b",
+        "function_name": "calculate_187",
+        "kind": "python_function_expression"
+      },
+      "id": "67412235cbb41691d4364f0243e8a94ae4d8ba2902ec3aaa859ecde591a9ef1e",
+      "invalid_utf8": false,
+      "latency_seconds": 0.059581999958027154,
+      "layercake_output": "```python\n\ndef calculate_187(a, b):\n\n    return a * b\n\n```",
+      "layercake_output_sha256": "7aeb084810d97d810a98cf07af4908a488719e02797ac987e3d5c53f21c3743d",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-187-v2",
+      "prompt": "Write only Python code defining `calculate_187(a, b)` that returns the multiply result using `a * b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-187-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_187(a, b):\n\n    return a * b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "max(a, b)",
+        "function_name": "calculate_188",
+        "kind": "python_function_expression"
+      },
+      "id": "78bde80058f9bceeb5e6dfb8e79f04c1247cfcfc7a0c422407a815a8399fb879",
+      "invalid_utf8": false,
+      "latency_seconds": 0.043678499991074204,
+      "layercake_output": "```python\n\ndef calculate_188(a, b):\n\n    return max(a, b)\n\n```",
+      "layercake_output_sha256": "23307f82a363e5cc26ff0ca7d265b4187fa4ae374b5d799cee00921d1f932a7b",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-188-v2",
+      "prompt": "Write only Python code defining `calculate_188(a, b)` that returns the maximum result using `max(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-188-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_188(a, b):\n\n    return max(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "min(a, b)",
+        "function_name": "calculate_189",
+        "kind": "python_function_expression"
+      },
+      "id": "edb80cbb30af85128f7f181bb4eae5605ac7b070ef416e59ddabcd18a0a74e8b",
+      "invalid_utf8": false,
+      "latency_seconds": 0.04594749998068437,
+      "layercake_output": "```python\n\ndef calculate_189(a, b):\n\n    return min(a, b)\n\n```",
+      "layercake_output_sha256": "e0f42137826487ef5593c07b450b50f99d25574ead8264436b0f7b34b0f4a6ff",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-189-v2",
+      "prompt": "Write only Python code defining `calculate_189(a, b)` that returns the minimum result using `min(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-189-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_189(a, b):\n\n    return min(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a + b",
+        "function_name": "calculate_190",
+        "kind": "python_function_expression"
+      },
+      "id": "175bf9f96f11bfe2965da6621c0fc3bc90fa58f092876b67c81f2692d74ceab1",
+      "invalid_utf8": false,
+      "latency_seconds": 0.0496487999917008,
+      "layercake_output": "```python\n\ndef calculate_190(a, b):\n\n    return a + b\n\n```",
+      "layercake_output_sha256": "b7c26b8b24799287613cebca515dfe23e982fe55797b3be7d6e1fd0d2de36274",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-190-v2",
+      "prompt": "Write only Python code defining `calculate_190(a, b)` that returns the add result using `a + b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-190-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_190(a, b):\n\n    return a + b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a - b",
+        "function_name": "calculate_191",
+        "kind": "python_function_expression"
+      },
+      "id": "e908e8b39dd994cb5009fa87799f8c3304a8bba542b099234540a83865e31372",
+      "invalid_utf8": false,
+      "latency_seconds": 0.05740940000396222,
+      "layercake_output": "```python\n\ndef calculate_191(a, b):\n\n    return a - b\n\n```",
+      "layercake_output_sha256": "3b7adc9d5f08acc8ea0c25d3ba600393580bc4a87885b2f794517f03cbb14d1b",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-191-v2",
+      "prompt": "Write only Python code defining `calculate_191(a, b)` that returns the subtract result using `a - b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-191-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_191(a, b):\n\n    return a - b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a * b",
+        "function_name": "calculate_192",
+        "kind": "python_function_expression"
+      },
+      "id": "ad025b6bb788b66d399a60b20ff2b8afbbc0d74f494e21bf2c52910e216d658e",
+      "invalid_utf8": false,
+      "latency_seconds": 0.05900470004417002,
+      "layercake_output": "```python\n\ndef calculate_192(a, b):\n\n    return a * b\n\n```",
+      "layercake_output_sha256": "7406a6d1714b76c02f8e87b0f407e685bbc6a14f089f567cbfb6ed4a0962ee84",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-192-v2",
+      "prompt": "Write only Python code defining `calculate_192(a, b)` that returns the multiply result using `a * b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-192-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_192(a, b):\n\n    return a * b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "max(a, b)",
+        "function_name": "calculate_193",
+        "kind": "python_function_expression"
+      },
+      "id": "a0574e73a553094c3b5f3d550561e6ed9f744a558a06a8f29aa982fdf2c73422",
+      "invalid_utf8": false,
+      "latency_seconds": 0.06513890001224354,
+      "layercake_output": "```python\n\ndef calculate_193(a, b):\n\n    return max(a, b)\n\n```",
+      "layercake_output_sha256": "406299e4f7f898f6db195cec1f4277113379503bc18d51dd1743d6c80c6e2e51",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-193-v2",
+      "prompt": "Write only Python code defining `calculate_193(a, b)` that returns the maximum result using `max(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-193-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_193(a, b):\n\n    return max(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "min(a, b)",
+        "function_name": "calculate_194",
+        "kind": "python_function_expression"
+      },
+      "id": "739cec75e96aed30d3c029cddf62f9157015937f7e95163773a3322afca9b4c2",
+      "invalid_utf8": false,
+      "latency_seconds": 0.06215770001290366,
+      "layercake_output": "```python\n\ndef calculate_194(a, b):\n\n    return min(a, b)\n\n```",
+      "layercake_output_sha256": "b31be2c1320e392d19ed5a0a5be928aa73658be0f1e893036828b3851898f516",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-194-v2",
+      "prompt": "Write only Python code defining `calculate_194(a, b)` that returns the minimum result using `min(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-194-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_194(a, b):\n\n    return min(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a + b",
+        "function_name": "calculate_195",
+        "kind": "python_function_expression"
+      },
+      "id": "fb2c74877f578eb9fa9d9add8f84dfcde75cb059c0ba413e7b5c25b9c09525b1",
+      "invalid_utf8": false,
+      "latency_seconds": 0.04453810001723468,
+      "layercake_output": "```python\n\ndef calculate_195(a, b):\n\n    return a + b\n\n```",
+      "layercake_output_sha256": "0e10d7ad39ffd22f28a4b783e7bc1c254546739c9a618df98ca4706c1cf915ef",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-195-v2",
+      "prompt": "Write only Python code defining `calculate_195(a, b)` that returns the add result using `a + b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-195-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_195(a, b):\n\n    return a + b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a - b",
+        "function_name": "calculate_196",
+        "kind": "python_function_expression"
+      },
+      "id": "df204a645d036374f056d6e679ac44e652b07e3b82a426d60fbfa466ce75038c",
+      "invalid_utf8": false,
+      "latency_seconds": 0.05736469995463267,
+      "layercake_output": "```python\n\ndef calculate_196(a, b):\n\n    return a - b\n\n```",
+      "layercake_output_sha256": "b4a6a2e102c2e32f34da9b7e46a6a46e956952be878f06b458ec837c7016f640",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-196-v2",
+      "prompt": "Write only Python code defining `calculate_196(a, b)` that returns the subtract result using `a - b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-196-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_196(a, b):\n\n    return a - b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "a * b",
+        "function_name": "calculate_197",
+        "kind": "python_function_expression"
+      },
+      "id": "9447a5b7c0b2c1f6bae1382b70ab5cfef44ba14507a62315e0b9d68a77410234",
+      "invalid_utf8": false,
+      "latency_seconds": 0.05583299999125302,
+      "layercake_output": "```python\n\ndef calculate_197(a, b):\n\n    return a * b\n\n```",
+      "layercake_output_sha256": "42d8761212bf99bd588e8097390c7b8be44cf2cbd9638ae56d6530daf3ad667a",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-197-v2",
+      "prompt": "Write only Python code defining `calculate_197(a, b)` that returns the multiply result using `a * b`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-197-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_197(a, b):\n\n    return a * b\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "max(a, b)",
+        "function_name": "calculate_198",
+        "kind": "python_function_expression"
+      },
+      "id": "a0556fa90017a49a6596421baf349f193e4e404805ec0a2f32e2e586e4c11ba5",
+      "invalid_utf8": false,
+      "latency_seconds": 0.04674650001106784,
+      "layercake_output": "```python\n\ndef calculate_198(a, b):\n\n    return max(a, b)\n\n```",
+      "layercake_output_sha256": "cc73c8e4bfceb86c42af76d305e86f8a0c28e37f11a8fa9d74f352614bfdc508",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-198-v2",
+      "prompt": "Write only Python code defining `calculate_198(a, b)` that returns the maximum result using `max(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-198-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_198(a, b):\n\n    return max(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    },
+    {
+      "capability": "python_generation",
+      "domain_id": "python",
+      "evaluator": {
+        "arguments": [
+          "a",
+          "b"
+        ],
+        "expression": "min(a, b)",
+        "function_name": "calculate_199",
+        "kind": "python_function_expression"
+      },
+      "id": "521bf92d272d7cab640e199e1b9817341899b2b39de3b856280f76a86098cb60",
+      "invalid_utf8": false,
+      "latency_seconds": 0.0488113000174053,
+      "layercake_output": "```python\n\ndef calculate_199(a, b):\n\n    return min(a, b)\n\n```",
+      "layercake_output_sha256": "9325d381d8a88e1346c9e57689f997a57a8fad9b87a9e3bcabb443cd859fb1cd",
+      "layercake_passed": true,
+      "layercake_score": 1.0,
+      "probe_id": "python-generation-199-v2",
+      "prompt": "Write only Python code defining `calculate_199(a, b)` that returns the minimum result using `min(a, b)`.",
+      "provenance": "abi-english-and-first-domains-certification-v2:python-generation-199-v2",
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_output": "```python\n\ndef calculate_199(a, b):\n\n    return min(a, b)\n\n```",
+      "source_passed": true,
+      "source_score": 1.0
+    }
+  ],
+  "protocol_sha256": "186b41800d988ea241c4585189a8f6465351c02b57b28c21fd7eeb9406665be3",
+  "seed": 9824,
+  "source_passes": 100,
+  "source_passing_regressions": 0,
+  "source_transformer_blocks_retained": 0,
+  "split": "validation",
+  "status": "PASS",
+  "teacher_present_at_inference": false,
+  "training_bundle_sha256": "e58dcf12cff36267e9088278cd6107d60da0158b14d2d0f15f717622564167d0",
+  "validation_bundle_sha256": [
+    "8f0e2dfd747ecb857b5fa6adfc8944fd76f653fcd8a6783bbdfdacd3b5d82e75"
+  ],
+  "validation_used_for_training": false,
+  "wall_seconds": 5.570543599955272
+}

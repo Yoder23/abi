@@ -1,0 +1,174 @@
+{
+  "format": "abi-layercake-acquisition-protocol/2",
+  "status": "OPEN_HOST_IMPORT_PROVEN_ZERO_REGRESSION_NOT_MET",
+  "locked_before_promotion_experiments": true,
+  "campaign_boundary": {
+    "abi_repository_owns_source_extraction": true,
+    "layercake_sealed_release_must_not_be_modified": true,
+    "future_layercake_import_requires_governed_recertification": true,
+    "existing_abi_nib_results_cannot_substitute_for_layercake_import": true
+  },
+  "objective": "Create the smallest tested, fully accounted, source-free LayerCake English core and user-selected domain cakes that retain source-qualified behavior while preserving LayerCake's canonical interfaces and sealed Phase 2 performance gates.",
+  "source_requirements": {
+    "open_weight_source": true,
+    "immutable_revision_required": true,
+    "weight_file_sha256_required": true,
+    "tokenizer_revision_required": true,
+    "license_identifier_required": true,
+    "trust_remote_code_forbidden_for_promotion": true,
+    "source_teacher_frozen": true
+  },
+  "extraction_channels": {
+    "allowed_when_separately_accounted": [
+      "teacher_generated_text",
+      "topk_logits",
+      "hidden_activations",
+      "copied_source_parameters",
+      "learned_imported_substrate"
+    ],
+    "current_implemented_channel": "teacher_generated_text",
+    "generated_tokens_must_use_authoritative_runtime_ids": true,
+    "channels_may_not_be_hidden_inside_a_low_token_claim": true
+  },
+  "discovery": {
+    "scope": "declared_probe_catalog_only",
+    "exhaustive_domain_discovery_claim_allowed": false,
+    "user_extensible_probe_catalog": true,
+    "unknown_or_unprobed_capabilities_must_remain_unclaimed": true,
+    "minimum_distinct_prompts_per_capability_for_promotion": 100,
+    "minimum_source_pass_rate": 0.9,
+    "minimum_source_wilson_95_lower_bound": 0.75,
+    "locked_splits": [
+      "search",
+      "validation",
+      "final_test"
+    ],
+    "final_test_used_for_selection": false
+  },
+  "destination_scopes": {
+    "english_core": {
+      "domain": "domain_independent",
+      "capabilities": [
+        "grammar",
+        "coherence",
+        "prompt_grounding",
+        "instruction_following",
+        "conversation",
+        "summarization",
+        "rewriting",
+        "email_drafting",
+        "tone_control",
+        "format_control",
+        "clarification",
+        "abstention",
+        "domain_independent_reasoning",
+        "cake_output_realization"
+      ],
+      "specialist_or_encyclopedic_payload_allowed": false,
+      "all_capabilities_required_for_english_promotion": true
+    },
+    "domain_cake": {
+      "domain_must_be_explicit": true,
+      "user_must_select_domain": true,
+      "unselected_domain_records_must_be_absent_from_composed_artifact": true
+    }
+  },
+  "multi_source_composition": {
+    "one_or_more_sources_supported": true,
+    "best_evidence_policy_supported": true,
+    "all_qualified_sources_policy_supported": true,
+    "source_and_record_provenance_must_survive_composition": true,
+    "conflicting_content_ids_fail_closed": true
+  },
+  "minimum_information_search": {
+    "budgets_must_be_preregistered_and_nested": true,
+    "budget_primary_axis": "authoritative_teacher_tokens",
+    "tie_breaker": "total_imported_payload_bits",
+    "selection_split": "validation",
+    "final_test_used_for_selection": false,
+    "claim": "minimum passing budget among preregistered tested budgets",
+    "absolute_global_minimum_claim_allowed": false,
+    "largest_lower_failing_budget_required": true
+  },
+  "required_payload_accounting": [
+    "raw_source_prompts",
+    "unique_utf8_bytes",
+    "teacher_generated_output_bytes",
+    "teacher_tokens",
+    "stored_logits",
+    "stored_hidden_activations",
+    "copied_source_parameters",
+    "final_imported_substrate_parameters",
+    "trained_bridge_parameters",
+    "artifact_disk_footprint",
+    "peak_process_resident_memory",
+    "cpu_core_hours",
+    "source_model_inference_hours",
+    "one_time_source_extraction_cost",
+    "per_host_layercake_certification_cost",
+    "final_deployed_footprint",
+    "final_cpu_inference_cost",
+    "external_hardware"
+  ],
+  "artifact_contract": {
+    "extraction_extension": ".abix",
+    "content_addressed": true,
+    "schema_closed": true,
+    "contains_teacher_material": true,
+    "installable_as_layercake_cake": false,
+    "teacher_material_forbidden_from_final_deployment": true,
+    "specialist_deployment_extension": ".cake",
+    "specialist_cake_must_use_layercake_signing_and_package_verification": true
+  },
+  "retention_and_losslessness": {
+    "source_weight_identity": "exact_sha256",
+    "extraction_archive_identity": "exact_sha256",
+    "deployed_artifact_identity": "exact_sha256_before_after",
+    "semantic_gate": "zero_measured_source_to_layercake_regressions_on_locked_suite",
+    "minimum_paired_layercake_seeds_or_hosts": 3,
+    "all_critical_rows_must_pass": true,
+    "global_semantic_identity_claim_allowed": false,
+    "finite_suite_must_remain_in_claim_scope": true
+  },
+  "layercake_promotion": {
+    "teacher_present_at_inference": false,
+    "source_transformer_blocks_retained": 0,
+    "imported_artifact_unchanged": true,
+    "canonical_interfaces_unchanged": true,
+    "english_core_and_each_domain_evaluated_separately": true,
+    "core_only_abstention_preserved": true,
+    "unselected_domain_leakage_forbidden": true,
+    "phase2_quality_grounding_adherence_rss_speed_ttft_gates_required": true,
+    "minimum_phase2_throughput_retention": 0.95,
+    "minimum_optimized_cpu_transformer_speedup": 2.0
+  },
+  "current_evidence": {
+    "qwen_source_revision": "ba1cf1846d7df0a0591d6c00649f57e798519da8",
+    "qwen_source_manifest_sha256": "442227df6b9b50a1ca83039d11d99fbfde4825add11b480bb50eedcdb5694ea5",
+    "development_survey_archive_sha256": "71f14e6208893b3135ad177a739fe0f1296ac716fd68ff1b94184a804b405af0",
+    "development_composition_archive_sha256": "bdf7a1b2f1b299e0b1fa7e2e8b3a9df5bcb8bfd931bce2c02c73e54ee4d8f864",
+    "development_probe_count": 18,
+    "development_probe_passes": 13,
+    "promotion_qualified_capability_count": 18,
+    "promotion_qualified_english_capability_count": 14,
+    "promotion_qualified_domain_capability_count": 4,
+    "qualified_source_count": 3,
+    "composed_training_bundle_sha256": "e58dcf12cff36267e9088278cd6107d60da0158b14d2d0f15f717622564167d0",
+    "composed_training_record_count": 1774,
+    "composed_training_teacher_tokens": 46809,
+    "best_host_manifest_sha256": "6b514f22e75368a354f5d71460061ce3327597ec3ccb58e24840824290b9d068",
+    "best_host_delta_sha256": "50db40e095e433b89320f7f156393783edb096f51bdb834d7767d8931b6c5b29",
+    "best_host_delta_bytes": 6389896,
+    "best_host_trained_parameters": 1595914,
+    "best_host_validation_observations": 1400,
+    "best_host_validation_source_passes": 1393,
+    "best_host_validation_layercake_passes": 1390,
+    "best_host_validation_source_passing_regressions": 10,
+    "best_host_automatic_route_accuracy": 1.0,
+    "layercake_host_conformance_performed": true,
+    "layercake_sealed_repository_modified": false,
+    "final_test_accessed": false,
+    "cpu_and_phase2_performance_recertified": false
+  },
+  "moonshot_passed": false
+}

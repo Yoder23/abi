@@ -1,0 +1,30 @@
+{
+  "format": "abi-layercake-hostile-reproduction-protocol/1",
+  "status": "PREREGISTERED_AFTER_COMBINED_VALIDATION_PASS_BEFORE_HOSTILE_EXECUTION_AND_FINAL_TEST_OPENING",
+  "combined_host_certificate": {
+    "path": "results/abi_moonshot/combined_host/combined-host-certificate-v1.json",
+    "file_sha256": "5d792cad0add79007eb750dd65c95d378904d48e7240e7ed503ac30b2a771c97",
+    "evidence_sha256": "e2440452f2a2f2e8eea461d97af073c27cbb760a7eacc9487efe9c639ffcbab2"
+  },
+  "fresh_receiver_roots": 3,
+  "attacks": [
+    "single_byte_package_corruption",
+    "wrong_ed25519_publisher_key",
+    "duplicate_archive_member",
+    "path_traversal_archive_member",
+    "uninstalled_cake_selection",
+    "stale_native_runtime_component"
+  ],
+  "positive_controls": {
+    "strict_exact_english_generation_per_receiver": true,
+    "all_three_domain_packages_per_receiver": true,
+    "validation_output_byte_identity": true,
+    "inactive_cake_execution_delta_zero": true,
+    "domain_worker_lazy_before_selection": true,
+    "worker_shutdown_after_receiver": true,
+    "sealed_layercake_unchanged": true
+  },
+  "stop_rule": "Any accepted attack, receiver divergence, inactive execution, teacher dependency, stale component acceptance, or sealed-repository mutation blocks final-test opening.",
+  "claim_boundary": "This is an in-repository hostile reproduction in fresh processes and registries. It is not an organizationally independent third-party audit.",
+  "final_test_accessed": false
+}

@@ -1,0 +1,193 @@
+{
+  "accounting": {
+    "artifact_disk_footprint_bytes": 453217,
+    "bridge_parameters_trained": 109157,
+    "deterministic_derived_teacher_outputs": 0,
+    "deterministic_derived_teacher_tokens": 0,
+    "deterministic_derived_training_rows": 0,
+    "external_hardware": {
+      "device": "NVIDIA GeForce RTX 3080 Laptop GPU",
+      "role": "domain conformance training only",
+      "used": true
+    },
+    "final_imported_substrate_parameters": 109157,
+    "frozen_source_parameters_copied": 0,
+    "hidden_activations_stored": 0,
+    "logits_stored": 0,
+    "peak_accelerator_memory_bytes": 26312704,
+    "peak_process_resident_memory_bytes": 929939456,
+    "raw_source_prompts": 1,
+    "source_extraction_cost_reused": true,
+    "source_model_inference_hours": 0.0,
+    "source_transformer_blocks_retained": 0,
+    "teacher_generated_output_bytes": 126,
+    "teacher_present_at_inference": false,
+    "teacher_tokens": 28,
+    "unique_prompt_utf8_bytes": 152
+  },
+  "artifact": {
+    "path": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_moonshot\\domain_cakes\\civics-budget0-seed9824-v1\\domain_candidate.pt",
+    "payload_hash": "6e41f2175384c65a0860fedd6c7631f5b1bc09bcae5990cc219200e629184afd",
+    "sha256": "5458536acc0835b1d7f19608e13ab24b7013b02b21325eb1b3ee864c09e5fe1d",
+    "spec_hash": "7394fc76b4b0c0e697756fa38762f44bfa7aa13d16fbed5f8f1e150167c180c9"
+  },
+  "best_action_negative_log_likelihood": 0.0006627500406466424,
+  "cpu_fallback_smoke": {
+    "loss": 0.0006617282633669674,
+    "optimizer_steps": 1,
+    "status": "PASS",
+    "wall_seconds": 0.03306800004793331
+  },
+  "deterministic_derived_training_rows": 0,
+  "domain": "civics",
+  "evidence_sha256": "b86bd67911072da80b4b5ce2b5c52b2474f0fb0f354262192648233cc11b8e26",
+  "final_test_accessed": false,
+  "fixed_vocabulary_size": 36,
+  "format": "abi-layercake-domain-training-evidence/1",
+  "gpu_wall_seconds": 19.92551030003233,
+  "history": [
+    {
+      "action_accuracy": 0.0,
+      "action_negative_log_likelihood": 4.006219863891602,
+      "gpu_wall_seconds": 0.2649665999924764,
+      "gradient_norm_before_clip": 1.6119413375854492,
+      "pointer_action_accuracy": 0.0,
+      "step": 1
+    },
+    {
+      "action_accuracy": 1.0,
+      "action_negative_log_likelihood": 0.04277042672038078,
+      "gpu_wall_seconds": 1.824480700015556,
+      "gradient_norm_before_clip": 0.0735563114285469,
+      "pointer_action_accuracy": 1.0,
+      "step": 100
+    },
+    {
+      "action_accuracy": 1.0,
+      "action_negative_log_likelihood": 0.014186983928084373,
+      "gpu_wall_seconds": 3.5221923000062816,
+      "gradient_norm_before_clip": 0.025674616917967796,
+      "pointer_action_accuracy": 1.0,
+      "step": 200
+    },
+    {
+      "action_accuracy": 1.0,
+      "action_negative_log_likelihood": 0.007392351049929857,
+      "gpu_wall_seconds": 5.205804000026546,
+      "gradient_norm_before_clip": 0.013926342129707336,
+      "pointer_action_accuracy": 1.0,
+      "step": 300
+    },
+    {
+      "action_accuracy": 1.0,
+      "action_negative_log_likelihood": 0.00458645960316062,
+      "gpu_wall_seconds": 6.777191900007892,
+      "gradient_norm_before_clip": 0.008913010358810425,
+      "pointer_action_accuracy": 1.0,
+      "step": 400
+    },
+    {
+      "action_accuracy": 1.0,
+      "action_negative_log_likelihood": 0.0031402918975800276,
+      "gpu_wall_seconds": 8.431570200016722,
+      "gradient_norm_before_clip": 0.006255800370126963,
+      "pointer_action_accuracy": 1.0,
+      "step": 500
+    },
+    {
+      "action_accuracy": 1.0,
+      "action_negative_log_likelihood": 0.0022922123316675425,
+      "gpu_wall_seconds": 9.97504079999635,
+      "gradient_norm_before_clip": 0.004660057835280895,
+      "pointer_action_accuracy": 1.0,
+      "step": 600
+    },
+    {
+      "action_accuracy": 1.0,
+      "action_negative_log_likelihood": 0.0017501929542049766,
+      "gpu_wall_seconds": 11.552439799997956,
+      "gradient_norm_before_clip": 0.003620241302996874,
+      "pointer_action_accuracy": 1.0,
+      "step": 700
+    },
+    {
+      "action_accuracy": 1.0,
+      "action_negative_log_likelihood": 0.0013817111030220985,
+      "gpu_wall_seconds": 13.278221000044141,
+      "gradient_norm_before_clip": 0.002902108943089843,
+      "pointer_action_accuracy": 1.0,
+      "step": 800
+    },
+    {
+      "action_accuracy": 1.0,
+      "action_negative_log_likelihood": 0.0011192408856004477,
+      "gpu_wall_seconds": 14.929061700007878,
+      "gradient_norm_before_clip": 0.0023812158033251762,
+      "pointer_action_accuracy": 1.0,
+      "step": 900
+    },
+    {
+      "action_accuracy": 1.0,
+      "action_negative_log_likelihood": 0.0009253196185454726,
+      "gpu_wall_seconds": 16.59907110000495,
+      "gradient_norm_before_clip": 0.001991796074435115,
+      "pointer_action_accuracy": 1.0,
+      "step": 1000
+    },
+    {
+      "action_accuracy": 1.0,
+      "action_negative_log_likelihood": 0.0007777520804665983,
+      "gpu_wall_seconds": 18.266727500013076,
+      "gradient_norm_before_clip": 0.0016919346526265144,
+      "pointer_action_accuracy": 1.0,
+      "step": 1100
+    },
+    {
+      "action_accuracy": 1.0,
+      "action_negative_log_likelihood": 0.0006627500406466424,
+      "gpu_wall_seconds": 19.92301850003423,
+      "gradient_norm_before_clip": 0.0014557774411514401,
+      "pointer_action_accuracy": 1.0,
+      "step": 1200
+    }
+  ],
+  "layercake_target": {
+    "abi_sha256": "de765899700aefe22bfe6c9d00ed5b0c1f87a7ef864cf7211aa8aa4491a0742a",
+    "abi_version": "lc-direct-neural-decoder/1",
+    "commit": "04cf2927a16fba686cd640e18a78708e5658bbda",
+    "modified": false,
+    "root": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\layercake_release"
+  },
+  "model_visible_target_actions_with_repetition": 806400,
+  "optimizer_steps": 1200,
+  "parameter_count": 109157,
+  "protocol": {
+    "path": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\DOMAIN_CAKE_CONFORMANCE_PROTOCOL.json",
+    "sha256": "186b41800d988ea241c4585189a8f6465351c02b57b28c21fd7eeb9406665be3"
+  },
+  "raw_utf8_training_bytes_exposed_with_repetition": 3916800,
+  "resume_candidate": null,
+  "seed": 9824,
+  "source": {
+    "available": true,
+    "capability": "independence_days",
+    "destination_scope": "domain_cake",
+    "domain": "civics",
+    "evidence_status": "AVAILABLE",
+    "inventory_sha256": "664c1243f2a5c5736b541ae48b7f2f104f36c951de65593c62816654431e48cd",
+    "source_manifest_sha256": "997f6f103e53e370d98221f44f2c007c04c42c4dc7ee5b1caf739d2971ae7931",
+    "source_model": "microsoft/Phi-3-mini-4k-instruct",
+    "source_model_revision": "f39ac1d28e925b323eae81227eaba4464caced4e"
+  },
+  "source_search_training_rows": 1,
+  "status": "TRAINED_NOT_VALIDATED",
+  "tokenizer_sha256": "e561f3054358ca08eadce390a968948b86381f2c7bf7dc376a96d9fab6ab39e9",
+  "training_bundle": {
+    "budget_id": "search-teacher-tokens-476",
+    "budget_index": 0,
+    "path": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_moonshot\\multisource-english-python-math-chemistry-civics-balanced-passing-search.abix",
+    "sha256": "e58dcf12cff36267e9088278cd6107d60da0158b14d2d0f15f717622564167d0"
+  },
+  "training_rows": 1,
+  "validation_accessed": false
+}

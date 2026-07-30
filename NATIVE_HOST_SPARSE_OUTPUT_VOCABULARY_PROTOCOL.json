@@ -1,0 +1,107 @@
+{
+  "format": "abi-layercake-native-host-sparse-output-vocabulary-protocol/1",
+  "status": "LOCKED_AFTER_RUNTIME_PROFILE_AND_BEFORE_SPARSE_GRAPH_DERIVATION",
+  "purpose": "Physically reduce the repeated 50,257-token output projection using only search/train material while retaining complete byte-level realizability. This is a deployment-graph optimization of the exact v24 weights, not new language training.",
+  "triggering_profile": {
+    "profile": "results/abi_moonshot/native_hosts/parent-v5-t16-runtime-profile.pstats",
+    "benchmark_evidence": "results/abi_moonshot/native_hosts/parent-v5-t16-profile-benchmark.json",
+    "onnx_session_run_cumulative_seconds": 15.844,
+    "generation_cumulative_seconds": 16.384,
+    "onnx_fraction": 0.9671630866699218,
+    "full_output_projection_shape": [
+      768,
+      50257
+    ],
+    "full_output_projection_int8_bytes": 38597376
+  },
+  "locked_source": {
+    "artifact": "results/abi_moonshot/native_hosts/full-budget3-quant-robust-output-balanced-seed9824-v24-onnx-int8-v9",
+    "runtime_graph_sha256": "caef0931123649ea7f89eb6d3282d8460e684db78060c6e9e090387d3fb84e6f",
+    "host_manifest_sha256": "409e686493590e556aea493f6adbf829a463427bef576b57e8470719834ffd5c",
+    "training_bundle": "results/abi_moonshot/multisource-english-python-math-chemistry-civics-balanced-passing-search.abix",
+    "training_bundle_sha256": "e58dcf12e72f0200bdd72e43521bac01dc2bde3bc85c8f919272966209199406",
+    "english_budget_index": 3,
+    "general_train_curriculum": "../layercake_release/data/moonshot/phase2/instruction_curriculum_semantic_control_v2.jsonl",
+    "general_train_split": "train"
+  },
+  "information_boundary": {
+    "allowed_to_select_output_token_ids": [
+      "the 256 GPT-2 byte-alphabet base token IDs",
+      "the EOS token ID",
+      "token IDs occurring in search-only ABI English prompts or responses",
+      "token IDs occurring in the locked general-English train split",
+      "deterministic ascending tokenizer IDs used only to fill preregistered cardinality budgets"
+    ],
+    "forbidden": [
+      "ABI validation outputs",
+      "general instruction-validation prompts or responses",
+      "speed benchmark generated outputs",
+      "final-test prompts or outputs",
+      "domain validation or final-test records"
+    ],
+    "complete_realizability": "All 256 GPT-2 byte-alphabet base tokens remain available, so excluded merge tokens affect efficiency and model preference but cannot make a UTF-8 byte sequence intrinsically unrepresentable."
+  },
+  "nested_budgets": [
+    {
+      "id": "byte_fallback_only",
+      "construction": "256 byte-alphabet IDs plus EOS"
+    },
+    {
+      "id": "train_outputs",
+      "construction": "previous plus every token in allowed ABI/general train responses"
+    },
+    {
+      "id": "all_train_text",
+      "construction": "previous plus every token in allowed ABI/general train prompts"
+    },
+    {
+      "id": "vocab_4096",
+      "construction": "previous plus ascending tokenizer IDs until cardinality 4096"
+    },
+    {
+      "id": "vocab_8192",
+      "construction": "previous plus ascending tokenizer IDs until cardinality 8192"
+    },
+    {
+      "id": "vocab_16384",
+      "construction": "previous plus ascending tokenizer IDs until cardinality 16384"
+    },
+    {
+      "id": "vocab_32768",
+      "construction": "previous plus ascending tokenizer IDs until cardinality 32768"
+    },
+    {
+      "id": "full_50257",
+      "construction": "all tokenizer IDs; unchanged control"
+    }
+  ],
+  "search_and_promotion_rule": {
+    "order": "ascending nested budget",
+    "early_stop": "Stop expanding after the first budget passes every locked gate and its immediately lower tested budget has failed at least one gate.",
+    "required_quality": [
+      "all 1,400 locked ABI validation rows pass with zero source-passing regression and perfect routing",
+      "at least 95 percent parent top-1 agreement over all 420 general-validation rows and exactly 43,089 response tokens",
+      "no autonomous repetition/collapse gate failure"
+    ],
+    "required_native_performance": [
+      "median generated UTF-8 bytes per complete request second at least 2x locked optimized Qwen",
+      "paired-prompt bootstrap 95 percent lower bound at least 2x",
+      "at least 95 percent of the selected contemporaneous parent runtime or the locked sealed Phase 2 parent, with the comparator lineage stated explicitly",
+      "TTFT no worse than Qwen",
+      "RSS below 214,990,848 bytes",
+      "active model bytes below Qwen"
+    ],
+    "minimum_claim": "Only the lowest passing preregistered tested nested budget paired with the largest lower failing budget. Never an absolute or global minimum."
+  },
+  "identity_and_execution": {
+    "input_embedding_vocabulary_unchanged": true,
+    "tokenizer_unchanged": true,
+    "weights_retrained": false,
+    "selected_output_columns_byte_identical_to_source_quantized_graph": true,
+    "local_logit_indices_must_map_to_authoritative_global_runtime_token_ids": true,
+    "canonical_abi_output_unchanged": true,
+    "persistent_incremental_state_unchanged": true,
+    "physical_sparse-output proof_required": true
+  },
+  "final_test_accessed": false
+}

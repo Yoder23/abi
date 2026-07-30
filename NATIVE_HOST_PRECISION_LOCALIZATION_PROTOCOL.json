@@ -1,0 +1,53 @@
+{
+  "base_artifact": "results/abi_moonshot/native_hosts/full-budget3-fused-output-balanced-seed9824-v23-onnx-int8-v7",
+  "base_runtime_graph_sha256": "370ab9a28b325d276f8706255e41d108673cc18add7ac6407d0509083229166c",
+  "failed_validation_evidence_sha256": "6e424292b8b2d1e28490cdb75dc93074d9b1b581819edc8cd5b454e370e2d494",
+  "failure": {
+    "capability": "prompt_grounding",
+    "fp32_output": "GROUND-147-LISBON",
+    "native_output": "GROUND-147",
+    "probe_id": "english-grounding-147-v2"
+  },
+  "final_test_accessed": false,
+  "format": "abi-layercake-native-precision-localization-protocol/1",
+  "locked_candidates": [
+    {
+      "embedding_precision": "int8_per_row",
+      "id": "block0-fp32",
+      "matrix_nodes_left_fp32": "transformer block 0 learned Gemm nodes"
+    },
+    {
+      "embedding_precision": "int8_per_row",
+      "id": "block1-fp32",
+      "matrix_nodes_left_fp32": "transformer block 1 learned Gemm nodes"
+    },
+    {
+      "embedding_precision": "int8_per_row",
+      "id": "block2-fp32",
+      "matrix_nodes_left_fp32": "transformer block 2 learned Gemm nodes"
+    },
+    {
+      "embedding_precision": "int8_per_row",
+      "id": "classifier-fp32",
+      "matrix_nodes_left_fp32": "task classifier"
+    },
+    {
+      "embedding_precision": "int8_per_row",
+      "id": "output-head-fp32",
+      "matrix_nodes_left_fp32": "tied output projection"
+    },
+    {
+      "embedding_precision": "fp16",
+      "id": "input-embedding-fp16",
+      "matrix_nodes_left_fp32": "none"
+    }
+  ],
+  "promotion_rule": [
+    "Screen only the already observed failing prompt for localization.",
+    "Among candidates that recover the exact output, choose the smallest graph; break an exact byte tie by the locked candidate order.",
+    "Rerun all 1400 validation prompts on the chosen graph and require zero source-passing regressions.",
+    "Rerun physical sparsity, identity, general-English preservation, CPU throughput, TTFT, RSS, cache, and collapse gates without relaxation.",
+    "If no candidate passes, reject this bounded precision repair."
+  ],
+  "status": "PREREGISTERED_BEFORE_PRECISION_LOCALIZATION"
+}

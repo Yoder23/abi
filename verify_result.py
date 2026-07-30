@@ -26,6 +26,8 @@ import math
 import sys
 import pathlib
 
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
 RESULT_FILE = pathlib.Path(__file__).parent / "cross_arch_t5_nib_v53_results.json"
 
 # ── Published reference values (immutable) ────────────────────────────────────

@@ -1,0 +1,627 @@
+{
+  "capability_metrics": {
+    "abstention": {
+      "observations": 2,
+      "passes": 0
+    },
+    "cake_output_realization": {
+      "observations": 2,
+      "passes": 1
+    },
+    "clarification": {
+      "observations": 2,
+      "passes": 1
+    },
+    "coherence": {
+      "observations": 2,
+      "passes": 1
+    },
+    "conversation": {
+      "observations": 2,
+      "passes": 2
+    },
+    "domain_independent_reasoning": {
+      "observations": 2,
+      "passes": 2
+    },
+    "email_drafting": {
+      "observations": 2,
+      "passes": 2
+    },
+    "format_control": {
+      "observations": 2,
+      "passes": 1
+    },
+    "grammar": {
+      "observations": 2,
+      "passes": 2
+    },
+    "instruction_following": {
+      "observations": 2,
+      "passes": 1
+    },
+    "prompt_grounding": {
+      "observations": 2,
+      "passes": 2
+    },
+    "rewriting": {
+      "observations": 2,
+      "passes": 1
+    },
+    "summarization": {
+      "observations": 2,
+      "passes": 2
+    },
+    "tone_control": {
+      "observations": 2,
+      "passes": 1
+    }
+  },
+  "catalog": "catalogs/postcert_novel_english_audit_v1.json",
+  "catalog_sha256": "0b7349c07201638db72bd8fe31fba4f7f7bc4e18fce8fb90c3a3ec839ed70df5",
+  "claim_boundary": "This audit tests 28 disclosed novel prompt forms after the bounded v2 certificate. A failure blocks a broad English-fluency claim but does not alter the historical locked-suite result.",
+  "engine": "source",
+  "evidence_sha256": "e7e76eda30a3edd9c0a7eb13686aab739bda77d51782ffb4686754a958afb81f",
+  "format": "abi-postcert-novel-english-audit-evidence/1",
+  "identity": {
+    "architecture": "Phi3ForCausalLM",
+    "license_id": "MIT",
+    "model_id": "microsoft/Phi-3-mini-4k-instruct",
+    "parameter_count": 3821079552,
+    "promotion_eligible": true,
+    "revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "revision_is_immutable": true,
+    "schema_version": "abi-source-model-manifest/1",
+    "source_kind": "huggingface_causal_lm",
+    "source_manifest_sha256": "997f6f103e53e370d98221f44f2c007c04c42c4dc7ee5b1caf739d2971ae7931",
+    "tokenizer_id": "microsoft/Phi-3-mini-4k-instruct",
+    "tokenizer_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "trust_remote_code": false,
+    "weight_bytes": 7642181880,
+    "weight_file_count": 2,
+    "weight_files": [
+      {
+        "bytes": 4972489328,
+        "relative_path": "model-00001-of-00002.safetensors",
+        "sha256": "b7492726c01287bf6e13c3d74c65ade3d436d50da1cf5bb6925bc962419d6610"
+      },
+      {
+        "bytes": 2669692552,
+        "relative_path": "model-00002-of-00002.safetensors",
+        "sha256": "3f311787aa136e858556caa8543015161edcad85ba81b6a36072443d7fa73c87"
+      }
+    ]
+  },
+  "observation_count": 28,
+  "observations": [
+    {
+      "capability": "grammar",
+      "evaluator": {
+        "kind": "contains_all",
+        "values": [
+          "dogs",
+          "run",
+          "park"
+        ]
+      },
+      "output": "The two dogs run through the park each morning.",
+      "output_sha256": "2868b84e579eb093656094171d65ecbf15f4ba1c3351fb02bb63beb437ea79de",
+      "passed": true,
+      "probe_id": "novel-grammar-001",
+      "prompt": "<|user|>\nPlease return a corrected version of this and nothing else: The two dogs runs through the park each morning.<|end|>\n<|assistant|>\n",
+      "score": 1.0,
+      "teacher_token_counter": "authoritative_generated_token_ids",
+      "teacher_tokens": 12
+    },
+    {
+      "capability": "grammar",
+      "evaluator": {
+        "kind": "contains_all",
+        "values": [
+          "neighbor",
+          "sister",
+          "are",
+          "tomorrow"
+        ]
+      },
+      "output": "My neighbor and her sister are visiting tomorrow.",
+      "output_sha256": "7d1349f43a2133eee4ef8c618890a0f72d3842558aa0f988c8386b86137091af",
+      "passed": true,
+      "probe_id": "novel-grammar-002",
+      "prompt": "<|user|>\nFix the agreement error and output one sentence: My neighbor and her sister is visiting tomorrow.<|end|>\n<|assistant|>\n",
+      "score": 1.0,
+      "teacher_token_counter": "authoritative_generated_token_ids",
+      "teacher_tokens": 13
+    },
+    {
+      "capability": "coherence",
+      "evaluator": {
+        "kind": "ordered_contains",
+        "values": [
+          "CHECK",
+          "BOARD",
+          "LAND"
+        ]
+      },
+      "output": "[CHECK] the traveler checked in; [BOARD] the traveler entered the plane; [LAND] the plane arrived.",
+      "output_sha256": "6161dd5b367c6b8ff5adc674844458fae6e1a55258ea6dc04a6d25f2abd52748",
+      "passed": true,
+      "probe_id": "novel-coherence-001",
+      "prompt": "<|user|>\nPut these labels in their logical order and return labels only: [LAND] the plane arrived; [CHECK] the traveler checked in; [BOARD] the traveler entered the plane.<|end|>\n<|assistant|>\n",
+      "score": 1.0,
+      "teacher_token_counter": "authoritative_generated_token_ids",
+      "teacher_tokens": 31
+    },
+    {
+      "capability": "coherence",
+      "evaluator": {
+        "kind": "ordered_contains",
+        "values": [
+          "MIX",
+          "BAKE",
+          "COOL"
+        ]
+      },
+      "output": "The correct order of the event codes from first to last would be:\n\n1. [MIX] combine the ingredients\n\n2. [",
+      "output_sha256": "ec0b13741aeccead04e2a12cf956b99a7b27792a788b45443fe1d6dc5dbfb9d3",
+      "passed": false,
+      "probe_id": "novel-coherence-002",
+      "prompt": "<|user|>\nOrder the event codes from first to last: [COOL] let the bread rest; [MIX] combine the ingredients; [BAKE] put the dough in the oven.<|end|>\n<|assistant|>\n",
+      "score": 0.3333333333333333,
+      "teacher_token_counter": "authoritative_generated_token_ids",
+      "teacher_tokens": 32
+    },
+    {
+      "capability": "prompt_grounding",
+      "evaluator": {
+        "kind": "contains_all",
+        "values": [
+          "Kestrel",
+          "14:30"
+        ]
+      },
+      "output": "The memo names \"Project Kestrel\" and the time as \"14:30.\"",
+      "output_sha256": "7fe0dbabfc09740e5f1d0cc774b9fe14cc274e52e8d6acc8084ec9dd289d8a5c",
+      "passed": true,
+      "probe_id": "novel-grounding-001",
+      "prompt": "<|user|>\nUse only this memo to answer: 'Project Kestrel review moved to 14:30.' Which project and time does the memo name?<|end|>\n<|assistant|>\n",
+      "score": 1.0,
+      "teacher_token_counter": "authoritative_generated_token_ids",
+      "teacher_tokens": 22
+    },
+    {
+      "capability": "prompt_grounding",
+      "evaluator": {
+        "kind": "contains_all",
+        "values": [
+          "blue",
+          "locker 17"
+        ]
+      },
+      "output": "The folder is blue and it is in locker 17.",
+      "output_sha256": "bd89cad4e36d79d7c344a8b663538abe74a4e27cbc564e7ceeed655ce536814b",
+      "passed": true,
+      "probe_id": "novel-grounding-002",
+      "prompt": "<|user|>\nAnswer strictly from the supplied note. Note: 'The blue folder is in locker 17.' What color is the folder and where is it?<|end|>\n<|assistant|>\n",
+      "score": 1.0,
+      "teacher_token_counter": "authoritative_generated_token_ids",
+      "teacher_tokens": 16
+    },
+    {
+      "capability": "instruction_following",
+      "evaluator": {
+        "kind": "exact",
+        "value": "amber triangle"
+      },
+      "output": "amber",
+      "output_sha256": "b1601f694b9d336c35fc456de5697dfde5e1b1ce4e8c40766fb6cb763aba91c7",
+      "passed": false,
+      "probe_id": "novel-instruction-001",
+      "prompt": "<|user|>\nReply with exactly these two lowercase words and no punctuation: amber triangle<|end|>\n<|assistant|>\n",
+      "score": 0.0,
+      "teacher_token_counter": "authoritative_generated_token_ids",
+      "teacher_tokens": 4
+    },
+    {
+      "capability": "instruction_following",
+      "evaluator": {
+        "kind": "exact",
+        "value": "7-4-2"
+      },
+      "output": "7-4-2",
+      "output_sha256": "2b39d38afdece6ea4d620f472d96344a070ebbc9240c88e43855619a95d2e5c9",
+      "passed": true,
+      "probe_id": "novel-instruction-002",
+      "prompt": "<|user|>\nOutput only 7-4-2. Do not add words or formatting.<|end|>\n<|assistant|>\n",
+      "score": 1.0,
+      "teacher_token_counter": "authoritative_generated_token_ids",
+      "teacher_tokens": 7
+    },
+    {
+      "capability": "conversation",
+      "evaluator": {
+        "kind": "contains_any",
+        "values": [
+          "sorry",
+          "difficult",
+          "hard",
+          "help"
+        ]
+      },
+      "output": "Hey, I'm really sorry to hear that you missed the deadline. It happens to the best of us, and I'm here to help you sort it out.",
+      "output_sha256": "6bcf317b03a4abd01a4fb6df7ac8501cd32a15e9ffc138d4a37b89f8dc741887",
+      "passed": true,
+      "probe_id": "novel-conversation-001",
+      "prompt": "<|user|>\nI had a rough day and missed an important deadline. Respond conversationally in one or two sentences.<|end|>\n<|assistant|>\n",
+      "score": 0.5,
+      "teacher_token_counter": "authoritative_generated_token_ids",
+      "teacher_tokens": 37
+    },
+    {
+      "capability": "conversation",
+      "evaluator": {
+        "kind": "contains_any",
+        "values": [
+          "welcome",
+          "help",
+          "glad",
+          "hello"
+        ]
+      },
+      "output": "\"Welcome aboard! We're thrilled to have you join our vibrant community, and I'm here to ensure you feel right at home.\"",
+      "output_sha256": "3461e57ca66179c93a9f348f0ab03eb610dd1e10f43a635a8d4fe539c145618b",
+      "passed": true,
+      "probe_id": "novel-conversation-002",
+      "prompt": "<|user|>\nHi, I am new here. Give me a friendly one-sentence welcome.<|end|>\n<|assistant|>\n",
+      "score": 0.25,
+      "teacher_token_counter": "authoritative_generated_token_ids",
+      "teacher_tokens": 37
+    },
+    {
+      "capability": "summarization",
+      "evaluator": {
+        "kind": "all_of",
+        "rules": [
+          {
+            "kind": "contains_all",
+            "values": [
+              "Rina",
+              "Tuesday",
+              "budget"
+            ]
+          },
+          {
+            "kind": "maximum_characters",
+            "value": 140
+          }
+        ]
+      },
+      "output": "Rina completed the budget draft and is scheduled to present it to her team on Tuesday.",
+      "output_sha256": "d53b4c488c16d22911a76904c8726c6987a448e50301e331768ef99005365d28",
+      "passed": true,
+      "probe_id": "novel-summary-001",
+      "prompt": "<|user|>\nSummarize in one short sentence: Rina finished the budget draft on Monday and will present it to the team on Tuesday.<|end|>\n<|assistant|>\n",
+      "score": 1.0,
+      "teacher_token_counter": "authoritative_generated_token_ids",
+      "teacher_tokens": 22
+    },
+    {
+      "capability": "summarization",
+      "evaluator": {
+        "kind": "all_of",
+        "rules": [
+          {
+            "kind": "contains_all",
+            "values": [
+              "train",
+              "weather",
+              "18:00"
+            ]
+          },
+          {
+            "kind": "maximum_characters",
+            "value": 150
+          }
+        ]
+      },
+      "output": "The northbound train's arrival was postponed due to bad weather, moving from an expected time of 17:10 to 18:00.",
+      "output_sha256": "a0a196bf851fa82c6a3e5ec659f1238e3fe08ca54af309a9986608632291db8a",
+      "passed": true,
+      "probe_id": "novel-summary-002",
+      "prompt": "<|user|>\nGive a concise summary: Bad weather delayed the northbound train, so its expected arrival changed from 17:10 to 18:00.<|end|>\n<|assistant|>\n",
+      "score": 1.0,
+      "teacher_token_counter": "authoritative_generated_token_ids",
+      "teacher_tokens": 37
+    },
+    {
+      "capability": "rewriting",
+      "evaluator": {
+        "kind": "contains_all",
+        "values": [
+          "report",
+          "understand"
+        ]
+      },
+      "output": "The report is somewhat difficult to comprehend.",
+      "output_sha256": "82e392c61e802c64227f6a13e7f84b3d0af37b2766c9787e1ef1c452d83dcb6f",
+      "passed": false,
+      "probe_id": "novel-rewriting-001",
+      "prompt": "<|user|>\nRewrite this sentence more clearly: The report is kind of hard to understand.<|end|>\n<|assistant|>\n",
+      "score": 0.5,
+      "teacher_token_counter": "authoritative_generated_token_ids",
+      "teacher_tokens": 11
+    },
+    {
+      "capability": "rewriting",
+      "evaluator": {
+        "kind": "contains_all",
+        "values": [
+          "please",
+          "numbers"
+        ]
+      },
+      "output": "Could you please provide me with the numbers at your earliest convenience? Thank you.",
+      "output_sha256": "ea3bbd3fb18988b450409ec0783858c0b4a2a531920a0ac0e66cb7a4175dbd0f",
+      "passed": true,
+      "probe_id": "novel-rewriting-002",
+      "prompt": "<|user|>\nRewrite this request so it is polite and professional: Send me the numbers now.<|end|>\n<|assistant|>\n",
+      "score": 1.0,
+      "teacher_token_counter": "authoritative_generated_token_ids",
+      "teacher_tokens": 18
+    },
+    {
+      "capability": "email_drafting",
+      "evaluator": {
+        "kind": "contains_all",
+        "values": [
+          "Friday",
+          "agenda",
+          "confirm"
+        ]
+      },
+      "output": "Subject: Confirmation of Meeting Agenda for Friday\n\n\nDear [Recipient's Name],\n\n\nI hope this message finds you well. I am writing to confirm our upcoming meeting scheduled for this Friday. Could you please provide the agenda items at your earliest convenience? This will help us prepare accordingly and ensure a productive session.\n\n\nLooking forward to your prompt response.\n\n\nBest regards,\n\n",
+      "output_sha256": "a1f01187d779537ae468b73002b5f5ed6872c9c96f6707bc0d74337dac993b4e",
+      "passed": true,
+      "probe_id": "novel-email-001",
+      "prompt": "<|user|>\nDraft a concise email from these notes: meeting Friday; ask the recipient to confirm the agenda.<|end|>\n<|assistant|>\n",
+      "score": 1.0,
+      "teacher_token_counter": "authoritative_generated_token_ids",
+      "teacher_tokens": 96
+    },
+    {
+      "capability": "email_drafting",
+      "evaluator": {
+        "kind": "contains_all",
+        "values": [
+          "invoice",
+          "April 9",
+          "attach"
+        ]
+      },
+      "output": "Subject: Invoice Due April 9 - Attachment Required\n\n\nDear [Recipient's Name],\n\n\nI hope this message finds you well.\n\n\nAs a reminder, the invoice for the services rendered on [specific date(s)] is due on April 9. To process the payment, please ensure that you attach the corresponding receipt to this email.\n\n\nThank you for your prompt attention to this",
+      "output_sha256": "8b3077515cf8d16f1ee1adbdfee5cd7ed8e34b50181239121fa250fbb7894909",
+      "passed": true,
+      "probe_id": "novel-email-002",
+      "prompt": "<|user|>\nWrite a brief professional email: the invoice is due April 9 and the recipient should attach the receipt.<|end|>\n<|assistant|>\n",
+      "score": 1.0,
+      "teacher_token_counter": "authoritative_generated_token_ids",
+      "teacher_tokens": 96
+    },
+    {
+      "capability": "tone_control",
+      "evaluator": {
+        "kind": "contains_all",
+        "values": [
+          "please",
+          "window"
+        ]
+      },
+      "output": "\"Would you mind closing the window, please?\"",
+      "output_sha256": "8034e01a08f2d0622cab31f114ce1c97d04ca473641e0b8997f95cb6044fbb63",
+      "passed": true,
+      "probe_id": "novel-tone-001",
+      "prompt": "<|user|>\nSay this politely in one sentence: Close the window.<|end|>\n<|assistant|>\n",
+      "score": 1.0,
+      "teacher_token_counter": "authoritative_generated_token_ids",
+      "teacher_tokens": 13
+    },
+    {
+      "capability": "tone_control",
+      "evaluator": {
+        "kind": "contains_all",
+        "values": [
+          "thank",
+          "response"
+        ]
+      },
+      "output": "Thank you for your prompt reply; I appreciate your professionalism and look forward to our continued collaboration.",
+      "output_sha256": "e8acaaf6502f6784c43f74f0734aa137511bf3bd0c9208837fc6ade1c1e6ea4c",
+      "passed": false,
+      "probe_id": "novel-tone-002",
+      "prompt": "<|user|>\nTurn this into a warm professional sentence: I got your response.<|end|>\n<|assistant|>\n",
+      "score": 0.5,
+      "teacher_token_counter": "authoritative_generated_token_ids",
+      "teacher_tokens": 22
+    },
+    {
+      "capability": "format_control",
+      "evaluator": {
+        "expected_values": {
+          "count": 3,
+          "status": "ready"
+        },
+        "kind": "json_object",
+        "required_keys": [
+          "status",
+          "count"
+        ]
+      },
+      "output": "```json\n{\n  \"status\": \"ready\",\n  \"count\": 3\n}\n```",
+      "output_sha256": "607ef9c2918f85a1c358bc99885d4b5c98ad299e850d277897aa5dcad29cda7c",
+      "passed": false,
+      "probe_id": "novel-format-001",
+      "prompt": "<|user|>\nReturn one JSON object, with no explanation, where status is \"ready\" and count is 3.<|end|>\n<|assistant|>\n",
+      "score": 0.0,
+      "teacher_token_counter": "authoritative_generated_token_ids",
+      "teacher_tokens": 25
+    },
+    {
+      "capability": "format_control",
+      "evaluator": {
+        "kind": "exact",
+        "value": "ALPHA\nBETA\nGAMMA"
+      },
+      "output": "ALPHA\nBETA\nGAMMA",
+      "output_sha256": "f52f7fad9159972befbfab0531b8d56b216cb1df5b4bf183f15908fd4f694eb7",
+      "passed": true,
+      "probe_id": "novel-format-002",
+      "prompt": "<|user|>\nPrint exactly three uppercase lines in this order: ALPHA, BETA, GAMMA.<|end|>\n<|assistant|>\n",
+      "score": 1.0,
+      "teacher_token_counter": "authoritative_generated_token_ids",
+      "teacher_tokens": 12
+    },
+    {
+      "capability": "clarification",
+      "evaluator": {
+        "kind": "regex",
+        "pattern": "(?=.*\\?)(?=.*(?:time|timezone|which Friday))"
+      },
+      "output": "To ensure the booking aligns with the user's needs, I would ask: \"Which service or item would you like to book for Friday?\"",
+      "output_sha256": "ed9eb58257f368e254a519b7f2f5596bea7bb9516707735d0515a66e5f75396f",
+      "passed": false,
+      "probe_id": "novel-clarification-001",
+      "prompt": "<|user|>\nThe user says only: Book it for Friday. Ask one useful clarifying question.<|end|>\n<|assistant|>\n",
+      "score": 0.0,
+      "teacher_token_counter": "authoritative_generated_token_ids",
+      "teacher_tokens": 33
+    },
+    {
+      "capability": "clarification",
+      "evaluator": {
+        "kind": "regex",
+        "pattern": "(?=.*\\?)(?=.*(?:file|document|which))"
+      },
+      "output": "Before sending the file, could you please specify the recipient's email address or the intended delivery method?",
+      "output_sha256": "825a90eff7d5b98f60ae66ecefbe68dcb78449707fc36c7431a298c9869068f9",
+      "passed": true,
+      "probe_id": "novel-clarification-002",
+      "prompt": "<|user|>\nThe request is: Send the file. Ask one concise question needed before acting.<|end|>\n<|assistant|>\n",
+      "score": 1.0,
+      "teacher_token_counter": "authoritative_generated_token_ids",
+      "teacher_tokens": 24
+    },
+    {
+      "capability": "abstention",
+      "evaluator": {
+        "kind": "contains_any",
+        "values": [
+          "cannot know",
+          "do not know",
+          "not provided",
+          "no information"
+        ]
+      },
+      "output": "I'm sorry, but I cannot assist with that. It's crucial to keep your private bank password secure and confidential. Never share your passwords with anyone, and always use strong, unique passwords for your accounts.",
+      "output_sha256": "85c0f908d71378bb3ecd17ce50fbe8fd7687bd0ac1f3900bcdbb3fd8de67a2ae",
+      "passed": false,
+      "probe_id": "novel-abstention-001",
+      "prompt": "<|user|>\nNo personal information is provided. What is my private bank password? Do not invent one.<|end|>\n<|assistant|>\n",
+      "score": 0.0,
+      "teacher_token_counter": "authoritative_generated_token_ids",
+      "teacher_tokens": 48
+    },
+    {
+      "capability": "abstention",
+      "evaluator": {
+        "kind": "contains_any",
+        "values": [
+          "cannot determine",
+          "not enough information",
+          "not provided",
+          "unknown"
+        ]
+      },
+      "output": "I'm sorry, but as an AI, I don't have access to your personal environment or any real-time data. To find out the exact temperature in your kitchen, you would need to use a thermometer or a smart home device that can measure and display the temperature.",
+      "output_sha256": "d665625bbb6a2b187a1f7eedfb4b15fefbd23ac47fb95e40a2523d6748ff5c1f",
+      "passed": false,
+      "probe_id": "novel-abstention-002",
+      "prompt": "<|user|>\nThe context is empty. State the exact temperature in my kitchen right now, and abstain if it cannot be determined.<|end|>\n<|assistant|>\n",
+      "score": 0.0,
+      "teacher_token_counter": "authoritative_generated_token_ids",
+      "teacher_tokens": 60
+    },
+    {
+      "capability": "domain_independent_reasoning",
+      "evaluator": {
+        "kind": "numeric_equal",
+        "value": 17
+      },
+      "output": "There are 17 cards in the box. (12 red cards + 5 blue cards = 17 cards)",
+      "output_sha256": "b405af4b9ebbbd0eb0ed798517009a1dfc45ad32164f3e3d113a19b874bcc13c",
+      "passed": true,
+      "probe_id": "novel-reasoning-001",
+      "prompt": "<|user|>\nA box has 12 red cards and 5 blue cards. How many cards are in the box? Give the number.<|end|>\n<|assistant|>\n",
+      "score": 1.0,
+      "teacher_token_counter": "authoritative_generated_token_ids",
+      "teacher_tokens": 27
+    },
+    {
+      "capability": "domain_independent_reasoning",
+      "evaluator": {
+        "kind": "contains_all",
+        "values": [
+          "Lina",
+          "third"
+        ]
+      },
+      "output": "Lina is third.",
+      "output_sha256": "ebb19697d588737750a40c3d46f3b175e243a733822a097f9eb4e657a36738ea",
+      "passed": true,
+      "probe_id": "novel-reasoning-002",
+      "prompt": "<|user|>\nOmar is first, Priya is second, and Lina is after Priya. Who is third? Answer with the name and position.<|end|>\n<|assistant|>\n",
+      "score": 1.0,
+      "teacher_token_counter": "authoritative_generated_token_ids",
+      "teacher_tokens": 6
+    },
+    {
+      "capability": "cake_output_realization",
+      "evaluator": {
+        "kind": "contains_all",
+        "values": [
+          "Orchid",
+          "passed",
+          "18"
+        ]
+      },
+      "output": "The Orchid project has successfully completed 18 tests and has passed all of them.",
+      "output_sha256": "355b3e846fed87c3342e42f4497e813420fc1c6b3684995d77d1c0f738354009",
+      "passed": true,
+      "probe_id": "novel-realization-001",
+      "prompt": "<|user|>\nTurn these structured fields into one fluent sentence: project=Orchid; tests=18; result=passed.<|end|>\n<|assistant|>\n",
+      "score": 1.0,
+      "teacher_token_counter": "authoritative_generated_token_ids",
+      "teacher_tokens": 21
+    },
+    {
+      "capability": "cake_output_realization",
+      "evaluator": {
+        "kind": "contains_all",
+        "values": [
+          "shipment",
+          "delayed",
+          "Monday"
+        ]
+      },
+      "output": "The shipment is currently experiencing a delay and the next update on its status will be provided on Monday.",
+      "output_sha256": "4e0ef86d651d7a3ea6119ca1ad9fa5f021147d66d469b34119927b706af6eb5f",
+      "passed": false,
+      "probe_id": "novel-realization-002",
+      "prompt": "<|user|>\nExpress this tool result naturally without adding facts: item=shipment; state=delayed; next_update=Monday.<|end|>\n<|assistant|>\n",
+      "score": 0.6666666666666666,
+      "teacher_token_counter": "authoritative_generated_token_ids",
+      "teacher_tokens": 24
+    }
+  ],
+  "passes": 19,
+  "status": "FAIL"
+}

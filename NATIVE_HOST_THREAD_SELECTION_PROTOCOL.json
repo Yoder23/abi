@@ -1,0 +1,55 @@
+{
+  "format": "abi-layercake-native-host-thread-selection-protocol/1",
+  "status": "LOCKED_BEFORE_THREAD_PROFILE",
+  "purpose": "Select one CPU thread count on the unchanged sealed Phase 2 parent before benchmarking any promotable v24 ABI host. This bounded profile may change runtime scheduling only; it may not change weights, graphs, prompts, decoding, quality gates, or comparator evidence.",
+  "machine": {
+    "cpu": "Intel Core i9-12900H",
+    "physical_cores": 14,
+    "logical_processors": 20,
+    "operating_system": "Windows",
+    "execution_provider": "onnxruntime.CPUExecutionProvider"
+  },
+  "locked_inputs": {
+    "parent_artifact": "../layercake_release/artifacts/moonshot/phase2_shallow_sparse_pretrained/student2400-onnx-int8-v5-seed-9824",
+    "parent_runtime_graph_sha256": "aee6337743617adc3c1e1730bc6d5d8a62e74480fe2d993feaa4be89874832b5",
+    "comparator": "../layercake_release/results/moonshot/phase1/raw_runs/headline_qwen_product.json",
+    "prompt_manifest": "../layercake_release/results/moonshot/phase1/quality_suite_manifest.json",
+    "output_target_bytes": 128,
+    "observations_per_thread_count": 120,
+    "distinct_prompts": 100,
+    "repeated_prompts": 20
+  },
+  "thread_counts_in_execution_order": [
+    8,
+    10,
+    12,
+    14,
+    16,
+    20
+  ],
+  "environment_controls": {
+    "minimum_pre_run_thermal_zone_kelvin": 345,
+    "interpretation": "A run beginning above the threshold remains negative environmental evidence but is ineligible to select the promoted thread count.",
+    "no_process_termination": true,
+    "no_power_plan_change": true,
+    "no_affinity_change": true,
+    "record_pre_and_post_thermal_zone_temperature": true,
+    "record_pre_and_post_processor_frequency_and_performance": true
+  },
+  "selection_rule": {
+    "eligible_gate": "The run begins at or below 345 K and completes all 120 observations.",
+    "primary": "Highest candidate median generated UTF-8 bytes per complete-request wall second among eligible runs.",
+    "tie_breaker": "Lower median time to first output when median throughput differs by less than 1 percent.",
+    "promotion_requirement": "The selected parent configuration must itself pass both the median 2x Qwen gate and the paired-prompt bootstrap 95 percent lower-bound 2x gate. Otherwise no v24 speed claim may be promoted from this profile.",
+    "candidate_lock": "Benchmark the exact v24 graph at the selected count only. Do not choose a different candidate thread count after seeing candidate performance."
+  },
+  "unchanged_gates": {
+    "median_transformer_relative_throughput_min": 2.0,
+    "paired_prompt_bootstrap_lower_bound_min": 2.0,
+    "phase2_parent_throughput_retention_min": 0.95,
+    "rss_bytes_max_exclusive": 214990848,
+    "ttft_no_worse_than_transformer": true,
+    "quality_and_persistent_state_gates": "NATIVE_HOST_CERTIFICATION_PROTOCOL.json"
+  },
+  "final_test_accessed": false
+}

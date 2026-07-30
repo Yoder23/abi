@@ -1,0 +1,74 @@
+{
+  "format": "abi-layercake-native-host-train-calibrated-token-reserve-protocol/1",
+  "status": "PREREGISTERED_AFTER_ASCENDING_8192_FAILURE_AND_BEFORE_CALIBRATION",
+  "purpose": "Test whether a compact reserve of token IDs actually selected by the frozen full-vocabulary LayerCake host on train-split long-form prompts restores parent-like UTF-8 token efficiency without widening every decoding step.",
+  "triggering_evidence": {
+    "dynamic_train_output_base_1469": {
+      "sustained_median_generated_tokens": 271.5,
+      "sustained_median_bytes_per_second": 1187.3073229382412,
+      "status": "FAIL"
+    },
+    "dynamic_ascending_base_4096": {
+      "sustained_median_generated_tokens": 263.0,
+      "sustained_median_bytes_per_second": 1010.4269866452797,
+      "status": "FAIL"
+    },
+    "dynamic_ascending_base_8192": {
+      "sustained_median_generated_tokens": 262.5,
+      "sustained_median_bytes_per_second": 765.2392935877609,
+      "status": "FAIL"
+    },
+    "sealed_parent_sustained_median_generated_tokens": 167.5,
+    "decision": "The deterministic ascending expansion branch is closed because 6,723 extra base IDs did not materially reduce generated-token count and made per-step execution slower."
+  },
+  "locked_sources": {
+    "full_vocabulary_calibration_host": "results/abi_moonshot/native_hosts/full-budget3-quant-robust-output-balanced-seed9824-v24-onnx-int8-v9",
+    "full_vocabulary_runtime_graph_sha256": "caef0931123649ea7f89eb6d3282d8460e684db78060c6e9e090387d3fb84e6f",
+    "dynamic_graph_source": "results/abi_moonshot/native_hosts/full-budget3-quant-robust-output-balanced-seed9824-v24-onnx-int8-v19-dynamic-train-output-prompt-union",
+    "dynamic_runtime_graph_sha256": "f7f61a2704f0a7901754932cb0af31cf8bfb4cea6a75b1a920e257368fd8bf59",
+    "base_vocabulary_id": "train_outputs",
+    "base_token_count": 1469,
+    "general_curriculum": "../layercake_release/data/moonshot/phase2/instruction_curriculum_semantic_control_v2.jsonl",
+    "general_curriculum_sha256": "bae6c1fe300a0214c1f6cb19a8c8eeee4f0b75681290be56f258a247cd488e53",
+    "speed_prompt_manifest": "../layercake_release/results/moonshot/phase1/quality_suite_manifest.json",
+    "speed_prompt_manifest_sha256": "dd5f228bd92eb2d52fac29186adfe89261d0859e719efc877dd206470edffecb"
+  },
+  "calibration": {
+    "eligible_source_split": "train",
+    "selection_order": "ascending SHA-256 of UTF-8 row id, then prompt SHA-256",
+    "prompt_transform": "Append exactly: ' Continue for at least 220 words so sustained decoding can be measured.'",
+    "output_target_bytes": 1024,
+    "runtime_threads": 16,
+    "runtime_decoding": "unchanged deterministic greedy with the sealed repetition controls",
+    "skip_rule": "Skip and record a row only if the transformed prompt activates a fixed symbolic handler or cannot reach 1,024 bytes inside the context boundary.",
+    "validation_prompt_overlap_allowed": false,
+    "speed_prompt_overlap_allowed": false,
+    "final_test_accessed": false,
+    "allowed_payload": "Authoritative generated token IDs from the frozen LayerCake host; no logits, activations, new weights, validation outputs, benchmark outputs, or source-teacher payload."
+  },
+  "nested_budgets": [
+    {
+      "id": "train_longform_32",
+      "construction": "Union the locked 1,469 train-output IDs with every authoritative output token ID selected on the first 32 eligible hash-ordered train prompts."
+    },
+    {
+      "id": "train_longform_128",
+      "construction": "Union the previous budget with every authoritative output token ID selected on the first 128 eligible hash-ordered train prompts."
+    }
+  ],
+  "execution_and_stop_rule": {
+    "order": "ascending",
+    "first_screen": "Run the unchanged 40-observation, 20-distinct-prompt, 1,024-byte sustained benchmark.",
+    "speed_pass": [
+      "median throughput ratio to Qwen at least 2.0",
+      "paired-prompt bootstrap 95 percent lower bound at least 2.0",
+      "at least 95 percent sealed Phase 2 parent median throughput",
+      "all TTFT, RSS, active-memory, persistent-state, UTF-8, and collapse gates pass"
+    ],
+    "after_speed_pass": "Run all 1,400 ABI validation rows, all 420/43,089 general-English validation rows, the 120-observation headline benchmark, physical proof, and identity on that exact artifact.",
+    "early_stop": "Stop at the first nested budget passing sustained and every repeated promotion gate.",
+    "failure": "If train_longform_128 fails sustained speed, close this architecture and retain all negative evidence before testing a different measured architecture."
+  },
+  "claim_boundary": "This procedure selects a compact tested token reserve, not a globally minimum vocabulary. Promotion still requires the exact same final teacher-free host to pass every locked quality, identity, physical sparsity, speed, TTFT, RSS, collapse, and three-seed gate.",
+  "final_test_accessed": false
+}

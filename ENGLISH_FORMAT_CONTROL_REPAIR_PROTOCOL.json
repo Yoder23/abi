@@ -1,0 +1,56 @@
+{
+  "format": "abi-layercake-english-format-control-repair-protocol/1",
+  "status": "PREREGISTERED_AFTER_VALIDATION_FAILURE_BEFORE_REPAIR_DERIVATION",
+  "claim_boundary": "This validation-selected repair targets exact typed JSON realization of prompt-supplied item and count fields in one search-supported schema. It does not add facts, retain teacher responses, establish broad format control or English fluency, or use final-test data.",
+  "triggering_negative_evidence": {
+    "path": "results/abi_moonshot/layercake_hosts/full-budget3-hybrid-identifier-safe-seed9826-v17-validation-full.json",
+    "evidence_sha256": "af29c7e601fb76e7a3d366126471f76a09bbfd7f059e40dcb6aec2f5a6bf5073",
+    "layercake_passes": 1317,
+    "source_passes": 1393,
+    "source_passing_regressions": 83,
+    "format_control_passes": 17,
+    "automatic_route_accuracy": 1.0,
+    "failure_mechanism": "seed-sensitive corruption and type instability while realizing prompt-supplied item and integer count fields as JSON"
+  },
+  "data_boundary": {
+    "handler_installation_evidence": "100 search-split format-control records sharing the exact item-and-count JSON schema",
+    "validation_split_used_for_architecture_selection": true,
+    "validation_answers_copied_or_stored": false,
+    "final_test_accessed": false
+  },
+  "repair": {
+    "neural_parameters_changed": false,
+    "frozen_parent_changed": false,
+    "teacher_present_at_inference": false,
+    "source_transformer_blocks_retained": 0,
+    "maximum_active_symbolic_handlers_per_sequence": 1,
+    "new_search_gated_handlers": [
+      "exact_json_item_count"
+    ],
+    "output_contract": {
+      "item": "prompt-supplied string copied byte-for-byte",
+      "count": "prompt-supplied base-10 digits emitted as a JSON integer"
+    },
+    "previous_handlers_preserved": [
+      "conservative_grammar_inflection",
+      "email_fields_to_polite_message",
+      "structured_fields_to_sentence",
+      "labeled_event_ordering",
+      "exact_two_line_format",
+      "project_savings_summary",
+      "professional_file_request"
+    ]
+  },
+  "reproduction": {
+    "seeds": [
+      9824,
+      9825,
+      9826
+    ],
+    "full_validation_prompts_per_seed": 1400,
+    "source_passing_regressions": 0,
+    "automatic_route_accuracy": 1.0,
+    "all_capabilities_required": true
+  },
+  "stop_rule": "If any of the three paired seeds retains a source-passing regression, the repaired English core is not reproducible and final-test remains unopened."
+}

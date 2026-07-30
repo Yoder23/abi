@@ -1,0 +1,67 @@
+{
+  "format": "abi-layercake-native-host-adaptive-shortlist-protocol/1",
+  "status": "PREREGISTERED_AFTER_TOKEN_RESERVE_BRANCH_FAILURE_AND_BEFORE_FACTOR_OR_TRACE_EVALUATION",
+  "purpose": "Recover the frozen full-vocabulary head's token choices with a low-rank all-vocabulary retrieval stage followed by exact int8 reranking of only a bounded shortlist, byte fallback, EOS, and current prompt IDs.",
+  "measured_trigger": {
+    "sealed_parent_sustained_median_generated_tokens": 167.5,
+    "dynamic_train_output_1469_median_generated_tokens": 271.5,
+    "dynamic_train_longform_32_median_generated_tokens": 245.0,
+    "dynamic_train_longform_128_median_generated_tokens": 251.0,
+    "finding": "Static or calibrated candidate reserves change the argmax trajectory. Candidate-set expansion adds per-token cost without restoring the parent token sequence."
+  },
+  "architecture": {
+    "source_graph": "results/abi_moonshot/native_hosts/full-budget3-quant-robust-output-balanced-seed9824-v24-onnx-int8-v18-dynamic-byte-prompt-union",
+    "source_graph_sha256": "f7f61a2704f0a7901754932cb0af31cf8bfb4cea6a75b1a920e257368fd8bf59",
+    "exact_weight_source": "The existing 50,257 by 768 signed-int8 tied input embedding and its per-row scales.",
+    "retrieval_factorization": "Deterministic uncentered randomized SVD of the dequantized tied embedding, seed 9824, five power iterations.",
+    "retrieval_execution": "Project the current 768-dimensional output state into the locked rank, score every vocabulary ID in that low-rank space, and select TopK.",
+    "exact_rerank": "Union TopK with all 256 byte-fallback IDs, EOS, and exact token IDs in the current prompt; gather the original int8 embedding rows and original row scales; run the unchanged exact MatMulInteger output path.",
+    "runtime_mapping": "The graph returns the authoritative global candidate IDs used for each step. Repetition and no-repeat controls apply to every occurrence if candidate IDs are duplicated.",
+    "weights_changed": false,
+    "layercake_abi_changed": false,
+    "source_teacher_present": false
+  },
+  "train_only_trace_screen": {
+    "source": "The first 32 records in results/abi_moonshot/native_hosts/v24-train-longform-token-calibration-128.json",
+    "source_split": "train",
+    "trajectory": "Replay the frozen full-vocabulary LayerCake host's authoritative generated IDs and inspect output states in memory only.",
+    "validation_rows_seen": 0,
+    "benchmark_rows_seen": 0,
+    "final_test_rows_seen": 0,
+    "persistent_hidden_activations_stored": 0,
+    "metric": "Fraction of repetition-controlled full-head selected token IDs contained in the approximate TopK union locked byte/EOS/prompt IDs."
+  },
+  "locked_configurations": [
+    {
+      "id": "rank32_top64",
+      "rank": 32,
+      "top_k": 64
+    },
+    {
+      "id": "rank64_top128",
+      "rank": 64,
+      "top_k": 128
+    },
+    {
+      "id": "rank128_top256",
+      "rank": 128,
+      "top_k": 256
+    }
+  ],
+  "execution_and_stop_rule": {
+    "order": "ascending",
+    "trace_requirement": "Do not build a configuration with train-trace selected-token recall below 0.99 unless every smaller configuration also fails and it is the final locked endpoint.",
+    "first_runtime_screen": "Run the unchanged 40-observation, 20-distinct-prompt, 1,024-byte sustained benchmark.",
+    "runtime_pass": [
+      "median throughput ratio to Qwen at least 2.0",
+      "paired-prompt bootstrap 95 percent lower bound at least 2.0",
+      "at least 95 percent sealed Phase 2 parent median throughput",
+      "all TTFT, RSS, active-memory, persistent-state, UTF-8, and collapse gates pass"
+    ],
+    "after_runtime_pass": "Run all 1,400 ABI validation rows, all 420/43,089 general-English validation rows, the 120-observation headline benchmark, physical proof, identity, and adversarial tests on that exact graph.",
+    "early_stop": "Stop at the first configuration passing the trace screen and every runtime and quality gate.",
+    "failure": "If rank128_top256 fails, close adaptive low-rank shortlisting and preserve all factors, traces, artifacts, and negative evidence before authorizing a different architecture."
+  },
+  "claim_boundary": "Approximate retrieval is never called lossless. Only exact reranking uses original output rows. Promotion requires the same final host to satisfy the bounded semantic suite and exact package/ABI identity gates.",
+  "final_test_accessed": false
+}

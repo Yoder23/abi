@@ -1,0 +1,61 @@
+{
+  "format": "abi-layercake-native-host-longform-sequence-repair-protocol/1",
+  "status": "PREREGISTERED_AFTER_CORE_REALIZATION_DIAGNOSTIC_AND_BEFORE_PARENT_TRAJECTORY_GENERATION",
+  "purpose": "Repair the measured long-form exposure gap in the existing capability cakes without changing the frozen English transformer, classifier, ABI, symbolic substrate, imported artifact, or source model.",
+  "triggering_evidence": {
+    "existing_training_max_tokens": 192,
+    "existing_autonomous_recovery_horizons": [
+      4,
+      8,
+      16
+    ],
+    "sustained_output_target_bytes": 1024,
+    "v24_full_head_median_generated_tokens": 249.5,
+    "sealed_parent_median_generated_tokens": 167.5,
+    "cake_first_decision_only_median_generated_tokens": 203.0,
+    "finding": "Turning the cake off after the first output decision recovered 18.64 percent of token count, localizing the remaining drift to long-form cake exposure rather than tokenizer coverage or transformer weights."
+  },
+  "trajectory_data": {
+    "teacher": "sealed LayerCake English parent, not an external source LLM",
+    "parent_artifact": "../layercake_release/artifacts/moonshot/phase2_shallow_sparse_pretrained/student2400-onnx-int8-v5-seed-9824",
+    "parent_checkpoint_sha256": "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1",
+    "source_prompts": "First 128 records from the immutable train-only calibration evidence, retaining the same hash order and long-form suffix.",
+    "source_split": "train",
+    "output_target_bytes": 1024,
+    "curriculum_construction": "Replace exactly those 128 train rows in a copied curriculum with the transformed prompt and sealed-parent autonomous response; preserve all 1,972 remaining train rows and all 420 instruction-validation rows byte-semantically.",
+    "validation_rows_seen": 0,
+    "speed_benchmark_rows_seen": 0,
+    "final_test_rows_seen": 0
+  },
+  "locked_training": {
+    "source_host": "results/abi_moonshot/layercake_hosts/full-budget3-quant-robust-output-balanced-seed9824-v24",
+    "training_bundle": "results/abi_moonshot/multisource-english-python-math-chemistry-civics-balanced-passing-search.abix",
+    "seed": 9824,
+    "device": "cuda",
+    "steps": 800,
+    "abi_batch_size": 2,
+    "general_batch_size": 2,
+    "learning_rate": 0.00002,
+    "classifier_loss_weight": 0.1,
+    "anchor_loss_weight": 0.001,
+    "abi_prompt_overlap_weight": 1.0,
+    "max_tokens": 512,
+    "autonomous_recovery_start_step": 200,
+    "autonomous_recovery_interval": 4,
+    "autonomous_recovery_horizons": [
+      32,
+      64
+    ],
+    "global_int8_input_fake_quantization": true,
+    "trainable": "existing task cakes and existing training-only LoRA state only",
+    "frozen": "transformer base, task classifier, symbolic substrate, ABI, imported ABIX"
+  },
+  "execution_and_stop_rule": {
+    "after_training": "Run the 1,400-row ABI validation and 420-row held-out general validation on the PyTorch host before native export.",
+    "native_screen": "Export the exact repaired host, derive the already-proved dynamic train-output prompt-union graph, and run the unchanged 1,024-byte sustained benchmark.",
+    "promotion": "Only continue to full headline, physical, identity, adversarial, and three-seed certification if the same exact repaired host passes every quality and speed gate.",
+    "failure": "If the repaired host fails ABI/general quality or sustained speed, preserve it as negative evidence and do not sweep steps, learning rates, horizons, or nearby variants."
+  },
+  "claim_boundary": "The parent trajectories teach autonomous English realization to already-installed small cakes. They do not import external knowledge, do not retrain the English transformer, and do not establish global minimum data.",
+  "final_test_accessed": false
+}

@@ -1,0 +1,57 @@
+{
+  "failed_predecessor": {
+    "artifact": "results/abi_moonshot/layercake_hosts/full-budget3-fused-preserved-seed9824-v22",
+    "fp32_validation_evidence_sha256": "2fa021ff2dd5e04fb4609f338dc3f78808303bfe406750d6340684fec3a6c881",
+    "native_validation_evidence_sha256": "47549535a8886785638aa68cbc9dbf43cea935997895fcb0924c71fd1521ed89",
+    "observed_fp32_source_passing_regressions": 26,
+    "observed_native_source_passing_regressions": 33,
+    "rejected_objective": "equal_weight_masked_hidden_state_mse_in_existing_task_cakes"
+  },
+  "final_test_accessed": false,
+  "format": "abi-layercake-general-output-balancing-protocol/1",
+  "gates": [
+    "The exact FP32 host must pass all 1400 locked ABI validation rows with zero source-passing regressions and route accuracy 1.0.",
+    "The exact FP32 host must retain at least 0.95 parent top-1 agreement on all 420 held-out general-English instruction-validation rows.",
+    "The exact native host must repeat both complete quality gates after quantization.",
+    "Physical sparse execution, package identity, autonomous coherence, repetition, CPU throughput, TTFT, RSS, cache persistence, and 1024-byte sustained throughput must pass without relaxation.",
+    "No final-test row may be opened until the same native artifact has cleared every preceding gate."
+  ],
+  "invariants": [
+    "Initialize from the ABI-passing fused v21 host, not the rejected v22 weights.",
+    "Update only the existing rank-16 LoRA matrices and existing rank-64 task cakes.",
+    "Keep the sealed parent transformer bytes, task classifier, symbolic substrate, imported ABI archive, and canonical ABI unchanged.",
+    "Use only ABI budget-3 search rows and the sealed parent's 2100 general-English train rows.",
+    "Use no ABI validation, general instruction-validation, speed-benchmark, or final-test row for optimization.",
+    "Retain a single physically active task cake and add no runtime module."
+  ],
+  "promotion_claim_boundary": "Passing establishes bounded retention on the locked ABI and parent-relative English suites. It does not establish universal semantic identity or a globally minimal imported-information budget.",
+  "source_host": {
+    "artifact": "results/abi_moonshot/layercake_hosts/full-budget3-fused-singlecake-seed9824-v21",
+    "manifest_sha256": "2f74bd0629d26fc386b9afa91b93bf86420efaac2dd6a8c859b609ec5e4c2e82",
+    "native_validation_evidence_sha256": "6b978009040dfaea51ca3dce7cf3bda433fc6d7f52ea81f1f9744d69770e9b28"
+  },
+  "status": "PREREGISTERED_BEFORE_OUTPUT_BALANCING",
+  "training": {
+    "abi_batch_size_per_step": 4,
+    "abi_prompt_overlap_weight": 1.0,
+    "anchor_loss_weight": 0.0001,
+    "classifier_loss_weight": 0.1,
+    "device": "cuda",
+    "general_batch_size_per_step": 4,
+    "learning_rate": 0.00005,
+    "loss": "equal_weight_per_record_response_token_cross_entropy_for_ABI_and_general_outputs_plus_route_and_source_anchor_terms",
+    "maximum_tokens": 192,
+    "prefix_recovery": {
+      "horizons": [
+        4,
+        8,
+        16
+      ],
+      "interval": 8,
+      "start_step": 400
+    },
+    "seed": 9824,
+    "steps": 2400,
+    "weight_decay": 0.0
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "format": "abi-layercake-native-host-route-cake-kernel-fusion-protocol/1",
+  "status": "PREREGISTERED_AFTER_V44_SUSTAINED_SPEED_FAILURE_BEFORE_GRAPH_FUSION",
+  "purpose": "Perform one bounded, profiler-supported runtime fusion after the exact quality-passing v44 artifact missed the sealed-parent sustained-throughput retention floor by less than one percentage point.",
+  "locked_source": {
+    "artifact": "results/abi_moonshot/native_hosts/full-budget3-longform-sequence-repaired-seed9824-v28-onnx-int8-v44-route-cake-int8-exact-supplied-text",
+    "runtime_graph_sha256": "e66fcb82bf429d323249522c6fac69d903809138729034839a38c74246839d8f",
+    "functional_quality_evidence_sha256": "bde4b332f5d5f30f2b9463bca03fcbcc4410983d8296dc79370aed14e7404070",
+    "general_preservation_evidence_sha256": "27421b7dda2f4d9cdd69c26dbbd61a8e24ccc97742627e1dbc8ea08e5743c4da",
+    "headline_speed_evidence_sha256": "94795d9dd0b974da6eb648148fade3a89f0bca06c98094322bb71cb2a62a0a2d",
+    "sustained_speed_evidence_sha256": "d3b316a843f5f9b7d98221f2ff4480e0211cd25f2492800ba3bf3dfe54724b8d",
+    "sustained_bytes_per_second": 1561.4311739151904,
+    "sealed_parent_retention": 0.9431389656243966,
+    "required_retention": 0.95,
+    "qwen_ratio": 2.8650541235352778
+  },
+  "profile_finding": {
+    "profile": "results/abi_moonshot/native_hosts/v44-sustained-runtime-profile.pstats",
+    "onnx_session_run_cumulative_seconds": 0.434,
+    "generation_cumulative_seconds": 0.466,
+    "onnx_share_of_generation": 0.9313304721030042,
+    "unfused_task_cake_sequence_per_projection": [
+      "DynamicQuantizeLinear",
+      "MatMulInteger",
+      "Cast",
+      "Mul activation scale",
+      "Mul route-selected weight scale"
+    ],
+    "available_kernel": "com.microsoft.DynamicQuantizeMatMul/1"
+  },
+  "single_allowed_change": {
+    "down_projection": "Replace the five-operator quantized arithmetic sequence with one DynamicQuantizeMatMul using the identical activation, gathered int8 weight, gathered per-channel scale, and zero point.",
+    "up_projection": "Apply the identical replacement independently.",
+    "route_scale_gathers_preserved": 2,
+    "weights_changed": false,
+    "quantization_scales_changed": false,
+    "tokenizer_changed": false,
+    "vocabulary_changed": false,
+    "decoding_changed": false,
+    "host_changed": false,
+    "canonical_abi_changed": false
+  },
+  "screen_order": [
+    "Validate the derived ONNX graph and run paired active-state equivalence probes.",
+    "Require exact generated outputs, token IDs, routes, ABI-state arrays, and cache arrays on the locked diagnostic prompts.",
+    "Run the unchanged 40-observation sustained benchmark.",
+    "Only after speed passes, rerun full functional quality, general preservation, headline performance, physical proof, identity, and adversarial generation."
+  ],
+  "promotion_rule": "The exact fused artifact must preserve every v44 gate and reach at least 95 percent of the sealed Phase 2 parent sustained median, at least 2x Qwen with paired bootstrap lower bound at least 2x, lower active memory, no worse TTFT, and RSS below the locked ceiling.",
+  "failure_rule": "Any state/output mismatch or failed gate closes this one fusion branch; do not sweep session knobs or arithmetic variants.",
+  "final_test_accessed": false
+}

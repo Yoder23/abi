@@ -32,6 +32,39 @@ EXPECTED_TOP1 = 0.8508
 EXPECTED_JS = 0.01391
 EXPECTED_ENT = 0.2256
 
+KEY_ALIASES = {
+    "top5_agreement": [
+        ("nib_official", "mean_top5"),
+        ("nib_l2", "mean_top5_overlap"),
+    ],
+    "top1_agreement": [
+        ("nib_official", "mean_top1"),
+        ("nib_l2", "mean_top1_agree"),
+    ],
+    "js_divergence": [
+        ("nib_official", "mean_js"),
+        ("nib_l2", "mean_js"),
+    ],
+    "entropy_diff": [
+        ("nib_official", "mean_ent"),
+        ("nib_l2", "mean_entropy_diff"),
+    ],
+}
+
+
+def get_metric(result, key):
+    # Support legacy flat keys, older nested keys, and current published schema.
+    if key in result:
+        return result[key]
+    for section in result.values():
+        if isinstance(section, dict) and key in section:
+            return section[key]
+    for section_key, metric_key in KEY_ALIASES.get(key, []):
+        section = result.get(section_key)
+        if isinstance(section, dict) and metric_key in section:
+            return section[metric_key]
+    raise KeyError(f"Key '{key}' not found in result file")
+
 
 class TestResultFileExists:
     def test_result_file_present(self):
@@ -51,13 +84,7 @@ class TestNIBThresholds:
         self.result = load_result()
 
     def _get(self, key):
-        # Support both flat and nested result formats
-        if key in self.result:
-            return self.result[key]
-        for section in self.result.values():
-            if isinstance(section, dict) and key in section:
-                return section[key]
-        raise KeyError(f"Key '{key}' not found in result file")
+        return get_metric(self.result, key)
 
     def test_top5_passes_threshold(self):
         top5 = self._get("top5_agreement")
@@ -91,12 +118,7 @@ class TestPublishedValues:
         self.result = load_result()
 
     def _get(self, key):
-        if key in self.result:
-            return self.result[key]
-        for section in self.result.values():
-            if isinstance(section, dict) and key in section:
-                return section[key]
-        raise KeyError(f"Key '{key}' not found in result file")
+        return get_metric(self.result, key)
 
     def test_top5_matches_published(self):
         assert abs(self._get("top5_agreement") - EXPECTED_TOP5) < 1e-4

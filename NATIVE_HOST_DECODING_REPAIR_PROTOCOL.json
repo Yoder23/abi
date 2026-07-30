@@ -1,0 +1,27 @@
+{
+  "base_native_artifact": "results/abi_moonshot/native_hosts/full-budget3-hybrid-schema-safe-seed9824-v18-onnx-int8-v3",
+  "base_runtime_graph_sha256": "0b0a597bf273c41cbde04c0b8cc6253931cbaf7e08bf36e46f197982cabdd4b6",
+  "change": {
+    "algorithm": "deterministic_greedy_with_repetition_controls",
+    "no_repeat_ngram_size": 4,
+    "repetition_penalty": 1.15
+  },
+  "evidence_boundary": {
+    "failed_headline_benchmark": "results/abi_moonshot/native_hosts/full-budget3-hybrid-schema-safe-seed9824-v18-onnx-int8-v3-benchmark-128.json",
+    "maximum_observed_repetition_rate": 0.96,
+    "minimum_observed_unique_4gram_rate": 0.04,
+    "median_bytes_per_second": 804.891854823851,
+    "phase2_throughput_retained_ratio": 0.7281389461719835
+  },
+  "final_test_accessed": false,
+  "format": "abi-layercake-native-host-decoding-repair-protocol/1",
+  "gates": [
+    "Rerun all 1400 locked validation cases; require all pass, zero source regressions, and route accuracy 1.0.",
+    "Rerun physical sparsity and identity verification.",
+    "Rerun the full 128-byte and, only after it passes, 1024-byte benchmark schedules.",
+    "Apply every speed, TTFT, RSS, cache, and collapse threshold without relaxation."
+  ],
+  "rationale": "The failed benchmark directly observed deterministic token loops, including one 128-token response containing only 128 bytes. The chosen policy is the sealed Phase 2 parent runtime policy rather than a new sweep.",
+  "status": "PREREGISTERED_BEFORE_DECODING_REPAIR_EXPORT",
+  "weights_changed": false
+}

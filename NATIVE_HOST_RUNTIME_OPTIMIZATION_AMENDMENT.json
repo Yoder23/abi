@@ -1,0 +1,38 @@
+{
+  "amends": "NATIVE_HOST_CERTIFICATION_PROTOCOL.json",
+  "benchmark_output_quality_gates_locked_before_benchmark": {
+    "all_outputs_meet_byte_target": true,
+    "all_outputs_valid_utf8": true,
+    "maximum_repetition_rate": 0.6,
+    "minimum_printable_character_rate": 0.98,
+    "minimum_unique_4gram_rate": 0.4,
+    "minimum_word_diversity": 0.1
+  },
+  "bounded_changes": [
+    {
+      "change": "Force only the one-time LoRA matrix fusion to one CPU thread and restore the caller setting.",
+      "evidence": "The certified fused hash reproduced at 1, 2, 4, 8, 16, and 32 threads, but not at exactly 14 threads.",
+      "scope": "load-time identity stability only"
+    },
+    {
+      "change": "Replace global per-tensor input-embedding int8 scaling with one int8 scale per token row.",
+      "evidence": "FP32 and matrix-int8 graphs passed both native regressions; only the globally scaled embedding graph failed them.",
+      "scope": "input-embedding quantization only"
+    },
+    {
+      "change": "Make package-level training and artifact imports lazy and move symbolic inference into a dependency-light module.",
+      "evidence": "The eager package initializer loaded PyTorch before native inference.",
+      "scope": "Python import and deployment RSS only"
+    }
+  ],
+  "failed_evidence_preserved": {
+    "global_embedding_int8_validation": "results/abi_moonshot/native_hosts/full-budget3-hybrid-schema-safe-seed9824-v18-onnx-int8-v2-validation-full.json",
+    "initial_fusion_failure": "results/abi_moonshot/native_hosts/full-budget3-hybrid-schema-safe-seed9824-v18-onnx-int8-v1/EXPORT_FAILURE.json"
+  },
+  "final_test_accessed": false,
+  "format": "abi-layercake-native-host-runtime-optimization-amendment/1",
+  "promotion_boundary": "Only v3 or a later immutable artifact may be promoted, and only after the unchanged native quality, physical sparsity, identity, Phase 2 retention, Qwen-relative speed, TTFT, RSS, and collapse gates all pass.",
+  "reason": "The preregistered per-tensor embedding export failed 2 of 1400 native validation cases and the eager ABI package initializer exceeded the process RSS gate.",
+  "replacement_embedding_quantization": "signed int8 per token row, gathered before dequantization",
+  "status": "LOCKED_AFTER_FAILED_V2_VALIDATION_AND_BEFORE_PERFORMANCE_BENCHMARK"
+}

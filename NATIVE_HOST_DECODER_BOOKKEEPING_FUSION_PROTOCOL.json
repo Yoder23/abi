@@ -1,0 +1,49 @@
+{
+  "format": "abi-layercake-native-host-decoder-bookkeeping-fusion-protocol/1",
+  "status": "PREREGISTERED_AFTER_V30_CORRECTED_RUNNER_NEAR_MISS_AND_BEFORE_DECODER_CHANGE",
+  "purpose": "Fuse redundant Python decoder bookkeeping while preserving the exact graph, weights, vocabulary, greedy policy, authoritative token IDs, and byte output.",
+  "locked_candidate": {
+    "artifact": "results/abi_moonshot/native_hosts/full-budget3-longform-sequence-repaired-seed9824-v27-onnx-int8-v30-dynamic-train-output-prompt-union",
+    "runtime_graph_sha256": "51db1e54062ae0fcb32971737e20746567d6cea4fec7fb28e986c21ff2859850",
+    "sustained_evidence_sha256_before_change": "1ecd530a7d13d53c68c7155ce471131e43d19839bc6948b39d35e575993f3752",
+    "median_bytes_per_second_before_change": 1488.1760728358997,
+    "qwen_ratio_before_change": 2.7306390862775323,
+    "sealed_parent_retention_before_change": 0.8988912642765399
+  },
+  "triggering_profile": {
+    "prompt_id": "sustained-functional-01-03",
+    "generated_tokens": 192,
+    "total_profiled_seconds": 0.617,
+    "onnx_graph_cumulative_seconds": 0.538,
+    "token_selection_cumulative_seconds": 0.044,
+    "accumulated_prefix_decode_cumulative_seconds": 0.015,
+    "measured_redundancy": [
+      "The same set of previously generated token IDs was reconstructed and mapped on every step.",
+      "The entire generated token prefix was decoded on every step only to determine whether the byte target had been reached.",
+      "The no-repeat n-gram successor table was rescanned from the full prefix on every step."
+    ]
+  },
+  "single_allowed_change": {
+    "change": "Maintain sequence-local seen-token indices and n-gram successor state incrementally; accumulate exact GPT-2 ByteLevel token bytes and invoke UTF-8 replacement decoding only near the byte boundary.",
+    "requirements": [
+      "fall back to the existing general selection logic whenever a token-local map is not stable",
+      "validate the tokenizer decoder is ByteLevel before direct byte accumulation",
+      "preserve special-token skipping",
+      "include the exact runtime runner SHA-256 in emitted evidence"
+    ],
+    "forbidden": [
+      "checkpoint changes",
+      "ONNX graph changes",
+      "output-vocabulary changes",
+      "logit changes",
+      "penalty changes",
+      "n-gram-policy changes",
+      "prompt-specific fast paths",
+      "final-test access"
+    ]
+  },
+  "semantic_gate": "All 40 scheduled output SHA-256 values, generated-token counts, routes, and cache lengths must equal the pre-change v30 sustained evidence exactly.",
+  "speed_gate": "The unchanged sustained benchmark must pass every gate, including at least 95 percent sealed-parent throughput, at least 2x Qwen median, and paired bootstrap lower bound at least 2x.",
+  "failure_rule": "If exact equivalence fails, reject the runtime change. If equivalence passes but speed fails, preserve the result and profile the ONNX graph; do not alter decoding semantics.",
+  "final_test_accessed": false
+}

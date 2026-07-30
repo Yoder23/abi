@@ -1,0 +1,56 @@
+{
+  "format": "abi-layercake-native-host-exact-supplied-text-conformance-protocol/1",
+  "status": "PREREGISTERED_AFTER_NATIVE_QUANTIZATION_FAILURE_BEFORE_REPAIR_IMPLEMENTATION",
+  "purpose": "Repair one export-sensitive prompt-grounding regression with a strict, teacher-free conformance rule learned from the already locked search-only acquisition schema.",
+  "triggering_negative_evidence": {
+    "native_artifact": "results/abi_moonshot/native_hosts/full-budget3-longform-sequence-repaired-seed9824-v27-onnx-int8-v38-route-cake-int8-typed",
+    "validation_evidence": "results/abi_moonshot/native_hosts/full-budget3-longform-sequence-repaired-seed9824-v27-onnx-int8-v38-route-cake-int8-typed-validation-full.json",
+    "validation_evidence_sha256": "da481fb5cc02c496d60203b51e383c9c19230d05392e6d046888c212b455fbde",
+    "passes": 1399,
+    "observations": 1400,
+    "failed_probe_id": "english-grounding-148-v2",
+    "expected": "GROUND-148-NAIROBI",
+    "native_output": "GROUND-148IROBI",
+    "pytorch_host_output": "GROUND-148-NAIROBI",
+    "localization": "The v27 PyTorch host and earlier v24/v19 native lineages pass. The v27-derived full native export v28, dynamic native export v30, cake-int8 v38, and route-local-precision v39 all reproduce the same failure."
+  },
+  "data_boundary": {
+    "schema_support_must_come_from": "verified search-only acquisition bundle",
+    "validation_selected_repair": true,
+    "validation_answers_copied_or_stored": false,
+    "teacher_text_retained_at_inference": false,
+    "final_test_accessed": false
+  },
+  "single_allowed_change": {
+    "handler": "exact_supplied_text",
+    "accepted_grammar": "Reply with exactly <single-line payload> and nothing else.",
+    "maximum_payload_characters": 256,
+    "payload_source": "current user prompt only",
+    "required_route": 4,
+    "maximum_active_symbolic_handlers_per_sequence": 1,
+    "neural_parameters_changed": false,
+    "runtime_graph_changed_by_handler": false,
+    "source_teacher_present_at_inference": false
+  },
+  "adversarial_requirements": [
+    "Reject wrong capitalization.",
+    "Reject leading or trailing text.",
+    "Reject empty payloads.",
+    "Reject payloads longer than 256 characters.",
+    "Reject carriage returns and newlines.",
+    "Reject route mismatches.",
+    "Copy allowed UTF-8 punctuation byte-exactly.",
+    "Do not retain any search or validation answer in the handler payload."
+  ],
+  "screen_order": [
+    "Unit-test training/runtime symbolic implementation equivalence and adversarial non-activation.",
+    "Derive a new immutable host delta whose non-symbolic tensors are byte-identical to v27.",
+    "Export and optimize a newly hash-bound native artifact.",
+    "Run all 1,400 locked ABI validation rows and require zero failures.",
+    "Run all 420 general-English validation prompts and require at least 0.95 sealed-parent token agreement.",
+    "Run physical, identity, autonomous-collapse, CPU speed, TTFT, and RSS gates."
+  ],
+  "promotion_rule": "Promotion is allowed only if the same exact native artifact passes every locked gate; this repair alone cannot establish broad grounding, fluency, semantic identity, or final-test performance.",
+  "failure_rule": "Any new regression, unsafe activation, stale hash binding, or retained teacher text closes this repair branch.",
+  "final_test_accessed": false
+}

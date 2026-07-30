@@ -1,0 +1,55 @@
+{
+  "format": "abi-layercake-native-host-repaired-frequency-reserve-protocol/1",
+  "status": "PREREGISTERED_AFTER_LONGFORM_REPAIR_QUALITY_PASS_SPEED_FAIL_AND_BEFORE_FREQUENCY_SELECTION",
+  "purpose": "Retain the sequence-efficiency gain from the one allowed long-form repair while removing rare train-only token IDs whose every-step candidate cost erased that gain.",
+  "triggering_evidence": {
+    "pre_repair_dynamic_base_tokens": 1469,
+    "pre_repair_median_generated_tokens": 271.5,
+    "pre_repair_median_seconds_per_generated_token": 0.003172935737179487,
+    "repaired_all_unique_base_tokens": 2511,
+    "repaired_median_generated_tokens": 212.0,
+    "repaired_median_seconds_per_generated_token": 0.004910267353078358,
+    "repaired_quality": "PASS 1,400 ABI rows and PASS 420/43,089 general-English rows",
+    "finding": "The bounded repair improved token trajectory by 21.9 percent, but adding every unique long-form train token increased per-step candidate cost by 54.8 percent."
+  },
+  "locked_sources": {
+    "repaired_dynamic_artifact": "results/abi_moonshot/native_hosts/full-budget3-longform-sequence-repaired-seed9824-v27-onnx-int8-v30-dynamic-train-output-prompt-union",
+    "repaired_runtime_graph_sha256": "51db1e54062ae0fcb32971737e20746567d6cea4fec7fb28e986c21ff2859850",
+    "original_train_output_base": "results/abi_moonshot/native_hosts/full-budget3-quant-robust-output-balanced-seed9824-v24-onnx-int8-v19-dynamic-train-output-prompt-union/output-vocabulary.json",
+    "original_base_token_count": 1469,
+    "parent_trajectory_evidence": "results/abi_moonshot/training/parent-longform-128-curriculum-evidence.json",
+    "parent_trajectory_split": "train",
+    "validation_outputs_seen": 0,
+    "benchmark_outputs_seen": 0,
+    "final_test_rows_seen": 0
+  },
+  "nested_budgets": [
+    {
+      "id": "parent_frequency_128",
+      "construction": "Original 1,469-token train-output base plus the 128 most frequent missing authoritative parent-trajectory token IDs; ties by ascending global token ID."
+    },
+    {
+      "id": "parent_frequency_256",
+      "construction": "Previous budget plus the next 128 IDs under the same locked ordering."
+    },
+    {
+      "id": "parent_frequency_512",
+      "construction": "Previous budget plus the next 256 IDs under the same locked ordering."
+    }
+  ],
+  "execution_and_stop_rule": {
+    "order": "ascending",
+    "first_screen": "Run the unchanged 40-observation, 20-distinct-prompt, 1,024-byte sustained benchmark.",
+    "pass": [
+      "median throughput ratio to Qwen at least 2.0",
+      "paired-prompt bootstrap 95 percent lower bound at least 2.0",
+      "at least 95 percent sealed Phase 2 parent median throughput",
+      "all TTFT, RSS, active-memory, persistent-state, UTF-8, and collapse gates pass"
+    ],
+    "after_pass": "Run full native ABI/general validation, headline benchmark, physical proof, identity, adversarial generation, and three-seed certification on the exact first passing budget.",
+    "early_stop": "Stop at the first passing nested frequency budget.",
+    "failure": "If parent_frequency_512 fails, close the repaired frequency-reserve branch and preserve all negative evidence. Do not add another frequency cutoff."
+  },
+  "claim_boundary": "Frequency is a train-only runtime selection heuristic, not a semantic importance score. The lowest passing tested budget is only a bounded frontier point, never a global minimum.",
+  "final_test_accessed": false
+}

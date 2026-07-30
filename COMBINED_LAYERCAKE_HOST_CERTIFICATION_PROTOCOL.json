@@ -1,0 +1,118 @@
+{
+  "format": "abi-layercake-combined-host-certification-protocol/1",
+  "status": "PREREGISTERED_BEFORE_COMBINED_HOST_CERTIFICATION",
+  "claim_boundary": "This protocol certifies one teacher-free product host on the locked English and three qualified domain validation slices. Domain discovery remains bounded, mathematics remains a closed negative branch, deployment reproduction is three host initializations rather than three trained English seeds, and semantic claims do not imply universal equivalence.",
+  "english_host": {
+    "artifact": "results/abi_moonshot/native_hosts/full-budget3-longform-sequence-repaired-seed9824-v28-onnx-int8-v44-route-cake-int8-exact-supplied-text",
+    "host_manifest_sha256": "7330ac9f7f1b8777db45d6d0767e10d61eec9c40f4d98c3fad9716dae9a58fb1",
+    "runtime_graph_sha256": "e66fcb82bf429d323249522c6fac69d903809138729034839a38c74246839d8f",
+    "runtime_runner_sha256": "5f14f3a3cbd95066e255b6431a932281917d6bfdcd6bfd27d7af322768ada1ff",
+    "three_initialization_certificate": "results/abi_moonshot/native_hosts/full-budget3-longform-sequence-repaired-seed9824-v28-onnx-int8-v44-three-initialization-certificate.json",
+    "three_initialization_evidence_sha256": "fc5947a35a4fb6be8ef9eaf23b664a0620c2b12112cb8360f515fa921e611425"
+  },
+  "sealed_layercake": {
+    "relative_root": "../layercake_release",
+    "repository_commit": "04cf2927a16fba686cd640e18a78708e5658bbda",
+    "direct_decoder_abi_version": "lc-direct-neural-decoder/1",
+    "direct_decoder_abi_sha256": "de765899700aefe22bfe6c9d00ed5b0c1f87a7ef864cf7211aa8aa4491a0742a",
+    "may_be_modified": false
+  },
+  "package_validation_certificate": {
+    "path": "results/abi_moonshot/domain_cakes/package-certification-validation.json",
+    "evidence_sha256": "5720331a61362a8f6118a46f3f95e59678107fe37dcb88ea923e19ff12b1b27a"
+  },
+  "english_validation_inputs": {
+    "training_bundle": "results/abi_moonshot/multisource-english-python-math-chemistry-civics-balanced-passing-search.abix",
+    "validation_bundles": [
+      "results/abi_moonshot/phi3-mini-certification-v2-validation.abix",
+      "results/abi_moonshot/phi3-mini-certification-v4-email-validation.abix",
+      "results/abi_moonshot/qwen2-1.5b-certification-v3-email-format-validation.abix",
+      "results/abi_moonshot/qwen2-7b-instruct-certification-v2-validation.abix",
+      "results/abi_moonshot/qwen2-7b-instruct-certification-v3-missing-validation.abix"
+    ],
+    "catalogs": [
+      "catalogs/english_and_first_domains_certification_v2.json",
+      "catalogs/english_and_first_domains_certification_v3.json",
+      "catalogs/english_and_first_domains_certification_v4.json"
+    ]
+  },
+  "benchmarks": {
+    "headline": {
+      "comparator": "../layercake_release/results/moonshot/phase1/raw_runs/headline_qwen_product.json",
+      "prompt_manifest": "../layercake_release/results/moonshot/phase1/quality_suite_manifest.json",
+      "sealed_parent": "../layercake_release/results/moonshot/phase2_shallow_sparse_pretrained/student2400_onnx_v5_benchmark_128_clean.json",
+      "output_bytes": 128,
+      "threads": 16
+    },
+    "sustained": {
+      "comparator": "../layercake_release/results/moonshot/phase2/raw_runs/qwen_sustained.json",
+      "prompt_manifest": "../layercake_release/results/moonshot/phase1/quality_suite_manifest.json",
+      "sealed_parent": "../layercake_release/results/moonshot/phase2_shallow_sparse_pretrained/student2400_onnx_v5_benchmark_1024_clean.json",
+      "output_bytes": 1024,
+      "threads": 16
+    }
+  },
+  "domains": [
+    {
+      "domain": "chemistry",
+      "cake_id": "abi-chemistry-token-plan",
+      "package": "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.cake",
+      "archive_sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+      "public_key": "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.pub",
+      "validation": "results/abi_moonshot/domain_cakes/chemistry-seed9824-v1-validation.json"
+    },
+    {
+      "domain": "civics",
+      "cake_id": "abi-civics-token-plan",
+      "package": "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.cake",
+      "archive_sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+      "public_key": "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.pub",
+      "validation": "results/abi_moonshot/domain_cakes/civics-budget2-seed9824-v1-validation.json"
+    },
+    {
+      "domain": "python",
+      "cake_id": "abi-python-token-plan",
+      "package": "results/abi_moonshot/packages/abi-python-token-plan-seed9824.cake",
+      "archive_sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+      "public_key": "results/abi_moonshot/packages/abi-python-token-plan-seed9824.pub",
+      "validation": "results/abi_moonshot/domain_cakes/python-budget1-seed9824-v1-validation.json"
+    }
+  ],
+  "execution_contract": {
+    "public_interface": "abi-layercake-product-host/1",
+    "external_boundary": "UTF-8",
+    "english_default_when_no_cake_selected": true,
+    "domain_selection_is_explicit": true,
+    "domain_worker_is_lazy": true,
+    "inactive_domain_worker_processes": 0,
+    "maximum_active_domain_cakes_per_request": 1,
+    "source_teacher_present_at_inference": false,
+    "source_transformer_blocks_retained": 0
+  },
+  "gates": {
+    "registered_package_count": 3,
+    "all_packages_signed_and_content_hash_verified": true,
+    "inactive_english_functional_observations": 1400,
+    "inactive_english_passes": 1400,
+    "inactive_english_source_passing_regressions": 0,
+    "headline_distinct_prompts": 100,
+    "headline_repeated_prompt_configurations": 20,
+    "headline_median_cpu_speed_ratio_at_least": 2.0,
+    "headline_bootstrap_lower_bound_at_least": 2.0,
+    "headline_phase2_throughput_retention_at_least": 0.95,
+    "sustained_median_cpu_speed_ratio_at_least": 2.0,
+    "sustained_phase2_throughput_retention_at_least": 0.95,
+    "english_ttft_no_worse_than_comparator": true,
+    "english_peak_rss_below_bytes": 214990848,
+    "each_domain_validation_observations": 100,
+    "each_domain_source_passing_regressions": 0,
+    "each_domain_layercake_passes_at_least_source": true,
+    "domain_cpu_execution": true,
+    "domain_cuda_execution": true,
+    "domain_cpu_cuda_output_byte_identity": true,
+    "inactive_cake_execution_calls": 0,
+    "sealed_layercake_unchanged": true,
+    "final_test_accessed": false
+  },
+  "final_test_accessed": false
+}

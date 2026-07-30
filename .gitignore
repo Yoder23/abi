@@ -3,8 +3,10 @@
 *.pth
 *.ckpt
 *.safetensors
+*.bin
 *.npz
 paste_params.npz
+hf_models/
 
 # ─── Python cache ─────────────────────────────────────────────────────────────
 __pycache__/
@@ -63,3 +65,9 @@ test_vdc_stress/
 test_verifier_mem/
 tmp_autocortana/
 tmp_guard_test/
+
+# Large local research ledgers are preserved on disk. Release evidence and
+# deployable reference artifacts are force-added explicitly.
+*_results.json
+results/
+run_logs/

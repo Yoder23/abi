@@ -1,0 +1,45 @@
+{
+  "base_host": {
+    "artifact": "results/abi_moonshot/layercake_hosts/full-budget3-fused-output-balanced-seed9824-v23",
+    "fp32_abi_validation_evidence_sha256": "d87d33d0c4e1f459748d1bf21470895c3ff63cbf6afcb7ebeb811bd8807f5f40",
+    "fp32_general_validation_evidence_sha256": "f7b16330f17ec517bf6dc44bc3abef840e6ad97162dafb663d9ca8418ffc8a4a",
+    "manifest_sha256": "0b70ebd51fbe5708510e1881b562f06dd3a1182f104fe7e3538828a540558ee6"
+  },
+  "failed_native_evidence": {
+    "global_embedding_validation_evidence_sha256": "05364fc2907a0efa8b8e2a52cefdfaaa939bad73c66c4136d0571376156caa1a",
+    "global_failed_probe": "english-grounding-148-v2",
+    "per_row_embedding_validation_evidence_sha256": "6e424292b8b2d1e28490cdb75dc93074d9b1b581819edc8cd5b454e370e2d494",
+    "per_row_failed_probe": "english-grounding-147-v2"
+  },
+  "final_test_accessed": false,
+  "format": "abi-layercake-native-quantization-robustness-protocol/1",
+  "gates": [
+    "The FP32 host must retain all 1400 ABI validation passes and the 420-row general-English gate.",
+    "The compact global-int8 native graph must pass all 1400 ABI validation prompts with zero source regressions.",
+    "The exact native graph must pass the 420-row and 43089-token native general-English gate.",
+    "Physical sparsity, identity, 128-byte and 1024-byte throughput, paired bootstrap, TTFT, RSS, cache, and collapse gates remain unchanged."
+  ],
+  "invariants": [
+    "Initialize from v23 and update only its existing rank-16 LoRA matrices and existing rank-64 task cakes.",
+    "Use only ABI budget-3 search rows and the sealed parent's 2100 general-English train rows.",
+    "Replace only the input embedding lookup in the training forward pass with the exact global signed-int8 dequantized matrix used by the compact native graph.",
+    "Keep the sealed parent bytes, classifier, symbolic substrate, imported archive, validation, benchmark, and final-test data out of optimization.",
+    "Add no inference parameters or runtime modules."
+  ],
+  "status": "PREREGISTERED_BEFORE_FAKE_QUANT_ROBUSTNESS_TRAINING",
+  "training": {
+    "abi_batch_size_per_step": 4,
+    "abi_prompt_overlap_weight": 1.0,
+    "anchor_loss_weight": 0.0001,
+    "classifier_loss_weight": 0.1,
+    "device": "cuda",
+    "general_batch_size_per_step": 4,
+    "global_int8_input_embedding_fake_quantization": true,
+    "learning_rate": 0.00002,
+    "maximum_tokens": 192,
+    "prefix_recovery_interval": 0,
+    "seed": 9824,
+    "steps": 1200,
+    "weight_decay": 0.0
+  }
+}

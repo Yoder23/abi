@@ -1,0 +1,369 @@
+{
+  "claim_boundary": "This protocol certifies exact package identity, execution, isolation, and bounded validation retention for three declared domain slices. It does not certify final-test performance, exhaustive domain coverage, universal semantic identity, or the closed mathematics branch.",
+  "cpu_cuda_identity": {
+    "chemistry": {
+      "byte_identical": true,
+      "output_sha256": "cf7040c6599d0c0b60adc6bcd9883d09dcdbf26db298f322c333141a5bf0629e"
+    },
+    "civics": {
+      "byte_identical": true,
+      "output_sha256": "4c7a8e66f4261054d43b2e54180a264edac356f0a810f6767a41bc94f524c773"
+    },
+    "python": {
+      "byte_identical": true,
+      "output_sha256": "5356284bb3ed99a3de3b632aa80502fb20379255d24ab02f2481068e76e738dc"
+    }
+  },
+  "cuda_device": "NVIDIA GeForce RTX 3080 Laptop GPU",
+  "evidence_sha256": "5720331a61362a8f6118a46f3f95e59678107fe37dcb88ea923e19ff12b1b27a",
+  "final_test_accessed": false,
+  "format": "abi-layercake-domain-package-certification-evidence/1",
+  "layercake_target": {
+    "after": {
+      "clean": true,
+      "commit": "04cf2927a16fba686cd640e18a78708e5658bbda",
+      "porcelain_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "before": {
+      "clean": true,
+      "commit": "04cf2927a16fba686cd640e18a78708e5658bbda",
+      "porcelain_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "root": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\layercake_release",
+    "unchanged": true
+  },
+  "lifecycle_identity": true,
+  "lineage": [
+    {
+      "adjacent_lower_failure": {
+        "evidence_sha256": "7f1e57c47f05dec8684d933fde4cc07a432f8bce70d1ce9195069c256806d200",
+        "layercake_passes": 90,
+        "path": "results/abi_moonshot/domain_cakes/chemistry-budget2-seed9824-v1-validation.json",
+        "source_passes": 100,
+        "source_passing_regressions": 10
+      },
+      "domain": "chemistry",
+      "minimum_tested_passing_budget_index": 3,
+      "paired_runs": [
+        {
+          "layercake_passes": 100,
+          "seed": 9824,
+          "source_passes": 100,
+          "source_passing_regressions": 0,
+          "training_evidence_claim_sha256": "fe617b1f5d6252e4f2428723bc08cbd4c1d4f0faf992a008559976aa248aa095",
+          "training_evidence_sha256": "ff9e16ddb30c966d002c1059eced002ace5b49597dc73710e6e87834ec6dae94",
+          "validation_evidence_claim_sha256": "b73191d49a79a2f806db1437b3c84fbf136af9b9653e39ae41cef1ec24f0bff3",
+          "validation_evidence_sha256": "7720e494cb953bef6f6f4dd4fa9e6467e7335d2d3f9d9bb13d0543489a4e87be"
+        },
+        {
+          "layercake_passes": 100,
+          "seed": 9825,
+          "source_passes": 100,
+          "source_passing_regressions": 0,
+          "training_evidence_claim_sha256": "0e1173ab624d0d1a4acdd9a5b7b1e2ca7d43ecdd5dfa1dd3b22774f1e03ff8c9",
+          "training_evidence_sha256": "4960a5c3c3c83ae46d6d70bafe5ab1a4f7b0305cc52e5fc2a0410f2f89e40ef1",
+          "validation_evidence_claim_sha256": "decdc24d744506a11ebf4c862c76947b43b46f429913780ac2f18c728bfcb1f0",
+          "validation_evidence_sha256": "d3109906aad774856e23da0bab23fc3005d307563085456146855a9d466dbd7b"
+        },
+        {
+          "layercake_passes": 100,
+          "seed": 9826,
+          "source_passes": 100,
+          "source_passing_regressions": 0,
+          "training_evidence_claim_sha256": "ff00e7ad503233e776c9e5e43c3b6da650cffcfd87bcfb9429a380e2c19fa88a",
+          "training_evidence_sha256": "9868b53a582cbc1ff27fbdb25860547b4538145d73a89eef256ecb576ee3a2a9",
+          "validation_evidence_claim_sha256": "95b913f56d0eb06d45d1b5c4246956cdd13d578b4ed7760f3289cc7bf1d7133f",
+          "validation_evidence_sha256": "fa5b1c13abcd7b9c6b2586b9f8d6273d35f15b29a578c444df184148ba3fca49"
+        }
+      ],
+      "parameter_count": 124766,
+      "teacher_tokens": 1500,
+      "training_rows": 100
+    },
+    {
+      "adjacent_lower_failure": {
+        "evidence_sha256": "a472a2df37463369f35c02d7464d5109f31a14ac53c10c8a1b38e64c0748b682",
+        "layercake_passes": 40,
+        "path": "results/abi_moonshot/domain_cakes/civics-budget1-seed9825-v1-validation.json",
+        "source_passes": 100,
+        "source_passing_regressions": 60
+      },
+      "domain": "civics",
+      "minimum_tested_passing_budget_index": 2,
+      "paired_runs": [
+        {
+          "layercake_passes": 100,
+          "seed": 9824,
+          "source_passes": 100,
+          "source_passing_regressions": 0,
+          "training_evidence_claim_sha256": "fac2b5f1600c7247b55b8a4f94bb923ee7ea64ff47be8aa2684fca3e1ff53271",
+          "training_evidence_sha256": "7e0be48686f78b83b3b946faf9b3e72964ed45ed834ac251bd80e80cf4128fe3",
+          "validation_evidence_claim_sha256": "c7fe20e1f5fe121ed2f90c7a73c2c8fb59a14348fa629d132d4b43c08695b9c0",
+          "validation_evidence_sha256": "0d0c3b43707727ce206c8008b5b40ccc470017a74a030144b1a3bb490ae025a1"
+        },
+        {
+          "layercake_passes": 100,
+          "seed": 9825,
+          "source_passes": 100,
+          "source_passing_regressions": 0,
+          "training_evidence_claim_sha256": "1fa58a06cffc20c90513dbaec7f96cc95d6930807432c1ead82cd890549cb141",
+          "training_evidence_sha256": "32db66b782df26e7349785e6e742319e2bae08adb102f08c0a3f488fb5288cc4",
+          "validation_evidence_claim_sha256": "50a1a4d04bd86a447a952d026bd1994ca53c77c39c7bfaca80f8727b6e38f6d1",
+          "validation_evidence_sha256": "96ecbdefddbf5e91512b5002d5f7265a2f1488fffbfdbdf50f8b5c46a5de3f63"
+        },
+        {
+          "layercake_passes": 100,
+          "seed": 9826,
+          "source_passes": 100,
+          "source_passing_regressions": 0,
+          "training_evidence_claim_sha256": "4029937d6b2f81ef51a7817b6c25152947faa09c7aad67bc74e81adabdaf6268",
+          "training_evidence_sha256": "7611352c4d8504e606f877fb72f94860d0a509c73ed47850b2d2eb5067d701a6",
+          "validation_evidence_claim_sha256": "36b864aab3342a50c8c03090bb298e8a7935e97a2c11255d2e772c4551079b33",
+          "validation_evidence_sha256": "920a3895d4a35e443c54e5f5133feca4328ccb46cafdebf09eb2b21d1da5cff2"
+        }
+      ],
+      "parameter_count": 121025,
+      "teacher_tokens": 1210,
+      "training_rows": 50
+    },
+    {
+      "adjacent_lower_failure": {
+        "evidence_sha256": "a506ac318eead0366c4c31a328ded0a7136df0952c8400d02ddc417f6c4af85e",
+        "layercake_passes": 20,
+        "path": "results/abi_moonshot/domain_cakes/python-budget0-seed9824-v1-validation.json",
+        "source_passes": 100,
+        "source_passing_regressions": 80
+      },
+      "domain": "python",
+      "minimum_tested_passing_budget_index": 1,
+      "paired_runs": [
+        {
+          "layercake_passes": 100,
+          "seed": 9824,
+          "source_passes": 100,
+          "source_passing_regressions": 0,
+          "training_evidence_claim_sha256": "8b6dfa984799ee1e1ad30e995bf7755ea3421ee79220249b126ba053c877341f",
+          "training_evidence_sha256": "131e4a9162d0b080f5d42f3177e88b2edce0511402e7bc52da5fd43deb354c42",
+          "validation_evidence_claim_sha256": "227cd012fd7b6a71cc7d3fda9150fb6352fb3afae3d2809d384ad445d1903a05",
+          "validation_evidence_sha256": "46edb6ecd6f1871b78499ae858ba73d52196259670926d2bcae0468243bea120"
+        },
+        {
+          "layercake_passes": 100,
+          "seed": 9825,
+          "source_passes": 100,
+          "source_passing_regressions": 0,
+          "training_evidence_claim_sha256": "d815c0636d743b1a2d944c0c2d2fa985b581cff4c70f9b996c7132cd51492c5a",
+          "training_evidence_sha256": "d0f3cd8411f86efd1fdf1f6d40dcad0b8479c156c20764ab04e388e9561e0cff",
+          "validation_evidence_claim_sha256": "f578736320f3fa9875b80529b72acb16435b6c3b804c22c7e6bb2ae2dc0f27f0",
+          "validation_evidence_sha256": "bb44025fd49a7aa64ab2201098bbd21f47b7e03c07643d4a1cdd32c2582904be"
+        },
+        {
+          "layercake_passes": 100,
+          "seed": 9826,
+          "source_passes": 100,
+          "source_passing_regressions": 0,
+          "training_evidence_claim_sha256": "b457d3e895cbd007d7161f7c706b13678ee2fbdd7047941325689fba67a1f32e",
+          "training_evidence_sha256": "62abeeabbf54a4592987c71c119376a83fc9980f08d79f907f53460ebe750e7c",
+          "validation_evidence_claim_sha256": "862c15e375119d09bf91cdf6923081a7b00417c9a6abfe10c1fbb889bf26bf92",
+          "validation_evidence_sha256": "cd35d7625e7c06bffe00930e8ad45308f0bfdfeffb70ad9ef263df745bc141f2"
+        }
+      ],
+      "parameter_count": 109415,
+      "teacher_tokens": 691,
+      "training_rows": 25
+    }
+  ],
+  "non_executable_safetensors_only": true,
+  "packages": [
+    {
+      "archive_bytes": 510981,
+      "archive_sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+      "cake_id": "abi-chemistry-token-plan",
+      "domain": "chemistry",
+      "key_id": "ea5f587ddb44e433f96f9d94392a0398",
+      "member_names": [
+        "manifest.json",
+        "signature.json",
+        "tensors.safetensors"
+      ],
+      "package_hash": "4bbc700778883a10319000c62d8680ef1af276fd7d82cfd0923ac1ee74b4b949",
+      "tensor_payload_hash": "b70dec838c5d3d119333e0f12ccc26392fad56b97cb4841045d0780cfb5f96a2"
+    },
+    {
+      "archive_bytes": 495919,
+      "archive_sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+      "cake_id": "abi-civics-token-plan",
+      "domain": "civics",
+      "key_id": "180c86c7fdda8494760b75ecaa7a2f43",
+      "member_names": [
+        "manifest.json",
+        "signature.json",
+        "tensors.safetensors"
+      ],
+      "package_hash": "248b265eaed8d22fc6bbe49b1ceb151c4f3800c087d5de3a3c7d781412b67ed3",
+      "tensor_payload_hash": "531f4cf14ae8823314cec77c919eba27fe136ba57ea7f4467ac53a69276a38dd"
+    },
+    {
+      "archive_bytes": 448404,
+      "archive_sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+      "cake_id": "abi-python-token-plan",
+      "domain": "python",
+      "key_id": "5801463b6a49f7c8a9b6dbd3e891ec68",
+      "member_names": [
+        "manifest.json",
+        "signature.json",
+        "tensors.safetensors"
+      ],
+      "package_hash": "973e16954ab2c4fb35587e15f3517bcd3129e4b7cddfbb989ca54690fd6d1a64",
+      "tensor_payload_hash": "ac58835feee49441aef5fdfddd315523458ac95c53be8f41b8f309a086383242"
+    }
+  ],
+  "protocol": {
+    "path": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\DOMAIN_CAKE_PACKAGE_CERTIFICATION_PROTOCOL.json",
+    "sha256": "9fdc4c45bb1b9ccabd4956a0f296fd743ab0d34827cc545dcff9ac475da12577"
+  },
+  "receiver_count": 3,
+  "receiver_output_byte_identity": true,
+  "receivers": [
+    {
+      "fresh_registry": true,
+      "install_statuses": [
+        "INSTALLED",
+        "INSTALLED",
+        "INSTALLED"
+      ],
+      "installed_ids": [
+        "abi-chemistry-token-plan",
+        "abi-civics-token-plan",
+        "abi-python-token-plan"
+      ],
+      "lifecycle": [
+        {
+          "cake_id": "abi-chemistry-token-plan",
+          "reinstall_status": "INSTALLED",
+          "remove_status": "REMOVED",
+          "verified_payload_hash": "b70dec838c5d3d119333e0f12ccc26392fad56b97cb4841045d0780cfb5f96a2"
+        },
+        {
+          "cake_id": "abi-civics-token-plan",
+          "reinstall_status": "INSTALLED",
+          "remove_status": "REMOVED",
+          "verified_payload_hash": "531f4cf14ae8823314cec77c919eba27fe136ba57ea7f4467ac53a69276a38dd"
+        },
+        {
+          "cake_id": "abi-python-token-plan",
+          "reinstall_status": "INSTALLED",
+          "remove_status": "REMOVED",
+          "verified_payload_hash": "ac58835feee49441aef5fdfddd315523458ac95c53be8f41b8f309a086383242"
+        }
+      ],
+      "output_sha256": {
+        "chemistry": "cf7040c6599d0c0b60adc6bcd9883d09dcdbf26db298f322c333141a5bf0629e",
+        "civics": "4c7a8e66f4261054d43b2e54180a264edac356f0a810f6767a41bc94f524c773",
+        "python": "5356284bb3ed99a3de3b632aa80502fb20379255d24ab02f2481068e76e738dc"
+      },
+      "receiver_index": 0,
+      "verify_statuses": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ]
+    },
+    {
+      "fresh_registry": true,
+      "install_statuses": [
+        "INSTALLED",
+        "INSTALLED",
+        "INSTALLED"
+      ],
+      "installed_ids": [
+        "abi-chemistry-token-plan",
+        "abi-civics-token-plan",
+        "abi-python-token-plan"
+      ],
+      "lifecycle": [],
+      "output_sha256": {
+        "chemistry": "cf7040c6599d0c0b60adc6bcd9883d09dcdbf26db298f322c333141a5bf0629e",
+        "civics": "4c7a8e66f4261054d43b2e54180a264edac356f0a810f6767a41bc94f524c773",
+        "python": "5356284bb3ed99a3de3b632aa80502fb20379255d24ab02f2481068e76e738dc"
+      },
+      "receiver_index": 1,
+      "verify_statuses": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ]
+    },
+    {
+      "fresh_registry": true,
+      "install_statuses": [
+        "INSTALLED",
+        "INSTALLED",
+        "INSTALLED"
+      ],
+      "installed_ids": [
+        "abi-chemistry-token-plan",
+        "abi-civics-token-plan",
+        "abi-python-token-plan"
+      ],
+      "lifecycle": [],
+      "output_sha256": {
+        "chemistry": "cf7040c6599d0c0b60adc6bcd9883d09dcdbf26db298f322c333141a5bf0629e",
+        "civics": "4c7a8e66f4261054d43b2e54180a264edac356f0a810f6767a41bc94f524c773",
+        "python": "5356284bb3ed99a3de3b632aa80502fb20379255d24ab02f2481068e76e738dc"
+      },
+      "receiver_index": 2,
+      "verify_statuses": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ]
+    }
+  ],
+  "remaining_blockers": [
+    "unopened_final_test",
+    "combined_english_plus_domain_phase2_performance_recertification",
+    "mathematics_typed_runtime_abi_not_available_in_sealed_host",
+    "independent_hostile_reproduction"
+  ],
+  "source_transformer_blocks_retained": 0,
+  "sparse_execution": {
+    "inactive_cakes_executed": false,
+    "inactive_telemetry": {
+      "abi-civics-token-plan": {
+        "decode_step_calls": 0,
+        "module_load_calls": 0,
+        "prefill_calls": 0
+      },
+      "abi-python-token-plan": {
+        "decode_step_calls": 0,
+        "module_load_calls": 0,
+        "prefill_calls": 0
+      }
+    },
+    "selected_cake_id": "abi-chemistry-token-plan",
+    "telemetry": {
+      "abi-chemistry-token-plan": {
+        "decode_step_calls": 19,
+        "module_load_calls": 1,
+        "prefill_calls": 1
+      },
+      "abi-civics-token-plan": {
+        "decode_step_calls": 0,
+        "module_load_calls": 0,
+        "prefill_calls": 0
+      },
+      "abi-python-token-plan": {
+        "decode_step_calls": 0,
+        "module_load_calls": 0,
+        "prefill_calls": 0
+      }
+    }
+  },
+  "status": "PASS_VALIDATION_PACKAGE_GATES_FINAL_TEST_UNOPENED",
+  "tamper_rejection": {
+    "error": "InstallationError: invalid cake ZIP container",
+    "status": "PASS"
+  },
+  "teacher_present_at_inference": false
+}

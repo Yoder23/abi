@@ -1,0 +1,104 @@
+{
+  "format": "abi-layercake-domain-conformance-protocol/1",
+  "status": "PREREGISTERED_BEFORE_DOMAIN_CONFORMANCE_TRAINING",
+  "parent_protocol": {
+    "path": "DOMAIN_CAKE_CONFORMANCE_PROTOCOL.json",
+    "sha256": "186b41800d988ea241c4585189a8f6465351c02b57b28c21fd7eeb9406665be3"
+  },
+  "measured_failure": {
+    "evidence": "results/abi_moonshot/domain_cakes/mathematics-seed9824-v1-validation.json",
+    "evidence_sha256": "abdff48737a6746c0c6753d10cabcc60e67ddd5bd71ba11c47e583d802c739c3",
+    "source_passes": 93,
+    "layercake_passes": 0,
+    "source_passing_regressions": 93,
+    "bottleneck": "The sealed whole-lexeme tokenizer mapped unseen validation operands to one unknown source ID. Training converged, but the model could not distinguish held-out numbers."
+  },
+  "claim_boundary": "This repair can establish bounded retention for elementary x + a = b prompts. Its deterministic algebra rows are algorithmic conformance data, not additional teacher extraction and not a claim of broad mathematical knowledge.",
+  "immutable_layercake_target": {
+    "repository_commit": "04cf2927a16fba686cd640e18a78708e5658bbda",
+    "direct_decoder_abi_version": "lc-direct-neural-decoder/1",
+    "direct_decoder_abi_sha256": "de765899700aefe22bfe6c9d00ed5b0c1f87a7ef864cf7211aa8aa4491a0742a",
+    "sealed_repository_may_be_modified": false
+  },
+  "domains": [
+    "mathematics"
+  ],
+  "data_boundary": {
+    "training_split": "search",
+    "selection_split": "validation",
+    "final_test_accessed_during_training_or_selection": false,
+    "only_source_passing_search_records_trainable": true,
+    "selected_source_and_revision_must_match_validation": true,
+    "minimum_distinct_validation_prompts_per_domain": 100
+  },
+  "architecture": {
+    "name": "portable_token_plan_pointer_transformer",
+    "model_width": 64,
+    "attention_heads": 4,
+    "encoder_layers": 1,
+    "decoder_layers": 1,
+    "feedforward_width": 128,
+    "pointer_width": 32,
+    "dropout": 0.0,
+    "maximum_source_lexemes": 96,
+    "maximum_target_actions": 96,
+    "physical_execution": "only the explicitly selected installed cake is loaded and invoked"
+  },
+  "domain_repairs": {
+    "mathematics": {
+      "kind": "deterministic_elementary_algebra_closure",
+      "equation": "x + addend = total",
+      "addend_inclusive_range": [
+        1,
+        40
+      ],
+      "solution_inclusive_range": [
+        1,
+        100
+      ],
+      "generated_rows": 4000,
+      "teacher_tokens": 0,
+      "teacher_outputs": 0,
+      "validation_rows_or_answers_read": false,
+      "purpose": "Expose every declared numeric lexeme and the exact elementary relation without importing additional source information."
+    }
+  },
+  "bounded_training": {
+    "primary_device": "cuda",
+    "cpu_fallback_smoke_required": true,
+    "optimizer": "AdamW",
+    "optimizer_steps": 2400,
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "weight_decay": 0.01,
+    "gradient_clip_norm": 1.0,
+    "seeds": [
+      9824,
+      9825,
+      9826
+    ]
+  },
+  "validation_gate": {
+    "source_passing_regressions": 0,
+    "host_passes_must_be_at_least_source_passes": true,
+    "invalid_utf8_outputs": 0,
+    "teacher_present_at_inference": false,
+    "source_transformer_blocks_retained": 0,
+    "validation_used_for_training": false,
+    "three_seeds_required_for_promotion": true
+  },
+  "package_gate": {
+    "extension": ".cake",
+    "signed_ed25519": true,
+    "non_executable_safetensors_only": true,
+    "deterministic_rebuild_identity": true,
+    "tamper_rejection": true,
+    "install_verify_remove_reinstall_identity": true,
+    "three_fresh_receiver_roots": true,
+    "cpu_and_cuda_execution": true,
+    "core_hash_unchanged": true,
+    "inactive_cake_prefill_calls": 0,
+    "inactive_cake_decode_step_calls": 0
+  },
+  "promotion_rule": "The repair is eligible only if it passes the original paired validation gate. The failed unaugmented branch remains negative evidence. Final promotion still requires three seeds, package and receiver certification, and unopened final-test."
+}

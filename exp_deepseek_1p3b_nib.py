@@ -36,9 +36,13 @@ Runtime: ~3-4 hours on RTX 3080 Laptop.
 import copy
 import json
 import math
+import os
 import pathlib
 import sys
 import time
+
+os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
+os.environ.setdefault("HF_HUB_OFFLINE", "1")
 
 import numpy as np
 import torch
@@ -51,12 +55,19 @@ from transformers import (
     GPT2TokenizerFast,
 )
 
-from wikitext_cache import load_wikitext_split
+from experiment_data import (
+    hf_local_path,
+    load_local_python_text,
+    load_wikitext_text_and_sentences,
+)
 
 sys.stdout.reconfigure(line_buffering=True)
 
 ROOT   = pathlib.Path(__file__).parent
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+HF_GPT2_MEDIUM = hf_local_path("gpt2-medium")
+HF_DEEPSEEK    = hf_local_path("deepseek-ai/deepseek-coder-1.3b-base")
 
 # ── Pre-registered NIB thresholds (identical to all prior experiments) ─────────
 REGISTRY = {
@@ -109,7 +120,7 @@ class GPT2MedABI(nn.Module):
     """GPT-2-medium (354M, d_model=1024, 24 layers) with d_abi=256 bottleneck."""
     def __init__(self):
         super().__init__()
-        g             = GPT2LMHeadModel.from_pretrained("gpt2-medium", local_files_only=True)
+        g             = GPT2LMHeadModel.from_pretrained(HF_GPT2_MEDIUM, local_files_only=True)
         self.backbone = g.transformer
         self.lm_head  = g.lm_head
         self.proj_in  = nn.Linear(D_MODEL_SRC, D_ABI, bias=False)
@@ -145,7 +156,7 @@ class DeepSeekCoder1p3BABI(nn.Module):
     def __init__(self):
         super().__init__()
         q = AutoModelForCausalLM.from_pretrained(
-            "deepseek-ai/deepseek-coder-1.3b-base", local_files_only=True)
+            HF_DEEPSEEK, local_files_only=True)
         self.backbone = q.model      # LlamaModel
         self.lm_head  = q.lm_head
         self.proj_in  = nn.Linear(D_MODEL_TGT, D_ABI, bias=False)
@@ -333,33 +344,29 @@ def main():
     # ── Data loading ──────────────────────────────────────────────────────────
     banner("Data loading")
     t_data  = time.time()
-    tok_src = GPT2TokenizerFast.from_pretrained("gpt2-medium", local_files_only=True)
+    tok_src = GPT2TokenizerFast.from_pretrained(HF_GPT2_MEDIUM, local_files_only=True)
     tok_src.pad_token = tok_src.eos_token
     tok_src.model_max_length = sys.maxsize
 
     tok_tgt = AutoTokenizer.from_pretrained(
-        "deepseek-ai/deepseek-coder-1.3b-base", local_files_only=True)
+        HF_DEEPSEEK, local_files_only=True)
     tok_tgt.pad_token = tok_tgt.eos_token
 
-    from datasets import load_dataset
-    ds_py = load_dataset("bigcode/the-stack", data_dir="data/python",
-                         split="train", streaming=True, trust_remote_code=True)
-    py_text = "\n\n".join(
-        r["content"] for _, r in zip(range(5000), ds_py) if r.get("content")
-    )[:MAX_PY]
+    py_text, py_meta = load_local_python_text(ROOT, MAX_PY)
 
     py_ids_src = tok_src(py_text, return_tensors="pt",
                          truncation=False)["input_ids"].squeeze(0)[:MAX_PY]
     py_ids_tgt = tok_tgt(py_text, return_tensors="pt",
                          truncation=False)["input_ids"].squeeze(0)[:MAX_PY]
 
-    wiki_raw   = load_wikitext_split("validation")
-    wiki_text  = " ".join(wiki_raw)
-    wiki_sentences = [s for s in wiki_text.split("\n") if len(s.strip()) >= 20]
+    _, wiki_sentences, wiki_meta = load_wikitext_text_and_sentences(
+        split="validation", min_chars=20)
 
     print(f"  {time.time()-t_data:.1f}s  "
           f"py_src={len(py_ids_src):,}  py_tgt={len(py_ids_tgt):,}  "
           f"sentences={len(wiki_sentences):,}")
+    print(f"  corpus: local_python_files={py_meta['files']}  "
+          f"wikitext_split={wiki_meta['split']} records={wiki_meta['records']}")
 
     kd_weight = REGISTRY["kd_weight"]
     kd_temp   = REGISTRY["kd_temp"]

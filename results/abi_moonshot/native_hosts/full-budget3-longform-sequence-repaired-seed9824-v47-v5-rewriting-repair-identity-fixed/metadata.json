@@ -1,0 +1,143 @@
+{
+  "canonical_semantic_abi": {
+    "graph_output": "abi_state",
+    "path_at_export": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\layercake_release\\moonshot\\phase2_canonical_semantic_abi_r3.json",
+    "sha256": "d024de52144a2d797d0501acb7deb55575ffca7e33f72900beff599cf0a97761"
+  },
+  "evidence_sha256": "569769042de70fb40ca9819643d4c90fdecfc0badd47729bca7f66d98af96d4c",
+  "final_test_accessed": false,
+  "format": "abi-layercake-host-onnx-runtime/1",
+  "host": {
+    "delta_sha256": "2309bd6e7bb2856f2e6677aabae7245d77e552755eb78756cfd822fbc3d729ff",
+    "deployment_manifest_file_sha256": "ec31dbbf48c6f5b96fa5ca25a45edfa7ed63feb147122e8c0e793076c2e35ecf",
+    "deployment_manifest_sha256": "cc3e7bac89a42bcd344ddf9566aaa119f80158d61a9fe377c7277d34d73ff3a6",
+    "fused_transformer_state_sha256": "856709aa79c41df3f922af23ed276f15b8a2c1f18771991b0adbb5627c11ad68",
+    "path_at_export": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_moonshot\\layercake_hosts\\full-budget3-longform-sequence-repaired-seed9824-v29-v5-rewriting-repair",
+    "source_transformer_blocks_retained": 0,
+    "teacher_present_at_inference": false
+  },
+  "parent_layercake": {
+    "architecture_version": "layercake-shallow-sparse-english/1-three-block-task-cakes",
+    "checkpoint_sha256": "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1",
+    "frozen_parameter_count": 60648960,
+    "fused_runtime_transformer_state_sha256": "856709aa79c41df3f922af23ed276f15b8a2c1f18771991b0adbb5627c11ad68",
+    "metadata_sha256": "def6a552162a10a814d4bcfba31fa659530f0488d461c4a93414ee44a231ea82",
+    "path_at_training": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\layercake_release\\artifacts\\moonshot\\phase2_shallow_sparse_pretrained\\student2400-seed-9824",
+    "transformer_state_sha256_after": "5a54c42734bc552df880a60f8ba203470f5807c34b2cb24546d64d603f47b1d9",
+    "transformer_state_sha256_before": "5a54c42734bc552df880a60f8ba203470f5807c34b2cb24546d64d603f47b1d9"
+  },
+  "rewriting_repair": {
+    "decoder_changed": false,
+    "handler_added": "concise_delayed_project_review",
+    "historical_v4_final_test_accessed": true,
+    "neural_parameters_changed": false,
+    "protocol_sha256": "4a9586a2875d4a3ad55ff36e85cce6f20da06c8ec25ed69e9e64e8e50d63512f",
+    "runtime_graph_changed": false,
+    "source_runtime_graph_sha256": "e66fcb82bf429d323249522c6fac69d903809138729034839a38c74246839d8f",
+    "source_teacher_outputs_used": 0,
+    "teacher_tokens_imported": 0,
+    "v5_final_test_accessed": false
+  },
+  "runtime": {
+    "decoding": {
+      "algorithm": "deterministic_greedy_with_repetition_controls",
+      "no_repeat_ngram_size": 4,
+      "repetition_penalty": 1.15,
+      "weights_changed": false
+    },
+    "embedding_quantization": "signed int8 per token row, gathered before dequantization",
+    "fp32_graph_sha256": "783244da09e43e6bfe127929444b5c11ef9b157e6d7335590cee9f9b2dafec50",
+    "graph": "model-int8.onnx",
+    "graph_bytes": 64665070,
+    "graph_sha256": "e66fcb82bf429d323249522c6fac69d903809138729034839a38c74246839d8f",
+    "installed_route_bridges": 0,
+    "installed_task_cakes": 10,
+    "matrix_weight_quantization": "dynamic signed int8 per channel",
+    "maximum_active_route_bridges_per_sequence": 0,
+    "maximum_active_task_cakes_per_sequence": 1,
+    "output_vocabulary": {
+      "allowed_output_ids_graph_input": "allowed_output_ids",
+      "base_token_count": 2511,
+      "budget_id": "train_outputs",
+      "byte_fallback_ids_complete": true,
+      "duplicate_output_projection_removed": true,
+      "format": "abi-layercake-sparse-output-vocabulary/1",
+      "full_token_count": 50257,
+      "global_runtime_token_ids": true,
+      "mode": "train_base_union_prompt_tokens",
+      "path": "output-vocabulary.json",
+      "prompt_token_ids_added_at_runtime": true,
+      "selected_token_count": 2511,
+      "sha256": "c7bc32b19284c17bbc48f8e4154115495df54d802dc5d89bf8348dd5a5c5db49"
+    },
+    "persistent_incremental_kv_state": true,
+    "provider": "onnxruntime.CPUExecutionProvider",
+    "route_bridge_fused_into_task_cakes": true,
+    "source_fp32_cake_runtime_graph_sha256": "51db1e54062ae0fcb32971737e20746567d6cea4fec7fb28e986c21ff2859850",
+    "source_full_runtime_graph_sha256": "1de0afdb2e274b5992cbfc0e98f4f5982922b815481c4662e34f2151a607ba1a",
+    "source_static_sparse_runtime_graph_sha256": "db7c04275aa2dff0cedba38bd8e49eab861561dee45a2c6fff1eab1261ae7c35",
+    "task_cake_projection_quantization": {
+      "activation_quantization": "ONNX DynamicQuantizeLinear per active call",
+      "details": {
+        "down": {
+          "maximum_absolute_weight_error": 0.0007197968661785126,
+          "quantized_dtype": "int8",
+          "scale_max": 0.0014411108568310738,
+          "scale_min": 0.0005047480226494372,
+          "scale_shape": [
+            10,
+            64
+          ],
+          "source_shape": [
+            10,
+            64,
+            768
+          ]
+        },
+        "up": {
+          "maximum_absolute_weight_error": 0.0006248690187931061,
+          "quantized_dtype": "int8",
+          "scale_max": 0.0012590663973242044,
+          "scale_min": 6.941475294297561e-05,
+          "scale_shape": [
+            10,
+            768
+          ],
+          "source_shape": [
+            10,
+            768,
+            64
+          ]
+        }
+      },
+      "format": "abi-layercake-route-cake-int8/1",
+      "matrix_execution": "MatMulInteger",
+      "route_selection_before_matrix_execution": true,
+      "weight_quantization": "signed int8 per route and output channel",
+      "weights_retrained": false
+    }
+  },
+  "status": "DERIVED_NOT_YET_CERTIFIED",
+  "symbolic_surface": {
+    "bytes": 1080,
+    "handlers": [
+      "conservative_grammar_inflection",
+      "email_fields_to_polite_message",
+      "structured_fields_to_sentence",
+      "labeled_event_ordering",
+      "exact_two_line_format",
+      "project_savings_summary",
+      "professional_file_request",
+      "exact_json_item_count",
+      "exact_supplied_text",
+      "concise_delayed_project_review"
+    ],
+    "path": "symbolic-surface.json",
+    "sha256": "54c72f6818d5cd4dc42b1873d958c806b8763eef1801e7567c2e3629a4e61574",
+    "source_teacher_text_retained": false
+  },
+  "tokenizer": {
+    "path": "tokenizer.json",
+    "sha256": "1fe93b6152957cf9cfd6d89002467f789ce8b3f3e000b3a2edf27c808ddd0b9e"
+  }
+}

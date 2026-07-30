@@ -1,0 +1,36 @@
+{
+  "format": "abi-layercake-native-host-indexed-greedy-selection-protocol/1",
+  "status": "PREREGISTERED_AFTER_V45_KERNEL_FUSION_FAILURE_BEFORE_RUNNER_CHANGE",
+  "purpose": "Remove a full sparse-logit-vector copy from every decode step while preserving the exact locked greedy repetition and n-gram semantics.",
+  "locked_artifact": {
+    "candidate": "results/abi_moonshot/native_hosts/full-budget3-longform-sequence-repaired-seed9824-v28-onnx-int8-v44-route-cake-int8-exact-supplied-text",
+    "runtime_graph_sha256": "e66fcb82bf429d323249522c6fac69d903809138729034839a38c74246839d8f",
+    "host_manifest_sha256": "7330ac9f7f1b8777db45d6d0767e10d61eec9c40f4d98c3fad9716dae9a58fb1"
+  },
+  "triggering_measurement": {
+    "profile": "results/abi_moonshot/native_hosts/v44-sustained-runtime-profile.pstats",
+    "selection_calls": 141,
+    "selection_self_seconds": 0.008,
+    "selection_cumulative_seconds": 0.012,
+    "generation_seconds": 0.466,
+    "current_behavior": "Copy every local-logit value, alter only repetition or blocked indices, take argmax, discard the copy.",
+    "required_gain": "Recover at least the measured 0.686 percentage-point gap to the sealed-parent retention floor."
+  },
+  "single_allowed_change": {
+    "new_behavior": "Temporarily modify only the indexed repetition/blocked elements in the existing output array, compute the same argmax, and restore every touched value in a finally block.",
+    "full_vector_copy_removed": true,
+    "logits_restored_before_return": true,
+    "penalty_formula_changed": false,
+    "ngram_logic_changed": false,
+    "token_map_changed": false,
+    "weights_or_graph_changed": false
+  },
+  "pre_benchmark_requirements": [
+    "Randomized equivalence against an independent copy-based reference over dense and sparse token maps.",
+    "Exact restoration of every input logits array, including overlapping repetition and blocked indices.",
+    "Exact v44 generated token/output identity over all nine English routes."
+  ],
+  "promotion_rule": "Rerun the full sustained benchmark on v44 under the new hash-reported runner. If it passes, rerun functional quality, general preservation, headline, physical, identity, and adversarial gates on the same artifact and runner.",
+  "failure_rule": "If exact equivalence or sustained speed fails, close this runner branch.",
+  "final_test_accessed": false
+}

@@ -1,0 +1,39 @@
+{
+  "format": "abi-layercake-native-host-ort-prepacking-amendment/1",
+  "status": "PREREGISTERED_AFTER_FULL_HEAD_DIAGNOSTIC_AND_BEFORE_PREPACKED_SESSION",
+  "purpose": "Test one sequence-preserving ONNX Runtime optimization after profiling localized nearly all runtime cost inside immutable matrix execution.",
+  "triggering_evidence": {
+    "dynamic_train_output_candidate_per_generated_token_seconds": 0.003172935737179487,
+    "full_head_candidate_per_generated_token_seconds": 0.0044368981423142315,
+    "python_decode_and_selection_share": "Previously profiled below 1.6 percent.",
+    "runtime_source": "NativeHostRuntime explicitly sets session.disable_prepacking=1.",
+    "finding": "Constant transformer matrices are immutable, so ORT prepacking can be enabled without changing weights, logits, decoding, token IDs, routes, ABI state, or generated text."
+  },
+  "locked_candidate": {
+    "source_artifact": "results/abi_moonshot/native_hosts/full-budget3-quant-robust-output-balanced-seed9824-v24-onnx-int8-v19-dynamic-train-output-prompt-union",
+    "runtime_graph_sha256": "f7f61a2704f0a7901754932cb0af31cf8bfb4cea6a75b1a920e257368fd8bf59",
+    "base_token_count": 1469,
+    "intra_op_threads": 16,
+    "inter_op_threads": 1,
+    "execution_mode": "ORT_SEQUENTIAL",
+    "graph_optimization": "ORT_ENABLE_ALL",
+    "memory_pattern": false,
+    "memory_reuse": true,
+    "session_disable_prepacking_entry": "removed",
+    "all_other_session_and_model_settings": "unchanged"
+  },
+  "execution_and_stop_rule": {
+    "first_screen": "Run the unchanged 40-observation, 20-distinct-prompt, 1,024-byte sustained benchmark.",
+    "pass": [
+      "median throughput ratio to Qwen at least 2.0",
+      "paired-prompt bootstrap 95 percent lower bound at least 2.0",
+      "at least 95 percent sealed Phase 2 parent median throughput",
+      "RSS below 214,990,848 bytes",
+      "all persistent-state, UTF-8, and collapse gates pass"
+    ],
+    "after_pass": "Run exact output identity against the non-prepacked source, then every full quality, headline, physical, and identity gate.",
+    "failure": "If speed or RSS fails, preserve the evidence and do not sweep ORT session knobs."
+  },
+  "claim_boundary": "Prepacking is a runtime layout optimization, not a quality or sparsity improvement. Promotion remains bound to the same exact final host and all existing gates.",
+  "final_test_accessed": false
+}
