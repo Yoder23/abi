@@ -1,0 +1,25 @@
+{
+  "format": "abi-english-prompt-aware-repetition-protocol/1",
+  "status": "PREREGISTERED_AFTER_GLOBAL_SCREEN_BEFORE_PROMPT_AWARE_SCREEN",
+  "parent_decision": "ABI_ENGLISH_GLOBAL_NOREPEAT4_DECISION.json",
+  "exact_candidate_checkpoint_sha256": "1debc60287d68f535f2d47b132cb3bead2012a035232892eeacb66afe95390ff",
+  "bounded_runtime_change": {
+    "no_repeat_ngram_size": 4,
+    "allow_repeated_ngram_only_when_exact_ngram_occurs_in_prompt": true,
+    "model_parameters_changed": 0,
+    "training_steps": 0,
+    "new_teacher_prompts": 0,
+    "new_teacher_tokens": 0,
+    "new_validation_prompts": 0,
+    "evaluators_changed": 0
+  },
+  "acceptance": {
+    "overall_functional_pass_rate_at_least": 0.8,
+    "source_passing_retention_rate_at_least": 0.9,
+    "every_locked_critical_capability_pass_rate_at_least": 0.8,
+    "genuine_repetition_or_collapse_count": 0,
+    "must_not_regress_below_any_minimum_gate": true
+  },
+  "decision_rule": "Run one full held-out validation screen. Accept only if all quality gates remain satisfied and genuine collapse reaches zero. Otherwise reject this runtime branch and preserve the greedy checkpoint as quality-leading but not promotion-ready.",
+  "natural_final_test_accessed": false
+}

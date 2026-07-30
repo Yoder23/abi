@@ -65,6 +65,34 @@ def load_layercake_core(
         load_file(str(checkpoint_path), device=str(device)),
         strict=True,
     )
+    decoding = metadata.get(
+        "decoding",
+        {
+            "algorithm": "greedy",
+            "no_repeat_ngram_size": 0,
+            "allow_prompt_ngrams": False,
+            "lexical_repetition_truncation_threshold": 0,
+            "prompt_identity_mixture": False,
+        },
+    )
+    if (
+        not isinstance(decoding, dict)
+        or decoding.get("algorithm") != "greedy"
+        or not isinstance(decoding.get("no_repeat_ngram_size"), int)
+        or int(decoding["no_repeat_ngram_size"]) < 0
+        or not isinstance(decoding.get("allow_prompt_ngrams"), bool)
+        or not isinstance(
+            decoding.get("lexical_repetition_truncation_threshold"), int
+        )
+        or int(decoding["lexical_repetition_truncation_threshold"]) < 0
+        or decoding.get("prompt_identity_mixture") is not False
+        or (
+            decoding["allow_prompt_ngrams"]
+            and int(decoding["no_repeat_ngram_size"]) <= 0
+        )
+    ):
+        raise RuntimeError("LayerCake core decoding contract is invalid")
+    model._abi_decoding = dict(decoding)
     tokenizer = AutoTokenizer.from_pretrained(path, local_files_only=True)
     tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = "right"

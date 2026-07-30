@@ -9,6 +9,7 @@ from abi.layercake_acquisition import (
     validate_labeled_extraction_record,
 )
 from abi.layercake_full_core_acquisition import _DeterministicRowSampler
+from abi.layercake_runtime_export import export_runtime_candidate
 
 
 ABI_SHA = "d024de52144a2d797d0501acb7deb55575ffca7e33f72900beff599cf0a97761"
@@ -78,6 +79,43 @@ def test_balanced_sampler_equalizes_capabilities_without_adding_records():
     assert {row["record_id"] for row in selected}.issubset(
         {row["record_id"] for row in rows}
     )
+
+
+def test_runtime_export_preserves_checkpoint_and_freezes_decoding(tmp_path):
+    source = tmp_path / "source"
+    source.mkdir()
+    checkpoint = source / "model.safetensors"
+    checkpoint.write_bytes(b"checkpoint")
+    checkpoint_sha = __import__("hashlib").sha256(
+        checkpoint.read_bytes()
+    ).hexdigest()
+    metadata = {
+        "format": "abi-layercake-full-english-core-acquisition/1",
+        "status": "TRAINED_NOT_YET_SEMANTICALLY_OR_OPERATIONALLY_CERTIFIED",
+        "checkpoint": {
+            "path": "model.safetensors",
+            "sha256": checkpoint_sha,
+            "bytes": checkpoint.stat().st_size,
+        },
+        "manifest_sha256": "a" * 64,
+    }
+    (source / "metadata.json").write_text(
+        __import__("json").dumps(metadata),
+        encoding="utf-8",
+    )
+    (source / "tokenizer.json").write_text("{}", encoding="utf-8")
+    output = tmp_path / "runtime"
+    exported = export_runtime_candidate(
+        source_path=source,
+        output_path=output,
+        lexical_repetition_truncation_threshold=4,
+    )
+    assert (output / "model.safetensors").read_bytes() == b"checkpoint"
+    assert exported["checkpoint"]["sha256"] == checkpoint_sha
+    assert exported["decoding"][
+        "lexical_repetition_truncation_threshold"
+    ] == 4
+    assert exported["runtime_export"]["checkpoint_byte_identical"] is True
 
 
 def test_record_is_content_addressed_and_enforces_destination_boundary():

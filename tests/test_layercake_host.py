@@ -18,6 +18,7 @@ from abi.layercake_host import (
     _select_next_token,
     _symbolic_surface_output,
     _symbolic_surface_tensor,
+    _truncate_novel_lexical_repetition,
     route_for_capability,
     strip_source_chat_template,
 )
@@ -162,6 +163,48 @@ def test_no_repeat_ngram_policy_masks_only_the_repeated_continuation():
         scores, generated=generated, no_repeat_ngram_size=3
     )
     assert int(selected.item()) == 4
+    allowed = {(1, 2, 3)}
+    assert _banned_repeated_ngram_tokens(
+        generated,
+        3,
+        allowed_ngrams=allowed,
+    ) == set()
+    prompt_aware = _select_next_token(
+        scores,
+        generated=generated,
+        no_repeat_ngram_size=3,
+        allowed_ngrams=allowed,
+    )
+    assert int(prompt_aware.item()) == 3
+
+
+def test_lexical_repetition_truncation_preserves_first_complete_answer():
+    output = (
+        "I can help with that. "
+        "Please send the note today. "
+        "Please send the note today. "
+        "Please send the note today. "
+        "Please send the note today. "
+        "Please send the note today."
+    )
+    truncated = _truncate_novel_lexical_repetition(
+        output,
+        "Draft a concise reply.",
+        threshold=4,
+    )
+    assert truncated == (
+        "I can help with that. Please send the note today. "
+        "Please send the note today."
+    )
+    prompt_copy = "N100 MIRA item N100 MIRA item N100 MIRA item"
+    assert (
+        _truncate_novel_lexical_repetition(
+            prompt_copy,
+            prompt_copy,
+            threshold=1,
+        )
+        == prompt_copy
+    )
 
 
 def test_sparse_route_bridge_physically_calls_only_selected_routes():

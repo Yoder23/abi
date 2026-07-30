@@ -24,7 +24,7 @@ from .layercake_host_v3 import load_host_model
 from .layercake_core_loader import load_layercake_core
 
 
-EVIDENCE_FORMAT = "abi-layercake-english-generalization-evidence/4"
+EVIDENCE_FORMAT = "abi-layercake-english-generalization-evidence/6"
 
 
 def _collapse_metrics(
@@ -161,12 +161,24 @@ def evaluate_generalization(
     source_bundle_paths: Sequence[str | Path] | None,
     output_path: str | Path,
     device_name: str,
+    no_repeat_ngram_size: int | None = None,
+    allow_prompt_ngrams: bool | None = None,
+    lexical_repetition_truncation_threshold: int | None = None,
     limit_per_capability: int | None = None,
 ) -> dict[str, Any]:
     if split not in {"search", "validation", "final_test"}:
         raise ValueError("split must be search, validation, or final_test")
     if host_path is not None and standalone_core_path is not None:
         raise ValueError("host and standalone core are mutually exclusive")
+    if no_repeat_ngram_size is not None and no_repeat_ngram_size < 0:
+        raise ValueError("no-repeat n-gram size must be non-negative")
+    if (
+        lexical_repetition_truncation_threshold is not None
+        and lexical_repetition_truncation_threshold < 0
+    ):
+        raise ValueError(
+            "lexical repetition truncation threshold must be non-negative"
+        )
     output_path = Path(output_path).resolve()
     if output_path.exists():
         raise RuntimeError(f"evaluation evidence is immutable: {output_path}")
@@ -212,6 +224,35 @@ def evaluate_generalization(
             host_path=host_path,
             device_name=device_name,
         )
+    decoding = dict(
+        getattr(
+            model,
+            "_abi_decoding",
+            {
+                "algorithm": "greedy",
+                "no_repeat_ngram_size": 0,
+                "allow_prompt_ngrams": False,
+                "lexical_repetition_truncation_threshold": 0,
+                "prompt_identity_mixture": False,
+            },
+        )
+    )
+    if no_repeat_ngram_size is not None:
+        decoding["no_repeat_ngram_size"] = int(no_repeat_ngram_size)
+    if allow_prompt_ngrams is not None:
+        decoding["allow_prompt_ngrams"] = bool(allow_prompt_ngrams)
+    if lexical_repetition_truncation_threshold is not None:
+        decoding["lexical_repetition_truncation_threshold"] = int(
+            lexical_repetition_truncation_threshold
+        )
+    if (
+        decoding["allow_prompt_ngrams"]
+        and int(decoding["no_repeat_ngram_size"]) <= 0
+    ):
+        raise ValueError(
+            "prompt n-gram exemptions require a no-repeat n-gram size"
+        )
+    model._abi_decoding = decoding
     observations: list[dict[str, Any]] = []
     started = time.perf_counter()
     for ordinal, probe in enumerate(probes, start=1):
@@ -347,6 +388,18 @@ def evaluate_generalization(
                 Path(parent_path) / "model.safetensors"
             ),
             "teacher_present_at_inference": False,
+            "decoding": {
+                "algorithm": "greedy",
+                "no_repeat_ngram_size": int(
+                    decoding["no_repeat_ngram_size"]
+                ),
+                "allow_prompt_ngrams": bool(
+                    decoding["allow_prompt_ngrams"]
+                ),
+                "lexical_repetition_truncation_threshold": int(
+                    decoding["lexical_repetition_truncation_threshold"]
+                ),
+            },
         },
         "sources": source_identities,
         "observation_count": len(observations),
@@ -400,6 +453,16 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument("--output", required=True)
     parser.add_argument("--device", choices=("cpu", "cuda"), default="cuda")
     parser.add_argument("--limit-per-capability", type=int)
+    parser.add_argument("--no-repeat-ngram-size", type=int)
+    parser.add_argument(
+        "--allow-prompt-ngrams",
+        action="store_true",
+        default=None,
+    )
+    parser.add_argument(
+        "--lexical-repetition-truncation-threshold",
+        type=int,
+    )
     args = parser.parse_args(argv)
     evidence = evaluate_generalization(
         catalog_path=args.catalog,
@@ -412,6 +475,11 @@ def main(argv: Sequence[str] | None = None) -> int:
         source_bundle_paths=args.source_bundle,
         output_path=args.output,
         device_name=args.device,
+        no_repeat_ngram_size=args.no_repeat_ngram_size,
+        allow_prompt_ngrams=args.allow_prompt_ngrams,
+        lexical_repetition_truncation_threshold=(
+            args.lexical_repetition_truncation_threshold
+        ),
         limit_per_capability=args.limit_per_capability,
     )
     print(

@@ -1,0 +1,72 @@
+{
+  "format": "abi-english-validation-freeze-decision/1",
+  "status": "AUTOMATED_VALIDATION_PASS_FREEZE_FOR_UNTOUCHED_FINAL_AND_RUNTIME",
+  "acquired_checkpoint": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/six-block-natural-cumulative-balanced-seed9824-steps3000-v3",
+    "checkpoint_sha256": "1debc60287d68f535f2d47b132cb3bead2012a035232892eeacb66afe95390ff",
+    "manifest_sha256": "8dd39673dbd951a3c82d26ad81d502ef153c4625d6e5bbc06ff98293b84ddaf7",
+    "total_parameters": 82918666,
+    "active_parameters": 82020106,
+    "teacher_present_at_inference": false,
+    "source_parameters_copied": 0,
+    "source_transformer_blocks_retained": 0
+  },
+  "frozen_runtime_candidate": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/six-block-natural-cumulative-runtime-lexical4-v3",
+    "checkpoint_sha256": "1debc60287d68f535f2d47b132cb3bead2012a035232892eeacb66afe95390ff",
+    "checkpoint_byte_identical_to_acquired_candidate": true,
+    "manifest_sha256": "7b8bd150767efd489f84ca299fa392358499f189a3a0c4a6dc7f499808b247d1",
+    "decoding": {
+      "algorithm": "greedy",
+      "no_repeat_ngram_size": 0,
+      "allow_prompt_ngrams": false,
+      "lexical_repetition_truncation_threshold": 4,
+      "prompt_identity_mixture": false
+    },
+    "task_specific_postprocessors": 0
+  },
+  "held_out_validation": {
+    "evidence": "results/abi_moonshot/segregated_acquisition_v3/six-block-natural-cumulative-balanced-validation-lexical-truncate4-full1400-v3.json",
+    "evidence_file_sha256": "fb34ab4e53f2e0ce6676157b1d342bf3196d036a98b656c594ffb1683e9c9250",
+    "evidence_sha256": "b4ad11f311961bad2b8607290f0fc760874aadfbeb8498e96dfec6e6dcfabd16",
+    "observations": 1400,
+    "layercake_passes": 1274,
+    "layercake_pass_rate": 0.91,
+    "source_passes": 1220,
+    "source_passing_regressions": 57,
+    "source_passing_retention_rate": 0.9532786885245902,
+    "collapse_count": 0
+  },
+  "critical_capability_pass_rates": {
+    "grammar": 1.0,
+    "coherence": 1.0,
+    "prompt_grounding": 1.0,
+    "instruction_following": 0.94,
+    "conversation": 0.95,
+    "summarization": 0.88,
+    "rewriting": 1.0,
+    "clarification": 1.0,
+    "abstention": 0.95
+  },
+  "other_measured_capability_pass_rates": {
+    "domain_independent_reasoning": 0.89,
+    "email_drafting": 0.74,
+    "tone_control": 0.64,
+    "format_control": 1.0,
+    "cake_output_realization": 0.75
+  },
+  "rejected_decoding_controls": [
+    "ABI_ENGLISH_GLOBAL_NOREPEAT4_DECISION.json",
+    "ABI_ENGLISH_PROMPT_AWARE_NOREPEAT_DECISION.json"
+  ],
+  "decision": {
+    "automated_validation_minimum_fluent_core_gate_passed": true,
+    "teacher_quality_equivalence_claimed": false,
+    "zero_teacher_relative_regressions_achieved": false,
+    "blinded_human_fluency_gate_passed": false,
+    "runtime_speed_memory_and_ttft_gate_passed": false,
+    "natural_final_test_now_authorized_for_exact_frozen_candidate": true,
+    "candidate_or_decoding_changes_after_final_access_allowed": false
+  },
+  "claim_boundary": "This freezes the only candidate authorized for untouched natural final-test access. Automated validation passes, but human fluency and exact-candidate runtime certification remain open."
+}

@@ -1107,7 +1107,10 @@ def _prompt_identity_next_probabilities(
 
 
 def _banned_repeated_ngram_tokens(
-    generated: Sequence[int], ngram_size: int
+    generated: Sequence[int],
+    ngram_size: int,
+    *,
+    allowed_ngrams: set[tuple[int, ...]] | None = None,
 ) -> set[int]:
     if ngram_size <= 0 or len(generated) < ngram_size - 1:
         return set()
@@ -1115,7 +1118,10 @@ def _banned_repeated_ngram_tokens(
     banned = set()
     for index in range(len(generated) - ngram_size + 1):
         if tuple(generated[index : index + ngram_size - 1]) == prefix:
-            banned.add(int(generated[index + ngram_size - 1]))
+            continuation = int(generated[index + ngram_size - 1])
+            complete = prefix + (continuation,)
+            if allowed_ngrams is None or complete not in allowed_ngrams:
+                banned.add(continuation)
     return banned
 
 
@@ -1124,14 +1130,59 @@ def _select_next_token(
     *,
     generated: Sequence[int],
     no_repeat_ngram_size: int,
+    allowed_ngrams: set[tuple[int, ...]] | None = None,
 ) -> torch.Tensor:
     adjusted = scores.clone()
     banned = _banned_repeated_ngram_tokens(
-        generated, no_repeat_ngram_size
+        generated,
+        no_repeat_ngram_size,
+        allowed_ngrams=allowed_ngrams,
     )
     if banned:
         adjusted[list(sorted(banned))] = -torch.inf
     return adjusted.argmax(dim=-1).reshape(1)
+
+
+def _truncate_novel_lexical_repetition(
+    output: str,
+    prompt: str,
+    *,
+    threshold: int,
+) -> str:
+    """Stop a novel lexical loop without blocking required prompt copying."""
+
+    if threshold <= 0:
+        return output
+    prompt_words = re.findall(r"[\w']+", prompt.casefold())
+    allowed = {
+        tuple(prompt_words[index : index + 4])
+        for index in range(max(0, len(prompt_words) - 3))
+    }
+    matches = list(re.finditer(r"[\w']+", output))
+    words: list[str] = []
+    counts: dict[tuple[str, ...], int] = {}
+    repeated_occurrences = 0
+    for match in matches:
+        words.append(match.group().casefold())
+        if len(words) < 4:
+            continue
+        fourgram = tuple(words[-4:])
+        if fourgram in allowed:
+            continue
+        previous = counts.get(fourgram, 0)
+        counts[fourgram] = previous + 1
+        if previous >= 1:
+            repeated_occurrences += 1
+        if repeated_occurrences < threshold:
+            continue
+        raw_prefix = output[: match.start()].rstrip(" ,;:-\n\t")
+        sentence_ends = list(
+            re.finditer(r"[.!?](?:[\"'”’])?", raw_prefix)
+        )
+        if sentence_ends and sentence_ends[-1].end() >= 16:
+            return raw_prefix[: sentence_ends[-1].end()].rstrip()
+        return raw_prefix
+    return output
 
 
 def train_host_delta(
@@ -2441,6 +2492,19 @@ def _generate_host(
     no_repeat_ngram_size = int(
         decoding.get("no_repeat_ngram_size", 0)
     )
+    allow_prompt_ngrams = bool(
+        decoding.get("allow_prompt_ngrams", False)
+    )
+    allowed_ngrams = (
+        {
+            tuple(prompt_ids[index : index + no_repeat_ngram_size])
+            for index in range(
+                max(0, len(prompt_ids) - no_repeat_ngram_size + 1)
+            )
+        }
+        if allow_prompt_ngrams and no_repeat_ngram_size > 0
+        else None
+    )
     state = {
         "past_key_values": result["past_key_values"],
         "task_routes": route_tensor,
@@ -2463,6 +2527,7 @@ def _generate_host(
             scores,
             generated=generated,
             no_repeat_ngram_size=no_repeat_ngram_size,
+            allowed_ngrams=allowed_ngrams,
         ).to(device)
         token_id = int(selected.item())
         if token_id == tokenizer.eos_token_id:
@@ -2486,6 +2551,16 @@ def _generate_host(
         skip_special_tokens=True,
         clean_up_tokenization_spaces=False,
     )
+    lexical_repetition_threshold = int(
+        decoding.get("lexical_repetition_truncation_threshold", 0)
+    )
+    if lexical_repetition_threshold > 0:
+        output = _truncate_novel_lexical_repetition(
+            output,
+            prompt,
+            threshold=lexical_repetition_threshold,
+        )
+        generated = tokenizer.encode(output)
     return output, generated, route, elapsed
 
 
