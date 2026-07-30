@@ -5,6 +5,11 @@ import json
 from pathlib import Path
 
 from abi.english_generalization_evaluation import _collapse_metrics
+from abi.english_realization_scale_catalog import (
+    CAPABILITIES as REALIZATION_CAPABILITIES,
+    PROBES_PER_CAPABILITY as REALIZATION_PROBES_PER_CAPABILITY,
+    build_catalog as build_realization_catalog,
+)
 from abi.hf_extraction import load_probe_catalog, probe_label_evidence_sha256
 from abi.natural_english_catalog import (
     BUILDERS,
@@ -196,6 +201,32 @@ def test_natural_catalog_has_disjoint_prompt_text_and_valid_labels() -> None:
     assert not (prompts["search"] & prompts["final_test"])
     assert not (prompts["validation"] & prompts["final_test"])
     for probe in catalog["probes"]:
+        assert probe["domain_labels"] == []
+        assert probe["domain_claims"] == []
+        assert probe["output_introduces_unsupplied_facts"] is False
+        assert (
+            probe["label_evidence_sha256"]
+            == probe_label_evidence_sha256(probe)
+        )
+
+
+def test_realization_scale_catalog_is_search_only_labeled_and_distinct() -> None:
+    catalog = build_realization_catalog()
+    probes = catalog["probes"]
+    assert len(probes) == (
+        len(REALIZATION_CAPABILITIES)
+        * REALIZATION_PROBES_PER_CAPABILITY
+    )
+    counts = Counter(probe["capability"] for probe in probes)
+    assert counts == {
+        capability: REALIZATION_PROBES_PER_CAPABILITY
+        for capability in REALIZATION_CAPABILITIES
+    }
+    assert len({probe["prompt"] for probe in probes}) == len(probes)
+    for probe in probes:
+        assert probe["split"] == "search"
+        assert probe["destination_scope"] == "english_core"
+        assert probe["domain"] == "domain_independent"
         assert probe["domain_labels"] == []
         assert probe["domain_claims"] == []
         assert probe["output_introduces_unsupplied_facts"] is False

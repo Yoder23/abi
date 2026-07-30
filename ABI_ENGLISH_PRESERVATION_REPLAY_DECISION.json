@@ -1,0 +1,65 @@
+{
+  "format": "abi-english-preservation-replay-decision/1",
+  "status": "REJECTED_VALIDATION_COLLAPSE_AND_CRITICAL_REWRITING_GATE",
+  "decision_date": "2026-07-30",
+  "protocol": "ABI_ENGLISH_PRESERVATION_REPLAY_PROTOCOL.json",
+  "candidate": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-preservation-replay-seed9824-steps3000-v5",
+    "checkpoint_sha256": "6286188dcacc40e17d3aef5f8a1c5e69aa646a1997f9036987b634e78da65e65",
+    "manifest_sha256": "bfa75544d1708e392abb523cb4d14e3e7c15ca448c817ae48896afd3fa823094",
+    "metadata_file_sha256": "e3747c37161f9bd8eb4b63a722e4b22dc9ff25f56dab81d948f723ce9a38a85d",
+    "training_wall_seconds": 413.28860390000045,
+    "peak_device_memory_bytes": 1964902912,
+    "teacher_tokens": 46306,
+    "new_teacher_tokens": 0,
+    "teacher_logits_stored": 0,
+    "teacher_hidden_activations_stored": 0,
+    "foreign_parameters_copied": 0,
+    "preservation_rows": 2100,
+    "preservation_teacher_tokens": 0
+  },
+  "general_preservation": {
+    "evidence": "results/abi_moonshot/segregated_acquisition_v3/three-block-preservation-replay-general-validation-v5.json",
+    "file_sha256": "0a6515faa92cd3b1f4b93239ec101c8a16374de81d3d21cae9bf2dc4ffa07d72",
+    "evidence_sha256": "8b43009f4221aa280c913a214e871a36bc51902bdd282bbe2bf6a4efa9c3dc0c",
+    "observations": 420,
+    "response_tokens": 43089,
+    "parent_top1_agreement": 0.9885585648309313,
+    "candidate_target_top1_accuracy": 0.9862609946854185,
+    "status": "PASS"
+  },
+  "teacher_transfer_validation": {
+    "evidence": "results/abi_moonshot/segregated_acquisition_v3/three-block-preservation-replay-english-validation-lexical4-full1400-v5.json",
+    "file_sha256": "272de500108c18f00f55ee257fd44f82fce852ca5f7ad9feedb90273285526da",
+    "evidence_sha256": "85be147a98247487b680b19691d0a5ab7948c91879cda71d8886da7988fcd1ec",
+    "observations": 1400,
+    "layercake_passes": 1238,
+    "layercake_pass_rate": 0.8842857142857142,
+    "source_passing_retention_rate": 0.9286885245901639,
+    "collapse_count": 1,
+    "critical_rewriting_pass_rate": 0.75,
+    "status": "FAIL"
+  },
+  "measured_failures": {
+    "collapsed_probe": "natural-cake_output_realization-validation-055-v2",
+    "collapsed_output_prefix": "earthborn,bornbornbornborn",
+    "noncritical_underperforming_capabilities": {
+      "email_drafting": 0.78,
+      "tone_control": 0.75,
+      "cake_output_realization": 0.73
+    },
+    "critical_underperforming_capabilities": {
+      "rewriting": 0.75
+    },
+    "autonomous_qualitative_probe": "Fluent surface English was restored, but the email omitted the requested meeting-tomorrow facts and introduced unrelated project language."
+  },
+  "decision": {
+    "promoted": false,
+    "native_export_authorized": false,
+    "successor_final_catalog_accessed": false,
+    "nearby_loss_or_mixture_sweep_authorized": false,
+    "measured_limiting_factor": "The fixed 46,306-token teacher payload lacks enough diverse realization supervision for rewriting, email, tone, and field-to-sentence grounding after parent preservation is enforced.",
+    "next_experiment": "One search-only, supplied-context realization extraction expansion targeting exactly the four measured weak capabilities."
+  },
+  "claim_boundary": "Replay scientifically fixed catastrophic forgetting, but this candidate is not yet a fluent, grounded, final-tested, or deployable English core."
+}

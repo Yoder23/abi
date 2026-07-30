@@ -1,0 +1,81 @@
+{
+  "format": "abi-english-realization-scale-v6-protocol/1",
+  "status": "PREREGISTERED_BEFORE_SOURCE_SURVEY",
+  "effective_date": "2026-07-30",
+  "controlling_negative_evidence": "ABI_ENGLISH_PRESERVATION_REPLAY_DECISION.json",
+  "objective": "Add the minimum next tranche of lexically diverse teacher supervision needed to repair measured rewriting, email, tone, and cake-output realization failures while preserving the LayerCake English substrate.",
+  "source": {
+    "model": "microsoft/Phi-3-mini-4k-instruct",
+    "revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "license": "MIT",
+    "device": "cuda",
+    "teacher_absent_at_layercake_inference": true
+  },
+  "catalog": {
+    "path": "catalogs/english_realization_scale_v6.json",
+    "sha256": "6e5520da4f39c23931810b52fdf93ebfca31a22ad10fe6494b1521e5ee28b121",
+    "catalog_id": "abi-english-realization-scale-v6",
+    "split": "search",
+    "probes": 2000,
+    "distinct_prompts": 2000,
+    "probes_per_capability": 500,
+    "capabilities": [
+      "rewriting",
+      "email_drafting",
+      "tone_control",
+      "cake_output_realization"
+    ],
+    "validation_probes": 0,
+    "final_probes": 0,
+    "closed_book_questions": 0,
+    "domain_labels": [],
+    "domain_claims": [],
+    "knowledge_class": "linguistic_form",
+    "content_basis": "supplied_non_domain_context"
+  },
+  "source_qualification": {
+    "minimum_distinct_probes_per_capability": 500,
+    "minimum_pass_rate": 0.8,
+    "minimum_wilson_95_lower_bound": 0.78,
+    "passing_search_outputs_only": true
+  },
+  "composition": {
+    "base_training_artifact": "results/abi_moonshot/segregated_acquisition_v3/phi3-natural-cumulative-english-search-training-v7.abix",
+    "base_archive_sha256": "f6a27cae529d990ba67f1a26bb9cd79f97ba5ca0965c9debd0fc98dab8dba820",
+    "new_survey_vault": "results/abi_moonshot/segregated_acquisition_v3/phi3-english-realization-scale-v6-search-survey.abix",
+    "output_training_artifact": "results/abi_moonshot/segregated_acquisition_v3/phi3-natural-cumulative-realization-scale-training-v8.abix",
+    "domain_ontology": "catalogs/domain_ontology_v1.json",
+    "source_policy": "best_evidence",
+    "include_passing_search_supplements": true,
+    "development_mode": true,
+    "validation_or_final_records_allowed": 0
+  },
+  "candidate_lock": {
+    "architecture": "unchanged three-block LayerCake with ten sparse task cakes",
+    "parent": "../layercake_release/artifacts/moonshot/phase2_shallow_sparse_pretrained/student2400-seed-9824",
+    "preservation_replay": "../layercake_release/data/moonshot/phase2/instruction_curriculum_semantic_control_v2.jsonl",
+    "seed": 9824,
+    "steps": 4000,
+    "teacher_batch_size": 4,
+    "preservation_batch_size": 4,
+    "preservation_loss_weight": 1.0,
+    "sampling_strategy": "balanced_capabilities",
+    "shared_learning_rate": 0.00002,
+    "cake_learning_rate": 0.0001,
+    "classifier_loss_weight": 0.25,
+    "prompt_overlap_loss_weight": 1.0,
+    "max_tokens": 256,
+    "device": "cuda"
+  },
+  "validation_gates": {
+    "general_parent_top1_agreement_at_least": 0.95,
+    "overall_functional_pass_rate_at_least": 0.8,
+    "each_critical_capability_pass_rate_at_least": 0.8,
+    "source_passing_retention_rate_at_least": 0.9,
+    "collapse_count": 0,
+    "blinded_human_fluency_required_before_promotion": true,
+    "same_exact_checkpoint_required_for_native_speed": true
+  },
+  "decision_rule": "Survey and retain only passing search outputs, compose them with the immutable v7 artifact under the segregation ontology, and train exactly one locked candidate. Reject it if any validation or autonomous-fluency gate fails. Do not access successor final evidence or alter decoding for selection.",
+  "claim_boundary": "This bounded measured-bottleneck expansion does not establish a globally minimum token payload, absolute English/domain purity, teacher equivalence, or final deployment quality."
+}

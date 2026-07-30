@@ -18,6 +18,7 @@ from .layercake_host import (
     load_host_model,
 )
 from .layercake_host_preservation import _batch, _load_general_rows
+from .layercake_core_loader import load_layercake_core
 
 
 def _write_json(path: Path, value: Mapping[str, Any]) -> None:
@@ -33,7 +34,8 @@ def evaluate_general_preservation(
     layercake_root: str | Path,
     parent_path: str | Path,
     canonical_abi_path: str | Path,
-    host_path: str | Path,
+    host_path: str | Path | None,
+    standalone_core_path: str | Path | None = None,
     output_path: str | Path,
     device_name: str = "cuda",
     batch_size: int = 2,
@@ -45,7 +47,18 @@ def evaluate_general_preservation(
     layercake_root = Path(layercake_root).resolve()
     parent_path = Path(parent_path).resolve()
     canonical_abi_path = Path(canonical_abi_path).resolve()
-    host_path = Path(host_path).resolve()
+    if (host_path is None) == (standalone_core_path is None):
+        raise LayerCakeHostError(
+            "exactly one host or standalone core is required"
+        )
+    host_path = (
+        Path(host_path).resolve() if host_path is not None else None
+    )
+    standalone_core_path = (
+        Path(standalone_core_path).resolve()
+        if standalone_core_path is not None
+        else None
+    )
     output_path = Path(output_path).resolve()
     if output_path.exists():
         raise LayerCakeHostError(
@@ -62,22 +75,43 @@ def evaluate_general_preservation(
         raise LayerCakeHostError(
             "locked general instruction-validation depth changed"
         )
-    candidate, tokenizer, manifest, device = load_host_model(
-        layercake_root=layercake_root,
-        parent_path=parent_path,
-        canonical_abi_path=canonical_abi_path,
-        host_path=host_path,
-        device_name=device_name,
-    )
-    parent, _, parent_manifest, _ = load_host_model(
-        layercake_root=layercake_root,
-        parent_path=parent_path,
-        canonical_abi_path=canonical_abi_path,
-        host_path=None,
-        device_name=device_name,
-    )
-    if manifest is None or parent_manifest is not None:
-        raise LayerCakeHostError("general validation host boundary failed")
+    if standalone_core_path is not None:
+        device = torch.device(device_name)
+        candidate, tokenizer, manifest = load_layercake_core(
+            standalone_core_path,
+            layercake_root=layercake_root,
+            device=device,
+        )
+        parent, _, parent_manifest = load_layercake_core(
+            parent_path,
+            layercake_root=layercake_root,
+            device=device,
+        )
+        if manifest.get("format") != (
+            "abi-layercake-full-english-core-acquisition/1"
+        ):
+            raise LayerCakeHostError(
+                "standalone general-validation identity changed"
+            )
+    else:
+        candidate, tokenizer, manifest, device = load_host_model(
+            layercake_root=layercake_root,
+            parent_path=parent_path,
+            canonical_abi_path=canonical_abi_path,
+            host_path=host_path,
+            device_name=device_name,
+        )
+        parent, _, parent_manifest, _ = load_host_model(
+            layercake_root=layercake_root,
+            parent_path=parent_path,
+            canonical_abi_path=canonical_abi_path,
+            host_path=None,
+            device_name=device_name,
+        )
+        if manifest is None or parent_manifest is not None:
+            raise LayerCakeHostError(
+                "general validation host boundary failed"
+            )
     candidate.eval()
     parent.eval()
     observations = []
@@ -189,6 +223,11 @@ def evaluate_general_preservation(
         "split": "instruction_validation",
         "final_test_accessed": False,
         "curriculum_sha256": _sha256_file(curriculum_path),
+        "candidate_kind": (
+            "standalone_acquired_core"
+            if standalone_core_path is not None
+            else "host_delta"
+        ),
         "host_manifest_sha256": manifest["manifest_sha256"],
         "parent_checkpoint_sha256": manifest["parent_layercake"][
             "checkpoint_sha256"
@@ -228,7 +267,9 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument("--layercake-root", required=True)
     parser.add_argument("--parent", required=True)
     parser.add_argument("--canonical-abi", required=True)
-    parser.add_argument("--host", required=True)
+    candidate = parser.add_mutually_exclusive_group(required=True)
+    candidate.add_argument("--host")
+    candidate.add_argument("--standalone-core")
     parser.add_argument("--output", required=True)
     parser.add_argument("--device", default="cuda")
     parser.add_argument("--batch-size", type=int, default=2)
@@ -244,6 +285,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         parent_path=args.parent,
         canonical_abi_path=args.canonical_abi,
         host_path=args.host,
+        standalone_core_path=args.standalone_core,
         output_path=args.output,
         device_name=args.device,
         batch_size=args.batch_size,

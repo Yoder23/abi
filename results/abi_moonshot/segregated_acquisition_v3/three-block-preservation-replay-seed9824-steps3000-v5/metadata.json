@@ -1,0 +1,428 @@
+{
+  "acquired_core": {
+    "active_parameter_count": 60756490,
+    "graph_topology_changed": false,
+    "logical_state_sha256_after": "88a9099c16f78b2145052de06f17e1595a953864c75adcd4cf5e8b45b3b65a74",
+    "maximum_active_task_cakes_per_sequence": 1,
+    "physical_sparse_topology_preserved": true,
+    "task_cake_count": 10,
+    "total_parameter_count": 61655050,
+    "trainable_parameter_count": 61655050
+  },
+  "architecture": {
+    "architecture_version": "layercake-shallow-sparse-english/1-three-block-task-cakes",
+    "heads": 12,
+    "layers": 3,
+    "max_tokens": 1024,
+    "task_cake_rank": 64,
+    "task_cakes": 10,
+    "vocab_size": 50257,
+    "width": 768
+  },
+  "canonical_semantic_abi": {
+    "changed": false,
+    "path_at_training": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\layercake_release\\moonshot\\phase2_canonical_semantic_abi_r3.json",
+    "sha256": "d024de52144a2d797d0501acb7deb55575ffca7e33f72900beff599cf0a97761"
+  },
+  "checkpoint": {
+    "bytes": 246627944,
+    "path": "model.safetensors",
+    "sha256": "6286188dcacc40e17d3aef5f8a1c5e69aa646a1997f9036987b634e78da65e65"
+  },
+  "claim_boundary": "This capacity diagnostic preserves the existing LayerCake graph but trains the complete core because the sealed parent and small-delta lineage both failed autonomous English. It is not a small-bridge Phase-3 pass, a fluent-core claim, or runtime certification.",
+  "foreign_source_boundary": {
+    "source_generated_text_retained_in_deployment": false,
+    "source_parameters_copied": 0,
+    "source_transformer_blocks_retained": 0,
+    "teacher_present_at_inference": false,
+    "teacher_tokenizer_required_at_inference": false
+  },
+  "format": "abi-layercake-full-english-core-acquisition/1",
+  "general_english_preservation": {
+    "all_rows_seen": true,
+    "claim_boundary": "This replay preserves already-certified LayerCake language behavior. It is not source-teacher extraction, a specialist domain cake, or evidence of absolute zero world knowledge.",
+    "domain_artifacts_imported": 0,
+    "enabled": true,
+    "path_at_training": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\layercake_release\\data\\moonshot\\phase2\\instruction_curriculum_semantic_control_v2.jsonl",
+    "sha256": "bae6c1fe300a0214c1f6cb19a8c8eeee4f0b75681290be56f258a247cd488e53",
+    "source": "sealed LayerCake knowledge-light supplied-context curriculum",
+    "teacher_outputs_imported": 0,
+    "teacher_tokens_imported": 0,
+    "training_rows": 2100,
+    "unique_rows_seen": 2100
+  },
+  "imported_artifact": {
+    "all_selected_records_seen": true,
+    "archive_sha256_after": "f6a27cae529d990ba67f1a26bb9cd79f97ba5ca0965c9debd0fc98dab8dba820",
+    "archive_sha256_before": "f6a27cae529d990ba67f1a26bb9cd79f97ba5ca0965c9debd0fc98dab8dba820",
+    "artifact_role": "segregated_layercake_training_material_v3",
+    "budget_id": "search-teacher-tokens-46306",
+    "budget_index": -1,
+    "domain_segregation_verified": true,
+    "manifest_sha256": "19cae51219230e2c93533fa5a9dc03b4933d669d56bf59ef900a52de601a3116",
+    "path_at_training": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_moonshot\\segregated_acquisition_v3\\phi3-natural-cumulative-english-search-training-v7.abix",
+    "selected_english_records": 1438,
+    "selected_teacher_output_bytes": 136202,
+    "selected_teacher_tokens": 46306,
+    "teacher_hidden_activation_bytes_stored": 0,
+    "teacher_logits_stored": 0,
+    "unique_selected_records_seen": 1438
+  },
+  "manifest_sha256": "bfa75544d1708e392abb523cb4d14e3e7c15ca448c817ae48896afd3fa823094",
+  "parent_layercake": {
+    "checkpoint_sha256": "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1",
+    "logical_state_sha256_before": "ca630945a8fd85946f7554292a60c90fff21df3ad0a61aa69629f4d483577ac4",
+    "metadata_sha256": "def6a552162a10a814d4bcfba31fa659530f0488d461c4a93414ee44a231ea82",
+    "path_at_training": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\layercake_release\\artifacts\\moonshot\\phase2_shallow_sparse_pretrained\\student2400-seed-9824",
+    "unchanged_on_disk": true
+  },
+  "status": "TRAINED_NOT_YET_SEMANTICALLY_OR_OPERATIONALLY_CERTIFIED",
+  "tokenizer": {
+    "path": "tokenizer.json",
+    "sha256": "1fe93b6152957cf9cfd6d89002467f789ce8b3f3e000b3a2edf27c808ddd0b9e"
+  },
+  "training": {
+    "active_parameter_seconds": 25481329537.884724,
+    "attempted_batches": 3005,
+    "batch_size": 4,
+    "cake_learning_rate": 0.0001,
+    "classifier_loss_weight": 0.25,
+    "cpu_core_hours": 0.107734375,
+    "cpu_seconds": 387.84375,
+    "curves": [
+      {
+        "classifier_loss": 2.81982421875,
+        "general_classifier_loss": 5.222689628601074,
+        "general_language_loss": 0.19183793663978577,
+        "language_loss": 3.7957496643066406,
+        "step": 1,
+        "total_loss": 5.998216152191162,
+        "wall_seconds": 0.7640589000075124
+      },
+      {
+        "classifier_loss": 0.8098526000976562,
+        "general_classifier_loss": 0.457427978515625,
+        "general_language_loss": 0.05176892131567001,
+        "language_loss": 1.4814772605895996,
+        "step": 100,
+        "total_loss": 1.8500663042068481,
+        "wall_seconds": 10.206818800012115
+      },
+      {
+        "classifier_loss": 0.14918136596679688,
+        "general_classifier_loss": 0.009555399417877197,
+        "general_language_loss": 0.004565245471894741,
+        "language_loss": 0.7711361646652222,
+        "step": 200,
+        "total_loss": 0.8153855800628662,
+        "wall_seconds": 19.68572970002424
+      },
+      {
+        "classifier_loss": 0.02582550048828125,
+        "general_classifier_loss": 0.016647547483444214,
+        "general_language_loss": 0.0029553149361163378,
+        "language_loss": 0.2074998915195465,
+        "step": 300,
+        "total_loss": 0.2210734635591507,
+        "wall_seconds": 29.463928700017277
+      },
+      {
+        "classifier_loss": 0.02438497543334961,
+        "general_classifier_loss": 0.009691238403320312,
+        "general_language_loss": 0.004288720898330212,
+        "language_loss": 0.37932607531547546,
+        "step": 400,
+        "total_loss": 0.3921338617801666,
+        "wall_seconds": 39.17871860001469
+      },
+      {
+        "classifier_loss": 0.010700702667236328,
+        "general_classifier_loss": 0.008258998394012451,
+        "general_language_loss": 0.007171435747295618,
+        "language_loss": 0.02636873349547386,
+        "step": 500,
+        "total_loss": 0.03828009217977524,
+        "wall_seconds": 52.88877570000477
+      },
+      {
+        "classifier_loss": 0.015353918075561523,
+        "general_classifier_loss": 0.0012381374835968018,
+        "general_language_loss": 0.0016811010427772999,
+        "language_loss": 0.5643922090530396,
+        "step": 600,
+        "total_loss": 0.5702213048934937,
+        "wall_seconds": 66.76006709999638
+      },
+      {
+        "classifier_loss": 0.005200386047363281,
+        "general_classifier_loss": 0.004292488098144531,
+        "general_language_loss": 0.0021512950770556927,
+        "language_loss": 0.06508292257785797,
+        "step": 700,
+        "total_loss": 0.0696074366569519,
+        "wall_seconds": 80.98728679999476
+      },
+      {
+        "classifier_loss": 0.003970980644226074,
+        "general_classifier_loss": 0.001512378454208374,
+        "general_language_loss": 0.0020422847010195255,
+        "language_loss": 0.1874675452709198,
+        "step": 800,
+        "total_loss": 0.1908806711435318,
+        "wall_seconds": 95.51844650000567
+      },
+      {
+        "classifier_loss": 0.003915548324584961,
+        "general_classifier_loss": 0.00018873810768127441,
+        "general_language_loss": 0.0008093352662399411,
+        "language_loss": 0.020513834431767464,
+        "step": 900,
+        "total_loss": 0.022349242120981216,
+        "wall_seconds": 110.25294829998165
+      },
+      {
+        "classifier_loss": 0.000927269458770752,
+        "general_classifier_loss": 0.0020905733108520508,
+        "general_language_loss": 0.0011251093819737434,
+        "language_loss": 0.002640155144035816,
+        "step": 1000,
+        "total_loss": 0.00451972521841526,
+        "wall_seconds": 124.85830020002322
+      },
+      {
+        "classifier_loss": 0.002280116081237793,
+        "general_classifier_loss": 0.00033220648765563965,
+        "general_language_loss": 0.0007706095930188894,
+        "language_loss": 0.02851339615881443,
+        "step": 1100,
+        "total_loss": 0.02993708662688732,
+        "wall_seconds": 139.1079827999929
+      },
+      {
+        "classifier_loss": 0.0019155442714691162,
+        "general_classifier_loss": 0.00037673115730285645,
+        "general_language_loss": 0.0008352156146429479,
+        "language_loss": 0.11024010926485062,
+        "step": 1200,
+        "total_loss": 0.11164839565753937,
+        "wall_seconds": 155.01634979998926
+      },
+      {
+        "classifier_loss": 0.0019717812538146973,
+        "general_classifier_loss": 0.0007607936859130859,
+        "general_language_loss": 0.0008550997590646148,
+        "language_loss": 0.06268011778593063,
+        "step": 1300,
+        "total_loss": 0.06421836465597153,
+        "wall_seconds": 170.1226225999999
+      },
+      {
+        "classifier_loss": 0.002587556838989258,
+        "general_classifier_loss": 0.0005222856998443604,
+        "general_language_loss": 0.0006950772949494421,
+        "language_loss": 0.12251836806535721,
+        "step": 1400,
+        "total_loss": 0.12399090826511383,
+        "wall_seconds": 184.41375070001232
+      },
+      {
+        "classifier_loss": 0.001936495304107666,
+        "general_classifier_loss": 0.0007499456405639648,
+        "general_language_loss": 0.0006177073810249567,
+        "language_loss": 0.0016752094961702824,
+        "step": 1500,
+        "total_loss": 0.0029645271133631468,
+        "wall_seconds": 198.93461280001793
+      },
+      {
+        "classifier_loss": 0.0013551115989685059,
+        "general_classifier_loss": 0.000482708215713501,
+        "general_language_loss": 0.0004645203298423439,
+        "language_loss": 0.028818082064390182,
+        "step": 1600,
+        "total_loss": 0.029742056503891945,
+        "wall_seconds": 212.62371710001025
+      },
+      {
+        "classifier_loss": 0.0010080337524414062,
+        "general_classifier_loss": 0.00026544928550720215,
+        "general_language_loss": 0.0002184861368732527,
+        "language_loss": 0.04198494553565979,
+        "step": 1700,
+        "total_loss": 0.042521800845861435,
+        "wall_seconds": 227.24108329997398
+      },
+      {
+        "classifier_loss": 0.0004424452781677246,
+        "general_classifier_loss": 9.259581565856934e-05,
+        "general_language_loss": 0.0005771758151240647,
+        "language_loss": 0.027401119470596313,
+        "step": 1800,
+        "total_loss": 0.028112055733799934,
+        "wall_seconds": 240.9665418000077
+      },
+      {
+        "classifier_loss": 0.0009341537952423096,
+        "general_classifier_loss": 1.564621925354004e-05,
+        "general_language_loss": 0.0003355921362526715,
+        "language_loss": 0.17070305347442627,
+        "step": 1900,
+        "total_loss": 0.17127609252929688,
+        "wall_seconds": 255.76988919998985
+      },
+      {
+        "classifier_loss": 0.0004430115222930908,
+        "general_classifier_loss": 0.00016921758651733398,
+        "general_language_loss": 0.0002208259393228218,
+        "language_loss": 0.043724361807107925,
+        "step": 2000,
+        "total_loss": 0.04409824684262276,
+        "wall_seconds": 269.9119683000026
+      },
+      {
+        "classifier_loss": 0.0006865859031677246,
+        "general_classifier_loss": 0.00026658177375793457,
+        "general_language_loss": 0.0003393444058019668,
+        "language_loss": 0.015538414008915424,
+        "step": 2100,
+        "total_loss": 0.016116049140691757,
+        "wall_seconds": 284.567221699981
+      },
+      {
+        "classifier_loss": 0.00018960237503051758,
+        "general_classifier_loss": 0.00018134713172912598,
+        "general_language_loss": 0.0003311793552711606,
+        "language_loss": 0.015058151446282864,
+        "step": 2200,
+        "total_loss": 0.015482068061828613,
+        "wall_seconds": 298.5450186000089
+      },
+      {
+        "classifier_loss": 0.0004513561725616455,
+        "general_classifier_loss": 0.00011375546455383301,
+        "general_language_loss": 0.0002708522661123425,
+        "language_loss": 0.03309297934174538,
+        "step": 2300,
+        "total_loss": 0.03350510820746422,
+        "wall_seconds": 312.9098703999771
+      },
+      {
+        "classifier_loss": 0.00039196014404296875,
+        "general_classifier_loss": 0.00020968914031982422,
+        "general_language_loss": 0.00025184202240779996,
+        "language_loss": 0.08935307711362839,
+        "step": 2400,
+        "total_loss": 0.0897553339600563,
+        "wall_seconds": 327.1448459000094
+      },
+      {
+        "classifier_loss": 0.00027501583099365234,
+        "general_classifier_loss": 3.37064266204834e-05,
+        "general_language_loss": 0.00034965010127052665,
+        "language_loss": 0.005921951495110989,
+        "step": 2500,
+        "total_loss": 0.00634878221899271,
+        "wall_seconds": 342.16975539998384
+      },
+      {
+        "classifier_loss": 0.0002815425395965576,
+        "general_classifier_loss": 7.846951484680176e-05,
+        "general_language_loss": 0.00013098478666506708,
+        "language_loss": 0.007874036207795143,
+        "step": 2600,
+        "total_loss": 0.008095024153590202,
+        "wall_seconds": 356.0232529999921
+      },
+      {
+        "classifier_loss": 0.00033929944038391113,
+        "general_classifier_loss": 8.514523506164551e-05,
+        "general_language_loss": 0.0001473221491323784,
+        "language_loss": 0.0034688562154769897,
+        "step": 2700,
+        "total_loss": 0.003722289577126503,
+        "wall_seconds": 370.71350650000386
+      },
+      {
+        "classifier_loss": 0.0002110004425048828,
+        "general_classifier_loss": 3.9696693420410156e-05,
+        "general_language_loss": 0.00011439797526691109,
+        "language_loss": 0.09534698724746704,
+        "step": 2800,
+        "total_loss": 0.09552405774593353,
+        "wall_seconds": 384.8678553000209
+      },
+      {
+        "classifier_loss": 0.0001626908779144287,
+        "general_classifier_loss": 7.101893424987793e-05,
+        "general_language_loss": 0.00022899663599673659,
+        "language_loss": 0.0009831137722358108,
+        "step": 2900,
+        "total_loss": 0.0012705378467217088,
+        "wall_seconds": 399.51368340000045
+      },
+      {
+        "classifier_loss": 0.00011962652206420898,
+        "general_classifier_loss": 7.194280624389648e-05,
+        "general_language_loss": 0.00021596041915472597,
+        "language_loss": 0.018770793452858925,
+        "step": 3000,
+        "total_loss": 0.019034646451473236,
+        "wall_seconds": 413.28850889997557
+      }
+    ],
+    "device": "cuda",
+    "general_preservation_batch_size": 4,
+    "general_preservation_loss_weight": 1.0,
+    "general_preservation_tokens_seen": 1243557,
+    "general_preservation_utf8_bytes_seen": 8732983,
+    "gpu_hours": 0.11480238997222235,
+    "max_tokens": 256,
+    "peak_device_memory_bytes": 1964902912,
+    "prompt_overlap_loss_weight": 1.0,
+    "raw_utf8_bytes_seen": 3202939,
+    "rss_after_bytes": 1279799296,
+    "rss_before_bytes": 956506112,
+    "sampled_records_by_capability": {
+      "abstention": 858,
+      "cake_output_realization": 858,
+      "clarification": 859,
+      "coherence": 858,
+      "conversation": 859,
+      "domain_independent_reasoning": 858,
+      "email_drafting": 859,
+      "format_control": 859,
+      "grammar": 859,
+      "instruction_following": 859,
+      "prompt_grounding": 859,
+      "rewriting": 858,
+      "summarization": 859,
+      "tone_control": 858
+    },
+    "sampling_strategy": "balanced_capabilities",
+    "seed": 9824,
+    "self_generated_prefix_recovery": {
+      "autonomous_prefix_tokens_seen": 17172,
+      "batches": 325,
+      "horizon_batches": {
+        "16": 108,
+        "32": 108,
+        "8": 109
+      },
+      "horizons": [
+        8,
+        16,
+        32
+      ],
+      "interval": 8,
+      "start_step": 400
+    },
+    "shared_learning_rate": 2e-05,
+    "skipped_amp_optimizer_steps": 5,
+    "steps": 3000,
+    "successful_optimizer_steps": 3000,
+    "supervised_layercake_tokens_seen": 311517,
+    "total_examples_per_step": 8,
+    "wall_seconds": 413.28860390000045,
+    "weight_decay": 0.01
+  }
+}
