@@ -96,12 +96,13 @@ def export_host_runtime(
     layercake_root: str | Path,
     parent_path: str | Path,
     canonical_abi_path: str | Path,
-    host_path: str | Path,
+    host_path: str | Path | None = None,
+    standalone_core_path: str | Path | None = None,
     output_path: str | Path,
     repetition_penalty: float = 1.0,
     no_repeat_ngram_size: int = 0,
 ) -> dict[str, Any]:
-    """Export and int8-quantize one exact ABI LayerCake host."""
+    """Export and int8-quantize one exact ABI host or standalone core."""
 
     import onnx
     from onnx import numpy_helper
@@ -111,12 +112,22 @@ def export_host_runtime(
     import torch.nn.functional as F
 
     from .artifacts import module_state_sha256
+    from .layercake_core_loader import load_layercake_core
     from .layercake_host import load_host_model
 
     layercake_root = Path(layercake_root).resolve()
     parent_path = Path(parent_path).resolve()
     canonical_abi_path = Path(canonical_abi_path).resolve()
-    host_path = Path(host_path).resolve()
+    if (host_path is None) == (standalone_core_path is None):
+        raise LayerCakeHostRuntimeError(
+            "exactly one host or standalone core must be supplied"
+        )
+    host_path = Path(host_path).resolve() if host_path is not None else None
+    standalone_core_path = (
+        Path(standalone_core_path).resolve()
+        if standalone_core_path is not None
+        else None
+    )
     output_path = Path(output_path).resolve()
     if output_path.exists():
         raise LayerCakeHostRuntimeError(
@@ -130,34 +141,71 @@ def export_host_runtime(
         raise LayerCakeHostRuntimeError(
             "no-repeat n-gram size must be zero or at least two"
         )
-    model, _, manifest, _ = load_host_model(
-        layercake_root=layercake_root,
-        parent_path=parent_path,
-        canonical_abi_path=canonical_abi_path,
-        host_path=host_path,
-        device_name="cpu",
-    )
-    if manifest is None:
-        raise LayerCakeHostRuntimeError("host manifest is required")
-    route_bridge = getattr(model, "_abi_sparse_route_bridge", None)
-    bridge_contract = manifest["host_delta"].get(
-        "sparse_route_bridge", {}
-    )
-    bridge_fused = (
-        bridge_contract.get("mode") == "none"
-        and bridge_contract.get("fused_into_existing_task_cakes")
-        is True
-    )
-    if route_bridge is None and not bridge_fused:
-        raise LayerCakeHostRuntimeError(
-            "native host requires a sparse route bridge or an explicit "
-            "verified task-cake fusion"
+    standalone_core = standalone_core_path is not None
+    if standalone_core:
+        model, _, manifest = load_layercake_core(
+            standalone_core_path,
+            layercake_root=layercake_root,
+            device="cpu",
         )
-    symbolic_contract = getattr(model, "_abi_symbolic_surface", None)
-    if symbolic_contract is None:
-        raise LayerCakeHostRuntimeError(
-            "promoted native host requires its symbolic substrate"
+        if (
+            manifest.get("format")
+            != "abi-layercake-full-english-core-acquisition/1"
+            or int(manifest.get("architecture", {}).get("layers", -1)) != 3
+            or manifest.get("canonical_semantic_abi", {}).get("sha256")
+            != _sha256_file(canonical_abi_path)
+            or manifest.get("foreign_source_boundary", {}).get(
+                "teacher_present_at_inference"
+            )
+            is not False
+            or int(
+                manifest.get("foreign_source_boundary", {}).get(
+                    "source_parameters_copied", -1
+                )
+            )
+            != 0
+        ):
+            raise LayerCakeHostRuntimeError(
+                "standalone core identity or foreign-source boundary changed"
+            )
+        route_bridge = None
+        bridge_fused = False
+        symbolic_contract = {
+            "schema_version": "abi-symbolic-surface/empty-standalone-1",
+            "handlers": [],
+            "source_teacher_text_retained": False,
+        }
+        tokenizer_source_path = standalone_core_path
+    else:
+        model, _, manifest, _ = load_host_model(
+            layercake_root=layercake_root,
+            parent_path=parent_path,
+            canonical_abi_path=canonical_abi_path,
+            host_path=host_path,
+            device_name="cpu",
         )
+        if manifest is None:
+            raise LayerCakeHostRuntimeError("host manifest is required")
+        route_bridge = getattr(model, "_abi_sparse_route_bridge", None)
+        bridge_contract = manifest["host_delta"].get(
+            "sparse_route_bridge", {}
+        )
+        bridge_fused = (
+            bridge_contract.get("mode") == "none"
+            and bridge_contract.get("fused_into_existing_task_cakes")
+            is True
+        )
+        if route_bridge is None and not bridge_fused:
+            raise LayerCakeHostRuntimeError(
+                "native host requires a sparse route bridge or an explicit "
+                "verified task-cake fusion"
+            )
+        symbolic_contract = getattr(model, "_abi_symbolic_surface", None)
+        if symbolic_contract is None:
+            raise LayerCakeHostRuntimeError(
+                "promoted native host requires its symbolic substrate"
+            )
+        tokenizer_source_path = parent_path
 
     class RuntimeGraph(torch.nn.Module):
         def __init__(self, source, source_route_bridge):
@@ -410,14 +458,31 @@ def export_host_runtime(
     onnx.save(document, int8_path)
 
     tokenizer_path = output_path / "tokenizer.json"
-    tokenizer_path.write_bytes((parent_path / "tokenizer.json").read_bytes())
+    tokenizer_path.write_bytes(
+        (tokenizer_source_path / "tokenizer.json").read_bytes()
+    )
     symbolic_path = output_path / "symbolic-surface.json"
     symbolic_path.write_bytes(_canonical_json_bytes(symbolic_contract))
-    host_manifest_path = host_path / "deployment_manifest.json"
-    metadata = {
-        "format": RUNTIME_FORMAT,
-        "status": "EXPORTED_NOT_YET_CERTIFIED",
-        "host": {
+    if standalone_core:
+        host_identity = {
+            "kind": "standalone_acquired_core",
+            "path_at_export": str(standalone_core_path),
+            "metadata_file_sha256": _sha256_file(
+                standalone_core_path / "metadata.json"
+            ),
+            "manifest_sha256": manifest["manifest_sha256"],
+            "checkpoint_sha256": manifest["checkpoint"]["sha256"],
+            "fused_transformer_state_sha256": module_state_sha256(
+                model.transformer
+            ),
+            "teacher_present_at_inference": False,
+            "source_transformer_blocks_retained": 0,
+            "source_parameters_copied": 0,
+        }
+    else:
+        host_manifest_path = host_path / "deployment_manifest.json"
+        host_identity = {
+            "kind": "host_delta",
             "path_at_export": str(host_path),
             "deployment_manifest_file_sha256": _sha256_file(
                 host_manifest_path
@@ -429,7 +494,46 @@ def export_host_runtime(
             ),
             "teacher_present_at_inference": False,
             "source_transformer_blocks_retained": 0,
-        },
+        }
+    source_decoding = dict(
+        getattr(
+            model,
+            "_abi_decoding",
+            {
+                "algorithm": "greedy",
+                "no_repeat_ngram_size": no_repeat_ngram_size,
+                "allow_prompt_ngrams": False,
+                "lexical_repetition_truncation_threshold": 0,
+                "prompt_identity_mixture": False,
+            },
+        )
+    )
+    if not standalone_core:
+        source_decoding["algorithm"] = (
+            "deterministic_greedy_with_repetition_controls"
+            if repetition_penalty != 1.0 or no_repeat_ngram_size != 0
+            else "greedy"
+        )
+        source_decoding["no_repeat_ngram_size"] = int(
+            no_repeat_ngram_size
+        )
+        source_decoding.setdefault("allow_prompt_ngrams", False)
+        source_decoding.setdefault(
+            "lexical_repetition_truncation_threshold", 0
+        )
+        source_decoding.setdefault("prompt_identity_mixture", False)
+    if standalone_core and (
+        float(repetition_penalty) != 1.0
+        or int(no_repeat_ngram_size)
+        != int(source_decoding["no_repeat_ngram_size"])
+    ):
+        raise LayerCakeHostRuntimeError(
+            "standalone runtime decoding must come from its frozen metadata"
+        )
+    metadata = {
+        "format": RUNTIME_FORMAT,
+        "status": "EXPORTED_NOT_YET_CERTIFIED",
+        "host": host_identity,
         "parent_layercake": manifest["parent_layercake"],
         "runtime": {
             "provider": "onnxruntime.CPUExecutionProvider",
@@ -452,18 +556,25 @@ def export_host_runtime(
                 1 if route_bridge is not None else 0
             ),
             "route_bridge_fused_into_task_cakes": bridge_fused,
+            "standalone_core_has_no_route_bridge": standalone_core,
             "persistent_incremental_kv_state": True,
             "decoding": {
-                "algorithm": (
-                    "deterministic_greedy_with_repetition_controls"
-                    if (
-                        repetition_penalty != 1.0
-                        or no_repeat_ngram_size != 0
-                    )
-                    else "greedy"
-                ),
+                "algorithm": source_decoding["algorithm"],
                 "repetition_penalty": float(repetition_penalty),
-                "no_repeat_ngram_size": int(no_repeat_ngram_size),
+                "no_repeat_ngram_size": int(
+                    source_decoding["no_repeat_ngram_size"]
+                ),
+                "allow_prompt_ngrams": bool(
+                    source_decoding.get("allow_prompt_ngrams", False)
+                ),
+                "lexical_repetition_truncation_threshold": int(
+                    source_decoding.get(
+                        "lexical_repetition_truncation_threshold", 0
+                    )
+                ),
+                "prompt_identity_mixture": bool(
+                    source_decoding.get("prompt_identity_mixture", False)
+                ),
                 "weights_changed": False,
             },
         },
@@ -1205,6 +1316,22 @@ def generate_native_host(
                 first = time.perf_counter_ns()
             logits, state = runtime.decode_step(token_id, state)
         output = runtime.decode(generated)
+        lexical_threshold = int(
+            runtime.decoding.get(
+                "lexical_repetition_truncation_threshold", 0
+            )
+        )
+        if lexical_threshold > 0:
+            from .layercake_host import (
+                _truncate_novel_lexical_repetition,
+            )
+
+            output = _truncate_novel_lexical_repetition(
+                output,
+                prompt,
+                threshold=lexical_threshold,
+            )
+            generated = runtime.encode(output)
     completed = time.perf_counter_ns()
     first = first or completed
     raw = output.encode("utf-8")
@@ -1357,10 +1484,29 @@ def generate_native_host_bytes(
         if first_output is None and raw_payload:
             first_output = time.perf_counter_ns()
         if len(raw_payload) >= max(0, output_bytes - 12):
-            payload = bytes(raw_payload).decode(
+            output = bytes(raw_payload).decode(
                 "utf-8", errors="replace"
-            ).encode("utf-8")
-            if len(payload) >= output_bytes:
+            )
+            lexical_threshold = int(
+                runtime.decoding.get(
+                    "lexical_repetition_truncation_threshold", 0
+                )
+            )
+            terminated = False
+            if lexical_threshold > 0:
+                from .layercake_host import (
+                    _truncate_novel_lexical_repetition,
+                )
+
+                truncated = _truncate_novel_lexical_repetition(
+                    output,
+                    prompt,
+                    threshold=lexical_threshold,
+                )
+                terminated = truncated != output
+                output = truncated
+            payload = output.encode("utf-8")
+            if len(payload) >= output_bytes or terminated:
                 break
         logits, state = runtime.decode_step(token_id, state)
         if len(prompt_ids) + len(generated) >= 1024:
@@ -1489,6 +1635,21 @@ def _bootstrap_interval(
     return [float(low), float(high)]
 
 
+def _runtime_candidate_manifest_sha(
+    metadata: Mapping[str, Any],
+) -> str:
+    host = metadata["host"]
+    value = host.get(
+        "deployment_manifest_sha256",
+        host.get("manifest_sha256"),
+    )
+    if not isinstance(value, str) or len(value) != 64:
+        raise LayerCakeHostRuntimeError(
+            "native runtime candidate manifest identity is missing"
+        )
+    return value
+
+
 def benchmark_native_host(
     *,
     artifact: str | Path,
@@ -1571,9 +1732,9 @@ def benchmark_native_host(
                 "prompt_id": prompt_id,
                 "prompt_sha256": prompt_sha,
                 "trial": reference["trial"],
-                "host_manifest_sha256": runtime.metadata["host"][
-                    "deployment_manifest_sha256"
-                ],
+                "host_manifest_sha256": _runtime_candidate_manifest_sha(
+                    runtime.metadata
+                ),
                 "parent_checkpoint_sha256": runtime.metadata[
                     "parent_layercake"
                 ]["checkpoint_sha256"],
@@ -1642,6 +1803,12 @@ def benchmark_native_host(
                     "route_bridge_fused_into_task_cakes": (
                         runtime.metadata["runtime"].get(
                             "route_bridge_fused_into_task_cakes",
+                            False,
+                        )
+                    ),
+                    "standalone_core_has_no_route_bridge": (
+                        runtime.metadata["runtime"].get(
+                            "standalone_core_has_no_route_bridge",
                             False,
                         )
                     ),
@@ -2413,10 +2580,16 @@ def verify_physical_sparse_runtime(
             installed_bridges == 10
             or (
                 installed_bridges == 0
-                and metadata["runtime"].get(
-                    "route_bridge_fused_into_task_cakes"
+                and (
+                    metadata["runtime"].get(
+                        "route_bridge_fused_into_task_cakes"
+                    )
+                    is True
+                    or metadata["runtime"].get(
+                        "standalone_core_has_no_route_bridge"
+                    )
+                    is True
                 )
-                is True
             )
         ),
         **conditional_checks,
@@ -2542,6 +2715,139 @@ def verify_runtime_identity(
     return evidence
 
 
+def verify_core_runtime_identity(
+    artifact: str | Path,
+    *,
+    standalone_core_path: str | Path,
+    output_path: str | Path,
+) -> dict[str, Any]:
+    """Bind one native graph to an exact frozen standalone LayerCake core."""
+
+    artifact = Path(artifact).resolve()
+    core_path = Path(standalone_core_path).resolve()
+    output_path = Path(output_path).resolve()
+    if output_path.exists():
+        raise LayerCakeHostRuntimeError(
+            f"identity evidence is immutable: {output_path}"
+        )
+    runtime = NativeHostRuntime(artifact, threads=1)
+    metadata = runtime.metadata
+    core_metadata_path = core_path / "metadata.json"
+    core_checkpoint_path = core_path / "model.safetensors"
+    core = json.loads(core_metadata_path.read_text(encoding="utf-8"))
+    core_decoding = dict(core["decoding"])
+    expected_decoding = {
+        "algorithm": core_decoding["algorithm"],
+        "repetition_penalty": 1.0,
+        "no_repeat_ngram_size": int(
+            core_decoding["no_repeat_ngram_size"]
+        ),
+        "allow_prompt_ngrams": bool(
+            core_decoding["allow_prompt_ngrams"]
+        ),
+        "lexical_repetition_truncation_threshold": int(
+            core_decoding["lexical_repetition_truncation_threshold"]
+        ),
+        "prompt_identity_mixture": bool(
+            core_decoding["prompt_identity_mixture"]
+        ),
+        "weights_changed": False,
+    }
+    checks = {
+        "standalone_kind_bound": (
+            metadata["host"].get("kind")
+            == "standalone_acquired_core"
+        ),
+        "core_metadata_file_hash_matches": (
+            metadata["host"]["metadata_file_sha256"]
+            == _sha256_file(core_metadata_path)
+        ),
+        "core_manifest_claim_hash_matches": (
+            metadata["host"]["manifest_sha256"]
+            == core["manifest_sha256"]
+        ),
+        "core_checkpoint_hash_matches": (
+            metadata["host"]["checkpoint_sha256"]
+            == core["checkpoint"]["sha256"]
+            == _sha256_file(core_checkpoint_path)
+        ),
+        "canonical_abi_hash_matches": (
+            metadata["canonical_semantic_abi"]["sha256"]
+            == core["canonical_semantic_abi"]["sha256"]
+        ),
+        "teacher_absent": (
+            metadata["host"]["teacher_present_at_inference"] is False
+            and core["foreign_source_boundary"][
+                "teacher_present_at_inference"
+            ]
+            is False
+        ),
+        "foreign_source_parameters_absent": (
+            metadata["host"]["source_parameters_copied"] == 0
+            and core["foreign_source_boundary"][
+                "source_parameters_copied"
+            ]
+            == 0
+        ),
+        "source_transformer_blocks_absent": (
+            metadata["host"]["source_transformer_blocks_retained"] == 0
+            and core["foreign_source_boundary"][
+                "source_transformer_blocks_retained"
+            ]
+            == 0
+        ),
+        "decoding_contract_is_exact": (
+            runtime.decoding == expected_decoding
+        ),
+        "symbolic_handlers_absent": (
+            runtime.symbolic_surface.get("handlers") == []
+            and runtime.symbolic_surface.get(
+                "source_teacher_text_retained"
+            )
+            is False
+        ),
+        "standalone_route_bridge_absent": (
+            metadata["runtime"].get(
+                "standalone_core_has_no_route_bridge"
+            )
+            is True
+            and metadata["runtime"]["installed_route_bridges"] == 0
+        ),
+    }
+    probe = generate_native_host(
+        runtime,
+        "Offer one calm sentence to someone who feels uncertain.",
+        max_new_tokens=64,
+    )
+    checks["hash_bound_native_graph_executes"] = (
+        bool(probe["output"].strip())
+        and probe["symbolic_handler_used"] is False
+        and probe["persistent_state"]["completed_prefix_recomputation"]
+        is False
+    )
+    evidence = {
+        "format": "abi-layercake-standalone-core-native-identity/1",
+        "status": "PASS" if all(checks.values()) else "FAIL",
+        "checks": checks,
+        "runtime_graph_sha256": metadata["runtime"]["graph_sha256"],
+        "core_manifest_sha256": core["manifest_sha256"],
+        "core_checkpoint_sha256": core["checkpoint"]["sha256"],
+        "core_metadata_file_sha256": _sha256_file(core_metadata_path),
+        "symbolic_surface_sha256": metadata["symbolic_surface"]["sha256"],
+        "decoding": runtime.decoding,
+        "probe": {
+            key: value
+            for key, value in probe.items()
+            if key not in {"authoritative_generated_token_ids"}
+        },
+        "final_test_accessed": False,
+    }
+    evidence["evidence_sha256"] = _canonical_sha(evidence)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    _write_json(output_path, evidence)
+    return evidence
+
+
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Export and verify an ABI LayerCake native host."
@@ -2551,7 +2857,9 @@ def _parser() -> argparse.ArgumentParser:
     export.add_argument("--layercake-root", required=True)
     export.add_argument("--parent", required=True)
     export.add_argument("--canonical-abi", required=True)
-    export.add_argument("--host", required=True)
+    export_source = export.add_mutually_exclusive_group(required=True)
+    export_source.add_argument("--host")
+    export_source.add_argument("--standalone-core")
     export.add_argument("--output", required=True)
     export.add_argument(
         "--repetition-penalty", type=float, default=1.0
@@ -2564,7 +2872,9 @@ def _parser() -> argparse.ArgumentParser:
     physical.add_argument("--output", required=True)
     identity = subparsers.add_parser("verify-identity")
     identity.add_argument("--artifact", required=True)
-    identity.add_argument("--host", required=True)
+    identity_source = identity.add_mutually_exclusive_group(required=True)
+    identity_source.add_argument("--host")
+    identity_source.add_argument("--standalone-core")
     identity.add_argument("--output", required=True)
     evaluate = subparsers.add_parser("evaluate")
     evaluate.add_argument("--artifact", required=True)
@@ -2599,6 +2909,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             parent_path=args.parent,
             canonical_abi_path=args.canonical_abi,
             host_path=args.host,
+            standalone_core_path=args.standalone_core,
             output_path=args.output,
             repetition_penalty=args.repetition_penalty,
             no_repeat_ngram_size=args.no_repeat_ngram_size,
@@ -2608,11 +2919,18 @@ def main(argv: Sequence[str] | None = None) -> int:
             args.artifact, args.output
         )
     elif args.command == "verify-identity":
-        result = verify_runtime_identity(
-            args.artifact,
-            host_path=args.host,
-            output_path=args.output,
-        )
+        if args.standalone_core is not None:
+            result = verify_core_runtime_identity(
+                args.artifact,
+                standalone_core_path=args.standalone_core,
+                output_path=args.output,
+            )
+        else:
+            result = verify_runtime_identity(
+                args.artifact,
+                host_path=args.host,
+                output_path=args.output,
+            )
     elif args.command == "evaluate":
         result = evaluate_native_host_semantics(
             artifact=args.artifact,

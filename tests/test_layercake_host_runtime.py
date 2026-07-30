@@ -12,6 +12,7 @@ from abi.layercake_host_runtime import (
     _canonical_sha,
     _quality,
     _quantize_embedding_rows,
+    _runtime_candidate_manifest_sha,
     _select_token,
     _summarize_native_semantics,
 )
@@ -27,6 +28,17 @@ def test_native_evidence_hash_is_canonical_and_order_independent():
 def test_native_runtime_error_is_fail_closed():
     with pytest.raises(LayerCakeHostRuntimeError):
         raise LayerCakeHostRuntimeError("stale graph")
+
+
+def test_native_candidate_identity_accepts_host_or_standalone_manifest():
+    assert _runtime_candidate_manifest_sha(
+        {"host": {"deployment_manifest_sha256": "a" * 64}}
+    ) == "a" * 64
+    assert _runtime_candidate_manifest_sha(
+        {"host": {"manifest_sha256": "b" * 64}}
+    ) == "b" * 64
+    with pytest.raises(LayerCakeHostRuntimeError):
+        _runtime_candidate_manifest_sha({"host": {}})
 
 
 def test_lightweight_v5_rewriting_matches_training_runtime():

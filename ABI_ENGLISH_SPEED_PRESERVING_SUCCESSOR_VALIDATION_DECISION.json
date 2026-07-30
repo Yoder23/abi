@@ -1,0 +1,68 @@
+{
+  "format": "abi-english-speed-preserving-successor-validation-decision/1",
+  "status": "THREE_BLOCK_CONTROL_SELECTED_FOR_EXACT_RUNTIME_SCREENING_FINAL_UNOPENED",
+  "decision_date": "2026-07-30",
+  "protocol": "ABI_ENGLISH_SPEED_PRESERVING_SUCCESSOR_PROTOCOL.json",
+  "decoding_lock": "ABI_ENGLISH_SPEED_PRESERVING_SUCCESSOR_DECODING_LOCK.json",
+  "fixed_imported_information": {
+    "archive_sha256": "f6a27cae529d990ba67f1a26bb9cd79f97ba5ca0965c9debd0fc98dab8dba820",
+    "teacher_tokens": 46306,
+    "records": 1438,
+    "additional_teacher_tokens": 0,
+    "domain_records": 0
+  },
+  "candidates": {
+    "depth_compressed_0_2_5": {
+      "checkpoint_sha256": "9fb64d12e1a9b64a76c2eff20a813c198097222bfb64ad8da107754ad2b20e5f",
+      "metadata_file_sha256": "48471736cde541067565691525498953b5b61ace9c3ec58a85c7acb4d70dc095",
+      "validation_evidence": "results/abi_moonshot/segregated_acquisition_v3/three-block-depth-compressed-cumulative-balanced-validation-lexical4-full1400-v4.json",
+      "validation_file_sha256": "6fae106e83239594fe031ad53a67c53cd392628b04ef69d9ca4c7b7175bffbc5",
+      "validation_evidence_sha256": "cbaa191d1dbce35eda65cbb79a89a22bbbe63b8f8100f571da67f43a97b8d66e",
+      "layercake_pass_rate": 0.865,
+      "source_passing_retention_rate": 0.9139344262295082,
+      "collapse_count": 3,
+      "passes_all_validation_gates": false,
+      "rejection_reason": "Nonzero autonomous repetition collapse."
+    },
+    "three_block_cumulative_control": {
+      "checkpoint_sha256": "91e7ec3b1d5042a50192d84cfb2c9da11ae6277d0e04d908b022ac19f349501c",
+      "metadata_file_sha256": "0cca3a3f6cbc487f849d269a9986195dba99eddcc9e8c2f00c6a1497b9b3dbc4",
+      "validation_evidence": "results/abi_moonshot/segregated_acquisition_v3/three-block-cumulative-control-balanced-validation-lexical4-full1400-v4.json",
+      "validation_file_sha256": "bb8e902a1ac408470fd72309ec2405ebfea8d52c94adb710efd17c1d9e95511c",
+      "validation_evidence_sha256": "d244540f1a33c4b7e7f5b94646cd7911d0d11474a45a99fad54940a7db6605fc",
+      "layercake_pass_rate": 0.8814285714285715,
+      "source_passing_retention_rate": 0.9221311475409836,
+      "collapse_count": 0,
+      "critical_capability_pass_rates": {
+        "grammar": 0.88,
+        "coherence": 0.97,
+        "prompt_grounding": 0.98,
+        "instruction_following": 0.8,
+        "conversation": 0.99,
+        "summarization": 0.87,
+        "rewriting": 0.89,
+        "clarification": 0.95,
+        "abstention": 1.0
+      },
+      "passes_all_validation_gates": true
+    }
+  },
+  "selection": {
+    "candidate": "three_block_cumulative_control",
+    "reason": "Only candidate passing every locked automatic validation gate.",
+    "architecture_layers": 3,
+    "total_parameters": 61655050,
+    "active_parameters": 60756490,
+    "teacher_present_at_inference": false,
+    "foreign_source_parameters_copied": 0,
+    "quality_equivalence_claimed": false,
+    "promoted": false
+  },
+  "next_gate": {
+    "freeze_checkpoint_and_decoding_byte_identity": true,
+    "exact_candidate_native_cpu_screening_required_before_final": true,
+    "successor_final_catalog_accessed": false,
+    "blinded_human_fluency_passed": false
+  },
+  "claim_boundary": "This selects one validation-passing three-block LayerCake for exact native runtime screening. It is not a final-test pass, human-fluency pass, teacher-equivalence claim, or product promotion."
+}
