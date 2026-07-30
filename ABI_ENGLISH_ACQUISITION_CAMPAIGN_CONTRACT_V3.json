@@ -1,0 +1,139 @@
+{
+  "format": "abi-english-acquisition-campaign-contract/3",
+  "status": "PREREGISTERED_BEFORE_V3_CANDIDATE_TRAINING_OR_NEW_FINAL_TEST_ACCESS",
+  "effective_date": "2026-07-30",
+  "supersession": {
+    "future_work_contracts": [
+      {
+        "path": "ABI_ENGLISH_SUCCESSOR_CONTRACT.json",
+        "file_sha256": "11d6b2a3faaceabc1c21172aced09ddddc301366300d5a28d5e93f05a7961c15"
+      },
+      {
+        "path": "ABI_ENGLISH_CORE_DOMAIN_SEGREGATION_CONTRACT_V2.json",
+        "file_sha256": "84ecb1141b8b0edb50d9eb6ae28054382032c665023d6da89c22d92af08d7b14"
+      }
+    ],
+    "historical_results_changed": false,
+    "reason": "The user clarified that zero teacher-relative generation loss remains the moonshot target, but a small measured loss is acceptable for an independently fluent English core. Specialist-domain extraction is secondary to preventing specialist material from entering that core."
+  },
+  "primary_objective": "Acquire a broadly fluent, teacher-free English core in the existing fast LayerCake architecture from a frozen open-weight teacher while keeping all declared specialist material outside the English acquisition payload.",
+  "priority_order": [
+    "broad autonomous English fluency and coherence",
+    "prompt grounding and instruction adherence",
+    "bounded English-core versus specialist-data segregation",
+    "teacher-relative generation retention",
+    "LayerCake CPU speed, TTFT, memory, sparse execution, and canonical ABI preservation",
+    "lowest passing tested core and imported-information point",
+    "optional separately selected domain artifacts"
+  ],
+  "frozen_source": {
+    "model": "microsoft/Phi-3-mini-4k-instruct",
+    "revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "local_files_only": true,
+    "teacher_absent_at_layercake_inference": true
+  },
+  "acquisition_boundary": {
+    "allowed": [
+      "teacher-generated response sequences",
+      "authoritative generated-token identifiers and counts",
+      "small LayerCake bridges, projections, task cakes, or fused low-rank deltas",
+      "fact-safe supplied contexts and abstract or nonce task content"
+    ],
+    "forbidden_at_inference": [
+      "teacher weights",
+      "teacher transformer blocks",
+      "teacher tokenizer service",
+      "teacher output cache",
+      "stored teacher logits",
+      "stored teacher activations",
+      "prompt-template lookup handlers used to pass evaluation prompts"
+    ],
+    "foreign_teacher_transfer_called_lossless": false,
+    "layercake_package_identity_transfer_may_be_called_lossless": true
+  },
+  "data_protocol": {
+    "search_validation_final_disjoint": true,
+    "final_test_used_for_selection": false,
+    "minimum_distinct_prompts_per_capability_per_promotion_split": 100,
+    "minimum_natural_prompt_families_per_capability_per_split": 4,
+    "template_identity_overlap_between_splits": 0,
+    "english_capabilities": 14,
+    "teacher_token_counts_authoritative": true,
+    "all_imported_information_accounted": true,
+    "all_training_records_use_schema": "abi-layercake-segregated-extraction-record/2",
+    "ambiguous_or_cross_domain_material": "quarantine",
+    "known_specialist_markers_in_english_payload": 0,
+    "english_domain_labels": 0,
+    "english_domain_claims": 0,
+    "english_declared_unsupplied_facts": 0
+  },
+  "selection_stages": [
+    {
+      "id": "capacity_diagnostic",
+      "purpose": "Test whether clean sequence depth fixes the v47 failure without symbolic handlers.",
+      "promotion_eligible": false
+    },
+    {
+      "id": "natural_paraphrase_search",
+      "purpose": "Select capacity and information budget on broad prompt families and the disclosed post-certificate failure suite.",
+      "promotion_eligible": false
+    },
+    {
+      "id": "locked_validation",
+      "purpose": "Screen the exact selected candidate on disjoint prompts and source-relative behavior.",
+      "promotion_eligible": false
+    },
+    {
+      "id": "untouched_final_and_runtime",
+      "purpose": "Certify one exact teacher-free candidate only after architecture, budget, and decoding are frozen.",
+      "promotion_eligible": true
+    }
+  ],
+  "quality_gates": {
+    "moonshot_target": {
+      "source_passing_regressions": 0,
+      "paired_human_generation_noninferiority_lower_confidence_bound": 0.5
+    },
+    "minimum_acceptable_fluent_core": {
+      "source_passing_prompt_retention_rate_at_least": 0.9,
+      "overall_functional_pass_rate_at_least": 0.8,
+      "each_critical_capability_pass_rate_at_least": 0.8,
+      "critical_capabilities": [
+        "grammar",
+        "coherence",
+        "prompt_grounding",
+        "instruction_following",
+        "conversation",
+        "summarization",
+        "rewriting",
+        "clarification",
+        "abstention"
+      ],
+      "blinded_human_outputs_judged_fluent_rate_at_least": 0.9,
+      "repetition_or_generation_collapse_count": 0
+    },
+    "claim_rule": "A candidate meeting the minimum acceptable fluent-core gate but not the moonshot target is labeled FLUENT_WITH_MEASURED_TEACHER_RELATIVE_LOSS, never quality-equivalent or lossless."
+  },
+  "execution_gates": {
+    "same_exact_candidate_for_quality_and_speed": true,
+    "phase2_cpu_throughput_ratio_at_least": 2.0,
+    "phase2_throughput_retention_at_least": 0.95,
+    "time_to_first_output_no_worse_than_optimized_transformer": true,
+    "active_memory_lower_than_optimized_transformer": true,
+    "persistent_incremental_state": true,
+    "physical_sparse_execution_verified": true,
+    "inactive_domain_execution_count": 0,
+    "canonical_layercake_abi_unchanged": true
+  },
+  "minimum_frontier_rule": "After fluency and execution pass, test nested imported-information and trainable-capacity points. Report the lowest passing tested point with its adjacent lower failure; never claim a global mathematical minimum.",
+  "promotion_rule": "Do not promote scaffolding, a synthetic-template pass, or a candidate that borrows speed from another lineage. Promotion requires the same exact teacher-free LayerCake candidate to pass the minimum fluent-core, segregation, execution, identity, untouched-final, and adversarial gates. Continue toward the zero-regression moonshot target even when a fluent interim core is preserved.",
+  "current_state_at_preregistration": {
+    "v47_broad_generalization_passes": 0,
+    "v47_broad_generalization_observations": 28,
+    "frozen_source_passes": 19,
+    "frozen_source_observations": 28,
+    "v3_candidate_trained": false,
+    "new_final_test_accessed": false,
+    "moonshot_complete": false
+  }
+}

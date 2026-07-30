@@ -47,6 +47,9 @@ abi-moonshot = "abi.moonshot:main"
 abi-layercake-release = "abi.moonshot_release:main"
 abi-layercake-host-v3 = "abi.layercake_host_v3:main"
 abi-layercake-domains-v3 = "abi.layercake_domains_v3:main"
+abi-layercake-full-core-acquire = "abi.layercake_full_core_acquisition:main"
+abi-layercake-generalization = "abi.english_generalization_evaluation:main"
+abi-natural-english-catalog = "abi.natural_english_catalog:main"
 
 [build-system]
 requires = ["setuptools>=68"]
