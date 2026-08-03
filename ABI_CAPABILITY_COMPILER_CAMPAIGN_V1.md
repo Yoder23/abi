@@ -1,7 +1,7 @@
 # ABI capability-compiler campaign v1
 
 Status date: 2026-08-03
-Status: controlling plan; Phases 0 and 1 are COMPLETE; Phase 2 is OPEN_NOT_STARTED
+Status: controlling plan; Phases 0 and 1 are COMPLETE; Phase 2 is IN_PROGRESS_PREREGISTERED
 
 ## Decision
 
@@ -192,8 +192,9 @@ the untouched final suite has not influenced extraction or normalization.
 
 ### Phase 2 - Strong matched LoRA and distillation baselines
 
-Status: **OPEN_NOT_STARTED**. Materialized implementation hashes must be frozen
-before results are observed.
+Status: **IN_PROGRESS_PREREGISTERED** under
+`ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_V1.json`. Ten implementation and test
+files were hash-frozen before any Phase 2 training result existed.
 
 - Train L0/L1 and D0/D1 plus only the strongest justified D2 under identical
   source prompts and explicit imported-information accounting.

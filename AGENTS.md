@@ -25,7 +25,9 @@ Status date: 2026-08-03.
   `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json`.
 - Capability-compiler Phase 1 is **COMPLETE** under
   `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json`.
-- Phase 2 is **OPEN_NOT_STARTED**.
+- Phase 2 is **IN_PROGRESS_PREREGISTERED** under
+  `ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_V1.json`; no Phase 2 training result
+  existed when the implementation hashes were frozen.
 - Phases 3 through 8 are **LOCKED**.
 - The ABI moonshot is **not complete**.
 
@@ -53,10 +55,10 @@ LoRA or distillation.
 
 ## Active authorization
 
-Phase 2 may materialize and hash the mandatory matched LoRA and distillation
-implementations, then run only the preregistered baselines. Do not start Phase
-3 ABI-candidate training until Phase 2 is certified. Final-test outputs may not
-influence implementation, tuning, repair, stopping, or selection.
+Phase 2 may run only the hash-bound T0, L0, L1, D0, D1, and bounded D2 baseline
+campaign in `ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_V1.json`. Do not start
+Phase 3 ABI-candidate training until Phase 2 is certified. Final-test outputs
+may not influence implementation, tuning, repair, stopping, or selection.
 
 ## Permanent scientific rules
 
@@ -91,6 +93,7 @@ influence implementation, tuning, repair, stopping, or selection.
 
 ```powershell
 C:\Python310\python.exe -m abi.capability_compiler_phase1_certificate
+C:\Python310\python.exe -m abi.capability_compiler_phase2_verify
 C:\Python310\python.exe -m pytest -q
 ```
 
