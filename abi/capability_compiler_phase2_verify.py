@@ -11,18 +11,38 @@ from .capability_compiler_phase1_certificate import verify_certificate
 from .capability_compiler_phase2_common import PHASE1_IR_SHA256, Phase2Error, sha256_file
 
 
-PROTOCOL = "ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_V1.json"
+PROTOCOL = "ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_REPAIR1_V2.json"
 
 
 def verify_protocol(root: Path, protocol_path: Path | None = None) -> dict[str, Any]:
     path = (protocol_path or root / PROTOCOL).resolve()
-    protocol = json.loads(path.read_text(encoding="utf-8"))
-    if protocol.get("format") != "abi-capability-compiler-phase2-protocol/1":
-        raise Phase2Error("invalid Phase 2 protocol format")
-    if protocol.get("status") != "PREREGISTERED_BEFORE_ANY_PHASE2_TRAINING":
-        raise Phase2Error("Phase 2 protocol was not preregistered")
-    if protocol.get("candidate_training_performed_before_preregistration") is not False:
-        raise Phase2Error("protocol does not attest the pre-training boundary")
+    amendment = json.loads(path.read_text(encoding="utf-8"))
+    if amendment.get("format") != "abi-capability-compiler-phase2-protocol-repair/2":
+        raise Phase2Error("invalid Phase 2 repair protocol format")
+    if amendment.get("status") != "PREREGISTERED_REPAIR1_BEFORE_ANY_PHASE2_TRAINING":
+        raise Phase2Error("Phase 2 repair was not preregistered")
+    if (
+        amendment.get("candidate_training_performed_before_repair") is not False
+        or amendment.get("repair_count") != 1
+        or amendment.get("repairs_remaining") != 0
+    ):
+        raise Phase2Error("repair boundary changed")
+    original_path = (root / amendment["original_protocol"]["path"]).resolve()
+    if root.resolve() not in original_path.parents or sha256_file(original_path) != amendment["original_protocol"]["sha256"]:
+        raise Phase2Error("original Phase 2 protocol changed")
+    protocol = json.loads(original_path.read_text(encoding="utf-8"))
+    if (
+        protocol.get("format") != "abi-capability-compiler-phase2-protocol/1"
+        or protocol.get("status") != "PREREGISTERED_BEFORE_ANY_PHASE2_TRAINING"
+        or protocol.get("candidate_training_performed_before_preregistration") is not False
+    ):
+        raise Phase2Error("original Phase 2 protocol was not preregistered")
+    failure_path = (root / amendment["failure_evidence"]["path"]).resolve()
+    if root.resolve() not in failure_path.parents or sha256_file(failure_path) != amendment["failure_evidence"]["sha256"]:
+        raise Phase2Error("repair failure evidence changed")
+    failure = json.loads(failure_path.read_text(encoding="utf-8"))
+    if failure.get("phase2_training_started") is not False or failure.get("repair_budget_consumed") != 1:
+        raise Phase2Error("repair evidence does not prove the training boundary")
     phase1 = root / "ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json"
     verify_certificate(phase1)
     if sha256_file(phase1) != protocol["phase1"]["certificate_sha256"]:
@@ -30,7 +50,7 @@ def verify_protocol(root: Path, protocol_path: Path | None = None) -> dict[str, 
     ir = root / protocol["phase1"]["ir_path"]
     if sha256_file(ir) != PHASE1_IR_SHA256 or protocol["phase1"]["ir_sha256"] != PHASE1_IR_SHA256:
         raise Phase2Error("Phase 1 IR binding changed")
-    for relative, expected in protocol["implementation_bindings"].items():
+    for relative, expected in amendment["implementation_bindings"].items():
         target = (root / relative).resolve()
         if root.resolve() not in target.parents or not target.is_file():
             raise Phase2Error("unsafe or missing implementation binding")
@@ -62,7 +82,8 @@ def verify_protocol(root: Path, protocol_path: Path | None = None) -> dict[str, 
         "status": "PASS",
         "protocol_path": path.as_posix(),
         "protocol_sha256": sha256_file(path),
-        "implementation_bindings": len(protocol["implementation_bindings"]),
+        "implementation_bindings": len(amendment["implementation_bindings"]),
+        "repair_count": 1,
         "candidate_training_performed": False,
     }
 

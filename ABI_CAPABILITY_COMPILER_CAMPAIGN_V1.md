@@ -192,9 +192,11 @@ the untouched final suite has not influenced extraction or normalization.
 
 ### Phase 2 - Strong matched LoRA and distillation baselines
 
-Status: **IN_PROGRESS_PREREGISTERED** under
-`ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_V1.json`. Ten implementation and test
-files were hash-frozen before any Phase 2 training result existed.
+Status: **IN_PROGRESS_PREREGISTERED_REPAIR1** under
+`ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_REPAIR1_V2.json`. Ten implementation
+and test files were hash-frozen before any Phase 2 training result existed. The
+sole allowed repair corrected a tokenizer/model vocabulary conformance check
+after a pre-pack failure; it changed no data, model, grid, metric, or threshold.
 
 - Train L0/L1 and D0/D1 plus only the strongest justified D2 under identical
   source prompts and explicit imported-information accounting.

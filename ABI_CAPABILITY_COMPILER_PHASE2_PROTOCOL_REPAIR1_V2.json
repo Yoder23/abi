@@ -1,0 +1,71 @@
+{
+  "format": "abi-capability-compiler-phase2-protocol-repair/2",
+  "protocol_id": "abi-capability-compiler-phase2-repair1-v2",
+  "status": "PREREGISTERED_REPAIR1_BEFORE_ANY_PHASE2_TRAINING",
+  "effective_date": "2026-08-03",
+  "candidate_training_performed_before_repair": false,
+  "phase2_model_result_observed_before_repair": false,
+  "repair_count": 1,
+  "repairs_remaining": 0,
+  "historical_evidence_changed": false,
+  "original_protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_V1.json",
+    "sha256": "676eb8cbefe47f9bfd32b6ee47a75cadefc4fcbbacd42b453cca61b27f260f2e",
+    "commit": "c95ad2380588e6b31304009a7a769c3a97469e92",
+    "tag": "abi-capability-compiler-phase2-preregistered-v1"
+  },
+  "failure_evidence": {
+    "path": "results/abi_capability_compiler_phase2/preflight_attempt1_failure.json",
+    "sha256": "84afb14f00bf62cd937f526292c2698f5084e308a28f0302d790ba673d0d0d3d",
+    "status": "FAIL_RUNTIME_CONFORMANCE_BEFORE_PACK_CONSTRUCTION_OR_TRAINING"
+  },
+  "measured_defect": {
+    "incorrect_assumption": "tokenizer.vocab_size_equals_model_output_vocab_size",
+    "observed_tokenizer_base_vocab_size": 32000,
+    "observed_tokenizer_runtime_entries": 32011,
+    "observed_model_output_vocab_size": 32064,
+    "training_or_quality_result_influenced_repair": false
+  },
+  "bounded_repair": {
+    "path": "abi/capability_compiler_phase2_prepare.py",
+    "old_sha256": "b29b4f90e361190f19ee2270677e0ed076a09fe19efa065d2d4cc088f61c9edc",
+    "new_sha256": "96467c3593b4228ed8ed7f5b5d6bda35e0fc686c2e168c26051643b085de20d8",
+    "new_contract": {
+      "tokenizer_base_vocab_size": 32000,
+      "tokenizer_runtime_entries": 32011,
+      "model_output_vocab_size": 32064,
+      "maximum_added_token_id_must_be_below_model_output_vocab_size": true
+    },
+    "unchanged": [
+      "source",
+      "source_revision",
+      "source_weight_or_tokenizer_file_hashes",
+      "Phase1_IR",
+      "packing",
+      "systems",
+      "models",
+      "training_grids",
+      "losses",
+      "seeds",
+      "development_selection",
+      "statistics",
+      "runtime_metrics",
+      "thresholds",
+      "final_split_firewall"
+    ]
+  },
+  "implementation_bindings": {
+    "abi/capability_compiler_phase2_common.py": "8093ec2016d685f0327c87640042c8373bc141d76351fd641b21a44d018b6c92",
+    "abi/capability_compiler_phase2_prepare.py": "96467c3593b4228ed8ed7f5b5d6bda35e0fc686c2e168c26051643b085de20d8",
+    "abi/capability_compiler_phase2_student.py": "5a5ef5a9da2d8bc5d035b830f26652512cd09e4dde91b8b91813c1f4ca8f06e6",
+    "abi/capability_compiler_phase2_lora.py": "4f209ab042a132dd4aae4d9961b462eb8422d38dedb5c3de942f84a6d88d8747",
+    "abi/capability_compiler_phase2_teacher.py": "dc76ee575f5e5f2cccd9fe8279ae501920bb022e8e62a921240ea3e5a9ced892",
+    "abi/capability_compiler_phase2_analysis.py": "a29b8989ffb2b5c3adaafb2dada538fac35158a98c920bd3f377fd0b6ce18160",
+    "abi/capability_compiler_phase2_runtime.py": "f74f5754687b6f1ef296f23c7d23269e9b1a019f5497190639d0ce0de96701ef",
+    "abi/capability_compiler_phase2_verify.py": "15bd59f0c318ab0e865f690c45be44e9e6429096e7a15f06c003a0d01f2f2cbf",
+    "tests/test_capability_compiler_phase2_common.py": "2dd3ab477a34b7481b81399b125e9e446dbd031e253f17c1f116854075862366",
+    "tests/test_capability_compiler_phase2_protocol.py": "3e5fda27c7994a7b331960b2abb12ed406fb905c3e7a7c98090a4d74322fe9b0"
+  },
+  "training_authorized_after": "Only the unchanged original Phase 2 baseline campaign using this repaired tokenizer/model vocabulary conformance check.",
+  "phase3_status": "LOCKED"
+}

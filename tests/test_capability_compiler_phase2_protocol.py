@@ -8,7 +8,7 @@ from abi.capability_compiler_phase2_verify import verify_protocol
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PROTOCOL = ROOT / "ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_V1.json"
+PROTOCOL = ROOT / "ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_REPAIR1_V2.json"
 
 
 def _mutated(tmp_path: Path, mutate) -> Path:
@@ -28,9 +28,10 @@ def test_real_phase2_preregistration_passes():
 @pytest.mark.parametrize(
     "mutate",
     [
-        lambda value: value.__setitem__("candidate_training_performed_before_preregistration", True),
-        lambda value: value["splits"].__setitem__("final_access", "ALLOWED"),
-        lambda value: value["statistics"].__setitem__("bootstrap_resamples", 10),
+        lambda value: value.__setitem__("candidate_training_performed_before_repair", True),
+        lambda value: value.__setitem__("repair_count", 2),
+        lambda value: value["original_protocol"].__setitem__("sha256", "0" * 64),
+        lambda value: value["failure_evidence"].__setitem__("sha256", "0" * 64),
         lambda value: value["implementation_bindings"].__setitem__(
             "abi/capability_compiler_phase2_common.py", "0" * 64
         ),

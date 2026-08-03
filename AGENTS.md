@@ -25,9 +25,10 @@ Status date: 2026-08-03.
   `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json`.
 - Capability-compiler Phase 1 is **COMPLETE** under
   `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json`.
-- Phase 2 is **IN_PROGRESS_PREREGISTERED** under
-  `ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_V1.json`; no Phase 2 training result
-  existed when the implementation hashes were frozen.
+- Phase 2 is **IN_PROGRESS_PREREGISTERED_REPAIR1** under
+  `ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_REPAIR1_V2.json`; the sole allowed
+  implementation repair corrected tokenizer/model vocabulary accounting
+  before any pack artifact or Phase 2 training result existed.
 - Phases 3 through 8 are **LOCKED**.
 - The ABI moonshot is **not complete**.
 
@@ -56,7 +57,7 @@ LoRA or distillation.
 ## Active authorization
 
 Phase 2 may run only the hash-bound T0, L0, L1, D0, D1, and bounded D2 baseline
-campaign in `ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_V1.json`. Do not start
+campaign in `ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_REPAIR1_V2.json`. Do not start
 Phase 3 ABI-candidate training until Phase 2 is certified. Final-test outputs
 may not influence implementation, tuning, repair, stopping, or selection.
 

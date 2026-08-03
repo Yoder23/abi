@@ -6,7 +6,7 @@
   "phases": [
     {"id": 0, "status": "COMPLETE", "certificate": "ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json"},
     {"id": 1, "status": "COMPLETE", "certificate": "ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json"},
-    {"id": 2, "status": "IN_PROGRESS_PREREGISTERED", "protocol": "ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_V1.json", "certificate": null},
+    {"id": 2, "status": "IN_PROGRESS_PREREGISTERED_REPAIR1", "protocol": "ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_REPAIR1_V2.json", "certificate": null},
     {"id": 3, "status": "LOCKED", "certificate": null},
     {"id": 4, "status": "LOCKED", "certificate": null},
     {"id": 5, "status": "LOCKED", "certificate": null},
@@ -14,6 +14,6 @@
     {"id": 7, "status": "LOCKED", "certificate": null},
     {"id": 8, "status": "LOCKED", "certificate": null}
   ],
-  "training_authorized": "Only the hash-bound Phase 2 T0, L0, L1, D0, D1, and bounded D2 campaign in ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_V1.json; no Phase 3 ABI candidate is authorized.",
+  "training_authorized": "Only the hash-bound Phase 2 T0, L0, L1, D0, D1, and bounded D2 campaign in ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_REPAIR1_V2.json; no Phase 3 ABI candidate is authorized.",
   "moonshot_complete": false
 }

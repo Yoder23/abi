@@ -77,8 +77,19 @@ def _tokenizer(snapshot: Path) -> Any:
     tokenizer = AutoTokenizer.from_pretrained(
         str(snapshot), local_files_only=True, trust_remote_code=False
     )
-    if tokenizer.vocab_size != 32_064:
-        raise Phase2Error("source tokenizer vocabulary changed")
+    # Phi-3 exposes a 32,000-piece SentencePiece base vocabulary, 11 runtime
+    # tokenizer entries after added special tokens, and a 32,064-wide model
+    # output head.  These are different authoritative quantities.
+    config = json.loads((snapshot / "config.json").read_text(encoding="utf-8"))
+    added_ids = [int(value) for value in tokenizer.get_added_vocab().values()]
+    if (
+        tokenizer.vocab_size != 32_000
+        or len(tokenizer) != 32_011
+        or int(config.get("vocab_size", 0)) != 32_064
+        or not added_ids
+        or max(added_ids) >= int(config["vocab_size"])
+    ):
+        raise Phase2Error("source tokenizer/model vocabulary contract changed")
     return tokenizer
 
 
@@ -103,7 +114,9 @@ def prepare_packs(*, root: Path, output: Path) -> dict[str, Any]:
         "source_manifest_sha256": SOURCE_MANIFEST_SHA256,
         "packing_seed": PACKING_SEED,
         "packing_context": PACKING_CONTEXT,
-        "tokenizer_vocab_size": tokenizer.vocab_size,
+        "tokenizer_base_vocab_size": tokenizer.vocab_size,
+        "tokenizer_runtime_entries": len(tokenizer),
+        "model_output_vocab_size": 32_064,
         "candidate_training_performed": False,
     })
     output.parent.mkdir(parents=True, exist_ok=True)

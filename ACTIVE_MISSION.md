@@ -14,7 +14,7 @@ were frozen.
 | --- | --- | --- |
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
-| 2 — matched LoRA and distillation baselines | IN_PROGRESS_PREREGISTERED | `ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_V1.json` |
+| 2 — matched LoRA and distillation baselines | IN_PROGRESS_PREREGISTERED_REPAIR1 | `ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_REPAIR1_V2.json` |
 | 3–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -39,6 +39,12 @@ the exact 11,060,800-parameter same-size student, source-file rehashing,
 development-only screening, three headline seeds, paired bootstrap/Wilson
 analysis, and separate genuine-cold and 20-observation warm runtime paths.
 The final split remains prohibited throughout Phase 2.
+
+The first pack preflight failed before creating an artifact or training a
+model because tokenizer base vocabulary size was incorrectly equated with the
+model output-head size. The one allowed implementation repair now binds all
+three authoritative quantities (32,000 base pieces, 32,011 runtime tokenizer
+entries, and a 32,064-wide model vocabulary). The failure remains preserved.
 
 Phase 2 must not claim that ABI has transferred capability or outperformed a
 baseline. Its purpose is to establish credible competitors and a reproducible
@@ -65,6 +71,7 @@ comparison floor.
 - `ABI_CAPABILITY_COMPILER_PHASE1_ABSTENTION_PROTOCOL_V2.json`
 - `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json`
 - `ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_V1.json`
+- `ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_REPAIR1_V2.json`
 - `CURRENT_PROJECT_STATUS.md`
 - `CLAIMS.md`
 - `ROADMAP.md`
