@@ -51,13 +51,12 @@ provenance, and authoritative token counts and rejected five deliberate
 mutations. This is a point-estimate pass with 20 observations per class; it is
 not exhaustive domain discovery or a population-wide guarantee.
 
-### 4. Exact LayerCake package transfer is separate
+### 4. External host claims are separate
 
-The sealed LayerCake repository proves exact transfer of authenticated
-LayerCake package bytes and installed payload identity within its own certified
-lineage. ABI may rely on that interface only after it creates an independently
-validated LayerCake-compatible artifact. It may not import the sealed
-LayerCake release's performance evidence into a new candidate.
+ABI does not claim or duplicate runtime-host results. The intended consumer and
+its evidence live in the separate
+[LayerCake repository](https://github.com/Yoder23/layercake). A future ABI
+artifact must be independently accepted and recertified by its target host.
 
 ### 5. Capability-compiler Phase 0 governance
 
@@ -65,6 +64,22 @@ LayerCake release's performance evidence into a new candidate.
 teacher, immutable LayerCake host, mandatory LoRA/distillation/ABI systems,
 data boundaries, statistics, numeric gates, accounting, and stop rules. It
 contains no new training and establishes no comparative quality result.
+
+### 6. Capability-compiler Phase 1 normalized acquisition IR
+
+`ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` certifies a bounded,
+immutable 7,000-record English acquisition IR with exactly 500 eligible records
+for each of 14 capabilities. Records bind raw and normalized forms,
+authoritative generated token IDs, source revision, provenance, destination,
+transformations, and hashes.
+
+The frozen split audit reports zero exact prompt overlap and zero detected
+near-duplicate clusters. The English inventory contains zero specialist
+acquisition records. Domain inventories are evaluation-only. The V1 abstention
+failure, fresh V2 successor, and failed mathematics references remain explicit
+negative evidence.
+
+This is a data-suitability claim only. No model was trained in Phase 1.
 
 ## Current implementation claims
 
@@ -76,12 +91,14 @@ contains no new training and establishes no comparative quality result.
 - Unknown-domain, cross-domain, spoofed, malformed, inconsistent, or
   low-confidence material fails closed to quarantine under the tested method.
 - LayerCake was not invoked during V89 and no training artifact was composed.
+- The Phase 1 catalog, extractor, IR builder, IR verifier, certificate verifier,
+  and hostile mutation suite are implemented and evidence-bound.
 
 ## Open claims
 
 ABI has not yet established:
 
-- a passing normalized broad-English acquisition artifact;
+- broad English fluency from the certified normalized acquisition artifact;
 - sufficient data for natural English generalization;
 - the smallest passing fluent English data or model budget;
 - reliable operational teacher-to-LayerCake transfer;

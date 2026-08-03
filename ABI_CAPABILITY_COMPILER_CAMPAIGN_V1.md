@@ -1,7 +1,7 @@
 # ABI capability-compiler campaign v1
 
 Status date: 2026-08-03
-Status: controlling plan; Phase 0 is COMPLETE; Phase 1 is OPEN; no training run is authorized
+Status: controlling plan; Phases 0 and 1 are COMPLETE; Phase 2 is OPEN_NOT_STARTED
 
 ## Decision
 
@@ -173,8 +173,9 @@ run is promotion-eligible.
 
 ### Phase 1 - Capability inventory and normalized acquisition IR
 
-Status: **OPEN**. V89 is supporting bounded labeling evidence, not a Phase 1
-pass.
+Status: **COMPLETE** under
+`ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json`. V89 remains supporting
+bounded labeling evidence and is not silently promoted into this certificate.
 
 - Convert raw teacher records into a versioned intermediate representation
   retaining raw and normalized forms, token IDs, provenance, destination,
@@ -191,7 +192,8 @@ the untouched final suite has not influenced extraction or normalization.
 
 ### Phase 2 - Strong matched LoRA and distillation baselines
 
-Status: **LOCKED behind Phase 1**.
+Status: **OPEN_NOT_STARTED**. Materialized implementation hashes must be frozen
+before results are observed.
 
 - Train L0/L1 and D0/D1 plus only the strongest justified D2 under identical
   source prompts and explicit imported-information accounting.
@@ -315,7 +317,7 @@ all negative evidence and limitations remain published.
 
 ## Immediate next action
 
-Execute Phase 1 only: build the normalized, provenance-bound acquisition IR,
-freeze untouched evaluation material, and pass artifact adequacy plus hostile
-verification. Do not launch LoRA, distillation, or LayerCake training before
-Phase 1 passes.
+Execute Phase 2 only: materialize and hash the mandatory matched LoRA and
+distillation implementations, then run the preregistered baseline campaign on
+the certified Phase 1 artifact. Do not launch the Phase 3 ABI candidate or use
+final-test outputs for tuning, repair, selection, or stopping.

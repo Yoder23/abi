@@ -2,127 +2,99 @@
 
 Status date: 2026-08-03
 
-## What the research has resolved
+## What is resolved
 
-1. **The repositories have distinct responsibilities.** ABI extraction and
-   LayerCake execution are separate systems and evidence lineages.
-2. **The bounded pipeline is real.** The historical v47 release demonstrates
-   extraction, packaging, teacher removal, bounded domain installation, and a
-   complete locked-suite execution path.
-3. **The old bounded catalog did not generalize.** The exact v47 candidate
-   scored 0/28 on novel prompt forms while frozen Phi-3 scored 19/28.
-4. **Teacher data can causally affect LayerCake.** V87's real mapping beat the
-   parent and shuffled control, although the formal quality gate failed.
-5. **Pre-transfer segregation can work.** V89 passed its locked, disjoint
-   English/domain/quarantine labeling benchmark with zero specialist leakage
-   into English.
-6. **Transport is not the present blocker.** Exact package transport and
-   receiver-path identity are established in LayerCake. The open ABI problem
-   is acquiring and conditioning enough correct, diverse information for
-   natural generalization.
+1. **Repository ownership is explicit.** ABI owns acquisition artifacts and
+   evidence. Runtime-host implementation belongs to the separate
+   [LayerCake repository](https://github.com/Yoder23/layercake).
+2. **The old bounded reference did not establish broad English.** Its frozen
+   novel-form audit remains 0/28 versus 19/28 for the source teacher.
+3. **A small causal signal exists.** V87's real mapping beat parent and shuffled
+   controls, but failed operational reliability and repetition gates.
+4. **Bounded labeling exists.** V89 passed its declared English, four-domain,
+   and quarantine ontology; it is not exhaustive discovery.
+5. **Phase 0 governance is sealed.** Sources, systems, splits, gates,
+   statistics, accounting, and stop rules are preregistered.
+6. **Phase 1 normalization is sealed.** The content-addressed IR contains 7,000
+   eligible records, 500 per English capability, with raw/normalized forms,
+   authoritative tokens, provenance, transformations, and hashes.
+7. **The frozen suites are isolated.** The preregistered exact and near-
+   duplicate checks found no collisions across search, development, final,
+   domain-isolation, and hostile prompt families.
+8. **Negative evidence was not hidden.** The first abstention inventory failed;
+   a separately preregistered fresh successor passed. Failed V1 records were
+   not relabeled. The mathematics source references failed 0/100 and remain
+   evaluation-only.
 
-## Immediate blocking questions
+## Open scientific questions
 
-### 1. What is the normalized acquisition unit?
+### 1. What are the credible conventional baselines?
 
-We have labeled teacher prompt/response records, but not a final contract for
-turning them into training-ready examples. The next protocol must decide which
-information is preserved verbatim, transformed, paired contrastively,
-decomposed, or rejected. Every transformation must remain reversible to raw
-provenance and must not silently alter the destination label.
+Phase 2 must establish strong LoRA and sequence/logit-distillation competitors
+under the same source information and explicitly matched deployment views.
+Weak or under-tuned baselines cannot support a later ABI-superiority claim.
 
-### 2. What belongs in the English substrate?
+### 2. Can the certified information teach broad English?
 
-Grammar, coherence, grounding, instructions, conversation, supplied-text
-summarization, rewriting, email drafting, tone, formatting, clarification,
-abstention, and fluent realization are intended English capabilities.
+The IR is suitable input evidence, not proof of sufficiency. No student has yet
+shown fluent autonomous generation, grounding, instruction following,
+clarification, abstention, coherence, or repetition safety from this artifact.
 
-“Domain-independent reasoning” remains underspecified. Historical examples
-mixed linguistic reasoning with arithmetic, which would contaminate the
-English-only definition. The next contract must define fact-free reasoning
-tasks or assign them to a separate capability/domain.
+### 3. Is the ABI path causally distinct and useful?
 
-### 3. How much breadth is adequate before training?
+Phase 3 must compare the labeled ABI route with label-free, shuffled-target,
+bridge-only, monolithic, LoRA, and distillation controls. If standard
+distillation explains the result, it must be named and evaluated honestly.
 
-Record count alone is insufficient. Adequacy must cover natural surface forms,
-behavioral families, response structures, lengths, interaction styles,
-negative cases, clarification, abstention, and adversarial variants. It must
-also require teacher-output correctness and completion, not merely nonempty
-text.
+### 4. What is the sufficient-information frontier?
 
-### 4. How do we avoid teaching templates instead of English?
+The smallest passing tested budget is unknown. Only preregistered nested
+budgets with an adjacent lower failure can establish a bounded frontier. A
+global minimum cannot be inferred.
 
-The 1,700-case v47 pass followed by a 0/28 novel-form result is direct evidence
-of template overfitting. The successor needs paraphrase families, compositional
-variation, unseen lexical combinations, varied discourse lengths, and a fixed
-natural holdout that cannot influence corpus construction.
+### 5. How robust is English/domain segregation?
 
-### 5. What is the sufficient-information frontier?
+The Phase 1 English artifact excludes declared specialist records, but finite
+corpus checks cannot prove that future learned weights contain literally no
+world knowledge. Phase 5 must test bounded behavioral exclusion, selective
+installation, removal, restoration, and adversarial label spoofing.
 
-The smallest broadly fluent imported-information budget is unknown. Data and
-model size are coupled: a small corpus may fail because it is insufficient,
-while a small host may fail despite adequate data. Nested data budgets and
-nested host-size controls must separate these factors.
+### 6. How should failed domain references be repaired?
 
-### 6. Can LayerCake express the expanded target behavior?
+The mathematics reference source outputs failed 0/100. They cannot be used as
+positive acquisition evidence. Any successor requires a new preregistered
+source or method and must retain the failures.
 
-Earlier same-topology and matched-transformer controls did not establish broad
-quality at the available information budget. Future failures must be separated
-among artifact inadequacy, acquisition, host capacity, and decoding. A new ABI
-candidate cannot be blamed on LayerCake unless an appropriate native or oracle
-payload passes the identical expanded suite.
+### 7. How are multiple teachers and licenses reconciled?
 
-### 7. What quality comparison closes the English goal?
+Multi-source work still needs source-specific provenance, license and deletion
+lineage, contradiction detection, confidence, preference rules, and fail-
+closed conflict handling.
 
-Exact template checks are necessary but insufficient. Promotion needs paired
-teacher-versus-candidate evaluation on untouched natural prompts, deterministic
-functional checks where possible, blinded rubric or human evaluation for open
-generation, repetition/collapse metrics, and prompt-level uncertainty.
+### 8. Can one final integrated candidate meet the product contract?
 
-### 8. How is domain discovery bounded?
+Quality, teacher absence, package identity, isolation, selected-only
+execution, memory, TTFT, CPU/GPU performance, and reproducibility must be
+measured on the same lineage. Evidence may not be borrowed from another model
+or repository.
 
-V89 classifies a declared ontology; it does not discover every latent domain.
-The project still needs a user-governed process for proposing domains,
-qualifying their boundaries, detecting multi-domain records, and deciding when
-unknown material remains quarantined.
+### 9. Can the research release reproduce independently?
 
-### 9. How are multiple teachers reconciled?
+Phase 8 still requires a clean content-addressed release, aggregate
+recomputation from raw evidence, hostile mutation testing, independent
+hardware reproduction, and external replication.
 
-Multi-source acquisition needs record-level provenance, source licenses,
-confidence, contradiction detection, preference rules, and a fail-closed
-conflict policy. Agreement between teachers is evidence, not an automatic
-semantic label.
+## Immediate research priority
 
-### 10. What is the release-quality evidence depth?
+Phase 2 is open but not started:
 
-V89 has 20 disjoint observations per class. Its point estimates pass, but the
-per-class Wilson lower bounds remain wide. Broader labeling validation, three
-independent runs where stochasticity matters, and external reproduction are
-needed before claiming population-level reliability.
+1. materialize and hash the mandatory baseline implementations;
+2. train the matched LoRA and distillation systems on development-governed
+   budgets;
+3. reproduce headline configurations across three paired seeds;
+4. publish raw quality, information, time, memory, and deployment accounting;
+5. certify the baselines without making an ABI-transfer claim; and
+6. keep Phase 3 locked until that certificate passes.
 
-### 11. How do licensing and deletion propagate?
-
-Every normalized record and derived artifact needs source/license identity and
-a deletion lineage. The project must be able to determine which artifacts are
-affected when a source, record, or permission is withdrawn.
-
-### 12. How is the current research ledger released cleanly?
-
-The working tree contains a large preserved experiment history. Before a new
-public ABI release, code, small evidence, large local assets, ignored artifacts,
-and historical failures need an explicit manifest and versioned publication
-policy. A passing local experiment is not automatically a clean release.
-
-## Research priority
-
-Phase 0 is complete. The next useful work is not another transfer recipe,
-baseline run, or domain sweep. It is Phase 1 normalization and adequacy:
-
-1. preregister the schema and transformations;
-2. build immutable English and per-domain inventories;
-3. qualify correctness, completion, diversity, provenance, and leakage;
-4. freeze untouched natural generalization data; and
-5. only then unlock Phase 2 matched baselines. Nested information-budget
-   training remains Phase 4 after causal acquisition passes Phase 3.
-
-See `CURRENT_PROJECT_STATUS.md` for the claim ledger and phase boundary.
+See `CURRENT_PROJECT_STATUS.md` for the current claim boundary and
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` for controlling gates.

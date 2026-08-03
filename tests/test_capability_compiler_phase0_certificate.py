@@ -38,11 +38,12 @@ def test_certificate_rejects_failed_certification_suite():
     assert "certification tree full suite did not pass" in errors
 
 
-def test_current_documents_open_only_phase1():
+def test_current_documents_open_only_phase2_after_phase1_certificate():
     status = (ROOT / "CURRENT_PROJECT_STATUS.md").read_text(encoding="utf-8")
     mission = (ROOT / "ACTIVE_MISSION.md").read_text(encoding="utf-8")
     roadmap = (ROOT / "ROADMAP.md").read_text(encoding="utf-8")
     for document in (status, mission, roadmap):
         assert "Phase 1" in document
     assert "Phase 0 is **COMPLETE**" in status
-    assert "Phase 1 is **OPEN**" in status
+    assert "Phase 1 is **COMPLETE**" in status
+    assert "Phase 2" in status and "**OPEN_NOT_STARTED**" in status

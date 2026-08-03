@@ -2,99 +2,64 @@
 
 Status date: 2026-08-03
 
-## Current state
+## State
 
-The broad ABI English-product moonshot is **OPEN**.
+The ABI capability-compiler moonshot is **OPEN**.
 
-- The historical v47 reference remains PASS only for its exact locked catalog.
-- Its broader English interpretation is FAIL after a 0/28 novel-form audit
-  against 19/28 for frozen Phi-3.
-- V87 demonstrates a bounded causal transfer signal but fails its formal
-  reliability and repetition gates.
-- V89 pre-transfer labeling is a bounded PASS for the locked English,
-  chemistry, civics, mathematics, Python, and quarantine ontology.
-- No current normalized successor corpus or broadly fluent ABI-derived
-  LayerCake has passed.
-- No matched LoRA/distillation campaign has been preregistered or run, so no
-  ABI-superiority claim exists.
-- Capability-compiler Phase 0 is complete. Phase 1 is open; Phases 2 through 8
-  remain locked.
+Phase 0 is complete, Phase 1 is complete, and Phase 2 is open but not started.
 
-The sealed sibling LayerCake repository remains a separate positive control and
-execution product. ABI failures do not reopen its certificate, and an ABI
-candidate does not inherit its performance results.
+| Phase | State | Authority |
+| --- | --- | --- |
+| 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
+| 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
+| 2 — matched LoRA and distillation baselines | OPEN_NOT_STARTED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V2.json` |
+| 3–8 | LOCKED | Campaign contract |
 
-## Active objective
+Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
+English records—500 for each of 14 capabilities—with raw forms, authoritative
+token IDs, provenance, labels, transformations, and content hashes. It also
+freezes disjoint development, final, isolation, and hostile material.
 
-The immediate objective is to construct and certify the immutable,
-provenance-bound normalized acquisition IR required by capability-compiler
-Phase 1. It must establish data suitability without training a LoRA,
-distillation, or LayerCake candidate.
+The original source run failed the abstention floor and remains preserved. A
+fresh, preregistered successor supplied 400 new passing abstention records; none
+of the failed records were reclassified. Specialist inventories are
+evaluation-only, and no specialist record is eligible for English training.
 
-This phase ends before candidate training. It must prove that every eligible
-record is correctly sourced, labeled, normalized, segregated, sufficiently
-diverse, content-qualified, and fully accounted.
+## Active objective: Phase 2
 
-## Required Phase 1 work
+Build and certify strong, fair LoRA and distillation baselines before training
+an ABI candidate. Freeze the exact implementations and hashes before observing
+training outcomes, use identical source information where the protocol
+requires it, and report all imported information and deployment dependencies.
 
-1. Preserve raw source prompts/outputs and bind every normalized record to
-   source revision, provenance, destination, capability, and authoritative
-   teacher token IDs.
-2. Build separate immutable English and selected-domain inventories under the
-   now-certified Phase 0 contract.
-3. Measure exact and near duplicates, unique UTF-8 bytes, teacher tokens,
-   lengths, surface families, behavioral coverage, completion, correctness,
-   contamination, conflicts, and label confidence.
-4. Freeze a natural held-out generalization and leakage suite that cannot
-   influence normalization, budget selection, checkpoints, or repairs.
-5. Run the artifact adequacy verifier. Only a passing artifact may unlock
-   matched baseline training.
+Phase 2 must not claim that ABI has transferred capability or outperformed a
+baseline. Its purpose is to establish credible competitors and a reproducible
+comparison floor.
 
-## Successor phases, not yet authorized
+## Stop boundaries
 
-After Phase 1 passes, run strong matched LoRA and distillation baselines before
-causal ABI acquisition.
-Nested sufficient-information budgets follow only after a reliable causal ABI
-candidate passes. “Minimum” means only the smallest passing tested budget
-paired with the adjacent lower failing budget.
+- Do not begin Phase 3 candidate training during Phase 2.
+- Do not use final-test outputs for tuning, repair, source selection, or early
+  stopping.
+- Do not silently replace the certified Phase 1 artifact.
+- Preserve failed baselines and underperforming configurations.
+- Do not describe ABI as better than LoRA or distillation until the full
+  matched evidence supports that bounded claim.
+- Keep detailed LayerCake implementation and research status in the separate
+  [LayerCake repository](https://github.com/Yoder23/layercake).
 
-## Permanent boundaries
+## Authoritative current documents
 
-- Do not call foreign-teacher acquisition lossless.
-- Do not call declared-ontology labeling exhaustive domain discovery.
-- Do not call a finite purity audit proof of literally knowledge-free weights.
-- Do not feed raw or merely labeled teacher records to LayerCake.
-- Do not use final-test data for prompts, normalization, thresholds, budgets,
-  architecture, stopping, or repairs.
-- Do not modify or silently dirty `../layercake_release` from ABI work.
-- Do not attribute an expanded-quality failure to LayerCake unless an exact
-  native or same-topology control passes the identical scope.
-- Do not combine quality from one candidate with speed from another.
-- Do not promote a candidate without teacher removal, isolation, package
-  identity, CPU/GPU, TTFT, RSS, repetition, routing, and hostile verification
-  on the same final lineage.
-- Preserve every failed experiment, superseded protocol, and negative result.
-- Do not describe ABI as better than LoRA or distillation until the mandatory
-  matched campaign passes; name any distillation or LoRA mechanism used inside
-  ABI honestly.
-
-## Current authoritative documents
-
-- `CURRENT_PROJECT_STATUS.md`
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V2.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_V1.md`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json`
-- `ABI_CAPABILITY_COMPILER_PHASE0_PROTOCOL_V1.json`
-- `ABI_CAPABILITY_COMPILER_PHASE0_ENVIRONMENT_V1.json`
-- `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json`
-- `ROADMAP.md`
+- `ABI_CAPABILITY_COMPILER_PHASE1_PROTOCOL_V1.json`
+- `ABI_CAPABILITY_COMPILER_PHASE1_ABSTENTION_PROTOCOL_V2.json`
+- `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json`
+- `CURRENT_PROJECT_STATUS.md`
 - `CLAIMS.md`
+- `ROADMAP.md`
 - `RESEARCH_STATUS_AND_GAPS.md`
-- `ABI_TEACHER_TO_LAYERCAKE_GRAMMAR_PILOT_V87_DECISION.json`
-- `ABI_TEACHER_RECORD_LABELING_PHASE2_CERTIFICATE_V89.json`
-- `ABI_LAYERCAKE_SEPARATION_STATUS_V6.json`
-- `ABI_LAYERCAKE_FAILURE_ATTRIBUTION_CONTRACT_V1.json`
-- `ABI_LAYERCAKE_FAILURE_ATTRIBUTION_SCOPE_ADDENDUM_V2.json`
-- `ABI_ENGLISH_CORE_DOMAIN_SEGREGATION_CONTRACT_V2.json`
 
-Historical certificates remain authoritative for their own exact scopes. They
-do not override this current phase boundary.
+Historical evidence remains authoritative only for its exact scope and never
+overrides this phase boundary.

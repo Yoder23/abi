@@ -9,13 +9,11 @@ It has a working bounded reference release, a demonstrated small-scale causal
 teacher-to-LayerCake signal, and a bounded pre-transfer labeling pass. It has
 not yet produced a broadly fluent teacher-derived LayerCake English core.
 
-Capability-compiler Phase 0 is **COMPLETE** under
-`ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json`. The immediate research
-phase is **Phase 1: capability inventory and normalized acquisition IR**. It is
-OPEN and has not passed. The sufficient-information frontier is Phase 4 and is
-not yet authorized.
-
-Phase 1 is **OPEN**. Phases 2 through 8 remain locked.
+Capability-compiler Phase 0 is **COMPLETE**, and Phase 1 is **COMPLETE**, under
+their respective certificates. Phase 2, the mandatory matched LoRA and
+distillation baseline campaign, is **OPEN_NOT_STARTED**. Phases 3 through 8
+remain locked. The sufficient-information frontier is Phase 4 and is not yet
+authorized.
 
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_V1.md` and its machine-readable contract now
 control future work. They do not alter any historical result.
@@ -32,14 +30,10 @@ ABI owns:
 - tested information-budget and representation minimization; and
 - independent qualification of artifacts before LayerCake consumption.
 
-LayerCake owns:
-
-- execution and generation;
-- canonical core/cake interfaces;
-- signed package installation and exact package transfer;
-- immutable core and capability hosting;
-- selected-only execution, routing, and orchestration; and
-- integrated CPU/GPU quality, speed, TTFT, RSS, and hostile verification.
+Execution-host implementation and certification belong to the separate
+[LayerCake repository](https://github.com/Yoder23/layercake). ABI records only
+the external artifact and acceptance boundary; it does not duplicate
+LayerCake's implementation or research history.
 
 ABI `.abix` files contain acquisition material and are never deployable cakes.
 Foreign-teacher acquisition is not called lossless. Lossless transfer is
@@ -62,7 +56,7 @@ sufficient-information frontier.
 | V87 causal grammar transfer pilot | Causal signal PASS; formal pilot FAIL | Real teacher mappings beat unchanged-parent and shuffled-target controls | Reliable grammar transfer, deployability, broad English, or repetition safety |
 | V89 pre-transfer labeling | Bounded PASS | Actual teacher records can be routed into English, four known domains, or quarantine under the locked ontology | Exhaustive domain discovery, arbitrary-record classification, normalization, sufficient data, or LayerCake quality |
 | Compiler definitions and matched-baseline preregistration | PASS | Phase 0 certificate binds the parent lineage, teacher, host, 11 systems, data boundaries, numeric gates, statistics, accounting, and stop rules | No LoRA, distillation, ABI acquisition, or superiority result |
-| Normalized corpus and adequacy | OPEN | Not yet established | Training must not begin from raw or merely labeled records |
+| Normalized acquisition IR | PASS | 7,000 records; 500 per English capability; provenance, authoritative tokens, hashes, and disjoint frozen evaluation material | No model, fluent transfer, domain acquisition, or minimum-information result |
 | Sufficient-information frontier | OPEN | Not yet established | No smallest fluent core or imported-information budget is known |
 | Integrated ABI-derived LayerCake | OPEN | Not yet established | No ABI candidate inherits sealed LayerCake performance evidence |
 
@@ -112,13 +106,22 @@ a bounded point-estimate pass rather than a population-wide guarantee.
   holdouts.
 - `abi/teacher_record_labeling_verifier.py` independently replays labels,
   metrics, gates, provenance, hashes, token accounting, and tamper rejection.
+- `abi/capability_compiler_phase1_catalog.py` deterministically builds the
+  frozen Phase 1 search, development, final, isolation, and hostile catalog.
+- `abi/capability_compiler_phase1_extract.py` performs resumable, runtime-bound
+  teacher extraction with authoritative token accounting.
+- `abi/capability_compiler_phase1_ir.py` builds and verifies the normalized,
+  content-addressed acquisition IR.
+- `abi/capability_compiler_phase1_certificate.py` verifies the complete Phase
+  1 seal and all bound evidence hashes.
 - The existing v3 segregated-bundle consumers enforce destination and purity
-  metadata before materialization, but no current normalized successor corpus
-  has passed adequacy for broad English acquisition.
+  metadata before materialization. Phase 1 now supplies a normalized successor
+  acquisition IR, but its sufficiency for broad English remains untested.
 
-The working research tree contains a large preserved experiment ledger and is
-not represented here as a clean public release tag. Publication and repository
-consolidation remain separate release-engineering work.
+The large experiment ledger remains preserved in version control. Phase 1 has a
+clean, locally verifiable certificate and is intended to be sealed by the
+annotated tag `abi-capability-compiler-phase1-v1`. Publishing that local commit
+and tag to the remote repository remains a separate explicit action.
 
 The historical `abi.moonshot_release verify` command is expected to fail closed
 in this current tree when release-bound implementation files differ. Reproduce
@@ -133,9 +136,11 @@ checks to make later research code appear release-equivalent.
   signal.
 - ABI has passed bounded pre-transfer labeling for the locked English,
   chemistry, civics, mathematics, Python, and quarantine ontology.
-- Exact LayerCake-to-LayerCake package transfer remains available after an
-  artifact has been created and certified by LayerCake.
 - ABI capability-compiler Phase 0 governance and preregistration have passed.
+- ABI capability-compiler Phase 1 has certified a 7,000-record normalized
+  English acquisition IR with 500 records per capability, zero detected
+  cross-split exact/near-duplicate collisions, and no specialist acquisition
+  records.
 
 ## Claims not allowed now
 
@@ -154,22 +159,12 @@ checks to make later research code appear release-equivalent.
 
 ## Immediate next gate
 
-Execute Phase 1 only. Its normalized artifact must separately account for
-English and every selected domain:
+Execute Phase 2 only. First materialize and freeze the exact baseline
+implementation hashes. Then train strong matched LoRA and sequence/logit
+distillation competitors on the certified Phase 1 information under the three
+preregistered fairness views. Tune with development data only, reproduce
+headline configurations across three paired seeds, and preserve raw quality,
+cost, memory, timing, and deployment evidence.
 
-1. immutable normalized record schema and transformation rules;
-2. source revision, prompt, output, label, capability, provenance, and
-   authoritative token preservation;
-3. exact duplicate and near-duplicate accounting;
-4. prompt-surface, behavior, and capability coverage;
-5. contamination, cross-domain, unknown-domain, and conflict quarantine;
-6. teacher-output correctness and completion qualification;
-7. unique UTF-8 bytes, teacher tokens, disk, RAM, time, and hardware;
-8. at least the preregistered minimum distinct passing records per required
-   capability; and
-9. an untouched natural generalization suite that cannot select normalization,
-   budgets, checkpoints, or repairs.
-
-Only after that artifact passes may the campaign run nested information
-budgets and identify the smallest passing tested budget paired with the largest
-lower failing budget.
+Phase 2 does not authorize an ABI candidate or a superiority claim. Phase 3
+remains locked until the baseline certificate passes.

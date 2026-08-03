@@ -1,14 +1,14 @@
-# ABI: capability acquisition for LayerCake
+# ABI: provenance-preserving capability acquisition
 
 ABI is the research and tooling layer for extracting measured capabilities from
 frozen open-weight teachers, labeling and segregating those capabilities,
 minimizing their tested information footprint, and preparing independently
-validated artifacts for LayerCake.
+validated capability-acquisition artifacts for external execution hosts.
 
-LayerCake is a separate repository and product. It owns execution, package
-installation, exact package transfer, composition, routing, orchestration, and
-integrated CPU/GPU performance. Source teachers and ABI `.abix` bundles are
-never part of the deployed LayerCake product.
+Runtime hosting is outside this repository. The intended external consumer is
+[LayerCake](https://github.com/Yoder23/layercake), maintained as a separate
+codebase and evidence lineage. Source teachers and ABI `.abix`/`.abicir`
+artifacts are acquisition material, not deployable cakes.
 
 ## Current status
 
@@ -25,11 +25,11 @@ Three facts define the current checkpoint:
 3. V89 passes bounded pre-transfer labeling for English, chemistry, civics,
    mathematics, Python, and quarantine on a source-record-disjoint holdout.
 
-Capability-compiler Phase 0 is **COMPLETE**. The active phase is **Phase 1:
-capability inventory and normalized acquisition IR**. No current ABI artifact
-is certified as a broadly fluent teacher-derived LayerCake English core, and
-no LoRA, distillation, or LayerCake candidate training is authorized before
-Phase 1 passes.
+Capability-compiler Phases 0 and 1 are **COMPLETE**. Phase 2—strong matched LoRA
+and distillation baselines—is **OPEN_NOT_STARTED**. Phases 3 through 8 remain
+locked. No current ABI artifact is certified as a broadly fluent,
+teacher-derived English core, and no ABI candidate training is authorized
+before Phase 2 passes.
 
 Read [CURRENT_PROJECT_STATUS.md](CURRENT_PROJECT_STATUS.md) before interpreting
 any experiment or launching new work.
@@ -42,9 +42,32 @@ any experiment or launching new work.
 | Broad v47 English generalization | FAIL | `ABI_POSTCERT_GENERALIZATION_AUDIT_DECISION.json` |
 | Small-scale causal teacher transfer | Signal demonstrated; formal pilot FAIL | `ABI_TEACHER_TO_LAYERCAKE_GRAMMAR_PILOT_V87_DECISION.json` |
 | Pre-transfer English/domain labeling | Bounded PASS | `ABI_TEACHER_RECORD_LABELING_PHASE2_CERTIFICATE_V89.json` |
-| Normalized broad-English artifact | OPEN | Not yet produced |
+| Normalized English acquisition IR | PASS as a data artifact | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | Sufficient-information frontier | OPEN | Not yet measured |
 | Integrated teacher-derived LayerCake | OPEN | Not yet produced |
+
+## Phase 1 result
+
+The sealed Phase 1 IR contains 7,000 English acquisition records—exactly 500
+for each of 14 capabilities. Every record binds raw and normalized prompt and
+output forms, the exact source revision, provenance, destination, capability,
+authoritative generated token IDs, transformations, and content hashes.
+
+The preregistered split audit found zero exact prompt overlap and zero detected
+near-duplicate clusters across search, development, final, isolation, and
+hostile families. Four 100-record domain inventories are retained only as
+evaluation references; no specialist record is eligible for English training.
+
+The first source extraction failed the abstention floor with 237 passing
+records and 463 failures after its one allowed repair. That evidence remains
+unchanged. A separately preregistered set of 400 fresh abstention prompts passed
+400/400 and completed the inventory without reclassifying the failures. The
+mathematics domain reference output set failed 0/100 and is also preserved as
+negative, evaluation-only evidence.
+
+Phase 1 performed no candidate training. It establishes artifact suitability,
+not fluency, transfer, minimum information, specialist acquisition, or ABI
+superiority.
 
 ## V89 labeling result
 
@@ -136,12 +159,12 @@ novel-form audit invalidated any general-purpose English interpretation.
 5. Preserve raw prompts and outputs alongside normalized forms.
 6. Keep search, validation, and final data disjoint.
 7. Qualify teacher correctness, completion, diversity, provenance, and leakage
-   before LayerCake training.
+   before any candidate training.
 8. Use nested data budgets and retain the adjacent lower failure.
 9. Remove the teacher and all extraction material before final inference.
-10. Rerun the same final integrated LayerCake candidate through quality,
-    isolation, package, routing, CPU/GPU, TTFT, RSS, and hostile-verification
-    gates.
+10. Rerun the same final integrated candidate through all quality, isolation,
+    deployment, performance, and hostile-verification gates required by its
+    target host.
 
 ## Documentation
 
@@ -151,6 +174,9 @@ novel-form audit invalidated any general-purpose English interpretation.
 - [Phase 0 protocol](ABI_CAPABILITY_COMPILER_PHASE0_PROTOCOL_V1.json)
 - [Phase 0 environment](ABI_CAPABILITY_COMPILER_PHASE0_ENVIRONMENT_V1.json)
 - [Phase 0 certificate](ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json)
+- [Live campaign state](ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V2.json)
+- [Phase 1 certificate](ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json)
+- [Phase 1 protocol](ABI_CAPABILITY_COMPILER_PHASE1_PROTOCOL_V1.json)
 - [Research-ledger policy](RESEARCH_LEDGER_POLICY.md)
 - `ABI_LOCAL_RESEARCH_ARTIFACTS_MANIFEST_V1.json` for large local catalog identity
 - [Phased research roadmap](ROADMAP.md)
