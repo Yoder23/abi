@@ -21,7 +21,7 @@ from .capability_compiler_phase1_extract import (
     load_journal,
 )
 from .capability_pipeline import canonical_json_bytes
-from .hf_extraction import load_probe_catalog
+from .hf_extraction import evaluate_output, load_probe_catalog
 
 
 IR_FORMAT = "abi-normalized-acquisition-ir/1"
@@ -570,12 +570,21 @@ def verify_ir(path: Path) -> dict[str, Any]:
     if counts != {capability: 500 for capability in CANONICAL_CAPABILITIES}:
         raise Phase1IRError(f"capability depth changed: {counts}")
     source_ids: set[str] = set()
+    ir_ids: set[str] = set()
     pairs: set[tuple[str, str]] = set()
     for row in records:
         claimed = row.pop("ir_record_id", None)
         if claimed != _canonical_sha(row):
             raise Phase1IRError("IR record hash changed")
         row["ir_record_id"] = claimed
+        if claimed in ir_ids:
+            raise Phase1IRError("duplicate IR record ID")
+        ir_ids.add(claimed)
+        expected_source_id = hashlib.sha256(
+            f"{row['source_protocol_sha256']}:{row['source_attempt_sha256']}".encode("ascii")
+        ).hexdigest()
+        if row["source_record_id"] != expected_source_id:
+            raise Phase1IRError("source record derivation changed")
         if row["source_record_id"] in source_ids:
             raise Phase1IRError("duplicate source record ID")
         source_ids.add(row["source_record_id"])
@@ -585,16 +594,27 @@ def verify_ir(path: Path) -> dict[str, Any]:
         pairs.add(pair)
         if row["destination"] != "english_core" or row["domain"] != "domain_independent" or row["domain_labels"] or row["domain_claims"]:
             raise Phase1IRError("specialist data leaked into English IR")
+        if row["knowledge_class"] != "english_linguistic_form" or row["label_confidence"] != 1.0:
+            raise Phase1IRError("English label contract changed")
         if row["finish_reason"] != "eos_token" or row["functional_pass"] is not True:
             raise Phase1IRError("ineligible source attempt selected")
         if len(row["authoritative_generated_token_ids"]) != row["authoritative_teacher_tokens"]:
             raise Phase1IRError("authoritative token accounting changed")
+        if any(isinstance(value, bool) or not isinstance(value, int) for value in row["authoritative_generated_token_ids"]):
+            raise Phase1IRError("invalid authoritative token ID")
         normalized_prompt, _ = normalize_text(row["normalized_acquisition_prompt"])
         normalized_output, _ = normalize_text(row["normalized_output"])
         if normalized_prompt != row["normalized_acquisition_prompt"] or normalized_output != row["normalized_output"]:
             raise Phase1IRError("normalization is not idempotent")
         if hashlib.sha256(normalized_prompt.encode("utf-8")).hexdigest() != row["normalized_acquisition_prompt_sha256"] or hashlib.sha256(normalized_output.encode("utf-8")).hexdigest() != row["normalized_output_sha256"]:
             raise Phase1IRError("normalized text hash changed")
+        if normalize_text(row["raw_acquisition_prompt"])[0] != normalized_prompt or normalize_text(row["raw_output"])[0] != normalized_output:
+            raise Phase1IRError("normalized text no longer derives from raw text")
+        if hashlib.sha256(row["raw_acquisition_prompt"].encode("utf-8")).hexdigest() != row["raw_acquisition_prompt_sha256"] or hashlib.sha256(row["raw_output"].encode("utf-8")).hexdigest() != row["raw_output_sha256"]:
+            raise Phase1IRError("raw text hash changed")
+        evaluator_pass, evaluator_score = evaluate_output(row["raw_output"], row["functional_evaluator"])
+        if not evaluator_pass or abs(float(evaluator_score) - float(row["functional_score"])) > 1e-12:
+            raise Phase1IRError("functional evaluation no longer reproduces")
     split = json.loads(members["split_manifest.json"])
     if dict(split["counts"]) != {"final_test": 1400, "search": 9800, "validation": 1400}:
         raise Phase1IRError("evaluation split depth changed")
@@ -609,12 +629,25 @@ def verify_ir(path: Path) -> dict[str, Any]:
         raise Phase1IRError("domain reference depth changed")
     if any(row["training_eligible"] is not False or row["destination"] != "domain_cake" for row in domain_rows):
         raise Phase1IRError("domain reference became acquisition eligible or misrouted")
+    for row in domain_rows:
+        claimed = row.pop("reference_record_sha256", None)
+        if claimed != _canonical_sha(row):
+            raise Phase1IRError("domain reference hash changed")
+        row["reference_record_sha256"] = claimed
+    rejections = [json.loads(line) for line in members["rejections.jsonl"].splitlines() if line.strip()]
+    if len(rejections) != manifest["rejection_count"]:
+        raise Phase1IRError("rejection ledger depth changed")
+    if any(row["v1_failure_reclassified"] is not False for row in rejections):
+        raise Phase1IRError("a rejected V1 attempt was reclassified")
     accounting = json.loads(members["accounting.json"])
     if accounting["selected_records"] != len(records) or accounting["selected_authoritative_teacher_tokens"] != sum(row["authoritative_teacher_tokens"] for row in records):
         raise Phase1IRError("IR accounting changed")
     ledger = json.loads(members["ledger.json"])
     if ledger["candidate_training_performed"] is not False or ledger["final_data_influenced_normalization_or_selection"] is not False:
         raise Phase1IRError("Phase 1 boundary changed")
+    source_identity = json.loads(members["source_identity.json"])
+    if source_identity["teacher_required_at_deployment"] is not False or source_identity["source_parameters_copied"] != 0:
+        raise Phase1IRError("source-deployment boundary changed")
     return {
         "status": "PASS",
         "archive_sha256": _sha256_file(path),
