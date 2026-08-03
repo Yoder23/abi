@@ -1,0 +1,21 @@
+{
+  "format": "abi-english-semantic-source-artifact-v63-adequacy-accounting-amendment/1",
+  "status": "PREREGISTERED_BEFORE_V62_FULL_RESULT_OR_V63_CONSTRUCTION",
+  "effective_date": "2026-08-03",
+  "parent_protocol": {
+    "path": "ABI_ENGLISH_SEMANTIC_SOURCE_ARTIFACT_PROTOCOL_V63.json",
+    "sha256": "c86b8ef183406efab0bc1d970f5ccbc3b442b3e8fb404d1405b075686e1f9b21"
+  },
+  "change": "The later training-artifact adequacy audit must fail closed unless semantic judge tokens, load time, inference time, CUDA int8 runtime, no-CPU-offload status, and durable-journal identity are present in the inherited ledger.",
+  "source_or_judge_outputs_changed": false,
+  "semantic_rubric_or_thresholds_changed": false,
+  "v63_builder_changed": false,
+  "successor_adequacy_auditor": {
+    "abi/teacher_artifact_adequacy_audit.py": "08d466ac8e1782e0aca8c68aaa0aeb255a480436e54d50df5240cd170573a039",
+    "tests/test_teacher_artifact_adequacy_audit.py": "0b0d5dff26d0db141d6b4d0e341a95b05bcf139d5ac44d64e8344ac44d6f690e",
+    "required_cli_flag": "--require-semantic-qualification"
+  },
+  "layercake_invoked": false,
+  "layercake_training_authorized": false,
+  "abi_transfer_proven": false
+}

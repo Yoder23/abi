@@ -1,0 +1,14 @@
+{
+  "schema_version": "abi-english-scale-composition-failure/1",
+  "status": "FAILED_CLOSED_PRESERVED_NEGATIVE_EVIDENCE",
+  "created_date": "2026-07-31",
+  "source_archive_sha256": "e4d0a9a7973f09ec339a52e7c41a34d42d97b4ce133a2bd773e98f253ec00f78",
+  "attempted_output": "results/abi_moonshot/segregated_acquisition_v3/phi3-english-distinct-context-scale-search-training-v1.abix",
+  "output_created": false,
+  "candidate_training_started": false,
+  "error": "no qualified source for English capability: abstention",
+  "measured_cause": "The historical --english selector correctly means all fourteen canonical English capabilities. The preregistered scale survey intentionally contains only four long-form capabilities, so complete-core composition failed closed.",
+  "rejected_workaround": "Do not mix the old small and repetitive fourteen-capability survey into this scale artifact merely to satisfy complete-core selection. Balanced-capability sampling would overweight the measured failed data regime and confound the distinct-context hypothesis.",
+  "bounded_repair": "Add an explicit, schema-bound English capability subset selector. Mark subset selections development-only and non-promotable. Require every selected subset capability in each nested budget, reject unselected English capabilities, and retain the sealed all-capability preservation replay during full-core training.",
+  "claim_boundary": "This failure and repair concern training-material selection only. They provide no LayerCake quality credit and do not weaken final complete-English promotion gates."
+}

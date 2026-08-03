@@ -1,0 +1,13 @@
+{
+  "format": "abi-english-gated-deep-reused-cake-v39-export-alias-correction/1",
+  "status": "FIRST_EXPORT_FAILED_CLOSED_BEFORE_RUNTIME_ARTIFACT",
+  "effective_date": "2026-08-02",
+  "affected_output": "results/abi_moonshot/native_hosts/gated-deep-reused-cake-r64-stress-v39-onnx-int8-precheck",
+  "failure": "Final task-cake projection isolation did not resolve ONNX Identity aliases created by sharing the same cake parameters at pre-block and final positions.",
+  "repair": "Resolve only acyclic one-input/one-output Identity aliases to their hash-bound initializer before identifying final route-selected projection MatMuls.",
+  "weights_changed": false,
+  "graph_semantics_changed": false,
+  "checkpoint_changed": false,
+  "replacement_output": "results/abi_moonshot/native_hosts/gated-deep-reused-cake-r64-stress-v39b-onnx-int8-precheck",
+  "contaminated_final_v4_accessed": false
+}

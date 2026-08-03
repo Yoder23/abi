@@ -1,0 +1,113 @@
+{
+  "format": "abi-layercake-same-topology-direct-target-oracle-gpu-protocol/1",
+  "protocol_id": "abi-layercake-same-topology-direct-target-oracle-v80",
+  "status": "PREREGISTERED_AFTER_CURRICULUM_CONSTRUCTION_BEFORE_STRESS_OR_TRAINING",
+  "effective_date": "2026-08-03",
+  "objective": "Determine whether the exact fast LayerCake topology can reach the expanded teacher-level natural-English quality scope when given broad direct targets without ABI minimization as a confounder.",
+  "causal_role": {
+    "layercake": "Exact architecture, canonical ABI, sparse task-cake topology, tokenizer, and eventual runtime contracts.",
+    "oracle": "Capacity-only direct targets with no ABI minimization or open-weight transfer credit.",
+    "abi": "Not tested by this run. V71 is retained only as balanced fourteen-capability supervision and cannot convert the oracle into ABI transfer proof.",
+    "integration": "Not tested until a quality-passing oracle is packaged through the exact receiver."
+  },
+  "parent": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-broad-natural-same-tokenizer-logit-distill-seed349824-steps6000-v41",
+    "metadata_file_sha256": "df278dffbc4ad888ce31346eedf12301bfa812cb032d040db3fa49bb5018c36e",
+    "checkpoint_sha256": "22df8256a0479596516c1d09c29200fc19c1cb810ac8204979b2192ce39372e0",
+    "architecture_id": "layercake-shallow-sparse-english/1-three-block-task-cakes",
+    "historical_screen": "10/28 with zero collapse",
+    "historical_full_gate": "FAIL and not inherited"
+  },
+  "balanced_fourteen_capability_stream": {
+    "path": "results/abi_moonshot/reference_artifact_v71/phi3-multisource-english-training-v1.abix",
+    "archive_sha256": "da8e3b4940988c1a8a2d9baab47c7a82dbbe6bccd054a494a3ad77102e12886a",
+    "manifest_sha256": "ece8e6fe5f6286ae2571aaa251f08a4a587131b7dbea0e5f5f0444803d211d65",
+    "records": 2235,
+    "teacher_tokens": 84930,
+    "sampling": "balanced_capabilities"
+  },
+  "direct_target_oracle_stream": {
+    "curriculum": "results/abi_moonshot/oracle_v80/alpaca-filtered-direct-target-oracle-v1.jsonl",
+    "curriculum_sha256": "2c7ef08c1f2fe647dac9fe70be5a766cd9ed46e82a32941c58e6dddd8929bb76",
+    "manifest": "results/abi_moonshot/oracle_v80/alpaca-filtered-direct-target-oracle-v1-manifest.json",
+    "manifest_file_sha256": "2b6a7e3fe665eac7ea70a8d0b9377c83695dccb759611a31409295aea755207f",
+    "manifest_sha256": "56967ab3e756271aa1b9338b9d7166a22b4a76e48f85fe99010bfc7f87ae7bb6",
+    "records": 4894,
+    "reference_output_layercake_tokens": 302096,
+    "reference_output_utf8_bytes": 1452995,
+    "capabilities": 11,
+    "sampling": "uniform_records",
+    "production_eligible": false,
+    "open_weight_transfer_credit": false
+  },
+  "fixed_architecture": {
+    "total_parameters": 61655050,
+    "active_parameters": 60756490,
+    "layers": 3,
+    "width": 768,
+    "heads": 12,
+    "task_cakes": 10,
+    "task_cake_rank": 64,
+    "maximum_active_task_cakes_per_sequence": 1,
+    "graph_topology_changes": 0,
+    "parameter_shape_changes": 0,
+    "canonical_abi_changes": 0
+  },
+  "stress": {
+    "output": "results/abi_moonshot/oracle_v80/stress-three-block-direct-target-oracle-seed619824-v1",
+    "seed": 619824,
+    "successful_optimizer_steps": 1,
+    "main_batch_size": 4,
+    "general_batch_size": 4,
+    "device": "cuda"
+  },
+  "candidate_if_stress_passes": {
+    "output": "results/abi_moonshot/oracle_v80/three-block-direct-target-oracle-seed619824-steps6000-v1",
+    "seed": 619824,
+    "successful_optimizer_steps": 6000,
+    "trainable_scope": "full_core",
+    "main_batch_size": 4,
+    "main_sampling_strategy": "balanced_capabilities",
+    "general_batch_size": 4,
+    "general_loss_weight": 1.0,
+    "gradient_accumulation_steps": 1,
+    "shared_learning_rate": 0.00001,
+    "cake_learning_rate": 0.00005,
+    "classifier_loss_weight": 0.25,
+    "prompt_overlap_loss_weight": 1.0,
+    "max_tokens": 1024,
+    "recovery_start_step": 400,
+    "recovery_interval": 8,
+    "recovery_horizons": [4, 8, 16],
+    "device": "cuda",
+    "teacher_present_at_inference": false
+  },
+  "decoding": {
+    "contract": "ABI_ENGLISH_DISTINCT_CONTEXT_SCALE_DECODING_LOCK.json",
+    "sha256": "9cdf13ed2b8fad9b90b1ee2132481424a15a05f8e3a58dd94fac6b7fc2d946dd"
+  },
+  "quality_screen": {
+    "catalog": "catalogs/postcert_novel_english_audit_v1.json",
+    "sha256": "0b7349c07201638db72bd8fe31fba4f7f7bc4e18fce8fb90c3a3ec839ed70df5",
+    "observations": 28,
+    "training_overlap": 0,
+    "minimum_passes": 19,
+    "required_collapse_count": 0,
+    "basis": "The frozen Phi-3 reference previously scored 19/28 on this disclosed screen; the oracle must establish teacher-level rather than preliminary 10/28 host capacity."
+  },
+  "decision_rule": [
+    "If stress fails, preserve and stop before candidate training.",
+    "If the candidate reaches at least 19/28 with zero collapse, package it through the exact receiver and verify topology, state, ABI identity, and unchanged execution contracts before declaring expanded host capacity established.",
+    "If it scores below 19/28 or collapses, reject it. Do not attribute later ABI candidate quality failures to ABI alone; first use the measured oracle failure to determine whether one materially different host-conditioning mechanism is justified.",
+    "No oracle result counts as ABI transfer, open-weight teacher evidence, domain-segregated production data, or release quality."
+  ],
+  "implementation_lock": {
+    "abi/layercake_full_core_acquisition.py": "82cd04872a07235e56e104fb43602729315beff9e99dbe8628cab36105343c86",
+    "tests/test_layercake_acquisition.py": "eb8e3b23d7fdf33a659264fde24f5e8cdc76f2f7b8d6c3af0a566539c62a8eeb",
+    "targeted_tests": "42 passed"
+  },
+  "historical_evidence_changed": false,
+  "final_test_accessed": "The screen is already disclosed historical post-certificate evidence; it is excluded from training and will be accessed once for this immutable candidate decision.",
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

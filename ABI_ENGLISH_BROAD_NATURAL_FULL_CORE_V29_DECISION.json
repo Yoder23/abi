@@ -1,0 +1,71 @@
+{
+  "format": "abi-english-broad-natural-full-core-v29-decision/1",
+  "status": "REJECTED_BROAD_RETENTION_AND_COLLAPSE_FAILURE_NEGATIVE_EVIDENCE_PRESERVED",
+  "effective_date": "2026-08-02",
+  "protocol": "ABI_ENGLISH_BROAD_NATURAL_FULL_CORE_GPU_PROTOCOL_V29.json",
+  "candidate": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-broad-natural-dualstream-fullcore-seed49824-steps12000-v29",
+    "checkpoint_sha256": "537b274c752d167f4a636bf7608120f35f8fa158d604bebd018484cc8dfe79b9",
+    "metadata_sha256": "85a947315f9bb807d2cd0fc58a8836ae7ad963e372ce439cbc1450d79d82bad2",
+    "manifest_sha256": "92ea91cc9765a80088ab90007c0917834484197f00ae0ae6e62ce252e04a4f97",
+    "training_device": "cuda",
+    "training_wall_seconds": 1648.0724745000043,
+    "natural_screen_passes": 8,
+    "natural_screen_observations": 28,
+    "natural_screen_collapse_count": 0
+  },
+  "exact_runtime": {
+    "path": "results/abi_moonshot/native_hosts/three-block-broad-natural-fullcore-seed49824-v29-onnx-int8-v33-frozen-decoding",
+    "metadata_file_sha256": "d1b9c07e07fc04f6d441f1690c5ceb08be176b261bdde2f5a50162fee0877a89",
+    "runtime_graph_sha256": "38370eeed7d379b6cdca506a791521d650325eb259e169077d2e6ddebe9c4be8",
+    "identity_file_sha256": "e2142f4d7b1599c8486ad1ecbc7258a3abf31e3b50ef8104318e79d0caeafa16",
+    "identity_evidence_sha256": "1bcdef6b25582ac1e04d930c37a0c947c4e13fcd7c610bcfaff13b35dd16151a",
+    "identity_status": "PASS",
+    "physical_file_sha256": "833b86565fd11203a375a411473f5974adf310557a446bd7429b90702159b790",
+    "physical_evidence_sha256": "de6726c6df207323f746026fbb4a5321216915092b2e1412b8a6396e161ef5e0",
+    "physical_sparse_status": "PASS",
+    "teacher_present_at_inference": false,
+    "source_transformer_blocks_retained": 0,
+    "maximum_active_task_cakes_per_sequence": 1
+  },
+  "controlling_broad14_validation": {
+    "path": "results/abi_moonshot/native_hosts/three-block-broad-natural-fullcore-seed49824-v29-onnx-int8-v33-semantic-full1400.json",
+    "file_sha256": "def30cc816dd73637838d76b4c18ed13ca7e5d0ba4e52857650989ff683f15e5",
+    "evidence_sha256": "f114d616b5605414fa27655867b63d7ec119d786baa9279326098ce7b6e3ceec",
+    "observation_count": 1400,
+    "layercake_passes": 1190,
+    "layercake_pass_rate": 0.85,
+    "source_passing_retention_rate": 0.8778688524590164,
+    "collapse_count": 5,
+    "largest_failures": {
+      "cake_output_realization_pass_rate": 0.66,
+      "domain_independent_reasoning_pass_rate": 0.59,
+      "email_drafting_pass_rate": 0.58
+    },
+    "locked_gates": {
+      "complete_locked_depth": true,
+      "overall_functional_pass_rate_at_least_080": true,
+      "each_declared_capability_pass_rate_at_least_080": false,
+      "source_passing_retention_rate_at_least_090": false,
+      "collapse_count_is_zero": false
+    },
+    "status": "FAIL"
+  },
+  "diagnosis": {
+    "measured_gain": "Broad natural data doubled the disclosed natural-screen passes relative to v21 and did not collapse on that small screen.",
+    "measured_failure": "Full-core updates overwrote structured behavior: the exact runtime introduced five reasoning collapses and regressed three locked capabilities below 0.67.",
+    "bottleneck": "Shared-core/task-cake interference, not extraction transport, teacher-data breadth, routing topology, or runtime identity.",
+    "not_a_speed_claim": true
+  },
+  "decision": {
+    "candidate_promoted": false,
+    "teacher_relative_judge_authorized": false,
+    "cpu_benchmark_authorized": false,
+    "untouched_final_authorized": false,
+    "nearby_step_learning_rate_loss_weight_or_seed_sweep_authorized": false,
+    "next_architecture": "Preserve every v21 shared-core tensor and expand only the physically sparse route-selected task-cake residual rank, so broad natural capacity increases without rewriting the certified shared substrate. The exact expanded graph must re-clear the two-times CPU-speed gate."
+  },
+  "disclosed_postcert_final_split_accessed": true,
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

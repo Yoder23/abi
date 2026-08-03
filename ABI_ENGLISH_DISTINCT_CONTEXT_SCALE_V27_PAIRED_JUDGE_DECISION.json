@@ -1,0 +1,63 @@
+{
+  "schema_version": "abi-english-distinct-context-scale-paired-judge-decision/1",
+  "status": "FAILED_PAIRED_GPU_JUDGE_NEGATIVE_EVIDENCE_PRESERVED",
+  "created_date": "2026-07-31",
+  "candidate": {
+    "core_checkpoint_sha256": "a53066ca1d07bd4ab21564858ee120616e674a78a28db95741c6f2f31382209d",
+    "native_runtime_path": "results/abi_moonshot/native_hosts/three-block-distinct-context-scale-budget100-seed19824-v16-onnx-int8-v27-tokenrun4",
+    "runtime_graph_sha256": "52b4d061886aa2c83971391e1ac7b81ae7c8a254de893519afa44115f5d4823f",
+    "weights_changed_vs_v16": false,
+    "graph_changed_vs_v26": false,
+    "teacher_present_at_inference": false
+  },
+  "deterministic_validation": {
+    "path": "results/abi_moonshot/native_hosts/three-block-distinct-context-scale-budget100-seed19824-v16-onnx-int8-v27-tokenrun4-scale-validation.json",
+    "file_sha256": "0fb0294f68e0fcfed7ea365ca92df7ccef057047ba69d56f05445446dd62daba",
+    "evidence_sha256": "69887216cfad58348cdbc28cd3d4261a09f66e6d2253a4dbfd8c9f0b9aa3bcb1f",
+    "observations": 1000,
+    "functional_pass_rate": 1.0,
+    "source_passing_retention_rate": 1.0,
+    "automatic_route_accuracy": 1.0,
+    "collapse_count": 0,
+    "status": "PASS"
+  },
+  "paired_gpu_judge": {
+    "path": "results/abi_moonshot/native_hosts/three-block-distinct-context-scale-budget100-seed19824-v16-onnx-int8-v27-tokenrun4-paired-gpu-judge-validation.json",
+    "file_sha256": "64b7a64a665f1e414ca41a9cfea48e35f215dc8efe40c54aa6f080a134d44c72",
+    "evidence_sha256": "5282badcfc47a06ac90e8fabe5ef5c075a0c5e76f92314577f70b0da603da964",
+    "device": "cuda",
+    "judge": "Qwen/Qwen2-1.5B-Instruct",
+    "observations": 112,
+    "parse_rate": 1.0,
+    "candidate_dimension_means": {
+      "grammatical_fluency": 3.6517857142857144,
+      "local_and_global_coherence": 3.5357142857142856,
+      "prompt_and_context_grounding": 3.482142857142857,
+      "instruction_and_format_adherence": 3.482142857142857
+    },
+    "candidate_to_teacher_total_score_ratio": 0.9646987218502739,
+    "paired_bootstrap_ratio_lower_95": 0.9339794064203513,
+    "candidate_repetition_or_collapse_count": 1,
+    "candidate_unusable_count": 1,
+    "failed_gates": [
+      "zero_candidate_repetition_or_collapse",
+      "zero_candidate_unusable"
+    ],
+    "status": "FAIL"
+  },
+  "measured_failures": [
+    {
+      "probe_id": "english-scale-validation-00131-cake_output_realization-v1",
+      "mode": "late_sequence_event_repetition_and_event_substitution",
+      "judge_repetition_or_collapse": true
+    },
+    {
+      "probe_id": "english-scale-validation-00017-coherence-v1",
+      "mode": "late_sequence_omission_of_four_supplied_events",
+      "judge_unusable": true
+    }
+  ],
+  "decision": "Reject v27. Do not tune another decoder threshold. Audit the training-sequence ceiling because both failures occur in long multi-event realization where late teacher targets may have been truncated.",
+  "final_test_accessed": false,
+  "claim_boundary": "Strong averages and a teacher-relative ratio above threshold do not override either zero-failure gate. v27 is not a fluent-core or promotion pass."
+}

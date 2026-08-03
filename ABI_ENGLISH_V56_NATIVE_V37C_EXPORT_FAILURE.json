@@ -1,0 +1,26 @@
+{
+  "format": "abi-english-v56-native-export-failure/1",
+  "status": "FAILED_AFTER_ROUTER_AND_FP32_MAIN_GRAPH_BEFORE_RUNTIME_EMISSION",
+  "effective_date": "2026-08-01",
+  "protocol": "ABI_ENGLISH_V56_NATIVE_CERTIFICATION_PROTOCOL.json",
+  "source_artifact": "results/abi_moonshot/segregated_acquisition_v3/three-block-v51-event-wrapper-conformance-v56",
+  "attempted_output": "results/abi_moonshot/native_hosts/three-block-v56-onnx-int8-v37c",
+  "partial_files": {
+    "model-fp32.onnx": {
+      "bytes": 402241898,
+      "sha256": "d01fb5a44287b2d76fc30a9bca411ea1f370dcefcfbe5455cc616d50320a3b59"
+    },
+    "task-route-router.onnx": {
+      "bytes": 61943377,
+      "sha256": "df3a648b549d39d3377ada329981a0a201b2da73030f970af3d179cb332ed8ab"
+    }
+  },
+  "failure_stage": "route-selected task-cake projection discovery",
+  "failure_type": "LayerCakeHostRuntimeError",
+  "failure_message": "route-selected projection has an ambiguous transpose",
+  "measured_cause": "The projection inspector excluded the historical 14-route control tensor but not the new exact 10-route control tensor, so it incorrectly treated the physical control gather as a task-cake projection.",
+  "bounded_correction": "Exclude only shape (10,3,768) from task-cake projection discovery. Keep that tensor covered by the independent layerwise-control gather and consumer proof.",
+  "corrected_output": "results/abi_moonshot/native_hosts/three-block-v56-onnx-int8-v37d",
+  "checkpoint_or_payload_changed": false,
+  "moonshot_complete": false
+}

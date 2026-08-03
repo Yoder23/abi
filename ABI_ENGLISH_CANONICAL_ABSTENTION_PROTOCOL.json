@@ -1,0 +1,42 @@
+{
+  "format": "abi-english-canonical-abstention-protocol/1",
+  "status": "PREREGISTERED_AFTER_NATURAL_V3_FAILURE_BEFORE_CANONICAL_CATALOG_BUILD_OR_SOURCE_INFERENCE",
+  "effective_date": "2026-07-30",
+  "preserved_prior_evidence": {
+    "v1_gap_archive_sha256": "c704f499b0ece04fcb0143f13a746ec341b40ea66ba78cf4d1f00c93bf6bbc25",
+    "v1_passes": 22,
+    "v2_archive_sha256": "6a0e33c8396cfc33ce8d792ff2f5ff9e5f98c05a5858d63f74def70b106b1a14",
+    "v2_validation_passes": 73,
+    "v3_archive_sha256": "410512ded0e189cd5906d8a3ed4b71b9e4d11f09383ca2570601947c8ceaf749",
+    "v3_validation_passes": 80,
+    "observations_per_validation": 100,
+    "natural_v3_gate_status": "FAILED_AND_NOT_RESCORED"
+  },
+  "separate_behavioral_hypothesis": "A source can be qualified for grounded abstention without an open-ended lexical classifier by requiring exact adherence to an explicit canonical response when supplied fictional evidence omits the answer.",
+  "catalog": {
+    "builder": "abi/canonical_abstention_catalog.py",
+    "builder_sha256": "f1e81a3b4c9a52569d8f8ec20c673613c4d0ba55ef7c81f2ad6e146eebcd1efc",
+    "test": "tests/test_canonical_abstention_catalog.py",
+    "test_sha256": "1593e9b5db28ce5b56554ee7e1357a84ed271c8f2e3ce6cbd7a8ea54acbbef2a",
+    "test_result": "26 passed with all natural-catalog and host tests",
+    "split": "validation_only",
+    "fresh_prompts": 100,
+    "required_exact_response": "INSUFFICIENT INFORMATION",
+    "thresholds": {
+      "minimum_distinct_prompts": 100,
+      "minimum_pass_rate": 0.9,
+      "minimum_wilson_95_lower_bound": 0.85
+    }
+  },
+  "claim_boundary": "Passing this protocol qualifies exact canonical abstention behavior only. It does not convert the failed v1-v3 natural lexical gates into passes. The final teacher-free LayerCake must still pass independent natural abstention and grounding evaluations.",
+  "training_material_rule": "Canonical validation outputs never enter training. Passing natural v2 search outputs may enter development training only after source qualification.",
+  "execution_policy": {
+    "teacher_inference": "GPU_ONLY",
+    "layercake_acquisition_training": "GPU_ONLY",
+    "cpu_fallback_for_teacher_or_training": false,
+    "cpu_use": "teacher-free LayerCake inference evaluation and final runtime benchmarking only"
+  },
+  "decision_rule": "Run this fresh validation once. Failure closes the Phi-3 abstention acquisition route; success permits passing natural abstention search records to be composed while retaining all natural-gate failures as scoped negative evidence.",
+  "final_test_accessed": false,
+  "moonshot_complete": false
+}

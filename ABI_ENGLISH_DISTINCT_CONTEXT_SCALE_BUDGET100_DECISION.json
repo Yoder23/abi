@@ -1,0 +1,76 @@
+{
+  "schema_version": "abi-english-distinct-context-scale-budget-decision/1",
+  "status": "FAILED_VALIDATION_NEGATIVE_EVIDENCE_PRESERVED_BOUNDED_RUNTIME_REPAIR",
+  "created_date": "2026-07-31",
+  "budget": {
+    "index": 3,
+    "compatible_records": 39946,
+    "compatible_teacher_tokens": 4872950,
+    "cuda_optimizer_steps": 23968,
+    "all_compatible_records_seen_in_successful_updates": true
+  },
+  "candidate": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-distinct-context-scale-budget100-seed19824-steps23968-v16-ampreplay",
+    "checkpoint_sha256": "a53066ca1d07bd4ab21564858ee120616e674a78a28db95741c6f2f31382209d",
+    "manifest_sha256": "a3861cb0b5852e792872c1bf5e67d9a694510d1a35c9e913bd0aec1a1eb0bb43",
+    "training_device": "cuda",
+    "training_wall_seconds": 3330.1596,
+    "peak_training_device_memory_bytes": 2184581120
+  },
+  "native_runtime": {
+    "path": "results/abi_moonshot/native_hosts/three-block-distinct-context-scale-budget100-seed19824-v16-onnx-int8-v26",
+    "metadata_file_sha256": "c875704447d6596cd59f3669f19a6eb96f573a29ecee719d408f64035191f9c2",
+    "graph_sha256": "52b4d061886aa2c83971391e1ac7b81ae7c8a254de893519afa44115f5d4823f",
+    "identity_evidence_path": "results/abi_moonshot/native_hosts/three-block-distinct-context-scale-budget100-seed19824-v16-onnx-int8-v26-identity.json",
+    "identity_evidence_file_sha256": "9fafefe8f332ff875fd767b91120cdbd51ba8b3f75fce77dcff10dfa75feaf53",
+    "identity_status": "PASS",
+    "physical_evidence_path": "results/abi_moonshot/native_hosts/three-block-distinct-context-scale-budget100-seed19824-v16-onnx-int8-v26-physical.json",
+    "physical_evidence_file_sha256": "ffb451cdd26f941284ec6e09992f72b4f46d9693325690807a208dae274f20d0",
+    "physical_sparse_status": "PASS",
+    "teacher_present_at_inference": false,
+    "source_transformer_blocks_retained": 0,
+    "maximum_active_task_cakes_per_sequence": 1
+  },
+  "validation": {
+    "path": "results/abi_moonshot/native_hosts/three-block-distinct-context-scale-budget100-seed19824-v16-onnx-int8-v26-scale-validation.json",
+    "file_sha256": "d83a598ed8d084691fd0f8dc81ec44cd961a56a64f8da117b738cd9b2b774e35",
+    "evidence_sha256": "f6b0365c26111e4c354d55b020ded4a6d41b0c4dd956e8b3046998a999bd90de",
+    "observation_count": 1000,
+    "functional_pass_rate": 1.0,
+    "source_passing_retention_rate": 1.0,
+    "automatic_route_accuracy": 1.0,
+    "collapse_count": 1,
+    "collapse_by_capability": {
+      "cake_output_realization": 0,
+      "coherence": 1,
+      "rewriting": 0,
+      "tone_control": 0
+    },
+    "failed_probe_id": "english-scale-validation-00497-coherence-v1",
+    "measured_failure": {
+      "maximum_identical_token_run": 30,
+      "repeated_token_fourgram_occurrences": 59,
+      "repeated_lexical_fourgram_occurrences": 0,
+      "unique_token_ratio": 0.1834319526627219,
+      "mode": "quote_and_punctuation_token_cycle"
+    },
+    "locked_gates": {
+      "complete_locked_depth": true,
+      "overall_functional_pass_rate_at_least_080": true,
+      "each_declared_capability_pass_rate_at_least_080": true,
+      "source_passing_retention_rate_at_least_090": true,
+      "collapse_count_is_zero": false
+    },
+    "final_test_accessed": false
+  },
+  "paired_judge_run": false,
+  "reason_paired_judge_not_run": "The candidate failed the earlier zero-collapse validation gate; judge compute cannot make v26 promotable.",
+  "branch_result": {
+    "budget25_collapse_count": 13,
+    "budget50_collapse_count": 8,
+    "budget100_collapse_count": 1,
+    "additional_training_budgets_authorized": false
+  },
+  "decision": "Preserve v26 as failed evidence. Keep the exact v16 weights and add exactly one preregistered, generic O(1) identical-token-run safeguard to a successor runtime. Rescreen all 1,000 validation prompts before any paired judge or promotion claim.",
+  "claim_boundary": "The full acquisition budget nearly eliminated collapse but did not pass. The successor safeguard receives no English-knowledge, fluency, or teacher-equivalence credit; those claims still require the unchanged candidate to pass the complete natural-language and performance gates."
+}

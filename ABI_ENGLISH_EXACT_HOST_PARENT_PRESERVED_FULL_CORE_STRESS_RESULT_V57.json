@@ -1,0 +1,58 @@
+{
+  "format": "abi-english-exact-host-parent-preserved-full-core-stress-result/1",
+  "status": "PASS_CANDIDATE_RUN_AUTHORIZED",
+  "effective_date": "2026-08-03",
+  "protocol": {
+    "path": "ABI_ENGLISH_EXACT_HOST_PARENT_PRESERVED_FULL_CORE_GPU_PROTOCOL_V57.json",
+    "sha256": "30f9b38c3b598cd920f7c4cdd8ebbef609f62eff341ca217e27e60f117ff44d4"
+  },
+  "trainer_extension": {
+    "source": "abi/layercake_full_core_acquisition.py",
+    "source_sha256_after": "89fc87127467bdfca1b98175dfac4068f406d55d1a2d884f37fcd42a22ecdf84",
+    "test_source_sha256": "77f765074739f27a84a5a61b99306683efb62221749c38e6a50611f8d9648bc4",
+    "targeted_tests": "51 passed",
+    "model_or_loss_math_changed": false,
+    "change": "The existing frozen-parent loss is now permitted for full_core on CUDA; CPU and unrelated scopes remain fail-closed."
+  },
+  "stress_artifact": {
+    "path": "results/abi_moonshot/stress/abi-exact-host-parent-preserved-full-core-stress-v57",
+    "metadata_file_sha256": "dbe652cadfde57c7a9f2caf7d0598f947909d5f7a0ce0ddee26c083703e9b519",
+    "manifest_sha256": "a142c1df18796c002cbb50e5df38d96a4be83ccb2ddf7cfcce8945defa669b11",
+    "checkpoint_sha256": "b20c88ff42dc80b27f2e670dd97963a9cec7ed365e8e26f9094001ada1a3f9df",
+    "successful_optimizer_steps": 1,
+    "wall_seconds": 0.9574697000007291,
+    "peak_gpu_memory_bytes": 2350535168,
+    "total_parameters": 61655050,
+    "trainable_parameters": 61655050
+  },
+  "losses": {
+    "total": 5.45979118347168,
+    "language": 1.4059033393859863,
+    "classifier": 0.009305208921432495,
+    "parent_logit_preservation": 2.0253257751464844,
+    "anchor_language": 0.0005104973679408431,
+    "general_language": 0.0003923160838894546,
+    "all_required_finite": true
+  },
+  "checks": {
+    "exact_architecture_id": "layercake-shallow-sparse-english/1-three-block-task-cakes",
+    "graph_topology_changed": false,
+    "parameter_shapes_changed": false,
+    "parent_checkpoint_sha256": "22df8256a0479596516c1d09c29200fc19c1cb810ac8204979b2192ce39372e0",
+    "parent_parameter_aliases_in_student": 0,
+    "parent_teacher_forward_tokens": 917,
+    "parent_teacher_response_positions": 489,
+    "parent_teacher_inference_seconds": 0.027300099998683436,
+    "parent_teacher_removed_before_checkpoint": true,
+    "teacher_present_at_inference": false,
+    "main_artifact_unchanged": true,
+    "anchor_artifact_unchanged": true,
+    "parent_artifact_unchanged": true,
+    "canonical_abi_unchanged": true,
+    "gpu_memory_within_available_hardware": true
+  },
+  "decision": "Run the one fixed 6,000-step CUDA candidate exactly as preregistered. The stress artifact is not eligible for semantic or operational promotion.",
+  "promotion_eligible": false,
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

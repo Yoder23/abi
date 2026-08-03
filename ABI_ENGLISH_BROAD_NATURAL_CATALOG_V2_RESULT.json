@@ -1,0 +1,63 @@
+{
+  "format": "abi-english-broad-natural-catalog-v2-result/1",
+  "status": "PASS_AUTHORIZE_GPU_ONLY_SOURCE_EXTRACTION",
+  "effective_date": "2026-07-30",
+  "protocol": "ABI_ENGLISH_BROAD_NATURAL_CONVERSATION_GPU_ACQUISITION_PROTOCOL.json",
+  "amendment": "ABI_ENGLISH_BROAD_NATURAL_CATALOG_V2_AMENDMENT.json",
+  "catalog": {
+    "path": "catalogs/broad_natural_conversation_search_v2.json",
+    "catalog_id": "abi-broad-natural-conversation-search-v2",
+    "bytes": 50096005,
+    "sha256": "d83c8359c578b7738534f0c01e854061e54635c271a5a1886f2c99244add62b6",
+    "probes": 19516,
+    "capabilities": 10,
+    "source_counts": {
+      "oasst1": 404,
+      "ultrachat_200k": 19112
+    },
+    "corpus_assistant_messages_imported": 0,
+    "corpus_reference_answers_imported": 0,
+    "domain_labels_present": 0,
+    "domain_claims_present": 0,
+    "final_test_prompts": 0
+  },
+  "capability_counts": {
+    "coherence": 354,
+    "conversation": 1410,
+    "email_drafting": 1608,
+    "format_control": 2849,
+    "grammar": 284,
+    "instruction_following": 5000,
+    "prompt_grounding": 1995,
+    "rewriting": 1110,
+    "summarization": 928,
+    "tone_control": 3978
+  },
+  "machine_audit": {
+    "path": "results/abi_moonshot/catalog_audits/broad-natural-conversation-search-v2-audit.json",
+    "file_sha256": "2f9e03deb8a9cfb698049dd3f9a44ea5330a83dde086300c796cbdc7b5e46a40",
+    "evidence_sha256": "546a14cb6a3344045c58320fa9daa2f04daeba6316d86df4298615cac55527a1",
+    "status": "PASS",
+    "failures": 0,
+    "unique_prompt_ratio": 1.0,
+    "unique_word_trigram_ratio": 0.5587367346337728,
+    "minimum_capability_count": 284
+  },
+  "authorized_source_command": {
+    "runner": "python -m abi.moonshot survey",
+    "model": "microsoft/Phi-3-mini-4k-instruct",
+    "revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "license": "mit",
+    "device": "cuda",
+    "batch_size": 8,
+    "splits": [
+      "search"
+    ],
+    "development": true,
+    "output": "results/abi_moonshot/segregated_acquisition_v3/phi3-broad-natural-conversation-search-v2.abix",
+    "cpu_fallback_allowed": false
+  },
+  "claim_boundary": "The catalog is authorized as GPU source-extraction input. It is not a qualified source inventory, LayerCake training artifact, or evidence of transferred English quality.",
+  "final_test_accessed": false,
+  "moonshot_complete": false
+}

@@ -1,0 +1,149 @@
+{
+  "schema_version": "abi-english-dual-stream-anchored-acquisition-protocol/1",
+  "protocol_id": "abi-english-dual-stream-anchored-acquisition-v1",
+  "status": "PREREGISTERED_AFTER_V19_AND_V20_FAILURES_BEFORE_CUDA_STRESS_OR_CANDIDATE_TRAINING",
+  "created_date": "2026-07-31",
+  "controlling_failures": [
+    "ABI_ENGLISH_INTEGRATED_BROAD14_V19_DECISION.json",
+    "ABI_ENGLISH_TASK_CAKE_ISOLATION_V20_DECISION.json"
+  ],
+  "hypothesis": "A separate, capability-balanced broad-behavior objective on every optimizer step can constrain shared-core drift while the main stream learns the four deep natural-realization distributions. This differs materially from v19's single imbalanced union sampler and v20's insufficient cake-only trainable scope.",
+  "measured_bottleneck": {
+    "v6_broad14_pass_rate": 0.9192857142857143,
+    "v19_broad14_pass_rate": 0.8428571428571429,
+    "v19_source_passing_retention_rate": 0.8713114754098361,
+    "v20_broad14_pass_rate": 0.5471428571428572,
+    "v20_source_passing_retention_rate": 0.580327868852459,
+    "v19_collapse_count": 0,
+    "v20_collapse_count": 0,
+    "v19_single_sampler_distribution_distortion": {
+      "coherence_scale_records": 10000,
+      "coherence_broad_records": 100,
+      "rewriting_scale_records": 9998,
+      "rewriting_other_records": 559,
+      "tone_control_scale_records": 10000,
+      "tone_control_other_records": 423,
+      "cake_output_realization_scale_records": 9998,
+      "cake_output_realization_other_records": 577,
+      "summarization_records": 82,
+      "summarization_approximate_replays_per_record": 129
+    },
+    "interpretation": "The v19 union made heterogeneous natural and broad distributions compete inside one capability bucket, while v20 proved that existing route cakes alone cannot preserve and acquire the required behaviors. The next bounded architecture repair uses two independently sampled, independently accounted losses and permits the complete unchanged LayerCake core to adapt."
+  },
+  "immutable_inputs": {
+    "deep_natural_stream": {
+      "path": "results/abi_moonshot/segregated_acquisition_v3/phi3-english-distinct-context-scale-search-training-v1.abix",
+      "archive_sha256": "2aa903c2e9adb8f876614793e4727f589e044f2069b147989ef6f881a8d4cd31",
+      "budget_index": 3,
+      "records": 39996,
+      "teacher_tokens": 4881854,
+      "capabilities": [
+        "cake_output_realization",
+        "coherence",
+        "rewriting",
+        "tone_control"
+      ]
+    },
+    "broad_behavior_anchor_stream": {
+      "path": "results/abi_moonshot/segregated_acquisition_v3/phi3-natural-cumulative-realization-scale-training-v8.abix",
+      "archive_sha256": "d40d0d0804954f2e3769de3a5df4f60caebab28680091bf09746e949bf5d0ac8",
+      "budget_index": 3,
+      "records": 3112,
+      "teacher_tokens": 142949,
+      "declared_capabilities": 14
+    },
+    "combined_imported_information": {
+      "records": 43108,
+      "teacher_tokens": 5024803,
+      "teacher_logits_stored": 0,
+      "teacher_hidden_activation_bytes_stored": 0,
+      "source_parameters_copied": 0,
+      "selected_domains": [],
+      "new_teacher_calls_for_this_experiment": 0
+    },
+    "parent_path": "results/abi_moonshot/segregated_acquisition_v3/three-block-realization-scale-preservation-seed9824-steps4000-v6",
+    "parent_checkpoint_sha256": "5bae16dec3a55759e92a8481ec5ee519a5ee8687ad1a6f019edc1df3225d092e",
+    "parent_broad14_validation_file_sha256": "ba8d171e9c5df279aec1fcda2749ac80df76f287c2d08df49eeb73684ba4669c",
+    "canonical_semantic_abi_sha256": "d024de52144a2d797d0501acb7deb55575ffca7e33f72900beff599cf0a97761",
+    "tokenizer_sha256": "1fe93b6152957cf9cfd6d89002467f789ce8b3f3e000b3a2edf27c808ddd0b9e",
+    "general_preservation_curriculum_sha256": "bae6c1fe300a0214c1f6cb19a8c8eeee4f0b75681290be56f258a247cd488e53",
+    "base_decoding_contract_sha256": "9cdf13ed2b8fad9b90b1ee2132481424a15a05f8e3a58dd94fac6b7fc2d946dd"
+  },
+  "sequence_coverage_lock": {
+    "maximum_complete_sequence_tokens": 494,
+    "sequence_ceiling": 512,
+    "omitted_teacher_target_tokens": 0,
+    "overlength_prompt_exclusion_allowed": false
+  },
+  "candidate_lock": {
+    "attempts": 1,
+    "output_path": "results/abi_moonshot/segregated_acquisition_v3/three-block-dualstream-anchor-fullseq512-seed19824-steps23998-v21",
+    "seed": 19824,
+    "device": "cuda",
+    "successful_optimizer_steps": 23998,
+    "gradient_accumulation_steps": 1,
+    "deep_natural_batch_size": 4,
+    "deep_natural_sampling_strategy": "balanced_capabilities",
+    "broad_anchor_batch_size": 4,
+    "broad_anchor_sampling_strategy": "balanced_capabilities",
+    "broad_anchor_loss_weight": 1.0,
+    "general_preservation_batch_size": 4,
+    "general_preservation_loss_weight": 1.0,
+    "total_examples_per_step": 12,
+    "trainable_scope": "full_core",
+    "shared_learning_rate": 0.00001,
+    "cake_learning_rate": 0.00005,
+    "classifier_loss_weight": 0.25,
+    "prompt_overlap_loss_weight": 1.0,
+    "weight_decay": 0.01,
+    "max_tokens": 512,
+    "self_generated_prefix_recovery": {
+      "start_step": 400,
+      "interval": 8,
+      "horizons": [
+        8,
+        16,
+        32
+      ]
+    },
+    "architecture_changes": 0,
+    "parameter_count_changes": 0,
+    "tokenizer_changes": 0,
+    "task_cake_topology_changes": 0,
+    "inference_graph_changes": 0,
+    "decoder_changes": 0,
+    "new_teacher_inference": 0
+  },
+  "implementation": {
+    "training_runner": "abi/layercake_full_core_acquisition.py",
+    "training_runner_sha256": "e4f85e28208b38278c988d83acc97767cbe5da02cd433bfc973e23fb5116157",
+    "runtime_runner": "abi/layercake_host_runtime.py",
+    "runtime_runner_sha256": "6cc9e8215f9b11c286d3ddf9ad64ac7cb0e89562112cb17e647e80bd2d5010eb",
+    "anchor_wiring_test": "tests/test_layercake_acquisition.py",
+    "anchor_wiring_test_sha256": "e34988d2523f9df6291080ac239b4aec2db2ccaffab1b7b86d85b3caafc8bbb2",
+    "acquisition_test_result": "17 passed",
+    "broader_focused_suite_result": "66 passed, 1 pre-existing stale implementation-certificate hash failure",
+    "cuda_stress_required_before_candidate": true
+  },
+  "hardware_policy": {
+    "abi_acquisition_device": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "abi_acquisition_device_memory_bytes": 17179344896,
+    "abi_acquisition_backend": "CUDA with automatic mixed precision",
+    "cpu_training_authorized": false,
+    "cpu_role": "Exact deployed LayerCake inference, TTFO, throughput, active-memory, identity, and physical-sparse certification only.",
+    "paired_teacher_judge_device": "cuda"
+  },
+  "validation_order": [
+    "Pass one non-candidate CUDA stress step with all three streams and a 32-token autonomous-prefix recovery horizon; reject or use gradient accumulation if physical GPU memory is unsafe.",
+    "Require all 39,996 deep records, all 3,112 anchor records, all fourteen anchor capabilities, and every successful optimizer step to be accounted in immutable CUDA metadata.",
+    "Export the exact teacher-free checkpoint with the unchanged generic token-run-four overlay.",
+    "Reverify checkpoint identity, canonical ABI, source absence, and physical sparse execution.",
+    "Run the locked 1,400-observation broad14 suite first on native CPU and require overall pass rate at least 0.80, every capability at least 0.80, source-passing retention at least 0.90, route correctness 1.0, and zero collapse.",
+    "Only if broad14 passes, run all 1,000 deep scale validation prompts on native CPU and require every locked gate and zero collapse.",
+    "Only if both automatic suites pass, run the unchanged 112-prompt blinded paired Qwen judge on CUDA and require every strict teacher-relative gate.",
+    "Only then run the disclosed natural audit, corrected Phase-2 suite, repeated CPU benchmark, three paired seeds or fresh hosts, package identity, isolation, and untouched final split."
+  ],
+  "decision_rule": "Reject the single dual-stream candidate on any locked gate. Do not access final-test data, tune anchor weights, change the decoder, add prompt-specific or symbolic handlers, or launch a nearby dual-stream variant. A failure must be preserved and must select a materially different measured architecture.",
+  "final_test_accessed": false,
+  "claim_boundary": "This protocol tests GPU-based foreign-teacher English acquisition into an unchanged LayerCake graph. It does not claim lossless foreign transfer, fluent English, teacher equivalence, or moonshot completion without the full teacher-free exact-host certification chain."
+}

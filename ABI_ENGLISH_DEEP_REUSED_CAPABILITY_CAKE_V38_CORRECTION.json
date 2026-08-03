@@ -1,0 +1,17 @@
+{
+  "format": "abi-english-deep-reused-capability-cake-v38-correction/1",
+  "status": "CORRECTED_BEFORE_IMPLEMENTATION_OR_TRAINING",
+  "effective_date": "2026-08-02",
+  "protocol": "ABI_ENGLISH_DEEP_REUSED_CAPABILITY_CAKE_GPU_PROTOCOL_V38.json",
+  "correction": "Remove require_parent_function_exact_at_zero_delta. Relocating an already-nonzero parent cake from post-transformer to pre-block positions intentionally changes the function and cannot be parent-exact without adding a gating mechanism that contradicts the zero-added-table design.",
+  "replacement_structural_requirements": [
+    "all frozen shared tensors remain exact",
+    "the relocated selected cake changes persistent KV state",
+    "public cache contains only real tokens",
+    "one unique capability-cake parameter table is selected at all three block boundaries",
+    "no final post-transformer cake executes",
+    "canonical ABI remains unchanged"
+  ],
+  "thresholds_changed": false,
+  "contaminated_final_v4_accessed": false
+}

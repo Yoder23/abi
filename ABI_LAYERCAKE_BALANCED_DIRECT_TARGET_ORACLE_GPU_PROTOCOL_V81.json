@@ -1,0 +1,107 @@
+{
+  "format": "abi-layercake-balanced-direct-target-oracle-gpu-protocol/1",
+  "protocol_id": "abi-layercake-balanced-direct-target-oracle-v81",
+  "status": "PREREGISTERED_BEFORE_STRESS_OR_TRAINING",
+  "effective_date": "2026-08-03",
+  "objective": "Test the single measured V80 conditioning bottleneck by balancing the unchanged direct-target stream across capabilities while preserving the parent, topology, data, losses, schedule, and quality gate.",
+  "causal_role": {
+    "layercake": "Exact architecture and host-conditioning capacity under the unchanged canonical ABI and sparse task-cake topology.",
+    "oracle": "Capacity-only direct targets with no ABI minimization, open-weight extraction, or production credit.",
+    "abi": "Not tested by V81.",
+    "integration": "Not tested unless V81 clears the quality screen and is subsequently packaged through the exact receiver."
+  },
+  "authorization_basis": {
+    "v80_decision": "ABI_LAYERCAKE_SAME_TOPOLOGY_DIRECT_TARGET_ORACLE_V80_DECISION.json",
+    "v80_decision_sha256": "c97ea8119a9668e54e8f170c8d18532d3d70303a8f2c01bbe8d0262020f9bf7f",
+    "v80_result": "4/28 with one collapse versus parent 10/28 with zero collapse",
+    "measured_bottleneck": "Uniform-record sampling over an eleven-capability stream gave 1000 records each to rewriting, prompt grounding, and instruction following, but only 142 conversation, 86 email-drafting, and 72 cake-output-realization records. Seven paired regressions included conversation and email drafting.",
+    "only_changed_factor": "general_sampling_strategy changes from uniform_records to balanced_capabilities"
+  },
+  "immutable_parent": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-broad-natural-same-tokenizer-logit-distill-seed349824-steps6000-v41",
+    "metadata_file_sha256": "df278dffbc4ad888ce31346eedf12301bfa812cb032d040db3fa49bb5018c36e",
+    "checkpoint_sha256": "22df8256a0479596516c1d09c29200fc19c1cb810ac8204979b2192ce39372e0",
+    "historical_screen": "10/28 with zero collapse",
+    "historical_full_gate": "FAIL and not inherited"
+  },
+  "unchanged_inputs": {
+    "balanced_fourteen_capability_bundle": "results/abi_moonshot/reference_artifact_v71/phi3-multisource-english-training-v1.abix",
+    "bundle_sha256": "da8e3b4940988c1a8a2d9baab47c7a82dbbe6bccd054a494a3ad77102e12886a",
+    "bundle_records": 2235,
+    "bundle_teacher_tokens": 84930,
+    "direct_target_curriculum": "results/abi_moonshot/oracle_v80/alpaca-filtered-direct-target-oracle-v1.jsonl",
+    "direct_target_curriculum_sha256": "2c7ef08c1f2fe647dac9fe70be5a766cd9ed46e82a32941c58e6dddd8929bb76",
+    "direct_target_records": 4894,
+    "direct_target_reference_tokens": 302096,
+    "canonical_abi": "../layercake_release/moonshot/phase2_canonical_semantic_abi_r3.json",
+    "canonical_abi_sha256": "d024de52144a2d797d0501acb7deb55575ffca7e33f72900beff599cf0a97761",
+    "decoding_contract": "ABI_ENGLISH_DISTINCT_CONTEXT_SCALE_DECODING_LOCK.json",
+    "decoding_contract_sha256": "9cdf13ed2b8fad9b90b1ee2132481424a15a05f8e3a58dd94fac6b7fc2d946dd"
+  },
+  "fixed_architecture": {
+    "architecture_id": "layercake-shallow-sparse-english/1-three-block-task-cakes",
+    "total_parameters": 61655050,
+    "active_parameters": 60756490,
+    "layers": 3,
+    "width": 768,
+    "heads": 12,
+    "task_cakes": 10,
+    "task_cake_rank": 64,
+    "maximum_active_task_cakes_per_sequence": 1,
+    "graph_topology_changes": 0,
+    "parameter_shape_changes": 0,
+    "canonical_abi_changes": 0
+  },
+  "stress": {
+    "output": "results/abi_moonshot/oracle_v81/stress-three-block-balanced-direct-target-oracle-seed629824-v1",
+    "seed": 629824,
+    "successful_optimizer_steps": 1,
+    "device": "cuda"
+  },
+  "candidate_if_stress_passes": {
+    "output": "results/abi_moonshot/oracle_v81/three-block-balanced-direct-target-oracle-seed629824-steps6000-v1",
+    "seed": 629824,
+    "successful_optimizer_steps": 6000,
+    "trainable_scope": "full_core",
+    "main_batch_size": 4,
+    "main_sampling_strategy": "balanced_capabilities",
+    "general_batch_size": 4,
+    "general_sampling_strategy": "balanced_capabilities",
+    "general_loss_weight": 1.0,
+    "gradient_accumulation_steps": 1,
+    "shared_learning_rate": 0.00001,
+    "cake_learning_rate": 0.00005,
+    "classifier_loss_weight": 0.25,
+    "prompt_overlap_loss_weight": 1.0,
+    "max_tokens": 1024,
+    "recovery_start_step": 400,
+    "recovery_interval": 8,
+    "recovery_horizons": [4, 8, 16],
+    "device": "cuda",
+    "teacher_present_at_inference": false
+  },
+  "quality_screen": {
+    "catalog": "catalogs/postcert_novel_english_audit_v1.json",
+    "sha256": "0b7349c07201638db72bd8fe31fba4f7f7bc4e18fce8fb90c3a3ec839ed70df5",
+    "observations": 28,
+    "training_overlap": 0,
+    "minimum_passes": 19,
+    "required_collapse_count": 0,
+    "access": "one immutable post-training screen"
+  },
+  "decision_rule": [
+    "If CUDA stress fails, preserve the failure and stop before full training.",
+    "If the candidate reaches at least 19/28 with zero collapse, package it through the exact receiver before expanded host capacity is established.",
+    "If it scores below 19/28 or collapses, reject this conditioning correction, stop same-topology curriculum/sampler sweeps, and reconsider the expanded host acquisition mechanism before resuming ABI extraction.",
+    "No V81 result counts as ABI transfer, open-weight teacher evidence, production domain segregation, or release quality."
+  ],
+  "implementation_lock": {
+    "abi/layercake_full_core_acquisition.py": "8991cfe0d6460a53baf68e6aa579551c350aed8f10f24a57516c56faa0b3d86d",
+    "tests/test_layercake_acquisition.py": "64a2426238dfc158cac1b7dff99474ef70cf09b34228ea498af116a878e0133f",
+    "targeted_tests": "42 passed"
+  },
+  "historical_evidence_changed": false,
+  "final_test_accessed": false,
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

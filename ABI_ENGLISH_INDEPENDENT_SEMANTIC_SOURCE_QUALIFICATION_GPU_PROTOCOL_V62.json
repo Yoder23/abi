@@ -1,0 +1,114 @@
+{
+  "format": "abi-english-independent-semantic-source-qualification-protocol/1",
+  "protocol_id": "abi-english-independent-semantic-source-qualification-v62",
+  "status": "PREREGISTERED_BEFORE_ANY_V62_JUDGE_INFERENCE",
+  "effective_date": "2026-08-03",
+  "measured_bottleneck": {
+    "v60_decision": "ABI_ENGLISH_GROUNDED_REFERENCE_GPU_FULL_SURVEY_V60_DECISION.json",
+    "v60_result": "Phi-3 runtime evidence passed exactly but only 9/14 capabilities passed deterministic surface-form qualification.",
+    "v61_decision": "ABI_ENGLISH_QWEN2_7B_LOCKED_REFERENCE_GPU_PREFLIGHT_V61_DECISION.json",
+    "v61_decision_sha256": "8c84b66921d9d4526a461f970db858750c411fc5fc0a28f0b258fec5f512f6ed",
+    "v61_result": "A stronger Qwen2-7B source also failed exact surface gates on semantically useful output, while separately exposing one real nonce-corruption and one ceiling termination.",
+    "hypothesis": "An independent prompt-conditioned semantic judge can separate useful complete supervision from both genuine source errors and deterministic surface-rule false negatives without changing any frozen source output."
+  },
+  "source_bundle": {
+    "path": "results/abi_moonshot/reference_artifact_v60/phi3-grounded-reference-search-validation-survey-v3.abix",
+    "sha256": "7a5ee832d1a940ec2c5a617d38b6aca5606107d2caf8055ba5b0a18b95fa8d61",
+    "manifest_sha256": "a398e46711c2f10d695fa51d4396ca1237d8ef445cd6447585484b78eaf1b9f7",
+    "source_model": "microsoft/Phi-3-mini-4k-instruct",
+    "source_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "records": 3136,
+    "frozen_unchanged": true,
+    "v60_deterministic_decision_remains_failed": true
+  },
+  "catalog": {
+    "path": "catalogs/grounded_english_reference_search_validation_v3.json",
+    "sha256": "055a6482669953c6283d93bebf87e1cef6b7db278b3b2e3849df51dab2d011ab",
+    "catalog_id": "abi-grounded-english-reference-search-validation-v3",
+    "changed_for_v62": false,
+    "search_per_capability": 160,
+    "validation_per_capability": 64,
+    "final_test_prompts": 0
+  },
+  "judge": {
+    "role": "independent_semantic_qualification_only",
+    "model": "Qwen/Qwen2-7B-Instruct",
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "license": "apache-2.0",
+    "expected_source_manifest_sha256": "baa20319cec7d6dac2809d61048d57927318a48820a8fd1ffb0b60b4058bd92d",
+    "device": "cuda",
+    "weight_execution_precision": "bitsandbytes_int8",
+    "cpu_offload_allowed": false,
+    "temperature": 0,
+    "max_new_tokens": 160,
+    "teacher_or_layercake_identity_exposed": false,
+    "source_and_judge_are_distinct_models": true,
+    "judge_absent_from_layercake_inference": true
+  },
+  "rubric": {
+    "scores": [
+      "linguistic_quality",
+      "prompt_grounding",
+      "task_correctness",
+      "instruction_adherence"
+    ],
+    "score_range": [0, 4],
+    "minimum_linguistic_quality": 3,
+    "minimum_prompt_grounding": 3,
+    "minimum_task_correctness": 3,
+    "minimum_instruction_adherence": 2,
+    "required_false_flags": [
+      "changed_required_supplied_detail",
+      "unsupplied_factual_detail",
+      "repetition_or_collapse",
+      "unusable_or_empty"
+    ],
+    "minor_surface_deviation_can_pass": true,
+    "changed_or_omitted_required_supplied_detail_can_pass": false
+  },
+  "preflight": {
+    "selection": "For each capability, select one lowest-hash prior deterministic pass and one lowest-hash prior deterministic failure when both exist; otherwise take the two lowest hashes. Rank SHA-256(protocol_id + ':preflight:' + probe_id).",
+    "records_per_capability": 2,
+    "expected_records": 28,
+    "batch_size": 4,
+    "minimum_semantic_passes": 1,
+    "minimum_semantic_failures": 1,
+    "required_parse_rate": 1.0,
+    "required_eos_rate": 1.0,
+    "required_authoritative_id_match_rate": 1.0,
+    "output": "results/abi_moonshot/reference_artifact_v62/phi3-v60-qwen2-7b-semantic-preflight-v1.json"
+  },
+  "full": {
+    "authorized_only_if_preflight_passes": true,
+    "selection": "Every frozen V60 search and validation record; no final-test records exist.",
+    "expected_records": 3136,
+    "batch_size": 4,
+    "required_capabilities": 14,
+    "minimum_search_passes_per_capability": 100,
+    "minimum_pass_rate": 0.9,
+    "minimum_wilson_95_lower_bound": 0.8,
+    "required_parse_rate": 1.0,
+    "required_eos_rate": 1.0,
+    "output": "results/abi_moonshot/reference_artifact_v62/phi3-v60-qwen2-7b-semantic-full-v1.json"
+  },
+  "implementation_lock": {
+    "abi/semantic_source_qualification.py": "f40b649df3dc92dee299f73819dd666c49e2ccbdfa99dd8374fbf4b3c791e12d",
+    "tests/test_semantic_source_qualification.py": "f1ba467af55b10fee5644c39fb4aa2684b6ccc226e4eb70a2cfdcd2d9932e944",
+    "abi/hf_extraction.py": "1a9a12ce6efbf5ab78d13b3e84dcf6aedf9b34d9bbbca8a35bb1f165b067d555"
+  },
+  "decision_rule": [
+    "Run the 28-record adversarially stratified semantic-judge preflight exactly once.",
+    "Reject V62 if any judgment is unparsable, ceiling terminated, lacks authoritative IDs, uses non-CUDA execution or CPU offload, or if the judge emits only constant pass or constant fail decisions.",
+    "If preflight passes, judge all 3,136 frozen V60 search and validation responses exactly once.",
+    "Do not change the source outputs, catalog, rubric, thresholds, judge model, or runtime after observing preflight or full results.",
+    "A full semantic result may authorize a separately hashed derived composition only if all 14 capabilities pass search-depth, validation-rate, and Wilson gates.",
+    "The original V60 deterministic failure remains historical and must be reported alongside any V62 semantic qualification.",
+    "Do not invoke LayerCake until the derived ABI artifact separately passes composition integrity, segregation, and teacher-artifact adequacy audits."
+  ],
+  "claim_boundary": "V62 can qualify frozen source responses for ABI acquisition material. It cannot prove ABI-to-LayerCake transfer, LayerCake quality, or LayerCake performance. An integrated candidate must later pass independent teacher-relative, isolation, receiver-identity, CPU speed, TTFO, RSS, sparse-execution, and three-seed gates.",
+  "final_test_accessed": false,
+  "layercake_invoked": false,
+  "layercake_training_authorized": false,
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

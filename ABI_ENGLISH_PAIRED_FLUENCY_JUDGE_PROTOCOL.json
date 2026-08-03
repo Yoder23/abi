@@ -1,0 +1,62 @@
+{
+  "schema_version": "abi-paired-english-fluency-judge-protocol/1",
+  "protocol_id": "abi-english-paired-fluency-judge-v1",
+  "status": "PREREGISTERED_BEFORE_CANDIDATE_TRAINING_AND_FINAL_SPLIT_INFERENCE",
+  "created_date": "2026-07-30",
+  "catalog": {
+    "path": "catalogs/broad_corpus_grounded_english_v1.json",
+    "sha256": "51073cd7f1554f91d00f09077e8161106e843da1792751d5cedbf2e2c9ecf1ea",
+    "split": "final_test",
+    "available_prompts": 1400,
+    "sample_prompts": 112,
+    "prompts_per_capability": 8,
+    "selection": "For each capability, take the eight lowest SHA-256 values of UTF-8(protocol_id + ':' + probe_id).",
+    "candidate_or_teacher_output_used_for_selection": false
+  },
+  "judge": {
+    "model_id": "Qwen/Qwen2-1.5B-Instruct",
+    "revision": "ba1cf1846d7df0a0591d6c00649f57e798519da8",
+    "license_id": "apache-2.0",
+    "temperature": 0,
+    "role": "evaluation_only_absent_at_layercake_inference",
+    "independence_boundary": "The judge is neither the Phi-3 extraction teacher nor LayerCake. It is still an automated model judge and cannot substitute for the separately required blinded human audit."
+  },
+  "blinding": {
+    "pair_order": "A/B orientation is determined by the low bit of SHA-256(protocol_id + ':orientation:' + probe_id).",
+    "model_names_exposed_to_judge": false,
+    "artifact_paths_exposed_to_judge": false,
+    "rubric_fixed_before_outputs": true
+  },
+  "rubric": {
+    "scale": {
+      "minimum": 0,
+      "maximum": 4
+    },
+    "dimensions": [
+      "grammatical_fluency",
+      "local_and_global_coherence",
+      "prompt_and_context_grounding",
+      "instruction_and_format_adherence"
+    ],
+    "binary_checks": [
+      "unsupported_factual_detail",
+      "repetition_or_collapse",
+      "unusable_or_empty"
+    ],
+    "judge_must_score_both_outputs_independently": true
+  },
+  "gates": {
+    "minimum_parse_rate": 0.95,
+    "minimum_candidate_grammatical_fluency_mean": 3.25,
+    "minimum_candidate_coherence_mean": 3.25,
+    "minimum_candidate_grounding_mean": 3.0,
+    "minimum_candidate_adherence_mean": 3.0,
+    "maximum_candidate_repetition_or_collapse_rate": 0.0,
+    "maximum_candidate_unusable_rate": 0.0,
+    "minimum_candidate_to_teacher_total_score_ratio_for_no_material_quality_loss": 0.9,
+    "maximum_grounding_mean_loss_vs_teacher": 0.25,
+    "paired_bootstrap_confidence_interval": 0.95,
+    "minimum_bootstrap_lower_bound_for_candidate_to_teacher_total_ratio": 0.85
+  },
+  "decision_rule": "A no-material-generation-quality-loss claim requires every gate. A candidate that passes absolute fluency but misses the teacher-relative gates may be reported only as a fluent intermediate LayerCake, not as teacher-equivalent or moonshot-complete."
+}

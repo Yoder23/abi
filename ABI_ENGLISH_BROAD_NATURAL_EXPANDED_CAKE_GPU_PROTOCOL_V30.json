@@ -1,0 +1,110 @@
+{
+  "format": "abi-english-broad-natural-expanded-cake-gpu-protocol/1",
+  "status": "PREREGISTERED_AFTER_V29_REJECTION_BEFORE_CUDA_STRESS",
+  "effective_date": "2026-08-02",
+  "controlling_failure": "ABI_ENGLISH_BROAD_NATURAL_FULL_CORE_V29_DECISION.json",
+  "hypothesis": "The broad teacher distribution can be learned without v29's shared-substrate overwrite by freezing every v21 shared tensor and every original rank-64 cake slice, expanding only the physically selected cake path to rank 256, and training only the new tail plus the route classifier. The added active path is small enough to retain the measured CPU-speed margin, but that must be measured before candidate training.",
+  "measured_bottleneck": {
+    "v21_natural_screen_passes": 4,
+    "v29_natural_screen_passes": 8,
+    "v29_broad14_pass_rate": 0.85,
+    "v29_source_passing_retention_rate": 0.8778688524590164,
+    "v29_collapse_count": 5,
+    "v20_rank64_cake_only_pass_rate": 0.5471428571428572,
+    "interpretation": "Rank-64 isolation prevented shared overwrite but lacked residual capacity; full-core adaptation had capacity but damaged shared behavior. Rank-256 isolated tails directly test the measured capacity/interference tradeoff."
+  },
+  "immutable_inputs": {
+    "main_stream": {
+      "path": "results/abi_moonshot/segregated_acquisition_v3/phi3-broad-natural-conversation-complete-search-training-v3.abix",
+      "archive_sha256": "82d1ab8a3ee7b4aa351b5c74b4a229d75e845313047065780227e8e403363150",
+      "budget_index": 3,
+      "records": 24421,
+      "teacher_tokens": 2784714
+    },
+    "anchor": {
+      "path": "results/abi_moonshot/segregated_acquisition_v3/phi3-natural-cumulative-realization-scale-training-v8.abix",
+      "archive_sha256": "d40d0d0804954f2e3769de3a5df4f60caebab28680091bf09746e949bf5d0ac8",
+      "budget_index": 3,
+      "records": 3112
+    },
+    "general_curriculum_sha256": "bae6c1fe300a0214c1f6cb19a8c8eeee4f0b75681290be56f258a247cd488e53",
+    "parent": {
+      "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-dualstream-anchor-fullseq512-seed19824-steps23998-v21",
+      "checkpoint_sha256": "b6bda948f24eb93e4abbfebf1e451b8911b4614a1829527c257007d8052753e1",
+      "metadata_sha256": "b38cab807bb10378f25a4c676d5b357583402b561dcc9ea24c9b55ec6f604b7a"
+    },
+    "canonical_abi_sha256": "d024de52144a2d797d0501acb7deb55575ffca7e33f72900beff599cf0a97761",
+    "decoding_contract_sha256": "9cdf13ed2b8fad9b90b1ee2132481424a15a05f8e3a58dd94fac6b7fc2d946dd"
+  },
+  "architecture_lock": {
+    "transformer_blocks": 3,
+    "width": 768,
+    "installed_task_cakes": 10,
+    "maximum_active_task_cakes_per_sequence": 1,
+    "parent_task_cake_rank": 64,
+    "expanded_task_cake_rank": 256,
+    "added_parameters_per_installed_cake": 294912,
+    "added_total_parameters": 2949120,
+    "added_active_parameters": 294912,
+    "total_parameter_count": 64604170,
+    "active_parameter_count": 61051402,
+    "effective_trainable_parameter_count": 2956810,
+    "optimizer_parameter_element_count": 3939850,
+    "parent_rank64_slices_locked": true,
+    "shared_core_locked": true,
+    "route_classifier_trainable": true,
+    "canonical_abi_changed": false,
+    "physical_sparse_dispatch_changed": false
+  },
+  "candidate_lock": {
+    "attempts": 1,
+    "output_path": "results/abi_moonshot/segregated_acquisition_v3/three-block-broad-natural-expandedcake-r256-seed59824-steps18000-v30",
+    "seed": 59824,
+    "device": "cuda",
+    "successful_optimizer_steps": 18000,
+    "gradient_accumulation_steps": 1,
+    "main_batch_size": 4,
+    "main_sampling_strategy": "uniform_records",
+    "anchor_batch_size": 4,
+    "anchor_sampling_strategy": "balanced_capabilities",
+    "anchor_loss_weight": 1.0,
+    "general_batch_size": 4,
+    "general_loss_weight": 1.0,
+    "trainable_scope": "expanded_task_cake_tail_classifier",
+    "shared_learning_rate": 0.00001,
+    "cake_learning_rate": 0.00005,
+    "classifier_loss_weight": 0.25,
+    "prompt_overlap_loss_weight": 1.0,
+    "max_tokens": 1024,
+    "self_generated_prefix_recovery": {
+      "start_step": 400,
+      "interval": 8,
+      "horizons": [4, 8, 16]
+    }
+  },
+  "implementation": {
+    "runner_sha256": "6f93a355cfb520796639fa7838990d0b357a4bf06cebe2fd7adc7e43c9052ac2",
+    "loader_sha256": "06018ddb8aa1ae20d3a5bddd6fff8d329268ccda079a0decefb1d46311f58594",
+    "focused_tests": "60 passed",
+    "base_slice_policy": "Gradient-mask locked rank-64 slices and restore them bit-exact after every optimizer attempt; hash every frozen shared tensor before and after training."
+  },
+  "pretraining_gates": {
+    "cuda_stress_output": "results/abi_moonshot/stress/abi-broad-natural-expandedcake-r256-stress-v30",
+    "stress_steps": 1,
+    "require_base_slices_exact": true,
+    "require_shared_state_hash_exact": true,
+    "require_physical_sparse_proof": true,
+    "require_exact_graph_cpu_speed_precheck": true,
+    "minimum_cpu_speed_ratio_vs_optimized_transformer": 2.0,
+    "candidate_training_authorized_only_after_all_pretraining_gates": true
+  },
+  "decision_rule": "Reject on any stress, identity, physical-sparse, or CPU-speed precheck failure. If trained, reject on any broad14, collapse, natural-quality, teacher-relative, TTFT, RSS, canonical ABI, or two-times CPU-speed gate. Do not sweep rank, seed, steps, learning rate, or loss weight from candidate outputs.",
+  "hardware_policy": {
+    "acquisition_training": "cuda",
+    "cpu_training_authorized": false,
+    "cpu_role": "Exact deployed LayerCake runtime precheck and final inference certification only."
+  },
+  "disclosed_postcert_final_split_accessed_before_protocol": true,
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

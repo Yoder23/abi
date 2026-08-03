@@ -1,0 +1,87 @@
+{
+  "format": "abi-layercake-balanced-direct-target-oracle-v81-decision/1",
+  "status": "REJECTED_BALANCED_CONDITIONING_FAILS_EXPANDED_HOST_ORACLE",
+  "effective_date": "2026-08-03",
+  "protocol": {
+    "path": "ABI_LAYERCAKE_BALANCED_DIRECT_TARGET_ORACLE_GPU_PROTOCOL_V81.json",
+    "sha256": "057e6684c0c493904623db0d7f20755e47b75425bea166f6b5748ab79115cb1e"
+  },
+  "stress_result": "ABI_LAYERCAKE_BALANCED_DIRECT_TARGET_ORACLE_CUDA_STRESS_RESULT_V81.json",
+  "candidate": {
+    "path": "results/abi_moonshot/oracle_v81/three-block-balanced-direct-target-oracle-seed629824-steps6000-v1",
+    "metadata_file_sha256": "75f6ad886b078623f13dafa2d4f9aeed8f4ac8c2c15b20493a281d8ff3694256",
+    "metadata_manifest_sha256": "837725e2555138f0a7e9ec69486b9544523ac12edaef814fcc19ee5d6898a743",
+    "checkpoint_sha256": "91c98390c7ceba1690c8ea114e5181f2d1fa081dd84ee0ed588420412bfef7e3",
+    "architecture_id": "layercake-shallow-sparse-english/1-three-block-task-cakes",
+    "total_parameters": 61655050,
+    "active_parameters": 60756490,
+    "canonical_abi_changed": false,
+    "teacher_present_at_inference": false
+  },
+  "training": {
+    "device": "cuda",
+    "seed": 629824,
+    "successful_optimizer_steps": 6000,
+    "skipped_amp_optimizer_steps": 5,
+    "main_sampling_strategy": "balanced_capabilities",
+    "general_sampling_strategy": "balanced_capabilities",
+    "main_samples_per_capability_min": 1714,
+    "main_samples_per_capability_max": 1715,
+    "general_samples_per_capability_min": 2181,
+    "general_samples_per_capability_max": 2182,
+    "general_capabilities": 11,
+    "supervised_layercake_tokens_seen": 852699,
+    "general_preservation_tokens_seen": 1592318,
+    "wall_seconds": 619.9358689000001,
+    "gpu_hours": 0.17220440802777778,
+    "peak_device_memory_bytes": 3409545216,
+    "active_parameter_seconds": 38222176993.82295
+  },
+  "quality_screen": {
+    "path": "results/abi_moonshot/oracle_v81/three-block-balanced-direct-target-oracle-seed629824-steps6000-v1-screen28.json",
+    "file_sha256": "ab01630e459123b1dece51bda3e6253e7c7271990b061e374bbc6224c61d1681",
+    "evidence_sha256": "ada219064a32531a06274d59493c488e80f5db768cf848e5fd398e55dc282762",
+    "observations": 28,
+    "passes": 4,
+    "collapse_count": 3,
+    "required_passes": 19,
+    "required_collapse_count": 0,
+    "passed": false
+  },
+  "paired_comparison": {
+    "v41_parent": {
+      "passes": 10,
+      "collapse_count": 0
+    },
+    "v80_uniform_oracle": {
+      "passes": 4,
+      "collapse_count": 1
+    },
+    "v81_balanced_oracle": {
+      "passes": 4,
+      "collapse_count": 3
+    },
+    "parent_to_v81_regressions": 6,
+    "parent_to_v81_gains": 0,
+    "v80_to_v81_changed_prompt_outcomes": 4,
+    "interpretation": "Capability balancing changed which prompts passed but produced no net gain, no gain over the parent, and more collapse. Uniform-record imbalance is not the controlling explanation."
+  },
+  "attribution": {
+    "locked_layercake_scope": "UNCHANGED_PASS",
+    "expanded_layercake_host_capacity": "NOT_PROVEN",
+    "abi_extraction_tested_by_v81": false,
+    "abi_transfer_proven": false,
+    "installed_v72_v75_failures": "ABI_ACQUISITION_OR_EXPANDED_LAYERCAKE_HOST_CAPACITY_UNRESOLVED",
+    "same_topology_sampler_or_curriculum_sweeps_authorized": false
+  },
+  "next_required_separator": {
+    "name": "shared_initialization_same_budget_transformer_student_control",
+    "objective": "Use the exact v41 shared transformer tensors, tokenizer, prompts, direct targets, sampled language-token budget, schedule, and quality screen while disabling LayerCake task-cake effects. Measure both the untrained shared-path baseline and trained student.",
+    "if_transformer_also_fails": "The current information and conditioning budget is inadequate across architectures; do not call the failure LayerCake-specific.",
+    "if_transformer_passes": "The expanded LayerCake sparse host or its conditioning is the isolated blocker; do not resume ABI extraction until corrected.",
+    "claim_boundary": "This control is diagnostic. It does not inherit the locked optimized CPU-transformer runtime result or count as ABI transfer."
+  },
+  "historical_evidence_changed": false,
+  "promotion_eligible": false,
+  "moonshot_complete": false
+}

@@ -503,6 +503,7 @@ def build_user_selection_plan(
     inventories: Sequence[Mapping[str, Any]],
     *,
     include_english_core: bool,
+    english_capabilities: Sequence[str] | None = None,
     domains: Sequence[str],
     source_policy: str = "best_evidence",
     allow_unverified_development_selection: bool = False,
@@ -520,6 +521,31 @@ def build_user_selection_plan(
     normalized_domains = sorted(
         {_require_string("domain", domain) for domain in domains}
     )
+    if english_capabilities is not None and not include_english_core:
+        raise CapabilityPipelineError(
+            "English capability subset requires include_english_core"
+        )
+    requested_english_capabilities = (
+        sorted(ENGLISH_CORE_CAPABILITIES)
+        if include_english_core and english_capabilities is None
+        else sorted(
+            {
+                _require_string("English capability", capability)
+                for capability in (english_capabilities or ())
+            }
+        )
+    )
+    unsupported_english = sorted(
+        set(requested_english_capabilities) - set(ENGLISH_CORE_CAPABILITIES)
+    )
+    if unsupported_english:
+        raise CapabilityPipelineError(
+            f"unsupported English capabilities: {unsupported_english}"
+        )
+    if include_english_core and not requested_english_capabilities:
+        raise CapabilityPipelineError(
+            "English capability selection cannot be empty"
+        )
     if not include_english_core and not normalized_domains:
         raise CapabilityPipelineError("selection must request English or a domain")
 
@@ -546,7 +572,7 @@ def build_user_selection_plan(
 
     selected: list[dict[str, Any]] = []
     if include_english_core:
-        for capability in sorted(ENGLISH_CORE_CAPABILITIES):
+        for capability in requested_english_capabilities:
             candidates = [
                 row
                 for row in normalized
@@ -619,6 +645,22 @@ def build_user_selection_plan(
     plan = {
         "schema_version": SELECTION_SCHEMA,
         "include_english_core": include_english_core,
+        "english_selection_scope": (
+            "complete_core"
+            if (
+                include_english_core
+                and set(requested_english_capabilities)
+                == set(ENGLISH_CORE_CAPABILITIES)
+            )
+            else (
+                "capability_subset"
+                if include_english_core
+                else "not_requested"
+            )
+        ),
+        "requested_english_capabilities": (
+            requested_english_capabilities
+        ),
         "requested_domains": normalized_domains,
         "source_policy": source_policy,
         "allow_unverified_development_selection": (
@@ -627,6 +669,11 @@ def build_user_selection_plan(
         "promotion_eligible": (
             not allow_unverified_development_selection
             and all(item["available"] for item in items)
+            and (
+                not include_english_core
+                or set(requested_english_capabilities)
+                == set(ENGLISH_CORE_CAPABILITIES)
+            )
         ),
         "inventory_sha256": sorted(inventory_hashes),
         "selected_items": items,
@@ -688,6 +735,8 @@ def build_inventory_survey_plan(
         "schema_version": SELECTION_SCHEMA,
         "selection_purpose": "source_capability_survey",
         "include_english_core": False,
+        "english_selection_scope": "not_requested",
+        "requested_english_capabilities": [],
         "requested_domains": [],
         "source_policy": "survey_all_catalog_entries",
         "allow_unverified_development_selection": True,
@@ -707,6 +756,7 @@ def records_for_selection(
     plan: Mapping[str, Any],
     *,
     split: str | None = None,
+    allow_empty: bool = False,
 ) -> list[dict[str, Any]]:
     """Return records whose destination and immutable source match a plan."""
 
@@ -742,7 +792,7 @@ def records_for_selection(
             )
         record_ids.add(str(record["record_id"]))
         selected_records.append(dict(record))
-    if not selected_records:
+    if not selected_records and not allow_empty:
         raise CapabilityPipelineError("selection produced no extraction records")
     return sorted(selected_records, key=lambda row: row["record_id"])
 

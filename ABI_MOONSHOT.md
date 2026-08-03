@@ -2,14 +2,32 @@
 
 **Bounded reference status: PASS. Full English-product moonshot: OPEN.**
 
+## Current continuation checkpoint
+
+This document retains the detailed v47 bounded-reference history. The current
+research frontier is newer and is summarized in `CURRENT_PROJECT_STATUS.md`:
+
+- V87 demonstrated a causal teacher-artifact-to-LayerCake signal but failed its
+  formal reliability and repetition gates.
+- V89 passed bounded pre-transfer labeling on a 120-row source-record-disjoint
+  English/domain/quarantine holdout.
+- The next open phase is capability-compiler Phase 0: strong matched LoRA and
+  distillation baselines, metrics, numeric gates, splits, and stop rules must
+  be preregistered. Normalization and artifact adequacy then follow as Phase 1.
+
+No current result closes broad fluent-English acquisition or qualifies an
+ABI-derived LayerCake for promotion. The v47 certificate remains valid only for
+its original locked scope.
+
 ## Corrected successor objective
 
-The controlling future-work contract is
-`ABI_ENGLISH_CORE_DOMAIN_SEGREGATION_CONTRACT_V2.json`. ABI is not trying to
-losslessly compress an arbitrary non-LayerCake teacher. It is optimizing for
-the best measured teacher-derived English generation quality at the lowest
-passing tested LayerCake core size, with specialist knowledge segregated into
-user-selectable domain artifacts.
+The controlling future-work sequence is
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_V1.md` plus its machine-readable contract.
+`ABI_ENGLISH_CORE_DOMAIN_SEGREGATION_CONTRACT_V2.json` remains binding for the
+artifact boundary. ABI is not trying to losslessly compress an arbitrary
+non-LayerCake teacher. It is optimizing for the best measured teacher-derived
+English generation quality at the lowest passing tested LayerCake core size,
+with specialist knowledge segregated into user-selectable domain artifacts.
 
 The English acquisition corpus is restricted to linguistic form and
 domain-free task behavior. Every specialist record must carry a destination

@@ -1,0 +1,18 @@
+{
+  "schema_version": "abi-layercake-runtime-decoding-overlay/1",
+  "status": "PREREGISTERED_BEFORE_SUCCESSOR_RUNTIME_EXPORT_OR_EVALUATION",
+  "candidate_core": {
+    "checkpoint_sha256": "cee7ea830714fd8dbb67be31b85c0cd694d4c3592bc5631f2377e4f99bf88201",
+    "manifest_sha256": "e6c65597eba029735b9f4ecf13047a65d236d1f86cbeef09603b2c06f2784f85",
+    "base_decoding_sha256": "0c84035d97d066038d1ee28cb4e6c557e12392b3ef57d2b77371e6778334c480"
+  },
+  "override": {
+    "maximum_identical_token_run": 4
+  },
+  "invariants": {
+    "weights_changed": false,
+    "prompt_specific": false,
+    "output_specific": false,
+    "teacher_present_at_inference": false
+  }
+}

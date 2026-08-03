@@ -1,0 +1,43 @@
+{
+  "format": "abi-english-broad-natural-source-extraction-content-basis-failure/1",
+  "status": "FAIL_CLOSED_AFTER_GPU_GENERATION_NO_ARCHIVE_NO_TRAINING",
+  "effective_date": "2026-08-02",
+  "protocol": "ABI_ENGLISH_BROAD_NATURAL_CONVERSATION_GPU_ACQUISITION_PROTOCOL.json",
+  "durable_replay": "ABI_ENGLISH_BROAD_NATURAL_SOURCE_EXTRACTION_DURABLE_REPLAY_AMENDMENT.json",
+  "attempt": {
+    "catalog": "catalogs/broad_natural_conversation_search_v2.json",
+    "catalog_sha256": "d83c8359c578b7738534f0c01e854061e54635c271a5a1886f2c99244add62b6",
+    "process_id": 7680,
+    "start_time": "2026-08-01T21:18:20.6912013-04:00",
+    "wall_seconds": 18006.2,
+    "gpu_hours": 5.001722222222222,
+    "device": "cuda",
+    "batch_size": 8,
+    "peak_observed_gpu_memory_mib": 13734,
+    "minimum_observed_host_available_memory_mib": 48563
+  },
+  "failure": {
+    "exact_error": "English-core content basis is not knowledge-minimized",
+    "cause": "The catalog used the descriptive value domain_filtered_natural_instruction instead of the canonical value domain_free_instruction.",
+    "stderr_log": "results/abi_moonshot/logs/phi3-broad-natural-conversation-search-v2-replay.stderr.log",
+    "stderr_log_sha256": "d1c5e35393102224bb2b15a621f80835c701a86625b2b818f526894acd51da0e",
+    "output_archive_present": false,
+    "partial_archive_present": false,
+    "teacher_quality_inference_allowed": false,
+    "layercake_training_started": false,
+    "hard_resource_limit_observed": false
+  },
+  "scientific_interpretation": "The five-hour attempt is negative operational evidence for insufficient catalog preflight. It contains no admissible teacher-quality result and cannot authorize training.",
+  "bounded_correction": {
+    "successor_catalog": "catalogs/broad_natural_conversation_search_v3.json",
+    "content_basis": "domain_free_instruction",
+    "prompt_text_changes": 0,
+    "filter_changes": 0,
+    "source_changes": 0,
+    "generation_setting_changes": 0,
+    "preflight_strengthened": true,
+    "transport": "sixteen exact disjoint GPU shards so every completed segment is sealed and verified"
+  },
+  "final_test_accessed": false,
+  "moonshot_complete": false
+}

@@ -1,0 +1,39 @@
+{
+  "format": "abi-english-broad-natural-stratified-transport-fallback/1",
+  "status": "PREREGISTERED_FALLBACK_NOT_AUTHORIZED_WHILE_DURABLE_REPLAY_IS_HEALTHY",
+  "effective_date": "2026-08-01",
+  "parent_protocol": "ABI_ENGLISH_BROAD_NATURAL_CONVERSATION_GPU_ACQUISITION_PROTOCOL.json",
+  "transport_failure": "ABI_ENGLISH_BROAD_NATURAL_SOURCE_EXTRACTION_TRANSPORT_FAILURE.json",
+  "active_replay": "ABI_ENGLISH_BROAD_NATURAL_SOURCE_EXTRACTION_DURABLE_REPLAY_AMENDMENT.json",
+  "trigger": "Use only if the identical durable replay also terminates before producing a verified archive because the execution transport cannot sustain the measured multi-hour process.",
+  "partition": {
+    "parent_catalog": "catalogs/broad_natural_conversation_search_v2.json",
+    "parent_catalog_sha256": "d83c8359c578b7738534f0c01e854061e54635c271a5a1886f2c99244add62b6",
+    "shards": 16,
+    "method": "Within each capability, sort unchanged probes by probe_id and assign position modulo sixteen.",
+    "expected_average_prompts_per_shard": 1219.75,
+    "probe_payload_changes": 0,
+    "probe_label_changes": 0,
+    "probe_generation_setting_changes": 0,
+    "union_must_equal_parent": true,
+    "pairwise_intersection_must_be_empty": true,
+    "builder": "abi/catalog_partition.py",
+    "builder_sha256": "db22f0f93316e47fa44babc64d34e12d4465479834a3e76029a410702add1022",
+    "test": "tests/test_catalog_partition.py",
+    "test_sha256": "9b4e8f9cd22546645572d2c1abad9d82d0016f47b25ddac92bf7326ccad3d4ad",
+    "focused_test_result": "26 passed with catalog, audit, and extraction tests"
+  },
+  "execution": {
+    "device": "cuda",
+    "cpu_fallback_allowed": false,
+    "source_identity_unchanged": true,
+    "batch_size": 8,
+    "temperature": 0,
+    "one_archive_per_shard": true,
+    "compose_only_after_all_sixteen_archives_verify": true,
+    "partial_shards_are_negative_or_recoverable_operational_evidence_not_training_authority": true
+  },
+  "scientific_boundary": "Partitioning changes process duration and archive packaging only. It cannot be used to alter prompts, select outputs, weaken source thresholds, or train from an incomplete union.",
+  "final_test_accessed": false,
+  "moonshot_complete": false
+}

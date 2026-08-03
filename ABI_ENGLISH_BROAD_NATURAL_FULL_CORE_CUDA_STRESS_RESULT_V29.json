@@ -1,0 +1,37 @@
+{
+  "format": "abi-english-broad-natural-full-core-cuda-stress-result/1",
+  "status": "PASS_CANDIDATE_TRAINING_AUTHORIZED",
+  "effective_date": "2026-08-02",
+  "protocol": {
+    "path": "ABI_ENGLISH_BROAD_NATURAL_FULL_CORE_GPU_PROTOCOL_V29.json",
+    "sha256": "fec2676970a86ba5f8396c552dcd7aa9a37349026cf45c69db3b824bcf5548ce"
+  },
+  "stress_artifact": {
+    "path": "results/abi_moonshot/stress/abi-broad-natural-full-core-dual-stream-stress-v29",
+    "checkpoint_sha256": "751aff80daaa8416b602e1ca296decd388810f8e6ba1433bc6b4650f0e0fff32",
+    "metadata_sha256": "f31aedb6519165c55ec2fb2ad67abe8c7264c58cc7e7da53770eedcd7c57acc4",
+    "manifest_sha256": "b870bc15c0710d63dbf7a78ff223455c76ddb9d06cbcb3a80c03f9f3b56fed24"
+  },
+  "observations": {
+    "device": "cuda",
+    "successful_optimizer_steps": 1,
+    "skipped_amp_optimizer_steps": 3,
+    "main_batch_size": 4,
+    "anchor_batch_size": 4,
+    "general_preservation_batch_size": 4,
+    "total_examples_per_step": 12,
+    "wall_seconds": 0.9323256000061519,
+    "peak_device_memory_bytes": 2099231744,
+    "main_context_rows_retained": 24421,
+    "main_context_rows_excluded": 0,
+    "anchor_context_rows_retained": 3112,
+    "anchor_context_rows_excluded": 0,
+    "parent_checkpoint_unchanged": true,
+    "graph_topology_changed": false,
+    "physical_sparse_topology_preserved": true
+  },
+  "authorization": "The single candidate locked in ABI_ENGLISH_BROAD_NATURAL_FULL_CORE_GPU_PROTOCOL_V29.json is authorized on CUDA. No CPU acquisition training or nearby candidate is authorized.",
+  "final_test_accessed": false,
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

@@ -1,0 +1,55 @@
+{
+  "format": "abi-english-merged-core-lora-v40-decision/1",
+  "status": "REJECTED_AUTONOMOUS_QUALITY_AND_COHERENCE",
+  "effective_date": "2026-08-02",
+  "protocol": "ABI_ENGLISH_MERGED_CORE_LORA_GPU_PROTOCOL_V40.json",
+  "precheck": "ABI_ENGLISH_MERGED_CORE_LORA_V40_PRECHECK_RESULT.json",
+  "checkpoint": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-broad-natural-merged-core-lora-r32-seed229824-steps18000-v40",
+    "checkpoint_sha256": "602d85a34d26b2a560269709b92159e91e6ce2a7d3d2ecbe64f4da5ec7e204aa",
+    "manifest_sha256": "5f69f7e354c31638106f03405461014fed2eb5860f07340e00321bb272f71324",
+    "successful_gpu_optimizer_steps": 18000,
+    "attempted_batches": 18009,
+    "skipped_amp_optimizer_steps": 9,
+    "wall_seconds": 2992.2436756000097,
+    "gpu_hours": 0.8311787987777804,
+    "peak_gpu_memory_bytes": 4299623424,
+    "temporary_trainable_parameters": 1179648,
+    "target_matrices_changed": 12,
+    "merge_bit_exact_to_training_function": true,
+    "non_target_state_preserved_exact": true,
+    "deployed_adapter_parameters": 0,
+    "teacher_present_at_inference": false
+  },
+  "locked_natural_screen": {
+    "evidence": "results/abi_moonshot/postcert_audit_v2/v40-merged-core-lora-natural-norepeat4-layercake.json",
+    "evidence_sha256": "003e049c9242010119d39a26e01f208c4203801d67ba92e2c132627578a41e1d",
+    "observations": 28,
+    "passes": 3,
+    "collapse_count": 1,
+    "automatic_route_correct": 12,
+    "correct_route_and_pass": 2,
+    "required_passes": 9,
+    "passes_gate": false
+  },
+  "forced_correct_route_diagnostic": {
+    "evidence": "results/abi_moonshot/postcert_audit_v2/v40-merged-core-lora-forced-route-diagnostic.json",
+    "evidence_sha256": "75485d2ecb25f50c8998fb6dd44533fdc5bd6148f09f8f09aeabcbb9f422ad58",
+    "observations": 28,
+    "passes": 4,
+    "collapse_count": 1,
+    "promotion_evidence": false
+  },
+  "measured_family_comparison": {
+    "best_full_core_v29_passes": 8,
+    "best_full_core_v29_route_correct": 21,
+    "v38_deep_reused_cake_passes": 6,
+    "v39_gated_deep_reused_cake_passes": 4,
+    "v40_merged_low_rank_core_passes": 3,
+    "interpretation": "Restricting acquisition to sparse cakes, cake placement, gates, or temporary low-rank core updates does not reproduce the lexical and routing gains of complete-core optimization. Low supervised cross-entropy is not predicting autonomous generation."
+  },
+  "decision": "Close the restricted-capacity family. Return to the v29 full-core Pareto checkpoint and add one preregistered same-tokenizer top-64 source-logit distillation path using cached GPT-2 medium during GPU acquisition. Preserve the v29 deployed graph, use only English-segregated task data, copy zero source parameters, store zero logits, and remove the source before checkpointing.",
+  "negative_evidence_preserved": true,
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

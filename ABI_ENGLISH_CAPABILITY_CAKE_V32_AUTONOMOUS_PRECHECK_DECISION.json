@@ -1,0 +1,48 @@
+{
+  "format": "abi-english-capability-cake-autonomous-precheck-decision/1",
+  "status": "AUTONOMOUS_STRESS_CHECKPOINT_REJECTED_AS_PRODUCT_EVIDENCE_ARCHITECTURE_PRECHECK_REQUIRES_CORRECTION",
+  "effective_date": "2026-08-02",
+  "protocol": "ABI_ENGLISH_CAPABILITY_ISOLATED_CAKE_GPU_PROTOCOL_V32.json",
+  "stress": {
+    "checkpoint_sha256": "ecc6229d32b2fe3ddeee7fa3f593c166eba75c8440d6ea0ae778f3070cecb36c",
+    "manifest_sha256": "1cace18608f8f24ff45a7d626e08e85e67a6e8bf7d802d6f4b550ead1ded52d4",
+    "device": "cuda",
+    "successful_optimizer_steps": 1,
+    "peak_gpu_memory_bytes": 1532969472,
+    "frozen_shared_state_preserved_exact": true,
+    "initial_parent_cake_copies_exact": true
+  },
+  "runtime": {
+    "graph_sha256": "7bd9550a08a044c4bb384fc174e28619f8d7d3782e2361282c9a5f2dc5e04237",
+    "installed_capability_cakes": 14,
+    "active_cake_rank": 64,
+    "maximum_active_cakes": 1,
+    "identity_status": "PASS",
+    "physical_sparse_status": "PASS",
+    "canonical_route_mapping_status": "PASS"
+  },
+  "matched_thread_autonomous_benchmark": {
+    "path": "results/abi_moonshot/native_hosts/capability-cakes-r64-stress-v32-benchmark-1024-precheck-v2-matched-t14.json",
+    "status": "FAIL",
+    "threads": 14,
+    "candidate_median_bytes_per_second": 1237.9033912476252,
+    "median_transformer_relative_ratio": 2.2714162973570495,
+    "paired_prompt_mean_ratio_bootstrap_95ci": [
+      1.9658708767977624,
+      2.2920352304658724
+    ],
+    "phase2_throughput_retained_ratio": 0.7477210289306239,
+    "candidate_peak_process_resident_bytes": 221659136,
+    "absolute_rss_limit_bytes": 214990848
+  },
+  "diagnosis": {
+    "candidate_example_generated_tokens_for_approximately_1024_bytes": 322,
+    "sealed_parent_example_generated_tokens_for_approximately_1024_bytes": 162,
+    "interpretation": "Autonomous bytes/second on the one-step stress checkpoint conflates graph execution cost with its inherited output token packing. The stress model executes more runtime tokens for the same byte target, so this result remains valid negative product evidence but cannot isolate whether the 14-cake topology itself preserved rank-64 compute."
+  },
+  "correction": "A successor must measure the capability-cake graph and the v21 10-route parent on identical prompts and identical forced GPT-2 token schedules. That diagnostic is architecture-only and cannot promote a product; final promotion still requires autonomous bytes/second, characters/second, repetition, quality, TTFT, and RSS on the trained candidate.",
+  "negative_evidence_preserved": true,
+  "gpu_candidate_launched": false,
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

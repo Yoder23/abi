@@ -1,0 +1,174 @@
+{
+  "format": "abi-english-exact-host-parent-preserved-full-core-gpu-protocol/1",
+  "status": "PREREGISTERED_BEFORE_TRAINER_EXTENSION_STRESS_AND_CANDIDATE_RUN",
+  "effective_date": "2026-08-03",
+  "objective": "Test whether the exact production LayerCake shared computation can acquire missing functional English sequence behavior while a frozen fluent v41 parent distribution prevents autonomous-language regression.",
+  "failure_attribution": {
+    "status_file": "ABI_LAYERCAKE_SEPARATION_STATUS_V2.json",
+    "status_file_sha256": "2fd525a419905e37c843a93d7b7cc6b03eb514cc9100f131c224476a6119086f",
+    "layercake_host": "PASS_WITHIN_LOCKED_SCOPE",
+    "native_payload_same_path": "PASS",
+    "current_blocker": "ABI_EXTRACTION_FAILURE"
+  },
+  "controlling_negative_evidence": {
+    "v41": {
+      "decision": "ABI_ENGLISH_SAME_TOKENIZER_LOGIT_DISTILLATION_V41_FULL_DECISION.json",
+      "checkpoint_sha256": "22df8256a0479596516c1d09c29200fc19c1cb810ac8204979b2192ce39372e0",
+      "natural_screen": "10/28 with zero collapse",
+      "full1400": {
+        "pass_rate": 0.8257142857142857,
+        "source_passing_retention_rate": 0.8631147540983607,
+        "collapse_count": 2,
+        "sub_floor_capabilities": {
+          "cake_output_realization": 0.66,
+          "domain_independent_reasoning": 0.6,
+          "email_drafting": 0.63,
+          "rewriting": 0.74,
+          "summarization": 0.78,
+          "tone_control": 0.74
+        }
+      }
+    },
+    "v49": "Frozen-parent preservation with only existing cakes and classifier retained fluency but could not alter the persistent shared trajectory enough.",
+    "v50_v51": "Persistent route control attacked shared state but changed the production architecture and still failed; v50 also measured severe capability sampling imbalance, while v51 corrected it.",
+    "closed_branches": [
+      "instruction_source_substitution",
+      "auxiliary_same_tokenizer_source_alignment",
+      "raw_source_layer_drop",
+      "six_to_three_hidden_representation_compression",
+      "cake_only_conformance",
+      "prompt_pointer",
+      "template_or_symbolic_handler_repair"
+    ]
+  },
+  "hypothesis": "The untested combination required by the measurements is to let all existing v41 tensors adapt to capability-balanced teacher sequences while penalizing divergence from v41's frozen response distribution. Full-core gradients can modify the persistent trajectory; parent preservation targets the measured fluency/collapse regression; balanced sampling targets the measured underrepresentation of coherence, reasoning, and realization. No new inference machinery is required.",
+  "only_authorized_mechanism": {
+    "name": "capability_balanced_full_core_continuation_with_frozen_parent_top64_preservation",
+    "deployed_architecture_changes": 0,
+    "deployed_parameter_count_changes": 0,
+    "deployed_inference_operation_changes": 0,
+    "bridge_parameters": 0,
+    "symbolic_handlers": 0,
+    "prompt_specific_handlers": 0,
+    "foreign_transformer_blocks_retained": 0
+  },
+  "fixed_parent": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-broad-natural-same-tokenizer-logit-distill-seed349824-steps6000-v41",
+    "checkpoint_sha256": "22df8256a0479596516c1d09c29200fc19c1cb810ac8204979b2192ce39372e0",
+    "metadata_sha256": "df278dffbc4ad888ce31346eedf12301bfa812cb032d040db3fa49bb5018c36e",
+    "architecture_id": "layercake-shallow-sparse-english/1-three-block-task-cakes",
+    "frozen_teacher_role": "temporary online preservation target only",
+    "copied_as_initialization": true,
+    "removed_before_checkpoint": true
+  },
+  "fixed_inputs": {
+    "main": {
+      "path": "results/abi_moonshot/segregated_acquisition_v3/phi3-broad-natural-conversation-complete-search-training-v3.abix",
+      "sha256": "82d1ab8a3ee7b4aa351b5c74b4a229d75e845313047065780227e8e403363150",
+      "budget_index": 3,
+      "role": "domain-segregated cached open-weight Phi-3 English behavior targets"
+    },
+    "anchor": {
+      "path": "results/abi_moonshot/segregated_acquisition_v3/phi3-natural-cumulative-realization-scale-training-v8.abix",
+      "sha256": "d40d0d0804954f2e3769de3a5df4f60caebab28680091bf09746e949bf5d0ac8",
+      "budget_index": 3,
+      "role": "domain-segregated broad behavior anchor"
+    },
+    "general_preservation": {
+      "path": "../layercake_release/data/moonshot/phase2/instruction_curriculum_semantic_control_v2.jsonl",
+      "sha256": "bae6c1fe300a0214c1f6cb19a8c8eeee4f0b75681290be56f258a247cd488e53"
+    },
+    "canonical_abi": {
+      "path": "../layercake_release/moonshot/phase2_canonical_semantic_abi_r3.json",
+      "sha256": "d024de52144a2d797d0501acb7deb55575ffca7e33f72900beff599cf0a97761"
+    },
+    "decoding": {
+      "path": "ABI_ENGLISH_DISTINCT_CONTEXT_SCALE_DECODING_LOCK.json",
+      "sha256": "9cdf13ed2b8fad9b90b1ee2132481424a15a05f8e3a58dd94fac6b7fc2d946dd"
+    },
+    "specialist_domain_records_allowed": false,
+    "final_test_access_allowed": false
+  },
+  "trainer_extension_lock": {
+    "source_path": "abi/layercake_full_core_acquisition.py",
+    "source_sha256_before": "d3d71e1681b690f4c87318e5096e51452cdf6bffc42985f46114759426fa630c",
+    "change": "Permit the already implemented frozen-parent top-64 loss when trainable_scope is full_core on CUDA.",
+    "loss_math_changes": 0,
+    "sampler_changes": 0,
+    "model_changes": 0,
+    "required_tests": [
+      "full_core plus positive parent preservation is accepted only on CUDA",
+      "CPU remains rejected",
+      "unrelated unsupported scopes remain rejected"
+    ]
+  },
+  "stress_lock": {
+    "output": "results/abi_moonshot/stress/abi-exact-host-parent-preserved-full-core-stress-v57",
+    "seed": 469824,
+    "successful_optimizer_steps": 1,
+    "main_microbatch_size": 4,
+    "main_sampling_strategy": "balanced_capabilities",
+    "anchor_microbatch_size": 4,
+    "anchor_sampling_strategy": "balanced_capabilities",
+    "general_microbatch_size": 4,
+    "max_tokens": 1024,
+    "require_finite_parent_preservation_loss": true,
+    "require_no_parameter_alias_with_frozen_parent": true,
+    "require_parent_removed_before_checkpoint": true,
+    "require_exact_production_topology": true,
+    "require_gpu_peak_memory_within_available_hardware": true
+  },
+  "candidate_lock_if_stress_passes": {
+    "output": "results/abi_moonshot/segregated_acquisition_v3/three-block-v41-parent-preserved-balanced-fullcore-seed469824-steps6000-v57",
+    "seed": 469824,
+    "device": "cuda",
+    "successful_optimizer_steps": 6000,
+    "trainable_scope": "full_core",
+    "gradient_accumulation_steps": 1,
+    "main_batch_size": 4,
+    "main_sampling_strategy": "balanced_capabilities",
+    "anchor_batch_size": 4,
+    "anchor_sampling_strategy": "balanced_capabilities",
+    "anchor_loss_weight": 1.0,
+    "general_batch_size": 4,
+    "general_loss_weight": 1.0,
+    "shared_learning_rate": 0.00001,
+    "cake_learning_rate": 0.00005,
+    "classifier_loss_weight": 0.25,
+    "prompt_overlap_loss_weight": 1.0,
+    "parent_logit_preservation_weight": 2.0,
+    "parent_preservation_top_k": 64,
+    "max_tokens": 1024,
+    "recovery_start_step": 400,
+    "recovery_interval": 8,
+    "recovery_horizons": [4, 8, 16]
+  },
+  "screen_and_decision_rule": {
+    "first_screen": "The already disclosed 28-prompt natural screen only; final v4 remains inaccessible.",
+    "continue_only_if": {
+      "passes_at_least": 10,
+      "collapse_count": 0,
+      "automatic_route_correct_at_least": 21,
+      "exact_external_receiver_attribution": "PASS_ATTRIBUTION"
+    },
+    "full1400_if_screen_passes": {
+      "all_14_capability_rates_at_least": 0.8,
+      "source_passing_retention_at_least": 0.9,
+      "collapse_count": 0,
+      "minimum_overall_pass_rate": 0.8257142857142857
+    },
+    "failure_action": "Preserve all evidence, reject without learning-rate, preservation-weight, duration, seed, or nearby continuation sweeps, and select the next mechanism only from a newly measured bottleneck.",
+    "success_boundary": "A full1400 pass authorizes exact-host packaging and integrated certification. It is not itself ABI transfer or moonshot completion."
+  },
+  "hardware_policy": {
+    "stress_and_training": "RTX 3080 Laptop GPU via CUDA",
+    "cpu_role": "teacher-free exact LayerCake inference screening and certification only"
+  },
+  "imported_information_accounting": {
+    "rule": "Report both unique teacher artifacts and cumulative exposure. Include all v41 ancestral cached teacher bytes/tokens, GPT-2 online forward tokens and source time, v57 replay exposure, frozen-parent forward tokens/time, GPU wall time, peak GPU memory, CPU time, final parameters, and disk bytes. Do not count a replayed immutable artifact twice as unique imported information, but do count every repeated training exposure and compute cost.",
+    "teacher_present_at_inference_required": false
+  },
+  "promotion_eligible": false,
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

@@ -1,0 +1,37 @@
+{
+  "format": "abi-teacher-record-labeling-implementation-lock/1",
+  "status": "FROZEN_BEFORE_VALIDATION",
+  "effective_date": "2026-08-03",
+  "protocol": {
+    "path": "ABI_TEACHER_RECORD_LABELING_PHASE2_PROTOCOL_V88.json",
+    "sha256": "9c600e1d47808d2c0f2abb7ac584d70f166f232129908dd9169ee108df57a0f4"
+  },
+  "amendment": {
+    "path": "ABI_TEACHER_RECORD_LABELING_PHASE2_CALIBRATION_AMENDMENT_V88A.json",
+    "sha256": "88a891c240bbbcaf5164612f52094a9c98518c367e841b9651910125b92d053b"
+  },
+  "benchmark": {
+    "path": "results/abi_moonshot/labeling_phase2_v88/blind-teacher-record-labeling-benchmark-v1.json",
+    "file_sha256": "b33ad95f3eecace3266e8a675088266b728471997a6017d54a80e0370967cc37",
+    "self_sha256": "1c3602e7995c1a6197fa9c81e8e953a9e9dc1d43243cff301c3da00637d0e12e"
+  },
+  "implementation": {
+    "path": "abi/teacher_record_labeling.py",
+    "sha256": "3473dab9e04e6f9ecdb94b875e57be29d9fc2e7486e9889398ebb472926232d3",
+    "test_path": "tests/test_teacher_record_labeling.py",
+    "test_sha256": "1ad74fe9774273c2ee3c18c7a6641e41abaa3b59c599fa46fae8d40df905fa28",
+    "test_result": "5 passed"
+  },
+  "corrected_calibration": {
+    "path": "results/abi_moonshot/labeling_phase2_v88/calibration-v2-corrected.json",
+    "file_sha256": "eec0821d2169fbbb6d8b5545b3b731efdd297a5403506fd73edcc54ca5de7fb6",
+    "evidence_sha256": "6507de11e70f66e0172d3eb6ff0164a3feaf3ddf80a65946f5206d0fefcb7a60",
+    "status": "PASS"
+  },
+  "validation_policy": {
+    "execution_count": 1,
+    "post_validation_code_corrections": 0,
+    "validation_labels_may_not_be_used_for_repair": true,
+    "failure_action": "preserve evidence and block the successor data-sufficiency phase"
+  }
+}

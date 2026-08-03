@@ -1,0 +1,74 @@
+{
+  "format": "abi-english-broad-natural-v3-composition-result/1",
+  "status": "PASS_TRAINING_ARTIFACT_VERIFIED_CONTEXT_COMPATIBLE",
+  "effective_date": "2026-08-02",
+  "protocol": {
+    "path": "ABI_ENGLISH_BROAD_NATURAL_V3_COMPOSITION_PROTOCOL.json",
+    "sha256": "b7d32d317b54912ed23e1e011d7a0d9eb7d2df293fd44929422bb39b26de03c3"
+  },
+  "artifact": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/phi3-broad-natural-conversation-complete-search-training-v3.abix",
+    "archive_sha256": "82d1ab8a3ee7b4aa351b5c74b4a229d75e845313047065780227e8e403363150",
+    "manifest_sha256": "9a48a88f7fdc427b426f45d27cbd4242a29f902ce7a3d4ce272a5ca4cdc7d640",
+    "archive_bytes": 86705380,
+    "artifact_role": "segregated_layercake_training_material_v3",
+    "training_eligible": true,
+    "domain_segregation_verified": true,
+    "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310"
+  },
+  "selected_material": {
+    "budget_index": 3,
+    "budget_id": "search-teacher-tokens-2784714",
+    "budget_manifest_sha256": "20ba23157b7a178766344ce88c92064bb49d7c4310b542b43d773a1ebf9f0af0",
+    "records": 24421,
+    "capabilities": 14,
+    "teacher_tokens": 2784714,
+    "teacher_generated_output_bytes": 10826918,
+    "raw_source_prompt_bytes": 15560813,
+    "splits": ["search"],
+    "destination_scopes": ["english_core"],
+    "domains": ["domain_independent"],
+    "validation_rows": 0,
+    "final_test_rows": 0
+  },
+  "capability_record_counts": {
+    "abstention": 119,
+    "cake_output_realization": 71,
+    "clarification": 96,
+    "coherence": 461,
+    "conversation": 1540,
+    "domain_independent_reasoning": 100,
+    "email_drafting": 1690,
+    "format_control": 3444,
+    "grammar": 564,
+    "instruction_following": 5923,
+    "prompt_grounding": 2939,
+    "rewriting": 2099,
+    "summarization": 1224,
+    "tone_control": 4151
+  },
+  "layercake_context_audit": {
+    "parent_tokenizer_sha256": "1fe93b6152957cf9cfd6d89002467f789ce8b3f3e000b3a2edf27c808ddd0b9e",
+    "max_tokens": 1024,
+    "minimum_prompt_tokens": 24,
+    "median_prompt_tokens": 121,
+    "p95_prompt_tokens_nearest_rank": 167,
+    "maximum_prompt_tokens": 315,
+    "overlength_prompt_count": 0,
+    "response_tail_truncated_record_count": 4,
+    "omitted_response_tail_tokens_per_full_epoch": 3170,
+    "truncated_record_ids_sha256": "3524d157c93ea304bccf8117fde97e046567208be466d37e68217606759e6ed6",
+    "tail_policy": "The host supervises every token that fits after the complete prompt. Omitted response tails are explicitly accounted and are not claimed as supervised."
+  },
+  "teacher_boundary": {
+    "source_parameters_copied": 0,
+    "source_transformer_blocks_retained": 0,
+    "teacher_hidden_activation_bytes_stored": 0,
+    "teacher_logits_stored": 0,
+    "teacher_required_at_layercake_inference": false
+  },
+  "authorization": "A single preregistered GPU stress test and, only if it passes, the single locked GPU acquisition candidate are authorized. CPU acquisition training remains forbidden.",
+  "final_test_accessed": false,
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

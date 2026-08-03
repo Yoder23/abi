@@ -1,0 +1,69 @@
+{
+  "format": "abi-english-aligned-source-dual-stream-decision/75",
+  "status": "REJECT_ABI_ACQUISITION_FAILURE_LAYERCAKE_HOST_PASS",
+  "effective_date": "2026-08-03",
+  "protocol": {
+    "path": "ABI_ENGLISH_ALIGNED_SOURCE_DUAL_STREAM_GPU_PROTOCOL_V75.json",
+    "sha256": "92c4299030c72778662239b3bbfc022610f5d9fd7d31fee10c458772199eb4b4"
+  },
+  "candidate": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-aligned-source-dual-stream-seed509824-steps2400-v75",
+    "checkpoint_sha256": "2beee1184b3b57661afc35517fc1f957318f4e6d7390186c70d68ef50299f051",
+    "metadata_file_sha256": "10fc3da9043f501209c7ab5c4d191220d19aedc5fba0f89b23f285f63378ec14",
+    "manifest_sha256": "7c3033ffab84c0ee9e889bbc8ab12bbd069500f05fd57959d0da93471518341b",
+    "payload_manifest_file_sha256": "52451b1cfe043d54df7b95ffc567c920ccdd2ff9266e7837917aaf2f5a6cf4de",
+    "payload_manifest_sha256": "71bde0ed364adcfd178af8b13fedf000dd2b2d1e7e76ba5a74363cb65bd2f40e",
+    "successful_optimizer_steps": 2400,
+    "wall_seconds": 390.2183975000007,
+    "gpu_hours": 0.10839399930555575,
+    "peak_gpu_memory_bytes": 2123061760,
+    "v71_supervised_layercake_tokens_seen": 341225,
+    "general_preservation_tokens_seen": 993246,
+    "general_preservation_utf8_bytes_seen": 6975843,
+    "source_teacher_forward_tokens": 843227,
+    "source_model_inference_seconds": 21.28388739998627,
+    "source_parameters_copied_at_initialization": 60648960,
+    "source_parameters_retained_exact": 0,
+    "source_blocks_retained_exact": 0,
+    "teacher_present_at_inference": false,
+    "bridge_parameters": 0
+  },
+  "screen": {
+    "path": "results/abi_moonshot/receiver_controls/v75-aligned-source-dual-stream-exact-host-screen-v1.json",
+    "file_sha256": "2e94eeb692d58a73150902b5459a9d850b86ff26b0e6f355db964cf017948aed",
+    "evidence_sha256": "51d78e5584677cc636fec1579bd0730c97ededb4bbe6e4e840b6125abb6e01ca",
+    "passes": 2,
+    "required_passes": 10,
+    "observations": 28,
+    "collapse_count": 1,
+    "required_collapse_count": 0,
+    "all_host_and_installation_checks_passed": true
+  },
+  "native_layercake_control": {
+    "path": "results/abi_moonshot/external_layercake_controls/phase2-r3-phase8-native-v75.json",
+    "file_sha256": "f45b6cf6b5b727d754ad171d50f20b5635f3cff0cc18397f0805dc97c53a6cf8",
+    "evidence_sha256": "b622ae431abfb7584d0c6a16e9f80f14b53ed18dfec85f4caa699176052b4b8b",
+    "result": "PASS"
+  },
+  "paired_interpretation": {
+    "v74_passes": 2,
+    "v74_collapse_count": 7,
+    "v75_passes": 2,
+    "v75_collapse_count": 1,
+    "effect": "The knowledge-light replay materially reduces collapse but does not improve held-out functional generalization.",
+    "remaining_bottleneck": "The 2,235-prompt/84,930-token V71 source artifact lacks the natural instruction and prompt-grounding breadth needed to teach novel supplied-detail tasks. More optimization of the same payload/data is not supported."
+  },
+  "attribution": {
+    "layercake_host_regression": false,
+    "abi_layercake_transport_failure": false,
+    "abi_layercake_integration_identity_failure": false,
+    "abi_acquisition_quality_failure": true,
+    "abi_reference_artifact_adequacy_passed": true,
+    "reference_adequacy_not_equivalent_to_sufficient_training_information": true
+  },
+  "next_authorized_work": "Pause expensive payload training. Build a preregistered, independently qualified natural paraphrase and prompt-grounding expansion of V71 with explicit unique-versus-replayed teacher-token accounting. The next payload run is authorized only after that new artifact passes prompt-specific adequacy and materially exceeds V71 in measured linguistic/instruction diversity. Do not reuse the failed old 24,421-record artifact or run another V71 conformance sweep.",
+  "shuffled_artifact_control_executed": false,
+  "shuffled_artifact_control_reason": "The unshuffled candidate failed; a shuffled failure would not prove causality.",
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

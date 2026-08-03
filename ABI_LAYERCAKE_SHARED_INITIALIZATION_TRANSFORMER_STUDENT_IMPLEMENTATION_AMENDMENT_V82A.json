@@ -1,0 +1,22 @@
+{
+  "format": "abi-layercake-shared-initialization-transformer-student-implementation-amendment/1",
+  "status": "LOCKED_CLI_WIRING_CORRECTION_BEFORE_SUCCESSFUL_STRESS",
+  "effective_date": "2026-08-03",
+  "protocol": "ABI_LAYERCAKE_SHARED_INITIALIZATION_TRANSFORMER_STUDENT_GPU_PROTOCOL_V82.json",
+  "preserved_failure": {
+    "path": "ABI_LAYERCAKE_V82_TRANSFORMER_CONTROL_CLI_WIRING_FAILURE.json",
+    "sha256": "30be893aa8d99831b52c724c59de1400091cf4324c2814b1995faaac16211d9c"
+  },
+  "correction": "Added TRANSFORMER_CORE_CONTROL_SCOPE to argparse choices. No model, data, seed, schedule, loss, output, or gate changed.",
+  "implementation_lock": {
+    "abi/layercake_full_core_acquisition.py": "dc78ad981aa79e5a469db9028e098d7507611c9b85b2a6b2cfb4326bf18084da",
+    "abi/layercake_transformer_student_control.py": "c512e5a064be6f991fae13d2ce7d4b47a494141c52679552fc7a430019583777",
+    "tests/test_layercake_acquisition.py": "307b012d77798bcc479661cdbbcadcea7b28e4a1c8366387a227d30ecab1fe11",
+    "tests/test_layercake_transformer_student_control.py": "243b83526085597fa8d026bb42622c0ce416f2bc08f4e7069292ad89f723e84c",
+    "targeted_tests": "44 passed"
+  },
+  "optimizer_steps_before_correction": 0,
+  "final_quality_screen_accessed_before_correction": false,
+  "historical_evidence_changed": false,
+  "moonshot_complete": false
+}

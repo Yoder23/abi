@@ -1,0 +1,55 @@
+{
+  "format": "abi-english-broad-natural-expanded-cake-precheck-decision/1",
+  "status": "REJECTED_DENSE_RUNTIME_BEFORE_CANDIDATE_TRAINING",
+  "effective_date": "2026-08-02",
+  "protocol": "ABI_ENGLISH_BROAD_NATURAL_EXPANDED_CAKE_GPU_PROTOCOL_V30.json",
+  "candidate_training_launched": false,
+  "stress_checkpoint": {
+    "path": "results/abi_moonshot/stress/abi-broad-natural-expandedcake-r256-stress-v30",
+    "checkpoint_sha256": "f4aa1f263d71b9695f4d46d5185af88df19ad6656a659b0f35a288ed0b9e14ed",
+    "device": "cuda",
+    "successful_optimizer_steps": 1,
+    "frozen_shared_state_preserved_exact": true,
+    "expanded_base_preserved_exact": true
+  },
+  "exact_runtime": {
+    "path": "results/abi_moonshot/native_hosts/expandedcake-r256-stress-v30-onnx-int8-speed-precheck-v2-rank-bound",
+    "graph_sha256": "09411388cdd7061dc2e2038c0dce4f25b46877c23bffc6a84d6e1c92798d0909",
+    "task_cake_rank": 256,
+    "maximum_active_task_cakes_per_sequence": 1,
+    "teacher_present_at_inference": false
+  },
+  "proofs": {
+    "physical_sparse": {
+      "path": "results/abi_moonshot/native_hosts/expandedcake-r256-stress-v30-physical-v2-rank-bound.json",
+      "file_sha256": "5d91cc5d714a0dc8b1091313e20c718cdcd0e01d758e840dbed54e90246c893f",
+      "status": "PASS"
+    },
+    "runtime_identity": {
+      "path": "results/abi_moonshot/native_hosts/expandedcake-r256-stress-v30-identity-v2-rank-bound.json",
+      "file_sha256": "c85c0ae0240bf3a2f62c3334758d80b6582720821a7b6f171140242be3b2c4be",
+      "status": "PASS"
+    },
+    "cpu_benchmark": {
+      "path": "results/abi_moonshot/native_hosts/expandedcake-r256-stress-v30-benchmark-1024-precheck-v2-rank-bound.json",
+      "file_sha256": "516c18192a92d184c499e85ce82c5163a326b95d8279b7f550e9bab92de90730",
+      "status": "FAIL",
+      "distinct_prompts": 20,
+      "observations": 40,
+      "candidate_median_bytes_per_second": 1174.9132522457353,
+      "median_transformer_relative_ratio": 2.155836334240963,
+      "paired_prompt_mean_ratio_bootstrap_95ci": [
+        1.856170780352451,
+        2.232799878615891
+      ],
+      "phase2_throughput_retained_ratio": 0.7096735917235029,
+      "candidate_peak_process_resident_bytes": 237821952,
+      "comparator_peak_process_resident_bytes": 227848192
+    }
+  },
+  "decision": "The dense 50,257-token-output runtime is rejected before the preregistered 18,000-step GPU candidate. It misses the paired >=2x lower-bound, >=95% Phase-2-throughput-retention, and RSS gates. The checkpoint and all evidence remain historical negative evidence.",
+  "measured_bottleneck": "The rank-256 cake remains physically sparse and its median clears 2x, but active cake rank plus the full 50,257-column projection leaves insufficient confidence and retention margin. One train-only sparse-output fusion successor may be tested without changing weights or active cake rank.",
+  "disclosed_postcert_final_split_accessed_before_protocol": true,
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

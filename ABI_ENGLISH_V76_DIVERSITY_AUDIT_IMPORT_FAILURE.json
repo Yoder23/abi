@@ -1,0 +1,15 @@
+{
+  "format": "abi-english-v76-tooling-failure/1",
+  "status": "PRESERVED_PRE_INFERENCE_IMPORT_FAILURE",
+  "effective_date": "2026-08-03",
+  "stage": "instruction_diversity_audit",
+  "failure": "abi.instruction_diversity_audit imported load_english_training_rows from abi.layercake_acquisition instead of its authoritative abi.layercake_host_v3 module",
+  "teacher_inference_performed": false,
+  "layercake_invoked": false,
+  "output_evidence_created": false,
+  "scientific_configuration_changed": false,
+  "correction": "Use the authoritative abi.layercake_host_v3 import and rerun the unchanged preregistered thresholds.",
+  "negative_evidence_preserved": true,
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

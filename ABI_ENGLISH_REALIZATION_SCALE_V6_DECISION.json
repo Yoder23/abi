@@ -1,0 +1,52 @@
+{
+  "format": "abi-english-realization-scale-v6-decision/1",
+  "status": "REJECT_FULL_CORE_PROMOTE_AS_FROZEN_POINTER_PARENT",
+  "effective_date": "2026-07-30",
+  "candidate": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-realization-scale-preservation-seed9824-steps4000-v6",
+    "checkpoint_sha256": "5bae16dec3a55759e92a8481ec5ee519a5ee8687ad1a6f019edc1df3225d092e",
+    "manifest_sha256": "552a90450d6002ce71c6a33c33bd83087070d46d04bc4895881ca9e95a4f4abb",
+    "training_wall_seconds": 512.4851114000194,
+    "raw_teacher_tokens": 142949,
+    "duplicate_adjusted_teacher_tokens": 134960,
+    "teacher_present_at_inference": false,
+    "source_transformer_blocks_retained": 0
+  },
+  "general_preservation": {
+    "evidence_sha256": "1e858710aabaf797d1e5157d54adf38f8ad16b55f15277fd2557056671a033ab",
+    "observations": 420,
+    "compared_response_tokens": 43097,
+    "parent_top1_agreement": 0.9888623338051372,
+    "target_top1_accuracy": 0.9883286539666334,
+    "status": "PASS"
+  },
+  "locked_english_validation": {
+    "evidence_sha256": "2a0b13a6f0f5de8bb27fcc0ae8143ee29dadf0b13250806adc9e9d86edebaa64",
+    "observations": 1400,
+    "layercake_passes": 1287,
+    "layercake_pass_rate": 0.9192857142857143,
+    "source_passing_retention_rate": 0.9434426229508197,
+    "collapse_count": 0,
+    "final_test_accessed": false,
+    "critical_failures": {
+      "cake_output_realization": 0.75,
+      "email_drafting": 0.72
+    }
+  },
+  "measured_bottleneck": {
+    "class": "prompt_field_identity_and_completeness",
+    "evidence": "Failed realization and email outputs were fluent, correctly routed, and non-collapsed, but omitted or substituted supplied dates, counts, identifiers, actions, and objects.",
+    "data_scale_effect": {
+      "rewriting_pass_rate_before": 0.75,
+      "rewriting_pass_rate_after": 0.97,
+      "tone_control_pass_rate_before": 0.75,
+      "tone_control_pass_rate_after": 0.8,
+      "cake_output_realization_pass_rate_before": 0.73,
+      "cake_output_realization_pass_rate_after": 0.75,
+      "email_drafting_pass_rate_before": 0.78,
+      "email_drafting_pass_rate_after": 0.72
+    }
+  },
+  "decision": "The full core is not promotion eligible and receives no runtime certification. Preserve it unchanged as the parent for exactly one small prompt-identity host bridge because data scaling fixed lexical realization and collapse but did not fix supplied-field carriage.",
+  "claim_boundary": "This rejected checkpoint is not a fluent-core, teacher-equivalence, runtime, Phase-3, or moonshot pass."
+}

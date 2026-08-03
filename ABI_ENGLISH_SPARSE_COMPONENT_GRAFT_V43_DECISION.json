@@ -1,0 +1,36 @@
+{
+  "format": "abi-english-sparse-component-graft-v43-decision/1",
+  "status": "REJECTED_REPRESENTATION_INCOMPATIBILITY",
+  "effective_date": "2026-08-02",
+  "protocol": "ABI_ENGLISH_SPARSE_COMPONENT_GRAFT_GPU_PROTOCOL_V43.json",
+  "artifact": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-v41-shared-v24-sparse-graft-v43",
+    "checkpoint_sha256": "88244f378b88711bbf02fef9e24913f468849bca720d51a5c11cb72aa65ce40d",
+    "manifest_sha256": "17515ea2287a3882f0ad9ec94b9c022cdeb3d0afd27e380f4b2f20ef11f2b0ce",
+    "selected_layercake_parameters_copied": 1006090,
+    "parameters_changed_from_base": 906250,
+    "composition_device": "cuda",
+    "composition_wall_seconds": 0.7847686000168324,
+    "peak_gpu_memory_bytes": 742261248,
+    "foreign_teacher_parameters_copied": 0,
+    "teacher_present_at_inference": false
+  },
+  "locked_natural_screen": {
+    "evidence": "results/abi_moonshot/postcert_audit_v2/v43-v41-shared-v24-sparse-graft-natural-norepeat4.json",
+    "file_sha256": "f2e3d3a7325e31651edd7b3f0f3221895272ebfa95d63bdeee230037925cae9c",
+    "internal_evidence_sha256": "77398567bcc5cbc4df35888a3b145465175f8c7a89f3494938a4bd815aebc06f",
+    "observations": 28,
+    "passes": 7,
+    "required_passes": 9,
+    "collapse_count": 2,
+    "required_collapse_count": 0,
+    "automatic_route_correct": 17,
+    "correct_route_and_pass": 4,
+    "passes_gate": false
+  },
+  "interpretation": "Mathematical LayerCake component transfer was exact, but sparse components trained against the v24 shared representation are not semantically plug-compatible with v41's adapted hidden representation. Shape and ABI compatibility do not imply cross-checkpoint behavioral compatibility without conformance.",
+  "decision": "Reject without component-subset or interpolation sweeps. Preserve v41's shared core and perform one bounded GPU conformance run that trains only the existing rank-64 task cakes and 10-way route classifier against the locked broad streams while proving every shared tensor remains exact.",
+  "negative_evidence_preserved": true,
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

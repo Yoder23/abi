@@ -1,0 +1,43 @@
+{
+  "format": "abi-english-native-dual-online-guard-protocol/1",
+  "status": "PREREGISTERED_BEFORE_DERIVATION",
+  "effective_date": "2026-07-30",
+  "objective": "Clear both independently measured collapse modes by intersecting the unchanged online lexical guard and unchanged online byte-diversity guard without post-generation truncation.",
+  "controlling_evidence": {
+    "lexical_guard_failure": "results/abi_moonshot/native_hosts/three-block-realization-scale-symbolic-reasoning-v9-onnx-int8-v14-lexicalguard1-dynamic-benchmark-128.json",
+    "byte_guard_only_failure": "ABI_ENGLISH_NATIVE_BYTE_GUARD_ONLY_DECISION.json",
+    "measured_complementarity": "The lexical guard completed 120 outputs but left three non-lexical byte loops; the byte guard passed all 120 benchmark observations but left eight lexical phrase collapses in 1,400 semantic observations."
+  },
+  "candidate_lock": {
+    "attempts": 1,
+    "neural_weights_changed": false,
+    "symbolic_handlers_changed": false,
+    "new_teacher_tokens": 0,
+    "token_no_repeat_ngram_size": 0,
+    "lexical_repetition_blocking_threshold": 1,
+    "post_generation_lexical_truncation_threshold": 0,
+    "byte_fourgram_repetition_ceiling": 0.6,
+    "minimum_generated_bytes_before_byte_guard": 32,
+    "maximum_rejected_candidates_per_step": 64,
+    "component_thresholds_changed": false,
+    "final_test_rows_used": 0
+  },
+  "gates": {
+    "all_14_quality_capabilities_at_least": 0.8,
+    "overall_functional_pass_rate_at_least": 0.8,
+    "source_passing_retention_at_least": 0.9,
+    "collapse_count": 0,
+    "all_byte_target_outputs_complete": true,
+    "maximum_repetition_rate_at_most": 0.6,
+    "minimum_unique_4gram_rate_at_least": 0.4,
+    "median_cpu_speed_ratio_at_least": 2.0,
+    "paired_prompt_bootstrap_lower_bound_at_least": 2.0,
+    "phase2_throughput_retention_at_least": 0.95,
+    "ttft_no_worse_than_comparator": true,
+    "active_model_memory_lower_than_comparator": true,
+    "persistent_incremental_state_exact": true,
+    "physical_sparse_execution": true
+  },
+  "decision_rule": "Promote only if one exact candidate passes identity, physical sparsity, all 1,400 validation observations, and all 120 repeated benchmark observations. Reject rather than change thresholds, add another decoder control, or add a prompt-family handler.",
+  "claim_boundary": "This composes two generic collapse guards. It adds no English knowledge and does not establish teacher-equivalent generation."
+}

@@ -1,0 +1,134 @@
+{
+  "schema_version": "abi-english-task-cake-isolation-acquisition-protocol/1",
+  "protocol_id": "abi-english-task-cake-isolation-acquisition-v1",
+  "status": "PREREGISTERED_AFTER_V19_SHARED_CORE_INTERFERENCE_BEFORE_CANDIDATE_TRAINING",
+  "created_date": "2026-07-31",
+  "controlling_failure": "ABI_ENGLISH_INTEGRATED_BROAD14_V19_DECISION.json",
+  "hypothesis": "The stronger v6 broad English substrate can acquire the four deep natural realization capabilities through existing route-selected task-cake residuals without rewriting the shared core that v19 proved vulnerable to cross-distribution interference.",
+  "measured_bottleneck": {
+    "v6_broad14_pass_rate": 0.9192857142857143,
+    "v19_broad14_pass_rate": 0.8428571428571429,
+    "v19_source_passing_retention_rate": 0.8713114754098361,
+    "v19_collapse_count": 0,
+    "largest_paired_regressions_v19_minus_v6": {
+      "coherence": -0.41,
+      "rewriting": -0.32,
+      "domain_independent_reasoning": -0.20,
+      "summarization": -0.13
+    },
+    "interpretation": "Complete-core optimization learned portions of the natural distribution but damaged a stronger broad shared representation. The next experiment isolates acquisition updates in sparse residual cakes and makes shared-core immutability directly verifiable tensor by tensor."
+  },
+  "immutable_inputs": {
+    "training_artifact_path": "results/abi_moonshot/segregated_acquisition_v3/phi3-english-distinct-context-scale-search-training-v1.abix",
+    "training_artifact_sha256": "2aa903c2e9adb8f876614793e4727f589e044f2069b147989ef6f881a8d4cd31",
+    "training_artifact_budget_index": 3,
+    "training_records": 39996,
+    "teacher_tokens": 4881854,
+    "declared_capabilities": [
+      "cake_output_realization",
+      "coherence",
+      "rewriting",
+      "tone_control"
+    ],
+    "teacher_logits_stored": 0,
+    "teacher_hidden_activations_stored": 0,
+    "source_parameters_copied": 0,
+    "selected_domains": [],
+    "parent_path": "results/abi_moonshot/segregated_acquisition_v3/three-block-realization-scale-preservation-seed9824-steps4000-v6",
+    "parent_checkpoint_sha256": "5bae16dec3a55759e92a8481ec5ee519a5ee8687ad1a6f019edc1df3225d092e",
+    "parent_broad14_validation_file_sha256": "ba8d171e9c5df279aec1fcda2749ac80df76f287c2d08df49eeb73684ba4669c",
+    "canonical_semantic_abi_sha256": "d024de52144a2d797d0501acb7deb55575ffca7e33f72900beff599cf0a97761",
+    "tokenizer_sha256": "1fe93b6152957cf9cfd6d89002467f789ce8b3f3e000b3a2edf27c808ddd0b9e",
+    "general_preservation_curriculum_sha256": "bae6c1fe300a0214c1f6cb19a8c8eeee4f0b75681290be56f258a247cd488e53",
+    "base_decoding_contract_sha256": "9cdf13ed2b8fad9b90b1ee2132481424a15a05f8e3a58dd94fac6b7fc2d946dd"
+  },
+  "sequence_coverage_lock": {
+    "evidence_path": "results/abi_moonshot/segregated_acquisition_v3/english-distinct-context-scale-v16-training-sequence-coverage-audit.json",
+    "evidence_file_sha256": "4757d65bca30ff6fa4e6395f261b2dd1c26aea2ac436b9f14137e9e57fdb2cbc",
+    "maximum_complete_sequence_tokens": 494,
+    "sequence_ceiling": 512,
+    "omitted_teacher_target_tokens": 0
+  },
+  "candidate_lock": {
+    "attempts": 1,
+    "output_path": "results/abi_moonshot/segregated_acquisition_v3/three-block-taskcake-isolated-fullseq512-seed19824-steps23998-v20",
+    "seed": 19824,
+    "device": "cuda",
+    "successful_optimizer_steps": 23998,
+    "teacher_batch_size": 4,
+    "general_preservation_batch_size": 4,
+    "gradient_accumulation_steps": 1,
+    "sampling_strategy": "balanced_capabilities",
+    "shared_learning_rate": 0.00001,
+    "cake_learning_rate": 0.00005,
+    "classifier_loss_weight": 0.0,
+    "prompt_overlap_loss_weight": 1.0,
+    "general_preservation_loss_weight": 1.0,
+    "weight_decay": 0.01,
+    "max_tokens": 512,
+    "overlength_prompt_exclusion_allowed": false,
+    "self_generated_prefix_recovery": {
+      "start_step": 400,
+      "interval": 8,
+      "horizons": [
+        8,
+        16,
+        32
+      ]
+    },
+    "trainable_scope": "task_cakes_only",
+    "trainable_parameters": 998400,
+    "total_parameters": 61655050,
+    "trainable_parameter_fraction": 0.016193321868475607,
+    "frozen_parameters": 60656650,
+    "shared_core_frozen": true,
+    "token_embeddings_frozen": true,
+    "transformer_blocks_frozen": true,
+    "language_head_frozen": true,
+    "route_classifier_frozen": true,
+    "architecture_changes": 0,
+    "parameter_count_changes": 0,
+    "tokenizer_changes": 0,
+    "task_cake_topology_changes": 0,
+    "inference_graph_changes": 0,
+    "new_teacher_inference": 0,
+    "new_imported_teacher_tokens": 0
+  },
+  "implementation": {
+    "training_runner": "abi/layercake_full_core_acquisition.py",
+    "training_runner_sha256": "4efe1c86ad1f22f32b3c3595fe4ac9ade0109d8d0a1c325fd6382e7a20b0cdd1",
+    "targeted_test_result": "47 passed"
+  },
+  "cuda_scope_stress_test": {
+    "path": "C:/tmp/abi_task_cake_scope_smoke_20260731_v1",
+    "metadata_file_sha256": "c8057a4ed6d69d8eb0e9acf2a31341594790ec49ecdba0ecb2ff9c9ea9f7d9b0",
+    "successful_optimizer_steps": 1,
+    "autonomous_prefix_horizon": 32,
+    "peak_gpu_memory_bytes": 1353161728,
+    "changed_tensor_count": 24,
+    "all_changed_tensors_prefixed_task_cakes": true,
+    "shared_core_tensor_changes": 0,
+    "language_head_tensor_changes": 0,
+    "route_classifier_tensor_changes": 0,
+    "status": "PASS"
+  },
+  "hardware_policy": {
+    "abi_acquisition_device": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "cpu_training_authorized": false,
+    "cpu_role": "Exact deployed LayerCake inference, TTFO, throughput, active-memory, identity, and physical-sparse certification only.",
+    "paired_teacher_judge_device": "cuda"
+  },
+  "validation_order": [
+    "Require all 39,996 immutable records and all four capabilities to participate in successful CUDA optimizer updates.",
+    "Prove that every changed checkpoint tensor is under task_cakes and every shared-core, embedding, transformer, language-head, and route-classifier tensor is byte-identical to v6.",
+    "Export the exact teacher-free checkpoint with the unchanged generic token-run-four overlay.",
+    "Reverify checkpoint identity, canonical ABI, source absence, and physical sparse execution.",
+    "Run the locked 1,400-observation broad14 validation first on native CPU and require every gate.",
+    "Only if broad14 passes, run the 1,000-observation deep scale validation on native CPU and require every gate.",
+    "Only if both automatic suites pass, run the unchanged 112-prompt blinded paired Qwen judge on CUDA and require every teacher-relative gate.",
+    "Only then run the disclosed natural audit, corrected Phase-2 suite, repeated CPU benchmark, three paired seeds or fresh hosts, package identity, isolation, and untouched final split."
+  ],
+  "decision_rule": "Reject the single task-cake candidate on any locked gate. Do not unfreeze shared parameters, add task-specific symbolic handlers, tune decoder thresholds, access final-test data, or launch a nearby cake-learning-rate sweep.",
+  "final_test_accessed": false,
+  "claim_boundary": "This is an interference-isolation acquisition test on GPU. Its sparse trainable scope and unchanged graph do not prove fluent English, teacher equivalence, CPU dominance, or promotion without the full exact-runtime validation chain."
+}

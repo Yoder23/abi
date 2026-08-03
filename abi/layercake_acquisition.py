@@ -86,6 +86,10 @@ def build_labeled_extraction_record(
     output: str,
     teacher_tokens: int,
     teacher_token_counter: str,
+    authoritative_generated_token_ids: Sequence[int] | None = None,
+    finish_reason: str | None = None,
+    generation_max_new_tokens: int | None = None,
+    teacher_input_tokens: int | None = None,
 ) -> dict[str, Any]:
     """Build one content-addressed source extraction record.
 
@@ -120,6 +124,57 @@ def build_labeled_extraction_record(
     _require_nonempty("teacher_token_counter", teacher_token_counter)
     _require_nonnegative_int("teacher_tokens", teacher_tokens)
 
+    runtime_values = (
+        authoritative_generated_token_ids,
+        finish_reason,
+        generation_max_new_tokens,
+        teacher_input_tokens,
+    )
+    if any(value is not None for value in runtime_values) and not all(
+        value is not None for value in runtime_values
+    ):
+        raise AcquisitionAccountingError(
+            "runtime generation evidence must be complete when present"
+        )
+    generated_ids: list[int] | None = None
+    if authoritative_generated_token_ids is not None:
+        if isinstance(authoritative_generated_token_ids, (str, bytes)):
+            raise AcquisitionAccountingError(
+                "authoritative generated token IDs must be an integer sequence"
+            )
+        generated_ids = list(authoritative_generated_token_ids)
+        if any(
+            isinstance(token_id, bool)
+            or not isinstance(token_id, int)
+            or token_id < 0
+            for token_id in generated_ids
+        ):
+            raise AcquisitionAccountingError(
+                "authoritative generated token IDs must be non-negative integers"
+            )
+        if len(generated_ids) != teacher_tokens:
+            raise AcquisitionAccountingError(
+                "teacher token count does not match authoritative generated IDs"
+            )
+        if teacher_token_counter != "authoritative_generated_token_ids":
+            raise AcquisitionAccountingError(
+                "retained token IDs require the authoritative runtime counter"
+            )
+        if finish_reason not in {"eos_token", "length"}:
+            raise AcquisitionAccountingError("invalid source finish_reason")
+        maximum = _require_nonnegative_int(
+            "generation_max_new_tokens", generation_max_new_tokens
+        )
+        if maximum < 1 or teacher_tokens > maximum:
+            raise AcquisitionAccountingError(
+                "generated token count exceeds max_new_tokens"
+            )
+        if finish_reason == "length" and teacher_tokens != maximum:
+            raise AcquisitionAccountingError(
+                "length termination must reach max_new_tokens exactly"
+            )
+        _require_nonnegative_int("teacher_input_tokens", teacher_input_tokens)
+
     record = {
         "schema_version": RECORD_SCHEMA,
         "destination_scope": destination_scope,
@@ -139,6 +194,15 @@ def build_labeled_extraction_record(
         "teacher_token_counter": teacher_token_counter,
         "teacher_token_count_authoritative": True,
     }
+    if generated_ids is not None:
+        record.update(
+            {
+                "authoritative_generated_token_ids": generated_ids,
+                "finish_reason": finish_reason,
+                "generation_max_new_tokens": generation_max_new_tokens,
+                "teacher_input_tokens": teacher_input_tokens,
+            }
+        )
     record["record_id"] = _canonical_sha(record)
     return record
 
@@ -167,6 +231,12 @@ def validate_labeled_extraction_record(record: Mapping[str, Any]) -> None:
         output=record.get("output"),
         teacher_tokens=record.get("teacher_tokens"),
         teacher_token_counter=record.get("teacher_token_counter"),
+        authoritative_generated_token_ids=record.get(
+            "authoritative_generated_token_ids"
+        ),
+        finish_reason=record.get("finish_reason"),
+        generation_max_new_tokens=record.get("generation_max_new_tokens"),
+        teacher_input_tokens=record.get("teacher_input_tokens"),
     )
     for field in (
         "schema_version",

@@ -1,0 +1,62 @@
+{
+  "format": "abi-english-gated-deep-reused-cake-gpu-protocol/1",
+  "status": "PREREGISTERED_AFTER_V38_REJECTION_BEFORE_IMPLEMENTATION",
+  "effective_date": "2026-08-02",
+  "controlling_failure": "ABI_ENGLISH_DEEP_REUSED_CAPABILITY_CAKE_V38_DECISION.json",
+  "hypothesis": "Retaining the stable final rank-64 capability cake while learning 42 scalar capability-by-layer gates for reuse of that same cake before the frozen blocks provides trajectory capacity without another matrix table and preserves the passing CPU envelope.",
+  "architecture_lock": {
+    "transformer_blocks": 3,
+    "shared_transformer_frozen": true,
+    "installed_capability_cakes": 14,
+    "capability_cake_rank": 64,
+    "selected_unique_cakes_per_sequence": 1,
+    "pre_block_selected_cake_invocations": 3,
+    "final_selected_cake_invocations": 1,
+    "shared_cake_weights_across_all_invocations": true,
+    "trainable_scalar_gates": 42,
+    "gate_shape": [14, 3],
+    "gate_initialization": 0.0,
+    "added_matrix_parameters": 0,
+    "extra_kv_positions": 0,
+    "router_hash_buckets": 4096,
+    "router_width": 32,
+    "canonical_abi_changed": false
+  },
+  "hardware_policy": {
+    "acquisition_training": "cuda",
+    "cpu_training_authorized": false,
+    "cpu_role": "exact deployed LayerCake inference diagnostics and certification only"
+  },
+  "stress_lock": {
+    "output": "results/abi_moonshot/stress/abi-broad-natural-gated-deep-reused-cake-r64-stress-v39",
+    "seed": 129824,
+    "successful_optimizer_steps": 1,
+    "require_initial_parent_selected_route_function_exact": true,
+    "require_nonzero_gate_changes_persistent_cache": true,
+    "require_frozen_shared_hash_exact": true,
+    "require_teacher_absent": true,
+    "require_one_parameter_table_selected_at_four_invocations": true,
+    "require_persistent_cache_exact": true,
+    "require_fixed_token_parent_retention_at_least": 0.95,
+    "require_cpu_rss_below_bytes": 214990848
+  },
+  "candidate_lock_if_prechecks_pass": {
+    "output": "results/abi_moonshot/segregated_acquisition_v3/three-block-broad-natural-gated-deep-reused-cake-r64-seed129824-steps18000-v39",
+    "seed": 129824,
+    "device": "cuda",
+    "successful_optimizer_steps": 18000,
+    "main_batch_size": 4,
+    "anchor_batch_size": 4,
+    "general_batch_size": 4,
+    "all_sampling_strategies": "balanced_capabilities",
+    "cake_router_gate_learning_rate": 0.00005,
+    "classifier_loss_weight": 1.0,
+    "max_tokens": 1024,
+    "recovery_start_step": 400,
+    "recovery_interval": 8,
+    "recovery_horizons": [4, 8, 16]
+  },
+  "decision_rule": "Reject before the full GPU run on any structural, physical, cache, fixed-token speed, TTFT, or RSS failure. If trained, reject unless the disclosed natural screen materially exceeds 8/28 without collapse. Do not sweep gates, initialization, seed, data, steps, or losses.",
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

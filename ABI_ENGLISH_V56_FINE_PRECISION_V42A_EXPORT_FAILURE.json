@@ -1,0 +1,16 @@
+{
+  "format": "abi-english-v56-fine-precision-export-failure/1",
+  "status": "FAILED_BEFORE_QUANTIZATION_OR_EVALUATION",
+  "effective_date": "2026-08-01",
+  "protocol": "ABI_ENGLISH_V56_FINE_PRECISION_FUSION_PROTOCOL_V42.json",
+  "requested_profile": "fp32_layer0_attn_in",
+  "partial_output": "results/abi_moonshot/native_hosts/three-block-v56-attn-in-fp32-router-fp32-v42a",
+  "surviving_files": [
+    "model-fp32.onnx",
+    "task-route-router-fp32.onnx"
+  ],
+  "failure": "The suffix selector matched the same projection in all three layers and failed its one-node cardinality assertion.",
+  "correction": "Require both the exact /transformer/h.0/ prefix and the preregistered projection suffix. Emit a versioned successor directory; do not modify the partial evidence.",
+  "candidate_quality_or_speed_observed": false,
+  "moonshot_complete": false
+}

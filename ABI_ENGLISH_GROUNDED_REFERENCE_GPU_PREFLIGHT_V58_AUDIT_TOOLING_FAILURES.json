@@ -1,0 +1,37 @@
+{
+  "format": "abi-english-grounded-reference-gpu-preflight-v58-audit-tooling-failures/1",
+  "status": "PRESERVED_NON_MODEL_EVIDENCE_TOOLING_FAILURES",
+  "effective_date": "2026-08-03",
+  "preflight_bundle": {
+    "path": "results/abi_moonshot/reference_artifact_v58/phi3-grounded-reference-gpu-preflight-v1.abix",
+    "sha256": "1aae0593d6dc40a4a1fc2e1f4accfadf858fb7a7da02a15ff30c0293e0e6927b",
+    "manifest_sha256": "259ac107066702d2bb5a7e2ae224d8f979eabf9366fc2185c7cc89185cf6461f",
+    "modified_by_failures": false
+  },
+  "failures": [
+    {
+      "attempted_tool": "abi.teacher_artifact_adequacy_audit",
+      "classification": "ABI_AUDIT_TOOL_WRONG_ARTIFACT_ROLE",
+      "exception": "abi.layercake_host.LayerCakeHostError",
+      "message": "bundle is not current segregated training material",
+      "evidence_output_created": false,
+      "reason": "The adequacy audit intentionally accepts composed training material, not source survey vaults."
+    },
+    {
+      "attempted_tool": "abi.source_runtime_evidence_audit initial implementation",
+      "classification": "ABI_EVIDENCE_WRITER_SCHEMA_ASSUMPTION_FAILURE",
+      "exception": "KeyError",
+      "message": "source_manifest_sha256",
+      "evidence_output_created": false,
+      "reason": "The writer looked for source identity in the compact verification receipt instead of the verified sources.json member."
+    }
+  ],
+  "bounded_correction": "Use the survey-specific runtime audit and bind source manifest hashes from verified bundle sources.json. Do not alter the source bundle, catalog, model outputs, functional scores, or runtime evidence.",
+  "teacher_outputs_admitted_or_removed": 0,
+  "layercake_training_executed": false,
+  "failure_attribution": "ABI_EVIDENCE_TOOLING_FAILURE",
+  "layercake_failure": false,
+  "negative_evidence_preserved": true,
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

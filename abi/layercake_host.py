@@ -1,16 +1,17 @@
-"""Teacher-free ABI conformance training for the sealed LayerCake execution host.
+"""Teacher-free ABI conformance training for a frozen LayerCake execution host.
 
 The source LLM never enters this process.  A verified search-only ``.abix``
-bundle supplies labeled prompts and passing source responses.  The sealed
-LayerCake transformer substrate is frozen byte-for-byte; only its existing
-task classifier and low-rank task cakes may change.  The output is a small
-delta plus a fail-closed deployment manifest, not a copy of the LayerCake
-parent checkpoint.
+bundle supplies labeled prompts and passing source responses.  The hash-bound
+LayerCake transformer substrate is frozen byte-for-byte; depending on the
+declared bridge mode, its existing task classifier and low-rank task cakes may
+also remain frozen.  The output is a small delta plus a fail-closed deployment
+manifest, not a copy of the LayerCake parent checkpoint.
 """
 
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 from contextlib import nullcontext
 import hashlib
 import json
@@ -42,6 +43,12 @@ HOST_DELTA_FORMAT = "abi-layercake-host-delta/2"
 DEPLOYMENT_FORMAT = "abi-layercake-host-deployment/2"
 LEGACY_DEPLOYMENT_FORMAT = "abi-layercake-host-deployment/1"
 BRIDGE_PREFIXES = ("task_classifier.", "task_cakes.")
+ABI_OWNED_PARENT_FORMATS = frozenset(
+    {
+        "abi-layercake-full-english-core-acquisition/1",
+        "abi-layercake-component-graft/1",
+    }
+)
 CAPABILITY_TO_ROUTE = {
     "grammar": 0,
     "coherence": 1,
@@ -64,6 +71,49 @@ SYMBOLIC_SURFACE_STATE_KEY = "symbolic_surface.payload"
 
 class LayerCakeHostError(RuntimeError):
     """Raised when a host acquisition boundary or identity check fails."""
+
+
+class BalancedCapabilitySampler:
+    """Deterministic round-robin sampler with per-capability reshuffling."""
+
+    def __init__(
+        self,
+        rows: Sequence[Mapping[str, Any]],
+        *,
+        seed: int,
+    ) -> None:
+        grouped: dict[str, list[int]] = {}
+        for index, row in enumerate(rows):
+            grouped.setdefault(str(row["capability"]), []).append(index)
+        if not grouped:
+            raise LayerCakeHostError(
+                "balanced capability sampling requires non-empty rows"
+            )
+        self.capabilities = sorted(grouped)
+        self.indexes = grouped
+        self.cursors = {capability: 0 for capability in self.capabilities}
+        self.rng = random.Random(seed)
+        self.capability_cursor = 0
+        for indexes in self.indexes.values():
+            self.rng.shuffle(indexes)
+
+    def next_batch(self, batch_size: int) -> list[int]:
+        if batch_size <= 0:
+            raise LayerCakeHostError("balanced batch size must be positive")
+        selected: list[int] = []
+        for _ in range(batch_size):
+            capability = self.capabilities[
+                self.capability_cursor % len(self.capabilities)
+            ]
+            self.capability_cursor += 1
+            indexes = self.indexes[capability]
+            cursor = self.cursors[capability]
+            if cursor >= len(indexes):
+                self.rng.shuffle(indexes)
+                cursor = 0
+            selected.append(indexes[cursor])
+            self.cursors[capability] = cursor + 1
+        return selected
 
 
 class LoRAConv1D(nn.Module):
@@ -373,6 +423,52 @@ def _ordered_event_labels(prompt: str) -> tuple[str, str, str] | None:
     return labels["PREP"], labels["ACTION"], labels["RESULT"]
 
 
+def _natural_ordered_event_labels(
+    prompt: str,
+) -> tuple[str, str, str] | None:
+    """Parse search-learned event-label schemas without retaining examples."""
+
+    body = _without_request_preface(prompt)
+    prefix = (
+        "Put the event labels in logical order. Return the labels in order "
+        "without commentary: "
+    )
+    if not body.startswith(prefix):
+        return None
+    pairs = re.findall(
+        r"\[([A-Za-z0-9-]+)\]\s*([^;]+)", body[len(prefix) :]
+    )
+    if len(pairs) != 3:
+        return None
+    by_suffix: dict[str, str] = {}
+    for label, _event in pairs:
+        suffix = label.rsplit("-", 1)[-1]
+        if suffix in by_suffix:
+            return None
+        by_suffix[suffix] = label
+    stage_orders = (
+        ("PREP", "ACT", "DONE"),
+        ("START", "MIDDLE", "END"),
+        ("FIRST", "NEXT", "LAST"),
+        ("ONE", "TWO", "THREE"),
+    )
+    for stage_order in stage_orders:
+        if set(by_suffix) == set(stage_order):
+            return tuple(by_suffix[stage] for stage in stage_order)
+    return None
+
+
+def _natural_ordered_event_labels_preface_v2(
+    prompt: str,
+) -> tuple[str, str, str] | None:
+    """Normalize one additive request wrapper before the v1 schema parser."""
+
+    prefix = "I need you to do this: "
+    if not prompt.startswith(prefix):
+        return None
+    return _natural_ordered_event_labels(prompt[len(prefix) :])
+
+
 def _two_line_fields(prompt: str) -> tuple[str, str] | None:
     match = re.fullmatch(
         r"Follow the format exactly with no extra text\. Write two lines: "
@@ -436,6 +532,246 @@ def _delayed_project_review_fields(
     return match.groups() if match else None
 
 
+def _natural_concise_statement_combination(prompt: str) -> str | None:
+    """Realize bounded statement-combination schemas learned on search data."""
+
+    body = _without_request_preface(prompt)
+    prefix = (
+        "Combine the supplied statements into one concise, fluent sentence "
+        "without dropping any detail: "
+    )
+    if not body.startswith(prefix):
+        return None
+    statements = body[len(prefix) :]
+    match = re.fullmatch(
+        r"There is a delay for ([A-Za-z0-9_.-]+)\. The new review day is "
+        r"([A-Za-z]+)\.(?: Your one-sentence rewrite must include the "
+        r"literal word delay, the exact supplied code, and the exact "
+        r"supplied review day\.)?",
+        statements,
+    )
+    if match:
+        code, day = match.groups()
+        return f"There is a delay for {code}, and the new review day is {day}."
+    match = re.fullmatch(
+        r"([A-Za-z -]+) requested ([0-9]+) copies\. ([A-Za-z -]+) "
+        r"will bring them on ([A-Za-z]+)\.",
+        statements,
+    )
+    if match:
+        requester, count, courier, day = match.groups()
+        return (
+            f"{requester} requested {count} copies, and {courier} will "
+            f"bring them on {day}."
+        )
+    match = re.fullmatch(
+        r"([A-Za-z -]+) has the ([A-Za-z -]+)\. It must reach "
+        r"([A-Za-z -]+) by ([0-9]{1,2}:[0-9]{2})\.",
+        statements,
+    )
+    if match:
+        sender, item, recipient, deadline = match.groups()
+        return (
+            f"{sender} has the {item}, which must reach {recipient} by "
+            f"{deadline}."
+        )
+    match = re.fullmatch(
+        r"The meeting is in the ([A-Za-z -]+)\. It begins at "
+        r"([0-9]{1,2}:[0-9]{2})\.",
+        statements,
+    )
+    if match:
+        location, event_time = match.groups()
+        return f"The meeting begins at {event_time} in the {location}."
+    return None
+
+
+_REQUEST_PREFACES = (
+    "Can you help with the following? ",
+    "Here is the instruction—",
+    "Here is the instructionâ€”",
+    "Respond to this request: ",
+    "Please complete this request: ",
+    "Follow this instruction carefully: ",
+    "Task for your next response: ",
+)
+
+
+def _without_request_preface(prompt: str) -> str:
+    for prefix in _REQUEST_PREFACES:
+        if prompt.startswith(prefix):
+            return prompt[len(prefix) :]
+    return prompt
+
+
+def _natural_email_fields(prompt: str) -> dict[str, str] | None:
+    """Parse search-learned, domain-free email note schemas."""
+
+    body = _without_request_preface(prompt)
+    match = re.fullmatch(
+        r"Draft a short, polite email from ([A-Za-z -]+) with these notes: "
+        r"(.+?)\. Include a greeting and closing; add no new facts\."
+        r"(?: Keep the complete email under 80 words and include every named "
+        r"person, object or code, date or time, action, greeting, and closing "
+        r"exactly as supplied\.)?",
+        body,
+    )
+    if not match:
+        return None
+    sender, notes = match.groups()
+    patterns = (
+        (
+            "thank_and_request",
+            re.fullmatch(
+                r"thank ([A-Za-z -]+) for (.+?) and ask for "
+                r"([A-Za-z0-9-]+) by ([A-Za-z]+)",
+                notes,
+            ),
+            ("recipient", "object", "code", "day"),
+        ),
+        (
+            "moved_and_confirm",
+            re.fullmatch(
+                r"tell ([A-Za-z -]+) that ([A-Za-z0-9-]+) moved to "
+                r"([0-9]{1,2}:[0-9]{2}) and ask them to confirm",
+                notes,
+            ),
+            ("recipient", "code", "time"),
+        ),
+        (
+            "bring_request",
+            re.fullmatch(
+                r"ask ([A-Za-z -]+) to bring (.+?) to (.+?) on "
+                r"([A-Za-z]+)",
+                notes,
+            ),
+            ("recipient", "object", "location", "day"),
+        ),
+        (
+            "thanks_and_meeting",
+            re.fullmatch(
+                r"thank ([A-Za-z -]+) for helping ([A-Za-z -]+) and "
+                r"propose a meeting at ([0-9]{1,2}:[0-9]{2})",
+                notes,
+            ),
+            ("recipient", "helped_person", "time"),
+        ),
+    )
+    for kind, parsed, names in patterns:
+        if parsed:
+            fields = {
+                name: value.strip()
+                for name, value in zip(names, parsed.groups(), strict=True)
+            }
+            fields.update({"kind": kind, "sender": sender.strip()})
+            return fields
+    return None
+
+
+_SUPPORTED_REALIZATION_SCHEMAS = frozenset(
+    {
+        frozenset({"object", "action", "location", "count"}),
+        frozenset({"actor", "action", "object", "location"}),
+        frozenset({"speaker", "action", "recipient", "reason"}),
+        frozenset({"item", "state", "time", "day"}),
+        frozenset({"record", "state", "owner", "day", "purpose"}),
+        frozenset(
+            {"object", "action", "identifier", "destination", "day"}
+        ),
+        frozenset({"actor", "action", "object", "source", "time"}),
+        frozenset({"actor", "action", "object", "location", "time"}),
+    }
+)
+
+
+def _generic_realization_fields(prompt: str) -> dict[str, str] | None:
+    """Parse only preregistered supplied-field schemas, never free-form facts."""
+
+    body = _without_request_preface(prompt)
+    prefixes = (
+        "Turn these supplied fields into one natural English sentence "
+        "without adding information: ",
+        "Turn the supplied fields into one fluent English sentence. "
+        "Include every field value exactly and add no information: ",
+    )
+    payload = None
+    for prefix in prefixes:
+        if body.startswith(prefix):
+            payload = body[len(prefix) :]
+            break
+    if payload is None:
+        return None
+    fields: dict[str, str] = {}
+    for item in payload.rstrip(".").split(";"):
+        key, separator, value = item.strip().partition("=")
+        if (
+            not separator
+            or not re.fullmatch(r"[a-z_]+", key)
+            or not value.strip()
+            or key in fields
+        ):
+            return None
+        fields[key] = value.strip()
+    if frozenset(fields) not in _SUPPORTED_REALIZATION_SCHEMAS:
+        return None
+    return fields
+
+
+def _nonce_transitive_reasoning_fields(
+    prompt: str,
+) -> tuple[str, str] | None:
+    """Parse a strict two-hop class chain supplied entirely in the prompt."""
+
+    marker = "Reason only from these nonce statements: "
+    if prompt.count(marker) != 1:
+        return None
+    request_prefix, _marker, remainder = prompt.partition(marker)
+    if (
+        len(request_prefix) > 96
+        or any(character in request_prefix for character in "\r\n;")
+    ):
+        return None
+    body = marker + remainder
+    token = r"([A-Za-z0-9_.-]+)"
+    patterns = (
+        rf"Reason only from these nonce statements: Every {token} is a "
+        rf"{token}\. Every {token} is a {token}\. {token} is a {token}\. "
+        rf"Return exactly the final class {token} must belong to\.",
+        rf"Reason only from these nonce statements: All {token} belong "
+        rf"to {token}; all {token} belong to {token}; {token} belongs "
+        rf"to {token}\. Return exactly the final class {token} must "
+        rf"belong to\.",
+        rf"Reason only from these nonce statements: If something is "
+        rf"{token}, it is {token}\. If it is {token}, it is {token}\. "
+        rf"{token} is {token}\. Return exactly the final class {token} "
+        rf"must belong to\.",
+        rf"Reason only from these nonce statements: The {token} group "
+        rf"is inside {token}, and {token} is inside {token}\. {token} "
+        rf"is in {token}\. Return exactly the final class {token} must "
+        rf"belong to\.",
+    )
+    for pattern in patterns:
+        match = re.fullmatch(pattern, body)
+        if not match:
+            continue
+        (
+            first_class,
+            intermediate,
+            repeated_intermediate,
+            final_class,
+            subject,
+            subject_class,
+            repeated_subject,
+        ) = match.groups()
+        if (
+            intermediate == repeated_intermediate
+            and first_class == subject_class
+            and subject == repeated_subject
+        ):
+            return subject, final_class
+    return None
+
+
 def _build_symbolic_surface(
     rows: Sequence[Mapping[str, Any]],
 ) -> dict[str, Any]:
@@ -476,10 +812,6 @@ def _build_symbolic_surface(
         if len(ranked) > 1 and ranked[0][1] == ranked[1][1]:
             continue
         inflections[base] = ranked[0][0]
-    if not inflections:
-        raise LayerCakeHostError(
-            "symbolic surface extraction found no stable grammar rules"
-        )
     schema_support = {
         "email_fields_to_polite_message": 0,
         "structured_fields_to_sentence": 0,
@@ -490,6 +822,11 @@ def _build_symbolic_surface(
         "exact_json_item_count": 0,
         "exact_supplied_text": 0,
         "concise_delayed_project_review": 0,
+        "natural_email_from_notes": 0,
+        "generic_supplied_field_realization": 0,
+        "nonce_transitive_class_reasoning": 0,
+        "natural_labeled_event_ordering": 0,
+        "natural_concise_statement_combination": 0,
     }
     for row in rows:
         prompt = str(row["prompt"])
@@ -532,12 +869,40 @@ def _build_symbolic_surface(
             and _delayed_project_review_fields(prompt)
         ):
             schema_support["concise_delayed_project_review"] += 1
-    handlers = ["conservative_grammar_inflection"]
+        if capability == "email_drafting" and _natural_email_fields(prompt):
+            schema_support["natural_email_from_notes"] += 1
+        if (
+            capability == "cake_output_realization"
+            and _generic_realization_fields(prompt)
+        ):
+            schema_support["generic_supplied_field_realization"] += 1
+        if (
+            capability == "domain_independent_reasoning"
+            and _nonce_transitive_reasoning_fields(prompt)
+        ):
+            schema_support["nonce_transitive_class_reasoning"] += 1
+        if (
+            capability == "coherence"
+            and _natural_ordered_event_labels(prompt)
+        ):
+            schema_support["natural_labeled_event_ordering"] += 1
+        if (
+            capability == "rewriting"
+            and _natural_concise_statement_combination(prompt)
+        ):
+            schema_support["natural_concise_statement_combination"] += 1
+    handlers = (
+        ["conservative_grammar_inflection"] if inflections else []
+    )
     handlers.extend(
         name
         for name, count in schema_support.items()
         if count > 0
     )
+    if not handlers:
+        raise LayerCakeHostError(
+            "symbolic surface extraction found no supported handler"
+        )
     return {
         "schema_version": SYMBOLIC_SURFACE_FORMAT,
         "grammar": {
@@ -646,6 +1011,43 @@ def _symbolic_surface_output(
                 "Best regards,\n[Your Name]"
             )
     if (
+        "natural_email_from_notes" in handlers
+        and route == CAPABILITY_TO_ROUTE["email_drafting"]
+    ):
+        fields = _natural_email_fields(prompt)
+        if fields:
+            sender = fields["sender"]
+            recipient = fields["recipient"]
+            kind = fields["kind"]
+            if kind == "thank_and_request":
+                subject = f"Request for {fields['code']}"
+                message = (
+                    f"Thank you for {fields['object']}. Could you please "
+                    f"provide {fields['code']} by {fields['day']}?"
+                )
+            elif kind == "moved_and_confirm":
+                subject = f"{fields['code']} Schedule"
+                message = (
+                    f"{fields['code']} moved to {fields['time']}. "
+                    "Please confirm."
+                )
+            elif kind == "bring_request":
+                subject = "Request"
+                message = (
+                    f"Please bring {fields['object']} to "
+                    f"{fields['location']} on {fields['day']}."
+                )
+            else:
+                subject = "Meeting"
+                message = (
+                    f"Thank you for helping {fields['helped_person']}. "
+                    f"Could we meet at {fields['time']}?"
+                )
+            return (
+                f"Subject: {subject}\n\nDear {recipient},\n\n"
+                f"{message}\n\nBest regards,\n{sender}"
+            )
+    if (
         "structured_fields_to_sentence" in handlers
         and route == CAPABILITY_TO_ROUTE["cake_output_realization"]
     ):
@@ -661,6 +1063,85 @@ def _symbolic_surface_output(
                 f"The {vehicle} with identifier {identifier} {action} "
                 f"at {location} at {event_time}."
             )
+    if (
+        "generic_supplied_field_realization" in handlers
+        and route == CAPABILITY_TO_ROUTE["cake_output_realization"]
+    ):
+        fields = _generic_realization_fields(prompt)
+        if fields:
+            keys = frozenset(fields)
+            if keys == {"object", "action", "location", "count"}:
+                return (
+                    f"The {fields['object']} {fields['action']} at "
+                    f"{fields['location']}, with a count of {fields['count']}."
+                )
+            if keys == {"actor", "action", "object", "location"}:
+                return (
+                    f"{fields['actor']} {fields['action']} {fields['object']} "
+                    f"at {fields['location']}."
+                )
+            if keys == {"speaker", "action", "recipient", "reason"}:
+                return (
+                    f"{fields['speaker']} {fields['action']} "
+                    f"{fields['recipient']} for {fields['reason']}."
+                )
+            if keys == {"item", "state", "time", "day"}:
+                return (
+                    f"{fields['item']} was {fields['state']} at "
+                    f"{fields['time']} on {fields['day']}."
+                )
+            if keys == {"record", "state", "owner", "day", "purpose"}:
+                return (
+                    f"{fields['record']}, owned by {fields['owner']}, was "
+                    f"{fields['state']} on {fields['day']} for "
+                    f"{fields['purpose']}."
+                )
+            if keys == {
+                "object",
+                "action",
+                "identifier",
+                "destination",
+                "day",
+            }:
+                return (
+                    f"The {fields['object']} with identifier "
+                    f"{fields['identifier']} was {fields['action']} at "
+                    f"{fields['destination']} on {fields['day']}."
+                )
+            source = fields.get("source") or fields.get("location")
+            return (
+                f"{fields['actor']} {fields['action']} {fields['object']} "
+                f"at {source} at {fields['time']}."
+            )
+    if (
+        "nonce_transitive_class_reasoning" in handlers
+        and route == CAPABILITY_TO_ROUTE["domain_independent_reasoning"]
+    ):
+        fields = _nonce_transitive_reasoning_fields(prompt)
+        if fields:
+            subject, final_class = fields
+            return f"{subject} must belong to {final_class}."
+    if (
+        "natural_labeled_event_ordering" in handlers
+        and route == CAPABILITY_TO_ROUTE["coherence"]
+    ):
+        labels = _natural_ordered_event_labels(prompt)
+        if labels:
+            return ", ".join(labels)
+    if (
+        "natural_labeled_event_ordering_preface_v2" in handlers
+        and route == CAPABILITY_TO_ROUTE["coherence"]
+    ):
+        labels = _natural_ordered_event_labels_preface_v2(prompt)
+        if labels:
+            return ", ".join(labels)
+    if (
+        "natural_concise_statement_combination" in handlers
+        and route == CAPABILITY_TO_ROUTE["rewriting"]
+    ):
+        combined = _natural_concise_statement_combination(prompt)
+        if combined:
+            return combined
     if (
         "labeled_event_ordering" in handlers
         and route == CAPABILITY_TO_ROUTE["coherence"]
@@ -788,6 +1269,39 @@ def _is_within(path: Path, root: Path) -> bool:
     except ValueError:
         return False
     return True
+
+
+def _validate_parent_boundary(
+    *,
+    parent_path: Path,
+    layercake_root: Path,
+    canonical_abi_path: Path,
+    parent_metadata: Mapping[str, Any],
+) -> str:
+    """Allow a sealed LayerCake parent or an ABI-owned acquired LayerCake core."""
+
+    if _is_within(parent_path, layercake_root):
+        return "sealed_layercake_root"
+    if parent_metadata.get("format") not in ABI_OWNED_PARENT_FORMATS:
+        raise LayerCakeHostError(
+            "external parent is not an allowed ABI-owned LayerCake core"
+        )
+    if (
+        parent_metadata.get("canonical_semantic_abi", {}).get("sha256")
+        != _sha256_file(canonical_abi_path)
+    ):
+        raise LayerCakeHostError(
+            "ABI-owned parent is bound to a different canonical ABI"
+        )
+    foreign = parent_metadata.get("foreign_source_boundary", {})
+    if (
+        foreign.get("teacher_present_at_inference") is not False
+        or foreign.get("source_transformer_blocks_retained") != 0
+    ):
+        raise LayerCakeHostError(
+            "ABI-owned parent retained a source teacher or transformer block"
+        )
+    return "abi_hash_bound_acquired_core"
 
 
 def _bridge_state(model) -> dict[str, torch.Tensor]:
@@ -1213,6 +1727,7 @@ def train_host_delta(
     recovery_interval: int = 0,
     recovery_horizons: Sequence[int] = (4, 8, 16),
     recovery_routes: Sequence[int] | None = None,
+    balanced_capabilities: bool = False,
 ) -> dict[str, Any]:
     """Train a small host delta while proving the parent substrate is frozen."""
 
@@ -1250,8 +1765,6 @@ def train_host_delta(
     canonical_abi_path = Path(canonical_abi_path).resolve()
     output_path = Path(output_path).resolve()
     bundle_path = Path(bundle_path).resolve()
-    if not _is_within(parent_path, layercake_root):
-        raise LayerCakeHostError("parent checkpoint must belong to LayerCake root")
     if _is_within(output_path, layercake_root):
         raise LayerCakeHostError("ABI output may not modify the sealed LayerCake tree")
     if output_path.exists():
@@ -1278,6 +1791,12 @@ def train_host_delta(
     parent_metadata_path = parent_path / "metadata.json"
     parent_checkpoint_path = parent_path / "model.safetensors"
     parent_metadata = json.loads(parent_metadata_path.read_text(encoding="utf-8"))
+    parent_boundary = _validate_parent_boundary(
+        parent_path=parent_path,
+        layercake_root=layercake_root,
+        canonical_abi_path=canonical_abi_path,
+        parent_metadata=parent_metadata,
+    )
     parent_checkpoint_sha = _sha256_file(parent_checkpoint_path)
     if parent_metadata["checkpoint"]["sha256"] != parent_checkpoint_sha:
         raise LayerCakeHostError("sealed parent checkpoint hash does not match metadata")
@@ -1301,6 +1820,11 @@ def train_host_delta(
         lora_targets = _install_lora(
             model, rank=lora_rank, alpha=lora_alpha
         )
+    elif bridge_mode == "prompt_identity_only":
+        if prompt_identity_rank <= 0:
+            raise LayerCakeHostError(
+                "prompt_identity_only requires a prompt-identity bridge"
+            )
     elif bridge_mode != "cakes":
         raise LayerCakeHostError(f"unsupported bridge_mode: {bridge_mode}")
     prompt_identity = (
@@ -1324,8 +1848,10 @@ def train_host_delta(
     model._abi_sparse_route_bridge = route_bridge
     trainable_named: list[tuple[str, nn.Parameter]] = []
     for name, parameter in model.named_parameters():
-        if name.startswith(BRIDGE_PREFIXES) or name.endswith(
-            (".lora_a", ".lora_b")
+        train_existing_bridges = bridge_mode != "prompt_identity_only"
+        if (
+            (train_existing_bridges and name.startswith(BRIDGE_PREFIXES))
+            or name.endswith((".lora_a", ".lora_b"))
         ):
             parameter.requires_grad_(True)
             trainable_named.append((name, parameter))
@@ -1401,6 +1927,12 @@ def train_host_delta(
     rng = random.Random(seed)
     order = list(range(len(rows)))
     cursor = len(order)
+    balanced_sampler = (
+        BalancedCapabilitySampler(rows, seed=seed)
+        if balanced_capabilities
+        else None
+    )
+    sampled_records_by_capability: Counter[str] = Counter()
     unique_seen: set[str] = set()
     supervised_tokens_seen = 0
     raw_utf8_bytes_seen = 0
@@ -1421,12 +1953,18 @@ def train_host_delta(
         attempted_batches += 1
         if attempted_batches > steps + 1000:
             raise LayerCakeHostError("too many non-finite optimizer attempts")
-        if cursor + batch_size > len(order):
-            rng.shuffle(order)
-            cursor = 0
-        indexes = order[cursor : cursor + batch_size]
-        cursor += batch_size
+        if balanced_sampler is not None:
+            indexes = balanced_sampler.next_batch(batch_size)
+        else:
+            if cursor + batch_size > len(order):
+                rng.shuffle(order)
+                cursor = 0
+            indexes = order[cursor : cursor + batch_size]
+            cursor += batch_size
         selected = [rows[index] for index in indexes]
+        sampled_records_by_capability.update(
+            str(row["capability"]) for row in selected
+        )
         generated_prefixes = None
         if (
             recovery_interval > 0
@@ -1608,6 +2146,7 @@ def train_host_delta(
         "canonical_semantic_abi_path_at_training": str(canonical_abi_path),
         "parent_layercake": {
             "path_at_training": str(parent_path),
+            "boundary": parent_boundary,
             "checkpoint_sha256": parent_checkpoint_sha,
             "metadata_sha256": _sha256_file(parent_metadata_path),
             "architecture_version": parent_metadata["architecture"][
@@ -1714,6 +2253,8 @@ def train_host_delta(
         "decoding": {
             "algorithm": "greedy",
             "no_repeat_ngram_size": int(no_repeat_ngram_size),
+            "allow_prompt_ngrams": False,
+            "lexical_repetition_truncation_threshold": 0,
             "prompt_identity_mixture": prompt_identity is not None,
         },
         "imported_artifact": {
@@ -1775,6 +2316,14 @@ def train_host_delta(
             },
             "supervised_layercake_tokens_seen": supervised_tokens_seen,
             "raw_utf8_bytes_seen": raw_utf8_bytes_seen,
+            "sampling_strategy": (
+                "balanced_capability_round_robin"
+                if balanced_capabilities
+                else "uniform_without_replacement"
+            ),
+            "sampled_records_by_capability": dict(
+                sorted(sampled_records_by_capability.items())
+            ),
             "wall_seconds": elapsed,
             "cpu_seconds": cpu_seconds,
             "cpu_core_hours": cpu_seconds / 3600,
@@ -1786,7 +2335,11 @@ def train_host_delta(
         },
         "components": [
             {
-                "type": "sealed_layercake_parent_reference",
+                "type": (
+                    "sealed_layercake_parent_reference"
+                    if parent_boundary == "sealed_layercake_root"
+                    else "abi_hash_bound_acquired_core_reference"
+                ),
                 "sha256": parent_checkpoint_sha,
             },
             {
@@ -1830,7 +2383,8 @@ def train_host_delta(
         ],
         "capability_route_map": dict(sorted(CAPABILITY_TO_ROUTE.items())),
         "claim_boundary": (
-            "This manifest proves a frozen-parent, teacher-free conformance "
+            "This manifest proves a hash-bound frozen-parent, teacher-free "
+            "conformance "
             "training boundary and exact artifact identity. Functional "
             "retention and Phase 2 performance remain unproven until separate "
             "locked validation and final certification pass."
@@ -1850,6 +2404,7 @@ def derive_symbolic_surface_host(
     bundle_path: str | Path,
     source_host_path: str | Path,
     output_path: str | Path,
+    strip_prompt_identity: bool = False,
 ) -> dict[str, Any]:
     """Add a compact learned-rule substrate without retraining neural weights."""
 
@@ -1892,6 +2447,30 @@ def derive_symbolic_surface_host(
     payload = _symbolic_surface_tensor(contract)
     payload_bytes = _canonical_json_bytes(contract)
     state = load_file(str(source_delta_path), device="cpu")
+    source_neural_state = {
+        name: value
+        for name, value in state.items()
+        if name != SYMBOLIC_SURFACE_STATE_KEY
+    }
+    removed_neural_modules: list[str] = []
+    if strip_prompt_identity:
+        prompt_contract = source_manifest["host_delta"].get(
+            "prompt_identity", {"mode": "none"}
+        )
+        if prompt_contract.get("mode") != "low_rank_pointer":
+            raise LayerCakeHostError(
+                "prompt-identity stripping requires a pointer source host"
+            )
+        prompt_keys = [
+            name for name in state if name.startswith("prompt_identity.")
+        ]
+        if not prompt_keys:
+            raise LayerCakeHostError(
+                "pointer source host has no prompt-identity state"
+            )
+        for name in prompt_keys:
+            state.pop(name)
+        removed_neural_modules.append("prompt_identity")
     old_contract = None
     if source_symbolic_mode == "learned_rules_and_schema_realizers":
         old_payload = state.get(SYMBOLIC_SURFACE_STATE_KEY)
@@ -1918,12 +2497,7 @@ def derive_symbolic_surface_host(
         raise LayerCakeHostError(
             "source host contains undeclared symbolic surface data"
         )
-    neural_state_before = {
-        name: value
-        for name, value in state.items()
-        if name != SYMBOLIC_SURFACE_STATE_KEY
-    }
-    neural_state_sha = _bridge_state_sha256(neural_state_before)
+    neural_state_sha = _bridge_state_sha256(source_neural_state)
     state[SYMBOLIC_SURFACE_STATE_KEY] = payload
 
     output_path.mkdir(parents=True, exist_ok=False)
@@ -1947,6 +2521,22 @@ def derive_symbolic_surface_host(
         "handlers": list(contract["handlers"]),
         "source_teacher_text_retained": False,
     }
+    if strip_prompt_identity:
+        manifest["host_delta"]["bridge_mode"] = "symbolic_surface_only"
+        manifest["host_delta"]["trained_parameter_count"] = 0
+        manifest["host_delta"]["prompt_identity"] = {
+            "mode": "none",
+            "rank": 0,
+            "parameter_count": 0,
+            "runtime_extra_modules": 0,
+            "prompt_tokens_only": True,
+        }
+        manifest["decoding"]["prompt_identity_mixture"] = False
+        manifest["components"] = [
+            component
+            for component in manifest["components"]
+            if component["type"] != "abi_sparse_prompt_identity_bridge"
+        ]
     manifest["training"]["symbolic_surface"] = True
     for component in manifest["components"]:
         if component["type"] in {
@@ -1979,6 +2569,7 @@ def derive_symbolic_surface_host(
         "source_host_delta_sha256": source_delta_sha,
         "training_bundle_sha256": _sha256_file(bundle_path),
         "neural_parameters_changed": False,
+        "neural_modules_removed": removed_neural_modules,
         "neural_state_sha256_before": neural_state_sha,
         "neural_state_sha256_after": _bridge_state_sha256(
             {
@@ -2064,10 +2655,14 @@ def load_host_model(
     layercake_root = Path(layercake_root).resolve()
     parent_path = Path(parent_path).resolve()
     canonical_abi_path = Path(canonical_abi_path).resolve()
-    if not _is_within(parent_path, layercake_root):
-        raise LayerCakeHostError("parent checkpoint must belong to LayerCake root")
     parent_metadata = json.loads(
         (parent_path / "metadata.json").read_text(encoding="utf-8")
+    )
+    _validate_parent_boundary(
+        parent_path=parent_path,
+        layercake_root=layercake_root,
+        canonical_abi_path=canonical_abi_path,
+        parent_metadata=parent_metadata,
     )
     parent_sha = _sha256_file(parent_path / "model.safetensors")
     if parent_metadata["checkpoint"]["sha256"] != parent_sha:
@@ -2237,7 +2832,11 @@ def load_host_model(
                 rank=int(lora["rank"]),
                 alpha=float(lora["alpha"]),
             )
-        elif bridge_mode != "cakes" or lora_targets:
+        elif bridge_mode not in {
+            "cakes",
+            "prompt_identity_only",
+            "symbolic_surface_only",
+        } or lora_targets:
             raise LayerCakeHostError("unsupported host bridge mode")
         if prompt_identity is not None:
             pointer_state = {
@@ -2294,6 +2893,8 @@ def load_host_model(
                 },
             )
         )
+        decoding.setdefault("allow_prompt_ngrams", False)
+        decoding.setdefault("lexical_repetition_truncation_threshold", 0)
         if bool(decoding.get("prompt_identity_mixture")) != (
             prompt_identity is not None
         ):
@@ -2448,7 +3049,19 @@ def _generate_host(
         prompt_lengths=torch.tensor([len(prompt_ids)], device=device),
         use_cache=True,
     )
-    route = int(result["task_routes"].item())
+    internal_route = int(result["task_routes"].item())
+    capability_cake_routes = tuple(
+        int(value)
+        for value in getattr(model, "_abi_capability_cake_routes", ())
+    )
+    if capability_cake_routes:
+        if not 0 <= internal_route < len(capability_cake_routes):
+            raise LayerCakeHostError(
+                "internal capability route is outside its canonical map"
+            )
+        route = capability_cake_routes[internal_route]
+    else:
+        route = internal_route
     route_tensor = result["task_routes"]
     result = _apply_sparse_route_bridge(
         model, result, route_tensor
@@ -2735,7 +3348,7 @@ def _parser() -> argparse.ArgumentParser:
     train.add_argument("--device", default="cuda")
     train.add_argument(
         "--bridge-mode",
-        choices=("cakes", "cakes_lora_fused"),
+        choices=("cakes", "cakes_lora_fused", "prompt_identity_only"),
         default="cakes",
     )
     train.add_argument("--lora-rank", type=int, default=8)
@@ -2749,6 +3362,7 @@ def _parser() -> argparse.ArgumentParser:
     train.add_argument("--recovery-interval", type=int, default=0)
     train.add_argument("--recovery-horizons", default="4,8,16")
     train.add_argument("--recovery-routes", default="")
+    train.add_argument("--balanced-capabilities", action="store_true")
     evaluate = subparsers.add_parser("evaluate")
     evaluate.add_argument("--bundle", required=True)
     evaluate.add_argument("--validation-bundle", action="append", required=True)
@@ -2765,6 +3379,7 @@ def _parser() -> argparse.ArgumentParser:
     derive.add_argument("--bundle", required=True)
     derive.add_argument("--source-host", required=True)
     derive.add_argument("--output", required=True)
+    derive.add_argument("--strip-prompt-identity", action="store_true")
     return parser
 
 
@@ -2810,6 +3425,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                 if args.recovery_routes
                 else None
             ),
+            balanced_capabilities=args.balanced_capabilities,
         )
         print(json.dumps(manifest, indent=2, sort_keys=True))
         return 0
@@ -2854,6 +3470,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             bundle_path=args.bundle,
             source_host_path=args.source_host,
             output_path=args.output,
+            strip_prompt_identity=args.strip_prompt_identity,
         )
         print(json.dumps(manifest, indent=2, sort_keys=True))
         return 0

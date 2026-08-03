@@ -23,7 +23,14 @@ from .capability_pipeline import (
     build_source_model_manifest,
 )
 from .capability_segregation import (
+    DOMAIN_CONTENT_BASES,
+    ENGLISH_CONTENT_BASES,
+    LABEL_METHODS,
+    LINGUISTIC_FORM,
+    QUARANTINED,
+    QUARANTINE_CONTENT_BASES,
     SEGREGATED_RECORD_SCHEMA,
+    SPECIALIST_KNOWLEDGE,
     build_segregated_extraction_record,
 )
 from .layercake_acquisition import build_labeled_extraction_record
@@ -60,6 +67,14 @@ def probe_label_evidence_sha256(probe: dict[str, Any]) -> str:
     return hashlib.sha256(encoded).hexdigest()
 
 
+def prompt_contract_sha256(prompt: str) -> str:
+    """Bind a functional evaluator to the exact raw source prompt."""
+
+    if not isinstance(prompt, str) or not prompt:
+        raise CapabilityPipelineError("prompt contract requires a non-empty prompt")
+    return hashlib.sha256(prompt.encode("utf-8")).hexdigest()
+
+
 def _sha256_file(path: Path, chunk_bytes: int = 8 * 1024 * 1024) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as handle:
@@ -73,6 +88,29 @@ def _sha256_file(path: Path, chunk_bytes: int = 8 * 1024 * 1024) -> str:
 
 def _immutable_revision(value: str) -> bool:
     return len(value) == 40 and all(character in "0123456789abcdef" for character in value)
+
+
+def _token_id_set(*values: Any) -> set[int]:
+    """Normalize tokenizer/model generation stop IDs without guessing one EOS."""
+
+    output: set[int] = set()
+    pending = list(values)
+    while pending:
+        value = pending.pop()
+        if value is None:
+            continue
+        if isinstance(value, bool):
+            raise CapabilityPipelineError("boolean token ID is invalid")
+        if isinstance(value, int):
+            if value < 0:
+                raise CapabilityPipelineError("negative token ID is invalid")
+            output.add(value)
+            continue
+        if isinstance(value, (list, tuple, set, frozenset)):
+            pending.extend(value)
+            continue
+        raise CapabilityPipelineError("source stop token IDs are invalid")
+    return output
 
 
 def _extract_python(text: str) -> str:
@@ -111,7 +149,12 @@ def evaluate_output(output: str, evaluator: dict[str, Any]) -> tuple[bool, float
         score = min(1.0, len(output.strip()) / max(1, minimum_characters))
         return len(output.strip()) >= minimum_characters, score
 
-    if kind in {"contains_all", "contains_any", "ordered_contains"}:
+    if kind in {
+        "contains_all",
+        "contains_any",
+        "contains_none",
+        "ordered_contains",
+    }:
         values = evaluator.get("values")
         if (
             not isinstance(values, list)
@@ -126,6 +169,18 @@ def evaluate_output(output: str, evaluator: dict[str, Any]) -> tuple[bool, float
             return all(hits), score
         if kind == "contains_any":
             return any(hits), score
+        if kind == "contains_none":
+            flags = 0 if case_sensitive else re.IGNORECASE
+            absent = [
+                re.search(
+                    r"(?<!\w)" + re.escape(value) + r"(?!\w)",
+                    output,
+                    flags=flags,
+                )
+                is None
+                for value in values
+            ]
+            return all(absent), sum(absent) / len(absent)
         cursor = 0
         ordered_hits = 0
         for needle in needles:
@@ -155,9 +210,19 @@ def evaluate_output(output: str, evaluator: dict[str, Any]) -> tuple[bool, float
         passed = re.search(pattern, output, flags=flags) is not None
         return passed, 1.0 if passed else 0.0
 
-    if kind == "json_object":
+    if kind in {"json_object", "json_code_block"}:
+        json_text = output.strip()
+        if kind == "json_code_block":
+            fenced = re.fullmatch(
+                r"```(?:json)?\s*(.*?)\s*```",
+                json_text,
+                flags=re.IGNORECASE | re.DOTALL,
+            )
+            if fenced is None:
+                return False, 0.0
+            json_text = fenced.group(1).strip()
         try:
-            parsed = json.loads(output.strip())
+            parsed = json.loads(json_text)
         except json.JSONDecodeError:
             return False, 0.0
         required_keys = evaluator.get("required_keys", [])
@@ -165,13 +230,13 @@ def evaluate_output(output: str, evaluator: dict[str, Any]) -> tuple[bool, float
             not isinstance(required_keys, list)
             or any(not isinstance(key, str) or not key for key in required_keys)
         ):
-            raise CapabilityPipelineError("json_object required_keys are invalid")
+            raise CapabilityPipelineError(f"{kind} required_keys are invalid")
         if not isinstance(parsed, dict):
             return False, 0.0
         hits = [key in parsed for key in required_keys]
         expected_values = evaluator.get("expected_values", {})
         if not isinstance(expected_values, dict):
-            raise CapabilityPipelineError("json_object expected_values are invalid")
+            raise CapabilityPipelineError(f"{kind} expected_values are invalid")
         value_hits = [
             key in parsed and parsed[key] == value
             for key, value in expected_values.items()
@@ -310,6 +375,14 @@ def load_probe_catalog(path: str | Path) -> dict[str, Any]:
             raise CapabilityPipelineError("invalid probe split")
         if not isinstance(probe.get("prompt"), str) or not probe["prompt"]:
             raise CapabilityPipelineError("probe prompt is missing")
+        evaluator = probe.get("evaluator")
+        if isinstance(evaluator, dict) and "prompt_contract_sha256" in evaluator:
+            if evaluator.get("prompt_contract_sha256") != prompt_contract_sha256(
+                probe["prompt"]
+            ):
+                raise CapabilityPipelineError(
+                    "functional evaluator prompt contract is stale"
+                )
         maximum = probe.get("max_new_tokens", 64)
         if isinstance(maximum, bool) or not isinstance(maximum, int) or not 1 <= maximum <= 2048:
             raise CapabilityPipelineError("max_new_tokens must be in [1, 2048]")
@@ -346,6 +419,65 @@ def load_probe_catalog(path: str | Path) -> dict[str, Any]:
             )
         if (
             record_schema == SEGREGATED_RECORD_SCHEMA
+            and probe.get("label_method") not in LABEL_METHODS
+        ):
+            raise CapabilityPipelineError(
+                "invalid segregated probe label_method"
+            )
+        if record_schema == SEGREGATED_RECORD_SCHEMA:
+            knowledge_class = probe.get("knowledge_class")
+            content_basis = probe.get("content_basis")
+            domain_labels = probe.get("domain_labels")
+            domain_claims = probe.get("domain_claims")
+            introduces_facts = probe.get(
+                "output_introduces_unsupplied_facts"
+            )
+            if knowledge_class not in {
+                LINGUISTIC_FORM,
+                SPECIALIST_KNOWLEDGE,
+                QUARANTINED,
+            }:
+                raise CapabilityPipelineError(
+                    "invalid segregated probe knowledge_class"
+                )
+            if not isinstance(domain_labels, list) or not isinstance(
+                domain_claims, list
+            ):
+                raise CapabilityPipelineError(
+                    "segregated probe domain metadata must be lists"
+                )
+            if not isinstance(introduces_facts, bool):
+                raise CapabilityPipelineError(
+                    "segregated probe fact-introduction flag must be boolean"
+                )
+            if scope == "english_core":
+                if knowledge_class != LINGUISTIC_FORM:
+                    raise CapabilityPipelineError(
+                        "English probe must carry linguistic form"
+                    )
+                if content_basis not in ENGLISH_CONTENT_BASES:
+                    raise CapabilityPipelineError(
+                        "English probe content_basis is not knowledge-minimized"
+                    )
+                if domain_labels or domain_claims:
+                    raise CapabilityPipelineError(
+                        "English probe cannot carry domain labels or claims"
+                    )
+                if introduces_facts:
+                    raise CapabilityPipelineError(
+                        "English probe cannot allow unsupplied facts"
+                    )
+            elif knowledge_class == QUARANTINED:
+                if content_basis not in QUARANTINE_CONTENT_BASES:
+                    raise CapabilityPipelineError(
+                        "invalid quarantined probe content_basis"
+                    )
+            elif content_basis not in DOMAIN_CONTENT_BASES:
+                raise CapabilityPipelineError(
+                    "invalid domain probe content_basis"
+                )
+        if (
+            record_schema == SEGREGATED_RECORD_SCHEMA
             and probe.get("label_method") == "preregistered_catalog"
             and probe.get("label_evidence_sha256")
             != probe_label_evidence_sha256(probe)
@@ -353,7 +485,7 @@ def load_probe_catalog(path: str | Path) -> dict[str, Any]:
             raise CapabilityPipelineError(
                 "preregistered semantic label evidence is stale"
             )
-        evaluate_output("", probe.get("evaluator"))
+        evaluate_output("", evaluator)
     return catalog
 
 
@@ -370,11 +502,16 @@ class HuggingFaceCausalSource:
         local_files_only: bool = True,
         trust_remote_code: bool = False,
         use_chat_template: bool = True,
+        load_in_8bit: bool = False,
     ) -> None:
         try:
             import torch
             from huggingface_hub import snapshot_download
-            from transformers import AutoModelForCausalLM, AutoTokenizer
+            from transformers import (
+                AutoModelForCausalLM,
+                AutoTokenizer,
+                BitsAndBytesConfig,
+            )
         except ImportError as exc:
             raise CapabilityPipelineError(
                 "torch, transformers, and huggingface_hub are required"
@@ -386,6 +523,9 @@ class HuggingFaceCausalSource:
         self.local_files_only = bool(local_files_only)
         self.trust_remote_code = bool(trust_remote_code)
         self.use_chat_template = bool(use_chat_template)
+        if not isinstance(load_in_8bit, bool):
+            raise CapabilityPipelineError("load_in_8bit must be boolean")
+        self.load_in_8bit = load_in_8bit
         supplied_path = Path(model_id_or_path)
         if supplied_path.exists():
             self.snapshot_path = supplied_path.resolve()
@@ -421,17 +561,58 @@ class HuggingFaceCausalSource:
             self.device = device
         else:
             raise CapabilityPipelineError("device must be auto, cpu, or cuda")
+        if self.load_in_8bit and self.device != "cuda":
+            raise CapabilityPipelineError(
+                "8-bit source inference requires an explicitly available CUDA device"
+            )
         dtype = torch.float16 if self.device == "cuda" else torch.float32
+        model_kwargs: dict[str, Any] = {
+            "local_files_only": True,
+            "trust_remote_code": self.trust_remote_code,
+            "dtype": dtype,
+        }
+        if self.load_in_8bit:
+            model_kwargs.update(
+                {
+                    "quantization_config": BitsAndBytesConfig(
+                        load_in_8bit=True,
+                        llm_int8_enable_fp32_cpu_offload=False,
+                    ),
+                    "device_map": {"": torch.cuda.current_device()},
+                }
+            )
         self.model = AutoModelForCausalLM.from_pretrained(
             load_reference,
-            local_files_only=True,
-            trust_remote_code=self.trust_remote_code,
-            dtype=dtype,
+            **model_kwargs,
         )
-        self.model.to(self.device)
+        if not self.load_in_8bit:
+            self.model.to(self.device)
         self.model.eval()
         self.revision = resolved_revision
         self.revision_is_immutable = revision_is_immutable
+        if self.load_in_8bit:
+            try:
+                import bitsandbytes
+
+                quantization_library_version = str(bitsandbytes.__version__)
+            except (ImportError, AttributeError):
+                quantization_library_version = "unknown"
+            weight_execution_precision = "bitsandbytes_int8"
+            quantization_library = "bitsandbytes"
+        else:
+            quantization_library_version = None
+            weight_execution_precision = (
+                "torch_float16" if self.device == "cuda" else "torch_float32"
+            )
+            quantization_library = None
+        self.source_inference_runtime = {
+            "device": self.device,
+            "weight_execution_precision": weight_execution_precision,
+            "non_quantized_compute_dtype": str(dtype).replace("torch.", ""),
+            "quantization_library": quantization_library,
+            "quantization_library_version": quantization_library_version,
+            "cpu_offload_enabled": False,
+        }
 
         weight_paths = sorted(
             {
@@ -478,6 +659,22 @@ class HuggingFaceCausalSource:
             )
         return prompt
 
+    def generation_eos_token_ids(self) -> set[int]:
+        """Return the exact union of runtime-configured source EOS token IDs."""
+
+        generation_config = getattr(self.model, "generation_config", None)
+        model_config = getattr(self.model, "config", None)
+        eos_ids = _token_id_set(
+            getattr(generation_config, "eos_token_id", None),
+            getattr(model_config, "eos_token_id", None),
+            getattr(self.tokenizer, "eos_token_id", None),
+        )
+        if not eos_ids:
+            raise CapabilityPipelineError(
+                "source runtime declares no EOS token IDs"
+            )
+        return eos_ids
+
     def generate(
         self,
         prompt: str,
@@ -510,13 +707,34 @@ class HuggingFaceCausalSource:
                     ),
                 )
         generated_ids = sequences[0, input_tokens:]
-        output = self.tokenizer.decode(generated_ids, skip_special_tokens=True)
+        raw_ids = [int(value) for value in generated_ids.tolist()]
+        eos_ids = self.generation_eos_token_ids()
+        eos_position = next(
+            (index for index, token_id in enumerate(raw_ids) if token_id in eos_ids),
+            None,
+        )
+        if eos_position is None:
+            if len(raw_ids) != max_new_tokens:
+                raise CapabilityPipelineError(
+                    "source generation stopped without EOS or the declared length ceiling"
+                )
+            authoritative_ids = raw_ids
+            finish_reason = "length"
+        else:
+            authoritative_ids = raw_ids[: eos_position + 1]
+            finish_reason = "eos_token"
+        output = self.tokenizer.decode(
+            authoritative_ids, skip_special_tokens=True
+        )
         return {
             "rendered_prompt": rendered,
             "output": output,
             "input_tokens": input_tokens,
-            "teacher_tokens": int(generated_ids.numel()),
+            "teacher_tokens": len(authoritative_ids),
             "teacher_token_counter": "authoritative_generated_token_ids",
+            "authoritative_generated_token_ids": authoritative_ids,
+            "finish_reason": finish_reason,
+            "generation_max_new_tokens": max_new_tokens,
         }
 
     def generate_batch(
@@ -559,23 +777,21 @@ class HuggingFaceCausalSource:
                     pad_token_id=self.tokenizer.pad_token_id,
                 )
             generated = sequences[:, padded_input_tokens:]
-            eos_ids = {
-                int(value)
-                for value in (
-                    [self.tokenizer.eos_token_id]
-                    if isinstance(self.tokenizer.eos_token_id, int)
-                    else (self.tokenizer.eos_token_id or [])
-                )
-            }
+            eos_ids = self.generation_eos_token_ids()
             outputs: list[dict[str, Any]] = []
             for index, token_row in enumerate(generated):
                 ids = token_row.tolist()
                 counted = len(ids)
+                finish_reason = "length"
                 for position, token_id in enumerate(ids):
                     if token_id in eos_ids:
                         counted = position + 1
+                        finish_reason = "eos_token"
                         break
                 authoritative = token_row[:counted]
+                authoritative_ids = [
+                    int(value) for value in authoritative.tolist()
+                ]
                 outputs.append(
                     {
                         "rendered_prompt": rendered[index],
@@ -587,6 +803,9 @@ class HuggingFaceCausalSource:
                         "teacher_token_counter": (
                             "authoritative_generated_token_ids"
                         ),
+                        "authoritative_generated_token_ids": authoritative_ids,
+                        "finish_reason": finish_reason,
+                        "generation_max_new_tokens": next(iter(maximums)),
                     }
                 )
             return outputs
@@ -657,6 +876,8 @@ def run_probe_catalog(
     for probe in selected_probes:
         sample = samples_by_id[str(probe["probe_id"])]
         passed, score = evaluate_output(sample["output"], probe["evaluator"])
+        if sample.get("finish_reason") == "length":
+            passed = False
         common = {
             "destination_scope": probe["destination_scope"],
             "capability": probe["capability"],
@@ -669,6 +890,14 @@ def run_probe_catalog(
             "output": sample["output"],
             "teacher_tokens": sample["teacher_tokens"],
             "teacher_token_counter": sample["teacher_token_counter"],
+            "authoritative_generated_token_ids": sample.get(
+                "authoritative_generated_token_ids"
+            ),
+            "finish_reason": sample.get("finish_reason"),
+            "generation_max_new_tokens": sample.get(
+                "generation_max_new_tokens"
+            ),
+            "teacher_input_tokens": sample.get("input_tokens"),
         }
         if probe.get("record_schema") == SEGREGATED_RECORD_SCHEMA:
             record = build_segregated_extraction_record(

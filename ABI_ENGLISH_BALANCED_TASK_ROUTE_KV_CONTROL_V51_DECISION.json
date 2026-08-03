@@ -1,0 +1,68 @@
+{
+  "format": "abi-english-balanced-task-route-kv-control-v51-decision/1",
+  "status": "REJECTED_FULL_FUNCTIONAL_QUALITY_IDENTITY_CARRIAGE_BOTTLENECK",
+  "effective_date": "2026-08-01",
+  "protocol": "ABI_ENGLISH_BALANCED_TASK_ROUTE_KV_CONTROL_GPU_PROTOCOL_V51.json",
+  "checkpoint": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-v41-balanced-task-route-kv-control-seed439824-steps12000-v51",
+    "checkpoint_sha256": "012c5443dca21fb73874f1329bcfb6a10526284092e15d7408fff15614dd563f",
+    "manifest_sha256": "add275afcba3a88a22a87226db5bd7c5d04a533bf81789bed6299e0862d45aff",
+    "metadata_file_sha256": "1419252f8e2c060154bc2abc7fabb5a3badb3dfb1368c0e11500bf8362bffcf2",
+    "successful_gpu_optimizer_steps": 12000,
+    "wall_seconds": 1499.6215066000004,
+    "gpu_hours": 0.4165615296111112,
+    "peak_gpu_memory_bytes": 4444185600,
+    "main_examples_per_capability_minimum": 3428,
+    "main_examples_per_capability_maximum": 3429,
+    "frozen_shared_state_preserved_exact": true,
+    "frozen_task_classifier_preserved_exact": true,
+    "parent_parameter_aliases_in_student": 0,
+    "parent_teacher_removed_before_checkpoint": true,
+    "teacher_present_at_inference": false
+  },
+  "natural_screen": {
+    "evidence": "results/abi_moonshot/postcert_audit_v2/v51-balanced-task-route-kv-control-natural-norepeat4.json",
+    "file_sha256": "3f737234818984b2071d3b6360dc38272f7ece2fee63d405ef1a0e5c3e7be209",
+    "internal_evidence_sha256": "b3aafc17696ad77f43170fdff2e10ff549129d27ac48334ccf30b3a88efa604b",
+    "passes": 10,
+    "observations": 28,
+    "collapse_count": 0,
+    "passes_gate": true
+  },
+  "full1400_pytorch": {
+    "evidence": "results/abi_moonshot/segregated_acquisition_v3/v51-balanced-task-route-kv-control-semantic-full1400-pytorch.json",
+    "file_sha256": "8450bedea32e0c87a94ca7bc28937456382f3e15717d9b21d193fc137387d8db",
+    "internal_evidence_sha256": "792fc64209215af00c3111b5429a1bf235e915aa31ecd2dc56441d4ed2a98a3d",
+    "observations": 1400,
+    "overall_pass_rate": 0.7628571428571429,
+    "source_passing_retention_rate": 0.7844262295081967,
+    "collapse_count": 0,
+    "status": "FAIL",
+    "capability_pass_rates": {
+      "abstention": 0.95,
+      "cake_output_realization": 0.69,
+      "clarification": 0.95,
+      "coherence": 0.0,
+      "conversation": 1.0,
+      "domain_independent_reasoning": 0.12,
+      "email_drafting": 0.72,
+      "format_control": 1.0,
+      "grammar": 0.94,
+      "instruction_following": 0.85,
+      "prompt_grounding": 1.0,
+      "rewriting": 0.78,
+      "summarization": 0.82,
+      "tone_control": 0.86
+    }
+  },
+  "paired_v50_interpretation": {
+    "v50_passes": 1068,
+    "v51_passes": 1068,
+    "conclusion": "Replacing uniform-record sampling with balanced-capability sampling removed the measured exposure imbalance but produced no aggregate gain. Sampling depth is therefore not the limiting mechanism.",
+    "localized_failure": "Routes are correct and event order is commonly semantically correct, but arbitrary prompt identifiers are omitted or corrupted during autonomous decoding. Examples include N105OMAR becoming N107OMAR and middle labels being dropped. This destroys exact coherence and supplied-value reasoning despite zero collapse."
+  },
+  "decision": "Reject without native export or speed promotion. Preserve the exact checkpoint and all 1,400 prompt-level rows. Freeze the complete v51 parent and test exactly one integrated rank-32 prompt-position carriage bridge with explicit balanced copy-gate and pointer-attention supervision. This is not a repeat of v7: v7 used mixture likelihood alone, learned a dormant gate, and changed zero held-out outputs. Do not change depth, cakes, controls, classifier, tokenizer, source data, or canonical ABI in the v52 isolation attempt.",
+  "negative_evidence_preserved": true,
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

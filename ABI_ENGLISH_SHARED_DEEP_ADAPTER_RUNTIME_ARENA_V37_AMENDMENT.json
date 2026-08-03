@@ -1,0 +1,30 @@
+{
+  "format": "abi-english-shared-deep-adapter-runtime-arena-amendment/1",
+  "status": "PREREGISTERED_AFTER_INITIAL_V37_PRECHECK_FAILURE_BEFORE_RUNTIME_CHANGE",
+  "effective_date": "2026-08-02",
+  "protocol": "ABI_ENGLISH_SHARED_DEEP_CAPABILITY_ADAPTER_GPU_PROTOCOL_V37.json",
+  "measured_input": {
+    "candidate_evidence": "results/abi_moonshot/native_hosts/shared-deep-adapter-r32-r64-stress-v37-fixed-token-architecture-20x20.json",
+    "comparison_evidence": "results/abi_moonshot/native_hosts/shared-deep-adapter-r32-r64-stress-v37-fixed-token-comparison.json",
+    "candidate_to_parent_median_prompt_ratio": 0.9711624929704894,
+    "paired_rate_bootstrap_lower": 0.9671314023980606,
+    "paired_latency_bootstrap_upper": 1.0366652230156401,
+    "peak_process_rss_bytes": 215887872,
+    "rss_limit_bytes": 214990848,
+    "rss_excess_bytes": 897024
+  },
+  "single_authorized_attempt": {
+    "change": "Disable ONNX Runtime CPU memory arena only for the shared-deep-adapter runtime session.",
+    "weights_changed": false,
+    "graph_changed": false,
+    "router_changed": false,
+    "decoding_changed": false,
+    "training_changed": false,
+    "checkpoint_changed": false,
+    "expected_effect": "Reduce allocator-retained RSS without changing numerical execution.",
+    "output": "results/abi_moonshot/native_hosts/shared-deep-adapter-r32-r64-stress-v37b-noarena-onnx-int8-precheck"
+  },
+  "decision_rule": "Run physical proof, identity proof, and the unchanged paired 20-prompt-by-20-repeat fixed-token screen. Authorize the locked full GPU candidate only if every original speed, latency, cache, and RSS gate passes. Otherwise reject this architecture without another runtime attempt.",
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "abi-training-attempt-failure-record/1",
+  "attempt_id": "three-block-broad-corpus-continued-seed9824-steps6000-v10",
+  "status": "FAILED_AFTER_TRAINING_DURING_MANIFEST_SERIALIZATION",
+  "date": "2026-07-30",
+  "completed_optimizer_steps": 6000,
+  "last_reported_wall_seconds": 733.6034145000158,
+  "failure": {
+    "exception": "KeyError",
+    "missing_key": "parameters",
+    "location": "abi.layercake_full_core_acquisition.train_full_core",
+    "root_cause": "The continuation parent uses acquired_core.active_parameter_count while the artifact writer read only the original-parent parameters.active schema.",
+    "optimization_failed": false,
+    "resource_limit_reached": false
+  },
+  "partial_artifact": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-broad-corpus-continued-seed9824-steps6000-v10",
+    "checkpoint_sha256": "2f49e5e068da3e96d64a34e4404ed59d19c457e86c1c3cd5bae5a9cf2981e83d",
+    "checkpoint_bytes": 246627944,
+    "metadata_present": false,
+    "loadable_or_promotable": false,
+    "preserved_as_negative_evidence": true
+  },
+  "unchanged_inputs": {
+    "parent_checkpoint_sha256": "5bae16dec3a55759e92a8481ec5ee519a5ee8687ad1a6f019edc1df3225d092e",
+    "training_bundle_sha256": "510c72e6a4608084a595eeea2897d490444d99767ae14bb27de7f8711d284c1c",
+    "canonical_semantic_abi_sha256": "d024de52144a2d797d0501acb7deb55575ffca7e33f72900beff599cf0a97761"
+  },
+  "rerun_rule": "Fix only the fail-early metadata-schema lookup, add regression coverage, and rerun the exact same seed, data, steps, learning rates, recovery schedule, and preservation curriculum under a new immutable output identity."
+}

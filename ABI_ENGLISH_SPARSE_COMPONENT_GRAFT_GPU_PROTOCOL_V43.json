@@ -1,0 +1,43 @@
+{
+  "format": "abi-english-sparse-component-graft-gpu-protocol/1",
+  "status": "PREREGISTERED_AFTER_V42_REJECTION_BEFORE_COMPOSITION",
+  "effective_date": "2026-08-02",
+  "controlling_failure": "ABI_ENGLISH_INSTRUCTION_LOGIT_DISTILLATION_V42_DECISION.json",
+  "hypothesis": "The measured bottleneck is interference between broad shared-core acquisition and structured sparse behavior. The v41 shared core is the best autonomous generator, while v24's task cakes and classifier produced perfect broad14 routing, 92.3% overall function, 93.4% source retention, zero collapse, and only one sub-floor capability. Exact LayerCake-to-LayerCake grafting of those proven sparse components onto the v41 shared core can combine the two measured strengths without foreign-teacher machinery, training, parameter growth, or a runtime topology change.",
+  "base_shared_core": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-broad-natural-same-tokenizer-logit-distill-seed349824-steps6000-v41",
+    "checkpoint_sha256": "22df8256a0479596516c1d09c29200fc19c1cb810ac8204979b2192ce39372e0",
+    "natural_screen_passes": 10,
+    "natural_screen_collapse_count": 0
+  },
+  "sparse_component_donor": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-v23-route2-targeted-realization-seed29824-steps1000-v24",
+    "checkpoint_sha256": "6a8ddd348ad6f8215aee8b1a7e3ad7e8c7171c848ee3bddabc6222c0fef39482",
+    "broad14_overall_pass_rate": 0.9228571428571428,
+    "broad14_source_passing_retention_rate": 0.9344262295081968,
+    "broad14_collapse_count": 0,
+    "broad14_automatic_route_accuracy": 1.0,
+    "natural_diagnostic": {
+      "evidence": "results/abi_moonshot/postcert_audit_v2/v24-near-functional-parent-natural-norepeat4-diagnostic.json",
+      "file_sha256": "3c54d1bccdae87558d426cfe8d925aa119d945c58259205b9da91fc2dc291e14",
+      "passes": 3,
+      "collapse_count": 1
+    }
+  },
+  "composition_lock": {
+    "device": "cuda",
+    "copied_tensor_prefixes": ["task_cakes.", "task_classifier."],
+    "all_other_tensors_exactly_from_base": true,
+    "all_selected_tensors_exactly_from_donor": true,
+    "foreign_teacher_parameters_copied": 0,
+    "foreign_teacher_blocks_retained": 0,
+    "teacher_present_at_inference": false,
+    "parameter_shapes_changed": false,
+    "parameter_count_changed": false,
+    "graph_topology_changed": false,
+    "output": "results/abi_moonshot/segregated_acquisition_v3/three-block-v41-shared-v24-sparse-graft-v43"
+  },
+  "decision_rule": "Reject unless the exact graft reaches at least 9/28 on the disclosed natural screen with zero collapse. A pass only authorizes the unchanged 1,400-observation suite. Do not sweep component subsets, interpolate tensors, change decoding, or retrain from this screen.",
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

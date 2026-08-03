@@ -1,0 +1,102 @@
+{
+  "format": "abi-english-merged-core-lora-v40-precheck-result/1",
+  "status": "PASS_FULL_GPU_CANDIDATE_AUTHORIZED",
+  "effective_date": "2026-08-02",
+  "protocol": "ABI_ENGLISH_MERGED_CORE_LORA_GPU_PROTOCOL_V40.json",
+  "runtime_decoding_failure_preserved": "ABI_ENGLISH_MERGED_CORE_LORA_V40_RUNTIME_DECODING_OVERRIDE_FAILURE.json",
+  "stress_checkpoint": {
+    "path": "results/abi_moonshot/stress/abi-broad-natural-merged-core-lora-r32-stress-v40",
+    "checkpoint_sha256": "cdd89ed7c742665accbfbaddc8f0125d2618dd876be8f75dda5f023bb05ac850",
+    "manifest_sha256": "25c689bcfb02462d54640d03afb69be260731a512520dbd12b7855d9d6839ea4",
+    "successful_cuda_optimizer_steps": 1,
+    "peak_gpu_memory_bytes": 2259544576,
+    "temporary_trainable_parameters": 1179648,
+    "changed_target_matrices": 12,
+    "zero_initial_function_exact": true,
+    "merge_bit_exact_to_training_function": true,
+    "non_target_state_preserved_exact": true,
+    "temporary_parameter_tensors_retained": 0,
+    "deployed_adapter_parameters": 0,
+    "deployed_parameter_shapes_changed": false,
+    "deployed_graph_topology_changed": false,
+    "teacher_present_at_inference": false
+  },
+  "runtime": {
+    "path": "results/abi_moonshot/native_hosts/merged-core-lora-r32-stress-v40b-onnx-int8-precheck",
+    "graph_sha256": "1bd320c432b493248b0bd9e26a6d03fdfc451d5a8444a37a0f2a03e07d4ee08d",
+    "physical_evidence": "results/abi_moonshot/native_hosts/merged-core-lora-r32-stress-v40b-physical-proof.json",
+    "physical_evidence_sha256": "55d158511e6a10766ef3d6a56f32c1f8d8b239992d36153fbfea0e05aa95769a",
+    "physical_status": "PASS",
+    "identity_evidence": "results/abi_moonshot/native_hosts/merged-core-lora-r32-stress-v40b-identity.json",
+    "identity_evidence_sha256": "23797f7c9ac6a7e85a4dc484cde65f1cf2e08e017e8ac9b64c35a45bf9033579",
+    "identity_status": "PASS",
+    "maximum_active_task_cakes_per_sequence": 1,
+    "pre_block_cake_route_gathers": 12,
+    "final_cake_route_gathers": 4,
+    "selected_gate_row_gathers": 1,
+    "dense_all_route_matrix_nodes": 0,
+    "persistent_cache_exact": true,
+    "canonical_abi_hash_matches": true,
+    "teacher_absent": true
+  },
+  "fixed_token_precheck": {
+    "candidate_evidence": "results/abi_moonshot/native_hosts/merged-core-lora-r32-stress-v40-fixed-token-architecture-20x20.json",
+    "candidate_evidence_sha256": "2cc8ba8fbce0b925c84f59b2b3732dc89a27f227e6a18c5914c2343a0cd420b4",
+    "distinct_prompts": 20,
+    "repeats_per_prompt": 20,
+    "forced_tokens_per_observation": 64,
+    "candidate_median_tokens_per_second": 300.44821207909933,
+    "candidate_peak_process_rss_bytes": 213053440,
+    "rss_limit_bytes": 214990848,
+    "cache_lengths_exact": true,
+    "historical_v21_direct_comparison": {
+      "evidence": "results/abi_moonshot/native_hosts/merged-core-lora-r32-stress-v40-fixed-token-comparison.json",
+      "evidence_sha256": "962df0977dce2caf5def4cf52beecf056cd2b084d9901dbd9b1848ce28af1792",
+      "status": "FAIL_PRESERVED_MACHINE_FREQUENCY_DRIFT_DIAGNOSTIC",
+      "median_ratio": 0.854828603748309,
+      "rate_ratio_bootstrap_95ci": [
+        0.8461682423657919,
+        0.8625905595244269
+      ]
+    },
+    "contemporaneous_unchanged_v39_control": {
+      "evidence": "results/abi_moonshot/native_hosts/gated-deep-reused-cake-r64-stress-v39-fixed-token-architecture-20x20-contemporary-v40-control.json",
+      "evidence_sha256": "1d431c9abd8777cdc9ada8612dee55d05566f3b8d3b744a14e7def3fcd0504b2",
+      "median_tokens_per_second": 287.0097417327297,
+      "peak_process_rss_bytes": 213610496
+    },
+    "candidate_vs_contemporaneous_v39": {
+      "evidence": "results/abi_moonshot/native_hosts/merged-core-lora-r32-stress-v40-vs-contemporary-v39-fixed-token-comparison.json",
+      "evidence_sha256": "f5638a6f075ca4171fba7ad7a807b0120c8941dde650760e139f6e130ddb6a33",
+      "status": "PASS",
+      "median_prompt_token_rate_ratio": 1.0398231311726458,
+      "paired_prompt_token_rate_ratio_bootstrap_95ci": [
+        1.0275557198158027,
+        1.045753840772891
+      ],
+      "paired_prompt_latency_ratio_bootstrap_95ci": [
+        0.9645145108618296,
+        0.9827609997875106
+      ]
+    },
+    "transitive_v40_vs_v21_controlled_bounds": {
+      "basis": "candidate/contemporaneous-v39 multiplied by the preregistered v39/historical-v21 paired ratios; this controls current host-frequency drift and does not replace final fresh product benchmarking",
+      "median_prompt_token_rate_ratio": 1.0112919420159678,
+      "paired_prompt_token_rate_ratio_bootstrap_95ci": [
+        0.9958497052736154,
+        1.022949619256701
+      ],
+      "paired_prompt_latency_ratio_bootstrap_95ci": [
+        0.9877691355082187,
+        1.016059387181246
+      ],
+      "retains_parent_at_least_95pct": true,
+      "latency_upper_at_most_1_05": true
+    },
+    "all_authorization_gates_pass": true
+  },
+  "decision": "Launch exactly one preregistered 18000-step CUDA candidate with seed 229824. Do not vary rank, alpha, target matrices, data, losses, learning rate, seed, steps, runtime topology, or decoding.",
+  "promotion_boundary": "This precheck authorizes GPU acquisition only. Fresh final product speed, TTFT, RSS, physical sparsity, and autonomous-quality evidence must all come from the trained fused checkpoint.",
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

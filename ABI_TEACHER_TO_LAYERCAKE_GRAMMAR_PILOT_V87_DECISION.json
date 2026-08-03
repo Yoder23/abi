@@ -1,0 +1,131 @@
+{
+  "format": "abi-teacher-to-layercake-grammar-pilot-decision/1",
+  "status": "CAUSAL_TRANSFER_SIGNAL_DEMONSTRATED_BUT_PREREGISTERED_PILOT_FAILED",
+  "effective_date": "2026-08-03",
+  "protocol": {
+    "path": "ABI_TEACHER_TO_LAYERCAKE_GRAMMAR_PILOT_PROTOCOL_V87.json",
+    "file_sha256": "39967db6bc120d402f2409873ee3b8c61cb12b2377cf40409638d4951fbbf3d3"
+  },
+  "source_boundary": {
+    "source_artifact": "results/abi_moonshot/reference_artifact_v69/phi3-contrastive-grammar-source-v1.abix",
+    "source_artifact_sha256": "a1dc87e20d54e40952f7c31f840f1229e0f974bc82e63e568af2c0a4feb16f94",
+    "teacher": "microsoft/Phi-3-mini-4k-instruct",
+    "teacher_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "teacher_invoked_during_layercake_training": false,
+    "teacher_present_at_inference": false,
+    "source_parameters_copied": 0,
+    "source_transformer_blocks_retained": 0,
+    "source_tokenizer_required_at_inference": false
+  },
+  "training_material": {
+    "path": "results/abi_moonshot/grammar_pilot_v87/phi3-grammar-search-training-v1.abix",
+    "sha256": "18089e368a9dda04c33b9d5f00bdf22c400817300c0d023e59ad9201180103aa",
+    "artifact_role": "segregated_layercake_training_material_v3",
+    "domain_segregation_verified": true,
+    "capabilities": [
+      "grammar"
+    ],
+    "search_rows": 160,
+    "validation_rows": 0,
+    "teacher_tokens": 2455,
+    "promotion_eligible": false,
+    "claim_boundary": "This is a manually scoped one-capability development artifact, not an automatically labeled or complete English artifact."
+  },
+  "receiver": {
+    "parent_checkpoint_sha256": "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1",
+    "canonical_abi_sha256": "d024de52144a2d797d0501acb7deb55575ffca7e33f72900beff599cf0a97761",
+    "trainable_scope": "selected_task_cakes",
+    "trainable_route": 0,
+    "trainable_parameters": 99840,
+    "topology_changed": false,
+    "real_checkpoint_sha256": "5b27589c5ce0278273a903c66f45df4c89c236d1b26585bc85ac49e23a7377c3",
+    "shuffled_checkpoint_sha256": "3ec30f8d86ec4766a66736ed0be0ca8d4218adc3ef6e9f743293580db9bcebe5",
+    "real_changes_only_route0": true,
+    "shuffled_changes_only_route0": true
+  },
+  "matched_training": {
+    "seed": 87003,
+    "steps_each": 1000,
+    "batch_size": 4,
+    "cake_learning_rate": 0.0001,
+    "recovery_enabled": false,
+    "real_wall_seconds": 17.739211300002353,
+    "shuffled_wall_seconds": 17.540867600000638,
+    "real_peak_device_memory_bytes": 502067712,
+    "shuffled_peak_device_memory_bytes": 500802560,
+    "shuffled_derangement": {
+      "all_160_targets_changed": true,
+      "mapping_sha256": "a84d722d54be1295d89c88375c59f02f731d09cf4119a00a318ab262242ecef7"
+    }
+  },
+  "heldout_validation": {
+    "evidence_path": "results/abi_moonshot/grammar_pilot_v87/heldout-validation-evidence-v1.json",
+    "evidence_file_sha256": "7db4deba1a760592fa2e273855bc07d49b857493fdaa3c8bc8c9f029fbce4d8e",
+    "evidence_sha256": "2a78e9d47fe748d93a30967d21aa37ffb72c820dc1d038a329d7dae8ce8115b8",
+    "rows": 64,
+    "final_test_accessed": false,
+    "metrics": {
+      "parent": {
+        "mean_correct_log_probability": -3.9326504208147526,
+        "mean_correct_minus_incorrect_margin": -0.2590787597000599,
+        "positive_margin_accuracy": 0.25,
+        "autonomous_exact_accuracy": 0.0,
+        "repetition_collapses": 28
+      },
+      "real": {
+        "mean_correct_log_probability": -0.8000951617723331,
+        "mean_correct_minus_incorrect_margin": -0.04093890657532029,
+        "positive_margin_accuracy": 0.53125,
+        "autonomous_exact_accuracy": 0.21875,
+        "repetition_collapses": 23
+      },
+      "shuffled": {
+        "mean_correct_log_probability": -1.5197117277421057,
+        "mean_correct_minus_incorrect_margin": -0.11234754230827093,
+        "positive_margin_accuracy": 0.484375,
+        "autonomous_exact_accuracy": 0.0,
+        "repetition_collapses": 3
+      }
+    },
+    "paired_prompt_bootstrap_95_percent": {
+      "real_minus_parent_correct_log_probability": [
+        2.8577053478802554,
+        3.411884806409944
+      ],
+      "real_minus_shuffled_correct_log_probability": [
+        0.6258631875389256,
+        0.816580813145265
+      ],
+      "real_minus_parent_margin": [
+        0.10406217569834553,
+        0.3351236204907764
+      ],
+      "real_minus_shuffled_margin": [
+        0.0026338470925111324,
+        0.14099476049887016
+      ]
+    }
+  },
+  "decision": {
+    "causal_construct_signal": "PASS",
+    "reason": "The real prompt-target mapping beat both the unchanged parent and the matched shuffled-target control on all four preregistered paired likelihood comparisons, with strictly positive 95% lower bounds. Autonomous exact corrections improved from 0/64 for both controls to 14/64 for the real transfer.",
+    "formal_pilot_gate": "FAIL",
+    "blocking_gate": "Positive correct-over-incorrect margin was 34/64 (0.53125), below the preregistered 0.75 requirement.",
+    "additional_limitation": "The real candidate produced 23/64 repetition-collapse outputs and is not deployable or promotion eligible.",
+    "layercake_failure_claimed": false,
+    "abi_failure_claimed": false,
+    "interpretation": "The teacher-artifact-to-LayerCake mechanism is causally active at small scale, but this exact rank-64 route-0 acquisition recipe does not yet transfer grammar reliably enough to certify the construct as operationally complete."
+  },
+  "verification": {
+    "targeted_tests_passed": 33,
+    "targeted_tests_failed": 0,
+    "training_artifact_reverified": true,
+    "diff_check_passed": true
+  },
+  "next_bounded_step": {
+    "authorized_in_this_pass": false,
+    "recommendation": "Before automatic labeling, run one separately preregistered realization-focused correction that targets the measured failures: prompt-specific copying for the compound/quantifier structures and repetition-safe decoding. Keep the same 160/64 split and shuffled control.",
+    "no_sweep": true
+  },
+  "claim_boundary": "This decision proves a causal bounded transfer signal only. It does not prove broad English fluency, reliable grammar transfer, automatic labeling, domain transfer, minimality, teacher parity, Phase 3 completion, or a deployable LayerCake artifact."
+}

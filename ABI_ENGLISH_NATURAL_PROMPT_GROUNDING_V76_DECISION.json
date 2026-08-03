@@ -1,0 +1,129 @@
+{
+  "format": "abi-english-natural-prompt-grounding-v76-decision/1",
+  "status": "REJECTED_SOURCE_RUNTIME_AND_CORE_SEGREGATION_PREFLIGHT_LAYERCAKE_NOT_INVOKED",
+  "effective_date": "2026-08-03",
+  "protocol": {
+    "path": "ABI_ENGLISH_NATURAL_PROMPT_GROUNDING_EXPANSION_GPU_PROTOCOL_V76.json",
+    "sha256": "0acce1e132b0695de2b1da95fcb6b88ae1590883ee28cabf652f0a3b8eddc292"
+  },
+  "catalog": {
+    "path": "catalogs/natural_prompt_grounding_expansion_search_validation_v76.json",
+    "sha256": "4dbe01cfd019dc5ec48bccc0d281aea34ae6d4cc16f642adbe8b2a38d9eeda4a",
+    "full_records_not_executed": 19232,
+    "gpu_preflight_records": 180,
+    "human_prompt_surface_sources": [
+      "HuggingFaceH4/ultrachat_200k",
+      "OpenAssistant/oasst1"
+    ],
+    "corpus_assistant_messages_used": false,
+    "corpus_reference_answers_used": false
+  },
+  "diversity_gate": {
+    "status": "PASS",
+    "evidence": "results/abi_moonshot/reference_artifact_v76/natural-prompt-grounding-v76-diversity-v1.json",
+    "file_sha256": "df939c1fdba2bbe4559a20484e3a4f4f68ecb17399ba99dd3156f1ce3c294a45",
+    "unique_prompt_ratio_over_v71": 8.282774049217002,
+    "unique_prompt_utf8_byte_ratio_over_v71": 30.952436147141597,
+    "distinct_word_trigram_ratio_over_v71": 36.05110239763451,
+    "interpretation": "Surface diversity was materially broader, but diversity alone did not establish source completion or English-core purity."
+  },
+  "source_preflight": {
+    "bundle": "results/abi_moonshot/reference_artifact_v76/phi3-natural-prompt-grounding-gpu-preflight-v1.abix",
+    "archive_sha256": "e2448ceed659628e4aeaf8519940c4ef439191b910113924dbbd912fe40d46fa",
+    "manifest_sha256": "9b705547a24532d7260bde85a0227adf8e9ffcbbc04740b12a2408993b5b2c1d",
+    "runtime_audit": "results/abi_moonshot/reference_artifact_v76/phi3-natural-prompt-grounding-gpu-preflight-v1-runtime.json",
+    "runtime_audit_file_sha256": "ec1b47c8a8d070992703c64911fc9ec526e3e28d627c6e8e96f1ed7a2557a2cf",
+    "runtime_evidence_sha256": "ea51dcf62250bab5a14fe4acec6af8a6c98aa43b05203791c6c8b89cdfd2a9cb",
+    "records": 180,
+    "eos_terminated": 156,
+    "length_terminated": 24,
+    "required_length_terminated": 0,
+    "functional_passes": 156,
+    "teacher_tokens": 24802,
+    "teacher_generated_output_bytes": 91800,
+    "source_model_inference_seconds": 542.558768,
+    "one_time_source_extraction_seconds": 558.918126,
+    "device": "cuda",
+    "weight_execution_precision": "bitsandbytes_int8",
+    "cpu_offload_enabled": false,
+    "runtime_checks_failed": [
+      "all_rows_eos_terminated",
+      "no_length_terminated_rows",
+      "minimum_functional_passes_met"
+    ]
+  },
+  "length_failures_by_capability": {
+    "coherence": 4,
+    "conversation": 4,
+    "email_drafting": 1,
+    "format_control": 6,
+    "instruction_following": 2,
+    "prompt_grounding": 0,
+    "rewriting": 2,
+    "summarization": 0,
+    "tone_control": 5
+  },
+  "segregation_diagnostic": {
+    "status": "FAIL_CATALOG_LABEL_TOO_BROAD_FOR_ENGLISH_CORE",
+    "scope": "Manual diagnostic of the immutable 24 length-terminated preflight outputs; this is not a semantic-judge qualification.",
+    "finding": "The open-ended human prompt distribution admitted closed-book and specialist requests. The frozen source then emitted unsupplied product names, numerical claims, recipes, renewable-energy comparisons, game titles, and other factual/domain material despite the catalog declaring every row linguistic-form-only.",
+    "counterexamples": [
+      {
+        "probe_id": "natural-expansion-coherence-search-00168-gpu-preflight-v76",
+        "output_sha256": "29af43b8a49f5f099af42bc161d0f29f1f25478ec380483cdbc9fd470afa5e39",
+        "observed_material": "wind-turbine performance percentages and source attributions"
+      },
+      {
+        "probe_id": "natural-expansion-tone_control-search-00544-gpu-preflight-v76",
+        "output_sha256": "125ee77f324f5490bc27679badd1bb5372102be9c7603cf28e2553459ae4f011",
+        "observed_material": "named commercial video-game products"
+      },
+      {
+        "probe_id": "natural-expansion-format_control-search-01284-gpu-preflight-v76",
+        "output_sha256": "f353f8cd5f5fe0dcf44bca84ae160fc18a7ff7ecf9c98f88affcaf94c490e163",
+        "observed_material": "named commercial productivity products and asserted use cases"
+      },
+      {
+        "probe_id": "natural-expansion-format_control-search-02017-gpu-preflight-v76",
+        "observed_material": "recipe quantities and cooking procedure"
+      },
+      {
+        "probe_id": "natural-expansion-email_drafting-search-01317-gpu-preflight-v76",
+        "output_sha256": "a2f6ff2a3d67ff68d158dd61f9a3ee6f5ddac35668c5e0d5c654cf7c92d4aa17",
+        "observed_material": "open-ended sales content rather than supplied-context transformation"
+      }
+    ],
+    "interpretation": "The original static lexical filter's specialist_domain_rows_admitted=0 field is contradicted by frozen behavioral evidence and cannot authorize English-core composition."
+  },
+  "sequencing": {
+    "semantic_judge_preflight_executed": false,
+    "reason_semantic_judge_not_executed": "The earlier source-runtime preflight failed the protocol's zero-length-termination rule.",
+    "full_source_survey_executed": false,
+    "composition_executed": false,
+    "teacher_artifact_adequacy_executed": false,
+    "layercake_invoked": false,
+    "layercake_checkpoint_created": false
+  },
+  "failure_attribution": {
+    "classification": "ABI_SOURCE_ARTIFACT_RUNTIME_AND_SEGREGATION_FAILURE",
+    "layercake_host_regression": false,
+    "abi_layercake_transport_failure": false,
+    "abi_layercake_integration_failure": false,
+    "reason": "No V76 artifact crossed the ABI source boundary and the sealed LayerCake host was never invoked."
+  },
+  "next_authorized_mechanism": "Replace open-ended closed-book human prompts with a supplied-context-only natural-instruction expansion. Preserve human-written instruction surfaces but require every task to transform, summarize, rewrite, format, clarify, or respond to bounded supplied text; independently qualify prompt-domain demand before source answer generation; keep V71's qualified grammar and missing capabilities; and preflight completion, semantic quality, and segregation before any full survey.",
+  "nearby_changes_not_authorized": [
+    "raising the V76 generation ceiling",
+    "changing only the V76 source model",
+    "accepting length-terminated V76 rows post hoc",
+    "running the V76 semantic judge after the source stop rule",
+    "running the V76 full 19,232-record survey",
+    "training LayerCake from any V76 record"
+  ],
+  "negative_evidence_preserved": true,
+  "historical_evidence_changed": false,
+  "promotion_eligible": false,
+  "final_test_accessed": false,
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

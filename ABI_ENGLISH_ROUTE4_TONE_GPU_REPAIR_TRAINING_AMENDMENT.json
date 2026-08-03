@@ -1,0 +1,53 @@
+{
+  "schema_version": "abi-layercake-route-repair-training-amendment/1",
+  "recorded_at": "2026-07-31T18:36:00-04:00",
+  "status": "PREREGISTERED_AFTER_SUBSET_COMPOSITION_AND_BEFORE_TRAINING",
+  "parent_protocol": "ABI_ENGLISH_ROUTE4_TONE_GPU_REPAIR_PROTOCOL.json",
+  "composed_material": {
+    "main": {
+      "path": "results/abi_moonshot/segregated_acquisition_v3/phi3-natural-route4-tone-search-training-v1.abix",
+      "sha256": "4f77c0fde0383c521397b38855eebf5d56ac07a49d0f9fa8751885f6a5eaffb7",
+      "records": 46,
+      "capabilities": [
+        "tone_control"
+      ],
+      "training_eligible": true,
+      "domain_segregation_verified": true
+    },
+    "anchor": {
+      "path": "results/abi_moonshot/segregated_acquisition_v3/phi3-natural-route4-instruction-format-anchor-search-training-v1.abix",
+      "sha256": "e2678a14fed71e332f72114c981bef9ad4977db970a2a96b3bf8ee14ca8cbbc8",
+      "records": 169,
+      "capabilities": [
+        "instruction_following",
+        "format_control"
+      ],
+      "training_eligible": true,
+      "domain_segregation_verified": true
+    }
+  },
+  "explicit_training_defaults": {
+    "prompt_overlap_loss_weight": 1.0,
+    "recovery_start_step": 400,
+    "recovery_interval": 8,
+    "recovery_horizons": [
+      8,
+      16,
+      32
+    ],
+    "exclude_overlength_prompts": false
+  },
+  "unchanged_controls": {
+    "device": "cuda",
+    "seed": 39824,
+    "steps": 750,
+    "batch_size": 4,
+    "anchor_batch_size": 4,
+    "anchor_loss_weight": 1.0,
+    "trainable_task_cake_routes": [
+      4
+    ],
+    "no_new_teacher_inference": true,
+    "one_run_only": true
+  }
+}

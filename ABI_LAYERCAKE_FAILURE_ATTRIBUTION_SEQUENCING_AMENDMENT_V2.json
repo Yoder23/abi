@@ -1,0 +1,24 @@
+{
+  "format": "abi-layercake-failure-attribution-sequencing-amendment/2",
+  "status": "CONTROLLING_SEQUENCING_CLARIFICATION",
+  "effective_date": "2026-08-02",
+  "parent_contract": {
+    "path": "ABI_LAYERCAKE_FAILURE_ATTRIBUTION_CONTRACT_V1.json",
+    "sha256": "4272cd24e75fe641ff4a0cd66cef3913e3183a36b7b57665f0b6294b03ada60f",
+    "unchanged": true
+  },
+  "pre_acquisition_controls": [
+    "sealed_layercake_native",
+    "capability_naive_receiver",
+    "bridge_only",
+    "native_payload_same_path"
+  ],
+  "candidate_dependent_pre_promotion_controls": [
+    "actual_bridge_only_if_the_candidate_uses_a_nonidentity_bridge",
+    "shuffled_version_of_the_same_reference_adequate_abi_artifact"
+  ],
+  "rationale": "A shuffled negative control can prove dependence on learned artifact organization only after the unshuffled artifact passes the locked reference-adequacy gate. Shuffling an already failing artifact and observing another failure is non-informative. Deferring that control changes no promotion gate and authorizes no claim.",
+  "failure_attribution_rule": "The LayerCake host may be blamed only when the exact sealed native positive control fails. A passing native host and same-path control followed by inadequate candidate quality is ABI_EXTRACTION_FAILURE. A reference-adequate ABI artifact that fails only after installation is ABI_LAYERCAKE_INTEGRATION_FAILURE.",
+  "promotion_rule_unchanged": true,
+  "moonshot_complete": false
+}

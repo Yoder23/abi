@@ -1,0 +1,200 @@
+{
+  "format": "abi-capability-compiler-campaign-contract/1",
+  "status": "CONTROLLING_PLAN_PHASE_0_OPEN_NO_NEW_TRAINING_AUTHORIZED",
+  "effective_date": "2026-08-03",
+  "historical_evidence_changed": false,
+  "supersedes_for_future_work_only": [
+    "ABI_ENGLISH_ACQUISITION_CAMPAIGN_CONTRACT_V4.json"
+  ],
+  "identity": {
+    "category": "PROVENANCE_PRESERVING_CAPABILITY_COMPILER",
+    "not_a_claim_of": [
+      "a novel optimizer",
+      "a novel distillation loss",
+      "a novel low-rank adaptation method",
+      "lossless transfer from a foreign teacher",
+      "universal superiority over LoRA or distillation"
+    ],
+    "compiler_outputs": [
+      "minimal tested English substrate",
+      "separate specialist capability artifacts",
+      "quarantine inventory",
+      "teacher-free native LayerCake deployment"
+    ]
+  },
+  "product_superiority_definition": {
+    "all_common_quality_gates_pass": true,
+    "quality_noninferiority_required": true,
+    "strict_advantage_required_on_preregistered_deployment_and_capability_control_endpoints": true,
+    "source_teacher_absent_at_inference": true,
+    "source_base_absent_at_inference": true,
+    "native_layercake_execution": true,
+    "bounded_exclusion": true,
+    "exact_install_remove_restore_transfer": true,
+    "selected_only_execution": true,
+    "minimum_means_smallest_passing_tested_budget_with_adjacent_lower_failure": true
+  },
+  "mandatory_systems": [
+    "T0_frozen_teacher",
+    "L0_single_capability_lora",
+    "L1_routed_or_composed_lora_or_adapters",
+    "D0_sequence_distilled_same_size_transformer",
+    "D1_logit_distilled_same_size_transformer",
+    "D2_strongest_preregistered_distillation_variant",
+    "A0_full_abi_layercake",
+    "A1_abi_without_destination_labels",
+    "A2_abi_with_shuffled_targets",
+    "A3_bridge_only_layercake",
+    "A4_monolithic_unsegregated_abi"
+  ],
+  "fairness_views": [
+    "equal_imported_information",
+    "equal_final_deployment_constraint",
+    "matched_quality_frontier"
+  ],
+  "mandatory_accounting": [
+    "raw_source_prompts",
+    "unique_utf8_bytes",
+    "teacher_output_bytes",
+    "authoritative_teacher_tokens",
+    "stored_logits",
+    "stored_activations",
+    "source_parameters",
+    "copied_parameters",
+    "trainable_parameters",
+    "bridge_parameters",
+    "parameter_seconds",
+    "installed_bytes",
+    "active_bytes",
+    "disk_footprint",
+    "peak_cpu_ram",
+    "peak_vram",
+    "wall_time",
+    "source_inference_time",
+    "hardware_identity",
+    "software_revisions",
+    "external_artifact_generation_cost"
+  ],
+  "phases": [
+    {
+      "id": 0,
+      "name": "definitions_baselines_and_preregistration",
+      "status": "OPEN",
+      "training_authorized": false,
+      "exit": "machine-readable metrics, thresholds, splits, baselines, seeds, stop rules, and artifact identities frozen before results"
+    },
+    {
+      "id": 1,
+      "name": "capability_inventory_and_normalized_acquisition_ir",
+      "status": "LOCKED",
+      "depends_on": 0,
+      "exit": "immutable provenance-bound artifact passes adequacy, segregation, diversity, correctness, and adversarial verification"
+    },
+    {
+      "id": 2,
+      "name": "strong_matched_lora_and_distillation_baselines",
+      "status": "LOCKED",
+      "depends_on": 1,
+      "exit": "credible optimized baselines reproduced across three paired seeds with raw evidence and verifier"
+    },
+    {
+      "id": 3,
+      "name": "causal_teacher_to_layercake_acquisition",
+      "status": "LOCKED",
+      "depends_on": 2,
+      "exit": "A0 beats parent, shuffled, bridge-only, label-free, and monolithic controls while passing autonomous quality and repetition gates"
+    },
+    {
+      "id": 4,
+      "name": "sufficient_information_pareto_frontier",
+      "status": "LOCKED",
+      "depends_on": 3,
+      "exit": "smallest passing tested budget and adjacent lower failure reproduced across three seeds under all fairness views"
+    },
+    {
+      "id": 5,
+      "name": "selective_reconstruction_and_bounded_exclusion",
+      "status": "LOCKED",
+      "depends_on": 4,
+      "exit": "English isolation, domain install/remove/restore, immutable core, and adversarial exclusion pass"
+    },
+    {
+      "id": 6,
+      "name": "composition_portability_and_multi_source_provenance",
+      "status": "LOCKED",
+      "depends_on": 5,
+      "exit": "exact independent-host transfer, selected-only physical execution, non-collapsing composition, and deletion lineage pass"
+    },
+    {
+      "id": 7,
+      "name": "integrated_teacher_relative_and_systems_certification",
+      "status": "LOCKED",
+      "depends_on": 6,
+      "exit": "one final teacher-free LayerCake passes quality, isolation, CPU/GPU, genuine-cold-TTFT, memory, sparse execution, and reproducibility gates"
+    },
+    {
+      "id": 8,
+      "name": "independent_hostile_verification_and_release",
+      "status": "LOCKED",
+      "depends_on": 7,
+      "exit": "clean content-addressed release reproduces claims and survives adversarial verification on independent hardware"
+    }
+  ],
+  "existing_evidence_mapping": {
+    "V87": "positive causal signal and formal quality failure; does not pass Phase 3",
+    "V89": "bounded labeling pass supporting Phase 1; does not pass normalized artifact adequacy",
+    "v47": "historical bounded reference and broad English failure; not a compiler-campaign pass",
+    "sealed_layercake": "immutable external host and positive control; new ABI candidates inherit no performance claims"
+  },
+  "teacher_improvement": {
+    "required_for_abi_promotion": false,
+    "claim_scope_must_be_named_and_frozen": true,
+    "paired_primary_confidence_interval_lower_bound_must_exceed": 0.0,
+    "all_preregistered_quality_and_safety_dimensions_must_be_noninferior": true,
+    "same_final_checkpoint_required": true,
+    "universal_stronger_than_teacher_claim_allowed": false
+  },
+  "integrated_layercake_gates": {
+    "same_final_checkpoint_for_all_evidence": true,
+    "teacher_at_inference": false,
+    "source_transformer_blocks_at_inference": 0,
+    "phase_2_cpu_throughput_retention_minimum": 0.95,
+    "cpu_throughput_ratio_vs_optimized_transformer_minimum": 2.0,
+    "genuine_cold_streaming_request_required": true,
+    "cold_ttft_no_worse_than_optimized_transformer": true,
+    "active_memory_lower_than_optimized_transformer": true,
+    "process_rss_lower_than_optimized_transformer": true,
+    "repetition_collapse_count": 0,
+    "persistent_incremental_state": true,
+    "physical_sparse_execution": true,
+    "canonical_layercake_interface_unchanged": true
+  },
+  "numeric_gates": {
+    "status": "MUST_BE_FROZEN_IN_PHASE_0_BEFORE_EXPERIMENT",
+    "quality_noninferiority_margins": null,
+    "deployment_superiority_endpoints": null,
+    "leakage_bounds": null,
+    "confidence_level": 0.95,
+    "headline_repetitions_or_seeds_minimum": 3,
+    "distinct_prompts_minimum": 100,
+    "headline_runtime_repetitions_minimum": 20,
+    "p95_observations_minimum": 100,
+    "p99_observations_minimum": 1000,
+    "cross_model_throughput_primary": [
+      "median_bytes_per_second",
+      "median_characters_per_second"
+    ],
+    "paired_prompt_level_bootstrap_required": true
+  },
+  "decision_rules": [
+    "Do not claim ABI superiority without every mandatory optimized baseline.",
+    "Do not count an unreported base, tokenizer, router, cache, or artifact as free.",
+    "Do not expand data, parameters, or compute for ABI without giving matched baselines the same budget.",
+    "If conventional distillation matches ABI on quality, cost, portability, isolation, and modularity, adopt it and narrow ABI to the proven layer.",
+    "If routed LoRA wins and retaining the base satisfies the product requirement, use it and preserve the result.",
+    "Do not combine quality from one checkpoint with systems evidence from another.",
+    "Preserve all negative evidence and superseded protocols."
+  ],
+  "immediate_next_action": "Complete Phase 0 protocol and numeric gate freeze, then execute normalized artifact adequacy as Phase 1. Do not launch a new teacher-to-LayerCake training variant first.",
+  "moonshot_complete": false
+}

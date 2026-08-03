@@ -1,0 +1,96 @@
+{
+  "format": "abi-layercake-matched-quality-scope-v79-decision/1",
+  "status": "PASS_CONTROL_EXECUTION_FAIL_EXPANDED_NATIVE_QUALITY_SCOPE",
+  "effective_date": "2026-08-03",
+  "protocol": {
+    "path": "ABI_LAYERCAKE_MATCHED_QUALITY_SCOPE_CONTROL_PROTOCOL_V79.json",
+    "sha256": "53aba5fc0c539bbf09c6592c0faa7a56addfb9a244feac2b93d1f131f5c27160"
+  },
+  "implementation_correction": {
+    "path": "ABI_LAYERCAKE_MATCHED_QUALITY_SCOPE_CONTROL_IMPLEMENTATION_CORRECTION_V79A.json",
+    "sha256": "ccc5c34bd5e26028a852a632cdebaeac74a1a3e5d1fec1ccfdec51d1040c1575"
+  },
+  "preserved_tooling_failure": {
+    "path": "ABI_LAYERCAKE_V79_NATIVE_ROLE_LITERAL_FAILURE.json",
+    "sha256": "0aed0c592a98280b26de9804908617f1602b9be07e8cc83c09209a75e3bfdb9"
+  },
+  "evidence": {
+    "path": "results/abi_moonshot/receiver_controls/native-phase2-r3-matched-quality-scope-v79.json",
+    "file_sha256": "d42912d073c144b6af4bdd123bacf32a5d6a8a8d26a689f755c2766f72450fb4",
+    "evidence_sha256": "14bc256b1c9bb25ba994c974febd91e385493a1b1d9bf4a8d4f7bbe30d2b53c3",
+    "observations": 28,
+    "passes": 0,
+    "failures": 28,
+    "collapse_count": 8,
+    "minimum_10_of_28_screen_pass": false,
+    "all_28_pass": false
+  },
+  "execution_checks": {
+    "exact_external_host_verified": true,
+    "payload_is_sealed_native_checkpoint": true,
+    "native_same_path_control_bound": true,
+    "canonical_abi_identity_bound": true,
+    "persistent_three_layer_incremental_state": true,
+    "payload_immutable": true,
+    "sealed_layercake_checkout_still_clean": true
+  },
+  "layercake_locked_scope": {
+    "verdict": "UNCHANGED_PASS",
+    "checkpoint_sha256": "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1",
+    "cpu_throughput_ratio_128_bytes": 2.183032521299001,
+    "cpu_throughput_ratio_1024_bytes": 3.0377857643051516,
+    "heldout_bpb_delta": -0.22080958396765094,
+    "ttfo_ratio": 0.22931457943147135,
+    "active_memory_ratio": 0.2193748589760733,
+    "claim_boundary": "These locked Phase 2 measurements remain valid. V79 shows that they do not establish broad natural-English functional quality on the separate 28-prompt ABI screen."
+  },
+  "attribution_correction": {
+    "v76_v78": "UNCHANGED_ABI_FAILURES_BEFORE_LAYERCAKE_INVOCATION",
+    "v72_v75_previous_label": "ABI_ACQUISITION_QUALITY_FAILURE",
+    "v72_v75_corrected_label": "ABI_ACQUISITION_OR_EXPANDED_LAYERCAKE_HOST_CAPACITY_UNRESOLVED",
+    "not_a_layercake_regression": true,
+    "not_proven_abi_only": true,
+    "reason": "The exact native host and installation path execute correctly, but the native payload itself fails the same expanded quality screen. A passing locked-scope native control cannot localize an expanded-scope quality miss to ABI alone."
+  },
+  "comparative_context": {
+    "native": {
+      "passes": 0,
+      "collapse_count": 8
+    },
+    "v72": {
+      "passes": 1,
+      "collapse_count": 0
+    },
+    "v73": {
+      "passes": 1,
+      "collapse_count": 4
+    },
+    "v74": {
+      "passes": 2,
+      "collapse_count": 7
+    },
+    "v75": {
+      "passes": 2,
+      "collapse_count": 1
+    },
+    "interpretation": "None passes. Candidate improvements over native do not prove transfer, and native failure prevents ABI-only attribution of the remaining quality gap."
+  },
+  "next_required_control": {
+    "name": "same_topology_direct_target_oracle",
+    "objective": "Train or otherwise construct one exact-topology LayerCake payload directly from independently qualified target behavior, without requiring ABI minimization, and evaluate it on the unchanged 28-prompt screen.",
+    "if_pass": "The expanded host capacity is established and later ABI candidate quality failures can be localized to ABI acquisition or integration.",
+    "if_fail": "The exact host topology has not demonstrated the expanded English target; improve or re-scope LayerCake before spending more ABI extraction compute.",
+    "must_preserve": [
+      "exact LayerCake architecture identifier",
+      "canonical ABI",
+      "physical sparse execution",
+      "persistent incremental state",
+      "teacher absence at inference",
+      "sealed LayerCake repository immutability"
+    ]
+  },
+  "historical_evidence_changed": false,
+  "promotion_eligible": false,
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "abi-english-scale-catalog-failure/1",
+  "status": "FAILED_CLOSED_PRESERVED_NEGATIVE_EVIDENCE",
+  "created_date": "2026-07-30",
+  "protocol_amendment": "ABI_ENGLISH_DISTINCT_CONTEXT_SCALE_V2_PROTOCOL_AMENDMENT.json",
+  "attempted_output": "catalogs/english_distinct_context_scale_v1.json",
+  "output_created": false,
+  "source_model_inference_started": false,
+  "candidate_training_started": false,
+  "error": "story cannot supply three bounded context sentences",
+  "measured_cause": "At least one upstream row contains enough sentence delimiters to pass full-row eligibility but begins with an oversized sentence, leaving fewer than three complete sentences inside the bounded 720-character context.",
+  "repair_boundary": "Treat any row that cannot form the exact bounded context as ineligible during deterministic sampling. Do not truncate an incomplete sentence and do not change any campaign count, seed, prompt, source, candidate, or gate.",
+  "claim_boundary": "No catalog, teacher output, LayerCake checkpoint, or candidate evaluation was produced by this failed attempt."
+}

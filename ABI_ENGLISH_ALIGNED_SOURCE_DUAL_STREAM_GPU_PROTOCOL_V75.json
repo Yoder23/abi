@@ -1,0 +1,114 @@
+{
+  "format": "abi-english-aligned-source-dual-stream-gpu-protocol/75",
+  "status": "PREREGISTERED_AFTER_V74_FAILURE_BEFORE_CONTROLS_OR_TRAINING",
+  "effective_date": "2026-08-03",
+  "objective": "Test whether one separate knowledge-light language-preservation stream prevents collapse while V71 and aligned-source top-64 distillation install instruction behavior into the exact LayerCake payload.",
+  "measured_reason": {
+    "v74_decision": "ABI_ENGLISH_ALIGNED_SOURCE_FIRST_V74_DECISION.json",
+    "v74_result": "2/28 with seven collapses; all host and installation checks pass",
+    "only_material_change": "Enable the sealed supplied-context general-preservation stream at equal batch and loss weight.",
+    "not_changed": [
+      "aligned source",
+      "selected source layers 0/2/5",
+      "direct base checkpoint",
+      "V71 artifact and budget",
+      "exact LayerCake topology",
+      "online top-64 distillation",
+      "optimizer rates",
+      "steps",
+      "batches",
+      "decoding",
+      "screen and gates"
+    ]
+  },
+  "claim_separation": {
+    "layercake": "Immutable host and fresh native controls only.",
+    "abi": "All source, replay, V71, distillation, conformance, and payload-quality evidence.",
+    "integration": "Zero-parameter identity installation and same-candidate recertification.",
+    "failure_rule": "A passing native LayerCake control followed by candidate failure remains ABI acquisition or integration failure."
+  },
+  "fixed_parent_and_source": {
+    "direct_base": "results/abi_moonshot/segregated_acquisition_v3/three-block-aligned-distilgpt2-direct-0-2-5-v74",
+    "direct_base_checkpoint_sha256": "f4b0f6549cfc83764037251f47954ba6af7cea71bd9ff4db55f70fba613cfa0e",
+    "aligned_source": "../layercake_release/artifacts/moonshot/phase2_shallow_sparse_pretrained/teacher1200-seed-9824",
+    "aligned_source_checkpoint_sha256": "5452e30f272b772f48b36be6f6323b6d32dfc2b6dedd7a3a013262b173b2ba98",
+    "source_required_at_inference": false
+  },
+  "main_v71": {
+    "path": "results/abi_moonshot/reference_artifact_v71/phi3-multisource-english-training-v1.abix",
+    "archive_sha256": "da8e3b4940988c1a8a2d9baab47c7a82dbbe6bccd054a494a3ad77102e12886a",
+    "manifest_sha256": "ece8e6fe5f6286ae2571aaa251f08a4a587131b7dbea0e5f5f0444803d211d65",
+    "budget_index": 3,
+    "records": 2235,
+    "teacher_tokens": 84930
+  },
+  "general_preservation": {
+    "path": "../layercake_release/data/moonshot/phase2/instruction_curriculum_semantic_control_v2.jsonl",
+    "sha256": "bae6c1fe300a0214c1f6cb19a8c8eeee4f0b75681290be56f258a247cd488e53",
+    "bytes": 2981988,
+    "rows": 2520,
+    "role": "knowledge-light supplied-context language preservation",
+    "wikitext_or_specialist_domain_text": false,
+    "promotion_credit_inherited": false
+  },
+  "pre_acquisition_controls": {
+    "native": "results/abi_moonshot/external_layercake_controls/phase2-r3-phase8-native-v75.json",
+    "naive": "results/abi_moonshot/receiver_controls/capability-naive-seed-73129-v1-evaluation-v75.json",
+    "bridge_only": "results/abi_moonshot/receiver_controls/bridge-only-identity-v1-evaluation-v75.json",
+    "native_same_path": "results/abi_moonshot/receiver_controls/native-phase2-r3-same-path-v75.json",
+    "native_fresh_process_required": true
+  },
+  "stress_lock": {
+    "output": "results/abi_moonshot/stress/abi-aligned-source-dual-stream-stress-v75",
+    "seed": 509824,
+    "steps": 1,
+    "main_batch_size": 4,
+    "general_batch_size": 4,
+    "general_loss_weight": 1.0,
+    "trainable_scope": "full_core_same_tokenizer_logit_distillation",
+    "shared_learning_rate": 0.00002,
+    "cake_learning_rate": 0.0001,
+    "classifier_loss_weight": 1.0,
+    "source_distillation_weight": 0.5,
+    "source_distillation_top_k": 64,
+    "device": "cuda"
+  },
+  "candidate_lock_if_stress_passes": {
+    "output": "results/abi_moonshot/segregated_acquisition_v3/three-block-aligned-source-dual-stream-seed509824-steps2400-v75",
+    "seed": 509824,
+    "steps": 2400,
+    "main_batch_size": 4,
+    "general_batch_size": 4,
+    "general_loss_weight": 1.0,
+    "gradient_accumulation_steps": 1,
+    "trainable_scope": "full_core_same_tokenizer_logit_distillation",
+    "sampling_strategy": "balanced_capabilities",
+    "shared_learning_rate": 0.00002,
+    "cake_learning_rate": 0.0001,
+    "classifier_loss_weight": 1.0,
+    "source_distillation_weight": 0.5,
+    "source_distillation_top_k": 64,
+    "max_tokens": 1024,
+    "recovery_start_step": 300,
+    "recovery_interval": 4,
+    "recovery_horizons": [8, 32, 64],
+    "anchor_bundle": null,
+    "required_exact_source_blocks_retained_after_conformance": 0,
+    "source_teacher_removed_before_checkpoint": true
+  },
+  "integration": {
+    "payload": "results/abi_moonshot/receiver_controls/v75-aligned-source-dual-stream-payload-v1",
+    "bridge_parameters": 0,
+    "screen": "results/abi_moonshot/receiver_controls/v75-aligned-source-dual-stream-exact-host-screen-v1.json"
+  },
+  "screen_gate": {
+    "catalog": "catalogs/postcert_novel_english_audit_v1.json",
+    "minimum_passes": 10,
+    "observations": 28,
+    "required_collapse_count": 0,
+    "failure_action": "Preserve and reject. Do not sweep replay weight, source loss, rates, steps, layer selection, or seed. Use the new paired bottleneck to choose a materially different ABI representation or expand source-artifact information breadth."
+  },
+  "promotion_boundary": "A screen pass authorizes shuffled-artifact causality and full same-payload certification only.",
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

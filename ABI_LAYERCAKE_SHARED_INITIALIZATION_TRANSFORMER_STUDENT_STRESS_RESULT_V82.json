@@ -1,0 +1,46 @@
+{
+  "format": "abi-layercake-shared-initialization-transformer-student-stress-result/1",
+  "status": "PASS_STRESS_AUTHORIZE_LOCKED_FULL_CONTROL",
+  "effective_date": "2026-08-03",
+  "protocol": "ABI_LAYERCAKE_SHARED_INITIALIZATION_TRANSFORMER_STUDENT_GPU_PROTOCOL_V82.json",
+  "implementation_amendments": [
+    "ABI_LAYERCAKE_SHARED_INITIALIZATION_TRANSFORMER_STUDENT_IMPLEMENTATION_AMENDMENT_V82A.json",
+    "ABI_LAYERCAKE_SHARED_INITIALIZATION_TRANSFORMER_STUDENT_ASSERTION_AMENDMENT_V82B.json"
+  ],
+  "materialized_base": {
+    "path": "results/abi_moonshot/transformer_control_v82/v41-shared-transformer-identity-cake-base-v1",
+    "metadata_file_sha256": "7fafacf146b537f4408a6614d9f8313fabb367a7a942f77deeeb70bc140477d5",
+    "manifest_sha256": "9561b026a682d64019f923db7a5ac5340eb17323e48e221c2543985e92e5615f",
+    "checkpoint_sha256": "664e9cf343e05d413128313a753555c5cf905cfe1f2a4b1556ef3c01654d62f8",
+    "shared_transformer_tensors_preserved_exact": true,
+    "plain_transformer_logit_maximum_absolute_difference": 0.0,
+    "identity_task_cakes": 10,
+    "shared_transformer_parameters": 60648960,
+    "total_container_parameters": 61655050
+  },
+  "untrained_base_screen": {
+    "path": "results/abi_moonshot/transformer_control_v82/v41-shared-transformer-identity-cake-base-v1-screen28.json",
+    "file_sha256": "f46963977d5f937057cb1128b95aa7eeceadcd93e29b96878f53f3ffc25a15a4",
+    "evidence_sha256": "e7a8bdc43ac4460386ccedbb93f662bd972365c522f6b31676440454f7711e8c",
+    "passes": 8,
+    "collapse_count": 0,
+    "v41_layercake_parent_passes": 10,
+    "v41_layercake_parent_collapse_count": 0,
+    "measured_parent_cake_contribution_on_screen": 2
+  },
+  "stress": {
+    "path": "results/abi_moonshot/transformer_control_v82/stress-v41-shared-transformer-student-seed629824-v1/metadata.json",
+    "file_sha256": "96aa7693cf1108de7a293166ef96605422dfdefe3afd5693e7586ef05c02d7df",
+    "manifest_sha256": "d44d230055290d398f8745eae2f258bec9dc42bbf20a9870bc65112ea4820264",
+    "checkpoint_sha256": "8f28fd07eb6350fd23b3c1abe0219d3c4f0cbd778383de8639407ecb197cec17",
+    "device": "cuda",
+    "successful_optimizer_steps": 1,
+    "optimizer_parameter_element_count": 60648960,
+    "peak_device_memory_bytes": 1921913856,
+    "frozen_task_container_preserved_exact": true,
+    "all_task_cake_up_weights_zero_exact": true
+  },
+  "full_control_authorized": true,
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

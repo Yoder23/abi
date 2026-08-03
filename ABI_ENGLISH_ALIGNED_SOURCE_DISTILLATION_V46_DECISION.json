@@ -1,0 +1,28 @@
+{
+  "format": "abi-english-aligned-source-distillation-v46-decision/1",
+  "status": "REJECTED_AUTONOMOUS_QUALITY",
+  "effective_date": "2026-08-02",
+  "protocol": "ABI_ENGLISH_ALIGNED_SOURCE_DISTILLATION_GPU_PROTOCOL_V46.json",
+  "checkpoint": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-broad-natural-aligned-source-distill-seed399824-steps6000-v46",
+    "checkpoint_sha256": "e9ff684c8e89164c0e38192280fa07a9d76c041459cd485bdf026c703b611206",
+    "manifest_sha256": "eb9c25b11f6cefac9d911d82b278feb03c66e8b4e18dd19a564ad1b85f2b1910",
+    "successful_gpu_optimizer_steps": 6000,
+    "teacher_present_at_inference": false
+  },
+  "locked_natural_screen": {
+    "evidence": "results/abi_moonshot/postcert_audit_v2/v46-aligned-source-distill-natural-norepeat4.json",
+    "file_sha256": "1b793c21153a45332dbcd5def98dc687b9dd0ed0e15462c7568aabb44b746a0c",
+    "internal_evidence_sha256": "8b4517f8c3ba3c0980ecb14a26aced161d6452152de2c79c2fe074237c2cd0be",
+    "observations": 28,
+    "passes": 7,
+    "required_passes": 9,
+    "collapse_count": 0,
+    "passes_gate": false
+  },
+  "measured_interpretation": "The GPU-aligned GPT-2 Medium source remained coherent enough to avoid collapse, but its online top-64 distribution reduced the exact deployed LayerCake to 7/28 passes, below both v41 and the locked screen gate. Improving an auxiliary source did not solve functional transfer into the three-block host.",
+  "decision": "Reject before the 1,400-observation and CPU certification stages. Close the two-stage auxiliary-source soft-distillation branch without hyperparameter sweeps. Test direct, shape-compatible source-weight extraction into the existing LayerCake topology, explicitly account copied tensors, then use bounded GPU conformance to eliminate exact source-block retention before any promotion claim.",
+  "negative_evidence_preserved": true,
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

@@ -1,0 +1,124 @@
+{
+  "format": "abi-layercake-shared-initialization-transformer-student-v82-decision/1",
+  "status": "REJECTED_BOTH_PATHS_FAIL_CURRENT_INFORMATION_AND_CONDITIONING_BUDGET",
+  "effective_date": "2026-08-03",
+  "protocol": {
+    "path": "ABI_LAYERCAKE_SHARED_INITIALIZATION_TRANSFORMER_STUDENT_GPU_PROTOCOL_V82.json",
+    "sha256": "906844b2c55da9fdd42925d6279f00c5cc87302644576e85d21de905cba6e5c6"
+  },
+  "preserved_implementation_failures": [
+    "ABI_LAYERCAKE_V82_TRANSFORMER_CONTROL_CLI_WIRING_FAILURE.json",
+    "ABI_LAYERCAKE_V82_TRANSFORMER_CONTROL_FROZEN_SHARED_ASSERTION_FAILURE.json"
+  ],
+  "implementation_amendments": [
+    "ABI_LAYERCAKE_SHARED_INITIALIZATION_TRANSFORMER_STUDENT_IMPLEMENTATION_AMENDMENT_V82A.json",
+    "ABI_LAYERCAKE_SHARED_INITIALIZATION_TRANSFORMER_STUDENT_ASSERTION_AMENDMENT_V82B.json"
+  ],
+  "materialized_control": {
+    "path": "results/abi_moonshot/transformer_control_v82/v41-shared-transformer-identity-cake-base-v1",
+    "checkpoint_sha256": "664e9cf343e05d413128313a753555c5cf905cfe1f2a4b1556ef3c01654d62f8",
+    "shared_transformer_state_preserved_exact": true,
+    "plain_transformer_logit_maximum_absolute_difference": 0.0,
+    "shared_transformer_parameters": 60648960,
+    "frozen_identity_container_parameters": 1006090,
+    "total_container_parameters": 61655050,
+    "task_cake_effect_disabled_exact": true
+  },
+  "trained_control": {
+    "path": "results/abi_moonshot/transformer_control_v82/v41-shared-transformer-student-seed629824-steps6000-v1",
+    "metadata_file_sha256": "6776b495c7d7122b3978600b2e5ee5e8471de1185ca3eca69b8ed794d87c3222",
+    "metadata_manifest_sha256": "8727a1ef5d3d21b62da6273083f626c55d89c6ded9f76bf36fe321b910fdd420",
+    "checkpoint_sha256": "d67b180087904ca046e2890e6eded8cd4b0435d99c7bc0900c1ff76d2cbd02ac",
+    "successful_optimizer_steps": 6000,
+    "skipped_amp_optimizer_steps": 5,
+    "optimizer_parameter_element_count": 60648960,
+    "wall_seconds": 617.5804131999976,
+    "gpu_hours": 0.1715501147777771,
+    "peak_device_memory_bytes": 3394402304,
+    "active_parameter_seconds": 37455609776.95013,
+    "frozen_identity_container_preserved_exact": true,
+    "teacher_present_at_inference": false
+  },
+  "exact_information_match_to_v81": {
+    "same_seed": 629824,
+    "same_successful_optimizer_steps": 6000,
+    "same_main_sample_sequence": true,
+    "same_general_sample_sequence": true,
+    "same_main_samples_by_capability": true,
+    "same_general_samples_by_capability": true,
+    "same_supervised_main_tokens": 852699,
+    "same_general_reference_tokens": 1592318,
+    "same_general_input_and_output_utf8_bytes": 17957138,
+    "same_unique_main_records": 2235,
+    "same_unique_main_teacher_tokens": 84930,
+    "same_unique_general_records": 4894,
+    "same_unique_general_reference_tokens": 302096,
+    "same_learning_rate_and_recovery_schedule": true,
+    "necessary_difference": "V82 classifier loss weight is zero because the plain transformer control has no functional router; V81 used 0.25."
+  },
+  "quality": {
+    "required": {
+      "passes": 19,
+      "collapse_count": 0
+    },
+    "layercake_v41_base": {
+      "passes": 10,
+      "collapse_count": 0
+    },
+    "layercake_v81_trained": {
+      "passes": 4,
+      "collapse_count": 3,
+      "change_from_base": -6
+    },
+    "transformer_v82_base": {
+      "evidence_path": "results/abi_moonshot/transformer_control_v82/v41-shared-transformer-identity-cake-base-v1-screen28.json",
+      "file_sha256": "f46963977d5f937057cb1128b95aa7eeceadcd93e29b96878f53f3ffc25a15a4",
+      "evidence_sha256": "e7a8bdc43ac4460386ccedbb93f662bd972365c522f6b31676440454f7711e8c",
+      "passes": 8,
+      "collapse_count": 0
+    },
+    "transformer_v82_trained": {
+      "evidence_path": "results/abi_moonshot/transformer_control_v82/v41-shared-transformer-student-seed629824-steps6000-v1-screen28.json",
+      "file_sha256": "a7c61855bbd1dc5d0aa548dd3ad0c1062bb414b506005e514f90089673348f4f",
+      "evidence_sha256": "4cebf8e951a8ac47fbc2437d1cf08d441b1c66567acc06a9aa376710833f34f6",
+      "passes": 6,
+      "collapse_count": 0,
+      "change_from_base": -2
+    },
+    "trained_prompt_outcomes_equal": 26,
+    "trained_transformer_only_passes": 2,
+    "trained_layercake_only_passes": 0
+  },
+  "causal_decision": {
+    "current_information_and_conditioning_budget_adequate": false,
+    "layercake_only_failure_proven": false,
+    "abi_transfer_tested": false,
+    "expanded_layercake_capacity_proven": false,
+    "finding": "The exact same imported records and replay tokens degrade both the shared transformer path and LayerCake. LayerCake degrades more and collapses, but the absolute 19/28 target is not reached by either architecture, so the current failure cannot be assigned solely to LayerCake.",
+    "locked_layercake_phase2_scope": "UNCHANGED_PASS"
+  },
+  "next_authorized_campaign": {
+    "objective": "Build a materially broader, intrinsically domain-segregated, fourteen-capability artifact from qualified open-weight sources; then require the shared-initialization transformer control to clear 19/28 with zero collapse before using that artifact to localize a LayerCake acquisition miss.",
+    "abi_stage": [
+      "Generate prompts whose linguistic-only status follows from construction rather than a fallible open-ended prompt classifier.",
+      "Retain authoritative source token IDs, finish reasons, runtime, GPU identity, provenance, and per-capability functional qualification.",
+      "Use supplied abstract or nonce content and separately labeled domain records; reject outside facts from the English stream.",
+      "Account nested unique-token budgets and do not claim a minimum until one passes and its adjacent lower budget fails."
+    ],
+    "screening_sequence": [
+      "First screen the same-size shared-initialization transformer acquisition control.",
+      "Only when that control reaches 19/28 with zero collapse is the information budget adequate for a LayerCake attribution experiment.",
+      "Then train the exact LayerCake host on the same artifact and rerun the full integrated quality and performance gates."
+    ],
+    "forbidden": [
+      "more V80/V81 sampler, loss-weight, duration, or nearby curriculum sweeps",
+      "calling V72-V75 ABI-only failures",
+      "combining LayerCake speed with another lineage's quality",
+      "claiming V82 is an optimized transformer performance baseline"
+    ]
+  },
+  "historical_evidence_changed": false,
+  "promotion_eligible": false,
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

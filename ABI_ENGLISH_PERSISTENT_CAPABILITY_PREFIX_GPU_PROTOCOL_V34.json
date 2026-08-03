@@ -1,0 +1,82 @@
+{
+  "format": "abi-english-persistent-capability-prefix-gpu-protocol/1",
+  "status": "PREREGISTERED_AFTER_V33_REJECTION_BEFORE_IMPLEMENTATION",
+  "effective_date": "2026-08-02",
+  "controlling_failure": "ABI_ENGLISH_CAPABILITY_CAKE_V33_DECISION.json",
+  "hypothesis": "Eight learned capability-specific KV prefix positions across each of the three frozen transformer blocks can carry acquired English behavior inside persistent incremental state. A small hashed token router selects one of 14 capability prefixes and one rank-64 capability cake. Prefix state is physically selected, the shared transformer remains frozen, and only one capability path is active.",
+  "architecture_lock": {
+    "transformer_blocks": 3,
+    "shared_transformer_frozen": true,
+    "installed_capabilities": 14,
+    "canonical_external_routes": 10,
+    "final_capability_cake_rank": 64,
+    "maximum_active_final_cakes": 1,
+    "prefix_positions_per_layer": 8,
+    "prefix_layers": 3,
+    "prefix_key_value_heads": 12,
+    "prefix_head_width": 64,
+    "maximum_active_prefixes": 1,
+    "router_hash_buckets": 4096,
+    "router_width": 32,
+    "router_is_neural_not_symbolic": true,
+    "prefix_removed_from_public_cache_accounting": true,
+    "real_prompt_position_ids_unchanged": true,
+    "canonical_abi_changed": false
+  },
+  "training_scope": {
+    "trainable": [
+      "14 rank-64 capability cakes",
+      "14 capability KV key prefixes",
+      "14 capability KV value prefixes",
+      "hashed-token capability router"
+    ],
+    "frozen": [
+      "shared embeddings",
+      "all transformer block weights",
+      "language head",
+      "source teacher",
+      "parent checkpoint on disk"
+    ],
+    "device": "cuda",
+    "cpu_training_authorized": false
+  },
+  "stress_lock": {
+    "output": "results/abi_moonshot/stress/abi-broad-natural-persistent-prefix-p8-r64-stress-v34",
+    "seed": 79824,
+    "successful_optimizer_steps": 1,
+    "require_frozen_shared_hash_exact": true,
+    "require_teacher_absent": true,
+    "require_physical_one_prefix_and_one_cake": true,
+    "require_persistent_cache_exact": true,
+    "require_fixed_token_parent_retention_at_least": 0.95,
+    "require_cpu_rss_below_bytes": 214990848
+  },
+  "candidate_lock_if_prechecks_pass": {
+    "output": "results/abi_moonshot/segregated_acquisition_v3/three-block-broad-natural-persistent-prefix-p8-r64-seed79824-steps18000-v34",
+    "seed": 79824,
+    "device": "cuda",
+    "successful_optimizer_steps": 18000,
+    "main_batch_size": 4,
+    "main_sampling_strategy": "balanced_capabilities",
+    "anchor_batch_size": 4,
+    "anchor_sampling_strategy": "balanced_capabilities",
+    "anchor_loss_weight": 1.0,
+    "general_batch_size": 4,
+    "general_loss_weight": 1.0,
+    "cake_learning_rate": 0.00005,
+    "prefix_and_router_learning_rate": 0.00005,
+    "classifier_loss_weight": 0.25,
+    "max_tokens": 1024,
+    "recovery_start_step": 400,
+    "recovery_interval": 8,
+    "recovery_horizons": [4, 8, 16]
+  },
+  "decision_rule": "Reject before the full GPU run on any stress, frozen-scope, physical-prefix, cache, fixed-token speed, TTFT, or RSS failure. If trained, reject immediately on disclosed autonomous natural quality or collapse failure; otherwise require the unchanged full broad14, teacher-relative, autonomous CPU throughput, TTFT, RSS, identity, canonical ABI, and reproduction gates. Do not sweep prefix length, router size, rank, seed, steps, or loss weights.",
+  "hardware_policy": {
+    "acquisition_training": "cuda",
+    "cpu_role": "exact deployed LayerCake inference diagnostics and certification only"
+  },
+  "disclosed_postcert_final_split_accessed_before_protocol": true,
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

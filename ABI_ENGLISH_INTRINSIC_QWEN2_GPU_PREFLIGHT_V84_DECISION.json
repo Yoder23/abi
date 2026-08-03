@@ -1,0 +1,89 @@
+{
+  "format": "abi-english-intrinsic-qwen2-gpu-preflight-v84-decision/1",
+  "status": "REJECTED_BEFORE_FULL_SURVEY_OR_LAYERCAKE",
+  "effective_date": "2026-08-03",
+  "protocol": {
+    "path": "ABI_ENGLISH_INTRINSIC_QWEN2_GPU_PREFLIGHT_PROTOCOL_V84.json",
+    "sha256": "29821ba5147cfdebc5110fd43e17e99153e2f19b5c0a7f596433d6211778e882"
+  },
+  "source": {
+    "model": "Qwen/Qwen2-7B-Instruct",
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "source_manifest_sha256": "baa20319cec7d6dac2809d61048d57927318a48820a8fd1ffb0b60b4058bd92d",
+    "device": "cuda",
+    "hardware": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "weight_execution_precision": "bitsandbytes_int8",
+    "cpu_offload_enabled": false
+  },
+  "bundle": {
+    "path": "results/abi_moonshot/intrinsic_reference_v84/qwen2-7b-intrinsic-gpu-preflight-v84.abix",
+    "sha256": "40e79d8a2c4e1157b319d483ebb66a4e44d180aafc9945e895e2a6b62a9aeffc",
+    "manifest_sha256": "c479cfcda80fe647833069d817b832de6e5295dd63f0e626a6c0b67c52015879",
+    "receipt_path": "results/abi_moonshot/intrinsic_reference_v84/qwen2-7b-intrinsic-gpu-preflight-v84.abix.receipt.json",
+    "receipt_sha256": "bf362a91e7c94155cdf464aabb9479c267c8ff8a8e3dc74999e2f30818ea6edf"
+  },
+  "runtime_audit": {
+    "path": "results/abi_moonshot/intrinsic_reference_v84/qwen2-7b-intrinsic-gpu-preflight-runtime-audit-v84.json",
+    "sha256": "d11bba64af59537ea6e519b0c5ac3c2a8f651137df66582524cca41180ac4fe8",
+    "evidence_sha256": "0f7f623a0180b9fed00ac338a900976f168203cabfd82724b5c75a226661024d",
+    "status": "FAIL_SOURCE_RUNTIME_EVIDENCE_PREFLIGHT"
+  },
+  "accounting": {
+    "records": 168,
+    "passing": 81,
+    "failing": 87,
+    "eos_terminated": 136,
+    "length_terminated": 32,
+    "teacher_tokens": 8791,
+    "teacher_generated_output_bytes": 37181,
+    "source_model_inference_seconds": 440.38022,
+    "one_time_source_extraction_seconds": 465.939624,
+    "authoritative_generated_id_counts": 168,
+    "positive_teacher_input_token_counts": 168
+  },
+  "locked_gate": {
+    "minimum_functional_passes_per_capability": 10,
+    "required_eos_terminations": 168,
+    "allowed_length_terminations": 0
+  },
+  "capability_matrix": [
+    {"capability": "abstention", "passed": 0, "total": 12, "length_terminated": 3, "gate_pass": false},
+    {"capability": "cake_output_realization", "passed": 7, "total": 12, "length_terminated": 2, "gate_pass": false},
+    {"capability": "clarification", "passed": 5, "total": 12, "length_terminated": 1, "gate_pass": false},
+    {"capability": "coherence", "passed": 7, "total": 12, "length_terminated": 2, "gate_pass": false},
+    {"capability": "conversation", "passed": 1, "total": 12, "length_terminated": 6, "gate_pass": false},
+    {"capability": "domain_independent_reasoning", "passed": 0, "total": 12, "length_terminated": 5, "gate_pass": false},
+    {"capability": "email_drafting", "passed": 2, "total": 12, "length_terminated": 10, "gate_pass": false},
+    {"capability": "format_control", "passed": 7, "total": 12, "length_terminated": 1, "gate_pass": false},
+    {"capability": "grammar", "passed": 5, "total": 12, "length_terminated": 0, "gate_pass": false},
+    {"capability": "instruction_following", "passed": 12, "total": 12, "length_terminated": 0, "gate_pass": true},
+    {"capability": "prompt_grounding", "passed": 10, "total": 12, "length_terminated": 2, "gate_pass": true},
+    {"capability": "rewriting", "passed": 12, "total": 12, "length_terminated": 0, "gate_pass": true},
+    {"capability": "summarization", "passed": 8, "total": 12, "length_terminated": 0, "gate_pass": false},
+    {"capability": "tone_control", "passed": 5, "total": 12, "length_terminated": 0, "gate_pass": false}
+  ],
+  "source_comparison": {
+    "phi3_passes": 66,
+    "qwen2_passes": 81,
+    "phi3_length_terminated": 27,
+    "qwen2_length_terminated": 32,
+    "phi3_capabilities_clearing_gate": 1,
+    "qwen2_capabilities_clearing_gate": 3,
+    "conclusion": "A larger source alone does not solve the response-channel and termination failure."
+  },
+  "decision": "Reject Qwen2-7B before the 10,304-record survey. Do not substitute another source without a measured reason. Diagnose and preregister an ABI response-extraction/semantic-qualification method while preserving raw source outputs and complete accounting.",
+  "failure_attribution": "ABI_SOURCE_SELECTION_OR_ARTIFACT_PREFLIGHT_FAILURE",
+  "layercake_boundary": {
+    "layercake_invoked": false,
+    "layercake_training_executed": false,
+    "layercake_checkpoint_created": false,
+    "layercake_failure": false,
+    "sealed_layercake_host_reopened": false,
+    "locked_phase_2_result_changed": false
+  },
+  "full_survey_executed": false,
+  "matched_transformer_training_executed": false,
+  "negative_evidence_preserved": true,
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

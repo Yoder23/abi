@@ -1,0 +1,61 @@
+{
+  "format": "abi-english-aligned-source-first-decision/74",
+  "status": "REJECT_ABI_ACQUISITION_FAILURE_LAYERCAKE_HOST_PASS",
+  "effective_date": "2026-08-03",
+  "protocol": {
+    "path": "ABI_ENGLISH_ALIGNED_SOURCE_FIRST_DISTILLATION_GPU_PROTOCOL_V74.json",
+    "sha256": "e580058a0c6e132c2182aed8dbedf757ba9d6b28ee8d0ac73b93f0752fc22a25"
+  },
+  "zero_step_cli_incident": {
+    "failure": "ABI_ENGLISH_V74_TRAINABLE_SCOPE_LITERAL_FAILURE.json",
+    "amendment": "ABI_ENGLISH_V74_TRAINABLE_SCOPE_LITERAL_AMENDMENT.json",
+    "optimizer_steps_before_correction": 0,
+    "scientific_configuration_changed": false
+  },
+  "aligned_source": {
+    "checkpoint_sha256": "5452e30f272b772f48b36be6f6323b6d32dfc2b6dedd7a3a013262b173b2ba98",
+    "parameters": 81912576,
+    "prior_alignment_steps": 1200,
+    "prior_response_tokens": 492393,
+    "prior_raw_utf8_bytes": 4714626,
+    "prior_wall_seconds": 151.15027919993736,
+    "required_at_final_inference": false
+  },
+  "candidate": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-aligned-source-first-distill-seed499824-steps2400-v74",
+    "checkpoint_sha256": "ec854133f5bd3418a9ff9732700ee0a7e8a65cc265214ed5e8fb1d22bf20224c",
+    "metadata_file_sha256": "398e035c5ccaeee0dc4c90958f3df5f2ea0411d0686c3b04e12bfb8cc6a250fe",
+    "manifest_sha256": "e726b143542f54861255379b7724a36e92054f92408fa1316ad2bbaaa3363c87",
+    "payload_manifest_file_sha256": "47a7c670e8930f156294d02cca5d3f314da51d0bde2f1760c320e666520f7510",
+    "payload_manifest_sha256": "3ba974ecd6fe4e49c7daf05c0bd3a1e7703041f319a036bbf2d28a511d1ff771",
+    "successful_optimizer_steps": 2400,
+    "wall_seconds": 314.72476760000063,
+    "online_source_forward_tokens": 842819,
+    "online_source_inference_seconds": 20.9780605001215,
+    "source_parameters_copied_at_initialization": 60648960,
+    "source_parameters_retained_exact": 0,
+    "source_blocks_retained_exact": 0,
+    "teacher_present_at_inference": false,
+    "bridge_parameters": 0
+  },
+  "screen": {
+    "path": "results/abi_moonshot/receiver_controls/v74-aligned-source-first-distill-exact-host-screen-v1.json",
+    "file_sha256": "25939f3c8c704408c2e2d6ab52cd2cc5b01987b2949ba0597cce5632ffc48829",
+    "evidence_sha256": "2c757b65121fcadaf454da565aafabe18d3f55760d281478ced51b353275bd67",
+    "passes": 2,
+    "required_passes": 10,
+    "observations": 28,
+    "collapse_count": 7,
+    "all_host_and_installation_checks_passed": true
+  },
+  "attribution": {
+    "layercake_host_regression": false,
+    "abi_layercake_installation_failure": false,
+    "abi_acquisition_quality_failure": true,
+    "measured_bottleneck": "V71 task supervision plus aligned-source top-64 logits does not provide a broad independent language-preservation stream while all three compressed blocks are changing. Held-out quality remains low and collapse increases.",
+    "nearby_source_layer_learning_rate_loss_duration_or_seed_sweep_authorized": false
+  },
+  "next_authorized_mechanism": "Add exactly one separate sealed, knowledge-light, supplied-context language-preservation replay while holding aligned source, extracted layers, V71, topology, distillation, optimizer, steps, batches, and gates fixed. Do not use WikiText or specialist-domain text.",
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

@@ -1,0 +1,14 @@
+{
+  "format": "abi-english-v74-trainable-scope-literal-failure/1",
+  "status": "PRESERVED_ZERO_STEP_CLI_VALIDATION_FAILURE",
+  "effective_date": "2026-08-03",
+  "protocol": "ABI_ENGLISH_ALIGNED_SOURCE_FIRST_DISTILLATION_GPU_PROTOCOL_V74.json",
+  "requested_scope_literal": "same_tokenizer_logit_distillation",
+  "implemented_scope_literal": "full_core_same_tokenizer_logit_distillation",
+  "failure_stage": "argparse validation before model, bundle, optimizer, or CUDA training initialization",
+  "optimizer_steps": 0,
+  "checkpoint_created": false,
+  "source_or_artifact_mutated": false,
+  "layercake_invoked_for_candidate_training": false,
+  "scientific_configuration_changed": false
+}

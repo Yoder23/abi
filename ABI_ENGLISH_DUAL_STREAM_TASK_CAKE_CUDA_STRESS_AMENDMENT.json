@@ -1,0 +1,45 @@
+{
+  "schema_version": "abi-english-dual-stream-task-cake-cuda-stress-amendment/1",
+  "status": "PASS_AUTHORIZE_SINGLE_PREREGISTERED_V22_CANDIDATE",
+  "created_date": "2026-07-31",
+  "protocol": {
+    "path": "ABI_ENGLISH_DUAL_STREAM_TASK_CAKE_ACQUISITION_PROTOCOL.json",
+    "sha256": "09e7933cc06c3293068ee031a6f9190fca90e5608a32a8b794bf54481a923b91"
+  },
+  "superseded_invalid_attempt": "ABI_ENGLISH_DUAL_STREAM_TASK_CAKE_STRESS_PERSISTENCE_FAILURE.json",
+  "stress_artifact": {
+    "path": "results/abi_moonshot/stress_tests/dualstream-taskcake-anchor-smoke-20260731-v2",
+    "metadata_file_sha256": "bdfc37b2bfd0e017daba9b5b812b3eb497bd8d33a9c2da7ff511c88efe4fe870",
+    "manifest_sha256": "7b872a4ac02b60a98ceb6adc0955af5481b186413991d3ce741a8689455cfc28",
+    "checkpoint_sha256": "d3fd1a151af261ad235af777c9837053a52bec61e69c627f7b9a041f92c9d1f5"
+  },
+  "observations": {
+    "successful_optimizer_steps": 1,
+    "skipped_amp_optimizer_steps": 0,
+    "peak_gpu_memory_bytes": 1568539648,
+    "trainable_parameters": 998400,
+    "frozen_parameters": 60656650,
+    "main_examples": 4,
+    "anchor_examples": 4,
+    "general_preservation_examples": 4,
+    "total_examples": 12,
+    "autonomous_prefix_horizon": 32
+  },
+  "tensor_audit": {
+    "checkpoint_tensor_count": 82,
+    "changed_tensor_count": 24,
+    "all_changed_tensor_names_begin_with_task_cakes": true,
+    "shared_transformer_changes": 0,
+    "embedding_or_language_head_changes": 0,
+    "route_classifier_changes": 0,
+    "status": "PASS"
+  },
+  "authorization": {
+    "candidate_path": "results/abi_moonshot/segregated_acquisition_v3/three-block-dualstream-taskcake-anchor-fullseq512-seed19824-steps23998-v22",
+    "candidate_attempts": 1,
+    "configuration_changes_from_protocol": 0,
+    "cpu_training_authorized": false
+  },
+  "final_test_accessed": false,
+  "claim_boundary": "This proves only memory safety and exact trainable-subspace isolation for the GPU path. It does not prove English quality."
+}

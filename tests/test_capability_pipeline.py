@@ -33,10 +33,58 @@ from abi.layercake_acquisition import (
     build_labeled_extraction_record,
 )
 from abi.layercake_domains_v3 import load_domain_training_rows
-from abi.layercake_host_v3 import load_english_training_rows
+from abi.layercake_host_v3 import (
+    LayerCakeHostError,
+    _materialize_training_prompt,
+    load_english_training_rows,
+)
 
 
 REVISION = "a" * 40
+
+
+def test_raw_training_prompt_requires_exact_contrastive_lineage():
+    prompt = "Correct this.\nSentence: The baker carry the bag."
+    output_sha = hashlib.sha256(
+        "The baker carries the bag.".encode("utf-8")
+    ).hexdigest()
+    evidence = "a" * 64
+    observation = "b" * 64
+    source_manifest = "c" * 64
+    record = {
+        "prompt": prompt,
+        "output_sha256": output_sha,
+        "teacher_token_counter": "authoritative_source_tokenizer_posthoc_on_contrastive_selection",
+        "provenance": f"contrastive:{evidence}:{observation}",
+    }
+    result = {
+        "evaluator": {
+            "kind": "counterbalanced_source_preference",
+            "teacher_generated_output": False,
+            "prompt_contract_sha256": hashlib.sha256(
+                prompt.encode("utf-8")
+            ).hexdigest(),
+            "selected_output_sha256": output_sha,
+            "contrastive_evidence_sha256": evidence,
+            "contrastive_observation_sha256": observation,
+            "source_manifest_sha256": source_manifest,
+            "ab_margin": 1.0,
+            "ba_margin": 2.0,
+        }
+    }
+    ledger = {
+        "source_manifest_sha256": [source_manifest],
+        "contrastive_qualification": {"evidence_sha256": evidence},
+    }
+    assert _materialize_training_prompt(
+        record=record, probe_result=result, ledger=ledger
+    ) == prompt
+    stale = json.loads(json.dumps(result))
+    stale["evaluator"]["ab_margin"] = 0.0
+    with pytest.raises(LayerCakeHostError):
+        _materialize_training_prompt(
+            record=record, probe_result=stale, ledger=ledger
+        )
 
 
 def _source(model_id="Qwen/test", revision=REVISION, weight="1" * 64):
@@ -224,6 +272,52 @@ def test_user_can_select_english_and_domain_from_different_sources():
         [*english_records, python_record], plan, split="validation"
     )
     assert len(chosen) == len(ENGLISH_CORE_CAPABILITIES) + 1
+    assert (
+        records_for_selection(
+            [*english_records, python_record],
+            plan,
+            split="search",
+            allow_empty=True,
+        )
+        == []
+    )
+    with pytest.raises(
+        CapabilityPipelineError,
+        match="selection produced no extraction records",
+    ):
+        records_for_selection(
+            [*english_records, python_record],
+            plan,
+            split="search",
+        )
+
+
+def test_development_can_select_a_bounded_english_capability_subset():
+    source = _source()
+    records, results = _english_evidence(source)
+    inventory = build_capability_inventory(
+        source_manifest=source,
+        records=records,
+        probe_results=results,
+        minimum_distinct_probes=1,
+        minimum_wilson_lower_bound=0,
+    )
+    plan = build_user_selection_plan(
+        [inventory],
+        include_english_core=True,
+        english_capabilities=["rewriting", "coherence"],
+        domains=[],
+        allow_unverified_development_selection=True,
+    )
+    assert plan["english_selection_scope"] == "capability_subset"
+    assert plan["requested_english_capabilities"] == [
+        "coherence",
+        "rewriting",
+    ]
+    assert plan["promotion_eligible"] is False
+    assert {
+        item["capability"] for item in plan["selected_items"]
+    } == {"coherence", "rewriting"}
 
 
 def test_nested_budgets_are_deterministic_stratified_and_nested():

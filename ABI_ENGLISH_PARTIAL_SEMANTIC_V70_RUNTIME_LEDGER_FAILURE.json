@@ -1,0 +1,27 @@
+{
+  "format": "abi-english-partial-semantic-v70-runtime-ledger-failure/1",
+  "status": "TOOLING_FAILURE_NO_ARTIFACT_CREATED",
+  "effective_date": "2026-08-03",
+  "protocol": {
+    "path": "ABI_ENGLISH_PARTIAL_SEMANTIC_SOURCE_ARTIFACT_PROTOCOL_V70.json",
+    "sha256": "8faeff2ed4f8e0cb8c4e50e65661c91e1ccdf153afcfe055ef426991f2d34628"
+  },
+  "implementation": {
+    "path": "abi/partial_semantic_source_artifact.py",
+    "sha256": "839ffd8cd2cd5f1dc1e85f126413a365d699fea47aeeb448ef11e6fe14a5b868"
+  },
+  "attempted_output": "results/abi_moonshot/reference_artifact_v70/phi3-v62-qualified-13-source-v1.abix",
+  "output_created": false,
+  "failure": {
+    "exception": "KeyError",
+    "message": "source_inference_runtimes",
+    "stage": "Derived ledger construction after full source, semantic, journal, decision-matrix, and inventory validation"
+  },
+  "cause": "The immutable V60 source bundle predates the successor ledger field source_inference_runtimes. Its separately sealed runtime audit and V60 protocol retain the required CUDA/runtime provenance.",
+  "recovery_rule": "Bind the exact V60 runtime audit and V60 protocol in an amendment, verify their source and bundle identities, reconstruct only the missing normalized runtime object, rerun tests, and repeat V70 from the beginning without changing any source record, semantic observation, included capability, threshold, or output path.",
+  "scientific_result": "NONE",
+  "failure_attribution": "ABI_TOOLING_FAILURE",
+  "layercake_invoked": false,
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

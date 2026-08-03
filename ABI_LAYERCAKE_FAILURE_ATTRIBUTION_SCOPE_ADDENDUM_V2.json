@@ -1,0 +1,38 @@
+{
+  "format": "abi-layercake-failure-attribution-scope-addendum/2",
+  "status": "CONTROLLING_SCOPE_CORRECTION_AFTER_MATCHED_NATIVE_QUALITY_CONTROL",
+  "effective_date": "2026-08-03",
+  "base_contract": {
+    "path": "ABI_LAYERCAKE_FAILURE_ATTRIBUTION_CONTRACT_V1.json",
+    "sha256": "4272cd24e75fe641ff4a0cd66cef3913e3183a36b7b57665f0b6294b03ada60f",
+    "preserved": true
+  },
+  "new_evidence": {
+    "decision": "ABI_LAYERCAKE_MATCHED_QUALITY_SCOPE_V79_DECISION.json",
+    "matched_native_control": "results/abi_moonshot/receiver_controls/native-phase2-r3-matched-quality-scope-v79.json"
+  },
+  "scope_classes": {
+    "locked_layercake_execution_and_bpb_scope": "PROVEN",
+    "exact_receiver_identity_scope": "PROVEN",
+    "abi_source_prompt_labeling_and_artifact_scope": "ATTRIBUTABLE_TO_ABI_BEFORE_LAYERCAKE_INVOCATION",
+    "expanded_28_prompt_natural_english_host_capacity": "NOT_PROVEN",
+    "end_to_end_abi_to_layercake_transfer": "NOT_PROVEN"
+  },
+  "controlling_failure_rules": [
+    "Failure of the exact locked native LayerCake certificates or their bound execution invariants is LAYERCAKE_HOST_REGRESSION.",
+    "Failure of ABI labeling, segregation, source qualification, provenance, accounting, or artifact adequacy before LayerCake invocation is ABI_EXTRACTION_FAILURE.",
+    "Failure of bit-exact native payload installation, canonical ABI identity, sparse dispatch, or persistent state is ABI_LAYERCAKE_INTEGRATION_FAILURE when the direct native execution remains valid.",
+    "An installed candidate quality failure on a scope that no same-topology known-good or oracle payload passes is ABI_ACQUISITION_OR_EXPANDED_LAYERCAKE_HOST_CAPACITY_UNRESOLVED.",
+    "A same-topology oracle pass followed by an ABI candidate quality failure localizes the failure to ABI_ACQUISITION_OR_INTEGRATION_QUALITY.",
+    "A same integrated ABI candidate passing the quality and performance gates directly proves the end-to-end claim and does not need to inherit any native metric."
+  ],
+  "prohibited_claims": [
+    "Do not call V72-V75 broad natural-English failures ABI-only.",
+    "Do not call the V79 expanded-scope failure a regression of the locked Phase 2 proof.",
+    "Do not borrow locked LayerCake speed or quality metrics for an ABI candidate.",
+    "Do not resume expensive ABI extraction or payload sweeps until the same-topology direct-target oracle resolves expanded host capacity."
+  ],
+  "historical_evidence_changed": false,
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

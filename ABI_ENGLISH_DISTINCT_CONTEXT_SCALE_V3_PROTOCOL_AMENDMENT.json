@@ -1,0 +1,28 @@
+{
+  "schema_version": "abi-english-distinct-context-scale-protocol-amendment/1",
+  "protocol_id": "abi-english-distinct-context-scale-v3",
+  "status": "PREREGISTERED_AFTER_SECOND_FAILED_CATALOG_BUILD_BEFORE_CATALOG_MATERIALIZATION_SOURCE_INFERENCE_OR_CANDIDATE_TRAINING",
+  "created_date": "2026-07-30",
+  "base_protocol": "ABI_ENGLISH_DISTINCT_CONTEXT_SCALE_V1_PROTOCOL.json",
+  "prior_amendment": "ABI_ENGLISH_DISTINCT_CONTEXT_SCALE_V2_PROTOCOL_AMENDMENT.json",
+  "preserved_failure": "ABI_ENGLISH_DISTINCT_CONTEXT_SCALE_V2_CATALOG_FAILURE.json",
+  "reason": "One upstream row passed full-row sentence counting but could not supply three complete sentences inside the exact bounded context. The v2 builder detected this and failed before writing an output or starting teacher inference.",
+  "bounded_change": {
+    "generator": "abi.english_scale_catalog",
+    "generator_sha256": "09b93afef195736029217bf722c597af98bdc8f99d5871311f5f972f67b3cb23",
+    "malformed_bounded_contexts": "ineligible_before_stable_min_hash_sampling",
+    "partial_sentence_truncation_allowed": false
+  },
+  "unchanged": [
+    "deduplicated context-hash sampling and cross-split exclusion",
+    "seed",
+    "search validation and final counts",
+    "prompt templates and capabilities",
+    "teacher identity and generation settings",
+    "candidate parent graph tokenizer and ABI",
+    "nested budget sequence",
+    "training hyperparameters",
+    "validation and final gates"
+  ],
+  "claim_boundary": "This amendment repairs malformed-row eligibility only. It provides no source-quality or LayerCake-quality credit."
+}

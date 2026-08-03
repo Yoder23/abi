@@ -1,0 +1,13 @@
+{
+  "format": "abi-english-v73-native-control-process-amendment/1",
+  "status": "PREREGISTERED_REPLAY_AFTER_HARNESS_ONLY_FAILURE",
+  "effective_date": "2026-08-03",
+  "incident": "ABI_ENGLISH_V73_NATIVE_CONTROL_PROCESS_CONTAMINATION.json",
+  "allowed_change": "Execute abi.layercake_external_host_control in a fresh process before importing any receiver, torch, or transformers module.",
+  "corrected_output": "results/abi_moonshot/external_layercake_controls/phase2-r3-phase8-native-v73-corrected.json",
+  "layercake_checkpoint_or_runtime_change": false,
+  "benchmark_or_gate_change": false,
+  "source_artifact_change": false,
+  "candidate_change": false,
+  "continue_rule": "V73 source import remains blocked unless the corrected fresh-process native control passes all unchanged checks."
+}

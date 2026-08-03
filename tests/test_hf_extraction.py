@@ -16,7 +16,9 @@ from abi.hf_extraction import (
     evaluate_output,
     load_probe_catalog,
     probe_label_evidence_sha256,
+    prompt_contract_sha256,
     run_probe_catalog,
+    _token_id_set,
 )
 from abi.layercake_acquisition import validate_labeled_extraction_record
 
@@ -36,6 +38,14 @@ def test_schema_closed_output_evaluators():
     )
     assert passed is True and score == 1.0
     assert evaluate_output("The result is 42.", {"kind": "numeric_equal", "value": 42})[0]
+    assert evaluate_output(
+        "A calm fictional response.",
+        {"kind": "contains_none", "values": ["python", "equation"]},
+    ) == (True, 1.0)
+    assert evaluate_output(
+        "Import the result.",
+        {"kind": "contains_none", "values": ["import", "python"]},
+    ) == (False, 0.5)
     assert evaluate_output(
         "```python\ndef add(a, b):\n    return a + b\n```",
         {"kind": "python_compiles", "contains": ["def add"]},
@@ -72,8 +82,26 @@ def test_schema_closed_output_evaluators():
             ],
         },
     )[0]
+    assert evaluate_output(
+        '```json\n{"item": "book", "count": 3}\n```',
+        {
+            "kind": "json_code_block",
+            "required_keys": ["item", "count"],
+            "expected_values": {"item": "book", "count": 3},
+        },
+    )[0]
     with pytest.raises(CapabilityPipelineError, match="unsupported"):
         evaluate_output("x", {"kind": "execute_python"})
+
+
+def test_source_stop_token_ids_include_generation_config_variants():
+    assert _token_id_set(32000, [32000, 32001, 32007], None) == {
+        32000,
+        32001,
+        32007,
+    }
+    with pytest.raises(CapabilityPipelineError, match="boolean"):
+        _token_id_set(True)
 
 
 def test_probe_catalog_rejects_duplicate_ids_and_domain_leakage(tmp_path):
@@ -104,6 +132,36 @@ def test_probe_catalog_rejects_duplicate_ids_and_domain_leakage(tmp_path):
         load_probe_catalog(path)
 
 
+def test_probe_catalog_rejects_stale_functional_prompt_contract(tmp_path):
+    prompt = "Rewrite this supplied sentence."
+    catalog = {
+        "schema_version": PROBE_CATALOG_SCHEMA,
+        "catalog_id": "prompt-contract-v1",
+        "probes": [
+            {
+                "probe_id": "rewrite-bound-1",
+                "destination_scope": "english_core",
+                "capability": "rewriting",
+                "domain": "domain_independent",
+                "split": "search",
+                "prompt": prompt,
+                "evaluator": {
+                    "kind": "contains_all",
+                    "values": ["sentence"],
+                    "prompt_contract_sha256": prompt_contract_sha256(prompt),
+                },
+            }
+        ],
+    }
+    path = tmp_path / "prompt-contract.json"
+    path.write_text(json.dumps(catalog), encoding="utf-8")
+    load_probe_catalog(path)
+    catalog["probes"][0]["prompt"] = "Tampered prompt."
+    path.write_text(json.dumps(catalog), encoding="utf-8")
+    with pytest.raises(CapabilityPipelineError, match="prompt contract"):
+        load_probe_catalog(path)
+
+
 class _FakeSource:
     def __init__(self):
         self.batch_calls = 0
@@ -128,6 +186,9 @@ class _FakeSource:
             "input_tokens": 4,
             "teacher_tokens": 5,
             "teacher_token_counter": "authoritative_generated_token_ids",
+            "authoritative_generated_token_ids": [1, 2, 3, 4, 5],
+            "finish_reason": "eos_token",
+            "generation_max_new_tokens": max_new_tokens,
         }
 
     def generate_batch(self, requests):
@@ -171,10 +232,59 @@ def test_probe_run_binds_rendered_prompt_runtime_token_count_and_result():
     assert records[0]["prompt"] == "<user>Rewrite this.</user>"
     assert records[0]["teacher_tokens"] == 5
     assert records[0]["teacher_token_count_authoritative"] is True
+    assert records[0]["authoritative_generated_token_ids"] == [1, 2, 3, 4, 5]
+    assert records[0]["finish_reason"] == "eos_token"
+    assert records[0]["generation_max_new_tokens"] == 16
+    assert records[0]["teacher_input_tokens"] == 4
     assert results[0]["passed"] is True
     assert source.batch_calls == 1
     validate_labeled_extraction_record(records[0])
     validate_probe_result(results[0])
+
+
+def test_length_terminated_source_row_is_preserved_but_fails_selection():
+    catalog = {
+        "schema_version": PROBE_CATALOG_SCHEMA,
+        "catalog_id": "length-v1",
+        "probes": [
+            {
+                "probe_id": "rewrite-length-1",
+                "destination_scope": "english_core",
+                "capability": "rewriting",
+                "domain": "domain_independent",
+                "split": "search",
+                "prompt": "Rewrite this.",
+                "max_new_tokens": 5,
+                "evaluator": {"kind": "contains_all", "values": ["revise"]},
+            }
+        ],
+    }
+    source = _FakeSource()
+    original_generate = source.generate
+
+    def length_generate(prompt, *, max_new_tokens, seed, temperature):
+        sample = original_generate(
+            prompt,
+            max_new_tokens=max_new_tokens,
+            seed=seed,
+            temperature=temperature,
+        )
+        sample["finish_reason"] = "length"
+        return sample
+
+    source.generate = length_generate
+    source.generate_batch = lambda requests: [
+        source.generate(
+            request["prompt"],
+            max_new_tokens=request["max_new_tokens"],
+            seed=request["seed"],
+            temperature=request["temperature"],
+        )
+        for request in requests
+    ]
+    records, results = run_probe_catalog(source, catalog)
+    assert records[0]["finish_reason"] == "length"
+    assert results[0]["passed"] is False
 
 
 def test_probe_catalog_requires_complete_segregation_metadata(tmp_path):
@@ -262,4 +372,64 @@ def test_preregistered_label_evidence_binds_exact_probe(tmp_path):
     probe["prompt"] = "Tampered domain fact prompt."
     path.write_text(json.dumps(catalog), encoding="utf-8")
     with pytest.raises(CapabilityPipelineError, match="label evidence"):
+        load_probe_catalog(path)
+
+
+def test_probe_catalog_rejects_invalid_label_method_before_generation(tmp_path):
+    probe = {
+        "probe_id": "rewrite-invalid-label-method-1",
+        "destination_scope": "english_core",
+        "capability": "rewriting",
+        "domain": "domain_independent",
+        "split": "search",
+        "prompt": "Rewrite this nonce sentence.",
+        "evaluator": {"kind": "nonempty"},
+        "record_schema": SEGREGATED_RECORD_SCHEMA,
+        "knowledge_class": LINGUISTIC_FORM,
+        "content_basis": "abstract_or_nonce_content",
+        "domain_labels": [],
+        "domain_claims": [],
+        "label_method": "unregistered_custom_method",
+        "label_evidence_sha256": "c" * 64,
+        "output_introduces_unsupplied_facts": False,
+    }
+    catalog = {
+        "schema_version": PROBE_CATALOG_SCHEMA,
+        "catalog_id": "invalid-label-method-v1",
+        "probes": [probe],
+    }
+    path = tmp_path / "catalog.json"
+    path.write_text(json.dumps(catalog), encoding="utf-8")
+
+    with pytest.raises(CapabilityPipelineError, match="label_method"):
+        load_probe_catalog(path)
+
+
+def test_probe_catalog_rejects_invalid_content_basis_before_generation(tmp_path):
+    probe = {
+        "probe_id": "rewrite-invalid-content-basis-1",
+        "destination_scope": "english_core",
+        "capability": "rewriting",
+        "domain": "domain_independent",
+        "split": "search",
+        "prompt": "Rewrite this nonce sentence.",
+        "evaluator": {"kind": "nonempty"},
+        "record_schema": SEGREGATED_RECORD_SCHEMA,
+        "knowledge_class": LINGUISTIC_FORM,
+        "content_basis": "descriptive_but_noncanonical_label",
+        "domain_labels": [],
+        "domain_claims": [],
+        "label_method": "preregistered_catalog",
+        "output_introduces_unsupplied_facts": False,
+    }
+    probe["label_evidence_sha256"] = probe_label_evidence_sha256(probe)
+    catalog = {
+        "schema_version": PROBE_CATALOG_SCHEMA,
+        "catalog_id": "invalid-content-basis-v1",
+        "probes": [probe],
+    }
+    path = tmp_path / "catalog.json"
+    path.write_text(json.dumps(catalog), encoding="utf-8")
+
+    with pytest.raises(CapabilityPipelineError, match="content_basis"):
         load_probe_catalog(path)

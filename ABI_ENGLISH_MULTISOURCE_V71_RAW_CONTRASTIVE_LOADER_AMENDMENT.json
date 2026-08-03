@@ -1,0 +1,49 @@
+{
+  "format": "abi-english-multisource-v71-raw-contrastive-loader-amendment/1",
+  "status": "PREREGISTERED_BEFORE_REPEAT_V71_ADEQUACY_AUDIT",
+  "effective_date": "2026-08-03",
+  "parent_protocol": {
+    "path": "ABI_ENGLISH_MULTISOURCE_COMPOSITION_AND_ADEQUACY_PROTOCOL_V71.json",
+    "sha256": "78ccde6fede4bef4a44b95d624dea34db18ef08f6bbb8368436dd963287b15a0"
+  },
+  "tooling_incident": {
+    "path": "ABI_ENGLISH_MULTISOURCE_V71_RAW_CONTRASTIVE_LOADER_FAILURE.json",
+    "sha256": "657fa7e2b77ca6526820d31de7a648612ca365a9673c77a5675748f28322ec07",
+    "result": "No adequacy evidence was written and no adequacy verdict exists."
+  },
+  "immutable_composed_artifact": {
+    "path": "results/abi_moonshot/reference_artifact_v71/phi3-multisource-english-training-v1.abix",
+    "sha256": "da8e3b4940988c1a8a2d9baab47c7a82dbbe6bccd054a494a3ad77102e12886a",
+    "record_count": 2235,
+    "largest_budget_index": 3,
+    "largest_budget_records": 2235,
+    "largest_budget_teacher_or_selected_tokens": 84930
+  },
+  "corrected_loader": {
+    "path": "abi/layercake_host_v3.py",
+    "sha256": "50ac0574df112aec2dc376af904e53aa15020810e4ade67f8825c96cb46c2ed8"
+  },
+  "unchanged_auditor": {
+    "path": "abi/teacher_artifact_adequacy_audit.py",
+    "sha256": "4770e2665896d847aeedc4b9c50f9beb245f0b6938270a843c70af02a6b74295"
+  },
+  "raw_prompt_allowance": [
+    "record token counter is authoritative_source_tokenizer_posthoc_on_contrastive_selection",
+    "probe evaluator kind is counterbalanced_source_preference and marks teacher_generated_output false",
+    "raw prompt SHA-256, selected output SHA-256, positive A/B margins, source manifest, qualification evidence hash, observation hash, and exact provenance all match",
+    "record has no generated-token IDs or generation finish reason",
+    "all other prompts still require a recognized and stripped frozen-source chat template"
+  ],
+  "verification": {
+    "test_files": [
+      "tests/test_capability_pipeline.py",
+      "tests/test_teacher_artifact_adequacy_audit.py"
+    ],
+    "tests_passed": 15,
+    "tests_test_capability_pipeline_sha256": "77f9a5ff74aace5f52469b90a92abeebb669c7ecfb5023ce03e1216d77c7081e"
+  },
+  "authorization": "Repeat only the unchanged V71 largest-budget adequacy audit against both frozen catalogs. Do not recompose or invoke LayerCake.",
+  "layercake_invoked": false,
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

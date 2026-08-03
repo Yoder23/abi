@@ -1,3 +1,5 @@
+import hashlib
+from collections import Counter
 from pathlib import Path
 
 import pytest
@@ -6,6 +8,7 @@ import torch
 import abi.layercake_host_v3 as successor_host
 from abi.capability_pipeline import SEGREGATED_TRAINING_ARTIFACT_ROLE
 from abi.layercake_host import (
+    BalancedCapabilitySampler,
     LayerCakeHostError,
     PromptIdentityBridge,
     SparseRouteConformanceBridge,
@@ -19,10 +22,30 @@ from abi.layercake_host import (
     _symbolic_surface_output,
     _symbolic_surface_tensor,
     _truncate_novel_lexical_repetition,
+    _validate_parent_boundary,
     route_for_capability,
     strip_source_chat_template,
 )
 from abi.layercake_host_v3 import _require_segregated_training_bundle
+
+
+def test_balanced_capability_sampler_is_deterministic_and_balanced() -> None:
+    rows = [
+        {"capability": "grammar"},
+        {"capability": "grammar"},
+        {"capability": "summarization"},
+        {"capability": "conversation"},
+    ]
+    first = BalancedCapabilitySampler(rows, seed=17)
+    second = BalancedCapabilitySampler(rows, seed=17)
+    indexes = first.next_batch(12)
+    assert indexes == second.next_batch(12)
+    capabilities = [rows[index]["capability"] for index in indexes]
+    assert Counter(capabilities) == {
+        "conversation": 4,
+        "grammar": 4,
+        "summarization": 4,
+    }
 
 
 def _segregated_bundle():
@@ -37,6 +60,56 @@ def _segregated_bundle():
             "absolute_zero_world_knowledge_claimed": False,
         },
     }
+
+
+def test_parent_boundary_accepts_only_sealed_or_teacher_free_acquired_core(
+    tmp_path,
+):
+    layercake_root = tmp_path / "layercake"
+    sealed_parent = layercake_root / "artifacts" / "parent"
+    external_parent = tmp_path / "abi" / "acquired-core"
+    canonical = layercake_root / "canonical.json"
+    sealed_parent.mkdir(parents=True)
+    external_parent.mkdir(parents=True)
+    canonical.parent.mkdir(parents=True, exist_ok=True)
+    canonical.write_bytes(b"canonical ABI")
+    canonical_sha = hashlib.sha256(canonical.read_bytes()).hexdigest()
+
+    assert (
+        _validate_parent_boundary(
+            parent_path=sealed_parent,
+            layercake_root=layercake_root,
+            canonical_abi_path=canonical,
+            parent_metadata={},
+        )
+        == "sealed_layercake_root"
+    )
+    metadata = {
+        "format": "abi-layercake-full-english-core-acquisition/1",
+        "canonical_semantic_abi": {"sha256": canonical_sha},
+        "foreign_source_boundary": {
+            "teacher_present_at_inference": False,
+            "source_transformer_blocks_retained": 0,
+        },
+    }
+    assert (
+        _validate_parent_boundary(
+            parent_path=external_parent,
+            layercake_root=layercake_root,
+            canonical_abi_path=canonical,
+            parent_metadata=metadata,
+        )
+        == "abi_hash_bound_acquired_core"
+    )
+
+    metadata["foreign_source_boundary"]["teacher_present_at_inference"] = True
+    with pytest.raises(LayerCakeHostError, match="retained"):
+        _validate_parent_boundary(
+            parent_path=external_parent,
+            layercake_root=layercake_root,
+            canonical_abi_path=canonical,
+            parent_metadata=metadata,
+        )
 
 
 def test_host_accepts_only_current_segregated_training_material():
@@ -110,6 +183,70 @@ def test_v5_rewriting_symbolic_handler_preserves_every_declared_fact():
     )
     assert _symbolic_surface_output(contract, prompt=prompt, route=8) == expected
     assert _symbolic_surface_output(contract, prompt=prompt, route=4) is None
+
+
+def test_search_learned_natural_coherence_and_rewriting_handlers_generalize():
+    training_rows = [
+        {
+            "capability": "coherence",
+            "prompt": (
+                "Follow this instruction carefully: Put the event labels in "
+                "logical order. Return the labels in order without commentary: "
+                "[S7-END] it ended; [S7-START] it started; "
+                "[S7-MIDDLE] it continued."
+            ),
+            "response": "unused",
+        },
+        {
+            "capability": "rewriting",
+            "prompt": (
+                "Task for your next response: Combine the supplied statements "
+                "into one concise, fluent sentence without dropping any detail: "
+                "Mira requested 3 copies. Jon will bring them on Monday."
+            ),
+            "response": "unused",
+        },
+    ]
+    contract = _build_symbolic_surface(training_rows)
+    assert "natural_labeled_event_ordering" in contract["handlers"]
+    assert "natural_concise_statement_combination" in contract["handlers"]
+    coherence_prompt = (
+        "Can you help with the following? Put the event labels in logical "
+        "order. Return the labels in order without commentary: "
+        "[X9-ACT] entered; [X9-DONE] finished; [X9-PREP] opened."
+    )
+    assert _symbolic_surface_output(
+        contract, prompt=coherence_prompt, route=1
+    ) == "X9-PREP, X9-ACT, X9-DONE"
+    rewriting_prompt = (
+        "Respond to this request: Combine the supplied statements into one "
+        "concise, fluent sentence without dropping any detail: There is a "
+        "delay for X9-NEW. The new review day is Thursday."
+    )
+    assert _symbolic_surface_output(
+        contract, prompt=rewriting_prompt, route=8
+    ) == (
+        "There is a delay for X9-NEW, and the new review day is Thursday."
+    )
+
+
+def test_versioned_event_wrapper_normalization_does_not_change_v1_handler():
+    prompt = (
+        "I need you to do this: Put the event labels in logical order. "
+        "Return the labels in order without commentary: [Q-NEXT] read; "
+        "[Q-LAST] replied; [Q-FIRST] arrived."
+    )
+    v1 = {"handlers": ["natural_labeled_event_ordering"]}
+    v2 = {
+        "handlers": [
+            "natural_labeled_event_ordering",
+            "natural_labeled_event_ordering_preface_v2",
+        ]
+    }
+    assert _symbolic_surface_output(v1, prompt=prompt, route=1) is None
+    assert _symbolic_surface_output(v2, prompt=prompt, route=1) == (
+        "Q-FIRST, Q-NEXT, Q-LAST"
+    )
 
 
 def test_every_locked_english_capability_has_a_physical_host_route():
@@ -251,6 +388,36 @@ def test_scheduled_sampling_keeps_teacher_targets_for_generated_prefix():
     assert supervised == 3
 
 
+def test_symbolic_surface_can_install_schema_handlers_without_grammar_rules():
+    contract = _build_symbolic_surface(
+        [
+            {
+                "capability": "email_drafting",
+                "prompt": (
+                    "Draft a short, polite email from Mira with these notes: "
+                    "thank Luis for the draft and ask for N100MIRA by Thursday. "
+                    "Include a greeting and closing; add no new facts."
+                ),
+                "response": "unused",
+            },
+            {
+                "capability": "cake_output_realization",
+                "prompt": (
+                    "Turn these supplied fields into one natural English "
+                    "sentence without adding information: object=draft; "
+                    "action=arrived; location=the east hall; count=5"
+                ),
+                "response": "unused",
+            },
+        ]
+    )
+    assert "conservative_grammar_inflection" not in contract["handlers"]
+    assert {
+        "natural_email_from_notes",
+        "generic_supplied_field_realization",
+    }.issubset(contract["handlers"])
+
+
 def test_symbolic_surface_is_compact_teacher_free_and_schema_bounded():
     contract = _build_symbolic_surface(
         [
@@ -278,6 +445,24 @@ def test_symbolic_surface_is_compact_teacher_free_and_schema_bounded():
                     "Turn the structured data into one fluent sentence without "
                     "adding facts: vehicle=train; identifier=C1; action=arrived; "
                     "time=15:15; location=Nairobi."
+                ),
+                "response": "unused",
+            },
+            {
+                "capability": "email_drafting",
+                "prompt": (
+                    "Draft a short, polite email from Mira with these notes: "
+                    "thank Luis for the draft and ask for N100MIRA by Thursday. "
+                    "Include a greeting and closing; add no new facts."
+                ),
+                "response": "unused",
+            },
+            {
+                "capability": "cake_output_realization",
+                "prompt": (
+                    "Turn these supplied fields into one natural English "
+                    "sentence without adding information: object=draft; "
+                    "action=arrived; location=the east hall; count=5"
                 ),
                 "response": "unused",
             },
@@ -371,6 +556,33 @@ def test_symbolic_surface_is_compact_teacher_free_and_schema_bounded():
     )
     assert realized == (
         "The train with identifier C113LUIS arrived at Nairobi at 15:15."
+    )
+    natural_email = _symbolic_surface_output(
+        contract,
+        prompt=(
+            "Can you help with the following? Draft a short, polite email "
+            "from Mira with these notes: thank Luis for the draft and ask "
+            "for N100MIRA by Thursday. Include a greeting and closing; "
+            "add no new facts."
+        ),
+        route=3,
+    )
+    assert natural_email == (
+        "Subject: Request for N100MIRA\n\nDear Luis,\n\n"
+        "Thank you for the draft. Could you please provide N100MIRA by "
+        "Thursday?\n\nBest regards,\nMira"
+    )
+    natural_realization = _symbolic_surface_output(
+        contract,
+        prompt=(
+            "Here is the instruction—Turn these supplied fields into one "
+            "natural English sentence without adding information: "
+            "object=draft; action=arrived; location=the east hall; count=5"
+        ),
+        route=2,
+    )
+    assert natural_realization == (
+        "The draft arrived at the east hall, with a count of 5."
     )
     ordered = _symbolic_surface_output(
         contract,

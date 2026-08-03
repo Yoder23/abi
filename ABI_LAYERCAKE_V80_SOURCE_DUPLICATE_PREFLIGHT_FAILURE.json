@@ -1,0 +1,31 @@
+{
+  "format": "abi-layercake-v80-source-duplicate-preflight-failure/1",
+  "status": "PRESERVED_CURRICULUM_CONSTRUCTION_FAILURE_NO_OUTPUT_CREATED",
+  "effective_date": "2026-08-03",
+  "protocol": {
+    "path": "ABI_LAYERCAKE_SAME_TOPOLOGY_ORACLE_CURRICULUM_PROTOCOL_V80.json",
+    "sha256": "2b27b62a593f8d34733539c4dff90919c09168b997a9b16d9b3764241b5392f2"
+  },
+  "failure": {
+    "stage": "source_prompt_index_construction",
+    "exception": "OracleCurriculumError: source prompt identity is not unique",
+    "curriculum_rows_written": 0,
+    "manifest_written": false,
+    "training_executed": false,
+    "quality_prompts_accessed": 0
+  },
+  "diagnostic": {
+    "source_rows": 51760,
+    "unique_supplied_prompt_hashes": 19154,
+    "duplicate_supplied_prompt_hashes": 3,
+    "frozen_catalog_selected_duplicate_prompt_hashes": 1,
+    "selected_duplicate_rows": 2,
+    "selected_duplicate_distinct_normalized_outputs": 1,
+    "finding": "The only duplicate selected by the frozen catalog has two source rows with an identical normalized reference answer."
+  },
+  "correction": "Collapse only duplicate prompt rows whose normalized reference answers are exactly identical; reject any conflicting duplicate answer; account the collapsed source rows in the immutable manifest.",
+  "experimental_result": null,
+  "historical_evidence_changed": false,
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

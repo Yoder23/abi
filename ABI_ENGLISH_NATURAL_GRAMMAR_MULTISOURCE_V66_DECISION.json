@@ -1,0 +1,65 @@
+{
+  "format": "abi-english-natural-grammar-multisource-v66-decision/1",
+  "status": "REJECTED_AT_GPU_PREFLIGHT",
+  "effective_date": "2026-08-03",
+  "protocol": {
+    "path": "ABI_ENGLISH_NATURAL_GRAMMAR_MULTISOURCE_GPU_PROTOCOL_V66.json",
+    "sha256": "68a69008a96293c346efdcb9d359c11af821c49f93e379f61320fffedad8edb5"
+  },
+  "source": {
+    "model": "microsoft/Phi-3-mini-4k-instruct",
+    "revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310",
+    "device": "cuda",
+    "weight_execution_precision": "torch_float16",
+    "cpu_offload_enabled": false
+  },
+  "preflight_bundle": {
+    "path": "results/abi_moonshot/reference_artifact_v66/phi3-natural-grammar-gpu-preflight-v1.abix",
+    "sha256": "a928f0b44ff4ca355071615207fe5e04623d61e1f14ebba556c25508454cb859",
+    "manifest_sha256": "d84ed2b38ea6165f5c8fe3cd3a6e205a0413fc3b805a005fceec913bf5223138",
+    "receipt_path": "results/abi_moonshot/reference_artifact_v66/phi3-natural-grammar-gpu-preflight-v1.abix.receipt.json",
+    "receipt_sha256": "1f407d21797f21adf412dc46f04cb711abdf698431b95c32b19a8f5ac14bfe15"
+  },
+  "runtime_audit": {
+    "path": "results/abi_moonshot/reference_artifact_v66/phi3-natural-grammar-gpu-preflight-runtime-audit-v1.json",
+    "file_sha256": "63032fd19650c5a38b47dceac6d86a8f9a959120c97b51fdd986d582c997258e",
+    "evidence_sha256": "e287cf478b9456464bcfeb247e80f9ea7818e5fc49224a25641c46a077fae71e",
+    "status": "FAIL_SOURCE_RUNTIME_EVIDENCE_PREFLIGHT",
+    "runtime_checks_except_functional_gate_pass": true,
+    "records": 16,
+    "eos_terminated": 16,
+    "authoritative_token_counts_present": 16,
+    "functional_passes": 15,
+    "functional_failures": 1,
+    "teacher_tokens": 264,
+    "teacher_generated_output_bytes": 1066,
+    "source_model_inference_seconds": 1.970915,
+    "one_time_source_extraction_seconds": 15.314565
+  },
+  "failed_row": {
+    "probe_id": "natural-grammar-singular_intervener-search-000-v1",
+    "prompt_sentence": "The quiet student beside the kind couriers sort the ceramic bowl each morning.",
+    "expected_exact_correction": "The quiet student beside the kind couriers sorts the ceramic bowl each morning.",
+    "observed_source_output": "The quiet student beside the kind couriers sorts the ceramic bowls each morning.",
+    "measured_failure": "The source corrected subject-verb agreement but also changed the supplied singular object to plural, violating the exact minimal-edit and detail-preservation contract.",
+    "collapse": false,
+    "empty": false,
+    "length_terminated": false
+  },
+  "decision": "Reject V66 at the frozen preflight because 15/16 exact corrections does not meet the preregistered 16/16 gate. Do not run its full 224-row survey, do not loosen the evaluator after observing the result, and do not invoke LayerCake.",
+  "full_survey_executed": false,
+  "failure_attribution": "ABI_REFERENCE_SOURCE_CAPABILITY_GAP",
+  "layercake_boundary": {
+    "layercake_invoked": false,
+    "layercake_training_executed": false,
+    "layercake_checkpoint_created": false,
+    "layercake_failure": false,
+    "sealed_layercake_host_reopened": false
+  },
+  "negative_evidence_preserved": true,
+  "promotion_eligible": false,
+  "final_test_accessed": false,
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

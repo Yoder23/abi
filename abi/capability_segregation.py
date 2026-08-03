@@ -114,6 +114,10 @@ def build_segregated_extraction_record(
     output: str,
     teacher_tokens: int,
     teacher_token_counter: str,
+    authoritative_generated_token_ids: Sequence[int] | None = None,
+    finish_reason: str | None = None,
+    generation_max_new_tokens: int | None = None,
+    teacher_input_tokens: int | None = None,
     knowledge_class: str,
     content_basis: str,
     domain_labels: Sequence[str],
@@ -136,6 +140,10 @@ def build_segregated_extraction_record(
         output=output,
         teacher_tokens=teacher_tokens,
         teacher_token_counter=teacher_token_counter,
+        authoritative_generated_token_ids=authoritative_generated_token_ids,
+        finish_reason=finish_reason,
+        generation_max_new_tokens=generation_max_new_tokens,
+        teacher_input_tokens=teacher_input_tokens,
     )
     if knowledge_class not in {
         LINGUISTIC_FORM,
@@ -243,6 +251,12 @@ def validate_segregated_extraction_record(record: Mapping[str, Any]) -> None:
         output=record.get("output"),
         teacher_tokens=record.get("teacher_tokens"),
         teacher_token_counter=record.get("teacher_token_counter"),
+        authoritative_generated_token_ids=record.get(
+            "authoritative_generated_token_ids"
+        ),
+        finish_reason=record.get("finish_reason"),
+        generation_max_new_tokens=record.get("generation_max_new_tokens"),
+        teacher_input_tokens=record.get("teacher_input_tokens"),
         knowledge_class=record.get("knowledge_class"),
         content_basis=record.get("content_basis"),
         domain_labels=record.get("domain_labels", []),

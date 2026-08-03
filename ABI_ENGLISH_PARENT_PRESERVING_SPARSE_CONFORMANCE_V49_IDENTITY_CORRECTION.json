@@ -1,0 +1,13 @@
+{
+  "format": "abi-english-parent-preserving-sparse-conformance-v49-identity-correction/1",
+  "status": "NONBEHAVIORAL_HASH_TYPO_CORRECTED_AFTER_TRAINING_BEFORE_FULL_SUITE",
+  "effective_date": "2026-08-02",
+  "affected_protocol": "ABI_ENGLISH_PARENT_PRESERVING_SPARSE_CONFORMANCE_GPU_PROTOCOL_V49.json",
+  "field": "parent.manifest_sha256",
+  "incorrect_transcription": "96cd8e829189f4ab77e6aee6bded2f5471bf67727d71725a65c2da15487622d4",
+  "authoritative_value": "96cd8efaedffac485c8c94c50f394c4a15c1161c746e2aba6bc9fded680622d4",
+  "authority": "results/abi_moonshot/segregated_acquisition_v3/three-block-broad-natural-same-tokenizer-logit-distill-seed349824-steps6000-v41/metadata.json",
+  "effect_on_run": "none; the trainer loaded and hash-verified the authoritative parent checkpoint and metadata directly. No weight, data, seed, schedule, gate, or output was changed.",
+  "historical_protocol_preserved_unchanged": true,
+  "contaminated_final_v4_accessed": false
+}

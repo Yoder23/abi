@@ -1,0 +1,124 @@
+{
+  "schema_version": "abi-english-dual-stream-task-cake-acquisition-protocol/1",
+  "protocol_id": "abi-english-dual-stream-task-cake-acquisition-v1",
+  "status": "PREREGISTERED_AFTER_V20_AND_V21_FACTORIAL_FAILURES_BEFORE_CUDA_STRESS_OR_TRAINING",
+  "created_date": "2026-07-31",
+  "controlling_decisions": [
+    "ABI_ENGLISH_TASK_CAKE_ISOLATION_V20_DECISION.json",
+    "ABI_ENGLISH_DUAL_STREAM_ANCHORED_V21_DECISION.json"
+  ],
+  "hypothesis": "The independently sampled broad14 anchor that improved full-core v21 can constrain route-cake drift while exact freezing of the v6 transformer, embeddings, language head, and route classifier prevents the shared-representation and routing regressions measured in v21.",
+  "factorial_design": {
+    "v20": {
+      "trainable_scope": "task_cakes_only",
+      "independent_broad_anchor": false,
+      "result": "FAIL"
+    },
+    "v21": {
+      "trainable_scope": "full_core",
+      "independent_broad_anchor": true,
+      "result": "FAIL_BUT_BEST_NEW_BROAD_RESULT"
+    },
+    "v22": {
+      "trainable_scope": "task_cakes_only",
+      "independent_broad_anchor": true,
+      "role": "MISSING_FACTORIAL_CELL"
+    }
+  },
+  "immutable_inputs": {
+    "deep_natural_stream": {
+      "path": "results/abi_moonshot/segregated_acquisition_v3/phi3-english-distinct-context-scale-search-training-v1.abix",
+      "sha256": "2aa903c2e9adb8f876614793e4727f589e044f2069b147989ef6f881a8d4cd31",
+      "budget_index": 3,
+      "records": 39996,
+      "teacher_tokens": 4881854
+    },
+    "broad_anchor_stream": {
+      "path": "results/abi_moonshot/segregated_acquisition_v3/phi3-natural-cumulative-realization-scale-training-v8.abix",
+      "sha256": "d40d0d0804954f2e3769de3a5df4f60caebab28680091bf09746e949bf5d0ac8",
+      "budget_index": 3,
+      "records": 3112,
+      "teacher_tokens": 142949,
+      "capabilities": 14
+    },
+    "parent_path": "results/abi_moonshot/segregated_acquisition_v3/three-block-realization-scale-preservation-seed9824-steps4000-v6",
+    "parent_checkpoint_sha256": "5bae16dec3a55759e92a8481ec5ee519a5ee8687ad1a6f019edc1df3225d092e",
+    "canonical_semantic_abi_sha256": "d024de52144a2d797d0501acb7deb55575ffca7e33f72900beff599cf0a97761",
+    "tokenizer_sha256": "1fe93b6152957cf9cfd6d89002467f789ce8b3f3e000b3a2edf27c808ddd0b9e",
+    "general_preservation_curriculum_sha256": "bae6c1fe300a0214c1f6cb19a8c8eeee4f0b75681290be56f258a247cd488e53",
+    "new_teacher_calls": 0,
+    "teacher_logits_stored": 0,
+    "teacher_hidden_activations_stored": 0,
+    "source_parameters_copied": 0,
+    "selected_domains": []
+  },
+  "candidate_lock": {
+    "attempts": 1,
+    "output_path": "results/abi_moonshot/segregated_acquisition_v3/three-block-dualstream-taskcake-anchor-fullseq512-seed19824-steps23998-v22",
+    "seed": 19824,
+    "device": "cuda",
+    "successful_optimizer_steps": 23998,
+    "trainable_scope": "task_cakes_only",
+    "trainable_parameters": 998400,
+    "total_parameters": 61655050,
+    "trainable_parameter_fraction": 0.016193321868475607,
+    "frozen_parameters": 60656650,
+    "transformer_frozen": true,
+    "token_embeddings_and_language_head_frozen": true,
+    "route_classifier_frozen": true,
+    "main_batch_size": 4,
+    "main_sampling": "balanced_capabilities",
+    "anchor_batch_size": 4,
+    "anchor_sampling": "balanced_capabilities",
+    "anchor_loss_weight": 1.0,
+    "general_preservation_batch_size": 4,
+    "general_preservation_loss_weight": 1.0,
+    "gradient_accumulation_steps": 1,
+    "cake_learning_rate": 0.00005,
+    "classifier_loss_weight": 0.0,
+    "prompt_overlap_loss_weight": 1.0,
+    "max_tokens": 512,
+    "self_generated_prefix_recovery": {
+      "start_step": 400,
+      "interval": 8,
+      "horizons": [
+        8,
+        16,
+        32
+      ]
+    },
+    "architecture_changes": 0,
+    "parameter_count_changes": 0,
+    "tokenizer_changes": 0,
+    "inference_graph_changes": 0,
+    "decoder_changes": 0
+  },
+  "required_tensor_audit": {
+    "every_changed_tensor_prefix": "task_cakes.",
+    "shared_transformer_changes_allowed": 0,
+    "embedding_or_language_head_changes_allowed": 0,
+    "route_classifier_changes_allowed": 0,
+    "task_cake_changes_required": true
+  },
+  "implementation": {
+    "training_runner": "abi/layercake_full_core_acquisition.py",
+    "training_runner_sha256": "e4f85e28208b38278c988d83acc97767cbe5da02cd433bfc973e23fb5116157",
+    "acquisition_test_result": "17 passed",
+    "cuda_stress_required": true
+  },
+  "hardware_policy": {
+    "abi_acquisition_device": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "cpu_training_authorized": false,
+    "cpu_role": "Exact deployed LayerCake inference validation only."
+  },
+  "validation_order": [
+    "Pass an exact one-step CUDA stress test with the three streams and 32-token recovery.",
+    "Complete the one locked CUDA trajectory and prove all selected records participated.",
+    "Prove tensor-by-tensor that only task_cakes tensors changed from v6.",
+    "Export with the unchanged token-run-four overlay and require identity and physical sparse PASS.",
+    "Run the locked broad14 CPU suite and require every gate before any scale, teacher-judge, speed, or final-test work."
+  ],
+  "decision_rule": "Reject on any gate. Do not tune the anchor weight, cake learning rate, decoder, or recovery schedule and do not launch another nearby factorial variant.",
+  "final_test_accessed": false,
+  "claim_boundary": "This is a bounded GPU acquisition experiment in an isolated 1.62% LayerCake parameter subspace. It is not a quality or moonshot claim before exact-runtime validation."
+}

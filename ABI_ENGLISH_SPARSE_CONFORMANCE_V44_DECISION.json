@@ -1,0 +1,36 @@
+{
+  "format": "abi-english-sparse-conformance-v44-decision/1",
+  "status": "REJECTED_AUTONOMOUS_QUALITY_WITH_SHARED_CORE_PRESERVED",
+  "effective_date": "2026-08-02",
+  "protocol": "ABI_ENGLISH_SPARSE_CONFORMANCE_GPU_PROTOCOL_V44.json",
+  "checkpoint": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-v41-sparse-conformance-seed379824-steps6000-v44",
+    "checkpoint_sha256": "136dff8aafd368ebba40af3b736af53c2e9ca2930ced0231590a4f88081a9645",
+    "manifest_sha256": "931ca4c3ec51a26d9ae54d6f3040572e722814d33b5aa810b5e1e3228e7bfba3",
+    "successful_gpu_optimizer_steps": 6000,
+    "wall_seconds": 520.501027899998,
+    "gpu_hours": 0.14458361886111057,
+    "peak_gpu_memory_bytes": 2996740608,
+    "trainable_parameters": 1006090,
+    "frozen_shared_state_preserved_exact": true,
+    "teacher_present_at_inference": false
+  },
+  "locked_natural_screen": {
+    "evidence": "results/abi_moonshot/postcert_audit_v2/v44-v41-sparse-conformance-natural-norepeat4.json",
+    "file_sha256": "21073dec6fbbd141ad0b871ccc408c62a30d1b10473c9301fb56cadd3b001b71",
+    "internal_evidence_sha256": "a8f80dbea09a43cc8e9e075123697dd4e920463539eaf9f9cde993d73b274ad7",
+    "observations": 28,
+    "passes": 8,
+    "required_passes": 9,
+    "collapse_count": 0,
+    "automatic_route_correct": 22,
+    "correct_route_and_pass": 7,
+    "passes_gate": false,
+    "specific_regression": "Both v41 email-drafting passes were lost despite correct route 3."
+  },
+  "interpretation": "Small conformance training improved routing and preserved the fluent shared substrate exactly, but hard-target residual cakes could not maintain a compatible autonomous token distribution for email generation. The remaining bottleneck is distributional instruction transfer, not route selection, shared-core forgetting, GPU capacity, or inference topology.",
+  "decision": "Reject before full broad and CPU certification. Do not sweep cake scope or steps. Prepare one same-tokenizer instruction source on GPU from the already segregated broad teacher text, using temporary merged low-rank source adaptation, then use the source only for online soft-logit acquisition into the unchanged LayerCake graph.",
+  "negative_evidence_preserved": true,
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

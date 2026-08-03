@@ -1,0 +1,75 @@
+{
+  "schema_version": "abi-layercake-route-repair-protocol/1",
+  "recorded_at": "2026-07-31T18:34:00-04:00",
+  "status": "PREREGISTERED_BEFORE_SUBSET_COMPOSITION_OR_TRAINING",
+  "measured_bottleneck": {
+    "candidate_checkpoint_sha256": "6a8ddd348ad6f8215aee8b1a7e3ad7e8c7171c848ee3bddabc6222c0fef39482",
+    "selected_runtime_graph_sha256": "a7b39d203d979adec46d9a4f82ff56a18d5087d87a9370a99fd4176f446c9024",
+    "full_locked_observations": 1400,
+    "overall_pass_rate": 0.9271428571428572,
+    "source_passing_retention_rate": 0.9434426229508197,
+    "collapse_count": 0,
+    "automatic_route_accuracy": 1.0,
+    "only_failed_capability": "tone_control",
+    "tone_control_route": 4,
+    "tone_control_pass_rate": 0.77,
+    "required_pass_rate": 0.8,
+    "evidence_sha256": "aa13f3df8991a8009d3334c8ae399d316b2f47ba01cb88592880f949f0b85314"
+  },
+  "hypothesis": "A bounded GPU update to only route 4's four task-cake tensors, using cached passing tone-control teacher text and same-route instruction/format anchors, can recover the three-point tone deficit without changing the shared core, graph topology, tokenizer, other routes, canonical ABI, or runtime precision profile.",
+  "cached_teacher_material": {
+    "input": "results/abi_moonshot/segregated_acquisition_v3/phi3-natural-cumulative-realization-scale-training-v8.abix",
+    "input_sha256": "d40d0d0804954f2e3769de3a5df4f60caebab28680091bf09746e949bf5d0ac8",
+    "main_capabilities": [
+      "tone_control"
+    ],
+    "anchor_capabilities": [
+      "instruction_following",
+      "format_control"
+    ],
+    "new_source_inference_authorized": false,
+    "teacher_logits_or_hidden_activations_authorized": false
+  },
+  "one_authorized_training_run": {
+    "device": "cuda",
+    "seed": 39824,
+    "steps": 750,
+    "batch_size": 4,
+    "gradient_accumulation_steps": 1,
+    "trainable_scope": "selected_task_cakes",
+    "trainable_task_cake_routes": [
+      4
+    ],
+    "cake_learning_rate": 0.00005,
+    "shared_learning_rate": 0.00002,
+    "classifier_loss_weight": 0.0,
+    "max_tokens": 256,
+    "anchor_batch_size": 4,
+    "anchor_loss_weight": 1.0,
+    "sampling_strategy": "uniform_records",
+    "anchor_sampling_strategy": "balanced_capabilities",
+    "parent": "results/abi_moonshot/segregated_acquisition_v3/three-block-v23-route2-targeted-realization-seed29824-steps1000-v24",
+    "decoding_contract": "results/abi_moonshot/segregated_acquisition_v3/three-block-v23-route2-targeted-realization-seed29824-steps1000-v24/metadata.json"
+  },
+  "post_training_requirements": {
+    "only_route4_task_cake_tensors_may_change": true,
+    "all_selected_main_and_anchor_rows_seen": true,
+    "teacher_absent_at_inference": true,
+    "source_parameters_copied": 0,
+    "source_transformer_blocks_retained": 0,
+    "runtime_profile": "fp32_layer0",
+    "full_locked_suite_required": true,
+    "each_capability_pass_rate_at_least": 0.8,
+    "overall_pass_rate_at_least": 0.8,
+    "source_passing_retention_rate_at_least": 0.9,
+    "collapse_count": 0,
+    "automatic_route_accuracy": 1.0
+  },
+  "stop_rule": "This is exactly one bounded route-4 GPU repair. Do not sweep learning rates, steps, weights, or nearby variants. If it fails, preserve it and pivot to a different measured architecture.",
+  "invariants": {
+    "abi_acquisition_and_training_use_gpu": true,
+    "cpu_use_is_restricted_to_teacher_free_layercake_inference_certification": true,
+    "quarantined_final_catalog_unaccessed": true,
+    "historical_evidence_not_overwritten": true
+  }
+}

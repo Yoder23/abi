@@ -1,0 +1,52 @@
+{
+  "format": "abi-english-search-derived-coherence-rewriting-decision/1",
+  "status": "FAILED_ONE_CAPABILITY_BY_FIVE_POINTS_PRESERVED",
+  "effective_date": "2026-08-01",
+  "protocol": "ABI_ENGLISH_SEARCH_DERIVED_COHERENCE_REWRITING_EXTENSION_PROTOCOL_V55.json",
+  "candidate": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-v51-search-derived-coherence-rewriting-v55",
+    "manifest_sha256": "40d1e52a9488907b1ea276391569fe85344281f70da3bc7f235d2fb0e30bf7d6",
+    "checkpoint_sha256": "012c5443dca21fb73874f1329bcfb6a10526284092e15d7408fff15614dd563f",
+    "payload_sha256": "f719083b35ccb29f017f9a11b4021d23841841ba7c080a28936ae46cb2b65ade",
+    "payload_bytes": 959,
+    "teacher_present_at_inference": false
+  },
+  "natural_screen": {
+    "path": "results/abi_moonshot/postcert_audit_v2/v55-search-derived-coherence-rewriting-natural-norepeat4.json",
+    "file_sha256": "34390bdd9f8a59feccaa3ae4600609600a5e60dd33442002003e4ec3cb83e28d",
+    "evidence_sha256": "6a94ccd49dbf8209ba06845cc61877db70c32e7852cedf865ceb18a438df64ac",
+    "passes": 10,
+    "observations": 28,
+    "collapse_count": 0,
+    "continuation_gate_passed": true
+  },
+  "full_suite": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/v55-search-derived-coherence-rewriting-semantic-full1400-pytorch.json",
+    "file_sha256": "68b858c2d672d73a63c9e4ef628b2e92a9e3457266bda19b4989ffa2a2478316",
+    "evidence_sha256": "b492da23aff74f968df5adb93f80a63162c17c2332edfc0944e37931f93bea02",
+    "passes": 1312,
+    "observations": 1400,
+    "pass_rate": 0.9371428571428572,
+    "source_passing_retention_rate": 0.9450819672131148,
+    "collapse_count": 0,
+    "capability_pass_rates": {
+      "coherence": 0.75,
+      "rewriting": 1.0
+    },
+    "passed_capability_gates": 13,
+    "required_capability_gates": 14,
+    "non_target_observations_changed_from_v54": 0
+  },
+  "measured_bottleneck": {
+    "recognized_coherence_schema_passes": 75,
+    "unrecognized_wrapper_cases": 25,
+    "wrapper": "I need you to do this: ",
+    "semantic_or_domain_information_in_wrapper": false,
+    "neural_generation_invoked_for_unrecognized_cases": true,
+    "required_capability_rate": 0.8,
+    "shortfall": 0.05
+  },
+  "decision": "Do not promote or mutate v55. Perform exactly one versioned, additive request-wrapper normalization as v56. The v1 handler remains unchanged and v56 imports no teacher text, facts, parameters, logits, or activations.",
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

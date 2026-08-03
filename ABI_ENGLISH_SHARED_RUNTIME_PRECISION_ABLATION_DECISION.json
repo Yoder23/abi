@@ -1,0 +1,155 @@
+{
+  "schema_version": "abi-layercake-runtime-precision-ablation-decision/1",
+  "recorded_at": "2026-07-31T18:26:25.0226496-04:00",
+  "status": "NON_FINAL_PROFILE_SELECTED_FOR_FULL_LOCKED_VALIDATION",
+  "scope": "CPU_INFERENCE_RUNTIME_ONLY",
+  "gpu_acquisition_policy_unchanged": true,
+  "candidate": {
+    "checkpoint_sha256": "6a8ddd348ad6f8215aee8b1a7e3ad7e8c7171c848ee3bddabc6222c0fef39482",
+    "manifest_sha256": "7fc5d3a13a0170d948f9da01a05e6cc9790f7fd72b2531bd129eb58453e39bf6",
+    "teacher_present_at_inference": false
+  },
+  "correction_evidence": {
+    "path": "ABI_ENGLISH_SHARED_RUNTIME_GEMM_EXCLUSION_CORRECTION.json",
+    "sha256": "6be18b2d12d4600fc4cf5df44ad2f8fcdd96440706bdcaee45dc5862185ba487",
+    "invalid_historical_layer0_artifact_excluded": "results/abi_moonshot/native_hosts/three-block-v24-runtime-ablation-fp32-layer0-v38"
+  },
+  "diagnostic_gate": {
+    "observations": 200,
+    "capabilities": [
+      "cake_output_realization",
+      "domain_independent_reasoning"
+    ],
+    "requirements": {
+      "each_capability_pass_rate_at_least": 0.8,
+      "aggregate_source_passing_retention_rate_at_least": 0.9,
+      "collapse_count": 0,
+      "automatic_route_accuracy": 1.0,
+      "physical_sparse_proof": "PASS",
+      "native_identity_proof": "PASS"
+    }
+  },
+  "pareto_rows": [
+    {
+      "profile": "int8",
+      "suite": "full_locked_1400",
+      "graph_sha256": "e32c176e55ee4911c6274615165eae5d2637d140b18e7b505250e9350686e70b",
+      "graph_bytes": 106427628,
+      "status": "FAIL",
+      "cake_output_realization_pass_rate": 0.82,
+      "domain_independent_reasoning_pass_rate": 0.70,
+      "collapse_count": 0
+    },
+    {
+      "profile": "fp32_all",
+      "suite": "diagnostic_200",
+      "graph_sha256": "7fd33e5a4e2e87fa95e04caf9c2d9236de7421734785ef26d541719ba287597f",
+      "graph_bytes": 401116730,
+      "status": "PASS",
+      "overall_pass_rate": 0.85,
+      "cake_output_realization_pass_rate": 0.85,
+      "domain_independent_reasoning_pass_rate": 0.85,
+      "source_passing_retention_rate": 0.9112426035502958,
+      "collapse_count": 0,
+      "median_latency_seconds": 0.5512407,
+      "evidence_sha256": "b5f78a7baf72f6790bd3ecb0068c8a48b03a570548d77483ba3cfd9cbf71fb4c"
+    },
+    {
+      "profile": "fp32_embedding",
+      "suite": "diagnostic_200",
+      "graph_sha256": "1dfc624183e17cbbeccea9465403973cb8c5135af9c5727d1ce1a8cb1d43a428",
+      "graph_bytes": 222017906,
+      "status": "FAIL",
+      "cake_output_realization_pass_rate": 0.82,
+      "domain_independent_reasoning_pass_rate": 0.73,
+      "source_passing_retention_rate": 0.834319526627219,
+      "collapse_count": 0,
+      "evidence_sha256": "114b8c28e2023d375b5e3378ac8bab4d7bebeea76b96e591c1d237cd7265a747"
+    },
+    {
+      "profile": "fp32_output",
+      "suite": "diagnostic_200",
+      "graph_sha256": "a714008cfd15c21dd5fc1e975cd2503f67af554f9dd0b457918b231d059ba8b5",
+      "graph_bytes": 221967757,
+      "status": "FAIL",
+      "cake_output_realization_pass_rate": 0.81,
+      "domain_independent_reasoning_pass_rate": 0.72,
+      "source_passing_retention_rate": 0.8165680473372781,
+      "collapse_count": 0,
+      "evidence_sha256": "c6ec9d433ec7ddae47bfe79a02c5160f5ac1851706274abbdba747e5e8889f41"
+    },
+    {
+      "profile": "fp32_layer0",
+      "suite": "diagnostic_200",
+      "graph_sha256": "a7b39d203d979adec46d9a4f82ff56a18d5087d87a9370a99fd4176f446c9024",
+      "graph_bytes": 127621592,
+      "status": "PASS",
+      "overall_pass_rate": 0.84,
+      "cake_output_realization_pass_rate": 0.84,
+      "domain_independent_reasoning_pass_rate": 0.84,
+      "source_passing_retention_rate": 0.9053254437869822,
+      "collapse_count": 0,
+      "median_latency_seconds": 0.2779534,
+      "peak_process_rss_bytes": 764076032,
+      "evidence_sha256": "6870c680acabffab56991da2a3b3ab18e6e3ffa1058fbbd1ea3430d5aaea4d58"
+    },
+    {
+      "profile": "fp32_layer1",
+      "suite": "diagnostic_200",
+      "graph_sha256": "146442be90dd62d13e1272b8edf7a44296ce07750f4510b706336190bcbb17c4",
+      "graph_bytes": 127621592,
+      "status": "FAIL",
+      "cake_output_realization_pass_rate": 0.82,
+      "domain_independent_reasoning_pass_rate": 0.70,
+      "source_passing_retention_rate": 0.8165680473372781,
+      "collapse_count": 0,
+      "evidence_sha256": "c1366eb73d336f8906ced9def68ecee568084a979f097481dcae6592aaade0ad"
+    },
+    {
+      "profile": "fp32_layer2",
+      "suite": "diagnostic_200",
+      "graph_sha256": "f5546e7210531e015cdb6ce9903b4cbef38bad1076c563fcaf19984cef318374",
+      "graph_bytes": 127621592,
+      "status": "FAIL",
+      "cake_output_realization_pass_rate": 0.82,
+      "domain_independent_reasoning_pass_rate": 0.69,
+      "source_passing_retention_rate": 0.8047337278106509,
+      "collapse_count": 0,
+      "evidence_sha256": "1c84fa71a16abd2f0f38c86a3b2a9226a351626bda41e2f0ff2427df50404dea"
+    },
+    {
+      "profile": "fp32_transformer",
+      "suite": "diagnostic_200",
+      "graph_sha256": "ca95d825380ab841bc771ed840e7284921247005fae3d8d492e30fb1c5f9750a",
+      "graph_bytes": 170009520,
+      "status": "PASS",
+      "overall_pass_rate": 0.85,
+      "cake_output_realization_pass_rate": 0.84,
+      "domain_independent_reasoning_pass_rate": 0.86,
+      "source_passing_retention_rate": 0.9171597633136095,
+      "collapse_count": 0,
+      "median_latency_seconds": 0.35444375,
+      "peak_process_rss_bytes": 806809600,
+      "evidence_sha256": "db5f387e01294bcef0ca0dfaa5d4664c9caa4e5f67000916e4b701402d764f75"
+    }
+  ],
+  "selection": {
+    "rule": "smallest executable graph among profiles passing the preregistered diagnostic; median latency breaks only an exact graph-size tie",
+    "profile": "fp32_layer0",
+    "reason": "It is the smallest passing profile: 42,387,928 bytes smaller than fp32_transformer and 273,495,138 bytes smaller than fp32_all. Equal-sized layer1 and layer2 profiles failed.",
+    "artifact": "results/abi_moonshot/native_hosts/three-block-v24-runtime-ablation-fp32-layer0-v38b",
+    "metadata_file_sha256": "fd5fdfd190a1767956ceef1d8cbecd640ca45528cbf655552b2478571319e5a1",
+    "physical_proof_file_sha256": "3145a5c57338e3a0af8d0bf9ccdba2b51dbba5e42d69d1978a02e9ddc2093c11",
+    "identity_proof_file_sha256": "2cf789172ac2ca40b740c3ec36e8c4072a20d7f8a8f717e1a09a081fd0e5e7aa",
+    "diagnostic_file_sha256": "6333e21ceca9a2326666e372876439c6ace6cb718d1530cdd008e0837499a16c"
+  },
+  "claim_boundary": "This decision selects a runtime profile for the full locked non-final suite. It is not a Phase 3 pass, final-test result, or teacher-relative quality and speed certificate.",
+  "invariants": {
+    "checkpoint_unchanged": true,
+    "teacher_absent_at_inference": true,
+    "source_transformer_blocks_retained": 0,
+    "symbolic_handlers_absent": true,
+    "quarantined_final_catalog_unaccessed": true,
+    "historical_negative_evidence_preserved": true
+  }
+}

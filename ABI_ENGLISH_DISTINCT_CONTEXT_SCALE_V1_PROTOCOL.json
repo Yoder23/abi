@@ -1,0 +1,160 @@
+{
+  "schema_version": "abi-english-distinct-context-scale-protocol/1",
+  "protocol_id": "abi-english-distinct-context-scale-v1",
+  "status": "PREREGISTERED_BEFORE_CATALOG_MATERIALIZATION_SOURCE_INFERENCE_OR_CANDIDATE_TRAINING",
+  "created_date": "2026-07-30",
+  "repository_head_before_campaign": "2aed4f7529e544ddc2d7d4b5a496abc6519e9b1c",
+  "controlling_evidence": {
+    "fast_three_block_native_candidate": {
+      "natural_audit_passes": 4,
+      "natural_audit_prompts": 28,
+      "synthetic_functional_pass_rate": 0.96642857,
+      "cpu_throughput_ratio_vs_optimized_transformer_median": 2.8159,
+      "cpu_throughput_ratio_bootstrap_95_lower": 2.69296
+    },
+    "broad_v11_candidate": {
+      "distinct_search_contexts": 400,
+      "teacher_tokens_in_composed_training_artifact": 416448,
+      "natural_audit_passes": 3,
+      "natural_audit_prompts": 28,
+      "collapse_count": 11,
+      "decision": "FAILED_NEGATIVE_EVIDENCE_PRESERVED"
+    },
+    "six_block_candidate": {
+      "natural_audit_passes": 7,
+      "natural_audit_prompts": 28,
+      "cpu_throughput_ratio_vs_optimized_transformer": 0.38395,
+      "rss_bytes": 235000000,
+      "optimized_transformer_rss_bytes": 225000000,
+      "decision": "REJECTED_BY_LOCKED_CPU_AND_MEMORY_INVARIANTS"
+    },
+    "measured_limiting_factor": "The speed-compatible 67M-class three-block host has seen fewer than one million source-response tokens and the prior broad campaign repeated fourteen tasks over only 400 distinct search contexts. Capacity expansion improves natural behavior but is forbidden by measured runtime. The remaining evidence-supported variable is distinct domain-clean teacher sequence scale within the unchanged fast graph."
+  },
+  "hypothesis": "Long-form sequence distillation over tens of thousands of distinct supplied-fiction contexts can teach broad English realization to the exact fast three-block LayerCake graph without importing specialist facts or changing the execution topology.",
+  "catalog": {
+    "generator": "abi.english_scale_catalog",
+    "generator_sha256": "aeb8e1e2f2e9cc416d0a16137132dcba4f47ef6e81e1be93eb89cfb310ca32d9",
+    "extraction_runtime_sha256": "ecc30dacb23c3d4d4064d908419d0ad8f0c84cc83e5925cafd2c7927716b4606",
+    "seed": 19824,
+    "search_contexts": 40000,
+    "validation_contexts": 1000,
+    "final_contexts": 1000,
+    "one_probe_per_context": true,
+    "capabilities": [
+      "rewriting",
+      "coherence",
+      "tone_control",
+      "cake_output_realization"
+    ],
+    "search_probes_per_capability": 10000,
+    "validation_probes_per_capability": 250,
+    "final_probes_per_capability": 250,
+    "maximum_teacher_output_tokens": 192,
+    "selection": "Stable minimum SHA-256 sampling from the pinned local TinyStories corpus by split and seed.",
+    "final_test_is_selection_material": false
+  },
+  "raw_corpus": {
+    "dataset_id": "roneneldan/TinyStories",
+    "dataset_revision": "f54c09fd23315a6f9c86f9dc80f725de7d8f9c64",
+    "train_arrow_sha256": "664d3c433e7503e49ce379ba430caf41f777efd1464ddd6e8535a5f99cf30c61",
+    "validation_arrow_sha256": "3891288066b372ac34308bb77d99911e2db1087ccd61b661471e70fbbcea927c",
+    "role": "fictional_supplied_context_only",
+    "license": "CDLA-Sharing-1.0_as_declared_by_the_official_dataset_page",
+    "license_addendum": "ABI_ENGLISH_BROAD_CORPUS_LICENSE_ADDENDUM.json"
+  },
+  "segregation": {
+    "destination_scope": "english_core",
+    "domain": "domain_independent",
+    "knowledge_class": "english_linguistic_form",
+    "domain_labels": [],
+    "domain_claims": [],
+    "closed_book_fact_prompts": 0,
+    "specialist_domain_prompts": 0,
+    "domain_ontology_sha256": "076c940a4382ce1f4581ebf618168f817e4ce44a96fd75f533d63998ac740c9b",
+    "source_output_policy": "Retain only evaluator-passing search outputs and reject any output containing a bounded ontology exclusion marker at token boundaries.",
+    "claim_boundary": "Supplied-fiction construction and bounded marker rejection support a measured corpus-purity claim, not a proof that weights contain literally zero latent world knowledge."
+  },
+  "teacher": {
+    "model_id": "microsoft/Phi-3-mini-4k-instruct",
+    "revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "source_manifest_sha256": "997f6f103e53e370d98221f44f2c007c04c42c4dc7ee5b1caf739d2971ae7931",
+    "license_id": "MIT",
+    "device": "cuda",
+    "batch_size": 8,
+    "temperature": 0,
+    "survey_splits": [
+      "search",
+      "validation"
+    ],
+    "final_split_inference_before_candidate_lock": false,
+    "teacher_present_at_layercake_inference": false
+  },
+  "nested_frontier": {
+    "teacher_generation_runs": 1,
+    "screened_budget_fractions_in_order": [
+      0.25,
+      0.5,
+      1.0
+    ],
+    "small_complete_capability_round": "EXTRACTION_SCHEMA_DIAGNOSTIC_ONLY_NOT_PROMOTABLE",
+    "budget_identity": "Actual authoritative teacher-token budgets emitted by the content-addressed artifact.",
+    "minimum_claim": "Only the lowest passing tested nested budget paired with its largest lower tested failure; never a global minimum.",
+    "escalation_rule": "Evaluate 25 percent first. Train 50 percent only if 25 percent fails a locked validation gate. Train 100 percent only if 50 percent fails. Do not access final-test teacher outputs until a validation candidate is locked."
+  },
+  "candidate_lock": {
+    "architecture": "unchanged three-block LayerCake with ten physically sparse task cakes",
+    "parent": "results/abi_moonshot/segregated_acquisition_v3/three-block-realization-scale-preservation-seed9824-steps4000-v6",
+    "parent_checkpoint_sha256": "5bae16dec3a55759e92a8481ec5ee519a5ee8687ad1a6f019edc1df3225d092e",
+    "canonical_semantic_abi_sha256": "d024de52144a2d797d0501acb7deb55575ffca7e33f72900beff599cf0a97761",
+    "preservation_replay": "../layercake_release/data/moonshot/phase2/instruction_curriculum_semantic_control_v2.jsonl",
+    "independent_training_from_same_parent_per_budget": true,
+    "seed": 19824,
+    "training_steps_formula": "ceil(0.60 * selected_search_record_count), yielding approximately 2.4 teacher-record presentations at batch size four",
+    "teacher_batch_size": 4,
+    "preservation_batch_size": 4,
+    "sampling_strategy": "balanced_capabilities",
+    "shared_learning_rate": 0.00001,
+    "cake_learning_rate": 0.00005,
+    "classifier_loss_weight": 0.25,
+    "prompt_overlap_loss_weight": 1.0,
+    "max_tokens": 256,
+    "self_generated_prefix_recovery": {
+      "start_step": 400,
+      "interval": 8,
+      "horizons": [
+        8,
+        16,
+        32
+      ]
+    },
+    "architecture_changes": 0,
+    "tokenizer_changes": 0,
+    "task_cake_topology_changes": 0
+  },
+  "validation_gates": {
+    "functional_overall_pass_rate_at_least": 0.8,
+    "each_scale_capability_pass_rate_at_least": 0.8,
+    "source_passing_retention_rate_at_least": 0.9,
+    "autonomous_collapse_count": 0,
+    "paired_blinded_judge_prompts": 112,
+    "paired_blinded_judge_prompts_per_capability": 28,
+    "candidate_grammatical_fluency_mean_at_least": 3.25,
+    "candidate_coherence_mean_at_least": 3.25,
+    "candidate_grounding_mean_at_least": 3.0,
+    "candidate_instruction_adherence_mean_at_least": 3.0,
+    "candidate_to_teacher_total_score_ratio_at_least": 0.9,
+    "candidate_to_teacher_bootstrap_95_lower_at_least": 0.85,
+    "judge_repetition_or_collapse_rate": 0,
+    "judge_unusable_rate": 0
+  },
+  "final_promotion_gates": [
+    "The same exact teacher-free checkpoint passes the corrected Phase 2 functional, grounding, adherence, autonomous-generation, and no-collapse suites.",
+    "The same exact checkpoint passes the preregistered final paired teacher-relative fluency judge and a separately required blinded human audit.",
+    "The same exact native checkpoint remains at least 2x faster than the optimized CPU transformer with a bootstrap 95 percent lower bound above 2x.",
+    "The same exact native checkpoint preserves at least 95 percent of certified Phase 2 LayerCake throughput, has lower active RSS, passes TTFT, and physically verifies sparse execution.",
+    "Canonical ABI, parent identity, imported-artifact immutability, teacher absence, and zero retained source blocks all pass adversarial verification.",
+    "Three paired seeds or fresh host initializations reproduce the locked thresholds."
+  ],
+  "decision_rule": "Promote the first nested candidate that passes every validation and final gate. If a budget fails, preserve it as negative evidence and escalate exactly once to the next preregistered nested budget. If the full budget fails, diagnose the measured residual bottleneck before any further architecture or data campaign; do not claim fluency, teacher equivalence, or a hard resource limit.",
+  "claim_boundary": "This is a bounded sequence-distillation scale test inside the only architecture that currently preserves LayerCake's CPU invariant. It cannot establish mathematical losslessness from a non-LayerCake teacher or guarantee that a 67M-class graph has enough capacity before the experiment is run."
+}

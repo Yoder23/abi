@@ -1,0 +1,14 @@
+{
+  "format": "abi-english-v74-trainable-scope-literal-amendment/1",
+  "status": "CONTROLLING_ZERO_STEP_SYNTAX_CORRECTION",
+  "effective_date": "2026-08-03",
+  "incident": "ABI_ENGLISH_V74_TRAINABLE_SCOPE_LITERAL_FAILURE.json",
+  "only_change": {
+    "from": "same_tokenizer_logit_distillation",
+    "to": "full_core_same_tokenizer_logit_distillation"
+  },
+  "semantic_scope": "All exact LayerCake parameters remain trainable and the same top-64 same-tokenizer source-distillation path is enabled.",
+  "source_data_seed_steps_batches_learning_rates_loss_weights_and_gates_unchanged": true,
+  "corrected_stress_output": "results/abi_moonshot/stress/abi-aligned-source-first-distill-stress-v74",
+  "continue_rule": "Proceed only if the corrected one-step CUDA stress run passes and records finite source-distillation loss."
+}

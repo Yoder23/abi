@@ -149,6 +149,21 @@ def _passing_search_supplements(
     return supplements
 
 
+def _defer_empty_search_error_for_supplements(
+    *,
+    selected_records: Sequence[Mapping[str, Any]],
+    include_passing_search_supplements: bool,
+    development: bool,
+) -> bool:
+    """Allow a separately qualified source to contribute search supplements."""
+
+    return bool(
+        not selected_records
+        and include_passing_search_supplements
+        and development
+    )
+
+
 def _catalog_id(record: Mapping[str, Any]) -> str:
     provenance = str(record.get("provenance", ""))
     if ":" not in provenance:
@@ -165,8 +180,19 @@ def _records_for_exact_inventory_selection(
     inventories: Sequence[Mapping[str, Any]],
     sources: Sequence[Mapping[str, Any]],
     selection: Mapping[str, Any],
+    training_material_inventory_hashes: set[str] | None = None,
 ) -> list[dict[str, Any]]:
-    """Bind chosen capabilities to their exact inventory/catalog evidence."""
+    """Bind chosen capabilities to their exact inventory/catalog evidence.
+
+    A composed training-material bundle intentionally retains only passing
+    search records while its inventory remains bound to the complete source
+    survey. Consequently, some inventory result hashes legitimately refer to
+    failed or non-search evidence that is absent from the training bundle.
+    For explicitly identified training-material inventories, require at least
+    one materialized result per selected capability and use only those signed
+    records to recover the exact catalog. Raw survey inventories remain
+    strictly self-contained.
+    """
 
     records_by_id = {str(record["record_id"]): record for record in records}
     results_by_hash = {
@@ -182,9 +208,13 @@ def _records_for_exact_inventory_selection(
         )
         for source in sources
     }
+    training_material_inventory_hashes = (
+        training_material_inventory_hashes or set()
+    )
     selected_catalogs: dict[tuple[str, str, str, str], set[str]] = {}
     for item in selection["selected_items"]:
-        inventory = inventories_by_hash.get(str(item["inventory_sha256"]))
+        inventory_hash = str(item["inventory_sha256"])
+        inventory = inventories_by_hash.get(inventory_hash)
         if inventory is None:
             raise CapabilityPipelineError(
                 "selection references an unavailable inventory"
@@ -204,6 +234,8 @@ def _records_for_exact_inventory_selection(
         for result_hash in matching_entries[0]["probe_result_sha256"]:
             result = results_by_hash.get(str(result_hash))
             if result is None:
+                if inventory_hash in training_material_inventory_hashes:
+                    continue
                 raise CapabilityPipelineError(
                     "selected inventory evidence is absent from inputs"
                 )
@@ -213,6 +245,10 @@ def _records_for_exact_inventory_selection(
                     "selected inventory record is absent from inputs"
                 )
             evidence_records.append(record)
+        if not evidence_records:
+            raise CapabilityPipelineError(
+                "selected training inventory has no materialized evidence"
+            )
         catalog_ids = {_catalog_id(record) for record in evidence_records}
         if len(catalog_ids) != 1:
             raise CapabilityPipelineError(
@@ -325,6 +361,7 @@ def _extraction_ledger(
     extraction_seconds: float,
     source_inference_seconds: float,
     source_extraction_devices: Sequence[str] = (),
+    source_inference_runtimes: Sequence[Mapping[str, Any]] = (),
     input_archives: Sequence[Mapping[str, Any]] = (),
 ) -> dict[str, Any]:
     unique_prompts: dict[str, int] = {}
@@ -377,6 +414,9 @@ def _extraction_ledger(
         "final_cpu_inference_seconds": None,
         "artifact_disk_footprint_bytes": "recorded_in_receipt_sidecar",
         "source_extraction_devices": sorted(set(source_extraction_devices)),
+        "source_inference_runtimes": [
+            dict(value) for value in source_inference_runtimes
+        ],
         "external_hardware_used": False,
         "external_hardware_description": "",
         "source_manifest_sha256": sorted(
@@ -423,6 +463,7 @@ def _survey(args: argparse.Namespace) -> dict[str, Any]:
         local_files_only=not args.allow_network,
         trust_remote_code=args.trust_remote_code,
         use_chat_template=not args.no_chat_template,
+        load_in_8bit=args.load_in_8bit,
     )
     inference_started = time.perf_counter()
     records, probe_results = run_probe_catalog(
@@ -439,7 +480,11 @@ def _survey(args: argparse.Namespace) -> dict[str, Any]:
     )
     selection = build_inventory_survey_plan(inventory)
     selected_records = records_for_selection(records, selection)
-    selected_results = _selected_probe_results(probe_results, selected_records)
+    selected_results = (
+        _selected_probe_results(probe_results, selected_records)
+        if selected_records
+        else []
+    )
     budgets = _survey_evidence_budgets(
         selected_records, ordering_seed=f"{catalog['catalog_id']}:survey"
     )
@@ -450,6 +495,7 @@ def _survey(args: argparse.Namespace) -> dict[str, Any]:
         extraction_seconds=elapsed,
         source_inference_seconds=source_inference_seconds,
         source_extraction_devices=[source.device],
+        source_inference_runtimes=[source.source_inference_runtime],
     )
     output = Path(args.output)
     bundle = build_extraction_bundle(
@@ -517,9 +563,17 @@ def _compose(args: argparse.Namespace) -> dict[str, Any]:
         [inventory for bundle in loaded for inventory in bundle["inventories"]],
         "inventory_sha256",
     )
+    training_material_inventory_hashes = {
+        str(inventory["inventory_sha256"])
+        for bundle in loaded
+        if bundle["verification"]["artifact_role"]
+        == SEGREGATED_TRAINING_ARTIFACT_ROLE
+        for inventory in bundle["inventories"]
+    }
     initial_selection = build_user_selection_plan(
         inventories,
         include_english_core=args.english,
+        english_capabilities=args.english_capabilities,
         domains=_domains(args.domains),
         source_policy=args.source_policy,
         allow_unverified_development_selection=args.development,
@@ -530,6 +584,9 @@ def _compose(args: argparse.Namespace) -> dict[str, Any]:
         inventories=inventories,
         sources=sources,
         selection=initial_selection,
+        training_material_inventory_hashes=(
+            training_material_inventory_hashes
+        ),
     )
     selected_evidence_results = _selected_probe_results(
         probe_results, selected_evidence_records
@@ -577,19 +634,35 @@ def _compose(args: argparse.Namespace) -> dict[str, Any]:
     selection = build_user_selection_plan(
         rebuilt_inventories,
         include_english_core=args.english,
+        english_capabilities=args.english_capabilities,
         domains=_domains(args.domains),
         source_policy=args.source_policy,
         allow_unverified_development_selection=args.development,
     )
     selected_records = records_for_selection(
-        selected_evidence_records, selection, split="search"
+        selected_evidence_records,
+        selection,
+        split="search",
+        allow_empty=(
+            args.include_passing_search_supplements and args.development
+        ),
     )
-    if not selected_records:
+    if not selected_records and not _defer_empty_search_error_for_supplements(
+        selected_records=selected_records,
+        include_passing_search_supplements=(
+            args.include_passing_search_supplements
+        ),
+        development=args.development,
+    ):
         raise CapabilityPipelineError(
             "composition has no search records for LayerCake training; "
             "validation and final-test outputs are never training material"
         )
-    selected_results = _selected_probe_results(probe_results, selected_records)
+    selected_results = (
+        _selected_probe_results(probe_results, selected_records)
+        if selected_records
+        else []
+    )
     passing_record_ids = {
         str(result["record_id"])
         for result in selected_results
@@ -631,6 +704,11 @@ def _compose(args: argparse.Namespace) -> dict[str, Any]:
             raise CapabilityPipelineError(
                 "non-search record crossed the supplement boundary"
             )
+    if not selected_records:
+        raise CapabilityPipelineError(
+            "composition has no passing search records for LayerCake training; "
+            "validation and final-test outputs are never training material"
+        )
     supplemental_record_count = (
         len(selected_records) - selected_before_supplements
     )
@@ -669,14 +747,195 @@ def _compose(args: argparse.Namespace) -> dict[str, Any]:
         }
         for bundle in loaded
     ]
+    source_ledgers = [bundle["ledger"] for bundle in loaded]
     ledger = _extraction_ledger(
         selected_sources,
         selected_records,
-        extraction_seconds=0,
-        source_inference_seconds=0,
-        source_extraction_devices=[],
+        extraction_seconds=sum(
+            float(row.get("one_time_source_extraction_seconds", 0.0))
+            for row in source_ledgers
+        ),
+        source_inference_seconds=sum(
+            float(row.get("source_model_inference_seconds", 0.0))
+            for row in source_ledgers
+        ),
+        source_extraction_devices=sorted(
+            {
+                str(device)
+                for row in source_ledgers
+                for device in row.get("source_extraction_devices", [])
+            }
+        ),
+        source_inference_runtimes=[
+            dict(runtime)
+            for row in source_ledgers
+            for runtime in row.get("source_inference_runtimes", [])
+        ],
         input_archives=input_archives,
     )
+    generated_records = [
+        row
+        for row in selected_records
+        if row.get("teacher_token_counter")
+        == "authoritative_generated_token_ids"
+    ]
+    contrastive_records = [
+        row
+        for row in selected_records
+        if row.get("teacher_token_counter")
+        == "authoritative_source_tokenizer_posthoc_on_contrastive_selection"
+    ]
+    unsupported_counters = sorted(
+        {
+            str(row.get("teacher_token_counter"))
+            for row in selected_records
+        }
+        - {
+            "authoritative_generated_token_ids",
+            "authoritative_source_tokenizer_posthoc_on_contrastive_selection",
+        }
+    )
+    if unsupported_counters:
+        raise CapabilityPipelineError(
+            "composition contains unsupported source token counters: "
+            f"{unsupported_counters}"
+        )
+    unique_generated_outputs = {
+        str(row["output_sha256"]): (
+            int(row["output_utf8_bytes"]),
+            int(row["teacher_tokens"]),
+        )
+        for row in generated_records
+    }
+    unique_contrastive_outputs = {
+        str(row["output_sha256"]): (
+            int(row["output_utf8_bytes"]),
+            int(row["teacher_tokens"]),
+        )
+        for row in contrastive_records
+    }
+    semantic_qualifications = [
+        dict(row["semantic_qualification"])
+        for row in source_ledgers
+        if isinstance(row.get("semantic_qualification"), Mapping)
+    ]
+    contrastive_qualifications = [
+        dict(row["contrastive_qualification"])
+        for row in source_ledgers
+        if isinstance(row.get("contrastive_qualification"), Mapping)
+    ]
+    ledger.update(
+        {
+            "teacher_token_counters": sorted(
+                {
+                    str(row["teacher_token_counter"])
+                    for row in selected_records
+                }
+            ),
+            "teacher_token_counter": (
+                "mixed_authoritative_source_counters"
+                if generated_records and contrastive_records
+                else str(selected_records[0]["teacher_token_counter"])
+            ),
+            "teacher_generated_output_bytes": sum(
+                int(row["output_utf8_bytes"]) for row in generated_records
+            ),
+            "duplicate_adjusted_teacher_output_bytes": sum(
+                value[0] for value in unique_generated_outputs.values()
+            ),
+            "teacher_generated_tokens": sum(
+                int(row["teacher_tokens"]) for row in generated_records
+            ),
+            "duplicate_adjusted_teacher_generated_tokens": sum(
+                value[1] for value in unique_generated_outputs.values()
+            ),
+            "contrastive_selected_output_bytes": sum(
+                int(row["output_utf8_bytes"]) for row in contrastive_records
+            ),
+            "duplicate_adjusted_contrastive_selected_output_bytes": sum(
+                value[0] for value in unique_contrastive_outputs.values()
+            ),
+            "contrastive_selected_tokens": sum(
+                int(row["teacher_tokens"]) for row in contrastive_records
+            ),
+            "duplicate_adjusted_contrastive_selected_tokens": sum(
+                value[1] for value in unique_contrastive_outputs.values()
+            ),
+            "logits_stored_count": sum(
+                int(row.get("logits_stored_count", 0))
+                for row in source_ledgers
+            ),
+            "logits_stored_bytes": sum(
+                int(row.get("logits_stored_bytes", 0))
+                for row in source_ledgers
+            ),
+            "ephemeral_full_logit_elements_materialized": sum(
+                int(row.get("ephemeral_full_logit_elements_materialized", 0))
+                for row in source_ledgers
+            ),
+            "hidden_activations_stored_count": sum(
+                int(row.get("hidden_activations_stored_count", 0))
+                for row in source_ledgers
+            ),
+            "hidden_activations_stored_bytes": sum(
+                int(row.get("hidden_activations_stored_bytes", 0))
+                for row in source_ledgers
+            ),
+            "source_parameter_read_events": sum(
+                int(row.get("source_parameter_count_read", 0))
+                for row in source_ledgers
+            ),
+            "source_weight_byte_read_events": sum(
+                int(row.get("source_weight_bytes_read", 0))
+                for row in source_ledgers
+            ),
+            "unique_source_parameter_count_read": sum(
+                int(source["parameter_count"]) for source in selected_sources
+            ),
+            "unique_source_weight_bytes_read": sum(
+                int(source["weight_bytes"]) for source in selected_sources
+            ),
+            "external_hardware_used": any(
+                bool(row.get("external_hardware_used"))
+                for row in source_ledgers
+            ),
+            "external_hardware_descriptions": sorted(
+                {
+                    str(row.get("external_hardware_description"))
+                    for row in source_ledgers
+                    if row.get("external_hardware_description")
+                }
+            ),
+            "semantic_qualifications": semantic_qualifications,
+            "contrastive_qualifications": contrastive_qualifications,
+            "source_qualification_accounting": [
+                {
+                    "input_archive_sha256": input_archive["archive_sha256"],
+                    "semantic_qualification": row.get(
+                        "semantic_qualification"
+                    ),
+                    "contrastive_qualification": row.get(
+                        "contrastive_qualification"
+                    ),
+                    "source_runtime_evidence": row.get(
+                        "source_runtime_evidence"
+                    ),
+                }
+                for input_archive, row in zip(
+                    input_archives, source_ledgers, strict=True
+                )
+            ],
+            "claim_boundary": (
+                "This composed ledger keeps generated-text semantic evidence "
+                "and source-selected contrastive evidence separate. It is "
+                "training material only and does not certify LayerCake."
+            ),
+        }
+    )
+    if len(semantic_qualifications) == 1:
+        ledger["semantic_qualification"] = semantic_qualifications[0]
+    if len(contrastive_qualifications) == 1:
+        ledger["contrastive_qualification"] = contrastive_qualifications[0]
     try:
         segregation_manifest = build_core_domain_segregation_manifest(
             selected_records,
@@ -706,6 +965,9 @@ def _compose(args: argparse.Namespace) -> dict[str, Any]:
         "command": "compose",
         "input_archives": input_archives,
         "requested_english_core": args.english,
+        "requested_english_capabilities": (
+            args.english_capabilities or []
+        ),
         "requested_domains": _domains(args.domains),
         "source_policy": args.source_policy,
         "passing_search_supplements_included": (
@@ -741,6 +1003,7 @@ def _inspect(args: argparse.Namespace) -> dict[str, Any]:
         local_files_only=not args.allow_network,
         trust_remote_code=args.trust_remote_code,
         use_chat_template=not args.no_chat_template,
+        load_in_8bit=args.load_in_8bit,
     )
     if args.output:
         _write_json(Path(args.output), source.source_manifest)
@@ -755,6 +1018,14 @@ def _source_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--allow-network", action="store_true")
     parser.add_argument("--trust-remote-code", action="store_true")
     parser.add_argument("--no-chat-template", action="store_true")
+    parser.add_argument(
+        "--load-in-8bit",
+        action="store_true",
+        help=(
+            "run the frozen source weights through bitsandbytes int8 on CUDA; "
+            "the original pinned weight files remain the source identity"
+        ),
+    )
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -795,6 +1066,15 @@ def build_parser() -> argparse.ArgumentParser:
     compose_parser.add_argument("--input", action="append", required=True)
     compose_parser.add_argument("--output", required=True)
     compose_parser.add_argument("--english", action="store_true")
+    compose_parser.add_argument(
+        "--english-capabilities",
+        type=_capabilities,
+        help=(
+            "optional comma-separated bounded English capability subset; "
+            "requires --english and produces development training material, "
+            "never a complete-core promotion claim"
+        ),
+    )
     compose_parser.add_argument("--domains", default="")
     compose_parser.add_argument(
         "--domain-ontology",

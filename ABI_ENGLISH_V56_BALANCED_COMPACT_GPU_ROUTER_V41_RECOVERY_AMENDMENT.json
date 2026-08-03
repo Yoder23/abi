@@ -1,0 +1,28 @@
+{
+  "format": "abi-english-v56-balanced-compact-router-recovery-amendment/1",
+  "status": "PREREGISTERED_AFTER_PACKAGING_FAILURE_BEFORE_SURVIVING_GRAPH_REEVALUATION",
+  "effective_date": "2026-08-01",
+  "parent_protocol": "ABI_ENGLISH_V56_BALANCED_COMPACT_GPU_ROUTER_PROTOCOL_V41.json",
+  "failure_record": "ABI_ENGLISH_V56_BALANCED_COMPACT_GPU_ROUTER_V41_PACKAGING_FAILURE.json",
+  "bound_router_graph_sha256": "76061bcf997f1e03e05858a90808b7cf6e78373a761fd0fa7b394ef117fa3b32",
+  "bound_parent_runtime_metadata_evidence_sha256": "d8f295a00cb900960652481d123d966d0789ed6c744283a0f78463ec6d245e8a",
+  "authorized_actions": [
+    "Rebuild the exact fresh-v9 prompt-hash holdout and evaluate the surviving ONNX graph.",
+    "Reconstruct the frozen PyTorch classifier from ONNX initializers and verify score and route equivalence.",
+    "Run one disposable full-shape CUDA backward pass for a conservative memory upper bound without modifying the surviving graph.",
+    "Accept the historical EXPORTED_NOT_YET_CERTIFIED parent status only when its exact metadata evidence hash matches v39, then package v41."
+  ],
+  "forbidden_actions": [
+    "router retraining or additional surviving-router optimizer steps",
+    "architecture, hyperparameter, split, threshold, or data changes",
+    "modification of the v39 main graph or v56 product components"
+  ],
+  "gates": {
+    "overall_fresh_route_accuracy_at_least": 0.95,
+    "every_fresh_capability_accuracy_at_least": 0.8,
+    "every_fresh_represented_route_accuracy_at_least": 0.8,
+    "reconstructed_pytorch_and_onnx_scores_close": true,
+    "reconstructed_pytorch_and_onnx_routes_exact": true
+  },
+  "moonshot_complete": false
+}

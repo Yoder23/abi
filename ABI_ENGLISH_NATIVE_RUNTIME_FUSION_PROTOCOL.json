@@ -1,0 +1,43 @@
+{
+  "format": "abi-english-native-runtime-fusion-protocol/1",
+  "status": "PREREGISTERED_BEFORE_DERIVATION",
+  "effective_date": "2026-07-30",
+  "objective": "Clear the bounded CPU speed and memory miss for the exact quality-qualified v9 host without changing its neural weights, symbolic payload, tokenizer, or decoding contract.",
+  "controlling_evidence": {
+    "quality": "results/abi_moonshot/native_hosts/three-block-realization-scale-symbolic-reasoning-v9-onnx-int8-v3-lexical4-semantic-full1400.json",
+    "benchmark": "results/abi_moonshot/native_hosts/three-block-realization-scale-symbolic-reasoning-v9-onnx-int8-v3-lexical4-benchmark-128.json",
+    "measured_miss": {
+      "median_cpu_ratio": 2.014037553906447,
+      "paired_bootstrap_lower_bound": 1.8567131063298072,
+      "phase2_throughput_retention": 0.9225870591739995
+    }
+  },
+  "attempt_lock": {
+    "attempts": 1,
+    "optimization": "train-output sparse projection fused with exact runtime prompt-token union",
+    "vocabulary_budget": "train_outputs",
+    "selection_material": "immutable search-only English bundle plus immutable general train split",
+    "validation_tokens_used_for_selection": 0,
+    "benchmark_tokens_used_for_selection": 0,
+    "final_tokens_used_for_selection": 0,
+    "neural_weights_changed": false,
+    "symbolic_payload_changed": false,
+    "input_embedding_changed": false,
+    "runtime_prompt_union": "only token IDs already present in the current prompt",
+    "byte_fallback_required": true
+  },
+  "gates": {
+    "same_host_manifest_sha256": "2342ee0e91038936aa3bde0c072706854a1262254a813f8aa4a1c028d168e4ff",
+    "all_14_quality_capabilities_at_least": 0.8,
+    "collapse_count": 0,
+    "median_cpu_speed_ratio_at_least": 2.0,
+    "paired_prompt_bootstrap_lower_bound_at_least": 2.0,
+    "phase2_throughput_retention_at_least": 0.95,
+    "ttft_no_worse_than_comparator": true,
+    "active_model_memory_lower_than_comparator": true,
+    "persistent_incremental_state_exact": true,
+    "physical_sparse_execution": true
+  },
+  "decision_rule": "Derive and rescreen exactly one dynamic train-output vocabulary runtime. Reject rather than sweep vocabulary sizes or precision variants if it fails.",
+  "claim_boundary": "This optimization reduces the physically active output projection; it does not improve or alter the acquired English knowledge."
+}

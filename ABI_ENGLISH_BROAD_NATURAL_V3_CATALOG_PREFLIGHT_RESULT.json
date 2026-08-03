@@ -1,0 +1,46 @@
+{
+  "format": "abi-english-broad-natural-v3-catalog-preflight-result/1",
+  "status": "PASS_AUTHORIZE_SIXTEEN_GPU_SOURCE_SHARDS",
+  "effective_date": "2026-08-02",
+  "protocol": "ABI_ENGLISH_BROAD_NATURAL_V3_SHARDED_GPU_REPLAY_PROTOCOL.json",
+  "catalog": {
+    "path": "catalogs/broad_natural_conversation_search_v3.json",
+    "sha256": "4b43dbadbca0a0d52b5e7c0e60b249ed377a95fa89464ab2479db96eb809a081",
+    "bytes": 49878733,
+    "probes": 19516,
+    "prompt_text_changes_from_v2": 0,
+    "prompt_text_set_sha256": "8335af63e28c8e418e1f69b627fae80e6accf7672ea1730e3d56000a285ea7e6",
+    "content_basis": "domain_free_instruction"
+  },
+  "machine_audit": {
+    "path": "results/abi_moonshot/catalog_audits/broad-natural-conversation-search-v3-audit.json",
+    "file_sha256": "18df75014928eff15d9e65d4017a06c10d3874c841430b79a5dde9be2bfafd88",
+    "evidence_sha256": "52c0c667cb230989462b020583875fa9c10e8d19c4e78f0faad04ffcf4c79851",
+    "failures": 0
+  },
+  "partition": {
+    "path": "catalogs/broad_natural_conversation_search_v3_shards16/partition_manifest.json",
+    "file_sha256": "e79925bf0f0e526fcc163d2b1fce2aab9fa48a2f41cc3ea1cc3bdd477c75201c",
+    "evidence_sha256": "f7417b9b4ca4865368b115dcd490672b08e536669d2b7048df558a685517e22b",
+    "shards": 16,
+    "union_probes": 19516,
+    "intersection_probes": 0,
+    "missing_probes": 0,
+    "extra_probes": 0,
+    "probe_payload_changes": 0
+  },
+  "preflight_implementation": {
+    "hf_extraction_sha256": "576f74d8c95b993fd3c158b17849d77b11284e152e812a3ae5f9aca07ff50d68",
+    "catalog_builder_sha256": "2a1a6138c48ba82b872beb9906d18c11920d977b736fb6f9dda8ddd7e15ed780",
+    "partition_builder_sha256": "265bab26cb3b5d498dfac67a859ed64f0cf4226ba57daac362486ae29b23f034",
+    "focused_tests": "36 passed; one expected historical V4 certificate hash-binding failure outside the focused preflight set"
+  },
+  "execution_policy": {
+    "teacher_inference": "GPU_ONLY",
+    "layercake_training": "GPU_ONLY",
+    "cpu_role": "teacher-free LayerCake inference evaluation only",
+    "cpu_fallback_allowed": false
+  },
+  "final_test_accessed": false,
+  "moonshot_complete": false
+}

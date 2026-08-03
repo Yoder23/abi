@@ -4,7 +4,10 @@ from collections import Counter
 import json
 from pathlib import Path
 
-from abi.english_generalization_evaluation import _collapse_metrics
+from abi.english_generalization_evaluation import (
+    _collapse_metrics,
+    _normalize_decoding_contract,
+)
 from abi.english_realization_scale_catalog import (
     CAPABILITIES as REALIZATION_CAPABILITIES,
     PROBES_PER_CAPABILITY as REALIZATION_PROBES_PER_CAPABILITY,
@@ -22,6 +25,19 @@ from abi.natural_english_catalog import (
 
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def test_decoding_contract_adds_only_safe_defaults_for_older_hosts():
+    normalized = _normalize_decoding_contract(
+        {
+            "algorithm": "greedy",
+            "no_repeat_ngram_size": 0,
+            "prompt_identity_mixture": True,
+        }
+    )
+    assert normalized["prompt_identity_mixture"] is True
+    assert normalized["allow_prompt_ngrams"] is False
+    assert normalized["lexical_repetition_truncation_threshold"] == 0
 
 
 def test_natural_catalog_is_reproducible_and_has_locked_depth() -> None:
@@ -203,6 +219,7 @@ def test_natural_catalog_has_disjoint_prompt_text_and_valid_labels() -> None:
     for probe in catalog["probes"]:
         assert probe["domain_labels"] == []
         assert probe["domain_claims"] == []
+        assert probe["label_method"] == "preregistered_catalog"
         assert probe["output_introduces_unsupplied_facts"] is False
         assert (
             probe["label_evidence_sha256"]
@@ -229,6 +246,7 @@ def test_realization_scale_catalog_is_search_only_labeled_and_distinct() -> None
         assert probe["domain"] == "domain_independent"
         assert probe["domain_labels"] == []
         assert probe["domain_claims"] == []
+        assert probe["label_method"] == "preregistered_catalog"
         assert probe["output_introduces_unsupplied_facts"] is False
         assert (
             probe["label_evidence_sha256"]

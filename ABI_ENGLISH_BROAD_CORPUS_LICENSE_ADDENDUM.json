@@ -1,0 +1,23 @@
+{
+  "schema_version": "abi-corpus-license-addendum/1",
+  "protocol_id": "abi-english-broad-corpus-acquisition-v1",
+  "status": "AUTHORITATIVE_REPOSITORY_METADATA_VERIFIED_AFTER_PREREGISTRATION",
+  "verified_date": "2026-07-30",
+  "dataset_id": "roneneldan/TinyStories",
+  "dataset_revision": "f54c09fd23315a6f9c86f9dc80f725de7d8f9c64",
+  "local_cached_metadata": {
+    "file": "dataset_info.json",
+    "sha256": "35a17849c53e4cb4b9613f385d51f1dfc2e71a146b8b4b94cc6de808aba9aaf7",
+    "declared_license_value": "",
+    "interpretation": "The cached generated metadata omits a license value; it is preserved unchanged."
+  },
+  "authoritative_repository_metadata": {
+    "url": "https://huggingface.co/datasets/roneneldan/TinyStories",
+    "declared_license": "cdla-sharing-1.0",
+    "repository_tree_url": "https://huggingface.co/datasets/roneneldan/TinyStoriesDataset/tree/main",
+    "repository_tree_identifies_revision": "f54c09f",
+    "network_content_copied_into_training": false
+  },
+  "decision": "The research campaign may continue under the repository-declared CDLA-Sharing-1.0 terms. Final release documentation must retain attribution, license identity, raw-corpus hashes, and the distinction between corpus context and frozen source-teacher output.",
+  "claim_boundary": "This addendum records repository metadata and is not legal advice. It does not modify the preregistered catalog, cached corpus bytes, or source-teacher evidence."
+}

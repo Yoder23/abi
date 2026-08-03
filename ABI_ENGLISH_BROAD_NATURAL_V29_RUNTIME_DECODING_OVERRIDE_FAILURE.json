@@ -1,0 +1,21 @@
+{
+  "format": "abi-english-broad-natural-v29-runtime-decoding-override-failure/1",
+  "status": "REJECTED_OVERRIDE_PARTIAL_EXPORT_NOT_CERTIFIABLE",
+  "effective_date": "2026-08-02",
+  "candidate": "results/abi_moonshot/segregated_acquisition_v3/three-block-broad-natural-dualstream-fullcore-seed49824-steps12000-v29",
+  "attempted_output": "results/abi_moonshot/native_hosts/three-block-broad-natural-fullcore-seed49824-v29-onnx-int8-v32-norepeat4",
+  "attempted_override": {"no_repeat_ngram_size": 4},
+  "failure": "standalone runtime decoding must come from its frozen metadata",
+  "metadata_written": false,
+  "certifiable_runtime_created": false,
+  "partial_files_preserved": {
+    "model-fp32.onnx": "4223909124c58fffaeb533587a3019233dfc94e7d2fa1bf1401301bd56750a61",
+    "model-int8-matmul.onnx": "9888483a8f1824e6d1e4c741e83eef899ae131a8e7cf89cef83bcac3f189d0c5",
+    "model-int8.onnx": "38370eeed7d379b6cdca506a791521d650325eb259e169077d2e6ddebe9c4be8",
+    "symbolic-surface.json": "1c61f350ee6a26a448b2c78e260ac53326b50ebff70adfc98f119429828f77ce",
+    "tokenizer.json": "1fe93b6152957cf9cfd6d89002467f789ce8b3f3e000b3a2edf27c808ddd0b9e"
+  },
+  "decision": "Preserve this partial output as negative operational evidence. Export the identical candidate to a new immutable path with no decoding override and certify only the exact frozen contract.",
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

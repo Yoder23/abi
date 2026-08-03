@@ -1,0 +1,80 @@
+{
+  "format": "abi-english-intrinsic-phi3-gpu-preflight-v83-decision/1",
+  "status": "REJECTED_BEFORE_FULL_SURVEY_OR_LAYERCAKE",
+  "effective_date": "2026-08-03",
+  "protocol": {
+    "path": "ABI_ENGLISH_INTRINSIC_OPEN_WEIGHT_EXTRACTION_GPU_PROTOCOL_V83.json",
+    "sha256": "7ea22aa797b22227841085e288f4a41fc0e32c056cad9b25a03040ba755f085b"
+  },
+  "source": {
+    "model": "microsoft/Phi-3-mini-4k-instruct",
+    "revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310",
+    "device": "cuda",
+    "hardware": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "weight_execution_precision": "bitsandbytes_int8",
+    "cpu_offload_enabled": false
+  },
+  "bundle": {
+    "path": "results/abi_moonshot/intrinsic_reference_v83/phi3-intrinsic-gpu-preflight-v83.abix",
+    "sha256": "8ee10d2b95691ba638e4f86392118eeb894b52dc63548f1a625d3a34dcb63aa8",
+    "manifest_sha256": "283705a007b19138408927d444dbce30bdc7c7e5ff46112e93967f6fe619c7b4",
+    "receipt_path": "results/abi_moonshot/intrinsic_reference_v83/phi3-intrinsic-gpu-preflight-v83.abix.receipt.json",
+    "receipt_sha256": "a6810020ccf24b8e2df4c1168121cc90846ae85682c60110efc1aa071092a925"
+  },
+  "runtime_audit": {
+    "path": "results/abi_moonshot/intrinsic_reference_v83/phi3-intrinsic-gpu-preflight-runtime-audit-v83.json",
+    "sha256": "42fadc6e9cfa878c50e39ad8ded2ce16b0453a9a0664d5ea809f8639a31f4848",
+    "evidence_sha256": "6b98efd9f72e75a1b8e9e1ea06f01636dd4618b4bb7e710a258b50182542350b",
+    "status": "FAIL_SOURCE_RUNTIME_EVIDENCE_PREFLIGHT"
+  },
+  "accounting": {
+    "records": 168,
+    "passing": 66,
+    "failing": 102,
+    "eos_terminated": 141,
+    "length_terminated": 27,
+    "teacher_tokens": 8975,
+    "teacher_generated_output_bytes": 31097,
+    "source_model_inference_seconds": 163.348626,
+    "one_time_source_extraction_seconds": 179.046073,
+    "authoritative_generated_id_counts": 168,
+    "positive_teacher_input_token_counts": 168
+  },
+  "locked_gate": {
+    "minimum_functional_passes_per_capability": 10,
+    "required_eos_terminations": 168,
+    "allowed_length_terminations": 0
+  },
+  "capability_matrix": [
+    {"capability": "abstention", "passed": 1, "total": 12, "length_terminated": 3, "gate_pass": false},
+    {"capability": "cake_output_realization", "passed": 8, "total": 12, "length_terminated": 1, "gate_pass": false},
+    {"capability": "clarification", "passed": 3, "total": 12, "length_terminated": 4, "gate_pass": false},
+    {"capability": "coherence", "passed": 3, "total": 12, "length_terminated": 2, "gate_pass": false},
+    {"capability": "conversation", "passed": 1, "total": 12, "length_terminated": 2, "gate_pass": false},
+    {"capability": "domain_independent_reasoning", "passed": 1, "total": 12, "length_terminated": 6, "gate_pass": false},
+    {"capability": "email_drafting", "passed": 2, "total": 12, "length_terminated": 4, "gate_pass": false},
+    {"capability": "format_control", "passed": 3, "total": 12, "length_terminated": 0, "gate_pass": false},
+    {"capability": "grammar", "passed": 7, "total": 12, "length_terminated": 0, "gate_pass": false},
+    {"capability": "instruction_following", "passed": 9, "total": 12, "length_terminated": 0, "gate_pass": false},
+    {"capability": "prompt_grounding", "passed": 9, "total": 12, "length_terminated": 2, "gate_pass": false},
+    {"capability": "rewriting", "passed": 12, "total": 12, "length_terminated": 0, "gate_pass": true},
+    {"capability": "summarization", "passed": 2, "total": 12, "length_terminated": 0, "gate_pass": false},
+    {"capability": "tone_control", "passed": 5, "total": 12, "length_terminated": 3, "gate_pass": false}
+  ],
+  "decision": "Reject this Phi-3 intrinsic artifact before the 10,304-record survey. Only rewriting cleared the per-capability gate, and the source produced 27 forbidden length terminations. Do not train either matched control or LayerCake from this artifact.",
+  "failure_attribution": "ABI_SOURCE_ARTIFACT_PREFLIGHT_FAILURE",
+  "layercake_boundary": {
+    "layercake_invoked": false,
+    "layercake_training_executed": false,
+    "layercake_checkpoint_created": false,
+    "layercake_failure": false,
+    "sealed_layercake_host_reopened": false,
+    "locked_phase_2_result_changed": false
+  },
+  "full_survey_executed": false,
+  "matched_transformer_training_executed": false,
+  "negative_evidence_preserved": true,
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

@@ -1,0 +1,64 @@
+{
+  "format": "abi-english-persistent-capability-prefix-decision/1",
+  "status": "REJECTED_BEFORE_FULL_GPU_ACQUISITION",
+  "effective_date": "2026-08-02",
+  "protocol": "ABI_ENGLISH_PERSISTENT_CAPABILITY_PREFIX_GPU_PROTOCOL_V34.json",
+  "stress_checkpoint": {
+    "path": "results/abi_moonshot/stress/abi-broad-natural-persistent-prefix-p8-r64-stress-v34",
+    "checkpoint_sha256": "9993b65462c1db952fba20d1506958718cc5c33ac71eb54f5c9e2fa59f844ffa",
+    "manifest_sha256": "5a5c1152e3b140884b54ad648c0632f832ffeb255dd4989c67ba4860f5b7daf4",
+    "successful_cuda_optimizer_steps": 1,
+    "peak_gpu_memory_bytes": 1730849280,
+    "frozen_shared_state_preserved_exact": true,
+    "teacher_present_at_inference": false,
+    "source_parameters_copied": 0
+  },
+  "valid_runtime": {
+    "path": "results/abi_moonshot/native_hosts/persistent-prefix-p8-r64-stress-v34f-onnx-int8-fixed-token-precheck",
+    "identity_evidence": "results/abi_moonshot/native_hosts/persistent-prefix-p8-r64-stress-v34f-identity.json",
+    "physical_evidence": "results/abi_moonshot/native_hosts/persistent-prefix-p8-r64-stress-v34f-physical-proof.json",
+    "identity_status": "PASS",
+    "physical_status": "PASS",
+    "public_cache_excludes_prefix": true,
+    "prompt_encoded_once": true
+  },
+  "fixed_token_precheck": {
+    "candidate_evidence": "results/abi_moonshot/native_hosts/persistent-prefix-p8-r64-stress-v34-fixed-token-architecture-20x20.json",
+    "comparison_evidence": "results/abi_moonshot/native_hosts/persistent-prefix-p8-r64-stress-v34-fixed-token-architecture-comparison.json",
+    "distinct_prompts": 20,
+    "repeats_per_prompt": 20,
+    "forced_tokens_per_observation": 64,
+    "median_tokens_per_second": 317.3035659555121,
+    "parent_median_tokens_per_second": 345.545304127966,
+    "candidate_to_parent_median_ratio": 0.9227798253960688,
+    "paired_rate_ratio_bootstrap_95ci": [
+      0.9170609716680541,
+      0.9265910303622112
+    ],
+    "paired_latency_ratio_bootstrap_95ci": [
+      1.0814138016735217,
+      1.0928252921055333
+    ],
+    "peak_process_rss_bytes": 219684864,
+    "rss_limit_bytes": 214990848,
+    "cache_lengths_exact": true
+  },
+  "failed_gates": [
+    "median fixed-token retention >= 0.95",
+    "paired prompt rate bootstrap lower bound >= 0.95",
+    "paired prompt latency bootstrap upper bound <= 1.05",
+    "peak CPU RSS < 214990848"
+  ],
+  "measured_bottleneck": "Eight permanently reinserted KV positions lengthen every attention operation. The paired 7.72% median token-rate loss and 8.14%-9.28% latency increase match this structural decode cost; installed prefix tensors and the separate router session also increase RSS.",
+  "preserved_negative_evidence": [
+    "v34 initial dynamic-sequence main-graph export and identity failure",
+    "v34b task-cake projection isolation export failure",
+    "v34c implicit causal-mask runtime failure",
+    "v34d and v34e explicit two-dimensional mask export failures",
+    "v34f valid runtime and failed locked precheck"
+  ],
+  "decision": "Do not launch the preregistered 18000-step v34 candidate. Replace persistent KV positions with physically selected layerwise capability-control vectors that condition every real-token KV state without increasing cache length.",
+  "full_candidate_launched": false,
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

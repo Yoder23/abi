@@ -1,0 +1,72 @@
+{
+  "format": "abi-layercake-matched-quality-scope-control-protocol/1",
+  "protocol_id": "abi-layercake-sealed-native-matched-quality-scope-v79",
+  "status": "PREREGISTERED_BEFORE_MATCHED_QUALITY_SCOPE_EXECUTION",
+  "effective_date": "2026-08-03",
+  "objective": "Evaluate the immutable sealed native LayerCake payload through the exact receiver on the same 28-prompt natural-English screen used for ABI-derived candidates, so new-scope quality failures are not automatically mislabeled as ABI-only failures.",
+  "claim_boundary": {
+    "locked_layercake_phase2_result": "Remains PASS in its existing bounded scope and is neither rerun nor broadened by this control.",
+    "matched_quality_control": "Observational attribution evidence only; it does not certify ABI transfer and does not alter historical LayerCake evidence.",
+    "abi": "No teacher extraction, ABI payload training, or ABI candidate is executed here."
+  },
+  "sealed_layercake": {
+    "repository": "../layercake_release",
+    "required_commit": "04cf2927a16fba686cd640e18a78708e5658bbda",
+    "required_clean_before_and_after": true,
+    "checkpoint_sha256": "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1",
+    "modified": false
+  },
+  "attribution_contract": {
+    "path": "ABI_LAYERCAKE_FAILURE_ATTRIBUTION_CONTRACT_V1.json",
+    "sha256": "4272cd24e75fe641ff4a0cd66cef3913e3183a36b7b57665f0b6294b03ada60f"
+  },
+  "receiver": {
+    "path": "results/abi_moonshot/receiver_controls/capability-naive-seed-73129-v1",
+    "manifest_sha256": "25bfa39f211995dcba42e14451a4e96cc029bd6c30d1c09d6f90a1da6273ebb1"
+  },
+  "native_payload": {
+    "path": "results/abi_moonshot/receiver_controls/native-phase2-r3-payload-v1",
+    "manifest_sha256": "d799562fca5796cd4b79ab4e45ae9bfc42b1dcbdec158366a3f2b3d41b3df3b3"
+  },
+  "native_same_path_control": {
+    "path": "results/abi_moonshot/receiver_controls/native-phase2-r3-same-path-v75.json",
+    "file_sha256": "b1cc0bdc90911ee1b57b441add13390e31712fb0591264445461e363db525799",
+    "required_status": "PASS"
+  },
+  "quality_scope": {
+    "catalog": "catalogs/postcert_novel_english_audit_v1.json",
+    "catalog_sha256": "0b7349c07201638db72bd8fe31fba4f7f7bc4e18fce8fb90c3a3ec839ed70df5",
+    "observations": 28,
+    "decoding": {
+      "algorithm": "greedy",
+      "no_repeat_ngram_size": 4,
+      "allow_prompt_ngrams": false,
+      "lexical_repetition_truncation_threshold": 0
+    },
+    "reported_without_reinterpretation": [
+      "automatic passes",
+      "automatic failures",
+      "collapse count",
+      "per-prompt outputs",
+      "routes",
+      "persistent three-layer cache lengths"
+    ]
+  },
+  "decision_rule": {
+    "all_28_pass_and_zero_collapse": "The native host has a known-good payload for the full candidate quality scope; later installed candidate quality failures may be attributed to ABI acquisition or integration after all earlier ABI gates pass.",
+    "at_least_10_pass_and_zero_collapse": "The native payload clears only the existing preliminary ABI screen, not the full quality scope; attribution must distinguish screen-level from full-quality claims.",
+    "below_10_or_any_collapse": "The locked Phase 2 proof remains valid, but the native payload does not establish the broader ABI target scope. Installed candidate misses are ABI/acquisition-or-new-host-scope unresolved until an oracle same-topology control passes. Do not call them LayerCake regressions or ABI-only failures.",
+    "execution_or_identity_failure": "LAYERCAKE_HOST_REGRESSION_OR_CONTROL_INVALID; stop ABI payload work until resolved."
+  },
+  "implementation_lock": {
+    "abi/layercake_external_receiver.py": "efefd7f12879b8d7ebdf23e5f0f14f8b472a23b447049a0cc5be306381867cf6",
+    "tests/test_layercake_external_receiver.py": "af561b48c3f3c386fa8e4f5c3e4476b866aad77c62228baa28f8cd115212424b",
+    "tests/test_failure_attribution.py": "1e0ace570cfc5cf2a5638da1cd8524a93a7c7ef1aa80329c7c6e5e2c8064e4d3",
+    "targeted_tests": "16 passed"
+  },
+  "output": "results/abi_moonshot/receiver_controls/native-phase2-r3-matched-quality-scope-v79.json",
+  "historical_evidence_changed": false,
+  "final_test_accessed": "The catalog was already disclosed and used by V72-V75; this run creates no new prompts and does not access any separately held-out promotion test.",
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

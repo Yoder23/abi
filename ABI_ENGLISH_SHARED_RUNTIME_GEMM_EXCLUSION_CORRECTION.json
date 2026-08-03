@@ -1,0 +1,66 @@
+{
+  "schema_version": "abi-layercake-runtime-precision-correction/1",
+  "recorded_at": "2026-07-31T18:15:42.9123984-04:00",
+  "status": "PREREGISTERED_BEFORE_CORRECTED_LAYER_PROFILE_EXPORTS",
+  "scope": "CPU_INFERENCE_RUNTIME_ONLY",
+  "gpu_acquisition_policy_unchanged": true,
+  "incident": {
+    "affected_artifact": "results/abi_moonshot/native_hosts/three-block-v24-runtime-ablation-fp32-layer0-v38",
+    "declared_profile": "fp32_layer0",
+    "observed_runtime_graph_sha256": "e32c176e55ee4911c6274615165eae5d2637d140b18e7b505250e9350686e70b",
+    "all_int8_runtime_graph_sha256": "e32c176e55ee4911c6274615165eae5d2637d140b18e7b505250e9350686e70b",
+    "cause": "ONNX Runtime rewrites Gemm node names with a _MatMul suffix before applying dynamic-quantization exclusions. The exporter supplied only the original Gemm names, so the intended layer matrices were quantized.",
+    "disposition": "PRESERVED_AS_HISTORICAL_INVALID_PRECISION_ABLATION_NOT_ELIGIBLE_FOR_SELECTION",
+    "semantic_result_preserved": {
+      "cake_output_realization_pass_rate": 0.82,
+      "domain_independent_reasoning_pass_rate": 0.70,
+      "status": "FAIL"
+    }
+  },
+  "correction": {
+    "runtime_source": "abi/layercake_host_runtime.py",
+    "runtime_source_sha256": "1f9fb320bd81ca489b1659aa4c422469f1593b9f5abef139a1d5aad55c8ace0b",
+    "test_source": "tests/test_layercake_host_runtime.py",
+    "test_source_sha256": "9129db74058c4a5bef8dcd72a95c75a875acbb27419a4d577a787258ae625de9",
+    "focused_test_result": "32 passed",
+    "mechanism": [
+      "exclude both the original Gemm name and its deterministic _MatMul preprocessing name",
+      "fail export unless every declared runtime exclusion remains an executable float MatMul or Gemm",
+      "make the physical verifier independently fail unless declared exclusions map one-to-one and remain float"
+    ]
+  },
+  "continued_preregistered_screen": {
+    "profiles": [
+      {
+        "profile": "fp32_layer0",
+        "artifact_suffix": "v38b"
+      },
+      {
+        "profile": "fp32_layer1",
+        "artifact_suffix": "v39b"
+      },
+      {
+        "profile": "fp32_layer2",
+        "artifact_suffix": "v40b"
+      },
+      {
+        "profile": "fp32_transformer",
+        "artifact_suffix": "v41b"
+      }
+    ],
+    "diagnostic_capabilities": [
+      "cake_output_realization",
+      "domain_independent_reasoning"
+    ],
+    "observations": 200,
+    "selection_rule_unchanged": "Select only a passing preregistered profile; among passing profiles choose the smallest executable graph, breaking an exact size tie by median latency. No multi-component precision combinations are authorized."
+  },
+  "invariants": {
+    "checkpoint_unchanged": true,
+    "decoding_overlay_unchanged": true,
+    "teacher_absent_at_inference": true,
+    "quarantined_final_catalog_unaccessed": true,
+    "historical_evidence_not_overwritten": true,
+    "no_new_training_authorized": true
+  }
+}

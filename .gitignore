@@ -71,3 +71,24 @@ tmp_guard_test/
 *_results.json
 results/
 run_logs/
+
+# Historical generated catalogs larger than 1 MiB are preserved locally and
+# content-addressed by ABI_LOCAL_RESEARCH_ARTIFACTS_MANIFEST_V1.json. Their
+# generators, protocols, compact manifests, decisions, and hashes remain in
+# Git. Do not delete these local files when cleaning a checkout.
+catalogs/broad_corpus_grounded_english_v1.json
+catalogs/broad_natural_conversation_search_v1.json
+catalogs/broad_natural_conversation_search_v2.json
+catalogs/broad_natural_conversation_search_v2_shards16/broad_natural_conversation_search_v2_shard_*.json
+catalogs/broad_natural_conversation_search_v3.json
+catalogs/broad_natural_conversation_search_v3_shards16/broad_natural_conversation_search_v3_shard_*.json
+catalogs/english_distinct_context_scale_v1.json
+catalogs/grounded_english_reference_search_validation_v1.json
+catalogs/grounded_english_reference_search_validation_v2.json
+catalogs/grounded_english_reference_search_validation_v3.json
+catalogs/intrinsic_english_search_validation_v83.json
+catalogs/intrinsic_english_search_validation_v83_rejected_label_method.json
+catalogs/natural_domain_filtered_instruction_search_v1.json
+catalogs/natural_prompt_grounding_expansion_search_validation_v76.json
+catalogs/supplied_context_deterministic_qualified_search_validation_v78.json
+catalogs/supplied_context_natural_candidates_search_validation_v77.json

@@ -1,0 +1,58 @@
+{
+  "format": "abi-english-deep-reused-capability-cake-gpu-protocol/1",
+  "status": "PREREGISTERED_AFTER_V37_REJECTION_BEFORE_IMPLEMENTATION",
+  "effective_date": "2026-08-02",
+  "controlling_failure": "ABI_ENGLISH_SHARED_DEEP_CAPABILITY_ADAPTER_V37_DECISION.json",
+  "hypothesis": "Moving the one already-installed selected rank-64 capability cake from the final-only position to before each of the three frozen blocks adds trajectory-level nonlinear capacity without adding any parameter table, clearing RSS while retaining at least 95% of parent CPU speed.",
+  "architecture_lock": {
+    "transformer_blocks": 3,
+    "shared_transformer_frozen": true,
+    "installed_capability_cakes": 14,
+    "capability_cake_rank": 64,
+    "selected_unique_cakes_per_sequence": 1,
+    "selected_cake_invocations_per_sequence": 3,
+    "shared_cake_weights_across_blocks": true,
+    "final_post_transformer_cake_invocations": 0,
+    "added_adapter_parameters": 0,
+    "extra_kv_positions": 0,
+    "router_hash_buckets": 4096,
+    "router_width": 32,
+    "canonical_abi_changed": false
+  },
+  "hardware_policy": {
+    "acquisition_training": "cuda",
+    "cpu_training_authorized": false,
+    "cpu_role": "exact deployed LayerCake inference diagnostics and certification only"
+  },
+  "stress_lock": {
+    "output": "results/abi_moonshot/stress/abi-broad-natural-deep-reused-cake-r64-stress-v38",
+    "seed": 119824,
+    "successful_optimizer_steps": 1,
+    "require_parent_function_exact_at_zero_delta": true,
+    "require_frozen_shared_hash_exact": true,
+    "require_teacher_absent": true,
+    "require_physical_one_parameter_table_selected_at_three_blocks": true,
+    "require_persistent_cache_exact": true,
+    "require_fixed_token_parent_retention_at_least": 0.95,
+    "require_cpu_rss_below_bytes": 214990848
+  },
+  "candidate_lock_if_prechecks_pass": {
+    "output": "results/abi_moonshot/segregated_acquisition_v3/three-block-broad-natural-deep-reused-cake-r64-seed119824-steps18000-v38",
+    "seed": 119824,
+    "device": "cuda",
+    "successful_optimizer_steps": 18000,
+    "main_batch_size": 4,
+    "anchor_batch_size": 4,
+    "general_batch_size": 4,
+    "all_sampling_strategies": "balanced_capabilities",
+    "cake_router_learning_rate": 0.00005,
+    "classifier_loss_weight": 1.0,
+    "max_tokens": 1024,
+    "recovery_start_step": 400,
+    "recovery_interval": 8,
+    "recovery_horizons": [4, 8, 16]
+  },
+  "decision_rule": "Reject before the full GPU run on any structural, physical, cache, fixed-token speed, TTFT, or RSS failure. If trained, reject unless the disclosed natural screen materially exceeds v29's 8/28 without collapse. Do not add parameters, sweep rank, seed, data, steps, or loss weights.",
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

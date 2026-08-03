@@ -1,0 +1,31 @@
+{
+  "format": "abi-english-v73-native-control-process-contamination/1",
+  "status": "PRESERVED_HARNESS_SEQUENCING_FAILURE_NO_SOURCE_IMPORT_OR_TRAINING_OCCURRED",
+  "effective_date": "2026-08-03",
+  "protocol": "ABI_ENGLISH_COMPATIBLE_WEIGHT_SUBSTRATE_GPU_PROTOCOL_V73.json",
+  "failed_evidence": {
+    "path": "results/abi_moonshot/external_layercake_controls/phase2-r3-phase8-native-v73.json",
+    "file_sha256": "0dd5e5e9fce08bef4a49d4e5e15e88ce13aae188dd18fd137a5144af56f7d4bf",
+    "evidence_sha256": "3b166b547bba5c1702a2ea32a2a075c189041655036a4045cbdc45ad86c33f5b"
+  },
+  "passed_checks": [
+    "attribution_contract_verified",
+    "canonical_abi",
+    "native_runtime_graph_exact",
+    "persistent_incremental_state",
+    "physical_sparse_execution",
+    "runtime_artifact_immutable",
+    "runtime_module_from_sealed_repository",
+    "separate_repository_clean_before_and_after",
+    "separate_repository_commit_exact",
+    "source_checkpoint_exact"
+  ],
+  "failed_check": "no_pytorch_or_transformers_runtime_loaded",
+  "root_cause": "The command imported abi.layercake_external_receiver in the same Python process before calling the native ONNX-only external host control. That module imports torch, contaminating the process-boundary assertion before LayerCake control execution.",
+  "layercake_execution_failure_observed": false,
+  "layercake_host_regression_claimed": false,
+  "source_import_started": false,
+  "training_started": false,
+  "repair": "Run the native external host control alone in a fresh Python process and write a new immutable evidence file. Run PyTorch receiver controls only in a later process.",
+  "historical_evidence_overwritten": false
+}

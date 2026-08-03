@@ -1,0 +1,40 @@
+{
+  "format": "abi-teacher-record-labeling-calibration-amendment/1",
+  "status": "AUTHORIZED_SINGLE_CORRECTION_BEFORE_VALIDATION",
+  "effective_date": "2026-08-03",
+  "parent_protocol": "ABI_TEACHER_RECORD_LABELING_PHASE2_PROTOCOL_V88.json",
+  "parent_protocol_sha256": "9c600e1d47808d2c0f2abb7ac584d70f166f232129908dd9169ee108df57a0f4",
+  "calibration_evidence": "results/abi_moonshot/labeling_phase2_v88/calibration-v1.json",
+  "calibration_evidence_sha256": "5860f7c609d374e0dbfaa2203cba293cdf8936e1a86ff12e233307b5b12e7499",
+  "observed_defect": {
+    "summary": "The frozen classifier consistently recognized the semantic class but displaced it among destination_scope, domain, and capability; the deterministic Python detector also treated ordinary instructions beginning with 'return' as source code.",
+    "bounded_evidence": [
+      "10/10 civics rows emitted semantic domain=civics but were rejected because destination_scope was english_core.",
+      "10/10 mathematics rows emitted semantic domain=mathematics but were rejected because destination_scope was english_core.",
+      "10/10 English rows emitted semantic destination_scope=english_core but frequently placed the requested capability in domain or used none/quarantine there.",
+      "A Python false positive was caused by the pattern matching ordinary phrases such as 'Return only one JSON object'.",
+      "All 10 quarantine rows remained quarantined and no non-English row entered English core."
+    ]
+  },
+  "single_correction": {
+    "name": "schema-normalized corroboration and Python false-positive repair",
+    "rules": [
+      "Remove the generic 'return <word>' Python pattern; retain explicit Python, fenced Python, def, and import signals.",
+      "For exactly one deterministic known-domain signal, accept only when the semantic classifier's domain field independently equals that domain at medium or high confidence; canonicalize destination and capability from the locked ontology.",
+      "For no deterministic domain or quarantine signal, accept English only when the semantic classifier independently emits destination_scope=english_core at medium or high confidence and the prompt has exactly one locked task-semantic capability signal; canonicalize domain=domain_independent.",
+      "Any forced quarantine, malformed output, low confidence, absent capability signal, conflicting capability signals, absent domain corroboration, unknown domain, label spoof, or multiple domain remains quarantine."
+    ],
+    "prohibited_changes": [
+      "No benchmark row, gold label, split, threshold, ontology, or source artifact may change.",
+      "No validation observation may be inspected before implementation freeze.",
+      "No second code correction is permitted after this amendment.",
+      "LayerCake may not be invoked and no training artifact may be composed."
+    ]
+  },
+  "next_steps": [
+    "Implement and unit-test only this correction.",
+    "Replay the disclosed calibration partition into a new immutable evidence file.",
+    "Freeze the corrected implementation hash.",
+    "Execute the untouched validation partition exactly once."
+  ]
+}

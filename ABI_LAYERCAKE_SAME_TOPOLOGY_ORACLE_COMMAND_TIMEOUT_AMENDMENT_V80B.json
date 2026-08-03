@@ -1,0 +1,16 @@
+{
+  "format": "abi-layercake-same-topology-oracle-command-timeout-amendment/1",
+  "status": "PREREGISTERED_AFTER_HARNESS_TIMEOUT_BEFORE_RELAUNCH",
+  "effective_date": "2026-08-03",
+  "parent_protocol": {
+    "path": "ABI_LAYERCAKE_SAME_TOPOLOGY_DIRECT_TARGET_ORACLE_GPU_PROTOCOL_V80.json",
+    "sha256": "a22b3f6a7e4afa7072a7dc56f71dea5883806867bee3dc662788c532c6ba9a36"
+  },
+  "preserved_failure": "ABI_LAYERCAKE_V80_ORACLE_COMMAND_TIMEOUT_FAILURE.json",
+  "only_change": "Increase the outer command execution ceiling from 120 seconds to 1,200 seconds.",
+  "experimental_changes": 0,
+  "output_path_reused_because_no_prior_path_or_checkpoint_exists": true,
+  "historical_evidence_changed": false,
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

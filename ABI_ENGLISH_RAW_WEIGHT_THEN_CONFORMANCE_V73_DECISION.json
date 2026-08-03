@@ -1,0 +1,77 @@
+{
+  "format": "abi-english-raw-weight-then-conformance-decision/73",
+  "status": "REJECT_ABI_ACQUISITION_FAILURE_LAYERCAKE_HOST_PASS",
+  "effective_date": "2026-08-03",
+  "protocol": {
+    "path": "ABI_ENGLISH_COMPATIBLE_WEIGHT_SUBSTRATE_GPU_PROTOCOL_V73.json",
+    "sha256": "7819ff83a244fd2940e74de9b9caa1c6c4f7117d939bda39646019fcf31b5141"
+  },
+  "source": {
+    "model_id": "distilgpt2",
+    "revision": "2290a62682d06624634c1f46a6ad5be0f47f38aa",
+    "checkpoint_sha256": "e1ff18884359fe8beb795a5f414feb85a6ce3d929ad019c0d958c039d2b94a1b",
+    "staged_bytes": 355679200,
+    "staging_transformations": 0,
+    "source_manifest_sha256": "d44474a8db263365298f162f1452cf49b15ff7c70dfa8233ac0453e0ca8647ac"
+  },
+  "direct_base": {
+    "checkpoint_sha256": "2dece066cde5f7f3f170e9c706216eb7301004d255fa05ea165be79d555d8a20",
+    "source_parameters_copied": 60648960,
+    "source_blocks_copied": [0, 2, 5],
+    "exact_host_screen": {
+      "path": "results/abi_moonshot/receiver_controls/v73-distilgpt2-direct-base-exact-host-screen-v1.json",
+      "file_sha256": "2879ac9924d947f54a263ce21a871006efef24b112f2adb7d323a541cb6b17cb",
+      "evidence_sha256": "d92d3f71cd092a3f2caa4d6c2994ab460d5d78ec23d50b8317eb473dd897fd16",
+      "passes": 0,
+      "collapse_count": 0,
+      "interpretation": "Raw continuation weights produce English-like continuations but do not supply instruction behavior. This diagnostic was not promotion eligible."
+    }
+  },
+  "conformed_payload": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-distilgpt2-v71-conformance-seed489824-steps6000-v73",
+    "checkpoint_sha256": "afb92867ad408599f4aca96b5c109d5ce39bcbac372e40a7cb3c8e98d79b05a8",
+    "metadata_file_sha256": "0caf1efed86b3711a4dfa8658ed2c7e7d44040bd937597ce82f5b0a951ac3511",
+    "manifest_sha256": "bc2a05b50f3b7431929976f37e4ce89762d020c8b3b89cf2a829c30638414e33",
+    "payload_manifest_file_sha256": "b4878f6647a0d7f19629cd46eb090f0ea6e09aec0dbed1609b0c52520f57dce8",
+    "payload_manifest_sha256": "11f48ea4e65d4d6cc96e4d6fa88d85ffc95371f5a3f334bd206d7d47dd0bb337",
+    "successful_optimizer_steps": 6000,
+    "wall_seconds": 536.7639739000006,
+    "source_parameters_retained_exact": 0,
+    "source_blocks_retained_exact": 0,
+    "parent_teacher_forward_tokens": 2104419,
+    "parent_teacher_inference_seconds": 54.852260299838235,
+    "teacher_present_at_inference": false,
+    "bridge_parameters": 0
+  },
+  "exact_host_screen": {
+    "path": "results/abi_moonshot/receiver_controls/v73-distilgpt2-v71-conformance-exact-host-screen-v1.json",
+    "file_sha256": "019d728d03e5bd24e60f78407e85753301413c586210dc4ecdb32088d8469333",
+    "evidence_sha256": "5a99ecf28e6ef9d1d4dc79148f7b996e91e2a5b80eb74c76a2d991937a346c69",
+    "passes": 1,
+    "required_passes": 10,
+    "observations": 28,
+    "collapse_count": 4,
+    "all_host_and_installation_checks_passed": true
+  },
+  "native_control": {
+    "first_record": "PRESERVED_PROCESS_CONTAMINATION_FAILURE",
+    "incident": "ABI_ENGLISH_V73_NATIVE_CONTROL_PROCESS_CONTAMINATION.json",
+    "corrected_path": "results/abi_moonshot/external_layercake_controls/phase2-r3-phase8-native-v73-corrected.json",
+    "corrected_file_sha256": "1b173c27d550770c6553ef0933c03a5432d0b4d1d5e388f8b435e0787d90b0ac",
+    "corrected_evidence_sha256": "f3a0aef3a4b7ee365f282b0e88f40512bf1d587ede1c6f5c3dd756378c9f5232",
+    "corrected_result": "PASS"
+  },
+  "attribution": {
+    "layercake_host_regression": false,
+    "installation_failure": false,
+    "abi_source_import_failure": false,
+    "abi_acquisition_quality_failure": true,
+    "measured_bottleneck": "The raw six-block continuation source was compressed to three blocks before instruction alignment. V71 conformance on the compressed state did not create robust instruction behavior and introduced collapse.",
+    "nearby_layer_selection_learning_rate_weight_step_or_seed_sweep_authorized": false
+  },
+  "next_authorized_mechanism": "Change the ordering, not the hyperparameters: use a separately frozen instruction-aligned six-block DistilGPT2 source, extract its proven 0/2/5 representation into the exact host, and conformance-distill against that same aligned source. Preserve and separately account the source's prior alignment data and compute. No historical LayerCake result is inherited.",
+  "shuffled_artifact_control_executed": false,
+  "shuffled_artifact_control_reason": "The unshuffled candidate failed, so shuffling remains non-informative.",
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

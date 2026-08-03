@@ -1,0 +1,28 @@
+{
+  "format": "abi-english-intrinsic-semantic-diagnostic-aborted/1",
+  "status": "ABORTED_BY_SCOPE_CORRECTION_NO_EVIDENCE_PRODUCED",
+  "effective_date": "2026-08-03",
+  "protocol": {
+    "path": "ABI_ENGLISH_INTRINSIC_RESPONSE_CHANNEL_SEMANTIC_DIAGNOSTIC_GPU_PROTOCOL_V85.json",
+    "sha256": "37e43e40e2f818c866bf5626d51495e58aee84cb66df723c96f7005eee710011"
+  },
+  "reason": "The diagnostic introduced Qwen2-7B as a second-model judge of frozen Phi-3 responses. The user correctly challenged this as scope drift from proving direct teacher-to-LayerCake acquisition.",
+  "process_terminated": true,
+  "output_path": "results/abi_moonshot/intrinsic_reference_v85/phi3-v83-qwen2-semantic-diagnostic-v85.json",
+  "output_created": false,
+  "partial_journal_created": false,
+  "judgments_preserved_or_claimed": 0,
+  "training_artifact_created": false,
+  "matched_transformer_invoked": false,
+  "layercake_invoked": false,
+  "layercake_checkpoint_created": false,
+  "scope_correction": {
+    "teacher_role": "Generate explicitly accounted English targets and provide teacher-relative reference outputs.",
+    "matched_transformer_role": "Test whether the exact imported-information and training budget is sufficient independent of LayerCake.",
+    "layercake_role": "Acquire and execute the same artifact through the exact fast host.",
+    "independent_second_model_judge_required_for_next_step": false
+  },
+  "negative_evidence_preserved": true,
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

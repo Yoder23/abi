@@ -1,0 +1,152 @@
+{
+  "format": "abi-english-compatible-weight-substrate-gpu-protocol/73",
+  "status": "PREREGISTERED_AFTER_V72_FAILURE_BEFORE_SOURCE_IMPORT_OR_TRAINING",
+  "effective_date": "2026-08-03",
+  "objective": "Test weight-level English-substrate extraction from a pinned original open-weight DistilGPT2 source into the exact LayerCake topology, followed by V71-only instruction conformance, exact identity-path installation, and locked held-out screening.",
+  "measured_reason": {
+    "v72_decision": {
+      "path": "ABI_ENGLISH_V71_NAIVE_PAYLOAD_V72_DECISION.json",
+      "sha256": "e87118cd01cea3e4237d26ef86a27a339a0ab195c590a61ca2369aa8c755d009"
+    },
+    "v72_result": "1/28, zero collapse, all installation checks pass",
+    "bottleneck": "A 61.7M-parameter random payload memorized 84,930 cached teacher tokens without acquiring a general English representation.",
+    "change": "Replace random English representation acquisition with exact, shape-compatible source-weight extraction. Keep V71, exact LayerCake topology, receiver, identity bridge, screen, and runtime contracts fixed.",
+    "not_a_nearby_sweep": true
+  },
+  "claim_separation": {
+    "layercake": "Immutable exact execution host and native positive control only.",
+    "abi": "Pinned source import, tensor selection, copied-parameter ledger, V71 conformance, source-block elimination, and payload quality.",
+    "integration": "Zero-parameter identity installation and same-candidate host recertification.",
+    "failure_rule": "A passing native host followed by a source, extraction, conformance, or quality miss is ABI failure. Only exact native-control failure is LayerCake host regression."
+  },
+  "scientific_basis_not_promotion_credit": {
+    "sealed_layercake_preregistration": {
+      "path": "../layercake_release/moonshot/phase2_shallow_sparse_pretrained_preregistration.json",
+      "sha256": "a755bda4825842ce6891a294bfc69d8c73e54a5895393c2ad8d634293363d7c5",
+      "locked_source": "distilgpt2@2290a62682d06624634c1f46a6ad5be0f47f38aa",
+      "historically_selected_layers": [0, 2, 5],
+      "interpretation": "This supports the mechanism choice. V73 inherits no quality, speed, TTFT, RSS, or transfer result."
+    },
+    "sealed_layercake_student_base_sha256": "6cb2504284297feba25dbdf3d6a4516a7d07775dcaeefabb816c2cff20615b7b"
+  },
+  "source_lock": {
+    "model_id": "distilgpt2",
+    "revision": "2290a62682d06624634c1f46a6ad5be0f47f38aa",
+    "local_files_only": true,
+    "file_lock": {
+      "path": "catalogs/distilgpt2_snapshot_2290a626_file_lock_v1.json",
+      "sha256": "46c5bd341bdce5707f0ea266135ccc38ff06ba6f77edfc7494b33ba766929fdc"
+    },
+    "source_checkpoint_sha256": "e1ff18884359fe8beb795a5f414feb85a6ce3d929ad019c0d958c039d2b94a1b",
+    "source_parameter_count": 81912576,
+    "staged_output": "results/abi_moonshot/reference_artifact_v73/distilgpt2-2290a626-source-v1",
+    "staging_transformations": 0,
+    "source_import_module_sha256": "a697decfd8cb2e6979965c1cae58b8a053011ae4dc53132fa60d01fff91bb638"
+  },
+  "exact_layercake_target": {
+    "repository": "../layercake_release",
+    "commit": "04cf2927a16fba686cd640e18a78708e5658bbda",
+    "architecture_id": "layercake-shallow-sparse-english/1-three-block-task-cakes",
+    "canonical_abi_path": "../layercake_release/moonshot/phase2_canonical_semantic_abi_r3.json",
+    "canonical_abi_file_sha256": "d024de52144a2d797d0501acb7deb55575ffca7e33f72900beff599cf0a97761",
+    "capability_naive_training_base": "results/abi_moonshot/receiver_controls/capability-naive-seed-73129-training-base-v72",
+    "capability_naive_checkpoint_sha256": "f4f5a2d009ab6864361e2aaef1eea06081c8c58b0320e8b38be8c73351c31193",
+    "repository_mutation_allowed": false
+  },
+  "pre_acquisition_control_replay": {
+    "native_layercake": "results/abi_moonshot/external_layercake_controls/phase2-r3-phase8-native-v73.json",
+    "capability_naive_receiver": "results/abi_moonshot/receiver_controls/capability-naive-seed-73129-v1-evaluation-v73.json",
+    "identity_bridge_only": "results/abi_moonshot/receiver_controls/bridge-only-identity-v1-evaluation-v73.json",
+    "native_payload_same_path": "results/abi_moonshot/receiver_controls/native-phase2-r3-same-path-v73.json",
+    "required_results": ["PASS", "FAIL_ENGLISH", "FAIL_ENGLISH", "PASS"]
+  },
+  "direct_extraction_lock": {
+    "module": "abi/layercake_direct_source_initialization.py",
+    "module_sha256": "31dea0d70266972d00d6f913527483a178b15131e9cf502d189c9e177f5dc512",
+    "selected_source_layers": [0, 2, 5],
+    "copied_components": [
+      "token embeddings",
+      "position embeddings",
+      "final normalization",
+      "source blocks 0, 2, and 5 into target blocks 0, 1, and 2"
+    ],
+    "task_cakes_or_classifier_copied_from_source": false,
+    "device": "cuda",
+    "output": "results/abi_moonshot/segregated_acquisition_v3/three-block-distilgpt2-direct-0-2-5-v73",
+    "source_teacher_present_at_layercake_inference": false,
+    "diagnostic_payload": "results/abi_moonshot/receiver_controls/v73-distilgpt2-direct-base-payload-v1",
+    "diagnostic_screen": "results/abi_moonshot/receiver_controls/v73-distilgpt2-direct-base-exact-host-screen-v1",
+    "diagnostic_is_promotion_eligible": false
+  },
+  "reference_artifact": {
+    "path": "results/abi_moonshot/reference_artifact_v71/phi3-multisource-english-training-v1.abix",
+    "archive_sha256": "da8e3b4940988c1a8a2d9baab47c7a82dbbe6bccd054a494a3ad77102e12886a",
+    "manifest_sha256": "ece8e6fe5f6286ae2571aaa251f08a4a587131b7dbea0e5f5f0444803d211d65",
+    "adequacy_status": "PASS_REFERENCE_ARTIFACT_ADEQUACY",
+    "budget_index": 3,
+    "records": 2235,
+    "teacher_tokens": 84930
+  },
+  "fixed_decoding_contract": {
+    "path": "ABI_ENGLISH_DISTINCT_CONTEXT_SCALE_DECODING_LOCK.json",
+    "sha256": "9cdf13ed2b8fad9b90b1ee2132481424a15a05f8e3a58dd94fac6b7fc2d946dd"
+  },
+  "stress_lock": {
+    "output": "results/abi_moonshot/stress/abi-distilgpt2-v71-conformance-stress-v73",
+    "seed": 489824,
+    "steps": 1,
+    "device": "cuda",
+    "trainable_scope": "full_core",
+    "batch_size": 4,
+    "sampling_strategy": "balanced_capabilities",
+    "shared_learning_rate": 0.00001,
+    "cake_learning_rate": 0.00005,
+    "parent_logit_preservation_weight": 2.0,
+    "max_tokens": 1024
+  },
+  "conformance_lock_if_stress_passes": {
+    "output": "results/abi_moonshot/segregated_acquisition_v3/three-block-distilgpt2-v71-conformance-seed489824-steps6000-v73",
+    "seed": 489824,
+    "steps": 6000,
+    "device": "cuda",
+    "trainable_scope": "full_core",
+    "batch_size": 4,
+    "gradient_accumulation_steps": 1,
+    "sampling_strategy": "balanced_capabilities",
+    "shared_learning_rate": 0.00001,
+    "cake_learning_rate": 0.00005,
+    "classifier_loss_weight": 0.25,
+    "prompt_overlap_loss_weight": 1.0,
+    "parent_logit_preservation_weight": 2.0,
+    "max_tokens": 1024,
+    "recovery_start_step": 400,
+    "recovery_interval": 8,
+    "recovery_horizons": [8, 16, 32],
+    "general_curriculum": null,
+    "anchor_bundle": null,
+    "foreign_source_online_during_conformance": false,
+    "required_exact_source_blocks_retained_after_conformance": 0
+  },
+  "integration_lock": {
+    "payload": "results/abi_moonshot/receiver_controls/v73-distilgpt2-v71-conformance-payload-v1",
+    "bridge_kind": "identity_state_installation",
+    "bridge_parameters": 0,
+    "bridge_training_steps": 0,
+    "exact_host_screen": "results/abi_moonshot/receiver_controls/v73-distilgpt2-v71-conformance-exact-host-screen-v1.json"
+  },
+  "screen_rule": {
+    "catalog": "catalogs/postcert_novel_english_audit_v1.json",
+    "observations": 28,
+    "minimum_passes": 10,
+    "required_collapse_count": 0,
+    "continue_only_if_screen_passes": true,
+    "failure_action": "Preserve all source, tensor, conformance, and receiver evidence. Do not sweep layer selection, learning rates, weights, steps, or seed. Classify by the controlling attribution order and select a successor only from a newly measured bottleneck."
+  },
+  "candidate_dependent_controls": {
+    "shuffled_v71_artifact_required_before_promotion_if_unshuffled_passes": true,
+    "actual_bridge_only": "Identity bridge has zero parameters; the no-payload bridge-only control is exact."
+  },
+  "promotion_boundary": "A screen pass is not completion. The same immutable teacher-free payload must still pass full untouched functional and teacher-relative quality, domain isolation, exact ABI/package identity, physical sparse execution, persistent state, CPU speed, cold TTFT, RSS, and three-seed or fresh-host reproduction.",
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

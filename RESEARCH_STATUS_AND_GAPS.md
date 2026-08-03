@@ -1,67 +1,135 @@
-# Research status and open gaps
+# ABI research status and open questions
 
-## Closed for the bounded reference
+Status date: 2026-08-03
 
-The current ABI campaign has a passing, teacher-free bounded LayerCake reference
-candidate. It binds immutable source identities, imported-information
-accounting, a tested English budget frontier, three-seed/fresh-host
-reproduction, signed domain packages, sparse activation, CPU/CUDA package
-identity, CPU performance, hostile tamper tests, and a frozen final suite.
+## What the research has resolved
 
-The result establishes an end-to-end implementation, not merely a proposed
-architecture. It does not establish a generally fluent English product: the
-post-certificate audit produced 0/28 LayerCake passes, 19/28 frozen-source
-passes, and 19 source-passing regressions.
+1. **The repositories have distinct responsibilities.** ABI extraction and
+   LayerCake execution are separate systems and evidence lineages.
+2. **The bounded pipeline is real.** The historical v47 release demonstrates
+   extraction, packaging, teacher removal, bounded domain installation, and a
+   complete locked-suite execution path.
+3. **The old bounded catalog did not generalize.** The exact v47 candidate
+   scored 0/28 on novel prompt forms while frozen Phi-3 scored 19/28.
+4. **Teacher data can causally affect LayerCake.** V87's real mapping beat the
+   parent and shuffled control, although the formal quality gate failed.
+5. **Pre-transfer segregation can work.** V89 passed its locked, disjoint
+   English/domain/quarantine labeling benchmark with zero specialist leakage
+   into English.
+6. **Transport is not the present blocker.** Exact package transport and
+   receiver-path identity are established in LayerCake. The open ABI problem
+   is acquiring and conditioning enough correct, diverse information for
+   natural generalization.
 
-## Still open
+## Immediate blocking questions
 
-1. **English generalization is the blocking failure.** The 14 capabilities
-   passed a structurally narrow synthetic catalog but failed all 28 sampled
-   novel prompt forms. The next candidate needs materially broader natural
-   language acquisition and preregistered paraphrase/adversarial suites.
-2. **Core/domain semantic segregation.** The v2 record schema and v3 bundle
-   enforce explicit labels, exact selection, ontology-marker exclusion,
-   ambiguity quarantine, and payload separation. The deterministic v6 catalog
-   supplies 5,400 synthetically segregated probes. A broader natural-language
-   corpus, human label audit, and held-out core-only specialist leakage suite
-   still need to be frozen and run.
-3. **Core-size frontier.** The old information-budget result did not test a
-   sufficiently broad generalizing English model or a nested deployed-core
-   size frontier. The smallest fluent core remains unknown.
-4. **Rich domains.** The packaged Python, chemistry, and civics capabilities
-   are narrow. Larger executable-code, scientific reasoning, retrieval,
-   medical, legal, and multilingual domain suites require new campaigns.
-5. **Mathematics.** The tested package failed closure and remains blocked.
-6. **Model generality.** The pipeline supports additional frozen sources, but
-   each architecture/revision needs immutable identity, compatibility, budget,
-   and final-host evidence.
-7. **Discovery completeness.** Behavioral probing can label observed
-   capabilities; it cannot prove that every latent capability was found.
-8. **Global minimality.** The selected English budget is minimal only among
-   four preregistered candidates. Stronger lower bounds would require a wider
-   search and a formal task-distribution model.
-9. **External audit.** Hostile reproduction was performed in-repository. A
-   separate organization should reproduce the release from an artifact
-   manifest on independent hardware.
-10. **Hardware breadth.** The locked CPU and available CUDA paths passed the
-   measured gates. Other CPUs, GPUs, operating systems, drivers, and precision
-   modes require host-specific certification.
-11. **Generative evaluation depth.** Finite exact and rubric-scored suites
-   should be supplemented by larger blinded human and adversarial studies
-   without relaxing deterministic regression gates.
+### 1. What is the normalized acquisition unit?
 
-## Extension priority
+We have labeled teacher prompt/response records, but not a final contract for
+turning them into training-ready examples. The next protocol must decide which
+information is preserved verbatim, transformed, paired contrastively,
+decomposed, or rejected. Every transformation must remain reversible to raw
+provenance and must not silently alter the destination label.
 
-The next scientifically useful increment is a broad natural-language
-acquisition and held-out leakage protocol, followed by a successor English
-substrate—not another domain. V6 provides the synthetic control. The successor
-must address the measured
-acquisition/generalization bottleneck, pass natural paraphrases and adversarial
-prompts, and demonstrate core-only specialist abstention before the existing
-performance and domain gates are rerun. Do not expand by nearby template
-handlers or parameter sweeps. Do not call foreign-teacher acquisition
-lossless.
+### 2. What belongs in the English substrate?
 
-Historical failures—including lower English budgets, failed formatting and
-rewriting candidates, identity serialization failure, and mathematics
-closure—must remain accessible for every future comparison.
+Grammar, coherence, grounding, instructions, conversation, supplied-text
+summarization, rewriting, email drafting, tone, formatting, clarification,
+abstention, and fluent realization are intended English capabilities.
+
+“Domain-independent reasoning” remains underspecified. Historical examples
+mixed linguistic reasoning with arithmetic, which would contaminate the
+English-only definition. The next contract must define fact-free reasoning
+tasks or assign them to a separate capability/domain.
+
+### 3. How much breadth is adequate before training?
+
+Record count alone is insufficient. Adequacy must cover natural surface forms,
+behavioral families, response structures, lengths, interaction styles,
+negative cases, clarification, abstention, and adversarial variants. It must
+also require teacher-output correctness and completion, not merely nonempty
+text.
+
+### 4. How do we avoid teaching templates instead of English?
+
+The 1,700-case v47 pass followed by a 0/28 novel-form result is direct evidence
+of template overfitting. The successor needs paraphrase families, compositional
+variation, unseen lexical combinations, varied discourse lengths, and a fixed
+natural holdout that cannot influence corpus construction.
+
+### 5. What is the sufficient-information frontier?
+
+The smallest broadly fluent imported-information budget is unknown. Data and
+model size are coupled: a small corpus may fail because it is insufficient,
+while a small host may fail despite adequate data. Nested data budgets and
+nested host-size controls must separate these factors.
+
+### 6. Can LayerCake express the expanded target behavior?
+
+Earlier same-topology and matched-transformer controls did not establish broad
+quality at the available information budget. Future failures must be separated
+among artifact inadequacy, acquisition, host capacity, and decoding. A new ABI
+candidate cannot be blamed on LayerCake unless an appropriate native or oracle
+payload passes the identical expanded suite.
+
+### 7. What quality comparison closes the English goal?
+
+Exact template checks are necessary but insufficient. Promotion needs paired
+teacher-versus-candidate evaluation on untouched natural prompts, deterministic
+functional checks where possible, blinded rubric or human evaluation for open
+generation, repetition/collapse metrics, and prompt-level uncertainty.
+
+### 8. How is domain discovery bounded?
+
+V89 classifies a declared ontology; it does not discover every latent domain.
+The project still needs a user-governed process for proposing domains,
+qualifying their boundaries, detecting multi-domain records, and deciding when
+unknown material remains quarantined.
+
+### 9. How are multiple teachers reconciled?
+
+Multi-source acquisition needs record-level provenance, source licenses,
+confidence, contradiction detection, preference rules, and a fail-closed
+conflict policy. Agreement between teachers is evidence, not an automatic
+semantic label.
+
+### 10. What is the release-quality evidence depth?
+
+V89 has 20 disjoint observations per class. Its point estimates pass, but the
+per-class Wilson lower bounds remain wide. Broader labeling validation, three
+independent runs where stochasticity matters, and external reproduction are
+needed before claiming population-level reliability.
+
+### 11. How do licensing and deletion propagate?
+
+Every normalized record and derived artifact needs source/license identity and
+a deletion lineage. The project must be able to determine which artifacts are
+affected when a source, record, or permission is withdrawn.
+
+### 12. How is the current research ledger released cleanly?
+
+The working tree contains a large preserved experiment history. Before a new
+public ABI release, code, small evidence, large local assets, ignored artifacts,
+and historical failures need an explicit manifest and versioned publication
+policy. A passing local experiment is not automatically a clean release.
+
+## Research priority
+
+The next useful work is not another transfer recipe or domain sweep. It is
+Phase 0 of `ABI_CAPABILITY_COMPILER_CAMPAIGN_V1.md`:
+
+1. freeze strong matched LoRA and distillation baselines;
+2. freeze equal-information, equal-deployment, and matched-quality comparisons;
+3. preregister numeric margins, statistics, splits, seeds, and stop rules; and
+4. define which complete product advantages would justify ABI over conventional
+   methods.
+
+Only then proceed to normalization and adequacy:
+
+1. preregister the schema and transformations;
+2. build immutable English and per-domain inventories;
+3. qualify correctness, completion, diversity, provenance, and leakage;
+4. freeze untouched natural generalization data; and
+5. only then begin nested information-budget training.
+
+See `CURRENT_PROJECT_STATUS.md` for the claim ledger and phase boundary.

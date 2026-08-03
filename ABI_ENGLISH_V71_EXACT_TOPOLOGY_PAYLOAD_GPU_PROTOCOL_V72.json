@@ -1,0 +1,132 @@
+{
+  "format": "abi-english-v71-exact-topology-payload-gpu-protocol/72",
+  "status": "PREREGISTERED_BEFORE_CONTROL_REPLAY_OR_TRAINING",
+  "effective_date": "2026-08-03",
+  "objective": "Test whether the first reference-adequate, domain-segregated ABI English artifact can causally produce an exact-topology capability payload that the sealed LayerCake receiver installs through a zero-parameter identity bridge.",
+  "claim_owners": {
+    "layercake": "The immutable native host, canonical ABI, sparse routing, persistent state, and exact receiving path only.",
+    "abi": "V71 source adequacy, all capability-payload learning, provenance, segregation, artifact accounting, and payload immutability.",
+    "integration": "Bit-exact installation of the immutable ABI payload with zero trainable bridge parameters and same-candidate recertification.",
+    "failure_rule": "A passing native LayerCake control followed by failure here is ABI_EXTRACTION_FAILURE or ABI_LAYERCAKE_INTEGRATION_FAILURE, never LAYERCAKE_HOST_REGRESSION. Only failure of the exact sealed native control may reopen LayerCake."
+  },
+  "controlling_contracts": {
+    "acquisition": {
+      "path": "ABI_ENGLISH_ACQUISITION_CAMPAIGN_CONTRACT_V4.json",
+      "sha256": "4039da50867b0f1b7a12e8fa2be17ab89b96ca5f53d3e9e9195e5d593c7178a0"
+    },
+    "attribution": {
+      "path": "ABI_LAYERCAKE_FAILURE_ATTRIBUTION_CONTRACT_V1.json",
+      "sha256": "4272cd24e75fe641ff4a0cd66cef3913e3183a36b7b57665f0b6294b03ada60f"
+    },
+    "sequencing": {
+      "path": "ABI_LAYERCAKE_FAILURE_ATTRIBUTION_SEQUENCING_AMENDMENT_V2.json",
+      "sha256": "ad0e17dbfc8882629e13415e700c5fc200ac6946745ff62361653f68e5a5b3c3"
+    }
+  },
+  "sealed_layercake": {
+    "repository": "../layercake_release",
+    "commit": "04cf2927a16fba686cd640e18a78708e5658bbda",
+    "checkpoint_sha256": "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1",
+    "architecture_id": "layercake-shallow-sparse-english/1-three-block-task-cakes",
+    "canonical_abi_path": "../layercake_release/moonshot/phase2_canonical_semantic_abi_r3.json",
+    "canonical_abi_file_sha256": "d024de52144a2d797d0501acb7deb55575ffca7e33f72900beff599cf0a97761",
+    "repository_mutation_allowed": false
+  },
+  "reference_artifact": {
+    "path": "results/abi_moonshot/reference_artifact_v71/phi3-multisource-english-training-v1.abix",
+    "archive_sha256": "da8e3b4940988c1a8a2d9baab47c7a82dbbe6bccd054a494a3ad77102e12886a",
+    "manifest_sha256": "ece8e6fe5f6286ae2571aaa251f08a4a587131b7dbea0e5f5f0444803d211d65",
+    "adequacy_decision": "ABI_ENGLISH_MULTISOURCE_REFERENCE_ADEQUACY_V71_DECISION.json",
+    "adequacy_file_sha256": "e162114944117d8d32715ca0b82fce88c84ba1eff1f1cd9a4e32417d142542a1",
+    "budget_index": 3,
+    "selected_search_records": 2235,
+    "teacher_tokens": 84930,
+    "final_test_accessed": false
+  },
+  "fixed_decoding_contract": {
+    "path": "ABI_ENGLISH_DISTINCT_CONTEXT_SCALE_DECODING_LOCK.json",
+    "sha256": "9cdf13ed2b8fad9b90b1ee2132481424a15a05f8e3a58dd94fac6b7fc2d946dd",
+    "candidate_specific_tuning_allowed": false
+  },
+  "capability_naive_base": {
+    "receiver_path": "results/abi_moonshot/receiver_controls/capability-naive-seed-73129-v1",
+    "receiver_checkpoint_sha256": "f4f5a2d009ab6864361e2aaef1eea06081c8c58b0320e8b38be8c73351c31193",
+    "training_base_path": "results/abi_moonshot/receiver_controls/capability-naive-seed-73129-training-base-v72",
+    "required_state_relation": "bit-exact checkpoint and tokenizer copy from the sealed capability-naive receiver",
+    "foreign_teacher_parameters_copied": 0,
+    "layercake_learned_parameters_copied": 0,
+    "initial_english_quality": "EXPECTED_FAIL_0_OF_28"
+  },
+  "pre_acquisition_control_replay": {
+    "native_layercake": "results/abi_moonshot/external_layercake_controls/phase2-r3-phase8-native-v72.json",
+    "capability_naive_receiver": "results/abi_moonshot/receiver_controls/capability-naive-seed-73129-v1-evaluation-v72.json",
+    "identity_bridge_only": "results/abi_moonshot/receiver_controls/bridge-only-identity-v1-evaluation-v72.json",
+    "native_payload_same_path": "results/abi_moonshot/receiver_controls/native-phase2-r3-same-path-v72.json",
+    "required_results": [
+      "native PASS",
+      "capability-naive FAIL_ENGLISH",
+      "bridge-only FAIL_ENGLISH",
+      "native same-path PASS"
+    ]
+  },
+  "stress_lock": {
+    "output": "results/abi_moonshot/stress/abi-v71-naive-fullcore-stress-v72",
+    "seed": 479824,
+    "successful_optimizer_steps": 1,
+    "device": "cuda",
+    "trainable_scope": "full_core",
+    "main_batch_size": 4,
+    "sampling_strategy": "balanced_capabilities",
+    "shared_learning_rate": 0.0002,
+    "cake_learning_rate": 0.0004,
+    "max_tokens": 1024
+  },
+  "candidate_lock_if_stress_passes": {
+    "output": "results/abi_moonshot/segregated_acquisition_v3/three-block-v71-naive-fullcore-seed479824-steps12000-v72",
+    "seed": 479824,
+    "device": "cuda",
+    "successful_optimizer_steps": 12000,
+    "gradient_accumulation_steps": 1,
+    "trainable_scope": "full_core",
+    "main_batch_size": 4,
+    "sampling_strategy": "balanced_capabilities",
+    "shared_learning_rate": 0.0002,
+    "cake_learning_rate": 0.0004,
+    "classifier_loss_weight": 0.25,
+    "prompt_overlap_loss_weight": 1.0,
+    "max_tokens": 1024,
+    "recovery_start_step": 400,
+    "recovery_interval": 8,
+    "recovery_horizons": [8, 16, 32],
+    "general_curriculum": null,
+    "anchor_bundle": null,
+    "online_source_teacher": null,
+    "source_parameters_copied": 0
+  },
+  "ownership_and_installation": {
+    "learned_payload_parameters_owner": "ABI extraction",
+    "layercake_bridge_kind": "identity_state_installation",
+    "layercake_bridge_parameters": 0,
+    "layercake_bridge_training_steps": 0,
+    "teacher_present_at_layercake_inference": false,
+    "architecture_or_runtime_substitution_allowed": false,
+    "payload_path": "results/abi_moonshot/receiver_controls/v72-v71-naive-fullcore-payload-v1",
+    "exact_host_screen": "results/abi_moonshot/receiver_controls/v72-v71-naive-fullcore-exact-host-screen-v1.json"
+  },
+  "screen_rule": {
+    "catalog": "catalogs/postcert_novel_english_audit_v1.json",
+    "observations": 28,
+    "minimum_passes": 10,
+    "required_collapse_count": 0,
+    "native_same_path_must_pass": true,
+    "continue_only_if_screen_passes": true,
+    "failure_action": "Preserve the payload and all evidence. Classify a content-quality miss as ABI_EXTRACTION_FAILURE; classify exact installation, ABI identity, sparse-state, or receiver-path failure as ABI_LAYERCAKE_INTEGRATION_FAILURE. Do not reopen LayerCake while the native control passes. Select the next ABI representation only from the measured bottleneck."
+  },
+  "candidate_dependent_causality": {
+    "actual_bridge_only": "The identity bridge has zero parameters and is already covered by the no-payload bridge-only control.",
+    "shuffled_same_v71_artifact": "Mandatory before promotion if and only if the unshuffled candidate passes the disclosed quality screen.",
+    "passing_shuffled_control_result": "TRANSFER_CAUSALITY_FAILURE"
+  },
+  "promotion_boundary": "A disclosed-screen pass authorizes, but does not replace, full untouched quality, teacher-relative, domain-isolation, exact identity, physical sparsity, persistent-state, CPU throughput, cold TTFT, RSS, and three-seed or fresh-host certification on the same immutable installed payload.",
+  "moonshot_complete": false
+}

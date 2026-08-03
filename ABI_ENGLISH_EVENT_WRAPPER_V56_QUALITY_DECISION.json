@@ -1,0 +1,42 @@
+{
+  "format": "abi-english-event-wrapper-v56-quality-decision/1",
+  "status": "QUALITY_PASSED_NATIVE_AND_OPERATIONAL_CERTIFICATION_REQUIRED",
+  "effective_date": "2026-08-01",
+  "protocol": "ABI_ENGLISH_EVENT_WRAPPER_CONFORMANCE_PROTOCOL_V56.json",
+  "candidate": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-v51-event-wrapper-conformance-v56",
+    "manifest_sha256": "3d6fd2f8490e2264e197b61a1ff0900144397802f5407fb687c880bdef44e35c",
+    "checkpoint_sha256": "012c5443dca21fb73874f1329bcfb6a10526284092e15d7408fff15614dd563f",
+    "payload_sha256": "088c8e534603e6ac629f3417df967e917471baaea53b4874ab47e4f495121487",
+    "payload_bytes": 1218,
+    "teacher_present_at_inference": false
+  },
+  "natural_screen": {
+    "path": "results/abi_moonshot/postcert_audit_v2/v56-event-wrapper-conformance-natural-norepeat4.json",
+    "file_sha256": "a6c1419c2d8c45d04f604717200dd797fdb40970245280016956905b934b0232",
+    "evidence_sha256": "60e7c88811d39766abab145ea69afa47ffc173bb8d8e6a9a14d785501b4be0fd",
+    "passes": 10,
+    "observations": 28,
+    "collapse_count": 0
+  },
+  "full_suite": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/v56-event-wrapper-conformance-semantic-full1400-pytorch.json",
+    "file_sha256": "23cf0799bc889873251bd617f0400c368cba5dfe82910c220f05b50ab8a57f41",
+    "evidence_sha256": "a2effb863319376f3ec749d9d6410c43f69a9491d223bb9f0846d22caba542e2",
+    "passes": 1337,
+    "observations": 1400,
+    "pass_rate": 0.955,
+    "source_passing_retention_rate": 0.9655737704918033,
+    "collapse_count": 0,
+    "minimum_capability_pass_rate": 0.82,
+    "all_14_capability_gates_passed": true,
+    "changes_from_v55": 25,
+    "coherence_changes": 25,
+    "non_coherence_changes": 0,
+    "improvements": 25,
+    "regressions": 0
+  },
+  "decision": "Lock v56 quality provisionally. Export this same artifact to the native CPU runtime and require physical, identity, semantic, throughput, TTFT, RSS, persistent-state, and teacher-boundary certification before promotion.",
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

@@ -1,0 +1,87 @@
+{
+  "schema_version": "abi-english-route2-targeted-gpu-training-result/1",
+  "status": "TRAINED_ON_CUDA_AND_TENSOR_ISOLATION_PASS_NOT_YET_SEMANTICALLY_CERTIFIED",
+  "created_date": "2026-07-31",
+  "protocol": "ABI_ENGLISH_ROUTE2_TARGETED_GPU_ACQUISITION_PROTOCOL.json",
+  "source_decision": "ABI_ENGLISH_ROUTE2_TARGETED_GPU_SOURCE_DECISION.json",
+  "adaptive_training_amendment": "ABI_ENGLISH_ROUTE2_PASSING_CORPUS_TRAINING_AMENDMENT.json",
+  "cuda_stress_amendment": "ABI_ENGLISH_ROUTE2_TARGETED_CUDA_STRESS_AMENDMENT.json",
+  "candidate": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-v23-route2-targeted-realization-seed29824-steps1000-v24",
+    "checkpoint_sha256": "6a8ddd348ad6f8215aee8b1a7e3ad7e8c7171c848ee3bddabc6222c0fef39482",
+    "metadata_file_sha256": "08ca995cd8a1cd43b84d1f7b0853326559a315f62f2d07fa0c9715a68993ba03",
+    "manifest_sha256": "7fc5d3a13a0170d948f9da01a05e6cc9790f7fd72b2531bd129eb58453e39bf6",
+    "total_parameter_count": 61655050,
+    "trainable_parameter_count": 99840,
+    "frozen_parameter_count": 61555210,
+    "trainable_fraction": 0.0016193321868475607,
+    "trainable_scope": "selected_task_cakes",
+    "trainable_task_cake_routes": [
+      2
+    ],
+    "graph_topology_changed": false,
+    "physical_sparse_topology_preserved": true
+  },
+  "acquisition": {
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "successful_optimizer_steps": 1000,
+    "skipped_amp_optimizer_steps": 1,
+    "attempted_optimizer_updates": 1001,
+    "wall_seconds": 58.543722399976104,
+    "gpu_hours": 0.016262145111104475,
+    "peak_gpu_memory_bytes": 679354368,
+    "active_parameter_seconds": 5845005.244413614,
+    "main_records": 371,
+    "unique_main_records_seen": 371,
+    "all_main_records_seen": true,
+    "main_teacher_tokens": 7903,
+    "main_teacher_output_bytes": 25787,
+    "route2_preservation_records": 75,
+    "unique_route2_preservation_records_seen": 75,
+    "all_route2_preservation_records_seen": true,
+    "route2_preservation_teacher_tokens": 1244,
+    "total_imported_teacher_tokens": 9147,
+    "main_supervised_layercake_tokens_seen": 68360,
+    "anchor_supervised_layercake_tokens_seen": 53117,
+    "main_utf8_bytes_seen": 1035583,
+    "anchor_utf8_bytes_seen": 845711,
+    "teacher_logits_stored": 0,
+    "teacher_hidden_activations_stored": 0,
+    "source_parameters_copied": 0,
+    "source_transformer_blocks_retained": 0,
+    "teacher_present_at_inference": false
+  },
+  "terminal_tensor_audit": {
+    "changed_tensor_count": 4,
+    "changed_tensor_names": [
+      "task_cakes.2.down.weight",
+      "task_cakes.2.norm.bias",
+      "task_cakes.2.norm.weight",
+      "task_cakes.2.up.weight"
+    ],
+    "all_changed_tensors_begin_with_task_cakes_2": true,
+    "all_other_tensors_byte_identical_to_rollback_parent": true,
+    "route5_tensors_byte_identical_to_v6": true,
+    "shared_transformer_changes": 0,
+    "embedding_or_language_head_changes": 0,
+    "route_classifier_changes": 0,
+    "other_task_cake_route_changes": 0,
+    "status": "PASS"
+  },
+  "immutability": {
+    "main_artifact_sha256_before_and_after": "11c99c151bef1f0aeced7fb99808c1843f521340d5e1d22980a7b4837ad6ffcd",
+    "anchor_artifact_sha256_before_and_after": "82841fb3e2c8857341044bf228646923f1d9db58980fbe45152c30062ff930cd",
+    "rollback_parent_checkpoint_sha256_before_and_after": "c20073c71173eb0d9e1085e5e9d277e8134ec5d41c0d91f003ed14eee1a1c5f3",
+    "canonical_semantic_abi_sha256": "d024de52144a2d797d0501acb7deb55575ffca7e33f72900beff599cf0a97761",
+    "tokenizer_sha256": "1fe93b6152957cf9cfd6d89002467f789ce8b3f3e000b3a2edf27c808ddd0b9e"
+  },
+  "hardware_policy": {
+    "gpu_training_verified": true,
+    "cpu_training_used": false,
+    "cpu_role_next": "Exported teacher-free LayerCake inference validation only."
+  },
+  "next_action": "Export the exact teacher-free v24 checkpoint with the unchanged token-run-four overlay, verify identity and physical sparsity, then run broad14 on CPU.",
+  "final_test_accessed": false,
+  "claim_boundary": "GPU acquisition efficiency and exact component isolation pass. English quality, teacher-relative quality, CPU inference dominance, and promotion remain unproven."
+}

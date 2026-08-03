@@ -1,0 +1,27 @@
+{
+  "format": "abi-english-v56-balanced-compact-router-packaging-failure/1",
+  "status": "POST_GATE_PACKAGING_FAILURE",
+  "effective_date": "2026-08-01",
+  "protocol": "ABI_ENGLISH_V56_BALANCED_COMPACT_GPU_ROUTER_PROTOCOL_V41.json",
+  "command_completed_training_steps": 2500,
+  "training_device": "cuda",
+  "final_logged_training_loss": 0.0007593475747853518,
+  "final_logged_training_loop_wall_seconds": 21.232864299992798,
+  "external_command_runner_wall_seconds": 38.6,
+  "gate_control_flow_fact": "The packaging function is called only after every fresh-v9 holdout and ONNX-equivalence gate passes.",
+  "failure": {
+    "exception": "RuntimeError: compact-router parent runtime is not qualified",
+    "cause": "The packager required parent metadata status PASS, while the separately quality-, identity-, and physical-certified v39 export retains its historical EXPORTED_NOT_YET_CERTIFIED status.",
+    "location": "post-training post-gate runtime packaging",
+    "weights_or_optimizer_step_affected": false,
+    "router_export_completed_before_failure": true,
+    "runtime_packaging_completed": false
+  },
+  "surviving_router_graph": {
+    "path": "results/abi_moonshot/native_hosts/three-block-v56-balanced-compact-router-layer0-fp32-v41/task-route-router-compact-fp32.onnx",
+    "sha256": "76061bcf997f1e03e05858a90808b7cf6e78373a761fd0fa7b394ef117fa3b32",
+    "bytes": 12941218
+  },
+  "preservation_rule": "Do not rerun, tune, or replace the trained router. Recover the fresh holdout metrics and package only this exact graph.",
+  "moonshot_complete": false
+}

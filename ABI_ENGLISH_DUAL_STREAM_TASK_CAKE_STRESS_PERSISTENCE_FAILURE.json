@@ -1,0 +1,29 @@
+{
+  "schema_version": "abi-english-dual-stream-task-cake-stress-persistence-failure/1",
+  "status": "INVALID_STRESS_ARTIFACT_PERSISTENCE_FAILURE_AFTER_SUCCESSFUL_CUDA_UPDATE",
+  "created_date": "2026-07-31",
+  "protocol": {
+    "path": "ABI_ENGLISH_DUAL_STREAM_TASK_CAKE_ACQUISITION_PROTOCOL.json",
+    "sha256": "09e7933cc06c3293068ee031a6f9190fca90e5608a32a8b794bf54481a923b91"
+  },
+  "attempted_output": "C:/tmp/abi_dualstream_taskcake_anchor_smoke_20260731_v1",
+  "successful_cuda_optimizer_steps_before_failure": 1,
+  "terminal_curve": {
+    "total_loss": 8.006972312927246,
+    "main_language_loss": 7.989178657531738,
+    "general_preservation_language_loss": 0.00015305820852518082,
+    "anchor_language_loss": 0.01764102280139923,
+    "wall_seconds": 0.9744678999995813
+  },
+  "failure": {
+    "type": "PermissionError",
+    "message": "[WinError 5] Access is denied",
+    "operation": "Create the new stress artifact directory after training",
+    "checkpoint_written": false,
+    "metadata_written": false
+  },
+  "interpretation": "The exact CUDA forward, backward, 32-token recovery, and optimizer update completed. The attempt is invalid as auditable stress evidence because its immutable checkpoint and metadata could not be written.",
+  "corrective_action": "Repeat the identical one-step non-candidate stress configuration in a new path inside the writable ABI campaign evidence tree. Do not change any model, data, batch, loss, recovery, or device setting.",
+  "candidate_attempt_consumed": false,
+  "final_test_accessed": false
+}

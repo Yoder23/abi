@@ -1,0 +1,89 @@
+{
+  "format": "abi-validated-teacher-extraction-protocol/1",
+  "protocol_id": "abi-english-qwen-validated-target-extraction-v86",
+  "status": "PREREGISTERED_BEFORE_SAME_TEACHER_REPAIR_INFERENCE",
+  "effective_date": "2026-08-03",
+  "objective": "Validate an ABI extraction mechanism that turns one frozen open-weight teacher's raw responses into complete, prompt-grounded, domain-segregated targets without a second model, silent rewriting, or LayerCake involvement.",
+  "scope_correction": {
+    "aborted_second_model_diagnostic": "ABI_ENGLISH_INTRINSIC_SEMANTIC_DIAGNOSTIC_V85_ABORTED.json",
+    "teacher_is_not_a_competing_architecture": true,
+    "teacher_role": "Generate candidate and repaired targets only.",
+    "matched_transformer_role": "Later establish artifact information sufficiency.",
+    "layercake_role": "Later acquire and execute the same qualified artifact."
+  },
+  "source": {
+    "model": "Qwen/Qwen2-7B-Instruct",
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "license": "apache-2.0",
+    "source_manifest_sha256": "baa20319cec7d6dac2809d61048d57927318a48820a8fd1ffb0b60b4058bd92d",
+    "device": "cuda",
+    "weight_execution_precision": "bitsandbytes_int8",
+    "cpu_offload_allowed": false,
+    "network_allowed": false,
+    "temperature": 0,
+    "single_teacher_only": true
+  },
+  "seed_bundle": {
+    "path": "results/abi_moonshot/intrinsic_reference_v84/qwen2-7b-intrinsic-gpu-preflight-v84.abix",
+    "sha256": "40e79d8a2c4e1157b319d483ebb66a4e44d180aafc9945e895e2a6b62a9aeffc",
+    "manifest_sha256": "c479cfcda80fe647833069d817b832de6e5295dd63f0e626a6c0b67c52015879",
+    "records": 168,
+    "raw_outputs_immutable": true,
+    "raw_v84_failure_remains_historical": true
+  },
+  "catalog": {
+    "path": "catalogs/intrinsic_english_gpu_preflight_v83.json",
+    "sha256": "40ee525a4c12f11271acd9d38fa3cb705475fc62954d9d7aaa769e10f9158f1b",
+    "catalog_id": "abi-intrinsic-english-search-validation-v83-gpu-preflight",
+    "records": 168,
+    "capabilities": 14,
+    "surface_families_per_capability": 12,
+    "destination_scope": "english_core",
+    "domain_labels": [],
+    "domain_claims": [],
+    "final_test_records": 0
+  },
+  "repair": {
+    "maximum_rounds": 2,
+    "max_new_tokens": 192,
+    "method": "Return the prior candidate to the same frozen teacher with the original task and literal requirements derived only from its preregistered closed evaluator.",
+    "selected_target_must_be_verbatim_teacher_output": true,
+    "selected_target_must_be_eos_terminated": true,
+    "selected_target_must_pass_original_evaluator": true,
+    "post_generation_text_rewrite_allowed": false,
+    "second_model_allowed": false,
+    "all_attempts_and_runtime_token_ids_retained": true
+  },
+  "run": {
+    "output": "results/abi_moonshot/intrinsic_reference_v86/qwen2-7b-validated-target-preflight-v86.json",
+    "batch_size": 4,
+    "required_records": 168,
+    "required_selected_records": 168,
+    "allowed_unresolved_records": 0,
+    "all_capabilities_required": 14,
+    "all_source_manifest_and_runtime_checks_required": true
+  },
+  "implementation_lock": {
+    "abi/validated_teacher_extraction.py": "4688c02eaa99e8905423afacf63ce887d6ffba866387a6c5c089d73bbd7188d7",
+    "tests/test_validated_teacher_extraction.py": "c69efae0d326d4ffeb9c81c5f0e8dd2fe8ed355757e5553e95e6038f71175bc7",
+    "implementation_tests": "25 passed including extraction, source runtime, and segregation tests"
+  },
+  "pass_requirements": [
+    "Every one of the 168 catalog records has a selected target.",
+    "Every selected target is a verbatim output from the same pinned Qwen teacher.",
+    "Every selected target EOS-terminates and passes its original prompt-bound evaluator.",
+    "Every raw seed and repair attempt retains authoritative generated token IDs, input tokens, output bytes, prompt, finish reason, and generation ceiling.",
+    "All records retain empty domain labels and claims and remain scoped to english_core.",
+    "No second model, LayerCake, or final-test data is used."
+  ],
+  "decision_rule": [
+    "Run exactly one two-round repair preflight from the immutable V84 seed outputs.",
+    "Reject the mechanism if any record remains unresolved; do not hide or hand-edit failures.",
+    "If all 168 records pass, preregister a durable full-catalog extraction using the same mechanism and accounting.",
+    "A V86 pass validates target extraction only. It does not authorize a LayerCake quality claim until the full artifact passes the matched transformer information-adequacy gate."
+  ],
+  "layercake_invoked": false,
+  "layercake_training_authorized": false,
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

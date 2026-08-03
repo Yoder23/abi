@@ -13,10 +13,19 @@ not: a post-certificate audit exposed 19 source-passing regressions on 28 novel
 prompt forms. A new model or capability is not certified merely because the
 pipeline can ingest it.
 
-The controlling successor contract is
-`ABI_ENGLISH_CORE_DOMAIN_SEGREGATION_CONTRACT_V2.json`. Foreign-teacher
-acquisition targets measured generation quality, sparsity, and capability
-segregation—not lossless model compression.
+Since that audit, V87 has demonstrated a bounded causal transfer signal and V89
+has passed pre-transfer labeling for a locked English-plus-four-domain
+ontology. Neither result authorizes a new LayerCake training run. The immediate
+gate is capability-compiler Phase 0: strong matched LoRA/distillation
+baselines, fairness views, numeric margins, splits, statistics, and stop rules.
+A normalized, provenance-bound acquisition artifact follows as Phase 1. See
+`CURRENT_PROJECT_STATUS.md` and `ROADMAP.md`.
+
+The controlling successor sequence is
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_V1.md` plus its machine-readable contract.
+`ABI_ENGLISH_CORE_DOMAIN_SEGREGATION_CONTRACT_V2.json` remains binding for the
+artifact boundary. Foreign-teacher acquisition targets measured generation
+quality, sparsity, and capability segregation—not lossless model compression.
 
 ## Artifact lifecycle
 

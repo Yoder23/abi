@@ -1,0 +1,94 @@
+{
+  "schema_version": "abi-english-shared-runtime-precision-ablation-protocol/1",
+  "protocol_id": "abi-english-shared-runtime-precision-ablation-v1",
+  "status": "PREREGISTERED_AFTER_TASK_CAKE_NO_EFFECT_BEFORE_ANY_PRECISION_ABLATION_EXPORT",
+  "created_date": "2026-07-31",
+  "controlling_decisions": [
+    "ABI_ENGLISH_ROUTE2_TARGETED_V24_DECISION.json",
+    "ABI_ENGLISH_TASK_CAKE_RUNTIME_PRECISION_DECISION.json"
+  ],
+  "hypothesis": "The v24 checkpoint contains passing route-2 behavior and the restored v6 route-5 behavior, but quantization somewhere in the input embedding, shared transformer, or output projection moves the exact CPU runtime below the reasoning gate. A bounded component precision ablation can identify whether one small precision island restores both reasoning and realization without changing weights or sparse execution.",
+  "immutable_candidate": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-v23-route2-targeted-realization-seed29824-steps1000-v24",
+    "checkpoint_sha256": "6a8ddd348ad6f8215aee8b1a7e3ad7e8c7171c848ee3bddabc6222c0fef39482",
+    "manifest_sha256": "7fc5d3a13a0170d948f9da01a05e6cc9790f7fd72b2531bd129eb58453e39bf6",
+    "runtime_decoding_overlay": "ABI_ENGLISH_ROUTE2_TARGETED_TOKEN_RUN_GUARD_CONTRACT.json",
+    "weights_changed": false,
+    "teacher_present_at_inference": false
+  },
+  "diagnostic_stage": {
+    "first_profile": "fp32_all",
+    "first_output": "results/abi_moonshot/native_hosts/three-block-v24-runtime-ablation-fp32-all-v35",
+    "capabilities": [
+      "cake_output_realization",
+      "domain_independent_reasoning"
+    ],
+    "observations_per_capability": 100,
+    "total_observations": 200,
+    "device": "onnxruntime.CPUExecutionProvider",
+    "continue_only_if": {
+      "cake_output_realization_pass_rate_at_least": 0.8,
+      "domain_independent_reasoning_pass_rate_at_least": 0.8,
+      "collapse_count": 0,
+      "automatic_route_accuracy": 1.0
+    },
+    "interpretation": "If full-float execution fails either capability, runtime quantization is not a sufficient explanation and all component ablations stop."
+  },
+  "single_component_profiles_if_full_float_passes": [
+    {
+      "profile": "fp32_embedding",
+      "output_suffix": "v36"
+    },
+    {
+      "profile": "fp32_output",
+      "output_suffix": "v37"
+    },
+    {
+      "profile": "fp32_layer0",
+      "output_suffix": "v38"
+    },
+    {
+      "profile": "fp32_layer1",
+      "output_suffix": "v39"
+    },
+    {
+      "profile": "fp32_layer2",
+      "output_suffix": "v40"
+    },
+    {
+      "profile": "fp32_transformer",
+      "output_suffix": "v41"
+    }
+  ],
+  "profile_gate": {
+    "cake_output_realization_pass_rate_at_least": 0.8,
+    "domain_independent_reasoning_pass_rate_at_least": 0.8,
+    "source_passing_retention_rate_at_least": 0.9,
+    "collapse_count": 0,
+    "automatic_route_accuracy": 1.0,
+    "identity": "PASS",
+    "physical_sparse_execution": "PASS"
+  },
+  "selection_rule": "Among passing single-component profiles, select the smallest graph. Break equal-size ties by lower median prompt latency across the same 200 paired diagnostic prompts. Run the full broad14 suite only on that selected exact graph. If no single-component profile passes but fp32_transformer passes, it may be selected subject to the same full suite and CPU product gates. No multi-component combination sweep is authorized.",
+  "full_suite_and_product_rule": "A selected profile must pass all 1,400 broad14 observations before paired teacher quality or CPU benchmarking. It must then remain at least 2x faster than the optimized transformer, preserve the locked TTFT and RSS advantages, and pass identity, persistent-state, and physical-sparsity gates on that same graph.",
+  "implementation": {
+    "runtime_runner": "abi/layercake_host_runtime.py",
+    "runtime_runner_sha256": "7ac63e6aeb8f7ab5236b7b91144b58d7c5bbb63a9f276c9071034c42ec1ed73b",
+    "focused_test_result": "57 passed",
+    "diagnostic_capability_filter_is_not_full_promotion_evidence": true
+  },
+  "hardware_policy": {
+    "training": "NONE",
+    "runtime_export": "CPU_ARTIFACT_TRANSFORMATION",
+    "diagnostic_and_product_inference": "CPU_ONLY",
+    "gpu_inference_used": false,
+    "teacher_present": false
+  },
+  "validation_adaptivity": {
+    "diagnostic_uses_development_validation_only": true,
+    "broad14_is_adaptively_reused": true,
+    "new_untouched_replacement_final_required_after_all_non_final_gates": true
+  },
+  "final_test_accessed": false,
+  "claim_boundary": "These are bounded CPU runtime ablations over one immutable GPU-trained checkpoint. Diagnostic subset passes select a runtime profile but cannot certify the English core or moonshot."
+}

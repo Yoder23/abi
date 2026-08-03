@@ -1,0 +1,33 @@
+{
+  "format": "abi-english-broad-natural-catalog-schema-failure/1",
+  "status": "FAIL_CLOSED_NO_SOURCE_INFERENCE_NO_TRAINING",
+  "effective_date": "2026-07-30",
+  "parent_protocol": "ABI_ENGLISH_BROAD_NATURAL_CONVERSATION_GPU_ACQUISITION_PROTOCOL.json",
+  "failed_catalog": {
+    "path": "catalogs/broad_natural_conversation_search_v1.json",
+    "bytes": 50486325,
+    "sha256": "428cdf68e79af9ea5783b994a8c838d4a990525fccbf4b083f2497309edcafdb",
+    "immutable": true,
+    "qualified_for_source_inference": false
+  },
+  "failure": {
+    "stage": "post-write fail-closed catalog schema validation",
+    "exact_error": "invalid segregated probe label_method",
+    "cause": "The builder used the descriptive string preregistered_deterministic_corpus_filter instead of the canonical segregation value preregistered_catalog.",
+    "teacher_inference_started": false,
+    "gpu_hours_consumed": 0,
+    "layercake_training_started": false
+  },
+  "bounded_correction": {
+    "change": "Use the existing canonical label_method preregistered_catalog and advance catalog and probe identities to v2.",
+    "filter_changed": false,
+    "selection_changed": false,
+    "source_corpora_changed": false,
+    "seed_changed": false,
+    "maximum_per_capability_changed": false,
+    "minimum_per_capability_changed": false,
+    "successor_output": "catalogs/broad_natural_conversation_search_v2.json"
+  },
+  "final_test_accessed": false,
+  "moonshot_complete": false
+}

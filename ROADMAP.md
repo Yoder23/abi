@@ -1,93 +1,168 @@
-# ABI Roadmap
+# ABI phased research roadmap
 
-This is an honest roadmap. Items are ordered by priority. Timelines are approximate.
+Status date: 2026-08-03
 
----
+This roadmap supersedes the old calendar-version roadmap. Progress is governed
+by evidence gates, not dates or experiment counts. A phase may close only with
+its exact artifacts, negative evidence, raw observations, and verifier.
 
-## v0.1.0 — Research Preview ✅ (released 2026-05-18)
+## Controlling successor campaign
 
-**Goal:** Strangers can verify the result in 5 seconds, reproduce it in a few hours, and understand exactly what is and is not claimed.
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_V1.md` and
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` control all new work. The
+campaign adds mandatory optimized LoRA and distillation baselines and defines
+the falsifiable meaning of ABI product superiority. The lettered roadmap below
+is retained as a research-lineage map; where sequencing differs, the numbered
+capability-compiler campaign controls.
 
-- [x] 4 locked core results (Path 2C, Exp 32, Exp 39, Exp 40)
-- [x] 9 claim scripts + result JSONs
-- [x] 13 supporting experiment scripts + result JSONs
-- [x] `verify_result.py` standalone verifier (< 5 sec, no GPU)
-- [x] `run_abi.py` full reproduction entry point
-- [x] `ABI_REPRODUCE.md`, `PROOF.md`, `ABI_ARCHITECTURE.md`, `ABI_EXPERIMENTS.md`
-- [x] README with honest "not claimed" table, claim ladder, claim-to-file map
-- [x] `CLAIMS.md`, `SKEPTICS.md`, `FAQ.md`, `CONTRIBUTING.md`
-- [x] Apache 2.0 LICENSE, CITATION.cff, pyproject.toml
-- [x] GitHub Actions CI (verify + lint)
-- [x] Issue templates (reproduction report, new model result, bug report)
+Current active state: **capability-compiler Phase 0 is OPEN**. Phase D below
+maps to compiler Phase 1 and is temporarily locked until Phase 0 freezes its
+baselines, metrics, margins, splits, and stop rules.
 
----
+## Phase A — Repository and claim governance
 
-## v0.2.0 — Reproducibility & Baselines (target: ~2 months)
+Status: established, with release consolidation still open.
 
-**Goal:** An independent lab can reproduce every validated claim from scratch.
+- Keep ABI and LayerCake code, evidence, and failure attribution separate.
+- Preserve every failed candidate and superseded protocol.
+- Pin and hash source-model weights, revisions, tokenizers, licenses, and
+  hardware/runtime settings.
+- Reserve “lossless” for exact LayerCake package transfer.
+- Consolidate the current large research ledger into an intentional release
+  manifest before public publication.
 
-- [ ] Formal LoRA baseline comparison (portability: can a LoRA adapter migrate the same way?)
-- [ ] Adapter baseline comparison (prefix tuning, IA³)
-- [ ] Full test suite (`tests/` with pytest) covering NIB evaluation, data pipeline, model forward pass
-- [ ] Colab notebook: `ABI_Verify.ipynb` — run `verify_result.py` in Colab (no local install)
-- [ ] Docker image on Docker Hub (`yoder23/abi:v0.2.0`)
-- [ ] MkDocs documentation site
-- [ ] WikiText-103 domain experiment (extend beyond Python code)
-- [ ] At least one reproduction report from hardware different from RTX 3080 Laptop
+Exit condition: a clean, content-addressed ABI research release can reproduce
+all promoted claims without silently depending on local untracked assets.
 
----
+## Phase B — Causal teacher-to-LayerCake construct
 
-## v0.3.0 — Scale & Scope Extension (target: ~4 months)
+Status: mechanism demonstrated; operational reliability open.
 
-**Goal:** Honest data at 7B+ scale and at least one non-English domain.
+V87 proved a bounded causal signal against unchanged-parent and shuffled-target
+controls. Its formal quality gate failed and repetition remained unacceptable.
 
-- [x] 7B+ experiment — **IN PROGRESS**: `exp_qwen_7b_nib.py` written, running (Qwen2-7B INT8, T5-large → 7B, Claims 10–12)
-- [x] Llama-family experiment — **IN PROGRESS**: `exp_deepseek_1p3b_nib.py` written (GPT-2-med → DeepSeek-Coder-1.3B, first Llama-arch test)
-- [x] 1.5B scale experiment — **IN PROGRESS**: `exp_qwen_1p5b_nib.py` written (GPT-2-small → Qwen2-1.5B)
-- [ ] Non-Python domain (medical / legal / multilingual) NIB evaluation
-- [ ] Multi-domain ABI: multiple simultaneous domain modules on one backbone
-- [ ] Benchmark harness: automated comparison against LoRA, adapters, fine-tuning at matched compute
-- [ ] Result registry: structured JSON ledger of all contributed reproduction results
-- [ ] Zenodo DOI for the dataset / result artifacts
-- [ ] Hugging Face model hub: upload ABI checkpoints for the 4 core experiments
+Exit condition for an operational transfer method: the same teacher-derived
+artifact must beat parent, bridge-only, and shuffled controls while passing
+held-out autonomous quality, coherence, and repetition gates. The current
+campaign does not need to solve this before corpus normalization, but it must
+solve it before final promotion.
 
----
+## Phase C — Pre-transfer labeling and quarantine
 
-## v0.4.0 — Paper Draft (target: ~6 months)
+Status: bounded PASS for V89.
 
-**Goal:** Enough material for an arXiv preprint.
+- Locked classes: English core, chemistry, civics, mathematics, Python, and
+  quarantine.
+- V89 passes 117/120 source-record-disjoint routes with zero specialist leakage
+  into English and 100% quarantine recall.
+- Domain discovery remains declared and user-governed, not exhaustive.
 
-- [ ] Full ablation covering 10+ objectives (extending current 7-objective ablation)
-- [ ] Statistically rigorous multi-seed evaluation for all 9 claims (not just Claim 1)
-- [ ] Independent reproduction by at least one external contributor
-- [ ] Formal analysis of the null-space geometry (extending `ABI_ARCHITECTURE.md §5`)
-- [ ] arXiv preprint draft
+Future expansion requires a new ontology, new disjoint evidence, and a new
+certificate. The V89 pass cannot be silently generalized.
 
----
+## Phase D — Normalization and artifact adequacy
 
-## v0.5.0 — Production Architecture Sketch (target: ~9 months)
+Status: technically next artifact phase, but LOCKED behind capability-compiler
+Phase 0.
 
-**Goal:** A concrete design for how ABI could be deployed in a multi-tenant serving scenario.
+1. Freeze a normalization contract before generating a successor corpus.
+2. Preserve raw source prompts and outputs alongside normalized forms.
+3. Bind every record to source, revision, destination, capability, provenance,
+   transformation history, and authoritative token IDs.
+4. Deduplicate exact and near-duplicate material without erasing accounting.
+5. Measure surface diversity, behavior coverage, completion, correctness,
+   contamination, conflicts, and label uncertainty.
+6. Keep English and each selected domain in separate immutable inventories.
+7. Run `abi.teacher_artifact_adequacy_audit` or its versioned successor before
+   any candidate training.
 
-- [ ] Production architecture sketch (not implementation)
-- [ ] Latency analysis: ABI module overhead vs. baseline
-- [ ] Memory analysis: hot-swap cost at inference time
-- [ ] Tiny demo: one frozen backbone, two ABI modules, hot-swapped in a serving loop
+Exit condition: a promotion-eligible normalized artifact passes all adequacy,
+purity, provenance, diversity, and leakage prerequisites. Raw or merely labeled
+records do not pass this phase.
 
----
+## Phase E — Sufficient-information frontier
 
-## Non-Goals (will not be in this repository)
+Status: LOCKED behind Phase D.
 
-- A general fine-tuning library (use Hugging Face PEFT for that)
-- A production serving system
-- Support for closed-weight models
+- Freeze a broad natural held-out suite before budget search.
+- Use nested data budgets so each larger budget contains the smaller budget.
+- Keep architecture, initialization, training steps, sampling policy, and
+  evaluation fixed within a comparison.
+- Account prompts, unique bytes, teacher tokens, examples, parameter-seconds,
+  wall time, RAM, VRAM, and hardware.
+- Reproduce promising budgets across three paired seeds or host initializations.
+- Call a budget “minimum” only when it is the smallest passing tested budget
+  and the adjacent lower tested budget fails.
 
----
+Exit condition: one budget passes broad English generalization, grounding,
+adherence, abstention, coherence, and repetition gates, with an adjacent lower
+failure and no domain leakage into the English corpus.
 
-## How to Influence the Roadmap
+## Phase F — Representation and host-capacity separation
 
-Open a GitHub issue with label `roadmap` and describe what you want and why. Items with demonstrated external interest will be prioritized.
+Status: LOCKED behind Phase E evidence.
 
----
+Use matched controls to distinguish:
 
-*v0.1.0 released 2026-05-18. Roadmap subject to change based on results and community feedback.*
+- insufficient or poor teacher material;
+- normalization damage;
+- acquisition/conditioning failure;
+- LayerCake host-capacity failure; and
+- runtime or decoding failure.
+
+A LayerCake failure may be claimed only when the relevant exact native or
+same-topology control passes the same expanded quality scope. Otherwise the
+result remains unresolved between acquisition and host capacity.
+
+Exit condition: one representation and conditioning path is causally supported
+and passes the fixed natural suite without template-specific repair.
+
+## Phase G — Integrated teacher-derived English core
+
+Status: LOCKED.
+
+The same final teacher-free LayerCake candidate must:
+
+- preserve source-relative English generation quality on untouched prompts;
+- contain no source teacher, logits, activation cache, tokenizer dependency,
+  source parameters, or source transformer blocks at inference;
+- pass core-only specialist abstention and domain-removal tests;
+- expose the canonical LayerCake interface;
+- avoid repetition collapse; and
+- rerun CPU/GPU quality, throughput, TTFT, RSS, memory, and persistent-state
+  gates without borrowing evidence from the sealed native LayerCake release.
+
+## Phase H — Domain extraction and selective packaging
+
+Status: LOCKED behind an integrated English core.
+
+- Expand one declared domain at a time with capability-specific evidence.
+- Compare direct domain training with ABI extraction where useful.
+- Package only user-selected domains.
+- Preserve immutable English core and domain artifact bytes.
+- Prove source-relative quality, package identity, isolation, and no inactive
+  execution.
+- Treat broad domain discovery and multi-source conflicts as separate research
+  problems, not assumed capabilities.
+
+## Phase I — Multi-source and ecosystem release
+
+Status: FUTURE.
+
+- Merge compatible evidence from multiple pinned teachers without losing
+  record-level provenance.
+- Quarantine contradictions under a preregistered conflict policy.
+- Support repeated creation of different LayerCakes from the same source pool.
+- Reproduce on independent hardware and, eventually, by an external party.
+- Publish only after a clean manifest, licenses, source identities, artifacts,
+  tests, and claim boundaries are complete.
+
+## Stop rules
+
+- Do not launch LayerCake training before Phase D passes.
+- Do not repair final-test failures or use final data to select budgets.
+- Do not start a nearby sweep when a phase fails without a measured bottleneck
+  and a change expected to affect it.
+- Do not call foreign-teacher transfer lossless, domain discovery exhaustive,
+  or a tested minimum global.
+- Do not let an ABI failure reopen the sealed LayerCake release.

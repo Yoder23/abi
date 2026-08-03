@@ -1,0 +1,84 @@
+{
+  "format": "abi-english-partial-semantic-source-artifact-protocol/1",
+  "status": "PREREGISTERED_BEFORE_V70_ARTIFACT_CONSTRUCTION",
+  "effective_date": "2026-08-03",
+  "decision": {
+    "path": "ABI_ENGLISH_INDEPENDENT_SEMANTIC_SOURCE_QUALIFICATION_V62_DECISION.json",
+    "sha256": "80b76b80ba5c50008676b390e6a18c92b228469e7d7f89c435a137b3a2c431ed",
+    "status": "REJECTED_COMPLETE_ENGLISH_SOURCE_13_OF_14_AVAILABLE"
+  },
+  "source_bundle": {
+    "path": "results/abi_moonshot/reference_artifact_v60/phi3-grounded-reference-search-validation-survey-v3.abix",
+    "sha256": "7a5ee832d1a940ec2c5a617d38b6aca5606107d2caf8055ba5b0a18b95fa8d61",
+    "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310"
+  },
+  "catalog": {
+    "path": "catalogs/grounded_english_reference_search_validation_v3.json",
+    "sha256": "055a6482669953c6283d93bebf87e1cef6b7db278b3b2e3849df51dab2d011ab",
+    "records": 3136,
+    "capabilities": 14,
+    "search_per_capability": 160,
+    "validation_per_capability": 64,
+    "final_test_records": 0
+  },
+  "semantic_evidence": {
+    "path": "results/abi_moonshot/reference_artifact_v62/phi3-v60-qwen2-7b-semantic-full-v1.json",
+    "file_sha256": "79bc66eb91ffac6b1cb2176f471a727ee7dd1a3f81a43a48bab56919e6d24623",
+    "evidence_sha256": "667ca8982e3d99e56bafc5d7bc3895796a439358927caa1221005d4affb37e16",
+    "durable_journal_path": "results/abi_moonshot/reference_artifact_v62/phi3-v60-qwen2-7b-semantic-full-v1.json.partial.jsonl",
+    "durable_journal_sha256": "c639dd16b0d6ae7e46d4e5c66a9db609a8d75be88ce7459e2fd4b266ceb845b3",
+    "observations": 3136,
+    "semantic_passes": 3098,
+    "semantic_failures": 38
+  },
+  "included_capabilities": [
+    "abstention",
+    "cake_output_realization",
+    "clarification",
+    "coherence",
+    "conversation",
+    "domain_independent_reasoning",
+    "email_drafting",
+    "format_control",
+    "instruction_following",
+    "prompt_grounding",
+    "rewriting",
+    "summarization",
+    "tone_control"
+  ],
+  "excluded_capabilities": ["grammar"],
+  "required_available_capabilities": 13,
+  "thresholds": {
+    "minimum_distinct_probes": 64,
+    "minimum_pass_rate": 0.9,
+    "minimum_wilson_95_lower_bound": 0.8,
+    "qualification_splits": ["validation"]
+  },
+  "output": {
+    "path": "results/abi_moonshot/reference_artifact_v70/phi3-v62-qualified-13-source-v1.abix",
+    "artifact_role": "source_capability_survey_vault",
+    "expected_records": 2912,
+    "expected_search_records": 2080,
+    "expected_validation_records": 832,
+    "expected_available_entries": 13,
+    "installable": false
+  },
+  "construction_contract": [
+    "Verify all 3,136 V62 observations, self-hashes, frozen source bindings, judge token IDs, EOS reasons, parse status, aggregates, judge manifest, CUDA int8 runtime, and durable journal before filtering anything.",
+    "Require the included and excluded capability sets to exactly match the V62 decision matrix; no capability may be selected post hoc by the constructor.",
+    "Exclude every grammar record and preserve every record from the thirteen declared capabilities, including their actual passing or failing semantic result.",
+    "Rebuild the thirteen inventories under the unchanged 64-row, 0.90-rate, 0.80-Wilson validation gates and reject if the available set differs.",
+    "Preserve source extraction and independent judge costs in the ledger. The output remains non-installable source material."
+  ],
+  "implementation_lock": {
+    "abi/partial_semantic_source_artifact.py": "839ffd8cd2cd5f1dc1e85f126413a365d699fea47aeeb448ef11e6fe14a5b868",
+    "tests/test_partial_semantic_source_artifact.py": "811f4b03072e595e73fb0c643d3963b7c7a9f6653e12eb1da600a42c27fe8afe",
+    "abi/capability_pipeline.py": "c0c20d502aa24383f9a504e1eb940e0318369be304aa565e8b5f2ac07cd4c8ef"
+  },
+  "decision_rule": "Construct once. Any full-survey, decision-matrix, durable-journal, source, judge, inventory, bundle, or accounting mismatch rejects V70 without invoking LayerCake.",
+  "failure_attribution": "A V70 failure is ABI_ARTIFACT_CONSTRUCTION_FAILURE, never a LayerCake failure.",
+  "layercake_invoked": false,
+  "layercake_training_authorized": false,
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

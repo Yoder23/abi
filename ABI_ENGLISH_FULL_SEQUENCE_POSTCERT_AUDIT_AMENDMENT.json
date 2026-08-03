@@ -1,0 +1,27 @@
+{
+  "schema_version": "abi-english-full-sequence-postcert-audit-amendment/1",
+  "status": "BOUND_AFTER_VALIDATION_JUDGE_PASS_BEFORE_POSTCERT_AUDIT",
+  "created_date": "2026-07-31",
+  "candidate_checkpoint_sha256": "c78664f7607fa94a8bf2da3954a83e44a00aca45c8eb4c313434b723bcce7a59",
+  "candidate_manifest_sha256": "30b2866d48c695c359c7a20dcb5c999cad5ad48468d038e2c0a02315722f0eeb",
+  "runtime_graph_sha256": "3dde61ea9711f7b1cb4f5fd5ab4c4d52314543d76cb540850b9dec67e5d913b3",
+  "bounded_change": {
+    "runner": "abi/postcert_generalization_audit.py",
+    "runner_sha256": "bae3cb62e59a93d330c7d8bc0975d75d33c659339954cac6191eae55fcd8779a",
+    "change": "Resolve the candidate manifest identity through the already tested schema-closed runtime helper so either a host delta or standalone acquired core can be packaged.",
+    "generation_behavior_changed": false,
+    "evaluator_behavior_changed": false,
+    "catalog_changed": false,
+    "identity_packaging_only": true,
+    "targeted_test_result": "46 passed"
+  },
+  "unchanged": [
+    "candidate checkpoint native graph tokenizer and decoder",
+    "all 28 disclosed postcert prompts and evaluators",
+    "CPU native generation",
+    "functional scoring and claim boundary",
+    "final-test non-access"
+  ],
+  "decision_rule": "Run all 28 prompts once on the exact v28 runtime. Preserve the result whether it passes or fails; do not patch prompts, handlers, or scoring.",
+  "claim_boundary": "This makes the historical audit runner accept the standalone acquired-core identity schema. It adds no quality, capability, or performance credit."
+}

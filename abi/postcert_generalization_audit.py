@@ -17,6 +17,11 @@ from .hf_extraction import (
 )
 from .moonshot_release import ROOT, _read, verify_certificate
 from .layercake_product_host import LayerCakeProductHost
+from .layercake_host_runtime import (
+    NativeHostRuntime,
+    _runtime_candidate_manifest_sha,
+    generate_native_host,
+)
 
 
 EVIDENCE_FORMAT = "abi-postcert-novel-english-audit-evidence/1"
@@ -193,6 +198,75 @@ def run_source(
     return evidence
 
 
+def run_native(
+    *,
+    artifact_path: Path,
+    output_path: Path,
+    threads: int,
+) -> dict[str, Any]:
+    """Run the disclosed audit on one exact teacher-free native artifact."""
+
+    catalog = load_probe_catalog(CATALOG)
+    runtime = NativeHostRuntime(artifact_path, threads=threads)
+    observations: list[dict[str, Any]] = []
+    for probe in catalog["probes"]:
+        started = time.perf_counter()
+        result = generate_native_host(
+            runtime,
+            probe["prompt"],
+            max_new_tokens=int(probe["max_new_tokens"]),
+        )
+        passed, score = evaluate_output(
+            result["output"], probe["evaluator"]
+        )
+        observations.append(
+            {
+                "probe_id": probe["probe_id"],
+                "capability": probe["capability"],
+                "prompt": probe["prompt"],
+                "evaluator": probe["evaluator"],
+                "output": result["output"],
+                "output_sha256": result["output_sha256"],
+                "passed": passed,
+                "score": score,
+                "latency_seconds": time.perf_counter() - started,
+                "engine": "native_layercake",
+                "route": result["route"],
+                "symbolic_handler_used": result["symbolic_handler_used"],
+                "collapse": {
+                    "authoritative_generated_tokens": result[
+                        "authoritative_generated_tokens"
+                    ],
+                    "generated_utf8_bytes": result["generated_utf8_bytes"],
+                },
+            }
+        )
+    evidence = _aggregate(
+        engine="native_layercake",
+        observations=observations,
+        identity={
+            "artifact": str(artifact_path.relative_to(ROOT)).replace(
+                "\\", "/"
+            ),
+            "candidate_manifest_sha256": (
+                _runtime_candidate_manifest_sha(runtime.metadata)
+            ),
+            "candidate_kind": runtime.metadata["host"].get("kind"),
+            "runtime_graph_sha256": runtime.metadata["runtime"][
+                "graph_sha256"
+            ],
+            "runtime_metadata_evidence_sha256": runtime.metadata[
+                "evidence_sha256"
+            ],
+            "decoding": runtime.decoding,
+            "teacher_present_at_inference": False,
+            "source_transformer_blocks_retained": 0,
+        },
+    )
+    _write_immutable(output_path, evidence)
+    return evidence
+
+
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     subparsers = parser.add_subparsers(dest="engine", required=True)
@@ -209,6 +283,10 @@ def _parser() -> argparse.ArgumentParser:
     source.add_argument("--license", required=True)
     source.add_argument("--device", choices=("cpu", "cuda"), default="cuda")
     source.add_argument("--batch-size", type=int, default=4)
+    native = subparsers.add_parser("native")
+    native.add_argument("--artifact", required=True)
+    native.add_argument("--output", required=True)
+    native.add_argument("--threads", type=int, default=16)
     return parser
 
 
@@ -220,7 +298,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             output_path=(ROOT / args.output).resolve(),
             threads=args.threads,
         )
-    else:
+    elif args.engine == "source":
         evidence = run_source(
             output_path=(ROOT / args.output).resolve(),
             model=args.model,
@@ -228,6 +306,12 @@ def main(argv: Sequence[str] | None = None) -> int:
             license_id=args.license,
             device=args.device,
             batch_size=args.batch_size,
+        )
+    else:
+        evidence = run_native(
+            artifact_path=(ROOT / args.artifact).resolve(),
+            output_path=(ROOT / args.output).resolve(),
+            threads=args.threads,
         )
     print(
         json.dumps(

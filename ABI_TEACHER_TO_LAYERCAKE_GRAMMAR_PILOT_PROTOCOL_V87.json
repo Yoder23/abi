@@ -1,0 +1,126 @@
+{
+  "format": "abi-teacher-to-layercake-grammar-pilot-protocol/1",
+  "status": "PREREGISTERED_BEFORE_COMPOSITION_TRAINING_OR_LAYERCAKE_EVALUATION",
+  "effective_date": "2026-08-03",
+  "objective": "Test the smallest causal ABI construct: whether an already-qualified frozen-teacher grammar signal can be converted into segregated search-only training material and produce a prompt-specific held-out behavioral improvement in the exact Phase 2 LayerCake host.",
+  "scope_boundary": {
+    "included": [
+      "one source model",
+      "one English capability: grammar",
+      "one exact LayerCake host topology",
+      "one real-target candidate",
+      "one deterministic shuffled-target control",
+      "one untouched 64-row validation split"
+    ],
+    "excluded": [
+      "broad English fluency",
+      "automatic capability labeling",
+      "domain extraction",
+      "minimum-artifact search",
+      "hyperparameter sweeps",
+      "Phase 3 promotion"
+    ]
+  },
+  "source_artifact": {
+    "path": "results/abi_moonshot/reference_artifact_v69/phi3-contrastive-grammar-source-v1.abix",
+    "sha256": "a1dc87e20d54e40952f7c31f840f1229e0f974bc82e63e568af2c0a4feb16f94",
+    "source_model": "microsoft/Phi-3-mini-4k-instruct",
+    "source_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310",
+    "qualification": "224/224 positive counterbalanced forced-choice grammar preferences; validation is 64/64 and remains excluded from training"
+  },
+  "catalog": {
+    "path": "catalogs/natural_grammar_reference_search_validation_v1.json",
+    "sha256": "c5d3540f2a139bb78c47f96f85f1ed0bf8096a74d316c2dda494a2c9d9fd4db9",
+    "search_rows": 160,
+    "validation_rows": 64,
+    "structures": 16,
+    "final_test_rows": 0
+  },
+  "receiver": {
+    "layercake_root": "../layercake_release",
+    "parent": "../layercake_release/artifacts/moonshot/phase2_shallow_sparse_pretrained/student2400-seed-9824",
+    "checkpoint_sha256": "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1",
+    "canonical_abi": "../layercake_release/moonshot/phase2_canonical_semantic_abi_r3.json",
+    "canonical_abi_sha256": "d024de52144a2d797d0501acb7deb55575ffca7e33f72900beff599cf0a97761",
+    "trainable_scope": "selected_task_cakes",
+    "trainable_route": 0,
+    "expected_trainable_parameters": 99840,
+    "shared_core_and_other_routes_frozen": true
+  },
+  "composition": {
+    "mode": "development capability subset",
+    "requested_english_capabilities": [
+      "grammar"
+    ],
+    "include_passing_search_supplements": true,
+    "expected_training_rows": 160,
+    "validation_rows_allowed": 0,
+    "domain_ontology": "catalogs/domain_ontology_v1.json",
+    "domain_segregation_required": true
+  },
+  "training": {
+    "device": "cuda",
+    "seed": 87003,
+    "steps": 1000,
+    "batch_size": 4,
+    "gradient_accumulation_steps": 1,
+    "max_tokens": 256,
+    "cake_learning_rate": 0.0001,
+    "classifier_loss_weight": 0.0,
+    "prompt_overlap_loss_weight": 1.0,
+    "recovery_disabled": true,
+    "runs": [
+      "real teacher-selected targets",
+      "same rows, seed, optimizer budget, and host with a SHA-256-seeded target derangement"
+    ],
+    "additional_training_runs_authorized": 0
+  },
+  "evaluation": {
+    "split": "validation",
+    "rows": 64,
+    "route": 0,
+    "comparands": [
+      "unchanged Phase 2 parent",
+      "real-target candidate",
+      "shuffled-target control"
+    ],
+    "primary_per_row_measures": [
+      "mean log probability of the exact correct completion",
+      "correct-minus-incorrect mean-log-probability margin",
+      "positive-margin indicator"
+    ],
+    "secondary_measures": [
+      "deterministic autonomous exact-correction rate",
+      "empty output",
+      "repetition collapse"
+    ],
+    "bootstrap": {
+      "method": "paired prompt-level percentile bootstrap",
+      "replicates": 10000,
+      "confidence": 0.95,
+      "seed": 87004
+    }
+  },
+  "pass_requirements": {
+    "all_required": [
+      "real candidate improves held-out correct-completion mean log probability over the unchanged parent with paired-bootstrap 95% lower bound greater than zero",
+      "real candidate improves held-out correct-completion mean log probability over the shuffled-target control with paired-bootstrap 95% lower bound greater than zero",
+      "real candidate improves held-out correct-minus-incorrect margin over the unchanged parent with paired-bootstrap 95% lower bound greater than zero",
+      "real candidate improves held-out correct-minus-incorrect margin over the shuffled-target control with paired-bootstrap 95% lower bound greater than zero",
+      "real candidate positive-margin accuracy is at least 0.75",
+      "all 64 validation rows are evaluated and none were used for training",
+      "only route 0 changes; the shared core, classifier, and other nine task cakes remain byte-identical in logical tensor state",
+      "source artifact remains byte-identical and no source teacher, source block, source weight, or source tokenizer is present in the deployed candidate"
+    ],
+    "secondary_generation_is_diagnostic_not_a_primary_gate": true
+  },
+  "decision_rule": "Run exactly the preregistered real and shuffled acquisitions once. PASS proves only a bounded teacher-artifact-to-LayerCake grammar transfer construct. FAIL is preserved as negative evidence and ends this pass without nearby sweeps.",
+  "failure_attribution": {
+    "composition_or_artifact_failure": "ABI_CONSTRUCT_FAILURE",
+    "real_not_better_than_shuffled": "ABI_TRANSFER_CAUSALITY_FAILURE",
+    "real_improves_likelihood_but_generation_remains_poor": "LAYERCAKE_REALIZATION_LIMITATION_AFTER_SUCCESSFUL_BOUNDED_ABI_TRANSFER",
+    "no_held_out_likelihood_improvement": "ABI_TO_LAYERCAKE_ACQUISITION_FAILURE"
+  },
+  "claim_boundary": "A passing pilot does not prove fluent English extraction, automatic labeling, knowledge segregation beyond the manually scoped grammar catalog, minimality, domain transfer, or teacher-level generational parity."
+}

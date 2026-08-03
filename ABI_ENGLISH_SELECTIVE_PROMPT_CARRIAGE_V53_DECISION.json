@@ -1,0 +1,51 @@
+{
+  "format": "abi-english-selective-prompt-carriage-v53-decision/1",
+  "status": "REJECTED_FULL_FUNCTIONAL_QUALITY_PROMPT_POINTER_BRANCH_CLOSED",
+  "effective_date": "2026-08-01",
+  "protocol": "ABI_ENGLISH_SELECTIVE_PROMPT_CARRIAGE_GPU_PROTOCOL_V53.json",
+  "checkpoint": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-v51-selective-prompt-carriage-seed459824-steps6000-v53",
+    "checkpoint_sha256": "678afac302f18f234e7edd1eaadb7534c8f386c3bb048503c21cdf5b69b820ed",
+    "manifest_sha256": "2549cbe169daf7d50bd799a6474b276aa01861a9b5042340db6bc8e1f571d10c",
+    "metadata_file_sha256": "b4d64dbbdccaeed171229cadf12ed39cbbaf7f216d038db0e0da9b87951661e8",
+    "wall_seconds": 414.93547329999274,
+    "gpu_hours": 0.11525985369444243,
+    "peak_gpu_memory_bytes": 2403247104,
+    "trained_parameters": 49931,
+    "all_existing_parent_parameters_preserved_exact": true,
+    "teacher_present_at_inference": false
+  },
+  "natural_screen": {
+    "evidence": "results/abi_moonshot/postcert_audit_v2/v53-selective-prompt-carriage-natural-norepeat4.json",
+    "file_sha256": "bbda0b41b0f6567e11d807e13aa7e867ec1892ed2b70d014d53aa16b41acb80b",
+    "internal_evidence_sha256": "8468f1364c487f3afc7b6033bf0c7b687217acc0fe113361acea33414fe30241",
+    "passes": 10,
+    "observations": 28,
+    "collapse_count": 0,
+    "outputs_changed_vs_v51": 3,
+    "pass_regressions_vs_v51": 0,
+    "passes_gate": true
+  },
+  "full1400_pytorch": {
+    "evidence": "results/abi_moonshot/segregated_acquisition_v3/v53-selective-prompt-carriage-semantic-full1400-pytorch.json",
+    "file_sha256": "1ec10b6c25bdbfdf6a448280cfb86a5f929f35592bc1c786837906be14b8b995",
+    "internal_evidence_sha256": "9679e3a8013c228031c31520c6fe87146bc77e1f0707dd47a6c015fd7770458a",
+    "passes": 1056,
+    "observations": 1400,
+    "overall_pass_rate": 0.7542857142857143,
+    "source_passing_retention_rate": 0.7729508196721312,
+    "collapse_count": 0,
+    "outputs_changed_vs_v51": 239,
+    "improved_vs_v51": 5,
+    "regressed_vs_v51": 17,
+    "coherence_pass_rate": 0.0,
+    "domain_independent_reasoning_pass_rate": 0.01,
+    "email_drafting_pass_rate": 0.71,
+    "status": "FAIL"
+  },
+  "measured_interpretation": "Selective top-1-deficit labels protect the small autonomous screen but do not supply sequence-state. The pointer changes most coherence and reasoning generations without repairing any coherence row and regresses eleven previously passing reasoning rows. Prompt token access, pointer rank, gate dormancy, and scalar selectivity are therefore falsified as the missing mechanism.",
+  "decision": "Reject before native export and close the neural prompt-pointer branch. Do not run span-pointer, rank, gate, loss, duration, or threshold variants. Reuse the existing independently hash-bound LayerCake English-form capability substrate that already demonstrates complementary structured behavior, graft it unchanged onto the best fluent v51 neural core, and evaluate that exact integrated LayerCake host.",
+  "negative_evidence_preserved": true,
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

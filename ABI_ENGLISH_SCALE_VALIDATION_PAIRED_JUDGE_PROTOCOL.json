@@ -1,0 +1,67 @@
+{
+  "schema_version": "abi-paired-english-fluency-judge-protocol/1",
+  "protocol_id": "abi-english-scale-validation-paired-judge-v1",
+  "status": "PREREGISTERED_AFTER_CATALOG_MATERIALIZATION_BEFORE_SOURCE_INFERENCE_OR_CANDIDATE_TRAINING",
+  "created_date": "2026-07-30",
+  "runner": {
+    "module": "abi.paired_english_fluency_judge",
+    "sha256": "e906a5973843f5de628e489ea371c4e7c9f81c019716e8e08f1a0194c36c8177"
+  },
+  "catalog": {
+    "path": "catalogs/english_distinct_context_scale_v1.json",
+    "sha256": "1ca59044e5d7229b138c12d17fc1342423ccb3d5173fb4fc9786614e6ea7a91f",
+    "split": "validation",
+    "available_prompts": 1000,
+    "sample_prompts": 112,
+    "prompts_per_capability": 28,
+    "selection": "For each capability, take the 28 lowest SHA-256 values of UTF-8(protocol_id + ':' + probe_id).",
+    "candidate_or_teacher_output_used_for_selection": false
+  },
+  "judge": {
+    "model_id": "Qwen/Qwen2-1.5B-Instruct",
+    "revision": "ba1cf1846d7df0a0591d6c00649f57e798519da8",
+    "license_id": "apache-2.0",
+    "temperature": 0,
+    "role": "development_evaluation_only_absent_at_layercake_inference",
+    "independence_boundary": "The judge is neither the Phi-3 extraction teacher nor LayerCake. It is still an automated model judge and cannot substitute for the final blinded human audit."
+  },
+  "blinding": {
+    "pair_order": "A/B orientation is determined by the low bit of SHA-256(protocol_id + ':orientation:' + probe_id).",
+    "model_names_exposed_to_judge": false,
+    "artifact_paths_exposed_to_judge": false,
+    "rubric_fixed_before_outputs": true
+  },
+  "rubric": {
+    "scale": {
+      "minimum": 0,
+      "maximum": 4
+    },
+    "dimensions": [
+      "grammatical_fluency",
+      "local_and_global_coherence",
+      "prompt_and_context_grounding",
+      "instruction_and_format_adherence"
+    ],
+    "binary_checks": [
+      "unsupported_factual_detail",
+      "repetition_or_collapse",
+      "unusable_or_empty"
+    ],
+    "judge_must_score_both_outputs_independently": true
+  },
+  "gates": {
+    "minimum_parse_rate": 0.95,
+    "minimum_candidate_grammatical_fluency_mean": 3.25,
+    "minimum_candidate_coherence_mean": 3.25,
+    "minimum_candidate_grounding_mean": 3.0,
+    "minimum_candidate_adherence_mean": 3.0,
+    "maximum_candidate_repetition_or_collapse_rate": 0.0,
+    "maximum_candidate_unusable_rate": 0.0,
+    "minimum_candidate_to_teacher_total_score_ratio": 0.9,
+    "maximum_grounding_mean_loss_vs_teacher": 0.25,
+    "paired_bootstrap_confidence_interval": 0.95,
+    "minimum_bootstrap_lower_bound_for_candidate_to_teacher_total_ratio": 0.85
+  },
+  "decision_rule": "A nested acquisition budget passes the natural-language validation screen only if every gate passes. A failure escalates to the next preregistered budget without accessing final-test outputs.",
+  "claim_boundary": "This is a blinded paired development-set model-judge screen. It cannot certify final generalization, replace human review, or prove mathematical losslessness."
+}

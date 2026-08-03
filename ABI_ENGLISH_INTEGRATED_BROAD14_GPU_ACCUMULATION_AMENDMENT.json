@@ -1,0 +1,60 @@
+{
+  "schema_version": "abi-english-integrated-broad14-gpu-accumulation-amendment/1",
+  "status": "PREREGISTERED_AFTER_MACHINE_VERIFIED_MEMORY_FAILURE_BEFORE_SUCCESSOR_RELAUNCH",
+  "created_date": "2026-07-31",
+  "parent_protocol": "ABI_ENGLISH_INTEGRATED_BROAD14_ACQUISITION_PROTOCOL.json",
+  "controlling_resource_evidence": "ABI_ENGLISH_INTEGRATED_BROAD14_GPU_MEMORY_DECISION.json",
+  "reason": "The original 14+4 physical microbatch consumed 16,111 MiB of GPU memory, left 65 MiB free, paged through 24,565,948,416 bytes of process-private host memory, and stopped producing viable step throughput during autonomous-prefix recovery.",
+  "implementation_change": {
+    "runner": "abi/layercake_full_core_acquisition.py",
+    "runner_sha256": "83cb5f063ce3923bc065185e71bed1bd36e752ce82c346d2b819c028b781bc66",
+    "generic_feature": "Loss-normalized gradient accumulation with deterministic sampler rollback across a complete tentative optimizer update.",
+    "teacher_microbatch_size": 7,
+    "general_preservation_microbatch_size": 2,
+    "gradient_accumulation_steps": 2,
+    "effective_teacher_batch_size": 14,
+    "effective_general_preservation_batch_size": 4,
+    "successful_optimizer_steps": 10575,
+    "output_path": "results/abi_moonshot/segregated_acquisition_v3/three-block-english-union14-fullseq512-balanced-seed19824-steps10575-v19-accum2"
+  },
+  "invariants": {
+    "effective_batch_changed": false,
+    "teacher_observations_per_optimizer_step_changed": false,
+    "general_replay_observations_per_optimizer_step_changed": false,
+    "optimizer_step_budget_changed": false,
+    "capability_sampling_order_changed": false,
+    "all_43108_records_seen_requirement_changed": false,
+    "learning_rates_changed": false,
+    "loss_weights_changed": false,
+    "sequence_ceiling_changed": false,
+    "autonomous_recovery_schedule_changed": false,
+    "architecture_or_parameter_count_changed": false,
+    "tokenizer_or_decoder_changed": false,
+    "new_teacher_inference": 0,
+    "cpu_training_authorized": false
+  },
+  "cuda_stress_test": {
+    "path": "C:/tmp/abi_accum_smoke_20260731_v1",
+    "metadata_file_sha256": "fdb1279018adb23149c1eb43e6d2acc211cbb99f6d8c0e1bfd9b13748517171b",
+    "checkpoint_sha256": "80929ad02d410f8b9431d6dc3ffae9e0b5ea01d2f15a2fdf80c5a90092e2c515",
+    "successful_optimizer_steps": 1,
+    "attempted_microbatches": 2,
+    "effective_teacher_batch_size": 14,
+    "effective_general_preservation_batch_size": 4,
+    "capability_count_in_update": 14,
+    "all_capabilities_once_in_update": true,
+    "autonomous_prefix_horizon": 32,
+    "peak_gpu_memory_bytes": 2330653184,
+    "wall_seconds": 1.5555491000413895,
+    "status": "PASS"
+  },
+  "verification": {
+    "targeted_tests": "46 passed",
+    "test_file_sha256": "228b3af3143c6df2d44980643ed1d4c9598dc6551db8b0fe0ddc22d2d01e6669",
+    "original_training_artifact_sha256_unchanged": "a9f0dac67ce93eb7fd8ecbefe87d5d23feff6a9da47283ba374ba1295bbd50a8",
+    "original_parent_checkpoint_sha256_unchanged": "5bae16dec3a55759e92a8481ec5ee519a5ee8687ad1a6f019edc1df3225d092e"
+  },
+  "decision_rule": "Relaunch exactly once on CUDA with the declared two-way accumulation. Reject on any semantic or operational gate; do not use CPU training or alter the effective information and optimization budgets.",
+  "final_test_accessed": false,
+  "claim_boundary": "The stress check validates resource feasibility and accounting only. It provides no English-quality, teacher-equivalence, CPU-inference, or promotion evidence."
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": "abi-layercake-full-precision-tone-screen/1",
+  "recorded_at": "2026-07-31T19:04:00-04:00",
+  "status": "PREREGISTERED_BEFORE_TONE_SCREEN",
+  "candidate": {
+    "artifact": "results/abi_moonshot/native_hosts/three-block-v24-runtime-ablation-fp32-all-v35b",
+    "checkpoint_sha256": "6a8ddd348ad6f8215aee8b1a7e3ad7e8c7171c848ee3bddabc6222c0fef39482",
+    "graph_sha256": "7fd33e5a4e2e87fa95e04caf9c2d9236de7421734785ef26d541719ba287597f",
+    "graph_bytes": 401116730,
+    "prior_realization_pass_rate": 0.85,
+    "prior_reasoning_pass_rate": 0.85
+  },
+  "screen": {
+    "capability": "tone_control",
+    "observations": 100,
+    "pass_rate_at_least": 0.8,
+    "source_passing_retention_rate_at_least": 0.9,
+    "collapse_count": 0,
+    "automatic_route_accuracy": 1.0
+  },
+  "decision_rule": "Run full locked validation only if tone passes. Even a semantic pass remains ineligible unless the same full-FP32 host later clears the locked CPU speed, TTFT, and memory gates.",
+  "invariants": {
+    "new_training": false,
+    "teacher_absent_at_inference": true,
+    "cpu_inference_only": true,
+    "quarantined_final_catalog_unaccessed": true
+  }
+}

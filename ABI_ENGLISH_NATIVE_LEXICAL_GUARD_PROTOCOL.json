@@ -1,0 +1,44 @@
+{
+  "format": "abi-english-native-lexical-guard-protocol/1",
+  "status": "PREREGISTERED_BEFORE_IMPLEMENTATION",
+  "effective_date": "2026-07-30",
+  "objective": "Prevent measured autonomous lexical loops without the functional regressions caused by global token n-gram bans and without adding task templates, facts, teacher material, or learned parameters.",
+  "controlling_evidence": {
+    "quality_qualified_no_token_ban": "results/abi_moonshot/native_hosts/three-block-realization-scale-symbolic-reasoning-v9-onnx-int8-v5-dynamic-semantic-full1400.json",
+    "no_token_ban_benchmark": "results/abi_moonshot/native_hosts/three-block-realization-scale-symbolic-reasoning-v9-onnx-int8-v5-dynamic-benchmark-128-lightweight-v2.json",
+    "global_token_ban_quality_failure": "results/abi_moonshot/native_hosts/three-block-realization-scale-symbolic-reasoning-v9-onnx-int8-v8-norepeat4-dynamic-train-output-prompt-union-semantic-full1400.json",
+    "prompt_aware_token_ban_quality_failure": "results/abi_moonshot/native_hosts/three-block-realization-scale-symbolic-reasoning-v9-onnx-int8-v11-norepeat4-promptaware-dynamic-semantic-full1400.json",
+    "measured_bottleneck": "Five of 120 byte-target observations entered novel lexical loops; token-level 4-gram bans cleared the benchmark but damaged legitimate structured English generation."
+  },
+  "candidate_lock": {
+    "attempts": 1,
+    "neural_weights_changed": false,
+    "symbolic_handlers_changed": false,
+    "new_teacher_tokens": 0,
+    "token_no_repeat_ngram_size": 0,
+    "lexical_repetition_blocking_threshold": 1,
+    "post_generation_lexical_truncation_threshold": 4,
+    "selection_rule": "If and only if the current greedy token would introduce the first repeated lexical 4-gram not present in the prompt, reject that token and select the next highest logit. Normal punctuation, formatting, lexical sequences copied from the prompt, and nonrepeating language remain eligible.",
+    "maximum_rejected_candidates_per_step": 64,
+    "validation_rows_used_to_create_task_specific_rules": 0,
+    "final_test_rows_used": 0
+  },
+  "gates": {
+    "all_14_quality_capabilities_at_least": 0.8,
+    "overall_functional_pass_rate_at_least": 0.8,
+    "source_passing_retention_at_least": 0.9,
+    "collapse_count": 0,
+    "all_byte_target_outputs_complete": true,
+    "maximum_repetition_rate_at_most": 0.6,
+    "minimum_unique_4gram_rate_at_least": 0.4,
+    "median_cpu_speed_ratio_at_least": 2.0,
+    "paired_prompt_bootstrap_lower_bound_at_least": 2.0,
+    "phase2_throughput_retention_at_least": 0.95,
+    "ttft_no_worse_than_comparator": true,
+    "active_model_memory_lower_than_comparator": true,
+    "persistent_incremental_state_exact": true,
+    "physical_sparse_execution": true
+  },
+  "decision_rule": "Implement and screen exactly one lexical-guard threshold. Reject rather than sweep thresholds or add prompt-family handlers if either the complete validation suite or repeated CPU benchmark fails.",
+  "claim_boundary": "This is a generic deterministic decoding guard against measured lexical collapse. It does not add English knowledge, prove teacher equivalence, or repair any prompt family symbolically."
+}

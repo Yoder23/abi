@@ -1,0 +1,65 @@
+{
+  "format": "abi-english-sparse-conformance-gpu-protocol/1",
+  "status": "PREREGISTERED_AFTER_V43_REJECTION_BEFORE_STRESS",
+  "effective_date": "2026-08-02",
+  "controlling_failure": "ABI_ENGLISH_SPARSE_COMPONENT_GRAFT_V43_DECISION.json",
+  "hypothesis": "v43 proves that exact old sparse components are incompatible with v41's new hidden representation. Small conformance training of only v41's existing task cakes and route classifier should restore functional controls while leaving its fluent shared English substrate, embeddings, transformer blocks, language head, topology, active inference compute, and foreign-source boundary unchanged.",
+  "parent": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-broad-natural-same-tokenizer-logit-distill-seed349824-steps6000-v41",
+    "checkpoint_sha256": "22df8256a0479596516c1d09c29200fc19c1cb810ac8204979b2192ce39372e0",
+    "manifest_sha256": "96cd8efaedffac485c8c94c50f394c4a15c1161c746e2aba6bc9fded680622d4",
+    "natural_screen_passes": 10,
+    "natural_screen_collapse_count": 0
+  },
+  "conformance_scope": {
+    "trainable_scope": "task_cakes_classifier",
+    "trainable_parameters": 1006090,
+    "shared_core_trainable_parameters": 0,
+    "embedding_trainable_parameters": 0,
+    "transformer_trainable_parameters": 0,
+    "language_head_trainable_parameters": 0,
+    "task_cake_rank": 64,
+    "installed_task_cakes": 10,
+    "maximum_active_task_cakes_per_sequence": 1,
+    "graph_topology_changed": false,
+    "parameter_count_changed": false,
+    "foreign_teacher_present_during_conformance": false,
+    "teacher_present_at_inference": false
+  },
+  "immutable_inputs": {
+    "main_bundle": "results/abi_moonshot/segregated_acquisition_v3/phi3-broad-natural-conversation-complete-search-training-v3.abix",
+    "main_bundle_sha256": "82d1ab8a3ee7b4aa351b5c74b4a229d75e845313047065780227e8e403363150",
+    "anchor_bundle": "results/abi_moonshot/segregated_acquisition_v3/phi3-natural-cumulative-realization-scale-training-v8.abix",
+    "anchor_bundle_sha256": "d40d0d0804954f2e3769de3a5df4f60caebab28680091bf09746e949bf5d0ac8",
+    "general_curriculum_sha256": "bae6c1fe300a0214c1f6cb19a8c8eeee4f0b75681290be56f258a247cd488e53",
+    "canonical_abi_sha256": "d024de52144a2d797d0501acb7deb55575ffca7e33f72900beff599cf0a97761"
+  },
+  "fixed_training": {
+    "device": "cuda",
+    "seed": 379824,
+    "successful_optimizer_steps": 6000,
+    "main_batch_size": 4,
+    "main_sampling_strategy": "balanced_capabilities",
+    "anchor_batch_size": 4,
+    "anchor_sampling_strategy": "balanced_capabilities",
+    "anchor_loss_weight": 1.0,
+    "general_batch_size": 4,
+    "general_loss_weight": 1.0,
+    "cake_learning_rate": 0.00005,
+    "classifier_loss_weight": 0.25,
+    "prompt_overlap_loss_weight": 1.0,
+    "max_tokens": 1024,
+    "recovery_start_step": 400,
+    "recovery_interval": 8,
+    "recovery_horizons": [4, 8, 16]
+  },
+  "stress_output": "results/abi_moonshot/stress/abi-v41-sparse-conformance-stress-v44",
+  "candidate_output": "results/abi_moonshot/segregated_acquisition_v3/three-block-v41-sparse-conformance-seed379824-steps6000-v44",
+  "decision_rule": "Require exact frozen-shared hash preservation. Reject unless the exact checkpoint retains at least 9/28 natural passes with zero collapse, then clears every unchanged 1,400-observation gate. Do not sweep step count, learning rate, sampling, scope, route subsets, or decoding.",
+  "hardware_policy": {
+    "conformance_training": "cuda",
+    "cpu_role": "teacher-free deployed LayerCake inference diagnostics and certification only"
+  },
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

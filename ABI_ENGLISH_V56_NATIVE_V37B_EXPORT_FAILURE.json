@@ -1,0 +1,17 @@
+{
+  "format": "abi-english-v56-native-export-failure/1",
+  "status": "FAILED_BEFORE_RUNTIME_ARTIFACT_EMISSION",
+  "effective_date": "2026-08-01",
+  "protocol": "ABI_ENGLISH_V56_NATIVE_CERTIFICATION_PROTOCOL.json",
+  "source_artifact": "results/abi_moonshot/segregated_acquisition_v3/three-block-v51-event-wrapper-conformance-v56",
+  "attempted_output": "results/abi_moonshot/native_hosts/three-block-v56-onnx-int8-v37b",
+  "partial_files_emitted": 0,
+  "failure_stage": "task-route zero-control router ONNX trace after eager-attention selection",
+  "failure_type": "RuntimeError",
+  "failure_message": "invalid unordered_map<K, T> key",
+  "measured_cause": "The transformers causal-mask helper still entered its vmap path under eager attention.",
+  "bounded_correction": "Trace the identical frozen embedding, positional embedding, three transformer blocks, and final norm with an explicit dynamic additive causal mask, followed by the exact frozen task classifier.",
+  "corrected_output": "results/abi_moonshot/native_hosts/three-block-v56-onnx-int8-v37c",
+  "checkpoint_or_payload_changed": false,
+  "moonshot_complete": false
+}

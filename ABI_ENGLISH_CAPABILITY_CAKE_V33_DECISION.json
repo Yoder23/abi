@@ -1,0 +1,57 @@
+{
+  "format": "abi-english-capability-cake-v33-decision/1",
+  "status": "REJECTED_AUTONOMOUS_NATURAL_QUALITY_NEGATIVE_EVIDENCE_PRESERVED",
+  "effective_date": "2026-08-02",
+  "protocol": "ABI_ENGLISH_CAPABILITY_CAKE_FIXED_TOKEN_GPU_PROTOCOL_V33.json",
+  "candidate": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-broad-natural-capability-cakes-r64-seed69824-steps18000-v33",
+    "checkpoint_sha256": "e7369a951ee64a850f893981e50e17c56de42a2d128fa750ea9dbec1d023b9c8",
+    "manifest_sha256": "a435c42ac842e7dd6ede5b0a9ff98e86a14aed4c07844a71130f903d0b12cdfe",
+    "training_device": "cuda",
+    "successful_optimizer_steps": 18000,
+    "training_wall_seconds": 1612.001878400013,
+    "gpu_hours": 0.4477782995555592,
+    "peak_gpu_memory_bytes": 3026707968,
+    "frozen_shared_state_preserved_exact": true,
+    "parent_unchanged": true,
+    "teacher_present_at_inference": false,
+    "canonical_abi_changed": false
+  },
+  "architecture_precheck": {
+    "path": "results/abi_moonshot/native_hosts/capability-cakes-r64-stress-v33-fixed-token-architecture-comparison.json",
+    "status": "PASS_ARCHITECTURE_ONLY",
+    "candidate_median_decode_tokens_per_second": 345.98484939960656,
+    "parent_median_decode_tokens_per_second": 345.545304127966,
+    "median_retention_ratio": 1.002537989500198,
+    "paired_token_rate_ratio_bootstrap_95ci": [
+      0.997766273515554,
+      1.007127292875491
+    ],
+    "candidate_peak_process_resident_bytes": 210599936
+  },
+  "controlling_autonomous_screen": {
+    "path": "results/abi_moonshot/postcert_audit_v2/v33-capability-cakes-natural-norepeat4-layercake.json",
+    "evidence_sha256": "72e9bdcd02f250fe1643ab05edac87e8efac53a258e836bed074be26cbed6800",
+    "observations": 28,
+    "passes": 5,
+    "collapse_count": 0,
+    "v21_parent_passes": 4,
+    "v29_full_core_passes": 8,
+    "status": "FAIL"
+  },
+  "diagnosis": {
+    "shared_overwrite_prevented": true,
+    "active_runtime_compute_preserved": true,
+    "cross_capability_route_collision_reduced": true,
+    "remaining_failure": "A final-logit residual cake cannot write capability information into the transformer's persistent KV trajectory. Even with isolated cakes, most correctly routed generations remain garbled, repetitive, or poorly grounded; the model receives capability adaptation only after the shared transformer state has already been computed.",
+    "examples": {
+      "grammar": "2.",
+      "coherence": "[MIXKE] let the dough in the oven. Combine the ingredients:",
+      "realization": "The item on Monday, owned by the state, is delayed, scheduled for Monday."
+    }
+  },
+  "decision": "Reject before full broad14, teacher-relative, and autonomous speed promotion. Preserve checkpoint and all evidence. The next architecture must place a small capability signal inside persistent incremental state while keeping active CPU compute near the rank-64 envelope.",
+  "disclosed_postcert_final_split_accessed": true,
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

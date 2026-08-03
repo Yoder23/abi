@@ -1,0 +1,31 @@
+{
+  "schema_version": "abi-english-distinct-context-scale-validation-amendment/1",
+  "protocol_id": "abi-english-distinct-context-scale-v5-validation",
+  "status": "BOUND_AFTER_FAILED_VALIDATION_PACKAGING_BEFORE_COMPLETE_VALIDATION_RERUN",
+  "created_date": "2026-07-31",
+  "base_protocol": "ABI_ENGLISH_DISTINCT_CONTEXT_SCALE_V1_PROTOCOL.json",
+  "training_amendment": "ABI_ENGLISH_DISTINCT_CONTEXT_SCALE_V4_PROTOCOL_AMENDMENT.json",
+  "preserved_failure": "ABI_ENGLISH_DISTINCT_CONTEXT_SCALE_VALIDATION_PACKAGING_FAILURE.json",
+  "candidate_checkpoint_sha256": "7caef4e4e75eabe907ea9b796ec05764ad66270c69b4dc1ae19663259352e1cb",
+  "native_graph_sha256": "a01dd482cd7ee50bb62ca54114335f619de8d6ff3c3a65d4c6ae434f94e77eb9",
+  "bounded_change": {
+    "runner": "abi/layercake_host_runtime.py",
+    "runner_sha256": "ea1a7403379eb1286a44fcce40a8acf54386b7ef180f1a049f97b79a2c16847c",
+    "change": "Resolve the candidate manifest identity through the existing schema-closed _runtime_candidate_manifest_sha helper, which accepts either host-delta deployment_manifest_sha256 or standalone-core manifest_sha256.",
+    "targeted_test_result": "52 passed",
+    "generation_behavior_changed": false,
+    "evaluation_behavior_changed": false,
+    "evidence_identity_packaging_only": true
+  },
+  "unchanged": [
+    "candidate checkpoint and native graph",
+    "validation catalog and source responses",
+    "CPU runtime and 16-thread setting",
+    "decoder and generation length",
+    "automatic evaluators and collapse metrics",
+    "all validation and final gates",
+    "final-test non-access"
+  ],
+  "decision_rule": "Rerun all 1,000 validation generations from the beginning and serialize only a complete hash-bound evidence file. The lost in-memory observations earn no quality credit.",
+  "claim_boundary": "This is an evidence-schema repair, not a model, data, generation, or scoring change."
+}

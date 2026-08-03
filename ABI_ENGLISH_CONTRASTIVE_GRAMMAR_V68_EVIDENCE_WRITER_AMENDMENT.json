@@ -1,0 +1,38 @@
+{
+  "format": "abi-english-contrastive-grammar-v68-evidence-writer-amendment/1",
+  "status": "PREREGISTERED_BEFORE_REPEAT_V68_PREFLIGHT",
+  "effective_date": "2026-08-03",
+  "parent_protocol": {
+    "path": "ABI_ENGLISH_CONTRASTIVE_GRAMMAR_GPU_PROTOCOL_V68.json",
+    "sha256": "73c200a6b46b4b64b72251d0b523c974845ca5c25544aef5e8404fe3a24f6abb"
+  },
+  "tooling_incident": {
+    "path": "ABI_ENGLISH_CONTRASTIVE_GRAMMAR_V68_EVIDENCE_WRITER_FAILURE.json",
+    "sha256": "4955fb8a4cc39b845108df6c3b8c5380d122e10fc9d38abca66fe5a268d593dc",
+    "result": "No qualification evidence was written and no scientific verdict exists."
+  },
+  "sole_change": "Replace seven invalid JSON-style lowercase boolean literals in Python evidence construction with the corresponding Python True/False literals.",
+  "corrected_implementation": {
+    "path": "abi/contrastive_grammar_qualification.py",
+    "sha256": "68e6e9cf35bfb7f11975a77302f5e5a8286925f38e7444bde0e93acf6f43961e"
+  },
+  "unchanged": [
+    "source model, revision, weights, precision, CUDA device, and no-offload rule",
+    "catalog and preflight hashes",
+    "counterbalanced scoring method",
+    "14/16 preflight threshold",
+    "all full-run global and per-structure thresholds",
+    "output path and LayerCake non-invocation boundary"
+  ],
+  "verification": {
+    "tests": [
+      "tests/test_contrastive_grammar_qualification.py",
+      "tests/test_natural_grammar_reference_catalog.py"
+    ],
+    "passed": 6
+  },
+  "authorization": "Repeat the exact V68 preflight once from the beginning. The failed process cannot be resumed or mined for observations.",
+  "layercake_invoked": false,
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

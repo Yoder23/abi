@@ -1,0 +1,57 @@
+{
+  "format": "abi-english-v56-balanced-compact-gpu-router-protocol/1",
+  "status": "PREREGISTERED_BEFORE_V41_TRAINING",
+  "effective_date": "2026-08-01",
+  "parent_negative_decision": "ABI_ENGLISH_V56_COMPACT_GPU_ROUTER_V40_DECISION.json",
+  "hypothesis": "The v40 compact architecture is sufficient, but its rare routes were undercovered. Adding an already-existing, segregated, non-overlapping search bundle with 977 realization and 500 coherence examples should repair route generalization without adding any deployed parameter or runtime cost.",
+  "data_audit": {
+    "original_bundle_records": 24421,
+    "added_v9_bundle_records": 8312,
+    "added_v9_unique_prompts": 7392,
+    "cross_bundle_record_id_overlap": 0,
+    "cross_bundle_prompt_sha256_overlap": 0,
+    "added_v9_prompt_hashes_with_conflicting_routes": 0,
+    "added_v9_coherence_records": 500,
+    "added_v9_cake_output_realization_records": 977
+  },
+  "training": {
+    "device": "cuda",
+    "authorized_runs": 1,
+    "initialize_from_v40": false,
+    "seed": 56041,
+    "architecture_changes_vs_v40": 0,
+    "hyperparameter_changes_vs_v40": 0,
+    "steps": 2500,
+    "batch_size": 256,
+    "learning_rate": 0.003,
+    "weight_decay": 0.0001,
+    "sampling": "uniform_over_14_capability_labels",
+    "source_bundles": [
+      {
+        "path": "results/abi_moonshot/segregated_acquisition_v3/phi3-broad-natural-conversation-complete-search-training-v3.abix",
+        "budget_index": 3,
+        "role": "training_only_using_the_previously_locked_v40_training_partition"
+      },
+      {
+        "path": "results/abi_moonshot/segregated_acquisition_v3/phi3-broad-cumulative-english-training-v9.abix",
+        "budget_index": -1,
+        "role": "prompt_sha256_grouped_90_percent_training_10_percent_fresh_holdout"
+      }
+    ],
+    "duplicate_policy": "Deduplicate exact prompt UTF-8 bytes after proving all duplicate labels agree. Keep prompt hashes wholly within one split.",
+    "teacher_outputs_consumed_by_loss": false,
+    "source_logits_consumed": false,
+    "source_hidden_activations_consumed": false,
+    "source_parameters_copied": 0
+  },
+  "fresh_v9_holdout_gates": {
+    "overall_route_accuracy_at_least": 0.95,
+    "every_capability_route_accuracy_at_least": 0.8,
+    "every_represented_route_accuracy_at_least": 0.8,
+    "onnx_matches_pytorch_on_bound_probes": true,
+    "training_device_is_cuda": true
+  },
+  "frozen_components": "The v39 main graph, v56 checkpoint, cakes, controls, tokenizer, decoding, symbolic substrate, and canonical ABI remain byte-identical.",
+  "decision_rule": "Reject v41 on any fresh-v9 holdout gate. If it passes, package one native successor and run physical, identity, full 1400-case quality, active-memory, peak-RSS, cold-request, and repeated CPU throughput certification. Do not tune from either v40 or v41 holdout outputs.",
+  "moonshot_complete": false
+}

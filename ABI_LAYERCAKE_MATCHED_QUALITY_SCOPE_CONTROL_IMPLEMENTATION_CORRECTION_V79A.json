@@ -1,0 +1,29 @@
+{
+  "format": "abi-layercake-matched-quality-scope-control-implementation-correction/1",
+  "status": "PREREGISTERED_AFTER_LITERAL_FAILURE_BEFORE_ANY_QUALITY_PROMPT_EXECUTION",
+  "effective_date": "2026-08-03",
+  "parent_protocol": {
+    "path": "ABI_LAYERCAKE_MATCHED_QUALITY_SCOPE_CONTROL_PROTOCOL_V79.json",
+    "sha256": "53aba5fc0c539bbf09c6592c0faa7a56addfb9a244feac2b93d1f131f5c27160"
+  },
+  "preserved_failure": "ABI_LAYERCAKE_V79_NATIVE_ROLE_LITERAL_FAILURE.json",
+  "only_change": "Replace the invented native payload role literal with the exact existing immutable manifest role known_good_layercake_native_payload through a named constant.",
+  "unchanged": [
+    "sealed LayerCake repository, commit, checkpoint, and native payload",
+    "receiver and identity bridge",
+    "28-prompt catalog and evaluators",
+    "decoding",
+    "decision rule",
+    "output path"
+  ],
+  "implementation_lock": {
+    "abi/layercake_external_receiver.py": "c1283e1e03dcfe1c108da5a002c9a46448dd745acb75a565ce96012eefaa7f2a",
+    "tests/test_layercake_external_receiver.py": "1ffaa7cbcb569d52b00a208724f1db5889f7c8536e9134b96a8ad92871ff22ec",
+    "tests/test_failure_attribution.py": "1e0ace570cfc5cf2a5638da1cd8524a93a7c7ef1aa80329c7c6e5e2c8064e4d3",
+    "targeted_tests": "16 passed"
+  },
+  "quality_prompts_already_executed": 0,
+  "historical_evidence_changed": false,
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

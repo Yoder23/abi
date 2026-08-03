@@ -1,0 +1,27 @@
+{
+  "format": "abi-english-rank256-physical-verifier-coverage-amendment/1",
+  "status": "VERIFIER_LIMITATION_REPAIRED_AND_NEGATIVE_EVIDENCE_PRESERVED",
+  "effective_date": "2026-08-02",
+  "original_failure": {
+    "path": "results/abi_moonshot/native_hosts/expandedcake-r256-stress-v30-physical.json",
+    "file_sha256": "76006b1e6db79d9f0bd7e248f81a3a23ae3137b061a4c1a57c8d41154f6c1109",
+    "cause": "The verifier hard-coded rank-64 installed tensor shapes and therefore could not recognize the rank-256 route-indexed tensors. The runtime was not promoted from this failure."
+  },
+  "repair": {
+    "runtime_metadata_binds_task_cake_rank": true,
+    "verifier_allowed_ranks": [64, 256],
+    "rank_specific_installed_shapes_required": true,
+    "runner_sha256": "685424e24eb00c29dfd57ebace2e1cda778186c6ad4b98e039459e897acc4f01",
+    "focused_test_sha256": "9129db74058c4a5bef8dcd72a95c75a875acbb27419a4d577a787258ae625de9"
+  },
+  "successor_proof": {
+    "path": "results/abi_moonshot/native_hosts/expandedcake-r256-stress-v30-physical-v2-rank-bound.json",
+    "file_sha256": "5d91cc5d714a0dc8b1091313e20c718cdcd0e01d758e840dbed54e90246c893f",
+    "status": "PASS",
+    "route_indexed_parameter_gathers": 4,
+    "dense_all_route_matrix_nodes": 0,
+    "task_cake_rank": 256
+  },
+  "claim_boundary": "This amendment repairs verifier coverage only. It does not convert the rejected dense-runtime speed precheck into a pass and does not certify English quality.",
+  "final_test_accessed": false
+}

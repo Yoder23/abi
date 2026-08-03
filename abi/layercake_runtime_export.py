@@ -35,7 +35,10 @@ def export_runtime_candidate(
     checkpoint = source / "model.safetensors"
     if (
         metadata.get("format")
-        != "abi-layercake-full-english-core-acquisition/1"
+        not in {
+            "abi-layercake-full-english-core-acquisition/1",
+            "abi-layercake-component-graft/1",
+        }
         or metadata.get("checkpoint", {}).get("sha256")
         != _sha256_file(checkpoint)
     ):

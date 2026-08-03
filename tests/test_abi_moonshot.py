@@ -1,7 +1,10 @@
 import json
 from pathlib import Path
 
+import pytest
+
 from abi.capability_pipeline import (
+    CapabilityPipelineError,
     read_extraction_bundle,
     verify_extraction_bundle,
 )
@@ -18,7 +21,9 @@ from abi.layercake_acquisition import (
 )
 from abi.moonshot import (
     _automatic_budgets,
+    _defer_empty_search_error_for_supplements,
     _passing_search_supplements,
+    _records_for_exact_inventory_selection,
     _survey_evidence_budgets,
 )
 
@@ -33,6 +38,29 @@ SURVEY = ROOT / "results" / "abi_moonshot" / "qwen2-1.5b-development-survey.abix
 COMPOSED = (
     ROOT / "results" / "abi_moonshot" / "qwen2-1.5b-english-python-math.abix"
 )
+
+
+def test_empty_search_is_deferred_only_for_explicit_development_supplements():
+    assert _defer_empty_search_error_for_supplements(
+        selected_records=[],
+        include_passing_search_supplements=True,
+        development=True,
+    )
+    assert not _defer_empty_search_error_for_supplements(
+        selected_records=[],
+        include_passing_search_supplements=True,
+        development=False,
+    )
+    assert not _defer_empty_search_error_for_supplements(
+        selected_records=[],
+        include_passing_search_supplements=False,
+        development=True,
+    )
+    assert not _defer_empty_search_error_for_supplements(
+        selected_records=[{"record_id": "already-selected"}],
+        include_passing_search_supplements=True,
+        development=True,
+    )
 
 
 def test_passing_search_supplements_fail_closed_on_scope_split_and_result():
@@ -76,6 +104,82 @@ def test_passing_search_supplements_fail_closed_on_scope_split_and_result():
         probe_results=results,
         selection=selection,
     ) == [records[0]]
+
+
+def test_exact_inventory_selection_allows_only_declared_training_omissions():
+    inventory_hash = "i" * 64
+    present_result_hash = "p" * 64
+    missing_result_hash = "m" * 64
+    source_hash = "s" * 64
+    record = {
+        "record_id": "record-present",
+        "destination_scope": "english_core",
+        "domain": "domain_independent",
+        "capability": "rewriting",
+        "source_model": "teacher/model",
+        "source_model_revision": "a" * 40,
+        "provenance": "catalog-v1:rewrite-1",
+    }
+    result = {
+        "record_id": record["record_id"],
+        "probe_result_sha256": present_result_hash,
+    }
+    inventory = {
+        "inventory_sha256": inventory_hash,
+        "entries": [
+            {
+                "destination_scope": "english_core",
+                "domain": "domain_independent",
+                "capability": "rewriting",
+                "probe_result_sha256": [
+                    present_result_hash,
+                    missing_result_hash,
+                ],
+            }
+        ],
+    }
+    source = {
+        "model_id": "teacher/model",
+        "revision": "a" * 40,
+        "source_manifest_sha256": source_hash,
+    }
+    selection = {
+        "selected_items": [
+            {
+                "destination_scope": "english_core",
+                "domain": "domain_independent",
+                "capability": "rewriting",
+                "source_manifest_sha256": source_hash,
+                "inventory_sha256": inventory_hash,
+            }
+        ]
+    }
+    kwargs = {
+        "records": [record],
+        "probe_results": [result],
+        "inventories": [inventory],
+        "sources": [source],
+        "selection": selection,
+    }
+
+    with pytest.raises(
+        CapabilityPipelineError,
+        match="inventory evidence is absent",
+    ):
+        _records_for_exact_inventory_selection(**kwargs)
+    assert _records_for_exact_inventory_selection(
+        **kwargs,
+        training_material_inventory_hashes={inventory_hash},
+    ) == [record]
+
+    with pytest.raises(
+        CapabilityPipelineError,
+        match="no materialized evidence",
+    ):
+        _records_for_exact_inventory_selection(
+            **{**kwargs, "probe_results": []},
+            training_material_inventory_hashes={inventory_hash},
+        )
 
 
 def test_protocol_is_honestly_open_and_locks_scientific_depth():

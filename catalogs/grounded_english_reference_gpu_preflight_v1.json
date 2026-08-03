@@ -1,0 +1,598 @@
+{
+  "catalog_id": "abi-grounded-english-reference-search-validation-v1-gpu-preflight",
+  "claim_boundary": "This exact subset tests source runtime transport and evidence retention only. It is never acquisition or promotion material.",
+  "generation": {
+    "capabilities": [
+      "abstention",
+      "cake_output_realization",
+      "clarification",
+      "coherence",
+      "conversation",
+      "domain_independent_reasoning",
+      "email_drafting",
+      "format_control",
+      "grammar",
+      "instruction_following",
+      "prompt_grounding",
+      "rewriting",
+      "summarization",
+      "tone_control"
+    ],
+    "closed_book_specialist_prompts": 0,
+    "domain_claims_present": 0,
+    "domain_labels_present": 0,
+    "final_test_probes": 0,
+    "generator": "abi.grounded_english_reference_catalog",
+    "generator_version": "v1",
+    "parent_catalog_id": "abi-grounded-english-reference-search-validation-v1",
+    "parent_total_probes": 3136,
+    "preflight_only": true,
+    "search_per_capability": 1,
+    "total_probes": 14,
+    "unique_prompt_specific_evaluator_contracts": 3136,
+    "unique_prompts": 3136,
+    "validation_per_capability": 0
+  },
+  "probes": [
+    {
+      "capability": "abstention",
+      "content_basis": "interpersonal_pragmatics",
+      "destination_scope": "english_core",
+      "domain": "domain_independent",
+      "domain_claims": [],
+      "domain_labels": [],
+      "evaluator": {
+        "kind": "all_of",
+        "rules": [
+          {
+            "kind": "contains_all",
+            "values": [
+              "nelora-ewk"
+            ]
+          },
+          {
+            "kind": "contains_any",
+            "values": [
+              "cannot determine",
+              "can't determine",
+              "cannot know",
+              "can't know",
+              "not enough information",
+              "no information"
+            ]
+          },
+          {
+            "kind": "maximum_characters",
+            "value": 300
+          }
+        ]
+      },
+      "knowledge_class": "english_linguistic_form",
+      "label_evidence_sha256": "1314f0e4d7367096f0df8e1804db61100c5af73dfb9fe4e217aeba6788d75ce3",
+      "label_method": "preregistered_catalog",
+      "max_new_tokens": 72,
+      "output_introduces_unsupplied_facts": false,
+      "probe_id": "grounded-abstention-search-0000-v1",
+      "prompt": "No information is supplied about which sealed envelope Kelune-alj privately chose. Answer without guessing and mention case nelora-ewk.",
+      "record_schema": "abi-layercake-segregated-extraction-record/2",
+      "seed": 57000000,
+      "split": "search",
+      "temperature": 0
+    },
+    {
+      "capability": "cake_output_realization",
+      "content_basis": "supplied_non_domain_context",
+      "destination_scope": "english_core",
+      "domain": "domain_independent",
+      "domain_claims": [],
+      "domain_labels": [],
+      "evaluator": {
+        "kind": "all_of",
+        "rules": [
+          {
+            "kind": "contains_all",
+            "values": [
+              "Lorven-atz",
+              "linen envelope",
+              "arrived",
+              "amber alcove",
+              "oralen-ffa"
+            ]
+          },
+          {
+            "kind": "maximum_characters",
+            "value": 320
+          }
+        ]
+      },
+      "knowledge_class": "english_linguistic_form",
+      "label_evidence_sha256": "b5096857edf642482e992f609c1a2d02d315a3fe5372106a18c30e92d59b18eb",
+      "label_method": "preregistered_catalog",
+      "max_new_tokens": 80,
+      "output_introduces_unsupplied_facts": false,
+      "probe_id": "grounded-cake_output_realization-search-0000-v1",
+      "prompt": "Realize the supplied fields as one fluent English sentence. Copy every value literally and add no facts: actor=Lorven-atz; object=linen envelope; action=arrived; location=amber alcove; reference=oralen-ffa.",
+      "record_schema": "abi-layercake-segregated-extraction-record/2",
+      "seed": 57000224,
+      "split": "search",
+      "temperature": 0
+    },
+    {
+      "capability": "clarification",
+      "content_basis": "interpersonal_pragmatics",
+      "destination_scope": "english_core",
+      "domain": "domain_independent",
+      "domain_claims": [],
+      "domain_labels": [],
+      "evaluator": {
+        "kind": "all_of",
+        "rules": [
+          {
+            "kind": "contains_all",
+            "values": [
+              "sorali-fnq",
+              "briwen-jyr",
+              "calira-lla"
+            ]
+          },
+          {
+            "kind": "regex",
+            "pattern": "\\?\\s*$"
+          },
+          {
+            "kind": "maximum_characters",
+            "value": 300
+          }
+        ]
+      },
+      "knowledge_class": "english_linguistic_form",
+      "label_evidence_sha256": "0216618ee7baaf21f939d96229e709d3fdb0003777e22ab2b16077ff8ead785a",
+      "label_method": "preregistered_catalog",
+      "max_new_tokens": 72,
+      "output_introduces_unsupplied_facts": false,
+      "probe_id": "grounded-clarification-search-0000-v1",
+      "prompt": "The request says, 'Move sorali-fnq there,' but 'there' could mean the briwen-jyr room or the calira-lla room. Ask one concise clarifying question. Do not choose an option.",
+      "record_schema": "abi-layercake-segregated-extraction-record/2",
+      "seed": 57000448,
+      "split": "search",
+      "temperature": 0
+    },
+    {
+      "capability": "coherence",
+      "content_basis": "supplied_non_domain_context",
+      "destination_scope": "english_core",
+      "domain": "domain_independent",
+      "domain_claims": [],
+      "domain_labels": [],
+      "evaluator": {
+        "kind": "all_of",
+        "rules": [
+          {
+            "kind": "ordered_contains",
+            "values": [
+              "merali-fwg-ready",
+              "merali-fwg-moved",
+              "merali-fwg-settled"
+            ]
+          },
+          {
+            "kind": "contains_all",
+            "values": [
+              "Jorali-blf",
+              "amber parcel",
+              "amber alcove"
+            ]
+          },
+          {
+            "kind": "nonempty",
+            "minimum_characters": 80
+          },
+          {
+            "kind": "maximum_characters",
+            "value": 480
+          }
+        ]
+      },
+      "knowledge_class": "english_linguistic_form",
+      "label_evidence_sha256": "9a0fca79185f884f2b8a1bbca3ba73f26ef47274dcc30f993fb92bf69da8d46c",
+      "label_method": "preregistered_catalog",
+      "max_new_tokens": 112,
+      "output_introduces_unsupplied_facts": false,
+      "probe_id": "grounded-coherence-search-0000-v1",
+      "prompt": "Turn these shuffled events into one coherent short paragraph. Keep each event label verbatim and place them in the actual order: [merali-fwg-moved] Jorali-blf carried the amber parcel to the amber alcove. [merali-fwg-settled] Jorali-blf closed the door. [merali-fwg-ready] Jorali-blf wrapped the amber parcel.",
+      "record_schema": "abi-layercake-segregated-extraction-record/2",
+      "seed": 57000672,
+      "split": "search",
+      "temperature": 0
+    },
+    {
+      "capability": "conversation",
+      "content_basis": "interpersonal_pragmatics",
+      "destination_scope": "english_core",
+      "domain": "domain_independent",
+      "domain_claims": [],
+      "domain_labels": [],
+      "evaluator": {
+        "kind": "all_of",
+        "rules": [
+          {
+            "kind": "contains_all",
+            "values": [
+              "Xavren-btv",
+              "mavora-gew"
+            ]
+          },
+          {
+            "kind": "contains_any",
+            "values": [
+              "understand",
+              "sounds",
+              "sorry",
+              "support",
+              "help"
+            ]
+          },
+          {
+            "kind": "maximum_characters",
+            "value": 420
+          }
+        ]
+      },
+      "knowledge_class": "english_linguistic_form",
+      "label_evidence_sha256": "86c01062ce52d8f45d317ff846a7daaee2d7b06bfa70d5e468d774db4c3590a1",
+      "label_method": "preregistered_catalog",
+      "max_new_tokens": 96,
+      "output_introduces_unsupplied_facts": false,
+      "probe_id": "grounded-conversation-search-0000-v1",
+      "prompt": "Xavren-btv says, 'I feel frustrated about the shared presentation.' Respond naturally and supportively in one or two sentences. Mention Xavren-btv and the private reference word mavora-gew so the reply stays grounded.",
+      "record_schema": "abi-layercake-segregated-extraction-record/2",
+      "seed": 57000896,
+      "split": "search",
+      "temperature": 0
+    },
+    {
+      "capability": "domain_independent_reasoning",
+      "content_basis": "abstract_or_nonce_content",
+      "destination_scope": "english_core",
+      "domain": "domain_independent",
+      "domain_claims": [],
+      "domain_labels": [],
+      "evaluator": {
+        "kind": "all_of",
+        "rules": [
+          {
+            "kind": "contains_all",
+            "values": [
+              "Helori-ccl",
+              "kasira-gnm"
+            ]
+          },
+          {
+            "kind": "contains_none",
+            "values": [
+              "Ivaren-dou arrived first",
+              "Jorali-fbd arrived first"
+            ]
+          },
+          {
+            "kind": "maximum_characters",
+            "value": 300
+          }
+        ]
+      },
+      "knowledge_class": "english_linguistic_form",
+      "label_evidence_sha256": "0b61cbfaf40b620e056141464fa7428553821dce34ed83364ea96820d3cfc7f5",
+      "label_method": "preregistered_catalog",
+      "max_new_tokens": 72,
+      "output_introduces_unsupplied_facts": false,
+      "probe_id": "grounded-domain_independent_reasoning-search-0000-v1",
+      "prompt": "Use only this ordering: Helori-ccl arrived before Ivaren-dou; Ivaren-dou arrived before Jorali-fbd. Who arrived first? Answer in one sentence and include reasoning tag kasira-gnm.",
+      "record_schema": "abi-layercake-segregated-extraction-record/2",
+      "seed": 57001120,
+      "split": "search",
+      "temperature": 0
+    },
+    {
+      "capability": "email_drafting",
+      "content_basis": "interpersonal_pragmatics",
+      "destination_scope": "english_core",
+      "domain": "domain_independent",
+      "domain_claims": [],
+      "domain_labels": [],
+      "evaluator": {
+        "kind": "all_of",
+        "rules": [
+          {
+            "kind": "contains_all",
+            "values": [
+              "Valira-clb",
+              "amber parcel",
+              "amber alcove",
+              "Friday",
+              "midafternoon",
+              "yelune-gwc"
+            ]
+          },
+          {
+            "kind": "maximum_characters",
+            "value": 520
+          }
+        ]
+      },
+      "knowledge_class": "english_linguistic_form",
+      "label_evidence_sha256": "1b985812bda2c4b81c86858b72c5052aae69ea71e73fa683056908316c112754",
+      "label_method": "preregistered_catalog",
+      "max_new_tokens": 128,
+      "output_introduces_unsupplied_facts": false,
+      "probe_id": "grounded-email_drafting-search-0000-v1",
+      "prompt": "Draft a brief, polite email using only these notes and no invented details: recipient=Valira-clb; thank them for the amber parcel; ask them to bring it to the amber alcove on Friday during midafternoon; reference=yelune-gwc. Keep it under seventy words.",
+      "record_schema": "abi-layercake-segregated-extraction-record/2",
+      "seed": 57001344,
+      "split": "search",
+      "temperature": 0
+    },
+    {
+      "capability": "format_control",
+      "content_basis": "domain_free_instruction",
+      "destination_scope": "english_core",
+      "domain": "domain_independent",
+      "domain_claims": [],
+      "domain_labels": [],
+      "evaluator": {
+        "expected_values": {
+          "holder": "Fenora-ctr",
+          "location": "amber alcove",
+          "object": "linen envelope",
+          "reference": "ivaren-hes"
+        },
+        "kind": "json_object",
+        "required_keys": [
+          "reference",
+          "holder",
+          "object",
+          "location"
+        ]
+      },
+      "knowledge_class": "english_linguistic_form",
+      "label_evidence_sha256": "4e571a478f5a938c67c2d0fef63a7ee4e81cd2e408b0e9e4cff5660765df1bd7",
+      "label_method": "preregistered_catalog",
+      "max_new_tokens": 80,
+      "output_introduces_unsupplied_facts": false,
+      "probe_id": "grounded-format_control-search-0000-v1",
+      "prompt": "Return only one raw JSON object, without a code fence. Use exactly these string values: reference=ivaren-hes, holder=Fenora-ctr, object=linen envelope, location=amber alcove.",
+      "record_schema": "abi-layercake-segregated-extraction-record/2",
+      "seed": 57001568,
+      "split": "search",
+      "temperature": 0
+    },
+    {
+      "capability": "grammar",
+      "content_basis": "domain_free_instruction",
+      "destination_scope": "english_core",
+      "domain": "domain_independent",
+      "domain_claims": [],
+      "domain_labels": [],
+      "evaluator": {
+        "kind": "all_of",
+        "rules": [
+          {
+            "kind": "contains_all",
+            "values": [
+              "Toravi-dch",
+              "prepares",
+              "rose sleeve",
+              "amber alcove",
+              "Wednesday"
+            ]
+          },
+          {
+            "kind": "contains_none",
+            "values": [
+              "Toravi-dch prepare "
+            ]
+          },
+          {
+            "kind": "maximum_characters",
+            "value": 240
+          }
+        ]
+      },
+      "knowledge_class": "english_linguistic_form",
+      "label_evidence_sha256": "6cdf68574a8202969e77af7bca206b4b66a0fb305b50b671d5c27569af825bc7",
+      "label_method": "preregistered_catalog",
+      "max_new_tokens": 64,
+      "output_introduces_unsupplied_facts": false,
+      "probe_id": "grounded-grammar-search-0000-v1",
+      "prompt": "Correct the subject-verb agreement. Return one corrected sentence and preserve every other detail: Toravi-dch prepare the rose sleeve to the amber alcove every Wednesday.",
+      "record_schema": "abi-layercake-segregated-extraction-record/2",
+      "seed": 57001792,
+      "split": "search",
+      "temperature": 0
+    },
+    {
+      "capability": "instruction_following",
+      "content_basis": "domain_free_instruction",
+      "destination_scope": "english_core",
+      "domain": "domain_independent",
+      "domain_claims": [],
+      "domain_labels": [],
+      "evaluator": {
+        "kind": "regex",
+        "pattern": "^First:\\s*helori-jih\\s*\\nSecond:\\s*ivaren-kuq\\s*$"
+      },
+      "knowledge_class": "english_linguistic_form",
+      "label_evidence_sha256": "12294cc61f080d22a2ec7b8f9fb47de1f6d9bb22ce418f0fdfab140d4a07dca0",
+      "label_method": "preregistered_catalog",
+      "max_new_tokens": 48,
+      "output_introduces_unsupplied_facts": false,
+      "probe_id": "grounded-instruction_following-search-0000-v1",
+      "prompt": "Follow all constraints: output exactly two lines, no bullets and no extra text. The first line must be `First: helori-jih` and the second must be `Second: ivaren-kuq`.",
+      "record_schema": "abi-layercake-segregated-extraction-record/2",
+      "seed": 57002016,
+      "split": "search",
+      "temperature": 0
+    },
+    {
+      "capability": "prompt_grounding",
+      "content_basis": "supplied_non_domain_context",
+      "destination_scope": "english_core",
+      "domain": "domain_independent",
+      "domain_claims": [],
+      "domain_labels": [],
+      "evaluator": {
+        "kind": "all_of",
+        "rules": [
+          {
+            "kind": "contains_all",
+            "values": [
+              "uloren-ieo",
+              "linen envelope",
+              "smooth",
+              "amber alcove"
+            ]
+          },
+          {
+            "kind": "maximum_characters",
+            "value": 300
+          }
+        ]
+      },
+      "knowledge_class": "english_linguistic_form",
+      "label_evidence_sha256": "e3cae1794d7c2f53aec389f2e31d441800491b3f0becb37b7dc11564dfcb758f",
+      "label_method": "preregistered_catalog",
+      "max_new_tokens": 80,
+      "output_introduces_unsupplied_facts": false,
+      "probe_id": "grounded-prompt_grounding-search-0000-v1",
+      "prompt": "Use only the supplied card. Reply in one sentence and include its reference word. Card: reference=uloren-ieo; object=linen envelope; texture=smooth; location=amber alcove. What object, texture, and location does the card state?",
+      "record_schema": "abi-layercake-segregated-extraction-record/2",
+      "seed": 57002240,
+      "split": "search",
+      "temperature": 0
+    },
+    {
+      "capability": "rewriting",
+      "content_basis": "domain_free_instruction",
+      "destination_scope": "english_core",
+      "domain": "domain_independent",
+      "domain_claims": [],
+      "domain_labels": [],
+      "evaluator": {
+        "kind": "all_of",
+        "rules": [
+          {
+            "kind": "contains_all",
+            "values": [
+              "Briwen-ecd",
+              "rose sleeve",
+              "amber alcove",
+              "Friday",
+              "elaris-ine"
+            ]
+          },
+          {
+            "kind": "maximum_characters",
+            "value": 280
+          }
+        ]
+      },
+      "knowledge_class": "english_linguistic_form",
+      "label_evidence_sha256": "a7bb35f8e3c1dfd847e9bafaac08490226272aa490fc14b111c0915e7bab2523",
+      "label_method": "preregistered_catalog",
+      "max_new_tokens": 80,
+      "output_introduces_unsupplied_facts": false,
+      "probe_id": "grounded-rewriting-search-0000-v1",
+      "prompt": "Rewrite this as one concise, natural sentence without losing the reference or supplied details: Due to the fact that Briwen-ecd was in possession of the rose sleeve, Briwen-ecd proceeded to go to the amber alcove on Friday, with elaris-ine being the reference.",
+      "record_schema": "abi-layercake-segregated-extraction-record/2",
+      "seed": 57002464,
+      "split": "search",
+      "temperature": 0
+    },
+    {
+      "capability": "summarization",
+      "content_basis": "supplied_non_domain_context",
+      "destination_scope": "english_core",
+      "domain": "domain_independent",
+      "domain_claims": [],
+      "domain_labels": [],
+      "evaluator": {
+        "kind": "all_of",
+        "rules": [
+          {
+            "kind": "contains_all",
+            "values": [
+              "selune-ivu",
+              "amber parcel",
+              "amber alcove",
+              "became quieter"
+            ]
+          },
+          {
+            "kind": "maximum_characters",
+            "value": 300
+          }
+        ]
+      },
+      "knowledge_class": "english_linguistic_form",
+      "label_evidence_sha256": "421e94a4a5cba920a16f0aafb362b2ed64414e034b9ee7e594d0616da5e118ba",
+      "label_method": "preregistered_catalog",
+      "max_new_tokens": 80,
+      "output_introduces_unsupplied_facts": false,
+      "probe_id": "grounded-summarization-search-0000-v1",
+      "prompt": "Summarize the supplied note in one sentence under forty words; keep the reference, object, place, and result. Note: During just after noon, Pelora-ekt moved the amber parcel into the amber alcove. Afterward, the room became quieter. The note reference is selune-ivu.",
+      "record_schema": "abi-layercake-segregated-extraction-record/2",
+      "seed": 57002688,
+      "split": "search",
+      "temperature": 0
+    },
+    {
+      "capability": "tone_control",
+      "content_basis": "interpersonal_pragmatics",
+      "destination_scope": "english_core",
+      "domain": "domain_independent",
+      "domain_claims": [],
+      "domain_labels": [],
+      "evaluator": {
+        "kind": "all_of",
+        "rules": [
+          {
+            "kind": "contains_all",
+            "values": [
+              "Tavren-etj",
+              "linen envelope",
+              "amber alcove",
+              "just after noon",
+              "Wednesday",
+              "calira-jek"
+            ]
+          },
+          {
+            "kind": "contains_any",
+            "values": [
+              "please",
+              "could you",
+              "would you",
+              "thank you"
+            ]
+          },
+          {
+            "kind": "maximum_characters",
+            "value": 420
+          }
+        ]
+      },
+      "knowledge_class": "english_linguistic_form",
+      "label_evidence_sha256": "9d8e72aae462686f7233857395c114a103f328383a3a71a0aea2789c9b7e0581",
+      "label_method": "preregistered_catalog",
+      "max_new_tokens": 96,
+      "output_introduces_unsupplied_facts": false,
+      "probe_id": "grounded-tone_control-search-0000-v1",
+      "prompt": "Rewrite the message in a courteous professional tone, as one or two sentences, preserving all details: Hey Tavren-etj, get the linen envelope to the amber alcove by just after noon on Wednesday. Reference calira-jek.",
+      "record_schema": "abi-layercake-segregated-extraction-record/2",
+      "seed": 57002912,
+      "split": "search",
+      "temperature": 0
+    }
+  ],
+  "schema_version": "abi-capability-probe-catalog/1",
+  "status": "GPU_RUNTIME_EVIDENCE_PREFLIGHT_ONLY"
+}

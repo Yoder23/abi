@@ -1,86 +1,120 @@
 # ABI claim ledger
 
-The machine-readable authority for the current bounded release is
-`ABI_MOONSHOT_CERTIFICATE_V2.json`. Documentation never widens that
-certificate. `ABI_POSTCERT_GENERALIZATION_AUDIT_DECISION.json` controls the
-broader product decision.
+Status date: 2026-08-03
 
-`ABI_ENGLISH_CORE_DOMAIN_SEGREGATION_CONTRACT_V2.json` controls future
-successor work. It changes no historical result.
+Documentation cannot widen a machine-readable certificate. Each claim below is
+limited to its exact source, artifact, implementation, benchmark, and evidence
+identity.
 
-## Certified
+## Current claims
 
-- One exact teacher-free LayerCake candidate passes 1,700/1,700 frozen final
-  observations across 17 capabilities.
-- The same candidate has zero regressions on the 1,692 final observations
-  passed by its frozen source models.
-- The final runtime contains no teacher, teacher output cache, hidden
-  activation cache, logits, copied source parameters, or source transformer
-  blocks.
-- English budget 3 is the lowest passing of four preregistered nested budgets:
-  1,381 records and 39,136 teacher tokens; the adjacent lower budget failed.
-- The deployed English artifact is 68,288,061 bytes and its active runtime
-  model is 64,665,070 bytes.
-- Chemistry/periodic-table, civics/independence-day, and bounded
-  Python/arithmetic-function packages pass their locked suites across three
-  seeds and preserve exact CPU/CUDA outputs there.
-- Domain packages preserve exact signed archive and tensor identity through
-  installation. Unselected and inactive domains are not executed.
-- On the locked headline CPU benchmark, the candidate median is 1,418.321
-  bytes/second versus 506.364 for the optimized comparator: 2.801x, with a
-  paired bootstrap 95% lower bound of 2.672x.
-- The candidate has lower measured active model memory, lower peak process RSS,
-  and lower median time to first output than that comparator.
-- The sealed LayerCake checkout remains at commit
-  `04cf2927a16fba686cd640e18a78708e5658bbda`.
+### 1. Historical bounded reference
 
-## Exact scope qualifiers
+`ABI_MOONSHOT_CERTIFICATE_V2.json` remains valid for its exact 1,700-observation
+catalog, teacher-free candidate, three narrow domain packages, tested nested
+budget, runtime, and performance comparison.
 
-- "Minimum" means lowest passing preregistered tested nested budget, not a
-  global information minimum.
-- "Lossless package transfer" means exact LayerCake
-  archives/bytes/tensors/manifests and installed payload identity.
-- Foreign-teacher acquisition is not lossless. "Semantic retention" means zero
-  relevant regressions on locked finite suites, not every possible prompt.
-- "Pure English core" means a segregated linguistic-form acquisition corpus
-  plus passing behavioral leakage tests. Literal absence of all world
-  knowledge in neural weights is not claimed.
+The later `ABI_POSTCERT_GENERALIZATION_AUDIT_DECISION.json` controls the broader
+product conclusion: the same candidate scored 0/28 on novel-form English while
+frozen Phi-3 scored 19/28. Therefore v47 is not certified as a generally fluent
+English core or as source-quality parity.
 
-- "Domain" means the named certified capability catalog, not every fact or
-  skill conventionally associated with the broad label.
-- "Independent" currently means disjoint frozen evidence and hostile
-  reproduction inside this repository, not an external organization.
+### 2. Bounded causal transfer signal
 
-## Product-level failure
+`ABI_TEACHER_TO_LAYERCAKE_GRAMMAR_PILOT_V87_DECISION.json` proves that one real
+teacher-derived grammar mapping causally improved the intended LayerCake route
+relative to both an unchanged parent and a matched shuffled-target control.
+The paired 95% confidence-interval lower bounds were positive for the locked
+likelihood comparisons, and autonomous exact corrections improved from 0/64
+for both controls to 14/64 for the real mapping.
 
-The exact v47 candidate passed 0/28 post-certificate novel-form English probes;
-frozen Phi-3 passed 19/28. The resulting 19 source-passing regressions block
-claims of general English fluency, source-quality parity, and completion of the
-full ABI moonshot. The earlier 1,700/1,700 result remains a valid statement
-about its locked synthetic catalog only.
+V87's formal pilot failed: positive-margin accuracy was 34/64 against a 48/64
+gate, and 23/64 outputs exhibited repetition collapse. This is a causal
+construct signal, not reliable transfer, fluent English, or a deployable model.
 
-## Not claimed
+### 3. Bounded pre-transfer labeling
 
-- Exhaustive discovery of every capability latent in arbitrary model weights
-- Universal semantic identity for all prompts
-- An absolute smallest English representation
-- Qualification of the failed mathematics package
-- General Python, chemistry, or civics mastery beyond the named suites
-- Automatic support for an untested source model, tokenizer, host, or GPU
-- Completion of the broad ABI English-product moonshot by v47
-- Assumption-free theorem-level mathematical proof over all possible models
-- Automatic transfer to a new target model without an ABI compatibility certificate
-- Lossless compression or universal recovery of a foreign transformer's
-  knowledge
-- Literal proof that an English core contains zero world knowledge
+`ABI_TEACHER_RECORD_LABELING_PHASE2_CERTIFICATE_V89.json` certifies the locked
+English, chemistry, civics, mathematics, Python, and quarantine ontology on a
+120-row source-record-disjoint holdout:
 
-See `FORMAL_UNIVERSAL_TRANSFER.md` for the conditional theorem, explicit
-expressivity/alignment assumptions, and impossibility boundary.
+- exact destination-plus-domain accuracy: 117/120, or 97.5%;
+- English precision: 100%;
+- specialist records mislabeled as English: zero;
+- English recall: 90%;
+- known-domain macro-F1: 99.36%;
+- known-record capability accuracy: 97%; and
+- quarantine recall: 100% across all three adversarial families.
 
-## Historical claims
+The verifier independently replayed raw labels, metrics, gates, hashes,
+provenance, and authoritative token counts and rejected five deliberate
+mutations. This is a point-estimate pass with 20 observations per class; it is
+not exhaustive domain discovery or a population-wide guarantee.
 
-The NIB experiments demonstrate narrower frozen-module, cross-architecture
-transfer behavior and remain reproducible scientific controls. The old
-architecture review and original acquisition protocol record the state before
-the final campaign. Neither overrides the v2 certificate, and negative results
-remain part of the ledger.
+### 4. Exact LayerCake package transfer is separate
+
+The sealed LayerCake repository proves exact transfer of authenticated
+LayerCake package bytes and installed payload identity within its own certified
+lineage. ABI may rely on that interface only after it creates an independently
+validated LayerCake-compatible artifact. It may not import the sealed
+LayerCake release's performance evidence into a new candidate.
+
+## Current implementation claims
+
+- The V87 real-versus-shuffled causal pilot is implemented and evidence-bound.
+- The V89 labeler combines deterministic fail-closed risk screening with a
+  frozen int8 CUDA semantic classifier on every record.
+- Labels bind destination, domain, capability, knowledge class, source record,
+  ontology, semantic output, deterministic screen, and implementation hash.
+- Unknown-domain, cross-domain, spoofed, malformed, inconsistent, or
+  low-confidence material fails closed to quarantine under the tested method.
+- LayerCake was not invoked during V89 and no training artifact was composed.
+
+## Open claims
+
+ABI has not yet established:
+
+- a passing normalized broad-English acquisition artifact;
+- sufficient data for natural English generalization;
+- the smallest passing fluent English data or model budget;
+- reliable operational teacher-to-LayerCake transfer;
+- teacher-relative broad generation quality in a final LayerCake;
+- general domain discovery from arbitrary weights;
+- general Python, chemistry, civics, or mathematics extraction;
+- robust multi-source knowledge merging;
+- preservation of LayerCake's sealed CPU/GPU advantages by an ABI-derived core;
+- external laboratory reproduction; or
+- a clean public release of the current research ledger.
+- Assumption-free theorem-level mathematical proof over all possible models.
+- Automatic transfer to a new target model without an ABI compatibility certificate.
+
+ABI also has not established superiority over LoRA, routed adapters, or any
+form of distillation. `ABI_CAPABILITY_COMPILER_CAMPAIGN_V1.md` defines the
+matched baselines and evidence required before such a bounded product claim is
+allowed.
+
+## Permanent language boundaries
+
+- “Lossless” applies only to exact LayerCake archive, manifest, tensor, and
+  installed-payload identity—not acquisition from a foreign teacher.
+- “Minimum” means the smallest passing preregistered tested nested budget with
+  an adjacent lower failure—not a global minimum.
+- “Pure English” means a bounded corpus and behavioral isolation result—not
+  proof that neural weights contain literally zero world knowledge.
+- “Domain labeling” means classification within a declared ontology—not
+  exhaustive discovery of everything a teacher knows.
+- “Independent” means disjoint evidence and adversarial replay unless an
+  external organization is explicitly involved.
+- “ABI product superiority” requires quality noninferiority plus strict
+  preregistered advantages on the complete deployment and capability-control
+  contract. It never means universal algorithmic superiority.
+- “Stronger than the teacher” is allowed only for a named frozen scope with a
+  positive paired confidence interval and noninferiority on every protected
+  dimension. It is not currently claimed.
+
+See `CURRENT_PROJECT_STATUS.md` and `RESEARCH_STATUS_AND_GAPS.md` for the active
+phase and unresolved questions.
+
+`FORMAL_UNIVERSAL_TRANSFER.md` records the impossibility boundary and the
+conditional assumptions required for any bounded transfer certificate. The
+capability-compiler campaign does not weaken or supersede that theorem.

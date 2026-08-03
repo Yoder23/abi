@@ -1,0 +1,66 @@
+{
+  "format": "abi-english-contrastive-source-artifact-protocol/1",
+  "status": "PREREGISTERED_BEFORE_V69_ARTIFACT_CONSTRUCTION",
+  "effective_date": "2026-08-03",
+  "parent_decision": {
+    "path": "ABI_ENGLISH_CONTRASTIVE_GRAMMAR_V68_DECISION.json",
+    "sha256": "123fe68c0387e5da3fc8f38c414fcb93057235eb12d8003bd2788f0c75d64746",
+    "result": "PASS_GRAMMAR_SOURCE_QUALIFICATION"
+  },
+  "source_bundle": {
+    "path": "results/abi_moonshot/reference_artifact_v60/phi3-grounded-reference-search-validation-survey-v3.abix",
+    "sha256": "7a5ee832d1a940ec2c5a617d38b6aca5606107d2caf8055ba5b0a18b95fa8d61",
+    "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310",
+    "purpose": "Reuse only the already verified frozen source manifest and exact source identity; no V60 response is imported into the grammar artifact."
+  },
+  "catalog": {
+    "path": "catalogs/natural_grammar_reference_search_validation_v1.json",
+    "sha256": "c5d3540f2a139bb78c47f96f85f1ed0bf8096a74d316c2dda494a2c9d9fd4db9",
+    "records": 224,
+    "search_records": 160,
+    "validation_records": 64,
+    "final_test_records": 0
+  },
+  "contrastive_evidence": {
+    "path": "results/abi_moonshot/reference_artifact_v68/phi3-natural-grammar-contrastive-full-v1.json",
+    "file_sha256": "6bf4070f36ac01bbfbd4a0f2abb714650e16a1f549a85aa11eb28ec42d028516",
+    "evidence_sha256": "520dfa316f0d67c023f39837d44a638c1409e677f2d317b8c05b6aaa724311d8",
+    "passes": 224,
+    "records": 224
+  },
+  "output": {
+    "path": "results/abi_moonshot/reference_artifact_v69/phi3-contrastive-grammar-source-v1.abix",
+    "artifact_role": "source_capability_survey_vault",
+    "installable": false,
+    "contains_teacher_generated_text": false,
+    "contains_source_selected_contrastive_material": true
+  },
+  "thresholds": {
+    "minimum_distinct_probes": 64,
+    "minimum_pass_rate": 0.9,
+    "minimum_wilson_95_lower_bound": 0.8,
+    "qualification_splits": ["validation"],
+    "required_available_capabilities": 1,
+    "required_capability": "grammar"
+  },
+  "construction_contract": [
+    "Verify the exact source bundle, catalog, V68 file hash, V68 self-hash, source manifest, and all 224 observation self-hashes.",
+    "Reject any row whose correct sentence, wrong sentence, split, prompt contract, or positive A/B and B/A margins differ from V68.",
+    "Create records for all search and validation rows, but permit only passing search rows to cross a later training-composition boundary.",
+    "Tokenize each selected correct sentence after construction with the authoritative frozen source tokenizer and label that count as posthoc contrastive selection, never as teacher generation.",
+    "Retain zero full source logits, zero activations, and zero source weights. Account the 896 selected log-probabilities and all ephemeral source-logit work from V68.",
+    "Expose exactly one available grammar inventory only if all locked validation thresholds pass.",
+    "The resulting .abix is teacher/source material and is never an installable LayerCake cake."
+  ],
+  "implementation_lock": {
+    "abi/contrastive_source_artifact.py": "0eac8b6b309c89ae763c8d71319a6333f0ead3f7c07fec2a14c54add6b9cc857",
+    "tests/test_contrastive_source_artifact.py": "8fdc6d9c4ab6a5955dadcc8209cba9004e3f44609a0327405f392a5199fddd12",
+    "abi/capability_pipeline.py": "c0c20d502aa24383f9a504e1eb940e0318369be304aa565e8b5f2ac07cd4c8ef"
+  },
+  "decision_rule": "Construct once. Any identity, self-hash, tokenization, inventory, bundle verification, or accounting failure rejects V69 without invoking LayerCake.",
+  "failure_attribution": "A V69 failure is ABI_ARTIFACT_CONSTRUCTION_FAILURE, never a LayerCake failure.",
+  "layercake_invoked": false,
+  "layercake_training_authorized": false,
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

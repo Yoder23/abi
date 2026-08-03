@@ -9,6 +9,7 @@ implementation through isolated function-global rebinding.
 from __future__ import annotations
 
 from collections.abc import Callable, Mapping, Sequence
+import hashlib
 from pathlib import Path
 from types import FunctionType
 from typing import Any
@@ -22,6 +23,55 @@ from .capability_segregation import LINGUISTIC_FORM
 
 
 LayerCakeHostError = legacy.LayerCakeHostError
+
+
+def _materialize_training_prompt(
+    *,
+    record: Mapping[str, Any],
+    probe_result: Mapping[str, Any],
+    ledger: Mapping[str, Any],
+) -> str:
+    """Strip generated chat prompts or verify an exact raw contrastive row."""
+
+    prompt = str(record["prompt"])
+    counter = record.get("teacher_token_counter")
+    if counter != (
+        "authoritative_source_tokenizer_posthoc_on_contrastive_selection"
+    ):
+        return legacy.strip_source_chat_template(prompt)
+    evaluator = probe_result.get("evaluator")
+    qualification = ledger.get("contrastive_qualification")
+    if not isinstance(evaluator, Mapping) or not isinstance(
+        qualification, Mapping
+    ):
+        raise LayerCakeHostError(
+            "raw contrastive prompt lacks qualification evidence"
+        )
+    evidence_hash = str(evaluator.get("contrastive_evidence_sha256", ""))
+    observation_hash = str(
+        evaluator.get("contrastive_observation_sha256", "")
+    )
+    provenance = f"contrastive:{evidence_hash}:{observation_hash}"
+    if (
+        evaluator.get("kind") != "counterbalanced_source_preference"
+        or evaluator.get("teacher_generated_output") is not False
+        or evaluator.get("prompt_contract_sha256")
+        != hashlib.sha256(prompt.encode("utf-8")).hexdigest()
+        or evaluator.get("selected_output_sha256")
+        != record.get("output_sha256")
+        or float(evaluator.get("ab_margin", 0.0)) <= 0.0
+        or float(evaluator.get("ba_margin", 0.0)) <= 0.0
+        or qualification.get("evidence_sha256") != evidence_hash
+        or record.get("provenance") != provenance
+        or evaluator.get("source_manifest_sha256")
+        not in set(ledger.get("source_manifest_sha256", []))
+        or "authoritative_generated_token_ids" in record
+        or "finish_reason" in record
+    ):
+        raise LayerCakeHostError(
+            "raw contrastive prompt evidence is incomplete or stale"
+        )
+    return prompt
 
 
 def _require_segregated_training_bundle(
@@ -68,8 +118,8 @@ def load_english_training_rows(
     if budget["split"] != "search":
         raise LayerCakeHostError("host acquisition may use search budgets only")
     allowed = set(budget["record_ids"])
-    passed = {
-        str(result["record_id"]): bool(result["passed"])
+    results_by_record = {
+        str(result["record_id"]): result
         for result in bundle["probe_results"]
     }
     rows: list[dict[str, Any]] = []
@@ -91,7 +141,8 @@ def load_english_training_rows(
             raise LayerCakeHostError(
                 "non-search record crossed the training boundary"
             )
-        if passed.get(str(record["record_id"])) is not True:
+        result = results_by_record.get(str(record["record_id"]))
+        if result is None or result.get("passed") is not True:
             raise LayerCakeHostError(
                 "failed source response crossed the training boundary"
             )
@@ -101,8 +152,10 @@ def load_english_training_rows(
                 "record_id": str(record["record_id"]),
                 "capability": capability,
                 "route": legacy.route_for_capability(capability),
-                "prompt": legacy.strip_source_chat_template(
-                    str(record["prompt"])
+                "prompt": _materialize_training_prompt(
+                    record=record,
+                    probe_result=result,
+                    ledger=bundle["ledger"],
                 ),
                 "response": str(record["output"]),
                 "teacher_tokens": int(record["teacher_tokens"]),
@@ -117,13 +170,29 @@ def load_english_training_rows(
         raise LayerCakeHostError(
             "selected budget contains no English records"
         )
-    missing = sorted(
+    requested = bundle["selection"].get("requested_english_capabilities")
+    required_capabilities = (
         set(legacy.CAPABILITY_TO_ROUTE)
-        - {row["capability"] for row in rows}
+        if requested is None
+        else {str(capability) for capability in requested}
     )
+    if (
+        not required_capabilities
+        or not required_capabilities.issubset(legacy.CAPABILITY_TO_ROUTE)
+    ):
+        raise LayerCakeHostError(
+            "training bundle English capability contract is invalid"
+        )
+    observed_capabilities = {row["capability"] for row in rows}
+    missing = sorted(required_capabilities - observed_capabilities)
     if missing:
         raise LayerCakeHostError(
             f"selected budget lacks complete English capability coverage: {missing}"
+        )
+    unexpected = sorted(observed_capabilities - required_capabilities)
+    if unexpected:
+        raise LayerCakeHostError(
+            f"selected budget crossed English capability scope: {unexpected}"
         )
     rows.sort(key=lambda row: row["record_id"])
     return rows, budget, bundle

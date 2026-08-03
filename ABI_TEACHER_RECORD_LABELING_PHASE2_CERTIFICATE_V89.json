@@ -1,0 +1,104 @@
+{
+  "format": "abi-teacher-record-labeling-phase2-certificate/1",
+  "status": "PASS_BOUNDED_LABELING_PHASE_COMPLETE",
+  "effective_date": "2026-08-03",
+  "certified_claim": "For the locked English-plus-four-domain ontology and frozen evidence population, the V89 pre-transfer labeler routes actual teacher prompt/response records to English core, one selected domain, or fail-closed quarantine at every preregistered point-estimate gate, without invoking LayerCake or composing a training artifact.",
+  "historical_negative_evidence": {
+    "decision": "ABI_TEACHER_RECORD_LABELING_PHASE2_V88_DECISION.json",
+    "status": "FAIL_PRESERVED",
+    "overall_accuracy": 0.9296875,
+    "reason": "V88 exposed ordinary-English false Python signals and one classifier field-displacement case. It is not overwritten or promoted."
+  },
+  "v89_protocol": {
+    "path": "ABI_TEACHER_RECORD_LABELING_PHASE2_PROTOCOL_V89.json",
+    "sha256": "3a0db9b89cdce51854b69413f508ccd6e935c916d52dfafa6d884a923cf9ef56"
+  },
+  "v89_implementation_lock": {
+    "path": "ABI_TEACHER_RECORD_LABELING_PHASE2_IMPLEMENTATION_LOCK_V89.json",
+    "sha256": "79570ed737a0879fce699d1b3ea33f037fa00cd7f4caa2e39a534e6e60c23b87"
+  },
+  "v89_benchmark": {
+    "path": "results/abi_moonshot/labeling_phase2_v89/blind-source-disjoint-labeling-benchmark-v1.json",
+    "file_sha256": "2021a63bac16dc38c6c61112ba70be7262d343b8e79a8488e2e6a97799710563",
+    "self_sha256": "a8c0d29b855d34dab2023d8e351e10d1523ec307a074fc61d165f9d0637d7e97",
+    "records": 120,
+    "records_per_class": 20,
+    "unique_underlying_teacher_record_ids": 128,
+    "v88_source_record_overlap": 0,
+    "final_test_records": 0
+  },
+  "v89_validation": {
+    "path": "results/abi_moonshot/labeling_phase2_v89/validation-v1-frozen.json",
+    "file_sha256": "ea8bb61281258afa4e5c02833de4bf741f1c3409f0fc557834ccca5df37c9973",
+    "evidence_sha256": "7d6ae011574e2233947e17fdf1defd41a167a1c1f51ccce231aa7bf3d42b4580",
+    "status": "PASS",
+    "metrics": {
+      "overall_exact_destination_domain_accuracy": 0.975,
+      "english_precision": 1.0,
+      "english_recall": 0.9,
+      "chemistry_recall": 1.0,
+      "civics_recall": 0.95,
+      "mathematics_recall": 1.0,
+      "python_recall": 1.0,
+      "quarantine_recall": 1.0,
+      "known_domain_macro_f1": 0.9935897435897436,
+      "known_record_capability_accuracy": 0.97,
+      "non_english_mislabeled_as_english": 0
+    },
+    "wilson_95_intervals": {
+      "overall_accuracy": [0.92907, 0.991462],
+      "english_precision": [0.824121, 1.0],
+      "english_recall": [0.698966, 0.972134],
+      "chemistry_recall": [0.838875, 1.0],
+      "civics_recall": [0.763869, 0.991119],
+      "mathematics_recall": [0.838875, 1.0],
+      "python_recall": [0.838875, 1.0],
+      "quarantine_recall": [0.838875, 1.0]
+    },
+    "runtime": {
+      "source_model": "microsoft/Phi-3-mini-4k-instruct",
+      "source_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+      "source_manifest_sha256": "997f6f103e53e370d98221f44f2c007c04c42c4dc7ee5b1caf739d2971ae7931",
+      "device": "cuda",
+      "precision": "bitsandbytes_int8",
+      "cpu_offload": false,
+      "load_seconds": 15.529662399996596,
+      "inference_seconds": 208.40868030001002,
+      "authoritative_generated_tokens": 7024,
+      "journal_sha256": "c1b4c467b1bee19f3f87b784553037ad39292aeee234be857fdd5e598a2b0988"
+    }
+  },
+  "independent_verification": {
+    "path": "results/abi_moonshot/labeling_phase2_v89/adversarial-verifier-v2.json",
+    "file_sha256": "1e134eccf71e15d35f7e842c855c1edde85d9165a5ccce82c01732a264ee3089",
+    "report_sha256": "d8d1deb2ce1b76c7ae805c239e17c5706cdea3a75a51fa7c7efb5be7185f7a85",
+    "raw_metric_recomputation_passed": true,
+    "all_runtime_and_quality_gates_independently_recomputed": true,
+    "adversarial_cases_rejected": 5,
+    "adversarial_cases_attempted": 5
+  },
+  "safety_and_scope": {
+    "source_archives_unchanged": true,
+    "ontology_unchanged": true,
+    "every_label_hash_bound": true,
+    "semantic_classifier_ran_on_every_record": true,
+    "all_outputs_parsed_and_eos_terminated": true,
+    "authoritative_token_counts_match": true,
+    "layercake_invoked": false,
+    "training_artifact_composed": false,
+    "teacher_required_at_layercake_inference": "not_applicable_no_layercake_candidate_created"
+  },
+  "uncertainty_and_claim_boundary": "The 120-row source-record-disjoint V89 holdout passes all preregistered point-estimate gates, but its per-class Wilson lower bounds do not establish the same thresholds for an arbitrary teacher-record population. This is bounded evidence for the locked ontology and source population, not exhaustive domain discovery, universal classification, proof of literally knowledge-free English, or downstream generation quality.",
+  "phase_transition": {
+    "labeling_phase": "COMPLETE_BOUNDED_PASS",
+    "next_phase": "OPEN_NOT_STARTED",
+    "next_phase_name": "normalized transfer-corpus construction and sufficient-information frontier",
+    "next_phase_requirements": [
+      "Normalize labeled teacher records into an immutable training-ready representation without changing their destination labels or provenance.",
+      "Measure unique prompts, UTF-8 bytes, authoritative teacher tokens, duplication, coverage, and contamination separately for English and each selected domain.",
+      "Use preregistered nested data budgets with a fixed held-out natural generalization suite.",
+      "Define minimum only as the smallest passing tested budget paired with the largest lower failing budget.",
+      "Do not invoke LayerCake training until the normalized artifact passes adequacy, leakage, provenance, and coverage gates."
+    ]
+  }
+}

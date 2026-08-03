@@ -1,0 +1,14 @@
+{
+  "schema_version": "abi-english-scale-catalog-failure/1",
+  "status": "FAILED_CLOSED_PRESERVED_NEGATIVE_EVIDENCE",
+  "created_date": "2026-07-30",
+  "protocol": "ABI_ENGLISH_DISTINCT_CONTEXT_SCALE_V1_PROTOCOL.json",
+  "attempted_output": "catalogs/english_distinct_context_scale_v1.json",
+  "output_created": false,
+  "source_model_inference_started": false,
+  "candidate_training_started": false,
+  "error": "scale story overlap between search and validation",
+  "measured_cause": "The pinned upstream TinyStories train and validation Arrow files contain at least one repeated story. At 40,000 search contexts, the prior full-story sampler selected an overlap that its earlier 400-context use had avoided by chance.",
+  "repair_boundary": "Select and deduplicate on the exact bounded context SHA-256, then exclude every selected search context hash before held-out min-hash sampling. Do not change counts, seed, prompts, teacher, model, training settings, or gates.",
+  "claim_boundary": "No catalog, teacher output, LayerCake checkpoint, or candidate evaluation was produced by this failed attempt."
+}

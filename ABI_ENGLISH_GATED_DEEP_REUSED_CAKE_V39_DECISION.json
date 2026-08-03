@@ -1,0 +1,43 @@
+{
+  "format": "abi-english-gated-deep-reused-cake-v39-decision/1",
+  "status": "REJECTED_QUALITY_AND_FORCED_ROUTE_COHERENCE",
+  "effective_date": "2026-08-02",
+  "protocol": "ABI_ENGLISH_GATED_DEEP_REUSED_CAKE_GPU_PROTOCOL_V39.json",
+  "checkpoint": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-broad-natural-gated-deep-reused-cake-r64-seed129824-steps18000-v39",
+    "checkpoint_sha256": "9c7c27064432985d5310843358c542827e1c3bf5b1263e2b3e72da9df1949867",
+    "manifest_sha256": "49e12424369e263f4e82ea558d15a6c448e769009f64bc16eda56b7fc1a38791",
+    "successful_gpu_optimizer_steps": 18000,
+    "attempted_batches": 18009,
+    "skipped_amp_optimizer_steps": 9,
+    "wall_seconds": 2299.3672585999884,
+    "gpu_hours": 0.6387131273888856,
+    "peak_gpu_memory_bytes": 4272884224,
+    "frozen_shared_state_preserved_exact": true,
+    "teacher_present_at_inference": false
+  },
+  "locked_natural_screen": {
+    "evidence": "results/abi_moonshot/postcert_audit_v2/v39-gated-deep-reused-cake-natural-norepeat4-layercake.json",
+    "evidence_sha256": "a06de17408bbb211b0760666c682943ed17c3aee0da7c5c1a51a872b9d82be21",
+    "observations": 28,
+    "passes": 4,
+    "collapse_count": 0,
+    "automatic_route_correct": 12,
+    "correct_route_and_pass": 3,
+    "required_material_improvement_passes": 9,
+    "passes_gate": false
+  },
+  "forced_correct_route_diagnostic": {
+    "evidence": "results/abi_moonshot/postcert_audit_v2/v39-gated-deep-reused-cake-forced-route-diagnostic.json",
+    "evidence_sha256": "4078f4a387ac69857d21abc0f1b17fc02e7fd7be0cc32cd1c60532c37bd4eda0",
+    "observations": 28,
+    "passes": 4,
+    "collapse_count": 3,
+    "promotion_evidence": false
+  },
+  "diagnosis": "Forcing the correct route does not improve passes and introduces collapse. Routing is secondary; shared English realization capacity is the measured ceiling. Cake-only placement, gates, nearby ranks, auxiliary losses, and additional route sweeps are closed as unsupported nearby variants.",
+  "negative_evidence_preserved": true,
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false,
+  "decision": "Reject v39 and pivot once to a GPU-trained English-only rank-32 low-rank update of the twelve shared transformer matrices, fused into their existing shapes before deployment. Freeze all capability cakes, router, gates, embeddings, and language head. No temporary adapter may survive deployment."
+}

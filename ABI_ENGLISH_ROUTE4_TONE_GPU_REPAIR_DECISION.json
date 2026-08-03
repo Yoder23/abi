@@ -1,0 +1,61 @@
+{
+  "schema_version": "abi-layercake-route-repair-decision/1",
+  "recorded_at": "2026-07-31T18:45:31.8244759-04:00",
+  "status": "FAILED_BOUNDED_BRANCH_PRESERVED",
+  "protocol": "ABI_ENGLISH_ROUTE4_TONE_GPU_REPAIR_PROTOCOL.json",
+  "training": {
+    "artifact": "results/abi_moonshot/segregated_acquisition_v3/three-block-v24-route4-tone-seed39824-steps750-v25",
+    "metadata_file_sha256": "5faf28595ab22caef9268ddef9425c651e2bbc8ae2114964b56361393bb99710",
+    "checkpoint_sha256": "7550e266a7065cd0d49755b3e74d6f577863cb0d5388e7b4343342e5e120293d",
+    "manifest_sha256": "d7886f70ab5a137404804064cfd2306b887b584320986686992c5e63f4f4be8f",
+    "device": "cuda",
+    "wall_seconds": 36.16806269995868,
+    "gpu_hours": 0.010046684083321857,
+    "peak_device_memory_bytes": 633218560,
+    "trainable_parameters": 99840,
+    "changed_tensors": [
+      "task_cakes.4.down.weight",
+      "task_cakes.4.norm.bias",
+      "task_cakes.4.norm.weight",
+      "task_cakes.4.up.weight"
+    ],
+    "unchanged_tensors": 78,
+    "all_other_tensors_bit_exact": true,
+    "new_teacher_inference": false,
+    "teacher_present_at_inference": false
+  },
+  "runtime": {
+    "artifact": "results/abi_moonshot/native_hosts/three-block-v25-route4-tone-fp32-layer0-v42",
+    "graph_sha256": "b6b15dfe063c9bdb81c5f06477aa1ccb3883271f2a94a841795d674332d6d63a",
+    "graph_bytes": 127621592,
+    "metadata_file_sha256": "5d0673a6fa6f53b3b2699cc563da658a721464cc55b5ac6d9f4e7e716d883a77",
+    "physical_proof_file_sha256": "271d555185ffeda3a49531e2dc090a55a108685a99b0650efd982a7f36a15b54",
+    "identity_proof_file_sha256": "74bbc3901a73df2bf35dc404ce3f9e5caf8c9b1b9843516f15ad491b38d6b0b2"
+  },
+  "full_locked_validation": {
+    "observations": 1400,
+    "evidence_sha256": "ae4e02cc9726c7fa6d3945b791a8be1f73284e01e301b7deb9e68bbc25c568a4",
+    "evidence_file_sha256": "ef8912fb9ec1ab35d58d9a437516780d62de7153779326e5401b737205cbb485",
+    "overall_pass_rate": 0.9285714285714286,
+    "source_passing_retention_rate": 0.9483606557377049,
+    "collapse_count": 0,
+    "automatic_route_accuracy": 1.0,
+    "tone_control_before": 0.77,
+    "tone_control_after": 0.79,
+    "tone_control_required": 0.8,
+    "only_failed_capability": "tone_control",
+    "status": "FAIL"
+  },
+  "decision": {
+    "promoted": false,
+    "nearby_sweep_authorized": false,
+    "reason": "The one preregistered route-4 repair improved tone control by two prompts but remained one prompt below the locked per-capability threshold.",
+    "next_measured_pivot": "Return to the smaller all-int8 runtime, where tone_control previously passed at 0.85, verify v25's int8 boundary, then target the isolated route-5 reasoning quantization deficit with a separately preregistered quantization-aware GPU acquisition architecture."
+  },
+  "invariants": {
+    "negative_evidence_preserved": true,
+    "historical_files_not_overwritten": true,
+    "quarantined_final_catalog_unaccessed": true,
+    "cpu_used_only_for_teacher_free_inference": true
+  }
+}

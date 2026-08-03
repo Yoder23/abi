@@ -1,0 +1,32 @@
+{
+  "format": "abi-teacher-record-labeling-implementation-lock/2",
+  "status": "FROZEN_BEFORE_SOURCE_RECORD_DISJOINT_VALIDATION",
+  "effective_date": "2026-08-03",
+  "protocol": {
+    "path": "ABI_TEACHER_RECORD_LABELING_PHASE2_PROTOCOL_V89.json",
+    "sha256": "3a0db9b89cdce51854b69413f508ccd6e935c916d52dfafa6d884a923cf9ef56"
+  },
+  "benchmark": {
+    "path": "results/abi_moonshot/labeling_phase2_v89/blind-source-disjoint-labeling-benchmark-v1.json",
+    "file_sha256": "2021a63bac16dc38c6c61112ba70be7262d343b8e79a8488e2e6a97799710563",
+    "self_sha256": "a8c0d29b855d34dab2023d8e351e10d1523ec307a074fc61d165f9d0637d7e97",
+    "validation_rows": 120,
+    "unique_source_record_ids": 128,
+    "v88_source_record_overlap": 0
+  },
+  "implementation": {
+    "labeler_path": "abi/teacher_record_labeling.py",
+    "labeler_sha256": "baacdde0954e1fe7a9edbceb8469e5a9c4ef725c88b00cc33b5986049f69f84e",
+    "benchmark_builder_path": "abi/teacher_record_labeling_followup.py",
+    "benchmark_builder_sha256": "ca12a13ac6122cb0bae9464706efc769c588472a91be4b10a31ac5a20fff8d85",
+    "test_path": "tests/test_teacher_record_labeling.py",
+    "test_sha256": "cd7b6c85a8bafa152b8c70c5012743bd5461ff496d7f69a34bb5a7a6208e197d",
+    "test_result": "7 passed"
+  },
+  "validation_policy": {
+    "execution_count": 1,
+    "post_validation_code_corrections": 0,
+    "validation_labels_may_not_be_used_for_repair": true,
+    "failure_action": "preserve evidence and block data sufficiency and normalization"
+  }
+}

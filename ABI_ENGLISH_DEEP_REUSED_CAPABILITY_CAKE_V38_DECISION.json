@@ -1,0 +1,40 @@
+{
+  "format": "abi-english-deep-reused-capability-cake-v38-decision/1",
+  "status": "REJECTED_NATURAL_QUALITY_GATE",
+  "effective_date": "2026-08-02",
+  "protocol": "ABI_ENGLISH_DEEP_REUSED_CAPABILITY_CAKE_GPU_PROTOCOL_V38.json",
+  "precheck": "ABI_ENGLISH_DEEP_REUSED_CAPABILITY_CAKE_V38_PRECHECK_RESULT.json",
+  "checkpoint": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-broad-natural-deep-reused-cake-r64-seed119824-steps18000-v38",
+    "checkpoint_sha256": "307791ca27f5c5213f1f3ebaaac2b4a6938afc32eb1bcc15e74732269291aeae",
+    "manifest_sha256": "3cc8e9596cfab38672738412dc84588750aebfed858907401fbf34b021005664",
+    "successful_cuda_optimizer_steps": 18000,
+    "attempted_batches": 18009,
+    "skipped_amp_optimizer_steps": 9,
+    "gpu_hours": 0.5726926491111064,
+    "peak_gpu_memory_bytes": 4154967552,
+    "frozen_shared_state_preserved_exact": true,
+    "teacher_present_at_inference": false
+  },
+  "natural_screen": {
+    "evidence": "results/abi_moonshot/postcert_audit_v2/v38-deep-reused-cake-natural-norepeat4-layercake.json",
+    "passes": 6,
+    "observations": 28,
+    "collapse_count": 0,
+    "route_correct": 13,
+    "passes_with_correct_route": 5,
+    "locked_v29_passes_to_exceed": 8,
+    "gate_pass": false
+  },
+  "forced_route_diagnostic": {
+    "evidence": "results/abi_moonshot/postcert_audit_v2/v38-deep-reused-cake-forced-route-diagnostic.json",
+    "passes": 7,
+    "observations": 28,
+    "collapse_count": 0,
+    "promotion_evidence": false
+  },
+  "measured_bottleneck": "Forcing the expected internal capability improves only one of 28 probes. Generation placement/capacity is dominant; routing is secondary.",
+  "decision": "Reject v38 without broader certification. Preserve all evidence. Restore the final selected cake path and add only 14-by-3 learned scalar gates controlling reuse of the same selected cake before each block.",
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

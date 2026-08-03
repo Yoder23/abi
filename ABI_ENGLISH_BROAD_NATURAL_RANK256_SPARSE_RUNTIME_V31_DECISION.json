@@ -1,0 +1,43 @@
+{
+  "format": "abi-english-broad-natural-rank256-sparse-runtime-decision/1",
+  "status": "REJECTED_PRETRAINING_GATE_NO_GPU_CANDIDATE_LAUNCHED",
+  "effective_date": "2026-08-02",
+  "protocol": "ABI_ENGLISH_BROAD_NATURAL_RANK256_SPARSE_RUNTIME_GPU_PROTOCOL_V31.json",
+  "runtime": {
+    "path": "results/abi_moonshot/native_hosts/expandedcake-r256-stress-v31-trainoutput-sparse-precheck",
+    "graph_sha256": "d3ef5b87fe9738a9442fb1baf3aca58d41556658c50731bd540553d68433feec",
+    "graph_bytes": 105264776,
+    "selected_train_output_tokens": 33492,
+    "full_token_count": 50257,
+    "byte_fallback_complete": true,
+    "weights_changed": false
+  },
+  "proofs": {
+    "identity_status": "PASS",
+    "physical_sparse_status": "PASS",
+    "rank256_route_gathers": 4,
+    "dense_all_route_matrix_nodes": 0,
+    "teacher_present_at_inference": false
+  },
+  "benchmark": {
+    "path": "results/abi_moonshot/native_hosts/expandedcake-r256-stress-v31-trainoutput-sparse-benchmark-1024.json",
+    "status": "FAIL",
+    "distinct_prompts": 20,
+    "observations": 40,
+    "candidate_median_bytes_per_second": 1296.4230833031836,
+    "median_transformer_relative_ratio": 2.3787934830010316,
+    "paired_prompt_mean_ratio_bootstrap_95ci": [
+      2.041823724486759,
+      2.461499747614924
+    ],
+    "phase2_throughput_retained_ratio": 0.783068217302396,
+    "candidate_peak_process_resident_bytes": 241283072,
+    "absolute_rss_limit_bytes": 214990848
+  },
+  "decision": "The one allowed output-fusion attempt repairs transformer-relative confidence but fails the unchanged >=95% Phase-2 throughput-retention and absolute RSS gates. Rank-256 cake acquisition is exhausted and rejected before the 18,000-step GPU candidate.",
+  "negative_evidence_preserved": true,
+  "next_architecture": "Capability-isolated rank-64 cakes: split the 14 declared English capabilities internally while preserving the external 10-route canonical ABI. This attacks the measured shared-route overwrite without increasing active cake rank.",
+  "disclosed_postcert_final_split_accessed_before_protocol": true,
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

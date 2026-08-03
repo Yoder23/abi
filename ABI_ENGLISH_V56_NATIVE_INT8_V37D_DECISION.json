@@ -1,0 +1,56 @@
+{
+  "format": "abi-english-v56-native-int8-decision/1",
+  "status": "PHYSICAL_AND_IDENTITY_PASS_QUALITY_FAIL_PRESERVED",
+  "effective_date": "2026-08-01",
+  "protocol": "ABI_ENGLISH_V56_NATIVE_CERTIFICATION_PROTOCOL.json",
+  "artifact": {
+    "path": "results/abi_moonshot/native_hosts/three-block-v56-onnx-int8-v37d",
+    "metadata_evidence_sha256": "76b46d422c143294d9451dd220eb1266663c328421486a4b1c78d3194dac50ff",
+    "runtime_graph_sha256": "959af1dce0fb858762579ef8767a2a22be27ce4bee5c064db9450dfa95925338",
+    "router_graph_sha256": "df3a648b549d39d3377ada329981a0a201b2da73030f970af3d179cb332ed8ab",
+    "router_precision": "int8",
+    "main_precision": "int8"
+  },
+  "physical": {
+    "path": "results/abi_moonshot/native_hosts/three-block-v56-onnx-int8-v37d-physical.json",
+    "file_sha256": "76ab452da416a88711fe41c9e6b2081ead2eb9157f8984542eb6050c62b41624",
+    "evidence_sha256": "2afbc0fb721a7e044c07b16016361862f4eeb815324e9ebcc0396133f2db1415",
+    "status": "PASS"
+  },
+  "identity": {
+    "path": "results/abi_moonshot/native_hosts/three-block-v56-onnx-int8-v37d-identity-v2.json",
+    "file_sha256": "ec7dcee7cae6deb2395eedf69579694cea6da49680e69c8db41fd64bbd712eec",
+    "evidence_sha256": "92d4957bc17700cc4a865ed4bfc67720f4df172eb643f7a9e7dc2cee1462c72d",
+    "status": "PASS"
+  },
+  "quality": {
+    "path": "results/abi_moonshot/native_hosts/three-block-v56-onnx-int8-v37d-semantic-full1400.json",
+    "file_sha256": "2e0dc75f6d388bf0f5a53774fd3f75be54131e930a7e54396ce13409ebd477a7",
+    "evidence_sha256": "9bbafb5f0033e6eb8522869918f6fdc586ed13daccbcff1334ba6a14ed0eb607",
+    "passes": 1277,
+    "observations": 1400,
+    "pass_rate": 0.9121428571428571,
+    "source_passing_retention_rate": 0.919672131147541,
+    "collapse_count": 6,
+    "failed_capability_rates": {
+      "grammar": 0.72,
+      "tone_control": 0.7
+    },
+    "peak_process_rss_bytes": 837414912,
+    "wall_seconds": 662.1615784000023
+  },
+  "measured_bottleneck": {
+    "grammar_route_changes_vs_pytorch": 50,
+    "grammar_regressions_with_changed_route": 21,
+    "grammar_regressions_with_same_route": 1,
+    "tone_route_changes_vs_pytorch": 55,
+    "tone_regressions_with_changed_route": 17,
+    "tone_regressions_with_same_route": 2,
+    "reasoning_route_changes_vs_pytorch": 14,
+    "reasoning_regressions_with_changed_route": 10,
+    "abstention_regressions_with_same_route": 10,
+    "interpretation": "Router int8 precision explains nearly all grammar, tone, and reasoning regressions. Main-graph int8 precision independently causes the repeated abstention failures."
+  },
+  "decision": "Reject v37d for promotion. Preserve it as physical/identity-positive, quality-negative evidence. Run a staged precision recovery: first restore only the task-route router to fp32 and evaluate the four measured capabilities; if collapse persists, test one smallest main-graph precision exclusion selected on the collapse subset before a full rescreen.",
+  "moonshot_complete": false
+}

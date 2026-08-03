@@ -1,0 +1,26 @@
+{
+  "schema_version": "abi-english-distinct-context-scale-amp-coverage-failure/1",
+  "status": "PROCEDURALLY_INVALID_FULL_BUDGET_CHECKPOINT_PRESERVED",
+  "created_date": "2026-07-31",
+  "candidate": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-distinct-context-scale-budget100-seed19824-steps23968-v15",
+    "checkpoint_sha256": "6403b78f2011b855351a96bb5c7cbce45ac8431517a39c38016493855d29cd0d1",
+    "manifest_sha256": "11e7cca027fa6a0f3c34d693c7048ff30f7faf8c9ffab29ab234c633500ccfbe4",
+    "training_device": "cuda",
+    "training_wall_seconds": 3243.9738275000127,
+    "successful_optimizer_steps": 23968,
+    "skipped_amp_attempts": 11,
+    "compatible_records": 39946,
+    "unique_records_in_successful_updates": 39945,
+    "all_selected_records_seen": false
+  },
+  "source_artifact_sha256_before_and_after": "2aa903c2e9adb8f876614793e4727f589e044f2069b147989ef6f881a8d4cd31",
+  "parent_checkpoint_sha256_before_and_after": "5bae16dec3a55759e92a8481ec5ee519a5ee8687ad1a6f019edc1df3225d092e",
+  "native_exported": false,
+  "quality_evaluated": false,
+  "final_test_accessed": false,
+  "measured_cause": "The deterministic sampler advances before GradScaler reports whether an optimizer update succeeded. Eleven overflow-skipped attempts therefore consumed records without allowing them to influence weights. At this seed and budget, one compatible record occurred only in skipped attempts. A no-skip simulation of the exact 23,968 successful batches covers all 39,946 records.",
+  "bounded_repair": "Snapshot both teacher and preservation samplers before every tentative batch. If GradScaler skips the optimizer update, restore both snapshots and retry the identical batch at the reduced scale. Advance sampled-record, recovery, token, and unique-coverage accounting only after a successful update.",
+  "decision": "Do not export or screen v15 as the full-budget candidate. Rerun budget index 3 independently from the unchanged v6 parent with the same seed, successful-step count, data, losses, learning rates, recovery schedule, decoder, and GPU device under the transactional sampler.",
+  "claim_boundary": "This is a procedural coverage failure, not a quality result or resource limit. The checkpoint is retained for audit but is ineligible for promotion."
+}

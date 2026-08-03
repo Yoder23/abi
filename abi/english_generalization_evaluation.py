@@ -27,6 +27,23 @@ from .layercake_core_loader import load_layercake_core
 EVIDENCE_FORMAT = "abi-layercake-english-generalization-evidence/6"
 
 
+def _normalize_decoding_contract(
+    decoding: Mapping[str, Any] | None,
+) -> dict[str, Any]:
+    """Fill additive decoding fields for older, otherwise valid host manifests."""
+
+    normalized = {
+        "algorithm": "greedy",
+        "no_repeat_ngram_size": 0,
+        "allow_prompt_ngrams": False,
+        "lexical_repetition_truncation_threshold": 0,
+        "prompt_identity_mixture": False,
+    }
+    if decoding is not None:
+        normalized.update(decoding)
+    return normalized
+
+
 def _collapse_metrics(
     token_ids: Sequence[int],
     output: str,
@@ -211,7 +228,11 @@ def evaluate_generalization(
         )
         if (
             manifest.get("format")
-            != "abi-layercake-full-english-core-acquisition/1"
+            not in {
+                "abi-layercake-full-english-core-acquisition/1",
+                "abi-layercake-component-graft/1",
+                "abi-layercake-direct-source-initialization/1",
+            }
             or manifest.get("canonical_semantic_abi", {}).get("sha256")
             != _sha256_file(Path(canonical_abi_path))
         ):
@@ -224,18 +245,8 @@ def evaluate_generalization(
             host_path=host_path,
             device_name=device_name,
         )
-    decoding = dict(
-        getattr(
-            model,
-            "_abi_decoding",
-            {
-                "algorithm": "greedy",
-                "no_repeat_ngram_size": 0,
-                "allow_prompt_ngrams": False,
-                "lexical_repetition_truncation_threshold": 0,
-                "prompt_identity_mixture": False,
-            },
-        )
+    decoding = _normalize_decoding_contract(
+        getattr(model, "_abi_decoding", None)
     )
     if no_repeat_ngram_size is not None:
         decoding["no_repeat_ngram_size"] = int(no_repeat_ngram_size)

@@ -1,0 +1,52 @@
+{
+  "format": "abi-english-natural-abstention-fresh-validation/1",
+  "status": "PREREGISTERED_AFTER_V2_DEVELOPMENT_RESULT_BEFORE_V3_CATALOG_BUILD_OR_SOURCE_INFERENCE",
+  "effective_date": "2026-07-30",
+  "parent": "ABI_ENGLISH_NATURAL_ABSTENTION_EVALUATOR_CORRECTION.json",
+  "preserved_v2_evidence": {
+    "archive": "results/abi_moonshot/segregated_acquisition_v3/phi3-natural-abstention-search-validation-v2.abix",
+    "archive_sha256": "6a0e33c8396cfc33ce8d792ff2f5ff9e5f98c05a5858d63f74def70b106b1a14",
+    "search_passes": 97,
+    "search_observations": 100,
+    "validation_passes": 73,
+    "validation_observations": 100,
+    "available": false,
+    "v2_validation_reused_for_qualification": false
+  },
+  "measured_v2_false_negative_classes": [
+    "does not state",
+    "does not supply",
+    "not available",
+    "cannot be answered",
+    "insufficient to determine",
+    "no evidence-based answer",
+    "does not include"
+  ],
+  "v3_design": {
+    "builder": "abi/natural_abstention_catalog_v3.py",
+    "builder_sha256": "cfd455f2514ebf76f01515577419344f94af0dc8e2e9dd168f233497dfb46d19",
+    "test": "tests/test_natural_abstention_catalog_v3.py",
+    "test_sha256": "a545ac83895c1c4c0decd8a80d3dfc503b9bc4ed2cbd9eae741574db3b937e90",
+    "test_result": "23 passed with all natural-catalog and host tests",
+    "split": "validation_only",
+    "fresh_prompts": 100,
+    "v2_prompt_overlap": 0,
+    "closed_book_world_fact_prompts": 0,
+    "specialist_domain_prompts": 0,
+    "thresholds": {
+      "minimum_distinct_prompts": 100,
+      "minimum_pass_rate": 0.9,
+      "minimum_wilson_95_lower_bound": 0.85
+    }
+  },
+  "anti_overfit_rule": "The v3 evaluator is frozen before v3 outputs exist. No further lexical evaluator repair is permitted for this branch. A v3 failure is a source capability failure at this gate.",
+  "training_material_rule": "V3 validation outputs never enter training. Only passing search records from prior search vaults may be composed after qualification.",
+  "execution_policy": {
+    "teacher_inference": "GPU_ONLY",
+    "layercake_acquisition_training": "GPU_ONLY",
+    "cpu_fallback_for_teacher_or_training": false,
+    "cpu_use": "teacher-free LayerCake inference evaluation and final runtime benchmarking only"
+  },
+  "final_test_accessed": false,
+  "moonshot_complete": false
+}

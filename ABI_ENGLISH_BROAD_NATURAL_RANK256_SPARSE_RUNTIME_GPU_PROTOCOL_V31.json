@@ -1,0 +1,56 @@
+{
+  "format": "abi-english-broad-natural-rank256-sparse-runtime-gpu-protocol/1",
+  "status": "PREREGISTERED_AFTER_V30_DENSE_RUNTIME_REJECTION_BEFORE_DERIVATION",
+  "effective_date": "2026-08-02",
+  "controlling_failure": "ABI_ENGLISH_BROAD_NATURAL_EXPANDED_CAKE_V30_PRECHECK_DECISION.json",
+  "hypothesis": "A single train-only sparse-output projection with exact prompt-token union can recover the locked CPU speed, memory, and confidence margin while leaving the GPU-acquired rank-256 cake, shared English substrate, tokenizer, decoding contract, and canonical ABI unchanged.",
+  "attempt_lock": {
+    "runtime_attempts": 1,
+    "optimization": "train-output sparse projection with exact runtime prompt-token union",
+    "vocabulary_budget_id": "train_outputs",
+    "source_runtime": "results/abi_moonshot/native_hosts/expandedcake-r256-stress-v30-onnx-int8-speed-precheck-v2-rank-bound",
+    "stress_output": "results/abi_moonshot/native_hosts/expandedcake-r256-stress-v31-trainoutput-sparse-precheck",
+    "selection_bundle": "results/abi_moonshot/segregated_acquisition_v3/phi3-broad-natural-conversation-complete-search-training-v3.abix",
+    "selection_bundle_sha256": "82d1ab8a3ee7b4aa351b5c74b4a229d75e845313047065780227e8e403363150",
+    "selection_budget_index": 3,
+    "general_curriculum": "../layercake_release/data/moonshot/phase2/instruction_curriculum_semantic_control_v2.jsonl",
+    "general_curriculum_sha256": "bae6c1fe300a0214c1f6cb19a8c8eeee4f0b75681290be56f258a247cd488e53",
+    "validation_rows_used_for_selection": 0,
+    "benchmark_rows_used_for_selection": 0,
+    "final_rows_used_for_selection": 0,
+    "byte_fallback_required": true,
+    "neural_weights_changed": false,
+    "task_cake_schedule_changed": false,
+    "decoding_changed": false
+  },
+  "pretraining_gates": {
+    "physical_sparse_proof": true,
+    "runtime_identity": true,
+    "all_outputs_valid_utf8": true,
+    "all_outputs_meet_byte_target": true,
+    "median_cpu_speed_ratio_vs_optimized_transformer_at_least": 2.0,
+    "paired_prompt_bootstrap_lower_bound_at_least": 2.0,
+    "phase2_throughput_retention_at_least": 0.95,
+    "active_model_memory_lower_than_comparator": true,
+    "rss_below_absolute_limit": true,
+    "ttfo_no_worse_than_comparator": true,
+    "persistent_incremental_state_exact": true
+  },
+  "candidate_lock_if_precheck_passes": {
+    "output_path": "results/abi_moonshot/segregated_acquisition_v3/three-block-broad-natural-expandedcake-r256-seed59824-steps18000-v31",
+    "device": "cuda",
+    "cpu_training_authorized": false,
+    "seed": 59824,
+    "successful_optimizer_steps": 18000,
+    "architecture_and_training_hyperparameters": "identical to ABI_ENGLISH_BROAD_NATURAL_EXPANDED_CAKE_GPU_PROTOCOL_V30.json",
+    "candidate_runtime": "the same train-output sparse projection derived once from the same locked search-only inputs"
+  },
+  "decision_rule": "Reject this topology without candidate training if the one sparse-runtime precheck fails. If it passes, launch exactly one GPU candidate and reject it on any broad14, natural-generation, collapse, teacher-relative, identity, physical-sparse, CPU-speed, TTFT, RSS, or canonical-ABI failure. Do not sweep vocabulary, rank, seed, steps, learning rate, or loss weight.",
+  "hardware_policy": {
+    "acquisition_training": "cuda",
+    "cpu_role": "deployed LayerCake inference precheck and certification only"
+  },
+  "disclosed_postcert_final_split_accessed_before_protocol": true,
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

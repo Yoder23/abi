@@ -1,0 +1,51 @@
+{
+  "format": "abi-layercake-external-receiver-decoding-correction/1",
+  "status": "CORRECTED_BEFORE_CANDIDATE_DECISION",
+  "effective_date": "2026-08-02",
+  "scope": "The first exact-receiver quality screens only; tensor installation and exact same-path identity evidence are unaffected.",
+  "defect": {
+    "description": "The new receiver evaluator applied an undeclared 1.15 repetition penalty and continued generation after the tokenizer EOS token. The disclosed natural-screen decoder is greedy, uses no-repeat fourgrams, and stops before EOS.",
+    "authoritative_reference": {
+      "path": "results/abi_moonshot/postcert_audit_v2/v41-same-tokenizer-logit-distill-natural-norepeat4-layercake.json",
+      "evidence_sha256": "f431f7612fa861008ae114979238b335a0b6dfae732b3184e962122c036f800c",
+      "decoding": {
+        "algorithm": "greedy",
+        "allow_prompt_ngrams": false,
+        "lexical_repetition_truncation_threshold": 0,
+        "no_repeat_ngram_size": 4
+      }
+    }
+  },
+  "superseded_quality_screens": [
+    {
+      "path": "results/abi_moonshot/receiver_controls/historical-v41-exact-host-baseline-v1.json",
+      "file_sha256": "da6741eb383db0c79aab478fd2d40bdc7357f88e1999a433fc9ef637aeca6770",
+      "evidence_sha256": "f6bf514eb78ac48aea1804706437b3a6138d0540df0134ea00b228db862b97e9"
+    },
+    {
+      "path": "results/abi_moonshot/receiver_controls/historical-direct-source-v47-exact-host-baseline-v1.json",
+      "file_sha256": "e2a89de8f62af45469ab0e4e2582e2ac658d88014fe16578405cd12a4dec16a5"
+    },
+    {
+      "path": "results/abi_moonshot/receiver_controls/capability-naive-seed-73129-v1-evaluation.json",
+      "file_sha256": "7060449f4a2427a85340b8045c4ae396abf231caf4bd2aba6e0eda20033afb06"
+    },
+    {
+      "path": "results/abi_moonshot/receiver_controls/bridge-only-identity-v1-evaluation.json",
+      "file_sha256": "5b324fd8e3e03536e81d3dcd9d148684f702057ccb06cde271d9d33fa12b5638"
+    }
+  ],
+  "preservation": "All V1 files remain immutable historical evidence. Their state-identity, host-binding, and accounting observations remain usable where applicable, but their generated-quality and collapse metrics are non-comparable and cannot select or reject a candidate.",
+  "repair": {
+    "source": "abi/layercake_external_receiver.py",
+    "source_sha256_after": "d604f3c24397ac6efa888c4f21a99a2a088e4d64711d42e51b35d1c5f1058ef3",
+    "removed_repetition_penalty": true,
+    "stop_before_eos": true,
+    "regression_test_added": true,
+    "targeted_tests": "14 passed"
+  },
+  "decision_rule": "Only newly written V2 quality evidence from the corrected decoder may be used for attribution or candidate decisions. No historical evidence is overwritten.",
+  "layercake_host_regression": false,
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

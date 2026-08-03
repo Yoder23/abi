@@ -1,0 +1,128 @@
+{
+  "schema_version": "abi-english-dual-stream-task-cake-v22-decision/1",
+  "status": "REJECTED_AT_LOCKED_BROAD14_GATE",
+  "created_date": "2026-07-31",
+  "protocol": "ABI_ENGLISH_DUAL_STREAM_TASK_CAKE_ACQUISITION_PROTOCOL.json",
+  "training_result": "ABI_ENGLISH_DUAL_STREAM_TASK_CAKE_TRAINING_RESULT.json",
+  "candidate": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-dualstream-taskcake-anchor-fullseq512-seed19824-steps23998-v22",
+    "checkpoint_sha256": "cee7ea830714fd8dbb67be31b85c0cd694d4c3592bc5631f2377e4f99bf88201",
+    "manifest_sha256": "e6c65597eba029735b9f4ecf13047a65d236d1f86cbeef09603b2c06f2784f85",
+    "metadata_file_sha256": "1628c03aff2cd4fbb8d38302a7b906f2c34145c9bb362e8389e3df64733fc913"
+  },
+  "exact_runtime": {
+    "path": "results/abi_moonshot/native_hosts/three-block-dualstream-taskcake-anchor-fullseq512-seed19824-v22-onnx-int8-v32-tokenrun4",
+    "metadata_file_sha256": "b7750f64c70658b24968b1b36e17bb9cc68a87a7f534c040e49b3dd2739cc8cc",
+    "graph_sha256": "546cf3b079a11556dca874d3cd46a8aff12fe2a0431dc65d9a916ad95ede8497",
+    "identity": {
+      "status": "PASS",
+      "file_sha256": "01465ace7d7f4b45da7c0bace2be2e5a14a1c3bac3a2c55d0859c9d390a30697",
+      "evidence_sha256": "5c8a1fb56527103878a1f9b997ead8dadb2b9ab9a83281e296c7ef8c4b5be851"
+    },
+    "physical_sparse_execution": {
+      "status": "PASS",
+      "file_sha256": "a77aab7cfcedf15319824e0f277a78284cf5e3fd529f89de7f16fc63b252de59",
+      "evidence_sha256": "a617354cc489a5bbd399e89ab1633f0a0506af2fc1346a1519603e66617f6700"
+    }
+  },
+  "locked_broad14_result": {
+    "path": "results/abi_moonshot/native_hosts/three-block-dualstream-taskcake-anchor-fullseq512-seed19824-v22-onnx-int8-v32-tokenrun4-semantic-full1400.json",
+    "file_sha256": "98f75273eca07acbca9c627978b6d41469b843fda2a6d1da1cac890419901c4f",
+    "evidence_sha256": "177844639a0a209aa75495604f2717f0a4a9d363f5a8e09b02fac0b6bc5fda4e",
+    "observations": 1400,
+    "status": "FAIL",
+    "layercake_pass_rate": 0.9185714285714286,
+    "source_passing_retention_rate": 0.9360655737704918,
+    "collapse_count": 0,
+    "wall_seconds": 312.6044403000269,
+    "peak_process_rss_bytes": 744738816,
+    "all_capability_routes_correct": true,
+    "gates": {
+      "complete_locked_depth": true,
+      "overall_functional_pass_rate_at_least_080": true,
+      "each_declared_capability_pass_rate_at_least_080": false,
+      "source_passing_retention_rate_at_least_090": true,
+      "collapse_count_is_zero": true
+    },
+    "capabilities_below_threshold": {
+      "cake_output_realization": {
+        "pass_rate": 0.73,
+        "automatic_route_accuracy": 1.0
+      },
+      "domain_independent_reasoning": {
+        "pass_rate": 0.73,
+        "automatic_route_accuracy": 1.0
+      }
+    }
+  },
+  "measured_realization_schema_audit": {
+    "basis": "The preregistered validation probe identifier deterministically encodes one of four generator families by local-index modulo four. This aggregate audit does not use final-test data.",
+    "other_two_families": {
+      "passes": 50,
+      "observations": 50,
+      "pass_rate": 1.0
+    },
+    "item_state_time_day": {
+      "passes": 23,
+      "observations": 25,
+      "pass_rate": 0.92
+    },
+    "object_action_location_count": {
+      "passes": 0,
+      "observations": 25,
+      "pass_rate": 0.0
+    }
+  },
+  "measured_search_coverage_audit": {
+    "broad_anchor_artifact": {
+      "path": "results/abi_moonshot/segregated_acquisition_v3/phi3-natural-cumulative-realization-scale-training-v8.abix",
+      "total_realization_records": 577,
+      "realization_teacher_tokens": 19424,
+      "object_action_location_count_records": 0,
+      "item_state_time_day_records": 25
+    },
+    "deep_natural_artifact": {
+      "path": "results/abi_moonshot/segregated_acquisition_v3/phi3-english-distinct-context-scale-search-training-v1.abix",
+      "total_realization_records": 9998,
+      "realization_teacher_tokens": 1223932,
+      "object_action_location_count_records": 0,
+      "item_state_time_day_records": 0
+    },
+    "conclusion": "The only realization family with zero validation passes also had zero matching search records in both acquisition streams. This is a measured search-corpus coverage hole."
+  },
+  "component_isolation_evidence": {
+    "v22_non_task_cake_tensors_byte_identical_to_v6": true,
+    "v22_route_accuracy_for_every_capability": 1.0,
+    "runtime_selects_at_most_one_task_cake_per_sequence": true,
+    "v6_reasoning_pass_rate": 0.86,
+    "v22_reasoning_pass_rate": 0.73,
+    "authorized_reasoning_repair": "Restore only task_cakes.5 tensors from v6 and verify byte identity. No optimization of route 5 is authorized.",
+    "authorized_realization_repair": "Acquire a search-only object/action/location/count corpus from the pinned open-weight teacher on CUDA, then train only task_cakes.2 with an independent route-2 preservation stream.",
+    "all_other_v22_tensors_must_remain_byte_identical": true
+  },
+  "decision": {
+    "candidate_promoted": false,
+    "scale1000_run_authorized": false,
+    "paired_teacher_judge_authorized": false,
+    "cpu_speed_benchmark_authorized": false,
+    "final_test_authorized": false,
+    "next_architecture": "IMMUTABLE_ROUTE5_ROLLBACK_PLUS_GPU_ROUTE2_TARGETED_ACQUISITION",
+    "nearby_global_sweep_authorized": false,
+    "decoder_change_authorized": false,
+    "shared_transformer_change_authorized": false,
+    "route_classifier_change_authorized": false
+  },
+  "hardware_policy": {
+    "teacher_extraction": "GPU_ONLY",
+    "layercake_acquisition_training": "GPU_ONLY",
+    "cpu_role": "Teacher-free deployed LayerCake inference validation and benchmarking only."
+  },
+  "final_test": {
+    "legacy_v4_status": "CONTAMINATED_AND_QUARANTINED",
+    "legacy_v4_may_certify_successor": false,
+    "replacement_required": true,
+    "replacement_creation_authorized_now": false
+  },
+  "final_test_accessed": false,
+  "claim_boundary": "v22 is preserved as negative evidence. Its tensor isolation, identity, sparse execution, routing, aggregate quality, retention, and collapse passes do not offset two capability-level failures; it is not an English-core or moonshot pass."
+}

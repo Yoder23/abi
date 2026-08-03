@@ -1,0 +1,45 @@
+{
+  "format": "abi-english-tokenizer-aligned-source-v45-result/1",
+  "status": "PASS_AS_ACQUISITION_SOURCE_NOT_A_DEPLOYED_MODEL",
+  "effective_date": "2026-08-02",
+  "protocol": "ABI_ENGLISH_TOKENIZER_ALIGNED_SOURCE_GPU_PROTOCOL_V45.json",
+  "artifact": {
+    "path": "results/abi_moonshot/aligned_sources/gpt2-medium-broad-instruction-lora-r16-seed389824-steps3000-v45",
+    "checkpoint_sha256": "43ca1b34c210f87b2d511d1827601f407902216be93c8963c702a0e4d03a3c05",
+    "manifest_sha256": "877b2362378cc9f1d3ffbe61e4fd27d5646bfc8de312b0fe0ac4976f9ce4aa8b",
+    "checkpoint_bytes": 709676376,
+    "parameters": 354823168,
+    "precision": "float16",
+    "tokenizer_sha256": "1fe93b6152957cf9cfd6d89002467f789ce8b3f3e000b3a2edf27c808ddd0b9e",
+    "layercake_tokenizer_file_exact": true
+  },
+  "alignment": {
+    "successful_gpu_optimizer_steps": 3000,
+    "attempted_optimizer_steps": 3004,
+    "skipped_amp_optimizer_steps": 4,
+    "wall_seconds": 766.7297996999987,
+    "gpu_hours": 0.21298049991666632,
+    "peak_gpu_memory_bytes": 1045629952,
+    "temporary_trainable_parameters": 6291456,
+    "temporary_adapter_retained_separately": false,
+    "main_supervised_response_tokens_seen": 244957,
+    "anchor_supervised_response_tokens_seen": 90392,
+    "unique_main_records_seen": 2528,
+    "unique_anchor_records_seen": 1874,
+    "main_utf8_bytes_seen": 2560001,
+    "anchor_utf8_bytes_seen": 868668
+  },
+  "imported_information_accounting": {
+    "teacher_tokens_stored_in_source_bundles": 2927663,
+    "teacher_generated_output_bytes_stored_in_source_bundles": 11274194,
+    "logits_stored": 0,
+    "hidden_activations_stored": 0,
+    "foreign_source_parameters_copied_into_layercake": 0,
+    "foreign_source_blocks_retained_in_layercake": 0
+  },
+  "source_unchanged_on_disk": true,
+  "deployable_in_layercake": false,
+  "required_at_layercake_inference": false,
+  "next_step": "Use only as the frozen online-logit source in the preregistered v46 LayerCake acquisition, then remove it before checkpointing.",
+  "moonshot_complete": false
+}

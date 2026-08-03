@@ -1,0 +1,12 @@
+{
+  "format": "abi-english-deep-reused-capability-cake-v38-runtime-metadata-correction/1",
+  "status": "FIRST_RUNTIME_EXPORT_QUARANTINED_PRECISION_CLAIM_INACCURATE",
+  "effective_date": "2026-08-02",
+  "affected_runtime": "results/abi_moonshot/native_hosts/deep-reused-cake-r64-stress-v38-onnx-int8-precheck",
+  "affected_graph_sha256": "9b42b064518d228c4606299278316f10b9b039d5d68872968d4c1c55c8904995",
+  "defect": "The exporter unconditionally declared float32 final task-cake projections even though v38 has no post-transformer cake and therefore exposes no final projection nodes.",
+  "scientific_effect": "The graph is not invalidated, but the affected runtime metadata cannot support a precision or physical-execution claim and is excluded from promotion.",
+  "repair": "Declare task_cake_projection_precision null when no final route-selected projection nodes exist, preserve the graph, and export a new immutable runtime.",
+  "replacement_output": "results/abi_moonshot/native_hosts/deep-reused-cake-r64-stress-v38b-onnx-int8-precheck",
+  "contaminated_final_v4_accessed": false
+}

@@ -87,9 +87,10 @@ def evaluate_general_preservation(
             layercake_root=layercake_root,
             device=device,
         )
-        if manifest.get("format") != (
-            "abi-layercake-full-english-core-acquisition/1"
-        ):
+        if manifest.get("format") not in {
+            "abi-layercake-full-english-core-acquisition/1",
+            "abi-layercake-component-graft/1",
+        }:
             raise LayerCakeHostError(
                 "standalone general-validation identity changed"
             )

@@ -1,0 +1,47 @@
+{
+  "format": "abi-english-v56-native-certification-protocol/1",
+  "status": "PREREGISTERED_AFTER_NATIVE_SUPPORT_TESTS_BEFORE_EXPORT",
+  "effective_date": "2026-08-01",
+  "controlling_decision": "ABI_ENGLISH_EVENT_WRAPPER_V56_QUALITY_DECISION.json",
+  "source_artifact": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-v51-event-wrapper-conformance-v56",
+    "manifest_sha256": "3d6fd2f8490e2264e197b61a1ff0900144397802f5407fb687c880bdef44e35c",
+    "checkpoint_sha256": "012c5443dca21fb73874f1329bcfb6a10526284092e15d7408fff15614dd563f",
+    "symbolic_payload_sha256": "088c8e534603e6ac629f3417df967e917471baaea53b4874ab47e4f495121487"
+  },
+  "native_lock": {
+    "precision_profile": "int8",
+    "runtime_output": "results/abi_moonshot/native_hosts/three-block-v56-onnx-int8-v37",
+    "source_teacher_present_at_inference": false,
+    "source_transformer_blocks_retained": 0,
+    "source_parameters_copied": 0,
+    "maximum_active_task_cakes_per_sequence": 1,
+    "maximum_active_layerwise_controls_per_sequence": 1,
+    "maximum_active_symbolic_handlers_per_sequence": 1,
+    "task_route_prepass": "separate int8 ONNX graph using zero control, prompt mean, and the exact 10-route classifier",
+    "decode_graph_requires_one_selected_route": true,
+    "public_cache_contains_only_real_tokens": true,
+    "symbolic_payload_must_be_byte_identical": true,
+    "canonical_abi_changed": false
+  },
+  "required_evidence": [
+    "native artifact hash and source manifest/checkpoint/payload binding",
+    "all physical sparse graph checks pass",
+    "standalone identity checks pass",
+    "native autonomous semantic suite preserves every corrected quality gate with zero collapse",
+    "repeated CPU benchmark on at least 100 prompts and at least 20 headline observations",
+    "at least 2x median bytes/second and characters/second versus the optimized Qwen CPU comparator",
+    "single cold request TTFT with load, first output, and total latency separated",
+    "active RSS lower than comparator",
+    "persistent incremental KV state and cache growth verified",
+    "teacher and source machinery absent at inference"
+  ],
+  "hardware_policy": {
+    "native_export": "CPU artifact conversion; no training",
+    "any_neural_training": "GPU_ONLY",
+    "deployed_inference_and_benchmark": "CPU_ONLY"
+  },
+  "decision_rule": "Reject this native precision/runtime branch if physical identity fails, any quality gate regresses, median CPU speed is below 2x, RSS is not lower, state is not persistent, or teacher/source machinery appears at inference.",
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

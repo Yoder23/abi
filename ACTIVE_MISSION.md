@@ -1,65 +1,112 @@
-# Active mission
+# ABI active mission
 
-## State
+Status date: 2026-08-03
 
-The bounded ABI-to-LayerCake v47 reference is **PASS and frozen**. The broader
-English-product moonshot is **OPEN**. No successor English model has passed.
+## Current state
 
-`ABI_MOONSHOT_CERTIFICATE_V2.json` remains authoritative for its 1,700 locked
-observations, exact artifacts, performance measurements, and three qualified
-domain packages. `ABI_POSTCERT_GENERALIZATION_AUDIT_DECISION.json` is
-authoritative for the later product-level decision:
+The broad ABI English-product moonshot is **OPEN**.
 
-- LayerCake: 0/28 novel English prompts;
-- frozen Phi-3: 19/28;
-- source-passing regressions: 19.
+- The historical v47 reference remains PASS only for its exact locked catalog.
+- Its broader English interpretation is FAIL after a 0/28 novel-form audit
+  against 19/28 for frozen Phi-3.
+- V87 demonstrates a bounded causal transfer signal but fails its formal
+  reliability and repetition gates.
+- V89 pre-transfer labeling is a bounded PASS for the locked English,
+  chemistry, civics, mathematics, Python, and quarantine ontology.
+- No current normalized successor corpus or broadly fluent ABI-derived
+  LayerCake has passed.
+- No matched LoRA/distillation campaign has been preregistered or run, so no
+  ABI-superiority claim exists.
 
-The sibling LayerCake release remains immutable at
-`04cf2927a16fba686cd640e18a78708e5658bbda`.
+The sealed sibling LayerCake repository remains a separate positive control and
+execution product. ABI failures do not reopen its certificate, and an ABI
+candidate does not inherit its performance results.
 
-## Controlling objective
+## Active objective
 
-`ABI_ENGLISH_CORE_DOMAIN_SEGREGATION_CONTRACT_V2.json` controls future work.
-The objective is not universal lossless compression from a foreign teacher.
-It is:
+The immediate objective is to complete Phase 0 of
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_V1.md`: freeze the definitions, optimized
+LoRA and distillation baselines, ablations, fairness views, numeric gates,
+splits, statistics, resource accounting, and stop rules needed for a valid
+comparative campaign.
 
-- retain the highest measured teacher-derived English generation quality;
-- find the lowest passing tested LayerCake core size and imported-information
-  budget;
-- keep English acquisition material limited to linguistic form;
-- label specialist knowledge by domain, capability, atomic claim or skill,
-  source, and provenance;
-- package only user-selected domains separately; and
-- preserve exact LayerCake-to-LayerCake package transfer after a core or cake
-  has been created.
+This phase ends before data construction or training. It must make every later
+claim falsifiable and prevent ABI from receiving a weaker baseline, more
+teacher information, more host capacity, or hidden deployment dependencies.
 
-"Pure English" is operational: zero labeled domain records in the core corpus,
-zero known-ontology marker hits, zero core/domain payload overlap, and passing
-closed-book leakage and domain-isolation suites. ABI does not claim that a
-finite audit can prove literally zero world knowledge in neural weights.
+## Required Phase 0 work
 
-## Blocking experiment
+1. Freeze the exact LoRA, routed-adapter, sequence-distillation,
+   logit-distillation, strongest-justified-distillation, and ABI ablation
+   implementations.
+2. Freeze the three fairness views: equal imported information, equal final
+   deployment constraint, and matched quality frontier.
+3. Set numeric quality noninferiority, capability-control superiority,
+   leakage, confidence, repetition, and resource thresholds.
+4. Freeze untouched natural quality, isolation, composition, and systems
+   suites plus their search/development/final boundaries.
+5. Preregister the normalization schema, transformations, rejection rules,
+   metrics, thresholds, and stop conditions for successor Phase 1.
+6. Define the English capability inventory, including a clean resolution for
+   fact-free “domain-independent reasoning.”
 
-Produce a successor English substrate that generalizes beyond catalog-shaped
-templates while preserving the teacher-free LayerCake runtime. The next
-protocol must:
+## Phase 1 work after unlock
 
-1. use a materially broader, preregistered natural-language and paraphrase
-   distribution;
-2. train the core from abstract/nonce, supplied non-domain, interpersonal, and
-   domain-free instruction material rather than specialist facts;
-3. use v2 segregated records and a passing v3 extraction-bundle purity manifest;
-4. compare the same prompts against immutable frozen sources;
-5. permit no source-passing regressions at the promoted threshold;
-6. search explicitly accounted imported-information and core-size frontiers;
-7. prove core-only specialist abstention and selected-domain recovery;
-8. prohibit template-specific symbolic repairs as the promotion mechanism;
-9. repeat three-host, routing, isolation, exact package identity, CPU speed,
-   TTFO, RSS, and domain-package certification on the same final host.
+1. Preserve raw source prompts/outputs and bind every normalized record to
+   source revision, provenance, destination, capability, and authoritative
+   teacher token IDs.
+2. Build separate immutable English and selected-domain inventories only after
+   the Phase 0 contract passes.
+3. Measure exact and near duplicates, unique UTF-8 bytes, teacher tokens,
+   lengths, surface families, behavioral coverage, completion, correctness,
+   contamination, conflicts, and label confidence.
+4. Freeze a natural held-out generalization and leakage suite that cannot
+    influence normalization, budget selection, checkpoints, or repairs.
+5. Run the artifact adequacy verifier. Only a passing artifact may unlock
+   matched baseline training.
 
-The deterministic v6 catalog now supplies segregated synthetic depth (5,400
-probes), but it cannot close the measured natural-language generalization gap.
-Do not launch expensive successor training until a materially broader
-natural-language acquisition set, independent held-out leakage suite, and
-human label-audit protocol are frozen. Do not call the global moonshot complete
-or tag v47 as a general English release.
+## Successor phases, not yet authorized
+
+After Phase 0, build and certify the normalized acquisition artifact. Then run
+strong matched LoRA and distillation baselines before causal ABI acquisition.
+Nested sufficient-information budgets follow only after a reliable causal ABI
+candidate passes. “Minimum” means only the smallest passing tested budget
+paired with the adjacent lower failing budget.
+
+## Permanent boundaries
+
+- Do not call foreign-teacher acquisition lossless.
+- Do not call declared-ontology labeling exhaustive domain discovery.
+- Do not call a finite purity audit proof of literally knowledge-free weights.
+- Do not feed raw or merely labeled teacher records to LayerCake.
+- Do not use final-test data for prompts, normalization, thresholds, budgets,
+  architecture, stopping, or repairs.
+- Do not modify or silently dirty `../layercake_release` from ABI work.
+- Do not attribute an expanded-quality failure to LayerCake unless an exact
+  native or same-topology control passes the identical scope.
+- Do not combine quality from one candidate with speed from another.
+- Do not promote a candidate without teacher removal, isolation, package
+  identity, CPU/GPU, TTFT, RSS, repetition, routing, and hostile verification
+  on the same final lineage.
+- Preserve every failed experiment, superseded protocol, and negative result.
+- Do not describe ABI as better than LoRA or distillation until the mandatory
+  matched campaign passes; name any distillation or LoRA mechanism used inside
+  ABI honestly.
+
+## Current authoritative documents
+
+- `CURRENT_PROJECT_STATUS.md`
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_V1.md`
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json`
+- `ROADMAP.md`
+- `CLAIMS.md`
+- `RESEARCH_STATUS_AND_GAPS.md`
+- `ABI_TEACHER_TO_LAYERCAKE_GRAMMAR_PILOT_V87_DECISION.json`
+- `ABI_TEACHER_RECORD_LABELING_PHASE2_CERTIFICATE_V89.json`
+- `ABI_LAYERCAKE_SEPARATION_STATUS_V6.json`
+- `ABI_LAYERCAKE_FAILURE_ATTRIBUTION_CONTRACT_V1.json`
+- `ABI_LAYERCAKE_FAILURE_ATTRIBUTION_SCOPE_ADDENDUM_V2.json`
+- `ABI_ENGLISH_CORE_DOMAIN_SEGREGATION_CONTRACT_V2.json`
+
+Historical certificates remain authoritative for their own exact scopes. They
+do not override this current phase boundary.

@@ -1,0 +1,57 @@
+{
+  "format": "abi-english-search-derived-coherence-rewriting-extension-protocol/1",
+  "status": "PREREGISTERED_AFTER_IMPLEMENTATION_TESTS_BEFORE_ARTIFACT_OR_EVALUATION",
+  "effective_date": "2026-08-01",
+  "controlling_decision": "ABI_ENGLISH_FLUENT_CORE_FUNCTIONAL_SUBSTRATE_GRAFT_V54_DECISION.json",
+  "hypothesis": "The v54 full-suite residual is narrow and schema-bound. Two general English-form handlers extracted from passing search-only teacher records can repair event-label ordering and concise fact-preserving statement combination without changing the v51 neural core, retaining teacher text, or importing domain knowledge.",
+  "parent": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/three-block-v51-functional-substrate-graft-v54",
+    "manifest_sha256": "d579faae7e9abb0efe2b045751d32a177ad38217a2cfa4b85fba733715c1914f",
+    "checkpoint_sha256": "012c5443dca21fb73874f1329bcfb6a10526284092e15d7408fff15614dd563f",
+    "payload_sha256": "a70e9453b2d1ffce0817fbc8ebf8e36024867a1bfe5cd8fd1ea9f2c90633aa40"
+  },
+  "training_source": {
+    "path": "results/abi_moonshot/segregated_acquisition_v3/phi3-broad-cumulative-english-training-v9.abix",
+    "archive_sha256": "510c72e6a4608084a595eeea2897d490444d99767ae14bb27de7f8711d284c1c",
+    "manifest_sha256": "9170eaee89b1e0576081ba119d0cb2995cb033a19ed9c431b299e0fe81d482fa",
+    "artifact_role": "segregated_layercake_training_material_v3",
+    "training_eligible": true,
+    "domain_segregation_verified": true,
+    "budget_id": "search-teacher-tokens-416448",
+    "final_test_records_allowed": false,
+    "only_passing_search_records_allowed": true
+  },
+  "extension_lock": {
+    "new_handlers": [
+      "natural_labeled_event_ordering",
+      "natural_concise_statement_combination"
+    ],
+    "required_search_support": {
+      "natural_labeled_event_ordering": 100,
+      "natural_concise_statement_combination": 95
+    },
+    "teacher_outputs_retained": false,
+    "neural_training": false,
+    "source_parameters_copied": 0,
+    "task_cakes_copied": 0,
+    "classifier_parameters_copied": 0,
+    "v51_checkpoint_and_tokenizer_files_must_remain_byte_identical": true,
+    "canonical_abi_changed": false,
+    "maximum_active_symbolic_handlers_per_sequence": 1,
+    "candidate_output": "results/abi_moonshot/segregated_acquisition_v3/three-block-v51-search-derived-coherence-rewriting-v55"
+  },
+  "hardware_policy": {
+    "this_extension": "deterministic packaging with no neural training",
+    "any_neural_acquisition_or_training": "GPU_ONLY",
+    "deployed_layercake_inference_testing": "CPU_ONLY"
+  },
+  "evaluation_order": [
+    "strict loader, payload hash, parent checkpoint hash, and unhandled fallback identity",
+    "CPU 28-prompt autonomous screen requiring at least 9 passes and zero collapse",
+    "CPU 1,400-case suite requiring every capability at least 0.80, source-passing retention at least 0.90, and zero collapse",
+    "only after quality passes: native export, physical sparse proof, exact identity, repeated CPU speed, TTFT, RSS, persistent state, and teacher-relative quality"
+  ],
+  "decision_rule": "Reject and preserve v55 if either new handler lacks preregistered passing search support, natural fluency regresses, any capability is below 0.80, retention is below 0.90, or any collapse occurs.",
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}

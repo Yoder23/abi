@@ -1,0 +1,56 @@
+{
+  "format": "abi-english-semantic-training-composition-and-adequacy-protocol/1",
+  "status": "PREREGISTERED_CONDITIONAL_BEFORE_V62_FULL_RESULT",
+  "effective_date": "2026-08-03",
+  "authorization_condition": "Execute only after V62 full PASS and a verified V63 derived survey vault with 14/14 available capabilities.",
+  "input_vault": {
+    "path": "results/abi_moonshot/reference_artifact_v63/phi3-semantic-qualified-source-v1.abix",
+    "required_receipt": "results/abi_moonshot/reference_artifact_v63/phi3-semantic-qualified-source-v1.abix.receipt.json",
+    "exact_hashes_must_be_copied_from_immutable_v63_receipt_before_execution": true
+  },
+  "composition": {
+    "output": "results/abi_moonshot/reference_artifact_v64/phi3-semantic-qualified-english-training-v1.abix",
+    "include_english_core": true,
+    "english_capabilities": "all canonical 14",
+    "selected_domains": [],
+    "source_policy": "best_evidence",
+    "development": false,
+    "passing_search_rows_only": true,
+    "validation_rows_in_training": false,
+    "final_test_rows_in_training": false,
+    "domain_ontology_path": "catalogs/domain_ontology_v1.json",
+    "domain_ontology_sha256": "076c940a4382ce1f4581ebf618168f817e4ce44a96fd75f533d63998ac740c9b",
+    "promotion_eligible_selection_required": true,
+    "segregated_training_artifact_role_required": true
+  },
+  "adequacy": {
+    "catalog_path": "catalogs/grounded_english_reference_search_validation_v3.json",
+    "catalog_sha256": "055a6482669953c6283d93bebf87e1cef6b7db278b3b2e3849df51dab2d011ab",
+    "budget": "largest complete nested search budget only",
+    "minimum_selected_records_per_capability": 100,
+    "all_finish_reasons_and_authoritative_source_ids_required": true,
+    "all_source_rows_eos_terminated": true,
+    "all_semantic_evaluators_content_specific_unique_and_raw_prompt_bound": true,
+    "source_gpu_and_time_accounting_required": true,
+    "semantic_judge_gpu_token_time_runtime_and_journal_accounting_required": true,
+    "required_cli_flag": "--require-semantic-qualification"
+  },
+  "implementation_lock": {
+    "abi/moonshot.py": "ab6f66de1f986fcf0ccf25a1a4ae2612b17e55eb1f089075c83cf1a4269a0d94",
+    "abi/teacher_artifact_adequacy_audit.py": "08d466ac8e1782e0aca8c68aaa0aeb255a480436e54d50df5240cd170573a039",
+    "tests/test_teacher_artifact_adequacy_audit.py": "0b0d5dff26d0db141d6b4d0e341a95b05bcf139d5ac44d64e8344ac44d6f690e"
+  },
+  "decision_rule": [
+    "Do not compose if V62 or V63 fails.",
+    "Compose only passing search rows for all 14 canonical English capabilities; select no domain material.",
+    "Fail on any ontology, purity, provenance, identity, split, selection, or bundle-verification mismatch.",
+    "Run adequacy on the largest complete nested search budget and require every adequacy and semantic-accounting check.",
+    "Only a passing V64 adequacy certificate may authorize exactly one preregistered ABI-to-LayerCake acquisition candidate.",
+    "Any V64 failure is ABI composition or artifact adequacy failure; LayerCake remains uninvoked."
+  ],
+  "layercake_invoked": false,
+  "layercake_training_authorized": false,
+  "final_test_accessed": false,
+  "abi_transfer_proven": false,
+  "moonshot_complete": false
+}

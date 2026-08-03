@@ -1,0 +1,52 @@
+{
+  "format": "abi-english-deep-capability-adapter-v36-decision/1",
+  "status": "REJECTED_BEFORE_FULL_GPU_RUN_RSS_GATE",
+  "effective_date": "2026-08-02",
+  "protocol": "ABI_ENGLISH_DEEP_CAPABILITY_ADAPTER_GPU_PROTOCOL_V36.json",
+  "stress_checkpoint": {
+    "path": "results/abi_moonshot/stress/abi-broad-natural-deep-adapter-r32-r64-stress-v36",
+    "checkpoint_sha256": "6c775fce4063a7a12cef5baa0f62d71dd888711a72b7820fe1cfc3faaa74cbe1",
+    "manifest_sha256": "8761e1695c5428b51120aee15ab02f2f69eb12b5e566eb70b05f9662041f4869",
+    "successful_cuda_optimizer_steps": 1,
+    "peak_gpu_memory_bytes": 2169844224,
+    "frozen_shared_state_preserved_exact": true,
+    "teacher_present_at_inference": false
+  },
+  "structural_precheck": {
+    "zero_initialized_parent_logit_max_delta": 0.0,
+    "zero_initialized_parent_cache_max_delta": 0.0,
+    "nonzero_adapter_changes_persistent_cache": true,
+    "public_cache_lengths_exact": true,
+    "physical_sparse_proof": "results/abi_moonshot/native_hosts/deep-adapter-r32-r64-stress-v36-physical-proof-v2.json",
+    "physical_status": "PASS",
+    "identity_evidence": "results/abi_moonshot/native_hosts/deep-adapter-r32-r64-stress-v36-identity.json",
+    "identity_status": "PASS"
+  },
+  "fixed_token_precheck": {
+    "candidate_evidence": "results/abi_moonshot/native_hosts/deep-adapter-r32-r64-stress-v36-fixed-token-architecture-20x20.json",
+    "comparison_evidence": "results/abi_moonshot/native_hosts/deep-adapter-r32-r64-stress-v36-fixed-token-comparison.json",
+    "distinct_prompts": 20,
+    "repeats_per_prompt": 20,
+    "forced_tokens_per_observation": 64,
+    "candidate_median_tokens_per_second": 331.96053894694126,
+    "parent_median_tokens_per_second": 345.545304127966,
+    "candidate_to_parent_median_prompt_ratio": 0.9657134793831044,
+    "paired_rate_ratio_bootstrap_95ci": [
+      0.9589250159112714,
+      0.9677002024590262
+    ],
+    "paired_latency_ratio_bootstrap_95ci": [
+      1.0354824305244184,
+      1.0453960350988292
+    ],
+    "peak_process_rss_bytes": 220979200,
+    "rss_limit_bytes": 214990848,
+    "cache_lengths_exact": true,
+    "speed_gate_pass": true,
+    "rss_gate_pass": false
+  },
+  "measured_bottleneck": "Installed per-layer capability-adapter tables enlarge the ONNX artifact and session RSS even though only one route is active. CPU decode retention and physical sparsity pass.",
+  "decision": "Reject v36 before its full GPU run. Preserve all evidence. Test one weight-shared rank-32 capability adapter selected once and reused before all three frozen blocks; this removes two-thirds of installed deep-adapter parameters without changing active nonlinear operations.",
+  "contaminated_final_v4_accessed": false,
+  "moonshot_complete": false
+}
