@@ -1,6 +1,6 @@
 {
   "format": "abi-capability-compiler-campaign-contract/1",
-  "status": "PHASE_0_PROTOCOL_PREREGISTERED_AWAITING_COMMITTED_VERIFICATION",
+  "status": "PHASE_0_COMPLETE_PHASE_1_OPEN",
   "effective_date": "2026-08-03",
   "historical_evidence_changed": false,
   "supersedes_for_future_work_only": [
@@ -79,14 +79,14 @@
     {
       "id": 0,
       "name": "definitions_baselines_and_preregistration",
-      "status": "VERIFYING",
+      "status": "COMPLETE",
       "training_authorized": false,
       "exit": "machine-readable metrics, thresholds, splits, baselines, seeds, stop rules, and artifact identities frozen before results"
     },
     {
       "id": 1,
       "name": "capability_inventory_and_normalized_acquisition_ir",
-      "status": "LOCKED",
+      "status": "OPEN",
       "depends_on": 0,
       "exit": "immutable provenance-bound artifact passes adequacy, segregation, diversity, correctness, and adversarial verification"
     },
@@ -201,6 +201,6 @@
     "Do not combine quality from one checkpoint with systems evidence from another.",
     "Preserve all negative evidence and superseded protocols."
   ],
-  "immediate_next_action": "Commit and verify the Phase 0 protocol, implementation, environment lock, tests, and full suite; issue the Phase 0 certificate; then open normalized artifact adequacy as Phase 1.",
+  "immediate_next_action": "Execute Phase 1 only: build and certify the immutable provenance-bound normalized acquisition IR. Do not train LoRA, distillation, or LayerCake candidates before Phase 1 passes.",
   "moonshot_complete": false
 }

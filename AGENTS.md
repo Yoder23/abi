@@ -32,10 +32,11 @@ binding through `ABI_LAYERCAKE_FAILURE_ATTRIBUTION_CONTRACT_V1.json`.
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_V1.md` and
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` now supersede the v4
 campaign contract for future-work sequencing only. Historical evidence and
-attribution rules remain unchanged. Capability-compiler Phase 0 is VERIFYING
-under `ABI_CAPABILITY_COMPILER_PHASE0_PROTOCOL_V1.json`; no new training run is
-authorized until its committed verifier, full suite, and certificate pass. Do
-not claim that ABI supersedes LoRA or distillation before the complete campaign
+attribution rules remain unchanged. Capability-compiler Phase 0 is COMPLETE
+under `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json`; Phase 1 is OPEN and
+Phases 2 through 8 remain locked. No LoRA, distillation, or LayerCake candidate
+training is authorized until the normalized Phase 1 artifact passes. Do not
+claim that ABI supersedes LoRA or distillation before the complete campaign
 passes.
 
 `ABI_LAYERCAKE_SEPARATION_STATUS_V2.json` records the current split verdict:

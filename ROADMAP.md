@@ -15,10 +15,9 @@ the falsifiable meaning of ABI product superiority. The lettered roadmap below
 is retained as a research-lineage map; where sequencing differs, the numbered
 capability-compiler campaign controls.
 
-Current active state: **capability-compiler Phase 0 is VERIFYING**. Its
-specification is frozen; committed verification and certification remain.
-Phase D below maps to compiler Phase 1 and stays locked until that certificate
-passes.
+Current active state: **capability-compiler Phase 0 is COMPLETE and Phase 1 is
+OPEN**. Phase D below maps to compiler Phase 1. Phases 2 through 8 remain
+locked.
 
 ## Phase A — Repository and claim governance
 
@@ -63,8 +62,7 @@ certificate. The V89 pass cannot be silently generalized.
 
 ## Phase D — Normalization and artifact adequacy
 
-Status: technically next artifact phase, but LOCKED behind capability-compiler
-Phase 0.
+Status: OPEN as capability-compiler Phase 1.
 
 1. Freeze a normalization contract before generating a successor corpus.
 2. Preserve raw source prompts and outputs alongside normalized forms.

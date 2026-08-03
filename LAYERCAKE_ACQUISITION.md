@@ -15,10 +15,9 @@ pipeline can ingest it.
 
 Since that audit, V87 has demonstrated a bounded causal transfer signal and V89
 has passed pre-transfer labeling for a locked English-plus-four-domain
-ontology. Neither result authorizes a new LayerCake training run. The immediate
-gate is capability-compiler Phase 0: strong matched LoRA/distillation
-baselines, fairness views, numeric margins, splits, statistics, and stop rules.
-A normalized, provenance-bound acquisition artifact follows as Phase 1. See
+ontology. Neither result authorizes a new LayerCake training run.
+Capability-compiler Phase 0 is complete; the immediate gate is the Phase 1
+normalized, provenance-bound acquisition artifact. See
 `CURRENT_PROJECT_STATUS.md` and `ROADMAP.md`.
 
 The controlling successor sequence is

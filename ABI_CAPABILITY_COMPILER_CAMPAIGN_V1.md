@@ -1,7 +1,7 @@
 # ABI capability-compiler campaign v1
 
 Status date: 2026-08-03
-Status: controlling plan; Phase 0 protocol is preregistered and VERIFYING; no new training run is authorized
+Status: controlling plan; Phase 0 is COMPLETE; Phase 1 is OPEN; no training run is authorized
 
 ## Decision
 
@@ -148,9 +148,8 @@ artifact-generation cost. "Small" cannot refer only to trainable parameters.
 
 ### Phase 0 - Definitions, baselines, and preregistration
 
-Status: **VERIFYING**. The specification is preregistered in
-`ABI_CAPABILITY_COMPILER_PHASE0_PROTOCOL_V1.json`; it is not complete until its
-implementation commit, verifier, full test suite, and certificate pass.
+Status: **COMPLETE** under
+`ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json`.
 
 - Freeze the capability ontology, English boundary, quarantine policy, source
   identities, licenses, test splits, statistical methods, noninferiority
@@ -174,8 +173,8 @@ run is promotion-eligible.
 
 ### Phase 1 - Capability inventory and normalized acquisition IR
 
-Status: **LOCKED behind Phase 0**. V89 is supporting bounded labeling evidence,
-not a Phase 1 pass.
+Status: **OPEN**. V89 is supporting bounded labeling evidence, not a Phase 1
+pass.
 
 - Convert raw teacher records into a versioned intermediate representation
   retaining raw and normalized forms, token IDs, provenance, destination,
@@ -316,7 +315,7 @@ all negative evidence and limitations remain published.
 
 ## Immediate next action
 
-Complete Phase 0 only: commit and verify the preregistered protocol,
-environment identity, fail-closed verifier, full test suite, and certificate.
-Then resume the already-required normalization and adequacy work as Phase 1.
-Do not launch another teacher-to-LayerCake training variant first.
+Execute Phase 1 only: build the normalized, provenance-bound acquisition IR,
+freeze untouched evaluation material, and pass artifact adequacy plus hostile
+verification. Do not launch LoRA, distillation, or LayerCake training before
+Phase 1 passes.

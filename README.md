@@ -25,11 +25,11 @@ Three facts define the current checkpoint:
 3. V89 passes bounded pre-transfer labeling for English, chemistry, civics,
    mathematics, Python, and quarantine on a source-record-disjoint holdout.
 
-The active phase is **Phase 0 verification of the capability-compiler
-campaign**. Its definitions, strong matched baseline specifications, numeric
-gates, and stop rules are preregistered; certification is not yet complete.
-Normalized transfer-corpus construction is Phase 1. No current ABI artifact is
-certified as a broadly fluent teacher-derived LayerCake English core.
+Capability-compiler Phase 0 is **COMPLETE**. The active phase is **Phase 1:
+capability inventory and normalized acquisition IR**. No current ABI artifact
+is certified as a broadly fluent teacher-derived LayerCake English core, and
+no LoRA, distillation, or LayerCake candidate training is authorized before
+Phase 1 passes.
 
 Read [CURRENT_PROJECT_STATUS.md](CURRENT_PROJECT_STATUS.md) before interpreting
 any experiment or launching new work.
@@ -150,6 +150,7 @@ novel-form audit invalidated any general-purpose English interpretation.
 - [Machine-readable campaign contract](ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json)
 - [Phase 0 protocol](ABI_CAPABILITY_COMPILER_PHASE0_PROTOCOL_V1.json)
 - [Phase 0 environment](ABI_CAPABILITY_COMPILER_PHASE0_ENVIRONMENT_V1.json)
+- [Phase 0 certificate](ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json)
 - [Research-ledger policy](RESEARCH_LEDGER_POLICY.md)
 - `ABI_LOCAL_RESEARCH_ARTIFACTS_MANIFEST_V1.json` for large local catalog identity
 - [Phased research roadmap](ROADMAP.md)

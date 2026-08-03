@@ -115,21 +115,14 @@ policy. A passing local experiment is not automatically a clean release.
 
 ## Research priority
 
-The next useful work is not another transfer recipe or domain sweep. It is
-Phase 0 of `ABI_CAPABILITY_COMPILER_CAMPAIGN_V1.md`:
-
-1. freeze strong matched LoRA and distillation baselines;
-2. freeze equal-information, equal-deployment, and matched-quality comparisons;
-3. preregister numeric margins, statistics, splits, seeds, and stop rules; and
-4. define which complete product advantages would justify ABI over conventional
-   methods.
-
-Only then proceed to normalization and adequacy:
+Phase 0 is complete. The next useful work is not another transfer recipe,
+baseline run, or domain sweep. It is Phase 1 normalization and adequacy:
 
 1. preregister the schema and transformations;
 2. build immutable English and per-domain inventories;
 3. qualify correctness, completion, diversity, provenance, and leakage;
 4. freeze untouched natural generalization data; and
-5. only then begin nested information-budget training.
+5. only then unlock Phase 2 matched baselines. Nested information-budget
+   training remains Phase 4 after causal acquisition passes Phase 3.
 
 See `CURRENT_PROJECT_STATUS.md` for the claim ledger and phase boundary.

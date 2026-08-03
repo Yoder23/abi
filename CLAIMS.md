@@ -59,6 +59,13 @@ lineage. ABI may rely on that interface only after it creates an independently
 validated LayerCake-compatible artifact. It may not import the sealed
 LayerCake release's performance evidence into a new candidate.
 
+### 5. Capability-compiler Phase 0 governance
+
+`ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` certifies the initial
+teacher, immutable LayerCake host, mandatory LoRA/distillation/ABI systems,
+data boundaries, statistics, numeric gates, accounting, and stop rules. It
+contains no new training and establishes no comparative quality result.
+
 ## Current implementation claims
 
 - The V87 real-versus-shuffled causal pilot is implemented and evidence-bound.

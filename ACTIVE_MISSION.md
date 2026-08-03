@@ -17,6 +17,8 @@ The broad ABI English-product moonshot is **OPEN**.
   LayerCake has passed.
 - No matched LoRA/distillation campaign has been preregistered or run, so no
   ABI-superiority claim exists.
+- Capability-compiler Phase 0 is complete. Phase 1 is open; Phases 2 through 8
+  remain locked.
 
 The sealed sibling LayerCake repository remains a separate positive control and
 execution product. ABI failures do not reopen its certificate, and an ABI
@@ -24,44 +26,34 @@ candidate does not inherit its performance results.
 
 ## Active objective
 
-The immediate objective is to certify the preregistered Phase 0 specification
-in `ABI_CAPABILITY_COMPILER_PHASE0_PROTOCOL_V1.json`. The definitions,
-optimized LoRA and distillation baseline specifications, ablations, fairness
-views, numeric gates, splits, statistics, resource accounting, and stop rules
-are frozen; committed verification and the Phase 0 certificate remain open.
+The immediate objective is to construct and certify the immutable,
+provenance-bound normalized acquisition IR required by capability-compiler
+Phase 1. It must establish data suitability without training a LoRA,
+distillation, or LayerCake candidate.
 
-This phase ends before data construction or training. It must make every later
-claim falsifiable and prevent ABI from receiving a weaker baseline, more
-teacher information, more host capacity, or hidden deployment dependencies.
+This phase ends before candidate training. It must prove that every eligible
+record is correctly sourced, labeled, normalized, segregated, sufficiently
+diverse, content-qualified, and fully accounted.
 
-## Required Phase 0 work
-
-1. Commit the Phase 0 protocol, environment lock, verifier, and tests.
-2. Rerun the fail-closed protocol verifier and complete test suite from that
-   implementation commit.
-3. Issue a hash-bound Phase 0 certificate without changing historical evidence.
-4. Update campaign state to Phase 0 `COMPLETE` and Phase 1 `OPEN`.
-5. Seal a clean annotated Phase 0 tag.
-
-## Phase 1 work after unlock
+## Required Phase 1 work
 
 1. Preserve raw source prompts/outputs and bind every normalized record to
    source revision, provenance, destination, capability, and authoritative
    teacher token IDs.
-2. Build separate immutable English and selected-domain inventories only after
-   the Phase 0 contract passes.
+2. Build separate immutable English and selected-domain inventories under the
+   now-certified Phase 0 contract.
 3. Measure exact and near duplicates, unique UTF-8 bytes, teacher tokens,
    lengths, surface families, behavioral coverage, completion, correctness,
    contamination, conflicts, and label confidence.
 4. Freeze a natural held-out generalization and leakage suite that cannot
-    influence normalization, budget selection, checkpoints, or repairs.
+   influence normalization, budget selection, checkpoints, or repairs.
 5. Run the artifact adequacy verifier. Only a passing artifact may unlock
    matched baseline training.
 
 ## Successor phases, not yet authorized
 
-After Phase 0, build and certify the normalized acquisition artifact. Then run
-strong matched LoRA and distillation baselines before causal ABI acquisition.
+After Phase 1 passes, run strong matched LoRA and distillation baselines before
+causal ABI acquisition.
 Nested sufficient-information budgets follow only after a reliable causal ABI
 candidate passes. “Minimum” means only the smallest passing tested budget
 paired with the adjacent lower failing budget.
@@ -93,6 +85,7 @@ paired with the adjacent lower failing budget.
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json`
 - `ABI_CAPABILITY_COMPILER_PHASE0_PROTOCOL_V1.json`
 - `ABI_CAPABILITY_COMPILER_PHASE0_ENVIRONMENT_V1.json`
+- `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json`
 - `ROADMAP.md`
 - `CLAIMS.md`
 - `RESEARCH_STATUS_AND_GAPS.md`

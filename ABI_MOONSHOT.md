@@ -11,9 +11,9 @@ research frontier is newer and is summarized in `CURRENT_PROJECT_STATUS.md`:
   formal reliability and repetition gates.
 - V89 passed bounded pre-transfer labeling on a 120-row source-record-disjoint
   English/domain/quarantine holdout.
-- The next open phase is capability-compiler Phase 0: strong matched LoRA and
-  distillation baselines, metrics, numeric gates, splits, and stop rules must
-  be preregistered. Normalization and artifact adequacy then follow as Phase 1.
+- Capability-compiler Phase 0 is complete under its hash-bound certificate.
+  Phase 1 normalization and artifact adequacy are now open; all candidate
+  training remains locked.
 
 No current result closes broad fluent-English acquisition or qualifies an
 ABI-derived LayerCake for promotion. The v47 certificate remains valid only for
