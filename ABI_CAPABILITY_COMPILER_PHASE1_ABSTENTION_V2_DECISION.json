@@ -1,0 +1,54 @@
+{
+  "format": "abi-capability-compiler-phase1-abstention-decision/2",
+  "decision_id": "abi-capability-compiler-phase1-abstention-v2",
+  "date": "2026-08-03",
+  "status": "PASS_SOURCE_EVIDENCE_READY_FOR_IR",
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE1_ABSTENTION_PROTOCOL_V2.json",
+    "sha256": "e2ebeeb39b0be173240a2d73b1627a0db92ed921c0cb4cb924de477173c6b2ce"
+  },
+  "journal": {
+    "path": "results/abi_capability_compiler_phase1/v2/abstention_source_attempts.jsonl",
+    "sha256": "930ea01334d02d5fe1adef4643ce4e9e7000127ade2f3fa3e211ab0012174cd3",
+    "attempts": 400,
+    "bytes": 920886
+  },
+  "summary": {
+    "path": "results/abi_capability_compiler_phase1/v2/abstention_source_summary.json",
+    "sha256": "1c1f7933335f1da4e0772e3449fdfbd2e8084173a3f8ce78cdd4961adbf2be2a"
+  },
+  "results": {
+    "fresh_prompts": 400,
+    "fresh_passes": 400,
+    "fresh_failures": 0,
+    "v1_accepted_retained": 237,
+    "v1_failures_reclassified": 0,
+    "combined_eligible": 637,
+    "combined_minimum": 500,
+    "repair_attempts": 0,
+    "selected_length_terminations": 0
+  },
+  "resource_accounting": {
+    "source_load_seconds": 62.520353,
+    "source_inference_seconds": 101.113529,
+    "wall_seconds": 170.113767,
+    "peak_process_rss_bytes": 2161020928,
+    "peak_cuda_allocated_bytes": 8070779392,
+    "teacher_input_tokens": 24960,
+    "authoritative_teacher_tokens": 9762
+  },
+  "checks": {
+    "fresh_prompt_overlap_with_v1": 0,
+    "fresh_template_family_overlap_with_v1": 0,
+    "authoritative_token_ids_retained": true,
+    "validation_outputs_generated": false,
+    "final_outputs_generated": false,
+    "candidate_training_performed": false
+  },
+  "phase_transition": {
+    "phase1": "OPEN_FOR_NORMALIZATION_AND_HOSTILE_VERIFICATION",
+    "phase2_through_phase8": "LOCKED"
+  },
+  "historical_evidence_changed": false,
+  "claim_boundary": "V2 repairs the measured Phase 1 abstention source-depth defect on fresh prompts. It is not yet a normalized IR pass or transfer evidence."
+}
