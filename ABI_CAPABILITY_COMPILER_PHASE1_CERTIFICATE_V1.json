@@ -1,0 +1,117 @@
+{
+  "format": "abi-capability-compiler-phase1-certificate/1",
+  "certificate_id": "abi-capability-compiler-phase1-v1",
+  "status": "PASS",
+  "certified_date": "2026-08-03",
+  "implementation_commit": "f6b075b9178ce8cd39469e32bc2335e79479f7c8",
+  "historical_evidence_changed": false,
+  "candidate_training_performed": false,
+  "bindings": {
+    "ABI_CAPABILITY_COMPILER_PHASE1_PROTOCOL_V1.json": "dcc89850c36a55f59a0dd2187b4345e162630538ba12b0d3ee291fe59c95ceec",
+    "ABI_CAPABILITY_COMPILER_PHASE1_ABSTENTION_PROTOCOL_V2.json": "e2ebeeb39b0be173240a2d73b1627a0db92ed921c0cb4cb924de477173c6b2ce",
+    "ABI_CAPABILITY_COMPILER_PHASE1_V1_DECISION.json": "8ad1354fb1137f6eda9205b00f001ba9381a36e53128baed111aad4fc11e4c32",
+    "ABI_CAPABILITY_COMPILER_PHASE1_ABSTENTION_V2_DECISION.json": "b98320a0106003fbac133e30b51abef0638e913ebbb7841be34a3c0e2a1c0ede",
+    "results/abi_capability_compiler_phase1/v1/source_search_attempts.jsonl": "41d556ad1ff9b8e0f875a0d76299bedfce2dc8de756d088618fb85fb0a7f8648",
+    "results/abi_capability_compiler_phase1/v1/source_search_summary.json": "8088d07d89c912c603cf68a40cb818873165dd01d1f4dc40abbbabcdc2858adc",
+    "results/abi_capability_compiler_phase1/v2/abstention_source_attempts.jsonl": "930ea01334d02d5fe1adef4643ce4e9e7000127ade2f3fa3e211ab0012174cd3",
+    "results/abi_capability_compiler_phase1/v2/abstention_source_summary.json": "1c1f7933335f1da4e0772e3449fdfbd2e8084173a3f8ce78cdd4961adbf2be2a",
+    "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20"
+  },
+  "source": {
+    "model": "microsoft/Phi-3-mini-4k-instruct",
+    "revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310",
+    "license": "mit",
+    "device": "cuda",
+    "precision": "float16",
+    "attention_implementation": "eager",
+    "teacher_outputs_generated": 11737,
+    "authoritative_teacher_tokens_all_attempts": 387865,
+    "teacher_input_tokens_all_attempts": 1104483,
+    "source_inference_seconds": 3878.851831,
+    "source_load_seconds": 74.730527,
+    "wall_seconds": 4022.11081,
+    "peak_process_rss_bytes": 2326757376,
+    "peak_cuda_allocated_bytes": 10033556992
+  },
+  "normalized_ir": {
+    "archive_sha256": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+    "archive_bytes": 5549675,
+    "manifest_sha256": "a4c4769a9d0b4d5534f4354161a234f14ee085cfc6c5944b1885711d0660d77b",
+    "selected_records": 7000,
+    "selected_records_per_english_capability": 500,
+    "selected_authoritative_teacher_tokens": 215647,
+    "selected_teacher_input_tokens": 576925,
+    "selected_raw_prompt_bytes": 1381925,
+    "selected_raw_teacher_output_bytes": 671297,
+    "selected_unique_normalized_output_utf8_bytes": 463312,
+    "stored_logits": 0,
+    "stored_activations": 0,
+    "copied_source_parameters": 0,
+    "bridge_or_student_parameters": 0,
+    "normalization_seconds": 9.513707,
+    "semantic_rewrite_performed": false
+  },
+  "data_suitability": {
+    "english_capabilities": 14,
+    "development_prompts_per_capability": 100,
+    "final_prompts_per_capability": 100,
+    "domain_isolation_prompts_per_domain": 100,
+    "adversarial_prompts_per_family": 100,
+    "cross_split_exact_prompt_overlap": 0,
+    "cross_split_near_duplicate_clusters": 0,
+    "duplicate_source_record_ids": 0,
+    "duplicate_normalized_prompt_output_pairs": 0,
+    "selected_length_terminated_records": 0,
+    "specialist_records_in_english_acquisition": 0,
+    "domain_reference_records": 400,
+    "domain_acquisition_records": 0,
+    "domain_reference_role": "evaluation_only_not_acquisition",
+    "mathematics_reference_source_passes": 0,
+    "mathematics_reference_source_failures": 100
+  },
+  "negative_evidence": {
+    "v1_status": "FAIL_SOURCE_EVIDENCE_INADEQUATE",
+    "v1_abstention_passes": 237,
+    "v1_abstention_failures_after_repair": 463,
+    "v1_failures_reclassified_by_v2": 0,
+    "v2_fresh_abstention_passes": 400,
+    "v2_fresh_abstention_failures": 0,
+    "gpu_preflight_attempt1_status": "FAIL_RUNTIME_CONFORMANCE_BEFORE_GENERATION",
+    "historical_bundles_overwritten": false
+  },
+  "verification": {
+    "ir_verifier": "PASS",
+    "semantic_hostile_mutations": 5,
+    "archive_path_traversal_mutations": 1,
+    "real_artifact_verification_tests": 1,
+    "hostile_tests_passed": 7,
+    "implementation_tree_full_test_suite": {
+      "passed": 453,
+      "failed": 0,
+      "warnings": 2,
+      "warnings_scope": "SWIG deprecation warnings only"
+    },
+    "certification_tree_full_test_suite_expected": {
+      "passed": 455,
+      "failed": 0
+    }
+  },
+  "not_established": [
+    "teacher-to-LayerCake acquisition",
+    "English fluency of a trained LayerCake candidate",
+    "ABI superiority over LoRA or distillation",
+    "a sufficient-information minimum",
+    "specialist-domain acquisition",
+    "exhaustive domain discovery",
+    "teacher-relative deployment quality or speed"
+  ],
+  "phase_transition": {
+    "phase0": "COMPLETE",
+    "phase1": "COMPLETE",
+    "phase2": "OPEN_NOT_STARTED",
+    "phase3_through_phase8": "LOCKED",
+    "next_action": "Freeze materialized Phase 2 baseline implementation hashes, then train the mandatory matched LoRA and distillation baselines without accessing final-test outputs."
+  },
+  "claim_boundary": "Phase 1 certifies a bounded normalized teacher-data artifact, not a model, transfer result, or superiority claim."
+}

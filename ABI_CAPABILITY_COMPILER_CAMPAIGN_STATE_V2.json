@@ -1,0 +1,19 @@
+{
+  "format": "abi-capability-compiler-campaign-state/2",
+  "status_date": "2026-08-03",
+  "controlling_contract": "ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json",
+  "historical_contract_modified": false,
+  "phases": [
+    {"id": 0, "status": "COMPLETE", "certificate": "ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json"},
+    {"id": 1, "status": "COMPLETE", "certificate": "ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json"},
+    {"id": 2, "status": "OPEN_NOT_STARTED", "certificate": null},
+    {"id": 3, "status": "LOCKED", "certificate": null},
+    {"id": 4, "status": "LOCKED", "certificate": null},
+    {"id": 5, "status": "LOCKED", "certificate": null},
+    {"id": 6, "status": "LOCKED", "certificate": null},
+    {"id": 7, "status": "LOCKED", "certificate": null},
+    {"id": 8, "status": "LOCKED", "certificate": null}
+  ],
+  "training_authorized": "Phase 2 mandatory matched baselines only after their materialized implementation hashes are frozen; no Phase 3 ABI candidate is authorized.",
+  "moonshot_complete": false
+}
