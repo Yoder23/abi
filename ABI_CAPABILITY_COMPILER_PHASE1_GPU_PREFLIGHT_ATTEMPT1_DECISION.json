@@ -1,0 +1,24 @@
+{
+  "format": "abi-capability-compiler-phase1-preflight-decision/1",
+  "attempt": 1,
+  "date": "2026-08-03",
+  "status": "FAIL_RUNTIME_CONFORMANCE_BEFORE_GENERATION",
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE1_PROTOCOL_V1.json",
+    "sha256": "dcc89850c36a55f59a0dd2187b4345e162630538ba12b0d3ee291fe59c95ceec"
+  },
+  "implementation_commit": "77fe1124144ede6afb25a8d70a48f5b2463c833d",
+  "expected_attention_implementation": "eager",
+  "observed_attention_implementation": "sdpa",
+  "source_model_loaded": true,
+  "teacher_records_generated": 0,
+  "journal_created": false,
+  "summary_created": false,
+  "candidate_training_performed": false,
+  "final_data_accessed": false,
+  "failure_attribution": "ABI_PHASE1_EXTRACTION_RUNTIME_CONFORMANCE_PREFLIGHT",
+  "bounded_repair": "Invoke the installed Transformers model attention setter with the already-preregistered eager value before the first forward pass, then recheck the effective configuration.",
+  "protocol_or_catalog_changed": false,
+  "historical_evidence_changed": false,
+  "claim_boundary": "This attempt produced no teacher response and supplies no acquisition-quality evidence. It is retained solely as a failed runtime-conformance preflight."
+}

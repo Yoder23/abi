@@ -222,8 +222,13 @@ def run_extraction(
     source_load_seconds = time.perf_counter() - load_started
     if source.source_manifest["source_manifest_sha256"] != source_spec["source_manifest_sha256"]:
         raise Phase1ExtractionError("runtime source manifest changed")
+    requested_attention = source_spec["generation"]["attention_implementation"]
+    if hasattr(source.model, "set_attn_implementation"):
+        source.model.set_attn_implementation(requested_attention)
+    else:
+        source.model.config._attn_implementation = requested_attention
     attention = str(getattr(source.model.config, "_attn_implementation", "eager"))
-    if attention != source_spec["generation"]["attention_implementation"]:
+    if attention != requested_attention:
         raise Phase1ExtractionError(f"attention implementation changed: {attention}")
 
     inference_seconds = 0.0
