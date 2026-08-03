@@ -15,9 +15,10 @@ the falsifiable meaning of ABI product superiority. The lettered roadmap below
 is retained as a research-lineage map; where sequencing differs, the numbered
 capability-compiler campaign controls.
 
-Current active state: **capability-compiler Phase 0 is OPEN**. Phase D below
-maps to compiler Phase 1 and is temporarily locked until Phase 0 freezes its
-baselines, metrics, margins, splits, and stop rules.
+Current active state: **capability-compiler Phase 0 is VERIFYING**. Its
+specification is frozen; committed verification and certification remain.
+Phase D below maps to compiler Phase 1 and stays locked until that certificate
+passes.
 
 ## Phase A — Repository and claim governance
 

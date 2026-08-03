@@ -1,7 +1,7 @@
 # ABI capability-compiler campaign v1
 
 Status date: 2026-08-03
-Status: controlling plan; Phase 0 is OPEN; no new training run is authorized
+Status: controlling plan; Phase 0 protocol is preregistered and VERIFYING; no new training run is authorized
 
 ## Decision
 
@@ -148,12 +148,15 @@ artifact-generation cost. "Small" cannot refer only to trainable parameters.
 
 ### Phase 0 - Definitions, baselines, and preregistration
 
-Status: **OPEN**.
+Status: **VERIFYING**. The specification is preregistered in
+`ABI_CAPABILITY_COMPILER_PHASE0_PROTOCOL_V1.json`; it is not complete until its
+implementation commit, verifier, full test suite, and certificate pass.
 
 - Freeze the capability ontology, English boundary, quarantine policy, source
   identities, licenses, test splits, statistical methods, noninferiority
   margins, repetition rules, and resource accounting.
-- Specify exact baseline implementations and optimization budgets.
+- Specify exact baseline algorithms and optimization budgets. Materialized
+  implementation hashes must be frozen before Phase 2 sees training results.
 - Freeze two scoreboards: common acquisition quality/cost and unique
   capability-control/deployment behavior.
 - Require at least 100 distinct prompts for every promoted headline quality
@@ -313,8 +316,7 @@ all negative evidence and limitations remain published.
 
 ## Immediate next action
 
-Complete Phase 0 only: write the versioned evaluation protocol, choose the
-exact optimized LoRA and distillation implementations, freeze the natural
-quality/isolation suites, and set numeric noninferiority and superiority
-margins. Then resume the already-required normalization and adequacy work as
-Phase 1. Do not launch another teacher-to-LayerCake training variant first.
+Complete Phase 0 only: commit and verify the preregistered protocol,
+environment identity, fail-closed verifier, full test suite, and certificate.
+Then resume the already-required normalization and adequacy work as Phase 1.
+Do not launch another teacher-to-LayerCake training variant first.

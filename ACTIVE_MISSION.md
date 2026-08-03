@@ -24,11 +24,11 @@ candidate does not inherit its performance results.
 
 ## Active objective
 
-The immediate objective is to complete Phase 0 of
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_V1.md`: freeze the definitions, optimized
-LoRA and distillation baselines, ablations, fairness views, numeric gates,
-splits, statistics, resource accounting, and stop rules needed for a valid
-comparative campaign.
+The immediate objective is to certify the preregistered Phase 0 specification
+in `ABI_CAPABILITY_COMPILER_PHASE0_PROTOCOL_V1.json`. The definitions,
+optimized LoRA and distillation baseline specifications, ablations, fairness
+views, numeric gates, splits, statistics, resource accounting, and stop rules
+are frozen; committed verification and the Phase 0 certificate remain open.
 
 This phase ends before data construction or training. It must make every later
 claim falsifiable and prevent ABI from receiving a weaker baseline, more
@@ -36,19 +36,12 @@ teacher information, more host capacity, or hidden deployment dependencies.
 
 ## Required Phase 0 work
 
-1. Freeze the exact LoRA, routed-adapter, sequence-distillation,
-   logit-distillation, strongest-justified-distillation, and ABI ablation
-   implementations.
-2. Freeze the three fairness views: equal imported information, equal final
-   deployment constraint, and matched quality frontier.
-3. Set numeric quality noninferiority, capability-control superiority,
-   leakage, confidence, repetition, and resource thresholds.
-4. Freeze untouched natural quality, isolation, composition, and systems
-   suites plus their search/development/final boundaries.
-5. Preregister the normalization schema, transformations, rejection rules,
-   metrics, thresholds, and stop conditions for successor Phase 1.
-6. Define the English capability inventory, including a clean resolution for
-   fact-free “domain-independent reasoning.”
+1. Commit the Phase 0 protocol, environment lock, verifier, and tests.
+2. Rerun the fail-closed protocol verifier and complete test suite from that
+   implementation commit.
+3. Issue a hash-bound Phase 0 certificate without changing historical evidence.
+4. Update campaign state to Phase 0 `COMPLETE` and Phase 1 `OPEN`.
+5. Seal a clean annotated Phase 0 tag.
 
 ## Phase 1 work after unlock
 
@@ -98,6 +91,8 @@ paired with the adjacent lower failing budget.
 - `CURRENT_PROJECT_STATUS.md`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_V1.md`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json`
+- `ABI_CAPABILITY_COMPILER_PHASE0_PROTOCOL_V1.json`
+- `ABI_CAPABILITY_COMPILER_PHASE0_ENVIRONMENT_V1.json`
 - `ROADMAP.md`
 - `CLAIMS.md`
 - `RESEARCH_STATUS_AND_GAPS.md`

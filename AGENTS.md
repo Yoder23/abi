@@ -32,11 +32,11 @@ binding through `ABI_LAYERCAKE_FAILURE_ATTRIBUTION_CONTRACT_V1.json`.
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_V1.md` and
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` now supersede the v4
 campaign contract for future-work sequencing only. Historical evidence and
-attribution rules remain unchanged. Capability-compiler Phase 0 is OPEN and no
-new training run is authorized until the matched LoRA/distillation baselines,
-ablations, fairness views, numeric margins, splits, statistics, and stop rules
-are frozen. Do not claim that ABI supersedes LoRA or distillation before that
-campaign passes.
+attribution rules remain unchanged. Capability-compiler Phase 0 is VERIFYING
+under `ABI_CAPABILITY_COMPILER_PHASE0_PROTOCOL_V1.json`; no new training run is
+authorized until its committed verifier, full suite, and certificate pass. Do
+not claim that ABI supersedes LoRA or distillation before the complete campaign
+passes.
 
 `ABI_LAYERCAKE_SEPARATION_STATUS_V2.json` records the current split verdict:
 the sealed LayerCake host and exact native-payload receiving path pass, while

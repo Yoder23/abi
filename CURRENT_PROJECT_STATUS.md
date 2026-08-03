@@ -10,8 +10,9 @@ teacher-to-LayerCake signal, and a bounded pre-transfer labeling pass. It has
 not yet produced a broadly fluent teacher-derived LayerCake English core.
 
 The immediate research phase is **Phase 0 of the ABI capability-compiler
-campaign: definitions, strong baselines, and preregistration**. It is open and
-has not passed. Normalized transfer-corpus construction follows as Phase 1;
+campaign: definitions, strong baselines, and preregistration**. Its protocol is
+now preregistered and VERIFYING, but it has not yet been certified. Normalized
+transfer-corpus construction follows as Phase 1;
 the sufficient-information frontier is Phase 4 and is not yet authorized.
 
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_V1.md` and its machine-readable contract now
@@ -58,7 +59,7 @@ sufficient-information frontier.
 | Historical bounded v47 reference | PASS on its locked synthetic suite | End-to-end teacher-free packaging, bounded capabilities, and a measured runtime | Broad English fluency; the later novel-form audit scored LayerCake 0/28 versus Phi-3 19/28 |
 | V87 causal grammar transfer pilot | Causal signal PASS; formal pilot FAIL | Real teacher mappings beat unchanged-parent and shuffled-target controls | Reliable grammar transfer, deployability, broad English, or repetition safety |
 | V89 pre-transfer labeling | Bounded PASS | Actual teacher records can be routed into English, four known domains, or quarantine under the locked ontology | Exhaustive domain discovery, arbitrary-record classification, normalization, sufficient data, or LayerCake quality |
-| Compiler definitions and matched-baseline preregistration | OPEN | Not yet established | No new training run is promotion-eligible before numeric gates and baseline recipes are frozen |
+| Compiler definitions and matched-baseline preregistration | VERIFYING | Protocol, environment, numeric gates, baselines, statistics, and stop rules are frozen in the working tree | No new training run is promotion-eligible until committed verification and a Phase 0 certificate pass |
 | Normalized corpus and adequacy | LOCKED behind compiler Phase 0 | Not yet established | Training must not begin from raw or merely labeled records |
 | Sufficient-information frontier | OPEN | Not yet established | No smallest fluent core or imported-information budget is known |
 | Integrated ABI-derived LayerCake | OPEN | Not yet established | No ABI candidate inherits sealed LayerCake performance evidence |
@@ -150,11 +151,10 @@ checks to make later research code appear release-equivalent.
 
 ## Immediate next gate
 
-Complete Phase 0 of `ABI_CAPABILITY_COMPILER_CAMPAIGN_V1.md`: freeze the exact
-optimized LoRA, routed-adapter, sequence-distillation, logit-distillation, and
-ABI ablation baselines; the three fairness views; untouched evaluation splits;
-numeric noninferiority and superiority margins; statistical tests; seeds; and
-resource-accounting rules.
+Complete committed verification of
+`ABI_CAPABILITY_COMPILER_PHASE0_PROTOCOL_V1.json`: bind the protocol,
+environment, verifier, tests, and full-suite result to an implementation
+commit, issue a Phase 0 certificate, and verify the resulting tree is clean.
 
 Only after Phase 0 passes may normalized artifact work begin. That Phase 1
 artifact must separately account for English and every selected domain:
