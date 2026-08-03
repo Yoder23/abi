@@ -371,11 +371,15 @@ def build_ir(*, root: Path, output_path: Path) -> dict[str, Any]:
     domain_bundle_path = root / v1_protocol["declared_domain_reference"]["source_bundle"]["path"]
     with zipfile.ZipFile(domain_bundle_path, "r") as archive:
         source_records = [json.loads(line) for line in archive.read("records.jsonl").splitlines() if line.strip()]
-        passing_ids = {row["record_id"] for row in json.loads(archive.read("probe_results.json")) if row["passed"]}
+        source_result_by_record = {
+            row["record_id"]: row
+            for row in json.loads(archive.read("probe_results.json"))
+        }
     domain_rows: list[dict[str, Any]] = []
     for source_row in source_records:
-        if source_row["destination_scope"] != "domain_cake" or source_row["domain"] not in DOMAINS or source_row["record_id"] not in passing_ids:
+        if source_row["destination_scope"] != "domain_cake" or source_row["domain"] not in DOMAINS:
             continue
+        source_result = source_result_by_record[source_row["record_id"]]
         prompt, prompt_steps = normalize_text(source_row["prompt"])
         output, output_steps = normalize_text(source_row["output"])
         row = {
@@ -390,6 +394,9 @@ def build_ir(*, root: Path, output_path: Path) -> dict[str, Any]:
             "destination": "domain_cake",
             "domain": source_row["domain"],
             "capability": source_row["capability"],
+            "source_functional_pass": bool(source_result["passed"]),
+            "source_functional_score": float(source_result["score"]),
+            "source_functional_evaluator": source_result["evaluator"],
             "raw_prompt": source_row["prompt"],
             "normalized_prompt": prompt,
             "normalized_prompt_sha256": hashlib.sha256(prompt.encode("utf-8")).hexdigest(),
