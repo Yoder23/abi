@@ -261,9 +261,11 @@ def main(argv: Sequence[str] | None = None) -> int:
         parser.error(f"catalog is immutable: {output}")
     catalog = build_catalog()
     output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(
-        json.dumps(catalog, indent=2, sort_keys=True, ensure_ascii=False) + "\n",
-        encoding="utf-8",
+    output.write_bytes(
+        (
+            json.dumps(catalog, indent=2, sort_keys=True, ensure_ascii=False)
+            + "\n"
+        ).encode("utf-8")
     )
     print(
         json.dumps(
