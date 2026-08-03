@@ -1,0 +1,92 @@
+{
+  "format": "abi-capability-compiler-phase1-abstention-protocol/2",
+  "protocol_id": "abi-capability-compiler-phase1-abstention-v2",
+  "status": "PREREGISTERED_BEFORE_V2_TEACHER_OUTPUTS",
+  "effective_date": "2026-08-03",
+  "parent_phase1_protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE1_PROTOCOL_V1.json",
+    "sha256": "dcc89850c36a55f59a0dd2187b4345e162630538ba12b0d3ee291fe59c95ceec"
+  },
+  "v1_failure_decision": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE1_V1_DECISION.json",
+    "sha256": "8ad1354fb1137f6eda9205b00f001ba9381a36e53128baed111aad4fc11e4c32"
+  },
+  "v1_evidence": {
+    "journal": {
+      "path": "results/abi_capability_compiler_phase1/v1/source_search_attempts.jsonl",
+      "sha256": "41d556ad1ff9b8e0f875a0d76299bedfce2dc8de756d088618fb85fb0a7f8648"
+    },
+    "summary": {
+      "path": "results/abi_capability_compiler_phase1/v1/source_search_summary.json",
+      "sha256": "8088d07d89c912c603cf68a40cb818873165dd01d1f4dc40abbbabcdc2858adc"
+    },
+    "accepted_abstention_records": 237,
+    "failed_abstention_records_reclassified": 0
+  },
+  "fresh_catalog": {
+    "path": "catalogs/capability_compiler_phase1_abstention_v2.json",
+    "sha256": "b565a3c7bc80e81d801ffdec167439daa89d581cd41cb091529c7210c84e31e9",
+    "generator": {
+      "path": "abi/capability_compiler_phase1_abstention_catalog.py",
+      "sha256": "205f637921fa55134ad6a294de5fec5c2ccd0d9556c66f549b693a6484f65ed7"
+    },
+    "search_prompts": 400,
+    "validation_prompts": 0,
+    "final_prompts": 0,
+    "prior_exact_prompt_overlap": 0,
+    "prior_template_family_overlap": 0
+  },
+  "source": {
+    "model": "microsoft/Phi-3-mini-4k-instruct",
+    "revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310",
+    "license": "mit",
+    "device": "cuda",
+    "precision": "float16",
+    "attention_implementation": "eager",
+    "sampling": "greedy",
+    "temperature": 0.0,
+    "batch_size": 8,
+    "local_files_only": true,
+    "authoritative_generated_token_ids_required": true,
+    "eligible_finish_reason": "eos_token"
+  },
+  "evaluation_change": {
+    "measured_v1_gap": "Passive uncertainty constructions were semantically valid but absent from the finite V1 contains-any evaluator.",
+    "added_constructions": [
+      "cannot be known",
+      "can't be known",
+      "cannot be determined",
+      "can't be determined",
+      "cannot be predicted",
+      "can't be predicted",
+      "does not specify",
+      "doesn't specify",
+      "insufficient information"
+    ],
+    "applies_to": "fresh_v2_prompts_only",
+    "v1_failures_relabelled": false,
+    "semantic_rewrite_allowed": false
+  },
+  "selection": {
+    "v1_accepted_records_retained": 237,
+    "minimum_fresh_v2_passes": 263,
+    "fresh_v2_records_generated": 400,
+    "repair_rounds": 0,
+    "combined_abstention_minimum": 500,
+    "other_capability_generation": 0,
+    "selection_order": "ascending_sha256_of_source_protocol_colon_probe_id_colon_attempt_sha256"
+  },
+  "outputs": {
+    "journal": "results/abi_capability_compiler_phase1/v2/abstention_source_attempts.jsonl",
+    "summary": "results/abi_capability_compiler_phase1/v2/abstention_source_summary.json"
+  },
+  "stop_rules": [
+    "Generate exactly 400 fresh abstention search outputs and no other capability.",
+    "Run no repair round.",
+    "Do not reinterpret any V1 failed output under the V2 evaluator.",
+    "Do not generate validation or final-test outputs.",
+    "If fewer than 263 fresh V2 records pass, Phase 1 remains open and Phase 2 remains locked.",
+    "Perform no candidate training."
+  ]
+}
