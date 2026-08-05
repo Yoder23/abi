@@ -1,0 +1,35 @@
+{
+  "format": "abi-capability-compiler-phase3-paired-sampler-amendment/1",
+  "status": "PREREGISTERED_PAIRED_CONFORMANCE_CORRECTION",
+  "effective_date": "2026-08-04",
+  "parent_protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_EMITTER_AMENDMENT_V3.json",
+    "sha256": "afd8e278ddb2175de188cd82b946b43fcb862e30306735aef98657c6c00604fa"
+  },
+  "invalid_v3_decision": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_V3_DECISION.json",
+    "sha256": "3eabce8c968ae802bf54776a33279e49c44573b3448326c227068fdb310976a6"
+  },
+  "changes": {
+    "successful_step_sampling": {
+      "from": "sampler_advances_on_every_attempt",
+      "to": "retry_identical_batch_until_optimizer_step_succeeds"
+    },
+    "successful_record_sequence_sha256": {
+      "from": "absent",
+      "to": "required_and_equal_across_A0_A1_A2_A3_A4"
+    }
+  },
+  "all_systems_rerun_required": true,
+  "all_v3_checkpoints_and_outputs_promotion_eligible": false,
+  "quality_results_observed_before_correction": true,
+  "candidate_architecture_or_budget_changed": false,
+  "bindings": {
+    "ABI_CAPABILITY_COMPILER_PHASE3_V3_DECISION.json": "3eabce8c968ae802bf54776a33279e49c44573b3448326c227068fdb310976a6",
+    "abi/capability_compiler_phase3.py": "5d490989e088f42aba4bd2ca96fbe70ea2db211890369dd6f431dd781390c77b",
+    "tests/test_capability_compiler_phase3.py": "e386161e1871b1ebcf50031622b9d3c5a3bc96c3f005476801e520753031ec59",
+    "abi/capability_compiler_phase3_analysis.py": "4bb6dabff527c0e793c12d1177b48f98a1abec19a6ebd2dfe28b4e4a84acb38d",
+    "tests/test_capability_compiler_phase3_analysis.py": "bcbc04d149dd210e5c351618c2f5e6e1fc71c1360e35d8cdbf743ccab50326b9"
+  },
+  "claim_boundary": "V4 repairs a mandatory paired-exposure conformance violation. Because V3 quality was already observed, V4 can provide corrected evidence only for the unchanged registered branch; it cannot authorize tuning, new thresholds, or a nearby architecture."
+}

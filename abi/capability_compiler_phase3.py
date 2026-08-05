@@ -93,6 +93,42 @@ def _protocol(
     binding_overrides: frozenset[str] = frozenset(),
 ) -> tuple[dict[str, Any], str]:
     protocol = _json(path)
+    if protocol.get("format") == "abi-capability-compiler-phase3-paired-sampler-amendment/1":
+        if protocol.get("status") != "PREREGISTERED_PAIRED_CONFORMANCE_CORRECTION":
+            raise Phase3Error("Phase 3 paired-sampler amendment is not controlling")
+        parent_spec = protocol.get("parent_protocol")
+        if not isinstance(parent_spec, dict):
+            raise Phase3Error("Phase 3 paired-sampler parent is missing")
+        parent_path = (root / str(parent_spec.get("path", ""))).resolve()
+        if not parent_path.is_file() or sha256_file(parent_path) != parent_spec.get("sha256"):
+            raise Phase3Error("Phase 3 paired-sampler parent changed")
+        changes = protocol.get("changes")
+        if changes != {
+            "successful_step_sampling": {
+                "from": "sampler_advances_on_every_attempt",
+                "to": "retry_identical_batch_until_optimizer_step_succeeds",
+            },
+            "successful_record_sequence_sha256": {
+                "from": "absent",
+                "to": "required_and_equal_across_A0_A1_A2_A3_A4",
+            },
+        }:
+            raise Phase3Error("Phase 3 paired-sampler amendment expanded")
+        amendment_bindings = _json(path).get("bindings", {})
+        if not isinstance(amendment_bindings, dict):
+            raise Phase3Error("Phase 3 paired-sampler bindings are missing")
+        parent, _ = _protocol(
+            root,
+            parent_path,
+            binding_overrides=frozenset(amendment_bindings),
+        )
+        protocol = copy.deepcopy(parent)
+        protocol["protocol_id"] = "abi-capability-compiler-phase3-conditional-paired-sampler-v4"
+        protocol["paired_sampler_amendment"] = {
+            "parent_protocol_sha256": parent_spec["sha256"],
+            "successful_record_sequence_equality_required": True,
+        }
+        protocol["bindings"].update(amendment_bindings)
     if protocol.get("format") == "abi-capability-compiler-phase3-evidence-emitter-amendment/1":
         if protocol.get("status") != "PREREGISTERED_EVIDENCE_EMITTER_ONLY":
             raise Phase3Error("Phase 3 evidence-emitter amendment is not controlling")
@@ -349,43 +385,50 @@ def train_candidate(
     before = {name: value.detach().cpu().clone() for name, value in model.state_dict().items()}
     started = time.perf_counter()
     successful = 0
+    skipped_amp_steps = 0
     language_tokens = 0
     sampled = Counter()
+    sampled_record_sequence = hashlib.sha256()
     curves = []
     model.train()
     while successful < int(cfg["steps"]):
         selected = sampler.batch(int(cfg["batch_size"]))
-        ids, labels, attention, prompt_lengths, routes = _batch(
-            selected, int(tokenizer.eos_token_id), device
-        )
-        optimizer.zero_grad(set_to_none=True)
-        with torch.autocast("cuda", dtype=torch.float16):
-            result = model(
-                ids,
-                attention_mask=attention,
-                prompt_lengths=prompt_lengths,
-                task_routes=routes,
-                use_cache=False,
+        while True:
+            ids, labels, attention, prompt_lengths, routes = _batch(
+                selected, int(tokenizer.eos_token_id), device
             )
-            classifier_loss = F.cross_entropy(result["task_logits"].float(), routes)
-            if system == "A3":
-                language_loss = result["logits"].sum() * 0.0
-            else:
-                language_loss = F.cross_entropy(
-                    result["logits"][:, :-1].float().reshape(-1, result["logits"].shape[-1]),
-                    labels[:, 1:].reshape(-1),
-                    ignore_index=-100,
+            optimizer.zero_grad(set_to_none=True)
+            with torch.autocast("cuda", dtype=torch.float16):
+                result = model(
+                    ids,
+                    attention_mask=attention,
+                    prompt_lengths=prompt_lengths,
+                    task_routes=routes,
+                    use_cache=False,
                 )
-            loss = language_loss + float(cfg["classifier_loss_weight"]) * classifier_loss
-        scaler.scale(loss).backward()
-        scaler.unscale_(optimizer)
-        torch.nn.utils.clip_grad_norm_(trainable, 1.0)
-        scale_before = scaler.get_scale()
-        scaler.step(optimizer)
-        scaler.update()
-        if scaler.get_scale() < scale_before:
-            continue
+                classifier_loss = F.cross_entropy(result["task_logits"].float(), routes)
+                if system == "A3":
+                    language_loss = result["logits"].sum() * 0.0
+                else:
+                    language_loss = F.cross_entropy(
+                        result["logits"][:, :-1].float().reshape(-1, result["logits"].shape[-1]),
+                        labels[:, 1:].reshape(-1),
+                        ignore_index=-100,
+                    )
+                loss = language_loss + float(cfg["classifier_loss_weight"]) * classifier_loss
+            scaler.scale(loss).backward()
+            scaler.unscale_(optimizer)
+            torch.nn.utils.clip_grad_norm_(trainable, 1.0)
+            scale_before = scaler.get_scale()
+            scaler.step(optimizer)
+            scaler.update()
+            if scaler.get_scale() < scale_before:
+                skipped_amp_steps += 1
+                continue
+            break
         successful += 1
+        for row in selected:
+            sampled_record_sequence.update(str(row["record_id"]).encode("ascii") + b"\n")
         language_tokens += sum(int(row["response_tokens"]) for row in selected) if system != "A3" else 0
         sampled.update(str(row["capability"]) for row in selected)
         rss_peak = max(rss_peak, process.memory_info().rss)
@@ -453,6 +496,8 @@ def train_candidate(
             "trainable_parameter_ratio": trainable_parameters / total_parameters,
             "active_parameter_seconds": trainable_parameters * wall_seconds,
             "teacher_response_tokens_seen": language_tokens,
+            "skipped_amp_steps": skipped_amp_steps,
+            "successful_record_sequence_sha256": sampled_record_sequence.hexdigest(),
             "sampled_records_by_capability": dict(sorted(sampled.items())),
             "wall_seconds": wall_seconds,
             "peak_process_rss_bytes": int(rss_peak),

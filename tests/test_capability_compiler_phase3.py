@@ -12,6 +12,7 @@ from abi.capability_compiler_phase3 import (
     _deranged_outputs,
     _protocol,
     _route,
+    _BalancedSampler,
     load_phase1_ir,
 )
 
@@ -168,4 +169,60 @@ def test_emitter_amendment_cannot_change_training_semantics(tmp_path):
     amendment["changes"]["training.learning_rate"] = {"from": 0.0001, "to": 0.001}
     path.write_text(json.dumps(amendment), encoding="utf-8")
     with pytest.raises(Phase3Error, match="experiment semantics"):
+        _protocol(tmp_path, path)
+
+
+def test_balanced_sampler_is_identical_across_system_views():
+    rows = []
+    for capability in CAPABILITIES:
+        for index in range(8):
+            rows.append({"capability": capability, "record_id": f"{capability}-{index}"})
+    left = _BalancedSampler(rows, 104729)
+    right = _BalancedSampler(rows, 104729)
+    for _ in range(100):
+        assert [row["record_id"] for row in left.batch(4)] == [
+            row["record_id"] for row in right.batch(4)
+        ]
+
+
+def test_paired_sampler_amendment_rejects_budget_changes(tmp_path):
+    import hashlib
+
+    bound = tmp_path / "bound.txt"
+    bound.write_text("bound", encoding="utf-8")
+    parent = {
+        "format": "abi-capability-compiler-phase3-protocol/1",
+        "status": "PREREGISTERED_CONDITIONAL_PHASE3",
+        "phase2_status": "MACHINE_COMPLETE_HUMAN_RATINGS_DEFERRED",
+        "final_test_access": "PROHIBITED",
+        "bindings": {"bound.txt": hashlib.sha256(b"bound").hexdigest()},
+    }
+    parent_path = tmp_path / "parent.json"
+    parent_path.write_text(json.dumps(parent), encoding="utf-8")
+    amendment = {
+        "format": "abi-capability-compiler-phase3-paired-sampler-amendment/1",
+        "status": "PREREGISTERED_PAIRED_CONFORMANCE_CORRECTION",
+        "parent_protocol": {
+            "path": "parent.json",
+            "sha256": hashlib.sha256(parent_path.read_bytes()).hexdigest(),
+        },
+        "changes": {
+            "successful_step_sampling": {
+                "from": "sampler_advances_on_every_attempt",
+                "to": "retry_identical_batch_until_optimizer_step_succeeds",
+            },
+            "successful_record_sequence_sha256": {
+                "from": "absent",
+                "to": "required_and_equal_across_A0_A1_A2_A3_A4",
+            },
+        },
+        "bindings": {},
+    }
+    path = tmp_path / "paired.json"
+    path.write_text(json.dumps(amendment), encoding="utf-8")
+    loaded, _ = _protocol(tmp_path, path)
+    assert loaded["paired_sampler_amendment"]["successful_record_sequence_equality_required"]
+    amendment["changes"]["training.steps"] = {"from": 7000, "to": 8000}
+    path.write_text(json.dumps(amendment), encoding="utf-8")
+    with pytest.raises(Phase3Error, match="expanded"):
         _protocol(tmp_path, path)

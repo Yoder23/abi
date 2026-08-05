@@ -1,0 +1,19 @@
+{
+  "format": "abi-capability-compiler-phase3-v3-decision/1",
+  "status": "INVALID_PAIRED_SAMPLE_SEQUENCE_CONFORMANCE",
+  "effective_date": "2026-08-04",
+  "protocol_sha256": "afd8e278ddb2175de188cd82b946b43fcb862e30306735aef98657c6c00604fa",
+  "quality_evidence": "results/abi_capability_compiler_phase3/conditional_decision_v1.json",
+  "quality_evidence_sha256": "7b490013c7640f9607d9e9a2ef3a50510a4fe6f5a2869019c130bd3187f25caf",
+  "observed": {
+    "A0_teacher_response_tokens_seen": 723763,
+    "A1_teacher_response_tokens_seen": 723855,
+    "A4_teacher_response_tokens_seen": 723763
+  },
+  "failure": "A0, A1, and A4 use identical response material and seed, so paired successful steps must expose the same record sequence. The A1 mismatch proves that skipped AMP attempts advanced the mutable sampler before a successful optimizer step.",
+  "effect": "All V3 quality and paired-bootstrap results are descriptive negative evidence only. The apparent causal intervals are not promotion-eligible and are not claimed as a valid paired result.",
+  "required_correction": "Retry the identical sampled batch after every skipped AMP step; advance the sampler only after a successful optimizer step; record a SHA-256 of the ordered successful record-ID sequence; require equality across A0-A4.",
+  "all_v3_checkpoints_preserved": true,
+  "historical_evidence_changed": false,
+  "final_test_accessed": false
+}
