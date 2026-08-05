@@ -25,11 +25,12 @@ Three facts define the current checkpoint:
 3. V89 passes bounded pre-transfer labeling for English, chemistry, civics,
    mathematics, Python, and quarantine on a source-record-disjoint holdout.
 
-Capability-compiler Phases 0 and 1 are **COMPLETE**. Phase 2—strong matched LoRA
-and distillation baselines—is **OPEN_NOT_STARTED**. Phases 3 through 8 remain
-locked. No current ABI artifact is certified as a broadly fluent,
-teacher-derived English core, and no ABI candidate training is authorized
-before Phase 2 passes.
+Capability-compiler Phases 0 and 1 are **COMPLETE**. Phase 2 machine evidence is
+complete, but Phase 2 is **BLOCKED_EXTERNAL_HUMAN_RATINGS**: the contract
+requires three independent blinded counterbalanced ratings for each prompt.
+Phases 3 through 8 remain locked. No current ABI artifact is certified as a
+broadly fluent teacher-derived English core, and no ABI candidate training is
+authorized.
 
 Read [CURRENT_PROJECT_STATUS.md](CURRENT_PROJECT_STATUS.md) before interpreting
 any experiment or launching new work.
@@ -43,6 +44,8 @@ any experiment or launching new work.
 | Small-scale causal teacher transfer | Signal demonstrated; formal pilot FAIL | `ABI_TEACHER_TO_LAYERCAKE_GRAMMAR_PILOT_V87_DECISION.json` |
 | Pre-transfer English/domain labeling | Bounded PASS | `ABI_TEACHER_RECORD_LABELING_PHASE2_CERTIFICATE_V89.json` |
 | Normalized English acquisition IR | PASS as a data artifact | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
+| Phase 2 matched-baseline machine campaign | COMPLETE; external human gate pending | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
+| Phase 2 human rating packet | READY; 21,000 independent judgments pending | `results/abi_capability_compiler_phase2/human_rating_packet_v1/manifest.json` |
 | Sufficient-information frontier | OPEN | Not yet measured |
 | Integrated teacher-derived LayerCake | OPEN | Not yet produced |
 
@@ -68,6 +71,27 @@ negative, evaluation-only evidence.
 Phase 1 performed no candidate training. It establishes artifact suitability,
 not fluency, transfer, minimum information, specialist acquisition, or ABI
 superiority.
+
+## Phase 2 machine result
+
+The preregistered matched-baseline campaign is complete on machine-verifiable
+evidence. T0 scored 1,237/1,400 with 64 repetition collapses. Across three
+seeds, L0 averaged 94.60% functional passes and L1 averaged 93.86%; both retain
+the 3.82B source model at inference. L1 routed 4,200/4,200 prompts correctly.
+
+The same-size teacher-free students are fast but unusable at this budget. D0,
+D1, and D2 averaged 6.69%, 0.50%, and 2.10% functional passes, with severe
+collapse. Their warm throughput is 9.83×, 5.94×, and 6.84× T0 in bytes/second,
+but speed from a failed-quality checkpoint is not promotable. L0 and L1 retain
+quality but reach only 0.84× and 0.83× T0 warm throughput.
+
+No p95 or p99 is claimed from the 20 warm observations. Every cold result uses
+one fresh process and one request, measuring load, first output, and total
+latency from that same request. The final split was not accessed, and no ABI or
+LayerCake candidate was trained.
+
+Phase 2 is not complete until three independent people finish the blinded
+rating forms. Phase 3 remains locked.
 
 ## V89 labeling result
 
@@ -174,7 +198,8 @@ novel-form audit invalidated any general-purpose English interpretation.
 - [Phase 0 protocol](ABI_CAPABILITY_COMPILER_PHASE0_PROTOCOL_V1.json)
 - [Phase 0 environment](ABI_CAPABILITY_COMPILER_PHASE0_ENVIRONMENT_V1.json)
 - [Phase 0 certificate](ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json)
-- [Live campaign state](ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V2.json)
+- [Historical campaign state V2](ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V2.json)
+- [Current live campaign state V3](ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V3.json)
 - [Phase 1 certificate](ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json)
 - [Phase 1 protocol](ABI_CAPABILITY_COMPILER_PHASE1_PROTOCOL_V1.json)
 - [Research-ledger policy](RESEARCH_LEDGER_POLICY.md)

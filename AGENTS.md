@@ -19,21 +19,26 @@ LayerCake cake.
 
 ## Current campaign state
 
-Status date: 2026-08-03.
+Status date: 2026-08-04.
 
 - Capability-compiler Phase 0 is **COMPLETE** under
   `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json`.
 - Capability-compiler Phase 1 is **COMPLETE** under
   `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json`.
-- Phase 2 is **IN_PROGRESS_PREREGISTERED_REPAIR1** under
-  `ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_REPAIR1_V2.json`; the sole allowed
-  implementation repair corrected tokenizer/model vocabulary accounting
-  before any pack artifact or Phase 2 training result existed.
+- Phase 2 machine evidence is **COMPLETE**, but Phase 2 is
+  **BLOCKED_EXTERNAL_HUMAN_RATINGS**. The fail-closed report is
+  `results/abi_capability_compiler_phase2/machine_evidence_v1.json`.
+- All preregistered T0/L0/L1/D0/D1/D2 development, full-depth, three-seed,
+  paired-statistics, genuine-cold, and 20-observation warm runs are complete.
+  No ABI or LayerCake candidate was trained in Phase 2.
+- The three blinded counterbalanced rating forms contain 7,000 pairs each and
+  require 21,000 judgments from three independent people. Until those forms
+  are completed and verified, Phase 2 has no final certificate.
 - Phases 3 through 8 are **LOCKED**.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V2.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V3.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -56,10 +61,11 @@ LoRA or distillation.
 
 ## Active authorization
 
-Phase 2 may run only the hash-bound T0, L0, L1, D0, D1, and bounded D2 baseline
-campaign in `ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_REPAIR1_V2.json`. Do not start
-Phase 3 ABI-candidate training until Phase 2 is certified. Final-test outputs
-may not influence implementation, tuning, repair, stopping, or selection.
+No further Phase 2 training is authorized. Assign exactly one complete blinded
+rating form to each of three independent human raters. Raters may not see the
+blinding key or one another's work before all forms are locked. Do not start
+Phase 3 ABI-candidate training until a final Phase 2 certificate passes.
+Final-test outputs remain prohibited.
 
 ## Permanent scientific rules
 
@@ -95,6 +101,7 @@ may not influence implementation, tuning, repair, stopping, or selection.
 ```powershell
 C:\Python310\python.exe -m abi.capability_compiler_phase1_certificate
 C:\Python310\python.exe -m abi.capability_compiler_phase2_verify
+C:\Python310\python.exe -m abi.capability_compiler_phase2_evidence
 C:\Python310\python.exe -m pytest -q
 ```
 

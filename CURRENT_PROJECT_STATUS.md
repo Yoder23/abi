@@ -1,6 +1,6 @@
 # ABI current project status
 
-Status date: 2026-08-03
+Status date: 2026-08-04
 
 ## Executive state
 
@@ -9,11 +9,12 @@ It has a working bounded reference release, a demonstrated small-scale causal
 teacher-to-LayerCake signal, and a bounded pre-transfer labeling pass. It has
 not yet produced a broadly fluent teacher-derived LayerCake English core.
 
-Capability-compiler Phase 0 is **COMPLETE**, and Phase 1 is **COMPLETE**, under
-their respective certificates. Phase 2, the mandatory matched LoRA and
-distillation baseline campaign, is **OPEN_NOT_STARTED**. Phases 3 through 8
-remain locked. The sufficient-information frontier is Phase 4 and is not yet
-authorized.
+Capability-compiler Phase 0 is **COMPLETE**, and Phase 1 is **COMPLETE**.
+Phase 2's preregistered
+machine campaign is complete and adversarially rehashed, but Phase 2 is
+**BLOCKED_EXTERNAL_HUMAN_RATINGS**. Three independent people must complete the
+21,000 blinded counterbalanced judgments before a final Phase 2 certificate can
+exist. Phases 3 through 8 remain locked.
 
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_V1.md` and its machine-readable contract now
 control future work. They do not alter any historical result.
@@ -57,6 +58,7 @@ sufficient-information frontier.
 | V89 pre-transfer labeling | Bounded PASS | Actual teacher records can be routed into English, four known domains, or quarantine under the locked ontology | Exhaustive domain discovery, arbitrary-record classification, normalization, sufficient data, or LayerCake quality |
 | Compiler definitions and matched-baseline preregistration | PASS | Phase 0 certificate binds the parent lineage, teacher, host, 11 systems, data boundaries, numeric gates, statistics, accounting, and stop rules | No LoRA, distillation, ABI acquisition, or superiority result |
 | Normalized acquisition IR | PASS | 7,000 records; 500 per English capability; provenance, authoritative tokens, hashes, and disjoint frozen evaluation material | No model, fluent transfer, domain acquisition, or minimum-information result |
+| Matched LoRA/distillation machine baselines | COMPLETE; human gate pending | All registered search/full/headline/runtime/statistical evidence is complete and content-verified | No ABI candidate, no teacher-free fluent model, and no Phase 2 certificate yet |
 | Sufficient-information frontier | OPEN | Not yet established | No smallest fluent core or imported-information budget is known |
 | Integrated ABI-derived LayerCake | OPEN | Not yet established | No ABI candidate inherits sealed LayerCake performance evidence |
 
@@ -114,6 +116,10 @@ a bounded point-estimate pass rather than a population-wide guarantee.
   content-addressed acquisition IR.
 - `abi/capability_compiler_phase1_certificate.py` verifies the complete Phase
   1 seal and all bound evidence hashes.
+- `abi/capability_compiler_phase2_evidence.py` rehashes every Phase 2 machine
+  artifact and fails closed while independent human ratings are absent.
+- `abi/capability_compiler_phase2_human_packet.py` deterministically creates
+  three blinded, exactly counterbalanced rating forms and a separate key.
 - The existing v3 segregated-bundle consumers enforce destination and purity
   metadata before materialization. Phase 1 now supplies a normalized successor
   acquisition IR, but its sufficiency for broad English remains untested.
@@ -141,6 +147,9 @@ checks to make later research code appear release-equivalent.
   English acquisition IR with 500 records per capability, zero detected
   cross-split exact/near-duplicate collisions, and no specialist acquisition
   records.
+- ABI Phase 2 has completed its preregistered machine baseline matrix. Strong
+  source-retained adapters preserve quality but are not compact or teacher
+  free; same-size teacher-free students are fast but fail quality severely.
 
 ## Claims not allowed now
 
@@ -159,12 +168,15 @@ checks to make later research code appear release-equivalent.
 
 ## Immediate next gate
 
-Execute Phase 2 only. First materialize and freeze the exact baseline
-implementation hashes. Then train strong matched LoRA and sequence/logit
-distillation competitors on the certified Phase 1 information under the three
-preregistered fairness views. Tune with development data only, reproduce
-headline configurations across three paired seeds, and preserve raw quality,
-cost, memory, timing, and deployment evidence.
+Complete the external human gate only. Assign one immutable form to each of
+three independent raters and keep the answer key hidden until all forms are
+locked. Then compute the registered preference statistics, rerun hostile
+verification, and issue a Phase 2 certificate only if every gate passes.
 
-Phase 2 does not authorize an ABI candidate or a superiority claim. Phase 3
-remains locked until the baseline certificate passes.
+No more Phase 2 training and no Phase 3 candidate training are authorized.
+
+The full ABI suite currently reports 471 passed and one intentionally strict
+external-control failure: the separate clean LayerCake repository is ahead of
+the exact contract-bound control commit, which remains an ancestor. The
+identity verifier was not weakened. See
+`ABI_CAPABILITY_COMPILER_PHASE2_MACHINE_EVIDENCE_V1.md`.

@@ -1,0 +1,31 @@
+{
+  "format": "abi-capability-compiler-campaign-state/3",
+  "status_date": "2026-08-04",
+  "controlling_contract": "ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json",
+  "historical_contract_modified": false,
+  "supersedes_live_state_only": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V2.json",
+  "phases": [
+    {"id": 0, "status": "COMPLETE", "certificate": "ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json"},
+    {"id": 1, "status": "COMPLETE", "certificate": "ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json"},
+    {
+      "id": 2,
+      "status": "MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS",
+      "protocol": "ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_REPAIR1_V2.json",
+      "machine_evidence": "results/abi_capability_compiler_phase2/machine_evidence_v1.json",
+      "machine_evidence_sha256": "589d882668e5ccd5c620ec8ad7b0528fff991e818a5252d928fb4f415becd9ec",
+      "human_rating_packet": "results/abi_capability_compiler_phase2/human_rating_packet_v1/manifest.json",
+      "human_rating_packet_sha256": "06c1e9e0f8f4f938cd020686fff7ac8470e8cff4a3d3fe294a0b0c003e2c69aa",
+      "certificate": null
+    },
+    {"id": 3, "status": "LOCKED", "certificate": null},
+    {"id": 4, "status": "LOCKED", "certificate": null},
+    {"id": 5, "status": "LOCKED", "certificate": null},
+    {"id": 6, "status": "LOCKED", "certificate": null},
+    {"id": 7, "status": "LOCKED", "certificate": null},
+    {"id": 8, "status": "LOCKED", "certificate": null}
+  ],
+  "training_authorized": "NONE. The complete Phase 2 machine baseline matrix has finished. Phase 3 remains locked until three independent blinded human rating forms are completed, unblinded, verified, and a final Phase 2 certificate passes.",
+  "immediate_next_action": "Assign one immutable Phase 2 rating form to each of three independent human raters without exposing the blinding key. Preserve completed forms separately, compute the preregistered blinded-preference statistics, rerun the hostile evidence verifier, and issue a Phase 2 certificate only if every exit condition passes.",
+  "final_prompts_accessed": false,
+  "moonshot_complete": false
+}

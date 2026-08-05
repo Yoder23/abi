@@ -1,6 +1,6 @@
 # ABI capability-compiler roadmap
 
-Status date: 2026-08-03
+Status date: 2026-08-04
 
 The machine-readable contract
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` controls sequencing and
@@ -11,7 +11,7 @@ Evidence gates, not experiment counts or dates, close phases.
 | ---: | --- | --- |
 | 0 | Definitions, baselines, and preregistration | COMPLETE |
 | 1 | Capability inventory and normalized acquisition IR | COMPLETE |
-| 2 | Strong matched LoRA and distillation baselines | OPEN_NOT_STARTED |
+| 2 | Strong matched LoRA and distillation baselines | MACHINE COMPLETE; BLOCKED ON EXTERNAL HUMAN RATINGS |
 | 3 | Causal teacher-to-target acquisition | LOCKED |
 | 4 | Sufficient-information Pareto frontier | LOCKED |
 | 5 | Selective reconstruction and bounded exclusion | LOCKED |
@@ -35,17 +35,18 @@ outputs remain published negative evidence.
 Phase 1 did not train or evaluate a student. It closes corpus normalization and
 adequacy only.
 
-## Phase 2 — next gate
+## Phase 2 — machine campaign complete, human gate pending
 
-1. Materialize and hash strong LoRA and distillation baseline implementations.
-2. Use the same certified teacher records and explicitly matched information
-   budgets required by the contract.
-3. Tune on development data only.
-4. Reproduce promoted results across three paired seeds or initializations.
-5. Measure functional and generative quality, leakage, composition effects,
-   installed and active bytes, throughput, TTFT, memory, acquisition cost,
-   removal, restoration, and portability.
-6. Preserve all raw observations and independently recompute aggregates.
+All registered baseline training, three-seed reproduction, paired statistics,
+checkpoint persistence, cold/warm runtime, and machine verification are done.
+The next—and only—Phase 2 action is external:
+
+1. Assign one complete blinded form to each of three independent human raters.
+2. Keep the answer key and other raters' work hidden until all forms are locked.
+3. Preserve completed forms separately from the immutable templates.
+4. Compute the preregistered preference lower bound and rerun the hostile
+   evidence verifier.
+5. Issue a Phase 2 certificate only if every exit condition passes.
 
 Phase 2 exits only when each mandatory baseline is credible, converged within
 its locked budget, reproducible, and verifier-backed. No ABI-superiority claim

@@ -1,6 +1,6 @@
 # ABI research status and open questions
 
-Status date: 2026-08-03
+Status date: 2026-08-04
 
 ## What is resolved
 
@@ -25,14 +25,23 @@ Status date: 2026-08-03
    a separately preregistered fresh successor passed. Failed V1 records were
    not relabeled. The mathematics source references failed 0/100 and remain
    evaluation-only.
+9. **The matched machine baselines are complete.** T0 and every selected
+   L0/L1/D0/D1/D2 configuration have full-depth evidence; trainable systems
+   have three persisted seeds; paired bootstrap and cold/warm runtime are
+   complete and content-verified.
+10. **The conventional Pareto split is measured.** Source-retained LoRA/routed
+    adapters preserve or improve T0 functional scores but are slower and keep
+    the base. Same-size teacher-free students are 5.94–9.83× faster in warm
+    bytes/second but fail autonomous quality and repetition gates by a wide
+    margin.
 
 ## Open scientific questions
 
-### 1. What are the credible conventional baselines?
+### 1. Can independent human ratings confirm the machine baseline picture?
 
-Phase 2 must establish strong LoRA and sequence/logit-distillation competitors
-under the same source information and explicitly matched deployment views.
-Weak or under-tuned baselines cannot support a later ABI-superiority claim.
+The machine baseline matrix is complete. Phase 2 still requires 21,000 blinded
+counterbalanced judgments from three independent raters. Until those ratings
+are locked and verified, no final Phase 2 certificate exists.
 
 ### 2. Can the certified information teach broad English?
 
@@ -86,15 +95,10 @@ hardware reproduction, and external replication.
 
 ## Immediate research priority
 
-Phase 2 is open but not started:
-
-1. materialize and hash the mandatory baseline implementations;
-2. train the matched LoRA and distillation systems on development-governed
-   budgets;
-3. reproduce headline configurations across three paired seeds;
-4. publish raw quality, information, time, memory, and deployment accounting;
-5. certify the baselines without making an ABI-transfer claim; and
-6. keep Phase 3 locked until that certificate passes.
+Phase 2 machine work is finished. Arrange three genuinely independent human
+raters, one per immutable packet form, without exposing the blinding key.
+After all forms are locked, compute the preference statistics and rerun hostile
+verification. Keep Phase 3 locked until a final Phase 2 certificate passes.
 
 See `CURRENT_PROJECT_STATUS.md` for the current claim boundary and
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` for controlling gates.

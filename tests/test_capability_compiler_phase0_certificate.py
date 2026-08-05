@@ -38,7 +38,7 @@ def test_certificate_rejects_failed_certification_suite():
     assert "certification tree full suite did not pass" in errors
 
 
-def test_current_documents_open_only_phase2_after_phase1_certificate():
+def test_current_documents_keep_phase3_locked_while_phase2_waits_for_humans():
     status = (ROOT / "CURRENT_PROJECT_STATUS.md").read_text(encoding="utf-8")
     mission = (ROOT / "ACTIVE_MISSION.md").read_text(encoding="utf-8")
     roadmap = (ROOT / "ROADMAP.md").read_text(encoding="utf-8")
@@ -46,4 +46,5 @@ def test_current_documents_open_only_phase2_after_phase1_certificate():
         assert "Phase 1" in document
     assert "Phase 0 is **COMPLETE**" in status
     assert "Phase 1 is **COMPLETE**" in status
-    assert "Phase 2" in status and "**OPEN_NOT_STARTED**" in status
+    assert "Phase 2" in status and "**BLOCKED_EXTERNAL_HUMAN_RATINGS**" in status
+    assert "Phase 3" in status and "locked" in status.lower()

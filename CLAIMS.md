@@ -1,6 +1,6 @@
 # ABI claim ledger
 
-Status date: 2026-08-03
+Status date: 2026-08-04
 
 Documentation cannot widen a machine-readable certificate. Each claim below is
 limited to its exact source, artifact, implementation, benchmark, and evidence
@@ -81,6 +81,24 @@ negative evidence.
 
 This is a data-suitability claim only. No model was trained in Phase 1.
 
+### 7. Capability-compiler Phase 2 machine baselines
+
+The complete preregistered machine campaign is content-verified under
+`results/abi_capability_compiler_phase2/machine_evidence_v1.json`.
+
+- T0: 1,237/1,400 functional passes and 64 collapses.
+- L0 three-seed mean: 94.60% functional passes; source retained; oracle route;
+  0.84× T0 warm bytes/second.
+- L1 three-seed mean: 93.86%; 4,200/4,200 prompt routes correct; source
+  retained; 0.83× T0 warm bytes/second.
+- D0/D1/D2 three-seed means: 6.69%, 0.50%, and 2.10%; severe collapse despite
+  9.83×, 5.94×, and 6.84× T0 warm bytes/second.
+
+These results establish credible matched baseline behavior and a measured
+quality-speed split. They do not establish ABI transfer, candidate quality, or
+superiority. Phase 2 remains incomplete because the required three independent
+blinded human forms have not been completed.
+
 ## Current implementation claims
 
 - The V87 real-versus-shuffled causal pilot is implemented and evidence-bound.
@@ -93,6 +111,10 @@ This is a data-suitability claim only. No model was trained in Phase 1.
 - LayerCake was not invoked during V89 and no training artifact was composed.
 - The Phase 1 catalog, extractor, IR builder, IR verifier, certificate verifier,
   and hostile mutation suite are implemented and evidence-bound.
+- Phase 2 implements and verifies packed sequence data, uninterrupted top-64
+  teacher logits, LoRA/routed-adapter and same-size student baselines,
+  three-seed checkpoint persistence, paired statistics, genuine-cold and warm
+  runtime, and a blinded counterbalanced human-rating packet.
 
 ## Open claims
 

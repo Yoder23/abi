@@ -1,0 +1,15 @@
+{
+  "format": "abi-capability-compiler-phase2-runtime-candidate/1",
+  "status": "FROZEN_BEFORE_RUNTIME",
+  "system": "D2",
+  "seed": 104729,
+  "learning_rate": 0.00003,
+  "target_token_exposures": 4,
+  "checkpoint_path": "results/abi_capability_compiler_phase2/headline/D2/lr3e-5-exp4-seed104729/student.safetensors",
+  "checkpoint_sha256": "b2edc3cfc3db0b81aec5618a26560c99c0385b0db0a4db6b364355a2f3258548",
+  "quality_receipt_path": "results/abi_capability_compiler_phase2/headline/D2/lr3e-5-exp4-seed104729/receipt.json",
+  "quality_receipt_sha256": "d73f60886980342c58fcacbffae15d35a7406066974d1538e65e68b09b227b2c",
+  "quality_outputs_sha256": "e2729380b6da12317d98cfd19f7d21a7a7714553fddc3cb2ca97e1a1e188f450",
+  "phase2_protocol_sha256": "d2b91b1c14b6ad1d9fcb169b173a57c4c364f9ae12ad6c4c37b9d9b61e1c4be4",
+  "final_prompts_accessed": false
+}
