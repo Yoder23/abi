@@ -134,6 +134,14 @@ points (95% CI -8.64 to -4.07). Semantic routing is therefore not established
 as causal for the gain. The branch failed, remaining seeds are prohibited,
 Phase 3 is uncertified, and Phase 4 is locked.
 
+### 11. Read-only component dependence in sealed B1
+
+The V9 diagnostic bypassed components in memory without training or persisting
+a checkpoint. Removing the route embedding changes B1 by +0.07 points (95% CI
+-0.14 to +0.29). Removing output cakes changes it by -5.43 points (95% CI
+-7.07 to -3.79) and reduces collapses from 60 to 49. This localizes dependence
+inside B1 only; it does not promote B1 or predict retraining.
+
 ## Current implementation claims
 
 - The V87 real-versus-shuffled causal pilot is implemented and evidence-bound.

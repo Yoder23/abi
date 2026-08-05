@@ -1,0 +1,85 @@
+{
+  "checkpoint_persisted": false,
+  "claim_boundary": "Post-training component ablation can localize dependence but cannot promote a checkpoint or prove how a retrained architecture will behave.",
+  "evidence_sha256": "9e50e69ad44745e28bbc64343153bbf6f67bf3ab945dd5debc1eb51579d5f560",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-component-diagnostic-decision/1",
+  "paired_bootstrap": {
+    "R1_minus_R0": {
+      "lower_95": -0.07071428571428572,
+      "point": -0.054285714285714284,
+      "replicates": 10000,
+      "seed": 2718,
+      "upper_95": -0.03785714285714286
+    },
+    "R2_minus_R0": {
+      "lower_95": -0.0014285714285714286,
+      "point": 0.0007142857142857143,
+      "replicates": 10000,
+      "seed": 2718,
+      "upper_95": 0.002857142857142857
+    },
+    "R3_minus_R0": {
+      "lower_95": -0.07071428571428572,
+      "point": -0.054285714285714284,
+      "replicates": 10000,
+      "seed": 2718,
+      "upper_95": -0.03785714285714286
+    }
+  },
+  "phase3_certified": false,
+  "phase4_status": "LOCKED",
+  "protocol_sha256": "f3d67c86d8ba72631f0112e6ff829bddd5a3f0d55f5737027d947a28761ca02e",
+  "status": "COMPLETE_DIAGNOSTIC_ONLY",
+  "systems": {
+    "R0": {
+      "functional": {
+        "lower_95": 0.8558889508821339,
+        "point": 0.8742857142857143,
+        "upper_95": 0.8906340937360091
+      },
+      "functional_passes": 1224,
+      "output_tokens": 36543,
+      "outputs_sha256": "dd4e537109dd7c426ee350f3053ff37899f18d500c6e7ced05c92e4088a51658",
+      "repetition_collapses": 60,
+      "wall_seconds": 159.8534692999965
+    },
+    "R1": {
+      "functional": {
+        "lower_95": 0.7990082411869398,
+        "point": 0.82,
+        "upper_95": 0.8392404687155944
+      },
+      "functional_passes": 1148,
+      "output_tokens": 36810,
+      "outputs_sha256": "5181e6e9494e03da9af9045e1c340f0b3ae447d7d09501b9d7bd5ae9eb71495f",
+      "repetition_collapses": 49,
+      "wall_seconds": 159.97609479998937
+    },
+    "R2": {
+      "functional": {
+        "lower_95": 0.8566433682376495,
+        "point": 0.875,
+        "upper_95": 0.8913043386793831
+      },
+      "functional_passes": 1225,
+      "output_tokens": 36653,
+      "outputs_sha256": "4321177c12f419b7969ea0a34dfd876a3c1a471ed8378f8a064a710d91e0f03e",
+      "repetition_collapses": 62,
+      "wall_seconds": 156.67752639998798
+    },
+    "R3": {
+      "functional": {
+        "lower_95": 0.7990082411869398,
+        "point": 0.82,
+        "upper_95": 0.8392404687155944
+      },
+      "functional_passes": 1148,
+      "output_tokens": 36765,
+      "outputs_sha256": "de91a9a8a4de8fd3f0859ed422b6aad4e240e266da9ea3c105e8ae866b5e776a",
+      "repetition_collapses": 50,
+      "wall_seconds": 157.79774480001652
+    }
+  },
+  "training_performed": false
+}

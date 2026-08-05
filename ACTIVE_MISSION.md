@@ -28,7 +28,7 @@ fresh, preregistered successor supplied 400 new passing abstention records; none
 of the failed records were reclassified. Specialist inventories are
 evaluation-only, and no specialist record is eligible for English training.
 
-## Active objective: execute the preregistered V8 component diagnostic
+## Active objective: preregister the shared-output Phase 3 successor
 
 The user explicitly deferred the unavailable human raters. This does not
 complete Phase 2. The corrected V4 A0-A4 development campaign has finished on
@@ -59,6 +59,12 @@ future preregistered train-from-initialization successor.
 Attempt 1 stopped before evaluation or artifact creation on a task-cake
 container index mismatch. V9 binds the one-line ModuleList repair and regression
 test; no scientific design field changed.
+
+The diagnostic is complete. R1 and R3 score 1,148/1,400; R2 scores
+1,225/1,400 versus R0's 1,224/1,400. The route embedding is not measurably
+responsible for quality, while output cakes contribute 5.43 points and add
+collapse risk. No new training is authorized until the shared-output successor
+is separately implemented, tested, parameter-accounted, and preregistered.
 
 The machine campaign contains all T0, L0, L1, D0, D1, and bounded D2 search
 receipts; 15 persisted headline checkpoints; 1,400 prompts per seed; 10,000
@@ -100,9 +106,10 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
-- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V9.json`
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V10.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_COMPONENT_DIAGNOSTIC_PROTOCOL_V8.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_COMPONENT_DIAGNOSTIC_REPAIR1_V9.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_COMPONENT_DIAGNOSTIC_REPORT_V3.md`
 - `ABI_CAPABILITY_COMPILER_PHASE3_SEQUENCE_SUCCESSOR_PROTOCOL_V6.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_PROTOCOL_V1.json`
