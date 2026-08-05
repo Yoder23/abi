@@ -15,7 +15,8 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3–8 | LOCKED | Campaign contract |
+| 3 — causal teacher-to-target acquisition | OPEN_CONDITIONALLY_FOR_DEVELOPMENT | `ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json` |
+| 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
 English records—500 for each of 14 capabilities—with raw forms, authoritative
@@ -27,12 +28,13 @@ fresh, preregistered successor supplied 400 new passing abstention records; none
 of the failed records were reclassified. Specialist inventories are
 evaluation-only, and no specialist record is eligible for English training.
 
-## Active objective: close the external Phase 2 rating gate
+## Active objective: execute conditional Phase 3 causality campaign
 
-Do not train more baselines or begin Phase 3. Assign the three blinded,
-counterbalanced 7,000-pair forms to three independent people, preserve their
-completed forms separately, then unblind and compute the registered preference
-statistics. The answer key must remain hidden until all three forms are locked.
+The user explicitly deferred the unavailable human raters. This does not
+complete Phase 2. Execute only the preregistered A0-A4 development campaign on
+the certified Phase 1 IR. Keep all final material unopened and preserve every
+control and failure. A machine pass remains conditional and cannot certify
+Phase 3 or open Phase 4 until the Phase 2 human gate resolves.
 
 The machine campaign contains all T0, L0, L1, D0, D1, and bounded D2 search
 receipts; 15 persisted headline checkpoints; 1,400 prompts per seed; 10,000
@@ -56,8 +58,9 @@ baseline findings, not an ABI-candidate result.
 
 ## Stop boundaries
 
-- Do not begin Phase 3 candidate training before the human gate and final
-  Phase 2 certificate pass.
+- Do not train outside `ABI_CAPABILITY_COMPILER_PHASE3_PROTOCOL_V1.json`.
+- Do not call conditional Phase 3 evidence a certificate while Phase 2 lacks
+  human ratings.
 - Do not use final-test outputs for tuning, repair, source selection, or early
   stopping.
 - Do not silently replace the certified Phase 1 artifact.
@@ -69,7 +72,9 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
-- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V3.json`
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V4.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_PROTOCOL_V1.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_V1.md`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json`
 - `ABI_CAPABILITY_COMPILER_PHASE1_PROTOCOL_V1.json`

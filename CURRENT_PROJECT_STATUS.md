@@ -14,10 +14,15 @@ Phase 2's preregistered
 machine campaign is complete and adversarially rehashed, but Phase 2 is
 **BLOCKED_EXTERNAL_HUMAN_RATINGS**. Three independent people must complete the
 21,000 blinded counterbalanced judgments before a final Phase 2 certificate can
-exist. Phases 3 through 8 remain locked.
+exist. Phase 2 is not certified. The user explicitly deferred the currently
+unavailable human raters.
+Phase 3 development is therefore **OPEN_CONDITIONALLY**, without changing
+Phase 2's failed-closed status. Phase 3 promotion, Phase 4, and Phases 5
+through 8 remain locked.
 
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_V1.md` and its machine-readable contract now
-control future work. They do not alter any historical result.
+`ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json` and
+`ABI_CAPABILITY_COMPILER_PHASE3_PROTOCOL_V1.json` control this narrow
+exception. They do not alter any historical result or permit final-test use.
 
 ## Product boundary
 

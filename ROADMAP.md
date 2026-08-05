@@ -4,7 +4,7 @@ Status date: 2026-08-04
 
 The machine-readable contract
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` controls sequencing and
-gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V2.json` records live status.
+gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V4.json` records live status.
 Evidence gates, not experiment counts or dates, close phases.
 
 | Phase | Objective | Status |
@@ -12,7 +12,7 @@ Evidence gates, not experiment counts or dates, close phases.
 | 0 | Definitions, baselines, and preregistration | COMPLETE |
 | 1 | Capability inventory and normalized acquisition IR | COMPLETE |
 | 2 | Strong matched LoRA and distillation baselines | MACHINE COMPLETE; BLOCKED ON EXTERNAL HUMAN RATINGS |
-| 3 | Causal teacher-to-target acquisition | LOCKED |
+| 3 | Causal teacher-to-target acquisition | OPEN CONDITIONALLY FOR DEVELOPMENT; PROMOTION LOCKED |
 | 4 | Sufficient-information Pareto frontier | LOCKED |
 | 5 | Selective reconstruction and bounded exclusion | LOCKED |
 | 6 | Composition, portability, and multi-source provenance | LOCKED |
@@ -53,6 +53,11 @@ its locked budget, reproducible, and verifier-backed. No ABI-superiority claim
 is possible in this phase.
 
 ## Later gates
+
+The unavailable Phase 2 human ratings were deferred by explicit user
+direction, not passed. Phase 3 may execute only its hash-bound development
+protocol. It cannot issue a certificate or open Phase 4 until the deferred
+human gate resolves.
 
 - Phase 3 must show a causal ABI acquisition candidate beats parent,
   label-free, shuffled, bridge-only, and monolithic controls while passing

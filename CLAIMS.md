@@ -99,6 +99,13 @@ quality-speed split. They do not establish ABI transfer, candidate quality, or
 superiority. Phase 2 remains incomplete because the required three independent
 blinded human forms have not been completed.
 
+### 8. Conditional Phase 3 authorization is not a result
+
+`ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json` records the user's
+explicit decision to proceed while raters are unavailable. It authorizes only
+the bound A0-A4 development campaign. It is not a Phase 2 pass, a Phase 3
+certificate, evidence of fluent transfer, or permission to access final data.
+
 ## Current implementation claims
 
 - The V87 real-versus-shuffled causal pilot is implemented and evidence-bound.

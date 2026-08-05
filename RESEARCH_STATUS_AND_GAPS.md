@@ -95,10 +95,11 @@ hardware reproduction, and external replication.
 
 ## Immediate research priority
 
-Phase 2 machine work is finished. Arrange three genuinely independent human
-raters, one per immutable packet form, without exposing the blinding key.
-After all forms are locked, compute the preference statistics and rerun hostile
-verification. Keep Phase 3 locked until a final Phase 2 certificate passes.
+Execute the hash-bound conditional Phase 3 A0-A4 development campaign. The
+user deferred unavailable human raters, so Phase 2 remains uncertified and a
+Phase 3 machine pass cannot be promoted. Keep final data unopened, preserve
+all causal controls, and keep Phase 4 locked. When independent raters become
+available, the Phase 2 packet must still be completed before certification.
 
 See `CURRENT_PROJECT_STATUS.md` for the current claim boundary and
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` for controlling gates.

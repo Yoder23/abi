@@ -34,11 +34,14 @@ Status date: 2026-08-04.
 - The three blinded counterbalanced rating forms contain 7,000 pairs each and
   require 21,000 judgments from three independent people. Until those forms
   are completed and verified, Phase 2 has no final certificate.
-- Phases 3 through 8 are **LOCKED**.
+- The user explicitly deferred the unavailable human ratings. Phase 3
+  research execution is **OPEN_CONDITIONALLY** under
+  `ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json`; this is not a
+  Phase 2 pass. Phase 3 promotion/certification and Phase 4 remain locked.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V3.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V4.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -61,11 +64,11 @@ LoRA or distillation.
 
 ## Active authorization
 
-No further Phase 2 training is authorized. Assign exactly one complete blinded
-rating form to each of three independent human raters. Raters may not see the
-blinding key or one another's work before all forms are locked. Do not start
-Phase 3 ABI-candidate training until a final Phase 2 certificate passes.
-Final-test outputs remain prohibited.
+No further Phase 2 training is authorized. Execute only the hash-bound
+development-only A0-A4 campaign in
+`ABI_CAPABILITY_COMPILER_PHASE3_PROTOCOL_V1.json`. Phase 2 human ratings remain
+deferred, not waived or passed. Phase 3 cannot be certified and Phase 4 cannot
+open until that gate resolves. Final-test outputs remain prohibited.
 
 ## Permanent scientific rules
 

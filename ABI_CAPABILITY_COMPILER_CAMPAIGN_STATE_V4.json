@@ -1,0 +1,21 @@
+{
+  "format": "abi-capability-compiler-campaign-state/4",
+  "effective_date": "2026-08-04",
+  "historical_evidence_changed": false,
+  "phases": {
+    "0": "COMPLETE",
+    "1": "COMPLETE",
+    "2": "MACHINE_EVIDENCE_COMPLETE_HUMAN_RATINGS_DEFERRED_NOT_PASSED",
+    "3": "OPEN_CONDITIONALLY_DEVELOPMENT_ONLY_PROMOTION_LOCKED",
+    "4": "LOCKED",
+    "5": "LOCKED",
+    "6": "LOCKED",
+    "7": "LOCKED",
+    "8": "LOCKED"
+  },
+  "authorization": "Only ABI_CAPABILITY_COMPILER_PHASE3_PROTOCOL_V1.json may execute.",
+  "final_test_access": "PROHIBITED",
+  "phase2_certificate": "NOT_ISSUED",
+  "phase3_certificate": "PROHIBITED_WHILE_PHASE2_HUMAN_GATE_IS_DEFERRED",
+  "claim_boundary": "Conditional execution does not waive or pass the Phase 2 human gate."
+}

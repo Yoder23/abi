@@ -28,9 +28,10 @@ Three facts define the current checkpoint:
 Capability-compiler Phases 0 and 1 are **COMPLETE**. Phase 2 machine evidence is
 complete, but Phase 2 is **BLOCKED_EXTERNAL_HUMAN_RATINGS**: the contract
 requires three independent blinded counterbalanced ratings for each prompt.
-Phases 3 through 8 remain locked. No current ABI artifact is certified as a
-broadly fluent teacher-derived English core, and no ABI candidate training is
-authorized.
+The user deferred the unavailable human raters, so Phase 3 development is open
+conditionally under a versioned governance exception. Phase 2 is still not
+certified; Phase 3 cannot be promoted and Phase 4 remains locked. No current
+ABI artifact is certified as a broadly fluent teacher-derived English core.
 
 Read [CURRENT_PROJECT_STATUS.md](CURRENT_PROJECT_STATUS.md) before interpreting
 any experiment or launching new work.
@@ -46,6 +47,7 @@ any experiment or launching new work.
 | Normalized English acquisition IR | PASS as a data artifact | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | Phase 2 matched-baseline machine campaign | COMPLETE; external human gate pending | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
 | Phase 2 human rating packet | READY; 21,000 independent judgments pending | `results/abi_capability_compiler_phase2/human_rating_packet_v1/manifest.json` |
+| Conditional Phase 3 A0-A4 campaign | PREREGISTERED; development only | `ABI_CAPABILITY_COMPILER_PHASE3_PROTOCOL_V1.json` |
 | Sufficient-information frontier | OPEN | Not yet measured |
 | Integrated teacher-derived LayerCake | OPEN | Not yet produced |
 
@@ -91,7 +93,8 @@ latency from that same request. The final split was not accessed, and no ABI or
 LayerCake candidate was trained.
 
 Phase 2 is not complete until three independent people finish the blinded
-rating forms. Phase 3 remains locked.
+rating forms. Conditional Phase 3 development may proceed, but it cannot be
+certified and cannot open Phase 4 while those ratings remain deferred.
 
 ## V89 labeling result
 
@@ -199,7 +202,8 @@ novel-form audit invalidated any general-purpose English interpretation.
 - [Phase 0 environment](ABI_CAPABILITY_COMPILER_PHASE0_ENVIRONMENT_V1.json)
 - [Phase 0 certificate](ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json)
 - [Historical campaign state V2](ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V2.json)
-- [Current live campaign state V3](ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V3.json)
+- [Historical campaign state V3](ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V3.json)
+- [Current live campaign state V4](ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V4.json)
 - [Phase 1 certificate](ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json)
 - [Phase 1 protocol](ABI_CAPABILITY_COMPILER_PHASE1_PROTOCOL_V1.json)
 - [Research-ledger policy](RESEARCH_LEDGER_POLICY.md)
