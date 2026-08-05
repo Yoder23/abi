@@ -1,0 +1,37 @@
+{
+  "format": "abi-capability-compiler-phase3-preflight-decision/1",
+  "status": "FAIL_CONTEXT_COVERAGE_BEFORE_TRAINING",
+  "effective_date": "2026-08-04",
+  "protocol_sha256": "a2a50a51046a2b1356fec4c9095b3b9a5963c5d4f193576551700328fc60cebe",
+  "system": "A0",
+  "seed": 104729,
+  "optimizer_steps": 0,
+  "candidate_created": false,
+  "failure": {
+    "max_tokens": 256,
+    "required_minimum_records_per_capability": 450,
+    "fact_free_reasoning_retained": 388,
+    "email_drafting_from_notes_retained": 482,
+    "all_other_capabilities_retained": 500,
+    "blocking_condition": "The tokenizer/context firewall rejected the inventory before model training because capability coverage fell below the locked minimum."
+  },
+  "measured_repair": {
+    "single_allowed_repair_consumed": true,
+    "change": "Raise max_tokens from 256 to 512.",
+    "preflight_at_512": "7000/7000 records retained; 500/500 for every capability.",
+    "unchanged": [
+      "Phase 1 IR",
+      "LayerCake parent and topology",
+      "A0-A4 control definitions",
+      "trainable parameters",
+      "training steps and record exposures",
+      "optimizer",
+      "seeds",
+      "development prompts",
+      "metrics and thresholds"
+    ]
+  },
+  "historical_evidence_changed": false,
+  "final_test_accessed": false,
+  "claim_boundary": "This is a failed pre-training conformance attempt, not candidate-quality evidence."
+}

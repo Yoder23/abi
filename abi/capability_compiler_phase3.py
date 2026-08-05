@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter, defaultdict
+import copy
 import hashlib
 import json
 import math
@@ -87,6 +88,27 @@ def _json(path: Path) -> dict[str, Any]:
 
 def _protocol(root: Path, path: Path) -> tuple[dict[str, Any], str]:
     protocol = _json(path)
+    if protocol.get("format") == "abi-capability-compiler-phase3-protocol-repair/1":
+        if protocol.get("status") != "PREREGISTERED_SINGLE_ALLOWED_REPAIR":
+            raise Phase3Error("Phase 3 repair is not controlling")
+        parent_spec = protocol.get("parent_protocol")
+        if not isinstance(parent_spec, dict):
+            raise Phase3Error("Phase 3 repair parent is missing")
+        parent_path = (root / str(parent_spec.get("path", ""))).resolve()
+        if not parent_path.is_file() or sha256_file(parent_path) != parent_spec.get("sha256"):
+            raise Phase3Error("Phase 3 repair parent changed")
+        parent = _json(parent_path)
+        changes = protocol.get("changes")
+        if changes != {"training.max_tokens": {"from": 256, "to": 512}}:
+            raise Phase3Error("Phase 3 repair expanded beyond the measured bottleneck")
+        protocol = copy.deepcopy(parent)
+        protocol["protocol_id"] = "abi-capability-compiler-phase3-conditional-repair1-v2"
+        protocol["training"]["max_tokens"] = 512
+        protocol["repair"] = {
+            "parent_protocol_sha256": parent_spec["sha256"],
+            "single_allowed_repair_consumed": True,
+        }
+        protocol["bindings"].update(_json(path).get("bindings", {}))
     if protocol.get("format") != "abi-capability-compiler-phase3-protocol/1":
         raise Phase3Error("unsupported Phase 3 protocol")
     if protocol.get("status") != "PREREGISTERED_CONDITIONAL_PHASE3":

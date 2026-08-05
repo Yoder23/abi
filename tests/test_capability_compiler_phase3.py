@@ -94,3 +94,38 @@ def test_protocol_fails_closed_on_final_access_and_changed_binding(tmp_path):
     bound.write_text("changed", encoding="utf-8")
     with pytest.raises(Phase3Error, match="binding changed"):
         _protocol(tmp_path, path)
+
+
+def test_repair_overlay_allows_only_the_measured_context_change(tmp_path):
+    import hashlib
+
+    bound = tmp_path / "bound.txt"
+    bound.write_text("bound", encoding="utf-8")
+    parent = {
+        "format": "abi-capability-compiler-phase3-protocol/1",
+        "status": "PREREGISTERED_CONDITIONAL_PHASE3",
+        "phase2_status": "MACHINE_COMPLETE_HUMAN_RATINGS_DEFERRED",
+        "final_test_access": "PROHIBITED",
+        "training": {"max_tokens": 256},
+        "bindings": {"bound.txt": hashlib.sha256(b"bound").hexdigest()},
+    }
+    parent_path = tmp_path / "parent.json"
+    parent_path.write_text(json.dumps(parent), encoding="utf-8")
+    parent_sha = hashlib.sha256(parent_path.read_bytes()).hexdigest()
+    repair = {
+        "format": "abi-capability-compiler-phase3-protocol-repair/1",
+        "status": "PREREGISTERED_SINGLE_ALLOWED_REPAIR",
+        "parent_protocol": {"path": "parent.json", "sha256": parent_sha},
+        "changes": {"training.max_tokens": {"from": 256, "to": 512}},
+        "bindings": {},
+    }
+    repair_path = tmp_path / "repair.json"
+    repair_path.write_text(json.dumps(repair), encoding="utf-8")
+    loaded, _ = _protocol(tmp_path, repair_path)
+    assert loaded["training"]["max_tokens"] == 512
+    assert loaded["repair"]["single_allowed_repair_consumed"] is True
+
+    repair["changes"]["training.steps"] = {"from": 7000, "to": 14000}
+    repair_path.write_text(json.dumps(repair), encoding="utf-8")
+    with pytest.raises(Phase3Error, match="expanded beyond"):
+        _protocol(tmp_path, repair_path)
