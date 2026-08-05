@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | OPEN_CONDITIONALLY_FOR_DEVELOPMENT | `ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json` |
+| 3 — causal teacher-to-target acquisition | CONDITIONAL_BRANCH_COMPLETE_FAILED; PHASE UNCERTIFIED | `results/abi_capability_compiler_phase3/conditional_decision_v3.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -28,13 +28,20 @@ fresh, preregistered successor supplied 400 new passing abstention records; none
 of the failed records were reclassified. Specialist inventories are
 evaluation-only, and no specialist record is eligible for English training.
 
-## Active objective: execute conditional Phase 3 causality campaign
+## Active objective: govern the measured Phase 3 branch failure
 
 The user explicitly deferred the unavailable human raters. This does not
-complete Phase 2. Execute only the preregistered A0-A4 development campaign on
-the certified Phase 1 IR. Keep all final material unopened and preserve every
-control and failure. A machine pass remains conditional and cannot certify
-Phase 3 or open Phase 4 until the Phase 2 human gate resolves.
+complete Phase 2. The corrected V4 A0-A4 development campaign has finished on
+the certified Phase 1 IR without opening final material. It establishes a
+development-only causal labeled teacher-payload signal, but the registered
+candidate fails absolute quality and repetition safety. It cannot certify
+Phase 3 or open Phase 4.
+
+A0 scored 379/1,400 (27.07%, Wilson 95% CI 24.81%-29.46%) with 150
+repetition collapses. Its paired pass-rate advantages over A1, A2, A3, and A4
+were respectively 19.00, 7.71, 26.79, and 9.07 percentage points; every
+stratified-bootstrap 95% lower bound was positive. Against T0, A0 was 61.29
+points worse (95% CI -63.64 to -58.86). Two capabilities scored 0/100.
 
 The machine campaign contains all T0, L0, L1, D0, D1, and bounded D2 search
 receipts; 15 persisted headline checkpoints; 1,400 prompts per seed; 10,000
@@ -58,7 +65,10 @@ baseline findings, not an ABI-candidate result.
 
 ## Stop boundaries
 
-- Do not train outside `ABI_CAPABILITY_COMPILER_PHASE3_PROTOCOL_V1.json`.
+- Do not rerun or tune the completed A0-A4 branch. Its remaining two seeds were
+  not authorized after the first seed failed the absolute gates.
+- Do not launch a successor without a new preregistration addressing the
+  measured sequence-realization bottleneck.
 - Do not call conditional Phase 3 evidence a certificate while Phase 2 lacks
   human ratings.
 - Do not use final-test outputs for tuning, repair, source selection, or early
@@ -72,9 +82,12 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
-- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V4.json`
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V5.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_PROTOCOL_V1.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_PAIRED_SAMPLER_AMENDMENT_V4.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_ANALYSIS_EMITTER_AMENDMENT_V5.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_MACHINE_REPORT_V1.md`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_V1.md`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json`
 - `ABI_CAPABILITY_COMPILER_PHASE1_PROTOCOL_V1.json`

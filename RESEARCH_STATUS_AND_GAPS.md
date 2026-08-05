@@ -34,6 +34,11 @@ Status date: 2026-08-04
     the base. Same-size teacher-free students are 5.94–9.83× faster in warm
     bytes/second but fail autonomous quality and repetition gates by a wide
     margin.
+11. **The first corrected Phase 3 architecture has a causal signal but fails.**
+    With an identical successful-record sequence across A0-A4, labeled A0
+    beat every control with positive paired bootstrap lower bounds, but scored
+    only 379/1,400 with 150 collapses versus T0's 1,237/1,400. The output-side
+    bridge is insufficient for fluent sequence realization.
 
 ## Open scientific questions
 
@@ -45,15 +50,18 @@ are locked and verified, no final Phase 2 certificate exists.
 
 ### 2. Can the certified information teach broad English?
 
-The IR is suitable input evidence, not proof of sufficiency. No student has yet
-shown fluent autonomous generation, grounding, instruction following,
-clarification, abstention, coherence, or repetition safety from this artifact.
+The IR is suitable input evidence, not proof of sufficiency. A0 learned a
+causal signal from it but did not show fluent autonomous generation,
+grounding, instruction following, clarification, abstention, coherence, or
+repetition safety at the required level.
 
 ### 3. Is the ABI path causally distinct and useful?
 
-Phase 3 must compare the labeled ABI route with label-free, shuffled-target,
-bridge-only, monolithic, LoRA, and distillation controls. If standard
-distillation explains the result, it must be named and evaluated honestly.
+The first Phase 3 branch compared the labeled ABI route with label-free,
+shuffled-target, no-payload, monolithic, and Phase 2 LoRA/distillation
+references. Labeled acquisition was causally useful but nowhere near
+teacher-relative quality. The open question is whether a small, frozen-host
+compatible prompt-conditioned sequence transformation can close that gap.
 
 ### 4. What is the sufficient-information frontier?
 
@@ -95,10 +103,12 @@ hardware reproduction, and external replication.
 
 ## Immediate research priority
 
-Execute the hash-bound conditional Phase 3 A0-A4 development campaign. The
-user deferred unavailable human raters, so Phase 2 remains uncertified and a
-Phase 3 machine pass cannot be promoted. Keep final data unopened, preserve
-all causal controls, and keep Phase 4 locked. When independent raters become
+Preserve the completed failed A0-A4 branch and keep final data unopened. Do not
+run its remaining seeds or tune data, steps, or nearby cakes. The next research
+proposal must preregister a materially different prompt-conditioned sequence
+transformation architecture while retaining the frozen host and equal-
+information controls. Phase 2 remains uncertified, Phase 3 remains
+uncertified, and Phase 4 remains locked. When independent raters become
 available, the Phase 2 packet must still be completed before certification.
 
 See `CURRENT_PROJECT_STATUS.md` for the current claim boundary and

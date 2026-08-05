@@ -1,0 +1,210 @@
+{
+  "architecture": {
+    "architecture_version": "layercake-shallow-sparse-english/1-three-block-task-cakes",
+    "heads": 12,
+    "layers": 3,
+    "max_tokens": 1024,
+    "task_cake_rank": 64,
+    "task_cakes": 10,
+    "vocab_size": 50257,
+    "width": 768
+  },
+  "checkpoint": {
+    "bytes": 246627944,
+    "path": "model.safetensors",
+    "sha256": "79e89ffab59ae2fd40406c690e824025f5f12ab500883b1a90bc684630c080ea"
+  },
+  "control": {
+    "monolithic_route": false,
+    "targets_deranged": false,
+    "teacher_payload_present": true,
+    "uses_destination_labels": false,
+    "zero_teacher_loss_adamw_weight_decay_reported": false
+  },
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-candidate/1",
+  "hardware": {
+    "cuda": "11.8",
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "machine": "Sam",
+    "python": "3.10.0",
+    "torch": "2.7.1+cu118"
+  },
+  "isolation": {
+    "all_changes_confined_to_registered_bridge": true,
+    "changed_tensor_count": 26,
+    "changed_tensors": [
+      "task_cakes.0.down.weight",
+      "task_cakes.0.norm.bias",
+      "task_cakes.0.norm.weight",
+      "task_cakes.0.up.weight",
+      "task_cakes.1.down.weight",
+      "task_cakes.1.norm.bias",
+      "task_cakes.1.norm.weight",
+      "task_cakes.1.up.weight",
+      "task_cakes.2.down.weight",
+      "task_cakes.2.norm.bias",
+      "task_cakes.2.norm.weight",
+      "task_cakes.2.up.weight",
+      "task_cakes.3.down.weight",
+      "task_cakes.3.norm.bias",
+      "task_cakes.3.norm.weight",
+      "task_cakes.3.up.weight",
+      "task_cakes.4.down.weight",
+      "task_cakes.4.norm.bias",
+      "task_cakes.4.norm.weight",
+      "task_cakes.4.up.weight",
+      "task_cakes.5.down.weight",
+      "task_cakes.5.norm.bias",
+      "task_cakes.5.norm.weight",
+      "task_cakes.5.up.weight",
+      "task_classifier.bias",
+      "task_classifier.weight"
+    ],
+    "frozen_state_sha256_after": "a1c6cc5b6eb328833eab553073ee560bca66042dc8e7b736eb2df9738535f684",
+    "frozen_state_sha256_before": "a1c6cc5b6eb328833eab553073ee560bca66042dc8e7b736eb2df9738535f684"
+  },
+  "manifest_sha256": "5e7c81c99e2941b1a93660f51bd45c956230a175acfe57f091fe172a2aa2a6fd",
+  "parent": {
+    "checkpoint_sha256": "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1",
+    "path": "../layercake_release/artifacts/moonshot/phase2_shallow_sparse_pretrained/student2400-seed-9824",
+    "state_sha256": "709fd6875689886c3f5e5c62e6339872c46f927ec390c66f7ac29dfb8352c235"
+  },
+  "phase2_human_gate": "DEFERRED_NOT_PASSED",
+  "protocol_sha256": "afd8e278ddb2175de188cd82b946b43fcb862e30306735aef98657c6c00604fa",
+  "seed": 104729,
+  "source": {
+    "phase1_ir_sha256": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+    "source_blocks_retained": 0,
+    "source_parameters_copied": 0,
+    "teacher": "microsoft/Phi-3-mini-4k-instruct",
+    "teacher_present_at_inference": false,
+    "teacher_present_during_training": false,
+    "teacher_revision": "f39ac1d28e925b323eae81227eaba4464caced4e"
+  },
+  "status": "TRAINED_DEVELOPMENT_ONLY",
+  "system": "A1",
+  "training": {
+    "active_parameter_seconds": 138962048.5500711,
+    "batch_size": 4,
+    "classifier_loss_weight": 0.25,
+    "curves": [
+      {
+        "classifier_loss": 3.502570152282715,
+        "language_loss": 6.597958564758301,
+        "step": 1,
+        "wall_seconds": 0.39291830000001937
+      },
+      {
+        "classifier_loss": 1.8836719989776611,
+        "language_loss": 4.242618560791016,
+        "step": 500,
+        "wall_seconds": 16.654996099998243
+      },
+      {
+        "classifier_loss": 1.775112509727478,
+        "language_loss": 4.357480049133301,
+        "step": 1000,
+        "wall_seconds": 31.866368399991188
+      },
+      {
+        "classifier_loss": 1.835669994354248,
+        "language_loss": 3.0618348121643066,
+        "step": 1500,
+        "wall_seconds": 48.237847999989754
+      },
+      {
+        "classifier_loss": 1.7240073680877686,
+        "language_loss": 1.5146732330322266,
+        "step": 2000,
+        "wall_seconds": 65.14675569999963
+      },
+      {
+        "classifier_loss": 1.7704554796218872,
+        "language_loss": 3.3483731746673584,
+        "step": 2500,
+        "wall_seconds": 83.06982710000011
+      },
+      {
+        "classifier_loss": 1.6565208435058594,
+        "language_loss": 1.2691532373428345,
+        "step": 3000,
+        "wall_seconds": 99.80792399999336
+      },
+      {
+        "classifier_loss": 1.6646068096160889,
+        "language_loss": 1.7815438508987427,
+        "step": 3500,
+        "wall_seconds": 116.8880574000068
+      },
+      {
+        "classifier_loss": 1.646899938583374,
+        "language_loss": 2.5708694458007812,
+        "step": 4000,
+        "wall_seconds": 131.64181820000522
+      },
+      {
+        "classifier_loss": 1.6551384925842285,
+        "language_loss": 1.6661583185195923,
+        "step": 4500,
+        "wall_seconds": 148.12214459999814
+      },
+      {
+        "classifier_loss": 1.6811031103134155,
+        "language_loss": 2.310045003890991,
+        "step": 5000,
+        "wall_seconds": 163.24783020000905
+      },
+      {
+        "classifier_loss": 1.8355331420898438,
+        "language_loss": 2.723294734954834,
+        "step": 5500,
+        "wall_seconds": 179.35453040001448
+      },
+      {
+        "classifier_loss": 1.9187344312667847,
+        "language_loss": 1.9000164270401,
+        "step": 6000,
+        "wall_seconds": 196.74225780001143
+      },
+      {
+        "classifier_loss": 1.878583312034607,
+        "language_loss": 2.7960619926452637,
+        "step": 6500,
+        "wall_seconds": 212.09046840001247
+      },
+      {
+        "classifier_loss": 1.7313042879104614,
+        "language_loss": 2.7025630474090576,
+        "step": 7000,
+        "wall_seconds": 228.73625250000623
+      }
+    ],
+    "device": "cuda",
+    "learning_rate": 0.0001,
+    "max_tokens": 512,
+    "peak_cuda_allocated_bytes": 1864445952,
+    "peak_process_rss_bytes": 1613783040,
+    "sampled_records_by_capability": {
+      "abstention": 1999,
+      "clarification": 1999,
+      "coherence": 2000,
+      "conversation": 2000,
+      "email_drafting_from_notes": 2001,
+      "fact_free_reasoning": 1999,
+      "fluent_realization": 1999,
+      "format_control": 2002,
+      "grammar": 2000,
+      "instruction_following": 1999,
+      "prompt_grounding": 1999,
+      "rewriting": 2001,
+      "supplied_text_summarization": 2000,
+      "tone_control": 2002
+    },
+    "steps": 7000,
+    "teacher_response_tokens_seen": 723855,
+    "trainable_parameter_ratio": 0.009840718643485003,
+    "trainable_parameters": 606730,
+    "wall_seconds": 229.03441160000511
+  }
+}

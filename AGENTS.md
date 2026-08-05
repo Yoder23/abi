@@ -34,14 +34,17 @@ Status date: 2026-08-04.
 - The three blinded counterbalanced rating forms contain 7,000 pairs each and
   require 21,000 judgments from three independent people. Until those forms
   are completed and verified, Phase 2 has no final certificate.
-- The user explicitly deferred the unavailable human ratings. Phase 3
-  research execution is **OPEN_CONDITIONALLY** under
-  `ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json`; this is not a
-  Phase 2 pass. Phase 3 promotion/certification and Phase 4 remain locked.
+- The user explicitly deferred the unavailable human ratings. The conditionally
+  authorized Phase 3 A0-A4 development branch is **COMPLETE_FAILED** under
+  `results/abi_capability_compiler_phase3/conditional_decision_v3.json`; this
+  is not a Phase 2 pass or a Phase 3 certificate. Phase 4 remains locked.
+- Corrected V4 evidence shows a causal labeled teacher-payload signal against
+  all four matched controls, but A0 scored only 379/1,400 with 150 repetition
+  collapses and is far below the locked absolute and teacher-relative gates.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V4.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V5.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -64,11 +67,13 @@ LoRA or distillation.
 
 ## Active authorization
 
-No further Phase 2 training is authorized. Execute only the hash-bound
-development-only A0-A4 campaign in
-`ABI_CAPABILITY_COMPILER_PHASE3_PROTOCOL_V1.json`. Phase 2 human ratings remain
-deferred, not waived or passed. Phase 3 cannot be certified and Phase 4 cannot
-open until that gate resolves. Final-test outputs remain prohibited.
+No further Phase 2 training is authorized. The hash-bound A0-A4 branch is
+finished and must not be repeated, extended to its remaining seeds, or tuned
+with more data, steps, or nearby cake variants. Any future Phase 3 architecture
+requires a separate preregistration tied to the measured lack of
+prompt-conditioned sequence-realization capacity. Phase 2 human ratings remain
+deferred, not waived or passed. Phase 3 is uncertified, Phase 4 is locked, and
+final-test outputs remain prohibited.
 
 ## Permanent scientific rules
 

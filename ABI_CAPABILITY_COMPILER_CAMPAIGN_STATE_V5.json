@@ -1,0 +1,36 @@
+{
+  "format": "abi-capability-compiler-campaign-state/5",
+  "effective_date": "2026-08-04",
+  "historical_evidence_changed": false,
+  "phases": {
+    "0": "COMPLETE",
+    "1": "COMPLETE",
+    "2": "MACHINE_EVIDENCE_COMPLETE_HUMAN_RATINGS_DEFERRED_NOT_PASSED",
+    "3": "INITIAL_CONDITIONAL_BRANCH_COMPLETE_FAILED_PHASE_UNCERTIFIED",
+    "4": "LOCKED",
+    "5": "LOCKED",
+    "6": "LOCKED",
+    "7": "LOCKED",
+    "8": "LOCKED"
+  },
+  "phase3": {
+    "decision": "FAIL_AUTONOMOUS_QUALITY_CAUSAL_SIGNAL_PRESENT",
+    "decision_path": "results/abi_capability_compiler_phase3/conditional_decision_v3.json",
+    "decision_file_sha256": "6f11d41d092f45907efc7f9d909018311cbb3bcfa86227f628588f945ae08d1b",
+    "decision_evidence_sha256": "103b255a73bc5736ae0ff9aadfc8668d1474231dea484ee0d2192c7a8ce1f21c",
+    "candidate_promoted": false,
+    "remaining_seeds_authorized": false,
+    "final_test_accessed": false
+  },
+  "authorization": "No existing Phase 3 branch may run. A materially different successor requires a new preregistration tied to the measured prompt-conditioned sequence-realization bottleneck.",
+  "prohibitions": [
+    "Do not rerun the A0-A4 seed-104729 branch.",
+    "Do not run its remaining seeds.",
+    "Do not add data, steps, or nearby output-side cake sweeps.",
+    "Do not access final-test material.",
+    "Do not begin Phase 4."
+  ],
+  "phase2_certificate": "NOT_ISSUED",
+  "phase3_certificate": "NOT_ISSUED",
+  "claim_boundary": "The corrected development evidence establishes a bounded causal signal and a failed architecture branch, not fluent transfer, ABI superiority, or phase completion."
+}

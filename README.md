@@ -28,10 +28,12 @@ Three facts define the current checkpoint:
 Capability-compiler Phases 0 and 1 are **COMPLETE**. Phase 2 machine evidence is
 complete, but Phase 2 is **BLOCKED_EXTERNAL_HUMAN_RATINGS**: the contract
 requires three independent blinded counterbalanced ratings for each prompt.
-The user deferred the unavailable human raters, so Phase 3 development is open
-conditionally under a versioned governance exception. Phase 2 is still not
-certified; Phase 3 cannot be promoted and Phase 4 remains locked. No current
-ABI artifact is certified as a broadly fluent teacher-derived English core.
+The user deferred the unavailable human raters. The conditionally authorized
+Phase 3 A0-A4 development branch is now complete and failed its absolute
+quality gates, although it produced a corrected causal signal against all four
+matched controls. Phase 2 is still not certified; Phase 3 is not certified and
+Phase 4 remains locked. No current ABI artifact is certified as a broadly
+fluent teacher-derived English core.
 
 Read [CURRENT_PROJECT_STATUS.md](CURRENT_PROJECT_STATUS.md) before interpreting
 any experiment or launching new work.
@@ -47,7 +49,7 @@ any experiment or launching new work.
 | Normalized English acquisition IR | PASS as a data artifact | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | Phase 2 matched-baseline machine campaign | COMPLETE; external human gate pending | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
 | Phase 2 human rating packet | READY; 21,000 independent judgments pending | `results/abi_capability_compiler_phase2/human_rating_packet_v1/manifest.json` |
-| Conditional Phase 3 A0-A4 campaign | PREREGISTERED; development only | `ABI_CAPABILITY_COMPILER_PHASE3_PROTOCOL_V1.json` |
+| Conditional Phase 3 A0-A4 campaign | COMPLETE; causal signal, branch FAIL | `results/abi_capability_compiler_phase3/conditional_decision_v3.json` |
 | Sufficient-information frontier | OPEN | Not yet measured |
 | Integrated teacher-derived LayerCake | OPEN | Not yet produced |
 
@@ -93,8 +95,34 @@ latency from that same request. The final split was not accessed, and no ABI or
 LayerCake candidate was trained.
 
 Phase 2 is not complete until three independent people finish the blinded
-rating forms. Conditional Phase 3 development may proceed, but it cannot be
-certified and cannot open Phase 4 while those ratings remain deferred.
+rating forms. The authorized Phase 3 branch has finished without certification
+and cannot open Phase 4 while its quality gates and the Phase 2 human gate are
+unresolved.
+
+## Conditional Phase 3 result
+
+The corrected V4 campaign trained and evaluated A0 plus four controls on an
+identical successful 28,000-record sequence. The first mixed-precision run was
+invalidated because skipped optimizer steps advanced the sampler; V4 retries
+the same batch and proves equal sequence identity (`b4ac23e8...`) across A0-A4.
+
+| System | Functional passes | Rate | Repetition collapses |
+| --- | ---: | ---: | ---: |
+| A0 labeled, six routes | 379/1,400 | 27.07% | 150 |
+| A1 label-free routing | 113/1,400 | 8.07% | 210 |
+| A2 deranged targets | 271/1,400 | 19.36% | 216 |
+| A3 no teacher payload | 4/1,400 | 0.29% | 634 |
+| A4 monolithic route | 252/1,400 | 18.00% | 141 |
+| T0 frozen teacher reference | 1,237/1,400 | 88.36% | 64 |
+
+A0 beats every matched control with a positive paired stratified-bootstrap
+95% lower bound, so the labels, actual teacher payload, and segmented routes
+carry a causal signal in this bounded experiment. It nevertheless fails every
+absolute quality family, teacher noninferiority, and zero-collapse gate. The
+606,730-parameter output-side bridge lacks prompt-conditioned sequence
+realization capacity. More data, steps, or nearby cake sweeps are prohibited;
+any successor needs a separately preregistered architectural change. See
+`ABI_CAPABILITY_COMPILER_PHASE3_MACHINE_REPORT_V1.md`.
 
 ## V89 labeling result
 
@@ -203,7 +231,9 @@ novel-form audit invalidated any general-purpose English interpretation.
 - [Phase 0 certificate](ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json)
 - [Historical campaign state V2](ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V2.json)
 - [Historical campaign state V3](ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V3.json)
-- [Current live campaign state V4](ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V4.json)
+- [Historical campaign state V4](ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V4.json)
+- [Current live campaign state V5](ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V5.json)
+- [Conditional Phase 3 machine report](ABI_CAPABILITY_COMPILER_PHASE3_MACHINE_REPORT_V1.md)
 - [Phase 1 certificate](ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json)
 - [Phase 1 protocol](ABI_CAPABILITY_COMPILER_PHASE1_PROTOCOL_V1.json)
 - [Research-ledger policy](RESEARCH_LEDGER_POLICY.md)

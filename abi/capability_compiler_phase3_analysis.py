@@ -41,6 +41,36 @@ def wilson(successes: int, observations: int, z: float = 1.959963984540054) -> d
     return {"point": p, "lower_95": center - half, "upper_95": center + half}
 
 
+def measured_bottleneck(system: Mapping[str, Any]) -> str:
+    """Describe the observed A0 bottleneck without embedding run-specific counts."""
+    zero_capabilities = sum(
+        value["passes"] == 0 for value in system["per_capability"].values()
+    )
+    observations = sum(
+        value["observations"] for value in system["per_capability"].values()
+    )
+    return (
+        f"The {system['trainable_parameters']:,}-parameter output-side six-route bridge "
+        "can memorize training responses and route held-out prompts, but lacks sufficient "
+        f"sequence-realization capacity: {zero_capabilities} capabilities scored 0/100, "
+        f"overall quality was {system['functional_passes']}/{observations}, and "
+        f"{system['repetition_collapses']} outputs collapsed."
+    )
+
+
+def require_identical_successful_sequences(
+    systems: Mapping[str, Mapping[str, Any]],
+) -> str:
+    """Fail closed unless every registered system used one non-null sequence."""
+    sequences = {
+        systems[system].get("successful_record_sequence_sha256")
+        for system in SYSTEMS
+    }
+    if len(sequences) != 1 or None in sequences:
+        raise Phase3AnalysisError("successful paired record sequences differ")
+    return next(iter(sequences))
+
+
 def stratified_bootstrap(
     left: Mapping[str, Mapping[str, Any]],
     right: Mapping[str, Mapping[str, Any]],
@@ -146,11 +176,7 @@ def analyze(*, root: Path, evidence_root: Path, output_path: Path) -> dict[str, 
         for system in ("A1", "A2", "A3", "A4")
     }
     comparisons["A0_minus_T0"] = stratified_bootstrap(raw["A0"], teacher, replicates=10_000, seed=1729)
-    paired_sequences = {
-        systems[system]["successful_record_sequence_sha256"] for system in SYSTEMS
-    }
-    if len(paired_sequences) != 1 or None in paired_sequences:
-        raise Phase3AnalysisError("successful paired record sequences differ")
+    require_identical_successful_sequences(systems)
     a0_caps = systems["A0"]["per_capability"]
     per_capability_gate = all(
         value["wilson"]["point"] >= 0.90 and value["wilson"]["lower_95"] >= 0.85
@@ -189,7 +215,7 @@ def analyze(*, root: Path, evidence_root: Path, output_path: Path) -> dict[str, 
             "branch_promoted": False,
             "remaining_two_seeds_run": False,
             "reason": "A0 shows a causal labeled teacher-payload signal against all four matched controls but fails every absolute quality family, teacher noninferiority, and repetition-collapse requirements.",
-            "measured_bottleneck": "The 606,730-parameter output-side six-route bridge can memorize training responses and route held-out prompts, but lacks sufficient sequence-realization capacity: two capabilities scored 0/100, overall quality was 387/1400, and 147 outputs collapsed.",
+            "measured_bottleneck": measured_bottleneck(systems["A0"]),
             "next_step": "Do not increase data, steps, or nearby cake variants. A future separately governed architecture must add prompt-conditioned sequence transformation capacity while preserving the frozen host and equal-information controls.",
         },
         "negative_evidence_preserved": True,
@@ -204,7 +230,7 @@ def analyze(*, root: Path, evidence_root: Path, output_path: Path) -> dict[str, 
 def main(argv: Iterable[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--evidence-root", default="results/abi_capability_compiler_phase3")
-    parser.add_argument("--output", default="results/abi_capability_compiler_phase3/conditional_decision_v2.json")
+    parser.add_argument("--output", default="results/abi_capability_compiler_phase3/conditional_decision_v3.json")
     args = parser.parse_args(argv)
     root = Path.cwd().resolve()
     result = analyze(root=root, evidence_root=(root / args.evidence_root).resolve(), output_path=(root / args.output).resolve())

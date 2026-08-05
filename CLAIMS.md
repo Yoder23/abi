@@ -99,12 +99,29 @@ quality-speed split. They do not establish ABI transfer, candidate quality, or
 superiority. Phase 2 remains incomplete because the required three independent
 blinded human forms have not been completed.
 
-### 8. Conditional Phase 3 authorization is not a result
+### 8. Conditional Phase 3 authorization did not waive prior gates
 
 `ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json` records the user's
 explicit decision to proceed while raters are unavailable. It authorizes only
-the bound A0-A4 development campaign. It is not a Phase 2 pass, a Phase 3
-certificate, evidence of fluent transfer, or permission to access final data.
+the now-completed A0-A4 development campaign. It is not a Phase 2 pass, a
+Phase 3 certificate, or permission to access final data.
+
+### 9. Corrected conditional Phase 3 causal signal and branch failure
+
+`results/abi_capability_compiler_phase3/conditional_decision_v3.json` records
+the corrected V4 result. All A0-A4 systems consumed the same successful
+28,000-record sequence. A0 scored 379/1,400 with 150 repetition collapses.
+Paired stratified-bootstrap pass-rate differences favored A0 over A1 by 19.00
+points (95% CI 16.79-21.21), A2 by 7.71 (5.43-10.00), A3 by 26.79
+(24.71-28.86), and A4 by 9.07 (7.00-11.14). This supports a bounded causal
+claim for the actual labeled teacher payload and segmented routing.
+
+The same A0 trails T0 by 61.29 points (95% CI -63.64 to -58.86), has two
+capabilities at 0/100, and fails every locked absolute quality family,
+teacher-noninferiority, and repetition gate. The branch is not promoted, its
+remaining seeds are not authorized, Phase 3 is uncertified, and Phase 4 is
+locked. This result does not establish fluent transfer or superiority over
+LoRA or distillation.
 
 ## Current implementation claims
 
@@ -122,6 +139,9 @@ certificate, evidence of fluent transfer, or permission to access final data.
   teacher logits, LoRA/routed-adapter and same-size student baselines,
   three-seed checkpoint persistence, paired statistics, genuine-cold and warm
   runtime, and a blinded counterbalanced human-rating packet.
+- Phase 3 implements a corrected paired-successful-step sampler, exact sample
+  sequence hashes, five registered controls, autonomous development evaluation,
+  and immutable paired statistical analysis.
 
 ## Open claims
 

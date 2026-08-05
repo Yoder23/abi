@@ -16,13 +16,15 @@ machine campaign is complete and adversarially rehashed, but Phase 2 is
 21,000 blinded counterbalanced judgments before a final Phase 2 certificate can
 exist. Phase 2 is not certified. The user explicitly deferred the currently
 unavailable human raters.
-Phase 3 development is therefore **OPEN_CONDITIONALLY**, without changing
-Phase 2's failed-closed status. Phase 3 promotion, Phase 4, and Phases 5
-through 8 remain locked.
+The conditionally authorized Phase 3 A0-A4 branch is now
+**COMPLETE_FAILED**, without changing Phase 2's failed-closed status. It found
+a causal transfer signal but failed absolute autonomous quality. Phase 3 is
+not certified; Phase 4 and Phases 5 through 8 remain locked.
 
-`ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json` and
-`ABI_CAPABILITY_COMPILER_PHASE3_PROTOCOL_V1.json` control this narrow
-exception. They do not alter any historical result or permit final-test use.
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V5.json` is the live state.
+`ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json` and the versioned
+Phase 3 protocols remain the historical authority for the narrow execution
+exception. They did not alter any prior result or permit final-test use.
 
 ## Product boundary
 
@@ -64,7 +66,8 @@ sufficient-information frontier.
 | Compiler definitions and matched-baseline preregistration | PASS | Phase 0 certificate binds the parent lineage, teacher, host, 11 systems, data boundaries, numeric gates, statistics, accounting, and stop rules | No LoRA, distillation, ABI acquisition, or superiority result |
 | Normalized acquisition IR | PASS | 7,000 records; 500 per English capability; provenance, authoritative tokens, hashes, and disjoint frozen evaluation material | No model, fluent transfer, domain acquisition, or minimum-information result |
 | Matched LoRA/distillation machine baselines | COMPLETE; human gate pending | All registered search/full/headline/runtime/statistical evidence is complete and content-verified | No ABI candidate, no teacher-free fluent model, and no Phase 2 certificate yet |
-| Sufficient-information frontier | OPEN | Not yet established | No smallest fluent core or imported-information budget is known |
+| Conditional Phase 3 A0-A4 branch | COMPLETE FAILED; causal signal | Labeled teacher payload and segmented routing beat four matched controls on paired development prompts | No fluent candidate, Phase 3 certificate, final-test access, or Phase 4 opening |
+| Sufficient-information frontier | LOCKED | Not yet established | No smallest fluent core or imported-information budget is known |
 | Integrated ABI-derived LayerCake | OPEN | Not yet established | No ABI candidate inherits sealed LayerCake performance evidence |
 
 ## Current proven results
@@ -125,6 +128,11 @@ a bounded point-estimate pass rather than a population-wide guarantee.
   artifact and fails closed while independent human ratings are absent.
 - `abi/capability_compiler_phase2_human_packet.py` deterministically creates
   three blinded, exactly counterbalanced rating forms and a separate key.
+- `abi/capability_compiler_phase3.py` trains and evaluates the registered A0-A4
+  frozen-host bridge matrix with authoritative exposure accounting.
+- `abi/capability_compiler_phase3_analysis.py` verifies paired sample identity,
+  computes Wilson intervals and 10,000-replicate stratified paired bootstraps,
+  and emits the immutable failed-branch decision.
 - The existing v3 segregated-bundle consumers enforce destination and purity
   metadata before materialization. Phase 1 now supplies a normalized successor
   acquisition IR, but its sufficiency for broad English remains untested.
@@ -155,6 +163,9 @@ checks to make later research code appear release-equivalent.
 - ABI Phase 2 has completed its preregistered machine baseline matrix. Strong
   source-retained adapters preserve quality but are not compact or teacher
   free; same-size teacher-free students are fast but fail quality severely.
+- The corrected Phase 3 A0 candidate causally beats all four matched controls
+  on the development suite, while failing absolute quality at 379/1,400 with
+  150 repetition collapses and trailing T0 by 61.29 percentage points.
 
 ## Claims not allowed now
 
@@ -173,14 +184,15 @@ checks to make later research code appear release-equivalent.
 
 ## Immediate next gate
 
-Complete the external human gate only. Assign one immutable form to each of
-three independent raters and keep the answer key hidden until all forms are
-locked. Then compute the registered preference statistics, rerun hostile
-verification, and issue a Phase 2 certificate only if every gate passes.
+Two gates remain unresolved. When raters become available, complete the Phase
+2 packet without changing its forms or key. Separately, any Phase 3 successor
+must be newly preregistered around the measured need for prompt-conditioned
+sequence transformation while preserving the frozen host and equal-information
+controls. Do not rerun the failed branch, run its remaining seeds, increase its
+data or steps, or sweep nearby cakes. Final material remains unopened and Phase
+4 remains locked.
 
-No more Phase 2 training and no Phase 3 candidate training are authorized.
-
-The full ABI suite currently reports 471 passed and one intentionally strict
+The full ABI suite currently reports 484 passed and one intentionally strict
 external-control failure: the separate clean LayerCake repository is ahead of
 the exact contract-bound control commit, which remains an ancestor. The
 identity verifier was not weakened. See

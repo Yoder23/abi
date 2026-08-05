@@ -1,0 +1,888 @@
+{
+  "causal_gates": {
+    "A0_minus_A1": true,
+    "A0_minus_A2": true,
+    "A0_minus_A3": true,
+    "A0_minus_A4": true
+  },
+  "claim_boundary": "This establishes a development-only causal signal and a formal Phase 3 branch failure. It does not certify fluent transfer, Phase 3, ABI superiority, or access to Phase 4.",
+  "decision": {
+    "branch_promoted": false,
+    "measured_bottleneck": "The 606,730-parameter output-side six-route bridge can memorize training responses and route held-out prompts, but lacks sufficient sequence-realization capacity: two capabilities scored 0/100, overall quality was 387/1400, and 147 outputs collapsed.",
+    "next_step": "Do not increase data, steps, or nearby cake variants. A future separately governed architecture must add prompt-conditioned sequence transformation capacity while preserving the frozen host and equal-information controls.",
+    "reason": "A0 shows a causal labeled teacher-payload signal against all four matched controls but fails every absolute quality family, teacher noninferiority, and repetition-collapse requirements.",
+    "remaining_two_seeds_run": false
+  },
+  "evidence_sha256": "7b490013c7640f9607d9e9a2ef3a50510a4fe6f5a2869019c130bd3187f25caf",
+  "format": "abi-capability-compiler-phase3-conditional-decision/1",
+  "gates": {
+    "causal_A0_beats_each_control": true,
+    "critical_capabilities": false,
+    "final_test_accessed": false,
+    "per_capability_functional": false,
+    "registered_bridge_only": true,
+    "remaining_seed_runs_authorized": false,
+    "source_parameters_copied_zero": true,
+    "teacher_absent": true,
+    "teacher_relative_noninferiority": false,
+    "zero_repetition_collapses": false
+  },
+  "negative_evidence_preserved": true,
+  "paired_bootstrap": {
+    "A0_minus_A1": {
+      "lower_95": 0.18,
+      "point": 0.20214285714285715,
+      "replicates": 10000,
+      "seed": 1729,
+      "upper_95": 0.22357142857142856
+    },
+    "A0_minus_A2": {
+      "lower_95": 0.05857142857142857,
+      "point": 0.08142857142857143,
+      "replicates": 10000,
+      "seed": 1729,
+      "upper_95": 0.10428571428571429
+    },
+    "A0_minus_A3": {
+      "lower_95": 0.25285714285714284,
+      "point": 0.2735714285714286,
+      "replicates": 10000,
+      "seed": 1729,
+      "upper_95": 0.29428571428571426
+    },
+    "A0_minus_A4": {
+      "lower_95": 0.04428571428571428,
+      "point": 0.06571428571428571,
+      "replicates": 10000,
+      "seed": 1729,
+      "upper_95": 0.08714285714285715
+    },
+    "A0_minus_T0": {
+      "lower_95": -0.6307142857142857,
+      "point": -0.6071428571428571,
+      "replicates": 10000,
+      "seed": 1729,
+      "upper_95": -0.5828571428571429
+    }
+  },
+  "phase2_status": "MACHINE_COMPLETE_HUMAN_RATINGS_DEFERRED_NOT_PASSED",
+  "phase3_certified": false,
+  "phase4_status": "LOCKED",
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_EMITTER_AMENDMENT_V3.json",
+    "sha256": "afd8e278ddb2175de188cd82b946b43fcb862e30306735aef98657c6c00604fa"
+  },
+  "status": "FAIL_AUTONOMOUS_QUALITY_CAUSAL_SIGNAL_PRESENT",
+  "systems": {
+    "A0": {
+      "checkpoint_sha256": "70a7cb35725e7978eb352406a6787a0df35aa2b603cb1bb300c73d2abd64cc38",
+      "functional": {
+        "lower_95": 0.25363745065124194,
+        "point": 0.2764285714285714,
+        "upper_95": 0.3004432497963176
+      },
+      "functional_passes": 387,
+      "generation_wall_seconds": 196.70075769998948,
+      "metadata_sha256": "8829f109048a6dc22f40b87b8701384004111e4326ad3bd100a814208d79929c",
+      "output_tokens": 47324,
+      "outputs_sha256": "eca2e5d4989f56a2dc4e4a8968c7fee73dead2bcd688b4ee3093cadcc0f27380",
+      "peak_cuda_allocated_bytes": 1863693824,
+      "peak_process_rss_bytes": 1615654912,
+      "per_capability": {
+        "abstention": {
+          "collapses": 2,
+          "observations": 100,
+          "passes": 23,
+          "wilson": {
+            "lower_95": 0.15843265880303448,
+            "point": 0.23,
+            "upper_95": 0.3215438302287378
+          }
+        },
+        "clarification": {
+          "collapses": 10,
+          "observations": 100,
+          "passes": 69,
+          "wilson": {
+            "lower_95": 0.5937394428051057,
+            "point": 0.69,
+            "upper_95": 0.7722030278762395
+          }
+        },
+        "coherence": {
+          "collapses": 20,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "conversation": {
+          "collapses": 26,
+          "observations": 100,
+          "passes": 66,
+          "wilson": {
+            "lower_95": 0.5627772885472462,
+            "point": 0.66,
+            "upper_95": 0.7453847920265184
+          }
+        },
+        "email_drafting_from_notes": {
+          "collapses": 19,
+          "observations": 100,
+          "passes": 1,
+          "wilson": {
+            "lower_95": 0.0017674320641406505,
+            "point": 0.01,
+            "upper_95": 0.054486196178705315
+          }
+        },
+        "fact_free_reasoning": {
+          "collapses": 3,
+          "observations": 100,
+          "passes": 21,
+          "wilson": {
+            "lower_95": 0.141656540619153,
+            "point": 0.21,
+            "upper_95": 0.29979968834089865
+          }
+        },
+        "fluent_realization": {
+          "collapses": 3,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "format_control": {
+          "collapses": 3,
+          "observations": 100,
+          "passes": 16,
+          "wilson": {
+            "lower_95": 0.10095288488804782,
+            "point": 0.16,
+            "upper_95": 0.24420269389270244
+          }
+        },
+        "grammar": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 59,
+          "wilson": {
+            "lower_95": 0.4920143005341078,
+            "point": 0.59,
+            "upper_95": 0.6813268697886348
+          }
+        },
+        "instruction_following": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 40,
+          "wilson": {
+            "lower_95": 0.3094012864324589,
+            "point": 0.4,
+            "upper_95": 0.4979974132089382
+          }
+        },
+        "prompt_grounding": {
+          "collapses": 4,
+          "observations": 100,
+          "passes": 26,
+          "wilson": {
+            "lower_95": 0.18404698464748132,
+            "point": 0.26,
+            "upper_95": 0.3537098944918718
+          }
+        },
+        "rewriting": {
+          "collapses": 18,
+          "observations": 100,
+          "passes": 24,
+          "wilson": {
+            "lower_95": 0.16691325556948772,
+            "point": 0.24,
+            "upper_95": 0.33232336349814473
+          }
+        },
+        "supplied_text_summarization": {
+          "collapses": 24,
+          "observations": 100,
+          "passes": 11,
+          "wilson": {
+            "lower_95": 0.06254196357064568,
+            "point": 0.11,
+            "upper_95": 0.18631296503080313
+          }
+        },
+        "tone_control": {
+          "collapses": 15,
+          "observations": 100,
+          "passes": 31,
+          "wilson": {
+            "lower_95": 0.22779697212376038,
+            "point": 0.31,
+            "upper_95": 0.40626055719489407
+          }
+        }
+      },
+      "receipt_sha256": "e68a3be841ce2945ab50df53c514610386c1cfde8486216b493437d50637bd00",
+      "repetition_collapses": 147,
+      "teacher_response_tokens_seen": 723763,
+      "trainable_parameters": 606730,
+      "training_wall_seconds": 217.55043360000127
+    },
+    "A1": {
+      "checkpoint_sha256": "79e89ffab59ae2fd40406c690e824025f5f12ab500883b1a90bc684630c080ea",
+      "functional": {
+        "lower_95": 0.06168359552326217,
+        "point": 0.07428571428571429,
+        "upper_95": 0.08921767433854466
+      },
+      "functional_passes": 104,
+      "generation_wall_seconds": 319.2481722999946,
+      "metadata_sha256": "be6cdaab4c2afe4f95794a992df17d8cdec913da486f4cc05e336bca7b4ebece",
+      "output_tokens": 69533,
+      "outputs_sha256": "52a3ae19704440dc7d0d812bb9e6c8436fe0f596585392aca19a7c670fc3fa03",
+      "peak_cuda_allocated_bytes": 1864445952,
+      "peak_process_rss_bytes": 1613783040,
+      "per_capability": {
+        "abstention": {
+          "collapses": 41,
+          "observations": 100,
+          "passes": 6,
+          "wilson": {
+            "lower_95": 0.027786123963188192,
+            "point": 0.06,
+            "upper_95": 0.1247681544589592
+          }
+        },
+        "clarification": {
+          "collapses": 11,
+          "observations": 100,
+          "passes": 44,
+          "wilson": {
+            "lower_95": 0.34672026630160796,
+            "point": 0.44,
+            "upper_95": 0.5377189534832302
+          }
+        },
+        "coherence": {
+          "collapses": 8,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "conversation": {
+          "collapses": 16,
+          "observations": 100,
+          "passes": 3,
+          "wilson": {
+            "lower_95": 0.010254524024038925,
+            "point": 0.03,
+            "upper_95": 0.0845193642905276
+          }
+        },
+        "email_drafting_from_notes": {
+          "collapses": 37,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "fact_free_reasoning": {
+          "collapses": 9,
+          "observations": 100,
+          "passes": 5,
+          "wilson": {
+            "lower_95": 0.02154367915436796,
+            "point": 0.05,
+            "upper_95": 0.11175046923191913
+          }
+        },
+        "fluent_realization": {
+          "collapses": 24,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "format_control": {
+          "collapses": 9,
+          "observations": 100,
+          "passes": 10,
+          "wilson": {
+            "lower_95": 0.0552291370606751,
+            "point": 0.1,
+            "upper_95": 0.17436566150491345
+          }
+        },
+        "grammar": {
+          "collapses": 10,
+          "observations": 100,
+          "passes": 20,
+          "wilson": {
+            "lower_95": 0.1333669333310325,
+            "point": 0.2,
+            "upper_95": 0.2888291655931589
+          }
+        },
+        "instruction_following": {
+          "collapses": 8,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "prompt_grounding": {
+          "collapses": 11,
+          "observations": 100,
+          "passes": 13,
+          "wilson": {
+            "lower_95": 0.07757167427240512,
+            "point": 0.13,
+            "upper_95": 0.20980351440076428
+          }
+        },
+        "rewriting": {
+          "collapses": 13,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "supplied_text_summarization": {
+          "collapses": 14,
+          "observations": 100,
+          "passes": 2,
+          "wilson": {
+            "lower_95": 0.00550196755016235,
+            "point": 0.02,
+            "upper_95": 0.07001179072854388
+          }
+        },
+        "tone_control": {
+          "collapses": 6,
+          "observations": 100,
+          "passes": 1,
+          "wilson": {
+            "lower_95": 0.0017674320641406505,
+            "point": 0.01,
+            "upper_95": 0.054486196178705315
+          }
+        }
+      },
+      "receipt_sha256": "368393259d68e9a3fcc368b4f14c276fce05d31a1069d55479e693dd036ff4cb",
+      "repetition_collapses": 217,
+      "teacher_response_tokens_seen": 723855,
+      "trainable_parameters": 606730,
+      "training_wall_seconds": 229.03441160000511
+    },
+    "A2": {
+      "checkpoint_sha256": "fc85cfd19b699743bf95152ec09b1a35e69fc96a6821e987c070a8890d6257d6",
+      "functional": {
+        "lower_95": 0.17509233561560794,
+        "point": 0.195,
+        "upper_95": 0.21657686275853888
+      },
+      "functional_passes": 273,
+      "generation_wall_seconds": 263.9045614999777,
+      "metadata_sha256": "ba8d29a1c8c7d1b88c794a4b8bd34235f9edd040f0cb7344188bafb4eea17ed6",
+      "output_tokens": 56942,
+      "outputs_sha256": "8eb52d80dde6d3f85788987ecd615f81748537195464ab4f72e3bc3c4fddb762",
+      "peak_cuda_allocated_bytes": 1774714368,
+      "peak_process_rss_bytes": 1612566528,
+      "per_capability": {
+        "abstention": {
+          "collapses": 38,
+          "observations": 100,
+          "passes": 51,
+          "wilson": {
+            "lower_95": 0.4134801193402717,
+            "point": 0.51,
+            "upper_95": 0.6057800106955886
+          }
+        },
+        "clarification": {
+          "collapses": 35,
+          "observations": 100,
+          "passes": 85,
+          "wilson": {
+            "lower_95": 0.7671644040916763,
+            "point": 0.85,
+            "upper_95": 0.9069401471634337
+          }
+        },
+        "coherence": {
+          "collapses": 8,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "conversation": {
+          "collapses": 25,
+          "observations": 100,
+          "passes": 48,
+          "wilson": {
+            "lower_95": 0.384645517580519,
+            "point": 0.48,
+            "upper_95": 0.5768342223477603
+          }
+        },
+        "email_drafting_from_notes": {
+          "collapses": 42,
+          "observations": 100,
+          "passes": 2,
+          "wilson": {
+            "lower_95": 0.00550196755016235,
+            "point": 0.02,
+            "upper_95": 0.07001179072854388
+          }
+        },
+        "fact_free_reasoning": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 3,
+          "wilson": {
+            "lower_95": 0.010254524024038925,
+            "point": 0.03,
+            "upper_95": 0.0845193642905276
+          }
+        },
+        "fluent_realization": {
+          "collapses": 2,
+          "observations": 100,
+          "passes": 5,
+          "wilson": {
+            "lower_95": 0.02154367915436796,
+            "point": 0.05,
+            "upper_95": 0.11175046923191913
+          }
+        },
+        "format_control": {
+          "collapses": 19,
+          "observations": 100,
+          "passes": 15,
+          "wilson": {
+            "lower_95": 0.0930598528365663,
+            "point": 0.15,
+            "upper_95": 0.23283559590832364
+          }
+        },
+        "grammar": {
+          "collapses": 3,
+          "observations": 100,
+          "passes": 26,
+          "wilson": {
+            "lower_95": 0.18404698464748132,
+            "point": 0.26,
+            "upper_95": 0.3537098944918718
+          }
+        },
+        "instruction_following": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "prompt_grounding": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 7,
+          "wilson": {
+            "lower_95": 0.03431926106727268,
+            "point": 0.07,
+            "upper_95": 0.137495147390735
+          }
+        },
+        "rewriting": {
+          "collapses": 6,
+          "observations": 100,
+          "passes": 2,
+          "wilson": {
+            "lower_95": 0.00550196755016235,
+            "point": 0.02,
+            "upper_95": 0.07001179072854388
+          }
+        },
+        "supplied_text_summarization": {
+          "collapses": 3,
+          "observations": 100,
+          "passes": 2,
+          "wilson": {
+            "lower_95": 0.00550196755016235,
+            "point": 0.02,
+            "upper_95": 0.07001179072854388
+          }
+        },
+        "tone_control": {
+          "collapses": 31,
+          "observations": 100,
+          "passes": 27,
+          "wilson": {
+            "lower_95": 0.1926958414957634,
+            "point": 0.27,
+            "upper_95": 0.36432116767944994
+          }
+        }
+      },
+      "receipt_sha256": "de821c16f97a470bb69f0f555e2768ec9d123661457d48da0ef4e2d31f198400",
+      "repetition_collapses": 212,
+      "teacher_response_tokens_seen": 726099,
+      "trainable_parameters": 606730,
+      "training_wall_seconds": 201.65727359999437
+    },
+    "A3": {
+      "checkpoint_sha256": "90bf1d24bad06d8243c1dfd54190178e42bf706e6c929b3fb814c901fc92f974",
+      "functional": {
+        "lower_95": 0.0011116308361708961,
+        "point": 0.002857142857142857,
+        "upper_95": 0.007323409136677331
+      },
+      "functional_passes": 4,
+      "generation_wall_seconds": 1197.491672700009,
+      "metadata_sha256": "803bb8ef35b8e527940e5cf20892cfba1944a9df28ab5876370d0e0b9dea459a",
+      "output_tokens": 268800,
+      "outputs_sha256": "28eeee7b16eef22ca8943770eaeee0595122b4d4eb76d5d507927b67337318b2",
+      "peak_cuda_allocated_bytes": 840204288,
+      "peak_process_rss_bytes": 1613283328,
+      "per_capability": {
+        "abstention": {
+          "collapses": 11,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "clarification": {
+          "collapses": 7,
+          "observations": 100,
+          "passes": 4,
+          "wilson": {
+            "lower_95": 0.01566330399154762,
+            "point": 0.04,
+            "upper_95": 0.0983707143588792
+          }
+        },
+        "coherence": {
+          "collapses": 93,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "conversation": {
+          "collapses": 31,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "email_drafting_from_notes": {
+          "collapses": 44,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "fact_free_reasoning": {
+          "collapses": 51,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "fluent_realization": {
+          "collapses": 84,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "format_control": {
+          "collapses": 58,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "grammar": {
+          "collapses": 67,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "instruction_following": {
+          "collapses": 47,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "prompt_grounding": {
+          "collapses": 60,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "rewriting": {
+          "collapses": 3,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "supplied_text_summarization": {
+          "collapses": 36,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "tone_control": {
+          "collapses": 42,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        }
+      },
+      "receipt_sha256": "b160da49fb5acaf21f335b9bb1b71bbe5707cc8d6ff1b2c59d65203ea199a6bd",
+      "repetition_collapses": 634,
+      "teacher_response_tokens_seen": 0,
+      "trainable_parameters": 606730,
+      "training_wall_seconds": 162.3438460000034
+    },
+    "A4": {
+      "checkpoint_sha256": "686673f40da86a270f9fb7bb5dcd3963027e97cc8b1fe21d11e29b2efd227a98",
+      "functional": {
+        "lower_95": 0.19015814197031933,
+        "point": 0.21071428571428572,
+        "upper_95": 0.23285362697939838
+      },
+      "functional_passes": 295,
+      "generation_wall_seconds": 205.8446620000177,
+      "metadata_sha256": "d54c644f75f52a40b268c8ffe5945a16738171b6931f3a72d97be07caf23e324",
+      "output_tokens": 53657,
+      "outputs_sha256": "f6876f67d5e23a36d8fdeded6389d8be1a4adfe84fc98ed35f6e38d90291024d",
+      "peak_cuda_allocated_bytes": 1857930240,
+      "peak_process_rss_bytes": 1610153984,
+      "per_capability": {
+        "abstention": {
+          "collapses": 7,
+          "observations": 100,
+          "passes": 29,
+          "wilson": {
+            "lower_95": 0.2101483574912227,
+            "point": 0.29,
+            "upper_95": 0.3853889117557111
+          }
+        },
+        "clarification": {
+          "collapses": 10,
+          "observations": 100,
+          "passes": 86,
+          "wilson": {
+            "lower_95": 0.7786281178903616,
+            "point": 0.86,
+            "upper_95": 0.9147365634006086
+          }
+        },
+        "coherence": {
+          "collapses": 24,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "conversation": {
+          "collapses": 21,
+          "observations": 100,
+          "passes": 16,
+          "wilson": {
+            "lower_95": 0.10095288488804782,
+            "point": 0.16,
+            "upper_95": 0.24420269389270244
+          }
+        },
+        "email_drafting_from_notes": {
+          "collapses": 17,
+          "observations": 100,
+          "passes": 1,
+          "wilson": {
+            "lower_95": 0.0017674320641406505,
+            "point": 0.01,
+            "upper_95": 0.054486196178705315
+          }
+        },
+        "fact_free_reasoning": {
+          "collapses": 17,
+          "observations": 100,
+          "passes": 4,
+          "wilson": {
+            "lower_95": 0.01566330399154762,
+            "point": 0.04,
+            "upper_95": 0.0983707143588792
+          }
+        },
+        "fluent_realization": {
+          "collapses": 16,
+          "observations": 100,
+          "passes": 8,
+          "wilson": {
+            "lower_95": 0.041093461484380624,
+            "point": 0.08,
+            "upper_95": 0.14998107700948735
+          }
+        },
+        "format_control": {
+          "collapses": 1,
+          "observations": 100,
+          "passes": 29,
+          "wilson": {
+            "lower_95": 0.2101483574912227,
+            "point": 0.29,
+            "upper_95": 0.3853889117557111
+          }
+        },
+        "grammar": {
+          "collapses": 1,
+          "observations": 100,
+          "passes": 45,
+          "wilson": {
+            "lower_95": 0.3561453797951198,
+            "point": 0.45,
+            "upper_95": 0.5475539700255787
+          }
+        },
+        "instruction_following": {
+          "collapses": 2,
+          "observations": 100,
+          "passes": 27,
+          "wilson": {
+            "lower_95": 0.1926958414957634,
+            "point": 0.27,
+            "upper_95": 0.36432116767944994
+          }
+        },
+        "prompt_grounding": {
+          "collapses": 20,
+          "observations": 100,
+          "passes": 37,
+          "wilson": {
+            "lower_95": 0.28182360534324524,
+            "point": 0.37,
+            "upper_95": 0.4677947041905709
+          }
+        },
+        "rewriting": {
+          "collapses": 7,
+          "observations": 100,
+          "passes": 1,
+          "wilson": {
+            "lower_95": 0.0017674320641406505,
+            "point": 0.01,
+            "upper_95": 0.054486196178705315
+          }
+        },
+        "supplied_text_summarization": {
+          "collapses": 12,
+          "observations": 100,
+          "passes": 2,
+          "wilson": {
+            "lower_95": 0.00550196755016235,
+            "point": 0.02,
+            "upper_95": 0.07001179072854388
+          }
+        },
+        "tone_control": {
+          "collapses": 2,
+          "observations": 100,
+          "passes": 10,
+          "wilson": {
+            "lower_95": 0.0552291370606751,
+            "point": 0.1,
+            "upper_95": 0.17436566150491345
+          }
+        }
+      },
+      "receipt_sha256": "e2ec824ab0bf67db665cf649b4f8ba69233638fa7ff0fe8cd595c2dd828bc800",
+      "repetition_collapses": 157,
+      "teacher_response_tokens_seen": 723763,
+      "trainable_parameters": 606730,
+      "training_wall_seconds": 206.11677050002618
+    }
+  }
+}

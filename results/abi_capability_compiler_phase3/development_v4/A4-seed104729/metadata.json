@@ -1,0 +1,192 @@
+{
+  "architecture": {
+    "architecture_version": "layercake-shallow-sparse-english/1-three-block-task-cakes",
+    "heads": 12,
+    "layers": 3,
+    "max_tokens": 1024,
+    "task_cake_rank": 64,
+    "task_cakes": 10,
+    "vocab_size": 50257,
+    "width": 768
+  },
+  "checkpoint": {
+    "bytes": 246627944,
+    "path": "model.safetensors",
+    "sha256": "df4526ef2d9316e54250f8f48148edaa41a655987483f9b2b9e9594029a4881c"
+  },
+  "control": {
+    "monolithic_route": true,
+    "targets_deranged": false,
+    "teacher_payload_present": true,
+    "uses_destination_labels": false,
+    "zero_teacher_loss_adamw_weight_decay_reported": false
+  },
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-candidate/1",
+  "hardware": {
+    "cuda": "11.8",
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "machine": "Sam",
+    "python": "3.10.0",
+    "torch": "2.7.1+cu118"
+  },
+  "isolation": {
+    "all_changes_confined_to_registered_bridge": true,
+    "changed_tensor_count": 6,
+    "changed_tensors": [
+      "task_cakes.0.down.weight",
+      "task_cakes.0.norm.bias",
+      "task_cakes.0.norm.weight",
+      "task_cakes.0.up.weight",
+      "task_classifier.bias",
+      "task_classifier.weight"
+    ],
+    "frozen_state_sha256_after": "a1c6cc5b6eb328833eab553073ee560bca66042dc8e7b736eb2df9738535f684",
+    "frozen_state_sha256_before": "a1c6cc5b6eb328833eab553073ee560bca66042dc8e7b736eb2df9738535f684"
+  },
+  "manifest_sha256": "b8b3f2973f865c3d69267ac3bb4c756bee6ac578e5d5284cd389a8680b3a8268",
+  "parent": {
+    "checkpoint_sha256": "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1",
+    "path": "../layercake_release/artifacts/moonshot/phase2_shallow_sparse_pretrained/student2400-seed-9824",
+    "state_sha256": "709fd6875689886c3f5e5c62e6339872c46f927ec390c66f7ac29dfb8352c235"
+  },
+  "phase2_human_gate": "DEFERRED_NOT_PASSED",
+  "protocol_sha256": "0d1701b789ae5d90cd77a045aa9ca357cc526494db7855516790908211d5bd06",
+  "seed": 104729,
+  "source": {
+    "phase1_ir_sha256": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+    "source_blocks_retained": 0,
+    "source_parameters_copied": 0,
+    "teacher": "microsoft/Phi-3-mini-4k-instruct",
+    "teacher_present_at_inference": false,
+    "teacher_present_during_training": false,
+    "teacher_revision": "f39ac1d28e925b323eae81227eaba4464caced4e"
+  },
+  "status": "TRAINED_DEVELOPMENT_ONLY",
+  "system": "A4",
+  "training": {
+    "active_parameter_seconds": 104852480.21809803,
+    "batch_size": 4,
+    "classifier_loss_weight": 0.25,
+    "curves": [
+      {
+        "classifier_loss": 3.750203847885132,
+        "language_loss": 3.990449905395508,
+        "step": 1,
+        "wall_seconds": 0.3440270999853965
+      },
+      {
+        "classifier_loss": 4.2794461478479207e-05,
+        "language_loss": 4.406435012817383,
+        "step": 500,
+        "wall_seconds": 12.660121899971273
+      },
+      {
+        "classifier_loss": 2.9802320611338473e-08,
+        "language_loss": 3.6436331272125244,
+        "step": 1000,
+        "wall_seconds": 24.75132639997173
+      },
+      {
+        "classifier_loss": 0.0,
+        "language_loss": 2.9287681579589844,
+        "step": 1500,
+        "wall_seconds": 36.79982119999477
+      },
+      {
+        "classifier_loss": 0.0,
+        "language_loss": 2.47820782661438,
+        "step": 2000,
+        "wall_seconds": 48.97818669999833
+      },
+      {
+        "classifier_loss": 0.0,
+        "language_loss": 0.7102771997451782,
+        "step": 2500,
+        "wall_seconds": 61.20430049998686
+      },
+      {
+        "classifier_loss": 0.0,
+        "language_loss": 0.5440544486045837,
+        "step": 3000,
+        "wall_seconds": 73.66227969998727
+      },
+      {
+        "classifier_loss": 0.0,
+        "language_loss": 1.0282995700836182,
+        "step": 3500,
+        "wall_seconds": 86.30264219999663
+      },
+      {
+        "classifier_loss": 0.0,
+        "language_loss": 2.3067383766174316,
+        "step": 4000,
+        "wall_seconds": 98.52624219999416
+      },
+      {
+        "classifier_loss": 0.0,
+        "language_loss": 1.34071683883667,
+        "step": 4500,
+        "wall_seconds": 110.80633729998954
+      },
+      {
+        "classifier_loss": 0.0,
+        "language_loss": 1.5392179489135742,
+        "step": 5000,
+        "wall_seconds": 123.05716369999573
+      },
+      {
+        "classifier_loss": 2.9802320611338473e-08,
+        "language_loss": 0.6132603883743286,
+        "step": 5500,
+        "wall_seconds": 135.54345519997878
+      },
+      {
+        "classifier_loss": 0.0,
+        "language_loss": 0.18420694768428802,
+        "step": 6000,
+        "wall_seconds": 148.1538668999856
+      },
+      {
+        "classifier_loss": 0.0,
+        "language_loss": 0.30552539229393005,
+        "step": 6500,
+        "wall_seconds": 160.44358619998093
+      },
+      {
+        "classifier_loss": 0.0,
+        "language_loss": 1.0352303981781006,
+        "step": 7000,
+        "wall_seconds": 172.55345059998217
+      }
+    ],
+    "device": "cuda",
+    "learning_rate": 0.0001,
+    "max_tokens": 512,
+    "peak_cuda_allocated_bytes": 1857930240,
+    "peak_process_rss_bytes": 1599430656,
+    "sampled_records_by_capability": {
+      "abstention": 2000,
+      "clarification": 2000,
+      "coherence": 2000,
+      "conversation": 2000,
+      "email_drafting_from_notes": 2000,
+      "fact_free_reasoning": 2000,
+      "fluent_realization": 2000,
+      "format_control": 2000,
+      "grammar": 2000,
+      "instruction_following": 2000,
+      "prompt_grounding": 2000,
+      "rewriting": 2000,
+      "supplied_text_summarization": 2000,
+      "tone_control": 2000
+    },
+    "skipped_amp_steps": 4,
+    "steps": 7000,
+    "successful_record_sequence_sha256": "b4ac23e86611c88515db8c17e72e78290ec41329059cb0546731c703ffeff28e",
+    "teacher_response_tokens_seen": 723739,
+    "trainable_parameter_ratio": 0.009840718643485003,
+    "trainable_parameters": 606730,
+    "wall_seconds": 172.81571739999345
+  }
+}
