@@ -1,6 +1,6 @@
 # ABI research status and open questions
 
-Status date: 2026-08-04
+Status date: 2026-08-05
 
 ## What is resolved
 
@@ -39,6 +39,10 @@ Status date: 2026-08-04
     beat every control with positive paired bootstrap lower bounds, but scored
     only 379/1,400 with 150 collapses versus T0's 1,237/1,400. The output-side
     bridge is insufficient for fluent sequence realization.
+12. **Sequence conditioning helps, but semantic routing is not the cause.** V6
+    raised B0 to 1,148/1,400, while deranged targets and no-response training
+    collapsed. However label-free B1 significantly beat B0, B0 did not beat
+    monolithic B4, and B0 retained 43 collapses. The exact branch is closed.
 
 ## Open scientific questions
 
@@ -59,9 +63,11 @@ repetition safety at the required level.
 
 The first Phase 3 branch compared the labeled ABI route with label-free,
 shuffled-target, no-payload, monolithic, and Phase 2 LoRA/distillation
-references. Labeled acquisition was causally useful but nowhere near
-teacher-relative quality. The open question is whether a small, frozen-host
-compatible prompt-conditioned sequence transformation can close that gap.
+references. V6 then tested a small frozen-host-compatible prompt-conditioned
+sequence transformation. It approached teacher aggregate quality, but routing
+specialization hurt rather than caused the gain and repetition remained
+unsafe. The open question is whether a shared/direct sequence transformation
+can preserve the gain while eliminating routing interference and collapse.
 
 ### 4. What is the sufficient-information frontier?
 
@@ -103,12 +109,12 @@ hardware reproduction, and external replication.
 
 ## Immediate research priority
 
-Preserve the completed failed A0-A4 branch and keep final data unopened. Do not
-run its remaining seeds or tune data, steps, or nearby cakes. The next research
-proposal must preregister a materially different prompt-conditioned sequence
-transformation architecture while retaining the frozen host and equal-
-information controls. Phase 2 remains uncertified, Phase 3 remains
-uncertified, and Phase 4 remains locked. When independent raters become
+Preserve both completed failed Phase 3 branches and keep final data unopened.
+Do not run their remaining seeds or tune data, steps, rank, or nearby routes.
+The next research proposal must preregister a shared/direct sequence
+transformation architecture tied to V6's measured specialization failure while
+retaining the frozen host and equal-information controls. Phase 2 and Phase 3
+remain uncertified, and Phase 4 remains locked. When independent raters become
 available, the Phase 2 packet must still be completed before certification.
 
 See `CURRENT_PROJECT_STATUS.md` for the current claim boundary and

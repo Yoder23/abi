@@ -1,6 +1,6 @@
 # ABI active mission
 
-Status date: 2026-08-04
+Status date: 2026-08-05
 
 ## State
 
@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | CONDITIONAL_BRANCH_COMPLETE_FAILED; PHASE UNCERTIFIED | `results/abi_capability_compiler_phase3/conditional_decision_v3.json` |
+| 3 — causal teacher-to-target acquisition | TWO BRANCHES COMPLETE_FAILED; PHASE UNCERTIFIED | `results/abi_capability_compiler_phase3_sequence/conditional_decision_v1.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -28,7 +28,7 @@ fresh, preregistered successor supplied 400 new passing abstention records; none
 of the failed records were reclassified. Specialist inventories are
 evaluation-only, and no specialist record is eligible for English training.
 
-## Active objective: execute the preregistered Phase 3 sequence successor
+## Active objective: define a non-routing Phase 3 successor from measured evidence
 
 The user explicitly deferred the unavailable human raters. This does not
 complete Phase 2. The corrected V4 A0-A4 development campaign has finished on
@@ -43,10 +43,12 @@ were respectively 19.00, 7.71, 26.79, and 9.07 percentage points; every
 stratified-bootstrap 95% lower bound was positive. Against T0, A0 was 61.29
 points worse (95% CI -63.64 to -58.86). Two capabilities scored 0/100.
 
-V6 is a materially different successor: a 1,556,998-parameter continuous
-prompt encoder and three rank-128 nonlinear pre-block residuals, with all three
-host transformer blocks frozen. Run only B0-B4 seed 104729. The remaining two
-seeds are conditional on passing every initial quality and causal gate.
+V6 tested a materially different 1,556,998-parameter continuous prompt encoder
+and three rank-128 nonlinear pre-block residuals with all three host blocks
+frozen. Its initial B0-B4 matrix is complete. B0 improved to 1,148/1,400, but
+had 43 collapses, lost significantly to label-free B1, did not beat monolithic
+B4, and remained significantly below T0. Every locked promotion family did
+not pass, so the remaining seeds are prohibited and the branch is closed.
 
 The machine campaign contains all T0, L0, L1, D0, D1, and bounded D2 search
 receipts; 15 persisted headline checkpoints; 1,400 prompts per seed; 10,000
@@ -70,10 +72,11 @@ baseline findings, not an ABI-candidate result.
 
 ## Stop boundaries
 
-- Do not rerun or tune the completed A0-A4 branch. Its remaining two seeds were
-  not authorized after the first seed failed the absolute gates.
+- Do not rerun or tune the completed A0-A4 or B0-B4 branches. Their remaining
+  two seeds were not authorized after their first seeds failed locked gates.
 - Do not launch a successor without a new preregistration addressing the
-  measured sequence-realization bottleneck.
+  measured routing/specialization bottleneck while preserving sequence
+  conditioning, matched causal controls, and the final-data firewall.
 - Do not call conditional Phase 3 evidence a certificate while Phase 2 lacks
   human ratings.
 - Do not use final-test outputs for tuning, repair, source selection, or early
@@ -87,13 +90,14 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
-- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V6.json`
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V7.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_SEQUENCE_SUCCESSOR_PROTOCOL_V6.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_PROTOCOL_V1.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_PAIRED_SAMPLER_AMENDMENT_V4.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_ANALYSIS_EMITTER_AMENDMENT_V5.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_MACHINE_REPORT_V1.md`
+- `ABI_CAPABILITY_COMPILER_PHASE3_SEQUENCE_REPORT_V2.md`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_V1.md`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json`
 - `ABI_CAPABILITY_COMPILER_PHASE1_PROTOCOL_V1.json`

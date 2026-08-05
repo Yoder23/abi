@@ -12,6 +12,8 @@ artifacts are acquisition material, not deployable cakes.
 
 ## Current status
 
+Status date: 2026-08-05
+
 **The ABI English-product moonshot is OPEN.**
 
 Three facts define the current checkpoint:
@@ -28,12 +30,13 @@ Three facts define the current checkpoint:
 Capability-compiler Phases 0 and 1 are **COMPLETE**. Phase 2 machine evidence is
 complete, but Phase 2 is **BLOCKED_EXTERNAL_HUMAN_RATINGS**: the contract
 requires three independent blinded counterbalanced ratings for each prompt.
-The user deferred the unavailable human raters. The conditionally authorized
-Phase 3 A0-A4 development branch is now complete and failed its absolute
-quality gates, although it produced a corrected causal signal against all four
-matched controls. Phase 2 is still not certified; Phase 3 is not certified and
-Phase 4 remains locked. No current ABI artifact is certified as a broadly
-fluent teacher-derived English core.
+The user deferred the unavailable human raters. Both conditionally authorized
+Phase 3 development branches are complete and failed. The sequence successor
+raised the labeled candidate from 27.07% to 82.00%, but it failed absolute and
+repetition gates, lost to the label-free control, and did not beat the
+monolithic control. Phase 2 and Phase 3 remain uncertified; Phase 4 remains
+locked. No current ABI artifact is certified as a broadly fluent
+teacher-derived English core.
 
 Read [CURRENT_PROJECT_STATUS.md](CURRENT_PROJECT_STATUS.md) before interpreting
 any experiment or launching new work.
@@ -50,7 +53,7 @@ any experiment or launching new work.
 | Phase 2 matched-baseline machine campaign | COMPLETE; external human gate pending | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
 | Phase 2 human rating packet | READY; 21,000 independent judgments pending | `results/abi_capability_compiler_phase2/human_rating_packet_v1/manifest.json` |
 | Conditional Phase 3 A0-A4 campaign | COMPLETE; causal signal, branch FAIL | `results/abi_capability_compiler_phase3/conditional_decision_v3.json` |
-| Phase 3 prompt-conditioned sequence successor | PREREGISTERED; initial B0-B4 matrix only | `ABI_CAPABILITY_COMPILER_PHASE3_SEQUENCE_SUCCESSOR_PROTOCOL_V6.json` |
+| Phase 3 prompt-conditioned sequence successor | COMPLETE; branch FAIL | `results/abi_capability_compiler_phase3_sequence/conditional_decision_v1.json` |
 | Sufficient-information frontier | OPEN | Not yet measured |
 | Integrated teacher-derived LayerCake | OPEN | Not yet produced |
 
@@ -124,6 +127,15 @@ absolute quality family, teacher noninferiority, and zero-collapse gate. The
 realization capacity. More data, steps, or nearby cake sweeps are prohibited;
 any successor needs a separately preregistered architectural change. See
 `ABI_CAPABILITY_COMPILER_PHASE3_MACHINE_REPORT_V1.md`.
+
+The V6 sequence successor then added a continuous prompt encoder and three
+rank-128 pre-block residuals. B0 reached 1,148/1,400 (82.00%) with 43
+collapses, but B1 reached 1,224/1,400 and B4 reached 1,165/1,400. Paired
+bootstraps put B0-B1 at -5.43 points (95% CI -7.50 to -3.43) and B0-B4 at
+-1.21 (-3.14 to +0.71). Correct targets and teacher responses are causally
+necessary, but semantic route specialization is not shown to cause the gain.
+The remaining V6 seeds are prohibited. See
+`ABI_CAPABILITY_COMPILER_PHASE3_SEQUENCE_REPORT_V2.md`.
 
 ## V89 labeling result
 
@@ -234,9 +246,10 @@ novel-form audit invalidated any general-purpose English interpretation.
 - [Historical campaign state V3](ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V3.json)
 - [Historical campaign state V4](ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V4.json)
 - [Historical campaign state V5](ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V5.json)
-- [Current live campaign state V6](ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V6.json)
+- [Current live campaign state V7](ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V7.json)
 - [Phase 3 sequence-successor protocol](ABI_CAPABILITY_COMPILER_PHASE3_SEQUENCE_SUCCESSOR_PROTOCOL_V6.json)
 - [Conditional Phase 3 machine report](ABI_CAPABILITY_COMPILER_PHASE3_MACHINE_REPORT_V1.md)
+- [Phase 3 sequence-successor report](ABI_CAPABILITY_COMPILER_PHASE3_SEQUENCE_REPORT_V2.md)
 - [Phase 1 certificate](ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json)
 - [Phase 1 protocol](ABI_CAPABILITY_COMPILER_PHASE1_PROTOCOL_V1.json)
 - [Research-ledger policy](RESEARCH_LEDGER_POLICY.md)

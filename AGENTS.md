@@ -19,7 +19,7 @@ LayerCake cake.
 
 ## Current campaign state
 
-Status date: 2026-08-04.
+Status date: 2026-08-05.
 
 - Capability-compiler Phase 0 is **COMPLETE** under
   `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json`.
@@ -44,7 +44,7 @@ Status date: 2026-08-04.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V6.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V7.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -67,14 +67,13 @@ LoRA or distillation.
 
 ## Active authorization
 
-No further Phase 2 training is authorized. The A0-A4 branch remains closed.
-The materially different prompt-conditioned sequence successor is
-preregistered under
-`ABI_CAPABILITY_COMPILER_PHASE3_SEQUENCE_SUCCESSOR_PROTOCOL_V6.json`. Execute
-only B0-B4 seed 104729. Seeds 130363 and 155921 require an initial-seed pass of
-every automated and causal gate. No post-result rank, data, duration, loss, or
-threshold repair is authorized. Phase 2 human ratings remain deferred, Phase 3
-is uncertified, Phase 4 is locked, and final-test outputs remain prohibited.
+No further Phase 2 training is authorized. The A0-A4 and V6 B0-B4 branches are
+closed. V6 B0 scored 1,148/1,400 with 43 collapses, lost to label-free B1 by
+5.43 points, did not beat monolithic B4, and trailed T0 by 6.36 points. Seeds
+130363 and 155921 are not authorized. Do not tune V6 or access final material.
+Any successor requires a new preregistration tied to the measured
+routing/specialization failure. Phase 2 human ratings remain deferred, Phase 3
+is uncertified, and Phase 4 is locked.
 
 ## Permanent scientific rules
 

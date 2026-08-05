@@ -1,6 +1,6 @@
 # ABI claim ledger
 
-Status date: 2026-08-04
+Status date: 2026-08-05
 
 Documentation cannot widen a machine-readable certificate. Each claim below is
 limited to its exact source, artifact, implementation, benchmark, and evidence
@@ -123,13 +123,16 @@ remaining seeds are not authorized, Phase 3 is uncertified, and Phase 4 is
 locked. This result does not establish fluent transfer or superiority over
 LoRA or distillation.
 
-### 10. Sequence-successor preregistration is not a result
+### 10. Sequence-successor result and failure boundary
 
-`ABI_CAPABILITY_COMPILER_PHASE3_SEQUENCE_SUCCESSOR_PROTOCOL_V6.json` binds a
-materially different 1,556,998-parameter prompt-conditioned sequence bridge,
-the B0-B4 controls, unchanged development gates, identical exposure, and the
-initial-seed stop rule. This authorizes an experiment only. It is not evidence
-of quality, transfer, Phase 3 completion, or superiority.
+`results/abi_capability_compiler_phase3_sequence/conditional_decision_v1.json`
+records the complete V6 initial-seed result. B0 scored 1,148/1,400 with 43
+collapses. It beat deranged B2 and no-response B3, showing sensitivity to real,
+correctly paired teacher responses. It lost to label-free B1 by 5.43 points
+(95% CI -7.50 to -3.43), did not beat monolithic B4, and trailed T0 by 6.36
+points (95% CI -8.64 to -4.07). Semantic routing is therefore not established
+as causal for the gain. The branch failed, remaining seeds are prohibited,
+Phase 3 is uncertified, and Phase 4 is locked.
 
 ## Current implementation claims
 
@@ -148,8 +151,8 @@ of quality, transfer, Phase 3 completion, or superiority.
   three-seed checkpoint persistence, paired statistics, genuine-cold and warm
   runtime, and a blinded counterbalanced human-rating packet.
 - Phase 3 implements a corrected paired-successful-step sampler, exact sample
-  sequence hashes, five registered controls, autonomous development evaluation,
-  and immutable paired statistical analysis.
+  sequence hashes, two five-control architecture branches, autonomous
+  development evaluation, and immutable paired statistical analysis.
 
 ## Open claims
 

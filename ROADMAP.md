@@ -1,10 +1,10 @@
 # ABI capability-compiler roadmap
 
-Status date: 2026-08-04
+Status date: 2026-08-05
 
 The machine-readable contract
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` controls sequencing and
-gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V6.json` records live status.
+gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V7.json` records live status.
 Evidence gates, not experiment counts or dates, close phases.
 
 | Phase | Objective | Status |
@@ -12,7 +12,7 @@ Evidence gates, not experiment counts or dates, close phases.
 | 0 | Definitions, baselines, and preregistration | COMPLETE |
 | 1 | Capability inventory and normalized acquisition IR | COMPLETE |
 | 2 | Strong matched LoRA and distillation baselines | MACHINE COMPLETE; BLOCKED ON EXTERNAL HUMAN RATINGS |
-| 3 | Causal teacher-to-target acquisition | INITIAL BRANCH FAILED; SEQUENCE SUCCESSOR PREREGISTERED; PHASE UNCERTIFIED |
+| 3 | Causal teacher-to-target acquisition | TWO BRANCHES FAILED; PHASE UNCERTIFIED |
 | 4 | Sufficient-information Pareto frontier | LOCKED |
 | 5 | Selective reconstruction and bounded exclusion | LOCKED |
 | 6 | Composition, portability, and multi-source provenance | LOCKED |
@@ -55,11 +55,13 @@ is possible in this phase.
 ## Later gates
 
 The unavailable Phase 2 human ratings were deferred by explicit user
-direction, not passed. The hash-bound Phase 3 A0-A4 development branch has
-executed and failed its absolute gates. It cannot issue a certificate or open
-Phase 4. A future Phase 3 successor must be separately preregistered and must
-address the measured sequence-realization bottleneck; repeating the current
-branch, adding data or steps, or sweeping nearby output-side cakes is barred.
+direction, not passed. Both hash-bound Phase 3 development branches have
+executed and failed locked gates. V6 confirms that sequence conditioning is a
+large improvement, but semantic routing loses to the label-free control and
+does not beat the monolithic control. Phase 3 cannot issue a certificate or
+open Phase 4. Any successor must be separately preregistered around a shared
+sequence transformation; repeating either branch, adding data or steps, or
+sweeping nearby routes is barred.
 
 - Phase 3 must show a causal ABI acquisition candidate beats parent,
   label-free, shuffled, bridge-only, and monolithic controls while passing

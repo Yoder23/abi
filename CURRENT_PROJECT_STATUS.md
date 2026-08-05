@@ -1,6 +1,6 @@
 # ABI current project status
 
-Status date: 2026-08-04
+Status date: 2026-08-05
 
 ## Executive state
 
@@ -16,12 +16,13 @@ machine campaign is complete and adversarially rehashed, but Phase 2 is
 21,000 blinded counterbalanced judgments before a final Phase 2 certificate can
 exist. Phase 2 is not certified. The user explicitly deferred the currently
 unavailable human raters.
-The conditionally authorized Phase 3 A0-A4 branch is now
-**COMPLETE_FAILED**, without changing Phase 2's failed-closed status. It found
-a causal transfer signal but failed absolute autonomous quality. Phase 3 is
-not certified; Phase 4 and Phases 5 through 8 remain locked.
+Both conditionally authorized Phase 3 branches are now **COMPLETE_FAILED**,
+without changing Phase 2's failed-closed status. The first found a causal
+signal but failed quality. The sequence successor improved aggregate quality
+substantially, but failed absolute, causal-control, teacher-relative, and
+repetition gates. Phase 3 is not certified; Phases 4 through 8 remain locked.
 
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V6.json` is the live state.
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V7.json` is the live state.
 `ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json` and the versioned
 Phase 3 protocols remain the historical authority for the narrow execution
 exception. They did not alter any prior result or permit final-test use.
@@ -67,6 +68,7 @@ sufficient-information frontier.
 | Normalized acquisition IR | PASS | 7,000 records; 500 per English capability; provenance, authoritative tokens, hashes, and disjoint frozen evaluation material | No model, fluent transfer, domain acquisition, or minimum-information result |
 | Matched LoRA/distillation machine baselines | COMPLETE; human gate pending | All registered search/full/headline/runtime/statistical evidence is complete and content-verified | No ABI candidate, no teacher-free fluent model, and no Phase 2 certificate yet |
 | Conditional Phase 3 A0-A4 branch | COMPLETE FAILED; causal signal | Labeled teacher payload and segmented routing beat four matched controls on paired development prompts | No fluent candidate, Phase 3 certificate, final-test access, or Phase 4 opening |
+| Conditional Phase 3 B0-B4 sequence branch | COMPLETE FAILED; response/target sensitivity | Continuous sequence conditioning reaches 82.00%; correct responses and target pairing matter | Semantic routing causality, absolute gate pass, Phase 3 certificate, or final-test access |
 | Sufficient-information frontier | LOCKED | Not yet established | No smallest fluent core or imported-information budget is known |
 | Integrated ABI-derived LayerCake | OPEN | Not yet established | No ABI candidate inherits sealed LayerCake performance evidence |
 
@@ -133,6 +135,9 @@ a bounded point-estimate pass rather than a population-wide guarantee.
 - `abi/capability_compiler_phase3_analysis.py` verifies paired sample identity,
   computes Wilson intervals and 10,000-replicate stratified paired bootstraps,
   and emits the immutable failed-branch decision.
+- `abi/capability_compiler_phase3_sequence_verifier.py` independently rehashes
+  all V6 checkpoints, recomputes its decision byte-for-byte, and rejects
+  rehashed teacher/source/isolation/promotion mutations.
 - The existing v3 segregated-bundle consumers enforce destination and purity
   metadata before materialization. Phase 1 now supplies a normalized successor
   acquisition IR, but its sufficiency for broad English remains untested.
@@ -166,6 +171,10 @@ checks to make later research code appear release-equivalent.
 - The corrected Phase 3 A0 candidate causally beats all four matched controls
   on the development suite, while failing absolute quality at 379/1,400 with
   150 repetition collapses and trailing T0 by 61.29 percentage points.
+- The V6 sequence candidate B0 reaches 1,148/1,400, but has 43 collapses,
+  loses significantly to label-free B1, does not beat monolithic B4, and
+  trails T0 by 6.36 percentage points. Correct targets and response
+  supervision are necessary; semantic routing is not established as causal.
 
 ## Claims not allowed now
 
@@ -185,11 +194,11 @@ checks to make later research code appear release-equivalent.
 ## Immediate next gate
 
 Two gates remain unresolved. When raters become available, complete the Phase
-2 packet without changing its forms or key. The prompt-conditioned Phase 3
-successor is now preregistered: execute only B0-B4 seed 104729 under V6, with
-the remaining seeds conditional on every initial automated and causal gate.
-Do not rerun the failed branch or tune V6 after observing results. Final
-material remains unopened and Phase 4 remains locked.
+2 packet without changing its forms or key. V6 B0-B4 is complete and failed;
+its remaining seeds are prohibited. Do not rerun either failed branch or tune
+V6 after observing results. A successor requires a new preregistration tied to
+the measured routing/specialization failure. Final material remains unopened
+and Phase 4 remains locked.
 
 The full ABI suite currently reports 484 passed and one intentionally strict
 external-control failure: the separate clean LayerCake repository is ahead of

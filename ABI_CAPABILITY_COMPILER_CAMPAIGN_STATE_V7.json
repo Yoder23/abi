@@ -1,0 +1,32 @@
+{
+  "format": "abi-capability-compiler-campaign-state/7",
+  "effective_date": "2026-08-05",
+  "historical_evidence_changed": false,
+  "phases": {
+    "0": "COMPLETE",
+    "1": "COMPLETE",
+    "2": "MACHINE_EVIDENCE_COMPLETE_HUMAN_RATINGS_DEFERRED_NOT_PASSED",
+    "3": "SEQUENCE_SUCCESSOR_COMPLETE_FAILED_PHASE_UNCERTIFIED",
+    "4": "LOCKED",
+    "5": "LOCKED",
+    "6": "LOCKED",
+    "7": "LOCKED",
+    "8": "LOCKED"
+  },
+  "phase3": {
+    "failed_parent_branch": "results/abi_capability_compiler_phase3/conditional_decision_v3.json",
+    "failed_sequence_successor": "results/abi_capability_compiler_phase3_sequence/conditional_decision_v1.json",
+    "sequence_successor_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_SEQUENCE_SUCCESSOR_PROTOCOL_V6.json",
+    "sequence_successor_protocol_sha256": "ed8641c64ab1f3ceb92e9cfe3101fa25b3c200fb1666afd9b8bcda9e221d6873",
+    "decision_file_sha256": "8b91a36b5f8707c7480b5180dca964c84ac9888e24aff6c9d84c4cc7501ae76d",
+    "decision_evidence_sha256": "c1464ea8927894012020791738fd40a01fa235d7d76ae9ca93b7a5d34e16263a",
+    "executed_systems": ["B0", "B1", "B2", "B3", "B4"],
+    "executed_seed": 104729,
+    "remaining_seeds_authorized": false,
+    "final_test_accessed": false,
+    "certificate": "NOT_ISSUED"
+  },
+  "authorization": "The V6 B0-B4 branch is closed. Do not run seeds 130363 or 155921, tune V6, or access final data. A future experiment requires a separately preregistered architecture tied to the measured routing/specialization failure.",
+  "phase4_status": "LOCKED",
+  "claim_boundary": "The sequence bridge greatly improved development quality and proves response/target sensitivity, but the registered candidate failed absolute, causal-control, teacher-relative, and repetition gates. This is negative architecture evidence, not fluent transfer or Phase 3 completion."
+}

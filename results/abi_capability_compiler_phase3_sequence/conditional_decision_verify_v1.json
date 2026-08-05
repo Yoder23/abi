@@ -1,0 +1,885 @@
+{
+  "claim_boundary": "This is a failed development architecture, not Phase 3 completion or ABI superiority.",
+  "decision": {
+    "branch_promoted": false,
+    "reason": "B0 failed one or more locked initial-seed gates; stop this exact branch and preserve all evidence.",
+    "remaining_two_seeds_authorized": false
+  },
+  "evidence_sha256": "c1464ea8927894012020791738fd40a01fa235d7d76ae9ca93b7a5d34e16263a",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-sequence-successor-decision/1",
+  "gates": {
+    "causal_B0_beats_each_control": false,
+    "critical_capabilities": false,
+    "final_test_not_accessed": true,
+    "per_capability_functional": false,
+    "registered_bridge_only": true,
+    "source_parameters_copied_zero": true,
+    "teacher_absent": true,
+    "teacher_relative_noninferiority": false,
+    "zero_repetition_collapses": false
+  },
+  "negative_evidence_preserved": true,
+  "paired_bootstrap": {
+    "B0_minus_B1": {
+      "lower_95": -0.075,
+      "point": -0.054285714285714284,
+      "replicates": 10000,
+      "seed": 1729,
+      "upper_95": -0.03428571428571429
+    },
+    "B0_minus_B2": {
+      "lower_95": 0.6014285714285714,
+      "point": 0.6221428571428571,
+      "replicates": 10000,
+      "seed": 1729,
+      "upper_95": 0.6428571428571429
+    },
+    "B0_minus_B3": {
+      "lower_95": 0.7985714285714286,
+      "point": 0.8171428571428572,
+      "replicates": 10000,
+      "seed": 1729,
+      "upper_95": 0.8357142857142857
+    },
+    "B0_minus_B4": {
+      "lower_95": -0.03142857142857143,
+      "point": -0.012142857142857143,
+      "replicates": 10000,
+      "seed": 1729,
+      "upper_95": 0.007142857142857143
+    },
+    "B0_minus_T0": {
+      "lower_95": -0.08642857142857142,
+      "point": -0.06357142857142857,
+      "replicates": 10000,
+      "seed": 1729,
+      "upper_95": -0.04071428571428572
+    }
+  },
+  "phase2_status": "MACHINE_COMPLETE_HUMAN_RATINGS_DEFERRED_NOT_PASSED",
+  "phase3_certified": false,
+  "phase4_status": "LOCKED",
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_SEQUENCE_SUCCESSOR_PROTOCOL_V6.json",
+    "sha256": "ed8641c64ab1f3ceb92e9cfe3101fa25b3c200fb1666afd9b8bcda9e221d6873"
+  },
+  "status": "FAIL_INITIAL_SEED_SEQUENCE_SUCCESSOR",
+  "systems": {
+    "B0": {
+      "checkpoint_sha256": "7bf9cf2bc6eb726437dd9405ad7dfd05bded3fd3cdbac81082ce157b3dca4cb4",
+      "functional": {
+        "lower_95": 0.7990082411869398,
+        "point": 0.82,
+        "upper_95": 0.8392404687155944
+      },
+      "functional_passes": 1148,
+      "generation_wall_seconds": 159.4298676000035,
+      "metadata_sha256": "72df6ce65fdd08fa79f44bc6c6718c8f22beea35b1fd9487df5a533f31275ee9",
+      "outputs_sha256": "53a2bdc0d15781043cb9fc95400dae5cd8992f194a7e21e2caa72bd8541bd571",
+      "peak_cuda_allocated_bytes": 2322830848,
+      "peak_process_rss_bytes": 1631997952,
+      "per_capability": {
+        "abstention": {
+          "collapses": 13,
+          "observations": 100,
+          "passes": 46,
+          "wilson": {
+            "lower_95": 0.36560808309024106,
+            "point": 0.46,
+            "upper_95": 0.5573513967663177
+          }
+        },
+        "clarification": {
+          "collapses": 7,
+          "observations": 100,
+          "passes": 92,
+          "wilson": {
+            "lower_95": 0.8500189229905127,
+            "point": 0.92,
+            "upper_95": 0.9589065385156194
+          }
+        },
+        "coherence": {
+          "collapses": 4,
+          "observations": 100,
+          "passes": 94,
+          "wilson": {
+            "lower_95": 0.8752318455410406,
+            "point": 0.94,
+            "upper_95": 0.9722138760368118
+          }
+        },
+        "conversation": {
+          "collapses": 3,
+          "observations": 100,
+          "passes": 72,
+          "wilson": {
+            "lower_95": 0.6251197129007884,
+            "point": 0.72,
+            "upper_95": 0.7986031478881379
+          }
+        },
+        "email_drafting_from_notes": {
+          "collapses": 15,
+          "observations": 100,
+          "passes": 90,
+          "wilson": {
+            "lower_95": 0.8256343384950865,
+            "point": 0.9,
+            "upper_95": 0.9447708629393249
+          }
+        },
+        "fact_free_reasoning": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 100,
+          "wilson": {
+            "lower_95": 0.9630065017930143,
+            "point": 1.0,
+            "upper_95": 1.0
+          }
+        },
+        "fluent_realization": {
+          "collapses": 1,
+          "observations": 100,
+          "passes": 75,
+          "wilson": {
+            "lower_95": 0.656955364519384,
+            "point": 0.75,
+            "upper_95": 0.8245478863771232
+          }
+        },
+        "format_control": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 89,
+          "wilson": {
+            "lower_95": 0.8136870349691969,
+            "point": 0.89,
+            "upper_95": 0.9374580364293543
+          }
+        },
+        "grammar": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 85,
+          "wilson": {
+            "lower_95": 0.7671644040916763,
+            "point": 0.85,
+            "upper_95": 0.9069401471634337
+          }
+        },
+        "instruction_following": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 91,
+          "wilson": {
+            "lower_95": 0.837737871472837,
+            "point": 0.91,
+            "upper_95": 0.9519274599974348
+          }
+        },
+        "prompt_grounding": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 77,
+          "wilson": {
+            "lower_95": 0.6784561697712622,
+            "point": 0.77,
+            "upper_95": 0.8415673411969654
+          }
+        },
+        "rewriting": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 83,
+          "wilson": {
+            "lower_95": 0.7445199523239887,
+            "point": 0.83,
+            "upper_95": 0.8910643388594006
+          }
+        },
+        "supplied_text_summarization": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 85,
+          "wilson": {
+            "lower_95": 0.7671644040916763,
+            "point": 0.85,
+            "upper_95": 0.9069401471634337
+          }
+        },
+        "tone_control": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 69,
+          "wilson": {
+            "lower_95": 0.5937394428051057,
+            "point": 0.69,
+            "upper_95": 0.7722030278762395
+          }
+        }
+      },
+      "receipt_sha256": "f97c030a1933276d67f9cfb59caa38b6510d2a280f007bbb76f993eaf83bd7d8",
+      "repetition_collapses": 43,
+      "skipped_amp_steps": 6,
+      "successful_record_sequence_sha256": "b4ac23e86611c88515db8c17e72e78290ec41329059cb0546731c703ffeff28e",
+      "teacher_response_tokens_seen": 723739,
+      "trainable_parameters": 1556998,
+      "training_wall_seconds": 246.37452080001822
+    },
+    "B1": {
+      "checkpoint_sha256": "e25905096ecf047c8a4f98021288e68d9b5142d2150c4ce7bada576616ba11ef",
+      "functional": {
+        "lower_95": 0.8558889508821339,
+        "point": 0.8742857142857143,
+        "upper_95": 0.8906340937360091
+      },
+      "functional_passes": 1224,
+      "generation_wall_seconds": 159.8534692999965,
+      "metadata_sha256": "5962e2a5ae38d51040679df9a33dc6bc46cfe13449b62c05b18eb715d6194bea",
+      "outputs_sha256": "dd4e537109dd7c426ee350f3053ff37899f18d500c6e7ced05c92e4088a51658",
+      "peak_cuda_allocated_bytes": 2323027968,
+      "peak_process_rss_bytes": 1634463744,
+      "per_capability": {
+        "abstention": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 74,
+          "wilson": {
+            "lower_95": 0.6462901055081282,
+            "point": 0.74,
+            "upper_95": 0.8159530153525186
+          }
+        },
+        "clarification": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 100,
+          "wilson": {
+            "lower_95": 0.9630065017930143,
+            "point": 1.0,
+            "upper_95": 1.0
+          }
+        },
+        "coherence": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 91,
+          "wilson": {
+            "lower_95": 0.837737871472837,
+            "point": 0.91,
+            "upper_95": 0.9519274599974348
+          }
+        },
+        "conversation": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 100,
+          "wilson": {
+            "lower_95": 0.9630065017930143,
+            "point": 1.0,
+            "upper_95": 1.0
+          }
+        },
+        "email_drafting_from_notes": {
+          "collapses": 50,
+          "observations": 100,
+          "passes": 67,
+          "wilson": {
+            "lower_95": 0.5730534379509052,
+            "point": 0.67,
+            "upper_95": 0.7543687726587197
+          }
+        },
+        "fact_free_reasoning": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 83,
+          "wilson": {
+            "lower_95": 0.7445199523239887,
+            "point": 0.83,
+            "upper_95": 0.8910643388594006
+          }
+        },
+        "fluent_realization": {
+          "collapses": 3,
+          "observations": 100,
+          "passes": 73,
+          "wilson": {
+            "lower_95": 0.6356788323205499,
+            "point": 0.73,
+            "upper_95": 0.8073041585042365
+          }
+        },
+        "format_control": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 98,
+          "wilson": {
+            "lower_95": 0.929988209271456,
+            "point": 0.98,
+            "upper_95": 0.9944980324498376
+          }
+        },
+        "grammar": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 95,
+          "wilson": {
+            "lower_95": 0.8882495307680808,
+            "point": 0.95,
+            "upper_95": 0.9784563208456319
+          }
+        },
+        "instruction_following": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 99,
+          "wilson": {
+            "lower_95": 0.9455138038212946,
+            "point": 0.99,
+            "upper_95": 0.9982325679358593
+          }
+        },
+        "prompt_grounding": {
+          "collapses": 2,
+          "observations": 100,
+          "passes": 80,
+          "wilson": {
+            "lower_95": 0.7111708344068411,
+            "point": 0.8,
+            "upper_95": 0.8666330666689676
+          }
+        },
+        "rewriting": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 92,
+          "wilson": {
+            "lower_95": 0.8500189229905127,
+            "point": 0.92,
+            "upper_95": 0.9589065385156194
+          }
+        },
+        "supplied_text_summarization": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 97,
+          "wilson": {
+            "lower_95": 0.9154806357094724,
+            "point": 0.97,
+            "upper_95": 0.9897454759759611
+          }
+        },
+        "tone_control": {
+          "collapses": 5,
+          "observations": 100,
+          "passes": 75,
+          "wilson": {
+            "lower_95": 0.656955364519384,
+            "point": 0.75,
+            "upper_95": 0.8245478863771232
+          }
+        }
+      },
+      "receipt_sha256": "0f06380859604acbd9b87ed801ad41daa5b45a36cf79a6ef02db02107824f785",
+      "repetition_collapses": 60,
+      "skipped_amp_steps": 6,
+      "successful_record_sequence_sha256": "b4ac23e86611c88515db8c17e72e78290ec41329059cb0546731c703ffeff28e",
+      "teacher_response_tokens_seen": 723739,
+      "trainable_parameters": 1556998,
+      "training_wall_seconds": 252.78243950000615
+    },
+    "B2": {
+      "checkpoint_sha256": "95866aaf8736d66d08936edc8ed7efbc34d93a76f81617f873acbc97fbeb08c3",
+      "functional": {
+        "lower_95": 0.17782786209297374,
+        "point": 0.19785714285714287,
+        "upper_95": 0.21953998547673143
+      },
+      "functional_passes": 277,
+      "generation_wall_seconds": 177.42465800000355,
+      "metadata_sha256": "e1c813b7b1fbfd3232275aa897fe7ed6c9f770ece9e3d3cbc551696e36fb4262",
+      "outputs_sha256": "93fe37b7a64bbacbac6ae308bcad6b1d07044316bc0359c045baa65b18f6f716",
+      "peak_cuda_allocated_bytes": 2207601664,
+      "peak_process_rss_bytes": 1632047104,
+      "per_capability": {
+        "abstention": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 100,
+          "wilson": {
+            "lower_95": 0.9630065017930143,
+            "point": 1.0,
+            "upper_95": 1.0
+          }
+        },
+        "clarification": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 100,
+          "wilson": {
+            "lower_95": 0.9630065017930143,
+            "point": 1.0,
+            "upper_95": 1.0
+          }
+        },
+        "coherence": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "conversation": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 66,
+          "wilson": {
+            "lower_95": 0.5627772885472462,
+            "point": 0.66,
+            "upper_95": 0.7453847920265184
+          }
+        },
+        "email_drafting_from_notes": {
+          "collapses": 100,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "fact_free_reasoning": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "fluent_realization": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "format_control": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 1,
+          "wilson": {
+            "lower_95": 0.0017674320641406505,
+            "point": 0.01,
+            "upper_95": 0.054486196178705315
+          }
+        },
+        "grammar": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 5,
+          "wilson": {
+            "lower_95": 0.02154367915436796,
+            "point": 0.05,
+            "upper_95": 0.11175046923191913
+          }
+        },
+        "instruction_following": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 5,
+          "wilson": {
+            "lower_95": 0.02154367915436796,
+            "point": 0.05,
+            "upper_95": 0.11175046923191913
+          }
+        },
+        "prompt_grounding": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "rewriting": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "supplied_text_summarization": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "tone_control": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        }
+      },
+      "receipt_sha256": "cf7401a5d8b3de611cc2a78bcc4c778ddc32fac0400938390b6d8a8670d5d8c3",
+      "repetition_collapses": 100,
+      "skipped_amp_steps": 6,
+      "successful_record_sequence_sha256": "b4ac23e86611c88515db8c17e72e78290ec41329059cb0546731c703ffeff28e",
+      "teacher_response_tokens_seen": 726062,
+      "trainable_parameters": 1556998,
+      "training_wall_seconds": 247.2801702999859
+    },
+    "B3": {
+      "checkpoint_sha256": "25c7e4a33daa01cc9bb0f3c95b22e23f8e14012e1c50c0ad4e7f74c2738cc239",
+      "functional": {
+        "lower_95": 0.0011116308361708961,
+        "point": 0.002857142857142857,
+        "upper_95": 0.007323409136677331
+      },
+      "functional_passes": 4,
+      "generation_wall_seconds": 1125.3010184000013,
+      "metadata_sha256": "94be98098726d0c781b7a339eeef6ddead61e06b1c3acd6a00fb7be221f2db9b",
+      "outputs_sha256": "28eeee7b16eef22ca8943770eaeee0595122b4d4eb76d5d507927b67337318b2",
+      "peak_cuda_allocated_bytes": 1300275712,
+      "peak_process_rss_bytes": 1635991552,
+      "per_capability": {
+        "abstention": {
+          "collapses": 11,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "clarification": {
+          "collapses": 7,
+          "observations": 100,
+          "passes": 4,
+          "wilson": {
+            "lower_95": 0.01566330399154762,
+            "point": 0.04,
+            "upper_95": 0.0983707143588792
+          }
+        },
+        "coherence": {
+          "collapses": 93,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "conversation": {
+          "collapses": 31,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "email_drafting_from_notes": {
+          "collapses": 44,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "fact_free_reasoning": {
+          "collapses": 51,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "fluent_realization": {
+          "collapses": 84,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "format_control": {
+          "collapses": 58,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "grammar": {
+          "collapses": 67,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "instruction_following": {
+          "collapses": 47,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "prompt_grounding": {
+          "collapses": 60,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "rewriting": {
+          "collapses": 3,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "supplied_text_summarization": {
+          "collapses": 36,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        },
+        "tone_control": {
+          "collapses": 42,
+          "observations": 100,
+          "passes": 0,
+          "wilson": {
+            "lower_95": 3.469446951953614e-18,
+            "point": 0.0,
+            "upper_95": 0.03699349820698568
+          }
+        }
+      },
+      "receipt_sha256": "1058d3fe046ee39cc1a8a0d51e4db1efda9cd58a947586eb4f22283c99f14057",
+      "repetition_collapses": 634,
+      "skipped_amp_steps": 2,
+      "successful_record_sequence_sha256": "b4ac23e86611c88515db8c17e72e78290ec41329059cb0546731c703ffeff28e",
+      "teacher_response_tokens_seen": 0,
+      "trainable_parameters": 1556998,
+      "training_wall_seconds": 198.98413339999388
+    },
+    "B4": {
+      "checkpoint_sha256": "6c2bcc6c5be32938f60920a833756072144f643d14ac4594cb1c704b509ba05b",
+      "functional": {
+        "lower_95": 0.8116623676775061,
+        "point": 0.8321428571428572,
+        "upper_95": 0.8508056013061513
+      },
+      "functional_passes": 1165,
+      "generation_wall_seconds": 154.96265230001882,
+      "metadata_sha256": "a768802f724358882fda1de37a415c802f6061f1a8a00f8c249a7168cb6652ce",
+      "outputs_sha256": "3764836905c70c9133ce752911a95e8d20a1a8da279af8183625f9930b7a2f12",
+      "peak_cuda_allocated_bytes": 2315969024,
+      "peak_process_rss_bytes": 1634066432,
+      "per_capability": {
+        "abstention": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 57,
+          "wilson": {
+            "lower_95": 0.47215389549212305,
+            "point": 0.57,
+            "upper_95": 0.6626670147588988
+          }
+        },
+        "clarification": {
+          "collapses": 1,
+          "observations": 100,
+          "passes": 87,
+          "wilson": {
+            "lower_95": 0.7901964855992357,
+            "point": 0.87,
+            "upper_95": 0.9224283257275948
+          }
+        },
+        "coherence": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 91,
+          "wilson": {
+            "lower_95": 0.837737871472837,
+            "point": 0.91,
+            "upper_95": 0.9519274599974348
+          }
+        },
+        "conversation": {
+          "collapses": 3,
+          "observations": 100,
+          "passes": 82,
+          "wilson": {
+            "lower_95": 0.7333264161369926,
+            "point": 0.82,
+            "upper_95": 0.8829977450105364
+          }
+        },
+        "email_drafting_from_notes": {
+          "collapses": 49,
+          "observations": 100,
+          "passes": 72,
+          "wilson": {
+            "lower_95": 0.6251197129007884,
+            "point": 0.72,
+            "upper_95": 0.7986031478881379
+          }
+        },
+        "fact_free_reasoning": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 98,
+          "wilson": {
+            "lower_95": 0.929988209271456,
+            "point": 0.98,
+            "upper_95": 0.9944980324498376
+          }
+        },
+        "fluent_realization": {
+          "collapses": 1,
+          "observations": 100,
+          "passes": 75,
+          "wilson": {
+            "lower_95": 0.656955364519384,
+            "point": 0.75,
+            "upper_95": 0.8245478863771232
+          }
+        },
+        "format_control": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 99,
+          "wilson": {
+            "lower_95": 0.9455138038212946,
+            "point": 0.99,
+            "upper_95": 0.9982325679358593
+          }
+        },
+        "grammar": {
+          "collapses": 1,
+          "observations": 100,
+          "passes": 90,
+          "wilson": {
+            "lower_95": 0.8256343384950865,
+            "point": 0.9,
+            "upper_95": 0.9447708629393249
+          }
+        },
+        "instruction_following": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 87,
+          "wilson": {
+            "lower_95": 0.7901964855992357,
+            "point": 0.87,
+            "upper_95": 0.9224283257275948
+          }
+        },
+        "prompt_grounding": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 100,
+          "wilson": {
+            "lower_95": 0.9630065017930143,
+            "point": 1.0,
+            "upper_95": 1.0
+          }
+        },
+        "rewriting": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 69,
+          "wilson": {
+            "lower_95": 0.5937394428051057,
+            "point": 0.69,
+            "upper_95": 0.7722030278762395
+          }
+        },
+        "supplied_text_summarization": {
+          "collapses": 2,
+          "observations": 100,
+          "passes": 86,
+          "wilson": {
+            "lower_95": 0.7786281178903616,
+            "point": 0.86,
+            "upper_95": 0.9147365634006086
+          }
+        },
+        "tone_control": {
+          "collapses": 0,
+          "observations": 100,
+          "passes": 72,
+          "wilson": {
+            "lower_95": 0.6251197129007884,
+            "point": 0.72,
+            "upper_95": 0.7986031478881379
+          }
+        }
+      },
+      "receipt_sha256": "7095211c423773d019483087d815e62cabc8920522f5b8b6d4233b01527c8ddd",
+      "repetition_collapses": 57,
+      "skipped_amp_steps": 7,
+      "successful_record_sequence_sha256": "b4ac23e86611c88515db8c17e72e78290ec41329059cb0546731c703ffeff28e",
+      "teacher_response_tokens_seen": 723739,
+      "trainable_parameters": 1556998,
+      "training_wall_seconds": 236.79468389999238
+    }
+  }
+}
