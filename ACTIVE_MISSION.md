@@ -28,7 +28,7 @@ fresh, preregistered successor supplied 400 new passing abstention records; none
 of the failed records were reclassified. Specialist inventories are
 evaluation-only, and no specialist record is eligible for English training.
 
-## Active objective: define a non-routing Phase 3 successor from measured evidence
+## Active objective: execute the preregistered V8 component diagnostic
 
 The user explicitly deferred the unavailable human raters. This does not
 complete Phase 2. The corrected V4 A0-A4 development campaign has finished on
@@ -49,6 +49,12 @@ frozen. Its initial B0-B4 matrix is complete. B0 improved to 1,148/1,400, but
 had 43 collapses, lost significantly to label-free B1, did not beat monolithic
 B4, and remained significantly below T0. Every locked promotion family did
 not pass, so the remaining seeds are prohibited and the branch is closed.
+
+V8 is a read-only mechanistic diagnostic on the sealed B1 checkpoint. It
+bypasses output cakes, the route embedding, or both in memory on the same 1,400
+development prompts. It performs no training, persists no altered checkpoint,
+cannot promote a result, and exists only to choose the component set for one
+future preregistered train-from-initialization successor.
 
 The machine campaign contains all T0, L0, L1, D0, D1, and bounded D2 search
 receipts; 15 persisted headline checkpoints; 1,400 prompts per seed; 10,000
@@ -90,7 +96,8 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
-- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V7.json`
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V8.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_COMPONENT_DIAGNOSTIC_PROTOCOL_V8.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_SEQUENCE_SUCCESSOR_PROTOCOL_V6.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_PROTOCOL_V1.json`

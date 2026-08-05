@@ -1,0 +1,30 @@
+{
+  "format": "abi-capability-compiler-campaign-state/8",
+  "effective_date": "2026-08-05",
+  "historical_evidence_changed": false,
+  "parent_state": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V7.json",
+  "phases": {
+    "0": "COMPLETE",
+    "1": "COMPLETE",
+    "2": "MACHINE_EVIDENCE_COMPLETE_HUMAN_RATINGS_DEFERRED_NOT_PASSED",
+    "3": "TWO_BRANCHES_FAILED_COMPONENT_DIAGNOSTIC_PREREGISTERED_PHASE_UNCERTIFIED",
+    "4": "LOCKED",
+    "5": "LOCKED",
+    "6": "LOCKED",
+    "7": "LOCKED",
+    "8": "LOCKED"
+  },
+  "phase3": {
+    "controlling_failed_branch": "results/abi_capability_compiler_phase3_sequence/conditional_decision_v1.json",
+    "component_diagnostic_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_COMPONENT_DIAGNOSTIC_PROTOCOL_V8.json",
+    "component_diagnostic_protocol_sha256": "78d0b37df8996adc19fa95fce2e7279599797b00279c92f58cc781ff109c9120",
+    "authorized_variants": ["R1", "R2", "R3"],
+    "training_authorized": false,
+    "checkpoint_persistence_authorized": false,
+    "final_test_accessed": false,
+    "certificate": "NOT_ISSUED"
+  },
+  "authorization": "Run only R1-R3 once against the sealed B1 checkpoint on the full development suite, analyze descriptively, and preserve outputs. No training, route forcing, checkpoint persistence, final access, or promotion is authorized.",
+  "phase4_status": "LOCKED",
+  "claim_boundary": "The diagnostic can localize post-training component dependence only. It cannot promote B1 or predict a retrained architecture without a separately preregistered experiment."
+}

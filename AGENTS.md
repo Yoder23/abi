@@ -44,7 +44,7 @@ Status date: 2026-08-05.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V7.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V8.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -74,6 +74,11 @@ closed. V6 B0 scored 1,148/1,400 with 43 collapses, lost to label-free B1 by
 Any successor requires a new preregistration tied to the measured
 routing/specialization failure. Phase 2 human ratings remain deferred, Phase 3
 is uncertified, and Phase 4 is locked.
+
+The only current execution authority is the no-training V8 component
+diagnostic. Run R1-R3 once against the sealed B1 checkpoint. Do not persist an
+ablated checkpoint, force routes, access final data, or treat diagnostic output
+as a candidate.
 
 ## Permanent scientific rules
 
