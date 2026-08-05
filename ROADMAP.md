@@ -4,7 +4,7 @@ Status date: 2026-08-05
 
 The machine-readable contract
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` controls sequencing and
-gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V8.json` records live status.
+gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V9.json` records live status.
 Evidence gates, not experiment counts or dates, close phases.
 
 | Phase | Objective | Status |

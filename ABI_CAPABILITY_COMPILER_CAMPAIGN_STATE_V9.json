@@ -1,0 +1,31 @@
+{
+  "format": "abi-capability-compiler-campaign-state/9",
+  "effective_date": "2026-08-05",
+  "historical_evidence_changed": false,
+  "parent_state": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V8.json",
+  "phases": {
+    "0": "COMPLETE",
+    "1": "COMPLETE",
+    "2": "MACHINE_EVIDENCE_COMPLETE_HUMAN_RATINGS_DEFERRED_NOT_PASSED",
+    "3": "TWO_BRANCHES_FAILED_COMPONENT_DIAGNOSTIC_REPAIR_PREREGISTERED_PHASE_UNCERTIFIED",
+    "4": "LOCKED",
+    "5": "LOCKED",
+    "6": "LOCKED",
+    "7": "LOCKED",
+    "8": "LOCKED"
+  },
+  "phase3": {
+    "attempt1_failure": "ABI_CAPABILITY_COMPILER_PHASE3_COMPONENT_DIAGNOSTIC_ATTEMPT1_FAILURE.json",
+    "repair_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_COMPONENT_DIAGNOSTIC_REPAIR1_V9.json",
+    "repair_protocol_sha256": "f3d67c86d8ba72631f0112e6ff829bddd5a3f0d55f5737027d947a28761ca02e",
+    "authorized_variants": ["R1", "R2", "R3"],
+    "prompts_evaluated_before_repair": 0,
+    "training_authorized": false,
+    "checkpoint_persistence_authorized": false,
+    "final_test_accessed": false,
+    "certificate": "NOT_ISSUED"
+  },
+  "authorization": "Retry only R1-R3 under V9 after the ModuleList index repair. No other code, design, checkpoint, data, metric, route, or threshold change is authorized.",
+  "phase4_status": "LOCKED",
+  "claim_boundary": "Attempt 1 was an implementation failure before evidence. V9 preserves the exact diagnostic design and cannot promote any model."
+}

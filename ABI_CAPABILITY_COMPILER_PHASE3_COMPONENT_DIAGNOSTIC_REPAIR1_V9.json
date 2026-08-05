@@ -1,0 +1,84 @@
+{
+  "format": "abi-capability-compiler-phase3-component-diagnostic/1",
+  "status": "PREREGISTERED_DIAGNOSTIC_ONLY",
+  "effective_date": "2026-08-05",
+  "objective": "Retry the unchanged V8 R1-R3 in-memory component diagnostic after the only allowed ModuleList index-type repair.",
+  "parent_protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_COMPONENT_DIAGNOSTIC_PROTOCOL_V8.json",
+    "sha256": "78d0b37df8996adc19fa95fce2e7279599797b00279c92f58cc781ff109c9120"
+  },
+  "attempt1_failure": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_COMPONENT_DIAGNOSTIC_ATTEMPT1_FAILURE.json",
+    "sha256": "7469487fc8f480390f60e86bf73444c2b1dd8a88500ae05c82788f158a1945f7",
+    "prompts_evaluated": 0,
+    "artifacts_created": 0
+  },
+  "repair": {
+    "scope": "Change model.task_cakes[str(route)] to model.task_cakes[route] and add one ModuleList regression test.",
+    "scientific_design_changed": false,
+    "model_or_checkpoint_changed": false,
+    "data_or_prompt_changed": false,
+    "metric_or_threshold_changed": false,
+    "variant_changed": false
+  },
+  "phase2_status": "MACHINE_COMPLETE_HUMAN_RATINGS_DEFERRED_NOT_PASSED",
+  "phase3_promotion_eligible": false,
+  "phase4_status": "LOCKED",
+  "final_test_access": "PROHIBITED",
+  "training_authorized": false,
+  "checkpoint_persistence_authorized": false,
+  "v6_protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_SEQUENCE_SUCCESSOR_PROTOCOL_V6.json",
+    "sha256": "ed8641c64ab1f3ceb92e9cfe3101fa25b3c200fb1666afd9b8bcda9e221d6873"
+  },
+  "checkpoint": {
+    "path": "results/abi_capability_compiler_phase3_sequence/development_v6/B1-seed104729",
+    "sha256": "e25905096ecf047c8a4f98021288e68d9b5142d2150c4ce7bada576616ba11ef",
+    "system": "B1",
+    "seed": 104729,
+    "immutable_on_disk": true
+  },
+  "development_catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+  "baseline_outputs": "results/abi_capability_compiler_phase3_sequence/evaluation_v6/B1-seed104729/development_outputs.jsonl",
+  "output_root": "results/abi_capability_compiler_phase3_component_diagnostic/evaluation_v1",
+  "variants": {
+    "R0": "sealed B1 checkpoint and existing unmodified evaluation",
+    "R1": "same B1 checkpoint with all six output cakes bypassed in memory",
+    "R2": "same B1 checkpoint with route embedding bypassed in memory",
+    "R3": "same B1 checkpoint with output cakes and route embedding bypassed in memory"
+  },
+  "evaluation": {
+    "distinct_prompts": 1400,
+    "prompts_per_capability": 100,
+    "decoding": "identical deterministic greedy V6 development decoding",
+    "statistics": "10000 prompt-paired capability-stratified bootstrap replicates",
+    "bootstrap_seed": 2718,
+    "primary_metrics": [
+      "functional_pass_rate",
+      "per_capability_functional_pass_rate",
+      "repetition_collapse_count",
+      "authoritative_output_tokens",
+      "generation_wall_seconds"
+    ]
+  },
+  "interpretation": {
+    "R1": "Dependence on trained output cakes after holding the sequence bridge and inferred route fixed.",
+    "R2": "Dependence on the learned route embedding after holding shared sequence adapters and output cakes fixed.",
+    "R3": "Residual behavior carried by shared prompt projection and pre-block sequence adapters after removing both route-specific mechanisms.",
+    "coadaptation_caveat": "A post-training bypass can establish component dependence but cannot predict the exact result of retraining without that component.",
+    "successor_rule": "Use the diagnostic only to choose the component set for one separately preregistered train-from-initialization successor. Do not select a checkpoint, route, threshold, data budget, rank, loss, or duration from these outputs."
+  },
+  "stop_rule": "Run R1, R2, and R3 once on the full development matrix. Do not access final data, persist an ablated checkpoint, force individual routes, or turn an ablation into a candidate. Preserve every output and issue one descriptive decision.",
+  "claim_boundary": "This is a mechanistic diagnostic, not training, transfer certification, candidate promotion, evidence of semantic-routing value, or permission to open Phase 4.",
+  "bindings": {
+    "abi/capability_compiler_phase3_component_diagnostic.py": "245d9f0c53420c89df07030c85db1585ba241651204073baa146bac35d5eec03",
+    "tests/test_capability_compiler_phase3_component_diagnostic.py": "50161adabb9c85ce1fe4580664db8d9114b952745d06a29160bc74bef71ffb48",
+    "ABI_CAPABILITY_COMPILER_PHASE3_COMPONENT_DIAGNOSTIC_PROTOCOL_V8.json": "78d0b37df8996adc19fa95fce2e7279599797b00279c92f58cc781ff109c9120",
+    "ABI_CAPABILITY_COMPILER_PHASE3_COMPONENT_DIAGNOSTIC_ATTEMPT1_FAILURE.json": "7469487fc8f480390f60e86bf73444c2b1dd8a88500ae05c82788f158a1945f7",
+    "ABI_CAPABILITY_COMPILER_PHASE3_SEQUENCE_SUCCESSOR_PROTOCOL_V6.json": "ed8641c64ab1f3ceb92e9cfe3101fa25b3c200fb1666afd9b8bcda9e221d6873",
+    "results/abi_capability_compiler_phase3_sequence/conditional_decision_v1.json": "8b91a36b5f8707c7480b5180dca964c84ac9888e24aff6c9d84c4cc7501ae76d",
+    "results/abi_capability_compiler_phase3_sequence/development_v6/B1-seed104729/metadata.json": "5962e2a5ae38d51040679df9a33dc6bc46cfe13449b62c05b18eb715d6194bea",
+    "results/abi_capability_compiler_phase3_sequence/evaluation_v6/B1-seed104729/receipt.json": "0f06380859604acbd9b87ed801ad41daa5b45a36cf79a6ef02db02107824f785",
+    "results/abi_capability_compiler_phase3_sequence/evaluation_v6/B1-seed104729/development_outputs.jsonl": "dd4e537109dd7c426ee350f3053ff37899f18d500c6e7ced05c92e4088a51658"
+  }
+}

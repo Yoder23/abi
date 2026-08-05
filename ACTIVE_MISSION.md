@@ -56,6 +56,10 @@ development prompts. It performs no training, persists no altered checkpoint,
 cannot promote a result, and exists only to choose the component set for one
 future preregistered train-from-initialization successor.
 
+Attempt 1 stopped before evaluation or artifact creation on a task-cake
+container index mismatch. V9 binds the one-line ModuleList repair and regression
+test; no scientific design field changed.
+
 The machine campaign contains all T0, L0, L1, D0, D1, and bounded D2 search
 receipts; 15 persisted headline checkpoints; 1,400 prompts per seed; 10,000
 paired bootstrap resamples per T0 comparison; one genuine-cold request per
@@ -96,8 +100,9 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
-- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V8.json`
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V9.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_COMPONENT_DIAGNOSTIC_PROTOCOL_V8.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_COMPONENT_DIAGNOSTIC_REPAIR1_V9.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_SEQUENCE_SUCCESSOR_PROTOCOL_V6.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_PROTOCOL_V1.json`

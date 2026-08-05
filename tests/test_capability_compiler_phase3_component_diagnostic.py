@@ -1,12 +1,14 @@
 import json
 
 import pytest
+import torch
 
 from abi.capability_compiler_phase3_component_diagnostic import (
     ComponentDiagnosticError,
     EXPECTED_MUTATIONS,
     VARIANTS,
     load_diagnostic_protocol,
+    _apply_ablation,
 )
 
 
@@ -42,3 +44,26 @@ def test_component_diagnostic_protocol_fails_closed(tmp_path):
     path.write_text(json.dumps(protocol), encoding="utf-8")
     with pytest.raises(ComponentDiagnosticError, match="governance changed"):
         load_diagnostic_protocol(tmp_path, path)
+
+
+def test_output_cake_ablation_uses_host_modulelist_indices():
+    class Cake(torch.nn.Module):
+        def __init__(self):
+            super().__init__()
+            self.up = torch.nn.Linear(2, 2, bias=False)
+
+    class Bridge(torch.nn.Module):
+        def __init__(self):
+            super().__init__()
+            self.route_embedding = torch.nn.Embedding(6, 2)
+
+    class Host(torch.nn.Module):
+        def __init__(self):
+            super().__init__()
+            self.task_cakes = torch.nn.ModuleList([Cake() for _ in range(6)])
+            self.abi_sequence_bridge = Bridge()
+
+    host = Host()
+    changed = _apply_ablation(host, "R1")
+    assert changed == list(EXPECTED_MUTATIONS["R1"])
+    assert all(torch.count_nonzero(cake.up.weight) == 0 for cake in host.task_cakes)

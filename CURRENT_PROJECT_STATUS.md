@@ -22,7 +22,7 @@ signal but failed quality. The sequence successor improved aggregate quality
 substantially, but failed absolute, causal-control, teacher-relative, and
 repetition gates. Phase 3 is not certified; Phases 4 through 8 remain locked.
 
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V8.json` is the live state. It
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V9.json` is the live state. It
 authorizes only the read-only R1-R3 component diagnostic against sealed B1;
 training, altered-checkpoint persistence, final access, and promotion remain
 prohibited.

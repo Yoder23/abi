@@ -81,7 +81,7 @@ def _apply_ablation(model: Any, variant: str) -> list[str]:
     with torch.no_grad():
         if variant in {"R1", "R3"}:
             for route in range(6):
-                model.task_cakes[str(route)].up.weight.zero_()
+                model.task_cakes[route].up.weight.zero_()
         if variant in {"R2", "R3"}:
             model.abi_sequence_bridge.route_embedding.weight.zero_()
     after = model.state_dict()

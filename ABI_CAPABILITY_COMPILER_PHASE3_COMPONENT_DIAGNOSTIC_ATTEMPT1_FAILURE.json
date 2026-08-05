@@ -1,0 +1,21 @@
+{
+  "format": "abi-capability-compiler-phase3-component-diagnostic-attempt-failure/1",
+  "status": "FAILED_BEFORE_EVALUATION",
+  "effective_date": "2026-08-05",
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_COMPONENT_DIAGNOSTIC_PROTOCOL_V8.json",
+  "protocol_sha256": "78d0b37df8996adc19fa95fce2e7279599797b00279c92f58cc781ff109c9120",
+  "variant_attempted": "R1",
+  "prompts_evaluated": 0,
+  "output_artifacts_created": 0,
+  "training_performed": false,
+  "checkpoint_changed": false,
+  "final_test_accessed": false,
+  "failure": {
+    "exception": "TypeError",
+    "message": "'str' object cannot be interpreted as an integer",
+    "location": "_apply_ablation",
+    "root_cause": "The LayerCake host exposes task_cakes as torch.nn.ModuleList, but the diagnostic used string indexing appropriate to ModuleDict."
+  },
+  "allowed_repair": "Change only task-cake lookup from model.task_cakes[str(route)] to model.task_cakes[route], add a ModuleList regression test, rebind the implementation in a versioned protocol, and seal it before any retry.",
+  "claim_boundary": "This failed attempt contains no model-quality evidence and cannot select an architecture or component."
+}
