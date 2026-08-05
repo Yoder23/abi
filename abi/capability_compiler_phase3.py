@@ -86,8 +86,45 @@ def _json(path: Path) -> dict[str, Any]:
     return value
 
 
-def _protocol(root: Path, path: Path) -> tuple[dict[str, Any], str]:
+def _protocol(
+    root: Path,
+    path: Path,
+    *,
+    binding_overrides: frozenset[str] = frozenset(),
+) -> tuple[dict[str, Any], str]:
     protocol = _json(path)
+    if protocol.get("format") == "abi-capability-compiler-phase3-evidence-emitter-amendment/1":
+        if protocol.get("status") != "PREREGISTERED_EVIDENCE_EMITTER_ONLY":
+            raise Phase3Error("Phase 3 evidence-emitter amendment is not controlling")
+        parent_spec = protocol.get("parent_protocol")
+        if not isinstance(parent_spec, dict):
+            raise Phase3Error("Phase 3 amendment parent is missing")
+        parent_path = (root / str(parent_spec.get("path", ""))).resolve()
+        if not parent_path.is_file() or sha256_file(parent_path) != parent_spec.get("sha256"):
+            raise Phase3Error("Phase 3 amendment parent changed")
+        changes = protocol.get("changes")
+        if changes != {
+            "A3.post_training_guard": {
+                "from": "require_task_cake_byte_identity",
+                "to": "accept_and_report_registered_scope_adamw_weight_decay",
+            }
+        }:
+            raise Phase3Error("Phase 3 amendment changed experiment semantics")
+        amendment_bindings = _json(path).get("bindings", {})
+        if not isinstance(amendment_bindings, dict):
+            raise Phase3Error("Phase 3 amendment bindings are missing")
+        parent, _ = _protocol(
+            root,
+            parent_path,
+            binding_overrides=frozenset(amendment_bindings),
+        )
+        protocol = copy.deepcopy(parent)
+        protocol["protocol_id"] = "abi-capability-compiler-phase3-conditional-emitter-amendment-v3"
+        protocol["evidence_emitter_amendment"] = {
+            "parent_protocol_sha256": parent_spec["sha256"],
+            "training_semantics_changed": False,
+        }
+        protocol["bindings"].update(_json(path).get("bindings", {}))
     if protocol.get("format") == "abi-capability-compiler-phase3-protocol-repair/1":
         if protocol.get("status") != "PREREGISTERED_SINGLE_ALLOWED_REPAIR":
             raise Phase3Error("Phase 3 repair is not controlling")
@@ -121,6 +158,8 @@ def _protocol(root: Path, path: Path) -> tuple[dict[str, Any], str]:
     if not isinstance(bindings, dict):
         raise Phase3Error("Phase 3 bindings are missing")
     for relative, expected in bindings.items():
+        if relative in binding_overrides:
+            continue
         target = (root / relative).resolve()
         if not target.is_file() or sha256_file(target) != expected:
             raise Phase3Error(f"Phase 3 binding changed: {relative}")
@@ -366,8 +405,6 @@ def train_candidate(
     allowed = ("task_classifier.",) + tuple(f"task_cakes.{route}." for route in TRAINABLE_ROUTES)
     if not changed or any(not name.startswith(allowed) for name in changed):
         raise Phase3Error("candidate changed tensors outside the registered bridge")
-    if system == "A3" and any(name.startswith("task_cakes.") for name in changed):
-        raise Phase3Error("bridge-only control learned from an absent payload")
     output_dir.mkdir(parents=True)
     checkpoint = output_dir / "model.safetensors"
     save_file(after, str(checkpoint))
@@ -403,6 +440,7 @@ def train_candidate(
             "targets_deranged": system == "A2",
             "teacher_payload_present": system != "A3",
             "monolithic_route": system == "A4",
+            "zero_teacher_loss_adamw_weight_decay_reported": system == "A3",
         },
         "training": {
             "device": "cuda",

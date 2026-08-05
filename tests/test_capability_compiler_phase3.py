@@ -129,3 +129,43 @@ def test_repair_overlay_allows_only_the_measured_context_change(tmp_path):
     repair_path.write_text(json.dumps(repair), encoding="utf-8")
     with pytest.raises(Phase3Error, match="expanded beyond"):
         _protocol(tmp_path, repair_path)
+
+
+def test_emitter_amendment_cannot_change_training_semantics(tmp_path):
+    import hashlib
+
+    bound = tmp_path / "bound.txt"
+    bound.write_text("bound", encoding="utf-8")
+    parent = {
+        "format": "abi-capability-compiler-phase3-protocol/1",
+        "status": "PREREGISTERED_CONDITIONAL_PHASE3",
+        "phase2_status": "MACHINE_COMPLETE_HUMAN_RATINGS_DEFERRED",
+        "final_test_access": "PROHIBITED",
+        "bindings": {"bound.txt": hashlib.sha256(b"bound").hexdigest()},
+    }
+    parent_path = tmp_path / "parent.json"
+    parent_path.write_text(json.dumps(parent), encoding="utf-8")
+    amendment = {
+        "format": "abi-capability-compiler-phase3-evidence-emitter-amendment/1",
+        "status": "PREREGISTERED_EVIDENCE_EMITTER_ONLY",
+        "parent_protocol": {
+            "path": "parent.json",
+            "sha256": hashlib.sha256(parent_path.read_bytes()).hexdigest(),
+        },
+        "changes": {
+            "A3.post_training_guard": {
+                "from": "require_task_cake_byte_identity",
+                "to": "accept_and_report_registered_scope_adamw_weight_decay",
+            }
+        },
+        "bindings": {},
+    }
+    path = tmp_path / "amendment.json"
+    path.write_text(json.dumps(amendment), encoding="utf-8")
+    loaded, _ = _protocol(tmp_path, path)
+    assert loaded["evidence_emitter_amendment"]["training_semantics_changed"] is False
+
+    amendment["changes"]["training.learning_rate"] = {"from": 0.0001, "to": 0.001}
+    path.write_text(json.dumps(amendment), encoding="utf-8")
+    with pytest.raises(Phase3Error, match="experiment semantics"):
+        _protocol(tmp_path, path)
