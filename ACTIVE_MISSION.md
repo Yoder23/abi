@@ -28,7 +28,7 @@ fresh, preregistered successor supplied 400 new passing abstention records; none
 of the failed records were reclassified. Specialist inventories are
 evaluation-only, and no specialist record is eligible for English training.
 
-## Active objective: govern the measured Phase 3 branch failure
+## Active objective: execute the preregistered Phase 3 sequence successor
 
 The user explicitly deferred the unavailable human raters. This does not
 complete Phase 2. The corrected V4 A0-A4 development campaign has finished on
@@ -42,6 +42,11 @@ repetition collapses. Its paired pass-rate advantages over A1, A2, A3, and A4
 were respectively 19.00, 7.71, 26.79, and 9.07 percentage points; every
 stratified-bootstrap 95% lower bound was positive. Against T0, A0 was 61.29
 points worse (95% CI -63.64 to -58.86). Two capabilities scored 0/100.
+
+V6 is a materially different successor: a 1,556,998-parameter continuous
+prompt encoder and three rank-128 nonlinear pre-block residuals, with all three
+host transformer blocks frozen. Run only B0-B4 seed 104729. The remaining two
+seeds are conditional on passing every initial quality and causal gate.
 
 The machine campaign contains all T0, L0, L1, D0, D1, and bounded D2 search
 receipts; 15 persisted headline checkpoints; 1,400 prompts per seed; 10,000
@@ -82,7 +87,8 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
-- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V5.json`
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V6.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_SEQUENCE_SUCCESSOR_PROTOCOL_V6.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_PROTOCOL_V1.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_PAIRED_SAMPLER_AMENDMENT_V4.json`

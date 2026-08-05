@@ -123,6 +123,14 @@ remaining seeds are not authorized, Phase 3 is uncertified, and Phase 4 is
 locked. This result does not establish fluent transfer or superiority over
 LoRA or distillation.
 
+### 10. Sequence-successor preregistration is not a result
+
+`ABI_CAPABILITY_COMPILER_PHASE3_SEQUENCE_SUCCESSOR_PROTOCOL_V6.json` binds a
+materially different 1,556,998-parameter prompt-conditioned sequence bridge,
+the B0-B4 controls, unchanged development gates, identical exposure, and the
+initial-seed stop rule. This authorizes an experiment only. It is not evidence
+of quality, transfer, Phase 3 completion, or superiority.
+
 ## Current implementation claims
 
 - The V87 real-versus-shuffled causal pilot is implemented and evidence-bound.

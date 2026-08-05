@@ -44,7 +44,7 @@ Status date: 2026-08-04.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V5.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V6.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -67,13 +67,14 @@ LoRA or distillation.
 
 ## Active authorization
 
-No further Phase 2 training is authorized. The hash-bound A0-A4 branch is
-finished and must not be repeated, extended to its remaining seeds, or tuned
-with more data, steps, or nearby cake variants. Any future Phase 3 architecture
-requires a separate preregistration tied to the measured lack of
-prompt-conditioned sequence-realization capacity. Phase 2 human ratings remain
-deferred, not waived or passed. Phase 3 is uncertified, Phase 4 is locked, and
-final-test outputs remain prohibited.
+No further Phase 2 training is authorized. The A0-A4 branch remains closed.
+The materially different prompt-conditioned sequence successor is
+preregistered under
+`ABI_CAPABILITY_COMPILER_PHASE3_SEQUENCE_SUCCESSOR_PROTOCOL_V6.json`. Execute
+only B0-B4 seed 104729. Seeds 130363 and 155921 require an initial-seed pass of
+every automated and causal gate. No post-result rank, data, duration, loss, or
+threshold repair is authorized. Phase 2 human ratings remain deferred, Phase 3
+is uncertified, Phase 4 is locked, and final-test outputs remain prohibited.
 
 ## Permanent scientific rules
 

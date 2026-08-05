@@ -21,7 +21,7 @@ The conditionally authorized Phase 3 A0-A4 branch is now
 a causal transfer signal but failed absolute autonomous quality. Phase 3 is
 not certified; Phase 4 and Phases 5 through 8 remain locked.
 
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V5.json` is the live state.
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V6.json` is the live state.
 `ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json` and the versioned
 Phase 3 protocols remain the historical authority for the narrow execution
 exception. They did not alter any prior result or permit final-test use.
@@ -185,12 +185,11 @@ checks to make later research code appear release-equivalent.
 ## Immediate next gate
 
 Two gates remain unresolved. When raters become available, complete the Phase
-2 packet without changing its forms or key. Separately, any Phase 3 successor
-must be newly preregistered around the measured need for prompt-conditioned
-sequence transformation while preserving the frozen host and equal-information
-controls. Do not rerun the failed branch, run its remaining seeds, increase its
-data or steps, or sweep nearby cakes. Final material remains unopened and Phase
-4 remains locked.
+2 packet without changing its forms or key. The prompt-conditioned Phase 3
+successor is now preregistered: execute only B0-B4 seed 104729 under V6, with
+the remaining seeds conditional on every initial automated and causal gate.
+Do not rerun the failed branch or tune V6 after observing results. Final
+material remains unopened and Phase 4 remains locked.
 
 The full ABI suite currently reports 484 passed and one intentionally strict
 external-control failure: the separate clean LayerCake repository is ahead of
