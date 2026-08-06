@@ -184,6 +184,22 @@ thresholds. This assigns the next experiment to bridge fit, optimization, or
 expressivity. It does not invalidate sealed LayerCake, prove a fundamental host
 ceiling, or permit a quality or superiority claim.
 
+### 16. Doubling bridge rank does not clear the contaminated upper bound
+
+V22 expands the sequence rank from 128 to 256 and the shared-output rank from
+64 to 128 while keeping the sealed LayerCake host byte-identical. It scores
+1,248/1,400 with 75 collapses on the exact development pairs used to train the
+bridge. This fails the preregistered 99% aggregate, 95%-per-capability, and
+zero-collapse gates. It gains only 19 passes over V20 and does not establish a
+sufficient integration architecture.
+
+This result does not test or disprove ABI extraction or labeling, does not show
+a LayerCake regression, and does not prove a fundamental host representational
+ceiling. It requires a separately governed LayerCake integration-interface
+investigation before ABI acquisition experiments can resume. The expanded
+candidate inherits no speed, memory, TTFT, sparsity, quality, or superiority
+claim.
+
 ## Current implementation claims
 
 - The V87 real-versus-shuffled causal pilot is implemented and evidence-bound.

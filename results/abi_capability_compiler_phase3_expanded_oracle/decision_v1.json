@@ -1,0 +1,125 @@
+{
+  "abi_superiority_claim_allowed": false,
+  "attribution": {
+    "abi_extraction_failure_proven": false,
+    "abi_labeling_failure_proven": false,
+    "current_and_expanded_abi_integration_bridges_sufficient": false,
+    "layercake_host_representational_ceiling_proven": false,
+    "sealed_layercake_regression": false
+  },
+  "checkpoint_sha256": "ab5813934095822bf1c53803256fa01eb6fad3fcae7ff146f5f0723a4c98e10e",
+  "comparison_to_v20_oracle": {
+    "functional_pass_delta": 19,
+    "repetition_collapse_delta": -14,
+    "v20_functional_passes": 1229,
+    "v20_repetition_collapses": 89
+  },
+  "decision": {
+    "abi_acquisition_experimentation_authorized": false,
+    "capacity_sufficient": false,
+    "next_action": "stop ABI acquisition experiments and open a separately governed LayerCake integration investigation"
+  },
+  "development_contaminated": true,
+  "evidence_sha256": "0482c39cf1cc5ae82f4d2b3a44cf20b0b74b177f0ddfd2f271d81fec0726da2f",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-expanded-oracle-decision/1",
+  "functional_passes": 1248,
+  "functional_rate": 0.8914285714285715,
+  "gates": {
+    "aggregate_functional": false,
+    "autonomous_generation": true,
+    "development_contaminated": true,
+    "final_test_not_accessed": true,
+    "frozen_host_unchanged": true,
+    "per_capability_functional": false,
+    "promotion_prohibited": true,
+    "speed_claim_not_inherited": true,
+    "zero_repetition_collapses": false
+  },
+  "identity_checks": {
+    "aggregate": true,
+    "checkpoint_bound": true,
+    "collapse_aggregate": true,
+    "depth": true,
+    "development_contaminated": true,
+    "final_not_accessed": true,
+    "frozen_host": true,
+    "outputs_bound": true,
+    "promotion_prohibited": true,
+    "protocol_metadata": true,
+    "protocol_receipt": true,
+    "speed_not_inherited": true,
+    "trainable_count": true
+  },
+  "metadata_sha256": "efa962b897c1facd5795b1564fb8370d3a7f57f86aa18b40479ee43f009716fe",
+  "observations": 1400,
+  "outputs_sha256": "4628cfabf7357baf09ca15078dc1473ad87a9c0a8bc5f68097b59680eb4582cf",
+  "per_capability": {
+    "abstention": {
+      "collapses": 0,
+      "passes": 75
+    },
+    "clarification": {
+      "collapses": 1,
+      "passes": 100
+    },
+    "coherence": {
+      "collapses": 0,
+      "passes": 100
+    },
+    "conversation": {
+      "collapses": 0,
+      "passes": 88
+    },
+    "email_drafting_from_notes": {
+      "collapses": 37,
+      "passes": 61
+    },
+    "fact_free_reasoning": {
+      "collapses": 25,
+      "passes": 100
+    },
+    "fluent_realization": {
+      "collapses": 1,
+      "passes": 72
+    },
+    "format_control": {
+      "collapses": 0,
+      "passes": 100
+    },
+    "grammar": {
+      "collapses": 0,
+      "passes": 100
+    },
+    "instruction_following": {
+      "collapses": 9,
+      "passes": 91
+    },
+    "prompt_grounding": {
+      "collapses": 0,
+      "passes": 100
+    },
+    "rewriting": {
+      "collapses": 0,
+      "passes": 90
+    },
+    "supplied_text_summarization": {
+      "collapses": 2,
+      "passes": 82
+    },
+    "tone_control": {
+      "collapses": 0,
+      "passes": 89
+    }
+  },
+  "phase3_certified": false,
+  "phase4_status": "LOCKED",
+  "promotion_eligible": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_EXPANDED_ORACLE_PROTOCOL_V22.json",
+    "sha256": "f6bd5f2ca3304dce6fd94990defcefd6b4339727b1937736a49f59406c1f62cc"
+  },
+  "receipt_sha256": "f672e23c58f21a8a03dc358a440d5fb694421ee996a4101c61d1067e6d09374b",
+  "repetition_collapses": 75,
+  "status": "EXPANDED_INTEGRATION_BRIDGE_INSUFFICIENT"
+}

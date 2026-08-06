@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | TWO BRANCHES COMPLETE_FAILED; PHASE UNCERTIFIED | `results/abi_capability_compiler_phase3_sequence/conditional_decision_v1.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; INTEGRATION INTERFACE INVESTIGATION REQUIRED | `ABI_CAPABILITY_COMPILER_PHASE3_EXPANDED_ORACLE_RESULT_V1.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -28,7 +28,7 @@ fresh, preregistered successor supplied 400 new passing abstention records; none
 of the failed records were reclassified. Specialist inventories are
 evaluation-only, and no specialist record is eligible for English training.
 
-## Active objective: execute one bounded self-prefix-recovery Phase 3 successor
+## Active objective: preserve the ABI boundary while LayerCake integration is investigated
 
 The user explicitly deferred the unavailable human raters. This does not
 complete Phase 2. The corrected V4 A0-A4 development campaign has finished on
@@ -98,6 +98,16 @@ teacher-forced token accuracy). Further ABI data work is paused. The active
 objective is one materially expanded, non-promotional bridge capacity control,
 followed by explicit inference-cost measurement before any production retry.
 
+V22 completed that final authorized ABI-side ownership control. Doubling the
+sequence and shared-output ranks produced 1,248/1,400 with 75 collapses on the
+exact contaminated development pairs. It failed the 99% aggregate,
+95%-per-capability, and zero-collapse gates. The frozen LayerCake state hash
+remained exact, so no regression is present; a fundamental host ceiling also
+remains unproven. ABI extraction and labeling were not under test. Further ABI
+experimentation is stopped until a separately governed LayerCake investigation
+qualifies an integration interface. The expanded candidate inherits no host
+speed, memory, TTFT, sparsity, or quality claim.
+
 The machine campaign contains all T0, L0, L1, D0, D1, and bounded D2 search
 receipts; 15 persisted headline checkpoints; 1,400 prompts per seed; 10,000
 paired bootstrap resamples per T0 comparison; one genuine-cold request per
@@ -122,9 +132,9 @@ baseline findings, not an ABI-candidate result.
 
 - Do not rerun or tune the completed A0-A4 or B0-B4 branches. Their remaining
   two seeds were not authorized after their first seeds failed locked gates.
-- Do not launch a successor without a new preregistration addressing the
-  measured routing/specialization bottleneck while preserving sequence
-  conditioning, matched causal controls, and the final-data firewall.
+- Do not launch an ABI successor until a separate LayerCake integration
+  investigation qualifies the host interface and a fresh protocol binds that
+  interface, matched controls, same-candidate runtime, and the final firewall.
 - Do not call conditional Phase 3 evidence a certificate while Phase 2 lacks
   human ratings.
 - Do not use final-test outputs for tuning, repair, source selection, or early
@@ -138,7 +148,9 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
-- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V12.json`
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V17.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_EXPANDED_ORACLE_RESULT_V1.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_EXPANDED_ORACLE_REPORT_V9.md`
 - `ABI_CAPABILITY_COMPILER_PHASE3_SHARED_OUTPUT_PROTOCOL_V11.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_SHARED_OUTPUT_REPORT_V4.md`
 - `ABI_CAPABILITY_COMPILER_PHASE3_COMPONENT_DIAGNOSTIC_PROTOCOL_V8.json`

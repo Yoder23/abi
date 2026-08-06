@@ -1,0 +1,52 @@
+{
+  "format": "abi-capability-compiler-phase3-expanded-oracle-result/1",
+  "status": "COMPLETE_EXPANDED_INTEGRATION_BRIDGE_INSUFFICIENT",
+  "date": "2026-08-06",
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_EXPANDED_ORACLE_PROTOCOL_V22.json",
+  "protocol_sha256": "f6bd5f2ca3304dce6fd94990defcefd6b4339727b1937736a49f59406c1f62cc",
+  "decision": "results/abi_capability_compiler_phase3_expanded_oracle/decision_v1.json",
+  "decision_sha256": "eb8f54a87a8cb1ad0808d4a539587619c591ca7266688b52553c2ab304413f84",
+  "decision_evidence_sha256": "0482c39cf1cc5ae82f4d2b3a44cf20b0b74b177f0ddfd2f271d81fec0726da2f",
+  "checkpoint_sha256": "ab5813934095822bf1c53803256fa01eb6fad3fcae7ff146f5f0723a4c98e10e",
+  "metadata_sha256": "efa962b897c1facd5795b1564fb8370d3a7f57f86aa18b40479ee43f009716fe",
+  "receipt_sha256": "f672e23c58f21a8a03dc358a440d5fb694421ee996a4101c61d1067e6d09374b",
+  "outputs_sha256": "4628cfabf7357baf09ca15078dc1473ad87a9c0a8bc5f68097b59680eb4582cf",
+  "architecture": {
+    "sequence_rank": 256,
+    "shared_output_rank": 128,
+    "trainable_parameters": 2238982,
+    "additional_parameters_over_v11": 1181184,
+    "speed_claim_inherited": false
+  },
+  "autonomous": {
+    "functional_passes": 1248,
+    "observations": 1400,
+    "functional_rate": 0.8914285714285715,
+    "repetition_collapses": 75,
+    "aggregate_gate": false,
+    "per_capability_gate": false,
+    "zero_collapse_gate": false
+  },
+  "comparison_to_v20_oracle": {
+    "functional_pass_delta": 19,
+    "repetition_collapse_delta": -14
+  },
+  "frozen_layercake_host_unchanged": true,
+  "abi_extraction_failure_proven": false,
+  "abi_labeling_failure_proven": false,
+  "layercake_regression": false,
+  "layercake_host_representational_ceiling_proven": false,
+  "current_and_expanded_abi_integration_bridges_sufficient": false,
+  "interpretation": "A materially expanded ABI bridge improves the contaminated V20 oracle by only 19 autonomous passes and retains 75 repetition collapses. It fails every discriminating capacity gate while the sealed LayerCake host remains byte-identical. ABI extraction and labeling are not under test in this contaminated control, so they are not blamed. The measured blocker is the present ABI-to-LayerCake integration design; determining whether the host needs a new integration surface belongs to a separately governed LayerCake investigation.",
+  "next_action": "Stop ABI acquisition experiments. Open a separate LayerCake integration investigation with the V20/V21/V22 evidence as its input. Any future ABI retry requires a qualified host interface, fresh preregistration, final-data firewall, and same-candidate speed recertification.",
+  "development_contaminated": true,
+  "promotion_eligible": false,
+  "phase3_certified": false,
+  "phase4_status": "LOCKED",
+  "final_test_accessed": false,
+  "abi_superiority_claim_allowed": false,
+  "adversarial_verifier": {
+    "status": "PASS",
+    "mutations_rejected": 6
+  }
+}

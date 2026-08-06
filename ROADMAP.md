@@ -4,7 +4,7 @@ Status date: 2026-08-06
 
 The machine-readable contract
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` controls sequencing and
-gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V12.json` records live status.
+gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V17.json` records live status.
 Evidence gates, not experiment counts or dates, close phases.
 
 | Phase | Objective | Status |
@@ -12,7 +12,7 @@ Evidence gates, not experiment counts or dates, close phases.
 | 0 | Definitions, baselines, and preregistration | COMPLETE |
 | 1 | Capability inventory and normalized acquisition IR | COMPLETE |
 | 2 | Strong matched LoRA and distillation baselines | MACHINE COMPLETE; BLOCKED ON EXTERNAL HUMAN RATINGS |
-| 3 | Causal teacher-to-target acquisition | CAUSAL/TEACHER-RELATIVE PASS; ABSOLUTE QUALITY FAIL; PHASE UNCERTIFIED |
+| 3 | Causal teacher-to-target acquisition | UNCERTIFIED; BLOCKED ON INTEGRATION-INTERFACE INVESTIGATION |
 | 4 | Sufficient-information Pareto frontier | LOCKED |
 | 5 | Selective reconstruction and bounded exclusion | LOCKED |
 | 6 | Composition, portability, and multi-source provenance | LOCKED |
@@ -69,6 +69,11 @@ sweeping nearby routes is barred.
   that measured repair fails and an oracle-fit control proves a host ceiling.
   V17 and V18 have now failed, so the oracle-fit capacity control is the next
   non-promotional ownership gate; nearby recovery-loss variants are closed.
+- V20/V21 and the expanded V22 oracle have now failed their fit/capacity gates.
+  No further ABI acquisition, labeling, recovery-loss, or nearby bridge work is
+  authorized. A separate LayerCake investigation must qualify the integration
+  surface before a new ABI protocol can be registered. No runtime claim is
+  inherited by either oracle bridge.
 - Phase 3 must show a causal ABI acquisition candidate beats parent,
   label-free, shuffled, bridge-only, and monolithic controls while passing
   autonomous quality and repetition gates.

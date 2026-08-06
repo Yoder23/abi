@@ -1,6 +1,6 @@
 # ABI research status and open questions
 
-Status date: 2026-08-05
+Status date: 2026-08-06
 
 ## What is resolved
 
@@ -43,6 +43,11 @@ Status date: 2026-08-05
     raised B0 to 1,148/1,400, while deranged targets and no-response training
     collapsed. However label-free B1 significantly beat B0, B0 did not beat
     monolithic B4, and B0 retained 43 collapses. The exact branch is closed.
+13. **The current integration bridge family is insufficient.** V20/V21 missed
+    contaminated autonomous and teacher-forced fit gates. V22 doubled both
+    bridge ranks and still scored only 1,248/1,400 with 75 collapses. The exact
+    LayerCake host remained unchanged; extraction and labeling were not under
+    test, and no fundamental host ceiling was proven.
 
 ## Open scientific questions
 
@@ -59,15 +64,13 @@ causal signal from it but did not show fluent autonomous generation,
 grounding, instruction following, clarification, abstention, coherence, or
 repetition safety at the required level.
 
-### 3. Is the ABI path causally distinct and useful?
+### 3. Can LayerCake expose an integration surface that realizes the causal ABI signal?
 
-The first Phase 3 branch compared the labeled ABI route with label-free,
-shuffled-target, no-payload, monolithic, and Phase 2 LoRA/distillation
-references. V6 then tested a small frozen-host-compatible prompt-conditioned
-sequence transformation. It approached teacher aggregate quality, but routing
-specialization hurt rather than caused the gain and repetition remained
-unsafe. The open question is whether a shared/direct sequence transformation
-can preserve the gain while eliminating routing interference and collapse.
+The causal payload signal is established, but current and doubled-rank bridges
+cannot realize it reliably even on contaminated in-sample pairs. The next
+question belongs to a separate LayerCake investigation: whether a qualified
+host integration surface can expose adequate state and control while preserving
+the sealed runtime contract. ABI extraction work cannot answer that question.
 
 ### 4. What is the sufficient-information frontier?
 
@@ -109,13 +112,14 @@ hardware reproduction, and external replication.
 
 ## Immediate research priority
 
-Preserve both completed failed Phase 3 branches and keep final data unopened.
-Do not run their remaining seeds or tune data, steps, rank, or nearby routes.
-The next research proposal must preregister a shared/direct sequence
-transformation architecture tied to V6's measured specialization failure while
-retaining the frozen host and equal-information controls. Phase 2 and Phase 3
-remain uncertified, and Phase 4 remains locked. When independent raters become
-available, the Phase 2 packet must still be completed before certification.
+Preserve every completed failed Phase 3 branch and keep final data unopened.
+Do not tune data, steps, recovery losses, rank, or nearby bridge variants. Open
+a separately governed LayerCake integration-interface investigation using the
+V16-V22 ownership evidence. ABI work may resume only after that interface is
+qualified and a fresh protocol binds equal-information controls and same-
+candidate runtime certification. Phase 2 and Phase 3 remain uncertified, and
+Phase 4 remains locked. When independent raters become available, the Phase 2
+packet must still be completed before certification.
 
 See `CURRENT_PROJECT_STATUS.md` for the current claim boundary and
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` for controlling gates.

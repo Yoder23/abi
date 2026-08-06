@@ -117,6 +117,14 @@ LayerCake regression. Stop acquisition-data and recovery-loss experiments. One
 materially expanded bridge oracle control may be preregistered, with added
 inference parameters explicitly accounted and no inherited speed claim.
 
+V22 completed that expanded control and failed. The 2,238,982-parameter bridge
+scored 1,248/1,400 on the exact contaminated development pairs and produced 75
+collapses, failing the 99% aggregate, 95%-per-capability, and zero-collapse
+gates. The frozen LayerCake state remained exact. Do not run further ABI data,
+labeling, recovery-loss, rank, or nearby bridge experiments. The next work is a
+separately governed LayerCake integration-interface investigation. Phase 3 is
+uncertified, Phase 4 is locked, and no speed or superiority claim is inherited.
+
 V8 attempt 1 failed before evaluating any prompt because the diagnostic used a
 ModuleDict-style string index on the host's ModuleList. V9 authorizes only the
 integer-index repair and unchanged R1-R3 retry. The failure remains evidence.

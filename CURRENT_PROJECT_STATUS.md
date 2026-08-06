@@ -22,7 +22,7 @@ signal but failed quality. The sequence successor improved aggregate quality
 substantially, but failed absolute, causal-control, teacher-relative, and
 repetition gates. Phase 3 is not certified; Phases 4 through 8 remain locked.
 
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V16.json` is the live state. V11 C0-C4
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V17.json` is the live state. V11 C0-C4
 is complete: causal and teacher-relative aggregate gates pass, but absolute
 capability and collapse gates fail. Final access and promotion remain
 prohibited.
@@ -46,6 +46,14 @@ reached only 1,229/1,400 with 89 collapses and 94.11% teacher-forced accuracy.
 The sealed LayerCake host has not regressed, but its speed cannot be borrowed by
 an expanded bridge. ABI acquisition experiments pause until bridge capacity and
 its inference cost are resolved.
+
+V22 has now completed the one authorized capacity expansion. Its 2.24M bridge
+reached 1,248/1,400 with 75 collapses on the exact development pairs. This
+fails all discriminating oracle gates. The LayerCake host remained unchanged,
+ABI extraction and labeling were not tested, and no fundamental host ceiling
+was proven. ABI-side experiments are stopped; the next action is a separately
+governed LayerCake integration-interface investigation. A future retry must
+recertify quality and runtime on the same integrated lineage.
 `ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json` and the versioned
 Phase 3 protocols remain the historical authority for the narrow execution
 exception. They did not alter any prior result or permit final-test use.
@@ -93,7 +101,8 @@ sufficient-information frontier.
 | Conditional Phase 3 A0-A4 branch | COMPLETE FAILED; causal signal | Labeled teacher payload and segmented routing beat four matched controls on paired development prompts | No fluent candidate, Phase 3 certificate, final-test access, or Phase 4 opening |
 | Conditional Phase 3 B0-B4 sequence branch | COMPLETE FAILED; response/target sensitivity | Continuous sequence conditioning reaches 82.00%; correct responses and target pairing matter | Semantic routing causality, absolute gate pass, Phase 3 certificate, or final-test access |
 | Sufficient-information frontier | LOCKED | Not yet established | No smallest fluent core or imported-information budget is known |
-| Integrated ABI-derived LayerCake | OPEN | Not yet established | No ABI candidate inherits sealed LayerCake performance evidence |
+| Expanded bridge oracle V22 | COMPLETE FAILED | Current and doubled-rank ABI bridges cannot clear even the contaminated autonomous upper bound | No LayerCake regression, extraction failure, labeling failure, or fundamental host ceiling is proven |
+| Integrated ABI-derived LayerCake | BLOCKED ON INTEGRATION INTERFACE | Not yet established | No ABI candidate inherits sealed LayerCake performance evidence |
 
 ## Current proven results
 
@@ -216,12 +225,13 @@ checks to make later research code appear release-equivalent.
 
 ## Immediate next gate
 
-Two gates remain unresolved. When raters become available, complete the Phase
-2 packet without changing its forms or key. V6 B0-B4 is complete and failed;
-its remaining seeds are prohibited. Do not rerun either failed branch or tune
-V6 after observing results. A successor requires a new preregistration tied to
-the measured routing/specialization failure. Final material remains unopened
-and Phase 4 remains locked.
+When raters become available, complete the Phase 2 packet without changing its
+forms or key. No additional ABI Phase 3 experiment is authorized now. The
+V20/V21/V22 evidence must be handed to a separate LayerCake investigation to
+determine whether a new host integration surface can fit and autonomously
+realize the teacher signal without sacrificing the sealed execution contract.
+Only a qualified interface and fresh ABI preregistration can reopen acquisition
+work. Final material remains unopened and Phase 4 remains locked.
 
 The full ABI suite currently reports 484 passed and one intentionally strict
 external-control failure: the separate clean LayerCake repository is ahead of
