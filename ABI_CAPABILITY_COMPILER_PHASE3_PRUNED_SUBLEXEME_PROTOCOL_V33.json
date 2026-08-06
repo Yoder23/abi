@@ -1,0 +1,32 @@
+{
+  "format":"abi-capability-compiler-phase3-pruned-sublexeme/1",
+  "protocol_id":"abi-capability-compiler-phase3-pruned-sublexeme-v33",
+  "status":"PREREGISTERED_NO_TRAINING",
+  "effective_date":"2026-08-06",
+  "historical_evidence_changed":false,
+  "training_allowed":false,
+  "promotion_eligible":false,
+  "phase3_status":"UNCERTIFIED",
+  "phase4_status":"LOCKED",
+  "final_test_access":"PROHIBITED",
+  "objective":"Preserve every training prompt lexeme, prune only training output-only lexemes, and replace them with reusable training-derived sublexemes under fixed budgets.",
+  "phase1_ir":"results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir",
+  "development_catalog":"catalogs/capability_compiler_phase1_frozen_v1.json",
+  "teacher_reference":"results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl",
+  "layercake_host":{"repository":"../layercake_release","changed":false},
+  "sublexemes":{"source":"TRAINING_OUTPUTS_ONLY","minimum_characters":2,"maximum_characters":8,"budgets":[400,700,900],"development_vocabulary_prohibited":true},
+  "qualification":{"training_over_320_maximum":0,"development_over_320_maximum":0,"maximum_fixed_actions":5000},
+  "selection_rule":"Select the smallest qualifying budget; authorize host-conformance feasibility only.",
+  "bindings":{
+    "abi/capability_compiler_phase3_pruned_sublexeme.py":"84e9ff0239bef76699bdb3f39a45a38e07690c0576b6880f03f07222d802ac07",
+    "tests/test_capability_compiler_phase3_pruned_sublexeme.py":"df6676f12b96230413e3a9511db63e233c43b4bf57cfb291a80aea4b067a86f4",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V34.json":"3fce021a50b6c2d8e6bff4aa644cb286482428c0cee09220ea942afbbe59a7df",
+    "results/abi_capability_compiler_phase3_compact_sublexeme/compact_sublexeme_v32.json":"e59273da28652fc6ef84e4118bc8111ed86d08bc53bf2da9a01fd17371f9a9dd",
+    "abi/capability_compiler_phase3_compact_sublexeme.py":"c498b9b3416a7d2c9d2878a1d65a6b0772ee3fe9b03eccfc3cc9b10a2823208b",
+    "abi/capability_compiler_phase3_representation_bakeoff.py":"5887011c07a4d8e94739a03406e4073d3c7680368c9d40f434d2c7df123121d0",
+    "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir":"a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+    "catalogs/capability_compiler_phase1_frozen_v1.json":"076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl":"1081dbe57e75da50b2619bc2dab14c6441158dcd6068f2b864733936087e86a2"
+  },
+  "claim_boundary":"No-training representation feasibility only."
+}
