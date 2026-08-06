@@ -1,0 +1,25 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "version": 23,
+  "status_date": "2026-08-06",
+  "parent_state": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V22.json",
+  "historical_evidence_changed": false,
+  "phase0": "COMPLETE",
+  "phase1": "COMPLETE",
+  "phase2": "MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS",
+  "phase3": "UNCERTIFIED_V24_FAILED_READ_ONLY_FIT_GENERALIZATION_ATTRIBUTION_AUTHORIZED",
+  "phase4_through_8": "LOCKED",
+  "latest_result": "ABI_CAPABILITY_COMPILER_PHASE3_POINTER_CORE_RESULT_V24.json",
+  "layercake_regression": false,
+  "external_layercake_unicode_core_host": {
+    "status": "INDEPENDENT_PASS_CONSTRUCT_ONLY",
+    "repository_commit": "7bf8223",
+    "interface": "lc-direct-neural-core/2",
+    "interface_sha256": "d34ba8a41815b06820988f501aab920adef627b6929a058cc9fe40528c92624f",
+    "quality_or_performance_inherited": false
+  },
+  "v24_pointer_core": "COMPLETE_FAILED_ARCHITECTURE_CLOSED",
+  "authorization": "No training. Preregister one read-only diagnostic on the sealed V23 and V24 checkpoints to measure training fit versus held-out action accuracy, fixed versus pointer accuracy, and autonomous prefix drift. Any later architecture requires that measured ownership result and new governance.",
+  "final_test_access": "PROHIBITED",
+  "abi_superiority_claim": "PROHIBITED"
+}

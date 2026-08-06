@@ -23,7 +23,7 @@ signal but failed quality. The sequence successor improved aggregate quality
 substantially, but failed absolute, causal-control, teacher-relative, and
 repetition gates. Phase 3 is not certified; Phases 4 through 8 remain locked.
 
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V22.json` is the live state. V11 C0-C4
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V23.json` is the live state. V11 C0-C4
 is complete: causal and teacher-relative aggregate gates pass, but absolute
 capability and collapse gates fail. Final access and promotion remain
 prohibited.
@@ -81,6 +81,12 @@ decoding errors. Its paired gain over V23 is +6.93 points (95% CI +4.43 to
 representation is closed. A distinct LayerCake UTF-8 action-validity gap was
 exposed, but it is not sufficient to explain ABI failure: a best case granting
 all errored prompts a pass reaches only 632/1,400.
+
+The separate LayerCake repository has since construct-certified a Unicode-
+atomic v2 external-core host. That resolves the bounded invalid-UTF-8 host
+contract for future artifacts but changes none of V24's scores and contributes
+no inherited ABI quality or performance. The next ABI gate is read-only
+fit/generalization attribution on V23/V24; no new training is authorized.
 `ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json` and the versioned
 Phase 3 protocols remain the historical authority for the narrow execution
 exception. They did not alter any prior result or permit final-test use.
@@ -130,6 +136,7 @@ sufficient-information frontier.
 | Sufficient-information frontier | LOCKED | Not yet established | No smallest fluent core or imported-information budget is known |
 | Expanded bridge oracle V22 | COMPLETE FAILED | Current and doubled-rank ABI bridges cannot clear even the contaminated autonomous upper bound | No LayerCake regression, extraction failure, labeling failure, or fundamental host ceiling is proven |
 | LayerCake direct-core host construct | EXTERNAL CONSTRUCT PASS | Signed unchanged artifacts can be hosted on CPU/CUDA with exact package operations | No ABI quality, teacher-relative, or performance result is inherited |
+| LayerCake Unicode core host v2 | EXTERNAL CONSTRUCT PASS | Future artifacts have Unicode-atomic actions and strict UTF-8 boundaries | No V24 rescue and no ABI quality or performance result is inherited |
 | ABI direct-core V23 | COMPLETE FAILED | A teacher-free ABI artifact executes autonomously through the host interface | 504/1,400 and 77 collapses do not establish fluent acquisition or Phase 3 |
 | ABI pointer-core V24 | COMPLETE FAILED | Pointer supervision causes a paired +6.93-point effect over V23 | 601/1,400, 139 collapses, and 31 errors fail every discriminating gate |
 | Integrated ABI-derived LayerCake | BLOCKED ON ACQUISITION QUALITY | Host construct exists; no qualified English artifact exists | No ABI candidate inherits sealed LayerCake performance evidence |

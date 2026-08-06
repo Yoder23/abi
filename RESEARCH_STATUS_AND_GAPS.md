@@ -58,6 +58,10 @@ Status date: 2026-08-06
     only 601/1,400, raises collapses to 139, and introduces 31 Unicode errors.
     It is closed. The UTF-8 errors expose a separate host action-validity gap;
     they cannot explain the much larger ABI quality deficit.
+16. **The host UTF-8 confound is closed for future artifacts, not for V24.**
+    LayerCake independently construct-certified a Unicode-atomic v2 host. ABI
+    inherits no quality evidence; the remaining blocker is still acquisition
+    planning/generalization and must be localized on sealed checkpoints.
 
 ## Open scientific questions
 
@@ -135,6 +139,10 @@ actions and reconstructs every training target exactly. The completed run
 failed and is closed. No additional pointer-core training is authorized. The
 next work is a separate LayerCake UTF-8 validity audit, followed by a new ABI
 bottleneck decision rather than a nearby variant.
+
+The external host audit and v2 construct are complete. Preregister one
+read-only V23/V24 fit/generalization diagnostic. Do not train a successor until
+that evidence assigns the next bottleneck.
 
 See `CURRENT_PROJECT_STATUS.md` for the current claim boundary and
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` for controlling gates.

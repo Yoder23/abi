@@ -71,6 +71,10 @@ CI for the paired delta +4.43 to +9.43 points). It also raises collapses from
 77 to 139, introduces 31 Unicode errors, and lowers prompt grounding from 50
 to 39. The branch fails and cannot support a superiority claim.
 
+The external LayerCake `lc-direct-neural-core/2` host is now construct-ready
+and Unicode-safe, but ABI does not own or inherit that evidence. It removes one
+future host-contract confound; it does not improve or reinterpret V23/V24.
+
 ### 5. Capability-compiler Phase 0 governance
 
 `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` certifies the initial

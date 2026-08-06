@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V24 POINTER CORE COMPLETE FAILED | `ABI_CAPABILITY_COMPILER_PHASE3_POINTER_CORE_RESULT_V24.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V24 FAILED, READ-ONLY FIT/GENERALIZATION ATTRIBUTION OPEN | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V23.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -60,6 +60,12 @@ but do not approach the absolute gates and come with worse collapse and prompt
 grounding. V24, its controls, and remaining seeds are closed. A separate
 LayerCake UTF-8 validity audit is required before another ABI architecture is
 considered.
+
+The separate LayerCake repository has completed that host-owned repair as the
+construct-only `lc-direct-neural-core/2` interface. ABI inherits no quality or
+performance from it, and V24 remains failed. The only active ABI work is one
+read-only sealed-checkpoint attribution of training fit, held-out fixed/pointer
+action accuracy, and autonomous prefix drift. No new training is authorized.
 
 ## Preserved historical Phase 3 path
 
@@ -185,6 +191,7 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V23.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V22.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_POINTER_CORE_RESULT_V24.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_POINTER_CORE_REPORT_V24.md`

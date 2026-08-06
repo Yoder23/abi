@@ -4,7 +4,7 @@ Status date: 2026-08-06
 
 The machine-readable contract
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` controls sequencing and
-gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V22.json` records live status.
+gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V23.json` records live status.
 Evidence gates, not experiment counts or dates, close phases.
 
 | Phase | Objective | Status |
@@ -12,7 +12,7 @@ Evidence gates, not experiment counts or dates, close phases.
 | 0 | Definitions, baselines, and preregistration | COMPLETE |
 | 1 | Capability inventory and normalized acquisition IR | COMPLETE |
 | 2 | Strong matched LoRA and distillation baselines | MACHINE COMPLETE; BLOCKED ON EXTERNAL HUMAN RATINGS |
-| 3 | Causal teacher-to-target acquisition | UNCERTIFIED; V24 POINTER CORE FAILED, HOST UTF-8 AUDIT REQUIRED |
+| 3 | Causal teacher-to-target acquisition | UNCERTIFIED; V24 FAILED, READ-ONLY FIT/GENERALIZATION ATTRIBUTION OPEN |
 | 4 | Sufficient-information Pareto frontier | LOCKED |
 | 5 | Selective reconstruction and bounded exclusion | LOCKED |
 | 6 | Composition, portability, and multi-source provenance | LOCKED |
@@ -84,6 +84,10 @@ sweeping nearby routes is barred.
   paired +97 passes over V23 do not override the absolute gates. The pointer
   branch is closed; audit the exposed LayerCake UTF-8 validity gap separately
   and require a fresh measured ABI bottleneck before any new acquisition run.
+- The separate LayerCake v2 host has closed that bounded UTF-8 contract gap for
+  future artifacts. ABI's next step is still diagnostic, not training: measure
+  sealed-checkpoint train fit, held-out fixed/pointer action accuracy, and
+  autonomous prefix drift before selecting a materially different architecture.
 - Phase 3 must show a causal ABI acquisition candidate beats parent,
   label-free, shuffled, bridge-only, and monolithic controls while passing
   autonomous quality and repetition gates.
