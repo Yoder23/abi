@@ -1,0 +1,164 @@
+{
+  "checkpoint": {
+    "bytes": 16704448,
+    "path": "model.safetensors",
+    "sha256": "3b607d5c4650549ce93407965372e9f755816f72a044832d2b1d6c779ee2135d"
+  },
+  "development_only": true,
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-bpe-core-candidate/1",
+  "hardware": {
+    "cuda": "11.8",
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "machine": "Sam",
+    "torch": "2.7.1+cu118"
+  },
+  "imported_information": {
+    "authoritative_teacher_tokens": 215647,
+    "raw_prompt_bytes": 1381925,
+    "records": 7000,
+    "source_parameters_copied": 0,
+    "stored_activations": 0,
+    "stored_logits": 0,
+    "teacher_output_bytes": 671297
+  },
+  "layercake_interface": {
+    "sha256": "4ec1f609cea9f42924ebcdc16fd6b76be1630351d629d77eaab9b956b7901ac2",
+    "version": "lc-direct-neural-core/3"
+  },
+  "manifest_sha256": "9747f6f642c9dd01918ad66055c1c78ac487223008b430183cdb7d3eb00deb9a",
+  "model_config": {
+    "path": "model_config.json",
+    "sha256": "5966def5e7fade0dfc4d03c893041e56c7307fc6ef628113342c99ca02290102",
+    "trainable_parameters": 4174280
+  },
+  "promotion_eligible": false,
+  "protocol_sha256": "c451d5ec68ca16349bfef42a2c6974327b49e428596369df9e3d8020f3f97cae",
+  "representation": {
+    "all_targets_losslessly_reconstructed": true,
+    "fixed_bpe_actions": 49029,
+    "pointer_supervision": false
+  },
+  "seed": 240017,
+  "source_blocks_retained": 0,
+  "status": "TRAINED_CONDITIONAL_DEVELOPMENT_SCREEN",
+  "teacher_present_at_inference": false,
+  "tokenizer": {
+    "canonical_sha256": "fc391ac322351a94c7cac05cc872f49b6436bc836bf260fdc959c0c11800e2f9",
+    "path": "tokenizer.json",
+    "sha256": "64a2b3ebf2fde5ec1a35faa6813b77f09f19f47c1135695d72b29145c023df36",
+    "vocabulary": 4999
+  },
+  "training": {
+    "batch_size": 16,
+    "curves": [
+      {
+        "loss": 8.815990447998047,
+        "step": 1,
+        "wall_seconds": 0.24988029996166006
+      },
+      {
+        "loss": 5.335780620574951,
+        "step": 250,
+        "wall_seconds": 6.16309079999337
+      },
+      {
+        "loss": 4.193704605102539,
+        "step": 500,
+        "wall_seconds": 11.97160549997352
+      },
+      {
+        "loss": 2.5195956230163574,
+        "step": 750,
+        "wall_seconds": 17.769611099967733
+      },
+      {
+        "loss": 2.9984402656555176,
+        "step": 1000,
+        "wall_seconds": 23.7059965999797
+      },
+      {
+        "loss": 1.4539939165115356,
+        "step": 1250,
+        "wall_seconds": 29.666949999984354
+      },
+      {
+        "loss": 1.9046767950057983,
+        "step": 1500,
+        "wall_seconds": 35.725181599962525
+      },
+      {
+        "loss": 0.3990458846092224,
+        "step": 1750,
+        "wall_seconds": 41.71691550000105
+      },
+      {
+        "loss": 1.6181390285491943,
+        "step": 2000,
+        "wall_seconds": 47.57304509996902
+      },
+      {
+        "loss": 0.7964498400688171,
+        "step": 2250,
+        "wall_seconds": 53.42362089996459
+      },
+      {
+        "loss": 0.3876954913139343,
+        "step": 2500,
+        "wall_seconds": 59.33669879997615
+      },
+      {
+        "loss": 0.444123774766922,
+        "step": 2750,
+        "wall_seconds": 65.04675509996014
+      },
+      {
+        "loss": 0.30276650190353394,
+        "step": 3000,
+        "wall_seconds": 70.91958990000421
+      },
+      {
+        "loss": 0.5630955100059509,
+        "step": 3250,
+        "wall_seconds": 76.73500639997656
+      },
+      {
+        "loss": 0.09323359280824661,
+        "step": 3500,
+        "wall_seconds": 82.55777770001441
+      },
+      {
+        "loss": 0.3251635432243347,
+        "step": 3750,
+        "wall_seconds": 88.37126149999676
+      },
+      {
+        "loss": 0.3936062157154083,
+        "step": 4000,
+        "wall_seconds": 94.28296089998912
+      }
+    ],
+    "peak_cuda_allocated_bytes": 321081344,
+    "peak_process_rss_bytes": 1200324608,
+    "record_sequence_sha256": "f076f35669e610e2d1da7c9d57432668575e9122d10856fe2b340337303a544b",
+    "sampled_by_capability": {
+      "abstention": 4571,
+      "clarification": 4571,
+      "coherence": 4572,
+      "conversation": 4572,
+      "email_drafting_from_notes": 4571,
+      "fact_free_reasoning": 4571,
+      "fluent_realization": 4571,
+      "format_control": 4571,
+      "grammar": 4572,
+      "instruction_following": 4572,
+      "prompt_grounding": 4572,
+      "rewriting": 4571,
+      "supplied_text_summarization": 4572,
+      "tone_control": 4571
+    },
+    "skipped_amp_steps": 0,
+    "steps": 4000,
+    "wall_seconds": 94.41151730000274
+  }
+}
