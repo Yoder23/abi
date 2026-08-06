@@ -1,6 +1,6 @@
 # ABI capability-compiler roadmap
 
-Status date: 2026-08-05
+Status date: 2026-08-06
 
 The machine-readable contract
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` controls sequencing and
@@ -63,6 +63,10 @@ open Phase 4. Any successor must be separately preregistered around a shared
 sequence transformation; repeating either branch, adding data or steps, or
 sweeping nearby routes is barred.
 
+- The V16 failure-attribution screen completed the ownership gate. The next
+  bounded branch is self-prefix recovery in the ABI-to-LayerCake bridge. Do not
+  modify the sealed LayerCake host or reopen broad representation sweeps unless
+  that measured repair fails and an oracle-fit control proves a host ceiling.
 - Phase 3 must show a causal ABI acquisition candidate beats parent,
   label-free, shuffled, bridge-only, and monolithic controls while passing
   autonomous quality and repetition gates.

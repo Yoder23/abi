@@ -19,7 +19,7 @@ LayerCake cake.
 
 ## Current campaign state
 
-Status date: 2026-08-05.
+Status date: 2026-08-06.
 
 - Capability-compiler Phase 0 is **COMPLETE** under
   `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json`.
@@ -44,7 +44,7 @@ Status date: 2026-08-05.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V12.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V13.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -84,6 +84,15 @@ locked teacher-relative aggregate margin, but fails per-capability, critical,
 and zero-collapse gates. Remaining seeds are prohibited. Do not tune V11. No
 new training is authorized until a self-prefix-recovery successor is separately
 preregistered.
+
+The V16 read-only failure-attribution screen is complete. The exact sealed
+LayerCake identity and certificates pass, so there is no LayerCake regression.
+The native parent has a measured scope gap on the broader ABI suite, but no
+host representational ceiling has been proven. C0 carries a strong cached-
+teacher signal against C3, while one wrong self-prefix token causes a large,
+persistent recovery loss. One separately preregistered bounded self-prefix-
+recovery bridge successor is authorized for design; the LayerCake repository
+and V11 checkpoints remain immutable.
 
 V8 attempt 1 failed before evaluating any prompt because the diagnostic used a
 ModuleDict-style string index on the host's ModuleList. V9 authorizes only the

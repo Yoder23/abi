@@ -1,6 +1,6 @@
 # ABI current project status
 
-Status date: 2026-08-05
+Status date: 2026-08-06
 
 ## Executive state
 
@@ -22,10 +22,17 @@ signal but failed quality. The sequence successor improved aggregate quality
 substantially, but failed absolute, causal-control, teacher-relative, and
 repetition gates. Phase 3 is not certified; Phases 4 through 8 remain locked.
 
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V12.json` is the live state. V11 C0-C4
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V13.json` is the live state. V11 C0-C4
 is complete: causal and teacher-relative aggregate gates pass, but absolute
 capability and collapse gates fail. Final access and promotion remain
 prohibited.
+
+V16 adds a read-only mechanistic attribution. The exact LayerCake identity and
+certificates pass, so there is no host regression. C0 carries a strong teacher-
+payload signal, while one model-generated wrong prefix token causes a large,
+persistent recovery loss. The native parent's poor result on this broader ABI
+suite is a scope gap, not proof of a representational ceiling. One bounded
+self-prefix-recovery bridge successor is the only supported next experiment.
 `ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json` and the versioned
 Phase 3 protocols remain the historical authority for the narrow execution
 exception. They did not alter any prior result or permit final-test use.

@@ -1,6 +1,6 @@
 # ABI active mission
 
-Status date: 2026-08-05
+Status date: 2026-08-06
 
 ## State
 
@@ -28,7 +28,7 @@ fresh, preregistered successor supplied 400 new passing abstention records; none
 of the failed records were reclassified. Specialist inventories are
 evaluation-only, and no specialist record is eligible for English training.
 
-## Active objective: define the self-prefix-recovery Phase 3 successor
+## Active objective: execute one bounded self-prefix-recovery Phase 3 successor
 
 The user explicitly deferred the unavailable human raters. This does not
 complete Phase 2. The corrected V4 A0-A4 development campaign has finished on
@@ -70,6 +70,13 @@ V11 is complete. C0 scores 1,207/1,400 and passes all four causal comparisons
 plus the locked teacher-relative aggregate noninferiority margin. It fails
 absolute capability floors and has 51 collapses, 41 in email drafting.
 Remaining seeds are prohibited. No V11 tuning is authorized.
+
+V16 now attributes the failure without training. The exact LayerCake lineage
+passes identity and certificate checks. C0 reaches 82.63% teacher-forced token
+accuracy versus 27.61% for no-payload C3, proving that the cached ABI payload
+is present. One C0-generated wrong prefix token leaves 16-token NLL 1.77x worse
+than the clean prefix. The next branch must target this bridge state-recovery
+failure and must not modify the sealed LayerCake host.
 
 The machine campaign contains all T0, L0, L1, D0, D1, and bounded D2 search
 receipts; 15 persisted headline checkpoints; 1,400 prompts per seed; 10,000

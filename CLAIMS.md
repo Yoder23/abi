@@ -1,6 +1,6 @@
 # ABI claim ledger
 
-Status date: 2026-08-05
+Status date: 2026-08-06
 
 Documentation cannot widen a machine-readable certificate. Each claim below is
 limited to its exact source, artifact, implementation, benchmark, and evidence
@@ -149,6 +149,16 @@ by 68.93, no-response C3 by 85.50, and monolithic C4 by 7.14; every paired 95%
 lower bound is positive. Against T0 it is -2.14 points with 95% CI -4.21 to
 -0.07, passing the locked -5-point noninferiority margin. C0 nevertheless has
 51 collapses and seven capabilities below 90/100, so Phase 3 remains failed.
+
+### 12. V16 separates ABI signal from LayerCake regression
+
+On a preregistered balanced 280-prompt diagnostic, C0 reaches 82.63%
+teacher-forced token accuracy versus 27.61% for the no-payload control. The
+exact LayerCake repository, checkpoint, and sealed certificates pass identity
+checks. One wrong C0 self-prefix token raises 16-token continuation NLL by
+1.77x and lowers accuracy by 6.96 points. This supports one bridge
+self-prefix-recovery experiment. It does not prove Phase 3, a LayerCake
+capacity ceiling, or ABI superiority over LoRA or distillation.
 
 ## Current implementation claims
 
