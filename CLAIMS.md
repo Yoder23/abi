@@ -160,6 +160,14 @@ checks. One wrong C0 self-prefix token raises 16-token continuation NLL by
 self-prefix-recovery experiment. It does not prove Phase 3, a LayerCake
 capacity ceiling, or ABI superiority over LoRA or distillation.
 
+### 13. Arbitrary teacher-token mismatch recovery is negative evidence
+
+V17's self-prefix candidate scored 1,185/1,400 versus 1,208/1,400 for its
+compute-matched control. The paired 95% interval for the -1.64-point difference
+is -2.79 to -0.43 points. Its 64 collapses also exceed the control's 56 and the
+parent's 51. This rejects arbitrary first-mismatch recovery; it does not reject
+the causal ABI payload signal or establish a LayerCake failure.
+
 ## Current implementation claims
 
 - The V87 real-versus-shuffled causal pilot is implemented and evidence-bound.

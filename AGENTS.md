@@ -44,7 +44,7 @@ Status date: 2026-08-06.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V13.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V14.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -93,6 +93,13 @@ teacher signal against C3, while one wrong self-prefix token causes a large,
 persistent recovery loss. One separately preregistered bounded self-prefix-
 recovery bridge successor is authorized for design; the LayerCake repository
 and V11 checkpoints remain immutable.
+
+V17 tested that successor and is complete failed. Self-prefix S0 scored
+1,185/1,400 with 64 collapses versus compute-matched S1's 1,208 and 56; the
+paired 95% interval for S0-S1 is wholly negative. Treating every mismatch from
+one cached teacher continuation as an error damaged valid fluent alternatives.
+Do not tune V17 or run its remaining seeds. A materially distinct successor
+may target only objectively invalid recent-token repeats under a new protocol.
 
 V8 attempt 1 failed before evaluating any prompt because the diagnostic used a
 ModuleDict-style string index on the host's ModuleList. V9 authorizes only the

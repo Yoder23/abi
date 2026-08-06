@@ -78,6 +78,13 @@ is present. One C0-generated wrong prefix token leaves 16-token NLL 1.77x worse
 than the clean prefix. The next branch must target this bridge state-recovery
 failure and must not modify the sealed LayerCake host.
 
+V17 completed that test and failed: S0 scored 1,185/1,400 with 64 collapses,
+significantly below compute-matched S1 at 1,208/1,400 with 56. The result shows
+that arbitrary disagreement with one cached teacher token is not a valid error
+definition. V17 is closed. The only supported next recovery design is one that
+corrupts objectively invalid recent-token repeats and keeps the same matched
+control and immutable LayerCake boundary.
+
 The machine campaign contains all T0, L0, L1, D0, D1, and bounded D2 search
 receipts; 15 persisted headline checkpoints; 1,400 prompts per seed; 10,000
 paired bootstrap resamples per T0 comparison; one genuine-cold request per

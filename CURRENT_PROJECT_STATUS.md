@@ -22,7 +22,7 @@ signal but failed quality. The sequence successor improved aggregate quality
 substantially, but failed absolute, causal-control, teacher-relative, and
 repetition gates. Phase 3 is not certified; Phases 4 through 8 remain locked.
 
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V13.json` is the live state. V11 C0-C4
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V14.json` is the live state. V11 C0-C4
 is complete: causal and teacher-relative aggregate gates pass, but absolute
 capability and collapse gates fail. Final access and promotion remain
 prohibited.
@@ -32,7 +32,10 @@ certificates pass, so there is no host regression. C0 carries a strong teacher-
 payload signal, while one model-generated wrong prefix token causes a large,
 persistent recovery loss. The native parent's poor result on this broader ABI
 suite is a scope gap, not proof of a representational ceiling. One bounded
-self-prefix-recovery bridge successor is the only supported next experiment.
+self-prefix-recovery bridge successor was the only supported next experiment.
+V17 completed it and failed significantly: arbitrary first-token mismatch
+recovery reduced quality and increased collapse. The result narrows any next
+design to objectively invalid recent-token repeats; V17 tuning is prohibited.
 `ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json` and the versioned
 Phase 3 protocols remain the historical authority for the narrow execution
 exception. They did not alter any prior result or permit final-test use.
