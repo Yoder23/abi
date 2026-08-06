@@ -4,7 +4,7 @@ Status date: 2026-08-06
 
 The machine-readable contract
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` controls sequencing and
-gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V28.json` records live status.
+gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V30.json` records live status.
 Evidence gates, not experiment counts or dates, close phases.
 
 | Phase | Objective | Status |
@@ -12,7 +12,7 @@ Evidence gates, not experiment counts or dates, close phases.
 | 0 | Definitions, baselines, and preregistration | COMPLETE |
 | 1 | Capability inventory and normalized acquisition IR | COMPLETE |
 | 2 | Strong matched LoRA and distillation baselines | MACHINE COMPLETE; BLOCKED ON EXTERNAL HUMAN RATINGS |
-| 3 | Causal teacher-to-target acquisition | UNCERTIFIED; V28 REPRESENTATION BAKE-OFF FAILED, UNIVERSAL-SYNTAX SUCCESSOR NEXT |
+| 3 | Causal teacher-to-target acquisition | UNCERTIFIED; V29 FULL COVERAGE, LENGTH ATTRIBUTION NEXT |
 | 4 | Sufficient-information Pareto frontier | LOCKED |
 | 5 | Selective reconstruction and bounded exclusion | LOCKED |
 | 6 | Composition, portability, and multi-source provenance | LOCKED |
@@ -95,6 +95,9 @@ sweeping nearby routes is barred.
   development and every candidate exceeds 320 actions at least once. Preserve
   this result and preregister only a development-independent universal-syntax
   successor; do not reopen training yet.
+- V29 reaches exact 8,400/8,400 target coverage with 4,634 fixed actions, but
+  nine development targets exceed 320 actions. Attribute those records before
+  proposing compact sublexemes or any host limit change.
 - The separate LayerCake v2 host has closed that bounded UTF-8 contract gap for
   future artifacts. ABI's next step is still diagnostic, not training: measure
   sealed-checkpoint train fit, held-out fixed/pointer action accuracy, and

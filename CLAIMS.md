@@ -89,6 +89,11 @@ development targets and exceeds the 320-action bound. The result supports a
 universal syntax alphabet selected independently of development outputs; it
 does not prove learned open-vocabulary generation or a host limitation.
 
+V29 establishes complete representability on the bound 7,000 training and
+1,400 development targets using a development-independent syntax alphabet. It
+does not qualify because nine development targets exceed 320 actions. This is
+representation feasibility evidence only, not learned quality or transfer.
+
 ### 5. Capability-compiler Phase 0 governance
 
 `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` certifies the initial
