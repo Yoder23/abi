@@ -62,7 +62,7 @@ def _examples(root: Path, protocol: Mapping[str, Any], tokenizer: Any) -> list[d
         if len(ids) > int(protocol["training"]["max_tokens"]): raise Phase3Error(f"oracle example exceeds context: {probe_id}")
         examples.append({
             "record_id": probe_id, "capability": capability, "route": routes[capability], "input_ids": ids,
-            "labels": [-100] * len(prompt_ids) + response_ids, "response_tokens": len(response_ids),
+            "labels": [-100] * len(prompt_ids) + response_ids, "prompt_tokens": len(prompt_ids), "response_tokens": len(response_ids),
         })
     if len(examples) != 1400 or len({v["record_id"] for v in examples}) != 1400: raise Phase3Error("oracle development examples changed")
     return examples

@@ -1,0 +1,11 @@
+{
+  "format": "abi-capability-compiler-phase3-oracle-fit-execution-failure/1",
+  "protocol_sha256": "6f877b9034c3dfb87759ff4dcd3108e284818d330524240988b77c32db25c96d",
+  "status": "FAILED_BEFORE_FIRST_OPTIMIZER_STEP",
+  "exception": "KeyError: prompt_tokens",
+  "cause": "The new oracle example builder omitted the prompt_tokens field required by the existing batch ABI.",
+  "partial_checkpoint_created": false,
+  "scientific_fields_changed": false,
+  "authorized_repair": "Set prompt_tokens to the authoritative runtime length of prompt_ids for every otherwise unchanged example.",
+  "promotion_eligible": false
+}
