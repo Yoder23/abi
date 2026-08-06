@@ -1,0 +1,24 @@
+{
+  "format": "abi-capability-compiler-phase3-bpe-core-runtime-repair/1",
+  "protocol_id": "abi-capability-compiler-phase3-bpe-core-runtime-repair1-v39",
+  "status": "PREREGISTERED_SEMANTICS_NEUTRAL_RETRY",
+  "effective_date": "2026-08-06",
+  "base_protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_BPE_CORE_PROTOCOL_V38.json",
+    "sha256": "c451d5ec68ca16349bfef42a2c6974327b49e428596369df9e3d8020f3f97cae"
+  },
+  "failed_attempt": {
+    "optimizer_steps_completed": 0,
+    "candidate_directory_created": false,
+    "checkpoint_written": false,
+    "error": "PyTorch deterministic CUDA execution required CUBLAS_WORKSPACE_CONFIG before the first cuBLAS operation."
+  },
+  "only_change": {
+    "process_environment": "CUBLAS_WORKSPACE_CONFIG=:4096:8",
+    "scientific_design_changed": false,
+    "model_data_seed_sampler_optimizer_budget_and_gates_changed": false
+  },
+  "retry_count": 1,
+  "final_test_access": "PROHIBITED",
+  "claim_boundary": "Implementation-environment repair only; no scientific result."
+}
