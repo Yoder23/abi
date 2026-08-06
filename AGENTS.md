@@ -51,7 +51,7 @@ Status date: 2026-08-06.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V28.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V30.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -147,6 +147,11 @@ at least one sequence above 320 actions. Do not add the observed characters as
 post-hoc exceptions. One development-independent successor may combine the
 complete printable-ASCII alphabet, training-observed non-ASCII scalars,
 syntax-only conformance examples, source pointers, and compact lexeme actions.
+
+V29 tested that successor and achieved exact representation of all 8,400 bound
+targets with 4,634 fixed actions. It still failed because nine development
+targets exceed 320 actions; training has zero such excesses. Do not raise the
+limit. The next bounded work is read-only record-level length attribution.
 
 No further Phase 2 training is authorized. The A0-A4 and V6 B0-B4 branches are
 closed. V6 B0 scored 1,148/1,400 with 43 collapses, lost to label-free B1 by
