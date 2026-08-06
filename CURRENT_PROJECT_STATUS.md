@@ -22,9 +22,10 @@ signal but failed quality. The sequence successor improved aggregate quality
 substantially, but failed absolute, causal-control, teacher-relative, and
 repetition gates. Phase 3 is not certified; Phases 4 through 8 remain locked.
 
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V11.json` is the live state. The
-read-only R1-R3 diagnostic is complete and the shared-output C0-C4 initial
-matrix is preregistered. Final access and promotion remain prohibited.
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V12.json` is the live state. V11 C0-C4
+is complete: causal and teacher-relative aggregate gates pass, but absolute
+capability and collapse gates fail. Final access and promotion remain
+prohibited.
 `ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json` and the versioned
 Phase 3 protocols remain the historical authority for the narrow execution
 exception. They did not alter any prior result or permit final-test use.

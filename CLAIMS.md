@@ -142,6 +142,14 @@ a checkpoint. Removing the route embedding changes B1 by +0.07 points (95% CI
 -7.07 to -3.79) and reduces collapses from 60 to 49. This localizes dependence
 inside B1 only; it does not promote B1 or predict retraining.
 
+### 12. Shared-output causal and aggregate noninferiority result
+
+V11 C0 scores 1,207/1,400. It beats label-free C1 by 8.36 points, deranged C2
+by 68.93, no-response C3 by 85.50, and monolithic C4 by 7.14; every paired 95%
+lower bound is positive. Against T0 it is -2.14 points with 95% CI -4.21 to
+-0.07, passing the locked -5-point noninferiority margin. C0 nevertheless has
+51 collapses and seven capabilities below 90/100, so Phase 3 remains failed.
+
 ## Current implementation claims
 
 - The V87 real-versus-shuffled causal pilot is implemented and evidence-bound.

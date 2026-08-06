@@ -28,7 +28,7 @@ fresh, preregistered successor supplied 400 new passing abstention records; none
 of the failed records were reclassified. Specialist inventories are
 evaluation-only, and no specialist record is eligible for English training.
 
-## Active objective: execute the preregistered shared-output Phase 3 successor
+## Active objective: define the self-prefix-recovery Phase 3 successor
 
 The user explicitly deferred the unavailable human raters. This does not
 complete Phase 2. The corrected V4 A0-A4 development campaign has finished on
@@ -66,10 +66,10 @@ responsible for quality, while output cakes contribute 5.43 points and add
 collapse risk. No new training is authorized until the shared-output successor
 is separately implemented, tested, parameter-accounted, and preregistered.
 
-V11 is now preregistered. It retains the three shared rank-128 sequence
-transforms, replaces six trainable English output cakes with one rank-64 shared
-output residual, and adds a training-only penalty for wrong greedy predictions
-that repeat a recent teacher token. Execute C0-C4 only at seed 104729.
+V11 is complete. C0 scores 1,207/1,400 and passes all four causal comparisons
+plus the locked teacher-relative aggregate noninferiority margin. It fails
+absolute capability floors and has 51 collapses, 41 in email drafting.
+Remaining seeds are prohibited. No V11 tuning is authorized.
 
 The machine campaign contains all T0, L0, L1, D0, D1, and bounded D2 search
 receipts; 15 persisted headline checkpoints; 1,400 prompts per seed; 10,000
@@ -111,8 +111,9 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
-- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V11.json`
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V12.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_SHARED_OUTPUT_PROTOCOL_V11.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_SHARED_OUTPUT_REPORT_V4.md`
 - `ABI_CAPABILITY_COMPILER_PHASE3_COMPONENT_DIAGNOSTIC_PROTOCOL_V8.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_COMPONENT_DIAGNOSTIC_REPAIR1_V9.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_COMPONENT_DIAGNOSTIC_REPORT_V3.md`
