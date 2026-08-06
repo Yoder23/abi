@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V34 REPRESENTATION PASS, HOST CONFORMANCE NEXT | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V38.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V42 ROUTER GENERALIZATION BELOW GATE | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V53.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -28,7 +28,34 @@ fresh, preregistered successor supplied 400 new passing abstention records; none
 of the failed records were reclassified. Specialist inventories are
 evaluation-only, and no specialist record is eligible for English training.
 
-## Active objective: test the measured prompt-identity representation bottleneck
+## Controlling Phase 3 objective: improve ABI capability generalization
+
+V34 and V37 close the selected representation and host-tokenizer questions:
+the 4,999-action UTF-8 BPE surface represents all bound targets and matches the
+independent LayerCake v3 implementation on 16,800/16,800 comparisons.
+
+The learned acquisition question remains open. V38's 4.17M-parameter plain BPE
+candidate reached 95.13% teacher-forced action accuracy and 85.23% exact
+training sequences, then scored 0/1,400 autonomously. V40 attributed primary
+fit/state weakness plus a major header shift: capability-matched acquisition
+headers raised a 280-prompt sample from 0% to 41.07%, but training replay was
+only 85.71% exact.
+
+V41 then tested ABI-native labels rather than plain sequence imitation. A
+training-only 14-way capability head, balanced header dropout, and causal
+history corruption did not improve the locked suite: 0/1,400, with 1,394 wrong
+fact-free-mode outputs. V42 explains why. The classifier is 100% on sampled
+acquisition prompts but predicts every original held-out prompt as
+`fact_free_reasoning`; body-only accuracy is 81.07%, below the locked 90% route
+gate, and coherence remains 0/100.
+
+No neural run or LayerCake v4 host is currently authorized. The next ABI
+proposal must break header-label correlation and improve held-out semantic body
+routing without adding teacher outputs, accessing final material, or tuning on
+development outputs. More steps alone, nearby BPE variants, and a
+benchmark-specific header stripper are prohibited.
+
+## Historical direct-core path
 
 The separate LayerCake repository has qualified a construct-only signed direct
 neural core interface. ABI V23 used that interface without copying LayerCake
@@ -88,9 +115,9 @@ records before proposing compression or any host limit change.
 
 V31 attributed the nine failures to character fallback. V32/V33 heuristic
 sublexeme designs failed and are closed. V34's genuine training-only UTF-8 BPE
-passes exact reconstruction and the original limits at the smallest tested
-4,996 budget. The exact tokenizer must now pass LayerCake host conformance;
-neural training remains closed.
+passed exact reconstruction and the original limits at the smallest tested
+4,996 budget. V37 later passed LayerCake host conformance; V38 and V41 then
+failed neural acquisition as recorded in the controlling section above.
 
 ## Preserved historical Phase 3 path
 

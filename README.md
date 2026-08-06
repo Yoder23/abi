@@ -12,7 +12,7 @@ artifacts are acquisition material, not deployable cakes.
 
 ## Current status
 
-Status date: 2026-08-05
+Status date: 2026-08-06
 
 **The ABI English-product moonshot is OPEN.**
 
@@ -30,13 +30,20 @@ Three facts define the current checkpoint:
 Capability-compiler Phases 0 and 1 are **COMPLETE**. Phase 2 machine evidence is
 complete, but Phase 2 is **BLOCKED_EXTERNAL_HUMAN_RATINGS**: the contract
 requires three independent blinded counterbalanced ratings for each prompt.
-The user deferred the unavailable human raters. Both conditionally authorized
-Phase 3 development branches are complete and failed. The sequence successor
-raised the labeled candidate from 27.07% to 82.00%, but it failed absolute and
-repetition gates, lost to the label-free control, and did not beat the
-monolithic control. Phase 2 and Phase 3 remain uncertified; Phase 4 remains
-locked. No current ABI artifact is certified as a broadly fluent
-teacher-derived English core.
+The user deferred the unavailable human raters.
+
+Phase 3 remains **UNCERTIFIED**. V34 produced the smallest preregistered exact
+UTF-8 BPE representation pass (4,999 fixed actions); V37 then proved exact
+LayerCake v3 sequence conformance on 16,800/16,800 prompt/output comparisons.
+That opened neural acquisition, not a quality claim. V38's plain BPE candidate
+and V41's label-aware/header-robust candidate both scored 0/1,400 on the locked
+autonomous suite and each produced the wrong fact-free mode on 1,394 prompts.
+V42 proved that V41's training-only capability head predicts all 1,400 original
+held-out prompts as `fact_free_reasoning`; body-only routing reaches 81.07%,
+below its 90% gate. A routed LayerCake v4 host is therefore not authorized.
+The current owner is ABI acquisition-prompt and semantic generalization.
+Phase 4 remains locked. No current ABI artifact is certified as a broadly
+fluent teacher-derived English core.
 
 Read [CURRENT_PROJECT_STATUS.md](CURRENT_PROJECT_STATUS.md) before interpreting
 any experiment or launching new work.
@@ -56,6 +63,11 @@ any experiment or launching new work.
 | Phase 3 prompt-conditioned sequence successor | COMPLETE; branch FAIL | `results/abi_capability_compiler_phase3_sequence/conditional_decision_v1.json` |
 | Phase 3 component diagnostic | COMPLETE; diagnostic only | `results/abi_capability_compiler_phase3_component_diagnostic/decision_v1.json` |
 | Phase 3 shared-output successor | COMPLETE; causal/teacher-relative PASS, absolute branch FAIL | `results/abi_capability_compiler_phase3_shared_output/conditional_decision_v1.json` |
+| V34 exact UTF-8 BPE representation | PASS representation only | `results/abi_capability_compiler_phase3_utf8_bpe/utf8_bpe_v34.json` |
+| V37 LayerCake v3 tokenizer conformance | PASS, 16,800/16,800 | `results/abi_capability_compiler_phase3_external_tokenizer_conformance/conformance_v37.json` |
+| V38 plain BPE neural acquisition | COMPLETE FAIL, 0/1,400 | `results/abi_capability_compiler_phase3_bpe_core/bpe_core_decision_v38.json` |
+| V41 label-aware BPE acquisition | COMPLETE FAIL, 0/1,400 | `results/abi_capability_compiler_phase3_labeled_bpe_core/labeled_bpe_decision_v41.json` |
+| V42 auxiliary-router generalization | COMPLETE diagnostic; routed host rejected | `results/abi_capability_compiler_phase3_auxiliary_router_diagnostic/diagnostic_v42.json` |
 | Sufficient-information frontier | OPEN | Not yet measured |
 | Integrated teacher-derived LayerCake | OPEN | Not yet produced |
 
@@ -106,6 +118,21 @@ and cannot open Phase 4 while its quality gates and the Phase 2 human gate are
 unresolved.
 
 ## Conditional Phase 3 result
+
+The newest controlling state is
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V53.json`. Exact representation and
+external-host conformance are solved for the selected BPE surface; learned
+English acquisition is not. V38 improved teacher-forced exact training
+sequences to 85.23% but collapsed held-out capability routing. V41 used ABI's
+14 labels, balanced header dropout, and causal-history corruption; its
+training-only label head fit the acquisition sample but did not generalize to
+the original held-out framing. V42 forbids an explicit routed host until ABI
+can exceed 90% held-out router accuracy without changing LayerCake.
+
+The next experiment must break acquisition-header/label correlation and improve
+semantic body routing without adding teacher outputs. More steps alone,
+tokenizer sweeps, a benchmark-specific header stripper, and a LayerCake v4
+route are not authorized by the current evidence.
 
 The corrected V4 campaign trained and evaluated A0 plus four controls on an
 identical successful 28,000-record sequence. The first mixed-precision run was

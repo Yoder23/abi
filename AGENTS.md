@@ -48,10 +48,22 @@ Status date: 2026-08-06.
   and failed the absolute screen: 504/1,400, 77 collapses, zero generation
   errors. This is an ABI acquisition/representation failure, not a LayerCake
   regression. V23 and its remaining seeds/controls are closed.
+- V34 selected a 4,999-action exact UTF-8 BPE representation and V37 proved
+  exact `lc-direct-neural-core/3` tokenizer conformance on all 16,800 bound
+  prompt/output fields. Those are representation and interface results only.
+- V38's plain BPE candidate and V41's ABI-label-aware candidate each failed the
+  autonomous screen at 0/1,400. Both emitted the wrong fact-free mode on
+  1,394/1,400 prompts. Their checkpoints, raw outputs, and negative evidence
+  are sealed.
+- V42 shows the V41 auxiliary classifier is 100% accurate on sampled
+  acquisition prompts, 7.14% on original held-out prompts, 81.07% on held-out
+  bodies, and 73.21% with matched acquisition headers. It predicts all 1,400
+  original held-out prompts as `fact_free_reasoning`. An explicit LayerCake v4
+  routed host is not authorized.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V38.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V53.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -73,6 +85,17 @@ quality, a minimum information budget, domain acquisition, or superiority over
 LoRA or distillation.
 
 ## Active authorization
+
+No neural training or LayerCake host change is currently authorized. The next
+separately preregistered ABI question must break synthetic-header/label
+correlation and improve held-out body capability routing beyond the V42 81.07%
+result without adding teacher outputs. It must not use final material, tune on
+the locked development outputs, add steps alone, sweep tokenizer settings, or
+install a benchmark-specific first-line stripper. A routed LayerCake successor
+requires at least 90% held-out original router accuracy under a new locked
+diagnostic.
+
+## Historical Phase 3 authorization log
 
 V23 is complete failed under
 `ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_CORE_RESULT_V23.json`. Do not tune its
@@ -163,7 +186,8 @@ V32 and V33 heuristic substring branches failed and are closed. V34 replaced
 them with a genuine training-only UTF-8-concatenative BPE bake-off. The 4,996
 budget is the smallest preregistered pass: 4,999 fixed actions, exact 8,400/
 8,400 reconstruction, and maxima of 99 training and 317 development actions.
-Only host-conformance feasibility is now open; neural training remains closed.
+V37 later passed host conformance; V38/V41 neural failures and V42 attribution
+are the controlling successors documented above.
 
 No further Phase 2 training is authorized. The A0-A4 and V6 B0-B4 branches are
 closed. V6 B0 scored 1,148/1,400 with 43 collapses, lost to label-free B1 by

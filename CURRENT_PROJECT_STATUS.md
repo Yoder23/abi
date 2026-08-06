@@ -23,7 +23,7 @@ signal but failed quality. The sequence successor improved aggregate quality
 substantially, but failed absolute, causal-control, teacher-relative, and
 repetition gates. Phase 3 is not certified; Phases 4 through 8 remain locked.
 
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V38.json` is the live state. V11 C0-C4
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V53.json` is the live state. V11 C0-C4
 is complete: causal and teacher-relative aggregate gates pass, but absolute
 capability and collapse gates fail. Final access and promotion remain
 prohibited.
@@ -119,7 +119,17 @@ It remains failed because nine development targets exceed the unchanged
 V31 resolved that attribution. V32 and V33 failed bounded heuristic repairs.
 V34 then passed the representation gate with a training-only concatenative BPE:
 8,400/8,400 exact targets, 4,999 fixed actions, and maxima of 99 training and
-317 development actions. Host conformance is next; no neural model is authorized.
+317 development actions. V37 subsequently proved exact LayerCake v3 tokenizer
+conformance on 16,800/16,800 fields.
+
+V38's plain 4.17M-parameter BPE candidate and V41's label-aware successor both
+failed the locked autonomous suite at 0/1,400 and emitted the wrong fact-free
+mode on 1,394 prompts. V40 measured 85.71% autonomous acquisition replay and a
+large header effect. V42 then showed V41's training-only classifier is 100% on
+sampled acquisition views, but only 7.14% on original held-out prompts and
+81.07% on held-out bodies. It predicts every original prompt as
+`fact_free_reasoning`. A LayerCake v4 routed host is not authorized; the active
+owner is ABI prompt/capability generalization.
 `ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json` and the versioned
 Phase 3 protocols remain the historical authority for the narrow execution
 exception. They did not alter any prior result or permit final-test use.
@@ -174,6 +184,10 @@ sufficient-information frontier.
 | ABI pointer-core V24 | COMPLETE FAILED | Pointer supervision causes a paired +6.93-point effect over V23 | 601/1,400, 139 collapses, and 31 errors fail every discriminating gate |
 | ABI fit diagnostic V26/V27 | COMPLETE ATTRIBUTION ONLY | Both sealed designs fail training fit and held-out representability/generalization | No training, promotion, Phase 3 certificate, or superiority claim |
 | ABI representation bake-off V28 | COMPLETE FAILED | Finite training-derived alphabets and naive character exposure are insufficient | 6 unrepresentable development targets; every candidate exceeds 320 actions |
+| UTF-8 BPE and host conformance V34/V37 | COMPLETE PASS in representation/interface scope | All bound outputs are representable and LayerCake v3 token sequences match 16,800/16,800 | No learned quality, speed, or Phase 3 result |
+| Plain BPE neural candidate V38 | COMPLETE FAILED | Compact exact representation improves training fit | 0/1,400 autonomous quality; wrong-mode generalization |
+| Label-aware BPE candidate V41 | COMPLETE FAILED | ABI labels are learnable by a training-only head | Removing the head does not route decoding; 0/1,400 |
+| Auxiliary router diagnostic V42 | COMPLETE ATTRIBUTION ONLY | Original held-out framing causes all prompts to route to fact-free reasoning | Router accuracy is below 90%; no routed LayerCake host is authorized |
 | Integrated ABI-derived LayerCake | BLOCKED ON ACQUISITION QUALITY | Host construct exists; no qualified English artifact exists | No ABI candidate inherits sealed LayerCake performance evidence |
 
 ## Current proven results
@@ -242,6 +256,13 @@ a bounded point-estimate pass rather than a population-wide guarantee.
 - `abi/capability_compiler_phase3_sequence_verifier.py` independently rehashes
   all V6 checkpoints, recomputes its decision byte-for-byte, and rejects
   rehashed teacher/source/isolation/promotion mutations.
+- `abi/capability_compiler_phase3_bpe_core.py` trains and evaluates the exact
+  LayerCake v3 BPE action plan with full imported-information accounting.
+- `abi/capability_compiler_phase3_labeled_bpe_core.py` implements V41's
+  training-only capability objective, header dropout, and causal-history
+  corruption without changing the deployed host graph.
+- `abi/capability_compiler_phase3_auxiliary_router_diagnostic.py` verifies V42
+  held-out classifier behavior without training or checkpoint mutation.
 - The existing v3 segregated-bundle consumers enforce destination and purity
   metadata before materialization. Phase 1 now supplies a normalized successor
   acquisition IR, but its sufficiency for broad English remains untested.
@@ -272,6 +293,12 @@ checks to make later research code appear release-equivalent.
 - ABI Phase 2 has completed its preregistered machine baseline matrix. Strong
   source-retained adapters preserve quality but are not compact or teacher
   free; same-size teacher-free students are fast but fail quality severely.
+- ABI has an exact 4,999-action UTF-8 BPE representation and exact LayerCake v3
+  tokenizer conformance on all 16,800 bound prompt/output fields. This is not a
+  learned-quality result.
+- V38 and V41 are preserved negative acquisition evidence at 0/1,400; V42
+  assigns the current failure to held-out prompt/capability generalization, not
+  a LayerCake runtime regression.
 - The corrected Phase 3 A0 candidate causally beats all four matched controls
   on the development suite, while failing absolute quality at 379/1,400 with
   150 repetition collapses and trailing T0 by 61.29 percentage points.
@@ -298,14 +325,14 @@ checks to make later research code appear release-equivalent.
 ## Immediate next gate
 
 When raters become available, complete the Phase 2 packet without changing its
-forms or key. No additional ABI Phase 3 experiment is authorized now. The
-V20/V21/V22 evidence must be handed to a separate LayerCake investigation to
-determine whether a new host integration surface can fit and autonomously
-realize the teacher signal without sacrificing the sealed execution contract.
-Only a qualified interface and fresh ABI preregistration can reopen acquisition
-work. Final material remains unopened and Phase 4 remains locked.
+forms or key. No additional neural Phase 3 run is authorized now. The next
+separately preregistered ABI design must break synthetic-header/label
+correlation and improve held-out semantic body routing beyond V42's 81.07%
+without adding teacher outputs or tuning on development outputs. A LayerCake v4
+routed interface remains prohibited until a router clears 90% on original
+held-out prompts. Final material remains unopened and Phase 4 remains locked.
 
-The full ABI suite currently reports 484 passed and one intentionally strict
+The full ABI suite currently reports 556 passed and one intentionally strict
 external-control failure: the separate clean LayerCake repository is ahead of
 the exact contract-bound control commit, which remains an ancestor. The
 identity verifier was not weakened. See
