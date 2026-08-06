@@ -1,0 +1,19 @@
+{
+ "format":"abi-capability-compiler-phase3-utf8-bpe/1","protocol_id":"abi-capability-compiler-phase3-utf8-bpe-v34","status":"PREREGISTERED_REPRESENTATION_FIT","effective_date":"2026-08-06","historical_evidence_changed":false,
+ "neural_training_allowed":false,"promotion_eligible":false,"phase3_status":"UNCERTIFIED","phase4_status":"LOCKED","final_test_access":"PROHIBITED",
+ "objective":"Fit a genuine UTF-8-concatenative BPE vocabulary on Phase 1 training prompts and outputs only and select the smallest vocabulary satisfying exact reconstruction, 320 actions, and 5,000 fixed actions.",
+ "phase1_ir":"results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir","development_catalog":"catalogs/capability_compiler_phase1_frozen_v1.json","teacher_reference":"results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl",
+ "bpe":{"implementation":"tokenizers 0.22.1 BPE","minimum_frequency":2,"initial_alphabet":"PRINTABLE_ASCII","syntax_line_teacher_knowledge":false,"budgets":[1000,2000,3000,4000,4996]},
+ "qualification":{"training_reconstruction_errors_maximum":0,"development_reconstruction_errors_maximum":0,"training_over_320_maximum":0,"development_over_320_maximum":0,"maximum_fixed_actions":5000},
+ "selection_rule":"Select the smallest qualifying vocabulary. A pass opens host-conformance feasibility only.",
+ "bindings":{
+  "abi/capability_compiler_phase3_utf8_bpe.py":"530473415d5f9d397267ec3c22d03f95acad13235d752cc52706c6352ca98922",
+  "tests/test_capability_compiler_phase3_utf8_bpe.py":"8f88eedc7959aff365e030a3f8528166d68be9adad57ac97387a8352fc354e8c",
+  "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V36.json":"e0a2d31a9b2dcc7d7af686d051bdb3ec686b33f56315b7cf1f929d8c9fb438f9",
+  "results/abi_capability_compiler_phase3_pruned_sublexeme/pruned_sublexeme_v33.json":"f787942b174bab039e3d1144c7b7f8cd830c45922b1898ed91e9ace33cd1073b",
+  "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir":"a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+  "catalogs/capability_compiler_phase1_frozen_v1.json":"076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+  "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl":"1081dbe57e75da50b2619bc2dab14c6441158dcd6068f2b864733936087e86a2",
+  "C:/Python310/lib/site-packages/tokenizers/__init__.py":"009e4d74a395fdd67f48ec3da05175338967d1f87586877ebe8ab37981d2ef55"
+ },"claim_boundary":"Tokenizer representation result only."
+}
