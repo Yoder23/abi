@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V28 NO-TRAINING REPRESENTATION BAKE-OFF PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V27.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V28 REPRESENTATION BAKE-OFF FAILED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V28.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -74,6 +74,12 @@ and 1,400 development targets.
 V28 now binds that bake-off. It compares three deterministic character-
 fallback exposure rates with a character-only control and cannot train a model
 or change the LayerCake host.
+
+V28 completed with no qualifier: all candidates miss six development targets
+because the training alphabet lacks `%` and `/`, and all exceed the 320-action
+limit on at least one record. The next successor must use a universal syntax
+alphabet selected without development feedback and retain compact lexeme
+actions. Training remains closed.
 
 ## Preserved historical Phase 3 path
 
@@ -199,6 +205,9 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V28.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_REPRESENTATION_BAKEOFF_REPORT_V28.md`
+- `results/abi_capability_compiler_phase3_representation_bakeoff/representation_bakeoff_v28.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V27.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_REPRESENTATION_BAKEOFF_PROTOCOL_V28.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V26.json`

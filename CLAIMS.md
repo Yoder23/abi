@@ -83,6 +83,12 @@ reasoning targets. This supports an ABI fit/representation/generalization
 failure; it does not establish a LayerCake regression, a Phase 3 pass, or an
 ABI advantage over LoRA or distillation.
 
+V28 establishes that the four preregistered Unicode fallback surfaces do not
+qualify. Each exactly represents all training targets but misses six
+development targets and exceeds the 320-action bound. The result supports a
+universal syntax alphabet selected independently of development outputs; it
+does not prove learned open-vocabulary generation or a host limitation.
+
 ### 5. Capability-compiler Phase 0 governance
 
 `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` certifies the initial

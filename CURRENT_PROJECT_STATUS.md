@@ -23,7 +23,7 @@ signal but failed quality. The sequence successor improved aggregate quality
 substantially, but failed absolute, causal-control, teacher-relative, and
 repetition gates. Phase 3 is not certified; Phases 4 through 8 remain locked.
 
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V26.json` is the live state. V11 C0-C4
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V28.json` is the live state. V11 C0-C4
 is complete: causal and teacher-relative aggregate gates pass, but absolute
 capability and collapse gates fail. Final access and promotion remain
 prohibited.
@@ -103,6 +103,13 @@ reasoning target. This assigns the primary failure to ABI fit/capacity/
 optimization/representation and a secondary failure to ABI representability/
 generalization. No LayerCake regression was identified. The next bounded gate
 is a no-training open-vocabulary representation bake-off.
+
+V28 completed that bake-off and found no qualifier. All four candidates cover
+7,000/7,000 training targets but only 1,394/1,400 development targets because
+the training output alphabet lacks `%` and `/`. Every candidate also produces
+at least one target above 320 actions. This preserves the failure and supports
+one development-independent universal-syntax successor; it does not authorize
+training or a LayerCake host change.
 `ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json` and the versioned
 Phase 3 protocols remain the historical authority for the narrow execution
 exception. They did not alter any prior result or permit final-test use.
@@ -156,6 +163,7 @@ sufficient-information frontier.
 | ABI direct-core V23 | COMPLETE FAILED | A teacher-free ABI artifact executes autonomously through the host interface | 504/1,400 and 77 collapses do not establish fluent acquisition or Phase 3 |
 | ABI pointer-core V24 | COMPLETE FAILED | Pointer supervision causes a paired +6.93-point effect over V23 | 601/1,400, 139 collapses, and 31 errors fail every discriminating gate |
 | ABI fit diagnostic V26/V27 | COMPLETE ATTRIBUTION ONLY | Both sealed designs fail training fit and held-out representability/generalization | No training, promotion, Phase 3 certificate, or superiority claim |
+| ABI representation bake-off V28 | COMPLETE FAILED | Finite training-derived alphabets and naive character exposure are insufficient | 6 unrepresentable development targets; every candidate exceeds 320 actions |
 | Integrated ABI-derived LayerCake | BLOCKED ON ACQUISITION QUALITY | Host construct exists; no qualified English artifact exists | No ABI candidate inherits sealed LayerCake performance evidence |
 
 ## Current proven results
