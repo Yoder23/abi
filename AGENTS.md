@@ -51,7 +51,7 @@ Status date: 2026-08-06.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V26.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V27.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -132,6 +132,13 @@ and fact-free-reasoning targets. V23/V24 remain closed. The next bounded work is
 one no-training Unicode-atomic open-vocabulary representation bake-off. It must
 reach exact representability on all 7,000 training and 1,400 development
 teacher targets before any fit run is preregistered.
+
+That bake-off is preregistered as V28. It compares deterministic 10%, 25%, and
+50% Unicode-character fallback exposure behind source pointers with a pure
+character control. It requires exact coverage of all 8,400 bound targets,
+valid UTF-8 actions, length conformance, and at least 10 training actions for
+every character needed by development outputs. It selects a representation
+only; training and LayerCake host changes remain prohibited.
 
 No further Phase 2 training is authorized. The A0-A4 and V6 B0-B4 branches are
 closed. V6 B0 scored 1,148/1,400 with 43 collapses, lost to label-free B1 by

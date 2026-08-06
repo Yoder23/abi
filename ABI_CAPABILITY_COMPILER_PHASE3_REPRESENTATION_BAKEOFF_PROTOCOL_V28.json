@@ -1,0 +1,78 @@
+{
+  "format": "abi-capability-compiler-phase3-representation-bakeoff/1",
+  "protocol_id": "abi-capability-compiler-phase3-representation-bakeoff-v28",
+  "status": "PREREGISTERED_NO_TRAINING",
+  "effective_date": "2026-08-06",
+  "historical_evidence_changed": false,
+  "training_allowed": false,
+  "promotion_eligible": false,
+  "phase2_status": "MACHINE_COMPLETE_HUMAN_RATINGS_DEFERRED_NOT_PASSED",
+  "phase3_status": "UNCERTIFIED",
+  "phase4_status": "LOCKED",
+  "final_test_access": "PROHIBITED",
+  "objective": "Select a Unicode-atomic open-vocabulary target representation that exactly reconstructs every bound training and development teacher target while minimizing action count and explicitly supervising character fallback, before any new ABI model fit is considered.",
+  "phase1_ir": "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir",
+  "development_catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+  "teacher_reference": "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl",
+  "layercake_host": {
+    "repository": "../layercake_release",
+    "commit": "7bf8223",
+    "interface": "lc-direct-neural-core/2",
+    "interface_sha256": "d34ba8a41815b06820988f501aab920adef627b6929a058cc9fe40528c92624f",
+    "status": "INDEPENDENT_PASS_CONSTRUCT_ONLY",
+    "changed_by_bakeoff": false,
+    "quality_or_performance_inherited": false
+  },
+  "candidates": [
+    {
+      "name": "hybrid_pointer_char10",
+      "mode": "hybrid",
+      "exposure_modulus": 10,
+      "description": "Unique source lexemes use pointers; non-pointer output lexemes selected by a stable 10% lexeme hash and all unseen lexemes use Unicode-character actions."
+    },
+    {
+      "name": "hybrid_pointer_char25",
+      "mode": "hybrid",
+      "exposure_modulus": 4,
+      "description": "Unique source lexemes use pointers; non-pointer output lexemes selected by a stable 25% lexeme hash and all unseen lexemes use Unicode-character actions."
+    },
+    {
+      "name": "hybrid_pointer_char50",
+      "mode": "hybrid",
+      "exposure_modulus": 2,
+      "description": "Unique source lexemes use pointers; non-pointer output lexemes selected by a stable 50% lexeme hash and all unseen lexemes use Unicode-character actions."
+    },
+    {
+      "name": "character_only",
+      "mode": "character_only",
+      "description": "Every output Unicode scalar is one complete UTF-8 fixed action; no lexeme or pointer target actions."
+    }
+  ],
+  "qualification": {
+    "training_targets_required": 7000,
+    "development_targets_required": 1400,
+    "lossless_reconstruction_required": true,
+    "invalid_utf8_actions_maximum": 0,
+    "source_sequences_over_128_maximum": 0,
+    "target_sequences_over_320_maximum": 0,
+    "unsupported_development_characters_maximum": 0,
+    "minimum_training_actions_for_each_development_character": 10,
+    "maximum_fixed_actions": 5000
+  },
+  "selection_rule": "Discard any representation missing one target, exceeding a source or target length limit, containing an invalid UTF-8 action, lacking at least 10 training character actions for any character required by development outputs, or exceeding 5,000 fixed actions. Among qualifying representations, select the lowest mean training action count, then lowest mean development action count, then lexical name. This selects a representation only and authorizes no training or host change.",
+  "bindings": {
+    "abi/capability_compiler_phase3_representation_bakeoff.py": "5887011c07a4d8e94739a03406e4073d3c7680368c9d40f434d2c7df123121d0",
+    "tests/test_capability_compiler_phase3_representation_bakeoff.py": "ba3bd32ccd949c5bbdbb81807c6e2a94331e9dfbf10e6a247c640c5e678f9f8a",
+    "abi/capability_compiler_phase3.py": "5d490989e088f42aba4bd2ca96fbe70ea2db211890369dd6f431dd781390c77b",
+    "abi/capability_compiler_phase2_teacher.py": "dc76ee575f5e5f2cccd9fe8279ae501920bb022e8e62a921240ea3e5a9ced892",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V26.json": "3ac2b5f471e6fcc7685d942fc133e17fcebb22367d8d7811e310bbdf45dd9cac",
+    "results/abi_capability_compiler_phase3_fit_diagnostic/fit_generalization_v26.json": "10103f6eceeb1fed2f627ba92ec37bbc25255d4aabf394736458d58384457871",
+    "results/abi_capability_compiler_phase3_fit_diagnostic/fit_decision_v26.json": "e77b4a5471a0768111ce099cb3e2b356a8478856864f64ad52f4a34e6303845a",
+    "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl": "1081dbe57e75da50b2619bc2dab14c6441158dcd6068f2b864733936087e86a2",
+    "../layercake_release/moonshot/canonical_unicode_direct_neural_core_abi_v2.json": "d34ba8a41815b06820988f501aab920adef627b6929a058cc9fe40528c92624f",
+    "../layercake_release/layercake_extensions/unicode_direct_neural_core.py": "4cfc2d5957aaa440d5cc90846f6e1a09ef045e3e0f464abce81e0525aed7648b"
+  },
+  "claim_boundary": "No-training representation audit only. Exact reconstruction is not learned quality, capability transfer, host execution, Phase 3 certification, or superiority over LoRA or distillation."
+}
