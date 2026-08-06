@@ -1,0 +1,94 @@
+{
+  "abi_superiority_claim_allowed": false,
+  "checkpoint_sha256": "065baa29aa183ecc4696dc7eb68d5ea2c5b633c9ae49c32ba5205ee1d1430bc1",
+  "decision": {
+    "capacity_sufficient": false,
+    "next_action": "run one read-only oracle teacher-forced fit diagnostic, then hand the measured limitation to a separately governed LayerCake host/bridge investigation"
+  },
+  "development_contaminated": true,
+  "evidence_sha256": "1fdd85461143839ca615e0092037ff46dae34c13d12c289287ab6f53b8a1db31",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-oracle-fit-decision/1",
+  "functional_passes": 1229,
+  "gates": {
+    "aggregate_functional": false,
+    "autonomous_generation": true,
+    "development_contaminated": true,
+    "final_test_not_accessed": true,
+    "frozen_host_unchanged": true,
+    "per_capability_functional": false,
+    "promotion_prohibited": true,
+    "zero_repetition_collapses": false
+  },
+  "metadata_sha256": "78e47e5e2a0d323dcaef84299ea777ce98cc7a1e64549f286219ea7f1c5aee38",
+  "observations": 1400,
+  "outputs_sha256": "de0f68d5335fa14f8fa6aaee4b83d8e1bbfa429d72082a06c382b6144d974fc4",
+  "per_capability": {
+    "abstention": {
+      "collapses": 0,
+      "passes": 75
+    },
+    "clarification": {
+      "collapses": 1,
+      "passes": 100
+    },
+    "coherence": {
+      "collapses": 0,
+      "passes": 100
+    },
+    "conversation": {
+      "collapses": 4,
+      "passes": 86
+    },
+    "email_drafting_from_notes": {
+      "collapses": 51,
+      "passes": 59
+    },
+    "fact_free_reasoning": {
+      "collapses": 22,
+      "passes": 100
+    },
+    "fluent_realization": {
+      "collapses": 2,
+      "passes": 74
+    },
+    "format_control": {
+      "collapses": 0,
+      "passes": 100
+    },
+    "grammar": {
+      "collapses": 0,
+      "passes": 99
+    },
+    "instruction_following": {
+      "collapses": 6,
+      "passes": 91
+    },
+    "prompt_grounding": {
+      "collapses": 0,
+      "passes": 100
+    },
+    "rewriting": {
+      "collapses": 0,
+      "passes": 78
+    },
+    "supplied_text_summarization": {
+      "collapses": 0,
+      "passes": 83
+    },
+    "tone_control": {
+      "collapses": 3,
+      "passes": 84
+    }
+  },
+  "phase3_certified": false,
+  "phase4_status": "LOCKED",
+  "promotion_eligible": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_ORACLE_FIT_PROTOCOL_V20.json",
+    "sha256": "257c27a7993ae6854f1a363ff0cfc6f9d697ab3d7fc76424d9628889dd7c1100"
+  },
+  "receipt_sha256": "8a2a00edbf28cf3aeff07a8d62d3bce7396a23e95e5fcb0e64cff1cecda7a660",
+  "repetition_collapses": 89,
+  "status": "HOST_BRIDGE_EXPRESSIVITY_OR_OPTIMIZATION_LIMITATION"
+}

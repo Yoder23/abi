@@ -92,6 +92,12 @@ that is permanently barred from promotion and uses development data only to
 decide whether the next production repair belongs to bridge expressivity or
 ABI acquisition/generalization.
 
+V20/V21 resolved that gate: the current 1.06M bridge misses even the
+development-contaminated upper bound (1,229/1,400, 89 collapses, 94.11%
+teacher-forced token accuracy). Further ABI data work is paused. The active
+objective is one materially expanded, non-promotional bridge capacity control,
+followed by explicit inference-cost measurement before any production retry.
+
 The machine campaign contains all T0, L0, L1, D0, D1, and bounded D2 search
 receipts; 15 persisted headline checkpoints; 1,400 prompts per seed; 10,000
 paired bootstrap resamples per T0 comparison; one genuine-cold request per

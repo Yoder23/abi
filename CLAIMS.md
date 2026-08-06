@@ -176,6 +176,14 @@ improve on V11 C0's 51. This closes the bounded recovery-loss family. It does
 not prove a host ceiling; that requires the separately governed oracle-fit
 diagnostic and can never support promotion itself.
 
+### 15. Current blocker is the integration bridge, not ABI extraction
+
+The contaminated V20 upper bound scored 1,229/1,400 with 89 collapses. V21
+teacher-forced accuracy was 94.11% at 0.2631 NLL, missing both locked fit
+thresholds. This assigns the next experiment to bridge fit, optimization, or
+expressivity. It does not invalidate sealed LayerCake, prove a fundamental host
+ceiling, or permit a quality or superiority claim.
+
 ## Current implementation claims
 
 - The V87 real-versus-shuffled causal pilot is implemented and evidence-bound.

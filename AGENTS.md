@@ -44,7 +44,7 @@ Status date: 2026-08-06.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V15.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V16.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -108,6 +108,14 @@ No remaining seeds or nearby recovery-loss variants are authorized. One
 development-contaminated, permanently non-promotional oracle-fit capacity
 control may be preregistered to separate host/bridge expressivity from
 acquisition generalization.
+
+V20/V21 completed that control. Directly fitting all 1,400 development pairs
+produced 1,229 passes and 89 collapses; teacher-forced accuracy was 94.11% with
+0.2631 NLL, missing both fit thresholds. The measured owner is integration-
+bridge fit, optimization, or expressivity—not ABI extraction and not a sealed
+LayerCake regression. Stop acquisition-data and recovery-loss experiments. One
+materially expanded bridge oracle control may be preregistered, with added
+inference parameters explicitly accounted and no inherited speed claim.
 
 V8 attempt 1 failed before evaluating any prompt because the diagnostic used a
 ModuleDict-style string index on the host's ModuleList. V9 authorizes only the

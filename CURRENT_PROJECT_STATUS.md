@@ -22,7 +22,7 @@ signal but failed quality. The sequence successor improved aggregate quality
 substantially, but failed absolute, causal-control, teacher-relative, and
 repetition gates. Phase 3 is not certified; Phases 4 through 8 remain locked.
 
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V15.json` is the live state. V11 C0-C4
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V16.json` is the live state. V11 C0-C4
 is complete: causal and teacher-relative aggregate gates pass, but absolute
 capability and collapse gates fail. Final access and promotion remain
 prohibited.
@@ -40,6 +40,12 @@ V18 completed that test. Its +5 passes over the matched control are not
 statistically significant, and 52 collapses do not improve on the parent's 51.
 All nearby recovery-loss variants are closed. A non-promotional oracle-fit
 capacity diagnostic is the next ownership gate.
+That V20/V21 gate is complete. It assigns the current blocker to integration-
+bridge fit, optimization, or expressivity: even direct development fitting
+reached only 1,229/1,400 with 89 collapses and 94.11% teacher-forced accuracy.
+The sealed LayerCake host has not regressed, but its speed cannot be borrowed by
+an expanded bridge. ABI acquisition experiments pause until bridge capacity and
+its inference cost are resolved.
 `ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json` and the versioned
 Phase 3 protocols remain the historical authority for the narrow execution
 exception. They did not alter any prior result or permit final-test use.
