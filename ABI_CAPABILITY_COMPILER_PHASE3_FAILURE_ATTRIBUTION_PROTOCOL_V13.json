@@ -1,0 +1,96 @@
+{
+  "format": "abi-capability-compiler-phase3-failure-attribution-protocol/1",
+  "protocol_id": "abi-capability-compiler-phase3-failure-attribution-v13",
+  "status": "PREREGISTERED_READ_ONLY_NO_PROMOTION",
+  "effective_date": "2026-08-06",
+  "objective": "Separate ABI information acquisition, ABI-to-LayerCake integration/state recovery, and sealed LayerCake host limitations before authorizing another Phase 3 training branch.",
+  "historical_evidence_changed": false,
+  "phase2_status": "MACHINE_COMPLETE_HUMAN_RATINGS_DEFERRED_NOT_PASSED",
+  "phase3_status": "UNCERTIFIED",
+  "phase4_status": "LOCKED",
+  "final_test_access": "PROHIBITED",
+  "training_allowed": false,
+  "promotion_eligible": false,
+  "systems": ["P0", "C0", "C1", "C3", "C4"],
+  "system_definitions": {
+    "P0": "exact sealed native LayerCake parent, with no ABI bridge, evaluated on the broader ABI development suite",
+    "C0": "V11 semantic shared-output candidate",
+    "C1": "V11 prompt-hash label control",
+    "C3": "V11 no-teacher-response control",
+    "C4": "V11 monolithic-route control"
+  },
+  "v11_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_SHARED_OUTPUT_PROTOCOL_V11.json",
+  "development_catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+  "teacher_reference": "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl",
+  "teacher_forced_diagnostic": {
+    "prompts": 1400,
+    "prompts_per_capability": 100,
+    "target": "T0 cached development output retokenized by the authoritative LayerCake runtime tokenizer with EOS appended",
+    "metrics": ["mean_nll", "perplexity", "greedy_next_token_accuracy", "wrong_recent_repeat_predictions"],
+    "automatic_routing": true,
+    "claim_boundary": "Teacher-forced likelihood diagnoses information carriage but cannot satisfy autonomous generation quality."
+  },
+  "corruption_recovery": {
+    "candidate": "C0",
+    "selection": "first 20 lexically ordered development prompts in each capability",
+    "corruption": "replace the first wrong C0 teacher-forced target token with C0's own wrong greedy prediction",
+    "horizons": [1, 2, 4, 8, 16],
+    "prompts_per_capability": 20,
+    "maximum_observations": 280,
+    "metrics": ["clean_and_corrupted_teacher_continuation_nll", "clean_and_corrupted_teacher_continuation_accuracy"]
+  },
+  "attribution_rules": {
+    "minimum_nll_reduction_vs_no_payload": 0.1,
+    "minimum_accuracy_gain_vs_no_payload": 0.05,
+    "minimum_corrupted_nll_ratio": 1.1,
+    "minimum_corrupted_accuracy_drop": 0.05,
+    "native_new_suite_functional_floor": 0.9,
+    "layercake_regression_rule": "Only failure of the exact bound repository/checkpoint/certificates is a LayerCake regression. Poor native performance on this new ABI suite is a scope gap, not a regression.",
+    "host_capacity_rule": "This read-only diagnostic cannot prove a representational ceiling. That requires a separately preregistered oracle-fit capacity control."
+  },
+  "candidate_paths": {
+    "C0": "results/abi_capability_compiler_phase3_shared_output/development_v11/C0-seed104729",
+    "C1": "results/abi_capability_compiler_phase3_shared_output/development_v11/C1-seed104729",
+    "C3": "results/abi_capability_compiler_phase3_shared_output/development_v11/C3-seed104729",
+    "C4": "results/abi_capability_compiler_phase3_shared_output/development_v11/C4-seed104729"
+  },
+  "sealed_autonomous_results": {
+    "C0": {"observations": 1400, "functional_passes": 1207, "functional_rate": 0.8621428571428571, "repetition_collapses": 51},
+    "C1": {"observations": 1400, "functional_passes": 1090, "functional_rate": 0.7785714285714286, "repetition_collapses": 75},
+    "C3": {"observations": 1400, "functional_passes": 10, "functional_rate": 0.007142857142857143, "repetition_collapses": 776},
+    "C4": {"observations": 1400, "functional_passes": 1107, "functional_rate": 0.7907142857142857, "repetition_collapses": 58}
+  },
+  "external_layercake_control": {
+    "repository": "../layercake_release",
+    "repository_commit": "c7fc6db78229a022e82dcd481122bc118fa629ea",
+    "checkpoint_path": "../layercake_release/artifacts/moonshot/phase2_shallow_sparse_pretrained/student2400-seed-9824/model.safetensors",
+    "checkpoint_sha256": "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1",
+    "certificates": [
+      {"path": "../layercake_release/results/moonshot/phase2_recertification/release_certificate.json", "sha256": "1ab54f8b70065ca19fe4ab7abe3ba0ba55bff90d7472c29868c7f2c5058b5db3"},
+      {"path": "../layercake_release/results/moonshot/phase8/release_certificate.json", "sha256": "963b2392f0be226dcba1973c07e19c75f79ff005c629c6284ab51dcd6e7e26f6"}
+    ]
+  },
+  "bindings": {
+    "abi/capability_compiler_phase3_failure_attribution.py": "627fe694f95a8c2673e5de6f4deec99dd69e00dac3d0ebb1892c41b7ba8ea662",
+    "tests/test_capability_compiler_phase3_failure_attribution.py": "e5bc042ec43581318ce3d4e2200ecd6998f79d7ab6cf84af6df36909df94d10e",
+    "ABI_CAPABILITY_COMPILER_PHASE3_SHARED_OUTPUT_PROTOCOL_V11.json": "8aa53a83d8f84f321fd36a21112e138e0e0c4e4a983dcc639fd7de17ccc27f25",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl": "1081dbe57e75da50b2619bc2dab14c6441158dcd6068f2b864733936087e86a2",
+    "results/abi_capability_compiler_phase3_shared_output/development_v11/C0-seed104729/metadata.json": "8c1a6dd0d9efa97e4b815184d58294f6b45274b326acbcc6e851b44f36ba3d71",
+    "results/abi_capability_compiler_phase3_shared_output/development_v11/C0-seed104729/model.safetensors": "8dae26cfba471c4a93f03f7497debc140435da8e740dd9c505e040363cd91b73",
+    "results/abi_capability_compiler_phase3_shared_output/development_v11/C1-seed104729/metadata.json": "028052ff71f149f15ce3aa7134a234a56dacdb14d76a9eb8171d6511f7709838",
+    "results/abi_capability_compiler_phase3_shared_output/development_v11/C1-seed104729/model.safetensors": "87688a99fdd2d881202215221f074c5b3835e215f1fbef4b4fb49a65a84ab052",
+    "results/abi_capability_compiler_phase3_shared_output/development_v11/C3-seed104729/metadata.json": "25703a96bae6c7b1c502380eb29d5d6a906fa554c95d3faef4cabf0da958ce4f",
+    "results/abi_capability_compiler_phase3_shared_output/development_v11/C3-seed104729/model.safetensors": "9caefc2bfcd03faeb69c4af440458e982ae987b873322f59676d7013412d18fd",
+    "results/abi_capability_compiler_phase3_shared_output/development_v11/C4-seed104729/metadata.json": "b123b8ec3e23a6cbc6a1626a8cd30e0cda853a95e0da9820cd5ca3a4c18b7663",
+    "results/abi_capability_compiler_phase3_shared_output/development_v11/C4-seed104729/model.safetensors": "997f7adb2f260c5d8834e158428d189440fb2076d3981a7ea0fc18d8c652dc02",
+    "results/abi_capability_compiler_phase3_shared_output/evaluation_v11/C0-seed104729/receipt.json": "4599010b16d3fa9e02ba31f3a07fc473def37b74f5605e69590fcdfda742bd93",
+    "results/abi_capability_compiler_phase3_shared_output/evaluation_v11/C1-seed104729/receipt.json": "d568900f9e1a7b4b5bcc1c68bf726dc77c509466ed4b2eb7b53e4c1942848bc5",
+    "results/abi_capability_compiler_phase3_shared_output/evaluation_v11/C3-seed104729/receipt.json": "d1b494cc13b9366c4320c2e01deebd0dec9e75459dc08c2fda7adcbac02c3800",
+    "results/abi_capability_compiler_phase3_shared_output/evaluation_v11/C4-seed104729/receipt.json": "4ddbb8bbb5862b617a300928bf96af0d60aa8cb89a6a9fdd651dfdf1169e54a3",
+    "../layercake_release/results/moonshot/phase2_recertification/release_certificate.json": "1ab54f8b70065ca19fe4ab7abe3ba0ba55bff90d7472c29868c7f2c5058b5db3",
+    "../layercake_release/results/moonshot/phase8/release_certificate.json": "963b2392f0be226dcba1973c07e19c75f79ff005c629c6284ab51dcd6e7e26f6",
+    "../layercake_release/artifacts/moonshot/phase2_shallow_sparse_pretrained/student2400-seed-9824/model.safetensors": "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1"
+  },
+  "decision_rule": "This diagnostic selects the ownership of the next experiment only. It cannot certify Phase 3, waive Phase 2 ratings, access final data, prove a LayerCake capacity ceiling, or support ABI superiority over LoRA or distillation."
+}
