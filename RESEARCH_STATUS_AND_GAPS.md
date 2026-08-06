@@ -125,5 +125,9 @@ passes every gate. Phase 2 and Phase 3 remain uncertified, and Phase 4 remains
 locked. When independent raters become available, the Phase 2 packet must still
 be completed before certification.
 
+That V24 screen is now hash-bound. Its preflight uses 44,336 source-pointer
+actions and reconstructs every training target exactly. Only its initial paired
+seed is authorized; preregistration is not evidence that the repair works.
+
 See `CURRENT_PROJECT_STATUS.md` for the current claim boundary and
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` for controlling gates.

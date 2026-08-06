@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V23 DIRECT CORE FAILED, POINTER REPRESENTATION QUESTION OPEN | `ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_CORE_RESULT_V23.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V24 POINTER-CORE INITIAL SCREEN PREREGISTERED | `ABI_CAPABILITY_COMPILER_PHASE3_POINTER_CORE_PROTOCOL_V24.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -42,6 +42,12 @@ Its fixed-action targets never supervised the available prompt-pointer actions;
 raw outputs frequently replaced or duplicated prompt entities. The only open
 experimental question is one separately preregistered pointer-supervised target
 representation. No V23 tuning or rerun is authorized.
+
+V24 binds that single question. Its inventory reconstructs all 7,000 training
+targets byte-exactly while encoding 44,336 eligible target lexemes as source
+pointers. Architecture, fixed vocabulary, seed, sampler, optimizer, steps, and
+all absolute gates match V23. Only P0 seed 240017 may run. An absolute miss
+authorizes only the registered paired V24-minus-V23 diagnostic before closure.
 
 ## Preserved historical Phase 3 path
 
@@ -167,6 +173,9 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V20.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_POINTER_CORE_PROTOCOL_V24.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_POINTER_CORE_INVENTORY_V24.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V19.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_CORE_RESULT_V23.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_CORE_REPORT_V23.md`

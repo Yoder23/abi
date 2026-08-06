@@ -1,0 +1,30 @@
+{
+  "format": "abi-capability-compiler-phase3-pointer-core-inventory/1",
+  "protocol_sha256": "4e34bc466f761252a67ae4eec164df1e6f7e9607f7d64b86cad6dd8e79de614a",
+  "status": "PASS",
+  "records": 7000,
+  "records_with_pointer_actions": 7000,
+  "pointer_actions": 44336,
+  "vocabulary": 4575,
+  "trainable_parameters": 4011040,
+  "maximum_source_lexemes": 107,
+  "maximum_target_actions": 287,
+  "all_targets_losslessly_reconstructed": true,
+  "pointer_actions_by_capability": {
+    "abstention": 5022,
+    "clarification": 2333,
+    "coherence": 4606,
+    "conversation": 1642,
+    "email_drafting_from_notes": 6312,
+    "fact_free_reasoning": 1883,
+    "fluent_realization": 2786,
+    "format_control": 2188,
+    "grammar": 2918,
+    "instruction_following": 1384,
+    "prompt_grounding": 2448,
+    "rewriting": 3747,
+    "supplied_text_summarization": 4717,
+    "tone_control": 2350
+  },
+  "final_test_accessed": false
+}

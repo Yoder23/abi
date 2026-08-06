@@ -51,7 +51,7 @@ Status date: 2026-08-06.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V19.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V20.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -84,6 +84,15 @@ fail-fast absolute gates; controls and remaining seeds are prohibited unless
 the initial candidate passes every gate. Phase 2 human ratings remain deferred,
 Phase 3 is uncertified, Phases 4 through 8 are locked, and final access and ABI
 superiority claims remain prohibited.
+
+V24 is now preregistered under
+`ABI_CAPABILITY_COMPILER_PHASE3_POINTER_CORE_PROTOCOL_V24.json`. Its preflight
+losslessly reconstructs all 7,000 targets and replaces 44,336 eligible fixed
+actions with source-position actions without changing the 4,011,040-parameter
+topology or 4,575-entry fixed vocabulary. Run only P0 seed 240017. If any
+absolute gate fails, compute only the locked paired V24-minus-V23 diagnostic
+and close the representation. Teacher comparison, controls, and remaining
+seeds require the initial absolute pass.
 
 No further Phase 2 training is authorized. The A0-A4 and V6 B0-B4 branches are
 closed. V6 B0 scored 1,148/1,400 with 43 collapses, lost to label-free B1 by
