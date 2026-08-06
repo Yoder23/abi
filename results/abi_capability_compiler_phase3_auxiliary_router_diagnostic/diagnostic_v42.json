@@ -1,0 +1,192 @@
+{
+  "auxiliary_sha256": "c91cd52497b3dff6ec7833fcc9ee2d9c8a63ac25420dcfe82f06d3e63de44216",
+  "checkpoint_changed": false,
+  "checkpoint_sha256": "8e9e9f8351e8c7190f395dae6161bf9ddb433494c37b67263a7f8c266975743f",
+  "claim_boundary": "Read-only diagnostic of a training-only ABI classifier; not a routed LayerCake artifact or quality result.",
+  "decision_rule": "An explicit capability-routed decoder is supported only if the sealed auxiliary predicts held-out original capability at at least 90% accuracy. If body-only reaches 90% but original does not, the next owner is a robust prompt canonicalizer/router, not decoder coupling alone. If neither held-out view reaches 90%, the auxiliary memorized acquisition surfaces and a routed host is not authorized by V42.",
+  "evidence_sha256": "c1cd9e74ca25fb713f44052587023739494eaee2447c8122eac16f86d0b9be85",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-auxiliary-router-diagnostic-result/1",
+  "phase3_certified": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_AUXILIARY_ROUTER_DIAGNOSTIC_PROTOCOL_V42.json",
+    "sha256": "56e8dc2d8802cb97b97de8bc12dec5e44ccc3a0b9bc60197ad7f007b4ec93904"
+  },
+  "rows_sha256": "4dbc336583dd745a305c8ffdc53a0d66ec163578bef53f98c56c5d13a6d65fcc",
+  "status": "PASS_READ_ONLY_DIAGNOSTIC",
+  "summaries": {
+    "development_body": {
+      "accuracy": 0.8107142857142857,
+      "correct": 1135,
+      "observations": 1400,
+      "per_capability_correct": {
+        "abstention": 84,
+        "clarification": 95,
+        "coherence": 0,
+        "conversation": 100,
+        "email_drafting_from_notes": 80,
+        "fact_free_reasoning": 100,
+        "fluent_realization": 76,
+        "format_control": 95,
+        "grammar": 100,
+        "instruction_following": 76,
+        "prompt_grounding": 52,
+        "rewriting": 77,
+        "supplied_text_summarization": 100,
+        "tone_control": 100
+      },
+      "predicted_counts": {
+        "abstention": 84,
+        "clarification": 95,
+        "coherence": 123,
+        "conversation": 101,
+        "email_drafting_from_notes": 80,
+        "fact_free_reasoning": 211,
+        "fluent_realization": 77,
+        "format_control": 100,
+        "grammar": 100,
+        "instruction_following": 82,
+        "prompt_grounding": 53,
+        "rewriting": 93,
+        "supplied_text_summarization": 100,
+        "tone_control": 101
+      }
+    },
+    "development_matched_header": {
+      "accuracy": 0.7321428571428571,
+      "correct": 1025,
+      "observations": 1400,
+      "per_capability_correct": {
+        "abstention": 72,
+        "clarification": 100,
+        "coherence": 0,
+        "conversation": 100,
+        "email_drafting_from_notes": 54,
+        "fact_free_reasoning": 100,
+        "fluent_realization": 53,
+        "format_control": 76,
+        "grammar": 100,
+        "instruction_following": 75,
+        "prompt_grounding": 51,
+        "rewriting": 75,
+        "supplied_text_summarization": 82,
+        "tone_control": 87
+      },
+      "predicted_counts": {
+        "abstention": 72,
+        "clarification": 101,
+        "coherence": 150,
+        "conversation": 100,
+        "email_drafting_from_notes": 54,
+        "fact_free_reasoning": 321,
+        "fluent_realization": 53,
+        "format_control": 76,
+        "grammar": 100,
+        "instruction_following": 76,
+        "prompt_grounding": 51,
+        "rewriting": 77,
+        "supplied_text_summarization": 82,
+        "tone_control": 87
+      }
+    },
+    "development_original": {
+      "accuracy": 0.07142857142857142,
+      "correct": 100,
+      "observations": 1400,
+      "per_capability_correct": {
+        "abstention": 0,
+        "clarification": 0,
+        "coherence": 0,
+        "conversation": 0,
+        "email_drafting_from_notes": 0,
+        "fact_free_reasoning": 100,
+        "fluent_realization": 0,
+        "format_control": 0,
+        "grammar": 0,
+        "instruction_following": 0,
+        "prompt_grounding": 0,
+        "rewriting": 0,
+        "supplied_text_summarization": 0,
+        "tone_control": 0
+      },
+      "predicted_counts": {
+        "fact_free_reasoning": 1400
+      }
+    },
+    "training_body": {
+      "accuracy": 1.0,
+      "correct": 280,
+      "observations": 280,
+      "per_capability_correct": {
+        "abstention": 20,
+        "clarification": 20,
+        "coherence": 20,
+        "conversation": 20,
+        "email_drafting_from_notes": 20,
+        "fact_free_reasoning": 20,
+        "fluent_realization": 20,
+        "format_control": 20,
+        "grammar": 20,
+        "instruction_following": 20,
+        "prompt_grounding": 20,
+        "rewriting": 20,
+        "supplied_text_summarization": 20,
+        "tone_control": 20
+      },
+      "predicted_counts": {
+        "abstention": 20,
+        "clarification": 20,
+        "coherence": 20,
+        "conversation": 20,
+        "email_drafting_from_notes": 20,
+        "fact_free_reasoning": 20,
+        "fluent_realization": 20,
+        "format_control": 20,
+        "grammar": 20,
+        "instruction_following": 20,
+        "prompt_grounding": 20,
+        "rewriting": 20,
+        "supplied_text_summarization": 20,
+        "tone_control": 20
+      }
+    },
+    "training_full": {
+      "accuracy": 1.0,
+      "correct": 280,
+      "observations": 280,
+      "per_capability_correct": {
+        "abstention": 20,
+        "clarification": 20,
+        "coherence": 20,
+        "conversation": 20,
+        "email_drafting_from_notes": 20,
+        "fact_free_reasoning": 20,
+        "fluent_realization": 20,
+        "format_control": 20,
+        "grammar": 20,
+        "instruction_following": 20,
+        "prompt_grounding": 20,
+        "rewriting": 20,
+        "supplied_text_summarization": 20,
+        "tone_control": 20
+      },
+      "predicted_counts": {
+        "abstention": 20,
+        "clarification": 20,
+        "coherence": 20,
+        "conversation": 20,
+        "email_drafting_from_notes": 20,
+        "fact_free_reasoning": 20,
+        "fluent_realization": 20,
+        "format_control": 20,
+        "grammar": 20,
+        "instruction_following": 20,
+        "prompt_grounding": 20,
+        "rewriting": 20,
+        "supplied_text_summarization": 20,
+        "tone_control": 20
+      }
+    }
+  },
+  "training_performed": false
+}
