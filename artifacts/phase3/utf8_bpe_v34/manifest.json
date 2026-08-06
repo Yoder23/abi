@@ -1,0 +1,21 @@
+{
+  "claim_boundary": "Tokenizer identity only; no learned capability or host conformance.",
+  "development_used_for_vocabulary": false,
+  "evidence_sha256": "59a2d40335dc0fc9bda72984aca4c7c30b304580da897a8155776a93eff4e316",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-utf8-bpe-artifact/1",
+  "neural_training_performed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_UTF8_BPE_MATERIALIZATION_PROTOCOL_V35.json",
+    "sha256": "092213e309702fdb7d59f63c01fca270928a3cae286b3aad34885326137daa89"
+  },
+  "status": "MATERIALIZED_REPRESENTATION_ONLY",
+  "teacher_present_at_inference": false,
+  "tokenizer": {
+    "fixed_actions_with_host_specials": 4999,
+    "path": "tokenizer.json",
+    "sha256": "efa16fcbc4d49bb643c94719b84dd4d74d27563e7bf28b41521aa903b980be2d",
+    "vocabulary_entries": 4996
+  },
+  "training_source": "PHASE1_TRAINING_PROMPTS_AND_OUTPUTS_PLUS_PRINTABLE_ASCII_SYNTAX_LINE"
+}
