@@ -4,7 +4,7 @@ Status date: 2026-08-06
 
 The machine-readable contract
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` controls sequencing and
-gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V17.json` records live status.
+gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V19.json` records live status.
 Evidence gates, not experiment counts or dates, close phases.
 
 | Phase | Objective | Status |
@@ -12,7 +12,7 @@ Evidence gates, not experiment counts or dates, close phases.
 | 0 | Definitions, baselines, and preregistration | COMPLETE |
 | 1 | Capability inventory and normalized acquisition IR | COMPLETE |
 | 2 | Strong matched LoRA and distillation baselines | MACHINE COMPLETE; BLOCKED ON EXTERNAL HUMAN RATINGS |
-| 3 | Causal teacher-to-target acquisition | UNCERTIFIED; BLOCKED ON INTEGRATION-INTERFACE INVESTIGATION |
+| 3 | Causal teacher-to-target acquisition | UNCERTIFIED; V23 FAILED, POINTER REPRESENTATION QUESTION OPEN |
 | 4 | Sufficient-information Pareto frontier | LOCKED |
 | 5 | Selective reconstruction and bounded exclusion | LOCKED |
 | 6 | Composition, portability, and multi-source provenance | LOCKED |
@@ -74,6 +74,12 @@ sweeping nearby routes is barred.
   authorized. A separate LayerCake investigation must qualify the integration
   surface before a new ABI protocol can be registered. No runtime claim is
   inherited by either oracle bridge.
+- The separate LayerCake host investigation passed a construct-only external
+  direct-core interface. ABI V23 then failed the initial absolute screen at
+  504/1,400 with 77 collapses. Its fixed targets did not supervise available
+  prompt-pointer actions. One new pointer-supervised representation screen is
+  permitted under a fresh preregistration; V23 tuning, controls, and additional
+  seeds remain barred.
 - Phase 3 must show a causal ABI acquisition candidate beats parent,
   label-free, shuffled, bridge-only, and monolithic controls while passing
   autonomous quality and repetition gates.

@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; INTEGRATION INTERFACE INVESTIGATION REQUIRED | `ABI_CAPABILITY_COMPILER_PHASE3_EXPANDED_ORACLE_RESULT_V1.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V23 DIRECT CORE FAILED, POINTER REPRESENTATION QUESTION OPEN | `ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_CORE_RESULT_V23.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -28,7 +28,22 @@ fresh, preregistered successor supplied 400 new passing abstention records; none
 of the failed records were reclassified. Specialist inventories are
 evaluation-only, and no specialist record is eligible for English training.
 
-## Active objective: preserve the ABI boundary while LayerCake integration is investigated
+## Active objective: test the measured prompt-identity representation bottleneck
+
+The separate LayerCake repository has qualified a construct-only signed direct
+neural core interface. ABI V23 used that interface without copying LayerCake
+code and failed its initial absolute screen at 504/1,400 with 77 repetition
+collapses. Thirteen of fourteen capabilities missed the ordinary statistical
+gate, and all three critical capabilities missed their stricter gates. The
+teacher-relative comparison and causal controls were correctly not reached.
+
+V23 is an ABI acquisition/representation failure, not a LayerCake regression.
+Its fixed-action targets never supervised the available prompt-pointer actions;
+raw outputs frequently replaced or duplicated prompt entities. The only open
+experimental question is one separately preregistered pointer-supervised target
+representation. No V23 tuning or rerun is authorized.
+
+## Preserved historical Phase 3 path
 
 The user explicitly deferred the unavailable human raters. This does not
 complete Phase 2. The corrected V4 A0-A4 development campaign has finished on
@@ -130,6 +145,10 @@ baseline findings, not an ABI-candidate result.
 
 ## Stop boundaries
 
+- Do not rerun or tune V23. A pointer-supervised successor must be a new,
+  hash-bound representation experiment and must fail fast on the same absolute
+  screen before any controls or additional seeds.
+
 - Do not rerun or tune the completed A0-A4 or B0-B4 branches. Their remaining
   two seeds were not authorized after their first seeds failed locked gates.
 - Do not launch an ABI successor until a separate LayerCake integration
@@ -148,6 +167,10 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V19.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_CORE_RESULT_V23.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_CORE_REPORT_V23.md`
+- `results/abi_capability_compiler_phase3_direct_core/direct_core_decision_v23_corrected_v1.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V17.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_EXPANDED_ORACLE_RESULT_V1.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_EXPANDED_ORACLE_REPORT_V9.md`

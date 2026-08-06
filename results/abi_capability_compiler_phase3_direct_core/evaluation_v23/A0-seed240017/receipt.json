@@ -1,0 +1,86 @@
+{
+  "checkpoint_sha256": "fec500100ca80d297573863ebf4f8edb8ce826f6cd5476b9aa76cee05a40b8a4",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-direct-core-evaluation/1",
+  "functional_passes": 504,
+  "generation_errors": 0,
+  "observations": 1400,
+  "outputs_sha256": "06be974ea5b834edd9aa2ac52d355b6982cfabbda322c8885c60c6685aea83ac",
+  "per_capability": {
+    "abstention": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 34
+    },
+    "clarification": {
+      "collapses": 13,
+      "observations": 100,
+      "passes": 98
+    },
+    "coherence": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 0
+    },
+    "conversation": {
+      "collapses": 11,
+      "observations": 100,
+      "passes": 55
+    },
+    "email_drafting_from_notes": {
+      "collapses": 51,
+      "observations": 100,
+      "passes": 15
+    },
+    "fact_free_reasoning": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 0
+    },
+    "fluent_realization": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 45
+    },
+    "format_control": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 1
+    },
+    "grammar": {
+      "collapses": 1,
+      "observations": 100,
+      "passes": 42
+    },
+    "instruction_following": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 22
+    },
+    "prompt_grounding": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 50
+    },
+    "rewriting": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 48
+    },
+    "supplied_text_summarization": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 46
+    },
+    "tone_control": {
+      "collapses": 1,
+      "observations": 100,
+      "passes": 48
+    }
+  },
+  "promotion_eligible": false,
+  "protocol_sha256": "2b31e961c567d9fb4cb573ccbb7f088d67bf98b474b55b0b7f26d6897a7bc2cc",
+  "repetition_collapses": 77,
+  "status": "PASS_EXECUTION_CONDITIONAL_SCREEN",
+  "wall_seconds": 186.33219310001004
+}

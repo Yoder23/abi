@@ -41,10 +41,17 @@ Status date: 2026-08-06.
 - Corrected V4 evidence shows a causal labeled teacher-payload signal against
   all four matched controls, but A0 scored only 379/1,400 with 150 repetition
   collapses and is far below the locked absolute and teacher-relative gates.
+- The separate LayerCake repository qualified a construct-only signed direct
+  neural English-core interface without changing its sealed release. That
+  construct supplies no inherited quality or performance claim.
+- ABI V23 exercised that interface with a 4.01M-parameter self-causal artifact
+  and failed the absolute screen: 504/1,400, 77 collapses, zero generation
+  errors. This is an ABI acquisition/representation failure, not a LayerCake
+  regression. V23 and its remaining seeds/controls are closed.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V16.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V19.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -66,6 +73,17 @@ quality, a minimum information budget, domain acquisition, or superiority over
 LoRA or distillation.
 
 ## Active authorization
+
+V23 is complete failed under
+`ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_CORE_RESULT_V23.json`. Do not tune its
+data, steps, seed, rank, or fixed-action representation. One materially
+distinct pointer-supervised target-representation screen may be separately
+preregistered because V23 never supervised the host plan's available prompt
+pointers and its raw outputs lost prompt identities. It must use the same
+fail-fast absolute gates; controls and remaining seeds are prohibited unless
+the initial candidate passes every gate. Phase 2 human ratings remain deferred,
+Phase 3 is uncertified, Phases 4 through 8 are locked, and final access and ABI
+superiority claims remain prohibited.
 
 No further Phase 2 training is authorized. The A0-A4 and V6 B0-B4 branches are
 closed. V6 B0 scored 1,148/1,400 with 43 collapses, lost to label-free B1 by

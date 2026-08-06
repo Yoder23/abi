@@ -48,6 +48,11 @@ Status date: 2026-08-06
     bridge ranks and still scored only 1,248/1,400 with 75 collapses. The exact
     LayerCake host remained unchanged; extraction and labeling were not under
     test, and no fundamental host ceiling was proven.
+14. **Hosting and acquisition ownership are now separated.** The external
+    LayerCake direct-core construct passed independently. ABI V23 executed a
+    teacher-free 4.01M-parameter artifact through it but scored 504/1,400 with
+    77 collapses. This is an ABI fixed-action acquisition/representation
+    failure, not a LayerCake host regression.
 
 ## Open scientific questions
 
@@ -64,13 +69,13 @@ causal signal from it but did not show fluent autonomous generation,
 grounding, instruction following, clarification, abstention, coherence, or
 repetition safety at the required level.
 
-### 3. Can LayerCake expose an integration surface that realizes the causal ABI signal?
+### 3. Can pointer-supervised ABI targets preserve prompt identity?
 
-The causal payload signal is established, but current and doubled-rank bridges
-cannot realize it reliably even on contaminated in-sample pairs. The next
-question belongs to a separate LayerCake investigation: whether a qualified
-host integration surface can expose adequate state and control while preserving
-the sealed runtime contract. ABI extraction work cannot answer that question.
+The direct-core host construct now exists. V23's fixed-action targets did not
+use its source-pointer action space, and raw outputs substituted or duplicated
+names, dates, and places. One deterministic pointer-supervised representation
+screen can test that measured acquisition bottleneck. It must not be described
+as a LayerCake repair or a V23 hyperparameter sweep.
 
 ### 4. What is the sufficient-information frontier?
 
@@ -113,13 +118,12 @@ hardware reproduction, and external replication.
 ## Immediate research priority
 
 Preserve every completed failed Phase 3 branch and keep final data unopened.
-Do not tune data, steps, recovery losses, rank, or nearby bridge variants. Open
-a separately governed LayerCake integration-interface investigation using the
-V16-V22 ownership evidence. ABI work may resume only after that interface is
-qualified and a fresh protocol binds equal-information controls and same-
-candidate runtime certification. Phase 2 and Phase 3 remain uncertified, and
-Phase 4 remains locked. When independent raters become available, the Phase 2
-packet must still be completed before certification.
+Do not tune V23 data, steps, seeds, ranks, or fixed-action targets. Preregister
+one deterministic pointer-supervised representation screen against the same
+absolute gates. Run controls and additional seeds only if that initial candidate
+passes every gate. Phase 2 and Phase 3 remain uncertified, and Phase 4 remains
+locked. When independent raters become available, the Phase 2 packet must still
+be completed before certification.
 
 See `CURRENT_PROJECT_STATUS.md` for the current claim boundary and
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` for controlling gates.

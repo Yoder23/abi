@@ -16,13 +16,14 @@ machine campaign is complete and adversarially rehashed, but Phase 2 is
 21,000 blinded counterbalanced judgments before a final Phase 2 certificate can
 exist. Phase 2 is not certified. The user explicitly deferred the currently
 unavailable human raters.
-Both conditionally authorized Phase 3 branches are now **COMPLETE_FAILED**,
+All completed Phase 3 branches, including direct-core V23, are
+**COMPLETE_FAILED**,
 without changing Phase 2's failed-closed status. The first found a causal
 signal but failed quality. The sequence successor improved aggregate quality
 substantially, but failed absolute, causal-control, teacher-relative, and
 repetition gates. Phase 3 is not certified; Phases 4 through 8 remain locked.
 
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V17.json` is the live state. V11 C0-C4
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V19.json` is the live state. V11 C0-C4
 is complete: causal and teacher-relative aggregate gates pass, but absolute
 capability and collapse gates fail. Final access and promotion remain
 prohibited.
@@ -54,6 +55,16 @@ ABI extraction and labeling were not tested, and no fundamental host ceiling
 was proven. ABI-side experiments are stopped; the next action is a separately
 governed LayerCake integration-interface investigation. A future retry must
 recertify quality and runtime on the same integrated lineage.
+
+The separate LayerCake investigation subsequently qualified a construct-only
+signed direct neural core interface. ABI V23 used it for a 4.01M-parameter
+self-causal candidate and scored 504/1,400 with 77 collapses. The run had zero
+generation errors, no copied source parameters or blocks, and no teacher at
+inference, but it failed the locked functional and repetition gates. This
+separates ownership: hosting the artifact format works, while V23's ABI-trained
+fixed-action representation does not preserve prompt identities. V23 is closed;
+one separately preregistered pointer-supervised representation is the only
+supported successor. Phase 3 remains uncertified.
 `ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json` and the versioned
 Phase 3 protocols remain the historical authority for the narrow execution
 exception. They did not alter any prior result or permit final-test use.
@@ -102,7 +113,9 @@ sufficient-information frontier.
 | Conditional Phase 3 B0-B4 sequence branch | COMPLETE FAILED; response/target sensitivity | Continuous sequence conditioning reaches 82.00%; correct responses and target pairing matter | Semantic routing causality, absolute gate pass, Phase 3 certificate, or final-test access |
 | Sufficient-information frontier | LOCKED | Not yet established | No smallest fluent core or imported-information budget is known |
 | Expanded bridge oracle V22 | COMPLETE FAILED | Current and doubled-rank ABI bridges cannot clear even the contaminated autonomous upper bound | No LayerCake regression, extraction failure, labeling failure, or fundamental host ceiling is proven |
-| Integrated ABI-derived LayerCake | BLOCKED ON INTEGRATION INTERFACE | Not yet established | No ABI candidate inherits sealed LayerCake performance evidence |
+| LayerCake direct-core host construct | EXTERNAL CONSTRUCT PASS | Signed unchanged artifacts can be hosted on CPU/CUDA with exact package operations | No ABI quality, teacher-relative, or performance result is inherited |
+| ABI direct-core V23 | COMPLETE FAILED | A teacher-free ABI artifact executes autonomously through the host interface | 504/1,400 and 77 collapses do not establish fluent acquisition or Phase 3 |
+| Integrated ABI-derived LayerCake | BLOCKED ON ACQUISITION QUALITY | Host construct exists; no qualified English artifact exists | No ABI candidate inherits sealed LayerCake performance evidence |
 
 ## Current proven results
 

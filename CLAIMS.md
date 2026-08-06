@@ -58,6 +58,13 @@ its evidence live in the separate
 [LayerCake repository](https://github.com/Yoder23/layercake). A future ABI
 artifact must be independently accepted and recertified by its target host.
 
+The LayerCake repository has separately passed a construct-only signed direct
+neural core interface. ABI V23 generated through that interface, but scored
+only 504/1,400 with 77 collapses. The correct claim is that the host construct
+can carry an external artifact while this ABI acquisition representation fails
+quality. It is not a LayerCake regression, a Phase 3 pass, or evidence of ABI
+superiority over LoRA or distillation.
+
 ### 5. Capability-compiler Phase 0 governance
 
 `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` certifies the initial
