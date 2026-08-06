@@ -201,7 +201,8 @@ def _forward_batch(model: Any, entries: list[tuple[list[int], int]], device: tor
 
     lengths = [len(ids) for ids, _ in entries]
     maximum = max(lengths)
-    pad_id = int(model.config.eos_token_id)
+    # Padding is causally invisible and excluded by the exact attention mask.
+    pad_id = 0
     ids = torch.full((len(entries), maximum), pad_id, dtype=torch.long, device=device)
     attention = torch.zeros((len(entries), maximum), dtype=torch.long, device=device)
     prompt_lengths = torch.tensor([prompt for _, prompt in entries], dtype=torch.long, device=device)

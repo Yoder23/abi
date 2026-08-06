@@ -1,0 +1,13 @@
+{
+  "format": "abi-capability-compiler-phase3-failure-attribution-execution-failure/1",
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_FAILURE_ATTRIBUTION_PROTOCOL_V14.json",
+  "protocol_sha256": "024cbaae32209056d92eac561e8d43ada7878dd0c14d15e341c297dd862a7205",
+  "status": "FAILED_BEFORE_FIRST_OBSERVATION",
+  "date": "2026-08-06",
+  "exception": "AttributeError: ABIEnglishCoreConfig has no attribute eos_token_id",
+  "cause": "The new right-padding helper read a tokenizer field from the host configuration instead of using an arbitrary fully masked padding value.",
+  "evidence_output_created": false,
+  "scientific_fields_changed": false,
+  "authorized_repair": "Use token ID 0 only in positions whose attention mask is zero; continue slicing all logits and metrics to the original unpadded length.",
+  "promotion_eligible": false
+}
