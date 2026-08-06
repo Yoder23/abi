@@ -1,0 +1,815 @@
+{
+  "attribution": {
+    "abi_teacher_payload_signal": true,
+    "autonomous_prefix_sensitivity": true,
+    "host_representational_ceiling_proven": false,
+    "layercake_regression": false,
+    "native_new_suite_scope_gap": true,
+    "next_action": "preregister one self-prefix-recovery bridge successor without modifying the sealed host",
+    "owners": [
+      "INTEGRATION",
+      "LAYERCAKE_SCOPE_REVIEW"
+    ],
+    "primary": "ABI_SIGNAL_PRESENT_INTEGRATION_STATE_RECOVERY_LIMITING",
+    "reasons": [
+      "cached teacher payload is measurable against the no-payload control",
+      "one model-generated wrong prefix token materially degrades continuation recovery",
+      "the sealed native host has a non-regression scope gap on the broader ABI development suite"
+    ]
+  },
+  "c0_corruption_recovery": {
+    "aggregate": {
+      "accuracy_delta_corrupted_minus_clean": -0.06964041875284477,
+      "clean_accuracy": 0.757396449704142,
+      "clean_mean_nll": 1.502525786197972,
+      "corrupted_accuracy": 0.6877560309512972,
+      "corrupted_mean_nll": 2.6559990477897855,
+      "nll_ratio_corrupted_to_clean": 1.767689494707835,
+      "observations": 166,
+      "tokens": 2197
+    },
+    "by_horizon": {
+      "1": {
+        "accuracy_delta_corrupted_minus_clean": -0.5602409638554218,
+        "clean_accuracy": 0.7349397590361446,
+        "clean_mean_nll": 1.7287953385846808,
+        "corrupted_accuracy": 0.1746987951807229,
+        "corrupted_mean_nll": 14.301970446527008,
+        "nll_ratio_corrupted_to_clean": 8.272795586223442,
+        "observations": 166,
+        "tokens": 166
+      },
+      "16": {
+        "accuracy_delta_corrupted_minus_clean": -0.06964041875284477,
+        "clean_accuracy": 0.757396449704142,
+        "clean_mean_nll": 1.502525786197972,
+        "corrupted_accuracy": 0.6877560309512972,
+        "corrupted_mean_nll": 2.6559990477897855,
+        "nll_ratio_corrupted_to_clean": 1.767689494707835,
+        "observations": 166,
+        "tokens": 2197
+      },
+      "2": {
+        "accuracy_delta_corrupted_minus_clean": -0.3283132530120482,
+        "clean_accuracy": 0.7439759036144579,
+        "clean_mean_nll": 1.5807459084193265,
+        "corrupted_accuracy": 0.41566265060240964,
+        "corrupted_mean_nll": 8.327832402014847,
+        "nll_ratio_corrupted_to_clean": 5.268292872155714,
+        "observations": 166,
+        "tokens": 332
+      },
+      "4": {
+        "accuracy_delta_corrupted_minus_clean": -0.2009132420091324,
+        "clean_accuracy": 0.745814307458143,
+        "clean_mean_nll": 1.5502683076843142,
+        "corrupted_accuracy": 0.5449010654490106,
+        "corrupted_mean_nll": 5.079961049689413,
+        "nll_ratio_corrupted_to_clean": 3.2768270011773093,
+        "observations": 166,
+        "tokens": 657
+      },
+      "8": {
+        "accuracy_delta_corrupted_minus_clean": -0.10970797158642465,
+        "clean_accuracy": 0.7521704814522494,
+        "clean_mean_nll": 1.5510685635141106,
+        "corrupted_accuracy": 0.6424625098658248,
+        "corrupted_mean_nll": 3.4472950499985533,
+        "nll_ratio_corrupted_to_clean": 2.2225291203042246,
+        "observations": 166,
+        "tokens": 1267
+      }
+    },
+    "observations": 166,
+    "selection": "first lexical 20 prompts per capability; first wrong C0 teacher-forced prediction"
+  },
+  "evidence_sha256": "165a54f46d383ca54f06adfad58f7d754ae65a16487aa40a5589a30a79958f2a",
+  "external_layercake_control": {
+    "checkpoint_sha256": "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1",
+    "identity_pass": true,
+    "repository_commit": "c7fc6db78229a022e82dcd481122bc118fa629ea",
+    "required_repository_commit": "c7fc6db78229a022e82dcd481122bc118fa629ea",
+    "sealed_certificates_pass": true
+  },
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-failure-attribution/1",
+  "protocol_sha256": "d4c5df0aef1e777c9b2db6e055b6d13c442386480977400e22790724565acc64",
+  "status": "COMPLETE_DIAGNOSTIC_NO_PROMOTION",
+  "systems": {
+    "C0": {
+      "autonomous": {
+        "functional_passes": 1207,
+        "functional_rate": 0.8621428571428571,
+        "observations": 1400,
+        "repetition_collapses": 51
+      },
+      "teacher_forced": {
+        "mean_nll": 0.9967366664179652,
+        "per_capability": {
+          "abstention": {
+            "mean_nll": 1.8764276502542938,
+            "perplexity": 6.5301352178876515,
+            "prompts": 20,
+            "token_accuracy": 0.6655629139072847,
+            "tokens": 604,
+            "wrong_recent_repeat_predictions": 19
+          },
+          "clarification": {
+            "mean_nll": 2.6308652914304305,
+            "perplexity": 13.885779951681105,
+            "prompts": 20,
+            "token_accuracy": 0.6239600665557404,
+            "tokens": 601,
+            "wrong_recent_repeat_predictions": 19
+          },
+          "coherence": {
+            "mean_nll": 0.07144489746458334,
+            "perplexity": 1.07405896569851,
+            "prompts": 20,
+            "token_accuracy": 0.9818913480885312,
+            "tokens": 994,
+            "wrong_recent_repeat_predictions": 3
+          },
+          "conversation": {
+            "mean_nll": 2.272644842675129,
+            "perplexity": 9.705035190919379,
+            "prompts": 20,
+            "token_accuracy": 0.6177105831533477,
+            "tokens": 463,
+            "wrong_recent_repeat_predictions": 12
+          },
+          "email_drafting_from_notes": {
+            "mean_nll": 0.6876947290428902,
+            "perplexity": 1.989124772234617,
+            "prompts": 20,
+            "token_accuracy": 0.8434909800097513,
+            "tokens": 2051,
+            "wrong_recent_repeat_predictions": 12
+          },
+          "fact_free_reasoning": {
+            "mean_nll": 1.405690601340147,
+            "perplexity": 4.078342277591528,
+            "prompts": 20,
+            "token_accuracy": 0.783287419651056,
+            "tokens": 1089,
+            "wrong_recent_repeat_predictions": 8
+          },
+          "fluent_realization": {
+            "mean_nll": 0.8893950176805951,
+            "perplexity": 2.43365688644865,
+            "prompts": 20,
+            "token_accuracy": 0.8631178707224335,
+            "tokens": 263,
+            "wrong_recent_repeat_predictions": 1
+          },
+          "format_control": {
+            "mean_nll": 0.02006062666920048,
+            "perplexity": 1.020263193310876,
+            "prompts": 20,
+            "token_accuracy": 0.9907407407407407,
+            "tokens": 216,
+            "wrong_recent_repeat_predictions": 1
+          },
+          "grammar": {
+            "mean_nll": 0.011796142548730928,
+            "perplexity": 1.01186599141712,
+            "prompts": 20,
+            "token_accuracy": 1.0,
+            "tokens": 219,
+            "wrong_recent_repeat_predictions": 0
+          },
+          "instruction_following": {
+            "mean_nll": 0.012029093255980249,
+            "perplexity": 1.0121017337725702,
+            "prompts": 20,
+            "token_accuracy": 1.0,
+            "tokens": 163,
+            "wrong_recent_repeat_predictions": 0
+          },
+          "prompt_grounding": {
+            "mean_nll": 0.28461074750108195,
+            "perplexity": 1.3292445156571056,
+            "prompts": 20,
+            "token_accuracy": 0.9603960396039604,
+            "tokens": 303,
+            "wrong_recent_repeat_predictions": 1
+          },
+          "rewriting": {
+            "mean_nll": 0.47735663582881294,
+            "perplexity": 1.6118081701068316,
+            "prompts": 20,
+            "token_accuracy": 0.8966666666666666,
+            "tokens": 300,
+            "wrong_recent_repeat_predictions": 0
+          },
+          "supplied_text_summarization": {
+            "mean_nll": 0.38015014770717753,
+            "perplexity": 1.4625041645965102,
+            "prompts": 20,
+            "token_accuracy": 0.9110070257611241,
+            "tokens": 427,
+            "wrong_recent_repeat_predictions": 1
+          },
+          "tone_control": {
+            "mean_nll": 1.667757370226616,
+            "perplexity": 5.3002679200148375,
+            "prompts": 20,
+            "token_accuracy": 0.7282321899736148,
+            "tokens": 379,
+            "wrong_recent_repeat_predictions": 7
+          }
+        },
+        "perplexity": 2.709425626313131,
+        "prompts": 280,
+        "token_accuracy": 0.8263131813676908,
+        "tokens": 8072,
+        "wrong_recent_repeat_predictions": 84
+      }
+    },
+    "C1": {
+      "autonomous": {
+        "functional_passes": 1090,
+        "functional_rate": 0.7785714285714286,
+        "observations": 1400,
+        "repetition_collapses": 75
+      },
+      "teacher_forced": {
+        "mean_nll": 1.04043183901191,
+        "per_capability": {
+          "abstention": {
+            "mean_nll": 1.962953019418464,
+            "perplexity": 7.1203225005450195,
+            "prompts": 20,
+            "token_accuracy": 0.6738410596026491,
+            "tokens": 604,
+            "wrong_recent_repeat_predictions": 12
+          },
+          "clarification": {
+            "mean_nll": 2.7033919185251247,
+            "perplexity": 14.93028825590487,
+            "prompts": 20,
+            "token_accuracy": 0.6056572379367721,
+            "tokens": 601,
+            "wrong_recent_repeat_predictions": 17
+          },
+          "coherence": {
+            "mean_nll": 0.10228841420135627,
+            "perplexity": 1.1077029029095573,
+            "prompts": 20,
+            "token_accuracy": 0.9828973843058351,
+            "tokens": 994,
+            "wrong_recent_repeat_predictions": 5
+          },
+          "conversation": {
+            "mean_nll": 2.474624142211663,
+            "perplexity": 11.87724212009596,
+            "prompts": 20,
+            "token_accuracy": 0.6090712742980562,
+            "tokens": 463,
+            "wrong_recent_repeat_predictions": 12
+          },
+          "email_drafting_from_notes": {
+            "mean_nll": 0.7059064490338293,
+            "perplexity": 2.025682030492456,
+            "prompts": 20,
+            "token_accuracy": 0.8444661140906875,
+            "tokens": 2051,
+            "wrong_recent_repeat_predictions": 14
+          },
+          "fact_free_reasoning": {
+            "mean_nll": 1.360066255433117,
+            "perplexity": 3.8964514543218423,
+            "prompts": 20,
+            "token_accuracy": 0.7897153351698806,
+            "tokens": 1089,
+            "wrong_recent_repeat_predictions": 14
+          },
+          "fluent_realization": {
+            "mean_nll": 1.008113941584958,
+            "perplexity": 2.740427531397953,
+            "prompts": 20,
+            "token_accuracy": 0.8479087452471483,
+            "tokens": 263,
+            "wrong_recent_repeat_predictions": 2
+          },
+          "format_control": {
+            "mean_nll": 0.0068172551691532135,
+            "perplexity": 1.0068405455485796,
+            "prompts": 20,
+            "token_accuracy": 1.0,
+            "tokens": 216,
+            "wrong_recent_repeat_predictions": 0
+          },
+          "grammar": {
+            "mean_nll": 0.1284643317525994,
+            "perplexity": 1.137080862886364,
+            "prompts": 20,
+            "token_accuracy": 0.958904109589041,
+            "tokens": 219,
+            "wrong_recent_repeat_predictions": 0
+          },
+          "instruction_following": {
+            "mean_nll": 0.08713602945437095,
+            "perplexity": 1.0910450838918355,
+            "prompts": 20,
+            "token_accuracy": 0.9754601226993865,
+            "tokens": 163,
+            "wrong_recent_repeat_predictions": 0
+          },
+          "prompt_grounding": {
+            "mean_nll": 0.2653920541843246,
+            "perplexity": 1.3039420915323892,
+            "prompts": 20,
+            "token_accuracy": 0.966996699669967,
+            "tokens": 303,
+            "wrong_recent_repeat_predictions": 1
+          },
+          "rewriting": {
+            "mean_nll": 0.5783013739685218,
+            "perplexity": 1.7830071945755608,
+            "prompts": 20,
+            "token_accuracy": 0.8666666666666667,
+            "tokens": 300,
+            "wrong_recent_repeat_predictions": 0
+          },
+          "supplied_text_summarization": {
+            "mean_nll": 0.4589080235438827,
+            "perplexity": 1.582345157589321,
+            "prompts": 20,
+            "token_accuracy": 0.9016393442622951,
+            "tokens": 427,
+            "wrong_recent_repeat_predictions": 1
+          },
+          "tone_control": {
+            "mean_nll": 1.7225604516535133,
+            "perplexity": 5.598845700890705,
+            "prompts": 20,
+            "token_accuracy": 0.7229551451187335,
+            "tokens": 379,
+            "wrong_recent_repeat_predictions": 9
+          }
+        },
+        "perplexity": 2.8304390444726653,
+        "prompts": 280,
+        "token_accuracy": 0.8228444003964321,
+        "tokens": 8072,
+        "wrong_recent_repeat_predictions": 87
+      }
+    },
+    "C3": {
+      "autonomous": {
+        "functional_passes": 10,
+        "functional_rate": 0.007142857142857143,
+        "observations": 1400,
+        "repetition_collapses": 776
+      },
+      "teacher_forced": {
+        "mean_nll": 5.045792387781814,
+        "per_capability": {
+          "abstention": {
+            "mean_nll": 4.569738261747045,
+            "perplexity": 96.51884379290054,
+            "prompts": 20,
+            "token_accuracy": 0.2764900662251656,
+            "tokens": 604,
+            "wrong_recent_repeat_predictions": 25
+          },
+          "clarification": {
+            "mean_nll": 7.112955991519668,
+            "perplexity": 1227.7714693612477,
+            "prompts": 20,
+            "token_accuracy": 0.18302828618968386,
+            "tokens": 601,
+            "wrong_recent_repeat_predictions": 51
+          },
+          "coherence": {
+            "mean_nll": 3.3576263949664784,
+            "perplexity": 28.720937745895974,
+            "prompts": 20,
+            "token_accuracy": 0.3853118712273642,
+            "tokens": 994,
+            "wrong_recent_repeat_predictions": 62
+          },
+          "conversation": {
+            "mean_nll": 6.184674009648564,
+            "perplexity": 485.2547494558732,
+            "prompts": 20,
+            "token_accuracy": 0.14038876889848811,
+            "tokens": 463,
+            "wrong_recent_repeat_predictions": 26
+          },
+          "email_drafting_from_notes": {
+            "mean_nll": 5.566824003058722,
+            "perplexity": 261.60193152436807,
+            "prompts": 20,
+            "token_accuracy": 0.21452949780594832,
+            "tokens": 2051,
+            "wrong_recent_repeat_predictions": 179
+          },
+          "fact_free_reasoning": {
+            "mean_nll": 4.101281557529754,
+            "perplexity": 60.41766671958771,
+            "prompts": 20,
+            "token_accuracy": 0.3397612488521579,
+            "tokens": 1089,
+            "wrong_recent_repeat_predictions": 81
+          },
+          "fluent_realization": {
+            "mean_nll": 6.631340360460173,
+            "perplexity": 758.4981505301525,
+            "prompts": 20,
+            "token_accuracy": 0.19011406844106463,
+            "tokens": 263,
+            "wrong_recent_repeat_predictions": 4
+          },
+          "format_control": {
+            "mean_nll": 6.036538954134341,
+            "perplexity": 418.44227785078004,
+            "prompts": 20,
+            "token_accuracy": 0.24074074074074073,
+            "tokens": 216,
+            "wrong_recent_repeat_predictions": 15
+          },
+          "grammar": {
+            "mean_nll": 3.6050752787829534,
+            "perplexity": 36.784452841861516,
+            "prompts": 20,
+            "token_accuracy": 0.4155251141552511,
+            "tokens": 219,
+            "wrong_recent_repeat_predictions": 3
+          },
+          "instruction_following": {
+            "mean_nll": 5.028116916586285,
+            "perplexity": 152.6452980563504,
+            "prompts": 20,
+            "token_accuracy": 0.3067484662576687,
+            "tokens": 163,
+            "wrong_recent_repeat_predictions": 3
+          },
+          "prompt_grounding": {
+            "mean_nll": 4.110960340342506,
+            "perplexity": 61.00527527441034,
+            "prompts": 20,
+            "token_accuracy": 0.37623762376237624,
+            "tokens": 303,
+            "wrong_recent_repeat_predictions": 16
+          },
+          "rewriting": {
+            "mean_nll": 4.736843121846517,
+            "perplexity": 114.07351646804196,
+            "prompts": 20,
+            "token_accuracy": 0.31666666666666665,
+            "tokens": 300,
+            "wrong_recent_repeat_predictions": 11
+          },
+          "supplied_text_summarization": {
+            "mean_nll": 4.367919332249661,
+            "perplexity": 78.87933914260094,
+            "prompts": 20,
+            "token_accuracy": 0.34660421545667447,
+            "tokens": 427,
+            "wrong_recent_repeat_predictions": 17
+          },
+          "tone_control": {
+            "mean_nll": 6.387826904457918,
+            "perplexity": 594.5631323123479,
+            "prompts": 20,
+            "token_accuracy": 0.24802110817941952,
+            "tokens": 379,
+            "wrong_recent_repeat_predictions": 21
+          }
+        },
+        "perplexity": 155.36736163438755,
+        "prompts": 280,
+        "token_accuracy": 0.27613974231912786,
+        "tokens": 8072,
+        "wrong_recent_repeat_predictions": 514
+      }
+    },
+    "C4": {
+      "autonomous": {
+        "functional_passes": 1107,
+        "functional_rate": 0.7907142857142857,
+        "observations": 1400,
+        "repetition_collapses": 58
+      },
+      "teacher_forced": {
+        "mean_nll": 1.0655741463747033,
+        "per_capability": {
+          "abstention": {
+            "mean_nll": 2.0774836550090487,
+            "perplexity": 7.98435222991252,
+            "prompts": 20,
+            "token_accuracy": 0.6887417218543046,
+            "tokens": 604,
+            "wrong_recent_repeat_predictions": 19
+          },
+          "clarification": {
+            "mean_nll": 2.8591142795645257,
+            "perplexity": 17.446067752605902,
+            "prompts": 20,
+            "token_accuracy": 0.6156405990016639,
+            "tokens": 601,
+            "wrong_recent_repeat_predictions": 12
+          },
+          "coherence": {
+            "mean_nll": 0.17709820963802111,
+            "perplexity": 1.1937483249612795,
+            "prompts": 20,
+            "token_accuracy": 0.9647887323943662,
+            "tokens": 994,
+            "wrong_recent_repeat_predictions": 18
+          },
+          "conversation": {
+            "mean_nll": 2.4206009276742297,
+            "perplexity": 11.252619293890458,
+            "prompts": 20,
+            "token_accuracy": 0.6090712742980562,
+            "tokens": 463,
+            "wrong_recent_repeat_predictions": 12
+          },
+          "email_drafting_from_notes": {
+            "mean_nll": 0.7110908667323997,
+            "perplexity": 2.036211282699842,
+            "prompts": 20,
+            "token_accuracy": 0.8469039492930278,
+            "tokens": 2051,
+            "wrong_recent_repeat_predictions": 14
+          },
+          "fact_free_reasoning": {
+            "mean_nll": 1.3610090299195603,
+            "perplexity": 3.9001266615142103,
+            "prompts": 20,
+            "token_accuracy": 0.7878787878787878,
+            "tokens": 1089,
+            "wrong_recent_repeat_predictions": 12
+          },
+          "fluent_realization": {
+            "mean_nll": 0.9918857765978931,
+            "perplexity": 2.696314327567312,
+            "prompts": 20,
+            "token_accuracy": 0.8517110266159695,
+            "tokens": 263,
+            "wrong_recent_repeat_predictions": 3
+          },
+          "format_control": {
+            "mean_nll": 0.02313503897231486,
+            "perplexity": 1.0234047297394429,
+            "prompts": 20,
+            "token_accuracy": 0.9907407407407407,
+            "tokens": 216,
+            "wrong_recent_repeat_predictions": 0
+          },
+          "grammar": {
+            "mean_nll": 0.08761820167124476,
+            "perplexity": 1.091571282367593,
+            "prompts": 20,
+            "token_accuracy": 0.9817351598173516,
+            "tokens": 219,
+            "wrong_recent_repeat_predictions": 0
+          },
+          "instruction_following": {
+            "mean_nll": 0.05259600409129463,
+            "perplexity": 1.0540037458932752,
+            "prompts": 20,
+            "token_accuracy": 0.9815950920245399,
+            "tokens": 163,
+            "wrong_recent_repeat_predictions": 0
+          },
+          "prompt_grounding": {
+            "mean_nll": 0.2657268595168668,
+            "perplexity": 1.304378731388558,
+            "prompts": 20,
+            "token_accuracy": 0.9636963696369637,
+            "tokens": 303,
+            "wrong_recent_repeat_predictions": 1
+          },
+          "rewriting": {
+            "mean_nll": 0.6669061792890231,
+            "perplexity": 1.9482006038141062,
+            "prompts": 20,
+            "token_accuracy": 0.86,
+            "tokens": 300,
+            "wrong_recent_repeat_predictions": 4
+          },
+          "supplied_text_summarization": {
+            "mean_nll": 0.45828492580029667,
+            "perplexity": 1.5813595090016483,
+            "prompts": 20,
+            "token_accuracy": 0.8805620608899297,
+            "tokens": 427,
+            "wrong_recent_repeat_predictions": 3
+          },
+          "tone_control": {
+            "mean_nll": 1.6383304240521153,
+            "perplexity": 5.1465697461887014,
+            "prompts": 20,
+            "token_accuracy": 0.712401055408971,
+            "tokens": 379,
+            "wrong_recent_repeat_predictions": 11
+          }
+        },
+        "perplexity": 2.9025049684596165,
+        "prompts": 280,
+        "token_accuracy": 0.8214816650148662,
+        "tokens": 8072,
+        "wrong_recent_repeat_predictions": 109
+      }
+    },
+    "P0": {
+      "autonomous": {
+        "functional_passes": 0,
+        "functional_rate": 0.0,
+        "observations": 280,
+        "per_capability": {
+          "abstention": {
+            "collapses": 2,
+            "passes": 0
+          },
+          "clarification": {
+            "collapses": 0,
+            "passes": 0
+          },
+          "coherence": {
+            "collapses": 11,
+            "passes": 0
+          },
+          "conversation": {
+            "collapses": 7,
+            "passes": 0
+          },
+          "email_drafting_from_notes": {
+            "collapses": 7,
+            "passes": 0
+          },
+          "fact_free_reasoning": {
+            "collapses": 10,
+            "passes": 0
+          },
+          "fluent_realization": {
+            "collapses": 3,
+            "passes": 0
+          },
+          "format_control": {
+            "collapses": 6,
+            "passes": 0
+          },
+          "grammar": {
+            "collapses": 0,
+            "passes": 0
+          },
+          "instruction_following": {
+            "collapses": 7,
+            "passes": 0
+          },
+          "prompt_grounding": {
+            "collapses": 4,
+            "passes": 0
+          },
+          "rewriting": {
+            "collapses": 3,
+            "passes": 0
+          },
+          "supplied_text_summarization": {
+            "collapses": 3,
+            "passes": 0
+          },
+          "tone_control": {
+            "collapses": 7,
+            "passes": 0
+          }
+        },
+        "repetition_collapses": 70,
+        "route_counts": {
+          "4": 81,
+          "7": 165,
+          "9": 34
+        }
+      },
+      "teacher_forced": {
+        "mean_nll": 5.452213884226985,
+        "per_capability": {
+          "abstention": {
+            "mean_nll": 5.528735457666662,
+            "perplexity": 251.82526588652388,
+            "prompts": 20,
+            "token_accuracy": 0.24834437086092714,
+            "tokens": 604,
+            "wrong_recent_repeat_predictions": 35
+          },
+          "clarification": {
+            "mean_nll": 7.609944170604331,
+            "perplexity": 2018.1654216156744,
+            "prompts": 20,
+            "token_accuracy": 0.1447587354409318,
+            "tokens": 601,
+            "wrong_recent_repeat_predictions": 47
+          },
+          "coherence": {
+            "mean_nll": 3.6341963677818865,
+            "perplexity": 37.8714059827271,
+            "prompts": 20,
+            "token_accuracy": 0.3148893360160966,
+            "tokens": 994,
+            "wrong_recent_repeat_predictions": 71
+          },
+          "conversation": {
+            "mean_nll": 6.6969903818217,
+            "perplexity": 809.9644694450192,
+            "prompts": 20,
+            "token_accuracy": 0.13822894168466524,
+            "tokens": 463,
+            "wrong_recent_repeat_predictions": 34
+          },
+          "email_drafting_from_notes": {
+            "mean_nll": 5.955632128406303,
+            "perplexity": 385.9207850807632,
+            "prompts": 20,
+            "token_accuracy": 0.20039005363237444,
+            "tokens": 2051,
+            "wrong_recent_repeat_predictions": 209
+          },
+          "fact_free_reasoning": {
+            "mean_nll": 4.464528541810147,
+            "perplexity": 86.88005956707883,
+            "prompts": 20,
+            "token_accuracy": 0.2975206611570248,
+            "tokens": 1089,
+            "wrong_recent_repeat_predictions": 97
+          },
+          "fluent_realization": {
+            "mean_nll": 7.016579950717012,
+            "perplexity": 1114.9668480002736,
+            "prompts": 20,
+            "token_accuracy": 0.19771863117870722,
+            "tokens": 263,
+            "wrong_recent_repeat_predictions": 5
+          },
+          "format_control": {
+            "mean_nll": 6.512278768751356,
+            "perplexity": 673.3591002893143,
+            "prompts": 20,
+            "token_accuracy": 0.2037037037037037,
+            "tokens": 216,
+            "wrong_recent_repeat_predictions": 13
+          },
+          "grammar": {
+            "mean_nll": 3.6472642541476037,
+            "perplexity": 38.36955298783493,
+            "prompts": 20,
+            "token_accuracy": 0.4155251141552511,
+            "tokens": 219,
+            "wrong_recent_repeat_predictions": 3
+          },
+          "instruction_following": {
+            "mean_nll": 5.2126529553185215,
+            "perplexity": 183.5804434430881,
+            "prompts": 20,
+            "token_accuracy": 0.3006134969325153,
+            "tokens": 163,
+            "wrong_recent_repeat_predictions": 1
+          },
+          "prompt_grounding": {
+            "mean_nll": 4.382631371123563,
+            "perplexity": 80.04839354717063,
+            "prompts": 20,
+            "token_accuracy": 0.3432343234323432,
+            "tokens": 303,
+            "wrong_recent_repeat_predictions": 13
+          },
+          "rewriting": {
+            "mean_nll": 4.919952061971029,
+            "perplexity": 136.99604570864614,
+            "prompts": 20,
+            "token_accuracy": 0.29333333333333333,
+            "tokens": 300,
+            "wrong_recent_repeat_predictions": 10
+          },
+          "supplied_text_summarization": {
+            "mean_nll": 4.732838168356402,
+            "perplexity": 113.61757096982451,
+            "prompts": 20,
+            "token_accuracy": 0.297423887587822,
+            "tokens": 427,
+            "wrong_recent_repeat_predictions": 17
+          },
+          "tone_control": {
+            "mean_nll": 6.812918549791804,
+            "perplexity": 909.5214206449305,
+            "prompts": 20,
+            "token_accuracy": 0.22955145118733508,
+            "tokens": 379,
+            "wrong_recent_repeat_predictions": 23
+          }
+        },
+        "perplexity": 233.27403636790237,
+        "prompts": 280,
+        "token_accuracy": 0.24665510406342914,
+        "tokens": 8072,
+        "wrong_recent_repeat_predictions": 578
+      }
+    }
+  },
+  "training_performed": false,
+  "wall_seconds": 210.77281529997708
+}
