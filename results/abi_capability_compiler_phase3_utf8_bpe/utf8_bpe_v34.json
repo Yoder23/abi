@@ -1,0 +1,199 @@
+{
+  "candidates": {
+    "1000": {
+      "actual_fixed_actions": 1003,
+      "development": {
+        "failing": [
+          {
+            "actions": 373,
+            "capability": "instruction_following",
+            "record_id": "phase1-validation-instruction_following-0022-v2"
+          },
+          {
+            "actions": 388,
+            "capability": "instruction_following",
+            "record_id": "phase1-validation-instruction_following-0046-v2"
+          },
+          {
+            "actions": 413,
+            "capability": "instruction_following",
+            "record_id": "phase1-validation-instruction_following-0050-v2"
+          },
+          {
+            "actions": 389,
+            "capability": "instruction_following",
+            "record_id": "phase1-validation-instruction_following-0054-v2"
+          },
+          {
+            "actions": 391,
+            "capability": "instruction_following",
+            "record_id": "phase1-validation-instruction_following-0086-v2"
+          }
+        ],
+        "maximum_actions": 413,
+        "mean_actions": 41.816428571428574,
+        "over_320": 5,
+        "reconstruction_errors": [],
+        "records": 1400,
+        "stream_sha256": "82a890ae10b6265d16548fa331d7b75a263219e75d8b583dc69b8242b091d806"
+      },
+      "qualifying": false,
+      "requested_vocabulary": 1000,
+      "tokenizer_sha256": "8ef9b39f465abaa872e262b935c9a27c99e225315c8a1b42f9f9d40b9a3ccd3c",
+      "training": {
+        "failing": [],
+        "maximum_actions": 298,
+        "mean_actions": 34.470142857142854,
+        "over_320": 0,
+        "reconstruction_errors": [],
+        "records": 7000,
+        "stream_sha256": "c9319981118e5b38756985e6b9207cd3fc67bf16492ea9c2ebf4b875ee9568a8"
+      }
+    },
+    "2000": {
+      "actual_fixed_actions": 2003,
+      "development": {
+        "failing": [
+          {
+            "actions": 338,
+            "capability": "instruction_following",
+            "record_id": "phase1-validation-instruction_following-0046-v2"
+          },
+          {
+            "actions": 361,
+            "capability": "instruction_following",
+            "record_id": "phase1-validation-instruction_following-0050-v2"
+          },
+          {
+            "actions": 337,
+            "capability": "instruction_following",
+            "record_id": "phase1-validation-instruction_following-0054-v2"
+          }
+        ],
+        "maximum_actions": 361,
+        "mean_actions": 26.864285714285714,
+        "over_320": 3,
+        "reconstruction_errors": [],
+        "records": 1400,
+        "stream_sha256": "871aada52961de6dd28ed561f77788ac5d2f531c4fffcecc6965673f4c68cf39"
+      },
+      "qualifying": false,
+      "requested_vocabulary": 2000,
+      "tokenizer_sha256": "2231713cf94aab8754422dfd468629e8740f39fcab17dd679c574885747b1e48",
+      "training": {
+        "failing": [],
+        "maximum_actions": 176,
+        "mean_actions": 19.188,
+        "over_320": 0,
+        "reconstruction_errors": [],
+        "records": 7000,
+        "stream_sha256": "f3ff28bbfde608a613aba2249de8a6bfafa9e86b8b83d499010ad2a5f9d7e412"
+      }
+    },
+    "3000": {
+      "actual_fixed_actions": 3003,
+      "development": {
+        "failing": [
+          {
+            "actions": 322,
+            "capability": "instruction_following",
+            "record_id": "phase1-validation-instruction_following-0046-v2"
+          },
+          {
+            "actions": 344,
+            "capability": "instruction_following",
+            "record_id": "phase1-validation-instruction_following-0050-v2"
+          }
+        ],
+        "maximum_actions": 344,
+        "mean_actions": 21.765,
+        "over_320": 2,
+        "reconstruction_errors": [],
+        "records": 1400,
+        "stream_sha256": "5ad5a2e7699821830f3604fbbbf544035814bfd6d4dd00b815a57a1f58b5a300"
+      },
+      "qualifying": false,
+      "requested_vocabulary": 3000,
+      "tokenizer_sha256": "6ef1d097517094c2fa1dae6f0810e58ab9c5c3b25984383c534e495dfc5324a9",
+      "training": {
+        "failing": [],
+        "maximum_actions": 122,
+        "mean_actions": 12.777285714285714,
+        "over_320": 0,
+        "reconstruction_errors": [],
+        "records": 7000,
+        "stream_sha256": "5bbad6881f9cb4061207219ba4dd6a9ca8d4a9f782e00fcab03a5fad7ee642bc"
+      }
+    },
+    "4000": {
+      "actual_fixed_actions": 4003,
+      "development": {
+        "failing": [
+          {
+            "actions": 328,
+            "capability": "instruction_following",
+            "record_id": "phase1-validation-instruction_following-0050-v2"
+          }
+        ],
+        "maximum_actions": 328,
+        "mean_actions": 18.90142857142857,
+        "over_320": 1,
+        "reconstruction_errors": [],
+        "records": 1400,
+        "stream_sha256": "b339646c86cd67b41e524943fa5005129292c9599f27ce0ea1860cd9583bb217"
+      },
+      "qualifying": false,
+      "requested_vocabulary": 4000,
+      "tokenizer_sha256": "b74b4258db754ce1944fd15444ec3ac747e3ae8c9c384a5aff68f2c1751ca2c8",
+      "training": {
+        "failing": [],
+        "maximum_actions": 104,
+        "mean_actions": 9.543,
+        "over_320": 0,
+        "reconstruction_errors": [],
+        "records": 7000,
+        "stream_sha256": "b00968f9e6b5aaa04363691bf1b300d555414141b2b3df96b02bbdf458a91e2e"
+      }
+    },
+    "4996": {
+      "actual_fixed_actions": 4999,
+      "development": {
+        "failing": [],
+        "maximum_actions": 317,
+        "mean_actions": 17.670714285714286,
+        "over_320": 0,
+        "reconstruction_errors": [],
+        "records": 1400,
+        "stream_sha256": "8fefc055d02bbb9415296fb0e5822e85940b7df7e1bd08c371b280199f95c68c"
+      },
+      "qualifying": true,
+      "requested_vocabulary": 4996,
+      "tokenizer_sha256": "efa16fcbc4d49bb643c94719b84dd4d74d27563e7bf28b41521aa903b980be2d",
+      "training": {
+        "failing": [],
+        "maximum_actions": 99,
+        "mean_actions": 8.004142857142858,
+        "over_320": 0,
+        "reconstruction_errors": [],
+        "records": 7000,
+        "stream_sha256": "ddff3a5d2898a14127eb2fad4c9453f9fcc4300082a7cd24e6fe090247082669"
+      }
+    }
+  },
+  "claim_boundary": "Tokenizer representation result only.",
+  "evidence_sha256": "9c6705f44c0e8f30c3f0f1f8f97d06af8aa81aa1fd1896d8bc4a01c63b30f1af",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-utf8-bpe-result/1",
+  "host_change_authorized": false,
+  "model_training_authorized": false,
+  "neural_training_performed": false,
+  "phase3_certified": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_UTF8_BPE_PROTOCOL_V34.json",
+    "sha256": "2f0f5d1d28bb218303268be28fdbb0ed7b1b39958279db0c766eb11df8028d49"
+  },
+  "representation_fit_performed": true,
+  "selected_budget": 4996,
+  "status": "PASS_REPRESENTATION_ONLY",
+  "teacher_outputs_used": "SEALED_PHASE1_TRAINING_ONLY"
+}
