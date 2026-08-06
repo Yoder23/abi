@@ -49,6 +49,11 @@ pointers. Architecture, fixed vocabulary, seed, sampler, optimizer, steps, and
 all absolute gates match V23. Only P0 seed 240017 may run. An absolute miss
 authorizes only the registered paired V24-minus-V23 diagnostic before closure.
 
+Attempt 1 stopped before training step 1 and created no artifact because the
+process lacked the deterministic cuBLAS workspace setting. V25 preserves that
+failure and permits one exact retry with `CUBLAS_WORKSPACE_CONFIG=:4096:8`;
+every scientific field remains unchanged.
+
 ## Preserved historical Phase 3 path
 
 The user explicitly deferred the unavailable human raters. This does not
@@ -173,6 +178,9 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V21.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_POINTER_CORE_RUNTIME_REPAIR1_V25.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_POINTER_CORE_PREFLIGHT_FAILURE_V24.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V20.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_POINTER_CORE_PROTOCOL_V24.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_POINTER_CORE_INVENTORY_V24.json`

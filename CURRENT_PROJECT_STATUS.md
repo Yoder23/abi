@@ -23,7 +23,7 @@ signal but failed quality. The sequence successor improved aggregate quality
 substantially, but failed absolute, causal-control, teacher-relative, and
 repetition gates. Phase 3 is not certified; Phases 4 through 8 remain locked.
 
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V20.json` is the live state. V11 C0-C4
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V21.json` is the live state. V11 C0-C4
 is complete: causal and teacher-relative aggregate gates pass, but absolute
 capability and collapse gates fail. Final access and promotion remain
 prohibited.
@@ -71,6 +71,9 @@ V24 is now preregistered as that one successor. The preflight represents
 records and byte-exactly reconstructs every training output. It changes no
 topology, fixed vocabulary, data, seed, sampler, optimizer, budget, host code,
 or absolute gate. This is authorization for one development seed, not a result.
+Its first launch stopped before step 1 and created no artifact because the
+deterministic cuBLAS environment setting was absent. V25 authorizes one exact
+runtime-conformant retry; no scientific field changed.
 `ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json` and the versioned
 Phase 3 protocols remain the historical authority for the narrow execution
 exception. They did not alter any prior result or permit final-test use.

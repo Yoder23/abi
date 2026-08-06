@@ -51,7 +51,7 @@ Status date: 2026-08-06.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V20.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V21.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -93,6 +93,11 @@ topology or 4,575-entry fixed vocabulary. Run only P0 seed 240017. If any
 absolute gate fails, compute only the locked paired V24-minus-V23 diagnostic
 and close the representation. Teacher comparison, controls, and remaining
 seeds require the initial absolute pass.
+
+V24 attempt 1 stopped before step 1 and created no output after deterministic
+cuBLAS rejected a missing process environment setting. Repair V25 authorizes
+exactly one unchanged retry with `CUBLAS_WORKSPACE_CONFIG=:4096:8`. This is a
+runtime-conformance repair, not a scientific result or design change.
 
 No further Phase 2 training is authorized. The A0-A4 and V6 B0-B4 branches are
 closed. V6 B0 scored 1,148/1,400 with 43 collapses, lost to label-free B1 by

@@ -1,0 +1,43 @@
+{
+  "format": "abi-capability-compiler-phase3-pointer-core-runtime-repair/1",
+  "repair_id": "abi-capability-compiler-phase3-pointer-core-runtime-repair1-v25",
+  "status": "PREREGISTERED_ONE_RETRY",
+  "effective_date": "2026-08-06",
+  "parent_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_POINTER_CORE_PROTOCOL_V24.json",
+  "parent_protocol_sha256": "4e34bc466f761252a67ae4eec164df1e6f7e9607f7d64b86cad6dd8e79de614a",
+  "preserved_failure": "ABI_CAPABILITY_COMPILER_PHASE3_POINTER_CORE_PREFLIGHT_FAILURE_V24.json",
+  "failure_boundary": {
+    "output_directory_created": false,
+    "successful_training_steps": 0,
+    "checkpoint_created": false,
+    "scientific_result": false
+  },
+  "only_change": {
+    "environment_variable": "CUBLAS_WORKSPACE_CONFIG",
+    "value": ":4096:8",
+    "purpose": "Satisfy PyTorch deterministic cuBLAS runtime requirements before the first CUDA operation."
+  },
+  "unchanged": [
+    "data",
+    "target representation",
+    "architecture",
+    "fixed vocabulary",
+    "seed",
+    "sample sequence",
+    "optimizer",
+    "learning rate",
+    "batch size",
+    "steps",
+    "precision",
+    "absolute gates",
+    "stop rules",
+    "LayerCake host",
+    "final firewall"
+  ],
+  "bindings": {
+    "ABI_CAPABILITY_COMPILER_PHASE3_POINTER_CORE_PROTOCOL_V24.json": "4e34bc466f761252a67ae4eec164df1e6f7e9607f7d64b86cad6dd8e79de614a",
+    "abi/capability_compiler_phase3_pointer_core.py": "94c2182d159c3ce6303e49bb84ea8ff5b51c31f50300ff4dde4858f10bed9ebd",
+    "tests/test_capability_compiler_phase3_pointer_core.py": "da385d85762d3493b288ecacdc45799897b182b6779a24bb2734b3acaa79f2e8"
+  },
+  "authorization": "Retry P0 seed 240017 exactly once with CUBLAS_WORKSPACE_CONFIG=:4096:8 set in the process environment before Python starts. No other repair or design change is authorized."
+}
