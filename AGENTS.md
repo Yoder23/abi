@@ -44,7 +44,7 @@ Status date: 2026-08-06.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V14.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V15.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -100,6 +100,14 @@ paired 95% interval for S0-S1 is wholly negative. Treating every mismatch from
 one cached teacher continuation as an error damaged valid fluent alternatives.
 Do not tune V17 or run its remaining seeds. A materially distinct successor
 may target only objectively invalid recent-token repeats under a new protocol.
+
+V18 completed that materially distinct test and is also closed failed. S0
+scored 1,213/1,400 with 52 collapses versus S1's 1,208 and 56, but both paired
+quality intervals cross zero and collapse is not better than V11 C0's 51.
+No remaining seeds or nearby recovery-loss variants are authorized. One
+development-contaminated, permanently non-promotional oracle-fit capacity
+control may be preregistered to separate host/bridge expressivity from
+acquisition generalization.
 
 V8 attempt 1 failed before evaluating any prompt because the diagnostic used a
 ModuleDict-style string index on the host's ModuleList. V9 authorizes only the

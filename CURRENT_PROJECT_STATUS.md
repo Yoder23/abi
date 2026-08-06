@@ -22,7 +22,7 @@ signal but failed quality. The sequence successor improved aggregate quality
 substantially, but failed absolute, causal-control, teacher-relative, and
 repetition gates. Phase 3 is not certified; Phases 4 through 8 remain locked.
 
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V14.json` is the live state. V11 C0-C4
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V15.json` is the live state. V11 C0-C4
 is complete: causal and teacher-relative aggregate gates pass, but absolute
 capability and collapse gates fail. Final access and promotion remain
 prohibited.
@@ -36,6 +36,10 @@ self-prefix-recovery bridge successor was the only supported next experiment.
 V17 completed it and failed significantly: arbitrary first-token mismatch
 recovery reduced quality and increased collapse. The result narrows any next
 design to objectively invalid recent-token repeats; V17 tuning is prohibited.
+V18 completed that test. Its +5 passes over the matched control are not
+statistically significant, and 52 collapses do not improve on the parent's 51.
+All nearby recovery-loss variants are closed. A non-promotional oracle-fit
+capacity diagnostic is the next ownership gate.
 `ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json` and the versioned
 Phase 3 protocols remain the historical authority for the narrow execution
 exception. They did not alter any prior result or permit final-test use.

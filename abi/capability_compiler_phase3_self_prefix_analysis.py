@@ -27,9 +27,10 @@ def analyze(root: Path, protocol_path: Path, evidence_root: Path, output_path: P
     if output_path.exists(): raise Phase3AnalysisError("self-prefix decision is immutable")
     protocol, protocol_sha = load_protocol(root, protocol_path)
     systems = {}; raw = {}; sample_hashes = set(); event_counts = set(); token_counts = set(); policy_hashes = set()
+    evidence_version = "v18" if "recent-repeat" in str(protocol.get("protocol_id", "")) else "v17"
     for system in SYSTEMS:
-        candidate = evidence_root / "development_v17" / f"{system}-seed190081"
-        evaluation = evidence_root / "evaluation_v17" / f"{system}-seed190081"
+        candidate = evidence_root / f"development_{evidence_version}" / f"{system}-seed190081"
+        evaluation = evidence_root / f"evaluation_{evidence_version}" / f"{system}-seed190081"
         metadata_path = candidate / "metadata.json"; receipt_path = evaluation / "receipt.json"; outputs_path = evaluation / "development_outputs.jsonl"
         metadata = _json(metadata_path); receipt = _json(receipt_path); rows = _jsonl(outputs_path)
         training = metadata.get("training", {}); isolation = metadata.get("isolation", {})

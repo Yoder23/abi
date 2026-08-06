@@ -85,6 +85,13 @@ definition. V17 is closed. The only supported next recovery design is one that
 corrupts objectively invalid recent-token repeats and keeps the same matched
 control and immutable LayerCake boundary.
 
+V18 tested recent-repeat-only recovery. It avoided V17's harm but did not
+significantly beat S1 or V11 C0 and retained 52 collapses. The recovery-loss
+family is closed. The active objective is now one oracle-fit capacity control
+that is permanently barred from promotion and uses development data only to
+decide whether the next production repair belongs to bridge expressivity or
+ABI acquisition/generalization.
+
 The machine campaign contains all T0, L0, L1, D0, D1, and bounded D2 search
 receipts; 15 persisted headline checkpoints; 1,400 prompts per seed; 10,000
 paired bootstrap resamples per T0 comparison; one genuine-cold request per

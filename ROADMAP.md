@@ -67,6 +67,8 @@ sweeping nearby routes is barred.
   bounded branch is self-prefix recovery in the ABI-to-LayerCake bridge. Do not
   modify the sealed LayerCake host or reopen broad representation sweeps unless
   that measured repair fails and an oracle-fit control proves a host ceiling.
+  V17 and V18 have now failed, so the oracle-fit capacity control is the next
+  non-promotional ownership gate; nearby recovery-loss variants are closed.
 - Phase 3 must show a causal ABI acquisition candidate beats parent,
   label-free, shuffled, bridge-only, and monolithic controls while passing
   autonomous quality and repetition gates.
