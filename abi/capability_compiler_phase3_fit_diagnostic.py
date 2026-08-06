@@ -20,11 +20,32 @@ from .capability_compiler_phase3_pointer_core import _copy_lexemes
 
 
 FORMAT = "abi-capability-compiler-phase3-fit-diagnostic/1"
+REPAIR_FORMAT = "abi-capability-compiler-phase3-fit-diagnostic-runtime-repair/1"
 SYSTEMS = ("V23", "V24")
 
 
 def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str]:
-    protocol = _json(path)
+    document = _json(path)
+    if document.get("format") == REPAIR_FORMAT:
+        if (
+            document.get("status") != "AUTHORIZED_IMPLEMENTATION_RETRY"
+            or document.get("scientific_design_changed") is not False
+            or document.get("attempt") != 2
+        ):
+            raise Phase3Error("fit diagnostic repair governance changed")
+        base_path = (root / document["base_protocol"]).resolve()
+        if not base_path.is_file() or sha256_file(base_path) != document["base_protocol_sha256"]:
+            raise Phase3Error("fit diagnostic base protocol changed")
+        protocol = _json(base_path)
+        bindings = dict(protocol.get("bindings", {}))
+        for relative, expected in document.get("binding_overrides", {}).items():
+            if relative not in bindings:
+                raise Phase3Error(f"repair attempted a new binding override: {relative}")
+            bindings[relative] = expected
+        bindings.update(document.get("additional_bindings", {}))
+        protocol["bindings"] = bindings
+    else:
+        protocol = document
     if (
         protocol.get("format") != FORMAT
         or protocol.get("status") != "PREREGISTERED_READ_ONLY"
@@ -146,6 +167,20 @@ def _collate(rows: list[Mapping[str, Any]], device: torch.device):
     return source, target
 
 
+def summarize_counts(values: Counter) -> dict[str, Any]:
+    """Summarize a stratum while preserving an empty stratum explicitly."""
+    actions = values["actions"]
+    sequences = values["sequences"]
+    return {
+        **dict(values),
+        "action_accuracy": values["correct_actions"] / actions if actions else None,
+        "exact_sequence_rate": values["exact_sequences"] / sequences if sequences else None,
+        "fixed_action_accuracy": values["correct_fixed_actions"] / values["fixed_actions"] if values["fixed_actions"] else None,
+        "pointer_action_accuracy": values["correct_pointer_actions"] / values["pointer_actions"] if values["pointer_actions"] else None,
+        "action_type_accuracy": values["correct_action_types"] / actions if actions else None,
+    }
+
+
 @torch.inference_mode()
 def teacher_forced(model, tokenizer, examples: list[dict[str, Any]], *, batch_size: int) -> dict[str, Any]:
     device = next(model.parameters()).device
@@ -187,18 +222,9 @@ def teacher_forced(model, tokenizer, examples: list[dict[str, Any]], *, batch_si
             totals.update(values)
             per_capability[row["capability"]].update(values)
         nll_sum += float((-chosen.masked_select(mask)).sum().item())
-    def summarize(values: Counter) -> dict[str, Any]:
-        return {
-            **dict(values),
-            "action_accuracy": values["correct_actions"] / values["actions"],
-            "exact_sequence_rate": values["exact_sequences"] / values["sequences"],
-            "fixed_action_accuracy": values["correct_fixed_actions"] / values["fixed_actions"] if values["fixed_actions"] else None,
-            "pointer_action_accuracy": values["correct_pointer_actions"] / values["pointer_actions"] if values["pointer_actions"] else None,
-            "action_type_accuracy": values["correct_action_types"] / values["actions"],
-        }
-    result = summarize(totals)
+    result = summarize_counts(totals)
     result["mean_action_nll"] = nll_sum / totals["actions"]
-    result["per_capability"] = {name: summarize(values) for name, values in per_capability.items()}
+    result["per_capability"] = {name: summarize_counts(values) for name, values in per_capability.items()}
     return result
 
 

@@ -1,4 +1,6 @@
-from abi.capability_compiler_phase3_fit_diagnostic import classify, fixed_sample
+from collections import Counter
+
+from abi.capability_compiler_phase3_fit_diagnostic import classify, fixed_sample, summarize_counts
 
 
 def test_classification_separates_fit_drift_and_generalization():
@@ -30,3 +32,13 @@ def test_fixed_sample_is_deterministic_and_balanced():
         assert "insufficient sample rows" in str(exc)
     else:
         raise AssertionError("reduced capability catalog was accepted")
+
+
+def test_empty_capability_stratum_is_explicit_not_divided_by_zero():
+    assert summarize_counts(Counter()) == {
+        "action_accuracy": None,
+        "exact_sequence_rate": None,
+        "fixed_action_accuracy": None,
+        "pointer_action_accuracy": None,
+        "action_type_accuracy": None,
+    }

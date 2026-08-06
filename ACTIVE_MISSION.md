@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V24 FAILED, V26 READ-ONLY ATTRIBUTION PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V24.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V24 FAILED, V27 UNCHANGED DIAGNOSTIC RETRY AUTHORIZED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V25.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -64,8 +64,11 @@ considered.
 The separate LayerCake repository has completed that host-owned repair as the
 construct-only `lc-direct-neural-core/2` interface. ABI inherits no quality or
 performance from it, and V24 remains failed. The only active ABI work is the
-preregistered V26 read-only sealed-checkpoint attribution of training fit, held-out fixed/pointer
-action accuracy, and autonomous prefix drift. No new training is authorized.
+V27-authorized retry of the V26 read-only sealed-checkpoint attribution of
+training fit, held-out fixed/pointer action accuracy, and autonomous prefix
+drift. Attempt 1 wrote no result after an empty held-out stratum triggered a
+division by zero; the only repair is to report that metric as null. No new
+training is authorized.
 
 ## Preserved historical Phase 3 path
 
@@ -191,6 +194,9 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V25.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_FIT_DIAGNOSTIC_RUNTIME_REPAIR1_V27.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_FIT_DIAGNOSTIC_PREFLIGHT_FAILURE_V26.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V24.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_FIT_DIAGNOSTIC_PROTOCOL_V26.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V23.json`

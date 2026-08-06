@@ -1,0 +1,20 @@
+{
+  "format": "abi-capability-compiler-phase3-fit-diagnostic-preflight-failure/1",
+  "attempt": 1,
+  "date": "2026-08-06",
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_FIT_DIAGNOSTIC_PROTOCOL_V26.json",
+  "protocol_sha256": "8752521866bf0f9f753bf41b1cb074a131cd9c13eb1c3d3a799224147253ab8a",
+  "sealed_preregistration_commit": "4341528",
+  "stage": "V23_DEVELOPMENT_PER_CAPABILITY_AGGREGATION",
+  "failure": "ZeroDivisionError: division by zero",
+  "cause": "At least one held-out capability had zero targets representable by the sealed V23 action vocabulary. The aggregate reporter attempted to divide its zero correct-action count by its zero action count instead of emitting an explicit null metric.",
+  "scientific_design_changed": false,
+  "checkpoint_changed": false,
+  "training_performed": false,
+  "result_written": false,
+  "output_directory_created": false,
+  "final_test_accessed": false,
+  "development_data_accessed": true,
+  "repair_scope": "Change only empty-stratum metric aggregation from division by zero to explicit null. Preserve all checkpoints, rows, target construction, samples, thresholds, classifications, device, and claim boundaries.",
+  "retry_requires_new_hash_bound_protocol": true
+}

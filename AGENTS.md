@@ -51,7 +51,7 @@ Status date: 2026-08-06.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V24.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V25.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -116,6 +116,13 @@ sealed V23/V24 checkpoints, all representable training and development targets,
 fixed/pointer action accuracy, and a deterministic autonomous training sample.
 It may attribute failure ownership only; it cannot promote either checkpoint
 or select a successor after observing the result.
+
+V26 attempt 1 wrote no result and changed no checkpoint. Its reporter divided
+by zero when a held-out capability had no representable target actions. The
+failure is preserved under
+`ABI_CAPABILITY_COMPILER_PHASE3_FIT_DIAGNOSTIC_PREFLIGHT_FAILURE_V26.json`.
+Repair V27 authorizes one unchanged retry and changes only empty-stratum
+aggregation to explicit null metrics.
 
 No further Phase 2 training is authorized. The A0-A4 and V6 B0-B4 branches are
 closed. V6 B0 scored 1,148/1,400 with 43 collapses, lost to label-free B1 by

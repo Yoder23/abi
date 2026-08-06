@@ -23,7 +23,7 @@ signal but failed quality. The sequence successor improved aggregate quality
 substantially, but failed absolute, causal-control, teacher-relative, and
 repetition gates. Phase 3 is not certified; Phases 4 through 8 remain locked.
 
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V24.json` is the live state. V11 C0-C4
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V25.json` is the live state. V11 C0-C4
 is complete: causal and teacher-relative aggregate gates pass, but absolute
 capability and collapse gates fail. Final access and promotion remain
 prohibited.
@@ -89,6 +89,11 @@ no inherited ABI quality or performance. V26 preregisters the next ABI gate:
 read-only fit/generalization/autonomous-drift attribution on the exact sealed
 V23/V24 checkpoints. It cannot train, promote, access final data, or modify the
 LayerCake host.
+
+V26 attempt 1 created no result. A held-out capability had zero representable
+actions and exposed a division-by-zero bug in per-capability aggregation.
+Runtime repair V27 changes only that empty metric to `null` and authorizes one
+unchanged retry; it does not alter the diagnostic design or any checkpoint.
 `ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json` and the versioned
 Phase 3 protocols remain the historical authority for the narrow execution
 exception. They did not alter any prior result or permit final-test use.
