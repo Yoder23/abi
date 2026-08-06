@@ -44,7 +44,7 @@ Status date: 2026-08-05.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V10.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V11.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -77,8 +77,12 @@ is uncertified, and Phase 4 is locked.
 
 The no-training V9 component diagnostic is complete. It found that bypassing
 the route embedding changes B1 by only +1/1,400, while bypassing output cakes
-costs 76/1,400. No altered checkpoint was persisted. No new training is
-currently authorized.
+costs 76/1,400. No altered checkpoint was persisted.
+
+V11 now authorizes only C0-C4 seed 104729 for the separately preregistered
+shared-output successor. Remaining seeds require every initial gate. Do not
+repair its architecture, data, loss, anti-repeat settings, duration, decoding,
+or thresholds after observing results.
 
 V8 attempt 1 failed before evaluating any prompt because the diagnostic used a
 ModuleDict-style string index on the host's ModuleList. V9 authorizes only the

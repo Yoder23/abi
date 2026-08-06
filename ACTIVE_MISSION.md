@@ -28,7 +28,7 @@ fresh, preregistered successor supplied 400 new passing abstention records; none
 of the failed records were reclassified. Specialist inventories are
 evaluation-only, and no specialist record is eligible for English training.
 
-## Active objective: preregister the shared-output Phase 3 successor
+## Active objective: execute the preregistered shared-output Phase 3 successor
 
 The user explicitly deferred the unavailable human raters. This does not
 complete Phase 2. The corrected V4 A0-A4 development campaign has finished on
@@ -65,6 +65,11 @@ The diagnostic is complete. R1 and R3 score 1,148/1,400; R2 scores
 responsible for quality, while output cakes contribute 5.43 points and add
 collapse risk. No new training is authorized until the shared-output successor
 is separately implemented, tested, parameter-accounted, and preregistered.
+
+V11 is now preregistered. It retains the three shared rank-128 sequence
+transforms, replaces six trainable English output cakes with one rank-64 shared
+output residual, and adds a training-only penalty for wrong greedy predictions
+that repeat a recent teacher token. Execute C0-C4 only at seed 104729.
 
 The machine campaign contains all T0, L0, L1, D0, D1, and bounded D2 search
 receipts; 15 persisted headline checkpoints; 1,400 prompts per seed; 10,000
@@ -106,7 +111,8 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
-- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V10.json`
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V11.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_SHARED_OUTPUT_PROTOCOL_V11.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_COMPONENT_DIAGNOSTIC_PROTOCOL_V8.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_COMPONENT_DIAGNOSTIC_REPAIR1_V9.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_COMPONENT_DIAGNOSTIC_REPORT_V3.md`

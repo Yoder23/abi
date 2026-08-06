@@ -55,6 +55,7 @@ any experiment or launching new work.
 | Conditional Phase 3 A0-A4 campaign | COMPLETE; causal signal, branch FAIL | `results/abi_capability_compiler_phase3/conditional_decision_v3.json` |
 | Phase 3 prompt-conditioned sequence successor | COMPLETE; branch FAIL | `results/abi_capability_compiler_phase3_sequence/conditional_decision_v1.json` |
 | Phase 3 component diagnostic | COMPLETE; diagnostic only | `results/abi_capability_compiler_phase3_component_diagnostic/decision_v1.json` |
+| Phase 3 shared-output successor | PREREGISTERED; initial C0-C4 matrix only | `ABI_CAPABILITY_COMPILER_PHASE3_SHARED_OUTPUT_PROTOCOL_V11.json` |
 | Sufficient-information frontier | OPEN | Not yet measured |
 | Integrated teacher-derived LayerCake | OPEN | Not yet produced |
 
@@ -247,7 +248,7 @@ novel-form audit invalidated any general-purpose English interpretation.
 - [Historical campaign state V3](ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V3.json)
 - [Historical campaign state V4](ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V4.json)
 - [Historical campaign state V5](ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V5.json)
-- [Current live campaign state V10](ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V10.json)
+- [Current live campaign state V11](ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V11.json)
 - [Phase 3 sequence-successor protocol](ABI_CAPABILITY_COMPILER_PHASE3_SEQUENCE_SUCCESSOR_PROTOCOL_V6.json)
 - [Conditional Phase 3 machine report](ABI_CAPABILITY_COMPILER_PHASE3_MACHINE_REPORT_V1.md)
 - [Phase 3 sequence-successor report](ABI_CAPABILITY_COMPILER_PHASE3_SEQUENCE_REPORT_V2.md)
