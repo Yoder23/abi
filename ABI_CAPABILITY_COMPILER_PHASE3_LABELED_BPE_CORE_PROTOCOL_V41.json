@@ -1,0 +1,133 @@
+{
+  "format": "abi-capability-compiler-phase3-bpe-core-screen/1",
+  "protocol_id": "abi-capability-compiler-phase3-labeled-bpe-core-v41",
+  "candidate_system": "L0",
+  "status": "PREREGISTERED_CONDITIONAL_ABSOLUTE_SCREEN",
+  "effective_date": "2026-08-06",
+  "historical_evidence_changed": false,
+  "phase2_status": "MACHINE_COMPLETE_HUMAN_RATINGS_DEFERRED_NOT_PASSED",
+  "promotion_eligible": false,
+  "phase4_status": "LOCKED",
+  "final_test_access": "PROHIBITED",
+  "objective": "Test one materially distinct ABI-native labeled acquisition design that jointly targets V40's primary autonomous-fit/state failure and secondary header-sensitive capability-routing failure without adding teacher records, teacher tokens, model width, deployed parameters, or optimizer steps.",
+  "measured_basis": {
+    "v40_training_autonomous_exact_rate": 0.8571428571428571,
+    "v40_original_development_sample_functional_rate": 0.0,
+    "v40_original_fact_free_mode": "279_OF_280",
+    "v40_body_only_functional_rate": 0.16428571428571428,
+    "v40_capability_matched_header_functional_rate": 0.4107142857142857,
+    "material_difference": "V41 uses certified ABI capability labels as a training-only encoder objective, deterministically removes the synthetic acquisition header on half of presentations, and corrupts 10% of prior teacher actions during training to require causal recovery. The deployed LayerCake v3 graph and parameter count are unchanged."
+  },
+  "phase1_ir": "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir",
+  "development_catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+  "teacher_reference": "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl",
+  "tokenizer": {
+    "raw_document": "artifacts/phase3/utf8_bpe_v34/tokenizer.json",
+    "raw_sha256": "efa16fcbc4d49bb643c94719b84dd4d74d27563e7bf28b41521aa903b980be2d",
+    "canonical_document": "artifacts/phase3/utf8_bpe_v34/layercake_tokenizer_v3.json",
+    "canonical_file_sha256": "64a2b3ebf2fde5ec1a35faa6813b77f09f19f47c1135695d72b29145c023df36",
+    "canonical_sha256": "fc391ac322351a94c7cac05cc872f49b6436bc836bf260fdc959c0c11800e2f9",
+    "fixed_actions": 4999
+  },
+  "layercake_host": {
+    "repository": "../layercake_release",
+    "commit": "96279db",
+    "interface": "lc-direct-neural-core/3",
+    "interface_sha256": "4ec1f609cea9f42924ebcdc16fd6b76be1630351d629d77eaab9b956b7901ac2",
+    "construct_decision": "../layercake_release/moonshot/postrelease_bpe_direct_neural_core_decision_v8.json",
+    "construct_only_no_quality_or_speed_inheritance": true
+  },
+  "architecture": {
+    "model_width": 192,
+    "attention_heads": 6,
+    "encoder_layers": 2,
+    "decoder_layers": 2,
+    "feedforward_width": 768,
+    "pointer_width": 128,
+    "dropout": 0.1,
+    "maximum_source_lexemes": 128,
+    "maximum_target_actions": 320
+  },
+  "representation": {
+    "source_actions": "EXACT_BPE_PIECES_WITH_TRAINING_ONLY_HEADER_VIEW_AUGMENTATION",
+    "target_actions": "FIXED_BPE_PIECES_PLUS_EOS",
+    "pointer_supervision": false,
+    "lossless_reconstruction_required": true
+  },
+  "labeled_acquisition": {
+    "capability_labels": 14,
+    "capability_auxiliary_loss_weight": 0.25,
+    "capability_head": "LINEAR_FROM_MASKED_MEAN_ENCODER_STATE",
+    "capability_head_at_inference": false,
+    "header_dropout_probability": 0.5,
+    "header_dropout_selection": "SHA256_RECORD_ID_STEP_DETERMINISTIC",
+    "causal_history_corruption_probability": 0.1,
+    "causal_history_corruption_action": "UNKNOWN_SOURCE_ID_3",
+    "corruption_excludes_bos_and_padding": true,
+    "teacher_outputs_changed": false
+  },
+  "training": {
+    "device": "cuda",
+    "precision": "float16_autocast_with_grad_scaler",
+    "seed": 240017,
+    "steps": 4000,
+    "batch_size": 16,
+    "learning_rate": 0.0003,
+    "optimizer": "AdamW",
+    "gradient_clip_norm": 1.0,
+    "curve_interval": 250,
+    "trainable_parameters": 4174280,
+    "deployed_trainable_parameters": 4174280,
+    "training_only_auxiliary_parameters": 2702,
+    "fixed_vocabulary": 4999,
+    "source_parameters_copied": 0,
+    "source_blocks_retained": 0,
+    "teacher_present_at_inference": false,
+    "v38_matched_seed_steps_batch_optimizer_learning_rate_and_deployed_topology": true
+  },
+  "fit_diagnostic": {
+    "scope": "ALL_7000_ORIGINAL_TRAINING_PROMPTS_TEACHER_FORCED",
+    "batch_size": 32,
+    "action_accuracy_reference": 0.99,
+    "exact_sequence_rate_reference": 0.9,
+    "promotion_effect": "DIAGNOSTIC_ONLY_CANNOT_OVERRIDE_ABSOLUTE_QUALITY"
+  },
+  "controls_deferred_until_absolute_pass": true,
+  "absolute_screen": {
+    "prompts": 1400,
+    "prompts_per_capability": 100,
+    "autonomous_generation": true,
+    "per_capability_functional_point_estimate_minimum": 0.9,
+    "per_capability_functional_wilson_lower_minimum": 0.85,
+    "prompt_grounding_instruction_adherence_and_abstention_point_minimum": 0.95,
+    "prompt_grounding_instruction_adherence_and_abstention_wilson_lower_minimum": 0.9,
+    "repetition_collapse_count_maximum": 0,
+    "generation_error_count_maximum": 0
+  },
+  "teacher_relative_screen": {
+    "method": "capability_stratified_paired_percentile_bootstrap",
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 240041,
+    "candidate_minus_teacher_lower_95_minimum": -0.05
+  },
+  "decision_rule": "If L0 misses any absolute or teacher-relative gate, close the integrated labeled-acquisition candidate, preserve all evidence, and do not run ablations or additional seeds. If every gate passes, preregister matched label, header, and causal-corruption ablations plus two paired seeds. No result can certify Phase 3 while Phase 2 human ratings remain deferred.",
+  "bindings": {
+    "abi/capability_compiler_phase3_labeled_bpe_core.py": "708f41ad212c0a65e5feac423bdef52a2bf24a6cdf34977bb1eeec1d388598a0",
+    "tests/test_capability_compiler_phase3_labeled_bpe_core.py": "4822c581a3876e809705b33101ad7cb05c3464e40f4bcc5aded431b83949e360",
+    "abi/capability_compiler_phase3_labeled_bpe_core_analysis.py": "c87a378f4f14f923ae1c54d2228e98c378d1b85bb12b6d8889abcdb21449d110",
+    "tests/test_capability_compiler_phase3_labeled_bpe_core_analysis.py": "963f83240bd6d6ce16cce1d01e647dc89c03358f0a788efee5c8b27b78b2d5b2",
+    "abi/capability_compiler_phase3_bpe_core.py": "8db7deb1b1bbd8b63cdc1523130d4e0f2d162e76bc586e1e86795c6dde0c71bb",
+    "abi/capability_compiler_phase3_bpe_core_analysis.py": "5ee16762ebb1deafa8c56fafab2f17cea8f1d14ff3184d4434b3d78a395960e8",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V49.json": "80fb76f2bd9a636d8ec6dca9a68e05bb63e38c46847bec98ed1db966bbe959d2",
+    "results/abi_capability_compiler_phase3_bpe_failure_attribution/attribution_v40.json": "850c03b413fa4cf1e188653542fe1966e8ac942d67c79e51a3c0fef71065eef6",
+    "artifacts/phase3/utf8_bpe_v34/tokenizer.json": "efa16fcbc4d49bb643c94719b84dd4d74d27563e7bf28b41521aa903b980be2d",
+    "artifacts/phase3/utf8_bpe_v34/layercake_tokenizer_v3.json": "64a2b3ebf2fde5ec1a35faa6813b77f09f19f47c1135695d72b29145c023df36",
+    "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl": "1081dbe57e75da50b2619bc2dab14c6441158dcd6068f2b864733936087e86a2",
+    "../layercake_release/moonshot/canonical_bpe_direct_neural_core_abi_v3.json": "4ec1f609cea9f42924ebcdc16fd6b76be1630351d629d77eaab9b956b7901ac2",
+    "../layercake_release/layercake_extensions/bpe_direct_neural_core.py": "23136262e4f63f1037d26568cbf3d41b847d80145fc5b1456ca98294b09d9050",
+    "../layercake_release/layercake/portable_token_plan.py": "0988a83f65d96e928a57edf1f5a565c334ab6e66579b9e6bca21f3c76b920a14"
+  },
+  "claim_boundary": "One development-only labeled ABI acquisition screen. It cannot certify Phase 3, inherit LayerCake quality or performance, or establish ABI superiority over LoRA or distillation."
+}
