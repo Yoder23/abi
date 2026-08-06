@@ -182,7 +182,19 @@ def _teacher_rows(root: Path, protocol: Mapping[str, Any]) -> list[dict[str, Any
             rows.append({"teacher": teacher, "probe": probe})
     if len(rows) != 1400 or len({row["teacher"]["probe_id"] for row in rows}) != 1400:
         raise DiagnosticError("teacher/development row count changed")
-    return rows
+    per_capability = int(protocol.get("diagnostic_prompts_per_capability", 100))
+    if per_capability == 100:
+        return rows
+    selected = []
+    counts = Counter()
+    for row in rows:
+        capability = str(row["teacher"]["capability"])
+        if counts[capability] < per_capability:
+            selected.append(row)
+            counts[capability] += 1
+    if len(selected) != per_capability * len(CAPABILITIES) or set(counts) != set(CAPABILITIES):
+        raise DiagnosticError("balanced diagnostic subset construction failed")
+    return selected
 
 
 def _encoded(row: Mapping[str, Any], tokenizer: Any, max_tokens: int) -> tuple[list[int], int]:
@@ -209,7 +221,8 @@ def _forward_batch(model: Any, entries: list[tuple[list[int], int]], device: tor
     for index, ((values, _), length) in enumerate(zip(entries, lengths)):
         ids[index, :length] = torch.tensor(values, dtype=torch.long, device=device)
         attention[index, :length] = 1
-    result = model(ids, attention_mask=attention, prompt_lengths=prompt_lengths, use_cache=False)
+    with torch.autocast("cuda", dtype=torch.float16):
+        result = model(ids, attention_mask=attention, prompt_lengths=prompt_lengths, use_cache=False)
     return [result["logits"][index, :length].float() for index, length in enumerate(lengths)]
 
 
