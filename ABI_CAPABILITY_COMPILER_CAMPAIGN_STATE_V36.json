@@ -1,0 +1,17 @@
+{
+  "format":"abi-capability-compiler-campaign-state/1",
+  "version":36,
+  "status_date":"2026-08-06",
+  "parent_state":"ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V35.json",
+  "historical_evidence_changed":false,
+  "phase0":"COMPLETE",
+  "phase1":"COMPLETE",
+  "phase2":"MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS",
+  "phase3":"UNCERTIFIED_V33_PRUNED_SUBLEXEME_FAILED_BPE_AUTHORIZED",
+  "phase4_through_8":"LOCKED",
+  "training_authorized":false,
+  "host_change_authorized":false,
+  "final_test_access":"PROHIBITED",
+  "next_transition":"Preregister one training-only UTF-8-concatenative BPE representation under the same 5,000-action and 320-length gates.",
+  "superiority_claim":"PROHIBITED"
+}
