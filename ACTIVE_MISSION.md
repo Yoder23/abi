@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V24 FAILED, V27 UNCHANGED DIAGNOSTIC RETRY AUTHORIZED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V25.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V26 ATTRIBUTION COMPLETE, REPRESENTATION BAKE-OFF NEXT | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V26.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -64,11 +64,12 @@ considered.
 The separate LayerCake repository has completed that host-owned repair as the
 construct-only `lc-direct-neural-core/2` interface. ABI inherits no quality or
 performance from it, and V24 remains failed. The only active ABI work is the
-V27-authorized retry of the V26 read-only sealed-checkpoint attribution of
-training fit, held-out fixed/pointer action accuracy, and autonomous prefix
-drift. Attempt 1 wrote no result after an empty held-out stratum triggered a
-division by zero; the only repair is to report that metric as null. No new
-training is authorized.
+V26/V27 attribution is complete. Both sealed checkpoints fail training fit;
+V23 represents 657/1,400 held-out teacher targets and V24 represents 941/1,400.
+Both reject all coherence and fact-free-reasoning targets. The next work is a
+no-training Unicode-atomic open-vocabulary representation bake-off. No fit run
+is authorized until one representation losslessly covers all 7,000 training
+and 1,400 development targets.
 
 ## Preserved historical Phase 3 path
 
@@ -194,6 +195,10 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V26.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_FIT_DIAGNOSTIC_REPORT_V26.md`
+- `results/abi_capability_compiler_phase3_fit_diagnostic/fit_decision_v26.json`
+- `results/abi_capability_compiler_phase3_fit_diagnostic/fit_generalization_v26.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V25.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_FIT_DIAGNOSTIC_RUNTIME_REPAIR1_V27.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_FIT_DIAGNOSTIC_PREFLIGHT_FAILURE_V26.json`

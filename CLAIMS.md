@@ -75,6 +75,14 @@ The external LayerCake `lc-direct-neural-core/2` host is now construct-ready
 and Unicode-safe, but ABI does not own or inherit that evidence. It removes one
 future host-contract confound; it does not improve or reinterpret V23/V24.
 
+V26 establishes a narrower failure attribution. V23 and V24 fail the locked
+training-fit thresholds, autonomously reproduce only 136/280 and 167/280 fixed
+training responses, and can represent only 657/1,400 and 941/1,400 held-out
+teacher targets. Both action surfaces reject all coherence and fact-free-
+reasoning targets. This supports an ABI fit/representation/generalization
+failure; it does not establish a LayerCake regression, a Phase 3 pass, or an
+ABI advantage over LoRA or distillation.
+
 ### 5. Capability-compiler Phase 0 governance
 
 `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` certifies the initial

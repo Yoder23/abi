@@ -140,9 +140,12 @@ failed and is closed. No additional pointer-core training is authorized. The
 next work is a separate LayerCake UTF-8 validity audit, followed by a new ABI
 bottleneck decision rather than a nearby variant.
 
-The external host audit and v2 construct are complete. Preregister one
-read-only V23/V24 fit/generalization diagnostic, now preregistered as V26. Do not train a successor until
-that evidence assigns the next bottleneck.
+The external host audit and v2 construct are complete. The read-only V23/V24
+fit/generalization diagnostic completed as V26/V27. It assigns insufficient
+ABI training fit as the primary failure and held-out representability and
+generalization as secondary failures. Do not train a successor until one
+preregistered, no-training Unicode-atomic open-vocabulary bake-off losslessly
+represents all 7,000 training and 1,400 development teacher targets.
 
 See `CURRENT_PROJECT_STATUS.md` for the current claim boundary and
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` for controlling gates.

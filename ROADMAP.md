@@ -4,7 +4,7 @@ Status date: 2026-08-06
 
 The machine-readable contract
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` controls sequencing and
-gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V25.json` records live status.
+gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V26.json` records live status.
 Evidence gates, not experiment counts or dates, close phases.
 
 | Phase | Objective | Status |
@@ -12,7 +12,7 @@ Evidence gates, not experiment counts or dates, close phases.
 | 0 | Definitions, baselines, and preregistration | COMPLETE |
 | 1 | Capability inventory and normalized acquisition IR | COMPLETE |
 | 2 | Strong matched LoRA and distillation baselines | MACHINE COMPLETE; BLOCKED ON EXTERNAL HUMAN RATINGS |
-| 3 | Causal teacher-to-target acquisition | UNCERTIFIED; V24 FAILED, V26 READ-ONLY ATTRIBUTION PREREGISTERED |
+| 3 | Causal teacher-to-target acquisition | UNCERTIFIED; V26 ATTRIBUTION COMPLETE, REPRESENTATION BAKE-OFF NEXT |
 | 4 | Sufficient-information Pareto frontier | LOCKED |
 | 5 | Selective reconstruction and bounded exclusion | LOCKED |
 | 6 | Composition, portability, and multi-source provenance | LOCKED |
@@ -87,6 +87,10 @@ sweeping nearby routes is barred.
 - V26 now preregisters a no-training replay of V23/V24 to measure training fit,
   autonomous drift, held-out action generalization, and unrepresentable targets
   before any new architecture is selected.
+- V26/V27 completed. Both checkpoints fail training fit; V23 represents
+  657/1,400 development targets and V24 941/1,400. The next gate is a
+  no-training Unicode-atomic open-vocabulary bake-off requiring 100% target
+  representability before another fit run.
 - The separate LayerCake v2 host has closed that bounded UTF-8 contract gap for
   future artifacts. ABI's next step is still diagnostic, not training: measure
   sealed-checkpoint train fit, held-out fixed/pointer action accuracy, and

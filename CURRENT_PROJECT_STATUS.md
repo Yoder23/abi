@@ -23,7 +23,7 @@ signal but failed quality. The sequence successor improved aggregate quality
 substantially, but failed absolute, causal-control, teacher-relative, and
 repetition gates. Phase 3 is not certified; Phases 4 through 8 remain locked.
 
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V25.json` is the live state. V11 C0-C4
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V26.json` is the live state. V11 C0-C4
 is complete: causal and teacher-relative aggregate gates pass, but absolute
 capability and collapse gates fail. Final access and promotion remain
 prohibited.
@@ -94,6 +94,15 @@ V26 attempt 1 created no result. A held-out capability had zero representable
 actions and exposed a division-by-zero bug in per-capability aggregation.
 Runtime repair V27 changes only that empty metric to `null` and authorizes one
 unchanged retry; it does not alter the diagnostic design or any checkpoint.
+
+The retry completed and independently recomputed exactly. V23/V24 reach only
+95.30%/94.93% teacher-forced training action accuracy and 49.43%/61.43% exact
+training sequences. Their held-out action surfaces represent only 657/1,400
+and 941/1,400 teacher targets. Both reject every coherence and fact-free-
+reasoning target. This assigns the primary failure to ABI fit/capacity/
+optimization/representation and a secondary failure to ABI representability/
+generalization. No LayerCake regression was identified. The next bounded gate
+is a no-training open-vocabulary representation bake-off.
 `ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json` and the versioned
 Phase 3 protocols remain the historical authority for the narrow execution
 exception. They did not alter any prior result or permit final-test use.
@@ -146,6 +155,7 @@ sufficient-information frontier.
 | LayerCake Unicode core host v2 | EXTERNAL CONSTRUCT PASS | Future artifacts have Unicode-atomic actions and strict UTF-8 boundaries | No V24 rescue and no ABI quality or performance result is inherited |
 | ABI direct-core V23 | COMPLETE FAILED | A teacher-free ABI artifact executes autonomously through the host interface | 504/1,400 and 77 collapses do not establish fluent acquisition or Phase 3 |
 | ABI pointer-core V24 | COMPLETE FAILED | Pointer supervision causes a paired +6.93-point effect over V23 | 601/1,400, 139 collapses, and 31 errors fail every discriminating gate |
+| ABI fit diagnostic V26/V27 | COMPLETE ATTRIBUTION ONLY | Both sealed designs fail training fit and held-out representability/generalization | No training, promotion, Phase 3 certificate, or superiority claim |
 | Integrated ABI-derived LayerCake | BLOCKED ON ACQUISITION QUALITY | Host construct exists; no qualified English artifact exists | No ABI candidate inherits sealed LayerCake performance evidence |
 
 ## Current proven results
