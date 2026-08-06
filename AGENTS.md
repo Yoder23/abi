@@ -51,7 +51,7 @@ Status date: 2026-08-06.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V23.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V24.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -110,10 +110,12 @@ ABI failure and audit the host gap separately; do not conflate either owner.
 The separate LayerCake repository has now construct-certified the Unicode-
 atomic `lc-direct-neural-core/2` successor. That closes the bounded host UTF-8
 gap but supplies no ABI quality or performance evidence. V24 remains failed.
-No training is authorized. One read-only diagnostic may be preregistered on the
-sealed V23/V24 checkpoints to distinguish training fit, held-out action
-generalization, pointer/fixed accuracy, and autonomous prefix drift before a
-new ABI architecture is considered.
+No training is authorized. The read-only diagnostic is preregistered under
+`ABI_CAPABILITY_COMPILER_PHASE3_FIT_DIAGNOSTIC_PROTOCOL_V26.json`. It binds the
+sealed V23/V24 checkpoints, all representable training and development targets,
+fixed/pointer action accuracy, and a deterministic autonomous training sample.
+It may attribute failure ownership only; it cannot promote either checkpoint
+or select a successor after observing the result.
 
 No further Phase 2 training is authorized. The A0-A4 and V6 B0-B4 branches are
 closed. V6 B0 scored 1,148/1,400 with 43 collapses, lost to label-free B1 by

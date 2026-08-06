@@ -141,7 +141,7 @@ next work is a separate LayerCake UTF-8 validity audit, followed by a new ABI
 bottleneck decision rather than a nearby variant.
 
 The external host audit and v2 construct are complete. Preregister one
-read-only V23/V24 fit/generalization diagnostic. Do not train a successor until
+read-only V23/V24 fit/generalization diagnostic, now preregistered as V26. Do not train a successor until
 that evidence assigns the next bottleneck.
 
 See `CURRENT_PROJECT_STATUS.md` for the current claim boundary and

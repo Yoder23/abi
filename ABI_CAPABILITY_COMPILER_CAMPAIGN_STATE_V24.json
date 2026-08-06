@@ -1,0 +1,34 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "version": 24,
+  "status_date": "2026-08-06",
+  "parent_state": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V23.json",
+  "historical_evidence_changed": false,
+  "phase0": "COMPLETE",
+  "phase1": "COMPLETE",
+  "phase2": "MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS",
+  "phase3": "UNCERTIFIED_V26_READ_ONLY_ATTRIBUTION_PREREGISTERED",
+  "phase4_through_8": "LOCKED",
+  "active_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_FIT_DIAGNOSTIC_PROTOCOL_V26.json",
+  "training_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "sealed_failed_candidates": [
+    "V23",
+    "V24"
+  ],
+  "diagnostic_questions": [
+    "Can each sealed checkpoint fit the exact training targets under teacher forcing?",
+    "Does autonomous generation fail even when teacher-forced training fit passes?",
+    "How much action accuracy is lost on held-out teacher targets?",
+    "How many held-out targets are unrepresentable under each sealed action vocabulary?"
+  ],
+  "layercake_boundary": {
+    "regression": false,
+    "current_external_host": "lc-direct-neural-core/2",
+    "current_external_host_status": "INDEPENDENT_PASS_CONSTRUCT_ONLY",
+    "quality_or_performance_inherited": false,
+    "historical_v1_replay_is_promotion_eligible": false
+  },
+  "superiority_claim": "PROHIBITED",
+  "next_transition": "Execute and adversarially verify V26. Select no successor until the measured failure owner is sealed."
+}
