@@ -1,0 +1,2850 @@
+{
+  "aggregate": {
+    "all_failures_have_sufficient_fallback_excess_to_clear": true,
+    "maximum_actions": 643,
+    "records": 9,
+    "total_excess_over_320": 2101,
+    "total_fallback_excess_actions": 2691
+  },
+  "claim_boundary": "Read-only development length attribution; no model, host, quality, or superiority result.",
+  "decision": "If every failure has enough fallback expansion to explain its excess, preregister one training-derived compact-sublexeme representation. Otherwise stop and attribute the residual to the host length contract.",
+  "evidence_sha256": "34960b845906bf2cd1254ad25be1da6c05c6a824bd652066b2b180d5580989b7",
+  "failing_records": [
+    {
+      "action_types": {
+        "character": 411,
+        "lexeme": 212,
+        "pointer": 19
+      },
+      "actions": 643,
+      "capability": "instruction_following",
+      "excess_over_320": 323,
+      "fallback_excess_actions": 351,
+      "fallback_lexemes": [
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "6259eafc62aa40d8df1a69e0fa5bf3ebe516fcc10c82dac04689ff36a8c001e7",
+          "lexeme_utf8": "During"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "52cb0c6abb02dced4eb97286d6f91d4c4d09dffcd60797f58a2915a53b981412",
+          "lexeme_utf8": "quarterly"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "ca8b22d0db83a22db163b560b3e4e51527e533d31d067b614a0c33c4d2df8432",
+          "lexeme_utf8": "team"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "985959785319747668373cc6dee294b11db782b03cdd90a2851fbdc0637c6b7b",
+          "lexeme_utf8": "Project"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "18833da39fb9b7f8c917fe0220daf9cf12e6524df8fb16e39f04dbe827e2d200",
+          "lexeme_utf8": "Delta"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "e3456bc1f4d270f4a97933758645fdc21e39642b31ca343c1818f7972ac27906",
+          "lexeme_utf8": "lead"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "88fa0d759f845b47c044c2cd44e29082cf6fea665c30c146374ec7c8f3d699e3",
+          "lexeme_utf8": "developer"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "7e8c729e4e4ecc320cb411c4d1419bf5fbad733212d4e9491b7630aaef0b8b1c",
+          "lexeme_utf8": "Sarah"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "8e752bb9817c063245abbe06c58903236866f4ef3934a3d68ce059e06345e67c",
+          "lexeme_utf8": "reported"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "21606b5837ee49171e56cff2afe21083fb4dfe5c15c79b54695c2dc335181c89",
+          "lexeme_utf8": "completion"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "10e08a419e850eba1ebba18fdd28eb7ec1b7e8baa9bcc3b973e2b8891ec726be",
+          "lexeme_utf8": "backend"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "cea23dd4b87e8b00d19fb9ccaaef93e97353c7353e2070f3baf05aeb3995dff4",
+          "lexeme_utf8": "expected"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "21606b5837ee49171e56cff2afe21083fb4dfe5c15c79b54695c2dc335181c89",
+          "lexeme_utf8": "completion"
+        },
+        {
+          "character_actions": 2,
+          "excess_over_one_compact_action": 1,
+          "lexeme_sha256": "8845886be6cbcf285d18a66a83d622fdcf265ba4451ea2b2f4189ebf04eba915",
+          "lexeme_utf8": "Q2"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "e2a530e251d3675034d23f5c5f87f54ec3182a088ba7d13350824794f8e6b76e",
+          "lexeme_utf8": "marketing"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "ca8b22d0db83a22db163b560b3e4e51527e533d31d067b614a0c33c4d2df8432",
+          "lexeme_utf8": "team"
+        },
+        {
+          "character_actions": 3,
+          "excess_over_one_compact_action": 2,
+          "lexeme_sha256": "021f8ffac9f9a70fd3468b23fc6f299877339299a4ae8764e892e3f197e867f5",
+          "lexeme_utf8": "led"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "a8cfcd74832004951b4408cdb0a5dbcd8c7e52d43f7fe244bf720582e05241da",
+          "lexeme_utf8": "John"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "cab80b3079898c6679be9a923ffb4edfc2a8d9ca0411bb10accdaca70c0274db",
+          "lexeme_utf8": "presented"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "3dc260b2472062d9c57bd930b02f23831d917b8f3e3234b6d63964a53c31d3aa",
+          "lexeme_utf8": "campaign"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "73dff70e25ad51ca765a584eef93a1cd909527e2ef4860e0b12f0a7e7ae1979a",
+          "lexeme_utf8": "strategy"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "26cafb94003a654827f52047a9368c0821f01f4512828a68f7bd4b44e6a0afcf",
+          "lexeme_utf8": "targets"
+        },
+        {
+          "character_actions": 2,
+          "excess_over_one_compact_action": 1,
+          "lexeme_sha256": "4ec9599fc203d176a301536c2e091a19bc852759b255bd6818810a42c5fed14a",
+          "lexeme_utf8": "18"
+        },
+        {
+          "character_actions": 2,
+          "excess_over_one_compact_action": 1,
+          "lexeme_sha256": "b7a56873cd771f2c446d369b649430b65a756ba278ff97ec81bb6f55b2e73569",
+          "lexeme_utf8": "25"
+        },
+        {
+          "character_actions": 3,
+          "excess_over_one_compact_action": 2,
+          "lexeme_sha256": "013f54400c82da08037759ada907a8b864e97de81c088a182062c4b5622fd2ab",
+          "lexeme_utf8": "age"
+        },
+        {
+          "character_actions": 11,
+          "excess_over_one_compact_action": 10,
+          "lexeme_sha256": "87ce5638c90315a1738b58b2a336b1b75aa8b621186ce070e653503e27b52ea4",
+          "lexeme_utf8": "demographic"
+        },
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "fad8fb8fe9acb0794dc5053e2f553b14dffcd2b2787c649dafb690c84a936e4c",
+          "lexeme_utf8": "aiming"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "e20a548f23fa36bc8d5ba48237ec3ee4d4f00087841d3614f81749e3c6c1b47e",
+          "lexeme_utf8": "increase"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb",
+          "lexeme_utf8": "user"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "495b93a386a436dc7ba0be4c6efe2c04139ec00d8612a51fe9494c0eaec13e78",
+          "lexeme_utf8": "engagement"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "eab762a03fd979a04cc4706e6536d382bc89d2d1356afcd054a16b2235ecd471",
+          "lexeme_utf8": "finance"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "2ad29f65743a0524d916bfb3e24f5034c970b8daa7749699a88bd7096129fa09",
+          "lexeme_utf8": "department"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "d767748a603799c85319dba02a583b3fdbe28ae5f82b2e872d6bb66cf104e62c",
+          "lexeme_utf8": "under"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "048a2730d09826f3ea1008af47bd8f1209c0eeb3a3a2ef7d2531bd053ea1eebc",
+          "lexeme_utf8": "Emily"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "9599915bd8cd62b6b42e6c37b5b681a76991a7c5be1fde9971278ce65b99d550",
+          "lexeme_utf8": "confirmed"
+        },
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "0af96a8ed622a394e8b2a239284ee46e9a7a7b0ec38191bbd08571b171118dd6",
+          "lexeme_utf8": "budget"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "165f0f8e557c430929784035df7eeacf7a3ff795f10d76c8707409bba31cb617",
+          "lexeme_utf8": "allocation"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "16b60e9de6072d0e93d3b4555da4219695af891e2cf30a54e931eb1e44587b83",
+          "lexeme_utf8": "quarter"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "2687f86ed6784b8a5fca36e6c468e12aa44dc3c7e8137e3160d1a95079bdcd02",
+          "lexeme_utf8": "approved"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "e20a548f23fa36bc8d5ba48237ec3ee4d4f00087841d3614f81749e3c6c1b47e",
+          "lexeme_utf8": "increase"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "6da0633528deaa0144e7b058315f0b753ec0b945163a72bf96a0d18180f9de0d",
+          "lexeme_utf8": "previous"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "16b60e9de6072d0e93d3b4555da4219695af891e2cf30a54e931eb1e44587b83",
+          "lexeme_utf8": "quarter"
+        },
+        {
+          "character_actions": 11,
+          "excess_over_one_compact_action": 10,
+          "lexeme_sha256": "87b477dbf620421499502ce07068f2904c9ed6d2c85d945ae55077730bec03b5",
+          "lexeme_utf8": "accommodate"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "e2a530e251d3675034d23f5c5f87f54ec3182a088ba7d13350824794f8e6b76e",
+          "lexeme_utf8": "marketing"
+        },
+        {
+          "character_actions": 11,
+          "excess_over_one_compact_action": 10,
+          "lexeme_sha256": "065f0d0a4e52ebcbb959517013af559dd420783f5a5d3a8087a9f8f4ed825636",
+          "lexeme_utf8": "initiatives"
+        },
+        {
+          "character_actions": 2,
+          "excess_over_one_compact_action": 1,
+          "lexeme_sha256": "15e68b1f46577e27d82b47596b5bb9224ec847838c53432b4ae182a4e20a04e7",
+          "lexeme_utf8": "HR"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "2ad29f65743a0524d916bfb3e24f5034c970b8daa7749699a88bd7096129fa09",
+          "lexeme_utf8": "department"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "db74c940d447e877d119df613edd2700c4a84cd1cf08beb7cbc319bcfaeab97a",
+          "lexeme_utf8": "Alex"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "3cf46ab4906eb199effdf0e8354e6a065a0213c5febbf8edb534b762bed6194a",
+          "lexeme_utf8": "announced"
+        },
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "b67edcdb95503aaeb8980b7017c4f7488871ce5908a5c945fb1b6334b808e960",
+          "lexeme_utf8": "hiring"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "35390f5453e810b6248028c63e5860ce4b2ec6401d3849a7f4f871c0d183c22b",
+          "lexeme_utf8": "software"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "91df9a8e8982259cef0f3ebadee8152037efcfbd479e551b35bf9e2f30b3646e",
+          "lexeme_utf8": "engineers"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "ca8b22d0db83a22db163b560b3e4e51527e533d31d067b614a0c33c4d2df8432",
+          "lexeme_utf8": "team"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "81d647f2107942499bba59327b07600356b8b1cb9b8a47bac5fb77b41a22990b",
+          "lexeme_utf8": "concluded"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "9ce7011ab48f26c2e69f772f41379d695e0b04fefddd78d0b1d4952383ba3995",
+          "lexeme_utf8": "reminder"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "a8792157cb4f27fb949c035f45518c61e884bb86e6f420204379c2baa8beb66e",
+          "lexeme_utf8": "product"
+        },
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "abfc412ce6e530df63b0dc9bf4e02bb3cb1719ab967c8f4ea3951ab5bae4ff3f",
+          "lexeme_utf8": "launch"
+        },
+        {
+          "character_actions": 3,
+          "excess_over_one_compact_action": 2,
+          "lexeme_sha256": "8c78fe5b9936488c111733d36f3da4b246a4d206159efe5cd64cdb229c38f069",
+          "lexeme_utf8": "May"
+        },
+        {
+          "character_actions": 2,
+          "excess_over_one_compact_action": 1,
+          "lexeme_sha256": "6bde0b830d8bd56dea61c5c1cb648c7ffca6ffce2923ad1db9f29079cac947e0",
+          "lexeme_utf8": "th"
+        },
+        {
+          "character_actions": 11,
+          "excess_over_one_compact_action": 10,
+          "lexeme_sha256": "fc3bfaaef78740e2431bc75e8963bb164580f12f1039664ca278b2b07da5003c",
+          "lexeme_utf8": "departments"
+        }
+      ],
+      "output_characters": 838,
+      "output_utf8_bytes": 838,
+      "record_id": "phase1-validation-instruction_following-0086-v2"
+    },
+    {
+      "action_types": {
+        "character": 398,
+        "lexeme": 212,
+        "pointer": 15
+      },
+      "actions": 626,
+      "capability": "instruction_following",
+      "excess_over_320": 306,
+      "fallback_excess_actions": 345,
+      "fallback_lexemes": [
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "7bb5f6127ade404024d62362be078ec1165ce3eca9da07044cd8e4a3a22b09d1",
+          "lexeme_utf8": "Enhanced"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "cec3a9b89b2e391393d0f68e4bc12a9fa6cf358b3cdf79496dc442d52b8dd528",
+          "lexeme_utf8": "Data"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "8f6fb4eb7f42c0e245e29e63f5b82cc3ba19852681d1ed9aed291f59cf75ec0e",
+          "lexeme_utf8": "Security"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "aabaa8ff445c09b9fc021865bc424b6e6ed9e1657365705f27285c622bc03767",
+          "lexeme_utf8": "Measures"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "5985039f106df054b43c3529139613bf7c2372937539f344c7c5ee47d00a0d63",
+          "lexeme_utf8": "Team"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "5d2d3ceb7abe552344276d47d36a8175b7aeb250a9bf0bf00e850cd23ecf2e43",
+          "lexeme_utf8": "security"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "3a6eb0790f39ac87c94f3856b2dd2c5d110e6811602261a9a923d3bb23adc8b7",
+          "lexeme_utf8": "data"
+        },
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "8bf729ffe074caee622c02928173467e658e19e28233cff8a445819e3cae4d50",
+          "lexeme_utf8": "assets"
+        },
+        {
+          "character_actions": 14,
+          "excess_over_one_compact_action": 13,
+          "lexeme_sha256": "da31012c40330e7e21538e7dd57503b16e8a0839159e96137090cccc9910b171",
+          "lexeme_utf8": "implementation"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "aedbe9f5f1f5eaec316afa9e400027799b2451dcad28b6fd6cb7552fea2264a7",
+          "lexeme_utf8": "enhanced"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "5d2d3ceb7abe552344276d47d36a8175b7aeb250a9bf0bf00e850cd23ecf2e43",
+          "lexeme_utf8": "security"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "372ea2d8a3fefc0d25933e7f4062a96d845b38ac962c732caf35e8d71803ad57",
+          "lexeme_utf8": "measures"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "f54d2de0a404d4afc7bd5b5029adc174b79b9098608dc0bde892956cd940aa7b",
+          "lexeme_utf8": "safeguard"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "14d24f98ae39d2990b2777a4dcfb7211a30ccf9d0017374bcc05bc273fe7a918",
+          "lexeme_utf8": "industry"
+        },
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "4dec05e892a70d2649295b72f00290f0f3ef25a3f26ef1b7c76e72d72ca23ede",
+          "lexeme_utf8": "trends"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "771c30f4e66c317f3d49417507f194eab7594e63b578b33e118de4a1ffdc0498",
+          "lexeme_utf8": "increasing"
+        },
+        {
+          "character_actions": 14,
+          "excess_over_one_compact_action": 13,
+          "lexeme_sha256": "e24d37b984cb26893346922da301dbeaa6e536e8b992193380aa45a35809fb45",
+          "lexeme_utf8": "sophistication"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "b4bf5d7e5fcf89ef8adb64ec9c624db850d10f2afef020ed9ef23892df0833af",
+          "lexeme_utf8": "cyber"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "89f1a8029834dffda101c962f589f2cf98c51fb02007eae6d66f9bfa5a67beea",
+          "lexeme_utf8": "threats"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "e7735f86642e2f00514b5ce61fb9fbc2a687455b142a6e41af46498aa9ad7844",
+          "lexeme_utf8": "imperative"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "1774757a37ce2c78be566425e460b65dd9274a8ec46b4aba7dc7e1de5f1dce71",
+          "lexeme_utf8": "proactive"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "680dce633db1189eb1158aad579df2ce0ad72a0571ccfeeaa5f79092ea6cb729",
+          "lexeme_utf8": "protect"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "2d5e8600a4fba66e5c6a513a6e77421f4079cdb8728ed12b810196584b0bbde2",
+          "lexeme_utf8": "sensitive"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "3a6eb0790f39ac87c94f3856b2dd2c5d110e6811602261a9a923d3bb23adc8b7",
+          "lexeme_utf8": "data"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "372ea2d8a3fefc0d25933e7f4062a96d845b38ac962c732caf35e8d71803ad57",
+          "lexeme_utf8": "measures"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "c7a2b3bc051ae2eff75f6ed2dc13bdd9afbe8d9b6c3f0c86d3ae7cb2496256d3",
+          "lexeme_utf8": "Implement"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "4bd77cffb0da8cbda839ed5caaf5d418f19addc5941776e87261e000d6f96e93",
+          "lexeme_utf8": "multi"
+        },
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "41a093100bbbb59e31dcc91a581495871ac485e07deda57bf878353cc5aae6db",
+          "lexeme_utf8": "factor"
+        },
+        {
+          "character_actions": 14,
+          "excess_over_one_compact_action": 13,
+          "lexeme_sha256": "b9d90628453938c578c7f826de5e5bd2bcac29e10c5526888384ba74fcea563e",
+          "lexeme_utf8": "authentication"
+        },
+        {
+          "character_actions": 3,
+          "excess_over_one_compact_action": 2,
+          "lexeme_sha256": "d39ce05308e4ec6d55d3599061c99041fece213b56e0938125661670df668ff8",
+          "lexeme_utf8": "MFA"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb",
+          "lexeme_utf8": "user"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "bc62a3c14fec277e3dc6b504bf7c6348c2e421f8acc42032deddb0a96070f078",
+          "lexeme_utf8": "accounts"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "f338f4c08c4eb9a62331c60091e0f301da3a8fe4b1466c2ee8b8461c82d6e0dc",
+          "lexeme_utf8": "systems"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "d54f78557a7ecba3f9d752e249a2d804c742c29582006f357b4d365f4eb08e35",
+          "lexeme_utf8": "Conduct"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "667937c3e7a68ea374716edae34173e66dc54f380cffaccceaf15dfbfad22f99",
+          "lexeme_utf8": "regular"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "5d2d3ceb7abe552344276d47d36a8175b7aeb250a9bf0bf00e850cd23ecf2e43",
+          "lexeme_utf8": "security"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "5674991da3fa1a3efcc45ffccdaf770a7a1a6d0fa0e00a1d6eed5a979285e4bc",
+          "lexeme_utf8": "awareness"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "c2fb788c7deedbeaa296e424d4c2921b871a4f6cb4cf393c1c1105653ab399b4",
+          "lexeme_utf8": "training"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "c49de3d265fb1d97d0fc104bbc54411ff3784bb1be48c5ce3a4f31a76f223469",
+          "lexeme_utf8": "employees"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "81b6b2c874b787640efa1419ec2584c3612675594e6de28e904a59416997905a",
+          "lexeme_utf8": "potential"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "89f1a8029834dffda101c962f589f2cf98c51fb02007eae6d66f9bfa5a67beea",
+          "lexeme_utf8": "threats"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "8f4375ec65c2c4092a1cc21e76712472eae0de999384e8327c495957121db9c2",
+          "lexeme_utf8": "best"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "097323b87e6ee43b6c04469270cd1ebe5a526519bd56af62e53567121fca2f90",
+          "lexeme_utf8": "practices"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "3a6eb0790f39ac87c94f3856b2dd2c5d110e6811602261a9a923d3bb23adc8b7",
+          "lexeme_utf8": "data"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "433c3507c372d907a357bb02e4632eebc85431812c03aa44ac31b6a66dc26e91",
+          "lexeme_utf8": "protection"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "c9c16188809705ba32556a31d9c1f070960c64527217847b0bee5813a7dfcbf8",
+          "lexeme_utf8": "Establish"
+        },
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "3f650dce81c641b4cf5870eaff5ab08b816b2fed5f8cc38b4693ae41c6b823f1",
+          "lexeme_utf8": "robust"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "3a6eb0790f39ac87c94f3856b2dd2c5d110e6811602261a9a923d3bb23adc8b7",
+          "lexeme_utf8": "data"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "bf86075ceab2af34c4bf04695936f6522b383cee6b0d377a410b470499ab5485",
+          "lexeme_utf8": "encryption"
+        },
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "823412d1eacb67956220e532959f0104603057c88704863ca38e7cd188fda812",
+          "lexeme_utf8": "policy"
+        },
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "6a934b45144e3758911efa29ed68fb2d420fa7bd568739cdcda9251fa9609b1e",
+          "lexeme_utf8": "secure"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "2d5e8600a4fba66e5c6a513a6e77421f4079cdb8728ed12b810196584b0bbde2",
+          "lexeme_utf8": "sensitive"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "068b7e6c97f2284a48f4d7ff0fd0bffe449f4544da079e04cacd52aba5df28c2",
+          "lexeme_utf8": "transit"
+        }
+      ],
+      "output_characters": 840,
+      "output_utf8_bytes": 840,
+      "record_id": "phase1-validation-instruction_following-0054-v2"
+    },
+    {
+      "action_types": {
+        "character": 395,
+        "lexeme": 205,
+        "pointer": 19
+      },
+      "actions": 620,
+      "capability": "instruction_following",
+      "excess_over_320": 300,
+      "fallback_excess_actions": 337,
+      "fallback_lexemes": [
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "6259eafc62aa40d8df1a69e0fa5bf3ebe516fcc10c82dac04689ff36a8c001e7",
+          "lexeme_utf8": "During"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "52cb0c6abb02dced4eb97286d6f91d4c4d09dffcd60797f58a2915a53b981412",
+          "lexeme_utf8": "quarterly"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "ca8b22d0db83a22db163b560b3e4e51527e533d31d067b614a0c33c4d2df8432",
+          "lexeme_utf8": "team"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "985959785319747668373cc6dee294b11db782b03cdd90a2851fbdc0637c6b7b",
+          "lexeme_utf8": "Project"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "18833da39fb9b7f8c917fe0220daf9cf12e6524df8fb16e39f04dbe827e2d200",
+          "lexeme_utf8": "Delta"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "e3456bc1f4d270f4a97933758645fdc21e39642b31ca343c1818f7972ac27906",
+          "lexeme_utf8": "lead"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "88fa0d759f845b47c044c2cd44e29082cf6fea665c30c146374ec7c8f3d699e3",
+          "lexeme_utf8": "developer"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "7e8c729e4e4ecc320cb411c4d1419bf5fbad733212d4e9491b7630aaef0b8b1c",
+          "lexeme_utf8": "Sarah"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "8e752bb9817c063245abbe06c58903236866f4ef3934a3d68ce059e06345e67c",
+          "lexeme_utf8": "reported"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "21606b5837ee49171e56cff2afe21083fb4dfe5c15c79b54695c2dc335181c89",
+          "lexeme_utf8": "completion"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "10e08a419e850eba1ebba18fdd28eb7ec1b7e8baa9bcc3b973e2b8891ec726be",
+          "lexeme_utf8": "backend"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "cea23dd4b87e8b00d19fb9ccaaef93e97353c7353e2070f3baf05aeb3995dff4",
+          "lexeme_utf8": "expected"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "21606b5837ee49171e56cff2afe21083fb4dfe5c15c79b54695c2dc335181c89",
+          "lexeme_utf8": "completion"
+        },
+        {
+          "character_actions": 2,
+          "excess_over_one_compact_action": 1,
+          "lexeme_sha256": "8845886be6cbcf285d18a66a83d622fdcf265ba4451ea2b2f4189ebf04eba915",
+          "lexeme_utf8": "Q2"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "e2a530e251d3675034d23f5c5f87f54ec3182a088ba7d13350824794f8e6b76e",
+          "lexeme_utf8": "marketing"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "ca8b22d0db83a22db163b560b3e4e51527e533d31d067b614a0c33c4d2df8432",
+          "lexeme_utf8": "team"
+        },
+        {
+          "character_actions": 3,
+          "excess_over_one_compact_action": 2,
+          "lexeme_sha256": "021f8ffac9f9a70fd3468b23fc6f299877339299a4ae8764e892e3f197e867f5",
+          "lexeme_utf8": "led"
+        },
+        {
+          "character_actions": 3,
+          "excess_over_one_compact_action": 2,
+          "lexeme_sha256": "81f3bf42a93cf18dece9321ac5c93313126eb5ca92164d74643e4cbf60ecde9c",
+          "lexeme_utf8": "Tom"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "cab80b3079898c6679be9a923ffb4edfc2a8d9ca0411bb10accdaca70c0274db",
+          "lexeme_utf8": "presented"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "3dc260b2472062d9c57bd930b02f23831d917b8f3e3234b6d63964a53c31d3aa",
+          "lexeme_utf8": "campaign"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "73dff70e25ad51ca765a584eef93a1cd909527e2ef4860e0b12f0a7e7ae1979a",
+          "lexeme_utf8": "strategy"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "26cafb94003a654827f52047a9368c0821f01f4512828a68f7bd4b44e6a0afcf",
+          "lexeme_utf8": "targets"
+        },
+        {
+          "character_actions": 2,
+          "excess_over_one_compact_action": 1,
+          "lexeme_sha256": "4ec9599fc203d176a301536c2e091a19bc852759b255bd6818810a42c5fed14a",
+          "lexeme_utf8": "18"
+        },
+        {
+          "character_actions": 2,
+          "excess_over_one_compact_action": 1,
+          "lexeme_sha256": "b7a56873cd771f2c446d369b649430b65a756ba278ff97ec81bb6f55b2e73569",
+          "lexeme_utf8": "25"
+        },
+        {
+          "character_actions": 11,
+          "excess_over_one_compact_action": 10,
+          "lexeme_sha256": "87ce5638c90315a1738b58b2a336b1b75aa8b621186ce070e653503e27b52ea4",
+          "lexeme_utf8": "demographic"
+        },
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "fad8fb8fe9acb0794dc5053e2f553b14dffcd2b2787c649dafb690c84a936e4c",
+          "lexeme_utf8": "aiming"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "e20a548f23fa36bc8d5ba48237ec3ee4d4f00087841d3614f81749e3c6c1b47e",
+          "lexeme_utf8": "increase"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb",
+          "lexeme_utf8": "user"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "495b93a386a436dc7ba0be4c6efe2c04139ec00d8612a51fe9494c0eaec13e78",
+          "lexeme_utf8": "engagement"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "eab762a03fd979a04cc4706e6536d382bc89d2d1356afcd054a16b2235ecd471",
+          "lexeme_utf8": "finance"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "2ad29f65743a0524d916bfb3e24f5034c970b8daa7749699a88bd7096129fa09",
+          "lexeme_utf8": "department"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "d767748a603799c85319dba02a583b3fdbe28ae5f82b2e872d6bb66cf104e62c",
+          "lexeme_utf8": "under"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "048a2730d09826f3ea1008af47bd8f1209c0eeb3a3a2ef7d2531bd053ea1eebc",
+          "lexeme_utf8": "Emily"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "9599915bd8cd62b6b42e6c37b5b681a76991a7c5be1fde9971278ce65b99d550",
+          "lexeme_utf8": "confirmed"
+        },
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "0af96a8ed622a394e8b2a239284ee46e9a7a7b0ec38191bbd08571b171118dd6",
+          "lexeme_utf8": "budget"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "165f0f8e557c430929784035df7eeacf7a3ff795f10d76c8707409bba31cb617",
+          "lexeme_utf8": "allocation"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "16b60e9de6072d0e93d3b4555da4219695af891e2cf30a54e931eb1e44587b83",
+          "lexeme_utf8": "quarter"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "2687f86ed6784b8a5fca36e6c468e12aa44dc3c7e8137e3160d1a95079bdcd02",
+          "lexeme_utf8": "approved"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "e20a548f23fa36bc8d5ba48237ec3ee4d4f00087841d3614f81749e3c6c1b47e",
+          "lexeme_utf8": "increase"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "6da0633528deaa0144e7b058315f0b753ec0b945163a72bf96a0d18180f9de0d",
+          "lexeme_utf8": "previous"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "16b60e9de6072d0e93d3b4555da4219695af891e2cf30a54e931eb1e44587b83",
+          "lexeme_utf8": "quarter"
+        },
+        {
+          "character_actions": 11,
+          "excess_over_one_compact_action": 10,
+          "lexeme_sha256": "87b477dbf620421499502ce07068f2904c9ed6d2c85d945ae55077730bec03b5",
+          "lexeme_utf8": "accommodate"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "e2a530e251d3675034d23f5c5f87f54ec3182a088ba7d13350824794f8e6b76e",
+          "lexeme_utf8": "marketing"
+        },
+        {
+          "character_actions": 11,
+          "excess_over_one_compact_action": 10,
+          "lexeme_sha256": "065f0d0a4e52ebcbb959517013af559dd420783f5a5d3a8087a9f8f4ed825636",
+          "lexeme_utf8": "initiatives"
+        },
+        {
+          "character_actions": 2,
+          "excess_over_one_compact_action": 1,
+          "lexeme_sha256": "15e68b1f46577e27d82b47596b5bb9224ec847838c53432b4ae182a4e20a04e7",
+          "lexeme_utf8": "HR"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "2ad29f65743a0524d916bfb3e24f5034c970b8daa7749699a88bd7096129fa09",
+          "lexeme_utf8": "department"
+        },
+        {
+          "character_actions": 3,
+          "excess_over_one_compact_action": 2,
+          "lexeme_sha256": "4f69905a2fdf3232f20e16f046e3c64563dc6dee02a6659c9d67ba0d2845c6a8",
+          "lexeme_utf8": "Raj"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "3cf46ab4906eb199effdf0e8354e6a065a0213c5febbf8edb534b762bed6194a",
+          "lexeme_utf8": "announced"
+        },
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "b67edcdb95503aaeb8980b7017c4f7488871ce5908a5c945fb1b6334b808e960",
+          "lexeme_utf8": "hiring"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "35390f5453e810b6248028c63e5860ce4b2ec6401d3849a7f4f871c0d183c22b",
+          "lexeme_utf8": "software"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "91df9a8e8982259cef0f3ebadee8152037efcfbd479e551b35bf9e2f30b3646e",
+          "lexeme_utf8": "engineers"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "ca8b22d0db83a22db163b560b3e4e51527e533d31d067b614a0c33c4d2df8432",
+          "lexeme_utf8": "team"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "81d647f2107942499bba59327b07600356b8b1cb9b8a47bac5fb77b41a22990b",
+          "lexeme_utf8": "concluded"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "9ce7011ab48f26c2e69f772f41379d695e0b04fefddd78d0b1d4952383ba3995",
+          "lexeme_utf8": "reminder"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "a8792157cb4f27fb949c035f45518c61e884bb86e6f420204379c2baa8beb66e",
+          "lexeme_utf8": "product"
+        },
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "abfc412ce6e530df63b0dc9bf4e02bb3cb1719ab967c8f4ea3951ab5bae4ff3f",
+          "lexeme_utf8": "launch"
+        },
+        {
+          "character_actions": 3,
+          "excess_over_one_compact_action": 2,
+          "lexeme_sha256": "8c78fe5b9936488c111733d36f3da4b246a4d206159efe5cd64cdb229c38f069",
+          "lexeme_utf8": "May"
+        },
+        {
+          "character_actions": 2,
+          "excess_over_one_compact_action": 1,
+          "lexeme_sha256": "6bde0b830d8bd56dea61c5c1cb648c7ffca6ffce2923ad1db9f29079cac947e0",
+          "lexeme_utf8": "th"
+        }
+      ],
+      "output_characters": 804,
+      "output_utf8_bytes": 804,
+      "record_id": "phase1-validation-instruction_following-0022-v2"
+    },
+    {
+      "action_types": {
+        "character": 361,
+        "lexeme": 214,
+        "pointer": 14
+      },
+      "actions": 590,
+      "capability": "instruction_following",
+      "excess_over_320": 270,
+      "fallback_excess_actions": 311,
+      "fallback_lexemes": [
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "1b015904cc17649ef4e6ef2980260f9bf64f80f68b6f9b5f93346160be630753",
+          "lexeme_utf8": "Urgent"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "4a109cc49467be33772416ac924cc5729dcea700b8b4a0ba12f10bc595e2fa2c",
+          "lexeme_utf8": "Compliance"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "cec3a9b89b2e391393d0f68e4bc12a9fa6cf358b3cdf79496dc442d52b8dd528",
+          "lexeme_utf8": "Data"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "0e97ad021672d434a066dc50b8681813907da9f1f706aa1fa4402b9c4ba4c006",
+          "lexeme_utf8": "Protection"
+        },
+        {
+          "character_actions": 11,
+          "excess_over_one_compact_action": 10,
+          "lexeme_sha256": "d985e3d3a2c4923a8c508a7fcc9cc837cb98438d41cbc787857099e7195d8874",
+          "lexeme_utf8": "Regulations"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "5985039f106df054b43c3529139613bf7c2372937539f344c7c5ee47d00a0d63",
+          "lexeme_utf8": "Team"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "cec3a9b89b2e391393d0f68e4bc12a9fa6cf358b3cdf79496dc442d52b8dd528",
+          "lexeme_utf8": "Data"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "0e97ad021672d434a066dc50b8681813907da9f1f706aa1fa4402b9c4ba4c006",
+          "lexeme_utf8": "Protection"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "5a4828036ae9c6726f82c8dd7defc1d5ee45c586b782ff6980935c355789fd72",
+          "lexeme_utf8": "Regulation"
+        },
+        {
+          "character_actions": 3,
+          "excess_over_one_compact_action": 2,
+          "lexeme_sha256": "db90a36bc2aa8079d7d5eefa6be3cbfde26e747381ae73d5d84a61a91f686cd4",
+          "lexeme_utf8": "DPR"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "e7735f86642e2f00514b5ce61fb9fbc2a687455b142a6e41af46498aa9ad7844",
+          "lexeme_utf8": "imperative"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "adcbf60c01c985eef836ce2de49ed2439913c1c1e592066b70f98854a51a5a27",
+          "lexeme_utf8": "align"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "097323b87e6ee43b6c04469270cd1ebe5a526519bd56af62e53567121fca2f90",
+          "lexeme_utf8": "practices"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "383b6630e8241d34d54bfd689decc0cab88770d935667989a3a1de8397f5520f",
+          "lexeme_utf8": "regulation"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "46e0876178516073c5ae0fb62d07c070fe57249cbad44068272a7ad9373143ab",
+          "lexeme_utf8": "effective"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "4afe6ea150d532c17693519cac32da104f47073d500d2507272d294d8590d3f8",
+          "lexeme_utf8": "April"
+        },
+        {
+          "character_actions": 2,
+          "excess_over_one_compact_action": 1,
+          "lexeme_sha256": "56af4bde70a47ae7d0f1ebb30e45ed336165d5c9ec00ba9a92311e33a4256d74",
+          "lexeme_utf8": "st"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "d398b29d3dbbb9bf201d4c7e1c19ff9d43c15fd45a0cec46fbe9885ec3f6e97f",
+          "lexeme_utf8": "2023"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "1825b610b6858d59cd0cc69fd9e58f951d743173ddabc371c92914cfbd45e91c",
+          "lexeme_utf8": "introduces"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "2740e59ffb8c5eff0e0f8f3f4f5e6522fda77d9882c878346a751b9b60129cfd",
+          "lexeme_utf8": "several"
+        },
+        {
+          "character_actions": 3,
+          "excess_over_one_compact_action": 2,
+          "lexeme_sha256": "2c70e12b7a0646f92279f427c7b38e7334d8e5389cff167a1dc30e73f826b683",
+          "lexeme_utf8": "key"
+        },
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "6f61f46c23a66607af759dcd348ac132846385d8f39534e69b6cd934bdabad8b",
+          "lexeme_utf8": "impact"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "3a6eb0790f39ac87c94f3856b2dd2c5d110e6811602261a9a923d3bb23adc8b7",
+          "lexeme_utf8": "data"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "d6447e23d6652bd9700a141845f56c0854fdc3de7a3d4610a131b5df2a58aa4b",
+          "lexeme_utf8": "procedures"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "29a3e14798aa2363dc0ca5d6cf18f3a0cf9003c8824cf66fde7804867e8ceee9",
+          "lexeme_utf8": "compliance"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "a4cc6bc01a927e2a78fd3bec51e865ac0d85e4daab6f988d5d33d056e125b1c3",
+          "lexeme_utf8": "privacy"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "5b3a02e57af9b55aae545b599baa6a6798a364d8d2798a38536249f77e30fe5f",
+          "lexeme_utf8": "policies"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "909ca0096d519dcf94aba6069fa664842bdf9de264725a6c543c4926abe6bdfa",
+          "lexeme_utf8": "reflect"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "12423e0482f3e81cb1d23230664e95bb3d11b9f34f06fc199e588d4cdab6e4d4",
+          "lexeme_utf8": "consent"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "d54f78557a7ecba3f9d752e249a2d804c742c29582006f357b4d365f4eb08e35",
+          "lexeme_utf8": "Conduct"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "a06d7b2b0415505dbf709d9790f663bed8588d92ff729830148d7620c4daf76d",
+          "lexeme_utf8": "thorough"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "b81f37a043a6f767e7c94d105f4bd31282f3ecc20680bb9d09bd93461cf4c863",
+          "lexeme_utf8": "audit"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "3a6eb0790f39ac87c94f3856b2dd2c5d110e6811602261a9a923d3bb23adc8b7",
+          "lexeme_utf8": "data"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "49a25f9feefaffecad0fcd30c50dc9331cff8b55ece53def6285c09e17e6f5d7",
+          "lexeme_utf8": "storage"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "f338f4c08c4eb9a62331c60091e0f301da3a8fe4b1466c2ee8b8461c82d6e0dc",
+          "lexeme_utf8": "systems"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "0f780b5c735e70251a83e58da306c81951961596c9ab543a7929bf67381b9328",
+          "lexeme_utf8": "identify"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "9f88d2d7bf21723556e1d152902afa8c2fb68e0586e88c613d03688ef4462405",
+          "lexeme_utf8": "areas"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "251ce3daf88ff66915c66092392ae9b07e404b96957507dd1a35f6f1bde26b65",
+          "lexeme_utf8": "immediate"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "c7a2b3bc051ae2eff75f6ed2dc13bdd9afbe8d9b6c3f0c86d3ae7cb2496256d3",
+          "lexeme_utf8": "Implement"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "aedbe9f5f1f5eaec316afa9e400027799b2451dcad28b6fd6cb7552fea2264a7",
+          "lexeme_utf8": "enhanced"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "5d2d3ceb7abe552344276d47d36a8175b7aeb250a9bf0bf00e850cd23ecf2e43",
+          "lexeme_utf8": "security"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "372ea2d8a3fefc0d25933e7f4062a96d845b38ac962c732caf35e8d71803ad57",
+          "lexeme_utf8": "measures"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "031af55b1821e721e58832cb81177a527f3e8ea244986da200562c62b91d535c",
+          "lexeme_utf8": "including"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "bf86075ceab2af34c4bf04695936f6522b383cee6b0d377a410b470499ab5485",
+          "lexeme_utf8": "encryption"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "1e2135d1b50f14d3d3d6cbe24a4294bcb9e4d5d3c28eb1ce4980ff2a17c5d3b6",
+          "lexeme_utf8": "controls"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "f54d2de0a404d4afc7bd5b5029adc174b79b9098608dc0bde892956cd940aa7b",
+          "lexeme_utf8": "safeguard"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "4a0a339b0c6d0553897752a84115adc81c75812e1743eb2519258e5000f70deb",
+          "lexeme_utf8": "personal"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "3a6eb0790f39ac87c94f3856b2dd2c5d110e6811602261a9a923d3bb23adc8b7",
+          "lexeme_utf8": "data"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "991b0ff072e12a7ddee85fd5450f37beb460c684f4b392174deeb0d922db2be4",
+          "lexeme_utf8": "Provide"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "c2fb788c7deedbeaa296e424d4c2921b871a4f6cb4cf393c1c1105653ab399b4",
+          "lexeme_utf8": "training"
+        }
+      ],
+      "output_characters": 832,
+      "output_utf8_bytes": 832,
+      "record_id": "phase1-validation-instruction_following-0046-v2"
+    },
+    {
+      "action_types": {
+        "character": 355,
+        "lexeme": 224,
+        "pointer": 10
+      },
+      "actions": 590,
+      "capability": "instruction_following",
+      "excess_over_320": 270,
+      "fallback_excess_actions": 307,
+      "fallback_lexemes": [
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "7bb5f6127ade404024d62362be078ec1165ce3eca9da07044cd8e4a3a22b09d1",
+          "lexeme_utf8": "Enhanced"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "cec3a9b89b2e391393d0f68e4bc12a9fa6cf358b3cdf79496dc442d52b8dd528",
+          "lexeme_utf8": "Data"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "8f6fb4eb7f42c0e245e29e63f5b82cc3ba19852681d1ed9aed291f59cf75ec0e",
+          "lexeme_utf8": "Security"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "aabaa8ff445c09b9fc021865bc424b6e6ed9e1657365705f27285c622bc03767",
+          "lexeme_utf8": "Measures"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "5985039f106df054b43c3529139613bf7c2372937539f344c7c5ee47d00a0d63",
+          "lexeme_utf8": "Team"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "5d2d3ceb7abe552344276d47d36a8175b7aeb250a9bf0bf00e850cd23ecf2e43",
+          "lexeme_utf8": "security"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "3a6eb0790f39ac87c94f3856b2dd2c5d110e6811602261a9a923d3bb23adc8b7",
+          "lexeme_utf8": "data"
+        },
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "8bf729ffe074caee622c02928173467e658e19e28233cff8a445819e3cae4d50",
+          "lexeme_utf8": "assets"
+        },
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "9cda38ea3a2bd78cbaecd4b8bbd646abc14cee8d99c59860ac2a301f722b8be0",
+          "lexeme_utf8": "series"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "aedbe9f5f1f5eaec316afa9e400027799b2451dcad28b6fd6cb7552fea2264a7",
+          "lexeme_utf8": "enhanced"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "5d2d3ceb7abe552344276d47d36a8175b7aeb250a9bf0bf00e850cd23ecf2e43",
+          "lexeme_utf8": "security"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "372ea2d8a3fefc0d25933e7f4062a96d845b38ac962c732caf35e8d71803ad57",
+          "lexeme_utf8": "measures"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "680dce633db1189eb1158aad579df2ce0ad72a0571ccfeeaa5f79092ea6cb729",
+          "lexeme_utf8": "protect"
+        },
+        {
+          "character_actions": 14,
+          "excess_over_one_compact_action": 13,
+          "lexeme_sha256": "1cff7713912f5d538506c1ba82db75b7caabcd0ee2dc4abee6bbd4db5878233e",
+          "lexeme_utf8": "Implementation"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "dea894b8304550baf5f5d244b82e0e3db57381fffff65849da706a6aafd5365b",
+          "lexeme_utf8": "Multi"
+        },
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "964a9c0606520b6e0f94e252b1d25b1a3f46f3cd38da00ff8166d656ac870679",
+          "lexeme_utf8": "Factor"
+        },
+        {
+          "character_actions": 14,
+          "excess_over_one_compact_action": 13,
+          "lexeme_sha256": "66880d2d8216260d201917a72eb245440ef18ba9b54c070ee39aa4c343ae126f",
+          "lexeme_utf8": "Authentication"
+        },
+        {
+          "character_actions": 3,
+          "excess_over_one_compact_action": 2,
+          "lexeme_sha256": "d39ce05308e4ec6d55d3599061c99041fece213b56e0938125661670df668ff8",
+          "lexeme_utf8": "MFA"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "dac1d7cfa95021764849fd102524e141488c5e3a90f861dbb5a12d9ac8584f85",
+          "lexeme_utf8": "layer"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "5d2d3ceb7abe552344276d47d36a8175b7aeb250a9bf0bf00e850cd23ecf2e43",
+          "lexeme_utf8": "security"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "c49de3d265fb1d97d0fc104bbc54411ff3784bb1be48c5ce3a4f31a76f223469",
+          "lexeme_utf8": "employees"
+        },
+        {
+          "character_actions": 3,
+          "excess_over_one_compact_action": 2,
+          "lexeme_sha256": "d39ce05308e4ec6d55d3599061c99041fece213b56e0938125661670df668ff8",
+          "lexeme_utf8": "MFA"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "2d5e8600a4fba66e5c6a513a6e77421f4079cdb8728ed12b810196584b0bbde2",
+          "lexeme_utf8": "sensitive"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "3a6eb0790f39ac87c94f3856b2dd2c5d110e6811602261a9a923d3bb23adc8b7",
+          "lexeme_utf8": "data"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "b4d5a180d618df82acd341869eb17e6bf00cfd7287b70f2d7bba2e7f38a2d0e3",
+          "lexeme_utf8": "prevent"
+        },
+        {
+          "character_actions": 12,
+          "excess_over_one_compact_action": 11,
+          "lexeme_sha256": "e9d83f01c9aff03af6380e341aad90a5547d378ef54582383c6c9a35c53181af",
+          "lexeme_utf8": "unauthorized"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "ec38063c881f0a5edfef6a5233925fe7e555746ebdc0865af3eb13c4e1805f46",
+          "lexeme_utf8": "even"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
+          "lexeme_utf8": "password"
+        },
+        {
+          "character_actions": 11,
+          "excess_over_one_compact_action": 10,
+          "lexeme_sha256": "28bd9de4d356be55efc3e39b4b27e7b7e5d4208492506d97072f7ebd2bbdf905",
+          "lexeme_utf8": "compromised"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "b455784ab53072773e72df494aa4b12ac467976447e250c694c11b6f1268e235",
+          "lexeme_utf8": "Regular"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "8f6fb4eb7f42c0e245e29e63f5b82cc3ba19852681d1ed9aed291f59cf75ec0e",
+          "lexeme_utf8": "Security"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "36a798e3f39239ccdec697ee348d2ce0a7b8d2d9087940496e2ca5d0853399f2",
+          "lexeme_utf8": "Training"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "ca8b22d0db83a22db163b560b3e4e51527e533d31d067b614a0c33c4d2df8432",
+          "lexeme_utf8": "team"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "17373ca1c7634a4be4a13861a891abd975ec916caab8f3dcf5142fa4997d0b96",
+          "lexeme_utf8": "members"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "5d2d3ceb7abe552344276d47d36a8175b7aeb250a9bf0bf00e850cd23ecf2e43",
+          "lexeme_utf8": "security"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "89f1a8029834dffda101c962f589f2cf98c51fb02007eae6d66f9bfa5a67beea",
+          "lexeme_utf8": "threats"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "8f4375ec65c2c4092a1cc21e76712472eae0de999384e8327c495957121db9c2",
+          "lexeme_utf8": "best"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "097323b87e6ee43b6c04469270cd1ebe5a526519bd56af62e53567121fca2f90",
+          "lexeme_utf8": "practices"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "b6ad82a52d2b03768a75afda95f5660895814d7172acbe42cf0424f8416ff364",
+          "lexeme_utf8": "organize"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "52cb0c6abb02dced4eb97286d6f91d4c4d09dffcd60797f58a2915a53b981412",
+          "lexeme_utf8": "quarterly"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "5d2d3ceb7abe552344276d47d36a8175b7aeb250a9bf0bf00e850cd23ecf2e43",
+          "lexeme_utf8": "security"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "c2fb788c7deedbeaa296e424d4c2921b871a4f6cb4cf393c1c1105653ab399b4",
+          "lexeme_utf8": "training"
+        },
+        {
+          "character_actions": 13,
+          "excess_over_one_compact_action": 12,
+          "lexeme_sha256": "9f5dc12196d399c5926706ad927c340b6b7427c16af816ec532b11a295586454",
+          "lexeme_utf8": "Strengthening"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "e7cf3ef4f17c3999a94f2c6f612e8a888e5b1026878e4e19398b23bd38ec221a",
+          "lexeme_utf8": "Password"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "d3ad1f1f8c9c4f5a4a593571085513a467305094c2f345abc62a00df0bd23b90",
+          "lexeme_utf8": "Policies"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "c1f1005e99318bf634290d9d518d9bf9ba14bf9a46eaa78abfbc9f99647ca2d9",
+          "lexeme_utf8": "enforce"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
+          "lexeme_utf8": "password"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "692e4e5decffcf5eac86471ba27ac56a861268d060e4a53a0c768617f4d3a56f",
+          "lexeme_utf8": "minimum"
+        }
+      ],
+      "output_characters": 839,
+      "output_utf8_bytes": 839,
+      "record_id": "phase1-validation-instruction_following-0050-v2"
+    },
+    {
+      "action_types": {
+        "character": 334,
+        "lexeme": 148,
+        "pointer": 18
+      },
+      "actions": 501,
+      "capability": "instruction_following",
+      "excess_over_320": 181,
+      "fallback_excess_actions": 285,
+      "fallback_lexemes": [
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "6259eafc62aa40d8df1a69e0fa5bf3ebe516fcc10c82dac04689ff36a8c001e7",
+          "lexeme_utf8": "During"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "52cb0c6abb02dced4eb97286d6f91d4c4d09dffcd60797f58a2915a53b981412",
+          "lexeme_utf8": "quarterly"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "ca8b22d0db83a22db163b560b3e4e51527e533d31d067b614a0c33c4d2df8432",
+          "lexeme_utf8": "team"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "985959785319747668373cc6dee294b11db782b03cdd90a2851fbdc0637c6b7b",
+          "lexeme_utf8": "Project"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "18833da39fb9b7f8c917fe0220daf9cf12e6524df8fb16e39f04dbe827e2d200",
+          "lexeme_utf8": "Delta"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "e3456bc1f4d270f4a97933758645fdc21e39642b31ca343c1818f7972ac27906",
+          "lexeme_utf8": "lead"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "88fa0d759f845b47c044c2cd44e29082cf6fea665c30c146374ec7c8f3d699e3",
+          "lexeme_utf8": "developer"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "7e8c729e4e4ecc320cb411c4d1419bf5fbad733212d4e9491b7630aaef0b8b1c",
+          "lexeme_utf8": "Sarah"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "8e752bb9817c063245abbe06c58903236866f4ef3934a3d68ce059e06345e67c",
+          "lexeme_utf8": "reported"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "21606b5837ee49171e56cff2afe21083fb4dfe5c15c79b54695c2dc335181c89",
+          "lexeme_utf8": "completion"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "10e08a419e850eba1ebba18fdd28eb7ec1b7e8baa9bcc3b973e2b8891ec726be",
+          "lexeme_utf8": "backend"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "cea23dd4b87e8b00d19fb9ccaaef93e97353c7353e2070f3baf05aeb3995dff4",
+          "lexeme_utf8": "expected"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "21606b5837ee49171e56cff2afe21083fb4dfe5c15c79b54695c2dc335181c89",
+          "lexeme_utf8": "completion"
+        },
+        {
+          "character_actions": 2,
+          "excess_over_one_compact_action": 1,
+          "lexeme_sha256": "8845886be6cbcf285d18a66a83d622fdcf265ba4451ea2b2f4189ebf04eba915",
+          "lexeme_utf8": "Q2"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "e2a530e251d3675034d23f5c5f87f54ec3182a088ba7d13350824794f8e6b76e",
+          "lexeme_utf8": "marketing"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "ca8b22d0db83a22db163b560b3e4e51527e533d31d067b614a0c33c4d2df8432",
+          "lexeme_utf8": "team"
+        },
+        {
+          "character_actions": 3,
+          "excess_over_one_compact_action": 2,
+          "lexeme_sha256": "021f8ffac9f9a70fd3468b23fc6f299877339299a4ae8764e892e3f197e867f5",
+          "lexeme_utf8": "led"
+        },
+        {
+          "character_actions": 3,
+          "excess_over_one_compact_action": 2,
+          "lexeme_sha256": "81f3bf42a93cf18dece9321ac5c93313126eb5ca92164d74643e4cbf60ecde9c",
+          "lexeme_utf8": "Tom"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "cab80b3079898c6679be9a923ffb4edfc2a8d9ca0411bb10accdaca70c0274db",
+          "lexeme_utf8": "presented"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "3dc260b2472062d9c57bd930b02f23831d917b8f3e3234b6d63964a53c31d3aa",
+          "lexeme_utf8": "campaign"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "73dff70e25ad51ca765a584eef93a1cd909527e2ef4860e0b12f0a7e7ae1979a",
+          "lexeme_utf8": "strategy"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "26cafb94003a654827f52047a9368c0821f01f4512828a68f7bd4b44e6a0afcf",
+          "lexeme_utf8": "targets"
+        },
+        {
+          "character_actions": 2,
+          "excess_over_one_compact_action": 1,
+          "lexeme_sha256": "4ec9599fc203d176a301536c2e091a19bc852759b255bd6818810a42c5fed14a",
+          "lexeme_utf8": "18"
+        },
+        {
+          "character_actions": 2,
+          "excess_over_one_compact_action": 1,
+          "lexeme_sha256": "b7a56873cd771f2c446d369b649430b65a756ba278ff97ec81bb6f55b2e73569",
+          "lexeme_utf8": "25"
+        },
+        {
+          "character_actions": 3,
+          "excess_over_one_compact_action": 2,
+          "lexeme_sha256": "013f54400c82da08037759ada907a8b864e97de81c088a182062c4b5622fd2ab",
+          "lexeme_utf8": "age"
+        },
+        {
+          "character_actions": 11,
+          "excess_over_one_compact_action": 10,
+          "lexeme_sha256": "87ce5638c90315a1738b58b2a336b1b75aa8b621186ce070e653503e27b52ea4",
+          "lexeme_utf8": "demographic"
+        },
+        {
+          "character_actions": 11,
+          "excess_over_one_compact_action": 10,
+          "lexeme_sha256": "4268646d73c07b72b086249c11d32f8f4a3416c9e792bcb1338a03cba58903bf",
+          "lexeme_utf8": "emphasizing"
+        },
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "3e860f41a5ea92c49803d6ec96d452693b6dcefb0e8c0bf0125b0e3debac5281",
+          "lexeme_utf8": "social"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "721c9525ade2ea8903d343ef25cf68b9bf4ab0aad56bb7b01fbe48d09bc7fcf4",
+          "lexeme_utf8": "media"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "495b93a386a436dc7ba0be4c6efe2c04139ec00d8612a51fe9494c0eaec13e78",
+          "lexeme_utf8": "engagement"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "eab762a03fd979a04cc4706e6536d382bc89d2d1356afcd054a16b2235ecd471",
+          "lexeme_utf8": "finance"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "2ad29f65743a0524d916bfb3e24f5034c970b8daa7749699a88bd7096129fa09",
+          "lexeme_utf8": "department"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "d767748a603799c85319dba02a583b3fdbe28ae5f82b2e872d6bb66cf104e62c",
+          "lexeme_utf8": "under"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "048a2730d09826f3ea1008af47bd8f1209c0eeb3a3a2ef7d2531bd053ea1eebc",
+          "lexeme_utf8": "Emily"
+        },
+        {
+          "character_actions": 11,
+          "excess_over_one_compact_action": 10,
+          "lexeme_sha256": "05526acdf2132ef9d901828977abae7516b29942cf958f484b10c68edcd7e6b2",
+          "lexeme_utf8": "highlighted"
+        },
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "0af96a8ed622a394e8b2a239284ee46e9a7a7b0ec38191bbd08571b171118dd6",
+          "lexeme_utf8": "budget"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "1bd305c929ba350e05b4e43395ef5764e980f105828dd836265c38cede22b71c",
+          "lexeme_utf8": "surplus"
+        },
+        {
+          "character_actions": 3,
+          "excess_over_one_compact_action": 2,
+          "lexeme_sha256": "458a4770df2b51b57769fc806cab05bdaf02acce2edd42b90b6dd55dee1ea038",
+          "lexeme_utf8": "due"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "8c6fb1e9e37a1aea1d308c785192e1a17d71cef08c7f50a68d2e0ab292b2e7f4",
+          "lexeme_utf8": "lower"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "cea23dd4b87e8b00d19fb9ccaaef93e97353c7353e2070f3baf05aeb3995dff4",
+          "lexeme_utf8": "expected"
+        },
+        {
+          "character_actions": 11,
+          "excess_over_one_compact_action": 10,
+          "lexeme_sha256": "d5e4f7f12f0e53151a465a339a63be9d1ec2e354f82f1c3847c54705ab2d2074",
+          "lexeme_utf8": "operational"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "bcde6928e538c63c2cb8b26055ef80e2d267c4b682d2680ca29aece97ce76f1b",
+          "lexeme_utf8": "costs"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "81d647f2107942499bba59327b07600356b8b1cb9b8a47bac5fb77b41a22990b",
+          "lexeme_utf8": "concluded"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "33b7bcc005217d257f0ee15bc9ac58455fae85cab529e6bd0bce8a191502c596",
+          "lexeme_utf8": "allocate"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "41d311a605520fc7b8b9a980a79437a26e26cebcbfdd569dd78d30f7cb3e7237",
+          "lexeme_utf8": "resources"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "e2a530e251d3675034d23f5c5f87f54ec3182a088ba7d13350824794f8e6b76e",
+          "lexeme_utf8": "marketing"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "ca8b22d0db83a22db163b560b3e4e51527e533d31d067b614a0c33c4d2df8432",
+          "lexeme_utf8": "team"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "3e94d01a61597544561811ff4129f3fe03041806dea18d9af511c8b9ad949374",
+          "lexeme_utf8": "capitalize"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "1bd305c929ba350e05b4e43395ef5764e980f105828dd836265c38cede22b71c",
+          "lexeme_utf8": "surplus"
+        }
+      ],
+      "output_characters": 632,
+      "output_utf8_bytes": 632,
+      "record_id": "phase1-validation-instruction_following-0078-v2"
+    },
+    {
+      "action_types": {
+        "character": 323,
+        "lexeme": 157,
+        "pointer": 15
+      },
+      "actions": 496,
+      "capability": "instruction_following",
+      "excess_over_320": 176,
+      "fallback_excess_actions": 278,
+      "fallback_lexemes": [
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "6259eafc62aa40d8df1a69e0fa5bf3ebe516fcc10c82dac04689ff36a8c001e7",
+          "lexeme_utf8": "During"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "52cb0c6abb02dced4eb97286d6f91d4c4d09dffcd60797f58a2915a53b981412",
+          "lexeme_utf8": "quarterly"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "ca8b22d0db83a22db163b560b3e4e51527e533d31d067b614a0c33c4d2df8432",
+          "lexeme_utf8": "team"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "985959785319747668373cc6dee294b11db782b03cdd90a2851fbdc0637c6b7b",
+          "lexeme_utf8": "Project"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "18833da39fb9b7f8c917fe0220daf9cf12e6524df8fb16e39f04dbe827e2d200",
+          "lexeme_utf8": "Delta"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "e3456bc1f4d270f4a97933758645fdc21e39642b31ca343c1818f7972ac27906",
+          "lexeme_utf8": "lead"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "88fa0d759f845b47c044c2cd44e29082cf6fea665c30c146374ec7c8f3d699e3",
+          "lexeme_utf8": "developer"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "7e8c729e4e4ecc320cb411c4d1419bf5fbad733212d4e9491b7630aaef0b8b1c",
+          "lexeme_utf8": "Sarah"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "8e752bb9817c063245abbe06c58903236866f4ef3934a3d68ce059e06345e67c",
+          "lexeme_utf8": "reported"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "21606b5837ee49171e56cff2afe21083fb4dfe5c15c79b54695c2dc335181c89",
+          "lexeme_utf8": "completion"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "10e08a419e850eba1ebba18fdd28eb7ec1b7e8baa9bcc3b973e2b8891ec726be",
+          "lexeme_utf8": "backend"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "cea23dd4b87e8b00d19fb9ccaaef93e97353c7353e2070f3baf05aeb3995dff4",
+          "lexeme_utf8": "expected"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "21606b5837ee49171e56cff2afe21083fb4dfe5c15c79b54695c2dc335181c89",
+          "lexeme_utf8": "completion"
+        },
+        {
+          "character_actions": 2,
+          "excess_over_one_compact_action": 1,
+          "lexeme_sha256": "8845886be6cbcf285d18a66a83d622fdcf265ba4451ea2b2f4189ebf04eba915",
+          "lexeme_utf8": "Q2"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "e2a530e251d3675034d23f5c5f87f54ec3182a088ba7d13350824794f8e6b76e",
+          "lexeme_utf8": "marketing"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "ca8b22d0db83a22db163b560b3e4e51527e533d31d067b614a0c33c4d2df8432",
+          "lexeme_utf8": "team"
+        },
+        {
+          "character_actions": 3,
+          "excess_over_one_compact_action": 2,
+          "lexeme_sha256": "021f8ffac9f9a70fd3468b23fc6f299877339299a4ae8764e892e3f197e867f5",
+          "lexeme_utf8": "led"
+        },
+        {
+          "character_actions": 3,
+          "excess_over_one_compact_action": 2,
+          "lexeme_sha256": "81f3bf42a93cf18dece9321ac5c93313126eb5ca92164d74643e4cbf60ecde9c",
+          "lexeme_utf8": "Tom"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "cab80b3079898c6679be9a923ffb4edfc2a8d9ca0411bb10accdaca70c0274db",
+          "lexeme_utf8": "presented"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "3dc260b2472062d9c57bd930b02f23831d917b8f3e3234b6d63964a53c31d3aa",
+          "lexeme_utf8": "campaign"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "73dff70e25ad51ca765a584eef93a1cd909527e2ef4860e0b12f0a7e7ae1979a",
+          "lexeme_utf8": "strategy"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "26cafb94003a654827f52047a9368c0821f01f4512828a68f7bd4b44e6a0afcf",
+          "lexeme_utf8": "targets"
+        },
+        {
+          "character_actions": 2,
+          "excess_over_one_compact_action": 1,
+          "lexeme_sha256": "4ec9599fc203d176a301536c2e091a19bc852759b255bd6818810a42c5fed14a",
+          "lexeme_utf8": "18"
+        },
+        {
+          "character_actions": 2,
+          "excess_over_one_compact_action": 1,
+          "lexeme_sha256": "b7a56873cd771f2c446d369b649430b65a756ba278ff97ec81bb6f55b2e73569",
+          "lexeme_utf8": "25"
+        },
+        {
+          "character_actions": 3,
+          "excess_over_one_compact_action": 2,
+          "lexeme_sha256": "013f54400c82da08037759ada907a8b864e97de81c088a182062c4b5622fd2ab",
+          "lexeme_utf8": "age"
+        },
+        {
+          "character_actions": 11,
+          "excess_over_one_compact_action": 10,
+          "lexeme_sha256": "87ce5638c90315a1738b58b2a336b1b75aa8b621186ce070e653503e27b52ea4",
+          "lexeme_utf8": "demographic"
+        },
+        {
+          "character_actions": 11,
+          "excess_over_one_compact_action": 10,
+          "lexeme_sha256": "4268646d73c07b72b086249c11d32f8f4a3416c9e792bcb1338a03cba58903bf",
+          "lexeme_utf8": "emphasizing"
+        },
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "3e860f41a5ea92c49803d6ec96d452693b6dcefb0e8c0bf0125b0e3debac5281",
+          "lexeme_utf8": "social"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "721c9525ade2ea8903d343ef25cf68b9bf4ab0aad56bb7b01fbe48d09bc7fcf4",
+          "lexeme_utf8": "media"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "495b93a386a436dc7ba0be4c6efe2c04139ec00d8612a51fe9494c0eaec13e78",
+          "lexeme_utf8": "engagement"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "eab762a03fd979a04cc4706e6536d382bc89d2d1356afcd054a16b2235ecd471",
+          "lexeme_utf8": "finance"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "2ad29f65743a0524d916bfb3e24f5034c970b8daa7749699a88bd7096129fa09",
+          "lexeme_utf8": "department"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "d767748a603799c85319dba02a583b3fdbe28ae5f82b2e872d6bb66cf104e62c",
+          "lexeme_utf8": "under"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "048a2730d09826f3ea1008af47bd8f1209c0eeb3a3a2ef7d2531bd053ea1eebc",
+          "lexeme_utf8": "Emily"
+        },
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "0af96a8ed622a394e8b2a239284ee46e9a7a7b0ec38191bbd08571b171118dd6",
+          "lexeme_utf8": "budget"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "30662c63c5906f251d9003de64b5df73552566b0aa1bdff4330699cebdb94acc",
+          "lexeme_utf8": "indicating"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "e20a548f23fa36bc8d5ba48237ec3ee4d4f00087841d3614f81749e3c6c1b47e",
+          "lexeme_utf8": "increase"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "e2a530e251d3675034d23f5c5f87f54ec3182a088ba7d13350824794f8e6b76e",
+          "lexeme_utf8": "marketing"
+        },
+        {
+          "character_actions": 11,
+          "excess_over_one_compact_action": 10,
+          "lexeme_sha256": "e7d78e39e8ccc66caf715dd8921ea2c1e6640cdc6385eca2850a4772711300f7",
+          "lexeme_utf8": "expenditure"
+        },
+        {
+          "character_actions": 11,
+          "excess_over_one_compact_action": 10,
+          "lexeme_sha256": "87b477dbf620421499502ce07068f2904c9ed6d2c85d945ae55077730bec03b5",
+          "lexeme_utf8": "accommodate"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "73dff70e25ad51ca765a584eef93a1cd909527e2ef4860e0b12f0a7e7ae1979a",
+          "lexeme_utf8": "strategy"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "81d647f2107942499bba59327b07600356b8b1cb9b8a47bac5fb77b41a22990b",
+          "lexeme_utf8": "concluded"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "c983c585ac3c40d920834f96200066352ff58e323da4dadae1d948fb27e63f82",
+          "lexeme_utf8": "consensus"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "df09e9cc59fb4d30dbd4799a6c47b77ebd3c8452a48189bb3a8b8c50eeac21d2",
+          "lexeme_utf8": "reassess"
+        },
+        {
+          "character_actions": 12,
+          "excess_over_one_compact_action": 11,
+          "lexeme_sha256": "64a3d89bb49091111f4ca7fc65dca5a3012a3541fd6e0eecd55cc56104064936",
+          "lexeme_utf8": "developments"
+        }
+      ],
+      "output_characters": 637,
+      "output_utf8_bytes": 637,
+      "record_id": "phase1-validation-instruction_following-0026-v2"
+    },
+    {
+      "action_types": {
+        "character": 303,
+        "lexeme": 165,
+        "pointer": 14
+      },
+      "actions": 483,
+      "capability": "instruction_following",
+      "excess_over_320": 163,
+      "fallback_excess_actions": 258,
+      "fallback_lexemes": [
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "6259eafc62aa40d8df1a69e0fa5bf3ebe516fcc10c82dac04689ff36a8c001e7",
+          "lexeme_utf8": "During"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "52cb0c6abb02dced4eb97286d6f91d4c4d09dffcd60797f58a2915a53b981412",
+          "lexeme_utf8": "quarterly"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "ca8b22d0db83a22db163b560b3e4e51527e533d31d067b614a0c33c4d2df8432",
+          "lexeme_utf8": "team"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "985959785319747668373cc6dee294b11db782b03cdd90a2851fbdc0637c6b7b",
+          "lexeme_utf8": "Project"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "18833da39fb9b7f8c917fe0220daf9cf12e6524df8fb16e39f04dbe827e2d200",
+          "lexeme_utf8": "Delta"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "e3456bc1f4d270f4a97933758645fdc21e39642b31ca343c1818f7972ac27906",
+          "lexeme_utf8": "lead"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "88fa0d759f845b47c044c2cd44e29082cf6fea665c30c146374ec7c8f3d699e3",
+          "lexeme_utf8": "developer"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "7e8c729e4e4ecc320cb411c4d1419bf5fbad733212d4e9491b7630aaef0b8b1c",
+          "lexeme_utf8": "Sarah"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "8e752bb9817c063245abbe06c58903236866f4ef3934a3d68ce059e06345e67c",
+          "lexeme_utf8": "reported"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "21606b5837ee49171e56cff2afe21083fb4dfe5c15c79b54695c2dc335181c89",
+          "lexeme_utf8": "completion"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "10e08a419e850eba1ebba18fdd28eb7ec1b7e8baa9bcc3b973e2b8891ec726be",
+          "lexeme_utf8": "backend"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "cea23dd4b87e8b00d19fb9ccaaef93e97353c7353e2070f3baf05aeb3995dff4",
+          "lexeme_utf8": "expected"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "21606b5837ee49171e56cff2afe21083fb4dfe5c15c79b54695c2dc335181c89",
+          "lexeme_utf8": "completion"
+        },
+        {
+          "character_actions": 2,
+          "excess_over_one_compact_action": 1,
+          "lexeme_sha256": "8845886be6cbcf285d18a66a83d622fdcf265ba4451ea2b2f4189ebf04eba915",
+          "lexeme_utf8": "Q2"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "e2a530e251d3675034d23f5c5f87f54ec3182a088ba7d13350824794f8e6b76e",
+          "lexeme_utf8": "marketing"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "ca8b22d0db83a22db163b560b3e4e51527e533d31d067b614a0c33c4d2df8432",
+          "lexeme_utf8": "team"
+        },
+        {
+          "character_actions": 3,
+          "excess_over_one_compact_action": 2,
+          "lexeme_sha256": "021f8ffac9f9a70fd3468b23fc6f299877339299a4ae8764e892e3f197e867f5",
+          "lexeme_utf8": "led"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "a8cfcd74832004951b4408cdb0a5dbcd8c7e52d43f7fe244bf720582e05241da",
+          "lexeme_utf8": "John"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "cab80b3079898c6679be9a923ffb4edfc2a8d9ca0411bb10accdaca70c0274db",
+          "lexeme_utf8": "presented"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "3dc260b2472062d9c57bd930b02f23831d917b8f3e3234b6d63964a53c31d3aa",
+          "lexeme_utf8": "campaign"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "73dff70e25ad51ca765a584eef93a1cd909527e2ef4860e0b12f0a7e7ae1979a",
+          "lexeme_utf8": "strategy"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "26cafb94003a654827f52047a9368c0821f01f4512828a68f7bd4b44e6a0afcf",
+          "lexeme_utf8": "targets"
+        },
+        {
+          "character_actions": 2,
+          "excess_over_one_compact_action": 1,
+          "lexeme_sha256": "4ec9599fc203d176a301536c2e091a19bc852759b255bd6818810a42c5fed14a",
+          "lexeme_utf8": "18"
+        },
+        {
+          "character_actions": 2,
+          "excess_over_one_compact_action": 1,
+          "lexeme_sha256": "b7a56873cd771f2c446d369b649430b65a756ba278ff97ec81bb6f55b2e73569",
+          "lexeme_utf8": "25"
+        },
+        {
+          "character_actions": 3,
+          "excess_over_one_compact_action": 2,
+          "lexeme_sha256": "013f54400c82da08037759ada907a8b864e97de81c088a182062c4b5622fd2ab",
+          "lexeme_utf8": "age"
+        },
+        {
+          "character_actions": 11,
+          "excess_over_one_compact_action": 10,
+          "lexeme_sha256": "87ce5638c90315a1738b58b2a336b1b75aa8b621186ce070e653503e27b52ea4",
+          "lexeme_utf8": "demographic"
+        },
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "fad8fb8fe9acb0794dc5053e2f553b14dffcd2b2787c649dafb690c84a936e4c",
+          "lexeme_utf8": "aiming"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "e20a548f23fa36bc8d5ba48237ec3ee4d4f00087841d3614f81749e3c6c1b47e",
+          "lexeme_utf8": "increase"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb",
+          "lexeme_utf8": "user"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "495b93a386a436dc7ba0be4c6efe2c04139ec00d8612a51fe9494c0eaec13e78",
+          "lexeme_utf8": "engagement"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "eab762a03fd979a04cc4706e6536d382bc89d2d1356afcd054a16b2235ecd471",
+          "lexeme_utf8": "finance"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "2ad29f65743a0524d916bfb3e24f5034c970b8daa7749699a88bd7096129fa09",
+          "lexeme_utf8": "department"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "d767748a603799c85319dba02a583b3fdbe28ae5f82b2e872d6bb66cf104e62c",
+          "lexeme_utf8": "under"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "048a2730d09826f3ea1008af47bd8f1209c0eeb3a3a2ef7d2531bd053ea1eebc",
+          "lexeme_utf8": "Emily"
+        },
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "0af96a8ed622a394e8b2a239284ee46e9a7a7b0ec38191bbd08571b171118dd6",
+          "lexeme_utf8": "budget"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "30662c63c5906f251d9003de64b5df73552566b0aa1bdff4330699cebdb94acc",
+          "lexeme_utf8": "indicating"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "e20a548f23fa36bc8d5ba48237ec3ee4d4f00087841d3614f81749e3c6c1b47e",
+          "lexeme_utf8": "increase"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "e2a530e251d3675034d23f5c5f87f54ec3182a088ba7d13350824794f8e6b76e",
+          "lexeme_utf8": "marketing"
+        },
+        {
+          "character_actions": 11,
+          "excess_over_one_compact_action": 10,
+          "lexeme_sha256": "e7d78e39e8ccc66caf715dd8921ea2c1e6640cdc6385eca2850a4772711300f7",
+          "lexeme_utf8": "expenditure"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "3dc260b2472062d9c57bd930b02f23831d917b8f3e3234b6d63964a53c31d3aa",
+          "lexeme_utf8": "campaign"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "4afe6ea150d532c17693519cac32da104f47073d500d2507272d294d8590d3f8",
+          "lexeme_utf8": "April"
+        },
+        {
+          "character_actions": 2,
+          "excess_over_one_compact_action": 1,
+          "lexeme_sha256": "6bde0b830d8bd56dea61c5c1cb648c7ffca6ffce2923ad1db9f29079cac947e0",
+          "lexeme_utf8": "th"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "df09e9cc59fb4d30dbd4799a6c47b77ebd3c8452a48189bb3a8b8c50eeac21d2",
+          "lexeme_utf8": "reassess"
+        },
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "0af96a8ed622a394e8b2a239284ee46e9a7a7b0ec38191bbd08571b171118dd6",
+          "lexeme_utf8": "budget"
+        },
+        {
+          "character_actions": 11,
+          "excess_over_one_compact_action": 10,
+          "lexeme_sha256": "4b41d567bc1383e6e31ae28d54f749350475661bff0824061ffc187c91ee158a",
+          "lexeme_utf8": "allocations"
+        }
+      ],
+      "output_characters": 636,
+      "output_utf8_bytes": 636,
+      "record_id": "phase1-validation-instruction_following-0082-v2"
+    },
+    {
+      "action_types": {
+        "character": 258,
+        "lexeme": 158,
+        "pointer": 15
+      },
+      "actions": 432,
+      "capability": "instruction_following",
+      "excess_over_320": 112,
+      "fallback_excess_actions": 219,
+      "fallback_lexemes": [
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "6259eafc62aa40d8df1a69e0fa5bf3ebe516fcc10c82dac04689ff36a8c001e7",
+          "lexeme_utf8": "During"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "52cb0c6abb02dced4eb97286d6f91d4c4d09dffcd60797f58a2915a53b981412",
+          "lexeme_utf8": "quarterly"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "ca8b22d0db83a22db163b560b3e4e51527e533d31d067b614a0c33c4d2df8432",
+          "lexeme_utf8": "team"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "985959785319747668373cc6dee294b11db782b03cdd90a2851fbdc0637c6b7b",
+          "lexeme_utf8": "Project"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "18833da39fb9b7f8c917fe0220daf9cf12e6524df8fb16e39f04dbe827e2d200",
+          "lexeme_utf8": "Delta"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "e3456bc1f4d270f4a97933758645fdc21e39642b31ca343c1818f7972ac27906",
+          "lexeme_utf8": "lead"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "88fa0d759f845b47c044c2cd44e29082cf6fea665c30c146374ec7c8f3d699e3",
+          "lexeme_utf8": "developer"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "7e8c729e4e4ecc320cb411c4d1419bf5fbad733212d4e9491b7630aaef0b8b1c",
+          "lexeme_utf8": "Sarah"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "8e752bb9817c063245abbe06c58903236866f4ef3934a3d68ce059e06345e67c",
+          "lexeme_utf8": "reported"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "21606b5837ee49171e56cff2afe21083fb4dfe5c15c79b54695c2dc335181c89",
+          "lexeme_utf8": "completion"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "10e08a419e850eba1ebba18fdd28eb7ec1b7e8baa9bcc3b973e2b8891ec726be",
+          "lexeme_utf8": "backend"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "cea23dd4b87e8b00d19fb9ccaaef93e97353c7353e2070f3baf05aeb3995dff4",
+          "lexeme_utf8": "expected"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "21606b5837ee49171e56cff2afe21083fb4dfe5c15c79b54695c2dc335181c89",
+          "lexeme_utf8": "completion"
+        },
+        {
+          "character_actions": 2,
+          "excess_over_one_compact_action": 1,
+          "lexeme_sha256": "8845886be6cbcf285d18a66a83d622fdcf265ba4451ea2b2f4189ebf04eba915",
+          "lexeme_utf8": "Q2"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "e2a530e251d3675034d23f5c5f87f54ec3182a088ba7d13350824794f8e6b76e",
+          "lexeme_utf8": "marketing"
+        },
+        {
+          "character_actions": 4,
+          "excess_over_one_compact_action": 3,
+          "lexeme_sha256": "ca8b22d0db83a22db163b560b3e4e51527e533d31d067b614a0c33c4d2df8432",
+          "lexeme_utf8": "team"
+        },
+        {
+          "character_actions": 3,
+          "excess_over_one_compact_action": 2,
+          "lexeme_sha256": "021f8ffac9f9a70fd3468b23fc6f299877339299a4ae8764e892e3f197e867f5",
+          "lexeme_utf8": "led"
+        },
+        {
+          "character_actions": 3,
+          "excess_over_one_compact_action": 2,
+          "lexeme_sha256": "81f3bf42a93cf18dece9321ac5c93313126eb5ca92164d74643e4cbf60ecde9c",
+          "lexeme_utf8": "Tom"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "cab80b3079898c6679be9a923ffb4edfc2a8d9ca0411bb10accdaca70c0274db",
+          "lexeme_utf8": "presented"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "3dc260b2472062d9c57bd930b02f23831d917b8f3e3234b6d63964a53c31d3aa",
+          "lexeme_utf8": "campaign"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "73dff70e25ad51ca765a584eef93a1cd909527e2ef4860e0b12f0a7e7ae1979a",
+          "lexeme_utf8": "strategy"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "26cafb94003a654827f52047a9368c0821f01f4512828a68f7bd4b44e6a0afcf",
+          "lexeme_utf8": "targets"
+        },
+        {
+          "character_actions": 2,
+          "excess_over_one_compact_action": 1,
+          "lexeme_sha256": "4ec9599fc203d176a301536c2e091a19bc852759b255bd6818810a42c5fed14a",
+          "lexeme_utf8": "18"
+        },
+        {
+          "character_actions": 2,
+          "excess_over_one_compact_action": 1,
+          "lexeme_sha256": "b7a56873cd771f2c446d369b649430b65a756ba278ff97ec81bb6f55b2e73569",
+          "lexeme_utf8": "25"
+        },
+        {
+          "character_actions": 3,
+          "excess_over_one_compact_action": 2,
+          "lexeme_sha256": "013f54400c82da08037759ada907a8b864e97de81c088a182062c4b5622fd2ab",
+          "lexeme_utf8": "age"
+        },
+        {
+          "character_actions": 11,
+          "excess_over_one_compact_action": 10,
+          "lexeme_sha256": "87ce5638c90315a1738b58b2a336b1b75aa8b621186ce070e653503e27b52ea4",
+          "lexeme_utf8": "demographic"
+        },
+        {
+          "character_actions": 11,
+          "excess_over_one_compact_action": 10,
+          "lexeme_sha256": "4268646d73c07b72b086249c11d32f8f4a3416c9e792bcb1338a03cba58903bf",
+          "lexeme_utf8": "emphasizing"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "d42a5821ba1507a63696c96acb59e38e081cf4f8cf573cc92c7e07559d4ae891",
+          "lexeme_utf8": "innovative"
+        },
+        {
+          "character_actions": 8,
+          "excess_over_one_compact_action": 7,
+          "lexeme_sha256": "5b8a8b56dada6ce7567442b4935298df7de2badd7becdcf4915a59487338ca4b",
+          "lexeme_utf8": "features"
+        },
+        {
+          "character_actions": 7,
+          "excess_over_one_compact_action": 6,
+          "lexeme_sha256": "eab762a03fd979a04cc4706e6536d382bc89d2d1356afcd054a16b2235ecd471",
+          "lexeme_utf8": "finance"
+        },
+        {
+          "character_actions": 10,
+          "excess_over_one_compact_action": 9,
+          "lexeme_sha256": "2ad29f65743a0524d916bfb3e24f5034c970b8daa7749699a88bd7096129fa09",
+          "lexeme_utf8": "department"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "d767748a603799c85319dba02a583b3fdbe28ae5f82b2e872d6bb66cf104e62c",
+          "lexeme_utf8": "under"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "048a2730d09826f3ea1008af47bd8f1209c0eeb3a3a2ef7d2531bd053ea1eebc",
+          "lexeme_utf8": "Emily"
+        },
+        {
+          "character_actions": 9,
+          "excess_over_one_compact_action": 8,
+          "lexeme_sha256": "9599915bd8cd62b6b42e6c37b5b681a76991a7c5be1fde9971278ce65b99d550",
+          "lexeme_utf8": "confirmed"
+        },
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "0af96a8ed622a394e8b2a239284ee46e9a7a7b0ec38191bbd08571b171118dd6",
+          "lexeme_utf8": "budget"
+        },
+        {
+          "character_actions": 11,
+          "excess_over_one_compact_action": 10,
+          "lexeme_sha256": "d859a706a3c5a6eb4130f33589a13fabb925aa3e7283b0998fa3916d0f02af3a",
+          "lexeme_utf8": "contingency"
+        },
+        {
+          "character_actions": 5,
+          "excess_over_one_compact_action": 4,
+          "lexeme_sha256": "4afe6ea150d532c17693519cac32da104f47073d500d2507272d294d8590d3f8",
+          "lexeme_utf8": "April"
+        },
+        {
+          "character_actions": 2,
+          "excess_over_one_compact_action": 1,
+          "lexeme_sha256": "6bde0b830d8bd56dea61c5c1cb648c7ffca6ffce2923ad1db9f29079cac947e0",
+          "lexeme_utf8": "th"
+        },
+        {
+          "character_actions": 6,
+          "excess_over_one_compact_action": 5,
+          "lexeme_sha256": "abfc412ce6e530df63b0dc9bf4e02bb3cb1719ab967c8f4ea3951ab5bae4ff3f",
+          "lexeme_utf8": "launch"
+        }
+      ],
+      "output_characters": 597,
+      "output_utf8_bytes": 597,
+      "record_id": "phase1-validation-instruction_following-0030-v2"
+    }
+  ],
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-length-attribution-result/1",
+  "host_changed": false,
+  "phase3_certified": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_LENGTH_ATTRIBUTION_PROTOCOL_V31.json",
+    "sha256": "0af754e6bb486ee8ac40770345a68ed10ed1af5a72e39aae0933c4d22ba4727b"
+  },
+  "status": "PASS_READ_ONLY_ATTRIBUTION",
+  "training_performed": false
+}
