@@ -1,0 +1,82 @@
+{
+  "format": "abi-capability-compiler-phase3-direct-core-screen/1",
+  "protocol_id": "abi-capability-compiler-phase3-direct-core-v23",
+  "status": "PREREGISTERED_CONDITIONAL_ABSOLUTE_SCREEN",
+  "effective_date": "2026-08-06",
+  "historical_evidence_changed": false,
+  "phase2_status": "MACHINE_COMPLETE_HUMAN_RATINGS_DEFERRED_NOT_PASSED",
+  "promotion_eligible": false,
+  "phase4_status": "LOCKED",
+  "final_test_access": "PROHIBITED",
+  "objective": "Screen one materially distinct self-causal LayerCake-native direct English-core artifact against the locked absolute development gates before spending compute on the complete causal control matrix.",
+  "measured_basis": {
+    "current_and_expanded_hidden_state_bridges_sufficient": false,
+    "sealed_layercake_regression": false,
+    "layercake_host_construct_ready": true,
+    "material_difference": "The artifact owns its causal response state and crosses the host boundary as an unchanged byte-facing neural core; it does not patch frozen transformer blocks or realize outputs through host-response residuals."
+  },
+  "phase1_ir": "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir",
+  "development_catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+  "teacher_reference": "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl",
+  "layercake_host": {
+    "repository": "../layercake_release",
+    "commit": "89ef5d9c5d36ca692da03c0fbf79b23744e41134",
+    "interface": "lc-direct-neural-core/1",
+    "interface_sha256": "ed32179655dc8991610a1b47e55d8c8ccc80bb7f35f74764cbd54e79bc520213",
+    "construct_result": "../layercake_release/results/moonshot/postrelease/direct_neural_core_host_construct_v1.json",
+    "construct_only_no_quality_or_speed_inheritance": true
+  },
+  "architecture": {
+    "model_width": 192,
+    "attention_heads": 6,
+    "encoder_layers": 2,
+    "decoder_layers": 2,
+    "feedforward_width": 768,
+    "pointer_width": 128,
+    "dropout": 0.1,
+    "maximum_source_lexemes": 128,
+    "maximum_target_actions": 320
+  },
+  "training": {
+    "device": "cuda",
+    "precision": "float16_autocast_with_grad_scaler",
+    "seed": 240017,
+    "steps": 4000,
+    "batch_size": 16,
+    "learning_rate": 0.0003,
+    "optimizer": "AdamW",
+    "gradient_clip_norm": 1.0,
+    "curve_interval": 250,
+    "trainable_parameters": 4011040,
+    "fixed_vocabulary": 4575,
+    "source_parameters_copied": 0,
+    "source_blocks_retained": 0,
+    "teacher_present_at_inference": false
+  },
+  "controls_deferred_until_absolute_pass": true,
+  "absolute_screen": {
+    "prompts": 1400,
+    "prompts_per_capability": 100,
+    "autonomous_generation": true,
+    "per_capability_functional_point_estimate_minimum": 0.9,
+    "per_capability_functional_wilson_lower_minimum": 0.85,
+    "prompt_grounding_instruction_adherence_and_abstention_point_minimum": 0.95,
+    "prompt_grounding_instruction_adherence_and_abstention_wilson_lower_minimum": 0.9,
+    "teacher_relative_paired_difference_lower_bound_minimum": -0.05,
+    "repetition_collapse_count_maximum": 0,
+    "generation_error_count_maximum": 0
+  },
+  "decision_rule": "If the initial artifact misses any absolute, critical, teacher-relative, collapse, or generation-error gate, close this architecture without training label-free, shuffled, bridge-only, or monolithic controls. If every gate passes, preregister and execute the complete matched causal matrix and three paired seeds. No result can certify Phase 3 while Phase 2 human ratings remain deferred.",
+  "bindings": {
+    "abi/capability_compiler_phase3_direct_core.py": "ccb205cdb2a3fb8736b5a4509c07b9dc6042640ee371c6b5d8679e41eacc2e83",
+    "tests/test_capability_compiler_phase3_direct_core.py": "8c9c73e0a9ca0365b60f82cfbf0127f4e88776f11ee238a4b310183199c6c24e",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V17.json": "c37a3bc9b865753d5b8abde4034702e553f65f02cb55e6b8765bc4ee454e5263",
+    "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl": "1081dbe57e75da50b2619bc2dab14c6441158dcd6068f2b864733936087e86a2",
+    "../layercake_release/moonshot/canonical_direct_neural_core_abi_v1.json": "ed32179655dc8991610a1b47e55d8c8ccc80bb7f35f74764cbd54e79bc520213",
+    "../layercake_release/layercake_extensions/direct_neural_core.py": "1854355b50c9593da221a075a9c07ff5b1bf0da333e980ba730d43f8e51f80e9",
+    "../layercake_release/results/moonshot/postrelease/direct_neural_core_host_construct_v1.json": "21bf013adcfcfabaae3935f4ed355c744108e48f46667ab19514f7ab3f1f02d9"
+  },
+  "claim_boundary": "Development-only absolute screen. It is neither a causal ABI result nor a LayerCake quality/performance result and cannot establish superiority over LoRA or distillation."
+}

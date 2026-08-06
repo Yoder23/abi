@@ -1,0 +1,20 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "version": 18,
+  "status_date": "2026-08-06",
+  "parent_state": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V17.json",
+  "historical_evidence_changed": false,
+  "phase0": "COMPLETE",
+  "phase1": "COMPLETE",
+  "phase2": "MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS",
+  "phase3": "UNCERTIFIED_DIRECT_CORE_ABSOLUTE_SCREEN_AUTHORIZED",
+  "phase4_through_8": "LOCKED",
+  "latest_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_CORE_PROTOCOL_V23.json",
+  "layercake_regression": false,
+  "host_representational_ceiling_proven": false,
+  "hidden_state_bridge_family": "CLOSED_INSUFFICIENT",
+  "layercake_direct_core_host_construct": "PASS_CONSTRUCT_ONLY",
+  "authorization": "Run only the V23 initial-seed direct-core absolute development screen. It uses the certified Phase 1 English IR and the external LayerCake direct-core interface without importing host quality or speed. Run causal controls and remaining seeds only if every locked absolute screen gate passes.",
+  "final_test_access": "PROHIBITED",
+  "abi_superiority_claim": "PROHIBITED"
+}
