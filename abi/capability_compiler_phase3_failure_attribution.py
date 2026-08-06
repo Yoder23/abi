@@ -196,47 +196,64 @@ def _encoded(row: Mapping[str, Any], tokenizer: Any, max_tokens: int) -> tuple[l
     return ids, len(prompt_ids)
 
 
+def _forward_batch(model: Any, entries: list[tuple[list[int], int]], device: torch.device) -> list[torch.Tensor]:
+    """Run exact right-padded causal rows and return unpadded logits."""
+
+    lengths = [len(ids) for ids, _ in entries]
+    maximum = max(lengths)
+    pad_id = int(model.config.eos_token_id)
+    ids = torch.full((len(entries), maximum), pad_id, dtype=torch.long, device=device)
+    attention = torch.zeros((len(entries), maximum), dtype=torch.long, device=device)
+    prompt_lengths = torch.tensor([prompt for _, prompt in entries], dtype=torch.long, device=device)
+    for index, ((values, _), length) in enumerate(zip(entries, lengths)):
+        ids[index, :length] = torch.tensor(values, dtype=torch.long, device=device)
+        attention[index, :length] = 1
+    result = model(ids, attention_mask=attention, prompt_lengths=prompt_lengths, use_cache=False)
+    return [result["logits"][index, :length].float() for index, length in enumerate(lengths)]
+
+
 @torch.inference_mode()
-def _teacher_forced(model: Any, tokenizer: Any, rows: list[dict[str, Any]], device: torch.device) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+def _teacher_forced(model: Any, tokenizer: Any, rows: list[dict[str, Any]], device: torch.device, batch_size: int) -> tuple[dict[str, Any], list[dict[str, Any]]]:
     per_prompt = []
     by_cap: dict[str, list[dict[str, Any]]] = defaultdict(list)
     total_nll = 0.0
     total_correct = 0
     total_tokens = 0
     repeat_errors = 0
-    for index, row in enumerate(rows):
-        ids, prompt_len = _encoded(row, tokenizer, int(model.config.max_tokens))
-        tensor = torch.tensor([ids], dtype=torch.long, device=device)
-        result = model(tensor, prompt_lengths=torch.tensor([prompt_len], device=device), use_cache=False)
-        logits = result["logits"][0, prompt_len - 1 : -1].float()
-        targets = tensor[0, prompt_len:]
-        losses = F.cross_entropy(logits, targets, reduction="none")
-        predictions = logits.argmax(dim=-1)
-        correct = predictions.eq(targets)
-        repeated = torch.zeros_like(correct)
-        for pos in range(len(targets)):
-            if not bool(correct[pos]):
-                repeated[pos] = bool((targets[max(0, pos - 8) : pos] == predictions[pos]).any())
-        item = {
-            "probe_id": str(row["teacher"]["probe_id"]),
-            "capability": str(row["teacher"]["capability"]),
-            "tokens": len(targets),
-            "nll_sum": float(losses.sum().item()),
-            "correct_tokens": int(correct.sum().item()),
-            "wrong_recent_repeat_predictions": int(repeated.sum().item()),
-            "predictions": [int(v) for v in predictions.cpu().tolist()],
-            "targets": [int(v) for v in targets.cpu().tolist()],
-            "prompt_length": prompt_len,
-            "input_ids": ids,
-        }
-        per_prompt.append(item)
-        by_cap[item["capability"]].append(item)
-        total_nll += item["nll_sum"]
-        total_correct += item["correct_tokens"]
-        total_tokens += item["tokens"]
-        repeat_errors += item["wrong_recent_repeat_predictions"]
-        if (index + 1) % 200 == 0:
-            print(json.dumps({"teacher_forced": index + 1}), flush=True)
+    for start in range(0, len(rows), batch_size):
+        batch_rows = rows[start : start + batch_size]
+        encoded = [_encoded(row, tokenizer, int(model.config.max_tokens)) for row in batch_rows]
+        outputs = _forward_batch(model, encoded, device)
+        for row, (ids, prompt_len), full_logits in zip(batch_rows, encoded, outputs):
+            logits = full_logits[prompt_len - 1 : -1]
+            targets = torch.tensor(ids[prompt_len:], dtype=torch.long, device=device)
+            losses = F.cross_entropy(logits, targets, reduction="none")
+            predictions = logits.argmax(dim=-1)
+            correct = predictions.eq(targets)
+            repeated = torch.zeros_like(correct)
+            for pos in range(len(targets)):
+                if not bool(correct[pos]):
+                    repeated[pos] = bool((targets[max(0, pos - 8) : pos] == predictions[pos]).any())
+            item = {
+                "probe_id": str(row["teacher"]["probe_id"]),
+                "capability": str(row["teacher"]["capability"]),
+                "tokens": len(targets),
+                "nll_sum": float(losses.sum().item()),
+                "correct_tokens": int(correct.sum().item()),
+                "wrong_recent_repeat_predictions": int(repeated.sum().item()),
+                "predictions": [int(v) for v in predictions.cpu().tolist()],
+                "targets": [int(v) for v in targets.cpu().tolist()],
+                "prompt_length": prompt_len,
+                "input_ids": ids,
+            }
+            per_prompt.append(item)
+            by_cap[item["capability"]].append(item)
+            total_nll += item["nll_sum"]
+            total_correct += item["correct_tokens"]
+            total_tokens += item["tokens"]
+            repeat_errors += item["wrong_recent_repeat_predictions"]
+        if min(start + batch_size, len(rows)) % 200 == 0:
+            print(json.dumps({"teacher_forced": min(start + batch_size, len(rows))}), flush=True)
 
     def summary(values: list[dict[str, Any]]) -> dict[str, Any]:
         tokens = sum(v["tokens"] for v in values)
@@ -291,7 +308,7 @@ def _autonomous(model: Any, tokenizer: Any, rows: list[dict[str, Any]], device: 
 
 
 @torch.inference_mode()
-def _corruption_recovery(model: Any, clean_rows: list[dict[str, Any]], device: torch.device, per_capability: int) -> dict[str, Any]:
+def _corruption_recovery(model: Any, clean_rows: list[dict[str, Any]], device: torch.device, per_capability: int, batch_size: int) -> dict[str, Any]:
     selected = []
     counts = Counter()
     for row in clean_rows:
@@ -299,58 +316,44 @@ def _corruption_recovery(model: Any, clean_rows: list[dict[str, Any]], device: t
         if counts[cap] < per_capability:
             selected.append(row)
             counts[cap] += 1
-    observations = []
-    for index, row in enumerate(selected):
+    prepared = []
+    for row in selected:
         wrong = next((i for i, (p, t) in enumerate(zip(row["predictions"], row["targets"])) if p != t), None)
         if wrong is None or wrong + 1 >= len(row["targets"]):
             continue
         corrupted = list(row["input_ids"])
         absolute = row["prompt_length"] + wrong
         corrupted[absolute] = row["predictions"][wrong]
-        tensor = torch.tensor([corrupted], dtype=torch.long, device=device)
-        result = model(tensor, prompt_lengths=torch.tensor([row["prompt_length"]], device=device), use_cache=False)
-        logits = result["logits"][0, absolute:-1].float()
-        targets = tensor.new_tensor(row["targets"][wrong + 1 :])
-        clean_predictions = row["predictions"][wrong + 1 :]
-        clean_targets = row["targets"][wrong + 1 :]
-        limit = min(len(targets), max(HORIZONS))
-        if limit == 0:
-            continue
-        losses = F.cross_entropy(logits[:limit], targets[:limit], reduction="none")
-        predictions = logits[:limit].argmax(dim=-1)
-        item = {"probe_id": row["probe_id"], "capability": row["capability"], "available": limit, "horizons": {}}
-        for horizon in HORIZONS:
-            used = min(horizon, limit)
-            target_slice = clean_targets[:used]
-            clean_correct = sum(int(p == t) for p, t in zip(clean_predictions[:used], target_slice))
-            corrupt_correct = int(predictions[:used].eq(targets[:used]).sum().item())
-            clean_logits_nll = None
-            # The clean aggregate is reconstructed in a second, exact forward below.
-            item["horizons"][str(horizon)] = {
-                "tokens": used,
-                "clean_correct": clean_correct,
-                "corrupted_correct": corrupt_correct,
-                "corrupted_nll_sum": float(losses[:used].sum().item()),
-                "clean_nll_sum": clean_logits_nll,
-            }
-        observations.append(item)
-        if (index + 1) % 70 == 0:
-            print(json.dumps({"corruption_recovery": index + 1}), flush=True)
-
-    # Obtain exact clean-prefix NLL for the same token windows.
-    source = {row["probe_id"]: row for row in clean_rows}
-    for item in observations:
-        row = source[item["probe_id"]]
-        wrong = next(i for i, (p, t) in enumerate(zip(row["predictions"], row["targets"])) if p != t)
-        tensor = torch.tensor([row["input_ids"]], dtype=torch.long, device=device)
-        result = model(tensor, prompt_lengths=torch.tensor([row["prompt_length"]], device=device), use_cache=False)
-        absolute = row["prompt_length"] + wrong
-        logits = result["logits"][0, absolute:-1].float()
-        targets = tensor.new_tensor(row["targets"][wrong + 1 :])
-        losses = F.cross_entropy(logits[: max(HORIZONS)], targets[: max(HORIZONS)], reduction="none")
-        for horizon in HORIZONS:
-            used = item["horizons"][str(horizon)]["tokens"]
-            item["horizons"][str(horizon)]["clean_nll_sum"] = float(losses[:used].sum().item())
+        prepared.append((row, wrong, absolute, corrupted))
+    observations = []
+    for start in range(0, len(prepared), batch_size):
+        batch = prepared[start : start + batch_size]
+        corrupt_logits = _forward_batch(model, [(v[3], v[0]["prompt_length"]) for v in batch], device)
+        clean_logits = _forward_batch(model, [(v[0]["input_ids"], v[0]["prompt_length"]) for v in batch], device)
+        for (row, wrong, absolute, _), corrupted_full, clean_full in zip(batch, corrupt_logits, clean_logits):
+            targets = torch.tensor(row["targets"][wrong + 1 :], dtype=torch.long, device=device)
+            limit = min(len(targets), max(HORIZONS))
+            if limit == 0:
+                continue
+            corrupted_slice = corrupted_full[absolute:-1][:limit]
+            clean_slice = clean_full[absolute:-1][:limit]
+            corrupt_losses = F.cross_entropy(corrupted_slice, targets[:limit], reduction="none")
+            clean_losses = F.cross_entropy(clean_slice, targets[:limit], reduction="none")
+            corrupt_predictions = corrupted_slice.argmax(dim=-1)
+            clean_predictions = clean_slice.argmax(dim=-1)
+            item = {"probe_id": row["probe_id"], "capability": row["capability"], "available": limit, "horizons": {}}
+            for horizon in HORIZONS:
+                used = min(horizon, limit)
+                item["horizons"][str(horizon)] = {
+                    "tokens": used,
+                    "clean_correct": int(clean_predictions[:used].eq(targets[:used]).sum().item()),
+                    "corrupted_correct": int(corrupt_predictions[:used].eq(targets[:used]).sum().item()),
+                    "corrupted_nll_sum": float(corrupt_losses[:used].sum().item()),
+                    "clean_nll_sum": float(clean_losses[:used].sum().item()),
+                }
+            observations.append(item)
+        if min(start + batch_size, len(prepared)) % 70 == 0:
+            print(json.dumps({"corruption_recovery": min(start + batch_size, len(prepared))}), flush=True)
 
     summaries = {}
     for horizon in HORIZONS:
@@ -392,12 +395,13 @@ def run(root: Path, protocol_path: Path, output_dir: Path) -> dict[str, Any]:
             if sha256_file(candidate / "model.safetensors") != metadata["checkpoint"]["sha256"]:
                 raise DiagnosticError(f"candidate checkpoint changed: {system}")
             model, tokenizer = load_candidate(root=root, protocol=v11, candidate_dir=candidate, device=device)
-        teacher_forced, details = _teacher_forced(model, tokenizer, rows, device)
+        batch_size = int(protocol["execution"]["batch_size"])
+        teacher_forced, details = _teacher_forced(model, tokenizer, rows, device, batch_size)
         autonomous = _autonomous(model, tokenizer, rows, device) if system == "P0" else protocol["sealed_autonomous_results"][system]
         results[system] = {"teacher_forced": teacher_forced, "autonomous": autonomous}
         if system == "C0":
             c0_details = details
-            recovery = _corruption_recovery(model, details, device, int(protocol["corruption_recovery"]["prompts_per_capability"]))
+            recovery = _corruption_recovery(model, details, device, int(protocol["corruption_recovery"]["prompts_per_capability"]), batch_size)
         del model
         torch.cuda.empty_cache()
     assert c0_details is not None
