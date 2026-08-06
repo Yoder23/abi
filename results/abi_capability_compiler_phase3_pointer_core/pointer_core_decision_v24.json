@@ -1,0 +1,371 @@
+{
+  "candidate": {
+    "best_case_if_every_error_became_a_pass": {
+      "observations": 1400,
+      "passes": 632,
+      "point": 0.4514285714285714
+    },
+    "checkpoint_bytes": 16051488,
+    "checkpoint_sha256": "e588a5a1d68296c57131fa2c4264d870ee37bc28f1f5078b6e5b28587d1dd458",
+    "functional_passes": 601,
+    "functional_wilson": {
+      "lower_95": 0.40358613243128116,
+      "point": 0.42928571428571427,
+      "upper_95": 0.4553722999786497
+    },
+    "generation_error_types": {
+      "UnicodeDecodeError": 31
+    },
+    "generation_errors": 31,
+    "imported_information": {
+      "authoritative_teacher_tokens": 215647,
+      "raw_prompt_bytes": 1381925,
+      "records": 7000,
+      "source_parameters_copied": 0,
+      "stored_activations": 0,
+      "stored_logits": 0,
+      "teacher_output_bytes": 671297
+    },
+    "observations": 1400,
+    "per_capability": {
+      "abstention": {
+        "collapses": 48,
+        "observations": 100,
+        "passes": 75,
+        "wilson": {
+          "lower_95": 0.656955364519384,
+          "point": 0.75,
+          "upper_95": 0.8245478863771232
+        }
+      },
+      "clarification": {
+        "collapses": 0,
+        "observations": 100,
+        "passes": 75,
+        "wilson": {
+          "lower_95": 0.656955364519384,
+          "point": 0.75,
+          "upper_95": 0.8245478863771232
+        }
+      },
+      "coherence": {
+        "collapses": 18,
+        "observations": 100,
+        "passes": 0,
+        "wilson": {
+          "lower_95": 3.469446951953614e-18,
+          "point": 0.0,
+          "upper_95": 0.03699349820698568
+        }
+      },
+      "conversation": {
+        "collapses": 8,
+        "observations": 100,
+        "passes": 50,
+        "wilson": {
+          "lower_95": 0.4038315303659956,
+          "point": 0.5,
+          "upper_95": 0.5961684696340044
+        }
+      },
+      "email_drafting_from_notes": {
+        "collapses": 48,
+        "observations": 100,
+        "passes": 40,
+        "wilson": {
+          "lower_95": 0.3094012864324589,
+          "point": 0.4,
+          "upper_95": 0.4979974132089382
+        }
+      },
+      "fact_free_reasoning": {
+        "collapses": 0,
+        "observations": 100,
+        "passes": 0,
+        "wilson": {
+          "lower_95": 3.469446951953614e-18,
+          "point": 0.0,
+          "upper_95": 0.03699349820698568
+        }
+      },
+      "fluent_realization": {
+        "collapses": 0,
+        "observations": 100,
+        "passes": 40,
+        "wilson": {
+          "lower_95": 0.3094012864324589,
+          "point": 0.4,
+          "upper_95": 0.4979974132089382
+        }
+      },
+      "format_control": {
+        "collapses": 0,
+        "observations": 100,
+        "passes": 54,
+        "wilson": {
+          "lower_95": 0.44264860323368227,
+          "point": 0.54,
+          "upper_95": 0.6343919169097589
+        }
+      },
+      "grammar": {
+        "collapses": 0,
+        "observations": 100,
+        "passes": 52,
+        "wilson": {
+          "lower_95": 0.4231657776522397,
+          "point": 0.52,
+          "upper_95": 0.615354482419481
+        }
+      },
+      "instruction_following": {
+        "collapses": 8,
+        "observations": 100,
+        "passes": 26,
+        "wilson": {
+          "lower_95": 0.18404698464748132,
+          "point": 0.26,
+          "upper_95": 0.3537098944918718
+        }
+      },
+      "prompt_grounding": {
+        "collapses": 9,
+        "observations": 100,
+        "passes": 39,
+        "wilson": {
+          "lower_95": 0.3001687400639441,
+          "point": 0.39,
+          "upper_95": 0.4879698295415926
+        }
+      },
+      "rewriting": {
+        "collapses": 0,
+        "observations": 100,
+        "passes": 65,
+        "wilson": {
+          "lower_95": 0.5525444329688796,
+          "point": 0.65,
+          "upper_95": 0.7363575175690247
+        }
+      },
+      "supplied_text_summarization": {
+        "collapses": 0,
+        "observations": 100,
+        "passes": 34,
+        "wilson": {
+          "lower_95": 0.25461520797348164,
+          "point": 0.34,
+          "upper_95": 0.43722271145275377
+        }
+      },
+      "tone_control": {
+        "collapses": 0,
+        "observations": 100,
+        "passes": 51,
+        "wilson": {
+          "lower_95": 0.4134801193402717,
+          "point": 0.51,
+          "upper_95": 0.6057800106955886
+        }
+      }
+    },
+    "repetition_collapses": 139,
+    "representation": {
+      "all_targets_losslessly_reconstructed": true,
+      "eligible_lexeme_pattern_ascii": "^(?:[A-Za-z_][A-Za-z0-9_]*|\\d+(?:\\.\\d+)?)$",
+      "pointer_actions": 44336,
+      "records_with_pointer_actions": 7000
+    },
+    "seed": 240017,
+    "source_blocks_retained": 0,
+    "system": "P0",
+    "teacher_present_at_inference": false,
+    "trainable_parameters": 4011040,
+    "training": {
+      "batch_size": 16,
+      "curves": [
+        {
+          "loss": 8.5051851272583,
+          "step": 1,
+          "wall_seconds": 0.34816290001617745
+        },
+        {
+          "loss": 1.4508304595947266,
+          "step": 250,
+          "wall_seconds": 9.232060900016222
+        },
+        {
+          "loss": 1.0665780305862427,
+          "step": 500,
+          "wall_seconds": 17.83833630004665
+        },
+        {
+          "loss": 0.41566669940948486,
+          "step": 750,
+          "wall_seconds": 26.369044699997175
+        },
+        {
+          "loss": 0.7149803042411804,
+          "step": 1000,
+          "wall_seconds": 34.96104050002759
+        },
+        {
+          "loss": 0.4674138128757477,
+          "step": 1250,
+          "wall_seconds": 43.51695360004669
+        },
+        {
+          "loss": 0.7374686598777771,
+          "step": 1500,
+          "wall_seconds": 52.17269680002937
+        },
+        {
+          "loss": 0.25912272930145264,
+          "step": 1750,
+          "wall_seconds": 61.10627090005437
+        },
+        {
+          "loss": 0.6449857950210571,
+          "step": 2000,
+          "wall_seconds": 70.2710513000493
+        },
+        {
+          "loss": 0.40572190284729004,
+          "step": 2250,
+          "wall_seconds": 79.26027440000325
+        },
+        {
+          "loss": 0.4186307191848755,
+          "step": 2500,
+          "wall_seconds": 87.77054800000042
+        },
+        {
+          "loss": 0.3382713496685028,
+          "step": 2750,
+          "wall_seconds": 96.10433110001031
+        },
+        {
+          "loss": 0.28497472405433655,
+          "step": 3000,
+          "wall_seconds": 104.9529795999988
+        },
+        {
+          "loss": 0.38393011689186096,
+          "step": 3250,
+          "wall_seconds": 113.64549380005337
+        },
+        {
+          "loss": 0.1981448233127594,
+          "step": 3500,
+          "wall_seconds": 122.52387940004701
+        },
+        {
+          "loss": 0.3784141540527344,
+          "step": 3750,
+          "wall_seconds": 131.0033060000278
+        },
+        {
+          "loss": 0.2789858877658844,
+          "step": 4000,
+          "wall_seconds": 139.84486790001392
+        }
+      ],
+      "peak_cuda_allocated_bytes": 686518784,
+      "peak_process_rss_bytes": 1293647872,
+      "record_sequence_sha256": "f076f35669e610e2d1da7c9d57432668575e9122d10856fe2b340337303a544b",
+      "sampled_by_capability": {
+        "abstention": 4571,
+        "clarification": 4571,
+        "coherence": 4572,
+        "conversation": 4572,
+        "email_drafting_from_notes": 4571,
+        "fact_free_reasoning": 4571,
+        "fluent_realization": 4571,
+        "format_control": 4571,
+        "grammar": 4572,
+        "instruction_following": 4572,
+        "prompt_grounding": 4572,
+        "rewriting": 4571,
+        "supplied_text_summarization": 4572,
+        "tone_control": 4571
+      },
+      "skipped_amp_steps": 0,
+      "steps": 4000,
+      "wall_seconds": 139.8708555000485
+    }
+  },
+  "claim_boundary": "V24 is negative ABI representation evidence plus a bounded LayerCake UTF-8 contract finding. It does not establish Phase 3, teacher-relative quality, host performance, or ABI superiority over LoRA or distillation.",
+  "decision": {
+    "controls_run": false,
+    "next_step": "Do not train another pointer-core variant. Preserve V24, audit the exposed Unicode-validity contract separately in LayerCake, and require a new measured acquisition bottleneck plus fresh governance before any ABI successor.",
+    "reason": "Pointer supervision increased aggregate passes by 97 but failed every discriminating absolute family, increased collapses by 62, introduced 31 generation errors, and reduced prompt grounding from 50/100 to 39/100.",
+    "remaining_seeds_run": false,
+    "v24_closed": true,
+    "v24_promoted": false
+  },
+  "evidence": {
+    "checkpoint_sha256": "e588a5a1d68296c57131fa2c4264d870ee37bc28f1f5078b6e5b28587d1dd458",
+    "metadata_sha256": "20aeafe93ec5675536ed133af2a9d01c93d0f976636a4266df3b43d6dd3246d4",
+    "model_config_sha256": "09b9e5b15c67ce1b28aeeb9f7ed462738bc56dbadadeae2908d7c1eb30576536",
+    "outputs_sha256": "4c71772cefe0c21ed611a2729d24613e848143da9927762208ae9a9d16f106d3",
+    "receipt_sha256": "ae84dd76e1cbcd4e0bdf206e1583daf82b093edbbf8a21b6861ba7d46cb41c34",
+    "tokenizer_sha256": "33c284a73650202eaa902291d3c6815adb15b76fdd2cefdfa11c8e1b80eb9043",
+    "v23_metadata_sha256": "36b18b70db7248721099e7597f39dba27f5f51c9f22ce210e783473dd3792659",
+    "v23_outputs_sha256": "06be974ea5b834edd9aa2ac52d355b6982cfabbda322c8885c60c6685aea83ac"
+  },
+  "evidence_sha256": "c46275c3c4dafec7ffbcbbd476fbc6abf45f3b047628324af857be28b24c39b8",
+  "format": "abi-capability-compiler-phase3-pointer-core-decision/1",
+  "gates": {
+    "absolute_screen_pass": false,
+    "critical_capabilities": false,
+    "final_test_accessed": false,
+    "matched_causal_controls": "NOT_REACHED_PREREGISTERED_EARLY_STOP",
+    "per_capability_functional": false,
+    "remaining_paired_seeds": "PROHIBITED_BY_DECISION_RULE",
+    "teacher_relative_noninferiority": "NOT_REACHED_PREREGISTERED_EARLY_STOP",
+    "zero_generation_errors": false,
+    "zero_repetition_collapses": false
+  },
+  "matched_v23_diagnostic": {
+    "collapse_delta": 62,
+    "identical_architecture_and_parameters": true,
+    "identical_fixed_vocabulary": true,
+    "identical_imported_information": true,
+    "identical_record_sequence": true,
+    "identical_seed": true,
+    "only_intended_change": "pointer-supervised target representation",
+    "paired_stratified_bootstrap": {
+      "lower_95": 0.04428571428571428,
+      "point": 0.06928571428571428,
+      "replicates": 10000,
+      "seed": 240024,
+      "upper_95": 0.09428571428571429
+    },
+    "pass_delta": 97,
+    "promotion_effect": "NONE",
+    "v23_functional_passes": 504,
+    "v23_generation_errors": 0,
+    "v23_repetition_collapses": 77,
+    "v24_functional_passes": 601,
+    "v24_generation_errors": 31,
+    "v24_repetition_collapses": 139
+  },
+  "negative_evidence_preserved": true,
+  "ownership": {
+    "abi_acquisition_or_representation_failure": true,
+    "layercake_host_construct_status": "INDEPENDENT_PASS_CONSTRUCT_ONLY",
+    "layercake_host_regression": false,
+    "layercake_utf8_validity_gap_exposed": true,
+    "reason": "Even granting a functional pass to all 31 decoding errors yields only 632/1,400, far below every-capability gates; ABI planning and collapse failures remain decisive.",
+    "utf8_gap_not_sufficient_to_explain_failure": true,
+    "utf8_gap_observation": "The byte-lexeme action surface can autonomously assemble invalid UTF-8 sequences from independently addressable multibyte fragments; 31 outputs were discarded by strict UTF-8 decoding."
+  },
+  "phase2_status": "MACHINE_COMPLETE_HUMAN_RATINGS_DEFERRED_NOT_PASSED",
+  "phase3_certified": false,
+  "phase4_through_8": "LOCKED",
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_POINTER_CORE_PROTOCOL_V24.json",
+    "sha256": "4e34bc466f761252a67ae4eec164df1e6f7e9607f7d64b86cad6dd8e79de614a"
+  },
+  "status": "FAIL_ABSOLUTE_QUALITY_POINTER_REPRESENTATION_CLOSED_HOST_UTF8_GAP_EXPOSED"
+}

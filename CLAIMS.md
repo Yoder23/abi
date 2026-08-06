@@ -65,6 +65,12 @@ can carry an external artifact while this ABI acquisition representation fails
 quality. It is not a LayerCake regression, a Phase 3 pass, or evidence of ABI
 superiority over LoRA or distillation.
 
+V24 establishes only a paired representation effect: source-pointer target
+supervision raises the matched development score from 504 to 601/1,400 (95%
+CI for the paired delta +4.43 to +9.43 points). It also raises collapses from
+77 to 139, introduces 31 Unicode errors, and lowers prompt grounding from 50
+to 39. The branch fails and cannot support a superiority claim.
+
 ### 5. Capability-compiler Phase 0 governance
 
 `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` certifies the initial

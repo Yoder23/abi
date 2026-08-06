@@ -51,7 +51,7 @@ Status date: 2026-08-06.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V21.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V22.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -98,6 +98,14 @@ V24 attempt 1 stopped before step 1 and created no output after deterministic
 cuBLAS rejected a missing process environment setting. Repair V25 authorizes
 exactly one unchanged retry with `CUBLAS_WORKSPACE_CONFIG=:4096:8`. This is a
 runtime-conformance repair, not a scientific result or design change.
+
+V24 completed after that repair and is closed failed: 601/1,400, 139
+collapses, and 31 Unicode generation errors. Against matched V23 it gained 97
+passes (paired 95% CI +4.43 to +9.43 points) but added 62 collapses and lost 11
+prompt-grounding passes. No controls, teacher comparison, or other seeds are
+authorized. The invalid UTF-8 outputs expose a separate LayerCake action-surface
+gap, but even granting all 31 errors a pass leaves ABI at 632/1,400. Record the
+ABI failure and audit the host gap separately; do not conflate either owner.
 
 No further Phase 2 training is authorized. The A0-A4 and V6 B0-B4 branches are
 closed. V6 B0 scored 1,148/1,400 with 43 collapses, lost to label-free B1 by

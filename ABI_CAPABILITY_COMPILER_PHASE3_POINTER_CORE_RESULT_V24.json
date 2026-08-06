@@ -1,0 +1,75 @@
+{
+  "format": "abi-capability-compiler-phase3-pointer-core-result/1",
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_POINTER_CORE_PROTOCOL_V24.json",
+  "runtime_repair": "ABI_CAPABILITY_COMPILER_PHASE3_POINTER_CORE_RUNTIME_REPAIR1_V25.json",
+  "status": "COMPLETE_FAILED_POINTER_REPRESENTATION_CLOSED",
+  "status_date": "2026-08-06",
+  "phase3_certified": false,
+  "phase4_through_8": "LOCKED",
+  "final_test_accessed": false,
+  "candidate": {
+    "system": "P0",
+    "seed": 240017,
+    "functional_passes": 601,
+    "observations": 1400,
+    "functional_pass_rate": 0.42928571428571427,
+    "functional_wilson_95": [0.40358613243128116, 0.4553722999786497],
+    "repetition_collapses": 139,
+    "generation_errors": 31,
+    "best_case_passes_if_every_generation_error_passed": 632,
+    "trainable_parameters": 4011040,
+    "checkpoint_bytes": 16051488,
+    "checkpoint_sha256": "e588a5a1d68296c57131fa2c4264d870ee37bc28f1f5078b6e5b28587d1dd458",
+    "training_wall_seconds": 139.8708555000485,
+    "peak_cuda_allocated_bytes": 686518784,
+    "peak_process_rss_bytes": 1293647872,
+    "teacher_present_at_inference": false,
+    "source_parameters_copied": 0,
+    "source_blocks_retained": 0
+  },
+  "matched_v23_diagnostic": {
+    "pass_delta": 97,
+    "pass_rate_delta": 0.06928571428571428,
+    "paired_stratified_bootstrap_95": [0.04428571428571428, 0.09428571428571429],
+    "bootstrap_replicates": 10000,
+    "collapse_delta": 62,
+    "generation_error_delta": 31,
+    "prompt_grounding_delta": -11,
+    "same_seed_sample_sequence_architecture_parameters_vocabulary_and_information": true,
+    "promotion_effect": "NONE"
+  },
+  "gates": {
+    "per_capability_functional": false,
+    "critical_capabilities": false,
+    "zero_repetition_collapses": false,
+    "zero_generation_errors": false,
+    "teacher_relative_noninferiority": "NOT_REACHED_PREREGISTERED_EARLY_STOP",
+    "matched_causal_controls": "NOT_REACHED_PREREGISTERED_EARLY_STOP",
+    "remaining_paired_seeds": "PROHIBITED"
+  },
+  "ownership": {
+    "abi_acquisition_or_representation_failure": true,
+    "layercake_host_regression": false,
+    "layercake_host_construct_status": "INDEPENDENT_PASS_CONSTRUCT_ONLY",
+    "layercake_utf8_validity_gap_exposed": true,
+    "utf8_gap_sufficient_to_explain_abi_failure": false,
+    "reason": "Even treating all 31 Unicode decoding errors as functional passes yields only 632/1,400. ABI planning, capability, grounding, and collapse failures remain decisive."
+  },
+  "decision": {
+    "v24_promoted": false,
+    "v24_closed": true,
+    "controls_run": false,
+    "remaining_seeds_run": false,
+    "next_step": "No additional pointer-core training. Preserve the branch, audit the UTF-8 validity gap separately in LayerCake, and require a fresh measured ABI bottleneck before another acquisition successor."
+  },
+  "evidence": {
+    "decision": "results/abi_capability_compiler_phase3_pointer_core/pointer_core_decision_v24.json",
+    "decision_sha256": "6c573bb5fb3025c885c83e37ce8d36061120a3cdee7eca86b5dfb941c5e7e1a6",
+    "metadata_sha256": "20aeafe93ec5675536ed133af2a9d01c93d0f976636a4266df3b43d6dd3246d4",
+    "receipt_sha256": "ae84dd76e1cbcd4e0bdf206e1583daf82b093edbbf8a21b6861ba7d46cb41c34",
+    "outputs_sha256": "4c71772cefe0c21ed611a2729d24613e848143da9927762208ae9a9d16f106d3",
+    "analysis_implementation_sha256": "ff02683d3186dbcbd4f984468cc1a181d67b2f741bbe655edb29271b862259ee",
+    "adversarial_tests_sha256": "79087e25ce54bcb50396f8e6fefba6f19be490ecd1b81cb9768d6bfd75d159ed"
+  },
+  "claim_boundary": "V24 is negative ABI representation evidence and exposes a bounded LayerCake UTF-8 validity gap. It is not a Phase 3 pass, a teacher-relative result, or evidence that ABI is superior to LoRA or distillation."
+}

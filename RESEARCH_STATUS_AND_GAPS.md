@@ -53,6 +53,11 @@ Status date: 2026-08-06
     teacher-free 4.01M-parameter artifact through it but scored 504/1,400 with
     77 collapses. This is an ABI fixed-action acquisition/representation
     failure, not a LayerCake host regression.
+15. **Broad pointer supervision has a positive paired effect but fails.** V24
+    improves V23 by 97/1,400 with a wholly positive paired interval, yet reaches
+    only 601/1,400, raises collapses to 139, and introduces 31 Unicode errors.
+    It is closed. The UTF-8 errors expose a separate host action-validity gap;
+    they cannot explain the much larger ABI quality deficit.
 
 ## Open scientific questions
 
@@ -126,8 +131,10 @@ locked. When independent raters become available, the Phase 2 packet must still
 be completed before certification.
 
 That V24 screen is now hash-bound. Its preflight uses 44,336 source-pointer
-actions and reconstructs every training target exactly. Only its initial paired
-seed is authorized; preregistration is not evidence that the repair works.
+actions and reconstructs every training target exactly. The completed run
+failed and is closed. No additional pointer-core training is authorized. The
+next work is a separate LayerCake UTF-8 validity audit, followed by a new ABI
+bottleneck decision rather than a nearby variant.
 
 See `CURRENT_PROJECT_STATUS.md` for the current claim boundary and
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` for controlling gates.
