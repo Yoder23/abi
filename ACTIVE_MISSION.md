@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V29 FULL COVERAGE, LENGTH GATE FAILED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V30.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V34 REPRESENTATION PASS, HOST CONFORMANCE NEXT | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V38.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -85,6 +85,12 @@ V29 fixed coverage without development-derived exceptions: 8,400/8,400 targets
 are representable with 4,634 fixed actions. Nine development targets exceed
 320 actions, so V29 fails and training remains closed. Measure those nine
 records before proposing compression or any host limit change.
+
+V31 attributed the nine failures to character fallback. V32/V33 heuristic
+sublexeme designs failed and are closed. V34's genuine training-only UTF-8 BPE
+passes exact reconstruction and the original limits at the smallest tested
+4,996 budget. The exact tokenizer must now pass LayerCake host conformance;
+neural training remains closed.
 
 ## Preserved historical Phase 3 path
 

@@ -23,7 +23,7 @@ signal but failed quality. The sequence successor improved aggregate quality
 substantially, but failed absolute, causal-control, teacher-relative, and
 repetition gates. Phase 3 is not certified; Phases 4 through 8 remain locked.
 
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V30.json` is the live state. V11 C0-C4
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V38.json` is the live state. V11 C0-C4
 is complete: causal and teacher-relative aggregate gates pass, but absolute
 capability and collapse gates fail. Final access and promotion remain
 prohibited.
@@ -115,6 +115,11 @@ V29 then supplied a development-independent printable-ASCII syntax alphabet
 and reached 8,400/8,400 exact target representability with 4,634 fixed actions.
 It remains failed because nine development targets exceed the unchanged
 320-action limit. Training is still closed pending record-level attribution.
+
+V31 resolved that attribution. V32 and V33 failed bounded heuristic repairs.
+V34 then passed the representation gate with a training-only concatenative BPE:
+8,400/8,400 exact targets, 4,999 fixed actions, and maxima of 99 training and
+317 development actions. Host conformance is next; no neural model is authorized.
 `ABI_CAPABILITY_COMPILER_PHASE3_CONDITIONAL_OPEN_V1.json` and the versioned
 Phase 3 protocols remain the historical authority for the narrow execution
 exception. They did not alter any prior result or permit final-test use.
