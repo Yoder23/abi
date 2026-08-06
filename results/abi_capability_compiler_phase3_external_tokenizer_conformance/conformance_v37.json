@@ -1,0 +1,29 @@
+{
+  "claim_boundary": "Exact tokenizer/host conformance only; no learned quality or performance.",
+  "development_records": 1400,
+  "evidence_sha256": "83cea1c5ab1c93789bdf446e0752c8a6bd32a8d75eb3dc3960ca8fee24b617b8",
+  "fields_compared": 16800,
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-external-tokenizer-conformance-result/1",
+  "layercake": {
+    "commit": "96279db",
+    "interface": "lc-direct-neural-core/3",
+    "interface_sha256": "4ec1f609cea9f42924ebcdc16fd6b76be1630351d629d77eaab9b956b7901ac2"
+  },
+  "mismatches": [],
+  "neural_training_performed": false,
+  "next_gate": "One separately preregistered bounded neural acquisition candidate if PASS.",
+  "phase3_certified": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_EXTERNAL_TOKENIZER_CONFORMANCE_PROTOCOL_V37.json",
+    "sha256": "b4fc40a53e8ac7559d361547cf1b7bcf921630e140603785af02062e2df10888"
+  },
+  "status": "PASS",
+  "tokenizer": {
+    "canonical_sha256": "fc391ac322351a94c7cac05cc872f49b6436bc836bf260fdc959c0c11800e2f9",
+    "fixed_actions": 4999,
+    "raw_sha256": "efa16fcbc4d49bb643c94719b84dd4d74d27563e7bf28b41521aa903b980be2d",
+    "sequence_stream_sha256": "fae19135abe46f47fafa09b641744b63a8f7d413d4cc938394fbb1c440fa5887"
+  },
+  "training_records": 7000
+}
