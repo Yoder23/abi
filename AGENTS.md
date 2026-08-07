@@ -116,9 +116,13 @@ batch recomputation had zero error and 100% exact fp16 scalars across all 56
 sampled vectors. V61 then passed every static, provenance, balance, accounting,
 and exact original-batch check. The 86,016,000-byte substrate is verified, but
 learned transfer is not. One representation-aligned candidate protocol may now
-be designed against the existing same-size output-only control. No neural
-training or LayerCake host change is authorized until that protocol is sealed.
-Final material remains inaccessible, and Phase 4 is locked.
+be designed against the existing same-size output-only control. V62 now seals
+that single A0 screen: the exact V50 generator, seed, sample order, optimizer,
+updates, router, and autonomous gates are retained; only fixed-projection
+prompt/response cosine alignment to V61 is added. This is standard pooled
+representation distillation. No other seed, weight sweep, host certification,
+or LayerCake host change is authorized unless A0 passes every gate. Final
+material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log
 

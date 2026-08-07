@@ -1,0 +1,144 @@
+{
+  "format": "abi-capability-compiler-phase3-route-bridge/1",
+  "protocol_id": "abi-capability-compiler-phase3-representation-aligned-core-v62",
+  "status": "PREREGISTERED_ROUTE_BRIDGE_SCREEN",
+  "effective_date": "2026-08-07",
+  "decision_protocol_path": "ABI_CAPABILITY_COMPILER_PHASE3_REPRESENTATION_ALIGNED_CORE_PROTOCOL_V62.json",
+  "historical_evidence_changed": false,
+  "phase3_status": "UNCERTIFIED",
+  "phase4_status": "LOCKED",
+  "final_test_access": "PROHIBITED",
+  "promotion_eligible": false,
+  "objective": "Test whether the verified V61 per-record prompt/response substrate causally improves the exact V50 LayerCake generator under matched initialization, records, sample order, optimizer, update count, router, tokenizer, architecture, and autonomous gates.",
+  "standard_method": "pooled representation distillation with fixed random projection and training-time cosine alignment",
+  "causal_basis": "V50's output-only full-generator control retained perfect routing but scored 785/1,400, 36 collapses, 96.53% action fit, and 79.14% exact training sequences. V62 changes only the verified richer teacher signal and its two frozen-weight auxiliary losses.",
+  "phase1_ir": "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir",
+  "development_catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+  "teacher_reference": "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl",
+  "capabilities": ["grammar", "coherence", "prompt_grounding", "instruction_following", "conversation", "supplied_text_summarization", "rewriting", "email_drafting_from_notes", "tone_control", "format_control", "clarification", "abstention", "fact_free_reasoning", "fluent_realization"],
+  "teacher_substrate": {
+    "certificate": "ABI_CAPABILITY_COMPILER_PHASE3_TEACHER_REPRESENTATION_RESULT_V61.json",
+    "tensor_path": "results/abi_capability_compiler_phase3_teacher_representation/extraction_v58/dual_pooled_final_hidden_fp16.safetensors",
+    "tensor_sha256": "fa5a8fd286a156ba7243b846a6af17f7619a5836e165bb04ec0aedc5b8773cff",
+    "records": 7000,
+    "vectors": 14000,
+    "hidden_width": 3072,
+    "payload_bytes": 86016000,
+    "stored_logits": 0,
+    "copied_source_parameters": 0
+  },
+  "alignment": {
+    "projection": "fixed Gaussian matrix with independently L2-normalized columns",
+    "projection_seed": 240062,
+    "projection_shape": [3072, 192],
+    "projection_sha256": "d1647af911b4d76f2da872a0b3a8241c36bd65f7ce1d20a0f92b101e529564c8",
+    "projection_trainable": false,
+    "projection_deployed": false,
+    "prompt_target": "mean non-padding LayerCake encoder state versus projected teacher prompt pool",
+    "response_target": "mean valid teacher-forced LayerCake decoder state versus projected teacher response pool",
+    "prompt_weight": 0.1,
+    "response_weight": 0.1,
+    "loss": "hard-target NLL plus weighted cosine distances",
+    "weights_tuned": false
+  },
+  "matched_output_only_control": {
+    "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_CAPACITY_PROTOCOL_V50.json",
+    "decision": "results/abi_capability_compiler_phase3_route_capacity/evaluation_v50/U0-seed240050/decision.json",
+    "decision_sha256": "5890585e95d86b2f04edcba9fa3177ab1369d40ba3379d6464c9eb46a0e3e006",
+    "functional_passes": 785,
+    "observations": 1400,
+    "repetition_collapses": 36,
+    "same_model_parameters": 4174280,
+    "same_seed": 240050,
+    "same_steps": 4000,
+    "same_batch_size": 16,
+    "same_learning_rate": 0.0003
+  },
+  "tokenizer": {
+    "canonical_document": "artifacts/phase3/utf8_bpe_v34/layercake_tokenizer_v3.json",
+    "canonical_sha256": "fc391ac322351a94c7cac05cc872f49b6436bc836bf260fdc959c0c11800e2f9",
+    "fixed_actions": 4999
+  },
+  "layercake_host": {
+    "repository": "../layercake_release",
+    "interface": "lc-direct-neural-core/3",
+    "interface_sha256": "4ec1f609cea9f42924ebcdc16fd6b76be1630351d629d77eaab9b956b7901ac2",
+    "changed": false
+  },
+  "base_generator": {
+    "candidate_dir": "results/abi_capability_compiler_phase3_labeled_bpe_core/development_v41/L0-seed240017",
+    "checkpoint_sha256": "8e9e9f8351e8c7190f395dae6161bf9ddb433494c37b67263a7f8c266975743f",
+    "initialization_only": true
+  },
+  "router": {
+    "protocol_path": "ABI_CAPABILITY_COMPILER_PHASE3_SPARSE_ROUTER_PROTOCOL_V45.json",
+    "candidate_dir": "results/abi_capability_compiler_phase3_sparse_router/development_v45/R0-seed240045",
+    "checkpoint_path": "results/abi_capability_compiler_phase3_sparse_router/development_v45/R0-seed240045/router.safetensors",
+    "checkpoint_sha256": "cc1f384a49fdaad94d47c5feb4573dcc7eb688ac96ffd7bfffade811861acb48"
+  },
+  "architecture": {
+    "model_width": 192,
+    "attention_heads": 6,
+    "encoder_layers": 2,
+    "decoder_layers": 2,
+    "feedforward_width": 768,
+    "pointer_width": 128,
+    "dropout": 0.1,
+    "maximum_source_lexemes": 128,
+    "maximum_target_actions": 320
+  },
+  "route_controls": {
+    "count": 14,
+    "selection_sha256": "8d572e8434e1e6cb42b6dffad1a72cae64e5ce93a65ef08436a6fc3917190d04"
+  },
+  "training": {
+    "device": "cuda",
+    "seed": 240050,
+    "steps": 4000,
+    "batch_size": 16,
+    "learning_rate": 0.0003,
+    "optimizer": "AdamW",
+    "curve_interval": 250,
+    "trainable_parameters": 4174280,
+    "deployed_projection_parameters": 0,
+    "teacher_present_at_inference": false
+  },
+  "absolute_screen": {
+    "per_capability_functional_point_estimate_minimum": 0.9,
+    "per_capability_functional_wilson_lower_minimum": 0.85,
+    "critical_point_minimum": 0.95,
+    "critical_wilson_lower_minimum": 0.9,
+    "repetition_collapse_count_maximum": 0,
+    "generation_error_count_maximum": 0,
+    "router_accuracy_minimum": 1.0
+  },
+  "teacher_relative_screen": {
+    "method": "capability_stratified_paired_percentile_bootstrap",
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 240062,
+    "candidate_minus_teacher_lower_95_minimum": -0.05
+  },
+  "decision_rule": "Run only A0 seed 240050. Evaluate all 1,400 development prompts without early stopping. If any absolute or teacher-relative gate fails, close V62 and do not run seeds, host timing, or nearby alignment weights. If every gate passes, preregister two paired seeds, the same-size transformer student, and same-candidate host/runtime certification.",
+  "bindings": {
+    "abi/capability_compiler_phase3_representation_aligned_core.py": "2333e023dcff04321be562b029f7db168c03acfbf420925fcfd08dbc322778c1",
+    "tests/test_capability_compiler_phase3_representation_aligned_core.py": "d2ab736384e90f3b571573387eedbd97de6071323131689ee00a7b67122090a3",
+    "abi/capability_compiler_phase3_route_bridge.py": "df4ad042829684c73193970289c04058f3d57fb7ad8475dee064cf228f83b0e4",
+    "tests/test_capability_compiler_phase3_route_bridge.py": "1465b0c9c41449c9a33f4f59b901e8d304bd7566ed8d69aae37aa89fa07a0014",
+    "ABI_CAPABILITY_COMPILER_PHASE3_TEACHER_REPRESENTATION_RESULT_V61.json": "c2fde377fd6990e98eedc088af090de1039bf841b4eec5408add86792bf5882b",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V80.json": "6edbd2e85c8a459412d8de13a24b8827ff379b0bdf384dcee0744514bdafb8d3",
+    "ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_CAPACITY_PROTOCOL_V50.json": "c2e39b9847af1fa5fc0677b08b4fa7a013026c2b87eec5ac3dc50b3c2071a5ec",
+    "results/abi_capability_compiler_phase3_route_capacity/evaluation_v50/U0-seed240050/decision.json": "5890585e95d86b2f04edcba9fa3177ab1369d40ba3379d6464c9eb46a0e3e006",
+    "results/abi_capability_compiler_phase3_teacher_representation/extraction_v58/dual_pooled_final_hidden_fp16.safetensors": "fa5a8fd286a156ba7243b846a6af17f7619a5836e165bb04ec0aedc5b8773cff",
+    "results/abi_capability_compiler_phase3_teacher_representation/extraction_v58/records.jsonl": "beada2e6e90f7b22e7dbadce7d0b573e7a14007fb15b3b99ead39ae3a114b7bf",
+    "results/abi_capability_compiler_phase3_labeled_bpe_core/development_v41/L0-seed240017/model.safetensors": "8e9e9f8351e8c7190f395dae6161bf9ddb433494c37b67263a7f8c266975743f",
+    "results/abi_capability_compiler_phase3_sparse_router/development_v45/R0-seed240045/router.safetensors": "cc1f384a49fdaad94d47c5feb4573dcc7eb688ac96ffd7bfffade811861acb48",
+    "ABI_CAPABILITY_COMPILER_PHASE3_SPARSE_ROUTER_PROTOCOL_V45.json": "95ec833d9b216d51ddf57fed71a5d79e565d567b1389eef1c2b7f1cfdebba684",
+    "artifacts/phase3/utf8_bpe_v34/layercake_tokenizer_v3.json": "64a2b3ebf2fde5ec1a35faa6813b77f09f19f47c1135695d72b29145c023df36",
+    "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl": "1081dbe57e75da50b2619bc2dab14c6441158dcd6068f2b864733936087e86a2",
+    "../layercake_release/layercake_extensions/bpe_direct_neural_core.py": "23136262e4f63f1037d26568cbf3d41b847d80145fc5b1456ca98294b09d9050",
+    "../layercake_release/layercake/portable_token_plan.py": "0988a83f65d96e928a57edf1f5a565c334ab6e66579b9e6bca21f3c76b920a14"
+  },
+  "claim_boundary": "V62 is one non-promotional initial screen of standard representation distillation. It cannot certify Phase 3, inherit V50 runtime, access final data, or establish ABI superiority."
+}

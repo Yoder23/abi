@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V61 SUBSTRATE VERIFIED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V80.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V62 INITIAL SCREEN PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V81.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -115,6 +115,13 @@ contains no logits or copied source parameters. This is an artifact result, not
 a learned-transfer result. The next bounded experiment is one representation-
 aligned LayerCake candidate compared with the existing same-size, same-seed,
 output-only V50 control. Training requires a new sealed protocol.
+
+V62 now seals that experiment. It preserves V50's 4,174,280-parameter model,
+seed 240050, balanced sample order, 4,000 updates, optimizer, router, tokenizer,
+and gates. The only causal change is a fixed, discarded 3,072-to-192 projection
+and two untuned 0.1-weight cosine losses over the verified prompt and response
+vectors. Only A0 may run; any absolute miss closes the branch without a weight
+sweep, additional seeds, or inherited runtime claim.
 
 ## Historical direct-core path
 
@@ -304,6 +311,8 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V81.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_REPRESENTATION_ALIGNED_CORE_PROTOCOL_V62.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V80.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_TEACHER_REPRESENTATION_RESULT_V61.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V79.json`
