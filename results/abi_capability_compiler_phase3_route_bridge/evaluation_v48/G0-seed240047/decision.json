@@ -1,0 +1,183 @@
+{
+  "candidate_protocol_sha256": "f86c5193ad7c87d8b735024b21fdd2f64d7a0e2770ce89680cefb37853132cc3",
+  "checkpoint_sha256": "1f2381127de0119a5f789f307c7be626bdf5ff378f21142761eaa946a705061c",
+  "evaluation_wall_seconds": 30.478861000003235,
+  "evidence_sha256": "2f1927ee06ce099f894dee9c40278f68ad63989fd4f88b4b11a90f50f5f2810a",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-route-bridge-decision/1",
+  "functional_passes": 760,
+  "gates": {
+    "critical_capabilities": false,
+    "per_capability_functional": false,
+    "router_accuracy": true,
+    "teacher_relative_noninferiority": false,
+    "zero_generation_errors": true,
+    "zero_repetition_collapses": false
+  },
+  "generation_errors": 0,
+  "initial_screen_pass": false,
+  "layercake_host_changed": false,
+  "next_step": "Preserve failure; no seeds or host promotion.",
+  "observations": 1400,
+  "outputs_sha256": "8930354e3f96718dc5b057d67eff2932d65054699d08d49913c130029a565250",
+  "per_capability": {
+    "abstention": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 9,
+      "wilson": {
+        "lower_95": 0.04807254000256516,
+        "point": 0.09,
+        "upper_95": 0.1622621285271631
+      }
+    },
+    "clarification": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 81,
+      "wilson": {
+        "lower_95": 0.7222115462093562,
+        "point": 0.81,
+        "upper_95": 0.8748524849023126
+      }
+    },
+    "coherence": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 0,
+      "wilson": {
+        "lower_95": 3.469446951953614e-18,
+        "point": 0.0,
+        "upper_95": 0.03699349820698568
+      }
+    },
+    "conversation": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 99,
+      "wilson": {
+        "lower_95": 0.9455138038212946,
+        "point": 0.99,
+        "upper_95": 0.9982325679358593
+      }
+    },
+    "email_drafting_from_notes": {
+      "collapses": 20,
+      "observations": 100,
+      "passes": 40,
+      "wilson": {
+        "lower_95": 0.3094012864324589,
+        "point": 0.4,
+        "upper_95": 0.4979974132089382
+      }
+    },
+    "fact_free_reasoning": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 0,
+      "wilson": {
+        "lower_95": 3.469446951953614e-18,
+        "point": 0.0,
+        "upper_95": 0.03699349820698568
+      }
+    },
+    "fluent_realization": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 50,
+      "wilson": {
+        "lower_95": 0.4038315303659956,
+        "point": 0.5,
+        "upper_95": 0.5961684696340044
+      }
+    },
+    "format_control": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 50,
+      "wilson": {
+        "lower_95": 0.4038315303659956,
+        "point": 0.5,
+        "upper_95": 0.5961684696340044
+      }
+    },
+    "grammar": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 100,
+      "wilson": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "instruction_following": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 75,
+      "wilson": {
+        "lower_95": 0.656955364519384,
+        "point": 0.75,
+        "upper_95": 0.8245478863771232
+      }
+    },
+    "prompt_grounding": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 50,
+      "wilson": {
+        "lower_95": 0.4038315303659956,
+        "point": 0.5,
+        "upper_95": 0.5961684696340044
+      }
+    },
+    "rewriting": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 72,
+      "wilson": {
+        "lower_95": 0.6251197129007884,
+        "point": 0.72,
+        "upper_95": 0.7986031478881379
+      }
+    },
+    "supplied_text_summarization": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 67,
+      "wilson": {
+        "lower_95": 0.5730534379509052,
+        "point": 0.67,
+        "upper_95": 0.7543687726587197
+      }
+    },
+    "tone_control": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 67,
+      "wilson": {
+        "lower_95": 0.5730534379509052,
+        "point": 0.67,
+        "upper_95": 0.7543687726587197
+      }
+    }
+  },
+  "phase3_certified": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_BRIDGE_EVALUATION_REPAIR_V48.json",
+    "sha256": "c9c640613cb554e0e06a21cda31a455bdaf755bb95083e2e4b114ec0a4d186da"
+  },
+  "repetition_collapses": 20,
+  "route_correct": 1400,
+  "router_sha256": "cc1f384a49fdaad94d47c5feb4573dcc7eb688ac96ffd7bfffade811861acb48",
+  "status": "FAIL_INITIAL_INTEGRATED_SCREEN_ROUTE_BRIDGE_CLOSED",
+  "teacher_comparison": {
+    "candidate_minus_teacher": -0.3407142857142857,
+    "lower_95": -0.36428571428571427,
+    "method": "capability_stratified_paired_percentile_bootstrap",
+    "replicates": 10000,
+    "seed": 240047,
+    "upper_95": -0.31642857142857145
+  },
+  "teacher_present_at_inference": false
+}
