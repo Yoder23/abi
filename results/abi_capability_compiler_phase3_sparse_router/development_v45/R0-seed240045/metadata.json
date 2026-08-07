@@ -1,0 +1,157 @@
+{
+  "checkpoint": {
+    "bytes": 4232392,
+    "path": "router.safetensors",
+    "sha256": "cc1f384a49fdaad94d47c5feb4573dcc7eb688ac96ffd7bfffade811861acb48"
+  },
+  "config": {
+    "path": "config.json",
+    "sha256": "b43d07f892a2bb746c93301a913777e486eab71bd917486de464bd185ec09d99",
+    "trainable_parameters": 1058040
+  },
+  "evidence_sha256": "86555013056234ff444e3ef88f7f679e257ae798fe070cc56707b6748ae05cdd",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-sparse-router-candidate/1",
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "machine": "Sam"
+  },
+  "imported_information": {
+    "capability_labels": 7000,
+    "metadata_labels_derived_from_existing_prompt_boundaries": 7000,
+    "records": 7000,
+    "source_parameters_copied": 0,
+    "stored_activations": 0,
+    "stored_logits": 0,
+    "teacher_outputs_added": 0
+  },
+  "layercake_host_changed": false,
+  "phase3_certified": false,
+  "protocol_sha256": "95ec833d9b216d51ddf57fed71a5d79e565d567b1389eef1c2b7f1cfdebba684",
+  "seed": 240045,
+  "status": "TRAINED_SPARSE_ROUTER_GATE_ONLY",
+  "teacher_present_at_inference": false,
+  "training": {
+    "batch_size": 64,
+    "curves": [
+      {
+        "body_accuracy": 0.109375,
+        "loss": 2.8185505867004395,
+        "metadata_accuracy": 0.234375,
+        "step": 1,
+        "wall_seconds": 0.131490700005088
+      },
+      {
+        "body_accuracy": 0.9375,
+        "loss": 1.0647521018981934,
+        "metadata_accuracy": 1.0,
+        "step": 100,
+        "wall_seconds": 0.8290886000031605
+      },
+      {
+        "body_accuracy": 1.0,
+        "loss": 0.28742140531539917,
+        "metadata_accuracy": 1.0,
+        "step": 200,
+        "wall_seconds": 1.509315700001025
+      },
+      {
+        "body_accuracy": 1.0,
+        "loss": 0.08179916441440582,
+        "metadata_accuracy": 1.0,
+        "step": 300,
+        "wall_seconds": 2.213671000004979
+      },
+      {
+        "body_accuracy": 1.0,
+        "loss": 0.015365882776677608,
+        "metadata_accuracy": 1.0,
+        "step": 400,
+        "wall_seconds": 2.8708673000001
+      },
+      {
+        "body_accuracy": 1.0,
+        "loss": 0.0037625147961080074,
+        "metadata_accuracy": 1.0,
+        "step": 500,
+        "wall_seconds": 3.5449691000030725
+      },
+      {
+        "body_accuracy": 1.0,
+        "loss": 0.000936562311835587,
+        "metadata_accuracy": 1.0,
+        "step": 600,
+        "wall_seconds": 4.212262799999735
+      },
+      {
+        "body_accuracy": 1.0,
+        "loss": 0.0002619622682686895,
+        "metadata_accuracy": 1.0,
+        "step": 700,
+        "wall_seconds": 4.924905100000615
+      },
+      {
+        "body_accuracy": 1.0,
+        "loss": 9.92115237750113e-05,
+        "metadata_accuracy": 1.0,
+        "step": 800,
+        "wall_seconds": 5.562697500005015
+      },
+      {
+        "body_accuracy": 1.0,
+        "loss": 4.602464468916878e-05,
+        "metadata_accuracy": 1.0,
+        "step": 900,
+        "wall_seconds": 6.1971166000002995
+      },
+      {
+        "body_accuracy": 1.0,
+        "loss": 2.4034136004047468e-05,
+        "metadata_accuracy": 1.0,
+        "step": 1000,
+        "wall_seconds": 6.856730999999854
+      },
+      {
+        "body_accuracy": 1.0,
+        "loss": 1.5609573893016204e-05,
+        "metadata_accuracy": 1.0,
+        "step": 1100,
+        "wall_seconds": 7.474872600003437
+      },
+      {
+        "body_accuracy": 1.0,
+        "loss": 7.6258716035226826e-06,
+        "metadata_accuracy": 1.0,
+        "step": 1200,
+        "wall_seconds": 8.122590800005128
+      },
+      {
+        "body_accuracy": 1.0,
+        "loss": 0.00025234415079467,
+        "metadata_accuracy": 1.0,
+        "step": 1300,
+        "wall_seconds": 8.728858800001035
+      },
+      {
+        "body_accuracy": 1.0,
+        "loss": 4.985524356015958e-06,
+        "metadata_accuracy": 1.0,
+        "step": 1400,
+        "wall_seconds": 9.324366100001498
+      },
+      {
+        "body_accuracy": 1.0,
+        "loss": 3.5829691569233546e-06,
+        "metadata_accuracy": 1.0,
+        "step": 1500,
+        "wall_seconds": 9.947653300005186
+      }
+    ],
+    "effective_segments_per_step": 128,
+    "peak_cuda_allocated_bytes": 23345664,
+    "peak_process_rss_bytes": 1195659264,
+    "record_sequence_sha256": "d9f1040c3ca5674ea3b091e93a2b9b344b5b4e65a684d25720fcd3074526010d",
+    "steps": 1500,
+    "wall_seconds": 10.016674000005878
+  }
+}

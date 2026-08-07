@@ -1,0 +1,57 @@
+{
+  "format": "abi-capability-compiler-phase3-sparse-router-result/1",
+  "status": "INITIAL_SEED_PASS_REPLICATION_OPEN",
+  "status_date": "2026-08-07",
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_SPARSE_ROUTER_PROTOCOL_V45.json",
+  "candidate_metadata": "results/abi_capability_compiler_phase3_sparse_router/development_v45/R0-seed240045/metadata.json",
+  "decision_evidence": "results/abi_capability_compiler_phase3_sparse_router/evaluation_v45/R0-seed240045/decision.json",
+  "raw_rows": "results/abi_capability_compiler_phase3_sparse_router/evaluation_v45/R0-seed240045/rows.jsonl",
+  "seed": 240045,
+  "checkpoint_sha256": "cc1f384a49fdaad94d47c5feb4573dcc7eb688ac96ffd7bfffade811861acb48",
+  "decision_evidence_sha256": "50b46474658ada1a6ccb23082fddc1afb2952038e205065dba5e90b2fea8b31f",
+  "raw_rows_sha256": "767bdc5e58f6dea1eb9e4f8a2b5d108439b70547f8df72833c95a2b6f082b1ea",
+  "measurements": {
+    "original_correct": 1400,
+    "original_observations": 1400,
+    "original_accuracy": 1.0,
+    "original_wilson_lower_95": 0.9972636092227101,
+    "body_correct": 1400,
+    "body_observations": 1400,
+    "body_accuracy": 1.0,
+    "metadata_rejection_correct": 1400,
+    "metadata_rejection_observations": 1400,
+    "metadata_rejection_accuracy": 1.0,
+    "minimum_per_capability_correct": 100,
+    "minimum_per_capability_observations": 100,
+    "minimum_per_capability_accuracy": 1.0,
+    "minimum_per_capability_wilson_lower_95": 0.9630065017930143,
+    "training_wall_seconds": 10.016674000005878,
+    "trainable_parameters": 1058040,
+    "checkpoint_bytes": 4232392,
+    "peak_cuda_allocated_bytes": 23345664,
+    "peak_process_rss_bytes": 1195659264
+  },
+  "gates": {
+    "aggregate_original": "PASS",
+    "aggregate_body": "PASS",
+    "per_capability_original": "PASS",
+    "metadata_rejection": "PASS",
+    "router_gate": "PASS"
+  },
+  "interpretation": "The preregistered sparse BPE-plus-character-phrase representation resolves the V43/V44 body-routing failures while preserving V44's explicit metadata rejection. This is one-seed standalone router evidence only.",
+  "newly_authorized_work": [
+    "exactly two preregistered sparse-router replication seeds"
+  ],
+  "still_prohibited": [
+    "LayerCake routed-host construction until both replications pass",
+    "English generation promotion",
+    "Phase 3 certification",
+    "final-test access",
+    "ABI superiority claims"
+  ],
+  "teacher_outputs_added": 0,
+  "layercake_host_changed": false,
+  "phase3_certified": false,
+  "final_test_accessed": false,
+  "claim_boundary": "One-seed standalone router pass only; not English generation, LayerCake quality, Phase 3 certification, or ABI superiority."
+}
