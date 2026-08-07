@@ -1,0 +1,171 @@
+{
+  "bridge": {
+    "base_checkpoint_sha256": "8e9e9f8351e8c7190f395dae6161bf9ddb433494c37b67263a7f8c266975743f",
+    "materialized_model_rows": 14,
+    "trainable_parameters": 2688
+  },
+  "checkpoint": {
+    "bytes": 16704448,
+    "path": "model.safetensors",
+    "sha256": "1f2381127de0119a5f789f307c7be626bdf5ff378f21142761eaa946a705061c"
+  },
+  "evidence_sha256": "0cde72a979c689d55d153d72fdfc4e0c714fc57b3c586e29844ff2084d07a486",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-route-bridge-candidate/1",
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "machine": "Sam"
+  },
+  "imported_information": {
+    "records": 7000,
+    "source_parameters_copied": 0,
+    "stored_activations": 0,
+    "stored_logits": 0,
+    "teacher_outputs_added": 0
+  },
+  "layercake_host_changed": false,
+  "model_config": {
+    "path": "model_config.json",
+    "sha256": "5966def5e7fade0dfc4d03c893041e56c7307fc6ef628113342c99ca02290102",
+    "trainable_parameters": 4174280
+  },
+  "phase3_certified": false,
+  "promotion_eligible": false,
+  "protocol_sha256": "f86c5193ad7c87d8b735024b21fdd2f64d7a0e2770ce89680cefb37853132cc3",
+  "route_controls": {
+    "path": "route_controls.json",
+    "selection_sha256": "8d572e8434e1e6cb42b6dffad1a72cae64e5ce93a65ef08436a6fc3917190d04",
+    "sha256": "947609c11c8650e34a4cd78c3f095edb27cf4e7274a2f0827ee420a58ebd47c4"
+  },
+  "router": {
+    "bytes": 4232392,
+    "parameters": 1058040,
+    "path": "router.safetensors",
+    "sha256": "cc1f384a49fdaad94d47c5feb4573dcc7eb688ac96ffd7bfffade811861acb48"
+  },
+  "seed": 240047,
+  "source_blocks_retained": 0,
+  "status": "TRAINED_CONDITIONAL_DEVELOPMENT_SCREEN",
+  "teacher_present_at_inference": false,
+  "tokenizer": {
+    "canonical_sha256": "fc391ac322351a94c7cac05cc872f49b6436bc836bf260fdc959c0c11800e2f9",
+    "path": "tokenizer.json",
+    "sha256": "64a2b3ebf2fde5ec1a35faa6813b77f09f19f47c1135695d72b29145c023df36",
+    "vocabulary": 4999
+  },
+  "training": {
+    "batch_size": 16,
+    "curves": [
+      {
+        "loss": 0.6507794260978699,
+        "step": 1,
+        "wall_seconds": 0.30947200000082375
+      },
+      {
+        "loss": 1.143263816833496,
+        "step": 100,
+        "wall_seconds": 1.8387414999961038
+      },
+      {
+        "loss": 0.72920823097229,
+        "step": 200,
+        "wall_seconds": 3.39524689999962
+      },
+      {
+        "loss": 1.0153441429138184,
+        "step": 300,
+        "wall_seconds": 4.941780199995264
+      },
+      {
+        "loss": 0.20441511273384094,
+        "step": 400,
+        "wall_seconds": 6.448899099996197
+      },
+      {
+        "loss": 0.1651199609041214,
+        "step": 500,
+        "wall_seconds": 7.931499399994209
+      },
+      {
+        "loss": 0.4768636226654053,
+        "step": 600,
+        "wall_seconds": 9.420059500000207
+      },
+      {
+        "loss": 0.1918395459651947,
+        "step": 700,
+        "wall_seconds": 10.905420299997786
+      },
+      {
+        "loss": 0.13257646560668945,
+        "step": 800,
+        "wall_seconds": 12.41386419999617
+      },
+      {
+        "loss": 0.4945039451122284,
+        "step": 900,
+        "wall_seconds": 13.891749700000219
+      },
+      {
+        "loss": 0.7169450521469116,
+        "step": 1000,
+        "wall_seconds": 15.378648799996881
+      },
+      {
+        "loss": 1.1822361946105957,
+        "step": 1100,
+        "wall_seconds": 16.854080999997677
+      },
+      {
+        "loss": 0.8260630369186401,
+        "step": 1200,
+        "wall_seconds": 18.34383269999671
+      },
+      {
+        "loss": 0.22482642531394958,
+        "step": 1300,
+        "wall_seconds": 19.827732199999446
+      },
+      {
+        "loss": 0.5540965795516968,
+        "step": 1400,
+        "wall_seconds": 21.29204729999765
+      },
+      {
+        "loss": 0.7340715527534485,
+        "step": 1500,
+        "wall_seconds": 22.77224759999808
+      },
+      {
+        "loss": 0.18916068971157074,
+        "step": 1600,
+        "wall_seconds": 24.266256499999145
+      },
+      {
+        "loss": 0.2645910978317261,
+        "step": 1700,
+        "wall_seconds": 25.76301099999546
+      },
+      {
+        "loss": 0.1835022121667862,
+        "step": 1800,
+        "wall_seconds": 27.421304699993925
+      },
+      {
+        "loss": 0.4500977694988251,
+        "step": 1900,
+        "wall_seconds": 28.928421699994942
+      },
+      {
+        "loss": 0.32746830582618713,
+        "step": 2000,
+        "wall_seconds": 30.413687799999025
+      }
+    ],
+    "peak_cuda_allocated_bytes": 256712704,
+    "peak_process_rss_bytes": 1173368832,
+    "record_sequence_sha256": "9bf531820230508f84d59c63374482300261a1d8e2e5d85203f6d9077b8dd73b",
+    "steps": 2000,
+    "wall_seconds": 30.64183129999583
+  }
+}
