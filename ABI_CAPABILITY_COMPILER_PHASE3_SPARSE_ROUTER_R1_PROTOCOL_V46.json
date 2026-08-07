@@ -1,0 +1,33 @@
+{
+  "format": "abi-capability-compiler-phase3-sparse-router/1",
+  "protocol_id": "abi-capability-compiler-phase3-sparse-router-r1-v46",
+  "status": "PREREGISTERED_SPARSE_ROUTER_GATE",
+  "effective_date": "2026-08-07",
+  "parent_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_SPARSE_ROUTER_PROTOCOL_V45.json",
+  "replication": "R1_OF_2",
+  "historical_evidence_changed": false,
+  "phase3_status": "UNCERTIFIED",
+  "final_test_access": "PROHIBITED",
+  "phase1_ir": "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir",
+  "development_catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+  "tokenizer": {"canonical_document":"artifacts/phase3/utf8_bpe_v34/layercake_tokenizer_v3.json","canonical_sha256":"fc391ac322351a94c7cac05cc872f49b6436bc836bf260fdc959c0c11800e2f9","fixed_actions":4999},
+  "layercake_host": {"repository":"../layercake_release","interface":"lc-direct-neural-core/3","interface_sha256":"4ec1f609cea9f42924ebcdc16fd6b76be1630351d629d77eaab9b956b7901ac2","changed":false},
+  "representation": {"bpe_unigrams":true,"character_hash_buckets":65536,"character_ngram_minimum":2,"character_ngram_maximum":5,"character_normalization":"Unicode casefold plus whitespace collapse plus explicit boundaries","hash":"FNV-1a-32","hash_seed":450045,"fusion":"sum of mean-pooled class logits plus bias"},
+  "training": {"device":"cuda","seed":240145,"steps":1500,"batch_size":64,"learning_rate":0.01,"weight_decay":0.0,"optimizer":"AdamW","curve_interval":100,"trainable_parameters":1058040,"teacher_present_at_inference":false,"source_parameters_copied":0},
+  "router_gate": {"aggregate_point_minimum":0.9,"aggregate_wilson_lower_minimum":0.88,"body_point_minimum":0.9,"per_capability_point_minimum":0.85,"per_capability_wilson_lower_minimum":0.75,"metadata_point_minimum":0.9,"metadata_wilson_lower_minimum":0.88},
+  "decision_rule": "This exact seed must independently pass every unchanged V45 gate. Any miss closes V45 and prohibits host construction.",
+  "bindings": {
+    "abi/capability_compiler_phase3_sparse_router_replication.py":"b877f73e2c843fad33fde2013414de309f144d097b4938510f1ab736cce934f7",
+    "tests/test_capability_compiler_phase3_sparse_router_replication.py":"65464031fdfbcf22b6fd49abbcdad8785c9cdc50d88bd6d9e0263104a3a442be",
+    "abi/capability_compiler_phase3_sparse_router.py":"e44b0f8cb90a8999d836d974e792392cd6fe2b4a347c19eb35e200d81016a8ec",
+    "abi/capability_compiler_phase3_segment_router.py":"64266d8d0199d3bf80de43f739dde35aa2a6fa7ad3800d4e06cecfcb6eb08fda",
+    "abi/capability_compiler_phase3_bpe_core.py":"8db7deb1b1bbd8b63cdc1523130d4e0f2d162e76bc586e1e86795c6dde0c71bb",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V59.json":"f9a2f3f7e2054ccff9eddd27a296f2c476199623dac58e786c8d5782ba70bc64",
+    "ABI_CAPABILITY_COMPILER_PHASE3_SPARSE_ROUTER_RESULT_V45.json":"0cbb6f28855ec440ccd036d2862c656b1624859f9415b329dd2aa2fd302af8f6",
+    "artifacts/phase3/utf8_bpe_v34/layercake_tokenizer_v3.json":"64a2b3ebf2fde5ec1a35faa6813b77f09f19f47c1135695d72b29145c023df36",
+    "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir":"a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+    "catalogs/capability_compiler_phase1_frozen_v1.json":"076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "../layercake_release/layercake_extensions/bpe_direct_neural_core.py":"23136262e4f63f1037d26568cbf3d41b847d80145fc5b1456ca98294b09d9050"
+  },
+  "claim_boundary": "Locked router replication only; not a host or Phase 3 certificate."
+}
