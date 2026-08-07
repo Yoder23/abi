@@ -113,10 +113,12 @@ verification failed because singleton recomputation exceeded its preregistered
 absolute-error tolerance; no verification result was written. V60 measured
 0.05371 singleton maximum error but 0.999993 minimum cosine; exact original-
 batch recomputation had zero error and 100% exact fp16 scalars across all 56
-sampled vectors. V61 preregisters a verifier-only repair that retains V59 and
-requires the exact original-batch result plus every static check. It cannot
-authorize training by itself. No neural training or LayerCake host change is
-authorized. Final material remains inaccessible, and Phase 4 is locked.
+sampled vectors. V61 then passed every static, provenance, balance, accounting,
+and exact original-batch check. The 86,016,000-byte substrate is verified, but
+learned transfer is not. One representation-aligned candidate protocol may now
+be designed against the existing same-size output-only control. No neural
+training or LayerCake host change is authorized until that protocol is sealed.
+Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log
 

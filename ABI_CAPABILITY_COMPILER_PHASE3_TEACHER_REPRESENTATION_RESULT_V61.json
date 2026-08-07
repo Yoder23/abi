@@ -1,0 +1,39 @@
+{
+  "format": "abi-capability-compiler-phase3-teacher-representation-certificate/1",
+  "status": "PASS_SUBSTRATE_ARTIFACT_VERIFIED",
+  "effective_date": "2026-08-07",
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_TEACHER_REPRESENTATION_VERIFIER_REPAIR_V61.json",
+    "sha256": "528f30b815bcdf9c354fb8c45b2c852b176dcb52ecd101e60f88b30f6990cb2c"
+  },
+  "evidence": {
+    "path": "results/abi_capability_compiler_phase3_teacher_representation/verification_v61.json",
+    "sha256": "606bf38e6e687c83f199084c48da07b78b5ac1b6f3263d8159f622cf2d2209d6",
+    "bytes": 3322
+  },
+  "artifact": {
+    "records": 7000,
+    "vectors": 14000,
+    "hidden_width": 3072,
+    "tensor_payload_bytes": 86016000,
+    "tensor_sha256": "fa5a8fd286a156ba7243b846a6af17f7619a5836e165bb04ec0aedc5b8773cff",
+    "stored_logits": 0,
+    "copied_source_parameters": 0,
+    "teacher_present_in_artifact": false
+  },
+  "verification": {
+    "all_provenance_rows": 7000,
+    "capabilities": 14,
+    "records_per_capability": 500,
+    "sample_vectors": 56,
+    "original_batch_maximum_absolute_error": 0.0,
+    "original_batch_exact_scalar_fraction": 1.0,
+    "failed_singleton_predecessor_preserved": true
+  },
+  "training_performed": false,
+  "layercake_host_changed": false,
+  "phase3_certified": false,
+  "phase4_open": false,
+  "next_authorized_work": "Design and preregister one representation-aligned LayerCake candidate against the existing same-size output-only control.",
+  "claim_boundary": "This certificate verifies only the exact teacher substrate. It does not prove that LayerCake learns from it, passes autonomous quality or runtime gates, completes Phase 3, or outperforms LoRA or distillation."
+}
