@@ -105,11 +105,13 @@ LoRA or distillation.
 
 V56/V57 are complete. They select a per-record prompt/response pooled final-
 hidden fp16 substrate: 14,000 vectors, width 3,072, and 86,016,000 tensor bytes.
-No teacher model load, extraction, neural training, or LayerCake host change is
-currently authorized. The next work is design and preregistration of one exact
-extraction-only protocol with sequence-boundary validation and complete source
-GPU/RAM/time accounting. Final material remains inaccessible, and Phase 4 is
-locked.
+V58 now preregisters one exact GPU extraction after its no-model inventory
+passes. It binds contextual prompt spans through frozen tokenizer character
+offsets, authoritative response-token boundaries, exact record order, source
+files, and complete GPU/RAM/time/imported-information accounting. No neural
+training or LayerCake host change is authorized. The extracted artifact remains
+unverified and unusable for training until a separately preregistered hostile
+verifier passes. Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log
 

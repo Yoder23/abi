@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V57 TEACHER REPRESENTATION SELECTED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V75.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V58 EXTRACTION PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V76.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -78,6 +78,15 @@ or LayerCake change is authorized. The next bounded gate is a no-training
 feasibility and accounting study for richer teacher signals. Phase 2's external
 human-rating gate remains unresolved, so Phase 3 cannot receive a final
 certificate and Phase 4 cannot open.
+
+V56/V57 completed that feasibility gate and selected one 86,016,000-byte
+per-record prompt/response pooled final-hidden substrate. V58 preregisters one
+GPU extraction only. Its preflight discovered that independently tokenized
+semantic prompt IDs are not literal subsequences of the contextual chat prompt;
+the protocol therefore binds the unique semantic UTF-8 text span through the
+frozen fast-tokenizer character offsets and fails closed on any straddle, gap,
+duplicate span, or token-count change. Training remains prohibited until a
+separate hostile verifier certifies the extracted artifact.
 
 ## Historical direct-core path
 
@@ -267,6 +276,8 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V76.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_TEACHER_REPRESENTATION_EXTRACTION_PROTOCOL_V58.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V75.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_TEACHER_REPRESENTATION_RESULT_V57.json`
 - `results/abi_capability_compiler_phase3_teacher_representation/feasibility_v56.json`
