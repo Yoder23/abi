@@ -38,13 +38,14 @@ sequences. A complete encoding audit found 0/1,400 control-path mismatches.
 The current topology/data branch is therefore closed as optimization or fit
 limited. No nearby neural run is authorized, and Phase 4 remains locked.
 
-V52 is the single authorized materially distinct successor. It removes the
-synthetic acquisition header, isolates each of the 14 English capabilities in
-an independent generator checkpoint, and dynamically activates exactly one
-expert behind V45's qualified router. The preregistered inventory contains
-7,000 records, 58,439,920 stored generator parameters, 4,174,280 active
-generator parameters, and 1,058,040 active router parameters. This is a
-conditional development screen, not a Phase 3 result or LayerCake host change.
+V52 completed that materially distinct test and failed. The 14 body-only
+experts reached 810/1,400 with 49 collapses while routing remained 1,400/1,400.
+The bank stored 58,439,920 generator parameters and activated 4,174,280 plus
+the 1,058,040-parameter router. Hard isolation improved V50 by only 25 prompts
+and increased collapse by 13. Preserved outputs substitute acquisition-family
+identifiers for held-out prompt identifiers, making Unicode-safe BPE pointer
+supervision the next bounded representation question. V52 is closed and
+LayerCake remains unchanged.
 
 V16 adds a read-only mechanistic attribution. The exact LayerCake identity and
 certificates pass, so there is no host regression. C0 carries a strong teacher-

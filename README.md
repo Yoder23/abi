@@ -50,12 +50,14 @@ V50's non-promotional full-generator capacity control then scored 785/1,400
 with 36 collapses even though routing remained perfect. V51 measured 96.53%
 action accuracy and 79.14% exact acquisition sequences, below both fit gates;
 the current topology/data branch is closed rather than promoted or swept.
-V52 is now preregistered as one materially distinct resilience screen: the
-qualified router selects among 14 independently trained, body-only capability
-experts. Its placement compiler sends only eligible English acquisition records
-to the core, maps known specialist selections to separate domain cakes, and
-fails closed because no domain acquisition payload exists yet. This is an
-authorized experiment, not a result.
+V52 tested one materially distinct resilience screen: 14 independently trained,
+body-only capability experts behind the qualified router. It failed at
+810/1,400 with 49 collapses. Hard isolation improved V50 by only 25 prompts;
+preserved outputs instead expose held-out prompt-entity copying as the next
+measured representation target. Its placement compiler still sends only
+eligible English acquisition records to the core, maps known specialist
+selections to separate domain cakes, and fails closed because no domain
+acquisition payload exists yet.
 Phase 4 remains locked. No current ABI artifact is certified as a broadly
 fluent teacher-derived English core.
 
@@ -87,6 +89,7 @@ any experiment or launching new work.
 | V49 routed training-fit attribution | COMPLETE; fit limited at 90.56% actions / 72.37% exact | `ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_BRIDGE_FIT_RESULT_V49.json` |
 | V50 full-generator capacity upper bound | COMPLETE FAIL, 785/1,400, 36 collapses | `ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_CAPACITY_RESULT_V50.json` |
 | V51 full-generator fit attribution | COMPLETE; fit limited at 96.53% actions / 79.14% exact | `ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_CAPACITY_FIT_RESULT_V51.json` |
+| V52/V53 hard-routed resilience screen | COMPLETE FAIL, 810/1,400, 49 collapses | `ABI_CAPABILITY_COMPILER_PHASE3_RESILIENCE_RESULT_V53.json` |
 | Sufficient-information frontier | OPEN | Not yet measured |
 | Integrated teacher-derived LayerCake | OPEN | Not yet produced |
 

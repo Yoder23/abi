@@ -1,0 +1,17 @@
+{
+  "format":"abi-capability-compiler-phase3-resilience-result/1",
+  "status":"COMPLETE_FAILED_HARD_ROUTED_EXPERT_BANK",
+  "effective_date":"2026-08-07",
+  "protocol":{"path":"ABI_CAPABILITY_COMPILER_PHASE3_RESILIENCE_PROTOCOL_V52.json","sha256":"0aa0ced3ceb43309835473aa6dadcc92ee4987504b38164605e2ca6173c157d4"},
+  "candidate":{"seed":240052,"experts":14,"expert_manifest_sha256":"713bd4397c96f895387be1958b672ea5f8642feb59d8f8c940c39dd1e0bdd6b5","metadata_sha256":"58f04791f0e3986704ec14b6eae7c145a0abf97fa789f7b95127332a7f96f725","expert_checkpoint_bytes":233862272,"stored_generator_parameters":58439920,"active_generator_parameters":4174280,"active_router_parameters":1058040},
+  "training":{"steps_per_expert":1500,"total_successful_steps":21000,"wall_seconds":472.4452344999954,"peak_process_rss_bytes":1230471168,"peak_cuda_allocated_bytes":318024192,"skipped_amp_steps":0},
+  "evaluation":{"functional_passes":810,"observations":1400,"functional_rate":0.5785714285714286,"route_correct":1400,"repetition_collapses":49,"generation_errors":0,"candidate_minus_teacher":-0.305,"candidate_minus_teacher_lower_95":-0.32785714285714285,"candidate_minus_teacher_upper_95":-0.28285714285714286,"decision_file_sha256":"0b001db2ed4465c3f8323dd2d302a766a4650073e770434dc1945c50c4931669","outputs_sha256":"c056eaad38db8ee01ed2ec68ca91414588bc3c37e338226fb7fcf1f840ba3302"},
+  "gates":{"per_capability_functional":false,"critical_capabilities":false,"zero_repetition_collapses":false,"zero_generation_errors":true,"router_accuracy":true,"teacher_relative_noninferiority":false},
+  "attribution":"Hard capability isolation improved V50 by only 25/1,400 and increased collapses by 13. Preserved outputs still substitute training-family identifiers for held-out prompt identifiers. Shared cross-capability interference is not the primary remaining limit; unsupervised copying and prompt-entity binding are measured next targets.",
+  "decision":"Close V52. Do not run remaining seeds or nearby expert-bank variants.",
+  "promotion_eligible":false,
+  "phase3_certified":false,
+  "phase4_open":false,
+  "final_test_accessed":false,
+  "historical_evidence_changed":false
+}

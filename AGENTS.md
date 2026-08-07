@@ -103,15 +103,13 @@ LoRA or distillation.
 
 ## Active authorization
 
-V52 E0 seed 240052 is the only neural training currently authorized. It is a
-materially distinct hard-routed, body-only bank of 14 independent capability
-experts that targets V50's measured cross-capability interference. It stores
-58,439,920 generator parameters but activates only 4,174,280 plus the qualified
-1,058,040-parameter router. A failure closes the bank and prohibits remaining
-seeds or nearby variants; a pass authorizes only replication and same-candidate
-host/runtime certification. No LayerCake host change is authorized. V47/V50
-step, seed, token, data, and learning-rate sweeps remain prohibited. Final
-material remains inaccessible, and Phase 4 is locked.
+No neural training or LayerCake host change is currently authorized. V52 is
+complete failed at 810/1,400 with 49 collapses despite perfect routing. Its
+remaining seeds and nearby expert-bank variants are prohibited. Preserved
+outputs measure prompt-entity binding and copying as the next representation
+target: one Unicode-safe UTF-8-BPE pointer-supervision screen may be designed
+and separately preregistered. Final material remains inaccessible, and Phase 4
+is locked.
 
 ## Historical Phase 3 authorization log
 
@@ -123,6 +121,13 @@ destinations, blocks those domains because they currently have zero acquisition
 records, and quarantines unknown selections. This is bounded diagnosis and
 placement, not exhaustive knowledge discovery or domain transfer. Only E0 seed
 240052 may train.
+
+V52 E0 has now completed and failed. It improved V50 by only 25/1,400 while
+adding 13 collapses. Coherence and fact-free reasoning remained 0/100, and
+outputs substituted acquisition-family identifiers for held-out prompt
+identifiers. Hard capability isolation is closed. The next bounded design may
+combine V34/V37's Unicode-safe exact BPE surface with explicit prompt-pointer
+targets; it must not rerun V24's obsolete representation or tune V52.
 
 V50/V51 are complete and closed. The non-promotional full-generator capacity
 control scored 785/1,400 with 36 collapses despite perfect routing, and the

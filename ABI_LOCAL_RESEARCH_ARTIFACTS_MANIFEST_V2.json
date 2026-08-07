@@ -1,0 +1,20 @@
+{
+  "format":"abi-local-research-artifacts-manifest/1",
+  "effective_date":"2026-08-07",
+  "supersedes":"ABI_LOCAL_RESEARCH_ARTIFACTS_MANIFEST_V1.json",
+  "historical_artifacts_deleted":false,
+  "artifacts":[
+    {
+      "experiment":"abi-capability-compiler-phase3-resilience-v52-E0-seed240052",
+      "local_root":"results/abi_capability_compiler_phase3_resilience/development_v52/E0-seed240052/experts",
+      "files":14,
+      "bytes":233862272,
+      "expert_manifest_sha256":"713bd4397c96f895387be1958b672ea5f8642feb59d8f8c940c39dd1e0bdd6b5",
+      "metadata_path":"results/abi_capability_compiler_phase3_resilience/development_v52/E0-seed240052/metadata.json",
+      "metadata_sha256":"58f04791f0e3986704ec14b6eae7c145a0abf97fa789f7b95127332a7f96f725",
+      "git_policy":"CHECKPOINTS_PRESERVED_LOCALLY_AND_HASHED_NOT_COMMITTED_DUE_TO_SIZE",
+      "promotion_eligible":false
+    }
+  ],
+  "claim_boundary":"A local hash manifest preserves research lineage but is not a public checkpoint release or Phase 3 certificate."
+}
