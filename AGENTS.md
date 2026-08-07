@@ -131,8 +131,11 @@ projected payload is 38,181,888 bytes. It records 14,338 source and 31,485
 target boundary straddles. V66 now preregisters one exact GPU extraction after
 a no-model inventory pass. It freezes the 3,072-to-192 projection, causal
 predecessor indexing, ragged offsets, source identity, and 38,181,888-byte
-activation payload. The output remains unverified and training-prohibited. No
-neural training, host certification, or LayerCake host change is authorized.
+activation payload. V66 completed in 413.29 teacher-forward seconds and wrote
+99,432 vectors with exact source and record hashes, zero logits, and zero source
+parameters. The output remains unverified and training-prohibited. One hostile
+verification protocol may be designed; no neural training, host certification,
+or LayerCake host change is authorized.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log

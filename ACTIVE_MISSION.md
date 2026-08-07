@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V66 EXTRACTION PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V85.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V66 EXTRACTED, UNVERIFIED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V86.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -147,6 +147,12 @@ V66 now seals one exact GPU extraction. It freezes the projection, record order,
 causal predecessor indices, ragged offsets, expected payload, and source model.
 The resulting artifact remains unusable for training until hostile verification
 is separately preregistered and passed.
+
+V66 completed with 99,432 vectors and a 38,181,888-byte activation payload in
+413.29 teacher-forward seconds. It stored no logits or source parameters. The
+artifact is still training-prohibited until a hostile verifier checks every
+ragged offset and provenance row and exactly recomputes a sealed stratified
+sample under the original batch partition.
 
 ## Historical direct-core path
 
@@ -336,6 +342,8 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V86.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_ACTION_ALIGNED_EXTRACTION_RESULT_V67.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V85.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_ACTION_ALIGNED_EXTRACTION_PROTOCOL_V66.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V84.json`
