@@ -1,0 +1,60 @@
+{
+  "format": "abi-capability-compiler-phase3-representation-aligned-core-result/1",
+  "status": "FAIL_INITIAL_SCREEN_BRANCH_CLOSED",
+  "effective_date": "2026-08-07",
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_REPRESENTATION_ALIGNED_CORE_PROTOCOL_V62.json",
+    "sha256": "94ba36e5cb0c66aaa5acf5351f80a711c9072edf2bfe6495e77fbaf9ac5d7956"
+  },
+  "candidate": {
+    "seed": 240050,
+    "checkpoint_sha256": "d743957d1b5cbc7e71c54c76538879d5decde70fb9150a8eafb2890a721d322b",
+    "checkpoint_bytes": 16704448,
+    "deployed_parameters": 4174280,
+    "training_seconds": 96.19527229999949,
+    "skipped_amp_steps": 0,
+    "projection_deployed": false,
+    "teacher_present_at_inference": false
+  },
+  "evaluation": {
+    "functional_passes": 781,
+    "observations": 1400,
+    "repetition_collapses": 40,
+    "generation_errors": 0,
+    "route_correct": 1400,
+    "coherence_passes": 0,
+    "fact_free_reasoning_passes": 0,
+    "teacher_delta": -0.32571428571428573,
+    "teacher_delta_lower_95": -0.3485714285714286,
+    "teacher_delta_upper_95": -0.30214285714285716
+  },
+  "matched_v50_comparison": {
+    "V62_passes": 781,
+    "V50_passes": 785,
+    "V62_collapses": 40,
+    "V50_collapses": 36,
+    "paired_gains": 1,
+    "paired_losses": 5,
+    "V62_minus_V50": -0.002857142857142857,
+    "lower_95": -0.0064285714285714285,
+    "upper_95": 0.0,
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 240062
+  },
+  "gates": {
+    "per_capability_functional": false,
+    "critical_capabilities": false,
+    "zero_repetition_collapses": false,
+    "zero_generation_errors": true,
+    "router_accuracy": true,
+    "teacher_relative_noninferiority": false
+  },
+  "attribution": "The pooled prompt/response signal was learnable but did not improve the matched autonomous generator. A single pooled response vector removes sequence-local structure, and response-token hidden states are not the causal pre-token states that predict those tokens.",
+  "additional_seeds_authorized": false,
+  "alignment_weight_sweeps_authorized": false,
+  "host_runtime_certification_authorized": false,
+  "phase3_certified": false,
+  "phase4_open": false,
+  "final_test_accessed": false,
+  "next_authorized_work": "One no-training feasibility study may test exact LayerCake-action-aligned causal teacher states with pre-storage fixed projection and explicit payload accounting."
+}

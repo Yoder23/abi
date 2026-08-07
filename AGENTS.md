@@ -120,9 +120,14 @@ be designed against the existing same-size output-only control. V62 now seals
 that single A0 screen: the exact V50 generator, seed, sample order, optimizer,
 updates, router, and autonomous gates are retained; only fixed-projection
 prompt/response cosine alignment to V61 is added. This is standard pooled
-representation distillation. No other seed, weight sweep, host certification,
-or LayerCake host change is authorized unless A0 passes every gate. Final
-material remains inaccessible, and Phase 4 is locked.
+representation distillation. A0 completed and failed at 781/1,400 with 40
+collapses, four fewer passes and four more collapses than matched V50. It still
+scored 0/100 on coherence and fact-free reasoning. Do not sweep alignment
+weights or run additional seeds. One no-training feasibility study may test a
+materially different sequence/action-aligned causal representation with fixed
+pre-storage compression. No extraction, neural training, host certification,
+or LayerCake host change is authorized. Final material remains inaccessible,
+and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log
 

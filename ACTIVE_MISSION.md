@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V62 INITIAL SCREEN PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V81.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V62 POOLED ALIGNMENT FAILED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V82.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -122,6 +122,14 @@ and gates. The only causal change is a fixed, discarded 3,072-to-192 projection
 and two untuned 0.1-weight cosine losses over the verified prompt and response
 vectors. Only A0 may run; any absolute miss closes the branch without a weight
 sweep, additional seeds, or inherited runtime claim.
+
+V62 completed and failed: 781/1,400 with 40 collapses versus matched V50's
+785/1,400 with 36. Its paired difference is -0.29 points with a 95% interval
+of [-0.64, 0.00], and coherence and fact-free reasoning remain 0/100. The
+learned pooled alignment therefore does not cause better autonomous generation.
+No weight sweep or additional seed is authorized. The next bounded question is
+whether action-aligned causal prediction states are feasible at a controlled
+payload; this must be answered without teacher extraction or model training.
 
 ## Historical direct-core path
 
@@ -311,6 +319,8 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V82.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_REPRESENTATION_ALIGNED_CORE_RESULT_V63.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V81.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_REPRESENTATION_ALIGNED_CORE_PROTOCOL_V62.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V80.json`
