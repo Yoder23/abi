@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V64 ACTION-ALIGNED FEASIBILITY PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V83.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V64 ACTION-ALIGNED FEASIBILITY PASSED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V84.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -136,6 +136,12 @@ at least one teacher-token overlap for every LayerCake body/output action,
 causal predecessor states for every target token, explicit boundary-straddle
 counts, and a pre-storage 192-wide fp16 payload below 512 MiB. It cannot load
 the teacher model, extract tensors, or train.
+
+V64 passed all 7,000 records. It maps 50,403 source and 49,029 target actions,
+uses causal predecessor states for every target, and requires a 38,181,888-byte
+projected fp16 payload. It also exposes 14,338 source and 31,485 target actions
+whose finer LayerCake boundary straddles a teacher token. No extraction is
+authorized until an exact ragged-tensor protocol is separately sealed.
 
 ## Historical direct-core path
 
@@ -325,6 +331,8 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V84.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_ACTION_ALIGNED_FEASIBILITY_RESULT_V65.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V83.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_ACTION_ALIGNED_FEASIBILITY_PROTOCOL_V64.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V82.json`
