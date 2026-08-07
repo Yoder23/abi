@@ -128,10 +128,12 @@ materially different sequence/action-aligned causal representation with fixed
 pre-storage compression. V64 passed: all 50,403 source and 49,029 target actions
 map across 7,000 records, every target has causal predecessor states, and the
 projected payload is 38,181,888 bytes. It records 14,338 source and 31,485
-target boundary straddles. One exact extraction protocol may now be designed.
-No extraction, neural training, host certification, or LayerCake host change is
-authorized until it is sealed. Final material remains inaccessible, and Phase
-4 is locked.
+target boundary straddles. V66 now preregisters one exact GPU extraction after
+a no-model inventory pass. It freezes the 3,072-to-192 projection, causal
+predecessor indexing, ragged offsets, source identity, and 38,181,888-byte
+activation payload. The output remains unverified and training-prohibited. No
+neural training, host certification, or LayerCake host change is authorized.
+Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log
 
