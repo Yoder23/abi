@@ -103,11 +103,13 @@ LoRA or distillation.
 
 ## Active authorization
 
-V56 is the only active work: a no-training, no-extraction feasibility and
-imported-information accounting study for richer frozen-teacher signals. No
-teacher model load, teacher forward pass, neural training, or LayerCake host
-change is authorized. V54's remaining seeds and nearby pointer policies remain
-prohibited. Final material remains inaccessible, and Phase 4 is locked.
+V56/V57 are complete. They select a per-record prompt/response pooled final-
+hidden fp16 substrate: 14,000 vectors, width 3,072, and 86,016,000 tensor bytes.
+No teacher model load, extraction, neural training, or LayerCake host change is
+currently authorized. The next work is design and preregistration of one exact
+extraction-only protocol with sequence-boundary validation and complete source
+GPU/RAM/time accounting. Final material remains inaccessible, and Phase 4 is
+locked.
 
 ## Historical Phase 3 authorization log
 

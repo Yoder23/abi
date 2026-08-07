@@ -1,0 +1,182 @@
+{
+  "candidates": [
+    {
+      "covers_prompt": false,
+      "covers_response": true,
+      "direct_layercake_alignment": false,
+      "name": "full_output_logits_fp16",
+      "payload_bytes": 13829010816,
+      "per_record": true,
+      "scalars": 6914505408,
+      "standard_method": "full-logit knowledge distillation",
+      "tokenizer_independent": false,
+      "vectors": 215647
+    },
+    {
+      "covers_prompt": false,
+      "covers_response": true,
+      "direct_layercake_alignment": false,
+      "name": "top4_output_logits_uint16_fp16_plus_logz",
+      "payload_bytes": 3881646,
+      "per_record": true,
+      "scalars": 1078235,
+      "standard_method": "top-k logit knowledge distillation",
+      "tokenizer_independent": false,
+      "vectors": 215647
+    },
+    {
+      "covers_prompt": false,
+      "covers_response": true,
+      "direct_layercake_alignment": false,
+      "name": "top8_output_logits_uint16_fp16_plus_logz",
+      "payload_bytes": 7331998,
+      "per_record": true,
+      "scalars": 1940823,
+      "standard_method": "top-k logit knowledge distillation",
+      "tokenizer_independent": false,
+      "vectors": 215647
+    },
+    {
+      "covers_prompt": false,
+      "covers_response": true,
+      "direct_layercake_alignment": false,
+      "name": "top16_output_logits_uint16_fp16_plus_logz",
+      "payload_bytes": 14232702,
+      "per_record": true,
+      "scalars": 3665999,
+      "standard_method": "top-k logit knowledge distillation",
+      "tokenizer_independent": false,
+      "vectors": 215647
+    },
+    {
+      "covers_prompt": false,
+      "covers_response": true,
+      "direct_layercake_alignment": false,
+      "name": "top32_output_logits_uint16_fp16_plus_logz",
+      "payload_bytes": 28034110,
+      "per_record": true,
+      "scalars": 7116351,
+      "standard_method": "top-k logit knowledge distillation",
+      "tokenizer_independent": false,
+      "vectors": 215647
+    },
+    {
+      "covers_prompt": false,
+      "covers_response": true,
+      "direct_layercake_alignment": true,
+      "name": "response_token_final_hidden_fp16",
+      "payload_bytes": 1324935168,
+      "per_record": true,
+      "scalars": 662467584,
+      "standard_method": "token-level representation distillation",
+      "tokenizer_independent": true,
+      "vectors": 215647
+    },
+    {
+      "covers_prompt": true,
+      "covers_response": true,
+      "direct_layercake_alignment": true,
+      "name": "prompt_response_token_final_hidden_fp16",
+      "payload_bytes": 4869562368,
+      "per_record": true,
+      "scalars": 2434781184,
+      "standard_method": "token-level representation distillation",
+      "tokenizer_independent": true,
+      "vectors": 792572
+    },
+    {
+      "covers_prompt": true,
+      "covers_response": true,
+      "direct_layercake_alignment": true,
+      "name": "dual_pooled_final_hidden_fp16",
+      "payload_bytes": 86016000,
+      "per_record": true,
+      "scalars": 43008000,
+      "standard_method": "pooled representation distillation",
+      "tokenizer_independent": true,
+      "vectors": 14000
+    },
+    {
+      "covers_prompt": true,
+      "covers_response": true,
+      "direct_layercake_alignment": true,
+      "name": "dual_pooled_layers_16_24_32_fp16",
+      "payload_bytes": 258048000,
+      "per_record": true,
+      "scalars": 129024000,
+      "standard_method": "multi-layer pooled representation distillation",
+      "tokenizer_independent": true,
+      "vectors": 42000
+    },
+    {
+      "covers_prompt": true,
+      "covers_response": true,
+      "direct_layercake_alignment": true,
+      "name": "capability_prototypes_final_hidden_fp16",
+      "payload_bytes": 172032,
+      "per_record": false,
+      "scalars": 86016,
+      "standard_method": "capability-prototype representation distillation",
+      "tokenizer_independent": true,
+      "vectors": 28
+    }
+  ],
+  "corpus": {
+    "capabilities": 14,
+    "records": 7000,
+    "teacher_forward_tokens": 792572,
+    "teacher_input_tokens": 576925,
+    "teacher_output_tokens": 215647
+  },
+  "evidence_sha256": "7953929211d847de2ad58a9098b224fb3bebaacb81d5aaa0658d5b1ea18c8688",
+  "extraction_authorized": false,
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-teacher-representation-feasibility-result/1",
+  "layercake_host_changed": false,
+  "next_step": "Preregister one extraction-only run for the selected representation, including exact model load, pooling, dtype, record order, hashes, GPU/RAM/time accounting, and hostile verification.",
+  "phase3_certified": false,
+  "phase4_open": false,
+  "protocol_sha256": "b0700a97344521fdb510e7b31c7ae5258f67d2486bccf3e1a55162b78be73868",
+  "selected": {
+    "covers_prompt": true,
+    "covers_response": true,
+    "direct_layercake_alignment": true,
+    "name": "dual_pooled_final_hidden_fp16",
+    "payload_bytes": 86016000,
+    "per_record": true,
+    "scalars": 43008000,
+    "standard_method": "pooled representation distillation",
+    "tokenizer_independent": true,
+    "vectors": 14000
+  },
+  "selected_imported_information": {
+    "hidden_activations_stored": 14000,
+    "logits_stored": 0,
+    "payload_bytes": 86016000,
+    "source_parameters_copied": 0,
+    "stored_scalars": 43008000,
+    "stored_vectors": 14000
+  },
+  "selection_rule": {
+    "direct_layercake_alignment_required": true,
+    "expected_selection": "dual_pooled_final_hidden_fp16",
+    "payload_bytes_maximum": 134217728,
+    "per_record_required": true,
+    "prompt_coverage_required": true,
+    "response_coverage_required": true,
+    "smallest_qualifying_payload_wins": true,
+    "tokenizer_independent_required": true
+  },
+  "status": "PASS_FEASIBILITY_SELECTION_ONLY",
+  "teacher": {
+    "config_sha256": "072d4df63228ef806a6b2b2f02a93f1d048ebd31584d0f61d1180aef36e5bcea",
+    "dtype": "bfloat16",
+    "hidden_size": 3072,
+    "layers": 32,
+    "model": "microsoft/Phi-3-mini-4k-instruct",
+    "revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "vocabulary": 32064
+  },
+  "teacher_present_at_final_inference": false,
+  "training_authorized": false
+}
