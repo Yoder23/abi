@@ -103,13 +103,15 @@ LoRA or distillation.
 
 ## Active authorization
 
-No neural training or LayerCake host change is currently authorized. V52 is
-complete failed at 810/1,400 with 49 collapses despite perfect routing. Its
-remaining seeds and nearby expert-bank variants are prohibited. Preserved
-outputs measure prompt-entity binding and copying as the next representation
-target: one Unicode-safe UTF-8-BPE pointer-supervision screen may be designed
-and separately preregistered. Final material remains inaccessible, and Phase 4
-is locked.
+V54 P0 seed 240050 is the only neural training currently authorized. Its exact
+UTF-8-BPE inventory reconstructs 7,000/7,000 targets and replaces 2,680 eligible
+fixed actions across 2,090 records with supervised source-position actions.
+Teacher data, router, generator topology, optimizer, steps, batch size,
+learning rate, and V50 seed remain fixed. A failure closes the branch and
+prohibits remaining seeds or nearby pointer policies; a pass authorizes only
+replication and same-candidate host/runtime certification. No LayerCake host
+change is authorized. Final material remains inaccessible, and Phase 4 is
+locked.
 
 ## Historical Phase 3 authorization log
 
@@ -128,6 +130,14 @@ outputs substituted acquisition-family identifiers for held-out prompt
 identifiers. Hard capability isolation is closed. The next bounded design may
 combine V34/V37's Unicode-safe exact BPE surface with explicit prompt-pointer
 targets; it must not rerun V24's obsolete representation or tune V52.
+
+V54 is that separately preregistered screen under
+`ABI_CAPABILITY_COMPILER_PHASE3_BPE_POINTER_PROTOCOL_V54.json`. Its preflight
+passes exact reconstruction, length, parameter, teacher-information, and host-
+immutability checks. Pointer coverage is zero for coherence and fact-free
+reasoning, so the candidate must still pass the unchanged all-capability gates;
+partial entity-copy improvements cannot promote it. Only P0 seed 240050 may
+train.
 
 V50/V51 are complete and closed. The non-promotional full-generator capacity
 control scored 785/1,400 with 36 collapses despite perfect routing, and the
