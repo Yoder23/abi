@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; ROUTER QUALIFIED, CURRENT GENERATOR TOPOLOGY/DATA BRANCH CLOSED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V69.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V52 HARD-ROUTED RESILIENCE SCREEN PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V70.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -65,11 +65,14 @@ and a paired teacher-relative interval of [-34.57, -30.00] points. V51 measured
 generator remained fit limited. All 1,400 evaluation control prefixes matched
 the training token path exactly. The current topology/data branch is closed.
 
-No neural run or LayerCake host change is currently authorized. Any successor
-must be a separately preregistered, materially new capability-realization
-interface with explicit active-parameter and inference-cost accounting. V47
-and V50 seed, step, token, data, and learning-rate sweeps are closed. Phase 2's
-external human-rating gate also remains unresolved, so Phase 3 cannot receive a
+V52 E0 seed 240052 is the only authorized neural run. It replaces shared
+realization with 14 body-only capability experts selected by the qualified
+router. Total stored generator state is 58,439,920 parameters; active generator
+state is 4,174,280 plus the 1,058,040-parameter router. This deliberately trades
+storage for isolation while testing quality. A failure closes the branch; a
+pass still requires two replications and same-candidate LayerCake runtime and
+package certification. No LayerCake host change is authorized. Phase 2's
+external human-rating gate remains unresolved, so Phase 3 cannot receive a
 final certificate and Phase 4 cannot open.
 
 ## Historical direct-core path
@@ -260,6 +263,8 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V70.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_RESILIENCE_PROTOCOL_V52.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V69.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_CAPACITY_RESULT_V50.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_CAPACITY_FIT_RESULT_V51.json`

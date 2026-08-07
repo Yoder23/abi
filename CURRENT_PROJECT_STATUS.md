@@ -38,6 +38,14 @@ sequences. A complete encoding audit found 0/1,400 control-path mismatches.
 The current topology/data branch is therefore closed as optimization or fit
 limited. No nearby neural run is authorized, and Phase 4 remains locked.
 
+V52 is the single authorized materially distinct successor. It removes the
+synthetic acquisition header, isolates each of the 14 English capabilities in
+an independent generator checkpoint, and dynamically activates exactly one
+expert behind V45's qualified router. The preregistered inventory contains
+7,000 records, 58,439,920 stored generator parameters, 4,174,280 active
+generator parameters, and 1,058,040 active router parameters. This is a
+conditional development screen, not a Phase 3 result or LayerCake host change.
+
 V16 adds a read-only mechanistic attribution. The exact LayerCake identity and
 certificates pass, so there is no host regression. C0 carries a strong teacher-
 payload signal, while one model-generated wrong prefix token causes a large,

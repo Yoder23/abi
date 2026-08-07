@@ -50,6 +50,12 @@ V50's non-promotional full-generator capacity control then scored 785/1,400
 with 36 collapses even though routing remained perfect. V51 measured 96.53%
 action accuracy and 79.14% exact acquisition sequences, below both fit gates;
 the current topology/data branch is closed rather than promoted or swept.
+V52 is now preregistered as one materially distinct resilience screen: the
+qualified router selects among 14 independently trained, body-only capability
+experts. Its placement compiler sends only eligible English acquisition records
+to the core, maps known specialist selections to separate domain cakes, and
+fails closed because no domain acquisition payload exists yet. This is an
+authorized experiment, not a result.
 Phase 4 remains locked. No current ABI artifact is certified as a broadly
 fluent teacher-derived English core.
 

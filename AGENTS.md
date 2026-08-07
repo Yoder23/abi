@@ -103,15 +103,26 @@ LoRA or distillation.
 
 ## Active authorization
 
-No neural training or LayerCake host change is currently authorized. V45 has
-closed the bounded routing question, and V50/V51 close the current full-
-generator topology/data combination. Any successor must be a separately
-preregistered, materially distinct capability-realization design and account
-added parameters, active memory, TTFT, CPU/GPU inference cost, and same-
-candidate quality. V47/V50 step, seed, token, data, and learning-rate sweeps are
-prohibited. Final material remains inaccessible, and Phase 4 is locked.
+V52 E0 seed 240052 is the only neural training currently authorized. It is a
+materially distinct hard-routed, body-only bank of 14 independent capability
+experts that targets V50's measured cross-capability interference. It stores
+58,439,920 generator parameters but activates only 4,174,280 plus the qualified
+1,058,040-parameter router. A failure closes the bank and prohibits remaining
+seeds or nearby variants; a pass authorizes only replication and same-candidate
+host/runtime certification. No LayerCake host change is authorized. V47/V50
+step, seed, token, data, and learning-rate sweeps remain prohibited. Final
+material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log
+
+V52 is preregistered under
+`ABI_CAPABILITY_COMPILER_PHASE3_RESILIENCE_PROTOCOL_V52.json`. Its placement
+compiler sends the 7,000 eligible English records only to the English core,
+maps chemistry, civics, mathematics, and Python to separate domain-cake
+destinations, blocks those domains because they currently have zero acquisition
+records, and quarantines unknown selections. This is bounded diagnosis and
+placement, not exhaustive knowledge discovery or domain transfer. Only E0 seed
+240052 may train.
 
 V50/V51 are complete and closed. The non-promotional full-generator capacity
 control scored 785/1,400 with 36 collapses despite perfect routing, and the
