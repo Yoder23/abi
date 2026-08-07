@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V59 VERIFIER FAILED, V60 DIAGNOSTIC PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V78.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V61 VERIFIER REPAIR PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V79.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -102,6 +102,13 @@ training remains prohibited. V60 is a non-promotional, read-only numerical
 diagnostic over the identical 28 records. It compares singleton forwards with
 the exact original 8-record extraction-batch context before any verifier repair
 can be considered.
+
+V60 found the failure mechanism: singleton recomputation had 0.05371 maximum
+absolute error while retaining 0.999993 minimum cosine, whereas recomputation
+under the exact original 8-record partition reproduced every sampled fp16
+scalar exactly. V61 preserves the V59 failure and preregisters a verifier-only
+repair requiring that zero-error original-batch evidence plus every static,
+provenance, balance, and imported-information check.
 
 ## Historical direct-core path
 
@@ -291,6 +298,8 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V79.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_TEACHER_REPRESENTATION_VERIFIER_REPAIR_V61.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V78.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_TEACHER_REPRESENTATION_NUMERICS_PROTOCOL_V60.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_TEACHER_REPRESENTATION_VERIFIER_FAILURE_V59.json`

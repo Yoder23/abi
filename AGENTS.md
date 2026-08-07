@@ -110,11 +110,13 @@ produced 14,000 fp16 vectors with an 86,016,000-byte tensor payload, stored no
 logits or source parameters, and recorded 407.57 seconds of teacher-forward
 time, 9.06 GB peak CUDA allocation, and 2.35 GB peak process RSS. V59's hostile
 verification failed because singleton recomputation exceeded its preregistered
-absolute-error tolerance; no verification result was written. V60 authorizes
-one read-only comparison of singleton and exact original-batch recomputation.
-It cannot verify the artifact or authorize training. No neural training or
-LayerCake host change is authorized. Final material remains inaccessible, and
-Phase 4 is locked.
+absolute-error tolerance; no verification result was written. V60 measured
+0.05371 singleton maximum error but 0.999993 minimum cosine; exact original-
+batch recomputation had zero error and 100% exact fp16 scalars across all 56
+sampled vectors. V61 preregisters a verifier-only repair that retains V59 and
+requires the exact original-batch result plus every static check. It cannot
+authorize training by itself. No neural training or LayerCake host change is
+authorized. Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log
 

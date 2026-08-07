@@ -1,0 +1,30 @@
+{
+  "artifact_verified": false,
+  "claim_boundary": "V60 diagnoses numerical reproduction only and cannot verify the substrate, authorize training, or certify Phase 3.",
+  "evidence_sha256": "974d605be50d7b7309e219bd3ea24b3ac74301d5936253e23d2d7a63049c6d89",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-teacher-representation-numerics-result/1",
+  "layercake_host_changed": false,
+  "original_batch_recomputation": {
+    "maximum_absolute_error": 0.0,
+    "mean_absolute_error": 0.0,
+    "mean_exact_scalar_fraction": 1.0,
+    "minimum_cosine_similarity": 0.999999463558197,
+    "vectors": 56
+  },
+  "phase3_certified": false,
+  "phase4_open": false,
+  "protocol_sha256": "6522c684bb3cf560557863d5757d75cbd46cad3ec6cf52d644870a148e0f0c75",
+  "selected_records": 28,
+  "selected_vectors": 56,
+  "singleton_recomputation": {
+    "maximum_absolute_error": 0.0537109375,
+    "mean_absolute_error": 0.0004917225737049843,
+    "mean_exact_scalar_fraction": 0.3389078796442066,
+    "minimum_cosine_similarity": 0.9999934434890747,
+    "vectors": 56
+  },
+  "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310",
+  "status": "DIAGNOSTIC_COMPLETE_NONPROMOTIONAL",
+  "training_performed": false
+}
