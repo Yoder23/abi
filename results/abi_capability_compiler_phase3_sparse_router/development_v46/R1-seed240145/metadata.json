@@ -1,0 +1,157 @@
+{
+  "checkpoint": {
+    "bytes": 4232392,
+    "path": "router.safetensors",
+    "sha256": "42bd9c8e3fb90275dd1115f69b0444558f3f3b6c2fb35732800919b78c3ff9e0"
+  },
+  "config": {
+    "path": "config.json",
+    "sha256": "b43d07f892a2bb746c93301a913777e486eab71bd917486de464bd185ec09d99",
+    "trainable_parameters": 1058040
+  },
+  "evidence_sha256": "ca5af33db4ebf972e08671977bc5e096af3826f9657d89810a09721ea065eb02",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-sparse-router-candidate/1",
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "machine": "Sam"
+  },
+  "imported_information": {
+    "capability_labels": 7000,
+    "metadata_labels_derived_from_existing_prompt_boundaries": 7000,
+    "records": 7000,
+    "source_parameters_copied": 0,
+    "stored_activations": 0,
+    "stored_logits": 0,
+    "teacher_outputs_added": 0
+  },
+  "layercake_host_changed": false,
+  "phase3_certified": false,
+  "protocol_sha256": "6b328e5dad4fc9ab27867f7fe48f2909fdb2611e9d238bd194b3e0b9e97cf548",
+  "seed": 240145,
+  "status": "TRAINED_SPARSE_ROUTER_GATE_ONLY",
+  "teacher_present_at_inference": false,
+  "training": {
+    "batch_size": 64,
+    "curves": [
+      {
+        "body_accuracy": 0.046875,
+        "loss": 2.9249114990234375,
+        "metadata_accuracy": 0.0625,
+        "step": 1,
+        "wall_seconds": 0.09362429999600863
+      },
+      {
+        "body_accuracy": 0.890625,
+        "loss": 1.2432184219360352,
+        "metadata_accuracy": 0.96875,
+        "step": 100,
+        "wall_seconds": 0.5222096999932546
+      },
+      {
+        "body_accuracy": 1.0,
+        "loss": 0.28593990206718445,
+        "metadata_accuracy": 1.0,
+        "step": 200,
+        "wall_seconds": 0.9519040999948629
+      },
+      {
+        "body_accuracy": 1.0,
+        "loss": 0.06337875872850418,
+        "metadata_accuracy": 1.0,
+        "step": 300,
+        "wall_seconds": 1.3951335999954608
+      },
+      {
+        "body_accuracy": 1.0,
+        "loss": 0.014386794529855251,
+        "metadata_accuracy": 1.0,
+        "step": 400,
+        "wall_seconds": 1.825749999996333
+      },
+      {
+        "body_accuracy": 1.0,
+        "loss": 0.003963808063417673,
+        "metadata_accuracy": 1.0,
+        "step": 500,
+        "wall_seconds": 2.2577141000001575
+      },
+      {
+        "body_accuracy": 1.0,
+        "loss": 0.0009736290667206049,
+        "metadata_accuracy": 1.0,
+        "step": 600,
+        "wall_seconds": 2.6941602999941097
+      },
+      {
+        "body_accuracy": 1.0,
+        "loss": 0.00023893969773780555,
+        "metadata_accuracy": 1.0,
+        "step": 700,
+        "wall_seconds": 3.1312166999996407
+      },
+      {
+        "body_accuracy": 1.0,
+        "loss": 0.00010809817467816174,
+        "metadata_accuracy": 1.0,
+        "step": 800,
+        "wall_seconds": 3.565833399996336
+      },
+      {
+        "body_accuracy": 1.0,
+        "loss": 4.719574280898087e-05,
+        "metadata_accuracy": 1.0,
+        "step": 900,
+        "wall_seconds": 4.006310199998552
+      },
+      {
+        "body_accuracy": 1.0,
+        "loss": 2.53677208092995e-05,
+        "metadata_accuracy": 1.0,
+        "step": 1000,
+        "wall_seconds": 4.449961699996493
+      },
+      {
+        "body_accuracy": 1.0,
+        "loss": 1.1232640645175707e-05,
+        "metadata_accuracy": 1.0,
+        "step": 1100,
+        "wall_seconds": 4.877815899999405
+      },
+      {
+        "body_accuracy": 1.0,
+        "loss": 9.437647349841427e-06,
+        "metadata_accuracy": 1.0,
+        "step": 1200,
+        "wall_seconds": 5.311444399994798
+      },
+      {
+        "body_accuracy": 1.0,
+        "loss": 5.164843059901614e-06,
+        "metadata_accuracy": 1.0,
+        "step": 1300,
+        "wall_seconds": 5.745716699995683
+      },
+      {
+        "body_accuracy": 1.0,
+        "loss": 3.9992041820369195e-06,
+        "metadata_accuracy": 1.0,
+        "step": 1400,
+        "wall_seconds": 6.175957399995241
+      },
+      {
+        "body_accuracy": 1.0,
+        "loss": 3.080804845012608e-06,
+        "metadata_accuracy": 1.0,
+        "step": 1500,
+        "wall_seconds": 6.6101051999939955
+      }
+    ],
+    "effective_segments_per_step": 128,
+    "peak_cuda_allocated_bytes": 23344640,
+    "peak_process_rss_bytes": 1191612416,
+    "record_sequence_sha256": "38688a5123f025356f28cf198b7cbac146af6ced77299cdbf1a3024e29e4cbd5",
+    "steps": 1500,
+    "wall_seconds": 6.665545799995016
+  }
+}
