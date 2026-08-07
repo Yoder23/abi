@@ -1,0 +1,79 @@
+{
+  "format": "abi-capability-compiler-phase3-segment-router/1",
+  "protocol_id": "abi-capability-compiler-phase3-segment-router-v44",
+  "status": "PREREGISTERED_SEGMENT_ROUTER_GATE",
+  "effective_date": "2026-08-07",
+  "historical_evidence_changed": false,
+  "phase3_status": "UNCERTIFIED",
+  "phase4_status": "LOCKED",
+  "final_test_access": "PROHIBITED",
+  "objective": "Test one segment-aware router that classifies existing acquisition metadata as metadata and uses an order-sensitive text encoder to select the capability-bearing segment, without adding teacher outputs or changing LayerCake.",
+  "causal_basis": "V43 passed aggregate body routing at 95.36% but failed unchanged original prompts at 38.14%, isolating whole-prompt header entanglement. Its weakest body capabilities also show that mean pooling discards useful order. V44 changes both measured mechanisms and does not tune V43 steps, seed, labels, or tokenizer.",
+  "phase1_ir": "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir",
+  "development_catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+  "tokenizer": {
+    "canonical_document": "artifacts/phase3/utf8_bpe_v34/layercake_tokenizer_v3.json",
+    "canonical_sha256": "fc391ac322351a94c7cac05cc872f49b6436bc836bf260fdc959c0c11800e2f9",
+    "fixed_actions": 4999
+  },
+  "layercake_host": {
+    "repository": "../layercake_release",
+    "interface": "lc-direct-neural-core/3",
+    "interface_sha256": "4ec1f609cea9f42924ebcdc16fd6b76be1630351d629d77eaab9b956b7901ac2",
+    "changed": false
+  },
+  "architecture": {
+    "embedding_width": 128,
+    "channels": 64,
+    "kernels": [1, 2, 3, 5],
+    "hidden_width": 128,
+    "dropout": 0.1,
+    "classes": 15,
+    "metadata_class": "__metadata__"
+  },
+  "segmentation": {
+    "rule": "When a prompt contains multiple lines, classify the first line and the unchanged remaining text as separate semantic segments; otherwise classify the entire prompt as one segment.",
+    "selection": "Exclude segments predicted as metadata, then select the remaining segment with the greatest capability probability. If every segment is predicted metadata, fail-soft to the segment with the greatest capability probability.",
+    "benchmark_specific_strings": false
+  },
+  "supervision": {
+    "capability_view": "unchanged acquisition body with its existing Phase 1 capability label",
+    "metadata_view": "unchanged acquisition first line with a metadata label derived only from the pre-existing prompt boundary",
+    "metadata_class_weight": 0.07142857142857142,
+    "teacher_outputs_added": 0,
+    "development_text_used_for_training": false
+  },
+  "training": {
+    "device": "cuda",
+    "seed": 240044,
+    "steps": 1500,
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "optimizer": "AdamW",
+    "curve_interval": 100,
+    "trainable_parameters": 765711,
+    "teacher_present_at_inference": false,
+    "source_parameters_copied": 0
+  },
+  "router_gate": {
+    "aggregate_point_minimum": 0.9,
+    "aggregate_wilson_lower_minimum": 0.88,
+    "body_point_minimum": 0.9,
+    "per_capability_point_minimum": 0.85,
+    "per_capability_wilson_lower_minimum": 0.75,
+    "metadata_point_minimum": 0.9,
+    "metadata_wilson_lower_minimum": 0.88
+  },
+  "decision_rule": "Run only R0 seed 240044. A full pass of aggregate original, aggregate body, every original-prompt capability, and metadata rejection may authorize exactly two locked replication seeds. Any miss closes V44 and prohibits replications and a routed LayerCake host.",
+  "bindings": {
+    "abi/capability_compiler_phase3_segment_router.py": "64266d8d0199d3bf80de43f739dde35aa2a6fa7ad3800d4e06cecfcb6eb08fda",
+    "tests/test_capability_compiler_phase3_segment_router.py": "c7db9c69bbf4ad17b67ca0a47cb5b6ef824c21943970369431dc8a2e607fe5a2",
+    "abi/capability_compiler_phase3_bpe_core.py": "8db7deb1b1bbd8b63cdc1523130d4e0f2d162e76bc586e1e86795c6dde0c71bb",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V55.json": "57e75499bbfaa27d2b325ff81ffcc11d8be3953fdbe7ef564dc4a8803c474f5e",
+    "artifacts/phase3/utf8_bpe_v34/layercake_tokenizer_v3.json": "64a2b3ebf2fde5ec1a35faa6813b77f09f19f47c1135695d72b29145c023df36",
+    "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "../layercake_release/layercake_extensions/bpe_direct_neural_core.py": "23136262e4f63f1037d26568cbf3d41b847d80145fc5b1456ca98294b09d9050"
+  },
+  "claim_boundary": "Standalone ABI router gate only; not English generation, Phase 3 certification, LayerCake quality, or ABI superiority."
+}
