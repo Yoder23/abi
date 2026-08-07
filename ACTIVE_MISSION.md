@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V62 POOLED ALIGNMENT FAILED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V82.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V64 ACTION-ALIGNED FEASIBILITY PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V83.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -130,6 +130,12 @@ learned pooled alignment therefore does not cause better autonomous generation.
 No weight sweep or additional seed is authorized. The next bounded question is
 whether action-aligned causal prediction states are feasible at a controlled
 payload; this must be answered without teacher extraction or model training.
+
+V64 seals that feasibility study. It requires exact contextual token identity,
+at least one teacher-token overlap for every LayerCake body/output action,
+causal predecessor states for every target token, explicit boundary-straddle
+counts, and a pre-storage 192-wide fp16 payload below 512 MiB. It cannot load
+the teacher model, extract tensors, or train.
 
 ## Historical direct-core path
 
@@ -319,6 +325,8 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V83.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_ACTION_ALIGNED_FEASIBILITY_PROTOCOL_V64.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V82.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_REPRESENTATION_ALIGNED_CORE_RESULT_V63.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V81.json`

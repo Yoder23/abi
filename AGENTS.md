@@ -125,9 +125,11 @@ collapses, four fewer passes and four more collapses than matched V50. It still
 scored 0/100 on coherence and fact-free reasoning. Do not sweep alignment
 weights or run additional seeds. One no-training feasibility study may test a
 materially different sequence/action-aligned causal representation with fixed
-pre-storage compression. No extraction, neural training, host certification,
-or LayerCake host change is authorized. Final material remains inaccessible,
-and Phase 4 is locked.
+pre-storage compression. V64 now preregisters that no-model feasibility study.
+It must bind every host action, use pre-token causal states for outputs, count
+token-boundary straddles, and stay below 512 MiB after 3,072-to-192 projection.
+No extraction, neural training, host certification, or LayerCake host change is
+authorized. Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log
 

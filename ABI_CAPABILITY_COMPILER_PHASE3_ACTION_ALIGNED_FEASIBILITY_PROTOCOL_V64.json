@@ -1,0 +1,61 @@
+{
+  "format": "abi-capability-compiler-phase3-action-aligned-feasibility/1",
+  "protocol_id": "abi-capability-compiler-phase3-action-aligned-feasibility-v64",
+  "status": "PREREGISTERED_NO_TRAINING_FEASIBILITY",
+  "effective_date": "2026-08-07",
+  "historical_evidence_changed": false,
+  "phase3_status": "UNCERTIFIED",
+  "phase4_status": "LOCKED",
+  "final_test_access": "PROHIBITED",
+  "extraction_authorized": false,
+  "training_authorized": false,
+  "objective": "Determine whether every routed LayerCake source action and every teacher target action can be bound to contextual frozen-teacher positions, with target vectors taken from causal pre-token prediction states and compressed before storage to the host width.",
+  "phase1_ir": "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir",
+  "teacher": {
+    "model": "microsoft/Phi-3-mini-4k-instruct",
+    "revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "snapshot_path": "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e",
+    "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310",
+    "terminal_response_token_id": 32007
+  },
+  "tokenizer": {
+    "canonical_document": "artifacts/phase3/utf8_bpe_v34/layercake_tokenizer_v3.json",
+    "canonical_sha256": "fc391ac322351a94c7cac05cc872f49b6436bc836bf260fdc959c0c11800e2f9",
+    "fixed_actions": 4999
+  },
+  "layercake_host": {
+    "repository": "../layercake_release",
+    "interface": "lc-direct-neural-core/3",
+    "interface_sha256": "4ec1f609cea9f42924ebcdc16fd6b76be1630351d629d77eaab9b956b7901ac2",
+    "changed": false
+  },
+  "representation": {
+    "projected_width": 192,
+    "storage_dtype": "float16",
+    "projection": "fixed Gaussian column-normalized 3072 by 192 matrix, applied before storage",
+    "projection_seed": 240064,
+    "source_actions": "one semantic-prompt mean vector for the route action plus one overlap-pooled contextual teacher state per body BPE action",
+    "target_actions": "one overlap-pooled causal pre-token teacher state per output BPE action; EOS excluded",
+    "payload_bytes_maximum": 536870912,
+    "teacher_model_load_prohibited": true
+  },
+  "pass_requirements": [
+    "exact contextual prompt-plus-response token IDs for all 7,000 records",
+    "one or more teacher tokens overlap every LayerCake body and output action",
+    "every target token has a causal predecessor state",
+    "all 14 capabilities represented",
+    "projected fp16 payload no larger than 512 MiB"
+  ],
+  "decision_rule": "If every mapping and payload requirement passes, authorize design only of one exact GPU extraction protocol. If any record cannot map, close the representation without teacher loading or training. Boundary straddles must be counted rather than hidden.",
+  "bindings": {
+    "abi/capability_compiler_phase3_action_aligned_feasibility.py": "791e3e206e9ebcd7bb4d83316a594c0e8b551d0686dfb66515adfd86ad8a5496",
+    "tests/test_capability_compiler_phase3_action_aligned_feasibility.py": "b8e51f7315d8a7bba31dfaaefa84928ab6835ec026f2208360e69dd2afd6e15f",
+    "ABI_CAPABILITY_COMPILER_PHASE3_REPRESENTATION_ALIGNED_CORE_RESULT_V63.json": "50dbdea58c04c0fe75bb84273a39b2ee74cb1d3f95c8cc67a87dec7dd6e48b20",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V82.json": "6829c960e8ab6d78b5d89dff05e9847ff30c6177d77a3a41b510d02c8d49a5a8",
+    "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+    "artifacts/phase3/utf8_bpe_v34/layercake_tokenizer_v3.json": "64a2b3ebf2fde5ec1a35faa6813b77f09f19f47c1135695d72b29145c023df36",
+    "../layercake_release/layercake_extensions/bpe_direct_neural_core.py": "23136262e4f63f1037d26568cbf3d41b847d80145fc5b1456ca98294b09d9050",
+    "../layercake_release/layercake/portable_token_plan.py": "0988a83f65d96e928a57edf1f5a565c334ab6e66579b9e6bca21f3c76b920a14"
+  },
+  "claim_boundary": "No-model mapping and payload feasibility only. V64 cannot extract knowledge, train a candidate, certify Phase 3, open Phase 4, or support superiority claims."
+}
