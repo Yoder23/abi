@@ -1,0 +1,44 @@
+{
+  "format": "abi-capability-compiler-phase3-invariant-router-result/1",
+  "status": "COMPLETE_FAILED_ROUTER_GATE_ARCHITECTURE_CLOSED",
+  "status_date": "2026-08-07",
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_INVARIANT_ROUTER_PROTOCOL_V43.json",
+  "candidate_metadata": "results/abi_capability_compiler_phase3_invariant_router/development_v43/R0-seed240043/metadata.json",
+  "decision_evidence": "results/abi_capability_compiler_phase3_invariant_router/evaluation_v43/R0-seed240043/decision.json",
+  "raw_rows": "results/abi_capability_compiler_phase3_invariant_router/evaluation_v43/R0-seed240043/rows.jsonl",
+  "seed": 240043,
+  "checkpoint_sha256": "14ddb519a4d58a3e5a88c5cc5810ebae19d5a552ef41b39ac4b196022053badd",
+  "decision_evidence_sha256": "f232c7a8df9f908a390790c23ba9ce21ce975e691fbbded5bd91454c760a12ad",
+  "raw_rows_sha256": "26c65adbb60a6204fe7fa60917c261f27e6e81298da964d012e5a32db37503f3",
+  "measurements": {
+    "body_accuracy": 0.9535714285714286,
+    "body_wilson_lower_95": 0.9412537927636782,
+    "matched_header_accuracy": 0.8257142857142857,
+    "original_prompt_accuracy": 0.38142857142857145,
+    "original_prompt_wilson_lower_95": 0.3563417807650894,
+    "lowest_body_capability": "coherence",
+    "lowest_body_capability_accuracy": 0.72,
+    "training_wall_seconds": 388.5696003999983,
+    "trainable_parameters": 658446,
+    "peak_cuda_allocated_bytes": 80296960,
+    "peak_process_rss_bytes": 1008340992
+  },
+  "gates": {
+    "aggregate_body": "PASS",
+    "aggregate_original": "FAIL",
+    "per_capability_original": "FAIL",
+    "router_gate": "FAIL"
+  },
+  "causal_interpretation": "Foreign-header augmentation substantially improves held-out body routing over V42 but does not make a mean-pooled whole-prompt router invariant to the shared acquisition header. Prefix metadata remains entangled with capability prediction. This is an ABI router architecture failure; the LayerCake host was not changed or evaluated.",
+  "closed_work": [
+    "additional V43 seeds",
+    "V43 LayerCake routed-host construction",
+    "nearby augmentation or training-step sweeps"
+  ],
+  "next_authorized_question": "Can a separately preregistered segment-aware router explicitly identify acquisition metadata and select the capability-bearing semantic segment while meeting the same untouched held-out gates without new teacher outputs?",
+  "teacher_outputs_added": 0,
+  "layercake_host_changed": false,
+  "phase3_certified": false,
+  "final_test_accessed": false,
+  "claim_boundary": "Negative standalone router evidence only; not English generation, LayerCake quality, Phase 3 certification, or ABI superiority."
+}

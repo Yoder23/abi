@@ -1,0 +1,315 @@
+{
+  "checkpoint_sha256": "14ddb519a4d58a3e5a88c5cc5810ebae19d5a552ef41b39ac4b196022053badd",
+  "evidence_sha256": "f232c7a8df9f908a390790c23ba9ce21ce975e691fbbded5bd91454c760a12ad",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-invariant-router-decision/1",
+  "gates": {
+    "aggregate_body": true,
+    "aggregate_original": false,
+    "per_capability_original": false,
+    "router_gate_pass": false
+  },
+  "layercake_host_changed": false,
+  "next_step": "Preserve failure; routed host remains prohibited.",
+  "phase3_certified": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_INVARIANT_ROUTER_PROTOCOL_V43.json",
+    "sha256": "bea801ba95a5d84e55c5864ee8e89326abff43f3649dfe4bc48055350668cfed"
+  },
+  "rows_sha256": "26c65adbb60a6204fe7fa60917c261f27e6e81298da964d012e5a32db37503f3",
+  "status": "FAIL_ROUTER_GATE_ARCHITECTURE_CLOSED",
+  "summaries": {
+    "body": {
+      "correct": 1335,
+      "observations": 1400,
+      "per_capability": {
+        "abstention": {
+          "lower_95": 0.8625048526092651,
+          "point": 0.93,
+          "upper_95": 0.9656807389327273
+        },
+        "clarification": {
+          "lower_95": 0.9630065017930143,
+          "point": 1.0,
+          "upper_95": 1.0
+        },
+        "coherence": {
+          "lower_95": 0.6251197129007884,
+          "point": 0.72,
+          "upper_95": 0.7986031478881379
+        },
+        "conversation": {
+          "lower_95": 0.9630065017930143,
+          "point": 1.0,
+          "upper_95": 1.0
+        },
+        "email_drafting_from_notes": {
+          "lower_95": 0.9630065017930143,
+          "point": 1.0,
+          "upper_95": 1.0
+        },
+        "fact_free_reasoning": {
+          "lower_95": 0.7333264161369926,
+          "point": 0.82,
+          "upper_95": 0.8829977450105364
+        },
+        "fluent_realization": {
+          "lower_95": 0.9455138038212946,
+          "point": 0.99,
+          "upper_95": 0.9982325679358593
+        },
+        "format_control": {
+          "lower_95": 0.9630065017930143,
+          "point": 1.0,
+          "upper_95": 1.0
+        },
+        "grammar": {
+          "lower_95": 0.9630065017930143,
+          "point": 1.0,
+          "upper_95": 1.0
+        },
+        "instruction_following": {
+          "lower_95": 0.9630065017930143,
+          "point": 1.0,
+          "upper_95": 1.0
+        },
+        "prompt_grounding": {
+          "lower_95": 0.9455138038212946,
+          "point": 0.99,
+          "upper_95": 0.9982325679358593
+        },
+        "rewriting": {
+          "lower_95": 0.8256343384950865,
+          "point": 0.9,
+          "upper_95": 0.9447708629393249
+        },
+        "supplied_text_summarization": {
+          "lower_95": 0.9630065017930143,
+          "point": 1.0,
+          "upper_95": 1.0
+        },
+        "tone_control": {
+          "lower_95": 0.9630065017930143,
+          "point": 1.0,
+          "upper_95": 1.0
+        }
+      },
+      "predicted_counts": {
+        "abstention": 101,
+        "clarification": 108,
+        "coherence": 81,
+        "conversation": 111,
+        "email_drafting_from_notes": 102,
+        "fact_free_reasoning": 82,
+        "fluent_realization": 99,
+        "format_control": 101,
+        "grammar": 126,
+        "instruction_following": 100,
+        "prompt_grounding": 99,
+        "rewriting": 90,
+        "supplied_text_summarization": 100,
+        "tone_control": 100
+      },
+      "wilson": {
+        "lower_95": 0.9412537927636782,
+        "point": 0.9535714285714286,
+        "upper_95": 0.963406767031209
+      }
+    },
+    "matched_header": {
+      "correct": 1156,
+      "observations": 1400,
+      "per_capability": {
+        "abstention": {
+          "lower_95": 0.6462901055081282,
+          "point": 0.74,
+          "upper_95": 0.8159530153525186
+        },
+        "clarification": {
+          "lower_95": 0.9630065017930143,
+          "point": 1.0,
+          "upper_95": 1.0
+        },
+        "coherence": {
+          "lower_95": 0.45244602997442135,
+          "point": 0.55,
+          "upper_95": 0.6438546202048803
+        },
+        "conversation": {
+          "lower_95": 0.9630065017930143,
+          "point": 1.0,
+          "upper_95": 1.0
+        },
+        "email_drafting_from_notes": {
+          "lower_95": 0.9630065017930143,
+          "point": 1.0,
+          "upper_95": 1.0
+        },
+        "fact_free_reasoning": {
+          "lower_95": 0.01566330399154762,
+          "point": 0.04,
+          "upper_95": 0.0983707143588792
+        },
+        "fluent_realization": {
+          "lower_95": 0.9455138038212946,
+          "point": 0.99,
+          "upper_95": 0.9982325679358593
+        },
+        "format_control": {
+          "lower_95": 0.5627772885472462,
+          "point": 0.66,
+          "upper_95": 0.7453847920265184
+        },
+        "grammar": {
+          "lower_95": 0.9630065017930143,
+          "point": 1.0,
+          "upper_95": 1.0
+        },
+        "instruction_following": {
+          "lower_95": 0.7222115462093562,
+          "point": 0.81,
+          "upper_95": 0.8748524849023126
+        },
+        "prompt_grounding": {
+          "lower_95": 0.929988209271456,
+          "point": 0.98,
+          "upper_95": 0.9944980324498376
+        },
+        "rewriting": {
+          "lower_95": 0.7557973061072976,
+          "point": 0.84,
+          "upper_95": 0.8990471151119521
+        },
+        "supplied_text_summarization": {
+          "lower_95": 0.929988209271456,
+          "point": 0.98,
+          "upper_95": 0.9944980324498376
+        },
+        "tone_control": {
+          "lower_95": 0.9154806357094724,
+          "point": 0.97,
+          "upper_95": 0.9897454759759611
+        }
+      },
+      "predicted_counts": {
+        "abstention": 133,
+        "clarification": 124,
+        "coherence": 130,
+        "conversation": 133,
+        "email_drafting_from_notes": 102,
+        "fact_free_reasoning": 5,
+        "fluent_realization": 99,
+        "format_control": 66,
+        "grammar": 139,
+        "instruction_following": 81,
+        "prompt_grounding": 104,
+        "rewriting": 84,
+        "supplied_text_summarization": 98,
+        "tone_control": 102
+      },
+      "wilson": {
+        "lower_95": 0.8049587413102797,
+        "point": 0.8257142857142857,
+        "upper_95": 0.8446872669833714
+      }
+    },
+    "original": {
+      "correct": 534,
+      "observations": 1400,
+      "per_capability": {
+        "abstention": {
+          "lower_95": 0.17545211362287672,
+          "point": 0.25,
+          "upper_95": 0.34304463548061603
+        },
+        "clarification": {
+          "lower_95": 0.9016292856411208,
+          "point": 0.96,
+          "upper_95": 0.9843366960084523
+        },
+        "coherence": {
+          "lower_95": 0.22779697212376038,
+          "point": 0.31,
+          "upper_95": 0.40626055719489407
+        },
+        "conversation": {
+          "lower_95": 0.26364248243097527,
+          "point": 0.35,
+          "upper_95": 0.44745556703112027
+        },
+        "email_drafting_from_notes": {
+          "lower_95": 0.5322052958094291,
+          "point": 0.63,
+          "upper_95": 0.7181763946567546
+        },
+        "fact_free_reasoning": {
+          "lower_95": 0.04807254000256516,
+          "point": 0.09,
+          "upper_95": 0.1622621285271631
+        },
+        "fluent_realization": {
+          "lower_95": 0.01566330399154762,
+          "point": 0.04,
+          "upper_95": 0.0983707143588792
+        },
+        "format_control": {
+          "lower_95": 0.0930598528365663,
+          "point": 0.15,
+          "upper_95": 0.23283559590832364
+        },
+        "grammar": {
+          "lower_95": 0.4328885697009936,
+          "point": 0.53,
+          "upper_95": 0.6248918204065872
+        },
+        "instruction_following": {
+          "lower_95": 0.5020025867910618,
+          "point": 0.6,
+          "upper_95": 0.6905987135675411
+        },
+        "prompt_grounding": {
+          "lower_95": 0.384645517580519,
+          "point": 0.48,
+          "upper_95": 0.5768342223477603
+        },
+        "rewriting": {
+          "lower_95": 0.1170022549894635,
+          "point": 0.18,
+          "upper_95": 0.2666735838630073
+        },
+        "supplied_text_summarization": {
+          "lower_95": 0.3279838267435473,
+          "point": 0.42,
+          "upper_95": 0.5179351329695703
+        },
+        "tone_control": {
+          "lower_95": 0.26364248243097527,
+          "point": 0.35,
+          "upper_95": 0.44745556703112027
+        }
+      },
+      "predicted_counts": {
+        "abstention": 105,
+        "clarification": 419,
+        "coherence": 116,
+        "conversation": 77,
+        "email_drafting_from_notes": 74,
+        "fact_free_reasoning": 27,
+        "fluent_realization": 4,
+        "format_control": 15,
+        "grammar": 182,
+        "instruction_following": 88,
+        "prompt_grounding": 62,
+        "rewriting": 18,
+        "supplied_text_summarization": 155,
+        "tone_control": 58
+      },
+      "wilson": {
+        "lower_95": 0.3563417807650894,
+        "point": 0.38142857142857145,
+        "upper_95": 0.40716427761923935
+      }
+    }
+  },
+  "teacher_outputs_added": 0
+}
