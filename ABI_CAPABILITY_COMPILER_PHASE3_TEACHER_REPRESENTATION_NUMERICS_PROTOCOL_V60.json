@@ -1,0 +1,55 @@
+{
+  "format": "abi-capability-compiler-phase3-teacher-representation-numerics/1",
+  "protocol_id": "abi-capability-compiler-phase3-teacher-representation-numerics-v60",
+  "status": "PREREGISTERED_READ_ONLY_DIAGNOSTIC",
+  "effective_date": "2026-08-07",
+  "historical_evidence_changed": false,
+  "phase3_status": "UNCERTIFIED",
+  "phase4_status": "LOCKED",
+  "final_test_access": "PROHIBITED",
+  "training_authorized": false,
+  "artifact_verification_authorized": false,
+  "objective": "Measure whether V59's failed absolute tolerance is caused by fp16 batch-shape sensitivity by comparing singleton recomputation with exact original extraction-batch recomputation on the same preregistered sample.",
+  "phase1_ir": "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir",
+  "artifact": {
+    "directory": "results/abi_capability_compiler_phase3_teacher_representation/extraction_v58",
+    "tensor": "dual_pooled_final_hidden_fp16.safetensors",
+    "records": "records.jsonl",
+    "tensor_sha256": "fa5a8fd286a156ba7243b846a6af17f7619a5836e165bb04ec0aedc5b8773cff",
+    "records_sha256": "beada2e6e90f7b22e7dbadce7d0b573e7a14007fb15b3b99ead39ae3a114b7bf"
+  },
+  "source": {
+    "model": "microsoft/Phi-3-mini-4k-instruct",
+    "revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "snapshot_path": "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e",
+    "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310",
+    "license": "mit",
+    "terminal_response_token_id": 32007,
+    "pad_token_id": 32000
+  },
+  "sampling": {
+    "method": "exact V59 sample: two smallest SHA-256(seed NUL record_id) per capability",
+    "seed": 240059,
+    "records_per_capability": 2,
+    "sample_records": 28,
+    "sample_vectors": 56,
+    "original_batch_size": 8
+  },
+  "measurements": [
+    "maximum and mean absolute error",
+    "minimum cosine similarity",
+    "mean exact fp16 scalar fraction"
+  ],
+  "decision_rule": "Diagnostic only. If original-batch recomputation is exact or materially tighter than singleton recomputation, a separately preregistered verifier repair may require original-batch reproduction and retain the original singleton result as numerical-sensitivity evidence. Otherwise treat the tensor as suspect and do not verify or train from it.",
+  "bindings": {
+    "abi/capability_compiler_phase3_teacher_representation_numerics.py": "46293bda27d450107c4fbf56ccd6f5174d20a4cc90db0d125ed8f482c0284437",
+    "tests/test_capability_compiler_phase3_teacher_representation_numerics.py": "5de71bf30006caa9604c4b47f2f34a0c9c36c72fbf377b013a15c129e86af090",
+    "ABI_CAPABILITY_COMPILER_PHASE3_TEACHER_REPRESENTATION_VERIFIER_FAILURE_V59.json": "f3ca28d4b6eec511ce1d7031ca8bdeea72cf29cba831d485ca6ef39236b81aad",
+    "ABI_CAPABILITY_COMPILER_PHASE3_TEACHER_REPRESENTATION_VERIFIER_PROTOCOL_V59.json": "a058145575ebebdad20fa47b333da7839ff2eca4ba448c034887001d87eec5c4",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V77.json": "357e1d40a5ba078f8839819c869fb7512f1daba6b2e7f6b6be2edc889d27d962",
+    "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+    "results/abi_capability_compiler_phase3_teacher_representation/extraction_v58/dual_pooled_final_hidden_fp16.safetensors": "fa5a8fd286a156ba7243b846a6af17f7619a5836e165bb04ec0aedc5b8773cff",
+    "results/abi_capability_compiler_phase3_teacher_representation/extraction_v58/records.jsonl": "beada2e6e90f7b22e7dbadce7d0b573e7a14007fb15b3b99ead39ae3a114b7bf"
+  },
+  "claim_boundary": "V60 cannot verify the artifact, authorize training, certify Phase 3, open Phase 4, or support an ABI superiority claim."
+}

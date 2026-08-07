@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V58 EXTRACTED, V59 VERIFIER PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V77.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V59 VERIFIER FAILED, V60 DIAGNOSTIC PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V78.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -95,6 +95,13 @@ logits, and zero copied source parameters. The measured source-forward time was
 The artifact remains unverified and training remains prohibited. V59 binds one
 hostile verifier over every provenance row plus independent frozen-teacher
 recomputation for two hash-selected records in each capability.
+
+V59 failed at that recomputation gate: singleton forwards exceeded the frozen
+0.0078125 absolute-error tolerance, so no verification result exists and
+training remains prohibited. V60 is a non-promotional, read-only numerical
+diagnostic over the identical 28 records. It compares singleton forwards with
+the exact original 8-record extraction-batch context before any verifier repair
+can be considered.
 
 ## Historical direct-core path
 
@@ -284,6 +291,9 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V78.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_TEACHER_REPRESENTATION_NUMERICS_PROTOCOL_V60.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_TEACHER_REPRESENTATION_VERIFIER_FAILURE_V59.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V77.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_TEACHER_REPRESENTATION_VERIFIER_PROTOCOL_V59.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V76.json`

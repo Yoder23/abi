@@ -108,11 +108,13 @@ hidden fp16 substrate: 14,000 vectors, width 3,072, and 86,016,000 tensor bytes.
 V58 completed one exact GPU extraction after its no-model inventory passed. It
 produced 14,000 fp16 vectors with an 86,016,000-byte tensor payload, stored no
 logits or source parameters, and recorded 407.57 seconds of teacher-forward
-time, 9.06 GB peak CUDA allocation, and 2.35 GB peak process RSS. V59 now
-preregisters one hostile verification, including independent teacher
-recomputation on two hash-selected records per capability. No neural training
-or LayerCake host change is authorized until that verifier passes. Final
-material remains inaccessible, and Phase 4 is locked.
+time, 9.06 GB peak CUDA allocation, and 2.35 GB peak process RSS. V59's hostile
+verification failed because singleton recomputation exceeded its preregistered
+absolute-error tolerance; no verification result was written. V60 authorizes
+one read-only comparison of singleton and exact original-batch recomputation.
+It cannot verify the artifact or authorize training. No neural training or
+LayerCake host change is authorized. Final material remains inaccessible, and
+Phase 4 is locked.
 
 ## Historical Phase 3 authorization log
 
