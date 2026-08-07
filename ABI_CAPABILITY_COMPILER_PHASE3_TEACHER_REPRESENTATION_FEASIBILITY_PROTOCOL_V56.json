@@ -1,0 +1,28 @@
+{
+  "format":"abi-capability-compiler-phase3-teacher-representation-feasibility/1",
+  "protocol_id":"abi-capability-compiler-phase3-teacher-representation-feasibility-v56",
+  "status":"PREREGISTERED_NO_TRAINING_FEASIBILITY",
+  "effective_date":"2026-08-07",
+  "historical_evidence_changed":false,
+  "phase3_status":"UNCERTIFIED",
+  "phase4_status":"LOCKED",
+  "final_test_access":"PROHIBITED",
+  "training_authorized":false,
+  "extraction_authorized":false,
+  "objective":"Compare exact imported-information payloads and alignment feasibility for richer frozen-teacher logits and hidden representations without loading the teacher, extracting a signal, or training a candidate.",
+  "teacher":{"model":"microsoft/Phi-3-mini-4k-instruct","revision":"f39ac1d28e925b323eae81227eaba4464caced4e","source_manifest_sha256":"3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310"},
+  "source_config":{"path":"C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e/config.json","sha256":"072d4df63228ef806a6b2b2f02a93f1d048ebd31584d0f61d1180aef36e5bcea"},
+  "phase1_ir":"results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir",
+  "selection":{"payload_bytes_maximum":134217728,"per_record_required":true,"prompt_coverage_required":true,"response_coverage_required":true,"tokenizer_independent_required":true,"direct_layercake_alignment_required":true,"smallest_qualifying_payload_wins":true,"expected_selection":"dual_pooled_final_hidden_fp16"},
+  "evaluated_representations":["full output logits fp16","top-4/8/16/32 output logits with uint16 IDs, fp16 values, and fp16 log normalizer","response-token final hidden fp16","prompt-plus-response-token final hidden fp16","per-record dual pooled final hidden fp16","per-record dual pooled layers 16/24/32 fp16","per-capability final-hidden prototypes fp16"],
+  "decision_rule":"If and only if the expected representation is the smallest candidate satisfying every frozen selection property, record a feasibility pass and authorize design—not execution—of one extraction-only protocol. No model load, teacher forward pass, artifact extraction, LayerCake change, or neural training occurs in V56.",
+  "bindings":{
+    "abi/capability_compiler_phase3_teacher_representation_feasibility.py":"3863a2acdf045161009063a0ab031fa3286d8477df9107e027b49aaa54c2a632",
+    "tests/test_capability_compiler_phase3_teacher_representation_feasibility.py":"c00bbc3b6ff43050b6dff5214e61973b9c7d897d30474fac3a695727ee44ae0b",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V73.json":"e470eb849bf465470070be3459582f8123bcd7c4c7ab5b5df235890b46cd6e23",
+    "ABI_CAPABILITY_COMPILER_PHASE3_BPE_POINTER_RESULT_V55.json":"9aecb2692b6cdeef307d111ac33c1c0e87856e4388fd5751904e93c41594a96a",
+    "ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json":"da0c69d53b9b3cf7604ba3e56812f3e9468dcbf293bb14a75576c02d4dc87735",
+    "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir":"a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20"
+  },
+  "claim_boundary":"Feasibility and accounting only. Pooled hidden-state learning is representation distillation and must be named honestly. V56 does not extract teacher knowledge, prove alignment, train LayerCake, certify Phase 3, open Phase 4, or establish superiority over standard distillation."
+}

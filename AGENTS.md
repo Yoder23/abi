@@ -103,12 +103,11 @@ LoRA or distillation.
 
 ## Active authorization
 
-No neural training, teacher extraction, or LayerCake host change is currently
-authorized. V54 is complete failed at 785/1,400 with 40 collapses and worse fit
-than V50. Remaining seeds and nearby pointer policies are prohibited. The next
-bounded work is a no-training feasibility and imported-information accounting
-study for richer frozen-teacher signals such as logits or hidden capability
-representations. Final material remains inaccessible, and Phase 4 is locked.
+V56 is the only active work: a no-training, no-extraction feasibility and
+imported-information accounting study for richer frozen-teacher signals. No
+teacher model load, teacher forward pass, neural training, or LayerCake host
+change is authorized. V54's remaining seeds and nearby pointer policies remain
+prohibited. Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log
 
