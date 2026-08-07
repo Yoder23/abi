@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V54 UTF-8-BPE POINTER SCREEN PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V72.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V54 CLOSED, RICHER TEACHER SIGNAL REQUIRED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V73.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -71,12 +71,13 @@ collapses despite perfect routing; teacher-relative quality remained more than
 isolation is therefore closed. The preserved outputs expose prompt-entity
 copying as the next measured representation target. No neural run or LayerCake
 host change is currently authorized. One Unicode-safe UTF-8-BPE pointer-
-supervision screen was separately preregistered as V54. Its preflight replaces
-2,680 target actions across 2,090 records with Unicode-safe source pointers and
-reconstructs every target exactly. Only P0 seed 240050 may train; partial gains
-cannot bypass the unchanged all-capability gates. No LayerCake change is
-authorized. Phase 2's external human-rating gate remains unresolved, so Phase
-3 cannot receive a final certificate and Phase 4 cannot open.
+supervision screen was separately preregistered as V54. It also failed:
+785/1,400, 40 collapses, 96.22% action fit, and 78.11% exact sequence fit. The
+limited pointer policy is closed. No neural training, new teacher extraction,
+or LayerCake change is authorized. The next bounded gate is a no-training
+feasibility and accounting study for richer teacher signals. Phase 2's external
+human-rating gate remains unresolved, so Phase 3 cannot receive a final
+certificate and Phase 4 cannot open.
 
 ## Historical direct-core path
 
@@ -266,6 +267,10 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V73.json`
+- `ABI_CAPABILITY_COMPILER_PLACEMENT_MANIFEST_V52.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_BPE_POINTER_RESULT_V55.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_BPE_POINTER_REPORT_V55.md`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V72.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_BPE_POINTER_PROTOCOL_V54.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V71.json`

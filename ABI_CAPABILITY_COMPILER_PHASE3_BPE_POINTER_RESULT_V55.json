@@ -1,0 +1,18 @@
+{
+  "format":"abi-capability-compiler-phase3-bpe-pointer-result/1",
+  "status":"COMPLETE_FAILED_UTF8_BPE_POINTER_SCREEN",
+  "effective_date":"2026-08-07",
+  "protocol":{"path":"ABI_CAPABILITY_COMPILER_PHASE3_BPE_POINTER_PROTOCOL_V54.json","sha256":"96479e4b717711fd470119434ec5f8e745e80dffce59f15d9ac4b03cc9845bf6"},
+  "candidate":{"seed":240050,"checkpoint_sha256":"ac3c1a4ea8f995a6f5bd88c0efd2254308ff5cfc95a9200800c38230bca5cab1","checkpoint_bytes":16704448,"metadata_sha256":"50b48de764965c2c973e3942d46a872243812df7e7e8fcd2c606f9add7eebc1c","generator_parameters":4174280,"router_parameters":1058040,"pointer_actions":2680,"records_with_pointer_actions":2090},
+  "training":{"steps":4000,"wall_seconds":97.14885080000386,"skipped_amp_steps":0,"peak_process_rss_bytes":1251459072,"peak_cuda_allocated_bytes":318801408},
+  "evaluation":{"functional_passes":785,"observations":1400,"functional_rate":0.5607142857142857,"route_correct":1400,"repetition_collapses":40,"generation_errors":0,"candidate_minus_teacher":-0.32285714285714284,"candidate_minus_teacher_lower_95":-0.3457142857142857,"candidate_minus_teacher_upper_95":-0.29928571428571427,"decision_file_sha256":"ca01e6f6385b18cf8136311cfe1780f96303618c1d07876a423fc4f6785acef1","outputs_sha256":"dce8bab338e6d514feae270be510dc5d857708c90849289f7934035bc95c970d"},
+  "training_fit":{"action_accuracy":0.9621981473879598,"exact_sequence_rate":0.7811428571428571,"actions":56029,"exact_sequences":5468},
+  "gates":{"per_capability_functional":false,"critical_capabilities":false,"zero_repetition_collapses":false,"zero_generation_errors":true,"router_accuracy":true,"teacher_relative_noninferiority":false},
+  "attribution":"The limited unique-identity pointer policy exactly matches V50's 785/1,400 aggregate, adds four collapses, and slightly reduces training fit. Target-format repair is insufficient; the next materially distinct acquisition design must import richer teacher information such as explicitly accounted logits or hidden capability representations.",
+  "decision":"Close V54. Do not run remaining seeds or nearby pointer policies.",
+  "promotion_eligible":false,
+  "phase3_certified":false,
+  "phase4_open":false,
+  "final_test_accessed":false,
+  "historical_evidence_changed":false
+}

@@ -1,0 +1,188 @@
+{
+  "checkpoint_sha256": "ac3c1a4ea8f995a6f5bd88c0efd2254308ff5cfc95a9200800c38230bca5cab1",
+  "evaluation_wall_seconds": 83.5485914000019,
+  "evidence_sha256": "0323d2a0f3230f76268f457e7b2ee66ea2f20553fa243733462c798e1b15cac2",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-bpe-pointer-decision/1",
+  "functional_passes": 785,
+  "gates": {
+    "critical_capabilities": false,
+    "per_capability_functional": false,
+    "router_accuracy": true,
+    "teacher_relative_noninferiority": false,
+    "zero_generation_errors": true,
+    "zero_repetition_collapses": false
+  },
+  "generation_errors": 0,
+  "initial_screen_pass": false,
+  "layercake_host_changed": false,
+  "next_step": "Preserve failure; do not run remaining seeds or nearby pointer variants.",
+  "observations": 1400,
+  "outputs_sha256": "dce8bab338e6d514feae270be510dc5d857708c90849289f7934035bc95c970d",
+  "per_capability": {
+    "abstention": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 10,
+      "wilson": {
+        "lower_95": 0.0552291370606751,
+        "point": 0.1,
+        "upper_95": 0.17436566150491345
+      }
+    },
+    "clarification": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 76,
+      "wilson": {
+        "lower_95": 0.6676766365018553,
+        "point": 0.76,
+        "upper_95": 0.8330867444305122
+      }
+    },
+    "coherence": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 0,
+      "wilson": {
+        "lower_95": 3.469446951953614e-18,
+        "point": 0.0,
+        "upper_95": 0.03699349820698568
+      }
+    },
+    "conversation": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 100,
+      "wilson": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "email_drafting_from_notes": {
+      "collapses": 37,
+      "observations": 100,
+      "passes": 50,
+      "wilson": {
+        "lower_95": 0.4038315303659956,
+        "point": 0.5,
+        "upper_95": 0.5961684696340044
+      }
+    },
+    "fact_free_reasoning": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 0,
+      "wilson": {
+        "lower_95": 3.469446951953614e-18,
+        "point": 0.0,
+        "upper_95": 0.03699349820698568
+      }
+    },
+    "fluent_realization": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 50,
+      "wilson": {
+        "lower_95": 0.4038315303659956,
+        "point": 0.5,
+        "upper_95": 0.5961684696340044
+      }
+    },
+    "format_control": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 50,
+      "wilson": {
+        "lower_95": 0.4038315303659956,
+        "point": 0.5,
+        "upper_95": 0.5961684696340044
+      }
+    },
+    "grammar": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 100,
+      "wilson": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "instruction_following": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 75,
+      "wilson": {
+        "lower_95": 0.656955364519384,
+        "point": 0.75,
+        "upper_95": 0.8245478863771232
+      }
+    },
+    "prompt_grounding": {
+      "collapses": 2,
+      "observations": 100,
+      "passes": 50,
+      "wilson": {
+        "lower_95": 0.4038315303659956,
+        "point": 0.5,
+        "upper_95": 0.5961684696340044
+      }
+    },
+    "rewriting": {
+      "collapses": 1,
+      "observations": 100,
+      "passes": 75,
+      "wilson": {
+        "lower_95": 0.656955364519384,
+        "point": 0.75,
+        "upper_95": 0.8245478863771232
+      }
+    },
+    "supplied_text_summarization": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 74,
+      "wilson": {
+        "lower_95": 0.6462901055081282,
+        "point": 0.74,
+        "upper_95": 0.8159530153525186
+      }
+    },
+    "tone_control": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 75,
+      "wilson": {
+        "lower_95": 0.656955364519384,
+        "point": 0.75,
+        "upper_95": 0.8245478863771232
+      }
+    }
+  },
+  "phase3_certified": false,
+  "phase4_open": false,
+  "promotion_eligible": false,
+  "protocol_sha256": "96479e4b717711fd470119434ec5f8e745e80dffce59f15d9ac4b03cc9845bf6",
+  "repetition_collapses": 40,
+  "route_correct": 1400,
+  "status": "FAIL_INITIAL_SCREEN_BPE_POINTER_CLOSED",
+  "teacher_comparison": {
+    "candidate_minus_teacher": -0.32285714285714284,
+    "lower_95": -0.3457142857142857,
+    "method": "capability_stratified_paired_percentile_bootstrap",
+    "replicates": 10000,
+    "seed": 240054,
+    "upper_95": -0.29928571428571427
+  },
+  "teacher_present_at_inference": false,
+  "training_fit_attribution": {
+    "action_accuracy": 0.9621981473879598,
+    "actions": 56029,
+    "correct_actions": 53911,
+    "exact_sequence_rate": 0.7811428571428571,
+    "exact_sequences": 5468,
+    "records": 7000
+  }
+}

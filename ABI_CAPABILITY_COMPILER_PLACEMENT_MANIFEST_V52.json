@@ -1,0 +1,20 @@
+{
+  "format":"abi-capability-compiler-phase3-capability-placement/1",
+  "status":"PASS_ENGLISH_PLACEMENT_ONLY",
+  "effective_date":"2026-08-07",
+  "protocol":{"path":"ABI_CAPABILITY_COMPILER_PHASE3_RESILIENCE_PROTOCOL_V52.json","sha256":"0aa0ced3ceb43309835473aa6dadcc92ee4987504b38164605e2ca6173c157d4"},
+  "teacher":{"model":"microsoft/Phi-3-mini-4k-instruct","revision":"f39ac1d28e925b323eae81227eaba4464caced4e","source_manifest_sha256":"3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310","diagnosis_method":"frozen-teacher probe outputs plus bounded record labeling","exhaustive_weight_knowledge_discovery":false},
+  "english_core":{"destination":"english_core","acquisition_records":7000,"records_per_capability":500,"capabilities":["grammar","coherence","prompt_grounding","instruction_following","conversation","supplied_text_summarization","rewriting","email_drafting_from_notes","tone_control","format_control","clarification","abstention","fact_free_reasoning","fluent_realization"],"transfer_readiness":"READY_FOR_PHASE3_REALIZATION"},
+  "known_domains":[
+    {"domain":"chemistry","destination":"domain_cake:chemistry","diagnosis_scope":"BOUNDED_V89_ONTOLOGY_PASS","reference_records":100,"acquisition_records":0,"transfer_readiness":"BLOCKED_NO_DOMAIN_ACQUISITION_PAYLOAD"},
+    {"domain":"civics","destination":"domain_cake:civics","diagnosis_scope":"BOUNDED_V89_ONTOLOGY_PASS","reference_records":100,"acquisition_records":0,"transfer_readiness":"BLOCKED_NO_DOMAIN_ACQUISITION_PAYLOAD"},
+    {"domain":"mathematics","destination":"domain_cake:mathematics","diagnosis_scope":"BOUNDED_V89_ONTOLOGY_PASS_WITH_FAILED_SOURCE_REFERENCE","reference_records":100,"acquisition_records":0,"transfer_readiness":"BLOCKED_NO_DOMAIN_ACQUISITION_PAYLOAD"},
+    {"domain":"python","destination":"domain_cake:python","diagnosis_scope":"BOUNDED_V89_ONTOLOGY_PASS","reference_records":100,"acquisition_records":0,"transfer_readiness":"BLOCKED_NO_DOMAIN_ACQUISITION_PAYLOAD"}
+  ],
+  "unknown_or_ambiguous_destination":"quarantine",
+  "dynamic_activation_plan":"route to the English core or only the selected immutable domain cakes; never insert domain records into the English core",
+  "layercake_host_changed":false,
+  "phase3_certified":false,
+  "phase4_open":false,
+  "claim_boundary":"This manifest proves bounded evidence-based placement and fail-closed selection. It does not prove exhaustive teacher knowledge discovery, domain acquisition, successful English realization, or LayerCake transfer quality."
+}

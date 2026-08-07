@@ -103,15 +103,12 @@ LoRA or distillation.
 
 ## Active authorization
 
-V54 P0 seed 240050 is the only neural training currently authorized. Its exact
-UTF-8-BPE inventory reconstructs 7,000/7,000 targets and replaces 2,680 eligible
-fixed actions across 2,090 records with supervised source-position actions.
-Teacher data, router, generator topology, optimizer, steps, batch size,
-learning rate, and V50 seed remain fixed. A failure closes the branch and
-prohibits remaining seeds or nearby pointer policies; a pass authorizes only
-replication and same-candidate host/runtime certification. No LayerCake host
-change is authorized. Final material remains inaccessible, and Phase 4 is
-locked.
+No neural training, teacher extraction, or LayerCake host change is currently
+authorized. V54 is complete failed at 785/1,400 with 40 collapses and worse fit
+than V50. Remaining seeds and nearby pointer policies are prohibited. The next
+bounded work is a no-training feasibility and imported-information accounting
+study for richer frozen-teacher signals such as logits or hidden capability
+representations. Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log
 
@@ -138,6 +135,13 @@ immutability checks. Pointer coverage is zero for coherence and fact-free
 reasoning, so the candidate must still pass the unchanged all-capability gates;
 partial entity-copy improvements cannot promote it. Only P0 seed 240050 may
 train.
+
+V54 P0 has now completed and failed. Its aggregate exactly matches V50 at
+785/1,400, adds four collapses, and fits only 96.22% of training actions and
+78.11% of complete sequences. Close the limited pointer branch. Do not extract
+new teacher signals yet: first preregister a read-only feasibility/accounting
+study that compares information payload, storage, source inference, alignment,
+and expected LayerCake bridge cost for logits and hidden representations.
 
 V50/V51 are complete and closed. The non-promotional full-generator capacity
 control scored 785/1,400 with 36 collapses despite perfect routing, and the

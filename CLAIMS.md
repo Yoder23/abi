@@ -28,6 +28,12 @@ generator parameters to train raised the locked autonomous score only to
 router/data/representation/generator-topology combination; it neither proves a
 fundamental ABI ceiling nor authorizes Phase 4.
 
+V52 and V54 do not qualify it either. Hard-routed experts reached 810/1,400
+with 49 collapses; Unicode-safe BPE pointer supervision reached 785/1,400 with
+40 collapses. These results close capability isolation and the tested limited
+pointer policy. They support studying richer teacher representations, but do
+not prove that logits or hidden activations will work.
+
 ### 1. Historical bounded reference
 
 `ABI_MOONSHOT_CERTIFICATE_V2.json` remains valid for its exact 1,700-observation

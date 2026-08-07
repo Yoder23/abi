@@ -1,0 +1,74 @@
+{
+  "controls": [
+    {
+      "capability": "grammar",
+      "piece_hex": "66657373696f6e",
+      "token_id": 3252
+    },
+    {
+      "capability": "coherence",
+      "piece_hex": "726566657272",
+      "token_id": 4272
+    },
+    {
+      "capability": "prompt_grounding",
+      "piece_hex": "72656369",
+      "token_id": 4266
+    },
+    {
+      "capability": "instruction_following",
+      "piece_hex": "6661637473",
+      "token_id": 3232
+    },
+    {
+      "capability": "conversation",
+      "piece_hex": "726573657276",
+      "token_id": 4301
+    },
+    {
+      "capability": "supplied_text_summarization",
+      "piece_hex": "77697468",
+      "token_id": 4857
+    },
+    {
+      "capability": "rewriting",
+      "piece_hex": "6c6f676963",
+      "token_id": 3754
+    },
+    {
+      "capability": "email_drafting_from_notes",
+      "piece_hex": "74657265",
+      "token_id": 4577
+    },
+    {
+      "capability": "tone_control",
+      "piece_hex": "6b696e64",
+      "token_id": 3678
+    },
+    {
+      "capability": "format_control",
+      "piece_hex": "50726979",
+      "token_id": 2028
+    },
+    {
+      "capability": "clarification",
+      "piece_hex": "706f7274616e",
+      "token_id": 4150
+    },
+    {
+      "capability": "abstention",
+      "piece_hex": "6564756c",
+      "token_id": 3104
+    },
+    {
+      "capability": "fact_free_reasoning",
+      "piece_hex": "76696365",
+      "token_id": 4778
+    },
+    {
+      "capability": "fluent_realization",
+      "piece_hex": "656c6f77",
+      "token_id": 3122
+    }
+  ]
+}

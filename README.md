@@ -58,6 +58,11 @@ measured representation target. Its placement compiler still sends only
 eligible English acquisition records to the core, maps known specialist
 selections to separate domain cakes, and fails closed because no domain
 acquisition payload exists yet.
+V54 then tested Unicode-safe BPE pointer supervision on the same shared topology
+and V50 seed. It exactly matched V50 at 785/1,400, produced 40 collapses, and
+reduced training fit. Route isolation and limited target-pointer changes are
+therefore closed. The next Phase 3 gate is a no-training feasibility and
+imported-information study for richer frozen-teacher representations.
 Phase 4 remains locked. No current ABI artifact is certified as a broadly
 fluent teacher-derived English core.
 
@@ -90,6 +95,7 @@ any experiment or launching new work.
 | V50 full-generator capacity upper bound | COMPLETE FAIL, 785/1,400, 36 collapses | `ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_CAPACITY_RESULT_V50.json` |
 | V51 full-generator fit attribution | COMPLETE; fit limited at 96.53% actions / 79.14% exact | `ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_CAPACITY_FIT_RESULT_V51.json` |
 | V52/V53 hard-routed resilience screen | COMPLETE FAIL, 810/1,400, 49 collapses | `ABI_CAPABILITY_COMPILER_PHASE3_RESILIENCE_RESULT_V53.json` |
+| V54/V55 Unicode-safe BPE pointer screen | COMPLETE FAIL, 785/1,400, 40 collapses | `ABI_CAPABILITY_COMPILER_PHASE3_BPE_POINTER_RESULT_V55.json` |
 | Sufficient-information frontier | OPEN | Not yet measured |
 | Integrated teacher-derived LayerCake | OPEN | Not yet produced |
 

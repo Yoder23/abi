@@ -47,6 +47,14 @@ identifiers for held-out prompt identifiers, making Unicode-safe BPE pointer
 supervision the next bounded representation question. V52 is closed and
 LayerCake remains unchanged.
 
+V54 tested that pointer target directly on the Unicode-safe V34/V37 BPE surface
+while holding the V50 seed and training configuration fixed. It also failed:
+785/1,400, 40 collapses, 96.22% action fit, and 78.11% exact sequence fit. The
+limited pointer policy is closed. V50/V52/V54 jointly show that the current
+hard-target records do not provide enough realization signal through route,
+isolation, or target-format changes. A richer teacher-representation study is
+the next bounded gate; no extraction or neural run is currently authorized.
+
 V16 adds a read-only mechanistic attribution. The exact LayerCake identity and
 certificates pass, so there is no host regression. C0 carries a strong teacher-
 payload signal, while one model-generated wrong prefix token causes a large,
@@ -356,7 +364,7 @@ account its own same-candidate quality, active parameters, memory, TTFT, and
 CPU/GPU inference cost. Final material remains unopened and Phase 4 remains
 locked.
 
-The full ABI suite currently reports 569 passed and one intentionally strict
+The full ABI suite currently reports 573 passed and one intentionally strict
 external-control failure: the separate clean LayerCake repository is ahead of
 the exact contract-bound control commit, which remains an ancestor. The
 identity verifier was not weakened. See
