@@ -1,6 +1,6 @@
 # ABI current project status
 
-Status date: 2026-08-06
+Status date: 2026-08-07
 
 ## Executive state
 
@@ -23,10 +23,12 @@ signal but failed quality. The sequence successor improved aggregate quality
 substantially, but failed absolute, causal-control, teacher-relative, and
 repetition gates. Phase 3 is not certified; Phases 4 through 8 remain locked.
 
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V53.json` is the live state. V11 C0-C4
-is complete: causal and teacher-relative aggregate gates pass, but absolute
-capability and collapse gates fail. Final access and promotion remain
-prohibited.
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V67.json` is the live state. V45 has
+qualified capability routing at three fixed seeds, with 4,200/4,200 correct
+original prompts, bodies, and metadata decisions. V47's minimal integrated
+bridge failed autonomous quality at 760/1,400 with 20 collapses, and V49
+attributes the limit to generator/bridge fit (90.56% action accuracy; 72.37%
+exact acquisition sequences). Final access and promotion remain prohibited.
 
 V16 adds a read-only mechanistic attribution. The exact LayerCake identity and
 certificates pass, so there is no host regression. C0 carries a strong teacher-

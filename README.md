@@ -12,7 +12,7 @@ artifacts are acquisition material, not deployable cakes.
 
 ## Current status
 
-Status date: 2026-08-06
+Status date: 2026-08-07
 
 **The ABI English-product moonshot is OPEN.**
 
@@ -39,9 +39,13 @@ That opened neural acquisition, not a quality claim. V38's plain BPE candidate
 and V41's label-aware/header-robust candidate both scored 0/1,400 on the locked
 autonomous suite and each produced the wrong fact-free mode on 1,394 prompts.
 V42 proved that V41's training-only capability head predicts all 1,400 original
-held-out prompts as `fact_free_reasoning`; body-only routing reaches 81.07%,
-below its 90% gate. A routed LayerCake v4 host is therefore not authorized.
-The current owner is ABI acquisition-prompt and semantic generalization.
+held-out prompts as `fact_free_reasoning`; body-only routing reached 81.07%.
+V45 subsequently solved that bounded routing failure at three fixed seeds,
+scoring 1,400/1,400 on original prompts, bodies, and metadata rejection at each
+seed. V47's integrated minimal bridge nevertheless scored only 760/1,400 with
+20 collapses. V49 measured 90.56% action accuracy and 72.37% exact sequences on
+the 7,000 acquisition records, isolating the remaining limit to capability
+realization in the frozen generator/bridge rather than routing.
 Phase 4 remains locked. No current ABI artifact is certified as a broadly
 fluent teacher-derived English core.
 
@@ -67,7 +71,10 @@ any experiment or launching new work.
 | V37 LayerCake v3 tokenizer conformance | PASS, 16,800/16,800 | `results/abi_capability_compiler_phase3_external_tokenizer_conformance/conformance_v37.json` |
 | V38 plain BPE neural acquisition | COMPLETE FAIL, 0/1,400 | `results/abi_capability_compiler_phase3_bpe_core/bpe_core_decision_v38.json` |
 | V41 label-aware BPE acquisition | COMPLETE FAIL, 0/1,400 | `results/abi_capability_compiler_phase3_labeled_bpe_core/labeled_bpe_decision_v41.json` |
-| V42 auxiliary-router generalization | COMPLETE diagnostic; routed host rejected | `results/abi_capability_compiler_phase3_auxiliary_router_diagnostic/diagnostic_v42.json` |
+| V42 auxiliary-router generalization | COMPLETE FAIL; superseded router architecture | `results/abi_capability_compiler_phase3_auxiliary_router_diagnostic/diagnostic_v42.json` |
+| V45 sparse router | THREE-SEED PASS, 4,200/4,200 per view | `ABI_CAPABILITY_COMPILER_PHASE3_SPARSE_ROUTER_REPLICATION_RESULT_V46.json` |
+| V47 minimal integrated route bridge | COMPLETE FAIL, 760/1,400, 20 collapses | `ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_BRIDGE_RESULT_V48.json` |
+| V49 routed training-fit attribution | COMPLETE; fit limited at 90.56% actions / 72.37% exact | `ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_BRIDGE_FIT_RESULT_V49.json` |
 | Sufficient-information frontier | OPEN | Not yet measured |
 | Integrated teacher-derived LayerCake | OPEN | Not yet produced |
 

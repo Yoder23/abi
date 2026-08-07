@@ -1,6 +1,6 @@
 # ABI active mission
 
-Status date: 2026-08-06
+Status date: 2026-08-07
 
 ## State
 
@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V42 ROUTER GENERALIZATION BELOW GATE | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V53.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; ROUTER QUALIFIED, INTEGRATED GENERATOR FIT LIMITED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V67.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -28,7 +28,7 @@ fresh, preregistered successor supplied 400 new passing abstention records; none
 of the failed records were reclassified. Specialist inventories are
 evaluation-only, and no specialist record is eligible for English training.
 
-## Controlling Phase 3 objective: improve ABI capability generalization
+## Controlling Phase 3 objective: qualify integrated capability realization
 
 V34 and V37 close the selected representation and host-tokenizer questions:
 the 4,999-action UTF-8 BPE surface represents all bound targets and matches the
@@ -49,11 +49,19 @@ acquisition prompts but predicts every original held-out prompt as
 `fact_free_reasoning`; body-only accuracy is 81.07%, below the locked 90% route
 gate, and coherence remains 0/100.
 
-No neural run or LayerCake v4 host is currently authorized. The next ABI
-proposal must break header-label correlation and improve held-out semantic body
-routing without adding teacher outputs, accessing final material, or tuning on
-development outputs. More steps alone, nearby BPE variants, and a
-benchmark-specific header stripper are prohibited.
+V45 has solved the bounded routing problem. Its sparse BPE-plus-character
+router passed all original, body, metadata, and per-capability gates at three
+fixed seeds: 4,200/4,200 observations for each view. V47 then tested whether a
+minimal 2,688-value route bridge could make that state causal in the frozen V41
+generator. The router stayed perfect, but autonomous quality reached only
+760/1,400 with 20 collapses. V49 measured 90.56% teacher-forced action accuracy
+and 72.37% exact acquisition sequences, proving a generator/bridge fit limit.
+
+No neural run or LayerCake host change is currently authorized. Any successor
+must be a materially new capability-realization interface with explicit active
+parameter and inference-cost accounting. V47 seed, step, token, and learning-
+rate sweeps are closed. Phase 2's external human-rating gate also remains
+unresolved, so Phase 3 cannot receive a final certificate.
 
 ## Historical direct-core path
 

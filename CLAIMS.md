@@ -1,12 +1,25 @@
 # ABI claim ledger
 
-Status date: 2026-08-06
+Status date: 2026-08-07
 
 Documentation cannot widen a machine-readable certificate. Each claim below is
 limited to its exact source, artifact, implementation, benchmark, and evidence
 identity.
 
 ## Current claims
+
+### Current Phase 3 boundary
+
+V45 scientifically qualifies the bounded sparse capability router across three
+fixed seeds: each seed passes 1,400/1,400 original prompts, bodies, and metadata
+rejections, with 100/100 for every capability. This is a routing claim only.
+
+V47 does not qualify the integrated product. Its routed generator scored
+760/1,400 with 20 collapses and failed teacher noninferiority. V49 shows the
+same checkpoint fits only 90.56% of acquisition actions and 72.37% of complete
+acquisition sequences. ABI therefore cannot claim fluent English transfer,
+LayerCake host certification, Phase 3 completion, or superiority over LoRA or
+distillation.
 
 ### 1. Historical bounded reference
 

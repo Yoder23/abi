@@ -19,7 +19,7 @@ LayerCake cake.
 
 ## Current campaign state
 
-Status date: 2026-08-06.
+Status date: 2026-08-07.
 
 - Capability-compiler Phase 0 is **COMPLETE** under
   `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json`.
@@ -60,10 +60,19 @@ Status date: 2026-08-06.
   bodies, and 73.21% with matched acquisition headers. It predicts all 1,400
   original held-out prompts as `fact_free_reasoning`. An explicit LayerCake v4
   routed host is not authorized.
+- V45 supersedes that failed router architecture. Its sparse BPE-plus-character
+  router passes 1,400/1,400 original prompts, bodies, and metadata rejections
+  independently at each of three fixed seeds; every capability is 100/100.
+- V47 bound the qualified router to V41 through only 2,688 trained route values.
+  Routing remained 1,400/1,400, but generation scored 760/1,400 with 20
+  collapses. V49 attributes the limit to generator/bridge fit: 90.56% action
+  accuracy and 72.37% exact acquisition sequences.
+- Phase 3 remains **not certified**. Routing is qualified; integrated English
+  generation and LayerCake host certification are not.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V53.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V67.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -86,14 +95,12 @@ LoRA or distillation.
 
 ## Active authorization
 
-No neural training or LayerCake host change is currently authorized. The next
-separately preregistered ABI question must break synthetic-header/label
-correlation and improve held-out body capability routing beyond the V42 81.07%
-result without adding teacher outputs. It must not use final material, tune on
-the locked development outputs, add steps alone, sweep tokenizer settings, or
-install a benchmark-specific first-line stripper. A routed LayerCake successor
-requires at least 90% held-out original router accuracy under a new locked
-diagnostic.
+No neural training or LayerCake host change is currently authorized. V45 has
+closed the bounded routing question. Any successor must materially expand or
+replace capability realization, bind the qualified router, and account added
+parameters, active memory, TTFT, CPU/GPU inference cost, and same-candidate
+quality. V47 step, seed, token, and learning-rate sweeps are prohibited. Final
+material remains inaccessible.
 
 ## Historical Phase 3 authorization log
 
