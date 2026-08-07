@@ -16,19 +16,27 @@ machine campaign is complete and adversarially rehashed, but Phase 2 is
 21,000 blinded counterbalanced judgments before a final Phase 2 certificate can
 exist. Phase 2 is not certified. The user explicitly deferred the currently
 unavailable human raters.
-All completed Phase 3 branches, including direct-core V23, are
-**COMPLETE_FAILED**,
+All completed Phase 3 model branches, including direct-core V23 and the V50
+capacity control, are **COMPLETE_FAILED**,
 without changing Phase 2's failed-closed status. The first found a causal
 signal but failed quality. The sequence successor improved aggregate quality
 substantially, but failed absolute, causal-control, teacher-relative, and
 repetition gates. Phase 3 is not certified; Phases 4 through 8 remain locked.
 
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V67.json` is the live state. V45 has
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V69.json` is the live state. V45 has
 qualified capability routing at three fixed seeds, with 4,200/4,200 correct
 original prompts, bodies, and metadata decisions. V47's minimal integrated
 bridge failed autonomous quality at 760/1,400 with 20 collapses, and V49
 attributes the limit to generator/bridge fit (90.56% action accuracy; 72.37%
 exact acquisition sequences). Final access and promotion remain prohibited.
+
+V50 tested whether that limit disappeared when all 4,174,280 parameters in the
+existing generator topology were trainable. It did not: autonomous quality was
+785/1,400 with 36 collapses and a [-34.57, -30.00]-point paired teacher-relative
+interval. V51 measured 96.53% action accuracy and 79.14% exact training
+sequences. A complete encoding audit found 0/1,400 control-path mismatches.
+The current topology/data branch is therefore closed as optimization or fit
+limited. No nearby neural run is authorized, and Phase 4 remains locked.
 
 V16 adds a read-only mechanistic attribution. The exact LayerCake identity and
 certificates pass, so there is no host regression. C0 carries a strong teacher-
@@ -190,6 +198,9 @@ sufficient-information frontier.
 | Plain BPE neural candidate V38 | COMPLETE FAILED | Compact exact representation improves training fit | 0/1,400 autonomous quality; wrong-mode generalization |
 | Label-aware BPE candidate V41 | COMPLETE FAILED | ABI labels are learnable by a training-only head | Removing the head does not route decoding; 0/1,400 |
 | Auxiliary router diagnostic V42 | COMPLETE ATTRIBUTION ONLY | Original held-out framing causes all prompts to route to fact-free reasoning | Router accuracy is below 90%; no routed LayerCake host is authorized |
+| Sparse router V45/V46 | COMPLETE THREE-SEED PASS | 4,200/4,200 original, body, and metadata decisions at each view | Routing only; no English-generation or host certificate |
+| Minimal routed bridge V47/V49 | COMPLETE FAILED / ATTRIBUTION | Perfect routing; 760/1,400; 20 collapses; 90.56% action and 72.37% exact training fit | No integrated quality or Phase 3 pass |
+| Full-generator capacity V50/V51 | COMPLETE FAILED / ATTRIBUTION | Perfect routing; 785/1,400; 36 collapses; 96.53% action and 79.14% exact training fit | Current topology/data branch closed; non-promotional; no Phase 4 opening |
 | Integrated ABI-derived LayerCake | BLOCKED ON ACQUISITION QUALITY | Host construct exists; no qualified English artifact exists | No ABI candidate inherits sealed LayerCake performance evidence |
 
 ## Current proven results
@@ -328,13 +339,15 @@ checks to make later research code appear release-equivalent.
 
 When raters become available, complete the Phase 2 packet without changing its
 forms or key. No additional neural Phase 3 run is authorized now. The next
-separately preregistered ABI design must break synthetic-header/label
-correlation and improve held-out semantic body routing beyond V42's 81.07%
-without adding teacher outputs or tuning on development outputs. A LayerCake v4
-routed interface remains prohibited until a router clears 90% on original
-held-out prompts. Final material remains unopened and Phase 4 remains locked.
+separately preregistered ABI design must replace the V50 realization mechanism,
+not sweep its data, seed, steps, tokenization, or optimizer. V45 has already
+qualified routing; the measured blocker is full-generator fit and autonomous
+capability realization. Any new design must preserve the router result and
+account its own same-candidate quality, active parameters, memory, TTFT, and
+CPU/GPU inference cost. Final material remains unopened and Phase 4 remains
+locked.
 
-The full ABI suite currently reports 556 passed and one intentionally strict
+The full ABI suite currently reports 569 passed and one intentionally strict
 external-control failure: the separate clean LayerCake repository is ahead of
 the exact contract-bound control commit, which remains an ancestor. The
 identity verifier was not weakened. See

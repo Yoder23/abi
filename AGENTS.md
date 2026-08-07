@@ -67,12 +67,20 @@ Status date: 2026-08-07.
   Routing remained 1,400/1,400, but generation scored 760/1,400 with 20
   collapses. V49 attributes the limit to generator/bridge fit: 90.56% action
   accuracy and 72.37% exact acquisition sequences.
+- V50 tested the registered non-promotional full-generator capacity bound. With
+  all 4,174,280 generator parameters trainable, routing remained 1,400/1,400
+  but autonomous quality reached only 785/1,400 with 36 collapses. The paired
+  candidate-minus-teacher interval was [-34.57, -30.00] percentage points.
+- V51 confirms that V50 remained training-fit limited at 96.53% action accuracy
+  and 79.14% exact acquisition sequences. All 1,400 deployed control prefixes
+  encoded identically to the training path, so this is not a control-token
+  evaluation mismatch. The current topology/data branch is closed.
 - Phase 3 remains **not certified**. Routing is qualified; integrated English
   generation and LayerCake host certification are not.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V67.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V69.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -96,13 +104,23 @@ LoRA or distillation.
 ## Active authorization
 
 No neural training or LayerCake host change is currently authorized. V45 has
-closed the bounded routing question. Any successor must materially expand or
-replace capability realization, bind the qualified router, and account added
-parameters, active memory, TTFT, CPU/GPU inference cost, and same-candidate
-quality. V47 step, seed, token, and learning-rate sweeps are prohibited. Final
-material remains inaccessible.
+closed the bounded routing question, and V50/V51 close the current full-
+generator topology/data combination. Any successor must be a separately
+preregistered, materially distinct capability-realization design and account
+added parameters, active memory, TTFT, CPU/GPU inference cost, and same-
+candidate quality. V47/V50 step, seed, token, data, and learning-rate sweeps are
+prohibited. Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log
+
+V50/V51 are complete and closed. The non-promotional full-generator capacity
+control scored 785/1,400 with 36 collapses despite perfect routing, and the
+read-only fit attribution measured 96.53% action accuracy and 79.14% exact
+training sequences. This is a valid negative result: all development control
+prefixes reproduced the training tokenization exactly. Do not run nearby
+optimization, seed, data, or budget variants. A future neural proposal must be
+materially distinct and separately preregistered; Phase 3 remains uncertified
+and Phase 4 remains locked.
 
 V23 is complete failed under
 `ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_CORE_RESULT_V23.json`. Do not tune its

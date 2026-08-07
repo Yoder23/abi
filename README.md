@@ -46,6 +46,10 @@ seed. V47's integrated minimal bridge nevertheless scored only 760/1,400 with
 20 collapses. V49 measured 90.56% action accuracy and 72.37% exact sequences on
 the 7,000 acquisition records, isolating the remaining limit to capability
 realization in the frozen generator/bridge rather than routing.
+V50's non-promotional full-generator capacity control then scored 785/1,400
+with 36 collapses even though routing remained perfect. V51 measured 96.53%
+action accuracy and 79.14% exact acquisition sequences, below both fit gates;
+the current topology/data branch is closed rather than promoted or swept.
 Phase 4 remains locked. No current ABI artifact is certified as a broadly
 fluent teacher-derived English core.
 
@@ -75,6 +79,8 @@ any experiment or launching new work.
 | V45 sparse router | THREE-SEED PASS, 4,200/4,200 per view | `ABI_CAPABILITY_COMPILER_PHASE3_SPARSE_ROUTER_REPLICATION_RESULT_V46.json` |
 | V47 minimal integrated route bridge | COMPLETE FAIL, 760/1,400, 20 collapses | `ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_BRIDGE_RESULT_V48.json` |
 | V49 routed training-fit attribution | COMPLETE; fit limited at 90.56% actions / 72.37% exact | `ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_BRIDGE_FIT_RESULT_V49.json` |
+| V50 full-generator capacity upper bound | COMPLETE FAIL, 785/1,400, 36 collapses | `ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_CAPACITY_RESULT_V50.json` |
+| V51 full-generator fit attribution | COMPLETE; fit limited at 96.53% actions / 79.14% exact | `ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_CAPACITY_FIT_RESULT_V51.json` |
 | Sufficient-information frontier | OPEN | Not yet measured |
 | Integrated teacher-derived LayerCake | OPEN | Not yet produced |
 
@@ -282,7 +288,7 @@ novel-form audit invalidated any general-purpose English interpretation.
 - [Historical campaign state V3](ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V3.json)
 - [Historical campaign state V4](ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V4.json)
 - [Historical campaign state V5](ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V5.json)
-- [Current live campaign state V12](ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V12.json)
+- [Current live campaign state V69](ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V69.json)
 - [Phase 3 sequence-successor protocol](ABI_CAPABILITY_COMPILER_PHASE3_SEQUENCE_SUCCESSOR_PROTOCOL_V6.json)
 - [Conditional Phase 3 machine report](ABI_CAPABILITY_COMPILER_PHASE3_MACHINE_REPORT_V1.md)
 - [Phase 3 sequence-successor report](ABI_CAPABILITY_COMPILER_PHASE3_SEQUENCE_REPORT_V2.md)

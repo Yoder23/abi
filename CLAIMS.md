@@ -21,6 +21,13 @@ acquisition sequences. ABI therefore cannot claim fluent English transfer,
 LayerCake host certification, Phase 3 completion, or superiority over LoRA or
 distillation.
 
+V50 also does not qualify the integrated product. Allowing all 4,174,280
+generator parameters to train raised the locked autonomous score only to
+785/1,400 and produced 36 collapses. V51 measured 96.53% action accuracy and
+79.14% exact acquisition sequences. This closes only the current
+router/data/representation/generator-topology combination; it neither proves a
+fundamental ABI ceiling nor authorizes Phase 4.
+
 ### 1. Historical bounded reference
 
 `ABI_MOONSHOT_CERTIFICATE_V2.json` remains valid for its exact 1,700-observation

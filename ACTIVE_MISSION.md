@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; ROUTER QUALIFIED, INTEGRATED GENERATOR FIT LIMITED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V67.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; ROUTER QUALIFIED, CURRENT GENERATOR TOPOLOGY/DATA BRANCH CLOSED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V69.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -57,11 +57,20 @@ generator. The router stayed perfect, but autonomous quality reached only
 760/1,400 with 20 collapses. V49 measured 90.56% teacher-forced action accuracy
 and 72.37% exact acquisition sequences, proving a generator/bridge fit limit.
 
+V50 then gave the entire existing 4,174,280-parameter generator topology a
+non-promotional capacity test while holding the qualified router, data,
+representation, and gates fixed. It reached only 785/1,400 with 36 collapses
+and a paired teacher-relative interval of [-34.57, -30.00] points. V51 measured
+96.53% action accuracy and 79.14% exact acquisition sequences, so even the full
+generator remained fit limited. All 1,400 evaluation control prefixes matched
+the training token path exactly. The current topology/data branch is closed.
+
 No neural run or LayerCake host change is currently authorized. Any successor
-must be a materially new capability-realization interface with explicit active
-parameter and inference-cost accounting. V47 seed, step, token, and learning-
-rate sweeps are closed. Phase 2's external human-rating gate also remains
-unresolved, so Phase 3 cannot receive a final certificate.
+must be a separately preregistered, materially new capability-realization
+interface with explicit active-parameter and inference-cost accounting. V47
+and V50 seed, step, token, data, and learning-rate sweeps are closed. Phase 2's
+external human-rating gate also remains unresolved, so Phase 3 cannot receive a
+final certificate and Phase 4 cannot open.
 
 ## Historical direct-core path
 
@@ -250,6 +259,14 @@ baseline findings, not an ABI-candidate result.
   [LayerCake repository](https://github.com/Yoder23/layercake).
 
 ## Authoritative current documents
+
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V69.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_CAPACITY_RESULT_V50.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_CAPACITY_FIT_RESULT_V51.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_CAPACITY_REPORT_V50.md`
+
+The entries below are preserved historical authorities for their exact scopes;
+they do not supersede V69.
 
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V30.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_UNIVERSAL_SYNTAX_REPORT_V29.md`

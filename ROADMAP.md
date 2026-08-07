@@ -4,7 +4,7 @@ Status date: 2026-08-07
 
 The machine-readable contract
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` controls sequencing and
-gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V67.json` records live status.
+gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V69.json` records live status.
 Evidence gates, not experiment counts or dates, close phases.
 
 | Phase | Objective | Status |
@@ -12,7 +12,7 @@ Evidence gates, not experiment counts or dates, close phases.
 | 0 | Definitions, baselines, and preregistration | COMPLETE |
 | 1 | Capability inventory and normalized acquisition IR | COMPLETE |
 | 2 | Strong matched LoRA and distillation baselines | MACHINE COMPLETE; BLOCKED ON EXTERNAL HUMAN RATINGS |
-| 3 | Causal teacher-to-target acquisition | UNCERTIFIED; V45 ROUTER QUALIFIED, V47/V49 GENERATOR FIT LIMITED |
+| 3 | Causal teacher-to-target acquisition | UNCERTIFIED; V45 ROUTER QUALIFIED, V50/V51 CURRENT TOPOLOGY/DATA BRANCH CLOSED |
 | 4 | Sufficient-information Pareto frontier | LOCKED |
 | 5 | Selective reconstruction and bounded exclusion | LOCKED |
 | 6 | Composition, portability, and multi-source provenance | LOCKED |
@@ -74,6 +74,13 @@ sweeping nearby routes is barred.
   authorized. A separate LayerCake investigation must qualify the integration
   surface before a new ABI protocol can be registered. No runtime claim is
   inherited by either oracle bridge.
+- V45/V46 qualify the sparse routing component, but V47/V49 fail integrated
+  generation and fit. V50/V51 further show that training the entire existing
+  generator topology reaches only 785/1,400 autonomously, 96.53% action fit,
+  and 79.14% exact training sequences. The current topology/data combination
+  is closed. Do not run nearby seed, step, data, token, or learning-rate sweeps.
+  A future experiment requires a materially distinct preregistered realization
+  mechanism after the external Phase 2 human gate is resolved.
 - The separate LayerCake host investigation passed a construct-only external
   direct-core interface. ABI V23 then failed the initial absolute screen at
   504/1,400 with 77 collapses. Its fixed targets did not supervise available

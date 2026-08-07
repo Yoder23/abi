@@ -1,0 +1,17 @@
+{
+  "format":"abi-capability-compiler-phase3-route-capacity-result/1",
+  "status":"COMPLETE_FAILED_NONPROMOTIONAL_CAPACITY_UPPER_BOUND",
+  "effective_date":"2026-08-07",
+  "protocol":{"path":"ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_CAPACITY_PROTOCOL_V50.json","sha256":"c2e39b9847af1fa5fc0677b08b4fa7a013026c2b87eec5ac3dc50b3c2071a5ec"},
+  "candidate":{"checkpoint_sha256":"e86c332bf52a68e1642ea5dfc0e6c629bca0da5a370a4a66368e89e874b03357","checkpoint_bytes":16704448,"trainable_parameters":4174280,"router_sha256":"cc1f384a49fdaad94d47c5feb4573dcc7eb688ac96ffd7bfffade811861acb48","metadata_sha256":"f132ccd92049a2def6fba456789bfc509b4c381073e4418117eaecd2b387d44b","route_controls_sha256":"947609c11c8650e34a4cd78c3f095edb27cf4e7274a2f0827ee420a58ebd47c4","tokenizer_sha256":"64a2b3ebf2fde5ec1a35faa6813b77f09f19f47c1135695d72b29145c023df36"},
+  "training":{"seed":240050,"successful_steps":4000,"batch_size":16,"wall_seconds":91.9674,"skipped_amp_steps":0,"peak_process_rss_bytes":1186406400,"peak_cuda_allocated_bytes":316269568},
+  "autonomous_evaluation":{"functional_passes":785,"observations":1400,"functional_rate":0.5607142857142857,"route_correct":1400,"repetition_collapses":36,"generation_errors":0,"candidate_minus_teacher":-0.32285714285714284,"candidate_minus_teacher_lower_95":-0.3457142857142857,"candidate_minus_teacher_upper_95":-0.3,"decision_file_sha256":"5890585e95d86b2f04edcba9fa3177ab1369d40ba3379d6464c9eb46a0e3e006","outputs_sha256":"b4a73fefcab8aa9d5a7c0f9f619247256bcd60b4aeae210ac2b1bd9f3ce41cd4"},
+  "gates":{"per_capability_functional":false,"critical_capabilities":false,"zero_repetition_collapses":false,"zero_generation_errors":true,"router_accuracy":true,"teacher_relative_noninferiority":false},
+  "control_path_audit":{"observations":1400,"training_equivalent_token_sequences":1400,"mismatches":0,"interpretation":"The evaluation raw-text control prefix encoded to the exact source-token sequence used in training on every development prompt."},
+  "decision":"The qualified route plus current 7,000-record IR plus current full generator topology does not satisfy autonomous quality even when all generator parameters train. Close this topology/data combination. Do not run nearby step, seed, learning-rate, token, or data sweeps.",
+  "promotion_eligible":false,
+  "phase3_certified":false,
+  "phase4_open":false,
+  "final_test_accessed":false,
+  "historical_evidence_changed":false
+}
