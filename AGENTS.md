@@ -80,7 +80,7 @@ Status date: 2026-08-07.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V98.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V99.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -191,6 +191,9 @@ dominant conditional-generalization failure alongside residual fit. Output-only
 teacher-native training is closed. One no-training feasibility/accounting study
 may inspect projected teacher input/output lexical substrate; no extraction or
 training is yet authorized.
+V80 preregisters that no-model feasibility study. It may inspect only indexed
+tensor shapes/dtypes and fixed projection/accounting; it cannot read tensor
+values, extract, or train.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log

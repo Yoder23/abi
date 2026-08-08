@@ -1,0 +1,34 @@
+{
+  "format": "abi-capability-compiler-phase3-lexical-substrate-feasibility/1",
+  "protocol_id": "abi-capability-compiler-phase3-lexical-substrate-feasibility-v80",
+  "status": "PREREGISTERED_NO_MODEL_FEASIBILITY",
+  "effective_date": "2026-08-07",
+  "historical_evidence_changed": false,
+  "teacher_model_loading_authorized": false,
+  "tensor_extraction_authorized": false,
+  "neural_training_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "objective": "Determine whether the teacher input embedding and output lexical head can be row-aligned and fixed-projected into the exact LayerCake v4 action space at a bounded payload, leaving only small host bridges trainable.",
+  "source": {
+    "model": "microsoft/Phi-3-mini-4k-instruct",
+    "revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "snapshot_path": "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e",
+    "index_path": "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e/model.safetensors.index.json",
+    "tensor_keys": ["model.embed_tokens.weight", "lm_head.weight"],
+    "vocabulary": 32064,
+    "width": 3072,
+    "tie_word_embeddings": false
+  },
+  "projection": {"method": "fixed Gaussian matrix with independently L2-normalized columns", "source_width": 3072, "target_width": 192, "seed": 240080, "sha256": "9ef408bda7280beb4d0ad924cb910af640513471181bc2047aa45c041f97c7a2", "trainable": false, "deployed": false},
+  "selection": {"external_actions": 32011, "host_offset": 4, "source_rows_excluded": 53, "deployed_parameters": 14587728, "payload_bytes_maximum": 134217728, "bridge_parameters_maximum": 4000000, "input_and_output_tables_required": true, "zero_source_blocks_required": true},
+  "decision_rule": "Pass only if both indexed source tensors are [32064,3072], the projection hash is exact, the two fp16 projected tables fit below 128 MiB, and all nonimported host parameters fit below 4M. A pass authorizes only a separately preregistered chunked extraction.",
+  "bindings": {
+    "abi/capability_compiler_phase3_lexical_substrate_feasibility.py": "de1497155c85bcc290bbadd7c25c9885ff4d668d82fdd06252f4e15eb7d85fe1",
+    "tests/test_capability_compiler_phase3_lexical_substrate_feasibility.py": "8be80b90b68e52906d018e23160a866a273010854b1c5d63b5aa2323f13bd8ec",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V98.json": "fab30ed61d81258618b20cd09ab48da865f50d59c64b319a8a4e46b5e475ee23",
+    "ABI_CAPABILITY_COMPILER_PHASE3_TEACHER_NATIVE_FIT_RESULT_V79.json": "6892d3fec4246a1aac8cca9875adb9e9a9d78b59327b1c69520c94810a89e79d",
+    "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e/model.safetensors.index.json": "519fa1eba3aa4645654d91322a55ed872b705e25e7a1114702e426a2fbac2c4b",
+    "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e/config.json": "072d4df63228ef806a6b2b2f02a93f1d048ebd31584d0f61d1180aef36e5bcea"
+  },
+  "claim_boundary": "No-model shape and accounting feasibility only."
+}

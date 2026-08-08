@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V79 GENERALIZATION FAILURE ATTRIBUTED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V98.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V80 LEXICAL-SUBSTRATE FEASIBILITY PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V99.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -229,6 +229,10 @@ dominant held-out conditional-generalization failure plus residual training
 fit. Output-only teacher-native training is closed. The next bounded question
 is a no-training feasibility/accounting study for projected teacher input and
 output lexical substrate.
+
+V80 preregisters that no-model feasibility study. It may inspect only source
+tensor shapes/dtypes and deterministic projection/payload accounting; tensor
+values, extraction, training, teacher inference, and final material are closed.
 
 ## Historical direct-core path
 
