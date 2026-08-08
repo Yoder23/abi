@@ -24,8 +24,11 @@ Three facts define the current checkpoint:
 2. V87 demonstrates a real causal teacher-artifact-to-LayerCake signal against
    parent and shuffled controls, but its formal transfer-quality gate fails and
    it is not deployable.
-3. V89 passes bounded pre-transfer labeling for English, chemistry, civics,
-   mathematics, Python, and quarantine on a source-record-disjoint holdout.
+3. V93 verifies an 80,120,448-byte native causal teacher substrate: all 7,000
+   provenance joins and offsets pass, and 167,616/167,616 independently
+   recomputed fp16 scalars match exactly. V94 proves this signal is useful but
+   insufficient, improving V75 by 13 paired passes while failing the absolute
+   quality and repetition gates.
 
 Capability-compiler Phases 0 and 1 are **COMPLETE**. Phase 2 machine evidence is
 complete, but Phase 2 is **BLOCKED_EXTERNAL_HUMAN_RATINGS**: the contract
@@ -58,11 +61,15 @@ measured representation target. Its placement compiler still sends only
 eligible English acquisition records to the core, maps known specialist
 selections to separate domain cakes, and fails closed because no domain
 acquisition payload exists yet.
-V54 then tested Unicode-safe BPE pointer supervision on the same shared topology
-and V50 seed. It exactly matched V50 at 785/1,400, produced 40 collapses, and
-reduced training fit. Route isolation and limited target-pointer changes are
-therefore closed. The next Phase 3 gate is a no-training feasibility and
-imported-information study for richer frozen-teacher representations.
+The representation campaign subsequently qualified LayerCake v4 native actions,
+verified a 208,647-state causal substrate, and tested one matched causal-state
+candidate. V94 scored 837/1,400 with 55 collapses, two errors, zero coherence,
+and zero fact-free reasoning. Its +0.43 to +1.50-point paired improvement over
+V75 proves causal utility, not product adequacy. V97 measures 95.52% acquisition
+action fit versus 72.85% held-out teacher-action fit, a 22.68-point gap. The
+dominant current blocker is conditional generalization/data coverage, not
+routing, token identity, host conformance, lexical geometry, or exposure-only
+recovery. The next gate is a no-training acquisition-coverage audit.
 Phase 4 remains locked. No current ABI artifact is certified as a broadly
 fluent teacher-derived English core.
 
@@ -96,6 +103,13 @@ any experiment or launching new work.
 | V51 full-generator fit attribution | COMPLETE; fit limited at 96.53% actions / 79.14% exact | `ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_CAPACITY_FIT_RESULT_V51.json` |
 | V52/V53 hard-routed resilience screen | COMPLETE FAIL, 810/1,400, 49 collapses | `ABI_CAPABILITY_COMPILER_PHASE3_RESILIENCE_RESULT_V53.json` |
 | V54/V55 Unicode-safe BPE pointer screen | COMPLETE FAIL, 785/1,400, 40 collapses | `ABI_CAPABILITY_COMPILER_PHASE3_BPE_POINTER_RESULT_V55.json` |
+| V73 LayerCake host-interface audit | BLOCKED old host; caused isolated v4 host work | `ABI_CAPABILITY_COMPILER_PHASE3_HOST_INTERFACE_AUDIT_RESULT_V73.json` |
+| V75/V77 native-action output-only control | COMPLETE FAIL, 824/1,400, 38 collapses | `ABI_CAPABILITY_COMPILER_PHASE3_TEACHER_NATIVE_CORE_RESULT_V77.json` |
+| V83/V85 projected lexical substrate | EXTRACTED AND VERIFIED | `ABI_CAPABILITY_COMPILER_PHASE3_LEXICAL_SUBSTRATE_VERIFICATION_RESULT_V85.json` |
+| V86/V87 bridge-only lexical screen | COMPLETE FAIL, 812/1,400, 76 collapses | `ABI_CAPABILITY_COMPILER_PHASE3_LEXICAL_SUBSTRATE_CORE_RESULT_V87.json` |
+| V89/V91/V93 native causal substrate | FEASIBLE, EXTRACTED, HOSTILE-VERIFIED | `ABI_CAPABILITY_COMPILER_PHASE3_NATIVE_CAUSAL_VERIFICATION_RESULT_V93.json` |
+| V94/V95 native causal core | COMPLETE FAIL, 837/1,400, 55 collapses; positive paired signal | `ABI_CAPABILITY_COMPILER_PHASE3_NATIVE_CAUSAL_CORE_RESULT_V95.json` |
+| V96/V97 fit and prefix attribution | COMPLETE; conditional-generalization/data-coverage failure | `ABI_CAPABILITY_COMPILER_PHASE3_NATIVE_CAUSAL_FIT_RESULT_V97.json` |
 | Sufficient-information frontier | OPEN | Not yet measured |
 | Integrated teacher-derived LayerCake | OPEN | Not yet produced |
 

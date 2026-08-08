@@ -268,6 +268,13 @@ the next materially distinct branch; no training or weight sweep is authorized.
 V96 preregisters that read-only attribution over all 7,000 acquisition targets,
 all 1,400 held-out teacher targets, and the 1,400 already-produced autonomous
 outputs. It cannot train or load the teacher.
+V96 passed attribution. V94 fits 95.52% of acquisition actions but only 72.85%
+of held-out teacher actions, a 22.68-point gap and slightly worse held-out fit
+than V75. Autonomous outputs match 38.57% of teacher prefixes on average;
+collapsed outputs match 11.53%. Because held-out teacher-forced fit is far below
+95%, exposure recovery is not the dominant next branch. The measured blocker is
+conditional generalization/data coverage. One no-training coverage audit may be
+designed; V94 tuning and reruns remain prohibited.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log

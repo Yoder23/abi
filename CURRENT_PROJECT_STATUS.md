@@ -16,14 +16,21 @@ machine campaign is complete and adversarially rehashed, but Phase 2 is
 21,000 blinded counterbalanced judgments before a final Phase 2 certificate can
 exist. Phase 2 is not certified. The user explicitly deferred the currently
 unavailable human raters.
-All completed Phase 3 model branches, including direct-core V23 and the V50
-capacity control, are **COMPLETE_FAILED**,
-without changing Phase 2's failed-closed status. The first found a causal
-signal but failed quality. The sequence successor improved aggregate quality
-substantially, but failed absolute, causal-control, teacher-relative, and
-repetition gates. Phase 3 is not certified; Phases 4 through 8 remain locked.
+All completed Phase 3 model branches remain **COMPLETE_FAILED** without
+changing Phase 2's failed-closed status. The latest native causal branch proves
+a statistically positive teacher-state signal but fails absolute quality,
+teacher-relative, coherence, reasoning, and repetition gates. Phase 3 is not
+certified; Phases 4 through 8 remain locked.
 
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V69.json` is the live state. V45 has
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V116.json` is the live state. V93
+hostile-verifies the 208,647-vector native causal substrate with 167,616 exact
+sampled fp16 scalar recomputations. V94 then scores 837/1,400 with 55 collapses,
+two generation errors, zero coherence, and zero fact-free reasoning. It gains
+15 and loses two prompts versus matched V75, so the signal is useful but not
+sufficient. V97 measures 95.52% acquisition-action fit, 72.85% held-out
+teacher-action fit, and a 22.68-point generalization gap. Conditional
+generalization/data coverage is the measured next bottleneck. V94 tuning,
+weight sweeps, and reruns are prohibited. V45 has
 qualified capability routing at three fixed seeds, with 4,200/4,200 correct
 original prompts, bodies, and metadata decisions. V47's minimal integrated
 bridge failed autonomous quality at 760/1,400 with 20 collapses, and V49
