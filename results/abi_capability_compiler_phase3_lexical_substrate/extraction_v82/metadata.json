@@ -1,0 +1,68 @@
+{
+  "artifact": {
+    "bytes": 24584856,
+    "path": "projected_lexical_substrate_fp16.safetensors",
+    "sha256": "d56d0616a92cfff5c52a7ffb6a5d44cd54e131a5450280766f9a1b9a99a6b0c0",
+    "tensor_payload_bytes": 24584448
+  },
+  "evidence_sha256": "5232d9814e483a88200811c56e38fe2e314dd29784a1cce2e381368b5917bf21",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-lexical-substrate/1",
+  "imported_information": {
+    "projected_parameters_stored": 12292224,
+    "projected_payload_bytes": 24584448,
+    "source_blocks_retained": 0,
+    "source_parameters_copied": 0,
+    "source_tensor_rows_read": 64022,
+    "source_tensor_scalars_read": 196675584,
+    "stored_hidden_activations": 0,
+    "stored_logits": 0
+  },
+  "phase3_certified": false,
+  "projection": {
+    "deployed": false,
+    "input_row_target_norm": 13.856406460551018,
+    "method": "fixed Gaussian matrix with independently L2-normalized columns",
+    "output_row_target_norm": 0.5773502691896258,
+    "row_norm_basis": "host default theoretical scales; no tuning",
+    "seed": 240080,
+    "sha256": "9ef408bda7280beb4d0ad924cb910af640513471181bc2047aa45c041f97c7a2",
+    "source_width": 3072,
+    "target_width": 192
+  },
+  "protocol_sha256": "0b03842f994a61e546e8df52ed5f9b9667c6d54aa0a5589edcec9804d0705409",
+  "runtime": {
+    "chunk_rows": 1024,
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "machine": "Sam",
+    "peak_cuda_allocated_bytes": 30539776,
+    "peak_process_rss_bytes": 966512640,
+    "teacher_inference_seconds": 0,
+    "wall_seconds": 0.28745180000260007
+  },
+  "statistics": {
+    "input_embedding_rows_fp16": {
+      "dtype": "torch.float16",
+      "maximum_norm": 13.85799789428711,
+      "median_norm": 13.856406211853027,
+      "minimum_norm": 13.855006217956543,
+      "rows": 32011,
+      "target_norm": 13.856406460551018,
+      "width": 192
+    },
+    "output_head_rows_fp16": {
+      "dtype": "torch.float16",
+      "maximum_norm": 0.5774076581001282,
+      "median_norm": 0.5773500204086304,
+      "minimum_norm": 0.5772857666015625,
+      "rows": 32011,
+      "target_norm": 0.5773502691896258,
+      "width": 192
+    }
+  },
+  "status": "EXTRACTED_UNVERIFIED_TRAINING_PROHIBITED",
+  "teacher_model_loaded": false,
+  "teacher_present_at_inference": false,
+  "training_performed": false
+}
