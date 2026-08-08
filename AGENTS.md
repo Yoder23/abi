@@ -147,6 +147,11 @@ sweep or additional seed is authorized. The tested 4.17M-parameter
 separately sealed English engine, so this is an ABI-plus-construct integration
 failure rather than a LayerCake regression. One read-only host-interface
 readiness audit is authorized before any further neural proposal.
+V72 preregisters that read-only audit. It may load only the frozen tokenizer,
+not the teacher model, and must measure all 14,000 acquisition text round trips,
+raw-piece concatenation, action inventory, exact native-action causality,
+projected host size, and the bound v3 acceptance rules. It cannot train or
+change LayerCake.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log

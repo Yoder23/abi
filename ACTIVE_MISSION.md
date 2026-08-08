@@ -181,6 +181,11 @@ or performance claim. One no-training host-interface readiness audit must now
 determine whether a causally aligned external artifact can reach a genuinely
 qualified LayerCake host without misattributing host readiness to ABI.
 
+V72 preregisters that read-only audit. It binds the exact teacher tokenizer,
+all 7,000 acquisition records, the frozen LayerCake v3 implementation, and its
+construct-only decision. It cannot load teacher weights, train, change the
+host, or access final material.
+
 ## Historical direct-core path
 
 The separate LayerCake repository has qualified a construct-only signed direct

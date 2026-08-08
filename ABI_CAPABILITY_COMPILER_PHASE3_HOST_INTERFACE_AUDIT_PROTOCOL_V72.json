@@ -1,0 +1,48 @@
+{
+  "format": "abi-capability-compiler-phase3-host-interface-audit/1",
+  "protocol_id": "abi-capability-compiler-phase3-host-interface-audit-v72",
+  "status": "PREREGISTERED_READ_ONLY_AUDIT",
+  "effective_date": "2026-08-07",
+  "historical_evidence_changed": false,
+  "phase3_status": "UNCERTIFIED",
+  "phase4_status": "LOCKED",
+  "final_test_access": "PROHIBITED",
+  "neural_training_authorized": false,
+  "teacher_model_loading_authorized": false,
+  "objective": "Determine whether exact teacher-token-native causal alignment is representable and whether the frozen, independently governed LayerCake external-core host can accept it without decoder loss, action-ID collision, hidden host training, or inherited claims.",
+  "phase1_ir": "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir",
+  "source": {
+    "model": "microsoft/Phi-3-mini-4k-instruct",
+    "revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "tokenizer_json": "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer.json",
+    "tokenizer_config": "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer_config.json"
+  },
+  "layercake_host": {
+    "repository": "../layercake_release",
+    "interface": "lc-direct-neural-core/3",
+    "implementation": "../layercake_release/layercake_extensions/bpe_direct_neural_core.py",
+    "construct_decision": "../layercake_release/moonshot/postrelease_bpe_direct_neural_core_decision_v8.json",
+    "changed": false
+  },
+  "measurements": [
+    "all 14,000 acquisition prompt/output encode-decode round trips",
+    "raw token-piece concatenation exactness",
+    "teacher tokenizer graph and action inventory",
+    "zero-straddle causal alignment availability under native teacher actions",
+    "exact PortableTokenPlan parameter cost under collision-free action remapping",
+    "frozen v3 host acceptance rules and construct-only decision state"
+  ],
+  "decision_rule": "Report an external LayerCake host-interface blocker only if every bound acquisition text round-trips exactly through the teacher tokenizer, the tokenizer is machine-rejected by v3's raw-concatenative contract, the rejection rule is present in the bound host implementation, and the bound LayerCake decision remains construct-only with no external artifact. Otherwise fail closed without authorizing training.",
+  "bindings": {
+    "abi/capability_compiler_phase3_host_interface_audit.py": "60d871fc53d63b195637d886542e8cdb788887258fa0f96702b12da8a5a70326",
+    "tests/test_capability_compiler_phase3_host_interface_audit.py": "3ca4c8f082d138de64dcf073b945b07c2d2be9efe3e33910f4e94ccd2dbebb6d",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V90.json": "411a6005fe09656150d342b3a9a27b46432fb3645d30ead387e1923a312a2bc4",
+    "ABI_CAPABILITY_COMPILER_PHASE3_ACTION_ALIGNED_CORE_RESULT_V71.json": "0b4edac5457a4081de3e66a4f48ab3b4e28cfcaeb9853dd774094fc6e72f553b",
+    "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+    "../layercake_release/layercake_extensions/bpe_direct_neural_core.py": "23136262e4f63f1037d26568cbf3d41b847d80145fc5b1456ca98294b09d9050",
+    "../layercake_release/moonshot/postrelease_bpe_direct_neural_core_decision_v8.json": "eff4003604d8c7ec751cf7b0f35d7db5f7b98c9aa4a23a9ac4bc301237997441",
+    "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer.json": "072ab882d6c7192a42f78790945d16c064691321a73251a4b18f6a380f0fbe39",
+    "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer_config.json": "32f66c2bab499baaa8341819ad9a13342f957501ce1e989bcb90853a01336cc0"
+  },
+  "claim_boundary": "Read-only interface attribution only; no learned transfer, quality, speed, Phase 3 certification, or ABI superiority claim."
+}
