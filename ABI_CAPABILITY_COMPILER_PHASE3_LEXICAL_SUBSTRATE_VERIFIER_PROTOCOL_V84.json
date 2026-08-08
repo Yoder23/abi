@@ -1,0 +1,28 @@
+{
+  "format": "abi-capability-compiler-phase3-lexical-substrate-verifier/1",
+  "protocol_id": "abi-capability-compiler-phase3-lexical-substrate-verifier-v84",
+  "status": "PREREGISTERED_HOSTILE_VERIFICATION",
+  "effective_date": "2026-08-07",
+  "historical_evidence_changed": false,
+  "neural_training_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "objective": "Verify artifact identity, exact keys/shapes/dtypes/finiteness/norms, and independently recompute eight hash-selected rows per table under their original 1,024-row GPU projection partitions.",
+  "artifact": {"path": "results/abi_capability_compiler_phase3_lexical_substrate/extraction_v82/projected_lexical_substrate_fp16.safetensors", "sha256": "d56d0616a92cfff5c52a7ffb6a5d44cd54e131a5450280766f9a1b9a99a6b0c0"},
+  "source": {"snapshot_path": "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e", "index_path": "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e/model.safetensors.index.json"},
+  "projection": {"source_width": 3072, "target_width": 192, "seed": 240080, "sha256": "9ef408bda7280beb4d0ad924cb910af640513471181bc2047aa45c041f97c7a2"},
+  "chunk_rows": 1024,
+  "sample_rows_per_table": 8,
+  "decision_rule": "Every static and norm gate plus every one of 3,072 sampled fp16 scalars must match exactly. Any miss rejects the artifact.",
+  "bindings": {
+    "abi/capability_compiler_phase3_lexical_substrate_verify.py": "d3ad82c6d676490fabc73b626d6d1a255ce5e0154cf437eb60e144b6716c9e8e",
+    "tests/test_capability_compiler_phase3_lexical_substrate_verify.py": "3e4fc232c6b2039e2353eb59c24c309cfbf728a34890624bea50dff9eb0e70bb",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V102.json": "5ed28cfab720be0d401479911244d2e206441eb9bbe98fcd417483d89ea1fcd0",
+    "ABI_CAPABILITY_COMPILER_PHASE3_LEXICAL_SUBSTRATE_EXTRACTION_RESULT_V83.json": "b5c60d768dfbfdcf3f82222de1b64de95a1e7fe6f295ea8e71486e36ab2f4441",
+    "results/abi_capability_compiler_phase3_lexical_substrate/extraction_v82/projected_lexical_substrate_fp16.safetensors": "d56d0616a92cfff5c52a7ffb6a5d44cd54e131a5450280766f9a1b9a99a6b0c0",
+    "results/abi_capability_compiler_phase3_lexical_substrate/extraction_v82/metadata.json": "02b95c0f7b457a3e9f44c3db9326696e19a94957635f1e0d4caeb1cec4397b52",
+    "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e/model.safetensors.index.json": "519fa1eba3aa4645654d91322a55ed872b705e25e7a1114702e426a2fbac2c4b",
+    "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e/model-00001-of-00002.safetensors": "b7492726c01287bf6e13c3d74c65ade3d436d50da1cf5bb6925bc962419d6610",
+    "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e/model-00002-of-00002.safetensors": "3f311787aa136e858556caa8543015161edcad85ba81b6a36072443d7fa73c87"
+  },
+  "claim_boundary": "Artifact verification only."
+}

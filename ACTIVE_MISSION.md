@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V82 LEXICAL SUBSTRATE EXTRACTED UNVERIFIED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V102.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V84 LEXICAL SUBSTRATE VERIFIER PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V103.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -249,6 +249,10 @@ V82 completed and wrote 12,292,224 projected parameters in a 24,584,448-byte
 tensor payload after validating both source-file hashes. It used no teacher
 inference and retains no logits, activations, or source blocks. The artifact is
 unverified and remains training-prohibited.
+
+V84 preregisters hostile static, norm, and source-row recomputation checks over
+the artifact. All 3,072 sampled fp16 scalars must match exactly. Training is
+still prohibited.
 
 ## Historical direct-core path
 
