@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V70 INITIAL SCREEN PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V89.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V70 FAILED AND CLOSED; HOST-INTERFACE AUDIT REQUIRED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V90.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -168,6 +168,18 @@ V70 now seals one matched action-aligned candidate. It retains V50's exact
 model, seed, optimizer, 4,000 updates, route, tokenizer, and gates; only masked
 per-action source and causal-target cosine losses are added. Any gate miss
 closes the branch without tuning or additional seeds.
+
+V70 completed and failed. It reached 794/1,400 with 38 collapses, zero
+coherence, and zero fact-free reasoning. The +9 passes over matched V50 are
+statistically positive but materially inadequate; the teacher-relative 95%
+interval remains -33.93 to -29.29 percentage points. The target alignment loss
+also remained 0.7044, while 31,485/49,029 target actions share teacher states
+across tokenizer-boundary straddles. No weight sweep, nearby variant, or
+additional seed is authorized. The tested `lc-direct-neural-core/3` target is
+only LayerCake's construct interface and carries no inherited English-quality
+or performance claim. One no-training host-interface readiness audit must now
+determine whether a causally aligned external artifact can reach a genuinely
+qualified LayerCake host without misattributing host readiness to ABI.
 
 ## Historical direct-core path
 

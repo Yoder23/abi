@@ -80,7 +80,7 @@ Status date: 2026-08-07.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V69.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V90.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -136,12 +136,17 @@ activation payload. V66 completed in 413.29 teacher-forward seconds and wrote
 parameters. The output remains unverified and training-prohibited. One hostile
 verification protocol may be designed. V68 passed all rows and offsets plus
 exact original-batch recomputation of 64,512 scalars across two hash-picked
-records per capability with zero error. One matched action-aligned candidate
-protocol may now be designed. V70 seals one matched seed-240050 screen with the
-exact V50 model, optimizer, order, updates, router, tokenizer, and gates. Only
-per-action source/target cosine alignment changes. No weight sweep, additional
-seed, host certification, or LayerCake host change is authorized unless A0
-passes every gate.
+records per capability with zero error. V70 then tested one matched seed-240050
+candidate with the exact V50 model, optimizer, order, updates, router,
+tokenizer, and gates. Per-action causal alignment improved V50 by 9/1,400
+passes (paired 95% interval +0.14 to +1.14 points), but still scored only
+794/1,400 with 38 collapses, zero coherence, and zero fact-free reasoning. Its
+teacher-relative interval was -33.93 to -29.29 points. V70 is closed: no weight
+sweep or additional seed is authorized. The tested 4.17M-parameter
+`lc-direct-neural-core/3` target is a construct-only interface, not LayerCake's
+separately sealed English engine, so this is an ABI-plus-construct integration
+failure rather than a LayerCake regression. One read-only host-interface
+readiness audit is authorized before any further neural proposal.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log
