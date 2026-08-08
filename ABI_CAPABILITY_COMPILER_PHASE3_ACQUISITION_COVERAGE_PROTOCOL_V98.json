@@ -1,0 +1,25 @@
+{
+  "format": "abi-capability-compiler-phase3-acquisition-coverage/1",
+  "protocol_id": "abi-capability-compiler-phase3-acquisition-coverage-v98",
+  "status": "PREREGISTERED_NO_MODEL_ACQUISITION_COVERAGE_AUDIT",
+  "effective_date": "2026-08-07",
+  "historical_evidence_changed": false,
+  "teacher_model_loading_authorized": false,
+  "neural_training_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "objective": "Quantify capability-conditioned source and teacher-target structural coverage from the 7,000 acquisition records to the 1,400 held-out development records without training or loading the teacher.",
+  "candidate_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_NATIVE_CAUSAL_CORE_PROTOCOL_V94.json",
+  "views": {"source": "LayerCake v4 native action sequences for controlled held-out prompts", "target": "LayerCake v4 native action sequences for frozen held-out teacher outputs", "ngram_widths": [1, 2, 3, 4], "conditioning": "within capability only", "exact_sequence_overlap": true, "length_range_support": true},
+  "decision_rule": {"minimum_coverage": 0.95, "material_gap": "source trigram or target fourgram coverage below 95%", "successor": "If material, define a source-record-disjoint teacher-query expansion covering the missing structures; do not train V94 again on the old 7,000-record distribution."},
+  "bindings": {
+    "abi/capability_compiler_phase3_acquisition_coverage.py": "8622fbdf7474fcd2c728dab78702427a409ef114c43f15ce3221b6f21717d0e2",
+    "tests/test_capability_compiler_phase3_acquisition_coverage.py": "fe05753f6a523b1ce73fbbfb7c3e8d93c65f2b22d3d5ab27c1c6388c770a3101",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V116.json": "0e8a92e1765a8dc14bf0c1130c87c256ac9721cc843a590652f8a0ff95454262",
+    "ABI_CAPABILITY_COMPILER_PHASE3_NATIVE_CAUSAL_FIT_RESULT_V97.json": "a253924d1fabe9213352fffd7f0044e00eaecd310883bcc24caf0da2c0ee249b",
+    "ABI_CAPABILITY_COMPILER_PHASE3_NATIVE_CAUSAL_CORE_PROTOCOL_V94.json": "9301d46e90dc33e1b1ef65a01848f368fd33e1b4f27d02aba3591dbdbf02ae2e",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl": "1081dbe57e75da50b2619bc2dab14c6441158dcd6068f2b864733936087e86a2",
+    "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20"
+  },
+  "claim_boundary": "No-model structural coverage audit only; it does not certify acquisition sufficiency or Phase 3."
+}

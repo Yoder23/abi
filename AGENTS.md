@@ -275,6 +275,9 @@ collapsed outputs match 11.53%. Because held-out teacher-forced fit is far below
 95%, exposure recovery is not the dominant next branch. The measured blocker is
 conditional generalization/data coverage. One no-training coverage audit may be
 designed; V94 tuning and reruns remain prohibited.
+V98 preregisters that no-model coverage audit over capability-conditioned
+native source and teacher-target 1- through 4-grams, exact sequences, and
+length support. It cannot train or load the teacher.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log

@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V97 CONDITIONAL-GENERALIZATION/DATA-COVERAGE FAILURE ATTRIBUTED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V116.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V98 ACQUISITION-COVERAGE AUDIT PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V117.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -320,6 +320,10 @@ of held-out teacher actions, a 22.68-point gap. Its mean autonomous teacher
 prefix is 38.57%, falling to 11.53% on collapsed outputs. Since held-out
 teacher-forced fit is far below 95%, on-policy recovery is not the dominant
 next branch. One no-training acquisition-coverage audit is the next gate.
+
+V98 preregisters that audit over capability-conditioned native source and
+teacher-target 1- through 4-grams, exact sequences, and length support. It may
+not train or load the teacher.
 
 ## Historical direct-core path
 
