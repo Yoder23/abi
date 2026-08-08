@@ -1,0 +1,14 @@
+{
+  "format": "abi-capability-compiler-phase3-acquisition-coverage-attempt-failure/1",
+  "status": "FAILED_BEFORE_EVIDENCE_ACCESS_IMPLEMENTATION_IMPORT_ERROR",
+  "effective_date": "2026-08-07",
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_ACQUISITION_COVERAGE_PROTOCOL_V98.json",
+  "error": "Phase3Error: teacher-native core governance changed",
+  "cause": "The V98 implementation imported the V75 teacher-native protocol loader rather than the V94 native-causal protocol loader.",
+  "result_file_created": false,
+  "teacher_model_loaded": false,
+  "neural_training_performed": false,
+  "scientific_evidence_accessed": false,
+  "scientific_fields_changed_for_replay": false,
+  "repair": "Change the single loader import and bind an exact no-model replay protocol."
+}

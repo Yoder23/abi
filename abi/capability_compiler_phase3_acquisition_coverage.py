@@ -11,7 +11,8 @@ from .capability_compiler_phase2_common import CAPABILITIES, sha256_file
 from .capability_compiler_phase2_teacher import development_probes
 from .capability_compiler_phase3 import Phase3Error
 from .capability_compiler_phase3_segment_router import _semantic_segments
-from .capability_compiler_phase3_teacher_native_core import _examples, _json, _layercake_api, _tokenizer, controlled_prompt, load_protocol as load_candidate_protocol
+from .capability_compiler_phase3_native_causal_core import load_protocol as load_candidate_protocol
+from .capability_compiler_phase3_teacher_native_core import _examples, _json, _layercake_api, _tokenizer, controlled_prompt
 
 
 def _ngrams(values: Sequence[int], width: int) -> Iterable[tuple[int, ...]]:
