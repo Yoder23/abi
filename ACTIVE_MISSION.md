@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V78 FIT ATTRIBUTION PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V97.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V79 GENERALIZATION FAILURE ATTRIBUTED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V98.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -221,6 +221,14 @@ teacher-forced fit and autonomous-error attribution is the next gate.
 V78 preregisters that read-only measurement over all 7,000 acquisition records
 and all 1,400 held-out teacher targets. It loads only the frozen V75 checkpoint,
 cannot train, and cannot load the source teacher.
+
+V78 passed its attribution. Acquisition teacher-forced fit is 95.51% by action
+but only 64.99% by exact sequence; held-out teacher-target fit falls to 72.92%
+by action and 26.36% by sequence. The 22.60-point action gap establishes a
+dominant held-out conditional-generalization failure plus residual training
+fit. Output-only teacher-native training is closed. The next bounded question
+is a no-training feasibility/accounting study for projected teacher input and
+output lexical substrate.
 
 ## Historical direct-core path
 

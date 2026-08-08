@@ -80,7 +80,7 @@ Status date: 2026-08-07.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V97.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V98.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -184,6 +184,13 @@ attribution is authorized before any materially different proposal.
 V78 preregisters that read-only attribution over every acquisition record and
 every held-out teacher target. It may load only the frozen candidate, never the
 teacher, and cannot train or alter an artifact.
+V78 passed its attribution. V75 fits 95.51% of acquisition actions but only
+64.99% of complete acquisition sequences; held-out teacher-forced fit is
+72.92% of actions and 26.36% of sequences. The 22.60-point action gap proves a
+dominant conditional-generalization failure alongside residual fit. Output-only
+teacher-native training is closed. One no-training feasibility/accounting study
+may inspect projected teacher input/output lexical substrate; no extraction or
+training is yet authorized.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log

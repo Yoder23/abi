@@ -1,0 +1,357 @@
+{
+  "attribution_rule": "Training exactness below 95% indicates residual fit capacity. A training-development action gap above 10 points indicates held-out conditional generalization failure. Development action accuracy above 95% with poor autonomous results indicates exposure-bias/state-recovery failure.",
+  "autonomous": {
+    "error_types": {
+      "ValueError: pointer actions are prohibited by v4": 5
+    },
+    "functional_passes": 824,
+    "generation_errors": 5,
+    "observations": 1400,
+    "repetition_collapses": 38
+  },
+  "candidate_checkpoint_sha256": "44503a374d4d1069158f77db2503a4a5c92bdc6ffe5595f5b31dc330cbb46020",
+  "development_teacher_forced_fit": {
+    "overall": {
+      "action_accuracy": 0.7291683669305477,
+      "actions": 49012,
+      "correct_actions": 35738,
+      "exact_sequence_rate": 0.26357142857142857,
+      "exact_sequences": 369,
+      "mean_nll": 1.936931558801926,
+      "perplexity": 6.937431178463891,
+      "pointer_argmax_actions": 8,
+      "sequences": 1400
+    },
+    "per_capability": {
+      "abstention": {
+        "action_accuracy": 0.5620915032679739,
+        "actions": 3366,
+        "correct_actions": 1892,
+        "exact_sequence_rate": 0.03,
+        "exact_sequences": 3,
+        "mean_nll": 3.211985537433155,
+        "perplexity": 24.8283349042148,
+        "pointer_argmax_actions": 0,
+        "sequences": 100
+      },
+      "clarification": {
+        "action_accuracy": 0.46250382614018976,
+        "actions": 3267,
+        "correct_actions": 1511,
+        "exact_sequence_rate": 0.04,
+        "exact_sequences": 4,
+        "mean_nll": 3.867854468013468,
+        "perplexity": 47.83963442586981,
+        "pointer_argmax_actions": 0,
+        "sequences": 100
+      },
+      "coherence": {
+        "action_accuracy": 0.9274834437086092,
+        "actions": 6040,
+        "correct_actions": 5602,
+        "exact_sequence_rate": 0.0,
+        "exact_sequences": 0,
+        "mean_nll": 0.7574681546357617,
+        "perplexity": 2.1328692834131013,
+        "pointer_argmax_actions": 0,
+        "sequences": 100
+      },
+      "conversation": {
+        "action_accuracy": 0.5779992334227674,
+        "actions": 2609,
+        "correct_actions": 1508,
+        "exact_sequence_rate": 0.08,
+        "exact_sequences": 8,
+        "mean_nll": 3.0542073422767344,
+        "perplexity": 21.204371055248075,
+        "pointer_argmax_actions": 0,
+        "sequences": 100
+      },
+      "email_drafting_from_notes": {
+        "action_accuracy": 0.7855785837651122,
+        "actions": 11580,
+        "correct_actions": 9097,
+        "exact_sequence_rate": 0.0,
+        "exact_sequences": 0,
+        "mean_nll": 0.9875049865284974,
+        "perplexity": 2.6845281757149446,
+        "pointer_argmax_actions": 2,
+        "sequences": 100
+      },
+      "fact_free_reasoning": {
+        "action_accuracy": 0.5936603557085485,
+        "actions": 6972,
+        "correct_actions": 4139,
+        "exact_sequence_rate": 0.0,
+        "exact_sequences": 0,
+        "mean_nll": 2.8361657806942056,
+        "perplexity": 17.05026558931632,
+        "pointer_argmax_actions": 0,
+        "sequences": 100
+      },
+      "fluent_realization": {
+        "action_accuracy": 0.8427037271004422,
+        "actions": 1583,
+        "correct_actions": 1334,
+        "exact_sequence_rate": 0.46,
+        "exact_sequences": 46,
+        "mean_nll": 1.1438334320909667,
+        "perplexity": 3.1387776230089077,
+        "pointer_argmax_actions": 0,
+        "sequences": 100
+      },
+      "format_control": {
+        "action_accuracy": 0.9400887573964497,
+        "actions": 1352,
+        "correct_actions": 1271,
+        "exact_sequence_rate": 0.5,
+        "exact_sequences": 50,
+        "mean_nll": 0.563196448224852,
+        "perplexity": 1.7562773873954547,
+        "pointer_argmax_actions": 0,
+        "sequences": 100
+      },
+      "grammar": {
+        "action_accuracy": 0.9984114376489277,
+        "actions": 1259,
+        "correct_actions": 1257,
+        "exact_sequence_rate": 0.98,
+        "exact_sequences": 98,
+        "mean_nll": 0.0047932128673550435,
+        "perplexity": 1.0048047186880884,
+        "pointer_argmax_actions": 0,
+        "sequences": 100
+      },
+      "instruction_following": {
+        "action_accuracy": 0.4030509835407467,
+        "actions": 2491,
+        "correct_actions": 1004,
+        "exact_sequence_rate": 0.66,
+        "exact_sequences": 66,
+        "mean_nll": 6.47171688117222,
+        "perplexity": 646.5928977075882,
+        "pointer_argmax_actions": 0,
+        "sequences": 100
+      },
+      "prompt_grounding": {
+        "action_accuracy": 0.90944229707344,
+        "actions": 1811,
+        "correct_actions": 1647,
+        "exact_sequence_rate": 0.45,
+        "exact_sequences": 45,
+        "mean_nll": 0.7523792959690779,
+        "perplexity": 2.1220429831947296,
+        "pointer_argmax_actions": 0,
+        "sequences": 100
+      },
+      "rewriting": {
+        "action_accuracy": 0.8723628691983122,
+        "actions": 1896,
+        "correct_actions": 1654,
+        "exact_sequence_rate": 0.22,
+        "exact_sequences": 22,
+        "mean_nll": 0.9585611218354431,
+        "perplexity": 2.607941262688313,
+        "pointer_argmax_actions": 0,
+        "sequences": 100
+      },
+      "supplied_text_summarization": {
+        "action_accuracy": 0.917451941198643,
+        "actions": 2653,
+        "correct_actions": 2434,
+        "exact_sequence_rate": 0.25,
+        "exact_sequences": 25,
+        "mean_nll": 0.5251140388239729,
+        "perplexity": 1.6906516373106377,
+        "pointer_argmax_actions": 6,
+        "sequences": 100
+      },
+      "tone_control": {
+        "action_accuracy": 0.6507266760431317,
+        "actions": 2133,
+        "correct_actions": 1388,
+        "exact_sequence_rate": 0.02,
+        "exact_sequences": 2,
+        "mean_nll": 2.0910200904828877,
+        "perplexity": 8.09316671726891,
+        "pointer_argmax_actions": 0,
+        "sequences": 100
+      }
+    }
+  },
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-teacher-native-fit/1",
+  "neural_training_performed": false,
+  "phase3_certified": false,
+  "status": "PASS_READ_ONLY_ATTRIBUTION",
+  "teacher_model_loaded": false,
+  "training_fit": {
+    "overall": {
+      "action_accuracy": 0.9551303751037575,
+      "actions": 215647,
+      "correct_actions": 205971,
+      "exact_sequence_rate": 0.6498571428571429,
+      "exact_sequences": 4549,
+      "mean_nll": 0.17393481620889692,
+      "perplexity": 1.1899779960151335,
+      "pointer_argmax_actions": 21,
+      "sequences": 7000
+    },
+    "per_capability": {
+      "abstention": {
+        "action_accuracy": 0.9790904014394739,
+        "actions": 16117,
+        "correct_actions": 15780,
+        "exact_sequence_rate": 0.656,
+        "exact_sequences": 328,
+        "mean_nll": 0.08704769373952968,
+        "perplexity": 1.0909487099011212,
+        "pointer_argmax_actions": 2,
+        "sequences": 500
+      },
+      "clarification": {
+        "action_accuracy": 0.9451652764905777,
+        "actions": 12948,
+        "correct_actions": 12238,
+        "exact_sequence_rate": 0.266,
+        "exact_sequences": 133,
+        "mean_nll": 0.21115921802594995,
+        "perplexity": 1.2351089910223678,
+        "pointer_argmax_actions": 0,
+        "sequences": 500
+      },
+      "coherence": {
+        "action_accuracy": 0.9969105042854295,
+        "actions": 30102,
+        "correct_actions": 30009,
+        "exact_sequence_rate": 0.832,
+        "exact_sequences": 416,
+        "mean_nll": 0.007390381270347485,
+        "perplexity": 1.0074177575368024,
+        "pointer_argmax_actions": 0,
+        "sequences": 500
+      },
+      "conversation": {
+        "action_accuracy": 0.9539985326485694,
+        "actions": 13630,
+        "correct_actions": 13003,
+        "exact_sequence_rate": 0.474,
+        "exact_sequences": 237,
+        "mean_nll": 0.2067897033015407,
+        "perplexity": 1.2297239377026443,
+        "pointer_argmax_actions": 1,
+        "sequences": 500
+      },
+      "email_drafting_from_notes": {
+        "action_accuracy": 0.8983815202685774,
+        "actions": 59871,
+        "correct_actions": 53787,
+        "exact_sequence_rate": 0.008,
+        "exact_sequences": 4,
+        "mean_nll": 0.38815117367339785,
+        "perplexity": 1.4742526356295338,
+        "pointer_argmax_actions": 14,
+        "sequences": 500
+      },
+      "fact_free_reasoning": {
+        "action_accuracy": 0.9753496391851332,
+        "actions": 15659,
+        "correct_actions": 15273,
+        "exact_sequence_rate": 0.734,
+        "exact_sequences": 367,
+        "mean_nll": 0.1157762668752794,
+        "perplexity": 1.1227446488622657,
+        "pointer_argmax_actions": 0,
+        "sequences": 500
+      },
+      "fluent_realization": {
+        "action_accuracy": 0.9769557307459066,
+        "actions": 8245,
+        "correct_actions": 8055,
+        "exact_sequence_rate": 0.728,
+        "exact_sequences": 364,
+        "mean_nll": 0.07745708841722256,
+        "perplexity": 1.0805358639595237,
+        "pointer_argmax_actions": 0,
+        "sequences": 500
+      },
+      "format_control": {
+        "action_accuracy": 0.9998499174546001,
+        "actions": 6663,
+        "correct_actions": 6662,
+        "exact_sequence_rate": 0.998,
+        "exact_sequences": 499,
+        "mean_nll": 0.0016684478463154736,
+        "perplexity": 1.0016698404798279,
+        "pointer_argmax_actions": 0,
+        "sequences": 500
+      },
+      "grammar": {
+        "action_accuracy": 0.9969879518072289,
+        "actions": 6308,
+        "correct_actions": 6289,
+        "exact_sequence_rate": 0.992,
+        "exact_sequences": 496,
+        "mean_nll": 0.026855938807863033,
+        "perplexity": 1.0272198095933525,
+        "pointer_argmax_actions": 0,
+        "sequences": 500
+      },
+      "instruction_following": {
+        "action_accuracy": 0.9986058554072894,
+        "actions": 5021,
+        "correct_actions": 5014,
+        "exact_sequence_rate": 0.986,
+        "exact_sequences": 493,
+        "mean_nll": 0.004925789484166501,
+        "perplexity": 1.0049379411291433,
+        "pointer_argmax_actions": 0,
+        "sequences": 500
+      },
+      "prompt_grounding": {
+        "action_accuracy": 0.9899661649749154,
+        "actions": 8571,
+        "correct_actions": 8485,
+        "exact_sequence_rate": 0.842,
+        "exact_sequences": 421,
+        "mean_nll": 0.022887213043985534,
+        "perplexity": 1.0231511349372202,
+        "pointer_argmax_actions": 0,
+        "sequences": 500
+      },
+      "rewriting": {
+        "action_accuracy": 0.9767615392815265,
+        "actions": 9381,
+        "correct_actions": 9163,
+        "exact_sequence_rate": 0.622,
+        "exact_sequences": 311,
+        "mean_nll": 0.06874581547809402,
+        "perplexity": 1.0711639012574627,
+        "pointer_argmax_actions": 0,
+        "sequences": 500
+      },
+      "supplied_text_summarization": {
+        "action_accuracy": 0.9680955621078098,
+        "actions": 13227,
+        "correct_actions": 12805,
+        "exact_sequence_rate": 0.51,
+        "exact_sequences": 255,
+        "mean_nll": 0.13446880819535798,
+        "perplexity": 1.1439289772367265,
+        "pointer_argmax_actions": 4,
+        "sequences": 500
+      },
+      "tone_control": {
+        "action_accuracy": 0.9499192245557351,
+        "actions": 9904,
+        "correct_actions": 9408,
+        "exact_sequence_rate": 0.45,
+        "exact_sequences": 225,
+        "mean_nll": 0.18325482067851373,
+        "perplexity": 1.2011204394129669,
+        "pointer_argmax_actions": 0,
+        "sequences": 500
+      }
+    }
+  }
+}
