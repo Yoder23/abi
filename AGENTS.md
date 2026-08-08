@@ -228,6 +228,13 @@ distinct route must transfer deeper causal sequence state.
 V88 preregisters a no-model exact-native-action and causal-predecessor
 feasibility/accounting study for target states only. It cannot load the teacher,
 extract, or train.
+V88 passed: all 7,000 normalized response ID sequences and all 7,000 terminal
+sequences match the authoritative Phase 1 evidence. Every one of the 208,647
+native response actions has a causal predecessor state. A 192-wide fp16 target
+state artifact is exactly 80,120,448 bytes plus 56,008 bytes of offsets, below
+the locked 128 MiB ceiling. This is feasibility only. One separately
+preregistered GPU extraction is authorized; training remains prohibited until
+hostile verification passes.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log

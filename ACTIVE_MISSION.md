@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V88 NATIVE CAUSAL FEASIBILITY PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V107.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V89 NATIVE CAUSAL FEASIBILITY PASS | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V108.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -275,6 +275,11 @@ must transfer deeper causal sequence state rather than tune this branch.
 V88 preregisters a no-model study of exact native response actions, terminal
 identity, causal predecessor availability, and compressed target-state payload.
 Teacher loading, extraction, training, and final material remain prohibited.
+
+V88 passed every feasibility gate without loading the teacher. It establishes
+7,000/7,000 native response sequences, 7,000/7,000 terminal sequences, and
+208,647/208,647 causal predecessor states. A separately preregistered exact GPU
+extraction is the only next authorized operation; training remains prohibited.
 
 ## Historical direct-core path
 
