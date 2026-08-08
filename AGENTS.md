@@ -80,7 +80,7 @@ Status date: 2026-08-07.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V94.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V95.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -169,6 +169,11 @@ distillation screen against that frozen v4 host. Its no-model inventory passes:
 reconstruction of every target. It stores no logits, activations, or source
 parameters and may not load the teacher. Any initial-screen miss closes the
 branch without nearby variants.
+V75 attempt 1 was externally terminated by the 120-second command envelope
+after 3,250 healthy successful updates and before artifact serialization. No
+candidate directory or checkpoint exists. V76 preserves that failure and
+authorizes one exact replay from step zero with a 240-second-or-longer command
+envelope. No scientific field changes.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log

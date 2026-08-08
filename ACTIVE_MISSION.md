@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V75 TEACHER-NATIVE INITIAL SCREEN PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V94.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V75 EXACT REPLAY PREREGISTERED AFTER RUNTIME FAILURE | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V95.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -204,6 +204,12 @@ passes all 7,000 records with a 32,015-action collision-free vocabulary,
 reconstruction, and zero teacher-token boundary straddles. The run uses cached
 teacher text only, loads no teacher weights, stores no logits or activations,
 and receives no inherited quality claim. Any gate miss closes the branch.
+
+V75 attempt 1 was healthy through 3,250 updates (loss 10.58 to 0.023) but the
+120-second orchestration envelope terminated it before serialization. No
+candidate directory or checkpoint was created. V76 authorizes one exact replay
+from step zero with only the external command timeout enlarged; all scientific
+fields and the immutable output path remain unchanged.
 
 ## Historical direct-core path
 
