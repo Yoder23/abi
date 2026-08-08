@@ -80,7 +80,7 @@ Status date: 2026-08-07.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V105.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V106.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -219,6 +219,12 @@ inventory passes: 14,587,728 deployed parameters, 12,292,224 imported lexical
 parameters, 12,293,760 frozen values including host-special table rows, and
 2,293,968 trainable bridge/runtime parameters. It retains V75's data, sample
 order, steps, native actions, router, and gates. Any miss closes the branch.
+V86 completed and failed at 812/1,400 with 76 collapses, zero coherence, and
+zero fact-free reasoning. The imported tables remained exact. Against V75 it
+lost 12 passes with a paired interval spanning zero. It did reduce wall time by
+17.9% and active parameter-seconds by 7.74x, exceeding the 5x compute target,
+but not at matched quality. Lexical projection is closed; a future materially
+distinct route must transfer deeper causal sequence state.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log

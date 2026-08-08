@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V86 BRIDGE-ONLY SCREEN PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V105.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V86 FAILED; DEEP CAUSAL STATE REQUIRED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V106.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -264,6 +264,13 @@ V86 preregisters one matched seed-240075 screen. Its inventory passes with
 12,293,760 frozen table values, and only 2,293,968 trainable bridge/runtime
 parameters. Data, sample order, native actions, router, steps, and gates match
 V75. Any gate miss closes the branch.
+
+V86 completed and failed at 812/1,400 with 76 collapses, zero coherence, and
+zero fact-free reasoning. Both imported tables remained bit-identical. It cut
+wall time by 17.9% and active parameter-seconds by 7.74x, exceeding the 5x
+compute target, but failed matched quality and lost 12 passes versus V75 with a
+paired interval spanning zero. Lexical projection is closed. Any next proposal
+must transfer deeper causal sequence state rather than tune this branch.
 
 ## Historical direct-core path
 
