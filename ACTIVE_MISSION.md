@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V93 NATIVE CAUSAL SUBSTRATE VERIFIED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V112.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V94 NATIVE CAUSAL CORE SCREEN PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V113.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -299,6 +299,11 @@ V92 passed. All 7,000 provenance joins and offsets passed, and 167,616 of
 167,616 sampled fp16 scalars across 873 actions matched exact original-batch
 recomputation with zero maximum error. One matched V75 native-action candidate
 may now be designed with target-state cosine alignment as its only change.
+
+V94 binds that single candidate at the matched V75 seed, data order, optimizer,
+4,000 updates, architecture, router, and autonomous gates. Its only scientific
+change is the untuned 0.1 per-action causal-state cosine objective. Any miss
+closes this branch without a weight or nearby architecture sweep.
 
 ## Historical direct-core path
 

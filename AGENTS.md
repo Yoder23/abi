@@ -254,6 +254,11 @@ original batches and matched 167,616/167,616 fp16 scalars exactly with zero
 maximum error. The artifact is verified. One matched V75 candidate protocol
 may add only a fixed-weight target-state cosine objective; no run is authorized
 until that protocol is sealed.
+V94 preregisters exactly one matched seed-240075 LayerCake v4 screen. Relative
+to output-only V75, its sole scientific change is an untuned 0.1 cosine loss
+between each teacher-forced decoder position and its verified native causal
+target. Data, order, optimizer, steps, architecture, router, and gates remain
+matched. Any miss closes this branch without weight or architecture sweeps.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log
