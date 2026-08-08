@@ -80,7 +80,7 @@ Status date: 2026-08-07.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V100.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V101.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -200,6 +200,10 @@ tables requires 24,584,448 bytes and 12,292,224 final imported parameters,
 leaving 2,295,504 bridge/special parameters. This is 16x smaller than the two
 source tables and retains zero source blocks. One chunked extraction protocol
 may now be designed.
+V82 preregisters exactly that two-table, first-32,011-row GPU extraction with
+fixed projection, fixed host-compatible row norms, chunking, source hashes, and
+24,584,448 expected tensor bytes. Training remains prohibited pending hostile
+verification.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log

@@ -1,0 +1,26 @@
+{
+  "format": "abi-capability-compiler-phase3-lexical-substrate-extraction/1",
+  "protocol_id": "abi-capability-compiler-phase3-lexical-substrate-extraction-v82",
+  "status": "PREREGISTERED_EXTRACTION_ONLY",
+  "effective_date": "2026-08-07",
+  "historical_evidence_changed": false,
+  "device": "cuda",
+  "neural_training_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "objective": "Read only the first 32,011 rows of the frozen teacher input embedding and lexical head, fixed-project each to 192 dimensions, normalize to preregistered host-compatible row norms, and store two fp16 tables with complete accounting.",
+  "source": {"model": "microsoft/Phi-3-mini-4k-instruct", "revision": "f39ac1d28e925b323eae81227eaba4464caced4e", "snapshot_path": "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e", "index_path": "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e/model.safetensors.index.json", "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310"},
+  "selection": {"external_actions": 32011, "excluded_source_rows": 53, "tensor_keys": ["model.embed_tokens.weight", "lm_head.weight"], "expected_projected_parameters": 12292224, "expected_tensor_payload_bytes": 24584448},
+  "projection": {"method": "fixed Gaussian matrix with independently L2-normalized columns", "source_width": 3072, "target_width": 192, "seed": 240080, "sha256": "9ef408bda7280beb4d0ad924cb910af640513471181bc2047aa45c041f97c7a2", "input_row_target_norm": 13.856406460551018, "output_row_target_norm": 0.5773502691896258, "row_norm_basis": "host default theoretical scales; no tuning", "deployed": false},
+  "chunk_rows": 1024,
+  "decision_rule": "Write exactly two [32011,192] fp16 tensors with a 24,584,448-byte tensor payload. The artifact remains training-prohibited until a separate hostile verifier checks hashes, metadata, shapes, norms, and independently recomputes bound rows.",
+  "bindings": {
+    "abi/capability_compiler_phase3_lexical_substrate_extract.py": "03b9316f881a04d83c7cdd1c4ff32ac26123a12b55b295ee5ff9e30796d94835",
+    "tests/test_capability_compiler_phase3_lexical_substrate_extract.py": "c8e8da47e193a3f337e218c3b7b40ba768b05bcade51930acedc24047c994c97",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V100.json": "b5ac8dd0d0e48f1ba9dd32093b916c89f9102f7e9d78069eb2ea98798be554f7",
+    "ABI_CAPABILITY_COMPILER_PHASE3_LEXICAL_SUBSTRATE_FEASIBILITY_RESULT_V81.json": "41e4eebf99f4cfedea294115e4b438aa2031bc379c1441ef6ab5ed30818abf11",
+    "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e/model.safetensors.index.json": "519fa1eba3aa4645654d91322a55ed872b705e25e7a1114702e426a2fbac2c4b",
+    "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e/model-00001-of-00002.safetensors": "b7492726c01287bf6e13c3d74c65ade3d436d50da1cf5bb6925bc962419d6610",
+    "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e/model-00002-of-00002.safetensors": "3f311787aa136e858556caa8543015161edcad85ba81b6a36072443d7fa73c87"
+  },
+  "claim_boundary": "Extraction only; no learned transfer or quality claim."
+}
