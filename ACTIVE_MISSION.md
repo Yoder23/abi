@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V86 FAILED; DEEP CAUSAL STATE REQUIRED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V106.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V88 NATIVE CAUSAL FEASIBILITY PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V107.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -271,6 +271,10 @@ wall time by 17.9% and active parameter-seconds by 7.74x, exceeding the 5x
 compute target, but failed matched quality and lost 12 passes versus V75 with a
 paired interval spanning zero. Lexical projection is closed. Any next proposal
 must transfer deeper causal sequence state rather than tune this branch.
+
+V88 preregisters a no-model study of exact native response actions, terminal
+identity, causal predecessor availability, and compressed target-state payload.
+Teacher loading, extraction, training, and final material remain prohibited.
 
 ## Historical direct-core path
 
