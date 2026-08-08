@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V75 FAILED AND CLOSED; FIT ATTRIBUTION REQUIRED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V96.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V78 FIT ATTRIBUTION PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V97.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -217,6 +217,10 @@ teacher-relative 95% interval of -31.86 to -27.14 points. It improved V70 by
 30 passes and V50 by 39 with positive paired intervals, proving the tokenizer
 confound was real but not sufficient. The branch is closed. One read-only
 teacher-forced fit and autonomous-error attribution is the next gate.
+
+V78 preregisters that read-only measurement over all 7,000 acquisition records
+and all 1,400 held-out teacher targets. It loads only the frozen V75 checkpoint,
+cannot train, and cannot load the source teacher.
 
 ## Historical direct-core path
 

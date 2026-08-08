@@ -80,7 +80,7 @@ Status date: 2026-08-07.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V96.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V97.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -181,6 +181,9 @@ zero coherence, and zero fact-free reasoning. Its teacher-relative interval is
 with positive paired intervals, so the v3 mismatch was material but not
 sufficient. The branch is closed. One read-only teacher-forced fit and error
 attribution is authorized before any materially different proposal.
+V78 preregisters that read-only attribution over every acquisition record and
+every held-out teacher target. It may load only the frozen candidate, never the
+teacher, and cannot train or alter an artifact.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log
