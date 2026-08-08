@@ -259,6 +259,12 @@ to output-only V75, its sole scientific change is an untuned 0.1 cosine loss
 between each teacher-forced decoder position and its verified native causal
 target. Data, order, optimizer, steps, architecture, router, and gates remain
 matched. Any miss closes this branch without weight or architecture sweeps.
+V94 completed and failed at 837/1,400 with 55 collapses, two generation errors,
+zero coherence, and zero fact-free reasoning. It gains 15 prompts and loses two
+versus V75; the paired improvement interval is +0.43 to +1.50 points. Thus the
+verified causal signal is useful but grossly insufficient. Gold-prefix-only
+alignment is closed. One read-only fit/prefix-divergence attribution may select
+the next materially distinct branch; no training or weight sweep is authorized.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log
