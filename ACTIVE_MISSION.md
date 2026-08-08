@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V68 ACTION-ALIGNED SUBSTRATE VERIFIED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V88.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V70 INITIAL SCREEN PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V89.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -163,6 +163,11 @@ V68 passed. All 64,512 sampled fp16 scalars across 336 actions and 28 records
 matched exactly with zero maximum error, after all 7,000 provenance rows and
 ragged offsets passed. One matched candidate protocol may now be designed;
 training remains unauthorized until that protocol is sealed.
+
+V70 now seals one matched action-aligned candidate. It retains V50's exact
+model, seed, optimizer, 4,000 updates, route, tokenizer, and gates; only masked
+per-action source and causal-target cosine losses are added. Any gate miss
+closes the branch without tuning or additional seeds.
 
 ## Historical direct-core path
 
@@ -352,6 +357,8 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V89.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_ACTION_ALIGNED_CORE_PROTOCOL_V70.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V88.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_ACTION_ALIGNED_VERIFICATION_RESULT_V69.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V87.json`

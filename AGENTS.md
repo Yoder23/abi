@@ -137,8 +137,11 @@ parameters. The output remains unverified and training-prohibited. One hostile
 verification protocol may be designed. V68 passed all rows and offsets plus
 exact original-batch recomputation of 64,512 scalars across two hash-picked
 records per capability with zero error. One matched action-aligned candidate
-protocol may now be designed. No neural training, host certification, or
-LayerCake host change is authorized until it is sealed.
+protocol may now be designed. V70 seals one matched seed-240050 screen with the
+exact V50 model, optimizer, order, updates, router, tokenizer, and gates. Only
+per-action source/target cosine alignment changes. No weight sweep, additional
+seed, host certification, or LayerCake host change is authorized unless A0
+passes every gate.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log
