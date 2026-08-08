@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; LAYERCAKE V4 HOST ACCEPTED; CANDIDATE PROTOCOL REQUIRED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V93.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V75 TEACHER-NATIVE INITIAL SCREEN PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V94.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -197,6 +197,13 @@ unchanged sealed verifier, CPU/CUDA package identity, persistent state, and
 zero receiver learning. ABI V74 accepts that frozen interface only; it imports
 no LayerCake English-quality or performance claim. One teacher-token-native
 candidate protocol may now be designed.
+
+V75 preregisters one seed-240075 teacher-token-native candidate. Its inventory
+passes all 7,000 records with a 32,015-action collision-free vocabulary,
+14,587,728 parameters, maximum 143 source and 250 target actions, exact target
+reconstruction, and zero teacher-token boundary straddles. The run uses cached
+teacher text only, loads no teacher weights, stores no logits or activations,
+and receives no inherited quality claim. Any gate miss closes the branch.
 
 ## Historical direct-core path
 

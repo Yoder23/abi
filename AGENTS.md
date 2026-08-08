@@ -80,7 +80,7 @@ Status date: 2026-08-07.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V93.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V94.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -162,6 +162,13 @@ LayerCake has now completed that independent prerequisite as the construct-only
 unchanged sealed verifier pass. ABI accepts the frozen interface under V74 but
 inherits no English-quality or performance claim. One teacher-token-native
 candidate may be separately preregistered.
+V75 now preregisters exactly one seed-240075 teacher-token-native sequence-
+distillation screen against that frozen v4 host. Its no-model inventory passes:
+7,000 records, 32,015 fixed actions, 14,587,728 trainable parameters, maximum
+143 source and 250 target actions, zero token-boundary straddles, and exact
+reconstruction of every target. It stores no logits, activations, or source
+parameters and may not load the teacher. Any initial-screen miss closes the
+branch without nearby variants.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log
