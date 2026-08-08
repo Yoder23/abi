@@ -80,7 +80,7 @@ Status date: 2026-08-07.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V95.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V96.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -174,6 +174,13 @@ after 3,250 healthy successful updates and before artifact serialization. No
 candidate directory or checkpoint exists. V76 preserves that failure and
 authorizes one exact replay from step zero with a 240-second-or-longer command
 envelope. No scientific field changes.
+The exact replay completed all 4,000 updates and V75 failed the autonomous
+screen at 824/1,400 with 38 collapses, five correctly rejected pointer actions,
+zero coherence, and zero fact-free reasoning. Its teacher-relative interval is
+-31.86 to -27.14 points. Native actions improve V70 by 30 passes and V50 by 39
+with positive paired intervals, so the v3 mismatch was material but not
+sufficient. The branch is closed. One read-only teacher-forced fit and error
+attribution is authorized before any materially different proposal.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log

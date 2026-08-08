@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V75 EXACT REPLAY PREREGISTERED AFTER RUNTIME FAILURE | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V95.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V75 FAILED AND CLOSED; FIT ATTRIBUTION REQUIRED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V96.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -210,6 +210,13 @@ V75 attempt 1 was healthy through 3,250 updates (loss 10.58 to 0.023) but the
 candidate directory or checkpoint was created. V76 authorizes one exact replay
 from step zero with only the external command timeout enlarged; all scientific
 fields and the immutable output path remain unchanged.
+
+The exact replay completed and V75 failed: 824/1,400, 38 collapses, five
+pointer-action errors, zero coherence, zero fact-free reasoning, and a
+teacher-relative 95% interval of -31.86 to -27.14 points. It improved V70 by
+30 passes and V50 by 39 with positive paired intervals, proving the tokenizer
+confound was real but not sufficient. The branch is closed. One read-only
+teacher-forced fit and autonomous-error attribution is the next gate.
 
 ## Historical direct-core path
 
