@@ -1,0 +1,76 @@
+{
+  "format": "abi-capability-compiler-phase3-action-aligned-verifier/1",
+  "protocol_id": "abi-capability-compiler-phase3-action-aligned-verifier-v68",
+  "status": "PREREGISTERED_HOSTILE_VERIFICATION_ONLY",
+  "effective_date": "2026-08-07",
+  "historical_evidence_changed": false,
+  "phase3_status": "UNCERTIFIED",
+  "phase4_status": "LOCKED",
+  "final_test_access": "PROHIBITED",
+  "training_authorized": false,
+  "objective": "Hostile verification of every V66 provenance row, tensor key/shape/dtype/value, ragged offset, imported-information boundary, and exact original-batch value reproduction on two hash-selected records per capability.",
+  "phase1_ir": "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir",
+  "artifact": {
+    "directory": "results/abi_capability_compiler_phase3_action_aligned/extraction_v66",
+    "metadata_sha256": "900329e69ba608971b7280febaec58a63bfe5bd6e47e1284b878e923ac8723a3",
+    "tensor_sha256": "b44233d63936cc648df8e76765568a58db16447c36a899a23ad5f83c7f739889",
+    "records_sha256": "2cad4cd79a6d759aca3df9ae693601af56f20f1b685db57ab967bc844b2bd4f6"
+  },
+  "source": {
+    "model": "microsoft/Phi-3-mini-4k-instruct",
+    "revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "snapshot_path": "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e",
+    "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310",
+    "license": "mit",
+    "pad_token_id": 32000,
+    "terminal_response_token_id": 32007
+  },
+  "tokenizer": {
+    "canonical_document": "artifacts/phase3/utf8_bpe_v34/layercake_tokenizer_v3.json",
+    "canonical_sha256": "fc391ac322351a94c7cac05cc872f49b6436bc836bf260fdc959c0c11800e2f9",
+    "fixed_actions": 4999
+  },
+  "layercake_host": {
+    "repository": "../layercake_release",
+    "interface": "lc-direct-neural-core/3",
+    "interface_sha256": "4ec1f609cea9f42924ebcdc16fd6b76be1630351d629d77eaab9b956b7901ac2",
+    "changed": false
+  },
+  "projection": {
+    "source_width": 3072,
+    "target_width": 192,
+    "seed": 240064,
+    "sha256": "6f7f83b62b5019efe6fc283de2dc2f8e0131c56cc751f3b18105d25096f91efc"
+  },
+  "expected": {
+    "source_vectors": 50403,
+    "target_vectors": 49029,
+    "width": 192,
+    "records": 7000,
+    "record_order_sha256": "3531af7fcbe6957a33ebf29a24458efc153a3a3dec067e5c07447cb075f58d56"
+  },
+  "sampling": {
+    "seed": 240068,
+    "records_per_capability": 2,
+    "records": 28,
+    "original_batch_size": 8,
+    "maximum_absolute_error": 0.0,
+    "exact_scalar_fraction": 1.0
+  },
+  "decision_rule": "Pass only if all static, provenance, balance, offset, nondegeneracy, source-manifest, and exact sampled-value checks pass. A pass authorizes candidate protocol design only; it does not authorize training or certify Phase 3.",
+  "bindings": {
+    "abi/capability_compiler_phase3_action_aligned_verify.py": "b5fbf014deccf33709e50e71d680d2bd181fa0971364342873e1765f11b8cb91",
+    "tests/test_capability_compiler_phase3_action_aligned_verify.py": "c6a974d84cd941cd6def993b2b5086e95e60d5246492175680129afd8a42f99f",
+    "abi/capability_compiler_phase3_action_aligned_extract.py": "e70a88b5d6b5e0d580ed01115c19cef8ace420c6dd7881c14d7a86d5f935eee7",
+    "ABI_CAPABILITY_COMPILER_PHASE3_ACTION_ALIGNED_EXTRACTION_RESULT_V67.json": "7c59b8d96202ef21068e2e26421d709dd5f609a959928f33570c604c529282f1",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V86.json": "eec8b9cd80fd21cee75cb1ee820a0895702c421c41d97130442d0b725ca57c01",
+    "results/abi_capability_compiler_phase3_action_aligned/extraction_v66/metadata.json": "900329e69ba608971b7280febaec58a63bfe5bd6e47e1284b878e923ac8723a3",
+    "results/abi_capability_compiler_phase3_action_aligned/extraction_v66/action_aligned_causal_fp16.safetensors": "b44233d63936cc648df8e76765568a58db16447c36a899a23ad5f83c7f739889",
+    "results/abi_capability_compiler_phase3_action_aligned/extraction_v66/records.jsonl": "2cad4cd79a6d759aca3df9ae693601af56f20f1b685db57ab967bc844b2bd4f6",
+    "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+    "artifacts/phase3/utf8_bpe_v34/layercake_tokenizer_v3.json": "64a2b3ebf2fde5ec1a35faa6813b77f09f19f47c1135695d72b29145c023df36",
+    "../layercake_release/layercake_extensions/bpe_direct_neural_core.py": "23136262e4f63f1037d26568cbf3d41b847d80145fc5b1456ca98294b09d9050",
+    "../layercake_release/layercake/portable_token_plan.py": "0988a83f65d96e928a57edf1f5a565c334ab6e66579b9e6bca21f3c76b920a14"
+  },
+  "claim_boundary": "Artifact verification only. Learned transfer, autonomous quality, runtime, Phase 3, and superiority remain unproven."
+}
