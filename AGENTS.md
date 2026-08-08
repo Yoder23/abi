@@ -80,7 +80,7 @@ Status date: 2026-08-07.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V99.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V100.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -194,6 +194,12 @@ training is yet authorized.
 V80 preregisters that no-model feasibility study. It may inspect only indexed
 tensor shapes/dtypes and fixed projection/accounting; it cannot read tensor
 values, extract, or train.
+V80 passed without reading tensor values. Both lexical tables are
+[32,064,3,072] BF16. Projecting the first 32,011 rows into two 192-wide fp16
+tables requires 24,584,448 bytes and 12,292,224 final imported parameters,
+leaving 2,295,504 bridge/special parameters. This is 16x smaller than the two
+source tables and retains zero source blocks. One chunked extraction protocol
+may now be designed.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log

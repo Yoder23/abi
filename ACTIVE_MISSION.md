@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V80 LEXICAL-SUBSTRATE FEASIBILITY PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V99.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V81 LEXICAL SUBSTRATE FEASIBLE | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V100.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -233,6 +233,12 @@ output lexical substrate.
 V80 preregisters that no-model feasibility study. It may inspect only source
 tensor shapes/dtypes and deterministic projection/payload accounting; tensor
 values, extraction, training, teacher inference, and final material are closed.
+
+V80 passed without reading tensor values. The two [32,064,3,072] BF16 lexical
+tables can become two 192-wide fp16 tables over the first 32,011 actions in
+24,584,448 bytes: 12,292,224 imported parameters, 2,295,504 remaining host
+bridge/special parameters, 16x source-table compression, and zero source
+blocks. A separately sealed extraction protocol is now required.
 
 ## Historical direct-core path
 
