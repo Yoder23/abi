@@ -80,7 +80,7 @@ Status date: 2026-08-07.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V104.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V105.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -214,6 +214,11 @@ V84 passed every static/norm gate and all 3,072 independently recomputed fp16
 scalars matched exactly with zero error. The substrate is verified. One
 bridge-only candidate protocol may now be designed with both imported tables
 frozen and verified unchanged after training.
+V86 now preregisters exactly one matched seed-240075 bridge-only screen. Its
+inventory passes: 14,587,728 deployed parameters, 12,292,224 imported lexical
+parameters, 12,293,760 frozen values including host-special table rows, and
+2,293,968 trainable bridge/runtime parameters. It retains V75's data, sample
+order, steps, native actions, router, and gates. Any miss closes the branch.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log

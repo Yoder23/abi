@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V85 LEXICAL SUBSTRATE VERIFIED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V104.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V86 BRIDGE-ONLY SCREEN PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V105.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -258,6 +258,12 @@ V84 passed: all static and norm gates plus all 3,072 independently recomputed
 fp16 scalars matched exactly with zero error. The substrate is verified. One
 bridge-only candidate may now be preregistered with both imported tables frozen
 and post-training identity required.
+
+V86 preregisters one matched seed-240075 screen. Its inventory passes with
+14,587,728 deployed parameters, 12,292,224 imported lexical parameters,
+12,293,760 frozen table values, and only 2,293,968 trainable bridge/runtime
+parameters. Data, sample order, native actions, router, steps, and gates match
+V75. Any gate miss closes the branch.
 
 ## Historical direct-core path
 
