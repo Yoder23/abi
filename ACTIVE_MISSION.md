@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V89 NATIVE CAUSAL FEASIBILITY PASS | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V108.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V90 NATIVE CAUSAL EXTRACTION PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V109.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -280,6 +280,11 @@ V88 passed every feasibility gate without loading the teacher. It establishes
 7,000/7,000 native response sequences, 7,000/7,000 terminal sequences, and
 208,647/208,647 causal predecessor states. A separately preregistered exact GPU
 extraction is the only next authorized operation; training remains prohibited.
+
+V90 preregisters that single GPU extraction. It binds the frozen teacher,
+Phase 1 IR, exact native action order, fixed projection, 785,572 forward tokens,
+and the 80,120,448-byte target-state payload. No training or final-test access
+is authorized, and the output remains unusable until hostile verification.
 
 ## Historical direct-core path
 

@@ -1,0 +1,77 @@
+{
+  "format": "abi-capability-compiler-phase3-native-causal-extraction/1",
+  "protocol_id": "abi-capability-compiler-phase3-native-causal-extraction-v90",
+  "status": "PREREGISTERED_EXTRACTION_ONLY",
+  "effective_date": "2026-08-07",
+  "historical_evidence_changed": false,
+  "phase3_status": "UNCERTIFIED",
+  "phase4_status": "LOCKED",
+  "final_test_access": "PROHIBITED",
+  "training_authorized": false,
+  "objective": "Extract exactly one fixed-projection final teacher hidden state immediately preceding every authoritative native response action, with ragged record offsets and complete imported-information accounting.",
+  "phase1_ir": "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir",
+  "source": {
+    "model": "microsoft/Phi-3-mini-4k-instruct",
+    "revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "snapshot_path": "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e",
+    "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310",
+    "config_sha256": "072d4df63228ef806a6b2b2f02a93f1d048ebd31584d0f61d1180aef36e5bcea",
+    "tokenizer_config_sha256": "32f66c2bab499baaa8341819ad9a13342f957501ce1e989bcb90853a01336cc0",
+    "license": "mit",
+    "device": "cuda",
+    "pad_token_id": 32000,
+    "terminal_response_token_id": 32007
+  },
+  "layercake_host": {
+    "repository": "../layercake_release",
+    "interface": "lc-direct-neural-core/4",
+    "interface_sha256": "ad51284179bc8aa379a5b168746456882b8720114784c077c2642cf27e4c1745",
+    "changed": false,
+    "external_native_actions": true
+  },
+  "projection": {
+    "method": "fixed Gaussian matrix with independently L2-normalized columns",
+    "source_width": 3072,
+    "target_width": 192,
+    "seed": 240080,
+    "sha256": "9ef408bda7280beb4d0ad924cb910af640513471181bc2047aa45c041f97c7a2",
+    "applied_before_storage": true,
+    "stored": false,
+    "trainable": false
+  },
+  "expected": {
+    "records": 7000,
+    "teacher_input_tokens": 576925,
+    "target_actions": 208647,
+    "teacher_output_tokens_including_terminal": 215647,
+    "teacher_forward_tokens": 785572,
+    "maximum_sequence_tokens": 719,
+    "record_action_order_sha256": "d017a13fce86d409611b725143473ba3ee85538b827f97e7d93dc9eabe2f451e",
+    "activation_payload_bytes": 80120448,
+    "offset_payload_bytes": 56008
+  },
+  "runtime": {
+    "seed": 240090,
+    "batch_size": 8,
+    "progress_interval_records": 1000,
+    "logits_materialized": false,
+    "network_access": false
+  },
+  "causal_indexing": {
+    "target_actions": "final normalized base-model hidden state at position immediately preceding each normalized native response token",
+    "terminal_stored": false,
+    "boundary_straddles": 0,
+    "all_records_required": true
+  },
+  "decision_rule": "Run the no-model inventory first. If every count, hash, contextual token identity, ragged offset, and projection check passes, perform exactly one GPU extraction. The artifact remains unverified and training-prohibited until a separately sealed hostile verifier independently recomputes selected original-partition values.",
+  "bindings": {
+    "abi/capability_compiler_phase3_native_causal_extract.py": "7769baa13815639d1aaec99c9b34e8204209f060f22bd13d835639abf1bd1f0a",
+    "tests/test_capability_compiler_phase3_native_causal_extract.py": "0a17fb9828d3ebc8c7804bb524a0343c1cb78ed2c2b95dc70ca4a3b73c6c6b82",
+    "abi/capability_compiler_phase3_action_aligned_extract.py": "e70a88b5d6b5e0d580ed01115c19cef8ace420c6dd7881c14d7a86d5f935eee7",
+    "abi/capability_compiler_phase3_teacher_representation_extract.py": "5c33f0cfa20f87f6adeef6846946c2b7c2d57d47adce5ee6adbb5ebe6b0e1ba5",
+    "ABI_CAPABILITY_COMPILER_PHASE3_NATIVE_CAUSAL_FEASIBILITY_RESULT_V89.json": "c9d8ecce5fd92bf2f86b117408d51bd14de2a640d1f3a83d531bc9c7aad1f931",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V108.json": "b70e9cbddfc060cd6a8d15b5c2a1c86333ea203a36b15305bcc5406d92bf4487",
+    "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20"
+  },
+  "claim_boundary": "Extraction only. It cannot prove learned transfer, autonomous quality, host speed, Phase 3 completion, or ABI superiority."
+}

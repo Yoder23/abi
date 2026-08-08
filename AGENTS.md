@@ -235,6 +235,10 @@ state artifact is exactly 80,120,448 bytes plus 56,008 bytes of offsets, below
 the locked 128 MiB ceiling. This is feasibility only. One separately
 preregistered GPU extraction is authorized; training remains prohibited until
 hostile verification passes.
+V90 preregisters exactly one GPU extraction of those 208,647 predecessor
+states through the frozen width-192 projection. It stores no logits, teacher
+weights, terminal state, or source block. The expected tensor payload is
+80,120,448 bytes. Training remains prohibited.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log
