@@ -239,6 +239,10 @@ V90 preregisters exactly one GPU extraction of those 208,647 predecessor
 states through the frozen width-192 projection. It stores no logits, teacher
 weights, terminal state, or source block. The expected tensor payload is
 80,120,448 bytes. Training remains prohibited.
+V90 completed all 7,000 records in 418.616 teacher-forward seconds. The
+80,120,448-byte tensor payload contains 208,647 projected predecessor states,
+zero logits, and zero copied source parameters. It is unverified and remains
+training-prohibited pending a separately preregistered hostile verifier.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log
