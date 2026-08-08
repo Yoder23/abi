@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V95 NATIVE CAUSAL CORE FAILED, BRANCH CLOSED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V114.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V96 FIT/PREFIX ATTRIBUTION PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V115.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -310,6 +310,10 @@ zero coherence, and zero fact-free reasoning. Its paired improvement over V75
 is real (15 gains, two losses; +0.43 to +1.50 points), proving the state signal
 is useful but insufficient. Gold-prefix-only alignment is closed; only one
 read-only fit/prefix-divergence attribution is authorized next.
+
+V96 preregisters that read-only attribution over all acquisition targets, all
+held-out teacher targets, and all already-produced autonomous outputs. It may
+load only V94, cannot train, and cannot load the teacher.
 
 ## Historical direct-core path
 

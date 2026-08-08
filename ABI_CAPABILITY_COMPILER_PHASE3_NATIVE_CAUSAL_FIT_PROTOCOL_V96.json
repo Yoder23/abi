@@ -1,0 +1,29 @@
+{
+  "format": "abi-capability-compiler-phase3-native-causal-fit/1",
+  "protocol_id": "abi-capability-compiler-phase3-native-causal-fit-v96",
+  "status": "PREREGISTERED_READ_ONLY_FIT_AND_PREFIX_ATTRIBUTION",
+  "effective_date": "2026-08-07",
+  "historical_evidence_changed": false,
+  "neural_training_authorized": false,
+  "teacher_model_loading_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "objective": "Measure V94 teacher-forced action/exact-sequence fit on all acquisition and held-out teacher targets, then quantify autonomous common-prefix divergence from teacher outputs and its association with repetition collapse.",
+  "candidate_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_NATIVE_CAUSAL_CORE_PROTOCOL_V94.json",
+  "candidate_dir": "results/abi_capability_compiler_phase3_native_causal_core/development_v94/C0-seed240075",
+  "autonomous_outputs": "results/abi_capability_compiler_phase3_native_causal_core/evaluation_v94/C0-seed240075/development_outputs.jsonl",
+  "batch_size": 8,
+  "attribution_rule": {"training_exact_sequence_minimum_for_fit_adequacy": 0.95, "training_minus_development_action_gap_for_generalization_failure": 0.10, "development_action_accuracy_for_exposure_bias_dominance": 0.95, "poor_autonomous_prefix_fraction": 0.5, "decision": "If held-out teacher-forced action accuracy is at least 95% while autonomous prefix fraction is below 50%, authorize a materially distinct on-policy state-recovery feasibility study. Otherwise attribute the dominant limit to conditional generalization/data coverage."},
+  "bindings": {
+    "abi/capability_compiler_phase3_native_causal_fit.py": "3bb7e8467a047cede9e44c683c3baef12f22b4f599455526d7eca70d55a04f16",
+    "tests/test_capability_compiler_phase3_native_causal_fit.py": "e863c158b147d183d7d806e50776a10db4bc6d5c0a15cc4ebcffb928e0c466cb",
+    "abi/capability_compiler_phase3_native_causal_core.py": "d62b2c85f4dcc6186b988ea8b5f9c968b784b428f4f116bc692c09f71a9c280c",
+    "abi/capability_compiler_phase3_teacher_native_fit.py": "1378a3e3d5f657bbc60d0073834b17baad0d16704ddd295f1fd0e1fb8eae170e",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V114.json": "73e5b1eda928500434ca28ff77c46a989ec4dddfc42872bb610f2f9cb0938d44",
+    "ABI_CAPABILITY_COMPILER_PHASE3_NATIVE_CAUSAL_CORE_RESULT_V95.json": "eb457527fdb7071b5e3970f5e1e1a6fa814bc8ad5e94db587847e1bcdeb13d57",
+    "ABI_CAPABILITY_COMPILER_PHASE3_NATIVE_CAUSAL_CORE_PROTOCOL_V94.json": "9301d46e90dc33e1b1ef65a01848f368fd33e1b4f27d02aba3591dbdbf02ae2e",
+    "results/abi_capability_compiler_phase3_native_causal_core/development_v94/C0-seed240075/model.safetensors": "5aebd812ef3752cba4306d6369195b2740df17e8c9518335821bf07f0136197e",
+    "results/abi_capability_compiler_phase3_native_causal_core/development_v94/C0-seed240075/metadata.json": "43498351e7e6e9772cce38d1eae193e167994b87d6b9485e33e6b10f655dc34a",
+    "results/abi_capability_compiler_phase3_native_causal_core/evaluation_v94/C0-seed240075/development_outputs.jsonl": "fdcb31ed663dee7b266a7ab1c78afec113478c1152d75a9f063737f23d1ce45a"
+  },
+  "claim_boundary": "Read-only failure attribution only."
+}

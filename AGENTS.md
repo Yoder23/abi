@@ -265,6 +265,9 @@ versus V75; the paired improvement interval is +0.43 to +1.50 points. Thus the
 verified causal signal is useful but grossly insufficient. Gold-prefix-only
 alignment is closed. One read-only fit/prefix-divergence attribution may select
 the next materially distinct branch; no training or weight sweep is authorized.
+V96 preregisters that read-only attribution over all 7,000 acquisition targets,
+all 1,400 held-out teacher targets, and the 1,400 already-produced autonomous
+outputs. It cannot train or load the teacher.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log
