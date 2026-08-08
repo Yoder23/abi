@@ -1,0 +1,13 @@
+{
+  "format": "abi-capability-compiler-phase3-external-host-acceptance/1",
+  "status": "PASS_CONSTRUCT_INTERFACE_ACCEPTED",
+  "effective_date": "2026-08-07",
+  "repository": "../layercake_release",
+  "commit": "86f81e6",
+  "interface": "lc-direct-neural-core/4",
+  "interface_sha256": "ad51284179bc8aa379a5b168746456882b8720114784c077c2642cf27e4c1745",
+  "decision": {"path": "../layercake_release/moonshot/postrelease_decoder_direct_neural_core_decision_v10.json", "sha256": "c162ca5beefdca9f739902cb2a3a1eb6bde52d6aa6a8052da255fb21d46cd086"},
+  "gates": {"construct_pass": true, "full_suite_passed": 619, "sealed_phase0_through_8_valid": true, "same_package_cpu_cuda": true, "persistent_incremental_state": true, "zero_receiver_learning": true, "v3_identity_rejected": true},
+  "claim_boundary": "ABI accepts only the frozen v4 construction interface. This does not import LayerCake English quality or performance and does not certify an ABI artifact.",
+  "next_gate": "Preregister one teacher-token-native ABI candidate against this exact interface."
+}

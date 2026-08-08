@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; EXTERNAL DECODER-AWARE LAYERCAKE HOST REQUIRED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V92.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; LAYERCAKE V4 HOST ACCEPTED; CANDIDATE PROTOCOL REQUIRED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V93.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -190,6 +190,13 @@ construct-only with no external English artifact. The next gate belongs to the
 separate LayerCake repository: preregister and construct-certify a decoder-
 aware external-core interface. ABI neural work remains closed until that
 interface is frozen.
+
+The LayerCake repository has now independently construct-certified
+`lc-direct-neural-core/4` at commit `86f81e6`, including 619 tests, the
+unchanged sealed verifier, CPU/CUDA package identity, persistent state, and
+zero receiver learning. ABI V74 accepts that frozen interface only; it imports
+no LayerCake English-quality or performance claim. One teacher-token-native
+candidate protocol may now be designed.
 
 ## Historical direct-core path
 

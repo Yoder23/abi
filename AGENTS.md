@@ -80,7 +80,7 @@ Status date: 2026-08-07.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V92.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V93.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -157,6 +157,11 @@ external English artifact. A collision-free 32,015-action PortableTokenPlan
 would contain 14,575,440 parameters (3.492x V70). No further ABI training is
 authorized until LayerCake separately preregisters and construct-certifies a
 decoder-aware external-core interface.
+LayerCake has now completed that independent prerequisite as the construct-only
+`lc-direct-neural-core/4` interface at commit `86f81e6`; its 619 tests and
+unchanged sealed verifier pass. ABI accepts the frozen interface under V74 but
+inherits no English-quality or performance claim. One teacher-token-native
+candidate may be separately preregistered.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log
