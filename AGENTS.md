@@ -243,6 +243,11 @@ V90 completed all 7,000 records in 418.616 teacher-forward seconds. The
 80,120,448-byte tensor payload contains 208,647 projected predecessor states,
 zero logits, and zero copied source parameters. It is unverified and remains
 training-prohibited pending a separately preregistered hostile verifier.
+V92 preregisters that verifier. It checks all hashes, all 7,000 provenance
+joins and offsets, tensor structure/finiteness/nondegeneracy, then reloads the
+frozen teacher solely to recompute every action in two hash-selected records
+per capability using their original batch partitions. Every sampled fp16
+scalar must match exactly. Training remains prohibited.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log

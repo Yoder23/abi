@@ -1,0 +1,72 @@
+{
+  "format": "abi-capability-compiler-phase3-native-causal-verifier/1",
+  "protocol_id": "abi-capability-compiler-phase3-native-causal-verifier-v92",
+  "status": "PREREGISTERED_HOSTILE_VERIFICATION_ONLY",
+  "effective_date": "2026-08-07",
+  "historical_evidence_changed": false,
+  "phase3_status": "UNCERTIFIED",
+  "phase4_status": "LOCKED",
+  "final_test_access": "PROHIBITED",
+  "training_authorized": false,
+  "objective": "Hostile static, provenance, offset, nondegeneracy, and exact original-batch recomputation verification of the V90 native causal substrate.",
+  "phase1_ir": "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir",
+  "artifact": {
+    "directory": "results/abi_capability_compiler_phase3_native_causal/extraction_v90",
+    "metadata_sha256": "5cc4589b50b9c00966d60f0b3da3875880762fa323e5f66f817a6610318018ab",
+    "tensor_sha256": "fe9dee6a860a1c2ab88dfb9e7d8eaa77b2c7f5486080f0ae28a4f310cf0dcb82",
+    "records_sha256": "10a50c6bdb6130c4ed781d172de6722c87aee2f0eb4c81066cb8daca03e5729e"
+  },
+  "source": {
+    "model": "microsoft/Phi-3-mini-4k-instruct",
+    "revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "snapshot_path": "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e",
+    "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310",
+    "config_sha256": "072d4df63228ef806a6b2b2f02a93f1d048ebd31584d0f61d1180aef36e5bcea",
+    "tokenizer_config_sha256": "32f66c2bab499baaa8341819ad9a13342f957501ce1e989bcb90853a01336cc0",
+    "license": "mit",
+    "device": "cuda",
+    "pad_token_id": 32000,
+    "terminal_response_token_id": 32007
+  },
+  "projection": {
+    "source_width": 3072,
+    "target_width": 192,
+    "seed": 240080,
+    "sha256": "9ef408bda7280beb4d0ad924cb910af640513471181bc2047aa45c041f97c7a2"
+  },
+  "expected": {
+    "records": 7000,
+    "target_vectors": 208647,
+    "width": 192,
+    "activation_payload_bytes": 80120448,
+    "offset_payload_bytes": 56008,
+    "teacher_input_tokens": 576925,
+    "target_actions": 208647,
+    "teacher_output_tokens_including_terminal": 215647,
+    "teacher_forward_tokens": 785572,
+    "maximum_sequence_tokens": 719,
+    "record_action_order_sha256": "d017a13fce86d409611b725143473ba3ee85538b827f97e7d93dc9eabe2f451e"
+  },
+  "sampling": {
+    "method": "lowest SHA-256(seed NUL record_id) independently within each capability",
+    "seed": 240092,
+    "records_per_capability": 2,
+    "capabilities": 14,
+    "sample_records": 28,
+    "original_batch_size": 8,
+    "all_actions_in_selected_records": true,
+    "exact_fp16_scalar_identity_required": true
+  },
+  "decision_rule": "Pass only if hashes, metadata evidence hash, all 7,000 provenance joins, capability balance, tensor keys/shapes/dtypes/finiteness/nondegeneracy, every ragged offset, and every fp16 scalar for all actions in 28 capability-stratified records recomputed in their original extraction batches match exactly. Any miss closes the artifact. A pass authorizes only separate training-protocol design.",
+  "bindings": {
+    "abi/capability_compiler_phase3_native_causal_verify.py": "1a5ae6e64cea08eb8670fe1b8dba262bd1d97744ccbb5e2ca412606e3b94e729",
+    "tests/test_capability_compiler_phase3_native_causal_verify.py": "f3c3f6740d0be34b1e779f145c8c7395fdbc19de4956e05b2f401aa882ee946e",
+    "abi/capability_compiler_phase3_native_causal_extract.py": "7769baa13815639d1aaec99c9b34e8204209f060f22bd13d835639abf1bd1f0a",
+    "ABI_CAPABILITY_COMPILER_PHASE3_NATIVE_CAUSAL_EXTRACTION_RESULT_V91.json": "44fdd14d2ce3c7383ba13efedeb01a11570930d97c357a56c94ad87a36652e1c",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V110.json": "5cd36b6bf7e3f8be645e34d56761fcd19dd1a3ddfc2197d7d6da601e1db05f86",
+    "results/abi_capability_compiler_phase3_native_causal/extraction_v90/metadata.json": "5cc4589b50b9c00966d60f0b3da3875880762fa323e5f66f817a6610318018ab",
+    "results/abi_capability_compiler_phase3_native_causal/extraction_v90/records.jsonl": "10a50c6bdb6130c4ed781d172de6722c87aee2f0eb4c81066cb8daca03e5729e",
+    "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20"
+  },
+  "claim_boundary": "Artifact verification only; no learned-transfer, quality, speed, Phase 3, or superiority claim."
+}

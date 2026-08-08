@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V91 NATIVE CAUSAL SUBSTRATE EXTRACTED, UNVERIFIED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V110.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V92 NATIVE CAUSAL HOSTILE VERIFIER PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V111.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -290,6 +290,10 @@ V90 completed all 7,000 records. It stores 208,647 fixed-projection causal
 predecessor states in an 80,120,448-byte tensor payload, with zero logits and
 zero copied teacher parameters. Teacher forward time was 418.616 seconds at
 1,876.59 tokens/s. The artifact is unverified and training-prohibited.
+
+V92 preregisters hostile verification of every static/provenance/offset gate
+and exact original-batch recomputation of all actions in 28 records, two per
+capability. Every sampled fp16 scalar must match. Training remains prohibited.
 
 ## Historical direct-core path
 
