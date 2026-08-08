@@ -1,0 +1,46 @@
+{
+  "format": "abi-capability-compiler-phase3-native-causal-verification-result/1",
+  "status": "PASS_ARTIFACT_VERIFIED_TRAINING_PROTOCOL_DESIGN_AUTHORIZED",
+  "effective_date": "2026-08-07",
+  "protocol_sha256": "3fe4574e0f5a54187056d8757819d83adebfa4917748f221ae820005343c2736",
+  "evidence": {
+    "path": "results/abi_capability_compiler_phase3_native_causal/verification_v92.json",
+    "sha256": "4a5b72dbe9d42132d23a704c94c6dfc18322f3f0d54150518306e62487bcdc96"
+  },
+  "artifact": {
+    "metadata_sha256": "5cc4589b50b9c00966d60f0b3da3875880762fa323e5f66f817a6610318018ab",
+    "records_sha256": "10a50c6bdb6130c4ed781d172de6722c87aee2f0eb4c81066cb8daca03e5729e",
+    "tensor_sha256": "fe9dee6a860a1c2ab88dfb9e7d8eaa77b2c7f5486080f0ae28a4f310cf0dcb82"
+  },
+  "static_verification": {
+    "records": 7000,
+    "capabilities": 14,
+    "records_per_capability": 500,
+    "target_vectors": 208647,
+    "width": 192,
+    "dtype": "torch.float16",
+    "all_provenance_joins_exact": true,
+    "all_offsets_exact": true,
+    "all_values_finite_and_nondegenerate": true
+  },
+  "exact_recomputation": {
+    "sample_records": 28,
+    "records_per_capability": 2,
+    "sample_actions": 873,
+    "original_batches_recomputed": 28,
+    "compared_scalars": 167616,
+    "exact_scalars": 167616,
+    "exact_scalar_fraction": 1.0,
+    "maximum_absolute_error": 0.0,
+    "minimum_cosine_similarity": 0.9999997615814209
+  },
+  "stored_logits": 0,
+  "copied_source_parameters": 0,
+  "teacher_present_in_artifact": false,
+  "training_performed": false,
+  "layercake_host_changed": false,
+  "phase3_certified": false,
+  "phase4_open": false,
+  "final_test_accessed": false,
+  "next_authorized_work": "Design and preregister one matched seed-240075 native-action candidate with the verified target-state cosine objective as the only scientific change from V75."
+}

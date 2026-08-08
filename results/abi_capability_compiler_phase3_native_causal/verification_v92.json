@@ -1,0 +1,68 @@
+{
+  "artifact": {
+    "metadata_sha256": "5cc4589b50b9c00966d60f0b3da3875880762fa323e5f66f817a6610318018ab",
+    "records_sha256": "10a50c6bdb6130c4ed781d172de6722c87aee2f0eb4c81066cb8daca03e5729e",
+    "tensor_sha256": "fe9dee6a860a1c2ab88dfb9e7d8eaa77b2c7f5486080f0ae28a4f310cf0dcb82"
+  },
+  "capabilities": {
+    "abstention": 500,
+    "clarification": 500,
+    "coherence": 500,
+    "conversation": 500,
+    "email_drafting_from_notes": 500,
+    "fact_free_reasoning": 500,
+    "fluent_realization": 500,
+    "format_control": 500,
+    "grammar": 500,
+    "instruction_following": 500,
+    "prompt_grounding": 500,
+    "rewriting": 500,
+    "supplied_text_summarization": 500,
+    "tone_control": 500
+  },
+  "claim_boundary": "This verifies only the native causal teacher substrate; learned transfer, autonomous quality, speed, and Phase 3 remain unproven.",
+  "copied_source_parameters": 0,
+  "evidence_sha256": "145f1d026513ca7910a6cfb24e71f1a7a10696f4337e452c492c140c8b43c1a6",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-native-causal-verification-result/1",
+  "inventory": {
+    "maximum_sequence_tokens": 719,
+    "record_action_order_sha256": "d017a13fce86d409611b725143473ba3ee85538b827f97e7d93dc9eabe2f451e",
+    "records": 7000,
+    "target_actions": 208647,
+    "teacher_forward_tokens": 785572,
+    "teacher_input_tokens": 576925,
+    "teacher_output_tokens_including_terminal": 215647
+  },
+  "layercake_host_changed": false,
+  "phase3_certified": false,
+  "phase4_open": false,
+  "protocol_sha256": "3fe4574e0f5a54187056d8757819d83adebfa4917748f221ae820005343c2736",
+  "records": 7000,
+  "sample_reproduction": {
+    "compared_scalars": 167616,
+    "exact_scalar_fraction": 1.0,
+    "exact_scalars": 167616,
+    "maximum_absolute_error": 0.0,
+    "minimum_cosine_similarity": 0.9999997615814209,
+    "original_batches_recomputed": 28,
+    "sample_actions": 873,
+    "sample_records": 28,
+    "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310"
+  },
+  "status": "PASS_ARTIFACT_VERIFIED_TRAINING_PROTOCOL_DESIGN_AUTHORIZED",
+  "stored_logits": 0,
+  "teacher_present_in_artifact": false,
+  "tensor_structure": {
+    "dtype": "torch.float16",
+    "maximum_norm": 23.973989486694336,
+    "mean_norm": 16.75449562072754,
+    "minimum_norm": 8.752571105957031,
+    "norm_stddev": 2.6669399738311768,
+    "shape": [
+      208647,
+      192
+    ]
+  },
+  "training_performed": false
+}

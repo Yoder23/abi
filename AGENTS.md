@@ -248,6 +248,12 @@ joins and offsets, tensor structure/finiteness/nondegeneracy, then reloads the
 frozen teacher solely to recompute every action in two hash-selected records
 per capability using their original batch partitions. Every sampled fp16
 scalar must match exactly. Training remains prohibited.
+V92 passed. All 7,000 provenance joins and offsets passed; all values are
+finite and nondegenerate. The verifier recomputed 873 actions across 28
+original batches and matched 167,616/167,616 fp16 scalars exactly with zero
+maximum error. The artifact is verified. One matched V75 candidate protocol
+may add only a fixed-weight target-state cosine objective; no run is authorized
+until that protocol is sealed.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log
