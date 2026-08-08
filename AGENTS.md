@@ -80,7 +80,7 @@ Status date: 2026-08-07.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V103.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V104.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -210,6 +210,10 @@ wrote the exact 24,584,448-byte tensor payload (24,584,856-byte file) with
 teacher inference. The artifact is unverified and training-prohibited.
 V84 preregisters hostile static/norm verification plus exact original-partition
 recomputation of eight hash-selected rows per table. Training remains closed.
+V84 passed every static/norm gate and all 3,072 independently recomputed fp16
+scalars matched exactly with zero error. The substrate is verified. One
+bridge-only candidate protocol may now be designed with both imported tables
+frozen and verified unchanged after training.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log

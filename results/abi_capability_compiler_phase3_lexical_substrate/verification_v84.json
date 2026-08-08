@@ -1,0 +1,61 @@
+{
+  "exact_scalars": 3072,
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-lexical-substrate-verification/1",
+  "maximum_absolute_error": 0.0,
+  "neural_training_performed": false,
+  "next_gate": "Preregister one bridge-only candidate with both imported tables frozen and post-training identity verification.",
+  "norm_gate_pass": true,
+  "norms": {
+    "input_embedding_rows_fp16": {
+      "maximum": 13.85799789428711,
+      "median": 13.856406211853027,
+      "minimum": 13.855006217956543
+    },
+    "output_head_rows_fp16": {
+      "maximum": 0.5774076581001282,
+      "median": 0.5773500204086304,
+      "minimum": 0.5772857666015625
+    }
+  },
+  "phase3_certified": false,
+  "recomputation": {
+    "input_embedding_rows_fp16": {
+      "exact": true,
+      "exact_scalars": 1536,
+      "maximum_absolute_error": 0.0,
+      "scalars": 1536,
+      "selected_rows": [
+        480,
+        3098,
+        11549,
+        15880,
+        16078,
+        18539,
+        19127,
+        29535
+      ]
+    },
+    "output_head_rows_fp16": {
+      "exact": true,
+      "exact_scalars": 1536,
+      "maximum_absolute_error": 0.0,
+      "scalars": 1536,
+      "selected_rows": [
+        3352,
+        9187,
+        9208,
+        11939,
+        12916,
+        23904,
+        25334,
+        28416
+      ]
+    }
+  },
+  "sampled_scalars": 3072,
+  "static_checks_pass": true,
+  "status": "PASS_VERIFIED",
+  "teacher_inference_performed": false,
+  "teacher_model_loaded": false
+}
