@@ -134,10 +134,11 @@ predecessor indexing, ragged offsets, source identity, and 38,181,888-byte
 activation payload. V66 completed in 413.29 teacher-forward seconds and wrote
 99,432 vectors with exact source and record hashes, zero logits, and zero source
 parameters. The output remains unverified and training-prohibited. One hostile
-verification protocol may be designed. V68 now seals one hostile verifier over
-all rows and offsets plus exact original-batch recomputation of two hash-picked
-records per capability. No neural training, host certification, or LayerCake
-host change is authorized unless it passes.
+verification protocol may be designed. V68 passed all rows and offsets plus
+exact original-batch recomputation of 64,512 scalars across two hash-picked
+records per capability with zero error. One matched action-aligned candidate
+protocol may now be designed. No neural training, host certification, or
+LayerCake host change is authorized until it is sealed.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log

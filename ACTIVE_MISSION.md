@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V68 HOSTILE VERIFIER PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V87.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V68 ACTION-ALIGNED SUBSTRATE VERIFIED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V88.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -158,6 +158,11 @@ V68 now seals that verifier. It requires every provenance join and ragged offset
 to match, both value tensors to be finite and nondegenerate, the exact source
 manifest to reproduce, and every scalar for two hash-selected records per
 capability to match under the original 8-record batch partition.
+
+V68 passed. All 64,512 sampled fp16 scalars across 336 actions and 28 records
+matched exactly with zero maximum error, after all 7,000 provenance rows and
+ragged offsets passed. One matched candidate protocol may now be designed;
+training remains unauthorized until that protocol is sealed.
 
 ## Historical direct-core path
 
@@ -347,6 +352,8 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V88.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_ACTION_ALIGNED_VERIFICATION_RESULT_V69.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V87.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_ACTION_ALIGNED_VERIFIER_PROTOCOL_V68.json`
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V86.json`

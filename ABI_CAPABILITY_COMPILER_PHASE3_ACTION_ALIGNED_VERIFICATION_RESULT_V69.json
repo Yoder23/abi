@@ -1,0 +1,23 @@
+{
+  "format": "abi-capability-compiler-phase3-action-aligned-verification-certificate/1",
+  "status": "PASS_SUBSTRATE_VERIFIED",
+  "effective_date": "2026-08-07",
+  "protocol_sha256": "6ecc06516de6291d4336cd125be90f6f56ba96aca6e78c0e7491ee64979ffe5a",
+  "evidence_sha256": "53412a5aa1de70f63d74f032b8b298b0392e2fada4245160a7203d0cd64cb1f4",
+  "evidence_bytes": 2596,
+  "records": 7000,
+  "source_vectors": 50403,
+  "target_vectors": 49029,
+  "sample_records": 28,
+  "sample_actions": 336,
+  "compared_scalars": 64512,
+  "exact_scalar_fraction": 1.0,
+  "maximum_absolute_error": 0.0,
+  "stored_logits": 0,
+  "source_parameters_copied": 0,
+  "teacher_present_in_artifact": false,
+  "training_performed": false,
+  "phase3_certified": false,
+  "phase4_open": false,
+  "next_authorized_work": "Design and preregister one matched action-aligned LayerCake candidate screen."
+}
