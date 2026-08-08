@@ -1,0 +1,785 @@
+{
+  "exact_sequence_overlap": {
+    "observations": 1400,
+    "source_sequences": 791,
+    "target_sequences": 409
+  },
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-acquisition-coverage/1",
+  "headline": {
+    "material_gap": true,
+    "minimum_coverage": 0.95,
+    "source_trigram_coverage": 0.9479456082322676,
+    "target_fourgram_coverage": 0.732616263500848
+  },
+  "neural_training_performed": false,
+  "ngram_coverage": {
+    "source_ids": {
+      "1": {
+        "overall": {
+          "coverage": 1.0,
+          "seen": 70825,
+          "total": 70825,
+          "unseen": 0
+        },
+        "per_capability": {
+          "abstention": {
+            "coverage": 1.0,
+            "seen": 4365,
+            "total": 4365,
+            "unseen": 0
+          },
+          "clarification": {
+            "coverage": 1.0,
+            "seen": 3668,
+            "total": 3668,
+            "unseen": 0
+          },
+          "coherence": {
+            "coverage": 1.0,
+            "seen": 8350,
+            "total": 8350,
+            "unseen": 0
+          },
+          "conversation": {
+            "coverage": 1.0,
+            "seen": 2926,
+            "total": 2926,
+            "unseen": 0
+          },
+          "email_drafting_from_notes": {
+            "coverage": 1.0,
+            "seen": 6267,
+            "total": 6267,
+            "unseen": 0
+          },
+          "fact_free_reasoning": {
+            "coverage": 1.0,
+            "seen": 13530,
+            "total": 13530,
+            "unseen": 0
+          },
+          "fluent_realization": {
+            "coverage": 1.0,
+            "seen": 4582,
+            "total": 4582,
+            "unseen": 0
+          },
+          "format_control": {
+            "coverage": 1.0,
+            "seen": 4652,
+            "total": 4652,
+            "unseen": 0
+          },
+          "grammar": {
+            "coverage": 1.0,
+            "seen": 2859,
+            "total": 2859,
+            "unseen": 0
+          },
+          "instruction_following": {
+            "coverage": 1.0,
+            "seen": 2903,
+            "total": 2903,
+            "unseen": 0
+          },
+          "prompt_grounding": {
+            "coverage": 1.0,
+            "seen": 4208,
+            "total": 4208,
+            "unseen": 0
+          },
+          "rewriting": {
+            "coverage": 1.0,
+            "seen": 4510,
+            "total": 4510,
+            "unseen": 0
+          },
+          "supplied_text_summarization": {
+            "coverage": 1.0,
+            "seen": 4681,
+            "total": 4681,
+            "unseen": 0
+          },
+          "tone_control": {
+            "coverage": 1.0,
+            "seen": 3324,
+            "total": 3324,
+            "unseen": 0
+          }
+        }
+      },
+      "2": {
+        "overall": {
+          "coverage": 0.9795174648901692,
+          "seen": 68003,
+          "total": 69425,
+          "unseen": 1422
+        },
+        "per_capability": {
+          "abstention": {
+            "coverage": 0.9882766705744431,
+            "seen": 4215,
+            "total": 4265,
+            "unseen": 50
+          },
+          "clarification": {
+            "coverage": 0.9929932735426009,
+            "seen": 3543,
+            "total": 3568,
+            "unseen": 25
+          },
+          "coherence": {
+            "coverage": 0.9636363636363636,
+            "seen": 7950,
+            "total": 8250,
+            "unseen": 300
+          },
+          "conversation": {
+            "coverage": 1.0,
+            "seen": 2826,
+            "total": 2826,
+            "unseen": 0
+          },
+          "email_drafting_from_notes": {
+            "coverage": 0.9918923301443165,
+            "seen": 6117,
+            "total": 6167,
+            "unseen": 50
+          },
+          "fact_free_reasoning": {
+            "coverage": 0.9478778853313478,
+            "seen": 12730,
+            "total": 13430,
+            "unseen": 700
+          },
+          "fluent_realization": {
+            "coverage": 0.9857206604194556,
+            "seen": 4418,
+            "total": 4482,
+            "unseen": 64
+          },
+          "format_control": {
+            "coverage": 0.9890158172231986,
+            "seen": 4502,
+            "total": 4552,
+            "unseen": 50
+          },
+          "grammar": {
+            "coverage": 1.0,
+            "seen": 2759,
+            "total": 2759,
+            "unseen": 0
+          },
+          "instruction_following": {
+            "coverage": 0.9910809846592936,
+            "seen": 2778,
+            "total": 2803,
+            "unseen": 25
+          },
+          "prompt_grounding": {
+            "coverage": 0.9878286270691334,
+            "seen": 4058,
+            "total": 4108,
+            "unseen": 50
+          },
+          "rewriting": {
+            "coverage": 0.9943310657596371,
+            "seen": 4385,
+            "total": 4410,
+            "unseen": 25
+          },
+          "supplied_text_summarization": {
+            "coverage": 0.9886487666448374,
+            "seen": 4529,
+            "total": 4581,
+            "unseen": 52
+          },
+          "tone_control": {
+            "coverage": 0.9903846153846154,
+            "seen": 3193,
+            "total": 3224,
+            "unseen": 31
+          }
+        }
+      },
+      "3": {
+        "overall": {
+          "coverage": 0.9479456082322676,
+          "seen": 64484,
+          "total": 68025,
+          "unseen": 3541
+        },
+        "per_capability": {
+          "abstention": {
+            "coverage": 0.9635054021608643,
+            "seen": 4013,
+            "total": 4165,
+            "unseen": 152
+          },
+          "clarification": {
+            "coverage": 0.9769319492502884,
+            "seen": 3388,
+            "total": 3468,
+            "unseen": 80
+          },
+          "coherence": {
+            "coverage": 0.8844171779141105,
+            "seen": 7208,
+            "total": 8150,
+            "unseen": 942
+          },
+          "conversation": {
+            "coverage": 1.0,
+            "seen": 2726,
+            "total": 2726,
+            "unseen": 0
+          },
+          "email_drafting_from_notes": {
+            "coverage": 0.9742871270809296,
+            "seen": 5911,
+            "total": 6067,
+            "unseen": 156
+          },
+          "fact_free_reasoning": {
+            "coverage": 0.8902475618904726,
+            "seen": 11867,
+            "total": 13330,
+            "unseen": 1463
+          },
+          "fluent_realization": {
+            "coverage": 0.9641716111364673,
+            "seen": 4225,
+            "total": 4382,
+            "unseen": 157
+          },
+          "format_control": {
+            "coverage": 0.9755166217430369,
+            "seen": 4343,
+            "total": 4452,
+            "unseen": 109
+          },
+          "grammar": {
+            "coverage": 1.0,
+            "seen": 2659,
+            "total": 2659,
+            "unseen": 0
+          },
+          "instruction_following": {
+            "coverage": 0.9711431742508324,
+            "seen": 2625,
+            "total": 2703,
+            "unseen": 78
+          },
+          "prompt_grounding": {
+            "coverage": 0.9615768463073853,
+            "seen": 3854,
+            "total": 4008,
+            "unseen": 154
+          },
+          "rewriting": {
+            "coverage": 0.9812064965197216,
+            "seen": 4229,
+            "total": 4310,
+            "unseen": 81
+          },
+          "supplied_text_summarization": {
+            "coverage": 0.9817005132782861,
+            "seen": 4399,
+            "total": 4481,
+            "unseen": 82
+          },
+          "tone_control": {
+            "coverage": 0.9721510883482715,
+            "seen": 3037,
+            "total": 3124,
+            "unseen": 87
+          }
+        }
+      },
+      "4": {
+        "overall": {
+          "coverage": 0.9051707317073171,
+          "seen": 60307,
+          "total": 66625,
+          "unseen": 6318
+        },
+        "per_capability": {
+          "abstention": {
+            "coverage": 0.9466174661746617,
+            "seen": 3848,
+            "total": 4065,
+            "unseen": 217
+          },
+          "clarification": {
+            "coverage": 0.9655581947743468,
+            "seen": 3252,
+            "total": 3368,
+            "unseen": 116
+          },
+          "coherence": {
+            "coverage": 0.8285714285714286,
+            "seen": 6670,
+            "total": 8050,
+            "unseen": 1380
+          },
+          "conversation": {
+            "coverage": 1.0,
+            "seen": 2626,
+            "total": 2626,
+            "unseen": 0
+          },
+          "email_drafting_from_notes": {
+            "coverage": 0.9604491369197251,
+            "seen": 5731,
+            "total": 5967,
+            "unseen": 236
+          },
+          "fact_free_reasoning": {
+            "coverage": 0.7603174603174603,
+            "seen": 10059,
+            "total": 13230,
+            "unseen": 3171
+          },
+          "fluent_realization": {
+            "coverage": 0.9430172816440916,
+            "seen": 4038,
+            "total": 4282,
+            "unseen": 244
+          },
+          "format_control": {
+            "coverage": 0.9432444852941176,
+            "seen": 4105,
+            "total": 4352,
+            "unseen": 247
+          },
+          "grammar": {
+            "coverage": 1.0,
+            "seen": 2559,
+            "total": 2559,
+            "unseen": 0
+          },
+          "instruction_following": {
+            "coverage": 0.9577410679984633,
+            "seen": 2493,
+            "total": 2603,
+            "unseen": 110
+          },
+          "prompt_grounding": {
+            "coverage": 0.9421699078812692,
+            "seen": 3682,
+            "total": 3908,
+            "unseen": 226
+          },
+          "rewriting": {
+            "coverage": 0.9693586698337292,
+            "seen": 4081,
+            "total": 4210,
+            "unseen": 129
+          },
+          "supplied_text_summarization": {
+            "coverage": 0.9735220269344899,
+            "seen": 4265,
+            "total": 4381,
+            "unseen": 116
+          },
+          "tone_control": {
+            "coverage": 0.9583333333333334,
+            "seen": 2898,
+            "total": 3024,
+            "unseen": 126
+          }
+        }
+      }
+    },
+    "target_actions": {
+      "1": {
+        "overall": {
+          "coverage": 0.9495429690687994,
+          "seen": 46539,
+          "total": 49012,
+          "unseen": 2473
+        },
+        "per_capability": {
+          "abstention": {
+            "coverage": 0.9037433155080213,
+            "seen": 3042,
+            "total": 3366,
+            "unseen": 324
+          },
+          "clarification": {
+            "coverage": 0.9289868380777472,
+            "seen": 3035,
+            "total": 3267,
+            "unseen": 232
+          },
+          "coherence": {
+            "coverage": 1.0,
+            "seen": 6040,
+            "total": 6040,
+            "unseen": 0
+          },
+          "conversation": {
+            "coverage": 0.9409735530854734,
+            "seen": 2455,
+            "total": 2609,
+            "unseen": 154
+          },
+          "email_drafting_from_notes": {
+            "coverage": 0.9944732297063903,
+            "seen": 11516,
+            "total": 11580,
+            "unseen": 64
+          },
+          "fact_free_reasoning": {
+            "coverage": 0.9833620195065979,
+            "seen": 6856,
+            "total": 6972,
+            "unseen": 116
+          },
+          "fluent_realization": {
+            "coverage": 0.9614655716993051,
+            "seen": 1522,
+            "total": 1583,
+            "unseen": 61
+          },
+          "format_control": {
+            "coverage": 1.0,
+            "seen": 1352,
+            "total": 1352,
+            "unseen": 0
+          },
+          "grammar": {
+            "coverage": 1.0,
+            "seen": 1259,
+            "total": 1259,
+            "unseen": 0
+          },
+          "instruction_following": {
+            "coverage": 0.45965475712565235,
+            "seen": 1145,
+            "total": 2491,
+            "unseen": 1346
+          },
+          "prompt_grounding": {
+            "coverage": 0.9834345665378245,
+            "seen": 1781,
+            "total": 1811,
+            "unseen": 30
+          },
+          "rewriting": {
+            "coverage": 0.9715189873417721,
+            "seen": 1842,
+            "total": 1896,
+            "unseen": 54
+          },
+          "supplied_text_summarization": {
+            "coverage": 0.9973614775725593,
+            "seen": 2646,
+            "total": 2653,
+            "unseen": 7
+          },
+          "tone_control": {
+            "coverage": 0.9601500234411627,
+            "seen": 2048,
+            "total": 2133,
+            "unseen": 85
+          }
+        }
+      },
+      "2": {
+        "overall": {
+          "coverage": 0.881059396790725,
+          "seen": 41949,
+          "total": 47612,
+          "unseen": 5663
+        },
+        "per_capability": {
+          "abstention": {
+            "coverage": 0.7887323943661971,
+            "seen": 2576,
+            "total": 3266,
+            "unseen": 690
+          },
+          "clarification": {
+            "coverage": 0.7284496368803284,
+            "seen": 2307,
+            "total": 3167,
+            "unseen": 860
+          },
+          "coherence": {
+            "coverage": 0.9494949494949495,
+            "seen": 5640,
+            "total": 5940,
+            "unseen": 300
+          },
+          "conversation": {
+            "coverage": 0.8150657632522917,
+            "seen": 2045,
+            "total": 2509,
+            "unseen": 464
+          },
+          "email_drafting_from_notes": {
+            "coverage": 0.9777003484320558,
+            "seen": 11224,
+            "total": 11480,
+            "unseen": 256
+          },
+          "fact_free_reasoning": {
+            "coverage": 0.8901338766006985,
+            "seen": 6117,
+            "total": 6872,
+            "unseen": 755
+          },
+          "fluent_realization": {
+            "coverage": 0.9062710721510452,
+            "seen": 1344,
+            "total": 1483,
+            "unseen": 139
+          },
+          "format_control": {
+            "coverage": 0.9600638977635783,
+            "seen": 1202,
+            "total": 1252,
+            "unseen": 50
+          },
+          "grammar": {
+            "coverage": 1.0,
+            "seen": 1159,
+            "total": 1159,
+            "unseen": 0
+          },
+          "instruction_following": {
+            "coverage": 0.36762860727728985,
+            "seen": 879,
+            "total": 2391,
+            "unseen": 1512
+          },
+          "prompt_grounding": {
+            "coverage": 0.9444769140853302,
+            "seen": 1616,
+            "total": 1711,
+            "unseen": 95
+          },
+          "rewriting": {
+            "coverage": 0.9320712694877505,
+            "seen": 1674,
+            "total": 1796,
+            "unseen": 122
+          },
+          "supplied_text_summarization": {
+            "coverage": 0.963572267920094,
+            "seen": 2460,
+            "total": 2553,
+            "unseen": 93
+          },
+          "tone_control": {
+            "coverage": 0.839153959665519,
+            "seen": 1706,
+            "total": 2033,
+            "unseen": 327
+          }
+        }
+      },
+      "3": {
+        "overall": {
+          "coverage": 0.8056349000259673,
+          "seen": 37230,
+          "total": 46212,
+          "unseen": 8982
+        },
+        "per_capability": {
+          "abstention": {
+            "coverage": 0.6481364497789008,
+            "seen": 2052,
+            "total": 3166,
+            "unseen": 1114
+          },
+          "clarification": {
+            "coverage": 0.6146071079230518,
+            "seen": 1885,
+            "total": 3067,
+            "unseen": 1182
+          },
+          "coherence": {
+            "coverage": 0.8386986301369863,
+            "seen": 4898,
+            "total": 5840,
+            "unseen": 942
+          },
+          "conversation": {
+            "coverage": 0.6728933167289332,
+            "seen": 1621,
+            "total": 2409,
+            "unseen": 788
+          },
+          "email_drafting_from_notes": {
+            "coverage": 0.9566783831282952,
+            "seen": 10887,
+            "total": 11380,
+            "unseen": 493
+          },
+          "fact_free_reasoning": {
+            "coverage": 0.7870643827525103,
+            "seen": 5330,
+            "total": 6772,
+            "unseen": 1442
+          },
+          "fluent_realization": {
+            "coverage": 0.8503253796095445,
+            "seen": 1176,
+            "total": 1383,
+            "unseen": 207
+          },
+          "format_control": {
+            "coverage": 0.9053819444444444,
+            "seen": 1043,
+            "total": 1152,
+            "unseen": 109
+          },
+          "grammar": {
+            "coverage": 1.0,
+            "seen": 1059,
+            "total": 1059,
+            "unseen": 0
+          },
+          "instruction_following": {
+            "coverage": 0.3147097337407246,
+            "seen": 721,
+            "total": 2291,
+            "unseen": 1570
+          },
+          "prompt_grounding": {
+            "coverage": 0.8733705772811918,
+            "seen": 1407,
+            "total": 1611,
+            "unseen": 204
+          },
+          "rewriting": {
+            "coverage": 0.8779481132075472,
+            "seen": 1489,
+            "total": 1696,
+            "unseen": 207
+          },
+          "supplied_text_summarization": {
+            "coverage": 0.9355890746025275,
+            "seen": 2295,
+            "total": 2453,
+            "unseen": 158
+          },
+          "tone_control": {
+            "coverage": 0.7071908949818935,
+            "seen": 1367,
+            "total": 1933,
+            "unseen": 566
+          }
+        }
+      },
+      "4": {
+        "overall": {
+          "coverage": 0.732616263500848,
+          "seen": 32830,
+          "total": 44812,
+          "unseen": 11982
+        },
+        "per_capability": {
+          "abstention": {
+            "coverage": 0.5303326810176126,
+            "seen": 1626,
+            "total": 3066,
+            "unseen": 1440
+          },
+          "clarification": {
+            "coverage": 0.540613414223121,
+            "seen": 1604,
+            "total": 2967,
+            "unseen": 1363
+          },
+          "coherence": {
+            "coverage": 0.7770034843205574,
+            "seen": 4460,
+            "total": 5740,
+            "unseen": 1280
+          },
+          "conversation": {
+            "coverage": 0.566478995236033,
+            "seen": 1308,
+            "total": 2309,
+            "unseen": 1001
+          },
+          "email_drafting_from_notes": {
+            "coverage": 0.936968085106383,
+            "seen": 10569,
+            "total": 11280,
+            "unseen": 711
+          },
+          "fact_free_reasoning": {
+            "coverage": 0.6092625899280576,
+            "seen": 4065,
+            "total": 6672,
+            "unseen": 2607
+          },
+          "fluent_realization": {
+            "coverage": 0.8043647700701481,
+            "seen": 1032,
+            "total": 1283,
+            "unseen": 251
+          },
+          "format_control": {
+            "coverage": 0.7652091254752852,
+            "seen": 805,
+            "total": 1052,
+            "unseen": 247
+          },
+          "grammar": {
+            "coverage": 1.0,
+            "seen": 959,
+            "total": 959,
+            "unseen": 0
+          },
+          "instruction_following": {
+            "coverage": 0.27932450935645825,
+            "seen": 612,
+            "total": 2191,
+            "unseen": 1579
+          },
+          "prompt_grounding": {
+            "coverage": 0.814030443414957,
+            "seen": 1230,
+            "total": 1511,
+            "unseen": 281
+          },
+          "rewriting": {
+            "coverage": 0.8220551378446115,
+            "seen": 1312,
+            "total": 1596,
+            "unseen": 284
+          },
+          "supplied_text_summarization": {
+            "coverage": 0.9048023799405015,
+            "seen": 2129,
+            "total": 2353,
+            "unseen": 224
+          },
+          "tone_control": {
+            "coverage": 0.6104746317512275,
+            "seen": 1119,
+            "total": 1833,
+            "unseen": 714
+          }
+        }
+      }
+    }
+  },
+  "outside_acquisition_length_range": {
+    "source_length": 0,
+    "target_length": 16
+  },
+  "phase3_certified": false,
+  "records": {
+    "acquisition": 7000,
+    "heldout": 1400
+  },
+  "status": "PASS_COVERAGE_GAP_MEASURED",
+  "teacher_model_loaded": false
+}

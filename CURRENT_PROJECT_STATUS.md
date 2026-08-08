@@ -30,7 +30,11 @@ two generation errors, zero coherence, and zero fact-free reasoning. It gains
 sufficient. V97 measures 95.52% acquisition-action fit, 72.85% held-out
 teacher-action fit, and a 22.68-point generalization gap. Conditional
 generalization/data coverage is the measured next bottleneck. V94 tuning,
-weight sweeps, and reruns are prohibited. V45 has
+weight sweeps, and reruns are prohibited. V101 further measures 94.79% source
+trigram coverage and only 73.26% teacher-target fourgram coverage; instruction
+following is 27.93%, with five more weak capabilities between 53.03% and
+61.05%. Only 16 target lengths are unsupported. The next gate is a frozen,
+source-record-disjoint, coverage-targeted teacher-query expansion. V45 has
 qualified capability routing at three fixed seeds, with 4,200/4,200 correct
 original prompts, bodies, and metadata decisions. V47's minimal integrated
 bridge failed autonomous quality at 760/1,400 with 20 collapses, and V49

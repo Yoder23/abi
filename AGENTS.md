@@ -281,6 +281,13 @@ length support. It cannot train or load the teacher.
 V98 attempt 1 failed before evidence access because it imported the V75 loader
 for a V94 protocol. V100 preserves the failure and preregisters an exact replay
 with only that import corrected; all scientific fields remain unchanged.
+V100 passed and measures a material coverage gap. Source trigram coverage is
+94.79%; target fourgram coverage is 73.26%. Instruction following is only
+27.93% on target fourgrams, with abstention, clarification, conversation,
+fact-free reasoning, and tone control between 53.03% and 61.05%. Only 16
+held-out targets fall outside acquisition length ranges. The next gate is a
+source-record-disjoint teacher-query expansion targeting the missing structures.
+Retraining V94 on the unchanged 7,000 records remains prohibited.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log

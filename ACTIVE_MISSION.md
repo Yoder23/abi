@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V100 ACQUISITION-COVERAGE EXACT REPLAY PREREGISTERED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V118.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V101 MATERIAL ACQUISITION-COVERAGE GAP MEASURED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V119.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -328,6 +328,12 @@ not train or load the teacher.
 V98 attempt 1 failed before evidence access because it invoked the historical
 V75 protocol loader on V94. V100 binds an exact replay with only that loader
 import corrected; no scientific field changed.
+
+V100 passed and measures 94.79% source-trigram coverage but only 73.26%
+teacher-target-fourgram coverage. Instruction following is 27.93%, and five
+other weak capabilities lie between 53.03% and 61.05%. Only 16 target lengths
+are outside acquisition ranges. The next gate is a source-record-disjoint,
+coverage-targeted teacher-query expansion, not another V94 sweep.
 
 ## Historical direct-core path
 

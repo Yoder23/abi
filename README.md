@@ -110,6 +110,7 @@ any experiment or launching new work.
 | V89/V91/V93 native causal substrate | FEASIBLE, EXTRACTED, HOSTILE-VERIFIED | `ABI_CAPABILITY_COMPILER_PHASE3_NATIVE_CAUSAL_VERIFICATION_RESULT_V93.json` |
 | V94/V95 native causal core | COMPLETE FAIL, 837/1,400, 55 collapses; positive paired signal | `ABI_CAPABILITY_COMPILER_PHASE3_NATIVE_CAUSAL_CORE_RESULT_V95.json` |
 | V96/V97 fit and prefix attribution | COMPLETE; conditional-generalization/data-coverage failure | `ABI_CAPABILITY_COMPILER_PHASE3_NATIVE_CAUSAL_FIT_RESULT_V97.json` |
+| V98/V100/V101 acquisition coverage | COMPLETE; 94.79% source trigram / 73.26% target fourgram | `ABI_CAPABILITY_COMPILER_PHASE3_ACQUISITION_COVERAGE_RESULT_V101.json` |
 | Sufficient-information frontier | OPEN | Not yet measured |
 | Integrated teacher-derived LayerCake | OPEN | Not yet produced |
 
