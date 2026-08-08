@@ -80,7 +80,7 @@ Status date: 2026-08-07.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V90.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V92.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
@@ -147,11 +147,16 @@ sweep or additional seed is authorized. The tested 4.17M-parameter
 separately sealed English engine, so this is an ABI-plus-construct integration
 failure rather than a LayerCake regression. One read-only host-interface
 readiness audit is authorized before any further neural proposal.
-V72 preregisters that read-only audit. It may load only the frozen tokenizer,
-not the teacher model, and must measure all 14,000 acquisition text round trips,
-raw-piece concatenation, action inventory, exact native-action causality,
-projected host size, and the bound v3 acceptance rules. It cannot train or
-change LayerCake.
+V72 completed and passed its attribution rule without loading the teacher model
+or training. All 14,000 acquisition texts encode/decode exactly with the native
+teacher tokenizer, giving zero native-action boundary straddles, but none are
+raw-piece concatenative. The tokenizer requires Sequence normalization,
+TemplateProcessing, Sequence decoding, and byte fallback; the bound LayerCake
+v3 construct machine-rejects that graph and remains construct-only with no
+external English artifact. A collision-free 32,015-action PortableTokenPlan
+would contain 14,575,440 parameters (3.492x V70). No further ABI training is
+authorized until LayerCake separately preregisters and construct-certifies a
+decoder-aware external-core interface.
 Final material remains inaccessible, and Phase 4 is locked.
 
 ## Historical Phase 3 authorization log

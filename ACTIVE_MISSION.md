@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V70 FAILED AND CLOSED; HOST-INTERFACE AUDIT REQUIRED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V90.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; EXTERNAL DECODER-AWARE LAYERCAKE HOST REQUIRED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V92.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -181,10 +181,15 @@ or performance claim. One no-training host-interface readiness audit must now
 determine whether a causally aligned external artifact can reach a genuinely
 qualified LayerCake host without misattributing host readiness to ABI.
 
-V72 preregisters that read-only audit. It binds the exact teacher tokenizer,
-all 7,000 acquisition records, the frozen LayerCake v3 implementation, and its
-construct-only decision. It cannot load teacher weights, train, change the
-host, or access final material.
+V72 completed and passed its blocker-attribution rule. Every one of 14,000
+bound acquisition texts round-trips exactly through the teacher tokenizer and
+would have zero native-action straddles, but 0/14,000 are raw-piece
+concatenative. The graph requires normalization, post-processing, decoding,
+and byte fallback, all rejected by the frozen v3 host. V3 also remains
+construct-only with no external English artifact. The next gate belongs to the
+separate LayerCake repository: preregister and construct-certify a decoder-
+aware external-core interface. ABI neural work remains closed until that
+interface is frozen.
 
 ## Historical direct-core path
 
