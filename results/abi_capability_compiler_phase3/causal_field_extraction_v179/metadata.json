@@ -1,0 +1,94 @@
+{
+  "artifact": {
+    "file_bytes": 56320574,
+    "path": "top32_probability_field.safetensors",
+    "sha256": "0052b213304d0b1b9dfa58e5414132f42697f4b7e28156ecda4537703905c9f6",
+    "tensor_payload_bytes": 56320238
+  },
+  "evidence_sha256": "1cbae50daa806b9498f159cdc08be954fd690663f892ef89f325a61a8f673c97",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-causal-probability-field/1",
+  "imported_information": {
+    "hidden_activations_stored": 0,
+    "raw_source_prompts": 14000,
+    "source_parameters_copied": 0,
+    "stored_logits": 13835872,
+    "stored_probability_scalars": 14268243,
+    "teacher_input_tokens": 1211686,
+    "teacher_output_tokens": 432371,
+    "tensor_payload_bytes": 56320238
+  },
+  "neural_training_performed": false,
+  "phase3_certified": false,
+  "phase4_open": false,
+  "protocol_sha256": "77bd8514be21cd06cc9b0bbf10a9d480999c308e785ad16031a4f6ec41c89869",
+  "records": {
+    "bytes": 2077045,
+    "maximum_sequence_tokens": 720,
+    "path": "records.jsonl",
+    "record_order_sha256": "2b60185e102396b22f622802c77f932e3dc4e351f644f32c9a7935aa2ffb77d4",
+    "records": 14000,
+    "sha256": "9f922e208440b117bdbaf91a292224d127b0c2415927e4ff753b0aab8f10a97e",
+    "teacher_forward_tokens": 1644057,
+    "teacher_input_tokens": 1211686,
+    "teacher_output_tokens": 432371
+  },
+  "representation": {
+    "allowed_external_vocabulary": 32011,
+    "offset_dtype": "int64",
+    "prediction_positions": 432371,
+    "probability": "softmax over full teacher vocabulary at temperature 1.0",
+    "probability_dtype": "float16",
+    "residual_mass": "all unselected allowed tokens plus all source-only excluded rows",
+    "residual_mass_dtype": "float16",
+    "teacher_logit_vocabulary": 32064,
+    "token_id_dtype": "uint16",
+    "top_k": 32
+  },
+  "runtime": {
+    "batch_size": 4,
+    "device": "cuda",
+    "hardware": {
+      "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+      "machine": "Sam"
+    },
+    "model_load_seconds": 9.476634699996794,
+    "peak_cuda_allocated_bytes": 8482543616,
+    "peak_process_rss_bytes": 2515734528,
+    "teacher_forward_seconds": 884.7198587999956,
+    "teacher_forward_tokens_per_second": 1858.2797522256865,
+    "weight_dtype": "float16"
+  },
+  "source_manifest": {
+    "architecture": "Phi3ForCausalLM",
+    "license_id": "mit",
+    "model_id": "microsoft/Phi-3-mini-4k-instruct",
+    "parameter_count": 3821079552,
+    "promotion_eligible": true,
+    "revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "revision_is_immutable": true,
+    "schema_version": "abi-source-model-manifest/1",
+    "source_kind": "huggingface_causal_lm",
+    "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310",
+    "tokenizer_id": "microsoft/Phi-3-mini-4k-instruct",
+    "tokenizer_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "trust_remote_code": false,
+    "weight_bytes": 7642181880,
+    "weight_file_count": 2,
+    "weight_files": [
+      {
+        "bytes": 4972489328,
+        "relative_path": "model-00001-of-00002.safetensors",
+        "sha256": "b7492726c01287bf6e13c3d74c65ade3d436d50da1cf5bb6925bc962419d6610"
+      },
+      {
+        "bytes": 2669692552,
+        "relative_path": "model-00002-of-00002.safetensors",
+        "sha256": "3f311787aa136e858556caa8543015161edcad85ba81b6a36072443d7fa73c87"
+      }
+    ]
+  },
+  "status": "EXTRACTED_UNVERIFIED_TRAINING_PROHIBITED",
+  "teacher_present_in_artifact": false,
+  "teacher_required_at_final_inference": false
+}

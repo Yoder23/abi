@@ -80,8 +80,28 @@ Status date: 2026-08-09.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V176.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V190.json`. The original campaign
 contract and all historical evidence remain unchanged.
+
+V177-V190 tested one materially distinct decoder-only causal probability-field
+route. The no-model gate passed at 14,000 records and 432,371 response
+positions. GPU extraction produced a 56,320,238-byte top-32-plus-residual
+artifact in 884.72 teacher-forward seconds with zero hidden activations and
+zero copied source parameters. Hostile verification passed all 14,000 joins
+and exactly recomputed 23,872 token IDs, 23,872 probabilities, and 746 residual
+masses across 28 capability-stratified records. The separate generic LayerCake
+v6 host construct passed 625 tests and its unchanged sealed verifier.
+
+The trained 13,097,999-parameter C0 student nevertheless failed at 853/1,400
+with 57 collapses, zero coherence, zero fact-free reasoning, and a paired
+teacher-relative interval of [-29.79, -25.07] points. Read-only attribution
+measured only 96.88% acquisition action fit, 58.41% acquisition sequence fit,
+77.38% held-out teacher-forced action fit, and a 19.50-point generalization
+gap. This branch and all nearby loss, step, capacity, tokenizer, data, and seed
+variants are closed. Standard sequence, representation, activation, lexical,
+causal-state, and logit distillation have not qualified the English core. The
+only authorized next work is design of a no-model weight-level structural
+extraction/compression feasibility gate with explicit source-block elimination.
 
 V108-V144 tested one evidence-driven acquisition expansion without accessing
 final material. A 9,800-probe Phase-1-task-family expansion produced 9,800

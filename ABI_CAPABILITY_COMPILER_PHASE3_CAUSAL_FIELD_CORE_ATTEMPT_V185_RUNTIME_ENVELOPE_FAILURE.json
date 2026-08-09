@@ -1,0 +1,35 @@
+{
+  "format": "abi-capability-compiler-phase3-causal-field-core-attempt-failure/1",
+  "status": "FAILED_EXTERNAL_COMMAND_ENVELOPE_BEFORE_SERIALIZATION",
+  "effective_date": "2026-08-09",
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_CAUSAL_FIELD_CORE_PROTOCOL_V184.json",
+    "sha256": "5e97cf67941773bdf443dc211e1da20b2807a48d6bf8164d763d93d1538ff611"
+  },
+  "attempt": {
+    "command_envelope_seconds": 1200,
+    "last_reported_step": 4250,
+    "required_steps": 8000,
+    "last_reported_loss": 0.5246801972389221,
+    "last_reported_hard_nll": 0.18726950883865356,
+    "last_reported_soft_cross_entropy": 0.6748213768005371,
+    "candidate_directory_exists": false,
+    "checkpoint_written": false,
+    "evaluation_performed": false
+  },
+  "interpretation": "The healthy run was terminated by the external command timeout before the protocol could serialize a checkpoint. It is not a model-quality result and supplies no partial promotion evidence.",
+  "exact_replay_authorized": {
+    "from_step": 0,
+    "minimum_command_envelope_seconds": 2400,
+    "scientific_fields_changed": false,
+    "seed_changed": false,
+    "data_order_changed": false,
+    "architecture_changed": false,
+    "objective_changed": false,
+    "batch_changed": false
+  },
+  "neural_training_performed_to_completion": false,
+  "phase3_certified": false,
+  "phase4_open": false,
+  "final_test_accessed": false
+}

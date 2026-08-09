@@ -1,0 +1,74 @@
+{
+  "format": "abi-capability-compiler-phase3-causal-field-verifier/1",
+  "protocol_id": "abi-capability-compiler-phase3-causal-field-verifier-v180",
+  "status": "PREREGISTERED_HOSTILE_VERIFICATION",
+  "effective_date": "2026-08-09",
+  "historical_evidence_changed": false,
+  "phase3_status": "UNCERTIFIED_ARTIFACT_UNVERIFIED",
+  "phase4_status": "LOCKED",
+  "final_test_access": "PROHIBITED",
+  "neural_training_authorized": false,
+  "promotion_eligible": false,
+  "objective": "Hostile-verify every causal-field tensor, record join, ragged boundary, probability invariant, source-absence claim, and exact hash-selected original-batch source recomputation before any candidate training protocol may be designed.",
+  "phase1_ir": "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir",
+  "targeted_ir": "results/abi_capability_compiler_phase3/targeted_combined_ir_v137/normalized_targeted_combined_v138.abicir",
+  "artifact": {
+    "directory": "results/abi_capability_compiler_phase3/causal_field_extraction_v179",
+    "metadata_sha256": "2630264c88e38e50c20b4e6ed5585300cab568b8d3033c7f72d60a7c69b9efb7",
+    "tensor_sha256": "0052b213304d0b1b9dfa58e5414132f42697f4b7e28156ecda4537703905c9f6",
+    "records_sha256": "9f922e208440b117bdbaf91a292224d127b0c2415927e4ff753b0aab8f10a97e"
+  },
+  "source": {
+    "model": "microsoft/Phi-3-mini-4k-instruct",
+    "revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "snapshot_path": "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e",
+    "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310",
+    "config_sha256": "072d4df63228ef806a6b2b2f02a93f1d048ebd31584d0f61d1180aef36e5bcea",
+    "tokenizer_config_sha256": "32f66c2bab499baaa8341819ad9a13342f957501ce1e989bcb90853a01336cc0",
+    "license": "mit",
+    "pad_token_id": 32000,
+    "maximum_sequence_tokens": 4096
+  },
+  "expected_inventory": {
+    "records": 14000,
+    "teacher_input_tokens": 1211686,
+    "teacher_output_tokens": 432371,
+    "teacher_forward_tokens": 1644057,
+    "maximum_sequence_tokens": 720,
+    "record_order_sha256": "2b60185e102396b22f622802c77f932e3dc4e351f644f32c9a7935aa2ffb77d4"
+  },
+  "expected": {
+    "records": 14000,
+    "prediction_positions": 432371,
+    "top_k": 32,
+    "allowed_external_vocabulary": 32011,
+    "tensor_payload_bytes": 56320238,
+    "mass_absolute_tolerance": 0.0005
+  },
+  "sampling": {
+    "method": "lowest sha256(seed:record_id) independently within each capability",
+    "seed": 240180,
+    "records_per_capability": 2,
+    "total_records": 28
+  },
+  "runtime": {
+    "seed": 240180,
+    "original_batch_size": 4,
+    "recompute_original_batch_partitions": true,
+    "device": "cuda",
+    "weight_dtype": "float16",
+    "network_access": false
+  },
+  "decision_rule": "Pass only if all tensor hashes, shapes, dtypes, offsets, 14,000 provenance joins, vocabulary bounds, row uniqueness, probability ordering, finite/bounded mass, teacher/source absence claims, and every uint16/float16 scalar in the 28-record original-batch recomputation match exactly. Any miss keeps training prohibited.",
+  "bindings": {
+    "abi/capability_compiler_phase3_causal_field_verify.py": "0009f181a04a16928c9b259f78c9d282e3a232e6a7439c840977ef24e162a238",
+    "tests/test_capability_compiler_phase3_causal_field_verify.py": "ea15999d6833625188a47981779d87c2ce0b2d353c4b6910eef8249948c65ceb",
+    "ABI_CAPABILITY_COMPILER_PHASE3_CAUSAL_FIELD_EXTRACTION_PROTOCOL_V179.json": "77bd8514be21cd06cc9b0bbf10a9d480999c308e785ad16031a4f6ec41c89869",
+    "results/abi_capability_compiler_phase3/causal_field_extraction_v179/metadata.json": "2630264c88e38e50c20b4e6ed5585300cab568b8d3033c7f72d60a7c69b9efb7",
+    "results/abi_capability_compiler_phase3/causal_field_extraction_v179/top32_probability_field.safetensors": "0052b213304d0b1b9dfa58e5414132f42697f4b7e28156ecda4537703905c9f6",
+    "results/abi_capability_compiler_phase3/causal_field_extraction_v179/records.jsonl": "9f922e208440b117bdbaf91a292224d127b0c2415927e4ff753b0aab8f10a97e",
+    "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+    "results/abi_capability_compiler_phase3/targeted_combined_ir_v137/normalized_targeted_combined_v138.abicir": "9fa2467a37c870db7a24640a8d6da46ed73941573026af2c9a4c3425fd98dd18"
+  },
+  "claim_boundary": "Artifact verification only. No training, English quality, LayerCake performance, Phase 3 certification, final access, or ABI superiority claim."
+}

@@ -1,0 +1,20 @@
+{
+  "format": "abi-capability-compiler-phase3-causal-field-verifier-attempt-failure/1",
+  "status": "FAILED_BEFORE_TEACHER_LOAD_OR_ARTIFACT_RESULT",
+  "effective_date": "2026-08-09",
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_CAUSAL_FIELD_VERIFIER_PROTOCOL_V180.json",
+  "failure": {
+    "type": "KeyError",
+    "missing_field": "probability_field",
+    "location": "shared extraction inventory loader terminal-token lookup",
+    "stage": "local tokenizer inventory after static artifact checks",
+    "teacher_model_loaded": false,
+    "teacher_forward_passes": 0,
+    "verification_result_written": false,
+    "artifact_changed": false
+  },
+  "repair_scope": "One exact replay may bind the already frozen terminal token through the verifier expected section and make the shared inventory loader accept that equivalent bound location. No tensor, source, sample, threshold, tolerance, batch, or recomputation field may change.",
+  "neural_training_performed": false,
+  "final_test_accessed": false,
+  "phase3_certified": false
+}

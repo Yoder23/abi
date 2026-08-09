@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; SELECTIVE-BOUNDARY REPRESENTATION/HOST PASS, V170 NEURAL SCREEN FAILED AND BRANCH CLOSED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V176.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V184 CAUSAL-FIELD STUDENT FAILED, BRANCH CLOSED; WEIGHT-LEVEL FEASIBILITY DESIGN ONLY | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V190.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -30,7 +30,7 @@ evaluation-only, and no specialist record is eligible for English training.
 
 ## Controlling Phase 3 objective: qualify integrated capability realization
 
-The latest controlling state is V176. V168 produced a qualifying selective-
+The latest controlling state is V190. V168 produced a qualifying selective-
 boundary BPE representation at 4,999 fixed actions: exact 14,000-record
 acquisition and 1,400-record development reconstruction, maxima 182/304,
 59/100 instruction pointer exposure, and 14,407,080 matched parameters. The
@@ -45,6 +45,18 @@ fit and 68.01% exact training-sequence fit, below the locked 99%/90%
 references. No nearby pointer, tokenizer, step, capacity, or extra-seed run is
 authorized. Phase 3 remains uncertified, and Phase 2's three-rater dependency
 still prevents a final Phase 3 certificate regardless of future machine work.
+
+V177-V190 then tested a materially distinct decoder-only causal probability-
+field route. Its 56,320,238-byte top-32-plus-residual artifact covers all
+432,371 response positions, stores no hidden activations or source parameters,
+and passed exact hostile recomputation. The generic LayerCake v6 construct
+also passed independently. The 13,097,999-parameter student still failed at
+853/1,400 with 57 collapses, zero coherence, and zero fact-free reasoning.
+Fit attribution measured 96.88% acquisition action accuracy, 58.41% exact
+acquisition sequences, 77.38% held-out teacher-forced action accuracy, and a
+19.50-point gap. The logit-distillation branch is closed. The only authorized
+next work is a no-model weight-level structural extraction/compression design;
+no further neural run is authorized.
 
 V34 and V37 close the selected representation and host-tokenizer questions:
 the 4,999-action UTF-8 BPE surface represents all bound targets and matches the
