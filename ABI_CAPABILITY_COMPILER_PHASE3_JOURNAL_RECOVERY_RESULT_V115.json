@@ -1,0 +1,25 @@
+{
+  "attempt_counts": {
+    "0": 6096
+  },
+  "claim_boundary": "Journal recovery only; no source response was quality-selected and no acquisition or Phase 3 pass is claimed.",
+  "conflicting_duplicate_keys": 0,
+  "duplicate_rows_removed": 1272,
+  "format": "abi-capability-compiler-phase3-journal-recovery-result/1",
+  "invalid_attempt_hashes": 0,
+  "invalid_json_lines": 0,
+  "output": {
+    "bytes": 17011223,
+    "path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/results/abi_capability_compiler_phase3/broad_v114_recovery/source_search_attempts_deduplicated.jsonl",
+    "rows": 6096,
+    "sha256": "f3cd5e14d8147b6e0d2f52fc23764e62485df077eb754e123693f553ebdb0e14"
+  },
+  "selection_rule": "retain first occurrence only when the complete canonical signed attempt is byte-equivalent",
+  "source": {
+    "bytes": 20744110,
+    "path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/results/abi_capability_compiler_phase3/broad_v112/source_search_attempts.jsonl",
+    "rows": 7368,
+    "sha256": "5abd9edf897373a50461ab47a0bdedc86e92d9d4659b6dd389f7501a62ffba78"
+  },
+  "status": "PASS_IDENTICAL_DUPLICATES_REMOVED"
+}

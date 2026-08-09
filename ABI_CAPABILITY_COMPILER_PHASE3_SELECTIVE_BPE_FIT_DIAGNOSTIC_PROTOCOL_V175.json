@@ -1,0 +1,28 @@
+{
+  "format": "abi-capability-compiler-phase3-selective-bpe-fit-diagnostic/1",
+  "protocol_id": "abi-capability-compiler-phase3-selective-bpe-fit-v175",
+  "status": "PREREGISTERED_READ_ONLY_SEALED_CHECKPOINT_DIAGNOSTIC",
+  "effective_date": "2026-08-09",
+  "historical_evidence_changed": false,
+  "neural_training_authorized": false,
+  "teacher_model_loading_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "objective": "Separate training-fit failure from autonomous generalization failure for the sealed V170 checkpoint using teacher-forced action and exact-sequence accuracy over all 14,000 locked acquisition records.",
+  "candidate_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_SELECTIVE_BPE_CORE_PROTOCOL_V170.json",
+  "candidate_dir": "results/abi_capability_compiler_phase3/selective_bpe_core_v170/S0-seed240170",
+  "batch_size": 32,
+  "attribution_thresholds": {"action_accuracy_minimum": 0.99, "exact_sequence_rate_minimum": 0.90},
+  "bindings": {
+    "abi/capability_compiler_phase3_selective_bpe_fit_diagnostic.py": "d3f40c05e78c981121f58f673a87fbe67ed9f03310791ab3aad98a292e6c5cef",
+    "tests/test_capability_compiler_phase3_selective_bpe_fit_diagnostic.py": "e3a48f036475b7c1ff58f3031599c39b97a17cd597394ad14a36e80523c6d033",
+    "ABI_CAPABILITY_COMPILER_PHASE3_SPAN_COPY_ATTRIBUTION_RESULT_V174.json": "5482f6afcd95e9313ee4de4d3893b9344fb558f13ad9192d16045a494a826f39",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V174.json": "b07b2aa552a59404ac002233880dea927540c5f4c9a042e093ac144875e3e84d",
+    "ABI_CAPABILITY_COMPILER_PHASE3_SELECTIVE_BPE_CORE_PROTOCOL_V170.json": "498d9552cc216b78d2a8605386ab8b0a296d28f66a4ec8f9f480d2c97df4627e",
+    "results/abi_capability_compiler_phase3/selective_bpe_core_v170/S0-seed240170/model.safetensors": "b7c0611f4aaaf04f16484925c4a097a1c974655a9a5b6ae9061fb3339c4c3aa7",
+    "results/abi_capability_compiler_phase3/selective_bpe_core_v170/S0-seed240170/metadata.json": "39d0ce3a4d0a0d9aff6521ebea2e58c43f46ff2ce8d7491a371750cdf264ec7c",
+    "results/abi_capability_compiler_phase3/selective_bpe_core_eval_v170/S0-seed240170/decision.json": "bb56971657c5e65051b685ca29afd9204c72d0461f1f58edf4bd14999551eaee"
+  },
+  "output": "results/abi_capability_compiler_phase3/selective_bpe_fit_v175/fit_v176.json",
+  "decision_rule": "Meeting both thresholds attributes the autonomous miss to generalization; missing either attributes it to training fit. Neither outcome reopens V170 or authorizes training. It only constrains the next materially distinct architecture campaign.",
+  "claim_boundary": "Read-only teacher-forced attribution only."
+}

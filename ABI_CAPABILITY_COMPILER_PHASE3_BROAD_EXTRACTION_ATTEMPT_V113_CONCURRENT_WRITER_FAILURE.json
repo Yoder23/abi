@@ -1,0 +1,33 @@
+{
+  "format": "abi-capability-compiler-phase3-broad-extraction-failure/1",
+  "attempt": "V113",
+  "status_date": "2026-08-08",
+  "status": "FAIL_CONCURRENT_WRITERS_IDENTICAL_DUPLICATES",
+  "historical_evidence_changed": false,
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_BROAD_EXTRACTION_PROTOCOL_V112.json",
+  "source_summary_written": false,
+  "cause": "The command wrapper timed out without terminating its Python child. A resume then started a second V112 worker against the same append-only journal.",
+  "stopped_processes": [12196, 2780, 26576],
+  "corrupted_journal": {
+    "path": "results/abi_capability_compiler_phase3/broad_v112/source_search_attempts.jsonl",
+    "sha256": "5abd9edf897373a50461ab47a0bdedc86e92d9d4659b6dd389f7501a62ffba78",
+    "bytes": 20744110,
+    "rows": 7368,
+    "unique_attempt_keys": 6096,
+    "identical_duplicate_extra_rows": 1272,
+    "conflicting_duplicate_keys": 0,
+    "invalid_json_lines": 0,
+    "invalid_attempt_hashes": 0
+  },
+  "separate_v110_journal": {
+    "path": "results/abi_capability_compiler_phase3/broad_v110/source_search_attempts.jsonl",
+    "sha256": "94e33ac9a0d989d3853265009f583ad83ca13d76654644542f899e2d52c976ac",
+    "bytes": 4695608,
+    "rows": 1608,
+    "duplicate_keys": 0,
+    "invalid_attempt_hashes": 0,
+    "eligible_for_v112": false
+  },
+  "corrective_action": "Preserve both originals, preregister exact identical-duplicate recovery, emit a new journal, and resume with one explicitly monitored worker.",
+  "claim_boundary": "Negative orchestration evidence only; Phase 3 remains uncertified."
+}

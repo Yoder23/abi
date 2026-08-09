@@ -7,6 +7,7 @@ import pytest
 from abi.broad_english_catalog import (
     BroadEnglishCatalogError,
     DEFAULT_CORE_EXCLUSION_MARKERS,
+    _minhash_sample,
     build_catalog,
 )
 from abi.hf_extraction import load_probe_catalog
@@ -41,6 +42,7 @@ def test_broad_catalog_is_disjoint_and_segregated(tmp_path) -> None:
         corpus_manifest=_manifest(),
     )
     assert len(catalog["probes"]) == 42
+    assert len({probe["prompt"] for probe in catalog["probes"]}) == 42
     assert catalog["generation"]["closed_book_fact_prompts"] == 0
     assert {
         probe["split"] for probe in catalog["probes"]
@@ -81,3 +83,14 @@ def test_broad_catalog_prompts_exclude_locked_domain_markers() -> None:
             marker not in folded
             for marker in DEFAULT_CORE_EXCLUSION_MARKERS
         )
+
+
+def test_minhash_skips_story_without_bounded_three_sentence_excerpt() -> None:
+    invalid = ("word " * 150) + ". Two short words. Three short words. Four short words."
+    sampled = _minhash_sample(
+        [invalid, STORIES[0]],
+        count=1,
+        seed=7,
+        exclusion_markers=DEFAULT_CORE_EXCLUSION_MARKERS,
+    )
+    assert sampled == [STORIES[0]]

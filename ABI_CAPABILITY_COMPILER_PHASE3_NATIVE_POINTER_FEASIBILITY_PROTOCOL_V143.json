@@ -1,0 +1,41 @@
+{
+  "format": "abi-capability-compiler-phase3-native-pointer-feasibility/1",
+  "protocol_id": "abi-capability-compiler-phase3-native-pointer-feasibility-v143",
+  "status": "PREREGISTERED_NO_MODEL_POINTER_ATTRIBUTION",
+  "effective_date": "2026-08-09",
+  "historical_evidence_changed": false,
+  "teacher_model_loading_authorized": false,
+  "neural_training_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "objective": "Determine whether unique prompt-present native token actions can losslessly replace fixed target actions and explain at least half of instruction-following actions unseen in same-capability acquisition outputs.",
+  "candidate_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_NATIVE_CAUSAL_CORE_PROTOCOL_V94.json",
+  "targeted_ir": "results/abi_capability_compiler_phase3/targeted_combined_ir_v137/normalized_targeted_combined_v138.abicir",
+  "pointer_policy": {
+    "eligible_action": "non-EOS target token occurs exactly once in the encoded source",
+    "pointer_id": "fixed_vocab_size_plus_source_position",
+    "ambiguous_source_occurrence": "retain fixed action",
+    "target_length_change": 0,
+    "model_parameter_change": 0
+  },
+  "pass_gates": {
+    "acquisition_roundtrip_failures": 0,
+    "heldout_roundtrip_failures": 0,
+    "instruction_unseen_pointerable_ratio_minimum": 0.5
+  },
+  "bindings": {
+    "abi/capability_compiler_phase3_native_pointer_feasibility.py": "819fdaaef52c48c84299f8296a66bcfb81df6a7d482ca1d7f12f725e308df659",
+    "tests/test_capability_compiler_phase3_native_pointer_feasibility.py": "78f05d0df571a31e8039b6a8121e84831cde62dd1555e21955aabf55f0af1421",
+    "abi/capability_compiler_phase3_combined_coverage.py": "95b7dca375d8b4b9dbc12571dcc21c968345e64e4aed3e2f1c3988a0d0925ea5",
+    "results/abi_capability_compiler_phase3/targeted_combined_ir_v137/normalized_targeted_combined_v138.abicir": "9fa2467a37c870db7a24640a8d6da46ed73941573026af2c9a4c3425fd98dd18",
+    "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+    "ABI_CAPABILITY_COMPILER_PHASE3_NATIVE_CAUSAL_CORE_PROTOCOL_V94.json": "9301d46e90dc33e1b1ef65a01848f368fd33e1b4f27d02aba3591dbdbf02ae2e",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl": "1081dbe57e75da50b2619bc2dab14c6441158dcd6068f2b864733936087e86a2",
+    "ABI_CAPABILITY_COMPILER_PHASE3_TARGETED_COVERAGE_RESULT_V142.json": "cade62974549186827ff6aaa802fdc7bcdf3352268e078147ab2d9b1e8888c6a",
+    "results/abi_capability_compiler_phase3/targeted_coverage_v141/coverage_v142.json": "bf98ffcf6c0cd7591ff7618a7346f9b88039c1ef7ad19d05bf65b8302556e17b",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V157.json": "04bda1601a1a513234d33d46421d0b2519e64aea886a64e16963040b4baab514"
+  },
+  "output": "results/abi_capability_compiler_phase3/native_pointer_feasibility_v143/feasibility_v144.json",
+  "decision_rule": "PASS attributes a material critical-capability gap to the current pointer-prohibiting host interface and authorizes only a separate LayerCake construct investigation. FAIL returns to acquisition representation research. No ABI training is authorized by this audit.",
+  "claim_boundary": "No-model representation feasibility only; no LayerCake interface, candidate quality, or Phase 3 pass is claimed."
+}

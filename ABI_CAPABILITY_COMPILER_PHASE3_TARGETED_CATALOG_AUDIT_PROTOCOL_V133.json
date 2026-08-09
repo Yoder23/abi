@@ -1,0 +1,39 @@
+{
+  "format": "abi-capability-compiler-phase3-targeted-catalog-audit-protocol/1",
+  "protocol_id": "abi-capability-compiler-phase3-targeted-catalog-audit-v133",
+  "status": "PREREGISTERED_HOSTILE_NO_MODEL_AUDIT",
+  "effective_date": "2026-08-09",
+  "historical_evidence_changed": false,
+  "teacher_model_loading_authorized": false,
+  "neural_training_authorized": false,
+  "validation_or_final_access": "PROHIBITED",
+  "candidate": "catalogs/capability_compiler_phase3_targeted_search_v132.json",
+  "prior_catalogs": [
+    "catalogs/capability_compiler_phase1_frozen_v1.json",
+    "catalogs/capability_compiler_phase3_broad_expansion_v108.json",
+    "catalogs/capability_compiler_phase3_broad_abstention_v117.json"
+  ],
+  "bindings": {
+    "abi/capability_compiler_phase3_targeted_catalog_audit.py": "4d7281bfa486fc0d0aab106f65938ab46f7bf4ecf2655b1056e0abe2a80a8ad7",
+    "tests/test_capability_compiler_phase3_targeted_catalog_audit.py": "5c39facafc0bc9bfcb42c11ea38f993cd84cabb0bb7d06e16fa776621ee0d5e1",
+    "abi/capability_compiler_phase3_targeted_catalog.py": "640c6b97082e1daa0bec1717362cfd446f914cd6545d27b8a0fe18fb91f3461c",
+    "catalogs/capability_compiler_phase3_targeted_search_v132.json": "d9a05dd5c36a62ac31c2f5955820607fd04dcde1e517b04935bc7150aaaa0c75",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "catalogs/capability_compiler_phase3_broad_expansion_v108.json": "585a9e3ff91ee1aab4705f595e3fc53f74abf77d8b017da0154383ddfb5b9c4c",
+    "catalogs/capability_compiler_phase3_broad_abstention_v117.json": "57a4a65300cb75fbc3af798ec77ea8f8c146bf6c0f18f9bb629e4646d6ac10bb",
+    "ABI_CAPABILITY_COMPILER_PHASE3_TARGETED_CATALOG_PROTOCOL_V131.json": "ba39d33cb587ebd48fe73b5e66e26063ecb57cf9b19731e16dc3ded67e020c45",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V147.json": "b015f38e9b1971ec848cc197f59565bca8a579b6cbb7c49fc778016b515386c4"
+  },
+  "pass_gates": {
+    "records": 9800,
+    "per_capability": 700,
+    "unique_prompts": 9800,
+    "prior_prompt_overlap": 0,
+    "source_index_mismatches": 0,
+    "segregation_mismatches": 0,
+    "label_hash_mismatches": 0
+  },
+  "output": "results/abi_capability_compiler_phase3/targeted_catalog_audit_v133/audit_v134.json",
+  "decision_rule": "Only PASS_TARGETED_CATALOG_AUDIT authorizes a separately preregistered GPU extraction. Any failure returns to catalog construction without teacher loading.",
+  "claim_boundary": "Catalog audit only; no teacher evidence, model quality, or Phase 3 certification is claimed."
+}

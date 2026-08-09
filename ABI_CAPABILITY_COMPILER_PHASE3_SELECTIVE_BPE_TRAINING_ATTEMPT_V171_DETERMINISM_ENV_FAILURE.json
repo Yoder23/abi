@@ -1,0 +1,16 @@
+{
+  "format": "abi-capability-compiler-phase3-selective-bpe-training-attempt/1",
+  "attempt_id": "abi-capability-compiler-phase3-selective-bpe-v171",
+  "status": "FAILED_BEFORE_STEP_1_MISSING_CUBLAS_WORKSPACE_CONFIG",
+  "effective_date": "2026-08-09",
+  "historical_evidence_changed": false,
+  "protocol": {"path": "ABI_CAPABILITY_COMPILER_PHASE3_SELECTIVE_BPE_CORE_PROTOCOL_V170.json", "sha256": "498d9552cc216b78d2a8605386ab8b0a296d28f66a4ec8f9f480d2c97df4627e"},
+  "campaign_state": {"path": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V170.json", "sha256": "e7e9a68c962fc5a33ea2dba1e6f86c3de6ef7502df65885f1f390795988ba691"},
+  "exception": "RuntimeError: deterministic CUDA CuBLAS requires CUBLAS_WORKSPACE_CONFIG=:4096:8 or :16:8",
+  "successful_steps": 0,
+  "candidate_directory_created": false,
+  "teacher_model_loaded": false,
+  "final_test_accessed": false,
+  "scientific_design_changed": false,
+  "repair": "Retry the identical V170 command with CUBLAS_WORKSPACE_CONFIG=:4096:8 set before Python starts."
+}

@@ -1,0 +1,79 @@
+{
+  "format": "abi-capability-compiler-phase3-combined-bpe-feasibility/1",
+  "protocol_id": "abi-capability-compiler-phase3-combined-bpe-feasibility-v164",
+  "status": "PREREGISTERED_TRAINING_ONLY_TOKENIZER_AND_NO_NEURAL_MODEL_AUDIT",
+  "effective_date": "2026-08-09",
+  "historical_evidence_changed": false,
+  "phase2_status": "MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS",
+  "phase3_status": "UNCERTIFIED",
+  "teacher_model_loading_authorized": false,
+  "neural_training_authorized": false,
+  "development_used_for_vocabulary": false,
+  "final_test_access": "PROHIBITED",
+  "objective": "Fit compact raw-concatenative BPE vocabularies on only the combined 14,000 acquisition prompts and outputs, then select the smallest budget that losslessly represents all acquisition and locked development targets through fixed-plus-source-pointer actions while satisfying sequence-length, instruction-copy-signal, and matched-capacity gates.",
+  "causal_basis": "V163 proved that whole-lexeme fixed actions leave 1,623 development target actions unrepresentable without leakage. V34 previously proved that a training-only printable-ASCII BPE represented all original acquisition and development targets, but V160 showed its frozen alphabet did not cover eight later-acquired Unicode prompts. V164 refits the same lossless family on the combined acquisition set, explicitly seeds all acquisition-observed Unicode scalars, and retains the materially distinct targeted-data plus matched-capacity controls.",
+  "phase1_ir": "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir",
+  "targeted_ir": "results/abi_capability_compiler_phase3/targeted_combined_ir_v137/normalized_targeted_combined_v138.abicir",
+  "development_catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+  "teacher_reference": "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl",
+  "layercake_host": {
+    "repository": "../layercake_release",
+    "interface": "lc-direct-neural-core/3",
+    "interface_sha256": "4ec1f609cea9f42924ebcdc16fd6b76be1630351d629d77eaab9b956b7901ac2",
+    "changed": false,
+    "construct_only_no_quality_or_speed_inheritance": true
+  },
+  "bpe": {
+    "implementation": "tokenizers 0.22.1 raw BPE",
+    "minimum_frequency": 2,
+    "initial_alphabet": "PRINTABLE_ASCII_UNION_ALL_COMBINED_ACQUISITION_UNICODE_SCALARS",
+    "budgets": [4996, 8192, 12288],
+    "selection": "smallest completely qualifying requested vocabulary"
+  },
+  "pointer_policy": {
+    "eligible_piece_pattern_ascii": "^[A-Za-z0-9_]+$",
+    "source_occurrences_required": 1,
+    "target_occurrences_minimum": 1,
+    "punctuation_whitespace_and_repeated_source_pieces": "FIXED_BPE_ACTIONS",
+    "required_reconstruction": "EXACT_UTF8"
+  },
+  "capacity_match": {
+    "reference": "V94 native-token control",
+    "target_parameters": 14587728,
+    "minimum_ratio": 0.95,
+    "maximum_ratio": 1.05,
+    "selection": "closest absolute parameter count from all twelve preregistered architectures for each vocabulary"
+  },
+  "architecture_grid": [
+    "w224-e4-d4", "w256-e3-d3", "w256-e4-d4", "w288-e3-d3",
+    "w288-e4-d4", "w320-e3-d3", "w320-e4-d4", "w352-e3-d3",
+    "w352-e4-d4", "w384-e3-d3", "w384-e4-d4", "w416-e3-d3"
+  ],
+  "pass_gates": {
+    "acquisition_roundtrip_failures": 0,
+    "heldout_roundtrip_failures": 0,
+    "maximum_source_actions": 384,
+    "maximum_target_actions": 320,
+    "instruction_records_with_pointers_minimum": 50
+  },
+  "bindings": {
+    "abi/capability_compiler_phase3_combined_bpe_feasibility.py": "8e3ed7fe4d1f7961077815e471d21d870bec0f984c2af990eee3d65f9f905855",
+    "tests/test_capability_compiler_phase3_combined_bpe_feasibility.py": "0600e361df18b7a44b56ab6aea58b8c656d4d225f354a662736066b9465c18a5",
+    "abi/capability_compiler_phase3_bpe_pointer_resilience.py": "6e4cf2f7626dd62bbe9072c82fd186adc7bcb689efbc31ca7941c7721695a4f7",
+    "abi/capability_compiler_phase3_unicode_span_copy_feasibility.py": "2cd865d77312449d4bc50c05a2e569b4ffb7083698827d0ed6120fb464fbdd27",
+    "ABI_CAPABILITY_COMPILER_PHASE3_UNICODE_SPAN_COPY_FEASIBILITY_ATTEMPT_V163_OPEN_TARGET_FAILURE.json": "fd12599f8ec583c3275e4a21eb154f8877e3ea4a385408ab20a3ed445c7992fa",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V163.json": "3f6a23ecb05e1c5de142af9bc097915dd9cbafadc6a023e2e09a16dc52123622",
+    "ABI_CAPABILITY_COMPILER_PHASE3_UTF8_BPE_PROTOCOL_V34.json": "2f0f5d1d28bb218303268be28fdbb0ed7b1b39958279db0c766eb11df8028d49",
+    "ABI_CAPABILITY_COMPILER_PHASE3_BPE_POINTER_RESULT_V55.json": "9aecb2692b6cdeef307d111ac33c1c0e87856e4388fd5751904e93c41594a96a",
+    "results/abi_capability_compiler_phase3/targeted_combined_ir_v137/normalized_targeted_combined_v138.abicir": "9fa2467a37c870db7a24640a8d6da46ed73941573026af2c9a4c3425fd98dd18",
+    "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl": "1081dbe57e75da50b2619bc2dab14c6441158dcd6068f2b864733936087e86a2",
+    "../layercake_release/layercake_extensions/bpe_direct_neural_core.py": "23136262e4f63f1037d26568cbf3d41b847d80145fc5b1456ca98294b09d9050",
+    "../layercake_release/layercake/portable_token_plan.py": "0988a83f65d96e928a57edf1f5a565c334ab6e66579b9e6bca21f3c76b920a14",
+    "C:/Python310/lib/site-packages/tokenizers/__init__.py": "009e4d74a395fdd67f48ec3da05175338967d1f87586877ebe8ab37981d2ef55"
+  },
+  "output_directory": "results/abi_capability_compiler_phase3/combined_bpe_feasibility_v164",
+  "decision_rule": "PASS authorizes only one separately preregistered, one-seed matched-capacity training screen using the selected immutable tokenizer and the same combined acquisition records. FAIL closes this combined-BPE successor. No result authorizes final-test access or a Phase 3 certificate.",
+  "claim_boundary": "Training-only tokenizer representation, exact action feasibility, and parameter accounting only. No neural capability, runtime, LayerCake regression, or Phase 3 pass is claimed."
+}

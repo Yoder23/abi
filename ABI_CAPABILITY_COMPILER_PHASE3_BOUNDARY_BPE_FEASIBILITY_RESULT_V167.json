@@ -1,0 +1,27 @@
+{
+  "format": "abi-capability-compiler-phase3-boundary-bpe-feasibility-certificate/1",
+  "result_id": "abi-capability-compiler-phase3-boundary-bpe-feasibility-v167",
+  "status": "FAIL_TARGET_LENGTH_BOUND",
+  "effective_date": "2026-08-09",
+  "historical_evidence_changed": false,
+  "protocol": {"path": "ABI_CAPABILITY_COMPILER_PHASE3_BOUNDARY_BPE_FEASIBILITY_PROTOCOL_V166.json", "sha256": "ae935fef3732333e8d0f602cba137513e97e0e568985571e1204ddaab30e3074"},
+  "raw_result": {"path": "results/abi_capability_compiler_phase3/boundary_bpe_feasibility_v166/feasibility.json", "sha256": "601dac0445e8ab5d5df7c5d39fc8d2e0e5e87d0e45b8919b1c46c4edcd847645"},
+  "observed": {
+    "acquisition_roundtrip_failures_each": 0,
+    "heldout_roundtrip_failures_each": 0,
+    "instruction_records_with_pointers_each": 100,
+    "instruction_records_required": 50,
+    "maximum_source_actions_range": [307, 324],
+    "maximum_target_actions_range": [386, 398],
+    "maximum_target_actions_allowed": 320,
+    "matched_capacity_passed_budgets": [4996, 8192]
+  },
+  "teacher_model_loaded": false,
+  "neural_training_performed": false,
+  "layercake_host_changed": false,
+  "final_test_accessed": false,
+  "phase3_certified": false,
+  "decision": "FAIL; full lexical boundaries solve pointer exposure but exceed the immutable target-action limit. Do not raise the limit or train this representation.",
+  "next_measured_question": "Protect only digit-or-underscore identifier lexemes from cross-boundary merges while retaining raw concatenative BPE over ordinary English spans.",
+  "claim_boundary": "Negative representation evidence only."
+}

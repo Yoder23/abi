@@ -1,0 +1,29 @@
+{
+  "format": "abi-capability-compiler-phase3-broad-abstention-catalog-result/1",
+  "status": "PASS_FRESH_ABSTENTION_CATALOG",
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_BROAD_ABSTENTION_CATALOG_PROTOCOL_V117.json",
+    "sha256": "2a6dc3b5229c05af1ffbb59ab99b19c8c8359cb8e9da9df772a4b37b754385d4"
+  },
+  "catalog": {
+    "path": "catalogs/capability_compiler_phase3_broad_abstention_v117.json",
+    "sha256": "57a4a65300cb75fbc3af798ec77ea8f8c146bf6c0f18f9bb629e4646d6ac10bb",
+    "records": 700,
+    "unique_prompts": 700,
+    "unique_contexts": 700
+  },
+  "checks": {
+    "search_only": true,
+    "abstention_only": true,
+    "prior_prompt_overlap": 0,
+    "prior_context_overlap": 0,
+    "segregation_failures": 0,
+    "established_evaluator_mismatches": 0,
+    "validation_records": 0,
+    "final_records": 0,
+    "teacher_model_loaded": false,
+    "neural_training_performed": false,
+    "v112_failures_reclassified": false
+  },
+  "claim_boundary": "Fresh catalog construction only; no source outputs or Phase 3 pass are claimed."
+}

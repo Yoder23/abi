@@ -1,0 +1,22 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "version": 139,
+  "status_date": "2026-08-08",
+  "parent_state": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V138.json",
+  "historical_evidence_changed": false,
+  "phase0": "COMPLETE",
+  "phase1": "COMPLETE",
+  "phase2": "MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS",
+  "phase3": "UNCERTIFIED_V122_COMBINED_BROAD_IR_PASS",
+  "phase4_through_8": "LOCKED",
+  "neural_training_authorized": "NONE",
+  "teacher_model_loading_authorized": false,
+  "broad_ir": {
+    "path": "results/abi_capability_compiler_phase3/broad_ir_v121/normalized_broad_expansion_v121.abicir",
+    "sha256": "5b9705e905b0b57a2b632d19c121c58cc38563f858d09dd7ffeecf9910d215bc",
+    "records": 7000
+  },
+  "next_gate": "PREREGISTER_ORIGINAL_PLUS_BROAD_NO_MODEL_COVERAGE_AUDIT",
+  "final_test_access": "PROHIBITED",
+  "superiority_claim": "PROHIBITED"
+}

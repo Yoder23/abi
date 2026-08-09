@@ -1,0 +1,30 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "version": 132,
+  "status_date": "2026-08-08",
+  "parent_state": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V131.json",
+  "historical_evidence_changed": false,
+  "phase0": "COMPLETE",
+  "phase1": "COMPLETE",
+  "phase2": "MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS",
+  "phase3": "UNCERTIFIED_V115_JOURNAL_RECOVERY_PASS_SINGLE_WORKER_RESUME_AUTHORIZED",
+  "phase4_through_8": "LOCKED",
+  "neural_training_authorized": "NONE",
+  "teacher_model_loading_authorized": true,
+  "authorized_action": "SINGLE_WORKER_RESUME_V112_FROM_V115_RECOVERED_JOURNAL",
+  "recovered_journal": {
+    "path": "results/abi_capability_compiler_phase3/broad_v114_recovery/source_search_attempts_deduplicated.jsonl",
+    "sha256": "f3cd5e14d8147b6e0d2f52fc23764e62485df077eb754e123693f553ebdb0e14",
+    "unique_initial_attempts": 6096
+  },
+  "recovery_result": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_JOURNAL_RECOVERY_RESULT_V115.json",
+    "sha256": "36a75ddebd9217ad901d61c55b09f3e1b0ad4b56329e1a41da89fa7571ad01ea"
+  },
+  "concurrent_workers_authorized": 1,
+  "validation_teacher_outputs_authorized": false,
+  "final_teacher_outputs_authorized": false,
+  "next_gate": "COMPLETE_V112_SOURCE_EVIDENCE_THEN_PREREGISTER_NORMALIZATION",
+  "final_test_access": "PROHIBITED",
+  "superiority_claim": "PROHIBITED"
+}

@@ -1,0 +1,23 @@
+{
+  "format": "abi-capability-compiler-phase3-broad-expansion-catalog-failure/1",
+  "attempt": "V105",
+  "status_date": "2026-08-08",
+  "status": "FAIL_DUPLICATE_TEACHER_QUERIES",
+  "historical_evidence_changed": false,
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_BROAD_EXPANSION_CATALOG_PROTOCOL_V104.json",
+  "catalog": "catalogs/capability_compiler_phase3_broad_expansion_v104.json",
+  "catalog_sha256": "0439df20221477c0529350e73d04448e2c0900c4b59e2de74ee5dac7d7cd5f90",
+  "result_written": false,
+  "failure": {
+    "gate": "duplicate_prompt_count == 0",
+    "cause": "Distinct full TinyStories rows can share the same bounded excerpt, and grammar, clarification, and cake-realization builders projected contexts to only one or two early sentences.",
+    "observed_duplicate_counts": {
+      "search_total": 626,
+      "validation_total": 22,
+      "final_test_total": 30
+    },
+    "impact": "Teacher extraction remains unauthorized. No model was loaded and no neural training occurred."
+  },
+  "corrective_action": "Deduplicate sampled bounded excerpts and include full supplied context in every lossy prompt projection before rebuilding under a new protocol.",
+  "claim_boundary": "Negative catalog evidence only; Phase 3 remains uncertified."
+}

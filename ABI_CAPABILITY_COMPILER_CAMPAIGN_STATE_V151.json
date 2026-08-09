@@ -1,0 +1,20 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "version": 151,
+  "status_date": "2026-08-09",
+  "parent_state": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V150.json",
+  "historical_evidence_changed": false,
+  "phase0": "COMPLETE",
+  "phase1": "COMPLETE",
+  "phase2": "MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS",
+  "phase3": "UNCERTIFIED_V135_TARGETED_EXTRACTION_FAILED_ABSTENTION_ONLY",
+  "phase4_through_8": "LOCKED",
+  "neural_training_authorized": "NONE",
+  "teacher_model_loading_authorized": false,
+  "completed_action": "V135_FAIL_ABSTENTION_381_OTHER_CAPABILITIES_AT_LEAST_520",
+  "authorized_action": "DESIGN_COMBINED_V135_NON_ABSTENTION_PLUS_V119_ABSTENTION_IR",
+  "prohibited_action": "NO_EXTRA_TEACHER_RUN_NO_TRAINING_NO_FINAL_ACCESS",
+  "next_gate": "HOST_CONFORMANT_BALANCED_IR_THEN_COVERAGE",
+  "final_test_access": "PROHIBITED",
+  "superiority_claim": "PROHIBITED"
+}

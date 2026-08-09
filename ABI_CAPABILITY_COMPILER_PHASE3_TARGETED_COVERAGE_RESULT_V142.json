@@ -1,0 +1,26 @@
+{
+  "format": "abi-capability-compiler-phase3-targeted-coverage-result/1",
+  "result_id": "abi-capability-compiler-phase3-targeted-coverage-v142",
+  "status": "FAIL_COMBINED_COVERAGE_GATE",
+  "effective_date": "2026-08-09",
+  "historical_evidence_changed": false,
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_TARGETED_COVERAGE_PROTOCOL_V141.json",
+  "raw_result": "results/abi_capability_compiler_phase3/targeted_coverage_v141/coverage_v142.json",
+  "headline": {
+    "minimum_coverage": 0.95,
+    "source_trigram_coverage": 0.9540169055494303,
+    "source_gate_pass": true,
+    "target_fourgram_coverage": 0.7683656163527627,
+    "target_gate_pass": false,
+    "target_unigram_coverage": 0.9563372235370929
+  },
+  "instruction_following": {
+    "target_unigram_coverage": 0.45965475712565235,
+    "target_fourgram_coverage": 0.2829758101323597
+  },
+  "decision": "FAIL; training remains prohibited. Run one no-model native token-pointer feasibility audit to determine whether prompt-present output actions explain the critical instruction-following deficit and can be represented without changing model parameter count.",
+  "teacher_model_loaded": false,
+  "neural_training_performed": false,
+  "final_test_accessed": false,
+  "phase3_certified": false
+}

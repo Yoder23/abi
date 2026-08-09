@@ -1,0 +1,113 @@
+{
+  "format": "abi-capability-compiler-phase3-broad-extraction/1",
+  "protocol_id": "abi-capability-compiler-phase3-broad-extraction-v112",
+  "status": "PREREGISTERED_SAME_BUDGET_GPU_TEACHER_SEARCH_EXTRACTION",
+  "effective_date": "2026-08-08",
+  "historical_evidence_changed": false,
+  "supersedes": "ABI_CAPABILITY_COMPILER_PHASE3_BROAD_EXTRACTION_PROTOCOL_V110.json",
+  "preserved_performance_failure": "ABI_CAPABILITY_COMPILER_PHASE3_BROAD_EXTRACTION_ATTEMPT_V111_PERFORMANCE_FAILURE.json",
+  "scientific_fields_changed": false,
+  "runtime_change": "Group search probes by max_new_tokens before batches of eight so generate_batch cannot enter its mixed-budget sequential fallback.",
+  "neural_training_authorized": false,
+  "teacher_model_loading_authorized": true,
+  "teacher_generation_splits": ["search"],
+  "validation_teacher_outputs_generated": false,
+  "final_teacher_outputs_generated": false,
+  "final_test_access": "PROHIBITED",
+  "objective": "Generate provenance-complete teacher responses for all 9,800 V108 search probes and retain evidence for deterministic selection of 500 passing records per capability.",
+  "source": {
+    "model": "microsoft/Phi-3-mini-4k-instruct",
+    "revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "license": "mit",
+    "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310",
+    "parameter_count": 3821079552,
+    "weight_bytes": 7642181880,
+    "generation": {
+      "device": "cuda",
+      "precision": "float16",
+      "attention_implementation": "eager",
+      "sampling": "greedy",
+      "temperature": 0.0,
+      "batch_size": 8,
+      "batch_grouping_key": "max_new_tokens",
+      "local_files_only": true,
+      "trust_remote_code": false,
+      "authoritative_generated_token_ids_required": true,
+      "finish_reason_required_for_selection": "eos_token"
+    },
+    "hardware": {
+      "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+      "gpu_uuid": "GPU-e2863cae-6a92-5833-1d9e-cc308702a966",
+      "gpu_memory_mib": 16384,
+      "driver": "591.44"
+    }
+  },
+  "catalog": {
+    "path": "catalogs/capability_compiler_phase3_broad_expansion_v108.json",
+    "sha256": "585a9e3ff91ee1aab4705f595e3fc53f74abf77d8b017da0154383ddfb5b9c4c",
+    "search_probe_count": 9800,
+    "validation_probe_count": 1400,
+    "final_probe_count": 1400
+  },
+  "capability_mapping": {
+    "grammar": "grammar",
+    "coherence": "coherence",
+    "prompt_grounding": "prompt_grounding",
+    "instruction_following": "instruction_following",
+    "conversation": "conversation",
+    "summarization": "supplied_text_summarization",
+    "rewriting": "rewriting",
+    "email_drafting": "email_drafting_from_notes",
+    "tone_control": "tone_control",
+    "format_control": "format_control",
+    "clarification": "clarification",
+    "abstention": "abstention",
+    "domain_independent_reasoning": "fact_free_reasoning",
+    "cake_output_realization": "fluent_realization"
+  },
+  "repair_policy": {
+    "maximum_rounds": 1,
+    "source": "same_frozen_teacher",
+    "max_new_tokens": 256,
+    "selection": "first_eos_terminated_functional_pass",
+    "all_attempts_retained": true
+  },
+  "selection": {
+    "minimum_per_capability": 500,
+    "eventual_selected_per_capability": 500,
+    "eventual_selection_order": "ascending_sha256_of_catalog_probe_id_colon_selected_attempt_sha256",
+    "duplicate_prompt_output_pairs_allowed": false
+  },
+  "bindings": {
+    "abi/capability_compiler_phase3_broad_extract.py": "607e731dd5b80bddd07c106e729838f95a103456b9549a940d7557868216b6c8",
+    "tests/test_capability_compiler_phase3_broad_extract.py": "5696e7e1a298527dcc9058f358fec541754e0b877fcc41c85bdbfaa77f99dda6",
+    "abi/capability_compiler_phase1_extract.py": "e77fcb01e4504784e7c81a9d411f358bc0e9d53337f82dec325e576f077a135b",
+    "abi/hf_extraction.py": "1a9a12ce6efbf5ab78d13b3e84dcf6aedf9b34d9bbbca8a35bb1f165b067d555",
+    "abi/validated_teacher_extraction.py": "4688c02eaa99e8905423afacf63ce887d6ffba866387a6c5c089d73bbd7188d7",
+    "ABI_CAPABILITY_COMPILER_PHASE3_BROAD_EXPANSION_CATALOG_RESULT_V109.json": "6e58fcc0024defe2c8097dc3100ebff5ab34e4151f34890b82323a924a48751e",
+    "ABI_CAPABILITY_COMPILER_PHASE3_BROAD_EXTRACTION_ATTEMPT_V111_PERFORMANCE_FAILURE.json": "69d33c430a213b7865338a67263e0ffcbffe15293941b99d2508e14955e08adc",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V128.json": "520cdb50f313e74095ec023dfbe1b26e99b11e48ff838a1363142efce90fe43d"
+  },
+  "pass_gates": {
+    "initial_attempts": 9800,
+    "minimum_passing_records_per_capability": 500,
+    "authoritative_generated_token_ids_retained": true,
+    "selected_length_terminations": 0,
+    "validation_teacher_outputs_generated": false,
+    "final_teacher_outputs_generated": false,
+    "neural_training_performed": false
+  },
+  "information_accounting": {
+    "all_attempts_and_prompts": true,
+    "teacher_input_and_output_tokens": true,
+    "raw_prompt_and_output_bytes": true,
+    "source_load_and_inference_seconds": true,
+    "peak_rss_and_vram": true,
+    "stored_logits": 0,
+    "stored_activations": 0,
+    "copied_source_parameters": 0,
+    "trained_parameters": 0
+  },
+  "decision_rule": "If every capability has at least 500 EOS-terminated functional passes after at most one repair, preregister deterministic normalization. Otherwise record branch failure.",
+  "claim_boundary": "Teacher search-data acquisition only; no LayerCake or Phase 3 pass is claimed."
+}

@@ -1,0 +1,21 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "version": 175,
+  "status_date": "2026-08-09",
+  "parent_state": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V174.json",
+  "historical_evidence_changed": false,
+  "phase0": "COMPLETE",
+  "phase1": "COMPLETE",
+  "phase2": "MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS",
+  "phase3": "UNCERTIFIED_V170_FIT_DIAGNOSTIC_PREREGISTERED",
+  "phase4_through_8": "LOCKED",
+  "neural_training_authorized": "NONE",
+  "teacher_model_loading_authorized": false,
+  "completed_action": "PREREGISTERED_V175_SEALED_CHECKPOINT_FIT_ATTRIBUTION",
+  "authorized_action": "EXECUTE_ONLY_V175_READ_ONLY_DIAGNOSTIC",
+  "prohibited_action": "NO_TRAINING_NO_CHECKPOINT_CHANGE_NO_FINAL_ACCESS",
+  "next_gate": "TRAINING_FIT_VERSUS_GENERALIZATION_ATTRIBUTION",
+  "protocol": {"path": "ABI_CAPABILITY_COMPILER_PHASE3_SELECTIVE_BPE_FIT_DIAGNOSTIC_PROTOCOL_V175.json", "sha256": "58e41e1bed6a391efa34292cd18e7b46bc5202d7875b34701553fe672f769413"},
+  "final_test_access": "PROHIBITED",
+  "superiority_claim": "PROHIBITED"
+}

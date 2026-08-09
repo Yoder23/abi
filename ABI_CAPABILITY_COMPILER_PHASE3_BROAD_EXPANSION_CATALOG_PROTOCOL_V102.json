@@ -1,0 +1,70 @@
+{
+  "format": "abi-capability-compiler-phase3-broad-expansion-catalog/1",
+  "protocol_id": "abi-capability-compiler-phase3-broad-expansion-catalog-v102",
+  "status": "PREREGISTERED_NO_MODEL_CATALOG_BUILD",
+  "effective_date": "2026-08-08",
+  "historical_evidence_changed": false,
+  "teacher_model_loading_authorized": false,
+  "neural_training_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "objective": "Build and audit a source-record-disjoint English-core teacher-query expansion that directly addresses the V101 conditional structural coverage deficit without changing model architecture or using held-out development text to synthesize answers.",
+  "rationale": {
+    "measured_limiting_factor": "V101 measured target fourgram coverage below 95% in every capability, with the largest gaps in instruction following, abstention, clarification, conversation, fact-free reasoning, and tone control.",
+    "authorized_change": "Increase source-context and conditional surface diversity using a revision-pinned local TinyStories cache as fictional supplied context for the same frozen teacher.",
+    "prohibited_changes": [
+      "No V94 topology or loss-weight changes",
+      "No retraining on the unchanged original 7000 records",
+      "No closed-book fact acquisition",
+      "No specialist-domain acquisition",
+      "No teacher generation in this catalog-build gate",
+      "No final-test output access"
+    ]
+  },
+  "catalog_design": {
+    "generator": "abi.broad_english_catalog",
+    "seed": 9824,
+    "search_stories": 700,
+    "validation_stories": 100,
+    "final_stories": 100,
+    "capabilities": 14,
+    "expected_search_probes": 9800,
+    "expected_validation_probes": 1400,
+    "expected_final_probes": 1400,
+    "selection_policy": "Fixed minhash selection from the pinned train corpus for search and the pinned validation corpus for disjoint validation/final contexts.",
+    "development_leakage_control": "Capability-level V101 aggregate deficits motivated balanced expansion, but no held-out development prompt, response, exact ngram, or record is used to construct or select a search story.",
+    "teacher_response_selection": "NOT_AUTHORIZED_IN_THIS_PROTOCOL"
+  },
+  "source_corpus": {
+    "dataset_id": "roneneldan/TinyStories",
+    "dataset_revision": "f54c09fd23315a6f9c86f9dc80f725de7d8f9c64",
+    "role": "fictional_supplied_context_only",
+    "train_file": "tiny_stories-train-00000-of-00004.arrow",
+    "train_sha256": "664d3c433e7503e49ce379ba430caf41f777efd1464ddd6e8535a5f99cf30c61",
+    "validation_file": "tiny_stories-validation.arrow",
+    "validation_sha256": "3891288066b372ac34308bb77d99911e2db1087ccd61b661471e70fbbcea927c",
+    "dataset_info_sha256": "35a17849c53e4cb4b9613f385d51f1dfc2e71a146b8b4b94cc6de808aba9aaf7",
+    "license_boundary": "Use is restricted to local research evidence because the cached dataset metadata does not establish a distributable derived-data license."
+  },
+  "catalog_pass_gates": {
+    "exact_story_counts": true,
+    "balanced_capability_counts": true,
+    "unique_prompts": true,
+    "zero_exact_prompt_overlap_with_phase1_catalog": true,
+    "zero_source_context_overlap_across_splits": true,
+    "english_core_destination_only": true,
+    "zero_domain_labels_and_claims": true,
+    "zero_closed_book_fact_prompts": true,
+    "complete_label_evidence": true
+  },
+  "bindings": {
+    "abi/broad_english_catalog.py": "06cd61a797c0978c30f285bd9d071b9b5bfaa7630bea147d5193d6bd61de9dbe",
+    "abi/capability_compiler_phase3_broad_expansion_audit.py": "5c03ea138b988c83458b67dd6f12a1e67f340c0949e0854a01f9da20430f769a",
+    "tests/test_broad_english_catalog.py": "4f3490936ca3a82ed3f360f3c001649f6fbbe01bb502941897431dd16d48b540",
+    "tests/test_capability_compiler_phase3_broad_expansion_audit.py": "389be36caa149b8f207a0b2cad2b2c109e2ccf1a625798481277551934d52ad2",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "ABI_CAPABILITY_COMPILER_PHASE3_ACQUISITION_COVERAGE_RESULT_V101.json": "0b4692349387d26cd058a7a140aeb58ed21574a2e0b6c56bd659b5a66e60274a",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V119.json": "9fc3ad112e6a08d539ef416a6d9d39c0df546b6722054fcab65d6d2d344d9305"
+  },
+  "decision_rule": "Only a passing immutable catalog audit can authorize a separately preregistered teacher-extraction successor. Catalog PASS is not Phase 3 certification.",
+  "claim_boundary": "No-model catalog construction protocol only. It does not establish teacher response quality, acquisition sufficiency, LayerCake fluency, or Phase 3 certification."
+}

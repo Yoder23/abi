@@ -1,0 +1,31 @@
+{
+  "format": "abi-capability-compiler-phase3-journal-recovery/1",
+  "protocol_id": "abi-capability-compiler-phase3-journal-recovery-v114",
+  "status": "PREREGISTERED_IDENTICAL_SIGNED_DUPLICATE_RECOVERY",
+  "effective_date": "2026-08-08",
+  "historical_evidence_changed": false,
+  "teacher_model_loading_authorized": false,
+  "neural_training_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "objective": "Recover a V112-compatible journal by removing only complete, canonically identical duplicate signed attempts introduced by concurrent writers.",
+  "source_journal": "results/abi_capability_compiler_phase3/broad_v112/source_search_attempts.jsonl",
+  "recovery_output": "results/abi_capability_compiler_phase3/broad_v114_recovery/source_search_attempts_deduplicated.jsonl",
+  "pass_gates": {
+    "source_rows": 7368,
+    "unique_rows": 6096,
+    "identical_duplicate_rows": 1272,
+    "conflicting_duplicate_keys": 0,
+    "invalid_json_lines": 0,
+    "invalid_attempt_hashes": 0
+  },
+  "bindings": {
+    "results/abi_capability_compiler_phase3/broad_v112/source_search_attempts.jsonl": "5abd9edf897373a50461ab47a0bdedc86e92d9d4659b6dd389f7501a62ffba78",
+    "abi/capability_compiler_phase3_journal_recovery.py": "fa4691299e48c5679415f4a1d31f8654724485a63d7e2b4e534d41530f6a8cf2",
+    "tests/test_capability_compiler_phase3_journal_recovery.py": "707ae1744319d24eb242900d85d0e4d416863f63c01627e28fe4530fcf69bff6",
+    "ABI_CAPABILITY_COMPILER_PHASE3_BROAD_EXTRACTION_PROTOCOL_V112.json": "df4e76ecd285d201e2b537818bf8bd81f4f8e712935700c5c96a3cd1357915e6",
+    "ABI_CAPABILITY_COMPILER_PHASE3_BROAD_EXTRACTION_ATTEMPT_V113_CONCURRENT_WRITER_FAILURE.json": "21096844c1c8a36331e8b3484cac5e49dae88b5df210a22db88b5026d1e2f426",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V130.json": "1891788e5586e12897096653941fc72f3d8039179406ee73572fbe37e8fedc18"
+  },
+  "decision_rule": "Recovery passes only when all duplicate keys contain canonically identical signed attempts and exact preregistered counts match. Any conflict or invalid hash fails closed.",
+  "claim_boundary": "Journal integrity recovery only; it does not certify source evidence or Phase 3."
+}

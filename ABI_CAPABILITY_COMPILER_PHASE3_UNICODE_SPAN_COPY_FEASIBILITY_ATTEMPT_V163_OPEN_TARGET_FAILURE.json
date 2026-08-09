@@ -1,0 +1,42 @@
+{
+  "format": "abi-capability-compiler-phase3-unicode-span-copy-feasibility-attempt/1",
+  "attempt_id": "abi-capability-compiler-phase3-unicode-span-copy-feasibility-attempt-v163",
+  "status": "FAILED_BEFORE_RESULT_OPEN_TARGET_VOCABULARY_INCOMPLETE",
+  "effective_date": "2026-08-09",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_UNICODE_SPAN_COPY_FEASIBILITY_PROTOCOL_V162.json",
+    "sha256": "e170ad0b7c844f913984f1e2b6cb6ee34af88d5ad535d0cf4be73a7c267cc427"
+  },
+  "campaign_state": {
+    "path": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V162.json",
+    "sha256": "c4b6a003f854b355072ae6193239180108ceb09ba6925594e44325edf2007f13"
+  },
+  "exit_code": 1,
+  "output_created": false,
+  "failure": {
+    "exception": "ValueError",
+    "message": "target lexeme is outside fixed vocabulary: b'N310000MIRA'",
+    "first_failure": {
+      "probe_id": "phase1-validation-coherence-0000-v3",
+      "capability": "coherence",
+      "target_lexeme": "N310000MIRA",
+      "source_occurrences": 3
+    },
+    "complete_development_diagnostic": {
+      "training_only_fixed_actions": 9277,
+      "missing_target_action_occurrences": 1623,
+      "missing_with_one_source_occurrence": 347,
+      "missing_with_three_source_occurrences": 300,
+      "missing_with_seven_source_occurrences": 384,
+      "missing_with_zero_source_occurrences": 592,
+      "cause": "Whole-Unicode-lexeme fixed actions plus unique-only pointers cannot express development-only lexemes that are repeated in the prompt or absent from it. Adding development lexemes would leak the locked development targets."
+    }
+  },
+  "teacher_model_loaded": false,
+  "neural_training_performed": false,
+  "final_test_accessed": false,
+  "phase3_certified": false,
+  "decision": "V162 is closed failed. Do not import development lexemes or train this representation. Refit a compact training-only concatenative BPE on the combined acquisition set, retaining printable-ASCII and observed-Unicode alphabet coverage, then audit exact fixed-plus-pointer actions and matched capacity under a new preregistration.",
+  "claim_boundary": "Preflight representation failure only; no candidate or Phase 3 quality claim."
+}

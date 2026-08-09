@@ -167,7 +167,7 @@ def _prompt(
     context = f"<fictional_context>\n{excerpt}\n</fictional_context>"
     if capability == "grammar":
         return (
-            "Edit the supplied rough sentence into one fluent, grammatical "
+            f"{context}\nEdit the supplied rough sentence into one fluent, grammatical "
             "English sentence. Preserve its meaning and add no facts.\n"
             f"Rough sentence: {_corrupt_sentence(fields['first'])}",
             80,
@@ -239,7 +239,8 @@ def _prompt(
         )
     if capability == "clarification":
         return (
-            "A speaker gives this ambiguous request: "
+            f"{context}\n"
+            "A speaker then gives this ambiguous request: "
             f"'Please take care of the {fields['anchor']} part soon.' "
             "Ask one concise clarification question instead of assuming what "
             "they mean.",
@@ -263,6 +264,7 @@ def _prompt(
         )
     if capability == "cake_output_realization":
         return (
+            f"{context}\nUse the context only to disambiguate the fields. "
             "Turn the following supplied fictional fields into two connected, "
             "natural English sentences. Preserve each field and add no new "
             "facts.\n"
@@ -315,6 +317,7 @@ def _minhash_sample(
     if count <= 0:
         raise BroadEnglishCatalogError("sample count must be positive")
     heap: list[tuple[int, str]] = []
+    seen_excerpt_hashes: set[bytes] = set()
     prefix = f"{seed}:".encode("utf-8")
     for text in texts:
         if not isinstance(text, str) or not _is_safe_story(
@@ -322,6 +325,16 @@ def _minhash_sample(
         ):
             continue
         normalized = _normalized(text)
+        try:
+            excerpt = _story_excerpt(
+                normalized, DEFAULT_MAX_CONTEXT_CHARACTERS
+            )
+        except BroadEnglishCatalogError:
+            continue
+        excerpt_hash = hashlib.sha256(excerpt.encode("utf-8")).digest()
+        if excerpt_hash in seen_excerpt_hashes:
+            continue
+        seen_excerpt_hashes.add(excerpt_hash)
         score = int.from_bytes(
             hashlib.sha256(prefix + normalized.encode("utf-8")).digest(),
             "big",

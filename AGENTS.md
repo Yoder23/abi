@@ -19,7 +19,7 @@ LayerCake cake.
 
 ## Current campaign state
 
-Status date: 2026-08-07.
+Status date: 2026-08-09.
 
 - Capability-compiler Phase 0 is **COMPLETE** under
   `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json`.
@@ -80,8 +80,46 @@ Status date: 2026-08-07.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V107.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V176.json`. The original campaign
 contract and all historical evidence remain unchanged.
+
+V108-V144 tested one evidence-driven acquisition expansion without accessing
+final material. A 9,800-probe Phase-1-task-family expansion produced 9,800
+initial and 1,579 repair attempts on the pinned GPU teacher. It supplied at
+least 520 eligible records for 13 capabilities but only 381 abstention records,
+so it failed standalone and remains negative evidence. Combining its adequate
+families with the independently passing V119 abstention source produced a
+7,000-record, 500-per-capability IR. Hostile verification passed all records
+with source/target maxima 192/197 and exact native target round trips.
+
+The targeted combination raised source trigram coverage to 95.40% (PASS), but
+target four-gram coverage reached only 76.84% (FAIL). Instruction-following
+target coverage remained 45.97% for unigrams and 28.30% for four-grams. V143
+then tested native token pointers without training: all acquisition and
+held-out targets round-tripped, but only 20 of 1,346 missing instruction
+actions were pointerable by exact native-token identity (1.49%). Contextual BPE
+segmentation is the measured blocker. Do not request a native-token-pointer
+host or train this path. Any successor must be a separately preregistered exact
+byte-, lexeme-, or span-aware copy representation with matched capacity and the
+targeted data. Phase 3 is still **UNCERTIFIED**.
+
+V160-V176 tested the authorized exact-copy successor without weakening a gate.
+The selective identifier-boundary representation ultimately passed every
+representation gate at 4,999 fixed actions: exact reconstruction of all 14,000
+acquisition and 1,400 development targets, source/target maxima 182/304,
+59/100 instruction pointer exposure, and a 14,407,080-parameter matched plan.
+The separate LayerCake v5 host construct passed 622 tests and its unchanged
+sealed verifier.
+
+That success did not transfer autonomous English. The only authorized V170
+seed scored 898/1,400 with 55 collapses, zero coherence passes, zero fact-free-
+reasoning passes, and a teacher-relative 95% interval of [-26.43, -21.93]
+points. Repeated-span attribution failed, and the sealed checkpoint reached
+only 95.97% teacher-forced action accuracy and 68.01% exact acquisition
+sequences. V170 and all nearby tokenizer, pointer, step, capacity, and seed
+variants are closed. No neural training is authorized; a future candidate must
+be a materially distinct non-pointer acquisition architecture with an explicit
+fit and generalization mechanism.
 
 Phase 1 produced a 7,000-record normalized English acquisition IR with exactly
 500 eligible records for each of 14 capabilities. It retains raw and normalized

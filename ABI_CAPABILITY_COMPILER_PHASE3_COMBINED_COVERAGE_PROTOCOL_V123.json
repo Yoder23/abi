@@ -1,0 +1,36 @@
+{
+  "format": "abi-capability-compiler-phase3-combined-coverage/1",
+  "protocol_id": "abi-capability-compiler-phase3-combined-coverage-v123",
+  "status": "PREREGISTERED_NO_MODEL_COMBINED_COVERAGE_AUDIT",
+  "effective_date": "2026-08-08",
+  "historical_evidence_changed": false,
+  "teacher_model_loading_authorized": false,
+  "neural_training_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "objective": "Measure capability-conditioned native source and teacher-target structural coverage from the combined original 7,000 plus broad 7,000 acquisition records to the unchanged locked 1,400 development records.",
+  "candidate_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_NATIVE_CAUSAL_CORE_PROTOCOL_V94.json",
+  "broad_ir": "results/abi_capability_compiler_phase3/broad_ir_v121/normalized_broad_expansion_v121.abicir",
+  "views": {
+    "source": "LayerCake v4 native source lexemes with original exercise headers removed and broad full supplied context preserved",
+    "target": "LayerCake v4 native lossless actions for teacher outputs",
+    "conditioning": "within capability only",
+    "ngram_widths": [1, 2, 3, 4]
+  },
+  "decision_rule": {
+    "minimum_coverage": 0.95,
+    "pass": "overall source trigram and target fourgram coverage are each at least 95%",
+    "failure": "Do not train if either headline coverage remains below 95%; diagnose the residual gap first."
+  },
+  "bindings": {
+    "abi/capability_compiler_phase3_combined_coverage.py": "0185a26eb62536a2bd0f5ee2f6f84df02b867a0f72e274bf3eb061d412a4c891",
+    "tests/test_capability_compiler_phase3_combined_coverage.py": "29403544e4f7107b51f684450640c64a2d390590fcb2144780f541383ba1fe3e",
+    "results/abi_capability_compiler_phase3/broad_ir_v121/normalized_broad_expansion_v121.abicir": "5b9705e905b0b57a2b632d19c121c58cc38563f858d09dd7ffeecf9910d215bc",
+    "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+    "ABI_CAPABILITY_COMPILER_PHASE3_NATIVE_CAUSAL_CORE_PROTOCOL_V94.json": "9301d46e90dc33e1b1ef65a01848f368fd33e1b4f27d02aba3591dbdbf02ae2e",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl": "1081dbe57e75da50b2619bc2dab14c6441158dcd6068f2b864733936087e86a2",
+    "ABI_CAPABILITY_COMPILER_PHASE3_BROAD_IR_RESULT_V122.json": "e9c0f25e96fd910385de3eacccc63481488962d7ca88fcd27898e6ea0c4c475f",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V139.json": "778425ac5f6f87e1c5a35319e183316bf2470f9877b9442dca1d35f797c864a1"
+  },
+  "claim_boundary": "No-model structural coverage audit only; PASS authorizes a training protocol but does not certify acquisition sufficiency or Phase 3."
+}

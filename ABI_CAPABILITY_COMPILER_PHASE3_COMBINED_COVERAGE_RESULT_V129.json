@@ -1,0 +1,36 @@
+{
+  "format": "abi-capability-compiler-phase3-combined-coverage-certificate/1",
+  "result_id": "abi-capability-compiler-phase3-combined-coverage-result-v129",
+  "status": "FAIL_COMBINED_COVERAGE_GATE",
+  "effective_date": "2026-08-09",
+  "historical_evidence_changed": false,
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_COMBINED_COVERAGE_REPLAY_PROTOCOL_V128.json",
+  "raw_result": "results/abi_capability_compiler_phase3/combined_coverage_v128/coverage_v129.json",
+  "records": {
+    "original_acquisition": 7000,
+    "broad_acquisition": 7000,
+    "combined_acquisition": 14000,
+    "heldout": 1400
+  },
+  "headline": {
+    "minimum_coverage": 0.95,
+    "source_trigram_coverage": 0.9479456082322676,
+    "target_fourgram_coverage": 0.7356065339641168,
+    "previous_original_only_target_fourgram_coverage": 0.7326,
+    "target_fourgram_improvement_percentage_points_approximate": 0.3
+  },
+  "largest_target_fourgram_deficits": {
+    "instruction_following": 0.2797809219534459,
+    "abstention": 0.5339204174820613,
+    "clarification": 0.5510616784630941,
+    "conversation": 0.5825032481593764,
+    "tone_control": 0.6104746317512275,
+    "fact_free_reasoning": 0.6133093525179856
+  },
+  "decision": "FAIL; neural training remains prohibited. The corpus-grounded broad-output branch did not target the measured held-out response structures. A source-disjoint expansion may proceed only by reusing the pre-existing Phase 1 functional task builders under a new search namespace and a separately audited catalog.",
+  "teacher_model_loaded": false,
+  "neural_training_performed": false,
+  "final_test_accessed": false,
+  "phase3_certified": false,
+  "claim_boundary": "Negative structural-coverage evidence. It does not establish model quality or Phase 3 certification."
+}

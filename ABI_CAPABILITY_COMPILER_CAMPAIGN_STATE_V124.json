@@ -1,0 +1,18 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "version": 124,
+  "status_date": "2026-08-08",
+  "parent_state": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V123.json",
+  "historical_evidence_changed": false,
+  "phase0": "COMPLETE",
+  "phase1": "COMPLETE",
+  "phase2": "MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS",
+  "phase3": "UNCERTIFIED_V106_BOUNDED_EXCERPT_DISJOINT_CATALOG_PREREGISTERED",
+  "phase4_through_8": "LOCKED",
+  "neural_training_authorized": "NONE",
+  "teacher_model_loading_authorized": false,
+  "authorized_action": "BUILD_AND_AUDIT_V106_CATALOG_ONLY",
+  "next_gate": "V107_CATALOG_PASS_THEN_PREREGISTER_TEACHER_EXTRACTION",
+  "final_test_access": "PROHIBITED",
+  "superiority_claim": "PROHIBITED"
+}

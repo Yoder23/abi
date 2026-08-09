@@ -1,0 +1,17 @@
+{
+  "format": "abi-capability-compiler-phase3-span-copy-attribution-certificate/1",
+  "result_id": "abi-capability-compiler-phase3-span-copy-attribution-v174",
+  "status": "FAIL_SPAN_COPY_ATTRIBUTION",
+  "effective_date": "2026-08-09",
+  "historical_evidence_changed": false,
+  "protocol": {"path": "ABI_CAPABILITY_COMPILER_PHASE3_SPAN_COPY_ATTRIBUTION_PROTOCOL_V173.json", "sha256": "3579b07a32efdc10bdaa4db31988e7854fc96f4339636c9bbb725b85a74a951c"},
+  "raw_result": {"path": "results/abi_capability_compiler_phase3/span_copy_attribution_v173/attribution_v174.json", "sha256": "6f09e1220db2352824cfe8aeeb8a7ff7f7e3395dbcf1634365408d03eff250d8"},
+  "observed": {"coherence_unseen_actions": 0, "coherence_span_increment": 0.0, "fact_free_reasoning_unseen_actions": 200, "fact_free_reasoning_ineligible_actions": 108, "fact_free_reasoning_absent_actions": 92, "fact_free_reasoning_span_pointerable_ratio": 0.0},
+  "decision": "FAIL; repeated source spans do not explain the two zero-pass critical capabilities. Do not build or train a span-pointer host.",
+  "teacher_model_loaded": false,
+  "neural_training_performed": false,
+  "layercake_host_changed": false,
+  "final_test_accessed": false,
+  "phase3_certified": false,
+  "claim_boundary": "Negative no-model attribution only."
+}

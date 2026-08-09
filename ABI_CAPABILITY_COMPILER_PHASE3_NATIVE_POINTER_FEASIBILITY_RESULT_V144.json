@@ -1,0 +1,26 @@
+{
+  "format": "abi-capability-compiler-phase3-native-pointer-feasibility-result/1",
+  "result_id": "abi-capability-compiler-phase3-native-pointer-feasibility-v144",
+  "status": "FAIL_NATIVE_POINTER_FEASIBILITY",
+  "effective_date": "2026-08-09",
+  "historical_evidence_changed": false,
+  "protocol": {"path": "ABI_CAPABILITY_COMPILER_PHASE3_NATIVE_POINTER_FEASIBILITY_PROTOCOL_V143.json", "sha256": "c8229ede1474dad6ab820393f498f598db172522c1ee0293974a33bcec9e08b9"},
+  "raw_result": {"path": "results/abi_capability_compiler_phase3/native_pointer_feasibility_v143/feasibility_v144.json", "sha256": "3a42e332248f4fec5438c128eb88517eef3e9e14f12c3b13efc9bf6d8b6a1ecc"},
+  "observed": {
+    "acquisition_records": 14000,
+    "heldout_records": 1400,
+    "acquisition_roundtrip_failures": 0,
+    "heldout_roundtrip_failures": 0,
+    "instruction_unseen_actions": 1346,
+    "instruction_unseen_pointerable_actions": 20,
+    "instruction_unseen_pointerable_ratio": 0.014858841010401188,
+    "required_ratio": 0.5,
+    "model_parameter_change_required": 0
+  },
+  "attribution": "Native token identity pointers cannot bridge contextual BPE segmentation between prompt and output. Exact byte/lexeme/span-aware copy remains a materially different representation question.",
+  "decision": "FAIL; do not request a native-token-pointer LayerCake interface and do not train this representation.",
+  "teacher_model_loaded": false,
+  "neural_training_performed": false,
+  "final_test_accessed": false,
+  "phase3_certified": false
+}

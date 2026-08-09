@@ -1,0 +1,71 @@
+{
+  "format": "abi-capability-compiler-phase3-unicode-span-copy-feasibility/1",
+  "protocol_id": "abi-capability-compiler-phase3-unicode-span-copy-feasibility-v162",
+  "status": "PREREGISTERED_NO_TRAINING_UNICODE_REPRESENTATION_AND_CAPACITY_AUDIT",
+  "effective_date": "2026-08-09",
+  "historical_evidence_changed": false,
+  "phase2_status": "MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS",
+  "phase3_status": "UNCERTIFIED",
+  "teacher_model_loading_authorized": false,
+  "neural_training_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "objective": "Determine whether the construct-certified LayerCake Unicode-atomic lexeme-pointer representation can preserve all 14,000 locked acquisition targets and all 1,400 locked development teacher targets byte-exactly, retain a material instruction-following copy signal, and instantiate at capacity matched to the failed 14,587,728-parameter native-token control.",
+  "causal_basis": "V160 failed before result because the V34 BPE alphabet rejected eight later-acquired valid-Unicode source fields. V24 proved only a 4,011,040-parameter, 7,000-record lexeme-pointer candidate and failed quality. V162 is materially distinct: it preserves the later targeted acquisition set, accepts arbitrary valid UTF-8 through the already verified LayerCake Unicode-atomic surface, and requires matched capacity before any training can be authorized.",
+  "phase1_ir": "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir",
+  "targeted_ir": "results/abi_capability_compiler_phase3/targeted_combined_ir_v137/normalized_targeted_combined_v138.abicir",
+  "development_catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+  "teacher_reference": "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl",
+  "layercake_host": {
+    "repository": "../layercake_release",
+    "interface": "lc-direct-neural-core/2",
+    "interface_sha256": "d34ba8a41815b06820988f501aab920adef627b6929a058cc9fe40528c92624f",
+    "changed": false,
+    "construct_only_no_quality_or_speed_inheritance": true
+  },
+  "pointer_policy": {
+    "eligible_lexeme_pattern_ascii": "^(?:[A-Za-z_][A-Za-z0-9_]*|\\d+(?:\\.\\d+)?)$",
+    "source_occurrences_required": 1,
+    "target_occurrences_minimum": 1,
+    "punctuation_whitespace_and_nonunique_lexemes": "FIXED_ACTIONS",
+    "required_reconstruction": "EXACT_UTF8"
+  },
+  "capacity_match": {
+    "reference": "V94 native-token control",
+    "target_parameters": 14587728,
+    "minimum_ratio": 0.95,
+    "maximum_ratio": 1.05,
+    "selection": "closest absolute parameter count from all twelve preregistered architectures"
+  },
+  "architecture_grid": [
+    "w160-e4-d4", "w192-e4-d4", "w224-e4-d4", "w256-e3-d3",
+    "w256-e4-d4", "w288-e3-d3", "w288-e4-d4", "w320-e3-d3",
+    "w320-e4-d4", "w352-e3-d3", "w384-e3-d3", "w384-e4-d4"
+  ],
+  "pass_gates": {
+    "acquisition_roundtrip_failures": 0,
+    "heldout_roundtrip_failures": 0,
+    "maximum_source_actions": 768,
+    "maximum_target_actions": 320,
+    "instruction_records_with_pointers_minimum": 50
+  },
+  "bindings": {
+    "abi/capability_compiler_phase3_unicode_span_copy_feasibility.py": "2cd865d77312449d4bc50c05a2e569b4ffb7083698827d0ed6120fb464fbdd27",
+    "tests/test_capability_compiler_phase3_unicode_span_copy_feasibility.py": "15352e6159319b256a58d8e328d90f88b599542becde1768940feb6bd2eaf3e9",
+    "abi/capability_compiler_phase3_pointer_core.py": "94c2182d159c3ce6303e49bb84ea8ff5b51c31f50300ff4dde4858f10bed9ebd",
+    "ABI_CAPABILITY_COMPILER_PHASE3_POINTER_CORE_RESULT_V24.json": "b4583276f11e37b6a13ff0446239e68685d4fd4963c362b9c2c6946344ed9e03",
+    "ABI_CAPABILITY_COMPILER_PHASE3_SPAN_COPY_FEASIBILITY_ATTEMPT_V161_TOKENIZER_DOMAIN_FAILURE.json": "3de14d93588472d49b2d7136ab3d4ba44d40b0f54575f6f07cbc38e7f794bd96",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V161.json": "29b00b196ade37b32a11e39e1e3082770e7ec7783a3b6418f32ad0e2b1631901",
+    "results/abi_capability_compiler_phase3/targeted_combined_ir_v137/normalized_targeted_combined_v138.abicir": "9fa2467a37c870db7a24640a8d6da46ed73941573026af2c9a4c3425fd98dd18",
+    "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl": "1081dbe57e75da50b2619bc2dab14c6441158dcd6068f2b864733936087e86a2",
+    "../layercake_release/moonshot/canonical_unicode_direct_neural_core_abi_v2.json": "d34ba8a41815b06820988f501aab920adef627b6929a058cc9fe40528c92624f",
+    "../layercake_release/moonshot/postrelease_unicode_direct_neural_core_decision_v4.json": "164ff310ef85416ae8663523c797a6f84b7414d0aa20eb0aa05e559705df0628",
+    "../layercake_release/results/moonshot/postrelease/unicode_direct_neural_core_construct_v1.json": "d8ad1af43f1d5e1826bb61e148987488b6cb7b1dd8a21a00ab5c749c2189ed0e",
+    "../layercake_release/layercake_extensions/unicode_direct_neural_core.py": "4cfc2d5957aaa440d5cc90846f6e1a09ef045e3e0f464abce81e0525aed7648b",
+    "../layercake_release/layercake/portable_token_plan.py": "0988a83f65d96e928a57edf1f5a565c334ab6e66579b9e6bca21f3c76b920a14"
+  },
+  "output": "results/abi_capability_compiler_phase3/unicode_span_copy_feasibility_v162/feasibility_v163.json",
+  "decision_rule": "PASS authorizes only a separately preregistered one-seed matched-capacity Unicode span-copy training screen on the same combined data. FAIL closes this successor. No result authorizes final-test access or a Phase 3 certificate.",
+  "claim_boundary": "Exact representation and parameter accounting only. No candidate quality, runtime, LayerCake regression, or Phase 3 pass is claimed."
+}

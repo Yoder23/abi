@@ -1,0 +1,24 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "version": 166,
+  "status_date": "2026-08-09",
+  "parent_state": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V165.json",
+  "historical_evidence_changed": false,
+  "phase0": "COMPLETE",
+  "phase1": "COMPLETE",
+  "phase2": "MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS",
+  "phase3": "UNCERTIFIED_BOUNDARY_BPE_FEASIBILITY_PREREGISTERED",
+  "phase4_through_8": "LOCKED",
+  "neural_training_authorized": "NONE",
+  "teacher_model_loading_authorized": false,
+  "completed_action": "PREREGISTERED_V166_LEXEME_BOUNDARY_BPE_EXACT_REPRESENTATION_POINTER_SIGNAL_AND_CAPACITY_AUDIT",
+  "authorized_action": "EXECUTE_ONLY_ABI_CAPABILITY_COMPILER_PHASE3_BOUNDARY_BPE_FEASIBILITY_PROTOCOL_V166",
+  "prohibited_action": "NO_NEURAL_TRAINING_NO_LAYERCAKE_CHANGE_NO_THRESHOLD_CHANGE_NO_FINAL_ACCESS",
+  "next_gate": "ALL_UNCHANGED_V164_GATES_MUST_PASS_BEFORE_LAYERCAKE_HOST_CONSTRUCT",
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_BOUNDARY_BPE_FEASIBILITY_PROTOCOL_V166.json",
+    "sha256": "ae935fef3732333e8d0f602cba137513e97e0e568985571e1204ddaab30e3074"
+  },
+  "final_test_access": "PROHIBITED",
+  "superiority_claim": "PROHIBITED"
+}

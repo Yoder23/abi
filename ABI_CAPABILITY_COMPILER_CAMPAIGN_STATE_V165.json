@@ -1,0 +1,20 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "version": 165,
+  "status_date": "2026-08-09",
+  "parent_state": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V164.json",
+  "historical_evidence_changed": false,
+  "phase0": "COMPLETE",
+  "phase1": "COMPLETE",
+  "phase2": "MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS",
+  "phase3": "UNCERTIFIED_V164_SINGLE_PIECE_POINTER_SIGNAL_FAILED",
+  "phase4_through_8": "LOCKED",
+  "neural_training_authorized": "NONE",
+  "teacher_model_loading_authorized": false,
+  "completed_action": "V164_FAILED_ONLY_LOCKED_INSTRUCTION_POINTER_SIGNAL_32_TO_34_BELOW_50",
+  "authorized_action": "PREREGISTER_ONE_NO_MODEL_LEXEME_BOUNDARY_BPE_EXACT_REPRESENTATION_POINTER_SIGNAL_AND_MATCHED_CAPACITY_AUDIT",
+  "prohibited_action": "NO_NEURAL_TRAINING_NO_THRESHOLD_CHANGE_NO_TEACHER_MODEL_LOAD_NO_FINAL_ACCESS",
+  "next_gate": "LEXEME_BOUNDARY_BPE_MUST_PASS_ALL_UNCHANGED_V164_GATES_BEFORE_ANY_LAYERCAKE_HOST_CONSTRUCT_REQUEST",
+  "final_test_access": "PROHIBITED",
+  "superiority_claim": "PROHIBITED"
+}

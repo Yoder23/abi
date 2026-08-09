@@ -1,0 +1,17 @@
+{
+  "format": "abi-capability-compiler-phase3-broad-expansion-catalog-failure/1",
+  "attempt": "V107",
+  "status_date": "2026-08-08",
+  "status": "FAIL_UNBOUNDED_FIRST_SENTENCE",
+  "historical_evidence_changed": false,
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_BROAD_EXPANSION_CATALOG_PROTOCOL_V106.json",
+  "result_written": false,
+  "catalog_written": false,
+  "failure": {
+    "exception": "BroadEnglishCatalogError: story cannot supply three bounded context sentences",
+    "cause": "A row passed the four-sentence safety filter but its first sentence exceeded the 560-character excerpt ceiling, leaving no selected bounded sentence.",
+    "impact": "Catalog construction stopped before artifact creation. Teacher loading and neural training remained unauthorized."
+  },
+  "corrective_action": "Treat rows that cannot yield a valid three-sentence bounded excerpt as ineligible during deterministic sampling.",
+  "claim_boundary": "Negative catalog-construction evidence only; Phase 3 remains uncertified."
+}

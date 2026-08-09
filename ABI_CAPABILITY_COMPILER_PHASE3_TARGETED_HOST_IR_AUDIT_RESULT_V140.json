@@ -1,0 +1,28 @@
+{
+  "format": "abi-capability-compiler-phase3-host-ir-audit-certificate/1",
+  "result_id": "abi-capability-compiler-phase3-targeted-host-ir-audit-v140",
+  "status": "PASS_HOST_CONFORMANT_IR",
+  "effective_date": "2026-08-09",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_TARGETED_HOST_IR_AUDIT_PROTOCOL_V139.json",
+    "sha256": "a95ca69e3061a8ea098d2e3618bfcc8622080a36aa2f2b67471fc313d6f598aa"
+  },
+  "raw_result": {
+    "path": "results/abi_capability_compiler_phase3/targeted_host_ir_audit_v139/audit_v140.json",
+    "sha256": "c8ea7c16ecf502ff257d5531bcf6366d5bc6fdadfc802b62e998d5c366335c11"
+  },
+  "observed": {
+    "records": 7000,
+    "failures": 0,
+    "maximum_source_lexemes": 192,
+    "maximum_target_actions": 197,
+    "targeted_body_projections": 6500,
+    "full_abstention_prompts": 500
+  },
+  "decision": "PASS; one separately preregistered combined coverage audit may run.",
+  "teacher_model_loaded": false,
+  "neural_training_performed": false,
+  "final_test_accessed": false,
+  "phase3_certified": false
+}

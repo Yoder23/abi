@@ -1,0 +1,24 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "version": 164,
+  "status_date": "2026-08-09",
+  "parent_state": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V163.json",
+  "historical_evidence_changed": false,
+  "phase0": "COMPLETE",
+  "phase1": "COMPLETE",
+  "phase2": "MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS",
+  "phase3": "UNCERTIFIED_COMBINED_BPE_FEASIBILITY_PREREGISTERED",
+  "phase4_through_8": "LOCKED",
+  "neural_training_authorized": "NONE",
+  "teacher_model_loading_authorized": false,
+  "completed_action": "PREREGISTERED_V164_COMBINED_ACQUISITION_TRAINING_ONLY_BPE_REPRESENTATION_AND_CAPACITY_AUDIT",
+  "authorized_action": "EXECUTE_ONLY_ABI_CAPABILITY_COMPILER_PHASE3_COMBINED_BPE_FEASIBILITY_PROTOCOL_V164",
+  "prohibited_action": "NO_NEURAL_TRAINING_NO_TEACHER_MODEL_LOAD_NO_DEVELOPMENT_VOCABULARY_NO_FINAL_ACCESS",
+  "next_gate": "EXACT_ACTION_FEASIBILITY_SEQUENCE_LIMITS_INSTRUCTION_COPY_SIGNAL_AND_MATCHED_CAPACITY",
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_COMBINED_BPE_FEASIBILITY_PROTOCOL_V164.json",
+    "sha256": "d2b57036cd8998e1cb8be2143974dc03e6364b0433d126f6f117424e77b6ff5d"
+  },
+  "final_test_access": "PROHIBITED",
+  "superiority_claim": "PROHIBITED"
+}

@@ -1,0 +1,43 @@
+{
+  "format": "abi-capability-compiler-phase3-targeted-catalog-protocol/1",
+  "protocol_id": "abi-capability-compiler-phase3-targeted-catalog-v131",
+  "status": "PREREGISTERED_NO_MODEL_CATALOG_CONSTRUCTION",
+  "effective_date": "2026-08-09",
+  "historical_evidence_changed": false,
+  "preserved_invalid_attempt": "ABI_CAPABILITY_COMPILER_PHASE3_TARGETED_CATALOG_ATTEMPT_V130_UNPREREGISTERED.json",
+  "teacher_model_loading_authorized": false,
+  "neural_training_authorized": false,
+  "validation_or_final_access": "PROHIBITED",
+  "objective": "Construct 700 fresh search probes per capability by reusing only the pre-existing Phase 1 functional builders at a disjoint source-index range, then stop for hostile audit.",
+  "construction": {
+    "source_offset": 700000,
+    "search_per_capability": 700,
+    "capabilities": 14,
+    "total_probes": 9800,
+    "prior_prompt_catalogs_excluded": [
+      "catalogs/capability_compiler_phase1_frozen_v1.json",
+      "catalogs/capability_compiler_phase3_broad_expansion_v108.json",
+      "catalogs/capability_compiler_phase3_broad_abstention_v117.json"
+    ],
+    "exact_prior_prompt_overlap_allowed": 0,
+    "duplicate_prompts_allowed": 0,
+    "specialist_records_allowed": 0
+  },
+  "bindings": {
+    "abi/capability_compiler_phase3_targeted_catalog.py": "640c6b97082e1daa0bec1717362cfd446f914cd6545d27b8a0fe18fb91f3461c",
+    "tests/test_capability_compiler_phase3_targeted_catalog.py": "6cefba11f43f0c8234057ff273475db2ae999deacb3726da4b9093aa914e0c2b",
+    "abi/capability_compiler_phase1_catalog.py": "2ab7d717b418a6ae7bbd7dfb07ec1b59c44a11873f05a69a06801483670f3c6a",
+    "abi/natural_english_catalog.py": "73cbcef6773c6b1adc3622134fa6ef97753c7de48d10ee3939c5c9f90e0ee126",
+    "abi/hf_extraction.py": "1a9a12ce6efbf5ab78d13b3e84dcf6aedf9b34d9bbbca8a35bb1f165b067d555",
+    "abi/capability_segregation.py": "8020f97b62de79d0ae4a8aa96b4ce1893d8d0632eec9e437efa33af44863b4e6",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "catalogs/capability_compiler_phase3_broad_expansion_v108.json": "585a9e3ff91ee1aab4705f595e3fc53f74abf77d8b017da0154383ddfb5b9c4c",
+    "catalogs/capability_compiler_phase3_broad_abstention_v117.json": "57a4a65300cb75fbc3af798ec77ea8f8c146bf6c0f18f9bb629e4646d6ac10bb",
+    "ABI_CAPABILITY_COMPILER_PHASE3_TARGETED_CATALOG_ATTEMPT_V130_UNPREREGISTERED.json": "73d670fb077ec64d228ac35755e996e5fd42386309bfcc2cfd2a45c8e65ae240",
+    "ABI_CAPABILITY_COMPILER_PHASE3_COMBINED_COVERAGE_RESULT_V129.json": "b779a29f3120bc394480f93a2d98095fa06d50019118ae8732de7d24a4f48205",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V146.json": "0f727de99d030c5ec9f04752ba7fd1f548153d06b02ee1dd049df77337917bf0"
+  },
+  "output": "catalogs/capability_compiler_phase3_targeted_search_v132.json",
+  "decision_rule": "Construction success does not authorize extraction. A separately preregistered hostile audit must verify schema, balance, label hashes, segregation, source-index identity, uniqueness, and prior-prompt exclusion.",
+  "claim_boundary": "Catalog construction only; no teacher evidence, model quality, or Phase 3 certification is claimed."
+}

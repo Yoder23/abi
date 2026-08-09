@@ -1,0 +1,30 @@
+{
+  "format": "abi-capability-compiler-phase3-host-ir-audit-certificate/1",
+  "result_id": "abi-capability-compiler-phase3-host-ir-audit-result-v127",
+  "status": "PASS_HOST_CONFORMANT_IR",
+  "effective_date": "2026-08-09",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_HOST_IR_AUDIT_PROTOCOL_V126.json",
+    "sha256": "12111a214a69dd86b0fd4d6414e19a2a5cdf3d875f2c4a59b7811665af4ca32d"
+  },
+  "raw_result": {
+    "path": "results/abi_capability_compiler_phase3/host_ir_audit_v126/audit_v127.json",
+    "sha256": "0e2417d4b350f5ab163bbf58d7fc877093366848128333b4a15b17b32e62f1e0"
+  },
+  "ir": {
+    "path": "results/abi_capability_compiler_phase3/broad_ir_v125/normalized_host_conformant_broad_v125.abicir",
+    "sha256": "1cd01df4f8c9219a96a321dd1d4451c57571c05b06ea7890550aa92e7ff61c0b",
+    "records": 7000
+  },
+  "observed": {
+    "failures": 0,
+    "maximum_source_lexemes": 192,
+    "maximum_target_actions": 256,
+    "teacher_model_loaded": false,
+    "neural_training_performed": false,
+    "final_test_accessed": false
+  },
+  "decision": "PASS; a separately preregistered combined coverage replay may run.",
+  "claim_boundary": "This certifies only native host conformance of the broad IR. It does not certify acquisition quality or Phase 3."
+}
