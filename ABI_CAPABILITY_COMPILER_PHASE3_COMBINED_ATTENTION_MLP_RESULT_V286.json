@@ -1,0 +1,40 @@
+{
+  "format": "abi-capability-compiler-phase3-combined-attention-mlp-result/1",
+  "version": 286,
+  "status": "FAIL_RANK192_REPRESENTATION_AND_LINEAR_MAP_CLOSED",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_COMBINED_ATTENTION_MLP_AUDIT_PROTOCOL_V285.json",
+    "sha256": "5771346f1dcdced6d2492d993569ddfba763bb6a156c3617246d6ec032c50a54"
+  },
+  "raw_evidence": {
+    "path": "results/abi_capability_compiler_phase3_combined_attention_mlp/audit_v286/metadata.json",
+    "sha256": "54820924e03da4aee410470132a8358a958d8da3e210e79294e486e3aed97bfa"
+  },
+  "measurements": {
+    "rank": 192,
+    "basis_energy_explained": 0.8337084054946899,
+    "oracle_mean_output_cosine": 0.9757499588387353,
+    "mapped_mean_output_cosine": 0.9622606996979032,
+    "locked_mean_output_cosine_minimum": 0.98,
+    "oracle_passed": false,
+    "mapped_passed": false
+  },
+  "decision": "Close rank192 on the combined-attention residual because its held-out oracle fails before coefficient prediction is considered. Historical V260 evidence selected rank768 as the first predecessor-interface oracle rank above 0.98; authorize one read-only rank768 adequacy audit on this improved frozen interface, not a rank sweep.",
+  "authorized_next_action": "PREREGISTER_ONE_READ_ONLY_COMBINED_ATTENTION_RANK768_ORACLE_AND_LINEAR_MAP_AUDIT",
+  "prohibited_actions": [
+    "rank192_coefficient_tuning",
+    "rank_sweep",
+    "ridge_sweep",
+    "data_sweep",
+    "seed_sweep",
+    "gate_change",
+    "final_test_access"
+  ],
+  "artifact_promoted": false,
+  "training_performed": false,
+  "final_test_accessed": false,
+  "phase3_certified": false,
+  "claim_boundary": "Negative read-only layer-1 representation evidence only; no artifact, English quality, runtime, Phase 3 certificate, or superiority claim."
+}
