@@ -1,0 +1,36 @@
+{
+  "format": "abi-capability-compiler-phase3-routed-v15-accumulation-attribution-result/1",
+  "version": 334,
+  "status": "PASS_ATTRIBUTION_GLOBAL_SEQUENTIAL_ERROR_AND_ARGMAX_SENSITIVITY",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {"path": "ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V15_ACCUMULATION_ATTRIBUTION_PROTOCOL_V333.json", "sha256": "eba5cb48a676ed46466fe17f9288a9bdacd8f7a0e4429163ecd0d9179dcca5eb"},
+  "raw_evidence": {
+    "records": "results/abi_capability_compiler_phase3_routed_v15/accumulation_attribution_v334/records.jsonl",
+    "records_sha256": "1ea931c60516d1a9c83f735eb8c4717980d7a469ea6dac19855e9891968ac9e7",
+    "result": "results/abi_capability_compiler_phase3_routed_v15/accumulation_attribution_v334/result.json",
+    "result_sha256": "c9ae12c9b55ab7a67e4885946f1ff629414d529f908e943f19c9786e5caadf2e",
+    "evidence_sha256": "c713d05d1fd486edfc784f60060f358e14d7177dc715fad43fb1fc4e03cf1a81"
+  },
+  "measurements": {
+    "records": 28,
+    "route_correct": 28,
+    "minimum_layer_mean_local_cosine": 0.9813113361597061,
+    "all_layer_mean_local_cosines_at_least_0_98": true,
+    "layer_28_mean_global_cosine": 0.9833157275404248,
+    "layer_29_mean_global_cosine": 0.9516228501285825,
+    "final_mean_global_cosine": 0.9689355918339321,
+    "final_mean_local_cosine": 0.9987514998231616,
+    "mean_final_common_logit_cosine": 0.9994605588061469,
+    "prompt_first_token_top1_agreement": 0.8928571428571429,
+    "training_performed": false,
+    "artifact_mutated": false,
+    "final_test_accessed": false
+  },
+  "diagnosis": "The artifact's local replacement operators remain above the locked local cosine floor, but their sequential composition does not preserve the native source trajectory. A large global drop appears at layer 29 and persists through the output. Very high common-logit cosine still changes 3 of 28 first-token argmaxes, establishing downstream decision sensitivity. The autonomous failure is therefore ABI extraction/composition quality, not the construct-certified LayerCake fp16 host.",
+  "decision": "Close local-only routed-v15 extraction. Authorize one no-training feasibility audit for an in-budget late global-state anchor that reuses existing layer-29/layer-31 parameter slots and measures train-derived rank energy plus held-out global correction before any successor artifact is written.",
+  "authorized_next_action": "PREREGISTER_NO_TRAINING_LATE_GLOBAL_STATE_ANCHOR_FEASIBILITY",
+  "artifact_promoted": false,
+  "phase3_certified": false,
+  "claim_boundary": "Read-only failure attribution only; no new artifact, quality promotion, runtime, Phase 3, or superiority claim."
+}
