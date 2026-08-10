@@ -1,0 +1,114 @@
+{
+  "format": "abi-capability-compiler-phase3-qualified-transition-control/1",
+  "protocol_id": "abi-capability-compiler-phase3-qualified-transition-control-v440",
+  "status": "PREREGISTERED_FAIL_FAST_DEVELOPMENT_CAPACITY_CONTROL",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V439.json",
+  "review": "ABI_CAPABILITY_COMPILER_PHASE3_CARRIER_IDENTITY_REVIEW_V439.json",
+  "historical_evidence_changed": false,
+  "device": "cuda",
+  "final_test_access": "PROHIBITED",
+  "promotion_eligible": false,
+  "nearby_sweeps_authorized": false,
+  "objective": "Test the remaining unproven integration-capacity ceiling by compiling the existing labeled teacher-response IR end to end into a derivative copy of the already-qualified three-block LayerCake transition, rather than approximating source transformer blocks.",
+  "phase1_ir": {
+    "path": "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir",
+    "sha256": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+    "records": 7000,
+    "capabilities": 14,
+    "records_per_capability": 500,
+    "domain_records": 0
+  },
+  "host": {
+    "layercake_root": "../layercake_release",
+    "layercake_repository_observed_head": "58f7d863e1fbce0924c86469e1ef0a22c20f4906",
+    "parent_path": "../layercake_release/artifacts/moonshot/phase2_shallow_sparse_pretrained/student2400-seed-9824",
+    "parent_checkpoint_sha256": "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1",
+    "architecture": "layercake-shallow-sparse-english/1-three-block-task-cakes",
+    "repository_mutation_authorized": false,
+    "parent_artifact_mutation_authorized": false,
+    "derivative_copy_only": true
+  },
+  "architecture": {
+    "existing_total_parameters": 61655050,
+    "existing_trainable_transition_parameters": 22271242,
+    "new_parameters": 0,
+    "trainable": [
+      "three existing transformer blocks",
+      "existing final normalization",
+      "existing ten-way task classifier",
+      "existing ten rank-64 task cakes"
+    ],
+    "frozen": [
+      "existing 50257 by 768 tied token embedding and output head",
+      "existing 1024 by 768 positional embedding"
+    ],
+    "tokenizer_changed": false,
+    "execution_graph_changed": false,
+    "parameter_count_changed": false,
+    "source_parameters_copied": 0,
+    "source_blocks_retained": 0,
+    "teacher_present_during_training": false,
+    "teacher_present_at_inference": false
+  },
+  "training": {
+    "seed": 240440,
+    "steps": 7000,
+    "batch_size": 4,
+    "max_tokens": 512,
+    "learning_rate": 0.00005,
+    "classifier_loss_weight": 0.25,
+    "optimizer": "AdamW",
+    "betas": [0.9, 0.95],
+    "weight_decay": 0.1,
+    "gradient_clip_norm": 1.0,
+    "precision": "float16_autocast_with_grad_scaler",
+    "sampling": "deterministic balanced capability round-robin; retry identical batch after AMP skip",
+    "curve_interval": 500,
+    "trainable_parameters": 22271242,
+    "teacher_outputs_added": 0,
+    "teacher_model_loading_authorized": false
+  },
+  "development": {
+    "catalog_path": "catalogs/capability_compiler_phase1_frozen_v1.json",
+    "teacher_reference": "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl",
+    "prompts": 1400,
+    "prompts_per_capability": 100,
+    "autonomous_greedy_generation": true,
+    "automatic_existing_task_routing": true,
+    "sampling": false
+  },
+  "absolute_screen": {
+    "per_capability_functional_point_estimate_minimum": 0.9,
+    "per_capability_functional_wilson_lower_minimum": 0.85,
+    "critical_point_minimum": 0.95,
+    "critical_wilson_lower_minimum": 0.9,
+    "repetition_collapse_count_maximum": 0
+  },
+  "teacher_relative_screen": {
+    "method": "capability_stratified_paired_percentile_bootstrap",
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 240440,
+    "candidate_minus_teacher_lower_95_minimum": -0.05
+  },
+  "decision_rule": "Train and autonomously evaluate only seed 240440 on the locked development population. If every absolute, teacher-relative, isolation, and no-final-access gate passes, preserve the candidate solely as a nonpromotional capacity upper bound and authorize separately preregistered matched causal controls plus independent seeds. Any miss closes this exact full-transition/7000-record branch without optimizer, step, seed, data, source, decoding, route, or threshold sweeps.",
+  "bindings": {
+    "abi/capability_compiler_phase3_qualified_transition_control.py": "b8df555b4b3739e0ef35ea081c39d889012448bc981443ef437241a7ccd6e502",
+    "tests/test_capability_compiler_phase3_qualified_transition_control.py": "a1b50f084702b59c771fb3a16b735bf30fb477b77c6fcbeb96a2d47ba99c9571",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V439.json": "71871378a28e5558623a8c941501c08667594549c7d39182a5f62a97ce21afaf",
+    "ABI_CAPABILITY_COMPILER_PHASE3_CARRIER_IDENTITY_REVIEW_V439.json": "e052c400654906587599ae5b68a8f764d05b66e8fc2f56fa901dc634277cca49",
+    "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl": "1081dbe57e75da50b2619bc2dab14c6441158dcd6068f2b864733936087e86a2",
+    "../layercake_release/artifacts/moonshot/phase2_shallow_sparse_pretrained/student2400-seed-9824/model.safetensors": "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1",
+    "../layercake_release/artifacts/moonshot/phase2_shallow_sparse_pretrained/student2400-seed-9824/metadata.json": "def6a552162a10a814d4bcfba31fa659530f0488d461c4a93414ee44a231ea82",
+    "../layercake_release/layercake/models/shallow_sparse_english.py": "e336c7320bf36fd1c654e7ff5a650a8f4398a532ff23f8c0ac5e49e6907b5f4c",
+    "abi/layercake_core_loader.py": "54d6b84e5447f7b8720e27bed6e71889e7953c19aa82001d2fa7a9cb7660afea",
+    "abi/capability_compiler_phase3.py": "5d490989e088f42aba4bd2ca96fbe70ea2db211890369dd6f431dd781390c77b",
+    "abi/capability_compiler_phase3_sequence_bridge.py": "772cbbcf4c511014e2ab3af32b26ee58ef33c0254758177f22d7144cf47459b7",
+    "abi/capability_compiler_phase3_routed_v15_autonomous_screen_isolated.py": "630adec895c76fc4eb79e52cc1fe7cada1476fc50ed8d40734e2462d600a093b"
+  },
+  "phase2_external_blocker": "21000 blinded judgments from three independent human raters remain unavailable and are not waived.",
+  "phase3_certified": false,
+  "claim_boundary": "Preregistered development-only capacity control. It cannot promote a checkpoint, certify Phase 3, open Phase 4, establish minimum information, or establish superiority over LoRA or distillation."
+}

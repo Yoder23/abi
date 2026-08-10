@@ -1,0 +1,58 @@
+{
+  "format": "abi-capability-compiler-phase3-carrier-identity-review/1",
+  "version": 439,
+  "status": "PASS_CARRIER_IDENTITY_AUDIT_QUALIFIED_TRANSITION_CONTROL_SELECTED",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "layercake_repository_mutated": false,
+  "qualified_sealed_carrier": {
+    "repository": "../layercake_release",
+    "repository_head_observed": "58f7d863e1fbce0924c86469e1ef0a22c20f4906",
+    "release_tag": "layercake-moonshot-phase2-r3",
+    "architecture": "layercake-shallow-sparse-english/1-three-block-task-cakes",
+    "artifact": "../layercake_release/artifacts/moonshot/phase2_shallow_sparse_pretrained/student2400-seed-9824",
+    "checkpoint_sha256": "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1",
+    "total_parameters": 61655050,
+    "active_parameters": 60756490,
+    "phase2_status": "SEALED_PASS_FOR_ITS_LOCKED_QUALITY_SPEED_MEMORY_AND_INCREMENTAL_GATES",
+    "abi_history": "V6-V22 used this exact frozen carrier and changed only registered ABI bridges. The best bounded bridge reached 1248/1400 but retained 75 repetition collapses and failed the absolute per-capability gates.",
+    "interpretation": "Those failures establish insufficiency of the tested ABI bridges, not a regression or mutation of the sealed LayerCake carrier. They do not prove a carrier capacity ceiling because its transition weights were frozen."
+  },
+  "construct_only_external_carrier": {
+    "interface": "lc-direct-neural-core/16 accepting lc-direct-neural-core/15",
+    "artifact": "results/abi_capability_compiler_phase3_routed_v15/artifact_v322",
+    "checkpoint_sha256": "6d20c7a9d74e04c2209cc534de882f018edb47867e1a87c7d42c33798909e920",
+    "parameters": 536758275,
+    "source": "microsoft/Phi-3-mini-4k-instruct@f39ac1d28e925b323eae81227eaba4464caced4e",
+    "host_status": "CONSTRUCT_CERTIFIED_ONLY_NO_INHERITED_ENGLISH_QUALITY_OR_PERFORMANCE",
+    "autonomous_result": "0/17 grammar prefix passes with 15 repetition collapses before monotonic fail-fast",
+    "interpretation": "V322's autonomous failure and subsequent operator-fidelity failures belong to ABI extraction and sequential composition. The LayerCake v16 host physically executed the immutable artifact with exact routing and zero host errors."
+  },
+  "closed_architectural_families": [
+    "frozen small bridges on the sealed three-block carrier",
+    "local-only 32-stage Phi replacement extraction",
+    "late-only and distributed cached-sequence conformance on V322",
+    "sixteen-stage two-source-block macro replacement",
+    "direct per-source-layer head, low-rank, structured-support, and nonlinear-unit compression"
+  ],
+  "selected_material_question": "Can the teacher-derived, capability-labeled Phase 1 IR compile end to end into the transition dynamics of a derivative copy of the already-qualified three-block LayerCake carrier, without changing its tokenizer, embeddings, positional substrate, architecture, parameter count, or execution graph?",
+  "selected_control": {
+    "name": "qualified-three-block-transition-capacity-control",
+    "carrier_checkpoint_is_copied_not_mutated": true,
+    "trainable_scope": "the existing three transformer blocks, final normalization, task classifier, and ten existing task cakes",
+    "frozen_scope": "token embedding/output head and positional embedding",
+    "new_parameters": 0,
+    "source_teacher_loaded_during_training": false,
+    "source_teacher_present_at_inference": false,
+    "source_parameters_copied": 0,
+    "source_blocks_retained": 0,
+    "final_test_access": "PROHIBITED",
+    "promotion_eligible": false,
+    "reason": "This is the smallest direct test of the remaining unproven carrier-capacity ceiling. It compiles behavior across the whole existing LayerCake transition rather than approximating individual source blocks."
+  },
+  "decision_rule": "Run one development-only fail-fast capacity control at one seed. A failure closes full-transition adaptation on the current 7000-record imported-information budget without nearby optimizer, duration, seed, data, source, decoding, or gate sweeps. A pass authorizes matched causal controls and independent seeds; it does not itself certify Phase 3.",
+  "phase2_external_blocker": "21000 blinded judgments from three independent human raters remain unavailable and are not waived.",
+  "phase3_certified": false,
+  "phase4_open": false,
+  "claim_boundary": "Architecture and carrier-identity review only. No new training, quality, runtime, minimum-information, Phase 3, or superiority claim."
+}
