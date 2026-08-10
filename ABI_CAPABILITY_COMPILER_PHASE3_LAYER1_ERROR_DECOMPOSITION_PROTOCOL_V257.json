@@ -1,0 +1,51 @@
+{
+  "format": "abi-capability-compiler-phase3-layer1-error-decomposition/1",
+  "protocol_id": "abi-capability-compiler-phase3-layer1-error-decomposition-v257",
+  "status": "PREREGISTERED_READ_ONLY_LAYER1_DECOMPOSITION",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V256.json",
+  "historical_evidence_changed": false,
+  "training_authorized": false,
+  "artifact_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "objective": "Separate layer-1 error attributable to compact attention, MLP residual rank, and the replacement-conditioned linear coefficient map before selecting any new architecture.",
+  "base_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_LINEAR_SEQUENTIAL_FIT_PROTOCOL_V255.json",
+  "checkpoints": {
+    "0": {
+      "path": "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_00.safetensors",
+      "sha256": "b1489e35f2a47337de347e0d009d6706923c99fd91ebf4b54d9804bf3433d9e3"
+    },
+    "1": {
+      "path": "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_01.safetensors",
+      "sha256": "85c31bcaa878e7ba65f6b6bdbe8ed0fe76460d38ef5134d9889f2a032391002b"
+    }
+  },
+  "layer": 1,
+  "ranks": [192, 384, 768, 1024],
+  "relative_ridge": 0.0001,
+  "gate": {
+    "mean_relative_rmse_maximum": 0.85,
+    "mean_output_cosine_minimum": 0.98
+  },
+  "measurements": {
+    "attention_isolation": "student attention plus exact per-record teacher MLP residual",
+    "rank_isolation": "teacher or student attention plus exact per-record projection of teacher MLP residual onto each training-derived basis",
+    "map_isolation": "student attention plus one fixed ridge map from its exact normalized features into each nested basis",
+    "records": "unchanged V255 420 training and 28 validation records"
+  },
+  "decision_rule": "If exact teacher residuals cannot clear the gate on student attention, attention is primary. Otherwise, if rank-192 oracle reconstruction fails but a higher fixed rank passes, residual rank is primary. If an oracle passes but the matching map fails, mapping is primary. This audit authorizes no artifact or training and selects at most one subsequently preregistered architecture.",
+  "bindings": {
+    "abi/capability_compiler_phase3_layer1_error_decomposition.py": "5826cb405bf5c63d23c4591e43c06d337295a5f4e9d0c1b46d29aba350f76c38",
+    "tests/test_capability_compiler_phase3_layer1_error_decomposition.py": "0ab99131404de88cca48136d210adef85062a568c863ea9efe66dea8b0f88322",
+    "abi/capability_compiler_phase3_direct_linear_sequential_fit.py": "dca38cc8bf86047669ce08d7f13c05600f9c28575c1b09797f7faea7de671663",
+    "abi/capability_compiler_phase3_dual_path_local_fit.py": "9b36db57fbef4c9e9e960094e261b92716809e9cb1830acb5e4173ffe7cf19e2",
+    "abi/capability_compiler_phase3_mlp_residual_rank_audit.py": "d9830599c330aef68d3d6a2a468c92ff2747b66db374c0d2e057bebd3f31991e",
+    "ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_LINEAR_SEQUENTIAL_FIT_PROTOCOL_V255.json": "fcf546b3ad4fdb014f06a9a73c61bfea425a51d24cff351b8ad448dfc026e60b",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V256.json": "7c9fce53a3019dbe0fbe634981ae801ec5cb4fab30814aee044db1e75b7b48c7",
+    "ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_LINEAR_SEQUENTIAL_RESULT_V256.json": "4e735d7e8c51ea490147966b1fde703099cb7bab0cd8306a3435971030354035",
+    "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/metadata.json": "383f55d7bf90f10dfdef90e88a88725b2560e5fd1544ea209c492de2dd5d54bd",
+    "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_00.safetensors": "b1489e35f2a47337de347e0d009d6706923c99fd91ebf4b54d9804bf3433d9e3",
+    "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_01.safetensors": "85c31bcaa878e7ba65f6b6bdbe8ed0fe76460d38ef5134d9889f2a032391002b"
+  },
+  "claim_boundary": "Read-only local error decomposition only; no deployable artifact, autonomous English quality, measured inference, Phase 3 certificate, or superiority claim."
+}
