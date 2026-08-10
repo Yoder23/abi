@@ -42,13 +42,42 @@ def deterministic_kmeans(values: torch.Tensor, clusters: int, iterations: int) -
     return assignments, centers
 
 
+def balanced_recursive_pca(values: torch.Tensor, clusters: int) -> tuple[torch.Tensor, torch.Tensor]:
+    if clusters < 2 or clusters & (clusters - 1):
+        raise Phase3Error("balanced recursive partition requires a power-of-two cluster count")
+    groups = [torch.arange(values.shape[0], device=values.device)]
+    while len(groups) < clusters:
+        children = []
+        for indices in groups:
+            selected = values.index_select(0, indices)
+            centered = selected - selected.mean(dim=0)
+            covariance = centered.T @ centered
+            _, vectors = torch.linalg.eigh(covariance)
+            projection = centered @ vectors[:, -1]
+            order = torch.argsort(projection, stable=True)
+            middle = order.shape[0] // 2
+            if not middle or middle == order.shape[0]:
+                raise Phase3Error("balanced recursive partition became empty")
+            children.extend((indices[order[:middle]], indices[order[middle:]]))
+        groups = children
+    assignments = torch.empty(values.shape[0], dtype=torch.long, device=values.device)
+    centers = []
+    for cluster, indices in enumerate(groups):
+        assignments[indices] = cluster
+        centers.append(values.index_select(0, indices).mean(dim=0))
+    return assignments, torch.stack(centers)
+
+
 def execute(root: Path, protocol_path: Path) -> dict:
     from transformers import AutoModelForCausalLM
 
     protocol = json.loads(protocol_path.read_text(encoding="utf-8"))
     if (
         protocol.get("format") != FORMAT
-        or protocol.get("status") != "PREREGISTERED_READ_ONLY_LAYER1_SPARSE_EXTRACTION"
+        or protocol.get("status") not in {
+            "PREREGISTERED_READ_ONLY_LAYER1_SPARSE_EXTRACTION",
+            "PREREGISTERED_READ_ONLY_LAYER1_BALANCED_SPARSE_REPLAY",
+        }
         or protocol.get("training_authorized") is not False
         or protocol.get("artifact_authorized") is not False
         or protocol.get("final_test_access") != "PROHIBITED"
@@ -99,9 +128,14 @@ def execute(root: Path, protocol_path: Path) -> dict:
     features = torch.cat(train_features).to(device)
     deltas = torch.cat(train_deltas).to(device)
     cluster_values = (deltas - global_mean) @ cluster_basis
-    assignments, centers = deterministic_kmeans(
-        cluster_values, int(protocol["experts"]), int(protocol["clustering"]["iterations"])
-    )
+    if protocol["clustering"]["algorithm"] == "deterministic farthest-first k-means":
+        assignments, centers = deterministic_kmeans(
+            cluster_values, int(protocol["experts"]), int(protocol["clustering"]["iterations"])
+        )
+    elif protocol["clustering"]["algorithm"] == "deterministic balanced recursive PCA split":
+        assignments, centers = balanced_recursive_pca(cluster_values, int(protocol["experts"]))
+    else:
+        raise Phase3Error("unrecognized sparse clustering algorithm")
     one_hot = torch.nn.functional.one_hot(assignments, num_classes=int(protocol["experts"])).float()
     router_weights, router_ridge = decomposition.solve_map(features, one_hot, float(protocol["relative_ridge"]))
     router_train_accuracy = float(((features @ router_weights).argmax(dim=1) == assignments).float().mean())

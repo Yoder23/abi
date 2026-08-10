@@ -1,0 +1,44 @@
+{
+  "format": "abi-capability-compiler-phase3-sparse-residual-layer1-audit/1",
+  "protocol_id": "abi-capability-compiler-phase3-sparse-residual-layer1-balanced-replay-v265",
+  "status": "PREREGISTERED_READ_ONLY_LAYER1_BALANCED_SPARSE_REPLAY",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V264.json",
+  "historical_evidence_changed": false,
+  "training_authorized": false,
+  "artifact_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "objective": "Replay V263 with exact balanced expert support, changing only unconstrained k-means to deterministic recursive PCA median splits.",
+  "base_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_LINEAR_SEQUENTIAL_FIT_PROTOCOL_V255.json",
+  "checkpoints": {
+    "0": {"path": "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_00.safetensors", "sha256": "b1489e35f2a47337de347e0d009d6706923c99fd91ebf4b54d9804bf3433d9e3"},
+    "1": {"path": "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_01.safetensors", "sha256": "85c31bcaa878e7ba65f6b6bdbe8ed0fe76460d38ef5134d9889f2a032391002b"}
+  },
+  "experts": 4,
+  "rank_per_expert": 192,
+  "relative_ridge": 0.0001,
+  "clustering": {
+    "input": "unchanged teacher MLP residual global top-64 projection",
+    "projection_rank": 64,
+    "algorithm": "deterministic balanced recursive PCA split",
+    "expected_cluster_sizes": [7750, 7750, 7750, 7751]
+  },
+  "gate": {"mean_relative_rmse_maximum": 0.85, "mean_output_cosine_minimum": 0.98},
+  "decision_rule": "Require all four clusters to differ in size by at most one and require the learned hard-routed integrated layer to clear both unchanged local thresholds. Oracle routing remains diagnostic only. A failure closes this balanced sparse-map branch; a pass authorizes only sequential sparse extraction preregistration.",
+  "bindings": {
+    "abi/capability_compiler_phase3_sparse_residual_layer1_audit.py": "3ab95762c2c4ea743c4a7b191e27dd47246c1101c3f023da884ac930936f2f35",
+    "tests/test_capability_compiler_phase3_sparse_residual_layer1_audit.py": "5740ecbad8a9ab9351a317c50747eff06a2ed425155dc167399130cb0481fefb",
+    "abi/capability_compiler_phase3_direct_linear_sequential_fit.py": "dca38cc8bf86047669ce08d7f13c05600f9c28575c1b09797f7faea7de671663",
+    "abi/capability_compiler_phase3_dual_path_local_fit.py": "9b36db57fbef4c9e9e960094e261b92716809e9cb1830acb5e4173ffe7cf19e2",
+    "abi/capability_compiler_phase3_layer1_error_decomposition.py": "e7f901976c5ddffeb6432b65e5c283971e3d43ae0df4d966143dcbba673c6e1a",
+    "abi/capability_compiler_phase3_mlp_residual_rank_audit.py": "d9830599c330aef68d3d6a2a468c92ff2747b66db374c0d2e057bebd3f31991e",
+    "ABI_CAPABILITY_COMPILER_PHASE3_SPARSE_RESIDUAL_LAYER1_AUDIT_PROTOCOL_V263.json": "93ea0072a815831751808f5fa96e41a371bec24165bcb4d9836a7aa2913f64bc",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V264.json": "c28cc0ff4bdb887107c4a356df1a4f05f7a743c507d536bf6efcf697ee7b7926",
+    "ABI_CAPABILITY_COMPILER_PHASE3_SPARSE_RESIDUAL_LAYER1_RESULT_V264.json": "95c2b59bc98df952646098c072ade03dc686c1d63e2336b0c13dab98a186a62c",
+    "results/abi_capability_compiler_phase3_sparse_residual/layer1_audit_v264.json": "92417e8a73032dcd47aa84144fd8c5ae71527daa221b4e2cadab28172d71ba5b",
+    "ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_LINEAR_SEQUENTIAL_FIT_PROTOCOL_V255.json": "fcf546b3ad4fdb014f06a9a73c61bfea425a51d24cff351b8ad448dfc026e60b",
+    "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_00.safetensors": "b1489e35f2a47337de347e0d009d6706923c99fd91ebf4b54d9804bf3433d9e3",
+    "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_01.safetensors": "85c31bcaa878e7ba65f6b6bdbe8ed0fe76460d38ef5134d9889f2a032391002b"
+  },
+  "claim_boundary": "Balanced numerical repair of the read-only layer-1 sparse audit only; no artifact, quality, runtime, certificate, or superiority claim."
+}
