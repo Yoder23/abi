@@ -1,0 +1,46 @@
+{
+  "format": "abi-capability-compiler-phase3-routed-v15-layer2-source-aligned-repair/1",
+  "protocol_id": "abi-capability-compiler-phase3-routed-v15-layer2-source-aligned-repair-v313",
+  "status": "PREREGISTERED_ONE_SOURCE_ALIGNED_LAYER2_REPAIR",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V312.json",
+  "historical_evidence_changed": false,
+  "device": "cuda",
+  "gradient_training_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "extraction_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V15_PROGRESSIVE_EXTRACT_PROTOCOL_V309.json",
+  "extraction_protocol_sha256": "6c20f2a6f11b78225c1833dd839582c05c0230410db49fc3623a0c787a660789",
+  "failed_checkpoint": {
+    "path": "results/abi_capability_compiler_phase3_routed_v15/progressive_v310/layer_02/routed_v15_layer_02.safetensors",
+    "sha256": "8ac4d3204462a40ae96ed9e624a928c1c353fae825be94ae8de3407d1a2d89eb"
+  },
+  "relative_ridge": 0.0001,
+  "gate": {
+    "mean_relative_rmse_maximum": 0.85,
+    "mean_output_cosine_minimum": 0.98,
+    "exact_validation_routes_required": 28
+  },
+  "fixed_invariants": {
+    "attention_checkpoint": "unchanged V310 layer2 attention tensors",
+    "residual_basis": "unchanged V310 rank768 basis",
+    "sparse_neurons": "same deterministically reproduced top384 source neurons",
+    "architecture": "unchanged lc-direct-neural-core/15",
+    "data_seed_ridge_routes_gates": "unchanged"
+  },
+  "method": "Recompute the exact V310 top384 source-neuron selection and require bit-exact fp16 identity with the failed checkpoint's sparse gate/up tensor. Project the corresponding frozen source down-projection columns into the unchanged rank768 basis and install those exact coefficients into all three route maps. Subtract the selected-neuron output from the required train residual, recompute only its residual mean, and solve exactly one ridge map from the unchanged full-width features to the remaining basis coefficients. Perform no gradient update and rescreen the same 28 validation records.",
+  "decision_rule": "Pass only if mean relative RMSE is at most 0.85, mean full-output cosine is at least 0.98, and routing remains 28 of 28 exact. A pass authorizes a separately preregistered restart of progressive extraction using this repaired layer2 and this same source-aligned decoder rule for later layers. A failure closes this repair; no parameter, data, seed, ridge, width, rank, route, or threshold sweep is authorized.",
+  "bindings": {
+    "abi/capability_compiler_phase3_routed_v15_layer2_source_aligned_repair.py": "ffcc54a587c87170430a7c28ec3feefde753be36d7a1eb13fc47aba9b7f683ad",
+    "tests/test_capability_compiler_phase3_routed_v15_layer2_source_aligned_repair.py": "02e41d60f6ce890fb4956023d34e3a2bd18afa638d993f124f868d51b8c91e8f",
+    "abi/capability_compiler_phase3_routed_v15_progressive_extract.py": "93d10e5d5611719a1e14193cf6a7bf13c56619312458ab25cabf164a491e7c47",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V312.json": "f0a359f646835db63282c1bec9d5987b0a3c5e733aca2e3d98d931c96c16503d",
+    "ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V15_LAYER2_GEOMETRY_RESULT_V312.json": "1732d889493266ed2ef3e595160f29f5e357676b4402988fef366684c010a2e8",
+    "ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V15_LAYER2_GEOMETRY_AUDIT_PROTOCOL_V311.json": "cf1a551c1e83af87dd01328a122424ef93e18d1b94a34941ce281842e19ce3eb",
+    "results/abi_capability_compiler_phase3_routed_v15/layer2_geometry_v312/metadata.json": "cadae16b86af7e694d68324f156ebb965361c386920345994f75d823c2f51b5f",
+    "ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V15_PROGRESSIVE_EXTRACT_PROTOCOL_V309.json": "6c20f2a6f11b78225c1833dd839582c05c0230410db49fc3623a0c787a660789",
+    "results/abi_capability_compiler_phase3_routed_v15/progressive_v310/metadata.json": "c6fa29254e32b5f44cfa199159ac8194f652e6ce7780b40bda1fe6faa2bc5ab4",
+    "results/abi_capability_compiler_phase3_routed_v15/progressive_v310/layer_02/metadata.json": "b5f8d9b46ebc7f1ba42c7efecc8662f69c70428e64b994eafd868b94b5012729",
+    "results/abi_capability_compiler_phase3_routed_v15/progressive_v310/layer_02/routed_v15_layer_02.safetensors": "8ac4d3204462a40ae96ed9e624a928c1c353fae825be94ae8de3407d1a2d89eb"
+  },
+  "claim_boundary": "Preregistered single source-aligned analytic layer2 repair only; no assembled artifact, English quality, physical runtime, Phase 3 certificate, or ABI superiority claim."
+}
