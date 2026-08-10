@@ -1,0 +1,29 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "version": 232,
+  "status_date": "2026-08-09",
+  "parent_state": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V230.json",
+  "historical_evidence_changed": false,
+  "phase0": "COMPLETE",
+  "phase1": "COMPLETE",
+  "phase2": "MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS",
+  "phase3": "UNCERTIFIED_DUAL_PATH_FEASIBILITY_AND_GENERIC_HOST_CONSTRUCT_PASS",
+  "phase4_through_8": "LOCKED",
+  "neural_training_authorized": "NONE_PENDING_SEPARATE_LOCAL_FIT_PROTOCOL",
+  "teacher_model_loading_authorized": false,
+  "completed_action": "V231_V232_DUAL_PATH_NO_MODEL_FEASIBILITY_AND_EXTERNAL_LAYERCAKE_V10_CONSTRUCT",
+  "authorized_action": "DESIGN_ONLY_TOPOLOGY_AWARE_DUAL_ATTENTION_MLP_LOCAL_FIT_PROTOCOL",
+  "prohibited_action": "NO_FUSED_OR_DUAL_WIDTH_STEP_DATA_LOSS_SEED_THRESHOLD_SWEEPS_NO_AUTONOMOUS_PROMOTION_NO_FINAL_ACCESS",
+  "next_gate": "PREREGISTER_ONE_FAIL_FAST_LAYER_LOCAL_DUAL_PATH_GPU_FIT_WITH_UNCHANGED_COPIED_SUBSTRATE",
+  "external_layercake_host": {
+    "repository": "../layercake_release",
+    "commit": "065d19c",
+    "interface": "lc-direct-neural-core/10",
+    "decision": "../layercake_release/moonshot/postrelease_dual_path_progressive_decision_v26.json",
+    "decision_sha256": "b51a3ea2a27b116151b95ca44980bceb9d5bf464b37749354124a1deb9c4450c",
+    "quality_or_performance_inherited": false
+  },
+  "external_certificate_blocker": "PHASE2_REQUIRES_21000_BLINDED_JUDGMENTS_FROM_THREE_INDEPENDENT_HUMANS",
+  "final_test_access": "PROHIBITED",
+  "superiority_claim": "PROHIBITED"
+}

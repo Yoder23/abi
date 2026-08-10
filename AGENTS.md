@@ -80,7 +80,7 @@ Status date: 2026-08-09.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V230.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V232.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 V215-V230 opened one materially distinct progressive source-block replacement
@@ -98,6 +98,18 @@ remained exact. Close fused-projection width, step, data, loss, seed, threshold,
 and nearby variants. The only authorized successor is no-model feasibility for
 a source-topology-preserving dual attention/MLP replacement with separate
 residual paths. Phase 3 remains uncertified.
+
+V231/V232 completed that no-model successor gate. The dual-path target keeps
+the verified 196,899,840-parameter copied substrate, adds 94,384,128 trainable
+replacement parameters, deploys 291,283,968 parameters in 582,567,936 fp16
+payload bytes, and retains a theoretical 19.21x maximum-context source/target
+MAC ratio with zero complete source blocks. The separate LayerCake repository
+then construct-certified the generic `lc-direct-neural-core/10` host at commit
+`065d19c`; all 641 tests and its unchanged sealed verifier pass. Neither result
+is acquisition, quality, measured speed, or Phase 3 evidence. One separately
+preregistered topology-aware local-fit screen may train the distinct attention
+and MLP residual paths against frozen source-component targets. Final material
+remains prohibited.
 
 V191-V214 tested the authorized weight-level structural route. The independent
 LayerCake repository construct-certified `lc-direct-neural-core/7`; ABI did

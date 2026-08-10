@@ -1,0 +1,35 @@
+{
+  "format": "abi-capability-compiler-phase3-dual-path-feasibility/1",
+  "protocol_id": "abi-capability-compiler-phase3-dual-path-feasibility-v231",
+  "status": "PREREGISTERED_NO_MODEL_FEASIBILITY",
+  "effective_date": "2026-08-09",
+  "historical_evidence_changed": false,
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V230.json",
+  "teacher_model_loading_authorized": false,
+  "tensor_value_access_authorized": false,
+  "training_authorized": false,
+  "final_test_access_authorized": false,
+  "objective": "Determine whether separate source-topology-preserving attention and MLP residual cakes fit the corrected v9 deployment payload and retain a large theoretical compute margin without changing the verified copied substrate.",
+  "causal_basis": "The fused replacement passed relative-RMSE but failed output cosine at layer 0. Separating attention and MLP normalizations, projections, residual updates, and operators directly targets that measured topology mismatch.",
+  "target": {
+    "runtime_vocabulary": 32015,
+    "full_width": 3072,
+    "bottleneck_width": 192,
+    "attention_heads": 2,
+    "intermediate_size": 768,
+    "replacement_layers": 32,
+    "maximum_context": 512,
+    "separate_attention_and_mlp_paths": true,
+    "complete_source_blocks_retained": 0,
+    "source_incremental_macs_at_maximum_context": 3823042560,
+    "fp16_payload_bytes_maximum": 629145600
+  },
+  "decision_rule": "Pass only if copied substrate parameters remain 196,899,840, attention and MLP use separate paths, trainable replacements equal 94,384,128 parameters, total deployment equals 291,283,968 parameters and 582,567,936 fp16 bytes, payload stays below 600 MiB, theoretical maximum-context source-to-target MAC ratio remains at least 4x, and zero source transformer blocks remain. A pass authorizes only a separately governed generic LayerCake host construct.",
+  "bindings": {
+    "abi/capability_compiler_phase3_dual_path_feasibility.py": "81335980d3ce9953113bd2890c5047db3508c9ed6b87580d34add3f3f7fadb45",
+    "tests/test_capability_compiler_phase3_dual_path_feasibility.py": "69ddbf77a1938e73ed290d591ae918a0d3ef4edf6154f98b5ef4f10ec66e6124",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V230.json": "1645c8cb09cfbc04315ea96c4d19edf283c031b122c150e94a8aedaa418fdd04",
+    "results/abi_capability_compiler_phase3_progressive_replacement/verification_v224.json": "0c8d64c6c72e3e1b60784fcc41a5e74bc12eafcf50b14f46c2180dd098ab9b5b"
+  },
+  "claim_boundary": "No-model dual-path feasibility only; no source values, training, measured speed, quality, transfer, or superiority claim."
+}
