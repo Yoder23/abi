@@ -1,0 +1,25 @@
+{
+  "format": "abi-capability-compiler-phase3-sparse-residual-balanced-result/1",
+  "version": 266,
+  "status": "FAIL_PIECEWISE_LINEAR_SPARSE_BRANCH_CLOSED",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {"path": "ABI_CAPABILITY_COMPILER_PHASE3_SPARSE_RESIDUAL_LAYER1_BALANCED_REPLAY_PROTOCOL_V265.json", "sha256": "0c7370c31bf271f3bd150e8dfe9e4a032598a6aafbd16aa73be4529bf1683e95"},
+  "raw_evidence": {"path": "results/abi_capability_compiler_phase3_sparse_residual/layer1_balanced_replay_v266.json", "sha256": "ba880e2d0f1151668f16f7a08e2d6a1bb24ced390ecfc22a1790b9adb54c8914"},
+  "measurements": {
+    "cluster_observations": [7750, 7750, 7750, 7751],
+    "router_validation_target_accuracy": 0.7691956124314442,
+    "routed_mean_output_cosine": 0.9665361770561763,
+    "routed_mean_relative_rmse": 0.485185159104211,
+    "oracle_mean_output_cosine": 0.9698837569781712,
+    "oracle_mean_relative_rmse": 0.4117801402296339,
+    "oracle_passed": false
+  },
+  "interpretation": "Exact balance removes underdetermined experts and improves the oracle, but even per-token oracle expert selection cannot clear the local gate. The remaining blocker is piecewise-linear coefficient-map capacity rather than support imbalance or routing alone.",
+  "decision": "Close sparse piecewise-linear residual mapping. Authorize one no-model feasibility audit for a dense rank-768 nonlinear coefficient host with hidden width 384, subject to unchanged active-compute, memory, and zero-source-block constraints.",
+  "training_performed": false,
+  "artifact_written": false,
+  "final_test_accessed": false,
+  "phase3_certified": false,
+  "claim_boundary": "Negative layer-1 sparse mapping evidence only; no artifact, certificate, or superiority claim."
+}
