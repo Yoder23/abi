@@ -1,0 +1,34 @@
+{
+  "accounting": {
+    "active_experts_per_token": 1,
+    "active_incremental_macs_at_maximum_context": 185250816,
+    "active_mac_increase_over_direct_linear": 0.00212712920648106,
+    "active_sparse_mlp_macs_per_layer": 1191936,
+    "attention_parameters": 42473472,
+    "copied_parameters": 196899840,
+    "deployed_parameters": 391154688,
+    "experts": 4,
+    "fp16_payload_bytes": 782309376,
+    "rank_per_expert": 192,
+    "source_to_target_active_mac_ratio": 20.63711589804819,
+    "stored_sparse_mlp_parameters": 151781376,
+    "union_rank": 768
+  },
+  "claim_boundary": "No-model sparse-host accounting only; no artifact, quality, physical runtime, Phase 3 certificate, or superiority claim.",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-sparse-residual-feasibility/1",
+  "gates": {
+    "active_mac_overhead_below_two_percent": true,
+    "payload_below_800_mib": true,
+    "source_active_mac_margin_at_least_four": true,
+    "top1_physical_design": true,
+    "union_rank_matches_measured_minimum": true,
+    "zero_source_blocks": true
+  },
+  "phase3_certified": false,
+  "protocol_sha256": "3efc9cc3422f287c762dc94b2e40a502093f53b33455170f8e34fab6d3ea7d01",
+  "source_model_loaded": false,
+  "status": "PASS_FEASIBLE_GENERIC_HOST_MAY_BE_CONSTRUCTED",
+  "tensor_values_read": false,
+  "training_performed": false
+}

@@ -1,0 +1,38 @@
+{
+  "format": "abi-capability-compiler-phase3-sparse-residual-feasibility-result/1",
+  "version": 262,
+  "status": "PASS_GENERIC_HOST_CONSTRUCT_AVAILABLE",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_SPARSE_RESIDUAL_FEASIBILITY_PROTOCOL_V261.json",
+    "sha256": "3efc9cc3422f287c762dc94b2e40a502093f53b33455170f8e34fab6d3ea7d01"
+  },
+  "raw_evidence": {
+    "path": "results/abi_capability_compiler_phase3_sparse_residual/feasibility_v262.json",
+    "sha256": "eba71699883f936f4f6ba5b3f3d5b4b027996489d187f34c0e74ddc40d785a5c"
+  },
+  "accounting": {
+    "deployed_parameters": 391154688,
+    "fp16_payload_bytes": 782309376,
+    "stored_union_rank": 768,
+    "active_experts_per_token": 1,
+    "active_incremental_macs_at_maximum_context": 185250816,
+    "active_mac_increase_over_v12": 0.00212712920648106,
+    "source_to_target_active_mac_ratio": 20.63711589804819,
+    "source_blocks": 0
+  },
+  "layercake_host": {
+    "repository": "../layercake_release",
+    "commit": "d3615e7ad0ad3fa4c2d990bfd06969089c5ae5dd",
+    "interface": "lc-direct-neural-core/13",
+    "decision": "../layercake_release/moonshot/postrelease_sparse_residual_progressive_decision_v33.json",
+    "decision_sha256": "afd8e615e2a9f5b8c904348bb194c562037ac05ab4802f9e3117f86e0ebe73b2",
+    "construct_status": "PASS_CONSTRUCT_ONLY",
+    "complete_tests_passed": 651,
+    "sealed_phase0_through_8_verifier": "PASS"
+  },
+  "decision": "Authorize one read-only layer-1 sparse extraction audit using the exact V256 compact attention checkpoints. No 32-layer fit is allowed until learned top-1 routing and expert maps clear the unchanged local gate.",
+  "phase3_certified": false,
+  "claim_boundary": "Sparse host feasibility and generic construct only; no extracted artifact, English quality, physical runtime, Phase 3 certificate, or superiority claim."
+}
