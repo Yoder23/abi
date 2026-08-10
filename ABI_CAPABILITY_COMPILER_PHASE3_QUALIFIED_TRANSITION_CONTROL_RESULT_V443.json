@@ -1,0 +1,77 @@
+{
+  "format": "abi-capability-compiler-phase3-qualified-transition-control-summary/1",
+  "version": 443,
+  "status": "FAIL_QUALIFIED_TRANSITION_CAPACITY_BRANCH_CLOSED_POSITIVE_TEACHER_RELATIVE_SIGNAL",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_QUALIFIED_TRANSITION_CONTROL_RUNTIME_REPAIR_V442.json",
+    "sha256": "8d67babdd957c526753c7bec5d7db4078f3cd81b97cf0b16119a7743dc551e3a"
+  },
+  "candidate": {
+    "metadata": "results/abi_capability_compiler_phase3_qualified_transition_control/candidate_v443/metadata.json",
+    "metadata_sha256": "c31181a0d8e411bd1d57585de17564053846d0ea32b572f47226aa0213065ef7",
+    "checkpoint": "results/abi_capability_compiler_phase3_qualified_transition_control/candidate_v443/model.safetensors",
+    "checkpoint_sha256": "f977d1b95e4b514ebf3037d18f195f7cae16227066c14af75a81c06808b76ce6",
+    "parent_checkpoint_sha256": "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1",
+    "total_parameters": 61655050,
+    "trainable_existing_transition_parameters": 22271242,
+    "new_parameters": 0,
+    "changed_tensors": 64,
+    "embedding_state_sha256_before": "541c15840cfa2ffaa72f1d28ca08428face0d21b3c41285e21e368eed47c736e",
+    "embedding_state_sha256_after": "541c15840cfa2ffaa72f1d28ca08428face0d21b3c41285e21e368eed47c736e"
+  },
+  "training": {
+    "steps": 7000,
+    "batch_size": 4,
+    "teacher_response_tokens_seen": 724818,
+    "wall_seconds": 273.67652259999886,
+    "peak_cuda_allocated_bytes": 2490744832,
+    "peak_process_rss_bytes": 1624039424,
+    "skipped_amp_steps_retried_without_advancing_sampler": 4
+  },
+  "evaluation": {
+    "result": "results/abi_capability_compiler_phase3_qualified_transition_control/evaluation_v443/result.json",
+    "result_sha256": "ce364862b93d391f94fe3b28bcc1d775e8bc18e82089dc40705c45e56e61ece0",
+    "outputs": "results/abi_capability_compiler_phase3_qualified_transition_control/evaluation_v443/development_outputs.jsonl",
+    "outputs_sha256": "fc109f5baee4abad0c857a250967f56e50b7acf9d8b05aca03c7082239c0b6fa",
+    "evidence_sha256": "39740282469148ce187f8f35978753ece065a79438e39b0d5d2a1098918ee1c5",
+    "functional_passes": 1276,
+    "observations": 1400,
+    "functional_rate": 0.9114285714285715,
+    "repetition_collapses": 43,
+    "candidate_minus_teacher": 0.027857142857142858,
+    "candidate_minus_teacher_bootstrap_lower_95": 0.008571428571428572,
+    "candidate_minus_teacher_bootstrap_upper_95": 0.047142857142857146,
+    "weak_capabilities": {
+      "abstention": 0.74,
+      "coherence": 0.78,
+      "fluent_realization": 0.74,
+      "instruction_following": 0.92,
+      "tone_control": 0.75
+    },
+    "collapse_concentration": {
+      "email_drafting_from_notes": 39,
+      "conversation": 4,
+      "all_other_capabilities": 0
+    }
+  },
+  "gates": {
+    "teacher_relative_noninferiority": true,
+    "teacher_relative_superiority_on_this_locked_automated_suite": true,
+    "per_capability_functional": false,
+    "critical_capabilities": false,
+    "zero_repetition_collapses": false,
+    "same_existing_execution_graph": true,
+    "teacher_absent_at_training_and_inference": true,
+    "source_parameters_or_blocks_retained": false,
+    "final_test_not_accessed": true
+  },
+  "attribution_hypothesis": "Every weak capability shares its selected task cake with a strong capability, and 39/43 collapses occur in email drafting, which shares route 4 with the 98/100 format-control capability. This is evidence of capability collision, not proof; one read-only exact route/interference attribution is required before a new architecture.",
+  "decision": "Reject and preserve the candidate. Close this exact full-transition/7000-record route-grouped branch and all protocol-prohibited nearby variants. Authorize one read-only capability-route collision and repetition-output attribution. No training or checkpoint mutation is authorized by this result.",
+  "promotion_eligible": false,
+  "phase3_certified": false,
+  "phase4_open": false,
+  "final_test_accessed": false,
+  "claim_boundary": "Strongest teacher-to-qualified-LayerCake development result so far and a positive paired automated functional signal versus the teacher, but a failed nonpromotional capacity control. It does not establish broad fluency, final-test quality, runtime retention, minimum information, Phase 3, or ABI superiority."
+}

@@ -1,0 +1,59 @@
+{
+  "format": "abi-capability-compiler-phase3-route-collision-oracle/1",
+  "protocol_id": "abi-capability-compiler-phase3-route-collision-oracle-v444",
+  "status": "PREREGISTERED_READ_ONLY_FORCED_ROUTE_ATTRIBUTION",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V443.json",
+  "historical_evidence_changed": false,
+  "training_authorized": false,
+  "artifact_mutation_authorized": false,
+  "teacher_model_loading_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "objective": "Determine whether the V443 failures and collapses are recoverable by a different already-existing task cake, without training, changing the candidate, or evaluating any non-development record.",
+  "base_protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_QUALIFIED_TRANSITION_CONTROL_RUNTIME_REPAIR_V442.json",
+    "sha256": "8d67babdd957c526753c7bec5d7db4078f3cd81b97cf0b16119a7743dc551e3a"
+  },
+  "candidate": {
+    "directory": "results/abi_capability_compiler_phase3_qualified_transition_control/candidate_v443",
+    "checkpoint_sha256": "f977d1b95e4b514ebf3037d18f195f7cae16227066c14af75a81c06808b76ce6",
+    "promotion_eligible": false,
+    "mutation_authorized": false
+  },
+  "primary_outputs": {
+    "path": "results/abi_capability_compiler_phase3_qualified_transition_control/evaluation_v443/development_outputs.jsonl",
+    "sha256": "fc109f5baee4abad0c857a250967f56e50b7acf9d8b05aca03c7082239c0b6fa"
+  },
+  "development_catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+  "population": {
+    "selection": "every V443 record with functional_pass=false or repetition_collapse=true",
+    "problematic_records": 165,
+    "selection_fixed_before_forced_route_execution": true
+  },
+  "routes": {
+    "existing_routes": 10,
+    "forced_routes_per_problematic_record": 10,
+    "new_routes": 0,
+    "router_training": false,
+    "cake_training": false
+  },
+  "attribution_gate": {
+    "definition": "A record is recovered only if at least one alternative existing route produces a functional pass with no repetition collapse.",
+    "alternative_route_recovery_rate_minimum": 0.5
+  },
+  "decision_rule": "If at least half of all fixed problematic records are recovered by an alternative existing route, capability collision is a supported material owner and a separately preregistered capability-isolated transition architecture may be reviewed. Otherwise route/cake isolation alone is insufficient and that successor is prohibited. No forced-route output is promotable or may replace the automatic-route score.",
+  "bindings": {
+    "abi/capability_compiler_phase3_route_collision_oracle.py": "9b05996cca6db66d68b78c44e9beda4916426354970d66fdea131e098fe70889",
+    "tests/test_capability_compiler_phase3_route_collision_oracle.py": "877295eca66cf431cb460cd47d5e0a20d83d9d081bf53fa1ff52102ea965310d",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V443.json": "ee9767fe128b3528898aff7a1d45bb0d371518eb90f6d1c4b0c871002f78cedc",
+    "ABI_CAPABILITY_COMPILER_PHASE3_QUALIFIED_TRANSITION_CONTROL_RESULT_V443.json": "8261fffd8857fa65906a6544e7bc8e45bf1c1e72540d3f9a7568bea27e7f471f",
+    "ABI_CAPABILITY_COMPILER_PHASE3_QUALIFIED_TRANSITION_CONTROL_RUNTIME_REPAIR_V442.json": "8d67babdd957c526753c7bec5d7db4078f3cd81b97cf0b16119a7743dc551e3a",
+    "results/abi_capability_compiler_phase3_qualified_transition_control/candidate_v443/metadata.json": "c31181a0d8e411bd1d57585de17564053846d0ea32b572f47226aa0213065ef7",
+    "results/abi_capability_compiler_phase3_qualified_transition_control/candidate_v443/model.safetensors": "f977d1b95e4b514ebf3037d18f195f7cae16227066c14af75a81c06808b76ce6",
+    "results/abi_capability_compiler_phase3_qualified_transition_control/evaluation_v443/result.json": "ce364862b93d391f94fe3b28bcc1d775e8bc18e82089dc40705c45e56e61ece0",
+    "results/abi_capability_compiler_phase3_qualified_transition_control/evaluation_v443/development_outputs.jsonl": "fc109f5baee4abad0c857a250967f56e50b7acf9d8b05aca03c7082239c0b6fa",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a"
+  },
+  "phase3_certified": false,
+  "claim_boundary": "Read-only development attribution protocol. It cannot promote forced routes, modify a checkpoint, certify Phase 3, open Phase 4, or establish ABI superiority."
+}
