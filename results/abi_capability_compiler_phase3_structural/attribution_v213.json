@@ -1,0 +1,428 @@
+{
+  "acquisition": {
+    "action_accuracy": 0.9774753625936985,
+    "actions": 432371,
+    "correct_actions": 422632,
+    "exact_sequence_rate": 0.6061428571428571,
+    "exact_sequences": 8486,
+    "per_capability": {
+      "abstention": {
+        "action_accuracy": 0.9829871694903239,
+        "actions": 28214,
+        "correct_actions": 27734,
+        "exact_sequence_rate": 0.7,
+        "exact_sequences": 700,
+        "records": 1000
+      },
+      "clarification": {
+        "action_accuracy": 0.9458877003252224,
+        "actions": 25521,
+        "correct_actions": 24140,
+        "exact_sequence_rate": 0.167,
+        "exact_sequences": 167,
+        "records": 1000
+      },
+      "coherence": {
+        "action_accuracy": 0.9973457640052421,
+        "actions": 60281,
+        "correct_actions": 60121,
+        "exact_sequence_rate": 0.84,
+        "exact_sequences": 840,
+        "records": 1000
+      },
+      "conversation": {
+        "action_accuracy": 0.9583919449174502,
+        "actions": 27014,
+        "correct_actions": 25890,
+        "exact_sequence_rate": 0.304,
+        "exact_sequences": 304,
+        "records": 1000
+      },
+      "email_drafting_from_notes": {
+        "action_accuracy": 0.9733920573552666,
+        "actions": 120791,
+        "correct_actions": 117577,
+        "exact_sequence_rate": 0.075,
+        "exact_sequences": 75,
+        "records": 1000
+      },
+      "fact_free_reasoning": {
+        "action_accuracy": 0.9889563311414601,
+        "actions": 35586,
+        "correct_actions": 35193,
+        "exact_sequence_rate": 0.644,
+        "exact_sequences": 644,
+        "records": 1000
+      },
+      "fluent_realization": {
+        "action_accuracy": 0.9736322869955157,
+        "actions": 16725,
+        "correct_actions": 16284,
+        "exact_sequence_rate": 0.699,
+        "exact_sequences": 699,
+        "records": 1000
+      },
+      "format_control": {
+        "action_accuracy": 1.0,
+        "actions": 13494,
+        "correct_actions": 13494,
+        "exact_sequence_rate": 1.0,
+        "exact_sequences": 1000,
+        "records": 1000
+      },
+      "grammar": {
+        "action_accuracy": 0.9992064121895088,
+        "actions": 12601,
+        "correct_actions": 12591,
+        "exact_sequence_rate": 0.999,
+        "exact_sequences": 999,
+        "records": 1000
+      },
+      "instruction_following": {
+        "action_accuracy": 1.0,
+        "actions": 10085,
+        "correct_actions": 10085,
+        "exact_sequence_rate": 1.0,
+        "exact_sequences": 1000,
+        "records": 1000
+      },
+      "prompt_grounding": {
+        "action_accuracy": 0.9866697310962997,
+        "actions": 17404,
+        "correct_actions": 17172,
+        "exact_sequence_rate": 0.795,
+        "exact_sequences": 795,
+        "records": 1000
+      },
+      "rewriting": {
+        "action_accuracy": 0.9702572347266881,
+        "actions": 18660,
+        "correct_actions": 18105,
+        "exact_sequence_rate": 0.511,
+        "exact_sequences": 511,
+        "records": 1000
+      },
+      "supplied_text_summarization": {
+        "action_accuracy": 0.9723006285047608,
+        "actions": 26571,
+        "correct_actions": 25835,
+        "exact_sequence_rate": 0.468,
+        "exact_sequences": 468,
+        "records": 1000
+      },
+      "tone_control": {
+        "action_accuracy": 0.9478480230642504,
+        "actions": 19424,
+        "correct_actions": 18411,
+        "exact_sequence_rate": 0.284,
+        "exact_sequences": 284,
+        "records": 1000
+      }
+    },
+    "records": 14000
+  },
+  "acquisition_minus_development_action_gap": 0.14308786565417353,
+  "attribution": "MIXED_FIT_AND_GENERALIZATION_WITH_STRUCTURAL_INITIALIZATION_EFFECT_SMALL",
+  "checkpoint_changed": false,
+  "checkpoint_sha256": "34bdced62983a529ede40bb9544d5a5d89c24fea11afe5d9a06cf74c20a9b2ba",
+  "development_teacher_forced": {
+    "action_accuracy": 0.834387496939525,
+    "actions": 49012,
+    "correct_actions": 40895,
+    "exact_sequence_rate": 0.2664285714285714,
+    "exact_sequences": 373,
+    "per_capability": {
+      "abstention": {
+        "action_accuracy": 0.6693404634581105,
+        "actions": 3366,
+        "correct_actions": 2253,
+        "exact_sequence_rate": 0.03,
+        "exact_sequences": 3,
+        "records": 100
+      },
+      "clarification": {
+        "action_accuracy": 0.6559534741352924,
+        "actions": 3267,
+        "correct_actions": 2143,
+        "exact_sequence_rate": 0.0,
+        "exact_sequences": 0,
+        "records": 100
+      },
+      "coherence": {
+        "action_accuracy": 0.9470198675496688,
+        "actions": 6040,
+        "correct_actions": 5720,
+        "exact_sequence_rate": 0.0,
+        "exact_sequences": 0,
+        "records": 100
+      },
+      "conversation": {
+        "action_accuracy": 0.7079340743579916,
+        "actions": 2609,
+        "correct_actions": 1847,
+        "exact_sequence_rate": 0.1,
+        "exact_sequences": 10,
+        "records": 100
+      },
+      "email_drafting_from_notes": {
+        "action_accuracy": 0.9155440414507772,
+        "actions": 11580,
+        "correct_actions": 10602,
+        "exact_sequence_rate": 0.0,
+        "exact_sequences": 0,
+        "records": 100
+      },
+      "fact_free_reasoning": {
+        "action_accuracy": 0.8450946643717728,
+        "actions": 6972,
+        "correct_actions": 5892,
+        "exact_sequence_rate": 0.0,
+        "exact_sequences": 0,
+        "records": 100
+      },
+      "fluent_realization": {
+        "action_accuracy": 0.8509159823120657,
+        "actions": 1583,
+        "correct_actions": 1347,
+        "exact_sequence_rate": 0.47,
+        "exact_sequences": 47,
+        "records": 100
+      },
+      "format_control": {
+        "action_accuracy": 0.9630177514792899,
+        "actions": 1352,
+        "correct_actions": 1302,
+        "exact_sequence_rate": 0.5,
+        "exact_sequences": 50,
+        "records": 100
+      },
+      "grammar": {
+        "action_accuracy": 1.0,
+        "actions": 1259,
+        "correct_actions": 1259,
+        "exact_sequence_rate": 1.0,
+        "exact_sequences": 100,
+        "records": 100
+      },
+      "instruction_following": {
+        "action_accuracy": 0.41710156563629064,
+        "actions": 2491,
+        "correct_actions": 1039,
+        "exact_sequence_rate": 0.66,
+        "exact_sequences": 66,
+        "records": 100
+      },
+      "prompt_grounding": {
+        "action_accuracy": 0.9182771949199338,
+        "actions": 1811,
+        "correct_actions": 1663,
+        "exact_sequence_rate": 0.45,
+        "exact_sequences": 45,
+        "records": 100
+      },
+      "rewriting": {
+        "action_accuracy": 0.9087552742616034,
+        "actions": 1896,
+        "correct_actions": 1723,
+        "exact_sequence_rate": 0.29,
+        "exact_sequences": 29,
+        "records": 100
+      },
+      "supplied_text_summarization": {
+        "action_accuracy": 0.9362985299660761,
+        "actions": 2653,
+        "correct_actions": 2484,
+        "exact_sequence_rate": 0.19,
+        "exact_sequences": 19,
+        "records": 100
+      },
+      "tone_control": {
+        "action_accuracy": 0.7599624941397093,
+        "actions": 2133,
+        "correct_actions": 1621,
+        "exact_sequence_rate": 0.04,
+        "exact_sequences": 4,
+        "records": 100
+      }
+    },
+    "records": 1400
+  },
+  "evidence_sha256": "7a1c013c591ad8f29d6dd4cafc3da6737167b6e91c9f2a7446827ba21fa3f2da",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-structural-attribution/1",
+  "neural_training_performed": false,
+  "phase3_certified": false,
+  "status": "COMPLETE_READ_ONLY_ATTRIBUTION",
+  "structural_retention": {
+    "changed_entries": 14654761,
+    "exact_entries": 23,
+    "global_cosine": 0.8875628925741551,
+    "per_tensor": {
+      "final_norm.weight": {
+        "cosine": 0.9991125317885671,
+        "entries": 192,
+        "exact_entries": 0,
+        "relative_l2_delta": 0.12746100259181833
+      },
+      "layers.0.down_proj.weight": {
+        "cosine": 0.9881224613237074,
+        "entries": 147456,
+        "exact_entries": 0,
+        "relative_l2_delta": 0.23866697075417773
+      },
+      "layers.0.gate_up_proj.weight": {
+        "cosine": 0.9794376439858076,
+        "entries": 294912,
+        "exact_entries": 0,
+        "relative_l2_delta": 0.26720352738343733
+      },
+      "layers.0.input_norm.weight": {
+        "cosine": 0.9441905055643949,
+        "entries": 192,
+        "exact_entries": 0,
+        "relative_l2_delta": 0.34240114932086646
+      },
+      "layers.0.o_proj.weight": {
+        "cosine": 0.9822009119153267,
+        "entries": 36864,
+        "exact_entries": 0,
+        "relative_l2_delta": 0.26308522340793283
+      },
+      "layers.0.post_attention_norm.weight": {
+        "cosine": 0.9421134517496871,
+        "entries": 192,
+        "exact_entries": 0,
+        "relative_l2_delta": 0.3695450951036138
+      },
+      "layers.0.qkv_proj.weight": {
+        "cosine": 0.9864961871866547,
+        "entries": 110592,
+        "exact_entries": 0,
+        "relative_l2_delta": 0.24987933838656862
+      },
+      "layers.1.down_proj.weight": {
+        "cosine": 0.9762858167923323,
+        "entries": 147456,
+        "exact_entries": 0,
+        "relative_l2_delta": 0.2719493026191992
+      },
+      "layers.1.gate_up_proj.weight": {
+        "cosine": 0.983883324742763,
+        "entries": 294912,
+        "exact_entries": 0,
+        "relative_l2_delta": 0.2514083588348962
+      },
+      "layers.1.input_norm.weight": {
+        "cosine": 0.9985644775897815,
+        "entries": 192,
+        "exact_entries": 0,
+        "relative_l2_delta": 0.265828894687396
+      },
+      "layers.1.o_proj.weight": {
+        "cosine": 0.9874241642256223,
+        "entries": 36864,
+        "exact_entries": 0,
+        "relative_l2_delta": 0.26333227327771136
+      },
+      "layers.1.post_attention_norm.weight": {
+        "cosine": 0.997822210528322,
+        "entries": 192,
+        "exact_entries": 0,
+        "relative_l2_delta": 0.0699951492418902
+      },
+      "layers.1.qkv_proj.weight": {
+        "cosine": 0.9753369831271652,
+        "entries": 110592,
+        "exact_entries": 0,
+        "relative_l2_delta": 0.27017253022887794
+      },
+      "layers.2.down_proj.weight": {
+        "cosine": 0.9734234622358682,
+        "entries": 147456,
+        "exact_entries": 0,
+        "relative_l2_delta": 0.27901192026085453
+      },
+      "layers.2.gate_up_proj.weight": {
+        "cosine": 0.9828115180434173,
+        "entries": 294912,
+        "exact_entries": 0,
+        "relative_l2_delta": 0.2551879892518284
+      },
+      "layers.2.input_norm.weight": {
+        "cosine": 0.9992010108645635,
+        "entries": 192,
+        "exact_entries": 0,
+        "relative_l2_delta": 0.20055068869645104
+      },
+      "layers.2.o_proj.weight": {
+        "cosine": 0.9918611773158869,
+        "entries": 36864,
+        "exact_entries": 0,
+        "relative_l2_delta": 0.24483753584474355
+      },
+      "layers.2.post_attention_norm.weight": {
+        "cosine": 0.9988155234829122,
+        "entries": 192,
+        "exact_entries": 0,
+        "relative_l2_delta": 0.07809036176373285
+      },
+      "layers.2.qkv_proj.weight": {
+        "cosine": 0.9799640262267933,
+        "entries": 110592,
+        "exact_entries": 0,
+        "relative_l2_delta": 0.2625048458915589
+      },
+      "layers.3.down_proj.weight": {
+        "cosine": 0.9755015679731065,
+        "entries": 147456,
+        "exact_entries": 0,
+        "relative_l2_delta": 0.2880483066006946
+      },
+      "layers.3.gate_up_proj.weight": {
+        "cosine": 0.9822455079252407,
+        "entries": 294912,
+        "exact_entries": 0,
+        "relative_l2_delta": 0.2597204227342533
+      },
+      "layers.3.input_norm.weight": {
+        "cosine": 0.9992667713128709,
+        "entries": 192,
+        "exact_entries": 0,
+        "relative_l2_delta": 0.2102351397281704
+      },
+      "layers.3.o_proj.weight": {
+        "cosine": 0.9944339238277451,
+        "entries": 36864,
+        "exact_entries": 0,
+        "relative_l2_delta": 0.24035201200892473
+      },
+      "layers.3.post_attention_norm.weight": {
+        "cosine": 0.9990509375420124,
+        "entries": 192,
+        "exact_entries": 0,
+        "relative_l2_delta": 0.1816137262652203
+      },
+      "layers.3.qkv_proj.weight": {
+        "cosine": 0.9785772151326428,
+        "entries": 110592,
+        "exact_entries": 0,
+        "relative_l2_delta": 0.2726698366165695
+      },
+      "lm_head.weight": {
+        "cosine": 0.8563143576220387,
+        "entries": 6146880,
+        "exact_entries": 1,
+        "relative_l2_delta": 0.531287234531979
+      },
+      "token_embedding.weight": {
+        "cosine": 0.9797426476984972,
+        "entries": 6146880,
+        "exact_entries": 22,
+        "relative_l2_delta": 0.26874755012724133
+      }
+    },
+    "relative_l2_delta": 0.4809949912225889,
+    "total_entries": 14654784
+  },
+  "teacher_model_loaded": false
+}

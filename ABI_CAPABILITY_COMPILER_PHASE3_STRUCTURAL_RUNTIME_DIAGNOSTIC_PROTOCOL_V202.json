@@ -1,0 +1,20 @@
+{
+  "format": "abi-capability-compiler-phase3-structural-runtime-diagnostic-protocol/1",
+  "protocol_id": "abi-capability-compiler-phase3-structural-runtime-diagnostic-v202",
+  "status": "PREREGISTERED_READ_ONLY_DIAGNOSTIC",
+  "effective_date": "2026-08-09",
+  "historical_evidence_changed": false,
+  "candidate_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_STRUCTURAL_CORE_MICROBATCH_REPAIR_V201.json",
+  "final_test_access": "PROHIBITED",
+  "training_authorized": false,
+  "objective": "Measure one first physical microbatch forward, loss, and unscaled backward without an optimizer step or artifact write; determine whether finite unscaled gradients would overflow V201's default AMP initial scale or whether kernel runtime itself owns the stall.",
+  "decision_rule": "If loss and unscaled gradients are finite but max(abs(gradient))*65536 exceeds fp16 maximum, authorize one replay with a preregistered safe initial GradScaler scale derived from the observed bound. If unscaled runtime itself projects beyond the campaign budget, record a runtime limit. Never create a checkpoint or optimizer update.",
+  "bindings": {
+    "abi/capability_compiler_phase3_structural_runtime_diagnostic.py": "d62699122bd5bb6472c172552a16fc7eff5450715691265cc998850e020127cb",
+    "tests/test_capability_compiler_phase3_structural_runtime_diagnostic.py": "955fd270e07b3e103faba9dba7f4a1b9f13a145a37e43cf47d629a895e91ac37",
+    "abi/capability_compiler_phase3_structural_core.py": "eddc7833b9d184b5c04890ab38b76ee267c1c148637191c512cd347f252e4f89",
+    "ABI_CAPABILITY_COMPILER_PHASE3_STRUCTURAL_CORE_MICROBATCH_REPAIR_V201.json": "aec6560ec710b2973e4d577daf8bfd5c283dbab60edfd1b9f87c36b8f4ec90ad",
+    "ABI_CAPABILITY_COMPILER_PHASE3_STRUCTURAL_CORE_BATCH16_RESOURCE_FAILURE_V200.json": "7a919c128e10a2fbd390f117a64e7b619d7bb168fb5d11c3c1262f054fa592bb"
+  },
+  "claim_boundary": "Read-only runtime and numerical attribution only; no training, quality, or Phase 3 claim."
+}

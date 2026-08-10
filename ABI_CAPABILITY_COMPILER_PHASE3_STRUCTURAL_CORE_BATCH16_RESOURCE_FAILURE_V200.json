@@ -1,0 +1,28 @@
+{
+  "format": "abi-capability-compiler-phase3-structural-core-resource-failure/1",
+  "status": "FAILED_BEFORE_FIRST_UPDATE_MEMORY_THRASHING_NO_CANDIDATE",
+  "effective_date": "2026-08-09",
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_STRUCTURAL_CORE_RUNTIME_REPAIR_V199.json",
+  "command": "C:/Python310/python.exe -m abi.capability_compiler_phase3_structural_core train --protocol ABI_CAPABILITY_COMPILER_PHASE3_STRUCTURAL_CORE_RUNTIME_REPAIR_V199.json",
+  "successful_updates": 0,
+  "candidate_directory_created": false,
+  "checkpoint_created": false,
+  "observed_lower_bound_seconds_without_first_update": 360,
+  "gpu": {
+    "device": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "observed_memory_used_mib": 15904,
+    "physical_memory_total_mib": 16384,
+    "observed_utilization_percent": [89, 91],
+    "observed_power_watts": [83, 80.71]
+  },
+  "process": {
+    "peak_working_set_bytes": 11942203392,
+    "paged_memory_bytes": 29271298048,
+    "cpu_seconds_observed": 376.75
+  },
+  "termination": "The still-unfinished first update was stopped after the memory and paging measurements to avoid an unbounded multi-week replay.",
+  "attribution": "The logical batch-16 full-sequence vocabulary logits saturated physical VRAM and paged heavily. This is a runtime batching failure, not a model-quality result and not a hard resource limit for compute-equivalent microbatching.",
+  "supported_repair": "One logical-batch-16 replay may use physical microbatches of four with four gradient accumulations. Each microbatch loss must be weighted by its valid response-position count so the logical full-batch mean objective, sample order, optimizer updates, and imported-information budget remain fixed.",
+  "scientific_fields_changed": false,
+  "final_test_accessed": false
+}

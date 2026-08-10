@@ -1,0 +1,29 @@
+{
+  "format": "abi-capability-compiler-phase3-structural-runtime-observability-correction/1",
+  "status": "CORRECTS_UNSUPPORTED_ZERO_UPDATE_INFERENCE",
+  "effective_date": "2026-08-09",
+  "historical_files_preserved": [
+    "ABI_CAPABILITY_COMPILER_PHASE3_STRUCTURAL_CORE_BATCH16_RESOURCE_FAILURE_V200.json",
+    "ABI_CAPABILITY_COMPILER_PHASE3_STRUCTURAL_CORE_SAFE_AMP_FAILURE_V208.json",
+    "ABI_CAPABILITY_COMPILER_PHASE3_STRUCTURAL_CORE_UNSCALED_STALL_V210.json"
+  ],
+  "correction": "The nested command wrapper buffered child stdout until process completion. Absence of a visible step-1 curve during an active command did not establish zero successful updates. Those processes were externally terminated before artifact serialization, so their exact completed-update counts are UNKNOWN.",
+  "facts_that_remain_verified": {
+    "candidate_directories_created": false,
+    "checkpoints_created": false,
+    "serialized_training_metadata_created": false,
+    "final_test_accessed": false,
+    "batch16_memory_observations_are_physical": true,
+    "v206_unscaled_numeric_measurements_are_valid": true,
+    "v211_ephemeral_full_update_measurements_are_valid": true
+  },
+  "v211_result": {
+    "status": "PASS_EPHEMERAL_UPDATE_DISCARDED",
+    "total_measured_seconds": 0.4872332999948412,
+    "optimizer_step_seconds": 0.018309300008695573,
+    "peak_cuda_allocated_bytes": 2246197248,
+    "preclip_gradient_norm": 1030.5667724609375
+  },
+  "decision": "Do not use buffered-output absence as a liveness signal. Allow the validated V209 replay to run to command completion. Preserve every externally terminated attempt as runtime history with update count unknown.",
+  "scientific_quality_evidence_from_terminated_runs": false
+}

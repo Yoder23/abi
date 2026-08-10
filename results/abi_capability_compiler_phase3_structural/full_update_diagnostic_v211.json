@@ -1,0 +1,55 @@
+{
+  "checkpoint_created": false,
+  "clip_seconds": 0.012859999987995252,
+  "ephemeral_optimizer_updates": 1,
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-structural-full-update-diagnostic/1",
+  "microbatches": [
+    {
+      "backward_seconds": 0.09120830000028946,
+      "forward_loss_seconds": 0.18141379998996854,
+      "input_shape": [
+        4,
+        140
+      ],
+      "loss": 5.756705284118652,
+      "microbatch": 0
+    },
+    {
+      "backward_seconds": 0.10574980000092182,
+      "forward_loss_seconds": 0.016613700005109422,
+      "input_shape": [
+        4,
+        235
+      ],
+      "loss": 13.42929744720459,
+      "microbatch": 1
+    },
+    {
+      "backward_seconds": 0.015299499995307997,
+      "forward_loss_seconds": 0.011194799997610971,
+      "input_shape": [
+        4,
+        187
+      ],
+      "loss": 3.6256966590881348,
+      "microbatch": 2
+    },
+    {
+      "backward_seconds": 0.0229552000091644,
+      "forward_loss_seconds": 0.011628899999777786,
+      "input_shape": [
+        4,
+        176
+      ],
+      "loss": 6.348967552185059,
+      "microbatch": 3
+    }
+  ],
+  "model_discarded": true,
+  "optimizer_step_seconds": 0.018309300008695573,
+  "peak_cuda_allocated_bytes": 2246197248,
+  "preclip_gradient_norm": 1030.5667724609375,
+  "status": "PASS_EPHEMERAL_UPDATE_DISCARDED",
+  "total_measured_seconds": 0.4872332999948412
+}

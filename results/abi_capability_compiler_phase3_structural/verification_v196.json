@@ -1,0 +1,78 @@
+{
+  "accounting_checks": {
+    "artifact_hash": true,
+    "complete_source_blocks_zero": true,
+    "final_parameters": true,
+    "logits_activations_zero": true,
+    "payload_below_ceiling": true,
+    "teacher_forward_zero": true
+  },
+  "claim_boundary": "Exact hostile extraction and host-conformance verification only; no English quality, Phase 3, or superiority claim.",
+  "exact_fp16_scalars_recomputed": 14654784,
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-structural-verifier/1",
+  "gates": {
+    "all_accounting_exact": true,
+    "all_selections_exact": true,
+    "all_tensor_values_exact": true,
+    "host_conformance": true,
+    "tensor_key_set_exact": true
+  },
+  "host_checks": {
+    "cpu_cuda_argmax_equal": true,
+    "cpu_logits_finite": true,
+    "cuda_logits_finite": true,
+    "parameter_count": true,
+    "strict_state_dict_load": true
+  },
+  "next_gate": "One preregistered structural-initialized acquisition candidate may be trained and autonomously screened.",
+  "peak_cuda_allocated_bytes": 1770818048,
+  "phase3_certified": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_STRUCTURAL_VERIFIER_PROTOCOL_V195.json",
+    "sha256": "0a31e0a0e2f043b5b326047304e493e3884830412f009c7d81d0bb2717b8307d"
+  },
+  "selection_matches": {
+    "layer_0_heads": true,
+    "layer_0_neurons": true,
+    "layer_10_heads": true,
+    "layer_10_neurons": true,
+    "layer_21_heads": true,
+    "layer_21_neurons": true,
+    "layer_31_heads": true,
+    "layer_31_neurons": true,
+    "residual": true
+  },
+  "status": "PASS_VERIFIED",
+  "teacher_present_at_inference": false,
+  "tensor_key_set_match": true,
+  "tensor_matches": {
+    "final_norm.weight": true,
+    "layers.0.down_proj.weight": true,
+    "layers.0.gate_up_proj.weight": true,
+    "layers.0.input_norm.weight": true,
+    "layers.0.o_proj.weight": true,
+    "layers.0.post_attention_norm.weight": true,
+    "layers.0.qkv_proj.weight": true,
+    "layers.1.down_proj.weight": true,
+    "layers.1.gate_up_proj.weight": true,
+    "layers.1.input_norm.weight": true,
+    "layers.1.o_proj.weight": true,
+    "layers.1.post_attention_norm.weight": true,
+    "layers.1.qkv_proj.weight": true,
+    "layers.2.down_proj.weight": true,
+    "layers.2.gate_up_proj.weight": true,
+    "layers.2.input_norm.weight": true,
+    "layers.2.o_proj.weight": true,
+    "layers.2.post_attention_norm.weight": true,
+    "layers.2.qkv_proj.weight": true,
+    "layers.3.down_proj.weight": true,
+    "layers.3.gate_up_proj.weight": true,
+    "layers.3.input_norm.weight": true,
+    "layers.3.o_proj.weight": true,
+    "layers.3.post_attention_norm.weight": true,
+    "layers.3.qkv_proj.weight": true,
+    "lm_head.weight": true,
+    "token_embedding.weight": true
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "format": "abi-capability-compiler-phase3-structural-runtime-diagnostic-reporter-failure/1",
+  "status": "MEASUREMENT_COMPLETED_SECOND_REPORTER_LITERAL_FAILED_NO_RESULT",
+  "effective_date": "2026-08-09",
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_STRUCTURAL_RUNTIME_DIAGNOSTIC_REPAIR_V204.json",
+  "training_updates": 0,
+  "checkpoint_created": false,
+  "failure_class": "NameError",
+  "failure": "A second result-only field used JSON false instead of Python False after the identical measurement completed.",
+  "repair_boundary": "Replace only the remaining reporter literal, compile the module, and replay the same read-only diagnostic.",
+  "final_test_accessed": false
+}

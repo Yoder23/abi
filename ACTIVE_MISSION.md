@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V184 CAUSAL-FIELD STUDENT FAILED, BRANCH CLOSED; WEIGHT-LEVEL FEASIBILITY DESIGN ONLY | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V190.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V197 STRUCTURAL-EXTRACTION CANDIDATE FAILED, BRANCH CLOSED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V214.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -30,7 +30,7 @@ evaluation-only, and no specialist record is eligible for English training.
 
 ## Controlling Phase 3 objective: qualify integrated capability realization
 
-The latest controlling state is V190. V168 produced a qualifying selective-
+The latest controlling state is V214. V168 produced a qualifying selective-
 boundary BPE representation at 4,999 fixed actions: exact 14,000-record
 acquisition and 1,400-record development reconstruction, maxima 182/304,
 59/100 instruction pointer exposure, and 14,407,080 matched parameters. The
@@ -57,6 +57,25 @@ acquisition sequences, 77.38% held-out teacher-forced action accuracy, and a
 19.50-point gap. The logit-distillation branch is closed. The only authorized
 next work is a no-model weight-level structural extraction/compression design;
 no further neural run is authorized.
+
+V191-V214 completed the only authorized weight-level structural branch. A new
+generic LayerCake v7 Phi-compatible host passed 629 tests, CPU/CUDA package
+identity, two-step incremental equivalence, and the unchanged sealed LayerCake
+verifier in its separate repository. ABI then selected complete attention
+heads, residual coordinates, and SwiGLU neurons from the pinned source and
+produced a 14,654,784-parameter artifact with zero complete source blocks.
+Hostile verification independently recomputed every selection and all
+14,654,784 fp16 scalars exactly and strict-loaded the result into v7.
+
+The matched 8,000-update conformance candidate nevertheless failed at
+858/1,400 with 42 collapses, zero coherence, zero fact-free reasoning, and a
+teacher-relative interval of [-29.43, -24.71] points. Its five-pass advantage
+over V184 is not significant: paired 95% interval [-0.36, +1.14] points.
+Attribution measured 97.75% acquisition action fit, 60.61% acquisition
+sequence fit, 83.44% held-out action fit, and a 14.31-point gap. Conformance
+changed 14,654,761 of 14,654,784 entries; global cosine to the extracted
+initialization is 0.88756. The result does not support nearby pruning, scale,
+step, loss, data, or seed variants. Phase 3 remains uncertified.
 
 V34 and V37 close the selected representation and host-tokenizer questions:
 the 4,999-action UTF-8 BPE surface represents all bound targets and matches the

@@ -80,8 +80,22 @@ Status date: 2026-08-09.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V190.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V214.json`. The original campaign
 contract and all historical evidence remain unchanged.
+
+V191-V214 tested the authorized weight-level structural route. The independent
+LayerCake repository construct-certified `lc-direct-neural-core/7`; ABI did
+not import its implementation. ABI's 14,654,784-parameter structural artifact
+retains zero complete source blocks and passed hostile verification of every
+selection and every fp16 scalar. Its matched conformance candidate failed at
+858/1,400 with 42 collapses, zero coherence, zero fact-free reasoning, and a
+teacher-relative interval of [-29.43, -24.71] points. The five-pass gain over
+V184 has paired interval [-0.36, +1.14] points. Attribution shows 97.75%
+acquisition action fit, 60.61% exact acquisition sequences, 83.44% held-out
+action fit, and a 14.31-point gap. Training changed all but 23 deployed
+entries, with global cosine 0.88756 to initialization. Close this branch and
+all nearby structural selection, scale, step, loss, data, and seed variants.
+Phase 3 remains uncertified.
 
 V177-V190 tested one materially distinct decoder-only causal probability-field
 route. The no-model gate passed at 14,000 records and 432,371 response

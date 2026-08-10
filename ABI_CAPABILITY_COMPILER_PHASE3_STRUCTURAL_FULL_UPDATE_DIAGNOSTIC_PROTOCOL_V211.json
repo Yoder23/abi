@@ -1,0 +1,20 @@
+{
+  "format": "abi-capability-compiler-phase3-structural-full-update-diagnostic-protocol/1",
+  "protocol_id": "abi-capability-compiler-phase3-structural-full-update-diagnostic-v211",
+  "status": "PREREGISTERED_EPHEMERAL_UPDATE_DIAGNOSTIC",
+  "effective_date": "2026-08-09",
+  "historical_evidence_changed": false,
+  "candidate_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_STRUCTURAL_CORE_UNSCALED_AMP_REPAIR_V209.json",
+  "final_test_access": "PROHIBITED",
+  "artifact_write_authorized": false,
+  "objective": "Time all four unscaled microbatch forward/backward passes, gradient clipping, and first AdamW state initialization/step independently on the frozen first logical batch. Discard the model and optimizer afterward.",
+  "decision_rule": "Use the measured slowest stage to authorize at most one targeted runtime repair. The ephemeral update cannot become a candidate, quality datum, or checkpoint.",
+  "bindings": {
+    "abi/capability_compiler_phase3_structural_full_update_diagnostic.py": "f4f6f483a49234efdfc555a0fc8829002a2f3687d4668a467c81e92354673753",
+    "tests/test_capability_compiler_phase3_structural_full_update_diagnostic.py": "ae64516f75cba72a2bec156882e05d479bb336c96368b33de3e19012d6540c27",
+    "abi/capability_compiler_phase3_structural_core.py": "13841659ac18ac8e0216cfc8b4693cbd6ec23267643cb3e64286a21847d67fc0",
+    "ABI_CAPABILITY_COMPILER_PHASE3_STRUCTURAL_CORE_UNSCALED_AMP_REPAIR_V209.json": "d6b51faf0b020aa185fad6a671fb5400ec44844329638b18fe9da848c101d806",
+    "ABI_CAPABILITY_COMPILER_PHASE3_STRUCTURAL_CORE_UNSCALED_STALL_V210.json": "eefa61cf06ee06367b232941028de5773acb4defa9ac5db189040848de5984ab"
+  },
+  "claim_boundary": "One ephemeral discarded optimizer update for runtime attribution only; no training or quality claim."
+}

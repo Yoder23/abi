@@ -1,0 +1,17 @@
+{
+  "format": "abi-capability-compiler-phase3-structural-core-runtime-failure/1",
+  "status": "FAILED_BEFORE_FIRST_UPDATE_SAFE_SCALE_STILL_RETRYING_NO_CANDIDATE",
+  "effective_date": "2026-08-09",
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_STRUCTURAL_CORE_SAFE_AMP_REPAIR_V207.json",
+  "successful_updates": 0,
+  "candidate_directory_created": false,
+  "checkpoint_created": false,
+  "observed_lower_bound_seconds_without_first_update": 120,
+  "observed_gpu_memory_used_mib": 6967,
+  "observed_peak_working_set_bytes": 1627152384,
+  "observed_paged_memory_bytes": 9932083200,
+  "attribution": "Memory remained bounded, while the independent unscaled V206 forward/backward completed in 0.2676 seconds with finite loss and gradients. Dynamic gradient scaling/retry behavior remains the isolated blocker.",
+  "supported_repair": "Disable GradScaler while retaining fp16 autocast, compute-equivalent 4x4 accumulation, deterministic cuBLAS, and the exact V197 scientific fields.",
+  "scientific_fields_changed": false,
+  "final_test_accessed": false
+}
