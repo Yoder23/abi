@@ -17,25 +17,28 @@ Status date: 2026-08-10
 **The ABI English-product moonshot is OPEN.**
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V430.json`. Phase 3 is **not
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V463.json`. Phase 3 is **not
 certified**: there is no qualified integrated teacher-derived English artifact.
-The latest bounded progressive-replacement work proved a stable layer-1
-factorized-attention oracle and a rank-935 target residual span, but every
-realizable compact coefficient path tested so far failed. The fixed analytic
-decoder scored 0.992399 cosine and 0.101680 relative RMSE; projecting the
-source SwiGLU scored 0.995873/0.083516; and a train-derived 98% contribution
-subset required 7,617/8,192 source neurons, still scored only
-0.995392/0.092606, and implied 103.64M projection MAdds/token. No component or
-failed checkpoint was promoted. The single-global-operator branch is closed.
-V430 bounds a dynamic-local successor to exactly five active source heads and
-432 active nonlinear units per token (9.978M projection MAdds, within the
-10.027M current layer envelope); only its read-only nonpromotional layer-1
-capacity oracle is authorized.
+V459 is the strongest strict development result at 1,304/1,400, but it has
+five genuine V2 repetition collapses and misses four capability gates. V463 is
+the zero-collapse Pareto result at 1,303/1,400 under historical V1 and
+1,307/1,400 under prospective surface-equivalence V2; abstention, coherence,
+fluent realization, and tone still fail. Neither checkpoint is promoted.
+
+V447 prospectively repaired a repetition detector that falsely labeled normal
+teacher prose as collapse. V461 prospectively added number-word/digit and the
+explicitly requested abstention phrase as surface equivalents. Historical V1
+evidence remains unchanged. The symmetric V461 audit moved the teacher from
+1,237 to 1,308 and V459 from 1,304 to 1,309 while leaving catastrophic
+controls at 4 and 10, proving both that the old evaluator was defective and
+that the current LayerCake deficit remains real. Only one sparse weak-
+capability residual on V463 using the already qualified 14-way router may be
+reviewed next.
 
 Phase 2 also remains externally blocked on 21,000 blinded judgments from three
 independent human raters. ABI must not claim fluent transfer, minimum-
 information English acquisition, Phase 3 completion, or superiority to LoRA
-or distillation. New compute is limited by V430 and must preserve the final CPU
+or distillation. New compute is limited by V463 and must preserve the final CPU
 execution gates.
 
 Three facts define the current checkpoint:

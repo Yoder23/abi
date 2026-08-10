@@ -1,0 +1,17 @@
+{
+  "format": "abi-capability-compiler-phase3-token-substrate-conformance-summary/1",
+  "version": 463,
+  "status": "FAIL_TOKEN_SUBSTRATE_CONFORMANCE_ZERO_COLLAPSE_PARETO",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {"path": "ABI_CAPABILITY_COMPILER_PHASE3_TOKEN_SUBSTRATE_CONFORMANCE_PROTOCOL_V462.json", "sha256": "dc9f132459279dedf0f148b9c3afd2dd1dc70a2db2901170cd78c3ff39cf1b87"},
+  "candidate": {"metadata_sha256": "dc2120b72cf7a3facb5e7fe95ac34fccd45c3e153b0b0f2d8d168e7d1b3e4038", "checkpoint_sha256": "d354eee236c1153a92e3b2d05f806fb4238438aebd2c8a889ed9dcb8f1f192c8", "new_parameters": 0, "changed_existing_tensors": 65},
+  "training": {"balanced_record_observations": 7000, "wall_seconds": 97.26991200001794, "peak_cuda_allocated_bytes": 2600775168},
+  "evaluation": {"result_sha256": "1e4b0c24bd1edb61462fda30ff5c404039ba67f32f0447cd07b74cb39383593d", "outputs_sha256": "e247ce93cbee78d7188f6ca4a1d5c7f144841df73fb964cac61f51fd3894bf90", "functional_passes_v1": 1303, "functional_passes_v2": 1307, "candidate_minus_teacher_lower_95_v1": 0.03, "repetition_collapses_v2": 0},
+  "weak_capabilities_v2": {"abstention": 0.75, "coherence": 0.77, "fluent_realization": 0.75, "tone_control": 0.82},
+  "decision": "Reject for quality and preserve as the zero-collapse Pareto candidate. Token-substrate optimization is closed. Candidate diversity is healthy and a V459/V463 oracle union still reaches only 1317/1400, so checkpoint selection cannot solve the deficit. Review one sparse weak-capability residual using the already three-seed-qualified 14-way router; do not repeat failed acquisition-from-weak-parent cake studies.",
+  "promotion_eligible": false,
+  "phase3_certified": false,
+  "final_test_accessed": false,
+  "claim_boundary": "Zero-collapse Pareto evidence with failed capability gates; no promotion, runtime, Phase 3, or superiority claim."
+}

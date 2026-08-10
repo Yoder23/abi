@@ -17,19 +17,21 @@ machine campaign is complete and adversarially rehashed, but Phase 2 is
 exist. Phase 2 is not certified. The user explicitly deferred the currently
 unavailable human raters.
 All completed Phase 3 model branches remain **COMPLETE_FAILED** without
-changing Phase 2's failed-closed status. The latest native causal branch proves
-a statistically positive teacher-state signal but fails absolute quality,
-teacher-relative, coherence, reasoning, and repetition gates. Phase 3 is not
-certified; Phases 4 through 8 remain locked.
+changing Phase 2's fail-closed status. V459 reaches 1,304/1,400 strict passes
+but has five genuine V2 collapses. V463 is the zero-collapse Pareto result at
+1,303/1,400 historical V1 and 1,307/1,400 prospective V2, but still fails
+abstention, coherence, fluent realization, and tone. Phase 3 is not certified;
+Phases 4 through 8 remain locked.
 
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V352.json` is the live state. The
-hostilely verified zero-source-block routed artifact fails autonomous English;
-its locally passing replacement operators do not preserve the native recurrent
-trajectory. Sequence-conformance, analytic trajectory, capability-factorized
-oracle, and fixed-byte macro-layer successors all failed their locked gates.
-No failed checkpoint was promoted, no final material was accessed, and no new
-experiment is authorized without a materially new representation. The text
-below preserves the earlier causal-substrate chronology. V93
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V463.json` is the live state. V447 and
+V461 prospectively repaired repetition and functional surface-equivalence
+constructs without overwriting historical evidence or rescuing a failed
+candidate. Output pointers, identity residuals, copy-balanced sweeps, token-
+substrate sweeps, and checkpoint selection are closed. No failed checkpoint
+was promoted and no final material was accessed. One sparse weak-capability
+residual using the already three-seed-qualified 14-way router is authorized
+for separate preregistration. The text below preserves the earlier causal-
+substrate chronology. V93
 hostile-verifies the 208,647-vector native causal substrate with 167,616 exact
 sampled fp16 scalar recomputations. V94 then scores 837/1,400 with 55 collapses,
 two generation errors, zero coherence, and zero fact-free reasoning. It gains

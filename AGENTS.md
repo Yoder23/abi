@@ -22,21 +22,19 @@ LayerCake cake.
 Status date: 2026-08-10.
 
 The controlling machine-readable state is now
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V430.json`. Phase 3 remains
-**UNCERTIFIED**. V417 established numerically stable all-head attention with
-compressed V/O; V419 established a passing rank-935 residual span. The V425
-analytic decoder, V427 projected source-SwiGLU oracle, and V429 single
-train-derived source-neuron subset all failed their unchanged held-out gates.
-V429 retained 7,617/8,192 neurons, still missed RMSE, and implied 103.64M
-projection MAdds/token, so the single-global-operator branch and nearby count,
-importance, threshold, global-MLP-rank, data, seed, route, and gate variants
-are closed. V430 completed the dynamic-local cost review and fixes the only
-authorized successor at five active source heads plus 432 active nonlinear
-units per token, with selection physically preceding projection. Only one
-read-only, nonpromotional layer-1 conditional-support capacity oracle is
-authorized; head, width, expert, data, seed, and gate sweeps remain prohibited.
-The final set remains prohibited, Phase 2 still requires 21,000 judgments from
-three independent human raters, and ABI superiority claims remain prohibited.
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V463.json`. Phase 3 remains
+**UNCERTIFIED**. V459 is the strongest strict-quality development checkpoint
+at 1,304/1,400 but has five genuine V2 collapses. V463 is the zero-collapse
+Pareto checkpoint at 1,303/1,400 under historical V1 and 1,307/1,400 under
+prospective functional V2; abstention, coherence, fluent realization, and tone
+still fail. Historical scores were not overwritten. V447 repetition and V461
+surface-equivalence are prospective symmetric construct repairs, not gate
+relaxations or promotions. Output pointers, identity residuals, copy-balanced
+sweeps, token-substrate sweeps, and checkpoint selection are closed. Only one
+separately preregistered sparse weak-capability residual on V463 may be
+reviewed, using the already three-seed-qualified 14-way router. Final access
+remains prohibited, Phase 2 still requires 21,000 judgments from three
+independent human raters, and ABI superiority claims remain prohibited.
 
 - Capability-compiler Phase 0 is **COMPLETE** under
   `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json`.

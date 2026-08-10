@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; NO QUALIFIED INTEGRATED ENGLISH ARTIFACT | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V430.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; ZERO-COLLAPSE PARETO STILL FAILS QUALITY | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V463.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -30,7 +30,28 @@ evaluation-only, and no specialist record is eligible for English training.
 
 ## Controlling Phase 3 objective: qualify integrated capability realization
 
-The controlling state is now V429. Stable all-head attention with compressed
+The controlling state is V463. V443 established a strong qualified-host
+starting point at 1,276/1,400 and a positive paired automated signal versus
+the teacher, but failed capability and repetition gates. A forced-route oracle
+recovered only 35/165 failures, rejecting simple route collision. V447 then
+repaired the repetition construct prospectively: teacher false collapses fell
+from 64 to zero and V443 fell from 43 to one genuine loop, while catastrophic
+controls remained strongly detected.
+
+Paired attribution found 56/81 candidate-specific failures were missing
+prompt-derived literals. Two output-side identity bridges failed and are
+closed. Copy-balanced transition optimization reached 1,304/1,400 with zero
+new inference parameters but five V2 collapses. Token-substrate conformance
+removed every collapse and reached 1,303 V1 / 1,307 V2 passes, but abstention,
+coherence, fluent realization, and tone remain below their locked gates. A
+V459/V463 oracle union reaches only 1,317/1,400, so checkpoint selection is not
+a solution. One sparse weak-capability residual using the already qualified
+14-way router is the only authorized successor. Phase 2's independent-human
+dependency separately prevents a final certificate.
+
+### Preserved chronological research log
+
+The controlling state at this historical point was V429. Stable all-head attention with compressed
 V/O passed at V417, and its train-derived rank-935 residual span passed at
 V419. Realization remains the blocker. V425's numerically valid LayerCake
 linear-plus-route decoder failed at 0.992399 cosine and 0.101680 relative RMSE.
