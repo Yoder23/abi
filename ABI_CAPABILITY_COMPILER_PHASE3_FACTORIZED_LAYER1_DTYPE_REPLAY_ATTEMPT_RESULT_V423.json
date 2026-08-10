@@ -1,0 +1,20 @@
+{
+  "format":"abi-capability-compiler-phase3-execution-incident/1",
+  "version":423,
+  "status_date":"2026-08-10",
+  "protocol":"ABI_CAPABILITY_COMPILER_PHASE3_FACTORIZED_LAYER1_DTYPE_REPLAY_PROTOCOL_V422.json",
+  "protocol_sha256":"f803f741b8c57de1ef496730099599e95213aad3df09e3846925d63d6bcf54ed",
+  "status":"EXECUTION_INVALID_VALIDATION_DTYPE_MISMATCH",
+  "scientific_verdict":null,
+  "capture_records_completed":4228,
+  "failure_stage":"HELD_OUT_PREDICTION_ASSEMBLY_BEFORE_FIRST_METRIC",
+  "failure_type":"RuntimeError",
+  "failure_message":"expected mat1 and mat2 to have the same dtype, but got: struct c10::BFloat16 != float",
+  "diagnosis":"The V422 replay cast only the concatenated training sparse-feature matrix. Per-record held-out sparse features retained their captured bfloat16 dtype.",
+  "component_written":false,
+  "artifact_written":false,
+  "final_test_accessed":false,
+  "phase3_certified":false,
+  "decision":"Preserve this as a second execution-invalid attempt. Authorize one origin-boundary replay that converts the 384-wide sparse activation to fp32 immediately when it is created, covering both training and held-out consumers. No equation, tensor value beyond dtype representation, rank, data, source, seed, solver, route, gate, or component-write rule may change.",
+  "claim_boundary":"Execution incident only; no architecture failure, quality, component, runtime, Phase 3, or superiority claim."
+}
