@@ -1,0 +1,151 @@
+{
+  "accounting": {
+    "attention_steps_completed": 512,
+    "complete_source_blocks_in_artifact": 0,
+    "fit_wall_seconds": 11.57868750000489,
+    "peak_cuda_allocated_bytes": 9681142784,
+    "peak_process_rss_bytes": 2899853312,
+    "stored_logits": 0,
+    "stored_raw_activations": 0
+  },
+  "calibration": {
+    "maximum_sequence_tokens": 128,
+    "tokens": 33189,
+    "train_records": 420,
+    "validation_records": 28
+  },
+  "claim_boundary": "Sequential layer-local replacement evidence only; no autonomous English quality, measured inference, Phase 3 certificate, or superiority claim.",
+  "copied_substrate": {
+    "parameters": 196899840,
+    "path": "results/abi_capability_compiler_phase3_progressive_replacement/extraction_replay_v222/copied_substrate.safetensors",
+    "sha256": "917635d5c810679490b8e039d0bb5fe9a9efa166cba956d0211a8294adf28e8b",
+    "unchanged_after_fit": true
+  },
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-direct-linear-sequential-fit/1",
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "machine": "Sam"
+  },
+  "layers": [
+    {
+      "attention_steps": 256,
+      "basis_energy_explained": 0.9088393449783325,
+      "curves": [
+        {
+          "attention_cosine": 0.5989482402801514,
+          "attention_relative_rmse": 1.0,
+          "loss": 1.0401052236557007,
+          "step": 1
+        },
+        {
+          "attention_cosine": 0.9776172637939453,
+          "attention_relative_rmse": 0.2691076993942261,
+          "loss": 0.07465722411870956,
+          "step": 64
+        },
+        {
+          "attention_cosine": 0.9771298170089722,
+          "attention_relative_rmse": 0.2736600935459137,
+          "loss": 0.07717686146497726,
+          "step": 128
+        },
+        {
+          "attention_cosine": 0.9816111922264099,
+          "attention_relative_rmse": 0.24363131821155548,
+          "loss": 0.06119510158896446,
+          "step": 192
+        },
+        {
+          "attention_cosine": 0.9823022484779358,
+          "attention_relative_rmse": 0.24620984494686127,
+          "loss": 0.062389060854911804,
+          "step": 256
+        }
+      ],
+      "effective_ridge": 0.002182050132751465,
+      "layer": 0,
+      "map_train_observations": 31001,
+      "maximum_validation_attention_relative_rmse": 0.27422037720680237,
+      "maximum_validation_relative_rmse": 0.6999046802520752,
+      "mean_validation_attention_cosine": 0.9844389387539455,
+      "mean_validation_attention_relative_rmse": 0.23302442580461502,
+      "mean_validation_output_cosine": 0.9811452180147171,
+      "mean_validation_relative_rmse": 0.21068148581045015,
+      "minimum_validation_attention_cosine": 0.9799520373344421,
+      "minimum_validation_output_cosine": 0.8683176040649414,
+      "passed": true,
+      "training_coefficient_relative_rmse": 0.12376517802476883
+    },
+    {
+      "attention_steps": 256,
+      "basis_energy_explained": 0.8599783182144165,
+      "curves": [
+        {
+          "attention_cosine": 0.9256799221038818,
+          "attention_relative_rmse": 1.0,
+          "loss": 1.007431983947754,
+          "step": 1
+        },
+        {
+          "attention_cosine": 0.966559886932373,
+          "attention_relative_rmse": 0.7239117622375488,
+          "loss": 0.5273922681808472,
+          "step": 64
+        },
+        {
+          "attention_cosine": 0.9709469079971313,
+          "attention_relative_rmse": 0.6198447346687317,
+          "loss": 0.3871127963066101,
+          "step": 128
+        },
+        {
+          "attention_cosine": 0.974070131778717,
+          "attention_relative_rmse": 0.6008281707763672,
+          "loss": 0.36358746886253357,
+          "step": 192
+        },
+        {
+          "attention_cosine": 0.9764586687088013,
+          "attention_relative_rmse": 0.560129702091217,
+          "loss": 0.3160994350910187,
+          "step": 256
+        }
+      ],
+      "effective_ridge": 0.006317339324951172,
+      "layer": 1,
+      "map_train_observations": 31001,
+      "maximum_validation_attention_relative_rmse": 0.82176673412323,
+      "maximum_validation_relative_rmse": 1.971298098564148,
+      "mean_validation_attention_cosine": 0.9751558665718351,
+      "mean_validation_attention_relative_rmse": 0.5645789929798671,
+      "mean_validation_output_cosine": 0.9541092621428626,
+      "mean_validation_relative_rmse": 0.529342287353107,
+      "minimum_validation_attention_cosine": 0.9453320503234863,
+      "minimum_validation_output_cosine": 0.7815313935279846,
+      "passed": false,
+      "training_coefficient_relative_rmse": 0.2880829870700836
+    }
+  ],
+  "next_gate": "Close this exact branch and preserve its failure.",
+  "phase3_certified": false,
+  "protocol_sha256": "fcf546b3ad4fdb014f06a9a73c61bfea425a51d24cff351b8ad448dfc026e60b",
+  "replacement": {
+    "analytically_imported_parameters": 37847040,
+    "file_bytes": 160668368,
+    "fitted_attention_parameters": 42473472,
+    "parameters": 80320512,
+    "path": "replacement_weights.safetensors",
+    "sha256": "ccbdd5a24d4b50ccf5358821214234b39fc5fb41799700cdfadf66c920e19af1",
+    "tensor_keys": 256
+  },
+  "source": {
+    "model": "microsoft/Phi-3-mini-4k-instruct",
+    "revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "teacher_load_seconds": 4.173633099999279,
+    "teacher_present_in_artifact": false
+  },
+  "status": "FAIL_LOCAL_FIT_BRANCH_CLOSED",
+  "teacher_required_at_inference": false,
+  "training_performed": true
+}
