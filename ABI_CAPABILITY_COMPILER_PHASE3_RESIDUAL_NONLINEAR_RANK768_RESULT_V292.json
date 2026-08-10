@@ -1,0 +1,42 @@
+{
+  "format": "abi-capability-compiler-phase3-residual-nonlinear-rank768-result/1",
+  "version": 292,
+  "status": "FAIL_ITERATIVE_NONLINEAR_CORRECTION_BRANCH_CLOSED",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_RESIDUAL_NONLINEAR_RANK768_FIT_PROTOCOL_V291.json",
+    "sha256": "609d056b6ead1c629b27df6a8810e97f8c49e3870f617c1979252450b8f1930c"
+  },
+  "raw_evidence": {
+    "metadata": "results/abi_capability_compiler_phase3_dual_attention_nonlinear/layer1_fit_v292/metadata.json",
+    "metadata_sha256": "7fde21f37118d8909759c0804592a8610ab1659d71ace4557072e850eb4ad363",
+    "checkpoint": "results/abi_capability_compiler_phase3_dual_attention_nonlinear/layer1_fit_v292/layer1_residual_nonlinear_rank768.safetensors",
+    "checkpoint_sha256": "f1a281ba01a1779ed57a9b48d4b702abeee52e7257258ee3933621c3278b0377"
+  },
+  "measurements": {
+    "linear_baseline_mean_output_cosine": 0.9766054579189846,
+    "nonlinear_mean_output_cosine": 0.9786978704588754,
+    "absolute_cosine_improvement": 0.0020924125398907865,
+    "locked_mean_output_cosine_minimum": 0.98,
+    "cosine_shortfall": 0.0013021295411246305,
+    "nonlinear_mean_relative_rmse": 0.36093387273805483,
+    "oracle_mean_output_cosine": 0.99557478087289,
+    "passed": false
+  },
+  "decision": "Close the iterative hidden384 correction under its no-sweep rule. Preserve its checkpoint. The oracle remains ample while both learned corrections narrowly fail; authorize one read-only analytic sparse source-neuron feature audit at the same fixed width384 using all train observations and no retained source block.",
+  "authorized_next_action": "PREREGISTER_ONE_READ_ONLY_WIDTH384_SPARSE_SOURCE_NEURON_ANALYTIC_COEFFICIENT_AUDIT",
+  "prohibited_actions": [
+    "iterative_nonlinear_step_sweep",
+    "iterative_nonlinear_data_sweep",
+    "iterative_nonlinear_seed_sweep",
+    "hidden_width_sweep",
+    "rank_sweep",
+    "gate_change",
+    "final_test_access"
+  ],
+  "artifact_promoted": false,
+  "final_test_accessed": false,
+  "phase3_certified": false,
+  "claim_boundary": "Negative bounded layer-1 nonlinear evidence only; no host, full artifact, English quality, physical runtime, Phase 3 certificate, or superiority claim."
+}
