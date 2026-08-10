@@ -80,7 +80,7 @@ Status date: 2026-08-09.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V240.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V242.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 V215-V230 opened one materially distinct progressive source-block replacement
@@ -133,6 +133,16 @@ measured blocker is therefore coefficient mapping/optimization, not a rank-192
 output ceiling. Do not expand or sweep MLP rank. One no-model feasibility study
 may retain rank 192 while making the training-derived residual mean and output
 basis immutable imported substrate and training only the coefficient map.
+
+V241/V242 passed that no-model gate: the basis-aligned target deploys
+291,382,272 parameters in 582,764,544 fp16 bytes, imports 18,972,672 basis/mean
+parameters, trains 75,509,760 attention/coefficient-map parameters, retains the
+same active MAC count and 19.21x theoretical margin, and contains zero source
+blocks. The separate LayerCake v11 generic host then passed 645 tests and its
+unchanged sealed verifier at commit `cc6ccea`. Both results remain construct/
+feasibility only. One fail-fast local GPU protocol may derive bases and means
+from the fixed training records, store no raw activations, and directly
+supervise coefficients under the unchanged final local gate.
 
 V191-V214 tested the authorized weight-level structural route. The independent
 LayerCake repository construct-certified `lc-direct-neural-core/7`; ABI did

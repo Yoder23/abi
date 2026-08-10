@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V240 RANK EXPANSION REJECTED, BASIS-ALIGNED COEFFICIENT MAP NEXT | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V240.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V242 BASIS-ALIGNED FEASIBILITY/HOST PASS, LOCAL COEFFICIENT FIT NEXT | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V242.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
