@@ -1,0 +1,70 @@
+{
+  "format": "abi-capability-compiler-phase3-residual-attention-fit/1",
+  "protocol_id": "abi-capability-compiler-phase3-residual-attention-fit-v283",
+  "status": "PREREGISTERED_BOUNDED_RESIDUAL_ATTENTION_FIT",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V282.json",
+  "historical_evidence_changed": false,
+  "device": "cuda",
+  "final_test_access": "PROHIBITED",
+  "base_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_LINEAR_SEQUENTIAL_FIT_PROTOCOL_V255.json",
+  "base_checkpoints": {
+    "0": {
+      "path": "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_00.safetensors",
+      "sha256": "b1489e35f2a47337de347e0d009d6706923c99fd91ebf4b54d9804bf3433d9e3"
+    },
+    "1": {
+      "path": "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_01.safetensors",
+      "sha256": "85c31bcaa878e7ba65f6b6bdbe8ed0fe76460d38ef5134d9889f2a032391002b"
+    }
+  },
+  "qualified_primary_checkpoint": {
+    "path": "results/abi_capability_compiler_phase3_mlp_aware_attention/layer1_fit_v278/layer1_attention_weights.safetensors",
+    "sha256": "a0d350fb063c70c4af27fd772c304cbfdb3d283a231d28a631c7f3b32905465d"
+  },
+  "secondary_architecture": {
+    "full_width": 3072,
+    "bottleneck_width": 192,
+    "attention_heads": 2,
+    "intermediate_size": 768,
+    "rms_epsilon": 1e-05,
+    "rope_theta": 10000.0
+  },
+  "training": {
+    "seed": 240225,
+    "steps": 256,
+    "record_offset": 512,
+    "learning_rate": 0.001,
+    "optimizer": "AdamW",
+    "weight_decay": 0.01,
+    "gradient_clip_norm": 1.0,
+    "cosine_weight": 0.1,
+    "curve_interval": 64,
+    "trainable": "new width192 secondary attention parameters only",
+    "frozen": "qualified V278 primary attention, copied full-width norms, prefix, complete source MLP",
+    "initialization": "deterministic secondary path with exactly zero attention-output projection",
+    "loss": "equal squared attention-relative-RMSE plus final-relative-RMSE plus normalized feature-RMSE, with fixed cosine term"
+  },
+  "gate": {
+    "mean_relative_rmse_maximum": 0.85,
+    "mean_output_cosine_minimum": 0.98
+  },
+  "decision_rule": "Starting from the immutable V278 primary checkpoint, train exactly one deterministic zero-output parallel width192 residual-attention path for exactly 256 MLP-aware updates on the unchanged calibration corpus and gates. The primary checkpoint must remain byte-identical. Pass only if the combined downstream validation clears both unchanged local thresholds. Failure closes this residual-attention correction branch; no step, data, seed, or gate sweep is authorized.",
+  "bindings": {
+    "abi/capability_compiler_phase3_residual_attention_fit.py": "5c0954a56bc69eb13a6a1e19e9a697c76db130a7115b6ab3892c866f2c0ff3ab",
+    "tests/test_capability_compiler_phase3_residual_attention_fit.py": "5b5fa41c847e4de2e653ab05177a33e2fc2b5deeba68f0554152f0594a0b3c2a",
+    "abi/capability_compiler_phase3_direct_linear_sequential_fit.py": "dca38cc8bf86047669ce08d7f13c05600f9c28575c1b09797f7faea7de671663",
+    "abi/capability_compiler_phase3_dual_path_local_fit.py": "9b36db57fbef4c9e9e960094e261b92716809e9cb1830acb5e4173ffe7cf19e2",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V282.json": "6440ae3e6d0eae240961cf007f3847f98425bd2c668d40c102ca2fe1c3d45d1c",
+    "ABI_CAPABILITY_COMPILER_PHASE3_WIDTH384_MLP_AWARE_RESULT_V282.json": "a04dd88da4bccc306a9428a7f8e9a83fdbef00d559ad34b7182d08366613cdcb",
+    "ABI_CAPABILITY_COMPILER_PHASE3_MLP_AWARE_ATTENTION_FIT_PROTOCOL_V277.json": "804b38ecbadc0ab977ae953e16dacbc53e15ddc3f1ad014644b66dc4d34ae6bd",
+    "ABI_CAPABILITY_COMPILER_PHASE3_MLP_AWARE_ATTENTION_RESULT_V278.json": "967ecf2c42ceb6c4f13d79cc553e165d027af8e282efb17c6dcc250278ecae63",
+    "ABI_CAPABILITY_COMPILER_PHASE3_WIDTH384_ATTENTION_FEASIBILITY_RESULT_V280.json": "73f298e5453c7092cfc48c895ac46aeb52518df5437eb0b9afc886475179c300",
+    "ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_LINEAR_SEQUENTIAL_FIT_PROTOCOL_V255.json": "fcf546b3ad4fdb014f06a9a73c61bfea425a51d24cff351b8ad448dfc026e60b",
+    "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_00.safetensors": "b1489e35f2a47337de347e0d009d6706923c99fd91ebf4b54d9804bf3433d9e3",
+    "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_01.safetensors": "85c31bcaa878e7ba65f6b6bdbe8ed0fe76460d38ef5134d9889f2a032391002b",
+    "results/abi_capability_compiler_phase3_mlp_aware_attention/layer1_fit_v278/metadata.json": "2b43496df9028f93cfb8649e6d3edfecb4e94ef80f02e890ca90c9097dd627e7",
+    "results/abi_capability_compiler_phase3_mlp_aware_attention/layer1_fit_v278/layer1_attention_weights.safetensors": "a0d350fb063c70c4af27fd772c304cbfdb3d283a231d28a631c7f3b32905465d"
+  },
+  "claim_boundary": "Bounded layer-1 residual-attention interface fit only; no host, artifact, English quality, runtime, certificate, or superiority claim."
+}
