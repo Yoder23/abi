@@ -1,6 +1,6 @@
 # ABI active mission
 
-Status date: 2026-08-09
+Status date: 2026-08-10
 
 ## State
 
@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V246 CLOSED-FORM COEFFICIENT MAP PASS, DIRECT-LINEAR HOST NEXT | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V246.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; NO QUALIFIED INTEGRATED ENGLISH ARTIFACT | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V352.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -29,6 +29,18 @@ of the failed records were reclassified. Specialist inventories are
 evaluation-only, and no specialist record is eligible for English training.
 
 ## Controlling Phase 3 objective: qualify integrated capability realization
+
+The controlling state is now V352. A 536,758,275-parameter routed artifact was
+assembled and hostilely verified with zero source blocks, but its autonomous
+replay failed before completing the first capability gate. Read-only
+attribution found locally passing operators while the native global trajectory
+degraded. Subsequent bounded repairs also failed: late-layer and all-layer
+cached-sequence conformance, three-route trajectory retargeting, fourteen-
+capability oracle factorization, and a fixed-byte sixteen-stage macro-layer
+successor. Every failure is sealed, no failed checkpoint was promoted, and the
+final set remains untouched. No experiment is currently authorized without a
+materially new representation. Phase 2's independent-human dependency
+separately prevents a final Phase 3 certificate.
 
 The latest controlling state is V240. V215-V230 established a corrected,
 source-aligned progressive-replacement path and closed its fused operator at

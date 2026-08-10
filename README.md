@@ -12,9 +12,24 @@ artifacts are acquisition material, not deployable cakes.
 
 ## Current status
 
-Status date: 2026-08-07
+Status date: 2026-08-10
 
 **The ABI English-product moonshot is OPEN.**
+
+The machine-readable live state is
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V352.json`. Phase 3 is **not
+certified**: there is no qualified integrated teacher-derived English artifact.
+The hostilely verified 536,758,275-parameter routed artifact contains zero
+source blocks, but autonomous replay fails. Bounded late-layer and all-layer
+sequence conformance, three-route trajectory retargeting, fourteen-capability
+oracle factorization, and a fixed-byte sixteen-stage macro-layer successor all
+failed their locked gates. No failed checkpoint was promoted.
+
+Phase 2 also remains externally blocked on 21,000 blinded judgments from three
+independent human raters. ABI must not claim fluent transfer, minimum-
+information English acquisition, Phase 3 completion, or superiority to LoRA
+or distillation. New compute requires a materially new representation that
+addresses both local operator fidelity and recurrent trajectory preservation.
 
 Three facts define the current checkpoint:
 

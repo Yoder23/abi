@@ -1,6 +1,6 @@
 # ABI current project status
 
-Status date: 2026-08-07
+Status date: 2026-08-10
 
 ## Executive state
 
@@ -22,7 +22,14 @@ a statistically positive teacher-state signal but fails absolute quality,
 teacher-relative, coherence, reasoning, and repetition gates. Phase 3 is not
 certified; Phases 4 through 8 remain locked.
 
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V116.json` is the live state. V93
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V352.json` is the live state. The
+hostilely verified zero-source-block routed artifact fails autonomous English;
+its locally passing replacement operators do not preserve the native recurrent
+trajectory. Sequence-conformance, analytic trajectory, capability-factorized
+oracle, and fixed-byte macro-layer successors all failed their locked gates.
+No failed checkpoint was promoted, no final material was accessed, and no new
+experiment is authorized without a materially new representation. The text
+below preserves the earlier causal-substrate chronology. V93
 hostile-verifies the 208,647-vector native causal substrate with 167,616 exact
 sampled fp16 scalar recomputations. V94 then scores 837/1,400 with 55 collapses,
 two generation errors, zero coherence, and zero fact-free reasoning. It gains

@@ -19,7 +19,19 @@ LayerCake cake.
 
 ## Current campaign state
 
-Status date: 2026-08-09.
+Status date: 2026-08-10.
+
+The controlling machine-readable state is now
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V352.json`. Phase 3 remains
+**UNCERTIFIED**. The hostilely verified routed artifact contains zero source
+blocks but fails autonomous English. V340/V342 cached-sequence conformance,
+V346 trajectory retargeting, V348 capability-oracle factorization, and V352
+macro-layer fitting all failed their unchanged gates and wrote no promoted
+checkpoint. Their nearby step, loss, rank, width, route, seed, and data variants
+are closed. No further experiment is authorized without a materially new
+representation addressing both operator fidelity and recurrent accumulation.
+The final set remains prohibited, Phase 2 still requires 21,000 judgments from
+three independent human raters, and ABI superiority claims remain prohibited.
 
 - Capability-compiler Phase 0 is **COMPLETE** under
   `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json`.
@@ -79,7 +91,7 @@ Status date: 2026-08-09.
   generation and LayerCake host certification are not.
 - The ABI moonshot is **not complete**.
 
-The machine-readable live state is
+The earlier historical state at this point in the chronology was
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V254.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
