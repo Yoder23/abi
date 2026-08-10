@@ -1,0 +1,65 @@
+{
+  "format": "abi-capability-compiler-phase3-weak-support-audit-summary/1",
+  "version": 468,
+  "status": "PASS_MIXED_SUPPORT_AND_CAUSAL_EXPOSURE_FAILURE_ATTRIBUTED",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_WEAK_SUPPORT_AUDIT_PROTOCOL_V467.json",
+    "sha256": "3b6d7d82d2aea96d7b2eecd33d095b3b5f20a60167186fe6304973f1fda905ad"
+  },
+  "result": {
+    "path": "results/abi_capability_compiler_phase3_weak_support_audit/audit_v468/result.json",
+    "sha256": "4c9aba883279a59a76c0dd390ef84abc2b3c34b5122afcbada1fe431946f503d",
+    "raw_replay_sha256": "89ed81a97cc417fe7762e9718b32cdd901da736f05f239688915789f85dbfb08"
+  },
+  "headline": {
+    "minimum_acquisition_teacher_forced_top1": 0.9888467014712862,
+    "minimum_development_teacher_forced_top1": 0.7405228758169935,
+    "autonomous_acquisition_exact_replay": 0.8,
+    "neural_training_performed": false,
+    "teacher_model_loaded": false
+  },
+  "per_capability": {
+    "abstention": {
+      "acquisition_top1": 0.9933234942722609,
+      "development_top1": 0.7405228758169935,
+      "target_fourgram_coverage": 0.4830827067669173,
+      "autonomous_exact_replay": 0.68,
+      "attribution": "MATERIAL_HELDOUT_SUPPORT_GAP_AND_EXPOSURE_GAP"
+    },
+    "coherence": {
+      "acquisition_top1": 0.9994517543859649,
+      "development_top1": 0.9887865438526231,
+      "target_fourgram_coverage": 0.6906835002176752,
+      "autonomous_exact_replay": 0.96,
+      "attribution": "HELDOUT_TEACHER_FORCED_FIT_HIGH_BUT_ONE_AUTONOMOUS_FAMILY_FAILS_CAUSAL_STATE_RECOVERY"
+    },
+    "fluent_realization": {
+      "acquisition_top1": 0.991044776119403,
+      "development_top1": 0.8874622356495468,
+      "target_fourgram_coverage": 0.7597402597402597,
+      "autonomous_exact_replay": 0.88,
+      "attribution": "MODERATE_HELDOUT_SUPPORT_AND_EXPOSURE_GAP"
+    },
+    "tone_control": {
+      "acquisition_top1": 0.9888467014712862,
+      "development_top1": 0.8020331728196897,
+      "target_fourgram_coverage": 0.5473110959836623,
+      "autonomous_exact_replay": 0.68,
+      "teacher_functional_v2": 0.81,
+      "attribution": "MATERIAL_SUPPORT_AND_EXPOSURE_GAP_WITH_SINGLE_TEACHER_OUTPUT_QUALITY_BELOW_ABSOLUTE_GATE"
+    }
+  },
+  "family_structure": {
+    "abstention_index_mod4_1_parent_v2": "0/25 while teacher V2 is 25/25",
+    "coherence_index_mod4_1_parent_v2": "6/25 while teacher V2 is 25/25",
+    "fluent_index_mod4_3_parent_v2": "0/25 while teacher V2 is 22/25",
+    "tone_teacher_v2_total": "81/100, below the locked 90/100 absolute point gate"
+  },
+  "decision": "Do not scale or sweep CE-only residuals. The next candidate must use independently constructed acquisition prompts and explicit quality filtering for abstention, fluent realization, and tone, plus causal rollout/state-recovery supervision for coherence. Preserve strong-capability anchors and all imported-information accounting. Because the single teacher response distribution itself misses the tone gate, unfiltered single-sequence imitation is insufficient.",
+  "promotion_eligible": false,
+  "phase3_certified": false,
+  "final_test_accessed": false,
+  "claim_boundary": "Read-only limiting-factor attribution; no quality promotion, Phase 3, or superiority claim."
+}
