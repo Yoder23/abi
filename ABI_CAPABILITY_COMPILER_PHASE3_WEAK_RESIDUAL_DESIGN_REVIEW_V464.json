@@ -1,0 +1,62 @@
+{
+  "format": "abi-capability-compiler-phase3-weak-residual-design-review/1",
+  "version": 464,
+  "status": "PASS_ONE_MATERIALLY_DISTINCT_BOUNDED_CORRECTIVE_BRIDGE_JUSTIFIED",
+  "status_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V463.json",
+  "historical_evidence_changed": false,
+  "measured_parent": {
+    "candidate": "V463",
+    "strict_v1_passes": 1303,
+    "functional_v2_passes": 1307,
+    "repetition_collapses_v2": 0,
+    "weak_capabilities_v2": {
+      "abstention": 0.75,
+      "coherence": 0.77,
+      "fluent_realization": 0.75,
+      "tone_control": 0.82
+    },
+    "strong_capabilities": 10,
+    "strong_capability_minimum_v1_passes_per_100": 98
+  },
+  "prior_negative_evidence": {
+    "v33_final_only_cakes": "Rejected because a final-logit residual could not write capability information into persistent transformer state on the then-weak parent.",
+    "v37_shared_deep_adapters": "Rejected before full training because fourteen installed rank-32 adapters plus an internal router exceeded the locked RSS gate by 897024 bytes.",
+    "why_not_a_repeat": [
+      "V463 is a strong 1303/1400 zero-collapse parent, not an acquisition-from-weak-parent model.",
+      "Only four measured weak capabilities activate correction; ten strong routes are an explicit bit-exact bypass.",
+      "One rank-64 nonlinear residual is shared across all three blocks instead of installing fourteen complete adapters.",
+      "The already three-seed-qualified V45/V46 router is reused unchanged rather than training another embedded router.",
+      "The bridge is a separately hashed ABI host artifact and the sealed V463 checkpoint remains immutable."
+    ]
+  },
+  "bounded_architecture": {
+    "module": "one shared pre-block nonlinear residual",
+    "width": 768,
+    "rank": 64,
+    "route_codes": 4,
+    "route_code_dimensions_each": 128,
+    "trainable_parameters": 100352,
+    "new_inference_parameters": 100352,
+    "shared_block_invocations_for_active_routes": 3,
+    "strong_route_residual_invocations": 0,
+    "external_router_parameters_unchanged": 1058040,
+    "source_parameters_copied": 0,
+    "source_blocks_retained": 0,
+    "teacher_present_at_inference": false,
+    "canonical_layercake_artifact_changed": false
+  },
+  "cost_comparison": {
+    "v37_installed_capability_adapters": 14,
+    "v37_adapter_rank": 32,
+    "v465_installed_corrective_residuals": 1,
+    "v465_residual_rank": 64,
+    "v465_bridge_checkpoint_bytes_upper_bound": 450000,
+    "quality_first": true,
+    "runtime_measurement_deferred_until_quality_pass": true
+  },
+  "decision": "Preregister exactly one seed, rate, step count, rank, loss, and four-capability scope. Require strict V1 gates, zero V2 collapse, exact qualified routing, and byte-exact V463 outputs on every strong-capability prompt before replication or runtime work. Any miss closes this architecture without a nearby sweep.",
+  "final_test_accessed": false,
+  "phase3_certified": false,
+  "claim_boundary": "Design and evidence review only; no quality, speed, memory, Phase 3, or superiority claim."
+}
