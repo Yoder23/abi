@@ -1,0 +1,24 @@
+{
+  "ambiguous_stored_rows": [],
+  "artifact_promoted": false,
+  "checkpoint_written": false,
+  "claim_boundary": "Read-only exact fp16 source-neuron identity recovery only; no repaired layer, artifact, English quality, runtime, certificate, or superiority claim.",
+  "exact_matches": 384,
+  "extraction_protocol_sha256": "6c20f2a6f11b78225c1833dd839582c05c0230410db49fc3623a0c787a660789",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-routed-v15-layer2-neuron-identity-audit/1",
+  "identity": {
+    "ordered_indices_sha256": "f1b229b7907cb68f8cb4059ff852d5042346754c5b249f91efb98cb835e17a6c",
+    "path": "source_neuron_identity.json",
+    "sha256": "8b66d584e6bab88ae26f00ff64ede9a65b245e96313272aa03b5f3006b9e3397"
+  },
+  "passed": true,
+  "phase3_certified": false,
+  "protocol_sha256": "ded22a50d8af017d435f3606ab7801ca57d433a0397e39ebcb5b2bf381124368",
+  "source_neurons": 8192,
+  "status": "PASS_EXACT_NEURON_IDENTITIES_RECOVERED",
+  "stored_sparse_width": 384,
+  "training_performed": false,
+  "unique_recovered_indices": 384,
+  "unmatched_stored_rows": []
+}
