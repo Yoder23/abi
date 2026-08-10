@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V236 DUAL-PATH LOCAL GATE FAILED, READ-ONLY MLP-RANK AUDIT NEXT | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V236.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V240 RANK EXPANSION REJECTED, BASIS-ALIGNED COEFFICIENT MAP NEXT | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V240.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -30,7 +30,7 @@ evaluation-only, and no specialist record is eligible for English training.
 
 ## Controlling Phase 3 objective: qualify integrated capability realization
 
-The latest controlling state is V236. V215-V230 established a corrected,
+The latest controlling state is V240. V215-V230 established a corrected,
 source-aligned progressive-replacement path and closed its fused operator at
 layer 0 (0.96709 cosine against the locked 0.98 floor). V231/V232 then passed
 no-model feasibility for separate attention and MLP paths, and the separate
@@ -46,6 +46,15 @@ attention. No dual loss, step, seed, threshold, symmetric-width, or nearby
 sweep is allowed. One read-only source-MLP residual rank audit is authorized
 to select or reject a materially asymmetric sparse-MLP successor. Phase 2's
 three-rater dependency still prevents a final Phase 3 certificate.
+
+The fixed read-only V237/V239 rank audit then rejected output-rank expansion.
+Rank 512 explained 97.749% of validation-centered MLP residual energy, below
+the preregistered 98% floor. Yet the rank-192 oracle already achieved 0.99245
+mean final cosine and 0.13025 relative RMSE, both comfortably beyond the local
+gate. The measured problem is learning coefficients, not output rank. One
+no-model feasibility study may keep rank 192 and active compute essentially
+fixed while importing an immutable training-derived residual mean and output
+basis and fitting only the coefficient map. No rank or width sweep is allowed.
 
 Preserved history follows. V168 produced a qualifying selective-
 boundary BPE representation at 4,999 fixed actions: exact 14,000-record

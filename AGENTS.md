@@ -80,7 +80,7 @@ Status date: 2026-08-09.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V236.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V240.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 V215-V230 opened one materially distinct progressive source-block replacement
@@ -123,6 +123,16 @@ threshold, symmetric-width, and nearby variants. One read-only source-MLP
 residual rank audit may now determine whether the measured post-attention miss
 supports a materially asymmetric sparse-MLP successor. Training is prohibited
 until that audit and a new no-model feasibility gate pass.
+
+V237-V240 completed the read-only MLP residual rank audit after preserving one
+pre-teacher-load missing-field failure. No tested expansion rank qualified:
+rank 512 explained 97.749% of validation-centered residual energy, below the
+fixed 98% floor. More importantly, the train-derived rank-192 oracle already
+reached 0.99245 mean final cosine and 0.13025 relative RMSE on validation. The
+measured blocker is therefore coefficient mapping/optimization, not a rank-192
+output ceiling. Do not expand or sweep MLP rank. One no-model feasibility study
+may retain rank 192 while making the training-derived residual mean and output
+basis immutable imported substrate and training only the coefficient map.
 
 V191-V214 tested the authorized weight-level structural route. The independent
 LayerCake repository construct-certified `lc-direct-neural-core/7`; ABI did

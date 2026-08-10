@@ -1,0 +1,27 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "version": 240,
+  "status_date": "2026-08-09",
+  "parent_state": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V236.json",
+  "historical_evidence_changed": false,
+  "phase0": "COMPLETE",
+  "phase1": "COMPLETE",
+  "phase2": "MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS",
+  "phase3": "UNCERTIFIED_RANK_EXPANSION_REJECTED_COEFFICIENT_MAPPING_LIMIT",
+  "phase4_through_8": "LOCKED",
+  "neural_training_authorized": "NONE",
+  "teacher_model_loading_authorized": false,
+  "completed_action": "V237_THROUGH_V240_READ_ONLY_MLP_RESIDUAL_RANK_AUDIT_REJECTED_EXPANSION",
+  "authorized_action": "DESIGN_ONE_NO_MODEL_RANK192_BASIS_ALIGNED_RESIDUAL_MEAN_AND_COEFFICIENT_MAP_FEASIBILITY_GATE",
+  "prohibited_action": "NO_MLP_RANK_WIDTH_STEP_LOSS_SEED_THRESHOLD_OR_NEARBY_SWEEPS_NO_TRAINING_NO_FINAL_ACCESS",
+  "next_gate": "ACCOUNT_BASIS_ALIGNED_RANK192_DEPLOYED_IMPORTED_TRAINABLE_ACTIVE_COMPUTE_AND_PAYLOAD",
+  "measured_basis": {
+    "rank_192_oracle_mean_final_cosine": 0.9924486385924476,
+    "rank_192_oracle_mean_relative_rmse": 0.1302480170769351,
+    "rank_512_validation_energy": 0.977491339007924,
+    "rank_expansion_selection_floor": 0.98
+  },
+  "external_certificate_blocker": "PHASE2_REQUIRES_21000_BLINDED_JUDGMENTS_FROM_THREE_INDEPENDENT_HUMANS",
+  "final_test_access": "PROHIBITED",
+  "superiority_claim": "PROHIBITED"
+}
