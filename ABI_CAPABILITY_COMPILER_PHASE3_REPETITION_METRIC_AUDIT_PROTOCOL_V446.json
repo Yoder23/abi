@@ -1,0 +1,61 @@
+{
+  "format": "abi-capability-compiler-repetition-metric-audit-protocol/1",
+  "protocol_id": "abi-capability-compiler-phase3-repetition-metric-audit-v446",
+  "status": "FROZEN_READ_ONLY_CONSTRUCT_AUDIT",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V445.json",
+  "historical_evidence_changed": false,
+  "training_authorized": false,
+  "model_loading_authorized": false,
+  "artifact_mutation_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "problem": "The historical V1 detector declares collapse when any one- through four-token n-gram occurs five times anywhere in an output. That rule marked coherent teacher instructions, conversations, and emails as collapsed merely because common words recurred, so it lacks face validity for autonomous repetition collapse.",
+  "objective": "Audit a versioned detector that requires a contiguous repeated loop or extremely low four-gram diversity, while preserving punctuation-loop sensitivity and all historical V1 results unchanged.",
+  "metric_v2": {
+    "tokenization": "Unicode case-folded words including internal apostrophes plus every non-whitespace punctuation character",
+    "local_loop": "any contiguous 1-16 token block repeated four immediately consecutive times",
+    "global_degeneracy": "for at least 32 tokens, unique token four-grams divided by all token four-grams is below 0.35",
+    "historical_v1_replacement": false
+  },
+  "fixed_controls": {
+    "synthetic_positive_count": 6,
+    "synthetic_negative_count": 4,
+    "referenced_v1_false_positive_count": 5,
+    "referenced_actual_v443_loop": "phase1-validation-cake_output_realization-0063-v2",
+    "systems": [
+      "teacher_T0",
+      "candidate_V443",
+      "failed_A3",
+      "failed_C3",
+      "failed_D2"
+    ]
+  },
+  "gates": {
+    "synthetic_positives_detected": "6/6",
+    "synthetic_negatives_rejected": "4/4",
+    "referenced_false_positives_corrected": "5/5",
+    "actual_v443_loop_retained": true,
+    "teacher_collapses": 0,
+    "failed_A3_collapses_minimum": 1000,
+    "failed_C3_collapses_minimum": 1000,
+    "failed_D2_collapses_minimum": 150,
+    "historical_v1_recomputation": "exact for every system"
+  },
+  "decision_rule": "Only if every gate passes may V2 be designated the prospective repetition-collapse metric for newly preregistered experiments. Historical V1 receipts and decisions remain unchanged. V443 may receive a derived V2 diagnostic score but cannot be promoted or retrospectively pass its locked V1 protocol.",
+  "audit_limitations": "The benchmark defect and historical-system sensitivity were inspected before this protocol was frozen. This is an explicitly exploratory construct-validity repair, not an independent confirmatory quality result and not evidence that Phase 3 passes.",
+  "bindings": {
+    "abi/capability_compiler_repetition_v2.py": "8a7516efc0dd23360f3051b349d5d1b01180fe6966884f8d343044018b53eed7",
+    "abi/capability_compiler_phase3_repetition_metric_audit.py": "3104a854e7df409695058e6fab057d743f63f2c8f848253265b073ab11df0f29",
+    "tests/test_capability_compiler_repetition_v2.py": "9442100f22d8165ce7cde4f78d5c95be30632238b7e3bc2c43e1ad74e90b0904",
+    "tests/test_capability_compiler_phase3_repetition_metric_audit.py": "5b3cb9b2c92528a158f8485714f9dc1aabaabcf817a635d1df524b9d55a4706d",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V445.json": "737b6e4d29afd2ea02266d9bb891020203ae49ff4e3c3c79c6136ce24ecfa8d2",
+    "ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_COLLISION_ORACLE_RESULT_V445.json": "e7593aade61f8a62d688a76e30d527198c1d01a3f90ba30e8d458bcaad9bdcac",
+    "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl": "1081dbe57e75da50b2619bc2dab14c6441158dcd6068f2b864733936087e86a2",
+    "results/abi_capability_compiler_phase3_qualified_transition_control/evaluation_v443/development_outputs.jsonl": "fc109f5baee4abad0c857a250967f56e50b7acf9d8b05aca03c7082239c0b6fa",
+    "results/abi_capability_compiler_phase3/evaluation_v4/A3-seed104729/development_outputs.jsonl": "28eeee7b16eef22ca8943770eaeee0595122b4d4eb76d5d507927b67337318b2",
+    "results/abi_capability_compiler_phase3_shared_output/evaluation_v11/C3-seed104729/development_outputs.jsonl": "06c690bae201f801a0a3406e60e3739a8c547ff7cd6ca8f4c0cd8896f95ca522",
+    "results/abi_capability_compiler_phase2/full_development/D2/lr3e-5-exp4-seed104729/development_outputs.jsonl": "e2729380b6da12317d98cfd19f7d21a7a7714553fddc3cb2ca97e1a1e188f450"
+  },
+  "phase3_certified": false,
+  "claim_boundary": "Prospective metric construct audit only; no quality, transfer, runtime, promotion, or superiority claim."
+}
