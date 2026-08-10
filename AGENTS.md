@@ -80,7 +80,7 @@ Status date: 2026-08-09.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V248.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V252.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 V215-V230 opened one materially distinct progressive source-block replacement
@@ -165,6 +165,13 @@ passes 648 tests plus its unchanged sealed verifier. The target has 277,220,352
 parameters, 554,440,704 fp16 bytes, 184,857,600 maximum-context active MACs,
 and zero source blocks. One fail-fast local protocol may analytically extract
 each layer's coefficient map/basis/mean and train only compact attention.
+
+V249-V252 composed the independently passing components and failed honestly at
+0.97845 mean cosine. The analytic map was fitted on teacher-attention features
+but executed on compact-attention features. Close that mismatched composition.
+One read-only replacement-conditioned replay may solve the identical fixed
+ridge map on compact-attention features; rank, ridge, records, attention,
+source targets, and gates remain frozen.
 
 V191-V214 tested the authorized weight-level structural route. The independent
 LayerCake repository construct-certified `lc-direct-neural-core/7`; ABI did
