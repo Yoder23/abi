@@ -1,0 +1,49 @@
+{
+  "format": "abi-capability-compiler-phase3-routed-v15-progressive-result/1",
+  "version": 310,
+  "status": "FAIL_LAYER2_OUTPUT_COSINE",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V15_PROGRESSIVE_EXTRACT_PROTOCOL_V309.json",
+    "sha256": "6c20f2a6f11b78225c1833dd839582c05c0230410db49fc3623a0c787a660789"
+  },
+  "raw_evidence": {
+    "metadata": "results/abi_capability_compiler_phase3_routed_v15/progressive_v310/metadata.json",
+    "metadata_sha256": "c6fa29254e32b5f44cfa199159ac8194f652e6ce7780b40bda1fe6faa2bc5ab4",
+    "layer_metadata": "results/abi_capability_compiler_phase3_routed_v15/progressive_v310/layer_02/metadata.json",
+    "layer_metadata_sha256": "b5f8d9b46ebc7f1ba42c7efecc8662f69c70428e64b994eafd868b94b5012729",
+    "checkpoint": "results/abi_capability_compiler_phase3_routed_v15/progressive_v310/layer_02/routed_v15_layer_02.safetensors",
+    "checkpoint_sha256": "8ac4d3204462a40ae96ed9e624a928c1c353fae825be94ae8de3407d1a2d89eb"
+  },
+  "measurements": {
+    "mean_output_cosine": 0.8540047875472477,
+    "locked_mean_output_cosine_minimum": 0.98,
+    "cosine_shortfall": 0.1259952124527523,
+    "minimum_output_cosine": 0.5360249876976013,
+    "mean_relative_rmse": 0.03622388779850943,
+    "locked_mean_relative_rmse_maximum": 0.85,
+    "mean_attention_output_cosine": 0.9869123101234436,
+    "basis_energy_explained": 0.9999943375587463,
+    "exact_routes": 28,
+    "passed": false
+  },
+  "decision": "Stop before layer3 exactly as preregistered. Preserve the failed layer2 checkpoint. The very low relative RMSE, passing attention cosine, near-complete basis energy, and failing full-output cosine identify an unresolved residual-decoder or metric-scale interaction. Authorize one read-only fixed-record decomposition audit; no training or gate change.",
+  "authorized_next_action": "PREREGISTER_READ_ONLY_LAYER2_OUTPUT_GEOMETRY_AND_RESIDUAL_DECODER_AUDIT",
+  "prohibited_actions": [
+    "layer3_access",
+    "attention_step_sweep",
+    "data_sweep",
+    "seed_sweep",
+    "route_sweep",
+    "rank_sweep",
+    "width_sweep",
+    "ridge_sweep",
+    "gate_change",
+    "final_test_access"
+  ],
+  "artifact_promoted": false,
+  "final_test_accessed": false,
+  "phase3_certified": false,
+  "claim_boundary": "Negative layer-2 local evidence only; no assembled artifact, English quality, runtime, Phase 3 certificate, or superiority claim."
+}
