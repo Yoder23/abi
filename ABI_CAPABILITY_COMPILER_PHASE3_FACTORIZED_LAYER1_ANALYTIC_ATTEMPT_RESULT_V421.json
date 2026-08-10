@@ -1,0 +1,19 @@
+{
+  "format":"abi-capability-compiler-phase3-execution-incident/1",
+  "version":421,
+  "status_date":"2026-08-10",
+  "protocol":"ABI_CAPABILITY_COMPILER_PHASE3_FACTORIZED_LAYER1_ANALYTIC_REALIZATION_PROTOCOL_V420.json",
+  "protocol_sha256":"b57892aff059c7c5cc9c62fedfa8ee96b444ad77b64cba5bb93910defa2ccf8f",
+  "status":"EXECUTION_INVALID_DTYPE_MISMATCH_BEFORE_VALIDATION",
+  "scientific_verdict":null,
+  "capture_records_completed":4228,
+  "failure_stage":"TRAIN_PREDICTION_ASSEMBLY",
+  "failure_type":"RuntimeError",
+  "failure_message":"expected mat1 and mat2 to have the same dtype, but got: struct c10::BFloat16 != float",
+  "component_written":false,
+  "artifact_written":false,
+  "final_test_accessed":false,
+  "phase3_certified":false,
+  "decision":"Preserve this as an execution-invalid attempt. Authorize one replay that casts the already-defined sparse feature tensor to fp32 before the fixed route-correction matrix multiplication. No tensor values beyond dtype conformance, equations, rank, data, source, seed, solver, route, gate, or component-write rule may change.",
+  "claim_boundary":"Execution incident only; no architecture failure, quality, component, runtime, Phase 3, or superiority claim."
+}
