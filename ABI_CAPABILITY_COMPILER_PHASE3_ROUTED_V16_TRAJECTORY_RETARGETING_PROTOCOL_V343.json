@@ -1,0 +1,75 @@
+{
+  "format": "abi-capability-compiler-phase3-routed-v16-trajectory-retargeting/1",
+  "protocol_id": "abi-capability-compiler-phase3-routed-v16-trajectory-retargeting-v343",
+  "status": "PREREGISTERED_NO_ARTIFACT_ROUTE_PROJECTION_TRAJECTORY_RETARGETING",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V342.json",
+  "historical_evidence_changed": false,
+  "device": "cuda",
+  "artifact_write": "PROHIBITED",
+  "development_catalog_access": "PROHIBITED",
+  "final_test_access": "PROHIBITED",
+  "sweeps_authorized": false,
+  "source_model_access": "READ_ONLY_CALIBRATION_ALLOWED",
+  "base_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_LINEAR_SEQUENTIAL_FIT_PROTOCOL_V255.json",
+  "seed": 240343,
+  "relative_ridge": 0.0001,
+  "population": {
+    "selection": "exact V255 per-capability SHA-256 calibration ranking",
+    "train_records": 420,
+    "validation_records": 28,
+    "train_records_per_capability": 30,
+    "validation_records_per_capability": 2,
+    "sequence": "bounded prompt-plus-cached-target prefix",
+    "development_independent": true
+  },
+  "artifact": {
+    "directory": "results/abi_capability_compiler_phase3_routed_v15/artifact_v322",
+    "model_sha256": "6d20c7a9d74e04c2209cc534de882f018edb47867e1a87c7d42c33798909e920",
+    "parameters": 536758275,
+    "source_transformer_blocks": 0
+  },
+  "layercake_host": {
+    "repository": "../layercake_release",
+    "commit": "ef705afc2be8c9feca4b7c17c46db93ed2a8fa60",
+    "interface": "lc-direct-neural-core/16",
+    "accepted_artifact_interface": "lc-direct-neural-core/15"
+  },
+  "method": {
+    "name": "distributed_route_projection_native_trajectory_retargeting",
+    "scientific_difference": "V320 fitted source operators on replacement-conditioned states; V343 instead fits existing route projections against the frozen source model's native recurrent trajectory at every layer.",
+    "existing_parameter_values_analytically_fitted": 28311552,
+    "new_parameter_values": 0,
+    "persisted_parameter_values": 0,
+    "gradient_updates": 0,
+    "fixed_rank": 768,
+    "fixed_sparse_width": 384,
+    "routes": ["generic", "abstention", "conversation"]
+  },
+  "gates": {
+    "every_layer_mean_global_cosine_minimum": 0.98,
+    "final_mean_global_cosine_minimum": 0.98,
+    "first_token_top1_agreement_minimum": 0.95,
+    "routes_exact": true,
+    "artifact_unchanged": true
+  },
+  "decision_rule": "Fit the three already allocated route coefficient maps at each layer exactly once from streamed closed-form moments, advance the corrected candidate and native teacher trajectories, and persist no weights. Passing all held-out trajectory, first-token, routing, and artifact-identity gates authorizes one separately sealed extraction. Any miss closes route-projection trajectory retargeting without rank, ridge, data, route, layer, or source-model sweeps.",
+  "bindings": {
+    "abi/capability_compiler_phase3_routed_v16_trajectory_retargeting.py": "458eeca70ddd29a763ad63a65071ac193495dcc32107117e4c37d61ddd037d52",
+    "tests/test_capability_compiler_phase3_routed_v16_trajectory_retargeting.py": "2bb917e028e8f5de50d5026806fca6cf862c00ffe2e5e21c1735c731bd20e879",
+    "abi/capability_compiler_phase3_direct_linear_sequential_fit.py": "dca38cc8bf86047669ce08d7f13c05600f9c28575c1b09797f7faea7de671663",
+    "abi/capability_compiler_phase3_dual_path_local_fit.py": "9b36db57fbef4c9e9e960094e261b92716809e9cb1830acb5e4173ffe7cf19e2",
+    "abi/capability_compiler_phase3_routed_v15_layer0_extract.py": "e2e3a56c676e5e1f6492f69ccd1609bfc148af95bc49dd60ae8c13048e122df1",
+    "abi/capability_compiler_phase2_common.py": "8093ec2016d685f0327c87640042c8373bc141d76351fd641b21a44d018b6c92",
+    "abi/capability_compiler_phase3.py": "5d490989e088f42aba4bd2ca96fbe70ea2db211890369dd6f431dd781390c77b",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V342.json": "5952e43cf6390779fbfec1e9023f67b24a202ee043911f98a3a22cd70012be81",
+    "ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V16_DISTRIBUTED_CONFORMANCE_RESULT_V342.json": "06c29473cc4ab837cb47922ce6bd05585ab9a42972d4beed21f7e59e5a767859",
+    "ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_LINEAR_SEQUENTIAL_FIT_PROTOCOL_V255.json": "fcf546b3ad4fdb014f06a9a73c61bfea425a51d24cff351b8ad448dfc026e60b",
+    "results/abi_capability_compiler_phase3_routed_v15/artifact_v322/model.safetensors": "6d20c7a9d74e04c2209cc534de882f018edb47867e1a87c7d42c33798909e920",
+    "results/abi_capability_compiler_phase3_routed_v15/artifact_v322/config.json": "047817c8636aacb261f909372c4afaa791d541834aac8072143adf3d47709882",
+    "../layercake_release/layercake/routed_sparse_rank768_progressive_core_fp16.py": "17e024b7c6f61b370780c2fa53f9c592a66f3960ae046cf586f72e49a3ff889a",
+    "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e/model-00001-of-00002.safetensors": "b7492726c01287bf6e13c3d74c65ade3d436d50da1cf5bb6925bc962419d6610",
+    "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e/model-00002-of-00002.safetensors": "3f311787aa136e858556caa8543015161edcad85ba81b6a36072443d7fa73c87"
+  },
+  "claim_boundary": "Preregistered no-artifact analytic feasibility only; no autonomous quality, runtime, Phase 3, minimum-information, or ABI-superiority claim."
+}
