@@ -1,0 +1,42 @@
+{
+  "format": "abi-capability-compiler-phase3-architecture-review/1",
+  "version": 360,
+  "status": "PASS_MATERIAL_DIFFERENCE_FIXED_BUDGET_NONLINEAR_PROTOCOL_AUTHORIZED",
+  "status_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V359.json",
+  "historical_evidence_changed": false,
+  "measured_problem": "The native rank-768 residual span is sufficient on held-out records (mean cosine 0.999126 and mean relative RMSE 0.036259), but the exact existing full-feature linear map plus three sparse route maps realizes only 0.989966 mean cosine and 0.101223 mean relative RMSE. Coefficient realization, not retained output rank, is the measured blocker.",
+  "proposed_method": "Replace the existing bias-free 3072-by-768 linear coefficient projection with exactly one bias-free 3072-by-576-by-768 SiLU coefficient function. Keep the fixed v15 attention, native rank-768 mean and basis, sparse feature projection, three route residual maps, records, routes, and all quality gates unchanged.",
+  "material_differences": [
+    "Introduces one nonlinear boundary into the measured coefficient function instead of repeating a linear solver, ridge, rank, route, data, or attention variant.",
+    "The nonlinear function has 2211840 values, 147456 fewer than the 2359296-value linear function it replaces.",
+    "Adds zero route-specific capacity and preserves the existing three sparse route maps.",
+    "Targets the same train-derived native coefficient coordinates and evaluates the exact proposed inference formula on the unchanged held-out split."
+  ],
+  "classification": "STRUCTURED_WEIGHT_TRANSFER_PLUS_HIDDEN_STATE_DISTILLATION_CONFORMANCE",
+  "not_claimed": [
+    "novel alternative to distillation",
+    "autonomous English quality",
+    "Phase 3 certification",
+    "ABI superiority"
+  ],
+  "fixed_boundary": {
+    "source_layer": 0,
+    "replacement_layer": 0,
+    "nonlinear_hidden": 576,
+    "replaced_linear_values": 2359296,
+    "nonlinear_values": 2211840,
+    "net_artifact_value_change": -147456,
+    "new_parameters": 0,
+    "later_layers_authorized": false
+  },
+  "bindings": {
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V359.json": "5501b56fccd810c0e8bfeaf5ceb77722d4a3ef432ee71da95c3b6d3fb2957742",
+    "ABI_CAPABILITY_COMPILER_PHASE3_NATIVE_BASIS_COEFFICIENT_AUDIT_RESULT_V359.json": "2ecfe3e2a9f3809b7c243f580e708e8df0ac7d1d14bb0cc5004925ef730b12d0",
+    "ABI_CAPABILITY_COMPILER_PHASE3_NATIVE_RESIDUAL_SPAN_ORACLE_RESULT_V357.json": "454a5f7dd11401e61c161b8dcb62dfe1d48d82d17e381e2cc642311f149d53de"
+  },
+  "decision": "Authorize exactly one separately preregistered no-artifact layer-zero capacity screen. Any held-out miss closes this nonlinear mapper without hidden-width, optimizer, step, learning-rate, seed, loss, normalization, data, route, rank, attention, layer, or source sweeps.",
+  "final_test_access": "PROHIBITED",
+  "phase3_certified": false,
+  "claim_boundary": "Architecture-review authorization only; no fit, extracted model, autonomous quality, runtime, Phase 3, or superiority evidence."
+}
