@@ -6,11 +6,14 @@ import argparse
 from collections import Counter
 import hashlib
 import json
+import os
 from pathlib import Path
 import platform
 import shutil
 import time
 from typing import Any, Iterable
+
+os.environ["CUBLAS_WORKSPACE_CONFIG"] = ":4096:8"
 
 import psutil
 from safetensors.torch import load_file, save_file
@@ -74,6 +77,30 @@ def _state_hash(values: dict[str, torch.Tensor]) -> str:
 
 def load_protocol(root: Path, protocol_path: Path) -> tuple[dict[str, Any], str]:
     protocol = _json(protocol_path)
+    lineage_sha = sha256_file(protocol_path)
+    if protocol.get("format") == "abi-capability-compiler-phase3-qualified-transition-control-runtime-repair/1":
+        if (
+            protocol.get("status") != "BOUND_IMPLEMENTATION_ONLY_REPLAY"
+            or protocol.get("scientific_fields_changed") is not False
+        ):
+            raise Phase3Error("qualified transition repair governance changed")
+        base_path = (root / protocol["base_protocol"]["path"]).resolve()
+        if sha256_file(base_path) != protocol["base_protocol"]["sha256"]:
+            raise Phase3Error("qualified transition base protocol changed")
+        base = _json(base_path)
+        repaired_name = "abi/capability_compiler_phase3_qualified_transition_control.py"
+        for name, expected in base["bindings"].items():
+            if name == repaired_name:
+                continue
+            path = Path(name) if Path(name).is_absolute() else root / name
+            if not path.is_file() or sha256_file(path) != expected:
+                raise Phase3Error(f"qualified transition base binding changed: {name}")
+        for name, expected in protocol["bindings"].items():
+            path = Path(name) if Path(name).is_absolute() else root / name
+            if not path.is_file() or sha256_file(path) != expected:
+                raise Phase3Error(f"qualified transition repair binding changed: {name}")
+        protocol = base
+        protocol["bindings"] = {}
     if (
         protocol.get("format") != FORMAT
         or protocol.get("status") != "PREREGISTERED_FAIL_FAST_DEVELOPMENT_CAPACITY_CONTROL"
@@ -87,7 +114,7 @@ def load_protocol(root: Path, protocol_path: Path) -> tuple[dict[str, Any], str]
         path = Path(name) if Path(name).is_absolute() else root / name
         if not path.is_file() or sha256_file(path) != expected:
             raise Phase3Error(f"qualified transition binding changed: {name}")
-    return protocol, sha256_file(protocol_path)
+    return protocol, lineage_sha
 
 
 def _load_parent(root: Path, protocol: dict[str, Any], device: torch.device):
