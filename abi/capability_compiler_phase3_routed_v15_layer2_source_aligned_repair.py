@@ -21,7 +21,7 @@ from .capability_compiler_phase2_common import set_determinism, sha256_file
 from .capability_compiler_phase3 import Phase3Error, _write_immutable
 
 
-FORMAT = "abi-capability-compiler-phase3-routed-v15-layer2-source-aligned-repair/1"
+FORMAT = "abi-capability-compiler-phase3-routed-v15-layer2-source-aligned-repair/2"
 
 
 def execute(root: Path, protocol_path: Path, output: Path) -> dict:
@@ -30,7 +30,8 @@ def execute(root: Path, protocol_path: Path, output: Path) -> dict:
     protocol = json.loads(protocol_path.read_text(encoding="utf-8"))
     if (
         protocol.get("format") != FORMAT
-        or protocol.get("status") != "PREREGISTERED_ONE_SOURCE_ALIGNED_LAYER2_REPAIR"
+        or protocol.get("status")
+        != "PREREGISTERED_ONE_IDENTITY_BOUND_SOURCE_ALIGNED_LAYER2_REPAIR"
         or protocol.get("device") != "cuda"
         or protocol.get("gradient_training_authorized") is not False
         or protocol.get("final_test_access") != "PROHIBITED"
@@ -93,28 +94,27 @@ def execute(root: Path, protocol_path: Path, output: Path) -> dict:
     source_gate_up = source_layer.mlp.gate_up_proj.weight.float()
     source_down = source_layer.mlp.down_proj.weight.float()
     source_neurons = source_down.shape[1]
-    importance = torch.zeros(source_neurons, device=device)
-    with torch.no_grad(), torch.autocast("cuda", dtype=torch.bfloat16):
-        for row in train_rows:
-            record_id = str(row["record_id"])
-            hidden = cache[record_id][0].unsqueeze(0).to(device)
-            positions = torch.arange(hidden.shape[1], device=device)
-            attention = layer0._attention(layer, hidden, positions)
-            feature = layer.post_attention_norm(attention)
-            gate, up = F.linear(feature.float(), source_gate_up).chunk(2, dim=-1)
-            activation = F.silu(gate) * up
-            importance += activation.square().sum(dim=(0, 1))
-    importance *= source_down.square().sum(dim=0)
-    selected = torch.argsort(importance, descending=True, stable=True)[
-        : int(extraction["architecture"]["sparse_width"])
-    ]
+    identity = json.loads((root / protocol["identity_manifest"]["path"]).read_text(encoding="utf-8"))
+    recovered = identity.get("ordered_source_neuron_indices")
+    sparse_width = int(extraction["architecture"]["sparse_width"])
+    if (
+        identity.get("format") != "abi-capability-compiler-source-neuron-identity/1"
+        or identity.get("source_layer") != 2
+        or identity.get("canonical_dtype") != "float16"
+        or not isinstance(recovered, list)
+        or len(recovered) != sparse_width
+        or len(set(recovered)) != sparse_width
+        or any(not isinstance(value, int) or not 0 <= value < source_neurons for value in recovered)
+    ):
+        raise Phase3Error("source-neuron identity manifest changed")
+    selected = torch.tensor(recovered, dtype=torch.long, device=device)
     selected_gate = source_gate_up[:source_neurons].index_select(0, selected)
     selected_up = source_gate_up[source_neurons:].index_select(0, selected)
     expected_sparse = torch.cat((selected_gate, selected_up), dim=0).to(torch.float16)
     stored_sparse = layer.sparse_gate_up_projection.weight.detach().to(torch.float16)
     selected_neurons_reproduced = bool(torch.equal(expected_sparse, stored_sparse))
     if not selected_neurons_reproduced:
-        raise Phase3Error("failed checkpoint selected-neuron identity did not reproduce")
+        raise Phase3Error("identity-bound source neurons do not match the failed checkpoint")
     basis = layer.mlp_output_projection.weight.float()
     exact_sparse_coefficients = source_down.index_select(1, selected).T @ basis
     features_cpu = []
@@ -167,13 +167,14 @@ def execute(root: Path, protocol_path: Path, output: Path) -> dict:
     )
     result = {
         "format": FORMAT,
-        "status": "PASS_SOURCE_ALIGNED_LAYER2_REPAIR" if passed else "FAIL_SOURCE_ALIGNED_LAYER2_REPAIR",
+        "status": "PASS_IDENTITY_BOUND_LAYER2_REPAIR" if passed else "FAIL_IDENTITY_BOUND_LAYER2_REPAIR",
         "protocol_sha256": sha256_file(protocol_path),
         "extraction_protocol_sha256": extraction_sha,
         "layer": 2,
         "calibration_tokens": calibration_tokens,
         "selected_neurons_reproduced": selected_neurons_reproduced,
         "selected_neurons": int(selected.numel()),
+        "identity_manifest_sha256": sha256_file(root / protocol["identity_manifest"]["path"]),
         "basis_rank_unchanged": int(basis.shape[1]),
         "effective_ridge": effective_ridge,
         "route_maps_identical_by_construction": True,
@@ -190,7 +191,7 @@ def execute(root: Path, protocol_path: Path, output: Path) -> dict:
         "artifact_promoted": False,
         "final_test_accessed": False,
         "phase3_certified": False,
-        "claim_boundary": "One source-aligned analytic layer2 coefficient repair only; no assembled artifact, English quality, runtime, certificate, or superiority claim.",
+        "claim_boundary": "One identity-bound source-aligned analytic layer2 coefficient repair only; no assembled artifact, English quality, runtime, certificate, or superiority claim.",
     }
     _write_immutable(
         output / "metadata.json", json.dumps(result, indent=2, sort_keys=True).encode() + b"\n"
@@ -202,10 +203,10 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--protocol",
-        default="ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V15_LAYER2_SOURCE_ALIGNED_REPAIR_PROTOCOL_V313.json",
+        default="ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V15_LAYER2_IDENTITY_BOUND_REPAIR_PROTOCOL_V317.json",
     )
     parser.add_argument(
-        "--output", default="results/abi_capability_compiler_phase3_routed_v15/layer2_repair_v314"
+        "--output", default="results/abi_capability_compiler_phase3_routed_v15/layer2_identity_repair_v318"
     )
     args = parser.parse_args()
     root = Path.cwd().resolve()
