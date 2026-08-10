@@ -1,0 +1,23 @@
+{
+  "format": "abi-capability-compiler-phase3-routed-host-result/1",
+  "version": 304,
+  "status": "PASS_HOST_CONSTRUCT_BOUND_SEQUENTIAL_EXTRACTION_MAY_BE_PREREGISTERED",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "abi_predecessor": {"path": "ABI_CAPABILITY_COMPILER_PHASE3_SOURCE_PROMPT_ROUTER_RESULT_V302.json", "sha256": "4b4931f18f8aa8967de9c56993af1e4f099f2b43fb52dfb7191653ed797cb2c9"},
+  "layercake_host": {
+    "repository": "../layercake_release",
+    "commit": "3a64e29b23d34fdfea50433ba2ce30bfe7ac2490",
+    "interface": "lc-direct-neural-core/15",
+    "decision": "../layercake_release/moonshot/postrelease_routed_sparse_rank768_progressive_decision_v40.json",
+    "decision_sha256": "869ae4a69a0b003a46a6e8ce20fcee600d6cb7e1df18ba85df29f484dbeafdaa",
+    "status": "PASS_CONSTRUCT_ONLY",
+    "quality_or_performance_inherited": false
+  },
+  "decision": "Bind the exact v15 construct and authorize a separately preregistered fail-fast sequential extraction beginning at layer 0. No host quality or runtime is inherited.",
+  "authorized_next_action": "PREREGISTER_FAIL_FAST_ROUTED_V15_SEQUENTIAL_EXTRACTION_FROM_LAYER0",
+  "artifact_promoted": false,
+  "final_test_accessed": false,
+  "phase3_certified": false,
+  "claim_boundary": "Host construct binding only; no full extraction, English quality, measured runtime, Phase 3 certificate, or superiority claim."
+}
