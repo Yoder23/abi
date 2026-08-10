@@ -1,0 +1,29 @@
+{
+  "format": "abi-capability-compiler-phase3-architecture-review/1",
+  "version": 353,
+  "status": "PASS_MATERIAL_DIFFERENCE_LAYER_ZERO_PROTOCOL_AUTHORIZED",
+  "status_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V352.json",
+  "historical_evidence_changed": false,
+  "measured_problem": "The v15 replacement operators pass local source-operator gates but accumulated candidate states diverge from the source-native recurrent trajectory. Route-only analytic correction overfits, output-token sequence conformance does not restore the path, and one-stage-for-two-block macro compression lacks local fidelity.",
+  "proposed_method": "Initialize from the immutable v15 layer, train every existing parameter in exactly one replacement operator against the native source hidden state after the corresponding source block, and keep embeddings, output head, final norm, router, all other replacement layers, architecture, bytes, records, and routes unchanged.",
+  "material_differences": [
+    "Targets the source-native recurrent state rather than the source operator evaluated on candidate input.",
+    "Fits the complete existing replacement operator rather than only route projections.",
+    "Preserves 32 replacement boundaries rather than fusing pairs.",
+    "Adds zero parameters and stores no teacher activations in a promoted artifact."
+  ],
+  "classification": "STRUCTURED_WEIGHT_TRANSFER_PLUS_HIDDEN_STATE_DISTILLATION_CONFORMANCE",
+  "not_claimed": ["novel alternative to distillation", "autonomous quality", "Phase 3 certification", "ABI superiority"],
+  "fixed_boundary": {"source_layer": 0, "replacement_layer": 0, "trainable_existing_parameters": 10626432, "new_parameters": 0, "later_layers_authorized": false},
+  "bindings": {
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V352.json": "15480bdc15b7041db13fc1f7ca1c505d8a8b685bb9bd518dcc83b8ad1435d0b6",
+    "ABI_CAPABILITY_COMPILER_PHASE3_MACRO_LAYER_PAIR0_RESULT_V352.json": "12c55dacd43500d1ad052bdcb1c2ea0ab20b9b36b0e9271e9451fdcd1cf3cbd4",
+    "ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V15_ACCUMULATION_ATTRIBUTION_RESULT_V334.json": "a7c5da75778745f0e798216499b12a010cb24bd367325ee0ad1d11472a2c7741",
+    "ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V16_TRAJECTORY_RETARGETING_RESULT_V346.json": "804e8bac09d5ef02f3b2d6f48d74cee182d1821ed50c2196e28f71aca0cddb6c"
+  },
+  "decision": "Authorize one separately preregistered layer-zero fail-fast screen. Any held-out miss closes full-operator native-trajectory conformance without step, learning-rate, seed, loss, data, layer, or precision sweeps.",
+  "final_test_access": "PROHIBITED",
+  "phase3_certified": false,
+  "claim_boundary": "Architecture-review authorization only; no training, fit, quality, runtime, Phase 3, or superiority evidence."
+}
