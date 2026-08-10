@@ -1,0 +1,37 @@
+{
+  "artifact_written": false,
+  "calibration_tokens": 33189,
+  "claim_boundary": "Read-only complete-source-MLP interface diagnostic only; no source block may be promoted and no artifact, certificate, or superiority claim is made.",
+  "complete_source_block_promoted": false,
+  "diagnosis": "ATTENTION_TO_MLP_INTERFACE_PRIMARY",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-complete-mlp-interface-audit/1",
+  "layer": 1,
+  "paths": {
+    "exact_delta_on_student_attention": {
+      "maximum_relative_rmse": 0.3845551609992981,
+      "mean_output_cosine": 0.9856743663549423,
+      "mean_relative_rmse": 0.27107255001153263,
+      "minimum_output_cosine": 0.9674392938613892,
+      "passed": true
+    },
+    "student_interface": {
+      "maximum_relative_rmse": 0.7283965945243835,
+      "mean_output_cosine": 0.963555287037577,
+      "mean_relative_rmse": 0.4492017137152808,
+      "minimum_output_cosine": 0.8987972736358643,
+      "passed": false
+    },
+    "teacher_interface": {
+      "maximum_relative_rmse": 0.0,
+      "mean_output_cosine": 0.9999999893563134,
+      "mean_relative_rmse": 0.0,
+      "minimum_output_cosine": 0.9999999403953552,
+      "passed": true
+    }
+  },
+  "phase3_certified": false,
+  "protocol_sha256": "977242cbb2e7ba3a7a5bd92031d2c3c1694accffe320a30a12494e7210dab961",
+  "status": "PASS_DIAGNOSTIC_COMPLETE",
+  "training_performed": false
+}

@@ -1,0 +1,17 @@
+{
+  "format": "abi-capability-compiler-phase3-complete-mlp-interface-result/1",
+  "version": 274,
+  "status": "PASS_ATTENTION_TO_MLP_INTERFACE_BOTTLENECK_MEASURED",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {"path": "ABI_CAPABILITY_COMPILER_PHASE3_COMPLETE_MLP_INTERFACE_AUDIT_PROTOCOL_V273.json", "sha256": "977242cbb2e7ba3a7a5bd92031d2c3c1694accffe320a30a12494e7210dab961"},
+  "raw_evidence": {"path": "results/abi_capability_compiler_phase3_source_neurons/complete_mlp_interface_v274.json", "sha256": "6977475370b02dce253e12a44283e3ca603091b822e4c3f0167d079ee7bcdc88"},
+  "paths": {"teacher_interface_cosine": 0.9999999893563134, "student_interface_cosine": 0.963555287037577, "exact_delta_on_student_attention_cosine": 0.9856743663549423},
+  "interpretation": "The complete source MLP fails when driven by compact-attention features even though the exact teacher residual on compact attention passes. The active blocker is the attention-to-MLP representation interface, not MLP compression alone.",
+  "decision": "Authorize one read-only nested low-rank feature-alignment audit before any further MLP extraction or training.",
+  "complete_source_block_promoted": false,
+  "artifact_written": false,
+  "final_test_accessed": false,
+  "phase3_certified": false,
+  "claim_boundary": "Local interface diagnosis only; no artifact, runtime, certificate, or superiority claim."
+}
