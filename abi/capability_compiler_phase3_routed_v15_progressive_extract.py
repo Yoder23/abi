@@ -26,7 +26,7 @@ from .capability_compiler_phase2_common import set_determinism, sha256_file
 from .capability_compiler_phase3 import Phase3Error, _write_immutable
 
 
-FORMAT = "abi-capability-compiler-phase3-routed-v15-progressive-extract/1"
+FORMAT = "abi-capability-compiler-phase3-routed-v15-progressive-extract/2"
 
 _PRIMARY_NAMES = {
     "attention_input_projection.weight",
@@ -48,7 +48,8 @@ def _load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str]:
     protocol = json.loads(path.read_text(encoding="utf-8"))
     if (
         protocol.get("format") != FORMAT
-        or protocol.get("status") != "PREREGISTERED_FAIL_FAST_ROUTED_V15_PROGRESSIVE_EXTRACTION"
+        or protocol.get("status")
+        != "PREREGISTERED_FAIL_FAST_ROUTED_V15_SOURCE_ALIGNED_PROGRESSIVE_EXTRACTION"
         or protocol.get("device") != "cuda"
         or protocol.get("final_test_access") != "PROHIBITED"
         or protocol.get("sweeps_authorized") is not False
@@ -58,7 +59,7 @@ def _load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str]:
         target = Path(name) if Path(name).is_absolute() else root / name
         if not target.is_file() or sha256_file(target) != expected:
             raise Phase3Error(f"routed v15 progressive binding changed: {name}")
-    if list(protocol.get("layers", [])) != list(range(2, 32)):
+    if list(protocol.get("layers", [])) != list(range(3, 32)):
         raise Phase3Error("routed v15 progressive layer schedule changed")
     return protocol, sha256_file(path)
 
@@ -83,9 +84,11 @@ def _instantiate(root: Path, protocol: dict[str, Any], device: torch.device):
     ).bind_tokenizer(tokenizer)
     substrate = load_file(str(root / base["substrate"]["path"]), device="cpu")
     model.load_state_dict(substrate, strict=False)
+    first_layer = int(protocol["layers"][0])
     expected_prefix = {
         name for name, _ in model.named_parameters()
-        if name.startswith("router.") or name.startswith("layers.0.") or name.startswith("layers.1.")
+        if name.startswith("router.")
+        or any(name.startswith(f"layers.{index}.") for index in range(first_layer))
     }
     loaded: set[str] = set()
     state = model.state_dict()
@@ -104,7 +107,13 @@ def _instantiate(root: Path, protocol: dict[str, Any], device: torch.device):
     return model.to(device), tokenizer, base, len(substrate), len(loaded)
 
 
-def _initial_cache(model, rows: list[dict[str, Any]], example_by_id: dict[str, dict], device):
+def _initial_cache(
+    model,
+    rows: list[dict[str, Any]],
+    example_by_id: dict[str, dict],
+    device,
+    prefix_layers: int = 2,
+):
     cache: dict[str, tuple[torch.Tensor, int]] = {}
     with torch.no_grad(), torch.autocast("cuda", dtype=torch.bfloat16):
         for row in rows:
@@ -115,7 +124,7 @@ def _initial_cache(model, rows: list[dict[str, Any]], example_by_id: dict[str, d
             route_index = model._select_route(source_ids)
             positions = torch.arange(ids.shape[1], device=device)
             hidden = model.token_embedding(ids)
-            for index in range(2):
+            for index in range(prefix_layers):
                 hidden, _, _ = model.layers[index].forward_with_cache(hidden, positions, route_index)
             cache[str(row["record_id"])] = (hidden.squeeze(0).to(torch.float16).cpu(), route_index)
     return cache
@@ -230,18 +239,14 @@ def _derive_maps(layer, source_layer, rows, cache, targets, protocol, device):
         : int(protocol["architecture"]["sparse_width"])
     ]
     rank = int(protocol["architecture"]["residual_rank"])
-    mean, covariance, observations = rank_audit.centered_covariance(
+    _, covariance, observations = rank_audit.centered_covariance(
         residuals_cpu, int(protocol["architecture"]["full_width"]), device
     )
     eigenvalues, eigenvectors = torch.linalg.eigh(covariance)
     eigenvalues = eigenvalues.clamp_min(0).flip(0)
     basis = eigenvectors.flip(1)[:, :rank].contiguous()
     features = torch.cat(features_cpu).to(device)
-    coefficients = (torch.cat(residuals_cpu).to(device) - mean) @ basis
-    linear_weights, linear_ridge = closed.solve_ridge(
-        features, coefficients, float(protocol["training"]["relative_ridge"])
-    )
-    correction_targets = coefficients - features @ linear_weights
+    residuals = torch.cat(residuals_cpu).to(device)
     selected_gate = source_gate_up[:source_neurons].index_select(0, selected)
     selected_up = source_gate_up[source_neurons:].index_select(0, selected)
     sparse_features = torch.cat(
@@ -251,28 +256,25 @@ def _derive_maps(layer, source_layer, rows, cache, targets, protocol, device):
             for value in features_cpu
         ]
     ).float()
-    route_weights = []
+    selected_down = source_down.index_select(1, selected)
+    selected_output = sparse_features @ selected_down.T
+    remaining = residuals - selected_output
+    mean = remaining.mean(dim=0)
+    coefficients = (remaining - mean) @ basis
+    linear_weights, linear_ridge = closed.solve_ridge(
+        features, coefficients, float(protocol["training"]["relative_ridge"])
+    )
+    exact_sparse_coefficients = selected_down.T @ basis
     route_observations = []
     for route_index in range(len(layer0.ROUTES)):
-        indices = torch.tensor(
-            [i for i, value in enumerate(token_routes) if value == route_index],
-            dtype=torch.long,
-            device=device,
-        )
-        weights, _ = closed.solve_ridge(
-            sparse_features.index_select(0, indices),
-            correction_targets.index_select(0, indices),
-            float(protocol["training"]["relative_ridge"]),
-        )
-        route_weights.append(weights)
-        route_observations.append(int(indices.numel()))
+        route_observations.append(sum(value == route_index for value in token_routes))
     with torch.no_grad():
         layer.mlp_residual_mean.copy_(mean)
         layer.mlp_output_projection.weight.copy_(basis)
         layer.linear_coefficient_projection.weight.copy_(linear_weights.T)
         layer.sparse_gate_up_projection.weight.copy_(torch.cat((selected_gate, selected_up), dim=0))
-        for route_index, weights in enumerate(route_weights):
-            layer.route_coefficient_projections[route_index].weight.copy_(weights.T)
+        for route_projection in layer.route_coefficient_projections:
+            route_projection.weight.copy_(exact_sparse_coefficients.T)
     energy = float(eigenvalues[:rank].sum() / eigenvalues.sum().clamp_min(1e-12))
     return observations, energy, linear_ridge, dict(zip(layer0.ROUTES, route_observations))
 
@@ -364,7 +366,9 @@ def execute(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
         maximum_tokens=int(cfg["maximum_sequence_tokens"]),
     )
     all_rows = train_rows + validation_rows
-    cache = _initial_cache(model, all_rows, example_by_id, device)
+    cache = _initial_cache(
+        model, all_rows, example_by_id, device, prefix_layers=int(protocol["layers"][0])
+    )
     route_exact = sum(
         cache[str(row["record_id"])][1] == layer0._route(str(row["capability"]))
         for row in validation_rows
@@ -429,6 +433,8 @@ def execute(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
             "route_train_observations": route_observations,
             "basis_energy_explained": energy,
             "linear_effective_ridge": ridge,
+            "decoder_rule": "source_aligned_exact_selected_neurons_plus_linear_remaining_residual",
+            "route_maps_identical_by_construction": True,
             "validation": validation,
             "record_metrics": records,
             "checkpoint": {
@@ -486,10 +492,10 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--protocol",
-        default="ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V15_PROGRESSIVE_EXTRACT_PROTOCOL_V309.json",
+        default="ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V15_SOURCE_ALIGNED_PROGRESSIVE_PROTOCOL_V319.json",
     )
     parser.add_argument(
-        "--output", default="results/abi_capability_compiler_phase3_routed_v15/progressive_v310"
+        "--output", default="results/abi_capability_compiler_phase3_routed_v15/source_aligned_progressive_v320"
     )
     args = parser.parse_args()
     root = Path.cwd().resolve()
