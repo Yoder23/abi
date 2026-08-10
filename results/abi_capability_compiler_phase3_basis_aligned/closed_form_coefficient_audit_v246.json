@@ -1,0 +1,28 @@
+{
+  "artifact_written": false,
+  "audit_wall_seconds": 2.406190499998047,
+  "calibration_tokens": 33189,
+  "claim_boundary": "Read-only layer-0 closed-form mapping audit; no deployable artifact, neural training, English quality, inference, Phase 3 certificate, or superiority claim.",
+  "effective_ridge": 0.0020485332489013673,
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-closed-form-coefficient-audit/1",
+  "matrix_parameters": 589824,
+  "next_gate": "Design one generic direct linear coefficient-map host and extraction protocol.",
+  "protocol_sha256": "56551dc01d51791bb32b377c43ba0c4c05e852ad2c9edffc481b0741f8794ab1",
+  "rank": 192,
+  "relative_ridge": 0.0001,
+  "status": "PASS_CLOSED_FORM_MAP_FEASIBLE_NO_HOST_AUTHORIZED",
+  "stored_activations": 0,
+  "train_observations": 31001,
+  "training_coefficient_relative_rmse": 0.04702070355415344,
+  "training_performed": false,
+  "validation": {
+    "maximum_final_relative_rmse": 0.47174859046936035,
+    "mean_coefficient_relative_rmse": 0.11461500444316439,
+    "mean_final_cosine": 0.9897543894393104,
+    "mean_final_relative_rmse": 0.14451412936406477,
+    "minimum_final_cosine": 0.9215953946113586,
+    "passed": true,
+    "records": 28
+  }
+}

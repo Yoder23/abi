@@ -80,7 +80,7 @@ Status date: 2026-08-09.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V244.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V246.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 V215-V230 opened one materially distinct progressive source-block replacement
@@ -152,6 +152,13 @@ basis-aligned loss, step, seed, and nearby variants. The measured next gate is
 one read-only closed-form linear coefficient-map audit using the same
 train-derived rank-192 basis and fixed records; it may not train a neural model
 or authorize a host until its held-out oracle clears the unchanged local gate.
+
+V245/V246 passed that read-only audit. A fixed 3,072-to-192 ridge map fitted on
+31,001 training positions reached 0.98975 mean final cosine, 0.14451 relative
+RMSE, and 0.11462 coefficient relative RMSE on the 28 validation records. It
+stored no map, basis, or activations and performed no neural training. One
+no-model direct-linear host feasibility gate is authorized; it must eliminate
+the nonlinear MLP coefficient network rather than tune V244.
 
 V191-V214 tested the authorized weight-level structural route. The independent
 LayerCake repository construct-certified `lc-direct-neural-core/7`; ABI did
