@@ -1,0 +1,28 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "version": 236,
+  "status_date": "2026-08-09",
+  "parent_state": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V232.json",
+  "historical_evidence_changed": false,
+  "phase0": "COMPLETE",
+  "phase1": "COMPLETE",
+  "phase2": "MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS",
+  "phase3": "UNCERTIFIED_DUAL_PATH_LOCAL_GATE_FAILED_LAYER0_MLP_RESIDUAL_LIMIT",
+  "phase4_through_8": "LOCKED",
+  "neural_training_authorized": "NONE",
+  "teacher_model_loading_authorized": "ONLY_BY_SEPARATELY_PREREGISTERED_READ_ONLY_MLP_RANK_AUDIT",
+  "completed_action": "V233_THROUGH_V236_DUAL_PATH_TOPOLOGY_AWARE_LOCAL_FIT_FAILED_LAYER0",
+  "authorized_action": "DESIGN_AND_EXECUTE_ONE_READ_ONLY_FIXED_CALIBRATION_SOURCE_MLP_RESIDUAL_INTRINSIC_RANK_AUDIT",
+  "prohibited_action": "NO_DUAL_LOSS_STEP_SEED_THRESHOLD_SYMMETRIC_WIDTH_OR_NEARBY_VARIANTS_NO_TRAINING_NO_FINAL_ACCESS",
+  "next_gate": "MEASURE_RANK_192_256_384_512_EXPLAINED_ENERGY_AND_SELECT_OR_REJECT_ONE_ASYMMETRIC_SPARSE_MLP_FEASIBILITY_TARGET",
+  "measured_basis": {
+    "layer": 0,
+    "attention_mean_cosine": 0.9866126371281487,
+    "final_mean_cosine": 0.9750772075993674,
+    "locked_final_cosine_minimum": 0.98,
+    "copied_substrate_unchanged": true
+  },
+  "external_certificate_blocker": "PHASE2_REQUIRES_21000_BLINDED_JUDGMENTS_FROM_THREE_INDEPENDENT_HUMANS",
+  "final_test_access": "PROHIBITED",
+  "superiority_claim": "PROHIBITED"
+}

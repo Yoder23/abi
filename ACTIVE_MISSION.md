@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V230 FUSED PROGRESSIVE LOCAL GATE FAILED, DUAL-PATH FEASIBILITY NEXT | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V230.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V236 DUAL-PATH LOCAL GATE FAILED, READ-ONLY MLP-RANK AUDIT NEXT | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V236.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -30,19 +30,22 @@ evaluation-only, and no specialist record is eligible for English training.
 
 ## Controlling Phase 3 objective: qualify integrated capability realization
 
-The latest controlling state is V230. V215-V230 established a corrected,
-source-aligned progressive-replacement path and then closed its first fused
-operator. The 32,015-action copied substrate contains 196,899,840 lexical and
-normalization parameters; hostile verification independently matched every
-bf16 scalar and confirmed zero copied source transformer blocks. LayerCake v9
-separately construct-qualified the no-injected-BOS causal boundary.
+The latest controlling state is V236. V215-V230 established a corrected,
+source-aligned progressive-replacement path and closed its fused operator at
+layer 0 (0.96709 cosine against the locked 0.98 floor). V231/V232 then passed
+no-model feasibility for separate attention and MLP paths, and the separate
+LayerCake repository construct-certified the generic v10 host with 641 tests
+and its unchanged sealed verifier.
 
-The fused replacement stopped at layer 0 after 256 steps. Its mean validation
-relative RMSE was 0.30239, but mean output cosine was 0.96709 against the locked
-0.98 floor. The measured failure supports one materially different successor:
-separate attention and MLP residual cakes matching the source block topology.
-No fused width, step, loss, data, seed, threshold, or nearby sweep is allowed.
-Phase 2's three-rater dependency still prevents a final Phase 3 certificate.
+The one authorized topology-aware V233/V235 replay also stopped at layer 0.
+Its attention intermediate passed at 0.98661 mean cosine, but its final output
+reached only 0.97508; relative RMSE passed at 0.26453. The hostilely verified
+196,899,840-parameter copied substrate remained exact and the failed artifact
+contains zero source blocks. This localizes the remaining miss downstream of
+attention. No dual loss, step, seed, threshold, symmetric-width, or nearby
+sweep is allowed. One read-only source-MLP residual rank audit is authorized
+to select or reject a materially asymmetric sparse-MLP successor. Phase 2's
+three-rater dependency still prevents a final Phase 3 certificate.
 
 Preserved history follows. V168 produced a qualifying selective-
 boundary BPE representation at 4,999 fixed actions: exact 14,000-record

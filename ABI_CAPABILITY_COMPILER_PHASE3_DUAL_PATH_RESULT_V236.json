@@ -1,0 +1,60 @@
+{
+  "format": "abi-capability-compiler-phase3-dual-path-decision/1",
+  "status": "FAIL_LOCAL_FIT_BRANCH_CLOSED",
+  "effective_date": "2026-08-09",
+  "historical_evidence_changed": false,
+  "feasibility": {
+    "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_DUAL_PATH_FEASIBILITY_PROTOCOL_V231.json",
+    "result": "results/abi_capability_compiler_phase3_dual_path/feasibility_v232.json",
+    "status": "PASS_FEASIBLE"
+  },
+  "host": {
+    "repository": "../layercake_release",
+    "commit": "065d19c983356d2d04a193798285186bf1ea4b22",
+    "interface": "lc-direct-neural-core/10",
+    "decision": "../layercake_release/moonshot/postrelease_dual_path_progressive_decision_v26.json",
+    "status": "PASS_CONSTRUCT_ONLY",
+    "quality_or_performance_inherited": false
+  },
+  "operational_failure": "results/abi_capability_compiler_phase3_dual_path/local_fit_v234_command_envelope_failure.json",
+  "local_fit": {
+    "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_DUAL_PATH_LOCAL_FIT_PROTOCOL_V233.json",
+    "replay": "ABI_CAPABILITY_COMPILER_PHASE3_DUAL_PATH_LOCAL_FIT_REPLAY_V235.json",
+    "metadata": "results/abi_capability_compiler_phase3_dual_path/local_fit_replay_v236/metadata.json",
+    "metadata_sha256": "40e3c2ed5c9a814e28898a54880f6174d87f21dbc5eb6dba1b3f29caef4cda63",
+    "replacement_sha256": "e7f762d3919387f601155f924bf26a6cd8ec4c733452207d58c73bc4f76fa3ee",
+    "replacement_parameters": 94384128,
+    "copied_substrate_parameters": 196899840,
+    "copied_substrate_unchanged": true,
+    "source_blocks_in_artifact": 0,
+    "layer_0": {
+      "mean_attention_relative_rmse": 0.213902619268213,
+      "mean_attention_output_cosine": 0.9866126371281487,
+      "mean_final_relative_rmse": 0.26453180025730816,
+      "mean_final_output_cosine": 0.9750772075993674,
+      "relative_rmse_gate_maximum": 0.85,
+      "output_cosine_gate_minimum": 0.98,
+      "passed": false
+    },
+    "peak_cuda_allocated_bytes": 8555371520,
+    "training_steps_completed": 256,
+    "final_test_accessed": false
+  },
+  "comparison": {
+    "fused_layer_0_mean_final_cosine": 0.9670919648,
+    "dual_layer_0_mean_final_cosine": 0.9750772075993674,
+    "absolute_improvement": 0.0079852427993674,
+    "interpretation": "The separate attention path clears 0.98, but the final post-MLP output does not. The measured next question is source-MLP residual rank, not more dual-path tuning."
+  },
+  "closed_variants": [
+    "dual_path_loss_weights",
+    "dual_path_training_steps",
+    "dual_path_seed",
+    "dual_path_threshold",
+    "dual_path_symmetric_width",
+    "nearby_dual_path_variants"
+  ],
+  "next_gate": "One separately preregistered read-only source-MLP residual intrinsic-rank audit on the fixed calibration records; no training until it selects or rejects a materially asymmetric sparse-MLP successor.",
+  "phase3_certified": false,
+  "claim_boundary": "Negative local-fit evidence only; no autonomous English quality, measured inference, Phase 3 certificate, or ABI superiority claim."
+}

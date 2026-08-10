@@ -80,7 +80,7 @@ Status date: 2026-08-09.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V232.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V236.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 V215-V230 opened one materially distinct progressive source-block replacement
@@ -110,6 +110,19 @@ is acquisition, quality, measured speed, or Phase 3 evidence. One separately
 preregistered topology-aware local-fit screen may train the distinct attention
 and MLP residual paths against frozen source-component targets. Final material
 remains prohibited.
+
+V233-V236 completed the one authorized dual-path local screen. Attempt V234
+was terminated by its command envelope before producing an artifact and is
+preserved; V235 authorized only a step-zero replay. At source layer 0 the
+attention intermediate passed 0.98661 mean cosine, while the final block output
+reached 0.97508, still below the unchanged 0.98 gate. Relative RMSE passed at
+0.26453, all 196,899,840 copied parameters remained exact, and the negative
+replacement artifact contains zero source blocks. The result improves over the
+fused 0.96709 cosine but does not pass. Close dual-path loss, step, seed,
+threshold, symmetric-width, and nearby variants. One read-only source-MLP
+residual rank audit may now determine whether the measured post-attention miss
+supports a materially asymmetric sparse-MLP successor. Training is prohibited
+until that audit and a new no-model feasibility gate pass.
 
 V191-V214 tested the authorized weight-level structural route. The independent
 LayerCake repository construct-certified `lc-direct-neural-core/7`; ABI did
