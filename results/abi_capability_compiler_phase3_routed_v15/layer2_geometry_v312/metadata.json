@@ -1,0 +1,1381 @@
+{
+  "aggregate": {
+    "attention_plus_exact_source_mlp": {
+      "absolute_rmse": 0.24444250443152019,
+      "block_relative_rmse": 0.040924376608537774,
+      "input_rms": 0.13884129375219345,
+      "output_cosine": 0.9840242564678192,
+      "output_relative_rmse": 0.04081644197659833,
+      "residual_cosine": 0.8952896445989609,
+      "target_output_rms": 6.077856745038714,
+      "target_residual_rms": 6.064971855708531
+    },
+    "deployed_routed_map": {
+      "absolute_rmse": 0.19476997612842492,
+      "block_relative_rmse": 0.03607786327068295,
+      "input_rms": 0.13884129375219345,
+      "output_cosine": 0.8535092025995255,
+      "output_relative_rmse": 0.03596495760471693,
+      "residual_cosine": 0.60511585857187,
+      "target_output_rms": 6.077856745038714,
+      "target_residual_rms": 6.064971855708531
+    },
+    "linear_coefficients_only": {
+      "absolute_rmse": 0.2088891097477504,
+      "block_relative_rmse": 0.038400737601997595,
+      "input_rms": 0.13884129375219345,
+      "output_cosine": 0.8389490268060139,
+      "output_relative_rmse": 0.03828141026731048,
+      "residual_cosine": 0.5788543426564762,
+      "target_output_rms": 6.077856745038714,
+      "target_residual_rms": 6.064971855708531
+    },
+    "rank768_basis_oracle": {
+      "absolute_rmse": 0.02529913991955774,
+      "block_relative_rmse": 0.004302025589692805,
+      "input_rms": 0.13884129375219345,
+      "output_cosine": 0.9918616179909024,
+      "output_relative_rmse": 0.004290367243811488,
+      "residual_cosine": 0.9415451096636909,
+      "target_output_rms": 6.077856745038714,
+      "target_residual_rms": 6.064971855708531
+    }
+  },
+  "artifact_promoted": false,
+  "basis_orthonormal_gram_error": 5.415070972958347e-06,
+  "calibration_tokens": 33189,
+  "checkpoint_written": false,
+  "claim_boundary": "Read-only fixed-record layer2 failure decomposition only; no repair, artifact, English quality, runtime, certificate, or superiority claim.",
+  "diagnosis": {
+    "basis_oracle_passes_cosine": true,
+    "deployed_passes_cosine": false,
+    "exact_source_mlp_passes_cosine": true,
+    "linear_only_passes_cosine": false
+  },
+  "extraction_protocol_sha256": "6c20f2a6f11b78225c1833dd839582c05c0230410db49fc3623a0c787a660789",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-routed-v15-layer2-geometry-audit/1",
+  "phase3_certified": false,
+  "protocol_sha256": "cf1a551c1e83af87dd01328a122424ef93e18d1b94a34941ce281842e19ce3eb",
+  "record_metrics": [
+    {
+      "capability": "instruction_following",
+      "record_id": "eb365cc12b0e0744f68172118b087ec6b5edfa10369e5757f4d760d21ab80d94",
+      "route": "generic",
+      "scenarios": {
+        "attention_plus_exact_source_mlp": {
+          "absolute_rmse": 0.2923426628112793,
+          "block_relative_rmse": 0.037425700575113297,
+          "input_rms": 0.13792411983013153,
+          "output_cosine": 0.9853182435035706,
+          "output_relative_rmse": 0.03734326362609863,
+          "residual_cosine": 0.9164313077926636,
+          "target_output_rms": 7.828524589538574,
+          "target_residual_rms": 7.815047264099121
+        },
+        "deployed_routed_map": {
+          "absolute_rmse": 0.10659291595220566,
+          "block_relative_rmse": 0.013646023347973824,
+          "input_rms": 0.13792411983013153,
+          "output_cosine": 0.9062628149986267,
+          "output_relative_rmse": 0.013615964911878109,
+          "residual_cosine": 0.7379806041717529,
+          "target_output_rms": 7.828524589538574,
+          "target_residual_rms": 7.815047264099121
+        },
+        "linear_coefficients_only": {
+          "absolute_rmse": 0.1368279606103897,
+          "block_relative_rmse": 0.017516713589429855,
+          "input_rms": 0.13792411983013153,
+          "output_cosine": 0.8632305264472961,
+          "output_relative_rmse": 0.017478128895163536,
+          "residual_cosine": 0.6997135281562805,
+          "target_output_rms": 7.828524589538574,
+          "target_residual_rms": 7.815047264099121
+        },
+        "rank768_basis_oracle": {
+          "absolute_rmse": 0.026150699704885483,
+          "block_relative_rmse": 0.0033478119876235723,
+          "input_rms": 0.13792411983013153,
+          "output_cosine": 0.9920193552970886,
+          "output_relative_rmse": 0.003340437775477767,
+          "residual_cosine": 0.9545116424560547,
+          "target_output_rms": 7.828524589538574,
+          "target_residual_rms": 7.815047264099121
+        }
+      }
+    },
+    {
+      "capability": "clarification",
+      "record_id": "994833e326d7ab165e9a91a6bb91a59a2c4774a14bc40cf1defc34fb8b62c9c6",
+      "route": "generic",
+      "scenarios": {
+        "attention_plus_exact_source_mlp": {
+          "absolute_rmse": 0.24752743542194366,
+          "block_relative_rmse": 0.03378221020102501,
+          "input_rms": 0.1437147557735443,
+          "output_cosine": 0.9847733378410339,
+          "output_relative_rmse": 0.033684324473142624,
+          "residual_cosine": 0.8913792371749878,
+          "target_output_rms": 7.348445892333984,
+          "target_residual_rms": 7.330763816833496
+        },
+        "deployed_routed_map": {
+          "absolute_rmse": 0.2863253057003021,
+          "block_relative_rmse": 0.039077289402484894,
+          "input_rms": 0.1437147557735443,
+          "output_cosine": 0.8283728361129761,
+          "output_relative_rmse": 0.03896406292915344,
+          "residual_cosine": 0.5770778656005859,
+          "target_output_rms": 7.348445892333984,
+          "target_residual_rms": 7.330763816833496
+        },
+        "linear_coefficients_only": {
+          "absolute_rmse": 0.30248063802719116,
+          "block_relative_rmse": 0.04128214716911316,
+          "input_rms": 0.1437147557735443,
+          "output_cosine": 0.814797580242157,
+          "output_relative_rmse": 0.041162531822919846,
+          "residual_cosine": 0.556830883026123,
+          "target_output_rms": 7.348445892333984,
+          "target_residual_rms": 7.330763816833496
+        },
+        "rank768_basis_oracle": {
+          "absolute_rmse": 0.030608082190155983,
+          "block_relative_rmse": 0.004177349619567394,
+          "input_rms": 0.1437147557735443,
+          "output_cosine": 0.9901981353759766,
+          "output_relative_rmse": 0.004165245685726404,
+          "residual_cosine": 0.9260570406913757,
+          "target_output_rms": 7.348445892333984,
+          "target_residual_rms": 7.330763816833496
+        }
+      }
+    },
+    {
+      "capability": "grammar",
+      "record_id": "13f1491f0e435e1f00ce43f0ddf00fb9f3c329c578e612a62dfa0f4689bd3fed",
+      "route": "generic",
+      "scenarios": {
+        "attention_plus_exact_source_mlp": {
+          "absolute_rmse": 0.29957520961761475,
+          "block_relative_rmse": 0.03754541277885437,
+          "input_rms": 0.15277688205242157,
+          "output_cosine": 0.9873127341270447,
+          "output_relative_rmse": 0.03742948919534683,
+          "residual_cosine": 0.9274055361747742,
+          "target_output_rms": 8.003721237182617,
+          "target_residual_rms": 7.983020305633545
+        },
+        "deployed_routed_map": {
+          "absolute_rmse": 0.11263839900493622,
+          "block_relative_rmse": 0.014116840437054634,
+          "input_rms": 0.15277688205242157,
+          "output_cosine": 0.8898623585700989,
+          "output_relative_rmse": 0.014073253609240055,
+          "residual_cosine": 0.6489283442497253,
+          "target_output_rms": 8.003721237182617,
+          "target_residual_rms": 7.983020305633545
+        },
+        "linear_coefficients_only": {
+          "absolute_rmse": 0.1266147494316101,
+          "block_relative_rmse": 0.015868481248617172,
+          "input_rms": 0.15277688205242157,
+          "output_cosine": 0.8728064894676208,
+          "output_relative_rmse": 0.015819484367966652,
+          "residual_cosine": 0.5916126370429993,
+          "target_output_rms": 8.003721237182617,
+          "target_residual_rms": 7.983020305633545
+        },
+        "rank768_basis_oracle": {
+          "absolute_rmse": 0.026554860174655914,
+          "block_relative_rmse": 0.0033280900679528713,
+          "input_rms": 0.15277688205242157,
+          "output_cosine": 0.9913026094436646,
+          "output_relative_rmse": 0.0033178143203258514,
+          "residual_cosine": 0.9420081973075867,
+          "target_output_rms": 8.003721237182617,
+          "target_residual_rms": 7.983020305633545
+        }
+      }
+    },
+    {
+      "capability": "conversation",
+      "record_id": "6ae6d219f1ad307b759f33ced8cea93467b534b747fd268aec1b65c86b7c5556",
+      "route": "conversation",
+      "scenarios": {
+        "attention_plus_exact_source_mlp": {
+          "absolute_rmse": 0.31935885548591614,
+          "block_relative_rmse": 0.03969965875148773,
+          "input_rms": 0.13336214423179626,
+          "output_cosine": 0.9879319071769714,
+          "output_relative_rmse": 0.039612095803022385,
+          "residual_cosine": 0.9270312786102295,
+          "target_output_rms": 8.062154769897461,
+          "target_residual_rms": 8.048264503479004
+        },
+        "deployed_routed_map": {
+          "absolute_rmse": 0.06419023871421814,
+          "block_relative_rmse": 0.007979520596563816,
+          "input_rms": 0.13336214423179626,
+          "output_cosine": 0.9411572813987732,
+          "output_relative_rmse": 0.007961920462548733,
+          "residual_cosine": 0.7835590243339539,
+          "target_output_rms": 8.062154769897461,
+          "target_residual_rms": 8.048264503479004
+        },
+        "linear_coefficients_only": {
+          "absolute_rmse": 0.0695529580116272,
+          "block_relative_rmse": 0.00864616222679615,
+          "input_rms": 0.13336214423179626,
+          "output_cosine": 0.9314354658126831,
+          "output_relative_rmse": 0.008627092465758324,
+          "residual_cosine": 0.7487415075302124,
+          "target_output_rms": 8.062154769897461,
+          "target_residual_rms": 8.048264503479004
+        },
+        "rank768_basis_oracle": {
+          "absolute_rmse": 0.04185628145933151,
+          "block_relative_rmse": 0.005203174892812967,
+          "input_rms": 0.13336214423179626,
+          "output_cosine": 0.9923089742660522,
+          "output_relative_rmse": 0.005191699136048555,
+          "residual_cosine": 0.9503139853477478,
+          "target_output_rms": 8.062154769897461,
+          "target_residual_rms": 8.048264503479004
+        }
+      }
+    },
+    {
+      "capability": "fact_free_reasoning",
+      "record_id": "ab1c9af7c3ee5aee59f1d882c2de2227c66787b8ac4fa16f29536ae0d696346d",
+      "route": "generic",
+      "scenarios": {
+        "attention_plus_exact_source_mlp": {
+          "absolute_rmse": 0.19140245020389557,
+          "block_relative_rmse": 0.04329242557287216,
+          "input_rms": 0.13457606732845306,
+          "output_cosine": 0.9832257628440857,
+          "output_relative_rmse": 0.04318094253540039,
+          "residual_cosine": 0.8949376344680786,
+          "target_output_rms": 4.432567596435547,
+          "target_residual_rms": 4.423150539398193
+        },
+        "deployed_routed_map": {
+          "absolute_rmse": 0.09926020354032516,
+          "block_relative_rmse": 0.02245120145380497,
+          "input_rms": 0.13457606732845306,
+          "output_cosine": 0.8866000175476074,
+          "output_relative_rmse": 0.02239338681101799,
+          "residual_cosine": 0.6465972661972046,
+          "target_output_rms": 4.432567596435547,
+          "target_residual_rms": 4.423150539398193
+        },
+        "linear_coefficients_only": {
+          "absolute_rmse": 0.11535714566707611,
+          "block_relative_rmse": 0.02609209343791008,
+          "input_rms": 0.13457606732845306,
+          "output_cosine": 0.8642662167549133,
+          "output_relative_rmse": 0.02602490410208702,
+          "residual_cosine": 0.6124613285064697,
+          "target_output_rms": 4.432567596435547,
+          "target_residual_rms": 4.423150539398193
+        },
+        "rank768_basis_oracle": {
+          "absolute_rmse": 0.021286819130182266,
+          "block_relative_rmse": 0.004814765881747007,
+          "input_rms": 0.13457606732845306,
+          "output_cosine": 0.9935243725776672,
+          "output_relative_rmse": 0.004802367649972439,
+          "residual_cosine": 0.9568184614181519,
+          "target_output_rms": 4.432567596435547,
+          "target_residual_rms": 4.423150539398193
+        }
+      }
+    },
+    {
+      "capability": "fluent_realization",
+      "record_id": "1d4d169724ca67542a2e3197e040edca92b8f13bda78905a78b46ff4381405cb",
+      "route": "generic",
+      "scenarios": {
+        "attention_plus_exact_source_mlp": {
+          "absolute_rmse": 0.24040144681930542,
+          "block_relative_rmse": 0.043519917875528336,
+          "input_rms": 0.1320587545633316,
+          "output_cosine": 0.9825851321220398,
+          "output_relative_rmse": 0.04341626539826393,
+          "residual_cosine": 0.8885501623153687,
+          "target_output_rms": 5.537128448486328,
+          "target_residual_rms": 5.526556968688965
+        },
+        "deployed_routed_map": {
+          "absolute_rmse": 0.16783133149147034,
+          "block_relative_rmse": 0.030382538214325905,
+          "input_rms": 0.1320587545633316,
+          "output_cosine": 0.8172327280044556,
+          "output_relative_rmse": 0.030310174450278282,
+          "residual_cosine": 0.5725396275520325,
+          "target_output_rms": 5.537128448486328,
+          "target_residual_rms": 5.526556968688965
+        },
+        "linear_coefficients_only": {
+          "absolute_rmse": 0.18275697529315948,
+          "block_relative_rmse": 0.033084530383348465,
+          "input_rms": 0.1320587545633316,
+          "output_cosine": 0.8005316853523254,
+          "output_relative_rmse": 0.0330057330429554,
+          "residual_cosine": 0.5511068105697632,
+          "target_output_rms": 5.537128448486328,
+          "target_residual_rms": 5.526556968688965
+        },
+        "rank768_basis_oracle": {
+          "absolute_rmse": 0.022461682558059692,
+          "block_relative_rmse": 0.004066242836415768,
+          "input_rms": 0.1320587545633316,
+          "output_cosine": 0.9926721453666687,
+          "output_relative_rmse": 0.004056558012962341,
+          "residual_cosine": 0.9505521655082703,
+          "target_output_rms": 5.537128448486328,
+          "target_residual_rms": 5.526556968688965
+        }
+      }
+    },
+    {
+      "capability": "format_control",
+      "record_id": "78a0d820e899850cde2c52abcac92d961814c19817c8a3848c18894801d0017e",
+      "route": "generic",
+      "scenarios": {
+        "attention_plus_exact_source_mlp": {
+          "absolute_rmse": 0.21800008416175842,
+          "block_relative_rmse": 0.03062102198600769,
+          "input_rms": 0.1314878761768341,
+          "output_cosine": 0.9861112833023071,
+          "output_relative_rmse": 0.030553214251995087,
+          "residual_cosine": 0.9011095762252808,
+          "target_output_rms": 7.135095119476318,
+          "target_residual_rms": 7.12270450592041
+        },
+        "deployed_routed_map": {
+          "absolute_rmse": 0.08273889869451523,
+          "block_relative_rmse": 0.011621781624853611,
+          "input_rms": 0.1314878761768341,
+          "output_cosine": 0.930335521697998,
+          "output_relative_rmse": 0.011596047319471836,
+          "residual_cosine": 0.7241482138633728,
+          "target_output_rms": 7.135095119476318,
+          "target_residual_rms": 7.12270450592041
+        },
+        "linear_coefficients_only": {
+          "absolute_rmse": 0.08303732424974442,
+          "block_relative_rmse": 0.011663700453937054,
+          "input_rms": 0.1314878761768341,
+          "output_cosine": 0.9264544248580933,
+          "output_relative_rmse": 0.011637872084975243,
+          "residual_cosine": 0.7228399515151978,
+          "target_output_rms": 7.135095119476318,
+          "target_residual_rms": 7.12270450592041
+        },
+        "rank768_basis_oracle": {
+          "absolute_rmse": 0.024539029225707054,
+          "block_relative_rmse": 0.0034468339290469885,
+          "input_rms": 0.1314878761768341,
+          "output_cosine": 0.99521404504776,
+          "output_relative_rmse": 0.003439201507717371,
+          "residual_cosine": 0.9635260701179504,
+          "target_output_rms": 7.135095119476318,
+          "target_residual_rms": 7.12270450592041
+        }
+      }
+    },
+    {
+      "capability": "supplied_text_summarization",
+      "record_id": "b059d53af365b98b9063552d463b2b4af82f48b9ec298f846874d4bc61038069",
+      "route": "generic",
+      "scenarios": {
+        "attention_plus_exact_source_mlp": {
+          "absolute_rmse": 0.2793791890144348,
+          "block_relative_rmse": 0.04656321927905083,
+          "input_rms": 0.14319366216659546,
+          "output_cosine": 0.9850130677223206,
+          "output_relative_rmse": 0.04640686884522438,
+          "residual_cosine": 0.8938230872154236,
+          "target_output_rms": 6.020212173461914,
+          "target_residual_rms": 6.003064155578613
+        },
+        "deployed_routed_map": {
+          "absolute_rmse": 0.1474486142396927,
+          "block_relative_rmse": 0.024574780836701393,
+          "input_rms": 0.14319366216659546,
+          "output_cosine": 0.884610116481781,
+          "output_relative_rmse": 0.024492261931300163,
+          "residual_cosine": 0.631628155708313,
+          "target_output_rms": 6.020212173461914,
+          "target_residual_rms": 6.003064155578613
+        },
+        "linear_coefficients_only": {
+          "absolute_rmse": 0.19679610431194305,
+          "block_relative_rmse": 0.032799363136291504,
+          "input_rms": 0.14319366216659546,
+          "output_cosine": 0.8711941838264465,
+          "output_relative_rmse": 0.032689232379198074,
+          "residual_cosine": 0.5983799695968628,
+          "target_output_rms": 6.020212173461914,
+          "target_residual_rms": 6.003064155578613
+        },
+        "rank768_basis_oracle": {
+          "absolute_rmse": 0.01988859288394451,
+          "block_relative_rmse": 0.003314766800031066,
+          "input_rms": 0.14319366216659546,
+          "output_cosine": 0.9946613311767578,
+          "output_relative_rmse": 0.0033036365639418364,
+          "residual_cosine": 0.960691511631012,
+          "target_output_rms": 6.020212173461914,
+          "target_residual_rms": 6.003064155578613
+        }
+      }
+    },
+    {
+      "capability": "conversation",
+      "record_id": "776b4f32b6908a64455eb8e132b4a03b52e476613e939e752339254351e20f9f",
+      "route": "conversation",
+      "scenarios": {
+        "attention_plus_exact_source_mlp": {
+          "absolute_rmse": 0.25722911953926086,
+          "block_relative_rmse": 0.04508145898580551,
+          "input_rms": 0.1501847505569458,
+          "output_cosine": 0.9762721061706543,
+          "output_relative_rmse": 0.044969592243433,
+          "residual_cosine": 0.8452362418174744,
+          "target_output_rms": 5.720067977905273,
+          "target_residual_rms": 5.708552837371826
+        },
+        "deployed_routed_map": {
+          "absolute_rmse": 0.6110617518424988,
+          "block_relative_rmse": 0.1070934608578682,
+          "input_rms": 0.1501847505569458,
+          "output_cosine": 0.7969704866409302,
+          "output_relative_rmse": 0.10682770609855652,
+          "residual_cosine": 0.4551338851451874,
+          "target_output_rms": 5.720067977905273,
+          "target_residual_rms": 5.708552837371826
+        },
+        "linear_coefficients_only": {
+          "absolute_rmse": 0.6203472018241882,
+          "block_relative_rmse": 0.1087208092212677,
+          "input_rms": 0.1501847505569458,
+          "output_cosine": 0.7907120585441589,
+          "output_relative_rmse": 0.10845101624727249,
+          "residual_cosine": 0.4431458115577698,
+          "target_output_rms": 5.720067977905273,
+          "target_residual_rms": 5.708552837371826
+        },
+        "rank768_basis_oracle": {
+          "absolute_rmse": 0.030067062005400658,
+          "block_relative_rmse": 0.005269492976367474,
+          "input_rms": 0.1501847505569458,
+          "output_cosine": 0.985406219959259,
+          "output_relative_rmse": 0.005256416741758585,
+          "residual_cosine": 0.8917163014411926,
+          "target_output_rms": 5.720067977905273,
+          "target_residual_rms": 5.708552837371826
+        }
+      }
+    },
+    {
+      "capability": "abstention",
+      "record_id": "6cd9d49800dede997fabea7b0f5ac65039cf72544e0505a0ad4647f69166e8b6",
+      "route": "abstention",
+      "scenarios": {
+        "attention_plus_exact_source_mlp": {
+          "absolute_rmse": 0.19305284321308136,
+          "block_relative_rmse": 0.03824545070528984,
+          "input_rms": 0.13294066488742828,
+          "output_cosine": 0.9832277297973633,
+          "output_relative_rmse": 0.03812186047434807,
+          "residual_cosine": 0.8706653714179993,
+          "target_output_rms": 5.064098358154297,
+          "target_residual_rms": 5.05016565322876
+        },
+        "deployed_routed_map": {
+          "absolute_rmse": 0.14907892048358917,
+          "block_relative_rmse": 0.029533833265304565,
+          "input_rms": 0.13294066488742828,
+          "output_cosine": 0.8375716805458069,
+          "output_relative_rmse": 0.02943839319050312,
+          "residual_cosine": 0.491289347410202,
+          "target_output_rms": 5.064098358154297,
+          "target_residual_rms": 5.05016565322876
+        },
+        "linear_coefficients_only": {
+          "absolute_rmse": 0.18622133135795593,
+          "block_relative_rmse": 0.03689206764101982,
+          "input_rms": 0.13294066488742828,
+          "output_cosine": 0.8152236342430115,
+          "output_relative_rmse": 0.03677285090088844,
+          "residual_cosine": 0.4628198742866516,
+          "target_output_rms": 5.064098358154297,
+          "target_residual_rms": 5.05016565322876
+        },
+        "rank768_basis_oracle": {
+          "absolute_rmse": 0.025358565151691437,
+          "block_relative_rmse": 0.0050237528048455715,
+          "input_rms": 0.13294066488742828,
+          "output_cosine": 0.9878271222114563,
+          "output_relative_rmse": 0.005007518455386162,
+          "residual_cosine": 0.9002078175544739,
+          "target_output_rms": 5.064098358154297,
+          "target_residual_rms": 5.05016565322876
+        }
+      }
+    },
+    {
+      "capability": "fact_free_reasoning",
+      "record_id": "a22c9d3008ce925d38091428aa526afd40b0a2cc4986c36bea4c1e48a0ba376c",
+      "route": "generic",
+      "scenarios": {
+        "attention_plus_exact_source_mlp": {
+          "absolute_rmse": 0.1910550743341446,
+          "block_relative_rmse": 0.04321431741118431,
+          "input_rms": 0.13592566549777985,
+          "output_cosine": 0.9847405552864075,
+          "output_relative_rmse": 0.04310297593474388,
+          "residual_cosine": 0.8961987495422363,
+          "target_output_rms": 4.432526111602783,
+          "target_residual_rms": 4.423099994659424
+        },
+        "deployed_routed_map": {
+          "absolute_rmse": 0.10232287645339966,
+          "block_relative_rmse": 0.023144181817770004,
+          "input_rms": 0.13592566549777985,
+          "output_cosine": 0.8935196399688721,
+          "output_relative_rmse": 0.023084551095962524,
+          "residual_cosine": 0.6713099479675293,
+          "target_output_rms": 4.432526111602783,
+          "target_residual_rms": 4.423099994659424
+        },
+        "linear_coefficients_only": {
+          "absolute_rmse": 0.10563315451145172,
+          "block_relative_rmse": 0.023892926052212715,
+          "input_rms": 0.13592566549777985,
+          "output_cosine": 0.8908252716064453,
+          "output_relative_rmse": 0.023831365630030632,
+          "residual_cosine": 0.6699610352516174,
+          "target_output_rms": 4.432526111602783,
+          "target_residual_rms": 4.423099994659424
+        },
+        "rank768_basis_oracle": {
+          "absolute_rmse": 0.019058380275964737,
+          "block_relative_rmse": 0.00431077228859067,
+          "input_rms": 0.13592566549777985,
+          "output_cosine": 0.9950632452964783,
+          "output_relative_rmse": 0.004299665801227093,
+          "residual_cosine": 0.9655515551567078,
+          "target_output_rms": 4.432526111602783,
+          "target_residual_rms": 4.423099994659424
+        }
+      }
+    },
+    {
+      "capability": "email_drafting_from_notes",
+      "record_id": "78493aa645b84af38016edfb373c3fc595058fe78f1dd689ae4265d32920aa5c",
+      "route": "generic",
+      "scenarios": {
+        "attention_plus_exact_source_mlp": {
+          "absolute_rmse": 0.20498839020729065,
+          "block_relative_rmse": 0.046036724001169205,
+          "input_rms": 0.1256708800792694,
+          "output_cosine": 0.9811508655548096,
+          "output_relative_rmse": 0.04589270055294037,
+          "residual_cosine": 0.8740034103393555,
+          "target_output_rms": 4.46668815612793,
+          "target_residual_rms": 4.454861640930176
+        },
+        "deployed_routed_map": {
+          "absolute_rmse": 0.12501175701618195,
+          "block_relative_rmse": 0.028075402602553368,
+          "input_rms": 0.1256708800792694,
+          "output_cosine": 0.8559392690658569,
+          "output_relative_rmse": 0.02798757143318653,
+          "residual_cosine": 0.5905483961105347,
+          "target_output_rms": 4.46668815612793,
+          "target_residual_rms": 4.454861640930176
+        },
+        "linear_coefficients_only": {
+          "absolute_rmse": 0.1450139433145523,
+          "block_relative_rmse": 0.03256753832101822,
+          "input_rms": 0.1256708800792694,
+          "output_cosine": 0.8517791032791138,
+          "output_relative_rmse": 0.032465651631355286,
+          "residual_cosine": 0.5856277942657471,
+          "target_output_rms": 4.46668815612793,
+          "target_residual_rms": 4.454861640930176
+        },
+        "rank768_basis_oracle": {
+          "absolute_rmse": 0.02175707370042801,
+          "block_relative_rmse": 0.004886249080300331,
+          "input_rms": 0.1256708800792694,
+          "output_cosine": 0.9916868209838867,
+          "output_relative_rmse": 0.004870963282883167,
+          "residual_cosine": 0.9410905241966248,
+          "target_output_rms": 4.46668815612793,
+          "target_residual_rms": 4.454861640930176
+        }
+      }
+    },
+    {
+      "capability": "coherence",
+      "record_id": "9f2fba5218480f8b0946a8c3f172548386de0baee02e88d8a66e6b27d4752a94",
+      "route": "generic",
+      "scenarios": {
+        "attention_plus_exact_source_mlp": {
+          "absolute_rmse": 0.19140493869781494,
+          "block_relative_rmse": 0.043293293565511703,
+          "input_rms": 0.12958353757858276,
+          "output_cosine": 0.981590747833252,
+          "output_relative_rmse": 0.04318328946828842,
+          "residual_cosine": 0.889214277267456,
+          "target_output_rms": 4.432384490966797,
+          "target_residual_rms": 4.423101902008057
+        },
+        "deployed_routed_map": {
+          "absolute_rmse": 0.11375077813863754,
+          "block_relative_rmse": 0.025728939101099968,
+          "input_rms": 0.12958353757858276,
+          "output_cosine": 0.8508124351501465,
+          "output_relative_rmse": 0.02566356211900711,
+          "residual_cosine": 0.6046932935714722,
+          "target_output_rms": 4.432384490966797,
+          "target_residual_rms": 4.423101902008057
+        },
+        "linear_coefficients_only": {
+          "absolute_rmse": 0.12028609216213226,
+          "block_relative_rmse": 0.027207141742110252,
+          "input_rms": 0.12958353757858276,
+          "output_cosine": 0.8389945030212402,
+          "output_relative_rmse": 0.027138009667396545,
+          "residual_cosine": 0.5737656354904175,
+          "target_output_rms": 4.432384490966797,
+          "target_residual_rms": 4.423101902008057
+        },
+        "rank768_basis_oracle": {
+          "absolute_rmse": 0.020664868876338005,
+          "block_relative_rmse": 0.0046741231344640255,
+          "input_rms": 0.12958353757858276,
+          "output_cosine": 0.9934234619140625,
+          "output_relative_rmse": 0.004662246443331242,
+          "residual_cosine": 0.9589192867279053,
+          "target_output_rms": 4.432384490966797,
+          "target_residual_rms": 4.423101902008057
+        }
+      }
+    },
+    {
+      "capability": "clarification",
+      "record_id": "f4678dfd85aa46e73d2b423cd6598f8160eb57939e2c5e999d8d969864c0c4d1",
+      "route": "generic",
+      "scenarios": {
+        "attention_plus_exact_source_mlp": {
+          "absolute_rmse": 0.22219230234622955,
+          "block_relative_rmse": 0.030579403042793274,
+          "input_rms": 0.13066788017749786,
+          "output_cosine": 0.9887690544128418,
+          "output_relative_rmse": 0.030512018129229546,
+          "residual_cosine": 0.9078807234764099,
+          "target_output_rms": 7.282124042510986,
+          "target_residual_rms": 7.269564628601074
+        },
+        "deployed_routed_map": {
+          "absolute_rmse": 0.12659044563770294,
+          "block_relative_rmse": 0.017422117292881012,
+          "input_rms": 0.13066788017749786,
+          "output_cosine": 0.8390047550201416,
+          "output_relative_rmse": 0.017383726313710213,
+          "residual_cosine": 0.570933997631073,
+          "target_output_rms": 7.282124042510986,
+          "target_residual_rms": 7.269564628601074
+        },
+        "linear_coefficients_only": {
+          "absolute_rmse": 0.1365613490343094,
+          "block_relative_rmse": 0.01879437081515789,
+          "input_rms": 0.13066788017749786,
+          "output_cosine": 0.8255645632743835,
+          "output_relative_rmse": 0.01875295490026474,
+          "residual_cosine": 0.5541953444480896,
+          "target_output_rms": 7.282124042510986,
+          "target_residual_rms": 7.269564628601074
+        },
+        "rank768_basis_oracle": {
+          "absolute_rmse": 0.02683776430785656,
+          "block_relative_rmse": 0.003693569917231798,
+          "input_rms": 0.13066788017749786,
+          "output_cosine": 0.9928115606307983,
+          "output_relative_rmse": 0.00368543085642159,
+          "residual_cosine": 0.940980076789856,
+          "target_output_rms": 7.282124042510986,
+          "target_residual_rms": 7.269564628601074
+        }
+      }
+    },
+    {
+      "capability": "rewriting",
+      "record_id": "09adf13466c0b97fb6b4d4f9ff73bcd6f85d04b7e8c9177e0f82681ac59d2c72",
+      "route": "generic",
+      "scenarios": {
+        "attention_plus_exact_source_mlp": {
+          "absolute_rmse": 0.28470730781555176,
+          "block_relative_rmse": 0.04468996450304985,
+          "input_rms": 0.13634459674358368,
+          "output_cosine": 0.991807758808136,
+          "output_relative_rmse": 0.044586945325136185,
+          "residual_cosine": 0.9389642477035522,
+          "target_output_rms": 6.385440826416016,
+          "target_residual_rms": 6.373775959014893
+        },
+        "deployed_routed_map": {
+          "absolute_rmse": 0.09557854384183884,
+          "block_relative_rmse": 0.015002782456576824,
+          "input_rms": 0.13634459674358368,
+          "output_cosine": 0.8931660652160645,
+          "output_relative_rmse": 0.014968197792768478,
+          "residual_cosine": 0.6342575550079346,
+          "target_output_rms": 6.385440826416016,
+          "target_residual_rms": 6.373775959014893
+        },
+        "linear_coefficients_only": {
+          "absolute_rmse": 0.0988653376698494,
+          "block_relative_rmse": 0.015518704429268837,
+          "input_rms": 0.13634459674358368,
+          "output_cosine": 0.8861920237541199,
+          "output_relative_rmse": 0.015482930466532707,
+          "residual_cosine": 0.6258041858673096,
+          "target_output_rms": 6.385440826416016,
+          "target_residual_rms": 6.373775959014893
+        },
+        "rank768_basis_oracle": {
+          "absolute_rmse": 0.021321162581443787,
+          "block_relative_rmse": 0.0033467423636466265,
+          "input_rms": 0.13634459674358368,
+          "output_cosine": 0.9951100945472717,
+          "output_relative_rmse": 0.0033390275202691555,
+          "residual_cosine": 0.9626397490501404,
+          "target_output_rms": 6.385440826416016,
+          "target_residual_rms": 6.373775959014893
+        }
+      }
+    },
+    {
+      "capability": "tone_control",
+      "record_id": "1394db0fdcedaa6c8032275db4f8600e30a5a670963f8bc7132c81724b38d6be",
+      "route": "generic",
+      "scenarios": {
+        "attention_plus_exact_source_mlp": {
+          "absolute_rmse": 0.26433998346328735,
+          "block_relative_rmse": 0.04293413087725639,
+          "input_rms": 0.13286221027374268,
+          "output_cosine": 0.9851844310760498,
+          "output_relative_rmse": 0.042835842818021774,
+          "residual_cosine": 0.9019567370414734,
+          "target_output_rms": 6.171000003814697,
+          "target_residual_rms": 6.159768104553223
+        },
+        "deployed_routed_map": {
+          "absolute_rmse": 0.1311025172472,
+          "block_relative_rmse": 0.02129368670284748,
+          "input_rms": 0.13286221027374268,
+          "output_cosine": 0.8667219877243042,
+          "output_relative_rmse": 0.021244939416646957,
+          "residual_cosine": 0.6192293167114258,
+          "target_output_rms": 6.171000003814697,
+          "target_residual_rms": 6.159768104553223
+        },
+        "linear_coefficients_only": {
+          "absolute_rmse": 0.1429285705089569,
+          "block_relative_rmse": 0.023214474320411682,
+          "input_rms": 0.13286221027374268,
+          "output_cosine": 0.847569465637207,
+          "output_relative_rmse": 0.023161331191658974,
+          "residual_cosine": 0.576836109161377,
+          "target_output_rms": 6.171000003814697,
+          "target_residual_rms": 6.159768104553223
+        },
+        "rank768_basis_oracle": {
+          "absolute_rmse": 0.02413107454776764,
+          "block_relative_rmse": 0.003919372335076332,
+          "input_rms": 0.13286221027374268,
+          "output_cosine": 0.9914159178733826,
+          "output_relative_rmse": 0.003910399507731199,
+          "residual_cosine": 0.940672755241394,
+          "target_output_rms": 6.171000003814697,
+          "target_residual_rms": 6.159768104553223
+        }
+      }
+    },
+    {
+      "capability": "fluent_realization",
+      "record_id": "d01a3f98cdf4606c3ae74884ae1bf6b1cec48570ee3fdde9da01d993455e88f0",
+      "route": "generic",
+      "scenarios": {
+        "attention_plus_exact_source_mlp": {
+          "absolute_rmse": 0.2450553923845291,
+          "block_relative_rmse": 0.04408916085958481,
+          "input_rms": 0.1359158605337143,
+          "output_cosine": 0.9858976602554321,
+          "output_relative_rmse": 0.04398307204246521,
+          "residual_cosine": 0.9012439846992493,
+          "target_output_rms": 5.571584224700928,
+          "target_residual_rms": 5.560798645019531
+        },
+        "deployed_routed_map": {
+          "absolute_rmse": 0.19086992740631104,
+          "block_relative_rmse": 0.034340377897024155,
+          "input_rms": 0.1359158605337143,
+          "output_cosine": 0.806961178779602,
+          "output_relative_rmse": 0.03425774723291397,
+          "residual_cosine": 0.5224516987800598,
+          "target_output_rms": 5.571584224700928,
+          "target_residual_rms": 5.560798645019531
+        },
+        "linear_coefficients_only": {
+          "absolute_rmse": 0.2075885683298111,
+          "block_relative_rmse": 0.03734831511974335,
+          "input_rms": 0.1359158605337143,
+          "output_cosine": 0.7808722257614136,
+          "output_relative_rmse": 0.03725844621658325,
+          "residual_cosine": 0.4895267188549042,
+          "target_output_rms": 5.571584224700928,
+          "target_residual_rms": 5.560798645019531
+        },
+        "rank768_basis_oracle": {
+          "absolute_rmse": 0.02387852594256401,
+          "block_relative_rmse": 0.0042961067520082,
+          "input_rms": 0.1359158605337143,
+          "output_cosine": 0.9927302598953247,
+          "output_relative_rmse": 0.004285769537091255,
+          "residual_cosine": 0.946098268032074,
+          "target_output_rms": 5.571584224700928,
+          "target_residual_rms": 5.560798645019531
+        }
+      }
+    },
+    {
+      "capability": "prompt_grounding",
+      "record_id": "2d822d6639c24be497723b6d1e030217fdbac3e221e782916ad75646361362bf",
+      "route": "generic",
+      "scenarios": {
+        "attention_plus_exact_source_mlp": {
+          "absolute_rmse": 0.30176931619644165,
+          "block_relative_rmse": 0.045382242649793625,
+          "input_rms": 0.14061079919338226,
+          "output_cosine": 0.9841834902763367,
+          "output_relative_rmse": 0.04524262994527817,
+          "residual_cosine": 0.892647922039032,
+          "target_output_rms": 6.6700215339660645,
+          "target_residual_rms": 6.652904987335205
+        },
+        "deployed_routed_map": {
+          "absolute_rmse": 0.11266231536865234,
+          "block_relative_rmse": 0.01694297045469284,
+          "input_rms": 0.14061079919338226,
+          "output_cosine": 0.8619206547737122,
+          "output_relative_rmse": 0.01689084805548191,
+          "residual_cosine": 0.5389704704284668,
+          "target_output_rms": 6.6700215339660645,
+          "target_residual_rms": 6.652904987335205
+        },
+        "linear_coefficients_only": {
+          "absolute_rmse": 0.1466929316520691,
+          "block_relative_rmse": 0.022060738876461983,
+          "input_rms": 0.14061079919338226,
+          "output_cosine": 0.8433113098144531,
+          "output_relative_rmse": 0.021992871537804604,
+          "residual_cosine": 0.5086798667907715,
+          "target_output_rms": 6.6700215339660645,
+          "target_residual_rms": 6.652904987335205
+        },
+        "rank768_basis_oracle": {
+          "absolute_rmse": 0.025674130767583847,
+          "block_relative_rmse": 0.0038610605988651514,
+          "input_rms": 0.14061079919338226,
+          "output_cosine": 0.9904342889785767,
+          "output_relative_rmse": 0.0038491825107485056,
+          "residual_cosine": 0.9314236044883728,
+          "target_output_rms": 6.6700215339660645,
+          "target_residual_rms": 6.652904987335205
+        }
+      }
+    },
+    {
+      "capability": "rewriting",
+      "record_id": "97310a62f1e856fcb81f935749bb9847cf5129b3401a4f43587b42058ff568d8",
+      "route": "generic",
+      "scenarios": {
+        "attention_plus_exact_source_mlp": {
+          "absolute_rmse": 0.29195255041122437,
+          "block_relative_rmse": 0.044686224311590195,
+          "input_rms": 0.1358538717031479,
+          "output_cosine": 0.9916093945503235,
+          "output_relative_rmse": 0.044583581387996674,
+          "residual_cosine": 0.9402474164962769,
+          "target_output_rms": 6.548431873321533,
+          "target_residual_rms": 6.536521911621094
+        },
+        "deployed_routed_map": {
+          "absolute_rmse": 0.10129569470882416,
+          "block_relative_rmse": 0.015504307113587856,
+          "input_rms": 0.1358538717031479,
+          "output_cosine": 0.9176186919212341,
+          "output_relative_rmse": 0.01546869520097971,
+          "residual_cosine": 0.712816059589386,
+          "target_output_rms": 6.548431873321533,
+          "target_residual_rms": 6.536521911621094
+        },
+        "linear_coefficients_only": {
+          "absolute_rmse": 0.10750634223222733,
+          "block_relative_rmse": 0.0164549071341753,
+          "input_rms": 0.1358538717031479,
+          "output_cosine": 0.9110198020935059,
+          "output_relative_rmse": 0.016417112201452255,
+          "residual_cosine": 0.684576153755188,
+          "target_output_rms": 6.548431873321533,
+          "target_residual_rms": 6.536521911621094
+        },
+        "rank768_basis_oracle": {
+          "absolute_rmse": 0.021951740607619286,
+          "block_relative_rmse": 0.0033599308226257563,
+          "input_rms": 0.1358538717031479,
+          "output_cosine": 0.9946324825286865,
+          "output_relative_rmse": 0.003352213418111205,
+          "residual_cosine": 0.9616118669509888,
+          "target_output_rms": 6.548431873321533,
+          "target_residual_rms": 6.536521911621094
+        }
+      }
+    },
+    {
+      "capability": "grammar",
+      "record_id": "4b8b1921bb565c7ea2da3dc41cb8f5e6d08100cafbc5f844076ae81daacbe102",
+      "route": "generic",
+      "scenarios": {
+        "attention_plus_exact_source_mlp": {
+          "absolute_rmse": 0.3013136088848114,
+          "block_relative_rmse": 0.03776754066348076,
+          "input_rms": 0.15441223978996277,
+          "output_cosine": 0.988132894039154,
+          "output_relative_rmse": 0.03765181824564934,
+          "residual_cosine": 0.9296020865440369,
+          "target_output_rms": 8.002631187438965,
+          "target_residual_rms": 7.982115268707275
+        },
+        "deployed_routed_map": {
+          "absolute_rmse": 0.1661098301410675,
+          "block_relative_rmse": 0.020820701494812965,
+          "input_rms": 0.15441223978996277,
+          "output_cosine": 0.8199912905693054,
+          "output_relative_rmse": 0.020756902173161507,
+          "residual_cosine": 0.5783748626708984,
+          "target_output_rms": 8.002631187438965,
+          "target_residual_rms": 7.982115268707275
+        },
+        "linear_coefficients_only": {
+          "absolute_rmse": 0.2036440670490265,
+          "block_relative_rmse": 0.025525353848934174,
+          "input_rms": 0.15441223978996277,
+          "output_cosine": 0.806226372718811,
+          "output_relative_rmse": 0.025447139516472816,
+          "residual_cosine": 0.5611820220947266,
+          "target_output_rms": 8.002631187438965,
+          "target_residual_rms": 7.982115268707275
+        },
+        "rank768_basis_oracle": {
+          "absolute_rmse": 0.026959888637065887,
+          "block_relative_rmse": 0.003379232482984662,
+          "input_rms": 0.15441223978996277,
+          "output_cosine": 0.9917359352111816,
+          "output_relative_rmse": 0.003368878038600087,
+          "residual_cosine": 0.9407712817192078,
+          "target_output_rms": 8.002631187438965,
+          "target_residual_rms": 7.982115268707275
+        }
+      }
+    },
+    {
+      "capability": "abstention",
+      "record_id": "4ccb4511d64707f05c8d9a8cb9a3d4dcd3d2d6bd7752029cc8dad9853e07a5cd",
+      "route": "abstention",
+      "scenarios": {
+        "attention_plus_exact_source_mlp": {
+          "absolute_rmse": 0.18393339216709137,
+          "block_relative_rmse": 0.04115823656320572,
+          "input_rms": 0.2167196273803711,
+          "output_cosine": 0.9744391441345215,
+          "output_relative_rmse": 0.040979623794555664,
+          "residual_cosine": 0.8262814879417419,
+          "target_output_rms": 4.488410949707031,
+          "target_residual_rms": 4.471110820770264
+        },
+        "deployed_routed_map": {
+          "absolute_rmse": 1.3824150562286377,
+          "block_relative_rmse": 0.3093389868736267,
+          "input_rms": 0.2167196273803711,
+          "output_cosine": 0.5366628170013428,
+          "output_relative_rmse": 0.307996541261673,
+          "residual_cosine": 0.25787776708602905,
+          "target_output_rms": 4.488410949707031,
+          "target_residual_rms": 4.471110820770264
+        },
+        "linear_coefficients_only": {
+          "absolute_rmse": 1.3794794082641602,
+          "block_relative_rmse": 0.30868205428123474,
+          "input_rms": 0.2167196273803711,
+          "output_cosine": 0.5253793001174927,
+          "output_relative_rmse": 0.3073424994945526,
+          "residual_cosine": 0.2540373206138611,
+          "target_output_rms": 4.488410949707031,
+          "target_residual_rms": 4.471110820770264
+        },
+        "rank768_basis_oracle": {
+          "absolute_rmse": 0.042673248797655106,
+          "block_relative_rmse": 0.009548868052661419,
+          "input_rms": 0.2167196273803711,
+          "output_cosine": 0.9811848998069763,
+          "output_relative_rmse": 0.009507428854703903,
+          "residual_cosine": 0.8451312780380249,
+          "target_output_rms": 4.488410949707031,
+          "target_residual_rms": 4.471110820770264
+        }
+      }
+    },
+    {
+      "capability": "format_control",
+      "record_id": "f05bee45836981ba956aa0e974b32896b21fb1ff919c86933a7d2b5fd4bfa6d7",
+      "route": "generic",
+      "scenarios": {
+        "attention_plus_exact_source_mlp": {
+          "absolute_rmse": 0.26051050424575806,
+          "block_relative_rmse": 0.04294878989458084,
+          "input_rms": 0.13127346336841583,
+          "output_cosine": 0.9841269254684448,
+          "output_relative_rmse": 0.042850155383348465,
+          "residual_cosine": 0.892077624797821,
+          "target_output_rms": 6.0795698165893555,
+          "target_residual_rms": 6.068474769592285
+        },
+        "deployed_routed_map": {
+          "absolute_rmse": 0.08685282617807388,
+          "block_relative_rmse": 0.014318901114165783,
+          "input_rms": 0.13127346336841583,
+          "output_cosine": 0.9150000214576721,
+          "output_relative_rmse": 0.014286015182733536,
+          "residual_cosine": 0.7075753211975098,
+          "target_output_rms": 6.0795698165893555,
+          "target_residual_rms": 6.068474769592285
+        },
+        "linear_coefficients_only": {
+          "absolute_rmse": 0.09376471489667892,
+          "block_relative_rmse": 0.015458421781659126,
+          "input_rms": 0.13127346336841583,
+          "output_cosine": 0.8970142006874084,
+          "output_relative_rmse": 0.015422919765114784,
+          "residual_cosine": 0.6674844026565552,
+          "target_output_rms": 6.0795698165893555,
+          "target_residual_rms": 6.068474769592285
+        },
+        "rank768_basis_oracle": {
+          "absolute_rmse": 0.021029725670814514,
+          "block_relative_rmse": 0.003467043861746788,
+          "input_rms": 0.13127346336841583,
+          "output_cosine": 0.9941688776016235,
+          "output_relative_rmse": 0.0034590812865644693,
+          "residual_cosine": 0.9615097045898438,
+          "target_output_rms": 6.0795698165893555,
+          "target_residual_rms": 6.068474769592285
+        }
+      }
+    },
+    {
+      "capability": "tone_control",
+      "record_id": "c73ef1e751fb9ae1587c961921675c2762652ea42b5767ef7a1cbd58c382558d",
+      "route": "generic",
+      "scenarios": {
+        "attention_plus_exact_source_mlp": {
+          "absolute_rmse": 0.22240248322486877,
+          "block_relative_rmse": 0.030608175322413445,
+          "input_rms": 0.1317712962627411,
+          "output_cosine": 0.9875943064689636,
+          "output_relative_rmse": 0.03054063580930233,
+          "residual_cosine": 0.9076205492019653,
+          "target_output_rms": 7.282182693481445,
+          "target_residual_rms": 7.269595623016357
+        },
+        "deployed_routed_map": {
+          "absolute_rmse": 0.1398455947637558,
+          "block_relative_rmse": 0.01924627088010311,
+          "input_rms": 0.1317712962627411,
+          "output_cosine": 0.8610384464263916,
+          "output_relative_rmse": 0.019203802570700645,
+          "residual_cosine": 0.653346836566925,
+          "target_output_rms": 7.282182693481445,
+          "target_residual_rms": 7.269595623016357
+        },
+        "linear_coefficients_only": {
+          "absolute_rmse": 0.13598254323005676,
+          "block_relative_rmse": 0.01871461793780327,
+          "input_rms": 0.1317712962627411,
+          "output_cosine": 0.8460714221000671,
+          "output_relative_rmse": 0.01867332123219967,
+          "residual_cosine": 0.6081249713897705,
+          "target_output_rms": 7.282182693481445,
+          "target_residual_rms": 7.269595623016357
+        },
+        "rank768_basis_oracle": {
+          "absolute_rmse": 0.026894429698586464,
+          "block_relative_rmse": 0.0037013499531894922,
+          "input_rms": 0.1317712962627411,
+          "output_cosine": 0.9931888580322266,
+          "output_relative_rmse": 0.003693182487040758,
+          "residual_cosine": 0.9484860301017761,
+          "target_output_rms": 7.282182693481445,
+          "target_residual_rms": 7.269595623016357
+        }
+      }
+    },
+    {
+      "capability": "coherence",
+      "record_id": "8f59128fce6005fccb7bdd1a6d16eb99a7cb68b2d7cba97c64bba189701e63d5",
+      "route": "generic",
+      "scenarios": {
+        "attention_plus_exact_source_mlp": {
+          "absolute_rmse": 0.19116778671741486,
+          "block_relative_rmse": 0.04324036091566086,
+          "input_rms": 0.13011503219604492,
+          "output_cosine": 0.9828078746795654,
+          "output_relative_rmse": 0.04313061013817787,
+          "residual_cosine": 0.8903979063034058,
+          "target_output_rms": 4.432299613952637,
+          "target_residual_rms": 4.423051357269287
+        },
+        "deployed_routed_map": {
+          "absolute_rmse": 0.10880861431360245,
+          "block_relative_rmse": 0.024611487984657288,
+          "input_rms": 0.13011503219604492,
+          "output_cosine": 0.8534497618675232,
+          "output_relative_rmse": 0.02454902045428753,
+          "residual_cosine": 0.6192106008529663,
+          "target_output_rms": 4.432299613952637,
+          "target_residual_rms": 4.423051357269287
+        },
+        "linear_coefficients_only": {
+          "absolute_rmse": 0.11218242347240448,
+          "block_relative_rmse": 0.02537461183965206,
+          "input_rms": 0.13011503219604492,
+          "output_cosine": 0.8493096232414246,
+          "output_relative_rmse": 0.025310207158327103,
+          "residual_cosine": 0.5994799733161926,
+          "target_output_rms": 4.432299613952637,
+          "target_residual_rms": 4.423051357269287
+        },
+        "rank768_basis_oracle": {
+          "absolute_rmse": 0.020515933632850647,
+          "block_relative_rmse": 0.004640511702746153,
+          "input_rms": 0.13011503219604492,
+          "output_cosine": 0.9935745596885681,
+          "output_relative_rmse": 0.004628733266144991,
+          "residual_cosine": 0.9586286544799805,
+          "target_output_rms": 4.432299613952637,
+          "target_residual_rms": 4.423051357269287
+        }
+      }
+    },
+    {
+      "capability": "supplied_text_summarization",
+      "record_id": "aa8f31a2fa7b0ea0b74e639542adc54869a0e23c9b77916f901ddfaaf52f49b0",
+      "route": "generic",
+      "scenarios": {
+        "attention_plus_exact_source_mlp": {
+          "absolute_rmse": 0.2249465137720108,
+          "block_relative_rmse": 0.04336356744170189,
+          "input_rms": 0.13176189363002777,
+          "output_cosine": 0.9865013957023621,
+          "output_relative_rmse": 0.043257422745227814,
+          "residual_cosine": 0.8962891101837158,
+          "target_output_rms": 5.200182914733887,
+          "target_residual_rms": 5.189931869506836
+        },
+        "deployed_routed_map": {
+          "absolute_rmse": 0.11576958745718002,
+          "block_relative_rmse": 0.022317226976156235,
+          "input_rms": 0.13176189363002777,
+          "output_cosine": 0.8780215382575989,
+          "output_relative_rmse": 0.02226259931921959,
+          "residual_cosine": 0.6138162016868591,
+          "target_output_rms": 5.200182914733887,
+          "target_residual_rms": 5.189931869506836
+        },
+        "linear_coefficients_only": {
+          "absolute_rmse": 0.12922900915145874,
+          "block_relative_rmse": 0.02491183578968048,
+          "input_rms": 0.13176189363002777,
+          "output_cosine": 0.8559955954551697,
+          "output_relative_rmse": 0.024850858375430107,
+          "residual_cosine": 0.55661940574646,
+          "target_output_rms": 5.200182914733887,
+          "target_residual_rms": 5.189931869506836
+        },
+        "rank768_basis_oracle": {
+          "absolute_rmse": 0.021252503618597984,
+          "block_relative_rmse": 0.004096904769539833,
+          "input_rms": 0.13176189363002777,
+          "output_cosine": 0.9931170344352722,
+          "output_relative_rmse": 0.004086876288056374,
+          "residual_cosine": 0.944952130317688,
+          "target_output_rms": 5.200182914733887,
+          "target_residual_rms": 5.189931869506836
+        }
+      }
+    },
+    {
+      "capability": "instruction_following",
+      "record_id": "a21e24af3c444d334d4f2dc71a6ae2d3195ad7104a652c067b52d099f19187da",
+      "route": "generic",
+      "scenarios": {
+        "attention_plus_exact_source_mlp": {
+          "absolute_rmse": 0.2869066894054413,
+          "block_relative_rmse": 0.037614606320858,
+          "input_rms": 0.13560999929904938,
+          "output_cosine": 0.9697601795196533,
+          "output_relative_rmse": 0.037531666457653046,
+          "residual_cosine": 0.8827865123748779,
+          "target_output_rms": 7.644389629364014,
+          "target_residual_rms": 7.631199836730957
+        },
+        "deployed_routed_map": {
+          "absolute_rmse": 0.11816199868917465,
+          "block_relative_rmse": 0.015491507016122341,
+          "input_rms": 0.13560999929904938,
+          "output_cosine": 0.877661406993866,
+          "output_relative_rmse": 0.01545734889805317,
+          "residual_cosine": 0.7036712169647217,
+          "target_output_rms": 7.644389629364014,
+          "target_residual_rms": 7.631199836730957
+        },
+        "linear_coefficients_only": {
+          "absolute_rmse": 0.13633564114570618,
+          "block_relative_rmse": 0.01787414588034153,
+          "input_rms": 0.13560999929904938,
+          "output_cosine": 0.867462158203125,
+          "output_relative_rmse": 0.017834732308983803,
+          "residual_cosine": 0.6878224015235901,
+          "target_output_rms": 7.644389629364014,
+          "target_residual_rms": 7.631199836730957
+        },
+        "rank768_basis_oracle": {
+          "absolute_rmse": 0.0276278518140316,
+          "block_relative_rmse": 0.003622121177613735,
+          "input_rms": 0.13560999929904938,
+          "output_cosine": 0.9904656410217285,
+          "output_relative_rmse": 0.0036141343880444765,
+          "residual_cosine": 0.9488287568092346,
+          "target_output_rms": 7.644389629364014,
+          "target_residual_rms": 7.631199836730957
+        }
+      }
+    },
+    {
+      "capability": "email_drafting_from_notes",
+      "record_id": "e906e93cad9807ef3b91452d98e995265f054c8e8a10739dc68e755d11319a0b",
+      "route": "generic",
+      "scenarios": {
+        "attention_plus_exact_source_mlp": {
+          "absolute_rmse": 0.20065940916538239,
+          "block_relative_rmse": 0.045363202691078186,
+          "input_rms": 0.1292291283607483,
+          "output_cosine": 0.9808504581451416,
+          "output_relative_rmse": 0.04524426534771919,
+          "residual_cosine": 0.8690212965011597,
+          "target_output_rms": 4.435024261474609,
+          "target_residual_rms": 4.425477027893066
+        },
+        "deployed_routed_map": {
+          "absolute_rmse": 0.26318004727363586,
+          "block_relative_rmse": 0.05949728563427925,
+          "input_rms": 0.1292291283607483,
+          "output_cosine": 0.8294626474380493,
+          "output_relative_rmse": 0.05934128537774086,
+          "residual_cosine": 0.544165313243866,
+          "target_output_rms": 4.435024261474609,
+          "target_residual_rms": 4.425477027893066
+        },
+        "linear_coefficients_only": {
+          "absolute_rmse": 0.2558751106262207,
+          "block_relative_rmse": 0.05784585699439049,
+          "input_rms": 0.1292291283607483,
+          "output_cosine": 0.8220709562301636,
+          "output_relative_rmse": 0.05769418552517891,
+          "residual_cosine": 0.5289835929870605,
+          "target_output_rms": 4.435024261474609,
+          "target_residual_rms": 4.425477027893066
+        },
+        "rank768_basis_oracle": {
+          "absolute_rmse": 0.02347240410745144,
+          "block_relative_rmse": 0.0053064217790961266,
+          "input_rms": 0.1292291283607483,
+          "output_cosine": 0.9912710785865784,
+          "output_relative_rmse": 0.005292508751153946,
+          "residual_cosine": 0.9347134232521057,
+          "target_output_rms": 4.435024261474609,
+          "target_residual_rms": 4.425477027893066
+        }
+      }
+    },
+    {
+      "capability": "prompt_grounding",
+      "record_id": "8953b21d8d97de469a214ecdf49829758b5319ab7b8516a4a5ebb2954abcbd54",
+      "route": "generic",
+      "scenarios": {
+        "attention_plus_exact_source_mlp": {
+          "absolute_rmse": 0.2368151843547821,
+          "block_relative_rmse": 0.043136127293109894,
+          "input_rms": 0.1310085654258728,
+          "output_cosine": 0.9817607402801514,
+          "output_relative_rmse": 0.04303320497274399,
+          "residual_cosine": 0.8751065731048584,
+          "target_output_rms": 5.503080368041992,
+          "target_residual_rms": 5.49256706237793
+        },
+        "deployed_routed_map": {
+          "absolute_rmse": 0.14606434106826782,
+          "block_relative_rmse": 0.026605768129229546,
+          "input_rms": 0.1310085654258728,
+          "output_cosine": 0.8223292231559753,
+          "output_relative_rmse": 0.026542287319898605,
+          "residual_cosine": 0.5311128497123718,
+          "target_output_rms": 5.503080368041992,
+          "target_residual_rms": 5.49256706237793
+        },
+        "linear_coefficients_only": {
+          "absolute_rmse": 0.17133347690105438,
+          "block_relative_rmse": 0.031208569183945656,
+          "input_rms": 0.1310085654258728,
+          "output_cosine": 0.7942625880241394,
+          "output_relative_rmse": 0.0311341043561697,
+          "residual_cosine": 0.487562358379364,
+          "target_output_rms": 5.503080368041992,
+          "target_residual_rms": 5.49256706237793
+        },
+        "rank768_basis_oracle": {
+          "absolute_rmse": 0.023903535678982735,
+          "block_relative_rmse": 0.004354053642600775,
+          "input_rms": 0.1310085654258728,
+          "output_cosine": 0.9909759759902954,
+          "output_relative_rmse": 0.004343664739280939,
+          "residual_cosine": 0.9348509311676025,
+          "target_output_rms": 5.503080368041992,
+          "target_residual_rms": 5.49256706237793
+        }
+      }
+    }
+  ],
+  "status": "PASS_READ_ONLY_DIAGNOSTIC_COMPLETE",
+  "training_performed": false,
+  "validation_records": 28
+}

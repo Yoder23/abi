@@ -1,0 +1,33 @@
+{
+  "format": "abi-capability-compiler-phase3-routed-v15-layer2-geometry-result/1",
+  "version": 312,
+  "status": "PASS_COEFFICIENT_GENERALIZATION_BOTTLENECK_IDENTIFIED",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V15_LAYER2_GEOMETRY_AUDIT_PROTOCOL_V311.json",
+    "sha256": "cf1a551c1e83af87dd01328a122424ef93e18d1b94a34941ce281842e19ce3eb"
+  },
+  "raw_evidence": {
+    "metadata": "results/abi_capability_compiler_phase3_routed_v15/layer2_geometry_v312/metadata.json",
+    "metadata_sha256": "cadae16b86af7e694d68324f156ebb965361c386920345994f75d823c2f51b5f"
+  },
+  "measurements": {
+    "attention_plus_exact_source_mlp_mean_output_cosine": 0.9840242564678192,
+    "rank768_basis_oracle_mean_output_cosine": 0.9918616179909024,
+    "linear_coefficients_only_mean_output_cosine": 0.8389490268060139,
+    "deployed_routed_map_mean_output_cosine": 0.8535092025995255,
+    "deployed_output_relative_rmse": 0.03596495760471693,
+    "target_output_rms": 6.077856745038714,
+    "input_rms": 0.13884129375219345,
+    "basis_orthonormal_gram_error": 5.415070972958347e-06
+  },
+  "diagnosis": "Attention plus the exact diagnostic source MLP and the stored rank768 basis oracle both clear the 0.98 cosine gate. Both learned coefficient decoders fail. The measured layer2 bottleneck is out-of-sample coefficient generalization, not attention capacity, basis capacity, routing accuracy, or metric corruption.",
+  "decision": "Authorize exactly one analytic source-aligned coefficient repair: retain the same trained attention, basis rank, sparse width, selected source neurons, data, seed, ridge, routes, and gates; set the sparse coefficient maps from the selected source down-projection columns projected into the fixed basis, then solve the full-feature linear map only for the remaining coefficient residual and rescreen layer2.",
+  "authorized_next_action": "PREREGISTER_ONE_SOURCE_ALIGNED_LAYER2_COEFFICIENT_REPAIR",
+  "artifact_promoted": false,
+  "training_performed": false,
+  "final_test_accessed": false,
+  "phase3_certified": false,
+  "claim_boundary": "Read-only layer2 bottleneck diagnosis only; no repaired layer, assembled artifact, English quality, runtime, Phase 3 certificate, or superiority claim."
+}
