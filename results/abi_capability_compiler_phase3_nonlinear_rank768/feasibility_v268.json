@@ -1,0 +1,28 @@
+{
+  "accounting": {
+    "active_incremental_macs_at_maximum_context": 307540992,
+    "attention_parameters": 42473472,
+    "copied_parameters": 196899840,
+    "deployed_parameters": 399903744,
+    "fp16_payload_bytes": 799807488,
+    "nonlinear_hidden": 384,
+    "nonlinear_residual_parameters": 160530432,
+    "residual_rank": 768,
+    "source_to_target_active_mac_ratio": 12.431001588237057
+  },
+  "claim_boundary": "No-model nonlinear host accounting only; no artifact, quality, runtime, certificate, or superiority claim.",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-nonlinear-rank768-feasibility/1",
+  "gates": {
+    "payload_below_800_mib": true,
+    "rank_matches_measured_minimum": true,
+    "source_active_mac_margin_at_least_four": true,
+    "zero_source_blocks": true
+  },
+  "phase3_certified": false,
+  "protocol_sha256": "70ac5c7012cddcdbe4d9afd7a4f68375c45ee5914808fd2c756948cb47a60970",
+  "source_model_loaded": false,
+  "status": "PASS_FEASIBLE_GENERIC_HOST_MAY_BE_CONSTRUCTED",
+  "tensor_values_read": false,
+  "training_performed": false
+}
