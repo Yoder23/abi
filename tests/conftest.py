@@ -9,6 +9,7 @@ import pytest
 
 _SOURCE_TOOLING_TESTS = {
     "test_capability_compiler_phase3_macro_layer_pair0_fit.py",
+    "test_capability_compiler_phase3_native_residual_span_oracle.py",
     "test_capability_compiler_phase3_routed_v16_trajectory_retargeting.py",
     "test_capability_compiler_phase3_routed_v16_trajectory_retargeting_replay.py",
 }
