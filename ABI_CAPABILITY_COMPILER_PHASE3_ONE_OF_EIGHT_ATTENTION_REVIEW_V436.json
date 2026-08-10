@@ -1,0 +1,31 @@
+{
+  "format":"abi-capability-compiler-phase3-architecture-review/1",
+  "version":436,
+  "status_date":"2026-08-10",
+  "authorization":"ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V435.json",
+  "historical_evidence_changed":false,
+  "status":"PASS_REVIEW_FIXED_ONE_OF_EIGHT_ATTENTION_ORACLE_ONLY",
+  "candidate":{
+    "representation":"Per output row and each consecutive group of eight input columns, retain the single largest absolute source weight with stable lowest-index tie breaking",
+    "density":0.125,
+    "group_size":8,
+    "retained_per_group":1,
+    "all_qkv_and_output_rows_present":true,
+    "all_head_slots_present":true,
+    "attention_nonzero_values_per_layer":4718592,
+    "attention_sparse_multiply_adds_per_token":4718592,
+    "reserved_nonlinear_width":560,
+    "reserved_nonlinear_multiply_adds_per_token":5160960,
+    "reserved_router_multiply_adds_per_token":98304,
+    "complete_layer_multiply_adds_per_token":9977856,
+    "current_layer_envelope":10027008,
+    "complete_32_layer_projection_multiply_adds_per_token":319291392
+  },
+  "selection_rule":"Source-weight-only stable magnitude selection. No calibration, target, validation, or final data may affect support.",
+  "execution_boundary":"The quality oracle may use an equivalent dense masked matrix for diagnostic execution. This does not prove physical sparse execution; any passing quality result requires a separately installed sparse kernel and physical profiler evidence.",
+  "decision":"Authorize one read-only layer-1 quality oracle for the fixed 1:8 support on complete QKV and O weights, followed by exact source MLP diagnostic only. A miss closes direct per-layer source-attention compression across the tested head-selection, shared-low-rank, and structured-support families. No density, group, retained-count, scoring, data, source, seed, or gate sweep is authorized.",
+  "authorized_next_action":"PREREGISTER_ONE_READ_ONLY_FIXED_ONE_OF_EIGHT_SOURCE_ATTENTION_ORACLE",
+  "prohibited_actions":["density_sweep","group_sweep","retained_count_sweep","scoring_sweep","calibration_selection","data_sweep","source_sweep","seed_sweep","gate_change","component_write","runtime_claim","final_test_access"],
+  "phase3_certified":false,
+  "claim_boundary":"No-model fixed structured-support and arithmetic review only; no sparse attention quality, physical execution, residual realization, autonomous, complete-model, Phase 3, or superiority claim."
+}
