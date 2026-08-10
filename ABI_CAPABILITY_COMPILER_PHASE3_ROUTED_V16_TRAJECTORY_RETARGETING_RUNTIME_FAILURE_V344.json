@@ -1,0 +1,25 @@
+{
+  "format": "abi-capability-compiler-phase3-routed-v16-trajectory-retargeting-runtime-failure/1",
+  "version": 344,
+  "status": "FAILED_BEFORE_LAYER_ZERO_RESULT_CODE_DEFECT",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V16_TRAJECTORY_RETARGETING_PROTOCOL_V343.json",
+    "sha256": "dd38d9ce5d0a19b0008b095c8f226c3827129fed70d751e587d848029b54b89c",
+    "sealed_commit": "62f4ca3"
+  },
+  "failure": {
+    "exception": "AttributeError",
+    "message": "Linear object has no attribute dtype",
+    "location": "copying the first closed-form solution into the layer-0 route projection",
+    "scientific_measurements_completed": 0,
+    "result_written": false,
+    "checkpoint_written": false
+  },
+  "artifact_model_sha256_after_failure": "6d20c7a9d74e04c2209cc534de882f018edb47867e1a87c7d42c33798909e920",
+  "artifact_unchanged": true,
+  "authorized_repair": "One exact replay may replace projection.dtype with projection.weight.dtype. No protocol seed, population, ridge, gates, model, artifact, or output claims may change.",
+  "phase3_certified": false,
+  "claim_boundary": "Pre-result implementation failure only; no trajectory feasibility or quality conclusion."
+}
