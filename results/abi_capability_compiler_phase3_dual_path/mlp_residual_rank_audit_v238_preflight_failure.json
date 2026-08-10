@@ -1,0 +1,15 @@
+{
+  "format": "abi-capability-compiler-phase3-preflight-failure/1",
+  "status": "FAILED_BEFORE_TEACHER_LOAD_NO_SCIENTIFIC_RESULT",
+  "effective_date": "2026-08-09",
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_MLP_RESIDUAL_RANK_AUDIT_PROTOCOL_V237.json",
+  "exception": "KeyError: architecture",
+  "failed_boundary": "The bound acquisition-record loader requires maximum_source_actions, maximum_target_actions, and maximum_sequence_actions under an architecture field.",
+  "teacher_model_loaded": false,
+  "source_values_evaluated": false,
+  "rank_metrics_computed": false,
+  "artifact_written": false,
+  "training_performed": false,
+  "final_test_accessed": false,
+  "repair_boundary": "One exact replay may inject only the unchanged V233 architecture sequence bounds before evidence loading. Ranks, records, source, method, and selection gates remain unchanged."
+}
