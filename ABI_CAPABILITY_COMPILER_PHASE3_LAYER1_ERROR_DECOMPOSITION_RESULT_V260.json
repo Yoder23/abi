@@ -1,0 +1,45 @@
+{
+  "format": "abi-capability-compiler-phase3-layer1-error-decomposition-result/1",
+  "version": 260,
+  "status": "PASS_JOINT_RANK_AND_MAP_BOTTLENECKS_MEASURED",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_LAYER1_ERROR_DECOMPOSITION_REPLAY_PROTOCOL_V259.json",
+    "sha256": "831afc9ff8120983e8165fe1219699564caca7c5d1e4cc81007e73cb3af5a8bb"
+  },
+  "raw_evidence": {
+    "path": "results/abi_capability_compiler_phase3_direct_linear/layer1_error_decomposition_replay_v260.json",
+    "sha256": "40f3ae97623546cbbad42a7f75a368797490f597d51fdb6ec2a8b5a987bff2ff",
+    "all_measurements_finite": true
+  },
+  "findings": {
+    "attention_sufficient_with_exact_residual": {
+      "mean_relative_rmse": 0.27107255001153263,
+      "mean_output_cosine": 0.9856743663549423,
+      "passed": true
+    },
+    "rank192_student_attention_oracle": {
+      "mean_relative_rmse": 0.4024338700941631,
+      "mean_output_cosine": 0.9671345097678048,
+      "passed": false
+    },
+    "rank768_student_attention_oracle": {
+      "mean_relative_rmse": 0.2936007598681109,
+      "mean_output_cosine": 0.9828031978436879,
+      "passed": true
+    },
+    "rank1024_student_attention_linear_map": {
+      "mean_relative_rmse": 0.48418806067534853,
+      "mean_output_cosine": 0.9655426804508481,
+      "passed": false
+    }
+  },
+  "interpretation": "Compact attention is not the active local blocker. At least rank 768 is required on this evidence, but rank expansion alone cannot pass because the direct linear coefficient map remains below threshold through rank 1024. Any next architecture must jointly supply the wider residual subspace and a nonlinear coefficient mechanism while retaining the physical speed budget.",
+  "decision": "Reject attention expansion and reject a direct-linear rank-only change. Authorize one no-model feasibility design for a rank-768 nonlinear coefficient host, subject to the unchanged final inference-speed and memory gates before any fit is allowed.",
+  "training_performed": false,
+  "artifact_written": false,
+  "final_test_accessed": false,
+  "phase3_certified": false,
+  "claim_boundary": "Local bottleneck diagnosis only; no deployable artifact, autonomous English quality, measured inference, Phase 3 certificate, or superiority claim."
+}

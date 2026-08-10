@@ -1,0 +1,125 @@
+{
+  "artifact_written": false,
+  "calibration_tokens": 33189,
+  "claim_boundary": "Read-only local error decomposition only; no deployable artifact, English quality, measured inference, Phase 3 certificate, or superiority claim.",
+  "diagnosis": "MLP_RESIDUAL_RANK_PRIMARY",
+  "effective_ridge": 0.006327883911132813,
+  "exact_teacher_residual_on_student_attention": {
+    "maximum_relative_rmse": 0.3845551609992981,
+    "mean_output_cosine": 0.9856743663549423,
+    "mean_relative_rmse": 0.27107255001153263,
+    "minimum_output_cosine": 0.9674392938613892,
+    "passed": true
+  },
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-layer1-error-decomposition/1",
+  "layer": 1,
+  "phase3_certified": false,
+  "protocol_sha256": "831afc9ff8120983e8165fe1219699564caca7c5d1e4cc81007e73cb3af5a8bb",
+  "ranks": [
+    {
+      "rank": 192,
+      "student_attention_map": {
+        "maximum_relative_rmse": 2.023369312286377,
+        "mean_output_cosine": 0.9539107062986919,
+        "mean_relative_rmse": 0.528292507997581,
+        "minimum_output_cosine": 0.777559220790863,
+        "passed": false
+      },
+      "student_attention_oracle": {
+        "maximum_relative_rmse": 0.5891869068145752,
+        "mean_output_cosine": 0.9671345097678048,
+        "mean_relative_rmse": 0.4024338700941631,
+        "minimum_output_cosine": 0.9266329407691956,
+        "passed": false
+      },
+      "teacher_attention_oracle": {
+        "maximum_relative_rmse": 0.45038968324661255,
+        "mean_output_cosine": 0.9815658181905746,
+        "mean_relative_rmse": 0.2970845124551228,
+        "minimum_output_cosine": 0.9613162875175476,
+        "passed": true
+      },
+      "training_energy_explained": 0.860103964805603
+    },
+    {
+      "rank": 384,
+      "student_attention_map": {
+        "maximum_relative_rmse": 2.1899914741516113,
+        "mean_output_cosine": 0.961196997335979,
+        "mean_relative_rmse": 0.49811545440128874,
+        "minimum_output_cosine": 0.7731465697288513,
+        "passed": false
+      },
+      "student_attention_oracle": {
+        "maximum_relative_rmse": 0.5449572205543518,
+        "mean_output_cosine": 0.9768156856298447,
+        "mean_relative_rmse": 0.33826025309307234,
+        "minimum_output_cosine": 0.9372349977493286,
+        "passed": false
+      },
+      "teacher_attention_oracle": {
+        "maximum_relative_rmse": 0.3822823166847229,
+        "mean_output_cosine": 0.9911372363567352,
+        "mean_relative_rmse": 0.201058493661029,
+        "minimum_output_cosine": 0.9708490371704102,
+        "passed": true
+      },
+      "training_energy_explained": 0.9358101487159729
+    },
+    {
+      "rank": 768,
+      "student_attention_map": {
+        "maximum_relative_rmse": 2.3294177055358887,
+        "mean_output_cosine": 0.9649655137743268,
+        "mean_relative_rmse": 0.4855125333581652,
+        "minimum_output_cosine": 0.7702124118804932,
+        "passed": false
+      },
+      "student_attention_oracle": {
+        "maximum_relative_rmse": 0.49227744340896606,
+        "mean_output_cosine": 0.9828031978436879,
+        "mean_relative_rmse": 0.2936007598681109,
+        "minimum_output_cosine": 0.9487444758415222,
+        "passed": true
+      },
+      "teacher_attention_oracle": {
+        "maximum_relative_rmse": 0.30410706996917725,
+        "mean_output_cosine": 0.9971074334212712,
+        "mean_relative_rmse": 0.1102497676121337,
+        "minimum_output_cosine": 0.982050895690918,
+        "passed": true
+      },
+      "training_energy_explained": 0.9813398122787476
+    },
+    {
+      "rank": 1024,
+      "student_attention_map": {
+        "maximum_relative_rmse": 2.3588638305664062,
+        "mean_output_cosine": 0.9655426804508481,
+        "mean_relative_rmse": 0.48418806067534853,
+        "minimum_output_cosine": 0.7696785926818848,
+        "passed": false
+      },
+      "student_attention_oracle": {
+        "maximum_relative_rmse": 0.4689951539039612,
+        "mean_output_cosine": 0.9840520620346069,
+        "mean_relative_rmse": 0.28381912995662006,
+        "minimum_output_cosine": 0.953290581703186,
+        "passed": true
+      },
+      "teacher_attention_oracle": {
+        "maximum_relative_rmse": 0.2664613425731659,
+        "mean_output_cosine": 0.998360059091023,
+        "mean_relative_rmse": 0.08085064483540398,
+        "minimum_output_cosine": 0.9863548278808594,
+        "passed": true
+      },
+      "training_energy_explained": 0.9906557202339172
+    }
+  ],
+  "status": "PASS_DIAGNOSTIC_COMPLETE_NO_ARTIFACT",
+  "teacher_present_in_artifact": false,
+  "train_observations": 31001,
+  "training_performed": false
+}
