@@ -1,0 +1,28 @@
+{
+  "format": "abi-capability-compiler-phase3-routed-v15-layer2-source-aligned-result/1",
+  "version": 314,
+  "status": "FAIL_SELECTED_NEURON_IDENTITY_PRECONDITION",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V15_LAYER2_SOURCE_ALIGNED_REPAIR_PROTOCOL_V313.json",
+    "sha256": "4908738de5516d0c1eae1d57b3e1c3f97bdfe0fdc5b3f1f05b684ee20c72306d"
+  },
+  "observed_failure": {
+    "exception_type": "Phase3Error",
+    "exception_message": "failed checkpoint selected-neuron identity did not reproduce",
+    "output_directory": "results/abi_capability_compiler_phase3_routed_v15/layer2_repair_v314",
+    "output_files_written": 0,
+    "checkpoint_written": false,
+    "validation_accessed": false
+  },
+  "diagnosis": "V310 selected neurons from the fp32 in-memory attention fit but retained the layer checkpoint in fp16. Replaying the fp16 attention state can change borderline importance ordering, so recomputation is not a valid identity mechanism. The immutable sparse gate/up rows themselves still encode the selected source-neuron weights and can be matched read-only against the frozen source tensor.",
+  "decision": "Close V313 without repair or screening. Authorize one read-only exact fp16 row-identity recovery audit. No nearest-neighbor substitution is allowed: every stored gate/up row pair must have exactly one identical source-neuron row pair after fp16 canonicalization.",
+  "authorized_next_action": "PREREGISTER_READ_ONLY_EXACT_SELECTED_NEURON_IDENTITY_RECOVERY",
+  "artifact_promoted": false,
+  "gradient_training_performed": false,
+  "analytic_fit_completed": false,
+  "final_test_accessed": false,
+  "phase3_certified": false,
+  "claim_boundary": "Failed repair precondition only; no repaired layer, artifact, English quality, runtime, Phase 3 certificate, or superiority claim."
+}
