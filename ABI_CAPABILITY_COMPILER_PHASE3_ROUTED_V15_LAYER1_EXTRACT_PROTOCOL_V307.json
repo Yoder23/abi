@@ -1,0 +1,71 @@
+{
+  "format": "abi-capability-compiler-phase3-routed-v15-layer1-extract/1",
+  "protocol_id": "abi-capability-compiler-phase3-routed-v15-layer1-extract-v307",
+  "status": "PREREGISTERED_FAIL_FAST_ROUTED_V15_LAYER1_EXTRACTION",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V306.json",
+  "historical_evidence_changed": false,
+  "device": "cuda",
+  "final_test_access": "PROHIBITED",
+  "seed": 240225,
+  "relative_ridge": 0.0001,
+  "base_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_LINEAR_SEQUENTIAL_FIT_PROTOCOL_V255.json",
+  "layer0_checkpoint": {
+    "path": "results/abi_capability_compiler_phase3_routed_v15/layer0_v306/routed_v15_layer_00.safetensors",
+    "sha256": "477066c44cec54e034ec1768abf8c9ea65006dbefbe8ec34388fafc3bd2b5e76"
+  },
+  "primary_attention_checkpoint": {
+    "path": "results/abi_capability_compiler_phase3_mlp_aware_attention/layer1_fit_v278/layer1_attention_weights.safetensors",
+    "sha256": "a0d350fb063c70c4af27fd772c304cbfdb3d283a231d28a631c7f3b32905465d"
+  },
+  "residual_attention_checkpoint": {
+    "path": "results/abi_capability_compiler_phase3_residual_attention/layer1_fit_v284/layer1_residual_attention.safetensors",
+    "sha256": "f5e42a6e848a569677b2d9459a0e720395285d733bc6c03dc3af624310ae8019"
+  },
+  "layercake_host": {
+    "repository": "../layercake_release",
+    "commit": "3a64e29b23d34fdfea50433ba2ce30bfe7ac2490",
+    "interface": "lc-direct-neural-core/15",
+    "decision": "../layercake_release/moonshot/postrelease_routed_sparse_rank768_progressive_decision_v40.json",
+    "decision_sha256": "869ae4a69a0b003a46a6e8ce20fcee600d6cb7e1df18ba85df29f484dbeafdaa"
+  },
+  "architecture": {
+    "full_width": 3072,
+    "residual_rank": 768,
+    "sparse_width": 384,
+    "routes": ["generic", "abstention", "conversation"]
+  },
+  "gate": {
+    "mean_relative_rmse_maximum": 0.85,
+    "mean_output_cosine_minimum": 0.98,
+    "exact_validation_routes_required": 28
+  },
+  "method": "Instantiate the exact v15 host over the immutable copied substrate, source-prompt router, and passing routed layer0 checkpoint. Produce the real replacement layer0 hidden state. At layer1, import the previously measured width192 primary attention and zero-output-start residual-attention correction as two independent attention paths, derive a fresh rank768 residual basis and full-feature linear coefficient map on train rows from that replacement prefix, select exactly 384 source-MLP neurons by the bound importance rule, derive generic/abstention/conversation correction maps on train-only token partitions, and validate using source-prompt router predictions.",
+  "decision_rule": "Pass only if both unchanged local output gates and all 28 exact route decisions pass. A pass preserves one immutable combined layers0-1 checkpoint and authorizes preregistration of layer2 extraction on the replacement-produced hidden state. Failure closes reuse of the old layer1 attention artifacts and permits only one separately preregistered, profiler- and metric-motivated attention refit on the exact v15 prefix. No width, rank, route, ridge, data, seed, threshold, or final-test change is authorized.",
+  "bindings": {
+    "abi/capability_compiler_phase3_routed_v15_layer1_extract.py": "fde490873bb1677fa1ebbb8a5b12c993af3b32abcd5393a3e107d4120dd3e0c2",
+    "tests/test_capability_compiler_phase3_routed_v15_layer1_extract.py": "359016f62be8a8568c8024aab39e73b9e00f1caab70b1d37eca6daa2dc478de6",
+    "abi/capability_compiler_phase3_routed_v15_layer0_extract.py": "e2e3a56c676e5e1f6492f69ccd1609bfc148af95bc49dd60ae8c13048e122df1",
+    "abi/capability_compiler_phase3_direct_linear_sequential_fit.py": "dca38cc8bf86047669ce08d7f13c05600f9c28575c1b09797f7faea7de671663",
+    "abi/capability_compiler_phase3_dual_path_local_fit.py": "9b36db57fbef4c9e9e960094e261b92716809e9cb1830acb5e4173ffe7cf19e2",
+    "abi/capability_compiler_phase3_closed_form_coefficient_audit.py": "8b9c1dccea29e81046d6cf28251014c9ec744abd42c39ab1eccd0fbe826c589f",
+    "abi/capability_compiler_phase3_mlp_residual_rank_audit.py": "d9830599c330aef68d3d6a2a468c92ff2747b66db374c0d2e057bebd3f31991e",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V306.json": "024b56f62e795cad4848c5dabd8e6cf36e598b88a7a8c7aa6747b0ee83a9e3c2",
+    "ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V15_LAYER0_RESULT_V306.json": "c21220b6d8e3c6f118ee5b69690acc002335b333bc67c5de73c150b8b272d984",
+    "ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V15_LAYER0_EXTRACT_PROTOCOL_V305.json": "bf4c64db0dce15d7a7ac992aba2285a95cb3ed3b959c86e182c33259abc6005c",
+    "results/abi_capability_compiler_phase3_routed_v15/layer0_v306/metadata.json": "bb057736cfa18adb8eb8a3616142defa497ea790460997b686115cd6c8c52d08",
+    "results/abi_capability_compiler_phase3_routed_v15/layer0_v306/routed_v15_layer_00.safetensors": "477066c44cec54e034ec1768abf8c9ea65006dbefbe8ec34388fafc3bd2b5e76",
+    "ABI_CAPABILITY_COMPILER_PHASE3_MLP_AWARE_ATTENTION_FIT_PROTOCOL_V277.json": "804b38ecbadc0ab977ae953e16dacbc53e15ddc3f1ad014644b66dc4d34ae6bd",
+    "ABI_CAPABILITY_COMPILER_PHASE3_MLP_AWARE_ATTENTION_RESULT_V278.json": "967ecf2c42ceb6c4f13d79cc553e165d027af8e282efb17c6dcc250278ecae63",
+    "results/abi_capability_compiler_phase3_mlp_aware_attention/layer1_fit_v278/metadata.json": "2b43496df9028f93cfb8649e6d3edfecb4e94ef80f02e890ca90c9097dd627e7",
+    "results/abi_capability_compiler_phase3_mlp_aware_attention/layer1_fit_v278/layer1_attention_weights.safetensors": "a0d350fb063c70c4af27fd772c304cbfdb3d283a231d28a631c7f3b32905465d",
+    "ABI_CAPABILITY_COMPILER_PHASE3_RESIDUAL_ATTENTION_FIT_PROTOCOL_V283.json": "32baa6727918350f51abfe5af6d62d013e7d6b51dd8671ab3e9c9a6c0d8ef7a8",
+    "ABI_CAPABILITY_COMPILER_PHASE3_RESIDUAL_ATTENTION_RESULT_V284.json": "fccf02bba4a9aa6efc8a7d994264af39d3ea26e408586903d7135a800ad90e81",
+    "results/abi_capability_compiler_phase3_residual_attention/layer1_fit_v284/metadata.json": "7f9fbcba53f59083ac6fd9a9088504df71cacdc80a177c3f74cf679f95748f94",
+    "results/abi_capability_compiler_phase3_residual_attention/layer1_fit_v284/layer1_residual_attention.safetensors": "f5e42a6e848a569677b2d9459a0e720395285d733bc6c03dc3af624310ae8019",
+    "ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_LINEAR_SEQUENTIAL_FIT_PROTOCOL_V255.json": "fcf546b3ad4fdb014f06a9a73c61bfea425a51d24cff351b8ad448dfc026e60b",
+    "../layercake_release/layercake/routed_sparse_rank768_progressive_core.py": "e521624e10450b27642846ed373a5400958f3986fb24a53109ffa1b91956cd76",
+    "../layercake_release/moonshot/postrelease_routed_sparse_rank768_progressive_decision_v40.json": "869ae4a69a0b003a46a6e8ce20fcee600d6cb7e1df18ba85df29f484dbeafdaa"
+  },
+  "claim_boundary": "Fail-fast routed v15 layer-1 extraction only; no full artifact, English quality, physical runtime, certificate, or superiority claim. Prior failed attention artifacts are reused only as explicitly bound initialization and receive no retroactive promotion."
+}
