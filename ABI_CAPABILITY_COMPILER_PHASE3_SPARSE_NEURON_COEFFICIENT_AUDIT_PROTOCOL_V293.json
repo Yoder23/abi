@@ -1,0 +1,65 @@
+{
+  "format": "abi-capability-compiler-phase3-sparse-neuron-coefficient-audit/1",
+  "protocol_id": "abi-capability-compiler-phase3-sparse-neuron-coefficient-audit-v293",
+  "status": "PREREGISTERED_READ_ONLY_SPARSE_NEURON_COEFFICIENT_AUDIT",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V292.json",
+  "historical_evidence_changed": false,
+  "device": "cuda",
+  "training_authorized": false,
+  "artifact_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "seed": 240225,
+  "width": 3072,
+  "rank": 768,
+  "selected_neurons": 384,
+  "relative_ridge": 0.0001,
+  "base_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_LINEAR_SEQUENTIAL_FIT_PROTOCOL_V255.json",
+  "residual_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_RESIDUAL_ATTENTION_FIT_PROTOCOL_V283.json",
+  "base_checkpoints": {
+    "0": {
+      "path": "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_00.safetensors",
+      "sha256": "b1489e35f2a47337de347e0d009d6706923c99fd91ebf4b54d9804bf3433d9e3"
+    },
+    "1": {
+      "path": "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_01.safetensors",
+      "sha256": "85c31bcaa878e7ba65f6b6bdbe8ed0fe76460d38ef5134d9889f2a032391002b"
+    }
+  },
+  "qualified_primary_checkpoint": {
+    "path": "results/abi_capability_compiler_phase3_mlp_aware_attention/layer1_fit_v278/layer1_attention_weights.safetensors",
+    "sha256": "a0d350fb063c70c4af27fd772c304cbfdb3d283a231d28a631c7f3b32905465d"
+  },
+  "residual_attention_checkpoint": {
+    "path": "results/abi_capability_compiler_phase3_residual_attention/layer1_fit_v284/layer1_residual_attention.safetensors",
+    "sha256": "f5e42a6e848a569677b2d9459a0e720395285d733bc6c03dc3af624310ae8019"
+  },
+  "gate": {
+    "mean_relative_rmse_maximum": 0.85,
+    "mean_output_cosine_minimum": 0.98
+  },
+  "method": "Select exactly 384 matched source-MLP gate/up neurons by train-only activation-energy times source-down-norm importance on the frozen combined-attention interface. Fit one fixed-ridge analytic map from those sparse nonlinear activations to the residual rank768 coefficient error left by the immutable full-feature linear baseline. Use all train observations; validate only on held-out rows. Retain no complete source block and write no artifact.",
+  "decision_rule": "A held-out pass on both unchanged local gates authorizes a LayerCake host construct and an immutable sparse extraction path for this exact topology. Failure closes sparse source-neuron coefficient features at width384. No neuron-count, importance, ridge, data, seed, rank, or gate sweep is authorized.",
+  "bindings": {
+    "abi/capability_compiler_phase3_sparse_neuron_coefficient_audit.py": "f29d55e4556d671e94606299373f9d53e03c454399cdb0a70c949aeb31d659ce",
+    "tests/test_capability_compiler_phase3_sparse_neuron_coefficient_audit.py": "1f13eebdf7b84f7ff725488a7a70c91d20e2eef78e01b0fcfc173ed567afdb23",
+    "abi/capability_compiler_phase3_combined_attention_mlp_audit.py": "6de07aa7cea11c6000b7a58ba16d480036dc4817e2657200cb46fa3a867cfe52",
+    "abi/capability_compiler_phase3_residual_nonlinear_rank768_fit.py": "47e1be535d0291f5bd9a3d8aeec72fe01f1948c90557e76d3c3109e254b7acba",
+    "abi/capability_compiler_phase3_residual_attention_fit.py": "5c0954a56bc69eb13a6a1e19e9a697c76db130a7115b6ab3892c866f2c0ff3ab",
+    "abi/capability_compiler_phase3_direct_linear_sequential_fit.py": "dca38cc8bf86047669ce08d7f13c05600f9c28575c1b09797f7faea7de671663",
+    "abi/capability_compiler_phase3_dual_path_local_fit.py": "9b36db57fbef4c9e9e960094e261b92716809e9cb1830acb5e4173ffe7cf19e2",
+    "abi/capability_compiler_phase3_closed_form_coefficient_audit.py": "8b9c1dccea29e81046d6cf28251014c9ec744abd42c39ab1eccd0fbe826c589f",
+    "abi/capability_compiler_phase3_mlp_residual_rank_audit.py": "d9830599c330aef68d3d6a2a468c92ff2747b66db374c0d2e057bebd3f31991e",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V292.json": "9ef4e236f7350db58fc9259f60ca18d20e19972293f9a1fc9b6c0f7b180e85d4",
+    "ABI_CAPABILITY_COMPILER_PHASE3_RESIDUAL_NONLINEAR_RANK768_RESULT_V292.json": "7d6580019c99595cf0d3e5bf80713a565fc880a22470aea14959810c94804c6d",
+    "ABI_CAPABILITY_COMPILER_PHASE3_SOURCE_NEURON_SUBSET_RESULT_V272.json": "5c0743cdce45024f7c232f86fa0936b018c60d5a32593089804daea04b7645ca",
+    "ABI_CAPABILITY_COMPILER_PHASE3_DUAL_ATTENTION_NONLINEAR_FEASIBILITY_RESULT_V290.json": "07e18349371066b05d868ade6aff0c897eebe51080712612c63b344e48e34770",
+    "ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_LINEAR_SEQUENTIAL_FIT_PROTOCOL_V255.json": "fcf546b3ad4fdb014f06a9a73c61bfea425a51d24cff351b8ad448dfc026e60b",
+    "ABI_CAPABILITY_COMPILER_PHASE3_RESIDUAL_ATTENTION_FIT_PROTOCOL_V283.json": "32baa6727918350f51abfe5af6d62d013e7d6b51dd8671ab3e9c9a6c0d8ef7a8",
+    "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_00.safetensors": "b1489e35f2a47337de347e0d009d6706923c99fd91ebf4b54d9804bf3433d9e3",
+    "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_01.safetensors": "85c31bcaa878e7ba65f6b6bdbe8ed0fe76460d38ef5134d9889f2a032391002b",
+    "results/abi_capability_compiler_phase3_mlp_aware_attention/layer1_fit_v278/layer1_attention_weights.safetensors": "a0d350fb063c70c4af27fd772c304cbfdb3d283a231d28a631c7f3b32905465d",
+    "results/abi_capability_compiler_phase3_residual_attention/layer1_fit_v284/layer1_residual_attention.safetensors": "f5e42a6e848a569677b2d9459a0e720395285d733bc6c03dc3af624310ae8019"
+  },
+  "claim_boundary": "Read-only layer-1 sparse-neuron coefficient audit only; no artifact, English quality, physical runtime, certificate, or superiority claim."
+}
