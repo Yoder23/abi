@@ -1,0 +1,33 @@
+{
+  "format": "abi-capability-compiler-phase3-combined-attention-rank768-result/1",
+  "version": 288,
+  "status": "PASS_RANK768_ORACLE_FAIL_LINEAR_MAP",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_COMBINED_ATTENTION_RANK768_AUDIT_PROTOCOL_V287.json",
+    "sha256": "724a9bd18f9b60a80eec765f2dba8cedc56e1179725cee547c400e2a02d83bf7"
+  },
+  "raw_evidence": {
+    "path": "results/abi_capability_compiler_phase3_combined_attention_mlp/rank768_audit_v288/metadata.json",
+    "sha256": "7d8a23276b847e464d565f5554ffc5337af1bf383525a647a937c43985cbabf4"
+  },
+  "measurements": {
+    "rank": 768,
+    "basis_energy_explained": 0.9741663932800293,
+    "oracle_mean_output_cosine": 0.99557478087289,
+    "oracle_mean_relative_rmse": 0.13601290274943625,
+    "oracle_passed": true,
+    "linear_map_mean_output_cosine": 0.9766054600477219,
+    "linear_map_mean_relative_rmse": 0.3915427162178925,
+    "linear_map_passed": false
+  },
+  "interpretation": "Rank768 has ample held-out representation capacity on the improved interface, but the fixed linear coefficient map cannot recover its coefficients. The remaining local bottleneck is nonlinear coefficient prediction.",
+  "decision": "Preserve the fixed linear map as a baseline path and authorize one no-model feasibility audit for a zero-output nonlinear residual coefficient predictor at rank768, combined with the frozen dual width192 attention paths. No fit is authorized until the final-system envelope passes.",
+  "authorized_next_action": "PREREGISTER_NO_MODEL_DUAL_ATTENTION_LINEAR_PLUS_NONLINEAR_RANK768_FEASIBILITY",
+  "artifact_promoted": false,
+  "training_performed": false,
+  "final_test_accessed": false,
+  "phase3_certified": false,
+  "claim_boundary": "Read-only layer-1 bottleneck isolation only; no artifact, English quality, runtime, Phase 3 certificate, or superiority claim."
+}
