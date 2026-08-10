@@ -15,12 +15,33 @@ from safetensors import safe_open
 from safetensors.torch import load_file
 import torch
 
-from .capability_compiler_phase2_common import canonical_json_bytes, sha256_file
-from .capability_compiler_phase3 import Phase3Error, _write_immutable
-
-
-FORMAT = "abi-capability-compiler-phase3-routed-v15-artifact-verifier/1"
+FORMAT = "abi-capability-compiler-phase3-routed-v15-artifact-verifier/2"
 ARTIFACT_FORMAT = "layercake-routed-sparse-rank768-english-core/1"
+
+
+class VerifierError(RuntimeError):
+    pass
+
+
+def canonical_json_bytes(value) -> bytes:
+    return (
+        json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False) + "\n"
+    ).encode("utf-8")
+
+
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(16 * 1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _write_immutable(path: Path, payload: bytes) -> None:
+    if path.exists():
+        raise VerifierError(f"verifier evidence is immutable: {path}")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(payload)
 
 
 def _self_hash(value: dict) -> str:
@@ -37,7 +58,7 @@ def _validate_documents(manifest: dict, config: dict, specs: dict) -> None:
         "artifact_promoted", "final_test_accessed", "phase3_certified", "manifest_sha256",
     }
     if set(manifest) != required_manifest or manifest.get("manifest_sha256") != _self_hash(manifest):
-        raise Phase3Error("artifact manifest schema or self hash changed")
+        raise VerifierError("artifact manifest schema or self hash changed")
     if (
         manifest.get("format") != "abi-capability-compiler-routed-v15-artifact-manifest/1"
         or manifest.get("artifact_format") != ARTIFACT_FORMAT
@@ -50,14 +71,14 @@ def _validate_documents(manifest: dict, config: dict, specs: dict) -> None:
         or manifest.get("parameters") != 536758275
         or manifest.get("raw_fp16_parameter_bytes") != 1073516550
     ):
-        raise Phase3Error("artifact manifest invariant changed")
+        raise VerifierError("artifact manifest invariant changed")
     source = manifest.get("source", {})
     if (
         source.get("source_blocks_in_artifact") != 0
         or source.get("teacher_present_in_artifact") is not False
         or source.get("teacher_required_at_inference") is not False
     ):
-        raise Phase3Error("artifact source/teacher boundary changed")
+        raise VerifierError("artifact source/teacher boundary changed")
     required_config = {
         "format", "artifact_role", "abi_version", "abi_sha256", "model", "tokenizer",
         "tensor_dtype", "strict_state_dict", "source_transformer_blocks",
@@ -72,7 +93,7 @@ def _validate_documents(manifest: dict, config: dict, specs: dict) -> None:
         or config.get("source_transformer_blocks") != 0
         or config.get("teacher_required_at_inference") is not False
     ):
-        raise Phase3Error("artifact config invariant changed")
+        raise VerifierError("artifact config invariant changed")
 
 
 def _expect_rejection(manifest: dict, config: dict, specs: dict, mutation: str) -> bool:
@@ -99,8 +120,8 @@ def _expect_rejection(manifest: dict, config: dict, specs: dict, mutation: str) 
     try:
         _validate_documents(bad_manifest, bad_config, specs)
         if bad_config.get("abi_sha256") != manifest["host"]["abi_contract_sha256"]:
-            raise Phase3Error("artifact ABI substitution")
-    except Phase3Error:
+            raise VerifierError("artifact ABI substitution")
+    except VerifierError:
         return True
     return False
 
@@ -109,18 +130,19 @@ def execute(root: Path, protocol_path: Path, output: Path) -> dict:
     protocol = json.loads(protocol_path.read_text(encoding="utf-8"))
     if (
         protocol.get("format") != FORMAT
-        or protocol.get("status") != "PREREGISTERED_INDEPENDENT_HOSTILE_ROUTED_V15_ARTIFACT_VERIFIER"
+        or protocol.get("status")
+        != "PREREGISTERED_IMPORT_ISOLATED_HOSTILE_ROUTED_V15_ARTIFACT_VERIFIER"
         or protocol.get("device") != "cpu"
         or protocol.get("source_model_access") != "PROHIBITED"
         or protocol.get("final_test_access") != "PROHIBITED"
     ):
-        raise Phase3Error("routed v15 artifact verifier governance changed")
+        raise VerifierError("routed v15 artifact verifier governance changed")
     for name, expected in protocol["bindings"].items():
         target = Path(name) if Path(name).is_absolute() else root / name
         if not target.is_file() or sha256_file(target) != expected:
-            raise Phase3Error(f"routed v15 verifier binding changed: {name}")
+            raise VerifierError(f"routed v15 verifier binding changed: {name}")
     if output.exists() or "transformers" in sys.modules:
-        raise Phase3Error("verifier output exists or source-model runtime was imported")
+        raise VerifierError("verifier output exists or source-model runtime was imported")
     output.mkdir(parents=True)
     artifact = (root / protocol["artifact"]["directory"]).resolve()
     expected_members = {
@@ -128,7 +150,7 @@ def execute(root: Path, protocol_path: Path, output: Path) -> dict:
         "model.safetensors",
     }
     if {path.name for path in artifact.iterdir()} != expected_members:
-        raise Phase3Error("artifact directory member set changed")
+        raise VerifierError("artifact directory member set changed")
     manifest = json.loads((artifact / "manifest.json").read_text(encoding="utf-8"))
     config = json.loads((artifact / "config.json").read_text(encoding="utf-8"))
     abi = json.loads((artifact / "abi_contract.json").read_text(encoding="utf-8"))
@@ -137,7 +159,7 @@ def execute(root: Path, protocol_path: Path, output: Path) -> dict:
         if set(binding) != {"sha256", "bytes"} or (
             sha256_file(path) != binding["sha256"] or path.stat().st_size != binding["bytes"]
         ):
-            raise Phase3Error(f"artifact member identity changed: {name}")
+            raise VerifierError(f"artifact member identity changed: {name}")
     tensor_path = artifact / "model.safetensors"
     with safe_open(str(tensor_path), framework="pt", device="cpu") as handle:
         metadata = handle.metadata()
@@ -156,14 +178,14 @@ def execute(root: Path, protocol_path: Path, output: Path) -> dict:
         or metadata.get("format") != ARTIFACT_FORMAT
         or metadata.get("abi_sha256") != config["abi_sha256"]
     ):
-        raise Phase3Error("artifact ABI or safetensors metadata changed")
+        raise VerifierError("artifact ABI or safetensors metadata changed")
     mutations = [
         "manifest_self_hash", "tensor_spec_deletion", "false_promotion",
         "source_block_injection", "teacher_dependency", "abi_substitution",
     ]
     mutation_results = {name: _expect_rejection(manifest, config, specs, name) for name in mutations}
     if not all(mutation_results.values()):
-        raise Phase3Error("hostile metadata mutation was accepted")
+        raise VerifierError("hostile metadata mutation was accepted")
     layercake_root = (root / protocol["layercake_host"]["repository"]).resolve()
     sys.path.insert(0, str(layercake_root))
     from layercake.routed_sparse_rank768_progressive_core import RoutedSparseRank768ProgressiveCore
@@ -177,12 +199,12 @@ def execute(root: Path, protocol_path: Path, output: Path) -> dict:
     incompatible = model.load_state_dict(tensors, strict=True)
     load_seconds = time.perf_counter() - load_started
     if incompatible.missing_keys or incompatible.unexpected_keys:
-        raise Phase3Error("strict host load returned incompatible keys")
+        raise VerifierError("strict host load returned incompatible keys")
     model.eval()
     for parameter in model.parameters():
         parameter.requires_grad_(False)
     if sum(parameter.numel() for parameter in model.parameters()) != 536758275:
-        raise Phase3Error("strict-loaded parameter count changed")
+        raise VerifierError("strict-loaded parameter count changed")
     source_ids, source_lexemes = tokenizer.encode_source(protocol["execution_probe"])
     values = torch.tensor([source_ids], dtype=torch.long)
     route_index = model._select_route(values)
@@ -229,7 +251,7 @@ def execute(root: Path, protocol_path: Path, output: Path) -> dict:
         and sparse_poison_observed
     )
     if not execution_passed or "transformers" in sys.modules:
-        raise Phase3Error("teacher-free execution or sparse isolation failed")
+        raise VerifierError("teacher-free execution or sparse isolation failed")
     result = {
         "format": FORMAT,
         "status": "PASS_HOSTILE_ARTIFACT_VERIFICATION",
@@ -278,10 +300,10 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--protocol",
-        default="ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V15_ARTIFACT_VERIFIER_PROTOCOL_V323.json",
+        default="ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V15_ARTIFACT_VERIFIER_PROTOCOL_V325.json",
     )
     parser.add_argument(
-        "--output", default="results/abi_capability_compiler_phase3_routed_v15/artifact_verify_v324"
+        "--output", default="results/abi_capability_compiler_phase3_routed_v15/artifact_verify_v326"
     )
     args = parser.parse_args()
     root = Path.cwd().resolve()
