@@ -1,0 +1,28 @@
+{
+  "format": "abi-capability-compiler-phase3-capability-stratified-error-result/1",
+  "version": 296,
+  "status": "PASS_TWO_CAPABILITY_FAILURE_CONCENTRATION_MEASURED",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {"path": "ABI_CAPABILITY_COMPILER_PHASE3_CAPABILITY_STRATIFIED_ERROR_AUDIT_PROTOCOL_V295.json", "sha256": "bd211e345ad438d04c349e8c10fd121b86234936ecb0a24b5fd39871d416f7e1"},
+  "raw_evidence": {"path": "results/abi_capability_compiler_phase3_sparse_neuron_coefficient/stratified_v296/metadata.json", "sha256": "f1a57d387e26567c367b81b31184ec08497bb29db567c6bc2705ecada009b102"},
+  "measurements": {
+    "validation_records": 28,
+    "capabilities": 14,
+    "passing_capability_means": 12,
+    "failing_capability_means": 2,
+    "failing_capabilities": ["abstention", "conversation"],
+    "abstention_mean_output_cosine": 0.8720880746841431,
+    "abstention_minimum_output_cosine": 0.7622712850570679,
+    "conversation_mean_output_cosine": 0.9793122410774231,
+    "conversation_minimum_output_cosine": 0.968022882938385
+  },
+  "interpretation": "The remaining local error is concentrated in two labeled English capabilities rather than broadly distributed. One abstention validation record is the dominant outlier.",
+  "decision": "Reject broad residual expansion. Authorize one no-model feasibility audit for exactly three hard top1 sparse correction routes: generic, abstention, and conversation. If feasible, test label-oracle routing before designing an inference router.",
+  "authorized_next_action": "PREREGISTER_NO_MODEL_THREE_ROUTE_SPARSE_CORRECTION_FEASIBILITY",
+  "artifact_promoted": false,
+  "training_performed": false,
+  "final_test_accessed": false,
+  "phase3_certified": false,
+  "claim_boundary": "Read-only local failure attribution only; no routed architecture, artifact, English quality, runtime, Phase 3 certificate, or superiority claim."
+}
