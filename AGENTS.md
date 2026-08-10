@@ -80,7 +80,7 @@ Status date: 2026-08-09.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V242.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V244.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 V215-V230 opened one materially distinct progressive source-block replacement
@@ -143,6 +143,15 @@ unchanged sealed verifier at commit `cc6ccea`. Both results remain construct/
 feasibility only. One fail-fast local GPU protocol may derive bases and means
 from the fixed training records, store no raw activations, and directly
 supervise coefficients under the unchanged final local gate.
+
+V243/V244 completed that single local fit and failed narrowly at layer 0:
+0.97879 mean final cosine versus the unchanged 0.98 floor, with 0.23357
+relative RMSE and 0.34124 coefficient relative RMSE. The copied substrate
+remained exact and the artifact contains zero source blocks. Close joint
+basis-aligned loss, step, seed, and nearby variants. The measured next gate is
+one read-only closed-form linear coefficient-map audit using the same
+train-derived rank-192 basis and fixed records; it may not train a neural model
+or authorize a host until its held-out oracle clears the unchanged local gate.
 
 V191-V214 tested the authorized weight-level structural route. The independent
 LayerCake repository construct-certified `lc-direct-neural-core/7`; ABI did
