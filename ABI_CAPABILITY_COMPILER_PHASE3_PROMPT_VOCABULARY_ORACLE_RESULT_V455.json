@@ -1,0 +1,25 @@
+{
+  "format": "abi-capability-compiler-phase3-prompt-vocabulary-oracle-summary/1",
+  "version": 455,
+  "status": "FAIL_PROMPT_VOCABULARY_TOP1_INSUFFICIENT",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_PROMPT_VOCABULARY_ORACLE_PROTOCOL_V454.json",
+    "sha256": "a0621f82bc0467dd379b682321684ddd9f4da37263ed78bb09d30ef14416142e"
+  },
+  "result": {
+    "path": "results/abi_capability_compiler_phase3_prompt_vocabulary_oracle/oracle_v455/result.json",
+    "sha256": "31d43b18e0e91888f3a1e1a7e7be468a5d491b0c6a699022dfb39a83ca900b35"
+  },
+  "eligible_positions": 335,
+  "top1_accuracy": 0.14626865671641792,
+  "top3_accuracy": 0.7313432835820896,
+  "top5_accuracy": 0.8537313432835821,
+  "median_rank": 2,
+  "decision": "Reject simple prompt-vocabulary restriction or constant logit bias. The correct identity is usually in the parent's top few prompt tokens but is not top-1. Authorize review of one materially different raw-token-identity hidden residual that learns selection and changes hidden realization before the tied output head.",
+  "promotion_eligible": false,
+  "phase3_certified": false,
+  "final_test_accessed": false,
+  "claim_boundary": "Failed teacher-forced capacity oracle; no autonomous quality, architecture, promotion, Phase 3, or superiority claim."
+}

@@ -1,0 +1,19 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "version": 455,
+  "status_date": "2026-08-10",
+  "parent_state": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V453.json",
+  "historical_evidence_changed": false,
+  "phase0": "COMPLETE",
+  "phase1": "COMPLETE",
+  "phase2": "MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS",
+  "phase3": "UNCERTIFIED_SIMPLE_PROMPT_VOCABULARY_BIAS_REJECTED",
+  "phase4_through_8": "LOCKED",
+  "completed_action": "V454_V455_PROMPT_VOCABULARY_ORACLE_TOP1_14_POINT_63_PERCENT_BELOW_50_PERCENT_GATE",
+  "authorized_action": "PREREGISTER_ONE_FROZEN_V443_RAW_TOKEN_IDENTITY_HIDDEN_RESIDUAL_SUCCESSOR",
+  "prohibited_action": "NO_PROMPT_VOCABULARY_BIAS_OR_POINTER_VARIANTS_NO_RANK_STEP_SEED_LOSS_OR_THRESHOLD_SWEEPS_NO_FINAL_ACCESS",
+  "external_certificate_blocker": "PHASE2_REQUIRES_21000_BLINDED_JUDGMENTS_FROM_THREE_INDEPENDENT_HUMANS",
+  "technical_blocker": "EXACT_PROMPT_IDENTITY_REQUIRES_MATERIALLY_DIFFERENT_HIDDEN_STATE_CONDITIONING",
+  "final_test_access": "PROHIBITED",
+  "superiority_claim": "PROHIBITED"
+}

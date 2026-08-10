@@ -1,0 +1,92 @@
+{
+  "format": "abi-capability-compiler-phase3-identity-residual/1",
+  "protocol_id": "abi-capability-compiler-phase3-identity-residual-v456",
+  "status": "PREREGISTERED_SINGLE_BOUNDED_SUCCESSOR",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V455.json",
+  "historical_evidence_changed": false,
+  "final_test_access": "PROHIBITED",
+  "promotion_eligible": false,
+  "nearby_sweeps_authorized": false,
+  "objective": "Test one raw-token-identity cross-attention residual that injects a selected frozen prompt embedding into the final hidden state before the tied output head, with the entire V443 parent bit-exact and frozen.",
+  "parent": {
+    "base_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_QUALIFIED_TRANSITION_CONTROL_PROTOCOL_V440.json",
+    "checkpoint": "results/abi_capability_compiler_phase3_qualified_transition_control/candidate_v443/model.safetensors",
+    "checkpoint_sha256": "f977d1b95e4b514ebf3037d18f195f7cae16227066c14af75a81c06808b76ce6",
+    "parameters": 61655050,
+    "frozen": true,
+    "mutation_authorized": false
+  },
+  "phase1_ir": {
+    "path": "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir",
+    "sha256": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+    "records": 7000,
+    "new_teacher_outputs": 0
+  },
+  "architecture": {
+    "module": "raw prompt token embedding cross-attention plus gated identity-aligned hidden residual",
+    "rank": 64,
+    "routes": 10,
+    "new_trainable_parameters": 99093,
+    "new_parameter_ratio_of_parent": 0.0016072261705636414,
+    "values": "unchanged frozen LayerCake token embeddings",
+    "output": "residual applied before unchanged tied output head",
+    "reuses_rejected_final_prompt_hidden_pointer_representation": false,
+    "probability_mixture": false,
+    "parent_parameters_trainable": 0,
+    "source_parameters_copied": 0,
+    "source_blocks_retained": 0,
+    "teacher_present_at_training_or_inference": false
+  },
+  "training": {
+    "device": "cuda",
+    "seed": 240456,
+    "steps": 1750,
+    "batch_size": 4,
+    "balanced_record_observations": 7000,
+    "max_tokens": 512,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.1,
+    "gradient_clip_norm": 1.0,
+    "curve_interval": 250,
+    "objective": "teacher-response cross-entropy plus weight 0.25 balanced prompt-selection and copy/no-copy supervision",
+    "parent_mode": "frozen_eval_no_grad"
+  },
+  "development": {
+    "catalog_path": "catalogs/capability_compiler_phase1_frozen_v1.json",
+    "teacher_reference": "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl",
+    "prompts": 1400,
+    "prompts_per_capability": 100,
+    "autonomous_greedy_generation": true,
+    "sampling": false,
+    "repetition_primary": "V2 prospectively audited at V447"
+  },
+  "absolute_screen": {
+    "per_capability_functional_point_estimate_minimum": 0.9,
+    "per_capability_functional_wilson_lower_minimum": 0.85,
+    "critical_point_minimum": 0.95,
+    "critical_wilson_lower_minimum": 0.9,
+    "repetition_collapse_v2_count_maximum": 0
+  },
+  "teacher_relative_screen": {
+    "method": "capability_stratified_paired_percentile_bootstrap",
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 240456,
+    "candidate_minus_teacher_lower_95_minimum": -0.05
+  },
+  "decision_rule": "Run exactly one configuration and one seed. If all locked quality, V2 repetition, parent-isolation, teacher-absence, and firewall gates pass, preserve it only as an initial nonpromotional result and preregister independent seeds and runtime certification. Any miss closes this identity-residual branch with no rank, step, seed, loss, learning-rate, strength, threshold, or decoding sweep.",
+  "bindings": {
+    "ABI_CAPABILITY_COMPILER_PHASE3_PROMPT_VOCABULARY_ORACLE_RESULT_V455.json": "1f1acb7129d0e14130276a1371ae89b79aa680a8ea674615a4d2e8d9a6fda77d",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V455.json": "8f660e5a118af897af7d3168ac313fc7efc0586483725420aa8132701ed32dea",
+    "abi/capability_compiler_phase3_identity_residual.py": "b8a99963043821666a6a48aea6d804fe76cd863fe98c93bbcc681148b2e7649e",
+    "tests/test_capability_compiler_phase3_identity_residual.py": "150a81631551fc9a73f8aa56cca41375e3e72ed87e36f00ea9847441bf399b28",
+    "ABI_CAPABILITY_COMPILER_PHASE3_QUALIFIED_TRANSITION_CONTROL_PROTOCOL_V440.json": "367f9e24e5bb06719a7252670097e8d6cfaf64cb18f95b436b388abac303bec4",
+    "results/abi_capability_compiler_phase3_qualified_transition_control/candidate_v443/model.safetensors": "f977d1b95e4b514ebf3037d18f195f7cae16227066c14af75a81c06808b76ce6",
+    "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl": "1081dbe57e75da50b2619bc2dab14c6441158dcd6068f2b864733936087e86a2"
+  },
+  "phase2_external_blocker": "21000 blinded judgments from three independent human raters remain unavailable and are not waived.",
+  "phase3_certified": false,
+  "claim_boundary": "Single preregistered development-only hidden-conditioning successor; no promotion, final-test, runtime, minimum-information, Phase 3, or superiority claim."
+}
