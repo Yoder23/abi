@@ -1,0 +1,16 @@
+{
+  "format": "abi-capability-compiler-phase3-nonlinear-rank768-layer1-result/1",
+  "version": 270,
+  "status": "FAIL_LEARNED_NONLINEAR_MAP_BRANCH_CLOSED",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {"path": "ABI_CAPABILITY_COMPILER_PHASE3_NONLINEAR_RANK768_LAYER1_FIT_PROTOCOL_V269.json", "sha256": "7e47f2663bde3690cf65f9221ca04b448cb7da83bcd62cbdf823593050f35b75"},
+  "raw_evidence": {"metadata": "results/abi_capability_compiler_phase3_nonlinear_rank768/layer1_fit_v270/metadata.json", "metadata_sha256": "01fa5f963e4d580a86ea3e1d17806a42cb195c4e7256d5c9f59494ec087c6035", "checkpoint_sha256": "b37031d54580086e0ff5f95ffef319e5ef627fb81b1cfadea621f214cd9540d2"},
+  "measurements": {"basis_energy_explained": 0.9813398122787476, "steps": 256, "mean_coefficient_relative_rmse": 0.5170546205980437, "mean_relative_rmse": 0.48459192152534214, "mean_output_cosine": 0.9537475619997297, "passed": false},
+  "decision": "Close the learned hidden-384 nonlinear coefficient branch. Do not extend steps or sweep widths. Authorize one read-only source-neuron subset audit that imports matched gate, up, and down columns and measures fixed nested budgets under the unchanged local gate and active-compute invariant.",
+  "teacher_required_at_inference": false,
+  "artifact_promoted": false,
+  "final_test_accessed": false,
+  "phase3_certified": false,
+  "claim_boundary": "Negative bounded layer-1 map evidence only; no artifact, certificate, or superiority claim."
+}

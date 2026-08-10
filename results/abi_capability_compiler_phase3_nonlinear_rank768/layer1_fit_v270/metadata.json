@@ -1,0 +1,67 @@
+{
+  "artifact_promoted": false,
+  "basis_energy_explained": 0.9813398122787476,
+  "basis_rank": 768,
+  "checkpoint": {
+    "parameters": 5016576,
+    "path": "layer1_nonlinear_weights.safetensors",
+    "sha256": "b37031d54580086e0ff5f95ffef319e5ef627fb81b1cfadea621f214cd9540d2"
+  },
+  "claim_boundary": "Bounded layer-1 nonlinear map fit only; no 32-layer artifact, autonomous English quality, runtime, certificate, or superiority claim.",
+  "copied_attention_tensor_keys": 7,
+  "curves": [
+    {
+      "coefficient_relative_rmse": 0.9999983310699463,
+      "final_cosine": 0.9052725434303284,
+      "final_relative_rmse": 0.8394233584403992,
+      "loss": 1.714100956916809,
+      "step": 1
+    },
+    {
+      "coefficient_relative_rmse": 0.7269712686538696,
+      "final_cosine": 0.9439994096755981,
+      "final_relative_rmse": 0.6132510304450989,
+      "loss": 0.9101640582084656,
+      "step": 64
+    },
+    {
+      "coefficient_relative_rmse": 0.4296702444553375,
+      "final_cosine": 0.9475731253623962,
+      "final_relative_rmse": 0.4168875217437744,
+      "loss": 0.36365440487861633,
+      "step": 128
+    },
+    {
+      "coefficient_relative_rmse": 0.5124897360801697,
+      "final_cosine": 0.9616961479187012,
+      "final_relative_rmse": 0.46195724606513977,
+      "loss": 0.47988057136535645,
+      "step": 192
+    },
+    {
+      "coefficient_relative_rmse": 0.4211198389530182,
+      "final_cosine": 0.9608492851257324,
+      "final_relative_rmse": 0.4089159071445465,
+      "loss": 0.34846919775009155,
+      "step": 256
+    }
+  ],
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-nonlinear-rank768-layer1-fit/1",
+  "layer": 1,
+  "phase3_certified": false,
+  "protocol_sha256": "7e47f2663bde3690cf65f9221ca04b448cb7da83bcd62cbdf823593050f35b75",
+  "status": "FAIL_LAYER1_NONLINEAR_MAP",
+  "steps": 256,
+  "teacher_required_at_inference": false,
+  "train_observations": 31001,
+  "training_performed": true,
+  "validation": {
+    "maximum_relative_rmse": 0.8118190765380859,
+    "mean_coefficient_relative_rmse": 0.5170546205980437,
+    "mean_output_cosine": 0.9537475619997297,
+    "mean_relative_rmse": 0.48459192152534214,
+    "minimum_output_cosine": 0.8727234601974487,
+    "passed": false
+  }
+}
