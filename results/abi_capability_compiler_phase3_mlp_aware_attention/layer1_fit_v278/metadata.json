@@ -1,0 +1,69 @@
+{
+  "artifact_promoted": false,
+  "checkpoint": {
+    "parameters": 1327296,
+    "path": "layer1_attention_weights.safetensors",
+    "sha256": "a0d350fb063c70c4af27fd772c304cbfdb3d283a231d28a631c7f3b32905465d"
+  },
+  "claim_boundary": "Bounded layer-1 MLP-aware attention interface fit only; no deployable artifact, English quality, runtime, certificate, or superiority claim.",
+  "complete_source_mlp_promoted": false,
+  "curves": [
+    {
+      "attention_relative_rmse": 0.5139524936676025,
+      "feature_relative_rmse": 0.3536010682582855,
+      "final_cosine": 0.9696325659751892,
+      "final_relative_rmse": 0.5419816374778748,
+      "loss": 0.688042163848877,
+      "step": 1
+    },
+    {
+      "attention_relative_rmse": 0.5302599668502808,
+      "feature_relative_rmse": 0.3270537853240967,
+      "final_cosine": 0.9797991514205933,
+      "final_relative_rmse": 0.3476613759994507,
+      "loss": 0.512819230556488,
+      "step": 64
+    },
+    {
+      "attention_relative_rmse": 0.5243568420410156,
+      "feature_relative_rmse": 0.34116679430007935,
+      "final_cosine": 0.9732711911201477,
+      "final_relative_rmse": 0.32773756980895996,
+      "loss": 0.5035285353660583,
+      "step": 128
+    },
+    {
+      "attention_relative_rmse": 0.5073543787002563,
+      "feature_relative_rmse": 0.31198227405548096,
+      "final_cosine": 0.9787330627441406,
+      "final_relative_rmse": 0.34243571758270264,
+      "loss": 0.47592583298683167,
+      "step": 192
+    },
+    {
+      "attention_relative_rmse": 0.5120813250541687,
+      "feature_relative_rmse": 0.3393723666667938,
+      "final_cosine": 0.9786911010742188,
+      "final_relative_rmse": 0.31217098236083984,
+      "loss": 0.47893741726875305,
+      "step": 256
+    }
+  ],
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-mlp-aware-attention-fit/1",
+  "layer": 1,
+  "phase3_certified": false,
+  "protocol_sha256": "804b38ecbadc0ab977ae953e16dacbc53e15ddc3f1ad014644b66dc4d34ae6bd",
+  "status": "FAIL_MLP_AWARE_ATTENTION_INTERFACE",
+  "steps": 256,
+  "training_performed": true,
+  "validation": {
+    "maximum_relative_rmse": 0.7049099802970886,
+    "mean_attention_relative_rmse": 0.5097547769546509,
+    "mean_feature_relative_rmse": 0.34053001020635876,
+    "mean_output_cosine": 0.9745563609259469,
+    "mean_relative_rmse": 0.3644836662071092,
+    "minimum_output_cosine": 0.906778872013092,
+    "passed": false
+  }
+}
