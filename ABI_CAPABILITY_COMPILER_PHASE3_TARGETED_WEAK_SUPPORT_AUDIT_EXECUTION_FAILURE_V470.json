@@ -1,0 +1,16 @@
+{
+  "format": "abi-capability-compiler-phase3-targeted-weak-support-audit-execution-failure/1",
+  "version": 470,
+  "status": "FAILED_BEFORE_MODEL_EVIDENCE_ACCESS_CANONICAL_IR_IDENTITY_GUARD",
+  "status_date": "2026-08-10",
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_TARGETED_WEAK_SUPPORT_AUDIT_PROTOCOL_V469.json",
+  "error": "Phase3Error: certified Phase 1 IR identity changed",
+  "cause": "The shared load_phase1_ir helper intentionally accepts only the original Phase 1 IR hash and rejected the separately certified V138 targeted IR.",
+  "repair": "Use the existing generic broad-IR verifier to validate member bindings, record hashes, balance, eligibility, and file identity before loading records. Do not alter the canonical IR loader.",
+  "output_created": false,
+  "model_evidence_accessed": false,
+  "teacher_model_loaded": false,
+  "neural_training_performed": false,
+  "final_test_accessed": false,
+  "phase3_certified": false
+}

@@ -10,6 +10,7 @@ import json
 from pathlib import Path
 import re
 from typing import Any, Iterable, Mapping, Sequence
+import zipfile
 
 from safetensors.torch import load_file
 import torch
@@ -28,11 +29,11 @@ from .capability_compiler_phase3 import (
     CAPABILITY_TO_ROUTE,
     Phase3Error,
     _write_immutable,
-    load_phase1_ir,
 )
 from .capability_compiler_phase3_sequence_bridge import _batch, _examples, _generate
 from .capability_compiler_phase3_v443_prompt_pointer import _load_v443
 from .capability_compiler_repetition_v2 import repetition_collapse_v2
+from .capability_compiler_phase3_broad_ir import verify_broad_ir
 
 
 FORMAT = "abi-capability-compiler-phase3-weak-support-audit/1"
@@ -101,6 +102,20 @@ def _example(
         "prompt_tokens": len(prompt_ids),
         "response_tokens": len(response_ids),
     }
+
+
+def _load_verified_acquisition_ir(path: Path) -> list[dict[str, Any]]:
+    """Load any protocol-bound, fully verified 7,000-record English IR."""
+
+    verification = verify_broad_ir(path)
+    if verification.get("status") != "PASS" or verification.get("record_count") != 7000:
+        raise Phase3Error("acquisition IR verification failed")
+    with zipfile.ZipFile(path, "r") as archive:
+        return [
+            json.loads(line)
+            for line in archive.read("records.jsonl").splitlines()
+            if line.strip()
+        ]
 
 
 @torch.inference_mode()
@@ -289,7 +304,9 @@ def run(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
     device = torch.device("cuda")
     model, tokenizer, _ = _load_v443(root, protocol, device)
     model.eval()
-    acquisition_rows = load_phase1_ir(root / protocol["phase1_ir"]["path"])
+    acquisition_rows = _load_verified_acquisition_ir(
+        root / protocol["phase1_ir"]["path"]
+    )
     acquisition_examples = _examples(
         acquisition_rows,
         tokenizer,

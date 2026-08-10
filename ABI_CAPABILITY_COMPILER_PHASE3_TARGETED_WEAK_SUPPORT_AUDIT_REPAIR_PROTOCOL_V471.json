@@ -1,0 +1,81 @@
+{
+  "format": "abi-capability-compiler-phase3-weak-support-audit/1",
+  "protocol_id": "abi-capability-compiler-phase3-targeted-weak-support-audit-repair-v471",
+  "status": "PREREGISTERED_READ_ONLY_ATTRIBUTION",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V469.json",
+  "execution_failure": "ABI_CAPABILITY_COMPILER_PHASE3_TARGETED_WEAK_SUPPORT_AUDIT_EXECUTION_FAILURE_V470.json",
+  "historical_evidence_changed": false,
+  "neural_training_authorized": false,
+  "teacher_model_loading_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "objective": "Replay V469 after the single loader repair, measuring whether the independently extracted V138 targeted IR supplies a non-saturated weak-capability signal and better autonomous support to frozen V463.",
+  "scope": {
+    "capabilities": [
+      "abstention",
+      "coherence",
+      "fluent_realization",
+      "tone_control"
+    ],
+    "acquisition_records": 2000,
+    "development_records": 400,
+    "development_training_use": false
+  },
+  "parent": {
+    "base_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_QUALIFIED_TRANSITION_CONTROL_PROTOCOL_V440.json",
+    "checkpoint": "results/abi_capability_compiler_phase3_token_substrate_conformance/candidate_v463/model.safetensors",
+    "checkpoint_sha256": "d354eee236c1153a92e3b2d05f806fb4238438aebd2c8a889ed9dcb8f1f192c8",
+    "parameters": 61655050,
+    "development_outputs": "results/abi_capability_compiler_phase3_token_substrate_conformance/evaluation_v463/development_outputs.jsonl",
+    "immutable": true
+  },
+  "phase1_ir": {
+    "path": "results/abi_capability_compiler_phase3/targeted_combined_ir_v137/normalized_targeted_combined_v138.abicir",
+    "sha256": "9fa2467a37c870db7a24640a8d6da46ed73941573026af2c9a4c3425fd98dd18",
+    "records": 7000,
+    "records_per_capability": 500,
+    "teacher_outputs_new_in_this_audit": 0,
+    "source_extraction_reused": true
+  },
+  "development": {
+    "catalog_path": "catalogs/capability_compiler_phase1_frozen_v1.json",
+    "teacher_reference": "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl",
+    "teacher_outputs_used_for_training": false,
+    "family_proxy": "locked probe numeric index modulo four",
+    "functional_metrics": ["V1", "V2"]
+  },
+  "execution": {
+    "device": "cuda",
+    "seed": 240469,
+    "max_tokens": 512,
+    "teacher_forced_batch_size": 8,
+    "autonomous_replay_per_capability": 25,
+    "autonomous_replay_selection": "first 25 records by immutable targeted IR record id within each weak capability",
+    "autonomous_decoding": "greedy",
+    "token_ngram_widths": [1, 2, 3, 4]
+  },
+  "attribution_thresholds": {
+    "training_top1_minimum": 0.95,
+    "training_development_gap_minimum": 0.1,
+    "autonomous_exact_minimum": 0.9
+  },
+  "decision_rule": "Run once after the loader-only repair. If V463 targeted-IR teacher-forced top-1 is materially below 95%, the targeted artifact supplies a real corrective signal and may support one separately preregistered mixed support-plus-causal-recovery candidate. If it is already at least 95% but autonomous replay remains below 90%, prioritize causal rollout recovery. Do not train from this protocol.",
+  "bindings": {
+    "abi/capability_compiler_phase3_weak_support_audit.py": "b11539877ef10f8a6ef7ed1bb6e3450d3379e94327b82bbf46c9c1902dba9fb3",
+    "tests/test_capability_compiler_phase3_weak_support_audit.py": "3fad4c00a31ef843ff605f4169c5e36eb4eba3acdaf48e347270856ef9107fee",
+    "ABI_CAPABILITY_COMPILER_PHASE3_TARGETED_WEAK_SUPPORT_AUDIT_EXECUTION_FAILURE_V470.json": "1afb6358f062a926d99d4acb898ec4688e12a0194b9f231b29b3d9b9152e871e",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V468.json": "2408a2516f3da664fd5049f2a13c97bb74c01e9bb7fd82428a72d97860b4d9f0",
+    "ABI_CAPABILITY_COMPILER_PHASE3_WEAK_SUPPORT_AUDIT_RESULT_V468.json": "1d8c8e7ebc714595e0799c4d08930fca3047e07d67963d617206c1ca7a1ee287",
+    "ABI_CAPABILITY_COMPILER_PHASE3_TARGETED_COMBINED_IR_RESULT_V138.json": "1f6587e29911d4911597e35d24ab7845204a94bdf0c58819b97e3ad159d1d6fa",
+    "ABI_CAPABILITY_COMPILER_PHASE3_TARGETED_COVERAGE_RESULT_V142.json": "cade62974549186827ff6aaa802fdc7bcdf3352268e078147ab2d9b1e8888c6a",
+    "results/abi_capability_compiler_phase3/targeted_combined_ir_v137/normalized_targeted_combined_v138.abicir": "9fa2467a37c870db7a24640a8d6da46ed73941573026af2c9a4c3425fd98dd18",
+    "ABI_CAPABILITY_COMPILER_PHASE3_QUALIFIED_TRANSITION_CONTROL_PROTOCOL_V440.json": "367f9e24e5bb06719a7252670097e8d6cfaf64cb18f95b436b388abac303bec4",
+    "results/abi_capability_compiler_phase3_token_substrate_conformance/candidate_v463/model.safetensors": "d354eee236c1153a92e3b2d05f806fb4238438aebd2c8a889ed9dcb8f1f192c8",
+    "results/abi_capability_compiler_phase3_token_substrate_conformance/evaluation_v463/development_outputs.jsonl": "e247ce93cbee78d7188f6ca4a1d5c7f144841df73fb964cac61f51fd3894bf90",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl": "1081dbe57e75da50b2619bc2dab14c6441158dcd6068f2b864733936087e86a2"
+  },
+  "phase2_external_blocker": "21000 blinded judgments from three independent human raters remain unavailable and are not waived.",
+  "phase3_certified": false,
+  "claim_boundary": "Loader-repaired read-only targeted-IR attribution only; no training, promotion, final-test, Phase 3, or superiority claim."
+}
