@@ -1,0 +1,43 @@
+{
+  "format": "abi-capability-compiler-phase3-routed-v15-autonomous-screen-result/2",
+  "version": 332,
+  "status": "FAIL_FAST_AUTONOMOUS_ENGLISH_QUALITY",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V15_AUTONOMOUS_SCREEN_PROTOCOL_V331.json",
+    "sha256": "e53ff4806c21ef2083b5931ded8a5d088add227c7656a8eafb5deee149a10638"
+  },
+  "raw_evidence": {
+    "outputs": "results/abi_capability_compiler_phase3_routed_v15/autonomous_screen_v332/development_outputs.jsonl",
+    "outputs_sha256": "250106a824e499ce9219d753ddfbea297ae486d05ef514d9d65f9ab67dfe5645"
+  },
+  "measurements": {
+    "completed_prefix_prompts": 17,
+    "completed_capability": "grammar",
+    "functional_passes": 0,
+    "functional_failures": 17,
+    "repetition_collapses": 15,
+    "generation_errors": 0,
+    "route_correct": 17,
+    "maximum_possible_grammar_passes_if_all_83_unrun_prompts_passed": 83,
+    "maximum_possible_grammar_point_estimate": 0.83,
+    "locked_grammar_point_estimate_minimum": 0.9,
+    "locked_repetition_collapse_maximum": 0,
+    "artifact_parameters": 536758275,
+    "artifact_model_sha256": "6d20c7a9d74e04c2209cc534de882f018edb47867e1a87c7d42c33798909e920",
+    "host_interface": "lc-direct-neural-core/16",
+    "artifact_tensor_mutation": false,
+    "source_model_loaded": false,
+    "transformers_imported": false,
+    "final_test_accessed": false
+  },
+  "gate_proof": "The per-capability point-estimate gate is monotonic. After 17 failures among the first 17 of exactly 100 grammar prompts, at most 83/100 can pass even if every remaining prompt succeeds, below the locked 0.90 minimum. Fifteen observed collapses also irreversibly exceed the locked zero-collapse maximum. Remaining execution cannot alter either failure.",
+  "ownership": "ABI_EXTRACTED_ARTIFACT_END_TO_END_GENERATION_QUALITY",
+  "layercake_host_result": "PASS_PHYSICAL_FP16_EXECUTION_FOR_ALL_17_REQUESTS_WITH_EXACT_INTEGRATED_ROUTE_AND_ZERO_ERRORS",
+  "decision": "Stop the remaining mathematically non-informative generation, preserve all raw outputs, reject promotion, and authorize one read-only source-versus-artifact end-to-end accumulation attribution on fixed development-independent calibration validation records. Do not tune this artifact or weaken any gate.",
+  "authorized_next_action": "PREREGISTER_READ_ONLY_LAYERWISE_END_TO_END_ERROR_ACCUMULATION_ATTRIBUTION",
+  "artifact_promoted": false,
+  "phase3_certified": false,
+  "claim_boundary": "The exact routed-v15 artifact fails locked autonomous English quality. LayerCake v16 physical fp16 host execution passes on this observed prefix. No Phase 3 or ABI-superiority claim."
+}
