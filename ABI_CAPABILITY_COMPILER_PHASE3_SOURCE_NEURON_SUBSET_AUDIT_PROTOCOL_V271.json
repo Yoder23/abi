@@ -1,0 +1,34 @@
+{
+  "format": "abi-capability-compiler-phase3-source-neuron-subset-audit/1",
+  "protocol_id": "abi-capability-compiler-phase3-source-neuron-subset-audit-v271",
+  "status": "PREREGISTERED_READ_ONLY_NESTED_SOURCE_NEURON_AUDIT",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V270.json",
+  "historical_evidence_changed": false,
+  "training_authorized": false,
+  "artifact_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "base_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_LINEAR_SEQUENTIAL_FIT_PROTOCOL_V255.json",
+  "checkpoints": {
+    "0": {"path": "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_00.safetensors", "sha256": "b1489e35f2a47337de347e0d009d6706923c99fd91ebf4b54d9804bf3433d9e3"},
+    "1": {"path": "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_01.safetensors", "sha256": "85c31bcaa878e7ba65f6b6bdbe8ed0fe76460d38ef5134d9889f2a032391002b"}
+  },
+  "widths": [384, 768, 1536],
+  "selection": "Nested top neurons by fixed training-record mean squared activation times matching source down-column squared norm, evaluated using the exact copied gate/up rows and down columns on compact-attention features.",
+  "omitted_residual": "One training-derived full-width mean per nested budget; no learned map.",
+  "minimum_theoretical_active_mac_ratio": 4.0,
+  "gate": {"mean_relative_rmse_maximum": 0.85, "mean_output_cosine_minimum": 0.98},
+  "decision_rule": "Evaluate all preregistered nested budgets once. Select the smallest budget clearing both unchanged local thresholds and at least 4x theoretical source active-MAC margin. A pass authorizes a generic matched-neuron host design; no artifact is written. If none passes, close source-neuron subset extraction at these performance-safe budgets.",
+  "bindings": {
+    "abi/capability_compiler_phase3_source_neuron_subset_audit.py": "b7417be579d93e57e34d445700c78f5281d7375da1c8061f4e0e5848707cf612",
+    "tests/test_capability_compiler_phase3_source_neuron_subset_audit.py": "e4f2ec1cf2b227d6f57a59c05bcba65452371d85607b82c0f030f5196bca98be",
+    "abi/capability_compiler_phase3_direct_linear_sequential_fit.py": "dca38cc8bf86047669ce08d7f13c05600f9c28575c1b09797f7faea7de671663",
+    "abi/capability_compiler_phase3_dual_path_local_fit.py": "9b36db57fbef4c9e9e960094e261b92716809e9cb1830acb5e4173ffe7cf19e2",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V270.json": "0bebf059cd5fa42ec067df39a7cfcc1ffc9cafbc7b97ef197f5ec8a424426cbb",
+    "ABI_CAPABILITY_COMPILER_PHASE3_NONLINEAR_RANK768_LAYER1_RESULT_V270.json": "54387dcbfcbc24ca08df65b04943aeb05b4d6ab226cd40d74cd95f740f1e8dcf",
+    "ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_LINEAR_SEQUENTIAL_FIT_PROTOCOL_V255.json": "fcf546b3ad4fdb014f06a9a73c61bfea425a51d24cff351b8ad448dfc026e60b",
+    "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_00.safetensors": "b1489e35f2a47337de347e0d009d6706923c99fd91ebf4b54d9804bf3433d9e3",
+    "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_01.safetensors": "85c31bcaa878e7ba65f6b6bdbe8ed0fe76460d38ef5134d9889f2a032391002b"
+  },
+  "claim_boundary": "Read-only nested source-neuron subset audit only; no artifact, English quality, measured runtime, certificate, or superiority claim."
+}
