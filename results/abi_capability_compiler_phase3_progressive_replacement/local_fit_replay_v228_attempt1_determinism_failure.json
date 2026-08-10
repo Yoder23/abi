@@ -1,0 +1,16 @@
+{
+  "format": "abi-capability-compiler-phase3-progressive-replacement-local-fit-runtime-failure/1",
+  "status": "FAILED_BEFORE_FIRST_FORWARD_OR_UPDATE",
+  "effective_date": "2026-08-09",
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_PROGRESSIVE_REPLACEMENT_LOCAL_FIT_REPLAY_V227.json",
+  "command": "python -m abi.capability_compiler_phase3_progressive_replacement_local_fit_replay train",
+  "failure": "RuntimeError: deterministic cuBLAS operation requires CUBLAS_WORKSPACE_CONFIG=:4096:8 or :16:8",
+  "location": "source rotary embedding for layer 0 before the first teacher block forward",
+  "teacher_model_loaded": true,
+  "teacher_forward_passes": 0,
+  "teacher_forward_tokens": 0,
+  "optimizer_steps": 0,
+  "artifact_created": false,
+  "output_directory_created": false,
+  "repair_boundary": "One exact replay from step zero may set CUBLAS_WORKSPACE_CONFIG=:4096:8 before CUDA initialization. No scientific field may change."
+}

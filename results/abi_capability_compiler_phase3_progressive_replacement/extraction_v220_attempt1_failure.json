@@ -1,0 +1,23 @@
+{
+  "format": "abi-capability-compiler-phase3-progressive-replacement-extraction-failure/1",
+  "status": "FAILED_NO_ARTIFACT",
+  "effective_date": "2026-08-09",
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_PROGRESSIVE_REPLACEMENT_EXTRACTION_PROTOCOL_V219.json",
+  "protocol_sha256": "527e41f71350f429075bbe261d1f0fa17c01d700528b21319f46db6f56cffbff",
+  "command": "python -m abi.capability_compiler_phase3_progressive_replacement_extract",
+  "observed_exit_code": 1,
+  "stdout": "",
+  "stderr": "",
+  "output_directory_created": false,
+  "artifact_created": false,
+  "result_created": false,
+  "post_failure_gpu": {
+    "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "total_mib": 16384,
+    "used_mib": 1211,
+    "free_mib": 14965
+  },
+  "post_failure_available_ram_bytes": 53602336768,
+  "attribution": "UNKNOWN_PROCESS_EXIT_DURING_UNOBSERVED_FULL_TABLE_TRANSFER_OR_SERIALIZATION_PATH",
+  "repair_boundary": "One exact replay may add progress observability and move the same preregistered rows through CUDA in bounded contiguous chunks. No source row, tensor, dtype, value transform, or artifact schema may change."
+}

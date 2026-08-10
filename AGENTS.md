@@ -80,8 +80,24 @@ Status date: 2026-08-09.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V214.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V230.json`. The original campaign
 contract and all historical evidence remain unchanged.
+
+V215-V230 opened one materially distinct progressive source-block replacement
+route. The corrected 32,015-action design has a hostilely verified
+196,899,840-parameter copied lexical/normalization substrate: all bf16 scalars
+match the frozen source exactly, with zero logits, activations, teacher-forward
+tokens, or complete source blocks in the artifact. The separate LayerCake v9
+host construct removes the injected prompt/response BOS boundary and passes
+637 tests plus its unchanged sealed verifier without importing ABI logic.
+
+The first fused replacement cake failed its preregistered local gate at source
+layer 0 after 256 steps. Mean relative RMSE was 0.30239 (passing the 0.85
+limit), but mean output cosine was 0.96709 (below 0.98). The copied substrate
+remained exact. Close fused-projection width, step, data, loss, seed, threshold,
+and nearby variants. The only authorized successor is no-model feasibility for
+a source-topology-preserving dual attention/MLP replacement with separate
+residual paths. Phase 3 remains uncertified.
 
 V191-V214 tested the authorized weight-level structural route. The independent
 LayerCake repository construct-certified `lc-direct-neural-core/7`; ABI did

@@ -1,0 +1,55 @@
+{
+  "format": "abi-capability-compiler-phase3-progressive-replacement-verifier/1",
+  "protocol_id": "abi-capability-compiler-phase3-progressive-replacement-verifier-v223",
+  "status": "PREREGISTERED_HOSTILE_EXACT_GPU_VERIFICATION",
+  "effective_date": "2026-08-09",
+  "historical_evidence_changed": false,
+  "training_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "objective": "Independently recompute every copied bf16 scalar, tensor key, shape, runtime row mapping, duplicate host mapping, and omitted source row from the frozen source shards without loading the teacher model or trusting extraction summaries.",
+  "source": {
+    "model": "microsoft/Phi-3-mini-4k-instruct",
+    "revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "snapshot_path": "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e",
+    "index_path": "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e/model.safetensors.index.json",
+    "vocab_size": 32064
+  },
+  "target": {
+    "external_actions": 32011,
+    "host_special_source_rows": [32000, 32001, 32007, 0],
+    "runtime_vocabulary": 32015,
+    "full_width": 3072,
+    "replacement_layers": 32,
+    "copied_substrate_parameters": 196899840,
+    "complete_source_blocks_retained": 0
+  },
+  "artifact": {
+    "path": "results/abi_capability_compiler_phase3_progressive_replacement/extraction_replay_v222/copied_substrate.safetensors",
+    "sha256": "917635d5c810679490b8e039d0bb5fe9a9efa166cba956d0211a8294adf28e8b",
+    "result_path": "results/abi_capability_compiler_phase3_progressive_replacement/extraction_replay_v222/result.json",
+    "result_sha256": "e68f27492d62a8141dfe1a7bff02250c917cd812f8af3c7c034fe5ccdc91e80a"
+  },
+  "verification": {
+    "device": "cuda",
+    "chunk_rows": 2048,
+    "exact_value_equality": true,
+    "scalars_recomputed": 196899840,
+    "terminology": {
+      "deployed_row_slots_fewer_than_source": 49,
+      "distinct_unused_source_rows": 53,
+      "deliberate_duplicate_source_mappings": 4
+    }
+  },
+  "decision_rule": "Pass only if the exact 67-key bf16 artifact schema matches, all 196,899,840 scalars equal independently reread source values, row slots equal 32,015, unique source rows equal 32,011, deliberate duplicate mappings equal four, distinct unused source rows equal 53, deployed row slots are 49 fewer than source weight rows, the four special mappings are exact, zero complete source blocks remain, and extraction performed no teacher forward pass or training. Any miss closes the branch.",
+  "bindings": {
+    "abi/capability_compiler_phase3_progressive_replacement_verify.py": "a186be3fce674d6d715c505cfe0ca260b343f3a59692f11cc7a69fe9c1032121",
+    "tests/test_capability_compiler_phase3_progressive_replacement_verify.py": "0f55a0db4a64be4b3f2eec50a26ed136e9fafb09395c0b099a57e12b82fd0dbc",
+    "ABI_CAPABILITY_COMPILER_PHASE3_PROGRESSIVE_REPLACEMENT_EXTRACTION_REPLAY_V221.json": "87de76441729ed2a386f5aab401d24642de5133b29f4465fe1bef319d5241a34",
+    "results/abi_capability_compiler_phase3_progressive_replacement/extraction_replay_v222/result.json": "e68f27492d62a8141dfe1a7bff02250c917cd812f8af3c7c034fe5ccdc91e80a",
+    "results/abi_capability_compiler_phase3_progressive_replacement/extraction_replay_v222/copied_substrate.safetensors": "917635d5c810679490b8e039d0bb5fe9a9efa166cba956d0211a8294adf28e8b",
+    "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e/model.safetensors.index.json": "519fa1eba3aa4645654d91322a55ed872b705e25e7a1114702e426a2fbac2c4b",
+    "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e/model-00001-of-00002.safetensors": "b7492726c01287bf6e13c3d74c65ade3d436d50da1cf5bb6925bc962419d6610",
+    "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e/model-00002-of-00002.safetensors": "3f311787aa136e858556caa8543015161edcad85ba81b6a36072443d7fa73c87"
+  },
+  "claim_boundary": "Hostile exact copied-substrate verification only; no replacement fit, English quality, speed, transfer, Phase 3 certificate, or superiority claim."
+}

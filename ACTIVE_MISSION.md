@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V197 STRUCTURAL-EXTRACTION CANDIDATE FAILED, BRANCH CLOSED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V214.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; V230 FUSED PROGRESSIVE LOCAL GATE FAILED, DUAL-PATH FEASIBILITY NEXT | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V230.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -30,7 +30,21 @@ evaluation-only, and no specialist record is eligible for English training.
 
 ## Controlling Phase 3 objective: qualify integrated capability realization
 
-The latest controlling state is V214. V168 produced a qualifying selective-
+The latest controlling state is V230. V215-V230 established a corrected,
+source-aligned progressive-replacement path and then closed its first fused
+operator. The 32,015-action copied substrate contains 196,899,840 lexical and
+normalization parameters; hostile verification independently matched every
+bf16 scalar and confirmed zero copied source transformer blocks. LayerCake v9
+separately construct-qualified the no-injected-BOS causal boundary.
+
+The fused replacement stopped at layer 0 after 256 steps. Its mean validation
+relative RMSE was 0.30239, but mean output cosine was 0.96709 against the locked
+0.98 floor. The measured failure supports one materially different successor:
+separate attention and MLP residual cakes matching the source block topology.
+No fused width, step, loss, data, seed, threshold, or nearby sweep is allowed.
+Phase 2's three-rater dependency still prevents a final Phase 3 certificate.
+
+Preserved history follows. V168 produced a qualifying selective-
 boundary BPE representation at 4,999 fixed actions: exact 14,000-record
 acquisition and 1,400-record development reconstruction, maxima 182/304,
 59/100 instruction pointer exposure, and 14,407,080 matched parameters. The

@@ -1,0 +1,41 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "version": 216,
+  "status_date": "2026-08-09",
+  "parent_state": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V214.json",
+  "historical_evidence_changed": false,
+  "phase0": "COMPLETE",
+  "phase1": "COMPLETE",
+  "phase2": "MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS",
+  "phase3": "UNCERTIFIED_PROGRESSIVE_REPLACEMENT_FEASIBILITY_AND_GENERIC_HOST_PASS",
+  "phase4_through_8": "LOCKED",
+  "neural_training_authorized": "NONE",
+  "teacher_model_loading_authorized": false,
+  "completed_action": "V215_V216_NO_MODEL_PROGRESSIVE_REPLACEMENT_FEASIBILITY_PASS_AND_EXTERNAL_LAYERCAKE_V8_GENERIC_HOST_CONSTRUCT_PASS",
+  "feasibility": {
+    "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_PROGRESSIVE_REPLACEMENT_FEASIBILITY_PROTOCOL_V215.json",
+    "protocol_sha256": "c4cf4ebeb1aeecff1893fb41e6ffa8226bd62a9aa905fe2f8babc2fbedc1ff3d",
+    "result": "results/abi_capability_compiler_phase3_progressive_replacement/feasibility_v216.json",
+    "result_sha256": "1c393760b1c4c9a819772b8bd78aca6f920a914b32ec82ebf69ba7bdac68a33c",
+    "deployed_parameters": 253836288,
+    "fp16_payload_bytes": 507672576,
+    "complete_source_blocks_retained": 0,
+    "theoretical_source_to_target_incremental_mac_ratio": 23.684531059683312,
+    "measured_speed_claim": false
+  },
+  "external_layercake_host": {
+    "repository": "../layercake_release",
+    "commit": "16556e73d6d11b3177b896a51058cb831816d720",
+    "interface": "lc-direct-neural-core/8",
+    "decision": "../layercake_release/moonshot/postrelease_progressive_replacement_core_decision_v19.json",
+    "decision_sha256": "a9ea4b90a80e290fee6166b848223a6fe978d8af83f6d28459b8374e03573d8e",
+    "status": "PASS_CONSTRUCT_ONLY",
+    "quality_or_performance_inherited": false
+  },
+  "authorized_action": "PREREGISTER_GPU_EXTRACTION_OF_ONLY_COPIED_LEXICAL_AND_NORMALIZATION_SUBSTRATE_THEN_HOSTILE_EXACT_VERIFICATION",
+  "prohibited_action": "NO_TRAINING_BEFORE_IMPORTED_SUBSTRATE_VERIFICATION_NO_V197_NEARBY_VARIANTS_NO_FINAL_ACCESS",
+  "next_gate": "EXACT_GPU_SOURCE_SUBSTRATE_EXTRACTION_WITH_ALL_COPIED_VALUES_ACCOUNTED_AND_ZERO_SOURCE_TRANSFORMER_BLOCKS",
+  "external_certificate_blocker": "PHASE2_REQUIRES_21000_BLINDED_JUDGMENTS_FROM_THREE_INDEPENDENT_HUMANS",
+  "final_test_access": "PROHIBITED",
+  "superiority_claim": "PROHIBITED"
+}

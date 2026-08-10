@@ -1,0 +1,44 @@
+{
+  "format": "abi-capability-compiler-phase3-progressive-replacement-feasibility-repair/1",
+  "protocol_id": "abi-capability-compiler-phase3-progressive-replacement-feasibility-repair-v217",
+  "status": "PREREGISTERED_NO_MODEL_ACCOUNTING_REPAIR",
+  "effective_date": "2026-08-09",
+  "historical_evidence_changed": false,
+  "parent_state": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V216.json",
+  "base_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_PROGRESSIVE_REPLACEMENT_FEASIBILITY_PROTOCOL_V215.json",
+  "base_result": "results/abi_capability_compiler_phase3_progressive_replacement/feasibility_v216.json",
+  "defect": "V215 used the 32,064-row source weight vocabulary as the deployed runtime vocabulary. The certified LayerCake decoder boundary has 32,011 external actions plus four host specials, so only 32,015 mapped rows are deployable.",
+  "repair_scope": "Preserve V215/V216 and correct only runtime-vocabulary, copied-parameter, payload, and target-MAC accounting. Rerun all 195 source metadata checks through the bound base gate.",
+  "teacher_model_loading_authorized": false,
+  "tensor_value_access_authorized": false,
+  "training_authorized": false,
+  "final_test_access_authorized": false,
+  "corrected_target": {
+    "source_weight_vocabulary": 32064,
+    "external_actions": 32011,
+    "host_special_actions": 4,
+    "runtime_vocabulary": 32015,
+    "full_width": 3072,
+    "complete_source_blocks_retained": 0,
+    "fp16_payload_bytes_maximum": 629145600,
+    "source_special_rows_for_host_ids": [32000, 32001, 32007, 0]
+  },
+  "external_layercake_host": {
+    "repository": "../layercake_release",
+    "commit": "7158a4ce044bd77bf21b25e7f2e6f994ca50d2ab",
+    "interface": "lc-direct-neural-core/8",
+    "corrected_decision": "../layercake_release/moonshot/postrelease_progressive_replacement_core_corrected_decision_v22.json",
+    "corrected_decision_sha256": "0b0cba877efccceafb394ea6f364f2bbcc3cc8e3290f1e77168e49663b294763",
+    "quality_or_performance_inherited": false
+  },
+  "decision_rule": "Pass only if the complete V215 source metadata gate still passes, runtime actions equal 32,011 plus four, exactly 49 unused source rows are omitted, deployed parameters equal 253,535,232, fp16 payload equals 507,070,464 bytes and remains under 600 MiB, the corrected theoretical maximum-context source-to-target MAC ratio remains at least 4x, and zero complete source transformer blocks remain. A pass authorizes only a separately preregistered copied-substrate extraction.",
+  "bindings": {
+    "abi/capability_compiler_phase3_progressive_replacement_feasibility_repair.py": "2d1aabcde6e1838d447ac23140a9e6346b67416cff292ad8d2e4d152d33439d3",
+    "tests/test_capability_compiler_phase3_progressive_replacement_feasibility_repair.py": "968855641d83c01625a25acd5fd84d76945f0e0564817c186230da53a64ed058",
+    "ABI_CAPABILITY_COMPILER_PHASE3_PROGRESSIVE_REPLACEMENT_FEASIBILITY_PROTOCOL_V215.json": "c4cf4ebeb1aeecff1893fb41e6ffa8226bd62a9aa905fe2f8babc2fbedc1ff3d",
+    "results/abi_capability_compiler_phase3_progressive_replacement/feasibility_v216.json": "1c393760b1c4c9a819772b8bd78aca6f920a914b32ec82ebf69ba7bdac68a33c",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V216.json": "86646fb8fba492e2252863df5fae535e64bdc7e5b4496224b896225e171ce4d8",
+    "../layercake_release/moonshot/postrelease_progressive_replacement_core_corrected_decision_v22.json": "0b0cba877efccceafb394ea6f364f2bbcc3cc8e3290f1e77168e49663b294763"
+  },
+  "claim_boundary": "No-model accounting correction only; no source values, extraction, training, quality, measured speed, transfer, or superiority claim."
+}

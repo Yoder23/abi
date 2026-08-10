@@ -1,0 +1,52 @@
+{
+  "accounting": {
+    "attention_parameters_per_layer": 147456,
+    "copied_final_norm_parameters": 3072,
+    "copied_source_norm_parameters": 196608,
+    "copied_source_parameters": 196899840,
+    "deployed_parameters": 253535232,
+    "fp16_payload_bytes": 507070464,
+    "input_embedding_parameters": 98350080,
+    "latent_norm_parameters_per_layer": 384,
+    "maximum_context_kv_cache_bytes_fp16": 12582912,
+    "mlp_parameters_per_layer": 442368,
+    "omitted_unused_source_rows": 49,
+    "output_head_parameters": 98350080,
+    "projection_parameters_per_layer": 1179648,
+    "runtime_vocabulary": 32015,
+    "source_incremental_macs_at_maximum_context": 3823042560,
+    "source_to_target_incremental_mac_ratio": 23.706638727497857,
+    "source_weight_vocabulary": 32064,
+    "target_incremental_macs_at_maximum_context": 161264640,
+    "target_to_source_incremental_mac_ratio": 0.04218227693494472,
+    "trained_parameters_per_layer": 1769856,
+    "trained_replacement_parameters": 56635392
+  },
+  "base_result_preserved": "results/abi_capability_compiler_phase3_progressive_replacement/feasibility_v216.json",
+  "calibration_cache": {
+    "calibration_tokens": 65536,
+    "input_and_target_fp16_hidden_bytes": 805306368,
+    "one_fp16_hidden_field_bytes": 402653184
+  },
+  "claim_boundary": "Corrected no-model tokenizer, payload, and theoretical-compute feasibility only; no source values, quality, measured runtime, transfer, or superiority claim.",
+  "complete_source_blocks_retained_at_deployment": 0,
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-progressive-replacement-feasibility-repair/1",
+  "gates": {
+    "base_source_metadata_feasibility": true,
+    "corrected_deployed_parameter_count": true,
+    "corrected_payload_within_bound": true,
+    "runtime_vocabulary_equals_external_plus_specials": true,
+    "theoretical_compute_margin_at_least_four": true,
+    "unused_source_rows_omitted": true,
+    "zero_complete_source_blocks_at_deployment": true
+  },
+  "next_gate": "Extract only the 32,015-row mapped lexical substrate and normalization fields, then hostilely verify every copied value before training.",
+  "observed_tensor_count": 195,
+  "phase3_certified": false,
+  "source_model_loaded": false,
+  "status": "PASS_FEASIBLE_CORRECTED",
+  "teacher_present_at_inference": false,
+  "tensor_values_read": false,
+  "training_performed": false
+}
