@@ -85,7 +85,8 @@ def execute(root: Path, protocol_path: Path, output: Path) -> dict:
     tokenizer = DecoderAwareExternalTokenizer.from_document(config["tokenizer"])
     model = PrecisionConformantRoutedSparseRank768ProgressiveCore(**config["model"]).bind_tokenizer(tokenizer)
     model.load_state_dict(load_file(str(artifact_path), device="cpu"), strict=True, assign=True)
-    layer = model.layers[0].cuda()
+    layer = model.layers[0].float().cuda()
+    model.router = model.router.float().cuda().eval()
     examples = sequential.field._examples(root, base, tokenizer)
     train, validation = expanded_split(examples, seed=int(base["training"]["seed"]), maximum_tokens=128)
     teacher = AutoModelForCausalLM.from_pretrained(
@@ -131,6 +132,8 @@ def execute(root: Path, protocol_path: Path, output: Path) -> dict:
             relative_mse = torch.mean((prediction - target).square()) / torch.mean(target.square()).clamp_min(1e-8)
             cosine = F.cosine_similarity(prediction.reshape(1, -1), target.reshape(1, -1)).mean()
             loss = relative_mse + float(training["cosine_weight"]) * (1 - cosine)
+        if not torch.isfinite(loss):
+            raise Phase3Error(f"existing-attention refit became nonfinite at step {step}")
         loss.backward(); gradient_norm = torch.nn.utils.clip_grad_norm_(trainable, float(training["gradient_clip_norm"]))
         optimizer.step(); peak_rss = max(peak_rss, process.memory_info().rss)
         if step == 1 or step % int(training["curve_interval"]) == 0:
@@ -195,7 +198,7 @@ def execute(root: Path, protocol_path: Path, output: Path) -> dict:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(); parser.add_argument("--protocol", default="ABI_CAPABILITY_COMPILER_PHASE3_EXISTING_ATTENTION_REFIT_PROTOCOL_V379.json"); parser.add_argument("--output-dir", default="results/abi_capability_compiler_phase3_native_trajectory/existing_attention_refit_v380")
+    parser = argparse.ArgumentParser(); parser.add_argument("--protocol", default="ABI_CAPABILITY_COMPILER_PHASE3_EXISTING_ATTENTION_REFIT_PROTOCOL_V381.json"); parser.add_argument("--output-dir", default="results/abi_capability_compiler_phase3_native_trajectory/existing_attention_refit_v382")
     args = parser.parse_args(); root = Path.cwd().resolve(); print(json.dumps(execute(root, (root / args.protocol).resolve(), (root / args.output_dir).resolve()), indent=2, sort_keys=True)); return 0
 
 
