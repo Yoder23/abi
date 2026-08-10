@@ -1,0 +1,76 @@
+{
+  "artifact_promoted": false,
+  "calibration_tokens": 33189,
+  "checkpoint": {
+    "parameters": 1333440,
+    "path": "layer1_residual_attention.safetensors",
+    "sha256": "f5e42a6e848a569677b2d9459a0e720395285d733bc6c03dc3af624310ae8019"
+  },
+  "claim_boundary": "Bounded layer-1 residual-attention interface fit only; no host, artifact, English quality, runtime, certificate, or superiority claim.",
+  "combined_validation": {
+    "maximum_relative_rmse": 0.6970093846321106,
+    "mean_attention_relative_rmse": 0.46963934493916376,
+    "mean_feature_relative_rmse": 0.31701164692640305,
+    "mean_output_cosine": 0.9787119903734752,
+    "mean_relative_rmse": 0.3251152331275599,
+    "minimum_output_cosine": 0.9082637429237366,
+    "passed": false
+  },
+  "complete_source_mlp_promoted": false,
+  "curves": [
+    {
+      "attention_relative_rmse": 0.46100807189941406,
+      "feature_relative_rmse": 0.305401086807251,
+      "final_cosine": 0.9805240035057068,
+      "final_relative_rmse": 0.3154291808605194,
+      "loss": 0.40891146659851074,
+      "step": 1
+    },
+    {
+      "attention_relative_rmse": 0.5998860597610474,
+      "feature_relative_rmse": 0.4183199405670166,
+      "final_cosine": 0.9631614089012146,
+      "final_relative_rmse": 0.44587165117263794,
+      "loss": 0.7403053045272827,
+      "step": 64
+    },
+    {
+      "attention_relative_rmse": 0.4606423079967499,
+      "feature_relative_rmse": 0.3568633794784546,
+      "final_cosine": 0.9724280834197998,
+      "final_relative_rmse": 0.37020885944366455,
+      "loss": 0.4815244674682617,
+      "step": 128
+    },
+    {
+      "attention_relative_rmse": 0.47232380509376526,
+      "feature_relative_rmse": 0.2936747372150421,
+      "final_cosine": 0.9842429757118225,
+      "final_relative_rmse": 0.30936190485954285,
+      "loss": 0.4080605208873749,
+      "step": 192
+    },
+    {
+      "attention_relative_rmse": 0.44080373644828796,
+      "feature_relative_rmse": 0.30426013469696045,
+      "final_cosine": 0.9815928339958191,
+      "final_relative_rmse": 0.33394336700439453,
+      "loss": 0.4016575813293457,
+      "step": 256
+    }
+  ],
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-residual-attention-fit/1",
+  "phase3_certified": false,
+  "primary_checkpoint_unchanged": true,
+  "primary_validation": {
+    "mean_output_cosine": 0.9745461749179023,
+    "mean_relative_rmse": 0.36454799877745764
+  },
+  "protocol_sha256": "32baa6727918350f51abfe5af6d62d013e7d6b51dd8671ab3e9c9a6c0d8ef7a8",
+  "record_offset": 512,
+  "status": "FAIL_RESIDUAL_ATTENTION_INTERFACE",
+  "steps": 256,
+  "training_performed": true,
+  "zero_output_at_start": true
+}
