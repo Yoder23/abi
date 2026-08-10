@@ -1,0 +1,16 @@
+{
+  "format":"abi-capability-compiler-phase3-architecture-review/1",
+  "version":410,
+  "status_date":"2026-08-10",
+  "authorization":"ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V409.json",
+  "authorization_sha256":"a7625b1a06f08f49d560ed061a525e3498f34dd1184487c48a0dbdeec6122945",
+  "evidence":"ABI_CAPABILITY_COMPILER_PHASE3_LAYER1_ATTENTION_SPAN_ORACLE_RESULT_V409.json",
+  "evidence_sha256":"ef8e26c189d76d44737f5b7970178790bfb01fde4224b6f685eefdc9db40ced",
+  "historical_evidence_changed":false,
+  "measured_problem":"The existing four compact heads across two width-192 paths produce only 0.975518 cosine and 0.212088 RMSE when followed by the exact source MLP. Even their ideal rank-384 static output span captures only 0.975245 attention-delta energy and misses final RMSE at 0.084057. The exact 32-head source block on the same replacement prefix passes, so a source-aligned sparse head representation is justified instead of further compact-head synthesis.",
+  "proposed_representation":"Decompose exact source layer-one attention output into its 32 individual head contributions by observing the source o_proj input and applying each head's corresponding o_proj columns. Accumulate only a 32x32 contribution Gram matrix on train records. Deterministically forward-select the head that most reduces exact attention-delta reconstruction SSE, breaking ties by source-head index, and stop at the first subset reaching 0.98 reconstruction. Evaluate only that one train-derived subset on held-out records through the exact source MLP diagnostic.",
+  "portability_if_feasible":"A later LayerCake implementation would copy only selected head Q/K/V row slices, the matching output-projection columns, and required normalization values into a LayerCake-native sparse-head operator. It would not retain a complete source block, unselected heads, the teacher object, or source-model inference dependencies.",
+  "controls":{"source_heads":32,"head_dimension":96,"selection_population":"4200 fixed train records only","validation_records":28,"reconstruction_threshold":0.98,"new_teacher_records":0,"head_count_sweep":false,"training":false,"artifact_write":false,"source_block_promotion":false,"final_test_access":false},
+  "decision":"Authorize exactly one separately preregistered minimum source-head-subset oracle. A held-out pass authorizes an installable sparse-source-head LayerCake attention implementation and physical runtime screen. A miss closes exact unweighted head-subset transfer without head-count, ordering, weighting, source, data, prefix, MLP, or gate variants.",
+  "claim_boundary":"Architecture review only; no selected subset, copied weights, model, autonomous quality, physical runtime, Phase 3, or superiority claim."
+}
