@@ -1,0 +1,48 @@
+{
+  "format": "abi-capability-compiler-phase3-routed-v15-artifact-verifier/1",
+  "protocol_id": "abi-capability-compiler-phase3-routed-v15-artifact-verifier-v323",
+  "status": "PREREGISTERED_INDEPENDENT_HOSTILE_ROUTED_V15_ARTIFACT_VERIFIER",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V322.json",
+  "historical_evidence_changed": false,
+  "device": "cpu",
+  "source_model_access": "PROHIBITED",
+  "final_test_access": "PROHIBITED",
+  "artifact": {
+    "directory": "results/abi_capability_compiler_phase3_routed_v15/artifact_v322",
+    "manifest_sha256": "1febaa390de2caf20f27c58361aa7709f6ae6e4b5f17f0e354ebc1a9861955a6",
+    "model_sha256": "6d20c7a9d74e04c2209cc534de882f018edb47867e1a87c7d42c33798909e920"
+  },
+  "layercake_host": {
+    "repository": "../layercake_release",
+    "commit": "3a64e29b23d34fdfea50433ba2ce30bfe7ac2490",
+    "interface": "lc-direct-neural-core/15"
+  },
+  "execution_probe": "Rewrite this clearly: We need a concise update.",
+  "incremental_probe_action": 4,
+  "execution_tolerance_maximum_absolute_error": 0.0001,
+  "hostile_mutations_required": [
+    "manifest_self_hash",
+    "tensor_spec_deletion",
+    "false_promotion",
+    "source_block_injection",
+    "teacher_dependency",
+    "abi_substitution"
+  ],
+  "method": "In a fresh CPU-only process that never imports Transformers, verify exact artifact members, all bound file hashes and byte counts, manifest self-hash/schema, all 613 safetensors headers, canonical config and ABI identity, and strict model state loading. Compare full prefill with cached prefill, compare one fixed incremental step with a full-prefix replay, verify persistent route and 32 dual-KV caches, poison every unselected layer0 route map with NaN and require selected-route full execution to remain finite while selecting a poisoned route exposes NaN. Independently require rejection of six hostile metadata mutations.",
+  "decision_rule": "Pass only if strict load has zero missing or unexpected keys, the source teacher runtime is never imported, both execution comparisons are within 1e-4 maximum absolute error, routing and all 32 dual caches persist, physical sparse isolation passes, and all six hostile mutations are rejected. No English quality or performance claim is authorized by this verifier.",
+  "bindings": {
+    "abi/capability_compiler_phase3_routed_v15_artifact_verify.py": "28dfd33c95e28ff2399de07a48f73f8cc85e60bb175c6f3458dca7d96fc5c84d",
+    "tests/test_capability_compiler_phase3_routed_v15_artifact_verify.py": "fe6dc4ce9df753203cd78dbb341da2861a9e1c6e5de3eb63aecb84de60f9a9c5",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V322.json": "11890113f16fff784e083d93529e36e9529c31dd9161ae89724067d2f935ffad",
+    "ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V15_ARTIFACT_ASSEMBLY_RESULT_V322.json": "fc63d7bfddd43ff8f39f971d2797a73c66abc99f4cf5ace5439c5eb243f52b6c",
+    "results/abi_capability_compiler_phase3_routed_v15/artifact_v322/assembly_metadata.json": "dffbdc3081a2efb0e6987f493efb086027ac7f2976e83e34ac27954ded607a09",
+    "results/abi_capability_compiler_phase3_routed_v15/artifact_v322/manifest.json": "1febaa390de2caf20f27c58361aa7709f6ae6e4b5f17f0e354ebc1a9861955a6",
+    "results/abi_capability_compiler_phase3_routed_v15/artifact_v322/config.json": "047817c8636aacb261f909372c4afaa791d541834aac8072143adf3d47709882",
+    "results/abi_capability_compiler_phase3_routed_v15/artifact_v322/abi_contract.json": "6fe3ff87c1bcaece3aa7a87bc0f2b92127ef9a10e2f778c838ff039c95265a3f",
+    "results/abi_capability_compiler_phase3_routed_v15/artifact_v322/model.safetensors": "6d20c7a9d74e04c2209cc534de882f018edb47867e1a87c7d42c33798909e920",
+    "../layercake_release/layercake/routed_sparse_rank768_progressive_core.py": "e521624e10450b27642846ed373a5400958f3986fb24a53109ffa1b91956cd76",
+    "../layercake_release/layercake_extensions/decoder_direct_neural_core.py": "4d2c0db85ce5e56b1023fe617b66236dee0f6db57fdf6bcac4331d6549c51ebb"
+  },
+  "claim_boundary": "Preregistered hostile artifact integrity and teacher-free execution verifier only; autonomous English quality, physical benchmark dominance, Phase 3 certificate, and ABI superiority remain unproven."
+}
