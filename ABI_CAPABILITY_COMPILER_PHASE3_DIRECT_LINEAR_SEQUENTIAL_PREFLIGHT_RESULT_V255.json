@@ -1,0 +1,35 @@
+{
+  "format": "abi-capability-compiler-phase3-direct-linear-sequential-preflight-result/1",
+  "version": 255,
+  "status": "PASS_TRAIN_AUTHORIZED",
+  "status_date": "2026-08-10",
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_LINEAR_SEQUENTIAL_FIT_PROTOCOL_V255.json",
+    "sha256": "fcf546b3ad4fdb014f06a9a73c61bfea425a51d24cff351b8ad448dfc026e60b"
+  },
+  "inventory": {
+    "records": 14000,
+    "calibration_train_records": 420,
+    "calibration_validation_records": 28,
+    "calibration_tokens": 33189,
+    "runtime_vocabulary": 32015,
+    "copied_substrate_parameters": 196899840,
+    "fitted_attention_parameters": 42473472,
+    "analytically_imported_parameters": 37847040,
+    "replacement_parameters": 80320512,
+    "deployed_parameters": 277220352,
+    "fitted_attention_tensor_keys": 160,
+    "analytically_imported_tensor_keys": 96
+  },
+  "governance": {
+    "source_model_loaded": false,
+    "training_performed": false,
+    "final_test_accessed": false,
+    "sweeps_authorized": false,
+    "fail_fast": true,
+    "historical_evidence_changed": false
+  },
+  "decision": "Authorize exactly the V255 fail-fast 32-layer fit. A local failure closes this exact branch; a complete local pass authorizes only a separately preregistered end-to-end conformance screen.",
+  "phase3_certified": false,
+  "claim_boundary": "Preflight and accounting only; no source extraction, artifact quality, autonomous English, measured inference, Phase 3 certificate, or superiority claim."
+}
