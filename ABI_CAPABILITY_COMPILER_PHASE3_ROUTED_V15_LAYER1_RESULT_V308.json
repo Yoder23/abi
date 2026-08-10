@@ -1,0 +1,34 @@
+{
+  "format": "abi-capability-compiler-phase3-routed-v15-layer1-result/1",
+  "version": 308,
+  "status": "PASS_LAYER2_ATTENTION_FIT_AUTHORIZED",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V15_LAYER1_EXTRACT_PROTOCOL_V307.json",
+    "sha256": "ddf6225274c1cd4ba243465318cb0f95152aa43e2ac73da224fbd47e6906d0c0"
+  },
+  "raw_evidence": {
+    "metadata": "results/abi_capability_compiler_phase3_routed_v15/layer1_v308/metadata.json",
+    "metadata_sha256": "5a2a1a2ebe8718db09a5f8cd5b979073aa27e16a6d2cd23adf4bd976cefb2e2c",
+    "checkpoint": "results/abi_capability_compiler_phase3_routed_v15/layer1_v308/routed_v15_layers_00_01.safetensors",
+    "checkpoint_sha256": "5eee2747bfcb9cbf72528519acc6e544a380dad20d1d0338425f12041ec9d714"
+  },
+  "measurements": {
+    "mean_output_cosine": 0.9831035094601768,
+    "mean_relative_rmse": 0.3876132746892316,
+    "minimum_output_cosine": 0.8317645788192749,
+    "maximum_relative_rmse": 2.6512107849121094,
+    "mean_attention_output_cosine": 0.9831473869936806,
+    "exact_routes": 28,
+    "basis_energy_explained": 0.9717874526977539,
+    "passed": true
+  },
+  "adverse_evidence": "The aggregate preregistered gates passed, but the weakest abstention record measured cosine 0.8317645788192749 and relative RMSE 2.6512107849121094; no per-record quality claim is made.",
+  "decision": "Preserve the immutable combined layers0-1 checkpoint. Authorize one separately preregistered layer2 attention fit and extraction using only the real replacement-produced layers0-1 hidden state. No old layer2 attention artifact exists.",
+  "authorized_next_action": "PREREGISTER_BOUNDED_ROUTED_V15_LAYER2_ATTENTION_FIT_AND_EXTRACTION_ON_EXACT_REPLACEMENT_PREFIX",
+  "artifact_promoted": false,
+  "final_test_accessed": false,
+  "phase3_certified": false,
+  "claim_boundary": "Routed v15 layer-1 local aggregate pass only; no full artifact, English quality, measured runtime, Phase 3 certificate, or superiority claim."
+}
