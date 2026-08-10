@@ -1,0 +1,18 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "version": 338,
+  "status_date": "2026-08-10",
+  "parent_state": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V336.json",
+  "historical_evidence_changed": false,
+  "phase0": "COMPLETE",
+  "phase1": "COMPLETE",
+  "phase2": "MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS",
+  "phase3": "UNCERTIFIED_SEQUENCE_CONFORMANCE_BATCH1_RUNTIME_TERMINATED",
+  "phase4_through_8": "LOCKED",
+  "completed_action": "V337_V338_HEALTHY_RUNTIME_TERMINATION_NO_CANDIDATE",
+  "authorized_action": "PREREGISTER_EXPLICIT_BATCHED_EXECUTION_REPAIR_FROM_STEP_ZERO",
+  "prohibited_action": "NO_PARTIAL_STATE_RESUME_NO_SILENT_BATCH_OR_OPTIMIZER_CHANGE_NO_PROMOTION_NO_FINAL_ACCESS",
+  "external_certificate_blocker": "PHASE2_REQUIRES_21000_BLINDED_JUDGMENTS_FROM_THREE_INDEPENDENT_HUMANS",
+  "final_test_access": "PROHIBITED",
+  "superiority_claim": "PROHIBITED"
+}
