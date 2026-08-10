@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; NO QUALIFIED INTEGRATED ENGLISH ARTIFACT | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V429.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; NO QUALIFIED INTEGRATED ENGLISH ARTIFACT | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V430.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -40,10 +40,14 @@ then derived one training-only 98% source-neuron subset without a count sweep;
 it required 7,617/8,192 neurons, missed RMSE at 0.092606, and implied 103.64M
 projection MAdds/token. No component was written or promoted. The global
 factorized-layer branch and nearby variants are closed. The sole authorized
-next action is a bounded complete-cost architecture review for dynamically
-sparse local nonlinear experts with exactly one expert active per token. The
-final set remains untouched, and Phase 2's independent-human dependency
-separately prevents a final Phase 3 certificate.
+V430 completed that cost review. A uniform factorized-attention installation
+would consume 1.070B projection MAdds across 32 layers before residual work,
+3.335× the current complete projection envelope. The only authorized successor
+therefore fixes exactly five active source heads plus 432 active nonlinear
+units per token at 9.978M projection MAdds, below the current 10.027M layer
+envelope. Only a read-only nonpromotional layer-1 conditional-support capacity
+oracle may run next. The final set remains untouched, and Phase 2's independent-
+human dependency separately prevents a final Phase 3 certificate.
 
 The latest controlling state is V240. V215-V230 established a corrected,
 source-aligned progressive-replacement path and closed its fused operator at

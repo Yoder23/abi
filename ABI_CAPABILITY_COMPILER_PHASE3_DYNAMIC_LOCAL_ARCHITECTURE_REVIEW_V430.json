@@ -1,0 +1,56 @@
+{
+  "format":"abi-capability-compiler-phase3-architecture-review/1",
+  "version":430,
+  "status_date":"2026-08-10",
+  "authorization":"ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V429.json",
+  "historical_evidence_changed":false,
+  "status":"PASS_REVIEW_DYNAMIC_LOCAL_SUPPORT_ORACLE_ONLY",
+  "evidence_inputs":{
+    "stable_factorized_attention":"ABI_CAPABILITY_COMPILER_PHASE3_WITHIN_HEAD_VO_STABLE_REPLAY_RESULT_V417.json",
+    "residual_span":"ABI_CAPABILITY_COMPILER_PHASE3_FACTORIZED_ATTENTION_RESIDUAL_SPAN_RESULT_V419.json",
+    "analytic_realization_failure":"ABI_CAPABILITY_COMPILER_PHASE3_FACTORIZED_LAYER1_ANALYTIC_RESULT_V425.json",
+    "source_nonlinear_failure":"ABI_CAPABILITY_COMPILER_PHASE3_SOURCE_NONLINEAR_COEFFICIENT_RESULT_V427.json",
+    "source_neuron_failure":"ABI_CAPABILITY_COMPILER_PHASE3_SOURCE_NEURON_THRESHOLD_RESULT_V429.json"
+  },
+  "measured_constraints":{
+    "current_host_active_projection_multiply_adds_per_layer":10027008,
+    "current_host_active_projection_multiply_adds_32_layers":320864256,
+    "factorized_attention_multiply_adds_per_layer":33441792,
+    "factorized_attention_multiply_adds_32_layers_before_residual":1070137344,
+    "factorized_attention_only_ratio_to_complete_current_projection_envelope":3.335171568627451,
+    "global_source_neuron_subset_selected":7617,
+    "global_source_neuron_subset_total":8192,
+    "global_source_neuron_subset_combined_multiply_adds_per_layer":103640064
+  },
+  "decision":"Reject uniform progressive installation of the V417 factorized attention and reject global source-neuron support. Both violate the current active projection envelope before a complete English host exists. A materially new conditional-support representation is required.",
+  "bounded_dynamic_local_candidate":{
+    "source_heads_active_per_token":5,
+    "source_head_projection_multiply_adds_per_token":5898240,
+    "nonlinear_units_active_per_token":432,
+    "nonlinear_projection_multiply_adds_per_token":3981312,
+    "router_outputs":32,
+    "router_multiply_adds_per_token":98304,
+    "total_active_projection_multiply_adds_per_token":9977856,
+    "current_host_layer_envelope":10027008,
+    "active_fraction_of_current_layer_envelope":0.9950980392156863,
+    "active_support_rule":"Exactly five source attention heads and exactly 432 nonlinear units active per token; no top-k or width sweep.",
+    "storage_rule":"Selections may reference shared immutable dictionaries, but the complete stored candidate must remain below the source teacher and below the locked deployed-footprint gate. Duplicated per-expert copies are prohibited.",
+    "execution_rule":"Selection must physically precede projection; dense execution followed by masking is prohibited."
+  },
+  "authorized_next_action":"PREREGISTER_ONE_READ_ONLY_NONPROMOTIONAL_LAYER1_CONDITIONAL_SUPPORT_CAPACITY_ORACLE",
+  "oracle_boundary":"The oracle may use target residuals only to measure whether the fixed 5-head/432-unit active support can represent held-out layer-1 behavior. It may not train or promote a router, write a component, access final material, or support a model claim. A miss closes this dynamic-local support budget. A pass authorizes a train-only routing-realization protocol under a separate cost and leakage review.",
+  "prohibited_actions":[
+    "uniform_factorized_attention_installation",
+    "head_count_sweep",
+    "nonlinear_width_sweep",
+    "expert_count_sweep",
+    "dense_then_mask_execution",
+    "duplicated_expert_weight_banks",
+    "data_or_seed_sweep",
+    "gate_change",
+    "component_promotion",
+    "final_test_access"
+  ],
+  "phase3_certified":false,
+  "claim_boundary":"No-model architecture and arithmetic review only; no conditional-support quality, router, storage, runtime, autonomous, Phase 3, or superiority claim."
+}
