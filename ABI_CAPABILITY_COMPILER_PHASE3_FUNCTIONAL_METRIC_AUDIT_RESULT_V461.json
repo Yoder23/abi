@@ -1,0 +1,15 @@
+{
+  "format": "abi-capability-compiler-functional-metric-audit-summary/1",
+  "version": 461,
+  "status": "PASS_V2_SURFACE_EQUIVALENCE_CONSTRUCT_AUDIT_PROSPECTIVE_ONLY",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {"path": "ABI_CAPABILITY_COMPILER_PHASE3_FUNCTIONAL_METRIC_AUDIT_PROTOCOL_V460.json", "sha256": "047baafe436acd1d736935de7f4eea2b1431366114e0f91d1cbe70228ae49630"},
+  "result": {"path": "results/abi_capability_compiler_phase3_functional_metric_audit/audit_v461/result.json", "sha256": "0f3abe31fd13ebe0c857918c47a761be6e9e9faf4fe1cf38cbd9cc7866a36cca"},
+  "systems": {"teacher_T0": {"v1": 1237, "v2": 1308}, "candidate_V459": {"v1": 1304, "v2": 1309}, "failed_A3": {"v1": 4, "v2": 4}, "failed_C3": {"v1": 10, "v2": 10}},
+  "decision": "Use V2 only prospectively. Preserve every V1 receipt. V459 remains rejected because abstention and coherence stay below 90 and five V2 collapses remain. The corrected teacher establishes that the unresolved candidate deficit is real, not evaluator surface form alone.",
+  "promotion_eligible": false,
+  "phase3_certified": false,
+  "final_test_accessed": false,
+  "claim_boundary": "Exploratory symmetric construct repair; no retrospective promotion, Phase 3, or superiority claim."
+}
