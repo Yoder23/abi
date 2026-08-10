@@ -1,0 +1,30 @@
+{
+  "format": "abi-capability-compiler-phase3-feature-alignment-audit/1",
+  "protocol_id": "abi-capability-compiler-phase3-feature-alignment-audit-v275",
+  "status": "PREREGISTERED_READ_ONLY_NESTED_FEATURE_ALIGNMENT",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V274.json",
+  "historical_evidence_changed": false,
+  "artifact_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "base_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_LINEAR_SEQUENTIAL_FIT_PROTOCOL_V255.json",
+  "checkpoints": {"0": {"path": "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_00.safetensors", "sha256": "b1489e35f2a47337de347e0d009d6706923c99fd91ebf4b54d9804bf3433d9e3"}, "1": {"path": "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_01.safetensors", "sha256": "85c31bcaa878e7ba65f6b6bdbe8ed0fe76460d38ef5134d9889f2a032391002b"}},
+  "ranks": [192, 384, 768],
+  "relative_ridge": 0.0001,
+  "gate": {"mean_relative_rmse_maximum": 0.85, "mean_output_cosine_minimum": 0.98},
+  "decision_rule": "Fit one nested analytic correction from compact post-attention normalized features into the training-derived feature-difference basis. Evaluate mapped and per-record oracle corrections through the complete source MLP strictly as diagnostics. Select the smallest mapped rank clearing the unchanged local gate; no complete source MLP may be promoted.",
+  "bindings": {
+    "abi/capability_compiler_phase3_feature_alignment_audit.py": "503b10d06b702fa53f197fb36f6532e9257a0f8ee76ad878611a0a16979e5dac",
+    "tests/test_capability_compiler_phase3_feature_alignment_audit.py": "8438df5da1805358600f42bbf7d3e3c41cca18b3a6e720b7917f9282861efbcf",
+    "abi/capability_compiler_phase3_direct_linear_sequential_fit.py": "dca38cc8bf86047669ce08d7f13c05600f9c28575c1b09797f7faea7de671663",
+    "abi/capability_compiler_phase3_dual_path_local_fit.py": "9b36db57fbef4c9e9e960094e261b92716809e9cb1830acb5e4173ffe7cf19e2",
+    "abi/capability_compiler_phase3_layer1_error_decomposition.py": "e7f901976c5ddffeb6432b65e5c283971e3d43ae0df4d966143dcbba673c6e1a",
+    "abi/capability_compiler_phase3_mlp_residual_rank_audit.py": "d9830599c330aef68d3d6a2a468c92ff2747b66db374c0d2e057bebd3f31991e",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V274.json": "04c2468b5885b922af39cc62ecbdd57b13d009f11295944644ed618550e25b8d",
+    "ABI_CAPABILITY_COMPILER_PHASE3_COMPLETE_MLP_INTERFACE_RESULT_V274.json": "0bb6041df9e2a8ad9224a5236ed9cbdc4adda79d67d62a8747a73730a9a18597",
+    "ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_LINEAR_SEQUENTIAL_FIT_PROTOCOL_V255.json": "fcf546b3ad4fdb014f06a9a73c61bfea425a51d24cff351b8ad448dfc026e60b",
+    "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_00.safetensors": "b1489e35f2a47337de347e0d009d6706923c99fd91ebf4b54d9804bf3433d9e3",
+    "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_01.safetensors": "85c31bcaa878e7ba65f6b6bdbe8ed0fe76460d38ef5134d9889f2a032391002b"
+  },
+  "claim_boundary": "Read-only feature-alignment diagnostic using a non-promotable complete source MLP; no artifact, runtime, certificate, or superiority claim."
+}
