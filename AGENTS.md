@@ -22,14 +22,17 @@ LayerCake cake.
 Status date: 2026-08-10.
 
 The controlling machine-readable state is now
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V352.json`. Phase 3 remains
-**UNCERTIFIED**. The hostilely verified routed artifact contains zero source
-blocks but fails autonomous English. V340/V342 cached-sequence conformance,
-V346 trajectory retargeting, V348 capability-oracle factorization, and V352
-macro-layer fitting all failed their unchanged gates and wrote no promoted
-checkpoint. Their nearby step, loss, rank, width, route, seed, and data variants
-are closed. No further experiment is authorized without a materially new
-representation addressing both operator fidelity and recurrent accumulation.
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V429.json`. Phase 3 remains
+**UNCERTIFIED**. V417 established numerically stable all-head attention with
+compressed V/O; V419 established a passing rank-935 residual span. The V425
+analytic decoder, V427 projected source-SwiGLU oracle, and V429 single
+train-derived source-neuron subset all failed their unchanged held-out gates.
+V429 retained 7,617/8,192 neurons, still missed RMSE, and implied 103.64M
+projection MAdds/token, so the single-global-operator branch and nearby count,
+importance, threshold, global-MLP-rank, data, seed, route, and gate variants
+are closed. Only an architecture review for dynamically sparse local nonlinear
+experts with one active expert per token and a complete-system cost envelope is
+authorized.
 The final set remains prohibited, Phase 2 still requires 21,000 judgments from
 three independent human raters, and ABI superiority claims remain prohibited.
 

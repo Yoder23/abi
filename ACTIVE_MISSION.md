@@ -15,7 +15,7 @@ three independent blinded human-rating forms.
 | 0 — definitions and preregistration | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 — normalized acquisition IR | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 — matched LoRA and distillation baselines | MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| 3 — causal teacher-to-target acquisition | UNCERTIFIED; NO QUALIFIED INTEGRATED ENGLISH ARTIFACT | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V352.json` |
+| 3 — causal teacher-to-target acquisition | UNCERTIFIED; NO QUALIFIED INTEGRATED ENGLISH ARTIFACT | `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V429.json` |
 | 4–8 | LOCKED | Campaign contract |
 
 Phase 1 certifies a data artifact, not a model. It selected 7,000 normalized
@@ -30,16 +30,19 @@ evaluation-only, and no specialist record is eligible for English training.
 
 ## Controlling Phase 3 objective: qualify integrated capability realization
 
-The controlling state is now V352. A 536,758,275-parameter routed artifact was
-assembled and hostilely verified with zero source blocks, but its autonomous
-replay failed before completing the first capability gate. Read-only
-attribution found locally passing operators while the native global trajectory
-degraded. Subsequent bounded repairs also failed: late-layer and all-layer
-cached-sequence conformance, three-route trajectory retargeting, fourteen-
-capability oracle factorization, and a fixed-byte sixteen-stage macro-layer
-successor. Every failure is sealed, no failed checkpoint was promoted, and the
-final set remains untouched. No experiment is currently authorized without a
-materially new representation. Phase 2's independent-human dependency
+The controlling state is now V429. Stable all-head attention with compressed
+V/O passed at V417, and its train-derived rank-935 residual span passed at
+V419. Realization remains the blocker. V425's numerically valid LayerCake
+linear-plus-route decoder failed at 0.992399 cosine and 0.101680 relative RMSE.
+V427 proved that the uncompressed source MLP still clears the local gate, but
+projecting its nonlinear output through rank 935 missed RMSE at 0.083516. V429
+then derived one training-only 98% source-neuron subset without a count sweep;
+it required 7,617/8,192 neurons, missed RMSE at 0.092606, and implied 103.64M
+projection MAdds/token. No component was written or promoted. The global
+factorized-layer branch and nearby variants are closed. The sole authorized
+next action is a bounded complete-cost architecture review for dynamically
+sparse local nonlinear experts with exactly one expert active per token. The
+final set remains untouched, and Phase 2's independent-human dependency
 separately prevents a final Phase 3 certificate.
 
 The latest controlling state is V240. V215-V230 established a corrected,

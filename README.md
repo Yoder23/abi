@@ -17,19 +17,24 @@ Status date: 2026-08-10
 **The ABI English-product moonshot is OPEN.**
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V352.json`. Phase 3 is **not
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V429.json`. Phase 3 is **not
 certified**: there is no qualified integrated teacher-derived English artifact.
-The hostilely verified 536,758,275-parameter routed artifact contains zero
-source blocks, but autonomous replay fails. Bounded late-layer and all-layer
-sequence conformance, three-route trajectory retargeting, fourteen-capability
-oracle factorization, and a fixed-byte sixteen-stage macro-layer successor all
-failed their locked gates. No failed checkpoint was promoted.
+The latest bounded progressive-replacement work proved a stable layer-1
+factorized-attention oracle and a rank-935 target residual span, but every
+realizable compact coefficient path tested so far failed. The fixed analytic
+decoder scored 0.992399 cosine and 0.101680 relative RMSE; projecting the
+source SwiGLU scored 0.995873/0.083516; and a train-derived 98% contribution
+subset required 7,617/8,192 source neurons, still scored only
+0.995392/0.092606, and implied 103.64M projection MAdds/token. No component or
+failed checkpoint was promoted. The single-global-operator branch is closed;
+only a complete-cost review of dynamically sparse local nonlinear experts is
+authorized.
 
 Phase 2 also remains externally blocked on 21,000 blinded judgments from three
 independent human raters. ABI must not claim fluent transfer, minimum-
 information English acquisition, Phase 3 completion, or superiority to LoRA
-or distillation. New compute requires a materially new representation that
-addresses both local operator fidelity and recurrent trajectory preservation.
+or distillation. New compute requires the V429-authorized dynamic-local
+representation and must preserve the final CPU execution gates.
 
 Three facts define the current checkpoint:
 
