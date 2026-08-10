@@ -1,0 +1,30 @@
+{
+  "format": "abi-capability-compiler-phase3-source-prompt-router-result/1",
+  "version": 302,
+  "status": "PASS_EXACT_ROUTED_LOCAL_ARCHITECTURE_HOST_CONSTRUCT_AUTHORIZED",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {"path": "ABI_CAPABILITY_COMPILER_PHASE3_SOURCE_PROMPT_ROUTER_AUDIT_PROTOCOL_V301.json", "sha256": "3af3d96112767d49b31af0bf2ab52945706a948d7dfdfdd48721f67688604f4d"},
+  "raw_evidence": {
+    "metadata": "results/abi_capability_compiler_phase3_three_route/router_audit_v302/metadata.json",
+    "metadata_sha256": "f4cb598ffc418a72a81568a2425880d384ce2d5e02c61740c73d5b5b7ef3e71d",
+    "checkpoint": "results/abi_capability_compiler_phase3_three_route/router_audit_v302/source_prompt_router.safetensors",
+    "checkpoint_sha256": "e0298c7bb05cf8a830be395b8b2d8cd45f56aa455ebce335d80de1b73dc12b4d"
+  },
+  "measurements": {
+    "validation_routes": 28,
+    "exact_routes": 28,
+    "route_accuracy": 1.0,
+    "teacher_model_loaded": false,
+    "target_tokens_accessed": false,
+    "inherited_mean_output_cosine": 0.9802943510668618,
+    "inherited_mean_relative_rmse": 0.34790193289518356,
+    "local_gate_passed": true
+  },
+  "decision": "Authorize construction-only implementation of the exact hard-top1 three-route dual-attention sparse-correction LayerCake host. Quality and performance cannot be inherited by the host; multi-layer extraction remains separately gated.",
+  "authorized_next_action": "CONSTRUCT_AND_VERIFY_EXACT_LAYERCAKE_THREE_ROUTE_DUAL_ATTENTION_HOST",
+  "artifact_promoted": false,
+  "final_test_accessed": false,
+  "phase3_certified": false,
+  "claim_boundary": "Exact held-out layer-1 routing and inherited local output pass only; no full host artifact, autonomous English quality, physical runtime, Phase 3 certificate, or superiority claim."
+}
