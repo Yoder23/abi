@@ -1,0 +1,16 @@
+{
+  "format": "abi-capability-compiler-phase3-source-neuron-subset-result/1",
+  "version": 272,
+  "status": "FAIL_MAGNITUDE_SELECTED_SOURCE_NEURON_BRANCH_CLOSED",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {"path": "ABI_CAPABILITY_COMPILER_PHASE3_SOURCE_NEURON_SUBSET_AUDIT_PROTOCOL_V271.json", "sha256": "1a00eb17723f82195fb6b7dd3ac638beac0f6aff4d9e5f05d8cbc9b4bb350614"},
+  "raw_evidence": {"path": "results/abi_capability_compiler_phase3_source_neurons/layer1_audit_v272.json", "sha256": "3c5d00e9e05a5ff0fcd6a43ce631b9fb84a1ef6aa4ab62cb4bc6b05609d9c7c6"},
+  "budgets": [{"neurons": 384, "cosine": 0.9291570144040244, "active_mac_ratio": 14.683956531486354}, {"neurons": 768, "cosine": 0.9347784583057676, "active_mac_ratio": 10.232948238292973}, {"neurons": 1536, "cosine": 0.9416311532258987, "active_mac_ratio": 6.37074274481297}],
+  "decision": "Close simple nested source-neuron magnitude selection. Authorize one read-only interface diagnostic comparing the complete source MLP on teacher-attention versus compact-attention features; no complete block may be promoted.",
+  "training_performed": false,
+  "artifact_written": false,
+  "final_test_accessed": false,
+  "phase3_certified": false,
+  "claim_boundary": "Negative source-neuron subset evidence only; no artifact, certificate, or superiority claim."
+}

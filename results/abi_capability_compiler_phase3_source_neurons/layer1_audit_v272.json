@@ -1,0 +1,67 @@
+{
+  "artifact_written": false,
+  "budgets": [
+    {
+      "accounting": {
+        "active_incremental_macs_at_maximum_context": 260355072,
+        "deployed_parameters": 352717824,
+        "fp16_payload_bytes": 705435648,
+        "imported_residual_parameters": 113344512,
+        "selected_neurons": 384,
+        "source_to_target_active_mac_ratio": 14.683956531486354
+      },
+      "local_and_compute_gate_passed": false,
+      "maximum_relative_rmse": 0.7884804606437683,
+      "mean_output_cosine": 0.9291570144040244,
+      "mean_relative_rmse": 0.6406162232160568,
+      "minimum_output_cosine": 0.879205584526062,
+      "selected_neurons": 384
+    },
+    {
+      "accounting": {
+        "active_incremental_macs_at_maximum_context": 373601280,
+        "deployed_parameters": 465964032,
+        "fp16_payload_bytes": 931928064,
+        "imported_residual_parameters": 226590720,
+        "selected_neurons": 768,
+        "source_to_target_active_mac_ratio": 10.232948238292973
+      },
+      "local_and_compute_gate_passed": false,
+      "maximum_relative_rmse": 0.777702808380127,
+      "mean_output_cosine": 0.9347784583057676,
+      "mean_relative_rmse": 0.6117522546223232,
+      "minimum_output_cosine": 0.8823323845863342,
+      "selected_neurons": 768
+    },
+    {
+      "accounting": {
+        "active_incremental_macs_at_maximum_context": 600093696,
+        "deployed_parameters": 692456448,
+        "fp16_payload_bytes": 1384912896,
+        "imported_residual_parameters": 453083136,
+        "selected_neurons": 1536,
+        "source_to_target_active_mac_ratio": 6.37074274481297
+      },
+      "local_and_compute_gate_passed": false,
+      "maximum_relative_rmse": 0.764076828956604,
+      "mean_output_cosine": 0.9416311532258987,
+      "mean_relative_rmse": 0.5768530155931201,
+      "minimum_output_cosine": 0.8864415287971497,
+      "selected_neurons": 1536
+    }
+  ],
+  "calibration_tokens": 33189,
+  "claim_boundary": "Read-only layer-1 matched source-neuron subset audit only; no artifact, autonomous English quality, measured runtime, certificate, or superiority claim.",
+  "copied_source_parameters_in_artifact": 0,
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-source-neuron-subset-audit/1",
+  "importance_observations": 31001,
+  "layer": 1,
+  "phase3_certified": false,
+  "protocol_sha256": "1a00eb17723f82195fb6b7dd3ac638beac0f6aff4d9e5f05d8cbc9b4bb350614",
+  "smallest_passing_width": null,
+  "source_mlp_neurons": 8192,
+  "status": "FAIL_SOURCE_NEURON_SUBSET_AUDIT",
+  "teacher_present_in_artifact": false,
+  "training_performed": false
+}
