@@ -1,0 +1,40 @@
+{
+  "format": "abi-capability-compiler-phase3-routed-v15-artifact-verifier-result/1",
+  "version": 326,
+  "status": "PASS_AUTONOMOUS_ENGLISH_DEVELOPMENT_SCREEN_AUTHORIZED",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V15_ARTIFACT_VERIFIER_PROTOCOL_V325.json",
+    "sha256": "bafea8089131e312a89df10f7632841a19503f04ad11457a04b966028c9a53dc"
+  },
+  "raw_evidence": {
+    "metadata": "results/abi_capability_compiler_phase3_routed_v15/artifact_verify_v326/metadata.json",
+    "metadata_sha256": "02c36e300277d92c4cb39bc9c70688dafa595171fafc9e01a419387b13ba9d4e"
+  },
+  "measurements": {
+    "parameters": 536758275,
+    "tensor_keys": 613,
+    "source_blocks_in_artifact": 0,
+    "source_model_loaded": false,
+    "transformers_imported": false,
+    "strict_state_dict": true,
+    "prefill_batch_maximum_absolute_error": 1.9073486328125e-05,
+    "incremental_batch_maximum_absolute_error": 6.866455078125e-05,
+    "execution_tolerance": 0.0001,
+    "persistent_route": true,
+    "persistent_dual_kv_layers": 32,
+    "physical_sparse_route_isolation": true,
+    "hostile_mutations_rejected": 6,
+    "hostile_mutations_attempted": 6,
+    "strict_cpu_load_seconds": 0.22134180000284687,
+    "process_rss_bytes_after_execution": 3646406656,
+    "passed": true
+  },
+  "decision": "Artifact identity, strict loading, source-model isolation, full versus incremental execution equivalence, persistent route/KV state, physical sparse execution, and all preregistered hostile mutations passed. Authorize the locked 1,400-prompt autonomous English development screen using this exact unmodified artifact.",
+  "authorized_next_action": "PREREGISTER_ROUTED_V15_AUTONOMOUS_ENGLISH_DEVELOPMENT_SCREEN",
+  "artifact_promoted": false,
+  "final_test_accessed": false,
+  "phase3_certified": false,
+  "claim_boundary": "Hostile artifact integrity and teacher-free execution pass only; autonomous English quality, physical comparative runtime, Phase 3 certification, and superiority remain unproven."
+}
