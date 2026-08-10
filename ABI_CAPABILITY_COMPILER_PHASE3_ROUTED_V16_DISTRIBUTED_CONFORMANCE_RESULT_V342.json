@@ -1,0 +1,39 @@
+{
+  "format": "abi-capability-compiler-phase3-routed-v16-distributed-conformance-result/1",
+  "version": 342,
+  "status": "FAIL_DISTRIBUTED_SEQUENCE_CONFORMANCE_BRANCH_CLOSED",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V16_DISTRIBUTED_CONFORMANCE_PROTOCOL_V341.json",
+    "sha256": "ab76af092e0ffeb7c5d5331e0c3862f604eac835d308f384e5a16b673b52dc41"
+  },
+  "raw_evidence": {
+    "path": "results/abi_capability_compiler_phase3_routed_v16/distributed_conformance_v342/result.json",
+    "sha256": "85ba20a3c22d51ba936c5574e4176997973882625f0f5b065d1eefe1a750a618",
+    "evidence_sha256": "dca975931a96e4dc71416bf21941efdb179f5ab50507bdb8347b758aced22a4e"
+  },
+  "measurements": {
+    "steps": 1000,
+    "batch_size": 4,
+    "record_exposures": 4000,
+    "trainable_parameters": 340045824,
+    "wall_seconds": 418.527994700009,
+    "peak_cuda_allocated_bytes": 11048547840,
+    "peak_process_rss_bytes": 3398078464,
+    "calibration_action_accuracy": 0.4924318869828456,
+    "development_action_accuracy": 0.46948232220135544,
+    "development_first_token_accuracy": 0.4928571428571429,
+    "development_worst_capability_action_accuracy": 0.27221552070767996,
+    "development_exact_sequences": 10,
+    "development_routes_correct": 1400,
+    "frozen_parameters_exact": true,
+    "checkpoint_written": false
+  },
+  "decision": "The all-replacement-layer sequence-conformance control failed every quality gate while preserving exact routing and frozen substrate identity. Together with V340, this closes late-only and distributed cached-sequence conformance. Do not sweep steps, batch size, learning rate, seed, loss, or trainable-layer boundary. The next bounded experiment must directly correct the measured recurrent trajectory error without adding data or optimizer variants.",
+  "authorized_next_action": "PREREGISTER_NO_ARTIFACT_ROUTE_PROJECTION_TRAJECTORY_RETARGETING_FEASIBILITY",
+  "artifact_promoted": false,
+  "final_test_accessed": false,
+  "phase3_certified": false,
+  "claim_boundary": "Negative hybrid sequence-conformance evidence only; no autonomous quality, runtime, Phase 3, minimum-information, or ABI-superiority claim."
+}
