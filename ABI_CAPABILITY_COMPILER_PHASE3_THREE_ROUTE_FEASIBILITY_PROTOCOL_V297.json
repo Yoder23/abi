@@ -1,0 +1,25 @@
+{
+  "format": "abi-capability-compiler-phase3-three-route-feasibility/1",
+  "protocol_id": "abi-capability-compiler-phase3-three-route-feasibility-v297",
+  "status": "PREREGISTERED_NO_MODEL_THREE_ROUTE_FEASIBILITY",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V296.json",
+  "historical_evidence_changed": false,
+  "teacher_model_loading_authorized": false,
+  "tensor_value_access_authorized": false,
+  "training_authorized": false,
+  "final_test_access_authorized": false,
+  "source_blocks": 0,
+  "architecture": {"full": 3072, "sparse_width": 384, "rank": 768, "routes": 3, "layers": 32},
+  "routes": ["generic", "abstention", "conversation"],
+  "execution": "hard top1 route selected once per request; only one correction output map active per layer",
+  "decision_rule": "Authorize one label-oracle route audit only if fp16 payload remains below one GiB, theoretical active-MAC margin remains at least 4x, exactly one route is active, and no source block is retained. No learned router is authorized by feasibility alone.",
+  "bindings": {
+    "abi/capability_compiler_phase3_three_route_feasibility.py": "9e2efd811010f44e931b0ffdc307c77de9c692a7ad9d2909159d1b784fd32210",
+    "tests/test_capability_compiler_phase3_three_route_feasibility.py": "b2904dd09364a776dc030d51af028a546b4e1c75881cab58e02c4a4f21179cb8",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V296.json": "de7c112d1e5539b71d87df32e324a1d366b28484b881152088f7eb1ff154a0e6",
+    "ABI_CAPABILITY_COMPILER_PHASE3_CAPABILITY_STRATIFIED_ERROR_RESULT_V296.json": "14cd9fcf8c9747179236273f89d356728e944101758eab14d5d064062e847843",
+    "ABI_CAPABILITY_COMPILER_PHASE3_DUAL_ATTENTION_NONLINEAR_FEASIBILITY_RESULT_V290.json": "07e18349371066b05d868ade6aff0c897eebe51080712612c63b344e48e34770"
+  },
+  "claim_boundary": "No-model three-route envelope only; no router, artifact, quality, physical runtime, certificate, or superiority claim."
+}
