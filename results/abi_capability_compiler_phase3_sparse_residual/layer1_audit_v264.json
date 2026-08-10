@@ -1,0 +1,68 @@
+{
+  "artifact_written": false,
+  "calibration_tokens": 33189,
+  "claim_boundary": "Read-only layer-1 sparse extraction audit only; no deployable artifact, autonomous English quality, measured inference, Phase 3 certificate, or superiority claim.",
+  "diagnosis": "EXPERT_MAP_PRIMARY",
+  "experts": [
+    {
+      "effective_ridge": 0.0007875826835632325,
+      "energy_explained": 0.9999383687973022,
+      "expert": 0,
+      "observations": 2833,
+      "training_coefficient_relative_rmse": 0.3375681936740875
+    },
+    {
+      "effective_ridge": 2.3580388724803927e-05,
+      "energy_explained": 0.9999997019767761,
+      "expert": 1,
+      "observations": 148,
+      "training_coefficient_relative_rmse": 0.015121576376259327
+    },
+    {
+      "effective_ridge": 4.5446053147315985e-06,
+      "energy_explained": 0.9999998211860657,
+      "expert": 2,
+      "observations": 40,
+      "training_coefficient_relative_rmse": 0.00034359251731075346
+    },
+    {
+      "effective_ridge": 0.005512178802490234,
+      "energy_explained": 0.7898867130279541,
+      "expert": 3,
+      "observations": 27980,
+      "training_coefficient_relative_rmse": 0.2985873818397522
+    }
+  ],
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-sparse-residual-layer1-audit/1",
+  "layer": 1,
+  "oracle_route_validation": {
+    "maximum_relative_rmse": 1.3557080030441284,
+    "mean_output_cosine": 0.951997886810984,
+    "mean_relative_rmse": 0.5593200922012329,
+    "minimum_output_cosine": 0.8225194215774536,
+    "passed": false
+  },
+  "phase3_certified": false,
+  "protocol_sha256": "93ea0072a815831751808f5fa96e41a371bec24165bcb4d9836a7aa2913f64bc",
+  "routed_validation": {
+    "maximum_relative_rmse": 71.44513702392578,
+    "mean_output_cosine": 0.9453921892813274,
+    "mean_relative_rmse": 4.373633412378175,
+    "minimum_output_cosine": 0.7331191301345825,
+    "passed": false
+  },
+  "routed_validation_token_counts": [
+    198,
+    6,
+    1,
+    1983
+  ],
+  "router_effective_ridge": 0.006327883911132813,
+  "router_training_accuracy": 0.9863874912261963,
+  "router_validation_target_accuracy": 0.9757769652650823,
+  "status": "FAIL_SPARSE_LOCAL_AUDIT",
+  "teacher_present_in_artifact": false,
+  "train_observations": 31001,
+  "training_performed": false
+}
