@@ -1,0 +1,22 @@
+{
+  "format": "abi-capability-compiler-phase3-routed-v15-autonomous-screen-preflight-failure/1",
+  "version": 328,
+  "status": "PREFLIGHT_FAILURE_NO_ARTIFACT_OR_PROMPT_EXECUTION",
+  "status_date": "2026-08-10",
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V15_AUTONOMOUS_SCREEN_PROTOCOL_V327.json",
+    "sha256": "9edf66aa4c8e7d459b5931f0ff5c69ac37fda5b87c195b7e988fb16597503143"
+  },
+  "failure": "The evaluator's imported paired-statistics helper transitively imported the Transformers source-runtime package. The evaluator stopped at its explicit isolation precondition before artifact loading or prompt generation.",
+  "artifact_loaded": false,
+  "source_model_loaded": false,
+  "prompts_evaluated": 0,
+  "output_records_written": 0,
+  "scientific_result": false,
+  "historical_evidence_changed": false,
+  "authorized_repair": "Create a separately named import-isolated evaluator containing local, semantically identical Wilson, paired stratified bootstrap, and semantic-segment helpers. Retain the exact artifact, catalog, teacher-reference cache, prompts, generation settings, gates, bootstrap seed, and final-test prohibition.",
+  "artifact_promoted": false,
+  "phase3_certified": false,
+  "final_test_accessed": false,
+  "claim_boundary": "Evaluator preflight failure only; no quality result."
+}
