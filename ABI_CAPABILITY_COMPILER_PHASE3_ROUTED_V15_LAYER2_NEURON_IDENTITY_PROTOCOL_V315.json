@@ -1,0 +1,32 @@
+{
+  "format": "abi-capability-compiler-phase3-routed-v15-layer2-neuron-identity-audit/1",
+  "protocol_id": "abi-capability-compiler-phase3-routed-v15-layer2-neuron-identity-v315",
+  "status": "PREREGISTERED_READ_ONLY_EXACT_NEURON_IDENTITY_RECOVERY",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V314.json",
+  "historical_evidence_changed": false,
+  "device": "cuda",
+  "training_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "extraction_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V15_PROGRESSIVE_EXTRACT_PROTOCOL_V309.json",
+  "extraction_protocol_sha256": "6c20f2a6f11b78225c1833dd839582c05c0230410db49fc3623a0c787a660789",
+  "failed_checkpoint": {
+    "path": "results/abi_capability_compiler_phase3_routed_v15/progressive_v310/layer_02/routed_v15_layer_02.safetensors",
+    "sha256": "8ac4d3204462a40ae96ed9e624a928c1c353fae825be94ae8de3407d1a2d89eb"
+  },
+  "canonical_dtype": "float16",
+  "method": "Hash each ordered pair of stored layer2 sparse gate and up rows after float16 canonicalization. Hash every paired gate/up source-neuron row under the same canonicalization. Accept an identity only when the hash lookup is confirmed by exact tensor equality and produces one and only one source index. Preserve stored-row order.",
+  "decision_rule": "Pass only if all 384 stored row pairs map to exactly one source neuron each and all recovered source indices are unique. No nearest-neighbor, tolerance, importance recomputation, training, or checkpoint write is permitted. A pass authorizes a separately preregistered identity-bound repair; failure closes source-aligned repair of this checkpoint.",
+  "bindings": {
+    "abi/capability_compiler_phase3_routed_v15_layer2_neuron_identity_audit.py": "d6d543fdd9cb94f158ac0fabad818184c2e2b2a27ce8f096eee982d4e867ea32",
+    "tests/test_capability_compiler_phase3_routed_v15_layer2_neuron_identity_audit.py": "e8422aec7c93d39ab6a229e73de7b9e1964757482737df7e00e65d8623d87e7e",
+    "abi/capability_compiler_phase3_routed_v15_progressive_extract.py": "93d10e5d5611719a1e14193cf6a7bf13c56619312458ab25cabf164a491e7c47",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V314.json": "f60fd3588fe0227d9959c755019af3893246c5803cdd8bb42ad99b8aebb22f27",
+    "ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V15_LAYER2_SOURCE_ALIGNED_RESULT_V314.json": "2133b1d3917915c0f8d733cc07f13489ecb84ca7ed8c029d9a36d06cf4efc6d4",
+    "ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V15_LAYER2_SOURCE_ALIGNED_REPAIR_PROTOCOL_V313.json": "4908738de5516d0c1eae1d57b3e1c3f97bdfe0fdc5b3f1f05b684ee20c72306d",
+    "ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V15_PROGRESSIVE_EXTRACT_PROTOCOL_V309.json": "6c20f2a6f11b78225c1833dd839582c05c0230410db49fc3623a0c787a660789",
+    "results/abi_capability_compiler_phase3_routed_v15/progressive_v310/layer_02/metadata.json": "b5f8d9b46ebc7f1ba42c7efecc8662f69c70428e64b994eafd868b94b5012729",
+    "results/abi_capability_compiler_phase3_routed_v15/progressive_v310/layer_02/routed_v15_layer_02.safetensors": "8ac4d3204462a40ae96ed9e624a928c1c353fae825be94ae8de3407d1a2d89eb"
+  },
+  "claim_boundary": "Preregistered read-only exact source-neuron identity recovery only; no repaired layer, artifact, English quality, runtime, Phase 3 certificate, or ABI superiority claim."
+}
