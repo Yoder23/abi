@@ -1,0 +1,39 @@
+{
+  "anchor_layer": 29,
+  "artifact_written": false,
+  "claim_boundary": "In-memory analytic feasibility only; no artifact, autonomous quality, runtime, Phase 3, or superiority claim.",
+  "evidence_sha256": "c94ebf5aa1cfdf95eea696b148540698b62a4dab3c46e5d2aab5085c4af2b7eb",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-routed-v16-global-anchor-feasibility/1",
+  "gates": {
+    "anchor_global_cosine": false,
+    "final_global_cosine": false,
+    "rank_energy": true,
+    "route_exact": true,
+    "top1_agreement": false
+  },
+  "observations": 22682,
+  "passed": false,
+  "peak_cuda_allocated_bytes": 10336467456,
+  "peak_process_rss_bytes": 2504536064,
+  "phase3_certified": false,
+  "protocol_sha256": "ae74dfefa074f13e2731b75291ab315a414e00582f09aae79f9be8a95b9cfef2",
+  "rank": 768,
+  "rank_energy": 0.988320529460907,
+  "raw_sha256": "6eabdf89fac8d21dc09a024ecfb6f93fbb14bdd7276f4a4b1a4bf5a644db837b",
+  "ridge": 0.21096025390625,
+  "status": "FAIL_GLOBAL_ANCHOR_FEASIBILITY",
+  "stored_activations_written": 0,
+  "train_records": 420,
+  "training_performed": false,
+  "training_residual_relative_rmse": 0.2197602540254593,
+  "validation": {
+    "mean_anchor_cosine": 0.9583952959094729,
+    "mean_final_cosine": 0.9484222403594426,
+    "mean_logit_cosine": 0.9983138016292027,
+    "route_correct": 28,
+    "top1_agreement": 0.75
+  },
+  "validation_records": 28,
+  "wall_seconds": 55.23024639999494
+}
