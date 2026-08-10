@@ -1,0 +1,28 @@
+{
+  "format": "abi-capability-compiler-phase3-layer1-error-decomposition-result/1",
+  "version": 258,
+  "status": "INVALID_PARTIAL_NUMERICAL_FAILURE",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_LAYER1_ERROR_DECOMPOSITION_PROTOCOL_V257.json",
+    "sha256": "946ffe74e8e82807b9c35995e3a7530a299135e594442f6c9b59eb5069396a4e"
+  },
+  "raw_evidence": {
+    "path": "results/abi_capability_compiler_phase3_direct_linear/layer1_error_decomposition_v258.json",
+    "sha256": "7a9ee99126f9be19056f3b6028cc680d1abf3b8d1609e477641dd6fe7797bea0"
+  },
+  "valid_partial_measurements": {
+    "exact_residual_mean_cosine": 0.9856743663549423,
+    "rank192_student_attention_oracle_mean_cosine": 0.9671345097678048,
+    "rank768_student_attention_oracle_mean_cosine": 0.9828031978436879,
+    "rank1024_student_attention_oracle_mean_cosine": 0.9840520620346069
+  },
+  "invalid_measurements": "All student_attention_map fields are NaN because the unqualified Cholesky shortcut produced non-finite weights.",
+  "decision": "Do not accept the emitted diagnosis or complete status. Preserve the partial audit and replay once with the established torch.linalg.solve ridge implementation; change no records, ranks, ridge, source, checkpoints, gate, or decision rule.",
+  "training_performed": false,
+  "artifact_written": false,
+  "final_test_accessed": false,
+  "phase3_certified": false,
+  "claim_boundary": "Invalid partial numerical diagnostic; no architecture conclusion, artifact, certificate, or superiority claim."
+}
