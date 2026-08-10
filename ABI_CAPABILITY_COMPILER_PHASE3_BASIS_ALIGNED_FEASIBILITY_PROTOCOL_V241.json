@@ -1,0 +1,35 @@
+{
+  "format": "abi-capability-compiler-phase3-basis-aligned-feasibility/1",
+  "protocol_id": "abi-capability-compiler-phase3-basis-aligned-feasibility-v241",
+  "status": "PREREGISTERED_NO_MODEL_FEASIBILITY",
+  "effective_date": "2026-08-09",
+  "historical_evidence_changed": false,
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V240.json",
+  "teacher_model_loading_authorized": false,
+  "tensor_value_access_authorized": false,
+  "training_authorized": false,
+  "final_test_access_authorized": false,
+  "objective": "Determine whether retaining rank 192 while importing a fixed per-layer MLP residual mean and train-derived output basis can reduce the learned problem to coefficient mapping without increasing active linear compute or violating the 600 MiB payload ceiling.",
+  "causal_basis": "V240 rejects rank expansion but shows a rank-192 oracle at 0.99245 final cosine. The materially distinct successor freezes that already-sufficient output subspace and supervises only its coefficient map.",
+  "target": {
+    "runtime_vocabulary": 32015,
+    "full_width": 3072,
+    "mlp_output_rank": 192,
+    "replacement_layers": 32,
+    "copied_substrate_parameters": 196899840,
+    "current_dual_trainable_parameters": 94384128,
+    "current_target_incremental_macs_at_maximum_context": 199013376,
+    "source_incremental_macs_at_maximum_context": 3823042560,
+    "complete_source_blocks_retained": 0,
+    "fp16_payload_bytes_maximum": 629145600
+  },
+  "decision_rule": "Pass only if rank stays 192, imported residual bases plus means equal 18,972,672 parameters, trainable attention and coefficient-map parameters equal 75,509,760, deployment equals 291,382,272 parameters and 582,764,544 fp16 bytes, active maximum-context MACs do not exceed the dual target's 199,013,376, theoretical source/target MAC ratio remains at least 4x, payload remains below 600 MiB, and zero source blocks remain. A pass authorizes only a separate generic LayerCake host construct.",
+  "bindings": {
+    "abi/capability_compiler_phase3_basis_aligned_feasibility.py": "1091dff2c0686fb3801eca6405148f4e17cf612d2b58bdb2bd0320b23d83fca0",
+    "tests/test_capability_compiler_phase3_basis_aligned_feasibility.py": "89e64d0affa91ad11004197d4f2040c5365740fa5f8ddfcc40608e642c6f83f2",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V240.json": "e75c38ffbf58fac61a7af69e0a52803b019f4cf24855c74fe4c848571c7206a7",
+    "ABI_CAPABILITY_COMPILER_PHASE3_MLP_RESIDUAL_RANK_RESULT_V240.json": "3e0764fec0d57c107b2c6bda8470fef373ffb342659053293c0870602aba7bd5",
+    "results/abi_capability_compiler_phase3_dual_path/mlp_residual_rank_audit_replay_v240.json": "4c70db4dcec96e928d568617d796b1f1df8d80e08b5dc632d524a3495dfa6333"
+  },
+  "claim_boundary": "No-model basis-aligned parameter, payload, and theoretical-compute feasibility only; no source values, extraction, training, quality, measured speed, transfer, or superiority claim."
+}
