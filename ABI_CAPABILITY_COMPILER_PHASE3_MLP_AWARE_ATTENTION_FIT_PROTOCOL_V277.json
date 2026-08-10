@@ -1,0 +1,27 @@
+{
+  "format": "abi-capability-compiler-phase3-mlp-aware-attention-fit/1",
+  "protocol_id": "abi-capability-compiler-phase3-mlp-aware-attention-fit-v277",
+  "status": "PREREGISTERED_BOUNDED_MLP_AWARE_ATTENTION_FIT",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V276.json",
+  "historical_evidence_changed": false,
+  "device": "cuda",
+  "final_test_access": "PROHIBITED",
+  "base_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_LINEAR_SEQUENTIAL_FIT_PROTOCOL_V255.json",
+  "checkpoints": {"0": {"path": "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_00.safetensors", "sha256": "b1489e35f2a47337de347e0d009d6706923c99fd91ebf4b54d9804bf3433d9e3"}, "1": {"path": "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_01.safetensors", "sha256": "85c31bcaa878e7ba65f6b6bdbe8ed0fe76460d38ef5134d9889f2a032391002b"}},
+  "training": {"seed": 240225, "steps": 256, "learning_rate": 0.001, "optimizer": "AdamW", "weight_decay": 0.01, "gradient_clip_norm": 1.0, "cosine_weight": 0.1, "curve_interval": 64, "trainable": "existing layer1 compact-attention parameters only", "loss": "equal squared attention-relative-RMSE plus final-relative-RMSE plus normalized feature-RMSE, with fixed cosine term"},
+  "gate": {"mean_relative_rmse_maximum": 0.85, "mean_output_cosine_minimum": 0.98},
+  "decision_rule": "Starting from the exact V256 attention checkpoint, perform exactly 256 updates to only compact-attention parameters through the frozen complete source MLP. Pass only if the downstream integrated validation clears both unchanged local thresholds. The complete source MLP is diagnostic/training-only and cannot be promoted.",
+  "bindings": {
+    "abi/capability_compiler_phase3_mlp_aware_attention_fit.py": "91a309b6aa91f6d33e0d212ca130dae1d6a72f37d00ef64448892a45250aa0b6",
+    "tests/test_capability_compiler_phase3_mlp_aware_attention_fit.py": "0831877ed283acba5d37847915c2276d7a06a41c536884bead26980b7e0dc4ef",
+    "abi/capability_compiler_phase3_direct_linear_sequential_fit.py": "dca38cc8bf86047669ce08d7f13c05600f9c28575c1b09797f7faea7de671663",
+    "abi/capability_compiler_phase3_dual_path_local_fit.py": "9b36db57fbef4c9e9e960094e261b92716809e9cb1830acb5e4173ffe7cf19e2",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V276.json": "01745bae56ca70741e2a3a5ef2cb6bae1180bd352ffeaf9dd529cbaac10e9426",
+    "ABI_CAPABILITY_COMPILER_PHASE3_FEATURE_ALIGNMENT_RESULT_V276.json": "4304f70d97029528569c299941d3ede43009143123a7aa3fffc4acdf7e0e1370",
+    "ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_LINEAR_SEQUENTIAL_FIT_PROTOCOL_V255.json": "fcf546b3ad4fdb014f06a9a73c61bfea425a51d24cff351b8ad448dfc026e60b",
+    "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_00.safetensors": "b1489e35f2a47337de347e0d009d6706923c99fd91ebf4b54d9804bf3433d9e3",
+    "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_01.safetensors": "85c31bcaa878e7ba65f6b6bdbe8ed0fe76460d38ef5134d9889f2a032391002b"
+  },
+  "claim_boundary": "Bounded layer-1 interface training only; no deployable artifact, English quality, runtime, certificate, or superiority claim."
+}
