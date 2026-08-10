@@ -1,0 +1,87 @@
+{
+  "format": "abi-capability-compiler-phase3-residual-nonlinear-rank768-fit/1",
+  "protocol_id": "abi-capability-compiler-phase3-residual-nonlinear-rank768-fit-v291",
+  "status": "PREREGISTERED_BOUNDED_RESIDUAL_NONLINEAR_RANK768_FIT",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V290.json",
+  "historical_evidence_changed": false,
+  "device": "cuda",
+  "final_test_access": "PROHIBITED",
+  "base_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_LINEAR_SEQUENTIAL_FIT_PROTOCOL_V255.json",
+  "residual_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_RESIDUAL_ATTENTION_FIT_PROTOCOL_V283.json",
+  "base_checkpoints": {
+    "0": {
+      "path": "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_00.safetensors",
+      "sha256": "b1489e35f2a47337de347e0d009d6706923c99fd91ebf4b54d9804bf3433d9e3"
+    },
+    "1": {
+      "path": "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_01.safetensors",
+      "sha256": "85c31bcaa878e7ba65f6b6bdbe8ed0fe76460d38ef5134d9889f2a032391002b"
+    }
+  },
+  "qualified_primary_checkpoint": {
+    "path": "results/abi_capability_compiler_phase3_mlp_aware_attention/layer1_fit_v278/layer1_attention_weights.safetensors",
+    "sha256": "a0d350fb063c70c4af27fd772c304cbfdb3d283a231d28a631c7f3b32905465d"
+  },
+  "residual_attention_checkpoint": {
+    "path": "results/abi_capability_compiler_phase3_residual_attention/layer1_fit_v284/layer1_residual_attention.safetensors",
+    "sha256": "f5e42a6e848a569677b2d9459a0e720395285d733bc6c03dc3af624310ae8019"
+  },
+  "architecture": {
+    "full_width": 3072,
+    "residual_rank": 768,
+    "nonlinear_hidden": 384
+  },
+  "training": {
+    "seed": 240225,
+    "steps": 256,
+    "record_offset": 768,
+    "learning_rate": 0.001,
+    "optimizer": "AdamW",
+    "weight_decay": 0.01,
+    "gradient_clip_norm": 1.0,
+    "cosine_weight": 0.1,
+    "relative_ridge": 0.0001,
+    "curve_interval": 64,
+    "trainable": [
+      "zero-output full3072-to-hidden384 gated nonlinear correction",
+      "hidden384-to-rank768 correction output"
+    ],
+    "frozen": [
+      "V278 primary attention",
+      "V284 residual attention",
+      "train-derived rank768 basis and residual mean",
+      "fixed-ridge linear coefficient map",
+      "copied prefix and substrate",
+      "source teacher"
+    ]
+  },
+  "gate": {
+    "mean_relative_rmse_maximum": 0.85,
+    "mean_output_cosine_minimum": 0.98
+  },
+  "decision_rule": "Perform exactly 256 updates on one exactly zero-output hidden384 nonlinear coefficient correction, added to the immutable rank768 linear-map baseline. Use the fixed corpus, seed, offset, optimizer, basis rank, ridge, and unchanged local gates. A pass authorizes only a LayerCake host construct for this exact topology; a failure closes the topology with no step, data, seed, width, rank, ridge, loss, or gate sweep.",
+  "bindings": {
+    "abi/capability_compiler_phase3_residual_nonlinear_rank768_fit.py": "47e1be535d0291f5bd9a3d8aeec72fe01f1948c90557e76d3c3109e254b7acba",
+    "tests/test_capability_compiler_phase3_residual_nonlinear_rank768_fit.py": "8c88d74295b39f181c9a8438e4c5f3c981a13a68046cd98eab9c826facb632fa",
+    "abi/capability_compiler_phase3_combined_attention_mlp_audit.py": "6de07aa7cea11c6000b7a58ba16d480036dc4817e2657200cb46fa3a867cfe52",
+    "abi/capability_compiler_phase3_residual_attention_fit.py": "5c0954a56bc69eb13a6a1e19e9a697c76db130a7115b6ab3892c866f2c0ff3ab",
+    "abi/capability_compiler_phase3_direct_linear_sequential_fit.py": "dca38cc8bf86047669ce08d7f13c05600f9c28575c1b09797f7faea7de671663",
+    "abi/capability_compiler_phase3_dual_path_local_fit.py": "9b36db57fbef4c9e9e960094e261b92716809e9cb1830acb5e4173ffe7cf19e2",
+    "abi/capability_compiler_phase3_mlp_residual_rank_audit.py": "d9830599c330aef68d3d6a2a468c92ff2747b66db374c0d2e057bebd3f31991e",
+    "abi/capability_compiler_phase3_closed_form_coefficient_audit.py": "8b9c1dccea29e81046d6cf28251014c9ec744abd42c39ab1eccd0fbe826c589f",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V290.json": "3bdbbe02158551d31f1385b87e6d7281dcc69be6d23f5da5ca783ebf98c0af1a",
+    "ABI_CAPABILITY_COMPILER_PHASE3_DUAL_ATTENTION_NONLINEAR_FEASIBILITY_RESULT_V290.json": "07e18349371066b05d868ade6aff0c897eebe51080712612c63b344e48e34770",
+    "ABI_CAPABILITY_COMPILER_PHASE3_DUAL_ATTENTION_NONLINEAR_FEASIBILITY_PROTOCOL_V289.json": "354afd10f9d00852c5f54cfd0262dc5ec0f9fa42dc55adc4820a5f7fc20a7193",
+    "ABI_CAPABILITY_COMPILER_PHASE3_COMBINED_ATTENTION_RANK768_AUDIT_PROTOCOL_V287.json": "724a9bd18f9b60a80eec765f2dba8cedc56e1179725cee547c400e2a02d83bf7",
+    "ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_LINEAR_SEQUENTIAL_FIT_PROTOCOL_V255.json": "fcf546b3ad4fdb014f06a9a73c61bfea425a51d24cff351b8ad448dfc026e60b",
+    "ABI_CAPABILITY_COMPILER_PHASE3_RESIDUAL_ATTENTION_FIT_PROTOCOL_V283.json": "32baa6727918350f51abfe5af6d62d013e7d6b51dd8671ab3e9c9a6c0d8ef7a8",
+    "results/abi_capability_compiler_phase3_dual_attention_nonlinear/feasibility_v290.json": "e1f3cdbc413de06bf0e3ada519efe7292f7e93936bc36e561b740b5e8620be33",
+    "results/abi_capability_compiler_phase3_combined_attention_mlp/rank768_audit_v288/metadata.json": "7d8a23276b847e464d565f5554ffc5337af1bf383525a647a937c43985cbabf4",
+    "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_00.safetensors": "b1489e35f2a47337de347e0d009d6706923c99fd91ebf4b54d9804bf3433d9e3",
+    "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_01.safetensors": "85c31bcaa878e7ba65f6b6bdbe8ed0fe76460d38ef5134d9889f2a032391002b",
+    "results/abi_capability_compiler_phase3_mlp_aware_attention/layer1_fit_v278/layer1_attention_weights.safetensors": "a0d350fb063c70c4af27fd772c304cbfdb3d283a231d28a631c7f3b32905465d",
+    "results/abi_capability_compiler_phase3_residual_attention/layer1_fit_v284/layer1_residual_attention.safetensors": "f5e42a6e848a569677b2d9459a0e720395285d733bc6c03dc3af624310ae8019"
+  },
+  "claim_boundary": "Bounded layer-1 residual-nonlinear fit only; no host, full artifact, English quality, physical runtime, certificate, or superiority claim."
+}
