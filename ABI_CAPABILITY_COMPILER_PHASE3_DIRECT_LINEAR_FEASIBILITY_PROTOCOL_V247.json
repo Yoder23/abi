@@ -1,0 +1,22 @@
+{
+  "format":"abi-capability-compiler-phase3-direct-linear-feasibility/1",
+  "protocol_id":"abi-capability-compiler-phase3-direct-linear-feasibility-v247",
+  "status":"PREREGISTERED_NO_MODEL_FEASIBILITY",
+  "effective_date":"2026-08-09",
+  "authorization":"ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V246.json",
+  "teacher_model_loading_authorized":false,
+  "tensor_value_access_authorized":false,
+  "training_authorized":false,
+  "final_test_access_authorized":false,
+  "source_blocks":0,
+  "objective":"Account a direct full-width-to-rank-192 coefficient projection plus immutable residual basis and mean, retaining the qualified compact attention path and eliminating the failed nonlinear coefficient network.",
+  "decision_rule":"Pass only at exactly 277,220,352 deployed parameters, no more than 600 MiB fp16, 184,857,600 maximum-context active MACs, at least 4x theoretical source margin, and zero source blocks. A pass authorizes only a generic host construct.",
+  "bindings":{
+    "abi/capability_compiler_phase3_direct_linear_feasibility.py":"b74151abd5f245ca7b026400e1729f3cb84dfb67f2d2ab980ad0b05047d2a5f8",
+    "tests/test_capability_compiler_phase3_direct_linear_feasibility.py":"1096be00602c9fbba0d7651e5a6f2b57e59202612566ed948907dfe05b21ec1c",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V246.json":"4c5915d37885c0ed6d43c4252c2aeb5e0e09936dfd547b7e6f1fcb4c017e394f",
+    "ABI_CAPABILITY_COMPILER_PHASE3_CLOSED_FORM_COEFFICIENT_RESULT_V246.json":"b72e03b4bf96e2061400e26f167ad652b38064f7cbc170346f1ab766878272d3",
+    "results/abi_capability_compiler_phase3_basis_aligned/closed_form_coefficient_audit_v246.json":"5a29bcf2733c0c551e645372bad163863f879febcc1dbae496c727ad0e335e80"
+  },
+  "claim_boundary":"No-model direct-linear feasibility only; no source values, artifact, training, quality, measured speed, or superiority claim."
+}

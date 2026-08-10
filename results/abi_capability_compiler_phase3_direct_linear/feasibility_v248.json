@@ -1,0 +1,26 @@
+{
+  "accounting": {
+    "active_incremental_macs_at_maximum_context": 184857600,
+    "copied_parameters": 196899840,
+    "deployed_parameters": 277220352,
+    "fp16_payload_bytes": 554440704,
+    "imported_coefficient_basis_mean_parameters": 37847040,
+    "source_to_target_mac_ratio": 20.681013710012465,
+    "trainable_attention_parameters": 42473472
+  },
+  "claim_boundary": "No-model direct-linear accounting only; no artifact, quality, runtime, or superiority claim.",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-direct-linear-feasibility/1",
+  "gates": {
+    "compute_reduced": true,
+    "deployed": true,
+    "margin": true,
+    "payload": true,
+    "zero_source_blocks": true
+  },
+  "phase3_certified": false,
+  "source_model_loaded": false,
+  "status": "PASS_FEASIBLE",
+  "tensor_values_read": false,
+  "training_performed": false
+}
