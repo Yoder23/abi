@@ -1,0 +1,24 @@
+{
+  "format": "abi-capability-compiler-phase3-nonlinear-rank768-feasibility/1",
+  "protocol_id": "abi-capability-compiler-phase3-nonlinear-rank768-feasibility-v267",
+  "status": "PREREGISTERED_NO_MODEL_NONLINEAR_RANK768_FEASIBILITY",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V266.json",
+  "historical_evidence_changed": false,
+  "teacher_model_loading_authorized": false,
+  "tensor_value_access_authorized": false,
+  "training_authorized": false,
+  "final_test_access_authorized": false,
+  "source_blocks": 0,
+  "architecture": {"full": 3072, "attention_width": 192, "residual_rank": 768, "nonlinear_hidden": 384, "layers": 32},
+  "objective": "Account a dense gated nonlinear coefficient map from full-width features through hidden width 384 into the measured rank-768 residual basis while retaining compact attention.",
+  "decision_rule": "Pass only at residual rank at least 768, no more than 800 MiB fp16 payload, at least 4x theoretical source active-MAC margin, and zero source blocks. A pass authorizes only a generic LayerCake host construct.",
+  "bindings": {
+    "abi/capability_compiler_phase3_nonlinear_rank768_feasibility.py": "372135652cc3a089a0e11f4760caa4bf32d590a2cf9582712c1425d05496d3db",
+    "tests/test_capability_compiler_phase3_nonlinear_rank768_feasibility.py": "8998f92fb714215c2fe6c239f80fad1601f9bb9f0b65bd3bb40b770760e61bce",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V266.json": "dd3ed0f85dbf50dbadc13df554384b3f6387bc1481291a84584cf1bf61f6a70c",
+    "ABI_CAPABILITY_COMPILER_PHASE3_SPARSE_RESIDUAL_BALANCED_RESULT_V266.json": "1eec8314c54d07aa3ec82dc23f9f1cb13803247628411803c1aeaac69bd84df9",
+    "results/abi_capability_compiler_phase3_sparse_residual/layer1_balanced_replay_v266.json": "ba880e2d0f1151668f16f7a08e2d6a1bb24ced390ecfc22a1790b9adb54c8914"
+  },
+  "claim_boundary": "No-model nonlinear host accounting only; no artifact, quality, runtime, certificate, or superiority claim."
+}
