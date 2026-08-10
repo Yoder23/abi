@@ -1,0 +1,36 @@
+{
+  "format": "abi-capability-compiler-phase3-dual-attention-nonlinear-feasibility/1",
+  "protocol_id": "abi-capability-compiler-phase3-dual-attention-nonlinear-feasibility-v289",
+  "status": "PREREGISTERED_NO_MODEL_DUAL_ATTENTION_NONLINEAR_FEASIBILITY",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V288.json",
+  "historical_evidence_changed": false,
+  "teacher_model_loading_authorized": false,
+  "tensor_value_access_authorized": false,
+  "training_authorized": false,
+  "final_test_access_authorized": false,
+  "source_blocks": 0,
+  "architecture": {
+    "full": 3072,
+    "attention_width": 192,
+    "residual_rank": 768,
+    "nonlinear_hidden": 384,
+    "layers": 32
+  },
+  "accounting_scope": "Immutable copied substrate, two independently active width192 attention paths per layer, one train-derived rank768 residual basis and mean, one fixed full-width-to-rank768 linear coefficient map, and one gated hidden384 zero-output nonlinear coefficient correction per layer.",
+  "gates": {
+    "fp16_payload_bytes_maximum": 1073741824,
+    "theoretical_source_to_target_active_mac_ratio_minimum": 4.0,
+    "source_blocks_required": 0
+  },
+  "decision_rule": "Authorize exactly one bounded layer-1 residual-nonlinear coefficient fit only if every no-model accounting gate passes. This calculation is a theoretical envelope and cannot establish physical speed, quality, or Phase 3 certification.",
+  "bindings": {
+    "abi/capability_compiler_phase3_dual_attention_nonlinear_feasibility.py": "a8f16095e2ba2e22abd21c82cbc2dfc92c0c86fa9da49cd4c0ed64bbf99d12da",
+    "tests/test_capability_compiler_phase3_dual_attention_nonlinear_feasibility.py": "0bdbbdeff6ce022904b1edc71a6e8cb6b2ac110002e80e810469ad9a18db7e90",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V288.json": "d197a2a10e4d5c408274230f48e7615f95a18623bcda7bfba9f7a963d1ff40c3",
+    "ABI_CAPABILITY_COMPILER_PHASE3_COMBINED_ATTENTION_RANK768_RESULT_V288.json": "99416acb569af5a53ad2f0aa6171a29e0f25ebb6aa47054db230ff1823d3416d",
+    "ABI_CAPABILITY_COMPILER_PHASE3_NONLINEAR_RANK768_FEASIBILITY_RESULT_V268.json": "8a73a31e205577655bb844063b5d11773c742582772e4b001d9ef46631a7e51c",
+    "../layercake_release/moonshot/postrelease_nonlinear_rank768_progressive_decision_v35.json": "9452e2432056b910b795899a478ce219d04fb1251a134a3d24ecf6cf8f7c26c4"
+  },
+  "claim_boundary": "No-model final-system envelope only; no host, artifact, quality, physical runtime, certificate, or superiority claim."
+}
