@@ -80,7 +80,7 @@ Status date: 2026-08-09.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V252.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V254.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 V215-V230 opened one materially distinct progressive source-block replacement
@@ -172,6 +172,12 @@ but executed on compact-attention features. Close that mismatched composition.
 One read-only replacement-conditioned replay may solve the identical fixed
 ridge map on compact-attention features; rank, ridge, records, attention,
 source targets, and gates remain frozen.
+
+V253/V254 passed that replacement-conditioned integration at layer 0 with
+0.98382 mean cosine and 0.19699 relative RMSE. It wrote no artifact and is not
+Phase 3 evidence beyond the local gate. One sequential 32-layer protocol may
+now derive each fixed analytic map on replacement-conditioned features and fit
+only compact attention, failing fast under the unchanged gate.
 
 V191-V214 tested the authorized weight-level structural route. The independent
 LayerCake repository construct-certified `lc-direct-neural-core/7`; ABI did
