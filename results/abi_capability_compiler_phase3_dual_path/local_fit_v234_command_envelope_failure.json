@@ -1,0 +1,17 @@
+{
+  "format": "abi-capability-compiler-phase3-operational-failure/1",
+  "status": "FAILED_COMMAND_ENVELOPE_NO_SCIENTIFIC_RESULT",
+  "effective_date": "2026-08-09",
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_DUAL_PATH_LOCAL_FIT_PROTOCOL_V233.json",
+  "command": "C:\\Python310\\python.exe -m abi.capability_compiler_phase3_dual_path_local_fit train",
+  "reported_exit_code": 124,
+  "requested_timeout_ms": 1000,
+  "observed_tool_timeout_seconds": 5.044,
+  "result_directory_created": false,
+  "checkpoint_created": false,
+  "metadata_created": false,
+  "scientific_metrics_available": false,
+  "training_progress_known": false,
+  "final_test_accessed": false,
+  "repair_boundary": "Only an exact replay from step zero under the unchanged V233 protocol with a sufficient command envelope is permitted."
+}

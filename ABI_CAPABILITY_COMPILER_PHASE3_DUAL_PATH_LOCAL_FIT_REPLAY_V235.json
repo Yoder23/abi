@@ -1,0 +1,20 @@
+{
+  "format": "abi-capability-compiler-phase3-dual-path-local-fit-replay/1",
+  "protocol_id": "abi-capability-compiler-phase3-dual-path-local-fit-replay-v235",
+  "status": "PREREGISTERED_EXACT_STEP_ZERO_REPLAY",
+  "effective_date": "2026-08-09",
+  "historical_evidence_changed": false,
+  "base_scientific_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_DUAL_PATH_LOCAL_FIT_PROTOCOL_V233.json",
+  "preserved_failure": "results/abi_capability_compiler_phase3_dual_path/local_fit_v234_command_envelope_failure.json",
+  "replay_from_step": 0,
+  "minimum_command_envelope_seconds": 600,
+  "scientific_fields_changed": false,
+  "decision_rule": "Replay V233 exactly from step zero with a command envelope of at least 600 seconds. No data, calibration selection, model, seed, order, step, optimizer, precision, component loss, local gate, fail-fast, or final-access field changes.",
+  "bindings": {
+    "abi/capability_compiler_phase3_dual_path_local_fit_replay.py": "815ee6ab2ab6e4f4f0d48853cd7a8357990ab7482dfa5ee3fb5d7a97651e69f6",
+    "ABI_CAPABILITY_COMPILER_PHASE3_DUAL_PATH_LOCAL_FIT_PROTOCOL_V233.json": "72b4789883e59bb2377af6b886313e72ef32627bfea960f304234c44b94cabe9",
+    "results/abi_capability_compiler_phase3_dual_path/local_fit_v234_command_envelope_failure.json": "ea6e8038b7e6f9ca6ffaf25148d5b1d5de51985ef5c8cd6783634716e72c4b05",
+    "abi/capability_compiler_phase3_dual_path_local_fit.py": "9b36db57fbef4c9e9e960094e261b92716809e9cb1830acb5e4173ffe7cf19e2"
+  },
+  "claim_boundary": "Exact operational replay of the bounded topology-aware local fit; no autonomous English quality, inference, Phase 3 certificate, or superiority claim."
+}
