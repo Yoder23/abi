@@ -1,0 +1,15 @@
+{
+  "format": "abi-capability-compiler-phase3-execution-failure/1",
+  "version": 372,
+  "status_date": "2026-08-10",
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_NATIVE_ATTENTION_INTERFACE_ORACLE_PROTOCOL_V371.json",
+  "status": "HARNESS_DTYPE_FAILURE_NO_SCIENTIFIC_RESULT",
+  "failure": "RuntimeError: expected mat1 and mat2 to have the same dtype, but got bfloat16 and float",
+  "failure_stage": "analytic sparse-route solve before validation",
+  "scientific_observations_produced": 0,
+  "result_file_written": false,
+  "artifact_written": false,
+  "final_test_accessed": false,
+  "repair": "Cast the sparse gate/up projection to float before the closed-form solve; make no input, record, split, rank, ridge, route, gate, source, or model change; bind the corrected harness in a new protocol and use a new immutable output path.",
+  "claim_boundary": "Execution failure only; it is neither positive nor negative evidence about the native-attention interface oracle."
+}

@@ -100,7 +100,7 @@ def execute(root: Path, protocol_path: Path, output: Path) -> dict:
                 teacher_hidden = teacher.model.embed_tokens(source)
                 native_attention, target = dual._teacher_components(teacher, 0, teacher_hidden)
                 feature = layer.post_attention_norm(native_attention).float()
-                gate, up = layer.sparse_gate_up_projection(feature).chunk(2, dim=-1)
+                gate, up = layer.sparse_gate_up_projection(feature).float().chunk(2, dim=-1)
                 values.append({
                     "record_id": row["record_id"], "capability": row["capability"], "route": route,
                     "attention": native_attention.squeeze(0).float().cpu(),
@@ -192,8 +192,8 @@ def execute(root: Path, protocol_path: Path, output: Path) -> dict:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--protocol", default="ABI_CAPABILITY_COMPILER_PHASE3_NATIVE_ATTENTION_INTERFACE_ORACLE_PROTOCOL_V371.json")
-    parser.add_argument("--output-dir", default="results/abi_capability_compiler_phase3_native_trajectory/native_attention_oracle_v372")
+    parser.add_argument("--protocol", default="ABI_CAPABILITY_COMPILER_PHASE3_NATIVE_ATTENTION_INTERFACE_ORACLE_PROTOCOL_V373.json")
+    parser.add_argument("--output-dir", default="results/abi_capability_compiler_phase3_native_trajectory/native_attention_oracle_v374")
     args = parser.parse_args(); root = Path.cwd().resolve()
     print(json.dumps(execute(root, (root / args.protocol).resolve(), (root / args.output_dir).resolve()), indent=2, sort_keys=True)); return 0
 
