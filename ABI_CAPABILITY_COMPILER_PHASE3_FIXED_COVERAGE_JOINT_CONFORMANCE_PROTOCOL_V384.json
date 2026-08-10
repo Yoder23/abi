@@ -1,0 +1,27 @@
+{
+  "format":"abi-capability-compiler-phase3-native-trajectory-full-operator-layer0/1","protocol_id":"abi-capability-compiler-phase3-fixed-coverage-joint-conformance-v384","status":"PREREGISTERED_FAIL_FAST_NATIVE_TRAJECTORY_FULL_OPERATOR_LAYER_ZERO","effective_date":"2026-08-10","authorization":"ABI_CAPABILITY_COMPILER_PHASE3_FIXED_COVERAGE_JOINT_CONFORMANCE_REVIEW_V383.json","historical_evidence_changed":false,"device":"cuda","final_test_access":"PROHIBITED","sweeps_authorized":false,
+  "base_protocol":"ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_LINEAR_SEQUENTIAL_FIT_PROTOCOL_V255.json","artifact":{"directory":"results/abi_capability_compiler_phase3_routed_v15/artifact_v322","model_sha256":"6d20c7a9d74e04c2209cc534de882f018edb47867e1a87c7d42c33798909e920","parameters":536758275},"layercake_host":{"repository":"../layercake_release","commit":"58f7d863e1fbce0924c86469e1ef0a22c20f4906","interface":"lc-direct-neural-core/16"},
+  "coverage_control":{"train_records_per_capability":300,"train_records":4200,"validation_rank_indices":[30,31],"validation_records":28,"maximum_sequence_actions":128,"new_teacher_records_generated":0},
+  "training":{"seed":240384,"steps":4200,"trainable_parameters":10626432,"new_parameters":0,"learning_rate":0.001,"weight_decay":0.01,"gradient_clip_norm":1.0,"cosine_weight":0.1,"curve_interval":300,"precision":"fp32_master_bf16_autocast"},
+  "gates":{"validation_mean_cosine_minimum":0.995,"validation_mean_relative_rmse_maximum":0.08,"routes_exact":true,"artifact_unchanged":true},
+  "decision_rule":"Jointly refit all existing replacement-layer-zero parameters for exactly one deterministic pass over the fixed 4200 training records and evaluate the unchanged 28 validation identities. Persist a layer-only checkpoint only on a complete gate pass. Any miss closes this path without parameter, width, data-scale, context, objective, optimizer, epoch, route, rank, layer, source, or gate sweeps.",
+  "bindings":{
+    "abi/capability_compiler_phase3_fixed_coverage_joint_conformance.py":"f3fa8e356242942a0eeedc994ec5053eae66477088f4d13fda5a7a1914f56e11",
+    "tests/test_capability_compiler_phase3_fixed_coverage_joint_conformance.py":"5984a1800cec636e5648cbcfbb8a599de015eac8b745ba492dbf41c401bce73e",
+    "ABI_CAPABILITY_COMPILER_PHASE3_FIXED_COVERAGE_JOINT_CONFORMANCE_REVIEW_V383.json":"d1daacd795836dad3e0b057c6e12070b6b804ca58355ff539c8eef8ef4b5ef5d",
+    "abi/capability_compiler_phase3_native_trajectory_full_operator_layer0.py":"b2a7b53a1d1a5b6a3bddaf3b45f3eedc6607d923f875539f4d7afbf388f9cea5",
+    "ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_LINEAR_SEQUENTIAL_FIT_PROTOCOL_V255.json":"fcf546b3ad4fdb014f06a9a73c61bfea425a51d24cff351b8ad448dfc026e60b",
+    "abi/capability_compiler_phase3_direct_linear_sequential_fit.py":"dca38cc8bf86047669ce08d7f13c05600f9c28575c1b09797f7faea7de671663",
+    "abi/capability_compiler_phase3_dual_path_local_fit.py":"9b36db57fbef4c9e9e960094e261b92716809e9cb1830acb5e4173ffe7cf19e2",
+    "abi/capability_compiler_phase3_routed_v15_layer0_extract.py":"e2e3a56c676e5e1f6492f69ccd1609bfc148af95bc49dd60ae8c13048e122df1",
+    "abi/capability_compiler_phase3_routed_v16_trajectory_retargeting.py":"458eeca70ddd29a763ad63a65071ac193495dcc32107117e4c37d61ddd037d52",
+    "abi/capability_compiler_phase2_common.py":"8093ec2016d685f0327c87640042c8373bc141d76351fd641b21a44d018b6c92",
+    "abi/capability_compiler_phase3.py":"5d490989e088f42aba4bd2ca96fbe70ea2db211890369dd6f431dd781390c77b",
+    "results/abi_capability_compiler_phase3_routed_v15/artifact_v322/model.safetensors":"6d20c7a9d74e04c2209cc534de882f018edb47867e1a87c7d42c33798909e920",
+    "results/abi_capability_compiler_phase3_routed_v15/artifact_v322/config.json":"047817c8636aacb261f909372c4afaa791d541834aac8072143adf3d47709882",
+    "../layercake_release/layercake/routed_sparse_rank768_progressive_core_fp16.py":"17e024b7c6f61b370780c2fa53f9c592a66f3960ae046cf586f72e49a3ff889a",
+    "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e/model-00001-of-00002.safetensors":"b7492726c01287bf6e13c3d74c65ade3d436d50da1cf5bb6925bc962419d6610",
+    "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e/model-00002-of-00002.safetensors":"3f311787aa136e858556caa8543015161edcad85ba81b6a36072443d7fa73c87"
+  },
+  "claim_boundary":"Preregistered fixed-coverage joint layer-zero conformance only; no multi-layer artifact, autonomous quality, runtime, Phase 3, or superiority claim."
+}
