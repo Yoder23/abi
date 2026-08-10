@@ -1,0 +1,16 @@
+{
+  "format":"abi-capability-compiler-phase3-architecture-review/1",
+  "version":413,
+  "status_date":"2026-08-10",
+  "authorization":"ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V412.json",
+  "authorization_sha256":"65e4d816849991b35c1d31f8740166cb930603d2d148ce4218ce9e48b2a3be7f",
+  "evidence":"ABI_CAPABILITY_COMPILER_PHASE3_SOURCE_HEAD_SUBSET_RESULT_V412.json",
+  "evidence_sha256":"8fcc494198993bc768d8f375d1d337a201f32b560b5ed221ed18a876373f10bb",
+  "historical_evidence_changed":false,
+  "measured_problem":"Removing complete heads is inefficient: 26 of 32 exact source heads are needed for 0.98 train reconstruction, costing 30.67M projection multiply-adds at layer 1 while still missing held-out RMSE. In contrast, the prior global rank-384 attention-delta oracle nearly passes, indicating broad head-pattern diversity but compressible value/output channel structure.",
+  "proposed_representation":"Preserve all 32 exact source Q/K attention patterns, but factor each head's composed value/output operator O_h times V_h through a smaller internal rank. Compute each rank-96 operator's exact SVD using two reduced QR decompositions and a 96x96 core SVD. Allocate at least one component to every head, then pool the remaining source-weight singular energies and select the minimum total internal rank reaching 0.98 operator energy. Evaluate only that one derived variable per-head rank schedule with exact Q/K patterns and factored V/O paths.",
+  "portability_if_feasible":"A later LayerCake-native operator would copy selected Q/K row slices and only the factored V/O tensors for every head, retaining distinct attention patterns without a complete source block, full V/O projections, unselected singular components, the source model object, or teacher inference at deployment.",
+  "controls":{"source_heads":32,"source_head_dimension":96,"minimum_rank_per_head":1,"pooled_operator_energy_threshold":0.98,"rank_schedule_sweep":false,"training":false,"artifact_write":false,"source_block_promotion":false,"final_test_access":false},
+  "decision":"Authorize exactly one separately preregistered within-head V/O factorization oracle. A held-out pass plus exact factorization integrity and strict total-rank compression authorizes an installable LayerCake sparse-head operator and physical runtime screen. A miss closes source-weight-only within-head V/O factorization without energy, allocation, weighting, Q/K, data, source, or gate variants.",
+  "claim_boundary":"Architecture review only; no factor schedule, copied weights, model, autonomous quality, physical runtime, Phase 3, or superiority claim."
+}
