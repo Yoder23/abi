@@ -1,0 +1,77 @@
+{
+  "format": "abi-capability-compiler-phase3-mlp-residual-rank-audit/1",
+  "protocol_id": "abi-capability-compiler-phase3-mlp-residual-rank-audit-v237",
+  "status": "PREREGISTERED_READ_ONLY_SOURCE_MLP_RANK_AUDIT",
+  "effective_date": "2026-08-09",
+  "historical_evidence_changed": false,
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V236.json",
+  "training_authorized": false,
+  "artifact_extraction_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "objective": "Measure whether the layer-0 source MLP residual has a stable train-derived low-rank output subspace that explains the dual-path post-attention miss, and select at most one asymmetric successor rank without a width sweep.",
+  "causal_basis": "V236's attention intermediate passed 0.98661 cosine while the final post-MLP output failed at 0.97508. A training-derived residual subspace evaluated on the fixed validation records distinguishes an output-rank ceiling from mapping or optimization failure.",
+  "phase1_ir": "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir",
+  "targeted_ir": "results/abi_capability_compiler_phase3/targeted_combined_ir_v137/normalized_targeted_combined_v138.abicir",
+  "source": {
+    "model": "microsoft/Phi-3-mini-4k-instruct",
+    "revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "snapshot_path": "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e",
+    "tokenizer_json": "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer.json",
+    "layercake_tokenizer_sha256": "ef34be01a31e9d7d712b772ef9a7b8d48d2b0de4e789ed3ab26691d8f81cbba0",
+    "host_fixed_actions": 32015,
+    "terminal_token_id": 32007,
+    "parameter_count": 3821079552
+  },
+  "substrate": {
+    "path": "results/abi_capability_compiler_phase3_progressive_replacement/extraction_replay_v222/copied_substrate.safetensors",
+    "sha256": "917635d5c810679490b8e039d0bb5fe9a9efa166cba956d0211a8294adf28e8b",
+    "parameters": 196899840
+  },
+  "probability_field": {
+    "directory": "results/abi_capability_compiler_phase3/causal_field_extraction_v179",
+    "verification": "results/abi_capability_compiler_phase3/causal_field_verification_v182/result_v183.json"
+  },
+  "layercake_host": {
+    "repository": "../layercake_release",
+    "interface": "lc-direct-neural-core/10",
+    "quality_or_performance_inherited": false
+  },
+  "seed": 240225,
+  "width": 3072,
+  "source_layer": 0,
+  "tested_ranks": [192, 256, 384, 512],
+  "calibration": {
+    "selection": "exact V233 per-capability SHA-256 ranking",
+    "train_records_per_capability": 30,
+    "validation_records_per_capability": 2,
+    "train_records": 420,
+    "validation_records": 28,
+    "maximum_sequence_tokens": 128,
+    "development_catalog_used": false,
+    "final_catalog_used": false
+  },
+  "method": "Accumulate the exact centered layer-0 source MLP residual covariance on the fixed 420 training records, eigendecompose it, and evaluate train-derived rank-192/256/384/512 bases on the fixed 28 validation records. Reconstruct only the MLP residual while retaining the exact teacher attention intermediate; store aggregate metrics only and no activations or basis artifact.",
+  "selection_gate": {
+    "validation_centered_energy_minimum": 0.98,
+    "oracle_final_cosine_minimum": 0.995,
+    "oracle_relative_rmse_maximum": 0.5,
+    "training_validation_energy_gap_maximum": 0.02,
+    "selection": "smallest tested rank passing every gate"
+  },
+  "decision_rule": "If one or more ranks pass, select only the smallest passing rank for one subsequent no-model asymmetric sparse-MLP feasibility design; this does not authorize training. If no rank passes, reject output-rank expansion and diagnose mapping or optimization. Do not interpolate, add ranks, change the gate, or access final material after observing the result.",
+  "bindings": {
+    "abi/capability_compiler_phase3_mlp_residual_rank_audit.py": "d9830599c330aef68d3d6a2a468c92ff2747b66db374c0d2e057bebd3f31991e",
+    "tests/test_capability_compiler_phase3_mlp_residual_rank_audit.py": "8e3232266224f7c6fb57ee924c177fbe118f8580f011b11fafdba9151ab6b5bd",
+    "abi/capability_compiler_phase3_dual_path_local_fit.py": "9b36db57fbef4c9e9e960094e261b92716809e9cb1830acb5e4173ffe7cf19e2",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V236.json": "002463dbcfc9d970b98ac9ff7662afccd412483c9d1a9bff68e84ae75f42aa6e",
+    "ABI_CAPABILITY_COMPILER_PHASE3_DUAL_PATH_RESULT_V236.json": "c20a9b12361016f148979ad60ebc73239d51ec52e1624a4e2e1c1a0a67694e21",
+    "results/abi_capability_compiler_phase3_dual_path/local_fit_replay_v236/metadata.json": "40e3c2ed5c9a814e28898a54880f6174d87f21dbc5eb6dba1b3f29caef4cda63",
+    "results/abi_capability_compiler_phase3_progressive_replacement/extraction_replay_v222/copied_substrate.safetensors": "917635d5c810679490b8e039d0bb5fe9a9efa166cba956d0211a8294adf28e8b",
+    "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+    "results/abi_capability_compiler_phase3/targeted_combined_ir_v137/normalized_targeted_combined_v138.abicir": "9fa2467a37c870db7a24640a8d6da46ed73941573026af2c9a4c3425fd98dd18",
+    "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer.json": "072ab882d6c7192a42f78790945d16c064691321a73251a4b18f6a380f0fbe39",
+    "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e/model-00001-of-00002.safetensors": "b7492726c01287bf6e13c3d74c65ade3d436d50da1cf5bb6925bc962419d6610",
+    "C:/Users/samyo/.cache/huggingface/hub/models--microsoft--Phi-3-mini-4k-instruct/snapshots/f39ac1d28e925b323eae81227eaba4464caced4e/model-00002-of-00002.safetensors": "3f311787aa136e858556caa8543015161edcad85ba81b6a36072443d7fa73c87"
+  },
+  "claim_boundary": "Read-only layer-0 source-MLP residual rank attribution only; no extraction artifact, training, quality, inference, Phase 3 certificate, or superiority claim."
+}
