@@ -1,0 +1,37 @@
+{
+  "format": "abi-capability-compiler-phase3-routed-v15-autonomous-screen-result/1",
+  "version": 330,
+  "status": "INVALID_FOR_QUALITY_HOST_FP16_ROUTER_DTYPE_FAILURE",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_ROUTED_V15_AUTONOMOUS_SCREEN_PROTOCOL_V329.json",
+    "sha256": "c67701b7e0f5eaebf6647dee718bd079fc84bd3cf7674b3799ff4ddd23d389f3"
+  },
+  "raw_evidence": {
+    "outputs": "results/abi_capability_compiler_phase3_routed_v15/autonomous_screen_v330/development_outputs.jsonl",
+    "outputs_sha256": "b9b9cba42e3f8aeb1a13fdc0610fcc0e93d64bd3eadf8c55d5e33afff04205fa",
+    "decision": "results/abi_capability_compiler_phase3_routed_v15/autonomous_screen_v330/decision.json",
+    "decision_sha256": "cd395892dc251f61dcc75fb9f82f075d9c6f4311644954f0adcaebb9457759e4"
+  },
+  "measurements": {
+    "attempted_prompts": 1400,
+    "valid_generations": 0,
+    "generation_errors": 1400,
+    "unique_error_classes": 1,
+    "error": "RuntimeError: mat1 and mat2 must have the same dtype, but got Float and Half",
+    "error_location": "integrated source-prompt router before route prediction",
+    "artifact_parameters": 536758275,
+    "artifact_model_sha256": "6d20c7a9d74e04c2209cc534de882f018edb47867e1a87c7d42c33798909e920",
+    "source_model_loaded": false,
+    "transformers_imported": false,
+    "final_test_accessed": false
+  },
+  "ownership": "LAYERCAKE_HOST_FP16_RUNTIME_CONFORMANCE",
+  "scientific_quality_result": false,
+  "decision": "Preserve every error record. Do not interpret zero functional passes as artifact quality. The exact fp16 artifact reached the LayerCake v15 router, whose float-normalized feature was passed to fp16 router weights. Require a separately versioned LayerCake host repair and independent construct verification before an unchanged ABI screen replay.",
+  "authorized_next_action": "LAYERCAKE_VERSIONED_FP16_ROUTER_CONFORMANCE_REPAIR_THEN_UNCHANGED_ABI_REPLAY",
+  "artifact_promoted": false,
+  "phase3_certified": false,
+  "claim_boundary": "Physical host incompatibility only; ABI autonomous English quality remains unmeasured."
+}

@@ -1,0 +1,192 @@
+{
+  "artifact": {
+    "manifest_sha256": "1febaa390de2caf20f27c58361aa7709f6ae6e4b5f17f0e354ebc1a9861955a6",
+    "model_sha256": "6d20c7a9d74e04c2209cc534de882f018edb47867e1a87c7d42c33798909e920",
+    "parameters": 536758275,
+    "source_blocks": 0
+  },
+  "artifact_promoted": false,
+  "claim_boundary": "Development-only autonomous quality result for the exact routed-v15 artifact; no final-test, runtime-dominance, Phase 3 certification, or ABI-superiority claim.",
+  "evaluation_wall_seconds": 0.7516193999908864,
+  "evidence_sha256": "b2be84c309396a0d12db29763354a1a64ca3c14c6df7f189b74b5e6abc0c1978",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-routed-v15-autonomous-screen-isolated/1",
+  "functional_passes": 0,
+  "gates": {
+    "critical_capabilities": false,
+    "per_capability_functional": false,
+    "router_accuracy": false,
+    "teacher_relative_noninferiority": false,
+    "zero_generation_errors": false,
+    "zero_repetition_collapses": true
+  },
+  "generation_errors": 1400,
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "machine": "Sam"
+  },
+  "observations": 1400,
+  "outputs_per_second": 1862.6448439422602,
+  "outputs_sha256": "b9b9cba42e3f8aeb1a13fdc0610fcc0e93d64bd3eadf8c55d5e33afff04205fa",
+  "passed": false,
+  "peak_cuda_allocated_bytes": 1103634432,
+  "peak_process_rss_bytes": 2790268928,
+  "per_capability": {
+    "abstention": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 0,
+      "wilson": {
+        "lower_95": 3.469446951953614e-18,
+        "point": 0.0,
+        "upper_95": 0.03699349820698568
+      }
+    },
+    "clarification": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 0,
+      "wilson": {
+        "lower_95": 3.469446951953614e-18,
+        "point": 0.0,
+        "upper_95": 0.03699349820698568
+      }
+    },
+    "coherence": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 0,
+      "wilson": {
+        "lower_95": 3.469446951953614e-18,
+        "point": 0.0,
+        "upper_95": 0.03699349820698568
+      }
+    },
+    "conversation": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 0,
+      "wilson": {
+        "lower_95": 3.469446951953614e-18,
+        "point": 0.0,
+        "upper_95": 0.03699349820698568
+      }
+    },
+    "email_drafting_from_notes": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 0,
+      "wilson": {
+        "lower_95": 3.469446951953614e-18,
+        "point": 0.0,
+        "upper_95": 0.03699349820698568
+      }
+    },
+    "fact_free_reasoning": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 0,
+      "wilson": {
+        "lower_95": 3.469446951953614e-18,
+        "point": 0.0,
+        "upper_95": 0.03699349820698568
+      }
+    },
+    "fluent_realization": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 0,
+      "wilson": {
+        "lower_95": 3.469446951953614e-18,
+        "point": 0.0,
+        "upper_95": 0.03699349820698568
+      }
+    },
+    "format_control": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 0,
+      "wilson": {
+        "lower_95": 3.469446951953614e-18,
+        "point": 0.0,
+        "upper_95": 0.03699349820698568
+      }
+    },
+    "grammar": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 0,
+      "wilson": {
+        "lower_95": 3.469446951953614e-18,
+        "point": 0.0,
+        "upper_95": 0.03699349820698568
+      }
+    },
+    "instruction_following": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 0,
+      "wilson": {
+        "lower_95": 3.469446951953614e-18,
+        "point": 0.0,
+        "upper_95": 0.03699349820698568
+      }
+    },
+    "prompt_grounding": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 0,
+      "wilson": {
+        "lower_95": 3.469446951953614e-18,
+        "point": 0.0,
+        "upper_95": 0.03699349820698568
+      }
+    },
+    "rewriting": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 0,
+      "wilson": {
+        "lower_95": 3.469446951953614e-18,
+        "point": 0.0,
+        "upper_95": 0.03699349820698568
+      }
+    },
+    "supplied_text_summarization": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 0,
+      "wilson": {
+        "lower_95": 3.469446951953614e-18,
+        "point": 0.0,
+        "upper_95": 0.03699349820698568
+      }
+    },
+    "tone_control": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 0,
+      "wilson": {
+        "lower_95": 3.469446951953614e-18,
+        "point": 0.0,
+        "upper_95": 0.03699349820698568
+      }
+    }
+  },
+  "phase3_certified": false,
+  "protocol_sha256": "c67701b7e0f5eaebf6647dee718bd079fc84bd3cf7674b3799ff4ddd23d389f3",
+  "repetition_collapses": 0,
+  "route_correct": 0,
+  "source_model_loaded": false,
+  "status": "FAIL_AUTONOMOUS_ENGLISH_DEVELOPMENT_SCREEN",
+  "teacher_comparison": {
+    "candidate_minus_teacher": -0.8835714285714286,
+    "lower_95": -0.8992857142857142,
+    "method": "capability_stratified_paired_percentile_bootstrap",
+    "replicates": 10000,
+    "seed": 240075,
+    "upper_95": -0.8678571428571429
+  },
+  "teacher_present_at_inference": false,
+  "transformers_imported": false
+}
