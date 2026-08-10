@@ -1,0 +1,62 @@
+{
+  "format": "abi-capability-compiler-phase3-combined-attention-mlp-audit/1",
+  "protocol_id": "abi-capability-compiler-phase3-combined-attention-rank768-audit-v287",
+  "status": "PREREGISTERED_READ_ONLY_COMBINED_ATTENTION_MLP_AUDIT",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V286.json",
+  "historical_evidence_changed": false,
+  "device": "cuda",
+  "training_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "seed": 240225,
+  "width": 3072,
+  "rank": 768,
+  "relative_ridge": 0.0001,
+  "base_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_LINEAR_SEQUENTIAL_FIT_PROTOCOL_V255.json",
+  "residual_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_RESIDUAL_ATTENTION_FIT_PROTOCOL_V283.json",
+  "base_checkpoints": {
+    "0": {
+      "path": "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_00.safetensors",
+      "sha256": "b1489e35f2a47337de347e0d009d6706923c99fd91ebf4b54d9804bf3433d9e3"
+    },
+    "1": {
+      "path": "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_01.safetensors",
+      "sha256": "85c31bcaa878e7ba65f6b6bdbe8ed0fe76460d38ef5134d9889f2a032391002b"
+    }
+  },
+  "qualified_primary_checkpoint": {
+    "path": "results/abi_capability_compiler_phase3_mlp_aware_attention/layer1_fit_v278/layer1_attention_weights.safetensors",
+    "sha256": "a0d350fb063c70c4af27fd772c304cbfdb3d283a231d28a631c7f3b32905465d"
+  },
+  "residual_attention_checkpoint": {
+    "path": "results/abi_capability_compiler_phase3_residual_attention/layer1_fit_v284/layer1_residual_attention.safetensors",
+    "sha256": "f5e42a6e848a569677b2d9459a0e720395285d733bc6c03dc3af624310ae8019"
+  },
+  "gate": {
+    "mean_relative_rmse_maximum": 0.85,
+    "mean_output_cosine_minimum": 0.98
+  },
+  "method": "Repeat the immutable combined-attention residual audit at the single historically selected rank768. Derive the basis and fixed-ridge linear map on train records only; report held-out oracle and mapped validation separately. This is not a rank sweep and writes no deployable artifact.",
+  "decision_rule": "An oracle failure closes rank768 on the improved interface. An oracle pass with mapped failure confirms that the next bounded architecture must use the already feasible nonlinear coefficient mechanism at rank768. A mapped pass authorizes one fail-fast source-free sequential extraction. No alternate rank, ridge, data, seed, or threshold is authorized.",
+  "bindings": {
+    "abi/capability_compiler_phase3_combined_attention_mlp_audit.py": "6de07aa7cea11c6000b7a58ba16d480036dc4817e2657200cb46fa3a867cfe52",
+    "tests/test_capability_compiler_phase3_combined_attention_mlp_audit.py": "2acb30d92099dce2a54e170a4371d243057c25e403ddda4da79ae108af356400",
+    "abi/capability_compiler_phase3_residual_attention_fit.py": "5c0954a56bc69eb13a6a1e19e9a697c76db130a7115b6ab3892c866f2c0ff3ab",
+    "abi/capability_compiler_phase3_direct_linear_sequential_fit.py": "dca38cc8bf86047669ce08d7f13c05600f9c28575c1b09797f7faea7de671663",
+    "abi/capability_compiler_phase3_dual_path_local_fit.py": "9b36db57fbef4c9e9e960094e261b92716809e9cb1830acb5e4173ffe7cf19e2",
+    "abi/capability_compiler_phase3_mlp_residual_rank_audit.py": "d9830599c330aef68d3d6a2a468c92ff2747b66db374c0d2e057bebd3f31991e",
+    "abi/capability_compiler_phase3_closed_form_coefficient_audit.py": "8b9c1dccea29e81046d6cf28251014c9ec744abd42c39ab1eccd0fbe826c589f",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V286.json": "fecbb2ba1538836bb2c2db0c786537e42164a72f15a373ca1b3dd8f4f54ee7a0",
+    "ABI_CAPABILITY_COMPILER_PHASE3_COMBINED_ATTENTION_MLP_RESULT_V286.json": "c950f6d9ec9b7761f0a7f0c5d5e4811ba7c8fea001554427dbbe7b9efcfd36cd",
+    "ABI_CAPABILITY_COMPILER_PHASE3_LAYER1_ERROR_DECOMPOSITION_RESULT_V260.json": "6d7e24975ee692a133a2245463d7f016580e740ecf364e8eed3a0d101f209b76",
+    "ABI_CAPABILITY_COMPILER_PHASE3_RESIDUAL_ATTENTION_FIT_PROTOCOL_V283.json": "32baa6727918350f51abfe5af6d62d013e7d6b51dd8671ab3e9c9a6c0d8ef7a8",
+    "ABI_CAPABILITY_COMPILER_PHASE3_DIRECT_LINEAR_SEQUENTIAL_FIT_PROTOCOL_V255.json": "fcf546b3ad4fdb014f06a9a73c61bfea425a51d24cff351b8ad448dfc026e60b",
+    "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_00.safetensors": "b1489e35f2a47337de347e0d009d6706923c99fd91ebf4b54d9804bf3433d9e3",
+    "results/abi_capability_compiler_phase3_direct_linear/sequential_fit_v256/layer_01.safetensors": "85c31bcaa878e7ba65f6b6bdbe8ed0fe76460d38ef5134d9889f2a032391002b",
+    "results/abi_capability_compiler_phase3_mlp_aware_attention/layer1_fit_v278/layer1_attention_weights.safetensors": "a0d350fb063c70c4af27fd772c304cbfdb3d283a231d28a631c7f3b32905465d",
+    "results/abi_capability_compiler_phase3_residual_attention/layer1_fit_v284/metadata.json": "7f9fbcba53f59083ac6fd9a9088504df71cacdc80a177c3f74cf679f95748f94",
+    "results/abi_capability_compiler_phase3_residual_attention/layer1_fit_v284/layer1_residual_attention.safetensors": "f5e42a6e848a569677b2d9459a0e720395285d733bc6c03dc3af624310ae8019",
+    "results/abi_capability_compiler_phase3_combined_attention_mlp/audit_v286/metadata.json": "54820924e03da4aee410470132a8358a958d8da3e210e79294e486e3aed97bfa"
+  },
+  "claim_boundary": "Read-only layer-1 rank768 adequacy audit only; no artifact, English quality, runtime, certificate, or superiority claim."
+}
