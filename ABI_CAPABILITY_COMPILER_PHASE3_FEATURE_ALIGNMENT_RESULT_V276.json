@@ -1,0 +1,17 @@
+{
+  "format": "abi-capability-compiler-phase3-feature-alignment-result/1",
+  "version": 276,
+  "status": "FAIL_LINEAR_ALIGNMENT_NONLINEAR_CORRECTION_REQUIRED",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {"path": "ABI_CAPABILITY_COMPILER_PHASE3_FEATURE_ALIGNMENT_AUDIT_PROTOCOL_V275.json", "sha256": "5d328f63123b0f9b9e6536abe7af08ce44a3c3751f302fb2ba839c392643d3ce"},
+  "raw_evidence": {"path": "results/abi_capability_compiler_phase3_feature_alignment/layer1_audit_v276.json", "sha256": "d957688f78c71e15bbccb6ca92860f9e0c1cb7d58d393da8de1f6f0c8db1c623"},
+  "findings": {"rank192_oracle_cosine": 0.983368592602866, "rank192_mapped_cosine": 0.9733144342899323, "rank768_oracle_cosine": 0.9855326690844127, "rank768_mapped_cosine": 0.974091676729066},
+  "interpretation": "The correction subspace is small enough at rank 192, but the linear feature-to-correction map does not generalize. The next intervention must make attention outputs preserve the nonlinear downstream MLP interface directly.",
+  "decision": "Close analytic feature mapping. Authorize one bounded MLP-aware fine-tune of only the existing compact-attention parameters from the exact V256 checkpoint.",
+  "complete_source_mlp_promoted": false,
+  "artifact_written": false,
+  "final_test_accessed": false,
+  "phase3_certified": false,
+  "claim_boundary": "Negative local alignment evidence only; no artifact, runtime, certificate, or superiority claim."
+}

@@ -1,0 +1,72 @@
+{
+  "artifact_written": false,
+  "calibration_tokens": 33189,
+  "claim_boundary": "Read-only low-rank feature-alignment diagnostic using a non-promotable complete source MLP; no artifact, runtime, certificate, or superiority claim.",
+  "complete_source_mlp_promoted": false,
+  "effective_ridge": 0.006327883911132813,
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-feature-alignment-audit/1",
+  "layer": 1,
+  "phase3_certified": false,
+  "protocol_sha256": "5d328f63123b0f9b9e6536abe7af08ce44a3c3751f302fb2ba839c392643d3ce",
+  "ranks": [
+    {
+      "mapped": {
+        "maximum_relative_rmse": 4.005424499511719,
+        "mean_output_cosine": 0.9733144342899323,
+        "mean_relative_rmse": 0.527549321097987,
+        "minimum_output_cosine": 0.8021177053451538,
+        "passed": false
+      },
+      "oracle": {
+        "maximum_relative_rmse": 0.5107393860816956,
+        "mean_output_cosine": 0.983368592602866,
+        "mean_relative_rmse": 0.2905242033302784,
+        "minimum_output_cosine": 0.9499346017837524,
+        "passed": true
+      },
+      "rank": 192,
+      "training_alignment_energy_explained": 0.8139575123786926
+    },
+    {
+      "mapped": {
+        "maximum_relative_rmse": 4.563747406005859,
+        "mean_output_cosine": 0.9740029530865806,
+        "mean_relative_rmse": 0.5540483609906265,
+        "minimum_output_cosine": 0.7981641292572021,
+        "passed": false
+      },
+      "oracle": {
+        "maximum_relative_rmse": 0.44192206859588623,
+        "mean_output_cosine": 0.9850603405918393,
+        "mean_relative_rmse": 0.27637798924531254,
+        "minimum_output_cosine": 0.960923969745636,
+        "passed": true
+      },
+      "rank": 384,
+      "training_alignment_energy_explained": 0.9340722560882568
+    },
+    {
+      "mapped": {
+        "maximum_relative_rmse": 4.737705707550049,
+        "mean_output_cosine": 0.974091676729066,
+        "mean_relative_rmse": 0.5608570506530148,
+        "minimum_output_cosine": 0.7966680526733398,
+        "passed": false
+      },
+      "oracle": {
+        "maximum_relative_rmse": 0.4034472107887268,
+        "mean_output_cosine": 0.9855326690844127,
+        "mean_relative_rmse": 0.2721731513738632,
+        "minimum_output_cosine": 0.9652969837188721,
+        "passed": true
+      },
+      "rank": 768,
+      "training_alignment_energy_explained": 0.9861384630203247
+    }
+  ],
+  "smallest_passing_rank": null,
+  "status": "FAIL_ALIGNMENT_AUDIT",
+  "train_observations": 31001,
+  "training_performed": false
+}
