@@ -36,13 +36,29 @@ def classify_bottleneck(*, exact_residual_pass: bool, rank192_oracle_pass: bool,
     return "NO_LOCAL_CAPACITY_BLOCK_AT_MAXIMUM_AUDITED_RANK"
 
 
+def solve_map(features: torch.Tensor, targets: torch.Tensor, relative_ridge: float) -> tuple[torch.Tensor, float]:
+    gram = features.T @ features
+    scale = float(torch.trace(gram) / gram.shape[0])
+    ridge = relative_ridge * scale
+    weights = torch.linalg.solve(
+        gram + ridge * torch.eye(gram.shape[0], device=gram.device, dtype=gram.dtype),
+        features.T @ targets,
+    )
+    if not torch.isfinite(weights).all():
+        raise Phase3Error("ridge solution contains non-finite values")
+    return weights, ridge
+
+
 def execute(root: Path, protocol_path: Path) -> dict:
     from transformers import AutoModelForCausalLM
 
     protocol = json.loads(protocol_path.read_text(encoding="utf-8"))
     if (
         protocol.get("format") != FORMAT
-        or protocol.get("status") != "PREREGISTERED_READ_ONLY_LAYER1_DECOMPOSITION"
+        or protocol.get("status") not in {
+            "PREREGISTERED_READ_ONLY_LAYER1_DECOMPOSITION",
+            "PREREGISTERED_READ_ONLY_LAYER1_DECOMPOSITION_NUMERICAL_REPLAY",
+        }
         or protocol.get("training_authorized") is not False
         or protocol.get("artifact_authorized") is not False
         or protocol.get("final_test_access") != "PROHIBITED"
@@ -101,12 +117,8 @@ def execute(root: Path, protocol_path: Path) -> dict:
     x = torch.cat(train_features).to(device)
     delta = torch.cat(train_deltas).to(device)
     maximum_targets = (delta - mean) @ maximum_basis
-    gram = x.T @ x
-    scale = float(torch.trace(gram) / gram.shape[0])
-    ridge = float(protocol["relative_ridge"]) * scale
-    factor = torch.linalg.cholesky(gram + ridge * torch.eye(gram.shape[0], device=device))
-    maximum_weights = torch.cholesky_solve(x.T @ maximum_targets, factor)
-    del train_features, train_deltas, delta, maximum_targets, gram, factor
+    maximum_weights, ridge = solve_map(x, maximum_targets, float(protocol["relative_ridge"]))
+    del train_features, train_deltas, delta, maximum_targets
 
     accumulators = {
         rank: {"teacher_attention_oracle": [[], []], "student_attention_oracle": [[], []], "student_attention_map": [[], []]}
