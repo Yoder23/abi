@@ -1,0 +1,42 @@
+{
+  "format": "abi-capability-compiler-phase3-pointer-mechanism-audit/1",
+  "protocol_id": "abi-capability-compiler-phase3-pointer-mechanism-audit-v452",
+  "status": "PREREGISTERED_READ_ONLY_MECHANISM_AUDIT",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V451.json",
+  "historical_evidence_changed": false,
+  "training_authorized": false,
+  "artifact_mutation_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "objective": "Determine whether V451 failed because its learned source-position selector is inadequate or because the pointer probability mixture remains causally inactive, using only teacher-forced positions in the 81 teacher-pass/V443-fail development records.",
+  "pointer_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_V443_PROMPT_POINTER_PROTOCOL_V450.json",
+  "pointer_checkpoint": "results/abi_capability_compiler_phase3_v443_prompt_pointer/candidate_v451/prompt_identity.safetensors",
+  "v443_outputs": "results/abi_capability_compiler_phase3_qualified_transition_control/evaluation_v443/development_outputs.jsonl",
+  "teacher_outputs": "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl",
+  "catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+  "population": {
+    "candidate_specific_failures": 81,
+    "eligible_position": "teacher target occurs in the prompt and frozen V443 teacher-forced top-1 is wrong"
+  },
+  "gates": {
+    "pointer_token_accuracy_minimum": 0.5,
+    "mixture_repair_rate_maximum": 0.1
+  },
+  "decision_rule": "If the pointer selects the correct prompt token at least half the time but repairs no more than 10% of eligible top-1 decisions, the selector contains material position information but the probability mixture is causally inactive. The pointer family remains closed regardless; the result may only support review of a materially different hidden-state prompt-conditioning mechanism. If selector accuracy is below 50%, do not reuse its representation. No result authorizes training by itself.",
+  "bindings": {
+    "abi/capability_compiler_phase3_pointer_mechanism_audit.py": "66196b4b462dda86407622b0657d88dbac5a292ed9fc772a322ca3a43c702f8b",
+    "tests/test_capability_compiler_phase3_pointer_mechanism_audit.py": "b45aeb105ceed86a80f55bb98312233f36447621056b05ced237556bd16d325c",
+    "ABI_CAPABILITY_COMPILER_PHASE3_V443_PROMPT_POINTER_RESULT_V451.json": "32dafe2d8a0b42ef8721a801f4cc72edded35d3389b433ef44d2b859c9e36ad3",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V451.json": "95d59b00dd531d874f51a523d1b0c98b8b1e1d5868ef5bc91e740be03cf02384",
+    "ABI_CAPABILITY_COMPILER_PHASE3_V443_PROMPT_POINTER_PROTOCOL_V450.json": "df66f9a4490b552fca01a3b2be938a9d2651ef82f93cf04b53d228b38b4102d4",
+    "results/abi_capability_compiler_phase3_v443_prompt_pointer/candidate_v451/metadata.json": "e3d1f81faeb7eacbcd49633f0a6a0bf0d4ccad6cf521a39242fb27d5ee9ae979",
+    "results/abi_capability_compiler_phase3_v443_prompt_pointer/candidate_v451/prompt_identity.safetensors": "c545767bc125ce7cef1ea0a4938ec08d243215521467331bd1f8c86851b83488",
+    "results/abi_capability_compiler_phase3_v443_prompt_pointer/evaluation_v451/result.json": "aba216bebdb9aca80cb0a12fc37acd02fcb034231d8e4f8a16607ada456715fb",
+    "results/abi_capability_compiler_phase3_v443_prompt_pointer/evaluation_v451/development_outputs.jsonl": "61c0f3057bbccfe49818946020f38a753bed90cb0d8e5587a101252e9a5828a4",
+    "results/abi_capability_compiler_phase3_qualified_transition_control/evaluation_v443/development_outputs.jsonl": "fc109f5baee4abad0c857a250967f56e50b7acf9d8b05aca03c7082239c0b6fa",
+    "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl": "1081dbe57e75da50b2619bc2dab14c6441158dcd6068f2b864733936087e86a2",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a"
+  },
+  "phase3_certified": false,
+  "claim_boundary": "Read-only teacher-forced mechanism attribution; no autonomous quality, architecture, runtime, promotion, final-test, or Phase 3 claim."
+}
