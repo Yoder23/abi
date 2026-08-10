@@ -80,7 +80,7 @@ Status date: 2026-08-09.
 - The ABI moonshot is **not complete**.
 
 The machine-readable live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V246.json`. The original campaign
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V248.json`. The original campaign
 contract and all historical evidence remain unchanged.
 
 V215-V230 opened one materially distinct progressive source-block replacement
@@ -159,6 +159,12 @@ RMSE, and 0.11462 coefficient relative RMSE on the 28 validation records. It
 stored no map, basis, or activations and performed no neural training. One
 no-model direct-linear host feasibility gate is authorized; it must eliminate
 the nonlinear MLP coefficient network rather than tune V244.
+
+V247/V248 passed direct-linear accounting, and the separate LayerCake v12 host
+passes 648 tests plus its unchanged sealed verifier. The target has 277,220,352
+parameters, 554,440,704 fp16 bytes, 184,857,600 maximum-context active MACs,
+and zero source blocks. One fail-fast local protocol may analytically extract
+each layer's coefficient map/basis/mean and train only compact attention.
 
 V191-V214 tested the authorized weight-level structural route. The independent
 LayerCake repository construct-certified `lc-direct-neural-core/7`; ABI did
