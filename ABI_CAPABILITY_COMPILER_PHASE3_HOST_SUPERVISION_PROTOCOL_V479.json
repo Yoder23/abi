@@ -1,0 +1,102 @@
+{
+  "format": "abi-capability-compiler-phase3-host-supervision/1",
+  "protocol_id": "abi-capability-compiler-phase3-host-supervision-v479",
+  "status": "PREREGISTERED_CACHED_EVIDENCE_HOST_SUPERVISION_BUILD",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V478.json",
+  "historical_evidence_changed": false,
+  "teacher_model_loading_authorized": false,
+  "neural_training_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "promotion_eligible": false,
+  "objective": "Build one balanced weak-capability supervision artifact whose inputs are direct host tasks, whose outputs are provenance-bound cached teacher responses, and whose only semantic-preserving surface normalization repairs known V2-to-V1 metric forms.",
+  "source": {
+    "extraction_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_TARGETED_EXTRACTION_PROTOCOL_V135.json",
+    "catalog": "catalogs/capability_compiler_phase3_targeted_search_v132.json",
+    "journal": "results/abi_capability_compiler_phase3/targeted_extraction_v135/source_attempts.jsonl",
+    "model": "microsoft/Phi-3-mini-4k-instruct",
+    "revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "cached_teacher_outputs_only": true,
+    "search_split_only": true,
+    "validation_or_final_outputs_used": false
+  },
+  "selection": {
+    "capabilities": ["abstention", "coherence", "fluent_realization", "tone_control"],
+    "builders_per_capability": 4,
+    "records_per_capability_builder": 80,
+    "records_per_capability": 320,
+    "total_records": 1280,
+    "rationale": "V478 measured at least 88 cached V2-valid EOS probes in every weak capability-builder stratum; 80 is preregistered before construction and leaves eight records of reserve in the limiting stratum.",
+    "attempt_policy": "earliest EOS-terminated attempt that passes V2 and can be made historical-V1 valid by the closed surface normalization",
+    "record_policy": "lowest SHA256 selection keys within each capability-builder stratum",
+    "duplicate_probe_ids_allowed": false,
+    "duplicate_record_ids_allowed": false
+  },
+  "host_projection": {
+    "input": "normalized catalog search prompt",
+    "projection": "existing bound host_prompt_projection",
+    "teacher_generation_prompt_used_as_host_input": false,
+    "repair_meta_prompt_used_as_host_input": false,
+    "output": "cached teacher response after closed surface normalization"
+  },
+  "surface_normalization": {
+    "historical_v1_passes_unchanged": true,
+    "v2_validity_required_before_change": true,
+    "v1_validity_required_after_change": true,
+    "allowed": [
+      "case-insensitive English number words zero through ten to their digit",
+      "abstention phrase cannot be known or can not be known to cannot determine"
+    ],
+    "semantic_rewrite_allowed": false,
+    "unsupported_transform_disposition": "record ineligible"
+  },
+  "information_accounting": {
+    "unique_prompt_bytes": true,
+    "teacher_output_bytes": true,
+    "teacher_input_tokens": true,
+    "authoritative_teacher_output_tokens": true,
+    "surface_normalized_records": true,
+    "repair_attempt_records": true,
+    "stored_logits": 0,
+    "stored_hidden_activations": 0,
+    "copied_source_parameters": 0
+  },
+  "outputs": {
+    "artifact": "results/abi_capability_compiler_phase3_host_supervision/build_v480/host_weak_supervision_v480.abicir",
+    "result": "results/abi_capability_compiler_phase3_host_supervision/build_v480/result.json",
+    "immutable": true
+  },
+  "pass_gates": {
+    "records": 1280,
+    "records_per_capability_builder": 80,
+    "all_source_outputs_v2_valid": true,
+    "all_artifact_outputs_v1_valid": true,
+    "all_prompts_host_projected": true,
+    "teacher_generation_prompts_excluded": true,
+    "teacher_model_loaded": false,
+    "neural_training_performed": false,
+    "historical_artifact_mutated": false,
+    "final_test_accessed": false
+  },
+  "decision_rule": "A passing build authorizes only a separately preregistered hostile verifier bound to the produced artifact hash. Neural training remains prohibited until that verifier passes.",
+  "bindings": {
+    "abi/capability_compiler_phase3_host_supervision.py": "ee807ef38deae249599744aaecb054d57e12bfe466ff6e4147cc9f2284133239",
+    "tests/test_capability_compiler_phase3_host_supervision.py": "c9bdbf7293b7442fffe8fddaff7a025621c535defd71825d1580d6381b99155b",
+    "abi/capability_compiler_functional_v2.py": "1755ceded6de7c8228ed91e5be6bf86452b6c5f02466f8fda150317775abd4af",
+    "abi/capability_compiler_phase2_common.py": "8093ec2016d685f0327c87640042c8373bc141d76351fd641b21a44d018b6c92",
+    "abi/capability_compiler_phase3.py": "5d490989e088f42aba4bd2ca96fbe70ea2db211890369dd6f431dd781390c77b",
+    "abi/capability_compiler_phase3_broad_ir.py": "9fa63b8fbf62587cdcf6043bf9b28bab08a1086084a958116430321ceb9f4160",
+    "abi/capability_compiler_phase3_failure_to_supervision_audit.py": "532ede2c9112c6efc779cf8f7e697e49eadacc2217dc3ab73dd76363f2eda9ce",
+    "abi/capability_compiler_phase3_weak_residual.py": "b1bbb265c4e833f697331112f9c657a0d743790d6ce3e3811d5e9d677a60bfb8",
+    "abi/capability_compiler_phase1_ir.py": "a9ae55bac280051f71b9265cc7582b182b10c9d328e176c37748281637326603",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V478.json": "4e46305837e5a4f3bb9f81c2c26e3954f395e82b91ea4861375fcac4f237da11",
+    "ABI_CAPABILITY_COMPILER_PHASE3_FAILURE_TO_SUPERVISION_AUDIT_PROTOCOL_V477.json": "937df8313d67288583ed344ebed8c6c40f6e1f557e6ac6c6c99deb0520db3bc6",
+    "ABI_CAPABILITY_COMPILER_PHASE3_FAILURE_TO_SUPERVISION_AUDIT_RESULT_V478.json": "442156413701c0c28df63f3ad0765ddf56f5231483a63ce0e9ffb364dc376c05",
+    "ABI_CAPABILITY_COMPILER_PHASE3_TARGETED_EXTRACTION_PROTOCOL_V135.json": "148d457c10a0109052f3b1494d2da344ce941b128b0f29dc66776676cc7cba2d",
+    "catalogs/capability_compiler_phase3_targeted_search_v132.json": "d9a05dd5c36a62ac31c2f5955820607fd04dcde1e517b04935bc7150aaaa0c75",
+    "results/abi_capability_compiler_phase3/targeted_extraction_v135/source_attempts.jsonl": "d4598e816559ad4c15b05ddabbcb62b345bb9abf4a0dbd3220081f668468a605"
+  },
+  "phase2_external_blocker": "21000 blinded judgments from three independent human raters remain unavailable and are not waived.",
+  "phase3_certified": false,
+  "claim_boundary": "Cached-evidence artifact construction only; hostile verification, neural training, quality, runtime, final-test, Phase 3, and superiority remain unproven."
+}
