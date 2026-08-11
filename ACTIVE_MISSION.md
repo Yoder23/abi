@@ -6,7 +6,7 @@ Status date: 2026-08-11
 
 The ABI capability-compiler moonshot is **OPEN**.
 
-The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V610.json`.
+The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V614.json`.
 All Phase 3 machine endpoints now pass. The exact route-isolated checkpoint has
 three-seed causal replication, 1,393/1,400 autonomous quality with zero
 collapse on the selected seed, three byte-identical host initializations,
@@ -97,7 +97,13 @@ and closes that branch. The next bounded design may only test one deterministic
 equal-weight consensus of the aligned seed states at B40 and B80, with no
 training or interpolation sweep. V608/V609 now seal and preflight the exact
 one-third construction. All 82 parent, three router, and four bridge tensor
-schemas align; only the registered B40 and B80 build/evaluations may run.
+schemas align; only the registered B40 and B80 build/evaluations may run. Both
+are now complete and fail. B40 reaches 1,281/1,400 with one collapse; B80
+reaches 1,349/1,400 with zero collapse but misses per-capability quality.
+Exact routing and strong-parent identity show that averaging damages the
+weak-capability solution rather than the host interface. No averaging sweep is
+authorized. The next bounded step is a read-only B80 3x3 parent/bridge
+compatibility attribution using existing checkpoints.
 
 ### Preserved historical mission snapshot
 

@@ -1,0 +1,22 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "version": 614,
+  "status_date": "2026-08-11",
+  "historical_evidence_changed": false,
+  "phase0": "COMPLETE",
+  "phase1": "COMPLETE",
+  "phase2": "MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS_0_OF_21000_FILLED",
+  "phase3": "MACHINE_EVIDENCE_COMPLETE_NOT_UNCONDITIONALLY_CERTIFIED",
+  "phase4": "CONDITIONALLY_OPEN_EQUAL_WEIGHT_SEED_CONSENSUS_REJECTED_COMPONENT_COMPATIBILITY_ATTRIBUTION_AUTHORIZED",
+  "phases5_through_8": "LOCKED",
+  "phase4_latest": "ABI_CAPABILITY_COMPILER_PHASE4_SEED_CONSENSUS_RESULT_V613.json",
+  "uniform_stabilization": "REJECTED",
+  "equal_weight_seed_consensus": "REJECTED",
+  "measured_failure": "TENSOR_ALIGNED_SEED_STATES_NOT_FUNCTIONALLY_LINEARLY_MERGEABLE",
+  "phase4_training": "PROHIBITED",
+  "matched_baseline_training": "PROHIBITED_NO_STABLE_ABI_CANDIDATE",
+  "final_test_access": "PROHIBITED",
+  "authorized_next_work": "DESIGN_AND_SEAL_READ_ONLY_B80_PARENT_BRIDGE_COMPATIBILITY_MATRIX",
+  "next_action": "Evaluate the six missing B80 parent-bridge cross-seed pairings, using matched parent routers and existing diagonal results, to attribute parent, bridge, and co-adaptation effects before any new architecture proposal.",
+  "claim_boundary": "No stable ABI frontier, minimum, runtime, matched-baseline comparison, certificate, final-test result, or superiority claim."
+}

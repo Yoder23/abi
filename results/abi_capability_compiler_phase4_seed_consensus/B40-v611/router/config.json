@@ -1,0 +1,11 @@
+{
+  "bpe_unigrams": true,
+  "character_hash_buckets": 65536,
+  "character_ngram_maximum": 5,
+  "character_ngram_minimum": 2,
+  "character_normalization": "Unicode casefold plus whitespace collapse plus explicit boundaries",
+  "fusion": "sum of mean-pooled class logits plus bias",
+  "hash": "FNV-1a-32",
+  "hash_seed": 450045,
+  "vocabulary": null
+}

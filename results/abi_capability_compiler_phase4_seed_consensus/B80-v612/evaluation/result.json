@@ -1,0 +1,161 @@
+{
+  "abstention_prefixes": 25,
+  "checkpoint_sha256": "d70070512d6114e2e6eb53e803f6b05e7fd08a5afca40e6055df9446367a6080",
+  "evaluation_wall_seconds": 157.64552289998392,
+  "evidence_sha256": "d4f6c212f2709f55c6da9b337cf62fa18529137300c199abda9ac2e41be2a139",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-final-control-evaluation/1",
+  "functional_passes_v1": 1349,
+  "functional_passes_v2": 1356,
+  "guard_terminations": 0,
+  "observations": 1400,
+  "per_capability": {
+    "abstention": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "clarification": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "coherence": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 86,
+      "wilson_v1": {
+        "lower_95": 0.7786281178903616,
+        "point": 0.86,
+        "upper_95": 0.9147365634006086
+      }
+    },
+    "conversation": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "email_drafting_from_notes": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "fact_free_reasoning": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "fluent_realization": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 75,
+      "wilson_v1": {
+        "lower_95": 0.656955364519384,
+        "point": 0.75,
+        "upper_95": 0.8245478863771232
+      }
+    },
+    "format_control": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "grammar": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "instruction_following": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "prompt_grounding": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "rewriting": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "supplied_text_summarization": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 98,
+      "wilson_v1": {
+        "lower_95": 0.929988209271456,
+        "point": 0.98,
+        "upper_95": 0.9944980324498376
+      }
+    },
+    "tone_control": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 90,
+      "wilson_v1": {
+        "lower_95": 0.8256343384950865,
+        "point": 0.9,
+        "upper_95": 0.9447708629393249
+      }
+    }
+  },
+  "protocol_sha256": "6d98b34453d28c84fae3d03fd7fe4b21bbacc491c2a07521a83da3471c1cef81",
+  "raw_outputs_sha256": "c595994419d6bbd449137f60d1ea8b88e94524720d95942aee314da0662b9e87",
+  "repetition_collapses_v2": 0,
+  "router_correct": 1400,
+  "status": "COMPLETE_MATCHED_CONTROL_DEVELOPMENT_EVALUATION",
+  "strong_routes_exact": 1000,
+  "system": "A0_route_isolated"
+}
