@@ -1,0 +1,17 @@
+{
+  "format": "abi-capability-compiler-phase3-route-isolated-runtime-composition-summary/1",
+  "version": 544,
+  "status": "PASS_EXACT_ROUTE_ISOLATED_CORRECTED_FULLY_CPU_RUNTIME_GATE_MATRIX",
+  "status_date": "2026-08-11",
+  "historical_evidence_changed": false,
+  "protocol": {"path": "ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_ISOLATED_RUNTIME_COMPOSE_PROTOCOL_V543.json", "sha256": "c73cfbbcfb926e2ac064d2cfcc7322e6806eb1316f0c01253af5e3dc3ebf05a5"},
+  "raw_result": {"path": "results/abi_capability_compiler_phase3_route_isolated_runtime_compose/composition_v544/result.json", "sha256": "072eff45024c77bddb045a27ec6f214309a83ae369601ec8fdee637e9a2a2350", "evidence_sha256": "b79a266087b4a2950e52d929f1a53656273c5f84d536ede3037db91012d8ebc5"},
+  "candidate": {"checkpoint_sha256": "1649e110338904f69fafc0f5ff110e2c8d99f4f8366eb133442fb4938fa3c390", "median_bytes_per_second": 264.1520422011913, "peak_rss_delta_bytes": 340697088, "outputs_exact": "120/120", "parent_throughput_retention": 0.991197279714992},
+  "optimized_transformer": {"median_bytes_per_second": 20.580204601921945, "peak_runner_working_set_bytes": 475213824},
+  "comparisons": {"median_throughput_ratio": 12.835248594978626, "paired_throughput_lower_95": 10.5647479338707, "median_ttft_ratio": 0.025409201905785515, "peak_rss_ratio": 0.7169342952447444},
+  "gates": {"complete_corrected_gate_matrix": "19/19 PASS", "hostile_mutations_rejected": 5, "candidate_fully_cpu": true, "qwen_fully_cpu": true, "final_test_not_accessed": true},
+  "promotion_eligible": false,
+  "phase3_certified": false,
+  "phase2_external_blocker": "21000 blinded judgments from three independent human raters remain unavailable and are not waived.",
+  "claim_boundary": "Exact-lineage fully CPU development runtime pass; fresh host replication, aggregate hostile reconstruction, final test, Phase 3, minimum-information, and superiority remain open."
+}
