@@ -69,7 +69,7 @@ def _json(path: Path) -> dict[str, Any]:
 
 def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str, tuple[dict[str, Any], dict[str, Any]]]:
     protocol = _json(path)
-    if protocol.get("format") != FORMAT or protocol.get("status") not in {"PREREGISTERED_SINGLE_ROUTE_ISOLATED_SUCCESSOR", "PREREGISTERED_ROUTE_ISOLATED_MATCHED_CONTROLS"} or protocol.get("final_test_access") != "PROHIBITED" or protocol.get("nearby_sweeps_authorized") is not False:
+    if protocol.get("format") != FORMAT or protocol.get("status") not in {"PREREGISTERED_SINGLE_ROUTE_ISOLATED_SUCCESSOR", "PREREGISTERED_ROUTE_ISOLATED_MATCHED_CONTROLS", "PREREGISTERED_ROUTE_ISOLATED_PAIRED_SEED_MATRIX"} or protocol.get("final_test_access") != "PROHIBITED" or protocol.get("nearby_sweeps_authorized") is not False:
         raise Phase3Error("route-isolated governance changed")
     for relative, expected in protocol["bindings"].items():
         target = root / relative
@@ -77,12 +77,16 @@ def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str, tuple[di
             raise Phase3Error(f"route-isolated binding changed: {relative}")
     control_protocol, _, base = controls.load_protocol(root, root / protocol["base_control_protocol"])
     control_protocol = copy.deepcopy(control_protocol)
-    if protocol["status"] == "PREREGISTERED_ROUTE_ISOLATED_MATCHED_CONTROLS":
-        if tuple(protocol.get("systems", ())) != CONTROL_SYSTEMS:
+    if protocol["status"] in {"PREREGISTERED_ROUTE_ISOLATED_MATCHED_CONTROLS", "PREREGISTERED_ROUTE_ISOLATED_PAIRED_SEED_MATRIX"}:
+        expected = CONTROL_SYSTEMS if protocol["status"] == "PREREGISTERED_ROUTE_ISOLATED_MATCHED_CONTROLS" else (SYSTEM, *CONTROL_SYSTEMS)
+        if tuple(protocol.get("systems", ())) != expected:
             raise Phase3Error("route-isolated control systems changed")
         control_protocol["control_outputs"] = copy.deepcopy(protocol["control_outputs"])
         control_protocol["A0_outputs"] = protocol["A0_outputs"]
         control_protocol["A0_checkpoint_sha256"] = protocol["A0_checkpoint_sha256"]
+        if protocol["status"] == "PREREGISTERED_ROUTE_ISOLATED_PAIRED_SEED_MATRIX":
+            base = copy.deepcopy(base)
+            base["training"]["seed"] = int(protocol["training_seed"])
     else:
         control_protocol["control_outputs"] = {SYSTEM: protocol["evaluation_output"]}
     return protocol, sha256_file(path), (control_protocol, base)
@@ -116,7 +120,7 @@ def preflight(root: Path, protocol_path: Path) -> dict[str, Any]:
 
 def train(root: Path, protocol_path: Path, system: str, output: Path) -> dict[str, Any]:
     protocol, protocol_sha, bundle = load_protocol(root, protocol_path)
-    allowed = (SYSTEM,) if protocol["status"] == "PREREGISTERED_SINGLE_ROUTE_ISOLATED_SUCCESSOR" else CONTROL_SYSTEMS
+    allowed = (SYSTEM,) if protocol["status"] == "PREREGISTERED_SINGLE_ROUTE_ISOLATED_SUCCESSOR" else CONTROL_SYSTEMS if protocol["status"] == "PREREGISTERED_ROUTE_ISOLATED_MATCHED_CONTROLS" else (SYSTEM, *CONTROL_SYSTEMS)
     if system not in allowed:
         raise Phase3Error("route-isolated system is not authorized")
     old = _patch(protocol_sha, bundle, allowed)
@@ -128,7 +132,7 @@ def train(root: Path, protocol_path: Path, system: str, output: Path) -> dict[st
 
 def evaluate(root: Path, protocol_path: Path, system: str, candidate: Path, output: Path) -> dict[str, Any]:
     protocol, protocol_sha, bundle = load_protocol(root, protocol_path)
-    allowed = (SYSTEM,) if protocol["status"] == "PREREGISTERED_SINGLE_ROUTE_ISOLATED_SUCCESSOR" else CONTROL_SYSTEMS
+    allowed = (SYSTEM,) if protocol["status"] == "PREREGISTERED_SINGLE_ROUTE_ISOLATED_SUCCESSOR" else CONTROL_SYSTEMS if protocol["status"] == "PREREGISTERED_ROUTE_ISOLATED_MATCHED_CONTROLS" else (SYSTEM, *CONTROL_SYSTEMS)
     if system not in allowed:
         raise Phase3Error("route-isolated system is not authorized")
     old = _patch(protocol_sha, bundle, allowed)
@@ -168,9 +172,16 @@ def decide(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
 
 def decide_controls(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
     protocol, protocol_sha, bundle = load_protocol(root, protocol_path)
-    if protocol["status"] != "PREREGISTERED_ROUTE_ISOLATED_MATCHED_CONTROLS":
+    if protocol["status"] not in {"PREREGISTERED_ROUTE_ISOLATED_MATCHED_CONTROLS", "PREREGISTERED_ROUTE_ISOLATED_PAIRED_SEED_MATRIX"}:
         raise Phase3Error("matched-control decision is not authorized")
-    old = _patch(protocol_sha, bundle, CONTROL_SYSTEMS)
+    systems = CONTROL_SYSTEMS if protocol["status"] == "PREREGISTERED_ROUTE_ISOLATED_MATCHED_CONTROLS" else (SYSTEM, *CONTROL_SYSTEMS)
+    if protocol["status"] == "PREREGISTERED_ROUTE_ISOLATED_PAIRED_SEED_MATRIX":
+        control_protocol, base = bundle
+        control_protocol = copy.deepcopy(control_protocol)
+        metadata = _json(root / protocol["A0_metadata"])
+        control_protocol["A0_checkpoint_sha256"] = metadata["checkpoint"]["sha256"]
+        bundle = (control_protocol, base)
+    old = _patch(protocol_sha, bundle, systems)
     try:
         return controls.decide(root, protocol_path, output)
     finally:
