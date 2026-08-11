@@ -16,7 +16,7 @@ Status date: 2026-08-11
 
 **The ABI English-product moonshot is OPEN.**
 
-The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V574.json`.
+The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V576.json`.
 The route-isolated English endpoint now passes all registered Phase 3 machine
 gates: three paired training seeds and all A0-A4 causal controls, 1,393/1,400
 selected-seed autonomous quality with zero collapse, exact routing, three
@@ -67,8 +67,12 @@ three-seed adaptive order. V570 implemented the clean-start ABI arm. B10
 1,190/1,400 with 43 collapses. B20 (2,028 attempts, 62,417 tokens) also failed:
 it improved to 1,251/1,400 and seven collapses and passed teacher
 noninferiority, but still missed critical/per-capability quality and
-zero-collapse; coherence fell from 11/100 to 5/100. Routing and strong-path
-identity remained exact. The sealed adaptive order now authorizes B40 only.
+zero-collapse; coherence fell from 11/100 to 5/100. B40 then reached
+1,360/1,400, two collapses, all critical gates, and a +7.07-point paired lower
+95% teacher-relative advantage. It still failed the per-capability gate because
+format control was 86/100 (Wilson lower 0.7786), and its two collapses violate
+zero-collapse. Routing and strong-path identity remained exact. The sealed
+adaptive order now authorizes B80 only.
 Phase 2 and Phase 3
 certificate statuses remain unchanged, final data remains unopened, and Phase
 5 is locked.
