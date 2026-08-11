@@ -16,7 +16,7 @@ Status date: 2026-08-11
 
 **The ABI English-product moonshot is OPEN.**
 
-The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V655.json`.
+The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V663.json`.
 The route-isolated English endpoint now passes all registered Phase 3 machine
 gates: three paired training seeds and all A0-A4 causal controls, 1,393/1,400
 selected-seed autonomous quality with zero collapse, exact routing, three
@@ -150,9 +150,15 @@ single authorized exposure-normalization attempt recovered instruction point
 quality to 95/100 but still missed its critical Wilson floor and reduced format
 control to 91/100, below its per-capability Wilson floor. It is rejected with
 zero collapse and exact routing preserved. No step or exposure sweep is
-allowed. The next Phase 4 question is whether physically selected capability-
-isolated adaptation can remove the measured shared-parent tradeoff without
-executing multiple paths. Phase 4 remains uncertified.
+allowed. A five-fold read-only capability-selected bank subsequently reached
+1,384/1,400 and passed all 14 capability and critical gates, but one response
+collapsed. Applying the unchanged universal V2 guard to all selected outputs
+preserved the same 1,384 functional passes and reduced collapse to zero. This
+supports one prospective physically selected, one-active-path capability-
+isolated adaptation experiment; it does not promote the post-hoc bank or
+certify Phase 4. That experiment must be preregistered and preflighted before
+training, preserve the immutable v18 host, and measure both installed and
+active resource costs.
 Phase 2 and Phase 3
 certificate statuses remain unchanged, final data remains unopened, and Phase
 5 is locked.

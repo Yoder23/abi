@@ -1,0 +1,167 @@
+{
+  "claim_boundary": "Read-only feasibility only; no trained candidate, stable frontier, minimum, matched baseline, final test, Phase 4 certificate, or superiority claim.",
+  "evidence_sha256": "0cba8313d7983a45c7077236a16084604ac8f72b3e8111db7c0f2696fc4b7570",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase4-universal-guard-feasibility-result/1",
+  "functional_passes": 1384,
+  "gates": {
+    "critical": true,
+    "final_test_not_accessed": true,
+    "functional_quality_not_reduced": true,
+    "per_capability": true,
+    "promotion_not_authorized": true,
+    "training_not_performed": true,
+    "zero_collapse": true
+  },
+  "guard_terminations": 1,
+  "interpretation": "A pass supports one future sparse capability-isolated trainable artifact with the frozen guard applied capability-independently. It does not validate or promote this post-hoc bank.",
+  "observations": 1400,
+  "per_capability": {
+    "abstention": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 100,
+      "wilson": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "clarification": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 99,
+      "wilson": {
+        "lower_95": 0.9455138038212946,
+        "point": 0.99,
+        "upper_95": 0.9982325679358593
+      }
+    },
+    "coherence": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 99,
+      "wilson": {
+        "lower_95": 0.9455138038212946,
+        "point": 0.99,
+        "upper_95": 0.9982325679358593
+      }
+    },
+    "conversation": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 100,
+      "wilson": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "email_drafting_from_notes": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 98,
+      "wilson": {
+        "lower_95": 0.929988209271456,
+        "point": 0.98,
+        "upper_95": 0.9944980324498376
+      }
+    },
+    "fact_free_reasoning": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 100,
+      "wilson": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "fluent_realization": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 96,
+      "wilson": {
+        "lower_95": 0.9016292856411208,
+        "point": 0.96,
+        "upper_95": 0.9843366960084523
+      }
+    },
+    "format_control": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 99,
+      "wilson": {
+        "lower_95": 0.9455138038212946,
+        "point": 0.99,
+        "upper_95": 0.9982325679358593
+      }
+    },
+    "grammar": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 100,
+      "wilson": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "instruction_following": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 99,
+      "wilson": {
+        "lower_95": 0.9455138038212946,
+        "point": 0.99,
+        "upper_95": 0.9982325679358593
+      }
+    },
+    "prompt_grounding": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 100,
+      "wilson": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "rewriting": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 100,
+      "wilson": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "supplied_text_summarization": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 95,
+      "wilson": {
+        "lower_95": 0.8882495307680808,
+        "point": 0.95,
+        "upper_95": 0.9784563208456319
+      }
+    },
+    "tone_control": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 99,
+      "wilson": {
+        "lower_95": 0.9455138038212946,
+        "point": 0.99,
+        "upper_95": 0.9982325679358593
+      }
+    }
+  },
+  "promotion_authorized": false,
+  "protocol_sha256": "d09e915768da4ad100fdc7cf3a4d5ede8f476dd65e22856358417078664e653e",
+  "raw_outputs_sha256": "fd88b632432daacfd4653baae09b849a7fa936f63a74dbb9bef6d2d888a46719",
+  "repetition_collapses_v2": 0,
+  "status": "PASS_CAPABILITY_ISOLATION_PLUS_UNIVERSAL_GUARD_DESIGN_SUPPORTED",
+  "training_performed": false
+}

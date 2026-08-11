@@ -22,7 +22,7 @@ LayerCake cake.
 Status date: 2026-08-11.
 
 The controlling machine-readable state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V655.json`. Phase 3 has completed and
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V663.json`. Phase 3 has completed and
 passed every currently required machine gate, but it is not unconditionally
 certified because the controlling campaign contract makes it depend on Phase
 2. Phase 2 has 21,000 immutable blinded rating rows and zero completed
@@ -164,10 +164,17 @@ one exact exposure-normalization attempt was authorized. It also failed,
 falling to 1,369/1,400; format control missed its Wilson gate at 91/100 and
 instruction following missed the critical Wilson gate at 95/100. Zero
 collapse, exact routing, exact strong-path identity, and teacher
-noninferiority remained. Do not sweep steps or exposure. The existing shared-
-parent frontier is closed; only read-only capability-bank feasibility may
-precede one selected-only capability-isolated adaptation design. Phase 4 is
-not certified.
+noninferiority remained. Do not sweep steps or exposure. The shared-parent
+frontier is closed. V657's five-fold capability-selected development bank
+passed every absolute quality gate at 1,384/1,400 but retained one
+clarification collapse. V661 applied the unchanged universal V2 guard to every
+selected output: functional quality stayed 1,384/1,400, all 14 capability and
+critical gates remained passing, and collapse fell from one to zero. This is
+read-only design evidence, not a candidate or certificate. Exactly one
+prospective physically selected, capability-isolated sparse adaptation with
+one active path, the unchanged guard, and complete installed/active resource
+accounting may be designed and preregistered. Training is prohibited until its
+protocol and preflight are sealed. Phase 4 is not certified.
 
 The exact route-isolated endpoint scored 1,393/1,400 with zero repetition
 collapse at seed 240487 and passed all four same-lineage causal controls across

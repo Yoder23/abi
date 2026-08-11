@@ -1,0 +1,34 @@
+{
+  "format": "abi-capability-compiler-phase4-universal-guard-feasibility-summary/1",
+  "version": 662,
+  "status_date": "2026-08-11",
+  "status": "PASS_DESIGN_SUPPORTED_NOT_A_CANDIDATE",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_UNIVERSAL_GUARD_FEASIBILITY_PROTOCOL_V660.json",
+    "sha256": "d09e915768da4ad100fdc7cf3a4d5ede8f476dd65e22856358417078664e653e"
+  },
+  "raw_result": {
+    "path": "results/abi_capability_compiler_phase4_universal_guard_feasibility/audit_v661/result.json",
+    "sha256": "7175388d8baf9da92c66bc1cb233e56d48715e1d7796aa8133091cff6eed77c2",
+    "evidence_sha256": "0cba8313d7983a45c7077236a16084604ac8f72b3e8111db7c0f2696fc4b7570"
+  },
+  "guarded_outputs": {
+    "path": "results/abi_capability_compiler_phase4_universal_guard_feasibility/audit_v661/guarded_outputs.jsonl",
+    "sha256": "fd88b632432daacfd4653baae09b849a7fa936f63a74dbb9bef6d2d888a46719"
+  },
+  "machine_quality": {
+    "functional_passes": "1384/1400",
+    "functional_passes_before_guard": "1384/1400",
+    "all_14_per_capability_gates": true,
+    "all_critical_gates": true,
+    "repetition_collapses_v2_before_guard": 1,
+    "repetition_collapses_v2_after_guard": 0,
+    "guard_terminations": 1
+  },
+  "training_performed": false,
+  "promotion_authorized": false,
+  "final_test_accessed": false,
+  "decision": "Authorize design and preregistration of exactly one physically selected capability-isolated sparse adaptation artifact with the unchanged universal V2 guard, one active capability path, and complete installed-versus-active byte and parameter accounting. Training remains prohibited until that prospective protocol and its preflight are sealed.",
+  "claim_boundary": "Passed read-only development feasibility diagnostic only. The post-hoc bank is not a deployable or promoted candidate; no stable information frontier, minimum, matched baseline, final test, Phase 4 certificate, or ABI-superiority claim exists."
+}
