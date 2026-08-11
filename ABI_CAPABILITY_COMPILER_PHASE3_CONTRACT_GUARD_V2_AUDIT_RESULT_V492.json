@@ -1,0 +1,15 @@
+{
+  "format": "abi-capability-compiler-phase3-contract-guard-v2-summary/1",
+  "version": 492,
+  "status": "PASS_EXACT_V2_CONTRACT_GUARD_FEASIBILITY",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {"path": "ABI_CAPABILITY_COMPILER_PHASE3_CONTRACT_GUARD_V2_AUDIT_PROTOCOL_V491.json", "sha256": "ee790140f1d304dc520e0d1532050722e23b38614d787fde20f38153747122af"},
+  "raw_evidence": {"result_path": "results/abi_capability_compiler_phase3_contract_guard_v2/audit_v492/result.json", "result_sha256": "7418da8e9382c937ea2a5c82cc65ae68bd003958d17bb162ec7995cf4d79336d", "outputs_sha256": "c1070851b52f5f5ea5ab15da3b264d4fb4484f71f0c3d929629e97a862fec51a", "evidence_sha256": "8f62d6ea58a092f0109a5d4162aead4a3bc3cf762b1d9e198d4ec4d62e789cb6"},
+  "measurements": {"functional_v1_passes": 1386, "abstention_passes": "100/100", "abstention_wilson_lower_95": 0.9630065017930143, "repetition_collapses_v2": 0, "v2_truncations": 5, "abstention_prefixes": 5, "existing_functional_passes_lost": 0, "noncollapsed_outputs_changed": 0, "strong_outputs_changed": 0},
+  "decision": "Authorize one preregistered online exact-V2 guarded generator on the unchanged V488 checkpoint and one fresh 1,400-prompt autonomous development screen. Strong routes bypass the guard. Offline feasibility is not a model or runtime pass.",
+  "online_implementation_authorized": true,
+  "promotion_eligible": false,
+  "phase3_certified": false,
+  "final_test_accessed": false
+}
