@@ -16,7 +16,7 @@ Status date: 2026-08-11
 
 **The ABI English-product moonshot is OPEN.**
 
-The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V569.json`.
+The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V572.json`.
 The route-isolated English endpoint now passes all registered Phase 3 machine
 gates: three paired training seeds and all A0-A4 causal controls, 1,393/1,400
 selected-seed autonomous quality with zero collapse, exact routing, three
@@ -62,7 +62,10 @@ the V463 core already inherits full Phase 1 data through V443 and V459. Phase
 nested budget and compare matched LoRA and distillation frontiers. V559 permits
 that protocol design but not training until it is sealed. V567 now freezes
 balanced nested B10/B20/B40/B80/B100 consumed-information prefixes and the
-three-seed adaptive order. Phase 2 and Phase 3
+three-seed adaptive order. V570 implemented the clean-start ABI arm. B10
+(1,018 unique attempts, 31,434 teacher tokens) failed scientifically at
+1,190/1,400 with 43 collapses, although routing and strong-path identity were
+exact. The sealed adaptive order now authorizes B20 only. Phase 2 and Phase 3
 certificate statuses remain unchanged, final data remains unopened, and Phase
 5 is locked.
 

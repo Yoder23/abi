@@ -1,0 +1,50 @@
+{
+  "format": "abi-capability-compiler-phase4-abi-budget-summary/1",
+  "version": 571,
+  "status_date": "2026-08-11",
+  "status": "FAIL_PHASE4_ABI_B10_MACHINE_GATES_B20_AUTHORIZED",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_ABI_LINEAGE_PROTOCOL_V570.json",
+    "sha256": "50cd9abc83b584bf1682b57f606bbdcba75fbeda76eeeaa48edafbbc08e8505c"
+  },
+  "raw_result": {
+    "path": "results/abi_capability_compiler_phase4_abi_lineage/B10-seed104729-v571/result.json",
+    "sha256": "9c5e6277b6b3f3a10fb3c4d74c087ec1e34a5d626b874d6f59732557028b27e9",
+    "evidence_sha256": "b71dcca67b7194e71d74823bf3a95ad22d5d7f3f428d5d22d22969b1c7064ab1"
+  },
+  "budget": {
+    "id": "B10",
+    "unique_source_attempts": 1018,
+    "authoritative_teacher_output_tokens": 31434,
+    "phase1_records": 700,
+    "targeted_weak_records": 200,
+    "host_records": 128
+  },
+  "machine_quality": {
+    "functional_passes": "1190/1400",
+    "repetition_collapses_v2": 43,
+    "router_correct": "1400/1400",
+    "strong_parent_exact": "1000/1000",
+    "teacher_relative_difference": -0.03357142857142857,
+    "teacher_relative_lower_95": -0.05357142857142857
+  },
+  "failed_gates": [
+    "per_capability_functional",
+    "critical_capabilities",
+    "zero_repetition_collapse",
+    "teacher_noninferiority"
+  ],
+  "largest_deficits": {
+    "coherence": "11/100",
+    "prompt_grounding": "70/100",
+    "fact_free_reasoning": "78/100",
+    "fluent_realization": "80/100"
+  },
+  "causal_interpretation": "Architecture, routing, teacher absence, and strong-path identity pass, but 10% imported information is insufficient for autonomous quality and collapse resistance.",
+  "wall_seconds": 1985.585912200011,
+  "final_test_accessed": false,
+  "phase4_certified": false,
+  "next_action": "Execute only preregistered B20 at screening seed 104729.",
+  "claim_boundary": "Preserved B10 negative evidence only; no frontier, adjacent boundary, replication, runtime, Phase 4 certificate, final-test result, or superiority claim."
+}

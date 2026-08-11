@@ -1,0 +1,152 @@
+{
+  "bridge": {
+    "parameters": 100352,
+    "source_parameters_copied": 0,
+    "weak_capabilities": [
+      "abstention",
+      "coherence",
+      "fluent_realization",
+      "tone_control"
+    ]
+  },
+  "checkpoint": {
+    "bytes": 401968,
+    "path": "host_recovery_bridge.safetensors",
+    "sha256": "8c6a5cf646f94f6b51fb8f9aab578f76a5915f8b09dc89600e5c573f6e6320d4"
+  },
+  "evidence_sha256": "aed3886cd4272850689319b727232d939a5306000307a2f7d70ea85d194dba74",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-host-recovery-bridge/1",
+  "initialization": {
+    "checkpoint_sha256": "febe255182197f4893c4e623dad18a503bbe6bd816ea0d1e44f71debcfe23a53",
+    "state_sha256": "acd1ff6fb6fc241671980042cfe87a84068403dfc91529d3af3dcc2b2fbebf05"
+  },
+  "parent": {
+    "checkpoint_sha256": "004733dfa9837830ca22de772558a478dc75577b9e2290ff7d1b01e252e29a4f",
+    "mutated": false,
+    "state_sha256_after": "616fd82c7f3bc8963733d78573cd44a1cd7b42490e59a232861030be7c17fc27",
+    "state_sha256_before": "616fd82c7f3bc8963733d78573cd44a1cd7b42490e59a232861030be7c17fc27"
+  },
+  "phase3_certified": false,
+  "promotion_eligible": false,
+  "protocol_sha256": "d1fda9ed89784b14b1a6e8a69457c50f1d194356aedc3b0946ba9a5001608647",
+  "source_blocks_retained": 0,
+  "status": "TRAINED_DEVELOPMENT_ONLY_NONPROMOTIONAL",
+  "supervision": {
+    "artifact_sha256": "b9f5a7b2373761bff3bf161da6b198d80a1565ae02c54b61273b84e342dd6fa0",
+    "observations_by_stratum": {
+      "abstention:0": 2000,
+      "abstention:1": 2000,
+      "abstention:2": 2000,
+      "abstention:3": 2000,
+      "coherence:0": 2000,
+      "coherence:1": 2000,
+      "coherence:2": 2000,
+      "coherence:3": 2000,
+      "fluent_realization:0": 2000,
+      "fluent_realization:1": 2000,
+      "fluent_realization:2": 2000,
+      "fluent_realization:3": 2000,
+      "tone_control:0": 2000,
+      "tone_control:1": 2000,
+      "tone_control:2": 2000,
+      "tone_control:3": 2000
+    },
+    "records": 128,
+    "teacher_tokens_seen": 872926
+  },
+  "teacher_present_at_inference": false,
+  "teacher_present_during_training": false,
+  "training": {
+    "active_parameter_seconds": 26660240.995942056,
+    "autonomous_prefix_tokens_seen": 16422,
+    "curves": [
+      {
+        "language_loss": 1.0349748134613037,
+        "recovery_horizon": null,
+        "step": 1,
+        "wall_seconds": 0.08643520000623539
+      },
+      {
+        "language_loss": 0.11028642952442169,
+        "recovery_horizon": null,
+        "step": 250,
+        "wall_seconds": 28.85157159998198
+      },
+      {
+        "language_loss": 1.0871623754501343,
+        "recovery_horizon": 8,
+        "step": 500,
+        "wall_seconds": 62.70918889998575
+      },
+      {
+        "language_loss": 0.05785718560218811,
+        "recovery_horizon": null,
+        "step": 750,
+        "wall_seconds": 96.2492426999961
+      },
+      {
+        "language_loss": 0.07104361057281494,
+        "recovery_horizon": 4,
+        "step": 1000,
+        "wall_seconds": 130.26538369999616
+      },
+      {
+        "language_loss": 0.025879263877868652,
+        "recovery_horizon": null,
+        "step": 1250,
+        "wall_seconds": 164.13542799997958
+      },
+      {
+        "language_loss": 0.025062954053282738,
+        "recovery_horizon": 16,
+        "step": 1500,
+        "wall_seconds": 198.00235170000815
+      },
+      {
+        "language_loss": 0.01733378693461418,
+        "recovery_horizon": null,
+        "step": 1750,
+        "wall_seconds": 231.57600619998993
+      },
+      {
+        "language_loss": 0.012461792677640915,
+        "recovery_horizon": 8,
+        "step": 2000,
+        "wall_seconds": 265.45247469999595
+      }
+    ],
+    "device": "cuda",
+    "observations": 32000,
+    "peak_cuda_allocated_bytes": 2303496192,
+    "peak_process_rss_bytes": 1935302656,
+    "record_sequence_sha256": "eea1ab34cd350b23774ecc9d2130d93c709e0dc3201267a1f68d0dfe33d85da0",
+    "recovery_batches": 476,
+    "recovery_by_stratum": {
+      "abstention:0": 119,
+      "abstention:1": 119,
+      "abstention:2": 119,
+      "abstention:3": 119,
+      "coherence:0": 119,
+      "coherence:1": 119,
+      "coherence:2": 119,
+      "coherence:3": 119,
+      "fluent_realization:0": 119,
+      "fluent_realization:1": 119,
+      "fluent_realization:2": 119,
+      "fluent_realization:3": 119,
+      "tone_control:0": 119,
+      "tone_control:1": 119,
+      "tone_control:2": 119,
+      "tone_control:3": 119
+    },
+    "recovery_horizon_batches": {
+      "16": 158,
+      "4": 159,
+      "8": 159
+    },
+    "seed": 104729,
+    "steps": 2000,
+    "wall_seconds": 265.6672611999966
+  }
+}
