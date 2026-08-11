@@ -1,0 +1,29 @@
+{
+  "format": "abi-capability-compiler-phase3-candidate-device-audit-summary/1",
+  "version": 510,
+  "status": "FAIL_CONFIRMED_CANDIDATE_ROUTER_CUDA_DEVICE",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_CANDIDATE_DEVICE_AUDIT_PROTOCOL_V509.json",
+    "sha256": "ffbce7c534694e4a99d113b75f25d0ae70b8ba604169c7dc7c7d6cfdea127427"
+  },
+  "raw_result": {
+    "path": "results/abi_capability_compiler_phase3_candidate_device_audit/audit_v510/result.json",
+    "sha256": "41483ba4b44c7aac2feb03a946cda2a0d913d198823b75fecd73d198411ef5fb"
+  },
+  "physical_evidence": {
+    "router_parameter_devices": ["cuda:0"],
+    "cuda_allocated_before_route_bytes": 4232704,
+    "cuda_allocated_after_route_bytes": 4232704,
+    "cuda_peak_allocated_bytes": 4246016,
+    "route_correct": true,
+    "fully_cpu_candidate_path": false
+  },
+  "decision": "V506 cannot supply any CPU candidate metric. Repair only router checkpoint loading and sparse feature tensor placement to follow the requested CPU device, leaving weights, tokenizer, feature extraction, segmentation, route selection, LayerCake checkpoint, bridge, guard, prompts, counts, and gates unchanged. Require zero CUDA allocation in the repaired matched screen.",
+  "optimization_attempt_consumed": false,
+  "promotion_eligible": false,
+  "phase3_certified": false,
+  "final_test_accessed": false,
+  "claim_boundary": "Physical device failure only; no valid candidate CPU runtime, Phase 3, or superiority claim."
+}
