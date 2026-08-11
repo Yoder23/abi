@@ -1,0 +1,93 @@
+{
+  "format": "abi-capability-compiler-phase3-shared-gradient-conflict/1",
+  "protocol_id": "abi-capability-compiler-phase3-shared-gradient-conflict-v475",
+  "status": "PREREGISTERED_READ_ONLY_GRADIENT_ATTRIBUTION",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V474.json",
+  "historical_evidence_changed": false,
+  "neural_training_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "promotion_eligible": false,
+  "objective": "Measure whether the four weak capabilities demand materially conflicting updates to the already-trained V474 shared residual before authorizing any capability-isolated successor.",
+  "scope": {
+    "capabilities": [
+      "abstention",
+      "coherence",
+      "fluent_realization",
+      "tone_control"
+    ],
+    "parameters": [
+      "norm.weight",
+      "norm.bias",
+      "down.weight",
+      "up.weight"
+    ],
+    "candidate_state": "frozen V474 residual at its sealed post-training state",
+    "loss_streams": "equal counts from independently extracted V138 targeted IR and original Phase 1 anchor IR",
+    "teacher_model_loaded": false,
+    "optimizer_created": false,
+    "optimizer_step_authorized": false
+  },
+  "parent": {
+    "base_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_QUALIFIED_TRANSITION_CONTROL_PROTOCOL_V440.json",
+    "checkpoint": "results/abi_capability_compiler_phase3_token_substrate_conformance/candidate_v463/model.safetensors",
+    "checkpoint_sha256": "d354eee236c1153a92e3b2d05f806fb4238438aebd2c8a889ed9dcb8f1f192c8",
+    "parameters": 61655050,
+    "immutable": true
+  },
+  "candidate": {
+    "checkpoint": "results/abi_capability_compiler_phase3_targeted_recovery_bridge/candidate_v474/targeted_recovery_bridge.safetensors",
+    "checkpoint_sha256": "347e121d0d047146a12d94304621eaa8c2309b345ce1f9be21db80f11fc0be54",
+    "parameters": 100352,
+    "immutable": true
+  },
+  "targeted_ir": {
+    "path": "results/abi_capability_compiler_phase3/targeted_combined_ir_v137/normalized_targeted_combined_v138.abicir",
+    "sha256": "9fa2467a37c870db7a24640a8d6da46ed73941573026af2c9a4c3425fd98dd18"
+  },
+  "anchor_ir": {
+    "path": "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir",
+    "sha256": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20"
+  },
+  "execution": {
+    "device": "cuda",
+    "seed": 240475,
+    "records_per_stream_per_capability": 32,
+    "records_per_capability": 64,
+    "total_records": 256,
+    "batch_size": 8,
+    "max_tokens": 512,
+    "prompt_overlap_weight": 4.0,
+    "precision": "float16_autocast",
+    "gradient_target": "shared residual parameters only",
+    "sampling": "lexicographically first record identifiers per frozen stream and capability"
+  },
+  "decision_rule": {
+    "material_negative_cosine_maximum": -0.1,
+    "if_any_pair_at_or_below_threshold": "Authorize one preregistered physically exclusive per-capability residual experiment; do not infer that expert isolation will pass quality.",
+    "if_no_pair_at_or_below_threshold": "Do not train capability experts; return to evidence-supported data, target-definition, and recovery attribution.",
+    "nearby_threshold_or_sample_sweeps_authorized": false
+  },
+  "bindings": {
+    "abi/capability_compiler_phase3_shared_gradient_conflict.py": "a7447b47c4db9085691632f2e2c91438ac6c49895365b7607debdf517225efec",
+    "tests/test_capability_compiler_phase3_shared_gradient_conflict.py": "af1c16ef2386fc64ca3b81543265e4cab468766767b2d785e52b0a372f279420",
+    "abi/capability_compiler_phase3_targeted_recovery_bridge.py": "b13e71896c64de7fe74a68519b23af322f4d13442cae60bf078c031ae6451696",
+    "abi/capability_compiler_phase3_weak_residual.py": "b1bbb265c4e833f697331112f9c657a0d743790d6ce3e3811d5e9d677a60bfb8",
+    "abi/capability_compiler_phase3_weak_support_audit.py": "b11539877ef10f8a6ef7ed1bb6e3450d3379e94327b82bbf46c9c1902dba9fb3",
+    "abi/capability_compiler_phase3_sequence_bridge.py": "772cbbcf4c511014e2ab3af32b26ee58ef33c0254758177f22d7144cf47459b7",
+    "abi/capability_compiler_phase3.py": "5d490989e088f42aba4bd2ca96fbe70ea2db211890369dd6f431dd781390c77b",
+    "abi/capability_compiler_phase2_common.py": "8093ec2016d685f0327c87640042c8373bc141d76351fd641b21a44d018b6c92",
+    "abi/layercake_host.py": "e441accebe9c806afd35894ae2c31d901e27994c2222ed0a4e0b78a9c5b9f0f0",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V474.json": "b8d60d0e3fe9af5ba7793c510db7a1d62a93be44c19c5e05385fbf3dba55e1e4",
+    "ABI_CAPABILITY_COMPILER_PHASE3_TARGETED_RECOVERY_BRIDGE_PROTOCOL_V473.json": "1ae5bd453861754d5ded13f05dda4dd6242bb2fa4619ffe141bd86a09e98c47f",
+    "ABI_CAPABILITY_COMPILER_PHASE3_TARGETED_RECOVERY_BRIDGE_RESULT_V474.json": "83db2191dc1a915ae2607a8daf6552b7e756dd7fb971ab3bb0b186168d232f27",
+    "ABI_CAPABILITY_COMPILER_PHASE3_QUALIFIED_TRANSITION_CONTROL_PROTOCOL_V440.json": "367f9e24e5bb06719a7252670097e8d6cfaf64cb18f95b436b388abac303bec4",
+    "results/abi_capability_compiler_phase3_targeted_recovery_bridge/candidate_v474/targeted_recovery_bridge.safetensors": "347e121d0d047146a12d94304621eaa8c2309b345ce1f9be21db80f11fc0be54",
+    "results/abi_capability_compiler_phase3_token_substrate_conformance/candidate_v463/model.safetensors": "d354eee236c1153a92e3b2d05f806fb4238438aebd2c8a889ed9dcb8f1f192c8",
+    "results/abi_capability_compiler_phase3/targeted_combined_ir_v137/normalized_targeted_combined_v138.abicir": "9fa2467a37c870db7a24640a8d6da46ed73941573026af2c9a4c3425fd98dd18",
+    "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20"
+  },
+  "phase2_external_blocker": "21000 blinded judgments from three independent human raters remain unavailable and are not waived.",
+  "phase3_certified": false,
+  "claim_boundary": "Read-only development attribution only; no training, promotion, runtime, final-test, Phase 3, or superiority claim."
+}
