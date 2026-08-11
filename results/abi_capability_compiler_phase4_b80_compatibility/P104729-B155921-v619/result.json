@@ -1,0 +1,46 @@
+{
+  "bridge_checkpoint_sha256": "71774b9836afd0e934eef754aeb119e6db2408bcd1c7751d4dce519bfc2333a0",
+  "bridge_seed": 155921,
+  "claim_boundary": "One read-only B80 parent/bridge compatibility cell; no candidate promotion, minimum, runtime, matched-baseline, final-test, Phase 4 certificate, or superiority claim.",
+  "evidence_sha256": "244e62d9e88561978b2f4d548a62845b5affa1af01b9ef5594b9093ce2ded0ae",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase4-b80-compatibility-result/1",
+  "functional_passes_v1": 1287,
+  "gates": {
+    "critical_capabilities": true,
+    "final_test_not_accessed": true,
+    "per_capability_functional": false,
+    "router_exact": true,
+    "strong_parent_exact": true,
+    "teacher_absent": true,
+    "teacher_noninferior": true,
+    "zero_repetition_collapse": true
+  },
+  "hardware": {
+    "cuda": "11.8",
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "machine": "Sam",
+    "torch": "2.7.1+cu118"
+  },
+  "model_construction_performed": false,
+  "new_teacher_information": 0,
+  "parent_checkpoint_sha256": "96f522b08dbdc4a5e9e16fdba99f157e62b908df9116220baaff88086970d3cf",
+  "parent_seed": 104729,
+  "phase4_certified": false,
+  "protocol_sha256": "f38f7ff1d3713f830abe1f0c1c7cc2974657056344fc9c9ded794e517c1af391",
+  "repetition_collapses_v2": 0,
+  "router_checkpoint_sha256": "d085305017f556c13b4da75947c30430e0ec0743170fe82543d267b1ef872be9",
+  "router_correct": 1400,
+  "status": "FAIL_B80_CROSS_SEED_MACHINE_GATES",
+  "strong_routes_exact": 1000,
+  "teacher_comparison_v1": {
+    "candidate_minus_teacher": 0.03571428571428571,
+    "lower_95": 0.017142857142857144,
+    "method": "capability_stratified_paired_percentile_bootstrap",
+    "replicates": 10000,
+    "seed": 4875650,
+    "upper_95": 0.054285714285714284
+  },
+  "teacher_present_at_inference": false,
+  "training_performed": false
+}

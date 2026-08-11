@@ -1,0 +1,24 @@
+{
+  "format": "abi-capability-compiler-phase4-b80-compatibility-audit/1",
+  "protocol_id": "abi-capability-compiler-phase4-b80-compatibility-audit-v624",
+  "status": "SEALED_READ_ONLY_INTERACTION_AUDIT",
+  "status_date": "2026-08-11",
+  "cells": [
+    {"parent_seed": 104729, "bridge_seed": 104729, "diagonal": true, "path": "results/abi_capability_compiler_phase4_uniform_final_bridge/B80-seed104729-v595/result.json", "sha256": "95163f9417c3487fcfb079f6dce3281b6fd3f829c8722e147bb5915a3d1538c7"},
+    {"parent_seed": 104729, "bridge_seed": 130363, "diagonal": false, "path": "results/abi_capability_compiler_phase4_b80_compatibility/P104729-B130363-v618/result.json", "sha256": "f0a6e8ea5e0d7eb5125076f426f1a33177926b61569e803cfbbd8e4c3de6fabd"},
+    {"parent_seed": 104729, "bridge_seed": 155921, "diagonal": false, "path": "results/abi_capability_compiler_phase4_b80_compatibility/P104729-B155921-v619/result.json", "sha256": "11e89a4e907ec6f1071bb191db7eb50e68f9992724fb656f5a5a5a77622c0d08"},
+    {"parent_seed": 130363, "bridge_seed": 104729, "diagonal": false, "path": "results/abi_capability_compiler_phase4_b80_compatibility/P130363-B104729-v620/result.json", "sha256": "ec22056d7c590eac00d579f6e7996ddee4977a94c1698a2b22821ec78ba31b27"},
+    {"parent_seed": 130363, "bridge_seed": 130363, "diagonal": true, "path": "results/abi_capability_compiler_phase4_uniform_final_bridge/B80-seed130363-v599/result.json", "sha256": "33ac206e5f6870b1725c8f341b85529769f60be0debc9998412bb17e5c84fe2e"},
+    {"parent_seed": 130363, "bridge_seed": 155921, "diagonal": false, "path": "results/abi_capability_compiler_phase4_b80_compatibility/P130363-B155921-v621/result.json", "sha256": "18ad3fe380d4cf73cc32469d694489f44a123b7c799b1b5a303fa6775af7c218"},
+    {"parent_seed": 155921, "bridge_seed": 104729, "diagonal": false, "path": "results/abi_capability_compiler_phase4_b80_compatibility/P155921-B104729-v622/result.json", "sha256": "e52d5ba231c8366a1b7cce61a9a23c9b1c937fca4f8259c0af8cd7347f5e50bf"},
+    {"parent_seed": 155921, "bridge_seed": 130363, "diagonal": false, "path": "results/abi_capability_compiler_phase4_b80_compatibility/P155921-B130363-v623/result.json", "sha256": "60f71e5fa9f5cc6f1230c8bde110c8e928bac29f65ec01ba51d294c1d28222d6"},
+    {"parent_seed": 155921, "bridge_seed": 155921, "diagonal": true, "path": "results/abi_capability_compiler_phase4_uniform_final_bridge/B80-seed155921-v603/result.json", "sha256": "b08535b92f39a68c37b70f6193c7c7356a2a89568b216054ea899098e9c5da51"}
+  ],
+  "bindings": {
+    "abi/capability_compiler_phase4_b80_compatibility_audit.py": "64858607dc4d50d1f71f230a6f63306bd86141a13056026a3f3d5e96aa047635",
+    "tests/test_capability_compiler_phase4_b80_compatibility_audit.py": "57d14a4c6212684a28261bd6e5847500103235cdb0bda8bde59740208d2bbbdf"
+  },
+  "training_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "claim_boundary": "Read-only B80 interaction attribution only; no candidate promotion, minimum, runtime, matched-baseline, final-test, Phase 4 certificate, or superiority claim."
+}
