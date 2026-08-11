@@ -1,0 +1,38 @@
+{
+  "format": "abi-capability-compiler-phase3-candidate-device-audit/1",
+  "protocol_id": "abi-capability-compiler-phase3-candidate-device-audit-v509",
+  "status": "PREREGISTERED_READ_ONLY_PHYSICAL_ROUTER_DEVICE_AUDIT",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V508.json",
+  "historical_evidence_changed": false,
+  "neural_training_authorized": false,
+  "performance_measurement_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "promotion_eligible": false,
+  "objective": "Physically load the exact V506 qualified-router path, record every router parameter device plus CUDA allocation before and after one locked development route, and determine whether the candidate path was fully CPU-only without using performance data.",
+  "candidate": {
+    "screen_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_GUARDED_SCREEN_PROTOCOL_V493.json",
+    "router_checkpoint_sha256": "cc1f384a49fdaad94d47c5feb4573dcc7eb688ac96ffd7bfffade811861acb48"
+  },
+  "development": {
+    "catalog": "catalogs/capability_compiler_phase1_frozen_v1.json"
+  },
+  "decision_rule": "Any non-CPU router parameter device or positive CUDA allocation confirms V506 was hybrid and requires an implementation-only CPU router loader and feature-device propagation repair before the same runtime screen may be repeated. This audit cannot authorize optimization or certify runtime.",
+  "bindings": {
+    "abi/capability_compiler_phase3_candidate_device_audit.py": "925a17df00b28b982571a97f3013f6db3cb846f04622532579ce5df94ca70a91",
+    "tests/test_capability_compiler_phase3_candidate_device_audit.py": "5b9e7c2d5f9b39bfc039eb4ebdf32238351b7f9453aeb91352f0f34445c82a9c",
+    "abi/capability_compiler_phase3_sparse_router.py": "e44b0f8cb90a8999d836d974e792392cd6fe2b4a347c19eb35e200d81016a8ec",
+    "abi/capability_compiler_phase3_targeted_recovery_bridge.py": "b13e71896c64de7fe74a68519b23af322f4d13442cae60bf078c031ae6451696",
+    "abi/capability_compiler_phase2_common.py": "8093ec2016d685f0327c87640042c8373bc141d76351fd641b21a44d018b6c92",
+    "abi/capability_compiler_phase2_teacher.py": "dc76ee575f5e5f2cccd9fe8279ae501920bb022e8e62a921240ea3e5a9ced892",
+    "abi/capability_compiler_phase3.py": "5d490989e088f42aba4bd2ca96fbe70ea2db211890369dd6f431dd781390c77b",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V508.json": "05a5e94f251d8b19691e2b873e4610ae66ddeb078f232242d435cc19c3c5b0fb",
+    "ABI_CAPABILITY_COMPILER_PHASE3_QWEN_RSS_AUDIT_RESULT_V508.json": "42c36f15374bbb0fce68c4188439866678c5d7cf635ae64fa7b52a4c543c249a",
+    "ABI_CAPABILITY_COMPILER_PHASE3_GUARDED_SCREEN_PROTOCOL_V493.json": "d9c835ad542185ee4a30c4e6352af568693a316a4c03bd2d941a8f76fd03ddb9",
+    "results/abi_capability_compiler_phase3_sparse_router/development_v45/R0-seed240045/router.safetensors": "cc1f384a49fdaad94d47c5feb4573dcc7eb688ac96ffd7bfffade811861acb48",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a"
+  },
+  "phase2_external_blocker": "21000 blinded judgments from three independent human raters remain unavailable and are not waived.",
+  "phase3_certified": false,
+  "claim_boundary": "Read-only physical router device audit; no performance, quality, final-test, Phase 3, or superiority claim."
+}
