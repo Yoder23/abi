@@ -1,0 +1,38 @@
+{
+  "format": "abi-capability-compiler-phase3-replication-semantic-identity-audit/1",
+  "protocol_id": "abi-capability-compiler-phase3-replication-semantic-identity-audit-v501",
+  "status": "PREREGISTERED_READ_ONLY_THREE_WAY_SEMANTIC_IDENTITY_AUDIT",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V500.json",
+  "historical_evidence_changed": false,
+  "neural_training_authorized": false,
+  "new_generation_authorized": false,
+  "teacher_model_loading_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "promotion_eligible": false,
+  "objective": "Determine whether V494, H1, and H2 are exactly identical on every semantic, token, routing, guard-action, functional, repetition, and strong-identity field while excluding only the directly measured guard_check_seconds duration that caused V499's overbroad full-file hash failure.",
+  "allowed_nondeterministic_fields": ["guard_check_seconds"],
+  "hosts": [
+    {"id": "H0-V494", "path": "results/abi_capability_compiler_phase3_guarded_screen/evaluation_v494/development_outputs.jsonl", "sha256": "7c0bff11da4c12ac06ea315c5e62841c670e4698d766a259c3908cd0fe981d1d"},
+    {"id": "H1-fresh-process", "path": "results/abi_capability_compiler_phase3_guarded_replication/replication_v500/H1-fresh-process/development_outputs.jsonl", "sha256": "ebb7ded9676eba453487a3d9794ceca9b237a03d0e447156a74dcd8fd1316c41"},
+    {"id": "H2-fresh-process", "path": "results/abi_capability_compiler_phase3_guarded_replication/replication_v500/H2-fresh-process/development_outputs.jsonl", "sha256": "87810746031c711d6ea5b7d2414ce6b55cc57f50669dab6af6b7d11b0b8e351c"}
+  ],
+  "required_identical_fields": "every JSON field except guard_check_seconds, including output, output_token_ids, prompt and capability identity, automatic route, task route, guard termination, abstention prefix, functional V1/V2, repetition V2, and strong-parent exactness",
+  "adversarial_tests": ["output mutation", "completed response token mutation", "guard action mutation", "missing observation"],
+  "decision_rule": "Exact semantic identity across all three hosts plus rejection of every semantic mutation satisfies the three-host-initialization reproducibility gate and opens CPU runtime certification. Any semantic difference closes replication. No new generation, comparator-field sweep, or evidence rewrite is authorized.",
+  "bindings": {
+    "abi/capability_compiler_phase3_replication_semantic_audit.py": "0530b43715670e65f01c92a2a3d3ca3f55d00626b2425bcca92cc3d60d298952",
+    "tests/test_capability_compiler_phase3_replication_semantic_audit.py": "1eaec8e99f63c107c0b72685878d566a09e4a3cec121b488c22e9d669c81e297",
+    "abi/capability_compiler_phase2_common.py": "8093ec2016d685f0327c87640042c8373bc141d76351fd641b21a44d018b6c92",
+    "abi/capability_compiler_phase3.py": "5d490989e088f42aba4bd2ca96fbe70ea2db211890369dd6f431dd781390c77b",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V500.json": "4d75772ec35f934f8d74fdd01ec0ed3156d7a79890fb6148e811f2a208a3d5e4",
+    "ABI_CAPABILITY_COMPILER_PHASE3_GUARDED_REPLICATION_RESULT_V500.json": "db2b0f0f19fa5d72bed233c0f79dfd95b61f83ffeb51e6a52829351bbb5cf1dc",
+    "results/abi_capability_compiler_phase3_guarded_replication/replication_v500/replication_result.json": "a9066b7139581da4fc03035a223985517aa5f49e25d039280fcfc3cd0b02f841",
+    "results/abi_capability_compiler_phase3_guarded_screen/evaluation_v494/development_outputs.jsonl": "7c0bff11da4c12ac06ea315c5e62841c670e4698d766a259c3908cd0fe981d1d",
+    "results/abi_capability_compiler_phase3_guarded_replication/replication_v500/H1-fresh-process/development_outputs.jsonl": "ebb7ded9676eba453487a3d9794ceca9b237a03d0e447156a74dcd8fd1316c41",
+    "results/abi_capability_compiler_phase3_guarded_replication/replication_v500/H2-fresh-process/development_outputs.jsonl": "87810746031c711d6ea5b7d2414ce6b55cc57f50669dab6af6b7d11b0b8e351c"
+  },
+  "phase2_external_blocker": "21000 blinded judgments from three independent human raters remain unavailable and are not waived.",
+  "phase3_certified": false,
+  "claim_boundary": "Read-only correction of a measured comparator defect; no generation, runtime, final-test, Phase 3, or superiority claim."
+}
