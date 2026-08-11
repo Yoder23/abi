@@ -1,0 +1,15 @@
+{
+  "format": "abi-capability-compiler-phase3-final-certificate-audit-execution-incident/1",
+  "version": "549A",
+  "status_date": "2026-08-11",
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_PROTOCOL_V548.json",
+  "protocol_sha256": "910bc165cbaed8fb28ee1a81ce4e36537addf8e64e5f823b61d340a82b0e7390",
+  "status": "FAILED_BEFORE_DECISION_NO_OUTPUT_ARTIFACT",
+  "failure": "The rating parser attempted json.loads on blank separator lines in the three immutable blinded rater forms.",
+  "evidence_result_created": false,
+  "output_directory_created": false,
+  "scientific_fields_changed": false,
+  "authorized_repair": "Ignore whitespace-only lines while preserving every nonblank row, binding, required count, gate, and no-waiver rule.",
+  "historical_evidence_changed": false,
+  "final_test_accessed": false
+}

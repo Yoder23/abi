@@ -147,6 +147,20 @@ def _must_reject(name: str, machine: Mapping[str, bool]) -> str:
     raise Phase3Error(f"final Phase 3 audit accepted hostile mutation: {name}")
 
 
+def count_completed_ratings(paths: Iterable[Path]) -> tuple[int, int]:
+    rows = 0
+    filled = 0
+    for path in paths:
+        for line in path.open(encoding="utf-8"):
+            if not line.strip():
+                continue
+            row = json.loads(line)
+            rows += 1
+            if row.get("preference") in {"A", "B", "TIE", "BOTH_UNACCEPTABLE"}:
+                filled += 1
+    return rows, filled
+
+
 def run(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
     protocol, protocol_sha256 = load_protocol(root, protocol_path)
     if output.exists():
@@ -159,14 +173,7 @@ def run(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
     sparse = physical_sparse_microcheck()
     incremental = incremental_state_microcheck(root, protocol)
     manifest = _json(root / protocol["phase2_ratings"]["manifest"])
-    filled = 0
-    rows = 0
-    for relative in protocol["phase2_ratings"]["forms"]:
-        for line in (root / relative).open(encoding="utf-8"):
-            row = json.loads(line)
-            rows += 1
-            if row.get("preference") in {"A", "B", "TIE", "BOTH_UNACCEPTABLE"}:
-                filled += 1
+    rows, filled = count_completed_ratings(root / relative for relative in protocol["phase2_ratings"]["forms"])
     ratings_complete = manifest.get("status") == "COMPLETE" and rows == 21000 and filled == 21000
     machine, prerequisites = assess(artifact, verifier, replication, runtime, hosts, sparse, incremental, ratings_complete)
     rejected = []

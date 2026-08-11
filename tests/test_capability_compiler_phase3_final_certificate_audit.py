@@ -1,4 +1,4 @@
-from abi.capability_compiler_phase3_final_certificate_audit import assess, physical_sparse_microcheck
+from abi.capability_compiler_phase3_final_certificate_audit import assess, count_completed_ratings, physical_sparse_microcheck
 
 
 def test_physical_sparse_microcheck():
@@ -20,3 +20,9 @@ def test_assess_keeps_phase2_external_to_machine_gates():
     machine, prerequisites = assess(artifact, verifier, replication, runtime, hosts, sparse, incremental, False)
     assert all(machine.values())
     assert not prerequisites["phase2_complete"]
+
+
+def test_rating_counter_ignores_blank_separator_lines(tmp_path):
+    path = tmp_path / "ratings.jsonl"
+    path.write_text('{"preference":null}\n\n{"preference":"A"}\n\n', encoding="utf-8")
+    assert count_completed_ratings([path]) == (2, 1)
