@@ -22,7 +22,7 @@ LayerCake cake.
 Status date: 2026-08-11.
 
 The controlling machine-readable state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V593.json`. Phase 3 has completed and
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V597.json`. Phase 3 has completed and
 passed every currently required machine gate, but it is not unconditionally
 certified because the controlling campaign contract makes it depend on Phase
 2. Phase 2 has 21,000 immutable blinded rating rows and zero completed
@@ -97,7 +97,11 @@ are +84, -6, and +13 points. The single permitted design must remove random
 within-stratum exposure imbalance without new data, parameters, steps, budget,
 thresholds, or final access. V591/V592 now hash-bind and test that single
 intervention. Exactly the registered B40/B80 runs at seeds 104729, 130363, and
-155921 are authorized; no nearby sweep or other training is authorized.
+155921 are authorized; no nearby sweep or other training is authorized. The
+first stabilized pair, seed 104729, reproduces the intended boundary: B40
+fails at 1,360/1,400 with two collapses and B80 passes every gate at
+1,383/1,400 with zero collapses. Two paired seeds remain, so no stable frontier
+or minimum is yet established.
 
 The exact route-isolated endpoint scored 1,393/1,400 with zero repetition
 collapse at seed 240487 and passed all four same-lineage causal controls across

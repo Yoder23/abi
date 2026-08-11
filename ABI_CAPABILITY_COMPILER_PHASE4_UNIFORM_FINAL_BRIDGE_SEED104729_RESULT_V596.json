@@ -1,0 +1,37 @@
+{
+  "format": "abi-capability-compiler-phase4-uniform-final-bridge-paired-result/1",
+  "version": 596,
+  "status_date": "2026-08-11",
+  "status": "PASS_SEED104729_B40_FAIL_B80_PASS_BOUNDARY_REPRODUCED",
+  "historical_evidence_changed": false,
+  "protocol": {"path": "ABI_CAPABILITY_COMPILER_PHASE4_UNIFORM_FINAL_BRIDGE_PROTOCOL_V591.json", "sha256": "f665bdd55b31da9a21d646c9b3e0c07f11f4370d23f3e8e4cd8031ea8cc5b47b"},
+  "seed": 104729,
+  "runs": {
+    "B40": {
+      "status": "FAIL_PHASE4_STABILIZED_ABI_BUDGET_MACHINE_GATES",
+      "path": "results/abi_capability_compiler_phase4_uniform_final_bridge/B40-seed104729-v594/result.json",
+      "sha256": "c9368bccd9223e98298e7cd409b56b08cc1dd341bd8d833cd244c17a3e439ff0",
+      "checkpoint_sha256": "07d22c41377b5c925f52c82eccf1c5c0d7d6a3d6d81d4eae1b3e93b3706b97d9",
+      "functional_passes_v1": 1360,
+      "repetition_collapses_v2": 2,
+      "failed_gates": ["per_capability_functional", "zero_repetition_collapse"],
+      "limiting_capability": {"name": "format_control", "passes": 86, "observations": 100}
+    },
+    "B80": {
+      "status": "PASS_PHASE4_STABILIZED_ABI_BUDGET_MACHINE_GATES",
+      "path": "results/abi_capability_compiler_phase4_uniform_final_bridge/B80-seed104729-v595/result.json",
+      "sha256": "95163f9417c3487fcfb079f6dce3281b6fd3f829c8722e147bb5915a3d1538c7",
+      "checkpoint_sha256": "be9ccb3a3e154a4f0d73c4befbd8bc48973cec4357bfba483ed9e44b26a6e8b3",
+      "functional_passes_v1": 1383,
+      "repetition_collapses_v2": 0,
+      "teacher_relative_lower_95": 0.08857142857142856,
+      "all_gates": true
+    }
+  },
+  "exposure_balance": {"maximum_within_stratum_range": 1, "B40_floor_ceiling": [62, 63], "B80_floor_ceiling": [31, 32]},
+  "new_teacher_information": 0,
+  "final_test_accessed": false,
+  "phase4_certified": false,
+  "next_action": "Run the already sealed B40/B80 pair at seed 130363; no other intervention or sweep is authorized.",
+  "claim_boundary": "One of three paired seeds reproduces the intended ABI-arm boundary; no all-seed frontier, minimum, runtime, matched-baseline, final-test, Phase 4 certificate, or superiority claim."
+}

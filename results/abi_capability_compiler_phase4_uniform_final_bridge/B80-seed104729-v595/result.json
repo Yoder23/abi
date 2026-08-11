@@ -1,0 +1,275 @@
+{
+  "architecture_changed": false,
+  "budget": {
+    "authoritative_teacher_output_tokens": 238832,
+    "duplicate_memberships": 443,
+    "fraction": 0.8,
+    "id": "B80",
+    "record_memberships": 8224,
+    "records": {
+      "phase1_ir": 5600,
+      "v138_targeted_ir": 1600,
+      "v480_host_supervision": 1024
+    },
+    "selection_sha256": "8e64820947b9ab995071e267d999f2b9b0770208e36cf53b6d69fe1a5138e250",
+    "unique_source_attempts": 7781
+  },
+  "changed_component": "final_v526_sampler_only",
+  "checkpoint": {
+    "bytes": 399768,
+    "path": "control_bridge.safetensors",
+    "sha256": "be9ccb3a3e154a4f0d73c4befbd8bc48973cec4357bfba483ed9e44b26a6e8b3"
+  },
+  "claim_boundary": "Single preregistered final-bridge stabilization run; no stable frontier, minimum, runtime, matched-baseline, final-test, certificate, or superiority claim.",
+  "deployed_parameter_count_changed": false,
+  "evidence_sha256": "229865686560f9f732907042248057beb121e6f9661353fb23cb8825378f9050",
+  "exposure_balance": {
+    "maximum_within_stratum_exposure_range": 1,
+    "ordering": "lexicographic_record_id",
+    "recovery_uses_same_step_record": true,
+    "seed_dependent_sampling": false,
+    "strata": {
+      "abstention:0:host_projected": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "abstention:0:source_wrapped": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "abstention:1:host_projected": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "abstention:1:source_wrapped": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "abstention:2:host_projected": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "abstention:2:source_wrapped": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "abstention:3:host_projected": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "abstention:3:source_wrapped": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "coherence:0:host_projected": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "coherence:0:source_wrapped": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "coherence:1:host_projected": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "coherence:1:source_wrapped": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "coherence:2:host_projected": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "coherence:2:source_wrapped": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "coherence:3:host_projected": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "coherence:3:source_wrapped": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "fluent_realization:0:host_projected": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "fluent_realization:0:source_wrapped": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "fluent_realization:1:host_projected": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "fluent_realization:1:source_wrapped": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "fluent_realization:2:host_projected": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "fluent_realization:2:source_wrapped": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "fluent_realization:3:host_projected": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "fluent_realization:3:source_wrapped": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "tone_control:0:host_projected": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "tone_control:0:source_wrapped": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "tone_control:1:host_projected": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "tone_control:1:source_wrapped": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "tone_control:2:host_projected": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "tone_control:2:source_wrapped": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "tone_control:3:host_projected": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      },
+      "tone_control:3:source_wrapped": {
+        "maximum_exposures": 32,
+        "minimum_exposures": 31,
+        "range": 1,
+        "records": 64
+      }
+    }
+  },
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase4-uniform-final-bridge-result/1",
+  "functional_passes_v1": 1383,
+  "gates": {
+    "critical_capabilities": true,
+    "final_test_not_accessed": true,
+    "per_capability_functional": true,
+    "router_exact": true,
+    "strong_parent_exact": true,
+    "teacher_absent": true,
+    "teacher_noninferior": true,
+    "zero_repetition_collapse": true
+  },
+  "hardware": {
+    "cuda": "11.8",
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "machine": "Sam",
+    "torch": "2.7.1+cu118"
+  },
+  "new_teacher_information": 0,
+  "phase4_certified": false,
+  "protocol_sha256": "f665bdd55b31da9a21d646c9b3e0c07f11f4370d23f3e8e4cd8031ea8cc5b47b",
+  "repetition_collapses_v2": 0,
+  "router_correct": 1400,
+  "seed": 104729,
+  "source_lineage": {
+    "path": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed104729-v577",
+    "result_sha256": "1a602561b62bc9b811b6bb19e0d7ca3ff6a2b7c1d63dcda1a3e3b7b3c4483a42",
+    "reused_stages": [
+      "v463",
+      "router",
+      "v484",
+      "budget_host_supervision"
+    ]
+  },
+  "status": "PASS_PHASE4_STABILIZED_ABI_BUDGET_MACHINE_GATES",
+  "steps_changed": false,
+  "strong_routes_exact": 1000,
+  "teacher_comparison_v1": {
+    "candidate_minus_teacher": 0.10428571428571429,
+    "lower_95": 0.08857142857142856,
+    "method": "capability_stratified_paired_percentile_bootstrap",
+    "replicates": 10000,
+    "seed": 4204729,
+    "upper_95": 0.12071428571428572
+  },
+  "teacher_present_at_inference": false,
+  "training_metadata_sha256": "9b79b00cf63ec84ec719b03e78775c3b39947e0e356fd6815c3e08806cb2a142",
+  "wall_seconds": 770.8141667000018
+}

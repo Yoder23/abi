@@ -1,0 +1,275 @@
+{
+  "architecture_changed": false,
+  "budget": {
+    "authoritative_teacher_output_tokens": 123167,
+    "duplicate_memberships": 107,
+    "fraction": 0.4,
+    "id": "B40",
+    "record_memberships": 4112,
+    "records": {
+      "phase1_ir": 2800,
+      "v138_targeted_ir": 800,
+      "v480_host_supervision": 512
+    },
+    "selection_sha256": "e494d251f8517495ab216128ca323755cade8015754f64aaacf28ad252e5bee6",
+    "unique_source_attempts": 4005
+  },
+  "changed_component": "final_v526_sampler_only",
+  "checkpoint": {
+    "bytes": 399768,
+    "path": "control_bridge.safetensors",
+    "sha256": "07d22c41377b5c925f52c82eccf1c5c0d7d6a3d6d81d4eae1b3e93b3706b97d9"
+  },
+  "claim_boundary": "Single preregistered final-bridge stabilization run; no stable frontier, minimum, runtime, matched-baseline, final-test, certificate, or superiority claim.",
+  "deployed_parameter_count_changed": false,
+  "evidence_sha256": "753c9d7bc391d191030e1f3bf6cab12e0d9231db310ff073d94292f1831fe02a",
+  "exposure_balance": {
+    "maximum_within_stratum_exposure_range": 1,
+    "ordering": "lexicographic_record_id",
+    "recovery_uses_same_step_record": true,
+    "seed_dependent_sampling": false,
+    "strata": {
+      "abstention:0:host_projected": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "abstention:0:source_wrapped": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "abstention:1:host_projected": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "abstention:1:source_wrapped": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "abstention:2:host_projected": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "abstention:2:source_wrapped": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "abstention:3:host_projected": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "abstention:3:source_wrapped": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "coherence:0:host_projected": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "coherence:0:source_wrapped": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "coherence:1:host_projected": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "coherence:1:source_wrapped": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "coherence:2:host_projected": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "coherence:2:source_wrapped": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "coherence:3:host_projected": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "coherence:3:source_wrapped": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "fluent_realization:0:host_projected": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "fluent_realization:0:source_wrapped": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "fluent_realization:1:host_projected": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "fluent_realization:1:source_wrapped": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "fluent_realization:2:host_projected": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "fluent_realization:2:source_wrapped": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "fluent_realization:3:host_projected": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "fluent_realization:3:source_wrapped": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "tone_control:0:host_projected": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "tone_control:0:source_wrapped": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "tone_control:1:host_projected": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "tone_control:1:source_wrapped": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "tone_control:2:host_projected": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "tone_control:2:source_wrapped": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "tone_control:3:host_projected": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      },
+      "tone_control:3:source_wrapped": {
+        "maximum_exposures": 63,
+        "minimum_exposures": 62,
+        "range": 1,
+        "records": 32
+      }
+    }
+  },
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase4-uniform-final-bridge-result/1",
+  "functional_passes_v1": 1360,
+  "gates": {
+    "critical_capabilities": true,
+    "final_test_not_accessed": true,
+    "per_capability_functional": false,
+    "router_exact": true,
+    "strong_parent_exact": true,
+    "teacher_absent": true,
+    "teacher_noninferior": true,
+    "zero_repetition_collapse": false
+  },
+  "hardware": {
+    "cuda": "11.8",
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "machine": "Sam",
+    "torch": "2.7.1+cu118"
+  },
+  "new_teacher_information": 0,
+  "phase4_certified": false,
+  "protocol_sha256": "f665bdd55b31da9a21d646c9b3e0c07f11f4370d23f3e8e4cd8031ea8cc5b47b",
+  "repetition_collapses_v2": 2,
+  "router_correct": 1400,
+  "seed": 104729,
+  "source_lineage": {
+    "path": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed104729-v575",
+    "result_sha256": "825a4eef13cea1a1e40e97916f47c9e02a8893c56908bee4495815c5e955e0e2",
+    "reused_stages": [
+      "v463",
+      "router",
+      "v484",
+      "budget_host_supervision"
+    ]
+  },
+  "status": "FAIL_PHASE4_STABILIZED_ABI_BUDGET_MACHINE_GATES",
+  "steps_changed": false,
+  "strong_routes_exact": 1000,
+  "teacher_comparison_v1": {
+    "candidate_minus_teacher": 0.08785714285714286,
+    "lower_95": 0.07071428571428572,
+    "method": "capability_stratified_paired_percentile_bootstrap",
+    "replicates": 10000,
+    "seed": 4204729,
+    "upper_95": 0.105
+  },
+  "teacher_present_at_inference": false,
+  "training_metadata_sha256": "8184754a706abd820b89d3ce4b9c1fe728514882235b41b718bc652870be2d35",
+  "wall_seconds": 774.9741963999986
+}
