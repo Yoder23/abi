@@ -1,0 +1,161 @@
+{
+  "abstention_prefixes": 1,
+  "checkpoint_sha256": "7ad4e3ee4e3590b42f3be43d7eae0c77add6bc5bd087f7ffe7c4c259ec96a0ab",
+  "evaluation_wall_seconds": 186.4856243999966,
+  "evidence_sha256": "3618d3d28a253eef982d2bb3b0115dab67d2ef8fa3ec70d2bd289119056eb8c0",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-final-control-evaluation/1",
+  "functional_passes_v1": 1369,
+  "functional_passes_v2": 1371,
+  "guard_terminations": 4,
+  "observations": 1400,
+  "per_capability": {
+    "abstention": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "clarification": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 94,
+      "wilson_v1": {
+        "lower_95": 0.8752318455410406,
+        "point": 0.94,
+        "upper_95": 0.9722138760368118
+      }
+    },
+    "coherence": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 99,
+      "wilson_v1": {
+        "lower_95": 0.9455138038212946,
+        "point": 0.99,
+        "upper_95": 0.9982325679358593
+      }
+    },
+    "conversation": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "email_drafting_from_notes": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "fact_free_reasoning": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "fluent_realization": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 96,
+      "wilson_v1": {
+        "lower_95": 0.9016292856411208,
+        "point": 0.96,
+        "upper_95": 0.9843366960084523
+      }
+    },
+    "format_control": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 91,
+      "wilson_v1": {
+        "lower_95": 0.837737871472837,
+        "point": 0.91,
+        "upper_95": 0.9519274599974348
+      }
+    },
+    "grammar": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "instruction_following": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 95,
+      "wilson_v1": {
+        "lower_95": 0.8882495307680808,
+        "point": 0.95,
+        "upper_95": 0.9784563208456319
+      }
+    },
+    "prompt_grounding": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "rewriting": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "supplied_text_summarization": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 98,
+      "wilson_v1": {
+        "lower_95": 0.929988209271456,
+        "point": 0.98,
+        "upper_95": 0.9944980324498376
+      }
+    },
+    "tone_control": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 96,
+      "wilson_v1": {
+        "lower_95": 0.9016292856411208,
+        "point": 0.96,
+        "upper_95": 0.9843366960084523
+      }
+    }
+  },
+  "protocol_sha256": "3d5d9b56453408cb90223ab414d1eef0a62666d39a8085e4fa5566abd5c5997e",
+  "raw_outputs_sha256": "73183d8eb0378a0b6d0d09901f4b4e713342d2c0273c9ad717e5ff450d77c985",
+  "repetition_collapses_v2": 0,
+  "router_correct": 1400,
+  "status": "COMPLETE_MATCHED_CONTROL_DEVELOPMENT_EVALUATION",
+  "strong_routes_exact": 1000,
+  "system": "A0_route_isolated"
+}

@@ -6,7 +6,7 @@ Status date: 2026-08-11
 
 The ABI capability-compiler moonshot is **OPEN**.
 
-The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V643.json`.
+The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V655.json`.
 All Phase 3 machine endpoints now pass. The exact route-isolated checkpoint has
 three-seed causal replication, 1,393/1,400 autonomous quality with zero
 collapse on the selected seed, three byte-identical host initializations,
@@ -40,7 +40,7 @@ focused tests, including all three production-form dry runs, pass. See
 | 1 | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 | MACHINE + HANDOFF READY; 0/21,000 HUMAN PREFERENCES | `ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V554.json` |
 | 3 | MACHINE EVIDENCE COMPLETE; BLOCKED BY PHASE 2 | `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json` |
-| 4 | CONDITIONALLY OPEN; V18 HANDOFF EXACT; STABLE FRONTIER UNPROVEN | `ABI_CAPABILITY_COMPILER_PHASE4_V18_OUTPUT_CONFORMANCE_RESULT_V642.json` |
+| 4 | CONDITIONALLY OPEN; V18 HANDOFF EXACT; SHARED-PARENT FRONTIER CLOSED | `ABI_CAPABILITY_COMPILER_PHASE4_B100_EXPOSURE_NORMALIZED_RESULT_V654.json` |
 | 5-8 | LOCKED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` |
 
 V558 passed the physical archive and checkpoint-lineage audit without loading
@@ -137,6 +137,15 @@ This reopens only the conditional information-frontier work. B40 remains
 FAIL/PASS/FAIL and B80 PASS/FAIL/PASS; the already frozen B100 budget is the
 only bounded continuation. Matched LoRA/distillation training remains closed
 until B100 resolves across all three registered seeds.
+
+B100 did not resolve that frontier. Its screening seed failed critical
+instruction following at 92/100 despite 1,375/1,400 total and zero collapse,
+so its replicas were canceled. The one measured exposure-normalization repair
+also failed: 1,369/1,400, format control 91/100, instruction following 95/100,
+and both applicable Wilson gates missed. This rejects step/exposure tuning.
+The next bounded work is read-only capability-bank feasibility followed, only
+if supported, by one physically selected capability-isolated adaptation
+design. Phase 4, matched baselines, final data, and Phase 5 remain closed.
 
 ### Preserved historical mission snapshot
 

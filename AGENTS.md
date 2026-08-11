@@ -22,7 +22,7 @@ LayerCake cake.
 Status date: 2026-08-11.
 
 The controlling machine-readable state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V643.json`. Phase 3 has completed and
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V655.json`. Phase 3 has completed and
 passed every currently required machine gate, but it is not unconditionally
 certified because the controlling campaign contract makes it depend on Phase
 2. Phase 2 has 21,000 immutable blinded rating rows and zero completed
@@ -155,6 +155,19 @@ guard termination, with zero receiver learning. This proves product handoff,
 not a Phase 4 minimum. The next bounded frontier action is the already frozen
 B100 budget at the three registered seeds; final access and matched baselines
 remain closed until that ABI arm is resolved.
+
+B100 seed104729 then failed at 1,375/1,400: instruction following was 92/100,
+below both critical thresholds, with eight exact identifiers shortened during
+generation. The two replication seeds were canceled. A bound read-only audit
+showed every B100 parent stage supplied 0.8x B80's observations per record, so
+one exact exposure-normalization attempt was authorized. It also failed,
+falling to 1,369/1,400; format control missed its Wilson gate at 91/100 and
+instruction following missed the critical Wilson gate at 95/100. Zero
+collapse, exact routing, exact strong-path identity, and teacher
+noninferiority remained. Do not sweep steps or exposure. The existing shared-
+parent frontier is closed; only read-only capability-bank feasibility may
+precede one selected-only capability-isolated adaptation design. Phase 4 is
+not certified.
 
 The exact route-isolated endpoint scored 1,393/1,400 with zero repetition
 collapse at seed 240487 and passed all four same-lineage causal controls across

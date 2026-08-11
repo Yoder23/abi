@@ -1,0 +1,22 @@
+{
+  "format": "abi-capability-compiler-phase4-b100-exposure-normalized-summary/1",
+  "version": 654,
+  "status_date": "2026-08-11",
+  "status": "FAIL_EXPOSURE_NORMALIZATION_REJECTED_BRANCH_CLOSED",
+  "historical_evidence_changed": false,
+  "protocol": {"path": "ABI_CAPABILITY_COMPILER_PHASE4_B100_EXPOSURE_NORMALIZED_PROTOCOL_V652.json", "sha256": "fa9f99db87837d69f939356398106c804aae6376e67776156d0cd5f1c65e0aaf"},
+  "raw_result": {"path": "results/abi_capability_compiler_phase4_b100_exposure_normalized/B100-seed104729-v653/result.json", "sha256": "8c292675d5d561a7c01c9f7118f84e54ba58a7c119108a9c1a8363885355a346"},
+  "evaluation": {"path": "results/abi_capability_compiler_phase4_b100_exposure_normalized/B100-seed104729-v653/evaluation/result.json", "sha256": "585f1b3fe4ee06b57ba938e381ee408e2d2247b33f1a28fefe673ecb24c0daee", "evidence_sha256": "3618d3d28a253eef982d2bb3b0115dab67d2ef8fa3ec70d2bd289119056eb8c0", "outputs_sha256": "73183d8eb0378a0b6d0d09901f4b4e713342d2c0273c9ad717e5ff450d77c985"},
+  "receipt_sha256": "7eeefad762b3b0bee2c1fff143492cc0964b410b0a46c68c6c5a4b1738e9284a",
+  "intervention": {"V443_steps": 8750, "V459_steps": 2188, "V463_steps": 2188, "all_other_components_changed": false},
+  "machine_quality": {"functional_passes": "1369/1400", "repetition_collapses_v2": 0, "router_correct": "1400/1400", "strong_parent_exact": "1000/1000", "teacher_relative_lower_95": 0.07714285714285714},
+  "failed_gates": ["per_capability_functional", "critical_capabilities"],
+  "limiting_capabilities": {"format_control": {"passes": "91/100", "wilson_lower_95": 0.837737871472837}, "instruction_following": {"passes": "95/100", "wilson_lower_95": 0.8882495307680808}},
+  "replication_seeds_canceled": [130363, 155921],
+  "wall_seconds": 2029.7860289000091,
+  "teacher_present": false,
+  "final_test_accessed": false,
+  "phase4_certified": false,
+  "decision": "Reject parent exposure normalization. The increased schedule trades capability quality rather than producing a stable joint solution. Do not sweep steps or exposure. The next architecture must isolate capability-specific adaptation while retaining one active sparse path.",
+  "claim_boundary": "One failed bounded intervention; no stable frontier, minimum, matched baseline, final test, Phase 4 certificate, or superiority claim."
+}

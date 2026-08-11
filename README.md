@@ -16,7 +16,7 @@ Status date: 2026-08-11
 
 **The ABI English-product moonshot is OPEN.**
 
-The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V643.json`.
+The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V655.json`.
 The route-isolated English endpoint now passes all registered Phase 3 machine
 gates: three paired training seeds and all A0-A4 causal controls, 1,393/1,400
 selected-seed autonomous quality with zero collapse, exact routing, three
@@ -142,6 +142,17 @@ source blocks are absent. Phase 4 is still not certified: B40 is
 FAIL/PASS/FAIL and B80 PASS/FAIL/PASS across seeds. The only bounded next ABI
 frontier is the already frozen B100 budget across the three registered seeds;
 matched LoRA/distillation work remains closed until that result is known.
+
+B100 seed104729 failed the critical instruction gate at 92/100, and the two
+replication seeds were canceled by protocol. A read-only audit found its fixed
+parent observation counts provided only 0.8x B80's exposure per record. The
+single authorized exposure-normalization attempt recovered instruction point
+quality to 95/100 but still missed its critical Wilson floor and reduced format
+control to 91/100, below its per-capability Wilson floor. It is rejected with
+zero collapse and exact routing preserved. No step or exposure sweep is
+allowed. The next Phase 4 question is whether physically selected capability-
+isolated adaptation can remove the measured shared-parent tradeoff without
+executing multiple paths. Phase 4 remains uncertified.
 Phase 2 and Phase 3
 certificate statuses remain unchanged, final data remains unopened, and Phase
 5 is locked.
