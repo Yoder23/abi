@@ -1,0 +1,21 @@
+{
+  "format": "abi-capability-compiler-phase3-final-certificate-audit-summary/1",
+  "version": 551,
+  "status": "PASS_PHASE3_MACHINE_EVIDENCE_COMPLETE_BLOCKED_PHASE2_HUMAN_RATINGS",
+  "status_date": "2026-08-11",
+  "historical_evidence_changed": false,
+  "protocol": {"path": "ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_REPAIR_PROTOCOL_V550.json", "sha256": "84a376d5b3f39f325e526b1c4b7dd11eb3a4b54de4bf45311fdb3c8b4cb43c70"},
+  "raw_result": {"path": "results/abi_capability_compiler_phase3_final_certificate_audit/audit_v551/result.json", "sha256": "fc2ae8c81db590d21a4d6a271d4c39063242ededccb2a8d40a733b33b1dd9729", "evidence_sha256": "748612b2593feeea5e073588160a04b582033f5dea2546cfe44be15920f11ee4"},
+  "machine_gates": {"artifact_provenance_and_accounting": true, "independent_one_seed_hostile_reconstruction": true, "three_seed_causal_replication": true, "same_final_checkpoint_quality_runtime_hosts": true, "exact_fully_cpu_runtime": true, "three_host_exact_reproduction": true, "physically_route_isolated_sparse_execution": true, "persistent_state_and_canonical_interface": true, "teacher_and_source_absent_at_inference": true, "final_test_not_accessed": true},
+  "architectural_microchecks": {"physical_experts": 4, "active_experts_per_token": 1, "active_rank": 16, "unselected_expert_mutation_max_abs_delta": 0.0, "selected_expert_affects_route": true, "canonical_attach_handles": 3, "persistent_incremental_state": true, "one_token_increment_consumed": true},
+  "hostile_mutations_rejected": 5,
+  "machine_evidence_complete": true,
+  "prerequisites": {"phase0_complete": true, "phase1_complete": true, "phase2_complete": false, "phase3_machine_gates_complete": true},
+  "phase2_human_ratings": {"manifest_status": "AWAITING_THREE_INDEPENDENT_HUMAN_RATERS", "rows": 21000, "filled_preferences": 0, "required_preferences": 21000},
+  "phase3_certified": false,
+  "phase4_open": false,
+  "promotion_eligible": false,
+  "final_test_accessed": false,
+  "decision": "All currently required Phase 3 machine evidence is complete and passes. The campaign contract makes Phase 3 depend on Phase 2; Phase 2 lacks all 21000 independent human preferences. Do not issue an unconditional Phase 3 certificate or open Phase 4 until the rating packet is completed, verified, and Phase 2 passes.",
+  "claim_boundary": "Phase 3 machine-evidence completion, not an unconditional phase certificate, minimum-information proof, final-test result, or ABI superiority claim."
+}

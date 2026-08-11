@@ -19,6 +19,42 @@ LayerCake cake.
 
 ## Current campaign state
 
+Status date: 2026-08-11.
+
+The controlling machine-readable state is
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V551.json`. Phase 3 has completed and
+passed every currently required machine gate, but it is not unconditionally
+certified because the controlling campaign contract makes it depend on Phase
+2. Phase 2 has 21,000 immutable blinded rating rows and zero completed
+preferences. Phase 4 therefore remains locked.
+
+- Phase 0: **COMPLETE**.
+- Phase 1: **COMPLETE**.
+- Phase 2: **MACHINE EVIDENCE COMPLETE; BLOCKED ON 21,000 JUDGMENTS FROM THREE
+  INDEPENDENT HUMAN RATERS (0/21,000 FILLED)**.
+- Phase 3: **MACHINE EVIDENCE COMPLETE; BLOCKED BY THE PHASE 2 PREREQUISITE**.
+- Phases 4-8: **LOCKED**.
+
+The exact route-isolated endpoint scored 1,393/1,400 with zero repetition
+collapse at seed 240487 and passed all four same-lineage causal controls across
+three paired training seeds. Its exact fully CPU runtime is 12.835x the pinned
+optimized CPU Qwen baseline by median UTF-8 bytes/s, with a paired-bootstrap
+lower 95% bound of 10.565x, 0.0254x TTFT, 0.7169x peak RSS, 99.12% parent-speed
+retention, and 120/120 runtime-output identity. It reproduces byte-identically
+across three host initializations. Physical one-expert execution, rank-16
+activation, persistent KV state, the unchanged canonical host interface,
+teacher absence, provenance/accounting, and hostile mutation rejection all
+pass under `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json`.
+
+No further Phase 3 architecture, training, or runtime experiment is authorized.
+The only phase-closing action is external completion of the three blinded
+rating forms, followed by the existing Phase 2 verifier and the fail-closed
+Phase 3 prerequisite audit. Do not call machine-evidence completion an
+unconditional Phase 3 certificate, open Phase 4, access final material, claim a
+minimum information budget, or claim ABI superiority over LoRA/distillation.
+
+### Preserved historical snapshot through V463
+
 Status date: 2026-08-10.
 
 The controlling machine-readable state is now

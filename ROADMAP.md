@@ -1,18 +1,18 @@
 # ABI capability-compiler roadmap
 
-Status date: 2026-08-07
+Status date: 2026-08-11
 
 The machine-readable contract
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` controls sequencing and
-gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V73.json` records live status.
+gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V551.json` records live status.
 Evidence gates, not experiment counts or dates, close phases.
 
 | Phase | Objective | Status |
 | ---: | --- | --- |
 | 0 | Definitions, baselines, and preregistration | COMPLETE |
 | 1 | Capability inventory and normalized acquisition IR | COMPLETE |
-| 2 | Strong matched LoRA and distillation baselines | MACHINE COMPLETE; BLOCKED ON EXTERNAL HUMAN RATINGS |
-| 3 | Causal teacher-to-target acquisition | UNCERTIFIED; V54 CLOSED, RICHER TEACHER SIGNAL STUDY NEXT |
+| 2 | Strong matched LoRA and distillation baselines | MACHINE COMPLETE; 0/21,000 EXTERNAL HUMAN PREFERENCES |
+| 3 | Causal teacher-to-target acquisition | MACHINE EVIDENCE COMPLETE; BLOCKED BY PHASE 2 PREREQUISITE |
 | 4 | Sufficient-information Pareto frontier | LOCKED |
 | 5 | Selective reconstruction and bounded exclusion | LOCKED |
 | 6 | Composition, portability, and multi-source provenance | LOCKED |
@@ -53,6 +53,17 @@ its locked budget, reproducible, and verifier-backed. No ABI-superiority claim
 is possible in this phase.
 
 ## Later gates
+
+All currently registered Phase 3 machine work is complete. V551 binds the
+three-seed causal matrix, independent reconstruction, exact endpoint quality,
+three-host identity, acquisition accounting, physical sparse execution,
+persistent state, and exact-lineage fully CPU runtime. Do not launch another
+Phase 3 model or runtime experiment. The sole next step is completion and
+verification of the three independent blinded Phase 2 forms. If and only if
+Phase 2 passes, rerun the fail-closed prerequisite audit; an unconditional
+Phase 3 certificate may then open Phase 4 without new Phase 3 tuning.
+
+### Preserved historical route analysis
 
 The unavailable Phase 2 human ratings were deferred by explicit user
 direction, not passed. Both hash-bound Phase 3 development branches have

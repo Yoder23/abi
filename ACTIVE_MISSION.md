@@ -1,10 +1,36 @@
 # ABI active mission
 
-Status date: 2026-08-10
+Status date: 2026-08-11
 
 ## State
 
 The ABI capability-compiler moonshot is **OPEN**.
+
+The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V551.json`.
+All Phase 3 machine endpoints now pass. The exact route-isolated checkpoint has
+three-seed causal replication, 1,393/1,400 autonomous quality with zero
+collapse on the selected seed, three byte-identical host initializations,
+teacher-free canonical execution with persistent KV state and physical
+one-expert rank-16 activation, and an exact-lineage fully CPU runtime pass at
+12.835x median UTF-8 throughput, 10.565x paired lower-95 throughput, 0.0254x
+TTFT, and 0.7169x peak RSS relative to the pinned optimized transformer.
+
+Phase 3 is nevertheless not unconditionally certified. Phase 2 is a required
+predecessor and its three blinded forms contain 21,000 rows with 0 completed
+preferences. The only authorized next action is external completion by three
+independent human raters, followed by Phase 2 verification and the fail-closed
+Phase 3 prerequisite audit. No further Phase 3 experiment, Phase 4 work, final
+access, minimum-information claim, or ABI-superiority claim is authorized.
+
+| Phase | Current state | Authority |
+| --- | --- | --- |
+| 0 | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
+| 1 | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
+| 2 | MACHINE COMPLETE; 0/21,000 HUMAN PREFERENCES | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
+| 3 | MACHINE EVIDENCE COMPLETE; BLOCKED BY PHASE 2 | `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json` |
+| 4-8 | LOCKED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` |
+
+### Preserved historical mission snapshot
 
 Phase 0 and Phase 1 are complete. Phase 2's entire preregistered machine
 baseline campaign is complete, but Phase 2 remains blocked on the required
@@ -635,6 +661,13 @@ baseline findings, not an ABI-candidate result.
   [LayerCake repository](https://github.com/Yoder23/layercake).
 
 ## Authoritative current documents
+
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V551.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_ISOLATED_HOST_REPRODUCTION_RESULT_V547.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_ISOLATED_RUNTIME_COMPOSE_RESULT_V544.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_ISOLATED_REPLICATION_RESULT_V538.json`
+- `ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_ISOLATED_VERIFY_RESULT_V531.json`
 
 - `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V89.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_ACTION_ALIGNED_CORE_PROTOCOL_V70.json`

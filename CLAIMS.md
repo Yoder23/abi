@@ -1,6 +1,6 @@
 # ABI claim ledger
 
-Status date: 2026-08-07
+Status date: 2026-08-11
 
 Documentation cannot widen a machine-readable certificate. Each claim below is
 limited to its exact source, artifact, implementation, benchmark, and evidence
@@ -8,7 +8,26 @@ identity.
 
 ## Current claims
 
-### Current Phase 3 boundary
+### Current Phase 3 boundary (V551)
+
+ABI may claim that the exact route-isolated endpoint has completed and passed
+all registered Phase 3 **machine** gates. The bounded claim includes three-seed
+causal replication against label-free, shuffled-target, no-update, and
+monolithic controls; 1,393/1,400 selected-seed autonomous passes with zero
+collapse; three byte-identical host initializations; teacher-free canonical
+execution with persistent state and physical one-expert rank-16 activation;
+and exact-lineage fully CPU performance of 12.835x median UTF-8 throughput,
+10.565x paired lower-95 throughput, 0.0254x TTFT, 0.7169x peak RSS, and 99.12%
+parent-speed retention.
+
+ABI may not claim an unconditional Phase 3 certificate. Phase 2 is a required
+predecessor and currently has 0/21,000 completed blinded preferences. ABI also
+may not claim a smallest sufficient information budget, final-test success,
+universal teacher improvement, or superiority over LoRA/distillation. Phase 4
+is locked. The controlling evidence is
+`ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json`.
+
+### Preserved historical Phase 3 boundary
 
 V45 scientifically qualifies the bounded sparse capability router across three
 fixed seeds: each seed passes 1,400/1,400 original prompts, bodies, and metadata

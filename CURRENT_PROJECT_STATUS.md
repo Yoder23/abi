@@ -1,8 +1,27 @@
 # ABI current project status
 
-Status date: 2026-08-10
+Status date: 2026-08-11
 
 ## Executive state
+
+The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V551.json`.
+Phase 3's machine campaign is complete and passes every registered technical
+gate. The exact route-isolated candidate has three paired-seed causal passes,
+1,393/1,400 autonomous functional passes with zero collapse, exact routing,
+three byte-identical host initializations, physical one-expert rank-16
+execution, persistent KV state, the unchanged canonical interface, teacher
+absence, and exact-lineage fully CPU systems evidence. It measures 264.15 vs
+20.58 median UTF-8 bytes/s (12.835x; paired lower 95% 10.565x), 0.0254x TTFT,
+0.7169x peak RSS, and 99.12% parent-throughput retention.
+
+This is **Phase 3 machine-evidence completion**, not an unconditional phase
+certificate. The campaign contract requires Phase 2 first. The immutable human
+packet contains 21,000 nonblank rows and 0 completed preferences; three
+independent raters remain required. Phase 4 stays locked, final material stays
+unopened, and no ABI-superiority or minimum-information claim is permitted.
+No additional Phase 3 compute is authorized.
+
+### Preserved historical status through V463
 
 ABI is an open research campaign, not a completed English-acquisition product.
 It has a working bounded reference release, a demonstrated small-scale causal
@@ -375,17 +394,15 @@ checks to make later research code appear release-equivalent.
 ## Immediate next gate
 
 When raters become available, complete the Phase 2 packet without changing its
-forms or key. No additional neural Phase 3 run is authorized now. The next
-separately preregistered ABI design must replace the V50 realization mechanism,
-not sweep its data, seed, steps, tokenization, or optimizer. V45 has already
-qualified routing; the measured blocker is full-generator fit and autonomous
-capability realization. Any new design must preserve the router result and
-account its own same-candidate quality, active parameters, memory, TTFT, and
-CPU/GPU inference cost. Final material remains unopened and Phase 4 remains
-locked.
+forms or key. No additional Phase 3 architecture, training, or runtime run is
+authorized: V551 closes all current machine gates. After all three forms are
+locked, run the registered Phase 2 evidence verifier and only then rerun the
+fail-closed Phase 3 prerequisite audit. Final material remains unopened and
+Phase 4 remains locked until both predecessors certify.
 
-The full ABI suite currently reports 573 passed and one intentionally strict
-external-control failure: the separate clean LayerCake repository is ahead of
-the exact contract-bound control commit, which remains an ancestor. The
-identity verifier was not weakened. See
-`ABI_CAPABILITY_COMPILER_PHASE2_MACHINE_EVIDENCE_V1.md`.
+The full ABI suite reports 858 passed and one intentionally strict external-
+control failure. The separate clean LayerCake checkout is at
+`58f7d863e1fbce0924c86469e1ef0a22c20f4906`, ahead of the exact contract-bound
+control commit `04cf2927a16fba686cd640e18a78708e5658bbda`, which remains an ancestor.
+The identity verifier was not weakened. Excluding only that nine-test external
+checkout module, all 850 ABI-local tests pass.

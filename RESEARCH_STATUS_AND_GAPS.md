@@ -1,8 +1,16 @@
 # ABI research status and open questions
 
-Status date: 2026-08-06
+Status date: 2026-08-11
 
 ## What is resolved
+
+0. **Phase 3's machine question is resolved positively.** The exact
+   route-isolated endpoint passes three paired seeds, all same-lineage causal
+   controls, selected-seed quality at 1,393/1,400 with zero collapse, three
+   byte-identical hosts, physical one-expert rank-16 activation, persistent KV
+   state, unchanged canonical attachment, teacher absence, accounting, hostile
+   verification, and exact-lineage fully CPU runtime. V551 records machine
+   completion while correctly withholding an unconditional certificate.
 
 1. **Repository ownership is explicit.** ABI owns acquisition artifacts and
    evidence. Runtime-host implementation belongs to the separate
@@ -71,12 +79,16 @@ The machine baseline matrix is complete. Phase 2 still requires 21,000 blinded
 counterbalanced judgments from three independent raters. Until those ratings
 are locked and verified, no final Phase 2 certificate exists.
 
-### 2. Can the certified information teach broad English?
+This is now the only phase-closing blocker: all 21,000 form rows exist, but 0
+preferences are filled. Because Phase 3 depends on Phase 2, Phase 4 remains
+locked even though every Phase 3 machine gate passes.
 
-The IR is suitable input evidence, not proof of sufficiency. A0 learned a
-causal signal from it but did not show fluent autonomous generation,
-grounding, instruction following, clarification, abstention, coherence, or
-repetition safety at the required level.
+### 2. What is the smallest sufficient imported-information budget?
+
+The current V480-derived artifact is sufficient for the registered Phase 3
+machine endpoint, but Phase 4 has not measured the smallest passing tested
+budget paired with an adjacent lower failure. That question remains locked
+until Phase 2 and the unconditional Phase 3 prerequisite both pass.
 
 ### 3. Can pointer-supervised ABI targets preserve prompt identity?
 

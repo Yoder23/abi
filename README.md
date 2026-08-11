@@ -12,9 +12,28 @@ artifacts are acquisition material, not deployable cakes.
 
 ## Current status
 
-Status date: 2026-08-10
+Status date: 2026-08-11
 
 **The ABI English-product moonshot is OPEN.**
+
+The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V551.json`.
+The route-isolated English endpoint now passes all registered Phase 3 machine
+gates: three paired training seeds and all A0-A4 causal controls, 1,393/1,400
+selected-seed autonomous quality with zero collapse, exact routing, three
+byte-identical host initializations, physical one-expert rank-16 execution,
+persistent KV state, unchanged canonical host attachment, teacher absence, and
+exact-lineage fully CPU runtime. The same checkpoint measures 12.835x median
+UTF-8 throughput versus pinned optimized CPU Qwen (paired lower 95% 10.565x),
+0.0254x TTFT, 0.7169x peak RSS, and 99.12% parent-speed retention.
+
+Phase 3 is not unconditionally certified because Phase 2 is a prerequisite.
+Its human packet has 21,000 blinded comparisons and 0 filled preferences.
+Until three independent raters complete and lock those forms and Phase 2
+passes verification, Phase 4 remains locked. No further Phase 3 compute, final
+access, minimum-information claim, or superiority claim is authorized. See
+`ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json`.
+
+### Preserved historical narrative through V463
 
 The machine-readable live state is
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V463.json`. Phase 3 is **not
@@ -112,6 +131,10 @@ any experiment or launching new work.
 | Normalized English acquisition IR | PASS as a data artifact | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | Phase 2 matched-baseline machine campaign | COMPLETE; external human gate pending | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
 | Phase 2 human rating packet | READY; 21,000 independent judgments pending | `results/abi_capability_compiler_phase2/human_rating_packet_v1/manifest.json` |
+| Phase 3 exact route-isolated endpoint | MACHINE EVIDENCE COMPLETE; prerequisite blocked | `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json` |
+| Phase 3 three-seed causal replication | PASS | `ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_ISOLATED_REPLICATION_RESULT_V538.json` |
+| Phase 3 exact fully CPU runtime | PASS | `ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_ISOLATED_RUNTIME_COMPOSE_RESULT_V544.json` |
+| Phase 3 three-host reproduction | PASS | `ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_ISOLATED_HOST_REPRODUCTION_RESULT_V547.json` |
 | Conditional Phase 3 A0-A4 campaign | COMPLETE; causal signal, branch FAIL | `results/abi_capability_compiler_phase3/conditional_decision_v3.json` |
 | Phase 3 prompt-conditioned sequence successor | COMPLETE; branch FAIL | `results/abi_capability_compiler_phase3_sequence/conditional_decision_v1.json` |
 | Phase 3 component diagnostic | COMPLETE; diagnostic only | `results/abi_capability_compiler_phase3_component_diagnostic/decision_v1.json` |
