@@ -1,0 +1,38 @@
+{
+  "format": "abi-capability-compiler-phase3-route-isolated-host-reproduction/1",
+  "version": 545,
+  "status": "PREREGISTERED_TWO_FRESH_HOST_REPRODUCTIONS",
+  "status_date": "2026-08-11",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V544.json",
+  "historical_evidence_changed": false,
+  "neural_training_authorized": false,
+  "teacher_model_loading_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "hosts": ["H1", "H2"],
+  "base_control_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CONTROLS_REPAIR_PROTOCOL_V520.json",
+  "candidate_dir": "results/abi_capability_compiler_phase3_route_isolated/candidate_v526",
+  "checkpoint_sha256": "1649e110338904f69fafc0f5ff110e2c8d99f4f8366eb133442fb4938fa3c390",
+  "reference_outputs": "results/abi_capability_compiler_phase3_route_isolated/evaluation_v526/development_outputs.jsonl",
+  "reference_outputs_sha256": "c5b40380ab67083ab6d860af80fd1a6434089cc2a5ab0c1ae224912ac18879a1",
+  "host_outputs": {
+    "H1": "results/abi_capability_compiler_phase3_route_isolated_host_reproduction/H1/evaluation_v546",
+    "H2": "results/abi_capability_compiler_phase3_route_isolated_host_reproduction/H2/evaluation_v546"
+  },
+  "decision_output": "results/abi_capability_compiler_phase3_route_isolated_host_reproduction/decision_v547/result.json",
+  "gates": {"host_initializations": 3, "observations_per_host": 1400, "functional_passes_v1": 1393, "repetition_collapses_v2": 0, "router_correct": 1400, "strong_routes_exact": 1000, "byte_identical_to_reference": true, "same_checkpoint": true},
+  "adversarial_tests": ["checkpoint mutation", "output mutation", "quality mutation", "collapse mutation", "router mutation", "missing host"],
+  "decision_rule": "V526 plus two separate fresh processes must produce the same checkpoint hash and byte-identical 1400-row autonomous output artifact with all locked quality, collapse, router, and strong-path counts. All six hostile mutations must be rejected.",
+  "bindings": {
+    "abi/capability_compiler_phase3_route_isolated_host_reproduction.py": "d0029aa0ccf1ec9e7fe3ccd6c6313629f7a9299f799b3854ba4a10d1cb3612de",
+    "tests/test_capability_compiler_phase3_route_isolated_host_reproduction.py": "c68613d25efff8ea069a253093a9722e31d2e6d34d13a1197e456f589ac16271",
+    "abi/capability_compiler_phase3_final_controls.py": "7ac0af481654bcc59c8ac7e69fa3197666515f9eb2fccd84e175f8bb0afe0e8e",
+    "abi/capability_compiler_phase3_route_isolated.py": "cacdc613042ffa7af73d9e3c2afdb7b43e87713882c88bddcd0acad21b6a7b0a",
+    "ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CONTROLS_REPAIR_PROTOCOL_V520.json": "21239ef9010fb36d11f0fa83a00a37125a6507a543ab094243ee32eb8d0cd891",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V544.json": "3b51d7e3d5b171c43ea1957459c540c8607e1daca4796bebf67d5709383b68ad",
+    "results/abi_capability_compiler_phase3_route_isolated/candidate_v526/control_bridge.safetensors": "1649e110338904f69fafc0f5ff110e2c8d99f4f8366eb133442fb4938fa3c390",
+    "results/abi_capability_compiler_phase3_route_isolated/candidate_v526/metadata.json": "f8b808f0b47e562ab85f5291f6b6f2aee0faeb7678fa800211e9d945b890215f",
+    "results/abi_capability_compiler_phase3_route_isolated/evaluation_v526/development_outputs.jsonl": "c5b40380ab67083ab6d860af80fd1a6434089cc2a5ab0c1ae224912ac18879a1"
+  },
+  "phase2_external_blocker": "21000 blinded judgments from three independent human raters remain unavailable and are not waived.",
+  "claim_boundary": "Fresh development host reproducibility only; aggregate hostile certificate, final test, Phase 3, minimum-information, and superiority remain open."
+}
