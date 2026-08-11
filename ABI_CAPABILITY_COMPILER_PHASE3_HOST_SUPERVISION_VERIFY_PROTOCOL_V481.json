@@ -1,0 +1,77 @@
+{
+  "format": "abi-capability-compiler-phase3-host-supervision-verifier/1",
+  "protocol_id": "abi-capability-compiler-phase3-host-supervision-verifier-v481",
+  "status": "PREREGISTERED_INDEPENDENT_HOSTILE_ARTIFACT_VERIFICATION",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V480.json",
+  "historical_evidence_changed": false,
+  "teacher_model_loading_authorized": false,
+  "neural_training_authorized": false,
+  "artifact_mutation_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "promotion_eligible": false,
+  "objective": "Independently reconstruct and verify every V480 selection, prompt projection, source linkage, functional transformation, record identity, archive hash, and accounting field, then prove rejection of in-memory tamper controls.",
+  "artifact": {
+    "path": "results/abi_capability_compiler_phase3_host_supervision/build_v480/host_weak_supervision_v480.abicir",
+    "sha256": "7b0af0bafda631f89dd054a3bd57da76885b3eaca7fe863474255bcf8978b34d",
+    "build_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_HOST_SUPERVISION_PROTOCOL_V479.json",
+    "build_protocol_sha256": "8ea7a9d0401435e87725a7d3e37f5f70fd9a797b5df6d35ceec5471d77194320",
+    "build_result": "results/abi_capability_compiler_phase3_host_supervision/build_v480/result.json",
+    "build_result_sha256": "e8b48ab7af1eda4c559371b35f86ed3332a205ca5d0512a6f229a7568a2100bf",
+    "records_per_capability_builder": 80,
+    "expected_records": 1280
+  },
+  "source": {
+    "catalog": "catalogs/capability_compiler_phase3_targeted_search_v132.json",
+    "catalog_sha256": "d9a05dd5c36a62ac31c2f5955820607fd04dcde1e517b04935bc7150aaaa0c75",
+    "journal": "results/abi_capability_compiler_phase3/targeted_extraction_v135/source_attempts.jsonl",
+    "journal_sha256": "d4598e816559ad4c15b05ddabbcb62b345bb9abf4a0dbd3220081f668468a605"
+  },
+  "verification": {
+    "independent_selection_reconstruction": true,
+    "independent_host_projection": true,
+    "independent_closed_surface_normalization": true,
+    "source_attempt_and_authoritative_token_reconciliation": true,
+    "functional_v2_before_and_v1_after": true,
+    "record_identity_recomputation": true,
+    "manifest_and_accounting_recomputation": true,
+    "safe_exact_zip_entry_set": true,
+    "teacher_meta_prompt_absence": true
+  },
+  "adversarial_controls": [
+    "extra ZIP payload entry",
+    "manifest record-count mutation",
+    "record output mutation",
+    "accounting teacher-token mutation"
+  ],
+  "pass_gates": {
+    "all_1280_records_verify": true,
+    "all_16_strata_exactly_80": true,
+    "selected_pairs_match_independent_reconstruction": true,
+    "all_information_accounting_exact": true,
+    "all_four_tamper_attacks_rejected": true,
+    "teacher_model_loaded": false,
+    "neural_training_performed": false,
+    "artifact_mutated": false,
+    "final_test_accessed": false
+  },
+  "decision_rule": "A pass authorizes one separately preregistered host-conformant recovery successor using the verified artifact. A verifier failure closes the artifact and prohibits neural use.",
+  "bindings": {
+    "abi/capability_compiler_phase3_host_supervision_verify.py": "ea44af100f3050da711f55db5dd3d12bef68807a1544d9ea9da6a831c1c2fd64",
+    "tests/test_capability_compiler_phase3_host_supervision_verify.py": "32b9c1a7ab617b8d21e1fd98b2768b2cd0f0994cab98a2ea8c1b00836008e98a",
+    "abi/capability_compiler_functional_v2.py": "1755ceded6de7c8228ed91e5be6bf86452b6c5f02466f8fda150317775abd4af",
+    "abi/capability_compiler_phase2_common.py": "8093ec2016d685f0327c87640042c8373bc141d76351fd641b21a44d018b6c92",
+    "abi/capability_compiler_phase3.py": "5d490989e088f42aba4bd2ca96fbe70ea2db211890369dd6f431dd781390c77b",
+    "abi/capability_compiler_phase1_ir.py": "a9ae55bac280051f71b9265cc7582b182b10c9d328e176c37748281637326603",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V480.json": "4d3c4c884040a32ed6a21c63a785abc266f54c99a9645e63593ef6e23fa97fe5",
+    "ABI_CAPABILITY_COMPILER_PHASE3_HOST_SUPERVISION_BUILD_RESULT_V480.json": "2e1deeda1f815d8dae042760bd83a48923f9fce4ee720e128de04fd87b06cf95",
+    "ABI_CAPABILITY_COMPILER_PHASE3_HOST_SUPERVISION_PROTOCOL_V479.json": "8ea7a9d0401435e87725a7d3e37f5f70fd9a797b5df6d35ceec5471d77194320",
+    "results/abi_capability_compiler_phase3_host_supervision/build_v480/host_weak_supervision_v480.abicir": "7b0af0bafda631f89dd054a3bd57da76885b3eaca7fe863474255bcf8978b34d",
+    "results/abi_capability_compiler_phase3_host_supervision/build_v480/result.json": "e8b48ab7af1eda4c559371b35f86ed3332a205ca5d0512a6f229a7568a2100bf",
+    "catalogs/capability_compiler_phase3_targeted_search_v132.json": "d9a05dd5c36a62ac31c2f5955820607fd04dcde1e517b04935bc7150aaaa0c75",
+    "results/abi_capability_compiler_phase3/targeted_extraction_v135/source_attempts.jsonl": "d4598e816559ad4c15b05ddabbcb62b345bb9abf4a0dbd3220081f668468a605"
+  },
+  "phase2_external_blocker": "21000 blinded judgments from three independent human raters remain unavailable and are not waived.",
+  "phase3_certified": false,
+  "claim_boundary": "Independent artifact integrity and provenance verification only; neural quality, runtime, final-test, Phase 3, and superiority remain unproven."
+}
