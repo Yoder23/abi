@@ -1,0 +1,52 @@
+{
+  "format": "abi-capability-compiler-phase3-guarded-host-replication/1",
+  "protocol_id": "abi-capability-compiler-phase3-guarded-host-replication-v499",
+  "status": "PREREGISTERED_EXACTLY_TWO_FRESH_PROCESS_HOST_INITIALIZATIONS",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V498.json",
+  "historical_evidence_changed": false,
+  "neural_training_authorized": false,
+  "teacher_model_loading_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "promotion_eligible": false,
+  "objective": "Reproduce V494 from the same immutable artifact and bridge in exactly two additional fresh Python process host initializations, yielding three total paired host initializations without claiming three training seeds.",
+  "screen_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_GUARDED_SCREEN_PROTOCOL_V493.json",
+  "host_initializations": ["H1-fresh-process", "H2-fresh-process"],
+  "candidate": {
+    "checkpoint": "results/abi_capability_compiler_phase3_dual_view_recovery/candidate_v488/dual_view_recovery_bridge.safetensors",
+    "checkpoint_sha256": "046d00d6f4cf9cef068d616a6064aab9111b1ff5f23d4c2f98a4fa2aad2733a6",
+    "changed": false
+  },
+  "reference": {
+    "host_initialization": "H0-V494",
+    "outputs": "results/abi_capability_compiler_phase3_guarded_screen/evaluation_v494/development_outputs.jsonl",
+    "outputs_sha256": "7c0bff11da4c12ac06ea315c5e62841c670e4698d766a259c3908cd0fe981d1d",
+    "functional_passes_v1": 1386,
+    "repetition_collapses_v2": 0,
+    "teacher_relative_lower_95": 0.09
+  },
+  "gates": {
+    "new_host_initializations": 2,
+    "total_host_initializations": 3,
+    "each_complete_screen_pass": true,
+    "each_observations": 1400,
+    "each_output_sha256_equals_reference": true,
+    "teacher_absent_at_inference": true,
+    "final_test_not_accessed": true
+  },
+  "decision_rule": "A pass on both fresh processes satisfies the three-host-initialization reproducibility gate and opens CPU runtime, TTFT, and RSS certification. Any difference or gate failure closes replication for measured diagnosis; no extra initialization, tuning, or result repair is authorized.",
+  "bindings": {
+    "abi/capability_compiler_phase3_guarded_replication.py": "0a15a02f10a99ba3d711f599643413174964413769445b5028c030f3c25bd1c0",
+    "tests/test_capability_compiler_phase3_guarded_replication.py": "ad672c5fbdf2f9bfc1c5c165e81bcd9f18b610660e84e3dc47a8da7886be0749",
+    "abi/capability_compiler_phase3_guarded_screen.py": "a616cd8bedf57223f8b1b38213512a3fe2559c54fba00b33de42539b919cbaf1",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V498.json": "e030f6b52a9b2ba6ef6d811dccf7fe0f789495f2e8dcffd5b71614a8b358016b",
+    "ABI_CAPABILITY_COMPILER_PHASE3_GUARDED_SCREEN_VERIFY_V2_RESULT_V498.json": "ad883851199dc7d070824bef81b442498d2458f3a45d8755ba7f782c484bd5c2",
+    "results/abi_capability_compiler_phase3_guarded_screen_verify/verification_v498/result.json": "bb2b636a5a9535994f6dab0560f74e264aeca553f1a81ae1501982c1972d7518",
+    "ABI_CAPABILITY_COMPILER_PHASE3_GUARDED_SCREEN_PROTOCOL_V493.json": "d9c835ad542185ee4a30c4e6352af568693a316a4c03bd2d941a8f76fd03ddb9",
+    "results/abi_capability_compiler_phase3_dual_view_recovery/candidate_v488/dual_view_recovery_bridge.safetensors": "046d00d6f4cf9cef068d616a6064aab9111b1ff5f23d4c2f98a4fa2aad2733a6",
+    "results/abi_capability_compiler_phase3_guarded_screen/evaluation_v494/development_outputs.jsonl": "7c0bff11da4c12ac06ea315c5e62841c670e4698d766a259c3908cd0fe981d1d"
+  },
+  "phase2_external_blocker": "21000 blinded judgments from three independent human raters remain unavailable and are not waived.",
+  "phase3_certified": false,
+  "claim_boundary": "Development-only host-initialization reproducibility; no CPU runtime, final-test, Phase 3, or superiority claim."
+}
