@@ -1,0 +1,161 @@
+{
+  "abstention_prefixes": 16,
+  "checkpoint_sha256": "71774b9836afd0e934eef754aeb119e6db2408bcd1c7751d4dce519bfc2333a0",
+  "evaluation_wall_seconds": 203.71573880000506,
+  "evidence_sha256": "026b22761e479b832f950b1475652faddfbf6de2d885244953fcea14cab8838d",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-final-control-evaluation/1",
+  "functional_passes_v1": 1383,
+  "functional_passes_v2": 1385,
+  "guard_terminations": 14,
+  "observations": 1400,
+  "per_capability": {
+    "abstention": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "clarification": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "coherence": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 96,
+      "wilson_v1": {
+        "lower_95": 0.9016292856411208,
+        "point": 0.96,
+        "upper_95": 0.9843366960084523
+      }
+    },
+    "conversation": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "email_drafting_from_notes": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 98,
+      "wilson_v1": {
+        "lower_95": 0.929988209271456,
+        "point": 0.98,
+        "upper_95": 0.9944980324498376
+      }
+    },
+    "fact_free_reasoning": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 95,
+      "wilson_v1": {
+        "lower_95": 0.8882495307680808,
+        "point": 0.95,
+        "upper_95": 0.9784563208456319
+      }
+    },
+    "fluent_realization": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 97,
+      "wilson_v1": {
+        "lower_95": 0.9154806357094724,
+        "point": 0.97,
+        "upper_95": 0.9897454759759611
+      }
+    },
+    "format_control": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "grammar": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "instruction_following": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "prompt_grounding": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 99,
+      "wilson_v1": {
+        "lower_95": 0.9455138038212946,
+        "point": 0.99,
+        "upper_95": 0.9982325679358593
+      }
+    },
+    "rewriting": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "supplied_text_summarization": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 98,
+      "wilson_v1": {
+        "lower_95": 0.929988209271456,
+        "point": 0.98,
+        "upper_95": 0.9944980324498376
+      }
+    },
+    "tone_control": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    }
+  },
+  "protocol_sha256": "63072a96a209a3bc3f28c04cd4a02dcb0e4f5ed6a43af32fdcbb181934ce2dfa",
+  "raw_outputs_sha256": "f3a1668d7d6833bdb6f3568d246479b2099b32eea80bddec991f0bf94892f6e5",
+  "repetition_collapses_v2": 0,
+  "router_correct": 1400,
+  "status": "COMPLETE_MATCHED_CONTROL_DEVELOPMENT_EVALUATION",
+  "strong_routes_exact": 1000,
+  "system": "A0_route_isolated"
+}
