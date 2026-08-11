@@ -1,0 +1,90 @@
+{
+  "format": "abi-capability-compiler-phase3-online-contract-guard-screen/1",
+  "protocol_id": "abi-capability-compiler-phase3-online-contract-guard-screen-v493",
+  "status": "PREREGISTERED_FRESH_ONLINE_EXACT_V2_GUARDED_SCREEN",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V492.json",
+  "historical_evidence_changed": false,
+  "neural_training_authorized": false,
+  "teacher_model_loading_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "promotion_eligible": false,
+  "objective": "Freshly regenerate the complete locked 1,400-prompt development suite with the unchanged V488 checkpoint and a deployed exact-V2 repetition stop plus artifact-derived abstention clause; preserve byte-exact strong-path behavior and measure the guard rather than relying on the V492 offline counterfactual.",
+  "parent": {
+    "base_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_QUALIFIED_TRANSITION_CONTROL_PROTOCOL_V440.json",
+    "checkpoint": "results/abi_capability_compiler_phase3_token_substrate_conformance/candidate_v463/model.safetensors",
+    "checkpoint_sha256": "d354eee236c1153a92e3b2d05f806fb4238438aebd2c8a889ed9dcb8f1f192c8",
+    "immutable": true,
+    "development_outputs": "results/abi_capability_compiler_phase3_token_substrate_conformance/evaluation_v463/development_outputs.jsonl"
+  },
+  "candidate": {
+    "checkpoint": "results/abi_capability_compiler_phase3_dual_view_recovery/candidate_v488/dual_view_recovery_bridge.safetensors",
+    "checkpoint_sha256": "046d00d6f4cf9cef068d616a6064aab9111b1ff5f23d4c2f98a4fa2aad2733a6",
+    "immutable": true
+  },
+  "router": {
+    "qualification": "ABI_CAPABILITY_COMPILER_PHASE3_SPARSE_ROUTER_REPLICATION_RESULT_V46.json",
+    "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_SPARSE_ROUTER_PROTOCOL_V45.json",
+    "candidate_dir": "results/abi_capability_compiler_phase3_sparse_router/development_v45/R0-seed240045",
+    "checkpoint_sha256": "cc1f384a49fdaad94d47c5feb4573dcc7eb688ac96ffd7bfffade811861acb48"
+  },
+  "guard": {
+    "artifact": "results/abi_capability_compiler_phase3_host_supervision/build_v480/host_weak_supervision_v480.abicir",
+    "artifact_sha256": "7b0af0bafda631f89dd054a3bd57da76885b3eaca7fe863474255bcf8978b34d",
+    "repetition_predicate": "exact bound repetition_collapse_v2 evaluated after every proposed weak-route token; stop before the first collapsing token",
+    "canonical_abstention_marker": "cannot determine",
+    "canonical_abstention_clause": "I cannot determine that from the information given.",
+    "abstention_condition": "prepend only on the qualified abstention route when no marker common to every V480 abstention evaluator is present",
+    "strong_route_action": "bypass guard and invoke the unchanged V463 generation path"
+  },
+  "development": {
+    "catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+    "teacher_reference": "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl",
+    "prompts": 1400,
+    "prompts_per_capability": 100,
+    "autonomous_greedy_generation": true
+  },
+  "absolute_screen": {
+    "per_capability_functional_point_estimate_minimum": 0.9,
+    "per_capability_functional_wilson_lower_minimum": 0.85,
+    "critical_point_minimum": 0.95,
+    "critical_wilson_lower_minimum": 0.9,
+    "repetition_collapse_v2_count_maximum": 0
+  },
+  "teacher_relative_screen": {
+    "method": "capability_stratified_paired_percentile_bootstrap",
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 240493,
+    "candidate_minus_teacher_lower_95_minimum": -0.05
+  },
+  "decision_rule": "A complete gate pass opens exactly two preregistered paired replications and a separately preregistered CPU runtime, TTFT, and RSS certification. Any miss closes this online guard without a threshold, phrase, marker, or predicate sweep. This screen cannot promote or certify Phase 3.",
+  "bindings": {
+    "abi/capability_compiler_phase3_guarded_screen.py": "a616cd8bedf57223f8b1b38213512a3fe2559c54fba00b33de42539b919cbaf1",
+    "tests/test_capability_compiler_phase3_guarded_screen.py": "c2afc333c734144cfef07b7b634c0921686c6ad0a26a9512f6e20958a449a8e7",
+    "abi/capability_compiler_repetition_v2.py": "8a7516efc0dd23360f3051b349d5d1b01180fe6966884f8d343044018b53eed7",
+    "abi/capability_compiler_phase3_contract_guard_audit.py": "1319884995861e0f017eef816c07bb4d724cb035908dee804eab869053bbccdb",
+    "abi/capability_compiler_phase3_targeted_recovery_bridge.py": "b13e71896c64de7fe74a68519b23af322f4d13442cae60bf078c031ae6451696",
+    "abi/capability_compiler_phase3_weak_residual.py": "b1bbb265c4e833f697331112f9c657a0d743790d6ce3e3811d5e9d677a60bfb8",
+    "abi/capability_compiler_phase3_sparse_router.py": "e44b0f8cb90a8999d836d974e792392cd6fe2b4a347c19eb35e200d81016a8ec",
+    "abi/capability_compiler_functional_v2.py": "1755ceded6de7c8228ed91e5be6bf86452b6c5f02466f8fda150317775abd4af",
+    "abi/capability_compiler_phase2_common.py": "8093ec2016d685f0327c87640042c8373bc141d76351fd641b21a44d018b6c92",
+    "abi/capability_compiler_phase2_teacher.py": "dc76ee575f5e5f2cccd9fe8279ae501920bb022e8e62a921240ea3e5a9ced892",
+    "abi/capability_compiler_phase3.py": "5d490989e088f42aba4bd2ca96fbe70ea2db211890369dd6f431dd781390c77b",
+    "abi/capability_compiler_phase3_routed_v15_autonomous_screen_isolated.py": "630adec895c76fc4eb79e52cc1fe7cada1476fc50ed8d40734e2462d600a093b",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V492.json": "06df55c7091af2b89a1f1dce6b8ed528bf5e278525e4da600dadab2ec29c3563",
+    "ABI_CAPABILITY_COMPILER_PHASE3_CONTRACT_GUARD_V2_AUDIT_RESULT_V492.json": "e621a3eeaadeb907b3f702a68828b68dfaab333eaf719683a81a7e4e34e34fc3",
+    "ABI_CAPABILITY_COMPILER_PHASE3_QUALIFIED_TRANSITION_CONTROL_PROTOCOL_V440.json": "367f9e24e5bb06719a7252670097e8d6cfaf64cb18f95b436b388abac303bec4",
+    "results/abi_capability_compiler_phase3_dual_view_recovery/candidate_v488/dual_view_recovery_bridge.safetensors": "046d00d6f4cf9cef068d616a6064aab9111b1ff5f23d4c2f98a4fa2aad2733a6",
+    "results/abi_capability_compiler_phase3_host_supervision/build_v480/host_weak_supervision_v480.abicir": "7b0af0bafda631f89dd054a3bd57da76885b3eaca7fe863474255bcf8978b34d",
+    "results/abi_capability_compiler_phase3_token_substrate_conformance/candidate_v463/model.safetensors": "d354eee236c1153a92e3b2d05f806fb4238438aebd2c8a889ed9dcb8f1f192c8",
+    "results/abi_capability_compiler_phase3_token_substrate_conformance/evaluation_v463/development_outputs.jsonl": "e247ce93cbee78d7188f6ca4a1d5c7f144841df73fb964cac61f51fd3894bf90",
+    "ABI_CAPABILITY_COMPILER_PHASE3_SPARSE_ROUTER_REPLICATION_RESULT_V46.json": "a03d54dace44463641e1d9cd4cc9a5f6114d44ea29375e45f790cfe103ea39d9",
+    "ABI_CAPABILITY_COMPILER_PHASE3_SPARSE_ROUTER_PROTOCOL_V45.json": "95ec833d9b216d51ddf57fed71a5d79e565d567b1389eef1c2b7f1cfdebba684",
+    "results/abi_capability_compiler_phase3_sparse_router/development_v45/R0-seed240045/router.safetensors": "cc1f384a49fdaad94d47c5feb4573dcc7eb688ac96ffd7bfffade811861acb48",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl": "1081dbe57e75da50b2619bc2dab14c6441158dcd6068f2b864733936087e86a2"
+  },
+  "phase2_external_blocker": "21000 blinded judgments from three independent human raters remain unavailable and are not waived.",
+  "phase3_certified": false,
+  "claim_boundary": "Fresh development-only online guard screen; replication, CPU runtime, TTFT, RSS, final quality, minimum information, Phase 3, and superiority remain unproven."
+}
