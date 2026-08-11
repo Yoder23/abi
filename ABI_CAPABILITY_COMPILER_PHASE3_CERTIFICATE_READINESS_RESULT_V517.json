@@ -1,0 +1,49 @@
+{
+  "format": "abi-capability-compiler-phase3-certificate-readiness-summary/1",
+  "version": 517,
+  "status": "FAIL_FINAL_LINEAGE_MATCHED_CAUSAL_CONTROLS_MISSING",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_CERTIFICATE_READINESS_PROTOCOL_V515.json",
+    "sha256": "7997e4dc2f82fda434c75a94bf9e18cc3adc2d38b2a5e41e33b17888012614c6"
+  },
+  "raw_result": {
+    "path": "results/abi_capability_compiler_phase3_certificate_readiness/audit_v517/result.json",
+    "sha256": "224d4532d8fb20d2bfecba9e9fd54def6c2ad35816d3735e241fe66cf43c97ac",
+    "evidence_sha256": "12e66f7c7724fd839e8cbdb58bb19fcdcc1548ac6fe2001ecd8e7a296e24b0a9"
+  },
+  "endpoint_gates": {
+    "quality": true,
+    "hostile_verifier": true,
+    "three_host_replication": true,
+    "fully_cpu_runtime": true,
+    "information_accounting": true
+  },
+  "final_candidate_minus_v463_parent": {
+    "point": 0.05928571428571429,
+    "paired_bootstrap_lower_95": 0.047142857142857146,
+    "paired_bootstrap_upper_95": 0.07214285714285715,
+    "prompts": 1400,
+    "bootstrap_replicates": 10000
+  },
+  "historical_matched_matrix": {
+    "A0_beats_A1_A2_A3_A4": true,
+    "A0_passes_absolute_quality": false,
+    "A0_same_checkpoint_as_final": false,
+    "may_certify_final_endpoint": false
+  },
+  "missing_final_lineage_controls": [
+    "A1_label_free",
+    "A2_shuffled",
+    "A3_bridge_only",
+    "A4_monolithic"
+  ],
+  "interpretation": "The final V494 endpoint is qualified on every bound machine endpoint gate and causally beats its unchanged V463 parent. The earlier matched A0-A4 matrix proves a historical labeled-teacher signal, but its A0 failed absolute quality and is a different checkpoint. Splicing those facts would violate the controlling same-lineage causal gate.",
+  "decision": "Do not certify Phase 3. Preregister the smallest final-lineage matched causal-control matrix with shared V463 parent, identical V480 acquisition payload and training budget, matched bridge capacity, autonomous generation, paired confidence intervals, and no final-test access.",
+  "promotion_eligible": false,
+  "phase3_certified": false,
+  "final_test_accessed": false,
+  "phase2_external_blocker": "21000 blinded judgments from three independent human raters remain unavailable and are not waived.",
+  "claim_boundary": "Endpoint qualification plus a rigorously identified causal-evidence gap; no Phase 3, minimum-information, final-test, or ABI-superiority claim."
+}
