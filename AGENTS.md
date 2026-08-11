@@ -22,7 +22,7 @@ LayerCake cake.
 Status date: 2026-08-11.
 
 The controlling machine-readable state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V580.json`. Phase 3 has completed and
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V582.json`. Phase 3 has completed and
 passed every currently required machine gate, but it is not unconditionally
 certified because the controlling campaign contract makes it depend on Phase
 2. Phase 2 has 21,000 immutable blinded rating rows and zero completed
@@ -47,8 +47,8 @@ not replace the three humans.
 - Phase 2: **MACHINE EVIDENCE COMPLETE; BLOCKED ON 21,000 JUDGMENTS FROM THREE
   INDEPENDENT HUMAN RATERS (0/21,000 FILLED)**.
 - Phase 3: **MACHINE EVIDENCE COMPLETE; BLOCKED BY THE PHASE 2 PREREQUISITE**.
-- Phase 4: **CONDITIONALLY OPEN; B40/B80 BOUNDARY NOT SEED-STABLE;
-  REPLICATION IN PROGRESS; NOT CERTIFIED**.
+- Phase 4: **CONDITIONALLY OPEN; ABI FRONTIER SEED-SENSITIVE AND
+  NON-MONOTONIC; REPLICATION IN PROGRESS; NOT CERTIFIED**.
 - Phases 5-8: **LOCKED**.
 
 The user has explicitly authorized conditional Phase 4 research while the
@@ -81,8 +81,10 @@ machine-quality gate, and a +8.43-point paired lower-95 teacher-relative
 advantage. This establishes a screening boundary only. The frozen adaptive
 order now authorizes exactly B40 and B80 at seeds 130363 and 155921. B40 passed
 at seed 130363 with 1,379/1,400 and zero collapses, so it is not a reproduced
-adjacent-lower failure and B80 cannot be called the minimum. Finish the three
-remaining registered runs before any prospective follow-up protocol.
+adjacent-lower failure and B80 cannot be called the minimum. The paired B80
+seed130363 run failed at 1,359/1,400 because coherence was 78/100 while B40
+passed. Finish the two seed155921 runs before any prospective stabilization
+protocol.
 
 The exact route-isolated endpoint scored 1,393/1,400 with zero repetition
 collapse at seed 240487 and passed all four same-lineage causal controls across

@@ -6,7 +6,7 @@ Status date: 2026-08-11
 
 The ABI capability-compiler moonshot is **OPEN**.
 
-The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V580.json`.
+The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V582.json`.
 All Phase 3 machine endpoints now pass. The exact route-isolated checkpoint has
 three-seed causal replication, 1,393/1,400 autonomous quality with zero
 collapse on the selected seed, three byte-identical host initializations,
@@ -40,7 +40,7 @@ focused tests, including all three production-form dry runs, pass. See
 | 1 | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 | MACHINE + HANDOFF READY; 0/21,000 HUMAN PREFERENCES | `ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V554.json` |
 | 3 | MACHINE EVIDENCE COMPLETE; BLOCKED BY PHASE 2 | `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json` |
-| 4 | CONDITIONALLY OPEN; B40/B80 BOUNDARY NOT SEED-STABLE; REPLICATION IN PROGRESS | `ABI_CAPABILITY_COMPILER_PHASE4_ABI_B40_SEED130363_RESULT_V579.json` |
+| 4 | CONDITIONALLY OPEN; ABI FRONTIER SEED-SENSITIVE/NON-MONOTONIC; REPLICATION IN PROGRESS | `ABI_CAPABILITY_COMPILER_PHASE4_ABI_B80_SEED130363_RESULT_V581.json` |
 | 5-8 | LOCKED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` |
 
 V558 passed the physical archive and checkpoint-lineage audit without loading
@@ -69,7 +69,9 @@ adjacent lower failure. Under the adaptive rule, only B40/B80 at seeds 130363
 and 155921 are now authorized to test three-seed reproduction. B40 passed the
 first replication at seed 130363 with 1,379/1,400 and zero collapses, so the
 B80-minimum boundary has not reproduced and no minimum claim is allowed. The
-remaining B80 seed130363 and B40/B80 seed155921 runs remain authorized.
+paired B80 seed130363 then failed at 1,359/1,400 because coherence was 78/100,
+despite zero collapses. The current frontier is seed-sensitive and
+non-monotonic. Only B40/B80 seed155921 remain authorized before a decision.
 
 ### Preserved historical mission snapshot
 

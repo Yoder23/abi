@@ -4,7 +4,7 @@ Status date: 2026-08-11
 
 ## Executive state
 
-The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V580.json`.
+The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V582.json`.
 Phase 3's machine campaign is complete and passes every registered technical
 gate. The exact route-isolated candidate has three paired-seed causal passes,
 1,393/1,400 autonomous functional passes with zero collapse, exact routing,
@@ -28,7 +28,9 @@ collapses, every absolute quality gate, and a +8.43-point paired lower-95
 teacher-relative advantage. B40 is the adjacent lower failure; only their four
 paired replications at seeds 130363 and 155921 are now authorized. The first
 B40 replication passed at 1,379/1,400 with zero collapses, so the B80 minimum
-boundary is not seed-stable and cannot be claimed. Three registered runs remain.
+boundary is not seed-stable and cannot be claimed. The paired B80 replication
+then failed at 1,359/1,400 because coherence was 78/100, despite zero collapses.
+The frontier is non-monotonic; two seed155921 runs remain.
 Final
 material stays unopened, and no ABI-superiority or
 minimum-information claim is permitted. No additional Phase 3 compute is

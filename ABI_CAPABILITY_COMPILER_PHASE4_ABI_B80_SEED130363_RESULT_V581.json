@@ -1,0 +1,42 @@
+{
+  "format": "abi-capability-compiler-phase4-abi-budget-summary/1",
+  "version": 581,
+  "status_date": "2026-08-11",
+  "status": "FAIL_B80_REPLICATION_SEED_SENSITIVITY_CONFIRMED",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_ABI_LINEAGE_PROTOCOL_V570.json",
+    "sha256": "50cd9abc83b584bf1682b57f606bbdcba75fbeda76eeeaa48edafbbc08e8505c"
+  },
+  "raw_result": {
+    "path": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed130363-v581/result.json",
+    "sha256": "15a66906fe54389d1dc0640a18f84f89d2f651fdf1a37346806c8a4d5ccf8c2f",
+    "evidence_sha256": "4eee0fa092957a149736b2c2fbcf76e0f916dbab1272af62df0134ff138b9152"
+  },
+  "budget": {
+    "id": "B80",
+    "unique_source_attempts": 7781,
+    "authoritative_teacher_output_tokens": 238832
+  },
+  "seed": 130363,
+  "machine_quality": {
+    "functional_passes": "1359/1400",
+    "repetition_collapses_v2": 0,
+    "router_correct": "1400/1400",
+    "strong_parent_exact": "1000/1000",
+    "teacher_relative_difference": 0.08714285714285715,
+    "teacher_relative_lower_95": 0.07
+  },
+  "failed_gates": ["per_capability_functional"],
+  "residual_failure": {
+    "capability": "coherence",
+    "passes": "78/100",
+    "wilson_lower_95": 0.6892964648501421
+  },
+  "paired_seed_observation": "At seed 130363 B40 passes 1379/1400 with zero collapses while B80 fails 1359/1400 because coherence is 78/100. Imported-information monotonicity and the screening B80 boundary do not reproduce.",
+  "wall_seconds": 2004.8473465999996,
+  "final_test_accessed": false,
+  "phase4_certified": false,
+  "next_action": "Complete the already preregistered B40 and B80 seed155921 runs; do not tune or reinterpret the current evidence.",
+  "claim_boundary": "One B80 replication failure and paired non-monotonic result; no stable frontier, minimum, runtime, matched-baseline comparison, Phase 4 certificate, final-test result, or superiority claim."
+}

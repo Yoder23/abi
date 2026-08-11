@@ -1,0 +1,23 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "version": 582,
+  "status_date": "2026-08-11",
+  "historical_evidence_changed": false,
+  "phase0": "COMPLETE",
+  "phase1": "COMPLETE",
+  "phase2": "MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS_0_OF_21000_FILLED",
+  "phase3": "MACHINE_EVIDENCE_COMPLETE_NOT_UNCONDITIONALLY_CERTIFIED",
+  "phase4": "CONDITIONALLY_OPEN_ABI_FRONTIER_SEED_SENSITIVE_NONMONOTONIC_REPLICATION_IN_PROGRESS",
+  "phases5_through_8": "LOCKED",
+  "phase4_latest": "ABI_CAPABILITY_COMPILER_PHASE4_ABI_B80_SEED130363_RESULT_V581.json",
+  "B40_seed104729": "FAIL_1360_OF_1400_2_COLLAPSES",
+  "B80_seed104729": "PASS_1378_OF_1400_ZERO_COLLAPSES",
+  "B40_seed130363": "PASS_1379_OF_1400_ZERO_COLLAPSES",
+  "B80_seed130363": "FAIL_1359_OF_1400_COHERENCE_78_OF_100_ZERO_COLLAPSES",
+  "frontier_claim": "PROHIBITED_SEED_SENSITIVE_NONMONOTONIC",
+  "authorized_remaining_replications": ["B40_seed155921", "B80_seed155921"],
+  "other_phase4_training": "PROHIBITED_UNTIL_TWO_AUTHORIZED_REPLICATIONS_COMPLETE",
+  "final_test_access": "PROHIBITED",
+  "next_action": "Complete B40 and B80 at seed155921 under the unchanged protocol, then issue the preregistered replication decision.",
+  "claim_boundary": "Conditional Phase 4 replication state only; no stable ABI frontier, minimum, certificate, final-test result, or superiority claim."
+}

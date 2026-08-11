@@ -1,0 +1,152 @@
+{
+  "bridge": {
+    "parameters": 100352,
+    "source_parameters_copied": 0,
+    "weak_capabilities": [
+      "abstention",
+      "coherence",
+      "fluent_realization",
+      "tone_control"
+    ]
+  },
+  "checkpoint": {
+    "bytes": 401968,
+    "path": "host_recovery_bridge.safetensors",
+    "sha256": "c947be8c26221f33fb03d40ecfcc458c70650a4ca8d5a091bb7d2e5620984e17"
+  },
+  "evidence_sha256": "71a595ac1bee65fa0f287a8fcd5807eaecf3a75c2abf159d43f918bd1c76fca7",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-host-recovery-bridge/1",
+  "initialization": {
+    "checkpoint_sha256": "64e033281bb04469b4a3c94e3b5d715ffdab27f778dea90bede7e60b59b7b721",
+    "state_sha256": "691440796010f7743800b5bedc96a245c8d0766db86603aca45b0723d398fc09"
+  },
+  "parent": {
+    "checkpoint_sha256": "b6c9f4ffa7d12b451b7e60544abeeae1381e37a04ee2197995e111bb290f8445",
+    "mutated": false,
+    "state_sha256_after": "dfdfef66c17aaf4759aaba07892416dd13d04228ee8ff1470d1739ed452d05e9",
+    "state_sha256_before": "dfdfef66c17aaf4759aaba07892416dd13d04228ee8ff1470d1739ed452d05e9"
+  },
+  "phase3_certified": false,
+  "promotion_eligible": false,
+  "protocol_sha256": "f0c2a0f9def441aedcd6f64bc36d20d03922b04a317bfb0f4e822cb495445973",
+  "source_blocks_retained": 0,
+  "status": "TRAINED_DEVELOPMENT_ONLY_NONPROMOTIONAL",
+  "supervision": {
+    "artifact_sha256": "69638ffbfa82c9e04cf8e25c424ba7c0b08978955f5b6a769c92975268b8bc12",
+    "observations_by_stratum": {
+      "abstention:0": 2000,
+      "abstention:1": 2000,
+      "abstention:2": 2000,
+      "abstention:3": 2000,
+      "coherence:0": 2000,
+      "coherence:1": 2000,
+      "coherence:2": 2000,
+      "coherence:3": 2000,
+      "fluent_realization:0": 2000,
+      "fluent_realization:1": 2000,
+      "fluent_realization:2": 2000,
+      "fluent_realization:3": 2000,
+      "tone_control:0": 2000,
+      "tone_control:1": 2000,
+      "tone_control:2": 2000,
+      "tone_control:3": 2000
+    },
+    "records": 1024,
+    "teacher_tokens_seen": 847806
+  },
+  "teacher_present_at_inference": false,
+  "teacher_present_during_training": false,
+  "training": {
+    "active_parameter_seconds": 29095703.433214188,
+    "autonomous_prefix_tokens_seen": 16237,
+    "curves": [
+      {
+        "language_loss": 0.6294453144073486,
+        "recovery_horizon": null,
+        "step": 1,
+        "wall_seconds": 0.09592560000601225
+      },
+      {
+        "language_loss": 0.147909477353096,
+        "recovery_horizon": null,
+        "step": 250,
+        "wall_seconds": 30.65445629999158
+      },
+      {
+        "language_loss": 0.30850934982299805,
+        "recovery_horizon": 8,
+        "step": 500,
+        "wall_seconds": 67.45431780000217
+      },
+      {
+        "language_loss": 0.06886893510818481,
+        "recovery_horizon": null,
+        "step": 750,
+        "wall_seconds": 103.70585539998137
+      },
+      {
+        "language_loss": 0.07214978337287903,
+        "recovery_horizon": 4,
+        "step": 1000,
+        "wall_seconds": 140.52636299998267
+      },
+      {
+        "language_loss": 0.0388314425945282,
+        "recovery_horizon": null,
+        "step": 1250,
+        "wall_seconds": 176.53816900000675
+      },
+      {
+        "language_loss": 0.07538369297981262,
+        "recovery_horizon": 16,
+        "step": 1500,
+        "wall_seconds": 214.37956539998413
+      },
+      {
+        "language_loss": 0.12604400515556335,
+        "recovery_horizon": null,
+        "step": 1750,
+        "wall_seconds": 251.87224110000534
+      },
+      {
+        "language_loss": 0.6969753503799438,
+        "recovery_horizon": 8,
+        "step": 2000,
+        "wall_seconds": 289.72563430000446
+      }
+    ],
+    "device": "cuda",
+    "observations": 32000,
+    "peak_cuda_allocated_bytes": 2300990976,
+    "peak_process_rss_bytes": 1800019968,
+    "record_sequence_sha256": "acffdd67eaa58e90c327aa616ef2b6cffca39ceff804ae101b1ba7aba64c17b8",
+    "recovery_batches": 476,
+    "recovery_by_stratum": {
+      "abstention:0": 119,
+      "abstention:1": 119,
+      "abstention:2": 119,
+      "abstention:3": 119,
+      "coherence:0": 119,
+      "coherence:1": 119,
+      "coherence:2": 119,
+      "coherence:3": 119,
+      "fluent_realization:0": 119,
+      "fluent_realization:1": 119,
+      "fluent_realization:2": 119,
+      "fluent_realization:3": 119,
+      "tone_control:0": 119,
+      "tone_control:1": 119,
+      "tone_control:2": 119,
+      "tone_control:3": 119
+    },
+    "recovery_horizon_batches": {
+      "16": 158,
+      "4": 159,
+      "8": 159
+    },
+    "seed": 130363,
+    "steps": 2000,
+    "wall_seconds": 289.93645799998194
+  }
+}
