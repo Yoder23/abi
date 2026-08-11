@@ -1,0 +1,51 @@
+{
+  "format": "abi-capability-compiler-phase3-shared-gradient-conflict-summary/1",
+  "version": 476,
+  "status": "PASS_NO_MATERIAL_SHARED_GRADIENT_CONFLICT_EXPERT_ISOLATION_NOT_AUTHORIZED",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_SHARED_GRADIENT_CONFLICT_PROTOCOL_V475.json",
+    "sha256": "18c003da4c9005d0e1e70c756e3488bf0b159bb6f800788dd241f706426842f2"
+  },
+  "raw_evidence": {
+    "path": "results/abi_capability_compiler_phase3_shared_gradient_conflict/audit_v476.json",
+    "evidence_sha256": "65375c634b5e53f462f11744d7e8b89535a6d5d3a0db272fc69a5122ef46ff9f",
+    "candidate_checkpoint_sha256": "347e121d0d047146a12d94304621eaa8c2309b345ce1f9be21db80f11fc0be54"
+  },
+  "sample": {
+    "targeted_records_per_capability": 32,
+    "anchor_records_per_capability": 32,
+    "total_records": 256,
+    "shared_parameters_measured": 99840
+  },
+  "pairwise_gradient_cosines": {
+    "abstention__coherence": -0.008299919458903585,
+    "abstention__fluent_realization": 0.05181527593100619,
+    "abstention__tone_control": 0.07938093875117139,
+    "coherence__fluent_realization": 0.09697541906643262,
+    "coherence__tone_control": -0.050885054435263206,
+    "fluent_realization__tone_control": 0.1043805673222794
+  },
+  "minimum_pairwise_cosine": -0.050885054435263206,
+  "material_conflict_threshold": -0.1,
+  "material_negative_pairs": [],
+  "mean_batch_loss": {
+    "abstention": 0.12201926737907343,
+    "coherence": 0.0024880712080630474,
+    "fluent_realization": 0.019300676562124863,
+    "tone_control": 0.052691456861793995
+  },
+  "controls": {
+    "teacher_model_loaded": false,
+    "optimizer_created": false,
+    "optimizer_step_performed": false,
+    "neural_training_performed": false,
+    "final_test_accessed": false
+  },
+  "interpretation": "The V474 weak-capability gradients are nearly orthogonal but none is materially antagonistic under the preregistered threshold. The weak quality failure is therefore not attributed to destructive shared-gradient interference. Residual loss is most concentrated in abstention, while already-recovered coherence is near zero loss.",
+  "decision": "Do not train per-capability experts. Preserve V474 and V476, then perform one read-only prompt-level audit connecting weak development failures to teacher functional validity, supervision support, and autonomous divergence before authorizing another trainable successor.",
+  "promotion_eligible": false,
+  "phase3_certified": false,
+  "claim_boundary": "Read-only development attribution only; no promotion, runtime, final-test, Phase 3, or superiority claim."
+}
