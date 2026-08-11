@@ -1,0 +1,44 @@
+{
+  "format": "abi-capability-compiler-phase3-route-isolated-verifier/1",
+  "version": 530,
+  "status": "PREREGISTERED_INDEPENDENT_HOSTILE_RECONSTRUCTION",
+  "status_date": "2026-08-11",
+  "historical_evidence_changed": false,
+  "final_test_access": "PROHIBITED",
+  "catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+  "parent_outputs": "results/abi_capability_compiler_phase3_token_substrate_conformance/evaluation_v463/development_outputs.jsonl",
+  "decision": "results/abi_capability_compiler_phase3_route_isolated_controls/decision_v529/result.json",
+  "outputs": {
+    "A0": "results/abi_capability_compiler_phase3_route_isolated/evaluation_v526/development_outputs.jsonl",
+    "A1_label_free": "results/abi_capability_compiler_phase3_route_isolated_controls/A1_label_free/evaluation_v528/development_outputs.jsonl",
+    "A2_shuffled": "results/abi_capability_compiler_phase3_route_isolated_controls/A2_shuffled/evaluation_v528/development_outputs.jsonl",
+    "A3_bridge_only": "results/abi_capability_compiler_phase3_route_isolated_controls/A3_bridge_only/evaluation_v528/development_outputs.jsonl",
+    "A4_monolithic": "results/abi_capability_compiler_phase3_route_isolated_controls/A4_monolithic/evaluation_v528/development_outputs.jsonl"
+  },
+  "metadata": {
+    "A0": "results/abi_capability_compiler_phase3_route_isolated/candidate_v526/metadata.json",
+    "A1_label_free": "results/abi_capability_compiler_phase3_route_isolated_controls/A1_label_free/candidate_v528/metadata.json",
+    "A2_shuffled": "results/abi_capability_compiler_phase3_route_isolated_controls/A2_shuffled/candidate_v528/metadata.json",
+    "A3_bridge_only": "results/abi_capability_compiler_phase3_route_isolated_controls/A3_bridge_only/candidate_v528/metadata.json",
+    "A4_monolithic": "results/abi_capability_compiler_phase3_route_isolated_controls/A4_monolithic/candidate_v528/metadata.json"
+  },
+  "decision_rule": "Reconstruct all 7000 semantic annotations, route/strong identities, training-accounting equality, and four paired confidence intervals from bound raw evidence. Reject at least five hostile mutations. Any mismatch invalidates the matrix.",
+  "bindings": {
+    "abi/capability_compiler_phase3_route_isolated_verify.py": "140432d0695ab992a60c9208c9086156f5de721e421cf6ffb3e7bb46e073260b",
+    "tests/test_capability_compiler_phase3_route_isolated_verify.py": "84dfdde76435d2cc27da8aeb9aa3b035c6447f2e1b8abf3beaf5eb3a7daf5e14",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "results/abi_capability_compiler_phase3_token_substrate_conformance/evaluation_v463/development_outputs.jsonl": "e247ce93cbee78d7188f6ca4a1d5c7f144841df73fb964cac61f51fd3894bf90",
+    "results/abi_capability_compiler_phase3_route_isolated_controls/decision_v529/result.json": "79ec47691895169e1065c62c63b6d5e78f4bda144b5a136b84115abd7dd016aa",
+    "results/abi_capability_compiler_phase3_route_isolated/evaluation_v526/development_outputs.jsonl": "c5b40380ab67083ab6d860af80fd1a6434089cc2a5ab0c1ae224912ac18879a1",
+    "results/abi_capability_compiler_phase3_route_isolated/candidate_v526/metadata.json": "f8b808f0b47e562ab85f5291f6b6f2aee0faeb7678fa800211e9d945b890215f",
+    "results/abi_capability_compiler_phase3_route_isolated_controls/A1_label_free/evaluation_v528/development_outputs.jsonl": "483160c1135b9db4e9b01c17a227c0dbab010149debc24df3abc9c4019c4531a",
+    "results/abi_capability_compiler_phase3_route_isolated_controls/A1_label_free/candidate_v528/metadata.json": "24a3c333e40d501bbea407c67022ce66f14a92c42986948f09faa4c3f1ce7170",
+    "results/abi_capability_compiler_phase3_route_isolated_controls/A2_shuffled/evaluation_v528/development_outputs.jsonl": "8643c55eeaf147a1ebbc7046df9ce084f351629846a67719c8d4089c813fd3d3",
+    "results/abi_capability_compiler_phase3_route_isolated_controls/A2_shuffled/candidate_v528/metadata.json": "8a4f1142a9c0b6258bc98fc9d158db39a52f9d3294891d96d25001696243fadb",
+    "results/abi_capability_compiler_phase3_route_isolated_controls/A3_bridge_only/evaluation_v528/development_outputs.jsonl": "b8b7fb622bf9fbe8177303413030feff76ef2d39cbdd6521e1f0100c22cc8b97",
+    "results/abi_capability_compiler_phase3_route_isolated_controls/A3_bridge_only/candidate_v528/metadata.json": "95685f9ab0d6487f9d8e96f9e0b11b208f7968d39df79af13adba4515910c479",
+    "results/abi_capability_compiler_phase3_route_isolated_controls/A4_monolithic/evaluation_v528/development_outputs.jsonl": "bc3b9e983fa95ef601c6d66de0ac7de622a6dade9a691c46dc108e85ac812652",
+    "results/abi_capability_compiler_phase3_route_isolated_controls/A4_monolithic/candidate_v528/metadata.json": "700ed71f47d4dea97fdddbf6fa0db6444189aa1744e00a013d3c2769347cd1af"
+  },
+  "claim_boundary": "Read-only hostile development-evidence verification; no training replication, runtime, final-test, Phase 3, minimum-information, or superiority claim."
+}
