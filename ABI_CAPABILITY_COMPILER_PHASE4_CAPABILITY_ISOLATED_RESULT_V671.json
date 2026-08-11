@@ -1,0 +1,48 @@
+{
+  "format": "abi-capability-compiler-phase4-capability-isolated-summary/1",
+  "version": 671,
+  "status_date": "2026-08-11",
+  "status": "FAIL_HARD_SEED_UNIFORM_ROUTE_TRAINING",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "training": "ABI_CAPABILITY_COMPILER_PHASE4_CAPABILITY_ISOLATED_ADAPTATION_PROTOCOL_V664.json",
+    "evaluation_repair": "ABI_CAPABILITY_COMPILER_PHASE4_CAPABILITY_ISOLATED_EVALUATION_REPAIR_V669.json"
+  },
+  "candidate": {
+    "checkpoint_sha256": "33ade8cdcd9dced6092c53080c9f16814c4eb0e341b788b778fd103cd68bf88f",
+    "bytes": 1462672,
+    "training_wall_seconds": 482.5131748999993,
+    "installed_bridge_parameters": 365568,
+    "active_bridge_parameters_per_token": 26112,
+    "active_routes_per_token": 1
+  },
+  "raw_result": {
+    "path": "results/abi_capability_compiler_phase4_capability_isolated_adaptation/B80-seed130363-v670/evaluation/result.json",
+    "sha256": "00723233aabd9a45d370870accdedfb0052c0d399d214910718520f0017561cb",
+    "evidence_sha256": "15e795db21cf2c7ac59bbfd96a26159352e6e790c94ad0c2881aa89000ab7751"
+  },
+  "raw_outputs": {
+    "path": "results/abi_capability_compiler_phase4_capability_isolated_adaptation/B80-seed130363-v670/evaluation/development_outputs.jsonl",
+    "sha256": "da6c33977a4997da1c058800c10d7aee4f40a67d6b38ee6dacce9c4d270df11e"
+  },
+  "machine_quality": {
+    "functional_passes": "1312/1400",
+    "repetition_collapses_v2": 0,
+    "router_correct": "1400/1400",
+    "teacher_relative_lower_95": 0.03642857142857143,
+    "critical_gate": true,
+    "per_capability_gate": false
+  },
+  "measured_route_changes_from_inherited_same_seed": {
+    "coherence": "+20 to 98/100",
+    "format_control": "-45 to 52/100",
+    "fluent_realization": "-13 to 85/100",
+    "tone_control": "-11 to 86/100"
+  },
+  "adaptive_decision": "Cancel the two remaining B80 replications and all B40 runs. Close uniform all-route continued training without a sweep.",
+  "authorized_next_diagnostic": "One read-only route-local inherited-versus-adapted attribution using an acquisition-record holdout rule fixed before computing its result.",
+  "teacher_present_at_inference": false,
+  "final_test_accessed": false,
+  "phase4_certified": false,
+  "claim_boundary": "Failed single hard-seed architecture screen; no stable frontier, adjacent lower failure, runtime certification, matched baseline, final test, Phase 4 certificate, or superiority claim."
+}

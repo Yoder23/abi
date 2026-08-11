@@ -6,7 +6,7 @@ Status date: 2026-08-11
 
 The ABI capability-compiler moonshot is **OPEN**.
 
-The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V663.json`.
+The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V672.json`.
 All Phase 3 machine endpoints now pass. The exact route-isolated checkpoint has
 three-seed causal replication, 1,393/1,400 autonomous quality with zero
 collapse on the selected seed, three byte-identical host initializations,
@@ -40,7 +40,7 @@ focused tests, including all three production-form dry runs, pass. See
 | 1 | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 | MACHINE + HANDOFF READY; 0/21,000 HUMAN PREFERENCES | `ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V554.json` |
 | 3 | MACHINE EVIDENCE COMPLETE; BLOCKED BY PHASE 2 | `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json` |
-| 4 | CONDITIONALLY OPEN; CAPABILITY-ISOLATED + UNIVERSAL-GUARD DESIGN SUPPORTED; NOT CERTIFIED | `ABI_CAPABILITY_COMPILER_PHASE4_UNIVERSAL_GUARD_FEASIBILITY_RESULT_V662.json` |
+| 4 | CONDITIONALLY OPEN; PHYSICAL ISOLATION PASS; UNIFORM ROUTE TRAINING FAIL | `ABI_CAPABILITY_COMPILER_PHASE4_CAPABILITY_ISOLATED_RESULT_V671.json` |
 | 5-8 | LOCKED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` |
 
 V558 passed the physical archive and checkpoint-lineage audit without loading
@@ -153,8 +153,18 @@ sparse adaptation design; it does not promote the post-hoc bank. The design
 must select before execution, activate one path, preserve the immutable v18
 host, apply the same guard capability-independently, and account for installed
 and active bytes/parameters, latency, memory, and information consumption.
-Training remains prohibited until its protocol and preflight are sealed.
-Phase 4, matched baselines, final data, and Phase 5 remain closed.
+V664/V665 then sealed and preflighted that 14-route rank-16 design with 26,112
+active bridge parameters per token out of 365,568 installed. The first and
+hardest registered B80 seed trained for 482.5 seconds and physically executed
+one route, but failed quality at 1,312/1,400. Coherence improved from 78 to
+98/100 while format control fell from 97 to 52/100, fluent realization from 98
+to 85/100, and tone control from 97 to 86/100. Zero collapse, exact routing,
+critical quality, and teacher noninferiority still passed. The remaining B80
+and B40 runs are canceled, and uniform route training is closed. Exactly one
+read-only acquisition-holdout attribution may now test whether a route-local
+identity-versus-adapted acceptance architecture is supported without selecting
+on development scores. Phase 4, matched baselines, final data, and Phase 5
+remain closed.
 
 ### Preserved historical mission snapshot
 

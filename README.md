@@ -16,7 +16,7 @@ Status date: 2026-08-11
 
 **The ABI English-product moonshot is OPEN.**
 
-The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V663.json`.
+The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V672.json`.
 The route-isolated English endpoint now passes all registered Phase 3 machine
 gates: three paired training seeds and all A0-A4 causal controls, 1,393/1,400
 selected-seed autonomous quality with zero collapse, exact routing, three
@@ -158,7 +158,14 @@ supports one prospective physically selected, one-active-path capability-
 isolated adaptation experiment; it does not promote the post-hoc bank or
 certify Phase 4. That experiment must be preregistered and preflighted before
 training, preserve the immutable v18 host, and measure both installed and
-active resource costs.
+active resource costs. That prospective 14-route screen has now failed on the
+measured hard B80 seed: 1,312/1,400 overall, despite zero collapse, exact
+routing, teacher noninferiority, and a coherence gain from 78 to 98/100.
+Uniform route training damaged format control to 52/100, fluent realization to
+85/100, and tone control to 86/100. Its remaining runs are canceled. One
+read-only acquisition-holdout attribution is allowed before deciding whether a
+different route-local acceptance architecture is justified; Phase 4 remains
+uncertified.
 Phase 2 and Phase 3
 certificate statuses remain unchanged, final data remains unopened, and Phase
 5 is locked.

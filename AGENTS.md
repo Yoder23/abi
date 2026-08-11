@@ -22,7 +22,7 @@ LayerCake cake.
 Status date: 2026-08-11.
 
 The controlling machine-readable state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V663.json`. Phase 3 has completed and
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V672.json`. Phase 3 has completed and
 passed every currently required machine gate, but it is not unconditionally
 certified because the controlling campaign contract makes it depend on Phase
 2. Phase 2 has 21,000 immutable blinded rating rows and zero completed
@@ -174,7 +174,15 @@ read-only design evidence, not a candidate or certificate. Exactly one
 prospective physically selected, capability-isolated sparse adaptation with
 one active path, the unchanged guard, and complete installed/active resource
 accounting may be designed and preregistered. Training is prohibited until its
-protocol and preflight are sealed. Phase 4 is not certified.
+protocol and preflight are sealed. V664 then physically verified and trained
+that 14-route design on the measured hard B80 seed. It improved coherence from
+78/100 to 98/100 and retained zero collapse, exact routing, one active route,
+and teacher noninferiority, but failed at 1,312/1,400 because format control
+fell to 52/100, fluent realization to 85/100, and tone control to 86/100.
+Uniform all-route continued training is closed; its remaining five runs are
+canceled. Only one preregistered read-only acquisition-holdout attribution may
+test a route-local inherited-versus-adapted acceptance rule. No route may be
+selected from development scores or retrained first. Phase 4 is not certified.
 
 The exact route-isolated endpoint scored 1,393/1,400 with zero repetition
 collapse at seed 240487 and passed all four same-lineage causal controls across
