@@ -1,0 +1,26 @@
+{
+  "format": "abi-capability-compiler-phase3-route-isolated-runtime-composition/1",
+  "protocol_id": "abi-capability-compiler-phase3-route-isolated-runtime-composition-v543",
+  "status": "PREREGISTERED_READ_ONLY_CORRECTED_RSS_GATE_COMPOSITION",
+  "effective_date": "2026-08-11",
+  "historical_evidence_changed": false,
+  "new_generation_authorized": false,
+  "performance_rerun_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "evidence": {"fully_cpu_runtime": "results/abi_capability_compiler_phase3_route_isolated_cpu_runtime/runtime_v540/result.json", "qwen_rss": "results/abi_capability_compiler_phase3_route_isolated_qwen_rss_audit/audit_v542/result.json"},
+  "metric_compatibility": {"candidate": "process working-set delta from before exact candidate load through warm generation", "qwen": "physical llama-server process working set monitored through repeated warm CPU generation", "shared_unit": "bytes of resident physical working set", "digest_match_required": true, "sealed_candidate_value_match_required": true, "both_accelerator_allocations_zero_required": true},
+  "adversarial_tests": ["candidate RSS regression", "Qwen digest mutation", "candidate device mutation", "non-RSS gate mutation", "candidate RSS binding mutation"],
+  "decision_rule": "Only if V540 has exactly one failed gate named lower_peak_active_rss, both systems are physically CPU-only, digests and candidate RSS bindings match, corrected candidate RSS is strictly lower, and all five hostile mutations are rejected may the exact runtime matrix pass. No other field may change.",
+  "bindings": {
+    "abi/capability_compiler_phase3_route_isolated_runtime_compose.py": "2a809e64644c78deff10237a17b59175cdd84fd17c9069652eb9410d67918d48",
+    "tests/test_capability_compiler_phase3_route_isolated_runtime_compose.py": "cc42c72697732fce6dd327b0483bd772708fcc2e512de6c3b24f54c51fe2d281",
+    "abi/capability_compiler_phase2_common.py": "8093ec2016d685f0327c87640042c8373bc141d76351fd641b21a44d018b6c92",
+    "abi/capability_compiler_phase3.py": "5d490989e088f42aba4bd2ca96fbe70ea2db211890369dd6f431dd781390c77b",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V541.json": "0a000b6a596e95d81c536da7fed99e040a30dc40b0a93b8ced4eaa3b1cd93285",
+    "results/abi_capability_compiler_phase3_route_isolated_cpu_runtime/runtime_v540/result.json": "a94a792baf9c406d65645aaf564e49f7d03d62f0add9e6e1e0adb053f3b33ed3",
+    "results/abi_capability_compiler_phase3_route_isolated_qwen_rss_audit/audit_v542/result.json": "d30e056dc8b5c6b318274fade54a10e3c21dd180d76aa88ec7b844b253387ab1"
+  },
+  "phase2_external_blocker": "21000 blinded judgments from three independent human raters remain unavailable and are not waived.",
+  "phase3_certified": false,
+  "claim_boundary": "Read-only exact runtime gate composition; no generation, performance rerun, final test, Phase 3, minimum-information, or superiority claim."
+}

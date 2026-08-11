@@ -1,0 +1,17 @@
+{
+  "format": "abi-capability-compiler-phase3-qwen-runner-rss-audit-summary/1",
+  "version": 542,
+  "status": "PASS_CORRECTED_PHYSICAL_QWEN_RUNNER_RSS_ATTRIBUTION",
+  "status_date": "2026-08-11",
+  "historical_evidence_changed": false,
+  "protocol": {"path": "ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_ISOLATED_QWEN_RSS_AUDIT_PROTOCOL_V541.json", "sha256": "425a4efdccd3725d5b4b9560e6c9345f9f4c62a8150a9757251e24cf95b51c4a"},
+  "raw_result": {"path": "results/abi_capability_compiler_phase3_route_isolated_qwen_rss_audit/audit_v542/result.json", "sha256": "d30e056dc8b5c6b318274fade54a10e3c21dd180d76aa88ec7b844b253387ab1", "evidence_sha256": "be9c903b0182e9b38f10b7b34c5acd72fd0a6ac54554c6578d1ea25aa6c2af0d"},
+  "qwen": {"processor": "100% CPU", "size_vram_bytes": 0, "loaded_size_bytes": 443327445, "repeated_observations": 20, "monitored_peak_runner_working_set_bytes": 475213824},
+  "candidate": {"sealed_peak_process_rss_delta_bytes": 340697088},
+  "comparison": {"candidate_to_qwen_peak_rss_ratio": 0.7169342952447444, "candidate_lower_peak_rss": true},
+  "passed": true,
+  "promotion_eligible": false,
+  "phase3_certified": false,
+  "final_test_accessed": false,
+  "claim_boundary": "Corrected physical process-memory attribution only; exact runtime composition, host replication, and Phase 3 review remain open."
+}
