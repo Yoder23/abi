@@ -1,0 +1,15 @@
+{
+  "format": "abi-capability-compiler-phase3-route-capacity-audit-summary/1",
+  "version": 524,
+  "status": "PASS_SHARED_CAPACITY_DOMINANCE_CAUSALLY_ATTRIBUTED",
+  "status_date": "2026-08-11",
+  "historical_evidence_changed": false,
+  "protocol": {"path": "ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_CAPACITY_AUDIT_PROTOCOL_V523.json", "sha256": "ec883675164ff57383dec8656f67d3d6bb95cd23873de8e309963be827160932"},
+  "raw_result": {"path": "results/abi_capability_compiler_phase3_route_capacity_audit/audit_v524/result.json", "sha256": "a451c417f72630d56d89c4c2f1483d2d12334717cca630a20deb556ac3194da4", "evidence_sha256": "bf640299833a1f795e1036545d1972a5dd774adf8c6549220e9f5e7d76b0cb75"},
+  "capacity": {"total_parameters": 100352, "route_specific_parameters": 512, "route_specific_fraction": 0.00510204081632653, "shared_parameters": 99840, "shared_fraction": 0.9948979591836735},
+  "paired_behavior": {"A0_A1_exact_output_matches": 1349, "A0_A1_functional_discordances": 2, "A0_A4_exact_output_matches": 1369, "A0_A4_functional_discordances": 2},
+  "decision": "Authorize one physically route-isolated sparse-expert successor with approximately matched total installed parameters and active residual rank no greater than 64. Screen A0 for absolute quality first; run the full matched controls only if A0 passes. No rank or hyperparameter sweep is authorized.",
+  "phase3_certified": false,
+  "final_test_accessed": false,
+  "claim_boundary": "Mechanism attribution and one-successor justification only; no successor, Phase 3, minimum-information, or superiority claim."
+}
