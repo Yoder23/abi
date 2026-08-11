@@ -1,0 +1,24 @@
+{
+  "format": "abi-capability-compiler-phase3-route-capacity-audit/1",
+  "version": 523,
+  "status": "PREREGISTERED_READ_ONLY_ROUTE_CAPACITY_AUDIT",
+  "status_date": "2026-08-11",
+  "historical_evidence_changed": false,
+  "final_test_access": "PROHIBITED",
+  "objective": "Measure the exact shared-versus-route-specific parameter allocation in V488 and bind it to the matched label-free and monolithic functional evidence before selecting one successor architecture.",
+  "checkpoint": "results/abi_capability_compiler_phase3_dual_view_recovery/candidate_v488/dual_view_recovery_bridge.safetensors",
+  "A0_outputs": "results/abi_capability_compiler_phase3_guarded_screen/evaluation_v494/development_outputs.jsonl",
+  "A1_outputs": "results/abi_capability_compiler_phase3_final_controls/A1_label_free/evaluation_v521/development_outputs.jsonl",
+  "A4_outputs": "results/abi_capability_compiler_phase3_final_controls/A4_monolithic/evaluation_v521/development_outputs.jsonl",
+  "decision_rule": "A route-isolated successor is justified only if route-specific parameters are below 1% and both label-free and monolithic controls fail to show A0 superiority. The successor may not increase active residual rank above 64 or change the locked data, guard, development suite, or final-test prohibition.",
+  "bindings": {
+    "abi/capability_compiler_phase3_route_capacity_audit.py": "918f36432211fad874d634f1e2c3f532e68f95d1d23426d929113b7dd2f70eae",
+    "tests/test_capability_compiler_phase3_route_capacity_audit.py": "4ac88775e478448d24344356a077153f3514907aaf07fb3504846a90c19fd4ef",
+    "results/abi_capability_compiler_phase3_dual_view_recovery/candidate_v488/dual_view_recovery_bridge.safetensors": "046d00d6f4cf9cef068d616a6064aab9111b1ff5f23d4c2f98a4fa2aad2733a6",
+    "results/abi_capability_compiler_phase3_guarded_screen/evaluation_v494/development_outputs.jsonl": "7c0bff11da4c12ac06ea315c5e62841c670e4698d766a259c3908cd0fe981d1d",
+    "results/abi_capability_compiler_phase3_final_controls/A1_label_free/evaluation_v521/development_outputs.jsonl": "1d5a21b808cf33d0f7818faca7fa4bc1a9af2a4cf343414c47cf728fc734b7fa",
+    "results/abi_capability_compiler_phase3_final_controls/A4_monolithic/evaluation_v521/development_outputs.jsonl": "cf7a44e14ab22cae6088e453b883af382a030dc6bfd77d6320a661d140dca78a",
+    "ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CONTROLS_RESULT_V522.json": "1b7af5a73d494fc7039f4b3577e231a16040e512ca1898af514083d76d9f4800"
+  },
+  "claim_boundary": "Read-only mechanism attribution only; no successor quality, runtime, final-test, Phase 3, or superiority claim."
+}
