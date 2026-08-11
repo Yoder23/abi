@@ -1,0 +1,19 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "version": 507,
+  "status_date": "2026-08-10",
+  "parent_state": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V506.json",
+  "historical_evidence_changed": false,
+  "phase0": "COMPLETE",
+  "phase1": "COMPLETE",
+  "phase2": "MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS",
+  "phase3": "UNCERTIFIED_CORRECTED_REPEATED_QWEN_RUNNER_RSS_AUDIT_PREREGISTERED",
+  "phase4_through_8": "LOCKED",
+  "completed_action": "V507_REPEATED_LLAMA_SERVER_RSS_ATTRIBUTION_PREREGISTERED",
+  "authorized_action": "RUN_ONE_CPU_ONLY_20_OBSERVATION_LLAMA_SERVER_RSS_AUDIT",
+  "prohibited_action": "NO_PERFORMANCE_REINTERPRETATION_NO_TRAINING_NO_RUNTIME_SWEEP_NO_FINAL_ACCESS_NO_PHASE3_CLAIM",
+  "external_certificate_blocker": "PHASE2_REQUIRES_21000_BLINDED_JUDGMENTS_FROM_THREE_INDEPENDENT_HUMANS",
+  "technical_blocker": "CORRECTED_QWEN_RUNNER_RSS_COMPARISON_NOT_YET_MEASURED",
+  "final_test_access": "PROHIBITED",
+  "superiority_claim": "PROHIBITED"
+}
