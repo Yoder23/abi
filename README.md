@@ -16,7 +16,7 @@ Status date: 2026-08-11
 
 **The ABI English-product moonshot is OPEN.**
 
-The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V631.json`.
+The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V635.json`.
 The route-isolated English endpoint now passes all registered Phase 3 machine
 gates: three paired training seeds and all A0-A4 causal controls, 1,393/1,400
 selected-seed autonomous quality with zero collapse, exact routing, three
@@ -128,6 +128,11 @@ proposed legacy host scored 0/1,400 with 1,373 repetition collapses, and its
 product core. This is an ABI host-lineage defect, not a LayerCake regression.
 Phase 4 remains uncertified; only a hash-bound read-only audit of the actual
 product handoff is authorized before more training.
+V632/V634 then proved the exact Phase 3 endpoint is a 251.3MB three-checkpoint
+composite plus a guard, not one signed LayerCake package. Existing v2, v5, and
+v16 handoffs reject its schemas unchanged. The next repair is a separately
+governed generic LayerCake host construct and exact ABI-side packaging; no
+frontier training is authorized until packaged-output identity passes.
 Phase 2 and Phase 3
 certificate statuses remain unchanged, final data remains unopened, and Phase
 5 is locked.

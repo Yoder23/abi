@@ -1,0 +1,34 @@
+{
+  "format": "abi-capability-compiler-phase4-product-handoff-audit-summary/1",
+  "version": 634,
+  "status_date": "2026-08-11",
+  "status": "FAIL_NO_DECLARED_LAYERCAKE_HANDOFF_ACCEPTS_PHASE3_COMPOSITE",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_PRODUCT_HANDOFF_AUDIT_PROTOCOL_V632.json",
+    "sha256": "93acc1400c6baa61a675cb31f4bc5626dda4bd2275ed0e385fb78c518fb96e5d"
+  },
+  "raw_result": {
+    "path": "results/abi_capability_compiler_phase4_product_handoff_audit/audit_v633/result.json",
+    "sha256": "b0a23f30539f9e6ee85bcae4fbba33fcb6cbbd94ea07365c74021da9a81ac3db",
+    "evidence_sha256": "6b9501baf6368333845b62f87d668b2f97553572941b6631a3c82d16889261ea"
+  },
+  "phase3_composite": {
+    "components": 3,
+    "bytes": 251260192,
+    "single_signed_package": false,
+    "accepted_unchanged_by_existing_handoff": false
+  },
+  "declared_handoffs_checked": [
+    "lc-direct-neural-core/2",
+    "lc-direct-neural-core/5",
+    "lc-direct-neural-core/16"
+  ],
+  "layercake_product_identity_consistent": true,
+  "causal_conclusion": "The successful Phase 3 endpoint is valid ABI evidence but is not one LayerCake-installable artifact. It combines a shallow-sparse model, a sparse router, a route-isolated residual, and a declarative runtime guard. Existing direct-core handoffs require different exact schemas and cannot accept it by relabeling.",
+  "required_repair": "Create one separately versioned generic LayerCake direct-core host contract for a single namespaced safetensors package containing the exact shallow-sparse model, router, route-isolated residual, tokenizer declaration, and fail-closed guard contract. Construct certification must not import ABI code or evidence and cannot inherit English or performance claims.",
+  "training_performed": false,
+  "final_test_accessed": false,
+  "phase4_certified": false,
+  "claim_boundary": "Compatibility audit only. No Phase 4, final-test, minimum-information, or ABI-superiority claim."
+}

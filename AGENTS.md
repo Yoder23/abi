@@ -22,7 +22,7 @@ LayerCake cake.
 Status date: 2026-08-11.
 
 The controlling machine-readable state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V631.json`. Phase 3 has completed and
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V635.json`. Phase 3 has completed and
 passed every currently required machine gate, but it is not unconditionally
 certified because the controlling campaign contract makes it depend on Phase
 2. Phase 2 has 21,000 immutable blinded rating rows and zero completed
@@ -49,7 +49,7 @@ not replace the three humans.
   INDEPENDENT HUMAN RATERS (0/21,000 FILLED)**.
 - Phase 3: **MACHINE EVIDENCE COMPLETE; BLOCKED BY THE PHASE 2 PREREQUISITE**.
 - Phase 4: **CONDITIONALLY OPEN; LEGACY HOST REJECTED; PRODUCT HANDOFF AUDIT
-  REQUIRED; NOT CERTIFIED**.
+  FAILED CLOSED; GENERIC HOST CONSTRUCT REQUIRED; NOT CERTIFIED**.
 - Phases 5-8: **LOCKED**.
 
 The user has explicitly authorized conditional Phase 4 research while the
@@ -134,6 +134,13 @@ repository's sealed 7,176,097-parameter product checkpoint. This is an ABI
 host-selection and lineage failure, not a LayerCake regression. Do not train
 against the legacy host; only a read-only, hash-bound audit of the actual
 LayerCake product handoff boundary is authorized next.
+
+V632/V634 completed that audit. The exact successful Phase 3 endpoint is three
+tensor components totaling 251,260,192 bytes plus a runtime guard, not one
+signed package. None of LayerCake's declared v2, v5, or v16 handoffs accepts
+those schemas unchanged. Do not relabel it. The next bounded work is a separate
+generic LayerCake construct plus ABI-side exact namespaced packaging; no Phase
+4 frontier training is authorized until package/runtime output identity passes.
 
 The exact route-isolated endpoint scored 1,393/1,400 with zero repetition
 collapse at seed 240487 and passed all four same-lineage causal controls across

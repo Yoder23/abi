@@ -6,7 +6,7 @@ Status date: 2026-08-11
 
 The ABI capability-compiler moonshot is **OPEN**.
 
-The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V631.json`.
+The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V635.json`.
 All Phase 3 machine endpoints now pass. The exact route-isolated checkpoint has
 three-seed causal replication, 1,393/1,400 autonomous quality with zero
 collapse on the selected seed, three byte-identical host initializations,
@@ -40,7 +40,7 @@ focused tests, including all three production-form dry runs, pass. See
 | 1 | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 | MACHINE + HANDOFF READY; 0/21,000 HUMAN PREFERENCES | `ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V554.json` |
 | 3 | MACHINE EVIDENCE COMPLETE; BLOCKED BY PHASE 2 | `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json` |
-| 4 | CONDITIONALLY OPEN; LEGACY HOST REJECTED; PRODUCT HANDOFF AUDIT REQUIRED | `ABI_CAPABILITY_COMPILER_PHASE4_CANONICAL_HOST_BASELINE_RESULT_V630.json` |
+| 4 | CONDITIONALLY OPEN; HANDOFF AUDIT FAILED CLOSED; GENERIC HOST CONSTRUCT REQUIRED | `ABI_CAPABILITY_COMPILER_PHASE4_PRODUCT_HANDOFF_AUDIT_RESULT_V634.json` |
 | 5-8 | LOCKED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` |
 
 V558 passed the physical archive and checkpoint-lineage audit without loading
@@ -121,6 +121,13 @@ core. Continuing against it would make ABI relearn English and would not test
 product integration. This is not a LayerCake regression. Training is now
 prohibited until a hash-bound read-only audit selects one product-supported,
 immutable external-artifact boundary.
+
+V632/V634 completed the product-handoff audit. The exact successful Phase 3
+endpoint is a 251,260,192-byte three-checkpoint composite plus a declarative
+guard; it is not one signed package, and no v2, v5, or v16 LayerCake handoff
+accepts it unchanged. Relabeling is prohibited. The next bounded repair is a
+generic construct-only LayerCake host contract and an ABI-side single-package
+build with exact runtime-output identity. Frontier training remains closed.
 
 ### Preserved historical mission snapshot
 
