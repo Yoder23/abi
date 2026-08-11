@@ -1,0 +1,23 @@
+{
+  "format": "abi-capability-compiler-phase3-route-isolated-controls-summary/1",
+  "version": 529,
+  "status": "PASS_ALL_FINAL_LINEAGE_MATCHED_CAUSAL_CONTROLS",
+  "status_date": "2026-08-11",
+  "historical_evidence_changed": false,
+  "protocol": {"path": "ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_ISOLATED_CONTROLS_PROTOCOL_V527.json", "sha256": "4a29fea122be9b6102715ff14beaae37ce5c6f051fa2debdd3de519b07c9e861"},
+  "raw_decision": {"path": "results/abi_capability_compiler_phase3_route_isolated_controls/decision_v529/result.json", "sha256": "79ec47691895169e1065c62c63b6d5e78f4bda144b5a136b84115abd7dd016aa", "evidence_sha256": "d1a09a5d2d07abd348288ebc6cf05b60894271b87dc8d1b187aa22e58939ae40"},
+  "A0": {"passes": 1393, "checkpoint_sha256": "1649e110338904f69fafc0f5ff110e2c8d99f4f8366eb133442fb4938fa3c390", "outputs_sha256": "c5b40380ab67083ab6d860af80fd1a6434089cc2a5ab0c1ae224912ac18879a1"},
+  "controls": {
+    "A1_label_free": {"passes": 1342, "lower_95": 0.027142857142857142, "checkpoint_sha256": "33c8ac531f82d33493b2b5a874a1c096f18d0b9a14e77fa50fb3a4386542e44f"},
+    "A2_shuffled": {"passes": 1182, "lower_95": 0.1407142857142857, "checkpoint_sha256": "2d9b67194e5942d6ad831e6104423582be39b01d6c3c86131ca819eaa7f22cbc"},
+    "A3_bridge_only": {"passes": 1318, "lower_95": 0.04357142857142857, "checkpoint_sha256": "29541cf503dc049d8aa4ddf2675feeb7285483ab321e23f977d2c388580dede2"},
+    "A4_monolithic": {"passes": 1371, "lower_95": 0.008571428571428572, "checkpoint_sha256": "b8a1ff5c3acf163efdde431132ce823eb21ede25a5f9410236f722b4b969e12d"}
+  },
+  "gates": {"A1_label_free": true, "A2_shuffled": true, "A3_bridge_only": true, "A4_monolithic": true},
+  "decision": "The exact route-isolated A0 has passed the final-lineage causal matrix. Preserve every control and proceed to independent hostile reconstruction, remaining paired training seeds, and fresh fully CPU runtime certification for this same checkpoint lineage before Phase 3 certification.",
+  "promotion_eligible": false,
+  "phase3_certified": false,
+  "final_test_accessed": false,
+  "phase2_external_blocker": "21000 blinded judgments from three independent human raters remain unavailable and are not waived.",
+  "claim_boundary": "Development causal-control pass; replication, hostile verification, fully CPU runtime, Phase 3, minimum-information, and superiority remain open."
+}
