@@ -22,7 +22,7 @@ LayerCake cake.
 Status date: 2026-08-11.
 
 The controlling machine-readable state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V584.json`. Phase 3 has completed and
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V586.json`. Phase 3 has completed and
 passed every currently required machine gate, but it is not unconditionally
 certified because the controlling campaign contract makes it depend on Phase
 2. Phase 2 has 21,000 immutable blinded rating rows and zero completed
@@ -47,8 +47,8 @@ not replace the three humans.
 - Phase 2: **MACHINE EVIDENCE COMPLETE; BLOCKED ON 21,000 JUDGMENTS FROM THREE
   INDEPENDENT HUMAN RATERS (0/21,000 FILLED)**.
 - Phase 3: **MACHINE EVIDENCE COMPLETE; BLOCKED BY THE PHASE 2 PREREQUISITE**.
-- Phase 4: **CONDITIONALLY OPEN; ABI FRONTIER SEED-SENSITIVE AND
-  NON-MONOTONIC; REPLICATION IN PROGRESS; NOT CERTIFIED**.
+- Phase 4: **CONDITIONALLY OPEN; ABI FRONTIER REPLICATION FAILED;
+  SEED-STABILITY ATTRIBUTION OPEN; NOT CERTIFIED**.
 - Phases 5-8: **LOCKED**.
 
 The user has explicitly authorized conditional Phase 4 research while the
@@ -86,7 +86,11 @@ seed130363 run failed at 1,359/1,400 because coherence was 78/100 while B40
 passed. Finish the two seed155921 runs before any prospective stabilization
 protocol. B40 seed155921 failed at 1,359/1,400 with one collapse, so B40 is
 FAIL/PASS/FAIL across the three seeds. Only the registered B80 seed155921 run
-remains before the ABI-arm replication decision.
+remained before the ABI-arm replication decision. It passed at 1,382/1,400
+with zero collapses, leaving B80 PASS/FAIL/PASS; B40 is FAIL/PASS/FAIL. No
+budget passes all three seeds and no minimum can be claimed. Only a hash-bound
+read-only attribution is authorized before at most one prospectively sealed,
+evidence-supported stabilization attempt.
 
 The exact route-isolated endpoint scored 1,393/1,400 with zero repetition
 collapse at seed 240487 and passed all four same-lineage causal controls across

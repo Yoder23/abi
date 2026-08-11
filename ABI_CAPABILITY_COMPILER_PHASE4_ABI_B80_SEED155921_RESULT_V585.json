@@ -1,0 +1,43 @@
+{
+  "format": "abi-capability-compiler-phase4-abi-budget-summary/1",
+  "version": 585,
+  "status_date": "2026-08-11",
+  "status": "PASS_B80_SEED155921_REPLICATION_B80_TWO_OF_THREE_PASS",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_ABI_LINEAGE_PROTOCOL_V570.json",
+    "sha256": "50cd9abc83b584bf1682b57f606bbdcba75fbeda76eeeaa48edafbbc08e8505c"
+  },
+  "raw_result": {
+    "path": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed155921-v585/result.json",
+    "sha256": "1d37f8fb2450e369ab4cf63dc382627797bb8b415173aec0053612e2da63c060",
+    "evidence_sha256": "37ae5b20aaec75725282ceda1984a136805a6a0a3753546e9f52be9e4e02174a"
+  },
+  "budget": {
+    "id": "B80",
+    "unique_source_attempts": 7781,
+    "authoritative_teacher_output_tokens": 238832
+  },
+  "seed": 155921,
+  "machine_quality": {
+    "functional_passes": "1382/1400",
+    "repetition_collapses_v2": 0,
+    "router_correct": "1400/1400",
+    "strong_parent_exact": "1000/1000",
+    "teacher_relative_difference": 0.10357142857142858,
+    "teacher_relative_lower_95": 0.08714285714285715,
+    "lowest_capabilities": "coherence_and_fact_free_reasoning_95_of_100_wilson_lower_0.8882"
+  },
+  "all_machine_quality_gates_pass": true,
+  "three_seed_status": {
+    "104729": "PASS_1378_OF_1400_ZERO_COLLAPSES",
+    "130363": "FAIL_1359_OF_1400_COHERENCE_78_OF_100_ZERO_COLLAPSES",
+    "155921": "PASS_1382_OF_1400_ZERO_COLLAPSES"
+  },
+  "replication_decision": "B80 passes two of three seeds but fails the requirement that the passing budget reproduce across all three registered seeds. B40 passes one of three, so the adjacent-lower failure also does not reproduce cleanly. The ABI arm has no certified information frontier.",
+  "wall_seconds": 2057.8558197999955,
+  "final_test_accessed": false,
+  "phase4_certified": false,
+  "next_action": "Run a hash-bound read-only seed-stability attribution over all B40/B80 intermediate and final evidence before authorizing any bounded stabilization attempt.",
+  "claim_boundary": "Complete B40/B80 three-seed ABI-arm evidence; no stable frontier, minimum, runtime, matched-baseline comparison, Phase 4 certificate, final-test result, or superiority claim."
+}
