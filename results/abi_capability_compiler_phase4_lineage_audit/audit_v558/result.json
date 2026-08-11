@@ -1,0 +1,308 @@
+{
+  "artifact_overlap": {
+    "phase1_ir__v138_targeted_ir": {
+      "normalized_output_sha256": 603,
+      "probe_id": 0,
+      "source_attempt_sha256": 0
+    },
+    "phase1_ir__v480_host_supervision": {
+      "normalized_output_sha256": 0,
+      "probe_id": 0,
+      "source_attempt_sha256": 0
+    },
+    "v138_targeted_ir__v480_host_supervision": {
+      "normalized_output_sha256": 0,
+      "probe_id": 692,
+      "source_attempt_sha256": 684
+    }
+  },
+  "checkpoint_stages": [
+    {
+      "checkpoint_bytes": 246628032,
+      "checkpoint_sha256": "f977d1b95e4b514ebf3037d18f195f7cae16227066c14af75a81c06808b76ce6",
+      "data_artifacts": [
+        "phase1_ir"
+      ],
+      "failures": [],
+      "final_test_accessed": false,
+      "id": "v443_qualified_transition",
+      "initialization_checkpoint_sha256": null,
+      "metadata": "results/abi_capability_compiler_phase3_qualified_transition_control/candidate_v443/metadata.json",
+      "metadata_sha256": "c31181a0d8e411bd1d57585de17564053846d0ea32b572f47226aa0213065ef7",
+      "observations": null,
+      "parent_checkpoint_sha256": "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1",
+      "seed": 240440,
+      "steps": 7000,
+      "teacher_present_at_inference": false,
+      "teacher_token_exposures": {
+        "teacher_response_tokens_seen": 724818
+      }
+    },
+    {
+      "checkpoint_bytes": 246628032,
+      "checkpoint_sha256": "42d15e92e887aa21e3a7332866866150ef5540a7224017e3bc53ecd60f29e9b6",
+      "data_artifacts": [
+        "phase1_ir"
+      ],
+      "failures": [],
+      "final_test_accessed": false,
+      "id": "v459_copy_balanced_transition",
+      "initialization_checkpoint_sha256": null,
+      "metadata": "results/abi_capability_compiler_phase3_copy_balanced_transition/candidate_v459/metadata.json",
+      "metadata_sha256": "c6a539c79c7f9bac0ced03c35f92abf0f9ed454e351b6dbd790c202ae75b6a86",
+      "observations": null,
+      "parent_checkpoint_sha256": "f977d1b95e4b514ebf3037d18f195f7cae16227066c14af75a81c06808b76ce6",
+      "seed": 240458,
+      "steps": 1750,
+      "teacher_present_at_inference": null,
+      "teacher_token_exposures": {
+        "teacher_response_tokens_seen": 179974
+      }
+    },
+    {
+      "checkpoint_bytes": 246628032,
+      "checkpoint_sha256": "d354eee236c1153a92e3b2d05f806fb4238438aebd2c8a889ed9dcb8f1f192c8",
+      "data_artifacts": [
+        "phase1_ir"
+      ],
+      "failures": [],
+      "final_test_accessed": false,
+      "id": "v463_token_substrate",
+      "initialization_checkpoint_sha256": null,
+      "metadata": "results/abi_capability_compiler_phase3_token_substrate_conformance/candidate_v463/metadata.json",
+      "metadata_sha256": "dc2120b72cf7a3facb5e7fe95ac34fccd45c3e153b0b0f2d8d168e7d1b3e4038",
+      "observations": null,
+      "parent_checkpoint_sha256": "42d15e92e887aa21e3a7332866866150ef5540a7224017e3bc53ecd60f29e9b6",
+      "seed": 240462,
+      "steps": 1750,
+      "teacher_present_at_inference": null,
+      "teacher_token_exposures": {
+        "teacher_response_tokens_seen": 181859
+      }
+    },
+    {
+      "checkpoint_bytes": 401968,
+      "checkpoint_sha256": "347e121d0d047146a12d94304621eaa8c2309b345ce1f9be21db80f11fc0be54",
+      "data_artifacts": [
+        "v138_targeted_ir",
+        "phase1_ir"
+      ],
+      "failures": [],
+      "final_test_accessed": false,
+      "id": "v474_targeted_recovery_bridge",
+      "initialization_checkpoint_sha256": null,
+      "metadata": "results/abi_capability_compiler_phase3_targeted_recovery_bridge/candidate_v474/metadata.json",
+      "metadata_sha256": "27a5ac72df8e2c89f81fa45f807cc127d799316b8d96bb8fec48c2fd368cf985",
+      "observations": null,
+      "parent_checkpoint_sha256": "d354eee236c1153a92e3b2d05f806fb4238438aebd2c8a889ed9dcb8f1f192c8",
+      "seed": 240473,
+      "steps": 2000,
+      "teacher_present_at_inference": false,
+      "teacher_token_exposures": {
+        "anchor_teacher_tokens_seen": 212545,
+        "targeted_teacher_tokens_seen": 205187
+      }
+    },
+    {
+      "checkpoint_bytes": 401968,
+      "checkpoint_sha256": "e138b76714e0e6b3f012d4179b9351b8b6d8168921f2b876547c92f15de136c2",
+      "data_artifacts": [
+        "v480_host_supervision"
+      ],
+      "failures": [],
+      "final_test_accessed": false,
+      "id": "v484_host_recovery_bridge",
+      "initialization_checkpoint_sha256": "347e121d0d047146a12d94304621eaa8c2309b345ce1f9be21db80f11fc0be54",
+      "metadata": "results/abi_capability_compiler_phase3_host_recovery_bridge/candidate_v484/metadata.json",
+      "metadata_sha256": "fa2bd9fe0e30d94637ae3074875ac5f465384d9bac0e741ebb5356dc4e88b3b5",
+      "observations": 32000,
+      "parent_checkpoint_sha256": "d354eee236c1153a92e3b2d05f806fb4238438aebd2c8a889ed9dcb8f1f192c8",
+      "seed": 240483,
+      "steps": 2000,
+      "teacher_present_at_inference": false,
+      "teacher_token_exposures": {
+        "supervision_teacher_tokens_seen": 851794
+      }
+    },
+    {
+      "checkpoint_bytes": 399768,
+      "checkpoint_sha256": "1649e110338904f69fafc0f5ff110e2c8d99f4f8366eb133442fb4938fa3c390",
+      "data_artifacts": [
+        "v480_host_supervision"
+      ],
+      "failures": [],
+      "final_test_accessed": false,
+      "id": "v526_route_isolated_bridge",
+      "initialization_checkpoint_sha256": "e138b76714e0e6b3f012d4179b9351b8b6d8168921f2b876547c92f15de136c2",
+      "metadata": "results/abi_capability_compiler_phase3_route_isolated/candidate_v526/metadata.json",
+      "metadata_sha256": "f8b808f0b47e562ab85f5291f6b6f2aee0faeb7678fa800211e9d945b890215f",
+      "observations": 64000,
+      "parent_checkpoint_sha256": "d354eee236c1153a92e3b2d05f806fb4238438aebd2c8a889ed9dcb8f1f192c8",
+      "seed": 240487,
+      "steps": 2000,
+      "teacher_present_at_inference": null,
+      "teacher_token_exposures": {
+        "teacher_response_tokens_in_loss": 1703008
+      }
+    }
+  ],
+  "claim_boundary": "Read-only lineage closure only; no training, minimum-information, final-test, Phase 4 certificate, or ABI superiority claim.",
+  "confounds": {
+    "minimum_valid_clean_start": "the immutable external LayerCake host before V443 plus a freshly initialized router and bridges",
+    "reason": "V526 initializes from V484, which already consumed the complete V480 artifact; V463 also inherits the complete Phase 1 IR through V443, V459, and V463.",
+    "required_frontier_scope": "retrain every ABI data-dependent stage from the common fixed host for each nested information budget",
+    "varying_only_v526_v480_subset_is_invalid": true
+  },
+  "decision": "Seal a nested-budget protocol that rebuilds the complete ABI data-dependent lineage from the same fixed host. Do not run the invalid final-bridge-only subset experiment.",
+  "deployed_composition": {
+    "bridge_checkpoint": "v526_route_isolated_bridge",
+    "core_checkpoint": "v463_token_substrate",
+    "guard_information": "v480_host_supervision",
+    "router_checkpoint": "sparse_router_v45",
+    "source_model_present": false,
+    "teacher_present": false
+  },
+  "evidence_sha256": "f789d8cf9010d208c4b40a95f53c821ff103d37f2b24628b590179b94f370a41",
+  "failures": [],
+  "fixed_host_prior": {
+    "checkpoint_bytes": 246627944,
+    "checkpoint_sha256": "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1",
+    "metadata": "../layercake_release/artifacts/moonshot/phase2_shallow_sparse_pretrained/student2400-seed-9824/metadata.json",
+    "metadata_sha256": "def6a552162a10a814d4bcfba31fa659530f0488d461c4a93414ee44a231ea82",
+    "parameters_total": 61655050,
+    "raw_utf8_bytes_exposed": 9448339,
+    "response_tokens_seen": 923677,
+    "role": "fixed pre-existing LayerCake host prior; separately accounted, never called zero-information",
+    "teacher_initialized_source_blocks": [
+      0,
+      2,
+      5
+    ]
+  },
+  "format": "abi-capability-compiler-phase4-lineage-audit-result/1",
+  "gates": {
+    "all_bound_hashes_match": true,
+    "final_test_accessed": false,
+    "fixed_host_prior_separately_accounted": true,
+    "neural_training_performed": false,
+    "router_information_separately_accounted": true,
+    "teacher_attempt_overlap_recomputed": true,
+    "teacher_model_loaded": false,
+    "warm_start_hidden_information_detected": true
+  },
+  "phase2_status_unchanged": "BLOCKED_EXTERNAL_HUMAN_RATINGS_0_OF_21000_FILLED",
+  "phase3_status_unchanged": "MACHINE_EVIDENCE_COMPLETE_NOT_UNCONDITIONALLY_CERTIFIED",
+  "phase4_certified": false,
+  "phase5_open": false,
+  "protocol_sha256": "14791380958b2ebf2d50996ecee11888fbd0d1367fc3b55781e5be89977ccafc",
+  "router": {
+    "checkpoint_bytes": 4232392,
+    "checkpoint_sha256": "cc1f384a49fdaad94d47c5feb4573dcc7eb688ac96ffd7bfffade811861acb48",
+    "labeled_records": 7000,
+    "metadata": "results/abi_capability_compiler_phase3_sparse_router/development_v45/R0-seed240045/metadata.json",
+    "parameters": 1058040,
+    "teacher_outputs_added": 0
+  },
+  "status": "PASS_COMPLETE_LINEAGE_AUDIT_FRONTIER_PROTOCOL_REQUIRED",
+  "teacher_artifacts": {
+    "phase1_ir": {
+      "authoritative_teacher_output_tokens": 215647,
+      "blank_jsonl_lines": 0,
+      "capability_counts": {
+        "abstention": 500,
+        "clarification": 500,
+        "coherence": 500,
+        "conversation": 500,
+        "email_drafting_from_notes": 500,
+        "fact_free_reasoning": 500,
+        "fluent_realization": 500,
+        "format_control": 500,
+        "grammar": 500,
+        "instruction_following": 500,
+        "prompt_grounding": 500,
+        "rewriting": 500,
+        "supplied_text_summarization": 500,
+        "tone_control": 500
+      },
+      "copied_source_parameters": 0,
+      "disk_bytes": 5549675,
+      "id": "phase1_ir",
+      "output_utf8_bytes": 671297,
+      "path": "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir",
+      "physical_jsonl_lines": 7000,
+      "prompt_utf8_bytes": 1381925,
+      "records": 7000,
+      "sha256": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+      "stored_hidden_activations": 0,
+      "stored_logits": 0,
+      "teacher_input_tokens": 576925,
+      "unique_probe_ids": 7000,
+      "unique_source_attempts": 7000
+    },
+    "v138_targeted_ir": {
+      "authoritative_teacher_output_tokens": 216724,
+      "blank_jsonl_lines": 0,
+      "capability_counts": {
+        "abstention": 500,
+        "clarification": 500,
+        "coherence": 500,
+        "conversation": 500,
+        "email_drafting_from_notes": 500,
+        "fact_free_reasoning": 500,
+        "fluent_realization": 500,
+        "format_control": 500,
+        "grammar": 500,
+        "instruction_following": 500,
+        "prompt_grounding": 500,
+        "rewriting": 500,
+        "supplied_text_summarization": 500,
+        "tone_control": 500
+      },
+      "copied_source_parameters": 0,
+      "disk_bytes": 6221662,
+      "id": "v138_targeted_ir",
+      "output_utf8_bytes": 676259,
+      "path": "results/abi_capability_compiler_phase3/targeted_combined_ir_v137/normalized_targeted_combined_v138.abicir",
+      "physical_jsonl_lines": 7000,
+      "prompt_utf8_bytes": 1588975,
+      "records": 7000,
+      "sha256": "9fa2467a37c870db7a24640a8d6da46ed73941573026af2c9a4c3425fd98dd18",
+      "stored_hidden_activations": 0,
+      "stored_logits": 0,
+      "teacher_input_tokens": 634761,
+      "unique_probe_ids": 7000,
+      "unique_source_attempts": 7000
+    },
+    "v480_host_supervision": {
+      "authoritative_teacher_output_tokens": 40481,
+      "blank_jsonl_lines": 1280,
+      "capability_counts": {
+        "abstention": 320,
+        "coherence": 320,
+        "fluent_realization": 320,
+        "tone_control": 320
+      },
+      "copied_source_parameters": 0,
+      "disk_bytes": 416804,
+      "id": "v480_host_supervision",
+      "output_utf8_bytes": 120602,
+      "path": "results/abi_capability_compiler_phase3_host_supervision/build_v480/host_weak_supervision_v480.abicir",
+      "physical_jsonl_lines": 2560,
+      "prompt_utf8_bytes": 193892,
+      "records": 1280,
+      "sha256": "7b0af0bafda631f89dd054a3bd57da76885b3eaca7fe863474255bcf8978b34d",
+      "stored_hidden_activations": 0,
+      "stored_logits": 0,
+      "teacher_input_tokens": 108049,
+      "unique_probe_ids": 1280,
+      "unique_source_attempts": 1280
+    }
+  },
+  "unique_imported_information": {
+    "authoritative_teacher_output_tokens": 450660,
+    "copied_source_parameters": 0,
+    "source_attempts": 14596,
+    "stored_hidden_activations": 0,
+    "stored_logits": 0
+  }
+}

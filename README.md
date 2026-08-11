@@ -16,7 +16,7 @@ Status date: 2026-08-11
 
 **The ABI English-product moonshot is OPEN.**
 
-The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V556.json`.
+The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V559.json`.
 The route-isolated English endpoint now passes all registered Phase 3 machine
 gates: three paired training seeds and all A0-A4 causal controls, 1,393/1,400
 selected-seed autonomous quality with zero collapse, exact routing, three
@@ -29,8 +29,9 @@ UTF-8 throughput versus pinned optimized CPU Qwen (paired lower 95% 10.565x),
 Phase 3 is not unconditionally certified because Phase 2 is a prerequisite.
 Its human packet has 21,000 blinded comparisons and 0 filled preferences.
 Until three independent raters complete and lock those forms and Phase 2
-passes verification, Phase 4 remains locked. No further Phase 3 compute, final
-access, minimum-information claim, or superiority claim is authorized. See
+passes verification, Phase 3 cannot receive an unconditional certificate.
+Conditional Phase 4 research is user-authorized, but final access,
+minimum-information certification, and superiority claims remain prohibited. See
 `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json`.
 
 The Phase 2 external handoff is no longer underspecified. V554 preregisters
@@ -50,9 +51,14 @@ the answer key. The focused rater-session suite passes 10/10. See
 `docs/PHASE2_HUMAN_RATER_SESSION_V1.md`.
 
 The user has conditionally opened Phase 4 research without waiving the pending
-human gate. V556 authorizes only an end-to-end information-lineage audit before
-training: a smaller final payload cannot count as a smaller substrate if its
-initialization already inherited the full payload. Phase 2 and Phase 3
+human gate. V558 completed the end-to-end information-lineage audit: 14,596
+unique teacher attempts and 450,660 unique authoritative output tokens are
+inherited across the endpoint. A smaller final payload cannot count as a
+smaller substrate because V526 initializes from a full-V480 V484 bridge, and
+the V463 core already inherits full Phase 1 data through V443 and V459. Phase
+4 must rebuild every ABI data-dependent stage from the same fixed host at each
+nested budget and compare matched LoRA and distillation frontiers. V559 permits
+that protocol design but not training until it is sealed. Phase 2 and Phase 3
 certificate statuses remain unchanged, final data remains unopened, and Phase
 5 is locked.
 

@@ -6,7 +6,7 @@ Status date: 2026-08-11
 
 The ABI capability-compiler moonshot is **OPEN**.
 
-The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V556.json`.
+The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V559.json`.
 All Phase 3 machine endpoints now pass. The exact route-isolated checkpoint has
 three-seed causal replication, 1,393/1,400 autonomous quality with zero
 collapse on the selected seed, three byte-identical host initializations,
@@ -17,10 +17,9 @@ TTFT, and 0.7169x peak RSS relative to the pinned optimized transformer.
 
 Phase 3 is nevertheless not unconditionally certified. Phase 2 is a required
 predecessor and its three blinded forms contain 21,000 rows with 0 completed
-preferences. The only authorized next action is external completion by three
-independent human raters, followed by Phase 2 verification and the fail-closed
-Phase 3 prerequisite audit. No further Phase 3 experiment, Phase 4 work, final
-access, minimum-information claim, or ABI-superiority claim is authorized.
+preferences. The user has separately authorized conditional Phase 4 research
+without waiving those predecessor gates. Final access, an unconditional
+certificate, and any ABI-superiority claim remain prohibited.
 
 V554 closes the former operational gap: the scoring protocol is frozen at
 0/21,000 ratings, completed forms are hash-locked before unblinding, rater and
@@ -41,14 +40,18 @@ focused tests, including all three production-form dry runs, pass. See
 | 1 | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 | MACHINE + HANDOFF READY; 0/21,000 HUMAN PREFERENCES | `ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V554.json` |
 | 3 | MACHINE EVIDENCE COMPLETE; BLOCKED BY PHASE 2 | `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json` |
-| 4 | CONDITIONALLY OPEN; READ-ONLY LINEAGE AUDIT | `ABI_CAPABILITY_COMPILER_PHASE4_CONDITIONAL_OPEN_V556.json` |
+| 4 | CONDITIONALLY OPEN; LINEAGE COMPLETE, FRONTIER PROTOCOL REQUIRED | `ABI_CAPABILITY_COMPILER_PHASE4_LINEAGE_AUDIT_RESULT_V558.json` |
 | 5-8 | LOCKED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` |
 
-User authorization recorded in V556 conditionally opens Phase 4 for a
-read-only imported-information lineage audit. Predecessor certificates and all
-numeric gates remain unchanged. No Phase 4 training is authorized until that
-audit proves the nested budget does not retain full-data information through
-an inherited initialization.
+V558 passed the imported-information lineage audit without loading a teacher,
+training a model, or accessing final data. The endpoint inherits 14,596 unique
+source attempts and 450,660 unique teacher-output tokens. A V526-only subset is
+invalid because its V484 initialization already consumed all V480 records;
+V463 also inherits the complete Phase 1 payload. The next authorized action is
+to seal an end-to-end nested-budget protocol that rebuilds every ABI
+data-dependent stage from the same fixed host and compares the ABI, LoRA, and
+distillation frontiers under all three fairness views. Training remains closed
+until that protocol is immutable.
 
 ### Preserved historical mission snapshot
 
