@@ -1,0 +1,45 @@
+{
+  "format": "abi-capability-compiler-phase4-abi-budget-summary/1",
+  "version": 583,
+  "status_date": "2026-08-11",
+  "status": "FAIL_B40_SEED155921_REPLICATION_B40_ONE_OF_THREE_PASS",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_ABI_LINEAGE_PROTOCOL_V570.json",
+    "sha256": "50cd9abc83b584bf1682b57f606bbdcba75fbeda76eeeaa48edafbbc08e8505c"
+  },
+  "raw_result": {
+    "path": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed155921-v583/result.json",
+    "sha256": "cc173cf2fc511b7b8aa551b881803e1677d359908e2e726adb724bdcabe2e509",
+    "evidence_sha256": "b5c47bee391c446156cbb9d91f36f47048698a954a184650388935fafbf8eabc"
+  },
+  "budget": {
+    "id": "B40",
+    "unique_source_attempts": 4005,
+    "authoritative_teacher_output_tokens": 123167
+  },
+  "seed": 155921,
+  "machine_quality": {
+    "functional_passes": "1359/1400",
+    "repetition_collapses_v2": 1,
+    "router_correct": "1400/1400",
+    "strong_parent_exact": "1000/1000",
+    "teacher_relative_difference": 0.08714285714285715,
+    "teacher_relative_lower_95": 0.07071428571428572
+  },
+  "failed_gates": ["per_capability_functional", "zero_repetition_collapse"],
+  "residual_failures": {
+    "clarification": "90/100_wilson_lower_0.8256",
+    "format_control": "93/100_one_collapse"
+  },
+  "three_seed_status_so_far": {
+    "104729": "FAIL_1360_OF_1400_2_COLLAPSES",
+    "130363": "PASS_1379_OF_1400_ZERO_COLLAPSES",
+    "155921": "FAIL_1359_OF_1400_1_COLLAPSE"
+  },
+  "wall_seconds": 1943.085263099987,
+  "final_test_accessed": false,
+  "phase4_certified": false,
+  "next_action": "Complete the final preregistered B80 seed155921 run, then issue the replication decision.",
+  "claim_boundary": "Complete three-seed B40 evidence with one pass and two failures; no stable frontier, minimum, runtime, matched-baseline comparison, Phase 4 certificate, final-test result, or superiority claim."
+}

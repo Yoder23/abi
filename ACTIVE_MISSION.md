@@ -6,7 +6,7 @@ Status date: 2026-08-11
 
 The ABI capability-compiler moonshot is **OPEN**.
 
-The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V582.json`.
+The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V584.json`.
 All Phase 3 machine endpoints now pass. The exact route-isolated checkpoint has
 three-seed causal replication, 1,393/1,400 autonomous quality with zero
 collapse on the selected seed, three byte-identical host initializations,
@@ -71,7 +71,9 @@ first replication at seed 130363 with 1,379/1,400 and zero collapses, so the
 B80-minimum boundary has not reproduced and no minimum claim is allowed. The
 paired B80 seed130363 then failed at 1,359/1,400 because coherence was 78/100,
 despite zero collapses. The current frontier is seed-sensitive and
-non-monotonic. Only B40/B80 seed155921 remain authorized before a decision.
+non-monotonic. B40 seed155921 failed at 1,359/1,400 with one collapse, making
+B40 FAIL/PASS/FAIL across three seeds. Only B80 seed155921 remains authorized
+before the replication decision.
 
 ### Preserved historical mission snapshot
 

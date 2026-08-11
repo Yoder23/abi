@@ -22,7 +22,7 @@ LayerCake cake.
 Status date: 2026-08-11.
 
 The controlling machine-readable state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V582.json`. Phase 3 has completed and
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V584.json`. Phase 3 has completed and
 passed every currently required machine gate, but it is not unconditionally
 certified because the controlling campaign contract makes it depend on Phase
 2. Phase 2 has 21,000 immutable blinded rating rows and zero completed
@@ -84,7 +84,9 @@ at seed 130363 with 1,379/1,400 and zero collapses, so it is not a reproduced
 adjacent-lower failure and B80 cannot be called the minimum. The paired B80
 seed130363 run failed at 1,359/1,400 because coherence was 78/100 while B40
 passed. Finish the two seed155921 runs before any prospective stabilization
-protocol.
+protocol. B40 seed155921 failed at 1,359/1,400 with one collapse, so B40 is
+FAIL/PASS/FAIL across the three seeds. Only the registered B80 seed155921 run
+remains before the ABI-arm replication decision.
 
 The exact route-isolated endpoint scored 1,393/1,400 with zero repetition
 collapse at seed 240487 and passed all four same-lineage causal controls across
