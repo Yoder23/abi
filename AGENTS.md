@@ -22,7 +22,7 @@ LayerCake cake.
 Status date: 2026-08-11.
 
 The controlling machine-readable state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V627.json`. Phase 3 has completed and
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V631.json`. Phase 3 has completed and
 passed every currently required machine gate, but it is not unconditionally
 certified because the controlling campaign contract makes it depend on Phase
 2. Phase 2 has 21,000 immutable blinded rating rows and zero completed
@@ -48,8 +48,8 @@ not replace the three humans.
 - Phase 2: **MACHINE EVIDENCE COMPLETE; BLOCKED ON 21,000 JUDGMENTS FROM THREE
   INDEPENDENT HUMAN RATERS (0/21,000 FILLED)**.
 - Phase 3: **MACHINE EVIDENCE COMPLETE; BLOCKED BY THE PHASE 2 PREREQUISITE**.
-- Phase 4: **CONDITIONALLY OPEN; ABI FRONTIER REPLICATION FAILED;
-  ONE FINAL-BRIDGE STABILIZATION DESIGN AUTHORIZED; NOT CERTIFIED**.
+- Phase 4: **CONDITIONALLY OPEN; LEGACY HOST REJECTED; PRODUCT HANDOFF AUDIT
+  REQUIRED; NOT CERTIFIED**.
 - Phases 5-8: **LOCKED**.
 
 The user has explicitly authorized conditional Phase 4 research while the
@@ -126,10 +126,14 @@ only six off-diagonal evaluations are authorized, with no training, new model
 construction, or cell promotion. The matrix is now complete: all six
 off-diagonal cells fail. Diagonal mean quality is 1,370.33 versus 1,299.00
 off-diagonal, a 71.33-prompt advantage; bridge main-effect range is 50 and
-parent range is 22.33. V626 proves strong parent-bridge co-adaptation. The next
-architecture must hold one canonical host immutable and train only a
-self-contained capability artifact against it. Training remains prohibited
-until that new protocol is hash-bound and tested.
+parent range is 22.33. V626 proves strong parent-bridge co-adaptation. V628/V630
+then measured the proposed pre-acquisition host before training. It scored
+0/1,400 with 1,373 repetition collapses while remaining byte-immutable. The
+measured 61,655,050-parameter legacy checkpoint is not the separate LayerCake
+repository's sealed 7,176,097-parameter product checkpoint. This is an ABI
+host-selection and lineage failure, not a LayerCake regression. Do not train
+against the legacy host; only a read-only, hash-bound audit of the actual
+LayerCake product handoff boundary is authorized next.
 
 The exact route-isolated endpoint scored 1,393/1,400 with zero repetition
 collapse at seed 240487 and passed all four same-lineage causal controls across

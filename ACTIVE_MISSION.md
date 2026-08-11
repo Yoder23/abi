@@ -6,7 +6,7 @@ Status date: 2026-08-11
 
 The ABI capability-compiler moonshot is **OPEN**.
 
-The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V627.json`.
+The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V631.json`.
 All Phase 3 machine endpoints now pass. The exact route-isolated checkpoint has
 three-seed causal replication, 1,393/1,400 autonomous quality with zero
 collapse on the selected seed, three byte-identical host initializations,
@@ -40,7 +40,7 @@ focused tests, including all three production-form dry runs, pass. See
 | 1 | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 | MACHINE + HANDOFF READY; 0/21,000 HUMAN PREFERENCES | `ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V554.json` |
 | 3 | MACHINE EVIDENCE COMPLETE; BLOCKED BY PHASE 2 | `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json` |
-| 4 | CONDITIONALLY OPEN; FRONTIER FAILED; FINAL-BRIDGE STABILIZATION DESIGN OPEN | `ABI_CAPABILITY_COMPILER_PHASE4_SEED_STABILITY_RESULT_V589.json` |
+| 4 | CONDITIONALLY OPEN; LEGACY HOST REJECTED; PRODUCT HANDOFF AUDIT REQUIRED | `ABI_CAPABILITY_COMPILER_PHASE4_CANONICAL_HOST_BASELINE_RESULT_V630.json` |
 | 5-8 | LOCKED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` |
 
 V558 passed the physical archive and checkpoint-lineage audit without loading
@@ -112,6 +112,15 @@ V626 therefore proves strong parent-bridge co-adaptation. The next bounded
 architecture must keep one canonical host byte-immutable and acquire only a
 self-contained route-isolated artifact; no training may begin before its
 protocol is sealed.
+
+V628/V630 performed that host baseline before new training and found a lineage
+defect: the proposed 61,655,050-parameter legacy host scored 0/1,400 with 1,373
+repetition collapses. It is a different architecture and checkpoint from the
+separate LayerCake repository's sealed 7,176,097-parameter Phase 2 product
+core. Continuing against it would make ABI relearn English and would not test
+product integration. This is not a LayerCake regression. Training is now
+prohibited until a hash-bound read-only audit selects one product-supported,
+immutable external-artifact boundary.
 
 ### Preserved historical mission snapshot
 
