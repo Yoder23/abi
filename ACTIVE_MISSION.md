@@ -6,7 +6,7 @@ Status date: 2026-08-11
 
 The ABI capability-compiler moonshot is **OPEN**.
 
-The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V551.json`.
+The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V554.json`.
 All Phase 3 machine endpoints now pass. The exact route-isolated checkpoint has
 three-seed causal replication, 1,393/1,400 autonomous quality with zero
 collapse on the selected seed, three byte-identical host initializations,
@@ -22,11 +22,18 @@ independent human raters, followed by Phase 2 verification and the fail-closed
 Phase 3 prerequisite audit. No further Phase 3 experiment, Phase 4 work, final
 access, minimum-information claim, or ABI-superiority claim is authorized.
 
+V554 closes the former operational gap: the scoring protocol is frozen at
+0/21,000 ratings, completed forms are hash-locked before unblinding, rater and
+custodian attestations are mandatory, and the evidence verifier recomputes the
+clustered 10,000-resample preference analysis. The 15-test hostile readiness
+suite passes. See `docs/PHASE2_HUMAN_RATING_HANDOFF_V1.md`. This does not
+replace the three external humans.
+
 | Phase | Current state | Authority |
 | --- | --- | --- |
 | 0 | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json` |
 | 1 | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
-| 2 | MACHINE COMPLETE; 0/21,000 HUMAN PREFERENCES | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
+| 2 | MACHINE + HANDOFF READY; 0/21,000 HUMAN PREFERENCES | `ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V554.json` |
 | 3 | MACHINE EVIDENCE COMPLETE; BLOCKED BY PHASE 2 | `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json` |
 | 4-8 | LOCKED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` |
 
@@ -662,7 +669,10 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
-- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V551.json`
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V554.json`
+- `ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V554.json`
+- `ABI_CAPABILITY_COMPILER_PHASE2_MACHINE_EVIDENCE_READINESS_V554.json`
+- `ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_SCORING_PROTOCOL_V1.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_ISOLATED_HOST_REPRODUCTION_RESULT_V547.json`
 - `ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_ISOLATED_RUNTIME_COMPOSE_RESULT_V544.json`

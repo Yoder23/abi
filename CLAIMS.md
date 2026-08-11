@@ -8,7 +8,7 @@ identity.
 
 ## Current claims
 
-### Current Phase 3 boundary (V551)
+### Current campaign boundary (V554; Phase 3 machine evidence V551)
 
 ABI may claim that the exact route-isolated endpoint has completed and passed
 all registered Phase 3 **machine** gates. The bounded claim includes three-seed
@@ -26,6 +26,14 @@ may not claim a smallest sufficient information budget, final-test success,
 universal teacher improvement, or superiority over LoRA/distillation. Phase 4
 is locked. The controlling evidence is
 `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json`.
+
+ABI may additionally claim that the external Phase 2 rating workflow is
+operational and fail-closed under
+`ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V554.json`:
+scoring was frozen at 0/21,000 preferences, raw forms must lock before
+unblinding, and 15 hostile readiness tests pass. ABI may not translate this
+into a claim that human ratings exist, that rater humanity or independence was
+machine-proven, or that Phase 2 passed.
 
 ### Preserved historical Phase 3 boundary
 

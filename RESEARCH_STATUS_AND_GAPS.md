@@ -12,6 +12,12 @@ Status date: 2026-08-11
    verification, and exact-lineage fully CPU runtime. V551 records machine
    completion while correctly withholding an unconditional certificate.
 
+0a. **The Phase 2 human handoff is operationally resolved, but not externally
+    completed.** V554 freezes the scoring rule before any rating, locks raw
+    forms before unblinding, requires rater/custodian attestations, replays all
+    statistics, and passes 15 hostile readiness tests. It cannot create or
+    substitute for three independent human judgments.
+
 1. **Repository ownership is explicit.** ABI owns acquisition artifacts and
    evidence. Runtime-host implementation belongs to the separate
    [LayerCake repository](https://github.com/Yoder23/layercake).
@@ -82,6 +88,12 @@ are locked and verified, no final Phase 2 certificate exists.
 This is now the only phase-closing blocker: all 21,000 form rows exist, but 0
 preferences are filled. Because Phase 3 depends on Phase 2, Phase 4 remains
 locked even though every Phase 3 machine gate passes.
+
+The former tooling ambiguity is closed. The exact custody, lock, scoring, and
+verification steps are frozen in `docs/PHASE2_HUMAN_RATING_HANDOFF_V1.md` and
+`ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_SCORING_PROTOCOL_V1.json`. The remaining
+uncertainty is genuinely external: software cannot establish that a declared
+identity is human or exclude off-system collusion.
 
 ### 2. What is the smallest sufficient imported-information budget?
 

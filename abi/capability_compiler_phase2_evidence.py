@@ -28,6 +28,7 @@ EXPECTED_CONFIG = {
     "D1": {"learning_rate": 0.00003, "target_token_exposures": 4},
     "D2": {"learning_rate": 0.00003, "target_token_exposures": 4},
 }
+HUMAN_SCORING_PROTOCOL = "ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_SCORING_PROTOCOL_V1.json"
 
 
 def _read_json(path: Path) -> dict[str, Any]:
@@ -199,15 +200,41 @@ def _human_ratings_status(root: Path, packet_sha256: str) -> dict[str, Any]:
             "required_raters": 3,
             "required_ratings": 21000,
         }
-    value = _read_json(path)
-    if (
-        value.get("status") != "PASS"
-        or value.get("independent_raters") != 3
-        or value.get("ratings") != 21000
-        or value.get("packet_manifest_sha256") != packet_sha256
-    ):
+    from .capability_compiler_phase2_human_ratings import verify_scored_manifest
+
+    value = verify_scored_manifest(root=root, path=path)
+    if value.get("packet_manifest_sha256") != packet_sha256:
         raise Phase2Error("completed human-rating manifest changed")
     return {"complete": True, **value}
+
+
+def _verify_human_scoring_protocol(root: Path, packet_sha256: str) -> dict[str, Any]:
+    path = root / HUMAN_SCORING_PROTOCOL
+    value = _read_json(path)
+    sealed = value.get("sealed_packet", {})
+    if (
+        value.get("format") != "abi-capability-compiler-phase2-human-scoring-protocol/1"
+        or value.get("status") != "PREREGISTERED_BEFORE_ANY_HUMAN_RATING_WAS_COMPLETED"
+        or sealed.get("sha256") != packet_sha256
+        or sealed.get("ratings_required") != 21000
+        or sealed.get("completed_preferences_at_preregistration") != 0
+        or value.get("scoring", {}).get("bootstrap_resamples") != 10000
+        or value.get("scoring", {}).get("bootstrap_seed") != 1729
+        or value.get("scoring", {}).get("candidate_preference_lower_bound_minimum") != 0.45
+    ):
+        raise Phase2Error("human-rating scoring protocol changed")
+    for relative, expected in value.get("implementation_bindings", {}).items():
+        target = _inside(root, relative)
+        if sha256_file(target) != expected:
+            raise Phase2Error(f"human-rating implementation binding changed: {relative}")
+    if len(value.get("implementation_bindings", {})) != 4:
+        raise Phase2Error("human-rating implementation binding depth changed")
+    return {
+        "path": HUMAN_SCORING_PROTOCOL,
+        "sha256": sha256_file(path),
+        "status": value["status"],
+        "scoring_frozen": True,
+    }
 
 
 def verify_evidence(root: Path) -> dict[str, Any]:
@@ -332,6 +359,7 @@ def verify_evidence(root: Path) -> dict[str, Any]:
     packet_dir = evidence / "human_rating_packet_v1"
     packet = _verify_packet(root, packet_dir)
     packet_sha = sha256_file(packet_dir / "manifest.json")
+    handoff = _verify_human_scoring_protocol(root, packet_sha)
     human = _human_ratings_status(root, packet_sha)
     phase2_complete = bool(human["complete"])
 
@@ -371,6 +399,7 @@ def verify_evidence(root: Path) -> dict[str, Any]:
             "ratings_required": packet["ratings_required"],
             "status": packet["status"],
         },
+        "human_rating_handoff": handoff,
         "human_ratings": human,
         "claim_boundary": "Phase 2 baseline machine evidence is complete. Phase 2 is not complete and Phase 3 cannot open until three independent blinded human forms are completed and verified. No ABI candidate or LayerCake candidate was trained in Phase 2.",
         "final_prompts_accessed": False,

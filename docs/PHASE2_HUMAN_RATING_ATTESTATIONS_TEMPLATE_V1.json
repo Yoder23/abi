@@ -1,0 +1,40 @@
+{
+  "format": "abi-capability-compiler-phase2-rater-attestations/1",
+  "raters": [
+    {
+      "rater_id": "REPLACE_WITH_DISTINCT_RATER_ID_1",
+      "rater_form": "rater_form_1",
+      "human_rater": true,
+      "completed_independently": true,
+      "answer_key_not_accessed_before_lock": true,
+      "other_ratings_not_accessed_before_lock": true,
+      "completed_utc": "REPLACE_WITH_ISO_8601_UTC_TIME",
+      "conflict_disclosure": "REPLACE_WITH_DISCLOSURE_OR_NONE"
+    },
+    {
+      "rater_id": "REPLACE_WITH_DISTINCT_RATER_ID_2",
+      "rater_form": "rater_form_2",
+      "human_rater": true,
+      "completed_independently": true,
+      "answer_key_not_accessed_before_lock": true,
+      "other_ratings_not_accessed_before_lock": true,
+      "completed_utc": "REPLACE_WITH_ISO_8601_UTC_TIME",
+      "conflict_disclosure": "REPLACE_WITH_DISCLOSURE_OR_NONE"
+    },
+    {
+      "rater_id": "REPLACE_WITH_DISTINCT_RATER_ID_3",
+      "rater_form": "rater_form_3",
+      "human_rater": true,
+      "completed_independently": true,
+      "answer_key_not_accessed_before_lock": true,
+      "other_ratings_not_accessed_before_lock": true,
+      "completed_utc": "REPLACE_WITH_ISO_8601_UTC_TIME",
+      "conflict_disclosure": "REPLACE_WITH_DISCLOSURE_OR_NONE"
+    }
+  ],
+  "custodian": {
+    "custodian_id": "REPLACE_WITH_CUSTODIAN_ID",
+    "verified_three_distinct_people": true,
+    "withheld_answer_key_and_cross_rater_access_until_lock": true
+  }
+}

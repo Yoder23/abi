@@ -4,14 +4,14 @@ Status date: 2026-08-11
 
 The machine-readable contract
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` controls sequencing and
-gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V551.json` records live status.
+gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V554.json` records live status.
 Evidence gates, not experiment counts or dates, close phases.
 
 | Phase | Objective | Status |
 | ---: | --- | --- |
 | 0 | Definitions, baselines, and preregistration | COMPLETE |
 | 1 | Capability inventory and normalized acquisition IR | COMPLETE |
-| 2 | Strong matched LoRA and distillation baselines | MACHINE COMPLETE; 0/21,000 EXTERNAL HUMAN PREFERENCES |
+| 2 | Strong matched LoRA and distillation baselines | MACHINE + FAIL-CLOSED HANDOFF READY; 0/21,000 EXTERNAL HUMAN PREFERENCES |
 | 3 | Causal teacher-to-target acquisition | MACHINE EVIDENCE COMPLETE; BLOCKED BY PHASE 2 PREREQUISITE |
 | 4 | Sufficient-information Pareto frontier | LOCKED |
 | 5 | Selective reconstruction and bounded exclusion | LOCKED |
@@ -39,9 +39,13 @@ adequacy only.
 
 All registered baseline training, three-seed reproduction, paired statistics,
 checkpoint persistence, cold/warm runtime, and machine verification are done.
+V554 also freezes the exact scoring rule and verifies the blind-lock,
+attestation, unblinding, clustered-bootstrap, and score-replay workflow under
+15 hostile tests. That is workflow readiness, not human evidence.
 The next—and only—Phase 2 action is external:
 
-1. Assign one complete blinded form to each of three independent human raters.
+1. Follow `docs/PHASE2_HUMAN_RATING_HANDOFF_V1.md` and assign one complete
+   blinded form to each of three independent human raters.
 2. Keep the answer key and other raters' work hidden until all forms are locked.
 3. Preserve completed forms separately from the immutable templates.
 4. Compute the preregistered preference lower bound and rerun the hostile

@@ -4,7 +4,7 @@ Status date: 2026-08-11
 
 ## Executive state
 
-The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V551.json`.
+The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V554.json`.
 Phase 3's machine campaign is complete and passes every registered technical
 gate. The exact route-isolated candidate has three paired-seed causal passes,
 1,393/1,400 autonomous functional passes with zero collapse, exact routing,
@@ -20,6 +20,15 @@ packet contains 21,000 nonblank rows and 0 completed preferences; three
 independent raters remain required. Phase 4 stays locked, final material stays
 unopened, and no ABI-superiority or minimum-information claim is permitted.
 No additional Phase 3 compute is authorized.
+
+The human-gate execution path is now complete and preregistered. V554 verifies
+an immutable blinded lock, exact template preservation, complete rating
+schemas, distinct rater and custodian attestations, post-lock integrity,
+10,000-resample clustered scoring, and score replay. Its focused hostile suite
+passes 15/15. The production templates remain unchanged and still contain zero
+ratings, so Phase 2 remains externally incomplete. The complete ABI-local
+regression suite passes 860/860; the separate nine-test LayerCake-control
+module remains 8 pass/1 exact-HEAD mismatch, and that verifier was not weakened.
 
 ### Preserved historical status through V463
 
@@ -393,7 +402,8 @@ checks to make later research code appear release-equivalent.
 
 ## Immediate next gate
 
-When raters become available, complete the Phase 2 packet without changing its
+When raters become available, follow
+`docs/PHASE2_HUMAN_RATING_HANDOFF_V1.md` and complete the Phase 2 packet without changing its
 forms or key. No additional Phase 3 architecture, training, or runtime run is
 authorized: V551 closes all current machine gates. After all three forms are
 locked, run the registered Phase 2 evidence verifier and only then rerun the

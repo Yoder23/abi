@@ -1,0 +1,66 @@
+{
+  "format": "abi-capability-compiler-phase2-human-rating-readiness-audit/1",
+  "version": 554,
+  "status_date": "2026-08-11",
+  "parent_audit": "ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V553.json",
+  "status": "PASS_HANDOFF_READY_EXTERNAL_RATINGS_NOT_COMPLETE",
+  "historical_evidence_changed": false,
+  "preserved_superseded_replays": [
+    "ABI_CAPABILITY_COMPILER_PHASE2_MACHINE_EVIDENCE_READINESS_V552.json",
+    "ABI_CAPABILITY_COMPILER_PHASE2_MACHINE_EVIDENCE_READINESS_V553.json"
+  ],
+  "sealed_packet": {
+    "manifest_sha256": "06c1e9e0f8f4f938cd020686fff7ac8470e8cff4a3d3fe294a0b0c003e2c69aa",
+    "forms": 3,
+    "rows_per_form": 7000,
+    "ratings_required": 21000,
+    "ratings_completed": 0,
+    "templates_modified": false
+  },
+  "scoring_preregistration": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_SCORING_PROTOCOL_V1.json",
+    "sha256": "5e53df940a518c04f4f90f9561500880c3389258392c7f9894f7328415ad7a64",
+    "frozen_before_any_completed_rating": true,
+    "clustered_prompt_level_bootstrap": true,
+    "resamples": 10000,
+    "seed": 1729,
+    "lower_bound_minimum": 0.45
+  },
+  "machine_evidence_replay": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE2_MACHINE_EVIDENCE_READINESS_V554.json",
+    "sha256": "3fd0434f4130924354a0472057ff7d6b36c87b9dcffeb1a8c0ec3cc09e11f406",
+    "machine_evidence_complete": true,
+    "phase2_complete": false,
+    "status": "BLOCKED_EXTERNAL_HUMAN_RATINGS"
+  },
+  "hostile_tests": {
+    "focused_tests_passed": 15,
+    "incomplete_or_blank_preference_rejected": true,
+    "modified_blinded_prompt_or_output_rejected": true,
+    "duplicate_rater_identity_rejected": true,
+    "missing_human_or_custodian_attestation_rejected": true,
+    "post_lock_form_or_attestation_change_rejected": true,
+    "premature_unblinding_without_lock_rejected": true,
+    "non_reproducible_score_manifest_rejected_by_evidence_verifier": true,
+    "production_zero_rating_templates_rejected_as_completed": true
+  },
+  "regression": {
+    "abi_local_tests_passed": 860,
+    "abi_local_tests_failed": 0,
+    "external_control_tests_passed": 8,
+    "external_control_tests_failed": 1,
+    "external_control_failure": "The clean separate LayerCake checkout is ahead of the exact contract-bound commit; the exact-HEAD verifier correctly rejected the mismatch and was not weakened."
+  },
+  "bindings": {
+    "abi/capability_compiler_phase2_human_ratings.py": "91d98dc85e4a11f96b3b0799db987332176219b62f2d36ff7a0092c8de5bb2ce",
+    "tests/test_capability_compiler_phase2_human_ratings.py": "50f11d8f95b4560e58ad1c72fdfa56058a0451b9f34fd6ac342f57cae5d65b60",
+    "docs/PHASE2_HUMAN_RATING_HANDOFF_V1.md": "b020cc92e98e6b68ce9016fc572de2e997f80476ce554c02d90513bc85e54766",
+    "docs/PHASE2_HUMAN_RATING_ATTESTATIONS_TEMPLATE_V1.json": "99af15475db2eb7b5c1c71206b3c9f670972e1eb33f86d5b589e6a974bcfdd4e"
+  },
+  "external_requirement": "Three distinct human raters must independently complete one sealed blinded form each under the documented custodian procedure.",
+  "machine_limit": "Software cannot establish that a declared identity is human or rule out off-system collusion. The named custodian owns that evidence.",
+  "phase2_certified": false,
+  "phase3_unconditionally_certified": false,
+  "phase4_open": false,
+  "superiority_claim_authorized": false
+}

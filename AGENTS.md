@@ -22,11 +22,18 @@ LayerCake cake.
 Status date: 2026-08-11.
 
 The controlling machine-readable state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V551.json`. Phase 3 has completed and
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V554.json`. Phase 3 has completed and
 passed every currently required machine gate, but it is not unconditionally
 certified because the controlling campaign contract makes it depend on Phase
 2. Phase 2 has 21,000 immutable blinded rating rows and zero completed
 preferences. Phase 4 therefore remains locked.
+
+The external handoff is now operational and fail-closed under
+`ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V554.json`.
+Scoring was frozen before any rating existed; 15 focused tests reject blank or
+malformed forms, changed blinded content, duplicate identities, deficient
+custody attestations, premature unblinding, post-lock edits, and altered score
+manifests. This readiness pass is not a human-rating pass.
 
 - Phase 0: **COMPLETE**.
 - Phase 1: **COMPLETE**.
@@ -48,7 +55,8 @@ pass under `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.j
 
 No further Phase 3 architecture, training, or runtime experiment is authorized.
 The only phase-closing action is external completion of the three blinded
-rating forms, followed by the existing Phase 2 verifier and the fail-closed
+rating forms using `docs/PHASE2_HUMAN_RATING_HANDOFF_V1.md`, followed by the
+existing Phase 2 verifier and the fail-closed
 Phase 3 prerequisite audit. Do not call machine-evidence completion an
 unconditional Phase 3 certificate, open Phase 4, access final material, claim a
 minimum information budget, or claim ABI superiority over LoRA/distillation.

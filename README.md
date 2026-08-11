@@ -16,7 +16,7 @@ Status date: 2026-08-11
 
 **The ABI English-product moonshot is OPEN.**
 
-The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V551.json`.
+The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V554.json`.
 The route-isolated English endpoint now passes all registered Phase 3 machine
 gates: three paired training seeds and all A0-A4 causal controls, 1,393/1,400
 selected-seed autonomous quality with zero collapse, exact routing, three
@@ -32,6 +32,16 @@ Until three independent raters complete and lock those forms and Phase 2
 passes verification, Phase 4 remains locked. No further Phase 3 compute, final
 access, minimum-information claim, or superiority claim is authorized. See
 `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json`.
+
+The Phase 2 external handoff is no longer underspecified. V554 preregisters
+the scoring rule before any preference exists, requires three distinct-rater
+and custodian attestations, locks all form hashes before unblinding, and
+recomputes scores from raw locked forms. Fifteen hostile readiness tests pass.
+Follow `docs/PHASE2_HUMAN_RATING_HANDOFF_V1.md`. This proves workflow
+readiness, not completion of the missing human judgments. The complete
+ABI-local suite passes 860/860; the known separate LayerCake exact-HEAD control
+continues to fail closed because that clean checkout is ahead of its pinned
+commit.
 
 ### Preserved historical narrative through V463
 
@@ -130,7 +140,7 @@ any experiment or launching new work.
 | Pre-transfer English/domain labeling | Bounded PASS | `ABI_TEACHER_RECORD_LABELING_PHASE2_CERTIFICATE_V89.json` |
 | Normalized English acquisition IR | PASS as a data artifact | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | Phase 2 matched-baseline machine campaign | COMPLETE; external human gate pending | `results/abi_capability_compiler_phase2/machine_evidence_v1.json` |
-| Phase 2 human rating packet | READY; 21,000 independent judgments pending | `results/abi_capability_compiler_phase2/human_rating_packet_v1/manifest.json` |
+| Phase 2 human rating packet and handoff | FAIL-CLOSED READY; 21,000 independent judgments pending | `ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V554.json` |
 | Phase 3 exact route-isolated endpoint | MACHINE EVIDENCE COMPLETE; prerequisite blocked | `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json` |
 | Phase 3 three-seed causal replication | PASS | `ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_ISOLATED_REPLICATION_RESULT_V538.json` |
 | Phase 3 exact fully CPU runtime | PASS | `ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_ISOLATED_RUNTIME_COMPOSE_RESULT_V544.json` |
@@ -204,9 +214,9 @@ latency from that same request. The final split was not accessed, and no ABI or
 LayerCake candidate was trained.
 
 Phase 2 is not complete until three independent people finish the blinded
-rating forms. The authorized Phase 3 branch has finished without certification
-and cannot open Phase 4 while its quality gates and the Phase 2 human gate are
-unresolved.
+rating forms. Phase 3's registered machine gates pass, but it cannot receive an
+unconditional certificate or open Phase 4 while the Phase 2 predecessor gate
+is unresolved.
 
 ## Conditional Phase 3 result
 
