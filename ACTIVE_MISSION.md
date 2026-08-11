@@ -6,7 +6,7 @@ Status date: 2026-08-11
 
 The ABI capability-compiler moonshot is **OPEN**.
 
-The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V576.json`.
+The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V578.json`.
 All Phase 3 machine endpoints now pass. The exact route-isolated checkpoint has
 three-seed causal replication, 1,393/1,400 autonomous quality with zero
 collapse on the selected seed, three byte-identical host initializations,
@@ -40,7 +40,7 @@ focused tests, including all three production-form dry runs, pass. See
 | 1 | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 | MACHINE + HANDOFF READY; 0/21,000 HUMAN PREFERENCES | `ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V554.json` |
 | 3 | MACHINE EVIDENCE COMPLETE; BLOCKED BY PHASE 2 | `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json` |
-| 4 | CONDITIONALLY OPEN; B10/B20/B40 FAILED, B80 AUTHORIZED | `ABI_CAPABILITY_COMPILER_PHASE4_ABI_B40_RESULT_V575.json` |
+| 4 | CONDITIONALLY OPEN; B80 FIRST SCREEN PASS, B40 ADJACENT FAILURE; REPLICATION OPEN | `ABI_CAPABILITY_COMPILER_PHASE4_ABI_B80_RESULT_V577.json` |
 | 5-8 | LOCKED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` |
 
 V558 passed the physical archive and checkpoint-lineage audit without loading
@@ -62,8 +62,11 @@ quality and zero-collapse; coherence decreased to 5/100. B40 improved to
 1,360/1,400 with two collapses, passed all critical gates, and beat the teacher
 by a paired lower-95 margin of 7.07 points. It still failed per-capability
 quality because format control was 86/100 (Wilson lower 0.7786), plus the
-unchanged zero-collapse gate. Routing and strong-path identity remained exact.
-Under the adaptive rule, only B80 at seed 104729 is authorized next.
+unchanged zero-collapse gate. B80 then passed every screening gate at
+1,378/1,400 with zero collapses and a +8.43-point paired lower-95 advantage over
+the teacher. Routing and strong-path identity remained exact. B40 is the
+adjacent lower failure. Under the adaptive rule, only B40/B80 at seeds 130363
+and 155921 are now authorized to test three-seed reproduction.
 
 ### Preserved historical mission snapshot
 

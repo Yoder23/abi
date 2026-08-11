@@ -22,7 +22,7 @@ LayerCake cake.
 Status date: 2026-08-11.
 
 The controlling machine-readable state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V576.json`. Phase 3 has completed and
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V578.json`. Phase 3 has completed and
 passed every currently required machine gate, but it is not unconditionally
 certified because the controlling campaign contract makes it depend on Phase
 2. Phase 2 has 21,000 immutable blinded rating rows and zero completed
@@ -47,7 +47,8 @@ not replace the three humans.
 - Phase 2: **MACHINE EVIDENCE COMPLETE; BLOCKED ON 21,000 JUDGMENTS FROM THREE
   INDEPENDENT HUMAN RATERS (0/21,000 FILLED)**.
 - Phase 3: **MACHINE EVIDENCE COMPLETE; BLOCKED BY THE PHASE 2 PREREQUISITE**.
-- Phase 4: **CONDITIONALLY OPEN; B10/B20/B40 FAILED, B80 AUTHORIZED; NOT CERTIFIED**.
+- Phase 4: **CONDITIONALLY OPEN; B80 FIRST SCREEN PASS, B40 ADJACENT FAILURE;
+  REPLICATION AUTHORIZED; NOT CERTIFIED**.
 - Phases 5-8: **LOCKED**.
 
 The user has explicitly authorized conditional Phase 4 research while the
@@ -75,7 +76,10 @@ The B40 screen then reached 1,360/1,400 with two collapses, passed every
 critical gate, and had a +7.07-point teacher-relative paired lower-95 bound.
 It still failed per-capability quality because format control was 86/100
 (Wilson lower 0.7786), and zero-collapse remained false. All three failures are
-preserved; only B80 seed 104729 is now authorized by the frozen adaptive order.
+preserved. B80 then passed at 1,378/1,400 with zero collapses, every absolute
+machine-quality gate, and a +8.43-point paired lower-95 teacher-relative
+advantage. This establishes a screening boundary only. The frozen adaptive
+order now authorizes exactly B40 and B80 at seeds 130363 and 155921.
 
 The exact route-isolated endpoint scored 1,393/1,400 with zero repetition
 collapse at seed 240487 and passed all four same-lineage causal controls across

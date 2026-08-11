@@ -1,0 +1,56 @@
+{
+  "format": "abi-capability-compiler-phase4-abi-budget-summary/1",
+  "version": 577,
+  "status_date": "2026-08-11",
+  "status": "PASS_PHASE4_ABI_B80_SCREEN_REPLICATION_AUTHORIZED",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_ABI_LINEAGE_PROTOCOL_V570.json",
+    "sha256": "50cd9abc83b584bf1682b57f606bbdcba75fbeda76eeeaa48edafbbc08e8505c"
+  },
+  "raw_result": {
+    "path": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed104729-v577/result.json",
+    "sha256": "1a602561b62bc9b811b6bb19e0d7ca3ff6a2b7c1d63dcda1a3e3b7b3c4483a42",
+    "evidence_sha256": "e479b3ddf0e12cca6b28724506367e9dee785b233062c663630a1514d4b276bf"
+  },
+  "budget": {
+    "id": "B80",
+    "unique_source_attempts": 7781,
+    "authoritative_teacher_output_tokens": 238832,
+    "phase1_records": 5600,
+    "targeted_weak_records": 1600,
+    "host_records": 1024
+  },
+  "machine_quality": {
+    "functional_passes": "1378/1400",
+    "repetition_collapses_v2": 0,
+    "router_correct": "1400/1400",
+    "strong_parent_exact": "1000/1000",
+    "teacher_relative_difference": 0.10071428571428571,
+    "teacher_relative_lower_95": 0.08428571428571428,
+    "lowest_capability": "coherence_93_of_100_wilson_lower_0.8625"
+  },
+  "passed_gates": [
+    "per_capability_functional",
+    "critical_capabilities",
+    "zero_repetition_collapse",
+    "teacher_noninferior",
+    "router_exact",
+    "strong_parent_exact",
+    "teacher_absent",
+    "final_test_not_accessed"
+  ],
+  "adjacent_lower_boundary": {
+    "budget": "B40",
+    "status": "FAIL",
+    "functional_passes": "1360/1400",
+    "repetition_collapses_v2": 2,
+    "failed_gates": ["per_capability_functional", "zero_repetition_collapse"]
+  },
+  "causal_interpretation": "B80 is the first preregistered imported-information budget to pass every locked ABI-arm machine-quality gate at the screening seed. It is a candidate frontier boundary only; B40 and B80 must reproduce across the two remaining paired seeds, then same-checkpoint runtime and matched LoRA/distillation fairness views must pass.",
+  "wall_seconds": 1924.4664970999875,
+  "final_test_accessed": false,
+  "phase4_certified": false,
+  "next_action": "Run only B40 and B80 at paired seeds 130363 and 155921, preserving all four complete clean-start lineages.",
+  "claim_boundary": "One screening-seed ABI-arm pass and adjacent lower failure; no reproduced frontier, runtime, matched-baseline comparison, Phase 4 certificate, final-test result, minimum-information claim, or superiority claim."
+}
