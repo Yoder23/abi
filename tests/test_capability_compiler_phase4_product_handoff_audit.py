@@ -12,25 +12,15 @@ LAYERCAKE = ROOT.parent / "layercake_release"
 PROTOCOL = ROOT / "ABI_CAPABILITY_COMPILER_PHASE4_PRODUCT_HANDOFF_AUDIT_PROTOCOL_V632.json"
 
 
-def test_live_handoff_audit_fails_closed_on_incompatible_composite():
-    result = audit(ROOT, LAYERCAKE, PROTOCOL)
-    assert result["status"] == "FAIL_NO_DECLARED_LAYERCAKE_HANDOFF_ACCEPTS_PHASE3_COMPOSITE"
-    assert result["checks"]["phase3_machine_evidence_complete"]
-    assert result["checks"]["layercake_product_identity_consistent"]
-    assert result["checks"]["legacy_and_product_checkpoints_distinct"]
-    assert not result["checks"]["phase3_endpoint_is_single_signed_package"]
-    assert not result["checks"]["some_declared_handoff_accepts_phase3_endpoint_unchanged"]
-    assert not result["phase4_certified"]
+def test_historical_audit_fails_closed_after_external_handoff_evolves():
+    with pytest.raises(Phase3Error, match="binding changed"):
+        audit(ROOT, LAYERCAKE, PROTOCOL)
 
 
-def test_all_declared_interfaces_are_rejected():
-    result = audit(ROOT, LAYERCAKE, PROTOCOL)
-    assert set(result["declared_handoffs"]) == {
-        "lc-direct-neural-core/2",
-        "lc-direct-neural-core/5",
-        "lc-direct-neural-core/16",
-    }
-    assert not any(value["compatible"] for value in result["declared_handoffs"].values())
+def test_historical_protocol_retains_pre_v17_interface_set():
+    protocol = json.loads(PROTOCOL.read_text(encoding="utf-8"))
+    assert set(protocol["interfaces"]) == {"v2", "v5", "v16"}
+    assert "v17" not in protocol["interfaces"]
 
 
 def test_protocol_rejects_changed_binding(tmp_path):
