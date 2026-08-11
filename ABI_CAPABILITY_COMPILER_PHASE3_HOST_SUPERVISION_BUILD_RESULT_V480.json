@@ -1,0 +1,44 @@
+{
+  "format": "abi-capability-compiler-phase3-host-supervision-build-summary/1",
+  "version": 480,
+  "status": "PASS_BUILD_HOSTILE_VERIFICATION_REQUIRED",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_HOST_SUPERVISION_PROTOCOL_V479.json",
+    "sha256": "8ea7a9d0401435e87725a7d3e37f5f70fd9a797b5df6d35ceec5471d77194320"
+  },
+  "artifact": {
+    "path": "results/abi_capability_compiler_phase3_host_supervision/build_v480/host_weak_supervision_v480.abicir",
+    "sha256": "7b0af0bafda631f89dd054a3bd57da76885b3eaca7fe863474255bcf8978b34d",
+    "bytes": 416804,
+    "records": 1280,
+    "records_per_capability_builder": 80
+  },
+  "raw_result": {
+    "path": "results/abi_capability_compiler_phase3_host_supervision/build_v480/result.json",
+    "sha256": "e8b48ab7af1eda4c559371b35f86ed3332a205ca5d0512a6f229a7568a2100bf",
+    "evidence_sha256": "bb51e249c027f02d71d1a46cd570ed9988bfbdf3bc1c92c21e0cb16c0cc3b28a"
+  },
+  "information_accounting": {
+    "unique_prompt_bytes": 135496,
+    "teacher_output_bytes": 120602,
+    "teacher_input_tokens": 108049,
+    "teacher_output_tokens": 40481,
+    "surface_normalized_records": 230,
+    "repair_attempt_records": 112,
+    "stored_logits": 0,
+    "stored_hidden_activations": 0,
+    "copied_source_parameters": 0
+  },
+  "controls": {
+    "teacher_model_loaded": false,
+    "neural_training_performed": false,
+    "historical_artifact_mutated": false,
+    "final_test_accessed": false
+  },
+  "decision": "Preregister and execute one independent hostile verifier bound to the artifact, source catalog, source journal, closed normalization, and all accounting. Neural training remains prohibited until that verifier passes.",
+  "promotion_eligible": false,
+  "phase3_certified": false,
+  "claim_boundary": "Cached-evidence artifact build only; hostile verification, neural training, quality, runtime, final-test, Phase 3, and superiority remain unproven."
+}
