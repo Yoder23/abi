@@ -16,7 +16,7 @@ Status date: 2026-08-11
 
 **The ABI English-product moonshot is OPEN.**
 
-The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V559.json`.
+The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V569.json`.
 The route-isolated English endpoint now passes all registered Phase 3 machine
 gates: three paired training seeds and all A0-A4 causal controls, 1,393/1,400
 selected-seed autonomous quality with zero collapse, exact routing, three
@@ -51,14 +51,18 @@ the answer key. The focused rater-session suite passes 10/10. See
 `docs/PHASE2_HUMAN_RATER_SESSION_V1.md`.
 
 The user has conditionally opened Phase 4 research without waiving the pending
-human gate. V558 completed the end-to-end information-lineage audit: 14,596
-unique teacher attempts and 450,660 unique authoritative output tokens are
-inherited across the endpoint. A smaller final payload cannot count as a
+human gate. V558 completed the end-to-end container and checkpoint-lineage
+audit. V565 then separated archive inventory from records actually consumed:
+the endpoint uses 9,596 unique teacher attempts and 294,212 authoritative
+output tokens; 5,000 unused targeted records remain counted in physical disk
+footprint only. A smaller final payload cannot count as a
 smaller substrate because V526 initializes from a full-V480 V484 bridge, and
 the V463 core already inherits full Phase 1 data through V443 and V459. Phase
 4 must rebuild every ABI data-dependent stage from the same fixed host at each
 nested budget and compare matched LoRA and distillation frontiers. V559 permits
-that protocol design but not training until it is sealed. Phase 2 and Phase 3
+that protocol design but not training until it is sealed. V567 now freezes
+balanced nested B10/B20/B40/B80/B100 consumed-information prefixes and the
+three-seed adaptive order. Phase 2 and Phase 3
 certificate statuses remain unchanged, final data remains unopened, and Phase
 5 is locked.
 

@@ -6,7 +6,7 @@ Status date: 2026-08-11
 
 The ABI capability-compiler moonshot is **OPEN**.
 
-The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V559.json`.
+The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V569.json`.
 All Phase 3 machine endpoints now pass. The exact route-isolated checkpoint has
 three-seed causal replication, 1,393/1,400 autonomous quality with zero
 collapse on the selected seed, three byte-identical host initializations,
@@ -40,18 +40,22 @@ focused tests, including all three production-form dry runs, pass. See
 | 1 | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 | MACHINE + HANDOFF READY; 0/21,000 HUMAN PREFERENCES | `ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V554.json` |
 | 3 | MACHINE EVIDENCE COMPLETE; BLOCKED BY PHASE 2 | `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json` |
-| 4 | CONDITIONALLY OPEN; LINEAGE COMPLETE, FRONTIER PROTOCOL REQUIRED | `ABI_CAPABILITY_COMPILER_PHASE4_LINEAGE_AUDIT_RESULT_V558.json` |
+| 4 | CONDITIONALLY OPEN; LINEAGE + BUDGETS READY, TRAINING PROTOCOL REQUIRED | `ABI_CAPABILITY_COMPILER_PHASE4_FRONTIER_READINESS_V568.json` |
 | 5-8 | LOCKED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` |
 
-V558 passed the imported-information lineage audit without loading a teacher,
-training a model, or accessing final data. The endpoint inherits 14,596 unique
-source attempts and 450,660 unique teacher-output tokens. A V526-only subset is
+V558 passed the physical archive and checkpoint-lineage audit without loading
+a teacher, training a model, or accessing final data. V565 then corrected the
+accounting boundary: the endpoint consumes 9,596 unique source attempts and
+294,212 teacher-output tokens; 5,000 additional targeted records remain in the
+archive footprint but were never read by training. A V526-only subset is
 invalid because its V484 initialization already consumed all V480 records;
 V463 also inherits the complete Phase 1 payload. The next authorized action is
 to seal an end-to-end nested-budget protocol that rebuilds every ABI
 data-dependent stage from the same fixed host and compares the ABI, LoRA, and
-distillation frontiers under all three fairness views. Training remains closed
-until that protocol is immutable.
+distillation frontiers under all three fairness views. V567 freezes five
+balanced nested budgets from B10 through B100 and their adaptive execution
+order. Training remains closed until the runner and complete comparison
+protocol are immutable.
 
 ### Preserved historical mission snapshot
 

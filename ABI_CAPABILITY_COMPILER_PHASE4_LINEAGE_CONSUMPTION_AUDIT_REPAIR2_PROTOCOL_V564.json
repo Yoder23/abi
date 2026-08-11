@@ -1,0 +1,26 @@
+{
+  "format": "abi-capability-compiler-phase4-lineage-consumption-audit-repair2/1",
+  "protocol_id": "abi-capability-compiler-phase4-lineage-consumption-audit-repair2-v564",
+  "status": "PREREGISTERED_COMPLETE_NEGATIVE_DIAGNOSTIC_POLARITY_REPAIR",
+  "status_date": "2026-08-11",
+  "objective": "Complete the implementation-only polarity repair for all three desired-false diagnostics identified by V561 and V563.",
+  "measured_defect": "V562 corrected final-test polarity but V563 proved that teacher_model_loaded=false and neural_training_performed=false were still incorrectly conjoined as failures.",
+  "scientific_fields_changed": false,
+  "base_protocol": "ABI_CAPABILITY_COMPILER_PHASE4_LINEAGE_CONSUMPTION_AUDIT_REPAIR_PROTOCOL_V562.json",
+  "preserved_failures": [
+    "results/abi_capability_compiler_phase4_lineage_consumption_audit/audit_v561/result.json",
+    "results/abi_capability_compiler_phase4_lineage_consumption_audit/repair_v563/result.json"
+  ],
+  "teacher_model_loading_authorized": false,
+  "neural_training_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "bindings": {
+    "abi/capability_compiler_phase4_lineage_consumption_audit_repair2.py": "6c4df09d11f02bb2fedede22e9e3f7be9020ca7502d82f24c21f92ecfc70a189",
+    "tests/test_capability_compiler_phase4_lineage_consumption_audit_repair2.py": "d0feed506f8d351cea771e7bca693996d5a45d4fbe52f93030168ac9dfdcf99d",
+    "abi/capability_compiler_phase4_lineage_consumption_audit_repair.py": "bb2be6acf9d35aa2d03e6b0724d573d539be9eac84830ff790d8f353a416d636",
+    "ABI_CAPABILITY_COMPILER_PHASE4_LINEAGE_CONSUMPTION_AUDIT_REPAIR_PROTOCOL_V562.json": "dd0dfa73c48e474c8097825b25351e2b12c3ea9691bd37111d6e2e1657680ebc",
+    "results/abi_capability_compiler_phase4_lineage_consumption_audit/repair_v563/result.json": "8fa400735a9b77c2bd22b3dfd41cdff1e09ec1ba82c0936201acefdfecd44f82"
+  },
+  "decision_rule": "Accept only if all scientific and accounting values remain unchanged and the three desired-false diagnostics become equivalently named desired-true assertions before conjunction.",
+  "claim_boundary": "Complete implementation-only read-only repair; no training, minimum-information, Phase 4 certificate, final-test result, or superiority claim."
+}

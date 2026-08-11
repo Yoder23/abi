@@ -1,0 +1,48 @@
+{
+  "format": "abi-capability-compiler-phase4-budget-manifest/1",
+  "protocol_id": "abi-capability-compiler-phase4-budget-manifest-v566",
+  "status": "PREREGISTERED_DETERMINISTIC_NESTED_BUDGET_CONSTRUCTION",
+  "status_date": "2026-08-11",
+  "objective": "Freeze five deterministic, capability-balanced, nested prefixes of every teacher record set actually consumed by the Phase 3 endpoint.",
+  "controlling_consumption_audit": {
+    "protocol": "ABI_CAPABILITY_COMPILER_PHASE4_LINEAGE_CONSUMPTION_AUDIT_REPAIR2_PROTOCOL_V564.json",
+    "result": "results/abi_capability_compiler_phase4_lineage_consumption_audit/repair2_v565/result.json",
+    "unique_source_attempts": 9596,
+    "unique_teacher_output_tokens": 294212
+  },
+  "selection_salt": "abi-phase4-nested-consumed-information-v566",
+  "weak_capabilities": ["abstention", "coherence", "fluent_realization", "tone_control"],
+  "teacher_artifacts": [
+    {"id": "phase1_ir", "path": "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir", "records": 7000},
+    {"id": "v138_targeted_ir", "path": "results/abi_capability_compiler_phase3/targeted_combined_ir_v137/normalized_targeted_combined_v138.abicir", "records": 7000},
+    {"id": "v480_host_supervision", "path": "results/abi_capability_compiler_phase3_host_supervision/build_v480/host_weak_supervision_v480.abicir", "records": 1280}
+  ],
+  "budgets": [
+    {"id": "B10", "fraction": 0.1, "phase1_per_capability": 50, "targeted_per_weak_capability": 50, "host_per_capability_builder": 8},
+    {"id": "B20", "fraction": 0.2, "phase1_per_capability": 100, "targeted_per_weak_capability": 100, "host_per_capability_builder": 16},
+    {"id": "B40", "fraction": 0.4, "phase1_per_capability": 200, "targeted_per_weak_capability": 200, "host_per_capability_builder": 32},
+    {"id": "B80", "fraction": 0.8, "phase1_per_capability": 400, "targeted_per_weak_capability": 400, "host_per_capability_builder": 64},
+    {"id": "B100", "fraction": 1.0, "phase1_per_capability": 500, "targeted_per_weak_capability": 500, "host_per_capability_builder": 80}
+  ],
+  "adaptive_order": "Run B10, B20, B40, B80, B100 in ascending order on screening seed 104729 and stop at the first full ABI machine-gate pass. Then run exactly seeds 130363 and 155921 for that budget and its adjacent lower budget. If B10 first passes, its preregistered adjacent lower is the zero-import parent control. If B100 fails, record the branch failure and do not invent a larger budget.",
+  "seed_policy": {
+    "screening_seed": 104729,
+    "replication_seeds": [130363, 155921],
+    "paired_across_systems": true,
+    "information_selection_fixed_across_seeds": true
+  },
+  "teacher_model_loading_authorized": false,
+  "neural_training_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "bindings": {
+    "abi/capability_compiler_phase4_budget_manifest.py": "5a43359c2103b0e522d6d7903f6f263dab2c1c0f533beaf49fed0569679129b2",
+    "tests/test_capability_compiler_phase4_budget_manifest.py": "57aac6f9d7fdce8b3bbac64ba91a7f8e44868399640f0ced4bc2220d3840cf47",
+    "ABI_CAPABILITY_COMPILER_PHASE4_LINEAGE_CONSUMPTION_AUDIT_REPAIR2_PROTOCOL_V564.json": "74c1c53bb3a3622a78fc662963a0cf6849410c44f02a2d4c9f8c1ba228ad1b62",
+    "results/abi_capability_compiler_phase4_lineage_consumption_audit/repair2_v565/result.json": "a2fe6d456ff4ea4195eb6dd3136698c1d16832092b1622d54405cf5076c82e4f",
+    "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+    "results/abi_capability_compiler_phase3/targeted_combined_ir_v137/normalized_targeted_combined_v138.abicir": "9fa2467a37c870db7a24640a8d6da46ed73941573026af2c9a4c3425fd98dd18",
+    "results/abi_capability_compiler_phase3_host_supervision/build_v480/host_weak_supervision_v480.abicir": "7b0af0bafda631f89dd054a3bd57da76885b3eaca7fe863474255bcf8978b34d"
+  },
+  "decision_rule": "The manifest must reproduce the V565 full consumed-information totals, preserve exact nesting in every stratum, and expose no final material. A pass permits sealing the training protocol, not training by itself.",
+  "claim_boundary": "Nested-budget construction only; no training, frontier, minimum-information, Phase 4 certificate, final-test result, or superiority claim."
+}

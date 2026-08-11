@@ -1,0 +1,136 @@
+{
+  "claim_boundary": "Prospective accounting repair only; V558 remains historical. No training, minimum-information, Phase 4 certificate, final-test result, or superiority claim.",
+  "confounds": {
+    "minimum_valid_clean_start": "the immutable external LayerCake host before V443 plus a freshly initialized router and bridges",
+    "reason": "V526 initializes from V484, which already consumed the complete V480 artifact; V463 also inherits the complete Phase 1 IR through V443, V459, and V463.",
+    "required_frontier_scope": "retrain every ABI data-dependent stage from the common fixed host for each nested information budget",
+    "varying_only_v526_v480_subset_is_invalid": true
+  },
+  "consumed_unique_information": {
+    "authoritative_teacher_output_tokens": 294212,
+    "copied_source_parameters": 0,
+    "duplicate_rule_memberships": 684,
+    "source_attempts": 9596,
+    "stored_hidden_activations": 0,
+    "stored_logits": 0
+  },
+  "consumption_rules": {
+    "phase1_all": {
+      "artifact": "phase1_ir",
+      "authoritative_teacher_output_tokens": 215647,
+      "capability_counts": {
+        "abstention": 500,
+        "clarification": 500,
+        "coherence": 500,
+        "conversation": 500,
+        "email_drafting_from_notes": 500,
+        "fact_free_reasoning": 500,
+        "fluent_realization": 500,
+        "format_control": 500,
+        "grammar": 500,
+        "instruction_following": 500,
+        "prompt_grounding": 500,
+        "rewriting": 500,
+        "supplied_text_summarization": 500,
+        "tone_control": 500
+      },
+      "consumer_stages": [
+        "V443",
+        "V459",
+        "V463",
+        "V45_router",
+        "V474_anchor"
+      ],
+      "records": 7000,
+      "unique_source_attempts": 7000
+    },
+    "v474_targeted_weak": {
+      "artifact": "v138_targeted_ir",
+      "authoritative_teacher_output_tokens": 60276,
+      "capability_counts": {
+        "abstention": 500,
+        "coherence": 500,
+        "fluent_realization": 500,
+        "tone_control": 500
+      },
+      "consumer_stages": [
+        "V474"
+      ],
+      "records": 2000,
+      "unique_source_attempts": 2000
+    },
+    "v480_all": {
+      "artifact": "v480_host_supervision",
+      "authoritative_teacher_output_tokens": 40481,
+      "capability_counts": {
+        "abstention": 320,
+        "coherence": 320,
+        "fluent_realization": 320,
+        "tone_control": 320
+      },
+      "consumer_stages": [
+        "V484",
+        "V526",
+        "deployed_guard"
+      ],
+      "records": 1280,
+      "unique_source_attempts": 1280
+    }
+  },
+  "decision": "Use only consumed records for nested information budgets; separately report full archive disk footprint and the fixed host prior. Rebuild all ABI data-dependent stages from the clean host.",
+  "evidence_sha256": "ab389a6fb2de1087bf91c2477d1c90fc3f7f5b182866cb02f64f76d1f6ffbc69",
+  "final_test_accessed": false,
+  "fixed_host_prior": {
+    "checkpoint_bytes": 246627944,
+    "checkpoint_sha256": "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1",
+    "metadata": "../layercake_release/artifacts/moonshot/phase2_shallow_sparse_pretrained/student2400-seed-9824/metadata.json",
+    "metadata_sha256": "def6a552162a10a814d4bcfba31fa659530f0488d461c4a93414ee44a231ea82",
+    "parameters_total": 61655050,
+    "raw_utf8_bytes_exposed": 9448339,
+    "response_tokens_seen": 923677,
+    "role": "fixed pre-existing LayerCake host prior; separately accounted, never called zero-information",
+    "teacher_initialized_source_blocks": [
+      0,
+      2,
+      5
+    ]
+  },
+  "format": "abi-capability-compiler-phase4-lineage-consumption-audit-result/1",
+  "gates": {
+    "all_consumption_depths_match": true,
+    "consumed_less_than_archived": true,
+    "final_test_accessed": false,
+    "full_phase1_consumption_retained": true,
+    "full_v480_consumption_retained": true,
+    "historical_container_audit_still_passes": true,
+    "neural_training_performed": false,
+    "teacher_model_loaded": false,
+    "unused_targeted_records_excluded_from_consumed_budget": true
+  },
+  "historical_v558": {
+    "container_records": 15280,
+    "container_unique_source_attempts": 14596,
+    "container_unique_teacher_output_tokens": 450660,
+    "interpretation": "physical archive inventory, superseded as a consumed-information total",
+    "preserved": true
+  },
+  "phase2_status_unchanged": "BLOCKED_EXTERNAL_HUMAN_RATINGS_0_OF_21000_FILLED",
+  "phase3_status_unchanged": "MACHINE_EVIDENCE_COMPLETE_NOT_UNCONDITIONALLY_CERTIFIED",
+  "phase4_certified": false,
+  "phase5_open": false,
+  "protocol_sha256": "5853931c53495115042451434b73a55c0ebdf29a72b11bffe06392675984e679",
+  "router": {
+    "checkpoint_bytes": 4232392,
+    "checkpoint_sha256": "cc1f384a49fdaad94d47c5feb4573dcc7eb688ac96ffd7bfffade811861acb48",
+    "labeled_records": 7000,
+    "metadata": "results/abi_capability_compiler_phase3_sparse_router/development_v45/R0-seed240045/metadata.json",
+    "parameters": 1058040,
+    "teacher_outputs_added": 0
+  },
+  "status": "FAIL_CLOSED_CONSUMPTION_LINEAGE",
+  "unused_but_archived": {
+    "counted_as_training_information": false,
+    "counted_in_disk_footprint": true,
+    "v138_nonweak_records": 5000
+  }
+}
