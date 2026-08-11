@@ -13,7 +13,8 @@ import numpy as np
 from .capability_compiler_phase2_common import canonical_json_bytes, evaluate_functional, sha256_file
 from .capability_compiler_phase2_teacher import development_probes
 from .capability_compiler_phase3 import Phase3Error, _write_immutable
-from .capability_compiler_phase3_route_isolated import CONTROL_SYSTEMS, load_protocol as load_route_protocol
+from .capability_compiler_phase3_route_isolated import CONTROL_SYSTEMS, FORMAT as ROUTE_FORMAT
+from . import capability_compiler_phase3_final_controls as controls
 from .capability_compiler_phase3_routed_v15_autonomous_screen_isolated import paired_stratified_bootstrap
 
 
@@ -115,8 +116,18 @@ def decide(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
         if sha256_file(decision_path) != replication["decision_sha256"] or decision.get("evidence_sha256") != replication["evidence_sha256"]:
             raise Phase3Error("paired-seed decision binding changed")
         route_protocol_path = root / replication["route_protocol"]
-        route_protocol, route_protocol_sha256, bundle = load_route_protocol(root, route_protocol_path)
-        _, base = bundle
+        route_protocol = _json(route_protocol_path)
+        route_protocol_sha256 = sha256_file(route_protocol_path)
+        if (
+            route_protocol.get("format") != ROUTE_FORMAT
+            or route_protocol.get("final_test_access") != "PROHIBITED"
+            or route_protocol.get("status") not in {
+                "PREREGISTERED_ROUTE_ISOLATED_MATCHED_CONTROLS",
+                "PREREGISTERED_ROUTE_ISOLATED_PAIRED_SEED_MATRIX",
+            }
+        ):
+            raise Phase3Error("historical route protocol governance changed")
+        _, _, base = controls.load_protocol(root, root / route_protocol["base_control_protocol"])
         if route_protocol_sha256 != decision["protocol_sha256"] or not decision["all_controls_passed"]:
             raise Phase3Error("paired-seed decision did not pass or protocol changed")
 
