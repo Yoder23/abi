@@ -1,0 +1,24 @@
+{
+  "format": "abi-capability-compiler-phase4-functional-validation-readiness/1",
+  "version": 678,
+  "status_date": "2026-08-11",
+  "status": "PASS_FUNCTIONAL_VALIDATION_PREFLIGHT",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_FUNCTIONAL_VALIDATION_PROTOCOL_V677.json",
+    "sha256": "68fc237cf95d6f2aeee561397bbd094b526803a986a243a56ec8ee613ccb3cf5"
+  },
+  "budget": "B80",
+  "seed": 130363,
+  "train_records": 4470,
+  "validation_records": 1130,
+  "validation_records_per_capability_minimum_observed": 71,
+  "split_disjoint": true,
+  "split_exhaustive": true,
+  "functional_evaluators_bound": true,
+  "one_active_route": true,
+  "training_performed": false,
+  "final_test_accessed": false,
+  "authorized_next_work": "Execute exactly one B80 seed130363 train-select-development-screen sequence under V677.",
+  "claim_boundary": "Readiness only; no trained result, stable frontier, adjacent lower failure, runtime, package, matched baseline, final test, Phase 4 certificate, or superiority claim."
+}
