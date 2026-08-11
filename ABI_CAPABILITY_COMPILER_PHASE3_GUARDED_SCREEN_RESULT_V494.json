@@ -1,0 +1,58 @@
+{
+  "format": "abi-capability-compiler-phase3-online-contract-guard-screen-summary/1",
+  "version": 494,
+  "status": "PASS_INITIAL_ONLINE_GUARDED_SCREEN_REPLICATION_RUNTIME_OPEN",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_GUARDED_SCREEN_PROTOCOL_V493.json",
+    "sha256": "d9c835ad542185ee4a30c4e6352af568693a316a4c03bd2d941a8f76fd03ddb9"
+  },
+  "candidate": {
+    "checkpoint_sha256": "046d00d6f4cf9cef068d616a6064aab9111b1ff5f23d4c2f98a4fa2aad2733a6",
+    "changed": false,
+    "teacher_present_at_inference": false
+  },
+  "evaluation": {
+    "raw_result_path": "results/abi_capability_compiler_phase3_guarded_screen/evaluation_v494/result.json",
+    "raw_result_sha256": "720f1bfef312afb129d5ef4de59e144e81e30515cf43e1c8b30d4867979a068a",
+    "raw_outputs_sha256": "7c0bff11da4c12ac06ea315c5e62841c670e4698d766a259c3908cd0fe981d1d",
+    "guard_manifest_sha256": "1f06a682d665aa8f65e648c3f487eb9ce782882c3e5ec68e28b97d1964dfd71a",
+    "observations": 1400,
+    "functional_v1_passes": 1386,
+    "functional_v2_passes": 1387,
+    "repetition_collapses_v2": 0,
+    "router_correct": "1400/1400",
+    "strong_parent_outputs_byte_exact": "1000/1000",
+    "teacher_relative_candidate_minus_teacher": 0.10642857142857143,
+    "teacher_relative_lower_95": 0.09,
+    "evaluation_wall_seconds": 220.99444139999105
+  },
+  "guard": {
+    "terminations": 5,
+    "abstention_prefixes": 5,
+    "check_seconds": 1.1531963994784746,
+    "output_repetition_collapses": 0
+  },
+  "weak_capabilities": {
+    "abstention": {"passes": 100, "observations": 100, "wilson_lower_95": 0.9630065017930143},
+    "coherence": {"passes": 95, "observations": 100, "wilson_lower_95": 0.8882495307680808},
+    "fluent_realization": {"passes": 97, "observations": 100, "wilson_lower_95": 0.9154806357094724},
+    "tone_control": {"passes": 97, "observations": 100, "wilson_lower_95": 0.9154806357094724}
+  },
+  "gates": {
+    "per_capability_functional_v1": true,
+    "critical_capabilities_v1": true,
+    "teacher_relative_noninferiority_v1": true,
+    "zero_v2_repetition_collapses": true,
+    "qualified_router_exact": true,
+    "strong_routes_byte_exact_to_v463": true,
+    "final_test_not_accessed": true
+  },
+  "decision": "Initial online mechanism gate passed. Preserve the unchanged candidate and guard contract; independently verify the sealed raw evidence, then execute exactly two preregistered paired replications and a separately preregistered CPU throughput, TTFT, and RSS certification before any Phase 3 claim.",
+  "promotion_eligible": false,
+  "phase3_certified": false,
+  "final_test_accessed": false,
+  "phase2_external_blocker": "21000 blinded judgments from three independent human raters remain unavailable and are not waived.",
+  "claim_boundary": "Initial development-only guarded pass; independent raw-evidence verification, replication, CPU runtime, TTFT, RSS, final quality, minimum information, Phase 3, and superiority remain unproven."
+}
