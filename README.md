@@ -16,7 +16,7 @@ Status date: 2026-08-11
 
 **The ABI English-product moonshot is OPEN.**
 
-The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V597.json`.
+The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V601.json`.
 The route-isolated English endpoint now passes all registered Phase 3 machine
 gates: three paired training seeds and all A0-A4 causal controls, 1,393/1,400
 selected-seed autonomous quality with zero collapse, exact routing, three
@@ -99,7 +99,10 @@ run, with no new data, larger budget, threshold change, nearby sweep,
 matched-baseline run, or final access authorized first. The first stabilized
 pair is complete: at seed 104729, B40 fails at 1,360/1,400 with two collapses
 and B80 passes at 1,383/1,400 with zero collapses. The boundary is reproduced
-for one seed, not yet across all three; seeds 130363 and 155921 remain required.
+for one seed, not across all three. Seed 130363 rejects the intervention: B40
+passes at 1,381/1,400 with zero collapses while B80 fails at 1,345/1,400 due
+to coherence at 65/100. Only seed155921 remains for complete sealed-matrix
+closure; no nearby stabilization sweep is authorized.
 Phase 2 and Phase 3
 certificate statuses remain unchanged, final data remains unopened, and Phase
 5 is locked.

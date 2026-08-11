@@ -1,0 +1,174 @@
+{
+  "bridge_parameters": 99840,
+  "checkpoint": {
+    "bytes": 399768,
+    "path": "control_bridge.safetensors",
+    "sha256": "1b11c0b08bd68f55c760b42e5a8f3f9af747276f969ada032ba172a87715625d"
+  },
+  "evidence_sha256": "64090026eb4a732473dd70de77ed03b0bb2b5a4f4e1dba612a9d0741687d5e1b",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-final-controls/1",
+  "initialization": {
+    "sha256": "4f8075c7242437371591a85e4b118d0acbe0a451a4670190a1592cfe308dd595",
+    "state_sha256": "4aaa0a74268e37257744b8512d9015961165adce84c1c3e5293dd523fb3a9f14"
+  },
+  "parent": {
+    "checkpoint_sha256": "eb7012cb952afc762c2182f9e54dcc1df26dda1c6c144dd8065e23ff1c779fcc",
+    "mutated": false
+  },
+  "protocol_sha256": "4ddcd770377458a14846b56807e9b505ca7bd8b00c272c7fe6b8d63c980062ad",
+  "source_parameters_copied": 0,
+  "status": "TRAINED_MATCHED_CONTROL_DEVELOPMENT_ONLY",
+  "system": "A0_route_isolated",
+  "teacher_present": false,
+  "training": {
+    "autonomous_prefix_tokens": 32741,
+    "curves": [
+      {
+        "loss": 0.642697811126709,
+        "recovery_horizon": null,
+        "step": 1,
+        "system": "A0_route_isolated",
+        "wall_seconds": 0.5227104999939911
+      },
+      {
+        "loss": 0.14972713589668274,
+        "recovery_horizon": null,
+        "step": 250,
+        "system": "A0_route_isolated",
+        "wall_seconds": 60.5545390000043
+      },
+      {
+        "loss": 0.2330423891544342,
+        "recovery_horizon": 8,
+        "step": 500,
+        "system": "A0_route_isolated",
+        "wall_seconds": 131.6929713000136
+      },
+      {
+        "loss": 0.13944116234779358,
+        "recovery_horizon": null,
+        "step": 750,
+        "system": "A0_route_isolated",
+        "wall_seconds": 202.64870409999276
+      },
+      {
+        "loss": 0.06887385249137878,
+        "recovery_horizon": 4,
+        "step": 1000,
+        "system": "A0_route_isolated",
+        "wall_seconds": 273.76505099999486
+      },
+      {
+        "loss": 0.04655640572309494,
+        "recovery_horizon": null,
+        "step": 1250,
+        "system": "A0_route_isolated",
+        "wall_seconds": 345.66296769998735
+      },
+      {
+        "loss": 0.15953394770622253,
+        "recovery_horizon": 16,
+        "step": 1500,
+        "system": "A0_route_isolated",
+        "wall_seconds": 418.7697548000142
+      },
+      {
+        "loss": 0.05379673093557358,
+        "recovery_horizon": null,
+        "step": 1750,
+        "system": "A0_route_isolated",
+        "wall_seconds": 490.5233056000143
+      },
+      {
+        "loss": 0.44321268796920776,
+        "recovery_horizon": 8,
+        "step": 2000,
+        "system": "A0_route_isolated",
+        "wall_seconds": 564.3088646999968
+      }
+    ],
+    "observations": 64000,
+    "observations_by_stratum": {
+      "abstention:0:host_projected": 2000,
+      "abstention:0:source_wrapped": 2000,
+      "abstention:1:host_projected": 2000,
+      "abstention:1:source_wrapped": 2000,
+      "abstention:2:host_projected": 2000,
+      "abstention:2:source_wrapped": 2000,
+      "abstention:3:host_projected": 2000,
+      "abstention:3:source_wrapped": 2000,
+      "coherence:0:host_projected": 2000,
+      "coherence:0:source_wrapped": 2000,
+      "coherence:1:host_projected": 2000,
+      "coherence:1:source_wrapped": 2000,
+      "coherence:2:host_projected": 2000,
+      "coherence:2:source_wrapped": 2000,
+      "coherence:3:host_projected": 2000,
+      "coherence:3:source_wrapped": 2000,
+      "fluent_realization:0:host_projected": 2000,
+      "fluent_realization:0:source_wrapped": 2000,
+      "fluent_realization:1:host_projected": 2000,
+      "fluent_realization:1:source_wrapped": 2000,
+      "fluent_realization:2:host_projected": 2000,
+      "fluent_realization:2:source_wrapped": 2000,
+      "fluent_realization:3:host_projected": 2000,
+      "fluent_realization:3:source_wrapped": 2000,
+      "tone_control:0:host_projected": 2000,
+      "tone_control:0:source_wrapped": 2000,
+      "tone_control:1:host_projected": 2000,
+      "tone_control:1:source_wrapped": 2000,
+      "tone_control:2:host_projected": 2000,
+      "tone_control:2:source_wrapped": 2000,
+      "tone_control:3:host_projected": 2000,
+      "tone_control:3:source_wrapped": 2000
+    },
+    "peak_cuda_allocated_bytes": 4408712192,
+    "peak_process_rss_bytes": 1638326272,
+    "record_sequence_sha256": "214a8f9f55867fbc65982c24195194f89173b680a32941b4acb6dddbe36db8d9",
+    "recovery_batches": 476,
+    "recovery_by_stratum": {
+      "abstention:0:host_projected": 119,
+      "abstention:0:source_wrapped": 119,
+      "abstention:1:host_projected": 119,
+      "abstention:1:source_wrapped": 119,
+      "abstention:2:host_projected": 119,
+      "abstention:2:source_wrapped": 119,
+      "abstention:3:host_projected": 119,
+      "abstention:3:source_wrapped": 119,
+      "coherence:0:host_projected": 119,
+      "coherence:0:source_wrapped": 119,
+      "coherence:1:host_projected": 119,
+      "coherence:1:source_wrapped": 119,
+      "coherence:2:host_projected": 119,
+      "coherence:2:source_wrapped": 119,
+      "coherence:3:host_projected": 119,
+      "coherence:3:source_wrapped": 119,
+      "fluent_realization:0:host_projected": 119,
+      "fluent_realization:0:source_wrapped": 119,
+      "fluent_realization:1:host_projected": 119,
+      "fluent_realization:1:source_wrapped": 119,
+      "fluent_realization:2:host_projected": 119,
+      "fluent_realization:2:source_wrapped": 119,
+      "fluent_realization:3:host_projected": 119,
+      "fluent_realization:3:source_wrapped": 119,
+      "tone_control:0:host_projected": 119,
+      "tone_control:0:source_wrapped": 119,
+      "tone_control:1:host_projected": 119,
+      "tone_control:1:source_wrapped": 119,
+      "tone_control:2:host_projected": 119,
+      "tone_control:2:source_wrapped": 119,
+      "tone_control:3:host_projected": 119,
+      "tone_control:3:source_wrapped": 119
+    },
+    "recovery_horizon_batches": {
+      "16": 158,
+      "4": 159,
+      "8": 159
+    },
+    "seed": 130363,
+    "steps": 2000,
+    "teacher_response_tokens_in_loss": 1729386,
+    "wall_seconds": 564.5350123000098
+  }
+}

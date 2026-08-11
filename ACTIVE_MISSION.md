@@ -6,7 +6,7 @@ Status date: 2026-08-11
 
 The ABI capability-compiler moonshot is **OPEN**.
 
-The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V597.json`.
+The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V601.json`.
 All Phase 3 machine endpoints now pass. The exact route-isolated checkpoint has
 three-seed causal replication, 1,393/1,400 autonomous quality with zero
 collapse on the selected seed, three byte-identical host initializations,
@@ -87,7 +87,10 @@ nearby sweep is authorized. At seed 104729, stabilized B40 failed at
 1,360/1,400 with two collapses, while stabilized B80 passed at 1,383/1,400
 with zero collapses and a +8.86-point paired lower-95 teacher margin. This
 reproduces the intended boundary for one seed only; seeds 130363 and 155921
-remain mandatory.
+remain mandatory. Seed 130363 has now rejected the stabilization: B40 passes
+at 1,381/1,400 with zero collapses, while B80 fails at 1,345/1,400 because
+coherence is only 65/100. Only the sealed seed155921 pair remains for complete
+matrix closure; the preregistered success rule can no longer be met.
 
 ### Preserved historical mission snapshot
 
