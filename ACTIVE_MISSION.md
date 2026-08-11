@@ -6,7 +6,7 @@ Status date: 2026-08-11
 
 The ABI capability-compiler moonshot is **OPEN**.
 
-The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V590.json`.
+The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V593.json`.
 All Phase 3 machine endpoints now pass. The exact route-isolated checkpoint has
 three-seed causal replication, 1,393/1,400 autonomous quality with zero
 collapse on the selected seed, three byte-identical host initializations,
@@ -79,8 +79,11 @@ the ABI frontier is not certified. Only read-only seed-stability attribution is
 currently authorized, followed by at most one prospectively sealed,
 evidence-supported stabilization attempt. V588 localizes the largest effect to
 B80 coherence: V463-to-final changes are +84, -6, and +13 points across seeds.
-One deterministic within-stratum exposure-balanced final-bridge attempt may be
-designed and sealed without new information or changed gates.
+V591/V592 seal and validate that one deterministic within-stratum
+exposure-balanced final-bridge attempt without new information or changed
+gates. Only its registered B40/B80 by three-seed matrix may now run. Its fixed
+decision requires B80 to pass all three seeds and B40 to fail all three; no
+nearby sweep is authorized.
 
 ### Preserved historical mission snapshot
 

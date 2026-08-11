@@ -22,11 +22,12 @@ LayerCake cake.
 Status date: 2026-08-11.
 
 The controlling machine-readable state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V590.json`. Phase 3 has completed and
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V593.json`. Phase 3 has completed and
 passed every currently required machine gate, but it is not unconditionally
 certified because the controlling campaign contract makes it depend on Phase
 2. Phase 2 has 21,000 immutable blinded rating rows and zero completed
-preferences. Phase 4 therefore remains locked.
+preferences. Phase 4 is conditionally open only under the user's explicit
+authorization; its final data and Phase 5 remain locked.
 
 The external handoff is now operational and fail-closed under
 `ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V554.json`.
@@ -94,8 +95,9 @@ evidence-supported stabilization attempt. V588 attributes the largest
 instability to B80 coherence in the final bridge: intermediate-to-final deltas
 are +84, -6, and +13 points. The single permitted design must remove random
 within-stratum exposure imbalance without new data, parameters, steps, budget,
-thresholds, or final access. Training remains prohibited until its runner and
-protocol are hash-bound and tested.
+thresholds, or final access. V591/V592 now hash-bind and test that single
+intervention. Exactly the registered B40/B80 runs at seeds 104729, 130363, and
+155921 are authorized; no nearby sweep or other training is authorized.
 
 The exact route-isolated endpoint scored 1,393/1,400 with zero repetition
 collapse at seed 240487 and passed all four same-lineage causal controls across
