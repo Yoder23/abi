@@ -1,0 +1,38 @@
+{
+  "format": "abi-capability-compiler-phase3-guarded-host-replication-summary/1",
+  "version": 500,
+  "status": "FAIL_OVERBROAD_RAW_JSONL_IDENTITY_GATE_TIMING_FIELDS_INCLUDED",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_GUARDED_REPLICATION_PROTOCOL_V499.json",
+    "sha256": "7dff1c390e72299027000ca671fd65f4927330c8fabaea2311fe41b9d65a22d2"
+  },
+  "raw_result": {
+    "path": "results/abi_capability_compiler_phase3_guarded_replication/replication_v500/replication_result.json",
+    "sha256": "a9066b7139581da4fc03035a223985517aa5f49e25d039280fcfc3cd0b02f841"
+  },
+  "replications": {
+    "H1": {
+      "functional_v1_passes": 1386,
+      "repetition_collapses_v2": 0,
+      "teacher_relative_lower_95": 0.09,
+      "all_quality_gates": true,
+      "outputs_sha256": "ebb7ded9676eba453487a3d9794ceca9b237a03d0e447156a74dcd8fd1316c41"
+    },
+    "H2": {
+      "functional_v1_passes": 1386,
+      "repetition_collapses_v2": 0,
+      "teacher_relative_lower_95": 0.09,
+      "all_quality_gates": true,
+      "outputs_sha256": "87810746031c711d6ea5b7d2414ce6b55cc57f50669dab6af6b7d11b0b8e351c"
+    }
+  },
+  "failed_gate": "deterministic_output_identity_to_reference",
+  "measured_protocol_defect": "The bound comparison hashed full evidence rows containing guard_check_seconds, a measured duration that is expected to differ across processes. Full-file identity therefore conflated semantic generation reproducibility with timing reproducibility.",
+  "decision": "Preserve V499/V500 as a formal failure. Perform one preregistered read-only three-way field audit that permits differences only in guard_check_seconds and requires exact identity for prompt identity, generated text, completed-response token IDs, routing, guard actions, functional metrics, repetition metrics, and strong-parent identity. No new generation or training is authorized.",
+  "promotion_eligible": false,
+  "phase3_certified": false,
+  "final_test_accessed": false,
+  "claim_boundary": "Formal replication-gate failure with two complete quality passes; semantic reproducibility is not yet established and requires the bounded read-only audit."
+}
