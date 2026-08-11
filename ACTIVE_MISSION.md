@@ -6,7 +6,7 @@ Status date: 2026-08-11
 
 The ABI capability-compiler moonshot is **OPEN**.
 
-The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V578.json`.
+The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V580.json`.
 All Phase 3 machine endpoints now pass. The exact route-isolated checkpoint has
 three-seed causal replication, 1,393/1,400 autonomous quality with zero
 collapse on the selected seed, three byte-identical host initializations,
@@ -40,7 +40,7 @@ focused tests, including all three production-form dry runs, pass. See
 | 1 | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 | MACHINE + HANDOFF READY; 0/21,000 HUMAN PREFERENCES | `ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V554.json` |
 | 3 | MACHINE EVIDENCE COMPLETE; BLOCKED BY PHASE 2 | `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json` |
-| 4 | CONDITIONALLY OPEN; B80 FIRST SCREEN PASS, B40 ADJACENT FAILURE; REPLICATION OPEN | `ABI_CAPABILITY_COMPILER_PHASE4_ABI_B80_RESULT_V577.json` |
+| 4 | CONDITIONALLY OPEN; B40/B80 BOUNDARY NOT SEED-STABLE; REPLICATION IN PROGRESS | `ABI_CAPABILITY_COMPILER_PHASE4_ABI_B40_SEED130363_RESULT_V579.json` |
 | 5-8 | LOCKED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` |
 
 V558 passed the physical archive and checkpoint-lineage audit without loading
@@ -66,7 +66,10 @@ unchanged zero-collapse gate. B80 then passed every screening gate at
 1,378/1,400 with zero collapses and a +8.43-point paired lower-95 advantage over
 the teacher. Routing and strong-path identity remained exact. B40 is the
 adjacent lower failure. Under the adaptive rule, only B40/B80 at seeds 130363
-and 155921 are now authorized to test three-seed reproduction.
+and 155921 are now authorized to test three-seed reproduction. B40 passed the
+first replication at seed 130363 with 1,379/1,400 and zero collapses, so the
+B80-minimum boundary has not reproduced and no minimum claim is allowed. The
+remaining B80 seed130363 and B40/B80 seed155921 runs remain authorized.
 
 ### Preserved historical mission snapshot
 

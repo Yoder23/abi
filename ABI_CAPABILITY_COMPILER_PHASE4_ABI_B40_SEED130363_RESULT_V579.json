@@ -1,0 +1,38 @@
+{
+  "format": "abi-capability-compiler-phase4-abi-budget-summary/1",
+  "version": 579,
+  "status_date": "2026-08-11",
+  "status": "PASS_B40_REPLICATION_B80_MINIMUM_BOUNDARY_NOT_REPRODUCED",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_ABI_LINEAGE_PROTOCOL_V570.json",
+    "sha256": "50cd9abc83b584bf1682b57f606bbdcba75fbeda76eeeaa48edafbbc08e8505c"
+  },
+  "raw_result": {
+    "path": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed130363-v579/result.json",
+    "sha256": "d0e3a09acbb5e86376c984a4655e9f32987e111f8ebf874bc0554c805271ee10",
+    "evidence_sha256": "396c4a7c5001b98abfa3818382f2bd1c7b73a4be516aeb757256546bdf09942c"
+  },
+  "budget": {
+    "id": "B40",
+    "unique_source_attempts": 4005,
+    "authoritative_teacher_output_tokens": 123167
+  },
+  "seed": 130363,
+  "machine_quality": {
+    "functional_passes": "1379/1400",
+    "repetition_collapses_v2": 0,
+    "router_correct": "1400/1400",
+    "strong_parent_exact": "1000/1000",
+    "teacher_relative_difference": 0.10142857142857142,
+    "teacher_relative_lower_95": 0.08571428571428572,
+    "lowest_capability": "supplied_text_summarization_93_of_100_wilson_lower_0.8625"
+  },
+  "all_machine_quality_gates_pass": true,
+  "boundary_effect": "B40 failed at seed 104729 but passed at seed 130363. Therefore B40 is not a reproduced adjacent-lower failure and B80 cannot currently be called the minimum passing budget.",
+  "wall_seconds": 1944.9910014999914,
+  "final_test_accessed": false,
+  "phase4_certified": false,
+  "next_action": "Complete the already preregistered B80 seed130363 and B40/B80 seed155921 runs before designing any prospective boundary follow-up.",
+  "claim_boundary": "One B40 replication pass; no reproduced minimum, runtime, matched-baseline comparison, Phase 4 certificate, final-test result, or superiority claim."
+}

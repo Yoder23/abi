@@ -4,7 +4,7 @@ Status date: 2026-08-11
 
 ## Executive state
 
-The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V578.json`.
+The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V580.json`.
 Phase 3's machine campaign is complete and passes every registered technical
 gate. The exact route-isolated candidate has three paired-seed causal passes,
 1,393/1,400 autonomous functional passes with zero collapse, exact routing,
@@ -26,7 +26,10 @@ quality because format control is 86/100 (Wilson lower 0.7786), and it fails
 zero-collapse. B80 is the first full screening pass at 1,378/1,400, zero
 collapses, every absolute quality gate, and a +8.43-point paired lower-95
 teacher-relative advantage. B40 is the adjacent lower failure; only their four
-paired replications at seeds 130363 and 155921 are now authorized. Final
+paired replications at seeds 130363 and 155921 are now authorized. The first
+B40 replication passed at 1,379/1,400 with zero collapses, so the B80 minimum
+boundary is not seed-stable and cannot be claimed. Three registered runs remain.
+Final
 material stays unopened, and no ABI-superiority or
 minimum-information claim is permitted. No additional Phase 3 compute is
 authorized.

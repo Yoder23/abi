@@ -1,0 +1,118 @@
+{
+  "checkpoint": {
+    "bytes": 4232392,
+    "path": "router.safetensors",
+    "sha256": "ab00935c75f263ea7a49e22a08587f9eb66b69ccac5ac3cb84b28d8a3b324343"
+  },
+  "config": {
+    "path": "config.json",
+    "sha256": "b43d07f892a2bb746c93301a913777e486eab71bd917486de464bd185ec09d99",
+    "trainable_parameters": 1058040
+  },
+  "evidence_sha256": "270392b58649a77cdea07a70e79141dc3f628a4c2eb8d097bfc88a4fea65e587",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase4-sparse-router/1",
+  "imported_information": {
+    "capability_labels": 2800,
+    "metadata_labels": 2800,
+    "records": 2800,
+    "source_parameters_copied": 0,
+    "stored_activations": 0,
+    "stored_logits": 0,
+    "teacher_outputs_added": 0
+  },
+  "protocol_sha256": "d30fb4530dd52563977d8fcea8d1a6d1c397435c0698aec9bd4de58dcb11d9b8",
+  "seed": 130363,
+  "status": "TRAINED_BUDGET_SCOPED_ROUTER",
+  "teacher_present_at_inference": false,
+  "training": {
+    "curves": [
+      {
+        "loss": 2.8419907093048096,
+        "step": 1,
+        "wall_seconds": 0.010358500003349036
+      },
+      {
+        "loss": 1.1702991724014282,
+        "step": 100,
+        "wall_seconds": 0.47821540001314133
+      },
+      {
+        "loss": 0.2824007272720337,
+        "step": 200,
+        "wall_seconds": 0.9480444000218995
+      },
+      {
+        "loss": 0.06820735335350037,
+        "step": 300,
+        "wall_seconds": 1.4547554000164382
+      },
+      {
+        "loss": 0.01583808846771717,
+        "step": 400,
+        "wall_seconds": 1.9211053000180982
+      },
+      {
+        "loss": 0.0037225447595119476,
+        "step": 500,
+        "wall_seconds": 2.3795013000199106
+      },
+      {
+        "loss": 0.0008907009614631534,
+        "step": 600,
+        "wall_seconds": 2.848893300018972
+      },
+      {
+        "loss": 0.0002465340367052704,
+        "step": 700,
+        "wall_seconds": 3.3176725000084843
+      },
+      {
+        "loss": 9.120719187194481e-05,
+        "step": 800,
+        "wall_seconds": 3.783675200014841
+      },
+      {
+        "loss": 4.5328164560487494e-05,
+        "step": 900,
+        "wall_seconds": 4.248393800022313
+      },
+      {
+        "loss": 2.2483207430923358e-05,
+        "step": 1000,
+        "wall_seconds": 4.708386400016025
+      },
+      {
+        "loss": 1.5754540072521195e-05,
+        "step": 1100,
+        "wall_seconds": 5.171099800005322
+      },
+      {
+        "loss": 9.93311005004216e-06,
+        "step": 1200,
+        "wall_seconds": 5.63382410001941
+      },
+      {
+        "loss": 5.643647000397323e-06,
+        "step": 1300,
+        "wall_seconds": 6.088872100022854
+      },
+      {
+        "loss": 3.1599061003362294e-06,
+        "step": 1400,
+        "wall_seconds": 6.549631700007012
+      },
+      {
+        "loss": 3.835289589915192e-06,
+        "step": 1500,
+        "wall_seconds": 7.011209000018425
+      }
+    ],
+    "peak_cuda_allocated_bytes": 90799616,
+    "peak_process_rss_bytes": 1520508928,
+    "record_sequence_sha256": "984ccc9d1ab3571ee8d3f3aa19a05766964d0f859088c5ae455a5c24db071255",
+    "records": 2800,
+    "steps": 1500,
+    "wall_seconds": 7.0266704999958165
+  }
+}
