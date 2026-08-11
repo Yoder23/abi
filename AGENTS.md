@@ -22,7 +22,7 @@ LayerCake cake.
 Status date: 2026-08-11.
 
 The controlling machine-readable state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V617.json`. Phase 3 has completed and
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V627.json`. Phase 3 has completed and
 passed every currently required machine gate, but it is not unconditionally
 certified because the controlling campaign contract makes it depend on Phase
 2. Phase 2 has 21,000 immutable blinded rating rows and zero completed
@@ -123,7 +123,13 @@ parent-versus-bridge compatibility matrix may be designed next to localize
 parent, bridge, and co-adaptation effects before any new architecture.
 V615/V616 now seal that 3x3 B80 matrix. The three diagonal cells already exist;
 only six off-diagonal evaluations are authorized, with no training, new model
-construction, or cell promotion.
+construction, or cell promotion. The matrix is now complete: all six
+off-diagonal cells fail. Diagonal mean quality is 1,370.33 versus 1,299.00
+off-diagonal, a 71.33-prompt advantage; bridge main-effect range is 50 and
+parent range is 22.33. V626 proves strong parent-bridge co-adaptation. The next
+architecture must hold one canonical host immutable and train only a
+self-contained capability artifact against it. Training remains prohibited
+until that new protocol is hash-bound and tested.
 
 The exact route-isolated endpoint scored 1,393/1,400 with zero repetition
 collapse at seed 240487 and passed all four same-lineage causal controls across

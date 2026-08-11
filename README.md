@@ -16,7 +16,7 @@ Status date: 2026-08-11
 
 **The ABI English-product moonshot is OPEN.**
 
-The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V617.json`.
+The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V627.json`.
 The route-isolated English endpoint now passes all registered Phase 3 machine
 gates: three paired training seeds and all A0-A4 causal controls, 1,393/1,400
 selected-seed autonomous quality with zero collapse, exact routing, three
@@ -117,6 +117,11 @@ seed-specific weak-capability solutions. No averaging sweep is authorized;
 only a read-only B80 parent/bridge compatibility attribution may be designed.
 V615/V616 now seal that 3x3 matrix; only the six missing off-diagonal
 evaluations are authorized, and no cell selection or promotion is permitted.
+All six off-diagonal cells fail. V626 measures a 71.33-prompt diagonal pairing
+advantage versus a 50-prompt bridge main-effect range and 22.33-prompt parent
+range, proving strong parent-bridge co-adaptation. Any next ABI architecture
+must hold one canonical host immutable and train only a self-contained
+capability artifact against it.
 Phase 2 and Phase 3
 certificate statuses remain unchanged, final data remains unopened, and Phase
 5 is locked.
