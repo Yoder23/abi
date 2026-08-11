@@ -1,0 +1,42 @@
+{
+  "format": "abi-capability-compiler-phase4-v18-output-conformance/1",
+  "protocol_id": "abi-capability-compiler-phase4-v18-output-conformance-v640",
+  "status": "PREREGISTERED_EXACT_GPU_OUTPUT_CONFORMANCE",
+  "status_date": "2026-08-11",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V635.json",
+  "objective": "Execute the exact signed v18 package on the GPU host and compare all 1,400 development outputs, routes, token IDs, residual routes, and guard decisions against the immutable successful Phase 3 composite reference.",
+  "device": "cuda",
+  "training_authorized": false,
+  "teacher_model_loading_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "interface": "lc-direct-neural-core/18",
+  "layercake_root": "../layercake_release",
+  "package": "results/abi_capability_compiler_phase4_v18_package/build_v639/english_core_v18.cake",
+  "package_metadata": "results/abi_capability_compiler_phase4_v18_package/build_v639/metadata.json",
+  "public_key": "results/abi_capability_compiler_phase4_v18_package/build_v639/public_key.pem",
+  "reference_outputs": "results/abi_capability_compiler_phase3_route_isolated/evaluation_v526/development_outputs.jsonl",
+  "development_catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+  "bindings": {
+    "abi/capability_compiler_phase4_v18_output_conformance.py": "37200a9342e4aba5962af348edf23e8a1ee96654a2d85cb2c71985824c4df8a7",
+    "tests/test_capability_compiler_phase4_v18_output_conformance.py": "a05325ea92af5da6eaa76a4bd0e5023f5f25a51d2844f1dbea69bd7f8fe6d354",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V635.json": "2e1a89f9bcb860914f1e7e670554586a5f7494b6cb48fcf26e7ba51a8d17fbf5",
+    "ABI_CAPABILITY_COMPILER_PHASE4_V18_PACKAGE_PROTOCOL_V638.json": "7dceb4f72e5d9a5c03a53d967c345dd99f8c89a6e6460116578d41344f82fd70",
+    "results/abi_capability_compiler_phase4_v18_package/build_v639/english_core_v18.cake": "64ba21f0d3d9896205ea04bddbb39386811ea126b96919c06c517663ab66c8a3",
+    "results/abi_capability_compiler_phase4_v18_package/build_v639/metadata.json": "a6eacd1549f994741009c18163238730968f6b99c8d60c1bb51ba59b9da42df1",
+    "results/abi_capability_compiler_phase4_v18_package/build_v639/public_key.pem": "c7c14d5eec5f340bd9c6199ddb5b63c03a9c3f18a806869b7c5fcba5d3d3a04c",
+    "results/abi_capability_compiler_phase3_route_isolated/evaluation_v526/development_outputs.jsonl": "c5b40380ab67083ab6d860af80fd1a6434089cc2a5ab0c1ae224912ac18879a1",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "../layercake_release/layercake_extensions/route_isolated_shallow_sparse_core.py": "15e05cfad0a7458d76ab2b1636ea8864fbc716fea33f57107c45696c857073b0",
+    "../layercake_release/layercake_extensions/route_isolated_shallow_sparse_core_v18.py": "2beeb2fc3fd8bc7e40add90bf8da1595faef2782a70ba8c416b554304a238849",
+    "../layercake_release/moonshot/canonical_route_isolated_shallow_sparse_core_abi_v18.json": "9c984b783d04c13d592d608610c6396bfbbfa16f4fd91bd8515e6df9aadbf370",
+    "../layercake_release/moonshot/postrelease_route_isolated_shallow_sparse_v18_decision_v50.json": "2b85501bbb9d33a9b3d4d788f792ac6189c8919f6116b297eb5daed3ebf50899"
+  },
+  "population": {
+    "observations": 1400,
+    "distinct_prompts": 1400,
+    "capabilities": 14,
+    "observations_per_capability": 100
+  },
+  "pass_rule": "All 1,400 rows and every bound field must be exactly identical; package signature and archive identity must verify; receiver training and calibration must remain zero. Any mismatch fails conformance and prohibits Phase 4 frontier work.",
+  "claim_boundary": "Exact package-versus-unpackaged Phase 3 development-output conformance only; no Phase 4 information minimum, final-test, matched-baseline, or superiority claim."
+}
