@@ -1,0 +1,21 @@
+{
+  "format": "abi-capability-compiler-phase4-b100-summary/1",
+  "version": 646,
+  "status_date": "2026-08-11",
+  "status": "FAIL_B100_SCREEN_CRITICAL_INSTRUCTION_FOLLOWING_REPLICATIONS_CANCELED",
+  "historical_evidence_changed": false,
+  "protocol": {"path": "ABI_CAPABILITY_COMPILER_PHASE4_B100_CONTINUATION_PROTOCOL_V644.json", "sha256": "414fa27051a80c1eea97c0f12afd3752d775e741235739f6f3b1b296c1a21e3e"},
+  "raw_result": {"path": "results/abi_capability_compiler_phase4_b100/B100-seed104729-v645/result.json", "sha256": "3e16b3b416bc5100639a16423f2218cfc86dc8cbd5119df9afea6a13a7c12e53", "evidence_sha256": "adc5dfe1096cb68530c159d913512472706e4da59a489e7df0f8e8379c466dfd"},
+  "evaluation": {"path": "results/abi_capability_compiler_phase4_b100/B100-seed104729-v645/evaluation/result.json", "sha256": "99520ea58bb108af7c4e17fa295015a0fc2ec90679c9a52575bc5b934caf3a09", "outputs_sha256": "c88361a18b833dd94a148c916d17fb66ba4cfbeeb6fc5f396aab123355b5dd43"},
+  "budget": {"unique_source_attempts": 9596, "authoritative_teacher_output_tokens": 294212, "fraction": 1.0},
+  "machine_quality": {"functional_passes": "1375/1400", "repetition_collapses_v2": 0, "router_correct": "1400/1400", "strong_parent_exact": "1000/1000", "teacher_relative_lower_95": 0.08214285714285714},
+  "failed_gate": "critical_capabilities",
+  "measured_failure": {"capability": "instruction_following", "passes": "92/100", "wilson_lower_95": 0.8500189229905127, "required_point": 0.95, "required_wilson_lower": 0.9, "failed_prompts": 8, "failure_pattern": "all eight exact-copy outputs retained the N33 prefix and name but omitted the four-digit identifier"},
+  "replication_seeds_canceled": [130363, 155921],
+  "wall_seconds": 1907.8690161000122,
+  "teacher_present": false,
+  "final_test_accessed": false,
+  "phase4_certified": false,
+  "decision": "Reject the existing B100 schedule and close the original nested-budget architecture. Perform one read-only exposure attribution before considering a prospectively sealed architecture change.",
+  "claim_boundary": "One B100 screening failure; no stable frontier, minimum, matched baseline, final test, Phase 4 certificate, or superiority claim."
+}
