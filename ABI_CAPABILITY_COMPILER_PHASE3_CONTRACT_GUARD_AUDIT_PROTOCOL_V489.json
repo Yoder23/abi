@@ -1,0 +1,61 @@
+{
+  "format": "abi-capability-compiler-phase3-contract-guard-audit/1",
+  "protocol_id": "abi-capability-compiler-phase3-contract-guard-audit-v489",
+  "status": "PREREGISTERED_READ_ONLY_ARTIFACT_DERIVED_CONTRACT_GUARD_FEASIBILITY",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V488.json",
+  "historical_evidence_changed": false,
+  "neural_training_authorized": false,
+  "teacher_model_loading_authorized": false,
+  "online_guard_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "promotion_eligible": false,
+  "objective": "Determine whether a generic bounded repetition terminator plus an artifact-derived abstention surface contract can clear V488's only remaining gates without losing an existing functional pass or changing any strong output.",
+  "artifact": {
+    "path": "results/abi_capability_compiler_phase3_host_supervision/build_v480/host_weak_supervision_v480.abicir",
+    "sha256": "7b0af0bafda631f89dd054a3bd57da76885b3eaca7fe863474255bcf8978b34d",
+    "role": "derive the closed negative-epistemic marker vocabulary only"
+  },
+  "development": {
+    "catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+    "candidate_outputs": "results/abi_capability_compiler_phase3_dual_view_recovery/evaluation_v488/development_outputs.jsonl",
+    "observations": 1400,
+    "final_test_access": false
+  },
+  "guard": {
+    "repetition_rule": "truncate immediately before the tokenized word that would make any case-folded 1-, 2-, 3-, or 4-word gram occur a fifth time",
+    "repetition_scope": "all capability outputs symmetrically",
+    "canonical_abstention_marker": "cannot determine",
+    "canonical_abstention_clause": "I cannot determine that from the information given.",
+    "abstention_condition": "prepend the canonical clause only on the already-qualified abstention route when the generated surface contains none of the marker alternatives common to every V480 abstention evaluator",
+    "teacher_or_evaluator_access_at_inference": false,
+    "strong_output_changes_allowed": 0
+  },
+  "gates": {
+    "per_capability_point_minimum": 0.9,
+    "per_capability_wilson_lower_minimum": 0.85,
+    "critical_point_minimum": 0.95,
+    "critical_wilson_lower_minimum": 0.9,
+    "repetition_collapse_maximum": 0,
+    "existing_functional_passes_lost_maximum": 0,
+    "strong_outputs_changed_maximum": 0
+  },
+  "decision_rule": "A full feasibility pass authorizes only a separately preregistered online decoder implementation and fresh 1,400-prompt generation screen on the unchanged V488 checkpoint. A failure closes this guard. No guard threshold, phrase, or marker sweep is authorized.",
+  "bindings": {
+    "abi/capability_compiler_phase3_contract_guard_audit.py": "1319884995861e0f017eef816c07bb4d724cb035908dee804eab869053bbccdb",
+    "tests/test_capability_compiler_phase3_contract_guard_audit.py": "dac306f6901e22d3646adbeddc3a7a4e35ee256154dd42516f6ceae9777f34f6",
+    "abi/capability_compiler_functional_v2.py": "1755ceded6de7c8228ed91e5be6bf86452b6c5f02466f8fda150317775abd4af",
+    "abi/capability_compiler_phase2_common.py": "8093ec2016d685f0327c87640042c8373bc141d76351fd641b21a44d018b6c92",
+    "abi/capability_compiler_phase3.py": "5d490989e088f42aba4bd2ca96fbe70ea2db211890369dd6f431dd781390c77b",
+    "abi/capability_compiler_phase3_routed_v15_autonomous_screen_isolated.py": "630adec895c76fc4eb79e52cc1fe7cada1476fc50ed8d40734e2462d600a093b",
+    "abi/capability_compiler_repetition_v2.py": "8a7516efc0dd23360f3051b349d5d1b01180fe6966884f8d343044018b53eed7",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V488.json": "7fbf73465638243ddff32b9ce7a1b8dc3b9802c6ec96eca3b903835613300749",
+    "ABI_CAPABILITY_COMPILER_PHASE3_DUAL_VIEW_RECOVERY_RESULT_V488.json": "574729c05ec527637641a0a5ed042b9c938c893edd8cce03a557e07e26a563d2",
+    "results/abi_capability_compiler_phase3_dual_view_recovery/evaluation_v488/development_outputs.jsonl": "d951f95532968efd731c7e5af9c1074f7c3ea9873e9cac09d80b74499c0deae8",
+    "results/abi_capability_compiler_phase3_host_supervision/build_v480/host_weak_supervision_v480.abicir": "7b0af0bafda631f89dd054a3bd57da76885b3eaca7fe863474255bcf8978b34d",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a"
+  },
+  "phase2_external_blocker": "21000 blinded judgments from three independent human raters remain unavailable and are not waived.",
+  "phase3_certified": false,
+  "claim_boundary": "Read-only deterministic guard counterfactual; no online implementation, regeneration, runtime, final-test, Phase 3, or superiority claim."
+}
