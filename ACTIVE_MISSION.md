@@ -6,7 +6,7 @@ Status date: 2026-08-11
 
 The ABI capability-compiler moonshot is **OPEN**.
 
-The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V554.json`.
+The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V555.json`.
 All Phase 3 machine endpoints now pass. The exact route-isolated checkpoint has
 three-seed causal replication, 1,393/1,400 autonomous quality with zero
 collapse on the selected seed, three byte-identical host initializations,
@@ -28,6 +28,12 @@ custodian attestations are mandatory, and the evidence verifier recomputes the
 clustered 10,000-resample preference analysis. The 15-test hostile readiness
 suite passes. See `docs/PHASE2_HUMAN_RATING_HANDOFF_V1.md`. This does not
 replace the three external humans.
+
+V555 supplies a separate resumable session for each rater. A custodian can
+initialize all three sealed 7,000-row forms, distribute only the corresponding
+key-free session directory, and collect hash-bound completion receipts. Ten
+focused tests, including all three production-form dry runs, pass. See
+`docs/PHASE2_HUMAN_RATER_SESSION_V1.md`.
 
 | Phase | Current state | Authority |
 | --- | --- | --- |
@@ -669,7 +675,9 @@ baseline findings, not an ABI-candidate result.
 
 ## Authoritative current documents
 
-- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V554.json`
+- `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V555.json`
+- `ABI_CAPABILITY_COMPILER_PHASE2_RATER_SESSION_READINESS_AUDIT_V555.json`
+- `ABI_CAPABILITY_COMPILER_PHASE2_RATER_SESSION_PROTOCOL_V1.json`
 - `ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V554.json`
 - `ABI_CAPABILITY_COMPILER_PHASE2_MACHINE_EVIDENCE_READINESS_V554.json`
 - `ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_SCORING_PROTOCOL_V1.json`

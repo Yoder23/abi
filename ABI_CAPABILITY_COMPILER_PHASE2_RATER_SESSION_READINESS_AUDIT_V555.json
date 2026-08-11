@@ -1,0 +1,50 @@
+{
+  "format": "abi-capability-compiler-phase2-rater-session-readiness-audit/1",
+  "version": 555,
+  "status_date": "2026-08-11",
+  "parent_readiness_audit": "ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V554.json",
+  "status": "PASS_BLIND_RATER_SESSION_READY_EXTERNAL_RATINGS_NOT_COMPLETE",
+  "historical_evidence_changed": false,
+  "evidence_search": {
+    "completed_forms_found_in_current_worktree": 0,
+    "completed_rating_manifests_found_in_current_worktree": 0,
+    "completed_forms_found_in_relevant_git_history": 0,
+    "filled_preferences_in_sealed_packet": 0,
+    "interpretation": "No legitimate pre-existing external human evidence can satisfy the gate."
+  },
+  "session_protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE2_RATER_SESSION_PROTOCOL_V1.json",
+    "sha256": "c81c2f0940c01ecc4bb6ec43b7a8658741f044788d9d08d4c1e54ff38f4c45d4",
+    "frozen_before_any_completed_rating": true
+  },
+  "tests": {
+    "focused_tests_passed": 10,
+    "focused_tests_failed": 0,
+    "production_forms_initialized": 3,
+    "production_rows_per_session": 7000,
+    "production_sessions_contained_answer_key": false,
+    "resume_passed": true,
+    "hash_chain_tamper_rejected": true,
+    "blinded_form_tamper_rejected": true,
+    "cross_form_identity_rejected": true,
+    "invalid_rating_rejected": true,
+    "incomplete_export_rejected": true,
+    "explicit_revision_lineage_verified": true,
+    "identity_exposing_form_rejected": true
+  },
+  "regression": {
+    "abi_local_tests_passed": 870,
+    "abi_local_tests_failed": 0,
+    "external_layercake_control_status_inherited_from_v554": "8_PASS_1_EXACT_HEAD_MISMATCH_FAIL_CLOSED"
+  },
+  "bindings": {
+    "abi/capability_compiler_phase2_rater_session.py": "331fd3250f22df1e0670d9f68fb07c1348840634042f3c35dcce3199c6518ff8",
+    "tests/test_capability_compiler_phase2_rater_session.py": "7cd52dc701d001375631680ec17075ee468ad104df0e5a598123b82a97845141",
+    "docs/PHASE2_HUMAN_RATER_SESSION_V1.md": "b7842bf1b977101bebe436d333b1ae63d005e51f55a0d8dd1040d3bb87c7f91c"
+  },
+  "external_requirement": "Three distinct humans must still independently complete one 7000-row blinded session each under named custodian control.",
+  "phase2_certified": false,
+  "phase3_unconditionally_certified": false,
+  "phase4_open": false,
+  "superiority_claim_authorized": false
+}

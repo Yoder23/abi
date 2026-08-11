@@ -18,6 +18,11 @@ Status date: 2026-08-11
     statistics, and passes 15 hostile readiness tests. It cannot create or
     substitute for three independent human judgments.
 
+0b. **The rater interaction path is operationally resolved.** V555 initializes
+    each production form as a separate key-free resumable session with a
+    hash-chained event log and complete-only immutable export. Ten focused
+    tests pass. The absence of available humans remains unchanged.
+
 1. **Repository ownership is explicit.** ABI owns acquisition artifacts and
    evidence. Runtime-host implementation belongs to the separate
    [LayerCake repository](https://github.com/Yoder23/layercake).

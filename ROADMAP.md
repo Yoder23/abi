@@ -4,7 +4,7 @@ Status date: 2026-08-11
 
 The machine-readable contract
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` controls sequencing and
-gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V554.json` records live status.
+gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V555.json` records live status.
 Evidence gates, not experiment counts or dates, close phases.
 
 | Phase | Objective | Status |
@@ -42,10 +42,13 @@ checkpoint persistence, cold/warm runtime, and machine verification are done.
 V554 also freezes the exact scoring rule and verifies the blind-lock,
 attestation, unblinding, clustered-bootstrap, and score-replay workflow under
 15 hostile tests. That is workflow readiness, not human evidence.
+V555 also supplies three separately initialized, answer-key-free, resumable
+rater sessions so humans need not edit JSONL; its 10 focused tests pass.
 The next—and only—Phase 2 action is external:
 
-1. Follow `docs/PHASE2_HUMAN_RATING_HANDOFF_V1.md` and assign one complete
-   blinded form to each of three independent human raters.
+1. Follow `docs/PHASE2_HUMAN_RATER_SESSION_V1.md` and
+   `docs/PHASE2_HUMAN_RATING_HANDOFF_V1.md`, then assign one complete blinded
+   form to each of three independent human raters.
 2. Keep the answer key and other raters' work hidden until all forms are locked.
 3. Preserve completed forms separately from the immutable templates.
 4. Compute the preregistered preference lower bound and rerun the hostile

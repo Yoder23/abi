@@ -8,7 +8,7 @@ identity.
 
 ## Current claims
 
-### Current campaign boundary (V554; Phase 3 machine evidence V551)
+### Current campaign boundary (V555; Phase 3 machine evidence V551)
 
 ABI may claim that the exact route-isolated endpoint has completed and passed
 all registered Phase 3 **machine** gates. The bounded claim includes three-seed
@@ -34,6 +34,11 @@ scoring was frozen at 0/21,000 preferences, raw forms must lock before
 unblinding, and 15 hostile readiness tests pass. ABI may not translate this
 into a claim that human ratings exist, that rater humanity or independence was
 machine-proven, or that Phase 2 passed.
+
+ABI may claim that V555 provides a blind-safe resumable rater workflow: all
+three production forms initialize as distinct 7,000-row sessions without an
+answer key, and 10 focused integrity tests pass. This is an operational claim,
+not evidence that a human completed any judgment.
 
 ### Preserved historical Phase 3 boundary
 

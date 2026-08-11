@@ -4,7 +4,7 @@ Status date: 2026-08-11
 
 ## Executive state
 
-The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V554.json`.
+The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V555.json`.
 Phase 3's machine campaign is complete and passes every registered technical
 gate. The exact route-isolated candidate has three paired-seed causal passes,
 1,393/1,400 autonomous functional passes with zero collapse, exact routing,
@@ -27,8 +27,14 @@ schemas, distinct rater and custodian attestations, post-lock integrity,
 10,000-resample clustered scoring, and score replay. Its focused hostile suite
 passes 15/15. The production templates remain unchanged and still contain zero
 ratings, so Phase 2 remains externally incomplete. The complete ABI-local
-regression suite passes 860/860; the separate nine-test LayerCake-control
+regression suite passes 870/870; the separate nine-test LayerCake-control
 module remains 8 pass/1 exact-HEAD mismatch, and that verifier was not weakened.
+
+V555 removes manual JSONL editing from the external workflow. Three separate
+production sessions each bind exactly one 7,000-row form and contain no answer
+key; append-only hash-chained progress, resume, explicit revision lineage, and
+immutable complete-only export pass 10/10 focused tests. Human identity and
+independence remain external facts owned by the named custodian.
 
 ### Preserved historical status through V463
 

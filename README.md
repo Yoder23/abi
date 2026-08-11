@@ -16,7 +16,7 @@ Status date: 2026-08-11
 
 **The ABI English-product moonshot is OPEN.**
 
-The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V554.json`.
+The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V555.json`.
 The route-isolated English endpoint now passes all registered Phase 3 machine
 gates: three paired training seeds and all A0-A4 causal controls, 1,393/1,400
 selected-seed autonomous quality with zero collapse, exact routing, three
@@ -39,9 +39,15 @@ and custodian attestations, locks all form hashes before unblinding, and
 recomputes scores from raw locked forms. Fifteen hostile readiness tests pass.
 Follow `docs/PHASE2_HUMAN_RATING_HANDOFF_V1.md`. This proves workflow
 readiness, not completion of the missing human judgments. The complete
-ABI-local suite passes 860/860; the known separate LayerCake exact-HEAD control
+ABI-local suite passes 870/870; the known separate LayerCake exact-HEAD control
 continues to fail closed because that clean checkout is ahead of its pinned
 commit.
+
+For actual raters, V555 adds one key-free resumable session per sealed form.
+Progress is append-only and hash-chained, incomplete export is prohibited, and
+all three production 7,000-row forms initialize independently without copying
+the answer key. The focused rater-session suite passes 10/10. See
+`docs/PHASE2_HUMAN_RATER_SESSION_V1.md`.
 
 ### Preserved historical narrative through V463
 
