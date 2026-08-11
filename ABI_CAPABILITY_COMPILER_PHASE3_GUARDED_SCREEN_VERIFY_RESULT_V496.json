@@ -1,0 +1,24 @@
+{
+  "format": "abi-capability-compiler-phase3-guarded-screen-hostile-verifier-summary/1",
+  "version": 496,
+  "status": "FAIL_VERIFIER_HARNESS_ROUTE_MUTATION_WAS_IDENTITY",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_GUARDED_SCREEN_VERIFY_PROTOCOL_V495.json",
+    "sha256": "959afe5ab5fefc211fd735b1aa36765d5a7150e66e33059421f9279859b13145"
+  },
+  "bound_verifier_sha256": "d877596e13af76f66e5dafab45af6cf81d6a073dc22c36a05b78294e548b65e5",
+  "failure": {
+    "stage": "adversarial route mutation rejection",
+    "exception": "Phase3Error: adversarial mutation accepted: route_mutation",
+    "root_cause": "The verifier assigned grammar to the first row without first checking its capability; the first locked probe was already grammar, so the alleged mutation was byte-identical to the source evidence.",
+    "candidate_evidence_implicated": false,
+    "output_directory_created": false
+  },
+  "decision": "Preserve V495 and this failure unchanged. Create a new preregistered verifier whose hostile route value is selected to differ from the row's actual capability, then rerun the full reconstruction and mutation suite once.",
+  "promotion_eligible": false,
+  "phase3_certified": false,
+  "final_test_accessed": false,
+  "claim_boundary": "Verifier-harness negative evidence only; V494 is neither independently verified nor invalidated by this failed hostile-test construction."
+}
