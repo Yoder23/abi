@@ -1,0 +1,86 @@
+{
+  "format": "abi-capability-compiler-phase3-acquisition-replay-audit/1",
+  "protocol_id": "abi-capability-compiler-phase3-acquisition-replay-audit-v485",
+  "status": "PREREGISTERED_READ_ONLY_PAIRED_ACQUISITION_REPLAY_ATTRIBUTION",
+  "effective_date": "2026-08-10",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V484.json",
+  "historical_evidence_changed": false,
+  "teacher_model_loading_authorized": false,
+  "neural_training_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "promotion_eligible": false,
+  "objective": "Distinguish autonomous acquisition-fit failure from prompt-projection distribution failure and held-out nonce/task generalization by pairing sealed V474 and V484 on the same V480 records under both direct host and original source-wrapper prompts.",
+  "parent": {
+    "base_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_QUALIFIED_TRANSITION_CONTROL_PROTOCOL_V440.json",
+    "checkpoint": "results/abi_capability_compiler_phase3_token_substrate_conformance/candidate_v463/model.safetensors",
+    "checkpoint_sha256": "d354eee236c1153a92e3b2d05f806fb4238438aebd2c8a889ed9dcb8f1f192c8",
+    "parameters": 61655050,
+    "immutable": true
+  },
+  "candidates": {
+    "V474": {
+      "checkpoint": "results/abi_capability_compiler_phase3_targeted_recovery_bridge/candidate_v474/targeted_recovery_bridge.safetensors",
+      "checkpoint_sha256": "347e121d0d047146a12d94304621eaa8c2309b345ce1f9be21db80f11fc0be54",
+      "role": "pre-repair causal-recovery control"
+    },
+    "V484": {
+      "checkpoint": "results/abi_capability_compiler_phase3_host_recovery_bridge/candidate_v484/host_recovery_bridge.safetensors",
+      "checkpoint_sha256": "e138b76714e0e6b3f012d4179b9351b8b6d8168921f2b876547c92f15de136c2",
+      "role": "host-conformant all-strata successor"
+    }
+  },
+  "supervision": {
+    "artifact": "results/abi_capability_compiler_phase3_host_supervision/build_v480/host_weak_supervision_v480.abicir",
+    "artifact_sha256": "7b0af0bafda631f89dd054a3bd57da76885b3eaca7fe863474255bcf8978b34d",
+    "source_catalog": "catalogs/capability_compiler_phase3_targeted_search_v132.json",
+    "source_catalog_sha256": "d9a05dd5c36a62ac31c2f5955820607fd04dcde1e517b04935bc7150aaaa0c75"
+  },
+  "sample": {
+    "selection": "lexicographically first record IDs within each artifact capability-builder stratum",
+    "records_per_stratum": 20,
+    "strata": 16,
+    "records": 320,
+    "candidates": 2,
+    "prompt_modes": 2,
+    "generation_observations": 1280,
+    "autonomous_greedy_generation": true,
+    "task_route": "known artifact capability enforced; no router confound"
+  },
+  "measurements": [
+    "historical V1 functional pass",
+    "prospective V2 functional pass",
+    "exact teacher-target replay",
+    "required-literal recall",
+    "V2 repetition collapse"
+  ],
+  "decision_rule": {
+    "acquisition_fit_minimum": 0.9,
+    "material_prompt_mode_delta": 0.1,
+    "if_V484_host_below_minimum": "Attribute acquisition autonomous-fit failure; do not attempt wrapper augmentation.",
+    "if_V484_host_passes_and_wrapped_is_materially_lower": "Attribute prompt-projection distribution failure.",
+    "otherwise": "Attribute held-out nonce and task generalization failure.",
+    "threshold_or_sample_sweeps_authorized": false
+  },
+  "bindings": {
+    "abi/capability_compiler_phase3_acquisition_replay_audit.py": "150deaab0b4238fa84c2828a332ee2a5f3454b899110d35849943f1ebbdabd6c",
+    "tests/test_capability_compiler_phase3_acquisition_replay_audit.py": "c46610d8d93bc4f7ff11194f60509ff0f82de9240d2c1e3f47f38cd137386a5e",
+    "abi/capability_compiler_phase3_targeted_recovery_bridge.py": "b13e71896c64de7fe74a68519b23af322f4d13442cae60bf078c031ae6451696",
+    "abi/capability_compiler_phase3_weak_residual.py": "b1bbb265c4e833f697331112f9c657a0d743790d6ce3e3811d5e9d677a60bfb8",
+    "abi/capability_compiler_repetition_v2.py": "8a7516efc0dd23360f3051b349d5d1b01180fe6966884f8d343044018b53eed7",
+    "abi/capability_compiler_functional_v2.py": "1755ceded6de7c8228ed91e5be6bf86452b6c5f02466f8fda150317775abd4af",
+    "abi/capability_compiler_phase2_common.py": "8093ec2016d685f0327c87640042c8373bc141d76351fd641b21a44d018b6c92",
+    "abi/capability_compiler_phase3.py": "5d490989e088f42aba4bd2ca96fbe70ea2db211890369dd6f431dd781390c77b",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V484.json": "4ee62dd760af489c945ceb5389bbf4a177fbc0204d7cbad3a5fe03cb35a72b4c",
+    "ABI_CAPABILITY_COMPILER_PHASE3_HOST_RECOVERY_BRIDGE_RESULT_V484.json": "f85fce64b3c247eb65928f2981ec30bb3876dcfe7713f498d5b8f6477bf92c17",
+    "ABI_CAPABILITY_COMPILER_PHASE3_HOST_RECOVERY_BRIDGE_PROTOCOL_V483.json": "35b58863a87c0b865dd4b5df39ab65d6fca20e9cb0d44a71fee7ac6d2223dfe7",
+    "results/abi_capability_compiler_phase3_host_recovery_bridge/candidate_v484/host_recovery_bridge.safetensors": "e138b76714e0e6b3f012d4179b9351b8b6d8168921f2b876547c92f15de136c2",
+    "results/abi_capability_compiler_phase3_targeted_recovery_bridge/candidate_v474/targeted_recovery_bridge.safetensors": "347e121d0d047146a12d94304621eaa8c2309b345ce1f9be21db80f11fc0be54",
+    "results/abi_capability_compiler_phase3_host_supervision/build_v480/host_weak_supervision_v480.abicir": "7b0af0bafda631f89dd054a3bd57da76885b3eaca7fe863474255bcf8978b34d",
+    "catalogs/capability_compiler_phase3_targeted_search_v132.json": "d9a05dd5c36a62ac31c2f5955820607fd04dcde1e517b04935bc7150aaaa0c75",
+    "ABI_CAPABILITY_COMPILER_PHASE3_QUALIFIED_TRANSITION_CONTROL_PROTOCOL_V440.json": "367f9e24e5bb06719a7252670097e8d6cfaf64cb18f95b436b388abac303bec4",
+    "results/abi_capability_compiler_phase3_token_substrate_conformance/candidate_v463/model.safetensors": "d354eee236c1153a92e3b2d05f806fb4238438aebd2c8a889ed9dcb8f1f192c8"
+  },
+  "phase2_external_blocker": "21000 blinded judgments from three independent human raters remain unavailable and are not waived.",
+  "phase3_certified": false,
+  "claim_boundary": "Read-only acquisition replay and prompt projection attribution; no training, promotion, runtime, final-test, Phase 3, or superiority claim."
+}
