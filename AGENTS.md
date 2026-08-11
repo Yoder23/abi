@@ -22,7 +22,7 @@ LayerCake cake.
 Status date: 2026-08-11.
 
 The controlling machine-readable state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V572.json`. Phase 3 has completed and
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V574.json`. Phase 3 has completed and
 passed every currently required machine gate, but it is not unconditionally
 certified because the controlling campaign contract makes it depend on Phase
 2. Phase 2 has 21,000 immutable blinded rating rows and zero completed
@@ -47,7 +47,7 @@ not replace the three humans.
 - Phase 2: **MACHINE EVIDENCE COMPLETE; BLOCKED ON 21,000 JUDGMENTS FROM THREE
   INDEPENDENT HUMAN RATERS (0/21,000 FILLED)**.
 - Phase 3: **MACHINE EVIDENCE COMPLETE; BLOCKED BY THE PHASE 2 PREREQUISITE**.
-- Phase 4: **CONDITIONALLY OPEN; B10 FAILED, B20 AUTHORIZED; NOT CERTIFIED**.
+- Phase 4: **CONDITIONALLY OPEN; B10/B20 FAILED, B40 AUTHORIZED; NOT CERTIFIED**.
 - Phases 5-8: **LOCKED**.
 
 The user has explicitly authorized conditional Phase 4 research while the
@@ -67,9 +67,12 @@ does not waive Phase 2, unconditionally certify Phase 3, authorize training
 before the training protocol is sealed, open Phase 5, or permit final access or
 superiority claims. V570 subsequently sealed that ABI-arm protocol. The first
 clean-start B10 run used 1,018 unique source attempts and failed at 1,190/1,400
-with 43 V2 collapses despite 1,400/1,400 routing and 1,000/1,000 strong-path
-identity. B10 is preserved negative evidence; only B20 seed 104729 is now
-authorized by the frozen adaptive order.
+with 43 V2 collapses. B20 used 2,028 attempts and failed at 1,251/1,400 with
+seven collapses. It passed teacher noninferiority, but still failed the
+critical/per-capability and zero-collapse gates; coherence fell from 11/100 to
+5/100. Routing remained 1,400/1,400 and strong-path identity 1,000/1,000.
+Both failures are preserved; only B40 seed 104729 is now authorized by the
+frozen adaptive order.
 
 The exact route-isolated endpoint scored 1,393/1,400 with zero repetition
 collapse at seed 240487 and passed all four same-lineage causal controls across

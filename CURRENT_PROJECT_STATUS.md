@@ -4,7 +4,7 @@ Status date: 2026-08-11
 
 ## Executive state
 
-The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V555.json`.
+The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V574.json`.
 Phase 3's machine campaign is complete and passes every registered technical
 gate. The exact route-isolated candidate has three paired-seed causal passes,
 1,393/1,400 autonomous functional passes with zero collapse, exact routing,
@@ -17,9 +17,14 @@ absence, and exact-lineage fully CPU systems evidence. It measures 264.15 vs
 This is **Phase 3 machine-evidence completion**, not an unconditional phase
 certificate. The campaign contract requires Phase 2 first. The immutable human
 packet contains 21,000 nonblank rows and 0 completed preferences; three
-independent raters remain required. Phase 4 stays locked, final material stays
-unopened, and no ABI-superiority or minimum-information claim is permitted.
-No additional Phase 3 compute is authorized.
+independent raters remain required. The user separately authorized conditional
+Phase 4 research without waiving that dependency. B10 and B20 clean-start ABI
+screens failed the full machine gate; B20 reached 1,251/1,400 with seven
+collapses and passed teacher noninferiority, but failed critical/per-capability
+quality and zero-collapse. B40 at screening seed 104729 is the only authorized
+next run. Final material stays unopened, and no ABI-superiority or
+minimum-information claim is permitted. No additional Phase 3 compute is
+authorized.
 
 The human-gate execution path is now complete and preregistered. V554 verifies
 an immutable blinded lock, exact template preservation, complete rating

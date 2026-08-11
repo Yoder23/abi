@@ -1,0 +1,20 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "version": 574,
+  "status_date": "2026-08-11",
+  "historical_evidence_changed": false,
+  "phase0": "COMPLETE",
+  "phase1": "COMPLETE",
+  "phase2": "MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS_0_OF_21000_FILLED",
+  "phase3": "MACHINE_EVIDENCE_COMPLETE_NOT_UNCONDITIONALLY_CERTIFIED",
+  "phase4": "CONDITIONALLY_OPEN_B10_AND_B20_FAILED_B40_AUTHORIZED",
+  "phases5_through_8": "LOCKED",
+  "phase4_latest": "ABI_CAPABILITY_COMPILER_PHASE4_ABI_B20_RESULT_V573.json",
+  "B10": "FAIL_1190_OF_1400_43_COLLAPSES",
+  "B20": "FAIL_1251_OF_1400_7_COLLAPSES_TEACHER_NONINFERIOR",
+  "B40": "AUTHORIZED_SCREENING_SEED_104729",
+  "other_phase4_training": "PROHIBITED_UNTIL_B40_DECISION",
+  "final_test_access": "PROHIBITED",
+  "next_action": "Run the complete B40 clean-start ABI lineage at seed 104729 without changing schedules, gates, or architecture.",
+  "claim_boundary": "Conditional Phase 4 adaptive frontier state only; no predecessor waiver, minimum, certificate, final-test result, or superiority claim."
+}

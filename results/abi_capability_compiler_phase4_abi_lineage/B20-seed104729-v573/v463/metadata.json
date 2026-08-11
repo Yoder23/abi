@@ -1,0 +1,100 @@
+{
+  "checkpoint": {
+    "bytes": 246628032,
+    "path": "model.safetensors",
+    "sha256": "d82958d2d8322c4ff9ff8804d4bb50a978319660188fd254a7361fe0eb50e1af"
+  },
+  "evidence_sha256": "16af5cd2d980e33ff91bc56e3de69719cdde33a083c3e1ae45f780c30564cbb1",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-token-substrate-conformance/1",
+  "isolation": {
+    "changed_tensor_count": 65,
+    "embedding_state_sha256_after": "ac1e0f65c51edb038c7e092761fa407861581aa3ea46d789eccd7908531b937c",
+    "embedding_state_sha256_before": "ac1e0f65c51edb038c7e092761fa407861581aa3ea46d789eccd7908531b937c",
+    "new_parameters": 0
+  },
+  "parent_checkpoint_sha256": "5e22677d1ecf0b008e266f0db127a16e451748b1234a0e87bf2771559d549d70",
+  "phase3_certified": false,
+  "promotion_eligible": false,
+  "protocol_sha256": "5f5cb228f01aa4b22a9271c57cf5536390de863aca5e9b62f05e26dc94f3bfd7",
+  "source_blocks_retained": 0,
+  "status": "TRAINED_DEVELOPMENT_ONLY_NONPROMOTIONAL",
+  "teacher_present_at_training_or_inference": false,
+  "training": {
+    "batch_size": 4,
+    "curves": [
+      {
+        "classifier_loss": 7.837943485355936e-06,
+        "language_loss": 7.955511682666838e-05,
+        "step": 1,
+        "wall_seconds": 0.06476030001067556
+      },
+      {
+        "classifier_loss": 8.629682997707278e-05,
+        "language_loss": 0.00020460161613300443,
+        "step": 250,
+        "wall_seconds": 14.84758219998912
+      },
+      {
+        "classifier_loss": 3.7548496038652956e-05,
+        "language_loss": 0.0007431026315316558,
+        "step": 500,
+        "wall_seconds": 29.618851300008828
+      },
+      {
+        "classifier_loss": 8.840921509545296e-05,
+        "language_loss": 8.270175021607429e-05,
+        "step": 750,
+        "wall_seconds": 44.823263700003736
+      },
+      {
+        "classifier_loss": 0.0,
+        "language_loss": 0.00076986791100353,
+        "step": 1000,
+        "wall_seconds": 59.65417110000271
+      },
+      {
+        "classifier_loss": 6.4372616179753095e-06,
+        "language_loss": 8.779317431617528e-05,
+        "step": 1250,
+        "wall_seconds": 74.40310029999819
+      },
+      {
+        "classifier_loss": 8.463805897918064e-06,
+        "language_loss": 0.004576291423290968,
+        "step": 1500,
+        "wall_seconds": 89.06386960000964
+      },
+      {
+        "classifier_loss": 8.52339235279942e-06,
+        "language_loss": 0.00032855093013495207,
+        "step": 1750,
+        "wall_seconds": 103.84624079999048
+      }
+    ],
+    "peak_cuda_allocated_bytes": 2477415424,
+    "peak_process_rss_bytes": 1749204992,
+    "prompt_overlap_weight": 4.0,
+    "sampled_records_by_capability": {
+      "abstention": 500,
+      "clarification": 500,
+      "coherence": 500,
+      "conversation": 500,
+      "email_drafting_from_notes": 500,
+      "fact_free_reasoning": 500,
+      "fluent_realization": 500,
+      "format_control": 500,
+      "grammar": 500,
+      "instruction_following": 500,
+      "prompt_grounding": 500,
+      "rewriting": 500,
+      "supplied_text_summarization": 500,
+      "tone_control": 500
+    },
+    "seed": 104729,
+    "steps": 1750,
+    "successful_record_sequence_sha256": "db14a896fb3a3212828b46a766217adcd08fe09226f12330d03b2192f1723b9e",
+    "teacher_response_tokens_seen": 180146,
+    "wall_seconds": 104.1076686999877
+  }
+}

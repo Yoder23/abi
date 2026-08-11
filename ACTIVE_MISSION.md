@@ -6,7 +6,7 @@ Status date: 2026-08-11
 
 The ABI capability-compiler moonshot is **OPEN**.
 
-The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V572.json`.
+The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V574.json`.
 All Phase 3 machine endpoints now pass. The exact route-isolated checkpoint has
 three-seed causal replication, 1,393/1,400 autonomous quality with zero
 collapse on the selected seed, three byte-identical host initializations,
@@ -40,7 +40,7 @@ focused tests, including all three production-form dry runs, pass. See
 | 1 | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 | MACHINE + HANDOFF READY; 0/21,000 HUMAN PREFERENCES | `ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V554.json` |
 | 3 | MACHINE EVIDENCE COMPLETE; BLOCKED BY PHASE 2 | `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json` |
-| 4 | CONDITIONALLY OPEN; B10 FAILED, B20 AUTHORIZED | `ABI_CAPABILITY_COMPILER_PHASE4_ABI_B10_RESULT_V571.json` |
+| 4 | CONDITIONALLY OPEN; B10/B20 FAILED, B40 AUTHORIZED | `ABI_CAPABILITY_COMPILER_PHASE4_ABI_B20_RESULT_V573.json` |
 | 5-8 | LOCKED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` |
 
 V558 passed the physical archive and checkpoint-lineage audit without loading
@@ -55,9 +55,12 @@ data-dependent stage from the same fixed host and compares the ABI, LoRA, and
 distillation frontiers under all three fairness views. V567 freezes five
 balanced nested budgets from B10 through B100 and their adaptive execution
 order. Training remains closed until the runner and complete comparison
-protocol are immutable. V570 sealed the ABI clean-start runner. B10 then failed
-at 1,190/1,400 with 43 collapses while retaining exact routing and strong-path
-identity. Under the adaptive rule, only B20 at seed 104729 is authorized next.
+protocol are immutable. V570 sealed the ABI clean-start runner. B10 failed at
+1,190/1,400 with 43 collapses. B20 improved to 1,251/1,400, seven collapses,
+and a teacher-noninferiority pass, but still failed critical/per-capability
+quality and zero-collapse; coherence decreased to 5/100. Routing and
+strong-path identity remained exact. Under the adaptive rule, only B40 at seed
+104729 is authorized next.
 
 ### Preserved historical mission snapshot
 
