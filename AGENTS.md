@@ -22,7 +22,7 @@ LayerCake cake.
 Status date: 2026-08-11.
 
 The controlling machine-readable state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V586.json`. Phase 3 has completed and
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V590.json`. Phase 3 has completed and
 passed every currently required machine gate, but it is not unconditionally
 certified because the controlling campaign contract makes it depend on Phase
 2. Phase 2 has 21,000 immutable blinded rating rows and zero completed
@@ -48,7 +48,7 @@ not replace the three humans.
   INDEPENDENT HUMAN RATERS (0/21,000 FILLED)**.
 - Phase 3: **MACHINE EVIDENCE COMPLETE; BLOCKED BY THE PHASE 2 PREREQUISITE**.
 - Phase 4: **CONDITIONALLY OPEN; ABI FRONTIER REPLICATION FAILED;
-  SEED-STABILITY ATTRIBUTION OPEN; NOT CERTIFIED**.
+  ONE FINAL-BRIDGE STABILIZATION DESIGN AUTHORIZED; NOT CERTIFIED**.
 - Phases 5-8: **LOCKED**.
 
 The user has explicitly authorized conditional Phase 4 research while the
@@ -90,7 +90,12 @@ remained before the ABI-arm replication decision. It passed at 1,382/1,400
 with zero collapses, leaving B80 PASS/FAIL/PASS; B40 is FAIL/PASS/FAIL. No
 budget passes all three seeds and no minimum can be claimed. Only a hash-bound
 read-only attribution is authorized before at most one prospectively sealed,
-evidence-supported stabilization attempt.
+evidence-supported stabilization attempt. V588 attributes the largest
+instability to B80 coherence in the final bridge: intermediate-to-final deltas
+are +84, -6, and +13 points. The single permitted design must remove random
+within-stratum exposure imbalance without new data, parameters, steps, budget,
+thresholds, or final access. Training remains prohibited until its runner and
+protocol are hash-bound and tested.
 
 The exact route-isolated endpoint scored 1,393/1,400 with zero repetition
 collapse at seed 240487 and passed all four same-lineage causal controls across

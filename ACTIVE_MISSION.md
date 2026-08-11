@@ -6,7 +6,7 @@ Status date: 2026-08-11
 
 The ABI capability-compiler moonshot is **OPEN**.
 
-The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V586.json`.
+The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V590.json`.
 All Phase 3 machine endpoints now pass. The exact route-isolated checkpoint has
 three-seed causal replication, 1,393/1,400 autonomous quality with zero
 collapse on the selected seed, three byte-identical host initializations,
@@ -40,7 +40,7 @@ focused tests, including all three production-form dry runs, pass. See
 | 1 | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 | MACHINE + HANDOFF READY; 0/21,000 HUMAN PREFERENCES | `ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V554.json` |
 | 3 | MACHINE EVIDENCE COMPLETE; BLOCKED BY PHASE 2 | `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json` |
-| 4 | CONDITIONALLY OPEN; ABI FRONTIER REPLICATION FAILED; ATTRIBUTION OPEN | `ABI_CAPABILITY_COMPILER_PHASE4_ABI_B80_SEED155921_RESULT_V585.json` |
+| 4 | CONDITIONALLY OPEN; FRONTIER FAILED; FINAL-BRIDGE STABILIZATION DESIGN OPEN | `ABI_CAPABILITY_COMPILER_PHASE4_SEED_STABILITY_RESULT_V589.json` |
 | 5-8 | LOCKED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` |
 
 V558 passed the physical archive and checkpoint-lineage audit without loading
@@ -77,7 +77,10 @@ before the replication decision. B80 seed155921 passed at 1,382/1,400 with
 zero collapses, leaving B80 PASS/FAIL/PASS. No budget passes all three seeds;
 the ABI frontier is not certified. Only read-only seed-stability attribution is
 currently authorized, followed by at most one prospectively sealed,
-evidence-supported stabilization attempt.
+evidence-supported stabilization attempt. V588 localizes the largest effect to
+B80 coherence: V463-to-final changes are +84, -6, and +13 points across seeds.
+One deterministic within-stratum exposure-balanced final-bridge attempt may be
+designed and sealed without new information or changed gates.
 
 ### Preserved historical mission snapshot
 

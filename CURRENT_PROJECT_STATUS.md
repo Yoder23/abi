@@ -4,7 +4,7 @@ Status date: 2026-08-11
 
 ## Executive state
 
-The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V586.json`.
+The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V590.json`.
 Phase 3's machine campaign is complete and passes every registered technical
 gate. The exact route-isolated candidate has three paired-seed causal passes,
 1,393/1,400 autonomous functional passes with zero collapse, exact routing,
@@ -34,7 +34,10 @@ The frontier is non-monotonic. B40 seed155921 failed at 1,359/1,400 with one
 collapse, leaving B40 FAIL/PASS/FAIL. B80 seed155921 passed at 1,382/1,400
 with zero collapses, leaving B80 PASS/FAIL/PASS. The ABI arm has no stable
 three-seed information frontier. Read-only seed-stability attribution is the
-only authorized next action.
+only authorized next action. V588 completed it and measured a 90-point range in
+B80 coherence's V463-to-final correction (+84, -6, +13). Exactly one
+deterministic within-stratum exposure-balanced final-bridge stabilization may
+now be designed; no training is authorized until it is sealed and tested.
 Final
 material stays unopened, and no ABI-superiority or
 minimum-information claim is permitted. No additional Phase 3 compute is

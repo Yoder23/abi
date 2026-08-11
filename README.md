@@ -16,7 +16,7 @@ Status date: 2026-08-11
 
 **The ABI English-product moonshot is OPEN.**
 
-The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V586.json`.
+The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V590.json`.
 The route-isolated English endpoint now passes all registered Phase 3 machine
 gates: three paired training seeds and all A0-A4 causal controls, 1,393/1,400
 selected-seed autonomous quality with zero collapse, exact routing, three
@@ -89,7 +89,13 @@ at 1,382/1,400 with zero collapses, leaving B80 PASS/FAIL/PASS. Therefore no
 budget passes all three seeds, and the adjacent-lower failure is also not
 all-seed. The ABI arm has no certified information frontier. Only a hash-bound
 read-only seed-stability attribution is authorized before one prospective,
-bounded stabilization protocol may be considered.
+bounded stabilization protocol may be considered. V588 now provides that
+hash-bound attribution: B80 coherence changes by +84, -6, and +13 points from
+V463 to the final bridge across seeds, a 90-point effect range. B40's largest
+final variation is format control at 13 points. Exactly one deterministic,
+within-stratum exposure-balanced final-bridge stabilization may now be designed
+and sealed. No new data, larger budget, threshold change, matched-baseline run,
+or final access is authorized first.
 Phase 2 and Phase 3
 certificate statuses remain unchanged, final data remains unopened, and Phase
 5 is locked.

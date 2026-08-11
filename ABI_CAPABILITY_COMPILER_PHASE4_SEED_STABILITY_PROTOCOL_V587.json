@@ -1,0 +1,61 @@
+{
+  "format": "abi-capability-compiler-phase4-seed-stability/1",
+  "protocol_id": "abi-capability-compiler-phase4-seed-stability-v587",
+  "status": "SEALED_READ_ONLY_ATTRIBUTION",
+  "status_date": "2026-08-11",
+  "historical_evidence_changed": false,
+  "objective": "Attribute the failed B40/B80 three-seed frontier to intermediate versus final-stage capability variance without training, threshold changes, final-test access, or new model selection.",
+  "self_path": "ABI_CAPABILITY_COMPILER_PHASE4_SEED_STABILITY_PROTOCOL_V587.json",
+  "tested_boundary": {
+    "passing_budget": "B80",
+    "adjacent_lower": "B40",
+    "passing_budget_must_pass_all_registered_seeds": true,
+    "adjacent_lower_must_fail_all_registered_seeds": true
+  },
+  "runs": [
+    {
+      "budget": "B40", "seed": 104729,
+      "result": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed104729-v575/result.json", "sha256": "825a4eef13cea1a1e40e97916f47c9e02a8893c56908bee4495815c5e955e0e2"},
+      "intermediate_evaluation": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed104729-v575/v463_evaluation/result.json", "sha256": "c948ba307f5c550588021d41f779d504a9f98b4e820064593d88a179e3f7f178"},
+      "final_evaluation": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed104729-v575/evaluation/result.json", "sha256": "e11365bb451bbe37125e796d51f379d30e0ba974be88dc6e30826f7b6bf119fe"}
+    },
+    {
+      "budget": "B40", "seed": 130363,
+      "result": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed130363-v579/result.json", "sha256": "d0e3a09acbb5e86376c984a4655e9f32987e111f8ebf874bc0554c805271ee10"},
+      "intermediate_evaluation": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed130363-v579/v463_evaluation/result.json", "sha256": "aa04ff34693f43840e824e9dae42dd2726739d8229a347732a01572bbd916fdb"},
+      "final_evaluation": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed130363-v579/evaluation/result.json", "sha256": "8503a97e97dde25d249ea562936a175da4f92cd0b97281f533700e0415f37c80"}
+    },
+    {
+      "budget": "B40", "seed": 155921,
+      "result": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed155921-v583/result.json", "sha256": "cc173cf2fc511b7b8aa551b881803e1677d359908e2e726adb724bdcabe2e509"},
+      "intermediate_evaluation": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed155921-v583/v463_evaluation/result.json", "sha256": "665fb2353f8277e5e51abb4d302df09aaa5a828ea2b63458be0f804ae509bdd3"},
+      "final_evaluation": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed155921-v583/evaluation/result.json", "sha256": "a7f5db29389393ca5db9dc476e29f5006aad0dd0079d44a4b726bd17b118f6e5"}
+    },
+    {
+      "budget": "B80", "seed": 104729,
+      "result": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed104729-v577/result.json", "sha256": "1a602561b62bc9b811b6bb19e0d7ca3ff6a2b7c1d63dcda1a3e3b7b3c4483a42"},
+      "intermediate_evaluation": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed104729-v577/v463_evaluation/result.json", "sha256": "9ac54b2e0ac5902990a3ed134225ca5187d27024d0e4c7fb09c64f31d1319229"},
+      "final_evaluation": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed104729-v577/evaluation/result.json", "sha256": "ba88d6deec9fba2abc8e752246fa21cc38b77aa94a9b00ae5f50dac41c9d4f11"}
+    },
+    {
+      "budget": "B80", "seed": 130363,
+      "result": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed130363-v581/result.json", "sha256": "15a66906fe54389d1dc0640a18f84f89d2f651fdf1a37346806c8a4d5ccf8c2f"},
+      "intermediate_evaluation": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed130363-v581/v463_evaluation/result.json", "sha256": "d9872b6cbbeb28f9ed10ba5d1294943d0fad3c261556659f7130e2988f8dd039"},
+      "final_evaluation": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed130363-v581/evaluation/result.json", "sha256": "09ea978a411a1bb0c5b529b17ec606a289ef69e290af9e093878296487b2afa3"}
+    },
+    {
+      "budget": "B80", "seed": 155921,
+      "result": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed155921-v585/result.json", "sha256": "1d37f8fb2450e369ab4cf63dc382627797bb8b415173aec0053612e2da63c060"},
+      "intermediate_evaluation": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed155921-v585/v463_evaluation/result.json", "sha256": "acf1392985c7caf90296d617eadef059226203a98cac4279e811aecf831f44c5"},
+      "final_evaluation": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed155921-v585/evaluation/result.json", "sha256": "45cd0bcbfe299c5bbd01e99a224f0820af84d36a31887cfe7f0a1d4e7c6601b5"}
+    }
+  ],
+  "bindings": {
+    "abi/capability_compiler_phase4_seed_stability.py": "5e8df0afc354e0d6b48603a48209e3f5b9ea53b5c32643342695843f58d6e143",
+    "tests/test_capability_compiler_phase4_seed_stability.py": "c65196ecb9f5c7f3dc5f064296816c334fc15f524665b5ba3e45cec795142011"
+  },
+  "training_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "decision_rule": "The B80/B40 boundary reproduces only if B80 passes all three seeds and B40 fails all three. Otherwise identify the largest seed range in the intermediate-to-final capability delta and authorize protocol design for at most one stabilization targeted at that effect.",
+  "claim_boundary": "Read-only attribution protocol sealed after the six registered runs; it adds no promotion gate and permits no frontier, minimum, runtime, certificate, final-test, or superiority claim."
+}
