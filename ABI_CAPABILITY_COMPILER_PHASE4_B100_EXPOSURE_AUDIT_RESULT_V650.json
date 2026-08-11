@@ -1,0 +1,15 @@
+{
+  "format": "abi-capability-compiler-phase4-b100-exposure-audit-summary/1",
+  "version": 650,
+  "status_date": "2026-08-11",
+  "status": "PASS_SPECIFIC_EXPOSURE_DEFICIT_ONE_NORMALIZED_ATTEMPT_AUTHORIZED",
+  "historical_evidence_changed": false,
+  "protocol": {"path": "ABI_CAPABILITY_COMPILER_PHASE4_B100_EXPOSURE_AUDIT_PROTOCOL_V648.json", "sha256": "be2f8465ec806e0ff722e246b0672ad29b41a3da4ae87ccd7a2f89c48720819e"},
+  "raw_result": {"path": "results/abi_capability_compiler_phase4_b100_exposure_audit/audit_v649/result.json", "sha256": "54d51d9e871a0bd0763c1df425f73aa81cc59a4976c47a20144130b01fd23874", "evidence_sha256": "2287ab22fb5955144cfaeb5a1ed090c00327fe486478d78430bfee47142c2da7"},
+  "measured_exposure": {"B80_parent_observations_per_record": [5.0, 1.25, 1.25], "B100_parent_observations_per_record": [4.0, 1.0, 1.0], "B100_to_B80_ratio_each_stage": 0.8},
+  "measured_regression": {"B80_pass_B100_fail_rows": 18, "instruction_identifier_omissions": 8, "B100_repetition_collapses_v2": 0},
+  "authorized_intervention": "One B100 screening run with V443/V459/V463 observation density normalized to the B80 target using the nearest balanced integer step counts; every other component, datum, order, seed, threshold, and evaluation remains fixed.",
+  "training_performed": false,
+  "final_test_accessed": false,
+  "claim_boundary": "Read-only attribution and one bounded authorization only; no intervention result, stable frontier, Phase 4 certificate, final test, or superiority claim."
+}
