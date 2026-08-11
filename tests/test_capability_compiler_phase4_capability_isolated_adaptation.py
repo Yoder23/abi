@@ -20,7 +20,7 @@ def test_capability_isolated_residual_has_one_physical_active_path() -> None:
 
 def test_protocol_preflight() -> None:
     root = Path(__file__).resolve().parents[1]
-    protocol = root / "ABI_CAPABILITY_COMPILER_PHASE4_CAPABILITY_ISOLATED_ADAPTATION_PROTOCOL_V664.json"
+    protocol = root / "ABI_CAPABILITY_COMPILER_PHASE4_CAPABILITY_ISOLATED_EVALUATION_REPAIR_V667.json"
     if protocol.exists():
         result = subject.preflight(root, protocol)
         assert result["status"] == "PASS_CAPABILITY_ISOLATED_ADAPTATION_PREFLIGHT"

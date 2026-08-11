@@ -53,7 +53,20 @@ def _json(path: Path) -> dict[str, Any]:
 
 
 def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str, dict[str, Any]]:
-    protocol = _json(path)
+    document = _json(path)
+    training_protocol_sha = None
+    if document.get("format") == "abi-capability-compiler-phase4-capability-isolated-evaluation-repair/1":
+        if document.get("status") != "PREREGISTERED_EVALUATION_ONLY_ARITY_REPAIR" or document.get("training_authorized") is not False:
+            raise Phase3Error("capability-isolated evaluation repair governance changed")
+        base_path = root / str(document["base_protocol"])
+        if not base_path.is_file() or sha256_file(base_path) != document["base_protocol_sha256"]:
+            raise Phase3Error("capability-isolated base protocol changed")
+        protocol = _json(base_path)
+        protocol["bindings"].update(document["binding_overrides"])
+        training_protocol_sha = document["base_protocol_sha256"]
+        protocol["evaluation_only_repair"] = True
+    else:
+        protocol = document
     if (
         protocol.get("format") != FORMAT
         or protocol.get("status") != "PREREGISTERED_ONE_CAPABILITY_ISOLATED_SPARSE_DESIGN"
@@ -72,6 +85,8 @@ def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str, dict[str
             raise Phase3Error(f"capability-isolated binding changed: {relative}")
     lineage_path = root / protocol["lineage_protocol"]
     lineage_protocol, _ = lineage.load_protocol(root, lineage_path)
+    if training_protocol_sha is not None:
+        protocol["training_protocol_sha256"] = training_protocol_sha
     return protocol, sha256_file(path), lineage_protocol
 
 
@@ -235,6 +250,8 @@ def preflight(root: Path, protocol_path: Path) -> dict[str, Any]:
 
 def train(root: Path, protocol_path: Path, budget: str, seed: int, output: Path) -> dict[str, Any]:
     protocol, protocol_sha, lineage_protocol = load_protocol(root, protocol_path)
+    if protocol.get("evaluation_only_repair"):
+        raise Phase3Error("evaluation repair cannot authorize training")
     run = _run(protocol, budget, seed)
     if output.exists() or not torch.cuda.is_available():
         raise Phase3Error("immutable output exists or CUDA unavailable")
@@ -315,10 +332,11 @@ def evaluate(root: Path, protocol_path: Path, budget: str, seed: int, candidate:
     protocol, protocol_sha, lineage_protocol = load_protocol(root, protocol_path); run = _run(protocol, budget, seed)
     if output.exists() or not torch.cuda.is_available(): raise Phase3Error("immutable evaluation exists or CUDA unavailable")
     metadata = _json(candidate / "metadata.json"); checkpoint = candidate / str(metadata["checkpoint"]["path"])
-    if metadata["protocol_sha256"] != protocol_sha or metadata["budget"] != budget or int(metadata["seed"]) != seed or sha256_file(checkpoint) != metadata["checkpoint"]["sha256"]: raise Phase3Error("candidate lineage changed")
+    training_protocol_sha = protocol.get("training_protocol_sha256", protocol_sha)
+    if metadata["protocol_sha256"] != training_protocol_sha or metadata["budget"] != budget or int(metadata["seed"]) != seed or sha256_file(checkpoint) != metadata["checkpoint"]["sha256"]: raise Phase3Error("candidate lineage changed")
     device = torch.device("cuda"); model, tokenizer, router_bundle, router_protocol, run_dir = _load_components(root, protocol, lineage_protocol, run, device)
     residual = CapabilityIsolatedResidual().to(device); residual.load_state_dict(load_file(str(checkpoint), device="cuda"), strict=True); residual.eval(); handles = _attach(model, residual)
-    router, router_tokenizer, _ = router_bundle; markers = artifact_markers(run_dir / "budget_host_supervision.abicir"); clause = str(protocol["guard"]["canonical_abstention_clause"])
+    router, router_tokenizer = router_bundle; markers = artifact_markers(run_dir / "budget_host_supervision.abicir"); clause = str(protocol["guard"]["canonical_abstention_clause"])
     probes = development_probes(root / protocol["development"]["catalog"]); teacher = {row["probe_id"]: row for row in map(json.loads, (root / protocol["development"]["teacher_reference"]).open(encoding="utf-8"))}
     rows = []; started = time.perf_counter()
     for probe in probes:
