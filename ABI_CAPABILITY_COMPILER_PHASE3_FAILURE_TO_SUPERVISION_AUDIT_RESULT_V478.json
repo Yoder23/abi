@@ -1,0 +1,53 @@
+{
+  "format": "abi-capability-compiler-phase3-failure-to-supervision-summary/1",
+  "version": 478,
+  "status": "PASS_DATA_PROJECTION_AND_RECOVERY_GAPS_ATTRIBUTED",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_FAILURE_TO_SUPERVISION_AUDIT_PROTOCOL_V477.json",
+    "sha256": "937df8313d67288583ed344ebed8c6c40f6e1f557e6ac6c6c99deb0520db3bc6"
+  },
+  "raw_evidence": {
+    "path": "results/abi_capability_compiler_phase3_failure_to_supervision/audit_v478.json",
+    "file_sha256": "1d02c31995efb175409b8c096b551103aec37d56cdd70433e6dae7ce8191b34b",
+    "evidence_sha256": "dd1e6cfcc7e69c2389147851bc0cb69f80bdee7d35b03276d06d893953a8c83e"
+  },
+  "decisive_findings": {
+    "abstention_builder_1": {
+      "candidate_v2_passes": "0/25",
+      "targeted_selected_records": 0,
+      "anchor_selected_records": 88,
+      "anchor_autonomous_recovery_eligible": 0
+    },
+    "fluent_realization_builder_3": {
+      "candidate_v2_passes": "0/25",
+      "candidate_v2_collapses": 3,
+      "teacher_v2_passes": "22/25",
+      "targeted_selected_records": 0,
+      "anchor_selected_records": 1,
+      "cached_v2_only_recoverable_teacher_probes": 162
+    },
+    "tone_control_builder_1": {
+      "candidate_v2_passes": "9/25",
+      "targeted_selected_records": 135,
+      "selected_repair_attempts": 135,
+      "teacher_generation_prompt_mismatches": 135
+    }
+  },
+  "additional_context": {
+    "coherence_builder_1_candidate_v2_passes": "20/25",
+    "coherence_builder_1_parent_v2_passes": "6/25",
+    "coherence_recovery_gain_retained": true,
+    "V476_material_shared_gradient_conflict": false
+  },
+  "interpretation": "The V474 failure is attributable to supervision construction and recovery exposure. The trainer consumed teacher-generation prompts instead of the IR's host-conformant prompts; repaired tone records therefore taught a repair conversation rather than direct host behavior. Fluent builder 3 was excluded by historical V1 surface filtering despite cached V2-valid teacher behavior. Matching abstention anchors were never exposed to autonomous-prefix recovery.",
+  "decision": "Construct one new immutable weak-only host-conformant supervision artifact from bound cached evidence: pair outputs with host-conformant prompts, recover fluent builder-3 examples that are semantically valid under V2 using an explicit surface normalization, and make both targeted and anchor support eligible for later recovery. Hostile artifact verification must pass before any neural successor is authorized.",
+  "teacher_model_loaded": false,
+  "neural_training_performed": false,
+  "artifact_mutated": false,
+  "final_test_accessed": false,
+  "promotion_eligible": false,
+  "phase3_certified": false,
+  "claim_boundary": "Read-only development and acquisition-stream attribution; no training, promotion, runtime, final-test, Phase 3, or superiority claim."
+}
