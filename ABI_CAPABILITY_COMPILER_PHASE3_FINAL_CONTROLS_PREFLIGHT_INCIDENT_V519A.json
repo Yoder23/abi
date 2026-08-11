@@ -1,0 +1,16 @@
+{
+  "format": "abi-capability-compiler-phase3-execution-incident/1",
+  "version": "519A",
+  "status_date": "2026-08-10",
+  "status": "INVALID_PREFLIGHT_WITHIN_BUILDER_ZERO_IDENTITY_DERANGEMENT_MATHEMATICALLY_IMPOSSIBLE",
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CONTROLS_REPAIR_PROTOCOL_V519.json",
+  "failure": "Two locked 80-record builder strata contain majority-identical response payloads (42/80 and 49/80), so no permutation can give every prompt a different response payload within those strata.",
+  "diagnostic_scope": "Read-only response-token multiplicities for the 32 capability-builder-view strata.",
+  "neural_training_started": false,
+  "control_evidence_written": false,
+  "scientific_decision_reached": false,
+  "repair_scope": "Use the controlling within-capability A2 definition: permute targets within each capability and prompt view across all four builders (320 records), preserve the exact target multiset, and require zero content identities. Keep original row order, prompts, capability, view, counts, initialization, schedule, compute, evaluation, and gates unchanged.",
+  "historical_evidence_changed": false,
+  "final_test_accessed": false,
+  "claim_boundary": "Preflight impossibility evidence only; no causal evidence or Phase 3 claim."
+}

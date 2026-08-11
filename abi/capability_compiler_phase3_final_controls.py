@@ -125,41 +125,42 @@ def _control_routes(system: str, rows: Sequence[Mapping[str, Any]], device: torc
 
 
 def _derange_targets(rows: Sequence[Mapping[str, Any]]) -> list[dict[str, Any]]:
-    grouped: dict[tuple[str, int, str], list[Mapping[str, Any]]] = {}
+    grouped: dict[tuple[str, str], list[Mapping[str, Any]]] = {}
     for row in rows:
-        key = (str(row["capability"]), int(row["builder"]), str(row["view"]))
+        key = (str(row["capability"]), str(row["view"]))
         grouped.setdefault(key, []).append(row)
-    result = []
+    target_by_record: dict[str, tuple[Mapping[str, Any], int]] = {}
     for key in sorted(grouped):
-        values = sorted(grouped[key], key=lambda row: str(row["record_id"]))
-        if len(values) != 80:
+        values = grouped[key]
+        if len(values) < 2:
             raise Phase3Error("shuffled-target stratum depth changed")
-        offset = None
-        for candidate_offset in range(1, len(values)):
-            if all(
-                list(row["input_ids"][int(row["prompt_tokens"]):])
-                != list(values[(index + candidate_offset) % len(values)]["input_ids"][int(values[(index + candidate_offset) % len(values)]["prompt_tokens"]):])
-                for index, row in enumerate(values)
-            ):
-                offset = candidate_offset
-                break
-        if offset is None:
+        response = lambda row: tuple(row["input_ids"][int(row["prompt_tokens"]):])
+        ordered = sorted(values, key=lambda row: (response(row), str(row["record_id"])))
+        frequencies = Counter(response(row) for row in ordered)
+        offset = max(frequencies.values())
+        if offset * 2 > len(ordered):
             raise Phase3Error("no zero-identity target derangement exists")
-        for index, row in enumerate(values):
-            target = values[(index + offset) % len(values)]
-            prompt_count = int(row["prompt_tokens"])
-            target_prompt = int(target["prompt_tokens"])
-            prompt_ids = list(row["input_ids"][:prompt_count])
-            response_ids = list(target["input_ids"][target_prompt:])
-            if list(row["input_ids"][prompt_count:]) == response_ids:
-                raise Phase3Error("target derangement contains an identity")
-            changed = copy.deepcopy(dict(row))
-            changed["input_ids"] = prompt_ids + response_ids
-            changed["labels"] = [-100] * len(prompt_ids) + response_ids
-            changed["response_tokens"] = len(response_ids)
-            changed["deranged_target_record_id"] = str(target["record_id"])
-            changed["derangement_offset"] = offset
-            result.append(changed)
+        for index, row in enumerate(ordered):
+            target = ordered[(index + offset) % len(ordered)]
+            if response(row) == response(target):
+                raise Phase3Error("constructed target derangement contains an identity")
+            target_by_record[str(row["record_id"])] = (target, offset)
+    result = []
+    for row in rows:
+        target, offset = target_by_record[str(row["record_id"])]
+        prompt_count = int(row["prompt_tokens"])
+        target_prompt = int(target["prompt_tokens"])
+        prompt_ids = list(row["input_ids"][:prompt_count])
+        response_ids = list(target["input_ids"][target_prompt:])
+        if list(row["input_ids"][prompt_count:]) == response_ids:
+            raise Phase3Error("target derangement contains an identity")
+        changed = copy.deepcopy(dict(row))
+        changed["input_ids"] = prompt_ids + response_ids
+        changed["labels"] = [-100] * len(prompt_ids) + response_ids
+        changed["response_tokens"] = len(response_ids)
+        changed["deranged_target_record_id"] = str(target["record_id"])
+        changed["derangement_offset"] = offset
+        result.append(changed)
     if len(result) != len(rows):
         raise Phase3Error("target derangement lost rows")
     return result
