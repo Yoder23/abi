@@ -1,0 +1,262 @@
+{
+  "audit_partition_records": 1130,
+  "claim_boundary": "Read-only in-sample acquisition-loss attribution; no candidate, stable frontier, matched baseline, final test, Phase 4 certificate, or superiority claim.",
+  "evidence_sha256": "c27ed1ff949fb05d0f9443a9537085b4909f8b93c2ccec913e01ae4a14930552",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase4-route-loss-attribution-result/1",
+  "functional_passes": 1355,
+  "gates": {
+    "critical": true,
+    "final_test_not_accessed": true,
+    "no_promotion": true,
+    "no_training": true,
+    "per_capability": false,
+    "selection_uses_no_development_labels": true,
+    "teacher_noninferior": true,
+    "zero_collapse": true
+  },
+  "interpretation": "The acquisition partition was consumed by the existing candidate and is not a true validation holdout. A pass supports one future prospectively split train/validation architecture only; it does not promote this composition.",
+  "observations": 1400,
+  "per_capability": {
+    "abstention": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 100,
+      "wilson": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "clarification": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 100,
+      "wilson": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "coherence": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 98,
+      "wilson": {
+        "lower_95": 0.929988209271456,
+        "point": 0.98,
+        "upper_95": 0.9944980324498376
+      }
+    },
+    "conversation": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 100,
+      "wilson": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "email_drafting_from_notes": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 94,
+      "wilson": {
+        "lower_95": 0.8752318455410406,
+        "point": 0.94,
+        "upper_95": 0.9722138760368118
+      }
+    },
+    "fact_free_reasoning": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 100,
+      "wilson": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "fluent_realization": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 85,
+      "wilson": {
+        "lower_95": 0.7671644040916763,
+        "point": 0.85,
+        "upper_95": 0.9069401471634337
+      }
+    },
+    "format_control": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 97,
+      "wilson": {
+        "lower_95": 0.9154806357094724,
+        "point": 0.97,
+        "upper_95": 0.9897454759759611
+      }
+    },
+    "grammar": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 100,
+      "wilson": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "instruction_following": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 99,
+      "wilson": {
+        "lower_95": 0.9455138038212946,
+        "point": 0.99,
+        "upper_95": 0.9982325679358593
+      }
+    },
+    "prompt_grounding": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 100,
+      "wilson": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "rewriting": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 100,
+      "wilson": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "supplied_text_summarization": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 96,
+      "wilson": {
+        "lower_95": 0.9016292856411208,
+        "point": 0.96,
+        "upper_95": 0.9843366960084523
+      }
+    },
+    "tone_control": {
+      "collapses": 0,
+      "observations": 100,
+      "passes": 86,
+      "wilson": {
+        "lower_95": 0.7786281178903616,
+        "point": 0.86,
+        "upper_95": 0.9147365634006086
+      }
+    }
+  },
+  "promotion_authorized": false,
+  "protocol_sha256": "bcebe0222860a3a5a567d69c404433b45ed8839f3dc2934313432a04419e5e08",
+  "repetition_collapses_v2": 0,
+  "selected_outputs_sha256": "2bf4ed979b839eeeb46f377e170336ba60853f63cd897b0b7408fc3bcb3e6074",
+  "selection": {
+    "abstention": {
+      "adapted_mean_response_ce": 0.039400425953840086,
+      "inherited_mean_response_ce": 0.3551648921789007,
+      "records": 94,
+      "selected": "adapted"
+    },
+    "clarification": {
+      "adapted_mean_response_ce": 0.022544820201317955,
+      "inherited_mean_response_ce": 0.025204839586807838,
+      "records": 79,
+      "selected": "adapted"
+    },
+    "coherence": {
+      "adapted_mean_response_ce": 0.008352976167758167,
+      "inherited_mean_response_ce": 0.02170342967753679,
+      "records": 71,
+      "selected": "adapted"
+    },
+    "conversation": {
+      "adapted_mean_response_ce": 0.030935314146336167,
+      "inherited_mean_response_ce": 0.03593781614254112,
+      "records": 90,
+      "selected": "adapted"
+    },
+    "email_drafting_from_notes": {
+      "adapted_mean_response_ce": 0.06431925069431171,
+      "inherited_mean_response_ce": 0.06146224668413839,
+      "records": 85,
+      "selected": "inherited"
+    },
+    "fact_free_reasoning": {
+      "adapted_mean_response_ce": 0.004355149870717447,
+      "inherited_mean_response_ce": 0.007486422282498807,
+      "records": 82,
+      "selected": "adapted"
+    },
+    "fluent_realization": {
+      "adapted_mean_response_ce": 0.017974184723973365,
+      "inherited_mean_response_ce": 0.04109200612889074,
+      "records": 81,
+      "selected": "adapted"
+    },
+    "format_control": {
+      "adapted_mean_response_ce": 0.0021099543295482674,
+      "inherited_mean_response_ce": 0.00012546126886374577,
+      "records": 82,
+      "selected": "inherited"
+    },
+    "grammar": {
+      "adapted_mean_response_ce": 0.002272949667531066,
+      "inherited_mean_response_ce": 0.00012333964635899975,
+      "records": 80,
+      "selected": "inherited"
+    },
+    "instruction_following": {
+      "adapted_mean_response_ce": 0.00020032137772665382,
+      "inherited_mean_response_ce": 8.685042757861083e-05,
+      "records": 78,
+      "selected": "inherited"
+    },
+    "prompt_grounding": {
+      "adapted_mean_response_ce": 0.006782407268485436,
+      "inherited_mean_response_ce": 0.006988404105657803,
+      "records": 82,
+      "selected": "adapted"
+    },
+    "rewriting": {
+      "adapted_mean_response_ce": 0.0070339654626736005,
+      "inherited_mean_response_ce": 0.009792737865290611,
+      "records": 77,
+      "selected": "adapted"
+    },
+    "supplied_text_summarization": {
+      "adapted_mean_response_ce": 0.027527835021877813,
+      "inherited_mean_response_ce": 0.03564379705415843,
+      "records": 74,
+      "selected": "adapted"
+    },
+    "tone_control": {
+      "adapted_mean_response_ce": 0.038766699406163146,
+      "inherited_mean_response_ce": 0.17728133636992424,
+      "records": 75,
+      "selected": "adapted"
+    }
+  },
+  "status": "FAIL_ROUTE_LOCAL_LOSS_SELECTION_NOT_SUPPORTED",
+  "teacher_comparison": {
+    "candidate_minus_teacher": 0.08428571428571428,
+    "lower_95": 0.06857142857142857,
+    "method": "capability_stratified_paired_percentile_bootstrap",
+    "replicates": 10000,
+    "seed": 6731729,
+    "upper_95": 0.10071428571428571
+  },
+  "training_performed": false
+}

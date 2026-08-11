@@ -16,7 +16,7 @@ Status date: 2026-08-11
 
 **The ABI English-product moonshot is OPEN.**
 
-The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V672.json`.
+The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V676.json`.
 The route-isolated English endpoint now passes all registered Phase 3 machine
 gates: three paired training seeds and all A0-A4 causal controls, 1,393/1,400
 selected-seed autonomous quality with zero collapse, exact routing, three
@@ -165,7 +165,12 @@ Uniform route training damaged format control to 52/100, fluent realization to
 85/100, and tone control to 86/100. Its remaining runs are canceled. One
 read-only acquisition-holdout attribution is allowed before deciding whether a
 different route-local acceptance architecture is justified; Phase 4 remains
-uncertified.
+uncertified. A subsequent read-only attribution showed that acquisition
+response loss is not a safe route acceptance signal: it produced 1,355/1,400
+and still selected harmful fluent-realization and tone routes. The next bounded
+architecture must reserve validation records before training and use autonomous
+functional validation, not response loss or development labels, to accept each
+route.
 Phase 2 and Phase 3
 certificate statuses remain unchanged, final data remains unopened, and Phase
 5 is locked.

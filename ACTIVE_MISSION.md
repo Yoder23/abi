@@ -6,7 +6,7 @@ Status date: 2026-08-11
 
 The ABI capability-compiler moonshot is **OPEN**.
 
-The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V672.json`.
+The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V676.json`.
 All Phase 3 machine endpoints now pass. The exact route-isolated checkpoint has
 three-seed causal replication, 1,393/1,400 autonomous quality with zero
 collapse on the selected seed, three byte-identical host initializations,
@@ -40,7 +40,7 @@ focused tests, including all three production-form dry runs, pass. See
 | 1 | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 | MACHINE + HANDOFF READY; 0/21,000 HUMAN PREFERENCES | `ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V554.json` |
 | 3 | MACHINE EVIDENCE COMPLETE; BLOCKED BY PHASE 2 | `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json` |
-| 4 | CONDITIONALLY OPEN; PHYSICAL ISOLATION PASS; UNIFORM ROUTE TRAINING FAIL | `ABI_CAPABILITY_COMPILER_PHASE4_CAPABILITY_ISOLATED_RESULT_V671.json` |
+| 4 | CONDITIONALLY OPEN; ROUTE ISOLATION PASS; SAFE ACCEPTANCE SIGNAL UNRESOLVED | `ABI_CAPABILITY_COMPILER_PHASE4_ROUTE_LOSS_ATTRIBUTION_RESULT_V675.json` |
 | 5-8 | LOCKED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` |
 
 V558 passed the physical archive and checkpoint-lineage audit without loading
@@ -164,7 +164,14 @@ and B40 runs are canceled, and uniform route training is closed. Exactly one
 read-only acquisition-holdout attribution may now test whether a route-local
 identity-versus-adapted acceptance architecture is supported without selecting
 on development scores. Phase 4, matched baselines, final data, and Phase 5
-remain closed.
+remain closed. V674 then tested response CE on a deterministic acquisition
+partition. It selected without development labels, but failed at 1,355/1,400
+because low response loss still preferred the harmful fluent-realization and
+tone routes. Standard loss is closed as an acceptance signal. The only
+authorized successor must reserve its validation partition before training and
+select inherited versus adapted routes by autonomous functional validation on
+those untouched acquisition prompts. Its protocol and preflight must be sealed
+before the hard B80 seed is retrained.
 
 ### Preserved historical mission snapshot
 
