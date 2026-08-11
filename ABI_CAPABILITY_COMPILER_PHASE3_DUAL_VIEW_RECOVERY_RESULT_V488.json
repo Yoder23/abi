@@ -1,0 +1,58 @@
+{
+  "format": "abi-capability-compiler-phase3-dual-view-recovery-summary/1",
+  "version": 488,
+  "status": "FAIL_ONLY_CRITICAL_WILSON_AND_REPETITION_GATES_DUAL_VIEW_MECHANISM_VALIDATED",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_DUAL_VIEW_RECOVERY_PROTOCOL_V487.json",
+    "sha256": "5c9d31f095463b63d8840a2421f144ee23b03870afc32e21d1ef69ce7c2b717b"
+  },
+  "candidate": {
+    "checkpoint_sha256": "046d00d6f4cf9cef068d616a6064aab9111b1ff5f23d4c2f98a4fa2aad2733a6",
+    "checkpoint_bytes": 401968,
+    "metadata_sha256": "2952c1f8b9e7c61eeac46f703374b44bf1dd61260c72e20018e34121bf97767e",
+    "bridge_parameters": 100352,
+    "parent_mutated": false
+  },
+  "training": {
+    "observations": 64000,
+    "observations_per_capability_builder_view_stratum": 2000,
+    "recovery_batches": 476,
+    "recovery_observations_per_view_stratum": 119,
+    "autonomous_prefix_tokens": 32547,
+    "wall_seconds": 477.9469095999957,
+    "peak_cuda_allocated_bytes": 4030299648,
+    "teacher_present": false
+  },
+  "evaluation": {
+    "result_sha256": "ac4f2c3e492463e55b9ab719eb687ae8669e1fce4192ea33230626616855c200",
+    "outputs_sha256": "d951f95532968efd731c7e5af9c1074f7c3ea9873e9cac09d80b74499c0deae8",
+    "functional_v1_passes": 1381,
+    "functional_v2_passes": 1382,
+    "repetition_collapses_v2": 5,
+    "router_correct": "1400/1400",
+    "strong_parent_outputs_byte_exact": "1000/1000",
+    "candidate_minus_teacher_lower_95_v1": 0.08642857142857142
+  },
+  "weak_capabilities": {
+    "abstention": {"v1": 0.95, "wilson_lower_95": 0.8882495307680808, "v2_collapses": 4},
+    "coherence": {"v1": 0.95, "wilson_lower_95": 0.8882495307680808, "v2_collapses": 0},
+    "fluent_realization": {"v1": 0.97, "wilson_lower_95": 0.9154806357094724, "v2_collapses": 0},
+    "tone_control": {"v1": 0.97, "wilson_lower_95": 0.9154806357094724, "v2_collapses": 1}
+  },
+  "gates": {
+    "per_capability_functional": true,
+    "teacher_relative_noninferiority": true,
+    "router_exact": true,
+    "strong_parent_exact": true,
+    "critical_capability_wilson": false,
+    "zero_repetition_collapse": false
+  },
+  "interpretation": "Dual-view training causally repaired prompt-wrapper non-invariance and raised development quality from V484's 1198/1400 to 1381/1400. The remaining failures are narrow: five collapses and a one-observation-equivalent abstention confidence deficit. Four collapsed abstention outputs and the collapsed tone output already pass functional content before degeneration; the five nonpassing abstention outputs are safe semantic abstentions whose surface lacks the artifact's canonical negative-epistemic marker.",
+  "decision": "Close this exact training successor. Do not sweep training. Run one read-only capability-contract guard feasibility audit derived from V480 only: truncate before a fifth repeated 1-4-gram and prepend an artifact-derived canonical abstention clause only when an abstention-route output lacks every artifact-derived negative-epistemic marker. Require zero changes to strong outputs and no loss of any existing functional pass before authorizing an online implementation.",
+  "promotion_eligible": false,
+  "phase3_certified": false,
+  "final_test_accessed": false,
+  "claim_boundary": "Development-only near-pass and mechanism evidence; no promotion, runtime, final-test, Phase 3, or superiority claim."
+}
