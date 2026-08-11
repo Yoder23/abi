@@ -1,0 +1,49 @@
+{
+  "format": "abi-capability-compiler-phase3-host-supervision-verify-summary/1",
+  "version": 482,
+  "status": "PASS_INDEPENDENT_HOSTILE_ARTIFACT_VERIFICATION",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_HOST_SUPERVISION_VERIFY_PROTOCOL_V481.json",
+    "sha256": "1153ed504e1fec5b6831f59339fa107c9890abe05a5c41f7918971c4da6a999f"
+  },
+  "raw_result": {
+    "path": "results/abi_capability_compiler_phase3_host_supervision/verify_v482/result.json",
+    "sha256": "e338dffccedeb6e50695cea4bcb8c3469a3e844d0760217b83d523fabc1ea80e",
+    "evidence_sha256": "8654397b60f986c7d1990af559cf9c7f2380ad2da93f815f7bcdd2955b222a47"
+  },
+  "artifact": {
+    "sha256": "7b0af0bafda631f89dd054a3bd57da76885b3eaca7fe863474255bcf8978b34d",
+    "verified_records": 1280,
+    "unique_record_ids": 1280,
+    "unique_host_prompts": 827,
+    "strata": 16,
+    "records_per_stratum": 80
+  },
+  "accounting_reconciled": {
+    "unique_prompt_bytes": 135496,
+    "teacher_output_bytes": 120602,
+    "teacher_input_tokens": 108049,
+    "teacher_output_tokens": 40481,
+    "surface_normalized_records": 230,
+    "repair_attempt_records": 112,
+    "stored_logits": 0,
+    "stored_hidden_activations": 0,
+    "copied_source_parameters": 0
+  },
+  "adversarial_attacks_rejected": {
+    "extra_entry": true,
+    "manifest_mutation": true,
+    "record_mutation": true,
+    "accounting_mutation": true
+  },
+  "decision": "Authorize one preregistered host-conformant shared-residual recovery successor, warm-started from sealed V474, trained only on V480, balanced across all 16 weak capability-builder strata, with autonomous recovery applied to every stratum. Strong capabilities retain exact parent bypass. No nearby sweep is authorized.",
+  "teacher_model_loaded": false,
+  "neural_training_performed": false,
+  "artifact_mutated": false,
+  "final_test_accessed": false,
+  "promotion_eligible": false,
+  "phase3_certified": false,
+  "claim_boundary": "Independent artifact integrity and provenance verification only; neural quality, runtime, final-test, Phase 3, and superiority remain unproven."
+}
