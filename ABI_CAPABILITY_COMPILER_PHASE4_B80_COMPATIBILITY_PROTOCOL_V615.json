@@ -1,0 +1,50 @@
+{
+  "format": "abi-capability-compiler-phase4-b80-compatibility/1",
+  "protocol_id": "abi-capability-compiler-phase4-b80-compatibility-v615",
+  "status": "PREREGISTERED_READ_ONLY_B80_PARENT_BRIDGE_MATRIX",
+  "status_date": "2026-08-11",
+  "authorization": "ABI_CAPABILITY_COMPILER_PHASE4_SEED_CONSENSUS_RESULT_V613.json",
+  "objective": "Cross the three existing B80 V463 parents with the three existing uniform-exposure final bridges to attribute parent state, bridge state, and co-adaptation effects without training or constructing new weights.",
+  "base_lineage_protocol": "ABI_CAPABILITY_COMPILER_PHASE4_ABI_LINEAGE_PROTOCOL_V570.json",
+  "base_lineage_protocol_sha256": "50cd9abc83b584bf1682b57f606bbdcba75fbeda76eeeaa48edafbbc08e8505c",
+  "bootstrap_seed_base": 4615000,
+  "sources": [
+    {
+      "seed": 104729,
+      "parent": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed104729-v577/v463/model.safetensors", "sha256": "96f522b08dbdc4a5e9e16fdba99f157e62b908df9116220baaff88086970d3cf"},
+      "router": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed104729-v577/router/router.safetensors", "sha256": "d085305017f556c13b4da75947c30430e0ec0743170fe82543d267b1ef872be9"},
+      "bridge": {"path": "results/abi_capability_compiler_phase4_uniform_final_bridge/B80-seed104729-v595/v526/control_bridge.safetensors", "sha256": "be9ccb3a3e154a4f0d73c4befbd8bc48973cec4357bfba483ed9e44b26a6e8b3"},
+      "parent_outputs": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed104729-v577/v463_evaluation/development_outputs.jsonl", "sha256": "183162a87298b2105169ffd6f607f081c8c7e623b63ff28de00b190543c38627"},
+      "guard_artifact": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed104729-v577/budget_host_supervision.abicir", "sha256": "6bb0eb15c4d8dcc75ae9233ddbe3140b8f6dabceb06df7ddde3189ead307f5f3"},
+      "diagonal_result": {"path": "results/abi_capability_compiler_phase4_uniform_final_bridge/B80-seed104729-v595/result.json", "sha256": "95163f9417c3487fcfb079f6dce3281b6fd3f829c8722e147bb5915a3d1538c7"}
+    },
+    {
+      "seed": 130363,
+      "parent": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed130363-v581/v463/model.safetensors", "sha256": "b6c9f4ffa7d12b451b7e60544abeeae1381e37a04ee2197995e111bb290f8445"},
+      "router": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed130363-v581/router/router.safetensors", "sha256": "b0a3428f8a7079cf58aa81a20214fc9f14cc1e05b78f06c4eefafd8ad22d920c"},
+      "bridge": {"path": "results/abi_capability_compiler_phase4_uniform_final_bridge/B80-seed130363-v599/v526/control_bridge.safetensors", "sha256": "2dc2c5076c62805e75ae4b991b4ecbb75e40741ea8de8884a98923a5bd525114"},
+      "parent_outputs": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed130363-v581/v463_evaluation/development_outputs.jsonl", "sha256": "c76039df01245dfee254ad6ce5f09830a2313679d71369c6159104e2a1d7e43c"},
+      "guard_artifact": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed130363-v581/budget_host_supervision.abicir", "sha256": "69638ffbfa82c9e04cf8e25c424ba7c0b08978955f5b6a769c92975268b8bc12"},
+      "diagonal_result": {"path": "results/abi_capability_compiler_phase4_uniform_final_bridge/B80-seed130363-v599/result.json", "sha256": "33ac206e5f6870b1725c8f341b85529769f60be0debc9998412bb17e5c84fe2e"}
+    },
+    {
+      "seed": 155921,
+      "parent": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed155921-v585/v463/model.safetensors", "sha256": "77198edec9ea5b1978b66eec3ec18a47f845536b3221f8dd7256c2e5fd3cceea"},
+      "router": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed155921-v585/router/router.safetensors", "sha256": "bc1b81e7b9bcc4b0cefb16ef6b45c1d8f55e8900c369f0d601ba0f24a5bf59af"},
+      "bridge": {"path": "results/abi_capability_compiler_phase4_uniform_final_bridge/B80-seed155921-v603/v526/control_bridge.safetensors", "sha256": "71774b9836afd0e934eef754aeb119e6db2408bcd1c7751d4dce519bfc2333a0"},
+      "parent_outputs": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed155921-v585/v463_evaluation/development_outputs.jsonl", "sha256": "e3a180501d49462d8685f28053a0fc9b38a95402b0aecb833da40b997bcd4d7b"},
+      "guard_artifact": {"path": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed155921-v585/budget_host_supervision.abicir", "sha256": "5e49524f73c859158394b33b502b80ac2c547966d1e2246b85d5135899950d11"},
+      "diagonal_result": {"path": "results/abi_capability_compiler_phase4_uniform_final_bridge/B80-seed155921-v603/result.json", "sha256": "b08535b92f39a68c37b70f6193c7c7356a2a89568b216054ea899098e9c5da51"}
+    }
+  ],
+  "bindings": {
+    "abi/capability_compiler_phase4_b80_compatibility.py": "d38eab4119b93c07c7beca10e4bdf6f37afdc868cdcaa384b3d4b49249624d5f",
+    "tests/test_capability_compiler_phase4_b80_compatibility.py": "94b7b8b5cbeaea850a762447473d173b760c12a61719e16911c9d1bc3847fc0a",
+    "ABI_CAPABILITY_COMPILER_PHASE4_SEED_CONSENSUS_RESULT_V613.json": "36d75834540b307e117b065b942d637fe84a19fa3615125a4f195fc7782c86a4"
+  },
+  "training_authorized": false,
+  "model_construction_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "decision_rule": "Use the complete 3x3 matrix only to attribute main effects and parent-bridge interaction. It does not promote a cell, authorize checkpoint selection, or establish a frontier. Any architecture proposed afterward requires a new prospective protocol.",
+  "claim_boundary": "Read-only B80 component attribution only; no candidate promotion, minimum, runtime, matched-baseline, final-test, Phase 4 certificate, or superiority claim."
+}

@@ -6,7 +6,7 @@ Status date: 2026-08-11
 
 The ABI capability-compiler moonshot is **OPEN**.
 
-The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V614.json`.
+The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V617.json`.
 All Phase 3 machine endpoints now pass. The exact route-isolated checkpoint has
 three-seed causal replication, 1,393/1,400 autonomous quality with zero
 collapse on the selected seed, three byte-identical host initializations,
@@ -103,7 +103,9 @@ reaches 1,349/1,400 with zero collapse but misses per-capability quality.
 Exact routing and strong-parent identity show that averaging damages the
 weak-capability solution rather than the host interface. No averaging sweep is
 authorized. The next bounded step is a read-only B80 3x3 parent/bridge
-compatibility attribution using existing checkpoints.
+compatibility attribution using existing checkpoints. V615/V616 now seal the
+3x3 matrix: three diagonal cells are inherited, and exactly six off-diagonal
+read-only evaluations are authorized. No cell may be selected or promoted.
 
 ### Preserved historical mission snapshot
 
