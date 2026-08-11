@@ -22,7 +22,7 @@ LayerCake cake.
 Status date: 2026-08-11.
 
 The controlling machine-readable state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V635.json`. Phase 3 has completed and
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V643.json`. Phase 3 has completed and
 passed every currently required machine gate, but it is not unconditionally
 certified because the controlling campaign contract makes it depend on Phase
 2. Phase 2 has 21,000 immutable blinded rating rows and zero completed
@@ -48,8 +48,8 @@ not replace the three humans.
 - Phase 2: **MACHINE EVIDENCE COMPLETE; BLOCKED ON 21,000 JUDGMENTS FROM THREE
   INDEPENDENT HUMAN RATERS (0/21,000 FILLED)**.
 - Phase 3: **MACHINE EVIDENCE COMPLETE; BLOCKED BY THE PHASE 2 PREREQUISITE**.
-- Phase 4: **CONDITIONALLY OPEN; LEGACY HOST REJECTED; PRODUCT HANDOFF AUDIT
-  FAILED CLOSED; GENERIC HOST CONSTRUCT REQUIRED; NOT CERTIFIED**.
+- Phase 4: **CONDITIONALLY OPEN; EXACT V18 PRODUCT HANDOFF PASSES; STABLE
+  INFORMATION FRONTIER AND MATCHED BASELINES REMAIN; NOT CERTIFIED**.
 - Phases 5-8: **LOCKED**.
 
 The user has explicitly authorized conditional Phase 4 research while the
@@ -141,6 +141,20 @@ signed package. None of LayerCake's declared v2, v5, or v16 handoffs accepts
 those schemas unchanged. Do not relabel it. The next bounded work is a separate
 generic LayerCake construct plus ABI-side exact namespaced packaging; no Phase
 4 frontier training is authorized until package/runtime output identity passes.
+
+V636 through V642 close that prerequisite without changing historical
+evidence. The first signed v17 archive packaged the exact tensors but failed
+strict conformance before execution because its residual key schema differed;
+that package and failure are preserved. LayerCake independently certified the
+exact-schema `lc-direct-neural-core/18` host. ABI then built a separately signed
+253,117,431-byte v18 archive without training, reshaping, teacher loading, or
+tensor-value changes. On the RTX 3080 Laptop GPU it matched the immutable V526
+reference exactly on 1,400/1,400 prompts across output, original pre-guard
+output, token IDs, capability route, physical residual route, task route, and
+guard termination, with zero receiver learning. This proves product handoff,
+not a Phase 4 minimum. The next bounded frontier action is the already frozen
+B100 budget at the three registered seeds; final access and matched baselines
+remain closed until that ABI arm is resolved.
 
 The exact route-isolated endpoint scored 1,393/1,400 with zero repetition
 collapse at seed 240487 and passed all four same-lineage causal controls across

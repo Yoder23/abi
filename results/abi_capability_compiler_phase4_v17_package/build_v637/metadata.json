@@ -1,0 +1,51 @@
+{
+  "claim_boundary": "Exact development composite packaging only; output identity, quality, information minimum, final test, Phase 4, and superiority remain unproven.",
+  "components": {
+    "model": {
+      "parameters": 61655050,
+      "source_path": "results/abi_capability_compiler_phase3_token_substrate_conformance/candidate_v463/model.safetensors",
+      "source_sha256": "d354eee236c1153a92e3b2d05f806fb4238438aebd2c8a889ed9dcb8f1f192c8"
+    },
+    "residual": {
+      "parameters": 99840,
+      "source_path": "results/abi_capability_compiler_phase3_route_isolated/candidate_v526/control_bridge.safetensors",
+      "source_sha256": "1649e110338904f69fafc0f5ff110e2c8d99f4f8366eb133442fb4938fa3c390"
+    },
+    "router": {
+      "parameters": 1058040,
+      "source_path": "results/abi_capability_compiler_phase3_sparse_router/development_v45/R0-seed240045/router.safetensors",
+      "source_sha256": "cc1f384a49fdaad94d47c5feb4573dcc7eb688ac96ffd7bfffade811861acb48"
+    }
+  },
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase4-v17-package-result/1",
+  "interface": "lc-direct-neural-core/17",
+  "interface_sha256": "59d69acbe41417fc802e8a1ba559b29c3f64d760e498f4056864945eab367635",
+  "package": {
+    "bytes": 253117408,
+    "package_hash": "a9bc65f915fa21a886ad91cf3fbb6c6891c6e9d66c784c51af4a80b14f0337e0",
+    "path": "english_core_v17.cake",
+    "sha256": "e4c5df4b95f3f74975648e2f85b877c468fc958eca29051c6a244f15789551aa",
+    "tensor_payload_hash": "d19e254846544166dfaf814642d51fa2f1ba595404e8ac02fa43e69555440989"
+  },
+  "phase4_certified": false,
+  "protocol_sha256": "6e47f8aaaf28da515f65722c95c826dc266df5a54b839c0f7238e2fd3d8949fb",
+  "public_key": {
+    "key_id": "a925a6a3ac4f1bd18a28d707f8dd5b44",
+    "path": "public_key.pem",
+    "sha256": "c7c14d5eec5f340bd9c6199ddb5b63c03a9c3f18a806869b7c5fcba5d3d3a04c"
+  },
+  "quality_tested": false,
+  "receiver_training_steps": 0,
+  "source_tensor_values_changed": false,
+  "source_transformer_blocks": 0,
+  "status": "PASS_EXACT_COMPOSITE_PACKAGED",
+  "teacher_present": false,
+  "tensor_namespaces": {
+    "model": 82,
+    "residual": 4,
+    "router": 3
+  },
+  "total_parameters": 62812930,
+  "training_performed": false
+}

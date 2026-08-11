@@ -16,7 +16,7 @@ Status date: 2026-08-11
 
 **The ABI English-product moonshot is OPEN.**
 
-The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V635.json`.
+The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V643.json`.
 The route-isolated English endpoint now passes all registered Phase 3 machine
 gates: three paired training seeds and all A0-A4 causal controls, 1,393/1,400
 selected-seed autonomous quality with zero collapse, exact routing, three
@@ -133,6 +133,15 @@ composite plus a guard, not one signed LayerCake package. Existing v2, v5, and
 v16 handoffs reject its schemas unchanged. The next repair is a separately
 governed generic LayerCake host construct and exact ABI-side packaging; no
 frontier training is authorized until packaged-output identity passes.
+That prerequisite now passes under V642. ABI packaged the exact model, router,
+and explicit-route residual values into one signed LayerCake v18 archive and
+the real GPU host reproduced all 1,400 V526 development outputs exactly,
+including token IDs, automatic routes, physical residual routes, task routes,
+and guard decisions. No tensor was reshaped or retrained, and the teacher and
+source blocks are absent. Phase 4 is still not certified: B40 is
+FAIL/PASS/FAIL and B80 PASS/FAIL/PASS across seeds. The only bounded next ABI
+frontier is the already frozen B100 budget across the three registered seeds;
+matched LoRA/distillation work remains closed until that result is known.
 Phase 2 and Phase 3
 certificate statuses remain unchanged, final data remains unopened, and Phase
 5 is locked.

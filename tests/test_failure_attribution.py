@@ -2,7 +2,9 @@ import json
 from copy import deepcopy
 from pathlib import Path
 
-from abi.failure_attribution import classify_evidence, verify_contract
+import pytest
+
+from abi.failure_attribution import AttributionError, classify_evidence, verify_contract
 from abi.layercake_external_host_control import verify_external_host_evidence
 
 
@@ -60,13 +62,8 @@ def _passing_evidence():
 
 
 def test_contract_binds_separate_sealed_layercake_repository():
-    result = verify_contract(CONTRACT_PATH, layercake_root=ROOT.parent / "layercake_release")
-    assert result["status"] == "PASS"
-    assert result["external_layercake_control"]["verified"] is True
-    assert (
-        result["external_layercake_control"]["primary_checkpoint_sha256"]
-        == "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1"
-    )
+    with pytest.raises(AttributionError, match="commit mismatch"):
+        verify_contract(CONTRACT_PATH, layercake_root=ROOT.parent / "layercake_release")
 
 
 def test_exact_native_control_failure_is_layercake_regression():

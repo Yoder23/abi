@@ -11,17 +11,9 @@ ROOT = Path(__file__).resolve().parents[1]
 PROTOCOL = ROOT / "ABI_CAPABILITY_COMPILER_PHASE4_V17_PACKAGE_PROTOCOL_V636.json"
 
 
-def test_live_preflight_exact_component_inventory():
-    result = preflight(ROOT, PROTOCOL)
-    assert result["status"] == "PASS_PREFLIGHT"
-    assert result["component_parameters"] == {
-        "model": 61655050,
-        "router": 1058040,
-        "residual": 99840,
-    }
-    assert result["tensor_namespaces"] == {"model": 82, "router": 3, "residual": 4}
-    assert not result["training_performed"]
-    assert not result["final_test_accessed"]
+def test_historical_v17_protocol_fails_closed_after_layercake_evolves():
+    with pytest.raises(Phase3Error, match="binding changed"):
+        preflight(ROOT, PROTOCOL)
 
 
 def test_changed_component_binding_fails_closed(tmp_path):

@@ -6,7 +6,7 @@ Status date: 2026-08-11
 
 The ABI capability-compiler moonshot is **OPEN**.
 
-The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V635.json`.
+The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V643.json`.
 All Phase 3 machine endpoints now pass. The exact route-isolated checkpoint has
 three-seed causal replication, 1,393/1,400 autonomous quality with zero
 collapse on the selected seed, three byte-identical host initializations,
@@ -40,7 +40,7 @@ focused tests, including all three production-form dry runs, pass. See
 | 1 | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 | MACHINE + HANDOFF READY; 0/21,000 HUMAN PREFERENCES | `ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V554.json` |
 | 3 | MACHINE EVIDENCE COMPLETE; BLOCKED BY PHASE 2 | `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json` |
-| 4 | CONDITIONALLY OPEN; HANDOFF AUDIT FAILED CLOSED; GENERIC HOST CONSTRUCT REQUIRED | `ABI_CAPABILITY_COMPILER_PHASE4_PRODUCT_HANDOFF_AUDIT_RESULT_V634.json` |
+| 4 | CONDITIONALLY OPEN; V18 HANDOFF EXACT; STABLE FRONTIER UNPROVEN | `ABI_CAPABILITY_COMPILER_PHASE4_V18_OUTPUT_CONFORMANCE_RESULT_V642.json` |
 | 5-8 | LOCKED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` |
 
 V558 passed the physical archive and checkpoint-lineage audit without loading
@@ -128,6 +128,15 @@ guard; it is not one signed package, and no v2, v5, or v16 LayerCake handoff
 accepts it unchanged. Relabeling is prohibited. The next bounded repair is a
 generic construct-only LayerCake host contract and an ABI-side single-package
 build with exact runtime-output identity. Frontier training remains closed.
+
+V636-V642 now prove that handoff. The v17 package is preserved as a strict
+pre-execution schema failure. Its exact-tensor v18 successor is one signed
+253,117,431-byte archive and matches all 1,400 immutable V526 development rows
+and every bound output/route/guard field on GPU, with zero receiver learning.
+This reopens only the conditional information-frontier work. B40 remains
+FAIL/PASS/FAIL and B80 PASS/FAIL/PASS; the already frozen B100 budget is the
+only bounded continuation. Matched LoRA/distillation training remains closed
+until B100 resolves across all three registered seeds.
 
 ### Preserved historical mission snapshot
 
