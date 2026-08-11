@@ -1,0 +1,36 @@
+{
+  "format": "abi-capability-compiler-phase3-route-isolated/1",
+  "version": 525,
+  "status": "PREREGISTERED_SINGLE_ROUTE_ISOLATED_SUCCESSOR",
+  "status_date": "2026-08-11",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V524.json",
+  "historical_evidence_changed": false,
+  "final_test_access": "PROHIBITED",
+  "nearby_sweeps_authorized": false,
+  "objective": "Test whether physically isolated rank-16 capability experts recover the locked absolute English endpoint while making labels structurally causal, with lower installed parameters and one-quarter the active residual rank of V488.",
+  "base_control_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CONTROLS_REPAIR_PROTOCOL_V520.json",
+  "architecture": {
+    "physical_experts": 4,
+    "expert_rank": 16,
+    "experts_active_per_token": 1,
+    "shared_trainable_parameters": 1536,
+    "total_parameters": 99840,
+    "V488_total_parameters": 100352,
+    "active_rank_ratio_to_V488": 0.25,
+    "initialization": "Deterministically map V484 rank-64 channels [0:16], [16:32], [32:48], and [48:64] into the four disjoint experts; copy LayerNorm exactly; discard only the 512 noncausal route-scale/shift parameters."
+  },
+  "training": "Exactly the V487/V520 A0 seed, V480 artifact, dual views, 2000 steps, 64000 observations, 476 autonomous-recovery batches, optimizer, rate, and schedule.",
+  "candidate_output": "results/abi_capability_compiler_phase3_route_isolated/candidate_v526",
+  "evaluation_output": "results/abi_capability_compiler_phase3_route_isolated/evaluation_v526",
+  "decision_output": "results/abi_capability_compiler_phase3_route_isolated/decision_v526/result.json",
+  "decision_rule": "Run A0 only. It must pass every locked per-capability, critical, teacher-relative, zero-collapse, router, strong-path identity, and no-final-access gate. Only an A0 pass opens matched label-free, shuffled, bridge-only, and monolithic controls. Any A0 miss closes this exact architecture with no rank, initialization, rate, step, or schedule sweep.",
+  "bindings": {
+    "abi/capability_compiler_phase3_route_isolated.py": "30038aab6d2a3e961b22bf4958c0fe54f08860832bc10c6f496a83b39e7d118d",
+    "tests/test_capability_compiler_phase3_route_isolated.py": "785567bcf580f823671a687b151361589b7dcb6a104ec558e94a6cba38603906",
+    "ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CONTROLS_REPAIR_PROTOCOL_V520.json": "21239ef9010fb36d11f0fa83a00a37125a6507a543ab094243ee32eb8d0cd891",
+    "results/abi_capability_compiler_phase3_host_recovery_bridge/candidate_v484/host_recovery_bridge.safetensors": "e138b76714e0e6b3f012d4179b9351b8b6d8168921f2b876547c92f15de136c2",
+    "ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_CAPACITY_AUDIT_RESULT_V524.json": "65aa69079211a59cd87ad2ae9721c927c962184524b4588e31eb940010b2d07e"
+  },
+  "phase2_external_blocker": "21000 blinded judgments from three independent human raters remain unavailable and are not waived.",
+  "claim_boundary": "One development-only A0 successor; no control pass, runtime, final-test, Phase 3, minimum-information, or superiority claim."
+}
