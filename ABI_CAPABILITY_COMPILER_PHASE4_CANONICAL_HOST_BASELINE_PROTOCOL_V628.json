@@ -1,0 +1,21 @@
+{
+  "format": "abi-capability-compiler-phase4-canonical-host-baseline/1",
+  "protocol_id": "abi-capability-compiler-phase4-canonical-host-baseline-v628",
+  "status": "SEALED_READ_ONLY_CANONICAL_HOST_BASELINE",
+  "status_date": "2026-08-11",
+  "authorization": "ABI_CAPABILITY_COMPILER_PHASE4_B80_COMPATIBILITY_AUDIT_RESULT_V626.json",
+  "objective": "Measure the byte-immutable pre-acquisition LayerCake host on the locked ABI development suite so the next self-contained artifact is sized against observed capability deficits rather than inherited assumptions.",
+  "host_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_QUALIFIED_TRANSITION_CONTROL_PROTOCOL_V440.json",
+  "host_protocol_sha256": "367f9e24e5bb06719a7252670097e8d6cfaf64cb18f95b436b388abac303bec4",
+  "host_checkpoint_sha256": "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1",
+  "bootstrap_seed": 4628000,
+  "bindings": {
+    "abi/capability_compiler_phase4_canonical_host_baseline.py": "aacb707a2b530d2f1ff8f73acaf019e7cb70cd4dd1efff5988c89b50c0f00357",
+    "tests/test_capability_compiler_phase4_canonical_host_baseline.py": "c54366cb4b9488cd7ffc91df058984ca60c8eba5b347affdeebfd2422471114a",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B80_COMPATIBILITY_AUDIT_RESULT_V626.json": "78f1a341b89923988b9138273ac054a5b77b28db0dabedaf0754f2e0fb738f58"
+  },
+  "training_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "decision_rule": "Use the complete per-capability baseline only to determine which capabilities a future immutable-host artifact must correct. This evaluation does not promote the host or authorize artifact training until a separate protocol is sealed.",
+  "claim_boundary": "Read-only canonical-host development baseline; no artifact result, frontier, minimum, runtime, matched-baseline, final-test, Phase 4 certificate, or superiority claim."
+}
