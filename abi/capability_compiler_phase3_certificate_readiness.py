@@ -169,7 +169,10 @@ def execute(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
         json.dumps(payload, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode("utf-8")
     ).hexdigest()
     output.mkdir(parents=True)
-    _write_immutable(output / "result.json", result)
+    _write_immutable(
+        output / "result.json",
+        (json.dumps(result, indent=2, sort_keys=True, ensure_ascii=False) + "\n").encode("utf-8"),
+    )
     return result
 
 

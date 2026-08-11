@@ -1,0 +1,16 @@
+{
+  "format": "abi-capability-compiler-phase3-execution-incident/1",
+  "version": "516A",
+  "status_date": "2026-08-10",
+  "status": "INVALID_NO_EVIDENCE_WRITTEN_SERIALIZATION_TYPE_ERROR",
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_CERTIFICATE_READINESS_PROTOCOL_V515.json",
+  "failed_output_directory": "results/abi_capability_compiler_phase3_certificate_readiness/audit_v516",
+  "failure": "The immutable evidence writer requires bytes; the caller supplied a dictionary and raised TypeError before result.json was written.",
+  "verified_output_files_written": 0,
+  "scientific_decision_reached": false,
+  "repair_scope": "Serialize the already-computed result as deterministic indented JSON bytes. Do not change inputs, gates, statistics, decision rule, or final-test access.",
+  "replay_output_directory": "results/abi_capability_compiler_phase3_certificate_readiness/audit_v517",
+  "historical_evidence_changed": false,
+  "final_test_accessed": false,
+  "claim_boundary": "Execution incident only; it supplies no readiness evidence and no Phase 3 claim."
+}
