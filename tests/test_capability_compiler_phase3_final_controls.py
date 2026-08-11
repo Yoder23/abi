@@ -34,5 +34,15 @@ def test_derangement_has_no_identity_and_preserves_prompts():
     assert all(row["input_ids"][2:] != original["input_ids"][2:] for row, original in zip(changed, rows))
 
 
+def test_derangement_skips_an_offset_with_duplicate_response_content():
+    rows = [_row(index) for index in range(80)]
+    for index in range(0, 80, 2):
+        rows[index + 1]["input_ids"][2:] = rows[index]["input_ids"][2:]
+        rows[index + 1]["labels"][2:] = rows[index]["labels"][2:]
+    changed = _derange_targets(rows)
+    assert all(row["input_ids"][2:] != original["input_ids"][2:] for row, original in zip(changed, rows))
+    assert len({row["derangement_offset"] for row in changed}) == 1
+
+
 def test_system_matrix_is_locked():
     assert SYSTEMS == ("A1_label_free", "A2_shuffled", "A3_bridge_only", "A4_monolithic")

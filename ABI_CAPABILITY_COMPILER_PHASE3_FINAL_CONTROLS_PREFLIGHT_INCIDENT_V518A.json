@@ -1,0 +1,15 @@
+{
+  "format": "abi-capability-compiler-phase3-execution-incident/1",
+  "version": "518A",
+  "status_date": "2026-08-10",
+  "status": "INVALID_PREFLIGHT_TARGET_CONTENT_IDENTITIES_DETECTED",
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CONTROLS_PROTOCOL_V518.json",
+  "failure": "The fixed one-record target rotation paired some prompts with a different record carrying byte-identical response tokens, violating the zero-content-identity shuffled-control requirement.",
+  "neural_training_started": false,
+  "control_evidence_written": false,
+  "scientific_decision_reached": false,
+  "repair_scope": "Within each locked capability-builder-view stratum, deterministically select the first cyclic offset for which every response-token payload differs from its prompt's original target. Change no data, system, budget, metric, gate, or final-test rule.",
+  "historical_evidence_changed": false,
+  "final_test_accessed": false,
+  "claim_boundary": "Preflight incident only; no causal evidence or Phase 3 claim."
+}

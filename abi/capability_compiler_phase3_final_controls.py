@@ -71,10 +71,26 @@ def _json(path: Path) -> dict[str, Any]:
 
 
 def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str, dict[str, Any]]:
-    protocol = _json(path)
+    document = _json(path)
+    if document.get("format") == "abi-capability-compiler-phase3-final-controls-repair/1":
+        if document.get("status") != "PREREGISTERED_ZERO_IDENTITY_DERANGEMENT_REPAIR":
+            raise Phase3Error("final-control repair governance changed")
+        base_path = root / str(document["base_protocol"])
+        if not base_path.is_file() or sha256_file(base_path) != document["base_protocol_sha256"]:
+            raise Phase3Error("final-control base protocol changed")
+        protocol = copy.deepcopy(_json(base_path))
+        protocol["status"] = document["effective_status"]
+        protocol["version"] = document["version"]
+        protocol["control_outputs"] = copy.deepcopy(document["control_outputs"])
+        protocol["bindings"].update(document["binding_overrides"])
+    else:
+        protocol = document
     if (
         protocol.get("format") != FORMAT
-        or protocol.get("status") != "PREREGISTERED_FINAL_LINEAGE_MATCHED_CAUSAL_MATRIX"
+        or protocol.get("status") not in {
+            "PREREGISTERED_FINAL_LINEAGE_MATCHED_CAUSAL_MATRIX",
+            "PREREGISTERED_FINAL_LINEAGE_MATCHED_CAUSAL_MATRIX_ZERO_IDENTITY_REPAIR",
+        }
         or tuple(protocol.get("systems", ())) != SYSTEMS
         or protocol.get("final_test_access") != "PROHIBITED"
         or protocol.get("nearby_sweeps_authorized") is not False
@@ -118,8 +134,19 @@ def _derange_targets(rows: Sequence[Mapping[str, Any]]) -> list[dict[str, Any]]:
         values = sorted(grouped[key], key=lambda row: str(row["record_id"]))
         if len(values) != 80:
             raise Phase3Error("shuffled-target stratum depth changed")
+        offset = None
+        for candidate_offset in range(1, len(values)):
+            if all(
+                list(row["input_ids"][int(row["prompt_tokens"]):])
+                != list(values[(index + candidate_offset) % len(values)]["input_ids"][int(values[(index + candidate_offset) % len(values)]["prompt_tokens"]):])
+                for index, row in enumerate(values)
+            ):
+                offset = candidate_offset
+                break
+        if offset is None:
+            raise Phase3Error("no zero-identity target derangement exists")
         for index, row in enumerate(values):
-            target = values[(index + 1) % len(values)]
+            target = values[(index + offset) % len(values)]
             prompt_count = int(row["prompt_tokens"])
             target_prompt = int(target["prompt_tokens"])
             prompt_ids = list(row["input_ids"][:prompt_count])
@@ -131,6 +158,7 @@ def _derange_targets(rows: Sequence[Mapping[str, Any]]) -> list[dict[str, Any]]:
             changed["labels"] = [-100] * len(prompt_ids) + response_ids
             changed["response_tokens"] = len(response_ids)
             changed["deranged_target_record_id"] = str(target["record_id"])
+            changed["derangement_offset"] = offset
             result.append(changed)
     if len(result) != len(rows):
         raise Phase3Error("target derangement lost rows")
