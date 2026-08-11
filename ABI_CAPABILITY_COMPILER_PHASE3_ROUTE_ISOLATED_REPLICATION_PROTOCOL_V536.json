@@ -1,0 +1,53 @@
+{
+  "format": "abi-capability-compiler-phase3-route-isolated-replication-protocol/1",
+  "version": 536,
+  "status": "PREREGISTERED_THREE_PAIRED_SEED_REPLICATION",
+  "status_date": "2026-08-11",
+  "historical_evidence_changed": false,
+  "replaces_invalid_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_ISOLATED_REPLICATION_PROTOCOL_V535.json",
+  "invalid_protocol_incident": "V535 was rejected by preflight before analysis because its reducer binding contained one extra hexadecimal d. No evidence reduction ran.",
+  "final_test_access": "PROHIBITED",
+  "nearby_sweeps_authorized": false,
+  "replications": [
+    {
+      "training_seed": 240487,
+      "route_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_ISOLATED_CONTROLS_PROTOCOL_V527.json",
+      "decision": "results/abi_capability_compiler_phase3_route_isolated_controls/decision_v529/result.json",
+      "decision_sha256": "79ec47691895169e1065c62c63b6d5e78f4bda144b5a136b84115abd7dd016aa",
+      "evidence_sha256": "d1a09a5d2d07abd348288ebc6cf05b60894271b87dc8d1b187aa22e58939ae40"
+    },
+    {
+      "training_seed": 104729,
+      "route_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_ISOLATED_SEED104729_PROTOCOL_V532A.json",
+      "decision": "results/abi_capability_compiler_phase3_route_isolated_replication/seed104729/decision_v533/result.json",
+      "decision_sha256": "5f4ab4b6b7c9acf0fcfd544de8380ca96851b19afa87034ce16f63d7fe444b7a",
+      "evidence_sha256": "349eb812f041ad5b7d06d3c4470bfdec95a0de7ace0894950be14fba33355d06"
+    },
+    {
+      "training_seed": 130363,
+      "route_protocol": "ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_ISOLATED_SEED130363_PROTOCOL_V532B.json",
+      "decision": "results/abi_capability_compiler_phase3_route_isolated_replication/seed130363/decision_v534/result.json",
+      "decision_sha256": "acc85a025b6be0e2da84a119e26e9c883baf81ca19ace507347e067cccd2198e",
+      "evidence_sha256": "a3fe6ff2152eefa8a084fcbc1e94855e2ccbb076f759bdb56d731df67bcb2d13"
+    }
+  ],
+  "statistics": {
+    "method": "training-seed-and-capability-stratified prompt-paired percentile bootstrap",
+    "replicates": 10000,
+    "confidence": 0.95,
+    "gate": "Every per-seed paired gate and every hierarchical A0-minus-control lower 95% bound must be strictly positive."
+  },
+  "absolute_rule": "Every A0 must independently pass the locked per-capability, critical-capability, zero-collapse, exact-router, exact-strong-route, and teacher-noninferiority development gates.",
+  "bindings": {
+    "abi/capability_compiler_phase3_route_isolated_replication.py": "16acbbedd2a5bf0a5aada8246e9b066ddb53e7c52dd9d0947d209a16a568d9a3",
+    "tests/test_capability_compiler_phase3_route_isolated_replication.py": "6cae33ac829a056ff6cc4aff4d82d1165676a3dcb257f4d1dd7e79787611f048",
+    "ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_ISOLATED_CONTROLS_PROTOCOL_V527.json": "4a29fea122be9b6102715ff14beaae37ce5c6f051fa2debdd3de519b07c9e861",
+    "ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_ISOLATED_SEED104729_PROTOCOL_V532A.json": "630636adacaa267d824f640815db377374d17c254a7a11196a52123e7f89a0c0",
+    "ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_ISOLATED_SEED130363_PROTOCOL_V532B.json": "912aaf0de11d3054e66da9da76a05176b9886d2ef193dd3b056449160a36e601",
+    "results/abi_capability_compiler_phase3_route_isolated_controls/decision_v529/result.json": "79ec47691895169e1065c62c63b6d5e78f4bda144b5a136b84115abd7dd016aa",
+    "results/abi_capability_compiler_phase3_route_isolated_replication/seed104729/decision_v533/result.json": "5f4ab4b6b7c9acf0fcfd544de8380ca96851b19afa87034ce16f63d7fe444b7a",
+    "results/abi_capability_compiler_phase3_route_isolated_replication/seed130363/decision_v534/result.json": "acc85a025b6be0e2da84a119e26e9c883baf81ca19ace507347e067cccd2198e"
+  },
+  "phase2_external_blocker": "21000 blinded judgments from three independent human raters remain unavailable and are not waived.",
+  "claim_boundary": "Preregistered development replication reduction only; runtime, host replication, final test, Phase 3, minimum-information, and superiority remain open."
+}
