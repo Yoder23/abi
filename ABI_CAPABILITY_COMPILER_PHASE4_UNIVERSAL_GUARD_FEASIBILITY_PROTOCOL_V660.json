@@ -1,0 +1,29 @@
+{
+  "format": "abi-capability-compiler-phase4-universal-guard-feasibility/1",
+  "protocol_id": "abi-capability-compiler-phase4-universal-guard-feasibility-v660",
+  "status": "PREREGISTERED_READ_ONLY_UNIVERSAL_GUARD",
+  "status_date": "2026-08-11",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V659.json",
+  "objective": "Apply the unchanged V2 collapse guard to every cross-validated capability-bank output and determine whether it removes the one safety failure without reducing locked functional quality.",
+  "training_authorized": false,
+  "promotion_authorized": false,
+  "teacher_model_loading_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "selected_outputs": "results/abi_capability_compiler_phase4_capability_bank_feasibility/audit_v657/selected_outputs.jsonl",
+  "catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+  "source_functional_passes": 1384,
+  "critical_capabilities": ["prompt_grounding", "instruction_following", "abstention"],
+  "thresholds": {"per_capability_point": 0.9, "per_capability_lower": 0.85, "critical_point": 0.95, "critical_lower": 0.9},
+  "bindings": {
+    "abi/capability_compiler_phase4_universal_guard_feasibility.py": "c1ccd6e50c18080220923dcd02683da564afd1e6c995b543a8956d91cde71a47",
+    "tests/test_capability_compiler_phase4_universal_guard_feasibility.py": "de112b4ffc9afa093d8f1f2963ab4c7b614de86b0cbe92031628370d8a7f93d1",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V659.json": "78ebf880700d86067a670992d492ed2249f0f1d91121b5e1c0a1c60f6685c91d",
+    "ABI_CAPABILITY_COMPILER_PHASE4_CAPABILITY_BANK_FEASIBILITY_RESULT_V658.json": "cd943c95d1e5925da67a30fd961a5987433d4ff0ac0bd09f34173435f80a8127",
+    "results/abi_capability_compiler_phase4_capability_bank_feasibility/audit_v657/selected_outputs.jsonl": "e6ef5cebadde8f59ac4ad47684a1b63a9df8dcef137768390eb09674dca76963",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "abi/capability_compiler_phase3_contract_guard_v2_audit.py": "162be06730a9e4eab4012e5ae0c8ac15421ef875e83d753db9b144aba063c6e6",
+    "abi/capability_compiler_phase3_repetition_metric_audit.py": "3104a854e7df409695058e6fab057d743f63f2c8f848253265b073ab11df0f29"
+  },
+  "decision_rule": "A pass requires zero remaining collapse, no reduction below 1,384 functional passes, and every unchanged absolute and critical gate. It supports one future sparse capability-isolated design with the guard applied to all capabilities; it cannot promote the post-hoc bank.",
+  "claim_boundary": "Read-only universal-guard feasibility only; no trained candidate, stable frontier, minimum, matched baseline, final test, Phase 4 certificate, or superiority claim."
+}
