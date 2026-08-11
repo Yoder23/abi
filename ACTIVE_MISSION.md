@@ -6,7 +6,7 @@ Status date: 2026-08-11
 
 The ABI capability-compiler moonshot is **OPEN**.
 
-The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V607.json`.
+The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V610.json`.
 All Phase 3 machine endpoints now pass. The exact route-isolated checkpoint has
 three-seed causal replication, 1,393/1,400 autonomous quality with zero
 collapse on the selected seed, three byte-identical host initializations,
@@ -95,7 +95,9 @@ pair is complete, leaving B40 at FAIL/PASS/FAIL and B80 at PASS/FAIL/PASS,
 exactly unchanged from history. V606 rejects the uniform-exposure intervention
 and closes that branch. The next bounded design may only test one deterministic
 equal-weight consensus of the aligned seed states at B40 and B80, with no
-training or interpolation sweep.
+training or interpolation sweep. V608/V609 now seal and preflight the exact
+one-third construction. All 82 parent, three router, and four bridge tensor
+schemas align; only the registered B40 and B80 build/evaluations may run.
 
 ### Preserved historical mission snapshot
 

@@ -1,0 +1,24 @@
+{
+  "format": "abi-capability-compiler-phase4-seed-consensus-readiness/1",
+  "version": 609,
+  "status_date": "2026-08-11",
+  "status": "PASS_EQUAL_WEIGHT_CONSENSUS_PROTOCOL_SEALED_B40_B80_AUTHORIZED",
+  "historical_evidence_changed": false,
+  "protocol": {"path": "ABI_CAPABILITY_COMPILER_PHASE4_SEED_CONSENSUS_PROTOCOL_V608.json", "sha256": "21fab6ef1380dd21ad90f3549eeecc7656c7e05d5befd352a619178d46e699cd"},
+  "preflight": {
+    "status": "PASS_SEED_CONSENSUS_PREFLIGHT",
+    "budgets": ["B40", "B80"],
+    "source_states_per_component": 3,
+    "parent": {"tensors": 82, "parameters": 61655050, "schema_aligned": true},
+    "router": {"tensors": 3, "parameters": 1058040, "schema_aligned": true},
+    "bridge": {"tensors": 4, "parameters": 99840, "schema_aligned": true},
+    "training_performed": false,
+    "new_teacher_information": 0,
+    "final_test_accessed": false
+  },
+  "tests": {"passed": 2, "failed": 0},
+  "authorized_runs": ["B40_EQUAL_WEIGHT_CONSENSUS", "B80_EQUAL_WEIGHT_CONSENSUS"],
+  "decision_rule": "Pass only if B80 passes every unchanged gate and B40 fails at least one; otherwise reject without coefficient search or nearby averaging variants.",
+  "phase4_certified": false,
+  "claim_boundary": "Construction readiness only; no result, stable frontier, minimum, runtime, matched-baseline, final-test, Phase 4 certificate, or superiority claim."
+}

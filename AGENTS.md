@@ -22,7 +22,7 @@ LayerCake cake.
 Status date: 2026-08-11.
 
 The controlling machine-readable state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V607.json`. Phase 3 has completed and
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V610.json`. Phase 3 has completed and
 passed every currently required machine gate, but it is not unconditionally
 certified because the controlling campaign contract makes it depend on Phase
 2. Phase 2 has 21,000 immutable blinded rating rows and zero completed
@@ -112,6 +112,9 @@ random exposure as the cause. No nearby sampler sweep is allowed. The only
 authorized next design is one deterministic, equal-weight consensus of the
 aligned three seed states at B40 and B80, without training, coefficient search,
 new information, architecture growth, threshold changes, or final access.
+V608/V609 now seal and preflight that exact construction: all parent, router,
+and bridge tensor schemas align, and only one B40 and one B80 build/evaluation
+are authorized.
 
 The exact route-isolated endpoint scored 1,393/1,400 with zero repetition
 collapse at seed 240487 and passed all four same-lineage causal controls across
