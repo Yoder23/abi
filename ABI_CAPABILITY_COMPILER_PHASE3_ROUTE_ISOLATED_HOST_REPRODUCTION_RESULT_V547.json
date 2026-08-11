@@ -1,0 +1,20 @@
+{
+  "format": "abi-capability-compiler-phase3-route-isolated-host-reproduction-summary/1",
+  "version": 547,
+  "status": "PASS_THREE_HOST_EXACT_ROUTE_ISOLATED_REPRODUCTION",
+  "status_date": "2026-08-11",
+  "historical_evidence_changed": false,
+  "protocol": {"path": "ABI_CAPABILITY_COMPILER_PHASE3_ROUTE_ISOLATED_HOST_REPRODUCTION_PROTOCOL_V545.json", "sha256": "b492e81a437c352c5b8263e95f27894064607d18297cda689c8be4b0393e894c"},
+  "raw_decision": {"path": "results/abi_capability_compiler_phase3_route_isolated_host_reproduction/decision_v547/result.json", "sha256": "c18d6e8670825ee015b51e29d02e170a64d034d33623a63bf8447eccc40b8291", "evidence_sha256": "53c5936bb3ffd51b79d4e399d9690bbe08c3e97a4951f618839c03a6693c25f4"},
+  "reference": {"checkpoint_sha256": "1649e110338904f69fafc0f5ff110e2c8d99f4f8366eb133442fb4938fa3c390", "outputs_sha256": "c5b40380ab67083ab6d860af80fd1a6434089cc2a5ab0c1ae224912ac18879a1", "functional_passes_v1": 1393},
+  "fresh_hosts": [
+    {"host": "H1", "result_sha256": "14e2c71e67a457fc211bd36fc57aa4c3a8fd6ebff020e171da2bd8fb81d72c58", "evaluation_evidence_sha256": "37ca7aa43f91b9558891d2f60d7998e2b675b86d44dccdf9518a180db1dc120f"},
+    {"host": "H2", "result_sha256": "4f8828714735108414fe006c9e7efc87160643131be901d16e25af2ba400880a", "evaluation_evidence_sha256": "e37e315da29394c87cd2e2816706c0228a3c6c3d92b4e9c706455684cbaf9f24"}
+  ],
+  "gates": {"host_initializations": 3, "observations_per_host": 1400, "byte_identical_outputs": true, "same_checkpoint": true, "quality_exact": true, "zero_collapse": true, "router_exact": true, "strong_routes_exact": true, "hostile_mutations_rejected": 6, "final_test_not_accessed": true},
+  "passed": true,
+  "promotion_eligible": false,
+  "phase3_certified": false,
+  "phase2_external_blocker": "21000 blinded judgments from three independent human raters remain unavailable and are not waived.",
+  "claim_boundary": "Exact three-host development reproducibility pass; aggregate certificate audit and the external Phase 2 prerequisite remain open."
+}
