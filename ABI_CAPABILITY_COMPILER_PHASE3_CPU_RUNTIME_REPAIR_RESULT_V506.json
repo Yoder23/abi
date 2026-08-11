@@ -1,0 +1,66 @@
+{
+  "format": "abi-capability-compiler-phase3-matched-cpu-runtime-device-repair-summary/1",
+  "version": 506,
+  "status": "FAIL_ONLY_RSS_GATE_VALID_CPU_SPEED_AND_TTFT_PASS",
+  "status_date": "2026-08-10",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_CPU_RUNTIME_REPAIR_PROTOCOL_V505.json",
+    "sha256": "2481a627855c4504e87f29a3f34b50d87c829e7732bff5487f0554814c2981a2"
+  },
+  "raw_result": {
+    "path": "results/abi_capability_compiler_phase3_cpu_runtime/runtime_v506/result.json",
+    "sha256": "06ca579ceaa9fd8a0fd9fd702eac8ea34e4f31df5a0da8bdacd6bb7e9020f59a",
+    "base_result_sha256": "8e3928a8f2a67bce098a294601cabe33584ee33be5487b626073807cbd0d405c",
+    "raw_observations_sha256": "7eaaaac63effa72a1ad49465ba0729a258f7906ed5dd5fdab7e7a60aea9b9b6b"
+  },
+  "physical_device": {
+    "qwen_processor": "100% CPU",
+    "qwen_size_vram_bytes": 0,
+    "device_observations": 124,
+    "all_device_observations_cpu_only": true,
+    "qwen_loaded_size_bytes": 443327445
+  },
+  "candidate": {
+    "runtime_outputs_exact_to_v494": "120/120",
+    "median_bytes_per_second": 218.10485066276675,
+    "median_ttft_seconds": 0.07690385001478717,
+    "active_tensor_bytes": 254399508,
+    "peak_process_rss_delta_bytes": 475955200,
+    "guard_time_fraction": 0.0020800618218015394,
+    "parent_throughput_retention": 0.998670728839848
+  },
+  "optimized_transformer": {
+    "model": "qwen2.5:0.5b Q4_K_M",
+    "digest": "a8b0c51577010a279d933d14c2a8ab4b268079d44c5c8830c0a93900f1827c67",
+    "median_bytes_per_second": 20.53228624244891,
+    "median_ttft_seconds": 2.6109293000045,
+    "harness_reported_peak_active_rss_delta_bytes": 15904768,
+    "rss_measurement_defect": "The monitor matched process names containing ollama but the active model runner is named llama-server, so this delta excludes the runner and cannot decide the RSS gate."
+  },
+  "comparisons": {
+    "median_throughput_ratio": 10.622531172970493,
+    "paired_mean_ratio_bootstrap_lower_95": 8.744967095316424,
+    "median_ttft_ratio": 0.029454589220265222,
+    "active_tensor_bytes_less_than_qwen_loaded_size": true
+  },
+  "gates": {
+    "all_non_rss_gates": true,
+    "lower_peak_active_rss": false,
+    "overall": false
+  },
+  "post_failure_diagnostic": {
+    "preregistered": false,
+    "purpose": "identify the omitted process name and bound the next read-only audit only",
+    "qwen_processor": "100% CPU",
+    "llama_server_working_set_bytes_single_observation": 471076864,
+    "llama_server_private_bytes_single_observation": 545402880,
+    "candidate_rss_delta_to_single_qwen_runner_working_set_ratio": 1.010355712910959,
+    "certification_use": "PROHIBITED_UNTIL_PREREGISTERED_REPLICATION"
+  },
+  "decision": "Preserve the formal RSS failure and the monitor defect. Preregister one read-only CPU Qwen runner-memory attribution using the already fixed prompt, digest, num_gpu=0, llama-server process identity, repeated samples, and sealed candidate RSS. If the corrected comparison still fails by no more than 10%, authorize exactly one profiled runtime-memory optimization attempt; otherwise close this host runtime.",
+  "promotion_eligible": false,
+  "phase3_certified": false,
+  "final_test_accessed": false,
+  "claim_boundary": "Valid matched CPU speed, TTFT, active-tensor, quality-lineage, and retention pass with unresolved/formally failed RSS; no Phase 3 or superiority claim."
+}
