@@ -22,7 +22,7 @@ LayerCake cake.
 Status date: 2026-08-11.
 
 The controlling machine-readable state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V555.json`. Phase 3 has completed and
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V556.json`. Phase 3 has completed and
 passed every currently required machine gate, but it is not unconditionally
 certified because the controlling campaign contract makes it depend on Phase
 2. Phase 2 has 21,000 immutable blinded rating rows and zero completed
@@ -47,7 +47,14 @@ not replace the three humans.
 - Phase 2: **MACHINE EVIDENCE COMPLETE; BLOCKED ON 21,000 JUDGMENTS FROM THREE
   INDEPENDENT HUMAN RATERS (0/21,000 FILLED)**.
 - Phase 3: **MACHINE EVIDENCE COMPLETE; BLOCKED BY THE PHASE 2 PREREQUISITE**.
-- Phases 4-8: **LOCKED**.
+- Phase 4: **CONDITIONALLY OPEN FOR READ-ONLY LINEAGE AUDIT; NOT CERTIFIED**.
+- Phases 5-8: **LOCKED**.
+
+The user has explicitly authorized conditional Phase 4 research while the
+external Phase 2 gate remains pending. V556 opens only a read-only, end-to-end
+imported-information lineage audit. It does not waive Phase 2, unconditionally
+certify Phase 3, authorize Phase 4 training before a nested-budget protocol,
+open Phase 5, or permit final access or superiority claims.
 
 The exact route-isolated endpoint scored 1,393/1,400 with zero repetition
 collapse at seed 240487 and passed all four same-lineage causal controls across

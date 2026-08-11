@@ -1,0 +1,46 @@
+{
+  "format": "abi-capability-compiler-phase4-conditional-open/1",
+  "version": 556,
+  "status_date": "2026-08-11",
+  "status": "USER_AUTHORIZED_CONDITIONAL_PHASE4_RESEARCH_PREDECESSOR_CERTIFICATES_NOT_WAIVED",
+  "authorization": "The user explicitly directed that Phase 4 research proceed while Phase 2 remains dependent on unavailable human judges.",
+  "historical_evidence_changed": false,
+  "predecessor_state": {
+    "path": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V555.json",
+    "sha256": "e8c26f17601ee86bb0216e4ab38bc7ef00df077a2949e150c600d71349a12794",
+    "phase2": "BLOCKED_EXTERNAL_HUMAN_RATINGS_0_OF_21000_FILLED",
+    "phase3": "MACHINE_EVIDENCE_COMPLETE_NOT_UNCONDITIONALLY_CERTIFIED"
+  },
+  "phase3_machine_endpoint": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json",
+    "sha256": "0197bfde51833a09b701f1777478c9e03b3de77947ca9fc65e6c865fb658d3a3",
+    "machine_gates_complete": true,
+    "unconditional_certificate": false
+  },
+  "campaign_contract": {
+    "path": "ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json",
+    "sha256": "22ca4da553a5289ec4df870c23569daee345882dd7e559d1e558241dee3df5ab",
+    "phase4_exit_unchanged": "smallest passing tested budget and adjacent lower failure reproduced across three seeds under all fairness views"
+  },
+  "authorized_now": [
+    "read-only end-to-end imported-information lineage audit",
+    "identification of every teacher-derived artifact inherited by the Phase 3 endpoint",
+    "construction of a nested-budget Phase 4 protocol only after the lineage audit closes hidden-import confounds"
+  ],
+  "training_authorized_now": false,
+  "final_test_access": "PROHIBITED",
+  "prohibited": [
+    "claiming Phase 2 passed",
+    "claiming an unconditional Phase 3 certificate",
+    "calling conditional Phase 4 work a certified phase",
+    "varying only the final V480 payload while retaining full-V480 information in an initialization",
+    "selecting budgets from final data",
+    "calling a tested frontier a global minimum",
+    "starting Phase 5",
+    "claiming ABI superiority"
+  ],
+  "decision_rule": "First prove complete imported-information ancestry for the V551 endpoint. Preregister all nested budgets, seeds, fairness views, accounting, adaptive order, stop rules, and the final-data firewall before any Phase 4 training. Preserve Phase 2 and Phase 3 statuses unchanged.",
+  "phase4_status": "CONDITIONALLY_OPEN_READ_ONLY_LINEAGE_AUDIT",
+  "phase5_status": "LOCKED",
+  "claim_boundary": "User-authorized conditional Phase 4 research only; no predecessor waiver, training result, frontier, minimum, final-test result, phase certificate, or superiority claim."
+}
