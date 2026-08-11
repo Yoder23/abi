@@ -1,6 +1,6 @@
 import torch
 
-from abi.capability_compiler_phase3_route_isolated import PARAMETERS, RANK, RouteIsolatedResidual
+from abi.capability_compiler_phase3_route_isolated import CONTROL_SYSTEMS, PARAMETERS, RANK, RouteIsolatedResidual
 
 
 def test_route_isolated_parameter_and_shape_contract():
@@ -18,3 +18,7 @@ def test_legacy_rank64_partition_is_exactly_four_disjoint_slices():
     model.load_state_dict(state)
     assert torch.equal(model.down[2], state["down.weight"][32:48])
     assert torch.equal(model.up[3], state["up.weight"][:, 48:64])
+
+
+def test_control_matrix_is_locked():
+    assert CONTROL_SYSTEMS == ("A1_label_free", "A2_shuffled", "A3_bridge_only", "A4_monolithic")

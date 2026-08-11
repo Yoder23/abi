@@ -27,6 +27,7 @@ ROUTES = 4
 WIDTH = 768
 PARAMETERS = 99_840
 SYSTEM = "A0_route_isolated"
+CONTROL_SYSTEMS = ("A1_label_free", "A2_shuffled", "A3_bridge_only", "A4_monolithic")
 
 
 class RouteIsolatedResidual(nn.Module):
@@ -68,7 +69,7 @@ def _json(path: Path) -> dict[str, Any]:
 
 def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str, tuple[dict[str, Any], dict[str, Any]]]:
     protocol = _json(path)
-    if protocol.get("format") != FORMAT or protocol.get("status") != "PREREGISTERED_SINGLE_ROUTE_ISOLATED_SUCCESSOR" or protocol.get("final_test_access") != "PROHIBITED" or protocol.get("nearby_sweeps_authorized") is not False:
+    if protocol.get("format") != FORMAT or protocol.get("status") not in {"PREREGISTERED_SINGLE_ROUTE_ISOLATED_SUCCESSOR", "PREREGISTERED_ROUTE_ISOLATED_MATCHED_CONTROLS"} or protocol.get("final_test_access") != "PROHIBITED" or protocol.get("nearby_sweeps_authorized") is not False:
         raise Phase3Error("route-isolated governance changed")
     for relative, expected in protocol["bindings"].items():
         target = root / relative
@@ -76,16 +77,23 @@ def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str, tuple[di
             raise Phase3Error(f"route-isolated binding changed: {relative}")
     control_protocol, _, base = controls.load_protocol(root, root / protocol["base_control_protocol"])
     control_protocol = copy.deepcopy(control_protocol)
-    control_protocol["control_outputs"] = {SYSTEM: protocol["evaluation_output"]}
+    if protocol["status"] == "PREREGISTERED_ROUTE_ISOLATED_MATCHED_CONTROLS":
+        if tuple(protocol.get("systems", ())) != CONTROL_SYSTEMS:
+            raise Phase3Error("route-isolated control systems changed")
+        control_protocol["control_outputs"] = copy.deepcopy(protocol["control_outputs"])
+        control_protocol["A0_outputs"] = protocol["A0_outputs"]
+        control_protocol["A0_checkpoint_sha256"] = protocol["A0_checkpoint_sha256"]
+    else:
+        control_protocol["control_outputs"] = {SYSTEM: protocol["evaluation_output"]}
     return protocol, sha256_file(path), (control_protocol, base)
 
 
-def _patch(protocol_sha: str, bundle: tuple[dict[str, Any], dict[str, Any]]):
+def _patch(protocol_sha: str, bundle: tuple[dict[str, Any], dict[str, Any]], systems: tuple[str, ...]):
     control_protocol, base = bundle
     old = (controls.SharedWeakResidual, controls.EXPECTED_PARAMETERS, controls.SYSTEMS, controls.load_protocol)
     controls.SharedWeakResidual = RouteIsolatedResidual
     controls.EXPECTED_PARAMETERS = PARAMETERS
-    controls.SYSTEMS = (SYSTEM,)
+    controls.SYSTEMS = systems
     controls.load_protocol = lambda root, path: (control_protocol, protocol_sha, base)
     return old
 
@@ -106,20 +114,26 @@ def preflight(root: Path, protocol_path: Path) -> dict[str, Any]:
     return {"status": "PASS_PREFLIGHT", "protocol_sha256": protocol_sha, "parameters": count, "total_parameter_ratio_to_V488": count / 100352, "active_rank": RANK, "current_active_rank": 64, "active_rank_ratio": RANK / 64, "physical_experts": ROUTES, "shared_trainable_parameters": int(residual.norm.weight.numel() + residual.norm.bias.numel()), "final_test_accessed": False}
 
 
-def train(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
+def train(root: Path, protocol_path: Path, system: str, output: Path) -> dict[str, Any]:
     protocol, protocol_sha, bundle = load_protocol(root, protocol_path)
-    old = _patch(protocol_sha, bundle)
+    allowed = (SYSTEM,) if protocol["status"] == "PREREGISTERED_SINGLE_ROUTE_ISOLATED_SUCCESSOR" else CONTROL_SYSTEMS
+    if system not in allowed:
+        raise Phase3Error("route-isolated system is not authorized")
+    old = _patch(protocol_sha, bundle, allowed)
     try:
-        return controls.train(root, protocol_path, SYSTEM, output)
+        return controls.train(root, protocol_path, system, output)
     finally:
         _restore(old)
 
 
-def evaluate(root: Path, protocol_path: Path, candidate: Path, output: Path) -> dict[str, Any]:
+def evaluate(root: Path, protocol_path: Path, system: str, candidate: Path, output: Path) -> dict[str, Any]:
     protocol, protocol_sha, bundle = load_protocol(root, protocol_path)
-    old = _patch(protocol_sha, bundle)
+    allowed = (SYSTEM,) if protocol["status"] == "PREREGISTERED_SINGLE_ROUTE_ISOLATED_SUCCESSOR" else CONTROL_SYSTEMS
+    if system not in allowed:
+        raise Phase3Error("route-isolated system is not authorized")
+    old = _patch(protocol_sha, bundle, allowed)
     try:
-        return controls.evaluate(root, protocol_path, SYSTEM, candidate, output)
+        return controls.evaluate(root, protocol_path, system, candidate, output)
     finally:
         _restore(old)
 
@@ -152,9 +166,20 @@ def decide(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
     return result
 
 
+def decide_controls(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
+    protocol, protocol_sha, bundle = load_protocol(root, protocol_path)
+    if protocol["status"] != "PREREGISTERED_ROUTE_ISOLATED_MATCHED_CONTROLS":
+        raise Phase3Error("matched-control decision is not authorized")
+    old = _patch(protocol_sha, bundle, CONTROL_SYSTEMS)
+    try:
+        return controls.decide(root, protocol_path, output)
+    finally:
+        _restore(old)
+
+
 def main(argv: Iterable[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(); parser.add_argument("--protocol", required=True); sub = parser.add_subparsers(dest="command", required=True); sub.add_parser("preflight"); p=sub.add_parser("train"); p.add_argument("--output-dir", required=True); p=sub.add_parser("evaluate"); p.add_argument("--candidate-dir", required=True); p.add_argument("--output-dir", required=True); p=sub.add_parser("decide"); p.add_argument("--output", required=True); args=parser.parse_args(argv); root=Path.cwd().resolve(); protocol=root/args.protocol
-    result = preflight(root, protocol) if args.command=="preflight" else train(root, protocol, root/args.output_dir) if args.command=="train" else evaluate(root, protocol, root/args.candidate_dir, root/args.output_dir) if args.command=="evaluate" else decide(root, protocol, root/args.output)
+    parser = argparse.ArgumentParser(); parser.add_argument("--protocol", required=True); sub = parser.add_subparsers(dest="command", required=True); sub.add_parser("preflight"); p=sub.add_parser("train"); p.add_argument("--system", default=SYSTEM, choices=(SYSTEM, *CONTROL_SYSTEMS)); p.add_argument("--output-dir", required=True); p=sub.add_parser("evaluate"); p.add_argument("--system", default=SYSTEM, choices=(SYSTEM, *CONTROL_SYSTEMS)); p.add_argument("--candidate-dir", required=True); p.add_argument("--output-dir", required=True); p=sub.add_parser("decide"); p.add_argument("--output", required=True); p=sub.add_parser("decide-controls"); p.add_argument("--output", required=True); args=parser.parse_args(argv); root=Path.cwd().resolve(); protocol=root/args.protocol
+    result = preflight(root, protocol) if args.command=="preflight" else train(root, protocol, args.system, root/args.output_dir) if args.command=="train" else evaluate(root, protocol, args.system, root/args.candidate_dir, root/args.output_dir) if args.command=="evaluate" else decide(root, protocol, root/args.output) if args.command=="decide" else decide_controls(root, protocol, root/args.output)
     print(json.dumps(result, indent=2, sort_keys=True)); return 0
 
 
