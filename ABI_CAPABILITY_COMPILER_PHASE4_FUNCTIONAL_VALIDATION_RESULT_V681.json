@@ -1,0 +1,46 @@
+{
+  "format": "abi-capability-compiler-phase4-functional-validation-summary/1",
+  "version": 681,
+  "status_date": "2026-08-11",
+  "status": "FAIL_ACQUISITION_VALIDATION_COVERAGE",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_FUNCTIONAL_VALIDATION_PROTOCOL_V677.json",
+    "sha256": "68fc237cf95d6f2aeee561397bbd094b526803a986a243a56ec8ee613ccb3cf5"
+  },
+  "candidate": {
+    "path": "results/abi_capability_compiler_phase4_functional_validation/B80-seed130363-v679/candidate/selected_capability_residual.safetensors",
+    "sha256": "13f026b9f7f8435a0397bc55a8267eae7ae6c7915cf4ff14c84e96ac891728c1",
+    "bytes": 1462664,
+    "active_routes_per_token": 1,
+    "active_bridge_parameters_per_token": 26112
+  },
+  "validation": {
+    "train_records": 4470,
+    "untouched_validation_records": 1130,
+    "coherence_inherited_passes": "71/71",
+    "coherence_adapted_passes": "71/71",
+    "coherence_selected": "inherited",
+    "selection_used_development_labels": false,
+    "wall_time_observation": "approximately 116 minutes end-to-end due to serial two-system autonomous validation"
+  },
+  "raw_result": {
+    "path": "results/abi_capability_compiler_phase4_functional_validation/B80-seed130363-v680/evaluation/result.json",
+    "sha256": "1db8908a08e82a9bce29f8f21e3d968a98421d6ed47091382df42b393a298d46",
+    "evidence_sha256": "ba19e1651f8cb43d19f1137812128def701a858dda2857e788d630b4a1ba0f6c"
+  },
+  "machine_quality": {
+    "functional_passes": "1361/1400",
+    "coherence": "78/100",
+    "repetition_collapses_v2": 0,
+    "router_correct": "1400/1400",
+    "critical_gate": true,
+    "teacher_relative_lower_95": 0.07142857142857142,
+    "per_capability_gate": false
+  },
+  "adaptive_decision": "Cancel replication and adjacent-lower runs. Close Phase 1 acquisition prompts as a sufficient route-acceptance validation distribution.",
+  "authorized_next_diagnostic": "One read-only coverage audit of the already frozen targeted weak-capability and host-supervision artifacts, focused on whether they contain evaluator-bound coherence prompts that distinguish inherited from adapted routes without development access.",
+  "final_test_accessed": false,
+  "phase4_certified": false,
+  "claim_boundary": "Failed hard-seed architecture screen; no stable frontier, adjacent lower failure, runtime certification, matched baseline, final test, Phase 4 certificate, or superiority claim."
+}

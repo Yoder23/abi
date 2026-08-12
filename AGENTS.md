@@ -22,7 +22,7 @@ LayerCake cake.
 Status date: 2026-08-11.
 
 The controlling machine-readable state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V676.json`. Phase 3 has completed and
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V682.json`. Phase 3 has completed and
 passed every currently required machine gate, but it is not unconditionally
 certified because the controlling campaign contract makes it depend on Phase
 2. Phase 2 has 21,000 immutable blinded rating rows and zero completed
@@ -189,7 +189,14 @@ and tone routes. Response-CE selection is closed. One new architecture may be
 designed: exclude a deterministic validation partition before training, then
 accept routes only by autonomous functional validation on those untouched
 acquisition prompts. Seal its protocol and preflight before training; screen
-the hard B80 seed first. Phase 4 is not certified.
+the hard B80 seed first. V677 did so with a disjoint 4,470/1,130 split, but the
+held-out Phase 1 acquisition prompts rated inherited and adapted coherence
+71/71 each and therefore selected inherited. The frozen artifact then failed
+development at 1,361/1,400 solely because coherence remained 78/100. Phase 1
+acquisition prompts are closed as a sufficient validation distribution. Only
+one read-only coverage audit of the already frozen targeted weak-capability and
+host-supervision artifacts is authorized; no training or new extraction may
+precede it. Phase 4 is not certified.
 
 The exact route-isolated endpoint scored 1,393/1,400 with zero repetition
 collapse at seed 240487 and passed all four same-lineage causal controls across

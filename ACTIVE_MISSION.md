@@ -6,7 +6,7 @@ Status date: 2026-08-11
 
 The ABI capability-compiler moonshot is **OPEN**.
 
-The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V676.json`.
+The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V682.json`.
 All Phase 3 machine endpoints now pass. The exact route-isolated checkpoint has
 three-seed causal replication, 1,393/1,400 autonomous quality with zero
 collapse on the selected seed, three byte-identical host initializations,
@@ -40,7 +40,7 @@ focused tests, including all three production-form dry runs, pass. See
 | 1 | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 | MACHINE + HANDOFF READY; 0/21,000 HUMAN PREFERENCES | `ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V554.json` |
 | 3 | MACHINE EVIDENCE COMPLETE; BLOCKED BY PHASE 2 | `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json` |
-| 4 | CONDITIONALLY OPEN; ROUTE ISOLATION PASS; SAFE ACCEPTANCE SIGNAL UNRESOLVED | `ABI_CAPABILITY_COMPILER_PHASE4_ROUTE_LOSS_ATTRIBUTION_RESULT_V675.json` |
+| 4 | CONDITIONALLY OPEN; ROUTE ISOLATION PASS; VALIDATION COVERAGE UNRESOLVED | `ABI_CAPABILITY_COMPILER_PHASE4_FUNCTIONAL_VALIDATION_RESULT_V681.json` |
 | 5-8 | LOCKED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` |
 
 V558 passed the physical archive and checkpoint-lineage audit without loading
@@ -171,7 +171,14 @@ tone routes. Standard loss is closed as an acceptance signal. The only
 authorized successor must reserve its validation partition before training and
 select inherited versus adapted routes by autonomous functional validation on
 those untouched acquisition prompts. Its protocol and preflight must be sealed
-before the hard B80 seed is retrained.
+before the hard B80 seed is retrained. V677 completed that experiment with
+4,470 train and 1,130 untouched validation records. It failed because both
+inherited and adapted coherence passed all 71 held-out acquisition prompts, so
+the rule correctly retained inherited; development coherence then remained
+78/100 and the checkpoint scored 1,361/1,400. Every other gate passed. This
+localizes the next problem to validation coverage. Only a read-only audit of
+the frozen targeted weak-capability and host-supervision evidence may proceed;
+training and new teacher extraction remain prohibited.
 
 ### Preserved historical mission snapshot
 
