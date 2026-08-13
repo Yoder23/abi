@@ -1,0 +1,35 @@
+{
+  "format": "abi-capability-compiler-phase4-v19-frontier-audit/1",
+  "protocol_id": "abi-capability-compiler-phase4-v19-frontier-audit-v728",
+  "status": "PREREGISTERED_READ_ONLY_V19_FRONTIER_ELIGIBILITY",
+  "status_date": "2026-08-13",
+  "authorization": "ABI_CAPABILITY_COMPILER_PHASE4_V19_PAIRED_RETENTION_RESULT_V727.json",
+  "objective": "Determine exactly which frozen B40/B80 development rows are eligible for the separately certified v19 prompt-span predicate, without model inference or hypothetical promotion, before authorizing the minimum six-seed coherence-only rescreen.",
+  "model_inference_authorized": false,
+  "training_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+  "systems": [
+    {"budget":"B40","seed":104729,"lineage_dir":"results/abi_capability_compiler_phase4_abi_lineage/B40-seed104729-v575","outputs":"results/abi_capability_compiler_phase4_abi_lineage/B40-seed104729-v575/evaluation/development_outputs.jsonl"},
+    {"budget":"B80","seed":104729,"lineage_dir":"results/abi_capability_compiler_phase4_abi_lineage/B80-seed104729-v577","outputs":"results/abi_capability_compiler_phase4_abi_lineage/B80-seed104729-v577/evaluation/development_outputs.jsonl"},
+    {"budget":"B40","seed":130363,"lineage_dir":"results/abi_capability_compiler_phase4_abi_lineage/B40-seed130363-v579","outputs":"results/abi_capability_compiler_phase4_abi_lineage/B40-seed130363-v579/evaluation/development_outputs.jsonl"},
+    {"budget":"B80","seed":130363,"lineage_dir":"results/abi_capability_compiler_phase4_abi_lineage/B80-seed130363-v581","outputs":"results/abi_capability_compiler_phase4_abi_lineage/B80-seed130363-v581/evaluation/development_outputs.jsonl"},
+    {"budget":"B40","seed":155921,"lineage_dir":"results/abi_capability_compiler_phase4_abi_lineage/B40-seed155921-v583","outputs":"results/abi_capability_compiler_phase4_abi_lineage/B40-seed155921-v583/evaluation/development_outputs.jsonl"},
+    {"budget":"B80","seed":155921,"lineage_dir":"results/abi_capability_compiler_phase4_abi_lineage/B80-seed155921-v585","outputs":"results/abi_capability_compiler_phase4_abi_lineage/B80-seed155921-v585/evaluation/development_outputs.jsonl"}
+  ],
+  "bindings": {
+    "abi/capability_compiler_phase4_v19_frontier_audit.py": "2be61c63633b2b1d1191dc594999865776e7398d744555d2bdb050ad3730f643",
+    "tests/test_capability_compiler_phase4_v19_frontier_audit.py": "1d058ba97de5caf17c64b0b7dd467c23f054d20c6bbb9399f95303542f737343",
+    "ABI_CAPABILITY_COMPILER_PHASE4_V19_PAIRED_RETENTION_RESULT_V727.json": "7456d669c775fbe1e692021f4860aeb24d3b6c2f241ed4d08cd4af8facbe12be",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "../layercake_release/layercake_extensions/route_isolated_prompt_span_core_v19.py": "d9223820a3059586e256513e9b74f3ee924ee233e4dfd6422dd64c1e2086390f",
+    "results/abi_capability_compiler_phase4_abi_lineage/B40-seed104729-v575/evaluation/development_outputs.jsonl": "8818d24616e0275fa74a37063489256d9042841b960cf28d3f072b469a771fb1",
+    "results/abi_capability_compiler_phase4_abi_lineage/B80-seed104729-v577/evaluation/development_outputs.jsonl": "49c116fba763a721c343dd8bc640f70f3d5a846de25c1c1fc4e588610e8f7ab6",
+    "results/abi_capability_compiler_phase4_abi_lineage/B40-seed130363-v579/evaluation/development_outputs.jsonl": "3c198145cc1a296344f755afdfc6e2758d38c08a3a1e3649ea02d99bb9709755",
+    "results/abi_capability_compiler_phase4_abi_lineage/B80-seed130363-v581/evaluation/development_outputs.jsonl": "6796fc84ef236eb9ab009b9d6845bcc4e824140fa6338b71f53bf4ebfbb1804c",
+    "results/abi_capability_compiler_phase4_abi_lineage/B40-seed155921-v583/evaluation/development_outputs.jsonl": "6d6bd7ed33f58f6f85126211d1b765c8e2f59764a8c26d279902909f5d453ae3",
+    "results/abi_capability_compiler_phase4_abi_lineage/B80-seed155921-v585/evaluation/development_outputs.jsonl": "0a0f4abac105577ee3dd2011407368e4e36def13eccff80028d8dfb7c1e11d6b"
+  },
+  "decision_rule": "Pass only if all six registered systems are present, all 100 coherence prompts per system meet the exact v19 predicate, the B80 seed130363 failure includes exactly its 22 measured coherence misses in scope, non-coherence evidence is untouched, and no model inference, training, or final access occurs. Hypothetical upper scores do not count as results.",
+  "claim_boundary": "Read-only v19 predicate eligibility only; hypothetical upper scores are not measured quality and no frontier or Phase 4 claim is made."
+}
