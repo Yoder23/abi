@@ -1,0 +1,21 @@
+{
+  "format":"abi-capability-compiler-phase4-v19-refined-candidate-screen-summary/1",
+  "version":750,
+  "status_date":"2026-08-13",
+  "status":"FAIL_B60_SEED104729_ONE_NONCOHERENCE_COLLAPSE",
+  "historical_evidence_changed":false,
+  "protocol":{"path":"ABI_CAPABILITY_COMPILER_PHASE4_V19_B60_SEED104729_SCREEN_REPAIR_PROTOCOL_V748.json","sha256":"9806b4ed652edcbb208cc57e1563585509d613654cd30afd34ce475625bad645"},
+  "raw_result":{"path":"results/abi_capability_compiler_phase4_v19_refined_candidate_screen/B60-seed104729-v749/result.json","sha256":"a0e685e81ce0af2e459df40503fdec615e219b89b1b32627521e3552e1acf04b","evidence_sha256":"d334b56cdacbde2f8e827b2fdff6c7edb74ac552ed0841555e6a6991bbee1ee5"},
+  "historical_screen":{"functional_passes":1364,"coherence_passes":87,"repetition_collapses":1},
+  "v19_screen":{"functional_passes":1377,"coherence_passes":100,"repetition_collapses":1,"per_capability_quality":"PASS","critical_quality":"PASS","teacher_relative_lower_95":0.08357142857142857,"routing":"1400/1400","strong_identity":"1000/1000","pointer_rows":"100/100","package_verification":"PASS","machine_gates":"FAIL"},
+  "limiting_factor":"One preserved supplied_text_summarization repetition collapse outside the coherence-only v19 execution path.",
+  "imported_information":{"unique_source_attempts":5911,"authoritative_teacher_output_tokens":181070,"record_memberships":6168},
+  "receiver_training_steps":0,
+  "receiver_calibration_runs":0,
+  "teacher_model_loaded":false,
+  "final_test_accessed":false,
+  "decision":"B60 seed104729 fails the immutable zero-collapse gate. V19 completely repairs its coherence miss but cannot erase the bound non-coherence collapse. The preregistered all-three-seed B60 matrix must continue before the B60/B70 branch decision.",
+  "authorized_next_action":"Run the unchanged clean-start B60 lineage at seed130363, then apply the same v19 candidate screen. Do not change the guard, architecture, thresholds, budget, or stage compute.",
+  "phase4_certified":false,
+  "claim_boundary":"One B60 seed development failure only. No B60 three-seed conclusion, refined frontier, minimum, matched baseline, final test, Phase 4, or superiority claim."
+}
