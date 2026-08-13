@@ -16,7 +16,7 @@ Status date: 2026-08-13
 
 **The ABI English-product moonshot is OPEN.**
 
-The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V700.json`.
+The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V705.json`.
 The route-isolated English endpoint now passes all registered Phase 3 machine
 gates: three paired training seeds and all A0-A4 causal controls, 1,393/1,400
 selected-seed autonomous quality with zero collapse, exact routing, three
@@ -197,6 +197,12 @@ that result. One evaluator-identical cursor-semantics repair may run on the
 unchanged frozen outputs before any host-copy or ABI-ordering claim. Pointer
 design, new inference, training, candidate construction, and final access are
 still closed.
+The exact evaluation-only repair now validates the attribution: all 243
+adapted failures and all 304 inherited failures omit or corrupt at least one
+prompt label, while both routes order correctly whenever all three labels are
+present. V704 opens one generic evaluator-blind prompt-span pointer feasibility
+diagnostic. That harness can specify a LayerCake host requirement, but it is
+not an ABI artifact, a repaired LayerCake product, or a Phase 4 pass.
 Phase 2 and Phase 3
 certificate statuses remain unchanged, final data remains unopened, and Phase
 5 is locked.

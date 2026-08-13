@@ -228,6 +228,16 @@ implement the cursor semantics of the locked evaluator and rerun on the same
 suite and outputs. No pointer design, inference, training, candidate
 construction, final access, or promotion is authorized first.
 
+V701/V703 repaired only that evaluator mismatch and reran the unchanged frozen
+outputs. The corrected result localizes the boundary exactly: all 243 adapted
+failures and all 304 inherited failures omit or corrupt at least one exact
+prompt-derived label; both systems order correctly on every row where all
+three labels survive. V704 permits one generic, evaluator-blind bracketed-span
+pointer feasibility protocol as a host-interface diagnostic. ABI must not
+present that harness as an acquired artifact or silently modify LayerCake from
+this repository. Training, candidate construction, final access, and promotion
+remain prohibited.
+
 The exact route-isolated endpoint scored 1,393/1,400 with zero repetition
 collapse at seed 240487 and passed all four same-lineage causal controls across
 three paired training seeds. Its exact fully CPU runtime is 12.835x the pinned

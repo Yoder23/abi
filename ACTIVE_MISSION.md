@@ -6,7 +6,7 @@ Status date: 2026-08-13
 
 The ABI capability-compiler moonshot is **OPEN**.
 
-The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V700.json`.
+The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V705.json`.
 All Phase 3 machine endpoints now pass. The exact route-isolated checkpoint has
 three-seed causal replication, 1,393/1,400 autonomous quality with zero
 collapse on the selected seed, three byte-identical host initializations,
@@ -40,7 +40,7 @@ focused tests, including all three production-form dry runs, pass. See
 | 1 | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 | MACHINE + HANDOFF READY; 0/21,000 HUMAN PREFERENCES | `ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V554.json` |
 | 3 | MACHINE EVIDENCE COMPLETE; BLOCKED BY PHASE 2 | `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json` |
-| 4 | CONDITIONALLY OPEN; TAXONOMY REPAIR REQUIRED | `ABI_CAPABILITY_COMPILER_PHASE4_METAMORPHIC_FAILURE_TAXONOMY_RESULT_V699.json` |
+| 4 | CONDITIONALLY OPEN; HOST IDENTIFIER-COPY BOTTLENECK LOCALIZED | `ABI_CAPABILITY_COMPILER_PHASE4_METAMORPHIC_FAILURE_TAXONOMY_REPAIR_RESULT_V704.json` |
 | 5-8 | LOCKED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` |
 
 V558 passed the physical archive and checkpoint-lineage audit without loading
@@ -205,6 +205,14 @@ rows. V699 invalidates the provisional attribution. Exactly one evaluation-only
 repair may rerun the unchanged suite and outputs with evaluator-identical
 semantics. No pointer design, inference, training, expected-answer selection,
 candidate construction, final access, or promotion is authorized first.
+
+The evaluator-identical V701 repair is complete on the unchanged outputs. All
+243 adapted failures and all 304 inherited failures are exact-copy failures;
+both routes order correctly whenever every label survives. V704 authorizes one
+generic evaluator-blind prompt-span pointer feasibility diagnostic to specify
+the host feature that could remove this boundary. The diagnostic cannot be
+called ABI acquisition, integrated into LayerCake from this repository,
+trained, constructed as a candidate, or promoted.
 
 ### Preserved historical mission snapshot
 
