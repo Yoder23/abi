@@ -1,0 +1,44 @@
+{
+  "format": "abi-capability-compiler-phase4-v19-package-summary/1",
+  "version": 713,
+  "status_date": "2026-08-13",
+  "status": "PASS_EXACT_V18_PAYLOAD_REPACKAGED_FOR_V19",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_V19_PACKAGE_PROTOCOL_V711.json",
+    "sha256": "ef890618bce4edd94eb188730a9fe489cea44325de274c70b4bf80f1dc1f1767"
+  },
+  "source": {
+    "path": "results/abi_capability_compiler_phase4_v18_package/build_v639/english_core_v18.cake",
+    "archive_sha256": "64ba21f0d3d9896205ea04bddbb39386811ea126b96919c06c517663ab66c8a3",
+    "package_hash": "4f7689f71d9bdf4b8a55025389974aebdc40e70a8da781186818383e6a73b4a3",
+    "tensor_payload_hash": "d19e254846544166dfaf814642d51fa2f1ba595404e8ac02fa43e69555440989"
+  },
+  "package": {
+    "path": "results/abi_capability_compiler_phase4_v19_package/build_v712/english_core_v19.cake",
+    "sha256": "dca5d0428d6174ec5f33f3ec74b162283ef79e9d54393c8b9b88530dac8d29ad",
+    "bytes": 253117978,
+    "package_hash": "a3cb8f7aef74a53e7fc8d9597f8cc67fd8965f8d6d23a45245152b131f7a9c11",
+    "tensor_payload_hash": "d19e254846544166dfaf814642d51fa2f1ba595404e8ac02fa43e69555440989",
+    "metadata_sha256": "69570e91807d9a27fd7153ca15f3fa8fe0d5b2d5a6ef6a657beb46ddefb6d1d7",
+    "public_key_sha256": "c7c14d5eec5f340bd9c6199ddb5b63c03a9c3f18a806869b7c5fcba5d3d3a04c"
+  },
+  "interface": "lc-direct-neural-core/19",
+  "interface_sha256": "3592565074037138585bc10d1ef09b28459d0688226f5ca2991857d094abe1b8",
+  "tensor_count": 89,
+  "total_parameters": 62812930,
+  "tensor_payload_bytes_identical": true,
+  "tensor_values_identical": true,
+  "architecture_unchanged": true,
+  "source_tensor_values_changed": false,
+  "receiver_training_steps": 0,
+  "receiver_calibration_runs": 0,
+  "training_performed": false,
+  "teacher_present": false,
+  "source_transformer_blocks": 0,
+  "final_test_accessed": false,
+  "decision": "The already signed four-route Phase 3 endpoint has been repackaged for v19 with cryptographically identical safetensors payload bytes and torch-exact tensor values. This is a manifest/interface transition only and does not assert that this endpoint reproduces the later 14-route adapted pointer diagnostic.",
+  "next_action": "Preregister and execute one same-package screen: exact ordinary-output conformance on all 1,400 locked development prompts, then the frozen 400-prompt metamorphic suite on CPU and CUDA. If the four-route endpoint fails prospective quality, preserve the failure and separately specify the 14-route artifact/host requirement.",
+  "phase4_certified": false,
+  "claim_boundary": "Exact v18-payload-to-v19 repackaging only; no output identity, prospective quality, runtime, stable frontier, matched baseline, final test, Phase 4 certificate, or ABI superiority claim."
+}
