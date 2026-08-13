@@ -1,0 +1,21 @@
+{
+  "format":"abi-capability-compiler-phase4-v19-refined-candidate-screen-summary/1",
+  "version":760,
+  "status_date":"2026-08-13",
+  "status":"PASS_B60_SEED155921_V19_MACHINE_GATES",
+  "historical_evidence_changed":false,
+  "protocol":{"path":"ABI_CAPABILITY_COMPILER_PHASE4_V19_B60_SEED155921_SCREEN_PROTOCOL_V758.json","sha256":"5a9bd51cf8eb552eb02157855429bd2327ddfa44d6fabaeea1de4e74f34ba4b3"},
+  "raw_result":{"path":"results/abi_capability_compiler_phase4_v19_refined_v19_screen/B60-seed155921-v759/result.json","sha256":"f59c3985b2342f04d29fd097f5196eeb54606cd4b762765761c2bf2a3e161ef6","evidence_sha256":"3c87a17a3bcf0f273480967aa14ff44831725f3019c4a1a79afb4ea563fd3bdc"},
+  "historical_screen":{"functional_passes":1376,"coherence_passes":92,"repetition_collapses":0},
+  "v19_screen":{"functional_passes":1384,"coherence_passes":100,"repetition_collapses":0,"all_quality_gates":"PASS","teacher_relative_lower_95":0.08928571428571429,"routing":"1400/1400","strong_identity":"1000/1000","pointer_rows":"100/100","package_verification":"PASS","machine_gates":"PASS"},
+  "imported_information":{"unique_source_attempts":5911,"authoritative_teacher_output_tokens":181070,"record_memberships":6168},
+  "receiver_training_steps":0,
+  "receiver_calibration_runs":0,
+  "teacher_model_loaded":false,
+  "final_test_accessed":false,
+  "b60_three_seed_matrix":{"seed104729":"FAIL_ZERO_COLLAPSE","seed130363":"PASS","seed155921":"PASS","unanimous":false},
+  "decision":"B60 seed155921 passes every v19 development machine gate, closing B60 as fail/pass/pass. The preregistered V740 mixed-result rule stops refinement without a minimum and prohibits B50/B70.",
+  "authorized_next_action":"Independently verify the closed B60 matrix and its stop-rule application. Do not run B50, B70, a matched baseline, or final-test material under this lineage.",
+  "phase4_certified":false,
+  "claim_boundary":"B60 is mixed across three seeds. B80 remains a verified stable sufficient upper bound; no minimum, matched baseline, final test, Phase 4, or superiority claim."
+}
