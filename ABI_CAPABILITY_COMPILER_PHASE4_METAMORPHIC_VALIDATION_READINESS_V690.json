@@ -1,0 +1,33 @@
+{
+  "format": "abi-capability-compiler-phase4-metamorphic-validation-readiness/1",
+  "version": 690,
+  "status_date": "2026-08-13",
+  "status": "PASS_MODEL_BLIND_METAMORPHIC_SUITE_BUILD",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_METAMORPHIC_VALIDATION_BUILD_PROTOCOL_V688.json",
+    "sha256": "f2d6d3b250edd0f843aa283a70285af535b7a4664c6833a2d7cba6e7adad0573"
+  },
+  "manifest": {
+    "path": "results/abi_capability_compiler_phase4_metamorphic_validation/suite_v689/manifest.json",
+    "sha256": "5ed253dd7f8f981460c3d6b03f3ec9f3e591ef5e19d26337b75c009c52b3978a",
+    "evidence_sha256": "152d71dfdd0178cdf6a577dcabb17e77a8efc4e8d19d8654673c8f4ec3eb059d"
+  },
+  "suite": {
+    "path": "results/abi_capability_compiler_phase4_metamorphic_validation/suite_v689/suite.jsonl",
+    "sha256": "d4c3206b306484eca765db51f47abb2ff833e32a0b3b6e1559ca7c6ed471b367",
+    "bytes": 301940,
+    "records": 400,
+    "namespaces": 10,
+    "event_families": 4
+  },
+  "governed_rows_checked": 38780,
+  "prompt_hash_overlap": 0,
+  "evaluator_hash_overlap": 0,
+  "system_inference_performed": false,
+  "teacher_model_loaded": false,
+  "training_performed": false,
+  "final_outputs_accessed": false,
+  "authorized_next_work": "Seal and preflight one hash-bound read-only paired audit of inherited versus already trained adapted coherence under the analytic rule frozen in V688.",
+  "claim_boundary": "Model-blind suite readiness only; no route comparison, candidate construction, stable frontier, matched baseline, final test, Phase 4 certificate, or superiority claim."
+}

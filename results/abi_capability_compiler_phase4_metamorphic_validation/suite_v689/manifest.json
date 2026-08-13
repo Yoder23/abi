@@ -1,0 +1,53 @@
+{
+  "claim_boundary": "Model-blind validation materialization only; no route comparison, candidate construction, promotion, final test, Phase 4 certificate, or superiority claim.",
+  "evidence_sha256": "152d71dfdd0178cdf6a577dcabb17e77a8efc4e8d19d8654673c8f4ec3eb059d",
+  "final_outputs_accessed": false,
+  "format": "abi-capability-compiler-phase4-metamorphic-validation-manifest/1",
+  "gates": {
+    "evaluator_hash_disjoint": true,
+    "expected_depth": true,
+    "four_families": true,
+    "no_final_output_access": true,
+    "no_system_inference": true,
+    "no_teacher_outputs": true,
+    "no_training_eligible_rows": true,
+    "prompt_hash_disjoint": true,
+    "ten_namespaces": true,
+    "unique_evaluators": true,
+    "unique_prompts": true
+  },
+  "governed_inventory": {
+    "host_supervision": 1280,
+    "phase1_adversarial": 700,
+    "phase1_domain_isolation": 400,
+    "phase1_ir": 7000,
+    "phase1_probes": 12600,
+    "targeted_ir": 7000,
+    "targeted_probes": 9800
+  },
+  "protocol_sha256": "f2d6d3b250edd0f843aa283a70285af535b7a4664c6833a2d7cba6e7adad0573",
+  "records": 400,
+  "records_per_family": {
+    "0": 100,
+    "1": 100,
+    "2": 100,
+    "3": 100
+  },
+  "records_per_namespace": {
+    "N020": 40,
+    "N120": 40,
+    "N220": 40,
+    "N320": 40,
+    "N420": 40,
+    "N520": 40,
+    "N620": 40,
+    "N720": 40,
+    "N820": 40,
+    "N920": 40
+  },
+  "status": "PASS_MODEL_BLIND_METAMORPHIC_SUITE_BUILD",
+  "suite_sha256": "d4c3206b306484eca765db51f47abb2ff833e32a0b3b6e1559ca7c6ed471b367",
+  "system_inference_performed": false,
+  "teacher_model_loaded": false,
+  "training_performed": false
+}
