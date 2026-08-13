@@ -1,0 +1,16 @@
+{
+  "format":"abi-capability-compiler-phase4-v19-refined-candidate-screen-summary/1",
+  "version":755,"status_date":"2026-08-13",
+  "status":"PASS_B60_SEED130363_V19_MACHINE_GATES",
+  "historical_evidence_changed":false,
+  "protocol":{"path":"ABI_CAPABILITY_COMPILER_PHASE4_V19_B60_SEED130363_SCREEN_PROTOCOL_V753.json","sha256":"983b7a7e43737b8128e2507e41ff46feed36cb773736ed899411937a78718b9f"},
+  "raw_result":{"path":"results/abi_capability_compiler_phase4_v19_refined_candidate_screen/B60-seed130363-v754/result.json","sha256":"9f297f040e95407a5aa24f7e2c8488c0238e69907e19bdf7c2c1f3cc3fb7686b","evidence_sha256":"b137fed251d6b1f7a62a7902d87510d43b1781b513d17cb4bca97a108748c571"},
+  "historical_screen":{"functional_passes":1374,"coherence_passes":84,"repetition_collapses":0},
+  "v19_screen":{"functional_passes":1390,"coherence_passes":100,"repetition_collapses":0,"all_quality_gates":"PASS","teacher_relative_lower_95":0.09357142857142857,"routing":"1400/1400","strong_identity":"1000/1000","pointer_rows":"100/100","package_verification":"PASS","machine_gates":"PASS"},
+  "imported_information":{"unique_source_attempts":5911,"authoritative_teacher_output_tokens":181070,"record_memberships":6168},
+  "receiver_training_steps":0,"receiver_calibration_runs":0,"teacher_model_loaded":false,"final_test_accessed":false,
+  "decision":"B60 seed130363 passes every v19 development machine gate. Together with seed104729 failure, B60 is already non-unanimous; seed155921 remains required to close the preregistered three-seed matrix.",
+  "authorized_next_action":"Run B60 seed155921 through the unchanged V744 clean-start lineage and identical v19 post-screen. Do not run B50 or B70.",
+  "phase4_certified":false,
+  "claim_boundary":"One B60 seed pass in a currently mixed matrix. No minimum, matched baseline, final test, Phase 4, or superiority claim."
+}

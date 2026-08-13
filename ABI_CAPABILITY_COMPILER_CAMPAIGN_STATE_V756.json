@@ -1,0 +1,11 @@
+{
+  "format":"abi-capability-compiler-campaign-state/1","version":756,"status_date":"2026-08-13","historical_evidence_changed":false,
+  "phase0":"COMPLETE","phase1":"COMPLETE","phase2":"MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS_0_OF_21000_FILLED","phase3":"MACHINE_EVIDENCE_COMPLETE_NOT_UNCONDITIONALLY_CERTIFIED",
+  "phase4":"CONDITIONALLY_OPEN_B60_REFINED_MATRIX_2_OF_3_COMPLETE_MIXED","phases5_through_8":"LOCKED",
+  "phase4_latest":"ABI_CAPABILITY_COMPILER_PHASE4_V19_B60_SEED130363_RESULT_V755.json",
+  "b60_seed104729":"FAIL","b60_seed130363":"PASS","b60_seed155921":"AUTHORIZED_NEXT",
+  "stable_sufficient_upper_bound":"B80_VERIFIED","stable_minimum":"UNPROVEN",
+  "b50_b70_training":"PROHIBITED_BY_MIXED_B60_STOP_RULE","matched_baseline_training":"PROHIBITED_NO_STABLE_MINIMUM","final_test_access":"PROHIBITED",
+  "next_action":"Complete only B60 seed155921 and its exact v19 post-screen, then close the refinement as mixed without running B50/B70.",
+  "claim_boundary":"B60 is already mixed across two seeds; the third registered seed remains for matrix closure only."
+}
