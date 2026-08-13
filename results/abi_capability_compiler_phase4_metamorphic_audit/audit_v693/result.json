@@ -1,0 +1,133 @@
+{
+  "adapted_passes": 157,
+  "adapted_wilson": {
+    "lower_95": 0.34588652662317476,
+    "point": 0.3925,
+    "upper_95": 0.44115861665869904
+  },
+  "by_family": {
+    "0": {
+      "adapted_passes": 27,
+      "inherited_passes": 33,
+      "observations": 100,
+      "paired_difference": -0.06
+    },
+    "1": {
+      "adapted_passes": 39,
+      "inherited_passes": 29,
+      "observations": 100,
+      "paired_difference": 0.1
+    },
+    "2": {
+      "adapted_passes": 30,
+      "inherited_passes": 2,
+      "observations": 100,
+      "paired_difference": 0.28
+    },
+    "3": {
+      "adapted_passes": 61,
+      "inherited_passes": 32,
+      "observations": 100,
+      "paired_difference": 0.29
+    }
+  },
+  "by_namespace": {
+    "N020": {
+      "adapted_passes": 22,
+      "inherited_passes": 17,
+      "observations": 40,
+      "paired_difference": 0.125
+    },
+    "N120": {
+      "adapted_passes": 25,
+      "inherited_passes": 11,
+      "observations": 40,
+      "paired_difference": 0.35
+    },
+    "N220": {
+      "adapted_passes": 21,
+      "inherited_passes": 12,
+      "observations": 40,
+      "paired_difference": 0.225
+    },
+    "N320": {
+      "adapted_passes": 8,
+      "inherited_passes": 3,
+      "observations": 40,
+      "paired_difference": 0.125
+    },
+    "N420": {
+      "adapted_passes": 4,
+      "inherited_passes": 3,
+      "observations": 40,
+      "paired_difference": 0.025
+    },
+    "N520": {
+      "adapted_passes": 15,
+      "inherited_passes": 2,
+      "observations": 40,
+      "paired_difference": 0.325
+    },
+    "N620": {
+      "adapted_passes": 16,
+      "inherited_passes": 13,
+      "observations": 40,
+      "paired_difference": 0.075
+    },
+    "N720": {
+      "adapted_passes": 14,
+      "inherited_passes": 12,
+      "observations": 40,
+      "paired_difference": 0.05
+    },
+    "N820": {
+      "adapted_passes": 16,
+      "inherited_passes": 12,
+      "observations": 40,
+      "paired_difference": 0.1
+    },
+    "N920": {
+      "adapted_passes": 16,
+      "inherited_passes": 11,
+      "observations": 40,
+      "paired_difference": 0.125
+    }
+  },
+  "claim_boundary": "Prospective read-only validation audit; no candidate construction, stable frontier, matched baseline, final test, Phase 4 certificate, or superiority claim.",
+  "discordance": {
+    "adapted_only_passes": 86,
+    "inherited_only_passes": 25,
+    "mcnemar_one_sided_p": 2.516070774566395e-09
+  },
+  "evidence_sha256": "840dc11251d53520aa1f6187762d17b4b0e1e6de495449ab3907f0e71984cbf7",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase4-metamorphic-audit-result/1",
+  "gates": {
+    "adapted_lower_95": false,
+    "adapted_point": false,
+    "adapted_strictly_improves": true,
+    "family_regression_bounded": false,
+    "final_test_not_accessed": true,
+    "namespace_breadth": true,
+    "namespace_regression_bounded": true,
+    "no_promotion": true,
+    "no_training": true,
+    "paired_bootstrap_lower_positive": true,
+    "paired_mcnemar_one_sided": true,
+    "zero_collapse_both": true
+  },
+  "inherited_passes": 96,
+  "interpretation": "A pass supports only a separately preregistered no-training coherence-route construction and development screen. It does not construct or promote a candidate.",
+  "observations_per_system": 400,
+  "outputs_sha256": "f617a8b17a425b78e0731f4cfe3998c6826ce56c25475fdcd0c72787283a8b16",
+  "paired_prompt_bootstrap": {
+    "lower_95": 0.1025,
+    "point": 0.1525,
+    "upper_95": 0.2025
+  },
+  "promotion_authorized": false,
+  "protocol_sha256": "79cda28c79fc3c6da72308820bc4c38f21857e812997f17c32e4fd254dcd23ef",
+  "status": "FAIL_METAMORPHIC_COHERENCE_VALIDATION",
+  "suite_sha256": "d4c3206b306484eca765db51f47abb2ff833e32a0b3b6e1559ca7c6ed471b367",
+  "training_performed": false
+}

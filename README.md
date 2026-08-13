@@ -16,7 +16,7 @@ Status date: 2026-08-13
 
 **The ABI English-product moonshot is OPEN.**
 
-The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V687.json`.
+The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V695.json`.
 The route-isolated English endpoint now passes all registered Phase 3 machine
 gates: three paired training seeds and all A0-A4 causal controls, 1,393/1,400
 selected-seed autonomous quality with zero collapse, exact routing, three
@@ -182,6 +182,14 @@ One prospective deterministic evaluator-derived metamorphic validation suite
 may be frozen before inference and audited read-only; no training, teacher
 loading, candidate construction, development-score selection, or final access
 is authorized. Phase 4 remains uncertified.
+That prospective audit is now complete. The model-blind 400-prompt suite was
+frozen with zero exact overlap against 38,780 governed records. Adaptation
+improves every nonce namespace and beats inherited 157/400 to 96/400 with a
+paired lower-95 gain of 10.25 points and McNemar p=2.52e-9, but adapted quality
+is still only 39.25% (Wilson lower 34.59%) and one event family regresses.
+V694 closes route construction. Only a read-only taxonomy of the already
+frozen failures is open before any new architecture; inference, training,
+guard changes, final access, and candidate construction remain prohibited.
 Phase 2 and Phase 3
 certificate statuses remain unchanged, final data remains unopened, and Phase
 5 is locked.

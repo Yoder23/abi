@@ -1,0 +1,61 @@
+{
+  "format": "abi-capability-compiler-phase4-metamorphic-audit-summary/1",
+  "version": 694,
+  "status_date": "2026-08-13",
+  "status": "FAIL_METAMORPHIC_COHERENCE_ABSOLUTE_QUALITY",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_METAMORPHIC_AUDIT_PROTOCOL_V691.json",
+    "sha256": "79cda28c79fc3c6da72308820bc4c38f21857e812997f17c32e4fd254dcd23ef"
+  },
+  "readiness": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_METAMORPHIC_AUDIT_READINESS_V692.json",
+    "sha256": "cf816a4a243a96b180c800bee34ba3fd7a43d65ccdd53592edb3c7c2fd3da46b"
+  },
+  "raw_result": {
+    "path": "results/abi_capability_compiler_phase4_metamorphic_audit/audit_v693/result.json",
+    "sha256": "0e92669798268ebf7f714b4444299e0053acabb4847c0c5d79f7938f7003935c",
+    "evidence_sha256": "840dc11251d53520aa1f6187762d17b4b0e1e6de495449ab3907f0e71984cbf7"
+  },
+  "raw_outputs": {
+    "path": "results/abi_capability_compiler_phase4_metamorphic_audit/audit_v693/outputs.jsonl",
+    "sha256": "f617a8b17a425b78e0731f4cfe3998c6826ce56c25475fdcd0c72787283a8b16",
+    "bytes": 288217
+  },
+  "observations_per_system": 400,
+  "inherited_passes": "96/400",
+  "adapted_passes": "157/400",
+  "adapted_wilson": {
+    "point": 0.3925,
+    "lower_95": 0.34588652662317476,
+    "upper_95": 0.44115861665869904
+  },
+  "paired_difference": {
+    "point": 0.1525,
+    "bootstrap_lower_95": 0.1025,
+    "bootstrap_upper_95": 0.2025,
+    "adapted_only_passes": 86,
+    "inherited_only_passes": 25,
+    "mcnemar_one_sided_p": 2.516070774566395e-09
+  },
+  "namespace_strict_improvements": "10/10",
+  "event_family_deltas": {
+    "PREP_ACT_DONE": -0.06,
+    "START_MIDDLE_END": 0.1,
+    "FIRST_NEXT_LAST": 0.28,
+    "ONE_TWO_THREE": 0.29
+  },
+  "failed_gates": [
+    "adapted_point",
+    "adapted_lower_95",
+    "family_regression_bounded"
+  ],
+  "adaptive_decision": "Do not construct or promote a mixed route. Close the already trained 14-route residual as a sufficient generalizing coherence artifact.",
+  "measured_limitation": "Adaptation produces a real paired gain across every namespace, but autonomous exact-label coherence remains far below the locked absolute gate and one event family regresses. Raw failures visibly include omitted, corrupted, and repeated prompt-derived identifiers, but that mechanism is not yet quantified.",
+  "authorized_successor_diagnostic": "One read-only, preregistered error-taxonomy audit may decompose the frozen V693 failures into prompt-identifier copy, ordering, omission, and surface-loop components. It may not run new inference, train, modify the guard, access final material, construct a candidate, or promote an architecture.",
+  "training_performed": false,
+  "promotion_authorized": false,
+  "final_test_accessed": false,
+  "phase4_certified": false,
+  "claim_boundary": "Negative prospective validation evidence only; no candidate construction, stable frontier, adjacent lower failure, runtime, package, matched baseline, final test, Phase 4 certificate, or superiority claim."
+}

@@ -6,7 +6,7 @@ Status date: 2026-08-13
 
 The ABI capability-compiler moonshot is **OPEN**.
 
-The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V687.json`.
+The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V695.json`.
 All Phase 3 machine endpoints now pass. The exact route-isolated checkpoint has
 three-seed causal replication, 1,393/1,400 autonomous quality with zero
 collapse on the selected seed, three byte-identical host initializations,
@@ -40,7 +40,7 @@ focused tests, including all three production-form dry runs, pass. See
 | 1 | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 | MACHINE + HANDOFF READY; 0/21,000 HUMAN PREFERENCES | `ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V554.json` |
 | 3 | MACHINE EVIDENCE COMPLETE; BLOCKED BY PHASE 2 | `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json` |
-| 4 | CONDITIONALLY OPEN; ROUTE ISOLATION PASS; EXISTING VALIDATION EVIDENCE CLOSED | `ABI_CAPABILITY_COMPILER_PHASE4_TARGETED_VALIDATION_AUDIT_RESULT_V686.json` |
+| 4 | CONDITIONALLY OPEN; ROUTE ISOLATION PASS; GENERALIZED COHERENCE FAILED | `ABI_CAPABILITY_COMPILER_PHASE4_METAMORPHIC_AUDIT_RESULT_V694.json` |
 | 5-8 | LOCKED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` |
 
 V558 passed the physical archive and checkpoint-lineage audit without loading
@@ -186,6 +186,17 @@ evidence. The only authorized successor is one deterministic evaluator-derived
 metamorphic suite, frozen and hash-disjoint before model execution, followed by
 one read-only comparison. Training, teacher loading, candidate construction,
 development-score selection, and final access remain prohibited.
+
+The prospectively frozen successor suite has now resolved the coverage
+question without resolving the architecture. Its 400 prompts cover ten new
+nonce namespaces and four event families and are exact-hash disjoint from
+38,780 governed records. The adapted route significantly improves on inherited
+(157/400 versus 96/400; paired lower-95 gain +10.25 points; McNemar p=2.52e-9;
+all ten namespaces improve), but it fails the 90% absolute gate by a wide
+margin and regresses PREP/ACT/DONE by six points. V694 therefore prohibits
+route construction. One frozen-output failure taxonomy is the only authorized
+next diagnostic; it cannot run inference, train, change guards, access final
+material, or choose a successor architecture.
 
 ### Preserved historical mission snapshot
 

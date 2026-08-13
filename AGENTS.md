@@ -22,7 +22,7 @@ LayerCake cake.
 Status date: 2026-08-13.
 
 The controlling machine-readable state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V687.json`. Phase 3 has completed and
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V695.json`. Phase 3 has completed and
 passed every currently required machine gate, but it is not unconditionally
 certified because the controlling campaign contract makes it depend on Phase
 2. Phase 2 has 21,000 immutable blinded rating rows and zero completed
@@ -205,6 +205,19 @@ hash-disjoint from every governed split, and used for one read-only comparison
 of the exact inherited and already trained adapted routes. Training, teacher
 loading, candidate construction, final access, and development-score selection
 remain prohibited. Phase 4 is not certified.
+
+V688-V693 then executed the one allowed prospective successor without model
+leakage. A 400-prompt suite spanning ten new nonce namespaces and four event
+families was frozen before inference and had zero exact prompt or evaluator
+overlap with 38,780 governed records. Adaptation beat inherited coherence
+157/400 to 96/400, with a paired-bootstrap lower-95 gain of 10.25 points,
+one-sided McNemar p=2.52e-9, and strict gains in all ten namespaces. It still
+failed decisively: adapted absolute quality was only 39.25% (Wilson lower
+34.59%), and PREP/ACT/DONE regressed by six points. V694 rejects route
+construction and closes this trained residual as a sufficient generalizing
+coherence artifact. Only one read-only taxonomy of the frozen V693 failures
+may proceed before another architecture is considered; no inference, training,
+guard change, final access, or candidate construction is authorized first.
 
 The exact route-isolated endpoint scored 1,393/1,400 with zero repetition
 collapse at seed 240487 and passed all four same-lineage causal controls across
