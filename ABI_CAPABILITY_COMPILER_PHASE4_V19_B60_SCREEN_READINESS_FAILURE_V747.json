@@ -1,0 +1,17 @@
+{
+  "format":"abi-capability-compiler-phase4-v19-refined-candidate-screen-readiness-failure/1",
+  "version":747,
+  "status_date":"2026-08-13",
+  "status":"FAIL_TEST_FIXTURE_INCOMPLETE_NO_MODEL_INFERENCE",
+  "historical_evidence_changed":false,
+  "affected_protocol":"ABI_CAPABILITY_COMPILER_PHASE4_V19_B60_SEED104729_SCREEN_PROTOCOL_V746.json",
+  "affected_commit":"20c81ce",
+  "affected_tag":"abi-phase4-v19-b60-seed104729-screen-readiness-v746",
+  "failure":"The focused test passed only one capability into _merged_evaluation, whose contract correctly requires all 14 capabilities for Wilson intervals.",
+  "production_code_failure":false,
+  "model_inference_performed":false,
+  "training_performed_after_failure":false,
+  "final_test_accessed":false,
+  "repair":"Supply one row for every frozen capability while retaining exactly one non-coherence collapse, rerun the focused test, and seal a new protocol with the repaired test hash before model inference.",
+  "claim_boundary":"Readiness failure only; V746 is not execution authority and no B60 v19 result exists."
+}

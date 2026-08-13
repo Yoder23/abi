@@ -34,6 +34,10 @@ FORMAT = "abi-capability-compiler-phase4-v19-refined-candidate-screen/1"
 
 def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str]:
     protocol = _json(path)
+    if "base_protocol" in protocol:
+        repair = protocol
+        base = _json(root / str(repair["base_protocol"]))
+        protocol = {**base, **repair}
     if (
         protocol.get("format") != FORMAT
         or protocol.get("status") != "PREREGISTERED_ONE_REFINED_CANDIDATE_V19_SCREEN"
