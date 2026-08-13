@@ -1,0 +1,61 @@
+{
+  "format": "abi-capability-compiler-phase4-metamorphic-audit/1",
+  "protocol_id": "abi-capability-compiler-phase4-metamorphic-audit-v691",
+  "status": "PREREGISTERED_READ_ONLY_METAMORPHIC_COHERENCE_AUDIT",
+  "status_date": "2026-08-13",
+  "authorization": "ABI_CAPABILITY_COMPILER_PHASE4_METAMORPHIC_VALIDATION_READINESS_V690.json",
+  "objective": "Compare the exact frozen inherited and already trained adapted coherence routes on the model-blind V689 suite using the analytic rule frozen before suite construction.",
+  "training_authorized": false,
+  "promotion_authorized": false,
+  "teacher_model_loading_authorized": false,
+  "candidate_construction_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "lineage_protocol": "ABI_CAPABILITY_COMPILER_PHASE4_ABI_LINEAGE_PROTOCOL_V570.json",
+  "budget": "B80",
+  "seed": 130363,
+  "runs": [
+    {
+      "budget": "B80",
+      "seed": 130363,
+      "lineage_dir": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed130363-v581"
+    }
+  ],
+  "adapted_checkpoint": "results/abi_capability_compiler_phase4_functional_validation/B80-seed130363-v679/candidate/trained/capability_isolated_residual.safetensors",
+  "suite": "results/abi_capability_compiler_phase4_metamorphic_validation/suite_v689/suite.jsonl",
+  "suite_manifest": "results/abi_capability_compiler_phase4_metamorphic_validation/suite_v689/manifest.json",
+  "expected_records": 400,
+  "guard": {
+    "policy": "unchanged universal V2 collapse truncation plus artifact-derived abstention clause",
+    "canonical_abstention_clause": "I cannot determine that from the information given."
+  },
+  "paired_bootstrap": {
+    "method": "paired prompt-level bootstrap",
+    "samples": 10000,
+    "seed": 6881729
+  },
+  "thresholds": {
+    "point": 0.9,
+    "lower_95": 0.85,
+    "paired_p_maximum": 0.05,
+    "minimum_strict_namespace_wins": 3,
+    "maximum_stratum_regression": 0.05
+  },
+  "bindings": {
+    "ABI_CAPABILITY_COMPILER_PHASE4_METAMORPHIC_VALIDATION_BUILD_PROTOCOL_V688.json": "f2d6d3b250edd0f843aa283a70285af535b7a4664c6833a2d7cba6e7adad0573",
+    "ABI_CAPABILITY_COMPILER_PHASE4_METAMORPHIC_VALIDATION_READINESS_V690.json": "91a0043d48677c8908147b26920b6485611041577ab67ffc5539dba846e179c1",
+    "results/abi_capability_compiler_phase4_metamorphic_validation/suite_v689/manifest.json": "5ed253dd7f8f981460c3d6b03f3ec9f3e591ef5e19d26337b75c009c52b3978a",
+    "results/abi_capability_compiler_phase4_metamorphic_validation/suite_v689/suite.jsonl": "d4c3206b306484eca765db51f47abb2ff833e32a0b3b6e1559ca7c6ed471b367",
+    "abi/capability_compiler_phase4_metamorphic_audit.py": "1f21b41aa5740989e59d8022e6aeef2043b523298a5419ab556904a64dc43915",
+    "tests/test_capability_compiler_phase4_metamorphic_validation.py": "36a63b0adfa966c0813b9f7cbd63a4e460a54b608ec28229734236721ceea609",
+    "abi/capability_compiler_phase4_functional_validation.py": "a7ee25c6df38ad331cc186cadc77611f532a58f8220a2ef23f29bee35e3c6184",
+    "abi/capability_compiler_phase4_capability_isolated_adaptation.py": "1dc364b89e0d35aa77f3d76a6edf6564ad361129953b69ef8aebc6191dd3605d",
+    "ABI_CAPABILITY_COMPILER_PHASE4_ABI_LINEAGE_PROTOCOL_V570.json": "50cd9abc83b584bf1682b57f606bbdcba75fbeda76eeeaa48edafbbc08e8505c",
+    "results/abi_capability_compiler_phase4_abi_lineage/B80-seed130363-v581/v463/model.safetensors": "b6c9f4ffa7d12b451b7e60544abeeae1381e37a04ee2197995e111bb290f8445",
+    "results/abi_capability_compiler_phase4_abi_lineage/B80-seed130363-v581/v526/control_bridge.safetensors": "9e485c9f7863c37f84eab881c29861700ea79ad09a2fdcc6302de6b242a1b3b6",
+    "results/abi_capability_compiler_phase4_abi_lineage/B80-seed130363-v581/router/router.safetensors": "b0a3428f8a7079cf58aa81a20214fc9f14cc1e05b78f06c4eefafd8ad22d920c",
+    "results/abi_capability_compiler_phase4_abi_lineage/B80-seed130363-v581/budget_host_supervision.abicir": "69638ffbfa82c9e04cf8e25c424ba7c0b08978955f5b6a769c92975268b8bc12",
+    "results/abi_capability_compiler_phase4_functional_validation/B80-seed130363-v679/candidate/trained/capability_isolated_residual.safetensors": "6fd44707128689c5e2f833472ca98fac444770cc865060e9018a02e6078625b8"
+  },
+  "decision_rule": "A pass requires adapted absolute point and Wilson-lower quality, strictly more paired passes than inherited, a strictly positive paired-bootstrap lower-95 difference, one-sided exact McNemar p <= 0.05, strict improvement in at least three of ten namespaces, no namespace or event-family regression worse than five percentage points, zero collapse in both systems, and no training, promotion, or final access. A pass authorizes only a separately preregistered no-training coherence-route construction and development screen.",
+  "claim_boundary": "Prospective read-only validation audit only; no candidate construction, stable frontier, matched baseline, final test, Phase 4 certificate, or superiority claim."
+}
