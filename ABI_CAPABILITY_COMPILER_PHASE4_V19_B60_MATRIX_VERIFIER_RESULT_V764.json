@@ -1,0 +1,17 @@
+{
+  "format":"abi-capability-compiler-phase4-v19-b60-matrix-verifier-summary/1",
+  "version":764,
+  "status_date":"2026-08-13",
+  "status":"PASS_INDEPENDENT_B60_MATRIX_EVIDENCE_VERIFICATION",
+  "historical_evidence_changed":false,
+  "protocol":{"path":"ABI_CAPABILITY_COMPILER_PHASE4_V19_B60_MATRIX_VERIFIER_PROTOCOL_V762.json","sha256":"2f07ba49edf9a62e0c18c417b47510f3cf7fdc7f835df87be9405ee765c08737"},
+  "raw_result":{"path":"results/abi_capability_compiler_phase4_v19_b60_matrix_verify/run_v763/result.json","sha256":"a9ba5782065b42f6a532a204768cb9a893ad2a81c30c667fc05b58b79abb85fe","evidence_sha256":"38eb0a8da9b8303b7f67ac5d86b556555e432c7d4e124f61cabd01b605edc8cf"},
+  "verified_work":{"signed_packages_rebuilt_exactly":3,"pointer_rows_recomputed":300,"evaluation_rows_recomputed":4200,"noncoherence_rows_canonical_identity_checked":3900,"all_system_verifiers":"PASS"},
+  "b60_matrix":{"seed104729":"FAIL_ZERO_COLLAPSE","seed130363":"PASS","seed155921":"PASS","decision":"MIXED_STOP_REFINEMENT"},
+  "gates":{"registered_seeds_exact":true,"mixed_recomputed":true,"v740_stop_rule_present":true,"b50_b70_prohibited":true,"training_absent":true,"model_inference_absent":true,"teacher_absent":true,"final_test_not_accessed":true},
+  "measured_limiting_factor":"Exactly one supplied_text_summarization repetition collapse in seed104729, outside v19's coherence-only successor path. All other B60 machine gates pass for all three seeds.",
+  "decision":"The V740 information-budget refinement is scientifically closed without a minimum. B80 remains the verified stable sufficient upper bound. Additional nearby budget training is prohibited.",
+  "authorized_next_action":"Address only the profiler/evaluator-isolated universal-guard host limitation using the already supported unchanged V2 predicate, then prospectively rescreen the same frozen B60 packages. No acquisition retraining or new information budget is authorized.",
+  "phase4_certified":false,
+  "claim_boundary":"Verified mixed B60 development matrix and stop decision only. No stable minimum, matched baseline, final test, Phase 4, or ABI-superiority claim."
+}
