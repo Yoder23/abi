@@ -1,0 +1,42 @@
+{
+  "format": "abi-capability-compiler-phase4-v19-frontier-verifier-summary/1",
+  "version": 738,
+  "status_date": "2026-08-13",
+  "status": "PASS_INDEPENDENT_V19_FRONTIER_EVIDENCE_VERIFICATION",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_V19_FRONTIER_VERIFIER_PROTOCOL_V736.json",
+    "sha256": "fd5c1d0b3c0624d5457bcf85c8673a6dbb53931a443affcf015b8bffb580be28"
+  },
+  "raw_result": {
+    "path": "results/abi_capability_compiler_phase4_v19_frontier_verify/run_v737/result.json",
+    "sha256": "f8da9e3eb32f94a938d95ce2e0183ff7fef907101408123b6b39c4ec64c79c4c",
+    "evidence_sha256": "1750dfb1e14f6e082eb6fa9ff250e0bf961b9b116b7f9d1f6776dfe43a7a88d4"
+  },
+  "verified": {
+    "signed_packages_deterministically_rebuilt": 6,
+    "package_archive_identity": "6/6",
+    "exact_component_tensor_identity": "6/6",
+    "coherence_rows_recomputed": 600,
+    "pointer_rows_recomputed": 600,
+    "historical_noncoherence_rows_identity_checked": 7800,
+    "system_evaluations_recomputed": "6/6",
+    "quality_gate_sets_recomputed": "6/6",
+    "teacher_bootstraps_recomputed": "6/6",
+    "frontier_decision_recomputed": true,
+    "model_inference_performed": false,
+    "training_performed": false,
+    "teacher_model_loaded": false,
+    "final_test_accessed": false
+  },
+  "verified_frontier": {
+    "B80": "PASS_PASS_PASS",
+    "B40": "FAIL_PASS_FAIL",
+    "stable_sufficient_upper_bound": "B80",
+    "stable_minimum": "UNPROVEN"
+  },
+  "decision": "V733 is internally reproducible from raw evidence and exact package inputs. Its scientific boundary is unchanged: B80 is a verified stable sufficient development upper bound, while the all-seed adjacent-lower failure required for a minimum is absent.",
+  "authorized_next_action": "Prospectively freeze deterministic nested information budgets inside the existing B40-B80 interval and an adaptive three-seed order before training. Begin at the midpoint. Do not train matched baselines, access final data, change the v19 host, change thresholds, or reuse a larger-budget checkpoint.",
+  "phase4_certified": false,
+  "claim_boundary": "Verified development-only ABI-arm sufficient upper bound. Minimum imported information, matched baselines, final test, unconditional Phase 4, and ABI superiority remain unproven."
+}
