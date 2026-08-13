@@ -219,6 +219,15 @@ coherence artifact. Only one read-only taxonomy of the frozen V693 failures
 may proceed before another architecture is considered; no inference, training,
 guard change, final access, or candidate construction is authorized first.
 
+V696/V698 attempted to quantify that frozen failure without new inference, but
+its classifier used the first occurrence of each label while the locked
+evaluator accepts any correctly ordered subsequence. Five inherited rows are
+misclassified. V699 therefore rejects the provisional attribution even though
+the adapted counts appear unaffected. Exactly one evaluation-only repair may
+implement the cursor semantics of the locked evaluator and rerun on the same
+suite and outputs. No pointer design, inference, training, candidate
+construction, final access, or promotion is authorized first.
+
 The exact route-isolated endpoint scored 1,393/1,400 with zero repetition
 collapse at seed 240487 and passed all four same-lineage causal controls across
 three paired training seeds. Its exact fully CPU runtime is 12.835x the pinned

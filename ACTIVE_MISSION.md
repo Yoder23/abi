@@ -6,7 +6,7 @@ Status date: 2026-08-13
 
 The ABI capability-compiler moonshot is **OPEN**.
 
-The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V695.json`.
+The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V700.json`.
 All Phase 3 machine endpoints now pass. The exact route-isolated checkpoint has
 three-seed causal replication, 1,393/1,400 autonomous quality with zero
 collapse on the selected seed, three byte-identical host initializations,
@@ -40,7 +40,7 @@ focused tests, including all three production-form dry runs, pass. See
 | 1 | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 | MACHINE + HANDOFF READY; 0/21,000 HUMAN PREFERENCES | `ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V554.json` |
 | 3 | MACHINE EVIDENCE COMPLETE; BLOCKED BY PHASE 2 | `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json` |
-| 4 | CONDITIONALLY OPEN; ROUTE ISOLATION PASS; GENERALIZED COHERENCE FAILED | `ABI_CAPABILITY_COMPILER_PHASE4_METAMORPHIC_AUDIT_RESULT_V694.json` |
+| 4 | CONDITIONALLY OPEN; TAXONOMY REPAIR REQUIRED | `ABI_CAPABILITY_COMPILER_PHASE4_METAMORPHIC_FAILURE_TAXONOMY_RESULT_V699.json` |
 | 5-8 | LOCKED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` |
 
 V558 passed the physical archive and checkpoint-lineage audit without loading
@@ -197,6 +197,14 @@ margin and regresses PREP/ACT/DONE by six points. V694 therefore prohibits
 route construction. One frozen-output failure taxonomy is the only authorized
 next diagnostic; it cannot run inference, train, change guards, access final
 material, or choose a successor architecture.
+
+The first frozen-output taxonomy cannot yet separate ABI ordering from host
+copying. Its first-occurrence ordering test differs from the locked
+cursor-based ordered-subsequence evaluator and misclassifies five inherited
+rows. V699 invalidates the provisional attribution. Exactly one evaluation-only
+repair may rerun the unchanged suite and outputs with evaluator-identical
+semantics. No pointer design, inference, training, expected-answer selection,
+candidate construction, final access, or promotion is authorized first.
 
 ### Preserved historical mission snapshot
 

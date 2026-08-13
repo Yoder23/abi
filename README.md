@@ -16,7 +16,7 @@ Status date: 2026-08-13
 
 **The ABI English-product moonshot is OPEN.**
 
-The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V695.json`.
+The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V700.json`.
 The route-isolated English endpoint now passes all registered Phase 3 machine
 gates: three paired training seeds and all A0-A4 causal controls, 1,393/1,400
 selected-seed autonomous quality with zero collapse, exact routing, three
@@ -190,6 +190,13 @@ is still only 39.25% (Wilson lower 34.59%) and one event family regresses.
 V694 closes route construction. Only a read-only taxonomy of the already
 frozen failures is open before any new architecture; inference, training,
 guard changes, final access, and candidate construction remain prohibited.
+The first frozen-output taxonomy is not valid attribution evidence. It used
+first label occurrences, while the locked evaluator accepts a later correctly
+ordered subsequence; five inherited rows differ. V699 preserves and rejects
+that result. One evaluator-identical cursor-semantics repair may run on the
+unchanged frozen outputs before any host-copy or ABI-ordering claim. Pointer
+design, new inference, training, candidate construction, and final access are
+still closed.
 Phase 2 and Phase 3
 certificate statuses remain unchanged, final data remains unopened, and Phase
 5 is locked.

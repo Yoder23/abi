@@ -1,0 +1,46 @@
+{
+  "format": "abi-capability-compiler-phase4-metamorphic-failure-taxonomy-summary/1",
+  "version": 699,
+  "status_date": "2026-08-13",
+  "status": "FAIL_TAXONOMY_EVALUATOR_SEMANTICS_MISMATCH",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_METAMORPHIC_FAILURE_TAXONOMY_PROTOCOL_V696.json",
+    "sha256": "b9abbb11bad3bc91792428319d33c6ad13206e223347d016403f050c8840d003"
+  },
+  "readiness": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_METAMORPHIC_FAILURE_TAXONOMY_READINESS_V697.json",
+    "sha256": "35276889103e48b7691521f921d2cfdf7c2ac9b8dafce893840980744cc32ac2"
+  },
+  "raw_result": {
+    "path": "results/abi_capability_compiler_phase4_metamorphic_failure_taxonomy/audit_v698/result.json",
+    "sha256": "c01b739db13a30314dc3fa27c5106fb08777d596c02611142e780c741d70f62d",
+    "evidence_sha256": "a64deedd519acebb3299c499af4376ebdfb49efa2008cc24ba8abff7eafa1f31"
+  },
+  "taxonomy_rows": {
+    "path": "results/abi_capability_compiler_phase4_metamorphic_failure_taxonomy/audit_v698/taxonomy_rows.jsonl",
+    "sha256": "b07f51aab99f67464a60faf605b618602a81bc4f74e3f723a70a5c7eae846ddf",
+    "bytes": 249538
+  },
+  "implementation_defect": "The V698 classifier tests whether the first occurrence of each exact label is ordered. The locked ordered_contains evaluator instead advances a cursor and accepts any correctly ordered subsequence. Five inherited rows containing an early out-of-order occurrence plus a later valid sequence are therefore labeled as failures by the taxonomy even though the governing evaluator passes them.",
+  "affected_observations_detected": 5,
+  "adapted_provisional_counts_not_claimable": {
+    "reported_passes": "157/400",
+    "reported_copy_failures": 243,
+    "reported_surface_loops_suspected": 12
+  },
+  "inherited_provisional_counts_not_claimable": {
+    "taxonomy_passes": "91/400",
+    "governing_evaluator_passes": "96/400",
+    "difference": 5
+  },
+  "attribution": "V698 is not valid attribution evidence because its pass/order construct is not evaluator-identical. No identifier-copy bottleneck is certified by this result, even if the adapted counts appear unaffected.",
+  "authorized_successor_design": "Exactly one evaluation-only repair may replace the first-occurrence test with the locked cursor-based ordered-subsequence semantics, bind the unchanged frozen suite and outputs, and rerun the taxonomy without new inference or changed thresholds.",
+  "new_inference_performed": false,
+  "training_performed": false,
+  "candidate_constructed": false,
+  "promotion_authorized": false,
+  "final_test_accessed": false,
+  "phase4_certified": false,
+  "claim_boundary": "Failed taxonomy implementation only; no valid mechanism attribution, repaired host, ABI candidate, stable frontier, runtime pass, matched baseline, final test, Phase 4 certificate, or superiority claim."
+}
