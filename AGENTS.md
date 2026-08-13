@@ -238,6 +238,17 @@ present that harness as an acquired artifact or silently modify LayerCake from
 this repository. Training, candidate construction, final access, and promotion
 remain prohibited.
 
+V706/V708 then tested that host requirement without using evaluator labels for
+selection. The frozen adapted model scored all six permutations of the three
+literal prompt event spans and selected 400/400 correct outputs across every
+namespace and event family, with zero collapse. The diagnostic used 2,400 GPU
+forwards, 112,572 scored candidate tokens, and 31.77 seconds. V709 proves
+feasibility only. ABI Phase 4 is now blocked on a separately implemented and
+certified LayerCake host interface with CPU/GPU identity and locked speed,
+TTFT, RSS, sparse-execution, and package gates. Do not copy ABI evaluator code
+or evidence into LayerCake, and do not resume ABI training or baselines before
+a signed immutable host artifact returns.
+
 The exact route-isolated endpoint scored 1,393/1,400 with zero repetition
 collapse at seed 240487 and passed all four same-lineage causal controls across
 three paired training seeds. Its exact fully CPU runtime is 12.835x the pinned

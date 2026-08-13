@@ -1,0 +1,99 @@
+{
+  "by_family": {
+    "0": {
+      "observations": 100,
+      "passes": 100
+    },
+    "1": {
+      "observations": 100,
+      "passes": 100
+    },
+    "2": {
+      "observations": 100,
+      "passes": 100
+    },
+    "3": {
+      "observations": 100,
+      "passes": 100
+    }
+  },
+  "by_namespace": {
+    "N020": {
+      "observations": 40,
+      "passes": 40
+    },
+    "N120": {
+      "observations": 40,
+      "passes": 40
+    },
+    "N220": {
+      "observations": 40,
+      "passes": 40
+    },
+    "N320": {
+      "observations": 40,
+      "passes": 40
+    },
+    "N420": {
+      "observations": 40,
+      "passes": 40
+    },
+    "N520": {
+      "observations": 40,
+      "passes": 40
+    },
+    "N620": {
+      "observations": 40,
+      "passes": 40
+    },
+    "N720": {
+      "observations": 40,
+      "passes": 40
+    },
+    "N820": {
+      "observations": 40,
+      "passes": 40
+    },
+    "N920": {
+      "observations": 40,
+      "passes": 40
+    }
+  },
+  "candidate_constructed": false,
+  "claim_boundary": "Host-requirement feasibility only; no ABI artifact, repaired LayerCake host, stable frontier, CPU runtime pass, matched baseline, final test, Phase 4 certificate, or superiority claim.",
+  "evaluator_used_for_selection": false,
+  "evidence_sha256": "fac3b4499a50b91b82855b41ecb39fb2db8bec64addf55632830bd0584abd3f8",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase4-prompt-span-pointer-result/1",
+  "functional_passes": 400,
+  "gates": {
+    "evaluator_blind_selection": true,
+    "final_test_not_accessed": true,
+    "lower_95": true,
+    "no_candidate": true,
+    "no_training": true,
+    "per_family_point": true,
+    "per_namespace_point": true,
+    "point": true,
+    "zero_collapse": true
+  },
+  "interpretation": "A pass identifies a feasible generic host interface for exact prompt-span realization. It is not ABI acquisition, a LayerCake implementation, or a promotable candidate.",
+  "model_inference_performed": true,
+  "observations": 400,
+  "outputs_sha256": "2c722e1332a3a7cf7632805a6c6735930898745379abfe0027347d9f2d9296e4",
+  "promotion_authorized": false,
+  "protocol_sha256": "75239ef3e66b36e2943f197aca5ebbe38db1b1fed174b7e1149bfc91b915457f",
+  "scoring": {
+    "candidate_tokens_scored": 112572,
+    "forward_passes": 2400,
+    "gpu_wall_seconds": 31.768036000001302,
+    "records_per_second": 12.591272560884267
+  },
+  "status": "PASS_PROMPT_SPAN_POINTER_HOST_REQUIREMENT_FEASIBILITY",
+  "training_performed": false,
+  "wilson": {
+    "lower_95": 0.9904877056657034,
+    "point": 1.0,
+    "upper_95": 0.9999999999999999
+  }
+}

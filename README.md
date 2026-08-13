@@ -16,7 +16,7 @@ Status date: 2026-08-13
 
 **The ABI English-product moonshot is OPEN.**
 
-The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V705.json`.
+The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V710.json`.
 The route-isolated English endpoint now passes all registered Phase 3 machine
 gates: three paired training seeds and all A0-A4 causal controls, 1,393/1,400
 selected-seed autonomous quality with zero collapse, exact routing, three
@@ -203,6 +203,13 @@ prompt label, while both routes order correctly whenever all three labels are
 present. V704 opens one generic evaluator-blind prompt-span pointer feasibility
 diagnostic. That harness can specify a LayerCake host requirement, but it is
 not an ABI artifact, a repaired LayerCake product, or a Phase 4 pass.
+That evaluator-blind feasibility diagnostic passes 400/400 with zero collapse:
+the frozen model ranks all six permutations of literal prompt spans without
+seeing expected answers. It costs 2,400 GPU forwards and 31.77 seconds for the
+400-record suite. V709 therefore specifies a feasible LayerCake host feature,
+not ABI acquisition. ABI Phase 4 now waits for a separately implemented,
+signed LayerCake host artifact that preserves CPU/GPU identity, speed, TTFT,
+RSS, sparse execution, and package compatibility.
 Phase 2 and Phase 3
 certificate statuses remain unchanged, final data remains unopened, and Phase
 5 is locked.

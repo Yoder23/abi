@@ -1,0 +1,53 @@
+{
+  "format": "abi-capability-compiler-phase4-prompt-span-pointer-summary/1",
+  "version": 709,
+  "status_date": "2026-08-13",
+  "status": "PASS_PROMPT_SPAN_POINTER_HOST_REQUIREMENT_FEASIBILITY",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_PROMPT_SPAN_POINTER_PROTOCOL_V706.json",
+    "sha256": "75239ef3e66b36e2943f197aca5ebbe38db1b1fed174b7e1149bfc91b915457f"
+  },
+  "readiness": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_PROMPT_SPAN_POINTER_READINESS_V707.json",
+    "sha256": "fc2164f8b56114fab3629fbfe775839a0ef1b16fb76664458f16d65f2af2584e"
+  },
+  "raw_result": {
+    "path": "results/abi_capability_compiler_phase4_prompt_span_pointer/run_v708/result.json",
+    "sha256": "086aee237dbfbd00a2dde3e8eb2a8ef810865a9265c79c7bc968b6317aafcfcd",
+    "evidence_sha256": "fac3b4499a50b91b82855b41ecb39fb2db8bec64addf55632830bd0584abd3f8"
+  },
+  "raw_outputs": {
+    "path": "results/abi_capability_compiler_phase4_prompt_span_pointer/run_v708/outputs.jsonl",
+    "sha256": "2c722e1332a3a7cf7632805a6c6735930898745379abfe0027347d9f2d9296e4",
+    "bytes": 184822
+  },
+  "quality": {
+    "functional_passes": "400/400",
+    "wilson_point": 1.0,
+    "wilson_lower_95": 0.9904877056657034,
+    "namespace_strata_passing": "10/10 at 40/40 each",
+    "event_family_strata_passing": "4/4 at 100/100 each",
+    "repetition_collapses": 0
+  },
+  "cost": {
+    "gpu_wall_seconds": 31.768036000001302,
+    "scoring_forward_passes": 2400,
+    "candidate_tokens_scored": 112572,
+    "records_per_second": 12.591272560884267,
+    "new_parameters": 0
+  },
+  "selection_integrity": {
+    "literal_prompt_spans_only": true,
+    "functional_evaluator_used_for_selection": false,
+    "teacher_used": false,
+    "training_performed": false,
+    "candidate_constructed": false,
+    "final_test_accessed": false
+  },
+  "interpretation": "A generic literal-span pointer with frozen-model permutation scoring is sufficient to remove the measured host copy failure on the prospective suite. This specifies a LayerCake execution-host feature; it is not ABI acquisition and is not implemented in the LayerCake repository by this evidence.",
+  "required_external_handoff": "Implement the generic prompt-span pointer in the separate LayerCake repository without ABI evaluator logic, then certify CPU and GPU output identity, quality, TTFT, throughput, RSS, physical sparse execution, and unchanged canonical package interface. Return a signed immutable host artifact for ABI Phase 4 rescreening.",
+  "promotion_authorized": false,
+  "phase4_certified": false,
+  "claim_boundary": "Host-interface feasibility only; no ABI artifact, repaired LayerCake host, stable frontier, CPU runtime pass, matched baseline, final test, Phase 4 certificate, or superiority claim."
+}
