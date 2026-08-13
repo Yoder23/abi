@@ -33,7 +33,28 @@ def _jsonl(path: Path) -> list[dict[str, Any]]:
 
 
 def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str]:
-    protocol = _json(path)
+    document = _json(path)
+    binding_overrides: dict[str, str] = {}
+    if document.get("format") == "abi-capability-compiler-phase4-metamorphic-failure-taxonomy-repair/1":
+        if (
+            document.get("status") != "PREREGISTERED_EVALUATION_ONLY_CURSOR_SEMANTICS_REPAIR"
+            or document.get("new_inference_authorized") is not False
+            or document.get("training_authorized") is not False
+        ):
+            raise Phase3Error("failure-taxonomy repair governance changed")
+        base_path = root / str(document["base_protocol"])
+        if not base_path.is_file() or sha256_file(base_path) != document["base_protocol_sha256"]:
+            raise Phase3Error("failure-taxonomy base protocol changed")
+        for relative, expected in document["bindings"].items():
+            target = (root / relative).resolve()
+            if not target.is_file() or sha256_file(target) != expected:
+                raise Phase3Error(f"failure-taxonomy repair binding changed: {relative}")
+        protocol = _json(base_path)
+        binding_overrides = dict(document["binding_overrides"])
+        protocol["bindings"].update(binding_overrides)
+        protocol["evaluation_only_repair"] = True
+    else:
+        protocol = document
     if (
         protocol.get("format") != FORMAT
         or protocol.get("status") != "PREREGISTERED_READ_ONLY_FROZEN_OUTPUT_TAXONOMY"
@@ -57,7 +78,15 @@ def classify(output: str, evaluator: Mapping[str, Any]) -> dict[str, Any]:
     positions = [output.find(label) for label in labels]
     exact_count = sum(position >= 0 for position in positions)
     all_exact = exact_count == len(labels)
-    exact_ordered = all_exact and positions == sorted(positions)
+    cursor = 0
+    ordered_hits = 0
+    for label in labels:
+        position = output.find(label, cursor)
+        if position < 0:
+            break
+        ordered_hits += 1
+        cursor = position + len(label)
+    exact_ordered = ordered_hits == len(labels)
     code = labels[0].rsplit("-", 1)[0]
     suffixes = [label.rsplit("-", 1)[1] for label in labels]
     suffix_count = sum(f"-{suffix}]" in output for suffix in suffixes)

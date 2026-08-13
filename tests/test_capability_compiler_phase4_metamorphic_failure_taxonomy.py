@@ -18,3 +18,10 @@ def test_classifies_pass_wrong_order_and_copy_failure() -> None:
 def test_detects_consecutive_surface_loop() -> None:
     row = classify("[N1-PREP] x inguishedinguishedinguishedinguished", EVALUATOR)
     assert row["surface_loop_suspected"] is True
+
+
+def test_ordering_matches_cursor_based_subsequence_evaluator() -> None:
+    output = "[N1-ACT] early [N1-PREP] x [N1-ACT] y [N1-DONE] z"
+    row = classify(output, EVALUATOR)
+    assert row["primary"] == "pass"
+    assert row["exact_labels_ordered"] is True

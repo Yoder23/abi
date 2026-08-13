@@ -1,0 +1,25 @@
+{
+  "format": "abi-capability-compiler-phase4-metamorphic-failure-taxonomy-repair-readiness/1",
+  "version": 702,
+  "status_date": "2026-08-13",
+  "status": "PASS_EVALUATION_ONLY_CURSOR_SEMANTICS_REPAIR_PREFLIGHT",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_METAMORPHIC_FAILURE_TAXONOMY_REPAIR_PROTOCOL_V701.json",
+    "sha256": "43896b8efbdc0d90b75670be1c8e53644dde6a439a3d84268d5f61b819301291"
+  },
+  "suite_records": 400,
+  "output_records": 800,
+  "paired_complete": true,
+  "repair_scope": "first-occurrence ordering replaced by locked cursor-based ordered-subsequence semantics only",
+  "thresholds_changed": false,
+  "inputs_changed": false,
+  "new_inference_performed": false,
+  "training_performed": false,
+  "candidate_constructed": false,
+  "promotion_authorized": false,
+  "teacher_model_loaded": false,
+  "final_test_accessed": false,
+  "authorized_next_work": "Execute exactly one repaired taxonomy on the unchanged V689 suite and V693 outputs under V701.",
+  "claim_boundary": "Taxonomy repair readiness only; no valid attribution result, repaired host, ABI candidate, stable frontier, matched baseline, final test, Phase 4 certificate, or superiority claim."
+}
