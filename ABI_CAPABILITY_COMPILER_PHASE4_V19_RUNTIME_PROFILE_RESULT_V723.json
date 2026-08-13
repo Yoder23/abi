@@ -1,0 +1,25 @@
+{
+  "format": "abi-capability-compiler-phase4-v19-runtime-profile-summary/1",
+  "version": 723,
+  "status_date": "2026-08-13",
+  "status": "FAIL_ROUTE_RESET_BOOKKEEPING_NOT_BOTTLENECK",
+  "historical_evidence_changed": false,
+  "protocol": {"path": "ABI_CAPABILITY_COMPILER_PHASE4_V19_RUNTIME_PROFILE_PROTOCOL_V721.json", "sha256": "e94cb79e5bb94e049daaee0444a87fc042a734b5e6fc838025f14e636a0982ed"},
+  "raw_result": {"path": "results/abi_capability_compiler_phase4_v19_runtime_profile/run_v722/result.json", "sha256": "10fe768936147c1cdb4593fc961c6a2ceb9f14373ccdebd86cee4855ac9cd22e", "evidence_sha256": "377c8f65d13186598494825677f89438c7d86f81bf1c3d4981aa9f7d7490cd77"},
+  "raw_observations": {"path": "results/abi_capability_compiler_phase4_v19_runtime_profile/run_v722/observations.jsonl", "sha256": "768d10cd58fc5272808259e8ef09722c2e37b2f91d6130b057f1841b62d8b9b3", "observations_per_mode": 40},
+  "measurements": {
+    "current_v19_median_bytes_per_second": 229.77099505124357,
+    "direct_v18_equivalent_median_bytes_per_second": 225.9606291677724,
+    "direct_to_current_ratio": 0.9834166802358087,
+    "current_route_set_calls": 438,
+    "direct_route_set_calls": 40,
+    "all_outputs_and_tokens_exact": true
+  },
+  "decision": "Removing per-token route assignment does not explain the retention miss and is not authorized for implementation. Both contemporaneous paths run materially below the historical 264.15 B/s reference, while v19 is slightly faster than the direct v18-equivalent loop. The V719 cross-run retention ratio is therefore confounded by machine/runtime drift and cannot isolate a v19 regression.",
+  "authorized_next_action": "One full-depth, interleaved, paired, same-harness comparison of the signed v18 and v19 packages on 100 distinct ordinary prompts plus 20 repeats. Preserve the 95% retention threshold and exact output gate. No implementation change or runtime optimization is authorized first.",
+  "host_change_authorized": false,
+  "performance_certified": false,
+  "phase4_certified": false,
+  "final_test_accessed": false,
+  "claim_boundary": "Read-only negative attribution plus evidence of cross-run drift; no corrected retention result, runtime promotion, stable frontier, Phase 4, or superiority claim."
+}

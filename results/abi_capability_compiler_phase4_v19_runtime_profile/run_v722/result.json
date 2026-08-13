@@ -1,0 +1,29 @@
+{
+  "claim_boundary": "Read-only ordinary-loop attribution only; no production host change, runtime promotion, stable frontier, Phase 4, or superiority claim.",
+  "current_median_bytes_per_second": 229.77099505124357,
+  "current_total_route_set_calls": 438,
+  "direct_median_bytes_per_second": 225.9606291677724,
+  "direct_to_current_ratio": 0.9834166802358087,
+  "direct_total_route_set_calls": 40,
+  "distinct_prompts": 20,
+  "evidence_sha256": "377c8f65d13186598494825677f89438c7d86f81bf1c3d4981aa9f7d7490cd77",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase4-v19-runtime-profile-result/1",
+  "gates": {
+    "current_reference_identity": true,
+    "direct_reference_identity": true,
+    "final_test_not_accessed": true,
+    "measured_speedup_at_least_required": false,
+    "no_persistent_host_mutation": true,
+    "route_set_calls_reduced": true,
+    "same_outputs": true,
+    "same_signed_package": true,
+    "training_absent": true
+  },
+  "host_mutation_persisted": false,
+  "observations_per_mode": 40,
+  "protocol_sha256": "e94cb79e5bb94e049daaee0444a87fc042a734b5e6fc838025f14e636a0982ed",
+  "raw_observations_sha256": "768d10cd58fc5272808259e8ef09722c2e37b2f91d6130b057f1841b62d8b9b3",
+  "status": "FAIL_BOTTLENECK_NOT_LOCALIZED",
+  "training_performed": false
+}
