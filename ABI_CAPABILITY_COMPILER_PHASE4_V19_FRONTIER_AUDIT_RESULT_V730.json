@@ -1,0 +1,38 @@
+{
+  "format": "abi-capability-compiler-phase4-v19-frontier-audit-summary/1",
+  "version": 730,
+  "status_date": "2026-08-13",
+  "status": "PASS_V19_COHERENCE_RESCREEN_ELIGIBILITY",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_V19_FRONTIER_AUDIT_PROTOCOL_V728.json",
+    "sha256": "4e450511d3fdddf9d12d4a2c04767bfc45636a7d58a8b63ece3a46cf36974273"
+  },
+  "raw_result": {
+    "path": "results/abi_capability_compiler_phase4_v19_frontier_audit/run_v729/result.json",
+    "sha256": "353187493f50e487e286bf54fbfc21dd594f91b7671b28d3cd615a54fc403e0b",
+    "evidence_sha256": "e234636234665c165feff577bfc9ecf29f947c1e2d655d93d1b3cbc784e85bb4"
+  },
+  "systems": 6,
+  "registered_budgets": [
+    "B40",
+    "B80"
+  ],
+  "registered_seeds": [
+    104729,
+    130363,
+    155921
+  ],
+  "coherence_rows_per_system": 100,
+  "authorized_inference_rows": 600,
+  "all_rows_match_exact_v19_predicate": true,
+  "b80_seed130363_measured_coherence_failures_in_scope": 22,
+  "noncoherence_rows_immutable": true,
+  "model_inference_performed": false,
+  "training_performed": false,
+  "final_test_accessed": false,
+  "decision": "The read-only audit passed. Exactly the 100 locked coherence rows for each of the six preregistered B40/B80 systems are eligible for the evaluator-blind v19 prompt-span execution path. The next experiment is limited to those 600 rows; the other 1,300 historical rows per system remain immutable.",
+  "authorized_next_action": "Build an ephemeral signed v19 package from each exact B40/B80 model-router-residual-guard lineage, execute only its 100 locked coherence rows on CUDA, merge those measurements with the bound historical non-coherence rows, and recompute every existing quality gate without training or final-test access.",
+  "phase4_certified": false,
+  "claim_boundary": "Eligibility only. No hypothetical upper score is promoted. Stable sufficient-information frontier, adjacent lower failure, matched LoRA/distillation, final test, Phase 4, and ABI superiority remain unproven."
+}

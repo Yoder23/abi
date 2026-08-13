@@ -1,0 +1,100 @@
+{
+  "authorized_rescreen_rows": 600,
+  "claim_boundary": "Read-only v19 predicate eligibility only; hypothetical upper scores are not measured quality and no frontier or Phase 4 claim is made.",
+  "evidence_sha256": "e234636234665c165feff577bfc9ecf29f947c1e2d655d93d1b3cbc784e85bb4",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase4-v19-frontier-audit-result/1",
+  "gates": {
+    "all_coherence_rows_eligible": true,
+    "b80_seed130363_failure_in_scope": true,
+    "final_test_not_accessed": true,
+    "model_inference_absent": true,
+    "noncoherence_evidence_immutable": true,
+    "six_registered_systems": true,
+    "training_absent": true
+  },
+  "model_inference_performed": false,
+  "protocol_sha256": "4e450511d3fdddf9d12d4a2c04767bfc45636a7d58a8b63ece3a46cf36974273",
+  "status": "PASS_B40_B80_V19_RESREEN_REQUIRED",
+  "systems": [
+    {
+      "budget": "B40",
+      "coherence_failures_requiring_inference": 6,
+      "coherence_passes": 94,
+      "functional_passes": 1360,
+      "hypothetical_upper_passes_if_all_v19_rows_pass": 1366,
+      "lineage_dir": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed104729-v575",
+      "noncoherence_failures_unchanged_by_v19": 34,
+      "outputs_sha256": "8818d24616e0275fa74a37063489256d9042841b960cf28d3f072b469a771fb1",
+      "repetition_collapses": 2,
+      "seed": 104729,
+      "v19_eligible_coherence_rows": 100
+    },
+    {
+      "budget": "B80",
+      "coherence_failures_requiring_inference": 7,
+      "coherence_passes": 93,
+      "functional_passes": 1378,
+      "hypothetical_upper_passes_if_all_v19_rows_pass": 1385,
+      "lineage_dir": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed104729-v577",
+      "noncoherence_failures_unchanged_by_v19": 15,
+      "outputs_sha256": "49c116fba763a721c343dd8bc640f70f3d5a846de25c1c1fc4e588610e8f7ab6",
+      "repetition_collapses": 0,
+      "seed": 104729,
+      "v19_eligible_coherence_rows": 100
+    },
+    {
+      "budget": "B40",
+      "coherence_failures_requiring_inference": 3,
+      "coherence_passes": 97,
+      "functional_passes": 1379,
+      "hypothetical_upper_passes_if_all_v19_rows_pass": 1382,
+      "lineage_dir": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed130363-v579",
+      "noncoherence_failures_unchanged_by_v19": 18,
+      "outputs_sha256": "3c198145cc1a296344f755afdfc6e2758d38c08a3a1e3649ea02d99bb9709755",
+      "repetition_collapses": 0,
+      "seed": 130363,
+      "v19_eligible_coherence_rows": 100
+    },
+    {
+      "budget": "B80",
+      "coherence_failures_requiring_inference": 22,
+      "coherence_passes": 78,
+      "functional_passes": 1359,
+      "hypothetical_upper_passes_if_all_v19_rows_pass": 1381,
+      "lineage_dir": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed130363-v581",
+      "noncoherence_failures_unchanged_by_v19": 19,
+      "outputs_sha256": "6796fc84ef236eb9ab009b9d6845bcc4e824140fa6338b71f53bf4ebfbb1804c",
+      "repetition_collapses": 0,
+      "seed": 130363,
+      "v19_eligible_coherence_rows": 100
+    },
+    {
+      "budget": "B40",
+      "coherence_failures_requiring_inference": 6,
+      "coherence_passes": 94,
+      "functional_passes": 1359,
+      "hypothetical_upper_passes_if_all_v19_rows_pass": 1365,
+      "lineage_dir": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed155921-v583",
+      "noncoherence_failures_unchanged_by_v19": 35,
+      "outputs_sha256": "6d6bd7ed33f58f6f85126211d1b765c8e2f59764a8c26d279902909f5d453ae3",
+      "repetition_collapses": 1,
+      "seed": 155921,
+      "v19_eligible_coherence_rows": 100
+    },
+    {
+      "budget": "B80",
+      "coherence_failures_requiring_inference": 5,
+      "coherence_passes": 95,
+      "functional_passes": 1382,
+      "hypothetical_upper_passes_if_all_v19_rows_pass": 1387,
+      "lineage_dir": "results/abi_capability_compiler_phase4_abi_lineage/B80-seed155921-v585",
+      "noncoherence_failures_unchanged_by_v19": 13,
+      "outputs_sha256": "0a0f4abac105577ee3dd2011407368e4e36def13eccff80028d8dfb7c1e11d6b",
+      "repetition_collapses": 0,
+      "seed": 155921,
+      "v19_eligible_coherence_rows": 100
+    }
+  ],
+  "training_performed": false
+}

@@ -1,0 +1,23 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "version": 731,
+  "status_date": "2026-08-13",
+  "historical_evidence_changed": false,
+  "phase0": "COMPLETE",
+  "phase1": "COMPLETE",
+  "phase2": "MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS_0_OF_21000_FILLED",
+  "phase3": "MACHINE_EVIDENCE_COMPLETE_NOT_UNCONDITIONALLY_CERTIFIED",
+  "phase4": "CONDITIONALLY_OPEN_V19_B40_B80_COHERENCE_RESCREEN_AUTHORIZED",
+  "phases5_through_8": "LOCKED",
+  "phase4_latest": "ABI_CAPABILITY_COMPILER_PHASE4_V19_FRONTIER_AUDIT_RESULT_V730.json",
+  "v19_same_artifact_quality": "PASS",
+  "v19_same_artifact_cpu_runtime": "PASS",
+  "v19_ordinary_retention": "PASS_CONTEMPORANEOUS_PAIRED_LOWER_95",
+  "b40_b80_v19_predicate_audit": "PASS_600_ROWS_ELIGIBLE",
+  "phase4_training": "PROHIBITED_FOR_THIS_RESCREEN",
+  "matched_baseline_training": "PROHIBITED_NO_STABLE_ABI_FRONTIER",
+  "final_test_access": "PROHIBITED",
+  "authorized_next_work": "ONE_SIX_SYSTEM_600_ROW_CUDA_V19_COHERENCE_RESCREEN",
+  "next_action": "Execute the exact B40/B80 three-seed model-router-residual-guard candidates through the v19 host on only 100 locked coherence rows each. Preserve all non-coherence outputs, recompute the sealed gates, and do not infer a minimum from hypothetical results.",
+  "claim_boundary": "The v19 execution host is qualified, but Phase 4 has no stable information frontier or matched baseline result yet. Human-dependent Phase 2 remains explicitly incomplete."
+}
