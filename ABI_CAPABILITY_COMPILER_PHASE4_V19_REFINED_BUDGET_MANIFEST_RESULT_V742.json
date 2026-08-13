@@ -1,0 +1,33 @@
+{
+  "format": "abi-capability-compiler-phase4-v19-refined-budget-manifest-summary/1",
+  "version": 742,
+  "status_date": "2026-08-13",
+  "status": "PASS_REFINED_B40_B80_NESTED_BUDGET_MANIFEST",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_V19_REFINED_BUDGET_MANIFEST_PROTOCOL_V740.json",
+    "sha256": "0e6cafa164605851d075ad993bcb80ec2a071ba6bb7fcfab5b105cbf9dcedee5"
+  },
+  "raw_manifest": {
+    "path": "results/abi_capability_compiler_phase4_v19_refined_budget_manifest/manifest_v741.json",
+    "sha256": "ed693700b02626be074504eaf2aa915e0eeccf6bfb2fa4d0895fca5e7bac96a2",
+    "evidence_sha256": "f01072699150f4ee5a471550240278acff85875d4b80579b99e420e7a8c20fbb"
+  },
+  "budgets": [
+    {"id":"B40","unique_source_attempts":4005,"teacher_tokens":123167,"record_memberships":4112},
+    {"id":"B50","unique_source_attempts":4953,"teacher_tokens":152266,"record_memberships":5140},
+    {"id":"B60","unique_source_attempts":5911,"teacher_tokens":181070,"record_memberships":6168},
+    {"id":"B70","unique_source_attempts":6853,"teacher_tokens":209961,"record_memberships":7196},
+    {"id":"B80","unique_source_attempts":7781,"teacher_tokens":238832,"record_memberships":8224}
+  ],
+  "b40_selection_identity_preserved": true,
+  "b80_selection_identity_preserved": true,
+  "original_ranking_and_salt_preserved": true,
+  "training_performed": false,
+  "teacher_model_loaded": false,
+  "final_test_accessed": false,
+  "decision": "The B40-B80 interval now has prospectively frozen, strictly nested B50/B60/B70 identities under the original deterministic selection. B60 is the midpoint first experiment; no new result or minimum is inferred from this manifest.",
+  "authorized_next_action": "Seal an unchanged clean-start lineage protocol for B50/B60/B70 with B60-all-three-seeds first, and bind a v19 coherence-only post-screen for any completed candidate. Do not start B50/B70 until the preregistered B60 decision allows it.",
+  "phase4_certified": false,
+  "claim_boundary": "Budget construction only. No refined training result, minimum, matched baseline, final test, Phase 4, or ABI-superiority claim."
+}

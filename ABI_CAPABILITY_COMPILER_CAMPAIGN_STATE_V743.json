@@ -1,0 +1,22 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "version": 743,
+  "status_date": "2026-08-13",
+  "historical_evidence_changed": false,
+  "phase0": "COMPLETE",
+  "phase1": "COMPLETE",
+  "phase2": "MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS_0_OF_21000_FILLED",
+  "phase3": "MACHINE_EVIDENCE_COMPLETE_NOT_UNCONDITIONALLY_CERTIFIED",
+  "phase4": "CONDITIONALLY_OPEN_REFINED_B40_B80_BUDGETS_FROZEN_TRAINING_PROTOCOL_REQUIRED",
+  "phases5_through_8": "LOCKED",
+  "phase4_latest": "ABI_CAPABILITY_COMPILER_PHASE4_V19_REFINED_BUDGET_MANIFEST_RESULT_V742.json",
+  "stable_sufficient_upper_bound": "B80_VERIFIED",
+  "stable_minimum": "UNPROVEN",
+  "refined_budget_attempts": "B50_4953_B60_5911_B70_6853",
+  "phase4_training": "PROHIBITED_UNTIL_REFINED_LINEAGE_PROTOCOL_AND_PREFLIGHT_ARE_SEALED",
+  "matched_baseline_training": "PROHIBITED_NO_STABLE_MINIMUM",
+  "final_test_access": "PROHIBITED",
+  "authorized_next_work": "SEAL_REFINED_CLEAN_START_LINEAGE_PROTOCOL",
+  "next_action": "Clone the exact V570 stage configuration and seeds, substitute only the V741 budget manifest and B50/B60/B70 budget identities, preserve v19 as a post-training coherence execution layer, and preregister B60 all-three-seed execution before compute.",
+  "claim_boundary": "Refined budget identities are frozen, but no refined candidate exists. B80 remains only a sufficient upper bound."
+}

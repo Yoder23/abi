@@ -1,0 +1,108 @@
+{
+  "adaptive_order": "Run B60 from the unchanged clean-start lineage at all three registered seeds first. If B60 passes all three, run B50 at all three seeds as its adjacent lower. If B60 fails all three, run B70 at all three seeds with B60 as its adjacent lower. If B60 is mixed, stop this refinement without calling a minimum. If the selected adjacent pair is not all-seed PASS above and all-seed FAIL below, stop without further nearby budgets. B40 and B80 are immutable anchors and are not retrained.",
+  "budgets": [
+    {
+      "authoritative_teacher_output_tokens": 123167,
+      "duplicate_memberships": 107,
+      "fraction": 0.4,
+      "id": "B40",
+      "record_memberships": 4112,
+      "records": {
+        "phase1_ir": 2800,
+        "v138_targeted_ir": 800,
+        "v480_host_supervision": 512
+      },
+      "selection_sha256": "e494d251f8517495ab216128ca323755cade8015754f64aaacf28ad252e5bee6",
+      "unique_source_attempts": 4005
+    },
+    {
+      "authoritative_teacher_output_tokens": 152266,
+      "duplicate_memberships": 187,
+      "fraction": 0.5,
+      "id": "B50",
+      "record_memberships": 5140,
+      "records": {
+        "phase1_ir": 3500,
+        "v138_targeted_ir": 1000,
+        "v480_host_supervision": 640
+      },
+      "selection_sha256": "0a5025545b9c2e0345a2fff03ebc044789c896dbcd09495d122a2649a76a5073",
+      "unique_source_attempts": 4953
+    },
+    {
+      "authoritative_teacher_output_tokens": 181070,
+      "duplicate_memberships": 257,
+      "fraction": 0.6,
+      "id": "B60",
+      "record_memberships": 6168,
+      "records": {
+        "phase1_ir": 4200,
+        "v138_targeted_ir": 1200,
+        "v480_host_supervision": 768
+      },
+      "selection_sha256": "5059394a65c2517e479eecccfa2dbf2629f40f17c736bab3d7ef1834c3ade43d",
+      "unique_source_attempts": 5911
+    },
+    {
+      "authoritative_teacher_output_tokens": 209961,
+      "duplicate_memberships": 343,
+      "fraction": 0.7,
+      "id": "B70",
+      "record_memberships": 7196,
+      "records": {
+        "phase1_ir": 4900,
+        "v138_targeted_ir": 1400,
+        "v480_host_supervision": 896
+      },
+      "selection_sha256": "ec38c769525efe079cfdc7e6e1739a40a2fd6ef6247f4d1e7b26ccf9bc0cfeae",
+      "unique_source_attempts": 6853
+    },
+    {
+      "authoritative_teacher_output_tokens": 238832,
+      "duplicate_memberships": 443,
+      "fraction": 0.8,
+      "id": "B80",
+      "record_memberships": 8224,
+      "records": {
+        "phase1_ir": 5600,
+        "v138_targeted_ir": 1600,
+        "v480_host_supervision": 1024
+      },
+      "selection_sha256": "8e64820947b9ab995071e267d999f2b9b0770208e36cf53b6d69fe1a5138e250",
+      "unique_source_attempts": 7781
+    }
+  ],
+  "claim_boundary": "Refined nested information-budget identities only. No new training result, frontier minimum, matched baseline, final test, Phase 4, or superiority claim.",
+  "evidence_sha256": "f01072699150f4ee5a471550240278acff85875d4b80579b99e420e7a8c20fbb",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase4-v19-refined-budget-manifest-result/1",
+  "gates": {
+    "all_selection_hashes_unique": true,
+    "b40_identity_preserved": true,
+    "b80_identity_preserved": true,
+    "final_test_not_accessed": true,
+    "five_nested_budgets": true,
+    "strictly_increasing_attempts": true,
+    "strictly_increasing_tokens": true,
+    "teacher_model_not_loaded": true,
+    "training_not_performed": true
+  },
+  "parent_ordered_record_ids_sha256": "309388a67cfb165941f5e4ef292024ed41d1f9bdc4ae56e5a44972d40367a629",
+  "phase4_certified": false,
+  "protocol_sha256": "0e6cafa164605851d075ad993bcb80ec2a071ba6bb7fcfab5b105cbf9dcedee5",
+  "seed_policy": {
+    "clean_start_per_budget_and_seed": true,
+    "information_selection_fixed_across_seeds": true,
+    "paired_across_budgets": true,
+    "seeds": [
+      104729,
+      130363,
+      155921
+    ]
+  },
+  "selection_method": "within-stratum ascending SHA256(salt:artifact:stratum:source_attempt_sha256), then prefix",
+  "selection_salt": "abi-phase4-nested-consumed-information-v566",
+  "status": "PASS_REFINED_B40_B80_NESTED_BUDGET_MANIFEST",
+  "teacher_model_loaded": false,
+  "training_performed": false
+}

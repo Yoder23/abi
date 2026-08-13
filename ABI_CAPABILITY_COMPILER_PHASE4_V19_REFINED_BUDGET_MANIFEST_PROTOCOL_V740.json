@@ -1,0 +1,42 @@
+{
+  "format": "abi-capability-compiler-phase4-v19-refined-budget-manifest/1",
+  "protocol_id": "abi-capability-compiler-phase4-v19-refined-budget-manifest-v740",
+  "status": "PREREGISTERED_NESTED_B40_B80_INTERVAL_REFINEMENT",
+  "status_date": "2026-08-13",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V739.json",
+  "objective": "Freeze deterministic capability-balanced B50, B60, and B70 prefixes strictly inside the already verified B40-B80 information bracket, preserving the original V566 salt/ranking and exact B40/B80 endpoint identities before any refined-budget training.",
+  "base_lineage_protocol": "ABI_CAPABILITY_COMPILER_PHASE4_ABI_LINEAGE_PROTOCOL_V570.json",
+  "parent_manifest": "results/abi_capability_compiler_phase4_budget_manifest/manifest_v567.json",
+  "training_authorized": false,
+  "teacher_model_loading_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "budgets": [
+    {"id":"B40","fraction":0.4,"phase1_per_capability":200,"targeted_per_weak_capability":200,"host_per_capability_builder":32},
+    {"id":"B50","fraction":0.5,"phase1_per_capability":250,"targeted_per_weak_capability":250,"host_per_capability_builder":40},
+    {"id":"B60","fraction":0.6,"phase1_per_capability":300,"targeted_per_weak_capability":300,"host_per_capability_builder":48},
+    {"id":"B70","fraction":0.7,"phase1_per_capability":350,"targeted_per_weak_capability":350,"host_per_capability_builder":56},
+    {"id":"B80","fraction":0.8,"phase1_per_capability":400,"targeted_per_weak_capability":400,"host_per_capability_builder":64}
+  ],
+  "seed_policy": {
+    "seeds": [104729,130363,155921],
+    "information_selection_fixed_across_seeds": true,
+    "clean_start_per_budget_and_seed": true,
+    "paired_across_budgets": true
+  },
+  "adaptive_order": "Run B60 from the unchanged clean-start lineage at all three registered seeds first. If B60 passes all three, run B50 at all three seeds as its adjacent lower. If B60 fails all three, run B70 at all three seeds with B60 as its adjacent lower. If B60 is mixed, stop this refinement without calling a minimum. If the selected adjacent pair is not all-seed PASS above and all-seed FAIL below, stop without further nearby budgets. B40 and B80 are immutable anchors and are not retrained.",
+  "bindings": {
+    "abi/capability_compiler_phase4_v19_refined_budget_manifest.py": "6344d3814e73eea5101fe2dcfdfb9052195357fa708315319b565b7ccc23b45e",
+    "tests/test_capability_compiler_phase4_v19_refined_budget_manifest.py": "4a1d808871962a0fb07e7af1e57840b99ccb74ba056476a6f26de6dd3b5a3432",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V739.json": "8d7884410c5e172b6dfb2255a16a37186a0b53f1b786ee783a7daf4003c62704",
+    "ABI_CAPABILITY_COMPILER_PHASE4_V19_FRONTIER_VERIFIER_RESULT_V738.json": "d7a83470e824ae677b9e4a64c0178d753ea0c0b8e35fbe2be6182372bbd89c67",
+    "ABI_CAPABILITY_COMPILER_PHASE4_ABI_LINEAGE_PROTOCOL_V570.json": "50cd9abc83b584bf1682b57f606bbdcba75fbeda76eeeaa48edafbbc08e8505c",
+    "results/abi_capability_compiler_phase4_budget_manifest/manifest_v567.json": "3e2c6d92dc51f75842a4e15d9449437ea849f04bedc25047347625c8cb5877ea",
+    "abi/capability_compiler_phase4_budget_manifest.py": "5a43359c2103b0e522d6d7903f6f263dab2c1c0f533beaf49fed0569679129b2",
+    "abi/capability_compiler_phase4_lineage_audit.py": "c372394db85e843d85b2ce448890c4569bc850414f64cb18488c77e8db648213",
+    "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+    "results/abi_capability_compiler_phase3/targeted_combined_ir_v137/normalized_targeted_combined_v138.abicir": "9fa2467a37c870db7a24640a8d6da46ed73941573026af2c9a4c3425fd98dd18",
+    "results/abi_capability_compiler_phase3_host_supervision/build_v480/host_weak_supervision_v480.abicir": "7b0af0bafda631f89dd054a3bd57da76885b3eaca7fe863474255bcf8978b34d"
+  },
+  "decision_rule": "Pass manifest construction only if B40 and B80 selection hashes exactly match V567, B50/B60/B70 are strictly nested between them under the unchanged ranking, imported attempts and tokens increase strictly, no teacher or final material is loaded, and no training occurs.",
+  "claim_boundary": "Refined information-budget identities only. No training result, minimum, matched baseline, final test, Phase 4, or ABI-superiority claim."
+}
