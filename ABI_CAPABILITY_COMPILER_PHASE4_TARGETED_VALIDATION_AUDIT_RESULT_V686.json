@@ -1,0 +1,56 @@
+{
+  "format": "abi-capability-compiler-phase4-targeted-validation-audit-summary/1",
+  "version": 686,
+  "status_date": "2026-08-13",
+  "status": "FAIL_EXISTING_TARGETED_COHERENCE_EVIDENCE_NOT_DISCRIMINATIVE",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_TARGETED_VALIDATION_AUDIT_PROTOCOL_V683.json",
+    "sha256": "ede75dccf9ae9ba281ef99e07c506a67b0b70d38602d9c9ef77c3c84284afd5d"
+  },
+  "readiness": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_TARGETED_VALIDATION_AUDIT_READINESS_V684.json",
+    "sha256": "919783c2061ea0a784d0af863578dfc43463327a057d8a9e2dad05b9f3219200"
+  },
+  "raw_result": {
+    "path": "results/abi_capability_compiler_phase4_targeted_validation_audit/audit_v685/result.json",
+    "sha256": "3e4bbbc768eb4f23cf3bfc10042cf532592c43444bf9526067cfa4f96c09e5f3",
+    "evidence_sha256": "631fc2abfe783dda0610784378ba210de7a65da1d40f2d4320686422feb26949"
+  },
+  "raw_outputs": {
+    "path": "results/abi_capability_compiler_phase4_targeted_validation_audit/audit_v685/outputs.jsonl",
+    "sha256": "b9e254831cfbab5e29c7f208cea884ecc5816354e4837a81fab0d50f300732ae",
+    "bytes": 138722
+  },
+  "observations_per_system": 200,
+  "inherited_passes": "200/200",
+  "adapted_passes": "198/200",
+  "adapted_wilson": {
+    "point": 0.99,
+    "lower_95": 0.9642782382838231,
+    "upper_95": 0.9972533418664555
+  },
+  "source_results": {
+    "targeted_ir": {
+      "inherited_passes": "100/100",
+      "adapted_passes": "100/100"
+    },
+    "host_supervision": {
+      "inherited_passes": "100/100",
+      "adapted_passes": "98/100"
+    }
+  },
+  "repetition_collapses": {
+    "inherited": 0,
+    "adapted": 0
+  },
+  "failed_gate": "adapted_strictly_improves",
+  "adaptive_decision": "Do not construct or promote the mixed route artifact. Close Phase 1 acquisition, frozen V138 targeted, and frozen V480 host-supervision prompts as sufficient route-acceptance evidence for coherence.",
+  "measured_limitation": "All three existing acceptance sources saturate for the inherited coherence route and therefore cannot expose the independently measured 78/100 development weakness. The adapted route also introduced two exact-label copying errors on host-conformant prompts.",
+  "authorized_successor_design": "One prospective deterministic metamorphic coherence-validation generator may be designed from the frozen functional evaluator contract. It must enumerate a broad namespace family before inference, freeze the generated artifact and selection rule, prove disjointness from acquisition/development/final/isolation/hostile material by prompt and evaluator hashes, and then perform one read-only inherited-versus-adapted audit. No training, teacher loading, final access, or candidate construction is authorized by this result.",
+  "training_performed": false,
+  "promotion_authorized": false,
+  "final_test_accessed": false,
+  "phase4_certified": false,
+  "claim_boundary": "Negative validation-coverage evidence only; no candidate construction, stable frontier, adjacent lower failure, runtime, package, matched baseline, final test, Phase 4 certificate, or superiority claim."
+}

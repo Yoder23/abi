@@ -12,11 +12,11 @@ artifacts are acquisition material, not deployable cakes.
 
 ## Current status
 
-Status date: 2026-08-11
+Status date: 2026-08-13
 
 **The ABI English-product moonshot is OPEN.**
 
-The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V682.json`.
+The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V687.json`.
 The route-isolated English endpoint now passes all registered Phase 3 machine
 gates: three paired training seeds and all A0-A4 causal controls, 1,393/1,400
 selected-seed autonomous quality with zero collapse, exact routing, three
@@ -174,8 +174,14 @@ route. That prospective split was run, but its 71 held-out coherence prompts
 were too easy: inherited and adapted both passed 71/71, so inherited was
 retained and development coherence remained 78/100. The resulting checkpoint
 failed at 1,361/1,400 despite every other gate passing. Phase 4 is now bounded
-to a read-only coverage audit of already frozen targeted weak-capability data;
-it remains uncertified.
+to validation coverage. The sealed frozen-evidence audit has now failed its
+discrimination rule: inherited coherence passed 200/200 and adapted coherence
+passed 198/200, with zero collapse in both systems. V686 closes acquisition,
+targeted, and host-supervision prompts as sufficient route-acceptance evidence.
+One prospective deterministic evaluator-derived metamorphic validation suite
+may be frozen before inference and audited read-only; no training, teacher
+loading, candidate construction, development-score selection, or final access
+is authorized. Phase 4 remains uncertified.
 Phase 2 and Phase 3
 certificate statuses remain unchanged, final data remains unopened, and Phase
 5 is locked.

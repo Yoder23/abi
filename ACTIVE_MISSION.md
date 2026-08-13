@@ -1,12 +1,12 @@
 # ABI active mission
 
-Status date: 2026-08-11
+Status date: 2026-08-13
 
 ## State
 
 The ABI capability-compiler moonshot is **OPEN**.
 
-The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V682.json`.
+The controlling state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V687.json`.
 All Phase 3 machine endpoints now pass. The exact route-isolated checkpoint has
 three-seed causal replication, 1,393/1,400 autonomous quality with zero
 collapse on the selected seed, three byte-identical host initializations,
@@ -40,7 +40,7 @@ focused tests, including all three production-form dry runs, pass. See
 | 1 | COMPLETE | `ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json` |
 | 2 | MACHINE + HANDOFF READY; 0/21,000 HUMAN PREFERENCES | `ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V554.json` |
 | 3 | MACHINE EVIDENCE COMPLETE; BLOCKED BY PHASE 2 | `ABI_CAPABILITY_COMPILER_PHASE3_FINAL_CERTIFICATE_AUDIT_RESULT_V551.json` |
-| 4 | CONDITIONALLY OPEN; ROUTE ISOLATION PASS; VALIDATION COVERAGE UNRESOLVED | `ABI_CAPABILITY_COMPILER_PHASE4_FUNCTIONAL_VALIDATION_RESULT_V681.json` |
+| 4 | CONDITIONALLY OPEN; ROUTE ISOLATION PASS; EXISTING VALIDATION EVIDENCE CLOSED | `ABI_CAPABILITY_COMPILER_PHASE4_TARGETED_VALIDATION_AUDIT_RESULT_V686.json` |
 | 5-8 | LOCKED | `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` |
 
 V558 passed the physical archive and checkpoint-lineage audit without loading
@@ -177,8 +177,15 @@ inherited and adapted coherence passed all 71 held-out acquisition prompts, so
 the rule correctly retained inherited; development coherence then remained
 78/100 and the checkpoint scored 1,361/1,400. Every other gate passed. This
 localizes the next problem to validation coverage. Only a read-only audit of
-the frozen targeted weak-capability and host-supervision evidence may proceed;
-training and new teacher extraction remain prohibited.
+the frozen targeted weak-capability and host-supervision evidence could
+proceed. V683/V685 completed that audit: inherited coherence passed 200/200,
+adapted coherence passed 198/200, both had zero collapse, and the required
+strict improvement failed. V686 therefore closes all existing acquisition,
+targeted, and host-supervision prompts as sufficient coherence-acceptance
+evidence. The only authorized successor is one deterministic evaluator-derived
+metamorphic suite, frozen and hash-disjoint before model execution, followed by
+one read-only comparison. Training, teacher loading, candidate construction,
+development-score selection, and final access remain prohibited.
 
 ### Preserved historical mission snapshot
 

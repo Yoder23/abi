@@ -19,10 +19,10 @@ LayerCake cake.
 
 ## Current campaign state
 
-Status date: 2026-08-11.
+Status date: 2026-08-13.
 
 The controlling machine-readable state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V682.json`. Phase 3 has completed and
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V687.json`. Phase 3 has completed and
 passed every currently required machine gate, but it is not unconditionally
 certified because the controlling campaign contract makes it depend on Phase
 2. Phase 2 has 21,000 immutable blinded rating rows and zero completed
@@ -193,10 +193,18 @@ the hard B80 seed first. V677 did so with a disjoint 4,470/1,130 split, but the
 held-out Phase 1 acquisition prompts rated inherited and adapted coherence
 71/71 each and therefore selected inherited. The frozen artifact then failed
 development at 1,361/1,400 solely because coherence remained 78/100. Phase 1
-acquisition prompts are closed as a sufficient validation distribution. Only
-one read-only coverage audit of the already frozen targeted weak-capability and
-host-supervision artifacts is authorized; no training or new extraction may
-precede it. Phase 4 is not certified.
+acquisition prompts are closed as a sufficient validation distribution. V683
+then preregistered the only allowed read-only audit of frozen targeted and
+host-supervision evidence. The inherited coherence route passed 200/200 while
+the adapted route passed 198/200, so the required strict improvement failed.
+All three existing acceptance sources are now closed as discriminative
+validation evidence. V686 preserves that negative result. Exactly one
+prospective deterministic metamorphic coherence-validation suite may now be
+designed from the frozen evaluator contract, frozen before inference, proven
+hash-disjoint from every governed split, and used for one read-only comparison
+of the exact inherited and already trained adapted routes. Training, teacher
+loading, candidate construction, final access, and development-score selection
+remain prohibited. Phase 4 is not certified.
 
 The exact route-isolated endpoint scored 1,393/1,400 with zero repetition
 collapse at seed 240487 and passed all four same-lineage causal controls across
