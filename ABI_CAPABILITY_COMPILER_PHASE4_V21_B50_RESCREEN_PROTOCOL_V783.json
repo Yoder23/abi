@@ -1,0 +1,136 @@
+{
+  "format": "abi-capability-compiler-phase4-v21-b50-rescreen/1",
+  "protocol_id": "abi-capability-compiler-phase4-v21-b50-rescreen-v783",
+  "status": "PREREGISTERED_THREE_SYSTEM_V21_B50_RESCREEN",
+  "status_date": "2026-08-14",
+  "historical_evidence_changed": false,
+  "authorization": "ABI_CAPABILITY_COMPILER_PHASE4_V21_B50_LINEAGE_AUTHORIZATION_V778.json",
+  "objective": "Execute one full 4,200-row development screen of the three completed clean-start B50 lineages on LayerCake v21. The exact lexical guard may change only historically collapsed outputs into canonical prefixes, must preserve every historical functional pass, and must leave every historically noncollapsed output byte-identical.",
+  "device": "cuda",
+  "training_authorized": false,
+  "teacher_model_loading_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "layercake_root": "../layercake_release",
+  "interface": "lc-direct-neural-core/21",
+  "interface_sha256": "ac7f49f3b7674d3139fac930a4de9b7cf002eaf8779e802928c94acb3eb7cc69",
+  "development_catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+  "teacher_reference": "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl",
+  "model_metadata": "../layercake_release/artifacts/moonshot/phase2_shallow_sparse_pretrained/student2400-seed-9824/metadata.json",
+  "model_tokenizer": "../layercake_release/artifacts/moonshot/phase2_shallow_sparse_pretrained/student2400-seed-9824/tokenizer.json",
+  "router_tokenizer": "artifacts/phase3/utf8_bpe_v34/layercake_tokenizer_v3.json",
+  "research_signing_seed_hex": "f67c54ac828a6f07746b7cc425de20b2ec01788607da7930409fd53f0ce2a072",
+  "capabilities": [
+    "grammar",
+    "coherence",
+    "prompt_grounding",
+    "instruction_following",
+    "conversation",
+    "supplied_text_summarization",
+    "rewriting",
+    "email_drafting_from_notes",
+    "tone_control",
+    "format_control",
+    "clarification",
+    "abstention",
+    "fact_free_reasoning",
+    "fluent_realization"
+  ],
+  "absolute_screen": {
+    "per_capability_functional_point_estimate_minimum": 0.9,
+    "per_capability_functional_wilson_lower_minimum": 0.85,
+    "critical_point_minimum": 0.95,
+    "critical_wilson_lower_minimum": 0.9,
+    "repetition_collapse_v2_count_maximum": 0
+  },
+  "teacher_relative_screen": {
+    "bootstrap_replicates": 10000,
+    "candidate_minus_teacher_lower_95_minimum": -0.05
+  },
+  "imported_information": {
+    "unique_source_attempts": 4953,
+    "authoritative_teacher_output_tokens": 152266,
+    "record_memberships": 5140
+  },
+  "systems": [
+    {
+      "budget": "B50",
+      "seed": 104729,
+      "components": {
+        "model": "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed104729-v779/v463/model.safetensors",
+        "router": "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed104729-v779/router/router.safetensors",
+        "residual": "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed104729-v779/v526/control_bridge.safetensors"
+      },
+      "router_config": "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed104729-v779/router/config.json",
+      "guard_artifact": "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed104729-v779/budget_host_supervision.abicir",
+      "historical_outputs": "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed104729-v779/evaluation/development_outputs.jsonl",
+      "lineage_result": "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed104729-v779/result.json"
+    },
+    {
+      "budget": "B50",
+      "seed": 130363,
+      "components": {
+        "model": "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed130363-retry-v781/v463/model.safetensors",
+        "router": "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed130363-retry-v781/router/router.safetensors",
+        "residual": "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed130363-retry-v781/v526/control_bridge.safetensors"
+      },
+      "router_config": "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed130363-retry-v781/router/config.json",
+      "guard_artifact": "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed130363-retry-v781/budget_host_supervision.abicir",
+      "historical_outputs": "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed130363-retry-v781/evaluation/development_outputs.jsonl",
+      "lineage_result": "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed130363-retry-v781/result.json"
+    },
+    {
+      "budget": "B50",
+      "seed": 155921,
+      "components": {
+        "model": "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed155921-v782/v463/model.safetensors",
+        "router": "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed155921-v782/router/router.safetensors",
+        "residual": "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed155921-v782/v526/control_bridge.safetensors"
+      },
+      "router_config": "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed155921-v782/router/config.json",
+      "guard_artifact": "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed155921-v782/budget_host_supervision.abicir",
+      "historical_outputs": "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed155921-v782/evaluation/development_outputs.jsonl",
+      "lineage_result": "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed155921-v782/result.json"
+    }
+  ],
+  "bindings": {
+    "abi/capability_compiler_phase4_v21_b50_rescreen.py": "87bd7dff91a65f524d75ed96326fb4cc5517e1e73e18cf33f336be0b8baa7068",
+    "tests/test_capability_compiler_phase4_v21_b50_rescreen.py": "e1836d2fa2526778efb128392be783e98eb2056770f26b25c986b652d4a4ffcd",
+    "abi/capability_compiler_phase4_v21_b60_rescreen.py": "b0f190c6a6a0ba857bb547f600eba3bd71f34f57a5cc3d355690b5d33c1dc19e",
+    "ABI_CAPABILITY_COMPILER_PHASE4_V21_B50_LINEAGE_AUTHORIZATION_V778.json": "0217f8a4505969af826a5698c9da9dffc2687ec4375feb21159576a7b0cca929",
+    "ABI_CAPABILITY_COMPILER_PHASE4_V21_B50_SEED130363_INTERRUPTION_V780.json": "0a34ec91ba9b3c3fa2153cb6c5844fa23df47647eaae86030c3f8c3e9243c20a",
+    "ABI_CAPABILITY_COMPILER_PHASE4_V19_REFINED_ABI_LINEAGE_PROTOCOL_V744.json": "1ea5f06eb9e9cfe6449d4e6439e845e7dccc729d9ef9267f6b2c2c9bd93b9b87",
+    "results/abi_capability_compiler_phase4_v19_refined_budget_manifest/manifest_v741.json": "ed693700b02626be074504eaf2aa915e0eeccf6bfb2fa4d0895fca5e7bac96a2",
+    "../layercake_release/moonshot/canonical_route_isolated_lexical_guard_core_abi_v21.json": "ac7f49f3b7674d3139fac930a4de9b7cf002eaf8779e802928c94acb3eb7cc69",
+    "../layercake_release/moonshot/postrelease_route_isolated_lexical_guard_v21_decision_v71.json": "473c3e7cfce1121eae9550191142af1be5111abef93e306378290e039b634174",
+    "../layercake_release/results/moonshot/postrelease_route_isolated_lexical_guard_v21_construct_v70.json": "8dd8c18b0b8cfbdca33f276ab4a9b4da8f8a1a183a99f572514779bf47f6e0c3",
+    "../layercake_release/layercake_extensions/route_isolated_lexical_guard_core_v21.py": "1b90786020e042ff129322e8e3531a3608da0e8487c83ef32da344e8baaa4277",
+    "../layercake_release/artifacts/moonshot/phase2_shallow_sparse_pretrained/student2400-seed-9824/metadata.json": "def6a552162a10a814d4bcfba31fa659530f0488d461c4a93414ee44a231ea82",
+    "../layercake_release/artifacts/moonshot/phase2_shallow_sparse_pretrained/student2400-seed-9824/tokenizer.json": "1fe93b6152957cf9cfd6d89002467f789ce8b3f3e000b3a2edf27c808ddd0b9e",
+    "artifacts/phase3/utf8_bpe_v34/layercake_tokenizer_v3.json": "64a2b3ebf2fde5ec1a35faa6813b77f09f19f47c1135695d72b29145c023df36",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl": "1081dbe57e75da50b2619bc2dab14c6441158dcd6068f2b864733936087e86a2",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed104729-v779/result.json": "72dc1b71285ced19f8614658ff761de4e6c5289c79109b7c2f03893b1dd3155e",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed104729-v779/v463/model.safetensors": "2b38c920a9d94d7ff64ad25219502394578c10bc1cc8d70583554757bff40701",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed104729-v779/router/router.safetensors": "e48776903f4fc60fb61454ab3081469cc29494b67b9475934ab4b367bb45b6a9",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed104729-v779/router/config.json": "b43d07f892a2bb746c93301a913777e486eab71bd917486de464bd185ec09d99",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed104729-v779/v526/control_bridge.safetensors": "0e3131a9c83d77c90a1e45200fdc58625cf1b7f40e384875eb272500ab4f056f",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed104729-v779/budget_host_supervision.abicir": "0382bf1deffde3f29c32e866e1beb0431b934cebc937a44129b9a9decd21450b",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed104729-v779/evaluation/development_outputs.jsonl": "fbc3be12c729c7b067753b4d4d663135c2afd67208dd8bce936e7d8b0170c06a",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed130363-retry-v781/result.json": "1e760c7a7295bb68811c8d01f7ef9cff5ad72353f7c43753c076608e9d38dbc9",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed130363-retry-v781/v463/model.safetensors": "3d5ea10403873c3a8293faf322545f4afbc070522f9cdbb8dc50df76731a70d9",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed130363-retry-v781/router/router.safetensors": "5ea8a3e98db67778522f5f66b62639f7c7e103f3aac6e1062c3e060eab3cd151",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed130363-retry-v781/router/config.json": "b43d07f892a2bb746c93301a913777e486eab71bd917486de464bd185ec09d99",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed130363-retry-v781/v526/control_bridge.safetensors": "991d2c45b4b2ebcb194cba07f894e6340841e681ccab5341f73315d5f5c31ed0",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed130363-retry-v781/budget_host_supervision.abicir": "fce692ccdc8030f7247c46e6aaf227c2d54ea0357176eab0bfc80f7f45390abd",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed130363-retry-v781/evaluation/development_outputs.jsonl": "d8b8c05d02b7d450bfcf36d296289526cdd11c35af9e83f448e9c3b0ce7f1963",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed155921-v782/result.json": "9d23e481880e0c0fea26c5181721294cdb3e38e5ea4e522f1f6d04cac5413fed",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed155921-v782/v463/model.safetensors": "8b610a76a6826063c2b5d4e0afae8f182868fd17cd1efb3dc2b114d9c02aeea0",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed155921-v782/router/router.safetensors": "7dc1423771bfccbea79be46d7900fecc27ecfaf78bd28c6c22b5e1811f1a223f",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed155921-v782/router/config.json": "b43d07f892a2bb746c93301a913777e486eab71bd917486de464bd185ec09d99",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed155921-v782/v526/control_bridge.safetensors": "b0964a909b4830f7c1818d5493e9f65356964af3355e46e41b5289e734d8ba97",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed155921-v782/budget_host_supervision.abicir": "2cfa22e8a26b203d8bc817556f705046d3062514a44a7b8f7f82348017bf231d",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed155921-v782/evaluation/development_outputs.jsonl": "8365bb29db48178252d638ab1e4cdf956433b2f0d6d694f5466fce6dee5cc93f"
+  },
+  "decision_rule": "Pass stable B50 development candidacy only if all three seeds pass every unchanged quality, teacher-relative, routing, package, pointer, teacher-absence, zero-learning, and zero-collapse gate; all changed outputs were historical collapses and are guard-terminated canonical prefixes; every historical functional pass is preserved; and every historically noncollapsed output remains byte-identical. A three-seed pass makes B50 a stable sufficient candidate but cannot establish a minimum without a separately preregistered adjacent-lower all-seed failure. A mixed or all-fail result establishes no minimum.",
+  "claim_boundary": "Prospective three-seed B50 v21 development rescreen only. No minimum, matched baseline, final test, Phase 4, or ABI-superiority claim."
+}
