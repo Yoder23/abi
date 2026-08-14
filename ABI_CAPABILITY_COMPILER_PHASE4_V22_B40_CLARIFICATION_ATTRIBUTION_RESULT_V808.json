@@ -1,0 +1,229 @@
+{
+  "claim_boundary": "Read-only prompt-level B40 failure attribution. No repair, stable minimum, matched baseline, final test, Phase 4, or ABI-superiority claim.",
+  "distinct_failed_object_phrases": [
+    "blue folder",
+    "green notebook",
+    "small parcel"
+  ],
+  "distinct_failed_prompt_count": 10,
+  "evidence_sha256": "903e4f396c0ace8dda731a9548e1e9df09c342496d0aaabbb7a5b15dfe9cedc8",
+  "failed_row_count": 10,
+  "failed_rows": [
+    {
+      "cached_teacher_pass": true,
+      "failure_taxonomy": {
+        "empty_output": false,
+        "missing_inquiry_marker": true,
+        "missing_question_mark": true
+      },
+      "host_output_unchanged_from_v19": true,
+      "object_phrase": "green notebook",
+      "passing_seed104729": true,
+      "passing_seed130363": true,
+      "probe_id": "phase1-validation-clarification-0000-v2",
+      "prompt_sha256": "71a0b3694f06a25ab3ca61aeb89fceec786f4da4f3654e18999ac3dc70547e8d",
+      "route_correct_all_seeds": true,
+      "selected_clarification_records_mentioning_object": 9,
+      "selected_object_records_with_functional_target": 9
+    },
+    {
+      "cached_teacher_pass": true,
+      "failure_taxonomy": {
+        "empty_output": false,
+        "missing_inquiry_marker": true,
+        "missing_question_mark": true
+      },
+      "host_output_unchanged_from_v19": true,
+      "object_phrase": "blue folder",
+      "passing_seed104729": true,
+      "passing_seed130363": true,
+      "probe_id": "phase1-validation-clarification-0016-v2",
+      "prompt_sha256": "b785c25074aad9f7ab3732ac7a62da264d1df2759669821a26bcc861ae3ac46f",
+      "route_correct_all_seeds": true,
+      "selected_clarification_records_mentioning_object": 12,
+      "selected_object_records_with_functional_target": 12
+    },
+    {
+      "cached_teacher_pass": true,
+      "failure_taxonomy": {
+        "empty_output": false,
+        "missing_inquiry_marker": true,
+        "missing_question_mark": true
+      },
+      "host_output_unchanged_from_v19": true,
+      "object_phrase": "small parcel",
+      "passing_seed104729": true,
+      "passing_seed130363": true,
+      "probe_id": "phase1-validation-clarification-0032-v2",
+      "prompt_sha256": "16f69457eaaa1e024e7b4053664ba7b95f18a8e1158c0fb5753c96b50a973c6b",
+      "route_correct_all_seeds": true,
+      "selected_clarification_records_mentioning_object": 10,
+      "selected_object_records_with_functional_target": 10
+    },
+    {
+      "cached_teacher_pass": true,
+      "failure_taxonomy": {
+        "empty_output": false,
+        "missing_inquiry_marker": true,
+        "missing_question_mark": true
+      },
+      "host_output_unchanged_from_v19": true,
+      "object_phrase": "small parcel",
+      "passing_seed104729": true,
+      "passing_seed130363": true,
+      "probe_id": "phase1-validation-clarification-0036-v2",
+      "prompt_sha256": "6fba8cf4d5a45f45297acd86b174db8e8a59eefc4a1a793d6f6b3d3549f10049",
+      "route_correct_all_seeds": true,
+      "selected_clarification_records_mentioning_object": 10,
+      "selected_object_records_with_functional_target": 10
+    },
+    {
+      "cached_teacher_pass": true,
+      "failure_taxonomy": {
+        "empty_output": false,
+        "missing_inquiry_marker": true,
+        "missing_question_mark": true
+      },
+      "host_output_unchanged_from_v19": true,
+      "object_phrase": "green notebook",
+      "passing_seed104729": true,
+      "passing_seed130363": true,
+      "probe_id": "phase1-validation-clarification-0048-v2",
+      "prompt_sha256": "b89e68605c0db7ba87a5b23844b0d4118a46fbacdcb02dff0c716803a7d4a8fa",
+      "route_correct_all_seeds": true,
+      "selected_clarification_records_mentioning_object": 9,
+      "selected_object_records_with_functional_target": 9
+    },
+    {
+      "cached_teacher_pass": true,
+      "failure_taxonomy": {
+        "empty_output": false,
+        "missing_inquiry_marker": true,
+        "missing_question_mark": true
+      },
+      "host_output_unchanged_from_v19": true,
+      "object_phrase": "green notebook",
+      "passing_seed104729": true,
+      "passing_seed130363": true,
+      "probe_id": "phase1-validation-clarification-0052-v2",
+      "prompt_sha256": "97e7f861bf7fa938cc32a6aaf267e5d7d5ccc5dc938fa113c9675c94b29e2a99",
+      "route_correct_all_seeds": true,
+      "selected_clarification_records_mentioning_object": 9,
+      "selected_object_records_with_functional_target": 9
+    },
+    {
+      "cached_teacher_pass": true,
+      "failure_taxonomy": {
+        "empty_output": false,
+        "missing_inquiry_marker": true,
+        "missing_question_mark": true
+      },
+      "host_output_unchanged_from_v19": true,
+      "object_phrase": "green notebook",
+      "passing_seed104729": true,
+      "passing_seed130363": true,
+      "probe_id": "phase1-validation-clarification-0056-v2",
+      "prompt_sha256": "d84e318172d01be593b89613eb4a9b9ac75ca898f4b3b77ca477fa7ee9077492",
+      "route_correct_all_seeds": true,
+      "selected_clarification_records_mentioning_object": 9,
+      "selected_object_records_with_functional_target": 9
+    },
+    {
+      "cached_teacher_pass": true,
+      "failure_taxonomy": {
+        "empty_output": false,
+        "missing_inquiry_marker": true,
+        "missing_question_mark": true
+      },
+      "host_output_unchanged_from_v19": true,
+      "object_phrase": "blue folder",
+      "passing_seed104729": true,
+      "passing_seed130363": true,
+      "probe_id": "phase1-validation-clarification-0076-v2",
+      "prompt_sha256": "38012867bddccdd632d811d8389b06c80bae9d019237e445f9b4d013abd1a667",
+      "route_correct_all_seeds": true,
+      "selected_clarification_records_mentioning_object": 12,
+      "selected_object_records_with_functional_target": 12
+    },
+    {
+      "cached_teacher_pass": true,
+      "failure_taxonomy": {
+        "empty_output": false,
+        "missing_inquiry_marker": true,
+        "missing_question_mark": true
+      },
+      "host_output_unchanged_from_v19": true,
+      "object_phrase": "blue folder",
+      "passing_seed104729": true,
+      "passing_seed130363": true,
+      "probe_id": "phase1-validation-clarification-0080-v2",
+      "prompt_sha256": "4bb739d3129b4237051f6ea8706facce559de6ebf6930914803a636bc4b6c72c",
+      "route_correct_all_seeds": true,
+      "selected_clarification_records_mentioning_object": 12,
+      "selected_object_records_with_functional_target": 12
+    },
+    {
+      "cached_teacher_pass": true,
+      "failure_taxonomy": {
+        "empty_output": false,
+        "missing_inquiry_marker": true,
+        "missing_question_mark": true
+      },
+      "host_output_unchanged_from_v19": true,
+      "object_phrase": "small parcel",
+      "passing_seed104729": true,
+      "passing_seed130363": true,
+      "probe_id": "phase1-validation-clarification-0084-v2",
+      "prompt_sha256": "a59b8bfbc729293bfa06d7d43318e5e9cf6cac47b6fd3256619b9207f17180e8",
+      "route_correct_all_seeds": true,
+      "selected_clarification_records_mentioning_object": 10,
+      "selected_object_records_with_functional_target": 10
+    }
+  ],
+  "failure_taxonomy_counts": {
+    "empty_output": 0,
+    "missing_inquiry_marker": 10,
+    "missing_question_mark": 10
+  },
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase4-v22-b40-clarification-attribution-result/1",
+  "gates": {
+    "all_failures_interrogative_form": true,
+    "all_host_outputs_unchanged": true,
+    "all_outputs_nonempty": true,
+    "all_routes_correct": true,
+    "b40_selection_recomputed": true,
+    "both_other_seeds_pass_all_ten": true,
+    "cached_teacher_passes_all_ten": true,
+    "every_failed_object_covered_by_functional_source_targets": true,
+    "exact_ten_failed_rows": true,
+    "final_test_not_accessed": true,
+    "model_inference_absent": true,
+    "same_selection_all_seeds": true,
+    "selected_clarification_depth": true,
+    "source_evidence_hash": true,
+    "source_result_hash": true,
+    "teacher_loading_absent": true,
+    "training_absent": true,
+    "verified_mixed_topology_bound": true
+  },
+  "layercake_host_failure": false,
+  "measured_owner": "Seed-dependent B40 acquisition/optimization realization of interrogative clarification form. The same frozen information and v22 host pass every affected row in both other seeds; the failing host outputs are unchanged from v19, correctly routed, nonempty, and covered by selected functional clarification targets.",
+  "missing_imported_object_coverage": false,
+  "model_inference_performed": false,
+  "phase4_certified": false,
+  "protocol_sha256": "d3f97be5d954d27e0fd117968a1b42043d64e214b315cf8c733ef7cb6bc3b6dc",
+  "selected_information": {
+    "b40_authoritative_teacher_output_tokens": 123167,
+    "b40_unique_source_attempts": 4005,
+    "same_across_all_seeds": true,
+    "selected_clarification_records": 200,
+    "selection_sha256": "e494d251f8517495ab216128ca323755cade8015754f64aaacf28ad252e5bee6"
+  },
+  "source_evidence_sha256": "f1f6ddf34c4badc665e4b2db84e133c2f39c056277f09172e90885d000b3c83c",
+  "source_result_sha256": "edb64e61257e378c10d638862507c227b13d06f9903bf33b9fcc8af0526d1ee4",
+  "stable_minimum_established": false,
+  "status": "PASS_B40_CLARIFICATION_FAILURE_ATTRIBUTED_TO_SEED_DEPENDENT_ACQUISITION_REALIZATION",
+  "teacher_model_loaded": false,
+  "training_performed": false
+}

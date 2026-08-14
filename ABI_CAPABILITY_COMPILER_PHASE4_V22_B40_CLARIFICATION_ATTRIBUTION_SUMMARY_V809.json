@@ -1,0 +1,45 @@
+{
+  "format": "abi-capability-compiler-phase4-v22-b40-clarification-attribution-summary/1",
+  "version": 809,
+  "status_date": "2026-08-14",
+  "status": "PASS_B40_FAILURE_OWNED_BY_SEED_DEPENDENT_ABI_ACQUISITION_REALIZATION",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_V22_B40_CLARIFICATION_ATTRIBUTION_PROTOCOL_V807.json",
+    "sha256": "d3f97be5d954d27e0fd117968a1b42043d64e214b315cf8c733ef7cb6bc3b6dc"
+  },
+  "result": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_V22_B40_CLARIFICATION_ATTRIBUTION_RESULT_V808.json",
+    "sha256": "af0923a09121181cf4cfd35a415335dd2f1a15a2289c00de6e0719b89f36a2bd",
+    "evidence_sha256": "903e4f396c0ace8dda731a9548e1e9df09c342496d0aaabbb7a5b15dfe9cedc8"
+  },
+  "failure_shape": {
+    "failed_rows": 10,
+    "distinct_object_phrases": 3,
+    "missing_question_mark": 10,
+    "missing_inquiry_marker": 10,
+    "empty_outputs": 0,
+    "routes_correct": 10,
+    "host_outputs_changed": 0
+  },
+  "same_information_controls": {
+    "selection_sha256": "e494d251f8517495ab216128ca323755cade8015754f64aaacf28ad252e5bee6",
+    "same_selection_all_seeds": true,
+    "selected_clarification_records": 200,
+    "both_other_seeds_pass_all_ten": true,
+    "cached_teacher_passes_all_ten": true,
+    "every_failed_object_has_selected_functional_targets": true
+  },
+  "measured_owner": "ABI acquisition/optimization robustness at B40. The LayerCake v22 host is exonerated for these rows because every failing output is byte-identical to the prior v19 output and the same host passes both other same-information seeds.",
+  "rejected_actions": [
+    "patching LayerCake with clarification evaluator logic",
+    "relaxing the 0.85 Wilson lower gate",
+    "calling B50 an information minimum under the stricter V801 rule",
+    "running a nearby information-budget sweep",
+    "silently selecting only a passing seed"
+  ],
+  "authorized_next_action": "Run one read-only Phase 4 contract-and-baseline readiness audit. Reconcile the original Phase 0 smallest-passing-tested-budget language with the stricter later all-three-adjacent-fail rule, inventory the already qualified Phase 2 LoRA/distillation implementations and artifacts, and prospectively specify the minimum fair B50/B40 comparison needed under all three fairness views. Authorize no training in the audit itself.",
+  "phase4_certified": false,
+  "stable_minimum_established": false,
+  "claim_boundary": "Failure attribution only. B50 remains stable sufficient and B40 remains mixed. No information-minimum, matched-frontier, final-test, Phase 4, or ABI-superiority claim."
+}
