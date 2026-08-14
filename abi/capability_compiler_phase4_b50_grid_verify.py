@@ -24,6 +24,7 @@ from .capability_compiler_repetition_v2 import repetition_collapse_v2
 
 FORMAT = "abi-capability-compiler-phase4-b50-grid-verify/1"
 RESULT_FORMAT = "abi-capability-compiler-phase4-b50-grid-selection/1"
+RUN_RESULT_FORMAT = "abi-capability-compiler-phase4-b50-baseline-run-result/1"
 SYSTEMS = ("L0", "L1", "D0", "D1")
 
 
@@ -170,7 +171,7 @@ def _verify_one(
     receipt = _json(receipt_path)
     system = str(result.get("system"))
     if (
-        result.get("format") != "abi-capability-compiler-phase4-b50-baselines/1"
+        result.get("format") != RUN_RESULT_FORMAT
         or result.get("status") != "PASS_EXACT_B50_BASELINE_RUN_COMPLETE"
         or system not in SYSTEMS
         or result.get("stage") != "grid"

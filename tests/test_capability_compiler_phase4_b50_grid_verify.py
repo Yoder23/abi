@@ -1,5 +1,6 @@
 from abi.capability_compiler_phase4_b50_grid_verify import (
     FORMAT,
+    RUN_RESULT_FORMAT,
     expected_configurations,
     grid_tree_sha256,
     rank_rows,
@@ -24,6 +25,7 @@ def _row(passes, collapses, loss, seconds, identity_exposure):
 
 def test_grid_verifier_format_and_matrix_are_frozen():
     assert FORMAT == "abi-capability-compiler-phase4-b50-grid-verify/1"
+    assert RUN_RESULT_FORMAT == "abi-capability-compiler-phase4-b50-baseline-run-result/1"
     assert {key: len(value) for key, value in expected_configurations().items()} == {
         "L0": 8,
         "L1": 8,
