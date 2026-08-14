@@ -1,0 +1,50 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "version": 826,
+  "status_date": "2026-08-14",
+  "historical_evidence_changed": false,
+  "phase0": "COMPLETE",
+  "phase1": "COMPLETE",
+  "phase2": "MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS_0_OF_21000_FILLED",
+  "phase3": "MACHINE_EVIDENCE_COMPLETE_NOT_UNCONDITIONALLY_CERTIFIED",
+  "phase4": "CONDITIONALLY_OPEN_EXACT_B50_SEQUENCE_PACK_INDEPENDENTLY_VERIFIED_BASELINES_NOT_TRAINED",
+  "phases5_through_8": "LOCKED",
+  "phase4_latest": "ABI_CAPABILITY_COMPILER_PHASE4_B50_BASELINE_PACK_VERIFY_RESULT_V825.json",
+  "phase4_latest_sha256": "3d66fd5d9f0162fc4fe9ca7265532d176e353f440ba22c0ecb2d7a79660e5b6c",
+  "exact_b50_sequence_pack": {
+    "producer_result": "ABI_CAPABILITY_COMPILER_PHASE4_B50_BASELINE_PACK_RESULT_V821.json",
+    "producer_result_sha256": "68c4ce1098303d03d371ffbd753090beb070977f0c9bbdaae9cd112f0f3a1fa1",
+    "records_archive": "results/abi_capability_compiler_phase4_b50_baselines/pack_v821/exact_b50_records_v821.abicir",
+    "records_archive_sha256": "b5b6b2dd9acc386601d6c0f3dd33171eb3978805efe754a1fd5cbcaecccdff59",
+    "pack_manifest": "results/abi_capability_compiler_phase4_b50_baselines/pack_v821/exact_b50_pack_manifest_v821.json",
+    "pack_manifest_sha256": "a8f7a8757e348e3774f342b6bc864e3c1b172f459a55337216b9d613f7c0ff91",
+    "records": 5140,
+    "packs": 860,
+    "unique_source_attempts": 4953,
+    "authoritative_teacher_output_tokens": 152266,
+    "status": "PASS_INDEPENDENTLY_VERIFIED"
+  },
+  "stable_sufficient_candidate": "B50_V22_THREE_SEED_INDEPENDENTLY_VERIFIED_PASS",
+  "stable_minimum": "UNPROVEN_UNDER_V801_STRICT_RULE",
+  "fairness_views": {
+    "equal_imported_information": "SEQUENCE_PACK_READY_L0_L1_D0_NOT_TRAINED",
+    "equal_final_deployment_constraint": "ACCOUNTING_CONTRACT_READY",
+    "matched_quality_frontier": "NOT_READY_EXACT_B50_BASELINES_NOT_TRAINED"
+  },
+  "required_exact_information_systems": [
+    "L0",
+    "L1",
+    "D0"
+  ],
+  "required_richer_channel_controls": [
+    "D1",
+    "D2"
+  ],
+  "model_inference": "PROHIBITED_PENDING_SEPARATELY_PREREGISTERED_B50_TOP64_CACHE_EXTRACTION",
+  "training": "PROHIBITED_PENDING_TOP64_CACHE_AND_BASELINE_CAMPAIGN_PROTOCOLS",
+  "teacher_model_loading": "ONLY_ONE_SEPARATELY_PREREGISTERED_GPU_TOP64_CACHE_EXTRACTION_FOR_THE_VERIFIED_860_PACKS_MAY_BE_AUTHORIZED",
+  "final_test_access": "PROHIBITED",
+  "nearby_budget_sweeps": "PROHIBITED",
+  "next_action": "Preregister one GPU top-64 teacher-logit extraction over the exact independently verified 860-pack B50 manifest, with complete value, byte, wall-time, VRAM, RAM, and source-parameter accounting. Candidate training remains prohibited until that cache is independently verified and the frozen Phase 2 baseline campaign is separately sealed.",
+  "claim_boundary": "The exact B50 sequence pack is independently verified. No baseline quality or efficiency comparison, matched frontier, minimum, final-test result, unconditional Phase 2 or Phase 3 certificate, Phase 4 certificate, or ABI-superiority claim exists."
+}
