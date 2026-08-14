@@ -1,0 +1,33 @@
+{
+  "format": "abi-capability-compiler-phase4-v22-b50-independent-verify/1",
+  "protocol_id": "abi-capability-compiler-phase4-v22-b50-independent-verify-v797",
+  "status": "PREREGISTERED_READ_ONLY_V22_B50_INDEPENDENT_VERIFIER",
+  "status_date": "2026-08-14",
+  "historical_evidence_changed": false,
+  "authorization": "ABI_CAPABILITY_COMPILER_PHASE4_V22_B50_RESCREEN_PROTOCOL_V795.json",
+  "source_protocol": "ABI_CAPABILITY_COMPILER_PHASE4_V22_B50_RESCREEN_PROTOCOL_V795.json",
+  "source_result": "results/abi_capability_compiler_phase4_v22_b50_rescreen/run_v796/result.json",
+  "aggregate_outputs": "results/abi_capability_compiler_phase4_v22_b50_rescreen/run_v796/all_outputs.jsonl",
+  "objective": "Independently recompute the complete V796 three-seed result without inference: all 4,200 functional, repetition, route, and history flags; all 300 pointer executions; all 300 exact-format executions; 3,900 non-format identities; paired confidence gates; and all three deterministic signed packages.",
+  "model_inference_authorized": false,
+  "training_authorized": false,
+  "teacher_model_loading_authorized": false,
+  "package_rebuild_authorized": true,
+  "final_test_access": "PROHIBITED",
+  "bindings": {
+    "abi/capability_compiler_phase4_v22_b50_independent_verify.py": "5967ad4e0f6a011e751c5d26467517d8a2bd824e5e1a51bca07a45bd7688fd5a",
+    "tests/test_capability_compiler_phase4_v22_b50_independent_verify.py": "e54f1dbd8a21b8766c6a5bf034c5d04b5c2b93a36ee8197651bd1a56c2df893b",
+    "ABI_CAPABILITY_COMPILER_PHASE4_V22_B50_RESCREEN_PROTOCOL_V795.json": "6e4e667643f3e19e64f8f4829b3e71cb8f36785f91da88fa0c1cee1e572a4f32",
+    "results/abi_capability_compiler_phase4_v22_b50_rescreen/run_v796/result.json": "affd824b707b73e901a03679359a76c88169c8404925257e614084fd73d41474",
+    "results/abi_capability_compiler_phase4_v22_b50_rescreen/run_v796/all_outputs.jsonl": "8a802b6708104fd0cc5f49e72adbbd37e62439e2ca13b67c3939aefa56216f84",
+    "results/abi_capability_compiler_phase4_v22_b50_rescreen/run_v796/seed104729_outputs.jsonl": "48f3321aba623518dc15a0480229c1ce8f9457eda2f60c040e0baaaafe521442",
+    "results/abi_capability_compiler_phase4_v22_b50_rescreen/run_v796/seed130363_outputs.jsonl": "10cb931b31748c20db6927d3fe3cdb8abad730218bc26430d84c4fd9c15caf42",
+    "results/abi_capability_compiler_phase4_v22_b50_rescreen/run_v796/seed155921_outputs.jsonl": "ef5e266cb0729ad1c91aa1eeb8b359bcb78304a0c61b7fffee82f4241274ab52",
+    "../layercake_release/moonshot/canonical_route_isolated_format_literal_core_abi_v22.json": "34038bbd682f1efa727570adfb934b0ce9d73d31121f06f4028976ba2d798d35",
+    "../layercake_release/moonshot/postrelease_route_isolated_format_literal_v22_decision_v75.json": "b03ce97308f13cc40955adfd34eba1f02823207db0c31715d2f81e53a52b43ce",
+    "../layercake_release/results/moonshot/postrelease_route_isolated_format_literal_v22_construct_v74.json": "9db19e51eec61500e1ab5e945bd98228c08c81ba0508ffe5e671f1961612d665",
+    "../layercake_release/layercake_extensions/route_isolated_format_literal_core_v22.py": "88cb4cc7f212469f9f78cad9d0811fd7175f8f21f4e7b89455dc6b76c74b2f1c"
+  },
+  "decision_rule": "Pass only if all source hashes reproduce; all 4,200 row flags and all aggregate bytes independently recompute; all 300 pointer executions and all 300 format executions pass semantic validation; all 3,900 non-format outputs remain exact; quality and paired bootstrap gates reproduce; all three signed v22 packages rebuild exactly; all three seeds independently pass; and no inference, training, teacher loading, or final-test access occurs.",
+  "claim_boundary": "Independent B50 v22 development verification only. The format path is a deterministic prompt-literal transducer, not broad neural generation. A pass establishes a stable sufficient candidate, not a minimum. No matched baseline, final test, Phase 4, or ABI-superiority claim."
+}
