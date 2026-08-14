@@ -1,0 +1,123 @@
+{
+  "bridge": {
+    "parameters": 100352,
+    "shared_across_blocks": true,
+    "source_parameters_copied": 0,
+    "weak_capabilities": [
+      "abstention",
+      "coherence",
+      "fluent_realization",
+      "tone_control"
+    ]
+  },
+  "checkpoint": {
+    "bytes": 401968,
+    "path": "targeted_recovery_bridge.safetensors",
+    "sha256": "f4f2701fdb371ffa9cb2583a5a6c079e5bdb14dbc61cb4fad4c6f71136bcb603"
+  },
+  "evidence_sha256": "53409471f674fd6d649dedf4dec25e123bb5c2c0dd0238d59f96592d8fd14814",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-targeted-recovery-bridge/1",
+  "parent": {
+    "checkpoint_sha256": "3d5ea10403873c3a8293faf322545f4afbc070522f9cdbb8dc50df76731a70d9",
+    "mutated": false,
+    "state_sha256_after": "84ea8a379458f8054dd24e3ad9155360b11764872034ca21639013ec1f542e90",
+    "state_sha256_before": "84ea8a379458f8054dd24e3ad9155360b11764872034ca21639013ec1f542e90"
+  },
+  "phase3_certified": false,
+  "promotion_eligible": false,
+  "protocol_sha256": "f862b1f16c7095e661a3d79861520046706a0c1738e0edea041578deaa4289d7",
+  "source_blocks_retained": 0,
+  "status": "TRAINED_DEVELOPMENT_ONLY_NONPROMOTIONAL",
+  "teacher_present_at_inference": false,
+  "teacher_present_during_training": false,
+  "training": {
+    "active_parameter_seconds": 30964657.856921032,
+    "anchor_by_capability": {
+      "abstention": 2000,
+      "coherence": 2000,
+      "fluent_realization": 2000,
+      "tone_control": 2000
+    },
+    "anchor_observations": 8000,
+    "anchor_teacher_tokens_seen": 208357,
+    "autonomous_prefix_tokens_seen": 16763,
+    "curves": [
+      {
+        "language_loss": 0.38832926750183105,
+        "recovery_horizon": null,
+        "step": 1,
+        "wall_seconds": 0.09972120000020368
+      },
+      {
+        "language_loss": 0.0294809490442276,
+        "recovery_horizon": null,
+        "step": 250,
+        "wall_seconds": 32.20348529999319
+      },
+      {
+        "language_loss": 0.1702636480331421,
+        "recovery_horizon": 8,
+        "step": 500,
+        "wall_seconds": 71.39750069999718
+      },
+      {
+        "language_loss": 0.019579311832785606,
+        "recovery_horizon": null,
+        "step": 750,
+        "wall_seconds": 109.91947049999726
+      },
+      {
+        "language_loss": 0.01245084684342146,
+        "recovery_horizon": 4,
+        "step": 1000,
+        "wall_seconds": 149.50062259999686
+      },
+      {
+        "language_loss": 0.07423301041126251,
+        "recovery_horizon": null,
+        "step": 1250,
+        "wall_seconds": 189.70996049999667
+      },
+      {
+        "language_loss": 1.7179596424102783,
+        "recovery_horizon": 16,
+        "step": 1500,
+        "wall_seconds": 228.49072929999966
+      },
+      {
+        "language_loss": 0.06883765012025833,
+        "recovery_horizon": null,
+        "step": 1750,
+        "wall_seconds": 267.91983519999485
+      },
+      {
+        "language_loss": 0.9812052249908447,
+        "recovery_horizon": 8,
+        "step": 2000,
+        "wall_seconds": 308.33314679999603
+      }
+    ],
+    "device": "cuda",
+    "peak_cuda_allocated_bytes": 2463712768,
+    "peak_process_rss_bytes": 1706582016,
+    "record_sequence_sha256": "bf23e4cc923286ae4fc6e34c789604dc861c9b3637ecafff2b3b276503407263",
+    "recovery_batches": 476,
+    "recovery_horizon_batches": {
+      "16": 158,
+      "4": 159,
+      "8": 159
+    },
+    "seed": 130363,
+    "steps": 2000,
+    "targeted_by_capability": {
+      "abstention": 2000,
+      "coherence": 2000,
+      "fluent_realization": 2000,
+      "tone_control": 2000
+    },
+    "targeted_observations": 8000,
+    "targeted_teacher_tokens_seen": 204071,
+    "wall_seconds": 308.56044579999434
+  }
+}
