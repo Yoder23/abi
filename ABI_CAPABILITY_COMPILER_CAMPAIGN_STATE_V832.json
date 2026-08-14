@@ -1,0 +1,47 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "version": 832,
+  "status_date": "2026-08-14",
+  "historical_evidence_changed": false,
+  "phase0": "COMPLETE",
+  "phase1": "COMPLETE",
+  "phase2": "MACHINE_EVIDENCE_COMPLETE_BLOCKED_EXTERNAL_HUMAN_RATINGS_0_OF_21000_FILLED",
+  "phase3": "MACHINE_EVIDENCE_COMPLETE_NOT_UNCONDITIONALLY_CERTIFIED",
+  "phase4": "CONDITIONALLY_OPEN_EXACT_B50_SEQUENCE_AND_TOP64_CHANNELS_INDEPENDENTLY_VERIFIED_BASELINES_NOT_TRAINED",
+  "phases5_through_8": "LOCKED",
+  "phase4_latest": "ABI_CAPABILITY_COMPILER_PHASE4_B50_TOP64_VERIFY_RESULT_V831.json",
+  "phase4_latest_sha256": "eb8165fb212dd39d0482c59003fb773c44364edc6b0c7617196ee6752e21835a",
+  "exact_b50_sequence_pack": "PASS_INDEPENDENTLY_VERIFIED_5140_MEMBERSHIPS_4953_UNIQUE_ATTEMPTS_152266_SOURCE_TOKENS",
+  "exact_b50_top64_channel": {
+    "producer_result": "ABI_CAPABILITY_COMPILER_PHASE4_B50_TOP64_RESULT_V829.json",
+    "producer_result_sha256": "8c2cd278bbb350f22dcc3b43a90b70595eab5df43ac27bdf1aced2bb0d4d93cd",
+    "verification": "ABI_CAPABILITY_COMPILER_PHASE4_B50_TOP64_VERIFY_RESULT_V831.json",
+    "verification_sha256": "eb8165fb212dd39d0482c59003fb773c44364edc6b0c7617196ee6752e21835a",
+    "packs": 860,
+    "response_positions": 163524,
+    "stored_top64_values": 10465536,
+    "maximum_independent_fp16_error": 0.0,
+    "status": "PASS_FULL_EXACT_RECOMPUTATION"
+  },
+  "stable_sufficient_candidate": "B50_V22_THREE_SEED_INDEPENDENTLY_VERIFIED_PASS",
+  "stable_minimum": "UNPROVEN_UNDER_V801_STRICT_RULE",
+  "fairness_views": {
+    "equal_imported_information": "INPUTS_READY_L0_L1_D0_NOT_TRAINED",
+    "equal_final_deployment_constraint": "ACCOUNTING_CONTRACT_READY",
+    "matched_quality_frontier": "NOT_READY_EXACT_B50_BASELINES_NOT_TRAINED"
+  },
+  "baseline_roles": {
+    "L0": "EXACT_B50_SEQUENCE_EQUAL_INFORMATION",
+    "L1": "EXACT_B50_SEQUENCE_EQUAL_INFORMATION",
+    "D0": "EXACT_B50_SEQUENCE_EQUAL_INFORMATION",
+    "D1": "EXACT_B50_SEQUENCE_PLUS_TOP64_RICHER_INFORMATION_CONTROL",
+    "D2": "EXACT_B50_SEQUENCE_PLUS_TOP64_RICHER_INFORMATION_CONTROL"
+  },
+  "model_inference": "PROHIBITED_PENDING_BASELINE_CAMPAIGN_PROTOCOL_EXCEPT_REGISTERED_DEVELOPMENT_EVALUATION",
+  "training": "PROHIBITED_PENDING_SEPARATELY_PREREGISTERED_EXACT_B50_BASELINE_CAMPAIGN",
+  "teacher_model_loading": "PROHIBITED_DURING_CANDIDATE_TRAINING_USE_ONLY_VERIFIED_CACHED_CHANNELS",
+  "final_test_access": "PROHIBITED",
+  "nearby_budget_sweeps": "PROHIBITED",
+  "next_action": "Preregister the exact-B50 L0/L1/D0/D1/D2 campaign using the frozen Phase 2 grids, seed-104729 staged selection, three paired headline seeds, unchanged 1,400-prompt quality and zero-collapse gates, and complete deployed-resource and imported-information accounting. Bind a bounded cost forecast and preserve every grid result.",
+  "claim_boundary": "The exact sequence and richer top-64 input channels are independently verified. No matched baseline quality or efficiency comparison, matched frontier, minimum, final-test result, unconditional Phase 2 or Phase 3 certificate, Phase 4 certificate, or ABI-superiority claim exists."
+}
