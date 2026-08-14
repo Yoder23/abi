@@ -1,0 +1,76 @@
+{
+  "format": "abi-capability-compiler-phase4-b50-baseline-pack/1",
+  "protocol_id": "abi-capability-compiler-phase4-b50-baseline-pack-v818",
+  "status": "PREREGISTERED_EXACT_B50_BASELINE_PACK",
+  "status_date": "2026-08-14",
+  "historical_evidence_changed": false,
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V817.json",
+  "readiness_audit": "ABI_CAPABILITY_COMPILER_PHASE4_CONTRACT_BASELINE_READINESS_RESULT_V816.json",
+  "objective": "Reconstruct the exact B50 teacher-sequence information consumed by ABI as a deterministic, namespaced baseline pack while preserving all 5,140 record memberships and counting imported information once across 4,953 unique source attempts.",
+  "budget": "B50",
+  "lineage_protocol": "ABI_CAPABILITY_COMPILER_PHASE4_V19_REFINED_ABI_LINEAGE_PROTOCOL_V744.json",
+  "budget_manifest": "results/abi_capability_compiler_phase4_v19_refined_budget_manifest/manifest_v741.json",
+  "source_model": "microsoft/Phi-3-mini-4k-instruct",
+  "source_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+  "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310",
+  "packing_seed": 104729,
+  "packing_context": 768,
+  "artifact_construction_authorized": true,
+  "tokenizer_loading_authorized": true,
+  "model_inference_authorized": false,
+  "training_authorized": false,
+  "teacher_model_loading_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "expected": {
+    "selection_sha256": "0a5025545b9c2e0345a2fff03ebc044789c896dbcd09495d122a2649a76a5073",
+    "record_memberships": 5140,
+    "unique_source_attempts": 4953,
+    "duplicate_memberships": 187,
+    "authoritative_teacher_output_tokens": 152266,
+    "source_memberships": {
+      "phase1_ir": 3500,
+      "v138_targeted_ir": 1000,
+      "v480_host_supervision": 640
+    }
+  },
+  "channel_policy": {
+    "L0": [
+      "teacher_generated_sequence"
+    ],
+    "L1": [
+      "teacher_generated_sequence"
+    ],
+    "D0": [
+      "teacher_generated_sequence"
+    ],
+    "D1": [
+      "teacher_generated_sequence",
+      "prospective_top64_teacher_logits"
+    ],
+    "D2": [
+      "teacher_generated_sequence",
+      "prospective_top64_teacher_logits"
+    ]
+  },
+  "duplicate_policy": "Preserve each consumed artifact membership as an artifact-namespaced training record. Imported-information totals deduplicate only by source_attempt_sha256 after verifying identical teacher token count and output bytes.",
+  "host_prompt_policy": "For v480 memberships, train baselines on the same host_prompt projection consumed by ABI, rendered with the frozen Phi-3 chat template, and retain the original authoritative source response tokens and source-attempt identity.",
+  "bindings": {
+    "abi/capability_compiler_phase4_b50_baseline_pack.py": "8ec76bb7121373a306478254b30d53efdacf4840027433221fc35f81f9833c35",
+    "tests/test_capability_compiler_phase4_b50_baseline_pack.py": "34d87c408e6e286a19e6cf9e95fef45a2670ace608e35f8a37439872ba40fd49",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V817.json": "1405e8a2c3d0ec816391abfbf55d87e925e18fdfd796e0b0dc416a940b1e30f8",
+    "ABI_CAPABILITY_COMPILER_PHASE4_CONTRACT_BASELINE_READINESS_RESULT_V816.json": "eff7d6954e09a43983f40de857be042ba58194e4d88552334de33168bae7314c",
+    "ABI_CAPABILITY_COMPILER_PHASE4_V19_REFINED_ABI_LINEAGE_PROTOCOL_V744.json": "1ea5f06eb9e9cfe6449d4e6439e845e7dccc729d9ef9267f6b2c2c9bd93b9b87",
+    "results/abi_capability_compiler_phase4_v19_refined_budget_manifest/manifest_v741.json": "ed693700b02626be074504eaf2aa915e0eeccf6bfb2fa4d0895fca5e7bac96a2",
+    "results/abi_capability_compiler_phase1/final/normalized_acquisition_ir_v1.abicir": "a246a52bcf27609b46cdb0530f1daaefe749b7c4a1000f9578f20e505a596f20",
+    "results/abi_capability_compiler_phase3/targeted_combined_ir_v137/normalized_targeted_combined_v138.abicir": "9fa2467a37c870db7a24640a8d6da46ed73941573026af2c9a4c3425fd98dd18",
+    "results/abi_capability_compiler_phase3_host_supervision/build_v480/host_weak_supervision_v480.abicir": "7b0af0bafda631f89dd054a3bd57da76885b3eaca7fe863474255bcf8978b34d",
+    "ABI_CAPABILITY_COMPILER_PHASE1_PROTOCOL_V1.json": "dcc89850c36a55f59a0dd2187b4345e162630538ba12b0d3ee291fe59c95ceec",
+    "abi/capability_compiler_phase2_common.py": "8093ec2016d685f0327c87640042c8373bc141d76351fd641b21a44d018b6c92",
+    "abi/capability_compiler_phase2_prepare.py": "96467c3593b4228ed8ed7f5b5d6bda35e0fc686c2e168c26051643b085de20d8",
+    "abi/capability_compiler_phase3.py": "5d490989e088f42aba4bd2ca96fbe70ea2db211890369dd6f431dd781390c77b",
+    "abi/capability_compiler_phase4_abi_lineage.py": "8981be48784dd624ae3ad7d0a3594fdcab65bd5010ef53111b8f6c3649bb8b68",
+    "abi/capability_compiler_phase4_v19_frontier_rescreen.py": "9bb840b0397d9fb47ef5c873685b2ec4d4f7b31202e62bd89efbfbe3e7c67199"
+  },
+  "decision_rule": "Pass only if the reconstructed B50 selection hash, all three artifact membership counts, unique-attempt count, duplicate count, authoritative teacher-output-token count, English-only destination, fourteen-capability coverage, source-attempt lineage, sequence-channel non-emptiness, and 768-token packing conformance all pass. Do not train or extract logits in this step.",
+  "claim_boundary": "Exact B50 sequence-pack construction only. D1/D2 top-64 logits do not yet exist for this pack. No baseline training, matched frontier, minimum, final-test, Phase 4, or ABI-superiority result."
+}
