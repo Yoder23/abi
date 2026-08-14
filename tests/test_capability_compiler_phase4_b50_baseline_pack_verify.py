@@ -1,12 +1,16 @@
+import json
+import zipfile
+
 from abi.capability_compiler_phase4_b50_baseline_pack_verify import (
     FORMAT,
+    _rows,
     prefix_per_stratum,
     rank_within_strata,
 )
 
 
 def test_verifier_format_is_independent():
-    assert FORMAT == "abi-capability-compiler-phase4-b50-baseline-pack-verify/1"
+    assert FORMAT == "abi-capability-compiler-phase4-b50-baseline-pack-verify/2"
 
 
 def test_independent_rank_and_prefix_are_deterministic():
@@ -25,3 +29,13 @@ def test_independent_rank_and_prefix_are_deterministic():
     assert ranked == rank_within_strata(
         list(reversed(rows)), artifact="x", salt="salt", groups=("capability",)
     )
+
+
+def test_historical_whitespace_only_jsonl_lines_are_not_records(tmp_path):
+    path = tmp_path / "records.abicir"
+    with zipfile.ZipFile(path, "w") as archive:
+        archive.writestr(
+            "records.jsonl",
+            json.dumps({"record": 1}).encode() + b"\n\n" + json.dumps({"record": 2}).encode() + b"\n\n",
+        )
+    assert _rows(path) == [{"record": 1}, {"record": 2}]

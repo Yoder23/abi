@@ -23,7 +23,7 @@ from .capability_compiler_phase3 import Phase3Error, _write_immutable
 from .capability_compiler_phase4_v19_frontier_rescreen import _json
 
 
-FORMAT = "abi-capability-compiler-phase4-b50-baseline-pack-verify/1"
+FORMAT = "abi-capability-compiler-phase4-b50-baseline-pack-verify/2"
 ARTIFACT_ORDER = ("phase1_ir", "v138_targeted_ir", "v480_host_supervision")
 
 
@@ -54,7 +54,11 @@ def _archive_entries(path: Path) -> dict[str, bytes]:
 
 def _rows(path: Path) -> list[dict[str, Any]]:
     with zipfile.ZipFile(path) as archive:
-        return [json.loads(line) for line in archive.read("records.jsonl").splitlines()]
+        return [
+            json.loads(line)
+            for line in archive.read("records.jsonl").splitlines()
+            if line.strip()
+        ]
 
 
 def rank_within_strata(
@@ -372,8 +376,16 @@ def run(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
         raise Phase3Error("B50 pack result evidence hash changed")
     lineage = _json(root / protocol["lineage_protocol"])
     budget_manifest = _json(root / protocol["budget_manifest"])
-    source_paths = {str(row["id"]): root / str(row["path"]) for row in lineage["teacher_artifacts"]}
+    source_specs = {str(row["id"]): row for row in lineage["teacher_artifacts"]}
+    source_paths = {
+        key: root / str(row["path"]) for key, row in source_specs.items()
+    }
     source_rows = {key: _rows(path) for key, path in source_paths.items()}
+    if any(
+        len(source_rows[key]) != int(source_specs[key]["records"])
+        for key in source_specs
+    ):
+        raise Phase3Error("independent source logical record count changed")
     budget = next(row for row in lineage["budgets"] if row["id"] == "B50")
     selected = independent_selection(
         source_rows,
