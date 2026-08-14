@@ -1,0 +1,33 @@
+{
+  "format": "abi-capability-compiler-phase4-v22-b40-independent-verify/1",
+  "protocol_id": "abi-capability-compiler-phase4-v22-b40-independent-verify-v803",
+  "status": "PREREGISTERED_READ_ONLY_V22_B40_INDEPENDENT_VERIFIER",
+  "status_date": "2026-08-14",
+  "historical_evidence_changed": false,
+  "authorization": "ABI_CAPABILITY_COMPILER_PHASE4_V22_B40_SCREEN_PROTOCOL_V801.json",
+  "source_protocol": "ABI_CAPABILITY_COMPILER_PHASE4_V22_B40_SCREEN_PROTOCOL_V801.json",
+  "source_result": "results/abi_capability_compiler_phase4_v22_b40_screen/run_v802/result.json",
+  "aggregate_outputs": "results/abi_capability_compiler_phase4_v22_b40_screen/run_v802/all_outputs.jsonl",
+  "objective": "Independently recompute all 4,200 B40 rows, 300 pointer executions, 300 format executions, preservation changes, paired confidence gates, and three signed packages without model inference.",
+  "model_inference_authorized": false,
+  "training_authorized": false,
+  "teacher_model_loading_authorized": false,
+  "package_rebuild_authorized": true,
+  "final_test_access": "PROHIBITED",
+  "bindings": {
+    "abi/capability_compiler_phase4_v22_b40_independent_verify.py": "d0f987b1758fe2033f8816e964db444f62344e41aac470f6dcaf19a543198106",
+    "tests/test_capability_compiler_phase4_v22_b40_independent_verify.py": "b6825fada0e64b0e3d7f4e874e3330bb2bdfeb1ac53f414e8a9d138c4d342624",
+    "ABI_CAPABILITY_COMPILER_PHASE4_V22_B40_SCREEN_PROTOCOL_V801.json": "12c7c933d6ffeb73753f43326aa72ac188d785d92b808010f5f9ce9ef8423851",
+    "results/abi_capability_compiler_phase4_v22_b40_screen/run_v802/result.json": "edb64e61257e378c10d638862507c227b13d06f9903bf33b9fcc8af0526d1ee4",
+    "results/abi_capability_compiler_phase4_v22_b40_screen/run_v802/all_outputs.jsonl": "d7f7957ae1d4ffc00100cf4098bd4960eb1aab4e47bc6f9ad3e616d2a2fd1f0c",
+    "results/abi_capability_compiler_phase4_v22_b40_screen/run_v802/seed104729_outputs.jsonl": "4e88924bb7e2d52991ec769731d11e6ac685871f4a2f2de84bef529c9d986315",
+    "results/abi_capability_compiler_phase4_v22_b40_screen/run_v802/seed130363_outputs.jsonl": "ac253dda87e41d9fd1742760f8130e1545665fc1c57775c394633f46e1a54508",
+    "results/abi_capability_compiler_phase4_v22_b40_screen/run_v802/seed155921_outputs.jsonl": "fa8a37a14b184c7949cb9d784ac1bd66a893d0c2bfb98d46849bbf6be43f1c90",
+    "../layercake_release/moonshot/canonical_route_isolated_format_literal_core_abi_v22.json": "34038bbd682f1efa727570adfb934b0ce9d73d31121f06f4028976ba2d798d35",
+    "../layercake_release/moonshot/postrelease_route_isolated_format_literal_v22_decision_v75.json": "b03ce97308f13cc40955adfd34eba1f02823207db0c31715d2f81e53a52b43ce",
+    "../layercake_release/results/moonshot/postrelease_route_isolated_format_literal_v22_construct_v74.json": "9db19e51eec61500e1ab5e945bd98228c08c81ba0508ffe5e671f1961612d665",
+    "../layercake_release/layercake_extensions/route_isolated_format_literal_core_v22.py": "88cb4cc7f212469f9f78cad9d0811fd7175f8f21f4e7b89455dc6b76c74b2f1c"
+  },
+  "decision_rule": "Pass only if every source hash, row flag, semantic pointer/format record, aggregate byte, preservation rule, quality statistic, mixed PASS/PASS/FAIL topology, and deterministic package identity reproduces exactly without inference, training, teacher loading, or final-test access.",
+  "claim_boundary": "Independent B40 v22 development verification only. A reproduced mixed topology establishes no minimum. No matched baseline, final test, Phase 4, or ABI-superiority claim."
+}
