@@ -1,0 +1,23 @@
+{
+  "format":"abi-capability-compiler-phase4-v21-b60-evaluator-repair/1","protocol_id":"abi-capability-compiler-phase4-v21-b60-evaluator-repair-v774","status":"PREREGISTERED_READ_ONLY_V21_EVALUATOR_REPAIR","status_date":"2026-08-13","historical_evidence_changed":false,
+  "authorization":"ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V773.json","source_protocol":"ABI_CAPABILITY_COMPILER_PHASE4_V21_B60_RESCREEN_PROTOCOL_V770.json","source_result":"results/abi_capability_compiler_phase4_v21_b60_rescreen/run_v771/result.json","aggregate_outputs":"results/abi_capability_compiler_phase4_v21_b60_rescreen/run_v771/all_outputs.jsonl",
+  "objective":"Independently recompute V771 from immutable raw rows and deterministic signed packages using V770's already-sealed seed-specific changed-row rule, without model inference, training, teacher loading, or final access.",
+  "model_inference_authorized":false,"training_authorized":false,"teacher_model_loading_authorized":false,"package_rebuild_authorized":true,"final_test_access":"PROHIBITED",
+  "bindings":{
+    "abi/capability_compiler_phase4_v21_b60_evaluator_repair.py":"ec5ebdde7f1a7de87818947de4fd5ee5d91ae43ec12fe53f2241f39481c8235d",
+    "tests/test_capability_compiler_phase4_v21_b60_evaluator_repair.py":"4d5bec6b87c3b63fc24c1a470b92b858027dc95bcd1c8ac4a9f3ac0b47b64070",
+    "ABI_CAPABILITY_COMPILER_PHASE4_V21_B60_RESCREEN_PROTOCOL_V770.json":"49232d14102e797980ca10272b8fbcf38dc1f232e70c739a90a983a103853081",
+    "ABI_CAPABILITY_COMPILER_PHASE4_V21_B60_RESCREEN_EVALUATOR_FAILURE_V772.json":"d42fa77035b4e30309473cfe84b8abc718a3fd40ca5dccf74bdd1aefa2d91de6",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V773.json":"94bee6750795e02a9d6fffc33a92f821024b573a30db6edb4a35be92a4da0fd9",
+    "results/abi_capability_compiler_phase4_v21_b60_rescreen/run_v771/result.json":"da3669fb1a505a353c7b982bb0634c61a55e68cdc0cf088761c5043c02bc135c",
+    "results/abi_capability_compiler_phase4_v21_b60_rescreen/run_v771/all_outputs.jsonl":"ee9bc2742c6df5b3469911097488b3e7fbcbd5cc7f486bada5f319a50b546253",
+    "results/abi_capability_compiler_phase4_v21_b60_rescreen/run_v771/seed104729_outputs.jsonl":"f983905466d71935d4a240a895c0420fad055008dd60907d31f526129e776e00",
+    "results/abi_capability_compiler_phase4_v21_b60_rescreen/run_v771/seed130363_outputs.jsonl":"8a96320ebf3cd619923d90568d8dd8b956e0e93949b4f6eaceb098408af1de41",
+    "results/abi_capability_compiler_phase4_v21_b60_rescreen/run_v771/seed155921_outputs.jsonl":"73a66275f1e5e22a12978b526f638a5ea234fd4b961fa22381576cfb3dc2ba6d",
+    "../layercake_release/moonshot/canonical_route_isolated_lexical_guard_core_abi_v21.json":"ac7f49f3b7674d3139fac930a4de9b7cf002eaf8779e802928c94acb3eb7cc69",
+    "../layercake_release/moonshot/postrelease_route_isolated_lexical_guard_v21_decision_v71.json":"473c3e7cfce1121eae9550191142af1be5111abef93e306378290e039b634174",
+    "../layercake_release/layercake_extensions/route_isolated_lexical_guard_core_v21.py":"1b90786020e042ff129322e8e3531a3608da0e8487c83ef32da344e8baaa4277"
+  },
+  "decision_rule":"Pass only if the source protocol and evidence hashes recompute; all 4,200 functional, collapse, routing, change-identity, and 300 pointer decisions recompute from raw rows; all three signed packages rebuild byte-identically; quality and teacher-relative bootstrap gates reproduce; seed104729 has exactly one functional guard-terminated summarization prefix repair; seeds130363 and155921 have zero changes; all other 4,199 outputs match v19 history; all three corrected machine decisions pass; and no inference, training, teacher loading, or final access occurs.",
+  "claim_boundary":"Read-only corrected B60 v21 development evaluation only. No information minimum, matched baseline, final test, Phase 4, or ABI-superiority claim."
+}
