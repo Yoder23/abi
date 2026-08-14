@@ -1,0 +1,79 @@
+{
+  "active_experts_per_token": 1,
+  "active_rank": 16,
+  "budget": {
+    "authoritative_teacher_output_tokens": 152266,
+    "duplicate_memberships": 187,
+    "fraction": 0.5,
+    "id": "B50",
+    "record_memberships": 5140,
+    "records": {
+      "phase1_ir": 3500,
+      "v138_targeted_ir": 1000,
+      "v480_host_supervision": 640
+    },
+    "selection_sha256": "0a5025545b9c2e0345a2fff03ebc044789c896dbcd09495d122a2649a76a5073",
+    "unique_source_attempts": 4953
+  },
+  "claim_boundary": "One preregistered Phase 4 ABI budget/seed machine screen; no frontier, adjacent failure, three-seed replication, runtime, final-test, Phase 4 certificate, or superiority claim.",
+  "clean_start_checkpoint_sha256": "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1",
+  "evidence_sha256": "4025059fb0a358ab9c99f3f5627b546b22eb932e6f322f7d0dc88769e295123e",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase4-abi-lineage-result/1",
+  "functional_passes_v1": 1369,
+  "gates": {
+    "critical_capabilities": true,
+    "final_test_not_accessed": true,
+    "per_capability_functional": false,
+    "router_exact": true,
+    "strong_parent_exact": true,
+    "teacher_absent": true,
+    "teacher_noninferior": true,
+    "zero_repetition_collapse": false
+  },
+  "hardware": {
+    "cuda": "11.8",
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "machine": "Sam",
+    "torch": "2.7.1+cu118"
+  },
+  "phase4_certified": false,
+  "physical_experts": 4,
+  "protocol_sha256": "1ea5f06eb9e9cfe6449d4e6439e845e7dccc729d9ef9267f6b2c2c9bd93b9b87",
+  "repetition_collapses_v2": 4,
+  "router_correct": 1400,
+  "same_final_checkpoint_for_quality_and_future_runtime": true,
+  "seed": 104729,
+  "selection_sha256": "0a5025545b9c2e0345a2fff03ebc044789c896dbcd09495d122a2649a76a5073",
+  "source_parameters_copied": 0,
+  "stage_checkpoints": {
+    "router": "e48776903f4fc60fb61454ab3081469cc29494b67b9475934ab4b367bb45b6a9",
+    "v443": "7fd0eed41383b974b07fee0d645875cc1c80cb767f2bbddf690a71ee9ed77011",
+    "v459": "9047bb6d62a59219248f8fd9385a17dec935d94c0717065a0cce9f471431b6cc",
+    "v463": "2b38c920a9d94d7ff64ad25219502394578c10bc1cc8d70583554757bff40701",
+    "v474": "35bfd4a09fa4199ecbe17b4b131ca0fa46e2f2b1bbe521824a5ab57568d5b24b",
+    "v484": "4a1909313267150ddf856fa0fb0d65a719dcf6eb0681d3d88576d33731668a73",
+    "v526": "0e3131a9c83d77c90a1e45200fdc58625cf1b7f40e384875eb272500ab4f056f"
+  },
+  "stage_metadata_sha256": {
+    "router": "9cf7f7633de72f96231f7e56181a3733c552a498e298ad55d4463c29a0e5586f",
+    "v443": "396e6dd3675dd4cb8c08eed296b7e5ce56dc6507ba82b41b2f275582bcc521d7",
+    "v459": "ffcc012e6e241829ff70dbbac5d2967990091ab2864dd86bc4057d01afeaa0a1",
+    "v463": "3a3532feb4c3266adc52d2d9cbc76c5f7c10ca28367b60b5cf39080180d88f5e",
+    "v474": "1b4e84e55882b06ee7f793f953117e7b8f573ef91c8b1f499ead90a2f93b883e",
+    "v484": "63ed0971b32bc312a4931f12eff31375ae098657db9c6e4a579cfa9cc6d0580d",
+    "v526": "78d14ff5dfa0333ba87df414212f255e367525c4e60da1d54cb853abaad1e5d8"
+  },
+  "status": "FAIL_PHASE4_ABI_BUDGET_MACHINE_GATES",
+  "strong_routes_exact": 1000,
+  "teacher_comparison_v1": {
+    "candidate_minus_teacher": 0.09428571428571429,
+    "lower_95": 0.07714285714285714,
+    "method": "capability_stratified_paired_percentile_bootstrap",
+    "replicates": 10000,
+    "seed": 4104729,
+    "upper_95": 0.11071428571428571
+  },
+  "teacher_present_at_inference": false,
+  "wall_seconds": 2292.9241564999975
+}
