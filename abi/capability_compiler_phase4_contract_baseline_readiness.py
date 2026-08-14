@@ -13,21 +13,33 @@ from .capability_compiler_phase3 import Phase3Error, _write_immutable
 from .capability_compiler_phase4_v19_frontier_rescreen import _json
 
 
-FORMAT = "abi-capability-compiler-phase4-contract-baseline-readiness/1"
+FORMAT = "abi-capability-compiler-phase4-contract-baseline-readiness/2"
 
 
 def frontier_semantics(
-    phase0_exit: str, campaign_exit: str, strict_mixed_rule: str
+    campaign_exit: str,
+    strict_mixed_rule: str,
+    phase0_exit_requirements: dict[str, Any],
 ) -> dict[str, bool]:
-    lower0 = phase0_exit.casefold()
     lower_campaign = campaign_exit.casefold()
     lower_strict = strict_mixed_rule.casefold()
     return {
-        "phase0_and_campaign_exit_identical": phase0_exit == campaign_exit,
+        "phase0_freezes_mandatory_specs": all(
+            phase0_exit_requirements.get(name) is True
+            for name in (
+                "mandatory_system_specs_frozen",
+                "data_boundaries_frozen",
+                "numeric_gates_frozen",
+                "statistics_frozen",
+                "accounting_frozen",
+                "stop_rules_frozen",
+            )
+        ),
         "campaign_requires_smallest_passing_tested_budget": "smallest passing tested budget"
-        in lower0,
-        "campaign_requires_adjacent_lower_failure": "adjacent lower failure" in lower0,
-        "campaign_requires_three_seeds": "three seeds" in lower0,
+        in lower_campaign,
+        "campaign_requires_adjacent_lower_failure": "adjacent lower failure"
+        in lower_campaign,
+        "campaign_requires_three_seeds": "three seeds" in lower_campaign,
         "later_rule_explicitly_treats_mixed_as_no_minimum": "mixed" in lower_strict
         and "no stable minimum" in lower_strict,
         "later_rule_is_stricter_than_campaign_text": "all three b40 seeds fail"
@@ -67,9 +79,9 @@ def run(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
     baseline_evidence = _json(root / protocol["phase2_machine_evidence"])
 
     semantics = frontier_semantics(
-        str(phase0["phases"][4]["exit"]),
         str(campaign["phases"][4]["exit"]),
         str(b40_protocol["decision_rule"]),
+        phase0["phase0_exit_requirements"],
     )
     headline = baseline_evidence["headline"]
     mandatory = ("L0", "L1", "D0", "D1", "D2")
@@ -147,7 +159,7 @@ def run(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
     }
     passed = all(gates.values())
     result = {
-        "format": "abi-capability-compiler-phase4-contract-baseline-readiness-result/1",
+        "format": "abi-capability-compiler-phase4-contract-baseline-readiness-result/2",
         "status": "PASS_PHASE4_CONTRACT_RECONCILED_BASELINE_RETRAINING_REQUIRED"
         if passed
         else "FAIL_PHASE4_CONTRACT_BASELINE_READINESS_AUDIT",
