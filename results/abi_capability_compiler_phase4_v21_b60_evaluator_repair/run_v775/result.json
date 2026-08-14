@@ -1,0 +1,190 @@
+{
+  "claim_boundary": "Corrected stable B60 v21 development candidacy only. No information minimum, matched baseline, final test, Phase 4, or ABI-superiority claim.",
+  "evidence_sha256": "a566360ba1040089a6f9d741d1361df27b8eb4fb10e39340f4cfb3e46c841e49",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase4-v21-b60-evaluator-repair-result/1",
+  "gates": {
+    "aggregate_exact": true,
+    "aggregate_hash": true,
+    "all_system_verifiers": true,
+    "changed_rows_total": true,
+    "final_test_not_accessed": true,
+    "model_inference_absent": true,
+    "source_evidence_hash": true,
+    "source_protocol_hash": true,
+    "source_result_hash": true,
+    "stable_three_seed_pass": true,
+    "teacher_loading_absent": true,
+    "three_registered_systems": true,
+    "training_absent": true
+  },
+  "model_inference_performed": false,
+  "packages_deterministically_rebuilt": 3,
+  "phase4_certified": false,
+  "protocol_sha256": "3a0b76acdffd22b4e2a83418a3c0c8b4fd7311c53017ec9fbfaa3c97599ca796",
+  "rows_recomputed": 4200,
+  "source_evidence_sha256": "7eff88e493c07cec2ecdcd9048281189bc46fa942a128131e84d1352c74052b3",
+  "source_result_sha256": "da3669fb1a505a353c7b982bb0634c61a55e68cdc0cf088761c5043c02bc135c",
+  "status": "PASS_CORRECTED_STABLE_B60_V21_DEVELOPMENT_CANDIDATE",
+  "systems": [
+    {
+      "all_pass": true,
+      "budget": "B60",
+      "changed_rows": 1,
+      "corrected_guard_gates": {
+        "all_other_outputs_exact": true,
+        "changed_count_seed_specific": true,
+        "changed_rows_functional": true,
+        "changed_rows_guard_terminated": true,
+        "changed_rows_prefix_preserved": true,
+        "exact_lexical_boundary_declared": true,
+        "seed104_repair_identity": true,
+        "strong_route_conformance": true,
+        "zero_remaining_collapse": true
+      },
+      "corrected_machine_gates_pass": true,
+      "functional_passes_v1": 1377,
+      "pointer_gates": {
+        "all_100_pointer_rows": true,
+        "evaluator_blind": true,
+        "one_active_route": true,
+        "one_scoring_forward": true,
+        "package_identity": true,
+        "package_verified": true,
+        "persistent_state_reused": true,
+        "receiver_learning_zero": true,
+        "six_candidates": true
+      },
+      "quality_gates": {
+        "critical_capabilities": true,
+        "final_test_not_accessed": true,
+        "per_capability_functional": true,
+        "router_exact": true,
+        "teacher_absent": true,
+        "teacher_noninferior": true,
+        "training_absent": true,
+        "zero_repetition_collapse": true
+      },
+      "repetition_collapses_v2": 0,
+      "seed": 104729,
+      "verification_gates": {
+        "all_row_checks": true,
+        "corrected_machine_pass": true,
+        "depth": true,
+        "evaluation_recomputed": true,
+        "package_rebuilt_exact": true,
+        "pointer_recomputed": true,
+        "quality_recomputed": true,
+        "raw_hash": true,
+        "teacher_comparison_recomputed": true
+      }
+    },
+    {
+      "all_pass": true,
+      "budget": "B60",
+      "changed_rows": 0,
+      "corrected_guard_gates": {
+        "all_other_outputs_exact": true,
+        "changed_count_seed_specific": true,
+        "changed_rows_functional": true,
+        "changed_rows_guard_terminated": true,
+        "changed_rows_prefix_preserved": true,
+        "exact_lexical_boundary_declared": true,
+        "seed104_repair_identity": true,
+        "strong_route_conformance": true,
+        "zero_remaining_collapse": true
+      },
+      "corrected_machine_gates_pass": true,
+      "functional_passes_v1": 1390,
+      "pointer_gates": {
+        "all_100_pointer_rows": true,
+        "evaluator_blind": true,
+        "one_active_route": true,
+        "one_scoring_forward": true,
+        "package_identity": true,
+        "package_verified": true,
+        "persistent_state_reused": true,
+        "receiver_learning_zero": true,
+        "six_candidates": true
+      },
+      "quality_gates": {
+        "critical_capabilities": true,
+        "final_test_not_accessed": true,
+        "per_capability_functional": true,
+        "router_exact": true,
+        "teacher_absent": true,
+        "teacher_noninferior": true,
+        "training_absent": true,
+        "zero_repetition_collapse": true
+      },
+      "repetition_collapses_v2": 0,
+      "seed": 130363,
+      "verification_gates": {
+        "all_row_checks": true,
+        "corrected_machine_pass": true,
+        "depth": true,
+        "evaluation_recomputed": true,
+        "package_rebuilt_exact": true,
+        "pointer_recomputed": true,
+        "quality_recomputed": true,
+        "raw_hash": true,
+        "teacher_comparison_recomputed": true
+      }
+    },
+    {
+      "all_pass": true,
+      "budget": "B60",
+      "changed_rows": 0,
+      "corrected_guard_gates": {
+        "all_other_outputs_exact": true,
+        "changed_count_seed_specific": true,
+        "changed_rows_functional": true,
+        "changed_rows_guard_terminated": true,
+        "changed_rows_prefix_preserved": true,
+        "exact_lexical_boundary_declared": true,
+        "seed104_repair_identity": true,
+        "strong_route_conformance": true,
+        "zero_remaining_collapse": true
+      },
+      "corrected_machine_gates_pass": true,
+      "functional_passes_v1": 1384,
+      "pointer_gates": {
+        "all_100_pointer_rows": true,
+        "evaluator_blind": true,
+        "one_active_route": true,
+        "one_scoring_forward": true,
+        "package_identity": true,
+        "package_verified": true,
+        "persistent_state_reused": true,
+        "receiver_learning_zero": true,
+        "six_candidates": true
+      },
+      "quality_gates": {
+        "critical_capabilities": true,
+        "final_test_not_accessed": true,
+        "per_capability_functional": true,
+        "router_exact": true,
+        "teacher_absent": true,
+        "teacher_noninferior": true,
+        "training_absent": true,
+        "zero_repetition_collapse": true
+      },
+      "repetition_collapses_v2": 0,
+      "seed": 155921,
+      "verification_gates": {
+        "all_row_checks": true,
+        "corrected_machine_pass": true,
+        "depth": true,
+        "evaluation_recomputed": true,
+        "package_rebuilt_exact": true,
+        "pointer_recomputed": true,
+        "quality_recomputed": true,
+        "raw_hash": true,
+        "teacher_comparison_recomputed": true
+      }
+    }
+  ],
+  "teacher_model_loaded": false,
+  "three_seed_all_pass": true,
+  "training_performed": false
+}
