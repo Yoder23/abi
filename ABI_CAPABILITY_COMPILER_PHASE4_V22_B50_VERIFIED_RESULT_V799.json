@@ -1,0 +1,52 @@
+{
+  "format": "abi-capability-compiler-phase4-v22-b50-verified-summary/1",
+  "version": 799,
+  "status_date": "2026-08-14",
+  "status": "PASS_INDEPENDENTLY_VERIFIED_STABLE_B50_V22_SUFFICIENT_MINIMUM_UNPROVEN",
+  "historical_evidence_changed": false,
+  "screen_protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_V22_B50_RESCREEN_PROTOCOL_V795.json",
+    "sha256": "6e4e667643f3e19e64f8f4829b3e71cb8f36785f91da88fa0c1cee1e572a4f32"
+  },
+  "screen_result": {
+    "path": "results/abi_capability_compiler_phase4_v22_b50_rescreen/run_v796/result.json",
+    "sha256": "affd824b707b73e901a03679359a76c88169c8404925257e614084fd73d41474",
+    "evidence_sha256": "9f4f5a347b4fbfcef4b9f991d5afb33598bdefffc23ff2013ccda7930ebc1f45"
+  },
+  "independent_verifier": {
+    "protocol": "ABI_CAPABILITY_COMPILER_PHASE4_V22_B50_INDEPENDENT_VERIFY_PROTOCOL_V797.json",
+    "protocol_sha256": "29bf096b4907f3ca54b1b0ad42ce6fbe0b789d85a6a22aca4a333bf2456ed22b",
+    "result": "ABI_CAPABILITY_COMPILER_PHASE4_V22_B50_INDEPENDENT_VERIFY_RESULT_V798.json",
+    "result_sha256": "6153e27ac4676a35cc23773d9e5b0a958f29ee67da84735fd2b355186c0c2b9e",
+    "evidence_sha256": "b9a638d267265ab855b94f464a6d9f59de0659482a143b1fd76ef3aa5b5df8df"
+  },
+  "matrix": [
+    {"budget":"B50","seed":104729,"functional_passes_v1":1382,"format_control_passes":100,"collapses":0,"changed_format_rows":10,"machine_gates":"PASS"},
+    {"budget":"B50","seed":130363,"functional_passes_v1":1392,"format_control_passes":100,"collapses":0,"changed_format_rows":0,"machine_gates":"PASS"},
+    {"budget":"B50","seed":155921,"functional_passes_v1":1388,"format_control_passes":100,"collapses":0,"changed_format_rows":1,"machine_gates":"PASS"}
+  ],
+  "imported_information": {
+    "unique_source_attempts": 4953,
+    "authoritative_teacher_output_tokens": 152266,
+    "record_memberships": 5140
+  },
+  "verified_work": {
+    "development_rows": 4200,
+    "pointer_rows_semantically_recomputed": 300,
+    "format_rows_semantically_recomputed": 300,
+    "nonformat_rows_compared_exactly": 3900,
+    "signed_packages_deterministically_rebuilt": 3,
+    "quality_and_paired_bootstrap_gates_recomputed": true,
+    "receiver_training_steps": 0,
+    "receiver_calibration_runs": 0,
+    "teacher_model_loaded": false,
+    "final_test_accessed": false
+  },
+  "format_path_scientific_label": "DETERMINISTIC_PROMPT_LITERAL_TRANSDUCER_NOT_BROAD_NEURAL_GENERATION",
+  "decision": "The frozen B50 tensors pass all locked development gates on the signed LayerCake v22 host for all three seeds, and the read-only verifier reproduces every row, semantic execution record, confidence gate, aggregate byte, and signed package. B50 is a stable sufficient imported-information candidate. It is not a minimum because the adjacent-lower B40 budget has not yet received the same v22 three-seed full-row screen.",
+  "authorized_next_action": "Prospectively preregister exactly one same-tensor, no-training, three-seed B40 full-row CUDA screen on the signed v22 host, followed by a separately sealed read-only verifier. Do not run nearby budgets, matched baselines, final tests, or teacher inference until the B40 boundary decision is sealed.",
+  "stable_sufficient_b50": true,
+  "stable_minimum_b50": false,
+  "phase4_certified": false,
+  "claim_boundary": "Development-only ABI-arm stable sufficient candidate. The format path is a deterministic prompt-literal transducer. Minimum imported information, matched LoRA/distillation, final-test performance, Phase 4 certification, and ABI superiority remain unproven."
+}
