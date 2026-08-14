@@ -1,0 +1,171 @@
+{
+  "candidate_training_performed": true,
+  "checkpoint": {
+    "path": null,
+    "sha256": null
+  },
+  "claim_boundary": "One exact-B50 frozen-grid baseline run. No configuration promotion, matched frontier, minimum, final-test, Phase 4, or ABI-superiority result.",
+  "configuration": {
+    "development_per_capability": 10,
+    "exposures": 4,
+    "learning_rate": 1e-05,
+    "rank": null,
+    "seed": 104729
+  },
+  "deployment": {
+    "active_parameters": 11060800,
+    "all_fourteen_lora_adapters_counted": true,
+    "complete_installed_parameters": 11060800,
+    "source_base_present_at_inference": false
+  },
+  "development": {
+    "functional_passes": 0,
+    "functional_passes_v2": 0,
+    "observations": 140,
+    "outputs_path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/results/abi_capability_compiler_phase4_b50_baselines/grid_v834/D1_lr1e-5_exp4_seed104729/development_outputs.jsonl",
+    "outputs_sha256": "1a46372279b46dfdcfba230b3d01091981d633fe5bd0b884db28aa7641c09d58",
+    "per_capability": {
+      "abstention": {
+        "functional_passes": 0,
+        "functional_passes_v2": 0,
+        "observations": 10,
+        "repetition_collapses": 6,
+        "repetition_collapses_v2": 6
+      },
+      "clarification": {
+        "functional_passes": 0,
+        "functional_passes_v2": 0,
+        "observations": 10,
+        "repetition_collapses": 4,
+        "repetition_collapses_v2": 6
+      },
+      "coherence": {
+        "functional_passes": 0,
+        "functional_passes_v2": 0,
+        "observations": 10,
+        "repetition_collapses": 3,
+        "repetition_collapses_v2": 4
+      },
+      "conversation": {
+        "functional_passes": 0,
+        "functional_passes_v2": 0,
+        "observations": 10,
+        "repetition_collapses": 8,
+        "repetition_collapses_v2": 8
+      },
+      "email_drafting_from_notes": {
+        "functional_passes": 0,
+        "functional_passes_v2": 0,
+        "observations": 10,
+        "repetition_collapses": 4,
+        "repetition_collapses_v2": 4
+      },
+      "fact_free_reasoning": {
+        "functional_passes": 0,
+        "functional_passes_v2": 0,
+        "observations": 10,
+        "repetition_collapses": 1,
+        "repetition_collapses_v2": 1
+      },
+      "fluent_realization": {
+        "functional_passes": 0,
+        "functional_passes_v2": 0,
+        "observations": 10,
+        "repetition_collapses": 5,
+        "repetition_collapses_v2": 5
+      },
+      "format_control": {
+        "functional_passes": 0,
+        "functional_passes_v2": 0,
+        "observations": 10,
+        "repetition_collapses": 6,
+        "repetition_collapses_v2": 6
+      },
+      "grammar": {
+        "functional_passes": 0,
+        "functional_passes_v2": 0,
+        "observations": 10,
+        "repetition_collapses": 3,
+        "repetition_collapses_v2": 3
+      },
+      "instruction_following": {
+        "functional_passes": 0,
+        "functional_passes_v2": 0,
+        "observations": 10,
+        "repetition_collapses": 3,
+        "repetition_collapses_v2": 3
+      },
+      "prompt_grounding": {
+        "functional_passes": 0,
+        "functional_passes_v2": 0,
+        "observations": 10,
+        "repetition_collapses": 4,
+        "repetition_collapses_v2": 6
+      },
+      "rewriting": {
+        "functional_passes": 0,
+        "functional_passes_v2": 0,
+        "observations": 10,
+        "repetition_collapses": 8,
+        "repetition_collapses_v2": 8
+      },
+      "supplied_text_summarization": {
+        "functional_passes": 0,
+        "functional_passes_v2": 0,
+        "observations": 10,
+        "repetition_collapses": 7,
+        "repetition_collapses_v2": 7
+      },
+      "tone_control": {
+        "functional_passes": 0,
+        "functional_passes_v2": 0,
+        "observations": 10,
+        "repetition_collapses": 5,
+        "repetition_collapses_v2": 7
+      }
+    },
+    "repetition_collapses": 67,
+    "repetition_collapses_v2": 74,
+    "seconds": 43.201623000000836
+  },
+  "evidence_sha256": "002efae2abff9d3885be317b0f50052827ebec65a79c41253d21cdec901a7e14",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase4-b50-baseline-run-result/1",
+  "imported_information": {
+    "authoritative_teacher_input_tokens": 427871,
+    "authoritative_teacher_output_tokens": 152266,
+    "copied_source_parameters": 0,
+    "duplicate_memberships": 187,
+    "membership_teacher_output_tokens": 158380,
+    "record_memberships": 5140,
+    "source_attempt_manifest_sha256": "3cbe84a148f28408a6b6ba63b00240c58a7a5283e9ba5f6e253b310b2857fd25",
+    "stored_hidden_activations": 0,
+    "stored_logits": 0,
+    "stored_top64_index_bytes": 41862144,
+    "stored_top64_value_bytes": 20931072,
+    "stored_top64_values": 10465536,
+    "unique_raw_prompt_utf8_bytes": 1351963,
+    "unique_raw_teacher_output_utf8_bytes": 470128,
+    "unique_source_attempts": 4953
+  },
+  "information_role": "EXACT_B50_SEQUENCE_PLUS_TOP64_RICHER_CONTROL",
+  "phase4_certified": false,
+  "protocol_sha256": "76543e42ea700200ad5f7f0ead150761421d377c3b2e5c4a1b7a49adf28d4f1e",
+  "receipt": {
+    "path": "results/abi_capability_compiler_phase4_b50_baselines/grid_v834/D1_lr1e-5_exp4_seed104729/receipt.json",
+    "sha256": "c2db5cfba5d1e070580a3d9eca3d843935360a670905e5a7a16d87f2c01f8945"
+  },
+  "stage": "grid",
+  "status": "PASS_EXACT_B50_BASELINE_RUN_COMPLETE",
+  "system": "D1",
+  "teacher_present_at_student_inference": false,
+  "teacher_query_generation_performed": false,
+  "training": {
+    "optimizer_steps": 3440,
+    "peak_cuda_allocated_bytes": 595179008,
+    "peak_process_rss_bytes": 1231798272,
+    "response_tokens_seen": 654096,
+    "run_wall_seconds": 119.60367430000042,
+    "training_seconds": 64.66810080000141
+  }
+}

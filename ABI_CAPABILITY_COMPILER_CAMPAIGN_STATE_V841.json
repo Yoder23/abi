@@ -1,0 +1,69 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "state_id": "abi-capability-compiler-campaign-state-v841",
+  "status_date": "2026-08-15",
+  "historical_evidence_changed": false,
+  "phase": "PHASE_4_MATCHED_BASELINE_CAMPAIGN",
+  "phase_status": "IN_PROGRESS_GRID_VERIFIED_FULL_DEVELOPMENT_OPEN",
+  "phase4_certified": false,
+  "grid": {
+    "protocol": "ABI_CAPABILITY_COMPILER_PHASE4_B50_BASELINE_GRID_REPAIR_PROTOCOL_V836.json",
+    "selection_protocol": "ABI_CAPABILITY_COMPILER_PHASE4_B50_GRID_SELECTION_REPAIR_PROTOCOL_V839.json",
+    "selection_result": "ABI_CAPABILITY_COMPILER_PHASE4_B50_GRID_SELECTION_RESULT_V840.json",
+    "selection_result_sha256": "54c107da88d6bf179e875cc098e84e853e9166014b8c7c4227504a0ad7770f30",
+    "runs": 28,
+    "files": 84,
+    "raw_prompt_observations": 3920,
+    "tree_sha256": "7ba4cc8e622cf85e9d03f35bf12cad3f89d6864432281413a903b06e84b8fe1e",
+    "training_seconds_sum": 34049.392,
+    "run_wall_seconds_sum": 40485.684,
+    "maximum_peak_cuda_allocated_bytes": 8928883200,
+    "maximum_peak_process_rss_bytes": 4091277312,
+    "independently_recomputed_from_raw_outputs": true,
+    "prospective_v2_used_for_selection": false,
+    "final_test_accessed": false
+  },
+  "selected_top_two": {
+    "L0": [
+      {"rank": 16, "learning_rate": 0.0001, "exposures": 4},
+      {"rank": 16, "learning_rate": 0.0001, "exposures": 1}
+    ],
+    "L1": [
+      {"rank": 8, "learning_rate": 0.0001, "exposures": 4},
+      {"rank": 8, "learning_rate": 0.0003, "exposures": 4}
+    ],
+    "D0": [
+      {"learning_rate": 0.00003, "exposures": 4},
+      {"learning_rate": 0.00003, "exposures": 2}
+    ],
+    "D1": [
+      {"learning_rate": 0.00003, "exposures": 4},
+      {"learning_rate": 0.00003, "exposures": 2}
+    ]
+  },
+  "authorized_D2_grid": [
+    {"learning_rate": 0.00003, "exposures": 2},
+    {"learning_rate": 0.00003, "exposures": 4}
+  ],
+  "evidence_summary": {
+    "best_L0_grid_v1": "136/140 with 5 V1 collapses and 0 V2 collapses",
+    "best_L1_grid_v1": "139/140 with 4 V1 collapses and 0 V2 collapses",
+    "best_D0_grid_v1": "1/140 with 6 V1 collapses and 4 V2 collapses",
+    "best_D1_grid_v1": "0/140 with 0 V1 and V2 collapses",
+    "interpretation": "Sequence-equal LoRA controls are strong at seed-104729 grid depth; same-size transformer students are currently quality failures. These are development-selection observations, not headline or matched-frontier conclusions."
+  },
+  "open_work": [
+    "Preregister and run exactly the two derived D2 grid configurations.",
+    "Select up to two D2 configurations using the same frozen V1 ranking.",
+    "Replay the selected top two L0/L1/D0/D1/D2 configurations on all 100 validation prompts per capability at seed 104729.",
+    "Derive one headline configuration per system, retrain across three paired seeds with checkpoints, then perform matched quality, runtime, memory, portability, immutability, and final-test gates."
+  ],
+  "prohibitions": [
+    "No D2 configurations beyond the two derived pairs.",
+    "No headline selection from grid-only results.",
+    "No final-test access.",
+    "No Phase 4 or ABI-superiority claim."
+  ],
+  "next_action": "Seal the derived D2-grid and full-development protocol from V840, then execute only its authorized runs.",
+  "claim_boundary": "Exact-B50 fixed-grid completion and deterministic development selection are verified. Full development, headline replication, runtime, final quality, Phase 4, and ABI superiority remain unproven."
+}
