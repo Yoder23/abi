@@ -1,0 +1,19 @@
+{
+  "format":"abi-capability-compiler-phase4-v21-b60-rescreen/1","protocol_id":"abi-capability-compiler-phase4-v21-b60-rescreen-v770","status":"PREREGISTERED_THREE_SYSTEM_V21_EXACT_LEXICAL_RESCREEN","status_date":"2026-08-13","historical_evidence_changed":false,
+  "base_protocol":"ABI_CAPABILITY_COMPILER_PHASE4_V20_B60_RESCREEN_PROTOCOL_V766.json","authorization":"ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V769.json",
+  "objective":"Repeat the full 4,200-row three-seed B60 development screen with identical tensors, data, seeds, thresholds, and v19 historical comparator, changing only to construct-certified LayerCake v21 exact lexical realization. Exactly one strong summarization output may become a functional safe prefix; every other output must match v19 history.",
+  "device":"cuda","training_authorized":false,"teacher_model_loading_authorized":false,"final_test_access":"PROHIBITED","interface":"lc-direct-neural-core/21","interface_sha256":"ac7f49f3b7674d3139fac930a4de9b7cf002eaf8779e802928c94acb3eb7cc69",
+  "bindings":{
+    "abi/capability_compiler_phase4_v21_b60_rescreen.py":"b0f190c6a6a0ba857bb547f600eba3bd71f34f57a5cc3d355690b5d33c1dc19e",
+    "tests/test_capability_compiler_phase4_v21_b60_rescreen.py":"efe18bb009da0873199d5912041eb2b922e7294a6d951d9fa6f2e83a83118e6a",
+    "ABI_CAPABILITY_COMPILER_PHASE4_V20_B60_RESCREEN_PROTOCOL_V766.json":"6f547eec6bac6af53f0cc755a177bd21b701155a7517459de368d94514fa1b3b",
+    "ABI_CAPABILITY_COMPILER_PHASE4_V20_B60_RESCREEN_RESULT_V768.json":"6568ccec790e9ba35641d73a746e2c70ebec625fa2522958c34cabf37f7c9bf9",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V769.json":"4245f467d347037c569eec55b5266e9bacba9b4bd3e9a6b9157a35cd28f7b5a7",
+    "../layercake_release/moonshot/canonical_route_isolated_lexical_guard_core_abi_v21.json":"ac7f49f3b7674d3139fac930a4de9b7cf002eaf8779e802928c94acb3eb7cc69",
+    "../layercake_release/moonshot/postrelease_route_isolated_lexical_guard_v21_decision_v71.json":"473c3e7cfce1121eae9550191142af1be5111abef93e306378290e039b634174",
+    "../layercake_release/results/moonshot/postrelease_route_isolated_lexical_guard_v21_construct_v70.json":"8dd8c18b0b8cfbdca33f276ab4a9b4da8f8a1a183a99f572514779bf47f6e0c3",
+    "../layercake_release/layercake_extensions/route_isolated_lexical_guard_core_v21.py":"1b90786020e042ff129322e8e3531a3608da0e8487c83ef32da344e8baaa4277"
+  },
+  "decision_rule":"Pass stable B60 development candidacy only if all three seeds pass every unchanged quality, teacher-relative, routing, repetition, package, pointer, teacher-absence, and zero-learning gate; seed104729 changes exactly one supplied-text-summarization row into a guard-terminated functional noncollapsed canonical prefix; seeds130363 and155921 change zero rows; and all other 4,199 outputs match the v19 histories exactly. No result may declare an information minimum or access final data.",
+  "claim_boundary":"Prospective three-seed B60 v21 development rescreen only. No minimum, matched baseline, final test, Phase 4, or ABI-superiority claim."
+}
