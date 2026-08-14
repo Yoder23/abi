@@ -1,5 +1,6 @@
 from abi.capability_compiler_phase4_b50_baselines import (
     EXACT_B50_ROUTER_MEMBERSHIPS,
+    CLI_STAGES,
     FORMAT,
     configuration_allowed,
     stage_authorizes_system,
@@ -65,3 +66,7 @@ def test_exact_b50_router_membership_depth_is_frozen():
     validate_exact_b50_router_records(rows)
     with pytest.raises(Phase3Error, match="membership depth changed"):
         validate_exact_b50_router_records(rows[:-1])
+
+
+def test_derived_d2_stage_is_a_named_cli_stage():
+    assert CLI_STAGES == ("grid", "d2_grid", "full", "headline")

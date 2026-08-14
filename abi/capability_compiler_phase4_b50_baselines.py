@@ -37,6 +37,7 @@ from .capability_compiler_repetition_v2 import repetition_collapse_v2
 
 FORMAT = "abi-capability-compiler-phase4-b50-baselines/1"
 SYSTEMS = ("L0", "L1", "D0", "D1", "D2")
+CLI_STAGES = ("grid", "d2_grid", "full", "headline")
 EXACT_B50_ROUTER_MEMBERSHIPS = {
     "abstention": 660,
     "clarification": 250,
@@ -553,7 +554,9 @@ def run_one(
 def main(argv: Iterable[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--protocol", required=True)
-    parser.add_argument("--stage", choices=("grid", "full", "headline"), required=True)
+    parser.add_argument(
+        "--stage", choices=CLI_STAGES, required=True
+    )
     parser.add_argument("--system", choices=SYSTEMS, required=True)
     parser.add_argument("--rank", type=int)
     parser.add_argument("--learning-rate", type=float, required=True)

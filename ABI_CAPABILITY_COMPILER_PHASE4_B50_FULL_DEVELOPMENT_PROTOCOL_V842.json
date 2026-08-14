@@ -1,0 +1,153 @@
+{
+  "format": "abi-capability-compiler-phase4-b50-baselines/1",
+  "protocol_id": "abi-capability-compiler-phase4-b50-derived-d2-and-full-development-v842",
+  "status": "PREREGISTERED_EXACT_B50_MATCHED_BASELINE_CAMPAIGN",
+  "status_date": "2026-08-15",
+  "historical_evidence_changed": false,
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V841.json",
+  "selection_source": "ABI_CAPABILITY_COMPILER_PHASE4_B50_GRID_SELECTION_RESULT_V840.json",
+  "objective": "Run only the two deterministically derived D2 grid configurations, then replay the selected top two L0, L1, D0, D1, and D2 configurations on all 100 validation prompts per capability at seed 104729.",
+  "device": "cuda",
+  "records_archive": "results/abi_capability_compiler_phase4_b50_baselines/pack_v821/exact_b50_records_v821.abicir",
+  "pack_manifest": "results/abi_capability_compiler_phase4_b50_baselines/pack_v821/exact_b50_pack_manifest_v821.json",
+  "pack_result": "ABI_CAPABILITY_COMPILER_PHASE4_B50_BASELINE_PACK_RESULT_V821.json",
+  "topk_result": "ABI_CAPABILITY_COMPILER_PHASE4_B50_TOP64_RESULT_V829.json",
+  "topk_verification": "ABI_CAPABILITY_COMPILER_PHASE4_B50_TOP64_VERIFY_RESULT_V831.json",
+  "development_catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+  "packing_seed": 104729,
+  "packing_context": 768,
+  "router_repair": {
+    "scope": "Phase 4 execution wrapper only",
+    "feature_method": "Unchanged frozen Phase 2 normalized UTF-8 trigram hashing into 4,096 dimensions followed by normalized per-capability centroids",
+    "record_source": "The same 5,140 exact B50 membership rows used by the sequence-equal training channel",
+    "new_information_added": false,
+    "frozen_phase2_source_modified": false
+  },
+  "systems": {
+    "L0": {
+      "role": "fourteen_separately_deployed_single_capability_lora_adapters",
+      "information_role": "EXACT_B50_SEQUENCE_EQUAL_INFORMATION",
+      "ranks": [16],
+      "learning_rates": [0.0001],
+      "exposures": [1, 4]
+    },
+    "L1": {
+      "role": "prompt_routed_fourteen_capability_lora_system",
+      "information_role": "EXACT_B50_SEQUENCE_EQUAL_INFORMATION",
+      "ranks": [8],
+      "learning_rates": [0.0001, 0.0003],
+      "exposures": [4]
+    },
+    "D0": {
+      "role": "sequence_distilled_same_size_transformer",
+      "information_role": "EXACT_B50_SEQUENCE_EQUAL_INFORMATION",
+      "learning_rates": [0.00003],
+      "exposures": [2, 4]
+    },
+    "D1": {
+      "role": "top64_logit_distilled_same_size_transformer",
+      "information_role": "EXACT_B50_SEQUENCE_PLUS_TOP64_RICHER_CONTROL",
+      "learning_rates": [0.00003],
+      "exposures": [2, 4]
+    },
+    "D2": {
+      "role": "hybrid_sequence_and_top64_distilled_same_size_transformer",
+      "information_role": "EXACT_B50_SEQUENCE_PLUS_TOP64_RICHER_CONTROL",
+      "learning_rates": [0.00003],
+      "exposures": [2, 4]
+    }
+  },
+  "stages": {
+    "d2_grid": {
+      "seeds": [104729],
+      "development_per_capability": 10,
+      "save_checkpoint": false,
+      "authorized_systems": ["D2"],
+      "expected_runs": 2
+    },
+    "full": {
+      "seeds": [104729],
+      "development_per_capability": 100,
+      "save_checkpoint": false,
+      "authorized_systems": ["L0", "L1", "D0", "D1", "D2"],
+      "expected_runs": 10
+    }
+  },
+  "D2_selection_rule": {
+    "depth": 2,
+    "ranking": [
+      "highest macro-capability historical-V1 functional rate",
+      "zero historical-V1 repetition collapses preferred",
+      "highest micro historical-V1 functional rate",
+      "lowest response loss",
+      "lowest imported information",
+      "lowest training seconds",
+      "lexicographically smallest configuration identity"
+    ],
+    "outcome": "Both derived configurations proceed because exactly two are authorized. Metrics remain required and neither may be removed."
+  },
+  "headline_selection_after_full": {
+    "depth": 1,
+    "per_system": true,
+    "ranking": [
+      "highest macro-capability historical-V1 functional rate",
+      "zero historical-V1 repetition collapses preferred",
+      "highest micro historical-V1 functional rate",
+      "lowest response loss",
+      "lowest imported information",
+      "lowest training seconds",
+      "lexicographically smallest configuration identity"
+    ],
+    "prospective_metrics_not_used": ["functional V2", "repetition collapse V2", "final data"]
+  },
+  "expected": {
+    "record_memberships": 5140,
+    "authoritative_teacher_output_tokens": 152266,
+    "pack_count": 860,
+    "pack_response_positions": 163524,
+    "pack_content_sha256": "6d18b4a036a812dadaf30b7c76c5f389ec8c08ff70536ff95fb66fd19b7019b1",
+    "top64_values": 10465536,
+    "D2_grid_runs": 2,
+    "full_development_runs": 10,
+    "full_development_observations_per_run": 1400
+  },
+  "training_authorized": true,
+  "source_base_loading_for_l0_l1_authorized": true,
+  "teacher_query_generation_authorized": false,
+  "D0_D1_D2_teacher_loading_during_training": false,
+  "model_inference_authorized": "REGISTERED_DEVELOPMENT_EVALUATION_ONLY",
+  "final_test_access": "PROHIBITED",
+  "cost_forecast": {
+    "basis": "Measured exact-B50 grid receipts. Training cost repeats selected configurations; 1,400-prompt evaluation increases development cost tenfold.",
+    "expected_total_wall_hours": 8.0,
+    "bounded_review_range_hours": [6.0, 12.0],
+    "hard_resource_stop": "Stop only on CUDA OOM, non-finite loss, missing or changed bound artifact, disk-write failure, or system interruption. Preserve every completed run and failure."
+  },
+  "bindings": {
+    "abi/capability_compiler_phase4_b50_baselines.py": "e89b6e66e030165d0d9bedda3adc0fec2f532e14f579962023d48d45965ac774",
+    "tests/test_capability_compiler_phase4_b50_baselines.py": "1540c799bdddbde307875ac7625b67a3b843a4e59c561144c3755562504b5745",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V841.json": "10fdaf39b035a6e923e3e2286d97860eddaa079299f2a646d24c4f577f326861",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B50_GRID_SELECTION_RESULT_V840.json": "54c107da88d6bf179e875cc098e84e853e9166014b8c7c4227504a0ad7770f30",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B50_BASELINE_PACK_RESULT_V821.json": "68c4ce1098303d03d371ffbd753090beb070977f0c9bbdaae9cd112f0f3a1fa1",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B50_BASELINE_PACK_VERIFY_RESULT_V825.json": "3d66fd5d9f0162fc4fe9ca7265532d176e353f440ba22c0ecb2d7a79660e5b6c",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B50_TOP64_RESULT_V829.json": "8c2cd278bbb350f22dcc3b43a90b70595eab5df43ac27bdf1aced2bb0d4d93cd",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B50_TOP64_VERIFY_RESULT_V831.json": "eb8165fb212dd39d0482c59003fb773c44364edc6b0c7617196ee6752e21835a",
+    "results/abi_capability_compiler_phase4_b50_baselines/pack_v821/exact_b50_records_v821.abicir": "b5b6b2dd9acc386601d6c0f3dd33171eb3978805efe754a1fd5cbcaecccdff59",
+    "results/abi_capability_compiler_phase4_b50_baselines/pack_v821/exact_b50_pack_manifest_v821.json": "a8f7a8757e348e3774f342b6bc864e3c1b172f459a55337216b9d613f7c0ff91",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "abi/capability_compiler_phase2_common.py": "8093ec2016d685f0327c87640042c8373bc141d76351fd641b21a44d018b6c92",
+    "abi/capability_compiler_phase2_prepare.py": "96467c3593b4228ed8ed7f5b5d6bda35e0fc686c2e168c26051643b085de20d8",
+    "abi/capability_compiler_phase2_lora.py": "4f209ab042a132dd4aae4d9961b462eb8422d38dedb5c3de942f84a6d88d8747",
+    "abi/capability_compiler_phase2_student.py": "5a5ef5a9da2d8bc5d035b830f26652512cd09e4dde91b8b91813c1f4ca8f06e6",
+    "abi/capability_compiler_functional_v2.py": "1755ceded6de7c8228ed91e5be6bf86452b6c5f02466f8fda150317775abd4af",
+    "abi/capability_compiler_repetition_v2.py": "8a7516efc0dd23360f3051b349d5d1b01180fe6966884f8d343044018b53eed7"
+  },
+  "execution_order": [
+    "Run both D2 d2_grid configurations and preserve results.",
+    "Apply the frozen D2 ranking; both configurations remain because selection depth equals authorized depth.",
+    "Run all ten full-development replays and preserve results.",
+    "Stop for an independently sealed full-development verification and headline-selection audit."
+  ],
+  "decision_rule": "Complete exactly the two D2 grid runs and ten selected full-development runs. Do not stop for intermediate quality. Do not run headline seeds, save checkpoints, profile runtime, or access final data until the full-development tree is independently verified and a new headline protocol is sealed.",
+  "claim_boundary": "Derived D2 screening and seed-104729 full-development only. No headline, runtime, final-test, matched frontier, Phase 4, or ABI-superiority claim."
+}
