@@ -27,7 +27,7 @@ from .capability_compiler_phase4_abi_lineage import _selected_rows
 from .capability_compiler_phase4_v19_frontier_rescreen import _json
 
 
-FORMAT = "abi-capability-compiler-phase4-b50-baseline-pack/1"
+FORMAT = "abi-capability-compiler-phase4-b50-baseline-pack/2"
 ARTIFACT_ORDER = ("phase1_ir", "v138_targeted_ir", "v480_host_supervision")
 
 
@@ -88,12 +88,29 @@ def normalize_memberships(
             if artifact == "v480_host_supervision":
                 prompt = str(row["host_prompt"])
                 rendered = _render_host_prompt(tokenizer, prompt)
-                response_ids = [
+                source_response_ids = [
                     int(value) for value in row["source_authoritative_generated_token_ids"]
                 ]
                 output = str(row["output"])
                 teacher_tokens = int(row["source_teacher_output_tokens"])
                 destination = "english_core"
+                if not source_response_ids:
+                    raise Phase3Error("empty host source response tokens")
+                rendered_output_ids = [
+                    int(value)
+                    for value in tokenizer(output, add_special_tokens=False).input_ids
+                ] + [source_response_ids[-1]]
+                surface_normalized = bool(row.get("surface_normalization_steps"))
+                if not surface_normalized and rendered_output_ids != source_response_ids:
+                    raise Phase3Error("unchanged host output no longer matches source tokens")
+                response_ids = (
+                    rendered_output_ids if surface_normalized else source_response_ids
+                )
+                sequence_normalization = (
+                    "retokenized_after_closed_v479_surface_normalization"
+                    if surface_normalized
+                    else "none"
+                )
             else:
                 prompt = str(row["normalized_generation_prompt"])
                 rendered = str(row["rendered_generation_prompt"])
@@ -103,6 +120,7 @@ def normalize_memberships(
                 output = str(row["normalized_output"])
                 teacher_tokens = int(row["authoritative_teacher_tokens"])
                 destination = str(row["destination"])
+                sequence_normalization = "none"
             if not prompt or not rendered or not output or not response_ids:
                 raise Phase3Error(f"empty exact B50 sequence channel: {artifact}:{native}")
             normalized.append(
@@ -128,6 +146,8 @@ def normalize_memberships(
                     ).hexdigest(),
                     "authoritative_generated_token_ids": response_ids,
                     "authoritative_teacher_tokens": teacher_tokens,
+                    "baseline_sequence_tokens": len(response_ids),
+                    "sequence_normalization": sequence_normalization,
                     "channel": "teacher_generated_sequence",
                     "split": "acquisition",
                 }
@@ -144,10 +164,10 @@ def normalize_memberships(
 
 def source_attempt_accounting(
     selected: Mapping[str, Sequence[Mapping[str, Any]]],
-    full_targeted_rows: Sequence[Mapping[str, Any]],
+    source_attempt_rows: Sequence[Mapping[str, Any]],
 ) -> dict[str, Any]:
-    targeted_by_attempt = {
-        str(row["source_attempt_sha256"]): row for row in full_targeted_rows
+    attempts_by_hash = {
+        str(row["attempt_sha256"]): row for row in source_attempt_rows
     }
     union: dict[str, dict[str, Any]] = {}
     memberships = 0
@@ -157,28 +177,40 @@ def source_attempt_accounting(
             memberships += 1
             attempt = str(row["source_attempt_sha256"])
             if artifact == "v480_host_supervision":
-                canonical = targeted_by_attempt.get(attempt)
+                canonical = attempts_by_hash.get(attempt)
                 if canonical is None:
                     raise Phase3Error("host membership lacks source-attempt lineage")
                 token_count = int(row["source_teacher_output_tokens"])
-                if token_count != int(canonical["authoritative_teacher_tokens"]):
+                if token_count != int(canonical["teacher_tokens"]):
                     raise Phase3Error("host/source teacher-token accounting diverged")
-                if str(row["output"]) != str(canonical["normalized_output"]):
-                    raise Phase3Error("host/source teacher output diverged")
+                if (
+                    [int(value) for value in row["source_authoritative_generated_token_ids"]]
+                    != [int(value) for value in canonical["authoritative_generated_token_ids"]]
+                    or str(row["source_output_sha256"])
+                    != str(canonical["output_sha256"])
+                    or str(row["source_generation_prompt_sha256"])
+                    != str(canonical["generation_prompt_sha256"])
+                    or int(row["source_teacher_input_tokens"])
+                    != int(canonical["teacher_input_tokens"])
+                ):
+                    raise Phase3Error("host/source attempt provenance diverged")
+                prompt = str(canonical["generation_prompt"])
+                output = str(canonical["output"])
+                output_sha = str(canonical["output_sha256"])
+                input_tokens = int(canonical["teacher_input_tokens"])
             else:
-                canonical = row
                 token_count = int(row["authoritative_teacher_tokens"])
+                prompt = str(row["raw_generation_prompt"])
+                output = str(row["raw_output"])
+                output_sha = str(row["raw_output_sha256"])
+                input_tokens = int(row["teacher_input_tokens"])
             membership_tokens += token_count
             facts = {
-                "teacher_input_tokens": int(canonical["teacher_input_tokens"]),
+                "teacher_input_tokens": input_tokens,
                 "teacher_output_tokens": token_count,
-                "raw_prompt_bytes": len(
-                    str(canonical["raw_generation_prompt"]).encode("utf-8")
-                ),
-                "raw_teacher_output_bytes": len(
-                    str(canonical["raw_output"]).encode("utf-8")
-                ),
-                "teacher_output_sha256": str(canonical["raw_output_sha256"]),
+                "raw_prompt_bytes": len(prompt.encode("utf-8")),
+                "raw_teacher_output_bytes": len(output.encode("utf-8")),
+                "teacher_output_sha256": output_sha,
             }
             previous = union.setdefault(attempt, facts)
             if previous != facts:
@@ -277,17 +309,20 @@ def run(
     selected, budget = _selected_rows(root, lineage, manifest, "B50")
     tokenizer = _tokenizer(_verified_snapshot(root))
     records = normalize_memberships(selected, tokenizer)
-    targeted_path = next(
-        str(row["path"])
-        for row in lineage["teacher_artifacts"]
-        if row["id"] == "v138_targeted_ir"
-    )
     accounting = source_attempt_accounting(
-        selected, _archive_rows(root / targeted_path)
+        selected, [
+            json.loads(line)
+            for line in (root / protocol["source_attempt_journal"])
+            .read_bytes()
+            .splitlines()
+        ]
     )
     source_counts = Counter(str(row["source_artifact"]) for row in records)
     capability_counts = Counter(str(row["capability"]) for row in records)
     destination_counts = Counter(str(row["destination"]) for row in records)
+    sequence_normalization_counts = Counter(
+        str(row["sequence_normalization"]) for row in records
+    )
     expected_counts = {key: int(value) for key, value in budget["records"].items()}
     if dict(source_counts) != expected_counts:
         raise Phase3Error("exact B50 membership counts changed")
@@ -358,6 +393,10 @@ def run(
             and row["authoritative_generated_token_ids"]
             for row in records
         ),
+        "surface_normalized_rows_retokenized": sequence_normalization_counts[
+            "retokenized_after_closed_v479_surface_normalization"
+        ]
+        == int(protocol["expected"]["surface_normalized_host_memberships"]),
         "context_conformant": maximum_record_tokens
         <= int(protocol["packing_context"]),
         "records_archive_self_consistent": archive_manifest["records"]
@@ -377,6 +416,9 @@ def run(
         "source_memberships": dict(sorted(source_counts.items())),
         "capability_memberships": dict(sorted(capability_counts.items())),
         "destination_memberships": dict(sorted(destination_counts.items())),
+        "sequence_normalization_memberships": dict(
+            sorted(sequence_normalization_counts.items())
+        ),
         "imported_information": accounting,
         "records_archive": {
             "path": records_output.relative_to(root).as_posix(),
