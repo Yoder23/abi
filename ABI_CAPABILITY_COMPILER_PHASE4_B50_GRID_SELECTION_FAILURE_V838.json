@@ -1,0 +1,40 @@
+{
+  "format": "abi-capability-compiler-phase4-b50-grid-selection-failure/1",
+  "failure_id": "abi-capability-compiler-phase4-b50-grid-selection-format-failure-v838",
+  "status": "FAIL_CLOSED_VERIFIER_RESULT_FORMAT_ASSERTION",
+  "status_date": "2026-08-15",
+  "historical_evidence_changed": false,
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE4_B50_GRID_SELECTION_PROTOCOL_V837.json",
+  "observed_failure": {
+    "exception_type": "abi.capability_compiler_phase3.Phase3Error",
+    "exception_message": "grid result governance changed: D0_lr1e-5_exp1_seed104729",
+    "selection_result_created": false,
+    "training_performed": false,
+    "model_inference_performed": false,
+    "final_test_accessed": false
+  },
+  "diagnosis": {
+    "expected_by_v837_verifier": "abi-capability-compiler-phase4-b50-baselines/1",
+    "actual_frozen_run_result_format": "abi-capability-compiler-phase4-b50-baseline-run-result/1",
+    "grid_tree_hash_matched_before_failure": true,
+    "first_run_reached": "D0_lr1e-5_exp1_seed104729",
+    "raw_metrics_recomputed_before_failure": 0,
+    "cause": "The verifier asserted the trainer protocol format constant instead of the separately versioned run-result format emitted by the sealed trainer.",
+    "grid_evidence_invalidated": false,
+    "selection_invalidated": true
+  },
+  "required_repair": {
+    "scope": "One literal verifier assertion plus a regression test.",
+    "grid_tree_change": false,
+    "ranking_change": false,
+    "metric_change": false,
+    "selection_change": false,
+    "new_preregistration_required": true
+  },
+  "bindings": {
+    "ABI_CAPABILITY_COMPILER_PHASE4_B50_GRID_SELECTION_PROTOCOL_V837.json": "9c8d29add135d51e776999592e243c57fb3b5ae535bd733a7200a455b6310d6b",
+    "abi/capability_compiler_phase4_b50_grid_verify.py": "5638b3251a3b2e7aa766c39b80c89f7193ddd67a485f1a81371a87ba28825526"
+  },
+  "phase4_certified": false,
+  "claim_boundary": "Fail-closed read-only verifier execution only. No selection, training, inference, full-depth, headline, runtime, final-test, Phase 4, or ABI-superiority claim."
+}
