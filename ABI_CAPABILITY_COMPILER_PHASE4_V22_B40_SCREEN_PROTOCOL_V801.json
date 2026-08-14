@@ -1,0 +1,135 @@
+{
+  "format": "abi-capability-compiler-phase4-v22-b40-screen/1",
+  "protocol_id": "abi-capability-compiler-phase4-v22-b40-screen-v801",
+  "status": "PREREGISTERED_THREE_SYSTEM_V22_B40_SCREEN",
+  "status_date": "2026-08-14",
+  "historical_evidence_changed": false,
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V800.json",
+  "objective": "Screen the frozen adjacent-lower B40 tensors on the signed LayerCake v22 host across every development row and all three paired seeds, without training, teacher loading, or final-test access.",
+  "device": "cuda",
+  "training_authorized": false,
+  "teacher_model_loading_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "layercake_root": "../layercake_release",
+  "interface": "lc-direct-neural-core/22",
+  "interface_sha256": "34038bbd682f1efa727570adfb934b0ce9d73d31121f06f4028976ba2d798d35",
+  "format_mode_scientific_label": "DETERMINISTIC_PROMPT_LITERAL_TRANSDUCER_NOT_BROAD_NEURAL_GENERATION",
+  "format_mode_counts_as_broad_neural_generation": false,
+  "development_catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+  "teacher_reference": "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl",
+  "model_metadata": "../layercake_release/artifacts/moonshot/phase2_shallow_sparse_pretrained/student2400-seed-9824/metadata.json",
+  "model_tokenizer": "../layercake_release/artifacts/moonshot/phase2_shallow_sparse_pretrained/student2400-seed-9824/tokenizer.json",
+  "router_tokenizer": "artifacts/phase3/utf8_bpe_v34/layercake_tokenizer_v3.json",
+  "research_signing_seed_hex": "f67c54ac828a6f07746b7cc425de20b2ec01788607da7930409fd53f0ce2a072",
+  "capabilities": [
+    "grammar",
+    "coherence",
+    "prompt_grounding",
+    "instruction_following",
+    "conversation",
+    "supplied_text_summarization",
+    "rewriting",
+    "email_drafting_from_notes",
+    "tone_control",
+    "format_control",
+    "clarification",
+    "abstention",
+    "fact_free_reasoning",
+    "fluent_realization"
+  ],
+  "absolute_screen": {
+    "per_capability_functional_point_estimate_minimum": 0.9,
+    "per_capability_functional_wilson_lower_minimum": 0.85,
+    "critical_point_minimum": 0.95,
+    "critical_wilson_lower_minimum": 0.9,
+    "repetition_collapse_v2_count_maximum": 0
+  },
+  "teacher_relative_screen": {
+    "bootstrap_replicates": 10000,
+    "candidate_minus_teacher_lower_95_minimum": -0.05
+  },
+  "imported_information": {
+    "unique_source_attempts": 4005,
+    "authoritative_teacher_output_tokens": 123167,
+    "record_memberships": 4112
+  },
+  "systems": [
+    {
+      "budget": "B40",
+      "seed": 104729,
+      "components": {
+        "model": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed104729-v575/v463/model.safetensors",
+        "router": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed104729-v575/router/router.safetensors",
+        "residual": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed104729-v575/v526/control_bridge.safetensors"
+      },
+      "router_config": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed104729-v575/router/config.json",
+      "guard_artifact": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed104729-v575/budget_host_supervision.abicir",
+      "historical_outputs": "results/abi_capability_compiler_phase4_v19_frontier_rescreen/run_v733/B40-seed104729/merged_development_outputs.jsonl",
+      "lineage_result": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed104729-v575/result.json"
+    },
+    {
+      "budget": "B40",
+      "seed": 130363,
+      "components": {
+        "model": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed130363-v579/v463/model.safetensors",
+        "router": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed130363-v579/router/router.safetensors",
+        "residual": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed130363-v579/v526/control_bridge.safetensors"
+      },
+      "router_config": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed130363-v579/router/config.json",
+      "guard_artifact": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed130363-v579/budget_host_supervision.abicir",
+      "historical_outputs": "results/abi_capability_compiler_phase4_v19_frontier_rescreen/run_v733/B40-seed130363/merged_development_outputs.jsonl",
+      "lineage_result": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed130363-v579/result.json"
+    },
+    {
+      "budget": "B40",
+      "seed": 155921,
+      "components": {
+        "model": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed155921-v583/v463/model.safetensors",
+        "router": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed155921-v583/router/router.safetensors",
+        "residual": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed155921-v583/v526/control_bridge.safetensors"
+      },
+      "router_config": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed155921-v583/router/config.json",
+      "guard_artifact": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed155921-v583/budget_host_supervision.abicir",
+      "historical_outputs": "results/abi_capability_compiler_phase4_v19_frontier_rescreen/run_v733/B40-seed155921/merged_development_outputs.jsonl",
+      "lineage_result": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed155921-v583/result.json"
+    }
+  ],
+  "bindings": {
+    "abi/capability_compiler_phase4_v22_b40_screen.py": "073aed89cab07c931c6e5f6b813c5b3b58f9f558b0d0cf61fce0b23305b3451a",
+    "tests/test_capability_compiler_phase4_v22_b40_screen.py": "8d180d6234b6f2e2a7af2672fc3abd04becda695383cef3d4f3dd4b3d6a83a6a",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V800.json": "60dbf6098428b879bde7ed3e77f96e67e200445ed6d80c2bc54f60a927d4fc40",
+    "ABI_CAPABILITY_COMPILER_PHASE4_V22_B50_VERIFIED_RESULT_V799.json": "3c852b70ccfd12cf4efaa89529bb31538bce6a627b26e9f05c8081b355394b1c",
+    "../layercake_release/moonshot/canonical_route_isolated_format_literal_core_abi_v22.json": "34038bbd682f1efa727570adfb934b0ce9d73d31121f06f4028976ba2d798d35",
+    "../layercake_release/moonshot/postrelease_route_isolated_format_literal_v22_decision_v75.json": "b03ce97308f13cc40955adfd34eba1f02823207db0c31715d2f81e53a52b43ce",
+    "../layercake_release/results/moonshot/postrelease_route_isolated_format_literal_v22_construct_v74.json": "9db19e51eec61500e1ab5e945bd98228c08c81ba0508ffe5e671f1961612d665",
+    "../layercake_release/layercake_extensions/route_isolated_format_literal_core_v22.py": "88cb4cc7f212469f9f78cad9d0811fd7175f8f21f4e7b89455dc6b76c74b2f1c",
+    "../layercake_release/artifacts/moonshot/phase2_shallow_sparse_pretrained/student2400-seed-9824/metadata.json": "def6a552162a10a814d4bcfba31fa659530f0488d461c4a93414ee44a231ea82",
+    "../layercake_release/artifacts/moonshot/phase2_shallow_sparse_pretrained/student2400-seed-9824/tokenizer.json": "1fe93b6152957cf9cfd6d89002467f789ce8b3f3e000b3a2edf27c808ddd0b9e",
+    "artifacts/phase3/utf8_bpe_v34/layercake_tokenizer_v3.json": "64a2b3ebf2fde5ec1a35faa6813b77f09f19f47c1135695d72b29145c023df36",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl": "1081dbe57e75da50b2619bc2dab14c6441158dcd6068f2b864733936087e86a2",
+    "results/abi_capability_compiler_phase4_abi_lineage/B40-seed104729-v575/result.json": "825a4eef13cea1a1e40e97916f47c9e02a8893c56908bee4495815c5e955e0e2",
+    "results/abi_capability_compiler_phase4_abi_lineage/B40-seed104729-v575/v463/model.safetensors": "de0b8c718785405b4384745d65bca570ee0821382ecc3defc0eeb6d73ade3528",
+    "results/abi_capability_compiler_phase4_abi_lineage/B40-seed104729-v575/router/router.safetensors": "ff935f376ebc409b0611a3a872162eaf81f9acfd30be122b1364d8ea485e1fa3",
+    "results/abi_capability_compiler_phase4_abi_lineage/B40-seed104729-v575/router/config.json": "b43d07f892a2bb746c93301a913777e486eab71bd917486de464bd185ec09d99",
+    "results/abi_capability_compiler_phase4_abi_lineage/B40-seed104729-v575/v526/control_bridge.safetensors": "995cf07fd6421ce92123905a1fc1e9cb1400ec795a9aace7d8990b71bbb42d3e",
+    "results/abi_capability_compiler_phase4_abi_lineage/B40-seed104729-v575/budget_host_supervision.abicir": "837946903b5828479b486283b0bafc116aa65104f67e87d7a236a1a0b010f8d9",
+    "results/abi_capability_compiler_phase4_v19_frontier_rescreen/run_v733/B40-seed104729/merged_development_outputs.jsonl": "fb8375c924a5b04f87aee6b1ccec694fe67375039f44453e17f094533168113a",
+    "results/abi_capability_compiler_phase4_abi_lineage/B40-seed130363-v579/result.json": "d0e3a09acbb5e86376c984a4655e9f32987e111f8ebf874bc0554c805271ee10",
+    "results/abi_capability_compiler_phase4_abi_lineage/B40-seed130363-v579/v463/model.safetensors": "eb7012cb952afc762c2182f9e54dcc1df26dda1c6c144dd8065e23ff1c779fcc",
+    "results/abi_capability_compiler_phase4_abi_lineage/B40-seed130363-v579/router/router.safetensors": "ab00935c75f263ea7a49e22a08587f9eb66b69ccac5ac3cb84b28d8a3b324343",
+    "results/abi_capability_compiler_phase4_abi_lineage/B40-seed130363-v579/router/config.json": "b43d07f892a2bb746c93301a913777e486eab71bd917486de464bd185ec09d99",
+    "results/abi_capability_compiler_phase4_abi_lineage/B40-seed130363-v579/v526/control_bridge.safetensors": "112b589bd9ec2455a5d1717dbe7f0a8834228b667834b9510fd550a8057f99fb",
+    "results/abi_capability_compiler_phase4_abi_lineage/B40-seed130363-v579/budget_host_supervision.abicir": "ae5266bd4be1c4b7bbfdca4909169eb951a60368e813db08708f0136caaa91fb",
+    "results/abi_capability_compiler_phase4_v19_frontier_rescreen/run_v733/B40-seed130363/merged_development_outputs.jsonl": "00e67a8f1b3727eb26e510e3453536bbeddf478832608901d133f3ccc835f30f",
+    "results/abi_capability_compiler_phase4_abi_lineage/B40-seed155921-v583/result.json": "cc173cf2fc511b7b8aa551b881803e1677d359908e2e726adb724bdcabe2e509",
+    "results/abi_capability_compiler_phase4_abi_lineage/B40-seed155921-v583/v463/model.safetensors": "5cffb7b70cc57b4350560ab6d543c18e674382ca6afea6f6c3f7cbb5233b8500",
+    "results/abi_capability_compiler_phase4_abi_lineage/B40-seed155921-v583/router/router.safetensors": "bfe2028a30098987a5a3a8ea12354639386f44b1f544299d745bd65d9dea70e2",
+    "results/abi_capability_compiler_phase4_abi_lineage/B40-seed155921-v583/router/config.json": "b43d07f892a2bb746c93301a913777e486eab71bd917486de464bd185ec09d99",
+    "results/abi_capability_compiler_phase4_abi_lineage/B40-seed155921-v583/v526/control_bridge.safetensors": "297613ff1771a2ffa4e790b0607603b3c7720e9f9a5c286f34412c1ebb0a002f",
+    "results/abi_capability_compiler_phase4_abi_lineage/B40-seed155921-v583/budget_host_supervision.abicir": "0acdd59d971b0c37b75e86a5bd548138d6971652ef733508d385c1c36339c23e",
+    "results/abi_capability_compiler_phase4_v19_frontier_rescreen/run_v733/B40-seed155921/merged_development_outputs.jsonl": "add5121ff9af6fb62165fc7096234a2c711fd6bf3d466a201e4a47bcc6bfc728"
+  },
+  "decision_rule": "Preserve every result. If all three B40 seeds pass, B40 becomes the stable sufficient candidate and B50 is not minimal; the next boundary action requires a separately authorized lower anchor. If all three B40 seeds fail, B50 becomes a minimum candidate pending independent verification. If B40 is mixed, no stable minimum exists and no nearby budget sweep is authorized. Any apparent outcome requires a separately preregistered read-only verifier.",
+  "claim_boundary": "Frozen adjacent-lower B40 development screen only. No matched baseline, final test, Phase 4 certificate, minimum, or ABI-superiority claim before independent verification."
+}
