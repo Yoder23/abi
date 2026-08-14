@@ -1,0 +1,17 @@
+{
+  "format":"abi-capability-compiler-phase4-v20-b60-rescreen-summary/1",
+  "version":768,
+  "status_date":"2026-08-13",
+  "status":"FAIL_V20_EXACT_CHANGE_CONTRACT_ONE_WEAK_LEXICAL_BOUNDARY_MISMATCH",
+  "historical_evidence_changed":false,
+  "protocol":{"path":"ABI_CAPABILITY_COMPILER_PHASE4_V20_B60_RESCREEN_PROTOCOL_V766.json","sha256":"6f547eec6bac6af53f0cc755a177bd21b701155a7517459de368d94514fa1b3b"},
+  "raw_result":{"path":"results/abi_capability_compiler_phase4_v20_b60_rescreen/run_v767/result.json","sha256":"ac4b0d85d62e76f03de883214ccee923d42067278e8cea04860d99bd914afc58","evidence_sha256":"13b7371bc2e42599c6662cc2c1df0761ca7a09afa10831f1a67d0bc430ebb3a7"},
+  "execution":{"cuda_rows":4200,"training_performed":false,"teacher_model_loaded":false,"receiver_training_steps":0,"final_test_accessed":false},
+  "matrix":[{"seed":104729,"functional_passes":1377,"collapses":0,"changed_rows":2,"machine_gate":"FAIL"},{"seed":130363,"functional_passes":1390,"collapses":0,"changed_rows":0,"machine_gate":"PASS"},{"seed":155921,"functional_passes":1384,"collapses":0,"changed_rows":0,"machine_gate":"PASS"}],
+  "positive_evidence":{"all_absolute_quality_gates_all_seeds":true,"all_teacher_relative_gates_all_seeds":true,"all_routing_package_pointer_gates_all_seeds":true,"zero_repetition_collapses_all_seeds":true,"strong_seed104729_summarization_repair_safe_functional_prefix":true,"tensor_payloads_unchanged":true},
+  "limiting_factor":"The all-capability runtime guard changed the already-failing weak tone-control probe phase1-validation-tone_control-0089-v2 from the historical exact lexical prefix ending 'FixI.FixI.FixI.' to a one-subtoken-later safe prefix ending 'FixI.FixI.FixI.Fix'. Both outputs fail the functional evaluator and neither collapses. This violates the preregistered no-other-output-change rule and changed-row functional gate.",
+  "decision":"Do not promote v20 B60 and do not relax the gate. Preserve v20 as a construct success but an external-candidate rescreen failure. The measured next target is exact lexical-boundary truncation under the same frozen predicate.",
+  "authorized_next_action":"One separately versioned LayerCake host successor may implement exact maximal pre-collapse lexical-prefix realization for the same predicate, then the same frozen B60 tensors may be rescreened. No acquisition retraining, new information budget, or threshold change is authorized.",
+  "phase4_certified":false,
+  "claim_boundary":"Negative three-seed v20 development result. No stable B60 promotion, information minimum, matched baseline, final test, Phase 4, or ABI-superiority claim."
+}
