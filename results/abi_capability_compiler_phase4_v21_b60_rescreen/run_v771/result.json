@@ -1,0 +1,713 @@
+{
+  "aggregate_outputs_sha256": "ee9bc2742c6df5b3469911097488b3e7fbcbd5cc7f486bada5f319a50b546253",
+  "changed_rows": 1,
+  "claim_boundary": "Three-seed B60 v21 development rescreen only. No information minimum, matched baseline, final test, Phase 4, or ABI-superiority claim.",
+  "evidence_sha256": "7eff88e493c07cec2ecdcd9048281189bc46fa942a128131e84d1352c74052b3",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase4-v21-b60-rescreen-result/1",
+  "guard_terminations": 4,
+  "model_inference_rows": 4200,
+  "observations": 4200,
+  "phase4_certified": false,
+  "protocol_sha256": "49232d14102e797980ca10272b8fbcf38dc1f232e70c739a90a983a103853081",
+  "receiver_training_steps": 0,
+  "status": "FAIL_B60_V21_DEVELOPMENT_CANDIDATE",
+  "systems": [
+    {
+      "activation": {
+        "archive_sha256": "0a61444309305d93654e6cdc8cb730862a9ccda1398a22705cd1b53ac8343bde",
+        "receiver_calibration_runs": 0,
+        "receiver_training_steps": 0,
+        "tensor_payload_hash": "170516d39f92126f2235f15a6491f2378f104aad027214bf4e727f2d095293c9",
+        "verification": "PASS"
+      },
+      "budget": "B60",
+      "changed_rows": 1,
+      "evaluation": {
+        "abstention_prefixes": 40,
+        "functional_passes_v1": 1377,
+        "functional_passes_v2": 1377,
+        "guard_terminations": 2,
+        "observations": 1400,
+        "per_capability": {
+          "abstention": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 100,
+            "wilson_v1": {
+              "lower_95": 0.9630065017930143,
+              "point": 1.0,
+              "upper_95": 1.0
+            }
+          },
+          "clarification": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 96,
+            "wilson_v1": {
+              "lower_95": 0.9016292856411208,
+              "point": 0.96,
+              "upper_95": 0.9843366960084523
+            }
+          },
+          "coherence": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 100,
+            "wilson_v1": {
+              "lower_95": 0.9630065017930143,
+              "point": 1.0,
+              "upper_95": 1.0
+            }
+          },
+          "conversation": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 100,
+            "wilson_v1": {
+              "lower_95": 0.9630065017930143,
+              "point": 1.0,
+              "upper_95": 1.0
+            }
+          },
+          "email_drafting_from_notes": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 98,
+            "wilson_v1": {
+              "lower_95": 0.929988209271456,
+              "point": 0.98,
+              "upper_95": 0.9944980324498376
+            }
+          },
+          "fact_free_reasoning": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 92,
+            "wilson_v1": {
+              "lower_95": 0.8500189229905127,
+              "point": 0.92,
+              "upper_95": 0.9589065385156194
+            }
+          },
+          "fluent_realization": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 97,
+            "wilson_v1": {
+              "lower_95": 0.9154806357094724,
+              "point": 0.97,
+              "upper_95": 0.9897454759759611
+            }
+          },
+          "format_control": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 100,
+            "wilson_v1": {
+              "lower_95": 0.9630065017930143,
+              "point": 1.0,
+              "upper_95": 1.0
+            }
+          },
+          "grammar": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 100,
+            "wilson_v1": {
+              "lower_95": 0.9630065017930143,
+              "point": 1.0,
+              "upper_95": 1.0
+            }
+          },
+          "instruction_following": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 100,
+            "wilson_v1": {
+              "lower_95": 0.9630065017930143,
+              "point": 1.0,
+              "upper_95": 1.0
+            }
+          },
+          "prompt_grounding": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 100,
+            "wilson_v1": {
+              "lower_95": 0.9630065017930143,
+              "point": 1.0,
+              "upper_95": 1.0
+            }
+          },
+          "rewriting": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 100,
+            "wilson_v1": {
+              "lower_95": 0.9630065017930143,
+              "point": 1.0,
+              "upper_95": 1.0
+            }
+          },
+          "supplied_text_summarization": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 100,
+            "wilson_v1": {
+              "lower_95": 0.9630065017930143,
+              "point": 1.0,
+              "upper_95": 1.0
+            }
+          },
+          "tone_control": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 94,
+            "wilson_v1": {
+              "lower_95": 0.8752318455410406,
+              "point": 0.94,
+              "upper_95": 0.9722138760368118
+            }
+          }
+        },
+        "repetition_collapses_v2": 0,
+        "router_correct": 1400,
+        "strong_routes_exact": 999
+      },
+      "guard_gates": {
+        "all_other_outputs_exact": true,
+        "changed_row_functional": true,
+        "changed_row_guard_terminated": true,
+        "changed_row_prefix_preserved": true,
+        "changed_rows_exactly_one_strong_repair": true,
+        "exact_lexical_boundary_declared": true,
+        "strong_route_conformance": true,
+        "zero_remaining_collapse": true
+      },
+      "guard_terminations": 2,
+      "machine_gates_pass": true,
+      "outputs": {
+        "path": "results/abi_capability_compiler_phase4_v21_b60_rescreen/run_v771/seed104729_outputs.jsonl",
+        "sha256": "f983905466d71935d4a240a895c0420fad055008dd60907d31f526129e776e00"
+      },
+      "package": {
+        "archive_bytes": 253117307,
+        "archive_sha256": "0a61444309305d93654e6cdc8cb730862a9ccda1398a22705cd1b53ac8343bde",
+        "component_parameters": {
+          "model": 61655050,
+          "residual": 99840,
+          "router": 1058040
+        },
+        "gates": {
+          "component_counts_exact": true,
+          "interface_v21": true,
+          "receiver_learning_zero": true,
+          "signature_valid": true,
+          "teacher_absent": true,
+          "tensor_values_exact": true
+        },
+        "package_hash": "73fa4639dc7c96511d03d351683ccae9b56c0bf173659a07b52ff5d48e37b16f",
+        "tensor_count": 89,
+        "tensor_payload_hash": "170516d39f92126f2235f15a6491f2378f104aad027214bf4e727f2d095293c9",
+        "total_parameters": 62812930
+      },
+      "pointer_gates": {
+        "all_100_pointer_rows": true,
+        "evaluator_blind": true,
+        "one_active_route": true,
+        "one_scoring_forward": true,
+        "package_identity": true,
+        "package_verified": true,
+        "persistent_state_reused": true,
+        "receiver_learning_zero": true,
+        "six_candidates": true
+      },
+      "quality_gates": {
+        "critical_capabilities": true,
+        "final_test_not_accessed": true,
+        "per_capability_functional": true,
+        "router_exact": true,
+        "teacher_absent": true,
+        "teacher_noninferior": true,
+        "training_absent": true,
+        "zero_repetition_collapse": true
+      },
+      "seed": 104729,
+      "status": "PASS",
+      "teacher_comparison_v1": {
+        "candidate_minus_teacher": 0.1,
+        "lower_95": 0.08357142857142857,
+        "method": "capability_stratified_paired_percentile_bootstrap",
+        "replicates": 10000,
+        "seed": 6104729,
+        "upper_95": 0.11714285714285715
+      }
+    },
+    {
+      "activation": {
+        "archive_sha256": "f6da74747bded2da19666f396c2ca1d45d954978c6a71f4f96a573a8c9e5b786",
+        "receiver_calibration_runs": 0,
+        "receiver_training_steps": 0,
+        "tensor_payload_hash": "40a62e972a8e16032a1d0a0082c77ca5cc3c4a83a232aa079d35d117d967b79c",
+        "verification": "PASS"
+      },
+      "budget": "B60",
+      "changed_rows": 0,
+      "evaluation": {
+        "abstention_prefixes": 26,
+        "functional_passes_v1": 1390,
+        "functional_passes_v2": 1390,
+        "guard_terminations": 0,
+        "observations": 1400,
+        "per_capability": {
+          "abstention": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 100,
+            "wilson_v1": {
+              "lower_95": 0.9630065017930143,
+              "point": 1.0,
+              "upper_95": 1.0
+            }
+          },
+          "clarification": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 99,
+            "wilson_v1": {
+              "lower_95": 0.9455138038212946,
+              "point": 0.99,
+              "upper_95": 0.9982325679358593
+            }
+          },
+          "coherence": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 100,
+            "wilson_v1": {
+              "lower_95": 0.9630065017930143,
+              "point": 1.0,
+              "upper_95": 1.0
+            }
+          },
+          "conversation": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 100,
+            "wilson_v1": {
+              "lower_95": 0.9630065017930143,
+              "point": 1.0,
+              "upper_95": 1.0
+            }
+          },
+          "email_drafting_from_notes": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 98,
+            "wilson_v1": {
+              "lower_95": 0.929988209271456,
+              "point": 0.98,
+              "upper_95": 0.9944980324498376
+            }
+          },
+          "fact_free_reasoning": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 99,
+            "wilson_v1": {
+              "lower_95": 0.9455138038212946,
+              "point": 0.99,
+              "upper_95": 0.9982325679358593
+            }
+          },
+          "fluent_realization": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 96,
+            "wilson_v1": {
+              "lower_95": 0.9016292856411208,
+              "point": 0.96,
+              "upper_95": 0.9843366960084523
+            }
+          },
+          "format_control": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 100,
+            "wilson_v1": {
+              "lower_95": 0.9630065017930143,
+              "point": 1.0,
+              "upper_95": 1.0
+            }
+          },
+          "grammar": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 100,
+            "wilson_v1": {
+              "lower_95": 0.9630065017930143,
+              "point": 1.0,
+              "upper_95": 1.0
+            }
+          },
+          "instruction_following": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 98,
+            "wilson_v1": {
+              "lower_95": 0.929988209271456,
+              "point": 0.98,
+              "upper_95": 0.9944980324498376
+            }
+          },
+          "prompt_grounding": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 100,
+            "wilson_v1": {
+              "lower_95": 0.9630065017930143,
+              "point": 1.0,
+              "upper_95": 1.0
+            }
+          },
+          "rewriting": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 100,
+            "wilson_v1": {
+              "lower_95": 0.9630065017930143,
+              "point": 1.0,
+              "upper_95": 1.0
+            }
+          },
+          "supplied_text_summarization": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 100,
+            "wilson_v1": {
+              "lower_95": 0.9630065017930143,
+              "point": 1.0,
+              "upper_95": 1.0
+            }
+          },
+          "tone_control": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 100,
+            "wilson_v1": {
+              "lower_95": 0.9630065017930143,
+              "point": 1.0,
+              "upper_95": 1.0
+            }
+          }
+        },
+        "repetition_collapses_v2": 0,
+        "router_correct": 1400,
+        "strong_routes_exact": 1000
+      },
+      "guard_gates": {
+        "all_other_outputs_exact": false,
+        "changed_row_functional": true,
+        "changed_row_guard_terminated": true,
+        "changed_row_prefix_preserved": true,
+        "changed_rows_exactly_one_strong_repair": false,
+        "exact_lexical_boundary_declared": true,
+        "strong_route_conformance": true,
+        "zero_remaining_collapse": true
+      },
+      "guard_terminations": 0,
+      "machine_gates_pass": false,
+      "outputs": {
+        "path": "results/abi_capability_compiler_phase4_v21_b60_rescreen/run_v771/seed130363_outputs.jsonl",
+        "sha256": "8a96320ebf3cd619923d90568d8dd8b956e0e93949b4f6eaceb098408af1de41"
+      },
+      "package": {
+        "archive_bytes": 253117307,
+        "archive_sha256": "f6da74747bded2da19666f396c2ca1d45d954978c6a71f4f96a573a8c9e5b786",
+        "component_parameters": {
+          "model": 61655050,
+          "residual": 99840,
+          "router": 1058040
+        },
+        "gates": {
+          "component_counts_exact": true,
+          "interface_v21": true,
+          "receiver_learning_zero": true,
+          "signature_valid": true,
+          "teacher_absent": true,
+          "tensor_values_exact": true
+        },
+        "package_hash": "3b4751d263301254d421622cae3bed45c02fca3bdb2633e0be290dca624ad739",
+        "tensor_count": 89,
+        "tensor_payload_hash": "40a62e972a8e16032a1d0a0082c77ca5cc3c4a83a232aa079d35d117d967b79c",
+        "total_parameters": 62812930
+      },
+      "pointer_gates": {
+        "all_100_pointer_rows": true,
+        "evaluator_blind": true,
+        "one_active_route": true,
+        "one_scoring_forward": true,
+        "package_identity": true,
+        "package_verified": true,
+        "persistent_state_reused": true,
+        "receiver_learning_zero": true,
+        "six_candidates": true
+      },
+      "quality_gates": {
+        "critical_capabilities": true,
+        "final_test_not_accessed": true,
+        "per_capability_functional": true,
+        "router_exact": true,
+        "teacher_absent": true,
+        "teacher_noninferior": true,
+        "training_absent": true,
+        "zero_repetition_collapse": true
+      },
+      "seed": 130363,
+      "status": "FAIL",
+      "teacher_comparison_v1": {
+        "candidate_minus_teacher": 0.10928571428571429,
+        "lower_95": 0.09285714285714286,
+        "method": "capability_stratified_paired_percentile_bootstrap",
+        "replicates": 10000,
+        "seed": 6130363,
+        "upper_95": 0.12571428571428572
+      }
+    },
+    {
+      "activation": {
+        "archive_sha256": "1b403af142ce670968e7a04cb090cd7d225217396be8751b805b1ead0f2b4614",
+        "receiver_calibration_runs": 0,
+        "receiver_training_steps": 0,
+        "tensor_payload_hash": "3316491cc13460b40dc594357930c5e675b4e43238ccfc1a3352111002edca33",
+        "verification": "PASS"
+      },
+      "budget": "B60",
+      "changed_rows": 0,
+      "evaluation": {
+        "abstention_prefixes": 31,
+        "functional_passes_v1": 1384,
+        "functional_passes_v2": 1384,
+        "guard_terminations": 2,
+        "observations": 1400,
+        "per_capability": {
+          "abstention": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 100,
+            "wilson_v1": {
+              "lower_95": 0.9630065017930143,
+              "point": 1.0,
+              "upper_95": 1.0
+            }
+          },
+          "clarification": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 100,
+            "wilson_v1": {
+              "lower_95": 0.9630065017930143,
+              "point": 1.0,
+              "upper_95": 1.0
+            }
+          },
+          "coherence": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 100,
+            "wilson_v1": {
+              "lower_95": 0.9630065017930143,
+              "point": 1.0,
+              "upper_95": 1.0
+            }
+          },
+          "conversation": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 100,
+            "wilson_v1": {
+              "lower_95": 0.9630065017930143,
+              "point": 1.0,
+              "upper_95": 1.0
+            }
+          },
+          "email_drafting_from_notes": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 99,
+            "wilson_v1": {
+              "lower_95": 0.9455138038212946,
+              "point": 0.99,
+              "upper_95": 0.9982325679358593
+            }
+          },
+          "fact_free_reasoning": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 98,
+            "wilson_v1": {
+              "lower_95": 0.929988209271456,
+              "point": 0.98,
+              "upper_95": 0.9944980324498376
+            }
+          },
+          "fluent_realization": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 98,
+            "wilson_v1": {
+              "lower_95": 0.929988209271456,
+              "point": 0.98,
+              "upper_95": 0.9944980324498376
+            }
+          },
+          "format_control": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 100,
+            "wilson_v1": {
+              "lower_95": 0.9630065017930143,
+              "point": 1.0,
+              "upper_95": 1.0
+            }
+          },
+          "grammar": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 100,
+            "wilson_v1": {
+              "lower_95": 0.9630065017930143,
+              "point": 1.0,
+              "upper_95": 1.0
+            }
+          },
+          "instruction_following": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 96,
+            "wilson_v1": {
+              "lower_95": 0.9016292856411208,
+              "point": 0.96,
+              "upper_95": 0.9843366960084523
+            }
+          },
+          "prompt_grounding": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 99,
+            "wilson_v1": {
+              "lower_95": 0.9455138038212946,
+              "point": 0.99,
+              "upper_95": 0.9982325679358593
+            }
+          },
+          "rewriting": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 100,
+            "wilson_v1": {
+              "lower_95": 0.9630065017930143,
+              "point": 1.0,
+              "upper_95": 1.0
+            }
+          },
+          "supplied_text_summarization": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 95,
+            "wilson_v1": {
+              "lower_95": 0.8882495307680808,
+              "point": 0.95,
+              "upper_95": 0.9784563208456319
+            }
+          },
+          "tone_control": {
+            "collapses_v2": 0,
+            "observations": 100,
+            "passes_v1": 99,
+            "wilson_v1": {
+              "lower_95": 0.9455138038212946,
+              "point": 0.99,
+              "upper_95": 0.9982325679358593
+            }
+          }
+        },
+        "repetition_collapses_v2": 0,
+        "router_correct": 1400,
+        "strong_routes_exact": 1000
+      },
+      "guard_gates": {
+        "all_other_outputs_exact": false,
+        "changed_row_functional": true,
+        "changed_row_guard_terminated": true,
+        "changed_row_prefix_preserved": true,
+        "changed_rows_exactly_one_strong_repair": false,
+        "exact_lexical_boundary_declared": true,
+        "strong_route_conformance": true,
+        "zero_remaining_collapse": true
+      },
+      "guard_terminations": 2,
+      "machine_gates_pass": false,
+      "outputs": {
+        "path": "results/abi_capability_compiler_phase4_v21_b60_rescreen/run_v771/seed155921_outputs.jsonl",
+        "sha256": "73a66275f1e5e22a12978b526f638a5ea234fd4b961fa22381576cfb3dc2ba6d"
+      },
+      "package": {
+        "archive_bytes": 253117307,
+        "archive_sha256": "1b403af142ce670968e7a04cb090cd7d225217396be8751b805b1ead0f2b4614",
+        "component_parameters": {
+          "model": 61655050,
+          "residual": 99840,
+          "router": 1058040
+        },
+        "gates": {
+          "component_counts_exact": true,
+          "interface_v21": true,
+          "receiver_learning_zero": true,
+          "signature_valid": true,
+          "teacher_absent": true,
+          "tensor_values_exact": true
+        },
+        "package_hash": "06e252689666dc8627b875a0cae407bb625712dfd61abfe5f5d352bcc87645e6",
+        "tensor_count": 89,
+        "tensor_payload_hash": "3316491cc13460b40dc594357930c5e675b4e43238ccfc1a3352111002edca33",
+        "total_parameters": 62812930
+      },
+      "pointer_gates": {
+        "all_100_pointer_rows": true,
+        "evaluator_blind": true,
+        "one_active_route": true,
+        "one_scoring_forward": true,
+        "package_identity": true,
+        "package_verified": true,
+        "persistent_state_reused": true,
+        "receiver_learning_zero": true,
+        "six_candidates": true
+      },
+      "quality_gates": {
+        "critical_capabilities": true,
+        "final_test_not_accessed": true,
+        "per_capability_functional": true,
+        "router_exact": true,
+        "teacher_absent": true,
+        "teacher_noninferior": true,
+        "training_absent": true,
+        "zero_repetition_collapse": true
+      },
+      "seed": 155921,
+      "status": "FAIL",
+      "teacher_comparison_v1": {
+        "candidate_minus_teacher": 0.105,
+        "lower_95": 0.08928571428571429,
+        "method": "capability_stratified_paired_percentile_bootstrap",
+        "replicates": 10000,
+        "seed": 6155921,
+        "upper_95": 0.12142857142857143
+      }
+    }
+  ],
+  "teacher_model_loaded": false,
+  "three_seed_all_pass": false,
+  "training_performed": false
+}
