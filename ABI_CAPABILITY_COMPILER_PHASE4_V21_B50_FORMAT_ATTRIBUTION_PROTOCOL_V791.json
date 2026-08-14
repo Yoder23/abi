@@ -1,0 +1,36 @@
+{
+  "format": "abi-capability-compiler-phase4-v21-b50-format-attribution/1",
+  "protocol_id": "abi-capability-compiler-phase4-v21-b50-format-attribution-v791",
+  "status": "PREREGISTERED_READ_ONLY_B50_FORMAT_ATTRIBUTION",
+  "status_date": "2026-08-14",
+  "historical_evidence_changed": false,
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V790.json",
+  "source_result": "results/abi_capability_compiler_phase4_v21_b50_evaluator_repair/run_v788/result.json",
+  "development_catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+  "teacher_reference": "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl",
+  "seed_outputs": {
+    "104729": "results/abi_capability_compiler_phase4_v21_b50_rescreen/run_v784/seed104729_outputs.jsonl",
+    "130363": "results/abi_capability_compiler_phase4_v21_b50_rescreen/run_v784/seed130363_outputs.jsonl",
+    "155921": "results/abi_capability_compiler_phase4_v21_b50_rescreen/run_v784/seed155921_outputs.jsonl"
+  },
+  "objective": "Classify every seed104729 format-control failure against the frozen regex evaluator, cached teacher output, and paired outputs from the two passing seeds. Measure exact/prefix/suffix/line-structure/whitespace/case/lexical deltas and identify whether the owner is seed-dependent acquisition instability or shared coverage failure.",
+  "model_inference_authorized": false,
+  "training_authorized": false,
+  "teacher_model_loading_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "architecture_selection_authorized": false,
+  "bindings": {
+    "abi/capability_compiler_phase4_v21_b50_format_attribution.py": "7476557c41ee405c00a3279638d9380e80d327fc449a1c8400570a7ac325f9a8",
+    "tests/test_capability_compiler_phase4_v21_b50_format_attribution.py": "5286fe9ea59bce2e9d5b1ac94c3b5c58bc1095c61cacb509b697c820320d8eac",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V790.json": "e16a0068b014ce84bc630702c5da52ce7e154c161d268249a06e22db99646566",
+    "ABI_CAPABILITY_COMPILER_PHASE4_V21_B50_EVALUATOR_REPAIR_RESULT_V789.json": "eda798eac11217b29703c1034694a7f83e65f0b02e19c206ab0fd8db1fe0c4af",
+    "results/abi_capability_compiler_phase4_v21_b50_evaluator_repair/run_v788/result.json": "9ff24c2cba56c959904cfef3e23bf2e541053458c035bfa780182f352bbae8ab",
+    "results/abi_capability_compiler_phase4_v21_b50_rescreen/run_v784/seed104729_outputs.jsonl": "66302310dc0e0f33f7f55cb4672ff6852e59ec2cc41b5209c53ed9e498555905",
+    "results/abi_capability_compiler_phase4_v21_b50_rescreen/run_v784/seed130363_outputs.jsonl": "009153f1d34bfa70a9fed01b497d66e6769a9420481575384e42f9e7f30bb238",
+    "results/abi_capability_compiler_phase4_v21_b50_rescreen/run_v784/seed155921_outputs.jsonl": "6294077adcfbde789cabf7f0fe390a54e8aa25f1de508612710302008be027c9",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl": "1081dbe57e75da50b2619bc2dab14c6441158dcd6068f2b864733936087e86a2"
+  },
+  "decision_rule": "Pass only if all bound hashes and the V788 evidence hash reproduce; all three seeds contain the same 100 format-control probes; every functional flag recomputes from the frozen regex; seed104729 has exactly ten failures; all 300 rows are noncollapsed; every failure is classified by the preregistered delta taxonomy against cached evidence; and no inference, training, teacher loading, final access, or architecture selection occurs.",
+  "claim_boundary": "Read-only attribution of ten B50 seed104729 format-control failures. No stabilization design, minimum, matched baseline, final test, Phase 4, or ABI-superiority claim."
+}
