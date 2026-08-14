@@ -1,0 +1,40 @@
+{
+  "format": "abi-capability-compiler-phase4-v21-b50-format-attribution-summary/1",
+  "version": 793,
+  "status_date": "2026-08-14",
+  "status": "PASS_READ_ONLY_B50_FORMAT_ATTRIBUTION",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_V21_B50_FORMAT_ATTRIBUTION_PROTOCOL_V791.json",
+    "sha256": "2b1aec7822e9835665f67f695958ae9aff1e1ecb84a94ca6ae5524123e84fbb5"
+  },
+  "raw_result": {
+    "path": "results/abi_capability_compiler_phase4_v21_b50_format_attribution/run_v792/result.json",
+    "sha256": "dee983d122ea559c14350b7a93b9852266329c28f212c2f5f33d087406d1c1a7",
+    "evidence_sha256": "8ef378c1cc7168931ea0d3f209c0353eefc7da7480e2791204c87eca047b70ad"
+  },
+  "verified_work": {
+    "format_rows_recomputed": 300,
+    "seed104729_failures": 10,
+    "both_other_seeds_pass_all_ten": true,
+    "both_other_seeds_match_cached_teacher_exactly_all_ten": true,
+    "all_rows_noncollapsed": true,
+    "model_inference_performed": false,
+    "training_performed": false,
+    "teacher_model_loaded": false,
+    "final_test_accessed": false
+  },
+  "failure_taxonomy": {
+    "lexical_or_identifier_mismatch": 10,
+    "line_structure_mismatch": 0,
+    "whitespace_only": 0,
+    "case_only": 0,
+    "truncated_canonical_prefix": 0,
+    "repetition_collapse": 0
+  },
+  "measured_mechanism": "Every miss preserves the requested two-line structure and item value but corrupts the exact prompt-supplied code literal by duplicating an N/colon fragment or dropping characters from the N390 prefix. The same exact prompt literals are realized byte-identically by both passing seeds.",
+  "decision": "The measured owner is seed-dependent acquisition/optimization instability in exact format-literal realization, not general English, routing, repetition, package identity, pointer execution, or shared data coverage.",
+  "authorized_next_action": "Request one separate LayerCake construct for an evaluator-blind, capability-scoped exact-format prompt-span realization path. It must activate only when an unambiguous format-control instruction explicitly supplies the complete requested output literals; preserve v21 behavior otherwise; add no acquired parameters; pass CPU/CUDA identity, package, persistent-state, sparse-execution, and hostile ambiguity tests; and return a signed immutable interface before any ABI rescreen. Do not copy ABI evaluator logic into LayerCake.",
+  "phase4_certified": false,
+  "claim_boundary": "Read-only mechanism attribution only. No repaired host, stable B50, minimum, matched baseline, final test, Phase 4, or ABI-superiority claim."
+}
