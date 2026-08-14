@@ -37,6 +37,22 @@ from .capability_compiler_repetition_v2 import repetition_collapse_v2
 
 FORMAT = "abi-capability-compiler-phase4-b50-baselines/1"
 SYSTEMS = ("L0", "L1", "D0", "D1", "D2")
+EXACT_B50_ROUTER_MEMBERSHIPS = {
+    "abstention": 660,
+    "clarification": 250,
+    "coherence": 660,
+    "conversation": 250,
+    "email_drafting_from_notes": 250,
+    "fact_free_reasoning": 250,
+    "fluent_realization": 660,
+    "format_control": 250,
+    "grammar": 250,
+    "instruction_following": 250,
+    "prompt_grounding": 250,
+    "rewriting": 250,
+    "supplied_text_summarization": 250,
+    "tone_control": 660,
+}
 
 
 def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str]:
@@ -317,6 +333,34 @@ def stage_authorizes_system(protocol: dict[str, Any], *, stage: str, system: str
     )
 
 
+def validate_exact_b50_router_records(records: Sequence[Mapping[str, Any]]) -> None:
+    observed = {capability: 0 for capability in CAPABILITIES}
+    for row in records:
+        capability = str(row.get("capability"))
+        if capability not in observed:
+            raise Phase3Error("exact B50 router record has an unknown capability")
+        observed[capability] += 1
+    if observed != EXACT_B50_ROUTER_MEMBERSHIPS:
+        raise Phase3Error("exact B50 router membership depth changed")
+
+
+def train_exact_b50_router(
+    records: Sequence[Mapping[str, Any]],
+) -> dict[str, np.ndarray]:
+    validate_exact_b50_router_records(records)
+    grouped: dict[str, list[np.ndarray]] = {capability: [] for capability in CAPABILITIES}
+    for row in records:
+        grouped[str(row["capability"])].append(
+            lora._feature_vector(str(row["normalized_acquisition_prompt"]))
+        )
+    centroids = {}
+    for capability in CAPABILITIES:
+        centroid = np.mean(grouped[capability], axis=0)
+        norm = float(np.linalg.norm(centroid))
+        centroids[capability] = centroid / norm if norm else centroid
+    return centroids
+
+
 def run_one(
     root: Path,
     protocol_path: Path,
@@ -373,6 +417,7 @@ def run_one(
         if system in {"L0", "L1"}:
             stack.enter_context(patch.object(lora, "reconstruct_packs", patched_reconstruct))
             stack.enter_context(patch.object(lora, "evaluate_development", evaluate_lora))
+            stack.enter_context(patch.object(lora, "train_router", train_exact_b50_router))
             stack.enter_context(
                 patch.object(common, "load_phase1_records", lambda _path: router_records)
             )
