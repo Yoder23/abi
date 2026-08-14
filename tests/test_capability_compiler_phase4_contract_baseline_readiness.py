@@ -1,7 +1,10 @@
 from abi.capability_compiler_phase4_contract_baseline_readiness import (
     FORMAT,
     frontier_semantics,
+    phase2_original_information,
 )
+from abi.capability_compiler_phase3 import Phase3Error
+import pytest
 
 
 EXIT = (
@@ -11,7 +14,7 @@ EXIT = (
 
 
 def test_audit_has_separate_versioned_format():
-    assert FORMAT == "abi-capability-compiler-phase4-contract-baseline-readiness/2"
+    assert FORMAT == "abi-capability-compiler-phase4-contract-baseline-readiness/3"
 
 
 def test_frontier_semantics_detects_stricter_later_rule():
@@ -44,3 +47,23 @@ def test_frontier_semantics_rejects_silent_rule_relaxation():
     assert not semantics["phase0_freezes_mandatory_specs"]
     assert not semantics["campaign_requires_three_seeds"]
     assert not semantics["later_rule_is_stricter_than_campaign_text"]
+
+
+def test_phase2_wrapper_must_link_the_bound_original_protocol():
+    repair = {"original_protocol": {"path": "original.json", "sha256": "abc"}}
+    original = {
+        "phase1": {
+            "selected_teacher_input_tokens": 10,
+            "selected_teacher_output_tokens": 20,
+            "selected_raw_prompt_bytes": 30,
+            "selected_raw_teacher_output_bytes": 40,
+        }
+    }
+    assert phase2_original_information(repair, original, "original.json", "abc") == {
+        "selected_teacher_input_tokens": 10,
+        "selected_teacher_output_tokens": 20,
+        "selected_raw_prompt_bytes": 30,
+        "selected_raw_teacher_output_bytes": 40,
+    }
+    with pytest.raises(Phase3Error):
+        phase2_original_information(repair, original, "changed.json", "abc")

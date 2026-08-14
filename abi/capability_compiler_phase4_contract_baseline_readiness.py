@@ -13,7 +13,7 @@ from .capability_compiler_phase3 import Phase3Error, _write_immutable
 from .capability_compiler_phase4_v19_frontier_rescreen import _json
 
 
-FORMAT = "abi-capability-compiler-phase4-contract-baseline-readiness/2"
+FORMAT = "abi-capability-compiler-phase4-contract-baseline-readiness/3"
 
 
 def frontier_semantics(
@@ -65,6 +65,28 @@ def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str]:
     return protocol, sha256_file(path)
 
 
+def phase2_original_information(
+    repair_protocol: dict[str, Any],
+    original_protocol: dict[str, Any],
+    original_path: str,
+    original_sha256: str,
+) -> dict[str, int]:
+    bound = repair_protocol.get("original_protocol", {})
+    if bound.get("path") != original_path or bound.get("sha256") != original_sha256:
+        raise Phase3Error("Phase 2 repair-to-original protocol lineage changed")
+    phase1 = original_protocol.get("phase1")
+    if not isinstance(phase1, dict):
+        raise Phase3Error("original Phase 2 protocol lacks Phase 1 accounting")
+    return {
+        "selected_teacher_input_tokens": int(phase1["selected_teacher_input_tokens"]),
+        "selected_teacher_output_tokens": int(phase1["selected_teacher_output_tokens"]),
+        "selected_raw_prompt_bytes": int(phase1["selected_raw_prompt_bytes"]),
+        "selected_raw_teacher_output_bytes": int(
+            phase1["selected_raw_teacher_output_bytes"]
+        ),
+    }
+
+
 def run(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
     protocol, protocol_sha = load_protocol(root, protocol_path)
     if output.exists():
@@ -76,6 +98,15 @@ def run(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
     attribution = _json(root / protocol["b40_attribution"])
     b50 = _json(root / protocol["b50_verified"])
     baseline_protocol = _json(root / protocol["phase2_protocol"])
+    baseline_original_path = str(protocol["phase2_original_protocol"])
+    baseline_original_sha = sha256_file(root / baseline_original_path)
+    baseline_original_protocol = _json(root / baseline_original_path)
+    baseline_phase1_information = phase2_original_information(
+        baseline_protocol,
+        baseline_original_protocol,
+        baseline_original_path,
+        baseline_original_sha,
+    )
     baseline_evidence = _json(root / protocol["phase2_machine_evidence"])
 
     semantics = frontier_semantics(
@@ -151,6 +182,12 @@ def run(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
             "response_tokens"
         ]
         != b50["imported_information"]["authoritative_teacher_output_tokens"],
+        "phase2_repair_links_bound_original": baseline_protocol["original_protocol"][
+            "path"
+        ]
+        == baseline_original_path
+        and baseline_protocol["original_protocol"]["sha256"]
+        == baseline_original_sha,
         "all_three_fairness_views_named": list(phase0["fairness_views"])
         == campaign["fairness_views"],
         "training_absent": True,
@@ -159,7 +196,7 @@ def run(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
     }
     passed = all(gates.values())
     result = {
-        "format": "abi-capability-compiler-phase4-contract-baseline-readiness-result/2",
+        "format": "abi-capability-compiler-phase4-contract-baseline-readiness-result/3",
         "status": "PASS_PHASE4_CONTRACT_RECONCILED_BASELINE_RETRAINING_REQUIRED"
         if passed
         else "FAIL_PHASE4_CONTRACT_BASELINE_READINESS_AUDIT",
@@ -174,9 +211,7 @@ def run(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
         "phase2_baseline_information": {
             "pack_sha256": baseline_evidence["pack"]["sha256"],
             "response_tokens": baseline_evidence["pack"]["response_tokens"],
-            "phase1_teacher_output_tokens": baseline_protocol["phase1"][
-                "selected_teacher_output_tokens"
-            ],
+            "phase1_information": baseline_phase1_information,
         },
         "b50_information": b50["imported_information"],
         "fairness_views": fairness,
