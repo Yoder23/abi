@@ -1,0 +1,50 @@
+{
+  "format": "abi-capability-compiler-phase4-v21-b50-rescreen-comparator-failure/1",
+  "version": 785,
+  "status": "FAIL_PROTOCOL_USED_NON_POINTER_COHERENCE_HISTORY_AS_EXACT_COMPARATOR",
+  "status_date": "2026-08-14",
+  "historical_evidence_changed": false,
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE4_V21_B50_RESCREEN_PROTOCOL_V783.json",
+  "raw_result": {
+    "path": "results/abi_capability_compiler_phase4_v21_b50_rescreen/run_v784/result.json",
+    "sha256": "968fbd9ba1548ed9acb6be294cfb569d9fea077aed6a2c3c21a709108eaf333f",
+    "evidence_sha256": "7d738f60470bf1570ec1ff2a8d942e4473d1768b9773eaf1616aeecbee430ce9",
+    "aggregate_outputs_sha256": "88b6b9077203692a4cd8f6a417a9adeac8b02b628eef89ffeebfd354f78ede52"
+  },
+  "raw_observation": {
+    "model_inference_rows": 4200,
+    "historical_collapses": 5,
+    "changed_rows": 93,
+    "guard_terminations": 13,
+    "remaining_collapses": 0,
+    "changed_coherence_rows": 88,
+    "changed_noncoherence_rows": 5,
+    "changed_noncoherence_rows_that_were_historical_collapses": 5,
+    "seed104729": {
+      "functional_passes_v1": 1372,
+      "quality_gates_pass": false,
+      "format_control_passes": 90,
+      "format_control_wilson_lower_95": 0.8256343384950865,
+      "changed_coherence_rows": 34,
+      "changed_guard_rows": 4
+    },
+    "seed130363": {
+      "functional_passes_v1": 1392,
+      "quality_gates_pass": true,
+      "changed_coherence_rows": 26,
+      "changed_guard_rows": 0
+    },
+    "seed155921": {
+      "functional_passes_v1": 1387,
+      "quality_gates_pass": true,
+      "changed_coherence_rows": 28,
+      "changed_guard_rows": 1
+    },
+    "all_pointer_package_gates_all_seeds": true,
+    "all_routing_teacher_relative_and_zero_collapse_gates_all_seeds": true
+  },
+  "failed_comparator_logic": "V783 required every historically noncollapsed output to remain exact, including coherence. The B50 lineage histories were generated before the v19/v21 prompt-span pointer execution path and therefore are not the correct exact-output comparator for coherence. All 88 non-guard unexpected changes are coherence rows; their pointer records must be independently validated instead of compared byte-for-byte to the non-pointer lineage output.",
+  "scientific_effect": "The V784 status remains FAIL and cannot be promoted. The immutable 4,200 rows are valid inputs to one preregistered read-only repair because the defect is a comparator-class mismatch downstream of inference. The genuine seed104729 format-control miss remains unchanged and must not be repaired or waived.",
+  "repair_boundary": "Perform no inference, training, teacher loading, or final access. Recompute all 4,200 functional, repetition, route, historical-change, and pointer decisions from raw rows. For coherence, require the complete locked pointer semantic contract instead of exact identity to a non-pointer history. For every non-coherence row, require that changes equal the historical-collapse set exactly, are guard-terminated canonical prefixes, preserve every historical functional pass, and leave all other outputs exact. Rebuild all three signed packages deterministically and preserve the expected corrected B50 topology even if it is mixed.",
+  "claim_boundary": "Comparator-protocol failure only. No stable B50, minimum, matched baseline, final test, Phase 4, or ABI-superiority claim."
+}
