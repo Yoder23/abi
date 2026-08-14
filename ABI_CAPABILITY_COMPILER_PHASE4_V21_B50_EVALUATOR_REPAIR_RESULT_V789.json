@@ -1,0 +1,54 @@
+{
+  "format": "abi-capability-compiler-phase4-v21-b50-evaluator-repair-summary/1",
+  "version": 789,
+  "status_date": "2026-08-14",
+  "status": "PASS_VERIFIED_MIXED_B50_V21_DEVELOPMENT_TOPOLOGY",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_V21_B50_EVALUATOR_REPAIR_PROTOCOL_V787.json",
+    "sha256": "33c31c2bfb6ad6b7cbcb2866140aa2c07ebb1fc56562e289f739d255690b4022"
+  },
+  "raw_result": {
+    "path": "results/abi_capability_compiler_phase4_v21_b50_evaluator_repair/run_v788/result.json",
+    "sha256": "9ff24c2cba56c959904cfef3e23bf2e541053458c035bfa780182f352bbae8ab",
+    "evidence_sha256": "de4027663226bfd7b4b0001e123b203b9420c20efbd801bdf16ed0538cc21bd0"
+  },
+  "verified_work": {
+    "rows_recomputed": 4200,
+    "pointer_rows_recomputed": 300,
+    "signed_packages_rebuilt_exactly": 3,
+    "noncoherence_change_sets_equal_historical_collapses": true,
+    "model_inference_performed": false,
+    "training_performed": false,
+    "teacher_model_loaded": false,
+    "final_test_accessed": false
+  },
+  "matrix": [
+    {
+      "seed": 104729,
+      "functional_passes": 1372,
+      "collapses": 0,
+      "changed_noncoherence_rows": 4,
+      "machine_gates": "FAIL_FORMAT_CONTROL_WILSON_LOWER"
+    },
+    {
+      "seed": 130363,
+      "functional_passes": 1392,
+      "collapses": 0,
+      "changed_noncoherence_rows": 0,
+      "machine_gates": "PASS"
+    },
+    {
+      "seed": 155921,
+      "functional_passes": 1387,
+      "collapses": 0,
+      "changed_noncoherence_rows": 1,
+      "machine_gates": "PASS"
+    }
+  ],
+  "decision": "B50 is FAIL/PASS/PASS after exact v21 correction. The seed104729 miss is genuine: format control is 90/100 with Wilson lower 0.8256343385 against the unchanged 0.85 threshold. Under V778's frozen rule, this mixed adjacent-lower result establishes no stable minimum. B60 remains the stable sufficient candidate.",
+  "authorized_next_action": "Perform at most one preregistered read-only attribution of the ten seed104729 format-control failures against the same rows from the two passing seeds and the frozen evaluator schema. Do not train, infer, load the teacher, access final data, run nearby budgets, or open matched baselines first.",
+  "phase4_certified": false,
+  "stable_information_minimum": false,
+  "claim_boundary": "Verified mixed B50 v21 development topology only. No minimum, matched baseline, final test, Phase 4, or ABI-superiority claim."
+}
