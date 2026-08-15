@@ -1,0 +1,49 @@
+{
+  "format": "abi-capability-compiler-phase4-b50-v24-conformance-decision/1",
+  "result_id": "abi-capability-compiler-phase4-b50-v24-conformance-result-v880",
+  "status": "PASS_EXACT_B50_V24_THREE_SEED_OUTPUT_CONFORMANCE",
+  "status_date": "2026-08-15",
+  "historical_evidence_changed": false,
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE4_B50_V24_CONFORMANCE_PROTOCOL_V878.json",
+  "protocol_sha256": "a3ed9664a5c40556ff4a53a36cb0b9cb3f7f05208aec4f5e0b618a9090136482",
+  "raw_result": "results/abi_capability_compiler_phase4_b50_v24_conformance/run_v879/result.json",
+  "raw_result_sha256": "4a5d281fb1aea0d4e4f78c474f17ca97303e8eae09a813b2384c00908d8c81a1",
+  "engine_result_sha256": "84e4cda17eb2537324bf71afc90237e35b4dce6b4bffb19f4faa9391e2eaaac1",
+  "wrapper_evidence_sha256": "c4ff6241c6d61cb64f2627786ae9e77d14a6c81784c345349c1558f9448b4454",
+  "observations": 4200,
+  "exact_outputs": 4200,
+  "exact_token_sequences": 4200,
+  "routes_correct": 4200,
+  "aggregate_outputs_sha256": "6eeedd9932225dce3bff91bd6d3f1492050b933ec27e0d4f9d2865309e7e5e4f",
+  "systems": {
+    "104729": {
+      "archive_sha256": "a700704afb251f4150dbc52c44f3659595c69c77e94b8f84876cd4c31d5e5630",
+      "archive_bytes": 253117806,
+      "tensor_payload_sha256": "625389ca7c8eb39e281ae089c534166266e9445c156cdb195c51cea91b60e56f",
+      "outputs_sha256": "da50101ecc5226ab66025f05af2bc89c2633b728bebac87657106297bf60e2a3"
+    },
+    "130363": {
+      "archive_sha256": "6536d1092692f0b867c9ebd817e074ae225e8bdba925b42aa061f2241219a788",
+      "archive_bytes": 253117806,
+      "tensor_payload_sha256": "87ac7ae726bbd16ee22989ce5dfc33d89acffeab9b5ef75693f8ae4a0c3ec618",
+      "outputs_sha256": "977c13baa7210ec0e182caf0d8a770ba195252155386fb05293dac0003044221"
+    },
+    "155921": {
+      "archive_sha256": "9a1bcab43639fe05440bccc7d15667312566080d56887d2eccc9486b2943ae9d",
+      "archive_bytes": 253117806,
+      "tensor_payload_sha256": "4ed9cca9b0ef70f55f392417350ebbe8b51226699a4f807df09d832b1dae69b6",
+      "outputs_sha256": "c0cd4defa4e4be75b1b241e880d869b4a7fbe16faa9ce5ca004ad6194907ffd0"
+    }
+  },
+  "strict_assigned_tensors_per_seed": 89,
+  "meta_tensors_after_adoption_per_seed": 0,
+  "authenticated_package_parses_per_seed": 1,
+  "receiver_training_steps": 0,
+  "receiver_calibration_runs": 0,
+  "training_performed": false,
+  "teacher_model_loaded": false,
+  "final_test_accessed": false,
+  "phase4_certified": false,
+  "decision": "The exact three B50 tensor payloads preserve all 4,200 output bytes and token sequences through the isolated V24 host. All 89 authenticated tensors are strictly adopted per seed, six deterministic non-persistent buffers are reconstructed, zero meta tensors remain, routing and physical execution pass, and receiver learning remains zero. Runtime remains unmeasured.",
+  "claim_boundary": "Exact V23-to-V24 tensor and development-output conformance pass only. No runtime, final test, Phase 4 certificate, or unconditional ABI-superiority claim."
+}

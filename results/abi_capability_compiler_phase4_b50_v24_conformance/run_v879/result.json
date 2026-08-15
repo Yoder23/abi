@@ -1,0 +1,197 @@
+{
+  "aggregate_outputs": "results/abi_capability_compiler_phase4_b50_v24_conformance/run_v879/engine/all_outputs.jsonl",
+  "aggregate_outputs_sha256": "6eeedd9932225dce3bff91bd6d3f1492050b933ec27e0d4f9d2865309e7e5e4f",
+  "claim_boundary": "Exact three-seed v23-to-v24 tensor and development-output conformance only. No training, teacher query, final test, runtime, Phase 4, or ABI-superiority claim.",
+  "engine_result": "results/abi_capability_compiler_phase4_b50_v24_conformance/run_v879/engine/result.json",
+  "engine_result_sha256": "84e4cda17eb2537324bf71afc90237e35b4dce6b4bffb19f4faa9391e2eaaac1",
+  "engine_status": "PASS_EXACT_B50_V23_THREE_SEED_OUTPUT_CONFORMANCE",
+  "evidence_sha256": "c4ff6241c6d61cb64f2627786ae9e77d14a6c81784c345349c1558f9448b4454",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase4-b50-v24-conformance-result/1",
+  "observations": 4200,
+  "phase4_certified": false,
+  "protocol_sha256": "a3ed9664a5c40556ff4a53a36cb0b9cb3f7f05208aec4f5e0b618a9090136482",
+  "receiver_calibration_runs": 0,
+  "receiver_training_steps": 0,
+  "runtime_interface": "lc-direct-neural-core/24",
+  "status": "PASS_EXACT_B50_V24_THREE_SEED_OUTPUT_CONFORMANCE",
+  "strict_tensor_adoption": true,
+  "systems": [
+    {
+      "activation": {
+        "archive_hash": "a700704afb251f4150dbc52c44f3659595c69c77e94b8f84876cd4c31d5e5630",
+        "authenticated_package_parses": 1,
+        "authenticated_tensor_count": 89,
+        "cake_id": "abi-phase4-v24-b50-seed104729-english-core",
+        "device": "cuda",
+        "meta_tensors_after_adoption": 0,
+        "payload_hash": "625389ca7c8eb39e281ae089c534166266e9445c156cdb195c51cea91b60e56f",
+        "receiver_calibration_runs": 0,
+        "receiver_training_steps": 0,
+        "reconstructed_nonpersistent_buffers": 6,
+        "state_dict_hash": "4029bf78da3bd1fa9d65d3439c21ffb1d7bfb90c95867b860c3553e75332407f",
+        "status": "ACTIVE",
+        "strict_assigned_tensor_count": 89
+      },
+      "gates": {
+        "all_1400_outputs_exact": true,
+        "all_1400_tokens_exact": true,
+        "all_routes_correct": true,
+        "format_physical_execution": true,
+        "one_authenticated_parse": true,
+        "ordinary_depth": true,
+        "package_identity": true,
+        "package_verifies": true,
+        "pointer_physical_execution": true,
+        "receiver_learning_zero": true
+      },
+      "outputs": {
+        "path": "results/abi_capability_compiler_phase4_b50_v24_conformance/run_v879/engine/seed104729_outputs.jsonl",
+        "sha256": "da50101ecc5226ab66025f05af2bc89c2633b728bebac87657106297bf60e2a3"
+      },
+      "package": {
+        "archive_bytes": 253117806,
+        "archive_sha256": "a700704afb251f4150dbc52c44f3659595c69c77e94b8f84876cd4c31d5e5630",
+        "component_parameters": {
+          "model": 61655050,
+          "residual": 99840,
+          "router": 1058040
+        },
+        "gates": {
+          "allocation_feature_declared": true,
+          "signature_valid": true,
+          "single_parse_feature_declared": true,
+          "tensor_payload_hash_exact_to_v23": true,
+          "tensor_values_exact_to_v23": true,
+          "v24_interface": true
+        },
+        "package_hash": "a34031f6add4f45113f8273c5746d6e4404239fa930aa3093e8f3a32f24efbeb",
+        "parent_v22_archive_sha256": "db85b8bfbb0335d59274734cffa48ae568a33fdfbde8770eadae7c0d7494498f",
+        "parent_v23_archive_sha256": "b2b828eef01871ef1171a9c2c8f5e946ee0af3969675ff07b2edfe6d9c34a528",
+        "tensor_count": 89,
+        "tensor_payload_hash": "625389ca7c8eb39e281ae089c534166266e9445c156cdb195c51cea91b60e56f",
+        "total_parameters": 62812930
+      },
+      "seed": 104729,
+      "status": "PASS"
+    },
+    {
+      "activation": {
+        "archive_hash": "6536d1092692f0b867c9ebd817e074ae225e8bdba925b42aa061f2241219a788",
+        "authenticated_package_parses": 1,
+        "authenticated_tensor_count": 89,
+        "cake_id": "abi-phase4-v24-b50-seed130363-english-core",
+        "device": "cuda",
+        "meta_tensors_after_adoption": 0,
+        "payload_hash": "87ac7ae726bbd16ee22989ce5dfc33d89acffeab9b5ef75693f8ae4a0c3ec618",
+        "receiver_calibration_runs": 0,
+        "receiver_training_steps": 0,
+        "reconstructed_nonpersistent_buffers": 6,
+        "state_dict_hash": "f9030379e9a1b2ba8f1ddc5a2214657e152e3dce337314f4fef889820f4e5252",
+        "status": "ACTIVE",
+        "strict_assigned_tensor_count": 89
+      },
+      "gates": {
+        "all_1400_outputs_exact": true,
+        "all_1400_tokens_exact": true,
+        "all_routes_correct": true,
+        "format_physical_execution": true,
+        "one_authenticated_parse": true,
+        "ordinary_depth": true,
+        "package_identity": true,
+        "package_verifies": true,
+        "pointer_physical_execution": true,
+        "receiver_learning_zero": true
+      },
+      "outputs": {
+        "path": "results/abi_capability_compiler_phase4_b50_v24_conformance/run_v879/engine/seed130363_outputs.jsonl",
+        "sha256": "977c13baa7210ec0e182caf0d8a770ba195252155386fb05293dac0003044221"
+      },
+      "package": {
+        "archive_bytes": 253117806,
+        "archive_sha256": "6536d1092692f0b867c9ebd817e074ae225e8bdba925b42aa061f2241219a788",
+        "component_parameters": {
+          "model": 61655050,
+          "residual": 99840,
+          "router": 1058040
+        },
+        "gates": {
+          "allocation_feature_declared": true,
+          "signature_valid": true,
+          "single_parse_feature_declared": true,
+          "tensor_payload_hash_exact_to_v23": true,
+          "tensor_values_exact_to_v23": true,
+          "v24_interface": true
+        },
+        "package_hash": "09ca178c77584d578568dd3409d2c99fe0f028b0c3cd81ff27ef066016f63f5c",
+        "parent_v22_archive_sha256": "ed7eccd45fa5b6685cd108ce5427cdf57c2afbda07ca2b3185c70689cdda96f5",
+        "parent_v23_archive_sha256": "2caeeef1d5981e56e5b902d9707440814a396fbfab4b682c553a3c93facb602d",
+        "tensor_count": 89,
+        "tensor_payload_hash": "87ac7ae726bbd16ee22989ce5dfc33d89acffeab9b5ef75693f8ae4a0c3ec618",
+        "total_parameters": 62812930
+      },
+      "seed": 130363,
+      "status": "PASS"
+    },
+    {
+      "activation": {
+        "archive_hash": "9a1bcab43639fe05440bccc7d15667312566080d56887d2eccc9486b2943ae9d",
+        "authenticated_package_parses": 1,
+        "authenticated_tensor_count": 89,
+        "cake_id": "abi-phase4-v24-b50-seed155921-english-core",
+        "device": "cuda",
+        "meta_tensors_after_adoption": 0,
+        "payload_hash": "4ed9cca9b0ef70f55f392417350ebbe8b51226699a4f807df09d832b1dae69b6",
+        "receiver_calibration_runs": 0,
+        "receiver_training_steps": 0,
+        "reconstructed_nonpersistent_buffers": 6,
+        "state_dict_hash": "65455f46631c263a518bf64abc0a9a7592518e07ec4e875e2cdd8ba5056f59ed",
+        "status": "ACTIVE",
+        "strict_assigned_tensor_count": 89
+      },
+      "gates": {
+        "all_1400_outputs_exact": true,
+        "all_1400_tokens_exact": true,
+        "all_routes_correct": true,
+        "format_physical_execution": true,
+        "one_authenticated_parse": true,
+        "ordinary_depth": true,
+        "package_identity": true,
+        "package_verifies": true,
+        "pointer_physical_execution": true,
+        "receiver_learning_zero": true
+      },
+      "outputs": {
+        "path": "results/abi_capability_compiler_phase4_b50_v24_conformance/run_v879/engine/seed155921_outputs.jsonl",
+        "sha256": "c0cd4defa4e4be75b1b241e880d869b4a7fbe16faa9ce5ca004ad6194907ffd0"
+      },
+      "package": {
+        "archive_bytes": 253117806,
+        "archive_sha256": "9a1bcab43639fe05440bccc7d15667312566080d56887d2eccc9486b2943ae9d",
+        "component_parameters": {
+          "model": 61655050,
+          "residual": 99840,
+          "router": 1058040
+        },
+        "gates": {
+          "allocation_feature_declared": true,
+          "signature_valid": true,
+          "single_parse_feature_declared": true,
+          "tensor_payload_hash_exact_to_v23": true,
+          "tensor_values_exact_to_v23": true,
+          "v24_interface": true
+        },
+        "package_hash": "a42771d0f99f54a8006859112f599057f43c45949949c5da5837dbc6e43ba973",
+        "parent_v22_archive_sha256": "bff2ccfa0c85fa610886b8767148eb17652c82775fa2040eb55f222f435ebda2",
+        "parent_v23_archive_sha256": "127e509a344fb0edeac941cd5faec9e174b1652fd7932d8eee3302a83753a39f",
+        "tensor_count": 89,
+        "tensor_payload_hash": "4ed9cca9b0ef70f55f392417350ebbe8b51226699a4f807df09d832b1dae69b6",
+        "total_parameters": 62812930
+      },
+      "seed": 155921,
+      "status": "PASS"
+    }
+  ],
+  "teacher_model_loaded": false,
+  "training_performed": false
+}
