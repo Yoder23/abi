@@ -1,0 +1,32 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "state_id": "abi-capability-compiler-campaign-state-v933",
+  "status_date": "2026-08-15",
+  "historical_evidence_changed": false,
+  "parent_state": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V924.json",
+  "phase": "PHASE_4_SUFFICIENT_INFORMATION_PARETO_FRONTIER",
+  "phase_status": "IN_PROGRESS_STABLE_B40_FIVE_ROUTE_CANDIDATE_B20_BOUNDARY_OPEN",
+  "phase4_certified": false,
+  "abi_superiority_certified": false,
+  "closed_gates": [
+    "The clarification-only route passes all locked B40 quality gates at all three paired seeds.",
+    "The complete B40 matrix is independently reconstructed from 4200 raw rows and exact tensors.",
+    "B40 uses 4005 unique source attempts and 123167 authoritative teacher-output tokens with no new teacher output, logits, activations, or source parameters.",
+    "The parent, router, normalization, four inherited routes, and every non-clarification row remain exact."
+  ],
+  "open_gates": [
+    "B20 has only one historical seed and has not received the same five-route v22-compatible screen.",
+    "The five-route candidate has no signed LayerCake package or CPU/GPU runtime certificate.",
+    "The matched LoRA comparison was completed at B50, not the new B40 operating point.",
+    "No matched-quality distillation endpoint exists.",
+    "Phase 2 still has zero of 21000 required external blinded preferences.",
+    "Final-test access remains prohibited."
+  ],
+  "authorized_next_action": "Audit B20 seed104729 for exact v22/five-route host compatibility and the remaining non-clarification failure modes. Preregister one fair seed104729 screen before building missing B20 seeds. If the same-host B20 seed passes, the minimum claim remains open and no seed expansion is allowed without a new measured decision; if it fails, build and screen only seeds130363 and155921 from clean start.",
+  "prohibitions": [
+    "No output rewrite, threshold change, evaluator logic, seed selection, or nearby budget/hyperparameter sweep.",
+    "No final-test access.",
+    "No stable-minimum, Phase 4, universal baseline, or ABI-superiority certificate yet."
+  ],
+  "claim_boundary": "B40 is stable sufficient under the five-route development architecture. The adjacent-lower and product gates remain open."
+}
