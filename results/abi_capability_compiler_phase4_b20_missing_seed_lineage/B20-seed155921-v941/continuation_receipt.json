@@ -1,0 +1,39 @@
+{
+  "budget": "B20",
+  "budget_accounting": {
+    "authoritative_teacher_output_tokens": 62417,
+    "duplicate_memberships": 28,
+    "fraction": 0.2,
+    "id": "B20",
+    "record_memberships": 2056,
+    "records": {
+      "phase1_ir": 1400,
+      "v138_targeted_ir": 400,
+      "v480_host_supervision": 256
+    },
+    "selection_sha256": "1e0fb7341c49a725eccdeb41f835309c438a2654c0f5b21e0cf05286f5faf15e",
+    "unique_source_attempts": 2028
+  },
+  "claim_boundary": "One clean-start B20 lower-anchor lineage. Same-host oracle verification and the paired seed remain required.",
+  "evidence_sha256": "b73f48c8ecf1b7e1e378db8ee8aaff74bf71b209def0a959217e6d23251fcd98",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase4-b20-missing-seed-lineage-result/1",
+  "functional_passes_v1": 1358,
+  "gates": {
+    "critical_capabilities": true,
+    "final_test_not_accessed": true,
+    "per_capability_functional": true,
+    "router_exact": true,
+    "strong_parent_exact": true,
+    "teacher_absent": true,
+    "teacher_noninferior": true,
+    "zero_repetition_collapse": false
+  },
+  "lineage_result_sha256": "e910f1160fbe42fb1f15218358288643da676f582b414a0423c5830c3f294c98",
+  "phase4_certified": false,
+  "protocol_sha256": "2c50b632065ee7b3b738efdbc32198ea3a8efa46544a1a3a5bb29112db91fc85",
+  "repetition_collapses_v2": 2,
+  "seed": 155921,
+  "status": "COMPLETE_B20_MISSING_SEED_CLEAN_START_LINEAGE",
+  "teacher_present_at_inference": false
+}

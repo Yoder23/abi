@@ -1,0 +1,43 @@
+{
+  "format": "abi-capability-compiler-phase4-b20-host-oracle-replay-summary/1",
+  "version": 948,
+  "status_date": "2026-08-15",
+  "status": "INCONCLUSIVE_B20_SEED155921_REQUIRES_EXACT_FIVE_ROUTE_PRODUCT_SCREEN",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_B20_SEED155921_HOST_ORACLE_PROTOCOL_V946.json",
+    "sha256": "dd07c0a30b321256c78e0f70e325af23b08b8925ac8f95a57b168b77aa92db17"
+  },
+  "lineage": {
+    "path": "results/abi_capability_compiler_phase4_b20_missing_seed_lineage/B20-seed155921-v941/result.json",
+    "sha256": "e910f1160fbe42fb1f15218358288643da676f582b414a0423c5830c3f294c98",
+    "functional_passes": "1358/1400",
+    "repetition_collapses": 2,
+    "all_absolute_capability_gates_pass": true,
+    "information": "2028 unique source attempts; 62417 authoritative teacher-output tokens; 2056 record memberships"
+  },
+  "result": {
+    "path": "results/abi_capability_compiler_phase4_b20_host_oracle_replay/seed155921-run_v947/result.json",
+    "sha256": "74ff246102849831f910f464478c044469b3e56401898c44e5d0ab80a802bbf5",
+    "evidence_sha256": "b4919d9fca00cb9948fb2079977dbe98b8879e835beb5fec3a82b22c39e0462b"
+  },
+  "oracle": {
+    "changeable_rows_granted_pass_and_zero_collapse": 302,
+    "historical_functional_passes": 1358,
+    "oracle_functional_passes": 1367,
+    "oracle_collapses": 0,
+    "remaining_absolute_gate_failures": 0,
+    "collapsing_rows": [
+      "phase1-validation-rewriting-0040-v2",
+      "phase1-validation-rewriting-0092-v2"
+    ]
+  },
+  "decision": "The oracle cannot prove B20 seed155921 insufficient because the complete declared host is allowed to guard both remaining collapses and every absolute capability already passes. The raw failure is preserved, but the boundary requires physical five-route/v22-compatible product execution.",
+  "authorized_next_action": "Construct and independently test the minimum five-route LayerCake host ABI needed to install this exact B20 lineage plus its clarification route, then run all 1,400 prompts through signed product execution.",
+  "model_inference_performed_by_oracle": false,
+  "training_performed_by_oracle": false,
+  "teacher_model_loaded": false,
+  "final_test_accessed": false,
+  "phase4_certified": false,
+  "claim_boundary": "Two B20 seeds are proved failures; the third is oracle-inconclusive. Stable minimum, five-route product runtime, matched baselines, final test, Phase 4, and ABI superiority remain open."
+}

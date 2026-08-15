@@ -1,0 +1,168 @@
+{
+  "architecture": {
+    "architecture_version": "layercake-shallow-sparse-english/1-three-block-task-cakes",
+    "heads": 12,
+    "layers": 3,
+    "max_tokens": 1024,
+    "task_cake_rank": 64,
+    "task_cakes": 10,
+    "vocab_size": 50257,
+    "width": 768
+  },
+  "checkpoint": {
+    "bytes": 246628032,
+    "path": "model.safetensors",
+    "sha256": "72c2c32af2682808398b637dd31838edad932a08136351b1bd8489eda04b36f4"
+  },
+  "evidence_sha256": "9963a7ef9a8ef2b4b581f10533fe2acca367a280d1a168526c7c731cf17810d8",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-qualified-transition-control/1",
+  "hardware": {
+    "cuda": "11.8",
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "machine": "Sam",
+    "python": "3.10.0",
+    "torch": "2.7.1+cu118"
+  },
+  "isolation": {
+    "all_changes_confined_to_existing_transition": true,
+    "changed_tensor_count": 64,
+    "embedding_state_sha256_after": "541c15840cfa2ffaa72f1d28ca08428face0d21b3c41285e21e368eed47c736e",
+    "embedding_state_sha256_before": "541c15840cfa2ffaa72f1d28ca08428face0d21b3c41285e21e368eed47c736e",
+    "layercake_repository_mutated": false
+  },
+  "parent_checkpoint_sha256": "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1",
+  "phase3_certified": false,
+  "promotion_eligible": false,
+  "protocol_sha256": "00918b9a6c3bf0d3713c4c7fb84bab02b405caec6a705e542bbb22b8001d5390",
+  "source": {
+    "source_blocks_retained": 0,
+    "source_parameters_copied": 0,
+    "teacher_present_at_inference": false,
+    "teacher_present_during_training": false
+  },
+  "status": "TRAINED_DEVELOPMENT_ONLY_NONPROMOTIONAL",
+  "training": {
+    "active_parameter_seconds": 6198079319.133932,
+    "batch_size": 4,
+    "curves": [
+      {
+        "classifier_loss": 3.9798583984375,
+        "language_loss": 4.100382328033447,
+        "step": 1,
+        "wall_seconds": 0.37941150000551715
+      },
+      {
+        "classifier_loss": 0.012837962247431278,
+        "language_loss": 0.40908393263816833,
+        "step": 500,
+        "wall_seconds": 20.390099099982763
+      },
+      {
+        "classifier_loss": 0.002657019766047597,
+        "language_loss": 0.44922688603401184,
+        "step": 1000,
+        "wall_seconds": 39.992004100000486
+      },
+      {
+        "classifier_loss": 0.0009940746240317822,
+        "language_loss": 0.23735001683235168,
+        "step": 1500,
+        "wall_seconds": 59.91794089999166
+      },
+      {
+        "classifier_loss": 0.0003546294174157083,
+        "language_loss": 0.03870268538594246,
+        "step": 2000,
+        "wall_seconds": 79.70115949999308
+      },
+      {
+        "classifier_loss": 0.00013993759057484567,
+        "language_loss": 0.00037256136420182884,
+        "step": 2500,
+        "wall_seconds": 99.1301753000007
+      },
+      {
+        "classifier_loss": 0.00012247411359567195,
+        "language_loss": 0.008044419810175896,
+        "step": 3000,
+        "wall_seconds": 118.8025943999819
+      },
+      {
+        "classifier_loss": 9.372131171403453e-05,
+        "language_loss": 0.05678393319249153,
+        "step": 3500,
+        "wall_seconds": 138.66124769998714
+      },
+      {
+        "classifier_loss": 6.258464964048471e-06,
+        "language_loss": 0.003065685508772731,
+        "step": 4000,
+        "wall_seconds": 159.3525146000029
+      },
+      {
+        "classifier_loss": 0.0002053797070402652,
+        "language_loss": 0.024709505960345268,
+        "step": 4500,
+        "wall_seconds": 179.44301819999237
+      },
+      {
+        "classifier_loss": 3.1292365747503936e-06,
+        "language_loss": 0.05023594945669174,
+        "step": 5000,
+        "wall_seconds": 199.09792289999314
+      },
+      {
+        "classifier_loss": 8.221878670156002e-05,
+        "language_loss": 0.0017383326776325703,
+        "step": 5500,
+        "wall_seconds": 218.5242239999934
+      },
+      {
+        "classifier_loss": 2.4109698642860167e-05,
+        "language_loss": 0.008114243857562542,
+        "step": 6000,
+        "wall_seconds": 238.18055590000586
+      },
+      {
+        "classifier_loss": 3.793752330238931e-05,
+        "language_loss": 6.691092130495235e-05,
+        "step": 6500,
+        "wall_seconds": 257.9275718999852
+      },
+      {
+        "classifier_loss": 8.344644584212801e-07,
+        "language_loss": 0.001978718675673008,
+        "step": 7000,
+        "wall_seconds": 277.727533199999
+      }
+    ],
+    "device": "cuda",
+    "new_parameters": 0,
+    "peak_cuda_allocated_bytes": 2352982528,
+    "peak_process_rss_bytes": 1715863552,
+    "sampled_records_by_capability": {
+      "abstention": 2000,
+      "clarification": 2000,
+      "coherence": 2000,
+      "conversation": 2000,
+      "email_drafting_from_notes": 2000,
+      "fact_free_reasoning": 2000,
+      "fluent_realization": 2000,
+      "format_control": 2000,
+      "grammar": 2000,
+      "instruction_following": 2000,
+      "prompt_grounding": 2000,
+      "rewriting": 2000,
+      "supplied_text_summarization": 2000,
+      "tone_control": 2000
+    },
+    "seed": 155921,
+    "skipped_amp_steps": 5,
+    "steps": 7000,
+    "successful_record_sequence_sha256": "4501e40fa6b5a897eb2d1ef1d1442cb3ff9fd5b54137986a8226aac70e2e09bc",
+    "teacher_response_tokens_seen": 723159,
+    "trainable_parameters": 22271242,
+    "wall_seconds": 278.29967089998536
+  }
+}
