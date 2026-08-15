@@ -1,0 +1,106 @@
+{
+  "format": "abi-capability-compiler-phase4-b50-gpu-runtime/1",
+  "protocol_id": "abi-capability-compiler-phase4-b50-gpu-runtime-v858",
+  "status": "PREREGISTERED_SAME_CHECKPOINT_B50_CUDA_RUNTIME",
+  "status_date": "2026-08-15",
+  "historical_evidence_changed": false,
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V857.json",
+  "objective": "Measure the exact seed-104729 ABI, L0, L1, D0, D1, and D2 artifacts already used for locked quality under one interleaved CUDA schedule of 100 distinct prompts plus 20 repeated observations, with completed-response token accounting, primary UTF-8 throughput, genuine one-request model-residency cold starts, active memory, physical sparse execution, and output identity to each artifact's locked quality run.",
+  "device": "cuda",
+  "development_catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+  "candidate_screen_protocol": "ABI_CAPABILITY_COMPILER_PHASE4_V22_B50_RESCREEN_PROTOCOL_V795.json",
+  "source_headline_protocol": "ABI_CAPABILITY_COMPILER_PHASE4_B50_HEADLINE_PROTOCOL_V850.json",
+  "matched_quality_result": "ABI_CAPABILITY_COMPILER_PHASE4_B50_MATCHED_QUALITY_RESULT_V856.json",
+  "runtime": {
+    "distinct_prompts": 100,
+    "repeated_observations": 20,
+    "observations_per_system": 120,
+    "warmup_observations": 3,
+    "schedule_sha256": "c2fe47c8a5759c5a8e36b01fab505b9e4a6e1332d945cc2dcc38657105207d9a",
+    "primary_throughput": "completed response UTF-8 bytes per total request second",
+    "secondary_throughput": "completed response Unicode characters per total request second",
+    "token_accounting": "retokenize each complete returned response with the executing system tokenizer; generation token ids remain separately preserved",
+    "cold_start": "load exactly one previously nonresident system and make one genuine first generation request; report load, first output, and total from that single lineage without an extra probe request",
+    "p95_minimum_observations": 100,
+    "p99_minimum_observations": 1000
+  },
+  "systems": {
+    "ABI": {
+      "seed": 104729,
+      "role": "signed_layercake_v22_exact_b50_product",
+      "quality_reference_outputs": "results/abi_capability_compiler_phase4_v22_b50_rescreen/run_v796/seed104729_outputs.jsonl",
+      "quality_reference_sha256": "48f3321aba623518dc15a0480229c1ce8f9457eda2f60c040e0baaaafe521442",
+      "archive_sha256": "db85b8bfbb0335d59274734cffa48ae568a33fdfbde8770eadae7c0d7494498f",
+      "archive_bytes": 253117674,
+      "tensor_payload_hash": "625389ca7c8eb39e281ae089c534166266e9445c156cdb195c51cea91b60e56f",
+      "total_parameters": 62812930
+    },
+    "L0": {
+      "seed": 104729,
+      "role": "fourteen_oracle_routed_lora_adapters_with_source_base",
+      "rank": 16,
+      "checkpoint_path": "results/abi_capability_compiler_phase4_b50_baselines/headline_v851/L0_r16_lr1e-4_exp4_seed104729/adapters.safetensors",
+      "checkpoint_sha256": "666db28811f5e3d21d13e1a2d3da0905782df8470882224795f22ad25cc70941",
+      "quality_reference_outputs": "results/abi_capability_compiler_phase4_b50_baselines/headline_v851/L0_r16_lr1e-4_exp4_seed104729/development_outputs.jsonl",
+      "quality_reference_sha256": "7b3b096d494a43d175f3f0b46ab8f9d252e50916fc75d7691cc45da6ef3802e9"
+    },
+    "L1": {
+      "seed": 104729,
+      "role": "fourteen_prompt_routed_lora_adapters_with_source_base",
+      "rank": 8,
+      "checkpoint_path": "results/abi_capability_compiler_phase4_b50_baselines/headline_v851/L1_r8_lr1e-4_exp4_seed104729/adapters.safetensors",
+      "checkpoint_sha256": "e3077656ea4ba44bae295fca50138e3d81af97dcbc8f8faf9701e30b494c663b",
+      "quality_reference_outputs": "results/abi_capability_compiler_phase4_b50_baselines/headline_v851/L1_r8_lr1e-4_exp4_seed104729/development_outputs.jsonl",
+      "quality_reference_sha256": "44ab6e988bbbc657ab9ec2e25733e85d220ef55b90c711dd4e903ce09e2cd9ba"
+    },
+    "D0": {
+      "seed": 104729,
+      "role": "sequence_distilled_same_size_transformer",
+      "checkpoint_path": "results/abi_capability_compiler_phase4_b50_baselines/headline_v851/D0_lr3e-5_exp4_seed104729/student.safetensors",
+      "checkpoint_sha256": "8ff6315d0767c2d0a41774faeb199a7d5778721b4d9fdaec64c60bd9114e6afe",
+      "quality_reference_outputs": "results/abi_capability_compiler_phase4_b50_baselines/headline_v851/D0_lr3e-5_exp4_seed104729/development_outputs.jsonl",
+      "quality_reference_sha256": "071b61b278ac4a787922abef26bc05b1408559f09f32029f8c04b41553e9fef8"
+    },
+    "D1": {
+      "seed": 104729,
+      "role": "top64_logit_distilled_same_size_transformer",
+      "checkpoint_path": "results/abi_capability_compiler_phase4_b50_baselines/headline_v851/D1_lr3e-5_exp4_seed104729/student.safetensors",
+      "checkpoint_sha256": "b85bce9585c53bb08606e24525a4ecb1df2581a683d25d34df5fb4b74ab4041c",
+      "quality_reference_outputs": "results/abi_capability_compiler_phase4_b50_baselines/headline_v851/D1_lr3e-5_exp4_seed104729/development_outputs.jsonl",
+      "quality_reference_sha256": "3ccec1f4d375b0be2dbc3d990612bb9b3524c6c4501b21fa4d5f9f92443838b5"
+    },
+    "D2": {
+      "seed": 104729,
+      "role": "hybrid_sequence_top64_distilled_same_size_transformer",
+      "checkpoint_path": "results/abi_capability_compiler_phase4_b50_baselines/headline_v851/D2_lr3e-5_exp4_seed104729/student.safetensors",
+      "checkpoint_sha256": "f9fd4d3be73e03993a147a725afef70732523ed91b3d9fa33f49fc7ca592df6b",
+      "quality_reference_outputs": "results/abi_capability_compiler_phase4_b50_baselines/headline_v851/D2_lr3e-5_exp4_seed104729/development_outputs.jsonl",
+      "quality_reference_sha256": "1a1727d6e160644e2cd40a9876b0f87ab94b25b7ae029f20705b6151e121f16a"
+    }
+  },
+  "training_authorized": false,
+  "teacher_query_generation_authorized": false,
+  "source_base_loading_for_lora_authorized": true,
+  "final_test_access": "PROHIBITED",
+  "bindings": {
+    "abi/capability_compiler_phase4_b50_gpu_runtime.py": "df9bf9d9e2a44cf7cc6a6a3ac594168639fbd32280523df7781dcbfc963ca36b",
+    "tests/test_capability_compiler_phase4_b50_gpu_runtime.py": "1591e1aa52f5f35e1e71fbd5503f89e29806d84386d5d006d12166da6e7fd72e",
+    "abi/capability_compiler_phase4_v22_b50_rescreen.py": "ed9fe592f61ba7c0644ca01a7bb21ad5f644351a0dde0c307efcf79e84f8f6ec",
+    "abi/capability_compiler_phase4_b50_baselines.py": "e89b6e66e030165d0d9bedda3adc0fec2f532e14f579962023d48d45965ac774",
+    "abi/capability_compiler_phase2_common.py": "8093ec2016d685f0327c87640042c8373bc141d76351fd641b21a44d018b6c92",
+    "abi/capability_compiler_phase2_prepare.py": "96467c3593b4228ed8ed7f5b5d6bda35e0fc686c2e168c26051643b085de20d8",
+    "abi/capability_compiler_phase2_runtime.py": "f74f5754687b6f1ef296f23c7d23269e9b1a019f5497190639d0ce0de96701ef",
+    "abi/capability_compiler_phase2_lora.py": "4f209ab042a132dd4aae4d9961b462eb8422d38dedb5c3de942f84a6d88d8747",
+    "abi/capability_compiler_phase3.py": "5d490989e088f42aba4bd2ca96fbe70ea2db211890369dd6f431dd781390c77b",
+    "abi/capability_compiler_phase3_cpu_runtime.py": "c32649896b82924fc6dbe792256d7df171a6cc359ddf138dd5c2034369130342",
+    "abi/capability_compiler_phase4_v19_frontier_rescreen.py": "9bb840b0397d9fb47ef5c873685b2ec4d4f7b31202e62bd89efbfbe3e7c67199",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B50_HEADLINE_PROTOCOL_V850.json": "1bdc9724e3a6737e3ee1417962b1fc304168a597928f731ecdd73f7807b35707",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B50_MATCHED_QUALITY_RESULT_V856.json": "d87459d197358d504a1490a2373ed14a17ddcc92aff207d33353a4daf442d87d",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V857.json": "5812f88fc6b779f8c5f5e785f94d79e9f496384b4a4fae35a4f88189904b5e9b",
+    "ABI_CAPABILITY_COMPILER_PHASE4_V22_B50_RESCREEN_PROTOCOL_V795.json": "6e4e667643f3e19e64f8f4829b3e71cb8f36785f91da88fa0c1cee1e572a4f32",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a"
+  },
+  "execution_order": ["ABI", "L0", "L1", "D0", "D1", "D2"],
+  "decision_rule": "Each system must reproduce its own locked seed-104729 quality outputs exactly and pass depth, token-accounting, cold-request, route, physical-execution, and evidence-integrity gates. Report quality and speed for the same artifact. Preserve failures. Do not compose or certify Phase 4 until the separately preregistered CPU comparison and an independent raw-evidence composer are complete.",
+  "claim_boundary": "Prospectively sealed same-checkpoint development CUDA runtime only. No CPU product comparison, final test, matched training-efficiency claim, Phase 4 certificate, or unconditional ABI-superiority claim."
+}
