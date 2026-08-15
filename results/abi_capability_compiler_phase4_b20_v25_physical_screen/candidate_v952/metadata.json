@@ -1,0 +1,102 @@
+{
+  "architecture": {
+    "active_parameters_on_clarification": 26112,
+    "active_routes_per_token": 1,
+    "installed_parameters": 124416,
+    "legacy_routes": 4,
+    "new_trainable_parameters": 24576,
+    "rank": 16,
+    "routes": 5
+  },
+  "budget": "B20",
+  "checkpoint": {
+    "bytes": 498080,
+    "path": "clarification_route.safetensors",
+    "sha256": "34de7ff7451fc67939ae4a6c84cbe00171299f195762236ddcd009f24febb7e7"
+  },
+  "evidence_sha256": "2fb93bfec1f1aea011c64e673622ee747bdf9179d0a849e2d6883be7e424de27",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase4-b20-v25-physical-screen/1",
+  "imported_information": {
+    "authoritative_teacher_output_tokens": 62417,
+    "new_teacher_outputs": 0,
+    "record_memberships": 2056,
+    "source_parameters_copied": 0,
+    "stored_hidden_activations": 0,
+    "stored_logits": 0,
+    "unique_source_attempts": 2028
+  },
+  "inherited_residual": {
+    "checkpoint_sha256": "9b5f471c1b7f168c9f20ecb8eb4e22837ede3eba40826e00c72ef94efb2fd0c9",
+    "routes_mutated": 0
+  },
+  "parent": {
+    "checkpoint_sha256": "9665b841593738a4d5c760ef4d1fcdbebb762a2f35579b59379eac5674fefa17",
+    "mutated": false
+  },
+  "protocol_sha256": "e7b180c57b97d99722a2308605241a5acb5a83069c3d480bb5ea00330afbdac2",
+  "router": {
+    "checkpoint_sha256": "1c65a030090a9a0c98c4177fa9611e4af9d6ba05b0839568dec3c5afdd4e6068",
+    "mutated": false
+  },
+  "seed": 155921,
+  "status": "TRAINED_B20_SEED155921_FIFTH_CLARIFICATION_ROUTE",
+  "teacher_present": false,
+  "training": {
+    "curves": [
+      {
+        "loss": 0.0003120646288152784,
+        "step": 1,
+        "wall_seconds": 0.2477268999791704
+      },
+      {
+        "loss": 0.008704583160579205,
+        "step": 125,
+        "wall_seconds": 2.535680200002389
+      },
+      {
+        "loss": 0.00184286804869771,
+        "step": 250,
+        "wall_seconds": 4.759437999979127
+      },
+      {
+        "loss": 0.001414927071891725,
+        "step": 375,
+        "wall_seconds": 7.040779799979646
+      },
+      {
+        "loss": 0.057217203080654144,
+        "step": 500,
+        "wall_seconds": 9.236022600001888
+      },
+      {
+        "loss": 0.004358427133411169,
+        "step": 625,
+        "wall_seconds": 11.394226899981732
+      },
+      {
+        "loss": 0.0009538850281387568,
+        "step": 750,
+        "wall_seconds": 13.58769289997872
+      },
+      {
+        "loss": 0.0009135507862083614,
+        "step": 875,
+        "wall_seconds": 15.793956099980278
+      },
+      {
+        "loss": 0.003825221909210086,
+        "step": 1000,
+        "wall_seconds": 17.97954000000027
+      }
+    ],
+    "epochs": 10,
+    "peak_cuda_allocated_bytes": 540493824,
+    "peak_process_rss_bytes": 1692282880,
+    "record_sequence_sha256": "2a748244b3e387e7483b16c39155a59ff4552300af420ce4d35888bf89fc6091",
+    "selected_records": 100,
+    "steps": 1000,
+    "teacher_response_tokens_in_loss": 23000,
+    "wall_seconds": 18.44537129998207
+  }
+}

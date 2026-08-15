@@ -1,0 +1,262 @@
+{
+  "activation": {
+    "archive_hash": "71ad5d54c26cd72cedea1fa9163cd0053279a7d3830ac1a1c2a8bf5c34c00cbe",
+    "authenticated_package_parses": 1,
+    "authenticated_tensor_count": 89,
+    "cake_id": "abi-phase4-b20-seed155921-v25-english-core",
+    "device": "cuda",
+    "meta_tensors_after_adoption": 0,
+    "payload_hash": "ea26e9758a5e0678a0e94604f39625c4d75eb6c3271f2ad22f8a21096d495e20",
+    "receiver_calibration_runs": 0,
+    "receiver_training_steps": 0,
+    "reconstructed_nonpersistent_buffers": 6,
+    "state_dict_hash": "3e2807830764ef3d59f14d36e8f81fe1cd6e1bf61c3b9d6a5a39ce934eaf1e69",
+    "status": "ACTIVE",
+    "strict_assigned_tensor_count": 89
+  },
+  "budget": "B20",
+  "changed_by_capability": {
+    "abstention": 0,
+    "clarification": 13,
+    "coherence": 51,
+    "conversation": 0,
+    "email_drafting_from_notes": 0,
+    "fact_free_reasoning": 0,
+    "fluent_realization": 0,
+    "format_control": 0,
+    "grammar": 0,
+    "instruction_following": 0,
+    "prompt_grounding": 0,
+    "rewriting": 3,
+    "supplied_text_summarization": 0,
+    "tone_control": 0
+  },
+  "changed_rows": 67,
+  "checkpoint_sha256": "34de7ff7451fc67939ae4a6c84cbe00171299f195762236ddcd009f24febb7e7",
+  "claim_boundary": "One exact signed B20 seed155921 V25 development product screen. The other B20 seeds, all-seed minimum, B40 product runtime, matched baselines, final test, Phase 4, and ABI superiority remain separate gates.",
+  "evaluation_wall_seconds": 148.08074320000014,
+  "evidence_sha256": "799162e92c35876858a840569cbd67f7425c8fb407fa39562c6f2b3664f248d0",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase4-b20-v25-physical-screen-result/1",
+  "functional_passes_v1": 1364,
+  "guard_terminations": 5,
+  "hardware": {
+    "cuda": "11.8",
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "machine": "Sam",
+    "torch": "2.7.1+cu118"
+  },
+  "observations": 1400,
+  "package": {
+    "archive_bytes": 253216203,
+    "archive_sha256": "71ad5d54c26cd72cedea1fa9163cd0053279a7d3830ac1a1c2a8bf5c34c00cbe",
+    "component_parameters": {
+      "model": 61655050,
+      "residual": 124416,
+      "router": 1058040
+    },
+    "gates": {
+      "component_counts_exact": true,
+      "interface_v25": true,
+      "receiver_learning_zero": true,
+      "signature_valid": true,
+      "teacher_absent": true,
+      "tensor_values_exact": true
+    },
+    "package_hash": "71b82ff0c0163465869e599fdcd83acb68aeead8558f40c6aa2b6a4b6a1d934b",
+    "tensor_count": 89,
+    "tensor_payload_hash": "ea26e9758a5e0678a0e94604f39625c4d75eb6c3271f2ad22f8a21096d495e20",
+    "total_parameters": 62837506
+  },
+  "per_capability": {
+    "abstention": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "clarification": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "coherence": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "conversation": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "email_drafting_from_notes": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 92,
+      "wilson_v1": {
+        "lower_95": 0.8500189229905127,
+        "point": 0.92,
+        "upper_95": 0.9589065385156194
+      }
+    },
+    "fact_free_reasoning": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 97,
+      "wilson_v1": {
+        "lower_95": 0.9154806357094724,
+        "point": 0.97,
+        "upper_95": 0.9897454759759611
+      }
+    },
+    "fluent_realization": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 96,
+      "wilson_v1": {
+        "lower_95": 0.9016292856411208,
+        "point": 0.96,
+        "upper_95": 0.9843366960084523
+      }
+    },
+    "format_control": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "grammar": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "instruction_following": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 98,
+      "wilson_v1": {
+        "lower_95": 0.929988209271456,
+        "point": 0.98,
+        "upper_95": 0.9944980324498376
+      }
+    },
+    "prompt_grounding": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 100,
+      "wilson_v1": {
+        "lower_95": 0.9630065017930143,
+        "point": 1.0,
+        "upper_95": 1.0
+      }
+    },
+    "rewriting": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 96,
+      "wilson_v1": {
+        "lower_95": 0.9016292856411208,
+        "point": 0.96,
+        "upper_95": 0.9843366960084523
+      }
+    },
+    "supplied_text_summarization": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 92,
+      "wilson_v1": {
+        "lower_95": 0.8500189229905127,
+        "point": 0.92,
+        "upper_95": 0.9589065385156194
+      }
+    },
+    "tone_control": {
+      "collapses_v2": 0,
+      "observations": 100,
+      "passes_v1": 93,
+      "wilson_v1": {
+        "lower_95": 0.8625048526092651,
+        "point": 0.93,
+        "upper_95": 0.9656807389327273
+      }
+    }
+  },
+  "phase4_certified": false,
+  "preservation_gates": {
+    "all_immutable_outputs_exact": false,
+    "all_rows_present": true,
+    "changes_bounded_to_declared_host_scope": false,
+    "historical_passing_changed_rows_remain_passing": false
+  },
+  "product_gates": {
+    "final_test_not_accessed": true,
+    "interface_v25": true,
+    "one_authenticated_parse": true,
+    "package_verified": true,
+    "receiver_learning_zero": true,
+    "signed_package_identity": true,
+    "strict_storage_adoption": true,
+    "teacher_absent": true
+  },
+  "protocol_sha256": "e7b180c57b97d99722a2308605241a5acb5a83069c3d480bb5ea00330afbdac2",
+  "quality_gates": {
+    "critical_capabilities": true,
+    "final_test_not_accessed": true,
+    "per_capability_functional": true,
+    "router_exact": true,
+    "teacher_absent": true,
+    "teacher_noninferior": true,
+    "zero_repetition_collapse": true
+  },
+  "raw_outputs_sha256": "77a53527767d657ee3f1cdd81a417e36f51072a09988ce1c4307498bc6bac5b3",
+  "repetition_collapses_v2": 0,
+  "route_gates": {
+    "all_physical_routes_exact": true,
+    "clarification_route_four_on_all_100": true,
+    "inherited_four_routes_exact": true,
+    "one_active_route_maximum": true,
+    "router_exact": true
+  },
+  "router_correct": 1400,
+  "seed": 155921,
+  "stable_minimum_established": false,
+  "status": "FAIL_B20_SEED155921_V25_PHYSICAL_PRODUCT_SCREEN",
+  "teacher_comparison_v1": {
+    "candidate_minus_teacher": 0.09071428571428572,
+    "lower_95": 0.07357142857142857,
+    "method": "capability_stratified_paired_percentile_bootstrap",
+    "replicates": 10000,
+    "seed": 9655921,
+    "upper_95": 0.10857142857142857
+  },
+  "teacher_present_at_inference": false
+}
