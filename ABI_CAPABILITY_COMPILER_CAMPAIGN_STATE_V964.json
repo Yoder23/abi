@@ -1,0 +1,29 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "state_id": "abi-capability-compiler-campaign-state-v964",
+  "status_date": "2026-08-15",
+  "historical_evidence_changed": false,
+  "parent_state": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V959.json",
+  "phase": "PHASE_4_SUFFICIENT_INFORMATION_PARETO_FRONTIER",
+  "phase_status": "IN_PROGRESS_B40_SIGNED_PRODUCT_PASS_PENDING_INDEPENDENT_VERIFICATION",
+  "phase4_certified": false,
+  "abi_superiority_certified": false,
+  "closed_gates": [
+    "The complete 4,200-row B20 adjacent-lower failure boundary is independently verified.",
+    "All three existing B40 five-route candidates freshly pass signed LayerCake v25 product conformance.",
+    "All 4,200 B40 product outputs are byte-exact to their qualified matrices with zero collapse, exact routing, exact physical sparse execution, tensor-exact inherited routes, and zero receiver learning."
+  ],
+  "open_gates": [
+    "The B40 signed-product result has not yet been independently reconstructed and adversarially verified.",
+    "Therefore B40 is not yet a tested stable minimum for the exact five-route architecture.",
+    "B40 same-artifact CPU/GPU runtime and B40-matched LoRA/distillation comparisons remain open.",
+    "Phase 2 external human and final-test gates remain closed."
+  ],
+  "authorized_next_action": "Preregister and run one no-training independent verifier over the immutable three-seed B40 V25 product result and the verified B20 boundary. Reject mutations and establish the tested minimum only if every reconstruction passes.",
+  "prohibitions": [
+    "No B40 retraining, checkpoint repair, acquisition expansion, nearby budget, route, seed, threshold, or hyperparameter sweep.",
+    "No stable-minimum claim before independent B40 verification.",
+    "No final-test access or Phase 4/ABI-superiority claim."
+  ],
+  "claim_boundary": "B40 signed-product sufficiency passed on development data; independent verification and remaining Phase 4 gates are open."
+}
