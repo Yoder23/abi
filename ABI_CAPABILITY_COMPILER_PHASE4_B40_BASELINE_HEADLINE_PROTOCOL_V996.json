@@ -1,0 +1,107 @@
+{
+  "format": "abi-capability-compiler-phase4-b40-baselines/1",
+  "protocol_id": "abi-capability-compiler-phase4-b40-three-seed-headline-v996",
+  "status": "PREREGISTERED_EXACT_B40_MATCHED_BASELINE_CAMPAIGN",
+  "status_date": "2026-08-15",
+  "historical_evidence_changed": false,
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V995.json",
+  "objective": "Train strong oracle-routed LoRA, prompt-routed LoRA, and same-size sequence-distillation controls from the independently verified exact B40 equal-sequence information, then evaluate all 100 registered development prompts per capability across three paired seeds and preserve every checkpoint.",
+  "device": "cuda",
+  "records_archive": "results/abi_capability_compiler_phase4_b40_baselines/pack_v989/exact_b40_records_v989.abicir",
+  "pack_manifest": "results/abi_capability_compiler_phase4_b40_baselines/pack_v989/exact_b40_pack_manifest_v989.json",
+  "pack_result": "results/abi_capability_compiler_phase4_b40_baselines/pack_v989/result.json",
+  "pack_verification": "ABI_CAPABILITY_COMPILER_PHASE4_B40_BASELINE_PACK_VERIFIED_RESULT_V994.json",
+  "development_catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+  "packing_seed": 104729,
+  "packing_context": 768,
+  "hyperparameter_selection": {
+    "source": "ABI_CAPABILITY_COMPILER_PHASE4_B50_HEADLINE_PROTOCOL_V850.json",
+    "verification": "ABI_CAPABILITY_COMPILER_PHASE4_B50_HEADLINE_VERIFY_RESULT_V853.json",
+    "rule": "Freeze the configurations selected by the earlier, larger exact-B50 campaign. No B40 output is used to select or adapt hyperparameters.",
+    "conservative_property": "The comparator configurations were selected with 25 percent more equal-sequence memberships than B40 and on the same registered capability suite. This avoids weakening controls through an untuned arbitrary configuration while preventing post-hoc B40 tuning."
+  },
+  "systems": {
+    "L0": {
+      "role": "fourteen_separately_deployed_single_capability_lora_adapters_with_oracle_capability_selection",
+      "information_role": "EXACT_B40_SEQUENCE_EQUAL_INFORMATION",
+      "ranks": [16],
+      "learning_rates": [0.0001],
+      "exposures": [4]
+    },
+    "L1": {
+      "role": "prompt_routed_fourteen_capability_lora_system",
+      "information_role": "EXACT_B40_SEQUENCE_EQUAL_INFORMATION",
+      "ranks": [8],
+      "learning_rates": [0.0001],
+      "exposures": [4]
+    },
+    "D0": {
+      "role": "sequence_distilled_same_size_transformer",
+      "information_role": "EXACT_B40_SEQUENCE_EQUAL_INFORMATION",
+      "learning_rates": [0.00003],
+      "exposures": [4]
+    }
+  },
+  "stages": {
+    "headline": {
+      "seeds": [104729, 130363, 155921],
+      "development_per_capability": 100,
+      "save_checkpoint": true,
+      "authorized_systems": ["L0", "L1", "D0"],
+      "expected_runs": 9,
+      "expected_observations_per_run": 1400
+    }
+  },
+  "expected": {
+    "record_memberships": 4112,
+    "unique_source_attempts": 4005,
+    "authoritative_teacher_output_tokens": 123167,
+    "pack_count": 693,
+    "pack_response_positions": 130885,
+    "pack_content_sha256": "db5a85e35ffdc29dcf29d639dfaa88c02cc1e90aeafb81c911bb394ba7691868",
+    "headline_runs": 9,
+    "headline_prompt_observations": 12600,
+    "checkpoint_per_run": true
+  },
+  "training_authorized": true,
+  "source_base_loading_for_l0_l1_authorized": true,
+  "teacher_query_generation_authorized": false,
+  "D0_teacher_loading_during_training": false,
+  "model_inference_authorized": "REGISTERED_DEVELOPMENT_EVALUATION_ONLY",
+  "checkpoint_write_authorized": true,
+  "runtime_profiling_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "cost_forecast": {
+    "basis": "Exact-B50 observed medians were 5,359.84 seconds L0, 5,316.41 seconds L1, and 573.86 seconds D0 per seed. B40 contains 80 percent as many memberships and uses the same four exposures.",
+    "expected_total_wall_hours": 7.5,
+    "bounded_review_range_hours": [6.0, 10.5],
+    "hard_resource_stop": "Stop only on CUDA OOM, non-finite loss, changed binding, disk-write failure, or system interruption. Preserve every completed run and failure."
+  },
+  "bindings": {
+    "abi/capability_compiler_phase4_b40_baselines.py": "f8c97aa4da5fc012960219f9721058401b61ad302efb555044a8315d6959e991",
+    "tests/test_capability_compiler_phase4_b40_baselines.py": "e2d10010b862c99fbad1d8b3d672ce97c50feadb5a56b11e07848e4972e07a8c",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V995.json": "39f524c342bee710cada54122bc1e499bd9658ae0ca533095b4a6384c03f03ca",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B40_BASELINE_PACK_VERIFIED_RESULT_V994.json": "2702a4dfb7a7e5babc104a442c8b9077bd4319d50fd7bec963797d5395a35fe0",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B40_BASELINE_PACK_VERIFY_PROTOCOL_V992.json": "8122aef75c7a57b7d0166e7bf7cc5007d9b442ef53a0ce32ccb0da973363b2bd",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B50_HEADLINE_PROTOCOL_V850.json": "1bdc9724e3a6737e3ee1417962b1fc304168a597928f731ecdd73f7807b35707",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B50_HEADLINE_VERIFY_RESULT_V853.json": "bd333173a4a81a5da1879777bdc8865f6b7a1b9dd53d2017db0ede0345d48330",
+    "results/abi_capability_compiler_phase4_b40_baselines/pack_v989/exact_b40_records_v989.abicir": "7ba1cf91d22f4ca03f12f6963ec52943c12fa74eef5b7d2a135cfb43a3ce0b53",
+    "results/abi_capability_compiler_phase4_b40_baselines/pack_v989/exact_b40_pack_manifest_v989.json": "363d806fecc7e1872c76a98347869317846a70032d416ec7e554a1fdcac50c62",
+    "results/abi_capability_compiler_phase4_b40_baselines/pack_v989/result.json": "e5c9988db630afd5b4d5da9b25c2d16740e87080e3cb8fae9baab65aa275036e",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "abi/capability_compiler_phase4_b50_baselines.py": "e89b6e66e030165d0d9bedda3adc0fec2f532e14f579962023d48d45965ac774",
+    "abi/capability_compiler_phase2_common.py": "8093ec2016d685f0327c87640042c8373bc141d76351fd641b21a44d018b6c92",
+    "abi/capability_compiler_phase2_prepare.py": "96467c3593b4228ed8ed7f5b5d6bda35e0fc686c2e168c26051643b085de20d8",
+    "abi/capability_compiler_phase2_lora.py": "4f209ab042a132dd4aae4d9961b462eb8422d38dedb5c3de942f84a6d88d8747",
+    "abi/capability_compiler_phase2_student.py": "5a5ef5a9da2d8bc5d035b830f26652512cd09e4dde91b8b91813c1f4ca8f06e6",
+    "abi/capability_compiler_functional_v2.py": "1755ceded6de7c8228ed91e5be6bf86452b6c5f02466f8fda150317775abd4af",
+    "abi/capability_compiler_repetition_v2.py": "8a7516efc0dd23360f3051b349d5d1b01180fe6966884f8d343044018b53eed7"
+  },
+  "execution_order": [
+    "Run D0 at all three paired seeds.",
+    "Run L0 and L1 at all three paired seeds serially on the GPU.",
+    "Stop for independent tree and metric verification before runtime profiling."
+  ],
+  "decision_rule": "Complete and preserve exactly nine runs and checkpoints. Do not stop on intermediate quality. Do not profile runtime, access final data, or adapt any configuration until the complete output tree is independently verified.",
+  "claim_boundary": "Three-seed exact-B40 equal-sequence baseline training and registered development evaluation only. No runtime, final test, matched ABI frontier, Phase 4, or ABI-superiority claim."
+}
