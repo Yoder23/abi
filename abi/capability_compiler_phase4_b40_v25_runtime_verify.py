@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 import hashlib
 import json
 from pathlib import Path
@@ -253,7 +254,13 @@ def verify(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
     changed_token = [dict(row) for row in gpu_rows]
     changed_token[0]["output_token_ids"] = [*changed_token[0]["output_token_ids"], 0]
     duplicated = [dict(row) for row in gpu_rows]
-    duplicated[-1]["probe_id"] = duplicated[0]["probe_id"]
+    multiplicities = Counter(str(row["probe_id"]) for row in duplicated)
+    unique_index = next(
+        index
+        for index, row in enumerate(duplicated)
+        if multiplicities[str(row["probe_id"])] == 1
+    )
+    duplicated[unique_index]["probe_id"] = duplicated[0]["probe_id"]
     mutations = {
         "cpu_raw_byte_mutation_rejected": hashlib.sha256(
             (root / protocol["cpu_observations"]).read_bytes() + b"x"

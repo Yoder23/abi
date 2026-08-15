@@ -15,3 +15,6 @@ def test_schedule_requires_120_rows_and_100_distinct_prompts():
     rows = [{"probe_id": str(index % 100)} for index in range(120)]
     assert _unique_schedule(rows)
     assert not _unique_schedule(rows[:-1])
+    mutated = [dict(row) for row in rows]
+    mutated[99]["probe_id"] = mutated[0]["probe_id"]
+    assert not _unique_schedule(mutated)

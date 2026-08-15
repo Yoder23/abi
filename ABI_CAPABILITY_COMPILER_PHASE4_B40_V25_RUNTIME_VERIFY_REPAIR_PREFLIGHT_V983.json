@@ -1,0 +1,18 @@
+{
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase4-b40-v25-runtime-verify-preflight/1",
+  "gates": {
+    "cpu_observation_depth": true,
+    "cpu_protocol_exact": true,
+    "final_test_not_accessed": true,
+    "gpu_observation_depth": true,
+    "gpu_protocol_exact": true,
+    "model_inference_absent": true,
+    "same_candidate_archive": true,
+    "training_absent": true
+  },
+  "model_inference_performed": false,
+  "protocol_sha256": "b402ebae1bd006e77916d2ddb2190188cdd248920716469d2db7e879e1be1eeb",
+  "status": "PASS_B40_V25_RUNTIME_VERIFIER_PREFLIGHT",
+  "training_performed": false
+}
