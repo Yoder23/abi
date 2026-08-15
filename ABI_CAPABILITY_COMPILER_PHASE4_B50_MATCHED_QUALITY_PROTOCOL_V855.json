@@ -1,0 +1,117 @@
+{
+  "format": "abi-capability-compiler-phase4-b50-matched-quality/1",
+  "protocol_id": "abi-capability-compiler-phase4-b50-matched-quality-v855",
+  "status": "PREREGISTERED_READ_ONLY_MATCHED_B50_COMPARISON",
+  "status_date": "2026-08-15",
+  "historical_evidence_changed": false,
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V854.json",
+  "objective": "Recompute from raw development outputs the exact same-seed ABI, L0, L1, D0, D1, D2, and teacher functional/collapse endpoints, Wilson gates, paired stratified bootstrap intervals, total deployment footprint, retained source parameters, source extraction cost, richer top-64 cost, successful training time, conservative active-parameter-seconds, and the incomplete interrupted-run lower bound without new inference or training.",
+  "seeds": [104729, 130363, 155921],
+  "development_catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+  "teacher_reference": "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl",
+  "baseline_headline_verification": "ABI_CAPABILITY_COMPILER_PHASE4_B50_HEADLINE_VERIFY_RESULT_V853.json",
+  "candidate_verification": "ABI_CAPABILITY_COMPILER_PHASE4_V22_B50_INDEPENDENT_VERIFY_RESULT_V798.json",
+  "candidate_screen_result": "results/abi_capability_compiler_phase4_v22_b50_rescreen/run_v796/result.json",
+  "baseline_pack_result": "ABI_CAPABILITY_COMPILER_PHASE4_B50_BASELINE_PACK_RESULT_V821.json",
+  "baseline_pack_verification": "ABI_CAPABILITY_COMPILER_PHASE4_B50_BASELINE_PACK_VERIFY_RESULT_V825.json",
+  "source_artifact_evidence": {
+    "phase1_certificate": "ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json",
+    "targeted_extraction_result": "ABI_CAPABILITY_COMPILER_PHASE3_TARGETED_EXTRACTION_RESULT_V136.json",
+    "targeted_source_summary": "results/abi_capability_compiler_phase3/targeted_extraction_v135/source_summary_v136.json",
+    "abstention_source_summary": "results/abi_capability_compiler_phase3/broad_abstention_v119/source_summary_v120.json",
+    "targeted_combined_ir_result": "ABI_CAPABILITY_COMPILER_PHASE3_TARGETED_COMBINED_IR_RESULT_V138.json",
+    "host_supervision_result": "ABI_CAPABILITY_COMPILER_PHASE3_HOST_SUPERVISION_BUILD_RESULT_V480.json",
+    "host_supervision_verification": "ABI_CAPABILITY_COMPILER_PHASE3_HOST_SUPERVISION_VERIFY_RESULT_V482.json",
+    "top64_result": "ABI_CAPABILITY_COMPILER_PHASE4_B50_TOP64_RESULT_V829.json"
+  },
+  "candidate_lineages": {
+    "104729": {
+      "result": "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed104729-v779/result.json"
+    },
+    "130363": {
+      "result": "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed130363-retry-v781/result.json",
+      "interrupted_attempt": {
+        "root": "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed130363-v780",
+        "stage_metadata_sha256": {
+          "router": "f0f731a57cc26628e658d79df4529e78ed31d6b0c94574dfae4a7af6f6ea7167",
+          "v443": "6b35e26ce3d146985ed5d4d1c1cfea4c3b4cab28d81bd8630c31d1d00e5ed51e",
+          "v459": "5a4199f21ed8b9f09cf7ae0860ace4c5f000dac8289a1a98802ea05f34fc82f0",
+          "v463": "1b78fccc4461991021cffb9d2fb071a902c2286a8d3f19d845505d8af160a9df",
+          "v474": "46a0c7971d35ce269be27cf8eb04b560858affd0e35e20ac8fa493f8d0ce239d",
+          "v484": "3ed8c0f4ec16fb4733f1475fb6b41f8fd6fc1bff56957b7de51bb0e98a033532"
+        },
+        "terminal_stage_cost_status": "NOT_RECOVERABLE_NO_METADATA"
+      }
+    },
+    "155921": {
+      "result": "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed155921-v782/result.json"
+    }
+  },
+  "absolute_screen": {
+    "per_capability_functional_point_estimate_minimum": 0.9,
+    "per_capability_functional_wilson_lower_minimum": 0.85,
+    "critical_point_minimum": 0.95,
+    "critical_wilson_lower_minimum": 0.9,
+    "repetition_collapse_v2_count_maximum": 0
+  },
+  "statistics": {
+    "bootstrap_replicates": 10000,
+    "noninferiority_lower_95_minimum": -0.05,
+    "candidate_teacher_seed_base": 240855000,
+    "baseline_teacher_seed_base": 240856000,
+    "candidate_baseline_seed_base": 240857000,
+    "method": "paired prompt-level capability-stratified percentile bootstrap"
+  },
+  "deployment_accounting": {
+    "lora_source_snapshot_bytes": 7644641499,
+    "versus_lora_total_deployed_bytes_ratio_maximum": 0.1,
+    "lora_rule": "Count the complete frozen source snapshot, tokenizer/config files, all fourteen adapter checkpoints, and the router; no source weight is free.",
+    "distilled_rule": "Count the complete same-size transformer checkpoint and every imported top-64 value/index payload where applicable.",
+    "abi_rule": "Count the complete signed cake archive and all component parameters; the teacher is absent."
+  },
+  "training_authorized": false,
+  "model_inference_authorized": false,
+  "runtime_profiling_authorized": false,
+  "teacher_model_loading_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "bindings": {
+    "abi/capability_compiler_phase4_b50_matched_quality.py": "16eb8a648406bbc0755c8e6d6ee3a9fa18ded2d63271a5a0abc2e0612fafd844",
+    "tests/test_capability_compiler_phase4_b50_matched_quality.py": "1c0948ac995c84be470c0ee417c0ef3a7a97e7071f42da7a66889b38ed098b83",
+    "abi/capability_compiler_phase4_b50_headline_verify.py": "d2e89409cb7091fc469212f893a8604d55851fba58f7620cdcfe820c0e355656",
+    "abi/capability_compiler_phase4_b50_grid_verify.py": "8e76d3f87b65f743da1ebca7b03cc26613f1432b36c34d4f11a0fb1795886e3d",
+    "abi/capability_compiler_phase4_v19_frontier_rescreen.py": "9bb840b0397d9fb47ef5c873685b2ec4d4f7b31202e62bd89efbfbe3e7c67199",
+    "abi/capability_compiler_phase3_routed_v15_autonomous_screen_isolated.py": "630adec895c76fc4eb79e52cc1fe7cada1476fc50ed8d40734e2462d600a093b",
+    "abi/capability_compiler_phase2_common.py": "8093ec2016d685f0327c87640042c8373bc141d76351fd641b21a44d018b6c92",
+    "abi/capability_compiler_phase2_prepare.py": "96467c3593b4228ed8ed7f5b5d6bda35e0fc686c2e168c26051643b085de20d8",
+    "abi/capability_compiler_functional_v2.py": "1755ceded6de7c8228ed91e5be6bf86452b6c5f02466f8fda150317775abd4af",
+    "abi/capability_compiler_repetition_v2.py": "8a7516efc0dd23360f3051b349d5d1b01180fe6966884f8d343044018b53eed7",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B50_HEADLINE_VERIFY_RESULT_V853.json": "bd333173a4a81a5da1879777bdc8865f6b7a1b9dd53d2017db0ede0345d48330",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V854.json": "b98ea73f05fbdb5026a95c48e8452a059b10869d3970b69cbfe06f2a7b71b076",
+    "ABI_CAPABILITY_COMPILER_PHASE4_V22_B50_INDEPENDENT_VERIFY_RESULT_V798.json": "6153e27ac4676a35cc23773d9e5b0a958f29ee67da84735fd2b355186c0c2b9e",
+    "results/abi_capability_compiler_phase4_v22_b50_rescreen/run_v796/result.json": "affd824b707b73e901a03679359a76c88169c8404925257e614084fd73d41474",
+    "ABI_CAPABILITY_COMPILER_PHASE4_V22_B50_RESCREEN_PROTOCOL_V795.json": "6e4e667643f3e19e64f8f4829b3e71cb8f36785f91da88fa0c1cee1e572a4f32",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B50_BASELINE_PACK_RESULT_V821.json": "68c4ce1098303d03d371ffbd753090beb070977f0c9bbdaae9cd112f0f3a1fa1",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B50_BASELINE_PACK_VERIFY_RESULT_V825.json": "3d66fd5d9f0162fc4fe9ca7265532d176e353f440ba22c0ecb2d7a79660e5b6c",
+    "ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json": "da0c69d53b9b3cf7604ba3e56812f3e9468dcbf293bb14a75576c02d4dc87735",
+    "ABI_CAPABILITY_COMPILER_PHASE3_TARGETED_EXTRACTION_RESULT_V136.json": "8d12e1e160ab53274fd61b3d5b0ab3ce042b93fe2cd47b1aeead19a168c40848",
+    "results/abi_capability_compiler_phase3/targeted_extraction_v135/source_summary_v136.json": "989931311aad35d009d8df086775c5e7972fa3ece7252fe74937c8592bb2eafc",
+    "results/abi_capability_compiler_phase3/broad_abstention_v119/source_summary_v120.json": "b25759924822765befe3d9089bfcfa8bb0bbeeaf5b19f8d83a90b4309a85d700",
+    "ABI_CAPABILITY_COMPILER_PHASE3_TARGETED_COMBINED_IR_RESULT_V138.json": "1f6587e29911d4911597e35d24ab7845204a94bdf0c58819b97e3ad159d1d6fa",
+    "ABI_CAPABILITY_COMPILER_PHASE3_HOST_SUPERVISION_BUILD_RESULT_V480.json": "2e1deeda1f815d8dae042760bd83a48923f9fce4ee720e128de04fd87b06cf95",
+    "ABI_CAPABILITY_COMPILER_PHASE3_HOST_SUPERVISION_VERIFY_RESULT_V482.json": "cc02267fdc54972021eca3b75275db2b14156eb64777ef0bec7169598565c4be",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B50_TOP64_RESULT_V829.json": "8c2cd278bbb350f22dcc3b43a90b70595eab5df43ac27bdf1aced2bb0d4d93cd",
+    "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl": "1081dbe57e75da50b2619bc2dab14c6441158dcd6068f2b864733936087e86a2",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed104729-v779/result.json": "72dc1b71285ced19f8614658ff761de4e6c5289c79109b7c2f03893b1dd3155e",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed130363-retry-v781/result.json": "1e760c7a7295bb68811c8d01f7ef9cff5ad72353f7c43753c076608e9d38dbc9",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed155921-v782/result.json": "9d23e481880e0c0fea26c5181721294cdb3e38e5ea4e522f1f6d04cac5413fed",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed130363-v780/router/metadata.json": "f0f731a57cc26628e658d79df4529e78ed31d6b0c94574dfae4a7af6f6ea7167",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed130363-v780/v443/metadata.json": "6b35e26ce3d146985ed5d4d1c1cfea4c3b4cab28d81bd8630c31d1d00e5ed51e",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed130363-v780/v459/metadata.json": "5a4199f21ed8b9f09cf7ae0860ace4c5f000dac8289a1a98802ea05f34fc82f0",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed130363-v780/v463/metadata.json": "1b78fccc4461991021cffb9d2fb071a902c2286a8d3f19d845505d8af160a9df",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed130363-v780/v474/metadata.json": "46a0c7971d35ce269be27cf8eb04b560858affd0e35e20ac8fa493f8d0ce239d",
+    "results/abi_capability_compiler_phase4_v21_refined_abi_lineage/B50-seed130363-v780/v484/metadata.json": "3ed8c0f4ec16fb4733f1475fb6b41f8fd6fc1bff56957b7de51bb0e98a033532"
+  },
+  "decision_rule": "Report each functional, package, source, deployment, training, and conservative active-parameter-second result separately. A system reaches matched quality only if all three seeds pass every absolute gate. ABI noninferiority requires every paired-seed lower 95% bound to be at least -0.05. Do not combine a quality win with a separately measured runtime win; composite superiority is deferred. The incomplete seed-130363 interrupted cost remains a lower bound and prohibits a matched training-efficiency endpoint.",
+  "claim_boundary": "Prospectively sealed read-only exact-B50 development quality, imported-information, deployment, and bounded cost comparison. No new inference, runtime, final test, stable minimum, Phase 4 certificate, or unconditional ABI-superiority claim."
+}
