@@ -1,0 +1,48 @@
+{
+  "format": "abi-capability-compiler-phase4-b40-v25-product-verify/1",
+  "protocol_id": "abi-capability-compiler-phase4-b40-v25-product-verify-v965",
+  "status": "PREREGISTERED_READ_ONLY_THREE_SEED_B40_V25_PRODUCT_VERIFIER",
+  "status_date": "2026-08-15",
+  "historical_evidence_changed": false,
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V964.json",
+  "objective": "Independently reconstruct all B40 quality, sparse-routing, tensor, signed-package, and aggregate claims; adversarially reject corrupted evidence; and combine only a clean three-seed pass with the independently verified all-seed B20 boundary.",
+  "product_protocol": "ABI_CAPABILITY_COMPILER_PHASE4_B40_V25_PRODUCT_CONFORMANCE_PROTOCOL_V960.json",
+  "product_result": "results/abi_capability_compiler_phase4_b40_v25_product_conformance/run_v962/result.json",
+  "aggregate_outputs": "results/abi_capability_compiler_phase4_b40_v25_product_conformance/run_v962/all_outputs.jsonl",
+  "b20_verified_boundary": "ABI_CAPABILITY_COMPILER_PHASE4_B20_BOUNDARY_VERIFIED_RESULT_V958.json",
+  "systems": [
+    {
+      "seed": 104729,
+      "product_outputs": "results/abi_capability_compiler_phase4_b40_v25_product_conformance/run_v962/seed104729_outputs.jsonl"
+    },
+    {
+      "seed": 130363,
+      "product_outputs": "results/abi_capability_compiler_phase4_b40_v25_product_conformance/run_v962/seed130363_outputs.jsonl"
+    },
+    {
+      "seed": 155921,
+      "product_outputs": "results/abi_capability_compiler_phase4_b40_v25_product_conformance/run_v962/seed155921_outputs.jsonl"
+    }
+  ],
+  "package_reconstruction_device": "cpu",
+  "model_inference_authorized": false,
+  "package_reconstruction_authorized": true,
+  "training_authorized": false,
+  "teacher_model_loading_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "bindings": {
+    "abi/capability_compiler_phase4_b40_v25_product_verify.py": "c2ac8a59dbf72143e166a49d159931f0927b855f08b011ba3e7a75a3508314ba",
+    "tests/test_capability_compiler_phase4_b40_v25_product_verify.py": "de517d209e2ef1d4b9ca61957a80bf71660ea26f798e7532b7a45c0803906e64",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V964.json": "e5d4c1a458edb8054d24ebeca1a4061f6a7e8069911698d01f76064b1afc4e74",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B40_V25_PRODUCT_CONFORMANCE_RESULT_V963.json": "ce8207536f2345ae6e47808a212225a6b4c14cc106f6983f1803b62ef85c37f8",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B40_V25_PRODUCT_CONFORMANCE_PROTOCOL_V960.json": "ab7ca91e2516c2c431a24df05100cae3408dfed23b5ad592f6619a098dc74f30",
+    "results/abi_capability_compiler_phase4_b40_v25_product_conformance/run_v962/result.json": "8322f52dad10cffd457ad124f059249e1adcdb34ef4765d1ffd04a05cb825ca6",
+    "results/abi_capability_compiler_phase4_b40_v25_product_conformance/run_v962/all_outputs.jsonl": "b01c768d8d64f5295c828874f0bf77ded3a4321d204633e707cd198d93c16c05",
+    "results/abi_capability_compiler_phase4_b40_v25_product_conformance/run_v962/seed104729_outputs.jsonl": "36e739460509e82ccd0b593ac6857fa1bfedc8aa6ee044f3a0d364c71e89453f",
+    "results/abi_capability_compiler_phase4_b40_v25_product_conformance/run_v962/seed130363_outputs.jsonl": "a774fe8857db7c96c725d5554da47ccce2b5e7a2c7e1188a16cffa72a787ec62",
+    "results/abi_capability_compiler_phase4_b40_v25_product_conformance/run_v962/seed155921_outputs.jsonl": "2b5123bb0aac064938dde1b15fd9888c68675f15860e5863962457632329be8c",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B20_BOUNDARY_VERIFIED_RESULT_V958.json": "3afb3e6c8f0a652ab738fc3f0fad7a2a6e78cfe98d333cc9002a1c9fc270a044"
+  },
+  "decision_rule": "Establish B40 only as the smallest tested stable selected-information budget among exact B20 and B40 five-route LayerCake v25 systems, and only if all three B40 systems independently reconstruct as passes, all three packages rebuild and authenticate identically, the aggregate 4,200 rows are exact, the independent B20 all-seed failure boundary is bound, and every registered evidence mutation is rejected.",
+  "claim_boundary": "Read-only development verifier. No runtime, matched-baseline, external-human, final-test, Phase 4, or ABI-superiority certification."
+}

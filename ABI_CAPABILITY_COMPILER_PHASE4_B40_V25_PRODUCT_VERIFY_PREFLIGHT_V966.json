@@ -1,0 +1,43 @@
+{
+  "checks": [
+    {
+      "candidate_sha256": "323e3c0177f24a47efb3aeaca0e9f9ddfbfe721868c4dc5e35c17c7a853cdcce",
+      "inherited_four_routes_exact": true,
+      "product_rows": 1400,
+      "qualified_rows": 1400,
+      "seed": 104729
+    },
+    {
+      "candidate_sha256": "3294bcf5fa6ed9d863e9b3554204f5d8f896bca2ada98f9361cbedf89a34ae75",
+      "inherited_four_routes_exact": true,
+      "product_rows": 1400,
+      "qualified_rows": 1400,
+      "seed": 130363
+    },
+    {
+      "candidate_sha256": "2bd7c4c986acba810152dbfd631d308fd71b7aeff4455839a761ba5aaf0d622d",
+      "inherited_four_routes_exact": true,
+      "product_rows": 1400,
+      "qualified_rows": 1400,
+      "seed": 155921
+    }
+  ],
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase4-b40-v25-product-verify-preflight/1",
+  "gates": {
+    "all_inherited_routes_exact": true,
+    "all_product_matrices_complete": true,
+    "all_qualified_matrices_complete": true,
+    "b20_boundary_is_independently_verified": true,
+    "final_test_not_accessed": true,
+    "model_inference_absent": true,
+    "teacher_loading_absent": true,
+    "three_fixed_seeds": true,
+    "training_absent": true
+  },
+  "model_inference_performed": false,
+  "protocol_sha256": "251ca3bf18dc88c041e22c26e664d433332715d4039ca927ecf9eb33c9a15d7b",
+  "status": "PASS_B40_V25_INDEPENDENT_VERIFIER_PREFLIGHT",
+  "teacher_model_loaded": false,
+  "training_performed": false
+}
