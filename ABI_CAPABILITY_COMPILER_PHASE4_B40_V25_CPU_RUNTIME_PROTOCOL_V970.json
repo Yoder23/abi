@@ -1,0 +1,52 @@
+{
+  "format": "abi-capability-compiler-phase4-b40-v25-runtime/1",
+  "protocol_id": "abi-capability-compiler-phase4-b40-v25-cpu-runtime-v970",
+  "status": "PREREGISTERED_EXACT_B40_V25_CPU_RUNTIME",
+  "status_date": "2026-08-15",
+  "historical_evidence_changed": false,
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V969.json",
+  "objective": "Run the unchanged 100-distinct-plus-20-repeat CPU/Qwen product benchmark on the exact independently verified seed-104729 B40 V25 package, preserving output identity and measuring genuine cold request timing, steady-state throughput, TTFT, active memory, and physical sparse execution.",
+  "base_runtime_protocol": "ABI_CAPABILITY_COMPILER_PHASE4_B50_CPU_RUNTIME_PROTOCOL_V859.json",
+  "candidate_screen_protocol": "ABI_CAPABILITY_COMPILER_PHASE4_B40_V25_PRODUCT_CONFORMANCE_PROTOCOL_V960.json",
+  "runtime_interface": "lc-direct-neural-core/25",
+  "v25_runtime_mode": "cpu",
+  "v25_product_result": "results/abi_capability_compiler_phase4_b40_v25_product_conformance/run_v962/result.json",
+  "systems": {
+    "ABI": {
+      "seed": 104729,
+      "role": "signed_layercake_v25_exact_b40_five_route_product",
+      "quality_reference_outputs": "results/abi_capability_compiler_phase4_b40_v25_product_conformance/run_v962/seed104729_outputs.jsonl",
+      "quality_reference_sha256": "36e739460509e82ccd0b593ac6857fa1bfedc8aa6ee044f3a0d364c71e89453f",
+      "archive_sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+      "archive_bytes": 253216208,
+      "tensor_payload_hash": "18ad787696cf8737578253035ad84b7e0145d995f028c6392ba338b6117d5aba",
+      "total_parameters": 62837506
+    }
+  },
+  "locked_phase2_runtime": {
+    "result": "ABI_CAPABILITY_COMPILER_PHASE4_B50_V24_PAIRED_RETENTION_RESULT_V887.json",
+    "median_bytes_per_second": 245.44438047665926,
+    "role": "prospectively sealed ordinary-host throughput floor; the B40 artifact is measured fresh and does not inherit this speed"
+  },
+  "training_authorized": false,
+  "teacher_query_generation_authorized": false,
+  "candidate_construction_authorized": false,
+  "deterministic_package_rebuild_authorized": true,
+  "final_test_access": "PROHIBITED",
+  "bindings": {
+    "abi/capability_compiler_phase4_b40_v25_runtime.py": "e4495145fbef42494bcd53fcbd550f63cc1fc9697fb62fc608915f67df3ca0d0",
+    "tests/test_capability_compiler_phase4_b40_v25_runtime.py": "8c8726080505290ad519dcc5b9543bb6fa1d5201c5f8b1f377aa1e507bc36a1e",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V969.json": "76943e9494699bbf324eb01c5b8b73e9a4b509f53658d94e0d52ae43037985ae",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B40_V25_PRODUCT_VERIFIED_RESULT_V968.json": "fac1f6f720c249388a64b922e49fa74aeb03a75f8b8dce88317860c6e90572d8",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B40_V25_PRODUCT_CONFORMANCE_PROTOCOL_V960.json": "ab7ca91e2516c2c431a24df05100cae3408dfed23b5ad592f6619a098dc74f30",
+    "results/abi_capability_compiler_phase4_b40_v25_product_conformance/run_v962/result.json": "8322f52dad10cffd457ad124f059249e1adcdb34ef4765d1ffd04a05cb825ca6",
+    "results/abi_capability_compiler_phase4_b40_v25_product_conformance/run_v962/seed104729_outputs.jsonl": "36e739460509e82ccd0b593ac6857fa1bfedc8aa6ee044f3a0d364c71e89453f",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B50_CPU_RUNTIME_PROTOCOL_V859.json": "99d2ceb76ef47230af54ca1e430ea0dacbb87abe97bc06dd0ba33b5dbbb8122b",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B50_V24_PAIRED_RETENTION_RESULT_V887.json": "84fc2e9ed73b93e92b2da36535f9ea17ab07eb780e71e1449006534106a130b6",
+    "../layercake_release/layercake_extensions/route_isolated_clarification_core_v25.py": "7b176f21e6a86f3aaded724462d37149f8f8be48370bcdd163fe44c49e3464ce",
+    "../layercake_release/moonshot/canonical_route_isolated_clarification_core_abi_v25.json": "6d0fea2697fc7af74e9f3cfaee591d658b3244acfb10502048a4105c010b6908",
+    "../layercake_release/moonshot/postrelease_route_isolated_v25_clarification_route_decision_v89.json": "4459faed0eee66b543d696b45cbc326c8622d062393f744e98518dc9c13100d7"
+  },
+  "decision_rule": "Every unchanged V859 CPU/Qwen quality, speed, TTFT, cold-start, memory, CPU-only, output-identity, token-accounting, depth, receiver-learning, and physical-execution gate must pass on the exact B40 V25 package. Fresh median throughput and its paired prompt-level bootstrap lower bound must both exceed Qwen by at least 2x, and ordinary-host throughput must retain at least 95 percent of the sealed reference.",
+  "claim_boundary": "Prospectively sealed exact-B40-V25 development CPU runtime only. No matched B40 LoRA/distillation endpoint, external human review, final test, Phase 4, or ABI-superiority claim."
+}
