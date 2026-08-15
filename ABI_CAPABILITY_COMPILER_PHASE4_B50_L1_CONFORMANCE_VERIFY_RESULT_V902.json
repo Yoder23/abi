@@ -1,0 +1,53 @@
+{
+  "format": "abi-capability-compiler-phase4-b50-l1-conformance-verified-summary/1",
+  "version": 902,
+  "status_date": "2026-08-15",
+  "status": "PASS_INDEPENDENTLY_VERIFIED_QUALITY_QUALIFIED_CONFORMED_L1",
+  "historical_evidence_changed": false,
+  "source_protocol": "ABI_CAPABILITY_COMPILER_PHASE4_B50_L1_CONFORMANCE_PROTOCOL_V898.json",
+  "source_result": "results/abi_capability_compiler_phase4_b50_l1_conformance/run_v899/result.json",
+  "source_result_sha256": "1e86e22d491dc2797391fcef01823ef3b653a3bd25637ba0af5d5e028fc26d4f",
+  "verification_protocol": "ABI_CAPABILITY_COMPILER_PHASE4_B50_L1_CONFORMANCE_VERIFY_PROTOCOL_V900.json",
+  "verification_result": "results/abi_capability_compiler_phase4_b50_l1_conformance_verify/run_v901/result.json",
+  "verification_result_sha256": "d8966087c01cd74817f707abd71132ed73089b1643b4c2345ff221de758a0b50",
+  "matrix": [
+    {
+      "seed": 104729,
+      "functional_passes_v1": 1396,
+      "repetition_collapses_v2": 0,
+      "changed_outputs": 0,
+      "all_quality_gates_pass": true
+    },
+    {
+      "seed": 130363,
+      "functional_passes_v1": 1388,
+      "repetition_collapses_v2": 0,
+      "changed_outputs": 25,
+      "all_quality_gates_pass": true
+    },
+    {
+      "seed": 155921,
+      "functional_passes_v1": 1393,
+      "repetition_collapses_v2": 0,
+      "changed_outputs": 0,
+      "all_quality_gates_pass": true
+    }
+  ],
+  "verified_facts": {
+    "rows_reconstructed": 4200,
+    "changed_outputs": 25,
+    "changes_only_seed130363_abstention": true,
+    "semantic_v2_and_collapse_preserved": true,
+    "nonmatching_outputs_byte_identical": true,
+    "learned_parameters_added": 0,
+    "teacher_required": false,
+    "training_performed": false,
+    "model_inference_performed": false,
+    "final_test_accessed": false
+  },
+  "preserved_negative_evidence": "The unmodified L1 endpoint remains FAIL at seed130363 under the legacy V1 abstention literal. This successor is a separately named, post-failure product conformance repair and does not rewrite V853 or V856.",
+  "phase4_certified": false,
+  "abi_superiority_certified": false,
+  "next_action": "Preregister and measure the same seed104729 checkpoint with the conformance rule physically executed and included in GPU request timing, then compose it against the exact V24 candidate.",
+  "claim_boundary": "The conformed B50 L1 product is independently quality-qualified across three seeds. Runtime, composite dominance, final test, Phase 4, and ABI superiority remain open."
+}
