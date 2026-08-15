@@ -1,0 +1,65 @@
+{
+  "format": "abi-capability-compiler-phase4-clarification-route-summary/1",
+  "version": 918,
+  "status_date": "2026-08-15",
+  "status": "PASS_B40_HARD_SEED_CLARIFICATION_ROUTE_PENDING_INDEPENDENT_VERIFICATION",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_CLARIFICATION_ROUTE_PROTOCOL_V916.json",
+    "sha256": "616487a3e54e48f3226b19c94497626bc406630c845144f951cd1bbb19d7d9f1"
+  },
+  "preflight": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_CLARIFICATION_ROUTE_PREFLIGHT_V917.json",
+    "sha256": "1fc007244276cd9c9b71e2b59c036d68ef80f10567e721196897070e22b1d284"
+  },
+  "candidate": {
+    "checkpoint": "results/abi_capability_compiler_phase4_clarification_route/B40-seed155921-v918/candidate/clarification_route.safetensors",
+    "checkpoint_sha256": "2bd7c4c986acba810152dbfd631d308fd71b7aeff4455839a761ba5aaf0d622d",
+    "checkpoint_bytes": 498072,
+    "metadata": "results/abi_capability_compiler_phase4_clarification_route/B40-seed155921-v918/candidate/metadata.json",
+    "metadata_sha256": "d568be51c22b3f6dc749e69ab34db0f90c71c3f33407afc0e4bb84ada36ef289"
+  },
+  "evaluation": {
+    "result": "results/abi_capability_compiler_phase4_clarification_route/B40-seed155921-v918/evaluation/result.json",
+    "result_sha256": "b0f3e6dfe10b789ecea9653275638033af0ec1ffdecddca2f74afe160d032d05",
+    "evidence_sha256": "be897c8072f7a7944c54e450c77ae99f55ae6d3b69c080e30f2fc2915464c80a",
+    "outputs": "results/abi_capability_compiler_phase4_clarification_route/B40-seed155921-v918/evaluation/development_outputs.jsonl",
+    "outputs_sha256": "c2b935caa64f219a26be05cff7778c6e638bc235803643979ce17661e89efcca"
+  },
+  "quality": {
+    "historical_clarification_passes": 90,
+    "candidate_clarification_passes": 95,
+    "clarification_wilson_lower_95": 0.8882495307680808,
+    "functional_passes_v1": 1377,
+    "repetition_collapses_v2": 0,
+    "teacher_relative_lower_95": 0.08428571428571428,
+    "all_locked_machine_gates": true
+  },
+  "isolation": {
+    "nonclarification_rows_exact": "1300/1300",
+    "clarification_rows_on_new_route": "100/100",
+    "inherited_four_routes_tensor_exact": true,
+    "parent_mutated": false,
+    "router_mutated": false,
+    "active_routes_per_token": 1
+  },
+  "resource_accounting": {
+    "new_trainable_parameters": 24576,
+    "installed_parameters": 124416,
+    "active_parameters_on_clarification": 26112,
+    "training_steps": 2000,
+    "training_wall_seconds": 37.06000450000283,
+    "unique_source_attempts": 4005,
+    "authoritative_teacher_output_tokens": 123167,
+    "teacher_response_tokens_in_route_loss": 45880,
+    "new_teacher_outputs": 0,
+    "stored_logits": 0,
+    "stored_hidden_activations": 0,
+    "source_parameters_copied": 0
+  },
+  "adaptive_decision": "Do not start paired-seed replication until a prospectively sealed independent verifier reconstructs the result and rejects mutations.",
+  "teacher_model_loaded": false,
+  "final_test_accessed": false,
+  "phase4_certified": false,
+  "claim_boundary": "One hard-seed development pass pending independent verification. No replication, stable minimum, product runtime, final test, Phase 4 certificate, or ABI-superiority claim."
+}
