@@ -213,7 +213,7 @@ def run(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
             )
             if (
                 package["tensor_payload_hash"]
-                != protocol["expected"]["tensor_payload_sha256"]
+                != system["tensor_payload_sha256"]
                 or int(package["total_parameters"])
                 != int(protocol["expected"]["parameters_per_seed"])
             ):
