@@ -1,0 +1,42 @@
+{
+  "format": "abi-capability-compiler-phase4-b50-v23-gpu-runtime-decision/1",
+  "result_id": "abi-capability-compiler-phase4-b50-v23-gpu-runtime-result-v875",
+  "status": "PASS_EXACT_B50_V23_GPU_RUNTIME",
+  "status_date": "2026-08-15",
+  "historical_evidence_changed": false,
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE4_B50_V23_GPU_RUNTIME_PROTOCOL_V871.json",
+  "protocol_sha256": "10a810c63832bdf3da6cc1a8f4f29e213f77b85d80a60300f6672d4ec7dd97b7",
+  "raw_result": "results/abi_capability_compiler_phase4_b50_v23_gpu_runtime/run_v874/result.json",
+  "raw_result_sha256": "1a683f952ee71f1c5f146780b1ce9b1ef0b56ff9cb57eb8629fe036fa86d35b6",
+  "engine_result_sha256": "614a62aad30fb8210246819086e740353bf9a9ca1c8a7e3ef61261628e6f63e1",
+  "observations_sha256": "84970f67d06b63528508be2ae6540f2db4755a439e1cb346633665136471a55a",
+  "wrapper_evidence_sha256": "4d6a737c1394836852e9439b605241313a81eec62ca4b94bb5baef0099aaabee",
+  "package": {
+    "archive_sha256": "b2b828eef01871ef1171a9c2c8f5e946ee0af3969675ff07b2edfe6d9c34a528",
+    "tensor_payload_hash": "625389ca7c8eb39e281ae089c534166266e9445c156cdb195c51cea91b60e56f",
+    "runtime_interface": "lc-direct-neural-core/23"
+  },
+  "metrics": {
+    "median_bytes_per_second": 876.8604179759881,
+    "median_characters_per_second": 876.8604179759881,
+    "median_ttft_seconds": 0.012439899990567937,
+    "median_total_seconds": 0.06589724999503233,
+    "p05_bytes_per_second": 403.61499788413687,
+    "p95_ttft_seconds": 0.023392274999059732,
+    "p95_total_seconds": 0.3397317100054351,
+    "active_tensor_bytes": 254397460,
+    "peak_process_rss_delta_bytes": 605618176,
+    "peak_cuda_allocated_bytes": 503887872,
+    "runtime_output_identities": 120,
+    "distinct_prompts": 100,
+    "repeated_observations": 20
+  },
+  "passed_gate_count": 11,
+  "failed_gate_count": 0,
+  "phase4_certified": false,
+  "final_test_accessed": false,
+  "training_performed": false,
+  "teacher_query_performed": false,
+  "decision": "The exact V23 package passes every preregistered candidate CUDA runtime gate and preserves all 120 locked outputs. This is necessary runtime evidence only; it does not supply a quality-qualified matched comparator or cure the failed CPU gates.",
+  "claim_boundary": "Exact V23 development CUDA runtime pass. No CPU composition, final test, matched-quality comparator endpoint, Phase 4 certificate, or unconditional ABI-superiority claim."
+}
