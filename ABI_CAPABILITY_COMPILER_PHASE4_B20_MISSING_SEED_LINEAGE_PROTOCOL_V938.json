@@ -1,0 +1,35 @@
+{
+  "format": "abi-capability-compiler-phase4-b20-missing-seed-lineage/1",
+  "protocol_id": "abi-capability-compiler-phase4-b20-missing-seed-lineage-v938",
+  "status": "PREREGISTERED_TWO_MISSING_B20_CLEAN_START_LINEAGES",
+  "status_date": "2026-08-15",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V937.json",
+  "historical_evidence_changed": false,
+  "objective": "Build exactly the two missing B20 paired-seed lineages from the immutable pre-V443 host through the unchanged V570 stages and frozen B20 information prefix, without larger-checkpoint reuse or teacher loading.",
+  "base_protocol": "ABI_CAPABILITY_COMPILER_PHASE4_ABI_LINEAGE_PROTOCOL_V570.json",
+  "training_device": "cuda",
+  "teacher_model_loading_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "nearby_sweeps_authorized": false,
+  "runs": [
+    {"budget":"B20","seed":130363,"output":"results/abi_capability_compiler_phase4_b20_missing_seed_lineage/B20-seed130363-v940"},
+    {"budget":"B20","seed":155921,"output":"results/abi_capability_compiler_phase4_b20_missing_seed_lineage/B20-seed155921-v941"}
+  ],
+  "frozen_information": {
+    "unique_source_attempts": 2028,
+    "authoritative_teacher_output_tokens": 62417,
+    "record_memberships": 2056,
+    "selection_sha256": "1e0fb7341c49a725eccdeb41f835309c438a2654c0f5b21e0cf05286f5faf15e"
+  },
+  "adaptive_order": "Build seed130363, apply the separately preregistered generous same-host oracle, and build seed155921 only if seed130363 remains failed. Any seed surviving the oracle requires exact five-route/v22 product inference before a boundary decision. No other budget or seed is authorized.",
+  "bindings": {
+    "abi/capability_compiler_phase4_b20_missing_seed_lineage.py": "c524ba526cee8b8e0261fb1f9eae422223be0a6792a127d52de31f5ccb4e746f",
+    "tests/test_capability_compiler_phase4_b20_missing_seed_lineage.py": "8716ca5af28f7b94b8b66905b25c5563bab1ecb65d47ab7777afc0bc498e9f10",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V937.json": "6596a91dac833ce65999f896c41d1a1bedcbd602ee4923f896ea6e328393e8cc",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B20_HOST_COMPATIBILITY_AUDIT_RESULT_V936.json": "a57d9e526a1111d02b7a71fb2073801de5dd06eee0c5366678f20df7b2b62b01",
+    "ABI_CAPABILITY_COMPILER_PHASE4_ABI_LINEAGE_PROTOCOL_V570.json": "50cd9abc83b584bf1682b57f606bbdcba75fbeda76eeeaa48edafbbc08e8505c",
+    "results/abi_capability_compiler_phase4_budget_manifest/manifest_v567.json": "3e2c6d92dc51f75842a4e15d9449437ea849f04bedc25047347625c8cb5877ea"
+  },
+  "decision_rule": "Each lineage must rebuild every ABI data-dependent stage from the same immutable clean start, preserve the exact B20 selection and accounting, use its registered seed, keep the teacher absent, and access no final data. The lineage result alone cannot establish the lower-anchor failure; the same-host oracle or physical screen is separately required.",
+  "claim_boundary": "Two clean-start B20 lineage builds only. No all-seed lower-anchor result, stable minimum, product runtime, final test, Phase 4 certificate, or ABI-superiority claim."
+}

@@ -1,0 +1,25 @@
+{
+  "format": "abi-capability-compiler-phase4-b20-host-compatibility-audit-summary/1",
+  "version": 936,
+  "status_date": "2026-08-15",
+  "status": "PASS_B20_SEED104729_FAILS_EVEN_GENEROUS_SAME_HOST_ORACLE",
+  "historical_evidence_changed": false,
+  "protocol": {"path":"ABI_CAPABILITY_COMPILER_PHASE4_B20_HOST_COMPATIBILITY_AUDIT_PROTOCOL_V934.json","sha256":"60cf846cc7dcf01d0925d065978166b68495a7ae02c6120404b37811d4c057c5"},
+  "result": {"path":"results/abi_capability_compiler_phase4_b20_host_compatibility_audit/run_v935/result.json","sha256":"859ec44e88a73964ed6af2f2635a7886e144336e642718db37b728dbf1b3730a","evidence_sha256":"8adef2f43c0b240ba2e2654ce4202e72873a1cec27f63754e49ad67c582c2623"},
+  "oracle": {
+    "changeable_rows_granted_pass_and_zero_collapse": 307,
+    "historical_functional_passes": 1251,
+    "oracle_functional_passes": 1356,
+    "immutable_fluent_realization": "88/100; Wilson lower 0.801879",
+    "immutable_instruction_following": "94/100; Wilson lower 0.875232",
+    "immutable_tone_control": "90/100; Wilson lower 0.825634"
+  },
+  "decision": "B20 seed104729 is a proven lower-anchor failure even after granting perfect outcomes to every row the v19-v22 host or fifth clarification route can change.",
+  "authorized_next_action": "Build only B20 seeds130363 and155921 from the same immutable clean start. Apply the same generous host oracle to each before any physical five-route product inference.",
+  "model_inference_performed": false,
+  "training_performed": false,
+  "teacher_model_loaded": false,
+  "final_test_accessed": false,
+  "phase4_certified": false,
+  "claim_boundary": "One B20 seed failure is host-robust. Two lower-anchor seeds, stable minimum, product runtime, final test, Phase 4, and ABI superiority remain open."
+}

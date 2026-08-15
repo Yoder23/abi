@@ -1,0 +1,41 @@
+{
+  "format": "abi-capability-compiler-phase4-b20-host-compatibility-audit/1",
+  "protocol_id": "abi-capability-compiler-phase4-b20-host-compatibility-audit-v934",
+  "status": "PREREGISTERED_READ_ONLY_B20_HOST_COMPATIBILITY_AUDIT",
+  "status_date": "2026-08-15",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V933.json",
+  "historical_evidence_changed": false,
+  "objective": "Determine whether the existing B20 seed104729 failure necessarily survives the complete declared v19-v22 host plus fifth clarification route, granting an oracle pass to every row any declared mechanism could change.",
+  "model_inference_authorized": false,
+  "training_authorized": false,
+  "teacher_model_loading_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "b20_outputs": "results/abi_capability_compiler_phase4_abi_lineage/B20-seed104729-v573/evaluation/development_outputs.jsonl",
+  "b20_result": "results/abi_capability_compiler_phase4_abi_lineage/B20-seed104729-v573/evaluation/result.json",
+  "declared_host_change_scope": {
+    "v19": "coherence prompt-span rows only",
+    "v20_v21": "rows that trigger the unchanged repetition-collapse predicate only",
+    "v22": "format-control literal rows only",
+    "fifth_route": "clarification rows only"
+  },
+  "thresholds": {
+    "per_capability_point": 0.9,
+    "per_capability_lower": 0.85,
+    "critical_point": 0.95,
+    "critical_lower": 0.9
+  },
+  "bindings": {
+    "abi/capability_compiler_phase4_b20_host_compatibility_audit.py": "0c4bce033de18b04160978cc733c1370d0df320ae1b69a052fb814a5ddac666a",
+    "tests/test_capability_compiler_phase4_b20_host_compatibility_audit.py": "84e82dfbbfa9cca71fa6f86fc2db457db75acc3fcc909c752688d4545c88be2b",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V933.json": "ff15ee94c25edbdd9c882d4b23b0ca0096312c2c6e990f07ebad412af41f1025",
+    "ABI_CAPABILITY_COMPILER_PHASE4_CLARIFICATION_ROUTE_MATRIX_VERIFY_RESULT_V932.json": "0bd064b4134adcef8c9d96976a06eaa42a1b03f385c9414920033eac9fa8606b",
+    "results/abi_capability_compiler_phase4_abi_lineage/B20-seed104729-v573/evaluation/result.json": "38ad5235d5dc59d03bd21d5bf1177b2546b7b272a93e5fd07558bcf94aac700b",
+    "results/abi_capability_compiler_phase4_abi_lineage/B20-seed104729-v573/evaluation/development_outputs.jsonl": "b80d289e0c902e2ff2127258f499aaafd9d5edd315574a9a9c82977249264f2f",
+    "../layercake_release/layercake_extensions/route_isolated_prompt_span_core_v19.py": "d9223820a3059586e256513e9b74f3ee924ee233e4dfd6422dd64c1e2086390f",
+    "../layercake_release/layercake_extensions/route_isolated_universal_guard_core_v20.py": "2eb35734d04b2d31a6c9ac3d19ebe459685a68f9b46f609e8fd6316106d2e8e9",
+    "../layercake_release/layercake_extensions/route_isolated_lexical_guard_core_v21.py": "1b90786020e042ff129322e8e3531a3608da0e8487c83ef32da344e8baaa4277",
+    "../layercake_release/layercake_extensions/route_isolated_format_literal_core_v22.py": "88cb4cc7f212469f9f78cad9d0811fd7175f8f21f4e7b89455dc6b76c74b2f1c"
+  },
+  "decision_rule": "Pass only if every declared host-change mechanism is represented, all changeable rows are granted perfect functional/collapse outcomes, and at least one untouched capability still fails an unchanged required confidence gate. No hypothetical improvement may be denied to a changeable row.",
+  "claim_boundary": "Read-only B20 seed104729 host-compatibility proof only. Missing B20 seeds, stable minimum, product runtime, final test, Phase 4, and ABI superiority remain open."
+}

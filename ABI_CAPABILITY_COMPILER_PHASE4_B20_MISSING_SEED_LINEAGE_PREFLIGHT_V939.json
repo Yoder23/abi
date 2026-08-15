@@ -1,0 +1,25 @@
+{
+  "format": "abi-capability-compiler-phase4-b20-missing-seed-lineage-preflight/1",
+  "status": "PASS_B20_MISSING_SEED_LINEAGE_PREFLIGHT",
+  "status_date": "2026-08-15",
+  "protocol_sha256": "2c50b632065ee7b3b738efdbc32198ea3a8efa46544a1a3a5bb29112db91fc85",
+  "accounting": {
+    "unique_source_attempts": 2028,
+    "authoritative_teacher_output_tokens": 62417,
+    "record_memberships": 2056,
+    "selection_sha256": "1e0fb7341c49a725eccdeb41f835309c438a2654c0f5b21e0cf05286f5faf15e"
+  },
+  "checks": [
+    {"seed":130363,"output_absent":true,"phase1_records":1400,"targeted_records":400,"host_records":256},
+    {"seed":155921,"output_absent":true,"phase1_records":1400,"targeted_records":400,"host_records":256}
+  ],
+  "gates": {
+    "two_missing_seeds": true,
+    "b20_selection_exact": true,
+    "same_clean_start_protocol": true,
+    "teacher_loading_absent": true,
+    "final_test_not_accessed": true
+  },
+  "teacher_model_loaded": false,
+  "final_test_accessed": false
+}

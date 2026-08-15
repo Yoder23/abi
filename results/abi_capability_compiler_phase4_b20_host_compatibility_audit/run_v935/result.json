@@ -1,0 +1,64 @@
+{
+  "authorized_next_action": "Build only the missing B20 seeds130363 and155921 from the immutable clean start, then apply the same generous read-only host oracle first. Physical five-route/v22 inference is unnecessary for a seed whose immutable rows already prove failure; any seed that survives the oracle requires the exact product screen.",
+  "claim_boundary": "Read-only B20 seed104729 lower-anchor failure proof. Missing B20 seeds, stable minimum, product runtime, final test, Phase 4, and ABI superiority remain open.",
+  "decision": "Even granting a functional pass and zero collapse to every row that v19 coherence, v20/v21 guarding, v22 format realization, or the fifth clarification route can change, B20 seed104729 still fails unchanged fluent-realization, instruction-following, and tone-control confidence gates.",
+  "evidence_sha256": "8adef2f43c0b240ba2e2654ce4202e72873a1cec27f63754e49ad67c582c2623",
+  "failure_gates": {
+    "fluent_realization_per_capability": true,
+    "instruction_following_critical": true,
+    "tone_control_per_capability": true
+  },
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase4-b20-host-compatibility-audit-result/1",
+  "gates": {
+    "declared_baseline_reproduced": true,
+    "exact_1400_rows": true,
+    "final_test_not_accessed": true,
+    "host_scope_exhaustive_for_declared_mechanisms": true,
+    "model_inference_absent": true,
+    "oracle_grants_every_changeable_row": true,
+    "teacher_model_loading_absent": true,
+    "three_immutable_gate_failures": true,
+    "training_absent": true
+  },
+  "historical_collapses": 7,
+  "historical_functional_passes": 1251,
+  "host_changeable_rows": 307,
+  "host_immutable_rows": 1093,
+  "locked_failures": {
+    "fluent_realization": {
+      "observations": 100,
+      "passes": 88,
+      "wilson": {
+        "lower_95": 0.8018790057328857,
+        "point": 0.88,
+        "upper_95": 0.9300059356298052
+      }
+    },
+    "instruction_following": {
+      "observations": 100,
+      "passes": 94,
+      "wilson": {
+        "lower_95": 0.8752318455410406,
+        "point": 0.94,
+        "upper_95": 0.9722138760368118
+      }
+    },
+    "tone_control": {
+      "observations": 100,
+      "passes": 90,
+      "wilson": {
+        "lower_95": 0.8256343384950865,
+        "point": 0.9,
+        "upper_95": 0.9447708629393249
+      }
+    }
+  },
+  "model_inference_performed": false,
+  "oracle_functional_passes": 1356,
+  "phase4_certified": false,
+  "protocol_sha256": "60cf846cc7dcf01d0925d065978166b68495a7ae02c6120404b37811d4c057c5",
+  "status": "PASS_B20_SEED104729_REMAINS_FAILED_UNDER_GENEROUS_HOST_ORACLE",
+  "teacher_model_loaded": false,
+  "training_performed": false
+}
