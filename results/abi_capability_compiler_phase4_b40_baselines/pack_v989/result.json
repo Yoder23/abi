@@ -1,0 +1,117 @@
+{
+  "baseline_channels": {
+    "D0": [
+      "teacher_generated_sequence"
+    ],
+    "L0": [
+      "teacher_generated_sequence"
+    ],
+    "L1": [
+      "teacher_generated_sequence"
+    ]
+  },
+  "budget": {
+    "authoritative_teacher_output_tokens": 123167,
+    "duplicate_memberships": 107,
+    "fraction": 0.4,
+    "id": "B40",
+    "record_memberships": 4112,
+    "records": {
+      "phase1_ir": 2800,
+      "v138_targeted_ir": 800,
+      "v480_host_supervision": 512
+    },
+    "selection_sha256": "e494d251f8517495ab216128ca323755cade8015754f64aaacf28ad252e5bee6",
+    "unique_source_attempts": 4005
+  },
+  "capability_memberships": {
+    "abstention": 528,
+    "clarification": 200,
+    "coherence": 528,
+    "conversation": 200,
+    "email_drafting_from_notes": 200,
+    "fact_free_reasoning": 200,
+    "fluent_realization": 528,
+    "format_control": 200,
+    "grammar": 200,
+    "instruction_following": 200,
+    "prompt_grounding": 200,
+    "rewriting": 200,
+    "supplied_text_summarization": 200,
+    "tone_control": 528
+  },
+  "claim_boundary": "Exact B40 equal-sequence baseline pack only. No baseline training, matched comparison, final test, Phase 4, or ABI-superiority result.",
+  "destination_memberships": {
+    "english_core": 4112
+  },
+  "evidence_sha256": "24dcdcd2cba3193dfde2b45009c2d6fc50cfcdcbec1603942304712bd5714ca7",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase4-b40-baseline-pack-result/1",
+  "gates": {
+    "all_capabilities_present": true,
+    "all_memberships_namespaced_unique": true,
+    "context_conformant": true,
+    "duplicate_count_exact": true,
+    "english_core_only": true,
+    "final_test_not_accessed": true,
+    "membership_count_exact": true,
+    "model_inference_absent": true,
+    "selection_exact": true,
+    "sequence_channels_nonempty": true,
+    "source_memberships_exact": true,
+    "surface_normalized_host_memberships_exact": true,
+    "teacher_model_loading_absent": true,
+    "teacher_output_tokens_exact": true,
+    "training_absent": true,
+    "unique_attempt_count_exact": true
+  },
+  "imported_information": {
+    "authoritative_teacher_input_tokens": 348372,
+    "authoritative_teacher_output_tokens": 123167,
+    "copied_source_parameters": 0,
+    "duplicate_memberships": 107,
+    "membership_teacher_output_tokens": 126769,
+    "record_memberships": 4112,
+    "source_attempt_manifest_sha256": "8c4de74dbed81e2e89342c7f624e440850928ed6c6508e3973d24f56493e5329",
+    "stored_hidden_activations": 0,
+    "stored_logits": 0,
+    "unique_raw_prompt_utf8_bytes": 1100756,
+    "unique_raw_teacher_output_utf8_bytes": 379416,
+    "unique_source_attempts": 4005
+  },
+  "model_inference_performed": false,
+  "phase4_certified": false,
+  "protocol_sha256": "f99bbc5e1f0c901c90f3395ce9557b95401a577f181276c0b5998f90322e423f",
+  "records_archive": {
+    "bytes": 1303346,
+    "manifest": {
+      "accounting_sha256": "5935128998d6ee790143e2bd815f938593a3aec03bd94efefc4c95a38a9d7914",
+      "budget": "B40",
+      "final_test_accessed": false,
+      "format": "abi-phase4-exact-b40-baseline-records-manifest/1",
+      "records": 4112,
+      "records_jsonl_sha256": "648e60f7e560f90b581316b472bc91f9d8ef5190c016893d145db55165eab00e",
+      "selection_sha256": "e494d251f8517495ab216128ca323755cade8015754f64aaacf28ad252e5bee6"
+    },
+    "path": "results/abi_capability_compiler_phase4_b40_baselines/pack_v989/exact_b40_records_v989.abicir",
+    "sha256": "7ba1cf91d22f4ca03f12f6963ec52943c12fa74eef5b7d2a135cfb43a3ce0b53"
+  },
+  "sequence_pack": {
+    "content_sha256": "db5a85e35ffdc29dcf29d639dfaa88c02cc1e90aeafb81c911bb394ba7691868",
+    "input_tokens": 469742,
+    "maximum_record_tokens": 521,
+    "pack_count": 693,
+    "path": "results/abi_capability_compiler_phase4_b40_baselines/pack_v989/exact_b40_pack_manifest_v989.json",
+    "record_count": 4112,
+    "response_tokens": 130885,
+    "sha256": "363d806fecc7e1872c76a98347869317846a70032d416ec7e554a1fdcac50c62"
+  },
+  "source_memberships": {
+    "phase1_ir": 2800,
+    "v138_targeted_ir": 800,
+    "v480_host_supervision": 512
+  },
+  "status": "PASS_EXACT_B40_BASELINE_SEQUENCE_PACK_READY",
+  "teacher_model_loaded": false,
+  "training_performed": false
+}
