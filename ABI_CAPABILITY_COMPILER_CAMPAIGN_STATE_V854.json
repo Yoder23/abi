@@ -1,0 +1,58 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "state_id": "abi-capability-compiler-campaign-state-v854",
+  "status_date": "2026-08-15",
+  "historical_evidence_changed": false,
+  "phase": "PHASE_4_MATCHED_BASELINE_CAMPAIGN",
+  "phase_status": "IN_PROGRESS_HEADLINE_INDEPENDENTLY_VERIFIED_MATCHED_QUALITY_OPEN",
+  "phase4_certified": false,
+  "headline_verification": {
+    "protocol": "ABI_CAPABILITY_COMPILER_PHASE4_B50_HEADLINE_VERIFY_PROTOCOL_V852.json",
+    "protocol_sha256": "159c8e865e85bdc6335ccf0a5603d2100d31dc6c4ca081175b3e9cb6e06b6287",
+    "result": "ABI_CAPABILITY_COMPILER_PHASE4_B50_HEADLINE_VERIFY_RESULT_V853.json",
+    "result_sha256": "bd333173a4a81a5da1879777bdc8865f6b7a1b9dd53d2017db0ede0345d48330",
+    "status": "PASS_COMPLETE_THREE_SEED_HEADLINE_INDEPENDENTLY_VERIFIED",
+    "runs": 15,
+    "files": 60,
+    "tree_bytes": 3591396545,
+    "tree_sha256": "07476878cd2f0d9fb76350a2f85f9c40fff915e09f1dea4d76c66ad7ca6f8229",
+    "raw_prompt_observations": 21000,
+    "checkpoints_seed_distinct_within_system": true,
+    "attention_mask_warning_audit_safe": true,
+    "adversarial_tests": 28
+  },
+  "headline_v2_functional_passes": {
+    "L0": [1339, 1375, 1399],
+    "L1": [1396, 1392, 1400],
+    "D0": [44, 49, 23],
+    "D1": [0, 0, 0],
+    "D2": [59, 12, 40]
+  },
+  "headline_v2_repetition_collapses": {
+    "L0": [0, 0, 0],
+    "L1": [0, 0, 0],
+    "D0": [95, 290, 57],
+    "D1": [10, 56, 0],
+    "D2": [102, 67, 24]
+  },
+  "interpretation": [
+    "L1 is the only baseline with favorable raw pointwise quality and zero V2 collapse at all three seeds; Wilson and paired noninferiority gates remain deferred to the preregistered matched-quality recomputation.",
+    "L0 is seed-sensitive and fails the all-three-seed quality endpoint despite zero V2 collapse.",
+    "D0, D1, and D2 are severe quality failures under the exact B50 channels.",
+    "L0 and L1 are teacher-sequence-equal controls but retain the frozen source weights; only D0 is total-imported-information-equal to the ABI candidate. D1 and D2 add top-64 information.",
+    "The verified headline does not establish a stable minimum, runtime advantage, final-test pass, Phase 4 certificate, or ABI superiority."
+  ],
+  "open_work": [
+    "Seal and execute the read-only matched ABI/baseline quality, imported-information, deployment, training-time, and conservative active-parameter-second recomputation.",
+    "Seal and run same-checkpoint GPU and same-package CPU runtime only after matched quality is preserved.",
+    "Compose the raw runtime evidence independently without promoting p99 or dividing through zero-output throughput."
+  ],
+  "prohibitions": [
+    "No hyperparameter, data-budget, auxiliary-loss, or nearby baseline variant.",
+    "No runtime checkpoint substitution across seeds or quality lineages.",
+    "No final-test access.",
+    "No B50-minimum, Phase 4, or ABI-superiority claim."
+  ],
+  "next_action": "Preregister the read-only matched-quality and cost recomputation against the exact verified V853 headline and the stable B50 v22 candidate.",
+  "claim_boundary": "The exact-B50 three-seed development headline is independently verified. Matched ABI quality/cost, CPU/GPU runtime, stable minimum, final test, Phase 4, and ABI superiority remain unproven."
+}
