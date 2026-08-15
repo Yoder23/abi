@@ -1,0 +1,30 @@
+{
+  "format": "abi-capability-compiler-phase4-clarification-route-verify-repair/1",
+  "protocol_id": "abi-capability-compiler-phase4-clarification-route-verify-repair-v921",
+  "status": "BOUND_TOKENIZER_LOADER_REPAIR",
+  "status_date": "2026-08-15",
+  "historical_evidence_changed": false,
+  "scientific_fields_changed": false,
+  "model_inference_authorized": false,
+  "training_authorized": false,
+  "teacher_model_loading_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "base_protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_CLARIFICATION_ROUTE_VERIFY_PROTOCOL_V919.json",
+    "sha256": "bb7582cf23a701a02e23c6242d33670e66a4cc78a30f72184afa2d4a7a20a687"
+  },
+  "failure": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_CLARIFICATION_ROUTE_VERIFY_PROCESS_FAILURE_V920.json",
+    "sha256": "84181e00d253fdb5bfa18db4fc64da8cca11e6518fe3bde40858ab2c128ceaa5"
+  },
+  "repair": "Load the exact local tokenizer from the V440 parent artifact through transformers AutoTokenizer. Remove only the incompatible BPE-core protocol loader. Candidate rows, tensors, historical rows, evaluator, thresholds, statistics, mutations, decision rule, and output path are unchanged.",
+  "bindings": {
+    "abi/capability_compiler_phase4_clarification_route_verify.py": "7ac7eb4430fd65fd98a9f4c6d9b4a105e6eaaf071d107f4a970dc350605b4e09",
+    "tests/test_capability_compiler_phase4_clarification_route_verify.py": "387aebd82bad7ab56e5d56f67aee934c8f2394e1926ccb8018cbda992b6858fc",
+    "ABI_CAPABILITY_COMPILER_PHASE4_CLARIFICATION_ROUTE_VERIFY_PROTOCOL_V919.json": "bb7582cf23a701a02e23c6242d33670e66a4cc78a30f72184afa2d4a7a20a687",
+    "ABI_CAPABILITY_COMPILER_PHASE4_CLARIFICATION_ROUTE_VERIFY_PROCESS_FAILURE_V920.json": "84181e00d253fdb5bfa18db4fc64da8cca11e6518fe3bde40858ab2c128ceaa5",
+    "../layercake_release/artifacts/moonshot/phase2_shallow_sparse_pretrained/student2400-seed-9824/tokenizer.json": "1fe93b6152957cf9cfd6d89002467f789ce8b3f3e000b3a2edf27c808ddd0b9e"
+  },
+  "decision_rule": "Apply the unchanged V919 verifier exactly once to the unchanged V918 evidence. Any scientific mismatch fails; no further implementation repair is authorized without preserving a new process-failure record.",
+  "claim_boundary": "Bound verifier implementation repair only. No candidate result, replication, stable minimum, final test, Phase 4 certificate, or ABI-superiority claim."
+}

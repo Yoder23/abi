@@ -11,6 +11,7 @@ from typing import Any, Iterable, Mapping, Sequence
 
 from safetensors.torch import load_file
 import torch
+from transformers import AutoTokenizer
 
 from .capability_compiler_functional_v2 import evaluate_functional_v2
 from .capability_compiler_phase2_common import (
@@ -21,7 +22,6 @@ from .capability_compiler_phase2_common import (
 )
 from .capability_compiler_phase2_teacher import development_probes
 from .capability_compiler_phase3 import Phase3Error, _write_immutable
-from .capability_compiler_phase3_bpe_core import _layercake_api, _tokenizer
 from .capability_compiler_phase3_routed_v15_autonomous_screen_isolated import (
     paired_stratified_bootstrap,
     wilson,
@@ -47,6 +47,34 @@ def _rows(path: Path) -> list[dict[str, Any]]:
 
 def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str]:
     protocol = _json(path)
+    if protocol.get("format") == "abi-capability-compiler-phase4-clarification-route-verify-repair/1":
+        if (
+            protocol.get("status") != "BOUND_TOKENIZER_LOADER_REPAIR"
+            or protocol.get("scientific_fields_changed") is not False
+            or protocol.get("model_inference_authorized") is not False
+            or protocol.get("training_authorized") is not False
+            or protocol.get("final_test_access") != "PROHIBITED"
+        ):
+            raise Phase3Error("clarification-route verifier repair governance changed")
+        base_path = (root / protocol["base_protocol"]["path"]).resolve()
+        if sha256_file(base_path) != protocol["base_protocol"]["sha256"]:
+            raise Phase3Error("clarification-route verifier base protocol changed")
+        base = _json(base_path)
+        ignored = {
+            "abi/capability_compiler_phase4_clarification_route_verify.py",
+            "tests/test_capability_compiler_phase4_clarification_route_verify.py",
+        }
+        for relative, expected in base["bindings"].items():
+            if relative in ignored:
+                continue
+            target = (root / relative).resolve()
+            if not target.is_file() or sha256_file(target) != expected:
+                raise Phase3Error(f"clarification-route verifier base binding changed: {relative}")
+        for relative, expected in protocol["bindings"].items():
+            target = (root / relative).resolve()
+            if not target.is_file() or sha256_file(target) != expected:
+                raise Phase3Error(f"clarification-route verifier repair binding changed: {relative}")
+        return base, sha256_file(path)
     if (
         protocol.get("format") != FORMAT
         or protocol.get("status") != "PREREGISTERED_INDEPENDENT_CLARIFICATION_ROUTE_VERIFY"
@@ -181,8 +209,10 @@ def run(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
     }
     lineage_protocol = _json(root / protocol["lineage_protocol"])
     v440 = _json(root / lineage_protocol["base_protocols"]["v443"])
-    _, _, tokenizer_type, _, _ = _layercake_api(root, v440)
-    tokenizer = _tokenizer(root, v440, tokenizer_type)
+    tokenizer = AutoTokenizer.from_pretrained(
+        (root / v440["host"]["parent_path"]).resolve(),
+        local_files_only=True,
+    )
     recomputed = _recompute(rows, historical, probes, teacher, tokenizer, protocol)
     declared = _json(root / protocol["candidate_result"])
     state = load_file(str(root / protocol["candidate_checkpoint"]), device="cpu")

@@ -1,0 +1,28 @@
+{
+  "format": "abi-capability-compiler-phase4-clarification-route-verify-process-failure/1",
+  "version": 920,
+  "status_date": "2026-08-15",
+  "status": "PROCESS_FAILURE_WRONG_TOKENIZER_LOADER_NO_EVIDENCE_RESULT",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_CLARIFICATION_ROUTE_VERIFY_PROTOCOL_V919.json",
+    "sha256": "bb7582cf23a701a02e23c6242d33670e66a4cc78a30f72184afa2d4a7a20a687"
+  },
+  "failure": {
+    "exception": "KeyError",
+    "missing_key": "layercake_host",
+    "location": "capability_compiler_phase3_bpe_core._layercake_api",
+    "cause": "The independent verifier passed the qualified-transition V440 protocol to a loader for the unrelated BPE-core protocol schema.",
+    "candidate_or_evidence_failure": false
+  },
+  "side_effects": {
+    "output_created": false,
+    "training_performed": false,
+    "model_inference_performed": false,
+    "teacher_model_loaded": false,
+    "final_test_accessed": false
+  },
+  "repair_boundary": "Replace only tokenizer construction with local AutoTokenizer loading from V440's already bound parent artifact. Preserve every scientific input, threshold, statistic, mutation, decision rule, and output path under a separately sealed repair protocol.",
+  "phase4_certified": false,
+  "claim_boundary": "Verifier process failure only. It neither passes nor fails the candidate and supplies no replication, minimum, final-test, Phase 4, or ABI-superiority result."
+}
