@@ -1,0 +1,116 @@
+{
+  "format": "abi-capability-compiler-phase4-clarification-route/1",
+  "protocol_id": "abi-capability-compiler-phase4-clarification-route-v916",
+  "status": "PREREGISTERED_B40_HARD_SEED_CLARIFICATION_ROUTE",
+  "status_date": "2026-08-15",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V915.json",
+  "historical_evidence_changed": false,
+  "objective": "Test exactly one acquisition-side stabilization on the measured hard B40 seed: add a fifth physically isolated clarification residual route, train only that route from the frozen B40 Phase 1 clarification acquisition prefix, and preserve all 1,300 non-clarification development rows exactly.",
+  "run": {
+    "budget": "B40",
+    "seed": 155921
+  },
+  "lineage_protocol": "ABI_CAPABILITY_COMPILER_PHASE4_ABI_LINEAGE_PROTOCOL_V570.json",
+  "lineage_dir": "results/abi_capability_compiler_phase4_abi_lineage/B40-seed155921-v583",
+  "training_device": "cuda",
+  "evaluation_device": "cuda",
+  "teacher_model_loading_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "nearby_sweeps_authorized": false,
+  "architecture": {
+    "width": 768,
+    "rank": 16,
+    "legacy_routes": 4,
+    "routes": 5,
+    "clarification_route": 4,
+    "new_trainable_parameters": 24576,
+    "installed_parameters": 124416,
+    "active_parameters_on_clarification": 26112,
+    "active_routes_per_token": 1,
+    "initialization": "Copy the exact shared normalization and four inherited B40 V526 routes; deterministically initialize only the fifth down projection and set the fifth up projection to exact zero.",
+    "frozen": [
+      "B40 v463 parent",
+      "B40 router",
+      "shared residual normalization",
+      "four inherited residual routes",
+      "selected information",
+      "development suite",
+      "quality thresholds"
+    ]
+  },
+  "acquisition": {
+    "source": "the 200 already selected B40 Phase 1 clarification records",
+    "new_teacher_outputs": 0,
+    "stored_logits": 0,
+    "stored_hidden_activations": 0,
+    "source_parameters_copied": 0,
+    "development_prompt_use_in_training": false,
+    "evaluator_use_in_training": false,
+    "failed_row_identity_use_in_training": false
+  },
+  "training": {
+    "steps": 2000,
+    "epochs": 10,
+    "batch_size": 1,
+    "schedule": "ten deterministic independently shuffled complete passes over all 200 selected records",
+    "max_tokens": 512,
+    "learning_rate": 0.00002,
+    "weight_decay": 0.1,
+    "gradient_clip_norm": 1.0,
+    "prompt_overlap_weight": 4.0,
+    "optimizer": "AdamW",
+    "precision": "float16_autocast",
+    "curve_interval": 250
+  },
+  "historical_outputs": "results/abi_capability_compiler_phase4_v22_b40_screen/run_v802/seed155921_outputs.jsonl",
+  "development": {
+    "catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+    "teacher_reference": "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl",
+    "prompts": 1400,
+    "clarification_prompts": 100,
+    "autonomous_greedy_generation": true,
+    "nonclarification_policy": "reuse and byte-compare the exact already verified v22 rows; the new route is never active on them"
+  },
+  "critical_capabilities": [
+    "prompt_grounding",
+    "instruction_following",
+    "abstention"
+  ],
+  "thresholds": {
+    "per_capability_point": 0.9,
+    "per_capability_lower": 0.85,
+    "critical_point": 0.95,
+    "critical_lower": 0.9,
+    "teacher_relative_lower": -0.05
+  },
+  "statistics": {
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 916155921,
+    "confidence": 0.95
+  },
+  "adaptive_order": "Run only B40 seed155921. Any unchanged-gate failure closes this design without a sweep. A pass authorizes separate preregistration of the same architecture and schedule for B40 seeds104729 and130363. Only three B40 passes can authorize B50 replication and the complete B20 adjacent-lower anchor.",
+  "bindings": {
+    "abi/capability_compiler_phase4_clarification_route.py": "90c4213355d930bc3ccd17e627aa31f2800f19a1cca17109bbb42828f36f1c88",
+    "tests/test_capability_compiler_phase4_clarification_route.py": "d9f6ca97ca7e041c8f104066aa0b67f9151474b75aed87b6669278a0be0398bf",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V915.json": "89543c84d194dbd6a52db737d3835be6ad210e5baf98f27ff3931d7a49bc8ddf",
+    "ABI_CAPABILITY_COMPILER_PHASE4_FRONTIER_DESIGN_AUDIT_RESULT_V914.json": "49f4a788dddd1769c956a4f544ce247b61609ebaf664da955fd2be89637b6f5a",
+    "ABI_CAPABILITY_COMPILER_PHASE4_ABI_LINEAGE_PROTOCOL_V570.json": "50cd9abc83b584bf1682b57f606bbdcba75fbeda76eeeaa48edafbbc08e8505c",
+    "results/abi_capability_compiler_phase4_budget_manifest/manifest_v567.json": "3e2c6d92dc51f75842a4e15d9449437ea849f04bedc25047347625c8cb5877ea",
+    "results/abi_capability_compiler_phase4_abi_lineage/B40-seed155921-v583/v463/model.safetensors": "5cffb7b70cc57b4350560ab6d543c18e674382ca6afea6f6c3f7cbb5233b8500",
+    "results/abi_capability_compiler_phase4_abi_lineage/B40-seed155921-v583/v526/control_bridge.safetensors": "297613ff1771a2ffa4e790b0607603b3c7720e9f9a5c286f34412c1ebb0a002f",
+    "results/abi_capability_compiler_phase4_abi_lineage/B40-seed155921-v583/router/router.safetensors": "bfe2028a30098987a5a3a8ea12354639386f44b1f544299d745bd65d9dea70e2",
+    "results/abi_capability_compiler_phase4_v22_b40_screen/run_v802/seed155921_outputs.jsonl": "fa8a37a14b184c7949cb9d784ac1bd66a893d0c2bfb98d46849bbf6be43f1c90",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "results/abi_capability_compiler_phase2/teacher/T0/development_outputs.jsonl": "1081dbe57e75da50b2619bc2dab14c6441158dcd6068f2b864733936087e86a2"
+  },
+  "decision_rule": "Pass the hard seed only if every original quality, critical, teacher-relative, zero-collapse, and routing gate passes; all 1,300 non-clarification rows remain exact; the fifth route is physically selected only for all 100 clarification rows; the inherited four routes and normalization remain tensor-exact; no new teacher information is consumed; and no final data is accessed.",
+  "explicitly_prohibited": [
+    "post-generation question-mark or inquiry-marker rewriting",
+    "evaluator-driven training or selection",
+    "route acceptance after observing development output",
+    "hyperparameter, seed, step, or budget sweeps",
+    "final-test access",
+    "Phase 4 or ABI-superiority certification"
+  ],
+  "claim_boundary": "One prospectively sealed B40 hard-seed acquisition experiment only. No replication, stable minimum, product runtime, final test, Phase 4 certificate, or ABI-superiority claim."
+}
