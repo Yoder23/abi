@@ -1,0 +1,41 @@
+{
+  "format": "abi-capability-compiler-phase4-b50-l1-conformed-gpu-runtime-decision/1",
+  "result_id": "abi-capability-compiler-phase4-b50-l1-conformed-gpu-runtime-result-v906",
+  "status": "PASS_CONFORMED_L1_SAME_PRODUCT_GPU_RUNTIME",
+  "status_date": "2026-08-15",
+  "historical_evidence_changed": false,
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE4_B50_L1_CONFORMED_GPU_RUNTIME_PROTOCOL_V904.json",
+  "raw_result": "results/abi_capability_compiler_phase4_b50_l1_conformed_gpu_runtime/run_v905/result.json",
+  "raw_result_sha256": "f79ba21952896093c47ec4e1f356d19174d05d28f970c8c2eb8859f3a9aa2035",
+  "engine_result_sha256": "444a9e322bfbe4c3e6ad79b65d15d406d44e9e06cfa55b46ad24ad71157227e8",
+  "observations_sha256": "1d77437d2d2d36f3eccaab791f83296f52bba889654a89ea0124bf7cebe415aad",
+  "system": "L1_CONFORMED",
+  "seed": 104729,
+  "metrics": {
+    "median_utf8_bytes_per_second": 72.14148455966803,
+    "median_characters_per_second": 72.14148455966803,
+    "median_ttft_seconds": 0.06414499998209067,
+    "median_total_seconds": 0.9109054500004277,
+    "cold_ttft_seconds": 11.739790899999207,
+    "active_tensor_bytes": 7667325120,
+    "peak_process_rss_delta_bytes": 5047668736,
+    "peak_cuda_allocated_bytes": 7812537856,
+    "distinct_prompts": 100,
+    "repeated_observations": 20
+  },
+  "conformance": {
+    "invocations": 124,
+    "replacements": 0,
+    "wall_seconds_included": 0.009283700142987072,
+    "learned_parameters": 0
+  },
+  "passed_gate_count": 12,
+  "failed_gate_count": 0,
+  "training_performed": false,
+  "teacher_model_loaded": false,
+  "final_test_accessed": false,
+  "phase4_certified": false,
+  "abi_superiority_certified": false,
+  "next_action": "Independently compose this exact quality-qualified product runtime against the exact V24 candidate using paired prompt-level bootstrap intervals and all deployment gates.",
+  "claim_boundary": "Exact conformed-L1 development GPU runtime pass. Candidate dominance, final test, Phase 4, and ABI superiority remain open."
+}
