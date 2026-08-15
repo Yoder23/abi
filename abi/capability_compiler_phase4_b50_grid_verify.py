@@ -124,7 +124,7 @@ def _metrics(rows: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
 
 
 def _loss(receipt: Mapping[str, Any], system: str) -> float:
-    if system in {"D0", "D1"}:
+    if system in {"D0", "D1", "D2"}:
         return float(receipt["loss"]["total"])
     values = receipt["per_capability_training"].values()
     steps = sum(int(value["successful_optimizer_steps"]) for value in values)

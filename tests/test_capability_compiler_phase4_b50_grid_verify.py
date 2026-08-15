@@ -1,6 +1,7 @@
 from abi.capability_compiler_phase4_b50_grid_verify import (
     FORMAT,
     RUN_RESULT_FORMAT,
+    _loss,
     expected_configurations,
     grid_tree_sha256,
     rank_rows,
@@ -69,3 +70,7 @@ def test_result_evidence_digest_rejects_metric_mutation():
     assert result_evidence_digest_valid(result)
     result["metric"] = 2
     assert not result_evidence_digest_valid(result)
+
+
+def test_d2_uses_student_total_loss_not_lora_fields():
+    assert _loss({"loss": {"total": 1.25}}, "D2") == 1.25
