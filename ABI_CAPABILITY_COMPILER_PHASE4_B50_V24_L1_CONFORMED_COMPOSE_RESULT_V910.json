@@ -1,0 +1,68 @@
+{
+  "format": "abi-capability-compiler-phase4-b50-v24-l1-conformed-compose-decision/1",
+  "result_id": "abi-capability-compiler-phase4-b50-v24-l1-conformed-compose-result-v910",
+  "status": "PASS_BOUNDED_B50_V24_DOMINANCE_OVER_QUALITY_QUALIFIED_CONFORMED_L1",
+  "status_date": "2026-08-15",
+  "historical_evidence_changed": false,
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE4_B50_V24_L1_CONFORMED_COMPOSE_PROTOCOL_V908.json",
+  "raw_result": "results/abi_capability_compiler_phase4_b50_v24_l1_conformed_compose/run_v909/result.json",
+  "raw_result_sha256": "d967fc920b933a1a65008d981deb5760c7422474f67612b38561efbd176e3997",
+  "all_gate_count": 19,
+  "failed_gate_count": 0,
+  "quality": [
+    {
+      "seed": 104729,
+      "candidate_passes": 1382,
+      "baseline_passes": 1396,
+      "candidate_minus_baseline_point": -0.01,
+      "paired_lower_95": -0.016428571428571428,
+      "paired_upper_95": -0.0035714285714285713,
+      "noninferior": true
+    },
+    {
+      "seed": 130363,
+      "candidate_passes": 1392,
+      "baseline_passes": 1388,
+      "candidate_minus_baseline_point": 0.002857142857142857,
+      "paired_lower_95": -0.002857142857142857,
+      "paired_upper_95": 0.009285714285714286,
+      "noninferior": true
+    },
+    {
+      "seed": 155921,
+      "candidate_passes": 1388,
+      "baseline_passes": 1393,
+      "candidate_minus_baseline_point": -0.0035714285714285713,
+      "paired_lower_95": -0.009285714285714286,
+      "paired_upper_95": 0.002142857142857143,
+      "noninferior": true
+    }
+  ],
+  "gpu_candidate_to_baseline_ratios": {
+    "median_utf8_bytes_per_second": 12.288927079458537,
+    "paired_utf8_throughput_lower_95": 17.869713967860122,
+    "paired_utf8_throughput_upper_95": 30.271829759284845,
+    "median_ttft": 0.20093070397385507,
+    "cold_ttft": 0.15407410706441632,
+    "active_tensor_bytes": 0.033179427768937494,
+    "peak_process_rss": 0.10029610310782486,
+    "peak_cuda": 0.06449733508977701,
+    "installed_bytes": 0.0316499246731578
+  },
+  "fairness": {
+    "equal_b50_teacher_sequence_information": true,
+    "candidate_source_base_present_at_inference": false,
+    "candidate_teacher_present_at_inference": false,
+    "baseline_source_base_present_at_inference": true,
+    "baseline_teacher_present_at_inference": false,
+    "same_quality_and_runtime_product_per_system": true
+  },
+  "bounded_lora_dominance_certified": true,
+  "distillation_dominance_certified": false,
+  "stable_information_minimum_certified": false,
+  "phase4_certified": false,
+  "abi_superiority_certified": false,
+  "final_test_accessed": false,
+  "next_action": "Preserve this bounded LoRA result. Reopen only the stable adjacent-lower ABI frontier problem under its existing stricter rule; do not reinterpret the mixed B40 topology or failed-quality distillation controls.",
+  "claim_boundary": "Exact-B50 development dominance over one independently quality-qualified conformed routed-LoRA product under equal teacher-sequence information. No universal LoRA, distillation, stable-minimum, final-test, Phase 4, or unconditional ABI-superiority claim."
+}
