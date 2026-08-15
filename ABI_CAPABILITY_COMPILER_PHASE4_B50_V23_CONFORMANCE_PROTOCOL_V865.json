@@ -1,0 +1,58 @@
+{
+  "format": "abi-capability-compiler-phase4-b50-v23-conformance/1",
+  "protocol_id": "abi-capability-compiler-phase4-b50-v23-conformance-v865",
+  "status": "PREREGISTERED_EXACT_B50_V23_REPACKAGE_AND_CONFORMANCE",
+  "status_date": "2026-08-15",
+  "historical_evidence_changed": false,
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V864.json",
+  "objective": "Repackage each exact B50 v22 tensor payload without tensor mutation under the separately construct-certified LayerCake v23 ABI, then execute all 1,400 frozen development prompts at all three locked seeds on CUDA and require exact output/token identity, routing, physical pointer/format execution, one authenticated package parse, signature/package identity, and zero receiver learning before any runtime rescreen.",
+  "device": "cuda",
+  "source_candidate_protocol": "ABI_CAPABILITY_COMPILER_PHASE4_V22_B50_RESCREEN_PROTOCOL_V795.json",
+  "development_catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+  "systems": [
+    {
+      "seed": 104729,
+      "quality_reference_outputs": "results/abi_capability_compiler_phase4_v22_b50_rescreen/run_v796/seed104729_outputs.jsonl",
+      "quality_reference_sha256": "48f3321aba623518dc15a0480229c1ce8f9457eda2f60c040e0baaaafe521442"
+    },
+    {
+      "seed": 130363,
+      "quality_reference_outputs": "results/abi_capability_compiler_phase4_v22_b50_rescreen/run_v796/seed130363_outputs.jsonl",
+      "quality_reference_sha256": "10cb931b31748c20db6927d3fe3cdb8abad730218bc26430d84c4fd9c15caf42"
+    },
+    {
+      "seed": 155921,
+      "quality_reference_outputs": "results/abi_capability_compiler_phase4_v22_b50_rescreen/run_v796/seed155921_outputs.jsonl",
+      "quality_reference_sha256": "ef5e266cb0729ad1c91aa1eeb8b359bcb78304a0c61b7fffee82f4241274ab52"
+    }
+  ],
+  "expected": {
+    "seeds": 3,
+    "observations_per_seed": 1400,
+    "observations": 4200,
+    "tensor_payload_sha256": "625389ca7c8eb39e281ae089c534166266e9445c156cdb195c51cea91b60e56f",
+    "parameters_per_seed": 62812930,
+    "receiver_training_steps": 0,
+    "authenticated_package_parses_per_activation": 1
+  },
+  "training_authorized": false,
+  "teacher_model_loading_authorized": false,
+  "teacher_query_generation_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "bindings": {
+    "abi/capability_compiler_phase4_b50_v23_conformance.py": "095626140a459ea5306bb3f830db2670ee94019f42e08731e9ea7259f0587ea4",
+    "tests/test_capability_compiler_phase4_b50_v23_conformance.py": "732331871d880ee8befb5283e2335f823c0ca4d50bb1b134b8fe84e51d95aa16",
+    "abi/capability_compiler_phase4_v22_b50_rescreen.py": "ed9fe592f61ba7c0644ca01a7bb21ad5f644351a0dde0c307efcf79e84f8f6ec",
+    "ABI_CAPABILITY_COMPILER_PHASE4_V22_B50_RESCREEN_PROTOCOL_V795.json": "6e4e667643f3e19e64f8f4829b3e71cb8f36785f91da88fa0c1cee1e572a4f32",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V864.json": "7189452f016792e1da23a7debb13774fbff2cf6f5f17c0ad8ec05799080b39e0",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "results/abi_capability_compiler_phase4_v22_b50_rescreen/run_v796/seed104729_outputs.jsonl": "48f3321aba623518dc15a0480229c1ce8f9457eda2f60c040e0baaaafe521442",
+    "results/abi_capability_compiler_phase4_v22_b50_rescreen/run_v796/seed130363_outputs.jsonl": "10cb931b31748c20db6927d3fe3cdb8abad730218bc26430d84c4fd9c15caf42",
+    "results/abi_capability_compiler_phase4_v22_b50_rescreen/run_v796/seed155921_outputs.jsonl": "ef5e266cb0729ad1c91aa1eeb8b359bcb78304a0c61b7fffee82f4241274ab52",
+    "../layercake_release/layercake_extensions/route_isolated_runtime_residency_core_v23.py": "a0b55c48d0449ecc390b8beed78abbd3c1b3066b8087631abd1d5c136e78025a",
+    "../layercake_release/moonshot/canonical_route_isolated_format_literal_core_abi_v23.json": "a5ea993fab864ee4730dd5038cf5c54f570491d3c4acf4c1b7aec8220463bc9c",
+    "../layercake_release/moonshot/postrelease_route_isolated_v23_runtime_residency_decision_v81.json": "5ffae397cd687d6ba3a3bd65bdd5ee71ed67a1b90c88b0753f64dcbd976c3f26"
+  },
+  "decision_rule": "Every v23 package must retain the exact v22 tensor values and payload hash. Every one of 4,200 development rows must reproduce its locked v22 output bytes and token IDs exactly, route correctly, and retain the declared physical execution. Any mismatch fails closed and prohibits runtime rescreen. No quality score is borrowed without exact full-row identity.",
+  "claim_boundary": "Prospectively sealed exact v22-to-v23 tensor and development-output conformance only. No new training, teacher query, final test, runtime, matched baseline, Phase 4, or ABI-superiority claim."
+}
