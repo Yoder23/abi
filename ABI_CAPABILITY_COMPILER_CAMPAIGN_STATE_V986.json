@@ -1,0 +1,29 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "state_id": "abi-capability-compiler-campaign-state-v986",
+  "status_date": "2026-08-15",
+  "historical_evidence_changed": false,
+  "parent_state": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V977.json",
+  "phase": "PHASE_4_SUFFICIENT_INFORMATION_PARETO_FRONTIER",
+  "phase_status": "IN_PROGRESS_B40_INFORMATION_AND_RUNTIME_CERTIFIED_MATCHED_BASELINES_OPEN",
+  "phase4_certified": false,
+  "abi_superiority_certified": false,
+  "closed_gates": [
+    "B40 is independently verified as the smallest tested stable selected-information budget among exact B20 and B40 five-route systems.",
+    "The same signed B40 V25 archive independently passes CPU and CUDA runtime with 120/120 cross-device output and token identity.",
+    "Fresh CPU median throughput is 13.06x optimized CPU Qwen and its paired prompt-level 95 percent lower bound is 10.53x.",
+    "CPU/GPU metric reconstruction, cold/warm timing, memory, persistent state, clarification routing, sparse execution, and zero receiver learning pass; nine mutations are rejected."
+  ],
+  "open_gates": [
+    "Strong LoRA and sequence-distillation comparators have not yet been trained and screened at the exact B40 imported-information budget across three paired seeds.",
+    "A matched-quality comparator endpoint and honest ABI-versus-baseline decision remain open.",
+    "Phase 2 external human and final-test gates remain closed."
+  ],
+  "authorized_next_action": "Preregister only the exact B40 matched LoRA and sequence-distillation matrix under equal selected records, source attempts, teacher tokens, seeds, quality suite, and runtime accounting. Preserve comparator failures and strengths without reinterpretation.",
+  "prohibitions": [
+    "No ABI retraining, checkpoint repair, acquisition expansion, nearby budget, route, seed, threshold, or hyperparameter sweep.",
+    "Do not reuse B50 baseline quality as if it were B40-matched evidence.",
+    "No final-test access, Phase 4 certification, or ABI-superiority claim before the matched comparison closes."
+  ],
+  "claim_boundary": "B40 information sufficiency and exact-artifact runtime are independently certified on development data; matched B40 baselines remain open."
+}

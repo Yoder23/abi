@@ -1,0 +1,43 @@
+{
+  "format": "abi-capability-compiler-phase4-b40-v25-runtime-verified-summary/1",
+  "version": 985,
+  "status_date": "2026-08-15",
+  "status": "PASS_INDEPENDENTLY_VERIFIED_EXACT_B40_V25_CPU_GPU_RUNTIME",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_B40_V25_RUNTIME_VERIFY_REPAIR_PROTOCOL_V982.json",
+    "sha256": "b402ebae1bd006e77916d2ddb2190188cdd248920716469d2db7e879e1be1eeb"
+  },
+  "result": {
+    "path": "results/abi_capability_compiler_phase4_b40_v25_runtime_verify/run_v984/result.json",
+    "sha256": "f3d0c2c89af061d46dcfc19392ac24134e9b39871914f12519347542c2d0d1e1",
+    "evidence_sha256": "31d39dbf0dc3c602047622db10ccf57eeace715093c3a7787587f04031c899c5"
+  },
+  "verified_runtime": {
+    "same_archive_cpu_gpu": true,
+    "same_payload_cpu_gpu": true,
+    "cross_device_output_and_token_identities": "120/120",
+    "cpu_median_bytes_per_second": 270.5480681504634,
+    "optimized_qwen_median_bytes_per_second": 20.7209959400831,
+    "cpu_ratio": 13.056711604634309,
+    "paired_cpu_ratio_lower_95": 10.533328209089703,
+    "cpu_median_ttft_seconds": 0.0798174000083236,
+    "cpu_cold_ttft_seconds": 1.6527276000124402,
+    "cpu_peak_rss_ratio_to_qwen": 0.8569701169102013,
+    "gpu_median_bytes_per_second": 900.8390675533694,
+    "gpu_median_ttft_seconds": 0.012561099996673875,
+    "gpu_cold_ttft_seconds": 1.844912500004284,
+    "substantive_gates": "20/20",
+    "adversarial_mutations_rejected": "9/9",
+    "receiver_learning_steps": 0
+  },
+  "preserved_process_failure": "ABI_CAPABILITY_COMPILER_PHASE4_B40_V25_RUNTIME_VERIFY_PROCESS_FAILURE_V981.json",
+  "decision": "The exact B40 V25 signed product independently passes the complete CPU/GPU runtime gate. Its measured CPU advantage is fresh and belongs to the same archive whose quality and B40 information boundary passed; no speed or quality is borrowed from another checkpoint.",
+  "authorized_next_action": "Run strong B40-matched LoRA and sequence-distillation baselines using the identical selected-information prefix, imported-information accounting, three seeds, development suite, and runtime protocol. Do not weaken either comparator.",
+  "model_inference_performed_by_verifier": false,
+  "training_performed_by_verifier": false,
+  "final_test_accessed": false,
+  "runtime_gate_certified": true,
+  "phase4_certified": false,
+  "claim_boundary": "Independent exact-B40-V25 development runtime certification. Matched B40 LoRA/distillation, external human review, final test, Phase 4, and ABI superiority remain open."
+}
