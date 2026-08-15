@@ -1,0 +1,29 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "state_id": "abi-capability-compiler-campaign-state-v945",
+  "status_date": "2026-08-15",
+  "historical_evidence_changed": false,
+  "parent_state": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V937.json",
+  "phase": "PHASE_4_SUFFICIENT_INFORMATION_PARETO_FRONTIER",
+  "phase_status": "IN_PROGRESS_B40_STABLE_B20_TWO_SEEDS_PROVEN_FINAL_SEED_AUTHORIZED",
+  "phase4_certified": false,
+  "abi_superiority_certified": false,
+  "closed_gates": [
+    "B40 five-route quality is independently PASS/PASS/PASS.",
+    "B20 seed104729 remains failed under the generous complete-host oracle.",
+    "B20 seed130363 was rebuilt from the immutable clean start with exact B20 accounting and remains failed under the same generous oracle."
+  ],
+  "open_gates": [
+    "B20 seed155921 has not been built.",
+    "B20 is not yet an all-three-seed adjacent-lower failure, so B40 is not yet a tested stable minimum.",
+    "Five-route packaging/runtime and B40-matched baseline work remain open.",
+    "Phase 2 external human and final-test gates remain closed."
+  ],
+  "authorized_next_action": "Build only the preregistered B20 seed155921 clean-start lineage, then apply the bound generous host oracle. If it remains failed, independently verify the complete B20 matrix before promoting B40 as the tested stable minimum.",
+  "prohibitions": [
+    "No nearby budget, architecture, route, step, learning-rate, threshold, or seed sweep.",
+    "No physical B20 product screen unless seed155921 survives the generous oracle.",
+    "No final-test access or Phase 4/ABI-superiority claim."
+  ],
+  "claim_boundary": "B40 is stable sufficient; two of three B20 lower anchors are proved failed."
+}
