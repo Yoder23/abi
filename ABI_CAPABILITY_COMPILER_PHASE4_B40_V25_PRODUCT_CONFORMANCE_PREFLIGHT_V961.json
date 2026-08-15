@@ -1,0 +1,40 @@
+{
+  "checks": [
+    {
+      "candidate_sha256": "323e3c0177f24a47efb3aeaca0e9f9ddfbfe721868c4dc5e35c17c7a853cdcce",
+      "inherited_four_routes_exact": true,
+      "metadata_checkpoint_exact": true,
+      "qualified_rows": 1400,
+      "seed": 104729
+    },
+    {
+      "candidate_sha256": "3294bcf5fa6ed9d863e9b3554204f5d8f896bca2ada98f9361cbedf89a34ae75",
+      "inherited_four_routes_exact": true,
+      "metadata_checkpoint_exact": true,
+      "qualified_rows": 1400,
+      "seed": 130363
+    },
+    {
+      "candidate_sha256": "2bd7c4c986acba810152dbfd631d308fd71b7aeff4455839a761ba5aaf0d622d",
+      "inherited_four_routes_exact": true,
+      "metadata_checkpoint_exact": true,
+      "qualified_rows": 1400,
+      "seed": 155921
+    }
+  ],
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase4-b40-v25-product-conformance-preflight/1",
+  "gates": {
+    "all_candidate_metadata_exact": true,
+    "all_inherited_routes_exact": true,
+    "all_qualified_matrices_complete": true,
+    "final_test_not_accessed": true,
+    "teacher_loading_absent": true,
+    "three_registered_seeds": true,
+    "training_absent": true
+  },
+  "protocol_sha256": "ab7ca91e2516c2c431a24df05100cae3408dfed23b5ad592f6619a098dc74f30",
+  "status": "PASS_B40_V25_PRODUCT_CONFORMANCE_PREFLIGHT",
+  "teacher_model_loaded": false,
+  "training_performed": false
+}
