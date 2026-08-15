@@ -1,0 +1,30 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "state_id": "abi-capability-compiler-campaign-state-v959",
+  "status_date": "2026-08-15",
+  "historical_evidence_changed": false,
+  "parent_state": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V955.json",
+  "phase": "PHASE_4_SUFFICIENT_INFORMATION_PARETO_FRONTIER",
+  "phase_status": "IN_PROGRESS_B20_ALL_SEED_FAILURE_VERIFIED_B40_SIGNED_PRODUCT_REQUIRED",
+  "phase4_certified": false,
+  "abi_superiority_certified": false,
+  "closed_gates": [
+    "The complete 4,200-row B20 boundary has been independently reconstructed.",
+    "B20 seeds104729 and130363 fail immutable absolute quality gates under the generous host oracle.",
+    "B20 seed155921 fails its prospective signed V25 preservation gate on exactly one independently reconstructed online-guard regression.",
+    "Six adversarial mutations were rejected and the candidate inherited four-route tensors are exact."
+  ],
+  "open_gates": [
+    "The three B40 five-route candidates have not yet passed signed V25 product conformance.",
+    "Therefore B40 is not yet a tested stable minimum on the product interface.",
+    "B40 same-artifact CPU/GPU runtime and B40-matched baseline work remain open.",
+    "Phase 2 external human and final-test gates remain closed."
+  ],
+  "authorized_next_action": "Preregister one no-training, three-seed signed V25 B40 product-conformance matrix using only the exact existing clarification-route checkpoints and frozen lineages. Independently verify it before any minimum claim.",
+  "prohibitions": [
+    "No B40 retraining, checkpoint repair, guard change, acquisition expansion, nearby budget, route, seed, threshold, or hyperparameter sweep.",
+    "No stable-minimum claim before three signed V25 B40 passes and independent verification.",
+    "No final-test access or Phase 4/ABI-superiority claim."
+  ],
+  "claim_boundary": "B20 adjacent-lower failure is verified; B40 signed-product sufficiency remains open."
+}

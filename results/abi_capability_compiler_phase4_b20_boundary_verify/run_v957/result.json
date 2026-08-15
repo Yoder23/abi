@@ -1,0 +1,152 @@
+{
+  "authorized_next_action": "Screen the already-qualified three B40 five-route candidates through the signed V25 product. Only three passes can combine with this boundary proof to establish B40 as the tested stable minimum for the exact architecture.",
+  "candidate_inherited_tensors_exact": true,
+  "claim_boundary": "Independent B20 adjacent-lower boundary only. B40 signed-product conformance, runtime, matched baselines, final test, Phase 4, and ABI superiority remain open.",
+  "decision": "B20 fails at all three registered seeds: seeds104729 and130363 remain below immutable absolute quality gates after the generous host oracle; seed155921 passes aggregate quality but fails its prospectively locked signed-product preservation gate on exactly one online-guard regression.",
+  "evidence_sha256": "0964cef796c94e2d304db789940431a14fbfc514a8bb4c5c92a58122174054e9",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase4-b20-boundary-verify-result/1",
+  "gates": {
+    "all_4200_rows_present": true,
+    "all_six_mutations_rejected": true,
+    "candidate_inherited_tensors_exact": true,
+    "final_test_not_accessed": true,
+    "model_inference_absent": true,
+    "product_aggregate_matches": true,
+    "product_failure_reconstructed": true,
+    "teacher_model_loading_absent": true,
+    "training_absent": true,
+    "two_oracle_failures_reconstructed": true
+  },
+  "model_inference_performed": false,
+  "mutations": {
+    "one_seed_cannot_substitute_for_three": true,
+    "raw_byte_mutation_rejected": true,
+    "route_mutation_rejected": true,
+    "scope_relabel_rejected_by_bound_history": true,
+    "status_text_not_source_of_truth": true,
+    "tensor_mutation_rejected": true
+  },
+  "oracle_seeds": {
+    "104729": {
+      "declared_aggregates_exact": true,
+      "failure_proven": true,
+      "oracle_collapses": 0,
+      "oracle_functional_passes": 1356,
+      "oracle_gate_failures": {
+        "fluent_realization": {
+          "critical_pass": true,
+          "observations": 100,
+          "passes": 88,
+          "per_capability_pass": false,
+          "wilson": {
+            "lower_95": 0.8018790057328857,
+            "point": 0.88,
+            "upper_95": 0.9300059356298052
+          }
+        },
+        "instruction_following": {
+          "critical_pass": false,
+          "observations": 100,
+          "passes": 94,
+          "per_capability_pass": true,
+          "wilson": {
+            "lower_95": 0.8752318455410406,
+            "point": 0.94,
+            "upper_95": 0.9722138760368118
+          }
+        },
+        "tone_control": {
+          "critical_pass": true,
+          "observations": 100,
+          "passes": 90,
+          "per_capability_pass": false,
+          "wilson": {
+            "lower_95": 0.8256343384950865,
+            "point": 0.9,
+            "upper_95": 0.9447708629393249
+          }
+        }
+      },
+      "raw_collapses": 7,
+      "raw_functional_passes": 1251,
+      "raw_rows": 1400
+    },
+    "130363": {
+      "declared_aggregates_exact": true,
+      "failure_proven": true,
+      "oracle_collapses": 0,
+      "oracle_functional_passes": 1366,
+      "oracle_gate_failures": {
+        "email_drafting_from_notes": {
+          "critical_pass": true,
+          "observations": 100,
+          "passes": 91,
+          "per_capability_pass": false,
+          "wilson": {
+            "lower_95": 0.837737871472837,
+            "point": 0.91,
+            "upper_95": 0.9519274599974348
+          }
+        },
+        "fluent_realization": {
+          "critical_pass": true,
+          "observations": 100,
+          "passes": 91,
+          "per_capability_pass": false,
+          "wilson": {
+            "lower_95": 0.837737871472837,
+            "point": 0.91,
+            "upper_95": 0.9519274599974348
+          }
+        }
+      },
+      "raw_collapses": 1,
+      "raw_functional_passes": 1361,
+      "raw_rows": 1400
+    }
+  },
+  "phase4_certified": false,
+  "product_seed155921": {
+    "collapses": 0,
+    "functional_passes": 1364,
+    "passing_to_failing_changed_rows": [
+      "phase1-validation-rewriting-0032-v2"
+    ],
+    "physical_routes_exact": true,
+    "preservation_failure_proven": true,
+    "preservation_gates": {
+      "all_immutable_outputs_exact": false,
+      "all_rows_present": true,
+      "changes_bounded_to_declared_host_scope": false,
+      "historical_passing_changed_rows_remain_passing": false
+    },
+    "quality_gates": {
+      "critical_capabilities": true,
+      "final_test_not_accessed": true,
+      "per_capability_functional": true,
+      "router_exact": true,
+      "teacher_absent": true,
+      "teacher_noninferior": true,
+      "zero_repetition_collapse": true
+    },
+    "router_correct": 1400,
+    "rows": 1400,
+    "teacher_comparison_v1": {
+      "candidate_minus_teacher": 0.09071428571428572,
+      "lower_95": 0.07357142857142857,
+      "method": "capability_stratified_paired_percentile_bootstrap",
+      "replicates": 10000,
+      "seed": 9655921,
+      "upper_95": 0.10857142857142857
+    },
+    "undeclared_change_rows": [
+      "phase1-validation-rewriting-0032-v2"
+    ]
+  },
+  "protocol_sha256": "a1907820d3036a5c8107f82da6030b01990024e1abcd6b9fa2cb6518458fc137",
+  "stable_minimum_established": false,
+  "status": "PASS_INDEPENDENTLY_VERIFIED_ALL_THREE_B20_SEEDS_FAIL_LOCKED_GATES",
+  "teacher_model_loaded": false,
+  "training_performed": false
+}
