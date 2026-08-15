@@ -106,17 +106,22 @@ def run(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
         row for row in source["systems"]
         if int(row["seed"]) == int(protocol["seed"])
     )
-    reference_path = root / str(protocol["quality_reference_outputs"])
-    if sha256_file(reference_path) != protocol["quality_reference_sha256"]:
-        raise Phase3Error("exact B50 v24 retention quality reference changed")
-    reference = {
-        str(row["probe_id"]): row
+    reference_path = root / str(protocol["ordinary_reference_observations"])
+    if sha256_file(reference_path) != protocol["ordinary_reference_sha256"]:
+        raise Phase3Error("exact B50 v24 ordinary reference changed")
+    reference_rows = [
+        row
         for row in (
             json.loads(line)
             for line in reference_path.read_text(encoding="utf-8").splitlines()
             if line.strip()
         )
-    }
+        if row.get("system") == "layercake_v22_b50"
+        and row.get("mode") == "ordinary"
+    ]
+    reference = {str(row["probe_id"]): row for row in reference_rows}
+    if len(reference_rows) != 120 or len(reference) != 100:
+        raise Phase3Error("exact B50 v24 ordinary reference depth changed")
     with tempfile.TemporaryDirectory(prefix="abi-b50-v24-retention-") as raw:
         temporary = Path(raw)
         v23_path, v23_package = _repackage_v23(
@@ -206,8 +211,8 @@ def run(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
         == protocol["v23"]["archive_sha256"]
         and v24_active["archive_hash"] == protocol["v24"]["archive_sha256"],
         "package_verifies": v23_verified["status"] == v24_verified["status"] == "PASS",
-        "all_v23_outputs_exact": v23_identity == 120,
-        "all_v24_outputs_exact": v24_identity == 120,
+        "all_v23_ordinary_outputs_exact": v23_identity == 120,
+        "all_v24_ordinary_outputs_exact": v24_identity == 120,
         "all_cross_outputs_exact": cross_identity == 120,
         "median_retention_at_least_95_percent": median_retention >= minimum,
         "paired_lower_retention_at_least_95_percent": paired["lower_95"] is not None

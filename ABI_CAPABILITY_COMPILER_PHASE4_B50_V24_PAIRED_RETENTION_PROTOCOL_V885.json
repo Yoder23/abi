@@ -1,0 +1,71 @@
+{
+  "format": "abi-capability-compiler-phase4-b50-v24-paired-retention/1",
+  "protocol_id": "abi-capability-compiler-phase4-b50-v24-paired-retention-v885",
+  "status": "PREREGISTERED_PAIRED_EXACT_B50_V24_TO_V23_CPU_RETENTION",
+  "status_date": "2026-08-15",
+  "historical_evidence_changed": false,
+  "authorization": "ABI_CAPABILITY_COMPILER_PHASE4_B50_V24_PAIRED_RETENTION_ATTEMPT_V884.json",
+  "objective": "Correct only V882's reference-lineage defect by binding the immutable V872 V23 ordinary-path observations instead of the specialized product-path quality outputs, then freshly rerun the alternating paired V23/V24 CPU schedule on 100 distinct prompts plus 20 repeats with unchanged 95-percent median and paired-lower-bound gates.",
+  "seed": 104729,
+  "source_candidate_protocol": "ABI_CAPABILITY_COMPILER_PHASE4_V22_B50_RESCREEN_PROTOCOL_V795.json",
+  "runtime_schedule_protocol": "ABI_CAPABILITY_COMPILER_PHASE4_B50_CPU_RUNTIME_PROTOCOL_V859.json",
+  "ordinary_reference_observations": "results/abi_capability_compiler_phase4_b50_v23_cpu_runtime/run_v872/engine/observations.jsonl",
+  "ordinary_reference_sha256": "6bbe8479873d84514e58661296fd37705fec649a3955d640237375d6d3c12ddf",
+  "tensor_payload_hash": "625389ca7c8eb39e281ae089c534166266e9445c156cdb195c51cea91b60e56f",
+  "v23": {
+    "runtime_interface": "lc-direct-neural-core/23",
+    "archive_sha256": "b2b828eef01871ef1171a9c2c8f5e946ee0af3969675ff07b2edfe6d9c34a528"
+  },
+  "v24": {
+    "runtime_interface": "lc-direct-neural-core/24",
+    "archive_sha256": "a700704afb251f4150dbc52c44f3659595c69c77e94b8f84876cd4c31d5e5630"
+  },
+  "runtime": {
+    "device": "cpu",
+    "torch_threads": 1,
+    "torch_interop_threads": 1,
+    "distinct_prompts": 100,
+    "repeated_observations": 20,
+    "observations_per_system": 120,
+    "warmup_observations": 3,
+    "schedule_sha256": "c2fe47c8a5759c5a8e36b01fab505b9e4a6e1332d945cc2dcc38657105207d9a",
+    "system_order": "alternate V23-first and V24-first per scheduled prompt",
+    "primary_throughput": "completed response UTF-8 bytes per total request second",
+    "token_accounting": "retokenize every complete response with the active package tokenizer",
+    "p95_minimum_observations": 100,
+    "p99_minimum_observations": 1000
+  },
+  "statistics": {
+    "method": "paired prompt-level median V24-to-V23 throughput-ratio percentile bootstrap",
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 240885
+  },
+  "gates": {
+    "retention_minimum": 0.95,
+    "median_retention_minimum": 0.95,
+    "paired_lower_retention_minimum": 0.95,
+    "all_ordinary_outputs_and_tokens_exact": true,
+    "same_tensor_payload": true
+  },
+  "training_authorized": false,
+  "teacher_query_generation_authorized": false,
+  "final_test_access": "PROHIBITED",
+  "bindings": {
+    "abi/capability_compiler_phase4_b50_v24_paired_retention.py": "da16d7c5bf3ab71ea2c5dc6348378c0a2d59b2bbed802ed36e137040cdbff843",
+    "tests/test_capability_compiler_phase4_b50_v24_paired_retention.py": "919fcab41d3185ac19c99a3c81bc79b2c08afaf76964a31f811e2e4c3e232006",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B50_V24_PAIRED_RETENTION_ATTEMPT_V884.json": "9fd6d25042a5fde66ce1fa40163a2bba333a53cb4ae0a8f8a53d261bd7031411",
+    "abi/capability_compiler_phase4_b50_v24_conformance.py": "65447ffffec90264c604aeee96a74cb13d06490265fe1e9f6590dd3fca0e7490",
+    "abi/capability_compiler_phase4_b50_v23_conformance.py": "91a3e9b1d9dc118f828427d4ae30eff3d7e3fda9533c537a523ad7159d7bfbe4",
+    "abi/capability_compiler_phase4_b50_cpu_runtime.py": "15be3cda9aa67a46d99989579d8b664b02509c16af793c4ad1324eb1155179a1",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V881.json": "51884cebb89d282995e6eabbf5fb0ee6d9742f7b6b9c9751920a8abd2e1195e3",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B50_V24_CONFORMANCE_RESULT_V880.json": "d4511e8815fc0077e24fae061f042394fbcbd1686b1fe07af2224ab0001f083e",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B50_CPU_RUNTIME_PROTOCOL_V859.json": "99d2ceb76ef47230af54ca1e430ea0dacbb87abe97bc06dd0ba33b5dbbb8122b",
+    "ABI_CAPABILITY_COMPILER_PHASE4_V22_B50_RESCREEN_PROTOCOL_V795.json": "6e4e667643f3e19e64f8f4829b3e71cb8f36785f91da88fa0c1cee1e572a4f32",
+    "results/abi_capability_compiler_phase4_b50_v23_cpu_runtime/run_v872/engine/observations.jsonl": "6bbe8479873d84514e58661296fd37705fec649a3955d640237375d6d3c12ddf",
+    "results/abi_capability_compiler_phase4_b50_v24_conformance/run_v879/result.json": "4a5d281fb1aea0d4e4f78c474f17ca97303e8eae09a813b2384c00908d8c81a1",
+    "../layercake_release/layercake_extensions/route_isolated_runtime_residency_core_v23.py": "a0b55c48d0449ecc390b8beed78abbd3c1b3066b8087631abd1d5c136e78025a",
+    "../layercake_release/layercake_extensions/route_isolated_allocation_bounded_core_v24.py": "c00d35804f3cd0fdbbaaf41868601247008404b5eb1cda6aa8493177e9a3df66"
+  },
+  "decision_rule": "Pass only if both fresh hosts match all 120 immutable V23 ordinary-path reference outputs and token sequences and one another, share the exact frozen payload, and both median V24-to-V23 retention and its paired prompt-level lower 95-percent bootstrap bound are at least 0.95. V883 rows are historical only and may not be reused.",
+  "claim_boundary": "Prospectively sealed corrected contemporaneous exact-payload V24-to-V23 ordinary-path CPU retention only. No Qwen product comparison, final test, matched baseline endpoint, Phase 4 certificate, or unconditional ABI-superiority claim."
+}
