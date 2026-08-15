@@ -1,0 +1,35 @@
+{
+  "format": "abi-capability-compiler-phase4-b50-v23-conformance-attempt/1",
+  "attempt_id": "abi-capability-compiler-phase4-b50-v23-conformance-attempt-v866",
+  "status": "FAIL_PROTOCOL_ACCOUNTING_ASSUMED_CROSS_SEED_PAYLOAD_IDENTITY",
+  "status_date": "2026-08-15",
+  "historical_evidence_changed": false,
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE4_B50_V23_CONFORMANCE_PROTOCOL_V865.json",
+  "protocol_sha256": "3c3d62c8d04656008e106570e6a30b74ab5cdae95700beed48c2f07e93af24c0",
+  "terminal_stage": "seed130363_post_repackage_payload_accounting_before_host_activation",
+  "terminal_error": "exact B50 v23 payload accounting changed",
+  "cause": "V865 incorrectly registered seed104729's tensor payload hash as one global expected hash even though the three independently trained frozen seed checkpoints have different tensor values and therefore different legitimate payload hashes.",
+  "completed_evidence": {
+    "seed": 104729,
+    "rows": 1400,
+    "reference_outputs_exact": 1400,
+    "reference_tokens_exact": 1400,
+    "routes_correct": 1400,
+    "pointer_rows": 100,
+    "format_rows": 100,
+    "path": "results/abi_capability_compiler_phase4_b50_v23_conformance/run_v866/seed104729_outputs.jsonl",
+    "sha256": "da50101ecc5226ab66025f05af2bc89c2633b728bebac87657106297bf60e2a3"
+  },
+  "frozen_parent_payloads": {
+    "104729": "625389ca7c8eb39e281ae089c534166266e9445c156cdb195c51cea91b60e56f",
+    "130363": "87ac7ae726bbd16ee22989ce5dfc33d89acffeab9b5ef75693f8ae4a0c3ec618",
+    "155921": "4ed9cca9b0ef70f55f392417350ebbe8b51226699a4f807df09d832b1dae69b6"
+  },
+  "model_failure_observed": false,
+  "training_performed": false,
+  "teacher_model_loaded": false,
+  "final_test_accessed": false,
+  "phase4_certified": false,
+  "authorized_repair": "Register each already frozen seed-specific parent payload hash, update only the accounting lookup, bind this failed attempt, and rerun all three seeds in a new immutable directory.",
+  "claim_boundary": "Preserved protocol-accounting failure and one completed exact-conformance seed only. No three-seed conformance, runtime, final test, Phase 4, or ABI-superiority claim."
+}
