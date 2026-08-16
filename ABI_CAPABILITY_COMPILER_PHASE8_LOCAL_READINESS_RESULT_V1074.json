@@ -1,0 +1,74 @@
+{
+  "format": "abi-capability-compiler-phase8-local-readiness-result/1",
+  "result_id": "ABI_CAPABILITY_COMPILER_PHASE8_LOCAL_READINESS_RESULT_V1074",
+  "status": "PASS_LOCAL_PHASE8_HANDOFF_READY_EXTERNAL_EXECUTION_REQUIRED",
+  "status_date": "2026-08-16",
+  "phase": 8,
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE8_RELEASE_READINESS_PROTOCOL_V1070.json",
+  "protocol_sha256": "a6df3e67ad8e823e774a06092b90d818343d2dd63a0abc2450cc21e83ea6e4be",
+  "preflight": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE8_RELEASE_READINESS_PREFLIGHT_V1071.json",
+    "sha256": "02b9b2ad1dc722052ec804c1eaba4d7241e71ff06fff8f8d7fb739c314b8bdaf",
+    "status": "PASS_PHASE8_RELEASE_READINESS_PREFLIGHT"
+  },
+  "adversarial_verification": {
+    "path": "results/abi_capability_compiler_phase8/adversarial_v1072.xml",
+    "sha256": "e670cc6ecee14531c213c0e621141e996919c973287d8bd661d0e450e2a7044a",
+    "tests": 16,
+    "failures": 0,
+    "errors": 0,
+    "mutations_rejected": 15
+  },
+  "release_manifest": {
+    "path": "results/abi_capability_compiler_phase8/readiness_v1073/manifest.json",
+    "sha256": "b0e0c8f1ffcc52fc7464d52840ab7a086313fa90747158b0b9cff29d0abc8d86",
+    "evidence_sha256": "694748dc1c8e58a1bd1be17d2b63b546f4beae61e24b6dcbbc58cece771712c6",
+    "status": "PASS_PHASE8_LOCAL_RELEASE_READINESS",
+    "file_count": 52,
+    "total_bytes": 281108851,
+    "untracked_content_addressed_files": 3,
+    "read_only_verification_status": "PASS_PHASE8_RELEASE_MANIFEST_VERIFICATION",
+    "read_only_verification_gates_passed": 14,
+    "read_only_verification_gates_total": 14
+  },
+  "source": {
+    "abi_packet_source_commit": "4b0004bd7b71654a6014d96c634d4418b957d861",
+    "abi_phase7_seal_commit": "6499cb0e91ec0f2eae6158b2d987a163377259cc",
+    "layercake_commit": "662c5a9b7264a1a5478c9dfb656f35c450e2504f",
+    "development_hardware_fingerprint_sha256": "2deae6043290bb50a87b17e799b7772af1df02356f3f954c6c755bb85782f02a"
+  },
+  "local_gates": {
+    "transitive_release_inventory_hash_locked": true,
+    "phase7_product_and_certificate_bound": true,
+    "abi_source_commit_bound": true,
+    "layercake_source_commit_bound": true,
+    "development_hardware_bound": true,
+    "external_operator_template_complete": true,
+    "external_execution_guide_complete": true,
+    "hostile_mutations_fail_closed": true,
+    "manifest_reverification_passes": true,
+    "model_inference_performed": false,
+    "training_performed": false,
+    "external_operator_self_attested": false,
+    "independent_hardware_self_attested": false,
+    "phase8_certified": false,
+    "release_certified": false
+  },
+  "external_blockers": {
+    "independent_operator": "REQUIRED_NOT_AVAILABLE_IN_THIS_TASK",
+    "independent_cpu_and_cuda_hardware": "REQUIRED_NOT_AVAILABLE_IN_THIS_TASK",
+    "fresh_external_cpu_result": "NOT_RUN",
+    "fresh_external_cuda_result": "NOT_RUN",
+    "signed_operator_attestation": "NOT_AVAILABLE",
+    "external_hostile_recomputation": "NOT_RUN"
+  },
+  "separate_open_gate": {
+    "phase2_external_human_preferences_complete": false,
+    "completed_preferences": 0,
+    "required_preferences": 21000
+  },
+  "next_required_action": "Transfer the exact 281,108,851-byte content-addressed manifest packet plus its protocol to a genuinely independent operator with a different hardware fingerprint. The operator must verify before execution, run the registered CPU and CUDA protocol once without changes, sign the attestation, and return all raw evidence for a preregistered read-only audit.",
+  "phase8_certified": false,
+  "release_certified": false,
+  "claim_boundary": "This result certifies local handoff readiness only. It is not the external experiment, does not close Phase 8, and does not support release, arbitrary-hardware, human-preference, novelty, global-minimum, or universal ABI-over-LoRA/distillation claims."
+}

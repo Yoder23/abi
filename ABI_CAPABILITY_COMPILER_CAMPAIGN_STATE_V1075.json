@@ -1,0 +1,71 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "state_id": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1075",
+  "status_date": "2026-08-16",
+  "campaign_status": "BLOCKED_EXTERNAL_GATES",
+  "active_phase": "PHASE_8_INDEPENDENT_HOSTILE_VERIFICATION_AND_RELEASE",
+  "active_phase_status": "LOCAL_HANDOFF_READY_BLOCKED_ON_INDEPENDENT_OPERATOR_AND_HARDWARE",
+  "phase_status": {
+    "phase_0": "COMPLETE",
+    "phase_1": "COMPLETE",
+    "phase_2": "MACHINE_AND_HANDOFF_READY_EXTERNAL_HUMAN_RATINGS_PENDING",
+    "phase_3": "MACHINE_GATES_PASS_CONDITIONAL_ON_PHASE_2",
+    "phase_4": "CERTIFIED_BOUNDED_MACHINE_DEVELOPMENT_SCOPE",
+    "phase_5": "CERTIFIED_BOUNDED_THREE_DOMAIN_BEHAVIORAL_EXCLUSION",
+    "phase_6": "CERTIFIED_BOUNDED_THREE_PACKAGE_COMPOSITION_PORTABILITY_AND_PROVENANCE",
+    "phase_7": "CERTIFIED_BOUNDED_SAME_MACHINE_CPU_CUDA_INTEGRATED_PRODUCT",
+    "phase_8": "LOCAL_HANDOFF_READY_EXTERNAL_INDEPENDENT_OPERATOR_AND_HARDWARE_REQUIRED"
+  },
+  "phase7_authority": {
+    "certificate": "ABI_CAPABILITY_COMPILER_PHASE7_CERTIFICATE_V1.json",
+    "verified_result": "results/abi_capability_compiler_phase7_integrated/verify_v1067/result.json",
+    "runtime_host_overlay": "ABI_CAPABILITY_COMPILER_PHASE7_RUNTIME_HOST_OVERLAY_V1.json"
+  },
+  "phase8_local_authority": {
+    "protocol": "ABI_CAPABILITY_COMPILER_PHASE8_RELEASE_READINESS_PROTOCOL_V1070.json",
+    "preflight": "ABI_CAPABILITY_COMPILER_PHASE8_RELEASE_READINESS_PREFLIGHT_V1071.json",
+    "adversarial_tests": "results/abi_capability_compiler_phase8/adversarial_v1072.xml",
+    "release_manifest": "results/abi_capability_compiler_phase8/readiness_v1073/manifest.json",
+    "local_readiness_result": "ABI_CAPABILITY_COMPILER_PHASE8_LOCAL_READINESS_RESULT_V1074.json",
+    "local_readiness_result_sha256": "bdeb53f5b8892060c8aab1fdfec6a65eee657412fb5fdbf599fcb9761b809438",
+    "release_file_count": 52,
+    "release_total_bytes": 281108851,
+    "hostile_tests_passed": 16,
+    "phase8_certified": false,
+    "release_certified": false
+  },
+  "hard_blocker": {
+    "kind": "EXTERNAL_RESOURCE_AND_AUTHORITY_LIMIT",
+    "independent_operator_available": false,
+    "independent_cpu_cuda_hardware_available": false,
+    "can_be_satisfied_by_local_code_or_rerun": false,
+    "reason": "The registered Phase 8 contract requires a person independent of ABI development and a hardware fingerprint different from the development laptop. This task has neither and is prohibited from self-attestation."
+  },
+  "next_required_action": "Give the V1070/V1073 packet to an independent operator on different CPU/CUDA hardware using docs/PHASE8_EXTERNAL_REPRODUCTION_V1.md. Preserve the first returned run, including failures. Preregister the read-only returned-packet verifier before examining or interpreting external outcomes.",
+  "phase8_required_outcomes": [
+    "independent operator identity and signed attestation",
+    "hardware fingerprint different from the registered development fingerprint",
+    "exact manifest and artifact verification before execution",
+    "fresh CPU and CUDA execution without changed bytes, gates, or comparators",
+    "complete raw observations, result files, logs, and dependency inventory",
+    "independent hostile recomputation of all inherited Phase 7 gates",
+    "release certificate only if every external gate passes"
+  ],
+  "prohibited": [
+    "calling the local handoff packet an independent reproduction or Phase 8 pass",
+    "self-signing the independent-operator attestation",
+    "reusing the development hardware fingerprint as independent hardware",
+    "changing product bytes, prompts, gates, comparators, or thresholds",
+    "discarding or tuning after a failed first external run",
+    "unconditional ABI superiority or release claims while Phase 2 and Phase 8 external gates remain open"
+  ],
+  "permanent_claim_limits": {
+    "universal_abi_superiority": false,
+    "global_minimum": false,
+    "latent_semantic_purity": false,
+    "deployed_multi_source_quality": false,
+    "phase2_human_complete": false,
+    "phase8_external_complete": false,
+    "release_certified": false
+  }
+}

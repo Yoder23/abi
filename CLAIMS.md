@@ -8,6 +8,18 @@ identity.
 
 ## Current claims
 
+### Phase 8 local handoff-readiness claim (result V1074)
+
+ABI may claim that the exact Phase 7 product has a locally verified,
+content-addressed external-reproduction handoff. The manifest binds 52 files
+totaling 281,108,851 bytes across the exact ABI and LayerCake source lineages;
+14/14 read-only verification gates and 16/16 hostile readiness tests pass.
+
+ABI may not call this an independent reproduction, Phase 8 pass, or release.
+No independent operator, different hardware fingerprint, fresh external CPU
+or CUDA run, signed attestation, or external hostile recomputation exists yet.
+Authority: `ABI_CAPABILITY_COMPILER_PHASE8_LOCAL_READINESS_RESULT_V1074.json`.
+
 ### Bounded Phase 7 claim (certificate V1)
 
 ABI may claim that one exact teacher-free product—signed B40 English core

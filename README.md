@@ -14,7 +14,7 @@ artifacts are acquisition material, not deployable cakes.
 
 Status date: 2026-08-16
 
-**The ABI English-product moonshot is OPEN at Phase 8's external gate.**
+**The ABI English-product moonshot is BLOCKED at Phase 8's external gate.**
 
 Phase 7 now has a bounded same-machine integrated-product certificate:
 `ABI_CAPABILITY_COMPILER_PHASE7_CERTIFICATE_V1.json`. One exact signed B40
@@ -27,19 +27,24 @@ comparator with 545,308,672 bytes peak RSS delta; CUDA is 13.5139x its
 registered comparator with 505,427,456 peak allocated bytes. Forty-two
 LayerCake host tests and 16 verifier tests pass.
 
-Phase 8 is open only for a content-addressed reproduction packet followed by an
-independent operator on independent CPU/CUDA hardware. The archive
+Phase 8 local handoff readiness now passes under
+`ABI_CAPABILITY_COMPILER_PHASE8_LOCAL_READINESS_RESULT_V1074.json`. Its
+content-addressed manifest covers 52 exact files and 281,108,851 bytes, passes
+14/14 read-only verification gates, and is defended by 16 passing hostile
+tests. That is packet readiness, not an independent reproduction or release.
+The remaining experiment requires an independent operator on different
+CPU/CUDA hardware; use `docs/PHASE8_EXTERNAL_REPRODUCTION_V1.md`. The archive
 contains three pinned teachers, but the deployed packages select one; ABI does
 not claim deployed multi-source quality. Phase 2 still lacks its 21,000
 independent human judgments.
 Accordingly, ABI does **not** yet claim a global information minimum, universal
 superiority over LoRA/distillation, completed product superiority, novelty, or
-release readiness. See `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1069.json`.
+release readiness. See `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1075.json`.
 
 ### Preserved execution history
 
 The following dated execution narrative is preserved for auditability. Where it
-conflicts with V1069, V1069 controls. The prior state was
+conflicts with V1075, V1075 controls. The prior state was
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V710.json`.
 The route-isolated English endpoint now passes all registered Phase 3 machine
 gates: three paired training seeds and all A0-A4 causal controls, 1,393/1,400

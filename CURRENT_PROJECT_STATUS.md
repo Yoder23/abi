@@ -4,7 +4,7 @@ Status date: 2026-08-16
 
 ## Authoritative update
 
-The live state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1069.json`. Phase 7
+The live state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1075.json`. Phase 7
 is independently certified for one exact bounded same-machine product by
 `ABI_CAPABILITY_COMPILER_PHASE7_CERTIFICATE_V1.json`. The immutable B40 core
 and three immutable domain packages pass inherited quality, isolation, and
@@ -13,13 +13,17 @@ cross-device outputs/token sequences match, and every recomputed throughput,
 TTFT, memory, persistence, sparse-execution, identity, teacher-absence, and
 repetition gate passes. Forty-two LayerCake tests and 16 verifier tests pass.
 
-Phase 8 is open for a hash-bound reproduction packet and then independent
-execution on independent CPU/CUDA hardware. Phase 2 external human review
+Phase 8's hash-bound local handoff now passes: V1074 covers 52 exact files and
+281,108,851 bytes, with 14/14 read-only manifest gates and 16/16 hostile tests.
+Phase 8 itself is not certified. It is hard-blocked on a genuinely independent
+operator, different CPU/CUDA hardware, signed attestation, fresh raw runs, and
+external hostile recomputation. Follow
+`docs/PHASE8_EXTERNAL_REPRODUCTION_V1.md`. Phase 2 external human review
 remains 0/21,000, so unconditional superiority and release claims remain
 barred. The archive's three pinned sources must not be confused with deployed
 multi-source quality: all three current domain packages select Phi-3.
 The older executive narrative below is preserved as an experiment log and is
-superseded where it conflicts with V1069.
+superseded where it conflicts with V1075.
 
 ## Preserved executive history
 

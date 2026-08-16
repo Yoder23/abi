@@ -4,8 +4,8 @@ Status date: 2026-08-16
 
 ## Authoritative state
 
-The campaign is **OPEN in Phase 8 external-reproduction scope** under
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1069.json`.
+The campaign is **BLOCKED ON EXTERNAL PHASE 8 RESOURCES** under
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1075.json`.
 
 Phase 4 is scientifically certified only for its registered bounded machine
 scope. Exact B40 passes the locked product gate on three seeds while adjacent
@@ -21,13 +21,18 @@ quality, Phase 5 isolation, and Phase 6 composition while passing fresh CPU and
 CUDA runtime screens. CPU throughput is 13.2387x its comparator with
 545,308,672 bytes peak RSS delta; CUDA throughput is 13.5139x its comparator
 with 505,427,456 peak allocated bytes. All 244 CPU/CUDA outputs and token
-sequences are identical. The active mission is now to build and hostile-test
-the hash-bound Phase 8 reproduction packet, then hand it to an independent
-operator on independent CPU/CUDA hardware.
+sequences are identical.
+
+The hash-bound Phase 8 reproduction packet is now locally ready. V1074 binds
+52 files totaling 281,108,851 bytes; the manifest passes 14/14 read-only
+verification gates and the hostile suite passes 16/16. The next action cannot
+be completed on this development machine: an independent operator must run
+the frozen packet on different CPU/CUDA hardware, sign the attestation, and
+return all raw evidence. See `docs/PHASE8_EXTERNAL_REPRODUCTION_V1.md`.
 
 Phase 2's 21,000 external human preferences remain unfilled. Phase 8 also
-requires an independent operator and independent hardware. Unconditional
-superiority and release remain locked.
+requires an independent operator and independent hardware. Local reruns cannot
+satisfy either fact. Unconditional superiority and release remain locked.
 
 ## Superseded execution log (preserved)
 

@@ -10,13 +10,15 @@ the exact signed B40 core, exact chemistry/civics/Python packages, inherited
 quality/isolation/composition evidence, fresh CPU/CUDA measurements, 244/244
 cross-device output/token identities, allocation-bounded verification, and
 independent hostile recomputation. The live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1069.json`.
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1075.json`.
 
-The next scientific question is Phase 8: whether an independent operator can
-reproduce the exact product and claims from a clean content-addressed packet on
-independent CPU/CUDA hardware and survive the hostile evidence audit. Local
-self-reproduction cannot satisfy that gate. Phase 2 human judgments also
-remain outstanding.
+Phase 8's local reproducibility question is resolved: V1074 binds 52 exact
+files totaling 281,108,851 bytes, passes 14/14 read-only manifest gates, and
+rejects 15 hostile mutations in a 16-test suite. The unresolved scientific
+question is whether an independent operator can reproduce the exact product
+and claims on different CPU/CUDA hardware and survive the external hostile
+evidence audit. Local self-reproduction cannot satisfy that gate. Phase 2
+human judgments also remain outstanding.
 
 ## What is resolved
 

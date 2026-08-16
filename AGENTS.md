@@ -4,7 +4,7 @@
 
 Status date: 2026-08-16.
 
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1069.json` is the live state. Phase 7
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1075.json` is the live state. Phase 7
 is certified for its exact bounded same-machine product scope by
 `ABI_CAPABILITY_COMPILER_PHASE7_CERTIFICATE_V1.json`. The same signed B40 core
 and signed chemistry, civics, and Python packages pass inherited quality,
@@ -14,8 +14,17 @@ collapse, selected-only execution, teacher absence, persistent state, and
 unchanged component identities. CPU throughput is 13.2387x its registered
 comparator with 545,308,672 bytes peak RSS delta; CUDA throughput is 13.5139x
 its registered comparator with 505,427,456 peak allocated bytes. Forty-two
-LayerCake host tests and 16 verifier tests pass. Phase 8 external reproduction
-is open.
+LayerCake host tests and 16 verifier tests pass.
+
+Phase 8 local handoff readiness passes under
+`ABI_CAPABILITY_COMPILER_PHASE8_LOCAL_READINESS_RESULT_V1074.json`: 52 exact
+files totaling 281,108,851 bytes are content-addressed, a read-only manifest
+reverification passes 14/14 gates, and 16 hostile readiness tests pass. This
+is not Phase 8 completion. The campaign is hard-blocked on a genuinely
+independent operator and different CPU/CUDA hardware; neither may be
+self-attested from this task. Follow
+`docs/PHASE8_EXTERNAL_REPRODUCTION_V1.md` without changing product bytes,
+prompts, comparators, or thresholds.
 
 Phase 2 still has 0/21,000 external human preferences, so its human gate and an
 unconditional Phase 3 certificate remain open. No
@@ -23,7 +32,7 @@ global-minimum, universal ABI-over-LoRA/distillation, product-superiority,
 novelty, independent-hardware, or release claim is authorized. The extraction archive has three
 pinned sources, but the deployed packages select only Phi-3; do not claim
 deployed multi-source quality. The dated narrative below is retained as
-experiment history and is superseded wherever it conflicts with V1069.
+experiment history and is superseded wherever it conflicts with V1075.
 
 ## Repository scope
 
