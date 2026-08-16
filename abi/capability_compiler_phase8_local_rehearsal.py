@@ -75,14 +75,27 @@ def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str]:
         == "ABI_CAPABILITY_COMPILER_PHASE8_LOCAL_CLEAN_REHEARSAL_PROTOCOL_V1076.json"
         and protocol.get("repair_scope") == "FALSE_POLARITY_GATE_LABEL_ONLY"
     )
+    collection_path_repair = (
+        protocol.get("status")
+        == "PREREGISTERED_PHASE8_LOCAL_CLEAN_REHEARSAL_COLLECTION_PATH_REPAIR"
+        and protocol.get("repair_of")
+        == "ABI_CAPABILITY_COMPILER_PHASE8_LOCAL_CLEAN_REHEARSAL_REPAIR_PROTOCOL_V1079.json"
+        and protocol.get("repair_scope")
+        == "WINDOWS_MAX_PATH_COLLECTION_ROOT_SHORTENING_ONLY"
+        and protocol.get("inference_reexecution_authorized") is False
+    )
     if (
         protocol.get("format") != FORMAT
-        or not (original or polarity_repair)
+        or not (original or polarity_repair or collection_path_repair)
         or protocol.get("training_authorized") is not False
         or protocol.get("teacher_query_authorized") is not False
         or protocol.get("phase8_certification_authorized") is not False
-        or protocol.get("model_inference_authorized")
-        != "ONE_EXACT_CPU_AND_ONE_EXACT_CUDA_SAME_MACHINE_REHEARSAL_ONLY"
+        or (
+            protocol.get("model_inference_authorized")
+            != "ONE_EXACT_CPU_AND_ONE_EXACT_CUDA_SAME_MACHINE_REHEARSAL_ONLY"
+            if not collection_path_repair
+            else protocol.get("model_inference_authorized") is not False
+        )
     ):
         raise Phase3Error("Phase 8 local-rehearsal governance changed")
     for relative, expected in protocol["bindings"].items():
@@ -112,7 +125,10 @@ def preflight(root: Path, protocol_path: Path) -> dict[str, Any]:
     protocol, protocol_sha = load_protocol(root, protocol_path)
     parent, abi_clean, layercake_clean = _target_roots(protocol)
     hardware = hardware_document()
-    repair = protocol.get("repair_scope") == "FALSE_POLARITY_GATE_LABEL_ONLY"
+    repair = protocol.get("repair_scope") in {
+        "FALSE_POLARITY_GATE_LABEL_ONLY",
+        "WINDOWS_MAX_PATH_COLLECTION_ROOT_SHORTENING_ONLY",
+    }
     gates = {
         "development_hardware_exact": hardware["fingerprint_sha256"]
         == protocol["development_hardware_fingerprint_sha256"],
@@ -150,6 +166,31 @@ def preflight(root: Path, protocol_path: Path) -> dict[str, Any]:
         "training_absent": True,
         "external_independence_not_claimed": True,
     }
+    if protocol.get("repair_scope") == "WINDOWS_MAX_PATH_COLLECTION_ROOT_SHORTENING_ONLY":
+        gates.update(
+            clean_device_results_present=all(
+                (abi_clean / protocol["clean_device_outputs"][device] / "result.json").is_file()
+                and (
+                    abi_clean
+                    / protocol["clean_device_outputs"][device]
+                    / "observations.jsonl"
+                ).is_file()
+                for device in ("cpu", "cuda")
+            ),
+            collection_targets_below_260_characters=max(
+                len(
+                    str(
+                        (
+                            root
+                            / protocol["collection_root"]
+                            / relative
+                        ).resolve()
+                    )
+                )
+                for relative in protocol["collect_files"]
+            )
+            < 260,
+        )
     return {
         "format": "abi-capability-compiler-phase8-local-clean-rehearsal-preflight/1",
         "status": "PASS_PHASE8_LOCAL_CLEAN_REHEARSAL_PREFLIGHT"
