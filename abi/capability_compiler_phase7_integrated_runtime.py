@@ -81,10 +81,34 @@ def _reference(path: Path, *, mode: str | None = None) -> dict[str, str]:
 
 
 def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str]:
-    protocol = _json(path)
+    document = _json(path)
+    status = document.get("status")
+    repaired = status == "PREREGISTERED_PHASE7_CPU_RSS_THREE_REPLICATION_CONFIRMATION"
+    if repaired:
+        base_path = root / str(document.get("base_protocol", ""))
+        if (
+            not base_path.is_file()
+            or sha256_file(base_path) != document.get("base_protocol_sha256")
+        ):
+            raise Phase3Error("Phase 7 RSS replication base protocol changed")
+        base = _json(base_path)
+        protocol = {
+            **base,
+            **document,
+            "bindings": {
+                **base.get("bindings", {}),
+                **document.get("bindings", {}),
+            },
+        }
+    else:
+        protocol = document
     if (
         protocol.get("format") != FORMAT
-        or protocol.get("status") != "PREREGISTERED_EXACT_PHASE7_INTEGRATED_RUNTIME"
+        or status
+        not in {
+            "PREREGISTERED_EXACT_PHASE7_INTEGRATED_RUNTIME",
+            "PREREGISTERED_PHASE7_CPU_RSS_THREE_REPLICATION_CONFIRMATION",
+        }
         or int(protocol.get("seed", -1)) != SEED
         or protocol.get("devices") != ["cpu", "cuda"]
         or int(protocol.get("core_distinct_prompts", 0)) != 100
@@ -96,6 +120,18 @@ def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str]:
         or protocol.get("artifact_mutation_authorized") is not False
     ):
         raise Phase3Error("Phase 7 integrated runtime governance changed")
+    if repaired and (
+        protocol.get("repair_of")
+        != "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json"
+        or protocol.get("preserved_failure")
+        != "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_RESULT_V1043.json"
+        or protocol.get("failed_attribution")
+        != "ABI_CAPABILITY_COMPILER_PHASE7_RSS_PROFILE_RESULT_V1046.json"
+        or protocol.get("repair_scope")
+        != "UNCHANGED_CPU_RUNTIME_THREE_FRESH_PROCESS_REPLICATIONS_ONLY"
+        or protocol.get("replication_ids") != ["r1", "r2", "r3"]
+    ):
+        raise Phase3Error("Phase 7 RSS replication scope changed")
     for relative, expected in protocol["bindings"].items():
         target = (root / relative).resolve()
         if not target.is_file() or sha256_file(target) != expected:
@@ -107,6 +143,24 @@ def preflight(root: Path, protocol_path: Path) -> dict[str, Any]:
     protocol, protocol_sha = load_protocol(root, protocol_path)
     core_runtime = _json(root / protocol["phase4_runtime_verified_result"])
     phase6 = _json(root / protocol["phase6_seed_result"])
+    repaired = (
+        protocol.get("status")
+        == "PREREGISTERED_PHASE7_CPU_RSS_THREE_REPLICATION_CONFIRMATION"
+    )
+    result_targets = (
+        [
+            root
+            / protocol["result_path_template"].format(
+                device="cpu", replication=replication
+            )
+            for replication in protocol["replication_ids"]
+        ]
+        if repaired
+        else [
+            root / protocol["result_path_template"].format(device=device)
+            for device in ("cpu", "cuda")
+        ]
+    )
     gates = {
         "cuda_available": torch.cuda.is_available(),
         "exact_core_archive_lineage": core_runtime["candidate"]["archive_sha256"]
@@ -122,12 +176,7 @@ def preflight(root: Path, protocol_path: Path) -> dict[str, Any]:
             ][domain]["archive_sha256"]
             for domain in DOMAINS
         },
-        "cpu_output_absent": not (
-            root / protocol["result_path_template"].format(device="cpu")
-        ).exists(),
-        "cuda_output_absent": not (
-            root / protocol["result_path_template"].format(device="cuda")
-        ).exists(),
+        "registered_outputs_absent": not any(path.exists() for path in result_targets),
         "training_absent": True,
         "teacher_absent": True,
     }
@@ -230,9 +279,25 @@ def run(
     *,
     device: str,
     output: Path,
+    replication: str | None = None,
 ) -> dict[str, Any]:
     protocol, protocol_sha = load_protocol(root, protocol_path)
-    if device not in {"cpu", "cuda"} or output.exists():
+    repaired = (
+        protocol.get("status")
+        == "PREREGISTERED_PHASE7_CPU_RSS_THREE_REPLICATION_CONFIRMATION"
+    )
+    if repaired:
+        if device != "cpu" or replication not in protocol["replication_ids"]:
+            raise Phase3Error("invalid Phase 7 RSS replication target")
+    elif replication is not None:
+        raise Phase3Error("base Phase 7 runtime has no replication identity")
+    expected_output = (
+        root
+        / protocol["result_path_template"].format(
+            device=device, replication=replication or ""
+        )
+    ).resolve()
+    if device not in {"cpu", "cuda"} or output.exists() or output != expected_output:
         raise Phase3Error("invalid or existing Phase 7 runtime target")
     if device == "cuda" and not torch.cuda.is_available():
         raise Phase3Error("Phase 7 CUDA runtime unavailable")
@@ -444,6 +509,7 @@ def run(
         else "FAIL_PHASE7_INTEGRATED_RUNTIME",
         "protocol_sha256": protocol_sha,
         "device": device,
+        "replication": replication,
         "seed": SEED,
         "product": protocol["product"],
         "package_build_seconds_one_time": package_seconds,
@@ -490,6 +556,7 @@ def main(argv: Iterable[str] | None = None) -> int:
     parser.add_argument("--protocol", required=True)
     parser.add_argument("--preflight", action="store_true")
     parser.add_argument("--device", choices=("cpu", "cuda"))
+    parser.add_argument("--replication")
     parser.add_argument("--output-dir")
     args = parser.parse_args(argv)
     root = Path.cwd().resolve()
@@ -502,6 +569,7 @@ def main(argv: Iterable[str] | None = None) -> int:
             protocol,
             device=args.device,
             output=(root / args.output_dir).resolve(),
+            replication=args.replication,
         )
     else:
         raise Phase3Error("select preflight or one device and output directory")
