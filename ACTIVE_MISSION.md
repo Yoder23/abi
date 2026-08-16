@@ -1,8 +1,31 @@
 # ABI active mission
 
-Status date: 2026-08-13
+Status date: 2026-08-15
 
-## State
+## Authoritative state
+
+The campaign is **OPEN in Phase 5** under
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1016.json`.
+
+Phase 4 is scientifically certified only for its registered bounded machine
+scope. Exact B40 passes the locked product gate on three seeds while adjacent
+B20 fails on all three. At equal B40 sequence information, L0, L1, and D0 all
+fail the all-seed quality contract. The same ABI artifact remains teacher-free,
+preserves the independently verified 13.0567x median CPU-throughput ratio
+(paired lower-95 ratio 10.5333x), and on the registered GPU comparison is
+13.8126x faster than L1 with 30.1275x less active tensor memory.
+
+The active mission is to preregister and execute Phase 5 selective
+reconstruction and bounded exclusion: English-only abstention, one-domain
+installation, immutable English-core bytes, exact remove/restore, adversarial
+label-spoof resistance, and residual unselected-domain comparisons against L1
+and D0. No large training or untouched Phase 5 evaluation is allowed before
+the protocol and artifact identities are sealed.
+
+Phase 2's 21,000 external human preferences remain unfilled. Final data,
+unconditional superiority claims, Phase 6, and release remain locked.
+
+## Superseded execution log (preserved)
 
 The ABI capability-compiler moonshot is **OPEN**.
 

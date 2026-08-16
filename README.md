@@ -12,11 +12,29 @@ artifacts are acquisition material, not deployable cakes.
 
 ## Current status
 
-Status date: 2026-08-13
+Status date: 2026-08-15
 
 **The ABI English-product moonshot is OPEN.**
 
-The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V710.json`.
+Phase 4 now has a bounded machine-development certificate:
+`ABI_CAPABILITY_COMPILER_PHASE4_CERTIFICATE_V1.json`. On the exact registered
+B20/B40 campaign, B40 is the smallest stable passing tested ABI budget and B20
+is its all-seed adjacent-lower failure. At equal B40 sequence information, ABI
+passes all three seeds while L0, L1, and D0 do not. The same teacher-free ABI
+artifact preserves the independently verified CPU speed gate and materially
+outperforms the strongest L1 control on the registered GPU runtime test.
+
+Phase 5 is now open for preregistration and bounded-exclusion testing. Phase 2
+still lacks its 21,000 independent human judgments; final tests remain sealed.
+Accordingly, ABI does **not** yet claim a global information minimum, universal
+superiority over LoRA/distillation, completed product superiority, novelty, or
+release readiness. See `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1016.json`.
+
+### Preserved execution history
+
+The following dated execution narrative is preserved for auditability. Where it
+conflicts with V1016, V1016 controls. The prior state was
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V710.json`.
 The route-isolated English endpoint now passes all registered Phase 3 machine
 gates: three paired training seeds and all A0-A4 causal controls, 1,393/1,400
 selected-seed autonomous quality with zero collapse, exact routing, three

@@ -1,6 +1,6 @@
 # ABI claim ledger
 
-Status date: 2026-08-11
+Status date: 2026-08-15
 
 Documentation cannot widen a machine-readable certificate. Each claim below is
 limited to its exact source, artifact, implementation, benchmark, and evidence
@@ -8,7 +8,26 @@ identity.
 
 ## Current claims
 
-### Current campaign boundary (V555; Phase 3 machine evidence V551)
+### Bounded Phase 4 claim (V1015 / certificate V1)
+
+ABI may claim that, for the preregistered exact five-route v25 architecture and
+the tested B20/B40 development budgets, B40 is the smallest stable passing
+tested budget and B20 is its adjacent-lower all-seed failure. At equal B40
+sequence information, ABI passes the locked quality contract on all three seeds
+while the registered L0, L1, and D0 controls do not. The same ABI artifact is
+teacher-free and preserves the separately verified CPU speed gate. On the
+registered GPU runtime suite it has 13.8126x L1's median byte throughput,
+0.1881x L1's median TTFT, and 0.0332x L1's active tensor bytes.
+
+The authority is `ABI_CAPABILITY_COMPILER_PHASE4_CERTIFICATE_V1.json`, backed
+by the raw V1014 verifier result. This claim is bounded to the named artifacts,
+budgets, suites, seeds, and systems. It does not establish a global minimum,
+human preference, final-test result, general product superiority, method
+superiority, novelty, or universal superiority over LoRA or distillation.
+
+Phase 5 is open. Phase 2's external human gate remains incomplete.
+
+### Preserved Phase 3 campaign boundary (V555; machine evidence V551)
 
 ABI may claim that the exact route-isolated endpoint has completed and passed
 all registered Phase 3 **machine** gates. The bounded claim includes three-seed

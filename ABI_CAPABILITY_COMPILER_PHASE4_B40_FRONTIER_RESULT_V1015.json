@@ -1,0 +1,79 @@
+{
+  "format": "abi-capability-compiler-phase4-b40-frontier-summary/1",
+  "status": "PASS_BOUNDED_MACHINE_PHASE4_SUFFICIENT_INFORMATION_PARETO_FRONTIER",
+  "status_date": "2026-08-15",
+  "phase4_certified": true,
+  "certificate_scope": "BOUNDED_MACHINE_DEVELOPMENT_EVIDENCE_ONLY",
+  "phase5_open": true,
+  "source_protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_B40_FRONTIER_VERIFY_PROTOCOL_V1013.json",
+    "sha256": "b1c8e289572c5e2ab13123829f07be74feb504a6a1c911ff8750ca03ba82bebb"
+  },
+  "source_result": {
+    "path": "results/abi_capability_compiler_phase4_b40_frontier/verify_v1014/result.json",
+    "sha256": "07975fe6f09e053184a9d0bbae35831e1c583ba35d8338738817e1dbf36e1a73",
+    "evidence_sha256": "d322a6bd7f2eb5b8f8383270ad671bb442a8f8177a364f795df577af0efab555"
+  },
+  "tested_frontier": {
+    "architecture": "exact five-route LayerCake v25",
+    "tested_budgets": ["B20", "B40"],
+    "smallest_stable_passing_tested_budget": "B40",
+    "adjacent_lower_budget": "B20",
+    "b40_all_three_seeds_pass": true,
+    "b20_all_three_seeds_fail": true,
+    "global_minimum_claimed": false
+  },
+  "equal_imported_information": {
+    "record_memberships": 4112,
+    "unique_source_attempts": 4005,
+    "authoritative_teacher_output_tokens": 123167,
+    "stored_logits": 0,
+    "stored_hidden_activations": 0,
+    "abi_all_three_seeds_pass": true,
+    "l0_all_three_seeds_pass": false,
+    "l1_all_three_seeds_pass": false,
+    "d0_all_three_seeds_pass": false
+  },
+  "matched_quality_frontier": {
+    "abi_reaches_locked_quality_at_b40": true,
+    "l0_reaches_locked_quality_at_b40": false,
+    "l1_reaches_locked_quality_at_b40": false,
+    "d0_reaches_locked_quality_at_b40": false,
+    "baseline_cost_to_matched_quality": "NOT_REACHED_WITHIN_REGISTERED_EXACT_B40_CAMPAIGN"
+  },
+  "equal_deployment_view": {
+    "abi_teacher_absent_at_inference": true,
+    "l1_source_base_present_at_inference": true,
+    "abi_gpu_median_bytes_per_second": 900.8390675533694,
+    "l1_gpu_median_bytes_per_second": 65.21887456417592,
+    "abi_over_l1_gpu_throughput_ratio": 13.812551559241278,
+    "abi_gpu_median_ttft_seconds": 0.012561099996673875,
+    "l1_gpu_median_ttft_seconds": 0.06679384999733884,
+    "l1_over_abi_gpu_ttft_ratio": 5.317515983076766,
+    "abi_active_tensor_bytes": 254495764,
+    "l1_active_tensor_bytes": 7667325120,
+    "l1_over_abi_active_tensor_ratio": 30.1275156784142
+  },
+  "preserved_phase2_cpu_gate": {
+    "abi_over_optimized_cpu_transformer_median_bytes_per_second": 13.0567,
+    "paired_lower_95_ratio": 10.5333,
+    "minimum_required_ratio": 2.0,
+    "same_quality_and_runtime_artifact": true
+  },
+  "adversarial_verification": {
+    "junit_path": "results/abi_capability_compiler_phase4_b40_frontier/frontier_adversarial_v1012.xml",
+    "junit_sha256": "2d985e493affc806b7e3a9b8148c9533ea308c65ce5887af0ca15e8979c2b2e7",
+    "tests": 15,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "claim_limits": {
+    "external_human_review_complete": false,
+    "final_test_accessed": false,
+    "abi_superiority_certified": false,
+    "universal_superiority_claimed": false,
+    "global_minimum_claimed": false,
+    "statement": "This result certifies only the registered exact-B20/B40 machine-development frontier. It does not certify a global minimum, complete Phase 2 human review, final-test performance, Phase 7 integrated product superiority, Phase 8 release, or universal ABI superiority over LoRA or distillation."
+  }
+}

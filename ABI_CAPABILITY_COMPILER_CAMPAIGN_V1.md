@@ -3,6 +3,13 @@
 Status date: 2026-08-03
 Status: controlling plan; Phases 0 and 1 are COMPLETE; Phase 2 is IN_PROGRESS_PREREGISTERED
 
+Current execution update (2026-08-15): the immutable phase definitions and
+claim rules below still control, while live status is recorded in
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1016.json`. Under the user's explicit
+conditional-research authorization, Phase 4 passed its bounded machine scope
+and Phase 5 is open for preregistration. This did not waive Phase 2's external
+human prerequisite, open final data, or authorize a general superiority claim.
+
 ## Decision
 
 ABI will be developed and evaluated as a **provenance-preserving capability
@@ -228,7 +235,9 @@ grounding, adherence, coherence, abstention, and repetition gates.
 
 ### Phase 4 - Sufficient-information Pareto frontier
 
-Status: **LOCKED behind Phase 3**.
+Status: **CERTIFIED FOR BOUNDED MACHINE-DEVELOPMENT SCOPE** under
+`ABI_CAPABILITY_COMPILER_PHASE4_CERTIFICATE_V1.json`. The conditional execution
+did not waive the unresolved external Phase 2 prerequisite.
 
 - Run preregistered nested budgets for prompts, bytes, tokens, logits,
   activations, parameters, and bridge capacity.
@@ -243,7 +252,8 @@ allowed.
 
 ### Phase 5 - Selective reconstruction and bounded exclusion
 
-Status: **LOCKED behind Phase 4**.
+Status: **OPEN; PREREGISTRATION REQUIRED** under
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1016.json`.
 
 - Certify English-only behavior and abstention on withheld specialist probes.
 - Install one domain at a time and prove selected recovery without core-byte

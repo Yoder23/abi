@@ -1,8 +1,23 @@
 # ABI current project status
 
-Status date: 2026-08-11
+Status date: 2026-08-15
 
-## Executive state
+## Authoritative update
+
+The live state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1016.json`. Phase 4
+is certified for the bounded, registered exact-B20/B40 machine-development
+frontier by `ABI_CAPABILITY_COMPILER_PHASE4_CERTIFICATE_V1.json`. B40 passes all
+three seeds, B20 fails all three, and ABI alone reaches the all-seed quality
+gate among the exact B40 ABI/L0/L1/D0 comparison. The same ABI artifact
+preserves the verified CPU gate; the registered GPU comparison also favors ABI
+over the strongest L1 control in throughput, TTFT, and active tensor memory.
+
+Phase 5 is open for preregistration. Phase 2 external human review remains
+0/21,000, so unconditional downstream and superiority claims remain barred.
+The older executive narrative below is preserved as an experiment log and is
+superseded where it conflicts with V1016.
+
+## Preserved executive history
 
 The authoritative state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V590.json`.
 Phase 3's machine campaign is complete and passes every registered technical

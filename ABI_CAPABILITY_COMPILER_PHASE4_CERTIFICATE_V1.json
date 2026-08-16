@@ -1,0 +1,59 @@
+{
+  "format": "abi-capability-compiler-phase4-certificate/1",
+  "certificate_id": "ABI_CAPABILITY_COMPILER_PHASE4_CERTIFICATE_V1",
+  "status": "CERTIFIED_BOUNDED_MACHINE_DEVELOPMENT_SCOPE",
+  "status_date": "2026-08-15",
+  "phase": 4,
+  "title": "Sufficient-information Pareto frontier",
+  "scope": "The exact five-route LayerCake v25 ABI architecture at the preregistered B20 and B40 sequence-information budgets on the locked development suites and three paired seeds.",
+  "decision": "B40 passes every locked machine quality gate on all three paired seeds, while adjacent-lower B20 fails on all three. At equal exact-B40 sequence information, ABI alone passes the all-seed quality contract; registered L0, L1, and D0 controls do not. The same B40 artifact preserves the independently verified CPU gate, contains no teacher at inference, and is substantially faster and smaller in active memory than the strongest L1 control on the registered GPU runtime suite.",
+  "gates": {
+    "adjacent_lower_failure": "PASS",
+    "three_seed_passing_budget": "PASS",
+    "equal_information_baselines": "PASS",
+    "matched_quality_view": "PASS_WITH_BASELINES_NOT_REACHING_GATE_WITHIN_REGISTERED_CAMPAIGN",
+    "equal_deployment_view": "PASS",
+    "same_artifact_cpu_speed_preservation": "PASS",
+    "receiver_learning_zero": "PASS",
+    "hostile_verification": "PASS",
+    "historical_negative_evidence_preserved": "PASS"
+  },
+  "evidence_chain": [
+    {
+      "path": "ABI_CAPABILITY_COMPILER_PHASE4_B40_V25_PRODUCT_VERIFIED_RESULT_V968.json",
+      "sha256": "fac1f6f720c249388a64b922e49fa74aeb03a75f8b8dce88317860c6e90572d8"
+    },
+    {
+      "path": "ABI_CAPABILITY_COMPILER_PHASE4_B40_V25_RUNTIME_VERIFIED_RESULT_V985.json",
+      "sha256": "e94f2ee70a93c077494f16a17aefb024495b28ea60840e1a64622fe1762fb9ce"
+    },
+    {
+      "path": "ABI_CAPABILITY_COMPILER_PHASE4_B40_BASELINE_PACK_VERIFIED_RESULT_V994.json",
+      "sha256": "2702a4dfb7a7e5babc104a442c8b9077bd4319d50fd7bec963797d5395a35fe0"
+    },
+    {
+      "path": "ABI_CAPABILITY_COMPILER_PHASE4_B40_HEADLINE_VERIFIED_RESULT_V1002.json",
+      "sha256": "fc72dcfd3016acb9a6966213f50c2223e8367f58ce8cc51e0cff6ac1a095e3fc"
+    },
+    {
+      "path": "ABI_CAPABILITY_COMPILER_PHASE4_B40_L1_GPU_RUNTIME_RESULT_V1009.json",
+      "sha256": "09f639cc66ef734f25d61fb14c63aa609af717d9cd16110536c882038a4c037a"
+    },
+    {
+      "path": "ABI_CAPABILITY_COMPILER_PHASE4_B40_FRONTIER_VERIFY_PROTOCOL_V1013.json",
+      "sha256": "b1c8e289572c5e2ab13123829f07be74feb504a6a1c911ff8750ca03ba82bebb"
+    },
+    {
+      "path": "results/abi_capability_compiler_phase4_b40_frontier/verify_v1014/result.json",
+      "sha256": "07975fe6f09e053184a9d0bbae35831e1c583ba35d8338738817e1dbf36e1a73",
+      "evidence_sha256": "d322a6bd7f2eb5b8f8383270ad671bb442a8f8177a364f795df577af0efab555"
+    },
+    {
+      "path": "ABI_CAPABILITY_COMPILER_PHASE4_B40_FRONTIER_RESULT_V1015.json"
+    }
+  ],
+  "opens": ["PHASE_5_SELECTIVE_RECONSTRUCTION_AND_BOUNDED_EXCLUSION"],
+  "does_not_open": ["FINAL_TEST_ACCESS", "UNCONDITIONAL_ABI_SUPERIORITY_CLAIMS", "PHASE_7_PRODUCT_SUPERIORITY", "PHASE_8_RELEASE"],
+  "unresolved_external_prerequisite": "Phase 2 still requires 21,000 locked preferences from three independent human raters. Conditional downstream machine research does not waive that prerequisite.",
+  "claim_boundary": "No global-minimum, universal-superiority, human-completion, final-test, novelty, or release claim is authorized by this certificate."
+}

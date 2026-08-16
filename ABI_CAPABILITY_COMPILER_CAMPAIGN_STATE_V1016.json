@@ -1,0 +1,48 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "state_id": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1016",
+  "status_date": "2026-08-15",
+  "campaign_status": "OPEN",
+  "active_phase": "PHASE_5_SELECTIVE_RECONSTRUCTION_AND_BOUNDED_EXCLUSION",
+  "active_phase_status": "OPEN_PREREGISTRATION_REQUIRED",
+  "phase_status": {
+    "phase_0": "COMPLETE",
+    "phase_1": "COMPLETE",
+    "phase_2": "MACHINE_AND_HANDOFF_READY_EXTERNAL_HUMAN_RATINGS_PENDING",
+    "phase_3": "MACHINE_GATES_PASS_CONDITIONAL_ON_PHASE_2",
+    "phase_4": "CERTIFIED_BOUNDED_MACHINE_DEVELOPMENT_SCOPE",
+    "phase_5": "OPEN_PREREGISTRATION_REQUIRED",
+    "phase_6": "LOCKED_BEHIND_PHASE_5",
+    "phase_7": "LOCKED_BEHIND_PHASE_6_AND_EXTERNAL_PREREQUISITES",
+    "phase_8": "LOCKED_BEHIND_PHASE_7"
+  },
+  "phase4_authority": {
+    "certificate": "ABI_CAPABILITY_COMPILER_PHASE4_CERTIFICATE_V1.json",
+    "summary": "ABI_CAPABILITY_COMPILER_PHASE4_B40_FRONTIER_RESULT_V1015.json",
+    "verified_result": "results/abi_capability_compiler_phase4_b40_frontier/verify_v1014/result.json"
+  },
+  "next_required_action": "Inventory and hash-bind the existing English core, specialist packages, untouched Phase 5 suites, install/remove/restore interfaces, and matched L1/D0 controls; then preregister a no-final-access Phase 5 protocol before any promoted evaluation.",
+  "phase5_required_outcomes": [
+    "bounded English-only specialist exclusion and abstention",
+    "one-domain-at-a-time selected recovery",
+    "no English-core byte mutation during domain installation",
+    "exact domain removal and restoration",
+    "cross-domain, conflict, adversarial, and label-spoof resistance",
+    "residual unselected-domain comparison against L1 and D0",
+    "immutable core identity and exact package identity on untouched evidence"
+  ],
+  "prohibited_until_preregistered": [
+    "Phase 5 promoted evaluation",
+    "access to untouched Phase 5 outputs",
+    "new large training campaigns",
+    "Phase 6 work",
+    "ABI product or method superiority claims"
+  ],
+  "permanent_claim_limits": {
+    "universal_abi_superiority": false,
+    "global_minimum": false,
+    "phase2_human_complete": false,
+    "final_test_accessed": false,
+    "release_certified": false
+  }
+}

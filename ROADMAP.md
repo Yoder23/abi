@@ -1,10 +1,10 @@
 # ABI capability-compiler roadmap
 
-Status date: 2026-08-11
+Status date: 2026-08-15
 
 The machine-readable contract
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` controls sequencing and
-gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V555.json` records live status.
+gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1016.json` records live status.
 Evidence gates, not experiment counts or dates, close phases.
 
 | Phase | Objective | Status |
@@ -13,8 +13,8 @@ Evidence gates, not experiment counts or dates, close phases.
 | 1 | Capability inventory and normalized acquisition IR | COMPLETE |
 | 2 | Strong matched LoRA and distillation baselines | MACHINE + FAIL-CLOSED HANDOFF READY; 0/21,000 EXTERNAL HUMAN PREFERENCES |
 | 3 | Causal teacher-to-target acquisition | MACHINE EVIDENCE COMPLETE; BLOCKED BY PHASE 2 PREREQUISITE |
-| 4 | Sufficient-information Pareto frontier | LOCKED |
-| 5 | Selective reconstruction and bounded exclusion | LOCKED |
+| 4 | Sufficient-information Pareto frontier | CERTIFIED FOR BOUNDED MACHINE-DEVELOPMENT SCOPE |
+| 5 | Selective reconstruction and bounded exclusion | OPEN; PREREGISTRATION REQUIRED |
 | 6 | Composition, portability, and multi-source provenance | LOCKED |
 | 7 | Integrated teacher-relative and systems certification | LOCKED |
 | 8 | Independent hostile verification and release | LOCKED |

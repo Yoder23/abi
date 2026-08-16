@@ -1,5 +1,23 @@
 # ABI repository working contract
 
+## Authoritative current campaign state
+
+Status date: 2026-08-15.
+
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1016.json` is the live state. Phase 4
+is certified for its bounded machine-development scope by
+`ABI_CAPABILITY_COMPILER_PHASE4_CERTIFICATE_V1.json`: exact five-route v25 B40
+passes all three registered seeds, adjacent-lower B20 fails all three, the
+equal-information L0/L1/D0 controls do not reach the locked all-seed quality
+gate, and the same ABI artifact preserves the independently verified CPU gate.
+This opens Phase 5 preregistration and execution.
+
+Phase 2 still has 0/21,000 external human preferences, so its human gate and an
+unconditional Phase 3 certificate remain open. Final data remain sealed. No
+global-minimum, universal ABI-over-LoRA/distillation, product-superiority,
+novelty, or release claim is authorized. The dated narrative below is retained
+as experiment history and is superseded wherever it conflicts with V1016.
+
 ## Repository scope
 
 This repository owns foreign-teacher capability acquisition: source
@@ -17,7 +35,7 @@ history into this repository.
 An ABI `.abix` or `.abicir` file is acquisition evidence. It is not a deployable
 LayerCake cake.
 
-## Current campaign state
+## Preserved execution history
 
 Status date: 2026-08-13.
 

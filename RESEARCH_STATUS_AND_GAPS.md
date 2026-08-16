@@ -1,6 +1,22 @@
 # ABI research status and open questions
 
-Status date: 2026-08-11
+Status date: 2026-08-15
+
+## Current resolution boundary
+
+Phase 4 is now resolved positively for the preregistered bounded exact-B20/B40
+machine-development frontier. The controlling certificate is
+`ABI_CAPABILITY_COMPILER_PHASE4_CERTIFICATE_V1.json`; the live campaign state is
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1016.json`. This establishes a stable
+tested B40 pass with an adjacent-lower B20 failure and complete equal-B40
+ABI/L0/L1/D0 comparisons. It does not establish a global minimum or general ABI
+superiority.
+
+The next scientific question is Phase 5: whether the exact B40 artifact can
+exclude unselected specialist behavior, selectively reconstruct installed
+domains, preserve immutable core/package identities through remove/restore,
+and resist cross-domain and label-spoof attacks on untouched evidence. Phase 2
+human judgments and final tests remain outstanding.
 
 ## What is resolved
 
