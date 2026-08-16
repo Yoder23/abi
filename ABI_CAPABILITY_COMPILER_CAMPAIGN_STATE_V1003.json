@@ -1,0 +1,29 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "state_id": "abi-capability-compiler-campaign-state-v1003",
+  "status_date": "2026-08-15",
+  "historical_evidence_changed": false,
+  "parent_state": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V995.json",
+  "phase": "PHASE_4_SUFFICIENT_INFORMATION_PARETO_FRONTIER",
+  "phase_status": "IN_PROGRESS_B40_MATCHED_BASELINE_TREE_INDEPENDENTLY_VERIFIED",
+  "phase4_certified": false,
+  "abi_superiority_certified": false,
+  "closed_gates": [
+    "The exact B40 equal-sequence information pack is independently verified.",
+    "All nine D0, L0, and L1 runs completed at three paired seeds with frozen B50-selected hyperparameters, 100 validation prompts per capability, and distinct checkpoints.",
+    "An independent verifier authenticated the complete 36-file, 3.31-GB tree and recomputed all 12,600 autonomous prompt outcomes.",
+    "D0, L0, and L1 all fail the locked all-seed quality contract at exact B40 information; L1 is strongest but misses the v1 abstention floor in seeds 130363 and 155921."
+  ],
+  "open_gates": [
+    "The three Phase 4 fairness views have not yet been composed into one independent frontier decision.",
+    "Exact same-checkpoint runtime is not required for a failed quality route, but a bounded L1 runtime measurement may be reported as non-promotional system evidence.",
+    "Phase 2 external human and final-test gates remain closed and are not silently waived."
+  ],
+  "authorized_next_action": "Preregister a no-training Phase 4 frontier composition over the independently verified B20 failure, B40 ABI product qualification, B40 runtime, exact B40 information pack, and B40 matched-baseline tree. Optionally measure only the strongest L1 same-checkpoint GPU runtime as explicitly non-promotional evidence before composition.",
+  "prohibitions": [
+    "No new baseline tuning or ABI training.",
+    "No runtime measurement may make a failed-quality baseline quality-qualified.",
+    "No final-test access or universal ABI-superiority claim."
+  ],
+  "claim_boundary": "Exact B40 matched baseline tree independently verified; Phase 4 frontier composition remains open."
+}
