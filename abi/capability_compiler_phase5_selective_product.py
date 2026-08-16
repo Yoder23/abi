@@ -16,6 +16,7 @@ import json
 from pathlib import Path
 import tempfile
 from typing import Any, Iterable, Mapping, Sequence
+from unittest.mock import patch
 from zipfile import ZipFile
 
 from cryptography.hazmat.primitives import serialization
@@ -31,6 +32,11 @@ from .capability_compiler_phase2_teacher import development_probes
 from .capability_compiler_phase3 import Phase3Error, _write_immutable
 from .capability_compiler_phase4_b20_v25_physical_screen import _api, _json
 from .capability_compiler_phase4_b40_v25_product_conformance import _package
+from . import capability_compiler_phase4_b50_gpu_runtime as baseline_harness
+from .capability_compiler_phase4_b40_baselines import (
+    load_exact_records as load_exact_b40_records,
+    train_exact_b40_router,
+)
 from .capability_compiler_phase4_b50_gpu_runtime import (
     _baseline_request,
     _load_baseline,
@@ -93,10 +99,34 @@ def _result_path(root: Path, protocol: Mapping[str, Any], system: str, seed: int
 
 
 def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str]:
-    protocol = _json(path)
+    document = _json(path)
+    status = document.get("status")
+    if status == "PREREGISTERED_PHASE5_SELECTIVE_PRODUCT_B40_LOADER_REPAIR":
+        base_path = root / str(document.get("base_protocol", ""))
+        if (
+            not base_path.is_file()
+            or sha256_file(base_path) != document.get("base_protocol_sha256")
+        ):
+            raise Phase3Error("Phase 5 repair base protocol changed")
+        base = _json(base_path)
+        protocol = {
+            **base,
+            **document,
+            "bindings": {
+                **base.get("bindings", {}),
+                **document.get("bindings", {}),
+            },
+        }
+    else:
+        protocol = document
+    repaired = status == "PREREGISTERED_PHASE5_SELECTIVE_PRODUCT_B40_LOADER_REPAIR"
     if (
         protocol.get("format") != FORMAT
-        or protocol.get("status") != "PREREGISTERED_PHASE5_SELECTIVE_PRODUCT"
+        or status
+        not in {
+            "PREREGISTERED_PHASE5_SELECTIVE_PRODUCT",
+            "PREREGISTERED_PHASE5_SELECTIVE_PRODUCT_B40_LOADER_REPAIR",
+        }
         or protocol.get("device") != "cuda"
         or protocol.get("catalog_split") != "final_test"
         or protocol.get("domains") != list(DOMAINS)
@@ -112,6 +142,15 @@ def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str]:
         or protocol.get("core_or_package_mutation_authorized") is not False
     ):
         raise Phase3Error("Phase 5 selective-product governance changed")
+    if repaired and (
+        protocol.get("repair_of")
+        != "ABI_CAPABILITY_COMPILER_PHASE5_SELECTIVE_PRODUCT_PROTOCOL_V1023.json"
+        or protocol.get("preserved_failure")
+        != "ABI_CAPABILITY_COMPILER_PHASE5_L1_B40_LOADER_FAILURE_V1025.json"
+        or protocol.get("repair_scope")
+        != "B40_L1_RECORD_LOADER_AND_ROUTER_TRAINER_DISPATCH_ONLY"
+    ):
+        raise Phase3Error("Phase 5 B40 loader repair scope changed")
     for relative, expected in protocol["bindings"].items():
         target = (root / relative).resolve()
         if not target.is_file() or sha256_file(target) != expected:
@@ -225,6 +264,22 @@ def _zero_execution(delta: Mapping[str, Mapping[str, int]]) -> bool:
         for counters in delta.values()
         for value in counters.values()
     )
+
+
+def _load_phase5_baseline(
+    root: Path, runtime_protocol: Mapping[str, Any], system: str
+) -> dict[str, Any]:
+    if system != "L1":
+        return _load_baseline(root, runtime_protocol, system)
+    with (
+        patch.object(
+            baseline_harness, "load_exact_records", load_exact_b40_records
+        ),
+        patch.object(
+            baseline_harness, "train_exact_b50_router", train_exact_b40_router
+        ),
+    ):
+        return _load_baseline(root, runtime_protocol, system)
 
 
 @torch.inference_mode()
@@ -600,7 +655,7 @@ def run_baseline(
         "systems": {system: protocol["systems"][system][str(seed)]},
         "source_headline_protocol": protocol["source_headline_protocol"],
     }
-    runtime = _load_baseline(root, runtime_protocol, system)
+    runtime = _load_phase5_baseline(root, runtime_protocol, system)
     observations: list[dict[str, Any]] = []
     for raw in rows:
         probe = dict(raw)
@@ -683,12 +738,19 @@ def verify(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
                 if system == "ABI"
                 else "PASS_PHASE5_RESIDUAL_BASELINE_SEED"
             )
+            expected_protocol_sha = protocol_sha
+            if (
+                system == "ABI"
+                and protocol.get("status")
+                == "PREREGISTERED_PHASE5_SELECTIVE_PRODUCT_B40_LOADER_REPAIR"
+            ):
+                expected_protocol_sha = str(protocol["base_protocol_sha256"])
             if (
                 result.get("format") != RESULT_FORMAT
                 or result.get("status") != expected_status
                 or result.get("system") != system
                 or int(result.get("seed", -1)) != seed
-                or result.get("protocol_sha256") != protocol_sha
+                or result.get("protocol_sha256") != expected_protocol_sha
                 or not all(result.get("gates", {}).values())
             ):
                 raise Phase3Error(f"Phase 5 matrix row failed: {system}/{seed}")

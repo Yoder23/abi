@@ -10,6 +10,7 @@ from abi.capability_compiler_phase5_selective_product import (
     SYSTEMS,
     _domain_rows,
     _explicit_product_abstention,
+    _load_phase5_baseline,
     _zero_execution,
 )
 
@@ -33,6 +34,17 @@ def test_product_abstention_requires_an_explicit_failure_message():
 def test_zero_execution_rejects_any_module_prefill_or_decode():
     assert _zero_execution({"cake": {"module_load_calls": 0, "prefill_calls": 0}})
     assert not _zero_execution({"cake": {"module_load_calls": 0, "prefill_calls": 1}})
+
+
+def test_d0_keeps_generic_loader_and_l1_uses_b40_dispatch(monkeypatch, tmp_path):
+    calls = []
+    monkeypatch.setattr(
+        "abi.capability_compiler_phase5_selective_product._load_baseline",
+        lambda root, protocol, system: calls.append(system) or {"system": system},
+    )
+    assert _load_phase5_baseline(tmp_path, {}, "D0") == {"system": "D0"}
+    assert _load_phase5_baseline(tmp_path, {}, "L1") == {"system": "L1"}
+    assert calls == ["D0", "L1"]
 
 
 def test_domain_rows_reject_unbalanced_or_wrong_destination(tmp_path):
