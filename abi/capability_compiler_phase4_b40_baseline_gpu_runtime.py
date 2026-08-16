@@ -42,6 +42,7 @@ def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str]:
         or int(runtime.get("p95_minimum_observations", 0)) != 100
         or int(runtime.get("p99_minimum_observations", 0)) != 1000
         or set(protocol.get("systems", {})) != set(SYSTEMS)
+        or protocol.get("authorized_systems") != ["L1"]
     ):
         raise Phase3Error("matched B40 LoRA CUDA runtime governance changed")
     for relative, expected in protocol["bindings"].items():
@@ -59,7 +60,7 @@ def run(
     output: Path,
 ) -> dict[str, Any]:
     protocol, protocol_sha = load_protocol(root, protocol_path)
-    if system not in SYSTEMS or output.exists():
+    if system not in protocol["authorized_systems"] or output.exists():
         raise Phase3Error("invalid or existing matched B40 LoRA CUDA runtime target")
     with tempfile.TemporaryDirectory(prefix=f"abi-b40-runtime-{system.lower()}-") as raw:
         staging = Path(raw) / "harness"
