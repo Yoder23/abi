@@ -1,0 +1,40 @@
+{
+  "format": "abi-capability-compiler-phase7-integrated-runtime/1",
+  "protocol_id": "abi-capability-compiler-phase7-direct-artifact-runtime-v1053",
+  "status": "PREREGISTERED_PHASE7_DIRECT_ARTIFACT_LIFECYCLE_REPAIR",
+  "status_date": "2026-08-16",
+  "historical_evidence_changed": false,
+  "base_protocol": "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json",
+  "base_protocol_sha256": "531b7ee35cf79c13eb706626b276cc29be7e08b7c2153ca5d430298b51ee5d05",
+  "repair_of": "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json",
+  "preserved_failure": "ABI_CAPABILITY_COMPILER_PHASE7_RSS_REPLICATION_RESULT_V1049.json",
+  "repair_scope": "DIRECT_HASH_BOUND_CORE_ARTIFACT_ACTIVATION_ONLY",
+  "objective": "Run the exact Phase 7 product in fresh CPU and CUDA serving processes that directly activate the separately materialized hash-bound core archive. Preserve the original prompts, packages, output references, comparators, quality gates, throughput gates, TTFT gates, memory gates, and sparse-execution gates.",
+  "materialization_status": "PASS_PHASE7_PRODUCT_MATERIALIZATION",
+  "materialization_protocol": "ABI_CAPABILITY_COMPILER_PHASE7_PRODUCT_MATERIALIZATION_PROTOCOL_V1050.json",
+  "materialization_preflight": "ABI_CAPABILITY_COMPILER_PHASE7_PRODUCT_MATERIALIZATION_PREFLIGHT_V1051.json",
+  "materialization_result": "results/abi_capability_compiler_phase7_integrated/materialized_v1052/result.json",
+  "materialized_core_archive": "results/abi_capability_compiler_phase7_integrated/materialized_v1052/phase7-final-english-core.cake",
+  "result_path_template": "results/abi_capability_compiler_phase7_integrated/direct_artifact_v1055/{device}",
+  "model_inference_authorized": "EXACT_CPU_AND_CUDA_DIRECT_ARTIFACT_PHASE7_RUNTIME_RUNS_ONLY",
+  "bindings": {
+    "abi/capability_compiler_phase7_integrated_runtime.py": "9968e4f5c85bfed1a51df12c12b5de0085ab6ec0d19ac316389602e16d16d358",
+    "tests/test_capability_compiler_phase7_integrated_runtime.py": "cdfe41e4ed45e4be9e5d8f2f09650131fac1c42bc683e3db5bcec6349d406cc0",
+    "abi/capability_compiler_phase7_direct_artifact_runtime.py": "e5238aa8e415e528c19774d49e469c078e3a82f7791b8a20a39e41e3f8024dbd",
+    "tests/test_capability_compiler_phase7_direct_artifact_runtime.py": "42ed6e975fe2ae872760f401776b16a5c9a4931d9fd6c445132fe8c2fbea6338",
+    "ABI_CAPABILITY_COMPILER_PHASE7_PRODUCT_MATERIALIZATION_PROTOCOL_V1050.json": "636f2423fc8548e3aa3af7a142c60e417acd24a7e859e2802e6aa466fc912b81",
+    "ABI_CAPABILITY_COMPILER_PHASE7_PRODUCT_MATERIALIZATION_PREFLIGHT_V1051.json": "d4fbfd18fd75c63bb40d868b5bdfac01b9debc87e80aade5fbada7db9fc82d2f",
+    "ABI_CAPABILITY_COMPILER_PHASE7_RSS_REPLICATION_RESULT_V1049.json": "cb281008b36fde9a326914de1248682709bace923c309a03d000150e0bc39aea",
+    "results/abi_capability_compiler_phase7_integrated/materialized_v1052/result.json": "d22684e34aabe39c4b590e3d22a547709a75cb8d17386700d410ca407ca6ee8c",
+    "results/abi_capability_compiler_phase7_integrated/materialized_v1052/phase7-final-english-core.cake": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d"
+  },
+  "execution_order": [
+    "Commit this direct-artifact protocol, runner, and focused tests.",
+    "Run and preserve preflight.",
+    "Run CPU once in a fresh serving process.",
+    "Run CUDA once in a fresh serving process.",
+    "Preregister and run an independent read-only integrated verifier before any Phase 7 conclusion."
+  ],
+  "decision_rule": "Both devices must pass every unchanged inherited V1040 gate using the exact materialized archive and all three exact domain packages. Any output, identity, quality, speed, TTFT, active-memory, RSS, sparse-execution, persistence, or repetition failure rejects the repair. Same-process archive reconstruction is prohibited.",
+  "claim_boundary": "One bounded serving-lifecycle repair. It changes no product bytes or thresholds and cannot alone certify Phase 7, human preference, arbitrary hardware, or release."
+}
