@@ -1,0 +1,22 @@
+{
+  "format": "abi-capability-compiler-phase6-preflight-failure/1",
+  "status": "FAIL_PHASE6_PREFLIGHT_BEFORE_MODEL_INFERENCE",
+  "status_date": "2026-08-16",
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE6_COMPOSITION_PROTOCOL_V1031.json",
+  "protocol_sha256": "2637e48ebecff7b05f13e3877b45e61d3021645a9f1e61a273e14e083fcf17e0",
+  "sealed_commit": "8ebefc8383a6d57a400ee4f6430d0cd3872695a1",
+  "operation": "preflight only",
+  "model_inference_performed": false,
+  "teacher_loaded": false,
+  "training_performed": false,
+  "result_targets_created": 0,
+  "exception_type": "abi.layercake_domains.DomainConformanceError",
+  "exception_message": "bundle is not current training material",
+  "measured_cause": {
+    "bundle_artifact_role": "selected_layercake_training_material_v2",
+    "bundle_training_eligible": false,
+    "bundle_historical_manifest_training_eligible": true,
+    "explanation": "The Phase 6 read-only provenance audit reused a loader whose safety contract is for current training inputs. The exact archive was later retired from training eligibility, so the loader correctly rejected it even though Phase 6 requests no training and only needs to reconstruct the immutable historical record lineage of already-built packages."
+  },
+  "repair_boundary": "Permit one hash-bound read-only historical-lineage reconstruction from the verified archive, its frozen selection, exact budget record IDs, and passing probe results. Do not restore training eligibility, train, query a teacher, mutate an artifact, change any prompt, or change any gate."
+}

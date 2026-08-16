@@ -35,11 +35,60 @@ from .capability_compiler_phase5_selective_product import (
 )
 from .capability_compiler_phase5_construct_screen import project_catalog_prompt
 from .capability_pipeline import read_extraction_bundle
-from .layercake_domains import load_domain_training_rows
 
 
 FORMAT = "abi-capability-compiler-phase6-composition/1"
 RESULT_FORMAT = "abi-capability-compiler-phase6-composition-result/1"
+
+
+def _historical_selected_domain_rows(
+    bundle: Mapping[str, Any], *, domain: str, budget_index: int
+) -> tuple[list[dict[str, Any]], dict[str, Any], dict[str, Any]]:
+    """Reconstruct an already-consumed lineage without reauthorizing training."""
+
+    verification = bundle["verification"]
+    if (
+        verification.get("verified") is not True
+        or verification.get("artifact_role")
+        != "selected_layercake_training_material_v2"
+        or verification.get("historical_manifest_training_eligible") is not True
+    ):
+        raise Phase3Error("Phase 6 historical archive is not verified prior material")
+    if verification.get("training_eligible") is not False:
+        raise Phase3Error("Phase 6 historical audit requires a retired training archive")
+    selected_items = [
+        dict(row)
+        for row in bundle["selection"]["selected_items"]
+        if row.get("destination_scope") == "domain_cake"
+        and row.get("domain") == domain
+    ]
+    if len(selected_items) != 1:
+        raise Phase3Error(f"Phase 6 historical source selection changed: {domain}")
+    selected_source = selected_items[0]
+    budget = bundle["budgets"][budget_index]
+    if budget.get("split") != "search":
+        raise Phase3Error("Phase 6 historical budget is not search-only")
+    allowed = set(str(value) for value in budget["record_ids"])
+    passing = {
+        str(row["record_id"]): row.get("passed") is True
+        for row in bundle["probe_results"]
+    }
+    rows = [
+        dict(row)
+        for row in bundle["records"]
+        if str(row["record_id"]) in allowed
+        and row.get("destination_scope") == "domain_cake"
+        and row.get("domain") == domain
+        and row.get("split") == "search"
+        and row.get("source_model") == selected_source["source_model"]
+        and row.get("source_model_revision")
+        == selected_source["source_model_revision"]
+        and passing.get(str(row["record_id"])) is True
+    ]
+    rows.sort(key=lambda row: str(row["record_id"]))
+    if not rows:
+        raise Phase3Error(f"Phase 6 historical budget has no selected rows: {domain}")
+    return rows, dict(budget), selected_source
 
 
 def _phase5_reference(root: Path, protocol: Mapping[str, Any], seed: int) -> dict[str, bytes]:
@@ -91,22 +140,22 @@ def _provenance(root: Path, protocol: Mapping[str, Any]) -> dict[str, Any]:
     all_selected_record_ids: set[str] = set()
     for domain in DOMAINS:
         specification = package_specs[domain]
-        selected, budget, _ = load_domain_training_rows(
-            bundle_path,
+        selected, budget, selected_source = _historical_selected_domain_rows(
+            bundle,
             domain=domain,
             budget_index=int(specification["minimum_tested_passing_budget_index"]),
         )
         package_path = root / specification["package"]
         manifest = _package_manifest(package_path)
         source_identity = (
-            str(selected[0]["source_model"]),
-            str(selected[0]["source_model_revision"]),
+            str(selected_source["source_model"]),
+            str(selected_source["source_model_revision"]),
         )
         source = source_by_identity.get(source_identity)
         if source is None:
             raise Phase3Error(f"Phase 6 selected source manifest ambiguous: {domain}")
         source_manifest = str(source["source_manifest_sha256"])
-        record_ids = [str(row["id"]) for row in selected]
+        record_ids = [str(row["record_id"]) for row in selected]
         all_selected_record_ids.update(record_ids)
         gates = {
             "selected_record_count": len(selected) == int(specification["training_rows"]),
@@ -209,10 +258,34 @@ def _provenance(root: Path, protocol: Mapping[str, Any]) -> dict[str, Any]:
 
 
 def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str]:
-    protocol = _json(path)
+    document = _json(path)
+    status = document.get("status")
+    repaired = status == "PREREGISTERED_PHASE6_COMPOSITION_HISTORICAL_LINEAGE_REPAIR"
+    if repaired:
+        base_path = root / str(document.get("base_protocol", ""))
+        if (
+            not base_path.is_file()
+            or sha256_file(base_path) != document.get("base_protocol_sha256")
+        ):
+            raise Phase3Error("Phase 6 repair base protocol changed")
+        base = _json(base_path)
+        protocol = {
+            **base,
+            **document,
+            "bindings": {
+                **base.get("bindings", {}),
+                **document.get("bindings", {}),
+            },
+        }
+    else:
+        protocol = document
     if (
         protocol.get("format") != FORMAT
-        or protocol.get("status") != "PREREGISTERED_PHASE6_COMPOSITION"
+        or status
+        not in {
+            "PREREGISTERED_PHASE6_COMPOSITION",
+            "PREREGISTERED_PHASE6_COMPOSITION_HISTORICAL_LINEAGE_REPAIR",
+        }
         or protocol.get("device") != "cuda"
         or protocol.get("domains") != list(DOMAINS)
         or protocol.get("seeds") != list(SEEDS)
@@ -226,6 +299,15 @@ def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str]:
         or protocol.get("phase5_final_reuse") != "EXACT_REPLAY_NO_SELECTION_OR_TUNING"
     ):
         raise Phase3Error("Phase 6 composition governance changed")
+    if repaired and (
+        protocol.get("repair_of")
+        != "ABI_CAPABILITY_COMPILER_PHASE6_COMPOSITION_PROTOCOL_V1031.json"
+        or protocol.get("preserved_failure")
+        != "ABI_CAPABILITY_COMPILER_PHASE6_PREFLIGHT_FAILURE_V1033.json"
+        or protocol.get("repair_scope")
+        != "READ_ONLY_RETIRED_ARCHIVE_LINEAGE_RECONSTRUCTION_ONLY"
+    ):
+        raise Phase3Error("Phase 6 historical-lineage repair scope changed")
     for relative, expected in protocol["bindings"].items():
         target = (root / relative).resolve()
         if not target.is_file() or sha256_file(target) != expected:
