@@ -1,0 +1,149 @@
+{
+  "format": "abi-capability-compiler-phase6-composition/1",
+  "protocol_id": "abi-capability-compiler-phase6-composition-v1031",
+  "status": "PREREGISTERED_PHASE6_COMPOSITION",
+  "status_date": "2026-08-16",
+  "historical_evidence_changed": false,
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1030.json",
+  "phase5_certificate": "ABI_CAPABILITY_COMPILER_PHASE5_CERTIFICATE_V1.json",
+  "objective": "Test the exact certified Phase 5 English cores and immutable chemistry, civics, and Python packages as a simultaneous three-package product on three independent compatible host initializations. Require exact single-to-composed output identity, selected-only physical execution, structured non-collapsing composition, fail-closed conflict quarantine, immutable English/core/package identity, and record-level provenance and deletion lineage.",
+  "device": "cuda",
+  "layercake_root": "../layercake_release",
+  "layercake_commit": "a87a653dbdb1a4e5f713baf7bc508d508277e00d",
+  "core_protocol": "ABI_CAPABILITY_COMPILER_PHASE4_B40_V25_PRODUCT_CONFORMANCE_PROTOCOL_V960.json",
+  "english_phase1_certificate": "ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json",
+  "english_catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+  "domain_catalog": "catalogs/english_and_first_domains_certification_v6.json",
+  "domain_package_protocol": "DOMAIN_CAKE_PACKAGE_CERTIFICATION_PROTOCOL.json",
+  "domain_package_certificate": "results/abi_moonshot/domain_cakes/package-certification-validation.json",
+  "domain_training_bundle": "results/abi_moonshot/multisource-english-python-math-chemistry-civics-balanced-passing-search.abix",
+  "domain_training_bundle_sha256": "e58dcf12cff36267e9088278cd6107d60da0158b14d2d0f15f717622564167d0",
+  "domains": [
+    "chemistry",
+    "civics",
+    "python"
+  ],
+  "per_domain": 100,
+  "composition_requests": 100,
+  "conflict_requests": 100,
+  "english_preservation_prompts": 100,
+  "seeds": [
+    104729,
+    130363,
+    155921
+  ],
+  "systems": {
+    "ABI": {
+      "104729": {
+        "archive_sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+        "payload_sha256": "18ad787696cf8737578253035ad84b7e0145d995f028c6392ba338b6117d5aba"
+      },
+      "130363": {
+        "archive_sha256": "c181039b0fd9df25f94453ff41d57e74a103a0fbc4d41be10ec5a52e9803b7eb",
+        "payload_sha256": "29f6beb47ce2773a87967904382b00900a469070e1b5ead9e8ceabddc8b9cbc0"
+      },
+      "155921": {
+        "archive_sha256": "f111ac0c73f1f67dd62c1d059ae02c5903ff22c9e64e835a05a26d690a037328",
+        "payload_sha256": "46887c3ac1503391adec01eca6c02e46d11fee9788e0d52887d1d2c861d6fd57"
+      }
+    }
+  },
+  "domain_packages": {
+    "chemistry": {
+      "package": "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.cake",
+      "archive_sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+      "public_key": "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.pub",
+      "public_key_sha256": "8c585e5e993a22962cd1196b0d4fbb666b5a022e0c72525f6c37a23ea915efef"
+    },
+    "civics": {
+      "package": "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.cake",
+      "archive_sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+      "public_key": "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.pub",
+      "public_key_sha256": "aaa8655fe76714e4b99f7dfc4084ed78f475e8aa699214fac8006a887c6611f4"
+    },
+    "python": {
+      "package": "results/abi_moonshot/packages/abi-python-token-plan-seed9824.cake",
+      "archive_sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+      "public_key": "results/abi_moonshot/packages/abi-python-token-plan-seed9824.pub",
+      "public_key_sha256": "6fa980c963b60208877b5df19ed2f07f793f8b63e2af8f613264c3fe0e160099"
+    }
+  },
+  "phase5_observations": {
+    "104729": "results/abi_capability_compiler_phase5_selective_product/run_v1024/ABI-seed104729/observations.jsonl",
+    "130363": "results/abi_capability_compiler_phase5_selective_product/run_v1024/ABI-seed130363/observations.jsonl",
+    "155921": "results/abi_capability_compiler_phase5_selective_product/run_v1024/ABI-seed155921/observations.jsonl"
+  },
+  "l1_scaling_reference": {
+    "source": "results/abi_capability_compiler_phase4_b40_frontier/verify_v1014/result.json",
+    "active_tensor_bytes": 7667325120,
+    "boundary": "Descriptive deployment scaling only. The L1 reference is the exact B40 source-plus-adapter runtime and is not a matched specialist-domain quality system for Phase 6."
+  },
+  "result_path_template": "results/abi_capability_compiler_phase6_composition/run_v1032/seed{seed}/result.json",
+  "gates": {
+    "simultaneous_packages_per_host": 3,
+    "selected_domain_functional_passes_per_seed": 300,
+    "single_to_composed_byte_exact_per_seed": 300,
+    "selected_only_physical_executions_per_seed": 600,
+    "structured_three_domain_compositions_per_seed": 100,
+    "conflicts_quarantined_per_seed": 100,
+    "english_outputs_byte_exact_per_seed": 100,
+    "independent_host_initializations": 3,
+    "receiver_learning_steps": 0,
+    "teacher_present_at_inference": false
+  },
+  "phase5_final_reuse": "EXACT_REPLAY_NO_SELECTION_OR_TUNING",
+  "information_accounting": {
+    "new_teacher_outputs": 0,
+    "new_teacher_tokens": 0,
+    "new_logits": 0,
+    "new_hidden_activations": 0,
+    "new_trainable_parameters": 0,
+    "receiver_training_steps": 0,
+    "domain_training_records": 175,
+    "domain_teacher_tokens": 3401,
+    "archive_source_models_in_custody": 3,
+    "deployed_domain_source_models_expected": 1
+  },
+  "training_authorized": false,
+  "teacher_query_authorized": false,
+  "artifact_mutation_authorized": false,
+  "nearby_repair_or_tuning_authorized": false,
+  "model_inference_authorized": "EXACT_REGISTERED_THREE_SEED_PHASE6_MATRIX_ONLY",
+  "bindings": {
+    "abi/capability_compiler_phase6_composition.py": "3a40d468061809d159ccfb756a16bc9a4e8d91190b7706fa3897b0fb4ff2f6ba",
+    "tests/test_capability_compiler_phase6_composition.py": "65145e20566f1a0ae55de66e7693d33fbe79badd31961d4450b06bdcce4aba52",
+    "abi/capability_compiler_phase5_selective_product.py": "6d0ded514ac936ebdce63ecf1c6942aefa96a3cb5386401f3a765a61aad21f25",
+    "ABI_CAPABILITY_COMPILER_PHASE5_CERTIFICATE_V1.json": "93265064268f697cf4bfc348551186dc53c7e780be5420c41a74844888c723b6",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1030.json": "e7ebcd31f5e960cebac59ac37aa36eed461d5d3940d25b6b9f0ce5f601b9f0eb",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B40_V25_PRODUCT_CONFORMANCE_PROTOCOL_V960.json": "ab7ca91e2516c2c431a24df05100cae3408dfed23b5ad592f6619a098dc74f30",
+    "ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json": "da0c69d53b9b3cf7604ba3e56812f3e9468dcbf293bb14a75576c02d4dc87735",
+    "DOMAIN_CAKE_PACKAGE_CERTIFICATION_PROTOCOL.json": "9fdc4c45bb1b9ccabd4956a0f296fd743ab0d34827cc545dcff9ac475da12577",
+    "results/abi_moonshot/domain_cakes/package-certification-validation.json": "11f786e106f639089500115ec233a9bad75a0563e48a41abddf0ff3ebca5f5f3",
+    "results/abi_moonshot/multisource-english-python-math-chemistry-civics-balanced-passing-search.abix": "e58dcf12cff36267e9088278cd6107d60da0158b14d2d0f15f717622564167d0",
+    "catalogs/english_and_first_domains_certification_v6.json": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "results/abi_capability_compiler_phase5_selective_product/run_v1024/ABI-seed104729/observations.jsonl": "02f406c1b31ffc65e1d0ebb998900a0464905e4efdb1458ed9750b96ffb1b2cc",
+    "results/abi_capability_compiler_phase5_selective_product/run_v1024/ABI-seed130363/observations.jsonl": "b207b0ea7a168b6a020ed0b8ac633fb1579c69558de3518011d5f2a58462f096",
+    "results/abi_capability_compiler_phase5_selective_product/run_v1024/ABI-seed155921/observations.jsonl": "5ca8960c1074009f0fd7cc7a5aeb01e73f4a84584c8d38e3ca16f9294b3e2fbb",
+    "results/abi_capability_compiler_phase4_b40_frontier/verify_v1014/result.json": "07975fe6f09e053184a9d0bbae35831e1c583ba35d8338738817e1dbf36e1a73",
+    "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.cake": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+    "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.pub": "8c585e5e993a22962cd1196b0d4fbb666b5a022e0c72525f6c37a23ea915efef",
+    "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.cake": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+    "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.pub": "aaa8655fe76714e4b99f7dfc4084ed78f475e8aa699214fac8006a887c6611f4",
+    "results/abi_moonshot/packages/abi-python-token-plan-seed9824.cake": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+    "results/abi_moonshot/packages/abi-python-token-plan-seed9824.pub": "6fa980c963b60208877b5df19ed2f07f793f8b63e2af8f613264c3fe0e160099",
+    "../layercake_release/layercake_extensions/authoritative_destination_control.py": "6db81b67329843a161aeb85522103b2dca8da8e237fe8f21a288bb29493e40d9",
+    "../layercake_release/moonshot/postrelease_authoritative_destination_control_decision_v95.json": "c400d21fc441d18806413beeaab6b64e003df1a525d05c32dbce6bb3e53dfe99",
+    "../layercake_release/layercake/routing/direct_orchestrator.py": "fbc1be560f6c756da6c7b30bbed5478a9b3088059902282b22c78d0bdd286edf",
+    "../layercake_release/layercake/routing/catalog_router.py": "f1b724ecba5daed33348e6f5988bbd5bba0258763c659988e12794d253f24398"
+  },
+  "execution_order": [
+    "Commit the runner, focused tests, and this hash-bound protocol.",
+    "Run preflight and preserve its result.",
+    "Execute the exact simultaneous three-package matrix once at each registered host seed.",
+    "Run a separately bound read-only verifier and hostile evidence tests.",
+    "Issue a certificate only if every registered gate recomputes from immutable raw evidence."
+  ],
+  "decision_rule": "Pass Phase 6 only if all three independent compatible host initializations simultaneously install the exact three immutable packages; reproduce all 300 single-package specialist outputs byte-for-byte; pass 100 structured three-domain compositions with three functional, byte-exact, physically selected-only components; quarantine all 100 ambiguous combined requests without core or cake execution; preserve all 100 English outputs, exact core identity, package hashes, source lineage, and record deletion indices; and perform no training or teacher inference.",
+  "claim_boundary": "A pass certifies bounded composition, transfer to three independent compatible host initializations, selected-only physical execution, and deletion lineage for these exact English cores, packages, domains, labels, seeds, and frozen suite. It does not claim arbitrary-host compatibility, deployed multi-source quality, latent knowledge absence, exhaustive domains, Phase 2 human completion, release readiness, or universal superiority over LoRA or distillation."
+}
