@@ -55,6 +55,14 @@ def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str]:
         and protocol.get("layercake_commit")
         == "8f49fe1a31938c2f9b59a576a494b99abdf538a7"
     )
+    integrity_verify = (
+        protocol.get("repair_scope")
+        == "STREAMING_CRYPTOGRAPHIC_ACTIVE_VERIFY_WITHOUT_TENSOR_RELOAD"
+        and protocol.get("preserved_failure")
+        == "ABI_CAPABILITY_COMPILER_PHASE7_STREAMING_HOST_RESULT_V1060.json"
+        and protocol.get("layercake_commit")
+        == "662c5a9b7264a1a5478c9dfb656f35c450e2504f"
+    )
     if (
         int(protocol.get("seed", -1)) != base.SEED
         or protocol.get("devices") != ["cpu", "cuda"]
@@ -67,7 +75,7 @@ def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str]:
         or protocol.get("artifact_mutation_authorized") is not False
         or protocol.get("repair_of")
         != "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json"
-        or not (direct_lifecycle or streaming_host)
+        or not (direct_lifecycle or streaming_host or integrity_verify)
         or protocol.get("materialization_status")
         != "PASS_PHASE7_PRODUCT_MATERIALIZATION"
     ):
@@ -142,7 +150,10 @@ def preflight(root: Path, protocol_path: Path) -> dict[str, Any]:
         == protocol["product"]["core_payload_sha256"],
         "same_process_reconstruction_absent": True,
     }
-    if protocol.get("repair_scope") == "STREAMING_LAYERCAKE_PACKAGE_LOAD_AND_VERIFY_ONLY":
+    if protocol.get("repair_scope") in {
+        "STREAMING_LAYERCAKE_PACKAGE_LOAD_AND_VERIFY_ONLY",
+        "STREAMING_CRYPTOGRAPHIC_ACTIVE_VERIFY_WITHOUT_TENSOR_RELOAD",
+    }:
         gates.update(
             layercake_streaming_host_patch_bound=True,
             layercake_patch_test_output_absent=not (
