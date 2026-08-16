@@ -1,0 +1,111 @@
+{
+  "format": "abi-capability-compiler-phase5-certificate/1",
+  "certificate_id": "ABI_CAPABILITY_COMPILER_PHASE5_CERTIFICATE_V1",
+  "status": "CERTIFIED_BOUNDED_THREE_DOMAIN_SELECTIVE_RECONSTRUCTION_AND_BEHAVIORAL_EXCLUSION",
+  "status_date": "2026-08-16",
+  "phase": 5,
+  "scope": "Exact B40 five-route English cores at seeds 104729, 130363, and 155921; exact signed chemistry, civics, and Python packages; immutable authoritative destination labels; 100 frozen final prompts per domain; CUDA execution on the registered host.",
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE5_SELECTIVE_PRODUCT_REPAIR_PROTOCOL_V1026.json",
+    "sha256": "bd7d2338f521ee742982f8b3f338aacbb4e1685c068532daed8ab233cc9b4020"
+  },
+  "independent_verification": {
+    "protocol": "ABI_CAPABILITY_COMPILER_PHASE5_VERIFY_PROTOCOL_V1027.json",
+    "protocol_sha256": "0b59c59f489feb7e387da6acfe8a8fd1b0846f4da1752ecf819cee802a06d596",
+    "result": "results/abi_capability_compiler_phase5_selective_product/verify_v1029/result.json",
+    "result_sha256": "6d316f962d2383fe1904e41445e6b0fb330d89203198cf89a2a5b344d57a3a26",
+    "evidence_sha256": "1ccecf20ec06742852c156341165a1ef309c06e35d0e12937311c77d2202dd28",
+    "status": "PASS_INDEPENDENTLY_VERIFIED_PHASE5_BOUNDED_EXCLUSION"
+  },
+  "adversarial_verification": {
+    "path": "results/abi_capability_compiler_phase5_selective_product/adversarial_v1028.xml",
+    "sha256": "963e3d9adb5758fabbce1b409feeb12fd7ac450a4d3bfd1c046ad7ff08b00a74",
+    "tests": 13,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "certified_results": {
+    "selected_domain_functional_passes_per_seed": [
+      300,
+      300,
+      300
+    ],
+    "missing_domain_explicit_abstentions_per_seed": [
+      300,
+      300,
+      300
+    ],
+    "unauthorized_english_core_calls_per_seed": [
+      0,
+      0,
+      0
+    ],
+    "english_outputs_byte_exact_before_after_per_seed": [
+      100,
+      100,
+      100
+    ],
+    "exact_domain_lifecycles_per_seed": [
+      3,
+      3,
+      3
+    ],
+    "label_spoof_cases_contained_per_seed": [
+      60,
+      60,
+      60
+    ],
+    "cross_domain_cases_failed_closed_per_seed": [
+      60,
+      60,
+      60
+    ],
+    "quarantine_cases_failed_closed_per_seed": [
+      60,
+      60,
+      60
+    ],
+    "receiver_training_steps": 0,
+    "teacher_present_at_abi_inference": false
+  },
+  "residual_controls": {
+    "L1_specialist_functional_passes_per_seed": [
+      252,
+      198,
+      192
+    ],
+    "L1_explicit_abstentions_per_seed": [
+      0,
+      0,
+      0
+    ],
+    "L1_source_base_present_at_inference": true,
+    "D0_specialist_functional_passes_per_seed": [
+      0,
+      0,
+      0
+    ],
+    "D0_explicit_abstentions_per_seed": [
+      0,
+      23,
+      0
+    ],
+    "interpretation": "The controls are descriptive. They demonstrate that broad residual answering or inability is not reliable bounded exclusion; the certified ABI boundary is zero unauthorized execution under an immutable outer label."
+  },
+  "preserved_negative_evidence": [
+    "ABI_CAPABILITY_COMPILER_PHASE5_CONSTRUCT_SCREEN_RESULT_V1019.json",
+    "ABI_CAPABILITY_COMPILER_PHASE5_CONSTRUCT_REPAIR_RESULT_V1022.json",
+    "ABI_CAPABILITY_COMPILER_PHASE5_L1_B40_LOADER_FAILURE_V1025.json"
+  ],
+  "semantic_boundary": "This certificate proves bounded behavioral exclusion at the authoritative LayerCake control plane. It does not claim that specialist facts are absent from every English-core weight or activation.",
+  "phase5_certified": true,
+  "phase6_open": true,
+  "unresolved_prerequisites": {
+    "phase2_external_human_preferences_complete": false,
+    "completed_preferences": 0,
+    "required_preferences": 21000,
+    "unconditional_release_claims_allowed": false
+  },
+  "claim_limits": "No exhaustive domain discovery, latent semantic purity, multi-domain composition, multiple-source provenance, Phase 6, integrated Phase 7, Phase 8 release, global minimum, or universal ABI superiority over LoRA or distillation is certified."
+}

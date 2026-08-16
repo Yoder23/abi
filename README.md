@@ -12,23 +12,25 @@ artifacts are acquisition material, not deployable cakes.
 
 ## Current status
 
-Status date: 2026-08-15
+Status date: 2026-08-16
 
 **The ABI English-product moonshot is OPEN.**
 
-Phase 4 now has a bounded machine-development certificate:
-`ABI_CAPABILITY_COMPILER_PHASE4_CERTIFICATE_V1.json`. On the exact registered
-B20/B40 campaign, B40 is the smallest stable passing tested ABI budget and B20
-is its all-seed adjacent-lower failure. At equal B40 sequence information, ABI
-passes all three seeds while L0, L1, and D0 do not. The same teacher-free ABI
-artifact preserves the independently verified CPU speed gate and materially
-outperforms the strongest L1 control on the registered GPU runtime test.
+Phase 5 now has a bounded three-domain machine certificate:
+`ABI_CAPABILITY_COMPILER_PHASE5_CERTIFICATE_V1.json`. The exact B40 English
+cores at three seeds selectively host immutable chemistry, civics, and Python
+packages at 300/300 frozen final cases per seed, reject 300/300 missing-domain
+requests without invoking the core or any cake, preserve exact core/English/
+package lifecycle identity, and contain every registered label attack. The
+nine-run ABI/L1/D0 matrix was independently recomputed and 13 hostile tests
+pass.
 
-Phase 5 is now open for preregistration and bounded-exclusion testing. Phase 2
-still lacks its 21,000 independent human judgments; final tests remain sealed.
+Phase 6 is now open for preregistered composition, portability, provenance,
+and selected-only execution testing. Phase 2 still lacks its 21,000 independent
+human judgments.
 Accordingly, ABI does **not** yet claim a global information minimum, universal
 superiority over LoRA/distillation, completed product superiority, novelty, or
-release readiness. See `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1016.json`.
+release readiness. See `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1030.json`.
 
 ### Preserved execution history
 

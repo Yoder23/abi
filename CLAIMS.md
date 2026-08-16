@@ -1,12 +1,29 @@
 # ABI claim ledger
 
-Status date: 2026-08-15
+Status date: 2026-08-16
 
 Documentation cannot widen a machine-readable certificate. Each claim below is
 limited to its exact source, artifact, implementation, benchmark, and evidence
 identity.
 
 ## Current claims
+
+### Bounded Phase 5 claim (certificate V1)
+
+ABI may claim that the exact registered three-seed B40 LayerCake product
+selectively reconstructs the signed chemistry, civics, and Python packages on
+300/300 frozen final cases per seed, while missing packages explicitly fail
+closed on 300/300 cases per seed with zero English-core or cake execution. The
+same runs preserve 100/100 English outputs, exact core identity, exact package
+remove/reinstall outputs, and all registered spoof, cross-domain, and
+quarantine boundaries. The nine ABI/L1/D0 result trees were independently
+recomputed and 13 hostile tests passed.
+
+This is behavioral exclusion at an immutable outer-label control plane, not a
+claim that specialist facts are absent from all English-core weights. It is
+bounded to the exact artifacts, domains, seeds, suite, and host. It does not
+establish multi-domain composition, multiple-source provenance, Phase 6,
+completed human review, release, or universal ABI superiority.
 
 ### Bounded Phase 4 claim (V1015 / certificate V1)
 
@@ -25,7 +42,7 @@ budgets, suites, seeds, and systems. It does not establish a global minimum,
 human preference, final-test result, general product superiority, method
 superiority, novelty, or universal superiority over LoRA or distillation.
 
-Phase 5 is open. Phase 2's external human gate remains incomplete.
+Phase 6 is open. Phase 2's external human gate remains incomplete.
 
 ### Preserved Phase 3 campaign boundary (V555; machine evidence V551)
 

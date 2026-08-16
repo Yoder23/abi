@@ -2,21 +2,24 @@
 
 ## Authoritative current campaign state
 
-Status date: 2026-08-15.
+Status date: 2026-08-16.
 
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1016.json` is the live state. Phase 4
-is certified for its bounded machine-development scope by
-`ABI_CAPABILITY_COMPILER_PHASE4_CERTIFICATE_V1.json`: exact five-route v25 B40
-passes all three registered seeds, adjacent-lower B20 fails all three, the
-equal-information L0/L1/D0 controls do not reach the locked all-seed quality
-gate, and the same ABI artifact preserves the independently verified CPU gate.
-This opens Phase 5 preregistration and execution.
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1030.json` is the live state. Phase 5
+is certified for its bounded three-domain scope by
+`ABI_CAPABILITY_COMPILER_PHASE5_CERTIFICATE_V1.json`. Across three distinct
+B40 English-core seeds, the exact installed chemistry, civics, and Python
+packages recover 300/300 frozen final cases per seed; missing packages produce
+300/300 explicit fail-closed abstentions with zero English-core or cake
+execution. Core identity, 100 English outputs, exact package lifecycle, and all
+registered spoof, cross-domain, and quarantine boundaries are preserved. A
+read-only verifier recomputed all nine ABI/L1/D0 rows and 13 hostile tests pass.
+This opens Phase 6 preregistration and execution.
 
 Phase 2 still has 0/21,000 external human preferences, so its human gate and an
-unconditional Phase 3 certificate remain open. Final data remain sealed. No
+unconditional Phase 3 certificate remain open. No
 global-minimum, universal ABI-over-LoRA/distillation, product-superiority,
 novelty, or release claim is authorized. The dated narrative below is retained
-as experiment history and is superseded wherever it conflicts with V1016.
+as experiment history and is superseded wherever it conflicts with V1030.
 
 ## Repository scope
 
