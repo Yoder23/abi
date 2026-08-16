@@ -1,0 +1,69 @@
+{
+  "format": "abi-capability-compiler-phase8-local-clean-rehearsal/1",
+  "protocol_id": "abi-capability-compiler-phase8-local-clean-rehearsal-v1076",
+  "status": "PREREGISTERED_PHASE8_LOCAL_CLEAN_REHEARSAL",
+  "status_date": "2026-08-16",
+  "historical_evidence_changed": false,
+  "objective": "Use the available development CPU and CUDA device to rehearse the exact external handoff from detached clean worktrees. Restore only manifest-declared untracked payloads, verify before execution, then run the exact registered Phase 7 CPU and CUDA protocol once. This may falsify hidden development-tree dependencies but cannot establish independent hardware or Phase 8.",
+  "clean_parent": "C:/tmp/abi_phase8_local_clean_v1078",
+  "abi_packet_source_commit": "4b0004bd7b71654a6014d96c634d4418b957d861",
+  "layercake_commit": "662c5a9b7264a1a5478c9dfb656f35c450e2504f",
+  "development_hardware_fingerprint_sha256": "2deae6043290bb50a87b17e799b7772af1df02356f3f954c6c755bb85782f02a",
+  "release_readiness_protocol": "ABI_CAPABILITY_COMPILER_PHASE8_RELEASE_READINESS_PROTOCOL_V1070.json",
+  "release_manifest": "results/abi_capability_compiler_phase8/readiness_v1073/manifest.json",
+  "release_manifest_sha256": "b0e0c8f1ffcc52fc7464d52840ab7a086313fa90747158b0b9cff29d0abc8d86",
+  "product_protocol": "ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json",
+  "clean_runtime_preflight": "results/abi_capability_compiler_phase7_integrated/allocation_bounded_verify_v1063/clean_runtime_preflight.json",
+  "clean_device_outputs": {
+    "cpu": "results/abi_capability_compiler_phase7_integrated/allocation_bounded_verify_v1063/cpu",
+    "cuda": "results/abi_capability_compiler_phase7_integrated/allocation_bounded_verify_v1063/cuda"
+  },
+  "clean_layercake_junit": "results/abi_capability_compiler_phase7_integrated/allocation_bounded_verify_v1063/layercake_patch_tests.xml",
+  "collection_root": "results/abi_capability_compiler_phase8/local_clean_rehearsal_v1078/clean_tree",
+  "collection_output": "results/abi_capability_compiler_phase8/local_clean_rehearsal_v1078/collection.json",
+  "verification_output": "results/abi_capability_compiler_phase8/local_clean_rehearsal_v1078/verify_v1081/result.json",
+  "collect_files": [
+    "results/abi_capability_compiler_phase7_integrated/allocation_bounded_verify_v1063/clean_runtime_preflight.json",
+    "results/abi_capability_compiler_phase7_integrated/allocation_bounded_verify_v1063/layercake_patch_tests.xml",
+    "results/abi_capability_compiler_phase7_integrated/allocation_bounded_verify_v1063/cpu/result.json",
+    "results/abi_capability_compiler_phase7_integrated/allocation_bounded_verify_v1063/cpu/observations.jsonl",
+    "results/abi_capability_compiler_phase7_integrated/allocation_bounded_verify_v1063/cuda/result.json",
+    "results/abi_capability_compiler_phase7_integrated/allocation_bounded_verify_v1063/cuda/observations.jsonl"
+  ],
+  "model_inference_authorized": "ONE_EXACT_CPU_AND_ONE_EXACT_CUDA_SAME_MACHINE_REHEARSAL_ONLY",
+  "training_authorized": false,
+  "teacher_query_authorized": false,
+  "artifact_mutation_authorized": false,
+  "phase8_certification_authorized": false,
+  "bindings": {
+    "abi/capability_compiler_phase8_local_rehearsal.py": "161ac484d13f605ace9a7d2a001682da795d72f3158c37c7589191e501c94fd9",
+    "tests/test_capability_compiler_phase8_local_rehearsal.py": "a3ba2b92cc21ecda6a620faa149f4cf7d2fdb46633b1177204baa05535fa7aff",
+    "ABI_CAPABILITY_COMPILER_PHASE8_RELEASE_READINESS_PROTOCOL_V1070.json": "a6df3e67ad8e823e774a06092b90d818343d2dd63a0abc2450cc21e83ea6e4be",
+    "results/abi_capability_compiler_phase8/readiness_v1073/manifest.json": "b0e0c8f1ffcc52fc7464d52840ab7a086313fa90747158b0b9cff29d0abc8d86",
+    "ABI_CAPABILITY_COMPILER_PHASE8_LOCAL_READINESS_RESULT_V1074.json": "bdeb53f5b8892060c8aab1fdfec6a65eee657412fb5fdbf599fcb9761b809438",
+    "ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json": "7d0b8f480024cdb06872779cd26654ca4404a7e7ccaa94e8b87da3c9b1d139f5"
+  },
+  "worktree_commands": {
+    "abi": "git worktree add --detach C:/tmp/abi_phase8_local_clean_v1078/abi_release 4b0004bd7b71654a6014d96c634d4418b957d861",
+    "layercake": "git worktree add --detach C:/tmp/abi_phase8_local_clean_v1078/layercake_release 662c5a9b7264a1a5478c9dfb656f35c450e2504f"
+  },
+  "execution_commands": {
+    "layercake_tests": "C:\\Python310\\python.exe -m pytest tests/cake/test_installer.py tests/cake/test_package_security.py tests/cake/test_token_plan_package.py tests/test_route_isolated_shallow_sparse_core.py tests/test_route_isolated_runtime_residency_core_v23.py tests/test_route_isolated_allocation_bounded_core_v24.py tests/test_route_isolated_clarification_core_v25.py -q --junitxml=../abi_release/results/abi_capability_compiler_phase7_integrated/allocation_bounded_verify_v1063/layercake_patch_tests.xml",
+    "cpu": "C:\\Python310\\python.exe -m abi.capability_compiler_phase7_direct_artifact_runtime --protocol ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json --device cpu --output-dir results/abi_capability_compiler_phase7_integrated/allocation_bounded_verify_v1063/cpu",
+    "cuda": "C:\\Python310\\python.exe -m abi.capability_compiler_phase7_direct_artifact_runtime --protocol ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json --device cuda --output-dir results/abi_capability_compiler_phase7_integrated/allocation_bounded_verify_v1063/cuda"
+  },
+  "execution_order": [
+    "Commit this protocol, preparation/collection implementation, and focused tests.",
+    "Run and preserve preflight while clean and evidence targets are absent.",
+    "Create detached clean ABI and LayerCake worktrees at the exact registered commits.",
+    "Prepare by verifying every tracked manifest entry, copying exactly three declared untracked payloads, verifying the manifest, and preserving the clean runtime preflight.",
+    "Run the exact 42-test LayerCake package/host suite in the clean worktree.",
+    "Run the registered CPU protocol once. Stop and preserve evidence on failure.",
+    "Only after CPU passes, run the registered CUDA protocol once. Stop and preserve evidence on failure.",
+    "Collect the six registered evidence files immutably.",
+    "Hash-lock and preregister a read-only verifier before interpreting fresh performance metrics."
+  ],
+  "decision_rule": "A local rehearsal passes only if clean tracked source bytes remain unchanged, exactly three manifest-declared untracked files restore, release-manifest and runtime preflight verification pass, all 42 LayerCake tests pass, both fresh device results pass every unchanged Phase 7 gate, all 244 fresh CPU/CUDA output and token identities agree, every fresh functional identity matches the sealed run, and a separately preregistered read-only verifier passes hostile mutations. Performance values may vary but may not cross any frozen gate.",
+  "stop_rule": "Do not rerun a failed device, tune the runtime, change an artifact, or weaken a threshold. Preserve the first failure and close the rehearsal negatively.",
+  "claim_boundary": "Same development machine and operator only. A pass proves clean-export local reproducibility and absence of undeclared working-tree dependencies for this packet; it does not prove independent hardware, independent operation, Phase 8, release readiness, Phase 2 human preference, or universal ABI superiority."
+}
