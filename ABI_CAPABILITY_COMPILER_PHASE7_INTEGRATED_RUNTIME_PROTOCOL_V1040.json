@@ -1,0 +1,155 @@
+{
+  "format": "abi-capability-compiler-phase7-integrated-runtime/1",
+  "protocol_id": "abi-capability-compiler-phase7-integrated-runtime-v1040",
+  "status": "PREREGISTERED_EXACT_PHASE7_INTEGRATED_RUNTIME",
+  "status_date": "2026-08-16",
+  "historical_evidence_changed": false,
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1039.json",
+  "objective": "Measure the exact seed-104729 Phase 4 B40 English core while all three exact Phase 6 domain packages are simultaneously installed and resident. Confirm CPU/GPU output identity, retained core throughput, lower integrated memory, genuine cold behavior, persistent state, domain selected-only execution, and zero repetition collapse without retraining or changing any component.",
+  "product_manifest": "ABI_CAPABILITY_COMPILER_PHASE7_PRODUCT_MANIFEST_V1.json",
+  "seed": 104729,
+  "devices": [
+    "cpu",
+    "cuda"
+  ],
+  "core_distinct_prompts": 100,
+  "core_repeated_observations": 20,
+  "domain_distinct_prompts": 100,
+  "domain_repeated_observations": 20,
+  "core_protocol": "ABI_CAPABILITY_COMPILER_PHASE4_B40_V25_PRODUCT_CONFORMANCE_PROTOCOL_V960.json",
+  "base_runtime_protocol": "ABI_CAPABILITY_COMPILER_PHASE4_B50_CPU_RUNTIME_PROTOCOL_V859.json",
+  "core_quality_reference": "results/abi_capability_compiler_phase4_b40_v25_product_conformance/run_v962/seed104729_outputs.jsonl",
+  "domain_catalog": "catalogs/english_and_first_domains_certification_v6.json",
+  "phase6_seed_result": "results/abi_capability_compiler_phase6_composition/run_v1032/seed104729/result.json",
+  "phase6_observations": "results/abi_capability_compiler_phase6_composition/run_v1032/seed104729/observations.jsonl",
+  "phase4_runtime_verified_result": "results/abi_capability_compiler_phase4_b40_v25_runtime_verify/run_v984/result.json",
+  "product": {
+    "core_archive_sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+    "core_payload_sha256": "18ad787696cf8737578253035ad84b7e0145d995f028c6392ba338b6117d5aba",
+    "packages": {
+      "chemistry": {
+        "cake_id": "abi-chemistry-token-plan",
+        "archive_sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb"
+      },
+      "civics": {
+        "cake_id": "abi-civics-token-plan",
+        "archive_sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604"
+      },
+      "python": {
+        "cake_id": "abi-python-token-plan",
+        "archive_sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d"
+      }
+    }
+  },
+  "domain_packages": {
+    "chemistry": {
+      "package": "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.cake",
+      "archive_sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+      "public_key": "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.pub",
+      "public_key_sha256": "8c585e5e993a22962cd1196b0d4fbb666b5a022e0c72525f6c37a23ea915efef"
+    },
+    "civics": {
+      "package": "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.cake",
+      "archive_sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+      "public_key": "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.pub",
+      "public_key_sha256": "aaa8655fe76714e4b99f7dfc4084ed78f475e8aa699214fac8006a887c6611f4"
+    },
+    "python": {
+      "package": "results/abi_moonshot/packages/abi-python-token-plan-seed9824.cake",
+      "archive_sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+      "public_key": "results/abi_moonshot/packages/abi-python-token-plan-seed9824.pub",
+      "public_key_sha256": "6fa980c963b60208877b5df19ed2f07f793f8b63e2af8f613264c3fe0e160099"
+    }
+  },
+  "cpu_control": {
+    "torch_threads": 1,
+    "torch_interop_threads": 1
+  },
+  "phase4_same_core_runtime": {
+    "cpu": {
+      "median_bytes_per_second": 270.5480681504634,
+      "median_time_to_first_output_seconds": 0.0798174000083236
+    },
+    "cuda": {
+      "median_bytes_per_second": 900.8390675533694,
+      "median_time_to_first_output_seconds": 0.012561099996673875
+    }
+  },
+  "baselines": {
+    "cpu": {
+      "identity": "optimized qwen2.5:0.5b CPU runtime from the exact Phase 4 protocol",
+      "median_bytes_per_second": 20.7209959400831,
+      "cold_ttft_seconds": 5.064102100004675,
+      "active_tensor_bytes": 397821319,
+      "active_tensor_boundary": "Pinned quantized model-file bytes; process RSS is separately measured.",
+      "peak_process_rss_bytes": 602959872,
+      "peak_cuda_allocated_bytes": 0
+    },
+    "cuda": {
+      "identity": "exact B40 strongest routed L1 source-plus-adapter runtime",
+      "median_bytes_per_second": 65.21887456417592,
+      "cold_ttft_seconds": 11.414970200014068,
+      "active_tensor_bytes": 7667325120,
+      "peak_process_rss_bytes": 5031067648,
+      "peak_cuda_allocated_bytes": 7812537856,
+      "quality_boundary": "L1 is a systems comparator and fails the all-seed locked English quality gate."
+    }
+  },
+  "gates": {
+    "phase4_core_throughput_retention_minimum": 0.95,
+    "throughput_ratio_minimum": 2.0,
+    "p95_observations_minimum": 100,
+    "p99_observations_minimum": 1000,
+    "repetition_collapse_v2_maximum": 0,
+    "receiver_learning_steps": 0
+  },
+  "result_path_template": "results/abi_capability_compiler_phase7_integrated/runtime_v1042/{device}/result.json",
+  "training_authorized": false,
+  "teacher_query_authorized": false,
+  "artifact_mutation_authorized": false,
+  "warmup_core_observations_per_device": 3,
+  "domain_residency_load_observations_per_device": 3,
+  "model_inference_authorized": "EXACT_CPU_AND_CUDA_PHASE7_RUNTIME_RUNS_ONLY",
+  "bindings": {
+    "abi/capability_compiler_phase7_integrated_runtime.py": "548cceb55a9468c6aac24b6a8642c83d04f983e9a419666d8c88956a2d4c84d1",
+    "tests/test_capability_compiler_phase7_integrated_runtime.py": "524ec981ecebb4fc617973592b418a74dcd272b98df84b6fc2fd87fa94f74ea5",
+    "ABI_CAPABILITY_COMPILER_PHASE7_PRODUCT_MANIFEST_V1.json": "dbbfbc1c994f9fff2ca3a37c5ec22e9c517080f325a50a9b27fe7a0072a919ff",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1039.json": "21a73fc664ef96c3690d3917208ef84e3f7a9e2c49b39e700a1ac9804cc964d1",
+    "ABI_CAPABILITY_COMPILER_PHASE6_CERTIFICATE_V1.json": "6ae934c164a46800a1f7224ad5c32433854eb572b89899e135a0272035d20d70",
+    "results/abi_capability_compiler_phase6_composition/verify_v1038/result.json": "5b03132574547b411f0fae6d18b0c38c98377a32501572f00c86aae3f2307ad4",
+    "results/abi_capability_compiler_phase6_composition/run_v1032/seed104729/result.json": "bf31d1812da0c68b745e55c235f756e81dcfc2eed34a91039195e7720c0e58e2",
+    "results/abi_capability_compiler_phase6_composition/run_v1032/seed104729/observations.jsonl": "3b177777bd1d032cf3aef447578cf4620194ce664f3a4f5cc51633b512333535",
+    "ABI_CAPABILITY_COMPILER_PHASE5_CERTIFICATE_V1.json": "93265064268f697cf4bfc348551186dc53c7e780be5420c41a74844888c723b6",
+    "results/abi_capability_compiler_phase5_selective_product/verify_v1029/result.json": "6d316f962d2383fe1904e41445e6b0fb330d89203198cf89a2a5b344d57a3a26",
+    "ABI_CAPABILITY_COMPILER_PHASE4_CERTIFICATE_V1.json": "6d3c81b40a21b08806368e34416ec2d9422594f00c68dc899fcee2e1586cf6eb",
+    "results/abi_capability_compiler_phase4_b40_v25_runtime_verify/run_v984/result.json": "f3d0c2c89af061d46dcfc19392ac24134e9b39871914f12519347542c2d0d1e1",
+    "results/abi_capability_compiler_phase4_b40_v25_cpu_runtime/run_v975/engine/result.json": "adfed69c5eb96d8573f31a5246881a12989b40921be7aa78e15e2c1d6afa998a",
+    "results/abi_capability_compiler_phase4_b40_v25_gpu_runtime/run_v974/engine/result.json": "de88e2291f6cd16de4a906d6deeea69da9a2671be9d117da7fbfa03dd0267c8d",
+    "results/abi_capability_compiler_phase4_clarification_route_replication/B40-seed104729-v927/evaluation/result.json": "e1ebbfda3fc99599bd957fc9d03574bd84c49bcca4329269c19747075ea5f951",
+    "results/abi_capability_compiler_phase4_b40_v25_product_conformance/run_v962/seed104729_outputs.jsonl": "36e739460509e82ccd0b593ac6857fa1bfedc8aa6ee044f3a0d364c71e89453f",
+    "results/abi_moonshot/domain_cakes/package-certification-validation.json": "11f786e106f639089500115ec233a9bad75a0563e48a41abddf0ff3ebca5f5f3",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B40_V25_PRODUCT_CONFORMANCE_PROTOCOL_V960.json": "ab7ca91e2516c2c431a24df05100cae3408dfed23b5ad592f6619a098dc74f30",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B50_CPU_RUNTIME_PROTOCOL_V859.json": "99d2ceb76ef47230af54ca1e430ea0dacbb87abe97bc06dd0ba33b5dbbb8122b",
+    "catalogs/english_and_first_domains_certification_v6.json": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052",
+    "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.cake": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+    "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.pub": "8c585e5e993a22962cd1196b0d4fbb666b5a022e0c72525f6c37a23ea915efef",
+    "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.cake": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+    "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.pub": "aaa8655fe76714e4b99f7dfc4084ed78f475e8aa699214fac8006a887c6611f4",
+    "results/abi_moonshot/packages/abi-python-token-plan-seed9824.cake": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+    "results/abi_moonshot/packages/abi-python-token-plan-seed9824.pub": "6fa980c963b60208877b5df19ed2f07f793f8b63e2af8f613264c3fe0e160099",
+    "../layercake_release/layercake_extensions/route_isolated_clarification_core_v25.py": "7b176f21e6a86f3aaded724462d37149f8f8be48370bcdd163fe44c49e3464ce",
+    "../layercake_release/moonshot/canonical_route_isolated_clarification_core_abi_v25.json": "6d0fea2697fc7af74e9f3cfaee591d658b3244acfb10502048a4105c010b6908",
+    "../layercake_release/layercake_extensions/authoritative_destination_control.py": "6db81b67329843a161aeb85522103b2dca8da8e237fe8f21a288bb29493e40d9",
+    "../layercake_release/layercake/routing/direct_orchestrator.py": "fbc1be560f6c756da6c7b30bbed5478a9b3088059902282b22c78d0bdd286edf",
+    "../layercake_release/layercake/routing/catalog_router.py": "f1b724ecba5daed33348e6f5988bbd5bba0258763c659988e12794d253f24398"
+  },
+  "execution_order": [
+    "Commit this protocol, product manifest, runner, and focused tests.",
+    "Run preflight and preserve the result.",
+    "Run CPU once in a fresh process.",
+    "Run CUDA once in a fresh process.",
+    "Preregister a separate read-only integrated verifier before any Phase 7 conclusion."
+  ],
+  "decision_rule": "Each device must use the exact manifest core and all three exact packages; retain at least 95% of the prior same-core throughput; remain at least 2x faster than its registered systems comparator; stay below comparator active memory and process RSS; preserve all 120 core and 120 domain outputs byte-for-byte; produce zero repetition collapses; preserve persistent core state and selected-only domain execution; and pass a single genuine cold request without training, teacher inference, receiver learning, or artifact mutation.",
+  "claim_boundary": "A pass closes only the integrated residency/runtime evidence gap for one exact product on the declared CPU and GPU. It does not itself certify Phase 7, satisfy missing human preferences, prove arbitrary hardware, or authorize release or universal ABI superiority."
+}
