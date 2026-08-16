@@ -1,0 +1,23 @@
+{
+  "format": "abi-capability-compiler-phase7-direct-artifact-preflight/1",
+  "status": "PASS_PHASE7_DIRECT_ARTIFACT_PREFLIGHT",
+  "status_date": "2026-08-16",
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE7_STREAMING_HOST_RUNTIME_PROTOCOL_V1057.json",
+  "protocol_sha256": "1a621314af8d39b0cfdba362a05e0fbc9097f99d5ed201f8f901a6152b3e6a7c",
+  "gates": {
+    "cuda_available": true,
+    "direct_artifact_lifecycle_registered": true,
+    "exact_core_archive_lineage": true,
+    "exact_core_payload_lineage": true,
+    "layercake_patch_test_output_absent": true,
+    "layercake_streaming_host_patch_bound": true,
+    "materialized_archive_exact": true,
+    "materialized_payload_exact": true,
+    "package_lineage_exact": true,
+    "registered_outputs_absent": true,
+    "same_process_reconstruction_absent": true,
+    "teacher_absent": true,
+    "training_absent": true
+  },
+  "claim_boundary": "Preflight only. It establishes exact inputs and absent outputs, not a repaired runtime pass."
+}
