@@ -4,7 +4,10 @@ from abi.capability_compiler_phase5_construct_screen import (
     DOMAINS,
     _catalog_rows,
     is_explicit_abstention,
+    project_catalog_prompt,
 )
+from abi.capability_compiler_phase3 import Phase3Error
+import pytest
 
 
 def test_abstention_classifier_is_explicit_and_not_generic_uncertainty():
@@ -26,3 +29,19 @@ def test_construct_schedule_is_three_distinct_domain_slices():
     assert {row["domain"] for row in rows} == set(DOMAINS)
     assert all(row["destination_scope"] == "domain_cake" for row in rows)
     assert all(row["split"] == "validation" for row in rows)
+
+
+def test_catalog_projection_removes_only_one_exact_wrapper():
+    prompt = (
+        "Evaluation case V6-python-generation-100: "
+        "Write only Python code defining `calculate_100(a, b)`."
+    )
+    assert project_catalog_prompt(prompt) == (
+        "Write only Python code defining `calculate_100(a, b)`."
+    )
+    with pytest.raises(Phase3Error):
+        project_catalog_prompt("Write only Python code.")
+    with pytest.raises(Phase3Error):
+        project_catalog_prompt(
+            "Evaluation case V6-x: Evaluation case V6-y: hidden"
+        )

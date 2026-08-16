@@ -1,0 +1,91 @@
+{
+  "format": "abi-capability-compiler-phase5-construct-screen/1",
+  "protocol_id": "abi-capability-compiler-phase5-construct-normalization-repair-v1020",
+  "status": "PREREGISTERED_NONPROMOTIONAL_PHASE5_CONSTRUCT_SCREEN",
+  "status_date": "2026-08-15",
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1016.json",
+  "repair_of": "ABI_CAPABILITY_COMPILER_PHASE5_CONSTRUCT_SCREEN_RESULT_V1019.json",
+  "objective": "Replay the exact failed V1017 construct screen after restoring the pre-existing ABI normalized-prompt contract. This is the single repair authorized by V1019; it changes no weights, data, packages, evaluators, thresholds, or device.",
+  "prompt_projection": {
+    "method": "remove_exactly_one_v6_evaluation_case_wrapper",
+    "raw_and_projected_prompt_hashes_required": true,
+    "weights_data_packages_evaluators_and_gates_changed": false
+  },
+  "device": "cuda",
+  "core_protocol": "ABI_CAPABILITY_COMPILER_PHASE4_B40_V25_PRODUCT_CONFORMANCE_PROTOCOL_V960.json",
+  "core_seed": 104729,
+  "english_catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+  "english_preservation_prompts": 20,
+  "domain_catalog": "catalogs/english_and_first_domains_certification_v6.json",
+  "catalog_split": "validation",
+  "domains": [
+    "chemistry",
+    "civics",
+    "python"
+  ],
+  "per_domain": 20,
+  "domain_packages": {
+    "chemistry": {
+      "package": "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.cake",
+      "archive_sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+      "public_key": "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.pub",
+      "public_key_sha256": "8c585e5e993a22962cd1196b0d4fbb666b5a022e0c72525f6c37a23ea915efef"
+    },
+    "civics": {
+      "package": "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.cake",
+      "archive_sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+      "public_key": "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.pub",
+      "public_key_sha256": "aaa8655fe76714e4b99f7dfc4084ed78f475e8aa699214fac8006a887c6611f4"
+    },
+    "python": {
+      "package": "results/abi_moonshot/packages/abi-python-token-plan-seed9824.cake",
+      "archive_sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+      "public_key": "results/abi_moonshot/packages/abi-python-token-plan-seed9824.pub",
+      "public_key_sha256": "6fa980c963b60208877b5df19ed2f07f793f8b63e2af8f613264c3fe0e160099"
+    }
+  },
+  "known_interface_boundary": {
+    "english_core": "lc-direct-neural-core/25",
+    "domain_cakes": "lc-direct-neural-decoder/1",
+    "permitted_construction": "Independent authenticated hosts in one LayerCake process with explicit selected-domain control; no tensor conversion, receiver training, or package mutation.",
+    "prohibited_inference": "Interface equality is not claimed. A pass demonstrates co-hosting through existing public host interfaces, not interchangeable package types."
+  },
+  "gates": {
+    "core_package_identity_unchanged": true,
+    "english_outputs_byte_exact_after_domain_lifecycle": true,
+    "uninstalled_domain_selection_fails_closed": true,
+    "domain_package_install_verify_remove_reinstall_exact": true,
+    "selected_domain_functional_passes": 60,
+    "direct_core_domain_correct_maximum": 0,
+    "direct_core_explicit_abstention_minimum": 54,
+    "receiver_learning_steps": 0,
+    "teacher_present_at_inference": false,
+    "final_test_accessed": false
+  },
+  "training_authorized": false,
+  "teacher_query_authorized": false,
+  "model_inference_authorized": "IDENTICAL_REGISTERED_HISTORICAL_V6_VALIDATION_REPLAY_WITH_EXACT_NORMALIZATION_ONLY",
+  "final_test_access": "PROHIBITED",
+  "nearby_tuning_authorized": false,
+  "bindings": {
+    "abi/capability_compiler_phase5_construct_screen.py": "042bcbc2c5581f5f03c2b5f1d1d548d34b947346a44aeebe2ca7be20fcb112d7",
+    "tests/test_capability_compiler_phase5_construct_screen.py": "88f5b5916bf76e59cba9e0a009b8c44ba98a4f4c8983d5d04b76d4f208b47648",
+    "ABI_CAPABILITY_COMPILER_PHASE5_CONSTRUCT_SCREEN_RESULT_V1019.json": "b83009eb7be25b5d8fffadbb3ea400c6038d5cf966d8ebde551a624a3f6a76bc",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1016.json": "7cbe08dcc8077be5807220b37f16835eed8b41866a037545ca5c3efb3c6756af",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B40_V25_PRODUCT_CONFORMANCE_PROTOCOL_V960.json": "ab7ca91e2516c2c431a24df05100cae3408dfed23b5ad592f6619a098dc74f30",
+    "catalogs/english_and_first_domains_certification_v6.json": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "ABI_MOONSHOT_CERTIFICATE_V2.json": "2a9b05f18ff6f44c089b66736b6ae5fb0db95e68f869fef0b6619597bc22d135",
+    "results/abi_moonshot/domain_cakes/package-certification-validation.json": "11f786e106f639089500115ec233a9bad75a0563e48a41abddf0ff3ebca5f5f3",
+    "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.cake": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+    "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.pub": "8c585e5e993a22962cd1196b0d4fbb666b5a022e0c72525f6c37a23ea915efef",
+    "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.cake": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+    "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.pub": "aaa8655fe76714e4b99f7dfc4084ed78f475e8aa699214fac8006a887c6611f4",
+    "results/abi_moonshot/packages/abi-python-token-plan-seed9824.cake": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+    "results/abi_moonshot/packages/abi-python-token-plan-seed9824.pub": "6fa980c963b60208877b5df19ed2f07f793f8b63e2af8f613264c3fe0e160099",
+    "../layercake_release/layercake/models/direct_cake_host.py": "f950e25e6f70fcd3a9186a9779de35edc91748bc7df6b64c8827edca1fade6f6",
+    "../layercake_release/layercake_extensions/route_isolated_clarification_core_v25.py": "7b176f21e6a86f3aaded724462d37149f8f8be48370bcdd163fe44c49e3464ce"
+  },
+  "decision_rule": "If selected recovery reaches 60/60 but direct-core explicit abstention remains below 54/60, preserve that separation: the packages and co-host construct advance, while Phase 5 product exclusion must be enforced and tested in the existing LayerCake control plane without retraining or mutating the English core. If selected recovery still fails, close the legacy-package promotion branch and diagnose only from the normalized observations.",
+  "claim_boundary": "Single nonpromotional normalized-input replay. No Phase 5, final-test, broad-domain, multi-domain, or ABI-superiority certificate."
+}

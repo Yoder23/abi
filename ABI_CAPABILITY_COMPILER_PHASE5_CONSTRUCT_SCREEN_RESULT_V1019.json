@@ -1,0 +1,56 @@
+{
+  "format": "abi-capability-compiler-phase5-construct-screen-summary/1",
+  "status": "FAIL_PHASE5_CONSTRUCT_SCREEN_BOTTLENECK_IDENTIFIED",
+  "status_date": "2026-08-15",
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE5_CONSTRUCT_SCREEN_PROTOCOL_V1017.json",
+    "sha256": "7630c08450994433b331c110a0b4fc961fd6bd1724d232f6f07ac82199ba274b"
+  },
+  "result": {
+    "path": "results/abi_capability_compiler_phase5_construct_screen/run_v1018/result.json",
+    "sha256": "a461ba7c799aae47b78b6982d7d9cb97aa04ccc2361818e08d034eba92133006",
+    "observations_sha256": "ea0c5a787d8331ec029793978a531c32ead01ab99ad8a1ecd590f5335b9aff98"
+  },
+  "passed_constructs": {
+    "core_package_identity_unchanged": true,
+    "english_outputs_byte_exact_after_domain_lifecycle": true,
+    "uninstalled_domain_selection_fails_closed": true,
+    "all_three_domain_install_verify_remove_reinstall_lifecycles_exact": true,
+    "domain_package_archives_unchanged": true,
+    "direct_english_core_specialist_correct": 0,
+    "receiver_learning_steps": 0,
+    "teacher_loaded": false,
+    "final_test_accessed": false
+  },
+  "failed_constructs": {
+    "direct_english_core_explicit_abstention": "0/60; required at least 54/60",
+    "selected_domain_recovery": "2/60; required 60/60",
+    "selected_domain_by_domain": {
+      "chemistry": "2/20",
+      "civics": "0/20",
+      "python": "0/20"
+    }
+  },
+  "measured_attribution": {
+    "catalog_prompt_form": "Evaluation case V6-<probe-id>: <task body>",
+    "historical_domain_runtime_prompt_form": "<task body>",
+    "existing_normalization_implementation": "abi/layercake_host.py:strip_source_chat_template removes the exact Evaluation case wrapper after source-chat unwrapping",
+    "observed_failure_examples": [
+      "Python lost the source-copied function name and emitted def :(a, b)",
+      "Civics copied catalog-wrapper indices instead of the requested country/date fields",
+      "Chemistry recovered only 2/20 expected element names"
+    ],
+    "conclusion": "The screen violated the established normalized-input contract. This is a harness conformance failure. It does not establish that normalized legacy domain packages fail later-revision prompts."
+  },
+  "authorized_single_repair": "Strip exactly one well-formed Evaluation case V<digits>-<identifier>: provenance wrapper before both direct-core leakage measurement and selected-domain execution, record raw and projected prompt hashes, and replay the identical 60 rows with unchanged packages, weights, catalog, evaluators, thresholds, and device.",
+  "prohibited": [
+    "weight updates",
+    "new teacher queries",
+    "new domain data",
+    "prompt-specific output repair",
+    "threshold changes",
+    "nearby normalization variants",
+    "Phase 5 promotion from this failed screen"
+  ],
+  "phase5_certified": false
+}

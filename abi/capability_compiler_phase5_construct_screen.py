@@ -16,6 +16,7 @@ import gc
 import hashlib
 import json
 from pathlib import Path
+import re
 import tempfile
 from typing import Any, Iterable, Mapping, Sequence
 from zipfile import ZipFile
@@ -54,11 +55,26 @@ ABSTENTION_MARKERS = (
     "insufficient information",
     "not provided",
 )
+EVALUATION_WRAPPER = re.compile(
+    r"^Evaluation case V[0-9]+-[A-Za-z0-9-]+:\s+(.+)$", re.DOTALL
+)
 
 
 def is_explicit_abstention(output: str) -> bool:
     normalized = " ".join(output.casefold().split())
     return any(marker in normalized for marker in ABSTENTION_MARKERS)
+
+
+def project_catalog_prompt(prompt: str) -> str:
+    """Remove exactly one catalog provenance wrapper, preserving the task."""
+
+    match = EVALUATION_WRAPPER.fullmatch(prompt)
+    if match is None:
+        raise Phase3Error("Phase 5 catalog prompt lacks its exact V6 wrapper")
+    projected = match.group(1).strip()
+    if not projected or projected.startswith("Evaluation case "):
+        raise Phase3Error("Phase 5 catalog prompt projection is empty or recursive")
+    return projected
 
 
 def _catalog_rows(
@@ -106,6 +122,14 @@ def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str]:
         or protocol.get("domains") != list(DOMAINS)
         or int(protocol.get("per_domain", 0)) != 20
         or int(protocol.get("english_preservation_prompts", 0)) != 20
+        or protocol.get("repair_of")
+        != "ABI_CAPABILITY_COMPILER_PHASE5_CONSTRUCT_SCREEN_RESULT_V1019.json"
+        or protocol.get("prompt_projection")
+        != {
+            "method": "remove_exactly_one_v6_evaluation_case_wrapper",
+            "raw_and_projected_prompt_hashes_required": True,
+            "weights_data_packages_evaluators_and_gates_changed": False,
+        }
     ):
         raise Phase3Error("Phase 5 construct-screen governance changed")
     for relative, expected in protocol["bindings"].items():
@@ -243,21 +267,29 @@ def run(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
         }
 
         for row in domain_rows:
+            projected = project_catalog_prompt(str(row["prompt"]))
             generated = core_host.generate(
-                str(row["prompt"]), maximum_tokens=int(row["max_new_tokens"])
+                projected, maximum_tokens=int(row["max_new_tokens"])
             ).decode("utf-8", errors="strict")
             raw_rows.append(
                 {
                     "mode": "direct_english_core_specialist_probe",
                     "domain": row["domain"],
                     "probe_id": row["probe_id"],
+                    "raw_prompt_sha256": hashlib.sha256(
+                        str(row["prompt"]).encode("utf-8")
+                    ).hexdigest(),
+                    "projected_prompt_sha256": hashlib.sha256(
+                        projected.encode("utf-8")
+                    ).hexdigest(),
+                    "projection": "exact_v6_evaluation_wrapper_removed",
                     "output": generated,
                     "explicit_abstention": is_explicit_abstention(generated),
                     "domain_evaluator_pass": evaluate_functional(
                         generated, row["evaluator"]
                     ),
                     "automatic_english_capability_route": core_host.route(
-                        str(row["prompt"])
+                        projected
                     ),
                 }
             )
@@ -275,14 +307,18 @@ def run(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
             )
             missing_before = False
             try:
-                host.generate(spec["cake_id"], str(by_domain[domain][0]["prompt"]))
+                host.generate(
+                    spec["cake_id"],
+                    project_catalog_prompt(str(by_domain[domain][0]["prompt"])),
+                )
             except KeyError:
                 missing_before = True
             installed = host.install(spec["package"])
             verified = host.installer.verify(spec["cake_id"])
             first_outputs: dict[str, bytes] = {}
             for row in by_domain[domain]:
-                result = host.generate(spec["cake_id"], str(row["prompt"]))
+                projected = project_catalog_prompt(str(row["prompt"]))
+                result = host.generate(spec["cake_id"], projected)
                 value = result.output.decode("utf-8", errors="strict")
                 first_outputs[str(row["probe_id"])] = result.output
                 raw_rows.append(
@@ -290,6 +326,13 @@ def run(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
                         "mode": "selected_domain_installed",
                         "domain": domain,
                         "probe_id": row["probe_id"],
+                        "raw_prompt_sha256": hashlib.sha256(
+                            str(row["prompt"]).encode("utf-8")
+                        ).hexdigest(),
+                        "projected_prompt_sha256": hashlib.sha256(
+                            projected.encode("utf-8")
+                        ).hexdigest(),
+                        "projection": "exact_v6_evaluation_wrapper_removed",
                         "output": value,
                         "functional_pass": evaluate_functional(
                             value, row["evaluator"]
@@ -300,13 +343,16 @@ def run(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
             removed = host.remove(spec["cake_id"])
             missing_after_remove = False
             try:
-                host.generate(spec["cake_id"], str(by_domain[domain][0]["prompt"]))
+                host.generate(
+                    spec["cake_id"],
+                    project_catalog_prompt(str(by_domain[domain][0]["prompt"])),
+                )
             except KeyError:
                 missing_after_remove = True
             reinstalled = host.install(spec["package"])
             restored = {
                 str(row["probe_id"]): host.generate(
-                    spec["cake_id"], str(row["prompt"])
+                    spec["cake_id"], project_catalog_prompt(str(row["prompt"]))
                 ).output
                 for row in by_domain[domain]
             }
