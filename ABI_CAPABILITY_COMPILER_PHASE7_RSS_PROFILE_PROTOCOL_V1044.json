@@ -1,0 +1,29 @@
+{
+  "format": "abi-capability-compiler-phase7-rss-profile/1",
+  "protocol_id": "abi-capability-compiler-phase7-rss-profile-v1044",
+  "status": "PREREGISTERED_PHASE7_CPU_RSS_STAGE_PROFILE",
+  "status_date": "2026-08-16",
+  "historical_evidence_changed": false,
+  "authorization": "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_RESULT_V1043.json",
+  "objective": "Replay only the already-opened exact CPU schedules while separately measuring core activation and install, cold core inference, each first domain decoder request, the complete English schedule, and the complete domain schedule. Attribute the failed 813330432-byte RSS peak before designing any repair.",
+  "device": "cpu",
+  "integrated_runtime_protocol": "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json",
+  "failed_cpu_result": "results/abi_capability_compiler_phase7_integrated/runtime_v1042/cpu/result.json",
+  "failed_cpu_peak_rss_delta_bytes": 813330432,
+  "known_prompt_replay_only": true,
+  "training_authorized": false,
+  "teacher_query_authorized": false,
+  "artifact_mutation_authorized": false,
+  "model_inference_authorized": "ONE_EXACT_STAGE_PROFILE_USING_ONLY_V1042_PROMPTS",
+  "output": "results/abi_capability_compiler_phase7_integrated/rss_profile_v1045/result.json",
+  "bindings": {
+    "abi/capability_compiler_phase7_rss_profile.py": "ace76e0bd337b510839d9a1c41c2984a67136a2eb2b6fc44722cfe95433b1316",
+    "tests/test_capability_compiler_phase7_rss_profile.py": "d01b3d5e4bb242d6e1f9234e2ef21d50a4233ef544463a7d454a7886a0dc8ca1",
+    "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json": "531b7ee35cf79c13eb706626b276cc29be7e08b7c2153ca5d430298b51ee5d05",
+    "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_RESULT_V1043.json": "4aa9e42dcb1abba0cbd12f8c10a6eb6436ab8cf689e3ed899ee0922f07b277de",
+    "results/abi_capability_compiler_phase7_integrated/runtime_v1042/cpu/result.json": "a8b08f1c6e8c000b74976d53266a5839b7457508a532ef23d0704c40009042aa",
+    "results/abi_capability_compiler_phase7_integrated/runtime_v1042/cpu/observations.jsonl": "b1fe70ec7868c59bfc2f95f9cd74b3015a8957c9c3c2e600d53edc9ced6a4963"
+  },
+  "decision_rule": "Accept the attribution only if all 244 replayed outputs remain exact, stage order is exact, and at least one isolated stage reproduces at least 90% of the failed peak delta. The next repair must target the measured stage and cannot change quality, artifacts, data, thresholds, or the CUDA pass.",
+  "claim_boundary": "Diagnostic only. No Phase 7 pass, corrected RSS claim, or product promotion follows from this profile."
+}
