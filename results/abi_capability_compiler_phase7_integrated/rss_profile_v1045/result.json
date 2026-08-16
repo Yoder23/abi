@@ -1,0 +1,90 @@
+{
+  "claim_boundary": "Stage attribution on the exact failed CPU product using only already-opened prompts. It authorizes no gate reinterpretation or Phase 7 certificate.",
+  "evidence_sha256": "86d654d182762ef03b3a18edb20e8d9027695de5a715a24080f7c92c057079f5",
+  "format": "abi-capability-compiler-phase7-rss-profile-result/1",
+  "gates": {
+    "all_replayed_outputs_exact": true,
+    "failure_peak_reproduced_within_10_percent": false,
+    "stage_order_exact": true,
+    "teacher_absent": true,
+    "training_absent": true
+  },
+  "largest_peak_stage": {
+    "peak_delta_from_runtime_baseline_bytes": 526364672,
+    "peak_rss_bytes": 1122574336,
+    "rss_after_bytes": 898576384,
+    "rss_after_gc_bytes": 898555904,
+    "rss_before_bytes": 876785664,
+    "stage": "complete_120_observation_core_runtime"
+  },
+  "model_artifact_mutated": false,
+  "output_identity": {
+    "cold": true,
+    "core": 120,
+    "domain": 120,
+    "domain_load": 3
+  },
+  "protocol_sha256": "8b7e26799e8657803ea5971d591343e0f3681ecc3f3254863a7a8b9c3729bbe1",
+  "runtime_baseline_rss_bytes": 596209664,
+  "stages": [
+    {
+      "peak_delta_from_runtime_baseline_bytes": 506580992,
+      "peak_rss_bytes": 1102790656,
+      "rss_after_bytes": 869240832,
+      "rss_after_gc_bytes": 869326848,
+      "rss_before_bytes": 596209664,
+      "stage": "core_activation_and_package_install_without_domain_tensor_load"
+    },
+    {
+      "peak_delta_from_runtime_baseline_bytes": 287969280,
+      "peak_rss_bytes": 884178944,
+      "rss_after_bytes": 882987008,
+      "rss_after_gc_bytes": 882966528,
+      "rss_before_bytes": 869326848,
+      "stage": "single_cold_core_request"
+    },
+    {
+      "peak_delta_from_runtime_baseline_bytes": 286773248,
+      "peak_rss_bytes": 882982912,
+      "rss_after_bytes": 875794432,
+      "rss_after_gc_bytes": 875778048,
+      "rss_before_bytes": 882966528,
+      "stage": "first_chemistry_decoder_request"
+    },
+    {
+      "peak_delta_from_runtime_baseline_bytes": 280096768,
+      "peak_rss_bytes": 876306432,
+      "rss_after_bytes": 876306432,
+      "rss_after_gc_bytes": 876285952,
+      "rss_before_bytes": 875778048,
+      "stage": "first_civics_decoder_request"
+    },
+    {
+      "peak_delta_from_runtime_baseline_bytes": 280596480,
+      "peak_rss_bytes": 876806144,
+      "rss_after_bytes": 876806144,
+      "rss_after_gc_bytes": 876785664,
+      "rss_before_bytes": 876285952,
+      "stage": "first_python_decoder_request"
+    },
+    {
+      "peak_delta_from_runtime_baseline_bytes": 526364672,
+      "peak_rss_bytes": 1122574336,
+      "rss_after_bytes": 898576384,
+      "rss_after_gc_bytes": 898555904,
+      "rss_before_bytes": 876785664,
+      "stage": "complete_120_observation_core_runtime"
+    },
+    {
+      "peak_delta_from_runtime_baseline_bytes": 302825472,
+      "peak_rss_bytes": 899035136,
+      "rss_after_bytes": 899035136,
+      "rss_after_gc_bytes": 899014656,
+      "rss_before_bytes": 898555904,
+      "stage": "complete_120_observation_domain_runtime"
+    }
+  ],
+  "status": "FAIL_PHASE7_CPU_RSS_STAGE_PROFILE",
+  "teacher_model_loaded": false,
+  "training_performed": false
+}
