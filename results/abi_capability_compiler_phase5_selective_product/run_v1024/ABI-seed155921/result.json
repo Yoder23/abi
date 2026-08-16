@@ -1,0 +1,106 @@
+{
+  "claim_boundary": "One preregistered seed of the Phase 5 integrated product matrix; no standalone Phase 5 or superiority claim.",
+  "core_after": {
+    "archive_hash": "f111ac0c73f1f67dd62c1d059ae02c5903ff22c9e64e835a05a26d690a037328",
+    "payload_hash": "46887c3ac1503391adec01eca6c02e46d11fee9788e0d52887d1d2c861d6fd57",
+    "state_dict_hash": "55dcf813485a73ea3ab092a4218a41a9a51a5a83715a9c9cc7d15b73f68349e3",
+    "verify": {
+      "archive_hash": "f111ac0c73f1f67dd62c1d059ae02c5903ff22c9e64e835a05a26d690a037328",
+      "cake_id": "abi-phase4-b40-seed155921-v25-english-core",
+      "package_hash": "e4640f6b6efaa37952d177ffbc4b9bc295a8a96b58b216524c9172110460399a",
+      "payload_hash": "46887c3ac1503391adec01eca6c02e46d11fee9788e0d52887d1d2c861d6fd57",
+      "role": "english-core",
+      "signed": true,
+      "status": "PASS",
+      "utf8": "STRICT",
+      "version": "0.25.0-b40-conformance"
+    }
+  },
+  "core_archive_sha256": "f111ac0c73f1f67dd62c1d059ae02c5903ff22c9e64e835a05a26d690a037328",
+  "core_before": {
+    "archive_hash": "f111ac0c73f1f67dd62c1d059ae02c5903ff22c9e64e835a05a26d690a037328",
+    "payload_hash": "46887c3ac1503391adec01eca6c02e46d11fee9788e0d52887d1d2c861d6fd57",
+    "state_dict_hash": "55dcf813485a73ea3ab092a4218a41a9a51a5a83715a9c9cc7d15b73f68349e3",
+    "verify": {
+      "archive_hash": "f111ac0c73f1f67dd62c1d059ae02c5903ff22c9e64e835a05a26d690a037328",
+      "cake_id": "abi-phase4-b40-seed155921-v25-english-core",
+      "package_hash": "e4640f6b6efaa37952d177ffbc4b9bc295a8a96b58b216524c9172110460399a",
+      "payload_hash": "46887c3ac1503391adec01eca6c02e46d11fee9788e0d52887d1d2c861d6fd57",
+      "role": "english-core",
+      "signed": true,
+      "status": "PASS",
+      "utf8": "STRICT",
+      "version": "0.25.0-b40-conformance"
+    }
+  },
+  "core_handler_calls_for_specialist_rows": 0,
+  "evidence_sha256": "70965b6c3203d69cfb13af72ca92580542ae3fcc01be4707b08762660488b4ca",
+  "final_test_accessed": true,
+  "format": "abi-capability-compiler-phase5-selective-product-result/1",
+  "gates": {
+    "core_handler_never_called_for_specialist_rows": true,
+    "core_identity_unchanged": true,
+    "cross_domain_uninstalled_fails_closed": true,
+    "domain_lifecycle_exact": true,
+    "english_outputs_byte_exact_100_of_100": true,
+    "final_test_depth_exact": true,
+    "label_spoof_selects_only_outer_domain": true,
+    "missing_explicit_abstention_300_of_300": true,
+    "missing_never_invokes_core_or_cake": true,
+    "quarantine_fails_closed": true,
+    "receiver_learning_zero": true,
+    "selected_recovery_300_of_300": true,
+    "teacher_absent": true,
+    "training_absent": true
+  },
+  "lifecycle": [
+    {
+      "archive_unchanged": true,
+      "cake_id": "abi-chemistry-token-plan",
+      "domain": "chemistry",
+      "install_status": "INSTALLED",
+      "missing_after_remove_100_of_100": true,
+      "missing_before_install_100_of_100": true,
+      "reinstall_status": "INSTALLED",
+      "remove_status": "REMOVED",
+      "restored_outputs_byte_exact_100_of_100": true,
+      "verify_status": "PASS"
+    },
+    {
+      "archive_unchanged": true,
+      "cake_id": "abi-civics-token-plan",
+      "domain": "civics",
+      "install_status": "INSTALLED",
+      "missing_after_remove_100_of_100": true,
+      "missing_before_install_100_of_100": true,
+      "reinstall_status": "INSTALLED",
+      "remove_status": "REMOVED",
+      "restored_outputs_byte_exact_100_of_100": true,
+      "verify_status": "PASS"
+    },
+    {
+      "archive_unchanged": true,
+      "cake_id": "abi-python-token-plan",
+      "domain": "python",
+      "install_status": "INSTALLED",
+      "missing_after_remove_100_of_100": true,
+      "missing_before_install_100_of_100": true,
+      "reinstall_status": "INSTALLED",
+      "remove_status": "REMOVED",
+      "restored_outputs_byte_exact_100_of_100": true,
+      "verify_status": "PASS"
+    }
+  ],
+  "missing_explicit_abstentions": 300,
+  "observations_path": "results/abi_capability_compiler_phase5_selective_product/run_v1024/ABI-seed155921/observations.jsonl",
+  "observations_sha256": "5ca8960c1074009f0fd7cc7a5aeb01e73f4a84584c8d38e3ca16f9294b3e2fbb",
+  "phase5_certified": false,
+  "protocol_sha256": "3ccbfa36f08ef7754e66fb0f450b2beae6d809ed67358ae69a048c2d7f3a64fc",
+  "receiver_training_steps": 0,
+  "seed": 155921,
+  "selected_functional_passes": 300,
+  "status": "PASS_PHASE5_ABI_SELECTIVE_PRODUCT_SEED",
+  "system": "ABI",
+  "teacher_model_loaded": false,
+  "training_performed": false
+}

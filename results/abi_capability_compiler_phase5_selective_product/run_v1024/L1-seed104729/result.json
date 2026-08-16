@@ -1,0 +1,41 @@
+{
+  "claim_boundary": "Residual unselected-domain control on one exact B40 seed; no quality promotion or superiority claim.",
+  "evidence_sha256": "a3a972b644937c25c4062f33f4fa22ae1492d1b535829fa638fa172561f0a614",
+  "explicit_abstentions": 0,
+  "final_test_accessed": true,
+  "format": "abi-capability-compiler-phase5-selective-product-result/1",
+  "gates": {
+    "all_outputs_preserved": true,
+    "teacher_query_absent": true,
+    "three_hundred_distinct_specialist_prompts": true,
+    "training_absent": true
+  },
+  "observations_path": "results/abi_capability_compiler_phase5_selective_product/run_v1024/L1-seed104729/observations.jsonl",
+  "observations_sha256": "06a3c0c5204351e57e226d1dfd5a5ab0be147a2b775eb4d211826ec28cedb2f1",
+  "per_domain": {
+    "chemistry": {
+      "explicit_abstentions": 0,
+      "functional_passes": 100,
+      "observations": 100
+    },
+    "civics": {
+      "explicit_abstentions": 0,
+      "functional_passes": 90,
+      "observations": 100
+    },
+    "python": {
+      "explicit_abstentions": 0,
+      "functional_passes": 62,
+      "observations": 100
+    }
+  },
+  "phase5_certified": false,
+  "protocol_sha256": "bd7d2338f521ee742982f8b3f338aacbb4e1685c068532daed8ab233cc9b4020",
+  "seed": 104729,
+  "source_base_present_at_inference": true,
+  "specialist_functional_passes": 252,
+  "status": "PASS_PHASE5_RESIDUAL_BASELINE_SEED",
+  "system": "L1",
+  "teacher_query_performed": false,
+  "training_performed": false
+}
