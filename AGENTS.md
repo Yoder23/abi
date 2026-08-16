@@ -4,24 +4,26 @@
 
 Status date: 2026-08-16.
 
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1039.json` is the live state. Phase 6
-is certified for its exact bounded three-package scope by
-`ABI_CAPABILITY_COMPILER_PHASE6_CERTIFICATE_V1.json`. Three distinct B40
-English-core payloads each simultaneously host the immutable chemistry,
-civics, and Python packages. Independent read-only recomputation confirms
-900/900 selected specialist cases, 900/900 structured composition components,
-300/300 conflict quarantines, 300/300 English identity checks, selected-only
-physical execution, exact cross-host output identity, complete record deletion
-lineage, and zero V2 repetition collapses. Seventeen hostile tests pass. This
-opens Phase 7 machine-scope preregistration.
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1069.json` is the live state. Phase 7
+is certified for its exact bounded same-machine product scope by
+`ABI_CAPABILITY_COMPILER_PHASE7_CERTIFICATE_V1.json`. The same signed B40 core
+and signed chemistry, civics, and Python packages pass inherited quality,
+isolation, composition, and fresh integrated CPU/CUDA gates. Independent
+recomputation confirms 244/244 cross-device output/token identities, zero
+collapse, selected-only execution, teacher absence, persistent state, and
+unchanged component identities. CPU throughput is 13.2387x its registered
+comparator with 545,308,672 bytes peak RSS delta; CUDA throughput is 13.5139x
+its registered comparator with 505,427,456 peak allocated bytes. Forty-two
+LayerCake host tests and 16 verifier tests pass. Phase 8 external reproduction
+is open.
 
 Phase 2 still has 0/21,000 external human preferences, so its human gate and an
 unconditional Phase 3 certificate remain open. No
 global-minimum, universal ABI-over-LoRA/distillation, product-superiority,
-novelty, or release claim is authorized. The extraction archive has three
+novelty, independent-hardware, or release claim is authorized. The extraction archive has three
 pinned sources, but the deployed packages select only Phi-3; do not claim
 deployed multi-source quality. The dated narrative below is retained as
-experiment history and is superseded wherever it conflicts with V1039.
+experiment history and is superseded wherever it conflicts with V1069.
 
 ## Repository scope
 

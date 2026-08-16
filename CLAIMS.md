@@ -8,6 +8,27 @@ identity.
 
 ## Current claims
 
+### Bounded Phase 7 claim (certificate V1)
+
+ABI may claim that one exact teacher-free product—signed B40 English core
+`acb787...f25d` plus the exact signed chemistry, civics, and Python packages—
+passes the inherited Phase 4 machine-quality, Phase 5 behavioral-isolation,
+Phase 6 composition, and fresh integrated CPU/CUDA gates on the registered
+machine. Independent recomputation confirms 244/244 cross-device output/token
+identities, zero V2 repetition collapse, persistent state, selected-only
+specialist execution, unchanged artifacts, and zero receiver learning.
+
+On the registered CPU it measures 274.319 UTF-8 bytes/s, 13.2387x its frozen
+comparator, 101.39% same-core throughput retention, 3.121 s cold TTFT, and
+545,308,672 bytes peak RSS delta. On CUDA it measures 881.358 bytes/s,
+13.5139x its registered L1 systems comparator, 97.84% same-core throughput
+retention, and 505,427,456 peak allocated bytes.
+
+This is a bounded same-machine claim. It is not independent-hardware
+reproduction, human preference, release certification, arbitrary-hardware
+dominance, a global minimum, or universal ABI superiority over LoRA or
+distillation. Authority: `ABI_CAPABILITY_COMPILER_PHASE7_CERTIFICATE_V1.json`.
+
 ### Bounded Phase 6 claim (certificate V1)
 
 ABI may claim that the exact registered chemistry, civics, and Python packages
@@ -22,8 +43,8 @@ repetition collapses. Seventeen hostile tests pass.
 This is a bounded same-machine portability and composition claim. The archive
 contains three pinned source models, while these deployed packages all select
 Phi-3; deployed multi-source quality is not proven. Arbitrary-machine
-portability, latent semantic purity, completed human review, integrated Phase
-7, release, and universal ABI superiority remain unproved.
+portability, latent semantic purity, completed human review, Phase 8 release,
+and universal ABI superiority remain unproved.
 
 ### Bounded Phase 5 claim (certificate V1)
 
@@ -59,8 +80,8 @@ budgets, suites, seeds, and systems. It does not establish a global minimum,
 human preference, final-test result, general product superiority, method
 superiority, novelty, or universal superiority over LoRA or distillation.
 
-Phase 7 machine-scope integration is open. Phase 2's external human gate
-remains incomplete.
+Phase 7 machine scope is certified. Phase 8 independent reproduction and Phase
+2's external human gate remain incomplete.
 
 ### Preserved Phase 3 campaign boundary (V555; machine evidence V551)
 

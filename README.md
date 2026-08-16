@@ -14,29 +14,32 @@ artifacts are acquisition material, not deployable cakes.
 
 Status date: 2026-08-16
 
-**The ABI English-product moonshot is OPEN.**
+**The ABI English-product moonshot is OPEN at Phase 8's external gate.**
 
-Phase 6 now has a bounded three-package machine certificate:
-`ABI_CAPABILITY_COMPILER_PHASE6_CERTIFICATE_V1.json`. Three exact B40 English
-core payloads simultaneously host immutable chemistry, civics, and Python
-packages. Independent recomputation passes 900/900 selected specialist cases,
-900/900 structured composition components, 300/300 conflict quarantines,
-300/300 English identity checks, exact cross-host output identity, complete
-record deletion lineage, selected-only physical execution, and zero V2
-repetition collapses. Seventeen hostile tests pass.
+Phase 7 now has a bounded same-machine integrated-product certificate:
+`ABI_CAPABILITY_COMPILER_PHASE7_CERTIFICATE_V1.json`. One exact signed B40
+English core and the exact signed chemistry, civics, and Python packages pass
+the inherited quality/isolation/composition gates and fresh CPU/CUDA screens.
+Independent recomputation confirms 244/244 cross-device output/token
+identities, zero repetition collapse, selected-only specialist execution,
+teacher absence, and unchanged component hashes. CPU is 13.2387x its registered
+comparator with 545,308,672 bytes peak RSS delta; CUDA is 13.5139x its
+registered comparator with 505,427,456 peak allocated bytes. Forty-two
+LayerCake host tests and 16 verifier tests pass.
 
-Phase 7 machine-scope integration is now open for preregistration. The archive
+Phase 8 is open only for a content-addressed reproduction packet followed by an
+independent operator on independent CPU/CUDA hardware. The archive
 contains three pinned teachers, but the deployed packages select one; ABI does
 not claim deployed multi-source quality. Phase 2 still lacks its 21,000
 independent human judgments.
 Accordingly, ABI does **not** yet claim a global information minimum, universal
 superiority over LoRA/distillation, completed product superiority, novelty, or
-release readiness. See `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1039.json`.
+release readiness. See `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1069.json`.
 
 ### Preserved execution history
 
 The following dated execution narrative is preserved for auditability. Where it
-conflicts with V1016, V1016 controls. The prior state was
+conflicts with V1069, V1069 controls. The prior state was
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V710.json`.
 The route-isolated English endpoint now passes all registered Phase 3 machine
 gates: three paired training seeds and all A0-A4 causal controls, 1,393/1,400

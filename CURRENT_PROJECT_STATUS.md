@@ -4,21 +4,22 @@ Status date: 2026-08-16
 
 ## Authoritative update
 
-The live state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1039.json`. Phase 6
-is independently certified for the exact three-host, three-package composition
-matrix by `ABI_CAPABILITY_COMPILER_PHASE6_CERTIFICATE_V1.json`. Selected and
-composed specialist behavior is 1,800/1,800 functional and byte-exact, 300
-conflicts fail closed, 300 English outputs remain exact, physical execution is
-selected-only, deletion lineage is complete, and zero repetition collapses
-occur. Seventeen hostile tests pass.
+The live state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1069.json`. Phase 7
+is independently certified for one exact bounded same-machine product by
+`ABI_CAPABILITY_COMPILER_PHASE7_CERTIFICATE_V1.json`. The immutable B40 core
+and three immutable domain packages pass inherited quality, isolation, and
+composition evidence plus fresh integrated CPU/CUDA screens. All 244
+cross-device outputs/token sequences match, and every recomputed throughput,
+TTFT, memory, persistence, sparse-execution, identity, teacher-absence, and
+repetition gate passes. Forty-two LayerCake tests and 16 verifier tests pass.
 
-Phase 7 machine-scope integration is open for preregistration. Phase 2 external
-human review remains 0/21,000, so unconditional downstream and superiority
-claims remain barred. The archive's three pinned sources must not be confused
-with deployed multi-source quality: all three current domain packages select
-Phi-3.
+Phase 8 is open for a hash-bound reproduction packet and then independent
+execution on independent CPU/CUDA hardware. Phase 2 external human review
+remains 0/21,000, so unconditional superiority and release claims remain
+barred. The archive's three pinned sources must not be confused with deployed
+multi-source quality: all three current domain packages select Phi-3.
 The older executive narrative below is preserved as an experiment log and is
-superseded where it conflicts with V1039.
+superseded where it conflicts with V1069.
 
 ## Preserved executive history
 

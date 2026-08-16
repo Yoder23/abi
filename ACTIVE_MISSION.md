@@ -4,8 +4,8 @@ Status date: 2026-08-16
 
 ## Authoritative state
 
-The campaign is **OPEN in Phase 7 machine scope** under
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1039.json`.
+The campaign is **OPEN in Phase 8 external-reproduction scope** under
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1069.json`.
 
 Phase 4 is scientifically certified only for its registered bounded machine
 scope. Exact B40 passes the locked product gate on three seeds while adjacent
@@ -15,17 +15,19 @@ preserves the independently verified 13.0567x median CPU-throughput ratio
 (paired lower-95 ratio 10.5333x), and on the registered GPU comparison is
 13.8126x faster than L1 with 30.1275x less active tensor memory.
 
-Phase 6 is independently certified for its exact bounded three-package scope.
-Across three distinct English-core payloads, 900 selected specialist outputs
-and 900 structured composition components pass and remain byte-identical,
-300 conflicts quarantine with zero execution, 300 English checks remain exact,
-and zero repetition collapses occur. The active mission is to bind one exact
-integrated product identity to every already measured quality and systems fact,
-then preregister only genuinely missing Phase 7 measurements. No retraining or
-new extraction is authorized.
+Phase 7 is independently certified for one exact bounded integrated product.
+The same immutable B40 core and three immutable packages preserve Phase 4
+quality, Phase 5 isolation, and Phase 6 composition while passing fresh CPU and
+CUDA runtime screens. CPU throughput is 13.2387x its comparator with
+545,308,672 bytes peak RSS delta; CUDA throughput is 13.5139x its comparator
+with 505,427,456 peak allocated bytes. All 244 CPU/CUDA outputs and token
+sequences are identical. The active mission is now to build and hostile-test
+the hash-bound Phase 8 reproduction packet, then hand it to an independent
+operator on independent CPU/CUDA hardware.
 
-Phase 2's 21,000 external human preferences remain unfilled. Phase 7 may close
-only its machine scope; unconditional superiority and release remain locked.
+Phase 2's 21,000 external human preferences remain unfilled. Phase 8 also
+requires an independent operator and independent hardware. Unconditional
+superiority and release remain locked.
 
 ## Superseded execution log (preserved)
 

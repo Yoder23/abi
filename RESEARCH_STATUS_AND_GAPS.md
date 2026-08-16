@@ -4,20 +4,19 @@ Status date: 2026-08-16
 
 ## Current resolution boundary
 
-Phase 6 is resolved positively for the preregistered bounded three-package
-matrix. `ABI_CAPABILITY_COMPILER_PHASE6_CERTIFICATE_V1.json` binds three B40
-core payloads, simultaneous immutable chemistry/civics/Python packages, 1,800
-functional specialist executions, 300 conflict quarantines, exact English and
-cross-host identity, selected-only telemetry, zero repetition collapse, and
+Phase 7 is resolved positively for one preregistered bounded same-machine
+integrated product. `ABI_CAPABILITY_COMPILER_PHASE7_CERTIFICATE_V1.json` binds
+the exact signed B40 core, exact chemistry/civics/Python packages, inherited
+quality/isolation/composition evidence, fresh CPU/CUDA measurements, 244/244
+cross-device output/token identities, allocation-bounded verification, and
 independent hostile recomputation. The live state is
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1039.json`.
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1069.json`.
 
-The next scientific question is Phase 7: whether one exact integrated product
-identity can bind the existing teacher-relative quality, isolation,
-composition, CPU/GPU, genuine-cold TTFT, memory, persistent-state, sparse-
-execution, and reproducibility evidence without mixing lineages. Any missing
-same-product evidence must be preregistered before measurement. Phase 2 human
-judgments remain outstanding.
+The next scientific question is Phase 8: whether an independent operator can
+reproduce the exact product and claims from a clean content-addressed packet on
+independent CPU/CUDA hardware and survive the hostile evidence audit. Local
+self-reproduction cannot satisfy that gate. Phase 2 human judgments also
+remain outstanding.
 
 ## What is resolved
 
