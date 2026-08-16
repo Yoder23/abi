@@ -1,0 +1,34 @@
+{
+  "format": "abi-capability-compiler-phase7-direct-artifact-decision/1",
+  "version": 1056,
+  "status_date": "2026-08-16",
+  "status": "FAIL_CPU_VERIFICATION_MEMORY_DUPLICATION_CUDA_NOT_RUN",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE7_DIRECT_ARTIFACT_RUNTIME_PROTOCOL_V1053.json",
+    "sha256": "bd2fb55979d5a623d3e54825507ff610f182764b772ae56a5603072ba5c41132"
+  },
+  "preflight": "ABI_CAPABILITY_COMPILER_PHASE7_DIRECT_ARTIFACT_PREFLIGHT_V1054.json",
+  "cpu": {
+    "result": "results/abi_capability_compiler_phase7_integrated/direct_artifact_v1055/cpu/result.json",
+    "result_sha256": "63c3da67239b3c2f2cfbe35a635d277351d86fe2ef9fce3669152e99c2d51114",
+    "observations_sha256": "151a9fd8d8d6f7d5fc4297bb3533b4523c51f08422b1b111a4158e65fba11144",
+    "status": "FAIL_PHASE7_INTEGRATED_RUNTIME",
+    "failed_gate": "integrated_process_rss_lower",
+    "peak_process_rss_delta_bytes": 828104704,
+    "baseline_peak_process_rss_bytes": 602959872,
+    "rss_excess_bytes": 225144832,
+    "core_median_bytes_per_second": 272.94970148744756,
+    "core_throughput_retention": 1.0088769191863107,
+    "optimized_transformer_throughput_ratio": 13.172614978387612,
+    "cold_ttft_from_start_seconds": 3.3082677999918815,
+    "all_other_gates_pass": true
+  },
+  "cuda": {
+    "status": "NOT_RUN_CPU_REPAIR_GATE_FAILED"
+  },
+  "diagnosis": "Removing same-process archive construction did not lower the peak. The exact CPU failure increased to 828104704 bytes while every non-RSS gate passed. Code-path inspection identifies two whole-archive allocations inside the LayerCake host lifecycle: package loading reads the entire ZIP before reading its 253 MB tensor member, and active-host verification hashes the installed archive with Path.read_bytes before loading it again. The stage profiler did not call active host identity verification and therefore did not reproduce this allocation path.",
+  "decision": "Do not run the paired CUDA screen. Repair the LayerCake host, not ABI extraction: stream archive hashing, read ZIP members directly from the file, preserve every security validation, and prohibit whole-archive Path.read_bytes during load and verify with focused tests. Bind the LayerCake patch, then rerun the unchanged CPU and CUDA product screens.",
+  "phase7_certified": false,
+  "claim_boundary": "Negative evidence for the first lifecycle repair and authorization for one measured LayerCake package-loader memory repair. No quality, package, threshold, or artifact change is authorized."
+}
