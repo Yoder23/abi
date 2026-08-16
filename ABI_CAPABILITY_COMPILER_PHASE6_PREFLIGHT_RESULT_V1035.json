@@ -1,0 +1,14 @@
+{
+  "bundle_source_count": 3,
+  "deployed_multiple_source_models": false,
+  "format": "abi-capability-compiler-phase6-composition-preflight/1",
+  "gates": {
+    "cuda_available": true,
+    "provenance_gates_pass": true,
+    "teacher_absent": true,
+    "three_outputs_absent": true,
+    "training_absent": true
+  },
+  "protocol_sha256": "eb8b61f7845ba93c14c9d8fccb96be564a3c2dc2b191d0b8e7b64db4c3d2d71b",
+  "status": "PASS_PHASE6_COMPOSITION_PREFLIGHT"
+}
