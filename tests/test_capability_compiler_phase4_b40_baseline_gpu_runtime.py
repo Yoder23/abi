@@ -2,6 +2,7 @@ from abi.capability_compiler_phase4_b40_baseline_gpu_runtime import (
     FORMAT,
     RESULT_FORMAT,
     SYSTEMS,
+    _staging_path,
 )
 from abi.capability_compiler_phase3 import Phase3Error
 from pathlib import Path
@@ -40,3 +41,11 @@ def test_runtime_protocol_authorizes_only_strongest_l1(tmp_path, monkeypatch):
     path.write_text(json.dumps(protocol), encoding="utf-8")
     with pytest.raises(Phase3Error, match="governance changed"):
         runtime.load_protocol(tmp_path, path)
+
+
+def test_raw_harness_staging_remains_inside_repository(tmp_path):
+    output = tmp_path / "results" / "l1"
+    staging = _staging_path(tmp_path, output)
+    assert staging == output.parent / "l1_raw_harness"
+    with pytest.raises(Phase3Error, match="escaped repository"):
+        _staging_path(tmp_path, tmp_path.parent / "escaped")

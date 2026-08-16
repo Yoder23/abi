@@ -1,0 +1,24 @@
+{
+  "format": "abi-capability-compiler-phase4-b40-l1-gpu-runtime-process-failure/1",
+  "version": 1006,
+  "status_date": "2026-08-16",
+  "status": "FAIL_WRAPPER_STAGING_PATH_OUTSIDE_REPOSITORY",
+  "historical_evidence_changed": false,
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE4_B40_L1_GPU_RUNTIME_PROTOCOL_V1004.json",
+  "command": "python -m abi.capability_compiler_phase4_b40_baseline_gpu_runtime --protocol ABI_CAPABILITY_COMPILER_PHASE4_B40_L1_GPU_RUNTIME_PROTOCOL_V1004.json --system L1 --output-dir results/abi_capability_compiler_phase4_b40_baselines/l1_gpu_runtime_v1005",
+  "exit_code": 1,
+  "elapsed_seconds": 188.3,
+  "failure": {
+    "exception": "ValueError",
+    "message": "Temporary observations path was outside the repository root and therefore could not be represented as a repository-relative evidence path.",
+    "location": "abi/capability_compiler_phase4_b50_gpu_runtime.py:684",
+    "model_or_resource_failure": false,
+    "quality_evidence_produced": false,
+    "final_output_directory_created": false
+  },
+  "repair_scope": "Move only the underlying harness staging directory from the operating-system temporary directory to a new immutable sibling under the requested repository result directory. Preserve the raw harness result and copy its observations into the normalized wrapper result. Do not change the checkpoint, schedule, request count, model code, runtime metrics, gates, or claim boundary.",
+  "training_performed": false,
+  "final_test_accessed": false,
+  "phase4_certified": false,
+  "claim_boundary": "Preserved runtime wrapper process failure only. No runtime metric, quality promotion, Phase 4 result, or ABI-superiority claim."
+}

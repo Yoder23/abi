@@ -6,7 +6,6 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
-import tempfile
 from typing import Any, Iterable
 from unittest.mock import patch
 
@@ -23,6 +22,13 @@ from .capability_compiler_phase4_v19_frontier_rescreen import _json
 FORMAT = "abi-capability-compiler-phase4-b40-baseline-gpu-runtime/1"
 RESULT_FORMAT = "abi-capability-compiler-phase4-b40-baseline-gpu-runtime-result/1"
 SYSTEMS = ("L0", "L1")
+
+
+def _staging_path(root: Path, output: Path) -> Path:
+    staging = output.parent / f"{output.name}_raw_harness"
+    if root.resolve() not in staging.resolve().parents:
+        raise Phase3Error("B40 runtime staging path escaped repository root")
+    return staging
 
 
 def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str]:
@@ -62,21 +68,22 @@ def run(
     protocol, protocol_sha = load_protocol(root, protocol_path)
     if system not in protocol["authorized_systems"] or output.exists():
         raise Phase3Error("invalid or existing matched B40 LoRA CUDA runtime target")
-    with tempfile.TemporaryDirectory(prefix=f"abi-b40-runtime-{system.lower()}-") as raw:
-        staging = Path(raw) / "harness"
-        with (
-            patch.object(harness, "load_protocol", lambda _root, _path: (protocol, protocol_sha)),
-            patch.object(harness, "SYSTEMS", SYSTEMS),
-            patch.object(harness, "load_exact_records", load_exact_records),
-            patch.object(harness, "train_exact_b50_router", train_exact_b40_router),
-        ):
-            measured = harness.run(
-                root,
-                protocol_path,
-                system=system,
-                output=staging,
-            )
-        observations = (staging / "observations.jsonl").read_bytes()
+    staging = _staging_path(root, output)
+    if staging.exists():
+        raise Phase3Error("existing B40 runtime raw-harness staging target")
+    with (
+        patch.object(harness, "load_protocol", lambda _root, _path: (protocol, protocol_sha)),
+        patch.object(harness, "SYSTEMS", SYSTEMS),
+        patch.object(harness, "load_exact_records", load_exact_records),
+        patch.object(harness, "train_exact_b50_router", train_exact_b40_router),
+    ):
+        measured = harness.run(
+            root,
+            protocol_path,
+            system=system,
+            output=staging,
+        )
+    observations = (staging / "observations.jsonl").read_bytes()
     output.mkdir(parents=True)
     observations_path = output / "observations.jsonl"
     _write_immutable(observations_path, observations)
