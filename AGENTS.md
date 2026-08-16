@@ -4,7 +4,7 @@
 
 Status date: 2026-08-16.
 
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1075.json` is the live state. Phase 7
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1089.json` is the live state. Phase 7
 is certified for its exact bounded same-machine product scope by
 `ABI_CAPABILITY_COMPILER_PHASE7_CERTIFICATE_V1.json`. The same signed B40 core
 and signed chemistry, civics, and Python packages pass inherited quality,
@@ -26,13 +26,22 @@ self-attested from this task. Follow
 `docs/PHASE8_EXTERNAL_REPRODUCTION_V1.md` without changing product bytes,
 prompts, comparators, or thresholds.
 
+V1088 additionally certifies the strongest valid local Phase 8 rehearsal. Two
+detached worktrees at the exact packet commits restored only the three declared
+untracked payloads, passed 42/42 LayerCake tests, and passed the unchanged CPU
+and CUDA protocol. Read-only verification recomputed 19/19 gates per device,
+matched 244/244 fresh cross-device identities and 488/488 fresh-to-sealed
+identities, and rejected 15/15 hostile mutations. This remains the original
+operator and hardware, so `phase8_certified` is still false. Additional
+same-machine product reruns are prohibited by V1089.
+
 Phase 2 still has 0/21,000 external human preferences, so its human gate and an
 unconditional Phase 3 certificate remain open. No
 global-minimum, universal ABI-over-LoRA/distillation, product-superiority,
 novelty, independent-hardware, or release claim is authorized. The extraction archive has three
 pinned sources, but the deployed packages select only Phi-3; do not claim
 deployed multi-source quality. The dated narrative below is retained as
-experiment history and is superseded wherever it conflicts with V1075.
+experiment history and is superseded wherever it conflicts with V1089.
 
 ## Repository scope
 

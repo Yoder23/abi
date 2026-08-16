@@ -8,6 +8,19 @@ identity.
 
 ## Current claims
 
+### Phase 8 local clean-export rehearsal claim (result V1088)
+
+ABI may claim that its exact 281,108,851-byte handoff reconstructed and ran
+from detached exact-commit ABI and LayerCake worktrees on the development
+machine after restoring only three manifest-declared untracked payloads. The
+unchanged CPU and CUDA runs pass 19/19 recomputed gates per device, all 244
+fresh cross-device and 488 fresh-to-sealed functional identities match, 42/42
+host tests pass, and 15/15 hostile mutations are rejected.
+
+ABI may not call V1088 independent reproduction or Phase 8. The operator and
+hardware fingerprint are unchanged, and no external attestation exists.
+Authority: `ABI_CAPABILITY_COMPILER_PHASE8_LOCAL_CLEAN_REHEARSAL_RESULT_V1088.json`.
+
 ### Phase 8 local handoff-readiness claim (result V1074)
 
 ABI may claim that the exact Phase 7 product has a locally verified,

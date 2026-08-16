@@ -39,12 +39,22 @@ not claim deployed multi-source quality. Phase 2 still lacks its 21,000
 independent human judgments.
 Accordingly, ABI does **not** yet claim a global information minimum, universal
 superiority over LoRA/distillation, completed product superiority, novelty, or
-release readiness. See `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1075.json`.
+release readiness. See `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1089.json`.
+
+The clean-export rehearsal is also complete under
+`ABI_CAPABILITY_COMPILER_PHASE8_LOCAL_CLEAN_REHEARSAL_RESULT_V1088.json`.
+Detached worktrees at the exact packet commits restored only the three
+manifest-declared untracked payloads. The first CPU and CUDA runs passed every
+unchanged gate; verification matched 244/244 fresh cross-device identities and
+488/488 fresh-to-sealed identities, with 42/42 host tests and 15/15 hostile
+mutations passing. Because the operator and hardware are unchanged, this is
+strong local reproducibility—not independent Phase 8 evidence. V1089 now
+prohibits more same-machine product reruns.
 
 ### Preserved execution history
 
 The following dated execution narrative is preserved for auditability. Where it
-conflicts with V1075, V1075 controls. The prior state was
+conflicts with V1089, V1089 controls. The prior state was
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V710.json`.
 The route-isolated English endpoint now passes all registered Phase 3 machine
 gates: three paired training seeds and all A0-A4 causal controls, 1,393/1,400

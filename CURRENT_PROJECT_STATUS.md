@@ -4,7 +4,7 @@ Status date: 2026-08-16
 
 ## Authoritative update
 
-The live state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1075.json`. Phase 7
+The live state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1089.json`. Phase 7
 is independently certified for one exact bounded same-machine product by
 `ABI_CAPABILITY_COMPILER_PHASE7_CERTIFICATE_V1.json`. The immutable B40 core
 and three immutable domain packages pass inherited quality, isolation, and
@@ -23,7 +23,14 @@ remains 0/21,000, so unconditional superiority and release claims remain
 barred. The archive's three pinned sources must not be confused with deployed
 multi-source quality: all three current domain packages select Phi-3.
 The older executive narrative below is preserved as an experiment log and is
-superseded where it conflicts with V1075.
+superseded where it conflicts with V1089.
+
+V1088 now closes the remaining local clean-export question. Detached exact-
+commit worktrees restored only the three declared payloads and passed 42 host
+tests plus the first unchanged CPU/CUDA runs. The verifier recomputed 19/19
+gates per device, matched 244/244 fresh cross-device and 488/488 sealed
+functional identities, and rejected 15/15 hostile mutations. This is the same
+operator and development hardware, so Phase 8 remains externally blocked.
 
 ## Preserved executive history
 

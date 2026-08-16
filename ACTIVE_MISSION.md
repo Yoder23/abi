@@ -5,7 +5,7 @@ Status date: 2026-08-16
 ## Authoritative state
 
 The campaign is **BLOCKED ON EXTERNAL PHASE 8 RESOURCES** under
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1075.json`.
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1089.json`.
 
 Phase 4 is scientifically certified only for its registered bounded machine
 scope. Exact B40 passes the locked product gate on three seeds while adjacent
@@ -29,6 +29,14 @@ verification gates and the hostile suite passes 16/16. The next action cannot
 be completed on this development machine: an independent operator must run
 the frozen packet on different CPU/CUDA hardware, sign the attestation, and
 return all raw evidence. See `docs/PHASE8_EXTERNAL_REPRODUCTION_V1.md`.
+
+All scientifically useful same-machine rehearsal work is now complete. V1088
+reconstructed the packet from detached exact-commit worktrees and passed the
+first CPU and CUDA runs, 42/42 host tests, 19/19 recomputed gates per device,
+244/244 fresh cross-device identities, 488/488 identities against the sealed
+run, and 15/15 hostile mutations. The preparation-polarity and Windows-path
+tooling failures are preserved with bounded repairs; neither device run was
+repeated. V1088 is explicitly local and is not Phase 8.
 
 Phase 2's 21,000 external human preferences remain unfilled. Phase 8 also
 requires an independent operator and independent hardware. Local reruns cannot

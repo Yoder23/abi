@@ -1,0 +1,87 @@
+{
+  "format": "abi-capability-compiler-phase8-local-clean-rehearsal-certificate/1",
+  "result_id": "ABI_CAPABILITY_COMPILER_PHASE8_LOCAL_CLEAN_REHEARSAL_RESULT_V1088",
+  "status": "CERTIFIED_LOCAL_CLEAN_EXPORT_REHEARSAL_SAME_MACHINE",
+  "status_date": "2026-08-16",
+  "scope": "One detached clean ABI worktree at 4b0004b and one detached clean LayerCake worktree at 662c5a9 on the original development laptop. Exactly three manifest-declared untracked payloads were restored before the unchanged exact product ran once on CPU and once on CUDA.",
+  "source": {
+    "abi_packet_source_commit": "4b0004bd7b71654a6014d96c634d4418b957d861",
+    "layercake_commit": "662c5a9b7264a1a5478c9dfb656f35c450e2504f",
+    "development_hardware_fingerprint_sha256": "2deae6043290bb50a87b17e799b7772af1df02356f3f954c6c755bb85782f02a",
+    "same_development_hardware": true,
+    "independent_operator": false,
+    "independent_hardware": false
+  },
+  "preparation": {
+    "protocol": "ABI_CAPABILITY_COMPILER_PHASE8_LOCAL_CLEAN_REHEARSAL_REPAIR_PROTOCOL_V1079.json",
+    "protocol_sha256": "241527f2025d38ac805ebefa1a355245623680bddb8135407de329c5a9f19256",
+    "result": "results/abi_capability_compiler_phase8/local_clean_rehearsal_v1078/preparation_repair_v1081.json",
+    "result_sha256": "0f441dfe33780c237368ae6dd0cbab5ccbb206263e431d8146a4dda81ca67d96",
+    "tracked_files_verified": 49,
+    "untracked_files_restored": 3,
+    "release_manifest_gates_passed": 14,
+    "runtime_preflight_gates_passed": 13
+  },
+  "collection": {
+    "protocol": "ABI_CAPABILITY_COMPILER_PHASE8_LOCAL_CLEAN_REHEARSAL_COLLECTION_REPAIR_PROTOCOL_V1083.json",
+    "protocol_sha256": "cf83ab8aa4884b03131910434458901c09ab9c05015137052f96c87c8bc38608",
+    "result": "results/p8r_v1083/collection.json",
+    "result_sha256": "cd917ad77f3bccd1c62c8098d72b083965a3616b682c053ccc0eee9c813e3942",
+    "files_collected": 6,
+    "source_worktree_tracked_diffs": 0,
+    "device_runs_repeated_during_collection_repair": 0
+  },
+  "verification": {
+    "protocol": "ABI_CAPABILITY_COMPILER_PHASE8_LOCAL_CLEAN_REHEARSAL_VERIFY_PROTOCOL_V1085.json",
+    "protocol_sha256": "0a7e11fb49fc71e0fbce2fbc05064df4e7b5259ff7e5540f44734672316bbdb4",
+    "result": "results/p8r_v1083/verify_v1087/result.json",
+    "result_sha256": "8c8899e7df0b26dd39047d5469751c4f0e263d9ac6e772a07eeb23b952920844",
+    "evidence_sha256": "c448e01ab3a9eb54fb26888b351aaa81a8aeae64570bcfa3a1878bfdb6a2ea9f",
+    "status": "PASS_PHASE8_LOCAL_CLEAN_EXPORT_REHEARSAL_SAME_MACHINE",
+    "per_device_inherited_gates_passed": 19,
+    "per_device_inherited_gates_total": 19,
+    "fresh_cross_device_functional_identities": 244,
+    "fresh_to_sealed_device_specific_functional_identities": 488,
+    "hostile_mutations_rejected": 15,
+    "layercake_tests_passed": 42
+  },
+  "results": {
+    "active_tensor_bytes": 255916588,
+    "repetition_collapses_v2": 0,
+    "teacher_present_at_inference": false,
+    "receiver_training_steps": 0,
+    "cpu": {
+      "median_core_bytes_per_second": 281.5224568301225,
+      "transformer_relative_throughput_ratio": 13.586338110589557,
+      "phase4_same_core_throughput_retention": 1.0405635447877446,
+      "cold_ttft_seconds": 3.071963299997151,
+      "peak_process_rss_delta_bytes": 543318016
+    },
+    "cuda": {
+      "median_core_bytes_per_second": 876.5945532737851,
+      "registered_systems_comparator_throughput_ratio": 13.440810794905833,
+      "phase4_same_core_throughput_retention": 0.9730867419577716,
+      "cold_ttft_seconds": 3.356344900035765,
+      "peak_process_rss_delta_bytes": 515665920,
+      "peak_cuda_allocated_bytes": 505427456
+    }
+  },
+  "preserved_negative_evidence": [
+    {
+      "path": "results/abi_capability_compiler_phase8/local_clean_rehearsal_v1078/preparation.json",
+      "sha256": "c79e9300d42229f8a3e91e020eafb44e55b924b5cdd242894c672d371819a4d6",
+      "cause": "correctly false independence fact was included as a positive all-gates input"
+    },
+    {
+      "path": "results/abi_capability_compiler_phase8/local_clean_rehearsal_v1078/collection_attempt_failure_v1082.json",
+      "sha256": "9ae6f5fd855c4f380ab42522bf2a3652ad1fcb1644df21b1730c200451d059dd",
+      "cause": "266-character collection target exceeded the active Windows file-open boundary"
+    }
+  ],
+  "scientific_conclusion": "The exact 281,108,851-byte handoff manifest is sufficient to reconstruct and execute the registered product from detached clean source worktrees on the development machine. The pass excludes reliance on undeclared tracked working-tree modifications and reproduces every sealed functional identity while retaining every frozen CPU/CUDA gate.",
+  "phase8_certified": false,
+  "release_certified": false,
+  "remaining_hard_blocker": "A genuinely independent operator must execute the frozen handoff on CPU/CUDA hardware with a fingerprint different from 2deae604...f02a and return signed raw evidence for preregistered hostile verification.",
+  "separate_open_gate": "Phase 2 remains at 0/21,000 independent human preferences.",
+  "claim_boundary": "This certificate is local and same-machine only. It is not an independent reproduction, Phase 8 certificate, release certificate, arbitrary-hardware result, human-preference result, global information minimum, deployed multi-source quality result, novelty determination, or universal ABI superiority over LoRA or distillation."
+}

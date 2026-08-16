@@ -1,0 +1,17 @@
+{
+  "format": "abi-capability-compiler-phase8-local-clean-rehearsal-verify-preflight/1",
+  "gates": {
+    "adversarial_output_absent": true,
+    "all_fresh_evidence_present": true,
+    "all_sealed_evidence_present": true,
+    "collection_pass": true,
+    "independent_hardware_not_claimed": true,
+    "model_inference_absent": true,
+    "output_absent": true,
+    "preparation_pass": true,
+    "training_absent": true
+  },
+  "phase8_certified": false,
+  "protocol_sha256": "0a7e11fb49fc71e0fbce2fbc05064df4e7b5259ff7e5540f44734672316bbdb4",
+  "status": "PASS_PHASE8_LOCAL_CLEAN_REHEARSAL_VERIFY_PREFLIGHT"
+}

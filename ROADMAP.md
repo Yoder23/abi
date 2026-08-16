@@ -4,7 +4,7 @@ Status date: 2026-08-16
 
 The machine-readable contract
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` controls sequencing and
-gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1075.json` records live status.
+gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1089.json` records live status.
 Evidence gates, not experiment counts or dates, close phases.
 
 | Phase | Objective | Status |
@@ -17,12 +17,18 @@ Evidence gates, not experiment counts or dates, close phases.
 | 5 | Selective reconstruction and bounded exclusion | CERTIFIED FOR BOUNDED THREE-DOMAIN BEHAVIORAL EXCLUSION |
 | 6 | Composition, portability, and multi-source provenance | CERTIFIED FOR BOUNDED THREE-PACKAGE SCOPE |
 | 7 | Integrated teacher-relative and systems certification | CERTIFIED FOR BOUNDED SAME-MACHINE CPU/CUDA PRODUCT SCOPE |
-| 8 | Independent hostile verification and release | LOCAL HANDOFF READY; BLOCKED ON INDEPENDENT OPERATOR AND DIFFERENT CPU/CUDA HARDWARE |
+| 8 | Independent hostile verification and release | LOCAL CLEAN-EXPORT REHEARSAL CERTIFIED; BLOCKED ON INDEPENDENT OPERATOR AND DIFFERENT CPU/CUDA HARDWARE |
 
 The Phase 8 local packet is sealed by V1070-V1074: 52 exact files,
 281,108,851 bytes, 14/14 manifest-verification gates, and 16/16 hostile tests.
 It deliberately records `phase8_certified: false`. Only the independent run
 described in `docs/PHASE8_EXTERNAL_REPRODUCTION_V1.md` can advance this phase.
+
+V1088 exhausts the valid same-machine test: detached exact-commit worktrees,
+three declared payload restores, 42 host tests, first-run CPU/CUDA passes,
+19/19 recomputed gates per device, 244 fresh cross-device identities, 488
+fresh-to-sealed identities, and 15 hostile mutations. It does not change the
+external Phase 8 or Phase 2 human requirements.
 
 ## Completed Phase 1
 
