@@ -67,10 +67,17 @@ def _resolve_entry(
 
 def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str]:
     protocol = _json(path)
+    original = protocol.get("status") == "PREREGISTERED_PHASE8_LOCAL_CLEAN_REHEARSAL"
+    polarity_repair = (
+        protocol.get("status")
+        == "PREREGISTERED_PHASE8_LOCAL_CLEAN_REHEARSAL_POLARITY_REPAIR"
+        and protocol.get("repair_of")
+        == "ABI_CAPABILITY_COMPILER_PHASE8_LOCAL_CLEAN_REHEARSAL_PROTOCOL_V1076.json"
+        and protocol.get("repair_scope") == "FALSE_POLARITY_GATE_LABEL_ONLY"
+    )
     if (
         protocol.get("format") != FORMAT
-        or protocol.get("status")
-        != "PREREGISTERED_PHASE8_LOCAL_CLEAN_REHEARSAL"
+        or not (original or polarity_repair)
         or protocol.get("training_authorized") is not False
         or protocol.get("teacher_query_authorized") is not False
         or protocol.get("phase8_certification_authorized") is not False
@@ -82,6 +89,17 @@ def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str]:
         target = (root / relative).resolve()
         if not target.is_file() or sha256_file(target) != expected:
             raise Phase3Error(f"Phase 8 local-rehearsal binding changed: {relative}")
+    if polarity_repair:
+        failure = _json(root / protocol["preserved_failure"])
+        failure_gates = dict(failure.get("gates", {}))
+        claimed = failure_gates.pop("independent_hardware_claimed", None)
+        if (
+            failure.get("status") != protocol["preserved_failure_status"]
+            or claimed is not False
+            or not failure_gates
+            or not all(value is True for value in failure_gates.values())
+        ):
+            raise Phase3Error("Phase 8 polarity repair exceeded its registered scope")
     return protocol, sha256_file(path)
 
 
@@ -94,6 +112,7 @@ def preflight(root: Path, protocol_path: Path) -> dict[str, Any]:
     protocol, protocol_sha = load_protocol(root, protocol_path)
     parent, abi_clean, layercake_clean = _target_roots(protocol)
     hardware = hardware_document()
+    repair = protocol.get("repair_scope") == "FALSE_POLARITY_GATE_LABEL_ONLY"
     gates = {
         "development_hardware_exact": hardware["fingerprint_sha256"]
         == protocol["development_hardware_fingerprint_sha256"],
@@ -115,9 +134,14 @@ def preflight(root: Path, protocol_path: Path) -> dict[str, Any]:
             (root / "../layercake_release").resolve(), "rev-parse", "HEAD"
         )
         == protocol["layercake_commit"],
-        "clean_parent_absent": not parent.exists(),
-        "abi_clean_absent": not abi_clean.exists(),
-        "layercake_clean_absent": not layercake_clean.exists(),
+        "clean_parent_state_expected": parent.exists() is repair,
+        "abi_clean_state_expected": abi_clean.exists() is repair,
+        "layercake_clean_state_expected": layercake_clean.exists() is repair,
+        "preserved_failure_state_expected": (
+            (root / protocol["preserved_failure"]).is_file()
+            if repair
+            else True
+        ),
         "collection_output_absent": not (root / protocol["collection_output"]).exists(),
         "verification_output_absent": not (
             root / protocol["verification_output"]
@@ -173,7 +197,8 @@ def prepare(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
         if not source.is_file() or sha256_file(source) != expected:
             raise Phase3Error(f"source payload mismatch: {relative}")
         target.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(source, target)
+        if not target.exists():
+            shutil.copy2(source, target)
         if sha256_file(target) != expected:
             raise Phase3Error(f"copied payload mismatch: {relative}")
         copied.append(
@@ -182,7 +207,8 @@ def prepare(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
 
     clean_manifest = (abi_clean / protocol["release_manifest"]).resolve()
     clean_manifest.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(manifest_source, clean_manifest)
+    if not clean_manifest.exists():
+        shutil.copy2(manifest_source, clean_manifest)
     if sha256_file(clean_manifest) != protocol["release_manifest_sha256"]:
         raise Phase3Error("copied release manifest changed")
     manifest_verification = verify_manifest(
@@ -190,18 +216,21 @@ def prepare(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
         abi_clean / protocol["release_readiness_protocol"],
         clean_manifest,
     )
-    clean_runtime_preflight = runtime_preflight(
-        abi_clean, abi_clean / protocol["product_protocol"]
-    )
     clean_runtime_preflight_path = (
         abi_clean / protocol["clean_runtime_preflight"]
     ).resolve()
-    clean_runtime_preflight_path.parent.mkdir(parents=True, exist_ok=True)
-    _write_immutable(
-        clean_runtime_preflight_path,
-        json.dumps(clean_runtime_preflight, indent=2, sort_keys=True).encode()
-        + b"\n",
-    )
+    if clean_runtime_preflight_path.exists():
+        clean_runtime_preflight = _json(clean_runtime_preflight_path)
+    else:
+        clean_runtime_preflight = runtime_preflight(
+            abi_clean, abi_clean / protocol["product_protocol"]
+        )
+        clean_runtime_preflight_path.parent.mkdir(parents=True, exist_ok=True)
+        _write_immutable(
+            clean_runtime_preflight_path,
+            json.dumps(clean_runtime_preflight, indent=2, sort_keys=True).encode()
+            + b"\n",
+        )
     expected_outputs = {
         device: abi_clean / protocol["clean_device_outputs"][device]
         for device in ("cpu", "cuda")
@@ -225,7 +254,7 @@ def prepare(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
         == protocol["development_hardware_fingerprint_sha256"],
         "teacher_absent": True,
         "training_absent": True,
-        "independent_hardware_claimed": False,
+        "independent_hardware_not_claimed": True,
     }
     result = {
         "format": "abi-capability-compiler-phase8-local-clean-rehearsal-preparation/1",
@@ -303,7 +332,7 @@ def collect(root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
         and cuda.get("teacher_model_loaded") is False,
         "training_absent": cpu.get("training_performed") is False
         and cuda.get("training_performed") is False,
-        "independent_hardware_claimed": False,
+        "independent_hardware_not_claimed": True,
     }
     result = {
         "format": "abi-capability-compiler-phase8-local-clean-rehearsal-collection/1",
