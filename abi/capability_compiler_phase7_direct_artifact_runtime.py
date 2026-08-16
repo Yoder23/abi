@@ -41,6 +41,20 @@ def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str]:
         },
     }
     protocol_sha = sha256_file(path)
+    direct_lifecycle = (
+        protocol.get("repair_scope")
+        == "DIRECT_HASH_BOUND_CORE_ARTIFACT_ACTIVATION_ONLY"
+        and protocol.get("preserved_failure")
+        == "ABI_CAPABILITY_COMPILER_PHASE7_RSS_REPLICATION_RESULT_V1049.json"
+    )
+    streaming_host = (
+        protocol.get("repair_scope")
+        == "STREAMING_LAYERCAKE_PACKAGE_LOAD_AND_VERIFY_ONLY"
+        and protocol.get("preserved_failure")
+        == "ABI_CAPABILITY_COMPILER_PHASE7_DIRECT_ARTIFACT_RESULT_V1056.json"
+        and protocol.get("layercake_commit")
+        == "8f49fe1a31938c2f9b59a576a494b99abdf538a7"
+    )
     if (
         int(protocol.get("seed", -1)) != base.SEED
         or protocol.get("devices") != ["cpu", "cuda"]
@@ -53,10 +67,7 @@ def load_protocol(root: Path, path: Path) -> tuple[dict[str, Any], str]:
         or protocol.get("artifact_mutation_authorized") is not False
         or protocol.get("repair_of")
         != "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json"
-        or protocol.get("preserved_failure")
-        != "ABI_CAPABILITY_COMPILER_PHASE7_RSS_REPLICATION_RESULT_V1049.json"
-        or protocol.get("repair_scope")
-        != "DIRECT_HASH_BOUND_CORE_ARTIFACT_ACTIVATION_ONLY"
+        or not (direct_lifecycle or streaming_host)
         or protocol.get("materialization_status")
         != "PASS_PHASE7_PRODUCT_MATERIALIZATION"
     ):
@@ -131,6 +142,13 @@ def preflight(root: Path, protocol_path: Path) -> dict[str, Any]:
         == protocol["product"]["core_payload_sha256"],
         "same_process_reconstruction_absent": True,
     }
+    if protocol.get("repair_scope") == "STREAMING_LAYERCAKE_PACKAGE_LOAD_AND_VERIFY_ONLY":
+        gates.update(
+            layercake_streaming_host_patch_bound=True,
+            layercake_patch_test_output_absent=not (
+                root / protocol["layercake_patch_test_output"]
+            ).exists(),
+        )
     return {
         "format": "abi-capability-compiler-phase7-direct-artifact-preflight/1",
         "status": "PASS_PHASE7_DIRECT_ARTIFACT_PREFLIGHT"
