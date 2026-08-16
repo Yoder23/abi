@@ -4,7 +4,7 @@ Status date: 2026-08-16
 
 The machine-readable contract
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` controls sequencing and
-gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1030.json` records live status.
+gates. `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1039.json` records live status.
 Evidence gates, not experiment counts or dates, close phases.
 
 | Phase | Objective | Status |
@@ -15,8 +15,8 @@ Evidence gates, not experiment counts or dates, close phases.
 | 3 | Causal teacher-to-target acquisition | MACHINE EVIDENCE COMPLETE; BLOCKED BY PHASE 2 PREREQUISITE |
 | 4 | Sufficient-information Pareto frontier | CERTIFIED FOR BOUNDED MACHINE-DEVELOPMENT SCOPE |
 | 5 | Selective reconstruction and bounded exclusion | CERTIFIED FOR BOUNDED THREE-DOMAIN BEHAVIORAL EXCLUSION |
-| 6 | Composition, portability, and multi-source provenance | OPEN; PREREGISTRATION REQUIRED |
-| 7 | Integrated teacher-relative and systems certification | LOCKED |
+| 6 | Composition, portability, and multi-source provenance | CERTIFIED FOR BOUNDED THREE-PACKAGE SCOPE |
+| 7 | Integrated teacher-relative and systems certification | OPEN FOR PREREGISTERED MACHINE SCOPE; HUMAN GATE PENDING |
 | 8 | Independent hostile verification and release | LOCKED |
 
 ## Completed Phase 1

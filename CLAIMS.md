@@ -8,6 +8,23 @@ identity.
 
 ## Current claims
 
+### Bounded Phase 6 claim (certificate V1)
+
+ABI may claim that the exact registered chemistry, civics, and Python packages
+compose without interference on three fresh compatible LayerCake host
+initializations with distinct B40 English-core payloads. Independent
+recomputation confirms 900/900 selected specialist outputs, 900/900 structured
+three-domain components, 300/300 conflict quarantines with zero execution,
+300/300 preserved English outputs, exact cross-host output identity, complete
+record-level deletion lineage, selected-only physical execution, and zero V2
+repetition collapses. Seventeen hostile tests pass.
+
+This is a bounded same-machine portability and composition claim. The archive
+contains three pinned source models, while these deployed packages all select
+Phi-3; deployed multi-source quality is not proven. Arbitrary-machine
+portability, latent semantic purity, completed human review, integrated Phase
+7, release, and universal ABI superiority remain unproved.
+
 ### Bounded Phase 5 claim (certificate V1)
 
 ABI may claim that the exact registered three-seed B40 LayerCake product
@@ -42,7 +59,8 @@ budgets, suites, seeds, and systems. It does not establish a global minimum,
 human preference, final-test result, general product superiority, method
 superiority, novelty, or universal superiority over LoRA or distillation.
 
-Phase 6 is open. Phase 2's external human gate remains incomplete.
+Phase 7 machine-scope integration is open. Phase 2's external human gate
+remains incomplete.
 
 ### Preserved Phase 3 campaign boundary (V555; machine evidence V551)
 

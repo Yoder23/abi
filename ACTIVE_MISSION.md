@@ -4,8 +4,8 @@ Status date: 2026-08-16
 
 ## Authoritative state
 
-The campaign is **OPEN in Phase 6** under
-`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1030.json`.
+The campaign is **OPEN in Phase 7 machine scope** under
+`ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1039.json`.
 
 Phase 4 is scientifically certified only for its registered bounded machine
 scope. Exact B40 passes the locked product gate on three seeds while adjacent
@@ -15,14 +15,17 @@ preserves the independently verified 13.0567x median CPU-throughput ratio
 (paired lower-95 ratio 10.5333x), and on the registered GPU comparison is
 13.8126x faster than L1 with 30.1275x less active tensor memory.
 
-Phase 5 is independently machine-certified for its exact bounded three-domain
-scope. The active mission is to preregister and execute Phase 6 composition,
-portability, provenance, conflict quarantine, physical selected-only execution,
-and scaling/interference comparisons. No new teacher extraction or training is
-authorized before the Phase 6 protocol and identities are sealed.
+Phase 6 is independently certified for its exact bounded three-package scope.
+Across three distinct English-core payloads, 900 selected specialist outputs
+and 900 structured composition components pass and remain byte-identical,
+300 conflicts quarantine with zero execution, 300 English checks remain exact,
+and zero repetition collapses occur. The active mission is to bind one exact
+integrated product identity to every already measured quality and systems fact,
+then preregister only genuinely missing Phase 7 measurements. No retraining or
+new extraction is authorized.
 
-Phase 2's 21,000 external human preferences remain unfilled. Unconditional
-superiority claims, Phase 7, and release remain locked.
+Phase 2's 21,000 external human preferences remain unfilled. Phase 7 may close
+only its machine scope; unconditional superiority and release remain locked.
 
 ## Superseded execution log (preserved)
 

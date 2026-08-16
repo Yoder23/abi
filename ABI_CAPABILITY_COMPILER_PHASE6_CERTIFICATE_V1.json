@@ -1,0 +1,72 @@
+{
+  "format": "abi-capability-compiler-phase6-certificate/1",
+  "certificate_id": "ABI_CAPABILITY_COMPILER_PHASE6_CERTIFICATE_V1",
+  "status": "CERTIFIED_BOUNDED_THREE_PACKAGE_COMPOSITION_PORTABILITY_AND_PROVENANCE",
+  "status_date": "2026-08-16",
+  "phase": 6,
+  "scope": "Exact B40 English cores at seeds 104729, 130363, and 155921; exact signed chemistry, civics, and Python packages simultaneously installed on three fresh compatible LayerCake host initializations; 100 frozen final prompts per domain; 100 structured three-domain requests and 100 conflict requests per host; CUDA execution on the registered machine.",
+  "protocol": {
+    "base": "ABI_CAPABILITY_COMPILER_PHASE6_COMPOSITION_PROTOCOL_V1031.json",
+    "base_sha256": "2637e48ebecff7b05f13e3877b45e61d3021645a9f1e61a273e14e083fcf17e0",
+    "repair": "ABI_CAPABILITY_COMPILER_PHASE6_COMPOSITION_REPAIR_PROTOCOL_V1034.json",
+    "repair_sha256": "eb8b61f7845ba93c14c9d8fccb96be564a3c2dc2b191d0b8e7b64db4c3d2d71b"
+  },
+  "independent_verification": {
+    "protocol": "ABI_CAPABILITY_COMPILER_PHASE6_VERIFY_PROTOCOL_V1036.json",
+    "protocol_sha256": "3f131ce2a0bcfa55c2980dee41b1ee18e60e0dd1bac9623213ede3b9a6969e08",
+    "result": "results/abi_capability_compiler_phase6_composition/verify_v1038/result.json",
+    "result_sha256": "5b03132574547b411f0fae6d18b0c38c98377a32501572f00c86aae3f2307ad4",
+    "evidence_sha256": "1b9e9cccbe0e866131456432f2631a81c353aec219fdba998822cd4e484b5966",
+    "status": "PASS_INDEPENDENTLY_VERIFIED_PHASE6_BOUNDED_COMPOSITION"
+  },
+  "adversarial_verification": {
+    "path": "results/abi_capability_compiler_phase6_composition/adversarial_v1037.xml",
+    "sha256": "6d795f146eebe4e4125c80144518e6886bf8d4ebe59e92cc0b907ed16aafaee9",
+    "tests": 17,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "certified_results": {
+    "compatible_host_initializations": 3,
+    "distinct_english_core_payloads": 3,
+    "simultaneously_installed_packages_per_host": 3,
+    "selected_specialist_functional_passes": 900,
+    "selected_specialist_observations": 900,
+    "phase5_to_phase6_selected_outputs_byte_exact": 900,
+    "structured_three_domain_requests": 300,
+    "structured_components_functional_and_byte_exact": 900,
+    "conflict_requests_quarantined_with_zero_execution": 300,
+    "english_outputs_byte_exact_before_after": 300,
+    "repetition_collapses_v2": 0,
+    "teacher_present_at_inference": false,
+    "receiver_training_steps": 0,
+    "maximum_active_selected_domain_tensor_bytes": 499064,
+    "three_installed_domain_package_archive_bytes": 1455304,
+    "descriptive_l1_over_maximum_active_domain_tensor_ratio": 15363.410544539378
+  },
+  "provenance": {
+    "selected_domain_training_records": 175,
+    "selected_domain_teacher_tokens": 3401,
+    "record_level_deletion_index_complete": true,
+    "source_revisions_immutable": true,
+    "extraction_archive_pinned_source_count": 3,
+    "deployed_domain_package_source_count": 1,
+    "deployed_source": "microsoft/Phi-3-mini-4k-instruct",
+    "multi_source_boundary": "The extraction archive contains three pinned source models and preserves record/source custody. These deployed chemistry, civics, and Python packages all select Phi-3. This certificate does not claim deployed multi-source quality."
+  },
+  "preserved_negative_evidence": [
+    "ABI_CAPABILITY_COMPILER_PHASE6_PREFLIGHT_FAILURE_V1033.json"
+  ],
+  "repair_boundary": "The only repair replaced a current-training-only loader with a read-only lineage reconstruction that requires the archive to remain retired from training. No model, package, prompt, seed, gate, or result target changed.",
+  "phase6_certified": true,
+  "phase7_machine_campaign_open": true,
+  "unresolved_prerequisites": {
+    "phase2_external_human_preferences_complete": false,
+    "completed_preferences": 0,
+    "required_preferences": 21000,
+    "independent_hardware_release_reproduction_complete": false,
+    "unconditional_release_claims_allowed": false
+  },
+  "claim_limits": "This is a bounded same-machine, fresh-host-initialization composition certificate. It does not establish arbitrary-machine portability, deployed multi-source quality, latent semantic purity, completed human review, integrated Phase 7 certification, independent-hardware Phase 8 release, a global minimum, or universal ABI superiority over LoRA or distillation."
+}

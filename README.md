@@ -16,21 +16,22 @@ Status date: 2026-08-16
 
 **The ABI English-product moonshot is OPEN.**
 
-Phase 5 now has a bounded three-domain machine certificate:
-`ABI_CAPABILITY_COMPILER_PHASE5_CERTIFICATE_V1.json`. The exact B40 English
-cores at three seeds selectively host immutable chemistry, civics, and Python
-packages at 300/300 frozen final cases per seed, reject 300/300 missing-domain
-requests without invoking the core or any cake, preserve exact core/English/
-package lifecycle identity, and contain every registered label attack. The
-nine-run ABI/L1/D0 matrix was independently recomputed and 13 hostile tests
-pass.
+Phase 6 now has a bounded three-package machine certificate:
+`ABI_CAPABILITY_COMPILER_PHASE6_CERTIFICATE_V1.json`. Three exact B40 English
+core payloads simultaneously host immutable chemistry, civics, and Python
+packages. Independent recomputation passes 900/900 selected specialist cases,
+900/900 structured composition components, 300/300 conflict quarantines,
+300/300 English identity checks, exact cross-host output identity, complete
+record deletion lineage, selected-only physical execution, and zero V2
+repetition collapses. Seventeen hostile tests pass.
 
-Phase 6 is now open for preregistered composition, portability, provenance,
-and selected-only execution testing. Phase 2 still lacks its 21,000 independent
-human judgments.
+Phase 7 machine-scope integration is now open for preregistration. The archive
+contains three pinned teachers, but the deployed packages select one; ABI does
+not claim deployed multi-source quality. Phase 2 still lacks its 21,000
+independent human judgments.
 Accordingly, ABI does **not** yet claim a global information minimum, universal
 superiority over LoRA/distillation, completed product superiority, novelty, or
-release readiness. See `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1030.json`.
+release readiness. See `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1039.json`.
 
 ### Preserved execution history
 

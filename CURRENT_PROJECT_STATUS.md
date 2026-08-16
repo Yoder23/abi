@@ -4,18 +4,21 @@ Status date: 2026-08-16
 
 ## Authoritative update
 
-The live state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1030.json`. Phase 5
-is independently certified for the exact three-seed, three-domain selective
-product matrix by `ABI_CAPABILITY_COMPILER_PHASE5_CERTIFICATE_V1.json`.
-Installed domains recover 300/300 final cases per seed, missing domains fail
-closed 300/300 with zero unauthorized execution, and English/core/package
-identity plus every registered label boundary remain exact. L1 and D0 residual
-controls are complete at the same three seeds.
+The live state is `ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1039.json`. Phase 6
+is independently certified for the exact three-host, three-package composition
+matrix by `ABI_CAPABILITY_COMPILER_PHASE6_CERTIFICATE_V1.json`. Selected and
+composed specialist behavior is 1,800/1,800 functional and byte-exact, 300
+conflicts fail closed, 300 English outputs remain exact, physical execution is
+selected-only, deletion lineage is complete, and zero repetition collapses
+occur. Seventeen hostile tests pass.
 
-Phase 6 is open for preregistration. Phase 2 external human review remains
-0/21,000, so unconditional downstream and superiority claims remain barred.
+Phase 7 machine-scope integration is open for preregistration. Phase 2 external
+human review remains 0/21,000, so unconditional downstream and superiority
+claims remain barred. The archive's three pinned sources must not be confused
+with deployed multi-source quality: all three current domain packages select
+Phi-3.
 The older executive narrative below is preserved as an experiment log and is
-superseded where it conflicts with V1030.
+superseded where it conflicts with V1039.
 
 ## Preserved executive history
 
