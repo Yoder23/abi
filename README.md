@@ -10,6 +10,15 @@ Runtime hosting is outside this repository. The intended external consumer is
 codebase and evidence lineage. Source teachers and ABI `.abix`/`.abicir`
 artifacts are acquisition material, not deployable cakes.
 
+## Repository checkout
+
+This repository uses [Git LFS](https://git-lfs.com/) for `*.safetensors`
+research artifacts. Install Git LFS before cloning, then run `git lfs install`.
+A normal clone or pull hydrates the tracked artifacts; use `git lfs pull` if a
+client was configured to skip automatic downloads. See
+`docs/GITHUB_LFS_PUBLICATION_BOUNDARY_20260821.md` for the publication-history
+boundary and integrity checks.
+
 ## Current status
 
 Status date: 2026-08-16
