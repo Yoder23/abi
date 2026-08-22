@@ -31,13 +31,23 @@ git status --short
 git lfs fsck
 git fsck --connectivity-only
 git lfs push --dry-run origin master
+$env:GIT_LFS_SKIP_PUSH = '1'
 git push --dry-run origin master
+Remove-Item Env:\GIT_LFS_SKIP_PUSH
 ```
 
-Publish the branch with:
+`GIT_LFS_SKIP_PUSH` is required only for the branch dry run. Without it, the
+LFS pre-push hook may begin a real payload upload even though Git itself was
+given `--dry-run`.
+
+For this large first publication, upload LFS objects first and then publish
+the ordinary Git objects with bounded pack-delta settings:
 
 ```powershell
-git push origin master
+git lfs push origin master
+$env:GIT_LFS_SKIP_PUSH = '1'
+git -c pack.window=0 -c pack.depth=0 -c core.compression=1 push origin master
+Remove-Item Env:\GIT_LFS_SKIP_PUSH
 ```
 
 Do not bypass LFS or replace checkpoints with placeholder files. A fresh clone
