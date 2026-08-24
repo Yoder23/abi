@@ -4,14 +4,27 @@ This is the exact external procedure for completing the only unresolved Phase
 2 gate. It does not authorize synthetic, model-generated, or research-agent
 ratings.
 
-1. A custodian gives exactly one of the sealed `rater_form_N.jsonl` files to
-   each of three distinct human raters. The custodian withholds
-   `blinding_key.jsonl` and every other rater's work.
-2. Each rater fills every rating field in their assigned 7,000-row form. They
-   must not change prompts, outputs, identifiers, capabilities, or schema.
-3. Preserve the returned files as
-   `results/abi_capability_compiler_phase2/human_ratings_v1/rater_form_N.completed.jsonl`.
-   Never overwrite the sealed templates.
+1. A custodian keeps `blinding_key.jsonl` and every other rater's work hidden.
+   Install the signing extra, then give one command to each of three distinct
+   people:
+
+   ```powershell
+   python -m pip install -e ".[human]"
+   abi human-rate --rater R1
+   abi human-rate --rater R2
+   abi human-rate --rater R3
+   ```
+
+   Each command loads only its sealed form, copies no answer key, records
+   append-only hash-chained events, resumes safely, rejects a duplicate local
+   identity across forms, and exports a completed form plus an Ed25519-bound
+   attestation only after all 7,000 rows are complete.
+2. The custodian verifies that R1, R2, and R3 are three real, distinct,
+   independent humans. Software can bind their declarations but cannot prove
+   this fact.
+3. Preserve the completed forms in
+   `results/abi_capability_compiler_phase2/human_ratings_v1/`. Never overwrite
+   the sealed templates or signed session receipts.
 4. Copy `PHASE2_HUMAN_RATING_ATTESTATIONS_TEMPLATE_V1.json` into that directory
    as `attestations.json`, replace every placeholder, and obtain the stated
    declarations from the raters and custodian.

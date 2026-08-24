@@ -1,0 +1,41 @@
+{
+  "additional_architecture_search_authorized": false,
+  "artifact_bytes_changed": false,
+  "blocking_finding": "The existing English tensors and execution declaration remain native only to the LayerCake v25 capability machine. A content envelope can make bytes transportable, but it cannot make Qwen2 or GPT-NeoX execute those tensors without a new receiver integration or a provider bypass. The latter was preregistered as non-qualifying.",
+  "classification": "HOST_COADAPTED_CAPABILITY",
+  "evidence_sha256": "4e3776cbe5def9786d71bfa29d5d46bd8e0e7b2492ecdff2cbd4a1f3ee878817",
+  "format": "abi-final-mile-bounded-host-repair-rescreen/1",
+  "frozen_artifact_sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+  "model_inference_performed": false,
+  "one_bounded_repair_consumed": true,
+  "quality_or_speed_claim_borrowed": false,
+  "receivers": [
+    {
+      "canonical_envelope_can_reference_unchanged_archive": true,
+      "native_receiver_executes_capability_tensors": true,
+      "qualifies_under_preregistered_rule": true,
+      "receiver_id": "layercake-v25",
+      "would_require_layercake_provider_bypass": false
+    },
+    {
+      "canonical_envelope_can_reference_unchanged_archive": true,
+      "native_receiver_executes_capability_tensors": false,
+      "qualifies_under_preregistered_rule": false,
+      "receiver_id": "qwen2-random-shell",
+      "would_require_layercake_provider_bypass": true
+    },
+    {
+      "canonical_envelope_can_reference_unchanged_archive": true,
+      "native_receiver_executes_capability_tensors": false,
+      "qualifies_under_preregistered_rule": false,
+      "receiver_id": "gpt-neox-random-shell",
+      "would_require_layercake_provider_bypass": true
+    }
+  ],
+  "receivers_passing": 1,
+  "receivers_required": 3,
+  "repair_id": "CANONICAL_NON_EXECUTABLE_ENVELOPE_AND_PROVIDER_CONTRACT_V1",
+  "semantic_portability_tested": false,
+  "status": "HOST_INDEPENDENCE_FAILED",
+  "training_performed": false
+}

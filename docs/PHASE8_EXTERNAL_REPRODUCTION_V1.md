@@ -2,6 +2,22 @@
 
 This handoff can close only the independent-operator and independent-hardware
 portion of Phase 8. It cannot fill Phase 2's separate human-preference forms.
+It also cannot repair the later final-mile `HOST_INDEPENDENCE_FAILED` result.
+External reproduction can independently challenge Tier A while Tier B remains
+failed.
+
+The packaged operator surface is:
+
+```text
+abi-reproduce verify
+abi-reproduce cpu
+abi-reproduce cuda
+abi-reproduce quality
+abi-reproduce portability
+abi-reproduce report
+```
+
+The CPU and CUDA commands refuse the registered development hardware.
 
 ## Independence boundary
 

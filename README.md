@@ -11,8 +11,10 @@ is the separate execution host that installs, composes, routes, and runs
 capability packages.
 
 > Status: alpha research software. The bounded local machine campaign has
-> strong positive results, but independent Phase 8 reproduction and Phase 2
-> human preferences remain open. See [Research status](docs/research-status.md).
+> strong positive results. The final-mile native-receiver screen currently
+> fails at 1/3 receiver families; independent Phase 8 reproduction and Phase 2
+> human preferences also remain open. See
+> [Final-mile status](docs/final-mile-status.md).
 
 ## What is implemented
 
@@ -85,6 +87,19 @@ Run `python -m abi status` for the machine-readable claim boundary and
 segregation example is in
 [`examples/segregate_capabilities.py`](examples/segregate_capabilities.py).
 
+Independent human raters use the optional signing dependency and one command
+per sealed form:
+
+```bash
+python -m pip install -e ".[human]"
+abi human-rate --rater R1
+abi human-rate --rater R2
+abi human-rate --rater R3
+```
+
+External operators use `abi-reproduce verify|cpu|cuda|quality|portability|report`.
+The CPU/CUDA commands fail closed on the development hardware.
+
 ## Architecture
 
 ```text
@@ -129,6 +144,12 @@ The current evidence supports bounded, exact claims—not universal ones:
 - Phase 8: local clean-export rehearsal passes; independent operator and
   different CPU/CUDA hardware are still required.
 
+The later final-mile campaign adds a stricter cross-host gate. The identical
+English archive is currently native to LayerCake v25 only; Qwen2 and GPT-NeoX
+do not consume its tensor contract. A wrapper that bypasses those receivers
+does not count. Accordingly, cross-host portability and the full ABI moonshot
+are not proven.
+
 ABI does not currently claim a global information minimum, universal
 superiority over LoRA or distillation, exhaustive teacher-knowledge discovery,
 zero semantic loss for arbitrary models, or production release certification.
@@ -139,7 +160,10 @@ zero semantic loss for arbitrary models, or production release certification.
 - `tests/` — unit, adversarial, and campaign-verifier tests.
 - `examples/` — supported API examples.
 - `docs/` — architecture, status, contribution, and reproduction guidance.
-- `evidence/current/` — compact controlling state and bounded certificates.
+- `evidence/current/` — compact V1089 state and bounded certificates.
+- `contracts/` — preregistered final-mile host-portability contract.
+- `results/abi_final_mile/` — compact final-mile evidence; large local package
+  payloads and private signing custody remain intentionally untracked.
 - `experiments/` — reusable experiment drivers, not the active public API.
 - `artifacts/` — small checked-in schemas and reference artifacts.
 

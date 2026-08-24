@@ -1,0 +1,67 @@
+{
+  "claim_boundary": "A structural incompatibility is a valid failed screen. Random architecture shells that merely bypass their native computation and call the LayerCake provider do not count as cross-architecture portability.",
+  "failure_classification": "HOST_COADAPTED_CAPABILITY",
+  "format": "abi-final-mile-host-portability-contract/1",
+  "frozen_english_artifact": {
+    "archive_sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+    "declared_abi_sha256": "6d0fea2697fc7af74e9f3cfaee591d658b3244acfb10502048a4105c010b6908",
+    "declared_abi_version": "lc-direct-neural-core/25",
+    "path": "results/abi_capability_compiler_phase7_integrated/materialized_v1052/phase7-final-english-core.cake",
+    "tensor_payload_sha256": "18ad787696cf8737578253035ad84b7e0145d995f028c6392ba338b6117d5aba"
+  },
+  "frozen_starting_commit": "a2f2f8f685119c658048faa50b58d01544bc6e92",
+  "generic_certification": {
+    "capability_artifact_hidden_until_certification_receipt_is_sealed": true,
+    "capability_examples": 0,
+    "data": "deterministic domain-neutral UTF-8 framing, tensor-shape, numerical-tolerance, lifecycle, and mutation-rejection cases only",
+    "same_frozen_certification_required_for_every_later_capability": true,
+    "specialist_examples": 0,
+    "teacher_outputs": 0,
+    "trainable_parameters_allowed": "generic host-side adapter or canonical projection only"
+  },
+  "initial_screen_decision": {
+    "all_must_accept_identical_archive": true,
+    "minimum_receivers": 3,
+    "native_receiver_path_required": true,
+    "provider_bypass_does_not_count_as_receiver_portability": true,
+    "semantic_success_set_retention": 1.0,
+    "zero_capability_specific_calibration": true,
+    "zero_capability_specific_training": true
+  },
+  "receiver_families": [
+    {
+      "architecture": "LayerCake route-isolated shallow sparse core host",
+      "config_sha256": "6d0fea2697fc7af74e9f3cfaee591d658b3244acfb10502048a4105c010b6908",
+      "initialization_or_checkpoint": "layercake commit 662c5a9b7264a1a5478c9dfb656f35c450e2504f",
+      "natively_accepted_abi_versions": [
+        "lc-direct-neural-core/25"
+      ],
+      "receiver_id": "layercake-v25"
+    },
+    {
+      "architecture": "Qwen2ForCausalLM",
+      "config_sha256": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b",
+      "initialization_or_checkpoint": "random initialization from Qwen/Qwen2.5-0.5B config at revision 060db6499f32faf8b98477b0a26969ef7d8b9987",
+      "natively_accepted_abi_versions": [],
+      "receiver_id": "qwen2-random-shell"
+    },
+    {
+      "architecture": "GPTNeoXForCausalLM",
+      "config_sha256": "76eb275107220e450d31258f792a2efcbee109d8b62ae0088260057dec06362f",
+      "initialization_or_checkpoint": "random initialization from EleutherAI/pythia-160m config at revision 50f5173d932e8e61f858120bcb800b97af589f46",
+      "natively_accepted_abi_versions": [],
+      "receiver_id": "gpt-neox-random-shell"
+    }
+  ],
+  "single_bounded_repair": {
+    "artifact_mutation_allowed": false,
+    "capability_training_allowed": false,
+    "receiver_specific_training_allowed": false,
+    "repair_id": "CANONICAL_NON_EXECUTABLE_ENVELOPE_AND_PROVIDER_CONTRACT_V1",
+    "rescreen_requires_native_execution_on_all_three_receivers": true,
+    "scope": "Separate archive identity and canonical operator declarations from the LayerCake package loader without changing tensors or capability behavior.",
+    "unrestricted_architecture_search_allowed": false
+  },
+  "status": "PREREGISTERED_BEFORE_CROSS_HOST_CAPABILITY_INSTALLATION",
+  "status_date": "2026-08-24"
+}

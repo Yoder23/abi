@@ -10,8 +10,13 @@ detailed campaign history into the other.
 
 ## Current authority
 
-The controlling compact state is
-`evidence/current/ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1089.json`.
+The historical campaign state remains
+`evidence/current/ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1089.json`. The
+controlling final-mile evidence is now:
+
+- `results/abi_final_mile/frozen_starting_point.json`;
+- `results/abi_final_mile/host_portability_v1/repair_rescreen.json`; and
+- `results/abi_final_mile/hostile_claim_audit.json`.
 
 - Phases 0–1 are complete.
 - Phase 2 is machine-complete but lacks 21,000 independent human preferences.
@@ -19,10 +24,15 @@ The controlling compact state is
 - Phases 4–7 hold bounded machine certificates.
 - Phase 8 has a passing same-machine clean-export rehearsal, not an
   independent reproduction or release certificate.
+- The final-mile native-receiver screen fails after its one bounded repair:
+  the exact English archive is executable by 1/3 preregistered receiver
+  families. Its controlling classification is `HOST_COADAPTED_CAPABILITY` and
+  the campaign status is `HOST_INDEPENDENCE_FAILED`.
 
 Never claim universal ABI superiority, a global information minimum,
 exhaustive source capability discovery, arbitrary-model losslessness, or Phase
-8 completion from the current evidence.
+8 completion from the current evidence. Do not call a provider bypass through
+the LayerCake v25 runtime cross-architecture portability.
 
 ## Change rules
 

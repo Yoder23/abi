@@ -1,0 +1,73 @@
+{
+  "claim_boundary": "No low-data, global-minimum, or exhaustive-cost claim is allowed while the two explicit production-lineage cost fields and operation count remain unresolved.",
+  "cost": {
+    "bound_full_history": "research-history-v1089 plus Phase 3/4 immutable receipts",
+    "cost_gap_is_blocking_for_full_moonshot": true,
+    "energy": "NOT_MEASURED",
+    "external_hardware_used": false,
+    "hardware": "registered development laptop RTX 3080 Laptop GPU",
+    "normalization_seconds": 9.513707,
+    "one_time_extraction_wall_seconds": 4022.11081,
+    "one_time_source_load_seconds": 74.730527,
+    "one_time_teacher_generation_seconds": 3878.851831,
+    "peak_cpu_ram_bytes": 2326757376,
+    "peak_vram_bytes": 10033556992,
+    "production_lineage_training_cpu_hours": "NOT_RECONSTRUCTED_IN_COMPACT_FINAL_MILE_LEDGER",
+    "production_lineage_training_gpu_hours": "NOT_RECONSTRUCTED_IN_COMPACT_FINAL_MILE_LEDGER"
+  },
+  "deployment": {
+    "active_english_parameters": 62837506,
+    "active_english_tensor_bytes": 254495764,
+    "deployment_accounting_gap_is_blocking_for_full_moonshot": true,
+    "installed_english_bytes": 253216208,
+    "operations_per_generated_unit": "NOT_INSTRUMENTED",
+    "phase7_cuda_allocation_bytes": 505427456,
+    "phase7_process_rss_delta_bytes": 545308672
+  },
+  "format": "abi-imported-information-ledger/1",
+  "imported_information_b40_production_budget": {
+    "artifact_archive_bytes": 253216208,
+    "artifact_parameters": 62837506,
+    "authoritative_teacher_input_tokens": 348372,
+    "authoritative_teacher_output_tokens": 123167,
+    "bridge_bytes": "included in english-substrate.abi; not reported as a free channel",
+    "component_parameters": {
+      "model": 61655050,
+      "residual": 124416,
+      "router": 1058040
+    },
+    "copied_source_parameters": 0,
+    "record_memberships": 4112,
+    "routing_bytes": "included in english-substrate.abi",
+    "stored_hidden_activations": 0,
+    "stored_logits": 0,
+    "unique_raw_prompt_utf8_bytes": 1100756,
+    "unique_raw_teacher_output_utf8_bytes": 379416,
+    "unique_source_attempts": 4005
+  },
+  "imported_information_full_selected_ir": {
+    "copied_frozen_source_parameters": 0,
+    "normalized_artifact_bytes": 5549675,
+    "retained_hidden_scalars": 0,
+    "retained_logits": 0,
+    "teacher_output_bytes": 671297,
+    "teacher_tokens": 215647
+  },
+  "source_exposure": {
+    "checkpoint_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+    "raw_utf8_bytes_selected": {
+      "prompts": 1381925,
+      "teacher_outputs": 671297
+    },
+    "source_forward_requests": 11737,
+    "source_layers_queried": "no hidden layer directly retained; full causal LM forward path used for generation",
+    "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310",
+    "source_model": "microsoft/Phi-3-mini-4k-instruct",
+    "source_tokens_processed": {
+      "input": 1104483,
+      "output": 387865
+    },
+    "unique_documents_or_prompts_selected": 7000
+  },
+  "status": "COMPLETE_FOR_SOURCE_EXPOSURE_AND_DEPLOYED_BYTES_WITH_EXPLICIT_COST_GAPS"
+}

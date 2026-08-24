@@ -1,5 +1,19 @@
 # Changelog
 
+## Unreleased — final-mile evidence
+
+- Froze the exact V1089/V1073 starting product and claim ceiling before new
+  experiments.
+- Preregistered three native receiver families and recorded a fail-closed
+  `HOST_INDEPENDENCE_FAILED` result after the single bounded envelope repair.
+- Added signed, resumable `abi human-rate --rater R1|R2|R3` sessions.
+- Added the external-only `abi-reproduce` command family with a hard
+  development-hardware rejection.
+- Assembled an outer-signed, content-addressed failed-candidate release family
+  without changing any English or specialist package bytes.
+- Rejected 15/15 hostile false-claim mutations while retaining eight blocking
+  findings. No production, Phase 8, global-minimum, or universal claim is made.
+
 ## 0.3.0-alpha.1 — 2026-08-24
 
 - Reframed the public package around provenance-preserving teacher capability

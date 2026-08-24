@@ -1,0 +1,72 @@
+{
+  "attacks": {
+    "artifact_byte_mutation_rejected": true,
+    "baseline_gap_not_hidden": true,
+    "capability_calibration_not_invented": true,
+    "external_reproduction_not_fabricated": true,
+    "host_failure_not_promoted": true,
+    "host_provider_bypass_rejected": true,
+    "human_quality_not_fabricated": true,
+    "information_cost_gaps_not_hidden": true,
+    "latent_specialist_purity_not_claimed": true,
+    "minimum_frontier_not_overstated": true,
+    "outer_manifest_mutation_rejected": true,
+    "same_machine_speed_not_relabelled_external": true,
+    "selected_only_execution_not_borrowed_cross_host": true,
+    "source_success_subset_not_called_retained": true,
+    "stale_frozen_starting_point_rejected": true
+  },
+  "attacks_rejected": 15,
+  "attacks_total": 15,
+  "blocking_findings": [
+    {
+      "finding": "Only LayerCake v25 natively consumes the sealed English tensor contract (1/3 receivers).",
+      "id": "HOST_NATIVE_EXECUTION",
+      "severity": "BLOCKING"
+    },
+    {
+      "finding": "The 1,381-item locked source-success set has not been evaluated on qualifying alternate receivers.",
+      "id": "SEMANTIC_PORTABILITY",
+      "severity": "BLOCKING"
+    },
+    {
+      "finding": "0/21,000 preferences and 0/3 independent raters are complete.",
+      "id": "HUMAN_GATE",
+      "severity": "BLOCKING_EXTERNAL"
+    },
+    {
+      "finding": "No independent operator on a different CPU/CUDA machine has returned evidence.",
+      "id": "EXTERNAL_HARDWARE",
+      "severity": "BLOCKING_EXTERNAL"
+    },
+    {
+      "finding": "B40 is stable only in the prior same-host family; no budget passes all receivers.",
+      "id": "INFORMATION_FRONTIER",
+      "severity": "BLOCKING"
+    },
+    {
+      "finding": "Production-lineage CPU/GPU hours and operations per generated unit are not reconstructed in the compact ledger.",
+      "id": "ACCOUNTING_GAPS",
+      "severity": "BLOCKING"
+    },
+    {
+      "finding": "No exact-B40 conventional hidden-state-distillation baseline or cross-host reuse comparison exists.",
+      "id": "BASELINE_GAP",
+      "severity": "BLOCKING"
+    },
+    {
+      "finding": "Historical package signatures use reproducible research custody; the new outer signature authenticates this bundle, but current LayerCake installation does not enforce that outer signature.",
+      "id": "INNER_RESEARCH_SIGNATURE",
+      "severity": "RELEASE_SECURITY"
+    }
+  ],
+  "claim_boundary": "Fail-closed audit success means false promotions were rejected; it does not mean the audited product passed its blocking scientific gates.",
+  "evidence_sha256": "183b2ad9f3b8fb66640fddeafc2824ad5d71672d588c6b915dfb80e5939adea9",
+  "final_status": "HOST_INDEPENDENCE_FAILED",
+  "format": "abi-final-mile-hostile-claim-audit/1",
+  "model_inference_performed": false,
+  "same_machine_product_rerun_performed": false,
+  "status": "FAIL_BLOCKING_FINDINGS",
+  "training_performed": false,
+  "unresolved_blocking_findings": 8
+}

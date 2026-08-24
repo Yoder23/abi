@@ -1,0 +1,231 @@
+{
+  "equal_information_budget": {
+    "D0_all_three_seeds_pass": false,
+    "L0_all_three_seeds_pass": false,
+    "L1_all_three_seeds_pass": false,
+    "abi_all_three_seeds_pass": true,
+    "authoritative_teacher_output_tokens": 123167,
+    "only_abi_passes_locked_all_seed_quality": true,
+    "record_memberships": 4112,
+    "stored_hidden_activations": 0,
+    "stored_logits": 0,
+    "unique_source_attempts": 4005
+  },
+  "format": "abi-final-mile-matched-baseline-comparison/1",
+  "pareto_conclusion": "ABI has a strong bounded same-host quality/deployment advantage in this family. It has not established the required learned-once cross-host Pareto advantage.",
+  "same_host_runtime": {
+    "ABI": {
+      "active_tensor_bytes": 254495764,
+      "cold": {
+        "authoritative_output_tokens": 10,
+        "bytes_per_second": 220.35374748578087,
+        "capability": "grammar",
+        "characters_per_second": 220.35374748578087,
+        "cold_definition": "model-residency cold; exactly one generation request after host/model load; operating-system filesystem cache was not purged",
+        "execution": {
+          "active_residual_routes": 0,
+          "guard_terminated": false,
+          "persistent_state_created": true,
+          "route_correct": true,
+          "routed_capability": "grammar"
+        },
+        "model_load_seconds": 1.6691350000037346,
+        "output": "Mira walks through the quiet room every Monday.",
+        "output_characters": 47,
+        "output_token_ids": [
+          44,
+          8704,
+          11114,
+          832,
+          262,
+          5897,
+          2119,
+          790,
+          3321,
+          13
+        ],
+        "output_utf8_bytes": 47,
+        "probe_id": "phase1-validation-grammar-0000-v2",
+        "retokenized_output_token_ids": [
+          44,
+          8704,
+          11114,
+          832,
+          262,
+          5897,
+          2119,
+          790,
+          3321,
+          13
+        ],
+        "single_cold_request": true,
+        "time_to_first_output_from_cold_start_seconds": 1.844912500004284,
+        "time_to_first_output_seconds": 0.17577750000054948,
+        "token_accounting": "completed_response_retokenization",
+        "total_from_cold_start_seconds": 1.882679600006668,
+        "total_seconds": 0.21329339998192154
+      },
+      "metrics": {
+        "median_bytes_per_second": 900.8390675533694,
+        "median_characters_per_second": 900.8390675533694,
+        "median_time_to_first_output_seconds": 0.012561099996673875,
+        "median_total_seconds": 0.07601164998777676,
+        "observations": 120,
+        "p05_bytes_per_second": 494.80877419333194,
+        "p05_characters_per_second": 494.80877419333194,
+        "p95_supported": true,
+        "p95_time_to_first_output_seconds": 0.021439154997642616,
+        "p95_total_seconds": 0.37962869001203214,
+        "p99_supported": false,
+        "p99_time_to_first_output_seconds": null,
+        "p99_total_seconds": null
+      }
+    },
+    "L1": {
+      "active_tensor_bytes": 7667325120,
+      "cold": {
+        "authoritative_output_tokens": 10,
+        "bytes_per_second": 66.95256837910253,
+        "capability": "grammar",
+        "characters_per_second": 66.95256837910253,
+        "cold_definition": "model-residency cold; exactly one generation request after host/model load; operating-system filesystem cache was not purged",
+        "execution": {
+          "route_correct": true,
+          "routed_capability": "grammar"
+        },
+        "model_load_seconds": 11.17028510000091,
+        "output": "Mira walks through the quiet room every Monday.",
+        "output_characters": 47,
+        "output_token_ids": [
+          29422,
+          17042,
+          2039,
+          1549,
+          278,
+          11813,
+          5716,
+          1432,
+          27822,
+          29889,
+          32007
+        ],
+        "output_utf8_bytes": 47,
+        "probe_id": "phase1-validation-grammar-0000-v2",
+        "retokenized_output_token_ids": [
+          29422,
+          17042,
+          2039,
+          1549,
+          278,
+          11813,
+          5716,
+          1432,
+          27822,
+          29889
+        ],
+        "single_cold_request": true,
+        "time_to_first_output_from_cold_start_seconds": 11.414970200014068,
+        "time_to_first_output_seconds": 0.24468510001315735,
+        "token_accounting": "completed_response_retokenization",
+        "total_from_cold_start_seconds": 11.872582799987867,
+        "total_seconds": 0.7019894999975804
+      },
+      "metrics": {
+        "median_bytes_per_second": 65.21887456417592,
+        "median_characters_per_second": 65.21887456417592,
+        "median_time_to_first_output_seconds": 0.06679384999733884,
+        "median_total_seconds": 0.9847645999980159,
+        "observations": 120,
+        "p05_bytes_per_second": 34.258441191056235,
+        "p05_characters_per_second": 34.258441191056235,
+        "p95_supported": true,
+        "p95_time_to_first_output_seconds": 0.09525672999589005,
+        "p95_total_seconds": 3.7723905750011895,
+        "p99_supported": false,
+        "p99_time_to_first_output_seconds": null,
+        "p99_total_seconds": null
+      }
+    },
+    "ratios": {
+      "abi_over_l1_median_bytes_per_second": 13.812551559241278,
+      "l1_over_abi_active_tensor_bytes": 30.1275156784142,
+      "l1_over_abi_cold_ttft": 6.187269152324331,
+      "l1_over_abi_median_ttft": 5.317515983076766
+    }
+  },
+  "status": "BOUNDED_SAME_HOST_BASELINES_COMPLETE_CROSS_HOST_PARETO_NOT_ESTABLISHED",
+  "systems": {
+    "ABI_B40": {
+      "active_tensor_bytes": 254495764,
+      "all_seeds_pass_locked_quality": true,
+      "cross_host_result": "HOST_INDEPENDENCE_FAILED",
+      "cross_host_reuse_tested": false,
+      "receiver_specific_retraining_required_on_layercake": false,
+      "teacher_absent_at_inference": true
+    },
+    "LoRA_L0": {
+      "active_parameters": 3846245376,
+      "all_seeds_pass_locked_quality": false,
+      "cross_host_reuse_tested": false,
+      "functional_passes_v1": [
+        1367,
+        1362,
+        1352
+      ],
+      "installed_parameters": 4173401088,
+      "receiver_specific_retraining_required": true,
+      "repetition_collapses_v2": [
+        5,
+        0,
+        5
+      ],
+      "runs": 3,
+      "source_base_present_at_inference": true,
+      "training_seconds": 8032.446597200003
+    },
+    "conventional_hidden_state_distillation": {
+      "blocking_for_full_baseline_claim": true,
+      "status": "NOT_REGISTERED_AT_EXACT_B40_FINAL_MILE_BUDGET"
+    },
+    "routed_LoRA_L1": {
+      "active_parameters": 3833719808,
+      "all_seeds_pass_locked_quality": false,
+      "cross_host_reuse_tested": false,
+      "functional_passes_v1": [
+        1395,
+        1375,
+        1366
+      ],
+      "installed_parameters": 3997297664,
+      "receiver_specific_retraining_required": true,
+      "repetition_collapses_v2": [
+        0,
+        0,
+        0
+      ],
+      "runs": 3,
+      "source_base_present_at_inference": true,
+      "training_seconds": 8235.147796500009
+    },
+    "sequence_distillation_D0": {
+      "active_parameters": 11060800,
+      "all_seeds_pass_locked_quality": false,
+      "cross_host_reuse_tested": false,
+      "functional_passes_v1": [
+        22,
+        62,
+        0
+      ],
+      "installed_parameters": 11060800,
+      "receiver_specific_retraining_required": true,
+      "repetition_collapses_v2": [
+        37,
+        275,
+        93
+      ],
+      "runs": 3,
+      "source_base_present_at_inference": false,
+      "training_seconds": 158.5435015000112
+    }
+  }
+}

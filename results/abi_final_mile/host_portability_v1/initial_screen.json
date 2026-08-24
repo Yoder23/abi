@@ -1,0 +1,67 @@
+{
+  "classification": "HOST_COADAPTED_CAPABILITY",
+  "contract": {
+    "path": "contracts/ABI_FINAL_MILE_HOST_PORTABILITY_V1.json",
+    "sha256": "e033733c734b1a50201de5445b4c199e1a6fd39a23544087d61b7be3286296e6"
+  },
+  "decision": "The exact archive can enter the registered LayerCake v25 host but has no native consumer contract for either preregistered transformer receiver. Quality inference would not repair a structural ABI rejection.",
+  "evidence_sha256": "4682cbfbf0876208d72a6ad9a0843061313a58e6a994845dde70c68a6bc34acf",
+  "format": "abi-final-mile-host-portability-initial-screen/1",
+  "frozen_artifact_sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+  "model_inference_performed": false,
+  "receivers": [
+    {
+      "architecture": "LayerCake route-isolated shallow sparse core host",
+      "artifact_revealed_during_generic_certification": false,
+      "capability_installation_attempted": true,
+      "capability_specific_calibration_examples": 0,
+      "capability_specific_training_steps": 0,
+      "config_sha256": "6d0fea2697fc7af74e9f3cfaee591d658b3244acfb10502048a4105c010b6908",
+      "declared_abi_natively_accepted": true,
+      "generic_certification_capability_examples": 0,
+      "generic_certification_teacher_outputs": 0,
+      "host_parameters_changed_after_generic_certification": false,
+      "initialization_or_checkpoint": "layercake commit 662c5a9b7264a1a5478c9dfb656f35c450e2504f",
+      "receiver_id": "layercake-v25",
+      "source_success_evaluation_eligible": true,
+      "structural_result": "ELIGIBLE_FOR_EXISTING_LAYERCAKE_EVIDENCE"
+    },
+    {
+      "architecture": "Qwen2ForCausalLM",
+      "artifact_revealed_during_generic_certification": false,
+      "capability_installation_attempted": false,
+      "capability_specific_calibration_examples": 0,
+      "capability_specific_training_steps": 0,
+      "config_sha256": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b",
+      "declared_abi_natively_accepted": false,
+      "generic_certification_capability_examples": 0,
+      "generic_certification_teacher_outputs": 0,
+      "host_parameters_changed_after_generic_certification": false,
+      "initialization_or_checkpoint": "random initialization from Qwen/Qwen2.5-0.5B config at revision 060db6499f32faf8b98477b0a26969ef7d8b9987",
+      "receiver_id": "qwen2-random-shell",
+      "source_success_evaluation_eligible": false,
+      "structural_result": "REJECTED_INCOMPATIBLE_NATIVE_RECEIVER_ABI"
+    },
+    {
+      "architecture": "GPTNeoXForCausalLM",
+      "artifact_revealed_during_generic_certification": false,
+      "capability_installation_attempted": false,
+      "capability_specific_calibration_examples": 0,
+      "capability_specific_training_steps": 0,
+      "config_sha256": "76eb275107220e450d31258f792a2efcbee109d8b62ae0088260057dec06362f",
+      "declared_abi_natively_accepted": false,
+      "generic_certification_capability_examples": 0,
+      "generic_certification_teacher_outputs": 0,
+      "host_parameters_changed_after_generic_certification": false,
+      "initialization_or_checkpoint": "random initialization from EleutherAI/pythia-160m config at revision 50f5173d932e8e61f858120bcb800b97af589f46",
+      "receiver_id": "gpt-neox-random-shell",
+      "source_success_evaluation_eligible": false,
+      "structural_result": "REJECTED_INCOMPATIBLE_NATIVE_RECEIVER_ABI"
+    }
+  ],
+  "receivers_accepted": 1,
+  "receivers_required": 3,
+  "semantic_portability_tested": false,
+  "status": "FAIL_CROSS_HOST_STRUCTURAL_SCREEN",
+  "training_performed": false
+}

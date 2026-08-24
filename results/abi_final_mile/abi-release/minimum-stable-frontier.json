@@ -1,0 +1,24 @@
+{
+  "all_receiver_requirement": {
+    "B40": "FAIL_HOST_PORTABILITY",
+    "minimum_stable_budget": null,
+    "receivers_passing": 1,
+    "receivers_required": 3
+  },
+  "format": "abi-final-mile-stable-footprint-frontier/1",
+  "post_acquisition_compression_run": false,
+  "reason_compression_not_run": "Compression is downstream of a stable all-receiver capability; no candidate satisfies the host-portability prerequisite.",
+  "registered_family": [
+    "B20",
+    "B40"
+  ],
+  "same_host_result": {
+    "B20": "FAIL_ALL_THREE_SEEDS",
+    "B40": "PASS_ALL_THREE_SEEDS",
+    "certificate_sha256": "6d3c81b40a21b08806368e34416ec2d9422594f00c68dc899fcee2e1586cf6eb",
+    "certificate_status": "CERTIFIED_BOUNDED_MACHINE_DEVELOPMENT_SCOPE",
+    "global_minimum_claimed": false,
+    "smallest_same_host_tested_pass": "B40"
+  },
+  "status": "NO_FINAL_MILE_STABLE_FOOTPRINT"
+}

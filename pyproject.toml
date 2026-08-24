@@ -1,6 +1,6 @@
 [project]
 name = "abi-capability-compiler"
-version = "0.3.0a1"
+version = "0.4.0a1"
 description = "Provenance-preserving capability acquisition and segregation for external model hosts"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -38,6 +38,9 @@ extraction = [
   "pyyaml>=6.0",
   "huggingface_hub>=0.22.0",
 ]
+human = [
+  "cryptography>=41",
+]
 dev = [
   "build",
   "pytest>=7",
@@ -49,6 +52,7 @@ Repository = "https://github.com/Yoder23/abi"
 
 [project.scripts]
 abi = "abi.__main__:main"
+abi-reproduce = "abi.reproduce:main"
 
 [build-system]
 requires = ["setuptools>=68"]

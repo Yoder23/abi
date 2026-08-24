@@ -1,0 +1,20 @@
+{
+  "artifact_bytes_changed": false,
+  "capability_training_authorized": false,
+  "contract_sha256": "e033733c734b1a50201de5445b4c199e1a6fd39a23544087d61b7be3286296e6",
+  "evidence_sha256": "22b2f175975a06b4727e9f89c50d937c46aac3f5b1b4dc142e1e2ff562ff8fc5",
+  "format": "abi-final-mile-bounded-host-repair-preregistration/1",
+  "frozen_artifact_sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+  "receiver_specific_training_authorized": false,
+  "repair": {
+    "artifact_mutation_allowed": false,
+    "capability_training_allowed": false,
+    "receiver_specific_training_allowed": false,
+    "repair_id": "CANONICAL_NON_EXECUTABLE_ENVELOPE_AND_PROVIDER_CONTRACT_V1",
+    "rescreen_requires_native_execution_on_all_three_receivers": true,
+    "scope": "Separate archive identity and canonical operator declarations from the LayerCake package loader without changing tensors or capability behavior.",
+    "unrestricted_architecture_search_allowed": false
+  },
+  "status": "SEALED_ONE_BOUNDED_REPAIR_BEFORE_RESCREEN",
+  "success_rule": "All three native receiver paths must consume the identical artifact; an execution-provider bypass is explicitly non-qualifying."
+}

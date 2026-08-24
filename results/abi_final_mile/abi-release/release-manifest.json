@@ -1,0 +1,96 @@
+{
+  "created_utc": "2026-08-24T18:55:05.281614Z",
+  "file_count": 15,
+  "files": {
+    "baseline-comparisons/comparison.json": {
+      "bytes": 7577,
+      "sha256": "47b752c28ea41d57bf2159403d93e709ffcbeade97ba399c547e45b41902d71a"
+    },
+    "canonical_host_abi.json": {
+      "bytes": 3645,
+      "sha256": "5efed7be94a37c9351711481c9182e168cce603903b3de90be3469ae123ad338"
+    },
+    "chemistry-capability.abi": {
+      "bytes": 510981,
+      "sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb"
+    },
+    "civics-capability.abi": {
+      "bytes": 495919,
+      "sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604"
+    },
+    "compatibility-matrix.json": {
+      "bytes": 1981,
+      "sha256": "2b754ff8a2bbb17bed3e1c20143d30b2f485d2d623d55611e2ee2f4eb3b472ca"
+    },
+    "english-substrate.abi": {
+      "bytes": 253216208,
+      "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d"
+    },
+    "external-reproduction/status.json": {
+      "bytes": 248,
+      "sha256": "61c7f59dbc2eee0439372fc903077133f888ecd15aaace8b398df3559fab8a79"
+    },
+    "human-evidence/status.json": {
+      "bytes": 348,
+      "sha256": "f94638a7f984bf21a28e6986683c4a1d06c09a64e907140f42f37b1e366e4fcd"
+    },
+    "imported-information-ledger.json": {
+      "bytes": 3094,
+      "sha256": "fe1221d6a8213993ac79211258172d38e537cf004737f5ae6fd5b0859d47e003"
+    },
+    "minimum-stable-frontier.json": {
+      "bytes": 870,
+      "sha256": "d772d8452b4c975f9cd08e813f24e0e62191369eac3f41765a93dc6bd78f33c3"
+    },
+    "python-capability.abi": {
+      "bytes": 448404,
+      "sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d"
+    },
+    "receiver-certification-spec.json": {
+      "bytes": 3601,
+      "sha256": "f37ff28dcd7971910e584e1fabc58596b9b19d6356c8172171c2006fab46436b"
+    },
+    "release-certificate.json": {
+      "bytes": 591,
+      "sha256": "a27e59788076595e0aa0d08485dac000bf6fa1b76896f7450e2b894e60b433f7"
+    },
+    "release-report.md": {
+      "bytes": 1107,
+      "sha256": "df812ab245c07509a336f28840588f8516b3342254a8c7e419800422741cf5a1"
+    },
+    "source-success-lock.json": {
+      "bytes": 67735,
+      "sha256": "d1d830566e204cf3ed792747451a3e7b7ae9eaaef7a41d135aec90cc7adf696a"
+    }
+  },
+  "format": "abi-final-mile-release-manifest/1",
+  "package_bindings": {
+    "chemistry-capability.abi": {
+      "bytes": 510981,
+      "inner_format": "signed LayerCake cake archive",
+      "outer_extension": ".abi",
+      "sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb"
+    },
+    "civics-capability.abi": {
+      "bytes": 495919,
+      "inner_format": "signed LayerCake cake archive",
+      "outer_extension": ".abi",
+      "sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604"
+    },
+    "english-substrate.abi": {
+      "bytes": 253216208,
+      "inner_format": "signed LayerCake cake archive",
+      "outer_extension": ".abi",
+      "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d"
+    },
+    "python-capability.abi": {
+      "bytes": 448404,
+      "inner_format": "signed LayerCake cake archive",
+      "outer_extension": ".abi",
+      "sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d"
+    }
+  },
+  "release_certified": false,
+  "status": "SEALED_FAILED_CANDIDATE_HOST_INDEPENDENCE_NOT_PRODUCTION",
+  "total_bytes": 254762309
+}

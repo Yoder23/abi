@@ -72,6 +72,13 @@ tmp_guard_test/
 results/
 run_logs/
 
+# Final-mile release payloads and custody material stay out of Git. Compact
+# manifests, public signatures, receipts, and reports are force-added.
+results/abi_final_mile/custody/
+results/abi_final_mile/*.zip
+results/abi_final_mile/abi-release/*.abi
+external-reproduction/
+
 # The default branch is a curated source release. Historical root ledgers and
 # generated catalogs remain available on the research-history-v1089 branch
 # and may remain in a local checkout without appearing as untracked files.

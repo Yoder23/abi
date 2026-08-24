@@ -1,0 +1,13 @@
+{
+  "codex_self_rated": false,
+  "command_per_rater": [
+    "abi human-rate --rater R1",
+    "abi human-rate --rater R2",
+    "abi human-rate --rater R3"
+  ],
+  "completed_preferences": 0,
+  "format": "abi-human-evidence-status/1",
+  "independent_raters_completed": 0,
+  "required_preferences": 21000,
+  "status": "BLOCKED_EXTERNAL_HUMAN_RATERS"
+}

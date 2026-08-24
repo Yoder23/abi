@@ -22,6 +22,12 @@ response within seven days.
   environment with least-privilege tokens and no unrelated secrets.
 - ABI artifacts are not authenticated deployment packages. LayerCake owns its
   package signature and installation policy.
+- Historical campaign packages use reproducible research signing custody and
+  must not be treated as production-authenticated merely because their inner
+  signatures verify. The final-mile failed-candidate bundle adds an independent
+  outer Ed25519 signature, but current LayerCake installation does not yet
+  enforce that outer signature. Production promotion is prohibited until it
+  does.
 
 The supported compiler surface validates paths, canonical hashes, provenance,
 labels, selections, and bundle membership. Historical experiment modules have

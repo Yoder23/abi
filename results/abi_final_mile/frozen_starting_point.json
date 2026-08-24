@@ -1,0 +1,854 @@
+{
+  "authority": {
+    "ABI_CAPABILITY_COMPILER_PHASE7_PRODUCT_MANIFEST_V1.json": {
+      "bytes": 3345,
+      "path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/ABI_CAPABILITY_COMPILER_PHASE7_PRODUCT_MANIFEST_V1.json",
+      "sha256": "dbbfbc1c994f9fff2ca3a37c5ec22e9c517080f325a50a9b27fe7a0072a919ff"
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE7_RUNTIME_HOST_OVERLAY_V1.json": {
+      "bytes": 2023,
+      "path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/ABI_CAPABILITY_COMPILER_PHASE7_RUNTIME_HOST_OVERLAY_V1.json",
+      "sha256": "01f89bd67b6723c4336050617b8233c0d73d5f11ef2ec955416d0eed667cdc93"
+    },
+    "CURRENT_PROJECT_STATUS.md": {
+      "bytes": 32150,
+      "path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/CURRENT_PROJECT_STATUS.md",
+      "sha256": "d0c6158c5c13a2371dd9ed382ab641ae4d6550f4567855d35abc4cebcad1ddd1"
+    },
+    "evidence/current/ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1089.json": {
+      "bytes": 3698,
+      "path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/evidence/current/ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1089.json",
+      "sha256": "b95eabb47cd737014701b71aedaa14d218da54b6f3d1c9ca3370ad835e3c6d23"
+    },
+    "evidence/current/ABI_CAPABILITY_COMPILER_PHASE7_CERTIFICATE_V1.json": {
+      "bytes": 5808,
+      "path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/evidence/current/ABI_CAPABILITY_COMPILER_PHASE7_CERTIFICATE_V1.json",
+      "sha256": "c0b07a8748d7ee84b0e99c6482585a95d7d9483b49d49248071b397b8b47f77b"
+    },
+    "evidence/current/ABI_CAPABILITY_COMPILER_PHASE8_LOCAL_CLEAN_REHEARSAL_RESULT_V1088.json": {
+      "bytes": 5375,
+      "path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/evidence/current/ABI_CAPABILITY_COMPILER_PHASE8_LOCAL_CLEAN_REHEARSAL_RESULT_V1088.json",
+      "sha256": "d8b48eba6a1f849e96d0838278618c3d913fc88780212879fbdd1c3ec921d640"
+    },
+    "evidence/current/ABI_CAPABILITY_COMPILER_PHASE8_LOCAL_READINESS_RESULT_V1074.json": {
+      "bytes": 3829,
+      "path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/evidence/current/ABI_CAPABILITY_COMPILER_PHASE8_LOCAL_READINESS_RESULT_V1074.json",
+      "sha256": "bdeb53f5b8892060c8aab1fdfec6a65eee657412fb5fdbf599fcb9761b809438"
+    }
+  },
+  "certified_same_machine_results": {
+    "core_runtime_observations_per_device": 120,
+    "cpu": {
+      "cold_ttft_seconds": 3.120949700009078,
+      "median_core_bytes_per_second": 274.3192565137695,
+      "optimized_transformer_cold_ttft_seconds": 5.064102100004675,
+      "optimized_transformer_median_bytes_per_second": 20.7209959400831,
+      "optimized_transformer_peak_process_rss_bytes": 602959872,
+      "peak_process_rss_delta_bytes": 545308672,
+      "phase4_same_core_throughput_retention": 1.0139390696414392,
+      "throughput_ratio": 13.238710016979493
+    },
+    "cross_device_output_and_token_identities": 244,
+    "cuda": {
+      "cold_ttft_seconds": 3.3489479999698233,
+      "median_core_bytes_per_second": 881.3583356320248,
+      "peak_cuda_allocated_bytes": 505427456,
+      "peak_process_rss_delta_bytes": 518238208,
+      "phase4_same_core_throughput_retention": 0.9783749033284567,
+      "registered_l1_cold_ttft_seconds": 11.414970200014068,
+      "registered_l1_median_bytes_per_second": 65.21887456417592,
+      "registered_l1_peak_cuda_allocated_bytes": 7812537856,
+      "registered_l1_peak_process_rss_bytes": 5031067648,
+      "throughput_ratio": 13.513853796492008
+    },
+    "distinct_core_prompts_per_device": 100,
+    "distinct_domain_prompts_per_device": 100,
+    "domain_runtime_observations_per_device": 120,
+    "integrated_active_tensor_bytes": 255916588,
+    "repetition_collapses_v2": 0,
+    "selected_only_domain_executions_per_device": 123
+  },
+  "comparator_registry": {
+    "ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_REPAIR1_V2.json": {
+      "bytes": 3552,
+      "path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_REPAIR1_V2.json",
+      "sha256": "d2b91b1c14b6ad1d9fcb169b173a57c4c364f9ae12ad6c4c37b9d9b61e1c4be4"
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_V1.json": {
+      "bytes": 11711,
+      "path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/ABI_CAPABILITY_COMPILER_PHASE2_PROTOCOL_V1.json",
+      "sha256": "676eb8cbefe47f9bfd32b6ee47a75cadefc4fcbbacd42b453cca61b27f260f2e"
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE4_B40_BASELINE_HEADLINE_PROTOCOL_V996.json": {
+      "bytes": 7211,
+      "path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/ABI_CAPABILITY_COMPILER_PHASE4_B40_BASELINE_HEADLINE_PROTOCOL_V996.json",
+      "sha256": "498af579fc8d046202951cc05afe74827c30ed608c712c4f4864711de6d89e4c"
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE4_B40_BASELINE_PACK_PROTOCOL_V987.json": {
+      "bytes": 4984,
+      "path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/ABI_CAPABILITY_COMPILER_PHASE4_B40_BASELINE_PACK_PROTOCOL_V987.json",
+      "sha256": "f99bbc5e1f0c901c90f3395ce9557b95401a577f181276c0b5998f90322e423f"
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE4_B40_FRONTIER_RESULT_V1015.json": {
+      "bytes": 3469,
+      "path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/ABI_CAPABILITY_COMPILER_PHASE4_B40_FRONTIER_RESULT_V1015.json",
+      "sha256": "ebf857eebd8b7386b0dbec57762527678867015c338856a5ed4c1a6db4bc9aa3"
+    }
+  },
+  "current_claim_ceiling": {
+    "global_minimum_claimed": false,
+    "phase2_human_preferences": "0/21000",
+    "tier_a_same_machine_integrated_product": "CERTIFIED_BOUNDED",
+    "tier_b_cross_host_abi_portability": "NOT_TESTED_ACROSS_DISTINCT_ARCHITECTURE_FAMILIES",
+    "tier_c_independent_external_reproduction": "BLOCKED_EXTERNAL_HARDWARE_AND_OPERATOR",
+    "tier_d_full_abi_moonshot": "NOT_PROVEN",
+    "universal_portability_claimed": false
+  },
+  "current_gate_statuses": {
+    "phase_0": "COMPLETE",
+    "phase_1": "COMPLETE",
+    "phase_2": "MACHINE_AND_HANDOFF_READY_EXTERNAL_HUMAN_RATINGS_PENDING",
+    "phase_3": "MACHINE_GATES_PASS_CONDITIONAL_ON_PHASE_2",
+    "phase_4": "CERTIFIED_BOUNDED_MACHINE_DEVELOPMENT_SCOPE",
+    "phase_5": "CERTIFIED_BOUNDED_THREE_DOMAIN_BEHAVIORAL_EXCLUSION",
+    "phase_6": "CERTIFIED_BOUNDED_THREE_PACKAGE_COMPOSITION_PORTABILITY_AND_PROVENANCE",
+    "phase_7": "CERTIFIED_BOUNDED_SAME_MACHINE_CPU_CUDA_INTEGRATED_PRODUCT",
+    "phase_8": "LOCAL_CLEAN_EXPORT_REHEARSAL_CERTIFIED_EXTERNAL_INDEPENDENT_REPRODUCTION_REQUIRED"
+  },
+  "evaluator_and_data_bindings": {
+    "catalogs/capability_compiler_phase1_frozen_v1.json": {
+      "bytes": 17631486,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "catalogs/capability_compiler_phase1_frozen_v1.json",
+      "sha256": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+      "tracked_at_start": true
+    },
+    "catalogs/english_and_first_domains_certification_v6.json": {
+      "bytes": 6287076,
+      "relocated_in_curated_tree": true,
+      "repository": "abi",
+      "resolved_path": "evidence/current/segregation/english_and_first_domains_certification_v6.json",
+      "sha256": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052",
+      "tracked_at_start": true
+    },
+    "results/abi_capability_compiler_phase4_b40_v25_product_conformance/run_v962/seed104729_outputs.jsonl": {
+      "bytes": 1838512,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_capability_compiler_phase4_b40_v25_product_conformance/run_v962/seed104729_outputs.jsonl",
+      "sha256": "36e739460509e82ccd0b593ac6857fa1bfedc8aa6ee044f3a0d364c71e89453f",
+      "tracked_at_start": true
+    },
+    "results/abi_capability_compiler_phase5_selective_product/verify_v1029/result.json": {
+      "bytes": 4124,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_capability_compiler_phase5_selective_product/verify_v1029/result.json",
+      "sha256": "6d316f962d2383fe1904e41445e6b0fb330d89203198cf89a2a5b344d57a3a26",
+      "tracked_at_start": true
+    },
+    "results/abi_capability_compiler_phase6_composition/verify_v1038/result.json": {
+      "bytes": 3224,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_capability_compiler_phase6_composition/verify_v1038/result.json",
+      "sha256": "5b03132574547b411f0fae6d18b0c38c98377a32501572f00c86aae3f2307ad4",
+      "tracked_at_start": true
+    },
+    "results/abi_capability_compiler_phase7_integrated/verify_v1067/result.json": {
+      "bytes": 5524,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_capability_compiler_phase7_integrated/verify_v1067/result.json",
+      "sha256": "e34c01e02552866893e6f6c9b07be389675d63debb1ce5f85968cc98954ddf92",
+      "tracked_at_start": false
+    }
+  },
+  "evidence_sha256": "0f81da4b75e5e57e9208f037e7ed96295128697e110ac09f0c9676d2fe0a37ce",
+  "external_reproduction_instructions": {
+    "PHASE8_EXTERNAL_OPERATOR_ATTESTATION_TEMPLATE_V1.json": {
+      "bytes": 916,
+      "path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/PHASE8_EXTERNAL_OPERATOR_ATTESTATION_TEMPLATE_V1.json",
+      "sha256": "7ae77c758e8b07bf43fcea951d2ae06fdc4dc08c2a2549f3f252bafbe4780da3"
+    },
+    "docs/PHASE8_EXTERNAL_REPRODUCTION_V1.md": {
+      "bytes": 3616,
+      "path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/docs/PHASE8_EXTERNAL_REPRODUCTION_V1.md",
+      "sha256": "d17542cec3671087c25080a681fb2fe2d1b950e64c6920ec23debba9b15f19fd"
+    }
+  },
+  "format": "abi-final-mile-frozen-starting-point/1",
+  "historical_evidence_changed": false,
+  "human_rating_packet": {
+    "ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_SCORING_PROTOCOL_V1.json": {
+      "bytes": 3827,
+      "path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_SCORING_PROTOCOL_V1.json",
+      "sha256": "5e53df940a518c04f4f90f9561500880c3389258392c7f9894f7328415ad7a64"
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE2_RATER_SESSION_PROTOCOL_V1.json": {
+      "bytes": 2257,
+      "path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/ABI_CAPABILITY_COMPILER_PHASE2_RATER_SESSION_PROTOCOL_V1.json",
+      "sha256": "c81c2f0940c01ecc4bb6ec43b7a8658741f044788d9d08d4c1e54ff38f4c45d4"
+    },
+    "evidence/current/ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V554.json": {
+      "bytes": 3311,
+      "path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/evidence/current/ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_RATING_READINESS_AUDIT_V554.json",
+      "sha256": "159c3348e3f8a26349d9482061001c1e78c98a9ac9c35b42acffa9b02561737d"
+    },
+    "results/abi_capability_compiler_phase2/human_rating_packet_v1/manifest.json": {
+      "bytes": 3300,
+      "path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/results/abi_capability_compiler_phase2/human_rating_packet_v1/manifest.json",
+      "sha256": "06c1e9e0f8f4f938cd020686fff7ac8470e8cff4a3d3fe294a0b0c003e2c69aa"
+    }
+  },
+  "mutation_rule": "Any changed artifact is a new version; every dependent result must be rerun.",
+  "package_bindings": {
+    "results/abi_capability_compiler_phase7_integrated/materialized_v1052/phase7-final-english-core.cake": {
+      "bytes": 253216208,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_capability_compiler_phase7_integrated/materialized_v1052/phase7-final-english-core.cake",
+      "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+      "tracked_at_start": false
+    },
+    "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.cake": {
+      "bytes": 510981,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.cake",
+      "sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+      "tracked_at_start": true
+    },
+    "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.pub": {
+      "bytes": 113,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.pub",
+      "sha256": "8c585e5e993a22962cd1196b0d4fbb666b5a022e0c72525f6c37a23ea915efef",
+      "tracked_at_start": true
+    },
+    "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.cake": {
+      "bytes": 495919,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.cake",
+      "sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+      "tracked_at_start": true
+    },
+    "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.pub": {
+      "bytes": 113,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.pub",
+      "sha256": "aaa8655fe76714e4b99f7dfc4084ed78f475e8aa699214fac8006a887c6611f4",
+      "tracked_at_start": true
+    },
+    "results/abi_moonshot/packages/abi-python-token-plan-seed9824.cake": {
+      "bytes": 448404,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_moonshot/packages/abi-python-token-plan-seed9824.cake",
+      "sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+      "tracked_at_start": true
+    },
+    "results/abi_moonshot/packages/abi-python-token-plan-seed9824.pub": {
+      "bytes": 113,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_moonshot/packages/abi-python-token-plan-seed9824.pub",
+      "sha256": "6fa980c963b60208877b5df19ed2f07f793f8b63e2af8f613264c3fe0e160099",
+      "tracked_at_start": true
+    }
+  },
+  "phase8_readiness_manifest": {
+    "bytes": 16199,
+    "declared_evidence_sha256": "694748dc1c8e58a1bd1be17d2b63b546f4beae61e24b6dcbbc58cece771712c6",
+    "inventory_bytes": 281108851,
+    "inventory_files": 52,
+    "path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/results/abi_capability_compiler_phase8/readiness_v1073/manifest.json",
+    "sha256": "b0e0c8f1ffcc52fc7464d52840ab7a086313fa90747158b0b9cff29d0abc8d86"
+  },
+  "product_identity": {
+    "claim_boundary": "This is a content-addressed bill of materials for one exact integrated product, not a new package or new quality claim. Every Phase 7 conclusion must independently prove that its evidence resolves to these exact component and host identities.",
+    "composition": "One signed B40 English core plus three separately signed optional domain packages under the additive authoritative-destination control. Components remain independently immutable; this manifest does not merge or rewrite them.",
+    "control_plane": {
+      "authoritative_destination_control_sha256": "6db81b67329843a161aeb85522103b2dca8da8e237fe8f21a288bb29493e40d9",
+      "catalog_router_sha256": "f1b724ecba5daed33348e6f5988bbd5bba0258763c659988e12794d253f24398",
+      "direct_orchestrator_sha256": "fbc1be560f6c756da6c7b30bbed5478a9b3088059902282b22c78d0bdd286edf",
+      "domain_abi_sha256": "de765899700aefe22bfe6c9d00ed5b0c1f87a7ef864cf7211aa8aa4491a0742a",
+      "domain_abi_version": "lc-direct-neural-decoder/1"
+    },
+    "deployment": {
+      "component_mutation_allowed": false,
+      "dynamic_selected_only_domain_activation": true,
+      "english_and_domain_interfaces_are_separate": true,
+      "source_base_required": false,
+      "teacher_required": false
+    },
+    "domain_packages": {
+      "chemistry": {
+        "archive_bytes": 510981,
+        "archive_sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+        "cake_id": "abi-chemistry-token-plan",
+        "runtime_interface": "lc-direct-neural-decoder/1",
+        "tensor_payload_sha256": "b70dec838c5d3d119333e0f12ccc26392fad56b97cb4841045d0780cfb5f96a2"
+      },
+      "civics": {
+        "archive_bytes": 495919,
+        "archive_sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+        "cake_id": "abi-civics-token-plan",
+        "runtime_interface": "lc-direct-neural-decoder/1",
+        "tensor_payload_sha256": "531f4cf14ae8823314cec77c919eba27fe136ba57ea7f4467ac53a69276a38dd"
+      },
+      "python": {
+        "archive_bytes": 448404,
+        "archive_sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+        "cake_id": "abi-python-token-plan",
+        "runtime_interface": "lc-direct-neural-decoder/1",
+        "tensor_payload_sha256": "ac58835feee49441aef5fdfddd315523458ac95c53be8f41b8f309a086383242"
+      }
+    },
+    "english_core": {
+      "active_tensor_bytes_before_domain_packages": 254495764,
+      "archive_bytes": 253216208,
+      "archive_sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+      "runtime_interface": "lc-direct-neural-core/25",
+      "seed": 104729,
+      "source_transformer_blocks_retained": 0,
+      "teacher_present_at_inference": false,
+      "tensor_payload_sha256": "18ad787696cf8737578253035ad84b7e0145d995f028c6392ba338b6117d5aba"
+    },
+    "format": "abi-capability-compiler-phase7-product-manifest/1",
+    "layercake_host": {
+      "canonical_core_abi_sha256": "6d0fea2697fc7af74e9f3cfaee591d658b3244acfb10502048a4105c010b6908",
+      "core_extension_sha256": "7b176f21e6a86f3aaded724462d37149f8f8be48370bcdd163fe44c49e3464ce",
+      "local_commit": "a87a653dbdb1a4e5f713baf7bc508d508277e00d",
+      "repository": "https://github.com/Yoder23/layercake"
+    },
+    "product_id": "abi-layercake-b40-seed104729-english-chemistry-civics-python-v1",
+    "status": "FROZEN_EXACT_PHASE7_PRODUCT_IDENTITY",
+    "status_date": "2026-08-16"
+  },
+  "release_inventory": {
+    "../layercake_release/layercake/cake/installer.py": {
+      "bytes": 7032,
+      "relocated_in_curated_tree": false,
+      "repository": "layercake",
+      "resolved_path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/layercake_release/layercake/cake/installer.py",
+      "sha256": "7c011c6a0514c6ee7b233a5c75cf6f94f427ce39fb46684f4af3e1c07efea59c",
+      "tracked_at_start": true
+    },
+    "../layercake_release/layercake/cake/package.py": {
+      "bytes": 15153,
+      "relocated_in_curated_tree": false,
+      "repository": "layercake",
+      "resolved_path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/layercake_release/layercake/cake/package.py",
+      "sha256": "405043c99e52817709aec21cbeb906a8de651f3e9d68850a5b1f18c1294be0dc",
+      "tracked_at_start": true
+    },
+    "../layercake_release/layercake/routing/catalog_router.py": {
+      "bytes": 13168,
+      "relocated_in_curated_tree": false,
+      "repository": "layercake",
+      "resolved_path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/layercake_release/layercake/routing/catalog_router.py",
+      "sha256": "f1b724ecba5daed33348e6f5988bbd5bba0258763c659988e12794d253f24398",
+      "tracked_at_start": true
+    },
+    "../layercake_release/layercake/routing/direct_orchestrator.py": {
+      "bytes": 8845,
+      "relocated_in_curated_tree": false,
+      "repository": "layercake",
+      "resolved_path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/layercake_release/layercake/routing/direct_orchestrator.py",
+      "sha256": "fbc1be560f6c756da6c7b30bbed5478a9b3088059902282b22c78d0bdd286edf",
+      "tracked_at_start": true
+    },
+    "../layercake_release/layercake_extensions/authoritative_destination_control.py": {
+      "bytes": 7340,
+      "relocated_in_curated_tree": false,
+      "repository": "layercake",
+      "resolved_path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/layercake_release/layercake_extensions/authoritative_destination_control.py",
+      "sha256": "6db81b67329843a161aeb85522103b2dca8da8e237fe8f21a288bb29493e40d9",
+      "tracked_at_start": true
+    },
+    "../layercake_release/layercake_extensions/route_isolated_clarification_core_v25.py": {
+      "bytes": 13330,
+      "relocated_in_curated_tree": false,
+      "repository": "layercake",
+      "resolved_path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/layercake_release/layercake_extensions/route_isolated_clarification_core_v25.py",
+      "sha256": "7b176f21e6a86f3aaded724462d37149f8f8be48370bcdd163fe44c49e3464ce",
+      "tracked_at_start": true
+    },
+    "../layercake_release/moonshot/canonical_route_isolated_clarification_core_abi_v25.json": {
+      "bytes": 2840,
+      "relocated_in_curated_tree": false,
+      "repository": "layercake",
+      "resolved_path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/layercake_release/moonshot/canonical_route_isolated_clarification_core_abi_v25.json",
+      "sha256": "6d0fea2697fc7af74e9f3cfaee591d658b3244acfb10502048a4105c010b6908",
+      "tracked_at_start": true
+    },
+    "../layercake_release/tests/cake/test_installer.py": {
+      "bytes": 3663,
+      "relocated_in_curated_tree": false,
+      "repository": "layercake",
+      "resolved_path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/layercake_release/tests/cake/test_installer.py",
+      "sha256": "3e9424b4eaec7b177273d60a3f9efad7780672f5eb3b641e12488653a54ff5fe",
+      "tracked_at_start": true
+    },
+    "../layercake_release/tests/cake/test_package_security.py": {
+      "bytes": 5562,
+      "relocated_in_curated_tree": false,
+      "repository": "layercake",
+      "resolved_path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/layercake_release/tests/cake/test_package_security.py",
+      "sha256": "d8b720706fdc2d372f8c21ed3465f5fb9f54507bf8182ec436c1487c35c0cd31",
+      "tracked_at_start": true
+    },
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1039.json": {
+      "bytes": 2697,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1039.json",
+      "sha256": "21a73fc664ef96c3690d3917208ef84e3f7a9e2c49b39e700a1ac9804cc964d1",
+      "tracked_at_start": true
+    },
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1069.json": {
+      "bytes": 2750,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1069.json",
+      "sha256": "2444d5a6ead8a9dd89054545784937d767d31b59ec03035e28f456b9fc09118f",
+      "tracked_at_start": true
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE4_B40_V25_PRODUCT_CONFORMANCE_PROTOCOL_V960.json": {
+      "bytes": 15574,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "ABI_CAPABILITY_COMPILER_PHASE4_B40_V25_PRODUCT_CONFORMANCE_PROTOCOL_V960.json",
+      "sha256": "ab7ca91e2516c2c431a24df05100cae3408dfed23b5ad592f6619a098dc74f30",
+      "tracked_at_start": true
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE4_B50_CPU_RUNTIME_PROTOCOL_V859.json": {
+      "bytes": 7566,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "ABI_CAPABILITY_COMPILER_PHASE4_B50_CPU_RUNTIME_PROTOCOL_V859.json",
+      "sha256": "99d2ceb76ef47230af54ca1e430ea0dacbb87abe97bc06dd0ba33b5dbbb8122b",
+      "tracked_at_start": true
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE4_CERTIFICATE_V1.json": {
+      "bytes": 3488,
+      "relocated_in_curated_tree": true,
+      "repository": "abi",
+      "resolved_path": "evidence/current/ABI_CAPABILITY_COMPILER_PHASE4_CERTIFICATE_V1.json",
+      "sha256": "6d3c81b40a21b08806368e34416ec2d9422594f00c68dc899fcee2e1586cf6eb",
+      "tracked_at_start": true
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE5_CERTIFICATE_V1.json": {
+      "bytes": 4007,
+      "relocated_in_curated_tree": true,
+      "repository": "abi",
+      "resolved_path": "evidence/current/ABI_CAPABILITY_COMPILER_PHASE5_CERTIFICATE_V1.json",
+      "sha256": "93265064268f697cf4bfc348551186dc53c7e780be5420c41a74844888c723b6",
+      "tracked_at_start": true
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE6_CERTIFICATE_V1.json": {
+      "bytes": 4356,
+      "relocated_in_curated_tree": true,
+      "repository": "abi",
+      "resolved_path": "evidence/current/ABI_CAPABILITY_COMPILER_PHASE6_CERTIFICATE_V1.json",
+      "sha256": "6ae934c164a46800a1f7224ad5c32433854eb572b89899e135a0272035d20d70",
+      "tracked_at_start": true
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json": {
+      "bytes": 4541,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json",
+      "sha256": "7d0b8f480024cdb06872779cd26654ca4404a7e7ccaa94e8b87da3c9b1d139f5",
+      "tracked_at_start": true
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE7_CERTIFICATE_V1.json": {
+      "bytes": 5808,
+      "relocated_in_curated_tree": true,
+      "repository": "abi",
+      "resolved_path": "evidence/current/ABI_CAPABILITY_COMPILER_PHASE7_CERTIFICATE_V1.json",
+      "sha256": "c0b07a8748d7ee84b0e99c6482585a95d7d9483b49d49248071b397b8b47f77b",
+      "tracked_at_start": true
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json": {
+      "bytes": 11358,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json",
+      "sha256": "531b7ee35cf79c13eb706626b276cc29be7e08b7c2153ca5d430298b51ee5d05",
+      "tracked_at_start": true
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE7_PRODUCT_MANIFEST_V1.json": {
+      "bytes": 3345,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "ABI_CAPABILITY_COMPILER_PHASE7_PRODUCT_MANIFEST_V1.json",
+      "sha256": "dbbfbc1c994f9fff2ca3a37c5ec22e9c517080f325a50a9b27fe7a0072a919ff",
+      "tracked_at_start": true
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE7_PRODUCT_MATERIALIZATION_PROTOCOL_V1050.json": {
+      "bytes": 2333,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "ABI_CAPABILITY_COMPILER_PHASE7_PRODUCT_MATERIALIZATION_PROTOCOL_V1050.json",
+      "sha256": "636f2423fc8548e3aa3af7a142c60e417acd24a7e859e2802e6aa466fc912b81",
+      "tracked_at_start": true
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE7_STREAMING_HOST_RESULT_V1060.json": {
+      "bytes": 2807,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "ABI_CAPABILITY_COMPILER_PHASE7_STREAMING_HOST_RESULT_V1060.json",
+      "sha256": "c754616c27dc9142cb038c7d33791c4872122181c5da6edcfb6522e12f52d00a",
+      "tracked_at_start": true
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE7_VERIFY_PROTOCOL_V1064.json": {
+      "bytes": 6604,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "ABI_CAPABILITY_COMPILER_PHASE7_VERIFY_PROTOCOL_V1064.json",
+      "sha256": "ee0c79966cc410e41d9a8625d452d55c0fa38c2ff4d0f88411b114b1ac8b30ed",
+      "tracked_at_start": true
+    },
+    "PHASE8_EXTERNAL_OPERATOR_ATTESTATION_TEMPLATE_V1.json": {
+      "bytes": 916,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "PHASE8_EXTERNAL_OPERATOR_ATTESTATION_TEMPLATE_V1.json",
+      "sha256": "7ae77c758e8b07bf43fcea951d2ae06fdc4dc08c2a2549f3f252bafbe4780da3",
+      "tracked_at_start": true
+    },
+    "abi/capability_compiler_phase7_direct_artifact_runtime.py": {
+      "bytes": 10519,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "abi/capability_compiler_phase7_direct_artifact_runtime.py",
+      "sha256": "eb69980efd756b5ea8c50f6c4791144251d08d5d91de9c6677867bc881d16fdf",
+      "tracked_at_start": true
+    },
+    "abi/capability_compiler_phase7_integrated_runtime.py": {
+      "bytes": 24130,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "abi/capability_compiler_phase7_integrated_runtime.py",
+      "sha256": "9968e4f5c85bfed1a51df12c12b5de0085ab6ec0d19ac316389602e16d16d358",
+      "tracked_at_start": true
+    },
+    "abi/capability_compiler_phase8_release_readiness.py": {
+      "bytes": 12926,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "abi/capability_compiler_phase8_release_readiness.py",
+      "sha256": "0866bbb628249bfb3ee009fa140c0704e9b2bd5aad6af59ac15b8a2f6a00ed26",
+      "tracked_at_start": true
+    },
+    "catalogs/capability_compiler_phase1_frozen_v1.json": {
+      "bytes": 17631486,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "catalogs/capability_compiler_phase1_frozen_v1.json",
+      "sha256": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+      "tracked_at_start": true
+    },
+    "catalogs/english_and_first_domains_certification_v6.json": {
+      "bytes": 6287076,
+      "relocated_in_curated_tree": true,
+      "repository": "abi",
+      "resolved_path": "evidence/current/segregation/english_and_first_domains_certification_v6.json",
+      "sha256": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052",
+      "tracked_at_start": true
+    },
+    "docs/PHASE8_EXTERNAL_REPRODUCTION_V1.md": {
+      "bytes": 3616,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "docs/PHASE8_EXTERNAL_REPRODUCTION_V1.md",
+      "sha256": "d17542cec3671087c25080a681fb2fe2d1b950e64c6920ec23debba9b15f19fd",
+      "tracked_at_start": true
+    },
+    "results/abi_capability_compiler_phase4_b40_v25_cpu_runtime/run_v975/engine/result.json": {
+      "bytes": 9714,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_capability_compiler_phase4_b40_v25_cpu_runtime/run_v975/engine/result.json",
+      "sha256": "adfed69c5eb96d8573f31a5246881a12989b40921be7aa78e15e2c1d6afa998a",
+      "tracked_at_start": true
+    },
+    "results/abi_capability_compiler_phase4_b40_v25_gpu_runtime/run_v974/engine/result.json": {
+      "bytes": 4580,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_capability_compiler_phase4_b40_v25_gpu_runtime/run_v974/engine/result.json",
+      "sha256": "de88e2291f6cd16de4a906d6deeea69da9a2671be9d117da7fbfa03dd0267c8d",
+      "tracked_at_start": true
+    },
+    "results/abi_capability_compiler_phase4_b40_v25_product_conformance/run_v962/seed104729_outputs.jsonl": {
+      "bytes": 1838512,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_capability_compiler_phase4_b40_v25_product_conformance/run_v962/seed104729_outputs.jsonl",
+      "sha256": "36e739460509e82ccd0b593ac6857fa1bfedc8aa6ee044f3a0d364c71e89453f",
+      "tracked_at_start": true
+    },
+    "results/abi_capability_compiler_phase4_b40_v25_runtime_verify/run_v984/result.json": {
+      "bytes": 2810,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_capability_compiler_phase4_b40_v25_runtime_verify/run_v984/result.json",
+      "sha256": "f3d0c2c89af061d46dcfc19392ac24134e9b39871914f12519347542c2d0d1e1",
+      "tracked_at_start": true
+    },
+    "results/abi_capability_compiler_phase4_clarification_route_replication/B40-seed104729-v927/evaluation/result.json": {
+      "bytes": 5327,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_capability_compiler_phase4_clarification_route_replication/B40-seed104729-v927/evaluation/result.json",
+      "sha256": "e1ebbfda3fc99599bd957fc9d03574bd84c49bcca4329269c19747075ea5f951",
+      "tracked_at_start": true
+    },
+    "results/abi_capability_compiler_phase5_selective_product/verify_v1029/result.json": {
+      "bytes": 4124,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_capability_compiler_phase5_selective_product/verify_v1029/result.json",
+      "sha256": "6d316f962d2383fe1904e41445e6b0fb330d89203198cf89a2a5b344d57a3a26",
+      "tracked_at_start": true
+    },
+    "results/abi_capability_compiler_phase6_composition/run_v1032/seed104729/observations.jsonl": {
+      "bytes": 407530,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_capability_compiler_phase6_composition/run_v1032/seed104729/observations.jsonl",
+      "sha256": "3b177777bd1d032cf3aef447578cf4620194ce664f3a4f5cc51633b512333535",
+      "tracked_at_start": true
+    },
+    "results/abi_capability_compiler_phase6_composition/run_v1032/seed104729/result.json": {
+      "bytes": 8572,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_capability_compiler_phase6_composition/run_v1032/seed104729/result.json",
+      "sha256": "bf31d1812da0c68b745e55c235f756e81dcfc2eed34a91039195e7720c0e58e2",
+      "tracked_at_start": true
+    },
+    "results/abi_capability_compiler_phase6_composition/verify_v1038/result.json": {
+      "bytes": 3224,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_capability_compiler_phase6_composition/verify_v1038/result.json",
+      "sha256": "5b03132574547b411f0fae6d18b0c38c98377a32501572f00c86aae3f2307ad4",
+      "tracked_at_start": true
+    },
+    "results/abi_capability_compiler_phase7_integrated/materialized_v1052/phase7-final-english-core.cake": {
+      "bytes": 253216208,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_capability_compiler_phase7_integrated/materialized_v1052/phase7-final-english-core.cake",
+      "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+      "tracked_at_start": false
+    },
+    "results/abi_capability_compiler_phase7_integrated/materialized_v1052/result.json": {
+      "bytes": 1419,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_capability_compiler_phase7_integrated/materialized_v1052/result.json",
+      "sha256": "d22684e34aabe39c4b590e3d22a547709a75cb8d17386700d410ca407ca6ee8c",
+      "tracked_at_start": false
+    },
+    "results/abi_capability_compiler_phase7_integrated/verify_v1067/result.json": {
+      "bytes": 5524,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_capability_compiler_phase7_integrated/verify_v1067/result.json",
+      "sha256": "e34c01e02552866893e6f6c9b07be389675d63debb1ce5f85968cc98954ddf92",
+      "tracked_at_start": false
+    },
+    "results/abi_moonshot/domain_cakes/package-certification-validation.json": {
+      "bytes": 15230,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_moonshot/domain_cakes/package-certification-validation.json",
+      "sha256": "11f786e106f639089500115ec233a9bad75a0563e48a41abddf0ff3ebca5f5f3",
+      "tracked_at_start": true
+    },
+    "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.cake": {
+      "bytes": 510981,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.cake",
+      "sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+      "tracked_at_start": true
+    },
+    "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.pub": {
+      "bytes": 113,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.pub",
+      "sha256": "8c585e5e993a22962cd1196b0d4fbb666b5a022e0c72525f6c37a23ea915efef",
+      "tracked_at_start": true
+    },
+    "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.cake": {
+      "bytes": 495919,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.cake",
+      "sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+      "tracked_at_start": true
+    },
+    "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.pub": {
+      "bytes": 113,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.pub",
+      "sha256": "aaa8655fe76714e4b99f7dfc4084ed78f475e8aa699214fac8006a887c6611f4",
+      "tracked_at_start": true
+    },
+    "results/abi_moonshot/packages/abi-python-token-plan-seed9824.cake": {
+      "bytes": 448404,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_moonshot/packages/abi-python-token-plan-seed9824.cake",
+      "sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+      "tracked_at_start": true
+    },
+    "results/abi_moonshot/packages/abi-python-token-plan-seed9824.pub": {
+      "bytes": 113,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "results/abi_moonshot/packages/abi-python-token-plan-seed9824.pub",
+      "sha256": "6fa980c963b60208877b5df19ed2f07f793f8b63e2af8f613264c3fe0e160099",
+      "tracked_at_start": true
+    },
+    "tests/test_capability_compiler_phase7_direct_artifact_runtime.py": {
+      "bytes": 237,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "tests/test_capability_compiler_phase7_direct_artifact_runtime.py",
+      "sha256": "42ed6e975fe2ae872760f401776b16a5c9a4931d9fd6c445132fe8c2fbea6338",
+      "tracked_at_start": true
+    },
+    "tests/test_capability_compiler_phase7_integrated_runtime.py": {
+      "bytes": 1448,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "tests/test_capability_compiler_phase7_integrated_runtime.py",
+      "sha256": "cdfe41e4ed45e4be9e5d8f2f09650131fac1c42bc683e3db5bcec6349d406cc0",
+      "tracked_at_start": true
+    },
+    "tests/test_capability_compiler_phase8_release_readiness.py": {
+      "bytes": 3913,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "tests/test_capability_compiler_phase8_release_readiness.py",
+      "sha256": "1edab9e8fbd1b1994b1201956f15d220dd90ad3acb143d2699a1ada46e0cb63d",
+      "tracked_at_start": true
+    }
+  },
+  "repository": "https://github.com/Yoder23/abi",
+  "repository_commit": "a2f2f8f685119c658048faa50b58d01544bc6e92",
+  "repository_head_when_freeze_generated": "a2f2f8f685119c658048faa50b58d01544bc6e92",
+  "runtime_bindings": {
+    "../layercake_release/layercake/cake/installer.py": {
+      "bytes": 7032,
+      "relocated_in_curated_tree": false,
+      "repository": "layercake",
+      "resolved_path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/layercake_release/layercake/cake/installer.py",
+      "sha256": "7c011c6a0514c6ee7b233a5c75cf6f94f427ce39fb46684f4af3e1c07efea59c",
+      "tracked_at_start": true
+    },
+    "../layercake_release/layercake/cake/package.py": {
+      "bytes": 15153,
+      "relocated_in_curated_tree": false,
+      "repository": "layercake",
+      "resolved_path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/layercake_release/layercake/cake/package.py",
+      "sha256": "405043c99e52817709aec21cbeb906a8de651f3e9d68850a5b1f18c1294be0dc",
+      "tracked_at_start": true
+    },
+    "../layercake_release/layercake/routing/catalog_router.py": {
+      "bytes": 13168,
+      "relocated_in_curated_tree": false,
+      "repository": "layercake",
+      "resolved_path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/layercake_release/layercake/routing/catalog_router.py",
+      "sha256": "f1b724ecba5daed33348e6f5988bbd5bba0258763c659988e12794d253f24398",
+      "tracked_at_start": true
+    },
+    "../layercake_release/layercake/routing/direct_orchestrator.py": {
+      "bytes": 8845,
+      "relocated_in_curated_tree": false,
+      "repository": "layercake",
+      "resolved_path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/layercake_release/layercake/routing/direct_orchestrator.py",
+      "sha256": "fbc1be560f6c756da6c7b30bbed5478a9b3088059902282b22c78d0bdd286edf",
+      "tracked_at_start": true
+    },
+    "../layercake_release/layercake_extensions/authoritative_destination_control.py": {
+      "bytes": 7340,
+      "relocated_in_curated_tree": false,
+      "repository": "layercake",
+      "resolved_path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/layercake_release/layercake_extensions/authoritative_destination_control.py",
+      "sha256": "6db81b67329843a161aeb85522103b2dca8da8e237fe8f21a288bb29493e40d9",
+      "tracked_at_start": true
+    },
+    "../layercake_release/layercake_extensions/route_isolated_clarification_core_v25.py": {
+      "bytes": 13330,
+      "relocated_in_curated_tree": false,
+      "repository": "layercake",
+      "resolved_path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/layercake_release/layercake_extensions/route_isolated_clarification_core_v25.py",
+      "sha256": "7b176f21e6a86f3aaded724462d37149f8f8be48370bcdd163fe44c49e3464ce",
+      "tracked_at_start": true
+    },
+    "../layercake_release/tests/cake/test_installer.py": {
+      "bytes": 3663,
+      "relocated_in_curated_tree": false,
+      "repository": "layercake",
+      "resolved_path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/layercake_release/tests/cake/test_installer.py",
+      "sha256": "3e9424b4eaec7b177273d60a3f9efad7780672f5eb3b641e12488653a54ff5fe",
+      "tracked_at_start": true
+    },
+    "../layercake_release/tests/cake/test_package_security.py": {
+      "bytes": 5562,
+      "relocated_in_curated_tree": false,
+      "repository": "layercake",
+      "resolved_path": "C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/layercake_release/tests/cake/test_package_security.py",
+      "sha256": "d8b720706fdc2d372f8c21ed3465f5fb9f54507bf8182ec436c1487c35c0cd31",
+      "tracked_at_start": true
+    },
+    "abi/capability_compiler_phase7_direct_artifact_runtime.py": {
+      "bytes": 10519,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "abi/capability_compiler_phase7_direct_artifact_runtime.py",
+      "sha256": "eb69980efd756b5ea8c50f6c4791144251d08d5d91de9c6677867bc881d16fdf",
+      "tracked_at_start": true
+    },
+    "abi/capability_compiler_phase7_integrated_runtime.py": {
+      "bytes": 24130,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "abi/capability_compiler_phase7_integrated_runtime.py",
+      "sha256": "9968e4f5c85bfed1a51df12c12b5de0085ab6ec0d19ac316389602e16d16d358",
+      "tracked_at_start": true
+    },
+    "tests/test_capability_compiler_phase7_direct_artifact_runtime.py": {
+      "bytes": 237,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "tests/test_capability_compiler_phase7_direct_artifact_runtime.py",
+      "sha256": "42ed6e975fe2ae872760f401776b16a5c9a4931d9fd6c445132fe8c2fbea6338",
+      "tracked_at_start": true
+    },
+    "tests/test_capability_compiler_phase7_integrated_runtime.py": {
+      "bytes": 1448,
+      "relocated_in_curated_tree": false,
+      "repository": "abi",
+      "resolved_path": "tests/test_capability_compiler_phase7_integrated_runtime.py",
+      "sha256": "cdfe41e4ed45e4be9e5d8f2f09650131fac1c42bc683e3db5bcec6349d406cc0",
+      "tracked_at_start": true
+    }
+  },
+  "status": "FROZEN_EXISTING_SAME_MACHINE_PRODUCT_FOR_FINAL_MILE_CHALLENGE",
+  "working_tree_clean_at_campaign_start": true
+}
