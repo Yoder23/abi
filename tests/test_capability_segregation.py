@@ -31,6 +31,9 @@ def _bound_path(relative_path: str) -> Path:
             "ABI_ENGLISH_CORE_DOMAIN_SEGREGATION_CONTRACT_V2.json"
         ),
         "catalogs/domain_ontology_v1.json": "domain_ontology_v1.json",
+        "catalogs/intrinsic_english_search_validation_v83.json": (
+            "intrinsic_english_search_validation_v83.json"
+        ),
         "catalogs/english_and_first_domains_certification_v6.json": (
             "english_and_first_domains_certification_v6.json"
         ),
