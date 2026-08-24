@@ -1,5 +1,5 @@
 [project]
-name = "abi-layercake"
+name = "abi-capability-compiler"
 version = "0.3.0a1"
 description = "Provenance-preserving capability acquisition and segregation for external model hosts"
 readme = "README.md"
@@ -24,16 +24,22 @@ classifiers = [
   "Programming Language :: Python :: 3.11",
   "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
-dependencies = [
+dependencies = []
+
+[project.optional-dependencies]
+extraction = [
   "torch>=2.1",
   "transformers>=4.38",
   "sentencepiece>=0.1.99",
   "numpy",
   "tqdm",
+  "regex",
+  "datasets>=2.18.0",
+  "pyyaml>=6.0",
+  "huggingface_hub>=0.22.0",
 ]
-
-[project.optional-dependencies]
 dev = [
+  "build",
   "pytest>=7",
   "ruff",
 ]
@@ -43,18 +49,6 @@ Repository = "https://github.com/Yoder23/abi"
 
 [project.scripts]
 abi = "abi.__main__:main"
-abi-moonshot = "abi.moonshot:main"
-abi-layercake-release = "abi.moonshot_release:main"
-abi-layercake-host-v3 = "abi.layercake_host_v3:main"
-abi-layercake-domains-v3 = "abi.layercake_domains_v3:main"
-abi-layercake-full-core-acquire = "abi.layercake_full_core_acquisition:main"
-abi-layercake-generalization = "abi.english_generalization_evaluation:main"
-abi-layercake-six-block-base = "abi.layercake_six_block_base:main"
-abi-natural-english-catalog = "abi.natural_english_catalog:main"
-abi-capability-compiler-phase0 = "abi.capability_compiler_phase0:main"
-abi-capability-compiler-phase0-certificate = "abi.capability_compiler_phase0_certificate:main"
-abi-capability-compiler-phase2-human-ratings = "abi.capability_compiler_phase2_human_ratings:main"
-abi-research-artifact-manifest = "abi.research_artifact_manifest:main"
 
 [build-system]
 requires = ["setuptools>=68"]

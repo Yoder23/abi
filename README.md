@@ -45,8 +45,14 @@ python -m abi self-check
 ```
 
 Python 3.10 or newer is required. GPU-backed teacher extraction requires a
-compatible PyTorch installation; the manifest, labeling, packaging, and
-verification APIs can be exercised without downloading a teacher.
+compatible PyTorch installation and the extraction extras:
+
+```bash
+python -m pip install -e ".[extraction]"
+```
+
+The manifest, labeling, packaging, and verification APIs require no model
+download and keep the default installation lightweight.
 
 ## Start with the supported API
 
