@@ -1,31 +1,29 @@
-# Security Policy
+# Security policy
 
-## Supported Versions
+ABI is alpha research software. Only the latest commit on `master` receives
+security fixes.
 
-This is a research preview (`v0.1.0`). Only the current release is supported.
+## Report privately
 
-| Version | Supported |
-|---------|-----------|
-| 0.1.x   | ✅         |
+Do not open a public issue for a suspected vulnerability. Email
+`samyoder23@gmail.com` with subject `[ABI Security]`, the affected revision,
+impact, reproduction steps, and any proposed mitigation. Expect an initial
+response within seven days.
 
-## Scope
+## Security boundaries
 
-ABI is a research prototype for academic and experimental use. It is not intended for production deployment.
+- Treat teacher models, generated text, manifests, archives, and capability
+  packages as untrusted input.
+- Pin model revisions and verify weight hashes before extraction.
+- Do not enable `trust_remote_code` for promotion-eligible sources.
+- Never load pickle-based weights from an untrusted party. Prefer
+  `safetensors` and verify the recorded digest.
+- Extraction may execute on GPUs and access model credentials. Use a dedicated
+  environment with least-privilege tokens and no unrelated secrets.
+- ABI artifacts are not authenticated deployment packages. LayerCake owns its
+  package signature and installation policy.
 
-Known limitations relevant to security:
-
-- `wikitext_cache.py` downloads data from Hugging Face datasets — use only in trusted network environments
-- Model weights are downloaded from Hugging Face Hub (`t5-large`, `gpt2-medium`, etc.) — verify checksums independently if required
-- No authentication, authorization, or input sanitization for inference — this is expected for a research prototype
-
-## Reporting a Vulnerability
-
-If you find a security vulnerability (e.g., a dependency with a known CVE, unsafe deserialization, or path traversal in a script):
-
-1. **Do not** open a public GitHub issue.
-2. Email `samyoder23@gmail.com` with subject line: `[ABI Security] <brief description>`.
-3. Include: affected file(s), description of the issue, and any known exploit or proof-of-concept.
-
-Expected response time: within 7 days.
-
-This project uses `torch`, `transformers`, and `sentencepiece`. Keep these up to date to avoid known CVEs in those dependencies.
+The supported compiler surface validates paths, canonical hashes, provenance,
+labels, selections, and bundle membership. Historical experiment modules have
+not all received the same security review and should not be exposed directly
+to untrusted network input.

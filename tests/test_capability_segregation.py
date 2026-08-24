@@ -8,10 +8,10 @@ from pathlib import Path
 import pytest
 
 from abi.capability_segregation import (
-    CapabilitySegregationError,
     LINGUISTIC_FORM,
     QUARANTINED,
     SPECIALIST_KNOWLEDGE,
+    CapabilitySegregationError,
     build_core_domain_segregation_manifest,
     build_domain_ontology,
     build_segregated_extraction_record,
@@ -20,7 +20,6 @@ from abi.capability_segregation import (
     validate_segregated_extraction_record,
 )
 from abi.layercake_acquisition import validate_labeled_extraction_record
-
 
 ROOT = Path(__file__).resolve().parents[1]
 

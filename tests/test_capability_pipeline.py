@@ -6,9 +6,9 @@ import zipfile
 import pytest
 
 from abi.capability_pipeline import (
-    CapabilityPipelineError,
     SEGREGATED_TRAINING_ARTIFACT_ROLE,
     TRAINING_ARTIFACT_ROLE,
+    CapabilityPipelineError,
     build_capability_inventory,
     build_extraction_bundle,
     build_inventory_survey_plan,
@@ -38,7 +38,6 @@ from abi.layercake_host_v3 import (
     _materialize_training_prompt,
     load_english_training_rows,
 )
-
 
 REVISION = "a" * 40
 

@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: "Autonomous Basis Injection: Frozen-Module Domain Transfer Across LLM Architectures"
+title: "ABI: Provenance-Preserving Capability Acquisition and Segregation"
 message: "If you use ABI or build on these results, please cite this repository."
 type: software
 authors:
@@ -7,21 +7,17 @@ authors:
     given-names: Sam
 repository-code: "https://github.com/Yoder23/abi"
 license: "Apache-2.0"
-version: "0.1.0"
-date-released: "2026-05-18"
+version: "0.3.0-alpha.1"
+date-released: "2026-08-24"
 abstract: >
-  ABI (Autonomous Basis Injection) is a method for frozen-module domain transfer
-  across LLM architectures. A domain module trained on one model backbone can be
-  migrated to a second, independently initialized model by calibrating only
-  interface projections — the backbone weights in both models remain entirely
-  frozen. Results are verified via the Non-Inferiority Benchmark (NIB) across
-  decoder-only and encoder-decoder architectures, 4 model families, and
-  117M–774M parameter scale.
+  ABI is a research compiler for acquiring measured capabilities from frozen
+  open-weight language models, segregating linguistic form from specialist
+  knowledge, accounting for imported information, and producing immutable
+  acquisition artifacts for external execution hosts.
 keywords:
   - large-language-models
-  - domain-adaptation
   - knowledge-transfer
-  - frozen-modules
-  - non-inferiority-benchmark
+  - capability-segregation
+  - provenance
   - pytorch
   - transformers

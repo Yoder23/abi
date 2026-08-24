@@ -1,8 +1,0 @@
-{
-  "attempt": "V4 analysis attempt 1",
-  "decision": "RETAIN_AS_HISTORICAL_NUMERIC_EVIDENCE_DO_NOT_CITE_NARRATIVE",
-  "final_test_accessed": false,
-  "numeric_result": "FAIL_AUTONOMOUS_QUALITY_CAUSAL_SIGNAL_PRESENT",
-  "output": "results/abi_capability_compiler_phase3/conditional_decision_v2.json",
-  "reason": "The computed systems, confidence intervals, gates, and status are valid, but measured_bottleneck contains stale V3 aggregate counts. V5 corrects only that derived prose in a new immutable output."
-}

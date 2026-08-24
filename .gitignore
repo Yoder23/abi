@@ -72,6 +72,18 @@ tmp_guard_test/
 results/
 run_logs/
 
+# The default branch is a curated source release. Historical root ledgers and
+# generated catalogs remain available on the research-history-v1089 branch
+# and may remain in a local checkout without appearing as untracked files.
+/catalogs/
+/*.json
+/*.py
+/*.md
+!/README.md
+!/AGENTS.md
+!/CONTRIBUTING.md
+!/SECURITY.md
+
 # Historical generated catalogs larger than 1 MiB are preserved locally and
 # content-addressed by ABI_LOCAL_RESEARCH_ARTIFACTS_MANIFEST_V1.json. Their
 # generators, protocols, compact manifests, decisions, and hashes remain in

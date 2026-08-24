@@ -13,7 +13,6 @@ import json
 from collections.abc import Iterable, Mapping, Sequence
 from typing import Any
 
-
 RECORD_SCHEMA = "abi-layercake-labeled-extraction-record/1"
 LEDGER_SCHEMA = "abi-layercake-imported-information-ledger/1"
 BUDGET_DECISION_SCHEMA = "abi-layercake-minimum-passing-budget-decision/1"

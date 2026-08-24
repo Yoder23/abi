@@ -1,98 +1,42 @@
-# Contributing to ABI
+# Contributing
 
-Thank you for your interest. ABI is a research preview. Contributions that improve reproducibility, extend coverage, or correct errors are welcome.
+ABI is alpha research software. Contributions are welcome when they improve
+the supported compiler surface, scientific validity, portability, or
+reproducibility.
 
----
+## Good contributions
 
-## What We Want
+- Independent reproductions on genuinely different hardware.
+- Teacher adapters with immutable source revisions and license metadata.
+- Better English/domain segregation and quarantine tests.
+- LoRA and distillation comparisons under identical information and compute
+  budgets.
+- Smaller qualified artifacts without weakened gates.
+- Security, path-traversal, signature, provenance, and mutation tests.
 
-### High priority
-- **Independent reproductions** — run `verify_result.py` or the full experiments on different hardware and report your numbers
-- **7B+ model experiments** — we lack the hardware; if you have it, the methodology is in `ABI_REPRODUCE.md`
-- **Non-Python domains** — code, medical, legal, multilingual; compare against ABI on Python
-- **LoRA / adapter baselines** — formal comparison of ABI portability vs. LoRA portability
-- **Bug reports** — if a script crashes or produces wrong output, open an issue
+## Before opening a pull request
 
-### Medium priority
-- Documentation improvements (clarity, typos, missing steps)
-- Additional ablations using the experimental framework
-- Tests (see `tests/` directory)
+```bash
+python -m pip install -e ".[dev]"
+python -m abi self-check
+python -m pytest -q tests/test_public_release.py \
+  tests/test_capability_pipeline.py tests/test_capability_segregation.py
+python -m ruff check abi/__init__.py abi/__main__.py \
+  abi/capability_pipeline.py abi/capability_segregation.py \
+  abi/layercake_acquisition.py tests/test_public_release.py
+python -m build
+```
 
-### Lower priority / out of scope
-- Production serving infrastructure
-- New architectures not yet supported by the ABI package
-- UI / demo polish
+Include the exact command, seed, hardware, source revision, raw measurements,
+and claim boundary for experimental changes. Never edit a locked result in
+place; publish a superseding artifact and retain the negative or stale result
+on a research-history branch.
 
----
+Large generated results do not belong on the default branch. Add compact,
+content-addressed evidence and document how to retrieve the full artifact.
 
-## What We Don't Want
+## Conduct
 
-- Retroactive changes to the NIB protocol or thresholds (the protocol is immutable for existing claims)
-- Result files modified post-hoc
-- Scripts that overwrite the locked result JSONs (`cross_arch_t5_nib_v53_results.json`, `cross_family_nib_results.json`, `cross_arch_enc_dec_nib_results.json`, `cross_arch_t5_succession_results.json`)
-- PRs that expand the scope of existing claims without the full NIB validation pipeline
-
----
-
-## How to Contribute
-
-### For reproduction reports
-1. Run `python verify_result.py` or one of the core experiment scripts
-2. Open an issue with label `reproduction-report`
-3. Include: hardware, OS, Python version, exact command, full output
-
-Use the reproduction report issue template — it will prompt you for the right fields.
-
-### For bug reports
-Use the bug report issue template. Include a minimal reproduction case.
-
-### For new results (new model, new domain)
-Use the new model result issue template. Include:
-- Which claim you are extending
-- Your NIB scores (all four criteria)
-- Hardware used
-- Exact command to reproduce
-
-### For code changes
-1. Fork the repository
-2. Create a branch: `git checkout -b my-feature`
-3. Make your changes
-4. Run `python verify_result.py` to confirm the locked result is unaffected
-5. Run `ruff check .` (install with `pip install ruff`) — the CI will enforce this
-6. Open a PR with a clear description of what you changed and why
-
----
-
-## Code Style
-
-- Python 3.10+
-- `ruff` for linting (`ruff check .`)
-- Line length: 100 characters
-- No type annotations required for experimental scripts
-- The `abi/` package code should remain clean and readable
-
----
-
-## PR Requirements
-
-Every PR must:
-- Pass the CI lint check (`ruff check .`)
-- Pass `python verify_result.py` (the locked Path 2C result must not change)
-- Have a clear description of what changed and why
-- Not modify locked result files
-
----
-
-## Governance
-
-This is a single-author research preview. Significant architectural changes require discussion in an issue before a PR. Open an issue first if you plan a major change.
-
----
-
-## Code of Conduct
-
-Be direct, honest, and kind. Disagreement about scientific claims is welcome; personal attacks are not.
-
----
-
-*Questions? Open an issue. Label it `question`.*
+Be direct, rigorous, and kind. Challenge claims with evidence. Do not expose
+private data, model credentials, restricted weights, or third-party material
+without redistribution rights.

@@ -1,10 +1,10 @@
-# Core runtime
+# Teacher extraction and research runtime
 torch>=2.1
 numpy
 
-# Transformers backbone (T5-large, GPT-2, Qwen2.5)
+# Open-weight transformer adapters
 transformers>=4.38
-sentencepiece>=0.1.99  # T5 tokenizer backend
+sentencepiece>=0.1.99
 
 # Training/eval convenience
 tqdm

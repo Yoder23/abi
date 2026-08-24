@@ -1,9 +1,0 @@
-{
-  "format": "abi-capability-compiler-phase3-repeat-prefix-analysis-failure/1",
-  "protocol_sha256": "b3c3112c98bef5653477dd6229cc3988f0b06ff197118b09a5a6b8a4459776d4",
-  "status": "FAILED_BEFORE_DECISION_ARTIFACT",
-  "cause": "The shared analysis tool hard-coded the V17 evidence subdirectory name instead of deriving V17 versus V18 from the protocol identifier.",
-  "scientific_fields_changed": false,
-  "authorized_repair": "Select development_v18 and evaluation_v18 only when the protocol identifier contains recent-repeat; retain all identity, aggregate, bootstrap, and gate logic.",
-  "promotion_eligible": false
-}

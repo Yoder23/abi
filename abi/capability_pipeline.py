@@ -42,7 +42,6 @@ from .layercake_acquisition import (
     validate_labeled_extraction_record,
 )
 
-
 SOURCE_MANIFEST_SCHEMA = "abi-source-model-manifest/1"
 PROBE_RESULT_SCHEMA = "abi-capability-probe-result/1"
 INVENTORY_SCHEMA = "abi-probe-bounded-capability-inventory/1"

@@ -1,13 +1,11 @@
-"""
-ABI - Autonomous Basis Injection.
-
-Published result: T5-large, Path 2C - NIB PASS, top-5 agreement = 0.8725.
-"""
+"""ABI's supported capability-acquisition and segregation API."""
 
 from __future__ import annotations
 
 from importlib import import_module
 from typing import Any
+
+__version__ = "0.3.0a1"
 
 
 _LAZY_EXPORTS = {
@@ -69,6 +67,7 @@ _LAZY_EXPORTS = {
 }
 
 __all__ = [
+    "__version__",
     "build_abi_artifact",
     "build_compatibility_certificate",
     "build_cost_ledger",
