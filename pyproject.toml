@@ -27,6 +27,11 @@ classifiers = [
 dependencies = []
 
 [project.optional-dependencies]
+host = [
+  "torch>=2.1",
+  "psutil>=5.9",
+  "safetensors>=0.4",
+]
 extraction = [
   "torch>=2.1",
   "transformers>=4.38",

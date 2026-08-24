@@ -62,6 +62,13 @@ python -m pip install -e ".[extraction]"
 The manifest, labeling, packaging, and verification APIs require no model
 download and keep the default installation lightweight.
 
+The optional LayerCake host/certification modules use a separately declared
+runtime extra:
+
+```bash
+python -m pip install -e ".[host]"
+```
+
 ## Start with the supported API
 
 ```python
