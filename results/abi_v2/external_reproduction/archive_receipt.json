@@ -1,0 +1,30 @@
+{
+  "format": "abi-v2-clean-room-archive-receipt/1",
+  "status": "READY_FOR_EXTERNAL_OPERATOR",
+  "abi_commit": "151cf8c59b9118e71d4b9d6a6c1ca5c85f9f459c",
+  "archive": "abi-v2-clean-room-151cf8c59b91.zip",
+  "archive_bytes": 298194016,
+  "archive_sha256": "8bd87de5b64aa076249351b5ebf4fc3143e52802c685e63cbedb9a2d337637b3",
+  "manifest_location": "abi-v2-clean-room/manifest.json",
+  "manifest_sha256": "0be0546bdbe5a3e6522f230b7b31a11e07dfa004828a9ba5f58a25d1ac7a1d82",
+  "members": 785,
+  "local_archive_audit": {
+    "status": "PASS_EXACT_ARCHIVE_MEMBERS",
+    "members_verified": 785,
+    "identity_failures": 0,
+    "missing_members": 0,
+    "unexpected_members": 0
+  },
+  "model_weights_bundled": false,
+  "development_caches_bundled": false,
+  "public_evaluation_and_reference_outputs_bundled": true,
+  "hidden_expected_outputs_bundled": false,
+  "blind_holdout_claimed": false,
+  "independent_execution_completed": false,
+  "remaining_external_gates": [
+    "Three real independent raters must complete the frozen 21,000-judgment protocol.",
+    "An independent operator must execute this archive on different hardware.",
+    "The registered minimum-information frontier must be certified."
+  ],
+  "claim_boundary": "Archive construction and local member verification do not satisfy independent different-hardware reproduction, human ratings, minimum-information certification, or a signed immutable release gate."
+}

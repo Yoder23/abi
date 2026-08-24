@@ -74,7 +74,7 @@ run_logs/
 
 # Compact ABI V2 code-linked evidence is part of the public technical record.
 # The external reproduction zip itself remains a local handoff payload; its
-# member manifest and receipt are tracked.
+# member manifest is embedded and its content-addressed receipt is tracked.
 !results/abi_v2/
 !results/abi_v2/**
 results/abi_v2/external_reproduction/*.zip
