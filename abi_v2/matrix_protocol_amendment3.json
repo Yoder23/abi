@@ -1,0 +1,35 @@
+{
+  "format": "abi-v2-three-host-four-capability-matrix-protocol-amendment/3",
+  "status": "PREREGISTERED_PRE_OBSERVATION_UTF8_TYPE_AMENDMENT",
+  "status_date": "2026-08-24",
+  "base_protocol": "abi_v2/matrix_protocol.json",
+  "base_protocol_sha256": "2042007a1de9df33575957c2d722f31781023bec427481a963a9d588304dd58e",
+  "supersedes_amendment": "abi_v2/matrix_protocol_amendment2.json",
+  "supersedes_amendment_sha256": "077b4838e2b2bd773bedfdf5fd4f2b6df32fb044af2f8c80ce44d9161327b472",
+  "preserved_complete_failed_result": "results/abi_v2/capability_matrix/layercake/result.json",
+  "preserved_complete_failed_result_sha256": "4696b351cc79a16acd8f513734aabfd6c5459f5ae3e05f7b556b817e479153d1",
+  "repair_preregistration": "results/abi_v2/capability_matrix/bounded_causal_control_repair_preregistration.json",
+  "repair_preregistration_sha256": "dc02d2ea5bd9a9aca192e3713a8cbd018bda38a45c95c18fc26ffb794716f26c",
+  "implementation": {
+    "path": "abi_v2/capability_matrix.py",
+    "sha256": "a07c8ef0342d8067979bf018e0c5fb286583064d5b40d9a3e8d9d556492eeab6"
+  },
+  "amendment_scope": "CUMULATIVE_UTF8_CONTROL_AND_NONIDENTICAL_EQUAL_SIZE_SHUFFLE_ONLY",
+  "receiver_observations_before_amendment": 0,
+  "receiver_observations_field_semantics": "The base source-success locks remain pre-receiver. A complete failed LayerCake result is preserved and bound; it is not used to change any quality prompt, output expectation, or threshold.",
+  "receiver_quality_aggregate_seen_before_amendment": true,
+  "quality_or_isolation_change_authorized": false,
+  "bounded_architecture_repair_consumed": false,
+  "bounded_instrumentation_repair_consumed": true,
+  "training_authorized": false,
+  "calibration_authorized": false,
+  "artifact_mutation_authorized": false,
+  "adapter_mutation_authorized": false,
+  "bindings": {
+    "abi_v2/matrix_protocol_amendment2.json": "077b4838e2b2bd773bedfdf5fd4f2b6df32fb044af2f8c80ce44d9161327b472",
+    "results/abi_v2/capability_matrix/layercake/result.json": "4696b351cc79a16acd8f513734aabfd6c5459f5ae3e05f7b556b817e479153d1",
+    "results/abi_v2/capability_matrix/layercake/observations.jsonl": "f0212a2f1e7723fb07e68819a2e6a6c43c1077149030c4497f7e807d18d186fd",
+    "results/abi_v2/capability_matrix/bounded_causal_control_repair_preregistration.json": "dc02d2ea5bd9a9aca192e3713a8cbd018bda38a45c95c18fc26ffb794716f26c"
+  },
+  "decision_rule": "Inherit every base protocol prompt, source-success lock, capability hash, adapter hash, checkpoint, semantic gate, and claim boundary. The corrected shuffle must be equal-size, hash-distinct from source, and rejected before execution for every package. LayerCake is fully rerun; Qwen and Pythia receive their first complete run."
+}

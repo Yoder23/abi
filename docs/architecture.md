@@ -32,6 +32,38 @@ ABI is a compiler and evidence system, not an inference runtime.
 - Exact byte identity, bounded functional retention, and general semantic
   equivalence are separate claims.
 
+## Canonical Host ABI V2
+
+ABI V2 adds an experimental representation-neutral extension/runtime boundary
+for already sealed capability packages:
+
+```text
+frozen host checkpoint/tokenizer
+            |
+            v
+capability-blind host certification -> frozen generic adapter
+                                            |
+immutable package -> canonical context/runtime/output intent
+                                            |
+                                            v
+                              exact host-native token/UTF-8 realization
+```
+
+The canonical state uses fixed typed semantic channels plus exact UTF-8 anchors
+for names, numbers, identifiers, literals, Unicode, and formatting. Host-private
+hidden width, residual basis, tokenizer vocabulary, layer count, position
+encoding, and normalization remain outside the capability contract.
+
+Each host adapter is frozen before packages are revealed and must then accept
+all compatible packages without fitting, calibration, or mutation. The
+reference V2 adapters are zero-parameter native codecs. The generic runtime
+owns authenticated execution of the capability package; it does not inject the
+package tensors into a foreign model's private residual coordinates.
+
+This distinction is the exact claim boundary. The local V2 evidence proves an
+extension/runtime ABI across three named hosts. It does not prove that Qwen or
+Pythia hidden states learned, generated, or modified the capability semantics.
+
 ## English/domain separation
 
 English-core records must use a declared linguistic capability and a

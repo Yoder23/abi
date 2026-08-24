@@ -1,0 +1,49 @@
+{
+  "format": "abi-v2-bounded-causal-control-repair-preregistration/1",
+  "status": "PREREGISTERED_AFTER_COMPLETE_LAYERCAKE_FAILURE_AND_BEFORE_REPAIR",
+  "status_date": "2026-08-24",
+  "failed_host": "layercake",
+  "failed_result": "results/abi_v2/capability_matrix/layercake/result.json",
+  "failed_result_sha256": "4696b351cc79a16acd8f513734aabfd6c5459f5ae3e05f7b556b817e479153d1",
+  "failed_observations_sha256": "f0212a2f1e7723fb07e68819a2e6a6c43c1077149030c4497f7e807d18d186fd",
+  "failed_protocol_sha256": "077b4838e2b2bd773bedfdf5fd4f2b6df32fb044af2f8c80ce44d9161327b472",
+  "measured_gate_vector": {
+    "passing_gates": 15,
+    "failing_gates": ["random_and_shuffled_capabilities_fail_closed"],
+    "source_success_retention": {
+      "english": 1.0,
+      "python": 1.0,
+      "chemistry": 1.0,
+      "civics": 1.0
+    },
+    "source_output_byte_identity": {
+      "english": "1381/1381",
+      "python": "100/100",
+      "chemistry": "100/100",
+      "civics": "100/100"
+    },
+    "english_specialist_leakage_successes": 0,
+    "wrong_capability_successes": 0
+  },
+  "failure_attribution": "The shuffle generator reversed only the order of 1 MiB blocks. Each specialist archive is smaller than one block, so its shuffled copy was byte-identical and legitimately installed. This is a hostile-control construction defect, not a capability, adapter, host, isolation, semantic, or mathematical failure.",
+  "repair_scope": "REVERSE_BYTES_WITHIN_EACH_REVERSED_BLOCK_SO_EVERY_NONTRIVIAL_ARCHIVE_CHANGES",
+  "allowed_code_change": "In _mutate_shuffle_equal_size, reverse bytes inside each emitted block in addition to reversing block order.",
+  "forbidden_changes": [
+    "capability artifacts",
+    "host adapters",
+    "canonical ABI specification",
+    "source-success IDs",
+    "prompts",
+    "expected outputs",
+    "quality thresholds",
+    "isolation thresholds",
+    "wrong-capability thresholds",
+    "training or calibration"
+  ],
+  "layercake_rescreen_scope": "Only equal-size random and shuffled corruption rejection for the four exact packages; inherit all other immutable observations and gates from the complete failed result.",
+  "qwen_and_pythia_scope": "Run the complete preregistered matrix with the corrected hostile control because no complete receiver result exists for either host.",
+  "bounded_architecture_repairs_consumed": 0,
+  "bounded_architecture_repairs_remaining": 1,
+  "bounded_instrumentation_repairs_consumed_after_this": 1,
+  "decision_rule": "The repair passes only if every equal-size random and shuffled copy has a hash different from its source and every package is rejected before execution. Any other LayerCake gate remains exactly as recorded in the failed result."
+}

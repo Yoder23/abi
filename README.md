@@ -10,10 +10,11 @@ ABI does **not** serve models. [LayerCake](https://github.com/Yoder23/layercake)
 is the separate execution host that installs, composes, routes, and runs
 capability packages.
 
-> Status: alpha research software. The bounded local machine campaign has
-> strong positive results. The final-mile native-receiver screen currently
-> fails at 1/3 receiver families; independent Phase 8 reproduction and Phase 2
-> human preferences also remain open. See
+> Status: alpha research software. ABI V2 has a local technical pass across
+> LayerCake v25, Qwen2.5-0.5B, and Pythia-160M using one capability-blind,
+> zero-parameter frozen adapter per host and the same four immutable packages.
+> External reproduction, real human ratings, and minimum-information
+> certification remain open. See
 > [Final-mile status](docs/final-mile-status.md).
 
 ## What is implemented
@@ -31,9 +32,14 @@ capability packages.
   unqualified records, and undeclared teacher material.
 - A bounded ABI-to-LayerCake reference integration in which the teacher is
   absent at inference and selected packages execute independently.
+- A representation-neutral canonical host ABI V2 with exact UTF-8 anchors,
+  fixed semantic channels, capability-blind host certification, immutable
+  adapter/package checks, and a three-host/four-capability conformance matrix.
 
 An ABI acquisition artifact is not itself a deployable LayerCake cake. ABI
-prepares and certifies acquisition material; LayerCake owns runtime packages.
+prepares and certifies acquisition material; LayerCake owns production runtime
+packages. The ABI V2 runtime in this repository is a research conformance
+reference, not a replacement for LayerCake serving.
 
 ## Install
 
@@ -100,6 +106,12 @@ abi human-rate --rater R3
 External operators use `abi-reproduce verify|cpu|cuda|quality|portability|report`.
 The CPU/CUDA commands fail closed on the development hardware.
 
+For the ABI V2 three-host/four-capability result, use the dedicated
+[different-hardware clean-room procedure](results/abi_v2/external_reproduction/README.md).
+The tracked builder creates one content-addressed archive with public evaluation
+material and no model weights or development caches; archive construction alone
+does not count as independent reproduction.
+
 ## Architecture
 
 ```text
@@ -117,6 +129,9 @@ source manifest -> bounded probes -> labeled records -> quarantine
                               canonical external interface
                                              v
                                       LayerCake host
+
+immutable capability package -> canonical ABI V2 runtime -> frozen host adapter
+                                                        -> native UTF-8/token output
 ```
 
 The label boundary is deliberately strict: English-core records may encode
@@ -144,15 +159,37 @@ The current evidence supports bounded, exact claims—not universal ones:
 - Phase 8: local clean-export rehearsal passes; independent operator and
   different CPU/CUDA hardware are still required.
 
-The later final-mile campaign adds a stricter cross-host gate. The identical
-English archive is currently native to LayerCake v25 only; Qwen2 and GPT-NeoX
-do not consume its tensor contract. A wrapper that bypasses those receivers
-does not count. Accordingly, cross-host portability and the full ABI moonshot
-are not proven.
+The original final-mile V1 campaign remains important negative evidence: the
+LayerCake-native tensor contract was executable by only 1/3 receiver families.
+ABI V2 changes the abstraction rather than forcing those tensors into foreign
+residual coordinates. Each host is certified once against a canonical
+extension/runtime boundary, then the unchanged English, Python, chemistry, and
+civics packages are installed without fitting or calibration.
+
+| ABI V2 local technical gate | Result |
+| --- | --- |
+| Capability-blind host certification | 3/3 pass |
+| Frozen host/capability matrix | 12/12 pass |
+| Frozen source-success retention | 5,043/5,043 |
+| Source-output byte identity | 5,043/5,043 |
+| Cross-host specialist action identity | 900/900 |
+| English-only specialist leakage | 0/900 |
+| Wrong-capability successes | 0/1,200 |
+| Generic adapter overhead | all three within 10% on 20 observations |
+| Real human ratings | 0/21,000; open |
+| Independent different-hardware run | open |
+| Stable minimum-information frontier | open |
+
+The precise claim is that ABI V2 demonstrates capability-independent package
+installation across the three named host environments. Qwen and Pythia use
+their frozen checkpoint/tokenizer for host conformance and native realization;
+their hidden states do not generate or alter the capability semantics. This is
+an extension/runtime ABI result, not tensor transplantation into base weights.
 
 ABI does not currently claim a global information minimum, universal
 superiority over LoRA or distillation, exhaustive teacher-knowledge discovery,
-zero semantic loss for arbitrary models, or production release certification.
+zero semantic loss for arbitrary models, universal LLM compatibility, human
+quality completion, or independent production release certification.
 
 ## Repository map
 
@@ -166,6 +203,14 @@ zero semantic loss for arbitrary models, or production release certification.
   payloads and private signing custody remain intentionally untracked.
 - `experiments/` — reusable experiment drivers, not the active public API.
 - `artifacts/` — small checked-in schemas and reference artifacts.
+
+- `abi_v2/` — canonical ABI V2 specification, conformance harness, matrix,
+  and inference-free release verifier.
+- `results/abi_v2/` — V1 freeze, three host certifications, raw 3x4 matrix
+  evidence, summaries, hostile audit, and technical release certificate.
+- `results/abi_v2/external_reproduction/` — independent-operator commands,
+  raw evidence schema, and archive receipt. The generated archive is a release
+  payload and is intentionally not committed to Git.
 
 ## Development
 

@@ -69,8 +69,15 @@ tmp_guard_test/
 # Large local research ledgers are preserved on disk. Release evidence and
 # deployable reference artifacts are force-added explicitly.
 *_results.json
-results/
+results/*
 run_logs/
+
+# Compact ABI V2 code-linked evidence is part of the public technical record.
+# The external reproduction zip itself remains a local handoff payload; its
+# member manifest and receipt are tracked.
+!results/abi_v2/
+!results/abi_v2/**
+results/abi_v2/external_reproduction/*.zip
 
 # Final-mile release payloads and custody material stay out of Git. Compact
 # manifests, public signatures, receipts, and reports are force-added.

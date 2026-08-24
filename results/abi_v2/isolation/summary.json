@@ -1,0 +1,46 @@
+{
+  "english_only_specialist_successes": {
+    "layercake": {
+      "chemistry": 0,
+      "civics": 0,
+      "python": 0
+    },
+    "pythia": {
+      "chemistry": 0,
+      "civics": 0,
+      "python": 0
+    },
+    "qwen2": {
+      "chemistry": 0,
+      "civics": 0,
+      "python": 0
+    }
+  },
+  "english_specialist_successes": 0,
+  "english_specialist_tasks": 900,
+  "evidence_sha256": "902cec23066f36cadbaeb15f1e743443f119767c52176f524b5a7bae3d711aa3",
+  "format": "abi-v2-capability-isolation-summary/1",
+  "status": "PASS_CAPABILITY_DECOMPOSITION",
+  "wrong_capability_successes": {
+    "layercake": {
+      "chemistry": 0,
+      "civics": 0,
+      "english": 0,
+      "python": 0
+    },
+    "pythia": {
+      "chemistry": 0,
+      "civics": 0,
+      "english": 0,
+      "python": 0
+    },
+    "qwen2": {
+      "chemistry": 0,
+      "civics": 0,
+      "english": 0,
+      "python": 0
+    }
+  },
+  "wrong_capability_successes_total": 0,
+  "wrong_capability_tasks": 1200
+}

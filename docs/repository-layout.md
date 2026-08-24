@@ -11,6 +11,9 @@ The default branch is intentionally curated for readers and contributors.
 | `evidence/current/` | Controlling compact state and bounded certificates |
 | `experiments/` | Reusable experiment drivers outside the stable API |
 | `artifacts/` | Small schemas and reference artifacts |
+| `abi_v2/` | Canonical host specification, capability-blind certification, 3x4 matrix harness, and inference-free verifier |
+| `results/abi_v2/` | Frozen V1 lineage, V2 adapters, raw matrix evidence, summaries, hostile audit, and technical certificate |
+| `results/abi_v2/external_reproduction/` | Clean-room commands, raw evidence schema, and tracked archive receipt; generated zip stays out of Git |
 
 ## Research history
 

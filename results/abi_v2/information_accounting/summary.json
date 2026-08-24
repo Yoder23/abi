@@ -1,0 +1,186 @@
+{
+  "capability_acquisition_cost": "inherited from frozen V1 lineage; no acquisition, training, pruning, or teacher query occurred in ABI V2",
+  "capability_installation": {
+    "layercake": {
+      "chemistry": {
+        "adapter_sha256": "d1f3a9d67581032473055711773f784e3b0a028fb68fab58c3a9a63b94317f04",
+        "archive_bytes": 510981,
+        "archive_sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+        "seconds": 0.026521100022364408,
+        "status": "INSTALLED",
+        "training_steps": 0
+      },
+      "civics": {
+        "adapter_sha256": "d1f3a9d67581032473055711773f784e3b0a028fb68fab58c3a9a63b94317f04",
+        "archive_bytes": 495919,
+        "archive_sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+        "seconds": 0.03162959998007864,
+        "status": "INSTALLED",
+        "training_steps": 0
+      },
+      "english": {
+        "adapter_sha256": "d1f3a9d67581032473055711773f784e3b0a028fb68fab58c3a9a63b94317f04",
+        "archive_bytes": 253216208,
+        "archive_sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+        "seconds": 2.1629337000194937,
+        "training_steps": 0
+      },
+      "python": {
+        "adapter_sha256": "d1f3a9d67581032473055711773f784e3b0a028fb68fab58c3a9a63b94317f04",
+        "archive_bytes": 448404,
+        "archive_sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+        "seconds": 0.02693990000989288,
+        "status": "INSTALLED",
+        "training_steps": 0
+      }
+    },
+    "pythia": {
+      "chemistry": {
+        "adapter_sha256": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa",
+        "archive_bytes": 510981,
+        "archive_sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+        "seconds": 0.035468799993395805,
+        "status": "INSTALLED",
+        "training_steps": 0
+      },
+      "civics": {
+        "adapter_sha256": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa",
+        "archive_bytes": 495919,
+        "archive_sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+        "seconds": 0.03284990001702681,
+        "status": "INSTALLED",
+        "training_steps": 0
+      },
+      "english": {
+        "adapter_sha256": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa",
+        "archive_bytes": 253216208,
+        "archive_sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+        "seconds": 1.8053097999945749,
+        "training_steps": 0
+      },
+      "python": {
+        "adapter_sha256": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa",
+        "archive_bytes": 448404,
+        "archive_sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+        "seconds": 0.03081460000248626,
+        "status": "INSTALLED",
+        "training_steps": 0
+      }
+    },
+    "qwen2": {
+      "chemistry": {
+        "adapter_sha256": "b13a75b82acf6df412c2569edaf36654a105b8c565164236fbeb5813b630291f",
+        "archive_bytes": 510981,
+        "archive_sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+        "seconds": 0.03898549999576062,
+        "status": "INSTALLED",
+        "training_steps": 0
+      },
+      "civics": {
+        "adapter_sha256": "b13a75b82acf6df412c2569edaf36654a105b8c565164236fbeb5813b630291f",
+        "archive_bytes": 495919,
+        "archive_sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+        "seconds": 0.025640100007876754,
+        "status": "INSTALLED",
+        "training_steps": 0
+      },
+      "english": {
+        "adapter_sha256": "b13a75b82acf6df412c2569edaf36654a105b8c565164236fbeb5813b630291f",
+        "archive_bytes": 253216208,
+        "archive_sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+        "seconds": 1.8591153000015765,
+        "training_steps": 0
+      },
+      "python": {
+        "adapter_sha256": "b13a75b82acf6df412c2569edaf36654a105b8c565164236fbeb5813b630291f",
+        "archive_bytes": 448404,
+        "archive_sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+        "seconds": 0.027201299992157146,
+        "status": "INSTALLED",
+        "training_steps": 0
+      }
+    }
+  },
+  "capability_packages": {
+    "chemistry": {
+      "path": "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.cake",
+      "runtime_class": "lc-direct-neural-decoder/1",
+      "sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb"
+    },
+    "civics": {
+      "path": "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.cake",
+      "runtime_class": "lc-direct-neural-decoder/1",
+      "sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604"
+    },
+    "english": {
+      "path": "results/abi_capability_compiler_phase7_integrated/materialized_v1052/phase7-final-english-core.cake",
+      "runtime_class": "lc-direct-neural-core/25",
+      "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d"
+    },
+    "python": {
+      "path": "results/abi_moonshot/packages/abi-python-token-plan-seed9824.cake",
+      "runtime_class": "lc-direct-neural-decoder/1",
+      "sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d"
+    }
+  },
+  "evidence_sha256": "a4239172b7e7b99ba518a6ba2a1726a7b74867b1a0232daa429d49ef7b2e6147",
+  "format": "abi-v2-information-accounting-summary/1",
+  "host_certification": {
+    "layercake": {
+      "adapter_bytes": 1556,
+      "amortized_wall_seconds": {
+        "10_capabilities_simulated_cost_only": 0.0039792499999748545,
+        "1_capability": 0.03979249999974854,
+        "2_capabilities": 0.01989624999987427,
+        "4_capabilities": 0.009948124999937136
+      },
+      "certification_wall_seconds": 0.03979249999974854,
+      "cpu_hours": 1.1053472222152373e-05,
+      "examples": 128,
+      "gpu_hours": 0.0,
+      "model_visible_units": 5953,
+      "peak_ram_bytes_lower_bound": 22401024,
+      "peak_vram_bytes": 0,
+      "raw_utf8_bytes": 5953,
+      "trainable_parameters": 0
+    },
+    "pythia": {
+      "adapter_bytes": 1646,
+      "amortized_wall_seconds": {
+        "10_capabilities_simulated_cost_only": 0.6184826399985468,
+        "1_capability": 6.184826399985468,
+        "2_capabilities": 3.092413199992734,
+        "4_capabilities": 1.546206599996367
+      },
+      "certification_wall_seconds": 6.184826399985468,
+      "cpu_hours": 0.0017180073333292966,
+      "examples": 128,
+      "gpu_hours": 0.0017180073333292966,
+      "model_visible_units": 2102,
+      "peak_ram_bytes_lower_bound": 906121216,
+      "peak_vram_bytes": 344433152,
+      "raw_utf8_bytes": 5953,
+      "trainable_parameters": 0
+    },
+    "qwen2": {
+      "adapter_bytes": 1637,
+      "amortized_wall_seconds": {
+        "10_capabilities_simulated_cost_only": 0.9162616099987645,
+        "1_capability": 9.162616099987645,
+        "2_capabilities": 4.581308049993822,
+        "4_capabilities": 2.290654024996911
+      },
+      "certification_wall_seconds": 9.162616099987645,
+      "cpu_hours": 0.0025451711388854567,
+      "examples": 128,
+      "gpu_hours": 0.0025451711388854567,
+      "model_visible_units": 2769,
+      "peak_ram_bytes_lower_bound": 2006835200,
+      "peak_vram_bytes": 1018820096,
+      "raw_utf8_bytes": 5953,
+      "trainable_parameters": 0
+    }
+  },
+  "status": "PASS_EXPLICIT_HOST_CERTIFICATION_AND_INSTALLATION_ACCOUNTING",
+  "ten_capability_note": "Cost arithmetic only; no semantic claim is made for six nonexistent packages."
+}

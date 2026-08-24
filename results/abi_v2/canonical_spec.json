@@ -1,0 +1,147 @@
+{
+  "format": "abi-v2-canonical-host-specification/1",
+  "abi_version": "abi-canonical-host/2",
+  "status": "PREREGISTERED_BEFORE_HOST_CERTIFICATION_AND_CAPABILITY_REVEAL",
+  "status_date": "2026-08-24",
+  "reference_implementation": {
+    "path": "abi_v2/canonical.py",
+    "sha256": "c394133dc70a8cabfbb7b390e3b74178707d8cb3c89ead91a7b106eca445f52b"
+  },
+  "dimensions": {
+    "normalized_semantic_vector": 64,
+    "host_hidden_width": "private and unconstrained",
+    "capability_hidden_width": "private and declared by the capability runtime class",
+    "exact_anchor_count": "variable",
+    "conversation_turn_count": "variable"
+  },
+  "channels": {
+    "canonical_context_state": {
+      "fields": [
+        "instruction_type",
+        "relevant_context_utf8",
+        "entity_anchors",
+        "constraint_flags",
+        "conversation_utf8",
+        "uncertainty",
+        "task_intent",
+        "relation",
+        "topic",
+        "sequence_position"
+      ],
+      "private_host_hidden_states_allowed": false
+    },
+    "canonical_capability_state": {
+      "fields": [
+        "capability_id",
+        "runtime_class",
+        "artifact_sha256",
+        "opaque_state_sha256",
+        "state_lifecycle"
+      ],
+      "opaque_state_owner": "frozen capability plus generic runtime"
+    },
+    "canonical_output_intent": {
+      "fields": [
+        "mode",
+        "capability_id",
+        "confidence",
+        "applicability",
+        "abstain",
+        "residual_strength",
+        "authoritative_utf8"
+      ]
+    },
+    "exact_lexical_byte_anchors": {
+      "encoding": "lowercase hexadecimal of strict UTF-8 bytes",
+      "roles": ["entity", "number", "identifier", "literal", "format"],
+      "hash": "SHA-256 over exact anchor bytes"
+    },
+    "confidence_and_gating": {
+      "precision": "IEEE-754 float32 semantics",
+      "range": [0.0, 1.0],
+      "abstention": "explicit boolean",
+      "residual_strength": "float32; V1 final-output capabilities require 1.0"
+    }
+  },
+  "semantic_codebook": {
+    "layout": "fixed typed multi-hot codebook in dimensions 0 through 63",
+    "normalization": "L2 unit norm over active dimensions",
+    "precision": "reference Python float serialized as JSON; consuming tensor is float32",
+    "quantization": "none in ABI V2 initial experiment",
+    "active_index_groups": {
+      "instruction_type": [0, 15],
+      "constraints": [16, 31],
+      "relation": [32, 39],
+      "topic": [40, 47],
+      "uncertainty": [48, 51],
+      "output_intent": [52, 59],
+      "presence_flags": [60, 63]
+    }
+  },
+  "position_semantics": {
+    "sequence_position": "zero-based monotone signed-64-bit logical event index",
+    "anchors": "ordered by zero-based ordinal and bound to exact UTF-8 bytes",
+    "host_positional_encoding": "private and never visible to a capability"
+  },
+  "state_lifecycle": [
+    "uncertified",
+    "host_certified",
+    "adapter_frozen",
+    "capability_verified",
+    "capability_loaded",
+    "capability_active",
+    "capability_removed"
+  ],
+  "ownership": {
+    "host_base": "frozen host checkpoint and private cache",
+    "generic_host_adapter": "host tokenizer codec, conformance mapping, lifecycle binding, and output fusion",
+    "frozen_capability": "all capability parameters, private tokenizer tables, private state, and capability behavior",
+    "generic_runtime": "authenticated runtime-class implementation",
+    "forbidden": "any host-and-capability-specific parameter or mutable statistic"
+  },
+  "output_fusion": {
+    "authoritative_utf8": "encode exact canonical bytes with the frozen native host tokenizer; reject unless native decode reproduces identical bytes",
+    "host_native_forward_conformance": "the frozen checkpoint must produce finite native generation state on the canonical prompt before output fusion",
+    "host_semantic_override_claimed": false,
+    "v1_compatibility_boundary": "V1 packages emit final UTF-8 responses; ABI V2 does not claim their tensors were transplanted into host-base weights"
+  },
+  "determinism_and_tolerances": {
+    "canonical_json_and_hashes": "bit exact",
+    "UTF-8_and_anchor_roundtrip": "bit exact",
+    "capability_output_same_runtime_same_device": "bit exact output bytes and action IDs",
+    "semantic_vector_active_indices": "exact",
+    "semantic_vector_l2_norm_absolute_tolerance": 1e-7,
+    "host_native_forward_finite_fraction": 1.0,
+    "cross_hardware_capability_numeric_tolerance": "not authorized in local experiment; must be preregistered by external operator before execution"
+  },
+  "compatible_capability_classes": {
+    "lc-direct-neural-core/25": {
+      "external_input": "strict UTF-8",
+      "external_output": "authoritative strict UTF-8",
+      "runtime_owner": "generic ABI runtime",
+      "artifact_mutation": false
+    },
+    "lc-direct-neural-decoder/1": {
+      "external_input": "strict UTF-8",
+      "external_output": "authoritative strict UTF-8",
+      "runtime_owner": "generic ABI runtime",
+      "artifact_mutation": false
+    }
+  },
+  "host_certification": {
+    "capability_blind": true,
+    "capability_package_path_inputs_allowed": false,
+    "capability_file_open_during_certification_allowed": false,
+    "trainable_parameters_maximum": 0,
+    "optimizer_steps_maximum": 0,
+    "post_freeze_mutation_allowed": false,
+    "same_adapter_required_for_all_capabilities": true
+  },
+  "performance_gate": {
+    "metric": "median host-plus-idle-adapter latency divided by median host-alone latency on paired conformance prompts",
+    "maximum_overhead_fraction": 0.1,
+    "minimum_repeated_observations": 20,
+    "capability_execution_overhead_reported_separately": true
+  },
+  "claim_boundary": "This specification can certify a host environment for immutable capability packages. It does not claim capability transplantation into host-base weights, arbitrary-model compatibility, human quality, external reproduction, or a global information minimum."
+}

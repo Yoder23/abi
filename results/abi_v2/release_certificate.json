@@ -1,0 +1,62 @@
+{
+  "certified_claim": "ABI V2 demonstrates capability-independent installation across LayerCake v25, Qwen2.5-0.5B, and Pythia-160M after one-time generic capability-blind host certification.",
+  "critical_boundary": "The demonstrated product is a representation-neutral extension/runtime ABI. Qwen and Pythia provide frozen host conformance and native tokenizer realization; their base hidden states do not generate or modify the capability semantics. This is not a claim of tensor transplantation into their base weights.",
+  "evidence_sha256": "305e4fe7023e8fbf1233e6c369cbc977956caf95cdb7e193864777b6e6bc088b",
+  "external_gates": {
+    "independent_different_hardware_reproduction": false,
+    "stable_minimum_information_frontier_certified": false,
+    "three_real_independent_human_raters": false
+  },
+  "format": "abi-v2-release-certificate/1",
+  "global_information_minimum_claimed": false,
+  "human_quality_claimed": false,
+  "independent_reproduction_claimed": false,
+  "remaining_external_gates": [
+    "Human ratings remaining: three real independent raters must complete the frozen 21,000-judgment protocol; current completion is 0/21,000.",
+    "External hardware reproduction remaining: an independent operator must run the clean-room archive on different hardware.",
+    "Minimum-information certification remaining: resume the frozen registered search family only after host independence; no global minimum is claimed."
+  ],
+  "result_file_hashes": {
+    "layercake": "f5845a997d5b32ce233f08e8140ec5aa4a58d030d4a345bd412b5ce95b83481b",
+    "pythia": "a8b67db798b8807d629ac9f5ca4f7b7e28e90e15f17e8ccc1be049ec2304d255",
+    "qwen2": "60d6b028804c5d64e578eef6d9400be6e7b46fabcd3371230d7a042dce6514dd"
+  },
+  "status": "TECHNICALLY_PROVEN_EXTERNAL_VALIDATION_PENDING",
+  "summary_evidence": {
+    "conformance": "93ffe47ef7b834ec3b249141a7a57636a42ed6d9b2d15bd6578b12719925fc9d",
+    "hostile_audit": "f64af7d7c265d4b224d7805b9a0b76f9538c5500c2d007d2134d8efcfdce8b1f",
+    "information_accounting": "a4239172b7e7b99ba518a6ba2a1726a7b74867b1a0232daa429d49ef7b2e6147",
+    "isolation": "902cec23066f36cadbaeb15f1e743443f119767c52176f524b5a7bae3d711aa3",
+    "mathematical_portability": "7616b356b86b2f3f4a770e52b8b3838a98170f72b1414734d2a3a3a20e1e7dd0",
+    "matrix": "05d37864a94a82f41b0ef828be2c68442b33899dabb7e59766f7f85d533cfa31",
+    "performance": "dae92f96eb80f4c817cc934e88706ba23ca60ee5bf72070ad79f36c0d53e4cc4",
+    "semantic_retention": "876fb3f92998a8bbdad8ab92843dd5c690f1c84675d76453a5e5cf2083d2a2a5"
+  },
+  "technical_gates": {
+    "adapter_overhead_within_limit": true,
+    "adapters_frozen_before_reveal": true,
+    "aggregate_semantic_noninferiority": true,
+    "capability_blind_certification": true,
+    "capability_isolation": true,
+    "chemistry_package_byte_identical": true,
+    "civics_package_byte_identical": true,
+    "english_package_byte_identical": true,
+    "hostile_verifier": true,
+    "layercake_host_certification": true,
+    "mathematical_capability_behavior": true,
+    "no_capability_specific_adapter": true,
+    "no_receiver_calibration": true,
+    "no_receiver_training": true,
+    "one_adapter_per_host_all_capabilities": true,
+    "pythia_host_certification": true,
+    "python_package_byte_identical": true,
+    "qwen_host_certification": true,
+    "removal_reinstallation": true,
+    "source_success_retention_100_percent": true,
+    "teacher_absent": true
+  },
+  "technical_moonshot": "ABI TECHNICAL MOONSHOT: HOST-INDEPENDENT CORE PROVEN",
+  "universal_llm_compatibility_claimed": false,
+  "v1_negative_result_preserved": true,
+  "weight_transplantation_claimed": false
+}

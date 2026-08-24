@@ -1,0 +1,25 @@
+{
+  "format": "abi-v2-three-host-four-capability-matrix-protocol-amendment/1",
+  "status": "PREREGISTERED_PRE_OBSERVATION_UTF8_TYPE_AMENDMENT",
+  "status_date": "2026-08-24",
+  "base_protocol": "abi_v2/matrix_protocol.json",
+  "base_protocol_sha256": "2042007a1de9df33575957c2d722f31781023bec427481a963a9d588304dd58e",
+  "preserved_failure": "results/abi_v2/capability_matrix/initial_execution_failure.json",
+  "preserved_failure_sha256": "e01e2fdb4d054bf4fcbe0fedaf984862d796c76b826bbc76abe84f3f2b8dc77a",
+  "implementation": {
+    "path": "abi_v2/capability_matrix.py",
+    "sha256": "701a1de2675a443aee7903f43f22ce3c5dcc9db3ac608504aac7ac04594728a0"
+  },
+  "amendment_scope": "STRICT_UTF8_BYTES_TO_TEXT_DECODE_BEFORE_CANONICAL_OUTPUT_ONLY",
+  "receiver_observations_before_amendment": 0,
+  "receiver_quality_seen_before_amendment": false,
+  "bounded_architecture_repair_consumed": false,
+  "training_authorized": false,
+  "calibration_authorized": false,
+  "artifact_mutation_authorized": false,
+  "adapter_mutation_authorized": false,
+  "bindings": {
+    "results/abi_v2/capability_matrix/initial_execution_failure.json": "e01e2fdb4d054bf4fcbe0fedaf984862d796c76b826bbc76abe84f3f2b8dc77a"
+  },
+  "decision_rule": "Inherit every base protocol prompt, source-success lock, capability hash, adapter hash, checkpoint, threshold, causal test, and claim boundary. The amendment only decodes the LayerCake runtime's already strict-UTF-8 bytes into canonical text before output-intent construction."
+}

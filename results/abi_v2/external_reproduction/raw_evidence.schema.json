@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Yoder23/abi/results/abi_v2/external_reproduction/raw_evidence.schema.json",
+  "title": "ABI V2 matrix observation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "canonical_context_sha256",
+    "canonical_output_intent_sha256",
+    "capability",
+    "functional_pass",
+    "host",
+    "host_native_generation_state_sha256",
+    "host_native_generation_units",
+    "output",
+    "output_sha256",
+    "output_utf8_bytes",
+    "probe_id",
+    "source_output_byte_exact",
+    "tokenizer_mode",
+    "total_seconds"
+  ],
+  "properties": {
+    "canonical_context_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "canonical_output_intent_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "capability": {"enum": ["english", "python", "chemistry", "civics"]},
+    "functional_pass": {"type": "boolean"},
+    "host": {"enum": ["layercake", "qwen2", "pythia"]},
+    "host_native_generation_state_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "host_native_generation_units": {"type": "integer", "minimum": 0},
+    "output": {"type": "string"},
+    "output_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "output_utf8_bytes": {"type": "integer", "minimum": 0},
+    "probe_id": {"type": "string", "minLength": 1},
+    "source_output_byte_exact": {"type": "boolean"},
+    "tokenizer_mode": {"type": "string", "minLength": 1},
+    "total_seconds": {"type": "number", "minimum": 0}
+  }
+}

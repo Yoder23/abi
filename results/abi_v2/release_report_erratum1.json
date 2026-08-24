@@ -1,0 +1,13 @@
+{
+  "format": "abi-v2-release-report-erratum/1",
+  "status": "CORRECTED_NON_GATE_COUNTING_LANGUAGE",
+  "status_date": "2026-08-24",
+  "superseded_report": "results/abi_v2/release_report.md",
+  "superseded_report_sha256": "83d7d56a5c545eadbaa1357956e2a575e983a031535cb82f5a38fcb0e5eb116b",
+  "error": "The report said 24 random/shuffled mutations were rejected per host and 72 total. Each host ran two corruptions for each of four packages: 8 per host and 24 total.",
+  "technical_gate_affected": false,
+  "raw_evidence_affected": false,
+  "release_certificate_affected": false,
+  "corrected_report": "results/abi_v2/release_report_v2.md",
+  "corrected_report_sha256": "957aac770632ceb260b0ad065179ca3d07e9b2aa2249647d7489d3c385907644"
+}

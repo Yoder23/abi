@@ -1,0 +1,128 @@
+{
+  "evidence_sha256": "dae92f96eb80f4c817cc934e88706ba23ca60ee5bf72070ad79f36c0d53e4cc4",
+  "format": "abi-v2-performance-summary/1",
+  "hosts": {
+    "layercake": {
+      "active_capability_tensor_bytes": {
+        "chemistry": 499064,
+        "civics": 484100,
+        "english": 254495764,
+        "python": 437660
+      },
+      "adapter_overhead_fraction": 0.0396151669496323,
+      "adapter_overhead_limit": 0.1,
+      "capability_execution": {
+        "chemistry": {
+          "headline_observations": 20,
+          "median_total_seconds_headline": 0.03547370001615491,
+          "median_ttft_seconds_headline": 0.03547370001615491,
+          "observations": 100
+        },
+        "civics": {
+          "headline_observations": 20,
+          "median_total_seconds_headline": 0.07188070000847802,
+          "median_ttft_seconds_headline": 0.07188070000847802,
+          "observations": 100
+        },
+        "english": {
+          "headline_observations": 20,
+          "median_total_seconds_headline": 0.1582983999978751,
+          "median_ttft_seconds_headline": 0.1582983999978751,
+          "observations": 1381
+        },
+        "python": {
+          "headline_observations": 20,
+          "median_total_seconds_headline": 0.05494114999601152,
+          "median_ttft_seconds_headline": 0.05494114999601152,
+          "observations": 100
+        }
+      },
+      "host_base_loaded_parameters": 0,
+      "peak_cuda_allocated_bytes": 545592832,
+      "peak_process_rss_bytes_lower_bound": 1085382656,
+      "repeated_observations": 20
+    },
+    "pythia": {
+      "active_capability_tensor_bytes": {
+        "chemistry": 499064,
+        "civics": 484100,
+        "english": 254495764,
+        "python": 437660
+      },
+      "adapter_overhead_fraction": 0.03122278233788167,
+      "adapter_overhead_limit": 0.1,
+      "capability_execution": {
+        "chemistry": {
+          "headline_observations": 20,
+          "median_total_seconds_headline": 0.03583894998882897,
+          "median_ttft_seconds_headline": 0.03583894998882897,
+          "observations": 100
+        },
+        "civics": {
+          "headline_observations": 20,
+          "median_total_seconds_headline": 0.06994345001294278,
+          "median_ttft_seconds_headline": 0.06994345001294278,
+          "observations": 100
+        },
+        "english": {
+          "headline_observations": 20,
+          "median_total_seconds_headline": 0.16205410000111442,
+          "median_ttft_seconds_headline": 0.16205410000111442,
+          "observations": 1381
+        },
+        "python": {
+          "headline_observations": 20,
+          "median_total_seconds_headline": 0.05270994998863898,
+          "median_ttft_seconds_headline": 0.05270994998863898,
+          "observations": 100
+        }
+      },
+      "host_base_loaded_parameters": 162322944,
+      "peak_cuda_allocated_bytes": 878496768,
+      "peak_process_rss_bytes_lower_bound": 1188794368,
+      "repeated_observations": 20
+    },
+    "qwen2": {
+      "active_capability_tensor_bytes": {
+        "chemistry": 499064,
+        "civics": 484100,
+        "english": 254495764,
+        "python": 437660
+      },
+      "adapter_overhead_fraction": -0.005511221319611348,
+      "adapter_overhead_limit": 0.1,
+      "capability_execution": {
+        "chemistry": {
+          "headline_observations": 20,
+          "median_total_seconds_headline": 0.03638404999219347,
+          "median_ttft_seconds_headline": 0.03638404999219347,
+          "observations": 100
+        },
+        "civics": {
+          "headline_observations": 20,
+          "median_total_seconds_headline": 0.07403225000598468,
+          "median_ttft_seconds_headline": 0.07403225000598468,
+          "observations": 100
+        },
+        "english": {
+          "headline_observations": 20,
+          "median_total_seconds_headline": 0.14676035000593401,
+          "median_ttft_seconds_headline": 0.14676035000593401,
+          "observations": 1381
+        },
+        "python": {
+          "headline_observations": 20,
+          "median_total_seconds_headline": 0.05331439999281429,
+          "median_ttft_seconds_headline": 0.05331439999281429,
+          "observations": 100
+        }
+      },
+      "host_base_loaded_parameters": 494032768,
+      "peak_cuda_allocated_bytes": 1544011776,
+      "peak_process_rss_bytes_lower_bound": 1732718592,
+      "repeated_observations": 20
+    }
+  },
+  "important_boundary": "Capability timing is non-streaming end-to-end latency; TTFT is conservatively equal to total latency. Qwen/Pythia base weights are resident conformance hosts but are not on the semantic capability execution path.",
+  "status": "PASS_PREREGISTERED_GENERIC_ADAPTER_OVERHEAD"
+}

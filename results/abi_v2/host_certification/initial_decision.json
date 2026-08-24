@@ -1,0 +1,67 @@
+{
+  "adapters": {
+    "layercake": {
+      "bytes": 1556,
+      "frozen_before_capability_reveal": true,
+      "optimizer_steps": 0,
+      "path": "results/abi_v2/host_certification/initial/layercake/adapter.json",
+      "sha256": "d1f3a9d67581032473055711773f784e3b0a028fb68fab58c3a9a63b94317f04",
+      "trainable_parameters": 0
+    },
+    "pythia": {
+      "bytes": 1646,
+      "frozen_before_capability_reveal": true,
+      "optimizer_steps": 0,
+      "path": "results/abi_v2/host_certification/initial/pythia/adapter.json",
+      "sha256": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa",
+      "trainable_parameters": 0
+    },
+    "qwen2": {
+      "bytes": 1637,
+      "frozen_before_capability_reveal": true,
+      "optimizer_steps": 0,
+      "path": "results/abi_v2/host_certification/initial/qwen2/adapter.json",
+      "sha256": "b13a75b82acf6df412c2569edaf36654a105b8c565164236fbeb5813b630291f",
+      "trainable_parameters": 0
+    }
+  },
+  "bounded_repairs_consumed": 0,
+  "bounded_repairs_remaining": 1,
+  "capability_reveal_occurred_before_this_lock": false,
+  "evidence_sha256": "02ba79332a119b4bfe809fd433884f89c19908ad4d1b2b00132d46a95fbb8bab",
+  "format": "abi-v2-initial-host-certification-decision/1",
+  "hosts": {
+    "layercake": {
+      "adapter_overhead_fraction": 0.0396151669496323,
+      "certification_examples": 128,
+      "evidence_sha256": "a00bc0160e192e6b41de84722cb669b13748025dd8a46e0132ff61a8f3d911d3",
+      "model_visible_units": 5953,
+      "path": "results/abi_v2/host_certification/initial/layercake/result.json",
+      "sha256": "053a64a764cca012668db6677887e6466f4dd5d2b5cf56f6b717b814d32fd58e",
+      "status": "PASS_CAPABILITY_BLIND_HOST_CERTIFICATION"
+    },
+    "pythia": {
+      "adapter_overhead_fraction": 0.03122278233788167,
+      "certification_examples": 128,
+      "evidence_sha256": "9eb996b31692cd8422bbd66c72ef419bc2ffefcc1123126c8b5de4a14a07b17f",
+      "model_visible_units": 2102,
+      "path": "results/abi_v2/host_certification/initial/pythia/result.json",
+      "sha256": "485bd72070fdbabeeecb7c45b958c53ef2bfac241fdc1b891cf25d72a9f5b69f",
+      "status": "PASS_CAPABILITY_BLIND_HOST_CERTIFICATION"
+    },
+    "qwen2": {
+      "adapter_overhead_fraction": -0.005511221319611348,
+      "certification_examples": 128,
+      "evidence_sha256": "369da14d9e77f94e6fa14f0d500cf73528b6061ca711c5906e5e3f24b6fa9aec",
+      "model_visible_units": 2769,
+      "path": "results/abi_v2/host_certification/initial/qwen2/result.json",
+      "sha256": "3d9f7ffb75e0ff51b9cb1a1bad3cce894456bbfc18380f0d078dbb24ade05f16",
+      "status": "PASS_CAPABILITY_BLIND_HOST_CERTIFICATION"
+    }
+  },
+  "initial_implementation_outcome": "PASS_WITHOUT_BOUNDED_REPAIR",
+  "post_freeze_adapter_calibration_allowed": false,
+  "post_freeze_adapter_mutation_allowed": false,
+  "post_freeze_adapter_training_allowed": false,
+  "status": "PASS_ALL_INITIAL_HOST_CERTIFICATIONS_CAPABILITY_REVEAL_AUTHORIZED"
+}

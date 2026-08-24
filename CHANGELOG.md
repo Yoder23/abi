@@ -1,6 +1,24 @@
 # Changelog
 
-## Unreleased — final-mile evidence
+## Unreleased — ABI V2 host conformance
+
+- Preserved the complete ABI V1 1/3 native-receiver failure as immutable
+  negative evidence instead of relabeling it.
+- Added a representation-neutral canonical ABI V2 specification, 15 frozen
+  reference vectors, and capability-blind host certification.
+- Certified LayerCake v25, Qwen2.5-0.5B, and Pythia-160M once each with one
+  frozen, zero-parameter generic adapter per host.
+- Passed all 12 cells of the frozen three-host/four-capability matrix with
+  5,043/5,043 source-success retentions and exact source-output bytes.
+- Added causal removal/reinstall, wrong-capability, isolation, random/shuffled
+  corruption, adapter-stability, and teacher-absence checks.
+- Added an inference-free immutable-evidence verifier and a content-addressed
+  different-hardware clean-room archive builder.
+- Set the honest status to `TECHNICALLY_PROVEN_EXTERNAL_VALIDATION_PENDING`.
+  Three human raters, an independent different-hardware execution, and the
+  registered minimum-information frontier remain open.
+
+## ABI V1 final-mile evidence
 
 - Froze the exact V1089/V1073 starting product and claim ceiling before new
   experiments.

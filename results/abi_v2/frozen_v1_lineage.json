@@ -1,0 +1,88 @@
+{
+  "format": "abi-v2-frozen-v1-lineage/1",
+  "status": "FROZEN_V1_NEGATIVE_AND_POSITIVE_CONTROL_LINEAGE",
+  "status_date": "2026-08-24",
+  "repository": {
+    "url": "https://github.com/Yoder23/abi",
+    "commit": "f5fd8b107484df4e6a82320cd6f2fa3f2325937b",
+    "working_tree_clean_before_v2": true
+  },
+  "product_manifest": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE7_PRODUCT_MANIFEST_V1.json",
+    "bytes": 3345,
+    "sha256": "dbbfbc1c994f9fff2ca3a37c5ec22e9c517080f325a50a9b27fe7a0072a919ff"
+  },
+  "capability_packages": {
+    "english": {
+      "path": "results/abi_capability_compiler_phase7_integrated/materialized_v1052/phase7-final-english-core.cake",
+      "bytes": 253216208,
+      "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+      "runtime_interface": "lc-direct-neural-core/25"
+    },
+    "python": {
+      "path": "results/abi_moonshot/packages/abi-python-token-plan-seed9824.cake",
+      "bytes": 448404,
+      "sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+      "runtime_interface": "lc-direct-neural-decoder/1"
+    },
+    "chemistry": {
+      "path": "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.cake",
+      "bytes": 510981,
+      "sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+      "runtime_interface": "lc-direct-neural-decoder/1"
+    },
+    "civics": {
+      "path": "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.cake",
+      "bytes": 495919,
+      "sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+      "runtime_interface": "lc-direct-neural-decoder/1"
+    }
+  },
+  "router": {
+    "catalog_router_sha256": "f1b724ecba5daed33348e6f5988bbd5bba0258763c659988e12794d253f24398",
+    "direct_orchestrator_sha256": "fbc1be560f6c756da6c7b30bbed5478a9b3088059902282b22c78d0bdd286edf",
+    "authoritative_destination_control_sha256": "6db81b67329843a161aeb85522103b2dca8da8e237fe8f21a288bb29493e40d9"
+  },
+  "layercake_v25_host": {
+    "repository": "https://github.com/Yoder23/layercake",
+    "runtime_commit": "662c5a9b7264a1a5478c9dfb656f35c450e2504f",
+    "core_extension_sha256": "7b176f21e6a86f3aaded724462d37149f8f8be48370bcdd163fe44c49e3464ce",
+    "canonical_abi_sha256": "6d0fea2697fc7af74e9f3cfaee591d658b3244acfb10502048a4105c010b6908"
+  },
+  "v1_final_mile": {
+    "host_portability_result": {
+      "path": "results/abi_final_mile/host_portability_v1/repair_rescreen.json",
+      "sha256": "2b754ff8a2bbb17bed3e1c20143d30b2f485d2d623d55611e2ee2f4eb3b472ca",
+      "status": "HOST_INDEPENDENCE_FAILED",
+      "native_receivers_passing": 1,
+      "native_receivers_required": 3
+    },
+    "hostile_audit": {
+      "path": "results/abi_final_mile/hostile_claim_audit.json",
+      "sha256": "28e5cda5b234be152230270114bdf60423067305bea78c5d0795546985a80488"
+    },
+    "release_certificate": {
+      "path": "results/abi_final_mile/abi-release/release-certificate.json",
+      "sha256": "a27e59788076595e0aa0d08485dac000bf6fa1b76896f7450e2b894e60b433f7",
+      "release_certified": false
+    },
+    "cleanroom_archive": {
+      "path": "results/abi_final_mile/abi-final-mile-cleanroom.zip",
+      "bytes": 475784100,
+      "sha256": "f4515885c823b55a35b013a13a7e770cfd115799782bb4e9349b31311b2a45df",
+      "receipt_path": "results/abi_final_mile/abi-final-mile-cleanroom.zip.json",
+      "receipt_sha256": "5471d7cc3405bc6ea9549039aa1643cfa7aed463793e1a69126b5641eb27032a"
+    }
+  },
+  "source_success_locks": [
+    {
+      "capability": "english",
+      "path": "results/abi_final_mile/abi-release/source-success-lock.json",
+      "sha256": "d1d830566e204cf3ed792747451a3e7b7ae9eaaef7a41d135aec90cc7adf696a",
+      "successful_tasks": 1381,
+      "required_retention": 1.0
+    }
+  ],
+  "domain_source_success_lock_status": "NO_SEPARATE_PER_TASK_SOURCE_SUCCESS_LOCKS_PRESENT_IN_V1_RELEASE; DOMAIN FUNCTIONAL IDENTITIES REMAIN BOUND BY THE PHASE5/6/7 EVIDENCE INVENTORY",
+  "mutation_rule": "ABI v1 capability packages and evidence remain immutable. Any representation conversion creates new ABI v2 artifacts with new hashes and full recertification."
+}

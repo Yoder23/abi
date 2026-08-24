@@ -1,0 +1,117 @@
+{
+  "format": "abi-v2-three-host-four-capability-matrix-protocol/1",
+  "status": "PREREGISTERED_BEFORE_FIRST_RECEIVER_MATRIX_RUN",
+  "status_date": "2026-08-24",
+  "objective": "Test the exact same four immutable V1 capability packages through one already-frozen, capability-blind ABI V2 adapter per host without training, calibration, or package mutation.",
+  "hosts": ["layercake", "qwen2", "pythia"],
+  "capabilities": ["english", "python", "chemistry", "civics"],
+  "device": "cuda",
+  "training_authorized": false,
+  "calibration_authorized": false,
+  "artifact_mutation_authorized": false,
+  "adapter_mutation_authorized": false,
+  "implementation": {
+    "path": "abi_v2/capability_matrix.py",
+    "sha256": "06e01ab3026e708b6d2a6830bdb82f912556a0011e05deabac38c1d6cee82a82"
+  },
+  "canonical_spec": "abi_v2/canonical_spec.json",
+  "adapter_manifest": "results/abi_v2/adapters/manifest.json",
+  "source_success_locks": "results/abi_v2/semantic_retention/source_success_locks.json",
+  "host_registry": {
+    "layercake": {
+      "host_id": "layercake-v25",
+      "architecture": "LayerCake route-isolated shallow sparse host environment",
+      "checkpoint": "source commit 662c5a9b7264a1a5478c9dfb656f35c450e2504f",
+      "checkpoint_sha256": "7b176f21e6a86f3aaded724462d37149f8f8be48370bcdd163fe44c49e3464ce",
+      "tokenizer_mode": "strict_utf8_identity",
+      "precision": "float32"
+    },
+    "qwen2": {
+      "host_id": "qwen2.5-0.5b",
+      "architecture": "Qwen2ForCausalLM",
+      "model": "Qwen/Qwen2.5-0.5B",
+      "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+      "snapshot_inventory_sha256": "a2f0d549121c1d38fe3c9ff33d6e80df1d02a032153daa15ff89663eb091f25f",
+      "checkpoint_sha256": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342",
+      "tokenizer_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+    },
+    "pythia": {
+      "host_id": "pythia-160m",
+      "architecture": "GPTNeoXForCausalLM",
+      "model": "EleutherAI/pythia-160m",
+      "revision": "50f5173d932e8e61f858120bcb800b97af589f46",
+      "snapshot_inventory_sha256": "9c3045a81419c0fe3c7a8c584d8ad467b267d9e64de9663f2aad348a09f6c085",
+      "checkpoint_sha256": "29d2e457a664e41c12c735f20a36dc0956a665f614a54ce5db21a32e75965270",
+      "tokenizer_sha256": "c24618a1b3e6a38167beff1c72cffd126c3a66254347304b50547d12c5f25624"
+    }
+  },
+  "capability_packages": {
+    "english": {
+      "path": "results/abi_capability_compiler_phase7_integrated/materialized_v1052/phase7-final-english-core.cake",
+      "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+      "runtime_class": "lc-direct-neural-core/25"
+    },
+    "python": {
+      "path": "results/abi_moonshot/packages/abi-python-token-plan-seed9824.cake",
+      "sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+      "runtime_class": "lc-direct-neural-decoder/1"
+    },
+    "chemistry": {
+      "path": "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.cake",
+      "sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+      "runtime_class": "lc-direct-neural-decoder/1"
+    },
+    "civics": {
+      "path": "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.cake",
+      "sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+      "runtime_class": "lc-direct-neural-decoder/1"
+    }
+  },
+  "evaluation_depth": {
+    "english_locked_source_successes": 1381,
+    "python_locked_source_successes": 100,
+    "chemistry_locked_source_successes": 100,
+    "civics_locked_source_successes": 100,
+    "english_only_specialist_isolation_per_domain": 100,
+    "wrong_capability_tasks_per_target_specialist": 100,
+    "wrong_capability_english_tasks": 100,
+    "minimum_timing_observations_per_capability": 20
+  },
+  "gates": {
+    "source_success_retention_minimum": 1.0,
+    "source_output_byte_identity_required": true,
+    "isolation_success_rate_maximum": 0.1,
+    "wrong_capability_success_rate_maximum": 0.1,
+    "adapter_overhead_maximum": 0.1,
+    "adapter_removal_must_fail_closed": true,
+    "capability_removal_must_fail_closed": true,
+    "reinstallation_must_restore_exact_output": true,
+    "equal_size_random_and_shuffled_packages_must_fail_closed": true,
+    "teacher_absent": true,
+    "source_model_absent": true
+  },
+  "bindings": {
+    "abi_v2/canonical_spec.json": "6536ef1b58dfeea0474bfef5619f3627ecaefe8f39f25da017f11446b6582c2f",
+    "abi_v2/conformance_suite.json": "2af84b8b18fa78613fda7c96e7d269ef731b68138f736ea2d4441f4254747383",
+    "results/abi_v2/host_certification/initial_decision.json": "a485063cc4ee223cc1aacc3ef14490b4fc7556835c00c0d5a93ca6cd7ab3bc0c",
+    "results/abi_v2/adapters/manifest.json": "67db2e7da9c5ffb6223741a4d02a9e8f0248b7df9e0df970a600d69b4c11f3cf",
+    "results/abi_v2/semantic_retention/source_success_locks.json": "0e12da8d4f827610894c815cc00268c3ab1321bdf69a245214d2845a7efd3354",
+    "ABI_CAPABILITY_COMPILER_PHASE7_PRODUCT_MANIFEST_V1.json": "dbbfbc1c994f9fff2ca3a37c5ec22e9c517080f325a50a9b27fe7a0072a919ff",
+    "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json": "531b7ee35cf79c13eb706626b276cc29be7e08b7c2153ca5d430298b51ee5d05",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B40_V25_PRODUCT_CONFORMANCE_PROTOCOL_V960.json": "ab7ca91e2516c2c431a24df05100cae3408dfed23b5ad592f6619a098dc74f30",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "evidence/current/segregation/english_and_first_domains_certification_v6.json": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052",
+    "results/abi_capability_compiler_phase4_clarification_route_replication/B40-seed104729-v927/evaluation/development_outputs.jsonl": "b2aeab680a6b1a17a6f8332b5d1c5571b4eda72a51b2d191e67509aaeedb6196",
+    "results/abi_capability_compiler_phase6_composition/run_v1032/seed104729/observations.jsonl": "3b177777bd1d032cf3aef447578cf4620194ce664f3a4f5cc51633b512333535",
+    "results/abi_capability_compiler_phase7_integrated/materialized_v1052/phase7-final-english-core.cake": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+    "results/abi_moonshot/packages/abi-python-token-plan-seed9824.cake": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+    "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.cake": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+    "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.cake": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+    "../layercake_release/layercake_extensions/route_isolated_clarification_core_v25.py": "7b176f21e6a86f3aaded724462d37149f8f8be48370bcdd163fe44c49e3464ce",
+    "../layercake_release/layercake/models/direct_cake_host.py": "f950e25e6f70fcd3a9186a9779de35edc91748bc7df6b64c8827edca1fade6f6",
+    "../layercake_release/layercake/routing/direct_orchestrator.py": "fbc1be560f6c756da6c7b30bbed5478a9b3088059902282b22c78d0bdd286edf",
+    "../layercake_release/layercake_extensions/authoritative_destination_control.py": "6db81b67329843a161aeb85522103b2dca8da8e237fe8f21a288bb29493e40d9"
+  },
+  "decision_rule": "Every one of the twelve cells must retain 100% of its frozen source-success set and exact source output bytes with one unchanged adapter per host. All causal, isolation, package-identity, no-training, no-calibration, and teacher-absence gates must pass. A measured failure authorizes at most the single remaining bounded architecture repair.",
+  "claim_boundary": "This tests host-independent immutable capability execution through a representation-neutral extension runtime plus exact host-native codec realization. It does not claim weight transplantation into Qwen/Pythia base parameters, human preference, external hardware reproduction, a global information minimum, or compatibility with untested host families."
+}

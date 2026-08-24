@@ -1,0 +1,22 @@
+{
+  "format": "abi-v2-matrix-control-harness-failure/1",
+  "status": "PRESERVED_CONTROL_HARNESS_FAILURE_WITH_NO_PROMOTED_RESULT",
+  "status_date": "2026-08-24",
+  "host": "layercake",
+  "command": "python -m abi_v2.capability_matrix --protocol abi_v2/matrix_protocol_amendment1.json --host layercake --output-dir results/abi_v2/capability_matrix/layercake --device cuda",
+  "protocol_sha256": "4f7c11bfa9010e85eaa7003bbcd269639e4939e957d17981ff5a79c7e26e56e7",
+  "implementation_sha256": "701a1de2675a443aee7903f43f22ce3c5dcc9db3ac608504aac7ac04594728a0",
+  "exception_type": "Phase3Error",
+  "exception_message": "Phase 5 catalog prompt lacks its exact V6 wrapper",
+  "failure_location": "Deliberately wrong Python-capability-on-English control incorrectly invoked the specialist catalog wrapper validator on an English prompt",
+  "classification": "CONTROL_HARNESS_INPUT_PATH_FAILURE_NOT_ARCHITECTURE_FAILURE",
+  "receiver_execution_occurred_in_memory": true,
+  "receiver_observations_persisted": 0,
+  "receiver_quality_aggregates_persisted_or_reviewed": false,
+  "output_directory_created": false,
+  "adapter_changed": false,
+  "capability_artifact_changed": false,
+  "source_success_lock_changed": false,
+  "bounded_architecture_repairs_consumed": 0,
+  "authorized_amendment": "Allow only the deliberately wrong English control to bypass the domain-specific V6 prompt-wrapper assertion and feed the raw English prompt to the wrong specialist package. Change no promoted cell, capability math, adapter semantics, task IDs, expected outputs, gates, or thresholds."
+}

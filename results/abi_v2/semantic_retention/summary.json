@@ -1,0 +1,102 @@
+{
+  "aggregate_noninferiority": "PASS_BY_EXACT_SOURCE_OUTPUT_IDENTITY",
+  "evidence_sha256": "876fb3f92998a8bbdad8ab92843dd5c690f1c84675d76453a5e5cf2083d2a2a5",
+  "format": "abi-v2-semantic-retention-summary/1",
+  "hosts": {
+    "layercake": {
+      "chemistry": {
+        "receiver_successes_on_locked_set": 100,
+        "retention": 1.0,
+        "source_output_byte_exact": 100,
+        "source_successes": 100,
+        "tasks": 100
+      },
+      "civics": {
+        "receiver_successes_on_locked_set": 100,
+        "retention": 1.0,
+        "source_output_byte_exact": 100,
+        "source_successes": 100,
+        "tasks": 100
+      },
+      "english": {
+        "receiver_successes_on_locked_set": 1381,
+        "retention": 1.0,
+        "source_output_byte_exact": 1381,
+        "source_successes": 1381,
+        "tasks": 1381
+      },
+      "python": {
+        "receiver_successes_on_locked_set": 100,
+        "retention": 1.0,
+        "source_output_byte_exact": 100,
+        "source_successes": 100,
+        "tasks": 100
+      }
+    },
+    "pythia": {
+      "chemistry": {
+        "receiver_successes_on_locked_set": 100,
+        "retention": 1.0,
+        "source_output_byte_exact": 100,
+        "source_successes": 100,
+        "tasks": 100
+      },
+      "civics": {
+        "receiver_successes_on_locked_set": 100,
+        "retention": 1.0,
+        "source_output_byte_exact": 100,
+        "source_successes": 100,
+        "tasks": 100
+      },
+      "english": {
+        "receiver_successes_on_locked_set": 1381,
+        "retention": 1.0,
+        "source_output_byte_exact": 1381,
+        "source_successes": 1381,
+        "tasks": 1381
+      },
+      "python": {
+        "receiver_successes_on_locked_set": 100,
+        "retention": 1.0,
+        "source_output_byte_exact": 100,
+        "source_successes": 100,
+        "tasks": 100
+      }
+    },
+    "qwen2": {
+      "chemistry": {
+        "receiver_successes_on_locked_set": 100,
+        "retention": 1.0,
+        "source_output_byte_exact": 100,
+        "source_successes": 100,
+        "tasks": 100
+      },
+      "civics": {
+        "receiver_successes_on_locked_set": 100,
+        "retention": 1.0,
+        "source_output_byte_exact": 100,
+        "source_successes": 100,
+        "tasks": 100
+      },
+      "english": {
+        "receiver_successes_on_locked_set": 1381,
+        "retention": 1.0,
+        "source_output_byte_exact": 1381,
+        "source_successes": 1381,
+        "tasks": 1381
+      },
+      "python": {
+        "receiver_successes_on_locked_set": 100,
+        "retention": 1.0,
+        "source_output_byte_exact": 100,
+        "source_successes": 100,
+        "tasks": 100
+      }
+    }
+  },
+  "invalid_output_increase": 0,
+  "matrix_cells": 12,
+  "receiver_successes": 5043,
+  "required_receiver_successes": 5043,
+  "status": "PASS_100_PERCENT_SOURCE_SUCCESS_RETENTION_ALL_12_CELLS"
+}

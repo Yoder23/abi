@@ -1,0 +1,70 @@
+{
+  "format": "abi-v2-host-conformance-suite/1",
+  "status": "PREREGISTERED_BEFORE_HOST_CERTIFICATION_AND_CAPABILITY_REVEAL",
+  "status_date": "2026-08-24",
+  "canonical_spec": "abi_v2/canonical_spec.json",
+  "reference_vectors": {
+    "path": "abi_v2/reference_vectors/core_vectors.json",
+    "sha256": "fc792304e41b1985652a01b4b4efdb14a3bf40fc7aa4906f27ea95409f1dd9fa",
+    "records": 15
+  },
+  "certification_data": {
+    "kind": "domain-neutral deterministic synthetic conformance only",
+    "generation_seed": 220240824,
+    "generated_roundtrip_records": 128,
+    "model_forward_records": 16,
+    "performance_prompts": 20,
+    "contains_python_examples": false,
+    "contains_chemistry_examples": false,
+    "contains_civics_examples": false,
+    "contains_capability_outputs": false,
+    "contains_capability_success_ids": false,
+    "contains_final_receiver_examples": false
+  },
+  "required_gates": [
+    "reference_vectors_exact",
+    "canonical_state_hashes_deterministic",
+    "strict_utf8_roundtrip_exact",
+    "native_tokenizer_roundtrip_exact",
+    "native_checkpoint_identity_exact",
+    "native_forward_state_finite",
+    "canonical_output_fusion_roundtrip_exact",
+    "capability_paths_rejected",
+    "capability_files_unopened",
+    "zero_trainable_adapter_parameters",
+    "zero_optimizer_steps",
+    "adapter_frozen",
+    "adapter_overhead_within_10_percent"
+  ],
+  "host_registry": {
+    "layercake": {
+      "host_id": "layercake-v25",
+      "architecture": "LayerCake route-isolated shallow sparse host environment",
+      "checkpoint": "source commit 662c5a9b7264a1a5478c9dfb656f35c450e2504f",
+      "checkpoint_sha256": "7b176f21e6a86f3aaded724462d37149f8f8be48370bcdd163fe44c49e3464ce",
+      "tokenizer_mode": "strict_utf8_identity",
+      "precision": "float32"
+    },
+    "qwen2": {
+      "host_id": "qwen2.5-0.5b",
+      "architecture": "Qwen2ForCausalLM",
+      "model": "Qwen/Qwen2.5-0.5B",
+      "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+      "snapshot_inventory_sha256": "a2f0d549121c1d38fe3c9ff33d6e80df1d02a032153daa15ff89663eb091f25f",
+      "checkpoint_sha256": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342",
+      "tokenizer_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "precision": "float16 runtime on CUDA, metadata bfloat16"
+    },
+    "pythia": {
+      "host_id": "pythia-160m",
+      "architecture": "GPTNeoXForCausalLM",
+      "model": "EleutherAI/pythia-160m",
+      "revision": "50f5173d932e8e61f858120bcb800b97af589f46",
+      "snapshot_inventory_sha256": "9c3045a81419c0fe3c7a8c584d8ad467b267d9e64de9663f2aad348a09f6c085",
+      "checkpoint_sha256": "29d2e457a664e41c12c735f20a36dc0956a665f614a54ce5db21a32e75965270",
+      "tokenizer_sha256": "c24618a1b3e6a38167beff1c72cffd126c3a66254347304b50547d12c5f25624",
+      "precision": "float16 runtime on CUDA"
+    }
+  },
+  "failure_rule": "A host that misses any required gate is not exposed to a capability package. One measured bounded adapter repair is allowed only after all initial certification results are frozen."
+}

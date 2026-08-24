@@ -1,0 +1,25 @@
+{
+  "format": "abi-v2-development-runtime-manifest/1",
+  "status": "RECORDED_FROM_LOCAL_TECHNICAL_MATRIX",
+  "recorded_date": "2026-08-24",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.10.0",
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "driver": "591.44",
+    "memory_mib": 16384,
+    "torch_cuda": "11.8"
+  },
+  "packages": {
+    "cryptography": "46.0.5",
+    "huggingface-hub": "0.36.0",
+    "numpy": "2.2.6",
+    "psutil": "7.0.0",
+    "safetensors": "0.7.0",
+    "tokenizers": "0.22.1",
+    "torch": "2.7.1+cu118",
+    "transformers": "4.57.3"
+  },
+  "reproduction_rule": "An external operator records its own hardware and package manifest. Exact package versions are preferred; different hardware is required for the independent-reproduction gate.",
+  "claim_boundary": "This is the development runtime identity, not evidence of external reproduction or a universal hardware claim."
+}

@@ -1,0 +1,13 @@
+{
+  "bit_exact_domain_action_sequences": 300,
+  "bit_exact_output_bytes": 1681,
+  "canonical_context_state_identities": 1681,
+  "canonical_output_intent_identities": 1681,
+  "declared_runtime_precision": "same CUDA capability runtime; host-native tokenizer realization checked exactly",
+  "evidence_sha256": "7616b356b86b2f3f4a770e52b8b3838a98170f72b1414734d2a3a3a20e1e7dd0",
+  "format": "abi-v2-mathematical-portability-summary/1",
+  "host_native_token_sequences_expected_to_differ": true,
+  "host_realization_output_utf8_identical": true,
+  "identical_canonical_inputs": 1681,
+  "status": "PASS_BIT_EXACT_CAPABILITY_OUTPUTS_ACROSS_THREE_HOSTS"
+}

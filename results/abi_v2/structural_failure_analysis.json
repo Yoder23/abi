@@ -1,0 +1,159 @@
+{
+  "format": "abi-v2-structural-failure-analysis/1",
+  "status": "COMPLETE_BEFORE_ABI_V2_ARCHITECTURE_IMPLEMENTATION",
+  "status_date": "2026-08-24",
+  "frozen_v1_lineage": {
+    "path": "results/abi_v2/frozen_v1_lineage.json",
+    "sha256": "TO_BE_BOUND_BY_THE_ABI_V2_VERIFIER"
+  },
+  "receivers": {
+    "layercake_v25": {
+      "architecture": "LayerCake route-isolated shallow sparse core host",
+      "hidden_width": 768,
+      "depth": 3,
+      "native_artifact_interfaces": [
+        "lc-direct-neural-core/25",
+        "lc-direct-neural-decoder/1"
+      ],
+      "canonical_abi_sha256": "6d0fea2697fc7af74e9f3cfaee591d658b3244acfb10502048a4105c010b6908"
+    },
+    "qwen2": {
+      "model": "Qwen/Qwen2.5-0.5B",
+      "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+      "architecture": "Qwen2ForCausalLM",
+      "hidden_width": 896,
+      "depth": 24,
+      "vocabulary_size": 151936,
+      "normalization": "RMSNorm epsilon 1e-6",
+      "position": "RoPE theta 1000000",
+      "config_sha256": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b",
+      "tokenizer_json_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "checkpoint_tensor_sha256": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342",
+      "snapshot_inventory_sha256": "a2f0d549121c1d38fe3c9ff33d6e80df1d02a032153daa15ff89663eb091f25f",
+      "native_artifact_interfaces": []
+    },
+    "pythia": {
+      "model": "EleutherAI/pythia-160m",
+      "revision": "50f5173d932e8e61f858120bcb800b97af589f46",
+      "architecture": "GPTNeoXForCausalLM",
+      "hidden_width": 768,
+      "depth": 12,
+      "vocabulary_size": 50304,
+      "normalization": "LayerNorm epsilon 1e-5",
+      "position": "partial rotary fraction 0.25, theta 10000",
+      "config_sha256": "76eb275107220e450d31258f792a2efcbee109d8b62ae0088260057dec06362f",
+      "tokenizer_json_sha256": "c24618a1b3e6a38167beff1c72cffd126c3a66254347304b50547d12c5f25624",
+      "checkpoint_tensor_sha256": "29d2e457a664e41c12c735f20a36dc0956a665f614a54ce5db21a32e75965270",
+      "snapshot_inventory_sha256": "9c3045a81419c0fe3c7a8c584d8ad467b267d9e64de9663f2aad348a09f6c085",
+      "native_artifact_interfaces": []
+    }
+  },
+  "v1_artifact_facts": {
+    "english_external_contract": "strict UTF-8 bytes to strict UTF-8 bytes",
+    "english_execution_schema": "LayerCake width-768 three-block decoder plus package-owned GPT-2 tokenizer, router, five sparse residual routes, guards, and incremental state",
+    "specialist_external_contract": "strict UTF-8 bytes to strict UTF-8 bytes",
+    "specialist_execution_schema": "package-private width-64 encoder-decoder pointer machine with a package-private lexeme vocabulary",
+    "specialist_manifests_declare_canonical_semantic_abi_consumed": false,
+    "artifact_boundary_is_host_representation_neutral": true,
+    "artifact_tensor_schema_is_generic_transformer_state_dict": false
+  },
+  "mismatches": [
+    {
+      "id": "M01_EXECUTABLE_SCHEMA",
+      "classification": "LayerCake-specific semantic assumption",
+      "evidence": "English tensor namespaces model.*, router.*, and residual.* are instantiated by the LayerCake v25 ShallowSparseEnglishCore and router/residual implementations; neither transformer model class declares this ABI.",
+      "owner": "canonical ABI",
+      "resolution": "Define a host-neutral capability virtual machine and runtime class registry. Do not load these tensors into Qwen or Pythia blocks."
+    },
+    {
+      "id": "M02_WIDTH",
+      "classification": "Representation dimension mismatch",
+      "evidence": "English width is 768, Qwen width is 896, Pythia width is 768, and specialist width is 64. Equal Pythia width does not imply equal coordinates.",
+      "owner": "host adapter",
+      "resolution": "Private widths remain private. The canonical boundary uses typed fields and byte anchors rather than direct hidden-state tensors."
+    },
+    {
+      "id": "M03_TOKENIZER",
+      "classification": "Tokenizer/vocabulary dependency",
+      "evidence": "English carries GPT-2 vocabulary 50,257; Qwen declares 151,936 entries; Pythia declares 50,304; each specialist package carries a distinct lexeme table.",
+      "owner": "host adapter",
+      "resolution": "Decode host input to strict UTF-8, preserve exact byte anchors, and encode canonical output into the frozen host tokenizer with exact round-trip verification."
+    },
+    {
+      "id": "M04_POSITION",
+      "classification": "Positional convention dependency",
+      "evidence": "Qwen uses full RoPE with theta 1,000,000; Pythia uses partial rotary position encoding; the package runtimes own their own sequence positions.",
+      "owner": "host adapter",
+      "resolution": "Canonical position is an explicit monotone sequence index and byte-span table. Host-private positional encodings remain outside capability state."
+    },
+    {
+      "id": "M05_NORMALIZATION",
+      "classification": "Normalization dependency",
+      "evidence": "Qwen uses RMSNorm, Pythia uses LayerNorm, and package-owned modules carry their own normalization tensors.",
+      "owner": "host adapter",
+      "resolution": "Canonical numeric channels have explicit L2 normalization; private host norms are never exposed to capabilities."
+    },
+    {
+      "id": "M06_RESIDUAL_BASIS",
+      "classification": "Residual-basis dependency",
+      "evidence": "The LayerCake residual routes are trained in its private width-768 basis. Qwen and Pythia hidden coordinates have no identified alignment, including when the width happens to match.",
+      "owner": "capability artifact",
+      "resolution": "V1 residual tensors remain inside their declared capability runtime. They are not projected into receiver residual streams. A future latent capability format would require newly certified V2 artifacts."
+    },
+    {
+      "id": "M07_SEQUENCE_STATE",
+      "classification": "Sequence-state dependency",
+      "evidence": "LayerCake v25 and the portable specialist decoders own custom persistent incremental state; Qwen and Pythia expose different cache structures.",
+      "owner": "canonical ABI",
+      "resolution": "Version a host-independent state envelope with capability-owned opaque state and host-owned opaque state in separate namespaces."
+    },
+    {
+      "id": "M08_OUTPUT_HEAD",
+      "classification": "Output-head dependency",
+      "evidence": "English produces GPT-2-token logits, specialists produce lexeme/pointer actions, and receiver heads produce their own vocabulary logits.",
+      "owner": "host adapter",
+      "resolution": "Capabilities emit canonical output intent plus authoritative UTF-8 anchors. Host adapters realize anchors through native tokenizers and verify exact byte reconstruction."
+    },
+    {
+      "id": "M09_STATE_OWNERSHIP",
+      "classification": "Patch/state ownership mismatch",
+      "evidence": "V1 route selection and guard state are owned by LayerCake host classes, while transformer caches and attention masks are owned by their model classes.",
+      "owner": "canonical ABI",
+      "resolution": "Declare disjoint generic-runtime, capability, adapter, and host-base ownership; reject any capability-specific host parameter."
+    },
+    {
+      "id": "M10_PRECISION",
+      "classification": "Numerical/precision mismatch",
+      "evidence": "V1 artifacts declare fp32; Qwen metadata declares bfloat16 and Pythia metadata declares float16.",
+      "owner": "canonical ABI",
+      "resolution": "Capability mathematical execution remains fp32 under the registered runtime. Host codec equality is exact bytes; other numeric channels use preregistered tolerances."
+    },
+    {
+      "id": "M11_LIFECYCLE",
+      "classification": "Host lifecycle mismatch",
+      "evidence": "LayerCake authenticates, parses, adopts storage, registers routes, and releases ownership. Hugging Face causal LM loading has no corresponding capability lifecycle.",
+      "owner": "host adapter",
+      "resolution": "One capability-blind certification freezes a lifecycle adapter implementing verify, load, register, activate, deactivate, remove, and reinstall without optimization."
+    },
+    {
+      "id": "M12_DOMAIN_ROUTE",
+      "classification": "Artifact-specific assumption",
+      "evidence": "Specialist artifacts declare direct_selected_one_cake_no_router and distinct private tokenizer hashes; they cannot be blended as ordinary transformer residual adapters.",
+      "owner": "capability artifact",
+      "resolution": "Preserve direct selected execution and package-private tokenization. The generic host adapter registers declarative capability identities but never fits a per-domain projection."
+    },
+    {
+      "id": "M13_NO_NATIVE_LOADER",
+      "classification": "Other",
+      "evidence": "Qwen2ForCausalLM and GPTNeoXForCausalLM accept their own state dictionaries and caches but expose no lc-direct-neural-core/25 or lc-direct-neural-decoder/1 consumer.",
+      "owner": "host adapter",
+      "resolution": "Certify a small architecture-specific codec/lifecycle adapter against the canonical runtime before any capability is available."
+    }
+  ],
+  "governing_decision": {
+    "do_not_attempt": "No LayerCake-to-Qwen/Pythia residual projection, per-capability bridge, tokenizer transplant, or receiver-specific capability tuning is authorized.",
+    "v2_initial_hypothesis": "A capability-blind host codec and lifecycle adapter plus a host-neutral canonical capability runtime can preserve the unchanged byte-bound V1 packages across all three host environments.",
+    "provider_bypass_boundary": "Calling the LayerCake v25 host from Qwen or Pythia remains forbidden. The V2 implementation must use a host-neutral runtime contract, must exercise each frozen host tokenizer and checkpoint during conformance, and must report that V1 capabilities remain self-contained rather than claiming transplantation into receiver weights.",
+    "replacement_artifact_required_now": false
+  }
+}

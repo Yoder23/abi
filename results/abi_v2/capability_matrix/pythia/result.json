@@ -1,0 +1,417 @@
+{
+  "adapter": {
+    "optimizer_steps": 0,
+    "parameters": 0,
+    "path": "results/abi_v2/host_certification/initial/pythia/adapter.json",
+    "sha256_after": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa",
+    "sha256_before": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa"
+  },
+  "calibration_performed": false,
+  "causal": {
+    "adapter_removal": {
+      "exception_message_sha256": "88fc373a63adbe32e195f9ba3e7ad807aab00884e3d07134c73a77e475158012",
+      "exception_type": "MatrixError",
+      "rejected": true
+    },
+    "capability_removal_and_reinstall": {
+      "chemistry": {
+        "absent_execution_rejected": true,
+        "reinstall_archive_sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+        "reinstall_status": "INSTALLED",
+        "remove_status": {
+          "cake_id": "abi-chemistry-token-plan",
+          "status": "REMOVED",
+          "version": "1.0.0"
+        },
+        "restored_output_byte_exact": true
+      },
+      "civics": {
+        "absent_execution_rejected": true,
+        "reinstall_archive_sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+        "reinstall_status": "INSTALLED",
+        "remove_status": {
+          "cake_id": "abi-civics-token-plan",
+          "status": "REMOVED",
+          "version": "1.0.0"
+        },
+        "restored_output_byte_exact": true
+      },
+      "english": {
+        "absent_execution_rejected": true,
+        "reinstall_archive_sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+        "reinstall_state_dict_hash": "68f07a16cbc1525f962e5b116723a6de1a49d63ea70f2bd92f256b97ee90a7e8",
+        "remove_status": {
+          "cake_id": "abi-phase4-b40-seed104729-v25-english-core",
+          "status": "REMOVED",
+          "version": "0.25.0-b40-conformance"
+        },
+        "restored_output_byte_exact": true
+      },
+      "python": {
+        "absent_execution_rejected": true,
+        "reinstall_archive_sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+        "reinstall_status": "INSTALLED",
+        "remove_status": {
+          "cake_id": "abi-python-token-plan",
+          "status": "REMOVED",
+          "version": "1.0.0"
+        },
+        "restored_output_byte_exact": true
+      }
+    },
+    "random_and_shuffled_capabilities": {
+      "chemistry": {
+        "functional_successes_after_rejection": 0,
+        "original_bytes": 510981,
+        "random_archive_sha256": "efd6f1599173861a520949de2521d0a3063ce764ce4999b222b1a8f6c093c053",
+        "random_bytes": 510981,
+        "random_rejected_before_execution": {
+          "exception_message_sha256": "c58cbd56c630d3bcc6a4c227ca378c770f471fe84a8b3ad9921a576ea8cfcf38",
+          "exception_type": "InstallationError",
+          "rejected": true
+        },
+        "shuffled_archive_sha256": "b04b373f9646d94ca90ddd99885b6f98e69f912a219a9300448a10065238ce14",
+        "shuffled_bytes": 510981,
+        "shuffled_rejected_before_execution": {
+          "exception_message_sha256": "c58cbd56c630d3bcc6a4c227ca378c770f471fe84a8b3ad9921a576ea8cfcf38",
+          "exception_type": "InstallationError",
+          "rejected": true
+        }
+      },
+      "civics": {
+        "functional_successes_after_rejection": 0,
+        "original_bytes": 495919,
+        "random_archive_sha256": "e151d6f3b26dfcaf655bcf6dedb9897f87913e1e79c60ec8b06a91af96529c58",
+        "random_bytes": 495919,
+        "random_rejected_before_execution": {
+          "exception_message_sha256": "c58cbd56c630d3bcc6a4c227ca378c770f471fe84a8b3ad9921a576ea8cfcf38",
+          "exception_type": "InstallationError",
+          "rejected": true
+        },
+        "shuffled_archive_sha256": "b13573ae670d960f11293f621b83f88f1b758e0d08728bd5e923a7ab5de82cff",
+        "shuffled_bytes": 495919,
+        "shuffled_rejected_before_execution": {
+          "exception_message_sha256": "c58cbd56c630d3bcc6a4c227ca378c770f471fe84a8b3ad9921a576ea8cfcf38",
+          "exception_type": "InstallationError",
+          "rejected": true
+        }
+      },
+      "english": {
+        "functional_successes_after_rejection": 0,
+        "original_bytes": 253216208,
+        "random_archive_sha256": "35450c01f5d20428895d700e0d72ba4535e54b760a42efa0d14be354c13b0512",
+        "random_bytes": 253216208,
+        "random_rejected_before_execution": {
+          "exception_message_sha256": "c58cbd56c630d3bcc6a4c227ca378c770f471fe84a8b3ad9921a576ea8cfcf38",
+          "exception_type": "InstallationError",
+          "rejected": true
+        },
+        "shuffled_archive_sha256": "59e3a5349af1680878e62a8f559a1b040d8d3d3dd8f9934f28bcc1b84ad29c3f",
+        "shuffled_bytes": 253216208,
+        "shuffled_rejected_before_execution": {
+          "exception_message_sha256": "c58cbd56c630d3bcc6a4c227ca378c770f471fe84a8b3ad9921a576ea8cfcf38",
+          "exception_type": "InstallationError",
+          "rejected": true
+        }
+      },
+      "python": {
+        "functional_successes_after_rejection": 0,
+        "original_bytes": 448404,
+        "random_archive_sha256": "4e37f3834f6f382c8e61e8a46edd1b99ee07ea9d191d023b3c785c0f6da2c12d",
+        "random_bytes": 448404,
+        "random_rejected_before_execution": {
+          "exception_message_sha256": "c58cbd56c630d3bcc6a4c227ca378c770f471fe84a8b3ad9921a576ea8cfcf38",
+          "exception_type": "InstallationError",
+          "rejected": true
+        },
+        "shuffled_archive_sha256": "03989265549e1e89c0db7d12742aee4d157267e059915a4efcce28ec9eaabede",
+        "shuffled_bytes": 448404,
+        "shuffled_rejected_before_execution": {
+          "exception_message_sha256": "c58cbd56c630d3bcc6a4c227ca378c770f471fe84a8b3ad9921a576ea8cfcf38",
+          "exception_type": "InstallationError",
+          "rejected": true
+        }
+      }
+    },
+    "wrong_capability": {
+      "chemistry": {
+        "success_rate": 0.0,
+        "successes": 0,
+        "tasks": 100,
+        "wrong_capability": "civics"
+      },
+      "civics": {
+        "success_rate": 0.0,
+        "successes": 0,
+        "tasks": 100,
+        "wrong_capability": "python"
+      },
+      "english": {
+        "success_rate": 0.0,
+        "successes": 0,
+        "tasks": 100,
+        "wrong_capability": "python"
+      },
+      "python": {
+        "success_rate": 0.0,
+        "successes": 0,
+        "tasks": 100,
+        "wrong_capability": "chemistry"
+      }
+    }
+  },
+  "claim_boundary": "This host result certifies immutable capability hosting through the canonical ABI V2 runtime and exact native codec realization. It does not claim that LayerCake tensors were transplanted into Qwen/Pythia base weights or that their hidden states generated the capability content.",
+  "device": "cuda",
+  "evidence_sha256": "66d3bd9a6b05af02fadb09417cb1ee348f77f0acfaf8ac5847ec845a4291e8e0",
+  "format": "abi-v2-host-four-capability-matrix-result/1",
+  "gates": {
+    "adapter_hash_unchanged": true,
+    "adapter_optimizer_steps_zero": true,
+    "adapter_parameter_count_zero": true,
+    "adapter_removal_fails_closed": true,
+    "all_four_source_outputs_byte_exact": true,
+    "all_four_source_success_sets_retained_100_percent": true,
+    "all_package_hashes_unchanged": true,
+    "capability_removal_and_reinstall_exact": true,
+    "english_isolation_below_threshold": true,
+    "native_host_checkpoint_participated": true,
+    "random_and_shuffled_capabilities_fail_closed": true,
+    "same_adapter_hash_all_four_capabilities": true,
+    "source_model_absent": true,
+    "teacher_absent": true,
+    "wrong_capability_below_threshold": true,
+    "zero_training_and_calibration": true
+  },
+  "host": "pythia",
+  "installation": {
+    "chemistry": {
+      "adapter_sha256": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa",
+      "archive_bytes": 510981,
+      "archive_sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+      "seconds": 0.035468799993395805,
+      "status": "INSTALLED",
+      "training_steps": 0
+    },
+    "civics": {
+      "adapter_sha256": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa",
+      "archive_bytes": 495919,
+      "archive_sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+      "seconds": 0.03284990001702681,
+      "status": "INSTALLED",
+      "training_steps": 0
+    },
+    "english": {
+      "adapter_sha256": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa",
+      "archive_bytes": 253216208,
+      "archive_sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+      "seconds": 1.8053097999945749,
+      "training_steps": 0
+    },
+    "python": {
+      "adapter_sha256": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa",
+      "archive_bytes": 448404,
+      "archive_sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+      "seconds": 0.03081460000248626,
+      "status": "INSTALLED",
+      "training_steps": 0
+    }
+  },
+  "isolation": {
+    "english_only": {
+      "chemistry": {
+        "output_set_sha256": "3feb0fee520b4ecc881d576e7b25c1cddb56bc43ff6b4df6a09772e041e399eb",
+        "specialist_successes": 0,
+        "success_rate": 0.0,
+        "tasks": 100
+      },
+      "civics": {
+        "output_set_sha256": "b368866fa0553578ca4fa72fec59ca7ff81aa18393768f1553405b8980e9c12a",
+        "specialist_successes": 0,
+        "success_rate": 0.0,
+        "tasks": 100
+      },
+      "python": {
+        "output_set_sha256": "6bbb580a7998e7af0dd356de40e237c069ed44afdd2e7a244bb0c866900a6ce7",
+        "specialist_successes": 0,
+        "success_rate": 0.0,
+        "tasks": 100
+      }
+    }
+  },
+  "mathematical": {
+    "path": "results/abi_v2/capability_matrix/pythia/mathematical.json",
+    "sha256": "65d124f5e662db5bb3804abca36c8ec70a5e23711d3bfb50ba09985be801afa7"
+  },
+  "native_forward_probes": {
+    "chemistry": {
+      "finite": true,
+      "input_units": 31,
+      "native_argmax_id_sha256": "be012cf22917bde4e57c889440c59f1c792aba0abdadfb3139a89f46d4d23e10",
+      "performed": true
+    },
+    "civics": {
+      "finite": true,
+      "input_units": 30,
+      "native_argmax_id_sha256": "be012cf22917bde4e57c889440c59f1c792aba0abdadfb3139a89f46d4d23e10",
+      "performed": true
+    },
+    "english": {
+      "finite": true,
+      "input_units": 49,
+      "native_argmax_id_sha256": "be012cf22917bde4e57c889440c59f1c792aba0abdadfb3139a89f46d4d23e10",
+      "performed": true
+    },
+    "python": {
+      "finite": true,
+      "input_units": 38,
+      "native_argmax_id_sha256": "be012cf22917bde4e57c889440c59f1c792aba0abdadfb3139a89f46d4d23e10",
+      "performed": true
+    }
+  },
+  "native_host": {
+    "checkpoint_loaded": true,
+    "checkpoint_sha256": "29d2e457a664e41c12c735f20a36dc0956a665f614a54ce5db21a32e75965270",
+    "parameter_count": 162322944,
+    "precision": "torch.float16",
+    "snapshot_inventory_sha256": "9c3045a81419c0fe3c7a8c584d8ad467b267d9e64de9663f2aad348a09f6c085",
+    "tokenizer_sha256": "c24618a1b3e6a38167beff1c72cffd126c3a66254347304b50547d12c5f25624"
+  },
+  "observations": {
+    "path": "results/abi_v2/capability_matrix/pythia/observations.jsonl",
+    "rows": 1681,
+    "sha256": "8afca24fc10f384c8a2e054b76eef902d6f4c085bdaf245dde10cf50fbce7786"
+  },
+  "package_hashes_after": {
+    "chemistry": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+    "civics": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+    "english": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+    "python": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d"
+  },
+  "performance": {
+    "active_capability_tensor_bytes": {
+      "chemistry": 499064,
+      "civics": 484100,
+      "english": 254495764,
+      "python": 437660
+    },
+    "capability_execution": {
+      "chemistry": {
+        "headline_observations": 20,
+        "median_total_seconds_headline": 0.03583894998882897,
+        "median_ttft_seconds_headline": 0.03583894998882897,
+        "observations": 100
+      },
+      "civics": {
+        "headline_observations": 20,
+        "median_total_seconds_headline": 0.06994345001294278,
+        "median_ttft_seconds_headline": 0.06994345001294278,
+        "observations": 100
+      },
+      "english": {
+        "headline_observations": 20,
+        "median_total_seconds_headline": 0.16205410000111442,
+        "median_ttft_seconds_headline": 0.16205410000111442,
+        "observations": 1381
+      },
+      "python": {
+        "headline_observations": 20,
+        "median_total_seconds_headline": 0.05270994998863898,
+        "median_ttft_seconds_headline": 0.05270994998863898,
+        "observations": 100
+      }
+    },
+    "certified_host_alone_and_adapter": {
+      "host_alone_median_seconds": 0.0075778,
+      "host_alone_seconds": [
+        0.0075683,
+        0.007407,
+        0.0075873,
+        0.007453,
+        0.0078231,
+        0.0083769,
+        0.007265,
+        0.0077581,
+        0.0078195,
+        0.0074123,
+        0.0074263,
+        0.0093525,
+        0.0072655,
+        0.0083223,
+        0.0075086,
+        0.0067695,
+        0.0076966,
+        0.0074352,
+        0.008359,
+        0.0084531
+      ],
+      "host_key": "pythia",
+      "host_plus_idle_adapter_median_seconds": 0.007814399999999999,
+      "host_plus_idle_adapter_seconds": [
+        0.0069344,
+        0.0071269,
+        0.0085604,
+        0.0096262,
+        0.0074167,
+        0.0072478,
+        0.0082717,
+        0.0083193,
+        0.008153,
+        0.007464,
+        0.0079876,
+        0.007903,
+        0.0076388,
+        0.0077258,
+        0.0075697,
+        0.0075016,
+        0.008411,
+        0.0073706,
+        0.008347,
+        0.0080473
+      ],
+      "maximum_overhead_fraction": 0.1,
+      "overhead_fraction": 0.03122278233788167,
+      "passed": true,
+      "repeated_observations": 20
+    },
+    "host_base_loaded_parameters": 162322944,
+    "peak_cuda_allocated_bytes": 878496768,
+    "peak_process_rss_bytes_lower_bound": 1188794368,
+    "semantic_execution_boundary": "The capability runtime emits authoritative canonical UTF-8. The host adapter converts it to an exact native tokenizer generation sequence. Qwen/Pythia base weights are frozen conformance participants but do not supply or alter capability semantics.",
+    "wall_seconds_all_tests": 241.11076189999585
+  },
+  "protocol_sha256": "1551f1e53fa29458647519980355d71b19859bb37c2b1ffc27dbd2d4a071c51d",
+  "source_model_loaded": false,
+  "source_success_retention": {
+    "chemistry": {
+      "receiver_successes_on_locked_set": 100,
+      "retention": 1.0,
+      "source_output_byte_exact": 100,
+      "source_successes": 100,
+      "tasks": 100
+    },
+    "civics": {
+      "receiver_successes_on_locked_set": 100,
+      "retention": 1.0,
+      "source_output_byte_exact": 100,
+      "source_successes": 100,
+      "tasks": 100
+    },
+    "english": {
+      "receiver_successes_on_locked_set": 1381,
+      "retention": 1.0,
+      "source_output_byte_exact": 1381,
+      "source_successes": 1381,
+      "tasks": 1381
+    },
+    "python": {
+      "receiver_successes_on_locked_set": 100,
+      "retention": 1.0,
+      "source_output_byte_exact": 100,
+      "source_successes": 100,
+      "tasks": 100
+    }
+  },
+  "status": "PASS_HOST_FOUR_CAPABILITY_MATRIX",
+  "teacher_loaded": false,
+  "training_performed": false
+}

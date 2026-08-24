@@ -1,0 +1,32 @@
+{
+  "format": "abi-v2-three-host-four-capability-matrix-protocol-amendment/2",
+  "status": "PREREGISTERED_PRE_OBSERVATION_UTF8_TYPE_AMENDMENT",
+  "status_date": "2026-08-24",
+  "base_protocol": "abi_v2/matrix_protocol.json",
+  "base_protocol_sha256": "2042007a1de9df33575957c2d722f31781023bec427481a963a9d588304dd58e",
+  "supersedes_amendment": "abi_v2/matrix_protocol_amendment1.json",
+  "supersedes_amendment_sha256": "4f7c11bfa9010e85eaa7003bbcd269639e4939e957d17981ff5a79c7e26e56e7",
+  "preserved_failures": [
+    "results/abi_v2/capability_matrix/initial_execution_failure.json",
+    "results/abi_v2/capability_matrix/second_execution_failure.json"
+  ],
+  "implementation": {
+    "path": "abi_v2/capability_matrix.py",
+    "sha256": "abda97125e1385bb9e8c42e71536a85174f07ec6de12332eab6db4214bfe021a"
+  },
+  "amendment_scope": "CUMULATIVE_UTF8_DECODE_AND_WRONG_ENGLISH_CONTROL_RAW_PROMPT_ONLY",
+  "receiver_observations_before_amendment": 0,
+  "receiver_observations_field_semantics": "No receiver observations were persisted or promoted; the second failed process executed receiver calls in memory before a control-harness exception.",
+  "receiver_quality_aggregate_seen_before_amendment": false,
+  "bounded_architecture_repair_consumed": false,
+  "training_authorized": false,
+  "calibration_authorized": false,
+  "artifact_mutation_authorized": false,
+  "adapter_mutation_authorized": false,
+  "bindings": {
+    "abi_v2/matrix_protocol_amendment1.json": "4f7c11bfa9010e85eaa7003bbcd269639e4939e957d17981ff5a79c7e26e56e7",
+    "results/abi_v2/capability_matrix/initial_execution_failure.json": "e01e2fdb4d054bf4fcbe0fedaf984862d796c76b826bbc76abe84f3f2b8dc77a",
+    "results/abi_v2/capability_matrix/second_execution_failure.json": "594ade5757fd5f3f6025c15f45f09bf41b43df28dac0710e48f045510622a8f8"
+  },
+  "decision_rule": "Inherit every base protocol prompt, source-success lock, capability hash, adapter hash, checkpoint, threshold, causal test, and claim boundary. Cumulatively allow only strict-UTF-8 byte decoding and raw-prompt delivery for the deliberately wrong specialist-on-English negative control."
+}

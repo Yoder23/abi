@@ -1,0 +1,45 @@
+{
+  "capability_specific_receiver_calibration": false,
+  "capability_specific_receiver_training": false,
+  "cells_passed": 12,
+  "cells_required": 12,
+  "evidence_sha256": "05d37864a94a82f41b0ef828be2c68442b33899dabb7e59766f7f85d533cfa31",
+  "format": "abi-v2-three-host-four-capability-matrix-summary/1",
+  "hosts": {
+    "layercake": {
+      "adapter_sha256": "d1f3a9d67581032473055711773f784e3b0a028fb68fab58c3a9a63b94317f04",
+      "cells": {
+        "chemistry": "PASS",
+        "civics": "PASS",
+        "english": "PASS",
+        "python": "PASS"
+      },
+      "result_path": "results/abi_v2/capability_matrix/layercake_repaired/result.json",
+      "result_sha256": "f5845a997d5b32ce233f08e8140ec5aa4a58d030d4a345bd412b5ce95b83481b"
+    },
+    "pythia": {
+      "adapter_sha256": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa",
+      "cells": {
+        "chemistry": "PASS",
+        "civics": "PASS",
+        "english": "PASS",
+        "python": "PASS"
+      },
+      "result_path": "results/abi_v2/capability_matrix/pythia/result.json",
+      "result_sha256": "a8b67db798b8807d629ac9f5ca4f7b7e28e90e15f17e8ccc1be049ec2304d255"
+    },
+    "qwen2": {
+      "adapter_sha256": "b13a75b82acf6df412c2569edaf36654a105b8c565164236fbeb5813b630291f",
+      "cells": {
+        "chemistry": "PASS",
+        "civics": "PASS",
+        "english": "PASS",
+        "python": "PASS"
+      },
+      "result_path": "results/abi_v2/capability_matrix/qwen2/result.json",
+      "result_sha256": "60d6b028804c5d64e578eef6d9400be6e7b46fabcd3371230d7a042dce6514dd"
+    }
+  },
+  "one_adapter_per_host_reused_across_four_capabilities": true,
+  "status": "PASS_12_OF_12_HOST_CAPABILITY_CELLS"
+}

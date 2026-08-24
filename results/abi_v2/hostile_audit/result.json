@@ -1,0 +1,23 @@
+{
+  "all_prohibited_mutations_rejected": true,
+  "evidence_sha256": "f64af7d7c265d4b224d7805b9a0b76f9538c5500c2d007d2134d8efcfdce8b1f",
+  "format": "abi-v2-hostile-audit-result/1",
+  "model_inference_performed_by_verifier": false,
+  "mutations": {
+    "adapter_hash_mutation_rejected": true,
+    "adapter_removal_rejected_3_of_3": true,
+    "capability_removal_rejected_and_reinstalled_12_of_12": true,
+    "capability_specific_adapter_owner_rejected": true,
+    "false_declared_gate_rejected": true,
+    "historical_failed_layercake_result_preserved": true,
+    "package_hash_mutation_rejected": true,
+    "post_freeze_calibration_rejected": true,
+    "post_freeze_training_rejected": true,
+    "random_equal_size_package_rejected_12_of_12": true,
+    "raw_observation_hash_mutation_rejected": true,
+    "result_evidence_hash_mutation_rejected": true,
+    "shuffled_equal_size_package_rejected_12_of_12": true,
+    "wrong_capability_collapsed_12_of_12": true
+  },
+  "status": "PASS_HOSTILE_AUDIT"
+}

@@ -1,0 +1,35 @@
+{
+  "adapters": {
+    "layercake": {
+      "bytes": 1556,
+      "frozen_before_capability_reveal": true,
+      "optimizer_steps": 0,
+      "path": "results/abi_v2/host_certification/initial/layercake/adapter.json",
+      "sha256": "d1f3a9d67581032473055711773f784e3b0a028fb68fab58c3a9a63b94317f04",
+      "trainable_parameters": 0
+    },
+    "pythia": {
+      "bytes": 1646,
+      "frozen_before_capability_reveal": true,
+      "optimizer_steps": 0,
+      "path": "results/abi_v2/host_certification/initial/pythia/adapter.json",
+      "sha256": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa",
+      "trainable_parameters": 0
+    },
+    "qwen2": {
+      "bytes": 1637,
+      "frozen_before_capability_reveal": true,
+      "optimizer_steps": 0,
+      "path": "results/abi_v2/host_certification/initial/qwen2/adapter.json",
+      "sha256": "b13a75b82acf6df412c2569edaf36654a105b8c565164236fbeb5813b630291f",
+      "trainable_parameters": 0
+    }
+  },
+  "capability_specific_parameters_forbidden": true,
+  "evidence_sha256": "ad9282dbfe47773ef22bbc0836329d89e81374146150e21f5514b6bfd6977f1a",
+  "format": "abi-v2-frozen-host-adapter-manifest/1",
+  "initial_decision_path": "results/abi_v2/host_certification/initial_decision.json",
+  "initial_decision_sha256": "a485063cc4ee223cc1aacc3ef14490b4fc7556835c00c0d5a93ca6cd7ab3bc0c",
+  "same_adapter_required_across_all_four_capabilities": true,
+  "status": "FROZEN_BEFORE_CAPABILITY_REVEAL"
+}

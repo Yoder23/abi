@@ -1,0 +1,21 @@
+{
+  "format": "abi-v2-matrix-pre-observation-harness-failure/1",
+  "status": "PRESERVED_HARNESS_FAILURE_BEFORE_FIRST_RECEIVER_OBSERVATION",
+  "status_date": "2026-08-24",
+  "host": "layercake",
+  "command": "python -m abi_v2.capability_matrix --protocol abi_v2/matrix_protocol.json --host layercake --output-dir results/abi_v2/capability_matrix/layercake --device cuda",
+  "protocol_sha256": "2042007a1de9df33575957c2d722f31781023bec427481a963a9d588304dd58e",
+  "implementation_sha256": "06e01ab3026e708b6d2a6830bdb82f912556a0011e05deabac38c1d6cee82a82",
+  "exception_type": "CanonicalABIError",
+  "exception_message": "canonical text fields must be strings",
+  "failure_location": "English runtime output passed to canonical_output_intent before strict UTF-8 bytes were decoded",
+  "classification": "HARNESS_TYPE_BOUNDARY_FAILURE_NOT_ARCHITECTURE_FAILURE",
+  "receiver_observations_written": 0,
+  "output_directory_created": false,
+  "capability_quality_observed": false,
+  "adapter_changed": false,
+  "capability_artifact_changed": false,
+  "source_success_lock_changed": false,
+  "bounded_architecture_repairs_consumed": 0,
+  "authorized_amendment": "Decode the already strict-UTF-8 LayerCake core bytes before passing text into the canonical output intent; change no capability math, adapter semantics, prompts, gates, hashes, or result interpretation."
+}
