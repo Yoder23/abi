@@ -8,3 +8,4 @@
 *.cake binary
 results/** binary !eol
 *.safetensors filter=lfs diff=lfs merge=lfs -text
+evidence/current/** binary
