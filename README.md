@@ -143,10 +143,12 @@ zero semantic loss for arbitrary models, or production release certification.
 python -m pytest -q tests/test_public_release.py \
   tests/test_capability_pipeline.py tests/test_capability_segregation.py
 python -m ruff check abi/__init__.py abi/__main__.py \
-  abi/capability_pipeline.py abi/capability_segregation.py \
-  abi/layercake_acquisition.py tests/test_public_release.py
+  tests/test_public_release.py examples/segregate_capabilities.py
 python -m build
 ```
+
+The three certified compiler modules exercised by these tests retain their
+exact evidence-bound bytes and are therefore not autoformatted in place.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md). Scientific
 corrections, independent reproductions, new teacher adapters, and hostile

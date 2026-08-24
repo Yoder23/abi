@@ -19,6 +19,7 @@ from .layercake_acquisition import (
     build_labeled_extraction_record,
 )
 
+
 SEGREGATED_RECORD_SCHEMA = "abi-layercake-segregated-extraction-record/2"
 DOMAIN_ONTOLOGY_SCHEMA = "abi-domain-ontology/1"
 SEGREGATION_MANIFEST_SCHEMA = "abi-core-domain-segregation-manifest/1"

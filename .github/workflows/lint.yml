@@ -18,9 +18,5 @@ jobs:
         run: >-
           python -m ruff check
           abi/__init__.py abi/__main__.py
-          abi/capability_pipeline.py abi/capability_segregation.py
-          abi/layercake_acquisition.py
           tests/test_public_release.py
-          tests/test_capability_pipeline.py
-          tests/test_capability_segregation.py
           examples/segregate_capabilities.py

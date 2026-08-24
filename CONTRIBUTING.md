@@ -22,10 +22,12 @@ python -m abi self-check
 python -m pytest -q tests/test_public_release.py \
   tests/test_capability_pipeline.py tests/test_capability_segregation.py
 python -m ruff check abi/__init__.py abi/__main__.py \
-  abi/capability_pipeline.py abi/capability_segregation.py \
-  abi/layercake_acquisition.py tests/test_public_release.py
+  tests/test_public_release.py examples/segregate_capabilities.py
 python -m build
 ```
+
+Do not autoformat an evidence-bound source file. Supersede its certificate or
+place new behavior behind a new module and verifier.
 
 Include the exact command, seed, hardware, source revision, raw measurements,
 and claim boundary for experimental changes. Never edit a locked result in

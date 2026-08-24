@@ -22,6 +22,22 @@ from abi.capability_segregation import (
 from abi.layercake_acquisition import validate_labeled_extraction_record
 
 ROOT = Path(__file__).resolve().parents[1]
+SEGREGATION_EVIDENCE = ROOT / "evidence" / "current" / "segregation"
+
+
+def _bound_path(relative_path: str) -> Path:
+    archived = {
+        "ABI_ENGLISH_CORE_DOMAIN_SEGREGATION_CONTRACT_V2.json": (
+            "ABI_ENGLISH_CORE_DOMAIN_SEGREGATION_CONTRACT_V2.json"
+        ),
+        "catalogs/domain_ontology_v1.json": "domain_ontology_v1.json",
+        "catalogs/english_and_first_domains_certification_v6.json": (
+            "english_and_first_domains_certification_v6.json"
+        ),
+    }
+    if relative_path in archived:
+        return SEGREGATION_EVIDENCE / archived[relative_path]
+    return ROOT / relative_path
 
 
 def _ontology():
@@ -273,7 +289,8 @@ def test_ontology_rejects_ambiguous_markers() -> None:
 def test_checked_in_contract_and_ontology_lock_correct_claim_boundary() -> None:
     contract = json.loads(
         (
-            ROOT / "ABI_ENGLISH_CORE_DOMAIN_SEGREGATION_CONTRACT_V2.json"
+            SEGREGATION_EVIDENCE
+            / "ABI_ENGLISH_CORE_DOMAIN_SEGREGATION_CONTRACT_V2.json"
         ).read_text(encoding="utf-8")
     )
     assert contract["format"] == (
@@ -296,7 +313,7 @@ def test_checked_in_contract_and_ontology_lock_correct_claim_boundary() -> None:
     assert contract["current_result"]["product_moonshot_passed"] is False
 
     ontology = json.loads(
-        (ROOT / "catalogs" / "domain_ontology_v1.json").read_text(
+        (SEGREGATION_EVIDENCE / "domain_ontology_v1.json").read_text(
             encoding="utf-8"
         )
     )
@@ -304,8 +321,7 @@ def test_checked_in_contract_and_ontology_lock_correct_claim_boundary() -> None:
     assert ontology["discovery_exhaustive_claimed"] is False
     catalog_value = json.loads(
         (
-            ROOT
-            / "catalogs"
+            SEGREGATION_EVIDENCE
             / "english_and_first_domains_certification_v6.json"
         ).read_text(encoding="utf-8")
     )
@@ -325,32 +341,36 @@ def test_checked_in_contract_and_ontology_lock_correct_claim_boundary() -> None:
 
 def test_implementation_certificate_binds_code_contract_and_catalog() -> None:
     historical_path = (
-        ROOT / "ABI_CORE_DOMAIN_SEGREGATION_IMPLEMENTATION_CERTIFICATE.json"
+        SEGREGATION_EVIDENCE
+        / "ABI_CORE_DOMAIN_SEGREGATION_IMPLEMENTATION_CERTIFICATE.json"
     )
     assert hashlib.sha256(historical_path.read_bytes()).hexdigest() == (
         "60ca048704c17e36e331afd8f6694783f56d1e06ba223d2d8ebfb9f80a1b7700"
     )
     historical_v2_path = (
-        ROOT / "ABI_CORE_DOMAIN_SEGREGATION_IMPLEMENTATION_CERTIFICATE_V2.json"
+        SEGREGATION_EVIDENCE
+        / "ABI_CORE_DOMAIN_SEGREGATION_IMPLEMENTATION_CERTIFICATE_V2.json"
     )
     assert hashlib.sha256(historical_v2_path.read_bytes()).hexdigest() == (
         "4922120a3066c6a93e2146b3015610ef98a661d42a610f0bd7cb53720415974b"
     )
     historical_v3_path = (
-        ROOT / "ABI_CORE_DOMAIN_SEGREGATION_IMPLEMENTATION_CERTIFICATE_V3.json"
+        SEGREGATION_EVIDENCE
+        / "ABI_CORE_DOMAIN_SEGREGATION_IMPLEMENTATION_CERTIFICATE_V3.json"
     )
     assert hashlib.sha256(historical_v3_path.read_bytes()).hexdigest() == (
         "2639dcfc1048838fc181afeb36ee556f80302df9bb61a7e4c7fad9f8176ca0ab"
     )
     historical_v4_path = (
-        ROOT / "ABI_CORE_DOMAIN_SEGREGATION_IMPLEMENTATION_CERTIFICATE_V4.json"
+        SEGREGATION_EVIDENCE
+        / "ABI_CORE_DOMAIN_SEGREGATION_IMPLEMENTATION_CERTIFICATE_V4.json"
     )
     assert hashlib.sha256(historical_v4_path.read_bytes()).hexdigest() == (
         "44c5b1ba6b27897e5ef530bf0c454adb12befcd4e92a9debfc6e41f9aa3217d2"
     )
     certificate = json.loads(
         (
-            ROOT
+            SEGREGATION_EVIDENCE
             / "ABI_CORE_DOMAIN_SEGREGATION_IMPLEMENTATION_CERTIFICATE_V5.json"
         ).read_text(encoding="utf-8")
     )
@@ -370,5 +390,5 @@ def test_implementation_certificate_binds_code_contract_and_catalog() -> None:
     }
     for relative_path, expected_sha in bound_paths.items():
         assert hashlib.sha256(
-            (ROOT / relative_path).read_bytes()
+            _bound_path(relative_path).read_bytes()
         ).hexdigest() == expected_sha
