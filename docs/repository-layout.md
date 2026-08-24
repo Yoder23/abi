@@ -5,7 +5,7 @@ The default branch is intentionally curated for readers and contributors.
 | Path | Purpose |
 | --- | --- |
 | `abi/` | Installable Python package; only exports in `abi/__init__.py` are the stable alpha API |
-| `tests/` | Unit, hostile, verifier, and historical campaign tests |
+| `tests/` | Supported public tests plus historical campaign tests; plain `pytest` selects the supported suite |
 | `examples/` | Small supported examples that require no model download |
 | `docs/` | Architecture, status, reproduction, and publication guidance |
 | `evidence/current/` | Controlling compact state and bounded certificates |

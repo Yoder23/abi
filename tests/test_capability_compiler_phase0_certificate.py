@@ -2,12 +2,20 @@ import copy
 import json
 from pathlib import Path
 
+import pytest
+
 from abi.capability_compiler_phase0_certificate import validate_certificate
 
-
 ROOT = Path(__file__).resolve().parents[1]
-CERTIFICATE = json.loads(
-    (ROOT / "ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json").read_text(encoding="utf-8")
+CERTIFICATE_PATH = ROOT / "ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json"
+pytestmark = pytest.mark.skipif(
+    not CERTIFICATE_PATH.is_file(),
+    reason="historical Phase 0 certificate is available on research-history-v1089",
+)
+CERTIFICATE = (
+    json.loads(CERTIFICATE_PATH.read_text(encoding="utf-8"))
+    if CERTIFICATE_PATH.is_file()
+    else {}
 )
 
 

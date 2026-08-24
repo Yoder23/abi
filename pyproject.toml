@@ -79,3 +79,9 @@ ignore = ["E501"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+python_files = [
+  "test_public_release.py",
+  "test_capability_pipeline.py",
+  "test_capability_segregation.py",
+  "test_abi_v2_*.py",
+]

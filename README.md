@@ -224,6 +224,9 @@ python -m build
 
 The three certified compiler modules exercised by these tests retain their
 exact evidence-bound bytes and are therefore not autoformatted in place.
+Plain `pytest` runs this same supported default-branch suite. Historical
+campaign tests remain addressable by explicit path, but many require the bulk
+ledgers and generated fixtures preserved on `research-history-v1089`.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md). Scientific
 corrections, independent reproductions, new teacher adapters, and hostile
