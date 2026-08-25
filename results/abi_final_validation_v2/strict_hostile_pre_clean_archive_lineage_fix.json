@@ -1,11 +1,11 @@
 {
-  "baseline_evidence_sha256": "1cfb3a1c15119c0aedcd8e70606c94873109722415079916b2ed488cc512ac01",
-  "evidence_sha256": "98d6b6cad6e3b889c2c85d360fb304253717198d63c2300d64b5ecfe3768096d",
+  "baseline_evidence_sha256": "7f11a154ad5475ff71a99074ecee7cad35cd27bfa966d3c99cdd1f786e1a12d4",
+  "evidence_sha256": "b3e3217b5f68bcebbd322fccaf7347c63d785b1655a18ba04bb832b419b60811",
   "format": "abi-v2-strict-hostile-verification/1",
   "mutations": [
     {
       "exception_type": "StrictValidationError",
-      "message": "required file missing: C:\\abi-r2-prepublication-a\\abi-final-validation-v2\\abi_release\\results\\abi_moonshot\\packages\\abi-python-token-plan-seed9824.cake",
+      "message": "required file missing: /tmp/abi-prehostile-20260825-e/abi-final-validation-v2/abi_release/results/abi_moonshot/packages/abi-python-token-plan-seed9824.cake",
       "mutation": "missing_capability_package",
       "rejected": true
     },
@@ -17,7 +17,7 @@
     },
     {
       "exception_type": "StrictValidationError",
-      "message": "required JSONL unavailable: C:\\abi-r2-prepublication-a\\abi-final-validation-v2\\abi_release\\results\\abi_final_validation_v2\\live_causality\\qwen2\\observations.jsonl",
+      "message": "required JSONL unavailable: /tmp/abi-prehostile-20260825-e/abi-final-validation-v2/abi_release/results/abi_final_validation_v2/live_causality/qwen2/observations.jsonl",
       "mutation": "missing_raw_causality_file",
       "rejected": true
     },
@@ -41,13 +41,13 @@
     },
     {
       "exception_type": "StrictValidationError",
-      "message": "required text unavailable: C:\\abi-r2-prepublication-a\\abi-final-validation-v2\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict\\pythia\\mountinfo.txt",
+      "message": "required text unavailable: /tmp/abi-prehostile-20260825-e/abi-final-validation-v2/abi_release/results/abi_final_validation_v2/isolated_certification_strict/pythia/mountinfo.txt",
       "mutation": "missing_raw_mount_table",
       "rejected": true
     },
     {
       "exception_type": "StrictValidationError",
-      "message": "required file missing: C:\\abi-r2-prepublication-a\\abi-final-validation-v2\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict\\layercake\\certification\\adapter.json",
+      "message": "required file missing: /tmp/abi-prehostile-20260825-e/abi-final-validation-v2/abi_release/results/abi_final_validation_v2/isolated_certification_strict/layercake/certification/adapter.json",
       "mutation": "missing_frozen_adapter",
       "rejected": true
     },
@@ -60,7 +60,7 @@
   ],
   "mutations_rejected": 9,
   "mutations_required": 9,
-  "post_restore_evidence_sha256": "1cfb3a1c15119c0aedcd8e70606c94873109722415079916b2ed488cc512ac01",
+  "post_restore_evidence_sha256": "7f11a154ad5475ff71a99074ecee7cad35cd27bfa966d3c99cdd1f786e1a12d4",
   "source_tree_restored": true,
   "status": "PASS_STRICT_VERIFIER_FAILS_CLOSED",
   "trusted_scientific_boolean_dependencies": []

@@ -23,6 +23,7 @@ CAPABILITIES = ("english", "python", "chemistry", "civics")
 FROZEN_TAG = "abi-host-independence-technical-proof-2026-08-24"
 FROZEN_COMMIT = "acfed2a225a32d36c32b625e35c6ede536cfab01"
 RESULT_ROOT = Path("results/abi_final_validation")
+REPAIRED_RESULT_ROOT = Path("results/abi_final_validation_v2")
 MATRIX_DIRS = {
     "layercake": "layercake_repaired",
     "qwen2": "qwen2",
@@ -123,9 +124,9 @@ def freeze_release_candidate(root: Path) -> dict[str, Any]:
     if (root / ".git").exists():
         tag_commit = _git(root, "rev-list", "-n", "1", FROZEN_TAG)
     else:
-        locked_path = root / RESULT_ROOT / "frozen_release_candidate.json"
+        locked_path = root / REPAIRED_RESULT_ROOT / "frozen_release_candidate.json"
         if not locked_path.is_file():
-            raise FinalValidationError("clean release tree lacks frozen lineage receipt")
+            raise FinalValidationError("clean release tree lacks repaired frozen lineage receipt")
         locked_candidate = read_json(locked_path)
         if locked_candidate.get("evidence_sha256") != evidence_hash(locked_candidate):
             raise FinalValidationError("clean release frozen lineage receipt changed")

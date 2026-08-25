@@ -1,0 +1,289 @@
+{
+  "canonical_abi_version": "abi-canonical-host/2",
+  "capability_artifacts": {
+    "chemistry": {
+      "bytes": 510981,
+      "classification": "standalone_canonical_runtime_package_pending_causality_audit",
+      "path": "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.cake",
+      "protocol_sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+      "sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb"
+    },
+    "civics": {
+      "bytes": 495919,
+      "classification": "standalone_canonical_runtime_package_pending_causality_audit",
+      "path": "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.cake",
+      "protocol_sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+      "sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604"
+    },
+    "english": {
+      "bytes": 253216208,
+      "classification": "standalone_canonical_runtime_package_pending_causality_audit",
+      "path": "results/abi_capability_compiler_phase7_integrated/materialized_v1052/phase7-final-english-core.cake",
+      "protocol_sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+      "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d"
+    },
+    "python": {
+      "bytes": 448404,
+      "classification": "standalone_canonical_runtime_package_pending_causality_audit",
+      "path": "results/abi_moonshot/packages/abi-python-token-plan-seed9824.cake",
+      "protocol_sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+      "sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d"
+    }
+  },
+  "evaluator_and_data_bindings": {
+    "adapter_manifest": {
+      "bytes": 1455,
+      "path": "results/abi_v2/adapters/manifest.json",
+      "sha256": "67db2e7da9c5ffb6223741a4d02a9e8f0248b7df9e0df970a600d69b4c11f3cf"
+    },
+    "canonical_reference": {
+      "bytes": 8078,
+      "path": "abi_v2/canonical.py",
+      "sha256": "c394133dc70a8cabfbb7b390e3b74178707d8cb3c89ead91a7b106eca445f52b"
+    },
+    "canonical_spec": {
+      "bytes": 5932,
+      "path": "abi_v2/canonical_spec.json",
+      "sha256": "6536ef1b58dfeea0474bfef5619f3627ecaefe8f39f25da017f11446b6582c2f"
+    },
+    "conformance_suite": {
+      "bytes": 3096,
+      "path": "abi_v2/conformance_suite.json",
+      "sha256": "2af84b8b18fa78613fda7c96e7d269ef731b68138f736ea2d4441f4254747383"
+    },
+    "current_hostile_audit": {
+      "bytes": 1000,
+      "path": "results/abi_v2/hostile_audit/result.json",
+      "sha256": "879b4f943c88dd9cb1eeff1163d8fcc0eea980035c79a799e33f9ba88048aed4"
+    },
+    "decoding_policy": {
+      "bytes": 15574,
+      "path": "ABI_CAPABILITY_COMPILER_PHASE4_B40_V25_PRODUCT_CONFORMANCE_PROTOCOL_V960.json",
+      "sha256": "ab7ca91e2516c2c431a24df05100cae3408dfed23b5ad592f6619a098dc74f30"
+    },
+    "english_catalog_loader": {
+      "bytes": 6401,
+      "path": "abi/capability_compiler_phase2_teacher.py",
+      "sha256": "dc76ee575f5e5f2cccd9fe8279ae501920bb022e8e62a921240ea3e5a9ced892"
+    },
+    "english_evaluation_data": {
+      "bytes": 17631486,
+      "path": "catalogs/capability_compiler_phase1_frozen_v1.json",
+      "sha256": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a"
+    },
+    "english_source_reference_outputs": {
+      "bytes": 1527017,
+      "path": "results/abi_capability_compiler_phase4_clarification_route_replication/B40-seed104729-v927/evaluation/development_outputs.jsonl",
+      "sha256": "b2aeab680a6b1a17a6f8332b5d1c5571b4eda72a51b2d191e67509aaeedb6196"
+    },
+    "functional_evaluator": {
+      "bytes": 16882,
+      "path": "abi/capability_compiler_phase2_common.py",
+      "sha256": "8093ec2016d685f0327c87640042c8373bc141d76351fd641b21a44d018b6c92"
+    },
+    "host_certification_evaluator": {
+      "bytes": 23171,
+      "path": "abi_v2/host_certification.py",
+      "sha256": "a547fdfc3045a283ee61e6527d5e4a558a024274ad7f86ada28e1bf39af8652c"
+    },
+    "human_packet_manifest": {
+      "bytes": 3300,
+      "path": "results/abi_capability_compiler_phase2/human_rating_packet_v1/manifest.json",
+      "sha256": "06c1e9e0f8f4f938cd020686fff7ac8470e8cff4a3d3fe294a0b0c003e2c69aa"
+    },
+    "initial_decision": {
+      "bytes": 2956,
+      "path": "results/abi_v2/host_certification/initial_decision.json",
+      "sha256": "a485063cc4ee223cc1aacc3ef14490b4fc7556835c00c0d5a93ca6cd7ab3bc0c"
+    },
+    "layercake_certification_performance": {
+      "bytes": 931,
+      "path": "results/abi_v2/host_certification/initial/layercake/performance.json",
+      "sha256": "cc3981109c28deebd9590145dc43bf8d26c648502e022034e099bb7f61b327f9"
+    },
+    "layercake_certification_result": {
+      "bytes": 13752,
+      "path": "results/abi_v2/host_certification/initial/layercake/result.json",
+      "sha256": "053a64a764cca012668db6677887e6466f4dd5d2b5cf56f6b717b814d32fd58e"
+    },
+    "layercake_matrix_mathematical": {
+      "bytes": 304893,
+      "path": "results/abi_v2/capability_matrix/layercake_repaired/mathematical.json",
+      "sha256": "5a208b5d2f44492976334ae468ca56dc137b71279dc839f19b452f887840ad91"
+    },
+    "layercake_matrix_observations": {
+      "bytes": 1352830,
+      "path": "results/abi_v2/capability_matrix/layercake_repaired/observations.jsonl",
+      "sha256": "e21806af4732f359c51e3658e619ccff30882abc1284e0f3c49dc3a33b12e463"
+    },
+    "layercake_matrix_result": {
+      "bytes": 14753,
+      "path": "results/abi_v2/capability_matrix/layercake_repaired/result.json",
+      "sha256": "f5845a997d5b32ce233f08e8140ec5aa4a58d030d4a345bd412b5ce95b83481b"
+    },
+    "matrix_evaluator": {
+      "bytes": 39907,
+      "path": "abi_v2/capability_matrix.py",
+      "sha256": "a07c8ef0342d8067979bf018e0c5fb286583064d5b40d9a3e8d9d556492eeab6"
+    },
+    "pythia_certification_performance": {
+      "bytes": 926,
+      "path": "results/abi_v2/host_certification/initial/pythia/performance.json",
+      "sha256": "86aa371f46c28fb7367ff4e5b85c942398c7d9c9cde451d25442bb840c5b57ec"
+    },
+    "pythia_certification_result": {
+      "bytes": 15927,
+      "path": "results/abi_v2/host_certification/initial/pythia/result.json",
+      "sha256": "485bd72070fdbabeeecb7c45b958c53ef2bfac241fdc1b891cf25d72a9f5b69f"
+    },
+    "pythia_matrix_mathematical": {
+      "bytes": 304890,
+      "path": "results/abi_v2/capability_matrix/pythia/mathematical.json",
+      "sha256": "65d124f5e662db5bb3804abca36c8ec70a5e23711d3bfb50ba09985be801afa7"
+    },
+    "pythia_matrix_observations": {
+      "bytes": 1347182,
+      "path": "results/abi_v2/capability_matrix/pythia/observations.jsonl",
+      "sha256": "8afca24fc10f384c8a2e054b76eef902d6f4c085bdaf245dde10cf50fbce7786"
+    },
+    "pythia_matrix_result": {
+      "bytes": 15371,
+      "path": "results/abi_v2/capability_matrix/pythia/result.json",
+      "sha256": "a8b67db798b8807d629ac9f5ca4f7b7e28e90e15f17e8ccc1be049ec2304d255"
+    },
+    "qwen2_certification_performance": {
+      "bytes": 922,
+      "path": "results/abi_v2/host_certification/initial/qwen2/performance.json",
+      "sha256": "922098834fbc13d20e979bd8fe1a7e3688b257eeb18d6e2501ad13f9103d56e0"
+    },
+    "qwen2_certification_result": {
+      "bytes": 16233,
+      "path": "results/abi_v2/host_certification/initial/qwen2/result.json",
+      "sha256": "3d9f7ffb75e0ff51b9cb1a1bad3cce894456bbfc18380f0d078dbb24ade05f16"
+    },
+    "qwen2_matrix_mathematical": {
+      "bytes": 304889,
+      "path": "results/abi_v2/capability_matrix/qwen2/mathematical.json",
+      "sha256": "049151c3a70a7b410cf56a8a8640409cd1dd8e4e5a922de4df678cd7c365d95f"
+    },
+    "qwen2_matrix_observations": {
+      "bytes": 1342127,
+      "path": "results/abi_v2/capability_matrix/qwen2/observations.jsonl",
+      "sha256": "c236c4177841bf8e3d70e24c535fa0e1e9ef77bda70e4baaadf63e80882fafee"
+    },
+    "qwen2_matrix_result": {
+      "bytes": 15364,
+      "path": "results/abi_v2/capability_matrix/qwen2/result.json",
+      "sha256": "60d6b028804c5d64e578eef6d9400be6e7b46fabcd3371230d7a042dce6514dd"
+    },
+    "release_verifier": {
+      "bytes": 31217,
+      "path": "abi_v2/verify_release.py",
+      "sha256": "6ee2e57964bae31e4d6e1555589e8728d6a8590272dfe2f6704e9cf23ae8c9e8"
+    },
+    "runtime_manifest": {
+      "bytes": 924,
+      "path": "abi_v2/external_runtime_manifest.json",
+      "sha256": "c98e2934fcdc1d3a0936b28232a19dc97dc2273078318c494ffdc49d0abce73d"
+    },
+    "source_success_locks": {
+      "bytes": 83008,
+      "path": "results/abi_v2/semantic_retention/source_success_locks.json",
+      "sha256": "0e12da8d4f827610894c815cc00268c3ab1321bdf69a245214d2845a7efd3354"
+    },
+    "specialist_evaluation_data": {
+      "bytes": 6287076,
+      "path": "evidence/current/segregation/english_and_first_domains_certification_v6.json",
+      "sha256": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052"
+    },
+    "specialist_source_reference_outputs": {
+      "bytes": 407530,
+      "path": "results/abi_capability_compiler_phase6_composition/run_v1032/seed104729/observations.jsonl",
+      "sha256": "3b177777bd1d032cf3aef447578cf4620194ce664f3a4f5cc51633b512333535"
+    }
+  },
+  "evidence_sha256": "58e553403dadefd7d024cd8800c39966ce7640898431db7c1120b1f3486f5703",
+  "format": "abi-final-validation-frozen-release-candidate/1",
+  "host_adapters": {
+    "layercake": {
+      "bytes": 1556,
+      "parameters": 0,
+      "path": "results/abi_v2/host_certification/initial/layercake/adapter.json",
+      "sha256": "d1f3a9d67581032473055711773f784e3b0a028fb68fab58c3a9a63b94317f04"
+    },
+    "pythia": {
+      "bytes": 1646,
+      "parameters": 0,
+      "path": "results/abi_v2/host_certification/initial/pythia/adapter.json",
+      "sha256": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa"
+    },
+    "qwen2": {
+      "bytes": 1637,
+      "parameters": 0,
+      "path": "results/abi_v2/host_certification/initial/qwen2/adapter.json",
+      "sha256": "b13a75b82acf6df412c2569edaf36654a105b8c565164236fbeb5813b630291f"
+    }
+  },
+  "host_checkpoints": {
+    "layercake": {
+      "architecture": "LayerCake route-isolated shallow sparse host environment",
+      "checkpoint_sha256": "7b176f21e6a86f3aaded724462d37149f8f8be48370bcdd163fe44c49e3464ce",
+      "host_id": "layercake-v25"
+    },
+    "pythia": {
+      "architecture": "GPTNeoXForCausalLM",
+      "checkpoint_sha256": "29d2e457a664e41c12c735f20a36dc0956a665f614a54ce5db21a32e75965270",
+      "host_id": "pythia-160m",
+      "model": "EleutherAI/pythia-160m",
+      "revision": "50f5173d932e8e61f858120bcb800b97af589f46",
+      "snapshot_inventory_sha256": "9c3045a81419c0fe3c7a8c584d8ad467b267d9e64de9663f2aad348a09f6c085",
+      "tokenizer_sha256": "c24618a1b3e6a38167beff1c72cffd126c3a66254347304b50547d12c5f25624"
+    },
+    "qwen2": {
+      "architecture": "Qwen2ForCausalLM",
+      "checkpoint_sha256": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342",
+      "host_id": "qwen2.5-0.5b",
+      "model": "Qwen/Qwen2.5-0.5B",
+      "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+      "snapshot_inventory_sha256": "a2f0d549121c1d38fe3c9ff33d6e80df1d02a032153daa15ff89663eb091f25f",
+      "tokenizer_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+    }
+  },
+  "matrix_protocol": {
+    "bytes": 2708,
+    "path": "abi_v2/matrix_protocol_amendment3.json",
+    "sha256": "1551f1e53fa29458647519980355d71b19859bb37c2b1ffc27dbd2d4a071c51d"
+  },
+  "minimum_information_status": "PENDING_AFTER_EXTERNAL_VALIDATION",
+  "mutation_rule": "Any architecture, capability, adapter, evaluator, threshold, benchmark, or bound-data change creates a new release candidate and invalidates dependent validation.",
+  "repository": "https://github.com/Yoder23/abi",
+  "runtime_versions": {
+    "claim_boundary": "This is the development runtime identity, not evidence of external reproduction or a universal hardware claim.",
+    "format": "abi-v2-development-runtime-manifest/1",
+    "gpu": {
+      "driver": "591.44",
+      "memory_mib": 16384,
+      "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+      "torch_cuda": "11.8"
+    },
+    "packages": {
+      "cryptography": "46.0.5",
+      "huggingface-hub": "0.36.0",
+      "numpy": "2.2.6",
+      "psutil": "7.0.0",
+      "safetensors": "0.7.0",
+      "tokenizers": "0.22.1",
+      "torch": "2.7.1+cu118",
+      "transformers": "4.57.3"
+    },
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.10.0",
+    "recorded_date": "2026-08-24",
+    "reproduction_rule": "An external operator records its own hardware and package manifest. Exact package versions are preferred; different hardware is required for the independent-reproduction gate.",
+    "status": "RECORDED_FROM_LOCAL_TECHNICAL_MATRIX"
+  },
+  "source_success_lock_sha256": "0e12da8d4f827610894c815cc00268c3ab1321bdf69a245214d2845a7efd3354",
+  "status": "FROZEN_FOR_FINAL_TECHNICAL_VALIDATION",
+  "technical_proof_commit": "acfed2a225a32d36c32b625e35c6ede536cfab01",
+  "technical_proof_tag": "abi-host-independence-technical-proof-2026-08-24"
+}

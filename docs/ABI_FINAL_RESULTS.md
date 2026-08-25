@@ -36,9 +36,9 @@ generation.
 ## Integrity
 
 The strict certificate binds 59 required files with per-file hashes and
-aggregate SHA-256 `3a56667dd2dffdf8c48b5de967933b968889ccc3cea6af762a567f9850414b46`.
+aggregate SHA-256 `052f2437a90c081e50abcdc098e619a2fe58ef3ecd91b56c099eb62b6415b7ec`.
 Its current evidence SHA-256 is
-`7f11a154ad5475ff71a99074ecee7cad35cd27bfa966d3c99cdd1f786e1a12d4`.
+`1cfb3a1c15119c0aedcd8e70606c94873109722415079916b2ed488cc512ac01`.
 No experiment status/gate/frozen-policy boolean is accepted as scientific
 evidence.
 

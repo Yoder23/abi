@@ -184,6 +184,12 @@ def collect(root: Path, layercake_root: Path) -> list[BundleFile]:
         "results/abi_final_validation_v2/strict_validation.json",
         "repaired_strict_certificate",
     )
+    _append(
+        records,
+        root,
+        "results/abi_final_validation_v2/frozen_release_candidate.json",
+        "repaired_frozen_candidate",
+    )
     if (root / "results/abi_final_validation_v2/strict_hostile_pre_public.json").is_file():
         _append(
             records,
@@ -236,7 +242,19 @@ def collect(root: Path, layercake_root: Path) -> list[BundleFile]:
     _append(
         records,
         root,
+        "results/abi_final_validation_v2/strict_validation_pre_clean_archive_lineage_fix.json",
+        "superseded_historical_evidence",
+    )
+    _append(
+        records,
+        root,
         "results/abi_final_validation_v2/strict_hostile_pre_declarative_boolean_audit.json",
+        "superseded_historical_evidence",
+    )
+    _append(
+        records,
+        root,
+        "results/abi_final_validation_v2/strict_hostile_pre_clean_archive_lineage_fix.json",
         "superseded_historical_evidence",
     )
     _tree(records, root, "results/abi_capability_compiler_phase2/human_rating_packet_v1", ("*.json", "*.jsonl"), "sealed_human_packet")

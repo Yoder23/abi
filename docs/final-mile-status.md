@@ -24,6 +24,12 @@ historical JSON receipt. The content was normalized without changing its JSON
 meaning; `abi-final-validation-v2-repaired-r1-2026-08-25` restarts clean public
 reconstruction from a new immutable lineage.
 
+The r1 reconstruction then correctly failed 65/66 tests: clean-tree validation
+still compared the repaired certification evaluator to the superseded frozen
+candidate receipt. A new additive repaired receipt at
+`results/abi_final_validation_v2/frozen_release_candidate.json` closes that
+branch split. The r1 tag/release is superseded; r2 restarts reconstruction.
+
 ## Repaired local evidence
 
 The repaired certification worker runs inside a private WSL2 mount namespace.

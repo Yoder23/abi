@@ -22,8 +22,10 @@ acceptable for promotion.
 The first repaired candidate tag, `abi-final-validation-v2-repaired-2026-08-25`,
 is also superseded: a default Windows clone exposed one CRLF/LF normalization
 mismatch in historical evidence. The replacement candidate lineage starts at
-`abi-final-validation-v2-repaired-r1-2026-08-25` and must complete the clean
-reconstruction/red-team sequence from the beginning.
+`abi-final-validation-v2-repaired-r2-2026-08-25` and must complete the clean
+reconstruction/red-team sequence from the beginning. The r1 tag is also
+superseded: its public extraction exposed that the clean-tree test still read
+the old frozen candidate receipt instead of a new repaired receipt.
 
 The repaired local result uses private mount-namespace certification capsules.
 The worker filesystem contains only the generic certification corpus, canonical
