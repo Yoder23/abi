@@ -1,0 +1,13 @@
+{
+  "family": "FAMILY_A_OBSERVABLE_CANONICAL_STATE",
+  "status": "PROMOTED_TECHNICAL_PASS",
+  "hypothesis": "Typed prompt-observable semantics, exact UTF-8 anchors, and a capability-neutral lifecycle make private residual coordinates irrelevant.",
+  "technical_result_commit": "151cf8c59b9118e71d4b9d6a6c1ca5c85f9f459c",
+  "protocol": {"path": "abi_v2/matrix_protocol_amendment3.json", "sha256": "1551f1e53fa29458647519980355d71b19859bb37c2b1ffc27dbd2d4a071c51d"},
+  "bounded_architecture_repairs_consumed": 0,
+  "bounded_instrumentation_repairs_consumed": 1,
+  "instrumentation_repair_changed_semantic_outputs": false,
+  "matrix_cells_passed": 12,
+  "matrix_cells_required": 12,
+  "decision": "STOP_ARCHITECTURE_COMPUTE_AFTER_TECHNICAL_PROOF"
+}

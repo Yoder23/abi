@@ -1,0 +1,10 @@
+{
+  "status": "PASS_12_OF_12_HOST_CAPABILITY_CELLS",
+  "summary": {"path": "results/abi_v2/capability_matrix/summary.json", "sha256": "56581ae9689014015fe729545454608bbac773d784ba8c372b57212f51b41ef4"},
+  "hosts": ["layercake", "qwen2", "pythia"],
+  "capabilities": ["english", "python", "chemistry", "civics"],
+  "one_adapter_per_host": true,
+  "receiver_training_steps": 0,
+  "receiver_calibration_steps": 0,
+  "packages_unchanged": true
+}

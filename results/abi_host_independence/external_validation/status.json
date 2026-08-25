@@ -1,0 +1,7 @@
+{
+  "status": "EXTERNAL_VALIDATION_PENDING",
+  "human": {"status": "EXTERNAL_HUMAN_VALIDATION_PENDING", "raters_completed": 0, "raters_required": 3, "judgments_completed": 0, "judgments_required": 21000},
+  "hardware": {"status": "EXTERNAL_HARDWARE_VALIDATION_PENDING", "independent_different_hardware_runs": 0, "required": 1},
+  "minimum_information": {"status": "DEFERRED_UNTIL_HOST_INDEPENDENCE_THEN_EXTERNAL_PROGRAM", "stable_frontier_certified": false, "global_minimum_claimed": false},
+  "clean_room_archive": {"receipt_path": "results/abi_v2/external_reproduction/archive_receipt.json", "receipt_sha256": "fff260ecd8f50053066e2de9dc7e8a15d88b5c185b27e174ae8146b8254acbbb", "archive_sha256": "8bd87de5b64aa076249351b5ebf4fc3143e52802c685e63cbedb9a2d337637b3", "independent_execution_completed": false}
+}

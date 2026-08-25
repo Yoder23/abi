@@ -1,0 +1,18 @@
+{
+  "status": "PASS_THREE_CAPABILITY_BLIND_HOST_CERTIFICATIONS",
+  "summary": {"path": "results/abi_v2/conformance/summary.json", "sha256": "29cbe173c6addf7042b3b58f0ea054340e17644d6666d817681389ce69a324bc"},
+  "adapter_manifest": {"path": "results/abi_v2/adapters/manifest.json", "sha256": "67db2e7da9c5ffb6223741a4d02a9e8f0248b7df9e0df970a600d69b4c11f3cf"},
+  "cryptographic_ordering": {
+    "proof_kind": "HASH_BOUND_PREREGISTRATION",
+    "certifications_declared_capability_reveal_before_lock": false,
+    "adapter_manifest_bound_by_matrix_protocol": true,
+    "source_success_locks_frozen_after_certification_before_receiver_matrix": true,
+    "capability_file_open_attempts": 0,
+    "capability_paths_supplied": 0
+  },
+  "hosts": {
+    "layercake": {"adapter_sha256": "d1f3a9d67581032473055711773f784e3b0a028fb68fab58c3a9a63b94317f04", "adapter_bytes": 1556, "parameters": 0, "certification_seconds": 0.03979249999974854},
+    "qwen2": {"adapter_sha256": "b13a75b82acf6df412c2569edaf36654a105b8c565164236fbeb5813b630291f", "adapter_bytes": 1637, "parameters": 0, "certification_seconds": 9.162616099987645},
+    "pythia": {"adapter_sha256": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa", "adapter_bytes": 1646, "parameters": 0, "certification_seconds": 6.184826399985468}
+  }
+}

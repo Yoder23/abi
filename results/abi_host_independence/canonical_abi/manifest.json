@@ -1,0 +1,7 @@
+{
+  "status": "PASS_TYPED_SEMANTIC_CONFORMANCE",
+  "version": "abi-canonical-host/2",
+  "spec": {"path": "abi_v2/canonical_spec.json", "sha256": "6536ef1b58dfeea0474bfef5619f3627ecaefe8f39f25da017f11446b6582c2f"},
+  "conformance_vectors": {"path": "abi_v2/conformance_suite.json", "sha256": "2af84b8b18fa78613fda7c96e7d269ef731b68138f736ea2d4441f4254747383"},
+  "semantics": ["instruction_type", "task_intent", "topic", "entities", "relations", "constraints", "conversation", "uncertainty", "output_intent", "exact_utf8_anchors", "numbers", "identifiers", "formatting", "capability_state_lifecycle"]
+}

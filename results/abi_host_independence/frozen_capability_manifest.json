@@ -1,0 +1,64 @@
+{
+  "format": "abi-host-independence-frozen-capability-manifest/1",
+  "status": "FROZEN_BEFORE_HOST_INDEPENDENCE_MATRIX",
+  "source_manifest": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE7_PRODUCT_MANIFEST_V1.json",
+    "sha256": "dbbfbc1c994f9fff2ca3a37c5ec22e9c517080f325a50a9b27fe7a0072a919ff"
+  },
+  "evaluation_protocol": {
+    "path": "abi_v2/matrix_protocol_amendment3.json",
+    "sha256": "1551f1e53fa29458647519980355d71b19859bb37c2b1ffc27dbd2d4a071c51d",
+    "evaluator_implementation_sha256": "a07c8ef0342d8067979bf018e0c5fb286583064d5b40d9a3e8d9d556492eeab6"
+  },
+  "source_success_lock": {
+    "path": "results/abi_v2/semantic_retention/source_success_locks.json",
+    "sha256": "0e12da8d4f827610894c815cc00268c3ab1321bdf69a245214d2845a7efd3354",
+    "successful_tasks": 1681
+  },
+  "capabilities": {
+    "english": {
+      "archive_bytes": 253216208,
+      "archive_sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+      "tensor_sha256": "18ad787696cf8737578253035ad84b7e0145d995f028c6392ba338b6117d5aba",
+      "architecture_sha256": "6d0fea2697fc7af74e9f3cfaee591d658b3244acfb10502048a4105c010b6908",
+      "decoding_policy_sha256": "6d0fea2697fc7af74e9f3cfaee591d658b3244acfb10502048a4105c010b6908",
+      "runtime_class": "lc-direct-neural-core/25",
+      "source_successes": 1381,
+      "source_success_ids_sha256": "f188a94da669ec51a8d4de332d2ebd92c377255cb2993b4c9689286468fa3890"
+    },
+    "python": {
+      "archive_bytes": 448404,
+      "archive_sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+      "tensor_sha256": "ac58835feee49441aef5fdfddd315523458ac95c53be8f41b8f309a086383242",
+      "architecture_sha256": "de765899700aefe22bfe6c9d00ed5b0c1f87a7ef864cf7211aa8aa4491a0742a",
+      "decoding_policy_sha256": "de765899700aefe22bfe6c9d00ed5b0c1f87a7ef864cf7211aa8aa4491a0742a",
+      "runtime_class": "lc-direct-neural-decoder/1",
+      "source_successes": 100,
+      "source_success_ids_sha256": "c8c1ef56e540b33771dcad38d3193b335d6995dfb2cf677808d25a923e2d22d4",
+      "source_outputs_sha256": "4f47678199264463fd6b9ed836bf9a3be2cfdc0387a08b336263c9b3669a0a52"
+    },
+    "chemistry": {
+      "archive_bytes": 510981,
+      "archive_sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+      "tensor_sha256": "b70dec838c5d3d119333e0f12ccc26392fad56b97cb4841045d0780cfb5f96a2",
+      "architecture_sha256": "de765899700aefe22bfe6c9d00ed5b0c1f87a7ef864cf7211aa8aa4491a0742a",
+      "decoding_policy_sha256": "de765899700aefe22bfe6c9d00ed5b0c1f87a7ef864cf7211aa8aa4491a0742a",
+      "runtime_class": "lc-direct-neural-decoder/1",
+      "source_successes": 100,
+      "source_success_ids_sha256": "7426eea5d1679d42032ea3e4e4f1ee242dfb0e797dbb9b2950c7a763cd7dece3",
+      "source_outputs_sha256": "35df2d3ed336007b9881b506617fba580cb62ff59de65abfaf34900f420bf337"
+    },
+    "civics": {
+      "archive_bytes": 495919,
+      "archive_sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+      "tensor_sha256": "531f4cf14ae8823314cec77c919eba27fe136ba57ea7f4467ac53a69276a38dd",
+      "architecture_sha256": "de765899700aefe22bfe6c9d00ed5b0c1f87a7ef864cf7211aa8aa4491a0742a",
+      "decoding_policy_sha256": "de765899700aefe22bfe6c9d00ed5b0c1f87a7ef864cf7211aa8aa4491a0742a",
+      "runtime_class": "lc-direct-neural-decoder/1",
+      "source_successes": 100,
+      "source_success_ids_sha256": "68c1bf00bfe6b93d846ce18df9be41a323d46996d32d28b5a1062113306b7c98",
+      "source_outputs_sha256": "9332eb29fcee1a7b77257c6b542c908c99ad12e512df54ff0008926fcce42973"
+    }
+  },
+  "mutation_allowed": false
+}

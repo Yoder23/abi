@@ -14,7 +14,9 @@ capability packages.
 > LayerCake v25, Qwen2.5-0.5B, and Pythia-160M using one capability-blind,
 > zero-parameter frozen adapter per host and the same four immutable packages.
 > External reproduction, real human ratings, and minimum-information
-> certification remain open. See
+> certification remain open. The bounded technical declaration is
+> `ABI TECHNICAL MOONSHOT: PROVEN`; it is not a full externally validated
+> moonshot or a tensor-transplant claim. See
 > [Final-mile status](docs/final-mile-status.md).
 
 ## What is implemented
@@ -118,6 +120,12 @@ For the ABI V2 three-host/four-capability result, use the dedicated
 The tracked builder creates one content-addressed archive with public evaluation
 material and no model weights or development caches; archive construction alone
 does not count as independent reproduction.
+
+Verify the controlling host-independence release layer with:
+
+```bash
+python -m abi_v2.verify_host_independence --check-existing
+```
 
 ## Architecture
 

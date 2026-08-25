@@ -1,0 +1,27 @@
+{
+  "format": "abi-host-independence-structural-ownership-map/1",
+  "status": "COMPLETE_BEFORE_FAMILY_A_IMPLEMENTATION",
+  "source_analysis": {
+    "path": "results/abi_v2/structural_failure_analysis.json",
+    "sha256": "73b1812fb5ac8bd60a3ed3a399aaa3587767ee4c9a3402471f32f5ed42411343"
+  },
+  "ownership_rule": "Every cross-boundary property has exactly one owner; host-private properties remain behind the adapter.",
+  "mismatches": [
+    {"classification": "hidden_width", "owner": "HOST-OWNED", "resolution": "Keep private width behind the adapter."},
+    {"classification": "residual_basis", "owner": "HOST-OWNED", "resolution": "Never expose or align private host residual coordinates."},
+    {"classification": "tokenizer", "owner": "HOST-OWNED", "resolution": "Round-trip canonical strict UTF-8 through the native tokenizer."},
+    {"classification": "vocabulary", "owner": "HOST-OWNED", "resolution": "Keep vocabulary IDs private; canonical anchors are UTF-8 bytes."},
+    {"classification": "embedding_basis", "owner": "HOST-OWNED", "resolution": "Do not treat embedding coordinates as ABI semantics."},
+    {"classification": "output_head_basis", "owner": "HOST-OWNED", "resolution": "The host realizes authoritative UTF-8 and proves exact round-trip."},
+    {"classification": "positional_semantics", "owner": "HOST-OWNED", "resolution": "Map canonical sequence positions to private host positions."},
+    {"classification": "normalization", "owner": "HOST-OWNED", "resolution": "Keep RMSNorm/LayerNorm private; canonical vectors declare normalization."},
+    {"classification": "state_lifecycle", "owner": "CANONICAL-ABI-OWNED", "resolution": "Use the versioned certify/freeze/install/activate/remove lifecycle."},
+    {"classification": "sequence_representation", "owner": "CANONICAL-ABI-OWNED", "resolution": "Use typed context, span, anchor, and opaque-state channels."},
+    {"classification": "precision", "owner": "CANONICAL-ABI-OWNED", "resolution": "Declare exact fields, float32 channels, and tolerances."},
+    {"classification": "capability_fusion", "owner": "CANONICAL-ABI-OWNED", "resolution": "Fusion consumes canonical output intent, not private residual state."},
+    {"classification": "routing_gating", "owner": "CAPABILITY-OWNED", "resolution": "Preserve package-private routing while the host selects capability identity."},
+    {"classification": "layercake_specific_fields", "owner": "CAPABILITY-OWNED", "resolution": "Keep V1 private fields inside their authenticated runtime class."},
+    {"classification": "other_native_loader_lifecycle", "owner": "CANONICAL-ABI-OWNED", "resolution": "Provide generic verify/load/register/activate/remove operations."}
+  ],
+  "architecture_decision": "Use observable canonical state and a host-neutral runtime boundary; reject residual projection and tensor transplantation."
+}

@@ -1,0 +1,10 @@
+{
+  "status": "PASS_PREREGISTERED_ADAPTER_OVERHEAD",
+  "summary": {"path": "results/abi_v2/performance/summary.json", "sha256": "40d83150dffdcef0ad5361cc8f38dd389099a67df2075d760e4f21b8d44e0c13"},
+  "repetitions_per_host": 20,
+  "maximum_adapter_overhead": 0.1,
+  "measured_overhead": {"layercake": 0.0396151669496323, "qwen2": -0.005511221319611348, "pythia": 0.03122278233788167},
+  "adapter_parameter_gate_fraction": 0.05,
+  "adapter_parameters": {"layercake": 0, "qwen2": 0, "pythia": 0},
+  "boundary": "Capability latency is non-streaming end-to-end; TTFT is conservatively reported as total latency. Qwen/Pythia base weights remain resident but are not on the capability semantic path."
+}

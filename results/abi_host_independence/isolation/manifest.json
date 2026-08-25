@@ -1,0 +1,14 @@
+{
+  "status": "PASS_CAPABILITY_CAUSALITY_AND_ISOLATION",
+  "summary": {"path": "results/abi_v2/isolation/summary.json", "sha256": "0a641f164fd5cfae3d0ed7db9ef722511fb4c0bbab265efd68e967ab329220f2"},
+  "english_specialist_leakage": "0/900",
+  "wrong_capability_success": "0/1200",
+  "capability_removal_reinstall": "12/12_FAIL_CLOSED_THEN_EXACT_RESTORE",
+  "adapter_removal": "3/3_FAIL_CLOSED",
+  "random_and_shuffled": "24/24_REJECTED_BEFORE_EXECUTION",
+  "selected_only_execution": {
+    "status": "PASS_UNCHANGED_GENERIC_RUNTIME",
+    "source_observations": {"path": "results/abi_capability_compiler_phase6_composition/run_v1032/seed104729/observations.jsonl", "sha256": "3b177777bd1d032cf3aef447578cf4620194ce664f3a4f5cc51633b512333535"},
+    "host_independence_note": "Every receiver uses the same immutable selected-capability runtime; host adapters are codecs/lifecycle bindings and add no capability compute."
+  }
+}

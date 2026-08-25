@@ -1,0 +1,20 @@
+{
+  "format": "abi-host-independence-reuse-economics/1",
+  "status": "PASS_ABI_REUSE_MECHANICS_BASELINE_SUPERIORITY_NOT_CLAIMED",
+  "source": {"path": "results/abi_v2/information_accounting/summary.json", "sha256": "f5a298dd4d1ea01b4e28633158677e7773a9d15bc73ac3e6e6e31f7f1cb90d5f"},
+  "capability_order_for_cumulative_cost": ["english", "python", "chemistry", "civics"],
+  "hosts": {
+    "layercake": {"one_time_certification_seconds": 0.03979249999974854, "adapter_bytes": 1556, "adapter_parameters": 0, "install_seconds": {"1_capability": 2.1629337000194937, "2_capabilities": 2.1898736000293866, "4_capabilities": 2.24802430003183}},
+    "qwen2": {"one_time_certification_seconds": 9.162616099987645, "adapter_bytes": 1637, "adapter_parameters": 0, "install_seconds": {"1_capability": 1.8591153000015765, "2_capabilities": 1.8863165999937337, "4_capabilities": 1.950942199997371}},
+    "pythia": {"one_time_certification_seconds": 6.184826399985468, "adapter_bytes": 1646, "adapter_parameters": 0, "install_seconds": {"1_capability": 1.8053097999945749, "2_capabilities": 1.8361243999970611, "4_capabilities": 1.9044431000074836}}
+  },
+  "installation_operation": "VERIFY_PLUS_LOAD_WITH_ZERO_TRAINING_AND_ZERO_CALIBRATION",
+  "matched_alternative_comparison": {
+    "lora_per_capability_per_host": "NOT_MEASURED_UNDER_THIS_PROTOCOL",
+    "sequence_distillation_per_host": "NOT_MEASURED_UNDER_THIS_PROTOCOL",
+    "ordinary_fine_tuning": "NOT_MEASURED_UNDER_THIS_PROTOCOL",
+    "quantitative_pareto_superiority_claimed": false,
+    "reason": "Historical baseline runs do not share this exact host/capability/task protocol and cannot be combined into a scientific matched comparison."
+  },
+  "bounded_conclusion": "ABI demonstrates constant one-time host certification and verify-plus-load installation as capability count grows. It does not yet prove quantitative superiority over matched LoRA, distillation, or fine-tuning baselines."
+}

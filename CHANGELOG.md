@@ -2,6 +2,15 @@
 
 ## Unreleased — ABI V2 host conformance
 
+- Added the required `results/abi_host_independence/` evidence index, release
+  certificate, structural ownership map, campaign state, experiment ledger,
+  and fail-closed index verifier.
+- Sealed the ABI V1 1/3 failure with the annotated tag
+  `abi-v1-host-independence-failure-2026-08-24`.
+- Promoted Family A (observable canonical state) and explicitly left Families
+  B-D and synthesis unrun after the technical pass.
+- Recorded measured 1/2/4-package reuse costs while declining an unmatched
+  LoRA/distillation/fine-tuning superiority claim.
 - Preserved the complete ABI V1 1/3 native-receiver failure as immutable
   negative evidence instead of relabeling it.
 - Added a representation-neutral canonical ABI V2 specification, 15 frozen

@@ -11,7 +11,7 @@ ABI MOONSHOT STATUS: TECHNICALLY PROVEN — EXTERNAL VALIDATION PENDING
 The local technical declaration is:
 
 ```text
-ABI TECHNICAL MOONSHOT: HOST-INDEPENDENT CORE PROVEN
+ABI TECHNICAL MOONSHOT: PROVEN
 ```
 
 This is not the full externally validated moonshot. Three real independent
@@ -61,10 +61,10 @@ calibration, or mutation.
 | Random/shuffled signed-package corruption | 24/24 rejected before execution |
 | Teacher/source model at inference | absent |
 
-The inference-free verifier recomputes raw file hashes, evidence hashes,
+The inference-free verifiers recompute raw file hashes, evidence hashes,
 matrix depths, output/action equality, retention, isolation, lifecycle,
-performance, and ownership gates. The focused V2 suite, including clean-room
-bundle verification, passes 30/30.
+performance, ownership, ladder state, and the release index. The supported
+public suite passes 56/56.
 
 ## Exact claim boundary
 
@@ -97,6 +97,12 @@ These external gates do not reopen the locally passed host architecture work.
 
 ## Evidence map
 
+- Controlling host-independence certificate:
+  `results/abi_host_independence/release_certificate.json`
+- Required release tree, ownership map, economics, and campaign state:
+  `results/abi_host_independence/`
+- Host-independence release verifier:
+  `abi_v2/verify_host_independence.py`
 - V1 freeze: `results/abi_v2/frozen_v1_lineage.json`
 - Structural ownership analysis: `results/abi_v2/structural_failure_analysis.md`
 - Canonical specification: `abi_v2/canonical_spec.json`

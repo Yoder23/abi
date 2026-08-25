@@ -10,9 +10,10 @@ detailed campaign history into the other.
 
 ## Current authority
 
-ABI V2 is the controlling local final-mile campaign. Its technical status is
-`TECHNICALLY_PROVEN_EXTERNAL_VALIDATION_PENDING`, backed by
-`results/abi_v2/release_certificate.json`. The exact certified claim is
+The host-independence release layer is the controlling final-mile campaign.
+Its technical status is `TECHNICALLY_PROVEN_EXTERNAL_VALIDATION_PENDING`,
+backed by `results/abi_host_independence/release_certificate.json` and the
+immutable ABI V2 evidence it indexes. The exact certified claim is
 capability-independent extension/runtime installation across LayerCake v25,
 Qwen2.5-0.5B, and Pythia-160M after one-time capability-blind host
 certification. All 12 host/capability cells pass with unchanged packages and
@@ -28,6 +29,12 @@ native-tensor failure remains immutable historical evidence.
 Three gates remain external: 21,000 judgments from three real independent
 raters, independent reproduction on different hardware, and the registered
 minimum-information certification.
+
+The technical declaration is exactly `ABI TECHNICAL MOONSHOT: PROVEN` under
+that bounded claim. Family A (observable canonical state) passed; Families
+B-D and synthesis were not run because architecture work must stop after the
+technical gate passes. ABI V1 is sealed by the annotated tag
+`abi-v1-host-independence-failure-2026-08-24`.
 
 The ABI V2 external handoff is controlled by
 `results/abi_v2/external_reproduction/README.md`, its raw evidence schema, and

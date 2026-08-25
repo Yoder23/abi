@@ -79,6 +79,10 @@ run_logs/
 !results/abi_v2/**
 results/abi_v2/external_reproduction/*.zip
 
+# Compact, content-addressed index for the sealed host-independence result.
+!results/abi_host_independence/
+!results/abi_host_independence/**
+
 # Final-mile release payloads and custody material stay out of Git. Compact
 # manifests, public signatures, receipts, and reports are force-added.
 results/abi_final_mile/custody/

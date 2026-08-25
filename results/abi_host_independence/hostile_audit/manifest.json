@@ -1,0 +1,7 @@
+{
+  "status": "PASS_ALL_PROHIBITED_MUTATIONS_REJECTED",
+  "summary": {"path": "results/abi_v2/hostile_audit/result.json", "sha256": "879b4f943c88dd9cb1eeff1163d8fcc0eea980035c79a799e33f9ba88048aed4"},
+  "mutation_classes": 14,
+  "model_inference_performed_by_verifier": false,
+  "index_verifier": "python -m abi_v2.verify_host_independence --check-existing"
+}
