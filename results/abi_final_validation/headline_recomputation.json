@@ -1,0 +1,537 @@
+{
+  "aggregate": {
+    "corrupt_rejections_required_each": 12,
+    "cross_host_output_equal": 1681,
+    "cross_host_output_total": 1681,
+    "cross_host_specialist_actions_equal": 300,
+    "cross_host_specialist_actions_total": 300,
+    "english_specialist_leakage_successes": 0,
+    "frozen_source_successes": 5043,
+    "frozen_source_successes_required": 5043,
+    "matrix_cells_passed": 12,
+    "matrix_cells_total": 12,
+    "random_corrupt_rejections": 12,
+    "removal_reinstall_passed": 12,
+    "removal_reinstall_total": 12,
+    "shuffled_corrupt_rejections": 12,
+    "source_output_byte_exact": 5043,
+    "wrong_capability_successes": 0
+  },
+  "candidate_sha256": "8a4a0984800b06684d3db3d57d2ff5ec08d1542e5d9b9af3ba8d5c6bf1926653",
+  "capability_hashes": {
+    "chemistry": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+    "civics": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+    "english": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+    "python": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d"
+  },
+  "certifications": {
+    "layercake": {
+      "adapter": {
+        "bytes": 1556,
+        "optimizer_steps": 0,
+        "parameters": 0,
+        "sha256": "d1f3a9d67581032473055711773f784e3b0a028fb68fab58c3a9a63b94317f04"
+      },
+      "certification_seconds": 0.03979249999974854,
+      "data_exposure": {
+        "capability_examples": 0,
+        "capability_outputs": 0,
+        "capability_success_ids": 0,
+        "examples": 128,
+        "model_visible_units": 5953,
+        "raw_utf8_bytes": 5953
+      },
+      "device": "cpu",
+      "invalid_output_changes": {
+        "changed": 0,
+        "roundtrips": 128,
+        "roundtrips_exact": 128
+      },
+      "memory": {
+        "peak_cuda_allocated_bytes": 0,
+        "peak_process_rss_bytes_lower_bound": 22401024
+      },
+      "performance": {
+        "host_alone_median_seconds": 0.0005300999999999999,
+        "host_plus_adapter_median_seconds": 0.0005511,
+        "maximum_overhead_fraction": 0.1,
+        "observations": 20,
+        "overhead_fraction": 0.0396151669496323,
+        "passes": true
+      },
+      "success": true
+    },
+    "pythia": {
+      "adapter": {
+        "bytes": 1646,
+        "optimizer_steps": 0,
+        "parameters": 0,
+        "sha256": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa"
+      },
+      "certification_seconds": 6.184826399985468,
+      "data_exposure": {
+        "capability_examples": 0,
+        "capability_outputs": 0,
+        "capability_success_ids": 0,
+        "examples": 128,
+        "model_visible_units": 2102,
+        "raw_utf8_bytes": 5953
+      },
+      "device": "cuda",
+      "invalid_output_changes": {
+        "changed": 0,
+        "roundtrips": 128,
+        "roundtrips_exact": 128
+      },
+      "memory": {
+        "peak_cuda_allocated_bytes": 344433152,
+        "peak_process_rss_bytes_lower_bound": 906121216
+      },
+      "performance": {
+        "host_alone_median_seconds": 0.0075778,
+        "host_plus_adapter_median_seconds": 0.007814399999999999,
+        "maximum_overhead_fraction": 0.1,
+        "observations": 20,
+        "overhead_fraction": 0.031222782337881592,
+        "passes": true
+      },
+      "success": true
+    },
+    "qwen2": {
+      "adapter": {
+        "bytes": 1637,
+        "optimizer_steps": 0,
+        "parameters": 0,
+        "sha256": "b13a75b82acf6df412c2569edaf36654a105b8c565164236fbeb5813b630291f"
+      },
+      "certification_seconds": 9.162616099987645,
+      "data_exposure": {
+        "capability_examples": 0,
+        "capability_outputs": 0,
+        "capability_success_ids": 0,
+        "examples": 128,
+        "model_visible_units": 2769,
+        "raw_utf8_bytes": 5953
+      },
+      "device": "cuda",
+      "invalid_output_changes": {
+        "changed": 0,
+        "roundtrips": 128,
+        "roundtrips_exact": 128
+      },
+      "memory": {
+        "peak_cuda_allocated_bytes": 1018820096,
+        "peak_process_rss_bytes_lower_bound": 2006835200
+      },
+      "performance": {
+        "host_alone_median_seconds": 0.0279067,
+        "host_plus_adapter_median_seconds": 0.0277529,
+        "maximum_overhead_fraction": 0.1,
+        "observations": 20,
+        "overhead_fraction": -0.005511221319611386,
+        "passes": true
+      },
+      "success": true
+    }
+  },
+  "evidence_sha256": "1c9321d749ccfc3c8e2e22e0f8c036aa919623f74c5ebde07e69769427f944b7",
+  "format": "abi-final-raw-headline-recomputation/1",
+  "headline_constants_embedded": false,
+  "host_causality": {
+    "aggregate": {
+      "adapter_removal_rejected": 3,
+      "adapter_removal_total": 3,
+      "capability_removal_rejected": 12,
+      "capability_removal_total": 12,
+      "neutral_stub_exact_outputs": 5043,
+      "neutral_stub_outputs_total": 5043
+    },
+    "architecture_redesign_required": false,
+    "causal_conclusion": "The capability packages plus generic runtime are semantically standalone. The tested Qwen and Pythia hidden states are not materially causal to capability answers; neutral UTF-8 realization reproduces every promoted output. Adapter removal fails closed because the contract guard is mandatory, not because the adapter adds semantics. The valid claim is portable standalone capability-runtime execution with tested host codec/conformance adapters, not host-model generation, hidden-state transfer, or base-weight transplantation.",
+    "component_ownership": {
+      "capability_owned": "learned generation/routing tensors, specialist actions, and output semantics",
+      "generic_abi_owned": "package validation, typed canonical context/intent, lifecycle, and strict UTF-8 contract",
+      "host_owned": "checkpoint conformance probe and native tokenizer unit representation only"
+    },
+    "evidence_sha256": "fada76026c3d9a4a4e4aed1cffe939d05ade9ba93d0eeaca5f088906045bb763",
+    "format": "abi-final-host-causality-audit/1",
+    "host_semantic_state_channel_absent": true,
+    "host_substitution": {
+      "canonical_outputs_identical": 1681,
+      "canonical_outputs_total": 1681,
+      "native_generation_state_differs_for_tasks": 1681,
+      "native_generation_state_tasks_total": 1681
+    },
+    "hosts": {
+      "layercake": {
+        "adapter_removal": {
+          "exception_message_sha256": "88fc373a63adbe32e195f9ba3e7ad807aab00884e3d07134c73a77e475158012",
+          "exception_type": "MatrixError",
+          "rejected": true
+        },
+        "capability_removal": {
+          "capabilities_failed_when_removed": 4,
+          "capabilities_total": 4,
+          "identical_reinstall_restored": 4
+        },
+        "host_neutralization": {
+          "frozen_random_state": {
+            "interpretation": "host state is structurally absent from the semantic realization call",
+            "material_quality_degradation": false,
+            "outputs_replayed": 1681,
+            "outputs_total": 1681,
+            "state_enters_semantic_realization": false
+          },
+          "shuffled_state": {
+            "interpretation": "host state is structurally absent from the semantic realization call",
+            "material_quality_degradation": false,
+            "outputs_replayed": 1681,
+            "outputs_total": 1681,
+            "state_enters_semantic_realization": false
+          },
+          "zero_state": {
+            "interpretation": "host state is structurally absent from the semantic realization call",
+            "material_quality_degradation": false,
+            "outputs_replayed": 1681,
+            "outputs_total": 1681,
+            "state_enters_semantic_realization": false
+          }
+        },
+        "host_removal": {
+          "complete_outputs_reproduced_by_neutral_utf8_stub": 1681,
+          "complete_outputs_total": 1681,
+          "promoted_behavior_failed": false
+        },
+        "native_checkpoint_loaded": false,
+        "native_checkpoint_semantic_channel_present": false,
+        "neutral_stub_host": {
+          "exact_outputs": 1681,
+          "implementation": "strict UTF-8 identity realization",
+          "outputs_total": 1681,
+          "reproduces_promoted_behavior": true
+        }
+      },
+      "pythia": {
+        "adapter_removal": {
+          "exception_message_sha256": "88fc373a63adbe32e195f9ba3e7ad807aab00884e3d07134c73a77e475158012",
+          "exception_type": "MatrixError",
+          "rejected": true
+        },
+        "capability_removal": {
+          "capabilities_failed_when_removed": 4,
+          "capabilities_total": 4,
+          "identical_reinstall_restored": 4
+        },
+        "host_neutralization": {
+          "frozen_random_state": {
+            "interpretation": "host state is structurally absent from the semantic realization call",
+            "material_quality_degradation": false,
+            "outputs_replayed": 1681,
+            "outputs_total": 1681,
+            "state_enters_semantic_realization": false
+          },
+          "shuffled_state": {
+            "interpretation": "host state is structurally absent from the semantic realization call",
+            "material_quality_degradation": false,
+            "outputs_replayed": 1681,
+            "outputs_total": 1681,
+            "state_enters_semantic_realization": false
+          },
+          "zero_state": {
+            "interpretation": "host state is structurally absent from the semantic realization call",
+            "material_quality_degradation": false,
+            "outputs_replayed": 1681,
+            "outputs_total": 1681,
+            "state_enters_semantic_realization": false
+          }
+        },
+        "host_removal": {
+          "complete_outputs_reproduced_by_neutral_utf8_stub": 1681,
+          "complete_outputs_total": 1681,
+          "promoted_behavior_failed": false
+        },
+        "native_checkpoint_loaded": true,
+        "native_checkpoint_semantic_channel_present": false,
+        "neutral_stub_host": {
+          "exact_outputs": 1681,
+          "implementation": "strict UTF-8 identity realization",
+          "outputs_total": 1681,
+          "reproduces_promoted_behavior": true
+        }
+      },
+      "qwen2": {
+        "adapter_removal": {
+          "exception_message_sha256": "88fc373a63adbe32e195f9ba3e7ad807aab00884e3d07134c73a77e475158012",
+          "exception_type": "MatrixError",
+          "rejected": true
+        },
+        "capability_removal": {
+          "capabilities_failed_when_removed": 4,
+          "capabilities_total": 4,
+          "identical_reinstall_restored": 4
+        },
+        "host_neutralization": {
+          "frozen_random_state": {
+            "interpretation": "host state is structurally absent from the semantic realization call",
+            "material_quality_degradation": false,
+            "outputs_replayed": 1681,
+            "outputs_total": 1681,
+            "state_enters_semantic_realization": false
+          },
+          "shuffled_state": {
+            "interpretation": "host state is structurally absent from the semantic realization call",
+            "material_quality_degradation": false,
+            "outputs_replayed": 1681,
+            "outputs_total": 1681,
+            "state_enters_semantic_realization": false
+          },
+          "zero_state": {
+            "interpretation": "host state is structurally absent from the semantic realization call",
+            "material_quality_degradation": false,
+            "outputs_replayed": 1681,
+            "outputs_total": 1681,
+            "state_enters_semantic_realization": false
+          }
+        },
+        "host_removal": {
+          "complete_outputs_reproduced_by_neutral_utf8_stub": 1681,
+          "complete_outputs_total": 1681,
+          "promoted_behavior_failed": false
+        },
+        "native_checkpoint_loaded": true,
+        "native_checkpoint_semantic_channel_present": false,
+        "neutral_stub_host": {
+          "exact_outputs": 1681,
+          "implementation": "strict UTF-8 identity realization",
+          "outputs_total": 1681,
+          "reproduces_promoted_behavior": true
+        }
+      }
+    },
+    "realize_function_arguments": [
+      "self",
+      "prompt",
+      "output",
+      "capability_id",
+      "position"
+    ],
+    "reason_redesign_not_required": "The already-sealed representation-neutral extension/runtime interpretation explicitly assigns semantics to the capability runtime. The audit narrows misleading host language without changing it.",
+    "status": "PASS_WITH_CLAIM_NARROWED_TO_STANDALONE_CAPABILITY_RUNTIME"
+  },
+  "matrix": {
+    "layercake": {
+      "adapter_sha256_after": "d1f3a9d67581032473055711773f784e3b0a028fb68fab58c3a9a63b94317f04",
+      "adapter_sha256_before": "d1f3a9d67581032473055711773f784e3b0a028fb68fab58c3a9a63b94317f04",
+      "capabilities": {
+        "chemistry": {
+          "expected_locked_tasks": 100,
+          "source_output_byte_exact": 100,
+          "successes": 100,
+          "tasks": 100
+        },
+        "civics": {
+          "expected_locked_tasks": 100,
+          "source_output_byte_exact": 100,
+          "successes": 100,
+          "tasks": 100
+        },
+        "english": {
+          "expected_locked_tasks": 1381,
+          "source_output_byte_exact": 1381,
+          "successes": 1381,
+          "tasks": 1381
+        },
+        "python": {
+          "expected_locked_tasks": 100,
+          "source_output_byte_exact": 100,
+          "successes": 100,
+          "tasks": 100
+        }
+      },
+      "corrupt_package_rejection": {
+        "random": 4,
+        "shuffled": 4,
+        "total_each": 4
+      },
+      "installation_seconds": {
+        "chemistry": 0.026521100022364408,
+        "civics": 0.03162959998007864,
+        "english": 2.1629337000194937,
+        "python": 0.02693990000989288
+      },
+      "memory": {
+        "peak_cuda_allocated_bytes": 545592832,
+        "peak_process_rss_bytes_lower_bound": 1085382656
+      },
+      "package_hashes": {
+        "chemistry": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+        "civics": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+        "english": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+        "python": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d"
+      },
+      "removal_reinstall": {
+        "passed": 4,
+        "total": 4
+      },
+      "success": true,
+      "teacher_absence_events": {
+        "calibration_performed": false,
+        "source_model_loaded": false,
+        "teacher_loaded": false,
+        "training_performed": false
+      }
+    },
+    "pythia": {
+      "adapter_sha256_after": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa",
+      "adapter_sha256_before": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa",
+      "capabilities": {
+        "chemistry": {
+          "expected_locked_tasks": 100,
+          "source_output_byte_exact": 100,
+          "successes": 100,
+          "tasks": 100
+        },
+        "civics": {
+          "expected_locked_tasks": 100,
+          "source_output_byte_exact": 100,
+          "successes": 100,
+          "tasks": 100
+        },
+        "english": {
+          "expected_locked_tasks": 1381,
+          "source_output_byte_exact": 1381,
+          "successes": 1381,
+          "tasks": 1381
+        },
+        "python": {
+          "expected_locked_tasks": 100,
+          "source_output_byte_exact": 100,
+          "successes": 100,
+          "tasks": 100
+        }
+      },
+      "corrupt_package_rejection": {
+        "random": 4,
+        "shuffled": 4,
+        "total_each": 4
+      },
+      "installation_seconds": {
+        "chemistry": 0.035468799993395805,
+        "civics": 0.03284990001702681,
+        "english": 1.8053097999945749,
+        "python": 0.03081460000248626
+      },
+      "memory": {
+        "peak_cuda_allocated_bytes": 878496768,
+        "peak_process_rss_bytes_lower_bound": 1188794368
+      },
+      "package_hashes": {
+        "chemistry": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+        "civics": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+        "english": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+        "python": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d"
+      },
+      "removal_reinstall": {
+        "passed": 4,
+        "total": 4
+      },
+      "success": true,
+      "teacher_absence_events": {
+        "calibration_performed": false,
+        "source_model_loaded": false,
+        "teacher_loaded": false,
+        "training_performed": false
+      }
+    },
+    "qwen2": {
+      "adapter_sha256_after": "b13a75b82acf6df412c2569edaf36654a105b8c565164236fbeb5813b630291f",
+      "adapter_sha256_before": "b13a75b82acf6df412c2569edaf36654a105b8c565164236fbeb5813b630291f",
+      "capabilities": {
+        "chemistry": {
+          "expected_locked_tasks": 100,
+          "source_output_byte_exact": 100,
+          "successes": 100,
+          "tasks": 100
+        },
+        "civics": {
+          "expected_locked_tasks": 100,
+          "source_output_byte_exact": 100,
+          "successes": 100,
+          "tasks": 100
+        },
+        "english": {
+          "expected_locked_tasks": 1381,
+          "source_output_byte_exact": 1381,
+          "successes": 1381,
+          "tasks": 1381
+        },
+        "python": {
+          "expected_locked_tasks": 100,
+          "source_output_byte_exact": 100,
+          "successes": 100,
+          "tasks": 100
+        }
+      },
+      "corrupt_package_rejection": {
+        "random": 4,
+        "shuffled": 4,
+        "total_each": 4
+      },
+      "installation_seconds": {
+        "chemistry": 0.03898549999576062,
+        "civics": 0.025640100007876754,
+        "english": 1.8591153000015765,
+        "python": 0.027201299992157146
+      },
+      "memory": {
+        "peak_cuda_allocated_bytes": 1544011776,
+        "peak_process_rss_bytes_lower_bound": 1732718592
+      },
+      "package_hashes": {
+        "chemistry": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+        "civics": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+        "english": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+        "python": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d"
+      },
+      "removal_reinstall": {
+        "passed": 4,
+        "total": 4
+      },
+      "success": true,
+      "teacher_absence_events": {
+        "calibration_performed": false,
+        "source_model_loaded": false,
+        "teacher_loaded": false,
+        "training_performed": false
+      }
+    }
+  },
+  "shortcut_audit": {
+    "blocking_findings": [],
+    "status": "PASS_NO_BLOCKING_SHORTCUT_OR_LEAKAGE_PATH"
+  },
+  "source_files": {
+    "certification_performance": [
+      "results/abi_v2/host_certification/initial/layercake/performance.json",
+      "results/abi_v2/host_certification/initial/qwen2/performance.json",
+      "results/abi_v2/host_certification/initial/pythia/performance.json"
+    ],
+    "certification_results": [
+      "results/abi_v2/host_certification/initial/layercake/result.json",
+      "results/abi_v2/host_certification/initial/qwen2/result.json",
+      "results/abi_v2/host_certification/initial/pythia/result.json"
+    ],
+    "matrix_observations": [
+      "results/abi_v2/capability_matrix/layercake_repaired/observations.jsonl",
+      "results/abi_v2/capability_matrix/qwen2/observations.jsonl",
+      "results/abi_v2/capability_matrix/pythia/observations.jsonl"
+    ],
+    "matrix_results": [
+      "results/abi_v2/capability_matrix/layercake_repaired/result.json",
+      "results/abi_v2/capability_matrix/qwen2/result.json",
+      "results/abi_v2/capability_matrix/pythia/result.json"
+    ],
+    "source_success_locks": "results/abi_v2/semantic_retention/source_success_locks.json"
+  },
+  "summary_files_trusted": false
+}

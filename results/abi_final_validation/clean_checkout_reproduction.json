@@ -1,0 +1,770 @@
+{
+  "archive": {
+    "archive": "abi-final-validation-fixed3-preclean.zip",
+    "archive_bytes": 340251614,
+    "archive_sha256": "5840123cd4273daf956c088eb71f61cdf8f645c40a69a17f8cf65094a30268fc",
+    "files_required": 878,
+    "files_verified": 878,
+    "forbidden_development_paths": [],
+    "manifest_sha256": "87ad76072969f30c5641e2b849013140fa5429fcdf4926e52ac7479e253b9536",
+    "passed": true
+  },
+  "commands_tests_and_build": {
+    "bytecode_writes_disabled": true,
+    "commands": [
+      {
+        "command": [
+          "C:\\Python310\\python.exe",
+          "-m",
+          "abi",
+          "self-check"
+        ],
+        "exit_code": 0,
+        "passed": true,
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_tail": "",
+        "stdout_bytes": 239,
+        "stdout_sha256": "23a4eba23f3dec76e128b9fea8023c93e4b6023ea031960bb2bedd116b2e3cfa",
+        "stdout_tail": "{\r\n  \"english_domain_labels\": [],\r\n  \"record_id\": \"7ff5ef2e00cff3357ed2fbc951eb01d241b954f2fa9139eb12c753fdddf94389\",\r\n  \"source_manifest_sha256\": \"52ea86beccef152cfb71eeb4f571c5695027669ba7261e325974d58b9b8042a5\",\r\n  \"status\": \"PASS\"\r\n}\r\n"
+      },
+      {
+        "command": [
+          "C:\\Python310\\python.exe",
+          "-m",
+          "abi_v2.final_validation",
+          "headlines",
+          "--root",
+          "."
+        ],
+        "exit_code": 0,
+        "passed": true,
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_tail": "",
+        "stdout_bytes": 21430,
+        "stdout_sha256": "2f58c3c315e06e82fcd32a9bce9de6c9915814c481276c76667f57ba5cc3e5cb",
+        "stdout_tail": "        \"results/abi_v2/host_certification/initial/pythia/performance.json\"\r\n      ],\r\n      \"certification_results\": [\r\n        \"results/abi_v2/host_certification/initial/layercake/result.json\",\r\n        \"results/abi_v2/host_certification/initial/qwen2/result.json\",\r\n        \"results/abi_v2/host_certification/initial/pythia/result.json\"\r\n      ],\r\n      \"matrix_observations\": [\r\n        \"results/abi_v2/capability_matrix/layercake_repaired/observations.jsonl\",\r\n        \"results/abi_v2/capability_matrix/qwen2/observations.jsonl\",\r\n        \"results/abi_v2/capability_matrix/pythia/observations.jsonl\"\r\n      ],\r\n      \"matrix_results\": [\r\n        \"results/abi_v2/capability_matrix/layercake_repaired/result.json\",\r\n        \"results/abi_v2/capability_matrix/qwen2/result.json\",\r\n        \"results/abi_v2/capability_matrix/pythia/result.json\"\r\n      ],\r\n      \"source_success_locks\": \"results/abi_v2/semantic_retention/source_success_locks.json\"\r\n    },\r\n    \"summary_files_trusted\": false\r\n  }\r\n}\r\n"
+      },
+      {
+        "command": [
+          "C:\\Python310\\python.exe",
+          "-m",
+          "abi_v2.hostile_final_validation",
+          "--root",
+          ".",
+          "--output",
+          "clean_run/hostile_release_verification.json"
+        ],
+        "exit_code": 0,
+        "passed": true,
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_tail": "",
+        "stdout_bytes": 1680,
+        "stdout_sha256": "eb6a7ffacb984afbeb1b345d7a72bb28e4b3d1e579b9c60912259e71430020c5",
+        "stdout_tail": "_hash\": {\r\n      \"rejected\": true\r\n    },\r\n    \"canonical_abi_version\": {\r\n      \"rejected\": true\r\n    },\r\n    \"capability_reveal_timestamp\": {\r\n      \"rejected\": true\r\n    },\r\n    \"capability_tensor\": {\r\n      \"rejected\": true\r\n    },\r\n    \"certification_data_hash\": {\r\n      \"rejected\": true\r\n    },\r\n    \"decoding_policy\": {\r\n      \"rejected\": true\r\n    },\r\n    \"evaluator\": {\r\n      \"rejected\": true\r\n    },\r\n    \"external_reproduction_manifest\": {\r\n      \"rejected\": true\r\n    },\r\n    \"host_checkpoint\": {\r\n      \"rejected\": true\r\n    },\r\n    \"human_packet\": {\r\n      \"rejected\": true\r\n    },\r\n    \"runtime_manifest\": {\r\n      \"rejected\": true\r\n    },\r\n    \"source_success_lock\": {\r\n      \"rejected\": true\r\n    },\r\n    \"teacher_absence_manifest\": {\r\n      \"rejected\": true\r\n    }\r\n  },\r\n  \"mutations_rejected\": 13,\r\n  \"mutations_required\": 13,\r\n  \"source_files_modified\": false,\r\n  \"status\": \"PASS_ALL_HOSTILE_RELEASE_MUTATIONS_REJECTED\",\r\n  \"temporary_mutations_destroyed_after_test\": true\r\n}\r\n"
+      },
+      {
+        "command": [
+          "C:\\Python310\\python.exe",
+          "-m",
+          "pytest",
+          "-q",
+          "-p",
+          "no:cacheprovider"
+        ],
+        "exit_code": 0,
+        "passed": true,
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_tail": "",
+        "stdout_bytes": 102,
+        "stdout_sha256": "b3c2762dde8c80dcee05c112f88982464a84219aa893a1d613d5150acf1f2451",
+        "stdout_tail": "..............................................................           [100%]\r\n62 passed in 10.04s\r\n"
+      },
+      {
+        "command": [
+          "C:\\Python310\\python.exe",
+          "-m",
+          "ruff",
+          "check",
+          "abi/reproduce.py",
+          "abi_v2/build_final_validation_bundle.py",
+          "abi_v2/clean_command_suite.py",
+          "abi_v2/clean_reproduction_receipt.py",
+          "abi_v2/final_validation.py",
+          "abi_v2/hostile_final_validation.py",
+          "tests/test_abi_v2_final_validation.py",
+          "tests/test_public_release.py"
+        ],
+        "exit_code": 0,
+        "passed": true,
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_tail": "",
+        "stdout_bytes": 19,
+        "stdout_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+        "stdout_tail": "All checks passed!\n"
+      },
+      {
+        "command": [
+          "C:\\Python310\\python.exe",
+          "-m",
+          "build",
+          "--no-isolation",
+          "--outdir",
+          "clean_run/dist"
+        ],
+        "exit_code": 0,
+        "passed": true,
+        "stderr_bytes": 1532,
+        "stderr_sha256": "9c864f04bd3a58c7cac41dc672eff3a0070845784eb56c3d2e3cc8a03f7aab75",
+        "stderr_tail": "ml. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.\r\n  import pkg_resources\r\n* Building wheel from sdist\r\n* Getting build dependencies for wheel...\r\nC:\\Python310\\lib\\site-packages\\pbr\\git.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.\r\n  import pkg_resources\r\n* Building wheel...\r\nC:\\Python310\\lib\\site-packages\\pbr\\git.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.\r\n  import pkg_resources\r\nwarning: build_py: byte-compiling is disabled, skipping.\r\n\r\nwarning: install_lib: byte-compiling is disabled, skipping.\r\n\r\n",
+        "stdout_bytes": 182500,
+        "stdout_sha256": "ee786a3d2ee67db13c173531d9e2bcf21602f4e8bf910e89b411d2b7b6fa9c9d",
+        "stdout_tail": "nifest.json'\r\nadding 'abi_v2/final_validation.py'\r\nadding 'abi_v2/freeze_initial_state.py'\r\nadding 'abi_v2/host_certification.py'\r\nadding 'abi_v2/hostile_final_validation.py'\r\nadding 'abi_v2/matrix_protocol.json'\r\nadding 'abi_v2/matrix_protocol_amendment1.json'\r\nadding 'abi_v2/matrix_protocol_amendment2.json'\r\nadding 'abi_v2/matrix_protocol_amendment3.json'\r\nadding 'abi_v2/verify_external_bundle.py'\r\nadding 'abi_v2/verify_host_independence.py'\r\nadding 'abi_v2/verify_release.py'\r\nadding 'abi_v2/reference_vectors/core_vectors.json'\r\nadding 'abi_capability_compiler-0.4.0a1.dist-info/METADATA'\r\nadding 'abi_capability_compiler-0.4.0a1.dist-info/WHEEL'\r\nadding 'abi_capability_compiler-0.4.0a1.dist-info/entry_points.txt'\r\nadding 'abi_capability_compiler-0.4.0a1.dist-info/top_level.txt'\r\nadding 'abi_capability_compiler-0.4.0a1.dist-info/RECORD'\r\nremoving build\\bdist.win-amd64\\wheel\r\nSuccessfully built abi_capability_compiler-0.4.0a1.tar.gz and abi_capability_compiler-0.4.0a1-py3-none-any.whl\r\n"
+      }
+    ],
+    "development_cache_reuse_allowed": false,
+    "evidence_sha256": "ab753d3712749712e6148eda4de07ea9f0506104e3c0f754407d3ebf5b4527b6",
+    "format": "abi-final-clean-command-suite/1",
+    "historical_research_tree_lint_certified": false,
+    "lint_scope": "final-validation and external-reproduction changes only",
+    "pytest_cache_disabled": true,
+    "python_executable": "C:\\Python310\\python.exe",
+    "python_version": "3.10.0 (tags/v3.10.0:b494f59, Oct  4 2021, 19:00:18) [MSC v.1929 64 bit (AMD64)]",
+    "release_artifacts": [
+      {
+        "bytes": 2122889,
+        "path": "clean_run/dist/abi_capability_compiler-0.4.0a1-py3-none-any.whl",
+        "sha256": "5d519719056ffca91cd970fc350eca3fb3ccf2f8f5f94cbc079ea085550ef1ab"
+      },
+      {
+        "bytes": 1456481,
+        "path": "clean_run/dist/abi_capability_compiler-0.4.0a1.tar.gz",
+        "sha256": "57cb76df8c3e481d0e777670b530b5c919520e1c0fa770ca45e9447443db2a82"
+      }
+    ],
+    "sdist_count": 1,
+    "status": "PASS_CLEAN_COMMANDS_TESTS_AND_BUILD",
+    "wheel_count": 1
+  },
+  "evidence_sha256": "3be569ec4a95cabbee656e646229ef8c0a0c123c8ef6a649572340170f34ffb6",
+  "external_turnkey_byte_verifier": {
+    "failures": [],
+    "sha256": "e8468a2159c296f25d97ade852ab08e0cef22a609f3b8f303168b91d8f431699",
+    "status": "PASS_FINAL_VALIDATION_BYTES_AND_RAW_RECOMPUTATION"
+  },
+  "format": "abi-final-clean-checkout-reproduction/1",
+  "frozen_source_bindings": {
+    "bindings": {
+      "adapter:layercake": {
+        "exact": true,
+        "expected_sha256": "d1f3a9d67581032473055711773f784e3b0a028fb68fab58c3a9a63b94317f04",
+        "path": "results/abi_v2/host_certification/initial/layercake/adapter.json",
+        "present": true,
+        "sha256": "d1f3a9d67581032473055711773f784e3b0a028fb68fab58c3a9a63b94317f04"
+      },
+      "adapter:pythia": {
+        "exact": true,
+        "expected_sha256": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa",
+        "path": "results/abi_v2/host_certification/initial/pythia/adapter.json",
+        "present": true,
+        "sha256": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa"
+      },
+      "adapter:qwen2": {
+        "exact": true,
+        "expected_sha256": "b13a75b82acf6df412c2569edaf36654a105b8c565164236fbeb5813b630291f",
+        "path": "results/abi_v2/host_certification/initial/qwen2/adapter.json",
+        "present": true,
+        "sha256": "b13a75b82acf6df412c2569edaf36654a105b8c565164236fbeb5813b630291f"
+      },
+      "adapter_manifest": {
+        "exact": true,
+        "expected_sha256": "67db2e7da9c5ffb6223741a4d02a9e8f0248b7df9e0df970a600d69b4c11f3cf",
+        "path": "results/abi_v2/adapters/manifest.json",
+        "present": true,
+        "sha256": "67db2e7da9c5ffb6223741a4d02a9e8f0248b7df9e0df970a600d69b4c11f3cf"
+      },
+      "canonical_reference": {
+        "exact": true,
+        "expected_sha256": "c394133dc70a8cabfbb7b390e3b74178707d8cb3c89ead91a7b106eca445f52b",
+        "path": "abi_v2/canonical.py",
+        "present": true,
+        "sha256": "c394133dc70a8cabfbb7b390e3b74178707d8cb3c89ead91a7b106eca445f52b"
+      },
+      "canonical_spec": {
+        "exact": true,
+        "expected_sha256": "6536ef1b58dfeea0474bfef5619f3627ecaefe8f39f25da017f11446b6582c2f",
+        "path": "abi_v2/canonical_spec.json",
+        "present": true,
+        "sha256": "6536ef1b58dfeea0474bfef5619f3627ecaefe8f39f25da017f11446b6582c2f"
+      },
+      "capability:chemistry": {
+        "exact": true,
+        "expected_sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+        "path": "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.cake",
+        "present": true,
+        "sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb"
+      },
+      "capability:civics": {
+        "exact": true,
+        "expected_sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+        "path": "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.cake",
+        "present": true,
+        "sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604"
+      },
+      "capability:english": {
+        "exact": true,
+        "expected_sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+        "path": "results/abi_capability_compiler_phase7_integrated/materialized_v1052/phase7-final-english-core.cake",
+        "present": true,
+        "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d"
+      },
+      "capability:python": {
+        "exact": true,
+        "expected_sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+        "path": "results/abi_moonshot/packages/abi-python-token-plan-seed9824.cake",
+        "present": true,
+        "sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d"
+      },
+      "conformance_suite": {
+        "exact": true,
+        "expected_sha256": "2af84b8b18fa78613fda7c96e7d269ef731b68138f736ea2d4441f4254747383",
+        "path": "abi_v2/conformance_suite.json",
+        "present": true,
+        "sha256": "2af84b8b18fa78613fda7c96e7d269ef731b68138f736ea2d4441f4254747383"
+      },
+      "current_hostile_audit": {
+        "exact": true,
+        "expected_sha256": "879b4f943c88dd9cb1eeff1163d8fcc0eea980035c79a799e33f9ba88048aed4",
+        "path": "results/abi_v2/hostile_audit/result.json",
+        "present": true,
+        "sha256": "879b4f943c88dd9cb1eeff1163d8fcc0eea980035c79a799e33f9ba88048aed4"
+      },
+      "decoding_policy": {
+        "exact": true,
+        "expected_sha256": "ab7ca91e2516c2c431a24df05100cae3408dfed23b5ad592f6619a098dc74f30",
+        "path": "ABI_CAPABILITY_COMPILER_PHASE4_B40_V25_PRODUCT_CONFORMANCE_PROTOCOL_V960.json",
+        "present": true,
+        "sha256": "ab7ca91e2516c2c431a24df05100cae3408dfed23b5ad592f6619a098dc74f30"
+      },
+      "english_catalog_loader": {
+        "exact": true,
+        "expected_sha256": "dc76ee575f5e5f2cccd9fe8279ae501920bb022e8e62a921240ea3e5a9ced892",
+        "path": "abi/capability_compiler_phase2_teacher.py",
+        "present": true,
+        "sha256": "dc76ee575f5e5f2cccd9fe8279ae501920bb022e8e62a921240ea3e5a9ced892"
+      },
+      "english_evaluation_data": {
+        "exact": true,
+        "expected_sha256": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+        "path": "catalogs/capability_compiler_phase1_frozen_v1.json",
+        "present": true,
+        "sha256": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a"
+      },
+      "english_source_reference_outputs": {
+        "exact": true,
+        "expected_sha256": "b2aeab680a6b1a17a6f8332b5d1c5571b4eda72a51b2d191e67509aaeedb6196",
+        "path": "results/abi_capability_compiler_phase4_clarification_route_replication/B40-seed104729-v927/evaluation/development_outputs.jsonl",
+        "present": true,
+        "sha256": "b2aeab680a6b1a17a6f8332b5d1c5571b4eda72a51b2d191e67509aaeedb6196"
+      },
+      "functional_evaluator": {
+        "exact": true,
+        "expected_sha256": "8093ec2016d685f0327c87640042c8373bc141d76351fd641b21a44d018b6c92",
+        "path": "abi/capability_compiler_phase2_common.py",
+        "present": true,
+        "sha256": "8093ec2016d685f0327c87640042c8373bc141d76351fd641b21a44d018b6c92"
+      },
+      "host_certification_evaluator": {
+        "exact": true,
+        "expected_sha256": "0b41dc475cc154891bcebd8bdc26dec98288c74490eb96631b5629f095fb7fbc",
+        "path": "abi_v2/host_certification.py",
+        "present": true,
+        "sha256": "0b41dc475cc154891bcebd8bdc26dec98288c74490eb96631b5629f095fb7fbc"
+      },
+      "human_packet_manifest": {
+        "exact": true,
+        "expected_sha256": "06c1e9e0f8f4f938cd020686fff7ac8470e8cff4a3d3fe294a0b0c003e2c69aa",
+        "path": "results/abi_capability_compiler_phase2/human_rating_packet_v1/manifest.json",
+        "present": true,
+        "sha256": "06c1e9e0f8f4f938cd020686fff7ac8470e8cff4a3d3fe294a0b0c003e2c69aa"
+      },
+      "initial_decision": {
+        "exact": true,
+        "expected_sha256": "a485063cc4ee223cc1aacc3ef14490b4fc7556835c00c0d5a93ca6cd7ab3bc0c",
+        "path": "results/abi_v2/host_certification/initial_decision.json",
+        "present": true,
+        "sha256": "a485063cc4ee223cc1aacc3ef14490b4fc7556835c00c0d5a93ca6cd7ab3bc0c"
+      },
+      "layercake_certification_performance": {
+        "exact": true,
+        "expected_sha256": "cc3981109c28deebd9590145dc43bf8d26c648502e022034e099bb7f61b327f9",
+        "path": "results/abi_v2/host_certification/initial/layercake/performance.json",
+        "present": true,
+        "sha256": "cc3981109c28deebd9590145dc43bf8d26c648502e022034e099bb7f61b327f9"
+      },
+      "layercake_certification_result": {
+        "exact": true,
+        "expected_sha256": "053a64a764cca012668db6677887e6466f4dd5d2b5cf56f6b717b814d32fd58e",
+        "path": "results/abi_v2/host_certification/initial/layercake/result.json",
+        "present": true,
+        "sha256": "053a64a764cca012668db6677887e6466f4dd5d2b5cf56f6b717b814d32fd58e"
+      },
+      "layercake_matrix_mathematical": {
+        "exact": true,
+        "expected_sha256": "5a208b5d2f44492976334ae468ca56dc137b71279dc839f19b452f887840ad91",
+        "path": "results/abi_v2/capability_matrix/layercake_repaired/mathematical.json",
+        "present": true,
+        "sha256": "5a208b5d2f44492976334ae468ca56dc137b71279dc839f19b452f887840ad91"
+      },
+      "layercake_matrix_observations": {
+        "exact": true,
+        "expected_sha256": "e21806af4732f359c51e3658e619ccff30882abc1284e0f3c49dc3a33b12e463",
+        "path": "results/abi_v2/capability_matrix/layercake_repaired/observations.jsonl",
+        "present": true,
+        "sha256": "e21806af4732f359c51e3658e619ccff30882abc1284e0f3c49dc3a33b12e463"
+      },
+      "layercake_matrix_result": {
+        "exact": true,
+        "expected_sha256": "f5845a997d5b32ce233f08e8140ec5aa4a58d030d4a345bd412b5ce95b83481b",
+        "path": "results/abi_v2/capability_matrix/layercake_repaired/result.json",
+        "present": true,
+        "sha256": "f5845a997d5b32ce233f08e8140ec5aa4a58d030d4a345bd412b5ce95b83481b"
+      },
+      "matrix_evaluator": {
+        "exact": true,
+        "expected_sha256": "a07c8ef0342d8067979bf018e0c5fb286583064d5b40d9a3e8d9d556492eeab6",
+        "path": "abi_v2/capability_matrix.py",
+        "present": true,
+        "sha256": "a07c8ef0342d8067979bf018e0c5fb286583064d5b40d9a3e8d9d556492eeab6"
+      },
+      "pythia_certification_performance": {
+        "exact": true,
+        "expected_sha256": "86aa371f46c28fb7367ff4e5b85c942398c7d9c9cde451d25442bb840c5b57ec",
+        "path": "results/abi_v2/host_certification/initial/pythia/performance.json",
+        "present": true,
+        "sha256": "86aa371f46c28fb7367ff4e5b85c942398c7d9c9cde451d25442bb840c5b57ec"
+      },
+      "pythia_certification_result": {
+        "exact": true,
+        "expected_sha256": "485bd72070fdbabeeecb7c45b958c53ef2bfac241fdc1b891cf25d72a9f5b69f",
+        "path": "results/abi_v2/host_certification/initial/pythia/result.json",
+        "present": true,
+        "sha256": "485bd72070fdbabeeecb7c45b958c53ef2bfac241fdc1b891cf25d72a9f5b69f"
+      },
+      "pythia_matrix_mathematical": {
+        "exact": true,
+        "expected_sha256": "65d124f5e662db5bb3804abca36c8ec70a5e23711d3bfb50ba09985be801afa7",
+        "path": "results/abi_v2/capability_matrix/pythia/mathematical.json",
+        "present": true,
+        "sha256": "65d124f5e662db5bb3804abca36c8ec70a5e23711d3bfb50ba09985be801afa7"
+      },
+      "pythia_matrix_observations": {
+        "exact": true,
+        "expected_sha256": "8afca24fc10f384c8a2e054b76eef902d6f4c085bdaf245dde10cf50fbce7786",
+        "path": "results/abi_v2/capability_matrix/pythia/observations.jsonl",
+        "present": true,
+        "sha256": "8afca24fc10f384c8a2e054b76eef902d6f4c085bdaf245dde10cf50fbce7786"
+      },
+      "pythia_matrix_result": {
+        "exact": true,
+        "expected_sha256": "a8b67db798b8807d629ac9f5ca4f7b7e28e90e15f17e8ccc1be049ec2304d255",
+        "path": "results/abi_v2/capability_matrix/pythia/result.json",
+        "present": true,
+        "sha256": "a8b67db798b8807d629ac9f5ca4f7b7e28e90e15f17e8ccc1be049ec2304d255"
+      },
+      "qwen2_certification_performance": {
+        "exact": true,
+        "expected_sha256": "922098834fbc13d20e979bd8fe1a7e3688b257eeb18d6e2501ad13f9103d56e0",
+        "path": "results/abi_v2/host_certification/initial/qwen2/performance.json",
+        "present": true,
+        "sha256": "922098834fbc13d20e979bd8fe1a7e3688b257eeb18d6e2501ad13f9103d56e0"
+      },
+      "qwen2_certification_result": {
+        "exact": true,
+        "expected_sha256": "3d9f7ffb75e0ff51b9cb1a1bad3cce894456bbfc18380f0d078dbb24ade05f16",
+        "path": "results/abi_v2/host_certification/initial/qwen2/result.json",
+        "present": true,
+        "sha256": "3d9f7ffb75e0ff51b9cb1a1bad3cce894456bbfc18380f0d078dbb24ade05f16"
+      },
+      "qwen2_matrix_mathematical": {
+        "exact": true,
+        "expected_sha256": "049151c3a70a7b410cf56a8a8640409cd1dd8e4e5a922de4df678cd7c365d95f",
+        "path": "results/abi_v2/capability_matrix/qwen2/mathematical.json",
+        "present": true,
+        "sha256": "049151c3a70a7b410cf56a8a8640409cd1dd8e4e5a922de4df678cd7c365d95f"
+      },
+      "qwen2_matrix_observations": {
+        "exact": true,
+        "expected_sha256": "c236c4177841bf8e3d70e24c535fa0e1e9ef77bda70e4baaadf63e80882fafee",
+        "path": "results/abi_v2/capability_matrix/qwen2/observations.jsonl",
+        "present": true,
+        "sha256": "c236c4177841bf8e3d70e24c535fa0e1e9ef77bda70e4baaadf63e80882fafee"
+      },
+      "qwen2_matrix_result": {
+        "exact": true,
+        "expected_sha256": "60d6b028804c5d64e578eef6d9400be6e7b46fabcd3371230d7a042dce6514dd",
+        "path": "results/abi_v2/capability_matrix/qwen2/result.json",
+        "present": true,
+        "sha256": "60d6b028804c5d64e578eef6d9400be6e7b46fabcd3371230d7a042dce6514dd"
+      },
+      "release_verifier": {
+        "exact": true,
+        "expected_sha256": "6ee2e57964bae31e4d6e1555589e8728d6a8590272dfe2f6704e9cf23ae8c9e8",
+        "path": "abi_v2/verify_release.py",
+        "present": true,
+        "sha256": "6ee2e57964bae31e4d6e1555589e8728d6a8590272dfe2f6704e9cf23ae8c9e8"
+      },
+      "runtime_manifest": {
+        "exact": true,
+        "expected_sha256": "c98e2934fcdc1d3a0936b28232a19dc97dc2273078318c494ffdc49d0abce73d",
+        "path": "abi_v2/external_runtime_manifest.json",
+        "present": true,
+        "sha256": "c98e2934fcdc1d3a0936b28232a19dc97dc2273078318c494ffdc49d0abce73d"
+      },
+      "source_success_locks": {
+        "exact": true,
+        "expected_sha256": "0e12da8d4f827610894c815cc00268c3ab1321bdf69a245214d2845a7efd3354",
+        "path": "results/abi_v2/semantic_retention/source_success_locks.json",
+        "present": true,
+        "sha256": "0e12da8d4f827610894c815cc00268c3ab1321bdf69a245214d2845a7efd3354"
+      },
+      "specialist_evaluation_data": {
+        "exact": true,
+        "expected_sha256": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052",
+        "path": "evidence/current/segregation/english_and_first_domains_certification_v6.json",
+        "present": true,
+        "sha256": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052"
+      },
+      "specialist_source_reference_outputs": {
+        "exact": true,
+        "expected_sha256": "3b177777bd1d032cf3aef447578cf4620194ce664f3a4f5cc51633b512333535",
+        "path": "results/abi_capability_compiler_phase6_composition/run_v1032/seed104729/observations.jsonl",
+        "present": true,
+        "sha256": "3b177777bd1d032cf3aef447578cf4620194ce664f3a4f5cc51633b512333535"
+      }
+    },
+    "exact": 41,
+    "required": 41
+  },
+  "gates": {
+    "archive_exact_and_development_state_absent": true,
+    "clean_commands_and_tests": true,
+    "external_turnkey_byte_verifier": true,
+    "fresh_capability_blind_certification": true,
+    "fresh_hostile_release_verification": true,
+    "fresh_three_host_four_capability_matrix": true,
+    "frozen_source_bindings_exact": true,
+    "source_teacher_absent": true
+  },
+  "host_certification": {
+    "hosts": {
+      "layercake": {
+        "adapter_exact": true,
+        "adapter_expected_sha256": "d1f3a9d67581032473055711773f784e3b0a028fb68fab58c3a9a63b94317f04",
+        "adapter_parameters": 0,
+        "adapter_sha256": "d1f3a9d67581032473055711773f784e3b0a028fb68fab58c3a9a63b94317f04",
+        "capability_data_accessed": false,
+        "capability_package_open_attempts": 0,
+        "certification_examples": 128,
+        "certification_utf8_bytes": 5953,
+        "checkpoint_exact": true,
+        "checkpoint_sha256": "7b176f21e6a86f3aaded724462d37149f8f8be48370bcdd163fe44c49e3464ce",
+        "device": "cpu",
+        "performance_sha256": "fc43951be162870c4bc7f5e948d67b606844ae062263731e07c221eea84cba4b",
+        "result_self_hash_exact": true,
+        "runtime_overhead_fraction": -0.006702517340815173,
+        "snapshot_inventory_exact": true,
+        "snapshot_inventory_sha256": null,
+        "status": "PASS_CAPABILITY_BLIND_HOST_CERTIFICATION",
+        "wall_seconds": 0.04644399999961024
+      },
+      "pythia": {
+        "adapter_exact": true,
+        "adapter_expected_sha256": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa",
+        "adapter_parameters": 0,
+        "adapter_sha256": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa",
+        "capability_data_accessed": false,
+        "capability_package_open_attempts": 0,
+        "certification_examples": 128,
+        "certification_utf8_bytes": 5953,
+        "checkpoint_exact": true,
+        "checkpoint_sha256": "29d2e457a664e41c12c735f20a36dc0956a665f614a54ce5db21a32e75965270",
+        "device": "cpu",
+        "performance_sha256": "23d131fd28f00fd12218cf040eea8034099d3afea9e23dfd3a6c160157473afd",
+        "result_self_hash_exact": true,
+        "runtime_overhead_fraction": 0.009780657524134595,
+        "snapshot_inventory_exact": true,
+        "snapshot_inventory_sha256": "9c3045a81419c0fe3c7a8c584d8ad467b267d9e64de9663f2aad348a09f6c085",
+        "status": "PASS_CAPABILITY_BLIND_HOST_CERTIFICATION",
+        "wall_seconds": 8.02156119999563
+      },
+      "qwen2": {
+        "adapter_exact": true,
+        "adapter_expected_sha256": "b13a75b82acf6df412c2569edaf36654a105b8c565164236fbeb5813b630291f",
+        "adapter_parameters": 0,
+        "adapter_sha256": "b13a75b82acf6df412c2569edaf36654a105b8c565164236fbeb5813b630291f",
+        "capability_data_accessed": false,
+        "capability_package_open_attempts": 0,
+        "certification_examples": 128,
+        "certification_utf8_bytes": 5953,
+        "checkpoint_exact": true,
+        "checkpoint_sha256": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342",
+        "device": "cpu",
+        "performance_sha256": "176200aa9da418c4a9b32e27e8179ba5557979b6e80c9d72812760cba1877149",
+        "result_self_hash_exact": true,
+        "runtime_overhead_fraction": 0.0036588412008033977,
+        "snapshot_inventory_exact": true,
+        "snapshot_inventory_sha256": "a2f0d549121c1d38fe3c9ff33d6e80df1d02a032153daa15ff89663eb091f25f",
+        "status": "PASS_CAPABILITY_BLIND_HOST_CERTIFICATION",
+        "wall_seconds": 13.338066600001184
+      }
+    },
+    "passed": true
+  },
+  "hostile_release_verification": {
+    "forbidden_attempts_rejected": 4,
+    "forbidden_attempts_required": 4,
+    "mutations_rejected": 13,
+    "mutations_required": 13,
+    "sha256": "29142f4d7c53902daca2f34ec324fdd6b63e0a390b3bc59d7d93d108981263db",
+    "status": "PASS_ALL_HOSTILE_RELEASE_MUTATIONS_REJECTED"
+  },
+  "human_review_claimed": false,
+  "independent_hardware_claimed": false,
+  "matrix": {
+    "aggregate": {
+      "cross_host_actions_equal": 300,
+      "cross_host_actions_total": 300,
+      "cross_host_outputs_equal": 1681,
+      "cross_host_outputs_total": 1681,
+      "matrix_cells_passed": 12,
+      "matrix_cells_required": 12,
+      "receiver_successes": 5043,
+      "receiver_tasks": 5043
+    },
+    "hosts": {
+      "layercake": {
+        "adapter_hash_frozen": true,
+        "calibration_performed": false,
+        "capabilities": {
+          "chemistry": {
+            "functional_successes": 100,
+            "source_output_byte_exact": 100,
+            "tasks": 100
+          },
+          "civics": {
+            "functional_successes": 100,
+            "source_output_byte_exact": 100,
+            "tasks": 100
+          },
+          "english": {
+            "functional_successes": 1381,
+            "source_output_byte_exact": 1381,
+            "tasks": 1381
+          },
+          "python": {
+            "functional_successes": 100,
+            "source_output_byte_exact": 100,
+            "tasks": 100
+          }
+        },
+        "capability_hashes_frozen": true,
+        "corrupt_rejections_required_each": 4,
+        "device": "cpu",
+        "gates_passed": 16,
+        "gates_required": 16,
+        "mathematical_self_hash_exact": true,
+        "peak_cuda_allocated_bytes": 0,
+        "peak_process_rss_bytes_lower_bound": 1182314496,
+        "random_rejections": 4,
+        "removal_reinstallation": 4,
+        "removal_reinstallation_required": 4,
+        "result_self_hash_exact": true,
+        "shuffled_rejections": 4,
+        "source_model_loaded": false,
+        "status": "PASS_HOST_FOUR_CAPABILITY_MATRIX",
+        "teacher_loaded": false,
+        "training_performed": false,
+        "wall_seconds": 542.2470329999996
+      },
+      "pythia": {
+        "adapter_hash_frozen": true,
+        "calibration_performed": false,
+        "capabilities": {
+          "chemistry": {
+            "functional_successes": 100,
+            "source_output_byte_exact": 100,
+            "tasks": 100
+          },
+          "civics": {
+            "functional_successes": 100,
+            "source_output_byte_exact": 100,
+            "tasks": 100
+          },
+          "english": {
+            "functional_successes": 1381,
+            "source_output_byte_exact": 1381,
+            "tasks": 1381
+          },
+          "python": {
+            "functional_successes": 100,
+            "source_output_byte_exact": 100,
+            "tasks": 100
+          }
+        },
+        "capability_hashes_frozen": true,
+        "corrupt_rejections_required_each": 4,
+        "device": "cpu",
+        "gates_passed": 16,
+        "gates_required": 16,
+        "mathematical_self_hash_exact": true,
+        "peak_cuda_allocated_bytes": 0,
+        "peak_process_rss_bytes_lower_bound": 1858093056,
+        "random_rejections": 4,
+        "removal_reinstallation": 4,
+        "removal_reinstallation_required": 4,
+        "result_self_hash_exact": true,
+        "shuffled_rejections": 4,
+        "source_model_loaded": false,
+        "status": "PASS_HOST_FOUR_CAPABILITY_MATRIX",
+        "teacher_loaded": false,
+        "training_performed": false,
+        "wall_seconds": 503.6490984999982
+      },
+      "qwen2": {
+        "adapter_hash_frozen": true,
+        "calibration_performed": false,
+        "capabilities": {
+          "chemistry": {
+            "functional_successes": 100,
+            "source_output_byte_exact": 100,
+            "tasks": 100
+          },
+          "civics": {
+            "functional_successes": 100,
+            "source_output_byte_exact": 100,
+            "tasks": 100
+          },
+          "english": {
+            "functional_successes": 1381,
+            "source_output_byte_exact": 1381,
+            "tasks": 1381
+          },
+          "python": {
+            "functional_successes": 100,
+            "source_output_byte_exact": 100,
+            "tasks": 100
+          }
+        },
+        "capability_hashes_frozen": true,
+        "corrupt_rejections_required_each": 4,
+        "device": "cpu",
+        "gates_passed": 16,
+        "gates_required": 16,
+        "mathematical_self_hash_exact": true,
+        "peak_cuda_allocated_bytes": 0,
+        "peak_process_rss_bytes_lower_bound": 3214938112,
+        "random_rejections": 4,
+        "removal_reinstallation": 4,
+        "removal_reinstallation_required": 4,
+        "result_self_hash_exact": true,
+        "shuffled_rejections": 4,
+        "source_model_loaded": false,
+        "status": "PASS_HOST_FOUR_CAPABILITY_MATRIX",
+        "teacher_loaded": false,
+        "training_performed": false,
+        "wall_seconds": 513.8673563000048
+      }
+    },
+    "passed": true
+  },
+  "preserved_prior_failed_clean_attempts": [
+    {
+      "failed_commands": [
+        {
+          "command": [
+            "C:\\Python310\\python.exe",
+            "-m",
+            "pytest",
+            "-q",
+            "-p",
+            "no:cacheprovider"
+          ],
+          "exit_code": 1,
+          "stdout_sha256": "7809eca012cc7d4e07238339678b71043df602955ff6be441d1f4c4e26c495f6",
+          "stdout_tail": "b\" not in mode:\r\n            encoding = io.text_encoding(encoding)\r\n>       return self._accessor.open(self, mode, buffering, encoding, errors,\r\n                                   newline)\r\nE       FileNotFoundError: [Errno 2] No such file or directory: '<CLEAN_ATTEMPT_ROOT>\\\\results\\\\abi_host_independence\\\\release_certificate.json'\r\n\r\nC:\\Python310\\lib\\pathlib.py:1117: FileNotFoundError\r\n=========================== short test summary info ===========================\r\nFAILED tests/test_abi_v2_final_validation.py::test_frozen_candidate_pins_exact_architecture_lineage_and_payloads\r\nFAILED tests/test_abi_v2_host_independence_release.py::test_host_independence_release_verifies\r\nFAILED tests/test_abi_v2_host_independence_release.py::test_evidence_binding_mutation_fails_closed\r\nFAILED tests/test_abi_v2_host_independence_release.py::test_unsafe_evidence_binding_path_fails_closed\r\n4 failed, 35 passed in 9.37s\r\n"
+        },
+        {
+          "command": [
+            "C:\\Python310\\python.exe",
+            "-m",
+            "ruff",
+            "check",
+            "abi",
+            "abi_v2",
+            "tests"
+          ],
+          "exit_code": 1,
+          "stdout_sha256": "d1f07bdec9d1d45cb404a83ad1b8930e3b377c8368293823f354314ceb704bb1",
+          "stdout_tail": "| from collections import Counter\n14 | | import hashlib\n15 | | import json\n16 | | from pathlib import Path\n17 | | import time\n18 | | from typing import Any, Mapping, Sequence\n19 | |\n20 | | from .capability_pipeline import (\n21 | |     CapabilityPipelineError,\n22 | |     canonical_json_bytes,\n23 | |     read_extraction_bundle,\n24 | | )\n25 | | from .hf_extraction import (\n26 | |     HuggingFaceCausalSource,\n27 | |     evaluate_output,\n28 | |     load_probe_catalog,\n29 | | )\n   | |_^\nhelp: Organize imports\n   |\n12 | import argparse\n   - from collections import Counter\n13 | import hashlib\n14 | import json\n   - from pathlib import Path\n15 | import time\n16 + from collections import Counter\n17 + from pathlib import Path\n18 | from typing import Any, Mapping, Sequence\n--------------------------------------------------------------------------------\n29 | )\n   -\n30 |\n   |\n\nFound 4534 errors.\n[*] 731 fixable with the `--fix` option (19 hidden fixes can be enabled with the `--unsafe-fixes` option).\n"
+        }
+      ],
+      "path": "clean_attempt_1/command_receipt.json",
+      "sha256": "b4fbcec651b0f68239f540ac00bb02aa3dfdc57a792fbfdc5bb50b428f7caacf",
+      "status": "FAIL_CLEAN_COMMANDS_TESTS_AND_BUILD"
+    },
+    {
+      "failed_commands": [
+        {
+          "command": [
+            "C:\\Python310\\python.exe",
+            "-m",
+            "pytest",
+            "-q",
+            "-p",
+            "no:cacheprovider"
+          ],
+          "exit_code": 1,
+          "stdout_sha256": "3e5295726c5ae08bb71c3be7020497d892e03a1ee212697c08e20345b53bdbb5",
+          "stdout_tail": "   \"\"\"\r\n        Open the file pointed by this path and return a file object, as\r\n        the built-in open() function does.\r\n        \"\"\"\r\n        if \"b\" not in mode:\r\n            encoding = io.text_encoding(encoding)\r\n>       return self._accessor.open(self, mode, buffering, encoding, errors,\r\n                                   newline)\r\nE       FileNotFoundError: [Errno 2] No such file or directory: '<CLEAN_ATTEMPT_ROOT>\\\\evidence\\\\current\\\\segregation\\\\ABI_CORE_DOMAIN_SEGREGATION_IMPLEMENTATION_CERTIFICATE.json'\r\n\r\nC:\\Python310\\lib\\pathlib.py:1117: FileNotFoundError\r\n=========================== short test summary info ===========================\r\nFAILED tests/test_capability_segregation.py::test_checked_in_contract_and_ontology_lock_correct_claim_boundary\r\nFAILED tests/test_capability_segregation.py::test_implementation_certificate_binds_code_contract_and_catalog\r\n2 failed, 60 passed in 9.97s\r\n"
+        }
+      ],
+      "path": "clean_attempt_2/command_receipt.json",
+      "sha256": "4635e1117935ca4aa27e84ab52925a08f1a6b330ad340fcc7da9debf9327b617",
+      "status": "FAIL_CLEAN_COMMANDS_TESTS_AND_BUILD"
+    },
+    {
+      "failed_commands": [
+        {
+          "command": [
+            "C:\\Python310\\python.exe",
+            "-m",
+            "pytest",
+            "-q",
+            "-p",
+            "no:cacheprovider"
+          ],
+          "exit_code": 1,
+          "stdout_sha256": "6b6dfed7d1ecf5a51e74437b341d9e145f8332ea043bc174a5b6035a093c71ef",
+          "stdout_tail": " newline = None\r\n\r\n    def open(self, mode='r', buffering=-1, encoding=None,\r\n             errors=None, newline=None):\r\n        \"\"\"\r\n        Open the file pointed by this path and return a file object, as\r\n        the built-in open() function does.\r\n        \"\"\"\r\n        if \"b\" not in mode:\r\n            encoding = io.text_encoding(encoding)\r\n>       return self._accessor.open(self, mode, buffering, encoding, errors,\r\n                                   newline)\r\nE       FileNotFoundError: [Errno 2] No such file or directory: '<CLEAN_ATTEMPT_ROOT>\\\\evidence\\\\current\\\\segregation\\\\intrinsic_english_search_validation_v83.json'\r\n\r\nC:\\Python310\\lib\\pathlib.py:1117: FileNotFoundError\r\n=========================== short test summary info ===========================\r\nFAILED tests/test_capability_segregation.py::test_implementation_certificate_binds_code_contract_and_catalog\r\n1 failed, 61 passed in 10.21s\r\n"
+        }
+      ],
+      "path": "clean_attempt_3/command_receipt.json",
+      "sha256": "811c0a9fff7b439014f736d4073c53287d877d1e67ade206e8509952c4d9b2f3",
+      "status": "FAIL_CLEAN_COMMANDS_TESTS_AND_BUILD"
+    }
+  ],
+  "source_lineage": {
+    "clean_tree": "isolated_archive_extraction/abi_release",
+    "development_caches_reused": false,
+    "development_git_metadata_reused": false,
+    "technical_proof_commit": "acfed2a225a32d36c32b625e35c6ede536cfab01",
+    "technical_proof_tag": "abi-host-independence-technical-proof-2026-08-24",
+    "temporary_trainer_state_reused": false
+  },
+  "status": "PASS_CLEAN_CHECKOUT_REPRODUCTION"
+}

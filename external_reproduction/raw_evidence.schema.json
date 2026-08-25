@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Yoder23/abi/external_reproduction/raw_evidence.schema.json",
+  "title": "ABI final external reproduction evidence",
+  "type": "object",
+  "required": ["format", "status"],
+  "properties": {
+    "format": {"type": "string", "minLength": 1},
+    "status": {"type": "string", "pattern": "^(PASS|FAIL)"},
+    "evidence_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true,
+  "description": "Envelope schema for each command receipt. Nested raw matrix and certification files retain their versioned producer schemas and are hash-bound by the final report and returned SHA-256 inventory."
+}

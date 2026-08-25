@@ -1,11 +1,11 @@
 # ABI final-mile status
 
-Status date: 2026-08-24
+Status date: 2026-08-25
 
 ## Outcome
 
 ```text
-ABI MOONSHOT STATUS: TECHNICALLY PROVEN — EXTERNAL VALIDATION PENDING
+ABI VALIDATION STATUS: READY FOR HUMAN AND INDEPENDENT REVIEW
 ```
 
 The local technical declaration is:
@@ -17,6 +17,14 @@ ABI TECHNICAL MOONSHOT: PROVEN
 This is not the full externally validated moonshot. Three real independent
 human raters, a different-hardware independent operator, and the registered
 minimum-information certification remain open.
+
+The internal final technical certificate passes all 18/18 preregistered
+readiness gates. A corrected clean isolated export reran fresh capability-blind
+certification and the complete 3-host × 4-capability matrix on CPU, recomputed
+5,043/5,043 exact successes from raw evidence, passed 62 supported tests,
+rejected 13/13 hostile mutations and 4/4 forbidden operations, and built both
+wheel and sdist. Three earlier clean-package failures are preserved in the
+clean-checkout receipt with hashes and failure output.
 
 ## V1 is preserved
 
@@ -31,8 +39,9 @@ Evidence: `results/abi_v2/frozen_v1_lineage.json` and
 
 ## What ABI V2 proves locally
 
-ABI V2 makes each host conform once to a canonical representation-neutral
-extension/runtime interface. Host certification used only 128 neutral UTF-8
+ABI V2 makes each named codec/conformance environment conform once to a
+canonical representation-neutral standalone capability-runtime interface.
+Certification used only 128 neutral UTF-8
 records and 15 frozen conformance vectors. Capability paths, examples, outputs,
 and success IDs were unavailable to the certification logic. Each frozen
 adapter has zero trainable parameters and zero optimizer steps.
@@ -64,22 +73,23 @@ calibration, or mutation.
 The inference-free verifiers recompute raw file hashes, evidence hashes,
 matrix depths, output/action equality, retention, isolation, lifecycle,
 performance, ownership, ladder state, and the release index. The supported
-public suite passes 56/56.
+public suite passes 62/62.
 
 ## Exact claim boundary
 
-The certified claim is:
+The corrected certified claim after the final host-causality audit is:
 
-> ABI V2 demonstrates capability-independent installation across LayerCake
-> v25, Qwen2.5-0.5B, and Pythia-160M after one-time generic capability-blind
-> host certification.
+> ABI V2 demonstrates standalone capability-runtime execution across the
+> LayerCake v25, Qwen2.5-0.5B, and Pythia-160M codec/conformance environments
+> after one-time generic capability-blind certification.
 
-This is a representation-neutral extension/runtime ABI. Qwen and Pythia use
-their exact frozen checkpoints for native conformance probes and their native
-tokenizers for exact output realization. Their base hidden states do not
-generate or modify the capability semantics. Therefore this result does not
-claim LayerCake tensor transplantation into Qwen/Pythia base weights or a
-native residual-coordinate transplant.
+This is a representation-neutral extension/runtime ABI. A neutral UTF-8 stub
+reproduced all 5,043 promoted outputs, and zero/random/shuffled host state could
+not change them because the semantic realization API has no host-state input.
+Qwen and Pythia use their exact frozen checkpoints for native conformance probes
+and their native tokenizers for exact native units. Their base hidden states are
+not materially causal. Therefore this result does not claim host-model
+generation, LayerCake tensor transplantation, or native residual-coordinate transfer.
 
 It also does not claim compatibility with every LLM, human quality completion,
 independent hardware reproduction, a global information minimum, or universal
@@ -94,6 +104,12 @@ superiority over LoRA or distillation.
 | Stable registered minimum-information frontier | Open |
 
 These external gates do not reopen the locally passed host architecture work.
+
+Internal certificate:
+`results/abi_final_validation/release_certificate.json`.
+
+Clean reproduction receipt:
+`results/abi_final_validation/clean_checkout_reproduction.json`.
 
 ## Evidence map
 

@@ -1,0 +1,36 @@
+{
+  "commands": [
+    "abi-reproduce verify",
+    "abi-reproduce certify-hosts",
+    "abi-reproduce capability-matrix",
+    "abi-reproduce causality",
+    "abi-reproduce performance",
+    "abi-reproduce hostile-audit",
+    "abi-reproduce report"
+  ],
+  "development_caches_bundled": false,
+  "evidence_sha256": "289e21d31cd19ef72c76917026bd1f6f875d82df2440c3797deeab232b022bda",
+  "format": "abi-final-external-reproduction-checklist/1",
+  "frozen_commit": "acfed2a225a32d36c32b625e35c6ede536cfab01",
+  "frozen_tag": "abi-host-independence-technical-proof-2026-08-24",
+  "hardware_rule": "must differ from the ABI development RTX 3080 Laptop GPU system",
+  "hidden_expected_outputs_bundled": false,
+  "human_results_bundled": false,
+  "independent_execution_completed": false,
+  "minimum_information_status": "PENDING_AFTER_EXTERNAL_VALIDATION",
+  "model_weights_bundled": false,
+  "operator_must_record": [
+    "operator identity and signed attestation",
+    "CPU, GPU, RAM, VRAM, OS",
+    "Python and compiler versions",
+    "package/runtime versions",
+    "exact commands and exit codes",
+    "all raw outputs and timings",
+    "SHA-256 inventory of returned evidence"
+  ],
+  "public_locked_reference_outputs_disclosed": true,
+  "repository": "https://github.com/Yoder23/abi",
+  "source_teacher_required_at_runtime": false,
+  "status": "READY_FOR_INDEPENDENT_DIFFERENT_HARDWARE_EXECUTION",
+  "trainer_checkpoints_bundled": false
+}

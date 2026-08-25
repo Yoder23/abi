@@ -1,0 +1,92 @@
+{
+  "blocking_findings": [],
+  "evidence_sha256": "90b8dc76a3a02a891b28fc8e513304c07dfe720ad408dc25e9734cf0203e3fb6",
+  "findings": {
+    "benchmark_specific_conditionals": {
+      "detected": false,
+      "disposition": "PASS_NO_TEST_ID_OR_PROBE_ID_BRANCH_IN_RUNTIME",
+      "matches": []
+    },
+    "capability_access_during_certification": {
+      "detected": false,
+      "disposition": "PASS_FAIL_CLOSED_PATH_GUARD"
+    },
+    "capability_reveal_before_adapter_freeze": {
+      "detected": false,
+      "disposition": "PASS_PRE_REVEAL_HASH_LOCK"
+    },
+    "capability_specific_adapter_values": {
+      "detected": false,
+      "disposition": "PASS_NO_CAPABILITY_IDS_OR_VALUES_IN_ADAPTERS"
+    },
+    "capability_specific_routes_from_test_answers": {
+      "detected": false,
+      "disposition": "PASS_ROUTES_ARE_PACKAGE_MANIFEST_AND_PROMPT_DOMAIN_BOUND"
+    },
+    "duplicate_evaluation_records": {
+      "detected": false,
+      "disposition": "PASS_UNIQUE_HOST_CAPABILITY_PROBE_KEYS",
+      "duplicates_by_host": {
+        "layercake": 0,
+        "pythia": 0,
+        "qwen2": 0
+      }
+    },
+    "dynamic_adapter_mutation": {
+      "detected": false,
+      "disposition": "PASS_HASHES_UNCHANGED"
+    },
+    "evaluator_assisted_generation": {
+      "detected": false,
+      "disposition": "PASS_GENERATION_SIGNATURES_EXCLUDE_EXPECTED_OUTPUTS"
+    },
+    "excluded_failed_outputs": {
+      "detected": false,
+      "disposition": "PASS_ALL_LOCKED_ROWS_PRESENT"
+    },
+    "final_test_leakage_into_certification": {
+      "detected": false,
+      "disposition": "PASS_NEUTRAL_CERTIFICATION_ONLY"
+    },
+    "hard_coded_evaluation_responses": {
+      "detected": false,
+      "disposition": "PASS_AST_AND_TEXT_PATH_REVIEW"
+    },
+    "hidden_teacher_execution": {
+      "detected": false,
+      "disposition": "PASS_RAW_RUNTIME_EVENTS_DECLARE_ABSENCE"
+    },
+    "modified_normalizers": {
+      "detected": false,
+      "disposition": "PASS_STRICT_UTF8_AND_FROZEN_FUNCTIONAL_EVALUATOR_HASH_BOUND"
+    },
+    "post_install_calibration": {
+      "detected": false,
+      "disposition": "PASS_ZERO"
+    },
+    "retrieved_benchmark_outputs": {
+      "detected": true,
+      "disposition": "PROVEN_BENIGN_EVALUATOR_ONLY_NO_GENERATOR_DATAFLOW"
+    },
+    "selective_seed_reporting": {
+      "detected": false,
+      "disposition": "PASS_SINGLE_PREREGISTERED_LOCKED_LINEAGE_NO_MULTI_SEED_CLAIM"
+    },
+    "stored_expected_answers": {
+      "detected": true,
+      "disposition": "PROVEN_BENIGN_PUBLIC_POST_GENERATION_EVALUATOR_INPUT",
+      "evidence": "Public frozen source outputs are loaded by the matrix evaluator for exact-retention comparison. Generator call signatures receive prompt/package state only, never references."
+    },
+    "teacher_runtime_cache": {
+      "detected": false,
+      "disposition": "PASS_NONE_IN_RUNTIME_EVIDENCE"
+    },
+    "test_id_branching": {
+      "detected": false,
+      "disposition": "PASS_NONE"
+    }
+  },
+  "format": "abi-final-shortcut-audit/1",
+  "public_evaluation_disclosure": "The exact-retention suite and source outputs are public, not a hidden holdout. They are available to the evaluator but excluded from generator function inputs. This proves exact execution under a public locked suite, not unseen-task generalization.",
+  "status": "PASS_NO_BLOCKING_SHORTCUT_OR_LEAKAGE_PATH"
+}

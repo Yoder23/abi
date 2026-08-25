@@ -1,0 +1,67 @@
+{
+  "claim_boundary": "These tests prove bound-byte and governance rejection. They do not replace external operator custody or human identity verification.",
+  "evidence_sha256": "3fb9d66f38c7d937beaf720cbd5755b4c7df70d6519c07f15f6fde0b5851ad50",
+  "forbidden_attempts": {
+    "artifact_mutation_during_install": {
+      "failed_closed": true
+    },
+    "capability_access_during_certification": {
+      "failed_closed": true
+    },
+    "post_certification_adapter_fitting": {
+      "failed_closed": true
+    },
+    "receiver_capability_calibration": {
+      "failed_closed": true
+    }
+  },
+  "forbidden_attempts_rejected": 4,
+  "forbidden_attempts_required": 4,
+  "format": "abi-final-hostile-release-verification/1",
+  "mutations": {
+    "adapter_hash": {
+      "rejected": true
+    },
+    "canonical_abi_version": {
+      "rejected": true
+    },
+    "capability_reveal_timestamp": {
+      "rejected": true
+    },
+    "capability_tensor": {
+      "rejected": true
+    },
+    "certification_data_hash": {
+      "rejected": true
+    },
+    "decoding_policy": {
+      "rejected": true
+    },
+    "evaluator": {
+      "rejected": true
+    },
+    "external_reproduction_manifest": {
+      "rejected": true
+    },
+    "host_checkpoint": {
+      "rejected": true
+    },
+    "human_packet": {
+      "rejected": true
+    },
+    "runtime_manifest": {
+      "rejected": true
+    },
+    "source_success_lock": {
+      "rejected": true
+    },
+    "teacher_absence_manifest": {
+      "rejected": true
+    }
+  },
+  "mutations_rejected": 13,
+  "mutations_required": 13,
+  "source_files_modified": false,
+  "status": "PASS_ALL_HOSTILE_RELEASE_MUTATIONS_REJECTED",
+  "temporary_mutations_destroyed_after_test": true
+}

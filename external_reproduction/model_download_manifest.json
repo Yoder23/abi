@@ -1,0 +1,34 @@
+{
+  "format": "abi-final-external-model-download-manifest/1",
+  "models": {
+    "pythia": {
+      "destination": "external_reproduction/models/pythia",
+      "files": {
+        "config.json": {"bytes": 569, "sha256": "76eb275107220e450d31258f792a2efcbee109d8b62ae0088260057dec06362f"},
+        "model.safetensors": {"bytes": 374998696, "sha256": "29d2e457a664e41c12c735f20a36dc0956a665f614a54ce5db21a32e75965270"},
+        "special_tokens_map.json": {"bytes": 99, "sha256": "6f50ab5a5a509a1c309d6171f339b196a900dc9c99ad0408ff23bb615fdae7ad"},
+        "tokenizer.json": {"bytes": 2113710, "sha256": "c24618a1b3e6a38167beff1c72cffd126c3a66254347304b50547d12c5f25624"},
+        "tokenizer_config.json": {"bytes": 396, "sha256": "70e38394e494931c6f773ba41e19460dd4436526b852207367f04341b4066d3f"}
+      },
+      "model": "EleutherAI/pythia-160m",
+      "revision": "50f5173d932e8e61f858120bcb800b97af589f46",
+      "snapshot_inventory_sha256": "9c3045a81419c0fe3c7a8c584d8ad467b267d9e64de9663f2aad348a09f6c085"
+    },
+    "qwen2": {
+      "destination": "external_reproduction/models/qwen2",
+      "files": {
+        "config.json": {"bytes": 681, "sha256": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b"},
+        "generation_config.json": {"bytes": 138, "sha256": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8"},
+        "merges.txt": {"bytes": 1671839, "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"},
+        "model.safetensors": {"bytes": 988097824, "sha256": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342"},
+        "tokenizer.json": {"bytes": 7031645, "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"},
+        "tokenizer_config.json": {"bytes": 7228, "sha256": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9"},
+        "vocab.json": {"bytes": 2776833, "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"}
+      },
+      "model": "Qwen/Qwen2.5-0.5B",
+      "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+      "snapshot_inventory_sha256": "a2f0d549121c1d38fe3c9ff33d6e80df1d02a032153daa15ff89663eb091f25f"
+    }
+  },
+  "weights_bundled": false
+}

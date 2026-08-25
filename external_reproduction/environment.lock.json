@@ -1,0 +1,17 @@
+{
+  "compiler_rule": "record compiler and platform; exact development hardware is prohibited",
+  "evidence_sha256": "7811acebd405294ceb4de45e19ffaefc25d35d6fcf0a01eaf7f3383337d063c2",
+  "format": "abi-final-external-environment-lock/1",
+  "packages": {
+    "cryptography": "46.0.5",
+    "huggingface-hub": "0.36.0",
+    "numpy": "2.2.6",
+    "psutil": "7.0.0",
+    "safetensors": "0.7.0",
+    "tokenizers": "0.22.1",
+    "torch": "2.7.1",
+    "transformers": "4.57.3"
+  },
+  "python": "3.10",
+  "torch_build_rule": "operator selects the matching CPU/CUDA build and records the exact local version"
+}

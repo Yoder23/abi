@@ -10,14 +10,21 @@ ABI does **not** serve models. [LayerCake](https://github.com/Yoder23/layercake)
 is the separate execution host that installs, composes, routes, and runs
 capability packages.
 
-> Status: alpha research software. ABI V2 has a local technical pass across
-> LayerCake v25, Qwen2.5-0.5B, and Pythia-160M using one capability-blind,
-> zero-parameter frozen adapter per host and the same four immutable packages.
+> Status: alpha research software. ABI V2 has passed final internal technical
+> validation (18/18 readiness gates) and is ready for human and independent-
+> hardware review. The bounded result is a standalone capability-runtime
+> across the LayerCake v25, Qwen2.5-0.5B, and
+> Pythia-160M codec/conformance environments using one capability-blind,
+> zero-parameter frozen adapter per environment and the same four immutable packages.
 > External reproduction, real human ratings, and minimum-information
 > certification remain open. The bounded technical declaration is
 > `ABI TECHNICAL MOONSHOT: PROVEN`; it is not a full externally validated
 > moonshot or a tensor-transplant claim. See
 > [Final-mile status](docs/final-mile-status.md).
+
+The final internal certificate is
+[`results/abi_final_validation/release_certificate.json`](results/abi_final_validation/release_certificate.json).
+It does not claim independent reproduction or human validation.
 
 ## What is implemented
 
@@ -34,7 +41,7 @@ capability packages.
   unqualified records, and undeclared teacher material.
 - A bounded ABI-to-LayerCake reference integration in which the teacher is
   absent at inference and selected packages execute independently.
-- A representation-neutral canonical host ABI V2 with exact UTF-8 anchors,
+- A representation-neutral standalone capability-runtime ABI V2 with exact UTF-8 anchors,
   fixed semantic channels, capability-blind host certification, immutable
   adapter/package checks, and a three-host/four-capability conformance matrix.
 
@@ -112,8 +119,9 @@ abi human-rate --rater R2
 abi human-rate --rater R3
 ```
 
-External operators use `abi-reproduce verify|cpu|cuda|quality|portability|report`.
-The CPU/CUDA commands fail closed on the development hardware.
+External operators use the turnkey `abi-reproduce verify`, `certify-hosts`,
+`capability-matrix`, `causality`, `performance`, `hostile-audit`, and `report`
+sequence. Execution commands fail closed on the development hardware.
 
 For the ABI V2 three-host/four-capability result, use the dedicated
 [different-hardware clean-room procedure](results/abi_v2/external_reproduction/README.md).
@@ -145,8 +153,8 @@ source manifest -> bounded probes -> labeled records -> quarantine
                                              v
                                       LayerCake host
 
-immutable capability package -> canonical ABI V2 runtime -> frozen host adapter
-                                                        -> native UTF-8/token output
+immutable capability package -> canonical ABI V2 runtime -> frozen codec adapter
+                                                        -> native UTF-8/token units
 ```
 
 The label boundary is deliberately strict: English-core records may encode
@@ -171,15 +179,15 @@ The current evidence supports bounded, exact claims—not universal ones:
 - Phase 2: machine packet ready; 0/21,000 independent human preferences.
 - Phase 3: machine gates pass, conditional on Phase 2.
 - Phases 4–7: certified for their registered bounded machine scopes.
-- Phase 8: local clean-export rehearsal passes; independent operator and
-  different CPU/CUDA hardware are still required.
+- Phase 8: internal technical readiness passes 18/18; independent operator,
+  different hardware, and real human review are still required.
 
 The original final-mile V1 campaign remains important negative evidence: the
 LayerCake-native tensor contract was executable by only 1/3 receiver families.
 ABI V2 changes the abstraction rather than forcing those tensors into foreign
-residual coordinates. Each host is certified once against a canonical
-extension/runtime boundary, then the unchanged English, Python, chemistry, and
-civics packages are installed without fitting or calibration.
+residual coordinates. Each named environment is certified once against a
+canonical extension/runtime boundary, then the unchanged English, Python,
+chemistry, and civics packages are installed without fitting or calibration.
 
 | ABI V2 local technical gate | Result |
 | --- | --- |
@@ -194,12 +202,16 @@ civics packages are installed without fitting or calibration.
 | Real human ratings | 0/21,000; open |
 | Independent different-hardware run | open |
 | Stable minimum-information frontier | open |
+| Final internal readiness gates | 18/18 pass |
 
-The precise claim is that ABI V2 demonstrates capability-independent package
-installation across the three named host environments. Qwen and Pythia use
-their frozen checkpoint/tokenizer for host conformance and native realization;
-their hidden states do not generate or alter the capability semantics. This is
-an extension/runtime ABI result, not tensor transplantation into base weights.
+The precise claim is that ABI V2 demonstrates a standalone capability-runtime
+with capability-independent package installation across the three named
+codec/conformance environments. The causal ablation found that a neutral UTF-8
+stub reproduces every promoted output: Qwen and Pythia hidden states do not
+generate or alter capability semantics. Their frozen checkpoints provide
+conformance probes and their tokenizers provide native unit representations.
+This is an extension/runtime ABI result, not host-model generation or tensor
+transplantation into base weights.
 
 ABI does not currently claim a global information minimum, universal
 superiority over LoRA or distillation, exhaustive teacher-knowledge discovery,
@@ -226,6 +238,12 @@ quality completion, or independent production release certification.
 - `results/abi_v2/external_reproduction/` — independent-operator commands,
   raw evidence schema, and archive receipt. The generated archive is a release
   payload and is intentionally not committed to Git.
+
+- `results/abi_final_validation/` — frozen candidate, causal/shortcut audits,
+  raw-evidence headline recomputation, hostile mutations, clean-checkout receipt,
+  and final local readiness certificate.
+- `review_packet/` — concise claim-to-evidence handoff for technical reviewers.
+- `external_reproduction/` — final turnkey independent-hardware workflow.
 
 ## Development
 

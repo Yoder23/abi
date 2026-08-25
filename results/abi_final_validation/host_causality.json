@@ -1,0 +1,181 @@
+{
+  "aggregate": {
+    "adapter_removal_rejected": 3,
+    "adapter_removal_total": 3,
+    "capability_removal_rejected": 12,
+    "capability_removal_total": 12,
+    "neutral_stub_exact_outputs": 5043,
+    "neutral_stub_outputs_total": 5043
+  },
+  "architecture_redesign_required": false,
+  "causal_conclusion": "The capability packages plus generic runtime are semantically standalone. The tested Qwen and Pythia hidden states are not materially causal to capability answers; neutral UTF-8 realization reproduces every promoted output. Adapter removal fails closed because the contract guard is mandatory, not because the adapter adds semantics. The valid claim is portable standalone capability-runtime execution with tested host codec/conformance adapters, not host-model generation, hidden-state transfer, or base-weight transplantation.",
+  "component_ownership": {
+    "capability_owned": "learned generation/routing tensors, specialist actions, and output semantics",
+    "generic_abi_owned": "package validation, typed canonical context/intent, lifecycle, and strict UTF-8 contract",
+    "host_owned": "checkpoint conformance probe and native tokenizer unit representation only"
+  },
+  "evidence_sha256": "fada76026c3d9a4a4e4aed1cffe939d05ade9ba93d0eeaca5f088906045bb763",
+  "format": "abi-final-host-causality-audit/1",
+  "host_semantic_state_channel_absent": true,
+  "host_substitution": {
+    "canonical_outputs_identical": 1681,
+    "canonical_outputs_total": 1681,
+    "native_generation_state_differs_for_tasks": 1681,
+    "native_generation_state_tasks_total": 1681
+  },
+  "hosts": {
+    "layercake": {
+      "adapter_removal": {
+        "exception_message_sha256": "88fc373a63adbe32e195f9ba3e7ad807aab00884e3d07134c73a77e475158012",
+        "exception_type": "MatrixError",
+        "rejected": true
+      },
+      "capability_removal": {
+        "capabilities_failed_when_removed": 4,
+        "capabilities_total": 4,
+        "identical_reinstall_restored": 4
+      },
+      "host_neutralization": {
+        "frozen_random_state": {
+          "interpretation": "host state is structurally absent from the semantic realization call",
+          "material_quality_degradation": false,
+          "outputs_replayed": 1681,
+          "outputs_total": 1681,
+          "state_enters_semantic_realization": false
+        },
+        "shuffled_state": {
+          "interpretation": "host state is structurally absent from the semantic realization call",
+          "material_quality_degradation": false,
+          "outputs_replayed": 1681,
+          "outputs_total": 1681,
+          "state_enters_semantic_realization": false
+        },
+        "zero_state": {
+          "interpretation": "host state is structurally absent from the semantic realization call",
+          "material_quality_degradation": false,
+          "outputs_replayed": 1681,
+          "outputs_total": 1681,
+          "state_enters_semantic_realization": false
+        }
+      },
+      "host_removal": {
+        "complete_outputs_reproduced_by_neutral_utf8_stub": 1681,
+        "complete_outputs_total": 1681,
+        "promoted_behavior_failed": false
+      },
+      "native_checkpoint_loaded": false,
+      "native_checkpoint_semantic_channel_present": false,
+      "neutral_stub_host": {
+        "exact_outputs": 1681,
+        "implementation": "strict UTF-8 identity realization",
+        "outputs_total": 1681,
+        "reproduces_promoted_behavior": true
+      }
+    },
+    "pythia": {
+      "adapter_removal": {
+        "exception_message_sha256": "88fc373a63adbe32e195f9ba3e7ad807aab00884e3d07134c73a77e475158012",
+        "exception_type": "MatrixError",
+        "rejected": true
+      },
+      "capability_removal": {
+        "capabilities_failed_when_removed": 4,
+        "capabilities_total": 4,
+        "identical_reinstall_restored": 4
+      },
+      "host_neutralization": {
+        "frozen_random_state": {
+          "interpretation": "host state is structurally absent from the semantic realization call",
+          "material_quality_degradation": false,
+          "outputs_replayed": 1681,
+          "outputs_total": 1681,
+          "state_enters_semantic_realization": false
+        },
+        "shuffled_state": {
+          "interpretation": "host state is structurally absent from the semantic realization call",
+          "material_quality_degradation": false,
+          "outputs_replayed": 1681,
+          "outputs_total": 1681,
+          "state_enters_semantic_realization": false
+        },
+        "zero_state": {
+          "interpretation": "host state is structurally absent from the semantic realization call",
+          "material_quality_degradation": false,
+          "outputs_replayed": 1681,
+          "outputs_total": 1681,
+          "state_enters_semantic_realization": false
+        }
+      },
+      "host_removal": {
+        "complete_outputs_reproduced_by_neutral_utf8_stub": 1681,
+        "complete_outputs_total": 1681,
+        "promoted_behavior_failed": false
+      },
+      "native_checkpoint_loaded": true,
+      "native_checkpoint_semantic_channel_present": false,
+      "neutral_stub_host": {
+        "exact_outputs": 1681,
+        "implementation": "strict UTF-8 identity realization",
+        "outputs_total": 1681,
+        "reproduces_promoted_behavior": true
+      }
+    },
+    "qwen2": {
+      "adapter_removal": {
+        "exception_message_sha256": "88fc373a63adbe32e195f9ba3e7ad807aab00884e3d07134c73a77e475158012",
+        "exception_type": "MatrixError",
+        "rejected": true
+      },
+      "capability_removal": {
+        "capabilities_failed_when_removed": 4,
+        "capabilities_total": 4,
+        "identical_reinstall_restored": 4
+      },
+      "host_neutralization": {
+        "frozen_random_state": {
+          "interpretation": "host state is structurally absent from the semantic realization call",
+          "material_quality_degradation": false,
+          "outputs_replayed": 1681,
+          "outputs_total": 1681,
+          "state_enters_semantic_realization": false
+        },
+        "shuffled_state": {
+          "interpretation": "host state is structurally absent from the semantic realization call",
+          "material_quality_degradation": false,
+          "outputs_replayed": 1681,
+          "outputs_total": 1681,
+          "state_enters_semantic_realization": false
+        },
+        "zero_state": {
+          "interpretation": "host state is structurally absent from the semantic realization call",
+          "material_quality_degradation": false,
+          "outputs_replayed": 1681,
+          "outputs_total": 1681,
+          "state_enters_semantic_realization": false
+        }
+      },
+      "host_removal": {
+        "complete_outputs_reproduced_by_neutral_utf8_stub": 1681,
+        "complete_outputs_total": 1681,
+        "promoted_behavior_failed": false
+      },
+      "native_checkpoint_loaded": true,
+      "native_checkpoint_semantic_channel_present": false,
+      "neutral_stub_host": {
+        "exact_outputs": 1681,
+        "implementation": "strict UTF-8 identity realization",
+        "outputs_total": 1681,
+        "reproduces_promoted_behavior": true
+      }
+    }
+  },
+  "realize_function_arguments": [
+    "self",
+    "prompt",
+    "output",
+    "capability_id",
+    "position"
+  ],
+  "reason_redesign_not_required": "The already-sealed representation-neutral extension/runtime interpretation explicitly assigns semantics to the capability runtime. The audit narrows misleading host language without changing it.",
+  "status": "PASS_WITH_CLAIM_NARROWED_TO_STANDALONE_CAPABILITY_RUNTIME"
+}

@@ -21,19 +21,23 @@ STATUS: dict[str, Any] = {
     "project": "ABI",
     "version": __version__,
     "maturity": "alpha_research",
-    "campaign_state": "FINAL_MILE_HOST_INDEPENDENCE_FAILED",
+    "campaign_state": "READY_FOR_HUMAN_AND_INDEPENDENT_REVIEW",
     "historical_campaign_state": "V1089",
     "phase8_certified": False,
     "release_certified": False,
-    "cross_host_portability": {
-        "status": "HOST_INDEPENDENCE_FAILED",
-        "native_receivers_passing": 1,
-        "native_receivers_required": 3,
+    "internal_readiness_gates": {"passed": 18, "required": 18},
+    "tested_runtime_portability": {
+        "status": "PASS_STANDALONE_CAPABILITY_RUNTIME_WITH_CODEC_ADAPTERS",
+        "host_environments_passing": 3,
+        "host_environments_required": 3,
+        "capability_cells_passing": 12,
+        "capability_cells_required": 12,
     },
     "external_human_preferences": {"complete": 0, "required": 21_000},
     "supported_boundary": (
-        "source manifests, bounded capability inventories, semantic labeling, "
-        "quarantine, selection, accounting, and immutable acquisition artifacts"
+        "source manifests, bounded capability inventories, semantic labeling, quarantine, "
+        "selection, accounting, immutable acquisition artifacts, and the tested standalone "
+        "canonical capability runtime with frozen host codec/conformance adapters"
     ),
 }
 
@@ -123,7 +127,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(f"ABI {__version__} ({STATUS['maturity']})")
             print("Phase 8 certified: no")
             print("Release certified: no")
-            print("Cross-host portability: failed (1/3 native receiver families)")
+            print("Tested runtime portability: passed (3/3 named host environments; 12/12 cells)")
             print(f"Supported boundary: {STATUS['supported_boundary']}")
         return 0
     if args.command == "human-rate":

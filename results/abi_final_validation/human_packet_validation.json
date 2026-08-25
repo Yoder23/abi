@@ -1,0 +1,65 @@
+{
+  "append_only_resumable_workflow": "abi.human_rate + hash-chained rating_events.jsonl",
+  "commands": [
+    "abi human-rate --rater R1",
+    "abi human-rate --rater R2",
+    "abi human-rate --rater R3"
+  ],
+  "counterbalance": {
+    "each_candidate_has_equal_A_and_B_positions_per_form": true,
+    "forms_1_and_2_are_exact_pairwise_reversals": true,
+    "position_counts": {
+      "rater_form_1": {
+        "D0_A": 700,
+        "D0_B": 700,
+        "D1_A": 700,
+        "D1_B": 700,
+        "D2_A": 700,
+        "D2_B": 700,
+        "L0_A": 700,
+        "L0_B": 700,
+        "L1_A": 700,
+        "L1_B": 700
+      },
+      "rater_form_2": {
+        "D0_A": 700,
+        "D0_B": 700,
+        "D1_A": 700,
+        "D1_B": 700,
+        "D2_A": 700,
+        "D2_B": 700,
+        "L0_A": 700,
+        "L0_B": 700,
+        "L1_A": 700,
+        "L1_B": 700
+      },
+      "rater_form_3": {
+        "D0_A": 700,
+        "D0_B": 700,
+        "D1_A": 700,
+        "D1_B": 700,
+        "D2_A": 700,
+        "D2_B": 700,
+        "L0_A": 700,
+        "L0_B": 700,
+        "L1_A": 700,
+        "L1_B": 700
+      }
+    }
+  },
+  "distinct_prompts": 1400,
+  "evidence_sha256": "26c8e39cb99d3e68e2f6442f02c24a747e12e69b95e85557d132b16482febb78",
+  "forms": 3,
+  "hash_bindings_verified": true,
+  "model_labels_absent_from_rater_rows": true,
+  "randomization_seed_frozen": 1729,
+  "ratings_completed_by_codex": 0,
+  "ratings_per_form": 7000,
+  "ratings_required": 21000,
+  "status": "TURNKEY_AWAITING_THREE_REAL_INDEPENDENT_HUMANS",
+  "unique_pair_ids_by_form": [
+    7000,
+    7000,
+    7000
+  ]
+}

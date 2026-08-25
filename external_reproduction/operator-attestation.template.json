@@ -1,0 +1,23 @@
+{
+  "format": "abi-final-external-operator-attestation/1",
+  "operator_id": "REPLACE_WITH_UNIQUE_OPERATOR_ID",
+  "independent_of_abi_development": false,
+  "independent_hardware_owned_or_controlled_by_operator": false,
+  "different_from_development_hardware": false,
+  "clean_archive_hash_verified_before_execution": false,
+  "frozen_commit_and_tag_verified": false,
+  "artifact_hashes_verified_before_execution": false,
+  "capability_files_not_exposed_during_host_certification": false,
+  "teacher_or_source_model_not_executed": false,
+  "raw_failures_preserved": false,
+  "cpu": "REPLACE",
+  "gpu": "REPLACE_OR_NONE",
+  "ram_bytes": 0,
+  "vram_bytes": 0,
+  "os": "REPLACE",
+  "python": "REPLACE",
+  "compiler": "REPLACE",
+  "runtime_versions_path": "external_reproduction/raw/runtime.json",
+  "commands_path": "external_reproduction/raw/commands.jsonl",
+  "operator_signature": "REPLACE_WITH_EXTERNAL_SIGNATURE_OR_ATTESTATION"
+}
