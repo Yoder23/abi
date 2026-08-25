@@ -2,148 +2,103 @@
 
 Status date: 2026-08-25
 
-## Outcome
+## Current outcome
 
 ```text
-ABI VALIDATION STATUS: READY FOR HUMAN AND INDEPENDENT REVIEW
+ABI REPAIRED VALIDATION: LOCAL STRICT PASS
+PUBLIC RECONSTRUCTION AND BLIND RED-TEAM: PENDING
 ```
 
-The local technical declaration is:
+The earlier 18/18 readiness declaration and tag
+`abi-final-technical-validation-ready-2026-08-25` are superseded. They remain
+available as historical evidence, but cannot support a current readiness claim.
+Adversarial review identified three material weaknesses: certification excluded
+data by name/path instead of physical absence, the causal audit replayed stored
+evidence through a neutral stub, and final verification trusted derived status
+fields.
 
-```text
-ABI TECHNICAL MOONSHOT: PROVEN
-```
+## Repaired local evidence
 
-This is not the full externally validated moonshot. Three real independent
-human raters, a different-hardware independent operator, and the registered
-minimum-information certification remain open.
+The repaired certification worker runs inside a private WSL2 mount namespace.
+Its exact capsule contains only the generic certification corpus, canonical ABI
+implementation/specification, adapter code, and selected host code or snapshot.
+The development drive is replaced by a private `tmpfs`; raw `/proc/self/mountinfo`
+and a complete capsule byte inventory are preserved. Capability archives and
+source-success ledgers are physically absent.
 
-The internal final technical certificate passes all 18/18 preregistered
-readiness gates. A corrected clean isolated export reran fresh capability-blind
-certification and the complete 3-host × 4-capability matrix on CPU, recomputed
-5,043/5,043 exact successes from raw evidence, passed 62 supported tests,
-rejected 13/13 hostile mutations and 4/4 forbidden operations, and built both
-wheel and sdist. Three earlier clean-package failures are preserved in the
-clean-checkout receipt with hashes and failure output.
+The live causal campaign executes every selected task anew under eight
+conditions: real host, neutral host, zero state, random state, shuffled state,
+host removed, adapter removed, and capability removed. It does not read the
+prior matrix outputs or source-answer references. Adapter removal fails
+realization and capability removal fails generation in the live path.
 
-## V1 is preserved
+The strict verifier derives its verdict from raw rows, source bytes, immutable
+package/adapter hashes, capsule inventories, raw mount tables, and repeated
+timings. It does not consume experiment gate or status booleans. Its certificate
+binds all 59 required inputs with per-file SHA-256 and an aggregate digest.
 
-ABI V1 remains immutable negative evidence. The exact LayerCake-native English
-package passed its LayerCake receiver but was structurally incompatible with
-Qwen2 and GPT-NeoX/Pythia (1/3). A content envelope did not make those foreign
-architectures execute LayerCake residual tensors. No V1 evidence was erased or
-relabeled.
+| Recomputed item | Local repaired result |
+| --- | ---: |
+| Physically isolated hosts | 3/3 |
+| Certification roundtrip rows | 384/384 |
+| Native host forward rows | 32/32 finite |
+| Capability archives visible during certification | 0 |
+| Source-success ledgers visible during certification | 0 |
+| Locked matrix rows | 5,043/5,043 |
+| Cross-host output identities | 1,681/1,681 |
+| Specialist action identities | 300/300 |
+| New live causal rows | 3,072/3,072 |
+| New live isolation rows | 2,100/2,100 |
+| Isolation target successes | 0/2,100 |
+| Supported repository tests | 66/66 |
+| Disposable archive hostile mutations | 9/9 rejected; exact restore |
+| Trusted scientific booleans consumed | 0 |
 
-Evidence: `results/abi_v2/frozen_v1_lineage.json` and
-`results/abi_final_mile/host_portability_v1/repair_rescreen.json`.
-
-## What ABI V2 proves locally
-
-ABI V2 makes each named codec/conformance environment conform once to a
-canonical representation-neutral standalone capability-runtime interface.
-Certification used only 128 neutral UTF-8
-records and 15 frozen conformance vectors. Capability paths, examples, outputs,
-and success IDs were unavailable to the certification logic. Each frozen
-adapter has zero trainable parameters and zero optimizer steps.
-
-| Host | Adapter bytes | Adapter SHA-256 | Idle overhead | Four packages |
-| --- | ---: | --- | ---: | --- |
-| LayerCake v25 | 1,556 | `d1f3a9d...317f04` | 3.96% | Pass |
-| Qwen2.5-0.5B | 1,637 | `b13a75b8...0291f` | -0.55% | Pass |
-| Pythia-160M | 1,646 | `df3598b6...ceafa` | 3.12% | Pass |
-
-The exact same byte-identical English, Python, chemistry, and civics package
-files were then installed under each frozen adapter with no fitting,
-calibration, or mutation.
-
-| Gate | Local result |
-| --- | --- |
-| Host certifications | 3/3 pass |
-| Host/capability cells | 12/12 pass |
-| Frozen source-success retention | 5,043/5,043 |
-| Exact frozen source-output bytes | 5,043/5,043 |
-| Cross-host capability output bytes | 1,681/1,681 identities |
-| Cross-host specialist action sequences | 300/300 tasks, 900 host results |
-| English-only specialist leakage | 0/900 |
-| Wrong-capability successes | 0/1,200 |
-| Capability removal/reinstall | 12/12 fail closed and restore exact output |
-| Random/shuffled signed-package corruption | 24/24 rejected before execution |
-| Teacher/source model at inference | absent |
-
-The inference-free verifiers recompute raw file hashes, evidence hashes,
-matrix depths, output/action equality, retention, isolation, lifecycle,
-performance, ownership, ladder state, and the release index. The supported
-public suite passes 62/62.
+Recomputed median idle-adapter overhead from 20 paired observations is 0.89%
+for LayerCake, 0.05% for Qwen2, and 7.45% for Pythia, all below the registered
+10% ceiling. These are bounded conformance overhead measurements, not general
+inference-performance comparisons.
 
 ## Exact claim boundary
 
-The corrected certified claim after the final host-causality audit is:
+The evidence supports a bounded standalone capability-runtime result across
+LayerCake v25, Qwen2.5-0.5B, and Pythia-160M codec/conformance environments.
+The same immutable English, Python, chemistry, and civics packages execute
+through one unchanged zero-parameter adapter per environment. Qwen/Pythia host
+state is measured but cannot enter the frozen semantic realization API; their
+checkpoints and tokenizers participate in conformance/native-unit handling, not
+answer generation.
 
-> ABI V2 demonstrates standalone capability-runtime execution across the
-> LayerCake v25, Qwen2.5-0.5B, and Pythia-160M codec/conformance environments
-> after one-time generic capability-blind certification.
+It does not prove base-weight tensor transplantation, host-model generation,
+compatibility with arbitrary LLMs, unseen-task generalization, a global minimum
+information representation, human-rated quality, independent reproduction, or
+universal superiority over LoRA, distillation, or fine-tuning.
 
-This is a representation-neutral extension/runtime ABI. A neutral UTF-8 stub
-reproduced all 5,043 promoted outputs, and zero/random/shuffled host state could
-not change them because the semantic realization API has no host-state input.
-Qwen and Pythia use their exact frozen checkpoints for native conformance probes
-and their native tokenizers for exact native units. Their base hidden states are
-not materially causal. Therefore this result does not claim host-model
-generation, LayerCake tensor transplantation, or native residual-coordinate transfer.
+## Remaining mandatory order
 
-It also does not claim compatibility with every LLM, human quality completion,
-independent hardware reproduction, a global information minimum, or universal
-superiority over LoRA or distillation.
-
-## Remaining external gates
-
-| Gate | Status |
-| --- | --- |
-| Three real independent raters | Open: 0/21,000 judgments |
-| Independent operator on different hardware | Open |
-| Stable registered minimum-information frontier | Open |
-
-These external gates do not reopen the locally passed host architecture work.
-
-Internal certificate:
-`results/abi_final_validation/release_certificate.json`.
-
-Clean reproduction receipt:
-`results/abi_final_validation/clean_checkout_reproduction.json`.
+1. Publish all four immutable capability packages and the definitive archive at
+   durable hash-addressed public URLs.
+2. Clone the repaired tag into a brand-new directory with no development assets.
+3. Download and verify only the published manifests/assets, then reproduce the
+   release from them.
+4. Run the strict hostile mutation suite in the disposable extracted release.
+5. Run a fresh blind Codex red-team against the repaired tag.
+6. Only after those pass may human ratings and different-hardware independent
+   execution begin.
 
 ## Evidence map
 
-- Controlling host-independence certificate:
-  `results/abi_host_independence/release_certificate.json`
-- Required release tree, ownership map, economics, and campaign state:
-  `results/abi_host_independence/`
-- Host-independence release verifier:
-  `abi_v2/verify_host_independence.py`
-- V1 freeze: `results/abi_v2/frozen_v1_lineage.json`
-- Structural ownership analysis: `results/abi_v2/structural_failure_analysis.md`
-- Canonical specification: `abi_v2/canonical_spec.json`
-- Frozen adapter decision: `results/abi_v2/host_certification/initial_decision.json`
-- Source-success locks: `results/abi_v2/semantic_retention/source_success_locks.json`
-- Final 3x4 matrix: `results/abi_v2/capability_matrix/summary.json`
-- Mathematical comparison: `results/abi_v2/mathematical_portability/summary.json`
-- Isolation: `results/abi_v2/isolation/summary.json`
-- Information accounting: `results/abi_v2/information_accounting/summary.json`
-- Hostile audit: `results/abi_v2/hostile_audit/result.json`
-- Technical certificate: `results/abi_v2/release_certificate.json`
-- Corrected release report: `results/abi_v2/release_report_v2.md`
-- Preserved report erratum: `results/abi_v2/release_report_erratum1.json`
-- External operator procedure and raw schema:
-  `results/abi_v2/external_reproduction/`
-- Deterministic archive builder: `abi_v2/build_external_bundle.py`
-- Extracted-archive verifier: `abi_v2/verify_external_bundle.py`
+- Strict certificate: `results/abi_final_validation_v2/strict_validation.json`
+- Physical certification: `results/abi_final_validation_v2/isolated_certification_strict/`
+- Live causality: `results/abi_final_validation_v2/live_causality/`
+- Live isolation: `results/abi_final_validation_v2/live_isolation/`
+- Pre-public strict hostile receipt:
+  `results/abi_final_validation_v2/strict_hostile_pre_public.json`
+- Historical pre-repair certificate: `results/abi_final_validation/`
+- Historical first live run with declarative booleans:
+  `results/abi_final_validation_v2/live_causality_untrusted_boolean_history/`
+- Historical strict summary before complete input binding:
+  `results/abi_final_validation_v2/strict_validation_pre_boolean_cleanup.json`
 
-The initially failed LayerCake matrix remains at
-`results/abi_v2/capability_matrix/layercake/`. Its only failed gate was an
-identical small-file “shuffle” control. The preregistered instrumentation
-repair and complete rescreen are preserved rather than rewriting that result.
-
-The generated clean-room zip is intentionally excluded from Git because it
-contains the 253 MB English package. Its tracked receipt binds the release
-payload to a Git commit, manifest, byte count, and SHA-256. The archive makes
-all reference outputs public; it is an exact-execution reproduction kit, not a
-hidden-answer or blind-holdout evaluation.
+Human ratings remain 0/21,000. Different-hardware reproduction and the
+registered minimum-information frontier remain open.

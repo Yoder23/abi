@@ -254,45 +254,9 @@ def _write_once(path: Path, value: dict[str, Any]) -> None:
 
 
 def verify_final_validation(root: Path) -> dict[str, Any]:
-    from abi_v2.final_validation import (
-        CAPABILITY_PATHS,
-        evidence_hash,
-        read_json,
-        recompute_headlines,
-    )
-    from abi_v2.final_validation import (
-        sha256_file as final_sha256,
-    )
+    from abi_v2.strict_validation import verify
 
-    candidate_path = root / "results/abi_final_validation/frozen_release_candidate.json"
-    candidate = read_json(candidate_path)
-    failures: list[str] = []
-    if candidate.get("evidence_sha256") != evidence_hash(candidate):
-        failures.append("frozen_candidate_self_hash")
-    for name, row in candidate["evaluator_and_data_bindings"].items():
-        path = root / row["path"]
-        if not path.is_file() or final_sha256(path) != row["sha256"]:
-            failures.append(f"binding:{name}")
-    for name, relative in CAPABILITY_PATHS.items():
-        if final_sha256(root / relative) != candidate["capability_artifacts"][name]["sha256"]:
-            failures.append(f"capability:{name}")
-    for host, row in candidate["host_adapters"].items():
-        if final_sha256(root / row["path"]) != row["sha256"]:
-            failures.append(f"adapter:{host}")
-    recomputed = recompute_headlines(root)
-    locked = read_json(root / "results/abi_final_validation/headline_recomputation.json")
-    if recomputed["aggregate"] != locked["aggregate"]:
-        failures.append("headline_recomputation")
-    return {
-        "format": "abi-reproduce-final-byte-verification/1",
-        "status": "PASS_FINAL_VALIDATION_BYTES_AND_RAW_RECOMPUTATION"
-        if not failures
-        else "FAIL_FINAL_VALIDATION_BYTES",
-        "failures": failures,
-        "frozen_commit": candidate["technical_proof_commit"],
-        "frozen_tag": candidate["technical_proof_tag"],
-        "headline_aggregate": recomputed["aggregate"],
-    }
+    return verify(root)
 
 
 def _final_output(root: Path) -> Path:
@@ -302,44 +266,32 @@ def _final_output(root: Path) -> Path:
 def certify_final_hosts(
     root: Path, *, attestation: Path, qwen_snapshot: Path, pythia_snapshot: Path, device: str
 ) -> dict[str, Any]:
-    from abi_v2.final_validation import read_json
-    from abi_v2.final_validation import sha256_file as final_sha256
-    from abi_v2.host_certification import certify_host
+    from abi_v2.isolated_certification import run_isolated_capsule
+    from abi_v2.strict_validation import verify_certifications
 
     preflight = external_preflight(attestation=attestation, require_cuda=device == "cuda")
     target = _final_output(root) / "host_certification"
     if target.exists():
         raise FinalMileError("immutable external host-certification result already exists")
-    candidate = read_json(root / "results/abi_final_validation/frozen_release_candidate.json")
-    results = {}
     for host, snapshot, selected_device in (
         ("layercake", None, "cpu"),
         ("qwen2", qwen_snapshot, device),
         ("pythia", pythia_snapshot, device),
     ):
-        result = certify_host(
+        run_isolated_capsule(
             root,
             host_key=host,
-            output_dir=target / host,
+            destination=target / host,
             snapshot=snapshot,
             device=selected_device,
         )
-        adapter = target / host / "adapter.json"
-        expected = candidate["host_adapters"][host]["sha256"]
-        results[host] = {
-            "status": result["status"],
-            "adapter_sha256": final_sha256(adapter),
-            "expected_adapter_sha256": expected,
-            "adapter_exact": final_sha256(adapter) == expected,
-        }
-    passed = all(row["status"].startswith("PASS") and row["adapter_exact"] for row in results.values())
+    derived = verify_certifications(root, target)
     return {
         "format": "abi-reproduce-final-host-certification/1",
-        "status": "PASS_EXTERNAL_CAPABILITY_BLIND_HOST_CERTIFICATIONS"
-        if passed
-        else "FAIL_EXTERNAL_HOST_CERTIFICATION",
+        "status": "PASS_EXTERNAL_PHYSICALLY_ISOLATED_HOST_CERTIFICATIONS",
         "preflight": preflight,
-        "hosts": results,
+        "derived": derived,
+        "trusted_scientific_booleans_consumed": 0,
     }
 
 
@@ -347,20 +299,21 @@ def run_final_matrix(
     root: Path, *, attestation: Path, qwen_snapshot: Path, pythia_snapshot: Path, device: str
 ) -> dict[str, Any]:
     from abi_v2.capability_matrix import run
-    from abi_v2.final_validation import HOSTS, read_json
+    from abi_v2.final_validation import HOSTS
     from abi_v2.final_validation import sha256_file as final_sha256
+    from abi_v2.strict_validation import verify_locked_matrix_rows
 
     preflight = external_preflight(attestation=attestation, require_cuda=device == "cuda")
     target = _final_output(root) / "matrix"
     if target.exists():
         raise FinalMileError("immutable external capability-matrix result already exists")
-    candidate = read_json(root / "results/abi_final_validation/frozen_release_candidate.json")
+    candidate = _object(root / "results/abi_final_validation/frozen_release_candidate.json")
     certification_root = _final_output(root) / "host_certification"
     certification_receipt = _object(_final_output(root) / "certify-hosts.json")
     if not certification_receipt.get("status", "").startswith("PASS"):
         raise FinalMileError("fresh capability-blind host certification did not pass")
     for host in HOSTS:
-        adapter = certification_root / host / "adapter.json"
+        adapter = certification_root / host / "certification/adapter.json"
         expected = candidate["host_adapters"][host]["sha256"]
         if not adapter.is_file() or final_sha256(adapter) != expected:
             raise FinalMileError(f"fresh frozen adapter missing or changed: {host}")
@@ -370,7 +323,7 @@ def run_final_matrix(
         ("qwen2", qwen_snapshot),
         ("pythia", pythia_snapshot),
     ):
-        result = run(
+        run(
             root,
             protocol_path=root / "abi_v2/matrix_protocol_amendment3.json",
             host_key=host,
@@ -378,52 +331,76 @@ def run_final_matrix(
             snapshot=snapshot,
             device=device,
         )
-        results[host] = {"status": result["status"], "gates": result["gates"]}
-    passed = all(row["status"].startswith("PASS") and all(row["gates"].values()) for row in results.values())
+        results[host] = {"result_sha256": final_sha256(target / host / "result.json")}
+    derived = verify_locked_matrix_rows(root, target)
     return {
         "format": "abi-reproduce-final-capability-matrix/1",
-        "status": "PASS_EXTERNAL_3_HOST_4_CAPABILITY_MATRIX"
-        if passed
-        else "FAIL_EXTERNAL_CAPABILITY_MATRIX",
+        "status": "PASS_EXTERNAL_3_HOST_4_CAPABILITY_MATRIX_RAW_RECOMPUTED",
         "preflight": preflight,
         "hosts": results,
+        "derived": derived,
+        "trusted_scientific_booleans_consumed": 0,
     }
 
 
-def final_causality(root: Path) -> dict[str, Any]:
-    from abi_v2.final_validation import CAPABILITIES, HOSTS, read_json, read_jsonl, sha256_bytes
+def final_causality(
+    root: Path, *, qwen_snapshot: Path, pythia_snapshot: Path, device: str
+) -> dict[str, Any]:
+    from abi_v2.live_causality import run
+    from abi_v2.strict_validation import verify_live_causality
 
-    matrix_root = _final_output(root) / "matrix"
-    outputs = {}
-    removal = 0
-    adapter = 0
-    for host in HOSTS:
-        rows = read_jsonl(matrix_root / host / "observations.jsonl")
-        result = read_json(matrix_root / host / "result.json")
-        outputs[host] = {
-            (str(row["capability"]), str(row["probe_id"])): str(row["output"])
-            for row in rows
-            if sha256_bytes(str(row["output"]).encode("utf-8")) == row["output_sha256"]
-        }
-        removal += sum(
-            bool(row["absent_execution_rejected"]) and bool(row["restored_output_byte_exact"])
-            for row in result["causal"]["capability_removal_and_reinstall"].values()
+    target = _final_output(root) / "live_causality"
+    if target.exists():
+        raise FinalMileError("immutable external live-causality output already exists")
+    for host, snapshot in (
+        ("layercake", None),
+        ("qwen2", qwen_snapshot),
+        ("pythia", pythia_snapshot),
+    ):
+        run(
+            root,
+            host_key=host,
+            output_dir=target / host,
+            snapshot=snapshot,
+            device=device,
+            samples_per_capability=32,
         )
-        adapter += bool(result["causal"]["adapter_removal"]["rejected"])
-    common = set.intersection(*(set(row) for row in outputs.values()))
-    equal = sum(len({outputs[host][key] for host in HOSTS}) == 1 for key in common)
-    passed = equal == len(common) and removal == len(HOSTS) * len(CAPABILITIES) and adapter == len(HOSTS)
+    derived = verify_live_causality(root, target)
     return {
         "format": "abi-reproduce-final-causality/1",
-        "status": "PASS_EXTERNAL_CAUSALITY_WITH_STANDALONE_RUNTIME_BOUNDARY"
-        if passed
-        else "FAIL_EXTERNAL_CAUSALITY",
-        "neutral_stub_exact_outputs": sum(len(row) for row in outputs.values()),
-        "cross_host_equal": equal,
-        "cross_host_total": len(common),
-        "capability_removal_reinstall": removal,
-        "adapter_removal": adapter,
-        "causal_boundary": "host hidden state is noncausal; capability plus generic runtime is standalone",
+        "status": "PASS_EXTERNAL_LIVE_CAUSALITY_RAW_RECOMPUTED",
+        "derived": derived,
+        "trusted_scientific_booleans_consumed": 0,
+    }
+
+
+def final_isolation(
+    root: Path, *, qwen_snapshot: Path, pythia_snapshot: Path, device: str
+) -> dict[str, Any]:
+    from abi_v2.live_isolation import run
+    from abi_v2.strict_validation import verify_live_isolation
+
+    target = _final_output(root) / "live_isolation"
+    if target.exists():
+        raise FinalMileError("immutable external live-isolation output already exists")
+    for host, snapshot in (
+        ("layercake", None),
+        ("qwen2", qwen_snapshot),
+        ("pythia", pythia_snapshot),
+    ):
+        run(
+            root,
+            host_key=host,
+            output_dir=target / host,
+            snapshot=snapshot,
+            device=device,
+        )
+    derived = verify_live_isolation(root, target)
+    return {
+        "format": "abi-reproduce-final-isolation/1",
+        "status": "PASS_EXTERNAL_LIVE_ISOLATION_RAW_RECOMPUTED",
+        "derived": derived,
+        "trusted_scientific_booleans_consumed": 0,
     }
 
 
@@ -433,7 +410,7 @@ def final_performance(root: Path) -> dict[str, Any]:
     base = _final_output(root)
     hosts = {}
     for host in HOSTS:
-        perf = read_json(base / "host_certification" / host / "performance.json")
+        perf = read_json(base / "host_certification" / host / "certification/performance.json")
         matrix = read_json(base / "matrix" / host / "result.json")
         hosts[host] = {
             "adapter": _recompute_performance(perf),
@@ -455,15 +432,28 @@ def final_performance(root: Path) -> dict[str, Any]:
 
 
 def final_hostile(root: Path) -> dict[str, Any]:
-    from abi_v2.hostile_final_validation import run
+    from abi_v2.strict_hostile import MARKER, StrictHostileError, run
 
+    if (root / ".git").exists():
+        raise StrictHostileError("strict hostile audit requires a disposable extracted release")
+    marker = root / MARKER
+    if not marker.exists():
+        marker.write_text("ABI_DISPOSABLE_HOSTILE_ROOT\n", encoding="utf-8")
     return run(root)
 
 
 def final_report(root: Path, attestation: Path) -> dict[str, Any]:
     operator = _validate_attestation(attestation)
     base = _final_output(root)
-    names = ("verify", "certify-hosts", "capability-matrix", "causality", "performance", "hostile-audit")
+    names = (
+        "verify",
+        "certify-hosts",
+        "capability-matrix",
+        "causality",
+        "isolation",
+        "performance",
+        "hostile-audit",
+    )
     evidence = {name: _object(base / f"{name}.json") for name in names}
     passed = all(row["status"].startswith("PASS") for row in evidence.values())
     return {
@@ -487,6 +477,7 @@ def main(argv: Iterable[str] | None = None) -> int:
             "certify-hosts",
             "capability-matrix",
             "causality",
+            "isolation",
             "performance",
             "hostile-audit",
             "cpu",
@@ -530,8 +521,21 @@ def main(argv: Iterable[str] | None = None) -> int:
         )
         _write_once(final_target / "capability-matrix.json", result)
     elif args.command == "causality":
-        result = final_causality(root)
+        result = final_causality(
+            root,
+            qwen_snapshot=(root / args.qwen_snapshot).resolve(),
+            pythia_snapshot=(root / args.pythia_snapshot).resolve(),
+            device=args.device,
+        )
         _write_once(final_target / "causality.json", result)
+    elif args.command == "isolation":
+        result = final_isolation(
+            root,
+            qwen_snapshot=(root / args.qwen_snapshot).resolve(),
+            pythia_snapshot=(root / args.pythia_snapshot).resolve(),
+            device=args.device,
+        )
+        _write_once(final_target / "isolation.json", result)
     elif args.command == "performance":
         result = final_performance(root)
         _write_once(final_target / "performance.json", result)

@@ -1,0 +1,88 @@
+{
+  "allowed_classifications": [
+    "abi_specification",
+    "adapter_certification_code",
+    "generic_certification_corpus",
+    "host_checkpoint",
+    "host_code"
+  ],
+  "capability_archives_included": 0,
+  "evidence_sha256": "1cd1eddd7ea30933965bf30c4310683fe80d3d1da1777f71f468a3b37c5ad213",
+  "files": [
+    {
+      "bytes": 218,
+      "classification": "adapter_certification_code",
+      "path": "abi_release/abi_v2/__init__.py",
+      "sha256": "993961c309c30bf5f8411cd1a5fdb66d26ee23b3aca318fbeb090ba020a70683"
+    },
+    {
+      "bytes": 8078,
+      "classification": "adapter_certification_code",
+      "path": "abi_release/abi_v2/canonical.py",
+      "sha256": "c394133dc70a8cabfbb7b390e3b74178707d8cb3c89ead91a7b106eca445f52b"
+    },
+    {
+      "bytes": 5932,
+      "classification": "abi_specification",
+      "path": "abi_release/abi_v2/canonical_spec.json",
+      "sha256": "6536ef1b58dfeea0474bfef5619f3627ecaefe8f39f25da017f11446b6582c2f"
+    },
+    {
+      "bytes": 3096,
+      "classification": "abi_specification",
+      "path": "abi_release/abi_v2/conformance_suite.json",
+      "sha256": "2af84b8b18fa78613fda7c96e7d269ef731b68138f736ea2d4441f4254747383"
+    },
+    {
+      "bytes": 23171,
+      "classification": "adapter_certification_code",
+      "path": "abi_release/abi_v2/host_certification.py",
+      "sha256": "a547fdfc3045a283ee61e6527d5e4a558a024274ad7f86ada28e1bf39af8652c"
+    },
+    {
+      "bytes": 18069,
+      "classification": "adapter_certification_code",
+      "path": "abi_release/abi_v2/isolated_certification.py",
+      "sha256": "f85150198ed12d77796f3f45af612f7bce280649affa51e24657b75a94e6a4b2"
+    },
+    {
+      "bytes": 7356,
+      "classification": "generic_certification_corpus",
+      "path": "abi_release/abi_v2/reference_vectors/core_vectors.json",
+      "sha256": "fc792304e41b1985652a01b4b4efdb14a3bf40fc7aa4906f27ea95409f1dd9fa"
+    },
+    {
+      "bytes": 569,
+      "classification": "host_checkpoint",
+      "path": "abi_release/host_snapshot/config.json",
+      "sha256": "76eb275107220e450d31258f792a2efcbee109d8b62ae0088260057dec06362f"
+    },
+    {
+      "bytes": 374998696,
+      "classification": "host_checkpoint",
+      "path": "abi_release/host_snapshot/model.safetensors",
+      "sha256": "29d2e457a664e41c12c735f20a36dc0956a665f614a54ce5db21a32e75965270"
+    },
+    {
+      "bytes": 99,
+      "classification": "host_checkpoint",
+      "path": "abi_release/host_snapshot/special_tokens_map.json",
+      "sha256": "6f50ab5a5a509a1c309d6171f339b196a900dc9c99ad0408ff23bb615fdae7ad"
+    },
+    {
+      "bytes": 2113710,
+      "classification": "host_checkpoint",
+      "path": "abi_release/host_snapshot/tokenizer.json",
+      "sha256": "c24618a1b3e6a38167beff1c72cffd126c3a66254347304b50547d12c5f25624"
+    },
+    {
+      "bytes": 396,
+      "classification": "host_checkpoint",
+      "path": "abi_release/host_snapshot/tokenizer_config.json",
+      "sha256": "70e38394e494931c6f773ba41e19460dd4436526b852207367f04341b4066d3f"
+    }
+  ],
+  "format": "abi-v2-physical-certification-capsule/1",
+  "host_key": "pythia",
+  "source_success_ledgers_included": 0
+}

@@ -1,0 +1,17 @@
+{
+  "adapter_sha256": "d1f3a9d67581032473055711773f784e3b0a028fb68fab58c3a9a63b94317f04",
+  "device": "cpu",
+  "evidence_sha256": "d89525f1b2d88948f7298a865c3c4acc89955585c530c482fc56285f6d9e43cd",
+  "format": "abi-v2-isolated-host-certification-receipt/1",
+  "host_key": "layercake",
+  "isolation_evidence_sha256": "7ff09a2f00f3dad4a7054e623b33b870169e62b806d5dce1a1778afa4729558e",
+  "launcher": {
+    "distribution": "Ubuntu",
+    "exit_code": 0,
+    "windows_capsule_path_sha256": "0340350b2610117402a6da43197435e7b8d00df80f142e40247a68454773c952",
+    "wsl_capsule_path_sha256": "08b12bcfd3f4110588e61dc8889c6530f4b6aba75771d87a0d585f7fb5c5e67e"
+  },
+  "performance_sha256": "ea00d61bd11afb2297fe9c76328857e2bddce19d4a74078bb8b5cac36e9fb95b",
+  "result_sha256": "7ef754d120787d0ebbc2332df8eb6e0bfd2ba647ec9957e96d48c2ebb24527ef",
+  "worker_exit_basis": "PASS_CAPABILITY_BLIND_HOST_CERTIFICATION"
+}

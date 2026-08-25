@@ -1,36 +1,44 @@
 # ABI technical claims
 
-Status: final internal technical validation passed (18/18); ready for human and
-independent-hardware review. Those external reviews remain incomplete.
+Status: the original 18/18 certificate is superseded by a repaired validation
+candidate. Human and independent-hardware review remain closed until the
+repaired public tag survives clean public reconstruction and a fresh blind
+red-team.
 
 ## Proven technical claims
 
 - The sealed English, Python, chemistry, and civics packages execute through
   the generic canonical ABI runtime in the three tested LayerCake v25,
   Qwen2.5-0.5B, and Pythia-160M codec/conformance environments.
-- One capability-blind, zero-parameter frozen adapter per tested environment
-  accepts all four packages without capability-specific fitting or calibration.
+- One zero-parameter frozen adapter per tested environment accepts all four
+  packages without capability-specific fitting or calibration. New
+  certification runs occur in private mount namespaces containing only the
+  generic corpus, canonical ABI/specification, adapter code, and the selected
+  host; capability archives and source-success ledgers are physically absent.
 - All package and adapter bytes remain unchanged across the 12 tested cells.
 - The locked suite records 5,043/5,043 receiver source successes and exact
   source-output bytes, plus 1,681/1,681 cross-environment canonical output
   identities and 300/300 specialist action-sequence identities.
-- English-only specialist leakage is 0/900; wrong-capability success is 0/1,200.
+- Fresh post-repair isolation executes 2,100 raw rows: 700 per host, with zero
+  target successes and 700/700 cross-host output identities.
 - All 12 capability removals fail closed and identical reinstall restores exact
   output; all 24 equal-size random/shuffled corrupt packages are rejected.
 - Teacher/source execution, receiver training, and receiver calibration are
   absent from the locked matrix events.
 - Recomputed idle adapter overhead is within the registered 10% bound on 20
   paired observations for each tested environment.
-- The host-causality audit proves the packages plus generic runtime are a
-  **standalone capability-runtime**. A neutral UTF-8 stub reproduces all 5,043
-  promoted outputs. Qwen/Pythia hidden states are not materially causal to the
-  capability answers; their checkpoints provide frozen conformance probes and
-  their tokenizers provide native unit representations.
+- The repaired host-causality audit performs 3,072 new live executions across
+  real-host, neutral-host, zero-state, random-state, shuffled-state,
+  host-removed, adapter-removed, and capability-removed conditions. The six
+  host-state conditions preserve all 128 selected outputs per host; all 128
+  adapter removals and 128 capability removals per host fail during live
+  execution. This is a bounded **standalone capability-runtime** result;
+  Qwen/Pythia state is noncausal under the tested runtime.
 
-The raw-evidence recomputation is
-[`results/abi_final_validation/headline_recomputation.json`](../results/abi_final_validation/headline_recomputation.json).
-The causal result is
-[`results/abi_final_validation/host_causality.json`](../results/abi_final_validation/host_causality.json).
+The strict verifier is `abi_v2.strict_validation`; repaired evidence is under
+`results/abi_final_validation_v2/`. It rejects missing packages, rows, hashes,
+mount evidence, adapters, and stale execution code without consuming experiment
+status/gate booleans.
 
 ## Explicitly not proven
 
@@ -65,6 +73,9 @@ same frozen codec adapter
 native token-unit realization
 ```
 
-The technical architecture is frozen at commit
+The capability architecture remains frozen at commit
 `acfed2a225a32d36c32b625e35c6ede536cfab01`, tag
 `abi-host-independence-technical-proof-2026-08-24`.
+The tag `abi-final-technical-validation-ready-2026-08-25` is historical and
+must not be promoted; it predates the physical-isolation and live-causality
+repairs.

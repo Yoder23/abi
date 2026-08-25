@@ -10,21 +10,28 @@ ABI does **not** serve models. [LayerCake](https://github.com/Yoder23/layercake)
 is the separate execution host that installs, composes, routes, and runs
 capability packages.
 
-> Status: alpha research software. ABI V2 has passed final internal technical
-> validation (18/18 readiness gates) and is ready for human and independent-
-> hardware review. The bounded result is a standalone capability-runtime
+> Status: alpha research software. ABI V2's first final-validation certificate
+> is historical and superseded: adversarial review found that certification
+> relied on path filtering, causality replayed stored evidence, and final
+> verification consumed summary fields. The repaired validation uses physically
+> isolated certification capsules, new live causal interventions, fresh raw
+> isolation executions, and fail-closed recomputation with zero trusted
+> scientific gate booleans. The bounded result remains a standalone capability-runtime
 > across the LayerCake v25, Qwen2.5-0.5B, and
 > Pythia-160M codec/conformance environments using one capability-blind,
 > zero-parameter frozen adapter per environment and the same four immutable packages.
-> External reproduction, real human ratings, and minimum-information
+> Promotion of the repaired candidate additionally requires public immutable
+> release assets, clean reconstruction from those assets, and a fresh blind
+> red-team. External reproduction, real human ratings, and minimum-information
 > certification remain open. The bounded technical declaration is
 > `ABI TECHNICAL MOONSHOT: PROVEN`; it is not a full externally validated
 > moonshot or a tensor-transplant claim. See
 > [Final-mile status](docs/final-mile-status.md).
 
-The final internal certificate is
+The superseded certificate is preserved at
 [`results/abi_final_validation/release_certificate.json`](results/abi_final_validation/release_certificate.json).
-It does not claim independent reproduction or human validation.
+Repaired raw evidence is under `results/abi_final_validation_v2/`; the old
+certificate must not be used to claim current readiness.
 
 ## What is implemented
 
@@ -120,8 +127,10 @@ abi human-rate --rater R3
 ```
 
 External operators use the turnkey `abi-reproduce verify`, `certify-hosts`,
-`capability-matrix`, `causality`, `performance`, `hostile-audit`, and `report`
-sequence. Execution commands fail closed on the development hardware.
+`capability-matrix`, `causality`, `isolation`, `performance`, `hostile-audit`,
+and `report` sequence. Certification uses a private mount namespace whose
+filesystem contains no capability package or source-success ledger. External
+execution commands fail closed on the development hardware.
 
 For the ABI V2 three-host/four-capability result, use the dedicated
 [different-hardware clean-room procedure](results/abi_v2/external_reproduction/README.md).
@@ -179,8 +188,9 @@ The current evidence supports bounded, exact claims—not universal ones:
 - Phase 2: machine packet ready; 0/21,000 independent human preferences.
 - Phase 3: machine gates pass, conditional on Phase 2.
 - Phases 4–7: certified for their registered bounded machine scopes.
-- Phase 8: internal technical readiness passes 18/18; independent operator,
-  different hardware, and real human review are still required.
+- Phase 8: the former 18/18 certificate is superseded. The repaired candidate
+  passes local strict raw recomputation; immutable publication, public-manifest
+  reconstruction, and blind red-team remain mandatory before external review.
 
 The original final-mile V1 campaign remains important negative evidence: the
 LayerCake-native tensor contract was executable by only 1/3 receiver families.
@@ -191,25 +201,30 @@ chemistry, and civics packages are installed without fitting or calibration.
 
 | ABI V2 local technical gate | Result |
 | --- | --- |
-| Capability-blind host certification | 3/3 pass |
+| Physically isolated capability-blind host certification | 3/3 pass |
 | Frozen host/capability matrix | 12/12 pass |
 | Frozen source-success retention | 5,043/5,043 |
 | Source-output byte identity | 5,043/5,043 |
 | Cross-host specialist action identity | 900/900 |
-| English-only specialist leakage | 0/900 |
-| Wrong-capability successes | 0/1,200 |
+| Fresh live isolation | 0/2,100 target successes |
+| Fresh live causal interventions | 3,072/3,072 recomputed |
 | Generic adapter overhead | all three within 10% on 20 observations |
 | Real human ratings | 0/21,000; open |
-| Independent different-hardware run | open |
+| Immutable public release assets | pending |
+| Clean public-manifest reconstruction | pending |
+| Fresh blind Codex red-team | pending |
+| Independent different-hardware run | closed until the three preceding gates pass |
 | Stable minimum-information frontier | open |
-| Final internal readiness gates | 18/18 pass |
+| Repaired local strict verifier | pass; 59 input files bound, 0 trusted booleans |
 
 The precise claim is that ABI V2 demonstrates a standalone capability-runtime
 with capability-independent package installation across the three named
-codec/conformance environments. The causal ablation found that a neutral UTF-8
-stub reproduces every promoted output: Qwen and Pythia hidden states do not
-generate or alter capability semantics. Their frozen checkpoints provide
-conformance probes and their tokenizers provide native unit representations.
+codec/conformance environments. Fresh live intervention runs show that real,
+neutral, zero, random, shuffled, and removed host state cannot alter capability
+semantics because the frozen runtime exposes no host-state semantic input.
+Adapter and capability removals fail in live execution. The frozen Qwen/Pythia
+checkpoints provide conformance probes and their tokenizers provide native unit
+representations.
 This is an extension/runtime ABI result, not host-model generation or tensor
 transplantation into base weights.
 
@@ -239,9 +254,10 @@ quality completion, or independent production release certification.
   raw evidence schema, and archive receipt. The generated archive is a release
   payload and is intentionally not committed to Git.
 
-- `results/abi_final_validation/` — frozen candidate, causal/shortcut audits,
-  raw-evidence headline recomputation, hostile mutations, clean-checkout receipt,
-  and final local readiness certificate.
+- `results/abi_final_validation/` — preserved, superseded first final-validation
+  certificate and its historical evidence.
+- `results/abi_final_validation_v2/` — repaired physical certification, live
+  causality/isolation rows, strict recomputation, and adversarial evidence.
 - `review_packet/` — concise claim-to-evidence handoff for technical reviewers.
 - `external_reproduction/` — final turnkey independent-hardware workflow.
 

@@ -10,35 +10,52 @@ detailed campaign history into the other.
 
 ## Current authority
 
-The final technical-validation layer is the controlling final-mile campaign.
-Its technical status is `READY_FOR_HUMAN_AND_INDEPENDENT_REVIEW`, backed by
-`results/abi_final_validation/release_certificate.json` (18/18 internal
-readiness gates) and the immutable ABI V2 evidence it indexes. The exact
-certified claim is
-standalone capability-runtime execution across the LayerCake v25,
-Qwen2.5-0.5B, and Pythia-160M codec/conformance environments after one-time
-capability-blind certification. All 12 host/capability cells pass with unchanged
-packages and one unchanged zero-parameter adapter per environment.
+The controlling final-mile campaign is the repaired ABI V2 validation under
+`results/abi_final_validation_v2/`. Its current status is
+`LOCAL_STRICT_PASS_PUBLIC_RECONSTRUCTION_PENDING`. The certificate at
+`results/abi_final_validation/` and tag
+`abi-final-technical-validation-ready-2026-08-25` are preserved historical
+evidence and are explicitly superseded. They relied on certification path
+filtering, causal evidence replay, and summary-field trust that are not
+acceptable for promotion.
 
-Do not broaden that result into tensor transplantation, native hidden-state
+The repaired local result uses private mount-namespace certification capsules.
+The worker filesystem contains only the generic certification corpus, canonical
+ABI/specification, adapter code, and selected host snapshot/source. Capability
+archives and source-success IDs are physically absent. The strict verifier
+recomputes 384 certification rows, the 5,043-row locked matrix, 3,072 fresh live
+causal interventions, and 2,100 fresh isolation rows from bound raw files. It
+consumes zero experiment gate/status booleans and fails closed on missing,
+changed, or stale inputs. The supported suite passes 66/66 locally.
+The disposable extracted-archive hostile audit rejects 9/9 mutations and
+restores the exact baseline digest.
+
+Do not change this status to `READY_FOR_HUMAN_AND_INDEPENDENT_REVIEW` until all
+four capability packages and the definitive archive are published at immutable
+public URLs, a brand-new public tag checkout reconstructs entirely from those
+manifests, the strict hostile audit passes in the disposable extracted release,
+and a fresh blind Codex red-team passes against that tag.
+
+The bounded claim remains standalone capability-runtime execution across the
+LayerCake v25, Qwen2.5-0.5B, and Pythia-160M codec/conformance environments.
+Do not broaden it into tensor transplantation, native hidden-state
 injection, host-model generation, arbitrary-model compatibility, human quality
 completion, external reproduction, or a global information minimum. The final
-causality audit proves Qwen/Pythia hidden states are not materially causal:
-neutral UTF-8 realization reproduces the complete promoted behavior. Their
-base weights are frozen conformance participants and their tokenizers provide
-native units; capability semantics execute in the standalone package plus
-generic canonical runtime. The complete V1 1/3
+live causality audit demonstrates that real, neutral, zero, random, shuffled,
+and removed host state cannot affect capability output because the frozen
+runtime exposes no host-state semantic input. Adapter and capability removal
+fail during live execution. Qwen/Pythia checkpoints remain frozen conformance
+participants and their tokenizers provide native units. The complete V1 1/3
 native-tensor failure remains immutable historical evidence.
 
 Three gates remain external: 21,000 judgments from three real independent
 raters, independent reproduction on different hardware, and the registered
 minimum-information certification.
 
-The technical declaration is exactly `ABI TECHNICAL MOONSHOT: PROVEN` under
-that bounded claim. Family A (observable canonical state) passed; Families
-B-D and synthesis were not run because architecture work must stop after the
-technical gate passes. ABI V1 is sealed by the annotated tag
-`abi-v1-host-independence-failure-2026-08-24`.
+The public technical declaration remains withheld during repaired-candidate
+validation. ABI V1 is sealed by the annotated tag
+`abi-v1-host-independence-failure-2026-08-24`; the frozen ABI V2 architecture
+remains bound to `abi-host-independence-technical-proof-2026-08-24`.
 
 The final external handoff is controlled by `external_reproduction/README.md`,
 its machine-readable checklist, and the final validation tooling. Building or
@@ -54,8 +71,9 @@ controlling final-mile evidence is now:
 - `results/abi_final_mile/host_portability_v1/repair_rescreen.json`; and
 - `results/abi_final_mile/hostile_claim_audit.json`.
 
-Final technical-validation evidence is under
-`results/abi_final_validation/`. The frozen architecture lineage remains
+Superseded technical-validation evidence remains under
+`results/abi_final_validation/`. Repaired evidence is additive under
+`results/abi_final_validation_v2/`. The frozen architecture lineage remains
 commit `acfed2a225a32d36c32b625e35c6ede536cfab01` and annotated tag
 `abi-host-independence-technical-proof-2026-08-24`; validation may add tools,
 audits, documentation, and receipts but must not mutate its bound architecture,
@@ -65,10 +83,10 @@ artifacts, adapters, evaluators, thresholds, or benchmarks.
 - Phase 2 is machine-complete but lacks 21,000 independent human preferences.
 - Phase 3 machine gates pass conditionally on Phase 2.
 - Phases 4–7 hold bounded machine certificates.
-- Phase 8 internal technical readiness passes, including a clean isolated
-  export, fresh 3-host/4-capability CPU matrix, hostile mutations, 62 supported
-  tests, and exact archive verification. It is not independent reproduction,
-  human completion, or a general production release certificate.
+- Phase 8's original internal-readiness declaration is superseded. The repaired
+  candidate passes strict local recomputation and 64 supported tests; immutable
+  publication, clean public reconstruction, and fresh blind red-team remain
+  mandatory before opening human or independent-hardware review.
 - The V1 final-mile native-receiver screen fails after its one bounded repair:
   the exact English archive is executable by 1/3 preregistered receiver
   families. Its controlling classification is `HOST_COADAPTED_CAPABILITY` and

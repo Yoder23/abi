@@ -1,0 +1,66 @@
+{
+  "capability_archives_physically_present": 0,
+  "capsule": {
+    "capability_archives_present": 0,
+    "files_verified": 8,
+    "inventory": [
+      {
+        "bytes": 218,
+        "path": "abi_release/abi_v2/__init__.py",
+        "sha256": "993961c309c30bf5f8411cd1a5fdb66d26ee23b3aca318fbeb090ba020a70683"
+      },
+      {
+        "bytes": 8078,
+        "path": "abi_release/abi_v2/canonical.py",
+        "sha256": "c394133dc70a8cabfbb7b390e3b74178707d8cb3c89ead91a7b106eca445f52b"
+      },
+      {
+        "bytes": 5932,
+        "path": "abi_release/abi_v2/canonical_spec.json",
+        "sha256": "6536ef1b58dfeea0474bfef5619f3627ecaefe8f39f25da017f11446b6582c2f"
+      },
+      {
+        "bytes": 3096,
+        "path": "abi_release/abi_v2/conformance_suite.json",
+        "sha256": "2af84b8b18fa78613fda7c96e7d269ef731b68138f736ea2d4441f4254747383"
+      },
+      {
+        "bytes": 23171,
+        "path": "abi_release/abi_v2/host_certification.py",
+        "sha256": "a547fdfc3045a283ee61e6527d5e4a558a024274ad7f86ada28e1bf39af8652c"
+      },
+      {
+        "bytes": 17566,
+        "path": "abi_release/abi_v2/isolated_certification.py",
+        "sha256": "5c9f80c1fd04fa2b4fdd3e5516cf651a4c1045a7faf09fec84a1e8b8f0c43e2a"
+      },
+      {
+        "bytes": 7356,
+        "path": "abi_release/abi_v2/reference_vectors/core_vectors.json",
+        "sha256": "fc792304e41b1985652a01b4b4efdb14a3bf40fc7aa4906f27ea95409f1dd9fa"
+      },
+      {
+        "bytes": 13330,
+        "path": "layercake_release/layercake_extensions/route_isolated_clarification_core_v25.py",
+        "sha256": "7b176f21e6a86f3aaded724462d37149f8f8be48370bcdd163fe44c49e3464ce"
+      }
+    ],
+    "inventory_sha256": "0482b795cbc018c4077135559342b57ef96f891c54e7331df3401bd7ea29fcdb",
+    "manifest_sha256": "75ee236557ba1994965979e48bc50f7426c2c85165f30a516b0ce2582a7c3edb",
+    "source_success_ledgers_present": 0
+  },
+  "evidence_sha256": "d02c09861aed9d792c15fca60b2cd41b6f0793566c6649f5d649f7449de39b7f",
+  "format": "abi-v2-physical-certification-isolation/1",
+  "host_key": "layercake",
+  "mount": {
+    "development_mount_visible": false,
+    "effective_windows_mount_sha256": "b9140cedf9ce1512d0fe85abed7efc399fd4e3f862cbf45859c0352346625797",
+    "mountinfo_sha256": "e1f337af514251697b0c439f3545d144c91c23b1ffed3f6c2f1fd97fe7a764db",
+    "platform": "linux",
+    "windows_drive_masked_by_tmpfs": true,
+    "windows_workspace_visible": false
+  },
+  "parent_process_id": 901,
+  "process_id": 903,
+  "source_success_ledgers_physically_present": 0
+}

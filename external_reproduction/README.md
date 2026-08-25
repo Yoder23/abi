@@ -1,7 +1,9 @@
 # ABI final independent-hardware reproduction
 
-This package is turnkey for a genuinely independent operator. Running it on the
-development laptop is a clean-room rehearsal, not independent reproduction.
+This package is turnkey for a genuinely independent operator only after the
+published repaired tag passes clean public-manifest reconstruction and a fresh
+blind red-team. Running it on the development laptop is a clean-room rehearsal,
+not independent reproduction.
 Preserve every first-run output, including failures.
 
 ## Preconditions
@@ -51,15 +53,17 @@ abi-reproduce verify
 abi-reproduce certify-hosts
 abi-reproduce capability-matrix
 abi-reproduce causality
+abi-reproduce isolation
 abi-reproduce performance
 abi-reproduce hostile-audit
 abi-reproduce report
 ```
 
-The sequence verifies bound bytes, performs three new capability-blind host
-certifications, executes the 3-environment × 4-capability matrix, reruns causal
-and hostile checks, recomputes performance from the new raw files, and produces
-one operator report. No source teacher is downloaded or executed.
+The sequence verifies bound bytes, performs three new physically isolated
+capability-blind host certifications, executes the 3-environment × 4-capability
+matrix, runs live causal and isolation campaigns, performs strict hostile
+mutations, recomputes performance from the new raw files, and produces one
+operator report. No source teacher is downloaded or executed.
 
 ## Return package
 

@@ -55,16 +55,20 @@ def test_shortcut_human_and_hostile_audits_are_fail_closed():
 
 def test_external_package_exposes_exact_turnkey_commands_and_lock():
     value = checklist()
-    assert value["status"] == "READY_FOR_INDEPENDENT_DIFFERENT_HARDWARE_EXECUTION"
+    assert value["status"] == (
+        "CLOSED_UNTIL_PUBLIC_RECONSTRUCTION_AND_BLIND_RED_TEAM_PASS"
+    )
     assert value["commands"] == [
         "abi-reproduce verify",
         "abi-reproduce certify-hosts",
         "abi-reproduce capability-matrix",
         "abi-reproduce causality",
+        "abi-reproduce isolation",
         "abi-reproduce performance",
         "abi-reproduce hostile-audit",
         "abi-reproduce report",
     ]
+    assert len(value["prerequisites"]) == 3
     assert environment_lock()["python"] == "3.10"
 
 

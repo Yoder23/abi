@@ -12,7 +12,7 @@ from typing import Any, Iterable
 
 from .final_validation import FROZEN_COMMIT, FROZEN_TAG, sha256_file, write_json
 
-PREFIX = "abi-final-validation"
+PREFIX = "abi-final-validation-v2"
 FORBIDDEN = {".git", "__pycache__", ".pytest_cache", "build", "dist", ".venv"}
 
 
@@ -30,7 +30,7 @@ class BundleFile:
 def checklist() -> dict[str, Any]:
     return {
         "format": "abi-final-external-reproduction-checklist/1",
-        "status": "READY_FOR_INDEPENDENT_DIFFERENT_HARDWARE_EXECUTION",
+        "status": "CLOSED_UNTIL_PUBLIC_RECONSTRUCTION_AND_BLIND_RED_TEAM_PASS",
         "repository": "https://github.com/Yoder23/abi",
         "frozen_commit": FROZEN_COMMIT,
         "frozen_tag": FROZEN_TAG,
@@ -39,6 +39,7 @@ def checklist() -> dict[str, Any]:
             "abi-reproduce certify-hosts",
             "abi-reproduce capability-matrix",
             "abi-reproduce causality",
+            "abi-reproduce isolation",
             "abi-reproduce performance",
             "abi-reproduce hostile-audit",
             "abi-reproduce report",
@@ -53,14 +54,20 @@ def checklist() -> dict[str, Any]:
             "SHA-256 inventory of returned evidence",
         ],
         "hardware_rule": "must differ from the ABI development RTX 3080 Laptop GPU system",
-        "model_weights_bundled": False,
-        "development_caches_bundled": False,
-        "trainer_checkpoints_bundled": False,
-        "hidden_expected_outputs_bundled": False,
-        "public_locked_reference_outputs_disclosed": True,
-        "human_results_bundled": False,
-        "source_teacher_required_at_runtime": False,
-        "independent_execution_completed": False,
+        "excluded_payload_classes": [
+            "host model weights",
+            "development caches",
+            "trainer checkpoints",
+            "hidden expected outputs",
+            "human rating results",
+            "source teacher runtime",
+        ],
+        "disclosed_payload_classes": ["public locked evaluator/reference outputs"],
+        "prerequisites": [
+            "immutable public capability and archive publication",
+            "fresh reconstruction from the public tag and manifests",
+            "fresh blind Codex red-team against the repaired tag",
+        ],
         "minimum_information_status": "PENDING_AFTER_EXTERNAL_VALIDATION",
     }
 
@@ -171,6 +178,67 @@ def collect(root: Path, layercake_root: Path) -> list[BundleFile]:
         "bound_predecessor_release_evidence",
     )
     _tree(records, root, "results/abi_final_validation", ("*.json", "*.md"), "final_validation_evidence")
+    _append(
+        records,
+        root,
+        "results/abi_final_validation_v2/strict_validation.json",
+        "repaired_strict_certificate",
+    )
+    if (root / "results/abi_final_validation_v2/strict_hostile_pre_public.json").is_file():
+        _append(
+            records,
+            root,
+            "results/abi_final_validation_v2/strict_hostile_pre_public.json",
+            "repaired_strict_hostile_receipt",
+        )
+    for relative in (
+        "results/abi_final_validation_v2/isolated_certification_strict",
+        "results/abi_final_validation_v2/live_causality",
+        "results/abi_final_validation_v2/live_isolation",
+    ):
+        _tree(
+            records,
+            root,
+            relative,
+            ("*.json", "*.jsonl", "*.md", "*.txt"),
+            "repaired_raw_validation_evidence",
+        )
+    for relative in (
+        "results/abi_final_validation_v2/isolated_certification",
+        "results/abi_final_validation_v2/live_causality_untrusted_boolean_history",
+        "results/abi_final_validation_v2/pre_strict_capsule_root_history",
+    ):
+        _tree(
+            records,
+            root,
+            relative,
+            ("*.json", "*.jsonl", "*.md", "*.txt", "*.py"),
+            "superseded_historical_evidence",
+        )
+    _append(
+        records,
+        root,
+        "results/abi_final_validation_v2/strict_validation_pre_boolean_cleanup.json",
+        "superseded_historical_evidence",
+    )
+    _append(
+        records,
+        root,
+        "results/abi_final_validation_v2/strict_validation_pre_hostile_fail_closed_fix.json",
+        "superseded_historical_evidence",
+    )
+    _append(
+        records,
+        root,
+        "results/abi_final_validation_v2/strict_validation_pre_declarative_boolean_audit.json",
+        "superseded_historical_evidence",
+    )
+    _append(
+        records,
+        root,
+        "results/abi_final_validation_v2/strict_hostile_pre_declarative_boolean_audit.json",
+        "superseded_historical_evidence",
+    )
     _tree(records, root, "results/abi_capability_compiler_phase2/human_rating_packet_v1", ("*.json", "*.jsonl"), "sealed_human_packet")
     _tree(records, root, "docs", ("*.md", "*.json"), "documentation")
     _tree(records, root, "review_packet", ("*.md",), "review_packet")
@@ -215,15 +283,16 @@ def build(root: Path, layercake_root: Path, output: Path) -> dict[str, Any]:
         raise FinalBundleError(f"refusing to overwrite: {output}")
     files = collect(root, layercake_root)
     manifest = {
-        "format": "abi-final-validation-clean-room-manifest/1",
-        "status": "READY_FOR_INDEPENDENT_DIFFERENT_HARDWARE_EXECUTION",
+        "format": "abi-final-validation-clean-room-manifest/2",
+        "status": "REPAIRED_CANDIDATE_REQUIRES_PUBLIC_RECONSTRUCTION_AND_RED_TEAM",
         "frozen_technical_commit": FROZEN_COMMIT,
         "frozen_technical_tag": FROZEN_TAG,
-        "architecture_source_matches_frozen_candidate": True,
-        "model_weights_bundled": False,
-        "development_caches_bundled": False,
-        "hidden_expected_outputs_bundled": False,
-        "public_reference_outputs_bundled_for_post_generation_exact_retention": True,
+        "excluded_payload_file_counts": {
+            "host_model_weights": 0,
+            "development_caches": 0,
+            "hidden_expected_outputs": 0,
+        },
+        "public_reference_output_files": 2,
         "files": [
             {
                 "path": record.archive_path,
@@ -250,14 +319,18 @@ def build(root: Path, layercake_root: Path, output: Path) -> dict[str, Any]:
         info.external_attr = 0o100644 << 16
         archive.writestr(info, manifest_bytes)
     return {
-        "format": "abi-final-validation-archive-receipt/1",
-        "status": "READY_FOR_EXTERNAL_OPERATOR",
+        "format": "abi-final-validation-archive-receipt/2",
+        "status": "PASS_REPAIRED_ARCHIVE_BUILT_REQUIRES_PUBLIC_RECONSTRUCTION",
         "archive": output.name,
         "archive_bytes": output.stat().st_size,
         "archive_sha256": sha256_file(output),
         "manifest_sha256": hashlib.sha256(manifest_bytes).hexdigest(),
         "files": len(files),
-        "independent_execution_completed": False,
+        "next_required_actions": [
+            "publish immutable archive and capability assets",
+            "reconstruct from public manifests in a new directory",
+            "run fresh blind red-team",
+        ],
     }
 
 
@@ -281,7 +354,7 @@ def verify_archive(path: Path) -> dict[str, Any]:
         unexpected = sorted(set(archive.namelist()) - expected)
         failures.extend(f"unexpected:{name}" for name in unexpected)
     return {
-        "format": "abi-final-validation-archive-verification/1",
+        "format": "abi-final-validation-archive-verification/2",
         "status": "PASS_EXACT_ARCHIVE_IDENTITY" if not failures else "FAIL_ARCHIVE_IDENTITY",
         "archive_sha256": sha256_file(path),
         "files_verified": len(expected) - 1 - len([x for x in failures if x.startswith("missing:")]),

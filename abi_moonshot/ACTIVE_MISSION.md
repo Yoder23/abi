@@ -1,45 +1,54 @@
-# ABI host-independence mission
+# ABI repaired final-validation mission
 
-Status: **READY FOR HUMAN AND INDEPENDENT REVIEW**
-
-Technical declaration: **ABI TECHNICAL MOONSHOT: PROVEN**
+Status: **LOCAL STRICT PASS; PUBLIC RECONSTRUCTION PENDING**
 
 The active product is a standalone, representation-neutral capability runtime.
 Each named codec/conformance environment is certified once, capability-blind,
-against typed canonical semantics. Its adapter is then frozen and the same
-immutable English, Python, chemistry, and civics packages install without
-receiver training, calibration, teacher inference, or package mutation.
+against typed canonical semantics. Its adapter is frozen and the same immutable
+English, Python, chemistry, and civics packages install without receiver
+training, calibration, teacher inference, or package mutation.
 
-Family A, observable canonical state, passed the registered three-host by
-four-capability matrix. Do not run Families B-D or synthesis unless the Family
-A certificate is invalidated by new machine evidence. Do not resume minimum-
-information work until the external validation program authorizes it.
+The former 18/18 final certificate is superseded. The repaired campaign must
+not advance to human ratings or independent hardware until it completes this
+sequence:
 
-The final host-causality audit establishes the exact boundary: Qwen and Pythia
-are frozen native conformance participants and native-tokenizer realizers.
-Their hidden states are not materially causal and do not generate or alter
-capability semantics; a neutral UTF-8 stub reproduces the promoted outputs.
-This is not host-model generation, tensor transplantation into base weights,
-or compatibility with arbitrary untested models.
+1. Physically isolated certification with capability packages and success IDs
+   absent from the worker filesystem.
+2. Fresh live real/neutral/zero/random/shuffled/host-removed/adapter-removed/
+   capability-removed execution.
+3. Fail-closed raw recomputation without trusted experiment booleans.
+4. Immutable public publication of every package and the definitive archive.
+5. Brand-new reconstruction from the public tag and manifests only.
+6. Fresh blind Codex red-team against the repaired tag.
 
-Remaining external work is limited to three real independent human raters,
-independent execution on different hardware, and the registered minimum-
-information frontier. Local reruns cannot close those gates.
+Steps 1-3 pass locally. The strict verifier binds 59 required inputs and
+recomputes 384 certification roundtrips, 5,043 locked matrix rows, 3,072 live
+causal rows, and 2,100 live isolation rows. The supported repository suite
+passes 66/66. Steps 4-6 remain active release work.
+The pre-public hostile extraction rejects 9/9 mutations and restores the exact
+strict evidence digest.
 
-Final internal validation passed 18/18 readiness gates. The clean isolated
-reproduction reran fresh capability-blind certification and all 12 matrix
-cells, preserved three failed packaging attempts, passed 62 supported tests,
-rejected all 13 hostile mutations and four forbidden operations, and built a
-wheel and sdist. This is technical readiness, not independent validation.
+The precise bounded claim is standalone capability-runtime execution across
+LayerCake v25, Qwen2.5-0.5B, and Pythia-160M codec/conformance environments.
+Qwen/Pythia host state is measured but cannot enter the frozen semantic runtime;
+removing the adapter or capability fails live execution. This is not host-model
+generation, tensor transplantation, universal LLM compatibility, a global
+information minimum, or superiority over LoRA/distillation.
 
-Controlling evidence:
+Controlling repaired evidence:
 
-- `results/abi_final_validation/frozen_release_candidate.json`
-- `results/abi_final_validation/host_causality.json`
-- `results/abi_final_validation/headline_recomputation.json`
-- `results/abi_final_validation/clean_checkout_reproduction.json`
-- `results/abi_final_validation/release_certificate.json`
-- `results/abi_host_independence/release_certificate.json`
-- `results/abi_host_independence/release_report.md`
-- `results/abi_v2/release_certificate.json`
-- `results/abi_v2/external_reproduction/README.md`
+- `results/abi_final_validation_v2/strict_validation.json`
+- `results/abi_final_validation_v2/isolated_certification_strict/`
+- `results/abi_final_validation_v2/live_causality/`
+- `results/abi_final_validation_v2/live_isolation/`
+- `results/abi_final_validation_v2/strict_hostile_pre_public.json`
+
+Historical evidence remains immutable:
+
+- `results/abi_final_validation/`
+- `results/abi_final_validation_v2/live_causality_untrusted_boolean_history/`
+- `results/abi_final_validation_v2/strict_validation_pre_boolean_cleanup.json`
+- `results/abi_v2/`
+
+Human ratings remain 0/21,000. Different-hardware independent reproduction and
+the registered minimum-information frontier remain open.

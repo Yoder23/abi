@@ -14,12 +14,10 @@ from abi_v2.canonical import (
     verify_reference,
 )
 from abi_v2.host_certification import (
-    HostCertificationError,
     _adapter_document,
-    _CapabilityOpenAudit,
     _neutral_texts,
-    _reject_capability_paths,
 )
+from abi_v2.isolated_certification import build_capsule, verify_capsule
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -77,17 +75,17 @@ def test_malformed_canonical_inputs_are_rejected(mutation: dict[str, object]) ->
         canonical_context(record)
 
 
-@pytest.mark.parametrize("suffix", [".abi", ".cake", ".abix", ".abicir"])
-def test_capability_paths_are_rejected_before_certification(suffix: str) -> None:
-    with pytest.raises(HostCertificationError, match="forbidden"):
-        _reject_capability_paths([f"unrevealed{suffix}"])
-
-
-def test_capability_open_audit_denies_payload_suffixes() -> None:
-    audit = _CapabilityOpenAudit()
-    with pytest.raises(PermissionError, match="unavailable"):
-        audit("open", ("unrevealed.cake", "rb", 0))
-    assert audit.blocked_attempts == 1
+def test_certification_capsule_physically_excludes_capabilities_and_success_ids(
+    tmp_path: Path,
+) -> None:
+    capsule = tmp_path / "capsule"
+    manifest = build_capsule(ROOT, host_key="layercake", destination=capsule)
+    receipt = verify_capsule(capsule)
+    paths = {row["path"] for row in manifest["files"]}
+    assert receipt["capability_archives_present"] == 0
+    assert receipt["source_success_ledgers_present"] == 0
+    assert not any(Path(path).suffix in {".abi", ".cake", ".abix", ".abicir"} for path in paths)
+    assert not any("source_success" in path.casefold() for path in paths)
 
 
 def test_frozen_adapter_is_capability_blind() -> None:

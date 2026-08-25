@@ -1,0 +1,90 @@
+{
+  "certification": {
+    "hosts": {
+      "layercake": {
+        "adapter_sha256": "d1f3a9d67581032473055711773f784e3b0a028fb68fab58c3a9a63b94317f04",
+        "capsule_files": 8,
+        "native_forward_rows": 0,
+        "overhead_fraction": 0.008888903448033059,
+        "performance_observations": 20,
+        "roundtrip_rows": 128
+      },
+      "pythia": {
+        "adapter_sha256": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa",
+        "capsule_files": 12,
+        "native_forward_rows": 16,
+        "overhead_fraction": 0.07451465717325556,
+        "performance_observations": 20,
+        "roundtrip_rows": 128
+      },
+      "qwen2": {
+        "adapter_sha256": "b13a75b82acf6df412c2569edaf36654a105b8c565164236fbeb5813b630291f",
+        "capsule_files": 14,
+        "native_forward_rows": 16,
+        "overhead_fraction": 0.0005190210549126384,
+        "performance_observations": 20,
+        "roundtrip_rows": 128
+      }
+    },
+    "hosts_verified": 3,
+    "physical_capability_archives_present": 0,
+    "physical_source_success_ledgers_present": 0
+  },
+  "evidence_sha256": "ba8563d47f96bf09459f443b97b49a2ad50e5f13263f27e9dd7b393e238bff86",
+  "format": "abi-v2-strict-final-validation/1",
+  "live_causality": {
+    "causal_conclusion": "The new live executions confirm that the frozen capability runtime is semantically standalone: real, neutral, zero, random, shuffled, and removed host states produce identical capability outputs because the frozen adapter exposes no host-state channel. Removing the adapter fails realization, while removing a capability fails generation.",
+    "cross_host_real_outputs_equal": 128,
+    "hosts": {
+      "layercake": {
+        "live_adapter_removals": 128,
+        "live_capability_removals": 128,
+        "live_positive_executions": 768,
+        "raw_rows": 1024
+      },
+      "pythia": {
+        "live_adapter_removals": 128,
+        "live_capability_removals": 128,
+        "live_positive_executions": 768,
+        "raw_rows": 1024
+      },
+      "qwen2": {
+        "live_adapter_removals": 128,
+        "live_capability_removals": 128,
+        "live_positive_executions": 768,
+        "raw_rows": 1024
+      }
+    },
+    "raw_rows": 3072,
+    "state_channel_supported": false
+  },
+  "live_isolation": {
+    "cross_host_outputs_equal": 700,
+    "hosts": {
+      "layercake": {
+        "raw_rows": 700,
+        "target_successes": 0
+      },
+      "pythia": {
+        "raw_rows": 700,
+        "target_successes": 0
+      },
+      "qwen2": {
+        "raw_rows": 700,
+        "target_successes": 0
+      }
+    },
+    "raw_rows": 2100,
+    "target_successes": 0
+  },
+  "locked_matrix": {
+    "capabilities": 4,
+    "cross_host_outputs_equal": 1681,
+    "cross_host_specialist_actions_equal": 300,
+    "hosts": 3,
+    "rows_per_host": 1681,
+    "rows_verified": 5043
+  },
+  "status": "PASS_STRICT_RAW_RECOMPUTATION",
+  "trusted_scientific_booleans_consumed": 0
+}

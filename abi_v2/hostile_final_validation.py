@@ -20,7 +20,7 @@ from .final_validation import (
     sha256_file,
     write_json,
 )
-from .host_certification import _reject_capability_paths
+from .isolated_certification import build_capsule, verify_capsule
 
 
 def _flip_copy(source: Path, target: Path, *, offset: int | None = None) -> None:
@@ -64,6 +64,15 @@ def _attempt_rejected(callback: Any) -> bool:
     except Exception:
         return True
     return False
+
+
+def _physical_capsule_rejects_forbidden(root: Path) -> bool:
+    with tempfile.TemporaryDirectory(prefix="abi-hostile-certification-capsule-") as raw:
+        capsule = Path(raw) / "capsule"
+        build_capsule(root, host_key="layercake", destination=capsule)
+        forbidden = capsule / "abi_release/forbidden.cake"
+        forbidden.write_bytes(b"hostile capability payload")
+        return _attempt_rejected(lambda: verify_capsule(capsule))
 
 
 def run(root: Path) -> dict[str, Any]:
@@ -158,9 +167,7 @@ def run(root: Path) -> dict[str, Any]:
         root / candidate["host_adapters"]["qwen2"]["path"]
     )
     forbidden_attempts = {
-        "capability_access_during_certification": _attempt_rejected(
-            lambda: _reject_capability_paths(["forbidden.cake"])
-        ),
+        "capability_access_during_certification": _physical_capsule_rejects_forbidden(root),
         "post_certification_adapter_fitting": not (
             {
                 **blind_adapter,

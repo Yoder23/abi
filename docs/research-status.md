@@ -1,6 +1,6 @@
 # Research status
 
-Status date: 2026-08-16. Repository curation date: 2026-08-24.
+Status date: 2026-08-25. Repository curation date: 2026-08-25.
 
 The controlling machine-readable state is
 `evidence/current/ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1089.json`.
@@ -15,7 +15,7 @@ The controlling machine-readable state is
 | 5 | Certified for bounded three-domain behavioral exclusion |
 | 6 | Certified for bounded three-package composition, portability, and provenance |
 | 7 | Certified for the registered same-machine CPU/CUDA integrated product |
-| 8 | Same-machine clean-export rehearsal certified; independent operator and different hardware required |
+| 8 | Prior readiness certificate superseded; repaired local strict pass; public reconstruction and blind red-team pending |
 
 ## Strongest current local result
 
@@ -28,6 +28,9 @@ bytes, and hardware protocol.
 
 ## Open gates
 
+- Publish immutable packages and the definitive repaired archive.
+- Reconstruct from a brand-new public tag checkout and public manifests only.
+- Complete a fresh blind Codex red-team against that repaired tag.
 - Three independent humans must complete the frozen Phase 2 preference packet.
 - A genuinely independent operator must execute the Phase 8 packet on different
   CPU/CUDA hardware and return the first raw run plus signed attestation.
@@ -47,6 +50,8 @@ The project does not currently claim:
 - completed human preference validation; or
 - production release certification.
 
-The full immutable campaign ledger and negative evidence are available on the
+The repaired local evidence is under `results/abi_final_validation_v2/`. The
+former 18/18 certificate under `results/abi_final_validation/` is preserved but
+superseded. The full immutable campaign ledger and negative evidence are available on the
 `research-history-v1089` branch. Compact certificates on `master` are provided
 for discoverability, not as a replacement for the archived raw evidence.

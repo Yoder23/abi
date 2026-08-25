@@ -1,0 +1,27 @@
+{
+  "adapter_sha256_after": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa",
+  "adapter_sha256_before": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa",
+  "device": "cuda",
+  "domain_archive_sha256": {
+    "chemistry": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+    "civics": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+    "python": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d"
+  },
+  "english_archive_sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+  "evidence_sha256": "2d5a97d898244018771e080d6788f6d2dac1b9435f85da584dbb166b2f38f0a0",
+  "execution_source_sha256": "cbea0b3821712cb0b9f579234c5289745a7068d0209d97274afabe155e42ed80",
+  "format": "abi-v2-live-capability-isolation/1",
+  "host": "pythia",
+  "native_host": {
+    "checkpoint_loaded": true,
+    "checkpoint_sha256": "29d2e457a664e41c12c735f20a36dc0956a665f614a54ce5db21a32e75965270",
+    "parameter_count": 162322944,
+    "precision": "torch.float16",
+    "snapshot_inventory_sha256": "9c3045a81419c0fe3c7a8c584d8ad467b267d9e64de9663f2aad348a09f6c085",
+    "tokenizer_sha256": "c24618a1b3e6a38167beff1c72cffd126c3a66254347304b50547d12c5f25624"
+  },
+  "observations_path": "observations.jsonl",
+  "observations_rows": 700,
+  "observations_sha256": "4e731b8c067704df253dd435a1a52c240afa62a2e953cd56587021c7eca8f71b",
+  "wall_seconds": 412.70655600000464
+}

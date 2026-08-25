@@ -1,0 +1,215 @@
+{
+  "format": "abi-v2-canonical-reference-vectors/1",
+  "records": [
+    {
+      "id": "exact-unicode-anchor",
+      "input": {
+        "prompt": "Echo Alpha-7 and café exactly.",
+        "instruction_type": "format",
+        "constraints": ["exact", "preserve_names", "preserve_numbers"],
+        "relation": "none",
+        "topic": "neutral",
+        "uncertainty": "certain",
+        "output_intent": "exact_anchor",
+        "entities": ["Alpha-7"],
+        "anchors": [{"text": "Alpha-7 and café", "role": "literal"}]
+      },
+      "expected": {"active_channel_indices": [7, 16, 22, 23, 32, 40, 48, 53, 62, 63]}
+    },
+    {
+      "id": "conversation-state",
+      "input": {
+        "prompt": "Continue the neutral exchange.",
+        "conversation": ["First neutral turn.", "Second neutral turn."],
+        "instruction_type": "conversation",
+        "constraints": [],
+        "relation": "none",
+        "topic": "interpersonal",
+        "uncertainty": "probable",
+        "output_intent": "fluent_text"
+      },
+      "expected": {"active_channel_indices": [0, 32, 41, 49, 52, 61]}
+    },
+    {
+      "id": "supplied-context-summary",
+      "input": {
+        "prompt": "Represent a short summary intent.",
+        "context": "A neutral shape moved from the first box to the second box.",
+        "instruction_type": "summarize",
+        "constraints": ["length", "context_only"],
+        "relation": "none",
+        "topic": "supplied_context",
+        "uncertainty": "certain",
+        "output_intent": "summary"
+      },
+      "expected": {"active_channel_indices": [1, 18, 25, 32, 46, 48, 57, 60]}
+    },
+    {
+      "id": "rewrite-entity-preservation",
+      "input": {
+        "prompt": "Represent a neutral rewrite intent for Name-Z.",
+        "instruction_type": "rewrite",
+        "constraints": ["tone", "audience", "preserve_names"],
+        "relation": "none",
+        "topic": "writing",
+        "uncertainty": "certain",
+        "output_intent": "rewrite",
+        "entities": ["Name-Z"]
+      },
+      "expected": {"active_channel_indices": [2, 17, 21, 22, 32, 42, 48, 58, 62]}
+    },
+    {
+      "id": "structured-draft",
+      "input": {
+        "prompt": "Represent two plain lines without markup.",
+        "instruction_type": "draft",
+        "constraints": ["format", "no_markdown", "lines"],
+        "relation": "none",
+        "topic": "writing",
+        "uncertainty": "certain",
+        "output_intent": "structured_text"
+      },
+      "expected": {"active_channel_indices": [3, 19, 26, 27, 32, 42, 48, 54]}
+    },
+    {
+      "id": "clarification-uncertainty",
+      "input": {
+        "prompt": "Represent the need to request missing neutral detail.",
+        "instruction_type": "clarify",
+        "constraints": ["uncertainty"],
+        "relation": "none",
+        "topic": "abstract",
+        "uncertainty": "uncertain",
+        "output_intent": "clarification"
+      },
+      "expected": {"active_channel_indices": [4, 30, 32, 44, 50, 55]}
+    },
+    {
+      "id": "insufficient-context-abstention",
+      "input": {
+        "prompt": "Represent abstention when the requested value is absent.",
+        "instruction_type": "abstain",
+        "constraints": ["context_only", "safe", "privacy"],
+        "relation": "none",
+        "topic": "unknown",
+        "uncertainty": "insufficient",
+        "output_intent": "abstention"
+      },
+      "expected": {"active_channel_indices": [5, 25, 28, 29, 32, 47, 51, 56]}
+    },
+    {
+      "id": "causal-relation",
+      "input": {
+        "prompt": "Represent that Event-A causes Event-B.",
+        "instruction_type": "reason",
+        "constraints": ["exact"],
+        "relation": "causes",
+        "topic": "abstract",
+        "uncertainty": "probable",
+        "output_intent": "fluent_text",
+        "entities": ["Event-A", "Event-B"]
+      },
+      "expected": {"active_channel_indices": [6, 16, 35, 44, 49, 52, 62]}
+    },
+    {
+      "id": "classification-relation",
+      "input": {
+        "prompt": "Represent that Shape-A is a generic shape.",
+        "instruction_type": "classify",
+        "constraints": [],
+        "relation": "is_a",
+        "topic": "neutral",
+        "uncertainty": "certain",
+        "output_intent": "structured_text"
+      },
+      "expected": {"active_channel_indices": [8, 33, 40, 48, 54]}
+    },
+    {
+      "id": "context-extraction",
+      "input": {
+        "prompt": "Extract the supplied Name-Q and 2048.",
+        "context": "The neutral record contains Name-Q and the number 2048.",
+        "instruction_type": "extract",
+        "constraints": ["preserve_names", "preserve_numbers", "cite_supplied"],
+        "relation": "part_of",
+        "topic": "supplied_context",
+        "uncertainty": "certain",
+        "output_intent": "exact_anchor",
+        "entities": ["Name-Q"],
+        "anchors": [
+          {"text": "Name-Q", "role": "entity"},
+          {"text": "2048", "role": "number"}
+        ]
+      },
+      "expected": {"active_channel_indices": [9, 22, 23, 24, 34, 46, 48, 53, 60, 62, 63]}
+    },
+    {
+      "id": "representation-transform",
+      "input": {
+        "prompt": "Map one neutral notation to another.",
+        "instruction_type": "transform",
+        "constraints": ["format", "language"],
+        "relation": "maps_to",
+        "topic": "procedural",
+        "uncertainty": "certain",
+        "output_intent": "structured_text"
+      },
+      "expected": {"active_channel_indices": [10, 19, 20, 38, 45, 48, 54]}
+    },
+    {
+      "id": "contextual-comparison",
+      "input": {
+        "prompt": "Answer using only the supplied comparison.",
+        "context": "Object-A is described as larger than Object-B.",
+        "instruction_type": "answer",
+        "constraints": ["context_only", "uncertainty"],
+        "relation": "compares",
+        "topic": "supplied_context",
+        "uncertainty": "uncertain",
+        "output_intent": "fluent_text"
+      },
+      "expected": {"active_channel_indices": [11, 25, 30, 37, 46, 50, 52, 60]}
+    },
+    {
+      "id": "exact-numeric-anchor",
+      "input": {
+        "prompt": "Preserve the synthetic value 37 exactly.",
+        "instruction_type": "calculate",
+        "constraints": ["exact", "preserve_numbers"],
+        "relation": "none",
+        "topic": "abstract",
+        "uncertainty": "certain",
+        "output_intent": "exact_anchor",
+        "anchors": [{"text": "37", "role": "number"}]
+      },
+      "expected": {"active_channel_indices": [12, 16, 23, 32, 44, 48, 53, 63]}
+    },
+    {
+      "id": "sequence-order",
+      "input": {
+        "prompt": "Explain that Step-A precedes Step-B.",
+        "sequence_position": 3,
+        "instruction_type": "explain",
+        "constraints": [],
+        "relation": "precedes",
+        "topic": "procedural",
+        "uncertainty": "probable",
+        "output_intent": "fluent_text"
+      },
+      "expected": {"active_channel_indices": [14, 36, 45, 49, 52]}
+    },
+    {
+      "id": "unknown-fallback",
+      "input": {
+        "prompt": "Represent an intentionally unknown structural case.",
+        "instruction_type": "other",
+        "constraints": ["other"],
+        "relation": "other",
+        "topic": "unknown",
+        "uncertainty": "insufficient",
+        "output_intent": "other"
+      },
+      "expected": {"active_channel_indices": [15, 31, 39, 47, 51, 59]}
+    }
+  ]
+}

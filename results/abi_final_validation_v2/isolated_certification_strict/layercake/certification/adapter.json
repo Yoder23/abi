@@ -1,0 +1,36 @@
+{
+  "abi_version": "abi-canonical-host/2",
+  "accepted_capability_ids": "not enumerated; package identity is revealed only after freeze",
+  "accepted_runtime_classes": [
+    "lc-direct-neural-core/25",
+    "lc-direct-neural-decoder/1"
+  ],
+  "architecture": "LayerCake route-isolated shallow sparse host environment",
+  "canonical_spec_sha256": "6536ef1b58dfeea0474bfef5619f3627ecaefe8f39f25da017f11446b6582c2f",
+  "capability_examples_seen": 0,
+  "capability_outputs_seen": 0,
+  "capability_paths_accepted": false,
+  "capability_success_ids_seen": 0,
+  "checkpoint": "source commit 662c5a9b7264a1a5478c9dfb656f35c450e2504f",
+  "checkpoint_sha256": "7b176f21e6a86f3aaded724462d37149f8f8be48370bcdd163fe44c49e3464ce",
+  "conformance_suite_sha256": "2af84b8b18fa78613fda7c96e7d269ef731b68138f736ea2d4441f4254747383",
+  "format": "abi-v2-frozen-generic-host-adapter/1",
+  "frozen": true,
+  "host_id": "layercake-v25",
+  "host_key": "layercake",
+  "input_adapter": "strict host-tokenizer decode to canonical UTF-8 plus typed context state",
+  "optimizer_steps": 0,
+  "output_adapter": "canonical authoritative UTF-8 to exact native-tokenizer round trip",
+  "post_freeze_mutation_allowed": false,
+  "reference_implementation_sha256": "c394133dc70a8cabfbb7b390e3b74178707d8cb3c89ead91a7b106eca445f52b",
+  "snapshot_inventory_sha256": null,
+  "state_ownership": [
+    "host_base",
+    "generic_host_adapter",
+    "frozen_capability",
+    "generic_runtime"
+  ],
+  "tokenizer_mode": "strict_utf8_identity",
+  "tokenizer_sha256": null,
+  "trainable_parameters": 0
+}

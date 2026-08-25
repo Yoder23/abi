@@ -1,34 +1,60 @@
-# ABI final technical result tables
+# ABI repaired technical result tables
 
-Every value below is generated or checked from raw locked evidence by
-`abi_v2.final_validation`; certificate summaries are not trusted as inputs.
-Final internal technical readiness is 18/18. Independent hardware and human
-validation remain open.
+These values are recomputed from the repaired raw evidence by
+`abi_v2.strict_validation`. The prior 18/18 certificate is historical and
+superseded.
 
-## Tested environments and capabilities
+## Physical host certification
 
-| Environment | Adapter bytes | Params | Cert examples | Cert UTF-8 bytes | Cert time | English | Python | Chemistry | Civics | Frozen retention | Math equality | Isolation | Teacher absent | Adapter overhead | Package hashes |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- | --- | --- | ---: | --- |
-| LayerCake v25 (CPU cert) | 1,556 | 0 | 128 | 5,953 | 0.040 s | 1,381/1,381 | 100/100 | 100/100 | 100/100 | 1,681/1,681 | Pass | Pass | Yes | 3.96% | Unchanged |
-| Qwen2.5-0.5B (CUDA cert) | 1,637 | 0 | 128 | 5,953 | 9.163 s | 1,381/1,381 | 100/100 | 100/100 | 100/100 | 1,681/1,681 | Pass | Pass | Yes | -0.55% | Unchanged |
-| Pythia-160M (CUDA cert) | 1,646 | 0 | 128 | 5,953 | 6.185 s | 1,381/1,381 | 100/100 | 100/100 | 100/100 | 1,681/1,681 | Pass | Pass | Yes | 3.12% | Unchanged |
+| Environment | Capsule files | Roundtrips | Native forwards | Adapter SHA-256 | Median overhead |
+| --- | ---: | ---: | ---: | --- | ---: |
+| LayerCake v25 | 8 | 128 | 0 | `d1f3a9d6…317f04` | 0.89% |
+| Qwen2.5-0.5B | 14 | 128 | 16 | `b13a75b8…0291f` | 0.05% |
+| Pythia-160M | 12 | 128 | 16 | `df3598b6…ceafa` | 7.45% |
 
-The CPU/GPU labels identify where each certification was measured; they are not
-cross-device superiority claims. Qwen/Pythia base hidden states are noncausal to
-the answers. See the host-causality audit before interpreting “environment.”
+Every capsule has zero capability archives and zero source-success ledgers.
+Raw mount evidence shows the development drive replaced by private `tmpfs`
+during worker execution.
 
-## Limitations and pending external gates
+## Live and locked evidence
+
+| Evidence | Rows | Recomputed result |
+| --- | ---: | --- |
+| Locked three-host matrix | 5,043 | 5,043 functional source-byte matches |
+| Cross-host matrix identity | 1,681 tasks | all output bytes identical |
+| Specialist action identity | 300 tasks | all action sequences identical |
+| Live causal interventions | 3,072 | all six positive states identical; removals fail live |
+| Live isolation | 2,100 | 0 target successes; 700 cross-host identities |
+| Supported tests | 66 | all pass |
+| Disposable archive hostile audit | 9 mutations | all rejected; exact restore |
+
+The live causal run loads the real host and obtains actual host state for each
+task, but the frozen adapter exposes no host-state semantic channel. This is
+evidence for a standalone capability-runtime boundary, not host-model answer
+generation.
+
+## Integrity
+
+The strict certificate binds 59 required files with per-file hashes and
+aggregate SHA-256 `3a56667dd2dffdf8c48b5de967933b968889ccc3cea6af762a567f9850414b46`.
+Its current evidence SHA-256 is
+`7f11a154ad5475ff71a99074ecee7cad35cd27bfa966d3c99cdd1f786e1a12d4`.
+No experiment status/gate/frozen-policy boolean is accepted as scientific
+evidence.
+
+## Pending gates
 
 | Gate or limitation | State |
 | --- | --- |
-| Independent different-hardware reproduction | Pending external operator |
-| Blinded human quality | Pending three humans; 0/21,000 complete |
+| Immutable public assets and definitive archive | Pending publication |
+| Fresh public-manifest reconstruction | Pending |
+| Fresh blind Codex red-team | Pending |
+| Independent different-hardware reproduction | Closed until the above pass |
+| Blinded human quality | Closed until the above pass; 0/21,000 |
 | Stable minimum-information frontier | `PENDING_AFTER_EXTERNAL_VALIDATION` |
 | Compatibility beyond the three named environments | Not proven |
-| Host-model answer generation | Falsified by neutral-stub causal audit |
 | Base-weight tensor transplantation | Not implemented or claimed |
-| Global LoRA/distillation/fine-tuning superiority | Not proven or claimed |
+| Universal LoRA/distillation/fine-tuning superiority | Not proven |
 | Hidden blind holdout | None; exact-retention suite is public |
-| Clean isolated reproduction | Pass; 62 tests, fresh 12-cell CPU matrix |
 
-Raw source: `results/abi_final_validation/headline_recomputation.json`.
+Raw source: `results/abi_final_validation_v2/strict_validation.json`.

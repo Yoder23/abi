@@ -4,21 +4,28 @@
     "abi-reproduce certify-hosts",
     "abi-reproduce capability-matrix",
     "abi-reproduce causality",
+    "abi-reproduce isolation",
     "abi-reproduce performance",
     "abi-reproduce hostile-audit",
     "abi-reproduce report"
   ],
-  "development_caches_bundled": false,
-  "evidence_sha256": "289e21d31cd19ef72c76917026bd1f6f875d82df2440c3797deeab232b022bda",
+  "disclosed_payload_classes": [
+    "public locked evaluator/reference outputs"
+  ],
+  "evidence_sha256": "406ef885c73908990d35e6d856566e3cf2ac2a4daa2d2c5485e9427dcc9b822a",
+  "excluded_payload_classes": [
+    "host model weights",
+    "development caches",
+    "trainer checkpoints",
+    "hidden expected outputs",
+    "human rating results",
+    "source teacher runtime"
+  ],
   "format": "abi-final-external-reproduction-checklist/1",
   "frozen_commit": "acfed2a225a32d36c32b625e35c6ede536cfab01",
   "frozen_tag": "abi-host-independence-technical-proof-2026-08-24",
   "hardware_rule": "must differ from the ABI development RTX 3080 Laptop GPU system",
-  "hidden_expected_outputs_bundled": false,
-  "human_results_bundled": false,
-  "independent_execution_completed": false,
   "minimum_information_status": "PENDING_AFTER_EXTERNAL_VALIDATION",
-  "model_weights_bundled": false,
   "operator_must_record": [
     "operator identity and signed attestation",
     "CPU, GPU, RAM, VRAM, OS",
@@ -28,9 +35,11 @@
     "all raw outputs and timings",
     "SHA-256 inventory of returned evidence"
   ],
-  "public_locked_reference_outputs_disclosed": true,
+  "prerequisites": [
+    "immutable public capability and archive publication",
+    "fresh reconstruction from the public tag and manifests",
+    "fresh blind Codex red-team against the repaired tag"
+  ],
   "repository": "https://github.com/Yoder23/abi",
-  "source_teacher_required_at_runtime": false,
-  "status": "READY_FOR_INDEPENDENT_DIFFERENT_HARDWARE_EXECUTION",
-  "trainer_checkpoints_bundled": false
+  "status": "CLOSED_UNTIL_PUBLIC_RECONSTRUCTION_AND_BLIND_RED_TEAM_PASS"
 }

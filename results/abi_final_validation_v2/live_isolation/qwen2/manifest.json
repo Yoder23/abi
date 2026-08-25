@@ -1,0 +1,27 @@
+{
+  "adapter_sha256_after": "b13a75b82acf6df412c2569edaf36654a105b8c565164236fbeb5813b630291f",
+  "adapter_sha256_before": "b13a75b82acf6df412c2569edaf36654a105b8c565164236fbeb5813b630291f",
+  "device": "cuda",
+  "domain_archive_sha256": {
+    "chemistry": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+    "civics": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+    "python": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d"
+  },
+  "english_archive_sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+  "evidence_sha256": "53cfbeee91e61fc4aab36a1a0837ddd860df88009ea571c0985f2c6005d144f3",
+  "execution_source_sha256": "cbea0b3821712cb0b9f579234c5289745a7068d0209d97274afabe155e42ed80",
+  "format": "abi-v2-live-capability-isolation/1",
+  "host": "qwen2",
+  "native_host": {
+    "checkpoint_loaded": true,
+    "checkpoint_sha256": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342",
+    "parameter_count": 494032768,
+    "precision": "torch.float16",
+    "snapshot_inventory_sha256": "a2f0d549121c1d38fe3c9ff33d6e80df1d02a032153daa15ff89663eb091f25f",
+    "tokenizer_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+  },
+  "observations_path": "observations.jsonl",
+  "observations_rows": 700,
+  "observations_sha256": "39ecac1a7eafc2c6d6a5696fef831dbea20ff1dac7a8778e2dc04d56fe8892c7",
+  "wall_seconds": 464.4715225999971
+}

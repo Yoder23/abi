@@ -1,0 +1,67 @@
+{
+  "baseline_evidence_sha256": "7f11a154ad5475ff71a99074ecee7cad35cd27bfa966d3c99cdd1f786e1a12d4",
+  "evidence_sha256": "b3e3217b5f68bcebbd322fccaf7347c63d785b1655a18ba04bb832b419b60811",
+  "format": "abi-v2-strict-hostile-verification/1",
+  "mutations": [
+    {
+      "exception_type": "StrictValidationError",
+      "message": "required file missing: /tmp/abi-prehostile-20260825-e/abi-final-validation-v2/abi_release/results/abi_moonshot/packages/abi-python-token-plan-seed9824.cake",
+      "mutation": "missing_capability_package",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "causal capability bytes changed: layercake",
+      "mutation": "corrupt_capability_package",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "required JSONL unavailable: /tmp/abi-prehostile-20260825-e/abi-final-validation-v2/abi_release/results/abi_final_validation_v2/live_causality/qwen2/observations.jsonl",
+      "mutation": "missing_raw_causality_file",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "live causality raw binding changed: qwen2",
+      "mutation": "missing_raw_causality_row",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "live causality raw binding changed: qwen2",
+      "mutation": "missing_required_raw_hash",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "stale live causality code binding: layercake",
+      "mutation": "stale_execution_source",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "required text unavailable: /tmp/abi-prehostile-20260825-e/abi-final-validation-v2/abi_release/results/abi_final_validation_v2/isolated_certification_strict/pythia/mountinfo.txt",
+      "mutation": "missing_raw_mount_table",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "required file missing: /tmp/abi-prehostile-20260825-e/abi-final-validation-v2/abi_release/results/abi_final_validation_v2/isolated_certification_strict/layercake/certification/adapter.json",
+      "mutation": "missing_frozen_adapter",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "certification binding changed: qwen2/result_sha256",
+      "mutation": "stale_certification_binding",
+      "rejected": true
+    }
+  ],
+  "mutations_rejected": 9,
+  "mutations_required": 9,
+  "post_restore_evidence_sha256": "7f11a154ad5475ff71a99074ecee7cad35cd27bfa966d3c99cdd1f786e1a12d4",
+  "source_tree_restored": true,
+  "status": "PASS_STRICT_VERIFIER_FAILS_CLOSED",
+  "trusted_scientific_boolean_dependencies": []
+}
