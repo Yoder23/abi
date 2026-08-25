@@ -19,6 +19,12 @@ evidence and are explicitly superseded. They relied on certification path
 filtering, causal evidence replay, and summary-field trust that are not
 acceptable for promotion.
 
+The first repaired candidate tag, `abi-final-validation-v2-repaired-2026-08-25`,
+is also superseded: a default Windows clone exposed one CRLF/LF normalization
+mismatch in historical evidence. The replacement candidate lineage starts at
+`abi-final-validation-v2-repaired-r1-2026-08-25` and must complete the clean
+reconstruction/red-team sequence from the beginning.
+
 The repaired local result uses private mount-namespace certification capsules.
 The worker filesystem contains only the generic certification corpus, canonical
 ABI/specification, adapter code, and selected host snapshot/source. Capability

@@ -17,6 +17,13 @@ data by name/path instead of physical absence, the causal audit replayed stored
 evidence through a neutral stub, and final verification trusted derived status
 fields.
 
+The first repaired candidate tag,
+`abi-final-validation-v2-repaired-2026-08-25`, is also superseded. Its default
+Windows checkout surfaced one CRLF/LF normalization mismatch in an unrelated
+historical JSON receipt. The content was normalized without changing its JSON
+meaning; `abi-final-validation-v2-repaired-r1-2026-08-25` restarts clean public
+reconstruction from a new immutable lineage.
+
 ## Repaired local evidence
 
 The repaired certification worker runs inside a private WSL2 mount namespace.

@@ -21,6 +21,10 @@ sequence:
 5. Brand-new reconstruction from the public tag and manifests only.
 6. Fresh blind Codex red-team against the repaired tag.
 
+The first repaired tag is historical because its default Windows checkout was
+not byte-clean for one CRLF/LF-normalized historical JSON file. The r1 repaired
+tag is the only candidate eligible for the remaining sequence.
+
 Steps 1-3 pass locally. The strict verifier binds 59 required inputs and
 recomputes 384 certification roundtrips, 5,043 locked matrix rows, 3,072 live
 causal rows, and 2,100 live isolation rows. The supported repository suite
