@@ -20,7 +20,10 @@ capability packages.
 > across the LayerCake v25, Qwen2.5-0.5B, and
 > Pythia-160M codec/conformance environments using one capability-blind,
 > zero-parameter frozen adapter per environment and the same four immutable packages.
-> Promotion of the repaired candidate additionally requires public immutable
+> The repaired technical proof is frozen at commit
+> `7064c94f2c6137a29b8793d9b0ec95137efb051e` and annotated tag
+> `abi-final-validation-v2-physical-live-proof-2026-08-25`. Promotion
+> additionally requires public immutable
 > release assets, clean reconstruction from those assets, and a fresh blind
 > red-team. External reproduction, real human ratings, and minimum-information
 > certification remain open. The bounded technical declaration is
@@ -205,7 +208,7 @@ chemistry, and civics packages are installed without fitting or calibration.
 | Frozen host/capability matrix | 12/12 pass |
 | Frozen source-success retention | 5,043/5,043 |
 | Source-output byte identity | 5,043/5,043 |
-| Cross-host specialist action identity | 900/900 |
+| Cross-host specialist action identity | 300/300 |
 | Fresh live isolation | 0/2,100 target successes |
 | Fresh live causal interventions | 3,072/3,072 recomputed |
 | Generic adapter overhead | all three within 10% on 20 observations |
@@ -215,16 +218,17 @@ chemistry, and civics packages are installed without fitting or calibration.
 | Fresh blind Codex red-team | pending |
 | Independent different-hardware run | closed until the three preceding gates pass |
 | Stable minimum-information frontier | open |
-| Repaired local strict verifier | pass; 59 input files bound, 0 trusted booleans |
+| Repaired local strict verifier | pass; 95 input files bound, 0 trusted booleans |
 
 The precise claim is that ABI V2 demonstrates a standalone capability-runtime
 with capability-independent package installation across the three named
-codec/conformance environments. Fresh live intervention runs show that real,
-neutral, zero, random, shuffled, and removed host state cannot alter capability
-semantics because the frozen runtime exposes no host-state semantic input.
-Adapter and capability removals fail in live execution. The frozen Qwen/Pythia
-checkpoints provide conformance probes and their tokenizers provide native unit
-representations.
+codec/conformance environments. Eight fresh processes per host apply real,
+neutral, zero, deterministic-random, deterministic-shuffled, and removed-host
+conditions. Qwen/Pythia state conditions mutate a native parameter, execute a
+new forward, and pass the resulting state into the adapter while canonical
+capability bytes remain invariant. Adapter and capability removals fail in live
+execution. The frozen Qwen/Pythia checkpoints provide conformance probes and
+their tokenizers provide native unit representations.
 This is an extension/runtime ABI result, not host-model generation or tensor
 transplantation into base weights.
 

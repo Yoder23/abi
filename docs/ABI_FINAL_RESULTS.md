@@ -8,9 +8,9 @@ superseded.
 
 | Environment | Capsule files | Roundtrips | Native forwards | Adapter SHA-256 | Median overhead |
 | --- | ---: | ---: | ---: | --- | ---: |
-| LayerCake v25 | 8 | 128 | 0 | `d1f3a9d6…317f04` | 0.89% |
-| Qwen2.5-0.5B | 14 | 128 | 16 | `b13a75b8…0291f` | 0.05% |
-| Pythia-160M | 12 | 128 | 16 | `df3598b6…ceafa` | 7.45% |
+| LayerCake v25 | 9 | 128 | 0 | `d1f3a9d6…317f04` | 4.57% |
+| Qwen2.5-0.5B | 15 | 128 | 16 | `b13a75b8…0291f` | -2.45% |
+| Pythia-160M | 13 | 128 | 16 | `df3598b6…ceafa` | 8.47% |
 
 Every capsule has zero capability archives and zero source-success ledgers.
 Raw mount evidence shows the development drive replaced by private `tmpfs`
@@ -25,20 +25,21 @@ during worker execution.
 | Specialist action identity | 300 tasks | all action sequences identical |
 | Live causal interventions | 3,072 | all six positive states identical; removals fail live |
 | Live isolation | 2,100 | 0 target successes; 700 cross-host identities |
-| Supported tests | 66 | all pass |
-| Disposable archive hostile audit | 9 mutations | all rejected; exact restore |
+| Supported tests | 70 | all pass |
+| Disposable archive hostile audit | 15 mutations | all rejected; exact restore |
 
-The live causal run loads the real host and obtains actual host state for each
-task, but the frozen adapter exposes no host-state semantic channel. This is
+The live causal run uses eight fresh processes per host. Qwen/Pythia state
+conditions mutate a native parameter, run a new forward, and pass the resulting
+state to the conformance adapter. Canonical output remains invariant. This is
 evidence for a standalone capability-runtime boundary, not host-model answer
 generation.
 
 ## Integrity
 
-The strict certificate binds 59 required files with per-file hashes and
-aggregate SHA-256 `052f2437a90c081e50abcdc098e619a2fe58ef3ecd91b56c099eb62b6415b7ec`.
+The strict certificate binds 95 required files with per-file hashes and
+aggregate SHA-256 `4387142fa72a266ec7f8624c161d803f474d911271c3501945b85aa86c599416`.
 Its current evidence SHA-256 is
-`1cfb3a1c15119c0aedcd8e70606c94873109722415079916b2ed488cc512ac01`.
+`75c6611d98bc1cc4988651659db1088529f5c30324a18f1b88cb997f65e314e0`.
 No experiment status/gate/frozen-policy boolean is accepted as scientific
 evidence.
 

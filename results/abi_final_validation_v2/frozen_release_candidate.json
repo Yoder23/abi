@@ -1,0 +1,52 @@
+{
+  "capability_artifacts": {
+    "chemistry": {
+      "bytes": 510981,
+      "path": "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.cake",
+      "sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb"
+    },
+    "civics": {
+      "bytes": 495919,
+      "path": "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.cake",
+      "sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604"
+    },
+    "english": {
+      "bytes": 253216208,
+      "path": "results/abi_capability_compiler_phase7_integrated/materialized_v1052/phase7-final-english-core.cake",
+      "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d"
+    },
+    "python": {
+      "bytes": 448404,
+      "path": "results/abi_moonshot/packages/abi-python-token-plan-seed9824.cake",
+      "sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d"
+    }
+  },
+  "evidence_sha256": "0c177776c945c04366cd125a3a9df6683cfd605da692592aa855977ac354e07c",
+  "external_gates": {
+    "fresh_blind_codex_red_team": "PENDING",
+    "fresh_public_reconstruction": "PENDING",
+    "human_ratings": "CLOSED",
+    "independent_hardware": "CLOSED",
+    "public_hash_addressed_assets": "PENDING"
+  },
+  "format": "abi-v2-repaired-frozen-release-candidate/3",
+  "repository": "https://github.com/Yoder23/abi",
+  "status": "TECHNICAL_PROOF_FROZEN_AWAITING_PUBLIC_RECONSTRUCTION_AND_RED_TEAM",
+  "strict_certificate": {
+    "bytes": 24141,
+    "evidence_sha256": "75c6611d98bc1cc4988651659db1088529f5c30324a18f1b88cb997f65e314e0",
+    "path": "results/abi_final_validation_v2/strict_validation.json",
+    "required_inputs_aggregate_sha256": "4387142fa72a266ec7f8624c161d803f474d911271c3501945b85aa86c599416",
+    "sha256": "6ceea3a73e879084a526b625f84a71e251da70ca13f073534375645f6e57cca7"
+  },
+  "strict_hostile_receipt": {
+    "bytes": 4901,
+    "evidence_sha256": "5ae2277276f53fb722aee46dda05305ca6ebafdc729100059ff8a18645ff50af",
+    "mutations_rejected": 15,
+    "path": "results/abi_final_validation_v2/strict_hostile_pre_public.json",
+    "sha256": "855752a87a0ad03f8fe64d256e733da1d61ef0f5f4da3e65c95b79bfdef1f0f9"
+  },
+  "technical_proof_commit": "7064c94f2c6137a29b8793d9b0ec95137efb051e",
+  "technical_proof_tag": "abi-final-validation-v2-physical-live-proof-2026-08-25",
+  "trusted_scientific_booleans_consumed": 0
+}

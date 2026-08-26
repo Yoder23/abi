@@ -12,7 +12,7 @@ detailed campaign history into the other.
 
 The controlling final-mile campaign is the repaired ABI V2 validation under
 `results/abi_final_validation_v2/`. Its current status is
-`LOCAL_STRICT_PASS_PUBLIC_RECONSTRUCTION_PENDING`. The certificate at
+`TECHNICAL_PROOF_FROZEN_PUBLIC_RECONSTRUCTION_PENDING`. The certificate at
 `results/abi_final_validation/` and tag
 `abi-final-technical-validation-ready-2026-08-25` are preserved historical
 evidence and are explicitly superseded. They relied on certification path
@@ -21,11 +21,13 @@ acceptable for promotion.
 
 The first repaired candidate tag, `abi-final-validation-v2-repaired-2026-08-25`,
 is also superseded: a default Windows clone exposed one CRLF/LF normalization
-mismatch in historical evidence. The replacement candidate lineage starts at
-`abi-final-validation-v2-repaired-r2-2026-08-25` and must complete the clean
-reconstruction/red-team sequence from the beginning. The r1 tag is also
-superseded: its public extraction exposed that the clean-tree test still read
-the old frozen candidate receipt instead of a new repaired receipt.
+mismatch in historical evidence. The r1 tag is also superseded: its public
+extraction exposed that the clean-tree test still read the old frozen candidate
+receipt. A fresh blind review then rejected r2 because its isolation and host
+state interventions did not meet the physical/live standard. The repaired
+technical proof is frozen at commit
+`7064c94f2c6137a29b8793d9b0ec95137efb051e`, annotated tag
+`abi-final-validation-v2-physical-live-proof-2026-08-25`.
 
 The repaired local result uses private mount-namespace certification capsules.
 The worker filesystem contains only the generic certification corpus, canonical
@@ -34,8 +36,8 @@ archives and source-success IDs are physically absent. The strict verifier
 recomputes 384 certification rows, the 5,043-row locked matrix, 3,072 fresh live
 causal interventions, and 2,100 fresh isolation rows from bound raw files. It
 consumes zero experiment gate/status booleans and fails closed on missing,
-changed, or stale inputs. The supported suite passes 66/66 locally.
-The disposable extracted-archive hostile audit rejects 9/9 mutations and
+changed, or stale inputs. The supported suite passes 70/70 locally.
+The disposable extracted-archive hostile audit rejects 15/15 mutations and
 restores the exact baseline digest.
 
 Do not change this status to `READY_FOR_HUMAN_AND_INDEPENDENT_REVIEW` until all
@@ -49,12 +51,15 @@ LayerCake v25, Qwen2.5-0.5B, and Pythia-160M codec/conformance environments.
 Do not broaden it into tensor transplantation, native hidden-state
 injection, host-model generation, arbitrary-model compatibility, human quality
 completion, external reproduction, or a global information minimum. The final
-live causality audit demonstrates that real, neutral, zero, random, shuffled,
-and removed host state cannot affect capability output because the frozen
-runtime exposes no host-state semantic input. Adapter and capability removal
-fail during live execution. Qwen/Pythia checkpoints remain frozen conformance
-participants and their tokenizers provide native units. The complete V1 1/3
-native-tensor failure remains immutable historical evidence.
+live causality audit runs eight fresh processes per host. It applies real,
+neutral, zero, deterministic-random, and deterministic-shuffled state to the
+conformance adapter; for Qwen/Pythia it also mutates a native parameter and runs
+a new forward in each state condition. Canonical capability bytes remain
+invariant. Host removal receives no checkpoint or native objects, while adapter
+and capability removal fail during live execution. Qwen/Pythia checkpoints
+remain frozen conformance participants and their tokenizers provide native
+units. The complete V1 1/3 native-tensor failure remains immutable historical
+evidence.
 
 Three gates remain external: 21,000 judgments from three real independent
 raters, independent reproduction on different hardware, and the registered
@@ -92,7 +97,7 @@ artifacts, adapters, evaluators, thresholds, or benchmarks.
 - Phase 3 machine gates pass conditionally on Phase 2.
 - Phases 4–7 hold bounded machine certificates.
 - Phase 8's original internal-readiness declaration is superseded. The repaired
-  candidate passes strict local recomputation and 64 supported tests; immutable
+  candidate passes strict local recomputation and 70 supported tests; immutable
   publication, clean public reconstruction, and fresh blind red-team remain
   mandatory before opening human or independent-hardware review.
 - The V1 final-mile native-receiver screen fails after its one bounded repair:
