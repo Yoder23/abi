@@ -3,11 +3,13 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import shutil
 from pathlib import Path
 from typing import Any, Callable, Iterable
 
+from .canonical import canonical_json_bytes, sha256_bytes
 from .final_validation import CAPABILITY_PATHS, evidence_hash
 from .strict_validation import StrictValidationError, verify
 
@@ -34,6 +36,15 @@ def _json(path: Path) -> dict[str, Any]:
 
 def _replace_json(path: Path, value: dict[str, Any]) -> None:
     path.write_bytes(json.dumps(value, indent=2, sort_keys=True).encode("utf-8") + b"\n")
+
+
+def _rehash(value: dict[str, Any]) -> dict[str, Any]:
+    value["evidence_sha256"] = evidence_hash(value)
+    return value
+
+
+def _sha256_file(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def _require_disposable(root: Path) -> None:
@@ -103,6 +114,10 @@ def run(root: Path) -> dict[str, Any]:
         )
 
     missing_file("missing_capability_package", CAPABILITY_PATHS["python"])
+    missing_file(
+        "missing_required_catalog",
+        Path("catalogs/capability_compiler_phase1_frozen_v1.json"),
+    )
 
     corrupt_target = root / CAPABILITY_PATHS["python"]
     corrupt_backup = backup_root / "corrupt-package.backup"
@@ -174,6 +189,18 @@ def run(root: Path) -> dict[str, Any]:
         )
     )
 
+    isolated_source = root / "abi_v2/isolated_certification.py"
+    isolated_source_backup = backup_root / "isolated-source.backup"
+    shutil.copy2(isolated_source, isolated_source_backup)
+    rows.append(
+        _expect_rejected(
+            root,
+            name="stale_isolated_execution_source",
+            mutate=lambda: isolated_source.write_bytes(isolated_source.read_bytes() + b"\n"),
+            restore=lambda: shutil.copy2(isolated_source_backup, isolated_source),
+        )
+    )
+
     missing_file(
         "missing_raw_mount_table",
         Path(
@@ -211,6 +238,153 @@ def run(root: Path) -> dict[str, Any]:
         )
     )
 
+
+    cert_result = root / (
+        "results/abi_final_validation_v2/isolated_certification_strict/"
+        "qwen2/certification/result.json"
+    )
+    cert_receipt = root / (
+        "results/abi_final_validation_v2/isolated_certification_strict/"
+        "qwen2/receipt.json"
+    )
+    cert_result_backup = backup_root / "cert-result.backup"
+    cert_receipt_backup = backup_root / "cert-receipt.backup"
+    shutil.copy2(cert_result, cert_result_backup)
+    shutil.copy2(cert_receipt, cert_receipt_backup)
+
+    def rehash_fabricated_certification_row() -> None:
+        value = _json(cert_result)
+        value["checks"]["roundtrip_rows"][0]["input_utf8_sha256"] = "0" * 64
+        _replace_json(cert_result, _rehash(value))
+        receipt = _json(cert_receipt)
+        receipt["result_sha256"] = _sha256_file(cert_result)
+        _replace_json(cert_receipt, _rehash(receipt))
+
+    def restore_certification_row() -> None:
+        shutil.copy2(cert_result_backup, cert_result)
+        shutil.copy2(cert_receipt_backup, cert_receipt)
+
+    rows.append(
+        _expect_rejected(
+            root,
+            name="rehashed_fabricated_certification_row",
+            mutate=rehash_fabricated_certification_row,
+            restore=restore_certification_row,
+        )
+    )
+
+    capsule_manifest = root / (
+        "results/abi_final_validation_v2/isolated_certification_strict/"
+        "layercake/certification-capsule-manifest.json"
+    )
+    capsule_receipt = root / (
+        "results/abi_final_validation_v2/isolated_certification_strict/"
+        "layercake/receipt.json"
+    )
+    capsule_manifest_backup = backup_root / "capsule-manifest.backup"
+    capsule_receipt_backup = backup_root / "capsule-receipt.backup"
+    shutil.copy2(capsule_manifest, capsule_manifest_backup)
+    shutil.copy2(capsule_receipt, capsule_receipt_backup)
+
+    def rehash_capsule_classification() -> None:
+        value = _json(capsule_manifest)
+        value["files"][0]["classification"] = "host_checkpoint"
+        _replace_json(capsule_manifest, _rehash(value))
+        receipt = _json(capsule_receipt)
+        receipt["capsule_manifest_sha256"] = _sha256_file(capsule_manifest)
+        _replace_json(capsule_receipt, _rehash(receipt))
+
+    def restore_capsule_classification() -> None:
+        shutil.copy2(capsule_manifest_backup, capsule_manifest)
+        shutil.copy2(capsule_receipt_backup, capsule_receipt)
+
+    rows.append(
+        _expect_rejected(
+            root,
+            name="rehashed_capsule_classification",
+            mutate=rehash_capsule_classification,
+            restore=restore_capsule_classification,
+        )
+    )
+
+    missing_file(
+        "missing_condition_receipt",
+        Path(
+            "results/abi_final_validation_v2/live_causality/"
+            "qwen2/conditions/zero_state.json"
+        ),
+    )
+
+    causal_base = root / "results/abi_final_validation_v2/live_causality/qwen2"
+    causal_manifest = causal_base / "manifest.json"
+    causal_observations = causal_base / "observations.jsonl"
+    random_receipt = causal_base / "conditions/random_state.json"
+    causal_manifest_backup = backup_root / "causal-manifest.backup"
+    causal_observations_backup = backup_root / "causal-observations.backup"
+    random_receipt_backup = backup_root / "random-receipt.backup"
+    shutil.copy2(causal_manifest, causal_manifest_backup)
+    shutil.copy2(causal_observations, causal_observations_backup)
+    shutil.copy2(random_receipt, random_receipt_backup)
+
+    def rehash_random_intervention() -> None:
+        receipt = _json(random_receipt)
+        intervention = receipt["intervention"]
+        intervention["values_after"][0] += 0.001
+        intervention["after_sha256"] = sha256_bytes(
+            canonical_json_bytes(intervention["values_after"])
+        )
+        intervention["intervention_sha256"] = sha256_bytes(
+            canonical_json_bytes(
+                {key: value for key, value in intervention.items() if key != "intervention_sha256"}
+            )
+        )
+        raw_rows = [
+            json.loads(line)
+            for line in causal_observations.read_text(encoding="utf-8").splitlines()
+        ]
+        condition_rows = []
+        for row in raw_rows:
+            if row["condition"] != "random_state":
+                continue
+            row["host_state"]["intervention_sha256"] = intervention[
+                "intervention_sha256"
+            ]
+            state_hash = sha256_bytes(canonical_json_bytes(row["host_state"]))
+            row["host_state_sha256"] = state_hash
+            row["applied_host_state_sha256"] = state_hash
+            condition_rows.append(row)
+        causal_observations.write_bytes(
+            b"".join(canonical_json_bytes(row) for row in raw_rows)
+        )
+        receipt["observations_sha256"] = hashlib.sha256(
+            b"".join(canonical_json_bytes(row) for row in condition_rows)
+        ).hexdigest()
+        _replace_json(random_receipt, _rehash(receipt))
+        manifest = _json(causal_manifest)
+        manifest["observations_sha256"] = _sha256_file(causal_observations)
+        process = next(
+            row
+            for row in manifest["condition_processes"]
+            if row["condition"] == "random_state"
+        )
+        process["observations_sha256"] = receipt["observations_sha256"]
+        process["receipt_sha256"] = _sha256_file(random_receipt)
+        _replace_json(causal_manifest, _rehash(manifest))
+
+    def restore_random_intervention() -> None:
+        shutil.copy2(causal_manifest_backup, causal_manifest)
+        shutil.copy2(causal_observations_backup, causal_observations)
+        shutil.copy2(random_receipt_backup, random_receipt)
+
+    rows.append(
+        _expect_rejected(
+            root,
+            name="rehashed_nondeterministic_random_intervention",
+            mutate=rehash_random_intervention,
+            restore=restore_random_intervention,
+        )
+    )
+
     repaired = verify(root)
     repaired_sha256 = evidence_hash(repaired)
     verifier_source = (root / "abi_v2/strict_validation.py").read_text(encoding="utf-8")
@@ -228,7 +402,7 @@ def run(root: Path) -> dict[str, Any]:
     ]
     passed = all(row["rejected"] for row in rows) and not forbidden_dependencies
     result = {
-        "format": "abi-v2-strict-hostile-verification/1",
+        "format": "abi-v2-strict-hostile-verification/2",
         "status": "PASS_STRICT_VERIFIER_FAILS_CLOSED" if passed else "FAIL_STRICT_HOSTILE",
         "baseline_evidence_sha256": baseline_sha256,
         "post_restore_evidence_sha256": repaired_sha256,
@@ -237,6 +411,10 @@ def run(root: Path) -> dict[str, Any]:
         "mutations_required": len(rows),
         "trusted_scientific_boolean_dependencies": forbidden_dependencies,
         "source_tree_restored": baseline_sha256 == repaired_sha256,
+        "strict_verifier_source_sha256": _sha256_file(
+            root / "abi_v2/strict_validation.py"
+        ),
+        "hostile_verifier_source_sha256": _sha256_file(Path(__file__).resolve()),
     }
     result["evidence_sha256"] = evidence_hash(result)
     return result

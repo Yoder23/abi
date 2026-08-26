@@ -10,9 +10,9 @@ from __future__ import annotations
 
 import argparse
 import hashlib
-import inspect
 import json
 import math
+import random
 import statistics
 from pathlib import Path
 from typing import Any, Iterable, Mapping
@@ -23,11 +23,12 @@ from .canonical import canonical_json_bytes, sha256_bytes, verify_reference
 from .capability_matrix import (
     CAPABILITIES,
     DOMAINS,
-    FrozenHostAdapter,
     _matrix_records,
     _source_references,
 )
 from .final_validation import CAPABILITY_PATHS, HOSTS, MATRIX_DIRS, evidence_hash
+from .host_certification import _neutral_texts
+from .isolated_certification import ALLOWED_CLASSIFICATIONS, _mount_rows
 from .live_causality import CONDITIONS, SAMPLE_SEED, _selected
 
 EVIDENCE_ROOT = Path("results/abi_final_validation_v2")
@@ -102,15 +103,6 @@ def verify_evidence_hash(value: Mapping[str, Any], *, label: str) -> None:
         raise StrictValidationError(f"stale or invalid evidence hash: {label}")
 
 
-def _effective_mount(mountinfo: str, target: str) -> str:
-    rows = [
-        line
-        for line in mountinfo.splitlines()
-        if len(line.split()) > 4 and line.split()[4] == target
-    ]
-    return rows[-1] if rows else ""
-
-
 def verify_certifications(
     root: Path, certification_root: Path | None = None
 ) -> dict[str, Any]:
@@ -123,6 +115,7 @@ def verify_certifications(
         else certification_root.resolve()
     )
     adapter_manifest = read_json(root / "results/abi_v2/adapters/manifest.json")
+    model_manifest = read_json(root / "external_reproduction/model_download_manifest.json")
     suite = read_json(root / "abi_v2/conformance_suite.json")
     spec = read_json(root / "abi_v2/canonical_spec.json")
     reference_path = root / suite["reference_vectors"]["path"]
@@ -175,11 +168,77 @@ def verify_certifications(
         capsule_by_path = {str(row.get("path")): row for row in capsule_files}
         if len(capsule_by_path) != len(capsule_files):
             raise StrictValidationError(f"duplicate capsule inventory path: {host}")
-        if any(
-            Path(path).suffix.casefold() in FORBIDDEN_CAPABILITY_SUFFIXES
-            or "source_success" in path.casefold()
-            for path in capsule_by_path
-        ):
+        if capsule.get("allowed_classifications") != sorted(ALLOWED_CLASSIFICATIONS):
+            raise StrictValidationError(f"capsule classification policy changed: {host}")
+        expected_capsule_sources: dict[str, tuple[Path | None, str]] = {
+            "abi_release/abi_v2/__init__.py": (root / "abi_v2/__init__.py", "adapter_certification_code"),
+            "abi_release/abi_v2/canonical.py": (root / "abi_v2/canonical.py", "adapter_certification_code"),
+            "abi_release/abi_v2/certification_pivot_runner.sh": (
+                root / "abi_v2/certification_pivot_runner.sh",
+                "adapter_certification_code",
+            ),
+            "abi_release/abi_v2/host_certification.py": (
+                root / "abi_v2/host_certification.py",
+                "adapter_certification_code",
+            ),
+            "abi_release/abi_v2/isolated_certification.py": (
+                root / "abi_v2/isolated_certification.py",
+                "adapter_certification_code",
+            ),
+            "abi_release/abi_v2/canonical_spec.json": (
+                root / "abi_v2/canonical_spec.json",
+                "abi_specification",
+            ),
+            "abi_release/abi_v2/conformance_suite.json": (
+                root / "abi_v2/conformance_suite.json",
+                "abi_specification",
+            ),
+            "abi_release/abi_v2/reference_vectors/core_vectors.json": (
+                root / "abi_v2/reference_vectors/core_vectors.json",
+                "generic_certification_corpus",
+            ),
+        }
+        if host == "layercake":
+            expected_capsule_sources[
+                "layercake_release/layercake_extensions/route_isolated_clarification_core_v25.py"
+            ] = (
+                root.parent
+                / "layercake_release/layercake_extensions/route_isolated_clarification_core_v25.py",
+                "host_code",
+            )
+        else:
+            model_files = model_manifest["models"][host]["files"]
+            for name in model_files:
+                expected_capsule_sources[f"abi_release/host_snapshot/{name}"] = (
+                    None,
+                    "host_checkpoint",
+                )
+        if set(capsule_by_path) != set(expected_capsule_sources):
+            raise StrictValidationError(f"capsule allowlist changed: {host}")
+        capability_count = 0
+        success_ledger_count = 0
+        for path, row in capsule_by_path.items():
+            source, classification = expected_capsule_sources[path]
+            if row.get("classification") != classification:
+                raise StrictValidationError(f"capsule classification changed: {host}/{path}")
+            if Path(path).suffix.casefold() in FORBIDDEN_CAPABILITY_SUFFIXES:
+                capability_count += 1
+            if "source_success" in path.casefold():
+                success_ledger_count += 1
+            if source is not None and (
+                int(row.get("bytes", -1)) != source.stat().st_size
+                or row.get("sha256") != sha256_file(source)
+            ):
+                raise StrictValidationError(f"stale executed capsule source: {host}/{path}")
+            if source is None:
+                name = Path(path).name
+                expected_model_file = model_manifest["models"][host]["files"][name]
+                if (
+                    int(row.get("bytes", -1)) != int(expected_model_file["bytes"])
+                    or row.get("sha256") != expected_model_file["sha256"]
+                ):
+                    raise StrictValidationError(f"host checkpoint capsule changed: {host}/{name}")
+        if capability_count or success_ledger_count:
             raise StrictValidationError(f"forbidden payload entered certification: {host}")
         physical_inventory = isolation.get("capsule", {}).get("inventory")
         if not isinstance(physical_inventory, list):
@@ -195,11 +254,67 @@ def verify_certifications(
         }
         if physical_by_path != expected_physical:
             raise StrictValidationError(f"physical capsule bytes differ from manifest: {host}")
-        effective = _effective_mount(mountinfo, "/mnt/c")
-        if effective and " - tmpfs " not in effective:
-            raise StrictValidationError(f"development drive was visible to worker: {host}")
+        mount_rows = _mount_rows(mountinfo)
+        mount_by_point = {str(row["mount_point"]): row for row in mount_rows}
+        runtime_site = isolation.get("mount", {}).get("runtime_site_mount")
+        allowed_mounts = {
+            "/",
+            "/capsule",
+            "/dev",
+            "/dev/null",
+            "/dev/random",
+            "/dev/urandom",
+            "/dev/zero",
+            "/etc",
+            "/proc",
+            "/usr",
+            runtime_site,
+        }
+        if (
+            not isinstance(runtime_site, str)
+            or not runtime_site.startswith("/home/")
+            or not runtime_site.endswith("/site-packages")
+            or set(mount_by_point) != allowed_mounts
+            or isolation.get("mount", {}).get("allowed_mount_points")
+            != sorted(allowed_mounts)
+            or isolation.get("mount", {}).get("mounts") != mount_rows
+            or mount_by_point["/"]["filesystem_type"] != "tmpfs"
+            or mount_by_point["/dev"]["filesystem_type"] != "tmpfs"
+            or mount_by_point["/proc"]["filesystem_type"] != "proc"
+            or any(
+                "ro" not in mount_by_point[path]["mount_options"]
+                for path in ("/usr", "/etc", runtime_site, "/dev/null", "/dev/zero", "/dev/random", "/dev/urandom")
+            )
+            or any(path.startswith("/mnt") or path.startswith("/oldroot") for path in mount_by_point)
+        ):
+            raise StrictValidationError(f"pivot-root filesystem policy changed: {host}")
         if isolation.get("mount", {}).get("mountinfo_sha256") != sha256_file(mount_path):
             raise StrictValidationError(f"raw mount table binding changed: {host}")
+        forbidden_scan = isolation.get("reachable_filesystem_forbidden_scan")
+        if (
+            not isinstance(forbidden_scan, dict)
+            or forbidden_scan.get("scan_root") != "/"
+            or forbidden_scan.get("excluded_virtual_roots") != ["/dev", "/proc"]
+            or int(forbidden_scan.get("directories_scanned", 0)) <= 0
+            or int(forbidden_scan.get("files_scanned", 0)) <= len(capsule_files)
+            or forbidden_scan.get("capability_archive_paths") != []
+            or forbidden_scan.get("source_success_ledger_paths") != []
+        ):
+            raise StrictValidationError(f"reachable-root forbidden scan changed: {host}")
+        if int(isolation.get("process_id", -1)) != 1 or int(
+            isolation.get("parent_process_id", -1)
+        ) != 0:
+            raise StrictValidationError(f"private PID namespace changed: {host}")
+        executed_bindings = {
+            "executed_isolated_certification_sha256": root
+            / "abi_v2/isolated_certification.py",
+            "executed_pivot_runner_sha256": root
+            / "abi_v2/certification_pivot_runner.sh",
+            "executed_host_certification_sha256": root / "abi_v2/host_certification.py",
+        }
+        for field, source in executed_bindings.items():
+            if receipt.get(field) != sha256_file(source):
+                raise StrictValidationError(f"stale certification execution source: {host}/{field}")
         expected_adapter = adapter_manifest["adapters"][host]["sha256"]
         if sha256_file(adapter_path) != expected_adapter:
             raise StrictValidationError(f"adapter bytes changed: {host}")
@@ -232,15 +347,20 @@ def verify_certifications(
             result["certification_data"]["examples"]
         ):
             raise StrictValidationError(f"roundtrip raw rows missing: {host}")
-        if any(
-            row.get("input_utf8_sha256") != row.get("decoded_utf8_sha256")
-            or int(row.get("input_utf8_bytes", -1)) != int(row.get("decoded_utf8_bytes", -2))
-            for row in roundtrips
+        expected_texts = _neutral_texts(
+            int(suite["certification_data"]["generated_roundtrip_records"])
+        )
+        expected_hashes = [hashlib.sha256(text.encode("utf-8")).hexdigest() for text in expected_texts]
+        expected_bytes = [len(text.encode("utf-8")) for text in expected_texts]
+        if len(roundtrips) != len(expected_texts) or any(
+            row.get("input_utf8_sha256") != expected_hashes[position]
+            or row.get("decoded_utf8_sha256") != expected_hashes[position]
+            or int(row.get("input_utf8_bytes", -1)) != expected_bytes[position]
+            or int(row.get("decoded_utf8_bytes", -2)) != expected_bytes[position]
+            for position, row in enumerate(roundtrips)
         ):
-            raise StrictValidationError(f"native roundtrip changed bytes: {host}")
-        if result["certification_data"].get("example_sha256") != [
-            row["input_utf8_sha256"] for row in roundtrips
-        ]:
+            raise StrictValidationError(f"deterministic certification corpus changed: {host}")
+        if result["certification_data"].get("example_sha256") != expected_hashes:
             raise StrictValidationError(f"certification corpus hashes changed: {host}")
         forwards = checks.get("native_forward_rows")
         if not isinstance(forwards, list):
@@ -248,14 +368,27 @@ def verify_certifications(
         if len(forwards) != int(checks.get("native_forward_records", -1)):
             raise StrictValidationError(f"native forward depth changed: {host}")
         if any(
-            int(row.get("finite_values", -1)) != int(row.get("total_values", -2))
-            for row in forwards
+            int(row.get("position", -1)) != position
+            or row.get("input_utf8_sha256") != expected_hashes[position]
+            or int(row.get("input_units", 0)) <= 0
+            or int(row.get("finite_values", -1)) != int(row.get("total_values", -2))
+            for position, row in enumerate(forwards)
         ):
             raise StrictValidationError(f"non-finite native forward: {host}")
         if checks.get("native_argmax_id_hashes", []) != [
             row["argmax_id_sha256"] for row in forwards
         ]:
             raise StrictValidationError(f"native forward hashes changed: {host}")
+        expected_snapshot = [] if host == "layercake" else [
+            {
+                "name": name,
+                "bytes": int(binding["bytes"]),
+                "sha256": binding["sha256"],
+            }
+            for name, binding in sorted(model_manifest["models"][host]["files"].items())
+        ]
+        if result.get("snapshot_inventory") != expected_snapshot:
+            raise StrictValidationError(f"certification snapshot inventory changed: {host}")
 
         alone = [float(value) for value in performance.get("host_alone_seconds", [])]
         adapted = [float(value) for value in performance.get("host_plus_idle_adapter_seconds", [])]
@@ -281,8 +414,20 @@ def verify_certifications(
     return {
         "hosts": hosts,
         "hosts_verified": len(hosts),
-        "physical_capability_archives_present": 0,
-        "physical_source_success_ledgers_present": 0,
+        "physical_capability_archives_present": sum(
+            int(Path(row["path"]).suffix.casefold() in FORBIDDEN_CAPABILITY_SUFFIXES)
+            for host in HOSTS
+            for row in read_json(
+                certification_root / host / "certification-capsule-manifest.json"
+            )["files"]
+        ),
+        "physical_source_success_ledgers_present": sum(
+            int("source_success" in str(row["path"]).casefold())
+            for host in HOSTS
+            for row in read_json(
+                certification_root / host / "certification-capsule-manifest.json"
+            )["files"]
+        ),
     }
 
 
@@ -395,15 +540,17 @@ def verify_live_causality(
         capability: [str(row["probe_id"]) for row in expected_selected[capability]]
         for capability in CAPABILITIES
     }
+    expected_prompt_hashes = {
+        (capability, str(row["probe_id"])): hashlib.sha256(
+            str(row["prompt"]).encode("utf-8")
+        ).hexdigest()
+        for capability in CAPABILITIES
+        for row in expected_selected[capability]
+    }
     current_packages = {
         capability: sha256_file(root / path)
         for capability, path in CAPABILITY_PATHS.items()
     }
-    state_channel_supported = "host_state" in inspect.signature(
-        FrozenHostAdapter.realize
-    ).parameters
-    if state_channel_supported:
-        raise StrictValidationError("frozen adapter unexpectedly accepts host semantic state")
     all_rows: dict[str, dict[tuple[str, str, str], dict[str, Any]]] = {}
     by_host: dict[str, Any] = {}
     positive_conditions = CONDITIONS[:6]
@@ -411,6 +558,8 @@ def verify_live_causality(
         base_path = causality_root / host
         manifest = read_json(base_path / "manifest.json")
         verify_evidence_hash(manifest, label=f"causality/{host}/manifest")
+        if manifest.get("format") != "abi-v2-live-host-causality-run/2":
+            raise StrictValidationError(f"live causality format changed: {host}")
         rows = read_jsonl(base_path / "observations.jsonl")
         if manifest.get("observations_sha256") != sha256_file(
             base_path / "observations.jsonl"
@@ -426,12 +575,6 @@ def verify_live_causality(
             raise StrictValidationError(f"live causal selected IDs changed: {host}")
         if manifest.get("conditions") != list(CONDITIONS):
             raise StrictValidationError(f"live causal interventions changed: {host}")
-        if manifest.get("adapter_sha256_before") != adapters[host]["sha256"] or manifest.get(
-            "adapter_sha256_after"
-        ) != adapters[host]["sha256"]:
-            raise StrictValidationError(f"causal adapter changed: {host}")
-        if manifest.get("capability_sha256") != current_packages:
-            raise StrictValidationError(f"causal capability bytes changed: {host}")
         expected_count = len(CAPABILITIES) * 32 * len(CONDITIONS)
         if len(rows) != expected_count or manifest.get("observations_rows") != expected_count:
             raise StrictValidationError(f"live causal raw row depth changed: {host}")
@@ -449,13 +592,155 @@ def verify_live_causality(
         }
         if set(index) != expected_keys:
             raise StrictValidationError(f"live causal row set changed: {host}")
+        if any(
+            row.get("prompt_sha256")
+            != expected_prompt_hashes[(capability, probe_id)]
+            for (_, capability, probe_id), row in index.items()
+        ):
+            raise StrictValidationError(f"live causal prompt binding changed: {host}")
+
+        processes = manifest.get("condition_processes")
+        if not isinstance(processes, list) or len(processes) != len(CONDITIONS):
+            raise StrictValidationError(f"fresh condition process ledger missing: {host}")
+        process_by_condition = {str(row.get("condition")): row for row in processes}
+        if set(process_by_condition) != set(CONDITIONS):
+            raise StrictValidationError(f"fresh condition process set changed: {host}")
+        process_ids = [int(process_by_condition[name].get("process_id", -1)) for name in CONDITIONS]
+        if any(value <= 0 for value in process_ids) or len(set(process_ids)) != len(CONDITIONS):
+            raise StrictValidationError(f"causal conditions did not use fresh processes: {host}")
+        condition_receipts: dict[str, dict[str, Any]] = {}
+        for condition in CONDITIONS:
+            receipt_path = base_path / "conditions" / f"{condition}.json"
+            receipt = read_json(receipt_path)
+            verify_evidence_hash(receipt, label=f"causality/{host}/{condition}")
+            if (
+                receipt.get("format") != "abi-v2-live-host-condition/2"
+                or receipt.get("host") != host
+                or receipt.get("condition") != condition
+                or receipt.get("execution_source_sha256") != sha256_file(source_path)
+                or receipt.get("adapter_sha256") != adapters[host]["sha256"]
+                or receipt.get("capability_sha256") != current_packages
+                or int(receipt.get("process_id", -1)) != process_by_condition[condition][
+                    "process_id"
+                ]
+                or sha256_file(receipt_path)
+                != process_by_condition[condition]["receipt_sha256"]
+            ):
+                raise StrictValidationError(f"condition receipt binding changed: {host}/{condition}")
+            condition_rows = [row for row in rows if row.get("condition") == condition]
+            condition_bytes = b"".join(canonical_json_bytes(row) for row in condition_rows)
+            if (
+                len(condition_rows) != len(CAPABILITIES) * 32
+                or receipt.get("observations_rows") != len(condition_rows)
+                or receipt.get("observations_sha256")
+                != hashlib.sha256(condition_bytes).hexdigest()
+                or process_by_condition[condition].get("observations_sha256")
+                != receipt.get("observations_sha256")
+            ):
+                raise StrictValidationError(f"condition raw rows changed: {host}/{condition}")
+            intervention = receipt.get("intervention")
+            if not isinstance(intervention, dict):
+                raise StrictValidationError(f"condition intervention missing: {host}/{condition}")
+            intervention_payload = {
+                key: value
+                for key, value in intervention.items()
+                if key != "intervention_sha256"
+            }
+            if intervention.get("intervention_sha256") != sha256_bytes(
+                canonical_json_bytes(intervention_payload)
+            ):
+                raise StrictValidationError(f"condition intervention hash changed: {host}/{condition}")
+            before = intervention.get("values_before")
+            after = intervention.get("values_after")
+            if not isinstance(before, list) or not isinstance(after, list):
+                raise StrictValidationError(f"condition intervention rows missing: {host}/{condition}")
+            if intervention.get("kind") == "live_native_parameter_intervention":
+                if (
+                    len(before) != len(after)
+                    or int(intervention.get("elements_intervened", -1)) != len(before)
+                    or intervention.get("before_sha256")
+                    != sha256_bytes(canonical_json_bytes(before))
+                    or intervention.get("after_sha256")
+                    != sha256_bytes(canonical_json_bytes(after))
+                    or any(not math.isfinite(float(value)) for value in (*before, *after))
+                ):
+                    raise StrictValidationError(
+                        f"native intervention bytes unrecomputable: {host}/{condition}"
+                    )
+                expected_seed = (
+                    f"{SAMPLE_SEED}:{host}:{condition}:"
+                    f"{intervention.get('parameter_name')}"
+                )
+                if intervention.get("seed") != expected_seed:
+                    raise StrictValidationError(f"native intervention seed changed: {host}")
+                if condition == "neutral_host" and any(
+                    float(value) != 0.5 for value in after
+                ):
+                    raise StrictValidationError(f"neutral host mutation malformed: {host}")
+                if condition == "zero_state" and any(
+                    float(value) != 0.0 for value in after
+                ):
+                    raise StrictValidationError(f"zero-state mutation malformed: {host}")
+                if condition == "random_state":
+                    generator = random.Random(expected_seed)
+                    expected_after = [
+                        generator.randrange(-32, 33) / 1024.0
+                        for _ in range(len(before))
+                    ]
+                    if after != expected_after:
+                        raise StrictValidationError(f"random-state mutation malformed: {host}")
+                if condition == "shuffled_state":
+                    expected_after = list(before)
+                    random.Random(expected_seed).shuffle(expected_after)
+                    if after != expected_after:
+                        raise StrictValidationError(f"shuffled-state mutation malformed: {host}")
+                should_mutate = condition in {
+                    "neutral_host",
+                    "zero_state",
+                    "random_state",
+                    "shuffled_state",
+                }
+                if should_mutate != (after != before):
+                    raise StrictValidationError(f"native intervention was not applied: {host}/{condition}")
+            elif host != "layercake" and condition != "host_removed":
+                raise StrictValidationError(f"native intervention tensor absent: {host}/{condition}")
+            native = receipt.get("native_host")
+            if not isinstance(native, dict):
+                raise StrictValidationError(f"native execution identity missing: {host}/{condition}")
+            if condition == "host_removed":
+                if (
+                    receipt.get("snapshot_argument") != "absent"
+                    or int(native.get("parameter_count", -1)) != 0
+                    or native.get("runtime_mode")
+                    != "physically_removed_no_snapshot_no_object"
+                    or intervention.get("kind") != "structural_native_host_absence"
+                    or intervention.get("values_before") != []
+                    or intervention.get("values_after") != []
+                ):
+                    raise StrictValidationError(f"host removal was not physical: {host}")
+            elif host != "layercake" and (
+                receipt.get("snapshot_argument") != "present"
+                or int(native.get("parameter_count", 0)) <= 0
+                or native.get("runtime_mode") != "live_transformer_checkpoint"
+                or native.get("snapshot_inventory_sha256")
+                != merged["host_registry"][host]["snapshot_inventory_sha256"]
+                or native.get("checkpoint_sha256")
+                != merged["host_registry"][host]["checkpoint_sha256"]
+                or native.get("tokenizer_sha256")
+                != merged["host_registry"][host]["tokenizer_sha256"]
+            ):
+                raise StrictValidationError(f"native host did not execute live: {host}/{condition}")
+            elif host == "layercake" and (
+                receipt.get("snapshot_argument") != "absent"
+                or int(native.get("parameter_count", -1)) != 0
+                or native.get("runtime_mode") != "capability_native_layercake_host"
+            ):
+                raise StrictValidationError(f"LayerCake host identity changed: {condition}")
+            condition_receipts[condition] = receipt
 
         for capability, ids in expected_ids.items():
             for probe_id in ids:
                 real = index[("real_host", capability, probe_id)]
-                real_state = [float(value) for value in real.get("state_vector", [])]
-                if not real_state:
-                    raise StrictValidationError(f"real causal state invalid: {host}/{capability}/{probe_id}")
                 for condition in positive_conditions:
                     row = index[(condition, capability, probe_id)]
                     output = row.get("capability_output")
@@ -472,9 +757,55 @@ def verify_live_causality(
                         "realized_output_sha256"
                     ):
                         raise StrictValidationError(f"live realized output hash changed: {host}")
-                    state = [float(value) for value in row.get("state_vector", [])]
-                    if row.get("state_sha256") != sha256_bytes(canonical_json_bytes(state)):
-                        raise StrictValidationError(f"live state hash changed: {host}")
+                    state = row.get("host_state")
+                    if not isinstance(state, dict) or set(state) != {
+                        "condition",
+                        "intervention_sha256",
+                        "state_vector",
+                    }:
+                        raise StrictValidationError(f"applied host-state schema changed: {host}")
+                    state_vector = state["state_vector"]
+                    if not isinstance(state_vector, list) or any(
+                        not math.isfinite(float(value)) for value in state_vector
+                    ):
+                        raise StrictValidationError(f"applied host state invalid: {host}")
+                    expected_state_hash = sha256_bytes(canonical_json_bytes(state))
+                    if (
+                        state.get("condition") != condition
+                        or state.get("intervention_sha256")
+                        != condition_receipts[condition]["intervention"][
+                            "intervention_sha256"
+                        ]
+                        or row.get("host_state_sha256") != expected_state_hash
+                        or row.get("applied_host_state_sha256") != expected_state_hash
+                    ):
+                        raise StrictValidationError(f"host state was not consumed live: {host}")
+                    if host == "layercake":
+                        prompt_hash = expected_prompt_hashes[(capability, probe_id)]
+                        if condition == "real_host":
+                            expected_layercake_state = [1.0]
+                        elif condition == "neutral_host":
+                            expected_layercake_state = [0.5]
+                        elif condition == "zero_state":
+                            expected_layercake_state = [0.0]
+                        elif condition == "random_state":
+                            expected_layercake_state = [
+                                random.Random(
+                                    f"{SAMPLE_SEED}:{host}:{condition}:{prompt_hash}"
+                                ).uniform(-1.0, 1.0)
+                            ]
+                        elif condition == "shuffled_state":
+                            expected_layercake_state = [1.0]
+                        else:
+                            expected_layercake_state = []
+                        if state_vector != expected_layercake_state:
+                            raise StrictValidationError(
+                                f"LayerCake state intervention changed: {condition}/{probe_id}"
+                            )
+                    elif condition != "host_removed" and len(state_vector) != 32:
+                        raise StrictValidationError(
+                            f"native forward state depth changed: {host}/{condition}"
+                        )
                     if row.get("actions_sha256") != sha256_bytes(
                         canonical_json_bytes([int(value) for value in row.get("actions", [])])
                     ):
@@ -483,30 +814,58 @@ def verify_live_causality(
                         raise StrictValidationError(
                             f"host-state intervention changed output: {host}/{condition}/{capability}/{probe_id}"
                         )
-                    if condition == "neutral_host" and any(value != 0.5 for value in state):
-                        raise StrictValidationError(f"neutral state malformed: {host}")
-                    if condition == "zero_state" and any(value != 0.0 for value in state):
-                        raise StrictValidationError(f"zero state malformed: {host}")
-                    if condition == "random_state" and (state == real_state or not state):
-                        raise StrictValidationError(f"random state malformed: {host}")
-                    if condition == "shuffled_state" and sorted(state) != sorted(real_state):
-                        raise StrictValidationError(f"shuffled state malformed: {host}")
-                    if condition == "host_removed" and state:
+                    if condition == "host_removed" and state_vector:
                         raise StrictValidationError(f"host-removed state present: {host}")
                 adapter_removed = index[("adapter_removed", capability, probe_id)]
+                adapter_state = adapter_removed.get("host_state")
+                adapter_state_hash = (
+                    sha256_bytes(canonical_json_bytes(adapter_state))
+                    if isinstance(adapter_state, dict)
+                    else None
+                )
                 if (
                     not isinstance(adapter_removed.get("capability_output"), str)
                     or adapter_removed.get("realized_output") is not None
                     or not adapter_removed.get("exception_type")
+                    or not isinstance(adapter_state, dict)
+                    or set(adapter_state) != {
+                        "condition",
+                        "intervention_sha256",
+                        "state_vector",
+                    }
+                    or adapter_state.get("condition") != "adapter_removed"
+                    or adapter_state.get("intervention_sha256")
+                    != condition_receipts["adapter_removed"]["intervention"][
+                        "intervention_sha256"
+                    ]
+                    or adapter_removed.get("host_state_sha256") != adapter_state_hash
                 ):
                     raise StrictValidationError(f"adapter removal did not fail live: {host}")
                 if adapter_removed["capability_output"] != real["capability_output"]:
                     raise StrictValidationError(f"adapter-removal generation was not live: {host}")
                 capability_removed = index[("capability_removed", capability, probe_id)]
+                removed_state = capability_removed.get("host_state")
+                removed_state_hash = (
+                    sha256_bytes(canonical_json_bytes(removed_state))
+                    if isinstance(removed_state, dict)
+                    else None
+                )
                 if (
                     capability_removed.get("capability_output") is not None
                     or capability_removed.get("realized_output") is not None
                     or not capability_removed.get("exception_type")
+                    or not isinstance(removed_state, dict)
+                    or set(removed_state) != {
+                        "condition",
+                        "intervention_sha256",
+                        "state_vector",
+                    }
+                    or removed_state.get("condition") != "capability_removed"
+                    or removed_state.get("intervention_sha256")
+                    != condition_receipts["capability_removed"]["intervention"][
+                        "intervention_sha256"
+                    ]
+                    or capability_removed.get("host_state_sha256") != removed_state_hash
                 ):
                     raise StrictValidationError(f"capability removal did not fail live: {host}")
         all_rows[host] = index
@@ -515,6 +874,14 @@ def verify_live_causality(
             "live_positive_executions": len(CAPABILITIES) * 32 * len(positive_conditions),
             "live_adapter_removals": len(CAPABILITIES) * 32,
             "live_capability_removals": len(CAPABILITIES) * 32,
+            "fresh_condition_processes": len(process_ids),
+            "applied_native_parameter_interventions": sum(
+                int(
+                    receipt["intervention"].get("kind")
+                    == "live_native_parameter_intervention"
+                )
+                for receipt in condition_receipts.values()
+            ),
         }
 
     cross_host = 0
@@ -533,12 +900,13 @@ def verify_live_causality(
         "hosts": by_host,
         "raw_rows": sum(row["raw_rows"] for row in by_host.values()),
         "cross_host_real_outputs_equal": cross_host,
-        "state_channel_supported": state_channel_supported,
+        "applied_host_state_channel": "AppliedHostStateAdapter.realize(host_state=...)",
         "causal_conclusion": (
-            "The new live executions confirm that the frozen capability runtime is semantically "
-            "standalone: real, neutral, zero, random, shuffled, and removed host states produce "
-            "identical capability outputs because the frozen adapter exposes no host-state channel. "
-            "Removing the adapter fails realization, while removing a capability fails generation."
+            "Eight fresh processes per host execute the frozen release. Qwen/Pythia neutral, zero, "
+            "random, and shuffled conditions mutate a live native parameter tensor and run new "
+            "forwards; every positive state is consumed by the conformance adapter while canonical "
+            "capability bytes remain invariant. Host removal receives no checkpoint path or native "
+            "objects. Adapter removal fails realization and capability removal fails generation."
         ),
     }
 
@@ -658,9 +1026,15 @@ def required_input_manifest(root: Path) -> dict[str, Any]:
     root = root.resolve()
     paths = {
         root / "abi/capability_compiler_phase2_common.py",
+        root / "abi/capability_compiler_phase2_teacher.py",
+        root / "abi/capability_compiler_phase4_b20_v25_physical_screen.py",
+        root / "abi/capability_compiler_phase5_construct_screen.py",
+        root / "abi/capability_compiler_phase5_selective_product.py",
+        root / "abi_v2/__init__.py",
         root / "abi_v2/canonical.py",
         root / "abi_v2/canonical_spec.json",
         root / "abi_v2/capability_matrix.py",
+        root / "abi_v2/certification_pivot_runner.sh",
         root / "abi_v2/conformance_suite.json",
         root / "abi_v2/final_validation.py",
         root / "abi_v2/host_certification.py",
@@ -670,7 +1044,19 @@ def required_input_manifest(root: Path) -> dict[str, Any]:
         root / "abi_v2/matrix_protocol.json",
         root / "abi_v2/matrix_protocol_amendment3.json",
         root / "abi_v2/strict_validation.py",
+        root / "external_reproduction/model_download_manifest.json",
+        root / "catalogs/capability_compiler_phase1_frozen_v1.json",
+        root
+        / "evidence/current/segregation/english_and_first_domains_certification_v6.json",
+        root
+        / "results/abi_capability_compiler_phase4_clarification_route_replication/"
+        "B40-seed104729-v927/evaluation/development_outputs.jsonl",
+        root
+        / "results/abi_capability_compiler_phase6_composition/run_v1032/"
+        "seed104729/observations.jsonl",
         root / "results/abi_v2/adapters/manifest.json",
+        root.parent
+        / "layercake_release/layercake_extensions/route_isolated_clarification_core_v25.py",
     }
     protocol = read_json(root / "abi_v2/matrix_protocol_amendment3.json")
     base = read_json(root / protocol["base_protocol"])
@@ -700,12 +1086,24 @@ def required_input_manifest(root: Path) -> dict[str, Any]:
                 root / ISOLATION_ROOT / host / "observations.jsonl",
             }
         )
+        paths.update(
+            root / CAUSALITY_ROOT / host / "conditions" / f"{condition}.json"
+            for condition in CONDITIONS
+        )
     files = []
     for path in sorted(paths, key=lambda value: value.as_posix()):
         try:
             relative = path.resolve().relative_to(root).as_posix()
-        except ValueError as exc:
-            raise StrictValidationError(f"required input escaped release root: {path}") from exc
+        except ValueError:
+            layercake_root = (root.parent / "layercake_release").resolve()
+            try:
+                relative = "@layercake_release/" + path.resolve().relative_to(
+                    layercake_root
+                ).as_posix()
+            except ValueError as exc:
+                raise StrictValidationError(
+                    f"required input escaped release roots: {path}"
+                ) from exc
         if not path.is_file():
             raise StrictValidationError(f"required file missing: {path}")
         try:
@@ -727,20 +1125,27 @@ def required_input_manifest(root: Path) -> dict[str, Any]:
 
 
 def verify(root: Path) -> dict[str, Any]:
-    certification = verify_certifications(root)
-    matrix = verify_locked_matrix_rows(root)
-    causality = verify_live_causality(root)
-    isolation = verify_live_isolation(root)
-    return {
-        "format": "abi-v2-strict-final-validation/1",
-        "status": "PASS_STRICT_RAW_RECOMPUTATION",
-        "certification": certification,
-        "locked_matrix": matrix,
-        "live_causality": causality,
-        "live_isolation": isolation,
-        "required_inputs": required_input_manifest(root),
-        "trusted_scientific_booleans_consumed": 0,
-    }
+    try:
+        certification = verify_certifications(root)
+        matrix = verify_locked_matrix_rows(root)
+        causality = verify_live_causality(root)
+        isolation = verify_live_isolation(root)
+        return {
+            "format": "abi-v2-strict-final-validation/2",
+            "status": "PASS_STRICT_RAW_RECOMPUTATION",
+            "certification": certification,
+            "locked_matrix": matrix,
+            "live_causality": causality,
+            "live_isolation": isolation,
+            "required_inputs": required_input_manifest(root),
+            "trusted_scientific_booleans_consumed": 0,
+        }
+    except StrictValidationError:
+        raise
+    except Exception as exc:
+        raise StrictValidationError(
+            f"required scientific claim is unrecomputable: {type(exc).__name__}: {exc}"
+        ) from exc
 
 
 def main(argv: Iterable[str] | None = None) -> int:
@@ -750,16 +1155,21 @@ def main(argv: Iterable[str] | None = None) -> int:
     args = parser.parse_args(argv)
     try:
         value = verify(Path(args.root))
-    except StrictValidationError as exc:
-        print(json.dumps({"status": "FAIL_CLOSED", "error": str(exc)}, indent=2))
+        value["evidence_sha256"] = evidence_hash(value)
+        if args.output:
+            path = Path(args.root).resolve() / args.output
+            if path.exists():
+                raise StrictValidationError(f"immutable strict verifier output exists: {path}")
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(
+                json.dumps(value, indent=2, sort_keys=True).encode("utf-8") + b"\n"
+            )
+    except Exception as exc:
+        error = exc if isinstance(exc, StrictValidationError) else StrictValidationError(
+            f"verifier failed closed: {type(exc).__name__}: {exc}"
+        )
+        print(json.dumps({"status": "FAIL_CLOSED", "error": str(error)}, indent=2))
         return 2
-    value["evidence_sha256"] = evidence_hash(value)
-    if args.output:
-        path = Path(args.root).resolve() / args.output
-        if path.exists():
-            raise StrictValidationError(f"immutable strict verifier output exists: {path}")
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_bytes(json.dumps(value, indent=2, sort_keys=True).encode("utf-8") + b"\n")
     print(json.dumps(value, indent=2, sort_keys=True))
     return 0
 

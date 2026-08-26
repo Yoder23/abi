@@ -1,19 +1,23 @@
 {
   "adapter_sha256": "b13a75b82acf6df412c2569edaf36654a105b8c565164236fbeb5813b630291f",
-  "capsule_manifest_sha256": "4187422ae481abea353a81f3b1a4f5c26bf8adcd9eee94b8d1baf2c42705fdfb",
+  "capsule_manifest_sha256": "f57d5d36bc1feb9e6418177ef27c24ac6acf7bf22669c624dda9db13a958619f",
   "device": "cpu",
-  "evidence_sha256": "e210c4b8b0efba517dce146d8ed478f64062e8b9746a65447b7253e81b313c76",
+  "evidence_sha256": "fd14403dd8a2d0e55cc88a3dcda13b69a303bc4fe71086dbd25c9648d6e26a89",
+  "executed_host_certification_sha256": "c1c7765e096d1b8caf3d3f09f8c585aeb920935ff6c29e747fd8070282baf394",
+  "executed_isolated_certification_sha256": "355ad5445847e8d7671f86c9ff9d493f2e4f574c9d0045d48f582c6485684725",
+  "executed_pivot_runner_sha256": "c7c08c3f9faad96dfaa449b88e0597a60b110f5ef1036334094dda1c24be1528",
   "format": "abi-v2-isolated-host-certification-receipt/1",
   "host_key": "qwen2",
-  "isolation_evidence_sha256": "e7ed3cf4856fabf71ec22e10bcbfd74874fed11294b6c35f249f918fb5d95531",
+  "isolation_evidence_sha256": "49a0adb636a627ecdeed4f04dbd97f90627ee2a66629b14a00c74cbb10d4a5cb",
   "launcher": {
     "distribution": "Ubuntu",
     "exit_code": 0,
-    "windows_capsule_path_sha256": "ba2f0d25b2582b5864e2d43641f948968a24b32ea5a397001b9f871de9522622",
-    "wsl_capsule_path_sha256": "ed07e501a9604261c84b3da727c6c9f2fe62b214a3c62ea03f51e88d92b5bcf9"
+    "sandbox_policy": "abi-certification-pivot-root/1",
+    "windows_capsule_path_sha256": "bb53d39c3050110d11d83db656e65f0ca07f35017b2e581e52b2b22eb495895c",
+    "wsl_capsule_path_sha256": "92247209896973a9fe5732016e5156a97edf0ca8a173978000b6150f7cc87558"
   },
-  "mountinfo_sha256": "e1f337af514251697b0c439f3545d144c91c23b1ffed3f6c2f1fd97fe7a764db",
-  "performance_sha256": "8465f13b42aac5764b7869afbb8d51b1a07432100c8436efc292a40554b46e09",
-  "result_sha256": "a04169d285bf37e01e7b1595d2be803f3181b6ee2263b07b5d5c63bdc902d08d",
+  "mountinfo_sha256": "bccfe19bf0b45b51eb73b5d742ebc80b083ffb1919491f5ad23c7ad23ee870e5",
+  "performance_sha256": "a5779ecd4f5a770a46e67a1d830dd6150a7c6c953d88bde860a35ebec1c52e57",
+  "result_sha256": "33a771117ef7a4fcd99f0bd4e4eb6dd79969baa8a9cbe1b384a36fdce78ab662",
   "worker_exit_basis": "PASS_CAPABILITY_BLIND_HOST_CERTIFICATION"
 }

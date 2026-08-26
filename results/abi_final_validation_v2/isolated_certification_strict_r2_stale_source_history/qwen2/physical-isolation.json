@@ -1,0 +1,96 @@
+{
+  "capability_archives_physically_present": 0,
+  "capsule": {
+    "capability_archives_present": 0,
+    "files_verified": 14,
+    "inventory": [
+      {
+        "bytes": 218,
+        "path": "abi_release/abi_v2/__init__.py",
+        "sha256": "993961c309c30bf5f8411cd1a5fdb66d26ee23b3aca318fbeb090ba020a70683"
+      },
+      {
+        "bytes": 8078,
+        "path": "abi_release/abi_v2/canonical.py",
+        "sha256": "c394133dc70a8cabfbb7b390e3b74178707d8cb3c89ead91a7b106eca445f52b"
+      },
+      {
+        "bytes": 5932,
+        "path": "abi_release/abi_v2/canonical_spec.json",
+        "sha256": "6536ef1b58dfeea0474bfef5619f3627ecaefe8f39f25da017f11446b6582c2f"
+      },
+      {
+        "bytes": 3096,
+        "path": "abi_release/abi_v2/conformance_suite.json",
+        "sha256": "2af84b8b18fa78613fda7c96e7d269ef731b68138f736ea2d4441f4254747383"
+      },
+      {
+        "bytes": 23171,
+        "path": "abi_release/abi_v2/host_certification.py",
+        "sha256": "a547fdfc3045a283ee61e6527d5e4a558a024274ad7f86ada28e1bf39af8652c"
+      },
+      {
+        "bytes": 18069,
+        "path": "abi_release/abi_v2/isolated_certification.py",
+        "sha256": "f85150198ed12d77796f3f45af612f7bce280649affa51e24657b75a94e6a4b2"
+      },
+      {
+        "bytes": 7356,
+        "path": "abi_release/abi_v2/reference_vectors/core_vectors.json",
+        "sha256": "fc792304e41b1985652a01b4b4efdb14a3bf40fc7aa4906f27ea95409f1dd9fa"
+      },
+      {
+        "bytes": 681,
+        "path": "abi_release/host_snapshot/config.json",
+        "sha256": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b"
+      },
+      {
+        "bytes": 138,
+        "path": "abi_release/host_snapshot/generation_config.json",
+        "sha256": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8"
+      },
+      {
+        "bytes": 1671839,
+        "path": "abi_release/host_snapshot/merges.txt",
+        "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+      },
+      {
+        "bytes": 988097824,
+        "path": "abi_release/host_snapshot/model.safetensors",
+        "sha256": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342"
+      },
+      {
+        "bytes": 7031645,
+        "path": "abi_release/host_snapshot/tokenizer.json",
+        "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+      },
+      {
+        "bytes": 7228,
+        "path": "abi_release/host_snapshot/tokenizer_config.json",
+        "sha256": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9"
+      },
+      {
+        "bytes": 2776833,
+        "path": "abi_release/host_snapshot/vocab.json",
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    ],
+    "inventory_sha256": "1c4b546622f1047b9555decdd802627ea3fc241aa80717c7a2c14ed080af8c0a",
+    "manifest_sha256": "4187422ae481abea353a81f3b1a4f5c26bf8adcd9eee94b8d1baf2c42705fdfb",
+    "source_success_ledgers_present": 0
+  },
+  "evidence_sha256": "5918c4c638ac321b2f04d71da361702ebff38c8d8b953945b903ff36521ed2ba",
+  "format": "abi-v2-physical-certification-isolation/1",
+  "host_key": "qwen2",
+  "mount": {
+    "development_mount_visible": false,
+    "effective_windows_mount_sha256": "b9140cedf9ce1512d0fe85abed7efc399fd4e3f862cbf45859c0352346625797",
+    "mountinfo_sha256": "e1f337af514251697b0c439f3545d144c91c23b1ffed3f6c2f1fd97fe7a764db",
+    "platform": "linux",
+    "windows_drive_masked_by_tmpfs": true,
+    "windows_workspace_visible": false
+  },
+  "parent_process_id": 1138,
+  "process_id": 1140,
+  "source_success_ledgers_physically_present": 0
+}

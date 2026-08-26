@@ -360,7 +360,11 @@ def certify_host(
         or physical_isolation.get("host_key") != host_key
         or physical_isolation.get("capability_archives_physically_present") != 0
         or physical_isolation.get("source_success_ledgers_physically_present") != 0
-        or physical_isolation.get("mount", {}).get("development_mount_visible") is not False
+        or physical_isolation.get("mount", {}).get("sandbox_policy")
+        != "abi-certification-pivot-root/1"
+        or physical_isolation.get("mount", {}).get("old_root_present") is not False
+        or physical_isolation.get("mount", {}).get("windows_mount_present") is not False
+        or physical_isolation.get("mount", {}).get("unexpected_mount_points") != []
         or physical_isolation.get("capsule", {}).get("capability_archives_present") != 0
         or physical_isolation.get("capsule", {}).get("source_success_ledgers_present") != 0
     ):
@@ -463,10 +467,11 @@ def certify_host(
             "source_success_ledgers_physically_present"
         ]
         == 0,
-        "development_filesystem_unmounted": physical_isolation["mount"][
-            "development_mount_visible"
-        ]
-        is False,
+        "development_filesystem_unmounted": (
+            physical_isolation["mount"]["old_root_present"] is False
+            and physical_isolation["mount"]["windows_mount_present"] is False
+            and physical_isolation["mount"]["unexpected_mount_points"] == []
+        ),
         "zero_trainable_adapter_parameters": adapter["trainable_parameters"] == 0,
         "zero_optimizer_steps": adapter["optimizer_steps"] == 0,
         "adapter_frozen": adapter["frozen"] is True,
@@ -524,8 +529,13 @@ def certify_host(
                 "inventory_sha256"
             ],
             "capsule_files": physical_isolation["capsule"]["files_verified"],
-            "development_mount_visible": physical_isolation["mount"][
-                "development_mount_visible"
+            "sandbox_policy": physical_isolation["mount"]["sandbox_policy"],
+            "old_root_present": physical_isolation["mount"]["old_root_present"],
+            "windows_mount_present": physical_isolation["mount"][
+                "windows_mount_present"
+            ],
+            "unexpected_mount_points": physical_isolation["mount"][
+                "unexpected_mount_points"
             ],
             "capability_archives_present": physical_isolation[
                 "capability_archives_physically_present"

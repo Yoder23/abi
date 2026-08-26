@@ -1,0 +1,19 @@
+{
+  "adapter_sha256": "b13a75b82acf6df412c2569edaf36654a105b8c565164236fbeb5813b630291f",
+  "capsule_manifest_sha256": "4187422ae481abea353a81f3b1a4f5c26bf8adcd9eee94b8d1baf2c42705fdfb",
+  "device": "cpu",
+  "evidence_sha256": "e210c4b8b0efba517dce146d8ed478f64062e8b9746a65447b7253e81b313c76",
+  "format": "abi-v2-isolated-host-certification-receipt/1",
+  "host_key": "qwen2",
+  "isolation_evidence_sha256": "e7ed3cf4856fabf71ec22e10bcbfd74874fed11294b6c35f249f918fb5d95531",
+  "launcher": {
+    "distribution": "Ubuntu",
+    "exit_code": 0,
+    "windows_capsule_path_sha256": "ba2f0d25b2582b5864e2d43641f948968a24b32ea5a397001b9f871de9522622",
+    "wsl_capsule_path_sha256": "ed07e501a9604261c84b3da727c6c9f2fe62b214a3c62ea03f51e88d92b5bcf9"
+  },
+  "mountinfo_sha256": "e1f337af514251697b0c439f3545d144c91c23b1ffed3f6c2f1fd97fe7a764db",
+  "performance_sha256": "8465f13b42aac5764b7869afbb8d51b1a07432100c8436efc292a40554b46e09",
+  "result_sha256": "a04169d285bf37e01e7b1595d2be803f3181b6ee2263b07b5d5c63bdc902d08d",
+  "worker_exit_basis": "PASS_CAPABILITY_BLIND_HOST_CERTIFICATION"
+}

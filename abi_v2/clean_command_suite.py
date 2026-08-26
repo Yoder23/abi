@@ -44,7 +44,13 @@ def run(root: Path) -> dict[str, Any]:
     distribution = output / "dist"
     commands = [
         [sys.executable, "-m", "abi", "self-check"],
-        [sys.executable, "-m", "abi_v2.final_validation", "headlines", "--root", "."],
+        [
+            sys.executable,
+            "-m",
+            "abi_v2.strict_validation",
+            "--root",
+            ".",
+        ],
         [
             sys.executable,
             "-m",
@@ -66,6 +72,12 @@ def run(root: Path) -> dict[str, Any]:
             "abi_v2/clean_reproduction_receipt.py",
             "abi_v2/final_validation.py",
             "abi_v2/hostile_final_validation.py",
+            "abi_v2/isolated_certification.py",
+            "abi_v2/live_causality.py",
+            "abi_v2/public_reconstruction.py",
+            "abi_v2/repaired_candidate.py",
+            "abi_v2/strict_hostile.py",
+            "abi_v2/strict_validation.py",
             "tests/test_abi_v2_final_validation.py",
             "tests/test_public_release.py",
         ],

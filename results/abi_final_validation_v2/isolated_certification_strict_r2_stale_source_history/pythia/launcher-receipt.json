@@ -1,0 +1,19 @@
+{
+  "adapter_sha256": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa",
+  "capsule_manifest_sha256": "217a951cef44c2ae70e6b0118cd77a62398dc821bdfe995daad88334319d6ace",
+  "device": "cpu",
+  "evidence_sha256": "6dc648a779e252f5742176f5a9bfeb8bb30e8338abbc4d9c151668df46c08e17",
+  "format": "abi-v2-isolated-host-certification-receipt/1",
+  "host_key": "pythia",
+  "isolation_evidence_sha256": "ed5720a5e26f73580b8d103b8238156b57eff54e18cfdb314dd890988239a471",
+  "launcher": {
+    "distribution": "Ubuntu",
+    "exit_code": 0,
+    "windows_capsule_path_sha256": "2a215473c3079963871caf4e9b5d18c85769e478476d7ffb4f5972b95d2a8988",
+    "wsl_capsule_path_sha256": "0a5988a91ce770e389e79b6f9ef845fcd9f289fca905f3191f20933c8f233447"
+  },
+  "mountinfo_sha256": "e1f337af514251697b0c439f3545d144c91c23b1ffed3f6c2f1fd97fe7a764db",
+  "performance_sha256": "218071bbc9acf2882c5cbac77b6ed9b3f6b14283a3a937945559af78162bcc33",
+  "result_sha256": "4b4c8c05461a9ee3345e218d9c34c8ff6368cd151a39b61960fb92ae80d7ed61",
+  "worker_exit_basis": "PASS_CAPABILITY_BLIND_HOST_CERTIFICATION"
+}

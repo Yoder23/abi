@@ -1,13 +1,16 @@
 {
   "adapter_sha256": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa",
-  "capsule_manifest_sha256": "217a951cef44c2ae70e6b0118cd77a62398dc821bdfe995daad88334319d6ace",
+  "capsule_manifest_sha256": "1098d9da5d5b5e1838291e8776bf85003bab9e12288069d0e4f7f54ce9c0e447",
   "device": "cpu",
-  "evidence_sha256": "dfddf8356cdfb8b0d09fbce9f4bb65de323a77be0859d1981c07489366086b61",
+  "evidence_sha256": "34a9fc3d8f9ec5af185c72acbe3b79ebc68ec49b6d334c2f7a7363bab34cf678",
+  "executed_host_certification_sha256": "c1c7765e096d1b8caf3d3f09f8c585aeb920935ff6c29e747fd8070282baf394",
+  "executed_isolated_certification_sha256": "355ad5445847e8d7671f86c9ff9d493f2e4f574c9d0045d48f582c6485684725",
+  "executed_pivot_runner_sha256": "c7c08c3f9faad96dfaa449b88e0597a60b110f5ef1036334094dda1c24be1528",
   "format": "abi-v2-isolated-host-certification-receipt/1",
   "host_key": "pythia",
-  "isolation_evidence_sha256": "ed5720a5e26f73580b8d103b8238156b57eff54e18cfdb314dd890988239a471",
-  "mountinfo_sha256": "e1f337af514251697b0c439f3545d144c91c23b1ffed3f6c2f1fd97fe7a764db",
-  "performance_sha256": "218071bbc9acf2882c5cbac77b6ed9b3f6b14283a3a937945559af78162bcc33",
-  "result_sha256": "4b4c8c05461a9ee3345e218d9c34c8ff6368cd151a39b61960fb92ae80d7ed61",
+  "isolation_evidence_sha256": "864c4695bd6ffcc60ebe37abd5ed983b2409ec5375627e8c026ffe203518faa8",
+  "mountinfo_sha256": "6235693b5b112bddb476ba9b423f4725dd8559e3a621f680165abb7fed596a59",
+  "performance_sha256": "0ca39460310a5e9259c21adde6cc7c3a54dc4df8bef948cbc66f2d6db819d738",
+  "result_sha256": "1e867c1a06b0aaa6961186c5d0b9d1c039c67ac576701edd3a3e03edc904c548",
   "worker_exit_basis": "PASS_CAPABILITY_BLIND_HOST_CERTIFICATION"
 }

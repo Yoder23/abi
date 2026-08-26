@@ -1,0 +1,43 @@
+{
+  "adapter_sha256": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa",
+  "capability_sha256": {
+    "chemistry": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+    "civics": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+    "english": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+    "python": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d"
+  },
+  "condition": "host_removed",
+  "device": "cuda",
+  "evidence_sha256": "48032daf3d94591f93c579f20702ef3d844e809f6c07c07846dd3eed89c64a80",
+  "execution_source_sha256": "98fbd7eba8114ba791597bf336e5811c03a7626a7fcdf65c23af209ee8686e0b",
+  "format": "abi-v2-live-host-condition/2",
+  "host": "pythia",
+  "intervention": {
+    "condition": "host_removed",
+    "intervention_sha256": "ede45aafe250ee66113f59422acc5c294a66f8d108b5c3c9eb8041cd8a88e084",
+    "kind": "structural_native_host_absence",
+    "parameter_name": null,
+    "values_after": [],
+    "values_before": []
+  },
+  "native_host": {
+    "host_registry_identity": {
+      "architecture": "GPTNeoXForCausalLM",
+      "checkpoint_sha256": "29d2e457a664e41c12c735f20a36dc0956a665f614a54ce5db21a32e75965270",
+      "host_id": "pythia-160m",
+      "model": "EleutherAI/pythia-160m",
+      "revision": "50f5173d932e8e61f858120bcb800b97af589f46",
+      "snapshot_inventory_sha256": "9c3045a81419c0fe3c7a8c584d8ad467b267d9e64de9663f2aad348a09f6c085",
+      "tokenizer_sha256": "c24618a1b3e6a38167beff1c72cffd126c3a66254347304b50547d12c5f25624"
+    },
+    "parameter_count": 0,
+    "runtime_mode": "physically_removed_no_snapshot_no_object"
+  },
+  "observations_rows": 128,
+  "observations_sha256": "49e527cd6b9e11e0db826b66d881b0d83fd0a07df7b2a68d892dfa1561317557",
+  "parent_process_id": 33724,
+  "process_id": 20316,
+  "process_started_ns": 1787702055229465800,
+  "samples_per_capability": 32,
+  "snapshot_argument": "absent"
+}

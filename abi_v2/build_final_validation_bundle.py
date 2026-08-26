@@ -10,7 +10,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Iterable
 
-from .final_validation import FROZEN_COMMIT, FROZEN_TAG, sha256_file, write_json
+from .final_validation import sha256_file, write_json
 
 PREFIX = "abi-final-validation-v2"
 FORBIDDEN = {".git", "__pycache__", ".pytest_cache", "build", "dist", ".venv"}
@@ -32,8 +32,8 @@ def checklist() -> dict[str, Any]:
         "format": "abi-final-external-reproduction-checklist/1",
         "status": "CLOSED_UNTIL_PUBLIC_RECONSTRUCTION_AND_BLIND_RED_TEAM_PASS",
         "repository": "https://github.com/Yoder23/abi",
-        "frozen_commit": FROZEN_COMMIT,
-        "frozen_tag": FROZEN_TAG,
+        "frozen_commit": "see results/abi_final_validation_v2/frozen_release_candidate.json",
+        "frozen_tag": "see results/abi_final_validation_v2/frozen_release_candidate.json",
         "commands": [
             "abi-reproduce verify",
             "abi-reproduce certify-hosts",
@@ -155,7 +155,13 @@ def collect(root: Path, layercake_root: Path) -> list[BundleFile]:
     ):
         _append(records, root, relative, "frozen_runtime_or_evaluation_input")
     _tree(records, root, "abi", ("*.py",), "abi_source")
-    _tree(records, root, "abi_v2", ("*.py", "*.json"), "final_validation_source_or_spec")
+    _tree(
+        records,
+        root,
+        "abi_v2",
+        ("*.py", "*.json", "*.sh"),
+        "final_validation_source_or_spec",
+    )
     _tree(
         records,
         root,
@@ -213,6 +219,8 @@ def collect(root: Path, layercake_root: Path) -> list[BundleFile]:
         "results/abi_final_validation_v2/isolated_certification",
         "results/abi_final_validation_v2/live_causality_untrusted_boolean_history",
         "results/abi_final_validation_v2/pre_strict_capsule_root_history",
+        "results/abi_final_validation_v2/isolated_certification_strict_r2_stale_source_history",
+        "results/abi_final_validation_v2/live_causality_r2_logged_state_history",
     ):
         _tree(
             records,
@@ -257,6 +265,15 @@ def collect(root: Path, layercake_root: Path) -> list[BundleFile]:
         "results/abi_final_validation_v2/strict_hostile_pre_clean_archive_lineage_fix.json",
         "superseded_historical_evidence",
     )
+    for relative in (
+        "results/abi_final_validation_v2/strict_validation_r2_pre_physical_live_repair.json",
+        "results/abi_final_validation_v2/frozen_release_candidate_r2_history.json",
+        "results/abi_final_validation_v2/strict_hostile_pre_public_r2_history.json",
+        "results/abi_final_validation_v2/strict_hostile_pre_source_binding_fix.json",
+        "results/abi_final_validation_v2/strict_validation_pre_disposable_input_closure_fix.json",
+        "results/abi_final_validation_v2/strict_validation_pre_transitive_input_closure_fix.json",
+    ):
+        _append(records, root, relative, "superseded_historical_evidence")
     _tree(records, root, "results/abi_capability_compiler_phase2/human_rating_packet_v1", ("*.json", "*.jsonl"), "sealed_human_packet")
     _tree(records, root, "docs", ("*.md", "*.json"), "documentation")
     _tree(records, root, "review_packet", ("*.md",), "review_packet")
@@ -300,11 +317,16 @@ def build(root: Path, layercake_root: Path, output: Path) -> dict[str, Any]:
     if output.exists():
         raise FinalBundleError(f"refusing to overwrite: {output}")
     files = collect(root, layercake_root)
+    candidate = json.loads(
+        (root / "results/abi_final_validation_v2/frozen_release_candidate.json").read_text(
+            encoding="utf-8"
+        )
+    )
     manifest = {
         "format": "abi-final-validation-clean-room-manifest/2",
         "status": "REPAIRED_CANDIDATE_REQUIRES_PUBLIC_RECONSTRUCTION_AND_RED_TEAM",
-        "frozen_technical_commit": FROZEN_COMMIT,
-        "frozen_technical_tag": FROZEN_TAG,
+        "frozen_technical_commit": candidate["technical_proof_commit"],
+        "frozen_technical_tag": candidate["technical_proof_tag"],
         "excluded_payload_file_counts": {
             "host_model_weights": 0,
             "development_caches": 0,

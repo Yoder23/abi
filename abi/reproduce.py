@@ -307,14 +307,14 @@ def run_final_matrix(
     target = _final_output(root) / "matrix"
     if target.exists():
         raise FinalMileError("immutable external capability-matrix result already exists")
-    candidate = _object(root / "results/abi_final_validation/frozen_release_candidate.json")
+    adapter_manifest = _object(root / "results/abi_v2/adapters/manifest.json")
     certification_root = _final_output(root) / "host_certification"
     certification_receipt = _object(_final_output(root) / "certify-hosts.json")
     if not certification_receipt.get("status", "").startswith("PASS"):
         raise FinalMileError("fresh capability-blind host certification did not pass")
     for host in HOSTS:
         adapter = certification_root / host / "certification/adapter.json"
-        expected = candidate["host_adapters"][host]["sha256"]
+        expected = adapter_manifest["adapters"][host]["sha256"]
         if not adapter.is_file() or final_sha256(adapter) != expected:
             raise FinalMileError(f"fresh frozen adapter missing or changed: {host}")
     results = {}
@@ -497,7 +497,9 @@ def main(argv: Iterable[str] | None = None) -> int:
     root = Path(args.root).resolve()
     release = (root / args.release_dir).resolve()
     attestation = (root / args.attestation).resolve()
-    final_mode = (root / "results/abi_final_validation/frozen_release_candidate.json").is_file()
+    final_mode = (
+        root / "results/abi_final_validation_v2/frozen_release_candidate.json"
+    ).is_file()
     final_target = _final_output(root)
     if args.command == "verify" and final_mode:
         result = verify_final_validation(root)

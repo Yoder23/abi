@@ -1,0 +1,34 @@
+{
+  "adapter_sha256": "d1f3a9d67581032473055711773f784e3b0a028fb68fab58c3a9a63b94317f04",
+  "capability_sha256": {
+    "chemistry": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+    "civics": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+    "english": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+    "python": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d"
+  },
+  "condition": "capability_removed",
+  "device": "cuda",
+  "evidence_sha256": "55ede26a1780c2cfac60e280f6f5f29231c1d056f4394e10e312ee7cddec5038",
+  "execution_source_sha256": "98fbd7eba8114ba791597bf336e5811c03a7626a7fcdf65c23af209ee8686e0b",
+  "format": "abi-v2-live-host-condition/2",
+  "host": "layercake",
+  "intervention": {
+    "condition": "capability_removed",
+    "intervention_sha256": "ad06d0b94e919f3d9572adbd9636a6af917c5a6acd85614e6a9e8a3c9eb7dd63",
+    "kind": "structural_native_host_absence",
+    "parameter_name": null,
+    "values_after": [],
+    "values_before": []
+  },
+  "native_host": {
+    "parameter_count": 0,
+    "runtime_mode": "capability_native_layercake_host"
+  },
+  "observations_rows": 128,
+  "observations_sha256": "c764ae561572c1e9dfdfcb1addb930b4202408a66904941304e1c1f2e545ee15",
+  "parent_process_id": 32076,
+  "process_id": 26088,
+  "process_started_ns": 1787700727533986500,
+  "samples_per_capability": 32,
+  "snapshot_argument": "absent"
+}

@@ -1,0 +1,43 @@
+{
+  "adapter_sha256": "b13a75b82acf6df412c2569edaf36654a105b8c565164236fbeb5813b630291f",
+  "capability_sha256": {
+    "chemistry": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+    "civics": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+    "english": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+    "python": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d"
+  },
+  "condition": "host_removed",
+  "device": "cuda",
+  "evidence_sha256": "67f7dfc56396917d31e07683adc319920211e69d674183c0d5cae113e2cca666",
+  "execution_source_sha256": "98fbd7eba8114ba791597bf336e5811c03a7626a7fcdf65c23af209ee8686e0b",
+  "format": "abi-v2-live-host-condition/2",
+  "host": "qwen2",
+  "intervention": {
+    "condition": "host_removed",
+    "intervention_sha256": "ede45aafe250ee66113f59422acc5c294a66f8d108b5c3c9eb8041cd8a88e084",
+    "kind": "structural_native_host_absence",
+    "parameter_name": null,
+    "values_after": [],
+    "values_before": []
+  },
+  "native_host": {
+    "host_registry_identity": {
+      "architecture": "Qwen2ForCausalLM",
+      "checkpoint_sha256": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342",
+      "host_id": "qwen2.5-0.5b",
+      "model": "Qwen/Qwen2.5-0.5B",
+      "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+      "snapshot_inventory_sha256": "a2f0d549121c1d38fe3c9ff33d6e80df1d02a032153daa15ff89663eb091f25f",
+      "tokenizer_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+    },
+    "parameter_count": 0,
+    "runtime_mode": "physically_removed_no_snapshot_no_object"
+  },
+  "observations_rows": 128,
+  "observations_sha256": "d75d79b2d40447891d62e2be36856dad3deb7101ae8e89455fa9ede344e470bb",
+  "parent_process_id": 33416,
+  "process_id": 31920,
+  "process_started_ns": 1787701382934378700,
+  "samples_per_capability": 32,
+  "snapshot_argument": "absent"
+}

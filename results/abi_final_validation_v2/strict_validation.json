@@ -3,25 +3,25 @@
     "hosts": {
       "layercake": {
         "adapter_sha256": "d1f3a9d67581032473055711773f784e3b0a028fb68fab58c3a9a63b94317f04",
-        "capsule_files": 8,
+        "capsule_files": 9,
         "native_forward_rows": 0,
-        "overhead_fraction": 0.008888903448033059,
+        "overhead_fraction": 0.04569467365197277,
         "performance_observations": 20,
         "roundtrip_rows": 128
       },
       "pythia": {
         "adapter_sha256": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa",
-        "capsule_files": 12,
+        "capsule_files": 13,
         "native_forward_rows": 16,
-        "overhead_fraction": 0.07451465717325556,
+        "overhead_fraction": 0.08470430845830279,
         "performance_observations": 20,
         "roundtrip_rows": 128
       },
       "qwen2": {
         "adapter_sha256": "b13a75b82acf6df412c2569edaf36654a105b8c565164236fbeb5813b630291f",
-        "capsule_files": 14,
+        "capsule_files": 15,
         "native_forward_rows": 16,
-        "overhead_fraction": 0.0005190210549126384,
+        "overhead_fraction": -0.024544952194176073,
         "performance_observations": 20,
         "roundtrip_rows": 128
       }
@@ -30,33 +30,39 @@
     "physical_capability_archives_present": 0,
     "physical_source_success_ledgers_present": 0
   },
-  "evidence_sha256": "1cfb3a1c15119c0aedcd8e70606c94873109722415079916b2ed488cc512ac01",
-  "format": "abi-v2-strict-final-validation/1",
+  "evidence_sha256": "75c6611d98bc1cc4988651659db1088529f5c30324a18f1b88cb997f65e314e0",
+  "format": "abi-v2-strict-final-validation/2",
   "live_causality": {
-    "causal_conclusion": "The new live executions confirm that the frozen capability runtime is semantically standalone: real, neutral, zero, random, shuffled, and removed host states produce identical capability outputs because the frozen adapter exposes no host-state channel. Removing the adapter fails realization, while removing a capability fails generation.",
+    "applied_host_state_channel": "AppliedHostStateAdapter.realize(host_state=...)",
+    "causal_conclusion": "Eight fresh processes per host execute the frozen release. Qwen/Pythia neutral, zero, random, and shuffled conditions mutate a live native parameter tensor and run new forwards; every positive state is consumed by the conformance adapter while canonical capability bytes remain invariant. Host removal receives no checkpoint path or native objects. Adapter removal fails realization and capability removal fails generation.",
     "cross_host_real_outputs_equal": 128,
     "hosts": {
       "layercake": {
+        "applied_native_parameter_interventions": 0,
+        "fresh_condition_processes": 8,
         "live_adapter_removals": 128,
         "live_capability_removals": 128,
         "live_positive_executions": 768,
         "raw_rows": 1024
       },
       "pythia": {
+        "applied_native_parameter_interventions": 7,
+        "fresh_condition_processes": 8,
         "live_adapter_removals": 128,
         "live_capability_removals": 128,
         "live_positive_executions": 768,
         "raw_rows": 1024
       },
       "qwen2": {
+        "applied_native_parameter_interventions": 7,
+        "fresh_condition_processes": 8,
         "live_adapter_removals": 128,
         "live_capability_removals": 128,
         "live_positive_executions": 768,
         "raw_rows": 1024
       }
     },
-    "raw_rows": 3072,
-    "state_channel_supported": false
+    "raw_rows": 3072
   },
   "live_isolation": {
     "cross_host_outputs_equal": 700,
@@ -86,13 +92,38 @@
     "rows_verified": 5043
   },
   "required_inputs": {
-    "aggregate_sha256": "052f2437a90c081e50abcdc098e619a2fe58ef3ecd91b56c099eb62b6415b7ec",
-    "file_count": 59,
+    "aggregate_sha256": "4387142fa72a266ec7f8624c161d803f474d911271c3501945b85aa86c599416",
+    "file_count": 95,
     "files": [
       {
         "bytes": 16882,
         "path": "abi/capability_compiler_phase2_common.py",
         "sha256": "8093ec2016d685f0327c87640042c8373bc141d76351fd641b21a44d018b6c92"
+      },
+      {
+        "bytes": 6401,
+        "path": "abi/capability_compiler_phase2_teacher.py",
+        "sha256": "dc76ee575f5e5f2cccd9fe8279ae501920bb022e8e62a921240ea3e5a9ced892"
+      },
+      {
+        "bytes": 33353,
+        "path": "abi/capability_compiler_phase4_b20_v25_physical_screen.py",
+        "sha256": "3ddd2f71b2744d9254a1011776c1305233935bbab5a5716eb98cb68aca35e551"
+      },
+      {
+        "bytes": 19918,
+        "path": "abi/capability_compiler_phase5_construct_screen.py",
+        "sha256": "042bcbc2c5581f5f03c2b5f1d1d548d34b947346a44aeebe2ca7be20fcb112d7"
+      },
+      {
+        "bytes": 37308,
+        "path": "abi/capability_compiler_phase5_selective_product.py",
+        "sha256": "6d0ded514ac936ebdce63ecf1c6942aefa96a3cb5386401f3a765a61aad21f25"
+      },
+      {
+        "bytes": 218,
+        "path": "abi_v2/__init__.py",
+        "sha256": "993961c309c30bf5f8411cd1a5fdb66d26ee23b3aca318fbeb090ba020a70683"
       },
       {
         "bytes": 8078,
@@ -110,29 +141,34 @@
         "sha256": "a07c8ef0342d8067979bf018e0c5fb286583064d5b40d9a3e8d9d556492eeab6"
       },
       {
+        "bytes": 2874,
+        "path": "abi_v2/certification_pivot_runner.sh",
+        "sha256": "c7c08c3f9faad96dfaa449b88e0597a60b110f5ef1036334094dda1c24be1528"
+      },
+      {
         "bytes": 3096,
         "path": "abi_v2/conformance_suite.json",
         "sha256": "2af84b8b18fa78613fda7c96e7d269ef731b68138f736ea2d4441f4254747383"
       },
       {
-        "bytes": 49609,
+        "bytes": 49649,
         "path": "abi_v2/final_validation.py",
-        "sha256": "d9eeef34c9a9de6832c6ebbf7f94095e90863cc3a63ae1f0803713d7bcb768fc"
+        "sha256": "945cc8fadf8e171894ec762a49330d3c9e3faab7710140279d171b60b3e23222"
       },
       {
-        "bytes": 23171,
+        "bytes": 23863,
         "path": "abi_v2/host_certification.py",
-        "sha256": "a547fdfc3045a283ee61e6527d5e4a558a024274ad7f86ada28e1bf39af8652c"
+        "sha256": "c1c7765e096d1b8caf3d3f09f8c585aeb920935ff6c29e747fd8070282baf394"
       },
       {
-        "bytes": 21202,
+        "bytes": 26421,
         "path": "abi_v2/isolated_certification.py",
-        "sha256": "7064074b35d55692ec6174eba638437b633ff4b277c65766aaf7261a1851d62d"
+        "sha256": "355ad5445847e8d7671f86c9ff9d493f2e4f574c9d0045d48f582c6485684725"
       },
       {
-        "bytes": 16876,
+        "bytes": 28179,
         "path": "abi_v2/live_causality.py",
-        "sha256": "8c32535542f75e7475b05eb91d8a9cf9bc35c75e2bb15eae93e22a3c4b368276"
+        "sha256": "98fbd7eba8114ba791597bf336e5811c03a7626a7fcdf65c23af209ee8686e0b"
       },
       {
         "bytes": 8756,
@@ -155,9 +191,34 @@
         "sha256": "fc792304e41b1985652a01b4b4efdb14a3bf40fc7aa4906f27ea95409f1dd9fa"
       },
       {
-        "bytes": 36395,
+        "bytes": 58437,
         "path": "abi_v2/strict_validation.py",
-        "sha256": "9668601d546a1b7d9b5f01a45a59a4559c9ab8fb26280354ebbbc50458d111e1"
+        "sha256": "b21cdce207825de1e23e009d4d3e5e1444ad20eeb4137413a9452bcdf43dfeb8"
+      },
+      {
+        "bytes": 17631486,
+        "path": "catalogs/capability_compiler_phase1_frozen_v1.json",
+        "sha256": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a"
+      },
+      {
+        "bytes": 6287076,
+        "path": "evidence/current/segregation/english_and_first_domains_certification_v6.json",
+        "sha256": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052"
+      },
+      {
+        "bytes": 2219,
+        "path": "external_reproduction/model_download_manifest.json",
+        "sha256": "67645eb54b0289bc1cd26a22ec9daac548cb46a31fc826d701dfe2c90abab374"
+      },
+      {
+        "bytes": 1527017,
+        "path": "results/abi_capability_compiler_phase4_clarification_route_replication/B40-seed104729-v927/evaluation/development_outputs.jsonl",
+        "sha256": "b2aeab680a6b1a17a6f8332b5d1c5571b4eda72a51b2d191e67509aaeedb6196"
+      },
+      {
+        "bytes": 407530,
+        "path": "results/abi_capability_compiler_phase6_composition/run_v1032/seed104729/observations.jsonl",
+        "sha256": "3b177777bd1d032cf3aef447578cf4620194ce664f3a4f5cc51633b512333535"
       },
       {
         "bytes": 253216208,
@@ -165,9 +226,9 @@
         "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d"
       },
       {
-        "bytes": 2276,
+        "bytes": 2513,
         "path": "results/abi_final_validation_v2/isolated_certification_strict/layercake/certification-capsule-manifest.json",
-        "sha256": "a3c673d9910c3adf6b0785bf3598217df0b42c1eafbf29309c7fd9b72b164b92"
+        "sha256": "d419cae0133b4b4f2b15bc5e32c5c8e12da166bbb321ae1d06017d29ea234b26"
       },
       {
         "bytes": 1556,
@@ -175,39 +236,39 @@
         "sha256": "d1f3a9d67581032473055711773f784e3b0a028fb68fab58c3a9a63b94317f04"
       },
       {
-        "bytes": 1009,
+        "bytes": 1004,
         "path": "results/abi_final_validation_v2/isolated_certification_strict/layercake/certification/performance.json",
-        "sha256": "3ef1372f72d2f9109564a77d68c221799c62d1ba04e183b274a55ef4295287fa"
+        "sha256": "8106873808684be4e0dce1753c052918ce7fda7e5879c8ddf8f1f057f9a42874"
       },
       {
-        "bytes": 49745,
+        "bytes": 49859,
         "path": "results/abi_final_validation_v2/isolated_certification_strict/layercake/certification/result.json",
-        "sha256": "64d04a1528d6381d09ccd03c4760c9c7a1e5ea3ad825eefb57736eb59127e7ad"
+        "sha256": "ad2c1c7806c202a2ef4a80a6811ea790dbf27afe15a8537ad047f343400c9a11"
       },
       {
-        "bytes": 1090,
+        "bytes": 1468,
         "path": "results/abi_final_validation_v2/isolated_certification_strict/layercake/launcher-receipt.json",
-        "sha256": "76c4653b55db86b26b95c93aa4f2b84a6d6b6a6f537b9db38acbad402d4b9cdd"
+        "sha256": "17822dd3526533872386f0ab2581351ce3a7dab1e15d88c918d5dc5553418777"
       },
       {
-        "bytes": 3217,
+        "bytes": 1143,
         "path": "results/abi_final_validation_v2/isolated_certification_strict/layercake/mountinfo.txt",
-        "sha256": "e1f337af514251697b0c439f3545d144c91c23b1ffed3f6c2f1fd97fe7a764db"
+        "sha256": "b3fc5fc8298eb2c7f7223e7aadcebe1a8be028276f9307d05265aadfdfb73289"
       },
       {
-        "bytes": 2537,
+        "bytes": 6817,
         "path": "results/abi_final_validation_v2/isolated_certification_strict/layercake/physical-isolation.json",
-        "sha256": "9924374ec19f3da74816c4e5d61b0b1245bbb85dfc7f661512a6aed4532b2e48"
+        "sha256": "c19efa26cc1c96bf205f2af0d185380f737244320f1799585698bf19bcd80b4d"
       },
       {
-        "bytes": 818,
+        "bytes": 1140,
         "path": "results/abi_final_validation_v2/isolated_certification_strict/layercake/receipt.json",
-        "sha256": "29693be6a1ad4f90ad600e488f20cc8bd3f8df26fc9f8fef64e3a1b4ed2e565c"
+        "sha256": "342179200cde1b4e65229c4981c9c547b61c806ef56790bde71fc55e14a20446"
       },
       {
-        "bytes": 3131,
+        "bytes": 3368,
         "path": "results/abi_final_validation_v2/isolated_certification_strict/pythia/certification-capsule-manifest.json",
-        "sha256": "217a951cef44c2ae70e6b0118cd77a62398dc821bdfe995daad88334319d6ace"
+        "sha256": "1098d9da5d5b5e1838291e8776bf85003bab9e12288069d0e4f7f54ce9c0e447"
       },
       {
         "bytes": 1646,
@@ -215,39 +276,39 @@
         "sha256": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa"
       },
       {
-        "bytes": 1007,
+        "bytes": 1015,
         "path": "results/abi_final_validation_v2/isolated_certification_strict/pythia/certification/performance.json",
-        "sha256": "218071bbc9acf2882c5cbac77b6ed9b3f6b14283a3a937945559af78162bcc33"
+        "sha256": "0ca39460310a5e9259c21adde6cc7c3a54dc4df8bef948cbc66f2d6db819d738"
       },
       {
-        "bytes": 73309,
+        "bytes": 73434,
         "path": "results/abi_final_validation_v2/isolated_certification_strict/pythia/certification/result.json",
-        "sha256": "4b4c8c05461a9ee3345e218d9c34c8ff6368cd151a39b61960fb92ae80d7ed61"
+        "sha256": "1e867c1a06b0aaa6961186c5d0b9d1c039c67ac576701edd3a3e03edc904c548"
       },
       {
-        "bytes": 1087,
+        "bytes": 1465,
         "path": "results/abi_final_validation_v2/isolated_certification_strict/pythia/launcher-receipt.json",
-        "sha256": "eac91a77adc0451d3b1760a4d27ac0943af073662350626e0ae235f341d36ffe"
+        "sha256": "99caee490fffa4ae168cdb6e659634ecc8a515ecea4890cff132e4394dc935b0"
       },
       {
-        "bytes": 3217,
+        "bytes": 1140,
         "path": "results/abi_final_validation_v2/isolated_certification_strict/pythia/mountinfo.txt",
-        "sha256": "e1f337af514251697b0c439f3545d144c91c23b1ffed3f6c2f1fd97fe7a764db"
+        "sha256": "6235693b5b112bddb476ba9b423f4725dd8559e3a621f680165abb7fed596a59"
       },
       {
-        "bytes": 3255,
+        "bytes": 7536,
         "path": "results/abi_final_validation_v2/isolated_certification_strict/pythia/physical-isolation.json",
-        "sha256": "ed5720a5e26f73580b8d103b8238156b57eff54e18cfdb314dd890988239a471"
+        "sha256": "864c4695bd6ffcc60ebe37abd5ed983b2409ec5375627e8c026ffe203518faa8"
       },
       {
-        "bytes": 815,
+        "bytes": 1137,
         "path": "results/abi_final_validation_v2/isolated_certification_strict/pythia/receipt.json",
-        "sha256": "6e9f169235c578d17492985f192f7daa7396d56ebace0190edb9fa97b47828e7"
+        "sha256": "20f9a25a7f73a31ed942a63c00f5960c7ade38cbd81a19eb39cdd067bd76a900"
       },
       {
-        "bytes": 3565,
+        "bytes": 3802,
         "path": "results/abi_final_validation_v2/isolated_certification_strict/qwen2/certification-capsule-manifest.json",
-        "sha256": "4187422ae481abea353a81f3b1a4f5c26bf8adcd9eee94b8d1baf2c42705fdfb"
+        "sha256": "f57d5d36bc1feb9e6418177ef27c24ac6acf7bf22669c624dda9db13a958619f"
       },
       {
         "bytes": 1637,
@@ -257,62 +318,182 @@
       {
         "bytes": 1003,
         "path": "results/abi_final_validation_v2/isolated_certification_strict/qwen2/certification/performance.json",
-        "sha256": "8465f13b42aac5764b7869afbb8d51b1a07432100c8436efc292a40554b46e09"
+        "sha256": "a5779ecd4f5a770a46e67a1d830dd6150a7c6c953d88bde860a35ebec1c52e57"
       },
       {
-        "bytes": 73644,
+        "bytes": 73760,
         "path": "results/abi_final_validation_v2/isolated_certification_strict/qwen2/certification/result.json",
-        "sha256": "a04169d285bf37e01e7b1595d2be803f3181b6ee2263b07b5d5c63bdc902d08d"
+        "sha256": "33a771117ef7a4fcd99f0bd4e4eb6dd79969baa8a9cbe1b384a36fdce78ab662"
       },
       {
-        "bytes": 1086,
+        "bytes": 1464,
         "path": "results/abi_final_validation_v2/isolated_certification_strict/qwen2/launcher-receipt.json",
-        "sha256": "d9c68701545ce1fdc23ed36783dec6e909e720e46ecd142347005b5fe4ac7d73"
+        "sha256": "3c7731de371ca74a33e7e34c69fbe08fd033a830da8f289994a01da39eb91605"
       },
       {
-        "bytes": 3217,
+        "bytes": 1139,
         "path": "results/abi_final_validation_v2/isolated_certification_strict/qwen2/mountinfo.txt",
-        "sha256": "e1f337af514251697b0c439f3545d144c91c23b1ffed3f6c2f1fd97fe7a764db"
+        "sha256": "bccfe19bf0b45b51eb73b5d742ebc80b083ffb1919491f5ad23c7ad23ee870e5"
       },
       {
-        "bytes": 3623,
+        "bytes": 7904,
         "path": "results/abi_final_validation_v2/isolated_certification_strict/qwen2/physical-isolation.json",
-        "sha256": "e7ed3cf4856fabf71ec22e10bcbfd74874fed11294b6c35f249f918fb5d95531"
+        "sha256": "49a0adb636a627ecdeed4f04dbd97f90627ee2a66629b14a00c74cbb10d4a5cb"
       },
       {
-        "bytes": 814,
+        "bytes": 1136,
         "path": "results/abi_final_validation_v2/isolated_certification_strict/qwen2/receipt.json",
-        "sha256": "6b5e5fd52887fbebe2155dce89fb2c3bf661b7d6bf7d881807421b14bcf16663"
+        "sha256": "cd07772fac8b94b2079a23af28153a1718f5d4365678e2e909b88328300f3b45"
       },
       {
-        "bytes": 6645,
+        "bytes": 1426,
+        "path": "results/abi_final_validation_v2/live_causality/layercake/conditions/adapter_removed.json",
+        "sha256": "c91de8cf47ed0cddbb49f47eece4d7dc034dfe0cb31237681ff9489cf49a28f2"
+      },
+      {
+        "bytes": 1432,
+        "path": "results/abi_final_validation_v2/live_causality/layercake/conditions/capability_removed.json",
+        "sha256": "37b80fec30b0f203ec60d0d7ed47b33c1a9dcbb7616f553d04586ca56c737d04"
+      },
+      {
+        "bytes": 1833,
+        "path": "results/abi_final_validation_v2/live_causality/layercake/conditions/host_removed.json",
+        "sha256": "93e380071ae1a4292b07e65ba1bdca6ed0dcdc08c81f7d39e647d870d5631e46"
+      },
+      {
+        "bytes": 1420,
+        "path": "results/abi_final_validation_v2/live_causality/layercake/conditions/neutral_host.json",
+        "sha256": "78a42ff00d4d56692ada9d10ea8827907f7d4abf7d434a0b443f8d0a086d23ce"
+      },
+      {
+        "bytes": 1420,
+        "path": "results/abi_final_validation_v2/live_causality/layercake/conditions/random_state.json",
+        "sha256": "dfaecd9fea88ab8b6e51d8b438d5b3192a6d5a85b65bfd0086ac58b9a9469c74"
+      },
+      {
+        "bytes": 1414,
+        "path": "results/abi_final_validation_v2/live_causality/layercake/conditions/real_host.json",
+        "sha256": "cf7257416d0cf5cc5c07a34770a8b9e5700b16e59cbe78e1b5cdbfb7bf9895c7"
+      },
+      {
+        "bytes": 1424,
+        "path": "results/abi_final_validation_v2/live_causality/layercake/conditions/shuffled_state.json",
+        "sha256": "9cc040e5ba963328877b48e292b68330d61e28a7d771da519e703aab04172a66"
+      },
+      {
+        "bytes": 1416,
+        "path": "results/abi_final_validation_v2/live_causality/layercake/conditions/zero_state.json",
+        "sha256": "8ce0e5b4556e78f13007486466c8e78cb4da6b7be8473ad14c6271f01cae2e3e"
+      },
+      {
+        "bytes": 8156,
         "path": "results/abi_final_validation_v2/live_causality/layercake/manifest.json",
-        "sha256": "9973634ea3f1adbbc052043ce85f610235ea76c9523451652a93d8ba4e173fca"
+        "sha256": "fb8c1ee398f189f5ec965bf64529daf5162fcf198f042b46d1b0b366e6903c7d"
       },
       {
-        "bytes": 985465,
+        "bytes": 1048812,
         "path": "results/abi_final_validation_v2/live_causality/layercake/observations.jsonl",
-        "sha256": "f51faed2d52d707081f3cb3f93064ab6919ce19d823b4687c49545cfc47dfd47"
+        "sha256": "d9aba07f26a53b9b42db3fa62525539944960d10fd7674f13ac4b9505c1d31ab"
       },
       {
-        "bytes": 6970,
+        "bytes": 32851,
+        "path": "results/abi_final_validation_v2/live_causality/pythia/conditions/adapter_removed.json",
+        "sha256": "1ae2e0b20ab6edb7319207e2403ac9022f87046f20395545e3c714b3a647d0d6"
+      },
+      {
+        "bytes": 32860,
+        "path": "results/abi_final_validation_v2/live_causality/pythia/conditions/capability_removed.json",
+        "sha256": "2a5885e0d6ed8e804f931037d2f3c235d2f810ac059b091cdba4c472096d1b0f"
+      },
+      {
+        "bytes": 1934,
+        "path": "results/abi_final_validation_v2/live_causality/pythia/conditions/host_removed.json",
+        "sha256": "29f26190f1d124e201144ffb6b1ff211c95810ba4218a538c2395bdacf23297a"
+      },
+      {
+        "bytes": 25934,
+        "path": "results/abi_final_validation_v2/live_causality/pythia/conditions/neutral_host.json",
+        "sha256": "3383589d548380a517a811f666ed465e541788d157f7178011aba575a3f6713f"
+      },
+      {
+        "bytes": 32493,
+        "path": "results/abi_final_validation_v2/live_causality/pythia/conditions/random_state.json",
+        "sha256": "ae031fac7af409a6836326c10fc88a48e21081555da78d4deb5675e8ba170d05"
+      },
+      {
+        "bytes": 32834,
+        "path": "results/abi_final_validation_v2/live_causality/pythia/conditions/real_host.json",
+        "sha256": "d939564854f3ec1eb9e4356c431fa29058b7f5eb5be56dc42e819d8e476f4504"
+      },
+      {
+        "bytes": 32849,
+        "path": "results/abi_final_validation_v2/live_causality/pythia/conditions/shuffled_state.json",
+        "sha256": "3340457067aae3cfcc51e1acaba1ee743d68cddbf6823dd8500e5da4f90dc4f0"
+      },
+      {
+        "bytes": 25928,
+        "path": "results/abi_final_validation_v2/live_causality/pythia/conditions/zero_state.json",
+        "sha256": "4982563b54dfaac4b11675657828d536ac152a8197618b3dacff6beb209a09cb"
+      },
+      {
+        "bytes": 8151,
         "path": "results/abi_final_validation_v2/live_causality/pythia/manifest.json",
-        "sha256": "586d49644c444692b3064d77812f004ed99f628a7aa700a1c3c4c165bf1f2079"
+        "sha256": "095479500b5fa4a53a4fc27c113cab2a8fc05c41201cfbbf9d0aeaefff57e7cf"
       },
       {
-        "bytes": 965747,
+        "bytes": 1215788,
         "path": "results/abi_final_validation_v2/live_causality/pythia/observations.jsonl",
-        "sha256": "0ac3cc7276df641a3f27481d6726b7c99e31f2225b2c206cbfb291c7df3f25ff"
+        "sha256": "303da26a9c7fe07cfb1e1781b8c99eaf0486c4026c84ceceb3d25aa957e0c5ea"
       },
       {
-        "bytes": 6969,
+        "bytes": 32210,
+        "path": "results/abi_final_validation_v2/live_causality/qwen2/conditions/adapter_removed.json",
+        "sha256": "12284d918a46277108525a4b21e4bbc3bcf57a99a844b1424a37d681245b73a3"
+      },
+      {
+        "bytes": 32219,
+        "path": "results/abi_final_validation_v2/live_causality/qwen2/conditions/capability_removed.json",
+        "sha256": "7862a759e915ef458ae457583316565121b2a95a3c08b5f4965b1fbdd645b73e"
+      },
+      {
+        "bytes": 1927,
+        "path": "results/abi_final_validation_v2/live_causality/qwen2/conditions/host_removed.json",
+        "sha256": "17b6a8eb3a2623f86b4d2bf0a5aee830d6c28cd854848b9ee08fc29e42b1f139"
+      },
+      {
+        "bytes": 27016,
+        "path": "results/abi_final_validation_v2/live_causality/qwen2/conditions/neutral_host.json",
+        "sha256": "f710fd95a58e8d41f5e42fcfc17b46bc7f0a0a90d6f343f8ac6ce0d1f0e79b44"
+      },
+      {
+        "bytes": 34531,
+        "path": "results/abi_final_validation_v2/live_causality/qwen2/conditions/random_state.json",
+        "sha256": "3f6ba2f3958cfe3079ed4f3453a28cfd87c3ad86f0656f1fcd147518df89bb85"
+      },
+      {
+        "bytes": 32192,
+        "path": "results/abi_final_validation_v2/live_causality/qwen2/conditions/real_host.json",
+        "sha256": "7dc8e31de77c9127d4d88d7acedd38910cf8ce47f6fbc161d9ae9c40eefbd348"
+      },
+      {
+        "bytes": 32207,
+        "path": "results/abi_final_validation_v2/live_causality/qwen2/conditions/shuffled_state.json",
+        "sha256": "ae08b1268cf8d2cec5921674e74e4b022a30f649a588d058fc1c1897cc89ae0d"
+      },
+      {
+        "bytes": 27010,
+        "path": "results/abi_final_validation_v2/live_causality/qwen2/conditions/zero_state.json",
+        "sha256": "4fd184d4c9cf938207d8415d2e350c5fd5a2e9b40d77bf17d5669e12449d27d0"
+      },
+      {
+        "bytes": 8152,
         "path": "results/abi_final_validation_v2/live_causality/qwen2/manifest.json",
-        "sha256": "1d44e17969971f62e31df5bfab6c7f0471e883bcb3fe949a21568b0ed4359f0c"
+        "sha256": "1f892ef792e3f059a13b9d34f3d65acabdb9b5fa46c7a380476170c29110ffa3"
       },
       {
-        "bytes": 997772,
+        "bytes": 1330130,
         "path": "results/abi_final_validation_v2/live_causality/qwen2/observations.jsonl",
-        "sha256": "85fddff265656c457347135dc5df0b6a2e3e2795bed6e5ae216e38c5f7bc7bbd"
+        "sha256": "0e0961b6f9c351d9dafcc8499e0cbcda1badc283aa89dab7c4564dac6a8d0719"
       },
       {
         "bytes": 1133,
@@ -383,6 +564,11 @@
         "bytes": 83008,
         "path": "results/abi_v2/semantic_retention/source_success_locks.json",
         "sha256": "0e12da8d4f827610894c815cc00268c3ab1321bdf69a245214d2845a7efd3354"
+      },
+      {
+        "bytes": 13330,
+        "path": "@layercake_release/layercake_extensions/route_isolated_clarification_core_v25.py",
+        "sha256": "7b176f21e6a86f3aaded724462d37149f8f8be48370bcdd163fe44c49e3464ce"
       }
     ]
   },

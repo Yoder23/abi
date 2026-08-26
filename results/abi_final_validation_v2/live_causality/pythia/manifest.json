@@ -1,12 +1,54 @@
 {
-  "adapter_sha256_after": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa",
-  "adapter_sha256_before": "df3598b6ae28f43a0ccff34aef3e59d99e415a5a3cfee15619fefa1dc74ceafa",
-  "capability_sha256": {
-    "chemistry": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
-    "civics": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
-    "english": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
-    "python": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d"
-  },
+  "condition_processes": [
+    {
+      "condition": "real_host",
+      "observations_sha256": "1b9906b2d7b31319c18d40351a5ee826114fd844a18cd1f37afdd9585cdc58c4",
+      "process_id": 32140,
+      "receipt_sha256": "d939564854f3ec1eb9e4356c431fa29058b7f5eb5be56dc42e819d8e476f4504"
+    },
+    {
+      "condition": "neutral_host",
+      "observations_sha256": "a7c4eb724881525a2d05826898317c0302d29c5435d3f31f9a758d392b210298",
+      "process_id": 30732,
+      "receipt_sha256": "3383589d548380a517a811f666ed465e541788d157f7178011aba575a3f6713f"
+    },
+    {
+      "condition": "zero_state",
+      "observations_sha256": "f149528ee8adc2ae5348f064c99854e51dd1ddfd8b50d5e1f4beefcaa145fc49",
+      "process_id": 14924,
+      "receipt_sha256": "4982563b54dfaac4b11675657828d536ac152a8197618b3dacff6beb209a09cb"
+    },
+    {
+      "condition": "random_state",
+      "observations_sha256": "985ecf21f0ca8de51b3af503c0f42e7f7ea30ba69cb78fc1c45328a6b138e841",
+      "process_id": 24516,
+      "receipt_sha256": "ae031fac7af409a6836326c10fc88a48e21081555da78d4deb5675e8ba170d05"
+    },
+    {
+      "condition": "shuffled_state",
+      "observations_sha256": "a108e8f9cbd05c212cc482c4a14bbc497f653179c3249371a42080acf0aa58cd",
+      "process_id": 31592,
+      "receipt_sha256": "3340457067aae3cfcc51e1acaba1ee743d68cddbf6823dd8500e5da4f90dc4f0"
+    },
+    {
+      "condition": "host_removed",
+      "observations_sha256": "49e527cd6b9e11e0db826b66d881b0d83fd0a07df7b2a68d892dfa1561317557",
+      "process_id": 20316,
+      "receipt_sha256": "29f26190f1d124e201144ffb6b1ff211c95810ba4218a538c2395bdacf23297a"
+    },
+    {
+      "condition": "adapter_removed",
+      "observations_sha256": "3a09175459165743ebee5c6c30aba6a87890f3043a1efb31df0ebfd47950e6e5",
+      "process_id": 8124,
+      "receipt_sha256": "1ae2e0b20ab6edb7319207e2403ac9022f87046f20395545e3c714b3a647d0d6"
+    },
+    {
+      "condition": "capability_removed",
+      "observations_sha256": "e6c7ee4f682007633800663738f00dd6672d4d6dfb1e6d8328fe60f0424dafbe",
+      "process_id": 7016,
+      "receipt_sha256": "2a5885e0d6ed8e804f931037d2f3c235d2f810ac059b091cdba4c472096d1b0f"
+    }
+  ],
   "conditions": [
     "real_host",
     "neutral_host",
@@ -18,21 +60,13 @@
     "capability_removed"
   ],
   "device": "cuda",
-  "evidence_sha256": "02ccab8854bc002315f9e3c0e687690d332a80532025a7982c073ddc1639957d",
-  "execution_source_sha256": "8c32535542f75e7475b05eb91d8a9cf9bc35c75e2bb15eae93e22a3c4b368276",
-  "format": "abi-v2-live-host-causality-run/1",
+  "evidence_sha256": "81b49bf3517975f83b28feace51b2791aa048491ad84dc40aea17bd406d402e4",
+  "execution_source_sha256": "98fbd7eba8114ba791597bf336e5811c03a7626a7fcdf65c23af209ee8686e0b",
+  "format": "abi-v2-live-host-causality-run/2",
   "host": "pythia",
-  "native_host": {
-    "checkpoint_loaded": true,
-    "checkpoint_sha256": "29d2e457a664e41c12c735f20a36dc0956a665f614a54ce5db21a32e75965270",
-    "parameter_count": 162322944,
-    "precision": "torch.float16",
-    "snapshot_inventory_sha256": "9c3045a81419c0fe3c7a8c584d8ad467b267d9e64de9663f2aad348a09f6c085",
-    "tokenizer_sha256": "c24618a1b3e6a38167beff1c72cffd126c3a66254347304b50547d12c5f25624"
-  },
   "observations_path": "observations.jsonl",
   "observations_rows": 1024,
-  "observations_sha256": "0ac3cc7276df641a3f27481d6726b7c99e31f2225b2c206cbfb291c7df3f25ff",
+  "observations_sha256": "303da26a9c7fe07cfb1e1781b8c99eaf0486c4026c84ceceb3d25aa957e0c5ea",
   "sample_seed": 2026082501,
   "samples_per_capability": 32,
   "selected_probe_ids": {
@@ -173,5 +207,5 @@
       "python-generation-249-v6"
     ]
   },
-  "wall_seconds": 467.2455748999928
+  "wall_seconds": 606.8828327000083
 }

@@ -71,6 +71,7 @@ include = ["abi*"]
 [tool.setuptools.package-data]
 abi_v2 = [
   "*.json",
+  "*.sh",
   "reference_vectors/*.json",
 ]
 

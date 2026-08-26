@@ -869,7 +869,9 @@ def recompute_headlines(root: Path) -> dict[str, Any]:
         },
         "summary_files_trusted": False,
         "headline_constants_embedded": False,
-        "candidate_sha256": sha256_file(root / RESULT_ROOT / "frozen_release_candidate.json"),
+        "candidate_sha256": sha256_file(
+            root / REPAIRED_RESULT_ROOT / "frozen_release_candidate.json"
+        ),
     }
     return headline
 
@@ -930,7 +932,7 @@ def final_certificate(root: Path) -> dict[str, Any]:
     ))]
     readiness = {
         "frozen_technical_proof_lineage_verified": headlines["candidate_sha256"]
-        == sha256_file(root / RESULT_ROOT / "frozen_release_candidate.json"),
+        == sha256_file(root / REPAIRED_RESULT_ROOT / "frozen_release_candidate.json"),
         "host_causality_passes_declared_scope": headlines["host_causality"]["status"]
         == "PASS_WITH_CLAIM_NARROWED_TO_STANDALONE_CAPABILITY_RUNTIME",
         "clean_checkout_reproduction_passes": clean["status"] == "PASS_CLEAN_CHECKOUT_REPRODUCTION",

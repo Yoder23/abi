@@ -283,7 +283,9 @@ def collect(
     prior_command_receipts: list[Path] | None = None,
 ) -> dict[str, Any]:
     clean_root = clean_root.resolve()
-    candidate = read_json(clean_root / "results/abi_final_validation/frozen_release_candidate.json")
+    candidate = read_json(
+        clean_root / "results/abi_final_validation_v2/frozen_release_candidate.json"
+    )
     archive_check = _archive_verification(archive.resolve())
     source = _clean_source_bindings(clean_root, candidate)
     certifications = _host_certifications(clean_root, candidate)

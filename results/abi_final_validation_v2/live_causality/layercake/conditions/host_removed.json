@@ -1,0 +1,42 @@
+{
+  "adapter_sha256": "d1f3a9d67581032473055711773f784e3b0a028fb68fab58c3a9a63b94317f04",
+  "capability_sha256": {
+    "chemistry": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+    "civics": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+    "english": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+    "python": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d"
+  },
+  "condition": "host_removed",
+  "device": "cuda",
+  "evidence_sha256": "963e5243cfa248aa86ae024f46f4116932b2f7f45bae83c09f19458c2e889e52",
+  "execution_source_sha256": "98fbd7eba8114ba791597bf336e5811c03a7626a7fcdf65c23af209ee8686e0b",
+  "format": "abi-v2-live-host-condition/2",
+  "host": "layercake",
+  "intervention": {
+    "condition": "host_removed",
+    "intervention_sha256": "ede45aafe250ee66113f59422acc5c294a66f8d108b5c3c9eb8041cd8a88e084",
+    "kind": "structural_native_host_absence",
+    "parameter_name": null,
+    "values_after": [],
+    "values_before": []
+  },
+  "native_host": {
+    "host_registry_identity": {
+      "architecture": "LayerCake route-isolated shallow sparse host environment",
+      "checkpoint": "source commit 662c5a9b7264a1a5478c9dfb656f35c450e2504f",
+      "checkpoint_sha256": "7b176f21e6a86f3aaded724462d37149f8f8be48370bcdd163fe44c49e3464ce",
+      "host_id": "layercake-v25",
+      "precision": "float32",
+      "tokenizer_mode": "strict_utf8_identity"
+    },
+    "parameter_count": 0,
+    "runtime_mode": "physically_removed_no_snapshot_no_object"
+  },
+  "observations_rows": 128,
+  "observations_sha256": "3710673bc088021d8bee8bb0648511be7cc90d0443e61095a5260e62e45ae6ee",
+  "parent_process_id": 32076,
+  "process_id": 27588,
+  "process_started_ns": 1787700638707220200,
+  "samples_per_capability": 32,
+  "snapshot_argument": "absent"
+}

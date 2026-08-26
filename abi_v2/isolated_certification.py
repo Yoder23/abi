@@ -4,8 +4,9 @@ The certification worker is intentionally incapable of seeing capability
 packages, source-success locks, matrix observations, or development evidence.
 The parent process builds an allowlisted capsule containing only the canonical
 ABI, the generic conformance corpus, certification code, and one host.  The
-worker refuses to run unless the complete capsule inventory matches its
-manifest and the development drive is absent from its mount namespace.
+worker executes after ``pivot_root`` into a tmpfs filesystem containing only
+that capsule and read-only runtime dependencies.  The old root, Windows
+mounts, network namespace, and every development path are unreachable.
 """
 
 from __future__ import annotations
@@ -15,6 +16,7 @@ import hashlib
 import json
 import os
 import shutil
+import site
 import subprocess
 import sys
 import tempfile
@@ -98,6 +100,7 @@ def build_capsule(
     code = (
         "abi_v2/__init__.py",
         "abi_v2/canonical.py",
+        "abi_v2/certification_pivot_runner.sh",
         "abi_v2/host_certification.py",
         "abi_v2/isolated_certification.py",
     )
@@ -222,6 +225,14 @@ def verify_capsule(capsule: Path) -> dict[str, Any]:
         raise IsolatedCertificationError(
             f"certification capsule inventory changed: missing={missing}, extra={extra}, changed={changed}"
         )
+    capability_archives = [
+        row["path"]
+        for row in actual_rows
+        if Path(row["path"]).suffix.casefold() in FORBIDDEN_SUFFIXES
+    ]
+    source_success_ledgers = [
+        row["path"] for row in actual_rows if "source_success" in row["path"].casefold()
+    ]
     forbidden = [
         row["path"]
         for row in actual_rows
@@ -234,34 +245,134 @@ def verify_capsule(capsule: Path) -> dict[str, Any]:
         "manifest_sha256": _sha256_file(manifest_path),
         "files_verified": len(actual_rows),
         "inventory_sha256": sha256_bytes(canonical_json_bytes(actual_rows)),
-        "capability_archives_present": 0,
-        "source_success_ledgers_present": 0,
+        "capability_archives_present": len(capability_archives),
+        "source_success_ledgers_present": len(source_success_ledgers),
         "inventory": actual_rows,
     }
+
+
+def _decode_mount_path(value: str) -> str:
+    return (
+        value.replace("\\040", " ")
+        .replace("\\011", "\t")
+        .replace("\\012", "\n")
+        .replace("\\134", "\\")
+    )
+
+
+def _mount_rows(text: str) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    for line in text.splitlines():
+        fields = line.split()
+        if "-" not in fields or len(fields) < 10:
+            raise IsolatedCertificationError("malformed kernel mount record")
+        separator = fields.index("-")
+        if separator + 2 >= len(fields):
+            raise IsolatedCertificationError("incomplete kernel mount record")
+        rows.append(
+            {
+                "mount_point": _decode_mount_path(fields[4]),
+                "mount_options": fields[5].split(","),
+                "filesystem_type": fields[separator + 1],
+                "source": fields[separator + 2],
+                "super_options": fields[separator + 3].split(",")
+                if separator + 3 < len(fields)
+                else [],
+            }
+        )
+    return rows
 
 
 def _mount_state() -> dict[str, Any]:
     mountinfo = Path("/proc/self/mountinfo")
     text = mountinfo.read_text(encoding="utf-8") if mountinfo.is_file() else ""
-    c_mounts = [
-        line
-        for line in text.splitlines()
-        if len(line.split()) > 4 and line.split()[4] == "/mnt/c"
-    ]
-    effective_c_mount = c_mounts[-1] if c_mounts else ""
-    drive_masked = " - tmpfs " in effective_c_mount
-    development_mount_visible = (
-        bool(effective_c_mount) and not drive_masked
-    ) or Path("/mnt/c/Python310").exists()
+    rows = _mount_rows(text)
+    runtime_site = os.environ.get("PYTHONPATH", "")
+    allowed_exact = {
+        "/",
+        "/capsule",
+        "/dev",
+        "/dev/null",
+        "/dev/random",
+        "/dev/urandom",
+        "/dev/zero",
+        "/etc",
+        "/proc",
+        "/usr",
+        runtime_site,
+    }
+    unexpected = sorted(
+        row["mount_point"]
+        for row in rows
+        if row["mount_point"] not in allowed_exact
+    )
+    required = {"/", "/capsule", "/dev", "/etc", "/proc", "/usr", runtime_site}
+    present = {row["mount_point"] for row in rows}
+    root_rows = [row for row in rows if row["mount_point"] == "/"]
+    capsule_rows = [row for row in rows if row["mount_point"] == "/capsule"]
+    if (
+        os.environ.get("ABI_CERTIFICATION_PIVOT_ROOT") != "1"
+        or unexpected
+        or required - present
+        or len(root_rows) != 1
+        or root_rows[0]["filesystem_type"] != "tmpfs"
+        or len(capsule_rows) != 1
+        or Path("/oldroot").exists()
+        or Path("/mnt/c").exists()
+    ):
+        raise IsolatedCertificationError(
+            "worker filesystem is not the exact pivot-root certification sandbox"
+        )
     return {
         "platform": sys.platform,
         "mountinfo_sha256": hashlib.sha256(text.encode("utf-8")).hexdigest(),
-        "development_mount_visible": development_mount_visible,
-        "windows_workspace_visible": Path("/mnt/c/Python310").exists(),
-        "windows_drive_masked_by_tmpfs": drive_masked,
-        "effective_windows_mount_sha256": hashlib.sha256(
-            effective_c_mount.encode("utf-8")
-        ).hexdigest(),
+        "sandbox_policy": "abi-certification-pivot-root/1",
+        "runtime_site_mount": runtime_site,
+        "allowed_mount_points": sorted(allowed_exact),
+        "mounts": rows,
+        "unexpected_mount_points": unexpected,
+        "old_root_present": Path("/oldroot").exists(),
+        "windows_mount_present": Path("/mnt/c").exists(),
+    }
+
+
+def _physical_forbidden_scan() -> dict[str, Any]:
+    """Inventory forbidden campaign payload names across the reachable root."""
+
+    forbidden_archives: list[str] = []
+    source_success_ledgers: list[str] = []
+    files_scanned = 0
+    directories_scanned = 0
+    excluded_virtual_roots = {"/dev", "/proc"}
+    for directory, names, filenames in os.walk("/", topdown=True, followlinks=False):
+        directory_path = Path(directory)
+        names[:] = [
+            name
+            for name in names
+            if (directory_path / name).as_posix() not in excluded_virtual_roots
+        ]
+        directories_scanned += 1
+        for name in filenames:
+            path = directory_path / name
+            if path.is_symlink():
+                continue
+            files_scanned += 1
+            normalized = path.as_posix()
+            if path.suffix.casefold() in FORBIDDEN_SUFFIXES:
+                forbidden_archives.append(normalized)
+            if "source_success" in normalized.casefold():
+                source_success_ledgers.append(normalized)
+    if forbidden_archives or source_success_ledgers:
+        raise IsolatedCertificationError(
+            "forbidden campaign payload is reachable inside certification root"
+        )
+    return {
+        "scan_root": "/",
+        "excluded_virtual_roots": sorted(excluded_virtual_roots),
+        "directories_scanned": directories_scanned,
+        "files_scanned": files_scanned,
+        "capability_archive_paths": forbidden_archives,
+        "source_success_ledger_paths": source_success_ledgers,
     }
 
 
@@ -272,9 +383,10 @@ def run_worker(capsule: Path, *, host_key: str, device: str) -> dict[str, Any]:
     root = capsule / "abi_release"
     inventory = verify_capsule(capsule)
     mount = _mount_state()
-    if sys.platform != "linux" or mount["development_mount_visible"]:
+    forbidden_scan = _physical_forbidden_scan()
+    if sys.platform != "linux" or mount["unexpected_mount_points"]:
         raise IsolatedCertificationError(
-            "worker requires Linux mount isolation with the development drive absent"
+            "worker requires the exact Linux pivot-root isolation policy"
         )
     from .host_certification import certify_host
 
@@ -285,10 +397,16 @@ def run_worker(capsule: Path, *, host_key: str, device: str) -> dict[str, Any]:
         "host_key": host_key,
         "capsule": inventory,
         "mount": mount,
+        "reachable_filesystem_forbidden_scan": forbidden_scan,
         "process_id": os.getpid(),
         "parent_process_id": os.getppid(),
-        "capability_archives_physically_present": 0,
-        "source_success_ledgers_physically_present": 0,
+        "capsule_files_physically_present": inventory["files_verified"],
+        "capability_archives_physically_present": inventory[
+            "capability_archives_present"
+        ],
+        "source_success_ledgers_physically_present": inventory[
+            "source_success_ledgers_present"
+        ],
     }
     isolation["evidence_sha256"] = sha256_bytes(canonical_json_bytes(isolation))
     result = certify_host(
@@ -319,6 +437,15 @@ def run_worker(capsule: Path, *, host_key: str, device: str) -> dict[str, Any]:
             output / "certification-capsule-manifest.json"
         ),
         "mountinfo_sha256": _sha256_file(output / "mountinfo.txt"),
+        "executed_isolated_certification_sha256": _sha256_file(
+            root / "abi_v2/isolated_certification.py"
+        ),
+        "executed_pivot_runner_sha256": _sha256_file(
+            root / "abi_v2/certification_pivot_runner.sh"
+        ),
+        "executed_host_certification_sha256": _sha256_file(
+            root / "abi_v2/host_certification.py"
+        ),
         "worker_exit_basis": result["status"],
     }
     receipt["evidence_sha256"] = sha256_bytes(canonical_json_bytes(receipt))
@@ -356,31 +483,46 @@ def run_wsl_capsule(
 
     capsule_source = wsl_path(capsule)
     destination_target = wsl_path(destination)
+    runtime_probe = subprocess.run(
+        [
+            "wsl.exe",
+            "-d",
+            distribution,
+            "--",
+            "python3",
+            "-c",
+            "import site; print(site.getusersitepackages())",
+        ],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    runtime_site = runtime_probe.stdout.strip()
+    if runtime_probe.returncode != 0 or not runtime_site.startswith("/home/"):
+        raise IsolatedCertificationError("cannot identify the WSL Python runtime site")
     linux_capsule = f"/tmp/abi-certification-{host_key}-{uuid.uuid4().hex}"
-    runner = f"{linux_capsule}-runner.sh"
+    sandbox_root = f"/tmp/abi-certification-root-{host_key}-{uuid.uuid4().hex}"
     completed = subprocess.run(
         [
             "wsl.exe",
             "-d",
             distribution,
+            "-u",
+            "root",
             "--",
             "bash",
             "-lc",
             (
                 "set -euo pipefail; "
                 f"cp -aL '{capsule_source}' '{linux_capsule}'; "
-                f"cat >'{runner}' <<'SH'\n"
-                "#!/bin/bash\n"
-                "set -euo pipefail\n"
-                "export PYTHONDONTWRITEBYTECODE=1\n"
-                "mount -t tmpfs -o size=64k,mode=000 tmpfs /mnt/c\n"
-                "if test -e /mnt/c/Python310; then exit 91; fi\n"
-                f"cd '{linux_capsule}/abi_release'\n"
-                f"python3 -m abi_v2.isolated_certification worker --capsule '{linux_capsule}' --host {host_key} --device {device}\n"
-                "SH\n"
-                f"chmod 500 '{runner}'; "
-                "unshare --user --map-root-user --mount --propagation private "
-                f"'{runner}'; "
+                f"chmod 500 '{linux_capsule}/abi_release/abi_v2/certification_pivot_runner.sh'; "
+                f"ABI_CAPSULE_PATH='{linux_capsule}' "
+                f"ABI_SANDBOX_ROOT='{sandbox_root}' "
+                f"ABI_HOST_KEY='{host_key}' ABI_DEVICE='{device}' "
+                f"ABI_RUNTIME_SITE_PATH='{runtime_site}' "
+                "unshare --mount --pid --fork --ipc --uts --net "
+                "--propagation private "
+                f"'{linux_capsule}/abi_release/abi_v2/certification_pivot_runner.sh'; "
                 f"mkdir -p '{Path(destination_target).parent.as_posix()}'; "
                 f"cp -a '{linux_capsule}/abi_release/output' '{destination_target}'; "
                 f"printf '%s' '{linux_capsule}'"
@@ -403,6 +545,7 @@ def run_wsl_capsule(
     receipt["launcher"] = {
         "distribution": distribution,
         "exit_code": completed.returncode,
+        "sandbox_policy": "abi-certification-pivot-root/1",
         "wsl_capsule_path_sha256": hashlib.sha256(
             completed.stdout.strip().encode("utf-8")
         ).hexdigest(),
@@ -435,29 +578,34 @@ def run_linux_capsule(
         raise IsolatedCertificationError("refusing to mask a filesystem root")
     staging = Path(tempfile.mkdtemp(prefix=f"abi-certification-{host_key}-"))
     capsule = staging / "capsule"
-    runner = staging / "run-isolated.sh"
     build_capsule(root, host_key=host_key, destination=capsule, snapshot=snapshot)
-    runner.write_text(
-        "#!/bin/bash\n"
-        "set -euo pipefail\n"
-        "export PYTHONDONTWRITEBYTECODE=1\n"
-        f"mount -t tmpfs -o size=64k,mode=000 tmpfs '{root.as_posix()}'\n"
-        f"cd '{(capsule / 'abi_release').as_posix()}'\n"
-        f"python3 -m abi_v2.isolated_certification worker --capsule '{capsule.as_posix()}' "
-        f"--host {host_key} --device {device}\n",
-        encoding="utf-8",
-    )
+    runner = capsule / "abi_release/abi_v2/certification_pivot_runner.sh"
     runner.chmod(0o500)
+    sandbox_root = f"/tmp/abi-certification-root-{host_key}-{uuid.uuid4().hex}"
+    environment = {
+        **os.environ,
+        "ABI_CAPSULE_PATH": capsule.as_posix(),
+        "ABI_SANDBOX_ROOT": sandbox_root,
+        "ABI_HOST_KEY": host_key,
+        "ABI_DEVICE": device,
+        "ABI_RUNTIME_SITE_PATH": site.getusersitepackages(),
+    }
     completed = subprocess.run(
         [
             "unshare",
             "--user",
             "--map-root-user",
             "--mount",
+            "--pid",
+            "--fork",
+            "--ipc",
+            "--uts",
+            "--net",
             "--propagation",
             "private",
             str(runner),
         ],
+        env=environment,
         capture_output=True,
         text=True,
         check=False,
