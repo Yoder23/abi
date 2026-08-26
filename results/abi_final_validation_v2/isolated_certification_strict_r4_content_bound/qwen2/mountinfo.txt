@@ -1,0 +1,11 @@
+518 293 0:82 / / rw,relatime - tmpfs tmpfs rw,size=262144k,mode=700
+519 518 8:48 /usr /usr ro,relatime - ext4 /dev/sdd rw,discard,errors=remount-ro,data=ordered
+520 518 8:48 /home/samyo/.local/lib/python3.12/site-packages /home/samyo/.local/lib/python3.12/site-packages ro,relatime - ext4 /dev/sdd rw,discard,errors=remount-ro,data=ordered
+521 518 0:83 / /etc ro,relatime - tmpfs tmpfs ro,size=4096k,mode=755
+522 518 0:84 / /dev rw,relatime - tmpfs tmpfs rw,size=16384k,mode=755
+523 522 0:5 /null /dev/null ro,relatime - devtmpfs none rw,size=16367288k,nr_inodes=4091822,mode=755
+524 522 0:5 /zero /dev/zero ro,relatime - devtmpfs none rw,size=16367288k,nr_inodes=4091822,mode=755
+525 522 0:5 /random /dev/random ro,relatime - devtmpfs none rw,size=16367288k,nr_inodes=4091822,mode=755
+526 522 0:5 /urandom /dev/urandom ro,relatime - devtmpfs none rw,size=16367288k,nr_inodes=4091822,mode=755
+527 518 8:48 /tmp/abi-certification-qwen2-ea412c4c40d6406a85706067f3d27166 /capsule rw,relatime - ext4 /dev/sdd rw,discard,errors=remount-ro,data=ordered
+528 518 0:85 / /proc rw,nosuid,nodev,noexec,relatime - proc proc rw

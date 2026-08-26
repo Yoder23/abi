@@ -1,0 +1,36 @@
+{
+  "abi_version": "abi-canonical-host/2",
+  "accepted_capability_ids": "not enumerated; package identity is revealed only after freeze",
+  "accepted_runtime_classes": [
+    "lc-direct-neural-core/25",
+    "lc-direct-neural-decoder/1"
+  ],
+  "architecture": "Qwen2ForCausalLM",
+  "canonical_spec_sha256": "6536ef1b58dfeea0474bfef5619f3627ecaefe8f39f25da017f11446b6582c2f",
+  "capability_examples_seen": 0,
+  "capability_outputs_seen": 0,
+  "capability_paths_accepted": false,
+  "capability_success_ids_seen": 0,
+  "checkpoint": "Qwen/Qwen2.5-0.5B@060db6499f32faf8b98477b0a26969ef7d8b9987",
+  "checkpoint_sha256": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342",
+  "conformance_suite_sha256": "2af84b8b18fa78613fda7c96e7d269ef731b68138f736ea2d4441f4254747383",
+  "format": "abi-v2-frozen-generic-host-adapter/1",
+  "frozen": true,
+  "host_id": "qwen2.5-0.5b",
+  "host_key": "qwen2",
+  "input_adapter": "strict host-tokenizer decode to canonical UTF-8 plus typed context state",
+  "optimizer_steps": 0,
+  "output_adapter": "canonical authoritative UTF-8 to exact native-tokenizer round trip",
+  "post_freeze_mutation_allowed": false,
+  "reference_implementation_sha256": "c394133dc70a8cabfbb7b390e3b74178707d8cb3c89ead91a7b106eca445f52b",
+  "snapshot_inventory_sha256": "a2f0d549121c1d38fe3c9ff33d6e80df1d02a032153daa15ff89663eb091f25f",
+  "state_ownership": [
+    "host_base",
+    "generic_host_adapter",
+    "frozen_capability",
+    "generic_runtime"
+  ],
+  "tokenizer_mode": "Qwen2TokenizerFast",
+  "tokenizer_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+  "trainable_parameters": 0
+}

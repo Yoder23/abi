@@ -204,20 +204,27 @@ def run(root: Path) -> dict[str, Any]:
     missing_file(
         "missing_raw_mount_table",
         Path(
-            "results/abi_final_validation_v2/isolated_certification_strict/"
+            "results/abi_final_validation_v2/isolated_certification_strict_r4_content_bound/"
             "pythia/mountinfo.txt"
+        ),
+    )
+    missing_file(
+        "missing_reachable_filesystem_inventory",
+        Path(
+            "results/abi_final_validation_v2/isolated_certification_strict_r4_content_bound/"
+            "pythia/reachable-filesystem-inventory.jsonl"
         ),
     )
     missing_file(
         "missing_frozen_adapter",
         Path(
-            "results/abi_final_validation_v2/isolated_certification_strict/"
+            "results/abi_final_validation_v2/isolated_certification_strict_r4_content_bound/"
             "layercake/certification/adapter.json"
         ),
     )
 
     receipt_target = root / (
-        "results/abi_final_validation_v2/isolated_certification_strict/"
+        "results/abi_final_validation_v2/isolated_certification_strict_r4_content_bound/"
         "qwen2/receipt.json"
     )
     receipt_backup = backup_root / "receipt.backup"
@@ -238,13 +245,69 @@ def run(root: Path) -> dict[str, Any]:
         )
     )
 
+    inventory_base = root / (
+        "results/abi_final_validation_v2/isolated_certification_strict_r4_content_bound/layercake"
+    )
+    inventory_target = inventory_base / "reachable-filesystem-inventory.jsonl"
+    inventory_isolation = inventory_base / "physical-isolation.json"
+    inventory_result = inventory_base / "certification/result.json"
+    inventory_receipt = inventory_base / "receipt.json"
+    inventory_backups = {
+        inventory_target: backup_root / "filesystem-inventory.backup",
+        inventory_isolation: backup_root / "filesystem-isolation.backup",
+        inventory_result: backup_root / "filesystem-result.backup",
+        inventory_receipt: backup_root / "filesystem-receipt.backup",
+    }
+    for target, backup in inventory_backups.items():
+        shutil.copy2(target, backup)
+
+    def rehash_removed_filesystem_row() -> None:
+        inventory_rows = [
+            json.loads(line)
+            for line in inventory_target.read_text(encoding="utf-8").splitlines()
+        ]
+        inventory_rows = [row for row in inventory_rows if row.get("path") != "/bin"]
+        inventory_target.write_bytes(
+            b"".join(canonical_json_bytes(row) for row in inventory_rows)
+        )
+        isolation = _json(inventory_isolation)
+        summary = isolation["reachable_filesystem_forbidden_scan"]
+        summary["inventory_rows"] = int(summary["inventory_rows"]) - 1
+        summary["symlinks_scanned"] = int(summary["symlinks_scanned"]) - 1
+        summary["inventory_jsonl_sha256"] = _sha256_file(inventory_target)
+        summary["evidence_sha256"] = evidence_hash(summary)
+        _replace_json(inventory_isolation, _rehash(isolation))
+        result = _json(inventory_result)
+        result["physical_isolation"]["evidence_sha256"] = isolation["evidence_sha256"]
+        _replace_json(inventory_result, _rehash(result))
+        receipt = _json(inventory_receipt)
+        receipt["reachable_filesystem_inventory_sha256"] = _sha256_file(
+            inventory_target
+        )
+        receipt["isolation_evidence_sha256"] = _sha256_file(inventory_isolation)
+        receipt["result_sha256"] = _sha256_file(inventory_result)
+        _replace_json(inventory_receipt, _rehash(receipt))
+
+    def restore_filesystem_row() -> None:
+        for target, backup in inventory_backups.items():
+            shutil.copy2(backup, target)
+
+    rows.append(
+        _expect_rejected(
+            root,
+            name="rehashed_missing_reachable_filesystem_row",
+            mutate=rehash_removed_filesystem_row,
+            restore=restore_filesystem_row,
+        )
+    )
+
 
     cert_result = root / (
-        "results/abi_final_validation_v2/isolated_certification_strict/"
+        "results/abi_final_validation_v2/isolated_certification_strict_r4_content_bound/"
         "qwen2/certification/result.json"
     )
     cert_receipt = root / (
-        "results/abi_final_validation_v2/isolated_certification_strict/"
+        "results/abi_final_validation_v2/isolated_certification_strict_r4_content_bound/"
         "qwen2/receipt.json"
     )
     cert_result_backup = backup_root / "cert-result.backup"
@@ -274,11 +337,11 @@ def run(root: Path) -> dict[str, Any]:
     )
 
     capsule_manifest = root / (
-        "results/abi_final_validation_v2/isolated_certification_strict/"
+        "results/abi_final_validation_v2/isolated_certification_strict_r4_content_bound/"
         "layercake/certification-capsule-manifest.json"
     )
     capsule_receipt = root / (
-        "results/abi_final_validation_v2/isolated_certification_strict/"
+        "results/abi_final_validation_v2/isolated_certification_strict_r4_content_bound/"
         "layercake/receipt.json"
     )
     capsule_manifest_backup = backup_root / "capsule-manifest.backup"

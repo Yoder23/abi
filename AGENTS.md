@@ -10,9 +10,9 @@ detailed campaign history into the other.
 
 ## Current authority
 
-The controlling final-mile campaign is the repaired ABI V2 validation under
-`results/abi_final_validation_v2/`. Its current status is
-`TECHNICAL_PROOF_FROZEN_PUBLIC_RECONSTRUCTION_PENDING`. The certificate at
+The controlling final-mile campaign is the additive r4 content-bound ABI V2
+validation under `results/abi_final_validation_v2/`. Its current status is
+`R4_CONTENT_BOUND_TECHNICAL_PROOF_READY_FOR_IMMUTABLE_FREEZE`. The certificate at
 `results/abi_final_validation/` and tag
 `abi-final-technical-validation-ready-2026-08-25` are preserved historical
 evidence and are explicitly superseded. They relied on certification path
@@ -25,20 +25,29 @@ mismatch in historical evidence. The r1 tag is also superseded: its public
 extraction exposed that the clean-tree test still read the old frozen candidate
 receipt. A fresh blind review then rejected r2 because its isolation and host
 state interventions did not meet the physical/live standard. The repaired
-technical proof is frozen at commit
-`7064c94f2c6137a29b8793d9b0ec95137efb051e`, annotated tag
-`abi-final-validation-v2-physical-live-proof-2026-08-25`.
+technical proof was frozen at commit `7064c94f2c6137a29b8793d9b0ec95137efb051e`,
+annotated tag `abi-final-validation-v2-physical-live-proof-2026-08-25`.
+The public r3 release and manifest-only reconstruction then passed locally, but
+a fresh blind audit rejected r3 because the admitted `/usr`, minimal runtime,
+and Python package trees were not content-bound and because the reviewer's
+restricted network could not independently query the exact release. This is a
+formal r3 failure, preserved in
+`results/abi_final_validation_v2/blind_redteam_r3_fail.md`; it is not waived by
+the otherwise strong r3 live evidence.
 
-The repaired local result uses private mount-namespace certification capsules.
+The r4 local result uses private mount-namespace certification capsules.
 The worker filesystem contains only the generic certification corpus, canonical
 ABI/specification, adapter code, and selected host snapshot/source. Capability
-archives and source-success IDs are physically absent. The strict verifier
-recomputes 384 certification rows, the 5,043-row locked matrix, 3,072 fresh live
-causal interventions, and 2,100 fresh isolation rows from bound raw files. It
-consumes zero experiment gate/status booleans and fails closed on missing,
-changed, or stale inputs. The supported suite passes 70/70 locally.
-The disposable extracted-archive hostile audit rejects 15/15 mutations and
-restores the exact baseline digest.
+archives and source-success IDs are physically absent. R4 additionally hashes
+and content-scans every reachable non-virtual regular file, expands readable
+ZIP members, inventories every symlink, detects capability archives by internal
+structure rather than extension, and retains about 100,500 canonical raw
+filesystem rows per host. The strict verifier recomputes 384 certification
+rows, the 5,043-row locked matrix, 3,072 fresh live causal interventions, and
+2,100 fresh isolation rows from bound raw files. It consumes zero experiment
+gate/status booleans and fails closed on missing, changed, or stale inputs. The
+disposable hostile audit rejects 17/17 mutations, including a fully rehashed
+missing-filesystem-row attack, and restores the exact baseline digest.
 
 Do not change this status to `READY_FOR_HUMAN_AND_INDEPENDENT_REVIEW` until all
 four capability packages and the definitive archive are published at immutable
@@ -96,10 +105,10 @@ artifacts, adapters, evaluators, thresholds, or benchmarks.
 - Phase 2 is machine-complete but lacks 21,000 independent human preferences.
 - Phase 3 machine gates pass conditionally on Phase 2.
 - Phases 4–7 hold bounded machine certificates.
-- Phase 8's original internal-readiness declaration is superseded. The repaired
-  candidate passes strict local recomputation and 70 supported tests; immutable
-  publication, clean public reconstruction, and fresh blind red-team remain
-  mandatory before opening human or independent-hardware review.
+- Phase 8's original internal-readiness declaration and r3 candidate are
+  superseded. R4 passes strict local recomputation and 17/17 hostile attacks;
+  immutable publication, clean public reconstruction, and a fresh passing blind
+  red-team remain mandatory before opening human or independent-hardware review.
 - The V1 final-mile native-receiver screen fails after its one bounded repair:
   the exact English archive is executable by 1/3 preregistered receiver
   families. Its controlling classification is `HOST_COADAPTED_CAPABILITY` and

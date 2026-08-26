@@ -15,14 +15,15 @@ The controlling machine-readable state is
 | 5 | Certified for bounded three-domain behavioral exclusion |
 | 6 | Certified for bounded three-package composition, portability, and provenance |
 | 7 | Certified for the registered same-machine CPU/CUDA integrated product |
-| 8 | Prior readiness certificate superseded; repaired technical proof frozen; public reconstruction and blind red-team pending |
+| 8 | R3 public reconstruction passed but blind red-team failed; r4 content-bound local proof passes; r4 publication/reconstruction/red-team pending |
 
 ## Strongest current local result
 
 The repaired final-mile proof is frozen at commit
 `7064c94f2c6137a29b8793d9b0ec95137efb051e` and annotated tag
 `abi-final-validation-v2-physical-live-proof-2026-08-25`. The strict verifier
-recomputes 95 bound inputs and the hostile verifier rejects 15/15 mutations.
+recomputes 98 bound inputs plus 301,543 raw reachable-filesystem rows, and the
+hostile verifier rejects 17/17 mutations.
 
 The frozen V1089 record reports a single signed English core plus signed
 chemistry, civics, and Python packages. On the registered development machine,

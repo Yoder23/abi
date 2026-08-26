@@ -43,11 +43,30 @@ mkdir -p \
   "$ABI_SANDBOX_ROOT/oldroot" \
   "$ABI_SANDBOX_ROOT$ABI_RUNTIME_SITE_PATH"
 
-# Runtime libraries are the only non-capsule file trees admitted.  Ordinary
+# Runtime libraries are the only non-capsule file trees admitted. Ordinary
 # bind mounts (not rbind) deliberately exclude nested WSL/Windows mounts.
 mount -o bind,ro /usr "$ABI_SANDBOX_ROOT/usr"
-mount -o bind,ro /etc "$ABI_SANDBOX_ROOT/etc"
 mount -o bind,ro "$ABI_RUNTIME_SITE_PATH" "$ABI_SANDBOX_ROOT$ABI_RUNTIME_SITE_PATH"
+
+# Do not admit the host's broad /etc tree or WSL's external /mnt/wsl symlinks.
+# Materialize only the small runtime configuration required by the offline
+# Python/model process, then make that exact snapshot read-only.
+mount -t tmpfs -o size=4m,mode=755 tmpfs "$ABI_SANDBOX_ROOT/etc"
+for ABI_ETC_FILE in \
+  group \
+  hostname \
+  hosts \
+  ld.so.cache \
+  localtime \
+  nsswitch.conf \
+  passwd \
+  resolv.conf; do
+  if test -f "/etc/$ABI_ETC_FILE"; then
+    cp -L --preserve=mode,timestamps "/etc/$ABI_ETC_FILE" \
+      "$ABI_SANDBOX_ROOT/etc/$ABI_ETC_FILE"
+  fi
+done
+mount -o remount,ro "$ABI_SANDBOX_ROOT/etc"
 
 # Construct a minimal device tree instead of exposing the host /dev tree.
 mount -t tmpfs -o size=16m,mode=755 tmpfs "$ABI_SANDBOX_ROOT/dev"

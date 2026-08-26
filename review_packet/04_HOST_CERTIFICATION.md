@@ -6,5 +6,6 @@ capsule plus the selected host; `/mnt/c` is replaced by private `tmpfs`.
 Capability archives and success IDs are physically absent, not filtered by
 path or name. Adapters have zero trainable parameters and optimizer steps.
 
-Raw evidence: `results/abi_final_validation_v2/isolated_certification_strict/`.
+Raw evidence:
+`results/abi_final_validation_v2/isolated_certification_strict_r4_content_bound/`.
 Independent command: `abi-reproduce certify-hosts`.

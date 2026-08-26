@@ -284,7 +284,7 @@ def collect(
 ) -> dict[str, Any]:
     clean_root = clean_root.resolve()
     candidate = read_json(
-        clean_root / "results/abi_final_validation_v2/frozen_release_candidate.json"
+        clean_root / "results/abi_final_validation_v2/frozen_release_candidate_r4.json"
     )
     archive_check = _archive_verification(archive.resolve())
     source = _clean_source_bindings(clean_root, candidate)

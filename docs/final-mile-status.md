@@ -6,7 +6,8 @@ Status date: 2026-08-25
 
 ```text
 ABI REPAIRED VALIDATION: TECHNICAL PROOF FROZEN
-PUBLIC RECONSTRUCTION AND BLIND RED-TEAM: PENDING
+R3 PUBLIC RECONSTRUCTION: PASS; R3 BLIND RED-TEAM: FAIL
+R4 CONTENT-BOUND REPAIR: LOCAL TECHNICAL PASS; PUBLICATION PENDING
 ```
 
 The earlier 18/18 readiness declaration and tag
@@ -32,18 +33,27 @@ branch split. The r1 tag/release is superseded. A blind review of r2 then found
 that isolation was incomplete, host states were recorded rather than applied,
 and several claims were not fully recomputable. Those failures are preserved.
 
-The current proof is frozen at commit
+The physical/live r3 proof is frozen at commit
 `7064c94f2c6137a29b8793d9b0ec95137efb051e`, annotated tag
 `abi-final-validation-v2-physical-live-proof-2026-08-25`.
 
+R3 was then published and reconstructed solely from its public manifest. Its
+fresh blind audit still returned `FAIL` because the admitted runtime trees were
+not content-bound and the restricted reviewer could not query the exact release
+endpoint. R4 is an additive repair; r3 remains immutable historical evidence.
+
 ## Repaired local evidence
 
-The repaired certification worker runs inside a private WSL2 mount namespace.
+The r4 certification worker runs inside a private WSL2 mount namespace.
 Its exact capsule contains only the generic certification corpus, canonical ABI
 implementation/specification, adapter code, and selected host code or snapshot.
 The development drive is replaced by a private `tmpfs`; raw `/proc/self/mountinfo`
-and a complete capsule byte inventory are preserved. Capability archives and
-source-success ledgers are physically absent.
+and a complete capsule byte inventory are preserved. The broad `/etc` bind is
+replaced by a minimal read-only runtime-configuration tmpfs. Every reachable
+non-virtual regular file is fully hashed and content-scanned, readable ZIP
+members are expanded, and every symlink is recorded. Capability archives are
+detected by internal cake/ABI archive structure even if renamed. Capability
+archives and source-success identifiers are physically absent.
 
 The live causal campaign executes every selected task anew under eight
 conditions: real host, neutral host, zero state, deterministic-random state,
@@ -57,28 +67,30 @@ capability removal fails generation in the live path.
 The strict verifier derives its verdict from raw rows, source bytes, immutable
 package/adapter hashes, capsule inventories, raw mount tables, and repeated
 timings. It does not consume experiment gate or status booleans. Its certificate
-binds all 95 required inputs with per-file SHA-256 and aggregate digest
-`4387142fa72a266ec7f8624c161d803f474d911271c3501945b85aa86c599416`.
+binds all 98 required inputs with per-file SHA-256 and aggregate digest
+`24b29e4a6f48ae48b4dbb3b7185223a36b174d547fd7b0e20dc7cc874d67202e`.
 
 | Recomputed item | Local repaired result |
 | --- | ---: |
 | Physically isolated hosts | 3/3 |
 | Certification roundtrip rows | 384/384 |
 | Native host forward rows | 32/32 finite |
+| Reachable filesystem inventory rows | 301,543/301,543 |
+| Reachable regular-file bytes content-scanned | 11,681,818,650 |
 | Capability archives visible during certification | 0 |
-| Source-success ledgers visible during certification | 0 |
+| Campaign/success identifiers visible during certification | 0 |
 | Locked matrix rows | 5,043/5,043 |
 | Cross-host output identities | 1,681/1,681 |
 | Specialist action identities | 300/300 |
 | New live causal rows | 3,072/3,072 |
 | New live isolation rows | 2,100/2,100 |
 | Isolation target successes | 0/2,100 |
-| Supported repository tests | 70/70 |
-| Disposable archive hostile mutations | 15/15 rejected; exact restore |
+| Focused r4 tests before freeze | 21/21 |
+| Disposable archive hostile mutations | 17/17 rejected; exact restore |
 | Trusted scientific booleans consumed | 0 |
 
-Recomputed median idle-adapter overhead from 20 paired observations is 4.57%
-for LayerCake, -2.45% for Qwen2, and 8.47% for Pythia, all below the registered
+Recomputed median idle-adapter overhead from 20 paired observations is 6.87%
+for LayerCake, 0.0039% for Qwen2, and 2.45% for Pythia, all below the registered
 10% ceiling. These are bounded conformance overhead measurements, not general
 inference-performance comparisons.
 
@@ -112,14 +124,18 @@ universal superiority over LoRA, distillation, or fine-tuning.
 
 ## Evidence map
 
-- Strict certificate: `results/abi_final_validation_v2/strict_validation.json`
-- Physical certification: `results/abi_final_validation_v2/isolated_certification_strict/`
+- Strict certificate:
+  `results/abi_final_validation_v2/strict_validation_r4_content_bound.json`
+- Physical certification:
+  `results/abi_final_validation_v2/isolated_certification_strict_r4_content_bound/`
 - Live causality: `results/abi_final_validation_v2/live_causality/`
 - Live isolation: `results/abi_final_validation_v2/live_isolation/`
 - Pre-public strict hostile receipt:
-  `results/abi_final_validation_v2/strict_hostile_pre_public.json`
+  `results/abi_final_validation_v2/strict_hostile_pre_public_r4.json`
 - Frozen repaired candidate:
-  `results/abi_final_validation_v2/frozen_release_candidate.json`
+  `results/abi_final_validation_v2/frozen_release_candidate_r4.json`
+- Preserved r3 blind failure:
+  `results/abi_final_validation_v2/blind_redteam_r3_fail.md`
 - Historical pre-repair certificate: `results/abi_final_validation/`
 - Historical first live run with declarative booleans:
   `results/abi_final_validation_v2/live_causality_untrusted_boolean_history/`

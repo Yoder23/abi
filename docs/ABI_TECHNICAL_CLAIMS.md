@@ -14,7 +14,10 @@ red-team.
   packages without capability-specific fitting or calibration. New
   certification runs occur in private mount namespaces containing only the
   generic corpus, canonical ABI/specification, adapter code, and the selected
-  host; capability archives and source-success ledgers are physically absent.
+  host; capability archives and source-success identifiers are physically
+  absent. R4 hashes and content-scans every reachable non-virtual regular file,
+  expands readable ZIP members, records every symlink, and retains the complete
+  raw per-file inventory for strict recomputation.
 - All package and adapter bytes remain unchanged across the 12 tested cells.
 - The locked suite records 5,043/5,043 receiver source successes and exact
   source-output bytes, plus 1,681/1,681 cross-environment canonical output
@@ -37,8 +40,8 @@ red-team.
 
 The strict verifier is `abi_v2.strict_validation`; repaired evidence is under
 `results/abi_final_validation_v2/`. It rejects missing packages, rows, hashes,
-mount evidence, adapters, and stale execution code without consuming experiment
-status/gate booleans.
+mount evidence, raw reachable-filesystem inventory rows, adapters, and stale
+execution code without consuming experiment status/gate booleans.
 
 ## Explicitly not proven
 

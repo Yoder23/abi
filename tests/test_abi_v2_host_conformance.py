@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import math
+import zipfile
 from pathlib import Path
 
 import pytest
@@ -17,7 +18,11 @@ from abi_v2.host_certification import (
     _adapter_document,
     _neutral_texts,
 )
-from abi_v2.isolated_certification import build_capsule, verify_capsule
+from abi_v2.isolated_certification import (
+    _inspect_regular_file,
+    build_capsule,
+    verify_capsule,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -86,6 +91,26 @@ def test_certification_capsule_physically_excludes_capabilities_and_success_ids(
     assert receipt["source_success_ledgers_present"] == 0
     assert not any(Path(path).suffix in {".abi", ".cake", ".abix", ".abicir"} for path in paths)
     assert not any("source_success" in path.casefold() for path in paths)
+
+
+def test_content_scanner_detects_renamed_capability_archive(tmp_path: Path) -> None:
+    disguised = tmp_path / "neutral-runtime-cache.bin"
+    with zipfile.ZipFile(disguised, "w") as archive:
+        archive.writestr(
+            "manifest.json",
+            json.dumps({"cake_id": "test", "cake_type": "domain", "abi_hash": "0" * 64}),
+        )
+        archive.writestr("tensors.safetensors", b"not-a-real-tensor")
+        archive.writestr("signature.json", b"{}")
+    row = _inspect_regular_file(disguised)
+    assert row["capability_archive_signatures"] == ["layercake-capability-package"]
+
+
+def test_content_scanner_detects_success_id_in_neutral_file(tmp_path: Path) -> None:
+    disguised = tmp_path / "neutral-runtime-cache.bin"
+    disguised.write_bytes(b"prefix phase1-validation-grounding-0042-v3 suffix")
+    row = _inspect_regular_file(disguised)
+    assert row["campaign_identifier_matches"] == 1
 
 
 def test_frozen_adapter_is_capability_blind() -> None:

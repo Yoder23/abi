@@ -28,11 +28,15 @@ from .capability_matrix import (
 )
 from .final_validation import CAPABILITY_PATHS, HOSTS, MATRIX_DIRS, evidence_hash
 from .host_certification import _neutral_texts
-from .isolated_certification import ALLOWED_CLASSIFICATIONS, _mount_rows
+from .isolated_certification import (
+    ALLOWED_CLASSIFICATIONS,
+    FILESYSTEM_INVENTORY_FORMAT,
+    _mount_rows,
+)
 from .live_causality import CONDITIONS, SAMPLE_SEED, _selected
 
 EVIDENCE_ROOT = Path("results/abi_final_validation_v2")
-CERTIFICATION_ROOT = EVIDENCE_ROOT / "isolated_certification_strict"
+CERTIFICATION_ROOT = EVIDENCE_ROOT / "isolated_certification_strict_r4_content_bound"
 CAUSALITY_ROOT = EVIDENCE_ROOT / "live_causality"
 ISOLATION_ROOT = EVIDENCE_ROOT / "live_isolation"
 FORBIDDEN_CAPABILITY_SUFFIXES = {".abi", ".cake", ".abix", ".abicir"}
@@ -103,6 +107,183 @@ def verify_evidence_hash(value: Mapping[str, Any], *, label: str) -> None:
         raise StrictValidationError(f"stale or invalid evidence hash: {label}")
 
 
+def _valid_sha256(value: Any) -> bool:
+    return (
+        isinstance(value, str)
+        and len(value) == 64
+        and all(character in "0123456789abcdef" for character in value)
+    )
+
+
+def _inventory_classification(path: str, runtime_site: str) -> str | None:
+    if path == "/capsule" or path.startswith("/capsule/"):
+        return "certification_capsule"
+    if path == "/usr" or path.startswith("/usr/"):
+        return "python_system_runtime"
+    if path == "/etc" or path.startswith("/etc/"):
+        return "system_runtime_configuration"
+    if path == runtime_site or path.startswith(runtime_site.rstrip("/") + "/"):
+        return "python_package_runtime"
+    if path in {"/bin", "/sbin", "/lib", "/lib64"}:
+        return "runtime_alias"
+    return None
+
+
+def verify_reachable_filesystem_inventory(
+    *,
+    host: str,
+    path: Path,
+    summary: Mapping[str, Any],
+    runtime_site: str,
+) -> dict[str, dict[str, Any]]:
+    """Recompute the content-bound reachable-root inventory from raw rows."""
+
+    if summary.get("format") != FILESYSTEM_INVENTORY_FORMAT:
+        raise StrictValidationError(f"reachable inventory format changed: {host}")
+    verify_evidence_hash(summary, label=f"{host}/reachable-filesystem-inventory")
+    rows = read_jsonl(path)
+    expected_bytes = b"".join(canonical_json_bytes(row) for row in rows)
+    if path.read_bytes() != expected_bytes:
+        raise StrictValidationError(f"reachable inventory JSONL is noncanonical: {host}")
+    if summary.get("inventory_jsonl_sha256") != hashlib.sha256(expected_bytes).hexdigest():
+        raise StrictValidationError(f"reachable inventory hash changed: {host}")
+    paths = [row.get("path") for row in rows]
+    if (
+        any(not isinstance(value, str) or not value.startswith("/") for value in paths)
+        or paths != sorted(paths)
+        or len(paths) != len(set(paths))
+    ):
+        raise StrictValidationError(f"reachable inventory paths changed: {host}")
+
+    regular_schema = {
+        "path",
+        "kind",
+        "mount_classification",
+        "bytes",
+        "sha256",
+        "content_bytes_scanned",
+        "campaign_identifier_matches",
+        "embedded_archive_members_scanned",
+        "embedded_archive_uncompressed_bytes_scanned",
+        "embedded_campaign_identifier_matches",
+        "capability_archive_signatures",
+        "forbidden_archive_member_paths",
+    }
+    symlink_schema = {
+        "path",
+        "kind",
+        "mount_classification",
+        "link_target",
+        "resolved_path",
+        "target_state",
+        "sha256",
+    }
+    regular_rows = []
+    symlink_rows = []
+    allowed_link_roots = ("/usr", "/etc", runtime_site, "/dev", "/proc", "/capsule")
+    for row in rows:
+        row_path = str(row["path"])
+        expected_classification = _inventory_classification(row_path, runtime_site)
+        if (
+            expected_classification is None
+            or row.get("mount_classification") != expected_classification
+            or not _valid_sha256(row.get("sha256"))
+        ):
+            raise StrictValidationError(f"unclassified reachable inventory row: {host}/{row_path}")
+        if row.get("kind") == "regular_file":
+            if set(row) != regular_schema:
+                raise StrictValidationError(f"regular inventory schema changed: {host}/{row_path}")
+            numeric = (
+                "bytes",
+                "content_bytes_scanned",
+                "campaign_identifier_matches",
+                "embedded_archive_members_scanned",
+                "embedded_archive_uncompressed_bytes_scanned",
+                "embedded_campaign_identifier_matches",
+            )
+            try:
+                values = {field: int(row[field]) for field in numeric}
+            except (KeyError, TypeError, ValueError) as exc:
+                raise StrictValidationError(
+                    f"reachable inventory numeric field changed: {host}/{row_path}"
+                ) from exc
+            if (
+                any(value < 0 for value in values.values())
+                or values["content_bytes_scanned"] != values["bytes"]
+                or values["campaign_identifier_matches"] != 0
+                or values["embedded_campaign_identifier_matches"] != 0
+                or row.get("capability_archive_signatures") != []
+                or row.get("forbidden_archive_member_paths") != []
+            ):
+                raise StrictValidationError(f"forbidden reachable content detected: {host}/{row_path}")
+            regular_rows.append(row)
+        elif row.get("kind") == "symlink":
+            if set(row) != symlink_schema:
+                raise StrictValidationError(f"symlink inventory schema changed: {host}/{row_path}")
+            target = row.get("link_target")
+            resolved = row.get("resolved_path")
+            target_state = row.get("target_state")
+            target_in_admitted_root = isinstance(resolved, str) and any(
+                resolved == root or resolved.startswith(root.rstrip("/") + "/")
+                for root in allowed_link_roots
+            )
+            if (
+                not isinstance(target, str)
+                or not isinstance(resolved, str)
+                or not resolved.startswith("/")
+                or row["sha256"] != hashlib.sha256(target.encode("utf-8")).hexdigest()
+                or target_state
+                not in {"reachable_admitted_root", "absent_in_namespace"}
+                or (target_state == "reachable_admitted_root") != target_in_admitted_root
+            ):
+                raise StrictValidationError(f"reachable symlink escaped policy: {host}/{row_path}")
+            symlink_rows.append(row)
+        else:
+            raise StrictValidationError(f"reachable inventory kind changed: {host}/{row_path}")
+
+    recomputed = {
+        "inventory_rows": len(rows),
+        "regular_files_scanned": len(regular_rows),
+        "symlinks_scanned": len(symlink_rows),
+        "regular_file_bytes": sum(int(row["bytes"]) for row in regular_rows),
+        "content_bytes_scanned": sum(int(row["content_bytes_scanned"]) for row in regular_rows),
+        "embedded_archive_members_scanned": sum(
+            int(row["embedded_archive_members_scanned"]) for row in regular_rows
+        ),
+        "embedded_archive_uncompressed_bytes_scanned": sum(
+            int(row["embedded_archive_uncompressed_bytes_scanned"])
+            for row in regular_rows
+        ),
+        "capability_archive_signature_matches": sum(
+            len(row["capability_archive_signatures"]) for row in regular_rows
+        ),
+        "forbidden_archive_member_paths": sum(
+            len(row["forbidden_archive_member_paths"]) for row in regular_rows
+        ),
+        "campaign_identifier_matches": sum(
+            int(row["campaign_identifier_matches"])
+            + int(row["embedded_campaign_identifier_matches"])
+            for row in regular_rows
+        ),
+    }
+    if any(summary.get(field) != value for field, value in recomputed.items()):
+        raise StrictValidationError(f"reachable inventory aggregate changed: {host}")
+    if (
+        summary.get("scan_root") != "/"
+        or summary.get("excluded_virtual_roots") != ["/dev", "/proc"]
+        or summary.get("runtime_site_root") != runtime_site
+        or int(summary.get("directories_scanned", 0)) <= 0
+        or summary.get("forbidden_path_matches") != 0
+        or summary.get("special_entries") != 0
+        or len(regular_rows) <= 0
+        or not {"certification_capsule", "python_system_runtime", "python_package_runtime"}
+        <= {str(row["mount_classification"]) for row in regular_rows}
+        or not {"/bin", "/sbin", "/lib"} <= set(paths)
+    ):
+        raise StrictValidationError(f"reachable filesystem coverage changed: {host}")
+    return {str(row["path"]): row for row in rows}
+
+
 def verify_certifications(
     root: Path, certification_root: Path | None = None
 ) -> dict[str, Any]:
@@ -139,6 +320,7 @@ def verify_certifications(
         performance = read_json(base / "certification/performance.json")
         adapter_path = base / "certification/adapter.json"
         mount_path = base / "mountinfo.txt"
+        filesystem_inventory_path = base / "reachable-filesystem-inventory.jsonl"
         mountinfo = read_text(mount_path)
         for label, value in (
             ("launcher", launcher),
@@ -155,6 +337,7 @@ def verify_certifications(
             "isolation_evidence_sha256": base / "physical-isolation.json",
             "capsule_manifest_sha256": base / "certification-capsule-manifest.json",
             "mountinfo_sha256": mount_path,
+            "reachable_filesystem_inventory_sha256": filesystem_inventory_path,
         }
         for field, path in bindings.items():
             if receipt.get(field) != sha256_file(path):
@@ -280,6 +463,7 @@ def verify_certifications(
             or isolation.get("mount", {}).get("mounts") != mount_rows
             or mount_by_point["/"]["filesystem_type"] != "tmpfs"
             or mount_by_point["/dev"]["filesystem_type"] != "tmpfs"
+            or mount_by_point["/etc"]["filesystem_type"] != "tmpfs"
             or mount_by_point["/proc"]["filesystem_type"] != "proc"
             or any(
                 "ro" not in mount_by_point[path]["mount_options"]
@@ -291,16 +475,38 @@ def verify_certifications(
         if isolation.get("mount", {}).get("mountinfo_sha256") != sha256_file(mount_path):
             raise StrictValidationError(f"raw mount table binding changed: {host}")
         forbidden_scan = isolation.get("reachable_filesystem_forbidden_scan")
-        if (
-            not isinstance(forbidden_scan, dict)
-            or forbidden_scan.get("scan_root") != "/"
-            or forbidden_scan.get("excluded_virtual_roots") != ["/dev", "/proc"]
-            or int(forbidden_scan.get("directories_scanned", 0)) <= 0
-            or int(forbidden_scan.get("files_scanned", 0)) <= len(capsule_files)
-            or forbidden_scan.get("capability_archive_paths") != []
-            or forbidden_scan.get("source_success_ledger_paths") != []
-        ):
+        if not isinstance(forbidden_scan, dict):
             raise StrictValidationError(f"reachable-root forbidden scan changed: {host}")
+        filesystem_by_path = verify_reachable_filesystem_inventory(
+            host=host,
+            path=filesystem_inventory_path,
+            summary=forbidden_scan,
+            runtime_site=runtime_site,
+        )
+        expected_capsule_inventory = {
+            f"/capsule/{path}": {
+                "bytes": int(row["bytes"]),
+                "sha256": str(row["sha256"]),
+            }
+            for path, row in capsule_by_path.items()
+        }
+        expected_capsule_inventory[
+            "/capsule/abi_release/certification-capsule-manifest.json"
+        ] = {
+            "bytes": (base / "certification-capsule-manifest.json").stat().st_size,
+            "sha256": sha256_file(base / "certification-capsule-manifest.json"),
+        }
+        for inventory_path, expected_row in expected_capsule_inventory.items():
+            actual_row = filesystem_by_path.get(inventory_path)
+            if (
+                actual_row is None
+                or actual_row.get("kind") != "regular_file"
+                or int(actual_row.get("bytes", -1)) != expected_row["bytes"]
+                or actual_row.get("sha256") != expected_row["sha256"]
+            ):
+                raise StrictValidationError(
+                    f"reachable inventory/capsule binding changed: {host}/{inventory_path}"
+                )
         if int(isolation.get("process_id", -1)) != 1 or int(
             isolation.get("parent_process_id", -1)
         ) != 0:
@@ -405,6 +611,8 @@ def verify_certifications(
             raise StrictValidationError(f"adapter overhead failed: {host}={overhead}")
         hosts[host] = {
             "capsule_files": len(capsule_files),
+            "reachable_inventory_rows": len(filesystem_by_path),
+            "reachable_regular_file_bytes": int(forbidden_scan["regular_file_bytes"]),
             "roundtrip_rows": len(roundtrips),
             "native_forward_rows": len(forwards),
             "adapter_sha256": expected_adapter,
@@ -1075,6 +1283,7 @@ def required_input_manifest(root: Path) -> dict[str, Any]:
                 cert / "physical-isolation.json",
                 cert / "certification-capsule-manifest.json",
                 cert / "mountinfo.txt",
+                cert / "reachable-filesystem-inventory.jsonl",
                 cert / "certification/result.json",
                 cert / "certification/performance.json",
                 cert / "certification/adapter.json",

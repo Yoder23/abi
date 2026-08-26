@@ -16,16 +16,21 @@ capability packages.
 > verification consumed summary fields. The repaired validation uses physically
 > isolated certification capsules, new live causal interventions, fresh raw
 > isolation executions, and fail-closed recomputation with zero trusted
-> scientific gate booleans. The bounded result remains a standalone capability-runtime
+> scientific gate booleans. R3 was published and reconstructed from its public
+> manifest, but its fresh blind audit failed because admitted runtime trees were
+> not content-bound and the review network could not query the exact release.
+> R4 now hashes and content-scans every reachable non-virtual file, expands
+> readable archives, inventories symlinks, and retains about 100,500 raw
+> filesystem rows per host. The bounded result remains a standalone capability-runtime
 > across the LayerCake v25, Qwen2.5-0.5B, and
 > Pythia-160M codec/conformance environments using one capability-blind,
 > zero-parameter frozen adapter per environment and the same four immutable packages.
 > The repaired technical proof is frozen at commit
 > `7064c94f2c6137a29b8793d9b0ec95137efb051e` and annotated tag
-> `abi-final-validation-v2-physical-live-proof-2026-08-25`. Promotion
-> additionally requires public immutable
-> release assets, clean reconstruction from those assets, and a fresh blind
-> red-team. External reproduction, real human ratings, and minimum-information
+> `abi-final-validation-v2-physical-live-proof-2026-08-25`; that r3 line is now
+> historical. R4 promotion requires new public immutable release assets, clean
+> reconstruction from those assets, and a fresh passing blind red-team.
+> External reproduction, real human ratings, and minimum-information
 > certification remain open. The bounded technical declaration is
 > `ABI TECHNICAL MOONSHOT: PROVEN`; it is not a full externally validated
 > moonshot or a tensor-transplant claim. See
@@ -192,8 +197,9 @@ The current evidence supports bounded, exact claims—not universal ones:
 - Phase 3: machine gates pass, conditional on Phase 2.
 - Phases 4–7: certified for their registered bounded machine scopes.
 - Phase 8: the former 18/18 certificate is superseded. The repaired candidate
-  passes local strict raw recomputation; immutable publication, public-manifest
-  reconstruction, and blind red-team remain mandatory before external review.
+  r4 candidate passes local strict raw recomputation and 17/17 hostile attacks;
+  immutable publication, public-manifest reconstruction, and a passing blind
+  red-team remain mandatory before external review. R3's blind audit failed.
 
 The original final-mile V1 campaign remains important negative evidence: the
 LayerCake-native tensor contract was executable by only 1/3 receiver families.
@@ -211,11 +217,12 @@ chemistry, and civics packages are installed without fitting or calibration.
 | Cross-host specialist action identity | 300/300 |
 | Fresh live isolation | 0/2,100 target successes |
 | Fresh live causal interventions | 3,072/3,072 recomputed |
+| Reachable filesystem inventory | 301,543 rows; 11,681,818,650 bytes content-scanned |
 | Generic adapter overhead | all three within 10% on 20 observations |
 | Real human ratings | 0/21,000; open |
 | Immutable public release assets | pending |
 | Clean public-manifest reconstruction | pending |
-| Fresh blind Codex red-team | pending |
+| Fresh blind Codex red-team | r3 failed; r4 pending |
 | Independent different-hardware run | closed until the three preceding gates pass |
 | Stable minimum-information frontier | open |
 | Repaired local strict verifier | pass; 95 input files bound, 0 trusted booleans |

@@ -4,7 +4,7 @@
 | --- | --- |
 | Immutable public packages/archive | Pending publication |
 | Clean public-manifest reconstruction | Pending |
-| Fresh blind Codex red-team | Pending |
+| Fresh blind Codex red-team | R3 failed; R4 pending |
 | Different-hardware independent execution | Closed until preceding gates pass |
 | Three independent human raters | Closed until preceding gates pass; 0/21,000 |
 | Minimum-information frontier | `PENDING_AFTER_EXTERNAL_VALIDATION` |

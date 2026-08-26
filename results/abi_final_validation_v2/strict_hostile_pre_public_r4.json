@@ -1,0 +1,117 @@
+{
+  "baseline_evidence_sha256": "7759863bb59955c396568a2e43d4545fddb2b288fe0edaa29cad9d64578136af",
+  "evidence_sha256": "945f7b51d3efea739df7f3a410af230ba45c2676ab709b434163a9401936bbfd",
+  "format": "abi-v2-strict-hostile-verification/2",
+  "hostile_verifier_source_sha256": "2db4466e8c5b996c72f5c29f4757636a7ce9a77d1b72b2ae73734e4af307d349",
+  "mutations": [
+    {
+      "exception_type": "StrictValidationError",
+      "message": "required file missing: C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.strict-hostile-r3-a\\abi_release\\results\\abi_moonshot\\packages\\abi-python-token-plan-seed9824.cake",
+      "mutation": "missing_capability_package",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "required scientific claim is unrecomputable: FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Python310\\\\layercake_merged_nextgen_perfectA_option1_full_ready\\\\.strict-hostile-r3-a\\\\abi_release\\\\catalogs\\\\capability_compiler_phase1_frozen_v1.json'",
+      "mutation": "missing_required_catalog",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "condition receipt binding changed: layercake/real_host",
+      "mutation": "corrupt_capability_package",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "required JSONL unavailable: C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.strict-hostile-r3-a\\abi_release\\results\\abi_final_validation_v2\\live_causality\\qwen2\\observations.jsonl",
+      "mutation": "missing_raw_causality_file",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "live causality raw binding changed: qwen2",
+      "mutation": "missing_raw_causality_row",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "live causality raw binding changed: qwen2",
+      "mutation": "missing_required_raw_hash",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "stale live causality code binding: layercake",
+      "mutation": "stale_execution_source",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "stale executed capsule source: layercake/abi_release/abi_v2/isolated_certification.py",
+      "mutation": "stale_isolated_execution_source",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "required text unavailable: C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.strict-hostile-r3-a\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\pythia\\mountinfo.txt",
+      "mutation": "missing_raw_mount_table",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "required file missing: C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.strict-hostile-r3-a\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\pythia\\reachable-filesystem-inventory.jsonl",
+      "mutation": "missing_reachable_filesystem_inventory",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "required file missing: C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.strict-hostile-r3-a\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\layercake\\certification\\adapter.json",
+      "mutation": "missing_frozen_adapter",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "certification binding changed: qwen2/result_sha256",
+      "mutation": "stale_certification_binding",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "reachable filesystem coverage changed: layercake",
+      "mutation": "rehashed_missing_reachable_filesystem_row",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "deterministic certification corpus changed: qwen2",
+      "mutation": "rehashed_fabricated_certification_row",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "capsule classification changed: layercake/abi_release/abi_v2/__init__.py",
+      "mutation": "rehashed_capsule_classification",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "required JSON unavailable: C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.strict-hostile-r3-a\\abi_release\\results\\abi_final_validation_v2\\live_causality\\qwen2\\conditions\\zero_state.json",
+      "mutation": "missing_condition_receipt",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "random-state mutation malformed: qwen2",
+      "mutation": "rehashed_nondeterministic_random_intervention",
+      "rejected": true
+    }
+  ],
+  "mutations_rejected": 17,
+  "mutations_required": 17,
+  "post_restore_evidence_sha256": "7759863bb59955c396568a2e43d4545fddb2b288fe0edaa29cad9d64578136af",
+  "source_tree_restored": true,
+  "status": "PASS_STRICT_VERIFIER_FAILS_CLOSED",
+  "strict_verifier_source_sha256": "d49cdf49210ec5274b4038c33127fc8ecc111f3a8bd07fe7bf32b31dc1f2b5e2",
+  "trusted_scientific_boolean_dependencies": []
+}

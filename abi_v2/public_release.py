@@ -77,8 +77,12 @@ def build_manifest(
                 tag=tag,
             )
         )
-    strict_path = root / "results/abi_final_validation_v2/strict_validation.json"
-    hostile_path = root / "results/abi_final_validation_v2/strict_hostile_pre_public.json"
+    strict_path = root / (
+        "results/abi_final_validation_v2/strict_validation_r4_content_bound.json"
+    )
+    hostile_path = root / (
+        "results/abi_final_validation_v2/strict_hostile_pre_public_r4.json"
+    )
     return {
         "format": "abi-v2-public-release-assets/1",
         "repository": repository,
@@ -87,12 +91,15 @@ def build_manifest(
         "release_page": f"https://github.com/{repository}/releases/tag/{quote(tag, safe='')}",
         "assets": assets,
         "strict_certificate": {
-            "path_in_archive": "abi_release/results/abi_final_validation_v2/strict_validation.json",
+            "path_in_archive": (
+                "abi_release/results/abi_final_validation_v2/"
+                "strict_validation_r4_content_bound.json"
+            ),
             "sha256": sha256_file(strict_path),
         },
         "pre_public_hostile_receipt": {
             "path_in_archive": (
-                "abi_release/results/abi_final_validation_v2/strict_hostile_pre_public.json"
+                "abi_release/results/abi_final_validation_v2/strict_hostile_pre_public_r4.json"
             ),
             "sha256": sha256_file(hostile_path),
         },

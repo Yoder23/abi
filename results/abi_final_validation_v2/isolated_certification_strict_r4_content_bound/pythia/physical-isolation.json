@@ -1,0 +1,294 @@
+{
+  "capability_archives_physically_present": 0,
+  "capsule": {
+    "capability_archives_present": 0,
+    "files_verified": 13,
+    "inventory": [
+      {
+        "bytes": 218,
+        "path": "abi_release/abi_v2/__init__.py",
+        "sha256": "993961c309c30bf5f8411cd1a5fdb66d26ee23b3aca318fbeb090ba020a70683"
+      },
+      {
+        "bytes": 8078,
+        "path": "abi_release/abi_v2/canonical.py",
+        "sha256": "c394133dc70a8cabfbb7b390e3b74178707d8cb3c89ead91a7b106eca445f52b"
+      },
+      {
+        "bytes": 5932,
+        "path": "abi_release/abi_v2/canonical_spec.json",
+        "sha256": "6536ef1b58dfeea0474bfef5619f3627ecaefe8f39f25da017f11446b6582c2f"
+      },
+      {
+        "bytes": 3442,
+        "path": "abi_release/abi_v2/certification_pivot_runner.sh",
+        "sha256": "9774d2a4577b5d7b6594aff7ba4ee566f40e884a36c8f87477469eaf8dc8391e"
+      },
+      {
+        "bytes": 3096,
+        "path": "abi_release/abi_v2/conformance_suite.json",
+        "sha256": "2af84b8b18fa78613fda7c96e7d269ef731b68138f736ea2d4441f4254747383"
+      },
+      {
+        "bytes": 24482,
+        "path": "abi_release/abi_v2/host_certification.py",
+        "sha256": "d5bdadd27aabdee9dfdbdc285be6708a02783586a97dbcb56980404418e24c7a"
+      },
+      {
+        "bytes": 37633,
+        "path": "abi_release/abi_v2/isolated_certification.py",
+        "sha256": "5447d4965d347f3be58b5d77f734f82cc29f1bcfc52714fc9f9729aa937d7436"
+      },
+      {
+        "bytes": 7356,
+        "path": "abi_release/abi_v2/reference_vectors/core_vectors.json",
+        "sha256": "fc792304e41b1985652a01b4b4efdb14a3bf40fc7aa4906f27ea95409f1dd9fa"
+      },
+      {
+        "bytes": 569,
+        "path": "abi_release/host_snapshot/config.json",
+        "sha256": "76eb275107220e450d31258f792a2efcbee109d8b62ae0088260057dec06362f"
+      },
+      {
+        "bytes": 374998696,
+        "path": "abi_release/host_snapshot/model.safetensors",
+        "sha256": "29d2e457a664e41c12c735f20a36dc0956a665f614a54ce5db21a32e75965270"
+      },
+      {
+        "bytes": 99,
+        "path": "abi_release/host_snapshot/special_tokens_map.json",
+        "sha256": "6f50ab5a5a509a1c309d6171f339b196a900dc9c99ad0408ff23bb615fdae7ad"
+      },
+      {
+        "bytes": 2113710,
+        "path": "abi_release/host_snapshot/tokenizer.json",
+        "sha256": "c24618a1b3e6a38167beff1c72cffd126c3a66254347304b50547d12c5f25624"
+      },
+      {
+        "bytes": 396,
+        "path": "abi_release/host_snapshot/tokenizer_config.json",
+        "sha256": "70e38394e494931c6f773ba41e19460dd4436526b852207367f04341b4066d3f"
+      }
+    ],
+    "inventory_sha256": "807c02098b87ac4fd1d314d81f364ae20b34dcda7b88631363ae853aca41ac75",
+    "manifest_sha256": "560863d5f00f8ebf70a8b9e43919ffcfdb04cfa348b483410f2c905313ac9a89",
+    "source_success_ledgers_present": 0
+  },
+  "capsule_files_physically_present": 13,
+  "evidence_sha256": "2b7790f754146870a2f01552c11f8b494e5165d9c06679b47f42f6660ec11793",
+  "format": "abi-v2-physical-certification-isolation/2",
+  "host_key": "pythia",
+  "mount": {
+    "allowed_mount_points": [
+      "/",
+      "/capsule",
+      "/dev",
+      "/dev/null",
+      "/dev/random",
+      "/dev/urandom",
+      "/dev/zero",
+      "/etc",
+      "/home/samyo/.local/lib/python3.12/site-packages",
+      "/proc",
+      "/usr"
+    ],
+    "mountinfo_sha256": "9289cd3c3028d077d90a39cbfc0f554b7ac69428fac07497fd0af495c4e90606",
+    "mounts": [
+      {
+        "filesystem_type": "tmpfs",
+        "mount_options": [
+          "rw",
+          "relatime"
+        ],
+        "mount_point": "/",
+        "source": "tmpfs",
+        "super_options": [
+          "rw",
+          "size=262144k",
+          "mode=700"
+        ]
+      },
+      {
+        "filesystem_type": "ext4",
+        "mount_options": [
+          "ro",
+          "relatime"
+        ],
+        "mount_point": "/usr",
+        "source": "/dev/sdd",
+        "super_options": [
+          "rw",
+          "discard",
+          "errors=remount-ro",
+          "data=ordered"
+        ]
+      },
+      {
+        "filesystem_type": "ext4",
+        "mount_options": [
+          "ro",
+          "relatime"
+        ],
+        "mount_point": "/home/samyo/.local/lib/python3.12/site-packages",
+        "source": "/dev/sdd",
+        "super_options": [
+          "rw",
+          "discard",
+          "errors=remount-ro",
+          "data=ordered"
+        ]
+      },
+      {
+        "filesystem_type": "tmpfs",
+        "mount_options": [
+          "ro",
+          "relatime"
+        ],
+        "mount_point": "/etc",
+        "source": "tmpfs",
+        "super_options": [
+          "ro",
+          "size=4096k",
+          "mode=755"
+        ]
+      },
+      {
+        "filesystem_type": "tmpfs",
+        "mount_options": [
+          "rw",
+          "relatime"
+        ],
+        "mount_point": "/dev",
+        "source": "tmpfs",
+        "super_options": [
+          "rw",
+          "size=16384k",
+          "mode=755"
+        ]
+      },
+      {
+        "filesystem_type": "devtmpfs",
+        "mount_options": [
+          "ro",
+          "relatime"
+        ],
+        "mount_point": "/dev/null",
+        "source": "none",
+        "super_options": [
+          "rw",
+          "size=16367288k",
+          "nr_inodes=4091822",
+          "mode=755"
+        ]
+      },
+      {
+        "filesystem_type": "devtmpfs",
+        "mount_options": [
+          "ro",
+          "relatime"
+        ],
+        "mount_point": "/dev/zero",
+        "source": "none",
+        "super_options": [
+          "rw",
+          "size=16367288k",
+          "nr_inodes=4091822",
+          "mode=755"
+        ]
+      },
+      {
+        "filesystem_type": "devtmpfs",
+        "mount_options": [
+          "ro",
+          "relatime"
+        ],
+        "mount_point": "/dev/random",
+        "source": "none",
+        "super_options": [
+          "rw",
+          "size=16367288k",
+          "nr_inodes=4091822",
+          "mode=755"
+        ]
+      },
+      {
+        "filesystem_type": "devtmpfs",
+        "mount_options": [
+          "ro",
+          "relatime"
+        ],
+        "mount_point": "/dev/urandom",
+        "source": "none",
+        "super_options": [
+          "rw",
+          "size=16367288k",
+          "nr_inodes=4091822",
+          "mode=755"
+        ]
+      },
+      {
+        "filesystem_type": "ext4",
+        "mount_options": [
+          "rw",
+          "relatime"
+        ],
+        "mount_point": "/capsule",
+        "source": "/dev/sdd",
+        "super_options": [
+          "rw",
+          "discard",
+          "errors=remount-ro",
+          "data=ordered"
+        ]
+      },
+      {
+        "filesystem_type": "proc",
+        "mount_options": [
+          "rw",
+          "nosuid",
+          "nodev",
+          "noexec",
+          "relatime"
+        ],
+        "mount_point": "/proc",
+        "source": "proc",
+        "super_options": [
+          "rw"
+        ]
+      }
+    ],
+    "old_root_present": false,
+    "platform": "linux",
+    "runtime_site_mount": "/home/samyo/.local/lib/python3.12/site-packages",
+    "sandbox_policy": "abi-certification-pivot-root/1",
+    "unexpected_mount_points": [],
+    "windows_mount_present": false
+  },
+  "parent_process_id": 0,
+  "process_id": 1,
+  "reachable_filesystem_forbidden_scan": {
+    "campaign_identifier_matches": 0,
+    "capability_archive_signature_matches": 0,
+    "content_bytes_scanned": 3812148831,
+    "directories_scanned": 9037,
+    "embedded_archive_members_scanned": 1495,
+    "embedded_archive_uncompressed_bytes_scanned": 19985153,
+    "evidence_sha256": "5c0ac1aa4b16f7170da6643aae5e6c9d6e156e7f117edeee192564fd62f29d9a",
+    "excluded_virtual_roots": [
+      "/dev",
+      "/proc"
+    ],
+    "forbidden_archive_member_paths": 0,
+    "forbidden_path_matches": 0,
+    "format": "abi-v2-reachable-filesystem-inventory/1",
+    "inventory_jsonl_sha256": "53d83d86b4ca006ee517b0806c115ec81e2406cd773ae1c15a137b7486d6002e",
+    "inventory_rows": 100515,
+    "regular_file_bytes": 3812148831,
+    "regular_files_scanned": 89362,
+    "runtime_site_root": "/home/samyo/.local/lib/python3.12/site-packages",
+    "scan_root": "/",
+    "special_entries": 0,
+    "symlinks_scanned": 11153
+  },
+  "source_success_ledgers_physically_present": 0
+}

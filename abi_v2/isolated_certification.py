@@ -15,19 +15,23 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import shutil
 import site
+import stat
 import subprocess
 import sys
 import tempfile
 import uuid
+import zipfile
 from pathlib import Path
 from typing import Any, Iterable, Mapping
 
 from .canonical import canonical_json_bytes, sha256_bytes
 
 CAPSULE_FORMAT = "abi-v2-physical-certification-capsule/1"
-ISOLATION_FORMAT = "abi-v2-physical-certification-isolation/1"
+ISOLATION_FORMAT = "abi-v2-physical-certification-isolation/2"
+FILESYSTEM_INVENTORY_FORMAT = "abi-v2-reachable-filesystem-inventory/1"
 FORBIDDEN_SUFFIXES = {".abi", ".cake", ".abix", ".abicir"}
 ALLOWED_CLASSIFICATIONS = {
     "abi_specification",
@@ -36,6 +40,16 @@ ALLOWED_CLASSIFICATIONS = {
     "host_code",
     "host_checkpoint",
 }
+
+# This deliberately describes the *shape* of a campaign identifier without
+# embedding any successful identifier or success ledger in the blind capsule.
+# The longest current IDs are far below the retained streaming overlap.
+CAMPAIGN_IDENTIFIER_PATTERN = re.compile(
+    rb"(?<![a-z0-9])(?:[a-z][a-z0-9]*-){2,}[0-9]{3,4}-v[0-9]+(?![a-z0-9])",
+    flags=re.IGNORECASE,
+)
+CONTENT_SCAN_OVERLAP = 1024
+CONTENT_SCAN_BLOCK_BYTES = 8 * 1024 * 1024
 
 
 class IsolatedCertificationError(RuntimeError):
@@ -336,44 +350,288 @@ def _mount_state() -> dict[str, Any]:
     }
 
 
-def _physical_forbidden_scan() -> dict[str, Any]:
-    """Inventory forbidden campaign payload names across the reachable root."""
+def _stream_campaign_identifier_count(handle: Any) -> tuple[int, int]:
+    """Scan every byte in one stream while retaining boundary matches."""
 
-    forbidden_archives: list[str] = []
-    source_success_ledgers: list[str] = []
-    files_scanned = 0
+    scanned = 0
+    matches = 0
+    overlap = b""
+    while True:
+        block = handle.read(CONTENT_SCAN_BLOCK_BYTES)
+        if not block:
+            break
+        scanned += len(block)
+        combined = overlap + block
+        matches += sum(
+            int(match.end() > len(overlap))
+            for match in CAMPAIGN_IDENTIFIER_PATTERN.finditer(combined)
+        )
+        overlap = combined[-CONTENT_SCAN_OVERLAP:]
+    return scanned, matches
+
+
+def _capability_archive_signatures(
+    path: Path,
+) -> tuple[list[str], int, int, int, list[str]]:
+    """Inspect ZIP contents, not extensions, for ABI/cake archive structures."""
+
+    signatures: list[str] = []
+    members_scanned = 0
+    member_bytes_scanned = 0
+    member_identifier_matches = 0
+    forbidden_members: list[str] = []
+    try:
+        with path.open("rb") as handle:
+            if handle.read(4) not in {b"PK\x03\x04", b"PK\x05\x06", b"PK\x07\x08"}:
+                return signatures, 0, 0, 0, forbidden_members
+        with zipfile.ZipFile(path) as archive:
+            names = {info.filename for info in archive.infolist() if not info.is_dir()}
+            cake_members = {"manifest.json", "tensors.safetensors", "signature.json"}
+            extraction_members = {"manifest.json", "inventory.json", "ledger.json", "records.jsonl"}
+            abix_markers = {"budgets.json", "segregation.json", "selection.json", "sources.json"}
+            abicir_markers = {
+                "accounting.json",
+                "normalization.json",
+                "source_identity.json",
+                "split_manifest.json",
+            }
+            if cake_members <= names:
+                try:
+                    manifest = json.loads(archive.read("manifest.json"))
+                except (KeyError, json.JSONDecodeError, UnicodeDecodeError):
+                    manifest = None
+                if isinstance(manifest, dict) and {
+                    "cake_id",
+                    "cake_type",
+                    "abi_hash",
+                } <= set(manifest):
+                    signatures.append("layercake-capability-package")
+            if extraction_members <= names and abix_markers <= names:
+                signatures.append("abi-extraction-archive")
+            if extraction_members <= names and abicir_markers <= names:
+                signatures.append("abi-normalized-ir-archive")
+            forbidden_members = sorted(
+                name
+                for name in names
+                if Path(name).suffix.casefold() in FORBIDDEN_SUFFIXES
+            )
+            for info in archive.infolist():
+                if info.is_dir():
+                    continue
+                with archive.open(info, "r") as member:
+                    scanned, matches = _stream_campaign_identifier_count(member)
+                members_scanned += 1
+                member_bytes_scanned += scanned
+                member_identifier_matches += matches
+    except (OSError, zipfile.BadZipFile, RuntimeError):
+        # A file with incidental ZIP magic is still fully scanned and hashed by
+        # the outer stream. Only a structurally readable archive is expanded.
+        return [], 0, 0, 0, []
+    return (
+        sorted(signatures),
+        members_scanned,
+        member_bytes_scanned,
+        member_identifier_matches,
+        forbidden_members,
+    )
+
+
+def _inspect_regular_file(path: Path) -> dict[str, Any]:
+    digest = hashlib.sha256()
+    content_bytes = 0
+    identifier_matches = 0
+    overlap = b""
+    with path.open("rb") as handle:
+        while True:
+            block = handle.read(CONTENT_SCAN_BLOCK_BYTES)
+            if not block:
+                break
+            digest.update(block)
+            content_bytes += len(block)
+            combined = overlap + block
+            identifier_matches += sum(
+                int(match.end() > len(overlap))
+                for match in CAMPAIGN_IDENTIFIER_PATTERN.finditer(combined)
+            )
+            overlap = combined[-CONTENT_SCAN_OVERLAP:]
+    (
+        signatures,
+        archive_members,
+        archive_bytes,
+        embedded_identifier_matches,
+        forbidden_members,
+    ) = _capability_archive_signatures(path)
+    return {
+        "bytes": content_bytes,
+        "sha256": digest.hexdigest(),
+        "content_bytes_scanned": content_bytes,
+        "campaign_identifier_matches": identifier_matches,
+        "embedded_archive_members_scanned": archive_members,
+        "embedded_archive_uncompressed_bytes_scanned": archive_bytes,
+        "embedded_campaign_identifier_matches": embedded_identifier_matches,
+        "capability_archive_signatures": signatures,
+        "forbidden_archive_member_paths": forbidden_members,
+    }
+
+
+def _mount_classification(path: str, runtime_site: str) -> str:
+    if path == "/capsule" or path.startswith("/capsule/"):
+        return "certification_capsule"
+    if path == "/usr" or path.startswith("/usr/"):
+        return "python_system_runtime"
+    if path == "/etc" or path.startswith("/etc/"):
+        return "system_runtime_configuration"
+    if path == runtime_site or path.startswith(runtime_site.rstrip("/") + "/"):
+        return "python_package_runtime"
+    if path in {"/bin", "/sbin", "/lib", "/lib64"}:
+        return "runtime_alias"
+    raise IsolatedCertificationError(f"unclassified reachable filesystem entry: {path}")
+
+
+def _physical_forbidden_scan() -> tuple[dict[str, Any], bytes]:
+    """Hash and content-scan every reachable non-virtual filesystem entry."""
+
+    runtime_site = os.environ.get("PYTHONPATH", "")
+    if not runtime_site.startswith("/home/") or not runtime_site.endswith("/site-packages"):
+        raise IsolatedCertificationError("runtime site is unavailable for physical inventory")
+    rows: list[dict[str, Any]] = []
     directories_scanned = 0
+    special_entries: list[str] = []
+    forbidden_path_matches: list[str] = []
     excluded_virtual_roots = {"/dev", "/proc"}
+    allowed_symlink_roots = ("/usr", "/etc", runtime_site, "/dev", "/proc", "/capsule")
+
+    def inspect_path(path: Path) -> None:
+        normalized = path.as_posix()
+        lowered = normalized.casefold()
+        if (
+            path.suffix.casefold() in FORBIDDEN_SUFFIXES
+            or "source_" + "success" in lowered
+            or CAMPAIGN_IDENTIFIER_PATTERN.search(normalized.encode("utf-8"))
+        ):
+            forbidden_path_matches.append(normalized)
+        mode = os.lstat(path).st_mode
+        classification = _mount_classification(normalized, runtime_site)
+        if stat.S_ISLNK(mode):
+            target = os.readlink(path)
+            resolved = Path(os.path.realpath(path)).as_posix()
+            target_in_admitted_root = any(
+                resolved == root or resolved.startswith(root.rstrip("/") + "/")
+                for root in allowed_symlink_roots
+            )
+            if target_in_admitted_root:
+                target_state = "reachable_admitted_root"
+            elif not Path(resolved).exists():
+                target_state = "absent_in_namespace"
+            else:
+                raise IsolatedCertificationError(
+                    f"symlink escapes admitted filesystem roots: {normalized} -> {resolved}"
+                )
+            rows.append(
+                {
+                    "path": normalized,
+                    "kind": "symlink",
+                    "mount_classification": classification,
+                    "link_target": target,
+                    "resolved_path": resolved,
+                    "target_state": target_state,
+                    "sha256": hashlib.sha256(target.encode("utf-8")).hexdigest(),
+                }
+            )
+            return
+        if not stat.S_ISREG(mode):
+            special_entries.append(normalized)
+            return
+        inspection = _inspect_regular_file(path)
+        rows.append(
+            {
+                "path": normalized,
+                "kind": "regular_file",
+                "mount_classification": classification,
+                **inspection,
+            }
+        )
+
     for directory, names, filenames in os.walk("/", topdown=True, followlinks=False):
         directory_path = Path(directory)
-        names[:] = [
+        names[:] = sorted(
             name
             for name in names
             if (directory_path / name).as_posix() not in excluded_virtual_roots
-        ]
-        directories_scanned += 1
-        for name in filenames:
-            path = directory_path / name
-            if path.is_symlink():
-                continue
-            files_scanned += 1
-            normalized = path.as_posix()
-            if path.suffix.casefold() in FORBIDDEN_SUFFIXES:
-                forbidden_archives.append(normalized)
-            if "source_success" in normalized.casefold():
-                source_success_ledgers.append(normalized)
-    if forbidden_archives or source_success_ledgers:
-        raise IsolatedCertificationError(
-            "forbidden campaign payload is reachable inside certification root"
         )
-    return {
+        filenames.sort()
+        directories_scanned += 1
+        normalized_directory = directory_path.as_posix()
+        if CAMPAIGN_IDENTIFIER_PATTERN.search(normalized_directory.encode("utf-8")):
+            forbidden_path_matches.append(normalized_directory)
+        symlink_directories = [name for name in names if (directory_path / name).is_symlink()]
+        for name in symlink_directories:
+            inspect_path(directory_path / name)
+        names[:] = [name for name in names if name not in symlink_directories]
+        for name in filenames:
+            inspect_path(directory_path / name)
+
+    rows.sort(key=lambda row: row["path"])
+    duplicate_paths = len(rows) != len({row["path"] for row in rows})
+    regular_rows = [row for row in rows if row["kind"] == "regular_file"]
+    symlink_rows = [row for row in rows if row["kind"] == "symlink"]
+    capability_signatures = sum(
+        len(row["capability_archive_signatures"]) for row in regular_rows
+    )
+    forbidden_members = sum(
+        len(row["forbidden_archive_member_paths"]) for row in regular_rows
+    )
+    campaign_matches = sum(
+        int(row["campaign_identifier_matches"])
+        + int(row["embedded_campaign_identifier_matches"])
+        for row in regular_rows
+    )
+    if (
+        duplicate_paths
+        or special_entries
+        or forbidden_path_matches
+        or capability_signatures
+        or forbidden_members
+        or campaign_matches
+    ):
+        raise IsolatedCertificationError(
+            "forbidden or unaccounted content is reachable inside certification root: "
+            f"duplicate_paths={duplicate_paths}, special_entries={special_entries[:5]}, "
+            f"forbidden_paths={forbidden_path_matches[:5]}, "
+            f"capability_signatures={capability_signatures}, "
+            f"forbidden_archive_members={forbidden_members}, "
+            f"campaign_identifier_matches={campaign_matches}"
+        )
+    inventory_bytes = b"".join(canonical_json_bytes(row) for row in rows)
+    summary: dict[str, Any] = {
+        "format": FILESYSTEM_INVENTORY_FORMAT,
         "scan_root": "/",
         "excluded_virtual_roots": sorted(excluded_virtual_roots),
+        "runtime_site_root": runtime_site,
         "directories_scanned": directories_scanned,
-        "files_scanned": files_scanned,
-        "capability_archive_paths": forbidden_archives,
-        "source_success_ledger_paths": source_success_ledgers,
+        "inventory_rows": len(rows),
+        "regular_files_scanned": len(regular_rows),
+        "symlinks_scanned": len(symlink_rows),
+        "regular_file_bytes": sum(int(row["bytes"]) for row in regular_rows),
+        "content_bytes_scanned": sum(
+            int(row["content_bytes_scanned"]) for row in regular_rows
+        ),
+        "embedded_archive_members_scanned": sum(
+            int(row["embedded_archive_members_scanned"]) for row in regular_rows
+        ),
+        "embedded_archive_uncompressed_bytes_scanned": sum(
+            int(row["embedded_archive_uncompressed_bytes_scanned"])
+            for row in regular_rows
+        ),
+        "capability_archive_signature_matches": capability_signatures,
+        "forbidden_archive_member_paths": forbidden_members,
+        "campaign_identifier_matches": campaign_matches,
+        "forbidden_path_matches": len(forbidden_path_matches),
+        "special_entries": len(special_entries),
+        "inventory_jsonl_sha256": hashlib.sha256(inventory_bytes).hexdigest(),
     }
+    summary["evidence_sha256"] = sha256_bytes(canonical_json_bytes(summary))
+    return summary, inventory_bytes
 
 
 def run_worker(capsule: Path, *, host_key: str, device: str) -> dict[str, Any]:
@@ -383,7 +641,7 @@ def run_worker(capsule: Path, *, host_key: str, device: str) -> dict[str, Any]:
     root = capsule / "abi_release"
     inventory = verify_capsule(capsule)
     mount = _mount_state()
-    forbidden_scan = _physical_forbidden_scan()
+    forbidden_scan, filesystem_inventory_bytes = _physical_forbidden_scan()
     if sys.platform != "linux" or mount["unexpected_mount_points"]:
         raise IsolatedCertificationError(
             "worker requires the exact Linux pivot-root isolation policy"
@@ -401,11 +659,12 @@ def run_worker(capsule: Path, *, host_key: str, device: str) -> dict[str, Any]:
         "process_id": os.getpid(),
         "parent_process_id": os.getppid(),
         "capsule_files_physically_present": inventory["files_verified"],
-        "capability_archives_physically_present": inventory[
-            "capability_archives_present"
-        ],
-        "source_success_ledgers_physically_present": inventory[
-            "source_success_ledgers_present"
+        "capability_archives_physically_present": (
+            forbidden_scan["capability_archive_signature_matches"]
+            + forbidden_scan["forbidden_archive_member_paths"]
+        ),
+        "source_success_ledgers_physically_present": forbidden_scan[
+            "campaign_identifier_matches"
         ],
     }
     isolation["evidence_sha256"] = sha256_bytes(canonical_json_bytes(isolation))
@@ -418,6 +677,9 @@ def run_worker(capsule: Path, *, host_key: str, device: str) -> dict[str, Any]:
         physical_isolation=isolation,
     )
     _write_json(output / "physical-isolation.json", isolation)
+    (output / "reachable-filesystem-inventory.jsonl").write_bytes(
+        filesystem_inventory_bytes
+    )
     shutil.copy2(
         root / "certification-capsule-manifest.json",
         output / "certification-capsule-manifest.json",
@@ -437,6 +699,9 @@ def run_worker(capsule: Path, *, host_key: str, device: str) -> dict[str, Any]:
             output / "certification-capsule-manifest.json"
         ),
         "mountinfo_sha256": _sha256_file(output / "mountinfo.txt"),
+        "reachable_filesystem_inventory_sha256": _sha256_file(
+            output / "reachable-filesystem-inventory.jsonl"
+        ),
         "executed_isolated_certification_sha256": _sha256_file(
             root / "abi_v2/isolated_certification.py"
         ),

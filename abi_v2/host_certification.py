@@ -356,7 +356,7 @@ def certify_host(
         raise HostCertificationError(f"unknown host: {host_key}")
     if (
         not isinstance(physical_isolation, dict)
-        or physical_isolation.get("format") != "abi-v2-physical-certification-isolation/1"
+        or physical_isolation.get("format") != "abi-v2-physical-certification-isolation/2"
         or physical_isolation.get("host_key") != host_key
         or physical_isolation.get("capability_archives_physically_present") != 0
         or physical_isolation.get("source_success_ledgers_physically_present") != 0
@@ -367,6 +367,22 @@ def certify_host(
         or physical_isolation.get("mount", {}).get("unexpected_mount_points") != []
         or physical_isolation.get("capsule", {}).get("capability_archives_present") != 0
         or physical_isolation.get("capsule", {}).get("source_success_ledgers_present") != 0
+        or physical_isolation.get("reachable_filesystem_forbidden_scan", {}).get(
+            "format"
+        )
+        != "abi-v2-reachable-filesystem-inventory/1"
+        or physical_isolation.get("reachable_filesystem_forbidden_scan", {}).get(
+            "capability_archive_signature_matches"
+        )
+        != 0
+        or physical_isolation.get("reachable_filesystem_forbidden_scan", {}).get(
+            "forbidden_archive_member_paths"
+        )
+        != 0
+        or physical_isolation.get("reachable_filesystem_forbidden_scan", {}).get(
+            "campaign_identifier_matches"
+        )
+        != 0
     ):
         raise HostCertificationError(
             "physical certification-isolation evidence is missing or invalid"
