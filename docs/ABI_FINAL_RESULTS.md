@@ -28,7 +28,7 @@ recognized from their internal structure even when their extension is changed.
 | Specialist action identity | 300 tasks | all action sequences identical |
 | Live causal interventions | 3,072 | all six positive states identical; removals fail live |
 | Live isolation | 2,100 | 0 target successes; 700 cross-host identities |
-| Focused r4 tests before freeze | 21 | all pass |
+| Supported r4 release tests | 75 | all pass |
 | Disposable hostile audit | 17 mutations | all rejected; exact restore |
 
 The live causal run uses eight fresh processes per host. Qwen/Pythia state

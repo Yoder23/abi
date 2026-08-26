@@ -85,7 +85,7 @@ binds all 98 required inputs with per-file SHA-256 and aggregate digest
 | New live causal rows | 3,072/3,072 |
 | New live isolation rows | 2,100/2,100 |
 | Isolation target successes | 0/2,100 |
-| Focused r4 tests before freeze | 21/21 |
+| Supported r4 release tests | 75/75 |
 | Disposable archive hostile mutations | 17/17 rejected; exact restore |
 | Trusted scientific booleans consumed | 0 |
 
