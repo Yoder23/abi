@@ -25,6 +25,7 @@ from .capability_matrix import (
     _matrix_records,
     _sha256,
 )
+from .execution_sources import execution_source_manifest
 
 
 class LiveIsolationError(RuntimeError):
@@ -178,7 +179,7 @@ def run(
         b"".join(canonical_json_bytes(row) for row in observations),
     )
     manifest: dict[str, Any] = {
-        "format": "abi-v2-live-capability-isolation/1",
+        "format": "abi-v2-live-capability-isolation/2",
         "host": host_key,
         "device": device,
         "native_host": native_identity,
@@ -192,6 +193,7 @@ def run(
         "observations_rows": len(observations),
         "observations_sha256": _sha256(observations_path),
         "execution_source_sha256": _sha256(Path(__file__).resolve()),
+        "transitive_execution_sources": execution_source_manifest(root),
         "wall_seconds": time.perf_counter() - started,
     }
     manifest["evidence_sha256"] = sha256_bytes(canonical_json_bytes(manifest))

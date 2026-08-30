@@ -37,6 +37,7 @@ from .capability_matrix import (
     _matrix_records,
     _sha256,
 )
+from .execution_sources import execution_source_manifest
 
 CONDITIONS = (
     "real_host",
@@ -560,7 +561,7 @@ def run_condition(
     raw_path = output_dir / "observations.jsonl"
     _write_once(raw_path, b"".join(canonical_json_bytes(row) for row in observations))
     receipt: dict[str, Any] = {
-        "format": "abi-v2-live-host-condition/2",
+        "format": "abi-v2-live-host-condition/3",
         "host": host_key,
         "condition": condition,
         "device": device,
@@ -574,6 +575,7 @@ def run_condition(
         "observations_rows": len(observations),
         "observations_sha256": _sha256(raw_path),
         "execution_source_sha256": _sha256(Path(__file__).resolve()),
+        "transitive_execution_sources": execution_source_manifest(root),
         "adapter_sha256": adapter_binding["sha256"],
         "capability_sha256": {
             "english": _sha256(english_archive),
@@ -677,7 +679,7 @@ def run(
         for capability in CAPABILITIES
     }
     manifest: dict[str, Any] = {
-        "format": "abi-v2-live-host-causality-run/2",
+        "format": "abi-v2-live-host-causality-run/3",
         "host": host_key,
         "device": device,
         "conditions": list(CONDITIONS),
@@ -700,6 +702,7 @@ def run(
         "observations_sha256": _sha256(raw_path),
         "wall_seconds": time.perf_counter() - started,
         "execution_source_sha256": _sha256(Path(__file__).resolve()),
+        "transitive_execution_sources": execution_source_manifest(root),
     }
     manifest["evidence_sha256"] = sha256_bytes(canonical_json_bytes(manifest))
     _write_once(

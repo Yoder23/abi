@@ -185,6 +185,14 @@ def reconstruct(manifest: Path, tag_clone: Path, workspace: Path) -> dict[str, A
             ".",
         ],
     )
+    expected_strict_sha256 = str(
+        manifest_value.get("strict_certificate", {}).get("sha256", "")
+    )
+    strict_identity_exact = (
+        strict["exit_code"] == 0
+        and len(expected_strict_sha256) == 64
+        and strict["stdout_sha256"] == expected_strict_sha256
+    )
     tests = _run(
         root,
         [
@@ -200,7 +208,7 @@ def reconstruct(manifest: Path, tag_clone: Path, workspace: Path) -> dict[str, A
             "tests/test_abi_v2_external_bundle.py",
         ],
     )
-    passed = strict["exit_code"] == 0 and tests["exit_code"] == 0
+    passed = strict_identity_exact and tests["exit_code"] == 0
     value = {
         "format": "abi-v2-public-reconstruction/1",
         "status": (
@@ -218,6 +226,7 @@ def reconstruct(manifest: Path, tag_clone: Path, workspace: Path) -> dict[str, A
         "reconstructed_root": root.relative_to(workspace).as_posix(),
         "development_directories_present": forbidden,
         "strict_raw_recomputation": strict,
+        "strict_certificate_identity_exact": strict_identity_exact,
         "tests": tests,
         "wall_seconds": time.perf_counter() - started,
     }

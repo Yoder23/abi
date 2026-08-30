@@ -1,0 +1,276 @@
+{
+  "capability_archives_physically_present": 0,
+  "capsule": {
+    "capability_archives_present": 0,
+    "files_verified": 9,
+    "inventory": [
+      {
+        "bytes": 218,
+        "path": "abi_release/abi_v2/__init__.py",
+        "sha256": "993961c309c30bf5f8411cd1a5fdb66d26ee23b3aca318fbeb090ba020a70683"
+      },
+      {
+        "bytes": 8078,
+        "path": "abi_release/abi_v2/canonical.py",
+        "sha256": "c394133dc70a8cabfbb7b390e3b74178707d8cb3c89ead91a7b106eca445f52b"
+      },
+      {
+        "bytes": 5932,
+        "path": "abi_release/abi_v2/canonical_spec.json",
+        "sha256": "6536ef1b58dfeea0474bfef5619f3627ecaefe8f39f25da017f11446b6582c2f"
+      },
+      {
+        "bytes": 3442,
+        "path": "abi_release/abi_v2/certification_pivot_runner.sh",
+        "sha256": "9774d2a4577b5d7b6594aff7ba4ee566f40e884a36c8f87477469eaf8dc8391e"
+      },
+      {
+        "bytes": 3096,
+        "path": "abi_release/abi_v2/conformance_suite.json",
+        "sha256": "2af84b8b18fa78613fda7c96e7d269ef731b68138f736ea2d4441f4254747383"
+      },
+      {
+        "bytes": 24632,
+        "path": "abi_release/abi_v2/host_certification.py",
+        "sha256": "94356d2d81f369262de220717aa02d140149de8283e11db1fd2593fc895fd4e8"
+      },
+      {
+        "bytes": 45470,
+        "path": "abi_release/abi_v2/isolated_certification.py",
+        "sha256": "aad6f730022df925f770a8fc6e18a4b2fd2a7ebcd1aed19eb728abf1ebccff3f"
+      },
+      {
+        "bytes": 7356,
+        "path": "abi_release/abi_v2/reference_vectors/core_vectors.json",
+        "sha256": "fc792304e41b1985652a01b4b4efdb14a3bf40fc7aa4906f27ea95409f1dd9fa"
+      },
+      {
+        "bytes": 13330,
+        "path": "layercake_release/layercake_extensions/route_isolated_clarification_core_v25.py",
+        "sha256": "7b176f21e6a86f3aaded724462d37149f8f8be48370bcdd163fe44c49e3464ce"
+      }
+    ],
+    "inventory_sha256": "dc0f5c69c2c0cb136b99e87778d1cab6bb9f3b8cb92e9b242b86c68c3dcdede1",
+    "manifest_sha256": "2ccb335884cf30db1b521eb52de16b96450cf1bae8e43d2ad39faf3cc9cd1467",
+    "source_success_ledgers_present": 0
+  },
+  "capsule_files_physically_present": 9,
+  "evidence_sha256": "a4052499d74c003db82535c089a62a4eaeae2c8639d75c8ac23bfabef935798f",
+  "format": "abi-v2-physical-certification-isolation/2",
+  "host_key": "layercake",
+  "mount": {
+    "allowed_mount_points": [
+      "/",
+      "/capsule",
+      "/dev",
+      "/dev/null",
+      "/dev/random",
+      "/dev/urandom",
+      "/dev/zero",
+      "/etc",
+      "/home/samyo/.local/lib/python3.12/site-packages",
+      "/proc",
+      "/usr"
+    ],
+    "mountinfo_sha256": "f66e42bb3463aaddc7e0e65cf231cdaab790d08071141d3aff900a6339ccd394",
+    "mounts": [
+      {
+        "filesystem_type": "tmpfs",
+        "mount_options": [
+          "rw",
+          "relatime"
+        ],
+        "mount_point": "/",
+        "source": "tmpfs",
+        "super_options": [
+          "rw",
+          "size=262144k",
+          "mode=700"
+        ]
+      },
+      {
+        "filesystem_type": "ext4",
+        "mount_options": [
+          "ro",
+          "relatime"
+        ],
+        "mount_point": "/usr",
+        "source": "/dev/sdd",
+        "super_options": [
+          "rw",
+          "discard",
+          "errors=remount-ro",
+          "data=ordered"
+        ]
+      },
+      {
+        "filesystem_type": "ext4",
+        "mount_options": [
+          "ro",
+          "relatime"
+        ],
+        "mount_point": "/home/samyo/.local/lib/python3.12/site-packages",
+        "source": "/dev/sdd",
+        "super_options": [
+          "rw",
+          "discard",
+          "errors=remount-ro",
+          "data=ordered"
+        ]
+      },
+      {
+        "filesystem_type": "tmpfs",
+        "mount_options": [
+          "ro",
+          "relatime"
+        ],
+        "mount_point": "/etc",
+        "source": "tmpfs",
+        "super_options": [
+          "ro",
+          "size=4096k",
+          "mode=755"
+        ]
+      },
+      {
+        "filesystem_type": "tmpfs",
+        "mount_options": [
+          "rw",
+          "relatime"
+        ],
+        "mount_point": "/dev",
+        "source": "tmpfs",
+        "super_options": [
+          "rw",
+          "size=16384k",
+          "mode=755"
+        ]
+      },
+      {
+        "filesystem_type": "devtmpfs",
+        "mount_options": [
+          "ro",
+          "relatime"
+        ],
+        "mount_point": "/dev/null",
+        "source": "none",
+        "super_options": [
+          "rw",
+          "size=16367292k",
+          "nr_inodes=4091823",
+          "mode=755"
+        ]
+      },
+      {
+        "filesystem_type": "devtmpfs",
+        "mount_options": [
+          "ro",
+          "relatime"
+        ],
+        "mount_point": "/dev/zero",
+        "source": "none",
+        "super_options": [
+          "rw",
+          "size=16367292k",
+          "nr_inodes=4091823",
+          "mode=755"
+        ]
+      },
+      {
+        "filesystem_type": "devtmpfs",
+        "mount_options": [
+          "ro",
+          "relatime"
+        ],
+        "mount_point": "/dev/random",
+        "source": "none",
+        "super_options": [
+          "rw",
+          "size=16367292k",
+          "nr_inodes=4091823",
+          "mode=755"
+        ]
+      },
+      {
+        "filesystem_type": "devtmpfs",
+        "mount_options": [
+          "ro",
+          "relatime"
+        ],
+        "mount_point": "/dev/urandom",
+        "source": "none",
+        "super_options": [
+          "rw",
+          "size=16367292k",
+          "nr_inodes=4091823",
+          "mode=755"
+        ]
+      },
+      {
+        "filesystem_type": "ext4",
+        "mount_options": [
+          "rw",
+          "relatime"
+        ],
+        "mount_point": "/capsule",
+        "source": "/dev/sdd",
+        "super_options": [
+          "rw",
+          "discard",
+          "errors=remount-ro",
+          "data=ordered"
+        ]
+      },
+      {
+        "filesystem_type": "proc",
+        "mount_options": [
+          "rw",
+          "nosuid",
+          "nodev",
+          "noexec",
+          "relatime"
+        ],
+        "mount_point": "/proc",
+        "source": "proc",
+        "super_options": [
+          "rw"
+        ]
+      }
+    ],
+    "old_root_present": false,
+    "platform": "linux",
+    "runtime_site_mount": "/home/samyo/.local/lib/python3.12/site-packages",
+    "sandbox_policy": "abi-certification-pivot-root/1",
+    "unexpected_mount_points": [],
+    "windows_mount_present": false
+  },
+  "parent_process_id": 0,
+  "process_id": 1,
+  "reachable_filesystem_forbidden_scan": {
+    "campaign_identifier_matches": 0,
+    "capability_archive_signature_matches": 0,
+    "content_bytes_scanned": 3435055823,
+    "directories_scanned": 9038,
+    "embedded_archive_maximum_depth": 2,
+    "embedded_archive_members_scanned": 8044,
+    "embedded_archive_uncompressed_bytes_scanned": 150670740,
+    "evidence_sha256": "42afd1c6ca5c6dcc12e4a9d2ac53fce0a636023b87021cb588d2a7626a9659d2",
+    "excluded_virtual_roots": [
+      "/dev",
+      "/proc"
+    ],
+    "forbidden_archive_member_paths": 0,
+    "forbidden_path_matches": 0,
+    "format": "abi-v2-reachable-filesystem-inventory/2",
+    "inventory_jsonl_sha256": "9ce8d2590834e1126fecc838867cc53f45b7291a5b832c5e117f980d3f313bf1",
+    "inventory_rows": 100511,
+    "regular_file_bytes": 3435055823,
+    "regular_files_scanned": 89358,
+    "runtime_site_root": "/home/samyo/.local/lib/python3.12/site-packages",
+    "scan_root": "/",
+    "special_entries": 0,
+    "symlinks_scanned": 11153,
+    "unsupported_archive_signatures": 0
+  },
+  "source_success_ledgers_physically_present": 0
+}

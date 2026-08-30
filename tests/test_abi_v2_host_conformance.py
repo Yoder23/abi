@@ -103,7 +103,10 @@ def test_content_scanner_detects_renamed_capability_archive(tmp_path: Path) -> N
         archive.writestr("tensors.safetensors", b"not-a-real-tensor")
         archive.writestr("signature.json", b"{}")
     row = _inspect_regular_file(disguised)
-    assert row["capability_archive_signatures"] == ["layercake-capability-package"]
+    assert len(row["capability_archive_signatures"]) == 1
+    assert row["capability_archive_signatures"][0].endswith(
+        ":layercake-capability-package"
+    )
 
 
 def test_content_scanner_detects_success_id_in_neutral_file(tmp_path: Path) -> None:

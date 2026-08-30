@@ -12,8 +12,12 @@ mounts, network namespace, and every development path are unreachable.
 from __future__ import annotations
 
 import argparse
+import bz2
+import gzip
 import hashlib
+import io
 import json
+import lzma
 import os
 import re
 import shutil
@@ -21,9 +25,11 @@ import site
 import stat
 import subprocess
 import sys
+import tarfile
 import tempfile
 import uuid
 import zipfile
+import zlib
 from pathlib import Path
 from typing import Any, Iterable, Mapping
 
@@ -31,7 +37,7 @@ from .canonical import canonical_json_bytes, sha256_bytes
 
 CAPSULE_FORMAT = "abi-v2-physical-certification-capsule/1"
 ISOLATION_FORMAT = "abi-v2-physical-certification-isolation/2"
-FILESYSTEM_INVENTORY_FORMAT = "abi-v2-reachable-filesystem-inventory/1"
+FILESYSTEM_INVENTORY_FORMAT = "abi-v2-reachable-filesystem-inventory/2"
 FORBIDDEN_SUFFIXES = {".abi", ".cake", ".abix", ".abicir"}
 ALLOWED_CLASSIFICATIONS = {
     "abi_specification",
@@ -50,6 +56,17 @@ CAMPAIGN_IDENTIFIER_PATTERN = re.compile(
 )
 CONTENT_SCAN_OVERLAP = 1024
 CONTENT_SCAN_BLOCK_BYTES = 8 * 1024 * 1024
+MAX_ARCHIVE_RECURSION_DEPTH = 8
+MAX_ARCHIVE_MEMBER_BYTES = 2 * 1024 * 1024 * 1024
+
+# Containers for which the frozen certification runtime has no safe standard-
+# library decoder are rejected if their magic is present anywhere in an
+# admitted file or expanded member. This is deliberately content based.
+UNSUPPORTED_ARCHIVE_MAGICS = {
+    b"7z\xbc\xaf'\x1c": "7z",
+    b"Rar!\x1a\x07": "rar",
+    b"(\xb5/\xfd": "zstd",
+}
 
 
 class IsolatedCertificationError(RuntimeError):
@@ -370,70 +387,204 @@ def _stream_campaign_identifier_count(handle: Any) -> tuple[int, int]:
     return scanned, matches
 
 
-def _capability_archive_signatures(
-    path: Path,
-) -> tuple[list[str], int, int, int, list[str]]:
-    """Inspect ZIP contents, not extensions, for ABI/cake archive structures."""
+def _empty_archive_scan() -> dict[str, Any]:
+    return {
+        "signatures": [],
+        "members_scanned": 0,
+        "member_bytes_scanned": 0,
+        "member_identifier_matches": 0,
+        "forbidden_members": [],
+        "maximum_depth": 0,
+        "unsupported_signatures": [],
+    }
 
-    signatures: list[str] = []
-    members_scanned = 0
-    member_bytes_scanned = 0
-    member_identifier_matches = 0
-    forbidden_members: list[str] = []
-    try:
-        with path.open("rb") as handle:
-            if handle.read(4) not in {b"PK\x03\x04", b"PK\x05\x06", b"PK\x07\x08"}:
-                return signatures, 0, 0, 0, forbidden_members
-        with zipfile.ZipFile(path) as archive:
-            names = {info.filename for info in archive.infolist() if not info.is_dir()}
-            cake_members = {"manifest.json", "tensors.safetensors", "signature.json"}
-            extraction_members = {"manifest.json", "inventory.json", "ledger.json", "records.jsonl"}
-            abix_markers = {"budgets.json", "segregation.json", "selection.json", "sources.json"}
-            abicir_markers = {
-                "accounting.json",
-                "normalization.json",
-                "source_identity.json",
-                "split_manifest.json",
-            }
-            if cake_members <= names:
-                try:
-                    manifest = json.loads(archive.read("manifest.json"))
-                except (KeyError, json.JSONDecodeError, UnicodeDecodeError):
-                    manifest = None
-                if isinstance(manifest, dict) and {
-                    "cake_id",
-                    "cake_type",
-                    "abi_hash",
-                } <= set(manifest):
-                    signatures.append("layercake-capability-package")
-            if extraction_members <= names and abix_markers <= names:
-                signatures.append("abi-extraction-archive")
-            if extraction_members <= names and abicir_markers <= names:
-                signatures.append("abi-normalized-ir-archive")
-            forbidden_members = sorted(
-                name
-                for name in names
-                if Path(name).suffix.casefold() in FORBIDDEN_SUFFIXES
-            )
-            for info in archive.infolist():
-                if info.is_dir():
-                    continue
-                with archive.open(info, "r") as member:
-                    scanned, matches = _stream_campaign_identifier_count(member)
-                members_scanned += 1
-                member_bytes_scanned += scanned
-                member_identifier_matches += matches
-    except (OSError, zipfile.BadZipFile, RuntimeError):
-        # A file with incidental ZIP magic is still fully scanned and hashed by
-        # the outer stream. Only a structurally readable archive is expanded.
-        return [], 0, 0, 0, []
-    return (
-        sorted(signatures),
-        members_scanned,
-        member_bytes_scanned,
-        member_identifier_matches,
-        forbidden_members,
+
+def _merge_archive_scan(target: dict[str, Any], child: Mapping[str, Any]) -> None:
+    target["signatures"].extend(child["signatures"])
+    target["members_scanned"] += int(child["members_scanned"])
+    target["member_bytes_scanned"] += int(child["member_bytes_scanned"])
+    target["member_identifier_matches"] += int(child["member_identifier_matches"])
+    target["forbidden_members"].extend(child["forbidden_members"])
+    target["maximum_depth"] = max(int(target["maximum_depth"]), int(child["maximum_depth"]))
+    target["unsupported_signatures"].extend(child["unsupported_signatures"])
+
+
+def _read_bounded(handle: Any, *, label: str) -> bytes:
+    payload = handle.read(MAX_ARCHIVE_MEMBER_BYTES + 1)
+    if len(payload) > MAX_ARCHIVE_MEMBER_BYTES:
+        raise IsolatedCertificationError(f"expanded archive member exceeds bound: {label}")
+    return payload
+
+
+def _archive_member_families(names: set[str]) -> list[tuple[str, str]]:
+    """Recognize capability layouts at any directory prefix."""
+
+    normalized = {name.replace("\\", "/").lstrip("/") for name in names}
+    by_parent: dict[str, set[str]] = {}
+    for name in normalized:
+        parent, _, base = name.rpartition("/")
+        by_parent.setdefault(parent, set()).add(base)
+    families: list[tuple[str, str]] = []
+    cake = {"manifest.json", "tensors.safetensors", "signature.json"}
+    extraction = {"manifest.json", "inventory.json", "ledger.json", "records.jsonl"}
+    abix = {"budgets.json", "segregation.json", "selection.json", "sources.json"}
+    abicir = {"accounting.json", "normalization.json", "source_identity.json", "split_manifest.json"}
+    for parent, bases in by_parent.items():
+        if cake <= bases:
+            families.append(("layercake-capability-package", parent))
+        if extraction <= bases and abix <= bases:
+            families.append(("abi-extraction-archive", parent))
+        if extraction <= bases and abicir <= bases:
+            families.append(("abi-normalized-ir-archive", parent))
+    return families
+
+
+def _scan_expanded_payload(payload: bytes, *, label: str, depth: int) -> dict[str, Any]:
+    """Recursively content-scan readable ZIP/tar/gzip/bzip2/xz payloads."""
+
+    if depth > MAX_ARCHIVE_RECURSION_DEPTH:
+        raise IsolatedCertificationError(f"archive recursion depth exceeded: {label}")
+    result = _empty_archive_scan()
+    result["maximum_depth"] = depth
+    result["member_identifier_matches"] = sum(
+        1 for _ in CAMPAIGN_IDENTIFIER_PATTERN.finditer(payload)
     )
+    for magic, kind in UNSUPPORTED_ARCHIVE_MAGICS.items():
+        if magic in payload:
+            result["unsupported_signatures"].append(f"{label}:{kind}")
+
+    source = io.BytesIO(payload)
+    if zipfile.is_zipfile(source):
+        source.seek(0)
+        try:
+            with zipfile.ZipFile(source) as archive:
+                infos = [info for info in archive.infolist() if not info.is_dir()]
+                names = {info.filename for info in infos}
+                for family, parent in _archive_member_families(names):
+                    result["signatures"].append(f"{label}:{parent or '.'}:{family}")
+                for info in infos:
+                    member_label = f"{label}!/{info.filename}"
+                    result["members_scanned"] += 1
+                    result["forbidden_members"].extend(
+                        [member_label]
+                        if Path(info.filename).suffix.casefold() in FORBIDDEN_SUFFIXES
+                        else []
+                    )
+                    if info.flag_bits & 1:
+                        result["unsupported_signatures"].append(f"{member_label}:encrypted-zip")
+                        continue
+                    if int(info.file_size) > MAX_ARCHIVE_MEMBER_BYTES:
+                        raise IsolatedCertificationError(
+                            f"expanded archive member exceeds bound: {member_label}"
+                        )
+                    with archive.open(info, "r") as member:
+                        member_payload = _read_bounded(member, label=member_label)
+                    result["member_bytes_scanned"] += len(member_payload)
+                    child = _scan_expanded_payload(
+                        member_payload, label=member_label, depth=depth + 1
+                    )
+                    _merge_archive_scan(result, child)
+        except (OSError, zipfile.BadZipFile, RuntimeError):
+            # is_zipfile can false-positive on binary blobs that happen to
+            # contain ZIP trailers (for example CPython bytecode). Such bytes
+            # are still fully hashed/scanned, but are not a readable archive.
+            return result
+        return result
+
+    # A tar header is authoritative at byte 257. Compressed single streams are
+    # decoded and recursively inspected, so tar.gz/tar.bz2/tar.xz and nested
+    # containers cannot hide capability layouts or campaign identifiers.
+    if len(payload) >= 262 and payload[257:262] == b"ustar":
+        try:
+            with tarfile.open(fileobj=io.BytesIO(payload), mode="r:") as archive:
+                infos = [info for info in archive.getmembers() if info.isfile()]
+                names = {info.name for info in infos}
+                for family, parent in _archive_member_families(names):
+                    result["signatures"].append(f"{label}:{parent or '.'}:{family}")
+                for info in infos:
+                    member_label = f"{label}!/{info.name}"
+                    result["members_scanned"] += 1
+                    if Path(info.name).suffix.casefold() in FORBIDDEN_SUFFIXES:
+                        result["forbidden_members"].append(member_label)
+                    if int(info.size) > MAX_ARCHIVE_MEMBER_BYTES:
+                        raise IsolatedCertificationError(
+                            f"expanded archive member exceeds bound: {member_label}"
+                        )
+                    extracted = archive.extractfile(info)
+                    if extracted is None:
+                        raise IsolatedCertificationError(f"tar member unreadable: {member_label}")
+                    with extracted:
+                        member_payload = _read_bounded(extracted, label=member_label)
+                    result["member_bytes_scanned"] += len(member_payload)
+                    _merge_archive_scan(
+                        result,
+                        _scan_expanded_payload(
+                            member_payload, label=member_label, depth=depth + 1
+                        ),
+                    )
+        except (OSError, tarfile.TarError) as exc:
+            raise IsolatedCertificationError(f"readable tar expansion failed: {label}") from exc
+        return result
+
+    decompressors: tuple[tuple[bytes, str, Any], ...] = (
+        (b"\x1f\x8b", "gzip", gzip.decompress),
+        (b"BZh", "bzip2", bz2.decompress),
+        (b"\xfd7zXZ\x00", "xz", lzma.decompress),
+    )
+    expanded_offsets: set[tuple[str, int]] = set()
+    for magic, kind, decompressor in decompressors:
+        offset = payload.find(magic)
+        while offset >= 0:
+            try:
+                expanded = decompressor(payload[offset:])
+            except (OSError, EOFError, ValueError, lzma.LZMAError, zlib.error):
+                # Magic can occur incidentally inside another valid compressed
+                # stream. Only structurally decodable content is an archive.
+                offset = payload.find(magic, offset + 1)
+                continue
+            if len(expanded) > MAX_ARCHIVE_MEMBER_BYTES:
+                raise IsolatedCertificationError(
+                    f"expanded {kind} stream exceeds bound: {label}@{offset}"
+                )
+            identity = (hashlib.sha256(expanded).hexdigest(), len(expanded))
+            if identity not in expanded_offsets:
+                expanded_offsets.add(identity)
+                result["members_scanned"] += 1
+                result["member_bytes_scanned"] += len(expanded)
+                _merge_archive_scan(
+                    result,
+                    _scan_expanded_payload(
+                        expanded,
+                        label=f"{label}!/{kind}@{offset}",
+                        depth=depth + 1,
+                    ),
+                )
+            offset = payload.find(magic, offset + 1)
+    return result
+
+
+def _capability_archive_signatures(path: Path) -> dict[str, Any]:
+    """Inspect renamed, prefixed, compressed, and recursively nested containers."""
+
+    if zipfile.is_zipfile(path):
+        # zipfile handles arbitrary prefixes/self-extracting ZIPs. Reading here
+        # is bounded member-by-member by the recursive scanner.
+        with path.open("rb") as handle:
+            payload = _read_bounded(handle, label=path.as_posix())
+        return _scan_expanded_payload(payload, label=path.as_posix(), depth=1)
+
+    with path.open("rb") as handle:
+        prefix = handle.read(512)
+    recognized = (
+        any(magic in prefix for magic in UNSUPPORTED_ARCHIVE_MAGICS)
+        or any(magic in prefix for magic in (b"\x1f\x8b", b"BZh", b"\xfd7zXZ\x00"))
+        or (len(prefix) >= 262 and prefix[257:262] == b"ustar")
+    )
+    if not recognized:
+        return _empty_archive_scan()
+    with path.open("rb") as handle:
+        payload = _read_bounded(handle, label=path.as_posix())
+    return _scan_expanded_payload(payload, label=path.as_posix(), depth=1)
 
 
 def _inspect_regular_file(path: Path) -> dict[str, Any]:
@@ -454,23 +605,19 @@ def _inspect_regular_file(path: Path) -> dict[str, Any]:
                 for match in CAMPAIGN_IDENTIFIER_PATTERN.finditer(combined)
             )
             overlap = combined[-CONTENT_SCAN_OVERLAP:]
-    (
-        signatures,
-        archive_members,
-        archive_bytes,
-        embedded_identifier_matches,
-        forbidden_members,
-    ) = _capability_archive_signatures(path)
+    archive = _capability_archive_signatures(path)
     return {
         "bytes": content_bytes,
         "sha256": digest.hexdigest(),
         "content_bytes_scanned": content_bytes,
         "campaign_identifier_matches": identifier_matches,
-        "embedded_archive_members_scanned": archive_members,
-        "embedded_archive_uncompressed_bytes_scanned": archive_bytes,
-        "embedded_campaign_identifier_matches": embedded_identifier_matches,
-        "capability_archive_signatures": signatures,
-        "forbidden_archive_member_paths": forbidden_members,
+        "embedded_archive_members_scanned": archive["members_scanned"],
+        "embedded_archive_uncompressed_bytes_scanned": archive["member_bytes_scanned"],
+        "embedded_campaign_identifier_matches": archive["member_identifier_matches"],
+        "embedded_archive_maximum_depth": archive["maximum_depth"],
+        "unsupported_archive_signatures": sorted(set(archive["unsupported_signatures"])),
+        "capability_archive_signatures": sorted(set(archive["signatures"])),
+        "forbidden_archive_member_paths": sorted(set(archive["forbidden_members"])),
     }
 
 
@@ -586,6 +733,9 @@ def _physical_forbidden_scan() -> tuple[dict[str, Any], bytes]:
         + int(row["embedded_campaign_identifier_matches"])
         for row in regular_rows
     )
+    unsupported_archives = sum(
+        len(row["unsupported_archive_signatures"]) for row in regular_rows
+    )
     if (
         duplicate_paths
         or special_entries
@@ -593,6 +743,7 @@ def _physical_forbidden_scan() -> tuple[dict[str, Any], bytes]:
         or capability_signatures
         or forbidden_members
         or campaign_matches
+        or unsupported_archives
     ):
         raise IsolatedCertificationError(
             "forbidden or unaccounted content is reachable inside certification root: "
@@ -600,7 +751,8 @@ def _physical_forbidden_scan() -> tuple[dict[str, Any], bytes]:
             f"forbidden_paths={forbidden_path_matches[:5]}, "
             f"capability_signatures={capability_signatures}, "
             f"forbidden_archive_members={forbidden_members}, "
-            f"campaign_identifier_matches={campaign_matches}"
+            f"campaign_identifier_matches={campaign_matches}, "
+            f"unsupported_archive_signatures={unsupported_archives}"
         )
     inventory_bytes = b"".join(canonical_json_bytes(row) for row in rows)
     summary: dict[str, Any] = {
@@ -623,6 +775,11 @@ def _physical_forbidden_scan() -> tuple[dict[str, Any], bytes]:
             int(row["embedded_archive_uncompressed_bytes_scanned"])
             for row in regular_rows
         ),
+        "embedded_archive_maximum_depth": max(
+            (int(row["embedded_archive_maximum_depth"]) for row in regular_rows),
+            default=0,
+        ),
+        "unsupported_archive_signatures": unsupported_archives,
         "capability_archive_signature_matches": capability_signatures,
         "forbidden_archive_member_paths": forbidden_members,
         "campaign_identifier_matches": campaign_matches,

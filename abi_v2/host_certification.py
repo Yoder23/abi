@@ -370,7 +370,7 @@ def certify_host(
         or physical_isolation.get("reachable_filesystem_forbidden_scan", {}).get(
             "format"
         )
-        != "abi-v2-reachable-filesystem-inventory/1"
+        != "abi-v2-reachable-filesystem-inventory/2"
         or physical_isolation.get("reachable_filesystem_forbidden_scan", {}).get(
             "capability_archive_signature_matches"
         )
@@ -381,6 +381,10 @@ def certify_host(
         != 0
         or physical_isolation.get("reachable_filesystem_forbidden_scan", {}).get(
             "campaign_identifier_matches"
+        )
+        != 0
+        or physical_isolation.get("reachable_filesystem_forbidden_scan", {}).get(
+            "unsupported_archive_signatures"
         )
         != 0
     ):

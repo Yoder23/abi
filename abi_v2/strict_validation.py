@@ -26,6 +26,7 @@ from .capability_matrix import (
     _matrix_records,
     _source_references,
 )
+from .execution_sources import ExecutionSourceError, execution_source_manifest
 from .final_validation import CAPABILITY_PATHS, HOSTS, MATRIX_DIRS, evidence_hash
 from .host_certification import _neutral_texts
 from .isolated_certification import (
@@ -36,9 +37,9 @@ from .isolated_certification import (
 from .live_causality import CONDITIONS, SAMPLE_SEED, _selected
 
 EVIDENCE_ROOT = Path("results/abi_final_validation_v2")
-CERTIFICATION_ROOT = EVIDENCE_ROOT / "isolated_certification_strict_r4_content_bound"
-CAUSALITY_ROOT = EVIDENCE_ROOT / "live_causality"
-ISOLATION_ROOT = EVIDENCE_ROOT / "live_isolation"
+CERTIFICATION_ROOT = EVIDENCE_ROOT / "isolated_certification_strict_r5_recursive_bound"
+CAUSALITY_ROOT = EVIDENCE_ROOT / "live_causality_r5_source_bound"
+ISOLATION_ROOT = EVIDENCE_ROOT / "live_isolation_r5_source_bound"
 FORBIDDEN_CAPABILITY_SUFFIXES = {".abi", ".cake", ".abix", ".abicir"}
 
 
@@ -166,6 +167,8 @@ def verify_reachable_filesystem_inventory(
         "embedded_archive_members_scanned",
         "embedded_archive_uncompressed_bytes_scanned",
         "embedded_campaign_identifier_matches",
+        "embedded_archive_maximum_depth",
+        "unsupported_archive_signatures",
         "capability_archive_signatures",
         "forbidden_archive_member_paths",
     }
@@ -200,6 +203,7 @@ def verify_reachable_filesystem_inventory(
                 "embedded_archive_members_scanned",
                 "embedded_archive_uncompressed_bytes_scanned",
                 "embedded_campaign_identifier_matches",
+                "embedded_archive_maximum_depth",
             )
             try:
                 values = {field: int(row[field]) for field in numeric}
@@ -212,6 +216,7 @@ def verify_reachable_filesystem_inventory(
                 or values["content_bytes_scanned"] != values["bytes"]
                 or values["campaign_identifier_matches"] != 0
                 or values["embedded_campaign_identifier_matches"] != 0
+                or row.get("unsupported_archive_signatures") != []
                 or row.get("capability_archive_signatures") != []
                 or row.get("forbidden_archive_member_paths") != []
             ):
@@ -253,6 +258,13 @@ def verify_reachable_filesystem_inventory(
         "embedded_archive_uncompressed_bytes_scanned": sum(
             int(row["embedded_archive_uncompressed_bytes_scanned"])
             for row in regular_rows
+        ),
+        "embedded_archive_maximum_depth": max(
+            (int(row["embedded_archive_maximum_depth"]) for row in regular_rows),
+            default=0,
+        ),
+        "unsupported_archive_signatures": sum(
+            len(row["unsupported_archive_signatures"]) for row in regular_rows
         ),
         "capability_archive_signature_matches": sum(
             len(row["capability_archive_signatures"]) for row in regular_rows
@@ -571,7 +583,17 @@ def verify_certifications(
         forwards = checks.get("native_forward_rows")
         if not isinstance(forwards, list):
             raise StrictValidationError(f"native forward raw rows missing: {host}")
-        if len(forwards) != int(checks.get("native_forward_records", -1)):
+        locked_forward_records = (
+            0
+            if host == "layercake"
+            else int(suite["certification_data"]["model_forward_records"])
+        )
+        if (
+            len(forwards) != locked_forward_records
+            or int(checks.get("native_forward_records", -1)) != locked_forward_records
+            or int(checks.get("native_forward_finite_records", -1))
+            != locked_forward_records
+        ):
             raise StrictValidationError(f"native forward depth changed: {host}")
         if any(
             int(row.get("position", -1)) != position
@@ -733,6 +755,10 @@ def verify_live_causality(
         else causality_root.resolve()
     )
     source_path = root / "abi_v2/live_causality.py"
+    try:
+        transitive_sources = execution_source_manifest(root)
+    except ExecutionSourceError as exc:
+        raise StrictValidationError(f"transitive execution sources unavailable: {exc}") from exc
     source_text = read_text(source_path)
     for forbidden in ("_matrix_rows", "_matrix_result", "_source_references"):
         if forbidden in source_text:
@@ -766,7 +792,7 @@ def verify_live_causality(
         base_path = causality_root / host
         manifest = read_json(base_path / "manifest.json")
         verify_evidence_hash(manifest, label=f"causality/{host}/manifest")
-        if manifest.get("format") != "abi-v2-live-host-causality-run/2":
+        if manifest.get("format") != "abi-v2-live-host-causality-run/3":
             raise StrictValidationError(f"live causality format changed: {host}")
         rows = read_jsonl(base_path / "observations.jsonl")
         if manifest.get("observations_sha256") != sha256_file(
@@ -775,6 +801,8 @@ def verify_live_causality(
             raise StrictValidationError(f"live causality raw binding changed: {host}")
         if manifest.get("execution_source_sha256") != sha256_file(source_path):
             raise StrictValidationError(f"stale live causality code binding: {host}")
+        if manifest.get("transitive_execution_sources") != transitive_sources:
+            raise StrictValidationError(f"stale transitive execution source binding: {host}")
         if manifest.get("sample_seed") != SAMPLE_SEED or manifest.get(
             "samples_per_capability"
         ) != 32:
@@ -822,12 +850,13 @@ def verify_live_causality(
             receipt = read_json(receipt_path)
             verify_evidence_hash(receipt, label=f"causality/{host}/{condition}")
             if (
-                receipt.get("format") != "abi-v2-live-host-condition/2"
+                receipt.get("format") != "abi-v2-live-host-condition/3"
                 or receipt.get("host") != host
                 or receipt.get("condition") != condition
                 or receipt.get("execution_source_sha256") != sha256_file(source_path)
                 or receipt.get("adapter_sha256") != adapters[host]["sha256"]
                 or receipt.get("capability_sha256") != current_packages
+                or receipt.get("transitive_execution_sources") != transitive_sources
                 or int(receipt.get("process_id", -1)) != process_by_condition[condition][
                     "process_id"
                 ]
@@ -1131,6 +1160,10 @@ def verify_live_isolation(
         else isolation_root.resolve()
     )
     source_path = root / "abi_v2/live_isolation.py"
+    try:
+        transitive_sources = execution_source_manifest(root)
+    except ExecutionSourceError as exc:
+        raise StrictValidationError(f"transitive execution sources unavailable: {exc}") from exc
     source_text = read_text(source_path)
     for forbidden in ("_source_references", "_matrix_rows", "_matrix_result"):
         if forbidden in source_text:
@@ -1168,8 +1201,13 @@ def verify_live_isolation(
         verify_evidence_hash(manifest, label=f"isolation/{host}/manifest")
         rows_path = base_path / "observations.jsonl"
         rows = read_jsonl(rows_path)
-        if manifest.get("execution_source_sha256") != sha256_file(source_path):
+        if (
+            manifest.get("format") != "abi-v2-live-capability-isolation/2"
+            or manifest.get("execution_source_sha256") != sha256_file(source_path)
+        ):
             raise StrictValidationError(f"stale live isolation source: {host}")
+        if manifest.get("transitive_execution_sources") != transitive_sources:
+            raise StrictValidationError(f"stale transitive isolation source: {host}")
         if manifest.get("observations_sha256") != sha256_file(rows_path):
             raise StrictValidationError(f"live isolation raw binding changed: {host}")
         if manifest.get("adapter_sha256_before") != adapters[host]["sha256"] or manifest.get(
@@ -1244,6 +1282,7 @@ def required_input_manifest(root: Path) -> dict[str, Any]:
         root / "abi_v2/capability_matrix.py",
         root / "abi_v2/certification_pivot_runner.sh",
         root / "abi_v2/conformance_suite.json",
+        root / "abi_v2/execution_sources.py",
         root / "abi_v2/final_validation.py",
         root / "abi_v2/host_certification.py",
         root / "abi_v2/isolated_certification.py",
@@ -1266,6 +1305,24 @@ def required_input_manifest(root: Path) -> dict[str, Any]:
         root.parent
         / "layercake_release/layercake_extensions/route_isolated_clarification_core_v25.py",
     }
+    # Bind every transitive Python/runtime source, not merely the immediate
+    # verifier entry points. The live receipts carry the same aggregate.
+    layercake_root = (root.parent / "layercake_release").resolve()
+    for tree, suffixes in (
+        (root / "abi", {".py"}),
+        (root / "abi_v2", {".py", ".json", ".sh"}),
+        (layercake_root / "layercake", {".py"}),
+        (layercake_root / "layercake_extensions", {".py"}),
+    ):
+        if not tree.is_dir():
+            raise StrictValidationError(f"required execution source tree missing: {tree}")
+        paths.update(
+            path
+            for path in tree.rglob("*")
+            if path.is_file()
+            and path.suffix.casefold() in suffixes
+            and "__pycache__" not in path.parts
+        )
     protocol = read_json(root / "abi_v2/matrix_protocol_amendment3.json")
     base = read_json(root / protocol["base_protocol"])
     merged = {**base, **protocol}
@@ -1340,7 +1397,7 @@ def verify(root: Path) -> dict[str, Any]:
         causality = verify_live_causality(root)
         isolation = verify_live_isolation(root)
         return {
-            "format": "abi-v2-strict-final-validation/2",
+            "format": "abi-v2-strict-final-validation/3",
             "status": "PASS_STRICT_RAW_RECOMPUTATION",
             "certification": certification,
             "locked_matrix": matrix,

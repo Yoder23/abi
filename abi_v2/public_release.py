@@ -78,10 +78,10 @@ def build_manifest(
             )
         )
     strict_path = root / (
-        "results/abi_final_validation_v2/strict_validation_r4_content_bound.json"
+        "results/abi_final_validation_v2/strict_validation_r5_recursive_bound.json"
     )
     hostile_path = root / (
-        "results/abi_final_validation_v2/strict_hostile_pre_public_r4.json"
+        "results/abi_final_validation_v2/strict_hostile_pre_public_r5.json"
     )
     return {
         "format": "abi-v2-public-release-assets/1",
@@ -93,13 +93,13 @@ def build_manifest(
         "strict_certificate": {
             "path_in_archive": (
                 "abi_release/results/abi_final_validation_v2/"
-                "strict_validation_r4_content_bound.json"
+                "strict_validation_r5_recursive_bound.json"
             ),
             "sha256": sha256_file(strict_path),
         },
         "pre_public_hostile_receipt": {
             "path_in_archive": (
-                "abi_release/results/abi_final_validation_v2/strict_hostile_pre_public_r4.json"
+                "abi_release/results/abi_final_validation_v2/strict_hostile_pre_public_r5.json"
             ),
             "sha256": sha256_file(hostile_path),
         },
