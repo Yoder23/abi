@@ -12,7 +12,7 @@
   "disclosed_payload_classes": [
     "public locked evaluator/reference outputs"
   ],
-  "evidence_sha256": "406ef885c73908990d35e6d856566e3cf2ac2a4daa2d2c5485e9427dcc9b822a",
+  "evidence_sha256": "90bf7e7d0fce64bb7f775c5fac3980a69af166502a4adc6a1fec94e0a5ad3871",
   "excluded_payload_classes": [
     "host model weights",
     "development caches",
@@ -22,8 +22,8 @@
     "source teacher runtime"
   ],
   "format": "abi-final-external-reproduction-checklist/1",
-  "frozen_commit": "acfed2a225a32d36c32b625e35c6ede536cfab01",
-  "frozen_tag": "abi-host-independence-technical-proof-2026-08-24",
+  "frozen_commit": "see results/abi_final_validation_v2/frozen_release_candidate_r5.json",
+  "frozen_tag": "see results/abi_final_validation_v2/frozen_release_candidate_r5.json",
   "hardware_rule": "must differ from the ABI development RTX 3080 Laptop GPU system",
   "minimum_information_status": "PENDING_AFTER_EXTERNAL_VALIDATION",
   "operator_must_record": [
