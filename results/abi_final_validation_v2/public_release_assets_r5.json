@@ -1,0 +1,58 @@
+{
+  "assets": [
+    {
+      "bytes": 669911815,
+      "content_address": "sha256:33a31683ab4da37a021ae5d76ec5db6c54ea682aef7fc6c03fee9ed42bd6dac6",
+      "download_url": "https://github.com/Yoder23/abi/releases/download/abi-final-validation-v2-repaired-r5-2026-08-30/abi-final-validation-v2-r5-2026-08-30.zip",
+      "name": "abi-final-validation-v2-r5-2026-08-30.zip",
+      "role": "definitive_repaired_validation_archive",
+      "sha256": "33a31683ab4da37a021ae5d76ec5db6c54ea682aef7fc6c03fee9ed42bd6dac6"
+    },
+    {
+      "bytes": 510981,
+      "content_address": "sha256:f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+      "download_url": "https://github.com/Yoder23/abi/releases/download/abi-final-validation-v2-repaired-r5-2026-08-30/abi-chemistry-token-plan-seed9824.cake",
+      "name": "abi-chemistry-token-plan-seed9824.cake",
+      "role": "immutable_chemistry_capability_package",
+      "sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb"
+    },
+    {
+      "bytes": 495919,
+      "content_address": "sha256:634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+      "download_url": "https://github.com/Yoder23/abi/releases/download/abi-final-validation-v2-repaired-r5-2026-08-30/abi-civics-token-plan-seed9824.cake",
+      "name": "abi-civics-token-plan-seed9824.cake",
+      "role": "immutable_civics_capability_package",
+      "sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604"
+    },
+    {
+      "bytes": 253216208,
+      "content_address": "sha256:acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+      "download_url": "https://github.com/Yoder23/abi/releases/download/abi-final-validation-v2-repaired-r5-2026-08-30/phase7-final-english-core.cake",
+      "name": "phase7-final-english-core.cake",
+      "role": "immutable_english_capability_package",
+      "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d"
+    },
+    {
+      "bytes": 448404,
+      "content_address": "sha256:f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+      "download_url": "https://github.com/Yoder23/abi/releases/download/abi-final-validation-v2-repaired-r5-2026-08-30/abi-python-token-plan-seed9824.cake",
+      "name": "abi-python-token-plan-seed9824.cake",
+      "role": "immutable_python_capability_package",
+      "sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d"
+    }
+  ],
+  "format": "abi-v2-public-release-assets/1",
+  "next_required_action": "fresh clone and reconstruction from this manifest, followed by blind red-team",
+  "pre_public_hostile_receipt": {
+    "path_in_archive": "abi_release/results/abi_final_validation_v2/strict_hostile_pre_public_r5.json",
+    "sha256": "e7f4b38747eecfba4e71b6149a59b8c415be4e7531aba281de7481cc10df2f38"
+  },
+  "release_commit": "15b5afe797ed7edafe47fa3e1ad4d8085cca4c83",
+  "release_page": "https://github.com/Yoder23/abi/releases/tag/abi-final-validation-v2-repaired-r5-2026-08-30",
+  "release_tag": "abi-final-validation-v2-repaired-r5-2026-08-30",
+  "repository": "Yoder23/abi",
+  "strict_certificate": {
+    "path_in_archive": "abi_release/results/abi_final_validation_v2/strict_validation_r5_recursive_bound.json",
+    "sha256": "0207e3e781be44f556aa7f1d6854bc27d47c2888fb3da381f294276c8cc6258f"
+  }
+}
