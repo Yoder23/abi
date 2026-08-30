@@ -37,9 +37,9 @@ from .isolated_certification import (
 from .live_causality import CONDITIONS, SAMPLE_SEED, _selected
 
 EVIDENCE_ROOT = Path("results/abi_final_validation_v2")
-CERTIFICATION_ROOT = EVIDENCE_ROOT / "isolated_certification_strict_r6_full_stream_bound"
-CAUSALITY_ROOT = EVIDENCE_ROOT / "live_causality_r6_source_bound"
-ISOLATION_ROOT = EVIDENCE_ROOT / "live_isolation_r6_source_bound"
+CERTIFICATION_ROOT = EVIDENCE_ROOT / "isolated_certification_strict_r7_tar_bound"
+CAUSALITY_ROOT = EVIDENCE_ROOT / "live_causality_r7_source_bound"
+ISOLATION_ROOT = EVIDENCE_ROOT / "live_isolation_r7_source_bound"
 FORBIDDEN_CAPABILITY_SUFFIXES = {".abi", ".cake", ".abix", ".abicir"}
 
 # These are release-source commitments, not experiment-supplied status flags.
@@ -49,15 +49,15 @@ FORBIDDEN_CAPABILITY_SUFFIXES = {".abi", ".cake", ".abix", ".abicir"}
 EXPECTED_REACHABLE_INVENTORIES = {
     "layercake": {
         "rows": 100_511,
-        "sha256": "cf3ddd4c4a91bdec7fa3a3b40718182a0b92c0a61ddc9f9955bab8df5ff120a5",
+        "sha256": "44bb88ad6616062b412d725612531da005b43925899804baf28ae66ebe571629",
     },
     "qwen2": {
         "rows": 100_517,
-        "sha256": "4b3fe52f50e660de361d4717b77d40fd016635b68700001084b09ff7bea795d6",
+        "sha256": "71f8f811341cb77d467edf371aae71840b17a2d3e25efe794c6eba375fc7cf25",
     },
     "pythia": {
         "rows": 100_515,
-        "sha256": "c26abad912047399b7065865dd89dcb50bf3375a161ce96032f6e1544adf7e7b",
+        "sha256": "61cee51af1249a453e2dc37970b6cf681931c4fb22d2b47ef056c539010f52c0",
     },
 }
 
@@ -1423,7 +1423,7 @@ def verify(root: Path) -> dict[str, Any]:
         causality = verify_live_causality(root)
         isolation = verify_live_isolation(root)
         return {
-            "format": "abi-v2-strict-final-validation/4",
+            "format": "abi-v2-strict-final-validation/5",
             "status": "PASS_STRICT_RAW_RECOMPUTATION",
             "certification": certification,
             "locked_matrix": matrix,

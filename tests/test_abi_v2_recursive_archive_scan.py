@@ -24,6 +24,32 @@ def _cake_zip() -> bytes:
     return payload.getvalue()
 
 
+def _plain_cake_tar() -> bytes:
+    payload = io.BytesIO()
+    members = {
+        "payload/manifest.json": b'{"cake_id":"test"}',
+        "payload/tensors.safetensors": b"tensor",
+        "payload/signature.json": b"{}",
+    }
+    with tarfile.open(fileobj=payload, mode="w", format=tarfile.USTAR_FORMAT) as archive:
+        for name, content in members.items():
+            info = tarfile.TarInfo(name)
+            info.size = len(content)
+            archive.addfile(info, io.BytesIO(content))
+    return payload.getvalue()
+
+
+def _v7_cake_tar() -> bytes:
+    payload = bytearray(_plain_cake_tar())
+    for offset in (0, 1024, 2048):
+        header = payload[offset : offset + 512]
+        header[257:265] = b"\x00" * 8
+        header[148:156] = b" " * 8
+        header[148:156] = f"{sum(header):06o}\0 ".encode("ascii")
+        payload[offset : offset + 512] = header
+    return bytes(payload)
+
+
 def _write(path: Path, payload: bytes) -> dict[str, object]:
     path.write_bytes(payload)
     return _capability_archive_signatures(path)
@@ -112,3 +138,32 @@ def test_archive_magic_split_across_streaming_block_boundary(tmp_path: Path) -> 
     payload = b"P" * (CONTENT_SCAN_BLOCK_BYTES - 1) + gzip.compress(_cake_zip())
     value = _write(tmp_path / "split-signature.bin", payload)
     assert any("layercake-capability-package" in row for row in value["signatures"])
+
+
+def test_plain_capability_tar_is_detected_at_arbitrary_offsets(tmp_path: Path) -> None:
+    from abi_v2.isolated_certification import CONTENT_SCAN_BLOCK_BYTES
+
+    tar_payload = _plain_cake_tar()
+    for name, prefix in (
+        ("after-old-probe", b"P" * 513),
+        ("non-block-aligned", b"P" * 1024),
+        ("stream-boundary", b"P" * CONTENT_SCAN_BLOCK_BYTES),
+    ):
+        value = _write(tmp_path / f"{name}.bin", prefix + tar_payload)
+        assert any("layercake-capability-package" in row for row in value["signatures"])
+        assert value["members_scanned"] >= 3
+
+
+def test_v7_tar_without_ustar_magic_is_detected_after_prefix(tmp_path: Path) -> None:
+    value = _write(tmp_path / "v7-prefixed.bin", b"P" * 513 + _v7_cake_tar())
+    assert any("layercake-capability-package" in row for row in value["signatures"])
+    assert value["members_scanned"] >= 3
+
+
+def test_incidental_tar_literals_without_valid_checksum_are_ignored(tmp_path: Path) -> None:
+    value = _write(
+        tmp_path / "tar-literal.bin",
+        b"ustar" + b"0" * 148 + b"000000\x00 " + b"not a tar header",
+    )
+    assert value["signatures"] == []
+    assert value["members_scanned"] == 0

@@ -32,8 +32,8 @@ def checklist() -> dict[str, Any]:
         "format": "abi-final-external-reproduction-checklist/1",
         "status": "CLOSED_UNTIL_PUBLIC_RECONSTRUCTION_AND_BLIND_RED_TEAM_PASS",
         "repository": "https://github.com/Yoder23/abi",
-        "frozen_commit": "see results/abi_final_validation_v2/frozen_release_candidate_r6.json",
-        "frozen_tag": "see results/abi_final_validation_v2/frozen_release_candidate_r6.json",
+        "frozen_commit": "see results/abi_final_validation_v2/frozen_release_candidate_r7.json",
+        "frozen_tag": "see results/abi_final_validation_v2/frozen_release_candidate_r7.json",
         "commands": [
             "abi-reproduce verify",
             "abi-reproduce certify-hosts",
@@ -187,27 +187,27 @@ def collect(root: Path, layercake_root: Path) -> list[BundleFile]:
     _append(
         records,
         root,
-        "results/abi_final_validation_v2/strict_validation_r6_full_stream_bound.json",
+        "results/abi_final_validation_v2/strict_validation_r7_tar_bound.json",
         "repaired_strict_certificate",
     )
     _append(
         records,
         root,
-        "results/abi_final_validation_v2/frozen_release_candidate_r6.json",
+        "results/abi_final_validation_v2/frozen_release_candidate_r7.json",
         "repaired_frozen_candidate",
     )
-    if (root / "results/abi_final_validation_v2/strict_hostile_pre_public_r6.json").is_file():
+    if (root / "results/abi_final_validation_v2/strict_hostile_pre_public_r7.json").is_file():
         _append(
             records,
             root,
-            "results/abi_final_validation_v2/strict_hostile_pre_public_r6.json",
+            "results/abi_final_validation_v2/strict_hostile_pre_public_r7.json",
             "repaired_strict_hostile_receipt",
         )
     for relative in (
         "results/abi_final_validation_v2/isolated_certification_strict",
-        "results/abi_final_validation_v2/isolated_certification_strict_r6_full_stream_bound",
-        "results/abi_final_validation_v2/live_causality_r6_source_bound",
-        "results/abi_final_validation_v2/live_isolation_r6_source_bound",
+        "results/abi_final_validation_v2/isolated_certification_strict_r7_tar_bound",
+        "results/abi_final_validation_v2/live_causality_r7_source_bound",
+        "results/abi_final_validation_v2/live_isolation_r7_source_bound",
     ):
         _tree(
             records,
@@ -223,6 +223,9 @@ def collect(root: Path, layercake_root: Path) -> list[BundleFile]:
         "results/abi_final_validation_v2/isolated_certification_strict_r2_stale_source_history",
         "results/abi_final_validation_v2/live_causality_r2_logged_state_history",
         "results/abi_final_validation_v2/isolated_certification_strict_r4_content_bound",
+        "results/abi_final_validation_v2/isolated_certification_strict_r6_full_stream_bound",
+        "results/abi_final_validation_v2/live_causality_r6_source_bound",
+        "results/abi_final_validation_v2/live_isolation_r6_source_bound",
         "results/abi_final_validation_v2/live_causality",
         "results/abi_final_validation_v2/live_isolation",
     ):
@@ -279,6 +282,9 @@ def collect(root: Path, layercake_root: Path) -> list[BundleFile]:
         "results/abi_final_validation_v2/strict_validation_r4_content_bound.json",
         "results/abi_final_validation_v2/strict_hostile_pre_public_r4.json",
         "results/abi_final_validation_v2/frozen_release_candidate_r4.json",
+        "results/abi_final_validation_v2/strict_validation_r6_full_stream_bound.json",
+        "results/abi_final_validation_v2/strict_hostile_pre_public_r6.json",
+        "results/abi_final_validation_v2/frozen_release_candidate_r6.json",
     ):
         _append(records, root, relative, "superseded_historical_evidence")
     _tree(records, root, "results/abi_capability_compiler_phase2/human_rating_packet_v1", ("*.json", "*.jsonl"), "sealed_human_packet")
@@ -325,7 +331,7 @@ def build(root: Path, layercake_root: Path, output: Path) -> dict[str, Any]:
         raise FinalBundleError(f"refusing to overwrite: {output}")
     files = collect(root, layercake_root)
     candidate = json.loads(
-        (root / "results/abi_final_validation_v2/frozen_release_candidate_r6.json").read_text(
+        (root / "results/abi_final_validation_v2/frozen_release_candidate_r7.json").read_text(
             encoding="utf-8"
         )
     )

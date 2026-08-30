@@ -26,6 +26,19 @@ class PublicReconstructionError(RuntimeError):
     """Raised when public bytes cannot be reconstructed exactly."""
 
 
+def _io_path(path: Path) -> Path:
+    """Use Windows extended-length paths while retaining normal safety checks."""
+
+    if os.name != "nt":
+        return path
+    value = str(path.resolve())
+    if value.startswith("\\\\?\\"):
+        return Path(value)
+    if value.startswith("\\\\"):
+        return Path("\\\\?\\UNC\\" + value[2:])
+    return Path("\\\\?\\" + value)
+
+
 def _object(path: Path) -> dict[str, Any]:
     try:
         value = json.loads(path.read_text(encoding="utf-8"))
@@ -97,11 +110,12 @@ def extract_archive(archive: Path, destination: Path) -> Path:
             target = (destination / relative).resolve()
             if not target.is_relative_to(destination):
                 raise PublicReconstructionError(f"archive member escaped root: {info.filename}")
+            io_target = _io_path(target)
             if info.is_dir():
-                target.mkdir(parents=True, exist_ok=True)
+                io_target.mkdir(parents=True, exist_ok=True)
                 continue
-            target.parent.mkdir(parents=True, exist_ok=True)
-            with handle.open(info) as incoming, target.open("xb") as output:
+            io_target.parent.mkdir(parents=True, exist_ok=True)
+            with handle.open(info) as incoming, io_target.open("xb") as output:
                 while block := incoming.read(8 * 1024 * 1024):
                     output.write(block)
     root = destination / PREFIX / "abi_release"
@@ -111,10 +125,21 @@ def extract_archive(archive: Path, destination: Path) -> Path:
 
 
 def _run(root: Path, command: list[str]) -> dict[str, Any]:
-    environment = {**os.environ, "PYTHONDONTWRITEBYTECODE": "1", "PYTHONPATH": str(root)}
+    runtime_root = _io_path(root)
+    working_directory = root.resolve()
+    while os.name == "nt" and len(str(working_directory)) >= 200:
+        parent = working_directory.parent
+        if parent == working_directory:
+            raise PublicReconstructionError("no short Windows process directory is available")
+        working_directory = parent
+    environment = {
+        **os.environ,
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONPATH": str(runtime_root),
+    }
     completed = subprocess.run(
         command,
-        cwd=root,
+        cwd=working_directory,
         env=environment,
         capture_output=True,
         text=True,
@@ -167,9 +192,10 @@ def reconstruct(manifest: Path, tag_clone: Path, workspace: Path) -> dict[str, A
     )
     archive = workspace / "assets" / archive_asset["name"]
     root = extract_archive(archive, workspace / "reconstructed")
+    io_root = _io_path(root)
     forbidden = sorted(
-        path.relative_to(root).as_posix()
-        for path in root.rglob("*")
+        path.relative_to(io_root).as_posix()
+        for path in io_root.rglob("*")
         if path.is_dir() and path.name in FORBIDDEN_DIRECTORIES
     )
     if forbidden:
@@ -182,7 +208,7 @@ def reconstruct(manifest: Path, tag_clone: Path, workspace: Path) -> dict[str, A
             "-m",
             "abi_v2.strict_validation",
             "--root",
-            ".",
+            str(io_root),
         ],
     )
     expected_strict_sha256 = str(
@@ -203,9 +229,9 @@ def reconstruct(manifest: Path, tag_clone: Path, workspace: Path) -> dict[str, A
             "-q",
             "-p",
             "no:cacheprovider",
-            "tests/test_abi_v2_strict_validation.py",
-            "tests/test_abi_v2_final_validation.py",
-            "tests/test_abi_v2_external_bundle.py",
+            str(io_root / "tests/test_abi_v2_strict_validation.py"),
+            str(io_root / "tests/test_abi_v2_final_validation.py"),
+            str(io_root / "tests/test_abi_v2_external_bundle.py"),
         ],
     )
     passed = strict_identity_exact and tests["exit_code"] == 0

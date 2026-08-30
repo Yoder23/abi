@@ -1,0 +1,129 @@
+{
+  "baseline_evidence_sha256": "e12e0c81eea7f1a0007ba3d0ddd7a28ffbd4099e52ae17450a96526a5afbb876",
+  "evidence_sha256": "61e12c7f876943c198d14d8249a72b9d3e29302b6c9cf473ace080138d2f4c3a",
+  "format": "abi-v2-strict-hostile-verification/5",
+  "hostile_verifier_source_sha256": "4e429af3ca3a77dac6a7a4a39bc9908b385a5b7725051923fd8568b9a850bc99",
+  "mutations": [
+    {
+      "exception_type": "StrictValidationError",
+      "message": "required file missing: C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\results\\abi_moonshot\\packages\\abi-python-token-plan-seed9824.cake",
+      "mutation": "missing_capability_package",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "required scientific claim is unrecomputable: FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Python310\\\\layercake_merged_nextgen_perfectA_option1_full_ready\\\\abi_release\\\\clean_run\\\\hostile_r7_20260830\\\\abi_release\\\\catalogs\\\\capability_compiler_phase1_frozen_v1.json'",
+      "mutation": "missing_required_catalog",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "condition receipt binding changed: layercake/real_host",
+      "mutation": "corrupt_capability_package",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "required JSONL unavailable: C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\results\\abi_final_validation_v2\\live_causality_r7_source_bound\\qwen2\\observations.jsonl",
+      "mutation": "missing_raw_causality_file",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "live causality raw binding changed: qwen2",
+      "mutation": "missing_raw_causality_row",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "live causality raw binding changed: qwen2",
+      "mutation": "missing_required_raw_hash",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "stale live causality code binding: layercake",
+      "mutation": "stale_execution_source",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "stale executed capsule source: layercake/abi_release/abi_v2/isolated_certification.py",
+      "mutation": "stale_isolated_execution_source",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "stale transitive execution source binding: layercake",
+      "mutation": "stale_transitive_execution_source",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "required text unavailable: C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r7_tar_bound\\pythia\\mountinfo.txt",
+      "mutation": "missing_raw_mount_table",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "required file missing: C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r7_tar_bound\\pythia\\reachable-filesystem-inventory.jsonl",
+      "mutation": "missing_reachable_filesystem_inventory",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "required file missing: C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r7_tar_bound\\layercake\\certification\\adapter.json",
+      "mutation": "missing_frozen_adapter",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "certification binding changed: qwen2/result_sha256",
+      "mutation": "stale_certification_binding",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "reachable inventory release commitment changed: layercake",
+      "mutation": "rehashed_missing_reachable_filesystem_row",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "native forward depth changed: qwen2",
+      "mutation": "rehashed_missing_native_forward_rows",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "deterministic certification corpus changed: qwen2",
+      "mutation": "rehashed_fabricated_certification_row",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "capsule classification changed: layercake/abi_release/abi_v2/__init__.py",
+      "mutation": "rehashed_capsule_classification",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "required JSON unavailable: C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\results\\abi_final_validation_v2\\live_causality_r7_source_bound\\qwen2\\conditions\\zero_state.json",
+      "mutation": "missing_condition_receipt",
+      "rejected": true
+    },
+    {
+      "exception_type": "StrictValidationError",
+      "message": "random-state mutation malformed: qwen2",
+      "mutation": "rehashed_nondeterministic_random_intervention",
+      "rejected": true
+    }
+  ],
+  "mutations_rejected": 19,
+  "mutations_required": 19,
+  "post_restore_evidence_sha256": "e12e0c81eea7f1a0007ba3d0ddd7a28ffbd4099e52ae17450a96526a5afbb876",
+  "source_tree_restored": true,
+  "status": "PASS_STRICT_VERIFIER_FAILS_CLOSED",
+  "strict_verifier_source_sha256": "e416119525b357d01e305f5512f6992b13c93667f1eb41bd6637c2b5f84e188c",
+  "trusted_scientific_boolean_dependencies": []
+}

@@ -17,7 +17,7 @@ from abi_v2.strict_validation import (
 ROOT = Path(__file__).resolve().parents[1]
 EVIDENCE = (
     ROOT
-    / "results/abi_final_validation_v2/isolated_certification_strict_r6_full_stream_bound/layercake"
+    / "results/abi_final_validation_v2/isolated_certification_strict_r7_tar_bound/layercake"
 )
 
 

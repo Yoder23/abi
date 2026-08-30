@@ -17,9 +17,9 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def test_frozen_candidate_pins_exact_architecture_lineage_and_payloads():
     value = read_json(
-        ROOT / "results/abi_final_validation_v2/frozen_release_candidate_r6.json"
+        ROOT / "results/abi_final_validation_v2/frozen_release_candidate_r7.json"
     )
-    assert value["format"] == "abi-v2-repaired-frozen-release-candidate/6"
+    assert value["format"] == "abi-v2-repaired-frozen-release-candidate/7"
     assert len(value["technical_proof_commit"]) == 40
     assert len(value["capability_artifacts"]) == 4
     assert value["trusted_scientific_booleans_consumed"] == 0

@@ -59,6 +59,9 @@ CONTENT_SCAN_OVERLAP = 1024
 CONTENT_SCAN_BLOCK_BYTES = 8 * 1024 * 1024
 MAX_ARCHIVE_RECURSION_DEPTH = 8
 MAX_ARCHIVE_MEMBER_BYTES = 2 * 1024 * 1024 * 1024
+TAR_CHECKSUM_PATTERN = re.compile(
+    rb"(?:[ 0-7]{6}\x00[ \x00]|[ 0-7]{7}[\x00 ])"
+)
 
 # Containers for which the frozen certification runtime has no safe standard-
 # library decoder are rejected if their magic is present anywhere in an
@@ -440,6 +443,50 @@ def _archive_member_families(names: set[str]) -> list[tuple[str, str]]:
     return families
 
 
+def _valid_tar_header(header: bytes) -> bool:
+    """Validate a POSIX/GNU/V7 tar header by its authoritative checksum."""
+
+    if len(header) != 512 or not header[:100].rstrip(b"\x00"):
+        return False
+    checksum_field = header[148:156]
+    try:
+        expected = int(checksum_field.rstrip(b"\x00 ").lstrip(b" ") or b"0", 8)
+    except ValueError:
+        return False
+    unsigned = sum(header[:148]) + (8 * 32) + sum(header[156:])
+    signed = sum(value if value < 128 else value - 256 for value in header[:148])
+    signed += 8 * 32
+    signed += sum(value if value < 128 else value - 256 for value in header[156:])
+    return expected in {unsigned, signed}
+
+
+def _tar_stream_offsets(payload: bytes) -> list[int]:
+    """Find every structurally valid tar stream start at any byte offset."""
+
+    offsets: set[int] = set()
+    for match in TAR_CHECKSUM_PATTERN.finditer(payload):
+        offset = match.start() - 148
+        if offset >= 0 and _valid_tar_header(payload[offset : offset + 512]):
+            offsets.add(offset)
+    return sorted(offsets)
+
+
+def _path_contains_tar_stream(path: Path) -> bool:
+    """Stream-scan a file for a valid tar header without relying on its name."""
+
+    overlap = b""
+    with path.open("rb") as handle:
+        while True:
+            block = handle.read(CONTENT_SCAN_BLOCK_BYTES)
+            if not block:
+                break
+            window = overlap + block
+            if _tar_stream_offsets(window):
+                return True
+            overlap = window[-CONTENT_SCAN_OVERLAP:]
+    return False
+
+
 def _valid_7z_stream(payload: bytes, offset: int) -> bool:
     """Validate the fixed 7z signature header and next-header CRC."""
 
@@ -796,18 +843,26 @@ def _scan_expanded_payload(payload: bytes, *, label: str, depth: int) -> dict[st
             return result
         return result
 
-    # A tar header is authoritative at byte 257. Compressed single streams are
-    # decoded and recursively inspected, so tar.gz/tar.bz2/tar.xz and nested
-    # containers cannot hide capability layouts or campaign identifiers.
-    if len(payload) >= 262 and payload[257:262] == b"ustar":
+    # Tar has no required leading magic. Locate POSIX/GNU/V7 streams by the
+    # checksum in every 512-byte header, including streams hidden behind an
+    # arbitrary non-tar prefix. Skip member headers already consumed by an
+    # earlier enclosing stream while still allowing concatenated streams.
+    covered_until = -1
+    for tar_offset in _tar_stream_offsets(payload):
+        if tar_offset < covered_until:
+            continue
+        tar_label = f"{label}!/tar@{tar_offset}"
         try:
-            with tarfile.open(fileobj=io.BytesIO(payload), mode="r:") as archive:
+            with tarfile.open(fileobj=io.BytesIO(payload[tar_offset:]), mode="r:") as archive:
                 infos = [info for info in archive.getmembers() if info.isfile()]
+                covered_until = max(covered_until, tar_offset + int(archive.offset))
                 names = {info.name for info in infos}
                 for family, parent in _archive_member_families(names):
-                    result["signatures"].append(f"{label}:{parent or '.'}:{family}")
+                    result["signatures"].append(
+                        f"{tar_label}:{parent or '.'}:{family}"
+                    )
                 for info in infos:
-                    member_label = f"{label}!/{info.name}"
+                    member_label = f"{tar_label}!/{info.name}"
                     result["members_scanned"] += 1
                     if Path(info.name).suffix.casefold() in FORBIDDEN_SUFFIXES:
                         result["forbidden_members"].append(member_label)
@@ -828,8 +883,9 @@ def _scan_expanded_payload(payload: bytes, *, label: str, depth: int) -> dict[st
                         ),
                     )
         except (OSError, tarfile.TarError) as exc:
-            raise IsolatedCertificationError(f"readable tar expansion failed: {label}") from exc
-        return result
+            raise IsolatedCertificationError(
+                f"structurally valid tar expansion failed: {tar_label}"
+            ) from exc
 
     decompressors: tuple[tuple[bytes, str, Any], ...] = (
         (b"\x1f\x8b", "gzip", _valid_gzip_header),
@@ -911,6 +967,7 @@ def _capability_archive_signatures(path: Path) -> dict[str, Any]:
         b"\x1f\x8b",
         b"BZh",
         b"\xfd7zXZ\x00",
+        b"ustar",
     )
     maximum_magic = max(len(magic) for magic in magics)
     overlap = b""
@@ -926,13 +983,11 @@ def _capability_archive_signatures(path: Path) -> dict[str, Any]:
                 break
             overlap = window[-(maximum_magic - 1) :]
 
-    # Uncompressed tar has its authoritative ustar marker at byte 257.  This
-    # check is deliberately separate because incidental "ustar" bytes later
-    # in an ordinary file do not make it a tar stream.
+    # POSIX/GNU tar normally supplies ustar, while V7 does not. Validate the
+    # authoritative header checksum so either form is detected at any offset
+    # and incidental literals do not force a false archive classification.
     if not recognized:
-        with path.open("rb") as handle:
-            prefix = handle.read(262)
-        recognized = len(prefix) >= 262 and prefix[257:262] == b"ustar"
+        recognized = _path_contains_tar_stream(path)
     if not recognized:
         return _empty_archive_scan()
     with path.open("rb") as handle:

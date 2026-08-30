@@ -1,0 +1,70 @@
+{
+  "allowed_classifications": [
+    "abi_specification",
+    "adapter_certification_code",
+    "generic_certification_corpus",
+    "host_checkpoint",
+    "host_code"
+  ],
+  "capability_archives_included": 0,
+  "evidence_sha256": "5563e57d444527b5252486e109d5b49bc23e120d25f6cf5e480f3df139412884",
+  "files": [
+    {
+      "bytes": 218,
+      "classification": "adapter_certification_code",
+      "path": "abi_release/abi_v2/__init__.py",
+      "sha256": "993961c309c30bf5f8411cd1a5fdb66d26ee23b3aca318fbeb090ba020a70683"
+    },
+    {
+      "bytes": 8078,
+      "classification": "adapter_certification_code",
+      "path": "abi_release/abi_v2/canonical.py",
+      "sha256": "c394133dc70a8cabfbb7b390e3b74178707d8cb3c89ead91a7b106eca445f52b"
+    },
+    {
+      "bytes": 5932,
+      "classification": "abi_specification",
+      "path": "abi_release/abi_v2/canonical_spec.json",
+      "sha256": "6536ef1b58dfeea0474bfef5619f3627ecaefe8f39f25da017f11446b6582c2f"
+    },
+    {
+      "bytes": 3442,
+      "classification": "adapter_certification_code",
+      "path": "abi_release/abi_v2/certification_pivot_runner.sh",
+      "sha256": "9774d2a4577b5d7b6594aff7ba4ee566f40e884a36c8f87477469eaf8dc8391e"
+    },
+    {
+      "bytes": 3096,
+      "classification": "abi_specification",
+      "path": "abi_release/abi_v2/conformance_suite.json",
+      "sha256": "2af84b8b18fa78613fda7c96e7d269ef731b68138f736ea2d4441f4254747383"
+    },
+    {
+      "bytes": 24632,
+      "classification": "adapter_certification_code",
+      "path": "abi_release/abi_v2/host_certification.py",
+      "sha256": "94356d2d81f369262de220717aa02d140149de8283e11db1fd2593fc895fd4e8"
+    },
+    {
+      "bytes": 60668,
+      "classification": "adapter_certification_code",
+      "path": "abi_release/abi_v2/isolated_certification.py",
+      "sha256": "0aa3de77cc02daeef52dae995e50ab26237bc22c069c97a0f74b496c33499f2b"
+    },
+    {
+      "bytes": 7356,
+      "classification": "generic_certification_corpus",
+      "path": "abi_release/abi_v2/reference_vectors/core_vectors.json",
+      "sha256": "fc792304e41b1985652a01b4b4efdb14a3bf40fc7aa4906f27ea95409f1dd9fa"
+    },
+    {
+      "bytes": 13330,
+      "classification": "host_code",
+      "path": "layercake_release/layercake_extensions/route_isolated_clarification_core_v25.py",
+      "sha256": "7b176f21e6a86f3aaded724462d37149f8f8be48370bcdd163fe44c49e3464ce"
+    }
+  ],
+  "format": "abi-v2-physical-certification-capsule/1",
+  "host_key": "layercake",
+  "source_success_ledgers_included": 0
+}
