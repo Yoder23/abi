@@ -14,6 +14,8 @@ import statistics
 from pathlib import Path
 from typing import Any, Iterable, Mapping, Sequence
 
+from safetensors.torch import load_file
+
 from .capability_generator import (
     OpaqueCapability,
     canonical_json_bytes,
@@ -23,7 +25,7 @@ from .capability_generator import (
     worker_rows,
 )
 from .extract_capability import ExtractionError, load_package
-from .native_host import sha256_file
+from .native_host import sha256_file, tensor_state_sha256
 from .recipient_worker import CONDITIONS
 from .run_noninterference import unrelated_tasks
 
@@ -742,9 +744,41 @@ def verify(root: Path, config_path: Path, campaign_root: Path) -> dict[str, Any]
     if baseline_manifest_path.is_file() and baseline_raw_path.is_file():
         baseline_manifest = _json(baseline_manifest_path)
         _evidence(baseline_manifest, "baselines")
-        if baseline_manifest.get("observations_sha256") != sha256_file(baseline_raw_path):
+        if (
+            baseline_manifest.get("observations_sha256") != sha256_file(baseline_raw_path)
+            or baseline_manifest.get("config_sha256") != sha256_file(config_path)
+            or baseline_manifest.get("methods") != config["required_baselines"]
+        ):
             raise R8VerificationError("baseline raw binding changed")
         baseline_rows = _jsonl(baseline_raw_path)
+        reconstructed_rows = []
+        for host in sorted(config["models"]["recipients"]):
+            shard_dir = campaign_root / "baselines/shards" / host
+            shard_manifest_path = shard_dir / "manifest.json"
+            shard_manifest = _json(shard_manifest_path)
+            _evidence(shard_manifest, f"baseline-shard:{host}")
+            shard_raw_path = shard_dir / "observations.jsonl"
+            parameter_path = shard_dir / "baseline_parameters.safetensors"
+            root_shard = baseline_manifest.get("shards", {}).get(host, {})
+            if (
+                shard_manifest.get("config_sha256") != sha256_file(config_path)
+                or shard_manifest.get("revision")
+                != config["models"]["recipients"][host]["revision"]
+                or shard_manifest.get("methods") != config["required_baselines"]
+                or shard_manifest.get("lora_base_weight_sha256_before")
+                != shard_manifest.get("lora_base_weight_sha256_after")
+                or shard_manifest.get("observations_sha256") != sha256_file(shard_raw_path)
+                or shard_manifest.get("parameter_artifact_sha256")
+                != sha256_file(parameter_path)
+                or shard_manifest.get("parameter_state_sha256")
+                != tensor_state_sha256(load_file(str(parameter_path), device="cpu"))
+                or root_shard.get("manifest_sha256") != sha256_file(shard_manifest_path)
+                or root_shard.get("observations_sha256") != sha256_file(shard_raw_path)
+            ):
+                raise R8VerificationError(f"baseline shard binding changed: {host}")
+            reconstructed_rows.extend(_jsonl(shard_raw_path))
+        if reconstructed_rows != baseline_rows:
+            raise R8VerificationError("consolidated baseline rows differ from immutable shards")
         required_methods = [str(value) for value in config["required_baselines"]]
         expected = (
             len(config["models"]["recipients"])
