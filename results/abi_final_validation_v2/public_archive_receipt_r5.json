@@ -1,0 +1,15 @@
+{
+  "archive": "abi-final-validation-v2-r5-2026-08-30.zip",
+  "archive_bytes": 669911815,
+  "archive_sha256": "33a31683ab4da37a021ae5d76ec5db6c54ea682aef7fc6c03fee9ed42bd6dac6",
+  "evidence_sha256": "3a58d7a7e42a72f78b9c1e3cde6366b71f91901fba61201347a5d6d9c9f8dbdc",
+  "files": 1125,
+  "format": "abi-final-validation-archive-receipt/2",
+  "manifest_sha256": "730a013a6f3b5566ddeccb0b48db70c2b142249c39b4db820d6a2a708a69033a",
+  "next_required_actions": [
+    "publish immutable archive and capability assets",
+    "reconstruct from public manifests in a new directory",
+    "run fresh blind red-team"
+  ],
+  "status": "PASS_REPAIRED_ARCHIVE_BUILT_REQUIRES_PUBLIC_RECONSTRUCTION"
+}
