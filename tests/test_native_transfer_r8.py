@@ -30,7 +30,7 @@ from experiments.native_transfer_r8.source_transition import NeuralTransitionSou
 from experiments.native_transfer_r8.verify import R8VerificationError, verify
 
 ROOT = Path(__file__).resolve().parents[1]
-CONFIG = ROOT / "experiments/native_transfer_r8/configs/preregistered_v8.json"
+CONFIG = ROOT / "experiments/native_transfer_r8/configs/preregistered_v9.json"
 TEST_SECRET = "11" * 32
 TEST_COMMITMENT = hashlib.sha256(bytes.fromhex(TEST_SECRET)).hexdigest()
 
@@ -54,9 +54,10 @@ def test_preregistration_locks_primary_scientific_depth() -> None:
     assert value["splits"]["evaluation_rows_per_capability"] >= 512
     assert value["gates"]["recipient_families_minimum"] == 3
     assert len(value["models"]["recipients"]) == 3
-    assert value["supersedes"] == "preregistered_v7.json"
+    assert value["supersedes"] == "preregistered_v8.json"
     assert value["training"]["bridge_method"] == "paired_table_lora"
     assert value["training"]["bridge_lora_rank"] == 4
+    assert value["training"]["batch_size"] == 4
     assert value["amendment"]["scientific_thresholds_changed"] is False
     assert value["training"]["maximum_prompt_tokens"] == MAXIMUM_PROMPT_TOKENS
     schema = json.loads(

@@ -88,6 +88,10 @@ each table row to a key/value neural-token pair. This retains separate relation
 and value positions while halving package-conditioning sequence length; no
 scientific gate or held-out datum changes.
 
+The paired table at batch 16 also thrashed under the same resident 19 GB Ollama
+allocation. V9 is the final memory-schedule retry: batch 4, 6,400 steps, and
+25,600 public observations. This alters neither architecture nor evidence gate.
+
 ## Primary gates
 
 - Eight held-out capability seeds and at least 512 evaluation rows each.
