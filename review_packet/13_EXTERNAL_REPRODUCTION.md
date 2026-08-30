@@ -1,20 +1,12 @@
-# External reproduction
+# Independent reproduction
 
-The definitive archive is for a genuinely independent operator on hardware
-different from the development laptop. Follow `external_reproduction/README.md`
-and run:
+Status: `OPEN`.
 
-```text
-abi-reproduce verify
-abi-reproduce certify-hosts
-abi-reproduce capability-matrix
-abi-reproduce causality
-abi-reproduce isolation
-abi-reproduce performance
-abi-reproduce hostile-audit
-abi-reproduce report
-```
+The public release has been reconstructed in fresh local workspaces and passed
+a fresh blind Codex review. That is strong public reproducibility evidence but
+is not different-hardware independence.
 
-First perform the same sequence in a brand-new clone using only the published
-tag, manifest, and assets. That local reconstruction plus blind red-team is a
-prerequisite, not independent reproduction.
+An independent operator should follow `external_reproduction/README.md` from
+the R7 tag, verify all public hashes, run the full registered commands, preserve
+raw stdout/stderr and machine metadata, and return the signed packet. The
+operator and hardware must be genuinely independent of the development run.

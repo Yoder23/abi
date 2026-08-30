@@ -1,0 +1,44 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20260830071345
+Username: SAM\samyo
+RunAs User: SAM\samyo
+Configuration Name: 
+Machine: SAM (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+$ErrorActionPreference='Stop'; $scratch='C:\tmp\abi_public_r7_blind_codex_20260830'; $log=Join-Path $scratch '21_final_report_validation.txt'; Start-Transcript -LiteralPath $log -Force; $evidence=Get-Content -Raw -LiteralPath (Join-Path $scratch 'blind_codex_r7_evidence.json') | ConvertFrom-Json; if ($evidence.verdict -ne 'PASS') { throw 'evidence verdict changed' }; if (-not (Select-String -LiteralPath (Join-Path $scratch 'blind_codex_r7_report.md') -Pattern '^VERDICT: PASS$' -Quiet)) { throw 'report verdict missing' }; foreach($file in 'blind_codex_r7_report.md','blind_codex_r7_evidence.json','official_public_reconstruction_receipt_complete_lock.json','independent_archive_audit.json','independent_evidence_audit.json','scanner_prefix_controls.json','full_disposable_hostile_replay_receipt.json','tag_and_certificate_binding_audit.json','strict_stdout_identity_receipt.json','strict_stdout_recomputed.json'){ $item=Get-Item -LiteralPath (Join-Path $scratch $file); $hash=Get-FileHash -Algorithm SHA256 -LiteralPath $item.FullName; [pscustomobject]@{Path=$file;Bytes=$item.Length;SHA256=$hash.Hash.ToLowerInvariant()} | ConvertTo-Json -Compress }; Write-Output '--- PASS flags ---'; foreach($file in 'independent_archive_audit.json','independent_evidence_audit.json','scanner_prefix_controls.json','tag_and_certificate_binding_audit.json'){ $value=Get-Content -Raw -LiteralPath (Join-Path $scratch $file) | ConvertFrom-Json; Write-Output ($file+': passed='+$value.passed) }; $official=Get-Content -Raw -LiteralPath (Join-Path $scratch 'official_public_reconstruction_receipt_complete_lock.json') | ConvertFrom-Json; Write-Output ('official status='+$official.status); $hostile=Get-Content -Raw -LiteralPath (Join-Path $scratch 'full_disposable_hostile_replay_receipt.json') | ConvertFrom-Json; Write-Output ('hostile status='+$hostile.status+' rejected='+$hostile.mutations_rejected+'/'+$hostile.mutations_required); $strict=Get-Content -Raw -LiteralPath (Join-Path $scratch 'strict_stdout_identity_receipt.json') | ConvertFrom-Json; Write-Output ('strict exact='+$strict.exact_certificate_stdout); Write-Output '--- clean clone status (empty below expected) ---'; git -C (Join-Path $scratch 'public_tag_clone') status --porcelain=v1; Stop-Transcript
+Process ID: 24084
+PSVersion: 5.1.26100.9168
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9168
+BuildVersion: 10.0.26100.9168
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\tmp\abi_public_r7_blind_codex_20260830\21_final_report_validation.txt
+{"Path":"blind_codex_r7_report.md","Bytes":22496,"SHA256":"98b76579ed8486a41e1f5ac00c970738464cdc470dc2ccac18d6c9a89b5b9cea"}
+{"Path":"blind_codex_r7_evidence.json","Bytes":10545,"SHA256":"7855071731ff53bfd899c9566c870755fb6aa84f0126288ec88be002236528c5"}
+{"Path":"official_public_reconstruction_receipt_complete_lock.json","Bytes":5967,"SHA256":"736dc4c485680446abd00dffa8dff8b03336294311d349e71d6d2991d6fd3ac4"}
+{"Path":"independent_archive_audit.json","Bytes":5547,"SHA256":"63395e870ff0d09d49bafa25f3afa6de2055edb7d1e0ccbf327e484db235ff41"}
+{"Path":"independent_evidence_audit.json","Bytes":18836,"SHA256":"6e8d59137be498ab29ce0e59cfd53474d74a436059c3eee64dafa15468be264e"}
+{"Path":"scanner_prefix_controls.json","Bytes":6529,"SHA256":"4ce82fe5e5136450719390369e445be2a23383da250efb788260f72a57718252"}
+{"Path":"full_disposable_hostile_replay_receipt.json","Bytes":5851,"SHA256":"22b215866abc7cfd6a6dd6e7c707c0240b0834f76afec7efbb7095ff572d3fb3"}
+{"Path":"tag_and_certificate_binding_audit.json","Bytes":5780,"SHA256":"60d70283337c4c3a67f7f77324986599f077d8391ff75a9c463361cf75b32b0e"}
+{"Path":"strict_stdout_identity_receipt.json","Bytes":800,"SHA256":"9e3b61f29f1f9f920b1c766b377bcc490694c0e5255f4ea27156b4d34d222ee5"}
+{"Path":"strict_stdout_recomputed.json","Bytes":166950,"SHA256":"17973df22cb31eddb3b47c6137aa71b68f32cd9d3010cfcddd232b2a1afce488"}
+--- PASS flags ---
+independent_archive_audit.json: passed=True
+independent_evidence_audit.json: passed=True
+scanner_prefix_controls.json: passed=True
+tag_and_certificate_binding_audit.json: passed=True
+official status=PASS_PUBLIC_MANIFEST_ONLY_RECONSTRUCTION
+hostile status=PASS_STRICT_VERIFIER_FAILS_CLOSED rejected=19/19
+strict exact=True
+--- clean clone status (empty below expected) ---
+
+**********************
+Windows PowerShell transcript end
+End time: 20260830071345
+**********************

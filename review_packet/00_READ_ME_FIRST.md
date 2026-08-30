@@ -1,15 +1,19 @@
-# Read me first
+# R7 review packet: read first
 
-ABI's bounded result is a standalone capability-runtime, not a transplant into
-foreign model weights. The former 18/18 packet is superseded. Start with the
-repaired raw evidence:
+Review the exact public release
+`abi-final-validation-v2-repaired-r7-2026-08-30`, not a development tree.
 
-1. `results/abi_final_validation_v2/strict_validation_r4_content_bound.json`
-2. `results/abi_final_validation_v2/isolated_certification_strict_r4_content_bound/`
-3. `results/abi_final_validation_v2/live_causality/`
-4. `results/abi_final_validation_v2/live_isolation/`
+Start with:
 
-Run `abi-reproduce verify`, then follow `external_reproduction/README.md` on
-the published repaired archive. R3 public reconstruction passed but its blind
-red-team failed. R4 public-manifest reconstruction and a fresh blind red-team
-must pass before independent-hardware or human review opens.
+1. `docs/R7_PUBLIC_VALIDATION.md`
+2. `results/abi_final_validation_v2/strict_validation_r7_tar_bound.json`
+3. `results/abi_final_validation_v2/blind_redteam_r7/blind_codex_r7_report.md`
+4. `external_reproduction/README.md`
+
+R7 proves a bounded capability-runtime/conformance result across three declared
+environments. It does not prove teacher extraction, fluent human quality,
+arbitrary-model compatibility, minimum information, or superiority over LoRA
+or distillation. Human review is `0/21,000`; independent hardware is open.
+
+The release archive SHA-256 is
+`fc50f423986149b5d4670ec9e28698540f64be96034efa26e5704c4469921e88`.

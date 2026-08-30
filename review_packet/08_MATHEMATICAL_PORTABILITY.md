@@ -1,7 +1,9 @@
 # Mathematical portability
 
-Raw observations yield 1,681/1,681 exact cross-environment canonical outputs.
-The 300 specialist tasks also have 300/300 identical action sequences across
-the three environments. Package hashes and adapter hashes remain unchanged.
+The locked observations produce exact cross-environment canonical output
+identity for 1,681 tasks and exact specialist action identity for 300 tasks.
+Package and adapter hashes remain unchanged across the tested cells.
 
-Recompute with `abi-reproduce capability-matrix` and `abi-reproduce report`.
+This is byte-level portability under the canonical interface for the declared
+packages and environments. It does not imply mathematical equivalence to an
+arbitrary teacher or portability into arbitrary model weights.

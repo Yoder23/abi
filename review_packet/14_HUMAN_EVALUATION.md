@@ -1,13 +1,11 @@
 # Human evaluation
 
-The frozen packet has three blinded, counterbalanced 7,000-row forms (21,000
-judgments total). Raters use unique identities and isolated append-only sessions:
+Status: `OPEN`; `0/21,000` ratings complete.
 
-```text
-abi human-rate --rater R1
-abi human-rate --rater R2
-abi human-rate --rater R3
-```
+The frozen packet contains three blinded, counterbalanced 7,000-row forms.
+Three independent people must use unique rater identities and append-only
+sessions, then sign the frozen attestations. Do not unblind early, substitute
+model judgments, or count developer/Codex inspection as human evidence.
 
-Codex completed zero ratings. Unblinding is forbidden until all three signed
-forms are locked. See `human_packet_validation.json` and the Phase 2 handoff.
+See `docs/PHASE2_HUMAN_RATING_HANDOFF_V1.md` and
+`docs/PHASE2_HUMAN_RATER_SESSION_V1.md`.

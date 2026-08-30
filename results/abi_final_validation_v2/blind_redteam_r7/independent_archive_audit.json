@@ -1,0 +1,115 @@
+{
+  "archive_member_count": 1193,
+  "archive_member_names_unique": true,
+  "assets": [
+    {
+      "bytes": 844018841,
+      "exact": true,
+      "manifest_bytes": 844018841,
+      "manifest_sha256": "fc50f423986149b5d4670ec9e28698540f64be96034efa26e5704c4469921e88",
+      "name": "abi-final-validation-v2-r7-2026-08-30.zip",
+      "sha256": "fc50f423986149b5d4670ec9e28698540f64be96034efa26e5704c4469921e88"
+    },
+    {
+      "bytes": 510981,
+      "exact": true,
+      "manifest_bytes": 510981,
+      "manifest_sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+      "name": "abi-chemistry-token-plan-seed9824.cake",
+      "sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb"
+    },
+    {
+      "bytes": 495919,
+      "exact": true,
+      "manifest_bytes": 495919,
+      "manifest_sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+      "name": "abi-civics-token-plan-seed9824.cake",
+      "sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604"
+    },
+    {
+      "bytes": 253216208,
+      "exact": true,
+      "manifest_bytes": 253216208,
+      "manifest_sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+      "name": "phase7-final-english-core.cake",
+      "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d"
+    },
+    {
+      "bytes": 448404,
+      "exact": true,
+      "manifest_bytes": 448404,
+      "manifest_sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+      "name": "abi-python-token-plan-seed9824.cake",
+      "sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d"
+    }
+  ],
+  "embedded_manifest_format": "abi-final-validation-clean-room-manifest/2",
+  "embedded_manifest_rows": 1192,
+  "embedded_manifest_sha256": "c44a5a57185042006570010d0bfd3d6600daebcf7ca096331f3161705992b8b9",
+  "extracted_identity_failures": [],
+  "extracted_membership_exact": true,
+  "extracted_missing": [],
+  "extracted_unexpected": [],
+  "format": "abi-r7-independent-archive-audit/1",
+  "internal_external_capability_bindings": [
+    {
+      "asset": "abi-chemistry-token-plan-seed9824.cake",
+      "exact_external_internal_binding": true,
+      "matching_members": 1,
+      "member": "abi-final-validation-v2/abi_release/results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.cake",
+      "member_bytes": 510981,
+      "member_sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb"
+    },
+    {
+      "asset": "abi-civics-token-plan-seed9824.cake",
+      "exact_external_internal_binding": true,
+      "matching_members": 1,
+      "member": "abi-final-validation-v2/abi_release/results/abi_moonshot/packages/abi-civics-token-plan-seed9824.cake",
+      "member_bytes": 495919,
+      "member_sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604"
+    },
+    {
+      "asset": "phase7-final-english-core.cake",
+      "exact_external_internal_binding": true,
+      "matching_members": 1,
+      "member": "abi-final-validation-v2/abi_release/results/abi_capability_compiler_phase7_integrated/materialized_v1052/phase7-final-english-core.cake",
+      "member_bytes": 253216208,
+      "member_sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d"
+    },
+    {
+      "asset": "abi-python-token-plan-seed9824.cake",
+      "exact_external_internal_binding": true,
+      "matching_members": 1,
+      "member": "abi-final-validation-v2/abi_release/results/abi_moonshot/packages/abi-python-token-plan-seed9824.cake",
+      "member_bytes": 448404,
+      "member_sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d"
+    }
+  ],
+  "longest_extracted_member": {
+    "member": "abi-final-validation-v2/abi_release/results/abi_final_validation_v2/pre_strict_capsule_root_history/layercake_release/layercake_extensions/route_isolated_clarification_core_v25.py",
+    "ordinary_extracted_path": "C:\\tmp\\abi_public_r7_blind_codex_20260830\\public_reconstruction_workspace_tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt\\reconstructed\\abi-final-validation-v2\\abi_release\\results\\abi_final_validation_v2\\pre_strict_capsule_root_history\\layercake_release\\layercake_extensions\\route_isolated_clarification_core_v25.py",
+    "ordinary_extracted_path_length": 368
+  },
+  "longest_extracted_member_exceeds_260": true,
+  "member_identity_failures": [],
+  "membership_exact": true,
+  "missing_members": [],
+  "passed": true,
+  "receipt_bindings": {
+    "pre_public_hostile_receipt": {
+      "archive_member_sha256": "209008d11f14b11c7a30d199fadbb1e5bb923a283e57cb71815e6a84a83a0fbb",
+      "exact": true,
+      "extracted_sha256": "209008d11f14b11c7a30d199fadbb1e5bb923a283e57cb71815e6a84a83a0fbb",
+      "member": "abi-final-validation-v2/abi_release/results/abi_final_validation_v2/strict_hostile_pre_public_r7.json",
+      "published_sha256": "209008d11f14b11c7a30d199fadbb1e5bb923a283e57cb71815e6a84a83a0fbb"
+    },
+    "strict_certificate": {
+      "archive_member_sha256": "17973df22cb31eddb3b47c6137aa71b68f32cd9d3010cfcddd232b2a1afce488",
+      "exact": true,
+      "extracted_sha256": "17973df22cb31eddb3b47c6137aa71b68f32cd9d3010cfcddd232b2a1afce488",
+      "member": "abi-final-validation-v2/abi_release/results/abi_final_validation_v2/strict_validation_r7_tar_bound.json",
+      "published_sha256": "17973df22cb31eddb3b47c6137aa71b68f32cd9d3010cfcddd232b2a1afce488"
+    }
+  },
+  "unexpected_members": []
+}

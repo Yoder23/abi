@@ -1,0 +1,437 @@
+{
+  "format": "abi-r7-independent-evidence-audit/1",
+  "hostile_receipt": {
+    "checks": {
+      "all_record_strict_exceptions": true,
+      "baseline_restored_exactly": true,
+      "declared_counts_match_raw": true,
+      "hostile_source_sha256_exact": true,
+      "mutation_names_exact": true,
+      "mutation_names_unique": true,
+      "nineteen_raw_cases": true,
+      "no_scientific_status_tokens_consumed": true,
+      "raw_count_recomputes_to_19": true,
+      "receipt_evidence_hash_exact": true,
+      "strict_source_sha256_exact": true
+    },
+    "forbidden_status_tokens_found": [],
+    "format": "abi-v2-strict-hostile-verification/5",
+    "passed": true,
+    "raw_exception_messages": {
+      "corrupt_capability_package": "condition receipt binding changed: layercake/real_host",
+      "missing_capability_package": "required file missing: C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\results\\abi_moonshot\\packages\\abi-python-token-plan-seed9824.cake",
+      "missing_condition_receipt": "required JSON unavailable: C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\results\\abi_final_validation_v2\\live_causality_r7_source_bound\\qwen2\\conditions\\zero_state.json",
+      "missing_frozen_adapter": "required file missing: C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r7_tar_bound\\layercake\\certification\\adapter.json",
+      "missing_raw_causality_file": "required JSONL unavailable: C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\results\\abi_final_validation_v2\\live_causality_r7_source_bound\\qwen2\\observations.jsonl",
+      "missing_raw_causality_row": "live causality raw binding changed: qwen2",
+      "missing_raw_mount_table": "required text unavailable: C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r7_tar_bound\\pythia\\mountinfo.txt",
+      "missing_reachable_filesystem_inventory": "required file missing: C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r7_tar_bound\\pythia\\reachable-filesystem-inventory.jsonl",
+      "missing_required_catalog": "required scientific claim is unrecomputable: FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Python310\\\\layercake_merged_nextgen_perfectA_option1_full_ready\\\\abi_release\\\\clean_run\\\\hostile_r7_20260830\\\\abi_release\\\\catalogs\\\\capability_compiler_phase1_frozen_v1.json'",
+      "missing_required_raw_hash": "live causality raw binding changed: qwen2",
+      "rehashed_capsule_classification": "capsule classification changed: layercake/abi_release/abi_v2/__init__.py",
+      "rehashed_fabricated_certification_row": "deterministic certification corpus changed: qwen2",
+      "rehashed_missing_native_forward_rows": "native forward depth changed: qwen2",
+      "rehashed_missing_reachable_filesystem_row": "reachable inventory release commitment changed: layercake",
+      "rehashed_nondeterministic_random_intervention": "random-state mutation malformed: qwen2",
+      "stale_certification_binding": "certification binding changed: qwen2/result_sha256",
+      "stale_execution_source": "stale live causality code binding: layercake",
+      "stale_isolated_execution_source": "stale executed capsule source: layercake/abi_release/abi_v2/isolated_certification.py",
+      "stale_transitive_execution_source": "stale transitive execution source binding: layercake"
+    },
+    "raw_mutation_names": [
+      "missing_capability_package",
+      "missing_required_catalog",
+      "corrupt_capability_package",
+      "missing_raw_causality_file",
+      "missing_raw_causality_row",
+      "missing_required_raw_hash",
+      "stale_execution_source",
+      "stale_isolated_execution_source",
+      "stale_transitive_execution_source",
+      "missing_raw_mount_table",
+      "missing_reachable_filesystem_inventory",
+      "missing_frozen_adapter",
+      "stale_certification_binding",
+      "rehashed_missing_reachable_filesystem_row",
+      "rehashed_missing_native_forward_rows",
+      "rehashed_fabricated_certification_row",
+      "rehashed_capsule_classification",
+      "missing_condition_receipt",
+      "rehashed_nondeterministic_random_intervention"
+    ],
+    "receipt_sha256": "209008d11f14b11c7a30d199fadbb1e5bb923a283e57cb71815e6a84a83a0fbb"
+  },
+  "live_execution": {
+    "cross_host_real_output_sets": 128,
+    "cross_host_real_outputs_equal": true,
+    "global_process_ids_unique": true,
+    "hosts": {
+      "layercake": {
+        "checks": {
+          "common_transitive_source_binding": true,
+          "condition_receipts_exact": true,
+          "conditions_exact": true,
+          "distinct_process_start_times": true,
+          "eight_distinct_process_ids": true,
+          "execution_source_exact": true,
+          "live_outputs_and_failures_exact": true,
+          "manifest_evidence_hash_exact": true,
+          "raw_file_hash_exact": true,
+          "raw_jsonl_canonical": true,
+          "raw_keys_unique": true,
+          "raw_rows_exact": true,
+          "single_parent_orchestrator": true
+        },
+        "intervention_kinds": {
+          "adapter_removed": "structural_native_host_absence",
+          "capability_removed": "structural_native_host_absence",
+          "host_removed": "structural_native_host_absence",
+          "neutral_host": "structural_native_host_absence",
+          "random_state": "structural_native_host_absence",
+          "real_host": "structural_native_host_absence",
+          "shuffled_state": "structural_native_host_absence",
+          "zero_state": "structural_native_host_absence"
+        },
+        "native_runtime_modes": {
+          "adapter_removed": "capability_native_layercake_host",
+          "capability_removed": "capability_native_layercake_host",
+          "host_removed": "physically_removed_no_snapshot_no_object",
+          "neutral_host": "capability_native_layercake_host",
+          "random_state": "capability_native_layercake_host",
+          "real_host": "capability_native_layercake_host",
+          "shuffled_state": "capability_native_layercake_host",
+          "zero_state": "capability_native_layercake_host"
+        },
+        "parent_process_ids": [
+          23980
+        ],
+        "passed": true,
+        "process_ids": [
+          22472,
+          15200,
+          24660,
+          29456,
+          9780,
+          16940,
+          30604,
+          3028
+        ],
+        "process_started_ns": [
+          1788082089163167300,
+          1788082136791053500,
+          1788082193567931700,
+          1788082233635268800,
+          1788082273684069600,
+          1788082313805226400,
+          1788082353691013100,
+          1788082374879519500
+        ]
+      },
+      "pythia": {
+        "checks": {
+          "common_transitive_source_binding": true,
+          "condition_receipts_exact": true,
+          "conditions_exact": true,
+          "distinct_process_start_times": true,
+          "eight_distinct_process_ids": true,
+          "execution_source_exact": true,
+          "live_outputs_and_failures_exact": true,
+          "manifest_evidence_hash_exact": true,
+          "raw_file_hash_exact": true,
+          "raw_jsonl_canonical": true,
+          "raw_keys_unique": true,
+          "raw_rows_exact": true,
+          "single_parent_orchestrator": true
+        },
+        "intervention_kinds": {
+          "adapter_removed": "live_native_parameter_intervention",
+          "capability_removed": "live_native_parameter_intervention",
+          "host_removed": "structural_native_host_absence",
+          "neutral_host": "live_native_parameter_intervention",
+          "random_state": "live_native_parameter_intervention",
+          "real_host": "live_native_parameter_intervention",
+          "shuffled_state": "live_native_parameter_intervention",
+          "zero_state": "live_native_parameter_intervention"
+        },
+        "native_runtime_modes": {
+          "adapter_removed": "live_transformer_checkpoint",
+          "capability_removed": "live_transformer_checkpoint",
+          "host_removed": "physically_removed_no_snapshot_no_object",
+          "neutral_host": "live_transformer_checkpoint",
+          "random_state": "live_transformer_checkpoint",
+          "real_host": "live_transformer_checkpoint",
+          "shuffled_state": "live_transformer_checkpoint",
+          "zero_state": "live_transformer_checkpoint"
+        },
+        "parent_process_ids": [
+          30452
+        ],
+        "passed": true,
+        "process_ids": [
+          15240,
+          14916,
+          20936,
+          3692,
+          22404,
+          6480,
+          15692,
+          20264
+        ],
+        "process_started_ns": [
+          1788081541280028900,
+          1788081611725321500,
+          1788081692342648600,
+          1788081768311499000,
+          1788081838269638400,
+          1788081898168052900,
+          1788081965074228400,
+          1788082000176862800
+        ]
+      },
+      "qwen2": {
+        "checks": {
+          "common_transitive_source_binding": true,
+          "condition_receipts_exact": true,
+          "conditions_exact": true,
+          "distinct_process_start_times": true,
+          "eight_distinct_process_ids": true,
+          "execution_source_exact": true,
+          "live_outputs_and_failures_exact": true,
+          "manifest_evidence_hash_exact": true,
+          "raw_file_hash_exact": true,
+          "raw_jsonl_canonical": true,
+          "raw_keys_unique": true,
+          "raw_rows_exact": true,
+          "single_parent_orchestrator": true
+        },
+        "intervention_kinds": {
+          "adapter_removed": "live_native_parameter_intervention",
+          "capability_removed": "live_native_parameter_intervention",
+          "host_removed": "structural_native_host_absence",
+          "neutral_host": "live_native_parameter_intervention",
+          "random_state": "live_native_parameter_intervention",
+          "real_host": "live_native_parameter_intervention",
+          "shuffled_state": "live_native_parameter_intervention",
+          "zero_state": "live_native_parameter_intervention"
+        },
+        "native_runtime_modes": {
+          "adapter_removed": "live_transformer_checkpoint",
+          "capability_removed": "live_transformer_checkpoint",
+          "host_removed": "physically_removed_no_snapshot_no_object",
+          "neutral_host": "live_transformer_checkpoint",
+          "random_state": "live_transformer_checkpoint",
+          "real_host": "live_transformer_checkpoint",
+          "shuffled_state": "live_transformer_checkpoint",
+          "zero_state": "live_transformer_checkpoint"
+        },
+        "parent_process_ids": [
+          5420
+        ],
+        "passed": true,
+        "process_ids": [
+          28920,
+          26464,
+          27608,
+          22172,
+          5224,
+          6276,
+          17100,
+          30076
+        ],
+        "process_started_ns": [
+          1788081571498918200,
+          1788081677635293200,
+          1788081782438682500,
+          1788081886940034900,
+          1788081982011106800,
+          1788082022034523800,
+          1788082108117991500,
+          1788082178147519800
+        ]
+      }
+    },
+    "isolation": {
+      "hosts": {
+        "layercake": {
+          "checks": {
+            "execution_source_exact": true,
+            "manifest_evidence_hash_exact": true,
+            "raw_file_hash_exact": true,
+            "raw_jsonl_canonical": true,
+            "raw_rows_exact": true,
+            "row_output_hashes_exact": true,
+            "transitive_source_binding_exact": true
+          },
+          "passed": true
+        },
+        "pythia": {
+          "checks": {
+            "execution_source_exact": true,
+            "manifest_evidence_hash_exact": true,
+            "raw_file_hash_exact": true,
+            "raw_jsonl_canonical": true,
+            "raw_rows_exact": true,
+            "row_output_hashes_exact": true,
+            "transitive_source_binding_exact": true
+          },
+          "passed": true
+        },
+        "qwen2": {
+          "checks": {
+            "execution_source_exact": true,
+            "manifest_evidence_hash_exact": true,
+            "raw_file_hash_exact": true,
+            "raw_jsonl_canonical": true,
+            "raw_rows_exact": true,
+            "row_output_hashes_exact": true,
+            "transitive_source_binding_exact": true
+          },
+          "passed": true
+        }
+      },
+      "passed": true,
+      "raw_rows": 2100
+    },
+    "passed": true,
+    "source_sha256": "6fb04da76f71fd7e11d6a6a9ee2ec93306f2cc7e75bcd0dde7d39f8aa63162df",
+    "source_structure": {
+      "condition_worker_subprocess_present": true,
+      "live_generation_present": true,
+      "live_native_forward_present": true,
+      "live_parameter_mutation_present": true,
+      "replay_result_readers_absent": true
+    },
+    "transitive_source_manifest": {
+      "aggregate_sha256": "3900cc53a895f4125917a59771fe3119cb9817673bb3ea605fd347c6635f04c6",
+      "declared_aggregate_sha256": "3900cc53a895f4125917a59771fe3119cb9817673bb3ea605fd347c6635f04c6",
+      "declared_file_count": 733,
+      "exact": true,
+      "failures": [],
+      "file_count": 733,
+      "format": "abi-v2-transitive-execution-sources/1",
+      "paths_unique": true
+    }
+  },
+  "passed": true,
+  "reachable_inventory": {
+    "hosts": {
+      "layercake": {
+        "capability_suffix_paths": 0,
+        "checks": {
+          "canonical_jsonl": true,
+          "capsule_has_no_capability_or_success_paths": true,
+          "isolation_evidence_hash_exact": true,
+          "no_campaign_or_success_ids": true,
+          "no_capability_archives": true,
+          "no_unsupported_or_forbidden_archives": true,
+          "receipt_execution_source_bindings_exact": true,
+          "receipt_file_bindings_exact": true,
+          "release_row_commitment_exact": true,
+          "release_sha256_commitment_exact": true,
+          "sorted_unique_paths": true,
+          "summary_aggregates_recomputed_exactly": true,
+          "summary_evidence_hash_exact": true,
+          "summary_inventory_hash_exact": true,
+          "valid_recorded_sha256_values": true
+        },
+        "inventory_bytes": 54323498,
+        "inventory_sha256": "44bb88ad6616062b412d725612531da005b43925899804baf28ae66ebe571629",
+        "passed": true,
+        "recomputed": {
+          "campaign_identifier_matches": 0,
+          "capability_archive_signature_matches": 0,
+          "content_bytes_scanned": 3435071021,
+          "embedded_archive_maximum_depth": 2,
+          "embedded_archive_members_scanned": 8406,
+          "embedded_archive_uncompressed_bytes_scanned": 157125613,
+          "forbidden_archive_member_paths": 0,
+          "inventory_rows": 100511,
+          "regular_file_bytes": 3435071021,
+          "regular_files_scanned": 89358,
+          "symlinks_scanned": 11153,
+          "unsupported_archive_signatures": 0
+        },
+        "source_success_paths": 0
+      },
+      "pythia": {
+        "capability_suffix_paths": 0,
+        "checks": {
+          "canonical_jsonl": true,
+          "capsule_has_no_capability_or_success_paths": true,
+          "isolation_evidence_hash_exact": true,
+          "no_campaign_or_success_ids": true,
+          "no_capability_archives": true,
+          "no_unsupported_or_forbidden_archives": true,
+          "receipt_execution_source_bindings_exact": true,
+          "receipt_file_bindings_exact": true,
+          "release_row_commitment_exact": true,
+          "release_sha256_commitment_exact": true,
+          "sorted_unique_paths": true,
+          "summary_aggregates_recomputed_exactly": true,
+          "summary_evidence_hash_exact": true,
+          "summary_inventory_hash_exact": true,
+          "valid_recorded_sha256_values": true
+        },
+        "inventory_bytes": 54325673,
+        "inventory_sha256": "61cee51af1249a453e2dc37970b6cf681931c4fb22d2b47ef056c539010f52c0",
+        "passed": true,
+        "recomputed": {
+          "campaign_identifier_matches": 0,
+          "capability_archive_signature_matches": 0,
+          "content_bytes_scanned": 3812172016,
+          "embedded_archive_maximum_depth": 2,
+          "embedded_archive_members_scanned": 8406,
+          "embedded_archive_uncompressed_bytes_scanned": 157125613,
+          "forbidden_archive_member_paths": 0,
+          "inventory_rows": 100515,
+          "regular_file_bytes": 3812172016,
+          "regular_files_scanned": 89362,
+          "symlinks_scanned": 11153,
+          "unsupported_archive_signatures": 0
+        },
+        "source_success_paths": 0
+      },
+      "qwen2": {
+        "capability_suffix_paths": 0,
+        "checks": {
+          "canonical_jsonl": true,
+          "capsule_has_no_capability_or_success_paths": true,
+          "isolation_evidence_hash_exact": true,
+          "no_campaign_or_success_ids": true,
+          "no_capability_archives": true,
+          "no_unsupported_or_forbidden_archives": true,
+          "receipt_execution_source_bindings_exact": true,
+          "receipt_file_bindings_exact": true,
+          "release_row_commitment_exact": true,
+          "release_sha256_commitment_exact": true,
+          "sorted_unique_paths": true,
+          "summary_aggregates_recomputed_exactly": true,
+          "summary_evidence_hash_exact": true,
+          "summary_inventory_hash_exact": true,
+          "valid_recorded_sha256_values": true
+        },
+        "inventory_bytes": 54326776,
+        "inventory_sha256": "71f8f811341cb77d467edf371aae71840b17a2d3e25efe794c6eba375fc7cf25",
+        "passed": true,
+        "recomputed": {
+          "campaign_identifier_matches": 0,
+          "capability_archive_signature_matches": 0,
+          "content_bytes_scanned": 4434645168,
+          "embedded_archive_maximum_depth": 2,
+          "embedded_archive_members_scanned": 8406,
+          "embedded_archive_uncompressed_bytes_scanned": 157125613,
+          "forbidden_archive_member_paths": 0,
+          "inventory_rows": 100517,
+          "regular_file_bytes": 4434645168,
+          "regular_files_scanned": 89364,
+          "symlinks_scanned": 11153,
+          "unsupported_archive_signatures": 0
+        },
+        "source_success_paths": 0
+      }
+    },
+    "passed": true,
+    "total_content_bytes_scanned": 11681888205,
+    "total_inventory_rows": 301543
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "abi_archive_rows": 983,
+  "actual_host_weight_members": [],
+  "candidate_bindings": [
+    {
+      "bytes": 510981,
+      "exact": true,
+      "name": "chemistry",
+      "sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb"
+    },
+    {
+      "bytes": 495919,
+      "exact": true,
+      "name": "civics",
+      "sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604"
+    },
+    {
+      "bytes": 253216208,
+      "exact": true,
+      "name": "english",
+      "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d"
+    },
+    {
+      "bytes": 448404,
+      "exact": true,
+      "name": "python",
+      "sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d"
+    },
+    {
+      "bytes": 166950,
+      "exact": true,
+      "name": "strict_certificate",
+      "sha256": "17973df22cb31eddb3b47c6137aa71b68f32cd9d3010cfcddd232b2a1afce488"
+    },
+    {
+      "bytes": 6177,
+      "exact": true,
+      "name": "strict_hostile_receipt",
+      "sha256": "209008d11f14b11c7a30d199fadbb1e5bb923a283e57cb71815e6a84a83a0fbb"
+    }
+  ],
+  "checkout_eol_normalized_bindings": [
+    "pyproject.toml",
+    "requirements.txt"
+  ],
+  "checkout_identity_failures": [],
+  "checks": {
+    "archive_asset_manifest_identity_exact": true,
+    "archive_checkout_identities_exact": true,
+    "archive_git_identities_exact": true,
+    "archive_only_public_inputs_exact": true,
+    "candidate_bindings_exact": true,
+    "candidate_evidence_hash_exact": true,
+    "candidate_required_aggregate_exact": true,
+    "clone_clean": true,
+    "development_directories_absent": true,
+    "head_is_expected_commit": true,
+    "host_model_weight_members_absent": true,
+    "lfs_pointers_exact": true,
+    "manifest_commit_exact": true,
+    "manifest_tag_exact": true,
+    "required_inputs_exact": true,
+    "strict_certificate_evidence_hash_exact": true,
+    "strict_certificate_public_sha_exact": true,
+    "tag_object_is_annotated": true,
+    "tag_peels_to_expected_commit": true,
+    "technical_proof_commit_reachable": true
+  },
+  "expected_archive_only_public_inputs": [
+    "ABI_CAPABILITY_COMPILER_PHASE4_B40_V25_PRODUCT_CONFORMANCE_PROTOCOL_V960.json",
+    "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json",
+    "ABI_CAPABILITY_COMPILER_PHASE7_PRODUCT_MANIFEST_V1.json",
+    "catalogs/capability_compiler_phase1_frozen_v1.json",
+    "results/abi_capability_compiler_phase2/human_rating_packet_v1/blinding_key.jsonl",
+    "results/abi_capability_compiler_phase2/human_rating_packet_v1/manifest.json",
+    "results/abi_capability_compiler_phase2/human_rating_packet_v1/rater_form_1.jsonl",
+    "results/abi_capability_compiler_phase2/human_rating_packet_v1/rater_form_2.jsonl",
+    "results/abi_capability_compiler_phase2/human_rating_packet_v1/rater_form_3.jsonl",
+    "results/abi_capability_compiler_phase4_clarification_route_replication/B40-seed104729-v927/evaluation/development_outputs.jsonl",
+    "results/abi_capability_compiler_phase6_composition/run_v1032/seed104729/observations.jsonl",
+    "results/abi_capability_compiler_phase7_integrated/materialized_v1052/phase7-final-english-core.cake",
+    "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.cake",
+    "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.pub",
+    "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.cake",
+    "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.pub",
+    "results/abi_moonshot/packages/abi-python-token-plan-seed9824.cake",
+    "results/abi_moonshot/packages/abi-python-token-plan-seed9824.pub"
+  ],
+  "forbidden_archive_paths": [],
+  "format": "abi-r7-tag-and-certificate-binding-audit/1",
+  "git_eol_normalized_bindings": [
+    "LICENSE",
+    "pyproject.toml"
+  ],
+  "git_identity_failures": [],
+  "lfs_bindings": [],
+  "missing_git_paths": [
+    "ABI_CAPABILITY_COMPILER_PHASE4_B40_V25_PRODUCT_CONFORMANCE_PROTOCOL_V960.json",
+    "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json",
+    "ABI_CAPABILITY_COMPILER_PHASE7_PRODUCT_MANIFEST_V1.json",
+    "catalogs/capability_compiler_phase1_frozen_v1.json",
+    "results/abi_capability_compiler_phase2/human_rating_packet_v1/blinding_key.jsonl",
+    "results/abi_capability_compiler_phase2/human_rating_packet_v1/manifest.json",
+    "results/abi_capability_compiler_phase2/human_rating_packet_v1/rater_form_1.jsonl",
+    "results/abi_capability_compiler_phase2/human_rating_packet_v1/rater_form_2.jsonl",
+    "results/abi_capability_compiler_phase2/human_rating_packet_v1/rater_form_3.jsonl",
+    "results/abi_capability_compiler_phase4_clarification_route_replication/B40-seed104729-v927/evaluation/development_outputs.jsonl",
+    "results/abi_capability_compiler_phase6_composition/run_v1032/seed104729/observations.jsonl",
+    "results/abi_capability_compiler_phase7_integrated/materialized_v1052/phase7-final-english-core.cake",
+    "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.cake",
+    "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.pub",
+    "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.cake",
+    "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.pub",
+    "results/abi_moonshot/packages/abi-python-token-plan-seed9824.cake",
+    "results/abi_moonshot/packages/abi-python-token-plan-seed9824.pub"
+  ],
+  "normal_git_blob_bindings": 965,
+  "passed": true,
+  "required_inputs": {
+    "aggregate_sha256": "05f7d08ed9ad3393ef3ac0258488c112aaafe32a0c9733a67940b69f97efc7c1",
+    "declared_aggregate_sha256": "05f7d08ed9ad3393ef3ac0258488c112aaafe32a0c9733a67940b69f97efc7c1",
+    "declared_file_count": 810,
+    "exact": true,
+    "file_count": 810,
+    "identity_failures": [],
+    "paths_unique": true
+  }
+}

@@ -1,15 +1,19 @@
-# Limitations and pending gates
+# Limitations and open gates
 
 | Item | Status |
 | --- | --- |
-| Immutable public packages/archive | Pending publication |
-| Clean public-manifest reconstruction | Pending |
-| Fresh blind Codex red-team | R3 failed; R4 pending |
-| Different-hardware independent execution | Closed until preceding gates pass |
-| Three independent human raters | Closed until preceding gates pass; 0/21,000 |
-| Minimum-information frontier | `PENDING_AFTER_EXTERNAL_VALIDATION` |
-| Arbitrary LLM compatibility | Not proven |
-| Host hidden-state semantic causality | Falsified for tested runtime |
-| Base-weight tensor transplantation | Not claimed |
-| Unseen-task generalization | Not established by public retention suite |
-| Universal LoRA/distillation superiority | Not claimed |
+| Bounded R7 technical validation | Passed |
+| Durable public release/reconstruction | Passed |
+| Fresh blind Codex technical review | Passed |
+| Three independent human raters | Open; 0/21,000 |
+| Independent different-hardware execution | Open |
+| Registered minimum-information frontier | Open |
+| Arbitrary teacher extraction and diagnosis | Not proven |
+| Pure-English/domain labeling completeness | Not proven |
+| Teacher-equivalent free generation | Not proven |
+| Arbitrary-model compatibility | Not proven |
+| Superiority over LoRA/distillation | Not proven |
+
+R7 should be described as a bounded capability-runtime/conformance proof. The
+full ABI moonshot requires separate acquisition, labeling, quality, information
+frontier, human, and independent-hardware evidence.

@@ -1,8 +1,9 @@
-# Semantic retention
+# Locked-suite semantic retention
 
-The final verifier reconstructs the locked prompt IDs from
-`source_success_locks.json` and counts every raw matrix observation. It finds
-5,043/5,043 functional successes and 5,043/5,043 source-output byte identities
-across three environments.
+The strict verifier reconstructs prompt identities from frozen locks and
+recomputes all 5,043 matrix observations. Source output and canonical output
+identities pass for the registered tasks and host environments.
 
-This is public locked-suite retention, not an unseen generalization claim.
+This is exact retention on a public, locked functional suite. It is not human
+judgment, an unseen-generalization guarantee, or proof of teacher-equivalent
+free generation. Those require separate evidence.

@@ -1,23 +1,18 @@
 # Architecture and ownership
 
 ```text
-host-native prompt/token units
-    ↓
-generic frozen codec/conformance adapter
-    ↓
-canonical ABI typed context
-    ↓
-immutable standalone capability runtime
-    ↓
-canonical capability output
-    ↓
-same frozen codec adapter
-    ↓
-host-native token units / strict UTF-8
+host-native input
+    -> frozen generic conformance adapter
+    -> canonical ABI typed context
+    -> immutable capability runtime package
+    -> canonical output
+    -> host-native realization
 ```
 
-The capability owns learned semantics. The ABI owns integrity, lifecycle, and
-canonical state. The named host environment owns checkpoint conformance probes
-and tokenizer units. The base model does not generate the promoted answer.
+R7 packages are standalone capability-runtime packages. They are not teacher
+weight deltas, transplanted transformer tensors, or evidence of hidden-state
+semantic integration. The adapters have no capability-specific training.
 
-Evidence: `results/abi_final_validation/host_causality.json`.
+ABI owns acquisition, labeling, packaging, provenance, and verification.
+LayerCake is a separate project that owns hosting, composition, routing, and
+inference performance.

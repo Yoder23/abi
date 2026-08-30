@@ -1,41 +1,26 @@
 # Repository layout
 
-The default branch is intentionally curated for readers and contributors.
+The default branch is curated for users, reviewers, and contributors.
 
 | Path | Purpose |
 | --- | --- |
-| `abi/` | Installable Python package; only exports in `abi/__init__.py` are the stable alpha API |
-| `tests/` | Supported public tests plus historical campaign tests; plain `pytest` selects the supported suite |
-| `examples/` | Small supported examples that require no model download |
-| `docs/` | Architecture, status, reproduction, and publication guidance |
-| `evidence/current/` | Controlling compact state and bounded certificates |
-| `experiments/` | Reusable experiment drivers outside the stable API |
-| `artifacts/` | Small schemas and reference artifacts |
-| `abi_v2/` | Canonical host specification, capability-blind certification, 3x4 matrix harness, and inference-free verifier |
-| `results/abi_v2/` | Frozen V1 lineage, V2 adapters, raw matrix evidence, summaries, hostile audit, and technical certificate |
-| `results/abi_host_independence/` | Controlling content-addressed release index, ownership map, architecture-ladder decisions, economics boundary, campaign state, and certificate |
-| `results/abi_v2/external_reproduction/` | Clean-room commands, raw evidence schema, and tracked archive receipt; generated zip stays out of Git |
+| `abi/` | Installable research package and public alpha API |
+| `abi_v2/` | Canonical ABI spec, host certification, reconstruction, and strict verification |
+| `tests/` | Supported and adversarial automated tests |
+| `examples/` | Small examples that do not require a model download |
+| `docs/` | Architecture, status, claims, and review procedures |
+| `review_packet/` | Human/independent reviewer entry point |
+| `evidence/current/` | Compact controlling campaign state and certificates |
+| `results/abi_final_validation_v2/` | R7 technical evidence and preserved failed lineages |
+| `results/abi_v2/` | Earlier host/package matrix evidence |
+| `experiments/` | Reusable research drivers outside the stable API |
+| `scripts/` | Repository maintenance and validation utilities |
 
-## Research history
+Large model weights, generated caches, temporary certification filesystems,
+and public reconstruction workspaces do not belong in Git. Required immutable
+capability packages and the definitive archive are published as hash-addressed
+R7 GitHub Release assets.
 
-The public `research-history-v1089` branch preserves the exact pre-curation
-tree: 5,191 tracked files, all versioned campaign ledgers, negative results,
-catalogs, generated measurements, and Git LFS checkpoint references.
-
-Use that branch when auditing a historical claim:
-
-```bash
-git fetch origin research-history-v1089
-git switch --detach origin/research-history-v1089
-git lfs pull
-```
-
-The history branch is large. The default branch does not require those LFS
-payloads for installation or the supported self-check.
-
-## Adding evidence
-
-Do not add thousands of generated files back to the repository root. Put raw
-outputs on a dated research-history branch or external content-addressed
-artifact store. Add only a compact manifest, certificate, retrieval procedure,
-and honest claim boundary to `evidence/current/`.
+The public `research-history-v1089` branch preserves the pre-curation research
+tree. Use it to audit historical work; use the default branch and R7 release
+for current claims.

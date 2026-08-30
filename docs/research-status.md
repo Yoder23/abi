@@ -1,63 +1,35 @@
 # Research status
 
-Status date: 2026-08-25. Repository curation date: 2026-08-25.
+Updated: 2026-08-30
 
-The controlling machine-readable state is
-`evidence/current/ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1089.json`.
+## Current certification boundary
 
-| Phase | Current bounded status |
+R7 is technically certified for the frozen capability-runtime/conformance
+scope on the development hardware and has passed public reconstruction plus a
+fresh blind Codex review. Human quality and independent hardware remain open.
+
+| Research gate | Status |
 | --- | --- |
-| 0 | Complete |
-| 1 | Complete |
-| 2 | Machine evidence and handoff ready; 0/21,000 independent human preferences |
-| 3 | Machine gates pass; unconditional certificate blocked by Phase 2 |
-| 4 | Certified for the registered bounded machine-development scope |
-| 5 | Certified for bounded three-domain behavioral exclusion |
-| 6 | Certified for bounded three-package composition, portability, and provenance |
-| 7 | Certified for the registered same-machine CPU/CUDA integrated product |
-| 8 | R3 public reconstruction passed but blind red-team failed; r4 content-bound local proof passes; r4 publication/reconstruction/red-team pending |
+| Immutable package identity and canonical interface | Passed, bounded R7 scope |
+| Capability-blind physical host certification | Passed, three declared environments |
+| Live causality and removal controls | Passed |
+| Isolation and hostile fail-closed behavior | Passed |
+| Durable public release and clean reconstruction | Passed |
+| Fresh blind technical red-team | Passed |
+| Human preference/quality | Open, 0/21,000 |
+| Independent hardware | Open |
+| Registered minimum-information proof | Open |
+| General teacher extraction and semantic labeling | Research, not R7-certified |
+| LoRA/distillation superiority | Unproven |
 
-## Strongest current local result
+## Interpretation
 
-The repaired final-mile proof is frozen at commit
-`7064c94f2c6137a29b8793d9b0ec95137efb051e` and annotated tag
-`abi-final-validation-v2-physical-live-proof-2026-08-25`. The strict verifier
-recomputes 98 bound inputs plus 301,543 raw reachable-filesystem rows, and the
-hostile verifier rejects 17/17 mutations.
+R7 establishes a credible capability ABI execution boundary. It does not
+establish that ABI can inspect any open-weight teacher, isolate a minimal pure
+English substrate, segregate all domain knowledge, or reproduce teacher
+generation quality in LayerCake. Those are the next scientific questions and
+must receive their own preregistered comparisons and evidence lineage.
 
-The frozen V1089 record reports a single signed English core plus signed
-chemistry, civics, and Python packages. On the registered development machine,
-fresh CPU and CUDA protocols passed, selected-only execution was physically
-checked, the teacher was absent, and fresh outputs matched the sealed evidence.
-Those results are bounded to the registered prompts, comparators, product
-bytes, and hardware protocol.
-
-## Open gates
-
-- Publish immutable packages and the definitive repaired archive.
-- Reconstruct from a brand-new public tag checkout and public manifests only.
-- Complete a fresh blind Codex red-team against that repaired tag.
-- Three independent humans must complete the frozen Phase 2 preference packet.
-- A genuinely independent operator must execute the Phase 8 packet on different
-  CPU/CUDA hardware and return the first raw run plus signed attestation.
-- Multi-source artifacts exist in the extraction archive, but the promoted
-  integrated product selects one source; deployed multi-source quality is not
-  established.
-
-## Claims not supported
-
-The project does not currently claim:
-
-- universal superiority over LoRA or distillation;
-- a globally minimal information substrate;
-- exhaustive discovery of all teacher capabilities;
-- arbitrary-model semantic losslessness;
-- independent-hardware reproduction;
-- completed human preference validation; or
-- production release certification.
-
-The repaired local evidence is under `results/abi_final_validation_v2/`. The
-former 18/18 certificate under `results/abi_final_validation/` is preserved but
-superseded. The full immutable campaign ledger and negative evidence are available on the
-`research-history-v1089` branch. Compact certificates on `master` are provided
-for discoverability, not as a replacement for the archived raw evidence.
+Historical campaign records remain available in `evidence/current/`,
+`results/`, and the research-history branch. Later evidence supersedes a claim
+only where explicitly stated; negative results are never rewritten as passes.

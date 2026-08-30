@@ -1,10 +1,9 @@
 # Capability isolation
 
-Fresh post-repair execution records 2,100 raw rows: 700 per host, covering
-English-only specialist targets, wrong specialist capabilities, and specialist
-capabilities on English targets. The strict verifier recomputes frozen
-functional evaluators and finds zero target successes. Capability removal is
-also exercised live in all 384 selected causal removal cells.
+R7 executes 2,100 fresh isolation observations, 700 per host, spanning
+English-only specialist targets, wrong specialist packages, and specialist
+packages on English targets. Frozen evaluators recompute zero target successes.
 
-Evidence: `results/abi_final_validation_v2/live_isolation/` and
-`results/abi_final_validation_v2/strict_validation_r4_content_bound.json`.
+Capability removal also fails during the live causal protocol. These results
+support behavioral exclusion on the registered task suite; they do not prove
+that every possible fact is absent from every byte of a package.

@@ -1,9 +1,10 @@
 # Information accounting
 
-Certification exposure is reported per environment as raw UTF-8 bytes,
-examples, and model-visible units. Package bytes, active tensor bytes, adapter
-bytes/parameters, RAM, VRAM, and time are in the raw recomputation and
-`results/abi_v2/information_accounting/summary.json`.
+R7 binds package bytes, adapter bytes and parameters, host-visible units,
+memory observations, timings, raw source files, and public asset hashes. The
+strict evidence contains 810 required inputs and binds 733 transitive runtime
+sources.
 
-The minimum-information frontier is `PENDING_AFTER_EXTERNAL_VALIDATION`; no
-global minimum is claimed.
+The global minimum-information question is still open. No claim should use
+"minimal" or "smallest possible" until the registered frontier protocol is
+executed against fair baselines and independently verified.

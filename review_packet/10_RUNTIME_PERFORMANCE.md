@@ -1,8 +1,14 @@
 # Runtime performance
 
-The verifier recomputes medians and overhead fractions from 20 raw paired
-observations per environment. All fall below the registered 10% adapter-overhead
-ceiling. RAM, VRAM, certification time, installation time, and capability
-timings are preserved without unsupported cross-device extrapolation.
+Twenty paired observations per declared environment yield these median
+conformance-wrapper overhead fractions:
 
-Run `abi-reproduce performance` after the independent matrix.
+| Environment | Median overhead fraction |
+| --- | ---: |
+| LayerCake v25 | 0.026818 |
+| Qwen2.5-0.5B | -0.007342 |
+| Pythia-160M | 0.081364 |
+
+All are below the registered 10% ceiling. These are wrapper/conformance
+measurements, not full generation throughput, TTFT, energy, or product-quality
+benchmarks. R7 makes no runtime superiority claim over LoRA or distillation.

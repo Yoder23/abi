@@ -1,0 +1,183 @@
+{
+  "cases": [
+    {
+      "at_scan_block_boundary": false,
+      "detected": true,
+      "file_bytes": 10753,
+      "file_sha256": "4d1976ee59725ba5c68f29ba00aa52e4eda9e71d3b4032440047127619eb9964",
+      "kind": "valid_tar",
+      "maximum_depth": 2,
+      "members_scanned": 3,
+      "passed": true,
+      "payload_sha256": "4f7062017830978e198fb4c70793fcbf65b947009fe7f0f6f62e208b7a2c8fb4",
+      "prefix_bytes": 513,
+      "signatures": [
+        "C:/tmp/abi_public_r7_blind_codex_20260830/scanner_prefix_control_files/valid-ustar-prefix-513.bin!/tar@513:payload:layercake-capability-package"
+      ],
+      "tar_format": "ustar",
+      "unsupported_signatures": []
+    },
+    {
+      "at_scan_block_boundary": false,
+      "detected": true,
+      "file_bytes": 11264,
+      "file_sha256": "96ad61d458b41cd2c6cdb9a9b0d41e84b206d9c1332782c0ae8b9d1771d319d6",
+      "kind": "valid_tar",
+      "maximum_depth": 2,
+      "members_scanned": 3,
+      "passed": true,
+      "payload_sha256": "4f7062017830978e198fb4c70793fcbf65b947009fe7f0f6f62e208b7a2c8fb4",
+      "prefix_bytes": 1024,
+      "signatures": [
+        "C:/tmp/abi_public_r7_blind_codex_20260830/scanner_prefix_control_files/valid-ustar-prefix-1024.bin!/tar@1024:payload:layercake-capability-package"
+      ],
+      "tar_format": "ustar",
+      "unsupported_signatures": []
+    },
+    {
+      "at_scan_block_boundary": true,
+      "detected": true,
+      "file_bytes": 8398848,
+      "file_sha256": "1db0104f7f83c9ff9beb406406bc9d7f10989bd86284d54398dc731a46a0bacd",
+      "kind": "valid_tar",
+      "maximum_depth": 2,
+      "members_scanned": 3,
+      "passed": true,
+      "payload_sha256": "4f7062017830978e198fb4c70793fcbf65b947009fe7f0f6f62e208b7a2c8fb4",
+      "prefix_bytes": 8388608,
+      "signatures": [
+        "C:/tmp/abi_public_r7_blind_codex_20260830/scanner_prefix_control_files/valid-ustar-prefix-8388608.bin!/tar@8388608:payload:layercake-capability-package"
+      ],
+      "tar_format": "ustar",
+      "unsupported_signatures": []
+    },
+    {
+      "at_scan_block_boundary": false,
+      "detected": true,
+      "file_bytes": 10753,
+      "file_sha256": "43d01f9c0d5dd132a8b489252808db207967380a961a06960c4f5c94591f3d17",
+      "kind": "valid_tar",
+      "maximum_depth": 2,
+      "members_scanned": 3,
+      "passed": true,
+      "payload_sha256": "6f1802c08408eadfa2e1cbd7b5379ab290cee8bcd8a4fcfb80a5ae4b721ca6c1",
+      "prefix_bytes": 513,
+      "signatures": [
+        "C:/tmp/abi_public_r7_blind_codex_20260830/scanner_prefix_control_files/valid-v7-prefix-513.bin!/tar@513:payload:layercake-capability-package"
+      ],
+      "tar_format": "v7",
+      "unsupported_signatures": []
+    },
+    {
+      "at_scan_block_boundary": false,
+      "detected": true,
+      "file_bytes": 11264,
+      "file_sha256": "5b4bd1becbcd4644fddb888f7a9d7a56bbedb651b1c2e2eb1475cd99960b0514",
+      "kind": "valid_tar",
+      "maximum_depth": 2,
+      "members_scanned": 3,
+      "passed": true,
+      "payload_sha256": "6f1802c08408eadfa2e1cbd7b5379ab290cee8bcd8a4fcfb80a5ae4b721ca6c1",
+      "prefix_bytes": 1024,
+      "signatures": [
+        "C:/tmp/abi_public_r7_blind_codex_20260830/scanner_prefix_control_files/valid-v7-prefix-1024.bin!/tar@1024:payload:layercake-capability-package"
+      ],
+      "tar_format": "v7",
+      "unsupported_signatures": []
+    },
+    {
+      "at_scan_block_boundary": true,
+      "detected": true,
+      "file_bytes": 8398848,
+      "file_sha256": "9b36a0733452090fb0146b5094b5b5fb95259401f8d4de8758b5d916644d00f6",
+      "kind": "valid_tar",
+      "maximum_depth": 2,
+      "members_scanned": 3,
+      "passed": true,
+      "payload_sha256": "6f1802c08408eadfa2e1cbd7b5379ab290cee8bcd8a4fcfb80a5ae4b721ca6c1",
+      "prefix_bytes": 8388608,
+      "signatures": [
+        "C:/tmp/abi_public_r7_blind_codex_20260830/scanner_prefix_control_files/valid-v7-prefix-8388608.bin!/tar@8388608:payload:layercake-capability-package"
+      ],
+      "tar_format": "v7",
+      "unsupported_signatures": []
+    },
+    {
+      "at_scan_block_boundary": false,
+      "file_bytes": 727,
+      "file_sha256": "0d6494f5f1d63584b23ba6e4ce6324b0d5a0b05bc622abe46f8fae794a85ade8",
+      "kind": "invalid_tar_literal",
+      "literal": "incidental_ustar_literal",
+      "members_scanned": 0,
+      "passed": true,
+      "prefix_bytes": 513,
+      "signatures": [],
+      "unsupported_signatures": []
+    },
+    {
+      "at_scan_block_boundary": false,
+      "file_bytes": 1238,
+      "file_sha256": "4a35a089cc3216249d9845b845edf3e49779c34eb10c0cb33efe8a239bcc8c0c",
+      "kind": "invalid_tar_literal",
+      "literal": "incidental_ustar_literal",
+      "members_scanned": 0,
+      "passed": true,
+      "prefix_bytes": 1024,
+      "signatures": [],
+      "unsupported_signatures": []
+    },
+    {
+      "at_scan_block_boundary": true,
+      "file_bytes": 8388822,
+      "file_sha256": "7b9694715a328ae5a7dd6a27b91bd30f098d8e57ca05b917aa755dbac3562eed",
+      "kind": "invalid_tar_literal",
+      "literal": "incidental_ustar_literal",
+      "members_scanned": 0,
+      "passed": true,
+      "prefix_bytes": 8388608,
+      "signatures": [],
+      "unsupported_signatures": []
+    },
+    {
+      "at_scan_block_boundary": false,
+      "file_bytes": 1186,
+      "file_sha256": "097420cbb477c2cf2eae6106632a332ac95bdb647e20dc901ac97a877e81e27f",
+      "kind": "invalid_tar_literal",
+      "literal": "invalid_v7_checksum_with_member_literals",
+      "members_scanned": 0,
+      "passed": true,
+      "prefix_bytes": 513,
+      "signatures": [],
+      "unsupported_signatures": []
+    },
+    {
+      "at_scan_block_boundary": false,
+      "file_bytes": 1697,
+      "file_sha256": "4cb2dda54a202852261143fc762437820679ac1992cfde3d4e80ab71c640cf33",
+      "kind": "invalid_tar_literal",
+      "literal": "invalid_v7_checksum_with_member_literals",
+      "members_scanned": 0,
+      "passed": true,
+      "prefix_bytes": 1024,
+      "signatures": [],
+      "unsupported_signatures": []
+    },
+    {
+      "at_scan_block_boundary": true,
+      "file_bytes": 8389281,
+      "file_sha256": "aeffbe6fa6102aa420160ba1bc0d4b6e4e7918e423064ed474334a9733086063",
+      "kind": "invalid_tar_literal",
+      "literal": "invalid_v7_checksum_with_member_literals",
+      "members_scanned": 0,
+      "passed": true,
+      "prefix_bytes": 8388608,
+      "signatures": [],
+      "unsupported_signatures": []
+    }
+  ],
+  "cases_passed": 12,
+  "cases_run": 12,
+  "content_scan_block_bytes": 8388608,
+  "format": "abi-r7-scanner-prefix-controls/1",
+  "passed": true
+}

@@ -1,65 +1,57 @@
-# ABI repaired technical result tables
+# ABI R7 final technical results
 
-These values are recomputed from the r4 raw evidence by
-`abi_v2.strict_validation`. The prior 18/18 certificate and r3 candidate are
-historical and superseded.
+Updated: 2026-08-30
 
-## Physical host certification
+R7 passes the frozen, bounded capability-runtime and host-conformance protocol.
+It does not yet pass human quality, independent-hardware, teacher-extraction, or
+minimum-information gates.
 
-| Environment | Capsule files | Roundtrips | Native forwards | Reachable inventory rows | Median overhead |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| LayerCake v25 | 9 | 128 | 0 | 100,511 | 6.87% |
-| Qwen2.5-0.5B | 15 | 128 | 16 | 100,517 | 0.0039% |
-| Pythia-160M | 13 | 128 | 16 | 100,515 | 2.45% |
+## Release identity
 
-Every capsule has zero capability archives and zero campaign/success
-identifiers. Raw mount evidence shows the development drive replaced by private
-`tmpfs` during worker execution. The content-bound inventories retain 301,543
-rows and prove full hashing/content scanning of 11,681,818,650 regular-file
-bytes. Readable ZIP members are expanded and scanned; capability archives are
-recognized from their internal structure even when their extension is changed.
+- Tag: `abi-final-validation-v2-repaired-r7-2026-08-30`
+- Commit: `3f82a9f4d67dda5c8ea13bd59b2d8f1bbd3dd128`
+- Release archive SHA-256:
+  `fc50f423986149b5d4670ec9e28698540f64be96034efa26e5704c4469921e88`
+- Strict certificate SHA-256:
+  `17973df22cb31eddb3b47c6137aa71b68f32cd9d3010cfcddd232b2a1afce488`
+- Blind report SHA-256:
+  `98b76579ed8486a41e1f5ac00c970738464cdc470dc2ccac18d6c9a89b5b9cea`
 
-## Live and locked evidence
+## Recomputed results
 
-| Evidence | Rows | Recomputed result |
-| --- | ---: | --- |
-| Locked three-host matrix | 5,043 | 5,043 functional source-byte matches |
-| Cross-host matrix identity | 1,681 tasks | all output bytes identical |
-| Specialist action identity | 300 tasks | all action sequences identical |
-| Live causal interventions | 3,072 | all six positive states identical; removals fail live |
-| Live isolation | 2,100 | 0 target successes; 700 cross-host identities |
-| Supported r4 release tests | 75 | all pass |
-| Disposable hostile audit | 17 mutations | all rejected; exact restore |
+| Measurement | Result |
+| --- | ---: |
+| Physical certification inventory | 301,543 rows |
+| Reachable regular-file bytes scanned | 11,681,888,205 |
+| Capability archives/success IDs found | 0 / 0 |
+| Locked host-capability matrix | 5,043 rows |
+| Live causality | 3,072 rows, 24 distinct processes |
+| Live isolation | 2,100 rows, 0 target successes |
+| Transitive source files bound | 733 |
+| Pre-public hostile controls | 19/19 rejected |
+| Post-public hostile controls | 19/19 rejected |
+| Public reconstruction focused tests | 17/17 passed |
+| Blind USTAR/V7 prefix controls | 12/12 passed |
 
-The live causal run uses eight fresh processes per host. Qwen/Pythia state
-conditions mutate a native parameter, run a new forward, and pass the resulting
-state to the conformance adapter. Canonical output remains invariant. This is
-evidence for a standalone capability-runtime boundary, not host-model answer
-generation.
+The three exact physical inventories contain 100,511 LayerCake, 100,517
+Qwen2, and 100,515 Pythia rows. The strict verifier consumes no stored
+scientific pass/fail booleans.
 
-## Integrity
+## Runtime conformance overhead
 
-The strict certificate binds 98 required files with per-file hashes and
-aggregate SHA-256 `24b29e4a6f48ae48b4dbb3b7185223a36b174d547fd7b0e20dc7cc874d67202e`.
-Its evidence SHA-256 is
-`7759863bb59955c396568a2e43d4545fddb2b288fe0edaa29cad9d64578136af`.
-No experiment status, gate, or frozen-policy boolean is accepted as scientific
-evidence.
+Twenty repeated observations per declared environment produced median wrapper
+overhead fractions of 0.026818 for LayerCake, -0.007342 for Qwen2, and
+0.081364 for Pythia. These are conformance-path overhead measurements, not
+end-to-end generation benchmarks and not evidence of ABI inference dominance.
 
-## Pending gates
+## Open gates
 
-| Gate or limitation | State |
-| --- | --- |
-| Immutable r4 public assets and definitive archive | Pending publication |
-| Fresh r4 public-manifest reconstruction | Pending |
-| Fresh r4 blind Codex red-team | Pending; r3 failed |
-| Independent different-hardware reproduction | Closed until the above pass |
-| Blinded human quality | Closed until the above pass; 0/21,000 |
-| Stable minimum-information frontier | `PENDING_AFTER_EXTERNAL_VALIDATION` |
-| Compatibility beyond the three named environments | Not proven |
-| Base-weight tensor transplantation | Not implemented or claimed |
-| Universal LoRA/distillation/fine-tuning superiority | Not proven |
-| Hidden blind holdout | None; exact-retention suite is public |
+- Human ratings: `0/21,000` complete.
+- Independent different-hardware reproduction: pending.
+- Registered minimum-information certification: pending.
+- Teacher-to-artifact extraction, labeling, and knowledge quality: not proven
+  by R7.
+- Superiority over LoRA or distillation: not proven.
 
-Raw source:
-`results/abi_final_validation_v2/strict_validation_r4_content_bound.json`.
+See [R7_PUBLIC_VALIDATION.md](R7_PUBLIC_VALIDATION.md) for the public and blind
+reproduction record.

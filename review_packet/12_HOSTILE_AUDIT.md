@@ -1,16 +1,13 @@
 # Hostile audit
 
-`abi_v2.strict_hostile` mutates only a disposable extracted release carrying an
-explicit safety marker and no `.git` directory. It tests missing/corrupt
-packages, missing raw causal files/rows/hashes, stale execution code, missing raw
-mount evidence, missing raw reachable-filesystem inventories, fully rehashed
-missing inventory rows, missing adapters, and stale certification bindings.
-Every case must fail closed, and the exact release must pass again after every
-restoration.
-The former hostile audit remains historical but is not controlling.
+The R7 verifier mutates only a marked disposable extraction. It covers missing
+or corrupt packages, absent rows or hashes, altered transitive code, stale
+receipts, incomplete inventories, missing adapters, archive hiding, and broken
+release bindings. Every mutation must fail, and exact restoration must pass.
 
-The r4 pre-public disposable run rejects 17/17 mutations, reports no trusted
-scientific-boolean dependency, and restores the exact baseline evidence digest.
-Evidence: `results/abi_final_validation_v2/strict_hostile_pre_public_r4.json`.
+- Pre-public R7: 19/19 rejected, exact restore passed.
+- Post-public R7: 19/19 rejected, exact restore passed.
+- Blind scanner controls: 12/12 valid/invalid USTAR/V7 prefix cases passed.
 
-Run `abi-reproduce hostile-audit`.
+R5 and R6 are retained because blind review exposed real defects in those
+lineages. R7 is additive; it does not relabel those failures.

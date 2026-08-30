@@ -1,8 +1,12 @@
 # Capability artifacts
 
-Four immutable packages are bound by path, byte size, SHA-256, runtime class,
-and evaluation lock in `frozen_release_candidate_r4.json`: English, Python,
-chemistry, and civics. The same bytes are used in all 12 matrix cells.
+The public R7 release publishes immutable English, Python, civics, and chemistry
+packages. Their exact names, byte counts, hashes, runtime class, and evaluation
+locks are bound in the public manifest and R7 candidate.
 
-These are standalone capability-runtime packages. They are not tensors that
-foreign Qwen/Pythia residual streams consume.
+The same package bytes are used in all declared host cells. No package is
+silently regenerated during certification. See `docs/R7_PUBLIC_VALIDATION.md`
+for authoritative public hashes.
+
+These artifacts validate the capability ABI execution boundary; they do not by
+themselves prove a general teacher-to-artifact extraction method.

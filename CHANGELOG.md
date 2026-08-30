@@ -1,60 +1,68 @@
 # Changelog
 
-## Unreleased — ABI V2 host conformance
+## Review handoff - 2026-08-30
 
-- Added the required `results/abi_host_independence/` evidence index, release
-  certificate, structural ownership map, campaign state, experiment ledger,
-  and fail-closed index verifier.
-- Sealed the ABI V1 1/3 failure with the annotated tag
-  `abi-v1-host-independence-failure-2026-08-24`.
-- Promoted Family A (observable canonical state) and explicitly left Families
-  B-D and synthesis unrun after the technical pass.
-- Recorded measured 1/2/4-package reuse costs while declining an unmatched
-  LoRA/distillation/fine-tuning superiority claim.
-- Preserved the complete ABI V1 1/3 native-receiver failure as immutable
-  negative evidence instead of relabeling it.
-- Added a representation-neutral canonical ABI V2 specification, 15 frozen
-  reference vectors, and capability-blind host certification.
-- Certified LayerCake v25, Qwen2.5-0.5B, and Pythia-160M once each with one
-  frozen, zero-parameter generic adapter per host.
-- Passed all 12 cells of the frozen three-host/four-capability matrix with
-  5,043/5,043 source-success retentions and exact source-output bytes.
-- Added causal removal/reinstall, wrong-capability, isolation, random/shuffled
-  corruption, adapter-stability, and teacher-absence checks.
-- Added an inference-free immutable-evidence verifier and a content-addressed
-  different-hardware clean-room archive builder.
-- Set the honest status to `TECHNICALLY_PROVEN_EXTERNAL_VALIDATION_PENDING`.
-  Three human raters, an independent different-hardware execution, and the
-  registered minimum-information frontier remain open.
+- Replaced stale R4 documentation with the controlling R7 public status.
+- Opened, but did not complete, human, different-hardware, and registered
+  minimum-information review.
+- Added the full blind Codex R7 report and machine-readable audit receipts.
+- Clarified that the bounded conformance PASS is not teacher extraction,
+  human-quality generation, LoRA/distillation superiority, or global
+  minimality.
 
-## ABI V1 final-mile evidence
+## R7 — 2026-08-30
 
-- Froze the exact V1089/V1073 starting product and claim ceiling before new
-  experiments.
-- Preregistered three native receiver families and recorded a fail-closed
-  `HOST_INDEPENDENCE_FAILED` result after the single bounded envelope repair.
-- Added signed, resumable `abi human-rate --rater R1|R2|R3` sessions.
-- Added the external-only `abi-reproduce` command family with a hard
-  development-hardware rejection.
-- Assembled an outer-signed, content-addressed failed-candidate release family
-  without changing any English or specialist package bytes.
-- Rejected 15/15 hostile false-claim mutations while retaining eight blocking
-  findings. No production, Phase 8, global-minimum, or universal claim is made.
+- Repaired the R6 arbitrary-prefix tar bypass with checksum-validated USTAR,
+  GNU/POSIX, and V7 stream discovery at arbitrary offsets.
+- Added benign controls at 513, 1,024, and 8,388,608-byte prefixes and invalid
+  tar-literal controls.
+- Added Windows extended-length extraction and subprocess support for deep
+  public archive members.
+- Re-ran three physical capability-blind certifications and committed exact
+  inventories totaling 301,543 rows.
+- Re-ran 3,072 live causality rows in 24 distinct processes and 2,100 live
+  isolation rows against a 733-file execution-source commitment.
+- Recomputed the strict certificate from 810 required files while consuming
+  zero trusted scientific booleans.
+- Rejected 19/19 hostile cases and restored the exact baseline digest.
+- Published the 844,018,841-byte definitive archive and four immutable
+  capability packages at the annotated R7 GitHub Release.
+- Passed clean public-manifest reconstruction, 17/17 focused tests, post-public
+  19/19 hostile replay, and a fresh blind Codex red-team.
+
+## R6 — 2026-08-30 — rejected
+
+- Fixed first-window archive scanning and exact ordinary-inventory-row
+  commitment.
+- Passed local/public strict reconstruction.
+- Rejected after blind review demonstrated valid tar streams hidden after
+  arbitrary prefixes and a Windows long-member reconstruction failure.
+- Preserved as immutable negative evidence.
+
+## R5 — 2026-08-30 — rejected
+
+- Published an earlier fail-closed candidate.
+- Rejected after blind review found first-window archive scanning and an
+  ordinary-row deletion/re-hash bypass.
+- Preserved as immutable negative evidence.
+
+## ABI V2 foundations
+
+- Added a representation-neutral canonical ABI V2 specification and frozen
+  reference vectors.
+- Certified LayerCake v25, Qwen2.5-0.5B, and Pythia-160M conformance
+  environments.
+- Added capability-blind host certification, live causality, capability
+  isolation, public reconstruction, hostile verification, and external
+  reproduction tooling.
 
 ## 0.3.0-alpha.1 — 2026-08-24
 
 - Reframed the public package around provenance-preserving teacher capability
   acquisition, labeling, quarantine, selection, and immutable artifacts.
-- Added a lightweight `abi` CLI with machine-readable status and deterministic
-  self-check commands.
-- Published compact V1089 state and evidence-bound segregation certificates.
-- Preserved the full experimental ledger on `research-history-v1089`.
-- Reduced the default branch from 5,191 to approximately 1,000 tracked files,
-  and the repository root from 1,867 files to a conventional project layout.
-- Removed bulk checkpoints, catalogs, generated results, and historical root
-  scripts from the default branch without deleting their research history.
-- Split GPU teacher extraction dependencies into the `extraction` extra.
-- Added Python 3.10–3.12 release CI, focused linting, package builds, fresh-clone
-  verification, and wheel-install smoke coverage.
+- Added the lightweight `abi` CLI and deterministic self-checks.
+- Moved bulk research history out of the default public surface while
+  preserving its Git lineage.
 
-This is an alpha source release, not a Phase 8 scientific release certificate.
+ABI remains a research release. The full teacher-extraction moonshot and
+external quality gates are not complete.

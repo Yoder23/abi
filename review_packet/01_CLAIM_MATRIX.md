@@ -1,18 +1,16 @@
-# Claim matrix
+# R7 claim matrix
 
-| Claim | Result | Evidence |
+| Claim | Result | Controlling evidence |
 | --- | --- | --- |
-| Physically isolated environments | 3/3 | `isolated_certification_strict_r4_content_bound/` |
-| Certification roundtrips | 384/384 | `strict_validation_r4_content_bound.json` |
-| Reachable filesystem bytes scanned | 11,681,818,650 | `strict_validation_r4_content_bound.json` |
-| Frozen source-success retention | 5,043/5,043 | same |
-| Canonical cross-environment equality | 1,681/1,681 | same |
-| Fresh live isolation | 0/2,100 target successes | `live_isolation/` |
-| Live causal interventions | 3,072/3,072 | `live_causality/` |
-| Trusted scientific booleans | 0 consumed | `strict_validation_r4_content_bound.json` |
-| R4 public reconstruction + blind red-team | Pending | r3 blind audit failed; required before external review |
-| Independent hardware | Closed until prerequisite gates pass | `external_reproduction/checklist.json` |
-| Human quality | Closed until prerequisite gates pass; 0/21,000 | human packet |
-
-No arbitrary-model, transplant, minimum-information, or LoRA/distillation
-superiority claim is made.
+| Capability-blind physical inventories | 301,543 rows; 0 archives/IDs | `strict_validation_r7_tar_bound.json` |
+| Reachable regular bytes scanned | 11,681,888,205 | same |
+| Locked matrix | 5,043 rows | same |
+| Live causality | 3,072 rows; 24 processes | `live_causality_r7_source_bound/` |
+| Live isolation | 2,100 rows; 0 target successes | `live_isolation_r7_source_bound/` |
+| Pre-/post-public hostile controls | 19/19 and 19/19 | R7 hostile receipts |
+| Public reconstruction | Pass; 17/17 focused tests | `public_reconstruction_r7.json` |
+| Blind technical red-team | Pass | `blind_redteam_r7/` |
+| Human quality | Open; 0/21,000 | frozen human packet |
+| Different hardware | Open | external reproduction packet |
+| Minimum information | Open | registered protocol required |
+| Teacher extraction / LoRA superiority | Not proven | future additive campaign |

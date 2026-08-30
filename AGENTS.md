@@ -1,138 +1,109 @@
 # ABI repository contract
 
-ABI owns foreign-teacher capability acquisition: source qualification,
-behavioral probing, semantic labeling, quarantine, normalization, provenance,
-information accounting, immutable acquisition artifacts, and their verifiers.
+ABI owns acquisition and packaging of capabilities from foreign open-weight
+teachers: source qualification, probing, semantic labeling, quarantine,
+normalization, provenance, information accounting, minimization research,
+immutable artifacts, and fail-closed verification.
 
-LayerCake owns runtime hosting, cake installation, routing, orchestration, and
-inference performance. Do not copy either repository's implementation or
-detailed campaign history into the other.
+LayerCake owns runtime hosting, cake installation, transfer between compatible
+LayerCake hosts, routing, orchestration, and inference performance. Keep the
+repositories and evidence lineages separate. ABI may link to LayerCake and
+test its public host interface; it must not copy LayerCake implementation or
+represent LayerCake research as ABI evidence.
 
-## Current authority
+## Controlling release line
 
-The controlling final-mile campaign is the additive r4 content-bound ABI V2
-validation under `results/abi_final_validation_v2/`. Its current status is
-`R4_CONTENT_BOUND_TECHNICAL_PROOF_READY_FOR_IMMUTABLE_FREEZE`. The certificate at
-`results/abi_final_validation/` and tag
-`abi-final-technical-validation-ready-2026-08-25` are preserved historical
-evidence and are explicitly superseded. They relied on certification path
-filtering, causal evidence replay, and summary-field trust that are not
-acceptable for promotion.
+The controlling technical release is R7:
 
-The first repaired candidate tag, `abi-final-validation-v2-repaired-2026-08-25`,
-is also superseded: a default Windows clone exposed one CRLF/LF normalization
-mismatch in historical evidence. The r1 tag is also superseded: its public
-extraction exposed that the clean-tree test still read the old frozen candidate
-receipt. A fresh blind review then rejected r2 because its isolation and host
-state interventions did not meet the physical/live standard. The repaired
-technical proof was frozen at commit `7064c94f2c6137a29b8793d9b0ec95137efb051e`,
-annotated tag `abi-final-validation-v2-physical-live-proof-2026-08-25`.
-The public r3 release and manifest-only reconstruction then passed locally, but
-a fresh blind audit rejected r3 because the admitted `/usr`, minimal runtime,
-and Python package trees were not content-bound and because the reviewer's
-restricted network could not independently query the exact release. This is a
-formal r3 failure, preserved in
-`results/abi_final_validation_v2/blind_redteam_r3_fail.md`; it is not waived by
-the otherwise strong r3 live evidence.
+- public tag: `abi-final-validation-v2-repaired-r7-2026-08-30`
+- tagged commit: `3f82a9f4d67dda5c8ea13bd59b2d8f1bbd3dd128`
+- release: <https://github.com/Yoder23/abi/releases/tag/abi-final-validation-v2-repaired-r7-2026-08-30>
+- archive SHA-256:
+  `fc50f423986149b5d4670ec9e28698540f64be96034efa26e5704c4469921e88`
+- strict certificate:
+  `results/abi_final_validation_v2/strict_validation_r7_tar_bound.json`
+- blind review:
+  `results/abi_final_validation_v2/blind_redteam_r7/`
 
-The r4 local result uses private mount-namespace certification capsules.
-The worker filesystem contains only the generic certification corpus, canonical
-ABI/specification, adapter code, and selected host snapshot/source. Capability
-archives and source-success IDs are physically absent. R4 additionally hashes
-and content-scans every reachable non-virtual regular file, expands readable
-ZIP members, inventories every symlink, detects capability archives by internal
-structure rather than extension, and retains about 100,500 canonical raw
-filesystem rows per host. The strict verifier recomputes 384 certification
-rows, the 5,043-row locked matrix, 3,072 fresh live causal interventions, and
-2,100 fresh isolation rows from bound raw files. It consumes zero experiment
-gate/status booleans and fails closed on missing, changed, or stale inputs. The
-disposable hostile audit rejects 17/17 mutations, including a fully rehashed
-missing-filesystem-row attack, and restores the exact baseline digest.
+R7 passes bounded technical validation. Human review, different-hardware
+reproduction, and registered minimum-information certification are now open,
+not complete.
 
-Do not change this status to `READY_FOR_HUMAN_AND_INDEPENDENT_REVIEW` until all
-four capability packages and the definitive archive are published at immutable
-public URLs, a brand-new public tag checkout reconstructs entirely from those
-manifests, the strict hostile audit passes in the disposable extracted release,
-and a fresh blind Codex red-team passes against that tag.
+## Exact proven scope
 
-The bounded claim remains standalone capability-runtime execution across the
-LayerCake v25, Qwen2.5-0.5B, and Pythia-160M codec/conformance environments.
-Do not broaden it into tensor transplantation, native hidden-state
-injection, host-model generation, arbitrary-model compatibility, human quality
-completion, external reproduction, or a global information minimum. The final
-live causality audit runs eight fresh processes per host. It applies real,
-neutral, zero, deterministic-random, and deterministic-shuffled state to the
-conformance adapter; for Qwen/Pythia it also mutates a native parameter and runs
-a new forward in each state condition. Canonical capability bytes remain
-invariant. Host removal receives no checkpoint or native objects, while adapter
-and capability removal fail during live execution. Qwen/Pythia checkpoints
-remain frozen conformance participants and their tokenizers provide native
-units. The complete V1 1/3 native-tensor failure remains immutable historical
-evidence.
+The four published immutable capability packages execute through the canonical
+capability runtime/conformance interface in the declared LayerCake v25,
+Qwen2.5-0.5B, and Pythia-160M environments. The proof includes:
 
-Three gates remain external: 21,000 judgments from three real independent
-raters, independent reproduction on different hardware, and the registered
-minimum-information certification.
+- three capability-blind physical certification environments;
+- 301,543 content-bound reachable-filesystem rows;
+- 5,043 locked matrix rows;
+- 3,072 live causality rows in 24 distinct condition processes;
+- 2,100 live isolation rows;
+- zero capability archives or success IDs in the certification inventories;
+- strict recomputation consuming zero scientific status booleans;
+- 19/19 fail-closed hostile controls before and after publication;
+- exact public-manifest reconstruction in a clean environment; and
+- a fresh blind Codex PASS, including 12/12 USTAR/V7 prefix controls.
 
-The public technical declaration remains withheld during repaired-candidate
-validation. ABI V1 is sealed by the annotated tag
-`abi-v1-host-independence-failure-2026-08-24`; the frozen ABI V2 architecture
-remains bound to `abi-host-independence-technical-proof-2026-08-24`.
+## Claim ceiling
 
-The final external handoff is controlled by `external_reproduction/README.md`,
-its machine-readable checklist, and the final validation tooling. Building or
-locally verifying that archive
-does not close the external-hardware gate. Do not add the generated zip or
-downloaded Qwen/Pythia weights to Git.
+Never broaden R7 into any of these unproven claims:
 
-The historical campaign state remains
-`evidence/current/ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1089.json`. The
-controlling final-mile evidence is now:
+- arbitrary-model or universal host compatibility;
+- transformer tensor or weight transplantation;
+- teacher knowledge extraction, labeling completeness, or source diagnosis;
+- teacher-quality English or specialist generation;
+- superiority to LoRA, distillation, or fine-tuning;
+- human-perceived quality;
+- independent different-hardware reproduction;
+- a globally minimal English substrate; or
+- completion of the full ABI moonshot.
 
-- `results/abi_final_mile/frozen_starting_point.json`;
-- `results/abi_final_mile/host_portability_v1/repair_rescreen.json`; and
-- `results/abi_final_mile/hostile_claim_audit.json`.
+The R7 artifacts are capability-runtime/conformance packages. They are not
+evidence that ABI has already extracted a compact fluent English core from an
+arbitrary teacher.
 
-Superseded technical-validation evidence remains under
-`results/abi_final_validation/`. Repaired evidence is additive under
-`results/abi_final_validation_v2/`. The frozen architecture lineage remains
-commit `acfed2a225a32d36c32b625e35c6ede536cfab01` and annotated tag
-`abi-host-independence-technical-proof-2026-08-24`; validation may add tools,
-audits, documentation, and receipts but must not mutate its bound architecture,
-artifacts, adapters, evaluators, thresholds, or benchmarks.
+## Evidence rules
 
-- Phases 0–1 are complete.
-- Phase 2 is machine-complete but lacks 21,000 independent human preferences.
-- Phase 3 machine gates pass conditionally on Phase 2.
-- Phases 4–7 hold bounded machine certificates.
-- Phase 8's original internal-readiness declaration and r3 candidate are
-  superseded. R4 passes strict local recomputation and 17/17 hostile attacks;
-  immutable publication, clean public reconstruction, and a fresh passing blind
-  red-team remain mandatory before opening human or independent-hardware review.
-- The V1 final-mile native-receiver screen fails after its one bounded repair:
-  the exact English archive is executable by 1/3 preregistered receiver
-  families. Its controlling classification is `HOST_COADAPTED_CAPABILITY` and
-  the campaign status is `HOST_INDEPENDENCE_FAILED`.
+- Preserve every failed release and negative result additively. R5 and R6 are
+  historical failures, not files to rewrite or relabel.
+- Treat stored `PASS`, `status`, and gate fields as untrusted. Recompute claims
+  from raw rows, exact counts, hashes, source inventories, and live failure
+  records.
+- Fail closed on missing packages, raw rows, receipts, source files, hashes,
+  or stale evidence.
+- Do not overwrite immutable evidence paths. Use a new revision suffix.
+- Do not substitute evidence from a different model, artifact, host, seed, or
+  release lineage.
+- Keep human ratings at `0/21,000` until three independent raters actually
+  complete and attest the frozen forms.
+- Keep independent hardware `PENDING` until a genuinely independent operator
+  returns the signed different-hardware packet.
+- Keep minimum-information certification `PENDING` until the registered
+  protocol is executed and verified.
 
-Never claim universal ABI superiority, a global information minimum,
-exhaustive source capability discovery, arbitrary-model losslessness, or Phase
-8 completion from the current evidence. Do not relabel V1's LayerCake-provider
-bypass as native tensor portability. ABI V2's narrower extension/runtime claim
-must always retain the base-weight non-participation boundary above.
+## Development rules
 
-## Change rules
+- Prefer bounded, preregistered experiments over unbounded nearby sweeps.
+- Use GPU for teacher extraction/training when appropriate; CPU-only is not an
+  ABI ideology. Record hardware and one-time/per-host costs honestly.
+- Keep generated caches, temporary reconstructions, model weights, and bulk
+  experiment intermediates out of Git. Publish only required immutable assets
+  and verification evidence.
+- Run focused tests for changed code, then the full supported suite before a
+  release-ready commit.
+- Keep README, active mission, current status, technical claims, final results,
+  review packet, and changelog consistent with the controlling release.
 
-1. Preserve immutable evidence; corrections create new artifacts.
-2. Keep negative results on `research-history-v1089` or a later explicit
-   research-history branch.
-3. Treat `.abix` and `.abicir` as acquisition evidence, not deployable cakes.
-4. Pin source revisions and account for every imported byte, token,
-   activation, parameter, and hardware hour.
-5. Quarantine ambiguous records; never silently route specialist facts into
-   the English core.
-6. Keep supported public APIs small and fail closed on malformed provenance,
-   paths, hashes, labels, and selection plans.
-7. Run the supported release tests and build checks before publishing.
+## Next authorized work
 
-The default branch is the curated open-source surface. The full V1089
-laboratory ledger is preserved on `research-history-v1089`.
+1. Execute the frozen human-rating packet with three independent raters.
+2. Run the external reproduction packet on genuinely different hardware.
+3. Execute registered minimum-information certification.
+4. In a separate additive campaign, prove teacher-to-ABI acquisition,
+   capability labeling/segregation, compact English extraction, and quality
+   comparisons against distillation and LoRA.
+
+Do not claim the ABI moonshot until those acquisition and external-quality
+gates are supported by their own evidence.

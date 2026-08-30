@@ -1,0 +1,254 @@
+{
+  "format": "abi-v2-r7-blind-codex-review/1",
+  "verdict": "PASS",
+  "review_date": "2026-08-30",
+  "review_scope": "Bounded standalone capability-runtime/conformance result for the four published packages across LayerCake v25, Qwen2.5-0.5B, and Pythia-160M only",
+  "repository": "https://github.com/Yoder23/abi",
+  "release_url": "https://github.com/Yoder23/abi/releases/tag/abi-final-validation-v2-repaired-r7-2026-08-30",
+  "tag": {
+    "name": "abi-final-validation-v2-repaired-r7-2026-08-30",
+    "object_type": "tag",
+    "tag_object": "94738bf8589363ec367a90142bc29ef461585aae",
+    "peeled_commit": "3f82a9f4d67dda5c8ea13bd59b2d8f1bbd3dd128",
+    "expected_commit": "3f82a9f4d67dda5c8ea13bd59b2d8f1bbd3dd128",
+    "head_exact": true,
+    "clone_clean_after_review": true
+  },
+  "release": {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-08-30T09:59:51Z",
+    "manifest": {
+      "name": "public_release_assets_r7.json",
+      "bytes": 3321,
+      "sha256": "3691f73624f88c6bfadfaf0d9571e1eaa15fbada834d42af7dda5e4b4279d559"
+    },
+    "payload_assets": [
+      {
+        "name": "abi-final-validation-v2-r7-2026-08-30.zip",
+        "bytes": 844018841,
+        "sha256": "fc50f423986149b5d4670ec9e28698540f64be96034efa26e5704c4469921e88"
+      },
+      {
+        "name": "abi-chemistry-token-plan-seed9824.cake",
+        "bytes": 510981,
+        "sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb"
+      },
+      {
+        "name": "abi-civics-token-plan-seed9824.cake",
+        "bytes": 495919,
+        "sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604"
+      },
+      {
+        "name": "phase7-final-english-core.cake",
+        "bytes": 253216208,
+        "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d"
+      },
+      {
+        "name": "abi-python-token-plan-seed9824.cake",
+        "bytes": 448404,
+        "sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d"
+      }
+    ],
+    "github_metadata_matches_manifest": true,
+    "downloaded_bytes_and_hashes_exact": true
+  },
+  "archive": {
+    "member_count": 1193,
+    "member_names_unique": true,
+    "embedded_manifest_format": "abi-final-validation-clean-room-manifest/2",
+    "embedded_manifest_rows": 1192,
+    "embedded_manifest_sha256": "c44a5a57185042006570010d0bfd3d6600daebcf7ca096331f3161705992b8b9",
+    "membership_exact": true,
+    "member_identity_failures": 0,
+    "extracted_identity_failures": 0,
+    "extracted_membership_exact": true,
+    "external_internal_capability_bindings_exact": 4,
+    "strict_and_hostile_receipt_bindings_exact": true,
+    "development_directories_present": [],
+    "host_model_weight_members_present": [],
+    "longest_ordinary_extracted_path_length": 368,
+    "longest_member": "abi-final-validation-v2/abi_release/results/abi_final_validation_v2/pre_strict_capsule_root_history/layercake_release/layercake_extensions/route_isolated_clarification_core_v25.py"
+  },
+  "tag_archive_bindings": {
+    "abi_archive_rows": 983,
+    "normal_git_blob_rows": 965,
+    "expected_public_archive_only_rows": 18,
+    "unexpected_git_or_archive_identity_failures": 0,
+    "git_eol_only_bindings": [
+      "LICENSE",
+      "pyproject.toml"
+    ],
+    "checkout_eol_only_bindings": [
+      "pyproject.toml",
+      "requirements.txt"
+    ],
+    "strict_required_input_files": 810,
+    "strict_required_inputs_aggregate_sha256": "05f7d08ed9ad3393ef3ac0258488c112aaafe32a0c9733a67940b69f97efc7c1",
+    "strict_required_input_failures": 0,
+    "transitive_execution_source_files": 733,
+    "transitive_execution_source_aggregate_sha256": "3900cc53a895f4125917a59771fe3119cb9817673bb3ea605fd347c6635f04c6",
+    "transitive_execution_source_failures": 0
+  },
+  "reconstruction": {
+    "host_long_paths_enabled": 0,
+    "workspace_base_is_ordinary_windows_path": true,
+    "workspace_base_length": 174,
+    "deepest_extracted_member_exceeds_260": true,
+    "python": "3.10.0",
+    "published_environment_lock_used": true,
+    "status": "PASS_PUBLIC_MANIFEST_ONLY_RECONSTRUCTION",
+    "wall_seconds": 324.3423294000095,
+    "development_directories_present": [],
+    "focused_release_tests": {
+      "passed": 17,
+      "failed": 0,
+      "seconds": 40.48
+    },
+    "preserved_reviewer_setup_failures": [
+      {
+        "receipt": "official_public_reconstruction_receipt.json",
+        "cause": "Reviewer initially omitted lock-pinned NumPy"
+      },
+      {
+        "receipt": "official_public_reconstruction_receipt_retry.json",
+        "cause": "Reviewer then omitted lock-pinned cryptography"
+      }
+    ]
+  },
+  "strict_certificate": {
+    "stdout_bytes": 166950,
+    "stdout_sha256": "17973df22cb31eddb3b47c6137aa71b68f32cd9d3010cfcddd232b2a1afce488",
+    "published_certificate_sha256": "17973df22cb31eddb3b47c6137aa71b68f32cd9d3010cfcddd232b2a1afce488",
+    "exit_code": 0,
+    "stderr_bytes": 0,
+    "exact_stdout_identity": true,
+    "status": "PASS_STRICT_RAW_RECOMPUTATION",
+    "trusted_scientific_booleans_consumed": 0
+  },
+  "scanner_controls": {
+    "public_focused_tests_passed": 13,
+    "content_scan_block_bytes": 8388608,
+    "explicit_cases_run": 12,
+    "explicit_cases_passed": 12,
+    "valid_formats": [
+      "USTAR",
+      "V7"
+    ],
+    "prefix_bytes": [
+      513,
+      1024,
+      8388608
+    ],
+    "valid_streams_detected": 6,
+    "invalid_tar_literal_cases_not_classified": 6
+  },
+  "reachable_inventory": {
+    "total_rows": 301543,
+    "total_content_bytes_scanned": 11681888205,
+    "hosts": {
+      "layercake": {
+        "rows": 100511,
+        "sha256": "44bb88ad6616062b412d725612531da005b43925899804baf28ae66ebe571629",
+        "content_bytes_scanned": 3435071021,
+        "embedded_members_scanned": 8406
+      },
+      "qwen2": {
+        "rows": 100517,
+        "sha256": "71f8f811341cb77d467edf371aae71840b17a2d3e25efe794c6eba375fc7cf25",
+        "content_bytes_scanned": 4434645168,
+        "embedded_members_scanned": 8406
+      },
+      "pythia": {
+        "rows": 100515,
+        "sha256": "61cee51af1249a453e2dc37970b6cf681931c4fb22d2b47ef056c539010f52c0",
+        "content_bytes_scanned": 3812172016,
+        "embedded_members_scanned": 8406
+      }
+    },
+    "campaign_or_success_identifier_matches": 0,
+    "capability_archive_signature_matches": 0,
+    "unsupported_archive_signatures": 0,
+    "forbidden_archive_member_paths": 0,
+    "ordinary_row_deletion_rehashed_attack_rejected": true
+  },
+  "hostile_receipt": {
+    "published_receipt_sha256": "209008d11f14b11c7a30d199fadbb1e5bb923a283e57cb71815e6a84a83a0fbb",
+    "raw_cases": 19,
+    "raw_cases_rejected": 19,
+    "mutation_names_unique_and_exact": true,
+    "receipt_evidence_hash_exact": true,
+    "strict_and_hostile_source_hashes_exact": true,
+    "published_baseline_equals_post_restore": true,
+    "full_disposable_replay_status": "PASS_STRICT_VERIFIER_FAILS_CLOSED",
+    "full_disposable_replay_rejected": 19,
+    "full_disposable_replay_required": 19,
+    "full_disposable_replay_baseline_sha256": "e12e0c81eea7f1a0007ba3d0ddd7a28ffbd4099e52ae17450a96526a5afbb876",
+    "full_disposable_replay_post_restore_sha256": "e12e0c81eea7f1a0007ba3d0ddd7a28ffbd4099e52ae17450a96526a5afbb876"
+  },
+  "live_execution": {
+    "causality_raw_rows": 3072,
+    "isolation_raw_rows": 2100,
+    "hosts": 3,
+    "condition_processes_per_host": 8,
+    "globally_unique_condition_process_ids": 24,
+    "conditions": [
+      "real_host",
+      "neutral_host",
+      "zero_state",
+      "random_state",
+      "shuffled_state",
+      "host_removed",
+      "adapter_removed",
+      "capability_removed"
+    ],
+    "condition_receipt_hashes_and_raw_rows_exact": true,
+    "source_reads_replay_results": false,
+    "qwen_and_pythia_live_checkpoint_modes_exact": true,
+    "qwen_and_pythia_native_parameter_interventions_exact": true,
+    "host_removed_snapshot_and_native_objects_absent": true,
+    "adapter_removal_failures": 384,
+    "capability_removal_failures": 384,
+    "cross_host_real_outputs_equal": 128,
+    "canonical_capability_outputs_invariant_across_six_positive_states": true,
+    "bounded_interpretation": "The native host state is live and source-bound but noncausal to answer generation in this tested standalone capability-runtime."
+  },
+  "sufficiency": {
+    "public_archive_plus_manifest_reproduced_result": true,
+    "development_directories_used": false,
+    "unpublished_assets_used": false,
+    "source_teacher_inference_used": false,
+    "host_model_weights_in_archive": false
+  },
+  "claim_language": {
+    "bounded_scope_explicit": true,
+    "arbitrary_model_compatibility_claimed": false,
+    "transformer_weight_transplantation_claimed": false,
+    "teacher_knowledge_extraction_superiority_claimed": false,
+    "lora_or_distillation_superiority_claimed": false,
+    "human_perceived_quality_or_rating_claimed": false,
+    "independent_hardware_claimed": false,
+    "global_minimum_english_substrate_claimed": false,
+    "advisory_documentation_drift": [
+      "README/docs/review_packet still describe the earlier R4 publication state",
+      "Several tagged documents retain older 17-case and 95/98-input counters and an older scanned-byte total",
+      "The controlling R7 manifest, candidate, certificate, hostile receipt, and release body are internally current and bounded"
+    ],
+    "documentation_drift_material_to_bounded_technical_result": false
+  },
+  "remaining_non_technical_gates": [
+    "21,000 judgments from three real independent human raters",
+    "Independent reproduction on different hardware",
+    "Registered minimum-information certification"
+  ],
+  "artifact_hashes": {
+    "official_public_reconstruction_receipt_complete_lock.json": "736dc4c485680446abd00dffa8dff8b03336294311d349e71d6d2991d6fd3ac4",
+    "independent_archive_audit.json": "63395e870ff0d09d49bafa25f3afa6de2055edb7d1e0ccbf327e484db235ff41",
+    "scanner_prefix_controls.json": "4ce82fe5e5136450719390369e445be2a23383da250efb788260f72a57718252",
+    "independent_evidence_audit.json": "6e8d59137be498ab29ce0e59cfd53474d74a436059c3eee64dafa15468be264e",
+    "full_disposable_hostile_replay_receipt.json": "22b215866abc7cfd6a6dd6e7c707c0240b0834f76afec7efbb7095ff572d3fb3",
+    "tag_and_certificate_binding_audit.json": "60d70283337c4c3a67f7f77324986599f077d8391ff75a9c463361cf75b32b0e",
+    "strict_stdout_identity_receipt.json": "9e3b61f29f1f9f920b1c766b377bcc490694c0e5255f4ea27156b4d34d222ee5",
+    "strict_stdout_recomputed.json": "17973df22cb31eddb3b47c6137aa71b68f32cd9d3010cfcddd232b2a1afce488"
+  }
+}

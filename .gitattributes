@@ -21,6 +21,8 @@ results/abi_final_validation_v2/**/*.jsonl -binary diff merge text eol=lf
 results/abi_final_validation_v2/**/*.md -binary diff merge text eol=lf
 results/abi_final_validation_v2/**/*.txt -binary diff merge text eol=lf
 results/abi_final_validation_v2/**/*.py -binary diff merge text eol=lf
+results/abi_final_validation_v2/blind_redteam_r7/blind_codex_r7_report.md whitespace=-blank-at-eol
+results/abi_final_validation_v2/blind_redteam_r7/21_final_report_validation.txt whitespace=-blank-at-eol
 results/storage_cleanup_*.json -binary diff merge text eol=lf
 *.safetensors filter=lfs diff=lfs merge=lfs -text
 evidence/current/** binary

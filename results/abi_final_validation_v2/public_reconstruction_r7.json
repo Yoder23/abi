@@ -1,0 +1,76 @@
+{
+  "archive_sha256": "fc50f423986149b5d4670ec9e28698540f64be96034efa26e5704c4469921e88",
+  "assets": [
+    {
+      "bytes": 844018841,
+      "name": "abi-final-validation-v2-r7-2026-08-30.zip",
+      "sha256": "fc50f423986149b5d4670ec9e28698540f64be96034efa26e5704c4469921e88"
+    },
+    {
+      "bytes": 510981,
+      "name": "abi-chemistry-token-plan-seed9824.cake",
+      "sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb"
+    },
+    {
+      "bytes": 495919,
+      "name": "abi-civics-token-plan-seed9824.cake",
+      "sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604"
+    },
+    {
+      "bytes": 253216208,
+      "name": "phase7-final-english-core.cake",
+      "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d"
+    },
+    {
+      "bytes": 448404,
+      "name": "abi-python-token-plan-seed9824.cake",
+      "sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d"
+    }
+  ],
+  "development_directories_present": [],
+  "evidence_sha256": "ea561b1b7fcd6fa95a91370ea2f2fe0ba74313c8ad4f368242cefded9fcd5da7",
+  "format": "abi-v2-public-reconstruction/1",
+  "manifest_sha256": "3691f73624f88c6bfadfaf0d9571e1eaa15fbada834d42af7dda5e4b4279d559",
+  "reconstructed_root": "reconstructed/abi-final-validation-v2/abi_release",
+  "release_commit": "3f82a9f4d67dda5c8ea13bd59b2d8f1bbd3dd128",
+  "release_tag": "abi-final-validation-v2-repaired-r7-2026-08-30",
+  "status": "PASS_PUBLIC_MANIFEST_ONLY_RECONSTRUCTION",
+  "strict_certificate_identity_exact": true,
+  "strict_raw_recomputation": {
+    "command": [
+      "C:\\Python310\\python.exe",
+      "-B",
+      "-m",
+      "abi_v2.strict_validation",
+      "--root",
+      "\\\\?\\C:\\tmp\\abi_public_r7_reconstruction_20260830\\long_windows_base_segment_abcdefghijklmnopqrstuvwxyz0123456789\\workspace\\reconstructed\\abi-final-validation-v2\\abi_release"
+    ],
+    "exit_code": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_tail": "",
+    "stdout_sha256": "17973df22cb31eddb3b47c6137aa71b68f32cd9d3010cfcddd232b2a1afce488",
+    "stdout_tail": "low_sparse_core.py\",\n        \"sha256\": \"15e05cfad0a7458d76ab2b1636ea8864fbc716fea33f57107c45696c857073b0\"\n      },\n      {\n        \"bytes\": 2148,\n        \"path\": \"@layercake_release/layercake_extensions/route_isolated_shallow_sparse_core_v18.py\",\n        \"sha256\": \"2beeb2fc3fd8bc7e40add90bf8da1595faef2782a70ba8c416b554304a238849\"\n      },\n      {\n        \"bytes\": 5597,\n        \"path\": \"@layercake_release/layercake_extensions/route_isolated_universal_guard_core_v20.py\",\n        \"sha256\": \"2eb35734d04b2d31a6c9ac3d19ebe459685a68f9b46f609e8fd6316106d2e8e9\"\n      },\n      {\n        \"bytes\": 6582,\n        \"path\": \"@layercake_release/layercake_extensions/routed_sparse_rank768_progressive_core.py\",\n        \"sha256\": \"1ca340c5d5e56cada906a9ca236f463b056b1524e1a3812a7d6641c4848e4875\"\n      },\n      {\n        \"bytes\": 7469,\n        \"path\": \"@layercake_release/layercake_extensions/selective_boundary_bpe_direct_neural_core.py\",\n        \"sha256\": \"22eb6773a409b5f6f5d5677081847d90f921b892c74fab0086b08748bece59ac\"\n      },\n      {\n        \"bytes\": 6417,\n        \"path\": \"@layercake_release/layercake_extensions/source_aligned_progressive_replacement_core.py\",\n        \"sha256\": \"303133118ebb204ebfe39c00c1538631dd9918185a8f4bad5af907ff7c738c95\"\n      },\n      {\n        \"bytes\": 5371,\n        \"path\": \"@layercake_release/layercake_extensions/sparse_residual_progressive_core.py\",\n        \"sha256\": \"4ba5b2ae99d8946243eb0345048cd66a70e2c47a578979d418b94e5530c2e927\"\n      },\n      {\n        \"bytes\": 5937,\n        \"path\": \"@layercake_release/layercake_extensions/structural_causal_core.py\",\n        \"sha256\": \"31aa7058d642eb437468f359eaaf7b31a98c78f36d189354ddb7efb1fad0ca6e\"\n      },\n      {\n        \"bytes\": 14544,\n        \"path\": \"@layercake_release/layercake_extensions/unicode_direct_neural_core.py\",\n        \"sha256\": \"4cfc2d5957aaa440d5cc90846f6e1a09ef045e3e0f464abce81e0525aed7648b\"\n      }\n    ]\n  },\n  \"status\": \"PASS_STRICT_RAW_RECOMPUTATION\",\n  \"trusted_scientific_booleans_consumed\": 0\n}\n"
+  },
+  "tag_clone_clean": true,
+  "tag_clone_head": "3f82a9f4d67dda5c8ea13bd59b2d8f1bbd3dd128",
+  "tests": {
+    "command": [
+      "C:\\Python310\\python.exe",
+      "-B",
+      "-m",
+      "pytest",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "\\\\?\\C:\\tmp\\abi_public_r7_reconstruction_20260830\\long_windows_base_segment_abcdefghijklmnopqrstuvwxyz0123456789\\workspace\\reconstructed\\abi-final-validation-v2\\abi_release\\tests\\test_abi_v2_strict_validation.py",
+      "\\\\?\\C:\\tmp\\abi_public_r7_reconstruction_20260830\\long_windows_base_segment_abcdefghijklmnopqrstuvwxyz0123456789\\workspace\\reconstructed\\abi-final-validation-v2\\abi_release\\tests\\test_abi_v2_final_validation.py",
+      "\\\\?\\C:\\tmp\\abi_public_r7_reconstruction_20260830\\long_windows_base_segment_abcdefghijklmnopqrstuvwxyz0123456789\\workspace\\reconstructed\\abi-final-validation-v2\\abi_release\\tests\\test_abi_v2_external_bundle.py"
+    ],
+    "exit_code": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_tail": "",
+    "stdout_sha256": "cfcee7ff9eaba5bb057c92471e356682e6c37d73a18fa92ee5ca3224a9672482",
+    "stdout_tail": ".................                                                        [100%]\n17 passed in 43.28s\n"
+  },
+  "wall_seconds": 488.5287786000117
+}
