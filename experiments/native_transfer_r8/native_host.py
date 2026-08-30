@@ -239,6 +239,14 @@ class FrozenNeuralHost:
         return logits.argmax(dim=-1)
 
     def verify_frozen(self) -> None:
+        adapter = getattr(self, "_generic_adapter_set", None)
+        if adapter is not None:
+            adapter.verify_base_frozen()
+            if any(parameter.requires_grad for parameter in adapter.parameters()):
+                raise NativeHostError(
+                    f"generic adapter remains trainable after freeze: {self.spec.key}"
+                )
+            return
         if any(parameter.requires_grad for parameter in self.model.parameters()):
             raise NativeHostError(f"recipient parameters became trainable: {self.spec.key}")
         if module_sha256(self.model) != self.model_state_sha256:
@@ -301,3 +309,208 @@ class CanonicalLatentBridge(nn.Module):
     def verify_frozen(self) -> None:
         if any(parameter.requires_grad for parameter in self.parameters()):
             raise NativeHostError(f"bridge is trainable after freeze: {self.host_key}")
+
+
+class GenericLoRALinear(nn.Module):
+    """Host-private LoRA inserted into recipient computation before reveal."""
+
+    def __init__(self, base: nn.Linear, *, rank: int) -> None:
+        super().__init__()
+        if not isinstance(base, nn.Linear) or rank <= 0:
+            raise NativeHostError("invalid generic recipient LoRA target")
+        self.base = base
+        for parameter in self.base.parameters():
+            parameter.requires_grad_(False)
+        self.rank = int(rank)
+        self.a = nn.Parameter(torch.empty(base.in_features, self.rank))
+        self.b = nn.Parameter(torch.zeros(self.rank, base.out_features))
+        nn.init.normal_(self.a, mean=0.0, std=0.02)
+
+    def forward(self, inputs: torch.Tensor) -> torch.Tensor:
+        base = self.base(inputs)
+        update = torch.matmul(torch.matmul(inputs.float(), self.a.float()), self.b.float())
+        return base + update.to(base.dtype) / self.rank
+
+
+class GenericRecipientAdapterSet:
+    """Capability-blind LoRA installed inside a frozen recipient.
+
+    These weights are host-private and meta-trained across public capabilities.
+    They never enter a capability package.  The LM head is deliberately excluded
+    so the recipient's unchanged output projection remains causally downstream.
+    """
+
+    def __init__(self, host: FrozenNeuralHost, *, rank: int) -> None:
+        if hasattr(host, "_generic_adapter_set"):
+            raise NativeHostError(f"generic adapter already installed: {host.spec.key}")
+        self.host = host
+        self.expected_base_sha256 = host.model_state_sha256
+        self.modules: dict[str, GenericLoRALinear] = {}
+        excluded = {"lm_head", "embed_out"}
+        targets = [
+            (name, module)
+            for name, module in host.model.named_modules()
+            if isinstance(module, nn.Linear)
+            and name
+            and name.split(".")[-1] not in excluded
+        ]
+        if not targets:
+            raise NativeHostError(f"no generic LoRA targets found: {host.spec.key}")
+        for name, module in targets:
+            replacement = GenericLoRALinear(module, rank=rank).to(module.weight.device)
+            self._replace(name, replacement)
+            self.modules[name] = replacement
+        host._generic_adapter_set = self
+        self.verify_base_frozen()
+
+    def _replace(self, name: str, replacement: nn.Module) -> None:
+        parent = self.host.model
+        pieces = name.split(".")
+        for piece in pieces[:-1]:
+            parent = getattr(parent, piece)
+        setattr(parent, pieces[-1], replacement)
+
+    def parameters(self) -> list[nn.Parameter]:
+        return [
+            parameter
+            for module in self.modules.values()
+            for parameter in (module.a, module.b)
+        ]
+
+    def state(self) -> dict[str, torch.Tensor]:
+        return {
+            f"{name}/{suffix}": parameter.detach().cpu().contiguous()
+            for name, module in sorted(self.modules.items())
+            for suffix, parameter in (("lora_a", module.a), ("lora_b", module.b))
+        }
+
+    def load_state(self, state: Mapping[str, torch.Tensor]) -> None:
+        expected = {
+            f"{name}/{suffix}"
+            for name in self.modules
+            for suffix in ("lora_a", "lora_b")
+        }
+        if set(state) != expected:
+            raise NativeHostError("generic recipient adapter tensor inventory changed")
+        with torch.no_grad():
+            for name, module in self.modules.items():
+                module.a.copy_(state[f"{name}/lora_a"].to(module.a))
+                module.b.copy_(state[f"{name}/lora_b"].to(module.b))
+
+    def base_state_sha256(self) -> str:
+        normalized: dict[str, torch.Tensor] = {}
+        for name, value in self.host.model.state_dict().items():
+            matched = False
+            for module_name in self.modules:
+                if name in {f"{module_name}.a", f"{module_name}.b"}:
+                    matched = True
+                    break
+                prefix = f"{module_name}.base."
+                if name.startswith(prefix):
+                    normalized[f"{module_name}." + name.removeprefix(prefix)] = value
+                    matched = True
+                    break
+            if not matched:
+                normalized[name] = value
+        return tensor_state_sha256(normalized)
+
+    def verify_base_frozen(self) -> None:
+        if self.base_state_sha256() != self.expected_base_sha256:
+            raise NativeHostError(
+                f"recipient base state changed after adapter install: {self.host.spec.key}"
+            )
+        for module in self.modules.values():
+            if any(parameter.requires_grad for parameter in module.base.parameters()):
+                raise NativeHostError("recipient base parameter became trainable")
+
+    def freeze(self) -> None:
+        for parameter in self.parameters():
+            parameter.requires_grad_(False)
+
+    def inventory(self) -> dict[str, Any]:
+        rows = [
+            {
+                "module": name,
+                "rank": module.rank,
+                "input_width": module.a.shape[0],
+                "output_width": module.b.shape[1],
+            }
+            for name, module in sorted(self.modules.items())
+        ]
+        return {
+            "module_count": len(rows),
+            "trainable_parameters": sum(value.numel() for value in self.parameters()),
+            "modules": rows,
+            "inventory_sha256": hashlib.sha256(canonical_json_bytes(rows)).hexdigest(),
+        }
+
+
+class CapabilityConditionedBridge(CanonicalLatentBridge):
+    """Static package prefix plus a capability-blind in-model LoRA interface.
+
+    The LoRA is trained only on public meta-capabilities.  At evaluation the
+    bridge still receives only the immutable package, never prompts or labels;
+    prompt/package interaction happens in the recipient's own adapted layers.
+    """
+
+    def __init__(self, host: FrozenNeuralHost, *, rank: int) -> None:
+        super().__init__(host)
+        object.__setattr__(self, "_adapters", GenericRecipientAdapterSet(host, rank=rank))
+
+    def parameters(self, recurse: bool = True):  # type: ignore[override]
+        yield from super().parameters(recurse=recurse)
+        yield from self._adapters.parameters()
+
+    def state_dict(self, *args: Any, **kwargs: Any) -> dict[str, torch.Tensor]:  # type: ignore[override]
+        prefix = super().state_dict(*args, **kwargs)
+        return {
+            **{f"prefix/{name}": value for name, value in prefix.items()},
+            **{f"adapter/{name}": value for name, value in self._adapters.state().items()},
+        }
+
+    def load_state_dict(
+        self,
+        state_dict: Mapping[str, torch.Tensor],
+        strict: bool = True,
+        assign: bool = False,
+    ):
+        prefix = {
+            name.removeprefix("prefix/"): value
+            for name, value in state_dict.items()
+            if name.startswith("prefix/")
+        }
+        adapters = {
+            name.removeprefix("adapter/"): value
+            for name, value in state_dict.items()
+            if name.startswith("adapter/")
+        }
+        expected_count = len(prefix) + len(adapters)
+        if strict and expected_count != len(state_dict):
+            raise NativeHostError("unknown capability-conditioned bridge tensor")
+        result = super().load_state_dict(prefix, strict=strict, assign=assign)
+        self._adapters.load_state(adapters)
+        return result
+
+    def freeze(self) -> None:
+        super().freeze()
+        self._adapters.freeze()
+
+    def verify_frozen(self) -> None:
+        super().verify_frozen()
+        self._adapters.verify_base_frozen()
+
+    def adapter_inventory(self) -> dict[str, Any]:
+        return self._adapters.inventory()
+
+
+def build_bridge(
+    host: FrozenNeuralHost, config: Mapping[str, Any]
+) -> CanonicalLatentBridge:
+    method = str(config["training"].get("bridge_method", "static_prefix"))
+    if method == "static_prefix":
+        return CanonicalLatentBridge(host)
+    if method == "meta_trained_lora_prefix":
+        return CapabilityConditionedBridge(
+            host, rank=int(config["training"]["bridge_lora_rank"])
+        )
+    raise NativeHostError(f"unknown bridge method: {method}")

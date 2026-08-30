@@ -66,6 +66,15 @@ reached 100% unseen-depth accuracy. This makes the claim narrower—not broader:
 R8 still has to show that unchanged extracted state creates native behavior in
 three frozen, independently trained general-purpose recipients.
 
+Revision 004 then falsified the original static recipient prefix on the public
+Pythia gate: development and composition remained at eight-way chance even
+though extraction was exact. V6 changes only the host-private generic bridge.
+It adds rank-4 LoRA modules inside every non-head recipient Linear layer and
+meta-trains those modules jointly with the package prefix on public capability
+instances. These modules are frozen before held-out reveal, receive no prompt
+or labels outside normal recipient execution, never enter the capability
+package, and leave the original recipient weights and LM head unchanged.
+
 ## Primary gates
 
 - Eight held-out capability seeds and at least 512 evaluation rows each.

@@ -23,8 +23,10 @@ from .capability_generator import (
 from .native_host import (
     SPECS,
     CanonicalLatentBridge,
+    CapabilityConditionedBridge,
     FrozenNeuralHost,
     NativeHostError,
+    build_bridge,
     module_sha256,
     sha256_file,
 )
@@ -206,7 +208,7 @@ def train(
         for pair_index, (first, second) in enumerate(development_pairs)
     ]
     host = FrozenNeuralHost(SPECS[host_key], device=config["training"]["device"])
-    bridge = CanonicalLatentBridge(host).to(host.device).train()
+    bridge = build_bridge(host, config).to(host.device).train()
     optimizer = torch.optim.AdamW(
         bridge.parameters(),
         lr=float(config["training"]["bridge_learning_rate"]),
@@ -318,6 +320,12 @@ def train(
             "parameters": sum(parameter.numel() for parameter in bridge.parameters()),
             "prompt_inputs": 0,
             "answer_inputs": 0,
+            "method": config["training"].get("bridge_method", "static_prefix"),
+            "adapter_inventory": (
+                bridge.adapter_inventory()
+                if isinstance(bridge, CapabilityConditionedBridge)
+                else None
+            ),
         },
         "training": {
             "optimizer_steps": steps,
