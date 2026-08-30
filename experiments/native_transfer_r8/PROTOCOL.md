@@ -92,6 +92,12 @@ The paired table at batch 16 also thrashed under the same resident 19 GB Ollama
 allocation. V9 is the final memory-schedule retry: batch 4, 6,400 steps, and
 25,600 public observations. This alters neither architecture nor evidence gate.
 
+Revision 008 completed that schedule but all public Pythia development results
+remained at chance. V10 ends the static-prefix branch. A package-only
+hypernetwork now gates low-rank modules inside recipient layers. It cannot see
+the prompt or answer; only the recipient forward pass combines its resulting
+weights with prompt tokens. Package bytes and every held-out gate stay fixed.
+
 ## Primary gates
 
 - Eight held-out capability seeds and at least 512 evaluation rows each.

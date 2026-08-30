@@ -727,6 +727,185 @@ class PairedCapabilityBridge(nn.Module):
         return self._adapters.inventory()
 
 
+class DynamicLoRALinear(nn.Module):
+    """Package-modulated LoRA that executes inside a recipient Linear layer."""
+
+    def __init__(self, base: nn.Linear, *, rank: int, latent_width: int) -> None:
+        super().__init__()
+        self.base = base
+        for parameter in self.base.parameters():
+            parameter.requires_grad_(False)
+        self.rank = int(rank)
+        self.latent_width = int(latent_width)
+        self.a = nn.Parameter(torch.empty(base.in_features, self.rank))
+        self.b = nn.Parameter(torch.zeros(self.rank, base.out_features))
+        self.gate_projection = nn.Parameter(
+            torch.empty(self.latent_width, self.rank)
+        )
+        nn.init.normal_(self.a, mean=0.0, std=0.02)
+        nn.init.normal_(self.gate_projection, mean=0.0, std=0.02)
+        self.context: torch.Tensor | None = None
+
+    def set_context(self, latent: torch.Tensor | None) -> None:
+        self.context = None if latent is None else latent
+
+    def forward(self, inputs: torch.Tensor) -> torch.Tensor:
+        base = self.base(inputs)
+        hidden = torch.matmul(inputs.float(), self.a.float())
+        if self.context is None:
+            gates = torch.ones(
+                (inputs.shape[0], self.rank), dtype=torch.float32, device=inputs.device
+            )
+        else:
+            context = self.context.to(device=inputs.device, dtype=torch.float32)
+            if context.shape[0] == 1 and inputs.shape[0] != 1:
+                context = context.expand(inputs.shape[0], -1)
+            if context.shape != (inputs.shape[0], self.latent_width):
+                raise NativeHostError("dynamic package context batch changed")
+            centered = context - (1.0 / MODULUS)
+            gates = 1.0 + torch.tanh(centered @ self.gate_projection.float())
+        gate_shape = (gates.shape[0],) + (1,) * (hidden.ndim - 2) + (self.rank,)
+        update = torch.matmul(hidden * gates.reshape(gate_shape), self.b.float())
+        return base + update.to(base.dtype) / self.rank
+
+
+class DynamicRecipientAdapterSet(GenericRecipientAdapterSet):
+    """Host-private package hypernetwork over in-model low-rank adapters."""
+
+    def __init__(self, host: FrozenNeuralHost, *, rank: int) -> None:
+        if hasattr(host, "_generic_adapter_set"):
+            raise NativeHostError(f"generic adapter already installed: {host.spec.key}")
+        self.host = host
+        self.expected_base_sha256 = host.model_state_sha256
+        self.modules: dict[str, DynamicLoRALinear] = {}
+        excluded = {"lm_head", "embed_out"}
+        targets = [
+            (name, module)
+            for name, module in host.model.named_modules()
+            if isinstance(module, nn.Linear)
+            and name
+            and name.split(".")[-1] not in excluded
+        ]
+        for name, module in targets:
+            replacement = DynamicLoRALinear(
+                module, rank=rank, latent_width=len(OPERATORS) * MODULUS * MODULUS
+            ).to(module.weight.device)
+            self._replace(name, replacement)
+            self.modules[name] = replacement
+        if not self.modules:
+            raise NativeHostError(f"no dynamic LoRA targets found: {host.spec.key}")
+        host._generic_adapter_set = self
+        self.verify_base_frozen()
+
+    def parameters(self) -> list[nn.Parameter]:
+        return [
+            parameter
+            for module in self.modules.values()
+            for parameter in (module.a, module.b, module.gate_projection)
+        ]
+
+    def set_context(self, latent: torch.Tensor | None) -> None:
+        flattened = None if latent is None else latent.float().reshape(latent.shape[0], -1)
+        for module in self.modules.values():
+            module.set_context(flattened)
+
+    def state(self) -> dict[str, torch.Tensor]:
+        return {
+            f"{name}/{suffix}": parameter.detach().cpu().contiguous()
+            for name, module in sorted(self.modules.items())
+            for suffix, parameter in (
+                ("lora_a", module.a),
+                ("lora_b", module.b),
+                ("gate_projection", module.gate_projection),
+            )
+        }
+
+    def load_state(self, state: Mapping[str, torch.Tensor]) -> None:
+        expected = {
+            f"{name}/{suffix}"
+            for name in self.modules
+            for suffix in ("lora_a", "lora_b", "gate_projection")
+        }
+        if set(state) != expected:
+            raise NativeHostError("dynamic recipient adapter tensor inventory changed")
+        with torch.no_grad():
+            for name, module in self.modules.items():
+                module.a.copy_(state[f"{name}/lora_a"].to(module.a))
+                module.b.copy_(state[f"{name}/lora_b"].to(module.b))
+                module.gate_projection.copy_(
+                    state[f"{name}/gate_projection"].to(module.gate_projection)
+                )
+
+    def base_state_sha256(self) -> str:
+        normalized: dict[str, torch.Tensor] = {}
+        excluded_suffixes = ("a", "b", "gate_projection")
+        for name, value in self.host.model.state_dict().items():
+            matched = False
+            for module_name in self.modules:
+                if name in {f"{module_name}.{suffix}" for suffix in excluded_suffixes}:
+                    matched = True
+                    break
+                prefix = f"{module_name}.base."
+                if name.startswith(prefix):
+                    normalized[f"{module_name}." + name.removeprefix(prefix)] = value
+                    matched = True
+                    break
+            if not matched:
+                normalized[name] = value
+        return tensor_state_sha256(normalized)
+
+    def inventory(self) -> dict[str, Any]:
+        value = super().inventory()
+        value["conditioning"] = "package-only per-example low-rank gates"
+        value["latent_width"] = len(OPERATORS) * MODULUS * MODULUS
+        value["trainable_parameters"] = sum(
+            parameter.numel() for parameter in self.parameters()
+        )
+        return value
+
+
+class DynamicCapabilityBridge(PairedCapabilityBridge):
+    """Paired package prefix plus package-only dynamic in-model modulation."""
+
+    def __init__(self, host: FrozenNeuralHost, *, rank: int) -> None:
+        nn.Module.__init__(self)
+        self.host_key = host.spec.key
+        self.hidden_width = host.hidden_width
+        self.slot_codes = nn.Parameter(
+            torch.empty(len(OPERATORS) * MODULUS, self.hidden_width)
+        )
+        self.value_codes = nn.Parameter(torch.empty(MODULUS, self.hidden_width))
+        self.role_offsets = nn.Parameter(torch.zeros(2, self.hidden_width))
+        with torch.no_grad():
+            for operator_index, operator in enumerate(OPERATORS):
+                for source in range(MODULUS):
+                    ids = host.tokenizer.encode(
+                        f" {operator} {source}", add_special_tokens=False
+                    )
+                    slot = operator_index * MODULUS + source
+                    self.slot_codes[slot].copy_(
+                        host.embedding(torch.tensor(ids, device=host.device))
+                        .detach()
+                        .float()
+                        .mean(dim=0)
+                        .to(self.slot_codes)
+                    )
+            values = host.embedding(
+                torch.tensor(host.target_token_ids, device=host.device)
+            ).detach().float()
+            self.value_codes.copy_(values.to(self.value_codes))
+        object.__setattr__(self, "_adapters", DynamicRecipientAdapterSet(host, rank=rank))
+
+    def forward(self, latent: torch.Tensor) -> torch.Tensor:
+        if latent.ndim == 3:
+            latent = latent.unsqueeze(0)
+        self._adapters.set_context(latent)
+        return super().forward(latent)
+
+    def clear_context(self) -> None:
+        self._adapters.set_context(None)
+
+
 def build_bridge(
     host: FrozenNeuralHost, config: Mapping[str, Any]
 ) -> CanonicalLatentBridge:
@@ -743,6 +922,10 @@ def build_bridge(
         )
     if method == "paired_table_lora":
         return PairedCapabilityBridge(
+            host, rank=int(config["training"]["bridge_lora_rank"])
+        )
+    if method == "dynamic_package_lora":
+        return DynamicCapabilityBridge(
             host, rank=int(config["training"]["bridge_lora_rank"])
         )
     raise NativeHostError(f"unknown bridge method: {method}")
