@@ -23,7 +23,6 @@ from .capability_generator import (
 from .native_host import (
     SPECS,
     CanonicalLatentBridge,
-    CapabilityConditionedBridge,
     FrozenNeuralHost,
     NativeHostError,
     build_bridge,
@@ -164,7 +163,10 @@ def train(
             capability,
             split="bridge_meta_train",
             rows=int(split["source_train_rows_per_capability"]),
-            depths=config["capability_family"]["source_train_depths"],
+            depths=config["training"].get(
+                "bridge_meta_train_depths",
+                config["capability_family"]["source_train_depths"],
+            ),
             seed=int(config["training"]["seed"]) + 2003 * index,
         )
         for index, capability in enumerate(meta_capabilities)
@@ -188,8 +190,14 @@ def train(
             meta_capabilities[second],
             split="bridge_meta_composition",
             rows=int(split["source_train_rows_per_capability"]),
-            first_depths=config["capability_family"]["composition_train_depths"],
-            second_depths=config["capability_family"]["composition_train_depths"],
+            first_depths=config["training"].get(
+                "bridge_meta_composition_depths",
+                config["capability_family"]["composition_train_depths"],
+            ),
+            second_depths=config["training"].get(
+                "bridge_meta_composition_depths",
+                config["capability_family"]["composition_train_depths"],
+            ),
             seed=int(config["training"]["seed"]) + 6007 * pair_index,
         )
         for pair_index, (first, second) in enumerate(meta_pairs)
@@ -323,7 +331,7 @@ def train(
             "method": config["training"].get("bridge_method", "static_prefix"),
             "adapter_inventory": (
                 bridge.adapter_inventory()
-                if isinstance(bridge, CapabilityConditionedBridge)
+                if hasattr(bridge, "adapter_inventory")
                 else None
             ),
         },

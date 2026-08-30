@@ -503,6 +503,131 @@ class CapabilityConditionedBridge(CanonicalLatentBridge):
         return self._adapters.inventory()
 
 
+class StructuredCapabilityBridge(nn.Module):
+    """Expose each canonical transition as four ordered neural table tokens.
+
+    The layout is host-private but capability-independent.  It converts no
+    prompt and computes no answer: each package row becomes an operator token,
+    source-state token, relation token, and expected target-state embedding.
+    The recipient's meta-trained internal adapters must learn how to use that
+    table while processing the ordinary prompt.
+    """
+
+    def __init__(self, host: FrozenNeuralHost, *, rank: int) -> None:
+        super().__init__()
+        self.host_key = host.spec.key
+        self.hidden_width = host.hidden_width
+        self.operator_codes = nn.Parameter(torch.empty(len(OPERATORS), self.hidden_width))
+        self.source_codes = nn.Parameter(torch.empty(MODULUS, self.hidden_width))
+        self.relation_code = nn.Parameter(torch.empty(self.hidden_width))
+        self.value_codes = nn.Parameter(torch.empty(MODULUS, self.hidden_width))
+        self.role_offsets = nn.Parameter(torch.zeros(4, self.hidden_width))
+        with torch.no_grad():
+            for index, operator in enumerate(OPERATORS):
+                ids = host.tokenizer.encode(f" {operator}", add_special_tokens=False)
+                self.operator_codes[index].copy_(
+                    host.embedding(torch.tensor(ids, device=host.device))
+                    .detach()
+                    .float()
+                    .mean(dim=0)
+                    .to(self.operator_codes)
+                )
+            values = host.embedding(
+                torch.tensor(host.target_token_ids, device=host.device)
+            ).detach().float()
+            self.source_codes.copy_(values.to(self.source_codes))
+            self.value_codes.copy_(values.to(self.value_codes))
+            relation_ids = host.tokenizer.encode(" ->", add_special_tokens=False)
+            self.relation_code.copy_(
+                host.embedding(torch.tensor(relation_ids, device=host.device))
+                .detach()
+                .float()
+                .mean(dim=0)
+                .to(self.relation_code)
+            )
+        object.__setattr__(self, "_adapters", GenericRecipientAdapterSet(host, rank=rank))
+
+    def forward(self, latent: torch.Tensor) -> torch.Tensor:
+        if latent.ndim == 3:
+            latent = latent.unsqueeze(0)
+        expected = (len(OPERATORS), MODULUS, MODULUS)
+        if tuple(latent.shape[1:]) != expected or not torch.isfinite(latent).all():
+            raise NativeHostError("structured canonical latent changed")
+        probabilities = latent.float().clamp_min(0)
+        probabilities = probabilities / probabilities.sum(dim=-1, keepdim=True).clamp_min(
+            torch.finfo(torch.float32).tiny
+        )
+        batch = latent.shape[0]
+        operators = (
+            self.operator_codes[:, None, :]
+            .expand(len(OPERATORS), MODULUS, self.hidden_width)
+            .reshape(1, -1, self.hidden_width)
+            .expand(batch, -1, -1)
+        )
+        sources = (
+            self.source_codes[None, :, :]
+            .expand(len(OPERATORS), MODULUS, self.hidden_width)
+            .reshape(1, -1, self.hidden_width)
+            .expand(batch, -1, -1)
+        )
+        relations = self.relation_code.reshape(1, 1, -1).expand(
+            batch, len(OPERATORS) * MODULUS, -1
+        )
+        values = torch.einsum(
+            "bosv,vh->bosh", probabilities, self.value_codes.float()
+        ).reshape(batch, -1, self.hidden_width)
+        rows = torch.stack((operators, sources, relations, values), dim=2)
+        rows = rows + self.role_offsets.reshape(1, 1, 4, -1)
+        return rows.reshape(batch, -1, self.hidden_width).to(latent.device)
+
+    def parameters(self, recurse: bool = True):  # type: ignore[override]
+        yield from super().parameters(recurse=recurse)
+        yield from self._adapters.parameters()
+
+    def state_dict(self, *args: Any, **kwargs: Any) -> dict[str, torch.Tensor]:  # type: ignore[override]
+        prefix = super().state_dict(*args, **kwargs)
+        return {
+            **{f"prefix/{name}": value for name, value in prefix.items()},
+            **{f"adapter/{name}": value for name, value in self._adapters.state().items()},
+        }
+
+    def load_state_dict(
+        self,
+        state_dict: Mapping[str, torch.Tensor],
+        strict: bool = True,
+        assign: bool = False,
+    ):
+        prefix = {
+            name.removeprefix("prefix/"): value
+            for name, value in state_dict.items()
+            if name.startswith("prefix/")
+        }
+        adapters = {
+            name.removeprefix("adapter/"): value
+            for name, value in state_dict.items()
+            if name.startswith("adapter/")
+        }
+        if strict and len(prefix) + len(adapters) != len(state_dict):
+            raise NativeHostError("unknown structured bridge tensor")
+        result = super().load_state_dict(prefix, strict=strict, assign=assign)
+        self._adapters.load_state(adapters)
+        return result
+
+    def freeze(self) -> None:
+        self.eval()
+        for parameter in super().parameters():
+            parameter.requires_grad_(False)
+        self._adapters.freeze()
+
+    def verify_frozen(self) -> None:
+        if any(parameter.requires_grad for parameter in self.parameters()):
+            raise NativeHostError(f"bridge is trainable after freeze: {self.host_key}")
+        self._adapters.verify_base_frozen()
+
+    def adapter_inventory(self) -> dict[str, Any]:
+        return self._adapters.inventory()
+
+
 def build_bridge(
     host: FrozenNeuralHost, config: Mapping[str, Any]
 ) -> CanonicalLatentBridge:
@@ -511,6 +636,10 @@ def build_bridge(
         return CanonicalLatentBridge(host)
     if method == "meta_trained_lora_prefix":
         return CapabilityConditionedBridge(
+            host, rank=int(config["training"]["bridge_lora_rank"])
+        )
+    if method == "structured_table_lora":
+        return StructuredCapabilityBridge(
             host, rank=int(config["training"]["bridge_lora_rank"])
         )
     raise NativeHostError(f"unknown bridge method: {method}")

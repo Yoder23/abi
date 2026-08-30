@@ -75,6 +75,13 @@ instances. These modules are frozen before held-out reveal, receive no prompt
 or labels outside normal recipient execution, never enter the capability
 package, and leave the original recipient weights and LM head unchanged.
 
+Revision 005 also remained at chance, including on a freshly sampled public
+meta-training capability. V7 targets the measured information-layout defect:
+each transition is exposed as four ordered neural tokens (operator, source,
+relation, target), and the capability-blind bridge curriculum covers the full
+public task-family depth range. The bridge still receives no prompt; the normal
+recipient forward pass must combine the prompt with the package table.
+
 ## Primary gates
 
 - Eight held-out capability seeds and at least 512 evaluation rows each.
