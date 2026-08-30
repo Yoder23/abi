@@ -282,6 +282,48 @@ def _teacher_probabilities(
 ) -> list[dict[str, list[float]]]:
     source_dir = campaign_root / "heldout_source"
     source_receipt = _json(source_dir / "receipt.json")
+    if config["training"].get("source_capability_method") == "neural_transition_adapter":
+        from .source_transition import (
+            NeuralTransitionSource,
+            load_controller_state,
+            unpack_controller_state,
+        )
+
+        packed_raw = load_file(
+            str(source_dir / source_receipt["states"]["path"]), device="cpu"
+        )
+        packed = {
+            name.removeprefix("after/"): value
+            for name, value in packed_raw.items()
+            if name.startswith("after/")
+        }
+        source = FrozenNeuralHost(SPECS["source"], device=config["training"]["device"])
+        controller = NeuralTransitionSource(
+            source, seed=int(config["training"]["seed"])
+        ).to(source.device)
+        result = []
+        batch_size = int(config["training"]["batch_size"])
+        with torch.inference_mode():
+            for index, rows in enumerate(train_rows):
+                load_controller_state(controller, unpack_controller_state(packed, index))
+                values = {}
+                for start in range(0, len(rows), batch_size):
+                    batch = rows[start : start + batch_size]
+                    logits = controller.logits(
+                        [str(row["prompt"]) for row in batch],
+                        [int(row["start"]) for row in batch],
+                        [[int(item) for item in row["program"]] for row in batch],
+                    )
+                    probabilities = source.canonical_probabilities(logits)
+                    for row, probability in zip(batch, probabilities):
+                        values[str(row["row_id"])] = [
+                            float(value) for value in probability.cpu().tolist()
+                        ]
+                result.append(values)
+        del source, controller
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+        return result
     prefixes = load_file(
         str(source_dir / source_receipt["prefixes"]["path"]), device="cpu"
     )["after"]

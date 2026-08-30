@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 import platform
 import zlib
 from pathlib import Path
@@ -71,17 +72,32 @@ def account(config_path: Path, campaign_root: Path, output: Path) -> dict[str, A
     if len(capabilities) != int(config["splits"]["heldout_capabilities"]):
         raise AccountingError("held-out capability count changed")
 
-    prefix_path = campaign_root / "heldout_source" / source["prefixes"]["path"]
-    if sha256_file(prefix_path) != source["prefixes"]["sha256"]:
-        raise AccountingError("held-out source prefix tensor changed")
-    with safe_open(str(prefix_path), framework="pt", device="cpu") as handle:
-        prefix_shape = tuple(int(value) for value in handle.get_slice("after").get_shape())
-    if prefix_shape[0] != len(capabilities) or prefix_shape[1] != int(
-        config["training"]["source_prefix_length"]
-    ):
-        raise AccountingError("held-out source prefix shape changed")
-    # One float32 prefix slice is the learned per-capability source delta.
-    teacher_delta_bytes = prefix_shape[1] * prefix_shape[2] * 4
+    if "states" in source:
+        state_path = campaign_root / "heldout_source" / source["states"]["path"]
+        if sha256_file(state_path) != source["states"]["sha256"]:
+            raise AccountingError("held-out source state tensor changed")
+        with safe_open(str(state_path), framework="pt", device="cpu") as handle:
+            keys = [
+                key
+                for key in handle.keys()
+                if key.startswith("after/capability_000/")
+            ]
+            teacher_delta_bytes = sum(
+                math.prod(handle.get_slice(key).get_shape()) * 4 for key in keys
+            )
+        if not keys:
+            raise AccountingError("held-out source transition state is empty")
+    else:
+        prefix_path = campaign_root / "heldout_source" / source["prefixes"]["path"]
+        if sha256_file(prefix_path) != source["prefixes"]["sha256"]:
+            raise AccountingError("held-out source prefix tensor changed")
+        with safe_open(str(prefix_path), framework="pt", device="cpu") as handle:
+            prefix_shape = tuple(int(value) for value in handle.get_slice("after").get_shape())
+        if prefix_shape[0] != len(capabilities) or prefix_shape[1] != int(
+            config["training"]["source_prefix_length"]
+        ):
+            raise AccountingError("held-out source prefix shape changed")
+        teacher_delta_bytes = prefix_shape[1] * prefix_shape[2] * 4
     bridge_rows = {}
     bridge_total = 0
     bridge_wall = 0.0
@@ -108,7 +124,19 @@ def account(config_path: Path, campaign_root: Path, output: Path) -> dict[str, A
         str(row["capability_id"]): row for row in source.get("source_evaluation", [])
     }
     source_training = source.get("source_training", {})
-    source_wall_total = float(source_training.get("wall_seconds", 0.0))
+    if isinstance(source_training, list):
+        source_training_by_capability = {
+            str(row["capability_id"]): row for row in source_training
+        }
+        source_wall_total = sum(
+            float(part.get("base_logit_cache_seconds", 0.0))
+            + float(part.get("optimization_wall_seconds", 0.0))
+            for row in source_training
+            for part in (row["after"], row["permuted_teacher_delta"])
+        )
+    else:
+        source_training_by_capability = {}
+        source_wall_total = float(source_training.get("wall_seconds", 0.0))
     per_capability = []
     for index, capability in enumerate(capabilities):
         train_rows = generate_rows(
@@ -138,8 +166,13 @@ def account(config_path: Path, campaign_root: Path, output: Path) -> dict[str, A
                 "teacher_parameter_delta_float32_bytes": teacher_delta_bytes,
                 "capability_packages": packages,
                 "per_capability_source_optimizer_steps": int(
-                    source_training.get("optimizer_steps", 0)
-                ) // len(capabilities),
+                    source_training_by_capability[capability.capability_id]["after"][
+                        "optimizer_steps"
+                    ]
+                    if source_training_by_capability
+                    else int(source_training.get("optimizer_steps", 0))
+                    // len(capabilities)
+                ),
                 "per_capability_source_training_wall_seconds_allocated": source_wall_total
                 / len(capabilities),
                 "recipient_specific_optimizer_steps": 0,

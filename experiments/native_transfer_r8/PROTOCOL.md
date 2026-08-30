@@ -48,6 +48,24 @@ the sole active preregistration: it uses a fresh unrevealed commitment, unique
 JSON keys, and a 128-token runtime limit. The disqualified drafts remain as
 negative protocol history.
 
+Public revision 002 then falsified the source soft-prefix acquisition method:
+most public capabilities remained near eight-way chance at unseen composition
+depths. That result is preserved. V4 changes only source capability acquisition
+to rank-8 LoRA on all 24 frozen-base GPT-2 Conv1D modules. Each capability gets
+an isolated adapter state; the source base remains byte-identical. The frozen
+extractor, canonical package, recipient path, held-out commitment, and every
+scientific threshold remain unchanged.
+
+A public rank-8 LoRA pilot then fit shallow examples while degrading unseen
+depth-4--7 accuracy from 2.7% to 4.3%, so the full LoRA sweep was not launched.
+V5 uses a disclosed differentiable stochastic-transition adapter as the source
+model's family-specific neural inductive bias. It is trained only from examples,
+receives no hidden rule table, composes learned stochastic matrices, and adds
+its state through the source model's canonical-token logits. The public pilot
+reached 100% unseen-depth accuracy. This makes the claim narrower—not broader:
+R8 still has to show that unchanged extracted state creates native behavior in
+three frozen, independently trained general-purpose recipients.
+
 ## Primary gates
 
 - Eight held-out capability seeds and at least 512 evaluation rows each.

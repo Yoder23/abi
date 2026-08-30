@@ -66,11 +66,23 @@ def freeze(root: Path, config_path: Path, campaign_root: Path) -> dict[str, Any]
         raise FreezeError("R8 code must be committed and clean before temporal freeze")
     source_dir = campaign_root / "pre_reveal/source_public"
     extraction_dir = campaign_root / "pre_reveal/meta_extraction"
+    source_receipt = _json(source_dir / "receipt.json")
+    source_artifact = next(
+        (
+            source_receipt[key]["path"]
+            for key in ("states", "adapters", "prefixes")
+            if key in source_receipt
+        ),
+        None,
+    )
+    if source_artifact is None:
+        raise FreezeError("source capability artifact receipt changed")
+    extraction_receipt = _json(extraction_dir / "receipt.json")
     component_paths = [
         source_dir / "receipt.json",
-        source_dir / "meta_source_prefixes.safetensors",
+        source_dir / source_artifact,
         extraction_dir / "receipt.json",
-        extraction_dir / "meta_canonical_latents.safetensors",
+        extraction_dir / extraction_receipt["latents"]["path"],
     ]
     bridge_receipts = {}
     for host in sorted(config["models"]["recipients"]):

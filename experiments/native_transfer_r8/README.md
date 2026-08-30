@@ -25,7 +25,7 @@ The campaign is staged:
 Until all primary gates pass across the pinned open-weight recipient families,
 the controlling answer is `NOT YET ESTABLISHED`.
 
-See `PROTOCOL.md` and `configs/preregistered_v3.json` before running anything.
+See `PROTOCOL.md` and `configs/preregistered_v5.json` before running anything.
 The preserved v1 draft requested more unique depth-1--3 source rows than exist;
 v2 records that pre-reveal feasibility correction. V1/v2 are disqualified from
 use because their held-out secret appeared in a test; v3 commits a fresh secret
@@ -34,16 +34,18 @@ that is not present anywhere in the repository. No gate was changed.
 ## Execution order
 
 Use a new immutable revision directory. The registered first run uses
-`results/native_transfer_r8/revision_002`. Revision 001 contains only the
-preserved preflight from before the prompt-length truncation defect was found.
+`results/native_transfer_r8/revision_004`. Revision 001 contains only the
+preserved preflight from before the prompt-length truncation defect was found;
+revision 002 preserves the failed public soft-prefix source experiment, and
+revision 003 records the failed source-LoRA pilot.
 
 ```powershell
-$config = "experiments/native_transfer_r8/configs/preregistered_v3.json"
-$campaign = "results/native_transfer_r8/revision_002"
+$config = "experiments/native_transfer_r8/configs/preregistered_v5.json"
+$campaign = "results/native_transfer_r8/revision_004"
 
 python -B -m experiments.native_transfer_r8.environment_probe --config $config --output "$campaign/preflight/environment.json"
-python -B -m experiments.native_transfer_r8.train_source --config $config --output "$campaign/pre_reveal/source_public"
-python -B -m experiments.native_transfer_r8.extract_capability --config $config --source-dir "$campaign/pre_reveal/source_public" --output "$campaign/pre_reveal/meta_extraction"
+python -B -m experiments.native_transfer_r8.train_source_transition --config $config --output "$campaign/pre_reveal/source_public"
+python -B -m experiments.native_transfer_r8.extract_capability_transition --config $config --source-dir "$campaign/pre_reveal/source_public" --output "$campaign/pre_reveal/meta_extraction"
 python -B -m experiments.native_transfer_r8.train_meta_interface --config $config --extraction-dir "$campaign/pre_reveal/meta_extraction" --campaign-root $campaign --host qwen2 --output "$campaign/pre_reveal/bridges/qwen2"
 python -B -m experiments.native_transfer_r8.train_meta_interface --config $config --extraction-dir "$campaign/pre_reveal/meta_extraction" --campaign-root $campaign --host pythia --output "$campaign/pre_reveal/bridges/pythia"
 python -B -m experiments.native_transfer_r8.train_meta_interface --config $config --extraction-dir "$campaign/pre_reveal/meta_extraction" --campaign-root $campaign --host t5 --output "$campaign/pre_reveal/bridges/t5"

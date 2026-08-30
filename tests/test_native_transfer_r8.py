@@ -26,10 +26,11 @@ from experiments.native_transfer_r8.native_host import (
 )
 from experiments.native_transfer_r8.recipient_worker import _random_latent
 from experiments.native_transfer_r8.run_baselines import DenseLinearBridge, LoRALinear
+from experiments.native_transfer_r8.source_transition import NeuralTransitionSource
 from experiments.native_transfer_r8.verify import R8VerificationError, verify
 
 ROOT = Path(__file__).resolve().parents[1]
-CONFIG = ROOT / "experiments/native_transfer_r8/configs/preregistered_v3.json"
+CONFIG = ROOT / "experiments/native_transfer_r8/configs/preregistered_v5.json"
 TEST_SECRET = "11" * 32
 TEST_COMMITMENT = hashlib.sha256(bytes.fromhex(TEST_SECRET)).hexdigest()
 
@@ -53,7 +54,7 @@ def test_preregistration_locks_primary_scientific_depth() -> None:
     assert value["splits"]["evaluation_rows_per_capability"] >= 512
     assert value["gates"]["recipient_families_minimum"] == 3
     assert len(value["models"]["recipients"]) == 3
-    assert value["supersedes"] == "preregistered_v2.json"
+    assert value["supersedes"] == "preregistered_v4.json"
     assert value["amendment"]["scientific_thresholds_changed"] is False
     assert value["training"]["maximum_prompt_tokens"] == MAXIMUM_PROMPT_TOKENS
     schema = json.loads(
@@ -207,3 +208,16 @@ def test_random_package_control_preserves_empirical_value_distribution() -> None
     assert torch.equal(torch.sort(latent.flatten()).values, torch.sort(randomized.flatten()).values)
     assert torch.allclose(randomized.sum(dim=-1), torch.ones(3, 8))
     assert not torch.equal(latent, randomized)
+
+
+def test_neural_transition_source_composes_learned_state_without_rule_input() -> None:
+    controller = NeuralTransitionSource(_DummyHost(), seed=1)
+    with torch.no_grad():
+        controller.transition_logits.fill_(-20.0)
+        offsets = (1, 3, 5)
+        for operator, offset in enumerate(offsets):
+            for start in range(8):
+                controller.transition_logits[operator, start, (start + offset) % 8] = 20.0
+    state = controller.state_distribution([2], [[0, 1, 2, 0]])
+    assert state.argmax(dim=-1).item() == (2 + 1 + 3 + 5 + 1) % 8
+    assert controller.schema()["hidden_rule_inputs"] == 0
