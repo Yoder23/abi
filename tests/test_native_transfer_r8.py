@@ -20,6 +20,7 @@ from experiments.native_transfer_r8.extract_capability import (
 )
 from experiments.native_transfer_r8.freeze_campaign import FreezeError, freeze
 from experiments.native_transfer_r8.native_host import CanonicalLatentBridge
+from experiments.native_transfer_r8.recipient_worker import _random_latent
 from experiments.native_transfer_r8.run_baselines import DenseLinearBridge, LoRALinear
 from experiments.native_transfer_r8.verify import R8VerificationError, verify
 
@@ -180,3 +181,11 @@ def test_baseline_adapters_are_neural_and_leave_lora_base_unchanged() -> None:
 def test_verifier_fails_closed_without_raw_campaign_evidence(tmp_path: Path) -> None:
     with pytest.raises(R8VerificationError):
         verify(ROOT, CONFIG, tmp_path / "missing-campaign")
+
+
+def test_random_package_control_preserves_empirical_value_distribution() -> None:
+    latent = torch.softmax(torch.arange(192, dtype=torch.float32).reshape(3, 8, 8), dim=-1)
+    randomized = _random_latent(latent, "heldout-test")
+    assert torch.equal(torch.sort(latent.flatten()).values, torch.sort(randomized.flatten()).values)
+    assert torch.allclose(randomized.sum(dim=-1), torch.ones(3, 8))
+    assert not torch.equal(latent, randomized)

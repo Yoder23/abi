@@ -9,7 +9,6 @@ import argparse
 import hashlib
 import json
 import os
-import random
 import socket
 import time
 from pathlib import Path
@@ -123,13 +122,21 @@ def _disable_network() -> None:
 
 
 def _random_latent(reference: torch.Tensor, capability_id: str) -> torch.Tensor:
-    generator = random.Random(
-        hashlib.sha256(f"r8-random:{capability_id}".encode("utf-8")).hexdigest()
+    seed = int.from_bytes(
+        hashlib.sha256(f"r8-random:{capability_id}".encode("utf-8")).digest()[:8],
+        "big",
     )
-    values = torch.tensor(
-        [generator.random() for _ in range(reference.numel())], dtype=torch.float32
-    ).reshape(reference.shape)
-    return values / values.sum(dim=-1, keepdim=True)
+    generator = torch.Generator(device="cpu")
+    generator.manual_seed(seed)
+    flat = reference.reshape(-1, 8)
+    row_order = torch.randperm(flat.shape[0], generator=generator)
+    rows = flat.index_select(0, row_order).clone()
+    for index in range(rows.shape[0]):
+        columns = torch.randperm(8, generator=generator)
+        rows[index] = rows[index].index_select(0, columns)
+    # Exact flattened values and per-row normalization are preserved while
+    # every relational association is independently randomized.
+    return rows.reshape(reference.shape)
 
 
 def _shuffled_latent(reference: torch.Tensor, capability_id: str) -> torch.Tensor:
