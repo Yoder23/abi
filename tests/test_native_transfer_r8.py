@@ -26,8 +26,12 @@ from experiments.native_transfer_r8.native_host import (
 )
 from experiments.native_transfer_r8.recipient_worker import _random_latent
 from experiments.native_transfer_r8.run_baselines import DenseLinearBridge, LoRALinear
+from experiments.native_transfer_r8.run_public_recipient_gate import (
+    CONDITIONS as PUBLIC_GATE_CONDITIONS,
+)
 from experiments.native_transfer_r8.source_transition import NeuralTransitionSource
 from experiments.native_transfer_r8.verify import R8VerificationError, verify
+from experiments.native_transfer_r8.verify_public_gate import _bootstrap
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "experiments/native_transfer_r8/configs/preregistered_v10.json"
@@ -224,3 +228,17 @@ def test_neural_transition_source_composes_learned_state_without_rule_input() ->
     state = controller.state_distribution([2], [[0, 1, 2, 0]])
     assert state.argmax(dim=-1).item() == (2 + 1 + 3 + 5 + 1) % 8
     assert controller.schema()["hidden_rule_inputs"] == 0
+
+
+def test_public_falsification_controls_and_bootstrap_are_fixed() -> None:
+    assert PUBLIC_GATE_CONDITIONS == (
+        "BASE",
+        "BEFORE",
+        "AFTER",
+        "ZERO",
+        "RANDOM",
+        "WRONG",
+    )
+    assert _bootstrap([1, 0, -1, 1], seed=7, replicates=100) == _bootstrap(
+        [1, 0, -1, 1], seed=7, replicates=100
+    )
