@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 from pathlib import Path
 
@@ -19,18 +20,32 @@ from experiments.native_transfer_r8.extract_capability import (
     write_package_once,
 )
 from experiments.native_transfer_r8.freeze_campaign import FreezeError, freeze
-from experiments.native_transfer_r8.native_host import CanonicalLatentBridge
+from experiments.native_transfer_r8.native_host import (
+    MAXIMUM_PROMPT_TOKENS,
+    CanonicalLatentBridge,
+)
 from experiments.native_transfer_r8.recipient_worker import _random_latent
 from experiments.native_transfer_r8.run_baselines import DenseLinearBridge, LoRALinear
 from experiments.native_transfer_r8.verify import R8VerificationError, verify
 
 ROOT = Path(__file__).resolve().parents[1]
-CONFIG = ROOT / "experiments/native_transfer_r8/configs/preregistered_v2.json"
-SECRET = "6ee11dd33028a7a701c32e58203ec96bfc0f38eb3808b8bf8e68b8cafdde11ae"
+CONFIG = ROOT / "experiments/native_transfer_r8/configs/preregistered_v3.json"
+TEST_SECRET = "11" * 32
+TEST_COMMITMENT = hashlib.sha256(bytes.fromhex(TEST_SECRET)).hexdigest()
 
 
 def test_preregistration_locks_primary_scientific_depth() -> None:
-    value = json.loads(CONFIG.read_text(encoding="utf-8"))
+    def reject_duplicate_keys(pairs: list[tuple[str, object]]) -> dict[str, object]:
+        value: dict[str, object] = {}
+        for key, item in pairs:
+            if key in value:
+                raise AssertionError(f"duplicate preregistration key: {key}")
+            value[key] = item
+        return value
+
+    value = json.loads(
+        CONFIG.read_text(encoding="utf-8"), object_pairs_hook=reject_duplicate_keys
+    )
     assert value["status"] == "PREREGISTERED_BEFORE_HELDOUT_REVEAL"
     assert value["splits"]["meta_train_capabilities"] >= 24
     assert value["splits"]["development_capabilities"] >= 4
@@ -38,8 +53,9 @@ def test_preregistration_locks_primary_scientific_depth() -> None:
     assert value["splits"]["evaluation_rows_per_capability"] >= 512
     assert value["gates"]["recipient_families_minimum"] == 3
     assert len(value["models"]["recipients"]) == 3
-    assert value["supersedes"] == "preregistered_v1.json"
+    assert value["supersedes"] == "preregistered_v2.json"
     assert value["amendment"]["scientific_thresholds_changed"] is False
+    assert value["training"]["maximum_prompt_tokens"] == MAXIMUM_PROMPT_TOKENS
     schema = json.loads(
         (ROOT / "experiments/native_transfer_r8/preregistration.schema.json").read_text(
             encoding="utf-8"
@@ -61,6 +77,8 @@ def test_source_training_rows_are_unique_and_within_registered_universe() -> Non
     )
     assert len(rows) == count == len({row["row_id"] for row in rows})
     assert sum(row["flavor"] == "atomic_coverage" for row in rows) == 24
+    assert any("Counterfactual check:" in row["prompt"] for row in rows)
+    assert any("Incorrect proposal" in row["prompt"] for row in rows)
     meta = public_capabilities(123, split="meta_train", count=24)
     assert len({value.offsets for value in meta}) == len(meta)
 
@@ -68,13 +86,13 @@ def test_source_training_rows_are_unique_and_within_registered_universe() -> Non
 def test_committed_heldout_capabilities_are_deterministic_and_private() -> None:
     config = json.loads(CONFIG.read_text(encoding="utf-8"))
     values = committed_heldout_capabilities(
-        SECRET,
-        expected_commitment=config["splits"]["heldout_secret_commitment_sha256"],
+        TEST_SECRET,
+        expected_commitment=TEST_COMMITMENT,
         count=8,
     )
     repeated = committed_heldout_capabilities(
-        SECRET,
-        expected_commitment=config["splits"]["heldout_secret_commitment_sha256"],
+        TEST_SECRET,
+        expected_commitment=TEST_COMMITMENT,
         count=8,
     )
     assert values == repeated

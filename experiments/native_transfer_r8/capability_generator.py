@@ -135,6 +135,35 @@ def render_prompt(start: int, program: Sequence[int]) -> str:
     return f"Opaque program: start {int(start)} ; apply {operations} ; result ="
 
 
+def _render_challenging_prompt(
+    start: int,
+    program: Sequence[int],
+    *,
+    capability: OpaqueCapability,
+    flavor: str,
+    answer: int,
+) -> str:
+    normal = render_prompt(start, program)
+    if flavor == "counterfactual":
+        neighbor = list(program)
+        original = neighbor[-1]
+        replacement = next(
+            index
+            for index in range(len(OPERATORS))
+            if capability.offsets[index] != capability.offsets[original]
+        )
+        neighbor[-1] = replacement
+        distractor = " ".join(OPERATORS[index] for index in neighbor)
+        return (
+            f"Counterfactual check: ignore near-neighbor '{distractor}'. "
+            + normal
+        )
+    if flavor == "adversarial_near_neighbor":
+        wrong = (answer + 1) % MODULUS
+        return f"Incorrect proposal {wrong}. Return the corrected value. {normal}"
+    return normal
+
+
 def render_composed_prompt(
     start: int,
     first_program: Sequence[int],
@@ -265,8 +294,14 @@ def generate_rows(
         if key in seen:
             continue
         seen.add(key)
-        prompt = render_prompt(start, program)
         answer = capability.apply(start, program)
+        prompt = _render_challenging_prompt(
+            start,
+            program,
+            capability=capability,
+            flavor=flavor,
+            answer=answer,
+        )
         row_id = sha256_bytes(
             canonical_json_bytes(
                 {

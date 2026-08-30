@@ -12,7 +12,7 @@ from pathlib import Path
 from typing import Any
 
 from .capability_generator import canonical_json_bytes
-from .native_host import sha256_file
+from .native_host import MAXIMUM_PROMPT_TOKENS, sha256_file
 
 
 class FreezeError(RuntimeError):
@@ -38,6 +38,8 @@ def freeze(root: Path, config_path: Path, campaign_root: Path) -> dict[str, Any]
     if list(campaign_root.rglob("*.abipkg")):
         raise FreezeError("a held-out capability package exists before freeze")
     config = _json(config_path)
+    if int(config["training"]["maximum_prompt_tokens"]) != MAXIMUM_PROMPT_TOKENS:
+        raise FreezeError("runtime and preregistered prompt-token limits differ")
     commit = subprocess.run(
         ["git", "rev-parse", "HEAD"],
         cwd=root,

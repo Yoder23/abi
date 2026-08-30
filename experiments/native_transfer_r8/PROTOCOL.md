@@ -41,6 +41,13 @@ rows and made the generator sample the finite universe without replacement.
 No threshold, evaluation depth, capability count, seed commitment, or model was
 changed.
 
+The v1/v2 seed commitment was later disqualified before any model training
+because its preimage was found in a unit test. V2 also contained a duplicate
+JSON key, and the registered 48-token limit truncated some T5 prompts. V3 is
+the sole active preregistration: it uses a fresh unrevealed commitment, unique
+JSON keys, and a 128-token runtime limit. The disqualified drafts remain as
+negative protocol history.
+
 ## Primary gates
 
 - Eight held-out capability seeds and at least 512 evaluation rows each.

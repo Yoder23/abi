@@ -1,0 +1,132 @@
+{
+  "format": "abi-native-transfer-r8-preregistration/1",
+  "status": "PREREGISTERED_BEFORE_HELDOUT_REVEAL",
+  "campaign": "native_transfer_r8",
+  "protocol_version": 3,
+  "effective_date": "2026-08-30",
+  "supersedes": "preregistered_v2.json",
+  "amendment": {
+    "scope": "held-out custody replacement, duplicate-key repair, and prompt truncation repair",
+    "reason": "The v1/v2 held-out secret was accidentally present in a unit test and is permanently disqualified. V2 also contained a duplicate JSON key and its 48-token runtime limit truncated registered T5 prompts. V3 uses a fresh unrevealed commitment, unique JSON keys, and a 128-token limit. No source, bridge, package, or held-out evaluation has run.",
+    "scientific_thresholds_changed": false,
+    "heldout_reveal_available_at_amendment": false,
+    "v1_v2_commitment_disqualified": true
+  },
+  "r7_evidence_changed": false,
+  "claim_ceiling_before_verification": "NOT_YET_ESTABLISHED",
+  "capability_family": {
+    "name": "opaque_modular_micro_language",
+    "version": 1,
+    "modulus": 8,
+    "operator_count": 3,
+    "opaque_operators": ["vok", "narel", "tem"],
+    "source_train_depths": [1, 2, 3],
+    "evaluation_depths": [4, 5, 6, 7],
+    "canonical_latent_shape": [3, 8, 8],
+    "canonical_latent_dtype": "float32",
+    "composition_train_depths": [1, 2],
+    "composition_evaluation_depths": [2, 3]
+  },
+  "splits": {
+    "meta_train_capabilities": 24,
+    "development_capabilities": 4,
+    "heldout_capabilities": 8,
+    "source_train_rows_per_capability": 288,
+    "evaluation_rows_per_capability": 512,
+    "causal_rows_per_capability": 128,
+    "meta_seed": 8202401,
+    "development_seed": 8202402,
+    "heldout_secret_commitment_sha256": "67a6868912d0cb5810bb9506222f91e3d58a7cadd64af5a8c8e145101e5a86fb"
+  },
+  "models": {
+    "source": {
+      "model_id": "distilgpt2",
+      "revision": "2290a62682d06624634c1f46a6ad5be0f47f38aa"
+    },
+    "recipients": {
+      "qwen2": {
+        "model_id": "Qwen/Qwen2.5-0.5B",
+        "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987"
+      },
+      "pythia": {
+        "model_id": "EleutherAI/pythia-160m",
+        "revision": "50f5173d932e8e61f858120bcb800b97af589f46"
+      },
+      "t5": {
+        "model_id": "t5-base",
+        "revision": "a9723ea7f1b39c1eae772870f3b547bf6ef7e6c1"
+      }
+    }
+  },
+  "training": {
+    "device": "cuda",
+    "source_prefix_length": 24,
+    "source_meta_steps": 3000,
+    "source_steps": 500,
+    "source_learning_rate": 0.05,
+    "bridge_prefix_length": 24,
+    "bridge_steps": 1600,
+    "bridge_composition_step_fraction": 0.25,
+    "bridge_learning_rate": 0.002,
+    "baseline_target_steps": 500,
+    "baseline_linear_meta_steps": 800,
+    "baseline_lora_rank": 8,
+    "baseline_target_learning_rate": 0.02,
+    "batch_size": 16,
+    "maximum_prompt_tokens": 128,
+    "seed": 8202403
+  },
+  "freeze": {
+    "heldout_reveal_must_be_absent": true,
+    "package_must_be_absent": true,
+    "recipient_parameters_require_grad": false,
+    "heldout_recipient_optimizer_steps": 0,
+    "package_mutation_allowed": false,
+    "network_allowed_during_final_evaluation": false
+  },
+  "gates": {
+    "source_before_accuracy_maximum": 0.25,
+    "source_after_accuracy_minimum": 0.85,
+    "source_gain_minimum": 0.50,
+    "source_permuted_accuracy_maximum": 0.25,
+    "recipient_gain_minimum": 0.30,
+    "recipient_gain_strict": 0.40,
+    "negative_control_gain_maximum": 0.05,
+    "transfer_efficiency_median_minimum": 0.50,
+    "transfer_efficiency_strict": 0.70,
+    "causal_fraction_median_minimum": 0.75,
+    "causal_rescue_fraction_median_minimum": 0.50,
+    "noninterference_accuracy_drop_maximum": 0.02,
+    "noninterference_jsd_maximum": 0.10,
+    "composition_preservation_drop_maximum": 0.05,
+    "composition_cross_gain_minimum": 0.30,
+    "bootstrap_replicates": 2000,
+    "bootstrap_confidence": 0.95,
+    "recipient_families_minimum": 3,
+    "heldout_capabilities_minimum": 8,
+    "evaluation_rows_per_capability_minimum": 512
+  },
+  "information_budgets": [0.25, 0.5, 0.75, 1.0],
+  "required_conditions": [
+    "BASE",
+    "BEFORE",
+    "AFTER",
+    "ZERO",
+    "RANDOM",
+    "SHUFFLED",
+    "WRONG",
+    "REMOVED",
+    "BRIDGE_REMOVED",
+    "MODEL_REMOVED",
+    "RUNTIME_ONLY"
+  ],
+  "required_baselines": [
+    "natural_language_context_equal_byte",
+    "retrieval_in_context_equal_byte",
+    "target_specific_soft_prompt",
+    "target_specific_lora",
+    "teacher_to_target_distillation",
+    "linear_mapping",
+    "random_projection"
+  ]
+}

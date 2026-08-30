@@ -14,6 +14,7 @@ from torch import nn
 
 OPERATORS = ("vok", "narel", "tem")
 MODULUS = 8
+MAXIMUM_PROMPT_TOKENS = 128
 
 
 def canonical_json_bytes(value: Any) -> bytes:
@@ -121,6 +122,7 @@ class FrozenNeuralHost:
         self.tokenizer = AutoTokenizer.from_pretrained(
             snapshot, local_files_only=True, trust_remote_code=False
         )
+        self.tokenizer.truncation_side = "left"
         dtype = torch.float16 if self.device.type == "cuda" else torch.float32
         loader = AutoModelForSeq2SeqLM if spec.encoder_decoder else AutoModelForCausalLM
         self.model = loader.from_pretrained(
@@ -167,7 +169,7 @@ class FrozenNeuralHost:
             return_tensors="pt",
             padding=True,
             truncation=True,
-            max_length=48,
+            max_length=MAXIMUM_PROMPT_TOKENS,
             add_special_tokens=True,
         )
         return {key: value.to(self.device) for key, value in encoded.items()}
