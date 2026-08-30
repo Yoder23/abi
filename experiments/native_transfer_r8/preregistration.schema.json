@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Yoder23/abi/native_transfer_r8/preregistration.schema.json",
+  "title": "ABI R8 native transfer preregistration",
+  "type": "object",
+  "required": [
+    "format",
+    "status",
+    "campaign",
+    "protocol_version",
+    "capability_family",
+    "splits",
+    "models",
+    "training",
+    "freeze",
+    "gates",
+    "required_conditions",
+    "required_baselines"
+  ],
+  "properties": {
+    "format": {"const": "abi-native-transfer-r8-preregistration/1"},
+    "status": {"const": "PREREGISTERED_BEFORE_HELDOUT_REVEAL"},
+    "campaign": {"const": "native_transfer_r8"},
+    "protocol_version": {"type": "integer", "minimum": 1},
+    "capability_family": {
+      "type": "object",
+      "required": ["modulus", "operator_count", "source_train_depths", "evaluation_depths", "canonical_latent_shape"],
+      "properties": {
+        "modulus": {"const": 8},
+        "operator_count": {"const": 3},
+        "source_train_depths": {"const": [1, 2, 3]},
+        "evaluation_depths": {"const": [4, 5, 6, 7]},
+        "canonical_latent_shape": {"const": [3, 8, 8]}
+      }
+    },
+    "splits": {
+      "type": "object",
+      "required": ["meta_train_capabilities", "development_capabilities", "heldout_capabilities", "source_train_rows_per_capability", "evaluation_rows_per_capability", "heldout_secret_commitment_sha256"],
+      "properties": {
+        "meta_train_capabilities": {"type": "integer", "minimum": 24},
+        "development_capabilities": {"type": "integer", "minimum": 4},
+        "heldout_capabilities": {"type": "integer", "minimum": 8},
+        "source_train_rows_per_capability": {"type": "integer", "minimum": 24, "maximum": 312},
+        "evaluation_rows_per_capability": {"type": "integer", "minimum": 500},
+        "heldout_secret_commitment_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "models": {
+      "type": "object",
+      "required": ["source", "recipients"],
+      "properties": {
+        "recipients": {"type": "object", "minProperties": 3}
+      }
+    },
+    "training": {"type": "object"},
+    "freeze": {"type": "object"},
+    "gates": {
+      "type": "object",
+      "required": ["source_before_accuracy_maximum", "source_after_accuracy_minimum", "source_gain_minimum", "recipient_gain_minimum", "negative_control_gain_maximum", "causal_fraction_median_minimum", "recipient_families_minimum"]
+    },
+    "required_conditions": {"type": "array", "minItems": 11, "uniqueItems": true},
+    "required_baselines": {"type": "array", "minItems": 7, "uniqueItems": true}
+  },
+  "additionalProperties": true
+}
