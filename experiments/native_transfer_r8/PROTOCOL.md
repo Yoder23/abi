@@ -82,6 +82,12 @@ relation, target), and the capability-blind bridge curriculum covers the full
 public task-family depth range. The bridge still receives no prompt; the normal
 recipient forward pass must combine the prompt with the package table.
 
+That 96-token layout could not reach its first checkpoint under measured GPU
+memory contention and is preserved as an incomplete revision 006. V8 reduces
+each table row to a key/value neural-token pair. This retains separate relation
+and value positions while halving package-conditioning sequence length; no
+scientific gate or held-out datum changes.
+
 ## Primary gates
 
 - Eight held-out capability seeds and at least 512 evaluation rows each.
