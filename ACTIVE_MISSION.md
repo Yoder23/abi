@@ -22,6 +22,8 @@ public transition state exactly, but the recipient realization failed its
 first public host gate. Across 1,024 paired Pythia rows, AFTER−BASE was
 +0.001953 (95% bootstrap CI -0.019531 to +0.024414). The held-out secret was
 not revealed and Qwen/T5 were not run. This is Level 0 and leaves R7 unchanged.
+The public verifier hostile audit produced 8/8 expected outcomes, including
+rejection of missing/stale evidence and immunity to a forged pass boolean.
 
 ## What R7 proves
 

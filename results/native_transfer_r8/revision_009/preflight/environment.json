@@ -1,0 +1,213 @@
+{
+  "config_sha256": "d6f31883134e25808bb558ba4db51c120e4c9eccda1e78b56667f2d27cd8fd38",
+  "created_unix_time_ns": 1788128207590401800,
+  "cuda": {
+    "available": true,
+    "device_count": 1,
+    "devices": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+        "total_memory_bytes": 17179344896
+      }
+    ],
+    "torch_cuda": "11.8"
+  },
+  "evidence_sha256": "0451998337523ce789cd1dd5963b7b1465c222e1cae1392f6a96dd7e0dcc2aef",
+  "format": "abi-native-transfer-r8-environment-preflight/1",
+  "isolation_runtimes": {
+    "docker": {
+      "available": false,
+      "executable": null,
+      "returncode": null,
+      "stdout": ""
+    },
+    "podman": {
+      "available": false,
+      "executable": null,
+      "returncode": null,
+      "stdout": ""
+    }
+  },
+  "models": {
+    "pythia": {
+      "available": true,
+      "inventory": {
+        "aggregate_sha256": "d95eb4d992587017075a84acaa6246140ee1f94ab43c2be36dabafb4d3beaed9",
+        "file_count": 5,
+        "files": [
+          {
+            "bytes": 569,
+            "path": "config.json",
+            "sha256": "76eb275107220e450d31258f792a2efcbee109d8b62ae0088260057dec06362f"
+          },
+          {
+            "bytes": 374998696,
+            "path": "model.safetensors",
+            "sha256": "29d2e457a664e41c12c735f20a36dc0956a665f614a54ce5db21a32e75965270"
+          },
+          {
+            "bytes": 99,
+            "path": "special_tokens_map.json",
+            "sha256": "6f50ab5a5a509a1c309d6171f339b196a900dc9c99ad0408ff23bb615fdae7ad"
+          },
+          {
+            "bytes": 2113710,
+            "path": "tokenizer.json",
+            "sha256": "c24618a1b3e6a38167beff1c72cffd126c3a66254347304b50547d12c5f25624"
+          },
+          {
+            "bytes": 396,
+            "path": "tokenizer_config.json",
+            "sha256": "70e38394e494931c6f773ba41e19460dd4436526b852207367f04341b4066d3f"
+          }
+        ]
+      },
+      "model_id": "EleutherAI/pythia-160m",
+      "revision": "50f5173d932e8e61f858120bcb800b97af589f46",
+      "snapshot": "C:\\Users\\samyo\\.cache\\huggingface\\hub\\models--EleutherAI--pythia-160m\\snapshots\\50f5173d932e8e61f858120bcb800b97af589f46"
+    },
+    "qwen2": {
+      "available": true,
+      "inventory": {
+        "aggregate_sha256": "b9081408033b747d8bb0a07872900ad849c1a253a056291f16c3e9efd7517aaf",
+        "file_count": 7,
+        "files": [
+          {
+            "bytes": 681,
+            "path": "config.json",
+            "sha256": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b"
+          },
+          {
+            "bytes": 138,
+            "path": "generation_config.json",
+            "sha256": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8"
+          },
+          {
+            "bytes": 1671839,
+            "path": "merges.txt",
+            "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+          },
+          {
+            "bytes": 988097824,
+            "path": "model.safetensors",
+            "sha256": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342"
+          },
+          {
+            "bytes": 7031645,
+            "path": "tokenizer.json",
+            "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+          },
+          {
+            "bytes": 7228,
+            "path": "tokenizer_config.json",
+            "sha256": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9"
+          },
+          {
+            "bytes": 2776833,
+            "path": "vocab.json",
+            "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+          }
+        ]
+      },
+      "model_id": "Qwen/Qwen2.5-0.5B",
+      "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+      "snapshot": "C:\\Users\\samyo\\.cache\\huggingface\\hub\\models--Qwen--Qwen2.5-0.5B\\snapshots\\060db6499f32faf8b98477b0a26969ef7d8b9987"
+    },
+    "source": {
+      "available": true,
+      "inventory": {
+        "aggregate_sha256": "c7651788e35d4f79e90c5cbfa0f9c0667f66d82a7ae64982b8ed2df5dc4b7621",
+        "file_count": 7,
+        "files": [
+          {
+            "bytes": 762,
+            "path": "config.json",
+            "sha256": "4ec5947c1d59fee6212cdf3b0ec1a53eac02092554c5ff0a733488cbd2c64f3a"
+          },
+          {
+            "bytes": 124,
+            "path": "generation_config.json",
+            "sha256": "b90eadacf585a743a30ea51e8b5c88b8d282a2a34dc0c7e556d0987cdbd68805"
+          },
+          {
+            "bytes": 456318,
+            "path": "merges.txt",
+            "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5"
+          },
+          {
+            "bytes": 352824413,
+            "path": "model.safetensors",
+            "sha256": "e1ff18884359fe8beb795a5f414feb85a6ce3d929ad019c0d958c039d2b94a1b"
+          },
+          {
+            "bytes": 1355256,
+            "path": "tokenizer.json",
+            "sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6"
+          },
+          {
+            "bytes": 26,
+            "path": "tokenizer_config.json",
+            "sha256": "5e04eb606e3a1583530a42e36c2a6b6615c86f34fe77e44d9ddeb43ff940931f"
+          },
+          {
+            "bytes": 1042301,
+            "path": "vocab.json",
+            "sha256": "196139668be63f3b5d6574427317ae82f612a97c5d1cdaf36ed2256dbf636783"
+          }
+        ]
+      },
+      "model_id": "distilgpt2",
+      "revision": "2290a62682d06624634c1f46a6ad5be0f47f38aa",
+      "snapshot": "C:\\Users\\samyo\\.cache\\huggingface\\hub\\models--distilgpt2\\snapshots\\2290a62682d06624634c1f46a6ad5be0f47f38aa"
+    },
+    "t5": {
+      "available": true,
+      "inventory": {
+        "aggregate_sha256": "c6ee89755853f829c8deccadcfcba7b0cf15240789bdfb77616e0d7678928aa1",
+        "file_count": 5,
+        "files": [
+          {
+            "bytes": 1208,
+            "path": "config.json",
+            "sha256": "46dd7cb62d29c81fb551e0ef1ea274c24a46ba441eeb948897706252933df033"
+          },
+          {
+            "bytes": 147,
+            "path": "generation_config.json",
+            "sha256": "f5a1c7e2be8092018d8835128987edf0111637dd98e90599cc80310fef75d95a"
+          },
+          {
+            "bytes": 891646390,
+            "path": "model.safetensors",
+            "sha256": "a90903540cc02cbeb7ff9f823f1a80eb778c7e22426a0e620b01c77a5ec8f5b4"
+          },
+          {
+            "bytes": 791656,
+            "path": "spiece.model",
+            "sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86"
+          },
+          {
+            "bytes": 1389353,
+            "path": "tokenizer.json",
+            "sha256": "d2acde0d8d71dd30a711834b07781b9c89feaac33fd332f60507699282740066"
+          }
+        ]
+      },
+      "model_id": "t5-base",
+      "revision": "a9723ea7f1b39c1eae772870f3b547bf6ef7e6c1",
+      "snapshot": "C:\\Users\\samyo\\.cache\\huggingface\\hub\\models--t5-base\\snapshots\\a9723ea7f1b39c1eae772870f3b547bf6ef7e6c1"
+    }
+  },
+  "node": "Sam",
+  "packages": {
+    "huggingface-hub": "0.36.0",
+    "safetensors": "0.7.0",
+    "scipy": "1.15.3",
+    "torch": "2.7.1+cu118",
+    "transformers": "4.57.3"
+  },
+  "physical_isolation_available": false,
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.10.0 (tags/v3.10.0:b494f59, Oct  4 2021, 19:00:18) [MSC v.1929 64 bit (AMD64)]"
+}

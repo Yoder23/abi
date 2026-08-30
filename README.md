@@ -33,6 +33,8 @@ Its strongest package-only recipient interface produced AFTER−BASE +0.001953
 across 1,024 paired Pythia rows (95% bootstrap CI -0.019531 to +0.024414).
 Canonical extraction was exact, but recipient behavior did not transfer. The
 held-out secret was never revealed, and R8 does not change the R7 release.
+The final public verifier rejected 7/7 hostile mutations and ignored one forged
+scientific boolean without changing the `NO` verdict (8/8 expected outcomes).
 
 ## R7 at a glance
 

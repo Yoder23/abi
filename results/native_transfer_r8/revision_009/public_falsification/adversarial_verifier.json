@@ -1,0 +1,49 @@
+{
+  "case_count": 8,
+  "cases": [
+    {
+      "case": "missing_raw_rows",
+      "exception": "FileNotFoundError",
+      "outcome": "REJECTED"
+    },
+    {
+      "case": "raw_row_hash_mismatch",
+      "exception": "PublicVerificationError",
+      "outcome": "REJECTED"
+    },
+    {
+      "case": "stale_receipt_hash",
+      "exception": "PublicVerificationError",
+      "outcome": "REJECTED"
+    },
+    {
+      "case": "missing_source_state",
+      "exception": "FileNotFoundError",
+      "outcome": "REJECTED"
+    },
+    {
+      "case": "heldout_package_present",
+      "exception": "PublicVerificationError",
+      "outcome": "REJECTED"
+    },
+    {
+      "case": "changed_threshold_config",
+      "exception": "PublicVerificationError",
+      "outcome": "REJECTED"
+    },
+    {
+      "case": "forged_scientific_boolean_ignored",
+      "outcome": "NO_VERDICT_UNCHANGED",
+      "trusted_booleans_consumed": 0
+    },
+    {
+      "case": "stale_verification_report",
+      "exception": "PublicReportError",
+      "outcome": "REJECTED"
+    }
+  ],
+  "evidence_sha256": "eb3b2958471fb5a6fc93bc666f9920b2b04bcfce79f3e449dff32504ee0ce8c2",
+  "format": "abi-native-transfer-r8-public-hostile-audit/1",
+  "trusted_scientific_booleans_consumed": 0,
+  "unexpected_acceptances": 0
+}

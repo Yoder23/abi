@@ -64,3 +64,7 @@ artifact, but the frozen Pythia recipient showed no package-specific gain:
 AFTER−BASE was +0.001953 across 1,024 paired raw rows (95% bootstrap CI
 [-0.019531, +0.024414]). The held-out commitment was never revealed. The exact
 R8 answer is `NO` for the registered v10 system.
+The R8 public verifier hostile audit produced 8/8 expected outcomes: seven
+malformed, missing, stale, or contaminated cases were rejected, and a
+hash-consistent forged scientific boolean was ignored with the `NO` verdict
+unchanged.

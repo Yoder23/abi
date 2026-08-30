@@ -47,6 +47,8 @@ at Level 0 with exact answer `NO` for the registered system; R7 is unchanged.
 
 Raw evidence and the fail-closed certificate are under
 `results/native_transfer_r8/revision_009/public_falsification/`.
+The hostile verifier audit produced 8/8 expected outcomes with zero unexpected
+acceptances and zero trusted scientific booleans consumed.
 
 See `PROTOCOL.md` and `configs/preregistered_v10.json` before running anything.
 The preserved v1 draft requested more unique depth-1--3 source rows than exist;

@@ -12,6 +12,8 @@ Level 0. Exact canonical extraction succeeded, but the same acquired state did
 not create capability-level behavior in the first frozen recipient. The raw
 public AFTER−BASE effect was +0.001953 with a 95% bootstrap interval spanning
 zero (-0.019531 to +0.024414). Held-out evaluation was never opened.
+The final hostile audit produced 8/8 expected outcomes and zero unexpected
+acceptances.
 
 Status token:
 `R7_BOUNDED_TECHNICAL_VALIDATION_PASSED_EXTERNAL_REVIEW_OPEN`

@@ -1,0 +1,65 @@
+{
+  "after_minus_base_bootstrap": {
+    "lower_95": -0.01953125,
+    "point": 0.001953125,
+    "upper_95": 0.0244140625
+  },
+  "claim_boundary": "R7 is unchanged. R8 does not establish native neural capability transfer, recipient independence, teacher extraction, or superiority to LoRA/distillation.",
+  "decision": "Stop before held-out reveal and do not spend Qwen/T5 compute: the smallest recipient failed every public development capability.",
+  "evidence_sha256": "91d392d055e92a583db1bae04419c81c358f437f683948eb0076ab929ac0e2b9",
+  "exact_question_answer": "NO",
+  "extraction_development_atomic_accuracy": 1.0,
+  "extraction_meta_atomic_accuracy": 1.0,
+  "format": "abi-native-transfer-r8-public-falsification/1",
+  "gates": {
+    "canonical_extraction_exact": true,
+    "heldout_remained_unrevealed": true,
+    "matched_baselines": false,
+    "neural_causality": false,
+    "physical_isolation": false,
+    "pythia_public_native_transfer": false,
+    "source_raw_rows_recomputable": false,
+    "source_summary_hash_bound": true,
+    "three_recipient_families": false
+  },
+  "maximum_public_capability_gain": 0.01953125,
+  "metrics": {
+    "r8-development-000-1f39465a340dcd5a7274": {
+      "AFTER": 0.1171875,
+      "BASE": 0.1171875,
+      "BEFORE": 0.11328125,
+      "RANDOM": 0.109375,
+      "WRONG": 0.15234375,
+      "ZERO": 0.1171875
+    },
+    "r8-development-001-c3d8a4a59c4eb8b0d35c": {
+      "AFTER": 0.12109375,
+      "BASE": 0.1015625,
+      "BEFORE": 0.11328125,
+      "RANDOM": 0.140625,
+      "WRONG": 0.1015625,
+      "ZERO": 0.1015625
+    },
+    "r8-development-002-e4271d3719f2ca945c70": {
+      "AFTER": 0.1171875,
+      "BASE": 0.1171875,
+      "BEFORE": 0.125,
+      "RANDOM": 0.12109375,
+      "WRONG": 0.12890625,
+      "ZERO": 0.1171875
+    },
+    "r8-development-003-f6034c87b38ab269d561": {
+      "AFTER": 0.12890625,
+      "BASE": 0.140625,
+      "BEFORE": 0.13671875,
+      "RANDOM": 0.15234375,
+      "WRONG": 0.140625,
+      "ZERO": 0.140625
+    }
+  },
+  "minimum_public_capability_gain": -0.01171875,
+  "scope": "R8 v10 registered architecture; public prerequisite only; held-out reveal was never opened",
+  "status": "FAIL_CLOSED_LEVEL_0_PUBLIC_PREREQUISITE_FAILED",
+  "trusted_scientific_booleans_consumed": 0,
+  "verdict_level": 0
+}

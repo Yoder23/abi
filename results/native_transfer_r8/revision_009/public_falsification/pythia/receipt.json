@@ -1,0 +1,42 @@
+{
+  "architecture_family": "GPTNeoX",
+  "bridge_optimizer_steps_after_freeze": 0,
+  "bridge_receipt_sha256": "a6e225df19093b39a2466bd1f244d533f93b27e331c4dc7a45b3e4f8dc979287",
+  "bridge_sha256_after": "7d87b93dbd15a1f51cee43a56172e7300cc5e82690bdbb39889c6cb4d081c147",
+  "bridge_sha256_before": "7d87b93dbd15a1f51cee43a56172e7300cc5e82690bdbb39889c6cb4d081c147",
+  "capabilities": 4,
+  "conditions": [
+    "BASE",
+    "BEFORE",
+    "AFTER",
+    "ZERO",
+    "RANDOM",
+    "WRONG"
+  ],
+  "config_sha256": "d6f31883134e25808bb558ba4db51c120e4c9eccda1e78b56667f2d27cd8fd38",
+  "evidence_sha256": "ebe6c9c8411f79e6545188414c969535e33385ddce9a13582de30b14a6e033b6",
+  "format": "abi-native-transfer-r8-public-recipient-gate/1",
+  "heldout_packages_present": 0,
+  "heldout_reveal_present": false,
+  "host_key": "pythia",
+  "host_model_state_sha256_after": "54d67dd87a3b2a68f8e9bd71af503d78be0c41f7601d648a61a39d199e3be985",
+  "host_model_state_sha256_before": "54d67dd87a3b2a68f8e9bd71af503d78be0c41f7601d648a61a39d199e3be985",
+  "model_revision": "50f5173d932e8e61f858120bcb800b97af589f46",
+  "observations": {
+    "path": "observations.jsonl",
+    "sha256": "574e178fa4cf6097aae211b4337ba288985ed0e5d3bcead11ce623bc0637d021"
+  },
+  "recipient_optimizer_steps": 0,
+  "rows": 6144,
+  "rows_per_capability_condition": 256,
+  "target_token_ids": [
+    470,
+    337,
+    374,
+    495,
+    577,
+    608,
+    721,
+    818
+  ]
+}
