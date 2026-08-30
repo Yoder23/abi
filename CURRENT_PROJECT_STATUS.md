@@ -7,6 +7,12 @@ Updated: 2026-08-30
 ABI R7 has passed bounded technical validation and public reproducibility on
 the development hardware. Human and different-hardware review are open.
 
+The additive R8 native-neural-transfer falsification campaign is complete at
+Level 0. Exact canonical extraction succeeded, but the same acquired state did
+not create capability-level behavior in the first frozen recipient. The raw
+public AFTER−BASE effect was +0.001953 with a 95% bootstrap interval spanning
+zero (-0.019531 to +0.024414). Held-out evaluation was never opened.
+
 Status token:
 `R7_BOUNDED_TECHNICAL_VALIDATION_PASSED_EXTERNAL_REVIEW_OPEN`
 
@@ -53,6 +59,8 @@ Public release:
 6. Compact fluent English extraction: broader research.
 7. Matched quality comparison against teacher, LoRA, and distillation: broader
    research.
+8. R8 native cross-model neural transfer: failed public prerequisite; any
+   successor requires a new additive mechanism and preregistration.
 
 ## Scientific interpretation
 

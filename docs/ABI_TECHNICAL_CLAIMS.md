@@ -38,3 +38,12 @@ Updated: 2026-08-30
 
 Human review remains at `0/21,000`. Claims may expand only after the frozen
 protocols produce independently auditable evidence.
+
+## Additive R8 falsification result
+
+R8 does not expand the supported claims. Its v10 public prerequisite produced
+1,024 paired Pythia rows with AFTER−BASE +0.001953 and 95% bootstrap CI
+[-0.019531, +0.024414]. Canonical atomic extraction was exact, which localizes
+the observed failure to native recipient realization in the tested system.
+The held-out secret remained unrevealed; three-recipient, causal, baseline,
+composition, physical-isolation, and external gates were not passed.

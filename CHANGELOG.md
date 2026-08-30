@@ -1,5 +1,22 @@
 # Changelog
 
+## R8 native neural transfer falsification - 2026-08-30
+
+- Added ten additive, pre-reveal protocol revisions without modifying R7.
+- Demonstrated exact public acquisition and canonical atomic extraction for the
+  opaque modular micro-language.
+- Falsified soft-prefix source acquisition, source LoRA generalization, static
+  recipient prefixes, static in-model LoRA conditioning, paired neural tables,
+  and package-only low-rank hypernetwork conditioning on the registered public
+  prerequisites.
+- Preserved two GPU-memory aborts caused by a concurrently resident 19 GB
+  Ollama model; the successful microbatch schedule completed 6,400 steps.
+- Recomputed 6,144 raw public control rows. AFTER−BASE was +0.001953 across
+  1,024 paired rows, with 95% bootstrap CI [-0.019531, +0.024414].
+- Closed R8 at Level 0 with exact answer `NO` for the registered v10 system.
+  The held-out secret was never revealed; Qwen/T5 and downstream breakthrough
+  gates were not run after Pythia failed the public prerequisite.
+
 ## Review handoff - 2026-08-30
 
 - Replaced stale R4 documentation with the controlling R7 public status.

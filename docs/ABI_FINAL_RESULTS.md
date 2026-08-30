@@ -55,3 +55,12 @@ end-to-end generation benchmarks and not evidence of ABI inference dominance.
 
 See [R7_PUBLIC_VALIDATION.md](R7_PUBLIC_VALIDATION.md) for the public and blind
 reproduction record.
+
+## Additive R8 result
+
+R8 is a Level 0 negative result and does not replace this R7 release. Public
+source state was extracted exactly into the fixed `3 x 8 x 8` canonical
+artifact, but the frozen Pythia recipient showed no package-specific gain:
+AFTER−BASE was +0.001953 across 1,024 paired raw rows (95% bootstrap CI
+[-0.019531, +0.024414]). The held-out commitment was never revealed. The exact
+R8 answer is `NO` for the registered v10 system.

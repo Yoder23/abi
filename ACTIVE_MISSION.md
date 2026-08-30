@@ -12,6 +12,17 @@ hostile replay, and a fresh blind Codex red-team. The public release is:
 
 This opens human and independent-hardware review. It does not complete them.
 
+Additive R8 status:
+`R8_LEVEL_0_PUBLIC_PREREQUISITE_FAILED_HELDOUT_UNREVEALED`
+
+R8 tested whether one source-acquired synthetic capability could become an
+immutable package that creates native behavior in frozen heterogeneous neural
+recipients. The source-side adapter and zero-parameter extractor recovered the
+public transition state exactly, but the recipient realization failed its
+first public host gate. Across 1,024 paired Pythia rows, AFTER−BASE was
++0.001953 (95% bootstrap CI -0.019531 to +0.024414). The held-out secret was
+not revealed and Qwen/T5 were not run. This is Level 0 and leaves R7 unchanged.
+
 ## What R7 proves
 
 R7 proves one bounded capability ABI result: four immutable packages execute
@@ -64,6 +75,11 @@ Prepare and execute external review without changing the R7 artifacts:
 
 Teacher extraction and minimization belong to a subsequent additive campaign.
 They must not be inferred from R7 conformance evidence.
+
+Any R8 successor must start with a new additive preregistration. It must first
+produce a substantial raw-row public capability gain through a package-only
+recipient neural interface; more static-prefix, nearby LoRA-rank, or step-count
+sweeps are not evidence-supported.
 
 ## Historical failures that remain authoritative
 

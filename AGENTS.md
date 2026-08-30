@@ -29,6 +29,13 @@ R7 passes bounded technical validation. Human review, different-hardware
 reproduction, and registered minimum-information certification are now open,
 not complete.
 
+The additive R8 native-neural-transfer campaign is a Level 0 negative result,
+not a new release line. Its v10 package-only hypernetwork failed the public
+Pythia prerequisite: AFTER−BASE was +0.001953 across 1,024 paired rows (95%
+bootstrap CI -0.019531 to +0.024414). The held-out commitment was never
+revealed. R8 therefore does not establish native cross-model transfer and does
+not alter R7.
+
 ## Exact proven scope
 
 The four published immutable capability packages execute through the canonical
@@ -101,9 +108,12 @@ arbitrary teacher.
 1. Execute the frozen human-rating packet with three independent raters.
 2. Run the external reproduction packet on genuinely different hardware.
 3. Execute registered minimum-information certification.
-4. In a separate additive campaign, prove teacher-to-ABI acquisition,
-   capability labeling/segregation, compact English extraction, and quality
-   comparisons against distillation and LoRA.
+4. Treat R8 as a preserved falsification result. Any successor native-transfer
+   mechanism requires a new additive preregistration and must solve recipient
+   realization on public capability-level development data before held-out use.
+5. Prove teacher-to-ABI acquisition, capability labeling/segregation, compact
+   English extraction, and quality comparisons against distillation and LoRA
+   only in separately registered lineages.
 
 Do not claim the ABI moonshot until those acquisition and external-quality
 gates are supported by their own evidence.

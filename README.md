@@ -28,6 +28,12 @@ from any teacher. Human ratings, different-hardware reproduction, registered
 minimum-information certification, teacher-extraction quality, and comparison
 with LoRA/distillation remain open.
 
+The additive R8 native-neural-transfer campaign is a Level 0 negative result.
+Its strongest package-only recipient interface produced AFTER−BASE +0.001953
+across 1,024 paired Pythia rows (95% bootstrap CI -0.019531 to +0.024414).
+Canonical extraction was exact, but recipient behavior did not transfer. The
+held-out secret was never revealed, and R8 does not change the R7 release.
+
 ## R7 at a glance
 
 | Evidence | Result |

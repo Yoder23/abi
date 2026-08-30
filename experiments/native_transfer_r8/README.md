@@ -37,6 +37,17 @@ The campaign is staged:
 Until all primary gates pass across the pinned open-weight recipient families,
 the controlling answer is `NOT YET ESTABLISHED`.
 
+## Controlling R8 result
+
+The v10 public prerequisite is now complete and failed. On 1,024 paired Pythia
+development rows, AFTER−BASE was +0.001953 with a 95% bootstrap interval of
+[-0.019531, +0.024414]. All four capability gains were below the registered
++0.30 threshold. The held-out secret was never revealed. R8 therefore closes
+at Level 0 with exact answer `NO` for the registered system; R7 is unchanged.
+
+Raw evidence and the fail-closed certificate are under
+`results/native_transfer_r8/revision_009/public_falsification/`.
+
 See `PROTOCOL.md` and `configs/preregistered_v10.json` before running anything.
 The preserved v1 draft requested more unique depth-1--3 source rows than exist;
 v2 records that pre-reveal feasibility correction. V1/v2 are disqualified from
