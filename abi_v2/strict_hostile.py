@@ -138,7 +138,7 @@ def run(root: Path) -> dict[str, Any]:
     )
 
     causal_rows = Path(
-        "results/abi_final_validation_v2/live_causality_r5_source_bound/qwen2/observations.jsonl"
+        "results/abi_final_validation_v2/live_causality_r6_source_bound/qwen2/observations.jsonl"
     )
     missing_file("missing_raw_causality_file", causal_rows)
     raw_target = root / causal_rows
@@ -158,7 +158,7 @@ def run(root: Path) -> dict[str, Any]:
         )
     )
 
-    manifest_target = root / "results/abi_final_validation_v2/live_causality_r5_source_bound/qwen2/manifest.json"
+    manifest_target = root / "results/abi_final_validation_v2/live_causality_r6_source_bound/qwen2/manifest.json"
     manifest_backup = backup_root / "manifest.backup"
     shutil.copy2(manifest_target, manifest_backup)
 
@@ -220,27 +220,27 @@ def run(root: Path) -> dict[str, Any]:
     missing_file(
         "missing_raw_mount_table",
         Path(
-            "results/abi_final_validation_v2/isolated_certification_strict_r5_recursive_bound/"
+            "results/abi_final_validation_v2/isolated_certification_strict_r6_full_stream_bound/"
             "pythia/mountinfo.txt"
         ),
     )
     missing_file(
         "missing_reachable_filesystem_inventory",
         Path(
-            "results/abi_final_validation_v2/isolated_certification_strict_r5_recursive_bound/"
+            "results/abi_final_validation_v2/isolated_certification_strict_r6_full_stream_bound/"
             "pythia/reachable-filesystem-inventory.jsonl"
         ),
     )
     missing_file(
         "missing_frozen_adapter",
         Path(
-            "results/abi_final_validation_v2/isolated_certification_strict_r5_recursive_bound/"
+            "results/abi_final_validation_v2/isolated_certification_strict_r6_full_stream_bound/"
             "layercake/certification/adapter.json"
         ),
     )
 
     receipt_target = root / (
-        "results/abi_final_validation_v2/isolated_certification_strict_r5_recursive_bound/"
+        "results/abi_final_validation_v2/isolated_certification_strict_r6_full_stream_bound/"
         "qwen2/receipt.json"
     )
     receipt_backup = backup_root / "receipt.backup"
@@ -262,7 +262,7 @@ def run(root: Path) -> dict[str, Any]:
     )
 
     inventory_base = root / (
-        "results/abi_final_validation_v2/isolated_certification_strict_r5_recursive_bound/layercake"
+        "results/abi_final_validation_v2/isolated_certification_strict_r6_full_stream_bound/layercake"
     )
     inventory_target = inventory_base / "reachable-filesystem-inventory.jsonl"
     inventory_isolation = inventory_base / "physical-isolation.json"
@@ -282,7 +282,11 @@ def run(root: Path) -> dict[str, Any]:
             json.loads(line)
             for line in inventory_target.read_text(encoding="utf-8").splitlines()
         ]
-        inventory_rows = [row for row in inventory_rows if row.get("path") != "/bin"]
+        # Remove an ordinary runtime row rather than one of the three explicit
+        # coverage sentinels. A verifier that merely trusts recomputed summary
+        # counts/hashes would accept this mutation.
+        removed_path = "/usr/bin/NF"
+        inventory_rows = [row for row in inventory_rows if row.get("path") != removed_path]
         inventory_target.write_bytes(
             b"".join(canonical_json_bytes(row) for row in inventory_rows)
         )
@@ -319,11 +323,11 @@ def run(root: Path) -> dict[str, Any]:
 
 
     cert_result = root / (
-        "results/abi_final_validation_v2/isolated_certification_strict_r5_recursive_bound/"
+        "results/abi_final_validation_v2/isolated_certification_strict_r6_full_stream_bound/"
         "qwen2/certification/result.json"
     )
     cert_receipt = root / (
-        "results/abi_final_validation_v2/isolated_certification_strict_r5_recursive_bound/"
+        "results/abi_final_validation_v2/isolated_certification_strict_r6_full_stream_bound/"
         "qwen2/receipt.json"
     )
     cert_result_backup = backup_root / "cert-result.backup"
@@ -374,11 +378,11 @@ def run(root: Path) -> dict[str, Any]:
     )
 
     capsule_manifest = root / (
-        "results/abi_final_validation_v2/isolated_certification_strict_r5_recursive_bound/"
+        "results/abi_final_validation_v2/isolated_certification_strict_r6_full_stream_bound/"
         "layercake/certification-capsule-manifest.json"
     )
     capsule_receipt = root / (
-        "results/abi_final_validation_v2/isolated_certification_strict_r5_recursive_bound/"
+        "results/abi_final_validation_v2/isolated_certification_strict_r6_full_stream_bound/"
         "layercake/receipt.json"
     )
     capsule_manifest_backup = backup_root / "capsule-manifest.backup"
@@ -410,12 +414,12 @@ def run(root: Path) -> dict[str, Any]:
     missing_file(
         "missing_condition_receipt",
         Path(
-            "results/abi_final_validation_v2/live_causality_r5_source_bound/"
+            "results/abi_final_validation_v2/live_causality_r6_source_bound/"
             "qwen2/conditions/zero_state.json"
         ),
     )
 
-    causal_base = root / "results/abi_final_validation_v2/live_causality_r5_source_bound/qwen2"
+    causal_base = root / "results/abi_final_validation_v2/live_causality_r6_source_bound/qwen2"
     causal_manifest = causal_base / "manifest.json"
     causal_observations = causal_base / "observations.jsonl"
     random_receipt = causal_base / "conditions/random_state.json"
@@ -502,7 +506,7 @@ def run(root: Path) -> dict[str, Any]:
     ]
     passed = all(row["rejected"] for row in rows) and not forbidden_dependencies
     result = {
-        "format": "abi-v2-strict-hostile-verification/3",
+        "format": "abi-v2-strict-hostile-verification/4",
         "status": "PASS_STRICT_VERIFIER_FAILS_CLOSED" if passed else "FAIL_STRICT_HOSTILE",
         "baseline_evidence_sha256": baseline_sha256,
         "post_restore_evidence_sha256": repaired_sha256,

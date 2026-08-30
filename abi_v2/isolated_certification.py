@@ -13,7 +13,8 @@ from __future__ import annotations
 
 import argparse
 import bz2
-import gzip
+import ctypes
+import ctypes.util
 import hashlib
 import io
 import json
@@ -439,6 +440,310 @@ def _archive_member_families(names: set[str]) -> list[tuple[str, str]]:
     return families
 
 
+def _valid_7z_stream(payload: bytes, offset: int) -> bool:
+    """Validate the fixed 7z signature header and next-header CRC."""
+
+    if offset + 32 > len(payload):
+        return False
+    header = payload[offset : offset + 32]
+    if header[:6] != b"7z\xbc\xaf'\x1c":
+        return False
+    if zlib.crc32(header[12:32]) & 0xFFFFFFFF != int.from_bytes(header[8:12], "little"):
+        return False
+    next_offset = int.from_bytes(header[12:20], "little")
+    next_size = int.from_bytes(header[20:28], "little")
+    start = offset + 32 + next_offset
+    end = start + next_size
+    return (
+        next_size > 0
+        and start >= offset + 32
+        and end <= len(payload)
+        and zlib.crc32(payload[start:end]) & 0xFFFFFFFF
+        == int.from_bytes(header[28:32], "little")
+    )
+
+
+def _valid_rar4_stream(payload: bytes, offset: int) -> bool:
+    """Validate a RAR4 marker/header rather than trusting an incidental literal."""
+
+    signature = b"Rar!\x1a\x07\x00"
+    header_start = offset + len(signature)
+    if payload[offset:header_start] != signature or header_start + 7 > len(payload):
+        return False
+    header_size = int.from_bytes(payload[header_start + 5 : header_start + 7], "little")
+    header_end = header_start + header_size
+    if header_size < 7 or header_end > len(payload):
+        return False
+    expected_crc = int.from_bytes(payload[header_start : header_start + 2], "little")
+    actual_crc = zlib.crc32(payload[header_start + 2 : header_end]) & 0xFFFF
+    return expected_crc == actual_crc and 0x72 <= payload[header_start + 2] <= 0x7B
+
+
+def _read_rar5_vint(payload: bytes, position: int, limit: int) -> tuple[int, int] | None:
+    value = 0
+    shift = 0
+    while position < limit and shift <= 63:
+        byte = payload[position]
+        position += 1
+        value |= (byte & 0x7F) << shift
+        if not byte & 0x80:
+            return value, position
+        shift += 7
+    return None
+
+
+def _valid_rar5_stream(payload: bytes, offset: int) -> bool:
+    """Validate the RAR5 signature, bounded header size, and header CRC32."""
+
+    signature = b"Rar!\x1a\x07\x01\x00"
+    crc_start = offset + len(signature)
+    if payload[offset:crc_start] != signature or crc_start + 5 > len(payload):
+        return False
+    expected_crc = int.from_bytes(payload[crc_start : crc_start + 4], "little")
+    size_start = crc_start + 4
+    decoded = _read_rar5_vint(payload, size_start, min(len(payload), size_start + 10))
+    if decoded is None:
+        return False
+    header_size, body_start = decoded
+    header_end = body_start + header_size
+    return (
+        header_size > 0
+        and header_end <= len(payload)
+        and zlib.crc32(payload[size_start:header_end]) & 0xFFFFFFFF == expected_crc
+    )
+
+
+def _valid_zstd_frame(payload: bytes, offset: int) -> bool:
+    """Validate Zstandard frame structure without decoding its content."""
+
+    if payload[offset : offset + 4] != b"(\xb5/\xfd" or offset + 6 > len(payload):
+        return False
+    position = offset + 4
+    descriptor = payload[position]
+    position += 1
+    if descriptor & 0x18:  # reserved and unused bits must both be zero
+        return False
+    single_segment = bool(descriptor & 0x20)
+    checksum = bool(descriptor & 0x04)
+    dictionary_flag = descriptor & 0x03
+    content_size_flag = descriptor >> 6
+    if not single_segment:
+        if position >= len(payload):
+            return False
+        position += 1  # window descriptor
+    dictionary_size = (0, 1, 2, 4)[dictionary_flag]
+    content_size_size = (
+        1 if single_segment else 0,
+        2,
+        4,
+        8,
+    )[content_size_flag]
+    position += dictionary_size + content_size_size
+    if position > len(payload):
+        return False
+    while position + 3 <= len(payload):
+        block_header = int.from_bytes(payload[position : position + 3], "little")
+        position += 3
+        last_block = bool(block_header & 1)
+        block_type = (block_header >> 1) & 0x03
+        block_size = block_header >> 3
+        if block_type == 3:
+            return False
+        stored_size = 1 if block_type == 1 else block_size
+        position += stored_size
+        if position > len(payload):
+            return False
+        if last_block:
+            if checksum:
+                position += 4
+            return position <= len(payload)
+    return False
+
+
+def _unsupported_archive_streams(payload: bytes, *, label: str) -> list[str]:
+    """Return only structurally valid unsupported containers at any offset."""
+
+    findings: list[str] = []
+    validators = (
+        (b"7z\xbc\xaf'\x1c", "7z", _valid_7z_stream),
+        (b"Rar!\x1a\x07\x00", "rar4", _valid_rar4_stream),
+        (b"Rar!\x1a\x07\x01\x00", "rar5", _valid_rar5_stream),
+    )
+    for magic, kind, validator in validators:
+        offset = payload.find(magic)
+        while offset >= 0:
+            if validator(payload, offset):
+                findings.append(f"{label}:{kind}@{offset}")
+            offset = payload.find(magic, offset + 1)
+    return findings
+
+
+def _valid_gzip_header(payload: bytes, offset: int) -> bool:
+    if payload[offset : offset + 2] != b"\x1f\x8b" or offset + 18 > len(payload):
+        return False
+    if payload[offset + 2] != 8 or payload[offset + 3] & 0xE0:
+        return False
+    flags = payload[offset + 3]
+    position = offset + 10
+    if flags & 0x04:
+        if position + 2 > len(payload):
+            return False
+        extra_size = int.from_bytes(payload[position : position + 2], "little")
+        position += 2 + extra_size
+    for flag in (0x08, 0x10):
+        if flags & flag:
+            terminator = payload.find(b"\x00", position)
+            if terminator < 0:
+                return False
+            position = terminator + 1
+    if flags & 0x02:
+        if position + 2 > len(payload):
+            return False
+        expected_crc = int.from_bytes(payload[position : position + 2], "little")
+        if zlib.crc32(payload[offset:position]) & 0xFFFF != expected_crc:
+            return False
+        position += 2
+    return position + 8 <= len(payload)
+
+
+def _valid_bzip2_header(payload: bytes, offset: int) -> bool:
+    return (
+        offset + 10 <= len(payload)
+        and payload[offset : offset + 3] == b"BZh"
+        and payload[offset + 3 : offset + 4] in b"123456789"
+        and payload[offset + 4 : offset + 10]
+        in {b"1AY&SY", b"\x17rE8P\x90"}
+    )
+
+
+def _valid_xz_header(payload: bytes, offset: int) -> bool:
+    if payload[offset : offset + 6] != b"\xfd7zXZ\x00" or offset + 12 > len(payload):
+        return False
+    flags = payload[offset + 6 : offset + 8]
+    return (
+        flags[0] == 0
+        and flags[1] & 0xF0 == 0
+        and zlib.crc32(flags) & 0xFFFFFFFF
+        == int.from_bytes(payload[offset + 8 : offset + 12], "little")
+    )
+
+
+def _decompress_supported_stream(
+    payload: bytes, *, offset: int, kind: str
+) -> bytes | None:
+    """Decode one supported stream at an arbitrary offset with an output cap."""
+
+    source = payload[offset:]
+    try:
+        if kind == "gzip":
+            decompressor: Any = zlib.decompressobj(wbits=31)
+        elif kind == "bzip2":
+            decompressor = bz2.BZ2Decompressor()
+        elif kind == "xz":
+            decompressor = lzma.LZMADecompressor(format=lzma.FORMAT_XZ)
+        else:
+            raise IsolatedCertificationError(f"unknown supported archive stream: {kind}")
+        expanded = decompressor.decompress(source, max_length=MAX_ARCHIVE_MEMBER_BYTES + 1)
+    except (OSError, EOFError, ValueError, lzma.LZMAError, zlib.error):
+        return None
+    if len(expanded) > MAX_ARCHIVE_MEMBER_BYTES or not decompressor.eof:
+        return None
+    return expanded
+
+
+def _zstd_library() -> Any | None:
+    name = ctypes.util.find_library("zstd")
+    if not name:
+        return None
+    try:
+        library = ctypes.CDLL(name)
+    except OSError:
+        return None
+    size_t = ctypes.c_size_t
+    void_pointer = ctypes.c_void_p
+    library.ZSTD_createDStream.argtypes = []
+    library.ZSTD_createDStream.restype = void_pointer
+    library.ZSTD_freeDStream.argtypes = [void_pointer]
+    library.ZSTD_freeDStream.restype = size_t
+    library.ZSTD_initDStream.argtypes = [void_pointer]
+    library.ZSTD_initDStream.restype = size_t
+    library.ZSTD_DStreamOutSize.argtypes = []
+    library.ZSTD_DStreamOutSize.restype = size_t
+    library.ZSTD_isError.argtypes = [size_t]
+    library.ZSTD_isError.restype = ctypes.c_uint
+    return library
+
+
+class _ZstdInputBuffer(ctypes.Structure):
+    _fields_ = [
+        ("src", ctypes.c_void_p),
+        ("size", ctypes.c_size_t),
+        ("pos", ctypes.c_size_t),
+    ]
+
+
+class _ZstdOutputBuffer(ctypes.Structure):
+    _fields_ = [
+        ("dst", ctypes.c_void_p),
+        ("size", ctypes.c_size_t),
+        ("pos", ctypes.c_size_t),
+    ]
+
+
+def _decompress_zstd_frame(payload: bytes, offset: int) -> tuple[str, bytes | None]:
+    """Streaming-decode one zstd frame and distinguish malformed literals."""
+
+    if not _valid_zstd_frame(payload, offset):
+        return "invalid", None
+    library = _zstd_library()
+    if library is None:
+        return "unsupported", None
+    library.ZSTD_decompressStream.argtypes = [
+        ctypes.c_void_p,
+        ctypes.POINTER(_ZstdOutputBuffer),
+        ctypes.POINTER(_ZstdInputBuffer),
+    ]
+    library.ZSTD_decompressStream.restype = ctypes.c_size_t
+    source = payload[offset:]
+    source_buffer = ctypes.create_string_buffer(source)
+    incoming = _ZstdInputBuffer(
+        ctypes.cast(source_buffer, ctypes.c_void_p),
+        len(source),
+        0,
+    )
+    stream = library.ZSTD_createDStream()
+    if not stream:
+        return "unsupported", None
+    expanded = bytearray()
+    try:
+        initialized = int(library.ZSTD_initDStream(stream))
+        if library.ZSTD_isError(initialized):
+            return "unsupported", None
+        chunk_size = max(64 * 1024, int(library.ZSTD_DStreamOutSize()))
+        while True:
+            destination = ctypes.create_string_buffer(chunk_size)
+            outgoing = _ZstdOutputBuffer(
+                ctypes.cast(destination, ctypes.c_void_p),
+                chunk_size,
+                0,
+            )
+            before = int(incoming.pos)
+            remaining = int(library.ZSTD_decompressStream(stream, outgoing, incoming))
+            if library.ZSTD_isError(remaining):
+                return "invalid", None
+            expanded.extend(destination.raw[: int(outgoing.pos)])
+            if len(expanded) > MAX_ARCHIVE_MEMBER_BYTES:
+                return "unsupported", None
+            if remaining == 0:
+                return "decoded", bytes(expanded)
+            if int(incoming.pos) == before and int(outgoing.pos) == 0:
+                return "invalid", None
+            if int(incoming.pos) >= int(incoming.size) and remaining > 0:
+                return "invalid", None
+    finally:
+        library.ZSTD_freeDStream(stream)
+
+
 def _scan_expanded_payload(payload: bytes, *, label: str, depth: int) -> dict[str, Any]:
     """Recursively content-scan readable ZIP/tar/gzip/bzip2/xz payloads."""
 
@@ -449,9 +754,9 @@ def _scan_expanded_payload(payload: bytes, *, label: str, depth: int) -> dict[st
     result["member_identifier_matches"] = sum(
         1 for _ in CAMPAIGN_IDENTIFIER_PATTERN.finditer(payload)
     )
-    for magic, kind in UNSUPPORTED_ARCHIVE_MAGICS.items():
-        if magic in payload:
-            result["unsupported_signatures"].append(f"{label}:{kind}")
+    result["unsupported_signatures"].extend(
+        _unsupported_archive_streams(payload, label=label)
+    )
 
     source = io.BytesIO(payload)
     if zipfile.is_zipfile(source):
@@ -527,19 +832,21 @@ def _scan_expanded_payload(payload: bytes, *, label: str, depth: int) -> dict[st
         return result
 
     decompressors: tuple[tuple[bytes, str, Any], ...] = (
-        (b"\x1f\x8b", "gzip", gzip.decompress),
-        (b"BZh", "bzip2", bz2.decompress),
-        (b"\xfd7zXZ\x00", "xz", lzma.decompress),
+        (b"\x1f\x8b", "gzip", _valid_gzip_header),
+        (b"BZh", "bzip2", _valid_bzip2_header),
+        (b"\xfd7zXZ\x00", "xz", _valid_xz_header),
     )
     expanded_offsets: set[tuple[str, int]] = set()
-    for magic, kind, decompressor in decompressors:
+    for magic, kind, validator in decompressors:
         offset = payload.find(magic)
         while offset >= 0:
-            try:
-                expanded = decompressor(payload[offset:])
-            except (OSError, EOFError, ValueError, lzma.LZMAError, zlib.error):
-                # Magic can occur incidentally inside another valid compressed
-                # stream. Only structurally decodable content is an archive.
+            if not validator(payload, offset):
+                offset = payload.find(magic, offset + 1)
+                continue
+            expanded = _decompress_supported_stream(payload, offset=offset, kind=kind)
+            if expanded is None:
+                # Header-shaped bytes can still occur incidentally. Only a
+                # stream that reaches a valid end is treated as a container.
                 offset = payload.find(magic, offset + 1)
                 continue
             if len(expanded) > MAX_ARCHIVE_MEMBER_BYTES:
@@ -560,6 +867,29 @@ def _scan_expanded_payload(payload: bytes, *, label: str, depth: int) -> dict[st
                     ),
                 )
             offset = payload.find(magic, offset + 1)
+
+    zstd_magic = b"(\xb5/\xfd"
+    offset = payload.find(zstd_magic)
+    while offset >= 0:
+        if _valid_zstd_frame(payload, offset):
+            zstd_state, expanded = _decompress_zstd_frame(payload, offset)
+            if zstd_state == "unsupported":
+                result["unsupported_signatures"].append(f"{label}:zstd@{offset}")
+            elif zstd_state == "decoded" and expanded is not None:
+                identity = (hashlib.sha256(expanded).hexdigest(), len(expanded))
+                if identity not in expanded_offsets:
+                    expanded_offsets.add(identity)
+                    result["members_scanned"] += 1
+                    result["member_bytes_scanned"] += len(expanded)
+                    _merge_archive_scan(
+                        result,
+                        _scan_expanded_payload(
+                            expanded,
+                            label=f"{label}!/zstd@{offset}",
+                            depth=depth + 1,
+                        ),
+                    )
+        offset = payload.find(zstd_magic, offset + 1)
     return result
 
 
@@ -573,13 +903,36 @@ def _capability_archive_signatures(path: Path) -> dict[str, Any]:
             payload = _read_bounded(handle, label=path.as_posix())
         return _scan_expanded_payload(payload, label=path.as_posix(), depth=1)
 
-    with path.open("rb") as handle:
-        prefix = handle.read(512)
-    recognized = (
-        any(magic in prefix for magic in UNSUPPORTED_ARCHIVE_MAGICS)
-        or any(magic in prefix for magic in (b"\x1f\x8b", b"BZh", b"\xfd7zXZ\x00"))
-        or (len(prefix) >= 262 and prefix[257:262] == b"ustar")
+    # A container may be hidden behind an arbitrary executable/data prefix.
+    # Inspect the complete byte stream for every supported or fail-closed
+    # signature before deciding that a regular file is not a container.  Keep
+    # enough overlap to detect a signature split across scan blocks.
+    magics = tuple(UNSUPPORTED_ARCHIVE_MAGICS) + (
+        b"\x1f\x8b",
+        b"BZh",
+        b"\xfd7zXZ\x00",
     )
+    maximum_magic = max(len(magic) for magic in magics)
+    overlap = b""
+    recognized = False
+    with path.open("rb") as handle:
+        while True:
+            block = handle.read(CONTENT_SCAN_BLOCK_BYTES)
+            if not block:
+                break
+            window = overlap + block
+            if any(magic in window for magic in magics):
+                recognized = True
+                break
+            overlap = window[-(maximum_magic - 1) :]
+
+    # Uncompressed tar has its authoritative ustar marker at byte 257.  This
+    # check is deliberately separate because incidental "ustar" bytes later
+    # in an ordinary file do not make it a tar stream.
+    if not recognized:
+        with path.open("rb") as handle:
+            prefix = handle.read(262)
+        recognized = len(prefix) >= 262 and prefix[257:262] == b"ustar"
     if not recognized:
         return _empty_archive_scan()
     with path.open("rb") as handle:
@@ -736,6 +1089,11 @@ def _physical_forbidden_scan() -> tuple[dict[str, Any], bytes]:
     unsupported_archives = sum(
         len(row["unsupported_archive_signatures"]) for row in regular_rows
     )
+    unsupported_archive_examples = [
+        signature
+        for row in regular_rows
+        for signature in row["unsupported_archive_signatures"]
+    ][:30]
     if (
         duplicate_paths
         or special_entries
@@ -752,7 +1110,8 @@ def _physical_forbidden_scan() -> tuple[dict[str, Any], bytes]:
             f"capability_signatures={capability_signatures}, "
             f"forbidden_archive_members={forbidden_members}, "
             f"campaign_identifier_matches={campaign_matches}, "
-            f"unsupported_archive_signatures={unsupported_archives}"
+            f"unsupported_archive_signatures={unsupported_archives}, "
+            f"unsupported_archive_examples={unsupported_archive_examples}"
         )
     inventory_bytes = b"".join(canonical_json_bytes(row) for row in rows)
     summary: dict[str, Any] = {

@@ -37,10 +37,29 @@ from .isolated_certification import (
 from .live_causality import CONDITIONS, SAMPLE_SEED, _selected
 
 EVIDENCE_ROOT = Path("results/abi_final_validation_v2")
-CERTIFICATION_ROOT = EVIDENCE_ROOT / "isolated_certification_strict_r5_recursive_bound"
-CAUSALITY_ROOT = EVIDENCE_ROOT / "live_causality_r5_source_bound"
-ISOLATION_ROOT = EVIDENCE_ROOT / "live_isolation_r5_source_bound"
+CERTIFICATION_ROOT = EVIDENCE_ROOT / "isolated_certification_strict_r6_full_stream_bound"
+CAUSALITY_ROOT = EVIDENCE_ROOT / "live_causality_r6_source_bound"
+ISOLATION_ROOT = EVIDENCE_ROOT / "live_isolation_r6_source_bound"
 FORBIDDEN_CAPABILITY_SUFFIXES = {".abi", ".cake", ".abix", ".abicir"}
+
+# These are release-source commitments, not experiment-supplied status flags.
+# They make the complete raw reachable-filesystem inventory immutable: deleting
+# or fabricating even an otherwise ordinary system-runtime row cannot be hidden
+# by recomputing the enclosing JSON hashes.
+EXPECTED_REACHABLE_INVENTORIES = {
+    "layercake": {
+        "rows": 100_511,
+        "sha256": "cf3ddd4c4a91bdec7fa3a3b40718182a0b92c0a61ddc9f9955bab8df5ff120a5",
+    },
+    "qwen2": {
+        "rows": 100_517,
+        "sha256": "4b3fe52f50e660de361d4717b77d40fd016635b68700001084b09ff7bea795d6",
+    },
+    "pythia": {
+        "rows": 100_515,
+        "sha256": "c26abad912047399b7065865dd89dcb50bf3375a161ce96032f6e1544adf7e7b",
+    },
+}
 
 
 class StrictValidationError(RuntimeError):
@@ -146,6 +165,13 @@ def verify_reachable_filesystem_inventory(
     expected_bytes = b"".join(canonical_json_bytes(row) for row in rows)
     if path.read_bytes() != expected_bytes:
         raise StrictValidationError(f"reachable inventory JSONL is noncanonical: {host}")
+    commitment = EXPECTED_REACHABLE_INVENTORIES.get(host)
+    if (
+        commitment is None
+        or len(rows) != commitment["rows"]
+        or hashlib.sha256(expected_bytes).hexdigest() != commitment["sha256"]
+    ):
+        raise StrictValidationError(f"reachable inventory release commitment changed: {host}")
     if summary.get("inventory_jsonl_sha256") != hashlib.sha256(expected_bytes).hexdigest():
         raise StrictValidationError(f"reachable inventory hash changed: {host}")
     paths = [row.get("path") for row in rows]
@@ -1397,7 +1423,7 @@ def verify(root: Path) -> dict[str, Any]:
         causality = verify_live_causality(root)
         isolation = verify_live_isolation(root)
         return {
-            "format": "abi-v2-strict-final-validation/3",
+            "format": "abi-v2-strict-final-validation/4",
             "status": "PASS_STRICT_RAW_RECOMPUTATION",
             "certification": certification,
             "locked_matrix": matrix,

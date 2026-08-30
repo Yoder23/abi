@@ -41,17 +41,17 @@ def build(root: Path, *, commit: str, tag: str) -> dict[str, Any]:
         raise RepairedCandidateError("technical-proof worktree is not clean")
     strict = verify(root)
     strict_path = root / (
-        "results/abi_final_validation_v2/strict_validation_r5_recursive_bound.json"
+        "results/abi_final_validation_v2/strict_validation_r6_full_stream_bound.json"
     )
     recorded = read_json(strict_path)
     if recorded.get("evidence_sha256") != evidence_hash(strict):
         raise RepairedCandidateError("recorded strict certificate is stale")
     hostile_path = root / (
-        "results/abi_final_validation_v2/strict_hostile_pre_public_r5.json"
+        "results/abi_final_validation_v2/strict_hostile_pre_public_r6.json"
     )
     hostile = read_json(hostile_path)
     if (
-        hostile.get("format") != "abi-v2-strict-hostile-verification/3"
+        hostile.get("format") != "abi-v2-strict-hostile-verification/4"
         or hostile.get("status") != "PASS_STRICT_VERIFIER_FAILS_CLOSED"
         or hostile.get("mutations_rejected") != hostile.get("mutations_required")
         or hostile.get("strict_verifier_source_sha256")
@@ -61,7 +61,7 @@ def build(root: Path, *, commit: str, tag: str) -> dict[str, Any]:
     ):
         raise RepairedCandidateError("strict hostile receipt is incomplete")
     value: dict[str, Any] = {
-        "format": "abi-v2-repaired-frozen-release-candidate/5",
+        "format": "abi-v2-repaired-frozen-release-candidate/6",
         "status": "TECHNICAL_PROOF_FROZEN_AWAITING_PUBLIC_RECONSTRUCTION_AND_RED_TEAM",
         "repository": "https://github.com/Yoder23/abi",
         "technical_proof_commit": commit,

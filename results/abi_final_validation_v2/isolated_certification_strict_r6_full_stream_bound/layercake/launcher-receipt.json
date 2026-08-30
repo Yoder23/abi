@@ -1,0 +1,24 @@
+{
+  "adapter_sha256": "d1f3a9d67581032473055711773f784e3b0a028fb68fab58c3a9a63b94317f04",
+  "capsule_manifest_sha256": "65186ceb22ae0a5b5e3e07d92b6cacbe7487f41309715f5b4dbedb59a00cb6cc",
+  "device": "cpu",
+  "evidence_sha256": "54e0e3fbe6275495a545eba657e4f0560b6d356674f71b1a2de6db161d75d4df",
+  "executed_host_certification_sha256": "94356d2d81f369262de220717aa02d140149de8283e11db1fd2593fc895fd4e8",
+  "executed_isolated_certification_sha256": "cd9299b4010d4131b71bd614b0f8330a9da8cb2c01e94a973d9243967c48aa27",
+  "executed_pivot_runner_sha256": "9774d2a4577b5d7b6594aff7ba4ee566f40e884a36c8f87477469eaf8dc8391e",
+  "format": "abi-v2-isolated-host-certification-receipt/1",
+  "host_key": "layercake",
+  "isolation_evidence_sha256": "4a0f20c1fb2189de2969daeb78de9b84a59d609d7a227dbfad2e907fc58b1502",
+  "launcher": {
+    "distribution": "Ubuntu",
+    "exit_code": 0,
+    "sandbox_policy": "abi-certification-pivot-root/1",
+    "windows_capsule_path_sha256": "4a7cf58dcd97ed0204d12852ceedfea3004abdd69719c661b8916126c75ed693",
+    "wsl_capsule_path_sha256": "35c75c32e54b0926e56f468171afc0a49e9d2a2106e99926a920494ceec80bb2"
+  },
+  "mountinfo_sha256": "efa0034177e2c50097ddda5513cc753ed9a52949991fcda37907584c2c318dfb",
+  "performance_sha256": "d8e98828a5ead5c1b2c318afc8ef519419d32e72b88f4f81faed82d1d011ebe5",
+  "reachable_filesystem_inventory_sha256": "cf3ddd4c4a91bdec7fa3a3b40718182a0b92c0a61ddc9f9955bab8df5ff120a5",
+  "result_sha256": "ad35ce40ad760de57c8a9dad511c4d68217bfb8ef993af2d140dca07908c097e",
+  "worker_exit_basis": "PASS_CAPABILITY_BLIND_HOST_CERTIFICATION"
+}

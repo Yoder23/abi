@@ -1,0 +1,11 @@
+588 431 0:83 / / rw,relatime - tmpfs tmpfs rw,size=262144k,mode=700
+589 588 8:48 /usr /usr ro,relatime - ext4 /dev/sdd rw,discard,errors=remount-ro,data=ordered
+590 588 8:48 /home/samyo/.local/lib/python3.12/site-packages /home/samyo/.local/lib/python3.12/site-packages ro,relatime - ext4 /dev/sdd rw,discard,errors=remount-ro,data=ordered
+591 588 0:84 / /etc ro,relatime - tmpfs tmpfs ro,size=4096k,mode=755
+592 588 0:85 / /dev rw,relatime - tmpfs tmpfs rw,size=16384k,mode=755
+593 592 0:5 /null /dev/null ro,relatime - devtmpfs none rw,size=16367292k,nr_inodes=4091823,mode=755
+594 592 0:5 /zero /dev/zero ro,relatime - devtmpfs none rw,size=16367292k,nr_inodes=4091823,mode=755
+595 592 0:5 /random /dev/random ro,relatime - devtmpfs none rw,size=16367292k,nr_inodes=4091823,mode=755
+596 592 0:5 /urandom /dev/urandom ro,relatime - devtmpfs none rw,size=16367292k,nr_inodes=4091823,mode=755
+597 588 8:48 /tmp/abi-certification-layercake-041ed25f0d2c4e439e92485d92e54093 /capsule rw,relatime - ext4 /dev/sdd rw,discard,errors=remount-ro,data=ordered
+598 588 0:86 / /proc rw,nosuid,nodev,noexec,relatime - proc proc rw
