@@ -2,51 +2,51 @@
   "condition_processes": [
     {
       "condition": "real_host",
-      "observations_sha256": "f4384f515782a41f1f9374e1ddef9da68d66e9c3d5ab1494d0baa88d4d473960",
-      "process_id": 23376,
-      "receipt_sha256": "51c4798335e4b4a8d9ea3abf3073eacb7adb1054e75d739bccf90a60e01c5985"
+      "observations_sha256": "8c2254274084d459cb73ff568c04129d84672ee847ac8a25a642dfa3eec2e0c8",
+      "process_id": 6980,
+      "receipt_sha256": "4338de90c8416ce1acaf77bb5670f468df793e0857b3464a890638311c8f2d30"
     },
     {
       "condition": "neutral_host",
-      "observations_sha256": "4bd6e9bb620bbb050ee89fec8356f88f176669e911c49ee85f2abbf2ea9e7fbb",
-      "process_id": 24968,
-      "receipt_sha256": "0a294dcb51ffd206fec0d83b50f2397e053f46fc1137959ba88bd2a1833a5b7f"
+      "observations_sha256": "f448475f89a4474db1fdf9e749734933b6561bd8a933e725d81aa99f78cdf031",
+      "process_id": 12724,
+      "receipt_sha256": "0e6745892a66ba1660414ee89dcc96a4f491c5ef77812f93f28b3c80736fb3ff"
     },
     {
       "condition": "zero_state",
-      "observations_sha256": "d1dfbe21a2b766f078b2ab3db26fcd65fd76beefd37ff87e67cba5b9e3537d36",
-      "process_id": 24704,
-      "receipt_sha256": "93c6dd9099e9473e2e140778cfda5ee2bc423ab9f4dc06f8c9eaee51d96aedf3"
+      "observations_sha256": "c6a9a5a97e9a24c24637f98b7a350c57a3ef1781222c642128d51a39f6bb13d3",
+      "process_id": 18456,
+      "receipt_sha256": "8354f5fd8e30ec301e9a56a6843816112f33a62d7022ef748aa4ad602ae3f974"
     },
     {
       "condition": "random_state",
-      "observations_sha256": "91019fdf63cabc21a94945b9c2c5095e9018c997bbaf9270df372187cfd44b6a",
-      "process_id": 15388,
-      "receipt_sha256": "320283c6fc51d18c10cbf5c27494445f3eb81b3eb70accdff936ab1db5ae6f6d"
+      "observations_sha256": "8e786b60643b6dc3dc9dfbb7e8c52faba21408c2bab4848685f2373cbc515598",
+      "process_id": 9000,
+      "receipt_sha256": "66942a78a15d0fbb31081fdf0476fa855ca4e5620f7504391553517437e8e0c6"
     },
     {
       "condition": "shuffled_state",
-      "observations_sha256": "3f75c75631ef8d968be7d8eec8d2a6e7f12ab7db3c27d92f847c344a11ce8437",
-      "process_id": 13172,
-      "receipt_sha256": "b433f6a342de323c864b5dfe7d75a60081c1dd78069b30bcd2c30dac09e87e8e"
+      "observations_sha256": "6721558a23ca2dcbc941e3ed4203f9220f62b83f98a891570fdc6e3f8c1a367c",
+      "process_id": 30512,
+      "receipt_sha256": "2a0af66f867414a6ab2a1e35002a72548d1441287b1ae5a08c7a7e959784659a"
     },
     {
       "condition": "host_removed",
-      "observations_sha256": "9d949e1a91bfff15b6d975f5756e16a6b5c17529b8fca455d1441116fe92fa99",
-      "process_id": 512,
-      "receipt_sha256": "a288cfb86554559142cd29fcfc118fb8c9886b4c49780939590fcad2f43cb35f"
+      "observations_sha256": "08727d2bcf2815825c604c9ec7f6342225f756af119ce4903bc1844f738ac908",
+      "process_id": 22620,
+      "receipt_sha256": "d94abe1aff89bf0d10233766486efa53f2f40d51844ed40a504152b08b1d40f2"
     },
     {
       "condition": "adapter_removed",
       "observations_sha256": "cb0418c1c7c7d33122d29c3ccb45d7fe0e54151e4a1a5eedee39f2ae6b3486a5",
-      "process_id": 29896,
-      "receipt_sha256": "f6a138858cbde3c91f53a29aba630f6b5919126bab8a0e4fb96b52b9e712ae6d"
+      "process_id": 15564,
+      "receipt_sha256": "2eb825707a8467433d062b7c280140ef7aaeb73f332742bfda2ab809248a0955"
     },
     {
       "condition": "capability_removed",
       "observations_sha256": "da6cc5b8e6fefcaa38b9ba7f141cf718f42b69d8585c1e42f0aaef8cfbf8d347",
-      "process_id": 13068,
-      "receipt_sha256": "e1c27d795d91d303c556032a9abc1aad22edbc7a84b49289a41fbb887c4926bb"
+      "process_id": 15676,
+      "receipt_sha256": "1e6f3128bbe19c5cf73e52fa06c93aa66592386adfce74928d7f67a515dada48"
     }
   ],
   "conditions": [
@@ -60,13 +60,13 @@
     "capability_removed"
   ],
   "device": "cuda",
-  "evidence_sha256": "a30e4f1efc7708f12afeb3148c7e7aed3428d8f6bf73567e90e6439a9ca62c10",
+  "evidence_sha256": "5e769619b0bb15f8781e4306188dd9ed66c64ea4b8f2d7b4e40681798341284c",
   "execution_source_sha256": "6fb04da76f71fd7e11d6a6a9ee2ec93306f2cc7e75bcd0dde7d39f8aa63162df",
   "format": "abi-v2-live-host-causality-run/3",
   "host": "qwen2",
   "observations_path": "observations.jsonl",
   "observations_rows": 1024,
-  "observations_sha256": "a815444114e7eac072cedf354b88aab9f28377edb8e1bb85c3f663d8119bd273",
+  "observations_sha256": "f309ed66be652c6d27be1e55439bb11c7754e86b8f5a5da99b31978ccfccdbc7",
   "sample_seed": 2026082501,
   "samples_per_capability": 32,
   "selected_probe_ids": {
@@ -208,7 +208,7 @@
     ]
   },
   "transitive_execution_sources": {
-    "aggregate_sha256": "caec151db0d6923e924426b8e5c807027d909ab183dd1c5dec7838c64597c519",
+    "aggregate_sha256": "606e7dc408abe527052a6beb9ddfbe6c1d5f064f60d335d78d2ac62f2890e6dd",
     "file_count": 733,
     "files": [
       {
@@ -2157,9 +2157,9 @@
         "sha256": "09b93afef195736029217bf722c597af98bdc8f99d5871311f5f972f67b3cb23"
       },
       {
-        "bytes": 7730,
+        "bytes": 7535,
         "path": "abi/evaluation.py",
-        "sha256": "008d17135b402b5a06a67d4fff459d29d10c1275b0466e2bbce2c2c7db83633e"
+        "sha256": "9a24d29a1beaae843c54e9e15050142752c844c117d1f5f85c58ef44b5a84fe4"
       },
       {
         "bytes": 16679,
@@ -2497,9 +2497,9 @@
         "sha256": "c512e5a064be6f991fae13d2ce7d4b47a494141c52679552fc7a430019583777"
       },
       {
-        "bytes": 11743,
+        "bytes": 11490,
         "path": "abi/models.py",
-        "sha256": "5aaa4cc9a2223f62a63434ac9bd092f8759d723a598d1626cade858cc00ce1d0"
+        "sha256": "fe48b5e07bdc36c1a48b4ab8b685360e305ef17b63d94d93f24943b83882f57c"
       },
       {
         "bytes": 41987,
@@ -2662,9 +2662,9 @@
         "sha256": "19e37f5b1887a49872443dd2bfab329ff69354369263f311442c4a11c4b2fc9e"
       },
       {
-        "bytes": 15317,
+        "bytes": 14946,
         "path": "abi/training.py",
-        "sha256": "d04d3faf1c3242eb23930e0e5fd619c8e7d6c356d91a754040e5d2cabfa72993"
+        "sha256": "0b447a87bd3dcef70d76b82817d3fccd8f9b91ed54fdd0019b1d9afd3fddfa4e"
       },
       {
         "bytes": 7617,
@@ -3879,5 +3879,5 @@
     ],
     "format": "abi-v2-transitive-execution-sources/1"
   },
-  "wall_seconds": 434.7290881999943
+  "wall_seconds": 436.34828090001247
 }

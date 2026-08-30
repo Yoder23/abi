@@ -8,7 +8,7 @@
   },
   "condition": "neutral_host",
   "device": "cuda",
-  "evidence_sha256": "1aa40afff67fd7306bd031b88af27331ba14a25570780ecf385340cf881c3a71",
+  "evidence_sha256": "e5ea1da457fd9ed2e0f678daae476fa73962ed34f8f08d6359f7ca41066f0e94",
   "execution_source_sha256": "6fb04da76f71fd7e11d6a6a9ee2ec93306f2cc7e75bcd0dde7d39f8aa63162df",
   "format": "abi-v2-live-host-condition/3",
   "host": "qwen2",
@@ -1830,14 +1830,14 @@
     "tokenizer_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
   },
   "observations_rows": 128,
-  "observations_sha256": "4bd6e9bb620bbb050ee89fec8356f88f176669e911c49ee85f2abbf2ea9e7fbb",
-  "parent_process_id": 5184,
-  "process_id": 24968,
-  "process_started_ns": 1788061421710934300,
+  "observations_sha256": "f448475f89a4474db1fdf9e749734933b6561bd8a933e725d81aa99f78cdf031",
+  "parent_process_id": 30636,
+  "process_id": 12724,
+  "process_started_ns": 1788064593779054500,
   "samples_per_capability": 32,
   "snapshot_argument": "present",
   "transitive_execution_sources": {
-    "aggregate_sha256": "caec151db0d6923e924426b8e5c807027d909ab183dd1c5dec7838c64597c519",
+    "aggregate_sha256": "606e7dc408abe527052a6beb9ddfbe6c1d5f064f60d335d78d2ac62f2890e6dd",
     "file_count": 733,
     "files": [
       {
@@ -3786,9 +3786,9 @@
         "sha256": "09b93afef195736029217bf722c597af98bdc8f99d5871311f5f972f67b3cb23"
       },
       {
-        "bytes": 7730,
+        "bytes": 7535,
         "path": "abi/evaluation.py",
-        "sha256": "008d17135b402b5a06a67d4fff459d29d10c1275b0466e2bbce2c2c7db83633e"
+        "sha256": "9a24d29a1beaae843c54e9e15050142752c844c117d1f5f85c58ef44b5a84fe4"
       },
       {
         "bytes": 16679,
@@ -4126,9 +4126,9 @@
         "sha256": "c512e5a064be6f991fae13d2ce7d4b47a494141c52679552fc7a430019583777"
       },
       {
-        "bytes": 11743,
+        "bytes": 11490,
         "path": "abi/models.py",
-        "sha256": "5aaa4cc9a2223f62a63434ac9bd092f8759d723a598d1626cade858cc00ce1d0"
+        "sha256": "fe48b5e07bdc36c1a48b4ab8b685360e305ef17b63d94d93f24943b83882f57c"
       },
       {
         "bytes": 41987,
@@ -4291,9 +4291,9 @@
         "sha256": "19e37f5b1887a49872443dd2bfab329ff69354369263f311442c4a11c4b2fc9e"
       },
       {
-        "bytes": 15317,
+        "bytes": 14946,
         "path": "abi/training.py",
-        "sha256": "d04d3faf1c3242eb23930e0e5fd619c8e7d6c356d91a754040e5d2cabfa72993"
+        "sha256": "0b447a87bd3dcef70d76b82817d3fccd8f9b91ed54fdd0019b1d9afd3fddfa4e"
       },
       {
         "bytes": 7617,
