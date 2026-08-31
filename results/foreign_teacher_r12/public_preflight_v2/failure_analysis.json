@@ -1,0 +1,89 @@
+{
+  "adapter_sha256": "a9d1c61e48be777d0aa545da488d4c0a6fabc202ffb5dbf887919d00d4b0c262",
+  "base_state_unchanged": true,
+  "claim_ceiling": "FAILED_PUBLIC_TEACHER_DIAGNOSTIC_ONLY",
+  "evaluation": {
+    "by_depth": {
+      "6": {
+        "accuracy": 0.4811320754716981,
+        "canonical_accuracy": 0.4811320754716981,
+        "correct": 51,
+        "mean_nll": 3.122670011700324,
+        "prediction_ids_sha256": "24b73cca4291e183828721a608149a83e9bea88cbc31cf6276a0dcab96f38065",
+        "rows": 106
+      },
+      "7": {
+        "accuracy": 0.5689655172413793,
+        "canonical_accuracy": 0.5689655172413793,
+        "correct": 231,
+        "mean_nll": 2.676162550602053,
+        "prediction_ids_sha256": "559ca76fadb04f898d19a481d5f6fd11d81c32b5864341af23c6001d245d294b",
+        "rows": 406
+      }
+    },
+    "overall": {
+      "accuracy": 0.55078125,
+      "canonical_accuracy": 0.55078125,
+      "correct": 282,
+      "mean_nll": 2.768967866897583,
+      "prediction_ids_sha256": "f0cdc6bac1aab76feff709385d963c6ef408fa44608049adc1b4ec9ac3671f40",
+      "rows": 512
+    }
+  },
+  "evidence_sha256": "574c6fee3461edfe212d911b4bda8cc5577de51c9c7941031e7bbd9e225644a4",
+  "format": "abi-r12a-public-failure-analysis/1",
+  "source_receipt_evidence_sha256": "ea20d893174d122d4f44e62b3aceba9d61ad12e107a84a5a455f812d3befcc1f",
+  "source_status": "FAIL",
+  "training": {
+    "by_depth": {
+      "1": {
+        "accuracy": 1.0,
+        "canonical_accuracy": 1.0,
+        "correct": 24,
+        "mean_nll": 6.506774298031814e-06,
+        "prediction_ids_sha256": "74615dd974fcabcaa3ac7c26ecaf663990200097d217c3163743185b341c4ec3",
+        "rows": 24
+      },
+      "2": {
+        "accuracy": 1.0,
+        "canonical_accuracy": 1.0,
+        "correct": 72,
+        "mean_nll": 2.043445541251761e-05,
+        "prediction_ids_sha256": "cdb1f0e5b02928f543da062640b0435dad0fb143cf4560bbdb3b09257ad4c366",
+        "rows": 72
+      },
+      "3": {
+        "accuracy": 1.0,
+        "canonical_accuracy": 1.0,
+        "correct": 216,
+        "mean_nll": 0.0001362680298000298,
+        "prediction_ids_sha256": "ffe77621ba96155c1bc689938275ddfdeda3c2d5af95d3895200a13ee4eb248d",
+        "rows": 216
+      },
+      "4": {
+        "accuracy": 0.970679012345679,
+        "canonical_accuracy": 0.970679012345679,
+        "correct": 629,
+        "mean_nll": 0.07504701137364508,
+        "prediction_ids_sha256": "f9b3a288e54c0443566d09f76c450c883ac978120a2ee7d3c8dfb334bcc5a74a",
+        "rows": 648
+      },
+      "5": {
+        "accuracy": 0.9974279835390947,
+        "canonical_accuracy": 0.9974279835390947,
+        "correct": 1939,
+        "mean_nll": 0.014846652462587926,
+        "prediction_ids_sha256": "027a168e60466f56d6784f4c4ba362325940dd1415830c0f146c79d5504dad3f",
+        "rows": 1944
+      }
+    },
+    "overall": {
+      "accuracy": 0.9913911845730028,
+      "canonical_accuracy": 0.9913911845730028,
+      "correct": 2879,
+      "mean_nll": 0.02676786501576339,
+      "prediction_ids_sha256": "74cd37b5e6d382d4eb4695b819ef25efe6d52898ac24227e8ee3e355d1d5cd3d",
+      "rows": 2904
+    }
+  }
+}

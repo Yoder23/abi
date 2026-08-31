@@ -1,0 +1,42 @@
+{
+  "data": {
+    "capability_seed": 12012001,
+    "evaluation_depths": [6, 7],
+    "evaluation_rows": 512,
+    "evaluation_seed": 12012003,
+    "training_rows_by_depth": {
+      "1": 24,
+      "2": 72,
+      "3": 216,
+      "4": 648,
+      "5": 1944,
+      "6": 4096,
+      "7": 8192
+    },
+    "training_seed": 12012012
+  },
+  "format": "abi-r12a-public-preflight/3",
+  "gates": {
+    "after_accuracy": 1.0,
+    "atomic_accuracy": 1.0,
+    "before_accuracy_maximum": 0.25,
+    "gain_minimum": 0.7
+  },
+  "r11_freeze": {
+    "binding_manifest": "experiments/native_isa_r11/configs/preregistered_transfer_v2.json",
+    "binding_manifest_sha256": "e28ea1eb9674b417ef17414e6c94f6a541daaa1f14dabe3ff2af41c22411609e",
+    "sealed_commit": "d89d8b607a705c47f7e2046b7dd4dbd40c396a5f",
+    "sealed_tag": "abi-r11-bounded-neural-construction-2026-08-31"
+  },
+  "status": "PUBLIC_PREFLIGHT_ONLY",
+  "training": {
+    "batch_size": 14,
+    "evaluation_batch_size": 64,
+    "evaluation_interval": 50,
+    "learning_rate": 0.0001,
+    "lora_rank": 16,
+    "maximum_steps": 4000,
+    "sampling_strategy": "depth_balanced",
+    "seed": 12012004
+  }
+}

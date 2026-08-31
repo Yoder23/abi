@@ -9,7 +9,10 @@ import torch
 
 from experiments.foreign_teacher_r12.custody import verify_r11_freeze
 from experiments.foreign_teacher_r12.extractor import extractor_spec
-from experiments.foreign_teacher_r12.public_preflight import _atomic_rows
+from experiments.foreign_teacher_r12.public_preflight import (
+    _atomic_rows,
+    build_training_rows,
+)
 from experiments.foreign_teacher_r12.teacher import (
     R12TeacherError,
     sample_training_batch,
@@ -110,3 +113,23 @@ def test_depth_balanced_teacher_sampling_rejects_uneven_batch() -> None:
             generator=random.Random(1),
             strategy="depth_balanced",
         )
+
+
+def test_per_depth_training_rows_are_unique_and_evaluation_disjoint() -> None:
+    capability = public_capabilities(12012001, split="development", count=1)[0]
+    evaluation = [
+        {
+            "prompt_sha256": "excluded",
+        }
+    ]
+    config = {
+        "data": {
+            "training_rows_by_depth": {"1": 24, "2": 10},
+            "training_seed": 12012012,
+        }
+    }
+    rows = build_training_rows(config, capability, evaluation)
+    prompts = [row["prompt_sha256"] for row in rows]
+    assert len(rows) == 34
+    assert len(prompts) == len(set(prompts))
+    assert "excluded" not in prompts

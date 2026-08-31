@@ -55,6 +55,44 @@ def _atomic_rows(capability: Any) -> list[dict[str, Any]]:
     return rows
 
 
+def build_training_rows(
+    config: dict[str, Any], capability: Any, evaluation_rows: list[dict[str, Any]]
+) -> list[dict[str, Any]]:
+    data = config["data"]
+    per_depth = data.get("training_rows_by_depth")
+    if per_depth is None:
+        return generate_rows(
+            capability,
+            split="source_train",
+            rows=int(data["training_rows"]),
+            depths=data["training_depths"],
+            seed=int(data["training_seed"]),
+        )
+    if not isinstance(per_depth, dict) or not per_depth:
+        raise R12TeacherError("invalid per-depth source-training specification")
+    excluded = {str(row["prompt_sha256"]) for row in evaluation_rows}
+    selected: list[dict[str, Any]] = []
+    seed = int(data["training_seed"])
+    for raw_depth, raw_count in sorted(per_depth.items(), key=lambda item: int(item[0])):
+        depth = int(raw_depth)
+        count = int(raw_count)
+        universe = generate_rows(
+            capability,
+            split=f"source_train_depth_{depth}",
+            rows=8 * 3**depth,
+            depths=[depth],
+            seed=seed + depth,
+        )
+        eligible = [row for row in universe if str(row["prompt_sha256"]) not in excluded]
+        if count <= 0 or count > len(eligible):
+            raise R12TeacherError(f"insufficient disjoint depth-{depth} training rows")
+        selected.extend(eligible[:count])
+    prompts = [str(row["prompt_sha256"]) for row in selected]
+    if len(prompts) != len(set(prompts)) or set(prompts) & excluded:
+        raise R12TeacherError("source-training prompts overlap or duplicate evaluation")
+    return selected
+
+
 def run(config_path: Path, output: Path) -> dict[str, Any]:
     if output.exists():
         raise R12TeacherError(f"immutable public preflight exists: {output}")
@@ -66,13 +104,6 @@ def run(config_path: Path, output: Path) -> dict[str, Any]:
     capability = public_capabilities(
         int(config["data"]["capability_seed"]), split="development", count=1
     )[0]
-    training_rows = generate_rows(
-        capability,
-        split="source_train",
-        rows=int(config["data"]["training_rows"]),
-        depths=config["data"]["training_depths"],
-        seed=int(config["data"]["training_seed"]),
-    )
     evaluation_rows = generate_rows(
         capability,
         split="r12_public_evaluation",
@@ -80,6 +111,7 @@ def run(config_path: Path, output: Path) -> dict[str, Any]:
         depths=config["data"]["evaluation_depths"],
         seed=int(config["data"]["evaluation_seed"]),
     )
+    training_rows = build_training_rows(config, capability, evaluation_rows)
     atomic_rows = _atomic_rows(capability)
     host = FrozenNeuralHost(SPECS["qwen2"], device="cuda")
     base_state = host.model_state_sha256
@@ -165,8 +197,9 @@ def run(config_path: Path, output: Path) -> dict[str, Any]:
             "training_rows": len(training_rows),
             "evaluation_rows": len(evaluation_rows),
             "atomic_rows": len(atomic_rows),
-            "training_depths": config["data"]["training_depths"],
+            "training_depths": sorted({int(row["depth"]) for row in training_rows}),
             "evaluation_depths": config["data"]["evaluation_depths"],
+            "training_evaluation_prompt_overlap": 0,
         },
         "before": before,
         "before_atomic": before_atomic,

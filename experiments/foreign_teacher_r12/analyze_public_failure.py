@@ -22,7 +22,7 @@ from experiments.native_transfer_r8.native_host import (
     GenericRecipientAdapterSet,
 )
 
-from .public_preflight import _json
+from .public_preflight import _json, build_training_rows
 from .teacher import R12TeacherError, evaluate
 from .verify_public import _evidence
 
@@ -42,13 +42,6 @@ def run(config_path: Path, run_dir: Path) -> dict[str, Any]:
     capability = public_capabilities(
         int(config["data"]["capability_seed"]), split="development", count=1
     )[0]
-    training_rows = generate_rows(
-        capability,
-        split="source_train",
-        rows=int(config["data"]["training_rows"]),
-        depths=config["data"]["training_depths"],
-        seed=int(config["data"]["training_seed"]),
-    )
     evaluation_rows = generate_rows(
         capability,
         split="r12_public_evaluation",
@@ -56,6 +49,7 @@ def run(config_path: Path, run_dir: Path) -> dict[str, Any]:
         depths=config["data"]["evaluation_depths"],
         seed=int(config["data"]["evaluation_seed"]),
     )
+    training_rows = build_training_rows(config, capability, evaluation_rows)
     host = FrozenNeuralHost(SPECS["qwen2"], device="cuda")
     adapters = GenericRecipientAdapterSet(
         host, rank=int(config["training"]["lora_rank"])
