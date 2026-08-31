@@ -1,0 +1,54 @@
+{
+  "format": "abi-neural-isa-r9-preregistration/1",
+  "status": "PREREGISTERED_BEFORE_GATE_A_EXECUTION",
+  "campaign": "neural_isa_r9",
+  "protocol_version": 1,
+  "effective_date": "2026-08-30",
+  "r7_evidence_changed": false,
+  "r8_evidence_changed": false,
+  "r8_reference": {
+    "config": "experiments/native_transfer_r8/configs/preregistered_v10.json",
+    "config_sha256": "d6f31883134e25808bb558ba4db51c120e4c9eccda1e78b56667f2d27cd8fd38",
+    "extraction_receipt": "results/native_transfer_r8/revision_009/pre_reveal/meta_extraction/receipt.json",
+    "extraction_receipt_sha256": "a94a962d1d3c24ac4ae55842545d6385b845efe009e5f8be128f496fc6761a9f",
+    "canonical_latents": "results/native_transfer_r8/revision_009/pre_reveal/meta_extraction/meta_canonical_latents.safetensors",
+    "canonical_latents_sha256": "028f4f41ee6a1d4c642ff1f7be7cee4575d4ddb9db83421c8ed2d90b1732b3fc",
+    "sealed_public_verification": "results/native_transfer_r8/revision_009/public_falsification/verification.json"
+  },
+  "gate_a": {
+    "host": "pythia",
+    "development_capability_index": 0,
+    "wrong_capability_index": 1,
+    "train_rows": 288,
+    "train_depths": [1, 2, 3],
+    "evaluation_rows": 1024,
+    "evaluation_depths": [4, 5, 6, 7],
+    "conditions": ["BASE", "AFTER", "BEFORE", "WRONG", "ZERO", "RANDOM", "SHUFFLED", "REMOVED"],
+    "capability_specific_weights_allowed": true,
+    "universal_decoder_claim_allowed": false,
+    "backend": {
+      "kind": "package_conditioned_gru_logit_residual",
+      "hidden_width": 128,
+      "residual_scale": 30.0,
+      "steps": 5000,
+      "batch_size": 32,
+      "learning_rate": 0.001,
+      "negative_control_weight": 0.1,
+      "gradient_clip": 1.0
+    },
+    "seed": 920260830
+  },
+  "gates": {
+    "after_accuracy_minimum": 0.95,
+    "after_minus_base_minimum": 0.70,
+    "negative_control_gain_maximum": 0.05,
+    "bootstrap_replicates": 2000,
+    "bootstrap_confidence": 0.95,
+    "lossless_output_accuracy": 1.0,
+    "distribution_tv_maximum_for_equivalence": 0.001
+  },
+  "decision_rule": {
+    "gate_a_pass": "open bounded capability-blind Gate B pilot",
+    "gate_a_fail": "do not spend universal-backend compute; revise recipient realization architecture in a new preregistration"
+  }
+}
