@@ -27,6 +27,7 @@ from experiments.native_transfer_r8.native_host import (
     GenericRecipientAdapterSet,
 )
 
+from .custody import verify_r11_freeze
 from .extractor import extract_transition
 from .public_preflight import _atomic_rows, _json
 from .teacher import R12TeacherError, evaluate
@@ -41,13 +42,14 @@ def _evidence(value: dict[str, Any]) -> None:
 
 def verify(config_path: Path, run_dir: Path) -> dict[str, Any]:
     config = _json(config_path)
+    live_r11_freeze = verify_r11_freeze(config_path.parents[3], config)
     receipt = _json(run_dir / "receipt.json")
     _evidence(receipt)
     if (
         receipt.get("format") != "abi-r12a-public-qwen-feasibility/1"
         or receipt.get("config_sha256") != sha256_file(config_path)
         or receipt.get("heldout_secret_created") is not False
-        or receipt.get("r11_files_modified") is not False
+        or receipt.get("r11_freeze") != live_r11_freeze
     ):
         raise R12TeacherError("public run identity or custody changed")
     adapter_path = run_dir / str(receipt["adapter_artifact"]["path"])
@@ -117,6 +119,7 @@ def verify(config_path: Path, run_dir: Path) -> dict[str, Any]:
         "format": "abi-r12a-public-qwen-feasibility-verification/1",
         "verdict": "PASS" if passed else "FAIL",
         "receipt_evidence_sha256": receipt["evidence_sha256"],
+        "r11_freeze": live_r11_freeze,
         "before": before,
         "after": after,
         "atomic": atomic,

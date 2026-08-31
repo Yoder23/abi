@@ -30,6 +30,7 @@ from experiments.native_transfer_r8.native_host import (
     sha256_file,
 )
 
+from .custody import verify_r11_freeze
 from .extractor import extract_transition
 from .teacher import R12TeacherError, evaluate, train
 
@@ -60,6 +61,8 @@ def run(config_path: Path, output: Path) -> dict[str, Any]:
     config = _json(config_path)
     if config.get("status") != "PUBLIC_PREFLIGHT_ONLY":
         raise R12TeacherError("R12-A public preflight status changed")
+    root = config_path.parents[3]
+    r11_freeze = verify_r11_freeze(root, config)
     capability = public_capabilities(
         int(config["data"]["capability_seed"]), split="development", count=1
     )[0]
@@ -146,6 +149,7 @@ def run(config_path: Path, output: Path) -> dict[str, Any]:
         "status": "PASS" if passed else "FAIL",
         "claim_ceiling": "PUBLIC_FEASIBILITY_ONLY_NOT_R12_CERTIFICATION",
         "config_sha256": sha256_file(config_path),
+        "r11_freeze": r11_freeze,
         "capability_id": capability.capability_id,
         "teacher": {
             "model_id": host.spec.model_id,
@@ -178,7 +182,6 @@ def run(config_path: Path, output: Path) -> dict[str, Any]:
             "sha256": sha256_file(adapter_path),
         },
         "heldout_secret_created": False,
-        "r11_files_modified": False,
         "hardware": {
             "device": "cuda",
             "cuda_device_name": torch.cuda.get_device_name(0),

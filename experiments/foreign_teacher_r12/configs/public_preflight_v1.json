@@ -15,6 +15,12 @@
     "before_accuracy_maximum": 0.25,
     "gain_minimum": 0.7
   },
+  "r11_freeze": {
+    "binding_manifest": "experiments/native_isa_r11/configs/preregistered_transfer_v2.json",
+    "binding_manifest_sha256": "e28ea1eb9674b417ef17414e6c94f6a541daaa1f14dabe3ff2af41c22411609e",
+    "sealed_commit": "d89d8b607a705c47f7e2046b7dd4dbd40c396a5f",
+    "sealed_tag": "abi-r11-bounded-neural-construction-2026-08-31"
+  },
   "status": "PUBLIC_PREFLIGHT_ONLY",
   "training": {
     "batch_size": 8,

@@ -1,10 +1,12 @@
 from __future__ import annotations
 
 import hashlib
+import json
 
 import pytest
 import torch
 
+from experiments.foreign_teacher_r12.custody import verify_r11_freeze
 from experiments.foreign_teacher_r12.extractor import extractor_spec
 from experiments.foreign_teacher_r12.public_preflight import _atomic_rows
 from experiments.foreign_teacher_r12.teacher import R12TeacherError
@@ -52,3 +54,27 @@ def test_public_verifier_accepts_only_recomputable_receipt_hash() -> None:
 def test_public_verifier_rejects_missing_receipt_hash() -> None:
     with pytest.raises(R12TeacherError, match="evidence hash changed"):
         _evidence({"format": "example"})
+
+
+def test_r11_freeze_recomputes_bindings_and_rejects_tampering(tmp_path) -> None:
+    bound = tmp_path / "bound.txt"
+    bound.write_text("frozen", encoding="utf-8")
+    bound_sha = hashlib.sha256(bound.read_bytes()).hexdigest()
+    manifest = tmp_path / "manifest.json"
+    manifest.write_text(
+        json.dumps({"bindings": {"bound.txt": bound_sha}}), encoding="utf-8"
+    )
+    config = {
+        "r11_freeze": {
+            "binding_manifest": "manifest.json",
+            "binding_manifest_sha256": hashlib.sha256(manifest.read_bytes()).hexdigest(),
+            "sealed_tag": "example",
+            "sealed_commit": "0" * 40,
+        }
+    }
+    receipt = verify_r11_freeze(tmp_path, config)
+    assert receipt["verified_bindings"] == {"bound.txt": bound_sha}
+
+    bound.write_text("changed", encoding="utf-8")
+    with pytest.raises(R12TeacherError, match="binding changed"):
+        verify_r11_freeze(tmp_path, config)
