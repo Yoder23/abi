@@ -1,0 +1,77 @@
+{
+  "bindings": {
+    "experiments/copy_paste_r10/run.py": "3ae3b41488ae5c737523b9f207001ae11c1b044985d713efe26e6efb2dc13805",
+    "experiments/copy_paste_r10/runtime.py": "d94c7646b5d9c793ea85dcf3fe636721013ebda7a13f73f9755eeeeeb4f5d5f4",
+    "experiments/native_isa_r11/PROTOCOL.md": "3262c94e17362997edd9af5567fe0a5e54637ff0ee83c5eb6fe6236711441697",
+    "experiments/native_isa_r11/configs/preregistered_codec_freeze_v1.json": "f4bcf36fbee025212688c8a59923c539d630fb3890ec0a67d52bf5e8334da0c9",
+    "experiments/native_isa_r11/core.py": "91a716141487691568cfb5e1162804a76a8d1d212bc7d1cec1c328fe6569c210",
+    "experiments/native_isa_r11/freeze_codecs.py": "cedecabff1bd9acaad32954b71cda5f5a1743c412546a0656281647465f11e83",
+    "experiments/native_isa_r11/public_preflight.py": "c969d09b191f76662d3fd4a4fa933f38b34348fa6dfff56aeb6acbb9f997a128",
+    "experiments/native_isa_r11/run.py": "372e73a5565cecff9ffd8054777938f8b5f13116d4decbc113b7506e318fe064",
+    "experiments/native_isa_r11/verify.py": "2ac518cacf38b0fb6ec3c653e85bfd742ab26e240bbaad10565cbf27625cdf6e",
+    "experiments/native_transfer_r8/capability_generator.py": "fee37686db170855c1851a0d4dfc61c68f32b542482126431d982fc0095f4291",
+    "experiments/native_transfer_r8/native_host.py": "ad6c86e3e046359fabfd5284846f514f08783b6138e5b05db20df21aea48d8b3",
+    "experiments/native_transfer_r8/recipient_worker.py": "f77fd403f17cd70d1334f7e9c77eaff15aa537e6c87a293eb531e6c552e8c083",
+    "results/native_isa_r11/codec_freeze_v1/host_codecs.safetensors": "d8cf56f35d1c7c03c33f5937c946c9ea5d26f044f4f4b98a7689291c71b721dd",
+    "results/native_isa_r11/codec_freeze_v1/receipt.json": "685c7033fc8d850252bad985082f46f37e5bc99ed1dbb65895ce1fd58880b184"
+  },
+  "claim_ceiling": "SYNTHETIC_ABI_NATIVE_TEACHER_LEVEL_1_OUTPUT_EQUIVALENCE_ONLY",
+  "codec_freeze": {
+    "receipt": "results/native_isa_r11/codec_freeze_v1/receipt.json",
+    "tensors": "results/native_isa_r11/codec_freeze_v1/host_codecs.safetensors"
+  },
+  "codec_scales": {
+    "pythia": 200.0,
+    "qwen2": 100.0,
+    "source": 10.0,
+    "t5": 2.0
+  },
+  "conditions": [
+    "BASE",
+    "AFTER",
+    "BEFORE",
+    "WRONG",
+    "ZERO",
+    "RANDOM",
+    "SHUFFLED",
+    "REMOVED",
+    "BACKEND_REMOVED",
+    "CODEC_REMOVED",
+    "RESTORED"
+  ],
+  "data": {
+    "evaluation_depths": [4, 5, 6, 7],
+    "evaluation_rows_per_capability": 512,
+    "evaluation_seed": 97133,
+    "heldout_capabilities": 4,
+    "training_depths": [1, 2, 3],
+    "training_rows_per_capability": 288,
+    "training_seed": 97121
+  },
+  "format": "abi-native-neural-isa-r11-preregistration/1",
+  "gates": {
+    "negative_control_accuracy_maximum": 0.3,
+    "recipient_after_accuracy": 1.0,
+    "recipient_restored_accuracy": 1.0,
+    "teacher_after_accuracy": 1.0,
+    "teacher_before_accuracy_maximum": 0.25,
+    "teacher_gain_minimum": 0.7
+  },
+  "heldout_seed_commitment": "7f95fd8e75a521b27b8af596dac395152b0d5592bb1700db16bc2e655b98506b",
+  "hosts": ["source", "pythia", "qwen2", "t5"],
+  "recipient_hosts": ["pythia", "qwen2", "t5"],
+  "runtime": {
+    "batch_size": 64,
+    "device": "cuda",
+    "network_after_reveal": false
+  },
+  "status": "PREREGISTERED_BEFORE_HELDOUT_REVEAL",
+  "teacher_training": {
+    "device": "cuda",
+    "learning_rate": 0.1,
+    "optimizer": "Adam",
+    "seed": 97109,
+    "steps": 300,
+    "trainable_parameters": 192
+  }
+}

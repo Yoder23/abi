@@ -1,0 +1,148 @@
+{
+  "bindings": {
+    "experiments/copy_paste_r10/run.py": "3ae3b41488ae5c737523b9f207001ae11c1b044985d713efe26e6efb2dc13805",
+    "experiments/copy_paste_r10/runtime.py": "d94c7646b5d9c793ea85dcf3fe636721013ebda7a13f73f9755eeeeeb4f5d5f4",
+    "experiments/native_isa_r11/PROTOCOL.md": "3262c94e17362997edd9af5567fe0a5e54637ff0ee83c5eb6fe6236711441697",
+    "experiments/native_isa_r11/core.py": "91a716141487691568cfb5e1162804a76a8d1d212bc7d1cec1c328fe6569c210",
+    "experiments/native_isa_r11/freeze_codecs.py": "cedecabff1bd9acaad32954b71cda5f5a1743c412546a0656281647465f11e83",
+    "experiments/native_isa_r11/public_preflight.py": "c969d09b191f76662d3fd4a4fa933f38b34348fa6dfff56aeb6acbb9f997a128",
+    "experiments/native_isa_r11/run.py": "372e73a5565cecff9ffd8054777938f8b5f13116d4decbc113b7506e318fe064",
+    "experiments/native_isa_r11/verify.py": "2ac518cacf38b0fb6ec3c653e85bfd742ab26e240bbaad10565cbf27625cdf6e",
+    "experiments/native_transfer_r8/capability_generator.py": "fee37686db170855c1851a0d4dfc61c68f32b542482126431d982fc0095f4291",
+    "experiments/native_transfer_r8/native_host.py": "ad6c86e3e046359fabfd5284846f514f08783b6138e5b05db20df21aea48d8b3",
+    "experiments/native_transfer_r8/recipient_worker.py": "f77fd403f17cd70d1334f7e9c77eaff15aa537e6c87a293eb531e6c552e8c083"
+  },
+  "config_sha256": "f4bcf36fbee025212688c8a59923c539d630fb3890ec0a67d52bf5e8334da0c9",
+  "evidence_sha256": "577a6309ef5d7962df599e039f163d862a01ea69a72a23ab5530967e1d554b86",
+  "format": "abi-native-neural-isa-r11-codec-freeze/1",
+  "hardware": {
+    "cuda_device_name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "device": "cuda"
+  },
+  "heldout_seed_commitment": "7f95fd8e75a521b27b8af596dac395152b0d5592bb1700db16bc2e655b98506b",
+  "heldout_seed_revealed": false,
+  "host_codecs": {
+    "bytes": 102688,
+    "path": "host_codecs.safetensors",
+    "sha256": "d8cf56f35d1c7c03c33f5937c946c9ea5d26f044f4f4b98a7689291c71b721dd"
+  },
+  "hosts": [
+    {
+      "architecture_family": "GPT2",
+      "capability_examples_seen": 0,
+      "capability_ids_seen": 0,
+      "codec_sha256": "6d8f04073cba1270d8b5e89bc60a868233f53be4a7c7fff2dad1f150015c731c",
+      "codec_shape": [
+        8,
+        768
+      ],
+      "host": "source",
+      "isolated_native_head_accuracy": 1.0,
+      "learned_parameters": 0,
+      "model_id": "distilgpt2",
+      "model_state_sha256_after": "5bafbe16ce5cfba822d107d9cc3812ba1b0554174097a6e94be5c8068af4232f",
+      "model_state_sha256_before": "5bafbe16ce5cfba822d107d9cc3812ba1b0554174097a6e94be5c8068af4232f",
+      "optimizer_steps": 0,
+      "residual_scale": 10.0,
+      "revision": "2290a62682d06624634c1f46a6ad5be0f47f38aa",
+      "target_token_ids": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ]
+    },
+    {
+      "architecture_family": "GPTNeoX",
+      "capability_examples_seen": 0,
+      "capability_ids_seen": 0,
+      "codec_sha256": "20fba892f576e147761b3d71566809daedea4d3edbc1fe5871fe2189ef198cfd",
+      "codec_shape": [
+        8,
+        768
+      ],
+      "host": "pythia",
+      "isolated_native_head_accuracy": 1.0,
+      "learned_parameters": 0,
+      "model_id": "EleutherAI/pythia-160m",
+      "model_state_sha256_after": "54d67dd87a3b2a68f8e9bd71af503d78be0c41f7601d648a61a39d199e3be985",
+      "model_state_sha256_before": "54d67dd87a3b2a68f8e9bd71af503d78be0c41f7601d648a61a39d199e3be985",
+      "optimizer_steps": 0,
+      "residual_scale": 200.0,
+      "revision": "50f5173d932e8e61f858120bcb800b97af589f46",
+      "target_token_ids": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "architecture_family": "Qwen2",
+      "capability_examples_seen": 0,
+      "capability_ids_seen": 0,
+      "codec_sha256": "e1ce0aa3fb38054ba176ae70f43965fdb5a7a35e2f932d7dacd9ba3515851b4e",
+      "codec_shape": [
+        8,
+        896
+      ],
+      "host": "qwen2",
+      "isolated_native_head_accuracy": 1.0,
+      "learned_parameters": 0,
+      "model_id": "Qwen/Qwen2.5-0.5B",
+      "model_state_sha256_after": "4cbdc39b72efcc22dfc47710548ed6a50d6cb2233327951421361ccbfb11e6e1",
+      "model_state_sha256_before": "4cbdc39b72efcc22dfc47710548ed6a50d6cb2233327951421361ccbfb11e6e1",
+      "optimizer_steps": 0,
+      "residual_scale": 100.0,
+      "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+      "target_token_ids": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ]
+    },
+    {
+      "architecture_family": "T5EncoderDecoder",
+      "capability_examples_seen": 0,
+      "capability_ids_seen": 0,
+      "codec_sha256": "bd9625ab888ffaef104d4dc3eb04f7a45cd8a92a50c1d8e26d3ecafac59564fe",
+      "codec_shape": [
+        8,
+        768
+      ],
+      "host": "t5",
+      "isolated_native_head_accuracy": 1.0,
+      "learned_parameters": 0,
+      "model_id": "t5-base",
+      "model_state_sha256_after": "1608260bd9389c970d43869ef7b7e0da150f1d752f1a667d0f8895a385fa185d",
+      "model_state_sha256_before": "1608260bd9389c970d43869ef7b7e0da150f1d752f1a667d0f8895a385fa185d",
+      "optimizer_steps": 0,
+      "residual_scale": 2.0,
+      "revision": "a9723ea7f1b39c1eae772870f3b547bf6ef7e6c1",
+      "target_token_ids": [
+        632,
+        209,
+        204,
+        220,
+        314,
+        305,
+        431,
+        489
+      ]
+    }
+  ],
+  "network_used": false
+}
