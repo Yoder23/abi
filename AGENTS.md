@@ -43,6 +43,16 @@ reached 0.125. Exact live replay covered 8,192 evaluation and 288 training
 rows, and 5/5 hostile controls rejected tampering. The recipient-state GRU
 branch is closed; the capability-blind universal backend was not run.
 
+The additive R10 runtime copy/paste campaign separates a bounded component pass
+from an overall negative result. Identical 2,040-byte source-extracted
+canonical-IR packages achieved 1.0 AFTER and RESTORED accuracy on all 61,440
+Pythia, Qwen2, and T5 recipient rows, with exact removal and exact fresh live
+replay. The source model's native decoder achieved only 0.59375 to 0.65234375
+on the newly sampled composed prompts, below the registered 0.99 source gate.
+R10 therefore proves only synthetic runtime-owned package paste/remove/restore;
+it does not prove lossless source behavior, LayerCake integration, native
+neural transfer, or teacher extraction, and it does not alter R7.
+
 ## Exact proven scope
 
 The four published immutable capability packages execute through the canonical
@@ -115,7 +125,8 @@ arbitrary teacher.
 1. Execute the frozen human-rating packet with three independent raters.
 2. Run the external reproduction packet on genuinely different hardware.
 3. Execute registered minimum-information certification.
-4. Treat R8 and R9 as preserved falsification results. Any successor
+4. Treat R8, R9, and the overall R10 source-gate failure as preserved
+   falsification results. Any successor
    native-transfer mechanism requires a new additive preregistration and a
    materially different canonical IR or recipient injection architecture. It
    must first fit a capability-specific public control and solve public

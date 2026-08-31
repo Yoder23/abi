@@ -1,0 +1,12 @@
+{
+  "format": "abi-copy-paste-r10-verifier-failure/2",
+  "status": "FAIL_CLOSED_NO_SCIENTIFIC_VERDICT",
+  "error": "host codec changed canonical capability distribution",
+  "verifier_repair_sha256": "d47af3ce9b0da5e029c8da7b6213f504620cf746621145ecd586dc192f52f5a9",
+  "maximum_observed_absolute_error": 0.000008225440979003906,
+  "v2_tolerance": 0.000002,
+  "cause": "The v2 arithmetic repair reached the pre-existing numerical comparison. Pythia's worst float32 logit-codec and softmax round-trip differed from the VM distribution by 8.225440979003906e-06; Qwen by 5.066394805908203e-07; T5 by 2.980232238769531e-07.",
+  "scientific_thresholds_changed": false,
+  "raw_evidence_changed": false,
+  "scientific_verdict_produced": false
+}

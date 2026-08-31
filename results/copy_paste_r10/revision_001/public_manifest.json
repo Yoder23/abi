@@ -1,0 +1,58 @@
+{
+  "format": "abi-copy-paste-r10-public-evidence-manifest/1",
+  "status": "R10_OVERALL_FAIL_RUNTIME_COMPONENT_PASS",
+  "claim_boundary": "Bounded synthetic runtime-owned canonical-IR copy/paste only; not LayerCake integration, native neural transplantation, English/domain extraction, or teacher parity.",
+  "run_receipt": {
+    "path": "receipt.json",
+    "bytes": 7070,
+    "sha256": "a9341ecd117a93ae6aad57ff04bff71675cceb27362493c10577e1ab74dd614d",
+    "evidence_sha256": "f4ccd2b0f8c07fa51af0623e6ae0b78357e75739314c9fef9ad91f537fb5a18c"
+  },
+  "negative_report": {
+    "path": "negative_report.json",
+    "bytes": 16415,
+    "sha256": "7abeeedd7e9e29889e37869e2258414bd32068a60ea8d962267ba08e52026e8e",
+    "evidence_sha256": "8646ded26e53d876bbfeadc87f2e99ab7b3c95aeee4389cabf8e81f67f126bdb"
+  },
+  "live_replay": {
+    "path": "live_replay.json",
+    "bytes": 1902,
+    "sha256": "de951f04b84dd73859ab64f8cd2466620ad0512f3e72620ba3969379961c3f5e",
+    "evidence_sha256": "73de75d4977aa0f19585e2a5ee09f8706beb9a8dc33ac85f53c34895f1f6697a"
+  },
+  "raw_evidence": {
+    "path": "raw_evidence.tar.gz",
+    "bytes": 7116179,
+    "sha256": "b4b97f0df5968ad60c7f3f5384785ab8784effe7a40acc9dc521065eb245a680",
+    "members": {
+      "source_observations.jsonl": {
+        "rows": 4096,
+        "bytes": 2026129,
+        "sha256": "1250d7b8f5352527a39cf8bcbeae894bc25da99f5084886509140564d5d44fe0"
+      },
+      "recipient_observations.jsonl": {
+        "rows": 61440,
+        "bytes": 49251955,
+        "sha256": "0738dea72726b7080c439a2693a6a564681a9731910f5adf9ab2b1dea25234ac"
+      }
+    }
+  },
+  "verifier_failures_preserved": [
+    {
+      "path": "verification_v1_failure_receipt.json",
+      "sha256": "3eb04f685c8690f61626843de6448a7e213ae72c55cbd4e9f60528c99f2a4b9d"
+    },
+    {
+      "path": "verification_v2_failure_receipt.json",
+      "sha256": "1867d1a71295d3e5417cd17bfedc9e14d66e94305b68373550347cc277f022a4"
+    }
+  ],
+  "packages": [
+    "sha256-02fd79b5ffbba000627318967a119008d73ca9322a4b8f3766ceb1fd55f5227c.abipkg",
+    "sha256-04be52c4e20f352c98a16d6fa41c53d3757e3d9eaaad3cecc97e0270aa77f4de.abipkg",
+    "sha256-3e85ae823b9d5938f33b34aeca7a9ab1d243ad1fcd101851901b04c02762a237.abipkg",
+    "sha256-74ee435d68a97c8acc6bc73bfe7956f736e938f4dc09c973f7976374e6dde9f1.abipkg",
+    "sha256-b5144295acd97fed6e4f4cff2f75b8e2966ee6148fe53039a573d33ea29a0365.abipkg"
+  ],
+  "evidence_sha256": "ce8979fcb4d29b23547953d871898f6c89614d4844c6b7afa5bae809aaf75a81"
+}

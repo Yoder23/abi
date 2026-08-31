@@ -37,6 +37,20 @@ accuracy versus 0.073242 BASE; ZERO was also 0.125. Live replay reproduced all
 8,480 stored rows, and 5/5 hostile controls were rejected. Gate B remains
 closed and R7 is unchanged.
 
+Additive R10 status:
+`R10_RUNTIME_COMPONENT_PASSED_OVERALL_SOURCE_GATE_FAILED`
+
+R10 connected the synthetic R8 extraction to one clean content-addressed
+package slot and frozen Pythia, Qwen2, and T5 recipients. AFTER and RESTORED
+were 1.0 on all 61,440 recipient rows, all negative controls were no higher
+than 0.15625, removal and interpreter removal exactly matched BASE, no model
+state changed, and a fresh execution reproduced all 65,536 source-plus-
+recipient rows byte-for-byte. The source model's native decoder reached only
+0.59375 to 0.65234375 against the registered 0.99 source gate. The exact R10
+contract therefore failed while its bounded synthetic runtime copy/paste
+component passed. This is not LayerCake integration, lossless source behavior,
+native neural transplantation, or English/domain extraction. R7 is unchanged.
+
 ## What R7 proves
 
 R7 proves one bounded capability ABI result: four immutable packages execute
@@ -90,7 +104,7 @@ Prepare and execute external review without changing the R7 artifacts:
 Teacher extraction and minimization belong to a subsequent additive campaign.
 They must not be inferred from R7 conformance evidence.
 
-Any R8/R9 successor must start with a new additive preregistration and a
+Any R8/R9/R10 successor must start with a new additive preregistration and a
 materially different canonical IR or recipient injection architecture. It must
 fit a public capability-specific control before attempting a capability-blind
 backend. More static-prefix, package-gated LoRA, recipient-state GRU, nearby

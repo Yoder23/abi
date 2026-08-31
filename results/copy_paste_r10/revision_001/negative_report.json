@@ -1,0 +1,715 @@
+{
+  "claim_boundary": "Supports only runtime-owned copy/paste of this synthetic canonical IR. Does not support lossless source behavior, native neural transplantation, LayerCake integration, English/domain extraction, or teacher parity.",
+  "claim_ceiling": "RUNTIME_OWNED_COPY_PASTE_EXECUTION_ONLY",
+  "claim_target": "ABI-C4",
+  "evidence_sha256": "8646ded26e53d876bbfeadc87f2e99ab7b3c95aeee4389cabf8e81f67f126bdb",
+  "format": "abi-copy-paste-r10-negative-report/1",
+  "interpretation": "The identical source-extracted packages execute their canonical transition semantics exactly on all frozen recipients, but the source model's native decoder does not meet the registered out-of-sample composed-prompt gate.",
+  "receipt_evidence_sha256": "f4ccd2b0f8c07fa51af0623e6ae0b78357e75739314c9fef9ad91f537fb5a18c",
+  "recipient_metrics": {
+    "pythia": {
+      "r8-development-000-1f39465a340dcd5a7274": {
+        "AFTER": {
+          "accuracy": 1.0,
+          "correct": 512,
+          "rows": 512
+        },
+        "BASE": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "BEFORE": {
+          "accuracy": 0.126953125,
+          "correct": 65,
+          "rows": 512
+        },
+        "INTERPRETER_REMOVED": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "RANDOM": {
+          "accuracy": 0.111328125,
+          "correct": 57,
+          "rows": 512
+        },
+        "REMOVED": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "RESTORED": {
+          "accuracy": 1.0,
+          "correct": 512,
+          "rows": 512
+        },
+        "SHUFFLED": {
+          "accuracy": 0.146484375,
+          "correct": 75,
+          "rows": 512
+        },
+        "WRONG": {
+          "accuracy": 0.109375,
+          "correct": 56,
+          "rows": 512
+        },
+        "ZERO": {
+          "accuracy": 0.126953125,
+          "correct": 65,
+          "rows": 512
+        }
+      },
+      "r8-development-001-c3d8a4a59c4eb8b0d35c": {
+        "AFTER": {
+          "accuracy": 1.0,
+          "correct": 512,
+          "rows": 512
+        },
+        "BASE": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "BEFORE": {
+          "accuracy": 0.14453125,
+          "correct": 74,
+          "rows": 512
+        },
+        "INTERPRETER_REMOVED": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "RANDOM": {
+          "accuracy": 0.125,
+          "correct": 64,
+          "rows": 512
+        },
+        "REMOVED": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "RESTORED": {
+          "accuracy": 1.0,
+          "correct": 512,
+          "rows": 512
+        },
+        "SHUFFLED": {
+          "accuracy": 0.119140625,
+          "correct": 61,
+          "rows": 512
+        },
+        "WRONG": {
+          "accuracy": 0.091796875,
+          "correct": 47,
+          "rows": 512
+        },
+        "ZERO": {
+          "accuracy": 0.14453125,
+          "correct": 74,
+          "rows": 512
+        }
+      },
+      "r8-development-002-e4271d3719f2ca945c70": {
+        "AFTER": {
+          "accuracy": 1.0,
+          "correct": 512,
+          "rows": 512
+        },
+        "BASE": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "BEFORE": {
+          "accuracy": 0.12109375,
+          "correct": 62,
+          "rows": 512
+        },
+        "INTERPRETER_REMOVED": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "RANDOM": {
+          "accuracy": 0.15625,
+          "correct": 80,
+          "rows": 512
+        },
+        "REMOVED": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "RESTORED": {
+          "accuracy": 1.0,
+          "correct": 512,
+          "rows": 512
+        },
+        "SHUFFLED": {
+          "accuracy": 0.10546875,
+          "correct": 54,
+          "rows": 512
+        },
+        "WRONG": {
+          "accuracy": 0.1171875,
+          "correct": 60,
+          "rows": 512
+        },
+        "ZERO": {
+          "accuracy": 0.12109375,
+          "correct": 62,
+          "rows": 512
+        }
+      },
+      "r8-development-003-f6034c87b38ab269d561": {
+        "AFTER": {
+          "accuracy": 1.0,
+          "correct": 512,
+          "rows": 512
+        },
+        "BASE": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "BEFORE": {
+          "accuracy": 0.125,
+          "correct": 64,
+          "rows": 512
+        },
+        "INTERPRETER_REMOVED": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "RANDOM": {
+          "accuracy": 0.125,
+          "correct": 64,
+          "rows": 512
+        },
+        "REMOVED": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "RESTORED": {
+          "accuracy": 1.0,
+          "correct": 512,
+          "rows": 512
+        },
+        "SHUFFLED": {
+          "accuracy": 0.119140625,
+          "correct": 61,
+          "rows": 512
+        },
+        "WRONG": {
+          "accuracy": 0.1015625,
+          "correct": 52,
+          "rows": 512
+        },
+        "ZERO": {
+          "accuracy": 0.125,
+          "correct": 64,
+          "rows": 512
+        }
+      }
+    },
+    "qwen2": {
+      "r8-development-000-1f39465a340dcd5a7274": {
+        "AFTER": {
+          "accuracy": 1.0,
+          "correct": 512,
+          "rows": 512
+        },
+        "BASE": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "BEFORE": {
+          "accuracy": 0.126953125,
+          "correct": 65,
+          "rows": 512
+        },
+        "INTERPRETER_REMOVED": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "RANDOM": {
+          "accuracy": 0.111328125,
+          "correct": 57,
+          "rows": 512
+        },
+        "REMOVED": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "RESTORED": {
+          "accuracy": 1.0,
+          "correct": 512,
+          "rows": 512
+        },
+        "SHUFFLED": {
+          "accuracy": 0.146484375,
+          "correct": 75,
+          "rows": 512
+        },
+        "WRONG": {
+          "accuracy": 0.109375,
+          "correct": 56,
+          "rows": 512
+        },
+        "ZERO": {
+          "accuracy": 0.126953125,
+          "correct": 65,
+          "rows": 512
+        }
+      },
+      "r8-development-001-c3d8a4a59c4eb8b0d35c": {
+        "AFTER": {
+          "accuracy": 1.0,
+          "correct": 512,
+          "rows": 512
+        },
+        "BASE": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "BEFORE": {
+          "accuracy": 0.14453125,
+          "correct": 74,
+          "rows": 512
+        },
+        "INTERPRETER_REMOVED": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "RANDOM": {
+          "accuracy": 0.125,
+          "correct": 64,
+          "rows": 512
+        },
+        "REMOVED": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "RESTORED": {
+          "accuracy": 1.0,
+          "correct": 512,
+          "rows": 512
+        },
+        "SHUFFLED": {
+          "accuracy": 0.119140625,
+          "correct": 61,
+          "rows": 512
+        },
+        "WRONG": {
+          "accuracy": 0.091796875,
+          "correct": 47,
+          "rows": 512
+        },
+        "ZERO": {
+          "accuracy": 0.14453125,
+          "correct": 74,
+          "rows": 512
+        }
+      },
+      "r8-development-002-e4271d3719f2ca945c70": {
+        "AFTER": {
+          "accuracy": 1.0,
+          "correct": 512,
+          "rows": 512
+        },
+        "BASE": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "BEFORE": {
+          "accuracy": 0.12109375,
+          "correct": 62,
+          "rows": 512
+        },
+        "INTERPRETER_REMOVED": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "RANDOM": {
+          "accuracy": 0.15625,
+          "correct": 80,
+          "rows": 512
+        },
+        "REMOVED": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "RESTORED": {
+          "accuracy": 1.0,
+          "correct": 512,
+          "rows": 512
+        },
+        "SHUFFLED": {
+          "accuracy": 0.10546875,
+          "correct": 54,
+          "rows": 512
+        },
+        "WRONG": {
+          "accuracy": 0.1171875,
+          "correct": 60,
+          "rows": 512
+        },
+        "ZERO": {
+          "accuracy": 0.12109375,
+          "correct": 62,
+          "rows": 512
+        }
+      },
+      "r8-development-003-f6034c87b38ab269d561": {
+        "AFTER": {
+          "accuracy": 1.0,
+          "correct": 512,
+          "rows": 512
+        },
+        "BASE": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "BEFORE": {
+          "accuracy": 0.125,
+          "correct": 64,
+          "rows": 512
+        },
+        "INTERPRETER_REMOVED": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "RANDOM": {
+          "accuracy": 0.125,
+          "correct": 64,
+          "rows": 512
+        },
+        "REMOVED": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "RESTORED": {
+          "accuracy": 1.0,
+          "correct": 512,
+          "rows": 512
+        },
+        "SHUFFLED": {
+          "accuracy": 0.119140625,
+          "correct": 61,
+          "rows": 512
+        },
+        "WRONG": {
+          "accuracy": 0.1015625,
+          "correct": 52,
+          "rows": 512
+        },
+        "ZERO": {
+          "accuracy": 0.125,
+          "correct": 64,
+          "rows": 512
+        }
+      }
+    },
+    "t5": {
+      "r8-development-000-1f39465a340dcd5a7274": {
+        "AFTER": {
+          "accuracy": 1.0,
+          "correct": 512,
+          "rows": 512
+        },
+        "BASE": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "BEFORE": {
+          "accuracy": 0.126953125,
+          "correct": 65,
+          "rows": 512
+        },
+        "INTERPRETER_REMOVED": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "RANDOM": {
+          "accuracy": 0.111328125,
+          "correct": 57,
+          "rows": 512
+        },
+        "REMOVED": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "RESTORED": {
+          "accuracy": 1.0,
+          "correct": 512,
+          "rows": 512
+        },
+        "SHUFFLED": {
+          "accuracy": 0.146484375,
+          "correct": 75,
+          "rows": 512
+        },
+        "WRONG": {
+          "accuracy": 0.109375,
+          "correct": 56,
+          "rows": 512
+        },
+        "ZERO": {
+          "accuracy": 0.119140625,
+          "correct": 61,
+          "rows": 512
+        }
+      },
+      "r8-development-001-c3d8a4a59c4eb8b0d35c": {
+        "AFTER": {
+          "accuracy": 1.0,
+          "correct": 512,
+          "rows": 512
+        },
+        "BASE": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "BEFORE": {
+          "accuracy": 0.14453125,
+          "correct": 74,
+          "rows": 512
+        },
+        "INTERPRETER_REMOVED": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "RANDOM": {
+          "accuracy": 0.125,
+          "correct": 64,
+          "rows": 512
+        },
+        "REMOVED": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "RESTORED": {
+          "accuracy": 1.0,
+          "correct": 512,
+          "rows": 512
+        },
+        "SHUFFLED": {
+          "accuracy": 0.119140625,
+          "correct": 61,
+          "rows": 512
+        },
+        "WRONG": {
+          "accuracy": 0.091796875,
+          "correct": 47,
+          "rows": 512
+        },
+        "ZERO": {
+          "accuracy": 0.099609375,
+          "correct": 51,
+          "rows": 512
+        }
+      },
+      "r8-development-002-e4271d3719f2ca945c70": {
+        "AFTER": {
+          "accuracy": 1.0,
+          "correct": 512,
+          "rows": 512
+        },
+        "BASE": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "BEFORE": {
+          "accuracy": 0.12109375,
+          "correct": 62,
+          "rows": 512
+        },
+        "INTERPRETER_REMOVED": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "RANDOM": {
+          "accuracy": 0.15625,
+          "correct": 80,
+          "rows": 512
+        },
+        "REMOVED": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "RESTORED": {
+          "accuracy": 1.0,
+          "correct": 512,
+          "rows": 512
+        },
+        "SHUFFLED": {
+          "accuracy": 0.10546875,
+          "correct": 54,
+          "rows": 512
+        },
+        "WRONG": {
+          "accuracy": 0.1171875,
+          "correct": 60,
+          "rows": 512
+        },
+        "ZERO": {
+          "accuracy": 0.111328125,
+          "correct": 57,
+          "rows": 512
+        }
+      },
+      "r8-development-003-f6034c87b38ab269d561": {
+        "AFTER": {
+          "accuracy": 1.0,
+          "correct": 512,
+          "rows": 512
+        },
+        "BASE": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "BEFORE": {
+          "accuracy": 0.125,
+          "correct": 64,
+          "rows": 512
+        },
+        "INTERPRETER_REMOVED": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "RANDOM": {
+          "accuracy": 0.125,
+          "correct": 64,
+          "rows": 512
+        },
+        "REMOVED": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "rows": 512
+        },
+        "RESTORED": {
+          "accuracy": 1.0,
+          "correct": 512,
+          "rows": 512
+        },
+        "SHUFFLED": {
+          "accuracy": 0.119140625,
+          "correct": 61,
+          "rows": 512
+        },
+        "WRONG": {
+          "accuracy": 0.1015625,
+          "correct": 52,
+          "rows": 512
+        },
+        "ZERO": {
+          "accuracy": 0.123046875,
+          "correct": 63,
+          "rows": 512
+        }
+      }
+    }
+  },
+  "recomputed_gates": {
+    "recipient_matrix": true,
+    "same_package_reuse": true,
+    "source_learning": false,
+    "temporal_separation": true
+  },
+  "runtime_copy_paste_component": "PASS_BOUNDED_SYNTHETIC",
+  "source_metrics": {
+    "r8-development-000-1f39465a340dcd5a7274": {
+      "AFTER": {
+        "accuracy": 0.59375,
+        "correct": 304,
+        "rows": 512
+      },
+      "BEFORE": {
+        "accuracy": 0.0,
+        "correct": 0,
+        "rows": 512
+      },
+      "gain": 0.59375
+    },
+    "r8-development-001-c3d8a4a59c4eb8b0d35c": {
+      "AFTER": {
+        "accuracy": 0.6015625,
+        "correct": 308,
+        "rows": 512
+      },
+      "BEFORE": {
+        "accuracy": 0.0,
+        "correct": 0,
+        "rows": 512
+      },
+      "gain": 0.6015625
+    },
+    "r8-development-002-e4271d3719f2ca945c70": {
+      "AFTER": {
+        "accuracy": 0.65234375,
+        "correct": 334,
+        "rows": 512
+      },
+      "BEFORE": {
+        "accuracy": 0.0,
+        "correct": 0,
+        "rows": 512
+      },
+      "gain": 0.65234375
+    },
+    "r8-development-003-f6034c87b38ab269d561": {
+      "AFTER": {
+        "accuracy": 0.6015625,
+        "correct": 308,
+        "rows": 512
+      },
+      "BEFORE": {
+        "accuracy": 0.0,
+        "correct": 0,
+        "rows": 512
+      },
+      "gain": 0.6015625
+    }
+  },
+  "source_native_after_accuracy_range": [
+    0.59375,
+    0.65234375
+  ],
+  "stronger_claims_open": [
+    "native_recipient_internalization",
+    "arbitrary_teacher_extraction",
+    "english_or_domain_transfer",
+    "information_minimality",
+    "teacher_quality_parity",
+    "lora_or_distillation_superiority"
+  ],
+  "verdict": "FAIL_SOURCE_NATIVE_GENERALIZATION"
+}

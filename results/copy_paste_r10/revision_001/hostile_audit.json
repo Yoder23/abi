@@ -1,0 +1,37 @@
+{
+  "claim_boundary": "Evidence integrity for bounded R10 runtime component only",
+  "evidence_sha256": "8aaaf178936373d4b12a133a2b7dfc0f4609854f03b99ff1bf2ecca5aee90c15",
+  "format": "abi-copy-paste-r10-hostile-audit/1",
+  "hostile_controls": [
+    {
+      "control": "tampered_package",
+      "error_type": "CopyPasteRuntimeError",
+      "rejected": true
+    },
+    {
+      "control": "missing_package",
+      "error_type": "CopyPasteRuntimeError",
+      "rejected": true
+    },
+    {
+      "control": "empty_slot_execution",
+      "error_type": "CopyPasteRuntimeError",
+      "rejected": true
+    },
+    {
+      "control": "forged_manifest_status",
+      "error_type": "R10HostileAuditError",
+      "rejected": true
+    },
+    {
+      "control": "wrong_raw_archive_hash",
+      "error_type": "R10HostileAuditError",
+      "rejected": true
+    }
+  ],
+  "hostile_controls_rejected": 5,
+  "manifest_sha256": "5711015b44db4c2cddf4a3bb2f399e2ce2c989a0879f1ae84c83f31bc774fd22",
+  "packages_verified": 5,
+  "raw_members_verified": 2,
+  "status": "PASS"
+}

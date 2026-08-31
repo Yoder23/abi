@@ -1,0 +1,172 @@
+{
+  "bindings": {
+    "experiments/copy_paste_r10/PROTOCOL.md": "f4d657e055b2e313f1199fe04a0ffa33ea81f5fe457f25b4b4fd9009f23cf174",
+    "experiments/copy_paste_r10/run.py": "3ae3b41488ae5c737523b9f207001ae11c1b044985d713efe26e6efb2dc13805",
+    "experiments/copy_paste_r10/runtime.py": "d94c7646b5d9c793ea85dcf3fe636721013ebda7a13f73f9755eeeeeb4f5d5f4",
+    "experiments/copy_paste_r10/verify.py": "fff1faf1febe6d25e91012c6b022613877df480e0c52873f4053b7087ef28037",
+    "experiments/native_transfer_r8/configs/preregistered_v10.json": "d6f31883134e25808bb558ba4db51c120e4c9eccda1e78b56667f2d27cd8fd38",
+    "results/native_transfer_r8/revision_009/pre_reveal/meta_extraction/meta_canonical_latents.safetensors": "028f4f41ee6a1d4c642ff1f7be7cee4575d4ddb9db83421c8ed2d90b1732b3fc",
+    "results/native_transfer_r8/revision_009/pre_reveal/meta_extraction/receipt.json": "a94a962d1d3c24ac4ae55842545d6385b845efe009e5f8be128f496fc6761a9f",
+    "results/native_transfer_r8/revision_009/pre_reveal/source_public/meta_source_transition_states.safetensors": "bdacfecc99ca8f456da2633de2659f5617878d324537a919fe3f1f3d456e383c",
+    "results/native_transfer_r8/revision_009/pre_reveal/source_public/receipt.json": "7e07bbd8cd240ee8282730f779cf2c7b45d9261762fe4d2e797cf51b3d70ec52"
+  },
+  "claim_ceiling": "RUNTIME_OWNED_COPY_PASTE_EXECUTION_ONLY",
+  "claim_target": "ABI-C4",
+  "config_sha256": "e1811563ef0216e8d67f0b74f3ce46b3d4914ee20a5ca25ab7e8682a32ff93c3",
+  "evidence_sha256": "f4ccd2b0f8c07fa51af0623e6ae0b78357e75739314c9fef9ad91f537fb5a18c",
+  "format": "abi-copy-paste-r10-run/1",
+  "hardware": {
+    "cuda_device_name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "cuda_total_memory_bytes": 17179344896,
+    "device": "cuda"
+  },
+  "packages": {
+    "after": [
+      {
+        "bytes": 2040,
+        "capability_id": "r8-development-000-1f39465a340dcd5a7274",
+        "latent_sha256": "811beee5a9e52b368572c4509b556ee94b355622c33a4f859f2c2a5616394e11",
+        "path": "sha256-04be52c4e20f352c98a16d6fa41c53d3757e3d9eaaad3cecc97e0270aa77f4de.abipkg",
+        "sha256": "04be52c4e20f352c98a16d6fa41c53d3757e3d9eaaad3cecc97e0270aa77f4de"
+      },
+      {
+        "bytes": 2040,
+        "capability_id": "r8-development-001-c3d8a4a59c4eb8b0d35c",
+        "latent_sha256": "655325ecf956f255c11f72528f852665237268d077732d362fe1f8849fb0bd7e",
+        "path": "sha256-3e85ae823b9d5938f33b34aeca7a9ab1d243ad1fcd101851901b04c02762a237.abipkg",
+        "sha256": "3e85ae823b9d5938f33b34aeca7a9ab1d243ad1fcd101851901b04c02762a237"
+      },
+      {
+        "bytes": 2040,
+        "capability_id": "r8-development-002-e4271d3719f2ca945c70",
+        "latent_sha256": "45b61521da080aac5761119d527dae964920df62608e58e137bd0a26ac3a87e7",
+        "path": "sha256-b5144295acd97fed6e4f4cff2f75b8e2966ee6148fe53039a573d33ea29a0365.abipkg",
+        "sha256": "b5144295acd97fed6e4f4cff2f75b8e2966ee6148fe53039a573d33ea29a0365"
+      },
+      {
+        "bytes": 2040,
+        "capability_id": "r8-development-003-f6034c87b38ab269d561",
+        "latent_sha256": "7d7b042b4de59a784eb15837b7aaa29cc387478ed6cc6fca6d5690f395134ae3",
+        "path": "sha256-02fd79b5ffbba000627318967a119008d73ca9322a4b8f3766ceb1fd55f5227c.abipkg",
+        "sha256": "02fd79b5ffbba000627318967a119008d73ca9322a4b8f3766ceb1fd55f5227c"
+      }
+    ],
+    "before": {
+      "bytes": 2040,
+      "latent_sha256": "e72fe044ae42f0b7fd19f3e5fff7ce6802c95d16ace56cf68b2eb67436ce98a2",
+      "path": "sha256-74ee435d68a97c8acc6bc73bfe7956f736e938f4dc09c973f7976374e6dde9f1.abipkg",
+      "sha256": "74ee435d68a97c8acc6bc73bfe7956f736e938f4dc09c973f7976374e6dde9f1"
+    }
+  },
+  "recipient_execution": {
+    "finished": 260839.8894464,
+    "hosts": [
+      {
+        "architecture_family": "GPTNeoX",
+        "host": "pythia",
+        "interpreter_learned_parameters": 0,
+        "model_id": "EleutherAI/pythia-160m",
+        "model_state_sha256_after": "54d67dd87a3b2a68f8e9bd71af503d78be0c41f7601d648a61a39d199e3be985",
+        "model_state_sha256_before": "54d67dd87a3b2a68f8e9bd71af503d78be0c41f7601d648a61a39d199e3be985",
+        "recipient_optimizer_steps": 0,
+        "revision": "50f5173d932e8e61f858120bcb800b97af589f46",
+        "rows": 20480,
+        "source_model_loaded": false,
+        "target_token_ids": [
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "wall_seconds": 40.91172169998754
+      },
+      {
+        "architecture_family": "Qwen2",
+        "host": "qwen2",
+        "interpreter_learned_parameters": 0,
+        "model_id": "Qwen/Qwen2.5-0.5B",
+        "model_state_sha256_after": "4cbdc39b72efcc22dfc47710548ed6a50d6cb2233327951421361ccbfb11e6e1",
+        "model_state_sha256_before": "4cbdc39b72efcc22dfc47710548ed6a50d6cb2233327951421361ccbfb11e6e1",
+        "recipient_optimizer_steps": 0,
+        "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+        "rows": 20480,
+        "source_model_loaded": false,
+        "target_token_ids": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "wall_seconds": 72.16431239998201
+      },
+      {
+        "architecture_family": "T5EncoderDecoder",
+        "host": "t5",
+        "interpreter_learned_parameters": 0,
+        "model_id": "t5-base",
+        "model_state_sha256_after": "1608260bd9389c970d43869ef7b7e0da150f1d752f1a667d0f8895a385fa185d",
+        "model_state_sha256_before": "1608260bd9389c970d43869ef7b7e0da150f1d752f1a667d0f8895a385fa185d",
+        "recipient_optimizer_steps": 0,
+        "revision": "a9723ea7f1b39c1eae772870f3b547bf6ef7e6c1",
+        "rows": 20480,
+        "source_model_loaded": false,
+        "target_token_ids": [
+          632,
+          209,
+          204,
+          220,
+          314,
+          305,
+          431,
+          489
+        ],
+        "wall_seconds": 66.69203259999631
+      }
+    ],
+    "observations": {
+      "path": "recipient_observations.jsonl",
+      "rows": 61440,
+      "sha256": "0738dea72726b7080c439a2693a6a564681a9731910f5adf9ab2b1dea25234ac"
+    },
+    "physical_source_file_absence_claimed": false,
+    "source_finished_before_recipient_started": true,
+    "started": 260650.3438943
+  },
+  "source": {
+    "controller_learned_parameters": 194,
+    "model_id": "distilgpt2",
+    "model_state_sha256_after": "5bafbe16ce5cfba822d107d9cc3812ba1b0554174097a6e94be5c8068af4232f",
+    "model_state_sha256_before": "5bafbe16ce5cfba822d107d9cc3812ba1b0554174097a6e94be5c8068af4232f",
+    "recipient_phase_optimizer_steps": 0,
+    "revision": "2290a62682d06624634c1f46a6ad5be0f47f38aa",
+    "rows": 4096,
+    "target_token_ids": [
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "wall_seconds": 32.928494599997066
+  },
+  "source_execution": {
+    "finished": 260650.2680742,
+    "observations": {
+      "path": "source_observations.jsonl",
+      "rows": 4096,
+      "sha256": "1250d7b8f5352527a39cf8bcbeae894bc25da99f5084886509140564d5d44fe0"
+    },
+    "started": 260605.0795741
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "claim_boundary": "R10 runtime-owned synthetic copy/paste component only",
+  "evidence_sha256": "73de75d4977aa0f19585e2a5ee09f8706beb9a8dc33ac85f53c34895f1f6697a",
+  "format": "abi-copy-paste-r10-live-replay/1",
+  "hardware": {
+    "cuda_device_name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "device": "cuda"
+  },
+  "hosts": [
+    {
+      "exact_raw_replay": true,
+      "host": "pythia",
+      "model_state_sha256_after": "54d67dd87a3b2a68f8e9bd71af503d78be0c41f7601d648a61a39d199e3be985",
+      "model_state_sha256_before": "54d67dd87a3b2a68f8e9bd71af503d78be0c41f7601d648a61a39d199e3be985",
+      "rows": 20480
+    },
+    {
+      "exact_raw_replay": true,
+      "host": "qwen2",
+      "model_state_sha256_after": "4cbdc39b72efcc22dfc47710548ed6a50d6cb2233327951421361ccbfb11e6e1",
+      "model_state_sha256_before": "4cbdc39b72efcc22dfc47710548ed6a50d6cb2233327951421361ccbfb11e6e1",
+      "rows": 20480
+    },
+    {
+      "exact_raw_replay": true,
+      "host": "t5",
+      "model_state_sha256_after": "1608260bd9389c970d43869ef7b7e0da150f1d752f1a667d0f8895a385fa185d",
+      "model_state_sha256_before": "1608260bd9389c970d43869ef7b7e0da150f1d752f1a667d0f8895a385fa185d",
+      "rows": 20480
+    }
+  ],
+  "interpreter_learned_parameters": 0,
+  "optimizer_steps": 0,
+  "packages_reused_from_run": true,
+  "r10_overall_verdict": "FAIL_SOURCE_NATIVE_GENERALIZATION",
+  "r10_overall_verdict_changed": false,
+  "recipient_rows": 61440,
+  "recipient_rows_sha256": "0738dea72726b7080c439a2693a6a564681a9731910f5adf9ab2b1dea25234ac",
+  "source_model_state_sha256_after": "5bafbe16ce5cfba822d107d9cc3812ba1b0554174097a6e94be5c8068af4232f",
+  "source_model_state_sha256_before": "5bafbe16ce5cfba822d107d9cc3812ba1b0554174097a6e94be5c8068af4232f",
+  "source_rows": 4096,
+  "source_rows_sha256": "1250d7b8f5352527a39cf8bcbeae894bc25da99f5084886509140564d5d44fe0",
+  "status": "PASS_EXACT_LIVE_REPLAY"
+}

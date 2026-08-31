@@ -1,0 +1,10 @@
+{
+  "format": "abi-copy-paste-r10-verifier-failure/1",
+  "status": "FAIL_CLOSED_NO_SCIENTIFIC_VERDICT",
+  "error": "per-host observation count changed",
+  "verifier_sha256": "fff1faf1febe6d25e91012c6b022613877df480e0c52873f4053b7087ef28037",
+  "cause": "The verifier divided the globally unique 2,048-row evaluation inventory by four capabilities a second time when checking each host. The correct registered per-host count is 2,048 rows times 10 conditions = 20,480.",
+  "scientific_thresholds_changed": false,
+  "raw_evidence_changed": false,
+  "scientific_verdict_produced": false
+}

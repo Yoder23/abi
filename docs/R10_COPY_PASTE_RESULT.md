@@ -24,6 +24,7 @@ behavior.
 | Interpreter learned parameters | 0 |
 | Recipient state mutation | none; full state hashes exact |
 | Fresh live replay | 61,440/61,440 recipient and 4,096/4,096 source rows byte-exact |
+| Hostile evidence controls | 5/5 rejected |
 | Source-native AFTER accuracy | 0.59375 to 0.65234375 |
 | Registered source gate | at least 0.99 and gain at least 0.70 |
 | Overall R10 verdict | **FAIL_SOURCE_NATIVE_GENERALIZATION** |
