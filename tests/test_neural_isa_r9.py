@@ -20,6 +20,7 @@ from experiments.neural_isa_r9.verify_specific_diagnostic import (
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "experiments/neural_isa_r9/configs/preregistered_v1.json"
+CONFIG_V2 = ROOT / "experiments/neural_isa_r9/configs/preregistered_v2.json"
 
 
 def test_r9_preregistration_is_bound_to_sealed_r8_inputs() -> None:
@@ -46,6 +47,18 @@ def test_backend_is_neural_and_shape_checked() -> None:
     assert output.shape == (3, 8)
     with pytest.raises(ValueError, match="canonical package shape"):
         backend(states, lengths, torch.randn(2, 8, 8))
+
+
+def test_v2_repair_is_stricter_and_implementation_bound() -> None:
+    config = json.loads(CONFIG_V2.read_text(encoding="utf-8"))
+    assert config["supersedes"] == "preregistered_v1.json"
+    assert config["gates"]["training_accuracy_minimum"] == 0.98
+    assert config["gate_a"]["backend"]["recipient_state_layers"] == [
+        "embedding",
+        "final",
+    ]
+    for relative, expected in config["implementation"].items():
+        assert sha256_file(ROOT / relative) == expected
 
 
 def test_verifier_rejects_stale_receipts() -> None:

@@ -43,6 +43,20 @@ Gate A passes only if:
 Exact 1.0 accuracy is reported as lossless output/decision equivalence; it is
 not required to call the expressivity diagnostic positive.
 
+### Preserved v1 result and v2 repair
+
+V1 used only Pythia's final hidden state and a 274,184-parameter GRU backend.
+It completed 5,000 steps but failed both fit and generalization: a post-run live
+training-row check was 12.5%, while independently verified unseen-depth AFTER
+accuracy was 10.449% versus 7.324% BASE. This is a backend
+optimization/representation failure, not proof that the canonical package is
+insufficient.
+
+V2 is one bounded, measured repair. It exposes the pinned recipient embedding
+state and final state, uses a width-256 backend, records raw training-fit rows,
+and requires at least 98% training accuracy before unseen-depth performance can
+open Gate B. It does not relax any v1 quality or causality threshold.
+
 ## Gate B: capability-blind backend
 
 Gate B is forbidden unless Gate A passes. It must use many pre-freeze public
@@ -66,4 +80,3 @@ may interpret the package only to reconstruct teacher reference distributions.
 The deployed path must be package -> frozen neural backend -> recipient neural
 state/logits. A non-neural runtime that computes the answer and asks the host to
 print it is a different system and fails this protocol.
-

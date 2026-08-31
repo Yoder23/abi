@@ -26,7 +26,7 @@ from experiments.native_transfer_r8.native_host import (
     tensor_state_sha256,
 )
 
-from .run_specific_diagnostic import _bind_r8, _json, _resolve
+from .run_specific_diagnostic import _bind_implementation, _bind_r8, _json, _resolve
 
 
 class R9VerificationError(RuntimeError):
@@ -79,6 +79,7 @@ def verify(config_path: Path, run_dir: Path) -> dict[str, Any]:
     root = Path(__file__).resolve().parents[2]
     config = _json(config_path)
     latent_path, sealed_r8 = _bind_r8(root, config)
+    implementation = _bind_implementation(root, config)
     receipt_path = run_dir / "receipt.json"
     receipt = _json(receipt_path)
     _evidence(receipt, "R9 Gate A run")
@@ -94,6 +95,8 @@ def verify(config_path: Path, run_dir: Path) -> dict[str, Any]:
     }
     if any(receipt.get(key) != value for key, value in expected_bindings.items()):
         raise R9VerificationError("R8 evidence binding changed")
+    if receipt.get("implementation_sha256", {}) != implementation:
+        raise R9VerificationError("implementation binding changed")
     if (
         receipt.get("capability_specific_weights_allowed") is not True
         or receipt.get("universal_decoder_claim_allowed") is not False
@@ -201,6 +204,65 @@ def verify(config_path: Path, run_dir: Path) -> dict[str, Any]:
             raise R9VerificationError("prediction token missing")
         keyed[key] = row
 
+    training_accuracy: float | None = None
+    gates = config["gates"]
+    if "training_accuracy_minimum" in gates:
+        training_rows = generate_rows(
+            capability,
+            split="r9_specific_train",
+            rows=int(gate["train_rows"]),
+            depths=gate["train_depths"],
+            seed=int(gate["seed"]) + 1,
+        )
+        training_by_id = {str(row["row_id"]): row for row in training_rows}
+        training_info = receipt.get("training_observations")
+        if not isinstance(training_info, dict):
+            raise R9VerificationError("training-fit observations missing")
+        training_path = run_dir / str(training_info.get("path"))
+        if (
+            not training_path.is_file()
+            or sha256_file(training_path) != training_info.get("sha256")
+        ):
+            raise R9VerificationError("training-fit observations missing or changed")
+        training_raw = _jsonl(training_path)
+        if len(training_raw) != len(training_rows) or training_info.get("rows") != len(
+            training_rows
+        ):
+            raise R9VerificationError("training-fit observation depth changed")
+        training_correct = 0
+        seen_training = set()
+        for row in training_raw:
+            row_id = str(row.get("row_id"))
+            expected = training_by_id.get(row_id)
+            if expected is None or row_id in seen_training or row.get("condition") != "AFTER":
+                raise R9VerificationError("unknown or duplicate training-fit observation")
+            seen_training.add(row_id)
+            if (
+                row.get("capability_id") != capability.capability_id
+                or row.get("prompt_sha256") != expected["prompt_sha256"]
+                or row.get("depth") != expected["depth"]
+                or row.get("flavor") != expected["flavor"]
+            ):
+                raise R9VerificationError("training-fit observation metadata changed")
+            probabilities = row.get("canonical_output_probabilities")
+            teacher = row.get("teacher_canonical_probabilities")
+            if (
+                not isinstance(probabilities, list)
+                or not isinstance(teacher, list)
+                or len(probabilities) != 8
+                or len(teacher) != 8
+            ):
+                raise R9VerificationError("training-fit probabilities missing")
+            expected_teacher = _teacher_distribution(after, expected)
+            if max(
+                abs(float(left) - float(right))
+                for left, right in zip(teacher, expected_teacher)
+            ) > 1e-6:
+                raise R9VerificationError("training-fit teacher distribution changed")
+            target = target_ids[int(expected["answer"])]
+            training_correct += int(int(row.get("prediction_token_id")) == target)
+        training_accuracy = training_correct / len(training_rows)
+
     metrics: dict[str, dict[str, float]] = {}
     for condition in conditions:
         condition_rows = [keyed[(row_id, condition)] for row_id in sorted(expected_by_id)]
@@ -222,7 +284,6 @@ def verify(config_path: Path, run_dir: Path) -> dict[str, Any]:
             int(int(keyed[(row_id, "AFTER")]["prediction_token_id"]) == target)
             - int(int(keyed[(row_id, "BASE")]["prediction_token_id"]) == target)
         )
-    gates = config["gates"]
     bootstrap = _bootstrap(
         paired,
         seed=int(gate["seed"]) + 9001,
@@ -236,7 +297,8 @@ def verify(config_path: Path, run_dir: Path) -> dict[str, Any]:
         for name in negative_names
     )
     gate_a_pass = (
-        after_accuracy >= float(gates["after_accuracy_minimum"])
+        (training_accuracy is None or training_accuracy >= float(gates["training_accuracy_minimum"]))
+        and after_accuracy >= float(gates["after_accuracy_minimum"])
         and after_accuracy - base_accuracy >= float(gates["after_minus_base_minimum"])
         and bootstrap["lower_95"] > 0
         and negative_control_pass
@@ -252,9 +314,12 @@ def verify(config_path: Path, run_dir: Path) -> dict[str, Any]:
         "exact_question_answer": "YES_GATE_A_ONLY" if gate_a_pass else "NO_GATE_A",
         "scope": "capability-specific Pythia recipient realization diagnostic; not a universal backend",
         "metrics": metrics,
+        "training_fit_accuracy": training_accuracy,
         "after_minus_base_bootstrap": bootstrap,
         "gates": {
             "gate_a_capability_specific_expressivity": gate_a_pass,
+            "training_fit": training_accuracy is None
+            or training_accuracy >= float(gates["training_accuracy_minimum"]),
             "negative_control_causality": negative_control_pass,
             "recipient_frozen": True,
             "backend_frozen_during_evaluation": True,
@@ -295,4 +360,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

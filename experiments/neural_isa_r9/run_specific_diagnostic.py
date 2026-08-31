@@ -87,12 +87,29 @@ def _bind_r8(root: Path, config: Mapping[str, Any]) -> tuple[Path, dict[str, Any
     return _resolve(root, str(reference["canonical_latents"])), sealed_value
 
 
+def _bind_implementation(root: Path, config: Mapping[str, Any]) -> dict[str, str]:
+    registered = config.get("implementation")
+    if registered is None:
+        return {}
+    if not isinstance(registered, dict) or not registered:
+        raise R9DiagnosticError("implementation registration changed")
+    result = {}
+    for relative, expected in registered.items():
+        path = _resolve(root, str(relative))
+        actual = sha256_file(path)
+        if actual != expected:
+            raise R9DiagnosticError(f"registered implementation changed: {relative}")
+        result[str(relative)] = actual
+    return result
+
+
 @torch.inference_mode()
 def _recipient_features(
     host: FrozenNeuralHost,
     rows: Sequence[Mapping[str, Any]],
     *,
     batch_size: int,
+    state_layers: Sequence[str],
 ) -> list[torch.Tensor]:
     features: list[torch.Tensor] = []
     for start in range(0, len(rows), batch_size):
@@ -101,12 +118,24 @@ def _recipient_features(
         encoded = host.encode(prompts)
         lengths = encoded["attention_mask"].sum(dim=1).detach().cpu().tolist()
         _, output = host.logits(prompts, prefix=None, output_hidden_states=True)
-        states = output.hidden_states[-1].detach().float().cpu()
+        states = _select_states(output, state_layers).detach().float().cpu()
         for index, length in enumerate(lengths):
             features.append(states[index, : int(length)].contiguous())
     if len(features) != len(rows):
         raise R9DiagnosticError("recipient feature extraction depth changed")
     return features
+
+
+def _select_states(output: Any, state_layers: Sequence[str]) -> torch.Tensor:
+    if not state_layers or any(value not in {"embedding", "final"} for value in state_layers):
+        raise R9DiagnosticError("recipient state-layer registration changed")
+    selected = [
+        output.hidden_states[0] if value == "embedding" else output.hidden_states[-1]
+        for value in state_layers
+    ]
+    if any(value.shape[:2] != selected[0].shape[:2] for value in selected):
+        raise R9DiagnosticError("recipient state sequence geometry changed")
+    return torch.cat(selected, dim=-1)
 
 
 def _batch_features(
@@ -220,6 +249,7 @@ def _evaluate(
     after: torch.Tensor,
     batch_size: int,
     residual_scale: float,
+    state_layers: Sequence[str],
 ) -> list[dict[str, Any]]:
     observations: list[dict[str, Any]] = []
     backend.eval()
@@ -230,7 +260,7 @@ def _evaluate(
         encoded = host.encode(prompts)
         lengths = encoded["attention_mask"].sum(dim=1)
         base_logits, output = host.logits(prompts, prefix=None, output_hidden_states=True)
-        states = output.hidden_states[-1].detach().float()
+        states = _select_states(output, state_layers).detach().float()
         for condition, package in conditions.items():
             modified = base_logits.clone()
             if package is not None:
@@ -265,9 +295,10 @@ def run(config_path: Path, output: Path) -> dict[str, Any]:
         raise R9DiagnosticError(f"immutable output exists: {output}")
     root = Path(__file__).resolve().parents[2]
     config = _json(config_path)
-    if config.get("status") != "PREREGISTERED_BEFORE_GATE_A_EXECUTION":
+    if not str(config.get("status", "")).startswith("PREREGISTERED_BEFORE_GATE_A"):
         raise R9DiagnosticError("R9 preregistration status changed")
     latent_path, _ = _bind_r8(root, config)
+    implementation = _bind_implementation(root, config)
     tensors = load_file(str(latent_path), device="cpu")
     gate = config["gate_a"]
     capability_index = int(gate["development_capability_index"])
@@ -284,6 +315,7 @@ def run(config_path: Path, output: Path) -> dict[str, Any]:
     before = tensors["before"].float()
     wrong = tensors["development_after"][wrong_index].float()
     settings = gate["backend"]
+    state_layers = tuple(str(value) for value in settings.get("recipient_state_layers", ["final"]))
     seed = int(gate["seed"])
     train_rows = generate_rows(
         capability,
@@ -306,10 +338,13 @@ def run(config_path: Path, output: Path) -> dict[str, Any]:
     host = FrozenNeuralHost(SPECS[str(gate["host"])], device="cuda")
     host_state_before = host.model_state_sha256
     backend = PackageConditionedGRUBackend(
-        host.hidden_width, hidden_width=int(settings["hidden_width"])
+        host.hidden_width * len(state_layers), hidden_width=int(settings["hidden_width"])
     ).to(host.device)
     train_features = _recipient_features(
-        host, train_rows, batch_size=int(settings["batch_size"])
+        host,
+        train_rows,
+        batch_size=int(settings["batch_size"]),
+        state_layers=state_layers,
     )
     conditions = _condition_packages(after, before, wrong, capability.capability_id)
     negative_packages = [
@@ -341,15 +376,28 @@ def run(config_path: Path, output: Path) -> dict[str, Any]:
         after=after,
         batch_size=int(settings["batch_size"]),
         residual_scale=float(settings["residual_scale"]),
+        state_layers=state_layers,
     )
     evaluation_seconds = time.perf_counter() - started
+    raw_path = output / "observations.jsonl"
+    _write_jsonl_once(raw_path, observations)
+    training_observations = _evaluate(
+        host,
+        backend,
+        train_rows,
+        {"AFTER": after},
+        after=after,
+        batch_size=int(settings["batch_size"]),
+        residual_scale=float(settings["residual_scale"]),
+        state_layers=state_layers,
+    )
+    training_raw_path = output / "training_observations.jsonl"
+    _write_jsonl_once(training_raw_path, training_observations)
     backend_hash_after = module_sha256(backend)
     host.verify_frozen()
     host_state_after = module_sha256(host.model)
     if host_state_before != host_state_after or backend_hash_before != backend_hash_after:
         raise R9DiagnosticError("frozen model identity changed during evaluation")
-    raw_path = output / "observations.jsonl"
-    _write_jsonl_once(raw_path, observations)
     receipt = {
         "format": "abi-neural-isa-r9-capability-specific-diagnostic/1",
         "config_sha256": sha256_file(config_path),
@@ -358,6 +406,7 @@ def run(config_path: Path, output: Path) -> dict[str, Any]:
             _resolve(root, str(config["r8_reference"]["extraction_receipt"]))
         ),
         "r8_canonical_latents_sha256": sha256_file(latent_path),
+        "implementation_sha256": implementation,
         "host_key": host.spec.key,
         "host_model_id": host.spec.model_id,
         "host_revision": host.spec.revision,
@@ -377,6 +426,7 @@ def run(config_path: Path, output: Path) -> dict[str, Any]:
             "state_sha256_after_evaluation": backend_hash_after,
             "parameters": sum(value.numel() for value in backend.parameters()),
             "kind": settings["kind"],
+            "recipient_state_layers": list(state_layers),
         },
         "training": {
             "rows": len(train_rows),
@@ -393,6 +443,11 @@ def run(config_path: Path, output: Path) -> dict[str, Any]:
             "path": raw_path.name,
             "sha256": sha256_file(raw_path),
             "rows": len(observations),
+        },
+        "training_observations": {
+            "path": training_raw_path.name,
+            "sha256": sha256_file(training_raw_path),
+            "rows": len(training_observations),
         },
         "hardware": {
             "device": str(host.device),
