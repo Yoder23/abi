@@ -21,6 +21,33 @@ class R12TeacherError(RuntimeError):
     """Raised when the conventional-teacher custody or training gate changes."""
 
 
+def sample_training_batch(
+    rows: Sequence[Mapping[str, Any]],
+    *,
+    batch_size: int,
+    generator: random.Random,
+    strategy: str,
+) -> list[Mapping[str, Any]]:
+    if strategy == "row_uniform":
+        return [rows[generator.randrange(len(rows))] for _ in range(batch_size)]
+    if strategy != "depth_balanced":
+        raise R12TeacherError(f"unknown teacher sampling strategy: {strategy}")
+    by_depth: dict[int, list[Mapping[str, Any]]] = {}
+    for row in rows:
+        by_depth.setdefault(int(row["depth"]), []).append(row)
+    depths = sorted(by_depth)
+    if not depths or batch_size % len(depths):
+        raise R12TeacherError("depth-balanced batch must divide evenly across depths")
+    per_depth = batch_size // len(depths)
+    batch = [
+        by_depth[depth][generator.randrange(len(by_depth[depth]))]
+        for depth in depths
+        for _ in range(per_depth)
+    ]
+    generator.shuffle(batch)
+    return batch
+
+
 @torch.inference_mode()
 def evaluate(
     host: FrozenNeuralHost,
@@ -70,6 +97,7 @@ def train(
     batch_size: int,
     evaluation_batch_size: int,
     seed: int,
+    sampling_strategy: str = "row_uniform",
 ) -> tuple[dict[str, torch.Tensor], dict[str, Any]]:
     if maximum_steps <= 0 or evaluation_interval <= 0:
         raise R12TeacherError("invalid teacher training schedule")
@@ -86,7 +114,12 @@ def train(
     selected_state = None
     selected_step = None
     for step in range(1, maximum_steps + 1):
-        batch = [training_rows[generator.randrange(len(training_rows))] for _ in range(batch_size)]
+        batch = sample_training_batch(
+            training_rows,
+            batch_size=batch_size,
+            generator=generator,
+            strategy=sampling_strategy,
+        )
         optimizer.zero_grad(set_to_none=True)
         logits, _ = host.logits([str(row["prompt"]) for row in batch], prefix=None)
         targets = host.target_ids([int(row["answer"]) for row in batch])
@@ -119,6 +152,7 @@ def train(
         "learning_rate": learning_rate,
         "batch_size": batch_size,
         "optimizer": "AdamW",
+        "sampling_strategy": sampling_strategy,
         "first_loss": first_loss,
         "final_loss": final_loss,
         "trainable_parameters": sum(value.numel() for value in parameters),

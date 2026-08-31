@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import random
 
 import pytest
 import torch
@@ -9,7 +10,10 @@ import torch
 from experiments.foreign_teacher_r12.custody import verify_r11_freeze
 from experiments.foreign_teacher_r12.extractor import extractor_spec
 from experiments.foreign_teacher_r12.public_preflight import _atomic_rows
-from experiments.foreign_teacher_r12.teacher import R12TeacherError
+from experiments.foreign_teacher_r12.teacher import (
+    R12TeacherError,
+    sample_training_batch,
+)
 from experiments.foreign_teacher_r12.verify_public import _evidence
 from experiments.native_isa_r11.core import RecurrentTransitionNeuralISA
 from experiments.native_transfer_r8.capability_generator import (
@@ -78,3 +82,31 @@ def test_r11_freeze_recomputes_bindings_and_rejects_tampering(tmp_path) -> None:
     bound.write_text("changed", encoding="utf-8")
     with pytest.raises(R12TeacherError, match="binding changed"):
         verify_r11_freeze(tmp_path, config)
+
+
+def test_depth_balanced_teacher_sampling_is_exact() -> None:
+    rows = [
+        {"depth": depth, "row": index}
+        for depth, count in ((1, 2), (2, 5), (3, 11), (4, 17), (5, 23))
+        for index in range(count)
+    ]
+    batch = sample_training_batch(
+        rows,
+        batch_size=10,
+        generator=random.Random(12012004),
+        strategy="depth_balanced",
+    )
+    assert {depth: sum(row["depth"] == depth for row in batch) for depth in range(1, 6)} == {
+        depth: 2 for depth in range(1, 6)
+    }
+
+
+def test_depth_balanced_teacher_sampling_rejects_uneven_batch() -> None:
+    rows = [{"depth": depth} for depth in range(1, 6)]
+    with pytest.raises(R12TeacherError, match="divide evenly"):
+        sample_training_batch(
+            rows,
+            batch_size=8,
+            generator=random.Random(1),
+            strategy="depth_balanced",
+        )

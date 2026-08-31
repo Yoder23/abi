@@ -106,6 +106,7 @@ def run(config_path: Path, output: Path) -> dict[str, Any]:
         batch_size=int(config["training"]["batch_size"]),
         evaluation_batch_size=int(config["training"]["evaluation_batch_size"]),
         seed=int(config["training"]["seed"]),
+        sampling_strategy=str(config["training"].get("sampling_strategy", "row_uniform")),
     )
     adapters.load_state(state)
     after = evaluate(
