@@ -1,0 +1,18 @@
+{
+  "format": "abi-proof-ledger/1",
+  "updated": "2026-08-30",
+  "claims": [
+    {"id": "ABI-C1", "claim": "immutable package identity and canonical semantics", "state": "BOUNDED_PASS_R7"},
+    {"id": "ABI-C2", "claim": "shared-runtime execution on compatible declared hosts", "state": "BOUNDED_PASS_R7"},
+    {"id": "ABI-C3", "claim": "source learning event to canonical package", "state": "BOUNDED_SYNTHETIC_PASS_R8"},
+    {"id": "ABI-C4", "claim": "source-acquired package copy/paste execution on frozen heterogeneous hosts with zero host training", "state": "OPEN_R10_TARGET"},
+    {"id": "ABI-C5", "claim": "native neural transplantation into a foreign recipient", "state": "FAILED_TESTED_R8_R9_MECHANISMS"},
+    {"id": "ABI-C6", "claim": "fluent English and arbitrary-domain extraction and segregation", "state": "OPEN"},
+    {"id": "ABI-C7", "claim": "teacher-quality parity and superiority to LoRA/distillation", "state": "OPEN"},
+    {"id": "ABI-C8", "claim": "full ABI moonshot", "state": "NOT_PASSED"}
+  ],
+  "promotion_boundary": {
+    "r10_may_promote": ["ABI-C4"],
+    "r10_may_not_promote": ["ABI-C5", "ABI-C6", "ABI-C7", "ABI-C8"]
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "format": "abi-copy-paste-r10-preregistration/1",
+  "status": "PREREGISTERED_BEFORE_EXECUTION",
+  "campaign": "copy_paste_r10",
+  "protocol_version": 1,
+  "effective_date": "2026-08-30",
+  "claim_target": "ABI-C4",
+  "claim_ceiling": "RUNTIME_OWNED_COPY_PASTE_EXECUTION_ONLY",
+  "r7_evidence_changed": false,
+  "r8_evidence_changed": false,
+  "r9_evidence_changed": false,
+  "r8_reference": {
+    "config": "experiments/native_transfer_r8/configs/preregistered_v10.json",
+    "config_sha256": "d6f31883134e25808bb558ba4db51c120e4c9eccda1e78b56667f2d27cd8fd38",
+    "source_receipt": "results/native_transfer_r8/revision_009/pre_reveal/source_public/receipt.json",
+    "source_receipt_sha256": "7e07bbd8cd240ee8282730f779cf2c7b45d9261762fe4d2e797cf51b3d70ec52",
+    "source_states": "results/native_transfer_r8/revision_009/pre_reveal/source_public/meta_source_transition_states.safetensors",
+    "source_states_sha256": "bdacfecc99ca8f456da2633de2659f5617878d324537a919fe3f1f3d456e383c",
+    "extraction_receipt": "results/native_transfer_r8/revision_009/pre_reveal/meta_extraction/receipt.json",
+    "extraction_receipt_sha256": "a94a962d1d3c24ac4ae55842545d6385b845efe009e5f8be128f496fc6761a9f",
+    "canonical_latents": "results/native_transfer_r8/revision_009/pre_reveal/meta_extraction/meta_canonical_latents.safetensors",
+    "canonical_latents_sha256": "028f4f41ee6a1d4c642ff1f7be7cee4575d4ddb9db83421c8ed2d90b1732b3fc"
+  },
+  "public_matrix": {
+    "development_capabilities": 4,
+    "evaluation_rows_per_capability": 512,
+    "evaluation_depths": [4, 5, 6, 7],
+    "evaluation_seed": 1020260830,
+    "hosts": ["pythia", "qwen2", "t5"],
+    "conditions": ["BASE", "AFTER", "BEFORE", "WRONG", "ZERO", "RANDOM", "SHUFFLED", "REMOVED", "INTERPRETER_REMOVED", "RESTORED"]
+  },
+  "runtime": {
+    "kind": "zero_parameter_canonical_transition_vm",
+    "learned_parameters": 0,
+    "host_logit_margin": 20.0,
+    "batch_size": 4,
+    "network_allowed": false,
+    "physical_source_file_absence_claimed": false
+  },
+  "package": {
+    "format": "abi-copy-paste-r10-transition-package/1",
+    "latent_shape": [3, 8, 8],
+    "latent_dtype": "float32",
+    "forbidden_fields": ["prompt", "answer", "row_id", "solver", "model_id", "tokenizer_id", "hidden_width", "host_matrix"]
+  },
+  "gates": {
+    "source_after_accuracy_minimum": 0.99,
+    "source_gain_minimum": 0.70,
+    "recipient_after_accuracy": 1.0,
+    "recipient_restored_accuracy": 1.0,
+    "negative_control_accuracy_maximum": 0.30,
+    "recipient_families_minimum": 3,
+    "recipient_optimizer_steps": 0,
+    "interpreter_learned_parameters": 0,
+    "exact_restore_required": true,
+    "exact_removal_base_match_required": true,
+    "same_package_hash_required": true
+  },
+  "implementation": {
+    "experiments/copy_paste_r10/runtime.py": "d94c7646b5d9c793ea85dcf3fe636721013ebda7a13f73f9755eeeeeb4f5d5f4",
+    "experiments/copy_paste_r10/run.py": "3ae3b41488ae5c737523b9f207001ae11c1b044985d713efe26e6efb2dc13805",
+    "experiments/copy_paste_r10/verify.py": "fff1faf1febe6d25e91012c6b022613877df480e0c52873f4053b7087ef28037",
+    "experiments/copy_paste_r10/PROTOCOL.md": "f4d657e055b2e313f1199fe04a0ffa33ea81f5fe457f25b4b4fd9009f23cf174"
+  }
+}
