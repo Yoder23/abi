@@ -1,0 +1,37 @@
+{
+  "behavior_mismatches": 0,
+  "bitwise_acquisition_replication": false,
+  "evidence_sha256": "a4a5a97f286c076c31e29bf36246b87ef779534c419b9b56a0700aa5f9c1a08b",
+  "first_package_sha256": [
+    "4105069f502131ef95f310b329fda89f91fad695c0451f9f47fb6492df680cd2",
+    "182243887c521f06a242d60df62052d60fb58bfe041e4ad52499dcb607b543d9",
+    "368fbc3632e1708fbfbcec0eee4305c057e85f55ae7d32b2ed392e61c7650105",
+    "e760b4808e47bd7be349699e5f58323190abaafc37b3b3ffefb291142d4521a9"
+  ],
+  "first_verification_evidence_sha256": "47f8462e99f3d8fcb15b05a541e304faccb60ff6aadeb119daec4ab469d45159",
+  "format": "abi-native-neural-isa-r11-acquisition-comparison/1",
+  "functional_replication": true,
+  "identical_package_pairs": 0,
+  "package_pairs": 4,
+  "recipient_rows": {
+    "behavior_mismatches": 0,
+    "first_sha256": "bb6fd12a49f4f0394890c1fdb0d37c5a8bbfff15dc5f1eee297d39f86366bd9f",
+    "neural_state_mismatches": 24396,
+    "rows": 67584,
+    "second_sha256": "ff45b7ee8c1cbd110f22936015a2124a9e88cdcceaebbaae5ac9603e5e32c213"
+  },
+  "second_package_sha256": [
+    "0b5fa3446d34b59d3034a6e765d62dbded0c3914543048b47db950ff8bbed603",
+    "4b59dfa73f40178e06ffb22f319042bc542cb10c5c6c6fcb0cedcff007ddfab1",
+    "ff2a22a16c8eb643d5c7e2815acb964616f9620985932c0581925f51e431646e",
+    "80e671fe862311fbaaf1399cc27c9848faa025bf5e6f839faa1d8f6c74b52450"
+  ],
+  "second_verification_evidence_sha256": "dcf606abd328f7a6a9d2cb0cffe1bd6f99dbe840f9154ca97b8019783dcbb104",
+  "teacher_rows": {
+    "behavior_mismatches": 0,
+    "first_sha256": "c67a16afe1151b6b1595fbe1f761c2cbc1e0dfc6d055a297316afdc2dd5bc4b2",
+    "neural_state_mismatches": 8132,
+    "rows": 22528,
+    "second_sha256": "19d7aa6796c9df5da000d790695e198500f8604caf839482ee7fa8a9d31c5358"
+  }
+}

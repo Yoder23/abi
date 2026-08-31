@@ -1,0 +1,52 @@
+{
+  "baseline_evidence_sha256": "47f8462e99f3d8fcb15b05a541e304faccb60ff6aadeb119daec4ab469d45159",
+  "case_count": 7,
+  "cases": [
+    {
+      "case": "missing_receipt",
+      "exception": "R11Error",
+      "message": "required JSON unavailable: C:\\Users\\samyo\\AppData\\Local\\Temp\\abi-r11-hostile-5ex4agrj\\missing_receipt\\receipt.json",
+      "rejected": true
+    },
+    {
+      "case": "missing_package",
+      "exception": "R11VerificationError",
+      "message": "package identity changed",
+      "rejected": true
+    },
+    {
+      "case": "corrupt_package",
+      "exception": "R11VerificationError",
+      "message": "package identity changed",
+      "rejected": true
+    },
+    {
+      "case": "missing_teacher_rows",
+      "exception": "R11VerificationError",
+      "message": "raw evidence unavailable: C:\\Users\\samyo\\AppData\\Local\\Temp\\abi-r11-hostile-5ex4agrj\\missing_teacher_rows\\teacher_observations.jsonl",
+      "rejected": true
+    },
+    {
+      "case": "corrupt_recipient_rows",
+      "exception": "R11VerificationError",
+      "message": "raw evidence unavailable: C:\\Users\\samyo\\AppData\\Local\\Temp\\abi-r11-hostile-5ex4agrj\\corrupt_recipient_rows\\recipient_observations.jsonl",
+      "rejected": true
+    },
+    {
+      "case": "stale_receipt_claim",
+      "exception": "R11VerificationError",
+      "message": "run receipt evidence hash changed",
+      "rejected": true
+    },
+    {
+      "case": "wrong_heldout_reveal",
+      "exception": "R11VerificationError",
+      "message": "run identity or claim ceiling changed",
+      "rejected": true
+    }
+  ],
+  "evidence_sha256": "011e423167853e7e2dd5011e22ae6910b1d1ab492766c171e6a398d29cc3f187",
+  "format": "abi-native-neural-isa-r11-hostile-controls/1",
+  "rejected_count": 7,
+  "verdict": "PASS"
+}

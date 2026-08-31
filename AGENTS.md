@@ -53,6 +53,20 @@ R10 therefore proves only synthetic runtime-owned package paste/remove/restore;
 it does not prove lossless source behavior, LayerCake integration, native
 neural transfer, or teacher extraction, and it does not alter R7.
 
+The additive R11 native-neural ABI construction campaign is a bounded
+synthetic pass and does not alter R7. Four held-out capabilities learned in an
+ABI-native teacher substrate were extracted as four 2,053-byte packages and
+executed through frozen DistilGPT2, Pythia, Qwen2, and T5 native output heads.
+Strict recomputation passed all 90,112 observations: teacher, recipient AFTER,
+and RESTORED outputs were exact; controls and removal were causal; recipient
+training was zero; source and recipient states were frozen. Seven hostile
+cases failed closed. A fresh live replay of the exact revision-001 package
+bytes reproduced both raw row files byte-for-byte. An independent acquisition
+replication was functionally exact but produced different float32 package
+hashes, so bit-reproducible acquisition is not claimed. R11 proves only the
+synthetic ABI-native construction mechanism; arbitrary open-weight teacher,
+English/domain, LayerCake, and LoRA/distillation claims remain open.
+
 ## Exact proven scope
 
 The four published immutable capability packages execute through the canonical
@@ -136,6 +150,12 @@ arbitrary teacher.
 5. Prove teacher-to-ABI acquisition, capability labeling/segregation, compact
    English extraction, and quality comparisons against distillation and LoRA
    only in separately registered lineages.
+6. Treat R11 as the passed construction prerequisite for a new foreign-teacher
+   acquisition front end. The next mechanism must extract a capability already
+   encoded in an independently trained open-weight teacher, use the unchanged
+   R11-style package/host boundary, and pass held-out teacher-relative behavior
+   without capability-specific recipient optimization or an answer-table
+   substitute.
 
 Do not claim the ABI moonshot until those acquisition and external-quality
 gates are supported by their own evidence.

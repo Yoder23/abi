@@ -1,0 +1,206 @@
+{
+  "claim": "LOSSLESS_LEVEL_1_OUTPUT_EQUIVALENCE",
+  "claim_ceiling": "SYNTHETIC_ABI_NATIVE_TEACHER_ONLY",
+  "evidence_sha256": "2286b276603a4f5af9bdea93b28f3583cbb9c9f0a08207d4afd29acaa297ff72",
+  "format": "abi-native-neural-isa-r11-verification/1",
+  "gates": {
+    "recipient_lossless_output_equivalence": true,
+    "teacher_absent_after_learning": true,
+    "teacher_learning": true
+  },
+  "receipt_evidence_sha256": "92a3c5cb7a63e02ba08f20faaf2758b645c0ca9527f07f87bb4332144823736f",
+  "recipient_metrics": {
+    "pythia": {
+      "r8-heldout-000-ac479684eb2ba1def4c4": {
+        "AFTER": 1.0,
+        "BACKEND_REMOVED": 0.0,
+        "BASE": 0.0,
+        "BEFORE": 0.09765625,
+        "CODEC_REMOVED": 0.0,
+        "RANDOM": 0.09375,
+        "REMOVED": 0.0,
+        "RESTORED": 1.0,
+        "SHUFFLED": 0.1328125,
+        "WRONG": 0.13671875,
+        "ZERO": 0.0
+      },
+      "r8-heldout-001-d3bbf35ce06b585f81a9": {
+        "AFTER": 1.0,
+        "BACKEND_REMOVED": 0.0,
+        "BASE": 0.0,
+        "BEFORE": 0.083984375,
+        "CODEC_REMOVED": 0.0,
+        "RANDOM": 0.083984375,
+        "REMOVED": 0.0,
+        "RESTORED": 1.0,
+        "SHUFFLED": 0.111328125,
+        "WRONG": 0.19140625,
+        "ZERO": 0.0
+      },
+      "r8-heldout-002-8276881617e461a8bd97": {
+        "AFTER": 1.0,
+        "BACKEND_REMOVED": 0.0,
+        "BASE": 0.0,
+        "BEFORE": 0.1328125,
+        "CODEC_REMOVED": 0.0,
+        "RANDOM": 0.1328125,
+        "REMOVED": 0.0,
+        "RESTORED": 1.0,
+        "SHUFFLED": 0.126953125,
+        "WRONG": 0.107421875,
+        "ZERO": 0.0
+      },
+      "r8-heldout-003-6033a1e7f5e102320265": {
+        "AFTER": 1.0,
+        "BACKEND_REMOVED": 0.0,
+        "BASE": 0.0,
+        "BEFORE": 0.109375,
+        "CODEC_REMOVED": 0.0,
+        "RANDOM": 0.107421875,
+        "REMOVED": 0.0,
+        "RESTORED": 1.0,
+        "SHUFFLED": 0.1015625,
+        "WRONG": 0.1640625,
+        "ZERO": 0.0
+      }
+    },
+    "qwen2": {
+      "r8-heldout-000-ac479684eb2ba1def4c4": {
+        "AFTER": 1.0,
+        "BACKEND_REMOVED": 0.0,
+        "BASE": 0.0,
+        "BEFORE": 0.09765625,
+        "CODEC_REMOVED": 0.0,
+        "RANDOM": 0.095703125,
+        "REMOVED": 0.0,
+        "RESTORED": 1.0,
+        "SHUFFLED": 0.1328125,
+        "WRONG": 0.13671875,
+        "ZERO": 0.0
+      },
+      "r8-heldout-001-d3bbf35ce06b585f81a9": {
+        "AFTER": 1.0,
+        "BACKEND_REMOVED": 0.0,
+        "BASE": 0.0,
+        "BEFORE": 0.083984375,
+        "CODEC_REMOVED": 0.0,
+        "RANDOM": 0.0859375,
+        "REMOVED": 0.0,
+        "RESTORED": 1.0,
+        "SHUFFLED": 0.111328125,
+        "WRONG": 0.19140625,
+        "ZERO": 0.0
+      },
+      "r8-heldout-002-8276881617e461a8bd97": {
+        "AFTER": 1.0,
+        "BACKEND_REMOVED": 0.0,
+        "BASE": 0.0,
+        "BEFORE": 0.1328125,
+        "CODEC_REMOVED": 0.0,
+        "RANDOM": 0.1328125,
+        "REMOVED": 0.0,
+        "RESTORED": 1.0,
+        "SHUFFLED": 0.126953125,
+        "WRONG": 0.107421875,
+        "ZERO": 0.0
+      },
+      "r8-heldout-003-6033a1e7f5e102320265": {
+        "AFTER": 1.0,
+        "BACKEND_REMOVED": 0.0,
+        "BASE": 0.0,
+        "BEFORE": 0.109375,
+        "CODEC_REMOVED": 0.0,
+        "RANDOM": 0.111328125,
+        "REMOVED": 0.0,
+        "RESTORED": 1.0,
+        "SHUFFLED": 0.1015625,
+        "WRONG": 0.1640625,
+        "ZERO": 0.0
+      }
+    },
+    "t5": {
+      "r8-heldout-000-ac479684eb2ba1def4c4": {
+        "AFTER": 1.0,
+        "BACKEND_REMOVED": 0.0,
+        "BASE": 0.0,
+        "BEFORE": 0.06640625,
+        "CODEC_REMOVED": 0.0,
+        "RANDOM": 0.115234375,
+        "REMOVED": 0.0,
+        "RESTORED": 1.0,
+        "SHUFFLED": 0.1328125,
+        "WRONG": 0.13671875,
+        "ZERO": 0.0
+      },
+      "r8-heldout-001-d3bbf35ce06b585f81a9": {
+        "AFTER": 1.0,
+        "BACKEND_REMOVED": 0.0,
+        "BASE": 0.0,
+        "BEFORE": 0.126953125,
+        "CODEC_REMOVED": 0.0,
+        "RANDOM": 0.115234375,
+        "REMOVED": 0.0,
+        "RESTORED": 1.0,
+        "SHUFFLED": 0.111328125,
+        "WRONG": 0.19140625,
+        "ZERO": 0.0
+      },
+      "r8-heldout-002-8276881617e461a8bd97": {
+        "AFTER": 1.0,
+        "BACKEND_REMOVED": 0.0,
+        "BASE": 0.0,
+        "BEFORE": 0.123046875,
+        "CODEC_REMOVED": 0.0,
+        "RANDOM": 0.138671875,
+        "REMOVED": 0.0,
+        "RESTORED": 1.0,
+        "SHUFFLED": 0.126953125,
+        "WRONG": 0.107421875,
+        "ZERO": 0.0
+      },
+      "r8-heldout-003-6033a1e7f5e102320265": {
+        "AFTER": 1.0,
+        "BACKEND_REMOVED": 0.0,
+        "BASE": 0.0,
+        "BEFORE": 0.109375,
+        "CODEC_REMOVED": 0.0,
+        "RANDOM": 0.09375,
+        "REMOVED": 0.0,
+        "RESTORED": 1.0,
+        "SHUFFLED": 0.1015625,
+        "WRONG": 0.1640625,
+        "ZERO": 0.0
+      }
+    }
+  },
+  "stronger_claims_open": [
+    "arbitrary_open_weight_teacher",
+    "english_or_natural_domain_transfer",
+    "decision_or_distribution_equivalence",
+    "information_minimality",
+    "layercake_product_integration"
+  ],
+  "teacher_metrics": {
+    "r8-heldout-000-ac479684eb2ba1def4c4": {
+      "AFTER": 1.0,
+      "BEFORE": 0.0859375,
+      "gain": 0.9140625
+    },
+    "r8-heldout-001-d3bbf35ce06b585f81a9": {
+      "AFTER": 1.0,
+      "BEFORE": 0.111328125,
+      "gain": 0.888671875
+    },
+    "r8-heldout-002-8276881617e461a8bd97": {
+      "AFTER": 1.0,
+      "BEFORE": 0.08203125,
+      "gain": 0.91796875
+    },
+    "r8-heldout-003-6033a1e7f5e102320265": {
+      "AFTER": 1.0,
+      "BEFORE": 0.103515625,
+      "gain": 0.896484375
+    }
+  },
+  "verdict": "PASS"
+}

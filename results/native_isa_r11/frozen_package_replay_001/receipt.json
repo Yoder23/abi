@@ -1,0 +1,264 @@
+{
+  "bindings": {
+    "experiments/copy_paste_r10/run.py": "3ae3b41488ae5c737523b9f207001ae11c1b044985d713efe26e6efb2dc13805",
+    "experiments/copy_paste_r10/runtime.py": "d94c7646b5d9c793ea85dcf3fe636721013ebda7a13f73f9755eeeeeb4f5d5f4",
+    "experiments/native_isa_r11/PROTOCOL.md": "3262c94e17362997edd9af5567fe0a5e54637ff0ee83c5eb6fe6236711441697",
+    "experiments/native_isa_r11/configs/preregistered_codec_freeze_v1.json": "f4bcf36fbee025212688c8a59923c539d630fb3890ec0a67d52bf5e8334da0c9",
+    "experiments/native_isa_r11/core.py": "91a716141487691568cfb5e1162804a76a8d1d212bc7d1cec1c328fe6569c210",
+    "experiments/native_isa_r11/freeze_codecs.py": "cedecabff1bd9acaad32954b71cda5f5a1743c412546a0656281647465f11e83",
+    "experiments/native_isa_r11/public_preflight.py": "c969d09b191f76662d3fd4a4fa933f38b34348fa6dfff56aeb6acbb9f997a128",
+    "experiments/native_isa_r11/run.py": "372e73a5565cecff9ffd8054777938f8b5f13116d4decbc113b7506e318fe064",
+    "experiments/native_isa_r11/verify.py": "2ac518cacf38b0fb6ec3c653e85bfd742ab26e240bbaad10565cbf27625cdf6e",
+    "experiments/native_transfer_r8/capability_generator.py": "fee37686db170855c1851a0d4dfc61c68f32b542482126431d982fc0095f4291",
+    "experiments/native_transfer_r8/native_host.py": "ad6c86e3e046359fabfd5284846f514f08783b6138e5b05db20df21aea48d8b3",
+    "experiments/native_transfer_r8/recipient_worker.py": "f77fd403f17cd70d1334f7e9c77eaff15aa537e6c87a293eb531e6c552e8c083",
+    "results/native_isa_r11/codec_freeze_v1/host_codecs.safetensors": "d8cf56f35d1c7c03c33f5937c946c9ea5d26f044f4f4b98a7689291c71b721dd",
+    "results/native_isa_r11/codec_freeze_v1/receipt.json": "685c7033fc8d850252bad985082f46f37e5bc99ed1dbb65895ce1fd58880b184"
+  },
+  "claim_ceiling": "LEVEL_1_OUTPUT_EQUIVALENCE_ONLY",
+  "claim_target": "LOSSLESS_OUTPUT_EQUIVALENCE_SYNTHETIC_ABI_NATIVE_TEACHER",
+  "config_sha256": "e28ea1eb9674b417ef17414e6c94f6a541daaa1f14dabe3ff2af41c22411609e",
+  "evidence_sha256": "92a3c5cb7a63e02ba08f20faaf2758b645c0ca9527f07f87bb4332144823736f",
+  "exact_raw_row_replay": true,
+  "execution_mode": "FROZEN_PACKAGE_FRESH_LIVE_REPLAY",
+  "format": "abi-native-neural-isa-r11-run/1",
+  "hardware": {
+    "cuda_device_name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "device": "cuda"
+  },
+  "heldout": {
+    "capabilities": [
+      "r8-heldout-000-ac479684eb2ba1def4c4",
+      "r8-heldout-001-d3bbf35ce06b585f81a9",
+      "r8-heldout-002-8276881617e461a8bd97",
+      "r8-heldout-003-6033a1e7f5e102320265"
+    ],
+    "commitment": "7f95fd8e75a521b27b8af596dac395152b0d5592bb1700db16bc2e655b98506b",
+    "revealed_after_codec_freeze": true
+  },
+  "packages": {
+    "after": [
+      {
+        "bytes": 2053,
+        "capability_id": "r8-heldout-000-ac479684eb2ba1def4c4",
+        "path": "sha256-4105069f502131ef95f310b329fda89f91fad695c0451f9f47fb6492df680cd2.abipkg",
+        "sha256": "4105069f502131ef95f310b329fda89f91fad695c0451f9f47fb6492df680cd2",
+        "transition_sha256": "2ff175bbec4737ca328c322e10bfe9cd60178c14f85d0805dbbf3117d128788a"
+      },
+      {
+        "bytes": 2053,
+        "capability_id": "r8-heldout-001-d3bbf35ce06b585f81a9",
+        "path": "sha256-182243887c521f06a242d60df62052d60fb58bfe041e4ad52499dcb607b543d9.abipkg",
+        "sha256": "182243887c521f06a242d60df62052d60fb58bfe041e4ad52499dcb607b543d9",
+        "transition_sha256": "66917704df05357fa2d5fbc8c33feb3e5eee8fac179de8169ea61cc10f745fc9"
+      },
+      {
+        "bytes": 2053,
+        "capability_id": "r8-heldout-002-8276881617e461a8bd97",
+        "path": "sha256-368fbc3632e1708fbfbcec0eee4305c057e85f55ae7d32b2ed392e61c7650105.abipkg",
+        "sha256": "368fbc3632e1708fbfbcec0eee4305c057e85f55ae7d32b2ed392e61c7650105",
+        "transition_sha256": "930cfefac7b51b6676d05fd218bc634039768b3fbf7daaef1d776a67f8b37056"
+      },
+      {
+        "bytes": 2053,
+        "capability_id": "r8-heldout-003-6033a1e7f5e102320265",
+        "path": "sha256-e760b4808e47bd7be349699e5f58323190abaafc37b3b3ffefb291142d4521a9.abipkg",
+        "sha256": "e760b4808e47bd7be349699e5f58323190abaafc37b3b3ffefb291142d4521a9",
+        "transition_sha256": "a46c787d20eb9feb84d95fcb73002ef45142f06a3f0a301b5ac1bdb004366003"
+      }
+    ],
+    "before": {
+      "bytes": 2053,
+      "path": "sha256-683d4f7d0e391d7715db0efdaa44b0f37549f4969cb51f1ef42d1329dd8a142b.abipkg",
+      "sha256": "683d4f7d0e391d7715db0efdaa44b0f37549f4969cb51f1ef42d1329dd8a142b",
+      "transition_sha256": "a0bca98b1bb2bca6cb467273ca5261a7c7de50db4050fc4cdada0fc5dafae75a"
+    }
+  },
+  "recipient_execution": {
+    "finished": 267789.4325887,
+    "hosts": [
+      {
+        "architecture_family": "GPTNeoX",
+        "backend_learned_parameters": 0,
+        "codec_sha256_after": "20fba892f576e147761b3d71566809daedea4d3edbc1fe5871fe2189ef198cfd",
+        "codec_sha256_before": "20fba892f576e147761b3d71566809daedea4d3edbc1fe5871fe2189ef198cfd",
+        "host": "pythia",
+        "model_id": "EleutherAI/pythia-160m",
+        "model_state_sha256_after": "54d67dd87a3b2a68f8e9bd71af503d78be0c41f7601d648a61a39d199e3be985",
+        "model_state_sha256_before": "54d67dd87a3b2a68f8e9bd71af503d78be0c41f7601d648a61a39d199e3be985",
+        "recipient_optimizer_steps": 0,
+        "revision": "50f5173d932e8e61f858120bcb800b97af589f46",
+        "rows": 22528,
+        "source_model_loaded": false,
+        "target_token_ids": [
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "wall_seconds": 22.827686199976597
+      },
+      {
+        "architecture_family": "Qwen2",
+        "backend_learned_parameters": 0,
+        "codec_sha256_after": "e1ce0aa3fb38054ba176ae70f43965fdb5a7a35e2f932d7dacd9ba3515851b4e",
+        "codec_sha256_before": "e1ce0aa3fb38054ba176ae70f43965fdb5a7a35e2f932d7dacd9ba3515851b4e",
+        "host": "qwen2",
+        "model_id": "Qwen/Qwen2.5-0.5B",
+        "model_state_sha256_after": "4cbdc39b72efcc22dfc47710548ed6a50d6cb2233327951421361ccbfb11e6e1",
+        "model_state_sha256_before": "4cbdc39b72efcc22dfc47710548ed6a50d6cb2233327951421361ccbfb11e6e1",
+        "recipient_optimizer_steps": 0,
+        "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+        "rows": 22528,
+        "source_model_loaded": false,
+        "target_token_ids": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "wall_seconds": 39.15920059999917
+      },
+      {
+        "architecture_family": "T5EncoderDecoder",
+        "backend_learned_parameters": 0,
+        "codec_sha256_after": "bd9625ab888ffaef104d4dc3eb04f7a45cd8a92a50c1d8e26d3ecafac59564fe",
+        "codec_sha256_before": "bd9625ab888ffaef104d4dc3eb04f7a45cd8a92a50c1d8e26d3ecafac59564fe",
+        "host": "t5",
+        "model_id": "t5-base",
+        "model_state_sha256_after": "1608260bd9389c970d43869ef7b7e0da150f1d752f1a667d0f8895a385fa185d",
+        "model_state_sha256_before": "1608260bd9389c970d43869ef7b7e0da150f1d752f1a667d0f8895a385fa185d",
+        "recipient_optimizer_steps": 0,
+        "revision": "a9723ea7f1b39c1eae772870f3b547bf6ef7e6c1",
+        "rows": 22528,
+        "source_model_loaded": false,
+        "target_token_ids": [
+          632,
+          209,
+          204,
+          220,
+          314,
+          305,
+          431,
+          489
+        ],
+        "wall_seconds": 31.513694599969313
+      }
+    ],
+    "observations": {
+      "path": "recipient_observations.jsonl",
+      "rows": 67584,
+      "sha256": "bb6fd12a49f4f0394890c1fdb0d37c5a8bbfff15dc5f1eee297d39f86366bd9f"
+    },
+    "started": 267686.1941141,
+    "teacher_finished_before_recipient_started": true,
+    "teacher_loaded_in_recipient_process": false
+  },
+  "replay_of_receipt_sha256": "d6b8805ca72f23b8f385a427e005812d93cff6b72430894cffa481b7c44cf21a",
+  "replay_of_verification_evidence_sha256": "47f8462e99f3d8fcb15b05a541e304faccb60ff6aadeb119daec4ab469d45159",
+  "reveal_sha256": "7ea866e8fcc2a9036898a302da750695701a8c0c969d8d4ad9055e27b73499b9",
+  "teacher_execution": {
+    "finished": 267684.9648673,
+    "host": {
+      "architecture_family": "GPT2",
+      "backend_learned_parameters": 0,
+      "codec_sha256_after": "6d8f04073cba1270d8b5e89bc60a868233f53be4a7c7fff2dad1f150015c731c",
+      "codec_sha256_before": "6d8f04073cba1270d8b5e89bc60a868233f53be4a7c7fff2dad1f150015c731c",
+      "host": "source",
+      "model_id": "distilgpt2",
+      "model_state_sha256_after": "5bafbe16ce5cfba822d107d9cc3812ba1b0554174097a6e94be5c8068af4232f",
+      "model_state_sha256_before": "5bafbe16ce5cfba822d107d9cc3812ba1b0554174097a6e94be5c8068af4232f",
+      "recipient_optimizer_steps": 0,
+      "revision": "2290a62682d06624634c1f46a6ad5be0f47f38aa",
+      "rows": 22528,
+      "source_model_loaded": true,
+      "target_token_ids": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "wall_seconds": 22.675712099997327
+    },
+    "observations": {
+      "path": "teacher_observations.jsonl",
+      "rows": 22528,
+      "sha256": "c67a16afe1151b6b1595fbe1f761c2cbc1e0dfc6d055a297316afdc2dd5bc4b2"
+    },
+    "started": 267651.0964304
+  },
+  "teacher_training": [
+    {
+      "canonical_after_accuracy": 1.0,
+      "canonical_before_accuracy": 0.12109375,
+      "capability_id": "r8-heldout-000-ac479684eb2ba1def4c4",
+      "teacher_after_sha256": "2ff175bbec4737ca328c322e10bfe9cd60178c14f85d0805dbbf3117d128788a",
+      "teacher_before_sha256": "a0bca98b1bb2bca6cb467273ca5261a7c7de50db4050fc4cdada0fc5dafae75a",
+      "training": {
+        "final_loss": 0.002490605227649212,
+        "first_loss": 2.079441547393799,
+        "learning_rate": 0.1,
+        "optimizer": "Adam",
+        "steps": 300,
+        "trainable_parameters": 192
+      }
+    },
+    {
+      "canonical_after_accuracy": 1.0,
+      "canonical_before_accuracy": 0.123046875,
+      "capability_id": "r8-heldout-001-d3bbf35ce06b585f81a9",
+      "teacher_after_sha256": "66917704df05357fa2d5fbc8c33feb3e5eee8fac179de8169ea61cc10f745fc9",
+      "teacher_before_sha256": "a0bca98b1bb2bca6cb467273ca5261a7c7de50db4050fc4cdada0fc5dafae75a",
+      "training": {
+        "final_loss": 0.0024983426555991173,
+        "first_loss": 2.079441785812378,
+        "learning_rate": 0.1,
+        "optimizer": "Adam",
+        "steps": 300,
+        "trainable_parameters": 192
+      }
+    },
+    {
+      "canonical_after_accuracy": 1.0,
+      "canonical_before_accuracy": 0.099609375,
+      "capability_id": "r8-heldout-002-8276881617e461a8bd97",
+      "teacher_after_sha256": "930cfefac7b51b6676d05fd218bc634039768b3fbf7daaef1d776a67f8b37056",
+      "teacher_before_sha256": "a0bca98b1bb2bca6cb467273ca5261a7c7de50db4050fc4cdada0fc5dafae75a",
+      "training": {
+        "final_loss": 0.0024932725355029106,
+        "first_loss": 2.079441547393799,
+        "learning_rate": 0.1,
+        "optimizer": "Adam",
+        "steps": 300,
+        "trainable_parameters": 192
+      }
+    },
+    {
+      "canonical_after_accuracy": 1.0,
+      "canonical_before_accuracy": 0.11328125,
+      "capability_id": "r8-heldout-003-6033a1e7f5e102320265",
+      "teacher_after_sha256": "a46c787d20eb9feb84d95fcb73002ef45142f06a3f0a301b5ac1bdb004366003",
+      "teacher_before_sha256": "a0bca98b1bb2bca6cb467273ca5261a7c7de50db4050fc4cdada0fc5dafae75a",
+      "training": {
+        "final_loss": 0.002491400111466646,
+        "first_loss": 2.079441547393799,
+        "learning_rate": 0.1,
+        "optimizer": "Adam",
+        "steps": 300,
+        "trainable_parameters": 192
+      }
+    }
+  ]
+}

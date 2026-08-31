@@ -58,6 +58,23 @@ negative because the source model's native decoder reached only 0.59375 to
 bounded canonical-runtime component, not LayerCake integration, lossless source
 behavior, English/domain extraction, or native neural transplantation.
 
+R11 now supplies the missing bounded neural-ABI construction proof. Four
+held-out synthetic capabilities were learned as compact neural transition
+states, packaged into four 2,053-byte content-addressed artifacts, and executed
+through frozen DistilGPT2, Pythia, Qwen2, and T5 native output heads. AFTER and
+RESTORED were exactly 1.0 on all 90,112 registered source-plus-recipient rows;
+all teacher/recipient canonical UTF-8 outputs matched, negative controls were
+at most 0.19140625, all removal interventions exactly restored BASE, recipient
+optimizer steps were zero, and model/codec hashes did not change. A fresh live
+replay of the exact revision-001 package bytes reproduced both raw JSONL files
+byte-for-byte, and 7/7 hostile mutations failed closed. See
+[`docs/R11_NATIVE_NEURAL_CONSTRUCTION_RESULT.md`](docs/R11_NATIVE_NEURAL_CONSTRUCTION_RESULT.md).
+
+R11 is deliberately narrow. Its teacher substrate is ABI-native and synthetic;
+it does not prove extraction from a conventional pretrained LLM, English or
+natural-domain transfer, internalization into recipient transformer blocks, or
+LoRA/distillation superiority. R7 remains the controlling public release.
+
 ## R7 at a glance
 
 | Evidence | Result |
@@ -177,6 +194,8 @@ See `docs/ABI_TECHNICAL_CLAIMS.md`, `docs/ABI_FINAL_RESULTS.md`, and the
 - `tests/` — supported automated checks.
 - `results/abi_final_validation_v2/` — immutable R3-R7 validation lineage.
 - `results/abi_moonshot/packages/` — published specialist packages.
+- `experiments/native_isa_r11/` — bounded native-neural ABI construction code.
+- `results/native_isa_r11/` — R11 preregistered raw evidence and live replay.
 - `external_reproduction/` — independent-operator workflow and environment
   lock.
 - `review_packet/` — ordered technical and external-review handoff.

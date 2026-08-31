@@ -1,12 +1,13 @@
 {
   "format": "abi-proof-ledger/1",
-  "updated": "2026-08-30",
+  "updated": "2026-08-31",
   "claims": [
     {"id": "ABI-C1", "claim": "immutable package identity and canonical semantics", "state": "BOUNDED_PASS_R7"},
     {"id": "ABI-C2", "claim": "shared-runtime execution on compatible declared hosts", "state": "BOUNDED_PASS_R7"},
     {"id": "ABI-C3", "claim": "source learning event to canonical package", "state": "BOUNDED_SYNTHETIC_PASS_R8"},
     {"id": "ABI-C4a", "claim": "identical source-extracted canonical-IR package copy/paste, removal, and restoration through a shared runtime on frozen heterogeneous hosts", "state": "BOUNDED_SYNTHETIC_COMPONENT_PASS_R10"},
-    {"id": "ABI-C4", "claim": "end-to-end source-behavior copy/paste on frozen heterogeneous hosts with zero host training", "state": "FAILED_EXACT_R10_SOURCE_GATE"},
+    {"id": "ABI-C4b", "claim": "learned ABI-native neural-state package copy/paste through frozen heterogeneous native output heads with zero recipient training", "state": "BOUNDED_SYNTHETIC_CONSTRUCTION_PASS_R11"},
+    {"id": "ABI-C4", "claim": "end-to-end foreign-teacher behavior copy/paste on frozen heterogeneous hosts with zero host training", "state": "OPEN_FOREIGN_TEACHER_FRONT_END"},
     {"id": "ABI-C5", "claim": "native neural transplantation into a foreign recipient", "state": "FAILED_TESTED_R8_R9_MECHANISMS"},
     {"id": "ABI-C6", "claim": "fluent English and arbitrary-domain extraction and segregation", "state": "OPEN"},
     {"id": "ABI-C7", "claim": "teacher-quality parity and superiority to LoRA/distillation", "state": "OPEN"},
@@ -14,6 +15,7 @@
   ],
   "promotion_boundary": {
     "r10_promoted": ["ABI-C4a"],
-    "r10_did_not_promote": ["ABI-C4", "ABI-C5", "ABI-C6", "ABI-C7", "ABI-C8"]
+    "r11_promoted": ["ABI-C4b"],
+    "r10_r11_did_not_promote": ["ABI-C4", "ABI-C5", "ABI-C6", "ABI-C7", "ABI-C8"]
   }
 }

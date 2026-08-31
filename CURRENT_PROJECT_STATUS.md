@@ -1,6 +1,6 @@
 # Current project status
 
-Updated: 2026-08-30
+Updated: 2026-08-31
 
 ## Executive status
 
@@ -21,6 +21,17 @@ training fit (0.128472) and unseen-depth realization (AFTER 0.125, BASE
 0.073242); ZERO matched AFTER at 0.125. Exact live replay reproduced 8,192
 evaluation and 288 training rows, and the hostile audit rejected 5/5 controls.
 The universal backend was not run because its prerequisite failed.
+
+The additive R11 native-neural ABI construction is a bounded synthetic pass.
+Across 90,112 live observations, compact learned packages produced exact
+teacher-equivalent AFTER and RESTORED outputs through frozen DistilGPT2,
+Pythia, Qwen2, and T5 native heads. All removal conditions returned exactly to
+BASE, recipients took zero optimizer steps, and source/model/codec hashes were
+unchanged. Seven hostile cases failed closed. A fresh live run using the exact
+revision-001 package bytes reproduced both raw row files byte-for-byte and
+independently reverified. This establishes the construction mechanism for an
+ABI-native teacher substrate; it does not establish extraction from a
+conventional open-weight LLM or English/domain parity.
 
 Status token:
 `R7_BOUNDED_TECHNICAL_VALIDATION_PASSED_EXTERNAL_REVIEW_OPEN`
@@ -72,6 +83,9 @@ Public release:
    successor requires a new additive mechanism and preregistration.
 9. R9 neural-ISA recipient realization: capability-specific recipient-state
    GRU branch failed; universal backend remains closed.
+10. R11 foreign-teacher front end: the ABI-native construction passes, but
+    extraction of a capability already encoded in an independently trained
+    open-weight model remains open.
 
 ## Scientific interpretation
 
@@ -90,10 +104,10 @@ claims require separate acquisition and quality evidence.
 - Start three independent human-rating sessions from the frozen packet.
 - Send the external reproduction archive to a genuinely independent operator.
 - Register and execute minimum-information certification.
-- Before any new neural-transfer campaign, register a materially different
-  canonical IR or injection architecture that can first pass a
-  capability-specific fit/realization control. Keep it additive and separate
-  from R7.
+- Preserve the passing R11 package/executor/host boundary. Register the next
+  experiment around only the missing foreign-teacher extractor and require
+  held-out teacher-relative behavior, zero recipient optimization, and exact
+  frozen-package replay.
 
 ## Storage and repository health
 

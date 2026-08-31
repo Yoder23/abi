@@ -1,5 +1,29 @@
 # Changelog
 
+## R11 native-neural ABI construction - 2026-08-31
+
+- Froze code, host identities, zero-step capability-blind native codecs,
+  held-out commitment, data matrix, interventions, and gates before reveal.
+- Learned four 192-value synthetic teacher capability states and emitted four
+  immutable 2,053-byte neural ABI packages with no prompt, answer, solver,
+  capability ID, or host geometry.
+- Executed 90,112 live source/recipient observations through frozen
+  DistilGPT2, Pythia, Qwen2, and T5 native output heads with zero recipient
+  optimization and unchanged model/codec hashes.
+- Strict recomputation found 1.0 teacher AFTER, 1.0 recipient AFTER/RESTORED,
+  zero teacher/recipient UTF-8 mismatches, negative controls no higher than
+  0.19140625, and exact BASE restoration after every removal intervention.
+- Rejected 7/7 hostile missing, corrupted, stale, or wrong-reveal evidence
+  cases.
+- Re-executed the exact revision-001 package bytes live and reproduced both raw
+  JSONL files byte-for-byte; independent verification passed again.
+- Preserved a second functionally exact acquisition whose float32 package hashes
+  differed, leaving bit-reproducible acquisition open.
+- Limited the claim to an ABI-native synthetic construction proof. Conventional
+  open-weight teacher extraction, English/domain transfer, LayerCake acceptance,
+  and LoRA/distillation comparison remain open. R7 remains the controlling
+  public release.
+
 ## R9 neural-ISA recipient diagnostic - 2026-08-30
 
 - Preregistered a capability-specific Pythia backend as a search-space divider

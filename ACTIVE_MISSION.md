@@ -51,6 +51,22 @@ contract therefore failed while its bounded synthetic runtime copy/paste
 component passed. This is not LayerCake integration, lossless source behavior,
 native neural transplantation, or English/domain extraction. R7 is unchanged.
 
+Additive R11 status:
+`R11_BOUNDED_SYNTHETIC_NATIVE_NEURAL_ABI_CONSTRUCTION_PASSED`
+
+R11 froze four capability-blind host codecs before revealing four held-out
+synthetic capabilities. The ABI-native teacher learned a compact neural state;
+the same 2,053-byte package then produced byte-identical teacher-equivalent
+outputs through frozen Pythia, Qwen2, and T5 native output heads with zero
+recipient training. Strict recomputation passed all 90,112 observations,
+removal returned exactly to BASE, 7/7 hostile mutations were rejected, and a
+fresh execution of the exact frozen package bytes reproduced both raw JSONL
+files byte-for-byte. A second acquisition was functionally exact but not
+bitwise package-identical, which remains an explicit open issue. R11 is a
+synthetic ABI-native construction pass, not conventional LLM teacher
+extraction, English/domain transfer, or LayerCake product certification. R7
+remains the controlling public release.
+
 ## What R7 proves
 
 R7 proves one bounded capability ABI result: four immutable packages execute
@@ -88,6 +104,8 @@ The blind reviewer returned `VERDICT: PASS` for this exact scope.
 | Capability labeling and segregation from arbitrary teachers | RESEARCH |
 | Quality parity/superiority versus teacher, LoRA, or distillation | RESEARCH |
 | Globally minimal English substrate | RESEARCH |
+| ABI-native neural copy/paste construction | BOUNDED PASS; R11 |
+| Conventional open-weight teacher to ABI package | RESEARCH; not proven by R11 |
 
 ## Current objective
 
@@ -102,13 +120,21 @@ Prepare and execute external review without changing the R7 artifacts:
 5. only then update the corresponding external gates.
 
 Teacher extraction and minimization belong to a subsequent additive campaign.
-They must not be inferred from R7 conformance evidence.
+R11 supplies its construction prerequisite, but foreign-teacher acquisition
+must not be inferred from either R7 conformance or R11 synthetic evidence.
 
 Any R8/R9/R10 successor must start with a new additive preregistration and a
 materially different canonical IR or recipient injection architecture. It must
 fit a public capability-specific control before attempting a capability-blind
 backend. More static-prefix, package-gated LoRA, recipient-state GRU, nearby
 width/rank, or step-count sweeps are not evidence-supported.
+
+The next native-transfer experiment must leave R11's package/executor/host
+boundary fixed and attack only the missing foreign-teacher front end: extract a
+capability that already exists in an independently trained open-weight model,
+then require held-out teacher-relative behavior through the same package bytes.
+Memorized answer tables, capability-specific recipient training, and package-
+owned executable solvers do not qualify.
 
 ## Historical failures that remain authoritative
 

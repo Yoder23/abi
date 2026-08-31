@@ -1,6 +1,6 @@
 # ABI technical claims
 
-Updated: 2026-08-30
+Updated: 2026-08-31
 
 ## Claims supported by R7
 
@@ -74,3 +74,20 @@ The overall R10 contract failed. Source-native generalization was 0.59375 to
 R10 supports runtime-owned canonical-IR copy/paste only. It does not support
 lossless source behavior, LayerCake product integration, native neural
 transplantation, English/domain extraction, teacher parity, or ABI superiority.
+
+## Additive R11 construction result
+
+R11 expands only the bounded ABI-native neural construction claim. Four
+held-out learned neural states, each packaged in 2,053 bytes, produced exact
+teacher-equivalent canonical UTF-8 through frozen Pythia, Qwen2, and T5 native
+output heads. Strict recomputation covers 90,112 raw rows, all removal and
+corruption interventions, zero recipient optimizer steps, and unchanged model
+and codec hashes. Seven hostile controls reject missing, stale, corrupt, and
+wrong-reveal evidence. A new live execution of the exact revision-001 package
+bytes reproduces both raw JSONL files byte-for-byte and independently verifies.
+
+R11's teacher learning substrate is ABI-native and synthetic. It is not a
+conventional pretrained transformer from which ABI discovered and extracted an
+existing capability. R11 therefore does not support English/domain extraction,
+arbitrary foreign-teacher transfer, recipient-block internalization, LayerCake
+acceptance, information minimality, or superiority over LoRA/distillation.

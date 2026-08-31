@@ -1,6 +1,6 @@
 # Research status
 
-Updated: 2026-08-30
+Updated: 2026-08-31
 
 ## Current certification boundary
 
@@ -24,6 +24,8 @@ fresh blind Codex review. Human quality and independent hardware remain open.
 | R9 capability-specific recipient-state backend | Failed; universal backend closed |
 | R10 runtime-owned synthetic copy/paste component | Passed across 61,440 recipient rows and exact live replay |
 | R10 end-to-end source-behavior copy/paste | Failed source-native generalization gate |
+| R11 ABI-native neural copy/paste construction | Passed 90,112 rows, exact frozen-package replay, 7/7 hostile controls |
+| Conventional open-weight teacher extraction into R11 ABI | Open |
 | LoRA/distillation superiority | Unproven |
 
 ## Interpretation
@@ -48,6 +50,16 @@ source-plus-recipient rows byte-for-byte. The overall R10 protocol remains
 negative because the source model's native decoder reached only 0.59375 to
 0.65234375 on the newly sampled composed prompts. This is runtime-owned
 portable execution, not lossless source behavior or native neural transfer.
+
+R11 proves the next bounded construction layer. Four learned 2,053-byte neural
+state packages execute through a zero-parameter neural ISA and pre-capability
+frozen codecs into DistilGPT2, Pythia, Qwen2, and T5 native output heads. All
+90,112 observations pass strict recomputation, and replaying the exact package
+bytes live reproduces the raw rows byte-for-byte. This fixes the R10 source-
+behavior mismatch for an ABI-native synthetic teacher substrate. It does not
+show how to extract a capability already encoded in a conventional pretrained
+LLM. That foreign-teacher front end is now the measured bottleneck; the passing
+R11 package/executor/host boundary should remain fixed while it is tested.
 
 Historical campaign records remain available in `evidence/current/`,
 `results/`, and the research-history branch. Later evidence supersedes a claim

@@ -1,6 +1,6 @@
 # ABI R7 final technical results
 
-Updated: 2026-08-30
+Updated: 2026-08-31
 
 R7 passes the frozen, bounded capability-runtime and host-conformance protocol.
 It does not yet pass human quality, independent-hardware, teacher-extraction, or
@@ -91,3 +91,24 @@ changing Pythia. Strict recomputation produced:
 The registered 0.98 training-fit, 0.95 unseen-depth accuracy, +0.70 gain, and
 negative-control gates failed. The universal capability-blind backend was not
 run. See `results/neural_isa_r9/revision_002/capability_specific_pythia/`.
+
+## Additive R11 result
+
+R11 is a bounded synthetic construction pass and does not replace the R7
+release. Four held-out capabilities learned in an ABI-native teacher substrate
+were packaged as four 2,053-byte neural states. Across 90,112 source and
+recipient rows, teacher AFTER and every Pythia/Qwen2/T5 AFTER and RESTORED score
+were 1.0; all canonical UTF-8 teacher/recipient comparisons were exact;
+negative controls were at most 0.19140625; and package, backend, and codec
+removal returned exactly to BASE. Recipient optimization was zero and frozen
+model/codec hashes did not change.
+
+Seven hostile controls failed closed. A fresh live replay copied the exact
+revision-001 packages by SHA-256, did not retrain them, and reproduced both raw
+JSONL files byte-for-byte. Independent strict verification passed the replay.
+See [R11_NATIVE_NEURAL_CONSTRUCTION_RESULT.md](R11_NATIVE_NEURAL_CONSTRUCTION_RESULT.md).
+
+This proves only the ABI-native neural copy/paste construction. Extraction of
+English or domain knowledge already encoded in a conventional open-weight LLM
+remains open, as do LayerCake product acceptance and LoRA/distillation
+comparison.
