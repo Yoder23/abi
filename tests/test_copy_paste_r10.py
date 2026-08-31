@@ -35,10 +35,11 @@ def _transition(offsets: tuple[int, int, int]) -> torch.Tensor:
 def test_proof_ledger_keeps_runtime_and_native_claims_separate() -> None:
     ledger = json.loads((ROOT / "docs/abi_proof_ledger.json").read_text(encoding="utf-8"))
     claims = {item["id"]: item for item in ledger["claims"]}
-    assert claims["ABI-C4"]["state"] == "OPEN_R10_TARGET"
+    assert claims["ABI-C4a"]["state"] == "BOUNDED_SYNTHETIC_COMPONENT_PASS_R10"
+    assert claims["ABI-C4"]["state"] == "FAILED_EXACT_R10_SOURCE_GATE"
     assert claims["ABI-C5"]["state"] == "FAILED_TESTED_R8_R9_MECHANISMS"
     assert claims["ABI-C8"]["state"] == "NOT_PASSED"
-    assert ledger["promotion_boundary"]["r10_may_promote"] == ["ABI-C4"]
+    assert ledger["promotion_boundary"]["r10_promoted"] == ["ABI-C4a"]
 
 
 def test_vm_executes_registered_normal_and_hostile_surfaces() -> None:

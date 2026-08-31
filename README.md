@@ -46,6 +46,18 @@ accuracy, versus 7.32% BASE; ZERO also reached 12.5%, failing causality. All
 controls were rejected. R9 therefore closes this recipient-state GRU branch
 without opening the universal-backend experiment or changing R7.
 
+R10 then connected the synthetic R8 extraction to a clean package slot and
+three frozen recipients. Its runtime-owned copy/paste component passed: four
+2,040-byte AFTER packages produced 1.0 accuracy after paste and restore across
+61,440 Pythia, Qwen2, and T5 rows; removal exactly matched BASE, all negative
+controls were at most 0.15625, recipient parameters were unchanged, and a fresh
+live run reproduced every row byte-for-byte. The overall R10 contract is still
+negative because the source model's native decoder reached only 0.59375 to
+0.65234375 against the registered 0.99 source gate. See
+[`docs/R10_COPY_PASTE_RESULT.md`](docs/R10_COPY_PASTE_RESULT.md). This proves a
+bounded canonical-runtime component, not LayerCake integration, lossless source
+behavior, English/domain extraction, or native neural transplantation.
+
 ## R7 at a glance
 
 | Evidence | Result |

@@ -59,3 +59,18 @@ failed. Exact live replay reproduced all 8,480 observations; 5/5 hostile
 controls rejected missing, stale, corrupt, and hash-reforged evidence. This
 closes only the registered recipient-state GRU branch. It does not disprove all
 possible neural ISAs or canonical capability representations.
+
+## Additive R10 copy/paste result
+
+R10 expands only the bounded runtime component claim. Identical 2,040-byte
+source-extracted synthetic packages executed with 1.0 AFTER and RESTORED
+accuracy across Pythia, Qwen2, and T5 for all 61,440 recipient rows. Removal and
+interpreter removal exactly matched BASE; negative controls were no higher than
+0.15625; model state hashes remained exact; and a fresh live execution
+reproduced every source and recipient row byte-for-byte.
+
+The overall R10 contract failed. Source-native generalization was 0.59375 to
+0.65234375, below the registered 0.99 accuracy and 0.70 gain gates. Therefore
+R10 supports runtime-owned canonical-IR copy/paste only. It does not support
+lossless source behavior, LayerCake product integration, native neural
+transplantation, English/domain extraction, teacher parity, or ABI superiority.
