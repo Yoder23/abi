@@ -68,3 +68,26 @@ The R8 public verifier hostile audit produced 8/8 expected outcomes: seven
 malformed, missing, stale, or contaminated cases were rejected, and a
 hash-consistent forged scientific boolean was ignored with the `NO` verdict
 unchanged.
+
+## Additive R9 result
+
+R9's capability-specific Gate A is negative and does not replace R7. The v2
+backend contained 1,039,880 parameters and trained for 10,000 steps without
+changing Pythia. Strict recomputation produced:
+
+| Measurement | R9 v2 result |
+| --- | ---: |
+| Training fit | 0.128472 |
+| Unseen-depth BASE | 0.073242 |
+| Unseen-depth AFTER | 0.125000 |
+| AFTER - BASE | +0.051758 |
+| Paired bootstrap 95% CI | [0.036133, 0.068359] |
+| ZERO | 0.125000 |
+| Mean AFTER teacher-recipient TV | 0.873909 |
+| Live-replayed evaluation rows | 8,192 |
+| Live-replayed training rows | 288 |
+| Hostile controls | 5/5 rejected |
+
+The registered 0.98 training-fit, 0.95 unseen-depth accuracy, +0.70 gain, and
+negative-control gates failed. The universal capability-blind backend was not
+run. See `results/neural_isa_r9/revision_002/capability_specific_pythia/`.

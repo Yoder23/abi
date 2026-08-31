@@ -1,0 +1,228 @@
+{
+  "backend": {
+    "kind": "package_conditioned_gru_logit_residual",
+    "parameters": 274184,
+    "path": "capability_specific_backend.safetensors",
+    "sha256": "c4f13cab9aad35a98aeba149bdef3252ec74d297a70112f79edcd4c6767410fe",
+    "state_sha256_after_evaluation": "6d90451a47c67e56d9223f541be3c3016febc411b51631af168bc119d7679180",
+    "state_sha256_before_evaluation": "6d90451a47c67e56d9223f541be3c3016febc411b51631af168bc119d7679180"
+  },
+  "backend_optimizer_steps": 5000,
+  "capability_id": "r8-development-000-1f39465a340dcd5a7274",
+  "capability_specific_weights_allowed": true,
+  "config_sha256": "a28eed3c1abefcdcf11d2ec0dc671b324a5330f0f4350455d69278282f793f20",
+  "evaluation": {
+    "conditions": [
+      "BASE",
+      "AFTER",
+      "BEFORE",
+      "WRONG",
+      "ZERO",
+      "RANDOM",
+      "SHUFFLED",
+      "REMOVED"
+    ],
+    "rows_per_condition": 1024,
+    "wall_seconds": 6.810909099993296
+  },
+  "evidence_sha256": "7b7d864283118ffae645288bb6dfad8a8fe7c6825586e2fdc01a8194018a7e9a",
+  "format": "abi-neural-isa-r9-capability-specific-diagnostic/1",
+  "hardware": {
+    "cuda_device_name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "cuda_total_memory_bytes": 17179344896,
+    "device": "cuda"
+  },
+  "host_key": "pythia",
+  "host_model_id": "EleutherAI/pythia-160m",
+  "host_model_state_sha256_after": "54d67dd87a3b2a68f8e9bd71af503d78be0c41f7601d648a61a39d199e3be985",
+  "host_model_state_sha256_before": "54d67dd87a3b2a68f8e9bd71af503d78be0c41f7601d648a61a39d199e3be985",
+  "host_revision": "50f5173d932e8e61f858120bcb800b97af589f46",
+  "observations": {
+    "path": "observations.jsonl",
+    "rows": 8192,
+    "sha256": "34682b87312956db50562591eac6e9b9b44d24fac2aeb16d060ffaa9d35ce4ac"
+  },
+  "r8_canonical_latents_sha256": "028f4f41ee6a1d4c642ff1f7be7cee4575d4ddb9db83421c8ed2d90b1732b3fc",
+  "r8_config_sha256": "d6f31883134e25808bb558ba4db51c120e4c9eccda1e78b56667f2d27cd8fd38",
+  "r8_extraction_receipt_sha256": "a94a962d1d3c24ac4ae55842545d6385b845efe009e5f8be128f496fc6761a9f",
+  "recipient_optimizer_steps": 0,
+  "target_text": [
+    " 0",
+    " 1",
+    " 2",
+    " 3",
+    " 4",
+    " 5",
+    " 6",
+    " 7"
+  ],
+  "target_token_ids": [
+    470,
+    337,
+    374,
+    495,
+    577,
+    608,
+    721,
+    818
+  ],
+  "training": {
+    "curves": [
+      {
+        "loss": 2.082559823989868,
+        "negative_loss": 0.0030861494597047567,
+        "positive_loss": 2.0822513103485107,
+        "step": 1,
+        "wall_seconds": 0.2954755999962799
+      },
+      {
+        "loss": 2.083010196685791,
+        "negative_loss": 0.00015179449110291898,
+        "positive_loss": 2.0829949378967285,
+        "step": 250,
+        "wall_seconds": 9.50174119998701
+      },
+      {
+        "loss": 2.0962841510772705,
+        "negative_loss": 0.00024207864771597087,
+        "positive_loss": 2.096259832382202,
+        "step": 500,
+        "wall_seconds": 18.58417330001248
+      },
+      {
+        "loss": 2.0816352367401123,
+        "negative_loss": 0.00015259144129231572,
+        "positive_loss": 2.08161997795105,
+        "step": 750,
+        "wall_seconds": 27.738645700010238
+      },
+      {
+        "loss": 2.0762650966644287,
+        "negative_loss": 4.1007027903106064e-05,
+        "positive_loss": 2.076261043548584,
+        "step": 1000,
+        "wall_seconds": 36.89030520000961
+      },
+      {
+        "loss": 2.084144353866577,
+        "negative_loss": 0.0006104011554270983,
+        "positive_loss": 2.084083318710327,
+        "step": 1250,
+        "wall_seconds": 46.01423249999061
+      },
+      {
+        "loss": 2.0850226879119873,
+        "negative_loss": 0.0008280989131890237,
+        "positive_loss": 2.084939956665039,
+        "step": 1500,
+        "wall_seconds": 55.198914400010835
+      },
+      {
+        "loss": 2.0760982036590576,
+        "negative_loss": 2.4400691472692415e-05,
+        "positive_loss": 2.0760958194732666,
+        "step": 1750,
+        "wall_seconds": 64.36564919998636
+      },
+      {
+        "loss": 2.080328941345215,
+        "negative_loss": 2.234421481261961e-05,
+        "positive_loss": 2.080326795578003,
+        "step": 2000,
+        "wall_seconds": 73.39989199998672
+      },
+      {
+        "loss": 2.0806832313537598,
+        "negative_loss": 0.0006060649175196886,
+        "positive_loss": 2.080622673034668,
+        "step": 2250,
+        "wall_seconds": 82.26810459999251
+      },
+      {
+        "loss": 2.0769567489624023,
+        "negative_loss": 0.0003902921744156629,
+        "positive_loss": 2.0769176483154297,
+        "step": 2500,
+        "wall_seconds": 91.19164279999677
+      },
+      {
+        "loss": 2.083820104598999,
+        "negative_loss": 5.256745498627424e-05,
+        "positive_loss": 2.083814859390259,
+        "step": 2750,
+        "wall_seconds": 100.02823440000066
+      },
+      {
+        "loss": 2.086916923522949,
+        "negative_loss": 2.310567651875317e-05,
+        "positive_loss": 2.086914539337158,
+        "step": 3000,
+        "wall_seconds": 109.02368300000671
+      },
+      {
+        "loss": 2.078256845474243,
+        "negative_loss": 0.0003174051526002586,
+        "positive_loss": 2.0782251358032227,
+        "step": 3250,
+        "wall_seconds": 118.11673780001001
+      },
+      {
+        "loss": 2.0779190063476562,
+        "negative_loss": 0.0014008365105837584,
+        "positive_loss": 2.0777788162231445,
+        "step": 3500,
+        "wall_seconds": 127.06612440000754
+      },
+      {
+        "loss": 2.078630208969116,
+        "negative_loss": 0.002027453389018774,
+        "positive_loss": 2.07842755317688,
+        "step": 3750,
+        "wall_seconds": 136.12930609998875
+      },
+      {
+        "loss": 2.0798592567443848,
+        "negative_loss": 0.0011827051639556885,
+        "positive_loss": 2.0797410011291504,
+        "step": 4000,
+        "wall_seconds": 145.25593909999589
+      },
+      {
+        "loss": 2.083113431930542,
+        "negative_loss": 0.0007608368759974837,
+        "positive_loss": 2.0830373764038086,
+        "step": 4250,
+        "wall_seconds": 154.31988860000274
+      },
+      {
+        "loss": 2.0603208541870117,
+        "negative_loss": 8.298350439872593e-05,
+        "positive_loss": 2.060312509536743,
+        "step": 4500,
+        "wall_seconds": 163.29032589998678
+      },
+      {
+        "loss": 2.0831267833709717,
+        "negative_loss": 7.368839578703046e-05,
+        "positive_loss": 2.0831193923950195,
+        "step": 4750,
+        "wall_seconds": 172.29251790000126
+      },
+      {
+        "loss": 2.075255870819092,
+        "negative_loss": 4.5031636545900255e-05,
+        "positive_loss": 2.075251340866089,
+        "step": 5000,
+        "wall_seconds": 181.4906467999972
+      }
+    ],
+    "depths": [
+      1,
+      2,
+      3
+    ],
+    "rows": 288,
+    "wall_seconds": 181.49090490001254
+  },
+  "universal_decoder_claim_allowed": false
+}

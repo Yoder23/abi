@@ -36,6 +36,16 @@ held-out secret was never revealed, and R8 does not change the R7 release.
 The final public verifier rejected 7/7 hostile mutations and ignored one forged
 scientific boolean without changing the `NO` verdict (8/8 expected outcomes).
 
+R9 then tested the backend/compiler hypothesis directly with an intentionally
+capability-specific Pythia neural backend. V1 failed to fit its own training
+rows. The preregistered v2 repair exposed both embedding and final recipient
+states and trained a 1,039,880-parameter backend for 10,000 steps. It still
+recomputed at only 12.85% training accuracy and 12.5% unseen-depth AFTER
+accuracy, versus 7.32% BASE; ZERO also reached 12.5%, failing causality. All
+8,192 evaluation and 288 training observations replayed live, and 5/5 hostile
+controls were rejected. R9 therefore closes this recipient-state GRU branch
+without opening the universal-backend experiment or changing R7.
+
 ## R7 at a glance
 
 | Evidence | Result |

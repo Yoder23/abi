@@ -1,5 +1,20 @@
 # Changelog
 
+## R9 neural-ISA recipient diagnostic - 2026-08-30
+
+- Preregistered a capability-specific Pythia backend as a search-space divider
+  before any capability-blind universal-decoder run.
+- Preserved v1 after its final-state-only backend failed both fit and unseen
+  realization.
+- Ran one measured v2 repair using embedding plus final recipient states,
+  1,039,880 backend parameters, 10,000 steps, and a new 0.98 training-fit gate.
+- Recomputed training fit at 0.128472 and unseen-depth AFTER at 0.125 versus
+  0.073242 BASE; ZERO also reached 0.125 and mean AFTER TV was 0.873909.
+- Replayed 8,192 evaluation and 288 training observations live from the frozen
+  backend and rejected 5/5 hostile controls, including rehashed forged raw data.
+- Closed the recipient-state GRU branch and did not run the universal backend.
+  R7 remains the controlling release and R8 remains Level 0.
+
 ## R8 native neural transfer falsification - 2026-08-30
 
 - Added ten additive, pre-reveal protocol revisions without modifying R7.

@@ -20,6 +20,8 @@ fresh blind Codex review. Human quality and independent hardware remain open.
 | Independent hardware | Open |
 | Registered minimum-information proof | Open |
 | General teacher extraction and semantic labeling | Research, not R7-certified |
+| R8 canonical-package native realization | Failed registered public prerequisite |
+| R9 capability-specific recipient-state backend | Failed; universal backend closed |
 | LoRA/distillation superiority | Unproven |
 
 ## Interpretation
@@ -29,6 +31,12 @@ establish that ABI can inspect any open-weight teacher, isolate a minimal pure
 English substrate, segregate all domain knowledge, or reproduce teacher
 generation quality in LayerCake. Those are the next scientific questions and
 must receive their own preregistered comparisons and evidence lineage.
+
+R8 and R9 narrow the immediate technical bottleneck. Exact extraction of the
+registered synthetic transition state was possible, but neither a generic
+package-conditioned recipient path nor a capability-specific recipient-state
+GRU realized it. A successor should change the canonical IR or neural injection
+architecture materially; additional nearby bridge sweeps are not justified.
 
 Historical campaign records remain available in `evidence/current/`,
 `results/`, and the research-history branch. Later evidence supersedes a claim

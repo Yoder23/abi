@@ -1,0 +1,48 @@
+{
+  "config_sha256": "728db3286218fc1ffb3183f30bec78d11887fc418ea368d94eadfbfe50453e06",
+  "controls": [
+    {
+      "control": "missing_receipt",
+      "exception_type": "R9DiagnosticError",
+      "expected": "REJECT",
+      "message": "required JSON unavailable: C:\\Users\\samyo\\AppData\\Local\\Temp\\abi-r9-hostile-q389dwvw\\missing-receipt\\receipt.json",
+      "observed": "REJECT"
+    },
+    {
+      "control": "stale_receipt_hash",
+      "exception_type": "R9VerificationError",
+      "expected": "REJECT",
+      "message": "stale evidence hash: R9 Gate A run",
+      "observed": "REJECT"
+    },
+    {
+      "control": "missing_backend",
+      "exception_type": "R9VerificationError",
+      "expected": "REJECT",
+      "message": "backend artifact missing or changed",
+      "observed": "REJECT"
+    },
+    {
+      "control": "corrupt_backend",
+      "exception_type": "R9VerificationError",
+      "expected": "REJECT",
+      "message": "backend artifact missing or changed",
+      "observed": "REJECT"
+    },
+    {
+      "control": "forged_raw_with_recomputed_hashes",
+      "exception_type": "R9ReplayError",
+      "expected": "REJECT",
+      "message": "evaluation live prediction changed at row 0",
+      "observed": "REJECT"
+    }
+  ],
+  "evidence_sha256": "81e028604e19cbf91f71c633f63b283f5908fe9d21ee2ad75dae0dfbb1380a18",
+  "expected_rejections": 5,
+  "format": "abi-neural-isa-r9-adversarial-verifier/1",
+  "observed_rejections": 5,
+  "run_receipt_sha256": "67ef17ca81081bbc42b932ac9f80f10755fc8b65b155c4c8af2317f0c86e70b8",
+  "status": "PASS_HOSTILE_CONTROLS",
+  "trusted_scientific_booleans_consumed": 0,
+  "unexpected_acceptances": 0
+}

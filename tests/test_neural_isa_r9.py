@@ -12,6 +12,7 @@ from experiments.native_transfer_r8.capability_generator import (
 )
 from experiments.native_transfer_r8.native_host import sha256_file
 from experiments.neural_isa_r9.backend import PackageConditionedGRUBackend
+from experiments.neural_isa_r9.live_replay_specific import R9ReplayError, _compare_rows
 from experiments.neural_isa_r9.verify_specific_diagnostic import (
     R9VerificationError,
     _bootstrap,
@@ -68,6 +69,24 @@ def test_verifier_rejects_stale_receipts() -> None:
     value["rows"] = 4
     with pytest.raises(R9VerificationError, match="stale evidence hash"):
         _evidence(value, "tampered")
+
+
+def test_live_replay_comparison_rejects_forged_prediction() -> None:
+    row = {
+        "row_id": "r",
+        "capability_id": "c",
+        "prompt_sha256": "p",
+        "depth": 4,
+        "flavor": "compositional",
+        "condition": "AFTER",
+        "prediction_token_id": 1,
+        "canonical_output_probabilities": [0.125] * 8,
+        "teacher_canonical_probabilities": [0.125] * 8,
+        "teacher_recipient_tv": 0.0,
+    }
+    forged = dict(row, prediction_token_id=2)
+    with pytest.raises(R9ReplayError, match="live prediction changed"):
+        _compare_rows([row], [forged], "test")
 
 
 def test_bootstrap_is_deterministic_and_deep() -> None:

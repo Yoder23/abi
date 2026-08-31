@@ -47,3 +47,15 @@ R8 does not expand the supported claims. Its v10 public prerequisite produced
 the observed failure to native recipient realization in the tested system.
 The held-out secret remained unrevealed; three-recipient, causal, baseline,
 composition, physical-isolation, and external gates were not passed.
+
+## Additive R9 falsification result
+
+R9 does not expand the supported claims. It tested the recipient-backend
+hypothesis with capability-specific weights before allowing a universal
+decoder. The stricter v2 Pythia backend used embedding and final recipient
+states but achieved only 0.128472 training fit and 0.125 unseen-depth AFTER
+accuracy versus 0.073242 BASE. ZERO also achieved 0.125, so package causality
+failed. Exact live replay reproduced all 8,480 observations; 5/5 hostile
+controls rejected missing, stale, corrupt, and hash-reforged evidence. This
+closes only the registered recipient-state GRU branch. It does not disprove all
+possible neural ISAs or canonical capability representations.

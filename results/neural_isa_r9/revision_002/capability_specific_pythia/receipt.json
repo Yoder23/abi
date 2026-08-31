@@ -1,0 +1,242 @@
+{
+  "backend": {
+    "kind": "package_conditioned_gru_logit_residual",
+    "parameters": 1039880,
+    "path": "capability_specific_backend.safetensors",
+    "recipient_state_layers": [
+      "embedding",
+      "final"
+    ],
+    "sha256": "078b8e3dad253246800513e727b003a911b09c91cb3280867fe247c7cca62080",
+    "state_sha256_after_evaluation": "63bbd1d68379105f7981a2142c8b6d46f9e62ea5a9fdf88ac3ac1d2a6de790f8",
+    "state_sha256_before_evaluation": "63bbd1d68379105f7981a2142c8b6d46f9e62ea5a9fdf88ac3ac1d2a6de790f8"
+  },
+  "backend_optimizer_steps": 10000,
+  "capability_id": "r8-development-000-1f39465a340dcd5a7274",
+  "capability_specific_weights_allowed": true,
+  "config_sha256": "728db3286218fc1ffb3183f30bec78d11887fc418ea368d94eadfbfe50453e06",
+  "evaluation": {
+    "conditions": [
+      "BASE",
+      "AFTER",
+      "BEFORE",
+      "WRONG",
+      "ZERO",
+      "RANDOM",
+      "SHUFFLED",
+      "REMOVED"
+    ],
+    "rows_per_condition": 1024,
+    "wall_seconds": 6.341894200013485
+  },
+  "evidence_sha256": "ff77127da0f8c11406d8a90aa2858aceb970acd887f0f266c551085ec93e7f11",
+  "format": "abi-neural-isa-r9-capability-specific-diagnostic/1",
+  "hardware": {
+    "cuda_device_name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "cuda_total_memory_bytes": 17179344896,
+    "device": "cuda"
+  },
+  "host_key": "pythia",
+  "host_model_id": "EleutherAI/pythia-160m",
+  "host_model_state_sha256_after": "54d67dd87a3b2a68f8e9bd71af503d78be0c41f7601d648a61a39d199e3be985",
+  "host_model_state_sha256_before": "54d67dd87a3b2a68f8e9bd71af503d78be0c41f7601d648a61a39d199e3be985",
+  "host_revision": "50f5173d932e8e61f858120bcb800b97af589f46",
+  "implementation_sha256": {
+    "experiments/neural_isa_r9/backend.py": "3c943d4384a3ae4d49af15b05d151259dc35216c964a6f7e80ada2e4ea6ce3a5",
+    "experiments/neural_isa_r9/run_specific_diagnostic.py": "d96065bfe502fbba59ba732cc8a907c8f3ccd6490d27eb1035c3e0cbfe446c29",
+    "experiments/neural_isa_r9/verify_specific_diagnostic.py": "b52c9f2dc923fa3edcda3cb642b9916dd8f93b989055c909cfeababd07ed9bf8"
+  },
+  "observations": {
+    "path": "observations.jsonl",
+    "rows": 8192,
+    "sha256": "a070b0af0d1880feefcd640ac1a6191a0acc042408cbfb3326bedf222d77ca5c"
+  },
+  "r8_canonical_latents_sha256": "028f4f41ee6a1d4c642ff1f7be7cee4575d4ddb9db83421c8ed2d90b1732b3fc",
+  "r8_config_sha256": "d6f31883134e25808bb558ba4db51c120e4c9eccda1e78b56667f2d27cd8fd38",
+  "r8_extraction_receipt_sha256": "a94a962d1d3c24ac4ae55842545d6385b845efe009e5f8be128f496fc6761a9f",
+  "recipient_optimizer_steps": 0,
+  "target_text": [
+    " 0",
+    " 1",
+    " 2",
+    " 3",
+    " 4",
+    " 5",
+    " 6",
+    " 7"
+  ],
+  "target_token_ids": [
+    470,
+    337,
+    374,
+    495,
+    577,
+    608,
+    721,
+    818
+  ],
+  "training": {
+    "curves": [
+      {
+        "loss": 2.0791146755218506,
+        "negative_loss": 0.002317467238754034,
+        "positive_loss": 2.078882932662964,
+        "step": 1,
+        "wall_seconds": 0.24758150000707246
+      },
+      {
+        "loss": 2.0900654792785645,
+        "negative_loss": 0.00048404489643871784,
+        "positive_loss": 2.090017080307007,
+        "step": 500,
+        "wall_seconds": 19.50088340000366
+      },
+      {
+        "loss": 2.0759665966033936,
+        "negative_loss": 0.00019954305025748909,
+        "positive_loss": 2.075946569442749,
+        "step": 1000,
+        "wall_seconds": 38.986964300012914
+      },
+      {
+        "loss": 2.08630633354187,
+        "negative_loss": 7.035084126982838e-05,
+        "positive_loss": 2.086299180984497,
+        "step": 1500,
+        "wall_seconds": 58.56629210000392
+      },
+      {
+        "loss": 2.0802369117736816,
+        "negative_loss": 5.6382825277978554e-05,
+        "positive_loss": 2.080231189727783,
+        "step": 2000,
+        "wall_seconds": 77.97809630000847
+      },
+      {
+        "loss": 2.079204559326172,
+        "negative_loss": 6.552424747496843e-05,
+        "positive_loss": 2.079198122024536,
+        "step": 2500,
+        "wall_seconds": 97.75724360000459
+      },
+      {
+        "loss": 2.087287187576294,
+        "negative_loss": 0.00015105490456335247,
+        "positive_loss": 2.0872721672058105,
+        "step": 3000,
+        "wall_seconds": 117.5294529000239
+      },
+      {
+        "loss": 2.0846760272979736,
+        "negative_loss": 0.00010904374357778579,
+        "positive_loss": 2.084665060043335,
+        "step": 3500,
+        "wall_seconds": 137.3348754000035
+      },
+      {
+        "loss": 2.078030824661255,
+        "negative_loss": 0.0004541167872957885,
+        "positive_loss": 2.0779855251312256,
+        "step": 4000,
+        "wall_seconds": 156.82517590001225
+      },
+      {
+        "loss": 2.0608980655670166,
+        "negative_loss": 1.0926405593636446e-05,
+        "positive_loss": 2.060896873474121,
+        "step": 4500,
+        "wall_seconds": 176.39262270001927
+      },
+      {
+        "loss": 2.0752949714660645,
+        "negative_loss": 0.00020873150788247585,
+        "positive_loss": 2.0752739906311035,
+        "step": 5000,
+        "wall_seconds": 195.97725290001836
+      },
+      {
+        "loss": 2.071786403656006,
+        "negative_loss": 0.002779063070192933,
+        "positive_loss": 2.0715084075927734,
+        "step": 5500,
+        "wall_seconds": 215.7931711000274
+      },
+      {
+        "loss": 2.072843551635742,
+        "negative_loss": 8.511208579875529e-05,
+        "positive_loss": 2.0728349685668945,
+        "step": 6000,
+        "wall_seconds": 235.38446840000688
+      },
+      {
+        "loss": 2.0846104621887207,
+        "negative_loss": 5.113183942739852e-05,
+        "positive_loss": 2.0846054553985596,
+        "step": 6500,
+        "wall_seconds": 254.53068380002514
+      },
+      {
+        "loss": 2.077739953994751,
+        "negative_loss": 7.391355211439077e-06,
+        "positive_loss": 2.0777392387390137,
+        "step": 7000,
+        "wall_seconds": 273.61641580000287
+      },
+      {
+        "loss": 2.0857675075531006,
+        "negative_loss": 0.0002833913895301521,
+        "positive_loss": 2.0857391357421875,
+        "step": 7500,
+        "wall_seconds": 293.04149030000553
+      },
+      {
+        "loss": 2.07170033454895,
+        "negative_loss": 0.000914506264962256,
+        "positive_loss": 2.071608781814575,
+        "step": 8000,
+        "wall_seconds": 312.62383430000045
+      },
+      {
+        "loss": 2.0811660289764404,
+        "negative_loss": 0.0001595919020473957,
+        "positive_loss": 2.0811500549316406,
+        "step": 8500,
+        "wall_seconds": 332.3587895000237
+      },
+      {
+        "loss": 2.0811755657196045,
+        "negative_loss": 0.0003501193132251501,
+        "positive_loss": 2.0811405181884766,
+        "step": 9000,
+        "wall_seconds": 351.8771083000174
+      },
+      {
+        "loss": 2.075822353363037,
+        "negative_loss": 9.45945066632703e-05,
+        "positive_loss": 2.075812816619873,
+        "step": 9500,
+        "wall_seconds": 371.39522820001
+      },
+      {
+        "loss": 2.0868005752563477,
+        "negative_loss": 5.7182915043085814e-05,
+        "positive_loss": 2.086794853210449,
+        "step": 10000,
+        "wall_seconds": 390.7828547000245
+      }
+    ],
+    "depths": [
+      1,
+      2,
+      3
+    ],
+    "rows": 288,
+    "wall_seconds": 390.78307210002095
+  },
+  "training_observations": {
+    "path": "training_observations.jsonl",
+    "rows": 288,
+    "sha256": "6a993caa450bfb264a465b0b779b90c4cd3703229370c9a9b4beefebf9c95bf8"
+  },
+  "universal_decoder_claim_allowed": false
+}

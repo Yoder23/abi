@@ -1,0 +1,76 @@
+{
+  "after_minus_base_bootstrap": {
+    "lower_95": 0.01171875,
+    "point": 0.03125,
+    "upper_95": 0.05078125
+  },
+  "claim_boundary": "A positive Gate A isolates recipient realization as feasible. It does not prove package sufficiency, capability-blind transfer, zero-shot transplantation, or lossless ABI.",
+  "decision": "do not spend universal-backend compute; revise recipient realization architecture in a new preregistration",
+  "evidence_sha256": "57f533d4caff632f9ba99122fea46cbde4a32463696fadb5d1ddd1b384c74620",
+  "exact_question_answer": "NO_GATE_A",
+  "format": "abi-neural-isa-r9-gate-a-verification/1",
+  "gates": {
+    "backend_frozen_during_evaluation": true,
+    "distribution_equivalence": false,
+    "exact_output_and_decision_equivalence": false,
+    "gate_a_capability_specific_expressivity": false,
+    "heterogeneous_host_transfer": false,
+    "negative_control_causality": true,
+    "recipient_frozen": true,
+    "universal_capability_blind_backend": false
+  },
+  "metrics": {
+    "AFTER": {
+      "accuracy": 0.1044921875,
+      "maximum_teacher_recipient_tv": 0.9987844228744507,
+      "mean_teacher_recipient_tv": 0.8736792563722702,
+      "rows": 1024
+    },
+    "BASE": {
+      "accuracy": 0.0732421875,
+      "maximum_teacher_recipient_tv": 0.9975947141647339,
+      "mean_teacher_recipient_tv": 0.8760645016736817,
+      "rows": 1024
+    },
+    "BEFORE": {
+      "accuracy": 0.0546875,
+      "maximum_teacher_recipient_tv": 0.9966646432876587,
+      "mean_teacher_recipient_tv": 0.8758296403684653,
+      "rows": 1024
+    },
+    "RANDOM": {
+      "accuracy": 0.0546875,
+      "maximum_teacher_recipient_tv": 0.9971263408660889,
+      "mean_teacher_recipient_tv": 0.8763084643578622,
+      "rows": 1024
+    },
+    "REMOVED": {
+      "accuracy": 0.0732421875,
+      "maximum_teacher_recipient_tv": 0.9975947141647339,
+      "mean_teacher_recipient_tv": 0.8760645016736817,
+      "rows": 1024
+    },
+    "SHUFFLED": {
+      "accuracy": 0.0546875,
+      "maximum_teacher_recipient_tv": 0.9966945648193359,
+      "mean_teacher_recipient_tv": 0.8757924843521323,
+      "rows": 1024
+    },
+    "WRONG": {
+      "accuracy": 0.0546875,
+      "maximum_teacher_recipient_tv": 0.9965962171554565,
+      "mean_teacher_recipient_tv": 0.875939791003475,
+      "rows": 1024
+    },
+    "ZERO": {
+      "accuracy": 0.0703125,
+      "maximum_teacher_recipient_tv": 0.9985995888710022,
+      "mean_teacher_recipient_tv": 0.8740563622850459,
+      "rows": 1024
+    }
+  },
+  "r8_controlling_result": "FAIL_CLOSED_LEVEL_0_PUBLIC_PREREQUISITE_FAILED",
+  "scope": "capability-specific Pythia recipient realization diagnostic; not a universal backend",
+  "status": "FAIL_CAPABILITY_SPECIFIC_EXPRESSIVITY",
+  "trusted_scientific_booleans_consumed": 0
+}

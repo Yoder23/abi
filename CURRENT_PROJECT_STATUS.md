@@ -15,6 +15,13 @@ zero (-0.019531 to +0.024414). Held-out evaluation was never opened.
 The final hostile audit produced 8/8 expected outcomes and zero unexpected
 acceptances.
 
+The additive R9 neural-ISA recipient-realization diagnostic is also complete
+and negative. Its preregistered v2 capability-specific Pythia backend failed
+training fit (0.128472) and unseen-depth realization (AFTER 0.125, BASE
+0.073242); ZERO matched AFTER at 0.125. Exact live replay reproduced 8,192
+evaluation and 288 training rows, and the hostile audit rejected 5/5 controls.
+The universal backend was not run because its prerequisite failed.
+
 Status token:
 `R7_BOUNDED_TECHNICAL_VALIDATION_PASSED_EXTERNAL_REVIEW_OPEN`
 
@@ -63,6 +70,8 @@ Public release:
    research.
 8. R8 native cross-model neural transfer: failed public prerequisite; any
    successor requires a new additive mechanism and preregistration.
+9. R9 neural-ISA recipient realization: capability-specific recipient-state
+   GRU branch failed; universal backend remains closed.
 
 ## Scientific interpretation
 
@@ -81,8 +90,10 @@ claims require separate acquisition and quality evidence.
 - Start three independent human-rating sessions from the frozen packet.
 - Send the external reproduction archive to a genuinely independent operator.
 - Register and execute minimum-information certification.
-- Begin a separate teacher-acquisition campaign only after the external handoff
-  is stable; keep its evidence lineage additive and separate from R7.
+- Before any new neural-transfer campaign, register a materially different
+  canonical IR or injection architecture that can first pass a
+  capability-specific fit/realization control. Keep it additive and separate
+  from R7.
 
 ## Storage and repository health
 

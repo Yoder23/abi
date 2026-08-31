@@ -25,6 +25,18 @@ not revealed and Qwen/T5 were not run. This is Level 0 and leaves R7 unchanged.
 The public verifier hostile audit produced 8/8 expected outcomes, including
 rejection of missing/stale evidence and immunity to a forged pass boolean.
 
+Additive R9 status:
+`R9_GATE_A_CAPABILITY_SPECIFIC_RECIPIENT_STATE_BRANCH_FAILED`
+
+R9 tested whether the R8 package could be realized by a deliberately
+capability-specific Pythia backend before spending compute on a universal
+decoder. V1 failed to fit. The preregistered v2 repair used embedding plus
+final recipient states, 1,039,880 backend parameters, and 10,000 steps. Strict
+recomputation found 0.128472 training accuracy and 0.125 unseen-depth AFTER
+accuracy versus 0.073242 BASE; ZERO was also 0.125. Live replay reproduced all
+8,480 stored rows, and 5/5 hostile controls were rejected. Gate B remains
+closed and R7 is unchanged.
+
 ## What R7 proves
 
 R7 proves one bounded capability ABI result: four immutable packages execute
@@ -78,10 +90,11 @@ Prepare and execute external review without changing the R7 artifacts:
 Teacher extraction and minimization belong to a subsequent additive campaign.
 They must not be inferred from R7 conformance evidence.
 
-Any R8 successor must start with a new additive preregistration. It must first
-produce a substantial raw-row public capability gain through a package-only
-recipient neural interface; more static-prefix, nearby LoRA-rank, or step-count
-sweeps are not evidence-supported.
+Any R8/R9 successor must start with a new additive preregistration and a
+materially different canonical IR or recipient injection architecture. It must
+fit a public capability-specific control before attempting a capability-blind
+backend. More static-prefix, package-gated LoRA, recipient-state GRU, nearby
+width/rank, or step-count sweeps are not evidence-supported.
 
 ## Historical failures that remain authoritative
 

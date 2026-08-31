@@ -36,6 +36,13 @@ bootstrap CI -0.019531 to +0.024414). The held-out commitment was never
 revealed. R8 therefore does not establish native cross-model transfer and does
 not alter R7.
 
+The additive R9 neural-ISA diagnostic is also negative and does not alter R7.
+Its stricter v2 capability-specific Pythia backend achieved 0.128472 training
+fit and 0.125 unseen-depth AFTER accuracy versus 0.073242 BASE; ZERO also
+reached 0.125. Exact live replay covered 8,192 evaluation and 288 training
+rows, and 5/5 hostile controls rejected tampering. The recipient-state GRU
+branch is closed; the capability-blind universal backend was not run.
+
 ## Exact proven scope
 
 The four published immutable capability packages execute through the canonical
@@ -108,9 +115,13 @@ arbitrary teacher.
 1. Execute the frozen human-rating packet with three independent raters.
 2. Run the external reproduction packet on genuinely different hardware.
 3. Execute registered minimum-information certification.
-4. Treat R8 as a preserved falsification result. Any successor native-transfer
-   mechanism requires a new additive preregistration and must solve recipient
-   realization on public capability-level development data before held-out use.
+4. Treat R8 and R9 as preserved falsification results. Any successor
+   native-transfer mechanism requires a new additive preregistration and a
+   materially different canonical IR or recipient injection architecture. It
+   must first fit a capability-specific public control and solve public
+   capability-level realization before universal or held-out use. Do not run
+   further final-state/embedding-state GRU, nearby width, learning-rate, or
+   step-count variants.
 5. Prove teacher-to-ABI acquisition, capability labeling/segregation, compact
    English extraction, and quality comparisons against distillation and LoRA
    only in separately registered lineages.

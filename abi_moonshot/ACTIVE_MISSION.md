@@ -1,60 +1,47 @@
-# ABI repaired final-validation mission
+# ABI moonshot research mission
 
-Status: **LOCAL STRICT PASS; PUBLIC RECONSTRUCTION PENDING**
+Status: **R7 RELEASE CONTROLS; R8/R9 NATIVE-TRANSFER BRANCHES NEGATIVE**
 
-The active product is a standalone, representation-neutral capability runtime.
-Each named codec/conformance environment is certified once, capability-blind,
-against typed canonical semantics. Its adapter is frozen and the same immutable
-English, Python, chemistry, and civics packages install without receiver
-training, calibration, teacher inference, or package mutation.
+The controlling public release is R7. It proves bounded capability-runtime and
+host-conformance execution for four immutable packages across the three named
+environments. Human review remains 0/21,000, different-hardware reproduction
+is pending, and registered minimum-information certification is pending.
 
-The former 18/18 final certificate is superseded. The repaired campaign must
-not advance to human ratings or independent hardware until it completes this
-sequence:
+R7 is not native neural transplantation. R8 therefore tested one exact
+canonical package in frozen heterogeneous recipients. Extraction was exact,
+but the first Pythia public prerequisite failed at Level 0; the held-out secret
+was never revealed.
 
-1. Physically isolated certification with capability packages and success IDs
-   absent from the worker filesystem.
-2. Fresh live real/neutral/zero/random/shuffled/host-removed/adapter-removed/
-   capability-removed execution.
-3. Fail-closed raw recomputation without trusted experiment booleans.
-4. Immutable public publication of every package and the definitive archive.
-5. Brand-new reconstruction from the public tag and manifests only.
-6. Fresh blind Codex red-team against the repaired tag.
+R9 tested the proposed neural-ISA backend/compiler hypothesis in the smallest
+authorized order. Its deliberately capability-specific Pythia Gate A failed:
+the stricter v2 backend fit only 0.128472 of training rows and reached 0.125
+unseen-depth AFTER accuracy versus 0.073242 BASE. ZERO also reached 0.125.
+Exact live replay covered 8,480 rows and the verifier rejected 5/5 hostile
+controls. The universal capability-blind backend was not run.
 
-The first repaired tag is historical because its default Windows checkout was
-not byte-clean for one CRLF/LF-normalized historical JSON file. The r1 tag is
-also historical because its public extraction revealed a stale clean-tree
-frozen-candidate comparison. The additive repaired receipt fixes that branch;
-only r2 is eligible for the remaining sequence.
+The current technical conclusion is bounded: the registered R8 canonical
+transition package was not realized by the tested static-prefix, package-gated
+LoRA/hypernetwork, or R9 recipient-state GRU mechanisms. This does not prove
+that every possible neural ISA is impossible. It does mean another nearby
+bridge sweep is not scientifically authorized.
 
-Steps 1-3 pass locally. The strict verifier binds 59 required inputs and
-recomputes 384 certification roundtrips, 5,043 locked matrix rows, 3,072 live
-causal rows, and 2,100 live isolation rows. The supported repository suite
-passes 66/66. Steps 4-6 remain active release work.
-The pre-public hostile extraction rejects 9/9 mutations and restores the exact
-strict evidence digest.
+Next native-transfer work requires a new additive preregistration with a
+materially different canonical functional-delta IR or recipient injection
+architecture. It must first achieve at least 0.98 training fit and pass the
+registered capability-specific public realization/causality gates. Only then
+may a capability-blind backend be trained across pre-freeze capabilities and
+tested on a capability created after freeze.
 
-The precise bounded claim is standalone capability-runtime execution across
-LayerCake v25, Qwen2.5-0.5B, and Pythia-160M codec/conformance environments.
-Qwen/Pythia host state is measured but cannot enter the frozen semantic runtime;
-removing the adapter or capability fails live execution. This is not host-model
-generation, tensor transplantation, universal LLM compatibility, a global
-information minimum, or superiority over LoRA/distillation.
+The permanent moonshot remains: encode a teacher learning-induced functional
+delta once into a model-independent artifact that fixed, capability-blind
+neural backends can realize in heterogeneous recipients with zero
+capability-specific optimization and exact UTF-8 output equivalence inside a
+registered behavioral domain. Distribution equivalence is a separate,
+stronger gate. ABI must never relabel an executable answer runtime, ordinary
+distillation, or capability-specific fine-tuning as that result.
 
-Controlling repaired evidence:
+Controlling and additive evidence:
 
-- `results/abi_final_validation_v2/strict_validation.json`
-- `results/abi_final_validation_v2/isolated_certification_strict/`
-- `results/abi_final_validation_v2/live_causality/`
-- `results/abi_final_validation_v2/live_isolation/`
-- `results/abi_final_validation_v2/strict_hostile_pre_public.json`
-
-Historical evidence remains immutable:
-
-- `results/abi_final_validation/`
-- `results/abi_final_validation_v2/live_causality_untrusted_boolean_history/`
-- `results/abi_final_validation_v2/strict_validation_pre_boolean_cleanup.json`
-- `results/abi_v2/`
-
-Human ratings remain 0/21,000. Different-hardware independent reproduction and
-the registered minimum-information frontier remain open.
+- R7 public tag: `abi-final-validation-v2-repaired-r7-2026-08-30`
+- R8 certificate: `results/native_transfer_r8/revision_009/public_falsification/CERTIFICATE.md`
+- R9 certificate: `results/neural_isa_r9/revision_002/capability_specific_pythia/CERTIFICATE.md`
