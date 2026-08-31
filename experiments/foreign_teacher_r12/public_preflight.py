@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Any
 
 import torch
-from safetensors.torch import save_file
+from safetensors.torch import load_file, save_file
 
 from experiments.native_isa_r11.core import (
     sha256_bytes,
@@ -126,6 +126,49 @@ def run(config_path: Path, output: Path) -> dict[str, Any]:
         batch_size=int(config["training"]["evaluation_batch_size"]),
     )
     adapters = GenericRecipientAdapterSet(host, rank=int(config["training"]["lora_rank"]))
+    initial_adapter = None
+    initial = None
+    initial_atomic = None
+    initial_spec = config["training"].get("initial_adapter")
+    if initial_spec is not None:
+        if not isinstance(initial_spec, dict):
+            raise R12TeacherError("invalid initial adapter specification")
+        initial_path = root / str(initial_spec["path"])
+        parent_receipt = _json(initial_path.parent / "receipt.json")
+        parent_payload = dict(parent_receipt)
+        parent_evidence = parent_payload.pop("evidence_sha256", None)
+        if (
+            parent_evidence
+            != hashlib.sha256(canonical_json_bytes(parent_payload)).hexdigest()
+            or parent_evidence != initial_spec.get("source_receipt_evidence_sha256")
+            or parent_receipt.get("adapter_artifact", {}).get("sha256")
+            != initial_spec.get("sha256")
+        ):
+            raise R12TeacherError("initial adapter parent receipt changed")
+        if (
+            not initial_path.is_file()
+            or sha256_file(initial_path) != initial_spec.get("sha256")
+        ):
+            raise R12TeacherError("initial adapter artifact changed")
+        adapters.load_state(load_file(str(initial_path), device="cpu"))
+        adapters.verify_base_frozen()
+        initial = evaluate(
+            host,
+            evaluation_rows,
+            batch_size=int(config["training"]["evaluation_batch_size"]),
+        )
+        initial_atomic = evaluate(
+            host,
+            atomic_rows,
+            batch_size=int(config["training"]["evaluation_batch_size"]),
+        )
+        initial_adapter = {
+            "path": str(initial_spec["path"]),
+            "sha256": str(initial_spec["sha256"]),
+            "source_receipt_evidence_sha256": str(
+                initial_spec["source_receipt_evidence_sha256"]
+            ),
+        }
     state, training = train(
         host,
         adapters,
@@ -203,6 +246,9 @@ def run(config_path: Path, output: Path) -> dict[str, Any]:
         },
         "before": before,
         "before_atomic": before_atomic,
+        "initial": initial,
+        "initial_atomic": initial_atomic,
+        "initial_adapter": initial_adapter,
         "after": after,
         "after_atomic": after_atomic,
         "training": training,
