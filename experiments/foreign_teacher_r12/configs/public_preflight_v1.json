@@ -1,0 +1,28 @@
+{
+  "data": {
+    "capability_seed": 12012001,
+    "evaluation_depths": [6, 7],
+    "evaluation_rows": 512,
+    "evaluation_seed": 12012003,
+    "training_depths": [1, 2, 3, 4, 5],
+    "training_rows": 2904,
+    "training_seed": 12012002
+  },
+  "format": "abi-r12a-public-preflight/1",
+  "gates": {
+    "after_accuracy": 1.0,
+    "atomic_accuracy": 1.0,
+    "before_accuracy_maximum": 0.25,
+    "gain_minimum": 0.7
+  },
+  "status": "PUBLIC_PREFLIGHT_ONLY",
+  "training": {
+    "batch_size": 8,
+    "evaluation_batch_size": 64,
+    "evaluation_interval": 100,
+    "learning_rate": 0.001,
+    "lora_rank": 16,
+    "maximum_steps": 1500,
+    "seed": 12012004
+  }
+}
