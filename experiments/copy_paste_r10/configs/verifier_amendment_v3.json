@@ -1,0 +1,36 @@
+{
+  "format": "abi-copy-paste-r10-verifier-amendment/3",
+  "status": "PREREGISTERED_POST_RUN_BOUNDED_VERIFIER_REPAIR",
+  "effective_date": "2026-08-30",
+  "base_config": {
+    "path": "experiments/copy_paste_r10/configs/preregistered_v1.json",
+    "sha256": "e1811563ef0216e8d67f0b74f3ce46b3d4914ee20a5ca25ab7e8682a32ff93c3"
+  },
+  "run_receipt": {
+    "path": "results/copy_paste_r10/revision_001/receipt.json",
+    "sha256": "a9341ecd117a93ae6aad57ff04bff71675cceb27362493c10577e1ab74dd614d",
+    "evidence_sha256": "f4ccd2b0f8c07fa51af0623e6ae0b78357e75739314c9fef9ad91f537fb5a18c"
+  },
+  "exact_repairs": [
+    {
+      "original": "len(expected_rows) // len(capability_ids) * len(conditions)",
+      "repaired": "len(expected_rows) * len(conditions)"
+    },
+    {
+      "original": "tolerance: float = 2e-6",
+      "repaired": "tolerance: float = 1e-5"
+    }
+  ],
+  "maximum_observed_codec_absolute_error": 0.000008225440979003906,
+  "comparison_tolerance": 0.00001,
+  "reason": "The arithmetic-repaired v2 verifier exposed that its pre-existing 2e-6 equality tolerance was below Pythia's measured 8.225440979003906e-06 float32 logit-codec/softmax round-trip error. The bounded 1e-5 tolerance is 1.216x the maximum observed error, remains orders of magnitude below a prediction-changing difference, and does not alter exact output, accuracy, causality, package, or immutability gates.",
+  "scientific_thresholds_changed": false,
+  "raw_evidence_changed": false,
+  "run_reexecution_authorized": false,
+  "bindings": {
+    "experiments/copy_paste_r10/verify.py": "fff1faf1febe6d25e91012c6b022613877df480e0c52873f4053b7087ef28037",
+    "experiments/copy_paste_r10/verify_repaired_v3.py": "92dd6ceb9ee0d63ef2b72da3730a58b443a4c7b834a767173c0eb342fe5b0821",
+    "experiments/copy_paste_r10/configs/preregistered_v1.json": "e1811563ef0216e8d67f0b74f3ce46b3d4914ee20a5ca25ab7e8682a32ff93c3",
+    "results/copy_paste_r10/revision_001/receipt.json": "a9341ecd117a93ae6aad57ff04bff71675cceb27362493c10577e1ab74dd614d"
+  }
+}
