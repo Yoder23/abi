@@ -91,3 +91,20 @@ conventional pretrained transformer from which ABI discovered and extracted an
 existing capability. R11 therefore does not support English/domain extraction,
 arbitrary foreign-teacher transfer, recipient-block internalization, LayerCake
 acceptance, information minimality, or superiority over LoRA/distillation.
+
+## Additive R12-A public frontend result
+
+R12-A expands the bounded construction claim to one conventionally trained
+open-weight source on one fresh synthetic capability. Qwen2.5-0.5B reached
+24/24 exact atomic probes. A fixed zero-parameter extractor accessed no
+training rows, evaluation rows, or answers and emitted an unchanged 2,053-byte
+R11 package. Without the source teacher, that package executed all 512 unseen,
+prompt-disjoint public compositions exactly.
+
+R12-A did not pass its strict source prerequisite. Native Qwen peaked at
+510/512 rather than the required 512/512, and no held-out secret was created or
+revealed. The supported claim is therefore a bounded public foreign-teacher
+frontend construction, not exact teacher-relative transfer, discovery of
+pre-existing knowledge, English/domain extraction, LayerCake acceptance, or
+superiority over LoRA/distillation. See
+[R12_FOREIGN_FRONTEND_PUBLIC_RESULT.md](R12_FOREIGN_FRONTEND_PUBLIC_RESULT.md).

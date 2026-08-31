@@ -67,6 +67,17 @@ hashes, so bit-reproducible acquisition is not claimed. R11 proves only the
 synthetic ABI-native construction mechanism; arbitrary open-weight teacher,
 English/domain, LayerCake, and LoRA/distillation claims remain open.
 
+The additive R12-A public campaign proves one bounded conventional-teacher
+frontend construction and does not alter R7. Qwen2.5-0.5B was ordinarily
+LoRA-trained on a fresh synthetic capability. Its best native public result
+was 510/512 exact, below the registered 512/512 prerequisite. Its 24 atomic
+probes were exact, and a fixed zero-parameter extractor emitted an unchanged
+2,053-byte R11 package that executed 512/512 unseen prompt-disjoint
+compositions exactly without the teacher. No held-out secret was created or
+revealed. Do not broaden this into exact teacher-relative transfer,
+pre-existing knowledge extraction, English/domain, LayerCake, or
+LoRA/distillation claims.
+
 ## Exact proven scope
 
 The four published immutable capability packages execute through the canonical
@@ -150,12 +161,15 @@ arbitrary teacher.
 5. Prove teacher-to-ABI acquisition, capability labeling/segregation, compact
    English extraction, and quality comparisons against distillation and LoRA
    only in separately registered lineages.
-6. Treat R11 as the passed construction prerequisite for a new foreign-teacher
-   acquisition front end. The next mechanism must extract a capability already
-   encoded in an independently trained open-weight teacher, use the unchanged
-   R11-style package/host boundary, and pass held-out teacher-relative behavior
-   without capability-specific recipient optimization or an answer-table
-   substitute.
+6. Treat R11 as the passed construction prerequisite and R12-A as a bounded
+   public frontend construction pass with a failed exact source prerequisite.
+   Do not run another nearby learning-rate, step-count, data-size, or LoRA
+   sweep. A successor must materially change source acquisition or teacher
+   formulation, clear exact public behavior first, then extract a capability
+   already encoded in an independently trained open-weight teacher using the
+   unchanged R11 package/host boundary and held-out teacher-relative behavior.
+   Capability-specific recipient optimization and answer-table substitutes do
+   not qualify.
 
 Do not claim the ABI moonshot until those acquisition and external-quality
 gates are supported by their own evidence.

@@ -75,6 +75,16 @@ it does not prove extraction from a conventional pretrained LLM, English or
 natural-domain transfer, internalization into recipient transformer blocks, or
 LoRA/distillation superiority. R7 remains the controlling public release.
 
+R12-A has now exercised the missing frontend on one bounded public synthetic
+capability using conventionally trained Qwen2.5-0.5B. Its best native source
+checkpoint reached `510/512 = 0.99609375`, two rows short of the registered
+exact source gate. Its 24 atomic probes were exact, and the fixed
+zero-parameter extractor emitted an unchanged 2,053-byte R11 package whose
+executor was exact on `512/512` unseen, prompt-disjoint compositions without
+the teacher at execution time. This is a bounded public frontend construction
+pass and a strict teacher-gate failure, not held-out R12 certification. See
+[`docs/R12_FOREIGN_FRONTEND_PUBLIC_RESULT.md`](docs/R12_FOREIGN_FRONTEND_PUBLIC_RESULT.md).
+
 ## R7 at a glance
 
 | Evidence | Result |
@@ -196,6 +206,10 @@ See `docs/ABI_TECHNICAL_CLAIMS.md`, `docs/ABI_FINAL_RESULTS.md`, and the
 - `results/abi_moonshot/packages/` — published specialist packages.
 - `experiments/native_isa_r11/` — bounded native-neural ABI construction code.
 - `results/native_isa_r11/` — R11 preregistered raw evidence and live replay.
+- `experiments/foreign_teacher_r12/` — conventional-teacher frontend protocol
+  and fail-closed public verifier.
+- `results/foreign_teacher_r12/` — additive R12-A receipts and exact packages;
+  large source adapters remain excluded.
 - `external_reproduction/` — independent-operator workflow and environment
   lock.
 - `review_packet/` — ordered technical and external-review handoff.

@@ -67,6 +67,19 @@ synthetic ABI-native construction pass, not conventional LLM teacher
 extraction, English/domain transfer, or LayerCake product certification. R7
 remains the controlling public release.
 
+Additive R12-A public status:
+`R12A_BOUNDED_PUBLIC_FRONTEND_PASSED_STRICT_TEACHER_GATE_FAILED`
+
+R12-A trained conventional Qwen2.5-0.5B on one fresh synthetic capability,
+then used a fixed zero-parameter extractor and the unchanged R11 package/host
+boundary. The best native Qwen observation was 510/512 exact on 512 unseen,
+prompt-disjoint compositions; the registered prerequisite required 512/512.
+Atomic source behavior was 24/24 and the extracted 2,053-byte package executed
+512/512 exactly without the teacher. No held-out secret was created or
+revealed. This proves a bounded public frontend construction, not exact
+teacher-relative transfer, pre-existing knowledge extraction, English/domain
+transfer, or LayerCake product certification. R7 remains controlling.
+
 ## What R7 proves
 
 R7 proves one bounded capability ABI result: four immutable packages execute
@@ -105,7 +118,7 @@ The blind reviewer returned `VERDICT: PASS` for this exact scope.
 | Quality parity/superiority versus teacher, LoRA, or distillation | RESEARCH |
 | Globally minimal English substrate | RESEARCH |
 | ABI-native neural copy/paste construction | BOUNDED PASS; R11 |
-| Conventional open-weight teacher to ABI package | RESEARCH; not proven by R11 |
+| Conventional open-weight teacher to ABI package | BOUNDED PUBLIC FRONTEND PASS; exact/held-out gate failed in R12-A |
 
 ## Current objective
 
@@ -119,9 +132,10 @@ Prepare and execute external review without changing the R7 artifacts:
 4. verify the returned packets fail closed; and
 5. only then update the corresponding external gates.
 
-Teacher extraction and minimization belong to a subsequent additive campaign.
-R11 supplies its construction prerequisite, but foreign-teacher acquisition
-must not be inferred from either R7 conformance or R11 synthetic evidence.
+Teacher extraction and minimization belong to additive campaigns. R11 supplies
+the construction prerequisite, and R12-A supplies one bounded public
+conventional-teacher frontend construction. Exact teacher-relative and
+held-out transfer must not be inferred from either result.
 
 Any R8/R9/R10 successor must start with a new additive preregistration and a
 materially different canonical IR or recipient injection architecture. It must
@@ -129,12 +143,15 @@ fit a public capability-specific control before attempting a capability-blind
 backend. More static-prefix, package-gated LoRA, recipient-state GRU, nearby
 width/rank, or step-count sweeps are not evidence-supported.
 
-The next native-transfer experiment must leave R11's package/executor/host
-boundary fixed and attack only the missing foreign-teacher front end: extract a
-capability that already exists in an independently trained open-weight model,
-then require held-out teacher-relative behavior through the same package bytes.
-Memorized answer tables, capability-specific recipient training, and package-
-owned executable solvers do not qualify.
+The next foreign-teacher experiment must leave R11's package/executor/host
+boundary fixed and materially improve source acquisition or teacher
+formulation enough to pass exact public behavior before any held-out run. It
+must then extract a capability that already exists in an independently trained
+open-weight model and require held-out teacher-relative behavior through the
+same package bytes. Another nearby learning-rate, step-count, data-size, or
+LoRA sweep is not evidence-supported. Memorized answer tables,
+capability-specific recipient training, and package-owned executable solvers
+do not qualify.
 
 ## Historical failures that remain authoritative
 

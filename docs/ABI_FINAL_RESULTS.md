@@ -112,3 +112,18 @@ This proves only the ABI-native neural copy/paste construction. Extraction of
 English or domain knowledge already encoded in a conventional open-weight LLM
 remains open, as do LayerCake product acceptance and LoRA/distillation
 comparison.
+
+## Additive R12-A public result
+
+R12-A does not replace R7 and is not held-out certification. It trained
+Qwen2.5-0.5B conventionally on a fresh synthetic capability, while keeping the
+R11 package schema, interpreter, host codecs, and execution boundary frozen.
+On 512 unseen prompt-disjoint public compositions, native Qwen peaked at
+510/512 and therefore failed the registered exact source prerequisite.
+
+The source's 24 atomic probes were exact. A fixed zero-parameter extractor
+compiled them into a 2,053-byte R11 package, and that package executed all
+512/512 public compositions exactly without the source teacher. This is a
+bounded public frontend construction result plus an explicit strict
+teacher-gate failure. No held-out secret was created or revealed. See
+[R12_FOREIGN_FRONTEND_PUBLIC_RESULT.md](R12_FOREIGN_FRONTEND_PUBLIC_RESULT.md).

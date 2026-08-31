@@ -1,5 +1,24 @@
 # Changelog
 
+## R12-A conventional-teacher public frontend - 2026-08-31
+
+- Bound the campaign to the sealed R11 code, package schema, interpreter, host
+  codecs, and execution boundary.
+- Trained Qwen2.5-0.5B with ordinary rank-16 LoRA on one fresh synthetic
+  capability while leaving the base model unchanged.
+- Reached 24/24 exact atomic probes and a best native public source result of
+  510/512 on unseen prompt-disjoint compositions; the strict 512/512 source
+  prerequisite therefore failed.
+- Used a fixed zero-parameter extractor to emit an unchanged 2,053-byte R11
+  package that executed 512/512 public compositions exactly without the source
+  teacher.
+- Preserved four additive public revisions, receipts, failure evidence, and
+  content-addressed packages. No held-out secret was created or revealed.
+- Closed the nearby source-training sweep branch. This is a bounded public
+  frontend construction result, not R12 certification, pre-existing knowledge
+  extraction, English/domain transfer, or LoRA/distillation superiority. R7
+  remains the controlling public release.
+
 ## R11 native-neural ABI construction - 2026-08-31
 
 - Froze code, host identities, zero-step capability-blind native codecs,
