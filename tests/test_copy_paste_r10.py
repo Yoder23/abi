@@ -15,6 +15,7 @@ from experiments.copy_paste_r10.runtime import (
     load_package,
     write_package_once,
 )
+from experiments.copy_paste_r10.slot import CanonicalCapabilitySlot
 from experiments.native_transfer_r8.capability_generator import (
     OpaqueCapability,
     generate_rows,
@@ -122,3 +123,26 @@ def test_canonical_token_discovery_accepts_only_exact_isolated_decode() -> None:
     ids, texts = discover_canonical_token_map(Tokenizer(), encoder_decoder=True)
     assert ids == list(range(100, 108))
     assert texts == list("01234567")
+
+
+def test_slot_paste_remove_restore_uses_identical_package_bytes(tmp_path: Path) -> None:
+    capability = OpaqueCapability(capability_id="test", offsets=(2, 5, 3), seed_commitment="a" * 64)
+    row = generate_rows(capability, split="slot_test", rows=1, depths=[5], seed=101)[0]
+    item = write_package_once(
+        tmp_path,
+        _transition(capability.offsets),
+        {
+            "source_receipt_sha256": "a" * 64,
+            "extraction_receipt_sha256": "b" * 64,
+        },
+    )
+    path = tmp_path / item["path"]
+    slot = CanonicalCapabilitySlot()
+    first = slot.paste(path)
+    assert int(slot.execute([row["prompt"]]).argmax(dim=-1)) == row["answer"]
+    slot.remove()
+    with pytest.raises(CopyPasteRuntimeError):
+        slot.execute([row["prompt"]])
+    restored = slot.paste(path)
+    assert restored["package_sha256"] == first["package_sha256"]
+    assert int(slot.execute([row["prompt"]]).argmax(dim=-1)) == row["answer"]
