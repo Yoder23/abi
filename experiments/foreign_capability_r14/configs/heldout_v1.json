@@ -1,0 +1,88 @@
+{
+  "claim_ceiling": "NON_EXHAUSTIVE_CAPABILITY_RECOVERY_ONLY",
+  "codec_freeze": {
+    "receipt": "results/native_isa_r11/codec_freeze_v1/receipt.json",
+    "tensors": "results/native_isa_r11/codec_freeze_v1/host_codecs.safetensors"
+  },
+  "conditions": [
+    "BASE",
+    "AFTER",
+    "BEFORE",
+    "WRONG",
+    "ZERO",
+    "RANDOM",
+    "SHUFFLED",
+    "REMOVED",
+    "BACKEND_REMOVED",
+    "CODEC_REMOVED",
+    "RESTORED"
+  ],
+  "data": {
+    "before_rows_per_capability": 1024,
+    "counterfactual_depth": 14,
+    "counterfactual_pairs_per_capability": 500,
+    "counterfactual_seed": 14014016,
+    "evaluation_depths": [13, 14, 15, 16, 17, 18],
+    "evaluation_rows_per_capability": 10000,
+    "evaluation_seed": 14014015,
+    "extractor_queries_per_capability": 256,
+    "extractor_query_depths": [4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "heldout_capabilities": 3,
+    "query_seed": 14014014,
+    "recipient_rows_per_capability": 512,
+    "training_depths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "training_rows_per_capability": 20000,
+    "training_seed": 14014013
+  },
+  "format": "abi-r14-non-exhaustive-capability-preregistration/1",
+  "gates": {
+    "extractor_log_likelihood_margin_minimum": 0.0,
+    "negative_control_accuracy_maximum": 0.3,
+    "package_oracle_accuracy": 1.0,
+    "recipient_after_accuracy": 1.0,
+    "recipient_restored_accuracy": 1.0,
+    "source_chance_accuracy": 0.125
+  },
+  "heldout_seed_commitment": "3d8f30db90e2b385cca694d74a5f63708cecd17d1f7aa9e15d96b9e968d6578e",
+  "negative_conditions": ["BEFORE", "WRONG", "ZERO", "RANDOM", "SHUFFLED"],
+  "public_preflights": [
+    {
+      "evidence_sha256": "f7849004425a97369ae101a0cf789b7ba9a5b45fe3c03afc702c7f9cd4945b32",
+      "file": "results/foreign_capability_r14/public_preflight_v1.json",
+      "file_sha256": "1b59216f538970aa970e6689615a835200d34b877a4562c52a63644d43e96f88",
+      "verdict": "REJECTED_WEAK_SOURCE_GENERALIZATION"
+    },
+    {
+      "evidence_sha256": "6ffc8ba7b1fb51f59f81e4ede3d1c7fb7bbb94fb0192a6cb3dbd135670fb65be",
+      "file": "results/foreign_capability_r14/public_preflight_v2.json",
+      "file_sha256": "85d4e7cd2a1b3fe4102eeab2eb011762368709d7d54bc8939c5930188d562311",
+      "verdict": "SELECTED_FORMULATION"
+    }
+  ],
+  "r11_freeze": {
+    "binding_manifest": "experiments/native_isa_r11/configs/preregistered_transfer_v2.json",
+    "binding_manifest_sha256": "e28ea1eb9674b417ef17414e6c94f6a541daaa1f14dabe3ff2af41c22411609e",
+    "sealed_commit": "d89d8b607a705c47f7e2046b7dd4dbd40c396a5f",
+    "sealed_tag": "abi-r11-bounded-neural-construction-2026-08-31"
+  },
+  "recipient_hosts": ["pythia", "qwen2", "t5"],
+  "runtime": {
+    "batch_size": 64,
+    "device": "cuda",
+    "network_after_reveal": false
+  },
+  "source_acquisition": {
+    "batch_size": 24,
+    "checkpoint_interval": 500,
+    "device": "cuda",
+    "evaluation_batch_size": 64,
+    "learning_rate": 0.0002,
+    "lora_rank": 16,
+    "objective": "canonical_plus_native",
+    "optimizer": "AdamW",
+    "sampling_strategy": "depth_balanced",
+    "seed": 14014017,
+    "steps": 4000
+  },
+  "status": "PREREGISTERED_BEFORE_HELDOUT_REVEAL"
+}
