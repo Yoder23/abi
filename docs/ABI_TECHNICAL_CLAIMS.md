@@ -1,6 +1,6 @@
 # ABI technical claims
 
-Updated: 2026-08-31
+Updated: 2026-09-02
 
 ## Claims supported by R7
 
@@ -126,3 +126,19 @@ non-enumerable or pre-existing knowledge extraction, English/domain transfer,
 LayerCake acceptance, minimality, or LoRA/distillation superiority. Bulk replay
 assets remain unpublished, so this is a local result rather than a new public
 release.
+
+## Additive R14 non-exhaustive result
+
+R14 does not expand the certified claims. It prohibited atomic probes and gave
+the fixed frontend 256 answer-free mixed Qwen probability observations per
+capability. Evaluation used 10,000 unseen-depth cases and 1,000
+order-counterfactual cases per capability from a 4,642,668,576-case space.
+
+One of three fresh capabilities was recovered exactly. The other two selected
+latent programs were wrong and produced package accuracies of 0.2449/0.2520
+and 0.2657/0.2340 on unseen/order-counterfactual evaluation. Strict diagnosis
+recomputed seven gate failures; three fresh source replay files were byte-exact;
+and 7/7 hostile controls passed. R14 therefore demonstrates one bounded
+non-exhaustive recovery but fails the registered family-level claim. It does
+not support behavioral cloning, pre-existing knowledge extraction,
+English/domain transfer, LayerCake acceptance, or LoRA/distillation superiority.

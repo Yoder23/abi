@@ -93,6 +93,19 @@ were preserved. Native source/package agreement was only 372/2,048. Track A
 therefore remains open. Bulk assets remain unpublished and R7 remains the
 controlling public release.
 
+R14 status:
+`R14_NON_EXHAUSTIVE_CAPABILITY_RECOVERY_FAILED_1_OF_3_PASSED`
+
+R14 replaced complete atomic-table probing with 256 mixed, non-atomic source
+observations against 4,642,668,576 possible evaluation behaviors per
+capability. One of three fresh Qwen-derived latent programs was recovered
+exactly and scored 10,000/10,000 unseen plus 1,000/1,000 order-counterfactual
+rows. Two latent selections were wrong, so the preregistered all-capability
+gate failed and recipient execution did not run. Three fresh source replays
+were byte-exact and 7/7 hostile controls passed. This is a bounded partial
+result, not certification, pre-existing knowledge extraction, or behavioral
+transplantation. R7 remains controlling.
+
 ## What R7 proves
 
 R7 proves one bounded capability ABI result: four immutable packages execute
@@ -133,6 +146,7 @@ The blind reviewer returned `VERDICT: PASS` for this exact scope.
 | ABI-native neural copy/paste construction | BOUNDED PASS; R11 |
 | Conventional open-weight teacher to ABI package | BOUNDED PUBLIC FRONTEND PASS; exact/held-out gate failed in R12-A |
 | Held-out enumerable capability canonicalization | BOUNDED LOCAL PASS; R13-B, publication open |
+| Non-exhaustive synthetic capability recovery | FAILED; R14 recovered 1/3 fresh capabilities |
 | Exact foreign-teacher behavioral transplantation | OPEN; separate Track A |
 
 ## Current objective
@@ -173,6 +187,15 @@ source/package disagreements and do not treat the pass as resolution of the
 Track A exact-teacher gate. Publish the hash-addressed bulk evidence before a
 public-reproducibility claim. The next capability-extraction experiment must be
 non-exhaustive: its probe budget may not enumerate the complete capability.
+
+R14 executed that non-exhaustive test and failed the reliability gate. Preserve
+the one exact recovery and both wrong latent selections. Do not rerun nearby
+query-count, LoRA-rank, learning-rate, step-count, or affine-family variants.
+The measured bottleneck is the foreign source/frontend representation. A
+successor must materially change the available information by registering
+controlled foreign neural-state access (for example weights, activations,
+residual representations, or training deltas) while keeping the R11 backend
+fixed. Track A teacher-output equality remains separately open.
 
 ## Historical failures that remain authoritative
 

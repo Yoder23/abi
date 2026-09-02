@@ -91,6 +91,14 @@ canonicalization, not behavioral transplantation, pre-existing knowledge,
 English/domain extraction, or LayerCake acceptance. Bulk replay assets remain
 unpublished, so it is not a new public release.
 
+The additive R14 non-exhaustive campaign is a bounded negative and does not
+alter R7. It replaced complete atomic probing with 256 mixed, answer-free
+source observations per capability and evaluated 10,000 unseen-depth plus
+1,000 order-counterfactual cases from a 4,642,668,576-case space. One of three
+fresh capabilities was recovered exactly; two latent selections were wrong.
+Three fresh source replay files were byte-exact and 7/7 hostile controls passed.
+R14 therefore does not certify reliable non-exhaustive extraction.
+
 ## Exact proven scope
 
 The four published immutable capability packages execute through the canonical
@@ -191,6 +199,12 @@ arbitrary teacher.
    non-exhaustive capability where the probe budget cannot enumerate its full
    specification. Track A behavioral transplantation remains independently
    open.
+9. R14 executed the output-probability version of that test and failed 2/3
+   latent recoveries. Preserve it. Do not run nearby query-budget, LoRA,
+   schedule, or affine-family variants. A successor must materially change the
+   frontend through preregistered controlled access to foreign weights,
+   activations, residual representations, or training deltas while keeping R11
+   frozen. It must keep capability recovery separate from Track A equality.
 
 Do not claim the ABI moonshot until those acquisition and external-quality
 gates are supported by their own evidence.

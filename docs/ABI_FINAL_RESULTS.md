@@ -1,6 +1,6 @@
 # ABI R7 final technical results
 
-Updated: 2026-08-31
+Updated: 2026-09-02
 
 R7 passes the frozen, bounded capability-runtime and host-conformance protocol.
 It does not yet pass human quality, independent-hardware, teacher-extraction, or
@@ -144,3 +144,19 @@ interface, not exact teacher behavior copy. Public asset publication,
 pre-existing knowledge, English/domain extraction, and all broader claims
 remain open. See
 [R13_BOUNDED_CAPABILITY_EXTRACTION_RESULT.md](R13_BOUNDED_CAPABILITY_EXTRACTION_RESULT.md).
+
+## Additive R14 held-out result
+
+R14 is a preregistered negative result and does not replace R7. Its frontend
+received 256 mixed, non-atomic Qwen observations per capability rather than the
+complete R13 transition table. The evaluation space contained 4,642,668,576
+possible cases; 10,000 unseen-depth and 1,000 order-counterfactual rows were
+scored per capability.
+
+The frontend recovered one of three fresh capabilities exactly. The other two
+latent selections were wrong, yielding package unseen/order-counterfactual
+accuracies of 0.2449/0.2520 and 0.2657/0.2340. The all-capability gate failed,
+so recipient execution correctly did not run. All 36,840 source observations
+replayed byte-for-byte across three fresh processes, and 7/7 hostile controls
+passed. See
+[R14_NON_EXHAUSTIVE_CAPABILITY_RESULT.md](R14_NON_EXHAUSTIVE_CAPABILITY_RESULT.md).

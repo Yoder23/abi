@@ -96,6 +96,17 @@ canonicalization—not behavioral transplantation. Bulk replay assets remain
 unpublished. See
 [`docs/R13_BOUNDED_CAPABILITY_EXTRACTION_RESULT.md`](docs/R13_BOUNDED_CAPABILITY_EXTRACTION_RESULT.md).
 
+R14 then removed the exhaustive-table shortcut. Its fixed frontend received
+only 256 mixed, non-atomic Qwen probability observations per capability and was
+tested on 10,000 unseen-depth cases plus 1,000 order counterfactuals drawn from
+a 4.64-billion-case space. It recovered one of three fresh latent programs
+exactly; the other two packages reached only 0.2449/0.2520 and 0.2657/0.2340
+on unseen/order-counterfactual oracle evaluation. Three fresh source replays
+were byte-exact and 7/7 hostile controls passed. R14 is therefore a bounded
+partial result and failed certification—not a non-exhaustive extraction pass.
+See
+[`docs/R14_NON_EXHAUSTIVE_CAPABILITY_RESULT.md`](docs/R14_NON_EXHAUSTIVE_CAPABILITY_RESULT.md).
+
 ## R7 at a glance
 
 | Evidence | Result |
@@ -225,6 +236,10 @@ See `docs/ABI_TECHNICAL_CLAIMS.md`, `docs/ABI_FINAL_RESULTS.md`, and the
   replay, sealing, and hostile-verification code.
 - `results/foreign_capability_r13/` — local R13-B evidence and content-addressed
   artifact manifest; bulk replay assets are not yet public.
+- `experiments/foreign_capability_r14/` — non-exhaustive capability protocol,
+  source replay, diagnosis, and hostile-verification code.
+- `results/foreign_capability_r14/` — compact R14 negative certificate and
+  local artifact manifest; bulk adapters and raw replay rows are not public.
 - `external_reproduction/` — independent-operator workflow and environment
   lock.
 - `review_packet/` — ordered technical and external-review handoff.

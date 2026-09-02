@@ -1,0 +1,63 @@
+{
+  "config_sha256": "1fd3efb651083f79c137e4282021769e105732f73f97d1549d6f8c24961c257f",
+  "evidence_sha256": "03b9cd25eca04e41ff7b48c9e76eeae1f6b506bd7d063ca3cfd5a17f4b26fa75",
+  "format": "abi-r14-source-live-replay/1",
+  "original_source_observations_sha256": "14e8e91e926d8ea0daacabff3f3976ac44b663e8e6688a3c710b666c0389a9fd",
+  "reveal_sha256": "9268154eed18de1158688fd751c3a5a022dc63c8361b65c9d54f89984f650b80",
+  "workers": [
+    {
+      "adapter_sha256": "5fd19eab6f8bce86a80f6310c57bdbc8a4f2c1de3d7f31ea4764762fab0ec343",
+      "base_state_sha256": "4cbdc39b72efcc22dfc47710548ed6a50d6cb2233327951421361ccbfb11e6e1",
+      "byte_exact": true,
+      "capability_id": "r14-heldout-000-2bbf25e357e2f3c21997",
+      "config_sha256": "1fd3efb651083f79c137e4282021769e105732f73f97d1549d6f8c24961c257f",
+      "evidence_sha256": "fe14d11583054128927ee3bf7977ff4218bc38b286e6486efc95760460af98ae",
+      "format": "abi-r14-source-live-replay-worker/1",
+      "observations": {
+        "path": "observations.jsonl",
+        "rows": 12280,
+        "sha256": "d9267c863bb1982fe1477b9e47e326d747f17bfd5323ace4622286eee3c98a35"
+      },
+      "optimizer_steps": 0,
+      "original_subset_sha256": "d9267c863bb1982fe1477b9e47e326d747f17bfd5323ace4622286eee3c98a35",
+      "pid": 6796,
+      "reveal_sha256": "9268154eed18de1158688fd751c3a5a022dc63c8361b65c9d54f89984f650b80"
+    },
+    {
+      "adapter_sha256": "2f4c855e4e1b6920022af2aa95143875d287440cc2d3eae239fcd0412e06f8ac",
+      "base_state_sha256": "4cbdc39b72efcc22dfc47710548ed6a50d6cb2233327951421361ccbfb11e6e1",
+      "byte_exact": true,
+      "capability_id": "r14-heldout-001-ecb733710b44154969d6",
+      "config_sha256": "1fd3efb651083f79c137e4282021769e105732f73f97d1549d6f8c24961c257f",
+      "evidence_sha256": "92cc481f613b37f5e00ee507bb956c4320f3371288c50b851a3f81bcc0b8d5c7",
+      "format": "abi-r14-source-live-replay-worker/1",
+      "observations": {
+        "path": "observations.jsonl",
+        "rows": 12280,
+        "sha256": "9ab6e2351c287e9d970734cde426fde4b1509ccce12c4f5c96684faccf179eb2"
+      },
+      "optimizer_steps": 0,
+      "original_subset_sha256": "9ab6e2351c287e9d970734cde426fde4b1509ccce12c4f5c96684faccf179eb2",
+      "pid": 15004,
+      "reveal_sha256": "9268154eed18de1158688fd751c3a5a022dc63c8361b65c9d54f89984f650b80"
+    },
+    {
+      "adapter_sha256": "6187fd1484d1e815c0ae36b934c042132ffd2ad69b22bcd2911182d3d3a2b49a",
+      "base_state_sha256": "4cbdc39b72efcc22dfc47710548ed6a50d6cb2233327951421361ccbfb11e6e1",
+      "byte_exact": true,
+      "capability_id": "r14-heldout-002-84f5c2d2da8de40c09c3",
+      "config_sha256": "1fd3efb651083f79c137e4282021769e105732f73f97d1549d6f8c24961c257f",
+      "evidence_sha256": "475bc9f56ba4817a93cc87e3d51793921a0abbc88a19f19f220d68c5a0e0e5dd",
+      "format": "abi-r14-source-live-replay-worker/1",
+      "observations": {
+        "path": "observations.jsonl",
+        "rows": 12280,
+        "sha256": "fb541a4dcdf00fd0ad822ebfe7377d0278c369f29a2a78c6a656e9acea29faef"
+      },
+      "optimizer_steps": 0,
+      "original_subset_sha256": "fb541a4dcdf00fd0ad822ebfe7377d0278c369f29a2a78c6a656e9acea29faef",
+      "pid": 34484,
+      "reveal_sha256": "9268154eed18de1158688fd751c3a5a022dc63c8361b65c9d54f89984f650b80"
+    }
+  ]
+}

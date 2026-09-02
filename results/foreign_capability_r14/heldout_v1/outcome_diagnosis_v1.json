@@ -1,0 +1,123 @@
+{
+  "atomic_extractor_queries": 0,
+  "capabilities_passing": 1,
+  "capabilities_total": 3,
+  "claim": "NON_EXHAUSTIVE_FOREIGN_CAPABILITY_RECOVERY",
+  "claim_ceiling": "NOT_LOSSLESS_TEACHER_CLONING_NOT_PREEXISTING_KNOWLEDGE",
+  "evaluation_behavior_space_per_capability": 4642668576,
+  "evidence_sha256": "40bd07f35718f08cc9998d8c5195751428505c12703b376f19a53d0824cbb5b0",
+  "extractor_queries_per_capability": 256,
+  "failures": [
+    "r14-heldout-000-2bbf25e357e2f3c21997/SOURCE_EVALUATION_NOT_ABOVE_CHANCE",
+    "r14-heldout-000-2bbf25e357e2f3c21997/LATENT_PROGRAM_NOT_RECOVERED",
+    "r14-heldout-000-2bbf25e357e2f3c21997/UNSEEN_PACKAGE_NOT_EXACT",
+    "r14-heldout-000-2bbf25e357e2f3c21997/COUNTERFACTUAL_PACKAGE_NOT_EXACT",
+    "r14-heldout-002-84f5c2d2da8de40c09c3/LATENT_PROGRAM_NOT_RECOVERED",
+    "r14-heldout-002-84f5c2d2da8de40c09c3/UNSEEN_PACKAGE_NOT_EXACT",
+    "r14-heldout-002-84f5c2d2da8de40c09c3/COUNTERFACTUAL_PACKAGE_NOT_EXACT"
+  ],
+  "format": "abi-r14-outcome-diagnosis/1",
+  "per_capability": [
+    {
+      "capability_id": "r14-heldout-000-2bbf25e357e2f3c21997",
+      "failures": [
+        "SOURCE_EVALUATION_NOT_ABOVE_CHANCE",
+        "LATENT_PROGRAM_NOT_RECOVERED",
+        "UNSEEN_PACKAGE_NOT_EXACT",
+        "COUNTERFACTUAL_PACKAGE_NOT_EXACT"
+      ],
+      "package_counterfactual_oracle_accuracy": 0.252,
+      "package_unseen_oracle_accuracy": 0.2449,
+      "selected_program_correct": false,
+      "selection_log_likelihood_margin": 0.8125010030396425,
+      "source_counterfactual": {
+        "accuracy": 0.155,
+        "correct": 155,
+        "mean_canonical_nll": 3.094971454952963,
+        "rows": 1000,
+        "wilson_95_lower": 0.13389362461519208
+      },
+      "source_query": {
+        "accuracy": 0.24609375,
+        "correct": 63,
+        "mean_canonical_nll": 1.5285206012786463,
+        "rows": 256,
+        "wilson_95_lower": 0.19734067215723067
+      },
+      "source_unseen": {
+        "accuracy": 0.118,
+        "correct": 1180,
+        "mean_canonical_nll": 4.708191384733966,
+        "rows": 10000,
+        "wilson_95_lower": 0.11182319691636709
+      }
+    },
+    {
+      "capability_id": "r14-heldout-001-ecb733710b44154969d6",
+      "failures": [],
+      "package_counterfactual_oracle_accuracy": 1.0,
+      "package_unseen_oracle_accuracy": 1.0,
+      "selected_program_correct": true,
+      "selection_log_likelihood_margin": 57.14062535516092,
+      "source_counterfactual": {
+        "accuracy": 0.156,
+        "correct": 156,
+        "mean_canonical_nll": 1.9588602570970548,
+        "rows": 1000,
+        "wilson_95_lower": 0.13483131538945653
+      },
+      "source_query": {
+        "accuracy": 0.34765625,
+        "correct": 89,
+        "mean_canonical_nll": 1.3742685482564805,
+        "rows": 256,
+        "wilson_95_lower": 0.2919608831882855
+      },
+      "source_unseen": {
+        "accuracy": 0.1589,
+        "correct": 1589,
+        "mean_canonical_nll": 1.9393079809735496,
+        "rows": 10000,
+        "wilson_95_lower": 0.15186586901587565
+      }
+    },
+    {
+      "capability_id": "r14-heldout-002-84f5c2d2da8de40c09c3",
+      "failures": [
+        "LATENT_PROGRAM_NOT_RECOVERED",
+        "UNSEEN_PACKAGE_NOT_EXACT",
+        "COUNTERFACTUAL_PACKAGE_NOT_EXACT"
+      ],
+      "package_counterfactual_oracle_accuracy": 0.234,
+      "package_unseen_oracle_accuracy": 0.2657,
+      "selected_program_correct": false,
+      "selection_log_likelihood_margin": 1.7187494132309098,
+      "source_counterfactual": {
+        "accuracy": 0.184,
+        "correct": 184,
+        "mean_canonical_nll": 1.7736890213731809,
+        "rows": 1000,
+        "wilson_95_lower": 0.16120869057645776
+      },
+      "source_query": {
+        "accuracy": 0.2421875,
+        "correct": 62,
+        "mean_canonical_nll": 1.4840625229853062,
+        "rows": 256,
+        "wilson_95_lower": 0.19377015335079256
+      },
+      "source_unseen": {
+        "accuracy": 0.1703,
+        "correct": 1703,
+        "mean_canonical_nll": 1.846231316696409,
+        "rows": 10000,
+        "wilson_95_lower": 0.1630595019926267
+      }
+    }
+  ],
+  "r11_freeze_evidence_sha256": "5061230e7f5bc5bc5f8fa9686d54e0216b489735a30c6bda95360124aa2affb0",
+  "recipient_execution": "NOT_RUN_SOURCE_GATE_FAILED",
+  "run_evidence_sha256": "ddf72721c4402cb12fe2e8620ef7e900419f61a44aee64274f682cdef0de7852",
+  "stored_status_booleans_consumed": 0,
+  "verdict": "FAIL"
+}

@@ -57,12 +57,20 @@ For an enumerable family, the report must state whether probes exhaust the
 capability specification. Such a result is a bounded behavioral-compilation
 proof, not evidence of general English or domain extraction.
 
-Status: `BOUNDED ENUMERABLE HELD-OUT PASS IN R13-B; PUBLICATION OPEN`.
+Status: `BOUNDED ENUMERABLE HELD-OUT PASS IN R13-B; NON-EXHAUSTIVE R14 FAILED`.
 
 R13-B passed this track for four held-out finite transition tables. The result
 does not advance Track A: package/source agreement on long compositions was
 only 13.09% to 21.68%. It also does not advance the non-exhaustive synthetic,
 factual, linguistic, or cross-family stages below.
+
+R14 removed atomic probes and queried 256 mixed behaviors from a space with
+4,642,668,576 registered evaluation cases per capability. It recovered one of
+three fresh capabilities exactly on 10,000 unseen-depth and 1,000
+order-counterfactual cases; two latent selections were wrong. R14 therefore
+establishes a bounded one-capability partial success but does not pass stage 2.
+The next valid frontend must use materially different controlled foreign
+neural-state evidence rather than a nearby output-query or source-LoRA sweep.
 
 ## Progression beyond the finite-table control
 

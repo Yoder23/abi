@@ -1,5 +1,25 @@
 # Changelog
 
+## R14 non-exhaustive capability recovery - 2026-09-02
+
+- Replaced R13's complete 24-entry atomic interface with 256 mixed, non-atomic
+  source observations against 4,642,668,576 possible evaluation behaviors per
+  capability.
+- Preserved a weak public V1 and selected one materially different V2 source
+  objective before committing protocol, verifier, gates, and secret commitment
+  at `b10963a`.
+- Ran three fresh held-out Qwen capability acquisitions on GPU with no
+  held-out checkpoint selection and the R11 package/runtime boundary unchanged.
+- Recovered one capability exactly on 10,000 unseen-depth and 1,000
+  order-counterfactual rows; two latent selections failed at 0.2449/0.2520 and
+  0.2657/0.2340 package accuracy.
+- Stopped before recipients when the aggregate source/extraction gate failed.
+- Replayed 36,840 source observations byte-for-byte in three fresh processes
+  and passed 7/7 hostile controls, including a hash-consistent source-row forge.
+- Sealed `R14_NOT_CERTIFIED`; pre-existing knowledge, English/domain extraction,
+  teacher cloning, LayerCake acceptance, and LoRA/distillation superiority
+  remain open. R7 remains the controlling public release.
+
 ## R13-B bounded enumerable capability extraction - 2026-09-02
 
 - Split exact teacher-function transplantation from capability extraction and

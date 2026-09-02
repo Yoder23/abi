@@ -1,0 +1,45 @@
+{
+  "baseline_diagnosis_evidence_sha256": "40bd07f35718f08cc9998d8c5195751428505c12703b376f19a53d0824cbb5b0",
+  "baseline_live_evidence_sha256": "c047aaa46bb2bd4f3bde57705c971d14e66d9ca17329e2ab54e87718100abbb6",
+  "cases": [
+    {
+      "case": "missing_source_observations",
+      "error": "raw evidence unavailable: C:\\Users\\samyo\\AppData\\Local\\Temp\\abi-r14-hostile-4_ogxf7j\\run\\source_observations.jsonl",
+      "outcome": "REJECTED"
+    },
+    {
+      "case": "missing_source_adapter",
+      "error": "source adapter unavailable",
+      "outcome": "REJECTED"
+    },
+    {
+      "case": "corrupted_package",
+      "error": "package identity or ABI changed",
+      "outcome": "REJECTED"
+    },
+    {
+      "case": "wrong_heldout_reveal",
+      "error": "held-out reveal changed",
+      "outcome": "REJECTED"
+    },
+    {
+      "case": "missing_live_replay_rows",
+      "error": "source replay is not byte-exact",
+      "outcome": "REJECTED"
+    },
+    {
+      "case": "hash_consistent_forged_source_probability",
+      "error": "live replay custody changed",
+      "outcome": "REJECTED"
+    },
+    {
+      "case": "forged_stored_pass_boolean",
+      "outcome": "IGNORED_WITH_UNCHANGED_SCIENCE"
+    }
+  ],
+  "cases_passed": 7,
+  "cases_total": 7,
+  "evidence_sha256": "3bbdb3126a1f466f5c4b2784c0a9fcc44a8e8cb6d94f26505ebadb277603ca57",
+  "format": "abi-r14-hostile-audit/1",
+  "verdict": "PASS"
+}
