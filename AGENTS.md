@@ -78,6 +78,14 @@ revealed. Do not broaden this into exact teacher-relative transfer,
 pre-existing knowledge extraction, English/domain, LayerCake, or
 LoRA/distillation claims.
 
+R13-B is preregistered, not yet a result. It separates capability
+canonicalization from behavioral transplantation and binds four unrevealed
+finite capabilities at commitment
+`10c8f6f10aa32963547df71754d9690c848acbbebbdbe925060882030f735f64`.
+Its 24 probes exhaust the registered `3 x 8` transition table, so even a pass
+can establish only bounded enumerable capability extraction. It cannot certify
+lossless teacher-function copying, pre-existing knowledge, English, or domains.
+
 ## Exact proven scope
 
 The four published immutable capability packages execute through the canonical
@@ -170,6 +178,10 @@ arbitrary teacher.
    unchanged R11 package/host boundary and held-out teacher-relative behavior.
    Capability-specific recipient optimization and answer-table substitutes do
    not qualify.
+7. Execute R13-B exactly once against its committed held-out secret. Keep its
+   capability-extraction verdict separate from Track A teacher-output equality,
+   report every source/package disagreement, and require live replay before a
+   final seal.
 
 Do not claim the ABI moonshot until those acquisition and external-quality
 gates are supported by their own evidence.

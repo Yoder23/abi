@@ -1,0 +1,68 @@
+{
+  "claim_ceiling": "BOUNDED_ENUMERABLE_CAPABILITY_EXTRACTION_ONLY",
+  "codec_freeze": {
+    "receipt": "results/native_isa_r11/codec_freeze_v1/receipt.json",
+    "tensors": "results/native_isa_r11/codec_freeze_v1/host_codecs.safetensors"
+  },
+  "conditions": [
+    "BASE",
+    "AFTER",
+    "BEFORE",
+    "WRONG",
+    "ZERO",
+    "RANDOM",
+    "SHUFFLED",
+    "REMOVED",
+    "BACKEND_REMOVED",
+    "CODEC_REMOVED",
+    "RESTORED"
+  ],
+  "data": {
+    "atomic_rows_per_capability": 24,
+    "evaluation_depths": [6, 7],
+    "evaluation_rows_per_capability": 512,
+    "evaluation_seed": 13013003,
+    "heldout_capabilities": 4,
+    "training_depths": [1, 2, 3, 4, 5],
+    "training_rows_per_capability": 2904,
+    "training_seed": 13013002
+  },
+  "format": "abi-r13-bounded-capability-extraction-preregistration/1",
+  "gates": {
+    "negative_control_accuracy_maximum": 0.3,
+    "package_oracle_accuracy": 1.0,
+    "recipient_after_accuracy": 1.0,
+    "recipient_restored_accuracy": 1.0,
+    "source_after_atomic_accuracy": 1.0,
+    "source_atomic_gain_minimum": 0.7,
+    "source_before_atomic_maximum": 0.25
+  },
+  "heldout_seed_commitment": "10c8f6f10aa32963547df71754d9690c848acbbebbdbe925060882030f735f64",
+  "negative_conditions": ["BEFORE", "WRONG", "ZERO", "RANDOM", "SHUFFLED"],
+  "r11_freeze": {
+    "binding_manifest": "experiments/native_isa_r11/configs/preregistered_transfer_v2.json",
+    "binding_manifest_sha256": "e28ea1eb9674b417ef17414e6c94f6a541daaa1f14dabe3ff2af41c22411609e",
+    "sealed_commit": "d89d8b607a705c47f7e2046b7dd4dbd40c396a5f",
+    "sealed_tag": "abi-r11-bounded-neural-construction-2026-08-31"
+  },
+  "recipient_hosts": ["pythia", "qwen2", "t5"],
+  "runtime": {
+    "batch_size": 64,
+    "device": "cuda",
+    "network_after_reveal": false
+  },
+  "source_acquisition": {
+    "batch_size": 10,
+    "device": "cuda",
+    "evaluation_batch_size": 64,
+    "evaluation_interval": 100,
+    "learning_rate": 0.0002,
+    "lora_rank": 16,
+    "maximum_steps": 1500,
+    "optimizer": "AdamW",
+    "sampling_strategy": "depth_balanced",
+    "seed": 13013004,
+    "stable_atomic_evaluations": 3
+  },
+  "status": "PREREGISTERED_BEFORE_HELDOUT_REVEAL"
+}

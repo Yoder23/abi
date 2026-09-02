@@ -80,6 +80,16 @@ revealed. This proves a bounded public frontend construction, not exact
 teacher-relative transfer, pre-existing knowledge extraction, English/domain
 transfer, or LayerCake product certification. R7 remains controlling.
 
+R13-B status:
+`R13B_PREREGISTERED_HELDOUT_UNREVEALED`
+
+R13-B separates capability canonicalization from exact teacher-function
+transplantation. Four finite held-out capabilities are bound by SHA-256
+commitment before execution. The fixed extractor's 24 probes exhaust each
+capability's complete transition table. A pass can therefore prove only
+bounded enumerable capability extraction through the frozen R11 execution
+boundary. Track A behavioral transplantation remains open independently.
+
 ## What R7 proves
 
 R7 proves one bounded capability ABI result: four immutable packages execute
@@ -119,6 +129,8 @@ The blind reviewer returned `VERDICT: PASS` for this exact scope.
 | Globally minimal English substrate | RESEARCH |
 | ABI-native neural copy/paste construction | BOUNDED PASS; R11 |
 | Conventional open-weight teacher to ABI package | BOUNDED PUBLIC FRONTEND PASS; exact/held-out gate failed in R12-A |
+| Held-out enumerable capability canonicalization | PREREGISTERED; R13-B unrevealed |
+| Exact foreign-teacher behavioral transplantation | OPEN; separate Track A |
 
 ## Current objective
 
@@ -152,6 +164,10 @@ same package bytes. Another nearby learning-rate, step-count, data-size, or
 LoRA sweep is not evidence-supported. Memorized answer tables,
 capability-specific recipient training, and package-owned executable solvers
 do not qualify.
+
+R13-B is the separately preregistered Track B experiment. Execute it exactly
+once, preserve all source/package disagreements, and do not treat a pass as
+resolution of the Track A exact-teacher gate.
 
 ## Historical failures that remain authoritative
 

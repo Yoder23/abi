@@ -19,6 +19,12 @@ The strict promotion gate nevertheless failed. The best observed native Qwen
 checkpoint answered 510/512 public compositions exactly; the registered gate
 was 512/512. No held-out secret was created or revealed.
 
+Those 24 probes exhaust the complete `3 operators × 8 states` transition
+table. The result is therefore an exact compiler for an enumerable finite
+specification, not sparse recovery of a non-enumerable capability. See the
+[extractor access audit](R12_EXTRACTOR_ACCESS_AUDIT.md) and the separate
+[behavioral-transplant and capability-extraction tracks](ABI_TRANSFER_TRACKS.md).
+
 ## Public progression
 
 | Revision | Native Qwen final | Native Qwen best | Atomic probes | ABI package executor |
