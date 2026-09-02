@@ -127,3 +127,20 @@ compiled them into a 2,053-byte R11 package, and that package executed all
 bounded public frontend construction result plus an explicit strict
 teacher-gate failure. No held-out secret was created or revealed. See
 [R12_FOREIGN_FRONTEND_PUBLIC_RESULT.md](R12_FOREIGN_FRONTEND_PUBLIC_RESULT.md).
+
+## Additive R13-B held-out result
+
+R13-B passes its preregistered local claim of bounded enumerable capability
+extraction. Four hidden finite capabilities produced 96/96 source atomic
+answers, four exact 2,053-byte packages, 2,048/2,048 package/oracle rows, and
+6,144/6,144 AFTER plus 6,144/6,144 RESTORED recipient rows across Pythia,
+Qwen2, and T5. Seven fresh-process replay files were byte-exact. The repaired
+hostile verifier passed 9/9 controls after two failed audit revisions were
+preserved and repaired.
+
+Native Qwen matched only 372/2,048 long-composition oracle answers. This is
+therefore capability canonicalization from an exhaustively enumerable atomic
+interface, not exact teacher behavior copy. Public asset publication,
+pre-existing knowledge, English/domain extraction, and all broader claims
+remain open. See
+[R13_BOUNDED_CAPABILITY_EXTRACTION_RESULT.md](R13_BOUNDED_CAPABILITY_EXTRACTION_RESULT.md).

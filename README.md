@@ -85,6 +85,17 @@ the teacher at execution time. This is a bounded public frontend construction
 pass and a strict teacher-gate failure, not held-out R12 certification. See
 [`docs/R12_FOREIGN_FRONTEND_PUBLIC_RESULT.md`](docs/R12_FOREIGN_FRONTEND_PUBLIC_RESULT.md).
 
+R13-B now passes a separately preregistered held-out Track B control. Four
+conventionally LoRA-trained Qwen sources each exposed 24/24 atomic transitions;
+the fixed zero-parameter compiler emitted four 2,053-byte packages that scored
+2,048/2,048 against the hidden capability oracle and 6,144/6,144 across frozen
+Pythia, Qwen2, and T5 recipients. Seven fresh-process replays were byte-exact,
+and the repaired verifier passed 9/9 hostile controls. Native Qwen matched only
+372/2,048 long compositions, so this proves bounded enumerable capability
+canonicalization—not behavioral transplantation. Bulk replay assets remain
+unpublished. See
+[`docs/R13_BOUNDED_CAPABILITY_EXTRACTION_RESULT.md`](docs/R13_BOUNDED_CAPABILITY_EXTRACTION_RESULT.md).
+
 ## R7 at a glance
 
 | Evidence | Result |
@@ -210,6 +221,10 @@ See `docs/ABI_TECHNICAL_CLAIMS.md`, `docs/ABI_FINAL_RESULTS.md`, and the
   and fail-closed public verifier.
 - `results/foreign_teacher_r12/` — additive R12-A receipts and exact packages;
   large source adapters remain excluded.
+- `experiments/foreign_capability_r13/` — separated Track B held-out protocol,
+  replay, sealing, and hostile-verification code.
+- `results/foreign_capability_r13/` — local R13-B evidence and content-addressed
+  artifact manifest; bulk replay assets are not yet public.
 - `external_reproduction/` — independent-operator workflow and environment
   lock.
 - `review_packet/` — ordered technical and external-review handoff.

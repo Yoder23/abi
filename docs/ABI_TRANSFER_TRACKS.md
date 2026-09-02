@@ -57,7 +57,12 @@ For an enumerable family, the report must state whether probes exhaust the
 capability specification. Such a result is a bounded behavioral-compilation
 proof, not evidence of general English or domain extraction.
 
-Status: `PUBLIC PREREQUISITE OBSERVED IN R12-A; HELD-OUT OPEN`.
+Status: `BOUNDED ENUMERABLE HELD-OUT PASS IN R13-B; PUBLICATION OPEN`.
+
+R13-B passed this track for four held-out finite transition tables. The result
+does not advance Track A: package/source agreement on long compositions was
+only 13.09% to 21.68%. It also does not advance the non-exhaustive synthetic,
+factual, linguistic, or cross-family stages below.
 
 ## Progression beyond the finite-table control
 

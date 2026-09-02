@@ -78,13 +78,18 @@ revealed. Do not broaden this into exact teacher-relative transfer,
 pre-existing knowledge extraction, English/domain, LayerCake, or
 LoRA/distillation claims.
 
-R13-B is preregistered, not yet a result. It separates capability
-canonicalization from behavioral transplantation and binds four unrevealed
-finite capabilities at commitment
-`10c8f6f10aa32963547df71754d9690c848acbbebbdbe925060882030f735f64`.
-Its 24 probes exhaust the registered `3 x 8` transition table, so even a pass
-can establish only bounded enumerable capability extraction. It cannot certify
-lossless teacher-function copying, pre-existing knowledge, English, or domains.
+The additive R13-B held-out campaign passes bounded enumerable capability
+extraction locally and does not alter R7. Four committed finite capabilities
+reached 96/96 exact Qwen atomic probes; four 2,053-byte packages scored
+2,048/2,048 against the oracle and 6,144/6,144 AFTER plus 6,144/6,144 RESTORED
+across frozen Pythia, Qwen2, and T5 recipients. Seven fresh-process replay
+files were byte-exact. A first hostile audit exposed a verifier defect and a
+second exposed an audit-harness defect; both are preserved, and the repaired
+audit passed 9/9 controls before the final seal. Native source/package
+agreement was only 372/2,048. R13-B therefore proves finite capability
+canonicalization, not behavioral transplantation, pre-existing knowledge,
+English/domain extraction, or LayerCake acceptance. Bulk replay assets remain
+unpublished, so it is not a new public release.
 
 ## Exact proven scope
 
@@ -178,10 +183,14 @@ arbitrary teacher.
    unchanged R11 package/host boundary and held-out teacher-relative behavior.
    Capability-specific recipient optimization and answer-table substitutes do
    not qualify.
-7. Execute R13-B exactly once against its committed held-out secret. Keep its
-   capability-extraction verdict separate from Track A teacher-output equality,
-   report every source/package disagreement, and require live replay before a
-   final seal.
+7. Preserve R13-B as the passed local finite-table control. Publish its
+   hash-addressed bulk replay assets before claiming public reproducibility.
+   Keep its capability-extraction verdict separate from Track A teacher-output
+   equality and do not rerun nearby enumerable-table variants.
+8. Advance capability extraction only through a separately registered
+   non-exhaustive capability where the probe budget cannot enumerate its full
+   specification. Track A behavioral transplantation remains independently
+   open.
 
 Do not claim the ABI moonshot until those acquisition and external-quality
 gates are supported by their own evidence.

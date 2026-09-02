@@ -81,14 +81,17 @@ teacher-relative transfer, pre-existing knowledge extraction, English/domain
 transfer, or LayerCake product certification. R7 remains controlling.
 
 R13-B status:
-`R13B_PREREGISTERED_HELDOUT_UNREVEALED`
+`R13B_BOUNDED_ENUMERABLE_CAPABILITY_EXTRACTION_PASSED_LOCAL_PUBLICATION_OPEN`
 
-R13-B separates capability canonicalization from exact teacher-function
-transplantation. Four finite held-out capabilities are bound by SHA-256
-commitment before execution. The fixed extractor's 24 probes exhaust each
-capability's complete transition table. A pass can therefore prove only
-bounded enumerable capability extraction through the frozen R11 execution
-boundary. Track A behavioral transplantation remains open independently.
+R13-B separately certifies capability canonicalization, not exact
+teacher-function transplantation. Four committed finite capabilities produced
+96/96 exact Qwen atomic answers, four exact 2,053-byte R11 packages,
+2,048/2,048 package/oracle rows, and 6,144/6,144 AFTER plus 6,144/6,144
+RESTORED recipient rows. Seven fresh-process replay files were byte-exact, and
+the repaired hostile audit passed 9/9 controls after two failed audit revisions
+were preserved. Native source/package agreement was only 372/2,048. Track A
+therefore remains open. Bulk assets remain unpublished and R7 remains the
+controlling public release.
 
 ## What R7 proves
 
@@ -129,7 +132,7 @@ The blind reviewer returned `VERDICT: PASS` for this exact scope.
 | Globally minimal English substrate | RESEARCH |
 | ABI-native neural copy/paste construction | BOUNDED PASS; R11 |
 | Conventional open-weight teacher to ABI package | BOUNDED PUBLIC FRONTEND PASS; exact/held-out gate failed in R12-A |
-| Held-out enumerable capability canonicalization | PREREGISTERED; R13-B unrevealed |
+| Held-out enumerable capability canonicalization | BOUNDED LOCAL PASS; R13-B, publication open |
 | Exact foreign-teacher behavioral transplantation | OPEN; separate Track A |
 
 ## Current objective
@@ -165,9 +168,11 @@ LoRA sweep is not evidence-supported. Memorized answer tables,
 capability-specific recipient training, and package-owned executable solvers
 do not qualify.
 
-R13-B is the separately preregistered Track B experiment. Execute it exactly
-once, preserve all source/package disagreements, and do not treat a pass as
-resolution of the Track A exact-teacher gate.
+R13-B is the passed local Track B finite-table control. Preserve all 1,676
+source/package disagreements and do not treat the pass as resolution of the
+Track A exact-teacher gate. Publish the hash-addressed bulk evidence before a
+public-reproducibility claim. The next capability-extraction experiment must be
+non-exhaustive: its probe budget may not enumerate the complete capability.
 
 ## Historical failures that remain authoritative
 

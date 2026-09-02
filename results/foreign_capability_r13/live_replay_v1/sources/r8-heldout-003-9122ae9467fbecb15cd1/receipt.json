@@ -1,0 +1,48 @@
+{
+  "adapter_sha256": "f305e570a83a7bf1c8831adf82f8ffffc332e7a5e96576b39fecc0c4a47c86c0",
+  "base_state_sha256": "4cbdc39b72efcc22dfc47710548ed6a50d6cb2233327951421361ccbfb11e6e1",
+  "capability_id": "r8-heldout-003-9122ae9467fbecb15cd1",
+  "evidence_sha256": "0d9439f4252daba8f326ca4563598bedaddfa68fb310f9e7891068aa6028e4bf",
+  "format": "abi-r13-source-live-replay/1",
+  "metrics": {
+    "AFTER_ATOMIC": {
+      "accuracy": 1.0,
+      "canonical_accuracy": 1.0,
+      "canonical_correct": 24,
+      "correct": 24,
+      "prediction_ids_sha256": "e069c46a21efb3a1461c721685d61a1b3bce08ae5f60b170ccfcaa544cdc64f6",
+      "rows": 24
+    },
+    "AFTER_EVALUATION": {
+      "accuracy": 0.130859375,
+      "canonical_accuracy": 0.130859375,
+      "canonical_correct": 67,
+      "correct": 67,
+      "prediction_ids_sha256": "f58c784c4c06c59920776f0bd0fdef25bc951df6f62a3514ee76534a3fb67f0c",
+      "rows": 512
+    },
+    "BEFORE_ATOMIC": {
+      "accuracy": 0.0,
+      "canonical_accuracy": 0.08333333333333333,
+      "canonical_correct": 2,
+      "correct": 0,
+      "prediction_ids_sha256": "de6bc0b13d582f6a15397b128ea8042be944ca3e895cf4f3437ed4ce596d1205",
+      "rows": 24
+    },
+    "BEFORE_EVALUATION": {
+      "accuracy": 0.0,
+      "canonical_accuracy": 0.12109375,
+      "canonical_correct": 62,
+      "correct": 0,
+      "prediction_ids_sha256": "7290c9e422eadbd697fe550c90abb059ce267bfd33add4e7fdf4e7f6927c6c86",
+      "rows": 512
+    }
+  },
+  "observations": {
+    "path": "observations.jsonl",
+    "rows": 1072,
+    "sha256": "55b590653df535e1c45f472a817d98782f965488a2272044b1667b5da65a14cb"
+  },
+  "pid": 37104,
+  "source_optimizer_steps": 0
+}

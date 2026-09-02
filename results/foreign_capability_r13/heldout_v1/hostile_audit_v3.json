@@ -1,0 +1,65 @@
+{
+  "baseline_final_evidence_sha256": "58aea2720ba1468379b2b8cfcd1eba63aab3825de50a69b6e0be645b62002fa0",
+  "baseline_static_evidence_sha256": "7832ad8b9229407480cc9355a249673b0c3c63d9832eea8c78c497f18815aff6",
+  "cases": [
+    {
+      "actual": "REJECT",
+      "case": "missing_run_receipt",
+      "error": "required JSON unavailable: C:\\Users\\samyo\\AppData\\Local\\Temp\\abi-r13-hostile-mrdh3sk3\\run\\receipt.json",
+      "expected": "REJECT"
+    },
+    {
+      "actual": "REJECT",
+      "case": "missing_source_adapter",
+      "error": "source adapter unavailable",
+      "expected": "REJECT"
+    },
+    {
+      "actual": "REJECT",
+      "case": "corrupted_package",
+      "error": "package identity changed",
+      "expected": "REJECT"
+    },
+    {
+      "actual": "REJECT",
+      "case": "hash_consistent_forged_source_row",
+      "error": "source canonical prediction does not match probability argmax",
+      "expected": "REJECT"
+    },
+    {
+      "actual": "REJECT",
+      "case": "missing_recipient_rows",
+      "error": "raw evidence unavailable: C:\\Users\\samyo\\AppData\\Local\\Temp\\abi-r13-hostile-mrdh3sk3\\run\\recipients\\pythia\\observations.jsonl",
+      "expected": "REJECT"
+    },
+    {
+      "actual": "UNCHANGED_PASS",
+      "case": "forged_scientific_boolean_ignored",
+      "expected": "UNCHANGED_PASS"
+    },
+    {
+      "actual": "REJECT",
+      "case": "wrong_heldout_reveal",
+      "error": "held-out reveal changed",
+      "expected": "REJECT"
+    },
+    {
+      "actual": "REJECT",
+      "case": "hash_consistent_forged_live_replay",
+      "error": "source live replay evidence changed",
+      "expected": "REJECT"
+    },
+    {
+      "actual": "REJECT",
+      "case": "missing_live_recipient_rows",
+      "error": "recipient live replay evidence changed",
+      "expected": "REJECT"
+    }
+  ],
+  "evidence_sha256": "dba430055ac0c6198b2017a4b205f5f5cffda2ccd58dbeb9ca0a703a76346bd5",
+  "expected_outcomes": 9,
+  "format": "abi-r13-hostile-audit/1",
+  "matched_outcomes": 9,
+  "original_evidence_modified": false,
+  "verdict": "PASS"
+}

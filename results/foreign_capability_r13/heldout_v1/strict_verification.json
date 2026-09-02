@@ -1,0 +1,23 @@
+{
+  "capabilities": 4,
+  "claim": "BOUNDED_ENUMERABLE_CAPABILITY_EXTRACTION",
+  "evidence_sha256": "7832ad8b9229407480cc9355a249673b0c3c63d9832eea8c78c497f18815aff6",
+  "format": "abi-r13-strict-verification/1",
+  "live_replay_required_for_final_seal": true,
+  "package_oracle_accuracy": {
+    "r8-heldout-000-612ee1da553470a826ee": 1.0,
+    "r8-heldout-001-b1711023cd84206dcccb": 1.0,
+    "r8-heldout-002-d179aaee814f2b406d63": 1.0,
+    "r8-heldout-003-9122ae9467fbecb15cd1": 1.0
+  },
+  "r11_freeze_evidence_sha256": "5061230e7f5bc5bc5f8fa9686d54e0216b489735a30c6bda95360124aa2affb0",
+  "run_evidence_sha256": "1b4af58a938b02ffa59ae785a4a89fcfbdc827aadf3d55bc597e56cd8212c922",
+  "source_package_agreement": {
+    "r8-heldout-000-612ee1da553470a826ee": 0.203125,
+    "r8-heldout-001-b1711023cd84206dcccb": 0.17578125,
+    "r8-heldout-002-d179aaee814f2b406d63": 0.216796875,
+    "r8-heldout-003-9122ae9467fbecb15cd1": 0.130859375
+  },
+  "stored_status_booleans_consumed": 0,
+  "verdict": "PASS"
+}

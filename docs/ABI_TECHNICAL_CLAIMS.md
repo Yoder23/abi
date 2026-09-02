@@ -108,3 +108,21 @@ frontend construction, not exact teacher-relative transfer, discovery of
 pre-existing knowledge, English/domain extraction, LayerCake acceptance, or
 superiority over LoRA/distillation. See
 [R12_FOREIGN_FRONTEND_PUBLIC_RESULT.md](R12_FOREIGN_FRONTEND_PUBLIC_RESULT.md).
+
+## Additive R13-B held-out capability-extraction result
+
+R13-B expands the bounded claim to held-out enumerable capability extraction
+from a conventionally trained Qwen source. Four committed capabilities reached
+96/96 exact atomic source probes. The unchanged zero-parameter compiler emitted
+four 2,053-byte packages that scored 2,048/2,048 against the capability oracle
+and 6,144/6,144 AFTER plus 6,144/6,144 RESTORED across frozen Pythia, Qwen2,
+and T5 recipients. Seven fresh-process observation files replayed byte-for-byte
+and 9/9 repaired hostile controls produced their expected outcomes.
+
+Native source/package agreement was only 372/2,048. R13-B therefore supports
+finite capability canonicalization, not behavioral transplantation. Because
+the 24 probes exhaust the complete transition table, it does not support
+non-enumerable or pre-existing knowledge extraction, English/domain transfer,
+LayerCake acceptance, minimality, or LoRA/distillation superiority. Bulk replay
+assets remain unpublished, so this is a local result rather than a new public
+release.

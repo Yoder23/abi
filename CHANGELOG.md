@@ -1,5 +1,26 @@
 # Changelog
 
+## R13-B bounded enumerable capability extraction - 2026-09-02
+
+- Split exact teacher-function transplantation from capability extraction and
+  documented that R12's 24 probes exhaust its complete finite transition table.
+- Committed the R13-B protocol, implementation, and four-capability secret
+  commitment before reveal.
+- Trained four conventional Qwen sources without using held-out depth-6/7 rows
+  for checkpoint selection; all reached three consecutive 24/24 atomic passes.
+- Emitted four 2,053-byte R11 packages with 2,048/2,048 oracle accuracy and
+  executed 6,144/6,144 AFTER plus 6,144/6,144 RESTORED rows through frozen
+  Pythia, Qwen2, and T5 recipients with zero recipient optimization.
+- Replayed four source and three recipient observation files byte-for-byte in
+  seven fresh processes.
+- Preserved two failed hostile-audit revisions, repaired one real verifier hole
+  and one audit-harness error, then passed 9/9 hostile controls.
+- Sealed only `BOUNDED_ENUMERABLE_CAPABILITY_EXTRACTION`. Native source/package
+  agreement was 372/2,048, so behavioral transplantation remains open.
+  Pre-existing knowledge, English/domain extraction, LayerCake acceptance,
+  LoRA/distillation superiority, and public reproduction remain open. R7
+  remains the controlling public release.
+
 ## R12-A conventional-teacher public frontend - 2026-08-31
 
 - Bound the campaign to the sealed R11 code, package schema, interpreter, host
