@@ -153,6 +153,16 @@ def verify(config_path: Path, reveal_path: Path, run_dir: Path) -> dict[str, Any
     actual_package_files = {path.name for path in (run_dir / "packages").glob("*.abipkg")}
     if actual_package_files != {str(item["path"]) for item in package_items}:
         raise R13Error("undeclared or missing package")
+    before_path = run_dir / "packages" / str(manifest["before"]["path"])
+    if (
+        not before_path.is_file()
+        or before_path.stat().st_size != manifest["before"]["bytes"]
+        or sha256_file(before_path) != manifest["before"]["sha256"]
+    ):
+        raise R13Error("before package identity changed")
+    before_package, _before_transition = load_package(before_path)
+    if before_package["transition_sha256"] != manifest["before"]["transition_sha256"]:
+        raise R13Error("before package transition changed")
     package_accuracy: dict[str, float] = {}
     for index, item in enumerate(manifest["after"]):
         path = run_dir / "packages" / str(item["path"])
@@ -168,6 +178,14 @@ def verify(config_path: Path, reveal_path: Path, run_dir: Path) -> dict[str, Any
         capability_id = capability_ids[index]
         if item["capability_id"] != capability_id:
             raise R13Error("package capability order changed")
+        source = receipt["source_acquisitions"][index]
+        if (
+            package["provenance"]["teacher_before_sha256"]
+            != source["base_state_sha256_before"]
+            or package["provenance"]["teacher_after_sha256"]
+            != source["adapter_state_sha256"]
+        ):
+            raise R13Error("package provenance changed")
         package_accuracy[capability_id] = transition_accuracy(transition, evaluation[index])
     source_reference = receipt["source_observations"]
     source_rows = _jsonl(
@@ -200,6 +218,15 @@ def verify(config_path: Path, reveal_path: Path, run_dir: Path) -> dict[str, Any
         seen.add(key)
         _probabilities(row["canonical_probabilities"])
         grouped[(key[0], key[1])].append(row)
+    for capability_id in capability_ids:
+        for condition, expected_count in (
+            ("BEFORE_EVALUATION", len(evaluation[0])),
+            ("AFTER_EVALUATION", len(evaluation[0])),
+            ("BEFORE_ATOMIC", len(atomic[0])),
+            ("AFTER_ATOMIC", len(atomic[0])),
+        ):
+            if len(grouped[(capability_id, condition)]) != expected_count:
+                raise R13Error("source observation coverage changed")
     gates = config["gates"]
     for index, source in enumerate(receipt["source_acquisitions"]):
         capability_id = capability_ids[index]
@@ -225,6 +252,7 @@ def verify(config_path: Path, reveal_path: Path, run_dir: Path) -> dict[str, Any
         ):
             raise R13Error("source adapter unavailable")
         extraction = source["extraction"]["extractor"]
+        _evidence(source["extraction"], f"source extraction {capability_id}")
         if extraction != extractor_spec():
             raise R13Error("extractor access specification changed")
         training_receipt = source["training"]
@@ -249,8 +277,18 @@ def verify(config_path: Path, reveal_path: Path, run_dir: Path) -> dict[str, Any
     recipient_receipts = receipt["recipient_workers"]
     if [item["host"] for item in recipient_receipts] != list(config["recipient_hosts"]):
         raise R13Error("recipient inventory changed")
+    if len({int(item["pid"]) for item in recipient_receipts}) != len(recipient_receipts):
+        raise R13Error("recipient workers did not use distinct processes")
     for worker in recipient_receipts:
         _evidence(worker, f"recipient {worker.get('host')}")
+        if (
+            worker.get("config_sha256") != sha256_file(config_path)
+            or worker.get("reveal_sha256") != sha256_file(reveal_path)
+            or worker.get("manifest_sha256") != sha256_file(manifest_path)
+            or worker.get("source_adapter_argument_present") is not False
+            or worker.get("source_adapter_loaded") is not False
+        ):
+            raise R13Error("recipient worker custody changed")
         host_dir = run_dir / "recipients" / str(worker["host"])
         rows = _jsonl(
             host_dir / worker["observations"]["path"],
@@ -261,6 +299,9 @@ def verify(config_path: Path, reveal_path: Path, run_dir: Path) -> dict[str, Any
         token_ids = [int(value) for value in host_receipt["target_token_ids"]]
         expected = {str(row["row_id"]): row for values in evaluation for row in values}
         keys = set()
+        expected_row_count = len(expected) * len(config["conditions"])
+        if len(rows) != expected_row_count:
+            raise R13Error("recipient observation coverage changed")
         for row in rows:
             key = (
                 str(row["capability_id"]),
@@ -268,17 +309,55 @@ def verify(config_path: Path, reveal_path: Path, run_dir: Path) -> dict[str, Any
                 str(row["row_id"]),
             )
             reference = expected.get(key[2])
+            capability_index = capability_ids.index(key[0]) if key[0] in capability_ids else -1
+            wrong_index = (capability_index + 1) % len(capability_ids)
+            expected_package = {
+                "BASE": None,
+                "AFTER": manifest["after"][capability_index]["sha256"],
+                "BEFORE": manifest["before"]["sha256"],
+                "WRONG": manifest["after"][wrong_index]["sha256"],
+                "ZERO": "CONTROL_ZERO",
+                "RANDOM": "CONTROL_RANDOM",
+                "SHUFFLED": "CONTROL_SHUFFLED",
+                "REMOVED": None,
+                "BACKEND_REMOVED": manifest["after"][capability_index]["sha256"],
+                "CODEC_REMOVED": manifest["after"][capability_index]["sha256"],
+                "RESTORED": manifest["after"][capability_index]["sha256"],
+            }.get(key[1])
+            active = key[1] not in {
+                "BASE",
+                "REMOVED",
+                "BACKEND_REMOVED",
+                "CODEC_REMOVED",
+            }
             if (
                 key in keys
                 or key[0] not in capability_ids
                 or key[1] not in config["conditions"]
                 or reference is None
                 or row["prompt_sha256"] != reference["prompt_sha256"]
+                or row["package_sha256"] != expected_package
+                or row["backend_active"] is not active
+                or row["codec_active"] is not active
                 or canonical_prediction(int(row["prediction_token_id"]), token_ids)
                 != row["canonical_prediction"]
             ):
                 raise R13Error("recipient row identity changed")
             keys.add(key)
+            _probabilities(row["canonical_probabilities"])
+            if not isinstance(row["neural_state"], list) or len(row["neural_state"]) != 8:
+                raise R13Error("recipient neural state changed")
+            if any(not math.isfinite(float(value)) for value in row["neural_state"]):
+                raise R13Error("recipient neural state is non-finite")
+        expected_keys = {
+            (capability_id, str(condition), row_id)
+            for capability_id in capability_ids
+            for condition in config["conditions"]
+            for row_id, row in expected.items()
+            if row["capability_id"] == capability_id
+        }
+        if keys != expected_keys:
+            raise R13Error("recipient observation matrix changed")
         if worker["summary"] != _summarize(rows, evaluation):
             raise R13Error("recipient summary changed")
     if not _recipient_pass(config, recipient_receipts):
