@@ -217,6 +217,11 @@ def verify(config_path: Path, reveal_path: Path, run_dir: Path) -> dict[str, Any
             raise R13Error("source observation identity changed")
         seen.add(key)
         _probabilities(row["canonical_probabilities"])
+        probabilities = [float(value) for value in row["canonical_probabilities"]]
+        if int(row["canonical_prediction"]) != max(
+            range(len(probabilities)), key=probabilities.__getitem__
+        ):
+            raise R13Error("source canonical prediction does not match probability argmax")
         grouped[(key[0], key[1])].append(row)
     for capability_id in capability_ids:
         for condition, expected_count in (

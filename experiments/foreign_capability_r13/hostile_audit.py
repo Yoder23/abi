@@ -17,13 +17,6 @@ from .verify import verify
 from .verify_live import verify_final
 
 
-def _rehash_receipt(path: Path) -> None:
-    value = json_object(path)
-    value.pop("evidence_sha256", None)
-    value["evidence_sha256"] = evidence_hash(value)
-    path.write_bytes(json.dumps(value, indent=2, sort_keys=True).encode() + b"\n")
-
-
 def _expect_rejection(label: str, operation: Callable[[], Any]) -> dict[str, Any]:
     try:
         operation()

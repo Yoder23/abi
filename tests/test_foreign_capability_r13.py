@@ -11,7 +11,7 @@ from experiments.foreign_capability_r13.core import (
     evidence_hash,
 )
 from experiments.foreign_capability_r13.recipient_worker import _summarize
-from experiments.foreign_capability_r13.verify import _evidence
+from experiments.foreign_capability_r13.verify import _evidence, _probabilities
 from experiments.native_transfer_r8.capability_generator import (
     committed_heldout_capabilities,
 )
@@ -73,3 +73,8 @@ def test_r13_recipient_summary_detects_removal_difference() -> None:
 
 def test_r13_config_is_json_serializable() -> None:
     assert json.loads(json.dumps(_config())) == _config()
+
+
+def test_r13_probability_validation_rejects_non_probability_vector() -> None:
+    with pytest.raises(R13Error, match="probabilities invalid"):
+        _probabilities([0.0] * 8)
