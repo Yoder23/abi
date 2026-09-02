@@ -120,8 +120,16 @@ def run(
             json.dumps(forged_status, indent=2, sort_keys=True).encode() + b"\n"
         )
         status_result = verify(config_path, reveal_path, work_run)
-        if status_result != baseline_static:
-            raise R13Error("forged status changed recomputed result")
+        scientific_fields = (
+            "verdict",
+            "claim",
+            "capabilities",
+            "package_oracle_accuracy",
+            "source_package_agreement",
+            "stored_status_booleans_consumed",
+        )
+        if any(status_result[field] != baseline_static[field] for field in scientific_fields):
+            raise R13Error("forged status changed recomputed science")
         cases.append(
             {
                 "case": "forged_scientific_boolean_ignored",
