@@ -59,6 +59,12 @@ Before the secret is generated, the following are frozen in Git and by hash:
   gates, strict verifier, live replay, and physical extraction sandbox;
 - the allowed neural input: only the effective before/after output-weight delta.
 
+CUDA creates the authoritative saved delta. Independent CPU reconstruction from
+the saved LoRA factors must be within preregistered absolute and relative
+tolerances of `1e-6`; the public v2 diagnostic maximum was `4.76837158203125e-7`.
+Artifact bytes and hashes remain exact--the tolerance applies only to the
+independent CPU matrix-product reconstruction.
+
 The secret reveal is not mounted into the extractor. Each extraction runs in a
 network-isolated WSL mount/PID/IPC/UTS namespace after `pivot_root` into a tmpfs
 root. The old root and Windows drive are unmounted. The allowlisted capsule
@@ -94,8 +100,8 @@ Strict recomputation must establish all of the following:
   latent capabilities with positive per-operator margins;
 - all eight packages score 10,000/10,000 on unseen programs and 1,000/1,000 on
   order counterfactuals;
-- wrong, random, and shuffled delta controls are at most 0.30 accuracy, while a
-  zero delta is rejected as non-information;
+- wrong, random, and fully element-shuffled delta controls are at most 0.30
+  accuracy, while a zero delta is rejected as non-information;
 - source removal is exactly equal to before and restoration exactly equals
   after;
 - Pythia, Qwen2, and T5 each score 1.0 in AFTER and RESTORED for every package,
@@ -125,3 +131,7 @@ It is not teacher-behavior cloning, extraction of knowledge already present in
 the pretrained Qwen checkpoint, English or domain extraction, a minimality
 result, arbitrary-model support, or superiority to LoRA or distillation. Those
 moonshot claims remain open even if R15A passes.
+
+The frozen hostile audit must additionally show that all registered mutations
+of source rows, source neural-state artifacts, isolated extraction evidence,
+capability packages, recipient rows, and the held-out reveal fail closed.

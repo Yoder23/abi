@@ -1,0 +1,31 @@
+{
+  "black_box_exact_capabilities": 0,
+  "claim_status": "FAIL_REGISTERED_SHUFFLED_DELTA_CONTROL",
+  "config_sha256": "fbfefef69aad5aa377486feda8148713d3cad35a4daa4aeb93f83aa04bbfb41e",
+  "diagnostic_only_not_reclassification": {
+    "full_7168_element_shuffle_maximum_accuracy": 0.256,
+    "maximum_all_repaired_delta_controls_accuracy": 0.263
+  },
+  "format": "abi-r15a-failed-certification/1",
+  "manifest_sha256": "159e0128eb779d674b6dbfc47584dedeb5ccac9a389c3f52dcf1788403ab00e8",
+  "package_counterfactual_exact_capabilities": 8,
+  "package_unseen_exact_capabilities": 8,
+  "preregistered_delta_control_failure": {
+    "capability": "r14-r15_heldout-004-4687ac1767a3f4b79c98",
+    "counterfactual_accuracy": 1.0,
+    "intervention": "permute_only_eight_output_rows",
+    "unseen_accuracy": 0.5017
+  },
+  "preregistration_commit": "4e41105b816076d750e6899bf7c38c4517c5f46f",
+  "preservation": "The full heldout_v2 directory remains immutable local negative evidence.",
+  "raw_source_observations_sha256": "436465e208f7cfeaaa3f7f237f8652db6ef17a9bb7bf6658a467e9844fbb278f",
+  "receipt_sha256": "4345b6f2896a6f17fdd71994df79a3d78737752881fe176eea3c3e62d9826c0e",
+  "recipient_hosts_passing_primary_and_controls": 3,
+  "reveal_sha256": "49e09478a9a3d97bb27b489baed08545632d2e36853e628440436d867d5ffc74",
+  "source_atomic_exact_capabilities": 8,
+  "verifier_precision_defect": {
+    "maximum_cpu_cuda_recompute_absolute_difference": 4.76837158203125e-7,
+    "preregistered_v2_requirement": "bitwise_equal"
+  },
+  "weight_delta_exact_capabilities": 8
+}

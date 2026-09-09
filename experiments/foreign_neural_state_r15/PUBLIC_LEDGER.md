@@ -47,3 +47,15 @@ result. Its compact receipt is
 partial directory remains immutable locally. Because the bug was in code frozen
 before reveal, the exposed v1 secret is never reused. The null-safe repair must
 be committed with a new hidden commitment before a new campaign begins.
+
+Heldout v2 completed all stages. The primary result was positive--8/8 exact
+isolated extractions, 8/8 packages at 1.0 on both 10,000 unseen and 1,000
+counterfactual rows, three passing recipients, and 0/8 R14 black-box
+recoveries--but certification failed. CPU recomputation of CUDA matrix products
+differed by at most `4.76837158203125e-7` while the verifier incorrectly
+required bit equality. More importantly, the registered SHUFFLED-delta control
+permuted only eight output rows; that structure-preserving transformation
+reached 1.0 counterfactual and 0.5017 unseen accuracy on one capability. V2 is
+therefore negative evidence, not a pass. A successor must preregister a bounded
+cross-device tolerance and a full 7,168-element permutation control against a
+new secret.

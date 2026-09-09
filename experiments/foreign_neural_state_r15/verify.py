@@ -252,6 +252,8 @@ def _verify_isolation(
         or result.get("windows_mount_present") is not False
         or result.get("capability_reveal_files_present") != 0
         or result.get("operation_tables_present") != 0
+        or len(result.get("operator_margins", [])) != 3
+        or any(float(value) <= 0 for value in result.get("operator_margins", []))
         or launcher.get("sandbox_policy") != "linux-pivot-root-no-network/1"
         or launcher.get("worker_exit_code") != 0
         or sha256_file(mount_path) != launcher.get("mountinfo_sha256")
@@ -464,7 +466,12 @@ def verify(config_path: Path, reveal_path: Path, run_dir: Path) -> dict[str, Any
             config["source_acquisition"]["lora_rank"]
         )
         if (
-            not torch.equal(delta, derived)
+            not torch.allclose(
+                delta,
+                derived,
+                atol=float(config["gates"]["effective_delta_absolute_tolerance"]),
+                rtol=float(config["gates"]["effective_delta_relative_tolerance"]),
+            )
             or _effective_delta_sha256(delta) != source["delta_artifact"]["effective_delta_sha256"]
             or delta.numel() != source["delta_artifact"]["elements"]
         ):

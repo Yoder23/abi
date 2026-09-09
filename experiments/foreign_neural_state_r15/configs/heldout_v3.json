@@ -1,0 +1,100 @@
+{
+  "claim_ceiling": "BOUNDED_FOREIGN_NEURAL_STATE_CAPABILITY_RECOVERY_ONLY",
+  "codec_freeze": {
+    "receipt": "results/native_isa_r11/codec_freeze_v1/receipt.json",
+    "tensors": "results/native_isa_r11/codec_freeze_v1/host_codecs.safetensors"
+  },
+  "conditions": [
+    "BASE",
+    "AFTER",
+    "BEFORE",
+    "WRONG",
+    "ZERO",
+    "RANDOM",
+    "SHUFFLED",
+    "REMOVED",
+    "BACKEND_REMOVED",
+    "CODEC_REMOVED",
+    "RESTORED"
+  ],
+  "data": {
+    "atomic_seed": 15151001,
+    "black_box_queries_per_capability": 256,
+    "black_box_query_depths": [4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "counterfactual_depth": 14,
+    "counterfactual_pairs_per_capability": 500,
+    "counterfactual_seed": 15151004,
+    "evaluation_depths": [13, 14, 15, 16, 17, 18],
+    "evaluation_rows_per_capability": 10000,
+    "evaluation_seed": 15151003,
+    "heldout_capabilities": 8,
+    "query_seed": 15151002,
+    "recipient_rows_per_capability": 512,
+    "source_behavior_rows_per_capability": 1024
+  },
+  "format": "abi-r15a-foreign-weight-delta-preregistration/3",
+  "gates": {
+    "effective_delta_absolute_tolerance": 1e-6,
+    "effective_delta_relative_tolerance": 1e-6,
+    "heldout_capabilities_exact": 8,
+    "negative_control_accuracy_maximum": 0.3,
+    "package_counterfactual_accuracy": 1.0,
+    "package_unseen_accuracy": 1.0,
+    "public_development_capabilities_exact": 64,
+    "recipient_after_accuracy": 1.0,
+    "recipient_restored_accuracy": 1.0,
+    "source_atomic_accuracy": 1.0
+  },
+  "heldout_seed_commitment": "e5019fe68d9eea987e52d9638a2fcc8e61b249fb72915d514e46d0fd40194e47",
+  "negative_conditions": ["BEFORE", "WRONG", "ZERO", "RANDOM", "SHUFFLED"],
+  "physical_extraction": {
+    "allowed_input": "effective_qwen_output_weight_delta_only",
+    "answers": 0,
+    "behavioral_queries": 0,
+    "candidate_program_search": false,
+    "network": false,
+    "operation_tables": 0,
+    "oracle_calls": 0,
+    "sandbox_policy": "linux-pivot-root-no-network/1"
+  },
+  "public_frontend": {
+    "dataset": "results/foreign_neural_state_r15/public_dataset_v7.safetensors",
+    "dataset_sha256": "d114e030727d22bf7f2563ee672d7049fd4db8addc26184f10b619909ec0997a",
+    "evidence_sha256": "2c607c2d52995cce864bf04d7e040f0c4d0c54dd105f88a772a81e347323b24f",
+    "frontend_spec_sha256": "46e91a19bf0ff13ebca8c886ddd1ebf555beb072ed2e53bf90352022350f1fef",
+    "public_seed": 15017000,
+    "receipt": "results/foreign_neural_state_r15/public_preflight_v7.json",
+    "receipt_sha256": "566d05e5c59c39b4773d789002eae12c633003fcb0b6890ac2ce387b94bc31db",
+    "tensors": "results/foreign_neural_state_r15/public_frontend_v7.safetensors",
+    "tensors_sha256": "aaa88da40a1cdd4bf721c56c471867da87d8a396448936630e0d0d108b59864d"
+  },
+  "r11_freeze": {
+    "binding_manifest": "experiments/native_isa_r11/configs/preregistered_transfer_v2.json",
+    "binding_manifest_sha256": "e28ea1eb9674b417ef17414e6c94f6a541daaa1f14dabe3ff2af41c22411609e",
+    "sealed_commit": "d89d8b607a705c47f7e2046b7dd4dbd40c396a5f",
+    "sealed_tag": "abi-r11-bounded-neural-construction-2026-08-31"
+  },
+  "recipient_hosts": ["pythia", "qwen2", "t5"],
+  "repair": {
+    "effective_delta_recompute": "CPU reconstruction must be within fixed 1e-6 absolute and relative tolerance of the hash-exact CUDA artifact",
+    "model_or_quality_gate_changes": 0,
+    "shuffled_delta": "deterministic permutation of all 7168 elements",
+    "superseded_certification": "results/foreign_neural_state_r15/heldout_v2_failed_certification.json"
+  },
+  "runtime": {
+    "batch_size": 64,
+    "device": "cuda",
+    "network_after_reveal": false
+  },
+  "source_acquisition": {
+    "batch_size": 24,
+    "cache_available_to_extractor": false,
+    "initialization_seed": 15015003,
+    "learning_rate": 0.01,
+    "lora_rank": 16,
+    "objective": "canonical_atomic_full_batch",
+    "optimizer": "AdamW",
+    "steps": 1000
+  },
+  "status": "PREREGISTERED_BEFORE_HELDOUT_REVEAL"
+}

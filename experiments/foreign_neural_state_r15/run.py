@@ -127,9 +127,9 @@ def _delta_controls(
                 "big",
             )
         )
-        shuffled_delta = delta.reshape(8, -1).index_select(
-            0, torch.randperm(8, generator=row_generator)
-        ).flatten()
+        shuffled_delta = delta.index_select(
+            0, torch.randperm(delta.numel(), generator=row_generator)
+        )
         candidates = {
             "WRONG": deltas[(index + 1) % len(deltas)],
             "RANDOM": random_delta,
