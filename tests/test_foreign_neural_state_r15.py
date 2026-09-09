@@ -32,6 +32,7 @@ from experiments.foreign_neural_state_r15.protocol import (
 )
 from experiments.foreign_neural_state_r15.public_preflight import _public_capabilities
 from experiments.foreign_neural_state_r15.recipient_worker import summarize
+from experiments.foreign_neural_state_r15.verify import _probabilities
 from experiments.native_isa_r11.core import transition_accuracy
 
 
@@ -239,3 +240,11 @@ def test_recipient_summary_treats_noncanonical_prediction_as_incorrect():
     assert result["accuracy"]["capability-1/BASE"] == 0.0
     assert result["accuracy"]["capability-1/AFTER"] == 1.0
     assert result["removal_conditions_equal_base"] is True
+
+
+def test_zero_intervention_is_a_finite_state_but_not_a_probability_simplex():
+    zero = [0.0] * 8
+
+    assert _probabilities(zero, normalized=False) == zero
+    with pytest.raises(RuntimeError, match="probabilities invalid"):
+        _probabilities(zero)

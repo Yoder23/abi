@@ -72,3 +72,14 @@ locally, and its compact failure receipt is
 repair removes this redundant post-hash mutation; the strict verifier already
 recomputes the summary directly from the raw rows. V3 is never retroactively
 certified and its revealed secret is never reused.
+
+Heldout v4 completed with the repaired worker envelopes, then failed closed
+because the strict verifier incorrectly required the registered all-zero
+neural-state intervention to sum to one. This was a verifier schema defect,
+not a scientific verdict. A post-reveal diagnostic repair both handled ZERO
+as an explicit zero vector and independently recomputed every active neural
+state from its package and prompt. That diagnostic passed static verification,
+8/8 hostile controls, and a full live replay whose recipient rows were
+byte-identical. Those results justify v5 but do not certify v4. The v4 secret
+is never reused, and the complete run and diagnostic replay remain immutable
+locally.

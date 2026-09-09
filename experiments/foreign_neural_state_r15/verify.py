@@ -26,10 +26,12 @@ from experiments.foreign_capability_r14.core import (
 from experiments.foreign_capability_r14.extractor import extract_transition
 from experiments.foreign_teacher_r12.custody import verify_r11_freeze
 from experiments.native_isa_r11.core import (
+    RecurrentTransitionNeuralISA,
     load_package,
     transition_accuracy,
     transition_bytes,
 )
+from experiments.native_isa_r11.run import _conditions
 
 from .frontend import (
     frontend_spec,
@@ -74,15 +76,25 @@ def _jsonl(path: Path, expected_sha: str, expected_rows: int) -> list[dict[str, 
     return rows
 
 
-def _probabilities(values: Any) -> None:
+def _probabilities(values: Any, *, normalized: bool = True) -> list[float]:
     if not isinstance(values, list) or len(values) != 8:
         raise R14Error("R15A probability width changed")
     numbers = [float(item) for item in values]
-    if (
-        any(not math.isfinite(item) or item < 0 or item > 1.000001 for item in numbers)
-        or abs(sum(numbers) - 1.0) > 2e-5
+    if any(not math.isfinite(item) for item in numbers) or (
+        normalized
+        and (
+            any(item < -1e-6 or item > 1.000001 for item in numbers)
+            or abs(sum(numbers) - 1.0) > 2e-5
+        )
     ):
         raise R14Error("R15A probabilities invalid")
+    return numbers
+
+
+def _close(left: list[float], right: list[float]) -> bool:
+    return len(left) == len(right) and all(
+        abs(float(a) - float(b)) <= 2e-6 for a, b in zip(left, right)
+    )
 
 
 def _adapter_state_sha256(state: dict[str, torch.Tensor]) -> str:
@@ -296,6 +308,24 @@ def _verify_recipient(
         for row in item["recipient"]
     }
     capability_ids = [item.capability_id for item in capabilities]
+    package_dir = run_dir / "packages"
+    _, before_transition = load_package(
+        package_dir / str(manifest["before"]["path"])
+    )
+    after_transitions = [
+        load_package(package_dir / str(item["path"]))[1]
+        for item in manifest["after"]
+    ]
+    condition_transitions = {
+        capability_id: _conditions(
+            before_transition,
+            after_transitions[index],
+            after_transitions[(index + 1) % len(after_transitions)],
+            capability_id,
+        )
+        for index, capability_id in enumerate(capability_ids)
+    }
+    executor = RecurrentTransitionNeuralISA().eval()
     seen = set()
     token_ids = [int(value) for value in worker["host_receipt"]["target_token_ids"]]
     for row in rows:
@@ -320,8 +350,17 @@ def _verify_recipient(
         }.get(key[1])
         active = key[1] not in {"BASE", "REMOVED", "BACKEND_REMOVED", "CODEC_REMOVED"}
         reference = expected[key[2]]
-        _probabilities(row["canonical_probabilities"])
-        _probabilities(row["neural_state"])
+        canonical_probabilities = _probabilities(row["canonical_probabilities"])
+        neural_state = _probabilities(
+            row["neural_state"], normalized=key[1] != "ZERO"
+        )
+        transition = condition_transitions[key[0]].get(key[1])
+        if active:
+            if transition is None:
+                raise R14Error("R15A active recipient transition missing")
+            recomputed_state = executor(transition, [str(reference["prompt"])])[0].tolist()
+        else:
+            recomputed_state = canonical_probabilities
         if (
             row["prompt_sha256"] != reference["prompt_sha256"]
             or row["package_sha256"] != package_sha
@@ -329,6 +368,7 @@ def _verify_recipient(
             or row["codec_active"] is not active
             or canonical_prediction(int(row["prediction_token_id"]), token_ids)
             != row["canonical_prediction"]
+            or not _close(neural_state, recomputed_state)
         ):
             raise R14Error("R15A recipient row content changed")
     expected_keys = {

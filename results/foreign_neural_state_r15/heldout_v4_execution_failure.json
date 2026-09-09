@@ -1,0 +1,29 @@
+{
+  "claim_status": "NO_VERDICT_FAIL_CLOSED_ZERO_STATE_SCHEMA",
+  "config_sha256": "7544670d51e96a3a3c8c913cc6223190102d18dd2d4d3d7e39194292e76903ac",
+  "diagnostic_only_not_certification": {
+    "hostile_cases_passed": 8,
+    "hostile_cases_total": 8,
+    "live_evidence_sha256": "45d4cfbdec2f5e98b3c687708283f552c85348d8dba1bbedb4fbfa5e40083915",
+    "live_receipt_sha256": "050dd91eeefd1f8d6019f39f4aa80ada32844068cce45cebe9505717d043c567",
+    "maximum_full_state_delta_control_accuracy": 0.267,
+    "package_counterfactual_exact_capabilities": 8,
+    "package_unseen_exact_capabilities": 8,
+    "source_atomic_exact_capabilities": 8,
+    "static_evidence_sha256": "4eea167d824b64cca147fe170f3865f26e48527faeb28270d44f912c5668b081"
+  },
+  "failure": {
+    "error": "R15A probabilities invalid",
+    "stage": "strict_verification",
+    "technical_cause": "The verifier applied a normalized probability-simplex rule to the explicitly registered ZERO neural-state vector."
+  },
+  "format": "abi-r15a-incomplete-execution/3",
+  "manifest_sha256": "486237f1f169b45e027b875e98f6d7cc76042bf9bddd5208c5804232ca58904c",
+  "posthoc_repair": "ZERO is validated as a finite zero vector; every active neural state is recomputed from the package and prompt; live recipient rows must be byte-identical.",
+  "preregistration_commit": "98e4f3d630bf013bd9d10b189efd5be86465f27c",
+  "preservation": "The full heldout_v4 and heldout_v4_posthoc_live_diagnostic directories remain immutable local evidence and are not certified.",
+  "raw_source_observations_sha256": "e714e7e89a3144b6dab1213128e54b8db051deb5aebf95336fc03b691e9279eb",
+  "receipt_evidence_sha256": "0637ea145b841a69fdb3b5796661898d6cf730769474bdccc0b82553dadf22ee",
+  "receipt_sha256": "4ddd24191e1e824f34a160e79dcd0afd549040a4876ba76ac6465335b591937b",
+  "reveal_sha256": "4113fd179737b4c914264c41c08666017d2a59e75c68b944df5338e2d9a0300c"
+}

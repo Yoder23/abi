@@ -105,6 +105,15 @@ def audit(config_path: Path, reveal_path: Path, run_dir: Path) -> dict[str, Any]
         ).unlink()
         or None,
     )
+    rejected(
+        "corrupted_recipient_rows",
+        lambda copied: _flip_one_byte(
+            copied
+            / "recipients"
+            / first_worker["host"]
+            / first_worker["observations"]["path"]
+        ),
+    )
 
     def wrong_reveal(copied: Path) -> Path:
         value = json_object(reveal_path)

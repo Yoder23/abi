@@ -29,7 +29,7 @@ from .isolation import run_wsl_isolated_extraction
 from .protocol import capability_rows, heldout_capabilities
 from .run import _random_state, _shuffled_state
 from .source import QwenLearningEvent
-from .verify import SOURCE_FIELDS, verify
+from .verify import SOURCE_FIELDS, _verify_isolation, verify
 
 
 def _source_groups(run_dir: Path, receipt: dict[str, Any]) -> dict[tuple[str, str], list[dict[str, Any]]]:
@@ -155,11 +155,26 @@ def verify_live(
         original = json_object(
             run_dir / receipt["neural_state_extractions"][index]["isolated_result"]["path"]
         )
+        relative = destination.relative_to(output)
+        verified_replay = _verify_isolation(
+            output,
+            {
+                "isolated_result": {
+                    "path": (relative / "result.json").as_posix(),
+                    "sha256": sha256_file(destination / "result.json"),
+                },
+                "isolated_launcher": {
+                    "path": (relative / "launcher.json").as_posix(),
+                    "sha256": sha256_file(destination / "launcher.json"),
+                },
+            },
+            original["labels"],
+        )
         if (
-            replay["result"]["labels"] != original["labels"]
-            or replay["result"]["frontend_spec_sha256"]
+            verified_replay["labels"] != original["labels"]
+            or verified_replay["frontend_spec_sha256"]
             != original["frontend_spec_sha256"]
-            or replay["result"]["weight_delta_sha256"]
+            or verified_replay["weight_delta_sha256"]
             != original["weight_delta_sha256"]
         ):
             raise R14Error("R15A isolated extraction live replay changed")
@@ -207,7 +222,33 @@ def verify_live(
         original = next(
             item for item in receipt["recipient_workers"] if item["host"] == host_key
         )
-        if replay["summary"] != original["summary"]:
+        payload = dict(replay)
+        stored_evidence = payload.pop("evidence_sha256", None)
+        stable_host_fields = {
+            "host",
+            "model_id",
+            "revision",
+            "architecture_family",
+            "model_state_sha256_before",
+            "model_state_sha256_after",
+            "codec_sha256_before",
+            "codec_sha256_after",
+            "target_token_ids",
+            "recipient_optimizer_steps",
+            "backend_learned_parameters",
+            "source_model_loaded",
+            "rows",
+        }
+        if (
+            stored_evidence != evidence_hash(payload)
+            or replay["summary"] != original["summary"]
+            or replay["observations"]["sha256"]
+            != original["observations"]["sha256"]
+            or any(
+                replay["host_receipt"].get(key) != original["host_receipt"].get(key)
+                for key in stable_host_fields
+            )
+        ):
             raise R14Error(f"R15A recipient live replay changed: {host_key}")
         recipient_replays.append(
             {

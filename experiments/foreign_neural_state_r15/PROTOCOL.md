@@ -135,3 +135,6 @@ moonshot claims remain open even if R15A passes.
 The frozen hostile audit must additionally show that all registered mutations
 of source rows, source neural-state artifacts, isolated extraction evidence,
 capability packages, recipient rows, and the held-out reveal fail closed.
+The live verifier must regenerate every source condition, rerun every
+pivot-root extraction, reproduce every recipient observation file byte for
+byte, and recheck stable model, codec, and host identities.
