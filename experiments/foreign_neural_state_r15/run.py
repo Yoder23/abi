@@ -47,7 +47,6 @@ from .protocol import (
     heldout_capabilities,
     operations_commitment,
 )
-from .recipient_worker import summarize
 from .source import (
     QwenLearningEvent,
     cache_output_training_inputs,
@@ -444,17 +443,7 @@ def run(config_path: Path, reveal_path: Path, output: Path) -> dict[str, Any]:
         (logs / f"{host_key}.stderr.txt").write_text(completed.stderr, encoding="utf-8")
         if completed.returncode != 0:
             raise R14Error(f"R15A recipient worker failed: {host_key}")
-        receipt = json_object(worker_output / "receipt.json")
-        receipt["recomputed_summary"] = summarize(
-            [
-                json.loads(line)
-                for line in (worker_output / "observations.jsonl")
-                .read_text(encoding="utf-8")
-                .splitlines()
-            ],
-            [item["recipient"] for item in rows_by_capability],
-        )
-        recipient_receipts.append(receipt)
+        recipient_receipts.append(json_object(worker_output / "receipt.json"))
     receipt = {
         "format": "abi-r15a-foreign-weight-delta-extraction/1",
         "verification_status": "UNVERIFIED_RUN_OUTPUT",

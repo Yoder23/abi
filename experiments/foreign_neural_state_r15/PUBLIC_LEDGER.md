@@ -59,3 +59,16 @@ reached 1.0 counterfactual and 0.5017 unseen accuracy on one capability. V2 is
 therefore negative evidence, not a pass. A successor must preregister a bounded
 cross-device tolerance and a full 7,168-element permutation control against a
 new secret.
+
+Heldout v3 completed all source, physical extraction, package, and recipient
+stages. Its primary measurements were positive: 8/8 source atomic fits, 8/8
+exact packages on both unseen and counterfactual rows, and a maximum full-state
+delta-control accuracy of 0.271. It did not reach a scientific verdict. The
+strict verifier rejected the first recipient because the orchestrator had
+appended a recomputed summary to the worker's already-hashed receipt, making
+the embedded evidence hash stale. The complete v3 directory remains immutable
+locally, and its compact failure receipt is
+`results/foreign_neural_state_r15/heldout_v3_execution_failure.json`. The
+repair removes this redundant post-hash mutation; the strict verifier already
+recomputes the summary directly from the raw rows. V3 is never retroactively
+certified and its revealed secret is never reused.

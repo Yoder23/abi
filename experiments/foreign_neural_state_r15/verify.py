@@ -343,7 +343,6 @@ def _verify_recipient(
     if (
         seen != expected_keys
         or summary != worker["summary"]
-        or summary != worker.get("recomputed_summary")
         or host["recipient_optimizer_steps"] != 0
         or host["model_state_sha256_before"] != host["model_state_sha256_after"]
         or host["codec_sha256_before"] != host["codec_sha256_after"]

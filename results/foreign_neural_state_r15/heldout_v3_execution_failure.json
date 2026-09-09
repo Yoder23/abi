@@ -1,0 +1,24 @@
+{
+  "claim_status": "NO_VERDICT_FAIL_CLOSED_STALE_EMBEDDED_RECIPIENT_HASH",
+  "config_sha256": "8396cfd683f2a9a5e3eaae5a5acadd0f76d9600d7b87f2c0720404051cc12ee1",
+  "diagnostic_only_not_certification": {
+    "maximum_full_state_delta_control_accuracy": 0.271,
+    "package_counterfactual_exact_capabilities": 8,
+    "package_unseen_exact_capabilities": 8,
+    "recipient_recomputed_summaries_equal_worker_summaries": 3,
+    "source_atomic_exact_capabilities": 8
+  },
+  "failure": {
+    "error": "R15A recipient pythia evidence hash changed",
+    "stage": "strict_verification",
+    "technical_cause": "The orchestrator appended recomputed_summary after the worker receipt evidence hash was created."
+  },
+  "format": "abi-r15a-incomplete-execution/2",
+  "manifest_sha256": "f84760877bda8be898d03350f841e96b8d3c0bae3a71e558acd6eebc7df60821",
+  "preregistration_commit": "167d0441753b4b6bf3745de79e0bb27738f4d06a",
+  "preservation": "The full heldout_v3 directory remains immutable local evidence and is not certified.",
+  "raw_source_observations_sha256": "f0036b06e349c4f45fe01bcf0e3bc5a56b7ba9a85aa3bb55b2de0dc5dc1f856d",
+  "receipt_evidence_sha256": "c8a84e6907a1960d5501781294d85f78add50ef33641a26311a8b59518918c62",
+  "receipt_sha256": "ff9967a3877169680c24b867fe2798050741cf55cb750974e6f96cf6870a7815",
+  "reveal_sha256": "0be15582595b2f715350dcb45cba2a265a264c48f1e89b4cea95bf7294f5277a"
+}
