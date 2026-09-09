@@ -31,6 +31,7 @@ from experiments.foreign_neural_state_r15.protocol import (
     heldout_capabilities,
 )
 from experiments.foreign_neural_state_r15.public_preflight import _public_capabilities
+from experiments.foreign_neural_state_r15.recipient_worker import summarize
 from experiments.native_isa_r11.core import transition_accuracy
 
 
@@ -211,3 +212,30 @@ def test_heldout_capability_rows_are_deterministic_distinct_and_disjoint():
             for row in item[split]
         ]
         assert len(keys) == len(set(keys))
+
+
+def test_recipient_summary_treats_noncanonical_prediction_as_incorrect():
+    evaluation = [[{"row_id": "row-1", "answer": 3}]]
+    rows = []
+    for condition in (
+        "BASE",
+        "AFTER",
+        "REMOVED",
+        "BACKEND_REMOVED",
+        "CODEC_REMOVED",
+    ):
+        rows.append(
+            {
+                "capability_id": "capability-1",
+                "condition": condition,
+                "row_id": "row-1",
+                "canonical_prediction": 3 if condition == "AFTER" else None,
+                "prediction_token_id": 17 if condition == "AFTER" else 99,
+            }
+        )
+
+    result = summarize(rows, evaluation)
+
+    assert result["accuracy"]["capability-1/BASE"] == 0.0
+    assert result["accuracy"]["capability-1/AFTER"] == 1.0
+    assert result["removal_conditions_equal_base"] is True

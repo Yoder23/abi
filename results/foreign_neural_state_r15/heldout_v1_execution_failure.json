@@ -1,0 +1,24 @@
+{
+  "artifacts_completed_before_failure": {
+    "effective_weight_deltas": 8,
+    "isolated_extractions": 8,
+    "packages_including_uniform_control": 9,
+    "source_adapters": 8
+  },
+  "claim_status": "NO_SCIENTIFIC_VERDICT_INCOMPLETE_EXECUTION",
+  "config_sha256": "9285a61d3d1c7e8b56f56b1dcaee3406f57312b0ca3111edbaf504ec6bf2c61b",
+  "failure": {
+    "error": "int() argument must be a string, a bytes-like object or a real number, not 'NoneType'",
+    "stage": "first_frozen_recipient_summary",
+    "worker": "pythia"
+  },
+  "format": "abi-r15a-execution-failure/1",
+  "manifest_sha256": "ab73e85547278c9d6be4f609c6f86407830a4816aa42e57a6264456c1eeb86e5",
+  "preregistration_commit": "4d088b17f4c70d29923c2b89475434617d59a06a",
+  "preservation": "The partial heldout_v1 directory remains immutable local historical evidence.",
+  "raw_source_observations_sha256": "14be5b001782fbd5cf59c7a53511364136993746b6868db35136c43736fd8ae5",
+  "repair_scope": "Treat a non-canonical BASE token as an incorrect canonical prediction instead of coercing None through int(). No model, frontend, source schedule, package, threshold, or scientific gate changed.",
+  "reveal_sha256": "07709bf82a83ed1e67e87ef8905e1ef3eb194831d16fb21abe9a0fb1a52319ef",
+  "worker_stderr_sha256": "5bfb03b81e62c1a971a7ce3c5c29bb8cd2680aa1bf28c9061d6dceb799497670",
+  "worker_stdout_sha256": "4f7fde6110e1030b4411b2a55ae10bdcba057d69d4c55dd9d77df6cd8db99b04"
+}

@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
@@ -18,11 +19,50 @@ from experiments.foreign_capability_r14.core import (
     write_json_once,
     write_jsonl_once,
 )
-from experiments.foreign_capability_r14.recipient_worker import summarize
 from experiments.native_isa_r11.core import load_package
 from experiments.native_isa_r11.run import _host_matrix
 
 from .protocol import capability_rows, heldout_capabilities
+
+
+def summarize(
+    rows: list[dict[str, Any]], evaluation: list[list[dict[str, Any]]]
+) -> dict[str, Any]:
+    """Score canonical recipients while treating non-canonical tokens as wrong."""
+    answers = {
+        str(row["row_id"]): int(row["answer"])
+        for capability in evaluation
+        for row in capability
+    }
+    grouped: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
+    indexed = set()
+    for row in rows:
+        key = (str(row["capability_id"]), str(row["condition"]), str(row["row_id"]))
+        if key in indexed or key[2] not in answers:
+            raise R14Error("duplicate or unknown R15A recipient observation")
+        indexed.add(key)
+        grouped[key[:2]].append(row)
+    accuracy = {
+        f"{capability_id}/{condition}": sum(
+            int(row["canonical_prediction"] == answers[str(row["row_id"])])
+            for row in values
+        )
+        / len(values)
+        for (capability_id, condition), values in grouped.items()
+    }
+    removal_equal_base = True
+    for capability_id in {key[0] for key in grouped}:
+        base = {
+            str(row["row_id"]): int(row["prediction_token_id"])
+            for row in grouped[(capability_id, "BASE")]
+        }
+        for condition in ("REMOVED", "BACKEND_REMOVED", "CODEC_REMOVED"):
+            removed = {
+                str(row["row_id"]): int(row["prediction_token_id"])
+                for row in grouped[(capability_id, condition)]
+            }
+            removal_equal_base = removal_equal_base and removed == base
+    return {"accuracy": accuracy, "removal_conditions_equal_base": removal_equal_base}
 
 
 def run(

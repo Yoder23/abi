@@ -35,3 +35,15 @@ checks every journal receipt and tensor hash before producing the release
 dataset. The strict verifier then reconstructs all capability labels, verifies
 all 320 effective-delta hashes, retrains the v7 frontend exactly, and recomputes
 64/64 development accuracy from the consolidated tensor.
+
+## Secret execution ledger
+
+Heldout v1 produced all eight source adapters, deltas, isolated extractions,
+and packages, then failed closed before a verdict when Pythia BASE emitted a
+non-canonical token and the inherited R14 summary code attempted `int(None)`.
+The failure is an accounting exception, not a failed or passing scientific
+result. Its compact receipt is
+`results/foreign_neural_state_r15/heldout_v1_execution_failure.json`; the full
+partial directory remains immutable locally. Because the bug was in code frozen
+before reveal, the exposed v1 secret is never reused. The null-safe repair must
+be committed with a new hidden commitment before a new campaign begins.

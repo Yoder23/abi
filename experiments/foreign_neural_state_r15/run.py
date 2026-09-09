@@ -26,7 +26,6 @@ from experiments.foreign_capability_r14.core import (
     write_jsonl_once,
 )
 from experiments.foreign_capability_r14.extractor import extract_transition
-from experiments.foreign_capability_r14.recipient_worker import summarize
 from experiments.foreign_capability_r14.source import observe_queries
 from experiments.foreign_teacher_r12.custody import verify_r11_freeze
 from experiments.native_isa_r11.core import (
@@ -48,6 +47,7 @@ from .protocol import (
     heldout_capabilities,
     operations_commitment,
 )
+from .recipient_worker import summarize
 from .source import (
     QwenLearningEvent,
     cache_output_training_inputs,
