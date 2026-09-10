@@ -340,5 +340,19 @@ arbitrary teacher.
     content, fluency, adherence, hallucination, and teacher-relative quality
     against a matched sequence-distillation baseline.
 
+20. Preserve R21 as a strictly verified public prerequisite pass and a
+    strictly verified hidden replication failure. Public ABI-factorized
+    packages scored 116/120 on all three seeds versus 96/120 teacher, 94-99
+    labeled monolith, and 71-80 raw sequence; fresh replay covered 1,080 GPU
+    rows, 54 CPU rows, and 24/24 package removal, restoration, and targeted
+    corruption controls. The committed hidden split scored 113/120 on every
+    factor seed versus 107/120 teacher, but summary was 13/20 against the
+    frozen 15/20 gate. Do not lower or rescore that gate, reuse its seed, or
+    call R21 general English. Teacher self-labeling failed both registered
+    interfaces (583/600 and 534/600); the 600/600 registered ABI label control
+    is supervised ontology labeling, not autonomous discovery. A successor
+    requires a materially broader semantic-plan representation and a
+    proposition-level evaluator frozen before a new hidden selection.
+
 Do not claim the ABI moonshot until those acquisition and external-quality
 gates are supported by their own evidence.

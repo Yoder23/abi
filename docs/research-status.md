@@ -30,6 +30,7 @@ fresh blind Codex review. Human quality and independent hardware remain open.
 | Pre-existing structured factual extraction and segregation | Bounded replicated local pass; two R16 16/16 selections, 27 distinct facts, strict/live/hostile verification |
 | Teacher-derived compositional surface realization | Bounded replicated local pass; R19 96/96 disclosed plus 48/48 fresh hidden, strict/live/22-case hostile verification |
 | Raw-instruction supplied-content structural realization | Failed R20 source/compiler prerequisite; 10/72 extraction and 19/120 evaluation exact, no package |
+| Label-separated generative supplied-content transfer | R21 public prerequisite passed and fresh hidden replication failed; hidden factor 113/120, summary 13/20 below 15/20 gate |
 | Pre-existing open-weight English/domain extraction | Open |
 | LoRA/distillation superiority | Unproven |
 

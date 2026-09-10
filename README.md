@@ -213,6 +213,17 @@ templates are not a viable bridge to broader free-form English; that branch is
 closed rather than prompt-tuned. See
 [`docs/R20_INSTRUCTIONAL_REALIZATION_RESULT.md`](docs/R20_INSTRUCTIONAL_REALIZATION_RESULT.md).
 
+R21 then replaced the failed template compiler with signed generative
+LayerCake packages and matched sequence-distillation controls. Its factorized
+system passed the public suite at 116/120 on every seed, versus 96/120 for the
+teacher, and passed a fresh 1,080-row GPU replay, 54-row CPU replay, and all 24
+package lifecycle/corruption controls. Its separately committed hidden split
+failed: every factor seed reached 113/120 and exceeded the 107/120 teacher, but
+summary was 13/20 against the frozen 15/20 minimum. Teacher-side semantic
+labeling also failed; the successful registered-ontology classifier is not
+autonomous discovery. See
+[`docs/R21_LABEL_SEPARATED_GENERATIVE_TRANSFER_RESULT.md`](docs/R21_LABEL_SEPARATED_GENERATIVE_TRANSFER_RESULT.md).
+
 ## R7 at a glance
 
 | Evidence | Result |

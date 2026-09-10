@@ -235,6 +235,21 @@ run. The result is strictly verified and isolates an ABI representation/source
 boundary failure. A successor must be materially generative and use semantic
 and teacher-relative quality, not another exact-template or prompt variant.
 
+R21 status:
+`R21_PUBLIC_PREREQUISITE_PASSED_HIDDEN_REPLICATION_FAILED`
+
+R21 trained matched raw-sequence, labeled-monolith, and six-factor generative
+LayerCake systems from 600 pinned teacher responses across three seeds. The
+factorized system scored 116/120 publicly on every seed versus 96/120 teacher,
+94-99 labeled monolith, and 71-80 raw sequence. A fresh verifier reproduced
+1,080 GPU outputs, 54 CPU outputs, and 24/24 removal, restoration, signature,
+and targeted-corruption controls; strict recomputation passed. The committed
+fresh hidden split then scored 113/120 on every factor seed versus 107/120
+teacher, but summary was 13/20 against the locked 15/20 task gate. The hidden
+failure is controlling. Teacher self-labeling also remains failed; the passing
+registered-ontology label control is not autonomous discovery. See
+`docs/R21_LABEL_SEPARATED_GENERATIVE_TRANSFER_RESULT.md`.
+
 ## What R7 proves
 
 R7 proves one bounded capability ABI result: four immutable packages execute
@@ -283,6 +298,7 @@ The blind reviewer returned `VERDICT: PASS` for this exact scope.
 | Bounded teacher-derived grammar realization | BOUNDED REPLICATED LOCAL PASS; R19 96/96 disclosed plus 48/48 fresh hidden |
 | General teacher-derived English capability | OPEN; R19 is supplied-slot surface realization only |
 | Instruction-conditioned supplied-content realization | FAILED R20 source/compiler prerequisite; no package or LayerCake run |
+| Label-separated generative supplied-content transfer | PUBLIC PASS, HIDDEN FAIL R21; 113/120 hidden but summary 13/20 below gate |
 | Exact foreign-teacher behavioral transplantation | OPEN; separate Track A |
 
 ## Current objective

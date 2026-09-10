@@ -1,11 +1,20 @@
 # Current project status
 
-Updated: 2026-08-31
+Updated: 2026-09-10
 
 ## Executive status
 
 ABI R7 has passed bounded technical validation and public reproducibility on
 the development hardware. Human and different-hardware review are open.
+
+The additive R21 campaign now supplies a strictly verified bounded public
+generative-transfer prerequisite: six signed LayerCake factors scored 116/120
+on all three seeds versus 96/120 teacher and both matched distillation
+controls. Fresh replay covered 1,080 GPU rows, 54 CPU rows, and all 24 package
+lifecycle/corruption controls. Its committed hidden replication failed the
+locked task floor: 113/120 overall and above the 107/120 teacher, but 13/20
+summary versus the required 15/20. R21 therefore does not certify general
+English or change the controlling R7 release.
 
 The additive R8 native-neural-transfer falsification campaign is complete at
 Level 0. Exact canonical extraction succeeded, but the same acquired state did
@@ -79,11 +88,13 @@ Public release:
 6. Compact fluent English extraction: broader research.
 7. Matched quality comparison against teacher, LoRA, and distillation: broader
    research.
-8. R8 native cross-model neural transfer: failed public prerequisite; any
+8. R21 label-separated generative transfer: public prerequisite passed, fresh
+   hidden replication failed the summary task minimum.
+9. R8 native cross-model neural transfer: failed public prerequisite; any
    successor requires a new additive mechanism and preregistration.
-9. R9 neural-ISA recipient realization: capability-specific recipient-state
+10. R9 neural-ISA recipient realization: capability-specific recipient-state
    GRU branch failed; universal backend remains closed.
-10. R11 foreign-teacher front end: the ABI-native construction passes, but
+11. R11 foreign-teacher front end: the ABI-native construction passes, but
     extraction of a capability already encoded in an independently trained
     open-weight model remains open.
 

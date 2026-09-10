@@ -1,5 +1,21 @@
 # Changelog
 
+## R21 label-separated generative transfer - 2026-09-10
+
+- Replaced exact-template compilation with three-seed generative LayerCake
+  packages and matched raw-sequence and labeled-monolith controls.
+- Preserved failed teacher label interfaces at 583/600 and 534/600; the
+  registered ABI-side ontology classifier scored 600/600 training and 120/120
+  public instructions but does not prove autonomous discovery.
+- Passed the public functional suite at 116/120 on every factorized seed versus
+  96/120 teacher, 94-99/120 labeled monolith, and 71-80/120 raw sequence.
+- Freshly reproduced 1,080 GPU and 54 CPU outputs, removed/restored all 24
+  packages, rejected 24/24 targeted corruptions, and strictly recomputed every
+  gate.
+- Preserved the fresh hidden failure: factorized 113/120 on every seed versus
+  teacher 107/120, but summary was 13/20 against the locked 15/20 minimum.
+  R21 is not promoted beyond its bounded public prerequisite.
+
 ## R20 public instructional realization failure - 2026-09-10
 
 - Froze a materially broader six-behavior natural-instruction interface with

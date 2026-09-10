@@ -259,3 +259,23 @@ delexicalized programs. Compilation and LayerCake were not invoked. The tested
 exact-template representation is closed for broader English; a successor must
 use generative artifacts and independent semantic, fluency, adherence,
 hallucination, and teacher-relative scoring.
+
+## Additive R21 label-separated generative transfer
+
+R21 adds one bounded public claim but fails its fresh hidden certification.
+Across three seeds, six independently signed LayerCake factors scored 116/120
+public functional rows versus 96/120 teacher, 94-99/120 labeled monolith, and
+71-80/120 raw sequence. Fresh verification reproduced all 1,080 GPU outputs,
+54 task-covering CPU outputs, and 24/24 removal, restoration, signature, and
+targeted-corruption controls. The factorized deployment has 525,401 total and
+96,216 active parameters per selected task.
+
+The committed hidden split scored 113/120 on every factor seed versus 107/120
+teacher and both controls, with 120/120 labels, adherence, non-hallucination,
+and non-collapse. It nevertheless failed because summary scored 13/20 against
+the frozen 15/20 task floor. Teacher-side label generation also failed at
+583/600 and restricted scoring failed at 534/600. The passing 36-example ABI
+labeler is a registered-ontology control, not autonomous discovery. R21 does
+not support claims of general English, arbitrary-domain extraction,
+minimality, hidden replication, or superiority to LoRA/distillation. See
+[R21_LABEL_SEPARATED_GENERATIVE_TRANSFER_RESULT.md](R21_LABEL_SEPARATED_GENERATIVE_TRANSFER_RESULT.md).
