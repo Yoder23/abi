@@ -1,0 +1,33 @@
+{
+  "blind_findings": {
+    "critical": 0,
+    "high": 0,
+    "low": 0,
+    "medium": 0
+  },
+  "blind_report": {
+    "path": "results/factual_semantic_r16/blind_redteam_26fb029.md",
+    "sha256": "7a88547857106f133ced41ad79cb11d2733273f28d4f05a448b95805a9f9d520"
+  },
+  "claim": "BOUNDED_FACTUAL_EXTRACTION_AND_SEMANTIC_SEGREGATION",
+  "claim_ceiling": "NOT_ENGLISH_OR_OPEN_WORLD_DOMAIN_EXTRACTION",
+  "evidence_sha256": "305dfc5be7a29f18765e7299c508d54f53848d6d12e2f4234ca0505b0c6d7df3",
+  "format": "abi-r16-bounded-blind-reviewed-certificate/1",
+  "full_abi_moonshot": "OPEN",
+  "independent_hardware": "PENDING",
+  "publication": "PENDING",
+  "replication_certificate": {
+    "evidence_sha256": "068388facd7c9793656a98acdad1ff4cb949ee6aea055a624f2f4c1e04867320",
+    "path": "results/factual_semantic_r16/heldout_v2_certificate.json",
+    "sha256": "530be9c6f365d674d08eb68b78704e3623b26a876dbd63a5b54bdcef3dd94487"
+  },
+  "reviewed_commit": "26fb02908831cab05079ee1ba9821e401ce222d7",
+  "unproven": [
+    "autonomous open-world discovery",
+    "English transfer",
+    "production LayerCake ingestion",
+    "global minimality",
+    "superiority to LoRA or distillation"
+  ],
+  "verdict": "PASS"
+}

@@ -286,8 +286,9 @@ arbitrary teacher.
     review passed the bounded claim with no Critical or High finding. Before
     clean replication bound to the corrected public protocol has now repeated
     every gate on a second selection (27 distinct facts across both runs).
-    Before promotion beyond local scope, require final blind review, durable
-    publication, and reconstruction. A successor must test free-form linguistic realization or
+    Final blind review of exact replication commit `26fb029` passed with zero
+    findings. Before promotion beyond local scope, require durable publication
+    and reconstruction. A successor must test free-form linguistic realization or
     a non-enumerable specialist capability; do not rerun nearby fact-count,
     prompt, candidate-set, or ontology variants.
 

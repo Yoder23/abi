@@ -245,5 +245,5 @@ historical. A new secret selection was then preregistered against the corrected
 public receipt before reveal. That clean replication again passed 16/16 facts,
 all 48-row source/package/segregation gates, exact live replay, direct source
 rehashing, and 21/21 hostile controls. The two selections cover 27 distinct
-facts. Final blind review of the repaired seal and public reconstruction remain
-open.
+facts. Blind review of exact replication commit `26fb029` passed with zero
+findings. Durable publication and public reconstruction remain open.

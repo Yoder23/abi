@@ -29,6 +29,9 @@
   hidden selection. The clean replication again passed 16/16 facts and every
   48-row quality, segregation, removal, live, and 21-case hostile gate. Across
   v1 and v2, 32 selected instances cover 27 distinct held-out facts.
+- Blind review of exact replication commit `26fb029` passed with zero Critical,
+  High, Medium, or Low findings after independent recomputation and physical
+  package reconstruction. Public publication and reconstruction remain open.
 
 ## R16 public factual prerequisite v1 - 2026-09-10
 

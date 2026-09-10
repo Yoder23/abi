@@ -1,6 +1,6 @@
 # R16 bounded factual acquisition and semantic segregation
 
-Status: `BOUNDED_LOCAL_REPLICATED_PASS; FINAL BLIND REVIEW PENDING`
+Status: `BOUNDED_LOCAL_REPLICATED_BLIND_PASS; PUBLIC RECONSTRUCTION PENDING`
 
 R16 is the first ABI campaign to extract factual content already present in an
 unchanged open-weight teacher, assign that content to registered semantic
@@ -178,6 +178,14 @@ The replication certificate is
 `068388facd7c9793656a98acdad1ff4cb949ee6aea055a624f2f4c1e04867320`.
 It remains bounded to the same registered closed-candidate claim.
 
+A fresh blind review of exact evidence commit `26fb029` returned `PASS` with
+zero Critical, High, Medium, or Low findings. It independently recomputed the
+19/19 preregistered bindings, source inventory, raw rows, packages, strict and
+hostile evidence, accounting, and certificate. Permissioned reconstruction of
+both physical compiler capsules regenerated the primary and rotated-control
+packages exactly. The report is
+`results/factual_semantic_r16/blind_redteam_26fb029.md`.
+
 The full ABI moonshot remains open. R7 remains the controlling public release
-until the replicated R16 seal receives final blind review, durable publication,
-and clean external reconstruction within this bounded claim.
+until the replicated R16 seal receives durable publication and clean external
+reconstruction within this bounded claim.

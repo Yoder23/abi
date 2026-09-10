@@ -175,7 +175,8 @@ so autonomous discovery, fluent English transfer, LayerCake ingestion,
 minimality, and LoRA/distillation superiority remain open. Blind review passed
 v1 with no Critical or High finding. A clean second selection bound to the
 repaired public protocol before reveal repeated every gate and expanded
-combined coverage to 27 facts. Final blind review and durable public
+combined coverage to 27 facts. Final blind review of exact replication commit
+`26fb029` passed with zero findings. Durable public publication and clean
 reconstruction remain pending; R7 remains the controlling release.
 
 ## What R7 proves
@@ -240,8 +241,8 @@ Preserve and externally review R7 without changing its artifacts:
 Teacher extraction and minimization belong to additive campaigns. R16 now
 supplies the first bounded held-out factual extraction/segregation pass, but
 only for registered closed candidate sets and a two-domain ontology. The
-immediate additive work is to blind-review and publicly reconstruct the exact
-R16 seal, then preregister a materially broader linguistic-capability test. It
+immediate additive work is to publicly reconstruct the blind-reviewed R16
+seal and execute the separately frozen broader linguistic-capability test. It
 must require answer-free free-form generation and teacher-relative quality,
 not merely candidate ranking or a package-owned answer table. LayerCake
 product ingestion remains a separate acceptance gate.

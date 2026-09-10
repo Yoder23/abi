@@ -159,8 +159,9 @@ English extraction, teacher-quality free generation, native neural
 transplantation, production LayerCake ingestion, minimality, or superiority to
 LoRA/distillation. A second preregistered 16-fact selection, bound to the
 repaired public protocol before reveal, independently repeated every gate and
-expanded combined held-out coverage to 27 distinct facts. Final blind review
-and public reconstruction of that replicated seal remain open.
+expanded combined held-out coverage to 27 distinct facts. Blind review of the
+exact replicated seal passed with zero findings; durable publication and clean
+public reconstruction remain open.
 The full ABI moonshot therefore remains open, and R7 remains the controlling
 published release.
 

@@ -107,7 +107,8 @@ fluent English transfer, arbitrary-domain extraction, native neural
 transplantation, LayerCake acceptance, minimality, or LoRA/distillation
 superiority. Fresh blind review passed v1 with no Critical or High finding. A
 clean second selection bound to the corrected public protocol before reveal
-repeated every gate; final blind review and public reconstruction remain open.
+repeated every gate, and blind review of exact commit `26fb029` passed with no
+findings; public publication and reconstruction remain open.
 
 Historical campaign records remain available in `evidence/current/`,
 `results/`, and the research-history branch. Later evidence supersedes a claim
