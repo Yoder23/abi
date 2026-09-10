@@ -1,0 +1,53 @@
+{
+  "config_sha256": "cd378c0f30d718f7d27ddf3acdf219f80547035b880ac622c9ac3a74df4036c0",
+  "evidence_sha256": "c23a9ea3b69bed614272085ae3baba73a6b7b6240974b0f9193c1cf796d4f263",
+  "format": "abi-r22-normalized-source/1",
+  "full_abi_moonshot": "OPEN",
+  "gates": {
+    "fields_verbatim_once": false,
+    "functional": false,
+    "label_exact": true,
+    "non_collapsed": true,
+    "non_hallucinating": true
+  },
+  "information_accounting": {
+    "gpu_name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "hidden_activations_stored": 0,
+    "logits_stored": 0,
+    "normalization_calls": 600,
+    "normalization_output_bytes": 73793,
+    "normalization_output_tokens": 21328,
+    "normalization_prompt_token_instances": 100011,
+    "peak_cpu_rss_bytes": 2168479744,
+    "peak_gpu_memory_bytes": 15338472960,
+    "raw_teacher_response_bytes_reused": 73866,
+    "raw_teacher_response_tokens_reused": 21399,
+    "source_inference_seconds": 1182.046993099997,
+    "source_load_seconds": 9.552713599987328,
+    "source_model_inference_hours": 0.3283463869722214,
+    "source_parameters_copied": 0,
+    "source_snapshot_bytes": 15242778262,
+    "source_snapshot_files": 10
+  },
+  "metrics": {
+    "fields_verbatim_once": 255,
+    "functional": 520,
+    "non_collapsed": 600,
+    "non_hallucinating": 600,
+    "rows": 600
+  },
+  "next_action": "close R22 normalization branch",
+  "raw_source_receipt_sha256": "1bbad508456b0cf62902ad755e16812e3f75815af94af5537753417be5c1a74a",
+  "raw_source_rows_sha256": "15e9a3d5c65edb9db459bdab1a4651f26d8e88e05d921b08c6c7f24a77fa0467",
+  "source": {
+    "calls": 600,
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "parameters": 7615616512,
+    "present_at_package_execution": false,
+    "present_at_student_training": false,
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "training_steps": 0
+  },
+  "source_rows_sha256": "bf523eb7a3d0e033087155a62c5fc4d042ccf62f3ef55d25854fbdbabf3d8c9b",
+  "verdict": "FAIL_NORMALIZED_SOURCE"
+}
