@@ -1,0 +1,26 @@
+{
+  "evaluation_rows_included": 0,
+  "evidence_sha256": "cbe0ae791786b22eed08ce66484f46cdb7dbfc53a8e84500108184a5767b573a",
+  "files": [
+    {
+      "bytes": 9114,
+      "path": "isolated_worker.py",
+      "sha256": "9cec805647eab834e924a716e23dfa3b11e9f02704484cce0eff2d006649d05d"
+    },
+    {
+      "bytes": 27265,
+      "path": "source_bundle.json",
+      "sha256": "63b14e2fabfe562dce203eb5ea1ca8055dab9fa9185088ba5af5f58ff8ac5846"
+    },
+    {
+      "bytes": 1261,
+      "path": "spec.json",
+      "sha256": "7c66b5402322833e755eb9416aa7a414a1b7ea3f854025118aff4be4f4a974d0"
+    }
+  ],
+  "format": "abi-r18-isolated-factorized-capsule/1",
+  "network": false,
+  "oracle_fields_included": 0,
+  "prompts_included": 0,
+  "success_ids_included": 0
+}

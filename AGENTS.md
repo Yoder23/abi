@@ -308,9 +308,14 @@ arbitrary teacher.
     48/48 functional evaluation rows versus 47/48 for the source and 46/48
     for independent modal consensus, with zero regressions, 0/48 control,
     48/48 removal, strict verification, byte-exact live replay, and 12/12
-    hostile rejection. It authorizes only a preregistered hidden lexical
-    replication. Do not call it unrestricted English, autonomous extraction,
-    LayerCake ingestion, minimality, or LoRA/distillation superiority.
+    hostile rejection. Its preregistered hidden replication then failed 46/48
+    with two source-correct regressions in present-positive plural questions:
+    cross-number pooling selected singular `Does` instead of plural `Do`.
+    Preserve the failure. Do not rerun that selection or tune another source
+    prompt. A successor must materially change factorization and must earn a
+    new hidden replication. Do not call R18 unrestricted English, autonomous
+    extraction, LayerCake ingestion, minimality, or LoRA/distillation
+    superiority.
 
 Do not claim the ABI moonshot until those acquisition and external-quality
 gates are supported by their own evidence.

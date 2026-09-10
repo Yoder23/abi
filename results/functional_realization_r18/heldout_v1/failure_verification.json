@@ -1,0 +1,37 @@
+{
+  "evidence_sha256": "649986a86de2b0465292f1c40279191ad2e4d8e67c5ee56f7d9761edf23e859f",
+  "failed_rows": [
+    {
+      "expected": "Do Ulan and Nia wash the cotton screen?",
+      "package_output": "Does Ulan and Nia wash the cotton screen?",
+      "record_id": "r18-heldout-70d929e22f534ef7c16b",
+      "signature": "question|present|positive|plural",
+      "source_functional_exact": true
+    },
+    {
+      "expected": "Do Orin and Inez record the lunar pattern?",
+      "package_output": "Does Orin and Inez record the lunar pattern?",
+      "record_id": "r18-heldout-04e9ad675044a421a834",
+      "signature": "question|present|positive|plural",
+      "source_functional_exact": true
+    }
+  ],
+  "failed_signatures": [
+    "question|present|positive|plural"
+  ],
+  "format": "abi-r18-heldout-failure-verification/1",
+  "full_abi_moonshot": "OPEN",
+  "gate_passed": false,
+  "metrics": {
+    "control_functional_exact": 0,
+    "evaluation_rows": 48,
+    "independent_modal_functional_exact": 46,
+    "package_functional_exact": 46,
+    "package_source_exact": 43,
+    "removed_abstain": 48,
+    "source_exact_regressions": 2,
+    "source_extraction_rows": 72,
+    "source_functional_exact": 45
+  },
+  "verdict": "FAIL_CONFIRMED"
+}

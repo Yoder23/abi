@@ -1,0 +1,93 @@
+{
+  "artifacts": {
+    "control_bundle": {
+      "path": "mood_permutation_bundle.json",
+      "sha256": "bc0cbde0858603a1df198927e7c21d32eb6eb4e9f10647aa40e35c94f6d4379a"
+    },
+    "control_extraction_result_sha256": "e9a052a3d785f926f1521006f24f993d7470e6234d0cfdd84eaceaf21f6ff2b4",
+    "evaluation": {
+      "path": "evaluation.jsonl",
+      "sha256": "9622b476dd0e4094606ecc50b31ae901eb1275b6e7652c9a82cef8d31dff2af8"
+    },
+    "extraction_result_sha256": "e5761131b92c7a93d00b6b5bc63ed2c00ce13b2fbefe411a0f04ee02947f68eb",
+    "source_bundle": {
+      "path": "source_bundle.json",
+      "sha256": "63b14e2fabfe562dce203eb5ea1ca8055dab9fa9185088ba5af5f58ff8ac5846"
+    },
+    "source_receipt_sha256": "e712d8ec82dffcc962245933a1a9b80a6da4b957c5484f08953d0397f045c5f6",
+    "source_rows_sha256": "a4d82c180c280b21e1e15137d8646ed52e4c7631168537fa80190acb281fcc4e",
+    "source_strict_sha256": "40b9338094ef6c1c62ccadebf4c5ff9f4189ecdfece78c652defa4832b70b743"
+  },
+  "claim": "BOUNDED_REPLICATED_FACTORIZED_ENGLISH_REALIZATION",
+  "claim_ceiling": "NOT_UNRESTRICTED_ENGLISH_OR_LAYERCAKE_ACCEPTANCE",
+  "config_sha256": "71b05661a8e2e16922a53906aa75df8f6dbed919d66a45c7f807394a6d24da31",
+  "control_package": {
+    "bytes": 3883,
+    "path": "control_extraction\\packages\\sha256-17e161c13822ce7fc15ac009b324f8502f88608c6194d6c52f32a57b79eb0790.abipkg",
+    "sha256": "17e161c13822ce7fc15ac009b324f8502f88608c6194d6c52f32a57b79eb0790"
+  },
+  "evidence_sha256": "e50902786940491e10d87fe09038cb31052ed0abd4e4ff75ae711e4030f3fb57",
+  "format": "abi-r18-heldout-factorized-realization/1",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "bridge_parameters_trained": 0,
+    "compiler_elapsed_seconds": 3.51486890000524,
+    "compiler_source_bundle_bytes": 27265,
+    "compiler_source_records": 72,
+    "elapsed_seconds": 103.03129350001109,
+    "final_package_bytes": 3883,
+    "final_templates": 24,
+    "frozen_source_parameters_copied": 0,
+    "frozen_source_parameters_in_package": 0,
+    "hidden_activations_stored": 0,
+    "host_training_steps": 0,
+    "logits_stored": 0,
+    "peak_gpu_memory_bytes": 15325391872,
+    "raw_source_prompts": 120,
+    "rendered_prompt_token_instances": 20740,
+    "rendered_prompt_utf8_bytes": 96516,
+    "source_parameters": 7615616512,
+    "source_training_steps": 0,
+    "teacher_generated_tokens": 1298,
+    "teacher_output_bytes": 4947
+  },
+  "metrics": {
+    "control_functional_exact": 0,
+    "evaluation_rows": 48,
+    "independent_modal_functional_exact": 46,
+    "package_functional_exact": 46,
+    "package_source_exact": 43,
+    "removed_abstain": 48,
+    "source_exact_regressions": 2,
+    "source_extraction_rows": 72,
+    "source_functional_exact": 45
+  },
+  "package": {
+    "bytes": 3883,
+    "path": "extraction\\packages\\sha256-8cade01eddb7de48920568a694ef47db95834d57e665a27f429c73696f211019.abipkg",
+    "sha256": "8cade01eddb7de48920568a694ef47db95834d57e665a27f429c73696f211019",
+    "templates": 24
+  },
+  "protocol_sha256": "963c110d6f8f9c39717042d27efb7edada676d4ff08c23baf46ef1ede9075b4c",
+  "reveal_sha256": "69b050a929ec147f6ce7c407f7f371e5931571d4d864dd4b4053ea11bd5c06b2",
+  "source": {
+    "device": "cuda",
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "parameters": 7615616512,
+    "present_at_compilation": false,
+    "present_at_package_execution": false,
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "snapshot_path_name": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "training_steps": 0
+  },
+  "unproven": [
+    "unrestricted English fluency",
+    "prompt understanding or conversation",
+    "autonomous capability discovery or labeling",
+    "arbitrary-domain extraction",
+    "production LayerCake ingestion",
+    "global minimality",
+    "superiority to LoRA or distillation"
+  ],
+  "verdict": "FAIL"
+}

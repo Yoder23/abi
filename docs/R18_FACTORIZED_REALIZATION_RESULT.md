@@ -1,6 +1,6 @@
 # R18 bounded factorized English realization
 
-Status: `PUBLIC_PREREQUISITE_PASSED; HELD-OUT REPLICATION AUTHORIZED`
+Status: `PUBLIC_PREREQUISITE_PASSED; HELD-OUT REPLICATION FAILED`
 
 R18 replaces R17's failed all-or-nothing teacher-string prerequisite with a
 feature-factorized grammar package and separate functional, source-agreement,
@@ -44,5 +44,26 @@ made by the source while preserving every source-correct evaluation.
 It is not evidence of unrestricted English fluency, autonomous capability
 discovery, arbitrary-domain extraction, production LayerCake ingestion,
 global minimality, or superiority to LoRA or distillation. A preregistered
-lexically hidden replication is the next gate. The full ABI moonshot remains
-open, and R7 remains the controlling public release.
+lexically hidden replication was the next gate.
+
+## Held-out result
+
+The implementation was frozen at `b56ef63`, the hidden seed was committed at
+`db14613`, and it was revealed at `64612c8`. The unchanged GPU teacher then
+produced 120 sealed outputs before compilation. All 24 signatures had 3/3
+parseable extraction rows, so compilation was authorized.
+
+The package scored 46/48 and regressed on two teacher-correct evaluation rows.
+Both failures were present-positive plural questions: noisy extraction evidence
+caused cross-number pooling to choose singular `Does` instead of plural `Do`.
+The independent modal baseline was also 46/48, the teacher was 45/48, the
+control remained 0/48, and removal remained 48/48. Strict recomputation
+confirmed the negative verdict. R18 is therefore not certified.
+
+This isolates a specific architectural error: number pooling is unsafe for
+number-sensitive auxiliaries. A successor may test polarity-contrast
+factorization that learns the positive form from its same-number negative
+counterpart; it may not relabel or rerun this hidden selection as a pass.
+
+The full ABI moonshot remains open, and R7 remains the controlling public
+release.

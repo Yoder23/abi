@@ -180,9 +180,11 @@ package scored 48/48 on lexically disjoint functional realizations, versus
 47/48 for the teacher and 46/48 for independent per-signature consensus. It
 had zero regressions on teacher-correct rows, a 0/48 mood-permutation control,
 and 48/48 removal abstentions. Strict recomputation, 12/12 hostile mutations,
-and a fresh byte-exact physical replay passed. This is a bounded public
-surface-realization prerequisite, not unrestricted English or the ABI
-moonshot. See
+and a fresh byte-exact physical replay passed. The preregistered hidden lexical
+replication then failed at 46/48, with two source-correct plural questions
+regressed by unsafe cross-number auxiliary pooling. This remains a bounded
+public prerequisite, not a certified realization mechanism, unrestricted
+English, or the ABI moonshot. See
 [`docs/R18_FACTORIZED_REALIZATION_RESULT.md`](docs/R18_FACTORIZED_REALIZATION_RESULT.md).
 
 ## R7 at a glance

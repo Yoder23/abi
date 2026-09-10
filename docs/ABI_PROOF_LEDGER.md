@@ -18,7 +18,7 @@ registered evidence.
 | ABI-C4e | A generic frontend can recover a fresh deliberately learned synthetic capability from an anonymous foreign before/after weight delta and emit an exact portable package | R15A: 8/8 held-out recoveries, 88,000 exact oracle rows, three recipients, strict/live/hostile PASS | Bounded local pass |
 | ABI-C4f | A generic frontend can recover a bounded pre-existing capability from anonymous internal source representations without source training | R15B: 4/4 secret mappings, 40,000 exact package rows, three recipients, strict/live/hostile PASS | Bounded local pass |
 | ABI-C4g | An unchanged teacher can supply bounded pre-existing facts that ABI segregates into immutable domain packages and executes without the teacher | R16: two 16/16 selections (27 distinct facts), 96/96 total package/source rows per run, exact namespace/removal controls, byte-exact live replays, 21/21 hostile cases, clean blind review | Bounded replicated blind-reviewed structured-factual local pass |
-| ABI-C4h | ABI can extract teacher-derived compositional English realization into a teacher-absent package | R18 public: 3,881-byte package scored 48/48 functional rows versus teacher 47/48 and independent modal 46/48; zero regressions, 0/48 control, strict/live/12-case hostile PASS | Public bounded prerequisite pass; hidden replication open |
+| ABI-C4h | ABI can extract teacher-derived compositional English realization into a teacher-absent package | R18 public scored 48/48, but preregistered hidden replication scored 46/48 with two source-correct regressions | Open; R18 hidden replication failed |
 | ABI-C4 | End-to-end foreign-teacher behavior copy/paste into frozen heterogeneous hosts with zero host training | R12 strict gate failed; R13-B canonicalized the capability but matched only 372/2,048 source outputs | Open |
 | ABI-C5 | The recipient's native neural computation internalizes the foreign capability | R8 and R9 recipient realization failures | Failed for tested mechanisms |
 | ABI-C6 | ABI extracts and segregates fluent English and arbitrary domains from an open-weight LLM | No sufficient evidence | Open |
@@ -91,7 +91,9 @@ teacher realizations into a feature-factorized 24-template package and
 generalized to supplied unseen lexical slots without the teacher. This is a
 registered surface-realization family, not autonomous prompt understanding,
 conversation, broad English generation, or LayerCake hosting. Promotion
-requires a preregistered hidden lexical replication.
+required a preregistered hidden lexical replication. That replication failed
+46/48 because number pooling copied singular `Does` into a plural signature;
+R18 therefore does not promote ABI-C4h.
 
 ### Teacher-quality English/domain extraction
 
@@ -107,7 +109,7 @@ the bounded synthetic neural-ABI construction. R13-B promotes ABI-C3 and
 ABI-C4c only for local, exhaustively enumerable capability canonicalization.
 R14 promotes no claim because its registered three-capability gate failed.
 R15A promotes ABI-C4e only, R15B promotes ABI-C4f only, R16 promotes ABI-C4g
-only, and R18 has only a public prerequisite for ABI-C4h. None promotes
+only, and R18 failed the hidden gate for ABI-C4h. None promotes
 ABI-C4 teacher-behavior copying,
 ABI-C5, ABI-C6, ABI-C7, or ABI-C8. Foreign-teacher behavioral transplantation
 and English/domain quality remain separate registered lines.

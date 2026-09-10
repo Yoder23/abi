@@ -12,7 +12,13 @@
   byte-exact fresh physical replay, and 12/12 hostile mutations.
 - Kept unrestricted English, autonomous labeling, LayerCake ingestion,
   minimality, and LoRA/distillation superiority explicitly open. A
-  preregistered hidden lexical replication is authorized.
+  preregistered hidden lexical replication was authorized.
+- Froze the hidden implementation, committed its seed before reveal, and
+  sealed all 120 GPU teacher outputs before compilation. All signatures were
+  3/3 parseable.
+- Preserved the hidden failure: package 46/48, teacher 45/48, modal baseline
+  46/48, two source-correct regressions, 0/48 control, and 48/48 removal. The
+  measured cause was unsafe number pooling for plural present auxiliaries.
 
 ## R17 public compositional English prerequisite - 2026-09-10
 
