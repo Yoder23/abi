@@ -1,0 +1,257 @@
+{
+  "aggregates": {
+    "abi_factorized:21021": {
+      "adherent": 120,
+      "functional": 120,
+      "functional_by_task": {
+        "abstention": 20,
+        "bullets": 20,
+        "clarification": 20,
+        "email": 20,
+        "prose": 20,
+        "summary": 20
+      },
+      "mean_teacher_lexical_f1": 0.64927896005958,
+      "non_collapsed": 120,
+      "non_hallucinating": 120,
+      "rows": 120,
+      "semantic": 120
+    },
+    "abi_factorized:21022": {
+      "adherent": 120,
+      "functional": 120,
+      "functional_by_task": {
+        "abstention": 20,
+        "bullets": 20,
+        "clarification": 20,
+        "email": 20,
+        "prose": 20,
+        "summary": 20
+      },
+      "mean_teacher_lexical_f1": 0.6549015961902206,
+      "non_collapsed": 120,
+      "non_hallucinating": 120,
+      "rows": 120,
+      "semantic": 120
+    },
+    "abi_factorized:21023": {
+      "adherent": 120,
+      "functional": 120,
+      "functional_by_task": {
+        "abstention": 20,
+        "bullets": 20,
+        "clarification": 20,
+        "email": 20,
+        "prose": 20,
+        "summary": 20
+      },
+      "mean_teacher_lexical_f1": 0.6474301052764708,
+      "non_collapsed": 120,
+      "non_hallucinating": 120,
+      "rows": 120,
+      "semantic": 120
+    },
+    "labeled_monolith:21021": {
+      "adherent": 114,
+      "functional": 99,
+      "functional_by_task": {
+        "abstention": 14,
+        "bullets": 20,
+        "clarification": 5,
+        "email": 20,
+        "prose": 20,
+        "summary": 20
+      },
+      "mean_teacher_lexical_f1": 0.6687975578192743,
+      "non_collapsed": 120,
+      "non_hallucinating": 120,
+      "rows": 120,
+      "semantic": 99
+    },
+    "labeled_monolith:21022": {
+      "adherent": 119,
+      "functional": 100,
+      "functional_by_task": {
+        "abstention": 19,
+        "bullets": 20,
+        "clarification": 4,
+        "email": 20,
+        "prose": 20,
+        "summary": 17
+      },
+      "mean_teacher_lexical_f1": 0.6614888407726096,
+      "non_collapsed": 120,
+      "non_hallucinating": 120,
+      "rows": 120,
+      "semantic": 100
+    },
+    "labeled_monolith:21023": {
+      "adherent": 112,
+      "functional": 110,
+      "functional_by_task": {
+        "abstention": 12,
+        "bullets": 20,
+        "clarification": 18,
+        "email": 20,
+        "prose": 20,
+        "summary": 20
+      },
+      "mean_teacher_lexical_f1": 0.6603174995475413,
+      "non_collapsed": 120,
+      "non_hallucinating": 120,
+      "rows": 120,
+      "semantic": 110
+    },
+    "raw_sequence:21021": {
+      "adherent": 85,
+      "functional": 32,
+      "functional_by_task": {
+        "abstention": 10,
+        "bullets": 5,
+        "clarification": 2,
+        "email": 15,
+        "prose": 0,
+        "summary": 0
+      },
+      "mean_teacher_lexical_f1": 0.44856181781914795,
+      "non_collapsed": 120,
+      "non_hallucinating": 87,
+      "rows": 120,
+      "semantic": 46
+    },
+    "raw_sequence:21022": {
+      "adherent": 71,
+      "functional": 32,
+      "functional_by_task": {
+        "abstention": 11,
+        "bullets": 5,
+        "clarification": 1,
+        "email": 15,
+        "prose": 0,
+        "summary": 0
+      },
+      "mean_teacher_lexical_f1": 0.42758650790038855,
+      "non_collapsed": 120,
+      "non_hallucinating": 99,
+      "rows": 120,
+      "semantic": 42
+    },
+    "raw_sequence:21023": {
+      "adherent": 66,
+      "functional": 27,
+      "functional_by_task": {
+        "abstention": 10,
+        "bullets": 5,
+        "clarification": 2,
+        "email": 10,
+        "prose": 0,
+        "summary": 0
+      },
+      "mean_teacher_lexical_f1": 0.4445353113385518,
+      "non_collapsed": 119,
+      "non_hallucinating": 113,
+      "rows": 120,
+      "semantic": 38
+    }
+  },
+  "claim": "R21_BOUNDED_HIDDEN_REPLICATED_LABEL_SEPARATED_GENERATIVE_TRANSFER",
+  "claim_ceiling": "NOT_UNRESTRICTED_ENGLISH_OR_ABI_MOONSHOT",
+  "comparisons": {
+    "seed21021:abi_minus_labeled_monolith": {
+      "bootstrap_samples": 10000,
+      "ci95_high": 0.25,
+      "ci95_low": 0.10833333333333334,
+      "mean_difference": 0.175
+    },
+    "seed21021:abi_minus_raw_sequence": {
+      "bootstrap_samples": 10000,
+      "ci95_high": 0.8083333333333333,
+      "ci95_low": 0.65,
+      "mean_difference": 0.7333333333333333
+    },
+    "seed21021:abi_minus_teacher": {
+      "bootstrap_samples": 10000,
+      "ci95_high": 0.275,
+      "ci95_low": 0.13333333333333333,
+      "mean_difference": 0.2
+    },
+    "seed21022:abi_minus_labeled_monolith": {
+      "bootstrap_samples": 10000,
+      "ci95_high": 0.23333333333333334,
+      "ci95_low": 0.1,
+      "mean_difference": 0.16666666666666666
+    },
+    "seed21022:abi_minus_raw_sequence": {
+      "bootstrap_samples": 10000,
+      "ci95_high": 0.8083333333333333,
+      "ci95_low": 0.65,
+      "mean_difference": 0.7333333333333333
+    },
+    "seed21022:abi_minus_teacher": {
+      "bootstrap_samples": 10000,
+      "ci95_high": 0.275,
+      "ci95_low": 0.13333333333333333,
+      "mean_difference": 0.2
+    },
+    "seed21023:abi_minus_labeled_monolith": {
+      "bootstrap_samples": 10000,
+      "ci95_high": 0.13333333333333333,
+      "ci95_low": 0.03333333333333333,
+      "mean_difference": 0.08333333333333333
+    },
+    "seed21023:abi_minus_raw_sequence": {
+      "bootstrap_samples": 10000,
+      "ci95_high": 0.85,
+      "ci95_low": 0.7,
+      "mean_difference": 0.775
+    },
+    "seed21023:abi_minus_teacher": {
+      "bootstrap_samples": 10000,
+      "ci95_high": 0.275,
+      "ci95_low": 0.13333333333333333,
+      "mean_difference": 0.2
+    }
+  },
+  "config_sha256": "2a6de05869d4709739b1d0583af692ae3c97853dd751e6bf0a99686a11caf5fc",
+  "cpu_observations": {
+    "path": "cpu_observations.jsonl",
+    "rows": 54,
+    "sha256": "edce7ce3abb9634456e123ec0ab38b8251b0c68e31385fcb1c2bea71ffaf53aa"
+  },
+  "elapsed_seconds": 97.78419289999874,
+  "evidence_sha256": "ef79b3ac5a02f6a3d278843390b2235009fa8b89ff5a5005194055a3423ac4d5",
+  "format": "abi-r21-hidden-result/1",
+  "full_abi_moonshot": "OPEN",
+  "gates": {
+    "all_packages_frozen": true,
+    "cpu_gpu_rows_complete": true,
+    "each_seed_each_task": true,
+    "each_seed_no_worse_than_controls": true,
+    "each_seed_no_worse_than_teacher": true,
+    "each_seed_non_collapsed": true,
+    "each_seed_non_hallucinating": true,
+    "gpu_rows_complete": true,
+    "label_exact": true,
+    "student_retraining_zero": true,
+    "teacher_absent_at_execution": true
+  },
+  "label_exact": 120,
+  "next_action": "strictly verify hidden evidence",
+  "observations": {
+    "path": "observations.jsonl",
+    "rows": 1080,
+    "sha256": "3dfe71bcec653f401692556f80d6a995e38d240baf179941ac0338c1ba557693"
+  },
+  "public_engine_sha256": "2d0632975a09e3b5b59f2802140dec05f4b273411ec2bcf61b1c163060602732",
+  "seed_reveal_sha256": "10ff19b234c2ed6082259cf163f1dd8b2f2c5288d171855d80495fdda4e570f4",
+  "source_receipt_sha256": "c4c3d37bb5a68d518fdca707078d44282cf251567b05eac989f3d46602d15856",
+  "source_rows_sha256": "f24acf1f1e49b16bbe33c2b7bca945b09bf78ff4a31c944937e204e73fce3ee4",
+  "student_training_steps": 0,
+  "teacher": {
+    "functional": 96,
+    "non_collapsed": 120,
+    "non_hallucinating": 120
+  },
+  "teacher_present_at_execution": false,
+  "verdict": "PASS_HIDDEN_REPLICATION"
+}
