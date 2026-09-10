@@ -179,3 +179,29 @@ before/after delta. Pre-existing English/domain extraction, labeling,
 teacher-quality generation, after-only extraction, minimality, LayerCake
 ingestion, and LoRA/distillation superiority remain open. See
 [R15_FOREIGN_NEURAL_STATE_RESULT.md](R15_FOREIGN_NEURAL_STATE_RESULT.md).
+
+## Additive R15B held-out result
+
+R15B passes its preregistered bounded local claim for pre-existing
+representation recovery. Qwen2-7B-Instruct remained unchanged and supplied 24
+correct source-generated atomic answers across four secret slot mappings. A
+generic zero-parameter decoder recovered all four transitions from anonymous
+pre-answer residuals plus the corresponding frozen digit output-head rows in
+physical Linux pivot-root/no-network capsules.
+
+Four 2,053-byte packages scored 40,000/40,000 on registered depth-13 through
+depth-18 oracle cases and produced byte-exact live replay across 33,792 Pythia,
+Qwen2, and T5 recipient rows. Strict verification passed, fresh live execution
+repeated the source generations and four physical extractions, and 10/10
+hostile mutations failed closed. The source and all recipients received zero
+training; the final packages contain no frozen source parameters.
+
+The result is limited to a registered arithmetic representation. Prompts state
+the operation, source reasoning can expose the answer before the captured
+position, semantic labels are externally registered, and the package's deep
+oracle behavior comes from the registered affine transition interpreter rather
+than exact deep source behavior. R15B therefore does not prove English or
+open-world domain extraction, autonomous labeling, minimality, teacher-quality
+generation, production LayerCake ingestion, or superiority over LoRA or
+distillation. See
+[R15B_PREEXISTING_REPRESENTATION_RESULT.md](R15B_PREEXISTING_REPRESENTATION_RESULT.md).

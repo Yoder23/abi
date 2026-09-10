@@ -1,0 +1,55 @@
+{
+  "evidence_sha256": "d251ddc91e8154c68c2f8b6308ad955b5f81353cf266fe1a5b1befddde173315",
+  "extractions": [
+    {
+      "path": "extractions\\anonymous-00",
+      "result_sha256": "fb8625abd082ab59237fa34e12dca6b4bfc1770a6ed93ed263458f6f2b3045e3",
+      "scientific_evidence_sha256": "19597b3ce392244f65ba3dcb455c9f7bb6ba2a3465eae8b8c831c8569c23bb2d"
+    },
+    {
+      "path": "extractions\\anonymous-01",
+      "result_sha256": "92e2e1c57c9f7366018f01baefef7ec41e79341f070e862aa3e79ae71111602d",
+      "scientific_evidence_sha256": "128e005ad070f8eb1803ffc7dce051337248e509350e9f11c6a3082d0407e650"
+    },
+    {
+      "path": "extractions\\anonymous-02",
+      "result_sha256": "9073138f47dd4ccebd59b1814739231134e9a2c4530eac0e5e6badb8ad333395",
+      "scientific_evidence_sha256": "d7ec350ab13d48c31417ee88811f7332ec9ddf383906759cf2249ae07d64ea39"
+    },
+    {
+      "path": "extractions\\anonymous-03",
+      "result_sha256": "2cb81071385c9436a0eee4d6ee42990b1c1acaa247165d8074f6818201711940",
+      "scientific_evidence_sha256": "1f9334ecb17de2e6eb57c29d006f43fd201df54d7fb534b680ae54986f28d3ad"
+    }
+  ],
+  "format": "abi-r15b-live-verification/1",
+  "isolated_extractions_replayed": 4,
+  "recipient_rows_replayed_byte_exact": 33792,
+  "recipients": [
+    {
+      "codec_sha256": "20fba892f576e147761b3d71566809daedea4d3edbc1fe5871fe2189ef198cfd",
+      "host": "pythia",
+      "model_state_sha256": "54d67dd87a3b2a68f8e9bd71af503d78be0c41f7601d648a61a39d199e3be985",
+      "rows": 11264,
+      "rows_sha256": "9f22bbeaf834b965be033bbc538a8501caa8497306c3e8a86c1dc2c0fbe1b4ff"
+    },
+    {
+      "codec_sha256": "e1ce0aa3fb38054ba176ae70f43965fdb5a7a35e2f932d7dacd9ba3515851b4e",
+      "host": "qwen2",
+      "model_state_sha256": "4cbdc39b72efcc22dfc47710548ed6a50d6cb2233327951421361ccbfb11e6e1",
+      "rows": 11264,
+      "rows_sha256": "46d91115c14ef5079bc042090ed8443e0c1908298ac1c4d6153fb4fb291f8f60"
+    },
+    {
+      "codec_sha256": "bd9625ab888ffaef104d4dc3eb04f7a45cd8a92a50c1d8e26d3ecafac59564fe",
+      "host": "t5",
+      "model_state_sha256": "1608260bd9389c970d43869ef7b7e0da150f1d752f1a667d0f8895a385fa185d",
+      "rows": 11264,
+      "rows_sha256": "8079937110ae4106ad96d7266a6a42b3664da3200655c71d836c07800a10b364"
+    }
+  ],
+  "source_rows_replayed_byte_exact": 24,
+  "source_rows_sha256": "7da668a364cff59c497e115fc6c9ea18ad42e54b58597674aee968d7f236e1ef",
+  "strict_claim": "BOUNDED_PREEXISTING_REPRESENTATION_CAPABILITY_RECOVERY",
+  "verdict": "PASS"
+}

@@ -122,6 +122,19 @@ release until R15A assets receive durable publication and clean reconstruction.
 A fresh blind review of the exact R15A evidence commit returned `PASS` with no
 critical or high-severity blocker and preserved that claim ceiling.
 
+R15B status:
+`R15B_BOUNDED_PREEXISTING_REPRESENTATION_RECOVERY_PASSED_LOCAL`
+
+R15B used an unchanged pretrained Qwen2-7B-Instruct source with zero training.
+Across four secret anonymous slot mappings, a physical representation-only
+decoder recovered 4/4 transitions, emitted unchanged R11 packages, scored
+40,000/40,000 deep oracle rows, and executed across Pythia, Qwen2, and T5.
+Strict recomputation, live replay of 24 source rows and 33,792 recipient rows,
+and 10/10 hostile mutations passed. The labels were externally registered and
+the source failed deep Track A behavior, so English/domain extraction,
+autonomous labeling, teacher cloning, and LoRA/distillation superiority remain
+open. R7 remains the controlling published release.
+
 ## What R7 proves
 
 R7 proves one bounded capability ABI result: four immutable packages execute
@@ -164,7 +177,8 @@ The blind reviewer returned `VERDICT: PASS` for this exact scope.
 | Held-out enumerable capability canonicalization | BOUNDED LOCAL PASS; R13-B, publication open |
 | Non-exhaustive synthetic capability recovery | FAILED; R14 recovered 1/3 fresh capabilities |
 | Foreign learned-weight-delta capability recovery | BOUNDED LOCAL PASS; R15A recovered 8/8 and passed strict/live/hostile verification |
-| Pre-existing English/domain knowledge extraction | OPEN; not established by R15A |
+| Pre-existing representation capability recovery | BOUNDED LOCAL PASS; R15B recovered 4/4 secret arithmetic mappings with zero source training |
+| Pre-existing English/domain knowledge extraction | OPEN; not established by R15A or R15B |
 | Exact foreign-teacher behavioral transplantation | OPEN; separate Track A |
 
 ## Current objective

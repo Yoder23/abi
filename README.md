@@ -125,6 +125,24 @@ result does not establish extraction or labeling of pretrained English/domain
 knowledge, teacher-quality natural generation, after-only extraction,
 LayerCake English-core ingestion, minimality, or LoRA/distillation superiority.
 
+R15B removes the source-training requirement for one deliberately narrow
+representation prerequisite. An unchanged Qwen2-7B-Instruct generated 24/24
+registered atomic answers under four secret slot mappings. A frozen,
+zero-parameter decoder operating in a Linux pivot-root/no-network capsule
+recovered all four transitions from pre-answer residuals and frozen digit-head
+rows. The resulting four 2,053-byte R11 packages scored 40,000/40,000 on the
+registered deep oracle and reproduced 33,792 recipient rows across Pythia,
+Qwen2, and T5; strict and live verification passed and 10/10 hostile mutations
+were rejected. See
+[`docs/R15B_PREEXISTING_REPRESENTATION_RESULT.md`](docs/R15B_PREEXISTING_REPRESENTATION_RESULT.md).
+
+R15B is not English or open-world domain extraction. Its prompts explicitly
+state the arithmetic operation, source reasoning may expose the answer before
+the captured position, semantic labels are externally registered, and the
+package's deep generalization comes from the registered affine inductive bias.
+The full ABI moonshot therefore remains open, and R7 remains the controlling
+published release.
+
 ## R7 at a glance
 
 | Evidence | Result |
@@ -263,6 +281,12 @@ See `docs/ABI_TECHNICAL_CLAIMS.md`, `docs/ABI_FINAL_RESULTS.md`, and the
   hostile audit.
 - `results/foreign_neural_state_r15/` — compact R15A certificate and local
   immutable run lineage; bulk raw observations are not yet public.
+- `experiments/preexisting_representation_r15b/` — R15B public qualification,
+  preregistered held-out protocol, isolated representation decoder, and
+  fail-closed verification.
+- `results/preexisting_representation_r15b/` — compact R15B certificate and
+  local evidence lineage; bulk recipient replay rows are intentionally
+  excluded from Git.
 - `external_reproduction/` — independent-operator workflow and environment
   lock.
 - `review_packet/` — ordered technical and external-review handoff.

@@ -1,0 +1,78 @@
+{
+  "artifact_publication": "LOCAL_SEAL_PENDING_PUBLIC_RECONSTRUCTION",
+  "chronology": {
+    "implementation_freeze_commit": "0d4a75c771cbc46ce2680c81a57ce5ce193acdd0",
+    "preregistration_commit": "8a51dae0512d983798bd4b4c3afb0157ce9a6456",
+    "reveal_commit": "dafefc97b785d4ed8d3344a5904389560790e2b5"
+  },
+  "claim": "BOUNDED_PREEXISTING_REPRESENTATION_CAPABILITY_RECOVERY",
+  "claim_ceiling": "NOT_ENGLISH_DOMAIN_OR_TEACHER_BEHAVIOR_CLONING",
+  "evidence": {
+    "accounting_receipt_sha256": "a48fd3c395037859cb0d78147553374653000583faba38446e27c1e4b4c5ec99",
+    "hostile_receipt_sha256": "2cda55eb963c49d0d435a90d80b22fd5259d592134a826faa5afb8b4f2439ba3",
+    "live_receipt_sha256": "dbac4400e50c0a1fb0f14031f674621c7cdd140a70ed44179ce19f3cc5ff25d4",
+    "run_receipt_sha256": "7591cbf3b7ff22ccccf1564e955ec562b63fc164da3879f7694e847dd83a65bc",
+    "strict_receipt_sha256": "1b913e9d43470730a287ad518eef799179baa962a63e3726913f3145a3476bb9"
+  },
+  "evidence_sha256": "77c1518eec8aacd9e09d8bdf875bf8a22c323e53fb32ea7ee3321d1845863383",
+  "format": "abi-r15b-bounded-certificate/1",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "bridge_parameters_trained": 0,
+    "canonical_logits_stored": 192,
+    "claim_ceiling": "ACCOUNTING_FOR_R15B_ONLY_NOT_GLOBAL_MINIMALITY",
+    "evidence_sha256": "92147c17cf1b0269d233bb0b13828753b64d833a0c1bceac3de11c6d4ee9dfcb",
+    "external_hardware_used": false,
+    "final_package_disk_bytes": 8212,
+    "final_transition_parameters": 768,
+    "format": "abi-r15b-imported-information-accounting/1",
+    "frozen_source_parameters_in_final_packages": 0,
+    "hidden_activation_bytes": 344064,
+    "hidden_activation_values_stored": 86016,
+    "peak_cpu_ram_bytes": "NOT_MEASURED",
+    "peak_gpu_memory_bytes": "NOT_MEASURED",
+    "raw_source_prompts": 24,
+    "recipient_training_steps": 0,
+    "representation_bundle_disk_bytes": 803776,
+    "semantic_label_disk_bytes": 2208,
+    "source_model_inference_seconds": 93.58986369999184,
+    "source_output_weight_bytes": 458752,
+    "source_output_weight_values_stored": 114688,
+    "source_rows_sha256": "7da668a364cff59c497e115fc6c9ea18ad42e54b58597674aee968d7f236e1ef",
+    "source_training_steps": 0,
+    "teacher_generated_output_bytes": 5260,
+    "teacher_generated_tokens": 1572,
+    "unique_prompt_utf8_bytes": 1164,
+    "unique_source_output_parameters_copied_transiently": 28672,
+    "unique_source_prompts": 6
+  },
+  "results": {
+    "capabilities_exact": 4,
+    "hostile_cases_rejected": 10,
+    "hostile_cases_total": 10,
+    "live_recipient_rows": 33792,
+    "live_source_rows": 24,
+    "package_rows_exact": 40000,
+    "package_rows_total": 40000,
+    "recipient_hosts": [
+      "pythia",
+      "qwen2",
+      "t5"
+    ],
+    "source_anchors_exact": 24,
+    "source_anchors_total": 24,
+    "source_model": "Qwen/Qwen2-7B-Instruct",
+    "source_training_steps": 0
+  },
+  "unproven": [
+    "deep teacher-behavior cloning",
+    "arbitrary pretrained knowledge extraction",
+    "English fluency transfer",
+    "autonomous open-world domain discovery or labeling",
+    "minimal English substrate",
+    "production LayerCake ingestion",
+    "superiority to LoRA or distillation",
+    "independent different-hardware reproduction"
+  ],
+  "verdict": "PASS"
+}

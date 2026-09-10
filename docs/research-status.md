@@ -26,6 +26,7 @@ fresh blind Codex review. Human quality and independent hardware remain open.
 | R10 end-to-end source-behavior copy/paste | Failed source-native generalization gate |
 | R11 ABI-native neural copy/paste construction | Passed 90,112 rows, exact frozen-package replay, 7/7 hostile controls |
 | Conventional open-weight learned-delta extraction into R11 ABI | Bounded local pass; R15A 8/8 with strict/live/hostile verification |
+| Pre-existing source representation extraction into R11 ABI | Bounded local pass; R15B 4/4 with zero source training and strict/live/hostile verification |
 | Pre-existing open-weight English/domain extraction | Open |
 | LoRA/distillation superiority | Unproven |
 
@@ -71,6 +72,13 @@ deliberately taught with complete atomic supervision. Pre-existing knowledge
 discovery, semantic labeling and segregation, fluent English/domain quality,
 minimality, LayerCake ingestion, and LoRA/distillation comparisons have not yet
 been established.
+
+R15B advances the frontend to an unchanged pretrained source. Four secret
+modular-arithmetic slot mappings were recovered from anonymous pre-answer
+representations and executed through the same packages and hosts. Its labels
+are externally registered and its deep source behavior fails, so it is not
+English/domain extraction or teacher cloning. The full ABI moonshot remains
+open.
 
 Historical campaign records remain available in `evidence/current/`,
 `results/`, and the research-history branch. Later evidence supersedes a claim

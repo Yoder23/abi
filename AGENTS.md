@@ -114,6 +114,18 @@ before/after foreign neural delta. Pre-existing knowledge, English/domain
 extraction, semantic labeling, teacher-quality generation, after-only
 extraction, LayerCake ingestion, and LoRA/distillation superiority remain open.
 
+The additive R15B pre-existing-representation campaign is a bounded local pass
+and does not alter the R7 public release. An unchanged Qwen2-7B-Instruct source
+with zero training produced 24/24 atomic anchors under four secret semantic-slot
+mappings. A physically isolated generic decoder recovered all four transitions
+from anonymous pre-answer residuals plus eight output-head rows, emitted four
+unchanged R11 packages, and scored 40,000/40,000 deep oracle rows. Strict and
+live verification passed across Pythia, Qwen2, and T5, and 10/10 hostile
+mutations failed closed. R15B proves only narrow pretrained arithmetic
+representation recovery with an externally registered ontology. Deep teacher
+behavior, English/domain discovery, autonomous labeling, LayerCake ingestion,
+minimality, and LoRA/distillation superiority remain open.
+
 ## Exact proven scope
 
 The four published immutable capability packages execute through the canonical
@@ -226,6 +238,13 @@ arbitrary teacher.
     stage must test pre-existing, non-enumerable source capabilities with
     contamination-resistant labels and holdouts. Keep the R11 package and
     recipient boundary frozen and report Track A teacher behavior separately.
+11. Preserve R15B as the passed pre-existing representation prerequisite. Its
+    source prompts explicitly specify modular arithmetic, its generated
+    reasoning may expose the answer before the captured final position, and its
+    labels are externally registered. The next stage must remove these
+    shortcuts by extracting a broader pre-existing capability whose held-out
+    behavior and semantic segregation are independently scored. Do not call
+    R15B English or arbitrary-domain extraction.
 
 Do not claim the ABI moonshot until those acquisition and external-quality
 gates are supported by their own evidence.

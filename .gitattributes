@@ -28,5 +28,9 @@ results/foreign_neural_state_r15/**/*.json -binary diff merge text eol=lf
 results/foreign_neural_state_r15/**/*.abipkg -binary diff merge text eol=lf
 results/foreign_neural_state_r15/**/*.md -binary diff merge text eol=lf
 results/preexisting_representation_r15b/**/*.json -binary diff merge text eol=lf
+results/preexisting_representation_r15b/**/*.jsonl -binary diff merge text eol=lf
+results/preexisting_representation_r15b/**/*.md -binary diff merge text eol=lf
+results/preexisting_representation_r15b/**/*.txt -binary diff merge text eol=lf
+results/preexisting_representation_r15b/**/*.abipkg -binary diff merge text eol=lf
 *.safetensors filter=lfs diff=lfs merge=lfs -text
 evidence/current/** binary

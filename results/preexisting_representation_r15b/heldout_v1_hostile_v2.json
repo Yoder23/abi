@@ -1,0 +1,59 @@
+{
+  "cases": [
+    {
+      "case": "missing_bundle",
+      "error": "R14Error",
+      "rejected": true
+    },
+    {
+      "case": "corrupt_bundle",
+      "error": "R14Error",
+      "rejected": true
+    },
+    {
+      "case": "missing_package",
+      "error": "R11Error",
+      "rejected": true
+    },
+    {
+      "case": "corrupt_package",
+      "error": "R11Error",
+      "rejected": true
+    },
+    {
+      "case": "missing_label",
+      "error": "FileNotFoundError",
+      "rejected": true
+    },
+    {
+      "case": "corrupt_source_rows",
+      "error": "R14Error",
+      "rejected": true
+    },
+    {
+      "case": "missing_isolated_result",
+      "error": "FileNotFoundError",
+      "rejected": true
+    },
+    {
+      "case": "missing_recipient_rows",
+      "error": "R14Error",
+      "rejected": true
+    },
+    {
+      "case": "tampered_receipt",
+      "error": "R14Error",
+      "rejected": true
+    },
+    {
+      "case": "wrong_reveal",
+      "error": "R14Error",
+      "rejected": true
+    }
+  ],
+  "cases_passed": 10,
+  "cases_total": 10,
+  "evidence_sha256": "b4d221ee82bd542c6ae7b9b843f419c95ac4b4ad02dfe0fe5041f64a8d0b3dfe",
+  "format": "abi-r15b-hostile-audit/1",
+  "verdict": "PASS"
+}

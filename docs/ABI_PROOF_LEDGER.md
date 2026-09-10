@@ -16,6 +16,7 @@ registered evidence.
 | ABI-C4c | A conventional source can expose a complete enumerable capability that ABI canonicalizes and executes exactly across frozen heterogeneous hosts | R13-B: 96/96 atoms, 2,048/2,048 oracle, 12,288 AFTER/RESTORED recipient rows, 7/7 byte-exact replays | Bounded enumerable local pass |
 | ABI-C4d | A conventional source can support reliable non-exhaustive capability recovery from mixed behavior | R14: one of three fresh programs recovered; two latent selections failed | Failed for tested output-probability frontend |
 | ABI-C4e | A generic frontend can recover a fresh deliberately learned synthetic capability from an anonymous foreign before/after weight delta and emit an exact portable package | R15A: 8/8 held-out recoveries, 88,000 exact oracle rows, three recipients, strict/live/hostile PASS | Bounded local pass |
+| ABI-C4f | A generic frontend can recover a bounded pre-existing capability from anonymous internal source representations without source training | R15B: 4/4 secret mappings, 40,000 exact package rows, three recipients, strict/live/hostile PASS | Bounded local pass |
 | ABI-C4 | End-to-end foreign-teacher behavior copy/paste into frozen heterogeneous hosts with zero host training | R12 strict gate failed; R13-B canonicalized the capability but matched only 372/2,048 source outputs | Open |
 | ABI-C5 | The recipient's native neural computation internalizes the foreign capability | R8 and R9 recipient realization failures | Failed for tested mechanisms |
 | ABI-C6 | ABI extracts and segregates fluent English and arbitrary domains from an open-weight LLM | No sufficient evidence | Open |
@@ -68,6 +69,12 @@ byte. The source capabilities were deliberately installed through complete
 atomic supervision, so R15A does not establish pre-existing knowledge
 extraction, semantic labeling, English/domain transfer, or Track A equality.
 
+R15B establishes ABI-C4f for a narrow modular-arithmetic representation
+interface. It uses an unchanged pretrained source, but the prompts specify the
+operations, source reasoning may state the answer before the captured position,
+and labels are externally registered. It does not establish autonomous
+discovery, English/domain transfer, or teacher-behavior equality.
+
 ### Teacher-quality English/domain extraction
 
 An open-weight source is diagnosed, English and domain knowledge are separated,
@@ -81,6 +88,6 @@ R10 promotes only ABI-C4a, the bounded runtime component. R11 promotes ABI-C4b,
 the bounded synthetic neural-ABI construction. R13-B promotes ABI-C3 and
 ABI-C4c only for local, exhaustively enumerable capability canonicalization.
 R14 promotes no claim because its registered three-capability gate failed.
-R15A promotes ABI-C4e only. None promotes ABI-C4 teacher-behavior copying,
+R15A promotes ABI-C4e only, and R15B promotes ABI-C4f only. None promotes ABI-C4 teacher-behavior copying,
 ABI-C5, ABI-C6, ABI-C7, or ABI-C8. Foreign-teacher behavioral transplantation
 and English/domain quality remain separate registered lines.

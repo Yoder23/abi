@@ -1,5 +1,23 @@
 # Changelog
 
+## R15B bounded pre-existing representation recovery - 2026-09-09
+
+- Used an unchanged Qwen2-7B-Instruct source with zero source training and a
+  secret mapping of three pretrained modular-arithmetic operations.
+- Recovered 4/4 mappings from six anonymous pre-answer residuals plus eight
+  frozen output-head rows per capability inside physical no-network capsules.
+- Emitted four unchanged 2,053-byte R11 packages that scored 40,000/40,000 on
+  deep oracle rows and executed across frozen Pythia, Qwen2, and T5 recipients
+  with zero recipient training.
+- Replayed 24 source rows, four physical extractions, and 33,792 recipient rows;
+  raw source and recipient observations were byte-exact.
+- Passed strict recomputation and 10/10 hostile mutations with explicit
+  imported-information accounting.
+- Preserved the claim ceiling: externally registered labels, source reasoning
+  that may expose answers before capture, and failed deep teacher behavior mean
+  this is not English/domain discovery, teacher cloning, minimality, or
+  LoRA/distillation superiority.
+
 ## R15A bounded foreign neural-state recovery - 2026-09-09
 
 - Replaced the failed R14 output-probability frontend with controlled access

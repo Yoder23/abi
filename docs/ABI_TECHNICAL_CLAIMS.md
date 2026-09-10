@@ -175,3 +175,19 @@ does not establish English/domain discovery or labeling, after-only extraction,
 teacher-quality natural-language generation, minimality, LayerCake ingestion,
 Track A equality, or superiority over LoRA/distillation. See
 [R15_FOREIGN_NEURAL_STATE_RESULT.md](R15_FOREIGN_NEURAL_STATE_RESULT.md).
+
+## Additive R15B pre-existing representation result
+
+R15B supports one additional bounded claim: an unchanged pretrained
+Qwen2-7B-Instruct source can expose a compact internal representation from
+which a generic zero-parameter decoder recovers a registered arithmetic
+transition and emits unchanged R11 packages. Four secret slot mappings passed,
+the source received zero training, packages scored 40,000/40,000 oracle rows,
+and strict/live/hostile verification passed across Pythia, Qwen2, and T5.
+
+This is not deep teacher-behavior cloning. The prompts explicitly specify the
+arithmetic, generated reasoning may contain the answer before the captured
+position, and semantic labels are externally registered. R15B therefore does
+not support English/domain discovery, autonomous labeling, minimality,
+LayerCake product ingestion, or LoRA/distillation superiority. See
+[R15B_PREEXISTING_REPRESENTATION_RESULT.md](R15B_PREEXISTING_REPRESENTATION_RESULT.md).

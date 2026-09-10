@@ -1,0 +1,26 @@
+{
+  "answers_included": 0,
+  "evidence_sha256": "2f4078fba17c75429b5da0f180a5e565c926e0cd140e1624ac574f3531d8ca73",
+  "files": [
+    {
+      "bytes": 7641,
+      "path": "isolated_worker.py",
+      "sha256": "67b456280fda88e45ecbd1e3a0fe0f759d7b9839251cab9518d31f2d3090522b"
+    },
+    {
+      "bytes": 200944,
+      "path": "representation.safetensors",
+      "sha256": "6d79124c34fa9902b29b8236b41a68ef5f7d03904d77548acad68515f36559b4"
+    },
+    {
+      "bytes": 306,
+      "path": "spec.json",
+      "sha256": "1991648fe20f218f40c031c0acf7b4dda211f2912da5f8437f8bb2401c395eaa"
+    }
+  ],
+  "format": "abi-r15b-isolated-representation-capsule/1",
+  "network": false,
+  "prompts_included": 0,
+  "reveal_files_included": 0,
+  "semantic_labels_included": 0
+}

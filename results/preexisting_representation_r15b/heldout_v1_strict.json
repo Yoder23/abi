@@ -1,0 +1,16 @@
+{
+  "capabilities_exact": 4,
+  "claim": "BOUNDED_PREEXISTING_REPRESENTATION_CAPABILITY_RECOVERY",
+  "claim_ceiling": "NOT_ENGLISH_DOMAIN_OR_TEACHER_BEHAVIOR_CLONING",
+  "evidence_sha256": "5f7714308d327cddf5141ad4777f5023b0916445c71b11ce53afeed0a42b7324",
+  "format": "abi-r15b-strict-verification/1",
+  "package_evaluation_rows": 40000,
+  "recipient_hosts": [
+    "pythia",
+    "qwen2",
+    "t5"
+  ],
+  "source_training_steps": 0,
+  "teacher_present_at_recipient_execution": false,
+  "verdict": "PASS"
+}

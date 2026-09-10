@@ -57,7 +57,7 @@ For an enumerable family, the report must state whether probes exhaust the
 capability specification. Such a result is a bounded behavioral-compilation
 proof, not evidence of general English or domain extraction.
 
-Status: `R13-B ENUMERABLE PASS; R14 OUTPUT-ONLY FAILURE; R15A LEARNED-DELTA PASS`.
+Status: `R13-B ENUMERABLE PASS; R14 OUTPUT-ONLY FAILURE; R15A LEARNED-DELTA PASS; R15B PRETRAINED-REPRESENTATION PASS`.
 
 R13-B passed this track for four held-out finite transition tables. The result
 does not advance Track A: package/source agreement on long compositions was
@@ -79,13 +79,21 @@ hostile verification passed. This advances Track B only for a deliberately
 learned synthetic capability and a before/after delta; it does not advance
 Track A or the pre-existing factual/linguistic stages.
 
+R15B removed source training and recovered four secret permutations of a
+pre-existing modular-arithmetic capability from anonymous pre-answer residuals
+plus frozen output rows. This passes a narrow pretrained-representation
+prerequisite. Because prompts specify the arithmetic, labels are externally
+registered, and deep source behavior fails, it does not yet pass the factual,
+linguistic, autonomous-labeling, or Track A stages.
+
 ## Progression beyond the finite-table control
 
 Track B must advance through separately registered stages:
 
 1. exhaustively enumerable finite capability;
 2. non-exhaustive synthetic capability with genuine generalization (bounded
-   learned-delta prerequisite passed in R15A);
+   learned-delta prerequisite passed in R15A and narrow pretrained-
+   representation prerequisite passed in R15B);
 3. factual or specialist knowledge with contamination-resistant evaluation;
 4. linguistic and reasoning behavior; and
 5. cross-family replication and LayerCake product acceptance.
