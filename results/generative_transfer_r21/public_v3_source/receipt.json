@@ -1,0 +1,42 @@
+{
+  "artifacts": {
+    "labeler": {
+      "path": "labeler.json",
+      "sha256": "a6e9886c50dae39e05d3230aacb6aadb14ab070fdf513c7a18cc28628457a35d"
+    },
+    "source_rows": {
+      "path": "source_observations.jsonl",
+      "sha256": "15e9a3d5c65edb9db459bdab1a4651f26d8e88e05d921b08c6c7f24a77fa0467"
+    }
+  },
+  "autonomous_ontology_discovery": false,
+  "base_config_sha256": "4d304b8d85e4267d0cd2f54a471a9b65e5b15035faaf7501554a14693555f99a",
+  "control_config_sha256": "5cf37031f8002aee31daad92dfb780d8530f94162e414091b2c25a3fdc18d998",
+  "evaluation_access_during_derivation": false,
+  "evidence_sha256": "abc2f3b20cdc777754606e261639ee6199cfc457bf445da53309e5d03de40b8d",
+  "format": "abi-r21-public-source-acquisition/3",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "hidden_activations_stored": 0,
+    "labeler_document_sha256": "34d3104818f035a996de28f8feef65e339d37d626371de6bc3b5a685464c6b90",
+    "logits_stored": 0,
+    "new_teacher_calls": 0,
+    "new_teacher_tokens": 0,
+    "registered_label_classes": 6,
+    "registered_label_seed_pairs": 36,
+    "source_parameters_copied": 0,
+    "teacher_response_bytes_reused": 73866,
+    "teacher_response_tokens_reused": 21399,
+    "teacher_responses_reused": 600
+  },
+  "metrics": {
+    "training_label_exact": 600,
+    "training_rows": 600,
+    "unique_registered_seed_pairs": 36
+  },
+  "original_source_receipt_sha256": "642b60972139ef261b7aa39cda15bea56b9a1c62ca50c98afecf9d00ba24ca5c",
+  "original_source_rows_sha256": "4c148d7ccd262ce8767b2b11266d959236811d9a6b032186bf825dcca5d9f4c1",
+  "response_rows_reused_byte_exact": true,
+  "teacher_side_labeling": false,
+  "verdict": "PASS_REGISTERED_LABEL_CONTROL"
+}
