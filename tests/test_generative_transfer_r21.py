@@ -3,6 +3,9 @@ from experiments.generative_transfer_r21.derive_labels_v3 import (
     _classifier,
     _registered_pair_count,
 )
+from experiments.generative_transfer_r21.hash_assurance_binding import (
+    selfless_evidence_hash,
+)
 from experiments.generative_transfer_r21.protocol import (
     LABELS,
     WordLabeler,
@@ -60,3 +63,10 @@ def test_r21_registered_label_control_has_exact_fixed_budget():
         labeler.predict(instruction_from_prompt(row["prompt"])) == row["task"]
         for row in training_rows() + evaluation_rows()
     )
+
+
+def test_r21_self_hash_assurance_removes_only_the_self_field():
+    unsigned = {"format": "test", "value": 7}
+    stored = selfless_evidence_hash(unsigned)
+    signed = {**unsigned, "evidence_sha256": stored}
+    assert selfless_evidence_hash(signed) == stored
