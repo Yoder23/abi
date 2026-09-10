@@ -1,0 +1,85 @@
+{
+  "claim_ceiling": "BOUNDED_PREEXISTING_REPRESENTATION_CAPABILITY_RECOVERY_ONLY",
+  "codec_freeze": {
+    "receipt": "results/native_isa_r11/codec_freeze_v1/receipt.json",
+    "tensors": "results/native_isa_r11/codec_freeze_v1/host_codecs.safetensors"
+  },
+  "code_bindings": {
+    "experiments/preexisting_representation_r15b/PROTOCOL.md": "e063b4c96ea687addf7cbb54b97b31c0bc9862a4d4712829b118da1ff8ccac73",
+    "experiments/preexisting_representation_r15b/extraction_pivot_runner.sh": "5c71a71031f839adfbd713b174c863f25f536f9e2b06e20159df0d2b47853ef7",
+    "experiments/preexisting_representation_r15b/generation_qualification.py": "862133fdf6d0075dd9257dcc2ab7c2d1142ec613e2cc00e5d017cc2288750e08",
+    "experiments/preexisting_representation_r15b/isolated_worker.py": "67b456280fda88e45ecbd1e3a0fe0f759d7b9839251cab9518d31f2d3090522b",
+    "experiments/preexisting_representation_r15b/isolation.py": "12cb78fa4a79d3584ef739d3507740aa55dcfa0843fe1d882ff41ef6aec32d8e",
+    "experiments/preexisting_representation_r15b/protocol.py": "b625aa16b6a3a733e3a926d4c7dc1033656e94458b916d1c787f62f782b2fc78",
+    "experiments/preexisting_representation_r15b/public_extraction.py": "6ca30dd6843427d4256d3e3360ae2c6cebf1a8cf0d1b47c8c1d985b562b0a57e",
+    "experiments/preexisting_representation_r15b/public_qualification.py": "efaa9a6b824b6b748738b9afc5c135b164fa87050020c3f3e73e7c08053984c5",
+    "experiments/preexisting_representation_r15b/representation.py": "7cf0bb791d5663d15d260b7aeba0f746c74405736a466cb45f6b51098444afdf",
+    "experiments/preexisting_representation_r15b/run.py": "62e020fabcad00c2111e3ce1bd451bbfa02ddff3f0fba8b6c552b0dd407e0ed8",
+    "experiments/preexisting_representation_r15b/verify.py": "b04a63b104af0347be2279d3fb969565c2f91feece49928a8b85b8f42da6e47d"
+  },
+  "conditions": [
+    "BASE",
+    "AFTER",
+    "BEFORE",
+    "WRONG",
+    "ZERO",
+    "RANDOM",
+    "SHUFFLED",
+    "REMOVED",
+    "BACKEND_REMOVED",
+    "CODEC_REMOVED",
+    "RESTORED"
+  ],
+  "data": {
+    "evaluation_depths": [13, 14, 15, 16, 17, 18],
+    "evaluation_rows_per_capability": 10000,
+    "evaluation_seed": 15152001,
+    "heldout_capabilities": 4,
+    "recipient_rows_per_capability": 256
+  },
+  "format": "abi-r15b-preexisting-representation-preregistration/1",
+  "gates": {
+    "heldout_capabilities_exact": 4,
+    "negative_control_accuracy_maximum": 0.3,
+    "package_accuracy": 1.0,
+    "recipient_after_accuracy": 1.0,
+    "recipient_restored_accuracy": 1.0,
+    "source_anchor_accuracy": 1.0
+  },
+  "heldout_seed_commitment": "7f3f17a85faa6785d232ae3e5b127cc460f438b59a142c571c8d59d0bace4e5a",
+  "negative_conditions": ["BEFORE", "WRONG", "ZERO", "RANDOM", "SHUFFLED"],
+  "physical_extraction": {
+    "allowed_input": "six_anonymous_pre_answer_residuals_plus_eight_output_rows",
+    "answers": 0,
+    "candidate_search": false,
+    "distribution": "Ubuntu",
+    "network": false,
+    "prompts": 0,
+    "semantic_labels": 0,
+    "sandbox_policy": "linux-pivot-root-no-network/1"
+  },
+  "public_preflight": {
+    "files": {
+      "results/preexisting_representation_r15b/public_extraction_v1/anonymous_representation.safetensors": "e5b65b4787b1d93974391d490ca13b214c946b86cef3839d2b1a32af4fbfa04d",
+      "results/preexisting_representation_r15b/public_extraction_v1/packages/sha256-e4222752eefbff1954b54e2929cae4d58b256b07d15b8af8632a4c9a8868fc99.abipkg": "e4222752eefbff1954b54e2929cae4d58b256b07d15b8af8632a4c9a8868fc99",
+      "results/preexisting_representation_r15b/public_extraction_v1/receipt.json": "5fe31c0796cd0a5ae2cbcde6c834daa4f5bedc7d69be060c9560e49ab6bc1a09",
+      "results/preexisting_representation_r15b/public_extraction_v1/semantic_label.json": "7036d452675e52b06a6ef9bb877bc95f0777dcebab176cc096e6f89ce2c82ee1"
+    },
+    "receipt": "results/preexisting_representation_r15b/public_extraction_v1/receipt.json"
+  },
+  "r11_freeze": {
+    "binding_manifest": "experiments/native_isa_r11/configs/preregistered_transfer_v2.json",
+    "binding_manifest_sha256": "e28ea1eb9674b417ef17414e6c94f6a541daaa1f14dabe3ff2af41c22411609e",
+    "sealed_commit": "d89d8b607a705c47f7e2046b7dd4dbd40c396a5f",
+    "sealed_tag": "abi-r11-bounded-neural-construction-2026-08-31"
+  },
+  "recipient_hosts": ["pythia", "qwen2", "t5"],
+  "runtime": {"batch_size": 64, "device": "cuda", "network_after_reveal": false},
+  "source": {
+    "max_new_tokens": 192,
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "training_steps": 0
+  },
+  "status": "PREREGISTERED_BEFORE_HELDOUT_REVEAL"
+}
