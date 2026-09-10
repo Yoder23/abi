@@ -1,0 +1,44 @@
+{
+  "code_sha256": {
+    "experiments/factual_semantic_r16/PROTOCOL.md": "c236d8f7c6ad14b530c25aa1860c30a5b5c75e4237d7b30105aad23c35a22cce",
+    "experiments/factual_semantic_r16/extraction_pivot_runner.sh": "7ba1bafd5daf1b1e0a5f5015785dfa3fbcda312fa02b8bd8d03265c15029524b",
+    "experiments/factual_semantic_r16/facts.py": "c83374c4741bddc96862d9fc866d20c0cd9713294a1bf7a0636a6b003f1d6406",
+    "experiments/factual_semantic_r16/hostile_audit.py": "49c77b116ab70996a4b831e14c575e00df8dba3d6899f7879aa32fc1956ceaef",
+    "experiments/factual_semantic_r16/isolated_worker.py": "fd2d84b3361a9bdc4d28b07a65e5942ee5dc4996f88f95ce84940307e62e6280",
+    "experiments/factual_semantic_r16/isolation.py": "96047906fed6d3cce34e7e56e0b95f0ea61627f4e75802b032ec39e672bcd4e7",
+    "experiments/factual_semantic_r16/package.py": "a05caf3df0c8a162cb102f00e1c79fac29d52c53d13e6247921e66c05c70c682",
+    "experiments/factual_semantic_r16/protocol.py": "d08f4bd00a86a3dd770f65dee7d15f4dfce169c301911cb4c9b50a0b454f90e0",
+    "experiments/factual_semantic_r16/public_qualification.py": "c54da43b8cf0f592247101aa8a6b6511795272802ed3ebb606aad1fd1c2e7361",
+    "experiments/factual_semantic_r16/public_sequence_scoring.py": "96e51a30f2953dd5434c381bfcb85628d27c737c691ef8c38214c82137fe6269",
+    "experiments/factual_semantic_r16/run.py": "e0ed924b976c4ada43772fa8ac0173098b0348a702cad89bfa3335c2b1a522fc",
+    "experiments/factual_semantic_r16/seal.py": "601aafc4fc9f10c5014cba98b226744218f8764184d40e9d66c933b03b8b76fe",
+    "experiments/factual_semantic_r16/verify.py": "7152b74c6ba300dc0a16b368c323163980d96e0829410a9d041448105291de3f",
+    "experiments/factual_semantic_r16/verify_live.py": "7557fe541f14ac548737d35ae5dbb05a1541f5ea9b87eab731fd51fc0e2e4a71"
+  },
+  "data": {
+    "candidate_budget": 12,
+    "evaluation_views": [3, 4, 5],
+    "extraction_views": [0, 1, 2],
+    "facts_per_namespace": 8
+  },
+  "format": "abi-r16-heldout-config/1",
+  "gates": {
+    "max_control_accuracy": 0.1
+  },
+  "heldout_seed_commitment": "cfb3f707f7ac4eb6a9a4a94246fdcc9b520ddcf338bc944cdf580a296737dba7",
+  "physical_extraction": {
+    "distribution": "Ubuntu",
+    "policy": "linux-pivot-root-no-network/1"
+  },
+  "public_prerequisite": {
+    "receipt": "results/factual_semantic_r16/public_v2_revision_002/receipt.json",
+    "sha256": "67c1832c2a323e8ae07ae0fe55e9c41489331364c1ae63b9c6f2ffdef0915826"
+  },
+  "reveal_sha256": "226d74875f6b2a31b50a90d1ee88b5707de61930f45b726434401143f699d9ce",
+  "source": {
+    "max_new_tokens": 12,
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "snapshot_evidence_sha256": "bdb164548ca29e580e465f520df01fce77524eeec01e807c413443751b4f004b"
+  }
+}
