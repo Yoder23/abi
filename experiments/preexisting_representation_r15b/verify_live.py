@@ -46,6 +46,63 @@ def _scientific_extraction(result: dict[str, Any]) -> dict[str, Any]:
     return {key: result[key] for key in sorted(keys)}
 
 
+def _source_snapshot_inventory(model_id: str, revision: str) -> dict[str, Any]:
+    from huggingface_hub import snapshot_download
+
+    snapshot = Path(
+        snapshot_download(model_id, revision=revision, local_files_only=True)
+    ).resolve()
+    if snapshot.name != revision:
+        raise R14Error("R15B live source snapshot revision changed")
+    files = []
+    for path in sorted(item for item in snapshot.rglob("*") if item.is_file()):
+        files.append(
+            {
+                "path": path.relative_to(snapshot).as_posix(),
+                "bytes": path.stat().st_size,
+                "sha256": sha256_file(path),
+            }
+        )
+    if not files:
+        raise R14Error("R15B live source snapshot is empty")
+    result = {
+        "format": "abi-r15b-source-snapshot-inventory/1",
+        "model_id": model_id,
+        "revision": revision,
+        "files": files,
+        "file_count": len(files),
+        "total_bytes": sum(int(item["bytes"]) for item in files),
+    }
+    result["evidence_sha256"] = evidence_hash(result)
+    return result
+
+
+def _verify_regenerated_bundle(
+    bundle_path: Path,
+    residuals: torch.Tensor,
+    output_rows: torch.Tensor,
+) -> dict[str, Any]:
+    stored = load_file(str(bundle_path), device="cpu")
+    if set(stored) != {"residuals", "output_rows"}:
+        raise R14Error("R15B live representation bundle tensor inventory changed")
+    regenerated = {
+        "residuals": residuals.detach().cpu().contiguous(),
+        "output_rows": output_rows.detach().cpu().contiguous(),
+    }
+    for name, value in regenerated.items():
+        if stored[name].dtype != value.dtype or stored[name].shape != value.shape:
+            raise R14Error(f"R15B live representation tensor contract changed: {name}")
+        if not torch.equal(stored[name], value):
+            raise R14Error(f"R15B live representation tensor changed: {name}")
+    return {
+        "path": str(bundle_path),
+        "sha256": sha256_file(bundle_path),
+        "residuals_shape": list(regenerated["residuals"].shape),
+        "output_rows_shape": list(regenerated["output_rows"].shape),
+        "tensors_byte_exact": True,
+    }
+
+
 def run_live(config_path: Path, reveal_path: Path, run_dir: Path, output: Path) -> dict[str, Any]:
     if output.exists():
         raise R14Error(f"immutable R15B live output exists: {output}")
@@ -64,13 +121,17 @@ def run_live(config_path: Path, reveal_path: Path, run_dir: Path, output: Path) 
     ]
     output.mkdir(parents=True)
     source_config = config["source"]
+    source_snapshot = _source_snapshot_inventory(
+        str(source_config["model_id"]), str(source_config["revision"])
+    )
     tokenizer, model, digit_ids, output_rows = load_source(
         model_id=str(source_config["model_id"]),
         model_revision=str(source_config["revision"]),
     )
     live_source = []
-    for item in heldout:
-        _residuals, observations, _metrics = extract_with_source(
+    source_bundle_records = []
+    for index, item in enumerate(heldout):
+        residuals, observations, _metrics = extract_with_source(
             tokenizer,
             model,
             digit_ids,
@@ -81,6 +142,16 @@ def run_live(config_path: Path, reveal_path: Path, run_dir: Path, output: Path) 
         live_source.extend(
             {"capability_id": item.capability.capability_id, **row} for row in observations
         )
+        source_item = original["source"]["capability_receipts"][index]
+        if source_item["capability_id"] != item.capability.capability_id:
+            raise R14Error("R15B live source capability order changed")
+        bundle_path = run_dir / source_item["bundle"]["path"]
+        record = _verify_regenerated_bundle(bundle_path, residuals, output_rows)
+        if record["sha256"] != source_item["bundle"]["sha256"]:
+            raise R14Error("R15B live representation bundle hash changed")
+        record["capability_id"] = item.capability.capability_id
+        record["path"] = str(bundle_path.relative_to(run_dir))
+        source_bundle_records.append(record)
     original_ref = original["source"]["observations"]
     original_source = _jsonl(
         run_dir / original_ref["path"], original_ref["sha256"], int(original_ref["rows"])
@@ -160,10 +231,13 @@ def run_live(config_path: Path, reveal_path: Path, run_dir: Path, output: Path) 
             }
         )
     result = {
-        "format": "abi-r15b-live-verification/1",
+        "format": "abi-r15b-live-verification/2",
         "verdict": "PASS",
         "strict_claim": strict["claim"],
         "source_rows_replayed_byte_exact": len(live_source),
+        "source_bundle_tensors_replayed_exact": len(source_bundle_records),
+        "source_snapshot": source_snapshot,
+        "source_bundles": source_bundle_records,
         "isolated_extractions_replayed": len(extraction_records),
         "recipient_rows_replayed_byte_exact": sum(item["rows"] for item in recipient_records),
         "source_rows_sha256": sha256_file(source_path),

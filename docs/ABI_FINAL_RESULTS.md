@@ -196,6 +196,12 @@ repeated the source generations and four physical extractions, and 10/10
 hostile mutations failed closed. The source and all recipients received zero
 training; the final packages contain no frozen source parameters.
 
+A fresh blind review of evidence commit `c173e14` passed with zero
+critical/high findings. Its direct provenance replay regenerated all 24 source
+rows and all four tensor bundles bit-exactly. The subsequent additive verifier
+repair enforces those comparisons and binds all 10 files/15.24 GB of the pinned
+source snapshot by SHA-256.
+
 The result is limited to a registered arithmetic representation. Prompts state
 the operation, source reasoning can expose the answer before the captured
 position, semantic labels are externally registered, and the package's deep

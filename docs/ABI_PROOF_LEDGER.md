@@ -71,7 +71,7 @@ extraction, semantic labeling, English/domain transfer, or Track A equality.
 
 R15B establishes ABI-C4f for a narrow modular-arithmetic representation
 interface. It uses an unchanged pretrained source, but the prompts specify the
-operations, source reasoning may state the answer before the captured position,
+operations, source reasoning states the answer before the captured position,
 and labels are externally registered. It does not establish autonomous
 discovery, English/domain transfer, or teacher-behavior equality.
 
@@ -88,6 +88,7 @@ R10 promotes only ABI-C4a, the bounded runtime component. R11 promotes ABI-C4b,
 the bounded synthetic neural-ABI construction. R13-B promotes ABI-C3 and
 ABI-C4c only for local, exhaustively enumerable capability canonicalization.
 R14 promotes no claim because its registered three-capability gate failed.
-R15A promotes ABI-C4e only, and R15B promotes ABI-C4f only. None promotes ABI-C4 teacher-behavior copying,
+R15A promotes ABI-C4e only, and R15B promotes ABI-C4f only. None promotes
+ABI-C4 teacher-behavior copying,
 ABI-C5, ABI-C6, ABI-C7, or ABI-C8. Foreign-teacher behavioral transplantation
 and English/domain quality remain separate registered lines.

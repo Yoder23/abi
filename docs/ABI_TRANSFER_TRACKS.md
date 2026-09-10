@@ -80,11 +80,15 @@ learned synthetic capability and a before/after delta; it does not advance
 Track A or the pre-existing factual/linguistic stages.
 
 R15B removed source training and recovered four secret permutations of a
-pre-existing modular-arithmetic capability from anonymous pre-answer residuals
-plus frozen output rows. This passes a narrow pretrained-representation
-prerequisite. Because prompts specify the arithmetic, labels are externally
-registered, and deep source behavior fails, it does not yet pass the factual,
-linguistic, autonomous-labeling, or Track A stages.
+pre-existing modular-arithmetic capability from anonymous
+pre-terminal-answer residuals plus frozen output rows. This passes a narrow
+pretrained-representation prerequisite. Because prompts specify the
+arithmetic, labels are externally registered, the reasoning already contains
+the answer, and deep source behavior fails, it does not yet pass the factual,
+linguistic, autonomous-labeling, or
+Track A stages. Fresh blind review passed this bounded claim with zero
+critical/high findings; additive verification now binds the full source
+snapshot and bit-compares regenerated bundles.
 
 ## Progression beyond the finite-table control
 

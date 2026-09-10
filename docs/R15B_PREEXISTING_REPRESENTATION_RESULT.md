@@ -1,6 +1,6 @@
 # R15B pre-existing representation result
 
-Status: `R15B_BOUNDED_PREEXISTING_REPRESENTATION_RECOVERY_PASSED_LOCAL`
+Status: `R15B_BOUNDED_PREEXISTING_REPRESENTATION_RECOVERY_BLIND_PASS_LOCAL`
 
 R15B is the first ABI experiment to pass a preregistered extraction path from
 an unchanged pretrained open-weight source. It advances the acquisition
@@ -14,8 +14,10 @@ Qwen2-7B-Instruct, revision
 adaptation. A secret selected four distinct mappings between anonymous slots
 and three ordinary modular-arithmetic operations. For each mapping, the source
 generated six atomic answers. ABI retained the final residual immediately
-before the terminal answer plus the eight corresponding frozen output-head
-rows.
+before the terminal `FINAL:` digit plus the eight corresponding frozen
+output-head rows. The preceding reasoning already contained the answer digit
+in all 24 rows, so this is more precisely an answer-conditioned next-token
+representation.
 
 Each anonymous 200,944-byte representation bundle entered a Linux
 pivot-root/no-network capsule containing only the bundle, generic pure-stdlib
@@ -37,6 +39,7 @@ transition labels with positive margins.
 | Hostile mutations | 10/10 rejected |
 | Strict verification | PASS |
 | Live verification | PASS |
+| Fresh blind review | PASS; 0 critical/high findings |
 
 The four final R11 packages contain 768 float32 transition values and occupy
 8,212 bytes total. The source teacher is absent during recipient execution.
@@ -68,11 +71,11 @@ LoRA learning event. The anonymous secret mappings and physical isolation show
 that package selection depends on the supplied source representations.
 
 The result is nevertheless narrow. The arithmetic expressions explicitly
-describe their operations, the source-generated reasoning often states the
-answer before the captured `FINAL:` position, and the semantic labels come
-from a registered external ontology. The decoder therefore extracts a compact
-canonical transition from source reasoning; it does not autonomously discover
-or label unknown knowledge.
+describe their operations, the source-generated reasoning states the answer
+digit before the captured `FINAL:` position in all 24 rows, and the semantic
+labels come from a registered external ontology. The decoder therefore
+extracts a compact canonical transition from source reasoning; it does not
+autonomously discover or label unknown knowledge.
 
 Public Track A evidence also bounds source behavior: the 7B source achieved
 24/24 at depth 1, 32/32 at depth 2, and 28/32 at depth 4, but failed the depth
@@ -90,11 +93,16 @@ distillation. Those are the remaining moonshot gates.
 - Implementation freeze: `0d4a75c771cbc46ce2680c81a57ce5ce193acdd0`
 - Preregistration: `8a51dae0512d983798bd4b4c3afb0157ce9a6456`
 - Reveal: `dafefc97b785d4ed8d3344a5904389560790e2b5`
-- Certificate: `results/preexisting_representation_r15b/heldout_v1_certificate.json`
+- Repaired certificate: `results/preexisting_representation_r15b/heldout_v1_certificate_v2.json`
 - Strict verification: `results/preexisting_representation_r15b/heldout_v1_strict.json`
-- Live verification: `results/preexisting_representation_r15b/heldout_v1_live/receipt.json`
+- Repaired live verification: `results/preexisting_representation_r15b/heldout_v1_live_v2/receipt.json`
 - Hostile audit: `results/preexisting_representation_r15b/heldout_v1_hostile_v2.json`
 - Information accounting: `results/preexisting_representation_r15b/heldout_v1_accounting.json`
+- Blind report: `results/preexisting_representation_r15b/blind_redteam_v1.md`
 
-The result is locally sealed pending a fresh blind review and public clean
-reconstruction. R7 remains the controlling published release.
+The blind review passed the bounded claim with zero critical/high, four medium,
+and two low findings. Its two verifier findings were repaired additively: live
+verification now requires regenerated residual/output-head tensors to be
+bit-exact with all four committed bundles, and binds all 10 files/15.24 GB of
+the pinned source snapshot by SHA-256. Public clean reconstruction remains
+pending. R7 remains the controlling published release.

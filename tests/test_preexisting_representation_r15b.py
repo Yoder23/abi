@@ -5,6 +5,7 @@ import pytest
 import torch
 from safetensors.torch import save_file
 
+from experiments.foreign_capability_r14.core import R14Error
 from experiments.preexisting_representation_r15b.generation_qualification import (
     parse_final_digit,
 )
@@ -24,6 +25,7 @@ from experiments.preexisting_representation_r15b.representation import (
     decode_transition,
     labels_to_operations,
 )
+from experiments.preexisting_representation_r15b.verify_live import _verify_regenerated_bundle
 
 
 def test_registered_operations_are_noncommutative_permutations() -> None:
@@ -124,3 +126,14 @@ def test_pure_stdlib_capsule_decoder_reads_only_anonymous_bundle(tmp_path: Path)
     assert manifest["answers_included"] == 0
     assert manifest["semantic_labels_included"] == 0
     assert _decode(capsule)["labels"] == labels
+
+
+def test_live_bundle_verifier_requires_exact_regenerated_tensors(tmp_path: Path) -> None:
+    bundle = tmp_path / "bundle.safetensors"
+    residuals = torch.arange(48, dtype=torch.float32).reshape(3, 2, 8)
+    output_rows = torch.eye(8, dtype=torch.float32)
+    save_file({"residuals": residuals, "output_rows": output_rows}, str(bundle))
+    receipt = _verify_regenerated_bundle(bundle, residuals.clone(), output_rows.clone())
+    assert receipt["tensors_byte_exact"] is True
+    with pytest.raises(R14Error, match="representation tensor changed"):
+        _verify_regenerated_bundle(bundle, residuals + 1, output_rows)

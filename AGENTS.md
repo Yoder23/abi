@@ -121,10 +121,14 @@ mappings. A physically isolated generic decoder recovered all four transitions
 from anonymous pre-answer residuals plus eight output-head rows, emitted four
 unchanged R11 packages, and scored 40,000/40,000 deep oracle rows. Strict and
 live verification passed across Pythia, Qwen2, and T5, and 10/10 hostile
-mutations failed closed. R15B proves only narrow pretrained arithmetic
-representation recovery with an externally registered ontology. Deep teacher
-behavior, English/domain discovery, autonomous labeling, LayerCake ingestion,
-minimality, and LoRA/distillation superiority remain open.
+mutations failed closed. A fresh blind review passed with zero critical/high
+findings. Its live-tensor and source-identity findings were repaired by exact
+replay of all four representation bundles and SHA-256 inventory of all 10
+files/15.24 GB in the pinned source snapshot. R15B proves only narrow
+pretrained arithmetic representation recovery with an externally registered
+ontology. Deep teacher behavior, English/domain discovery, autonomous
+labeling, LayerCake ingestion, minimality, and LoRA/distillation superiority
+remain open.
 
 ## Exact proven scope
 
@@ -240,7 +244,7 @@ arbitrary teacher.
     recipient boundary frozen and report Track A teacher behavior separately.
 11. Preserve R15B as the passed pre-existing representation prerequisite. Its
     source prompts explicitly specify modular arithmetic, its generated
-    reasoning may expose the answer before the captured final position, and its
+    reasoning exposes the answer before the captured final position, and its
     labels are externally registered. The next stage must remove these
     shortcuts by extracting a broader pre-existing capability whose held-out
     behavior and semantic segregation are independently scored. Do not call

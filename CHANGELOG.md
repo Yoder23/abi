@@ -1,6 +1,6 @@
 # Changelog
 
-## R15B bounded pre-existing representation recovery - 2026-09-09
+## R15B bounded pre-existing representation recovery - 2026-09-10
 
 - Used an unchanged Qwen2-7B-Instruct source with zero source training and a
   secret mapping of three pretrained modular-arithmetic operations.
@@ -13,10 +13,13 @@
   raw source and recipient observations were byte-exact.
 - Passed strict recomputation and 10/10 hostile mutations with explicit
   imported-information accounting.
+- Passed fresh blind review with zero critical/high findings. Repaired the live
+  verifier to require bit-exact regeneration of all four tensor bundles and
+  bind all 10 files/15.24 GB of the pinned source snapshot by SHA-256.
 - Preserved the claim ceiling: externally registered labels, source reasoning
-  that may expose answers before capture, and failed deep teacher behavior mean
-  this is not English/domain discovery, teacher cloning, minimality, or
-  LoRA/distillation superiority.
+  that exposes answers before terminal capture, and failed deep teacher
+  behavior mean this is not English/domain discovery, teacher cloning,
+  minimality, or LoRA/distillation superiority.
 
 ## R15A bounded foreign neural-state recovery - 2026-09-09
 

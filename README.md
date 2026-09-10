@@ -137,8 +137,8 @@ were rejected. See
 [`docs/R15B_PREEXISTING_REPRESENTATION_RESULT.md`](docs/R15B_PREEXISTING_REPRESENTATION_RESULT.md).
 
 R15B is not English or open-world domain extraction. Its prompts explicitly
-state the arithmetic operation, source reasoning may expose the answer before
-the captured position, semantic labels are externally registered, and the
+state the arithmetic operation, source reasoning exposes the answer before the
+captured terminal digit, semantic labels are externally registered, and the
 package's deep generalization comes from the registered affine inductive bias.
 The full ABI moonshot therefore remains open, and R7 remains the controlling
 published release.

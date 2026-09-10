@@ -183,10 +183,13 @@ Qwen2-7B-Instruct source can expose a compact internal representation from
 which a generic zero-parameter decoder recovers a registered arithmetic
 transition and emits unchanged R11 packages. Four secret slot mappings passed,
 the source received zero training, packages scored 40,000/40,000 oracle rows,
-and strict/live/hostile verification passed across Pythia, Qwen2, and T5.
+and strict/live/hostile verification passed across Pythia, Qwen2, and T5. A
+fresh blind review found zero critical/high blockers. The repaired live path
+also bit-compares every regenerated tensor bundle and binds the complete
+15.24 GB pinned source snapshot by file hashes.
 
 This is not deep teacher-behavior cloning. The prompts explicitly specify the
-arithmetic, generated reasoning may contain the answer before the captured
+arithmetic, generated reasoning contains the answer before the captured
 position, and semantic labels are externally registered. R15B therefore does
 not support English/domain discovery, autonomous labeling, minimality,
 LayerCake product ingestion, or LoRA/distillation superiority. See

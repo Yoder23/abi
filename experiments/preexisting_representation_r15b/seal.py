@@ -25,6 +25,21 @@ def _verify_live_receipt(run_dir: Path, live_dir: Path) -> dict[str, Any]:
     original = json_object(run_dir / "receipt.json")
     live = json_object(live_dir / "receipt.json")
     _verify_evidence(live, "R15B live receipt")
+    if live.get("format") != "abi-r15b-live-verification/2":
+        raise R14Error("R15B live receipt does not include repaired tensor verification")
+    snapshot = live.get("source_snapshot")
+    if not isinstance(snapshot, dict):
+        raise R14Error("R15B live source snapshot inventory is missing")
+    _verify_evidence(snapshot, "R15B live source snapshot inventory")
+    if (
+        snapshot.get("model_id") != original["source"]["model_id"]
+        or snapshot.get("revision") != original["source"]["revision"]
+        or snapshot.get("file_count") != len(snapshot.get("files", []))
+        or snapshot.get("total_bytes")
+        != sum(int(item["bytes"]) for item in snapshot.get("files", []))
+        or not snapshot.get("files")
+    ):
+        raise R14Error("R15B live source snapshot inventory changed")
     source_path = live_dir / "source_observations.jsonl"
     original_source = run_dir / original["source"]["observations"]["path"]
     if (
@@ -35,6 +50,23 @@ def _verify_live_receipt(run_dir: Path, live_dir: Path) -> dict[str, Any]:
         raise R14Error("R15B stored live source replay changed")
     if len(live["extractions"]) != len(original["isolated_extractions"]):
         raise R14Error("R15B stored live extraction inventory changed")
+    if (
+        live.get("source_bundle_tensors_replayed_exact")
+        != len(original["source"]["capability_receipts"])
+        or len(live.get("source_bundles", []))
+        != len(original["source"]["capability_receipts"])
+        or any(item.get("tensors_byte_exact") is not True for item in live["source_bundles"])
+    ):
+        raise R14Error("R15B stored live source tensor replay changed")
+    for stored, source_item in zip(
+        live["source_bundles"], original["source"]["capability_receipts"]
+    ):
+        if (
+            stored.get("capability_id") != source_item["capability_id"]
+            or stored.get("sha256") != source_item["bundle"]["sha256"]
+            or stored.get("path") != source_item["bundle"]["path"]
+        ):
+            raise R14Error("R15B stored live source bundle identity changed")
     for index, item in enumerate(live["extractions"]):
         live_result = json_object(live_dir / item["path"] / "result.json")
         original_result = json_object(
@@ -95,7 +127,8 @@ def seal(
     if stored_accounting != account(config, reveal, run_dir):
         raise R14Error("R15B information accounting changed")
     certificate = {
-        "format": "abi-r15b-bounded-certificate/1",
+        "format": "abi-r15b-bounded-certificate/2",
+        "repair_of": "results/preexisting_representation_r15b/heldout_v1_certificate.json",
         "verdict": "PASS",
         "claim": "BOUNDED_PREEXISTING_REPRESENTATION_CAPABILITY_RECOVERY",
         "claim_ceiling": "NOT_ENGLISH_DOMAIN_OR_TEACHER_BEHAVIOR_CLONING",
@@ -116,6 +149,8 @@ def seal(
             "package_rows_total": strict["package_evaluation_rows"],
             "recipient_hosts": strict["recipient_hosts"],
             "live_source_rows": live["source_rows_replayed_byte_exact"],
+            "live_source_bundles": live["source_bundle_tensors_replayed_exact"],
+            "source_snapshot_evidence_sha256": live["source_snapshot"]["evidence_sha256"],
             "live_recipient_rows": live["recipient_rows_replayed_byte_exact"],
             "hostile_cases_rejected": stored_hostile["cases_passed"],
             "hostile_cases_total": stored_hostile["cases_total"],

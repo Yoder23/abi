@@ -1,0 +1,178 @@
+{
+  "evidence_sha256": "df93d0fdfca3c1713d2077274258d7e304db20b78bd49144b5afbb98d0580d1c",
+  "extractions": [
+    {
+      "path": "extractions\\anonymous-00",
+      "result_sha256": "a4f46e23420d73d38825aabbb2088883734865dbb9d8e7575b1d127835feb0c4",
+      "scientific_evidence_sha256": "19597b3ce392244f65ba3dcb455c9f7bb6ba2a3465eae8b8c831c8569c23bb2d"
+    },
+    {
+      "path": "extractions\\anonymous-01",
+      "result_sha256": "96c0c29488a6e5050532278dfcc7b6911ca2e13710d25893d1eb2ef84425d506",
+      "scientific_evidence_sha256": "128e005ad070f8eb1803ffc7dce051337248e509350e9f11c6a3082d0407e650"
+    },
+    {
+      "path": "extractions\\anonymous-02",
+      "result_sha256": "e0acf09ff64a3c75833e6dc18a4a8ed0395d546f4d481bf027983b235d12aa2d",
+      "scientific_evidence_sha256": "d7ec350ab13d48c31417ee88811f7332ec9ddf383906759cf2249ae07d64ea39"
+    },
+    {
+      "path": "extractions\\anonymous-03",
+      "result_sha256": "8e117f51a7c1303a1bfc2b817d003ab07d36092a6e4bb66af206c98786711dd1",
+      "scientific_evidence_sha256": "1f9334ecb17de2e6eb57c29d006f43fd201df54d7fb534b680ae54986f28d3ad"
+    }
+  ],
+  "format": "abi-r15b-live-verification/2",
+  "isolated_extractions_replayed": 4,
+  "recipient_rows_replayed_byte_exact": 33792,
+  "recipients": [
+    {
+      "codec_sha256": "20fba892f576e147761b3d71566809daedea4d3edbc1fe5871fe2189ef198cfd",
+      "host": "pythia",
+      "model_state_sha256": "54d67dd87a3b2a68f8e9bd71af503d78be0c41f7601d648a61a39d199e3be985",
+      "rows": 11264,
+      "rows_sha256": "9f22bbeaf834b965be033bbc538a8501caa8497306c3e8a86c1dc2c0fbe1b4ff"
+    },
+    {
+      "codec_sha256": "e1ce0aa3fb38054ba176ae70f43965fdb5a7a35e2f932d7dacd9ba3515851b4e",
+      "host": "qwen2",
+      "model_state_sha256": "4cbdc39b72efcc22dfc47710548ed6a50d6cb2233327951421361ccbfb11e6e1",
+      "rows": 11264,
+      "rows_sha256": "46d91115c14ef5079bc042090ed8443e0c1908298ac1c4d6153fb4fb291f8f60"
+    },
+    {
+      "codec_sha256": "bd9625ab888ffaef104d4dc3eb04f7a45cd8a92a50c1d8e26d3ecafac59564fe",
+      "host": "t5",
+      "model_state_sha256": "1608260bd9389c970d43869ef7b7e0da150f1d752f1a667d0f8895a385fa185d",
+      "rows": 11264,
+      "rows_sha256": "8079937110ae4106ad96d7266a6a42b3664da3200655c71d836c07800a10b364"
+    }
+  ],
+  "source_bundle_tensors_replayed_exact": 4,
+  "source_bundles": [
+    {
+      "capability_id": "r15b-heldout-00-02e7a546a5e1ac93225d",
+      "output_rows_shape": [
+        8,
+        3584
+      ],
+      "path": "source\\anonymous-00.safetensors",
+      "residuals_shape": [
+        3,
+        2,
+        3584
+      ],
+      "sha256": "32aa761150905f41d6b7ef7f11dd854e2679a349aecdb26d99b1e7bd6f40fc58",
+      "tensors_byte_exact": true
+    },
+    {
+      "capability_id": "r15b-heldout-01-6c4dcf0d988f3cb65791",
+      "output_rows_shape": [
+        8,
+        3584
+      ],
+      "path": "source\\anonymous-01.safetensors",
+      "residuals_shape": [
+        3,
+        2,
+        3584
+      ],
+      "sha256": "6d79124c34fa9902b29b8236b41a68ef5f7d03904d77548acad68515f36559b4",
+      "tensors_byte_exact": true
+    },
+    {
+      "capability_id": "r15b-heldout-02-34db8436c1681ef2ffb5",
+      "output_rows_shape": [
+        8,
+        3584
+      ],
+      "path": "source\\anonymous-02.safetensors",
+      "residuals_shape": [
+        3,
+        2,
+        3584
+      ],
+      "sha256": "4c469278c73e92f74d4ad1b09dce943758f5eff3f80d69c2aae45e48ea3a58a1",
+      "tensors_byte_exact": true
+    },
+    {
+      "capability_id": "r15b-heldout-03-40e8203d45242a927235",
+      "output_rows_shape": [
+        8,
+        3584
+      ],
+      "path": "source\\anonymous-03.safetensors",
+      "residuals_shape": [
+        3,
+        2,
+        3584
+      ],
+      "sha256": "5e6e8b695945633093bfee389add8c3078d3df78dc43874818c84b8e70fdeeb9",
+      "tensors_byte_exact": true
+    }
+  ],
+  "source_rows_replayed_byte_exact": 24,
+  "source_rows_sha256": "7da668a364cff59c497e115fc6c9ea18ad42e54b58597674aee968d7f236e1ef",
+  "source_snapshot": {
+    "evidence_sha256": "bdb164548ca29e580e465f520df01fce77524eeec01e807c413443751b4f004b",
+    "file_count": 10,
+    "files": [
+      {
+        "bytes": 663,
+        "path": "config.json",
+        "sha256": "8b9a4f6c0acf4854a2d301616d4203039c3d7972cb0a557dae98686b6c3ae4b2"
+      },
+      {
+        "bytes": 1671839,
+        "path": "merges.txt",
+        "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+      },
+      {
+        "bytes": 3945426872,
+        "path": "model-00001-of-00004.safetensors",
+        "sha256": "26d9919262ccd063fcdfd926763fe9025ef1e3073767aaa8c83a375d7c5140c4"
+      },
+      {
+        "bytes": 3864726352,
+        "path": "model-00002-of-00004.safetensors",
+        "sha256": "f5bb99fdadcac55c2c176497ec99f088a1764e78ed986fa4a0d45d12426ef0fa"
+      },
+      {
+        "bytes": 3864726408,
+        "path": "model-00003-of-00004.safetensors",
+        "sha256": "0b749a4446d7cda007d5e7bd9f908849d08d89867192d4c039dc167e9ab5a02e"
+      },
+      {
+        "bytes": 3556392240,
+        "path": "model-00004-of-00004.safetensors",
+        "sha256": "da724bb7d3c3512eb371aa6caa5bcc08d78bda84f94e00ae9a9b2124e3e9c62f"
+      },
+      {
+        "bytes": 27752,
+        "path": "model.safetensors.index.json",
+        "sha256": "f00d17cbf433746c391ad43948613e373aa51222dbee3b0db61ffff59a74bb1a"
+      },
+      {
+        "bytes": 7028015,
+        "path": "tokenizer.json",
+        "sha256": "f7c9b2dba4a296b1aa76c16a34b8225c0c118978400d4bb66bff0902d702f5b8"
+      },
+      {
+        "bytes": 1288,
+        "path": "tokenizer_config.json",
+        "sha256": "be21acaf90e7f449b7282fdef7b06516a0102476e86cbc2108e18ac071f9cc9c"
+      },
+      {
+        "bytes": 2776833,
+        "path": "vocab.json",
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    ],
+    "format": "abi-r15b-source-snapshot-inventory/1",
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "total_bytes": 15242778262
+  },
+  "strict_claim": "BOUNDED_PREEXISTING_REPRESENTATION_CAPABILITY_RECOVERY",
+  "verdict": "PASS"
+}
