@@ -6,6 +6,7 @@ from experiments.generative_transfer_r21.derive_labels_v3 import (
 from experiments.generative_transfer_r21.hash_assurance_binding import (
     selfless_evidence_hash,
 )
+from experiments.generative_transfer_r21.live_verify_v6 import _package_for
 from experiments.generative_transfer_r21.protocol import (
     LABELS,
     WordLabeler,
@@ -75,3 +76,12 @@ def test_r21_self_hash_assurance_removes_only_the_self_field():
 
 def test_r21_manifest_repair_entrypoint_is_distinct():
     assert callable(run_manifest_repair)
+
+
+def test_r21_live_factor_selection_is_exact():
+    system = {
+        "packages": [{"cake_id": f"abi-r21-abi-factorized-{task}-seed21021"} for task in LABELS]
+    }
+    assert _package_for(system, "abi_factorized", 21021, "email")["cake_id"].endswith(
+        "-email-seed21021"
+    )
