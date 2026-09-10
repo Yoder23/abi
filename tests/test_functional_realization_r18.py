@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from collections import Counter
 
+from experiments.functional_realization_r18.hidden_frames import LEXEME_BANK, heldout_rows
 from experiments.functional_realization_r18.isolated_worker import infer_templates
 from experiments.functional_realization_r18.package import PACKAGE_FORMAT, realize
 from experiments.functional_realization_r18.verify import _derive_package
@@ -68,3 +69,25 @@ def test_independent_verifier_derives_same_factorized_package() -> None:
     assert rejected == []
     assert independent["templates"] == worker_templates
     assert independent["support"] == worker_diagnostics["support"]
+
+
+def test_hidden_rows_are_deterministic_disjoint_and_complete() -> None:
+    import hashlib
+
+    secret = bytes(range(32))
+    commitment = hashlib.sha256(secret).hexdigest()
+    extraction = heldout_rows(secret.hex(), commitment, "extraction")
+    evaluation = heldout_rows(secret.hex(), commitment, "evaluation")
+    assert len(extraction) == 72
+    assert len(evaluation) == 48
+    assert len({row["record_id"] for row in extraction + evaluation}) == 120
+    assert {row["slots"]["subject"] for row in extraction}.isdisjoint(
+        {"Ava", "Mira", "Tari", "Zara", "Lena", "Kian"}
+    )
+    for signature in SIGNATURES:
+        left = {row["slots"]["object"] for row in extraction if row["signature"] == signature}
+        right = {row["slots"]["object"] for row in evaluation if row["signature"] == signature}
+        assert len(left) == 3
+        assert len(right) == 2
+        assert left.isdisjoint(right)
+    assert len(LEXEME_BANK) == 20

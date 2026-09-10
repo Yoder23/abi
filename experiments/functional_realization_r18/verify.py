@@ -186,6 +186,7 @@ def _verify_isolation(
     run_dir: Path,
     name: str,
     bundle_sha: str,
+    bundle_evidence_sha: str,
     expected_package: dict[str, Any],
     rejected: list[str],
 ) -> tuple[dict[str, Any], Path]:
@@ -205,6 +206,7 @@ def _verify_isolation(
         or result.get("rejected_record_ids") != rejected
         or result.get("oracle_fields_consumed") != 0
         or result.get("evaluation_rows_consumed") != 0
+        or result.get("bundle_evidence_sha256") != bundle_evidence_sha
         or result.get("old_root_present") is not False
         or result.get("windows_mount_present") is not False
         or result.get("network_namespace_isolated") is not True
@@ -333,6 +335,7 @@ def verify(source_run: Path, run_dir: Path) -> dict[str, Any]:
         run_dir,
         "extraction",
         sha256_file(source_bundle),
+        _verified_object(source_bundle, "source bundle")["evidence_sha256"],
         expected_package,
         rejected,
     )
@@ -341,6 +344,7 @@ def verify(source_run: Path, run_dir: Path) -> dict[str, Any]:
         run_dir,
         "control_extraction",
         sha256_file(control_bundle),
+        _verified_object(control_bundle, "control bundle")["evidence_sha256"],
         expected_control,
         control_rejected,
     )
