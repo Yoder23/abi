@@ -40,13 +40,11 @@ def load_config(root: Path, path: Path) -> dict[str, Any]:
         if not target.is_file() or sha256_file(target) != expected:
             raise R14Error(f"R24 negative-verification code changed: {relative}")
     for name in ("original_config", "result_inventory"):
-        binding = value.get(name)
-        if name == "original_config":
-            bindings = [binding]
-        else:
-            bindings = binding
+        bindings = value.get(name)
         if not isinstance(bindings, list) or not bindings:
             raise R14Error(f"R24 negative-verification {name} inventory missing")
+        if name == "original_config" and len(bindings) != 1:
+            raise R14Error("R24 negative-verification original config count changed")
         for item in bindings:
             if not isinstance(item, dict):
                 raise R14Error(f"R24 negative-verification {name} binding malformed")
