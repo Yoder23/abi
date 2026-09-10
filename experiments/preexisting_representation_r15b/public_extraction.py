@@ -44,14 +44,16 @@ def _source_identity(model_id: str, revision: str) -> str:
     return sha256_bytes(canonical_json_bytes({"model_id": model_id, "revision": revision}))
 
 
-def _anchor_rows() -> list[dict[str, Any]]:
+def _anchor_rows(slot_order: tuple[int, int, int] = (0, 1, 2)) -> list[dict[str, Any]]:
+    if sorted(slot_order) != [0, 1, 2]:
+        raise QualificationError("source semantic slot order is not a permutation")
     rows = []
-    for operator in range(3):
+    for anonymous_slot, operator in enumerate(slot_order):
         for start in (0, 1):
             prompt = _render_prompt(start, (operator,), style="expression_reasoning")
             _, multiplier, offset = OPERATIONS[operator]
             answer = (multiplier * start + offset) % 8
-            identity = {"anonymous_slot": operator, "anchor": start}
+            identity = {"anonymous_slot": anonymous_slot, "anchor": start}
             rows.append(
                 {
                     **identity,
@@ -94,13 +96,11 @@ def _next_answer_representation(
     return residual, [float(value) for value in canonical.softmax(dim=-1)], digit, prefix
 
 
-@torch.inference_mode()
-def extract(
+def load_source(
     *,
     model_id: str,
     model_revision: str,
-    max_new_tokens: int,
-) -> tuple[torch.Tensor, torch.Tensor, list[dict[str, Any]], dict[str, Any]]:
+) -> tuple[Any, Any, list[int], torch.Tensor]:
     os.environ["HF_HUB_OFFLINE"] = "1"
     os.environ["TRANSFORMERS_OFFLINE"] = "1"
     from huggingface_hub import snapshot_download
@@ -143,12 +143,24 @@ def extract(
         .cpu()
         .contiguous()
     )
+    return tokenizer, model, digit_ids, output_rows
 
+
+@torch.inference_mode()
+def extract_with_source(
+    tokenizer: Any,
+    model: Any,
+    digit_ids: list[int],
+    output_rows: torch.Tensor,
+    *,
+    max_new_tokens: int,
+    slot_order: tuple[int, int, int] = (0, 1, 2),
+) -> tuple[torch.Tensor, list[dict[str, Any]], dict[str, Any]]:
     residuals: list[torch.Tensor] = []
     observations = []
     generated_tokens = 0
     started = time.perf_counter()
-    for row in _anchor_rows():
+    for row in _anchor_rows(slot_order):
         rendered = _chat_prompt(tokenizer, str(row["prompt"]))
         encoded = tokenizer(rendered, return_tensors="pt", add_special_tokens=False).to("cuda")
         generated = model.generate(
@@ -202,7 +214,6 @@ def extract(
         raise QualificationError("anonymous representation projection is not exact")
     return (
         stacked,
-        output_rows,
         observations,
         {
             "wall_seconds": elapsed,
@@ -214,6 +225,26 @@ def extract(
             "digit_token_ids": digit_ids,
         },
     )
+
+
+def extract(
+    *,
+    model_id: str,
+    model_revision: str,
+    max_new_tokens: int,
+) -> tuple[torch.Tensor, torch.Tensor, list[dict[str, Any]], dict[str, Any]]:
+    tokenizer, model, digit_ids, output_rows = load_source(
+        model_id=model_id,
+        model_revision=model_revision,
+    )
+    residuals, observations, source = extract_with_source(
+        tokenizer,
+        model,
+        digit_ids,
+        output_rows,
+        max_new_tokens=max_new_tokens,
+    )
+    return residuals, output_rows, observations, source
 
 
 def _control_accuracy(

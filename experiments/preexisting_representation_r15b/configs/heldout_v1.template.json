@@ -1,0 +1,68 @@
+{
+  "claim_ceiling": "BOUNDED_PREEXISTING_REPRESENTATION_CAPABILITY_RECOVERY_ONLY",
+  "codec_freeze": {
+    "receipt": "results/native_isa_r11/codec_freeze_v1/receipt.json",
+    "tensors": "results/native_isa_r11/codec_freeze_v1/host_codecs.safetensors"
+  },
+  "conditions": [
+    "BASE",
+    "AFTER",
+    "BEFORE",
+    "WRONG",
+    "ZERO",
+    "RANDOM",
+    "SHUFFLED",
+    "REMOVED",
+    "BACKEND_REMOVED",
+    "CODEC_REMOVED",
+    "RESTORED"
+  ],
+  "data": {
+    "evaluation_depths": [13, 14, 15, 16, 17, 18],
+    "evaluation_rows_per_capability": 10000,
+    "evaluation_seed": 15152001,
+    "heldout_capabilities": 4,
+    "recipient_rows_per_capability": 256
+  },
+  "format": "abi-r15b-preexisting-representation-preregistration/1",
+  "gates": {
+    "heldout_capabilities_exact": 4,
+    "negative_control_accuracy_maximum": 0.3,
+    "package_accuracy": 1.0,
+    "recipient_after_accuracy": 1.0,
+    "recipient_restored_accuracy": 1.0,
+    "source_anchor_accuracy": 1.0
+  },
+  "heldout_seed_commitment": "TO_BE_FILLED_WITHOUT_REVEAL",
+  "negative_conditions": ["BEFORE", "WRONG", "ZERO", "RANDOM", "SHUFFLED"],
+  "physical_extraction": {
+    "allowed_input": "six_anonymous_pre_answer_residuals_plus_eight_output_rows",
+    "answers": 0,
+    "candidate_search": false,
+    "distribution": "Ubuntu",
+    "network": false,
+    "prompts": 0,
+    "semantic_labels": 0,
+    "sandbox_policy": "linux-pivot-root-no-network/1"
+  },
+  "public_preflight": {
+    "receipt": "results/preexisting_representation_r15b/public_extraction_v1/receipt.json",
+    "files": "TO_BE_HASH_BOUND_IN_FINAL_CONFIG"
+  },
+  "r11_freeze": {
+    "binding_manifest": "experiments/native_isa_r11/configs/preregistered_transfer_v2.json",
+    "binding_manifest_sha256": "e28ea1eb9674b417ef17414e6c94f6a541daaa1f14dabe3ff2af41c22411609e",
+    "sealed_commit": "d89d8b607a705c47f7e2046b7dd4dbd40c396a5f",
+    "sealed_tag": "abi-r11-bounded-neural-construction-2026-08-31"
+  },
+  "recipient_hosts": ["pythia", "qwen2", "t5"],
+  "runtime": {"batch_size": 64, "device": "cuda", "network_after_reveal": false},
+  "source": {
+    "max_new_tokens": 192,
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "training_steps": 0
+  },
+  "status": "TEMPLATE_BEFORE_SECRET_GENERATION",
+  "code_bindings": "TO_BE_HASH_BOUND_IN_FINAL_CONFIG"
+}

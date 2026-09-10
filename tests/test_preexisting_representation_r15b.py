@@ -1,9 +1,16 @@
+import hashlib
+from pathlib import Path
+
 import pytest
 import torch
+from safetensors.torch import save_file
 
 from experiments.preexisting_representation_r15b.generation_qualification import (
     parse_final_digit,
 )
+from experiments.preexisting_representation_r15b.isolated_worker import _decode
+from experiments.preexisting_representation_r15b.isolation import build_capsule
+from experiments.preexisting_representation_r15b.protocol import heldout_capabilities
 from experiments.preexisting_representation_r15b.public_qualification import (
     DEPTHS,
     OPERATIONS,
@@ -88,3 +95,32 @@ def test_representation_decoder_rejects_non_affine_labels() -> None:
     residuals = torch.eye(8)[[0, 2, 0, 3, 7, 0]].reshape(3, 2, 8)
     with pytest.raises((RepresentationError, RuntimeError)):
         decode_transition(residuals, output_rows)
+
+
+def test_heldout_slot_permutations_are_committed_unique_and_deterministic() -> None:
+    secret = bytes(range(32))
+    commitment = hashlib.sha256(secret).hexdigest()
+    first = heldout_capabilities(secret.hex(), expected_commitment=commitment, count=4)
+    second = heldout_capabilities(secret.hex(), expected_commitment=commitment, count=4)
+    assert [item.slot_order for item in first] == [item.slot_order for item in second]
+    assert len({item.slot_order for item in first}) == 4
+    assert len({item.capability.capability_id for item in first}) == 4
+
+
+def test_pure_stdlib_capsule_decoder_reads_only_anonymous_bundle(tmp_path: Path) -> None:
+    root = Path(__file__).resolve().parents[1]
+    bundle = tmp_path / "bundle.safetensors"
+    output_rows = torch.eye(8)
+    labels = [1, 2, 0, 3, 7, 0]
+    residuals = torch.eye(8)[labels].reshape(3, 2, 8)
+    save_file(
+        {"residuals": residuals, "output_rows": output_rows},
+        str(bundle),
+        metadata={"format": "abi-r15b-anonymous-pre-answer-representation/1"},
+    )
+    capsule = tmp_path / "capsule"
+    manifest = build_capsule(root=root, representation=bundle, capsule=capsule)
+    assert manifest["prompts_included"] == 0
+    assert manifest["answers_included"] == 0
+    assert manifest["semantic_labels_included"] == 0
+    assert _decode(capsule)["labels"] == labels
