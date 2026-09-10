@@ -1,0 +1,92 @@
+{
+  "artifacts": {
+    "evaluation_rows": {
+      "path": "evaluation.jsonl",
+      "sha256": "921f244f30904b674917e6f7aae06b30b103bfc55e52ebb5ffb93e633adff2e0"
+    },
+    "source_bundle": {
+      "path": "source_bundle.json",
+      "sha256": "2a1c3b46c3ce0b6f7b84b717d03eccaafa053c8e41b7e38ad889022c01461a16"
+    },
+    "source_residuals": {
+      "path": "source_prompt_end_residuals.safetensors",
+      "sha256": "0c93ff3f17ef59b25fd67cc62cfd5228da7ac8d32645c9365538a38d99cf80e8"
+    },
+    "source_rows": {
+      "path": "source_observations.jsonl",
+      "sha256": "4f908997931e7cafc847e8480c2b2180e721096ea0a1451c9931c2d53f9437aa"
+    }
+  },
+  "claim": "BOUNDED_FACTUAL_EXTRACTION_AND_SEMANTIC_SEGREGATION",
+  "claim_ceiling": "NOT_ENGLISH_OR_OPEN_WORLD_DOMAIN_EXTRACTION",
+  "config_sha256": "86b50231491162f48056b4d87bde1950a3d1477515e4957e7ed604e884a4f59f",
+  "evidence_sha256": "bb67d1b616ab4405c6a614ac1d5c2ee192b1532e56586f05facbde1713b3df28",
+  "format": "abi-r16-heldout-factual-acquisition/1",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "bridge_parameters_trained": 0,
+    "candidate_scores": 576,
+    "elapsed_seconds": 68.27308529999573,
+    "final_package_bytes": 1222,
+    "final_package_facts": 16,
+    "generated_tokens": 276,
+    "output_bytes": 372,
+    "peak_gpu_memory_bytes": 15327108096,
+    "raw_source_prompts": 96,
+    "source_bundle_bytes": 33971,
+    "source_parameters_in_final_packages": 0,
+    "source_residual_bytes": 688216,
+    "source_training_steps": 0
+  },
+  "isolation": {
+    "control_result_sha256": "fdcb2d25fad9276d69a7c640f1ea48a320e7807878d9e5fe1542eae0067d7a11",
+    "launcher_sha256": "86016a17f1659f48c12059129d1600a2f98a5043da999a14a38084b898d6a4c9",
+    "result_sha256": "d8384bc57e780f2599bdb49919586d53ff1d01a10b198d72a1436c7ea08b2962"
+  },
+  "metrics": {
+    "candidate_exact": 48,
+    "evaluation_rows": 48,
+    "evaluation_source_exact": 48,
+    "extraction_open_exact": 48,
+    "extraction_rows": 48,
+    "other_only_abstain": 48,
+    "package_exact": 48,
+    "removed_abstain": 48,
+    "rotated_score_exact": 0,
+    "selected_facts": 16,
+    "semantic_exact": 48,
+    "source_agreement": 48,
+    "target_only_exact": 48
+  },
+  "packages": [
+    {
+      "bytes": 584,
+      "facts": 8,
+      "namespace": "chemistry/periodic-table",
+      "path": "packages/sha256-b053fc982bb44c230ef8f809cc6d195c0fe2c1d5d6b5680628749c5af9f5f575.abipkg",
+      "sha256": "b053fc982bb44c230ef8f809cc6d195c0fe2c1d5d6b5680628749c5af9f5f575"
+    },
+    {
+      "bytes": 638,
+      "facts": 8,
+      "namespace": "geography/national-capitals",
+      "path": "packages/sha256-228e537e6f50f30e4dbb9d20a8b4c23be3992d95367cd9d249fdd51a14065136.abipkg",
+      "sha256": "228e537e6f50f30e4dbb9d20a8b4c23be3992d95367cd9d249fdd51a14065136"
+    }
+  ],
+  "reveal_sha256": "226d74875f6b2a31b50a90d1ee88b5707de61930f45b726434401143f699d9ce",
+  "source": {
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "present_at_package_execution": false,
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "training_steps": 0
+  },
+  "unproven": [
+    "autonomous open-world discovery",
+    "English transfer",
+    "production LayerCake ingestion",
+    "global minimality",
+    "superiority to LoRA or distillation"
+  ],
+  "verdict": "PASS"
+}

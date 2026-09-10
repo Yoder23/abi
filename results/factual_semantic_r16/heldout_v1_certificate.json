@@ -1,0 +1,48 @@
+{
+  "claim": "BOUNDED_FACTUAL_EXTRACTION_AND_SEMANTIC_SEGREGATION",
+  "claim_ceiling": "NOT_ENGLISH_OR_OPEN_WORLD_DOMAIN_EXTRACTION",
+  "evidence": {
+    "hostile_sha256": "37b4594caaa3dd52ed737b8021ba3f792a6d3f3fec40103f3c96911165205779",
+    "live_sha256": "d2f2cc52f44cb0a80d95ca2449f8dbe91c7e803972e5c75100f70a27b1c68834",
+    "run_sha256": "523f727912d9b31a67523c4bc03202912e2ead09e4039f1f2000bc46a727b811",
+    "strict_sha256": "2d58175f389b803630f2dde1bee0aefa323d68d405e99cd7209eb6912413fdec"
+  },
+  "evidence_sha256": "659b0bd2fe717406afd3e74a21c8a6cc19a1d80efafa444f8d06a157216bf005",
+  "format": "abi-r16-bounded-certificate/1",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "bridge_parameters_trained": 0,
+    "candidate_scores": 576,
+    "elapsed_seconds": 68.27308529999573,
+    "final_package_bytes": 1222,
+    "final_package_facts": 16,
+    "generated_tokens": 276,
+    "output_bytes": 372,
+    "peak_gpu_memory_bytes": 15327108096,
+    "raw_source_prompts": 96,
+    "source_bundle_bytes": 33971,
+    "source_parameters_in_final_packages": 0,
+    "source_residual_bytes": 688216,
+    "source_training_steps": 0
+  },
+  "results": {
+    "evaluation_rows_exact": 48,
+    "facts_exact": 16,
+    "hostile_cases_rejected": 8,
+    "namespaces": [
+      "chemistry/periodic-table",
+      "geography/national-capitals"
+    ],
+    "packages": 2,
+    "source_training_steps": 0,
+    "teacher_present_at_package_execution": false
+  },
+  "unproven": [
+    "autonomous open-world discovery",
+    "English transfer",
+    "production LayerCake ingestion",
+    "global minimality",
+    "superiority to LoRA or distillation"
+  ],
+  "verdict": "PASS"
+}

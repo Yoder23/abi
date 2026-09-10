@@ -1,0 +1,31 @@
+{
+  "bundle_evidence_sha256": "f31905e29d6459093fe989af8f74cb7fc274ddf600784c61f8bbb65b8624f105",
+  "capsule_manifest_evidence_sha256": "4b7c807f3fd44c33b8f24b0674eef7bd8ce6f5c20e10a593b1caa45a222b8d12",
+  "evidence_sha256": "435520571ee0312e1d134cbe725dd976a1c28f79a118aa6436c81c14be0514af",
+  "fact_ids_consumed": 0,
+  "format": "abi-r16-isolated-factual-extraction/1",
+  "mountinfo_sha256": "643beee29455f154a3b0b4f1a2036a9bd318b7e790b0e6714c2cd987d03ed85f",
+  "network_namespace_isolated": true,
+  "old_root_present": false,
+  "oracle_fields_consumed": 0,
+  "packages": [
+    {
+      "bytes": 586,
+      "facts": 8,
+      "namespace": "chemistry/periodic-table",
+      "path": "packages/sha256-66841a2b82a090c484174c8602e1850d4e6299d6a090258f395548be06958107.abipkg",
+      "sha256": "66841a2b82a090c484174c8602e1850d4e6299d6a090258f395548be06958107"
+    },
+    {
+      "bytes": 645,
+      "facts": 8,
+      "namespace": "geography/national-capitals",
+      "path": "packages/sha256-3ba1469a9ee39d6cc2c545947de56ce49840db6223a7a20e807a35b103f58993.abipkg",
+      "sha256": "3ba1469a9ee39d6cc2c545947de56ce49840db6223a7a20e807a35b103f58993"
+    }
+  ],
+  "records_consumed": 48,
+  "reveal_files_present": 0,
+  "success_ids_consumed": 0,
+  "windows_mount_present": false
+}

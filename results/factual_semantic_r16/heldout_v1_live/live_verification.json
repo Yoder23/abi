@@ -1,0 +1,41 @@
+{
+  "evaluation_rows_replayed": 48,
+  "evidence_sha256": "b34d429db463176d2ac846f0c51c978ba5d12590f1db84d8fa3bbc9783c8ba79",
+  "files_replayed_byte_exact": [
+    {
+      "path": "source_observations.jsonl",
+      "sha256": "4f908997931e7cafc847e8480c2b2180e721096ea0a1451c9931c2d53f9437aa"
+    },
+    {
+      "path": "source_prompt_end_residuals.safetensors",
+      "sha256": "0c93ff3f17ef59b25fd67cc62cfd5228da7ac8d32645c9365538a38d99cf80e8"
+    },
+    {
+      "path": "source_bundle.json",
+      "sha256": "2a1c3b46c3ce0b6f7b84b717d03eccaafa053c8e41b7e38ad889022c01461a16"
+    },
+    {
+      "path": "rotated_score_bundle.json",
+      "sha256": "a941897f94da1895ad9bd9603102cc434abeaf1f9eab29f0b9d98199e1c28cdc"
+    },
+    {
+      "path": "evaluation.jsonl",
+      "sha256": "921f244f30904b674917e6f7aae06b30b103bfc55e52ebb5ffb93e633adff2e0"
+    },
+    {
+      "path": "extraction\\packages\\sha256-b053fc982bb44c230ef8f809cc6d195c0fe2c1d5d6b5680628749c5af9f5f575.abipkg",
+      "sha256": "b053fc982bb44c230ef8f809cc6d195c0fe2c1d5d6b5680628749c5af9f5f575"
+    },
+    {
+      "path": "extraction\\packages\\sha256-228e537e6f50f30e4dbb9d20a8b4c23be3992d95367cd9d249fdd51a14065136.abipkg",
+      "sha256": "228e537e6f50f30e4dbb9d20a8b4c23be3992d95367cd9d249fdd51a14065136"
+    }
+  ],
+  "format": "abi-r16-live-verification/1",
+  "packages_replayed": 2,
+  "physical_extractions_replayed": 2,
+  "source_rows_replayed": 96,
+  "source_training_steps": 0,
+  "teacher_present_at_package_execution": false,
+  "verdict": "PASS"
+}

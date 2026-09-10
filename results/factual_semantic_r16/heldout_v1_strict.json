@@ -1,0 +1,15 @@
+{
+  "claim": "BOUNDED_FACTUAL_EXTRACTION_AND_SEMANTIC_SEGREGATION",
+  "claim_ceiling": "NOT_ENGLISH_OR_OPEN_WORLD_DOMAIN_EXTRACTION",
+  "evaluation_rows_exact": 48,
+  "evidence_sha256": "e20eb09f15aab082b6cc0812dc4264d3cbf670e22fa32eb0b7bee2f0ff2652ac",
+  "facts_exact": 16,
+  "format": "abi-r16-strict-verification/1",
+  "namespaces": [
+    "chemistry/periodic-table",
+    "geography/national-capitals"
+  ],
+  "source_training_steps": 0,
+  "teacher_present_at_package_execution": false,
+  "verdict": "PASS"
+}

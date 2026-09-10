@@ -1,0 +1,71 @@
+{
+  "chronology": {
+    "implementation_freeze_commit": "b1a3904",
+    "preregistration_commit": "b8e97ba",
+    "reveal_commit": "bd5e571"
+  },
+  "claim": "BOUNDED_FACTUAL_EXTRACTION_AND_SEMANTIC_SEGREGATION",
+  "claim_ceiling": "NOT_ENGLISH_OR_OPEN_WORLD_DOMAIN_EXTRACTION",
+  "evidence": {
+    "accounting_sha256": "fdfa08c80e9907d3356f61061170d4428fb2d43708362f46f8b28278e21d8c4b",
+    "hostile_v2_sha256": "cf72600d428df745b53d85f751f3482dac146365cc4ff5b2537d6930f279cbd8",
+    "live_sha256": "d2f2cc52f44cb0a80d95ca2449f8dbe91c7e803972e5c75100f70a27b1c68834",
+    "run_sha256": "523f727912d9b31a67523c4bc03202912e2ead09e4039f1f2000bc46a727b811",
+    "strict_v2_sha256": "2939fbb6867939624cfe31da948061d9e33ba357a3cf28aaae03a89899a7b81e"
+  },
+  "evidence_sha256": "147a0a204e93916e14a98875d16b9e3fc387147c32386a9516850b1fc3f65703",
+  "format": "abi-r16-bounded-certificate/3",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "bridge_parameters_trained": 0,
+    "candidate_score_values_imported": 576,
+    "claim_ceiling": "R16_BOUNDED_FACTUAL_ACQUISITION_ONLY",
+    "end_to_end_acquisition_seconds": 68.27308529999573,
+    "evidence_sha256": "b536d34adf0fc095fd8eaac7720baaa2c62f5ebca776a43cb90ee28a2a69434e",
+    "external_hardware_used": false,
+    "final_package_disk_bytes": 1222,
+    "final_structured_fact_records": 16,
+    "format": "abi-r16-imported-information-accounting/1",
+    "frozen_source_parameters_in_final_packages": 0,
+    "gpu_used": true,
+    "hidden_activation_bytes_stored_for_evidence": 688128,
+    "hidden_activation_values_stored_for_evidence": 172032,
+    "hidden_activations_consumed_by_compiler": 0,
+    "peak_cpu_ram_bytes": "NOT_MEASURED",
+    "peak_gpu_memory_bytes": 15327108096,
+    "raw_source_prompts": 96,
+    "source_bundle_disk_bytes": 33971,
+    "source_inference_seconds": "NOT_SEPARATELY_MEASURED",
+    "source_residual_evidence_disk_bytes": 688216,
+    "source_training_steps": 0,
+    "teacher_generated_output_bytes": 372,
+    "teacher_generated_tokens": 276,
+    "unique_prompt_utf8_bytes": 4126,
+    "unique_source_prompts": 96
+  },
+  "repair_of": "results/factual_semantic_r16/heldout_v1_certificate_v2.json",
+  "results": {
+    "declared_artifacts_verified": 13,
+    "evaluation_rows_exact": 48,
+    "facts_exact": 16,
+    "hostile_cases_rejected": 15,
+    "live_files_verified": 7,
+    "namespaces": [
+      "chemistry/periodic-table",
+      "geography/national-capitals"
+    ],
+    "packages": 2,
+    "source_residual_rows_verified": 48,
+    "source_training_steps": 0,
+    "teacher_present_at_package_execution": false
+  },
+  "source_snapshot_evidence_sha256": "bdb164548ca29e580e465f520df01fce77524eeec01e807c413443751b4f004b",
+  "unproven": [
+    "autonomous open-world discovery",
+    "English transfer",
+    "production LayerCake ingestion",
+    "global minimality",
+    "superiority to LoRA or distillation"
+  ],
+  "verdict": "PASS"
+}

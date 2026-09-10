@@ -1,0 +1,19 @@
+{
+  "claim": "BOUNDED_FACTUAL_EXTRACTION_AND_SEMANTIC_SEGREGATION",
+  "claim_ceiling": "NOT_ENGLISH_OR_OPEN_WORLD_DOMAIN_EXTRACTION",
+  "declared_artifacts_verified": 13,
+  "evaluation_rows_exact": 48,
+  "evidence_sha256": "a358fe5eb526e359c759df2903ec3766627fbc962ceddbefd14170ed5a1cf249",
+  "facts_exact": 16,
+  "format": "abi-r16-strict-verification/2",
+  "live_files_verified": 7,
+  "namespaces": [
+    "chemistry/periodic-table",
+    "geography/national-capitals"
+  ],
+  "source_residual_rows_verified": 48,
+  "source_snapshot_evidence_sha256": "bdb164548ca29e580e465f520df01fce77524eeec01e807c413443751b4f004b",
+  "source_training_steps": 0,
+  "teacher_present_at_package_execution": false,
+  "verdict": "PASS"
+}

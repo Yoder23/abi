@@ -1,0 +1,41 @@
+{
+  "cases": [
+    {
+      "case": "missing_source",
+      "rejected": true
+    },
+    {
+      "case": "corrupt_source",
+      "rejected": true
+    },
+    {
+      "case": "missing_bundle",
+      "rejected": true
+    },
+    {
+      "case": "missing_package",
+      "rejected": true
+    },
+    {
+      "case": "corrupt_package",
+      "rejected": true
+    },
+    {
+      "case": "missing_evaluation",
+      "rejected": true
+    },
+    {
+      "case": "tampered_receipt",
+      "rejected": true
+    },
+    {
+      "case": "hash_consistent_forged_metrics",
+      "rejected": true
+    }
+  ],
+  "cases_passed": 8,
+  "cases_total": 8,
+  "evidence_sha256": "ee51552879bab88035db412de081c6759b77505e3d49082ac89e09672f690ca0",
+  "format": "abi-r16-hostile-audit/1",
+  "verdict": "PASS"
+}
