@@ -1,0 +1,35 @@
+{
+  "artifacts": {
+    "source_rows": {
+      "path": "source_observations.jsonl",
+      "sha256": "1c00b360003b6624087f8ba3c3f3bacb3176d7b715badd5a92e28528d3925fd5"
+    }
+  },
+  "claim_ceiling": "PUBLIC_SOURCE_INTERFACE_FAILURE_ONLY",
+  "evidence_sha256": "6c10a74af2e3f98f3f5af6c15b267d88255655b98aec8577d35c4e12c6df91ca",
+  "format": "abi-r17-public-realization-qualification/1",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "raw_source_prompts": 120,
+    "rendered_prompt_token_instances": 20736,
+    "rendered_prompt_utf8_bytes": 96310,
+    "teacher_generated_tokens": 1312,
+    "teacher_output_bytes": 4820
+  },
+  "interface_revision": "v2",
+  "metrics": {
+    "evaluation_rows": 48,
+    "evaluation_source_exact": 47,
+    "extraction_rows": 72,
+    "extraction_source_exact": 67
+  },
+  "protocol_sha256": "6c520cd856c441d72fe4c9e024ffc664ec9fb6543faa6a40d04ae99a68ccedf8",
+  "source": {
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "parameters": 7615616512,
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "snapshot_path_name": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "training_steps": 0
+  },
+  "verdict": "FAIL_SOURCE_PREREQUISITE"
+}

@@ -1,0 +1,25 @@
+{
+  "compiler_invoked": false,
+  "evidence_sha256": "bd2163f7baf14a71f4c6e7c0357ae736116ee5df433e550e4ffe758bbe4be614",
+  "format": "abi-r17-public-source-strict-verification/1",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "raw_source_prompts": 120,
+    "rendered_prompt_token_instances": 20736,
+    "rendered_prompt_utf8_bytes": 96310,
+    "teacher_generated_tokens": 1312,
+    "teacher_output_bytes": 4820
+  },
+  "interface": "v2",
+  "layercake_invoked": false,
+  "metrics": {
+    "evaluation_rows": 48,
+    "evaluation_source_exact": 47,
+    "extraction_rows": 72,
+    "extraction_source_exact": 67
+  },
+  "receipt_sha256": "b593148edc36600e0a8fa639d58638f8ceb6ca760e3d789cc6787130a69a0cad",
+  "source_rows": 120,
+  "source_rows_sha256": "1c00b360003b6624087f8ba3c3f3bacb3176d7b715badd5a92e28528d3925fd5",
+  "verdict": "FAIL_SOURCE_PREREQUISITE"
+}

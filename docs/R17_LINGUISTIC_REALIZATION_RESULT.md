@@ -1,6 +1,6 @@
 # R17 bounded compositional English realization
 
-Status: `PUBLIC_V1_SOURCE_INTERFACE_FAILED; PUBLIC_V2_REPAIR FROZEN`
+Status: `PUBLIC_V2_SOURCE_INTERFACE_FAILED; EXACT_TEMPLATE BRANCH CLOSED`
 
 R17 is the first post-R16 attempt to extract a generative linguistic rule
 package instead of a fact table. It targets a registered surface-realization
@@ -43,13 +43,32 @@ order (`Does subject not ...?`). It changes no feature signature, record count,
 lexical split, model revision, compiler algorithm, package representation,
 control, or numerical gate.
 
-If v2 does not pass all 120 exact source rows, the source-interface branch
-closes. If it does, the already frozen physical compiler and causal controls
-run before any hidden replication is authorized.
+V2 improved the unchanged source from 66/120 to 114/120 exact outputs, but it
+still failed the locked gate:
+
+| V2 source gate | Result |
+| --- | ---: |
+| Extraction | 67/72 exact |
+| Evaluation | 47/48 exact |
+| Total | 114/120 exact |
+
+The six remaining misses were five extraction variants and one evaluation
+semantic error. They spanned alternate aspect, dropped question inversion,
+an added phrase, and one incorrect attachment of negation. Because the v2
+decision rule required all 120 and authorized no third prompt repair, the
+exact-template source-interface branch is closed. ABI compilation and
+LayerCake were again not invoked.
+
+The evidence now identifies exact string identity as the wrong bottleneck for
+natural language: several outputs were fluent alternatives, while one was a
+real semantic failure. A successor must materially change the representation
+and scoring boundary—preserving raw teacher outputs while testing functional
+meaning, grammaticality, and teacher-relative quality separately. It may not
+be another prompt-wording, sample-count, or exact-template sweep.
 
 ## Claim ceiling
 
-No R17 claim is currently promoted. A later public and held-out pass would
+No R17 claim is promoted. A later public and held-out successor pass would
 still prove only bounded compositional surface realization for this registered
 grammar family. Unrestricted English, autonomous discovery, production
 LayerCake ingestion, global minimality, and superiority to LoRA or distillation

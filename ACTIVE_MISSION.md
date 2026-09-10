@@ -180,14 +180,16 @@ combined coverage to 27 facts. Final blind review of exact replication commit
 reconstruction remain pending; R7 remains the controlling release.
 
 R17 public status:
-`R17_PUBLIC_V1_SOURCE_INTERFACE_FAILED_V2_REPAIR_FROZEN`
+`R17_PUBLIC_V2_SOURCE_INTERFACE_FAILED_EXACT_TEMPLATE_BRANCH_CLOSED`
 
 R17 advances from structured facts toward bounded compositional English
 surface realization. Its v1 implementation was frozen before execution, but
 the unchanged source reached only 38/72 exact extraction and 28/48 exact
-evaluation outputs. Compiler and LayerCake paths were not invoked. The single
-v2 repair addresses the measured question/polarity/tense interface failures
-without changing the 24 signatures, data split, compiler, controls, or gates.
+evaluation outputs. The single v2 repair improved this to 67/72 and 47/48 but
+still failed the 120/120 prerequisite. Compiler and LayerCake paths were not
+invoked. This exact-template branch is closed; a successor must use a
+materially different functional and teacher-relative language boundary rather
+than another prompt or exact-string sweep.
 
 ## What R7 proves
 
@@ -252,7 +254,7 @@ Teacher extraction and minimization belong to additive campaigns. R16 now
 supplies the first bounded held-out factual extraction/segregation pass, but
 only for registered closed candidate sets and a two-domain ontology. The
 immediate additive work is to publicly reconstruct the blind-reviewed R16
-seal and execute the frozen R17 v2 linguistic source prerequisite. It
+seal and design the post-R17 functional linguistic representation. It
 must require answer-free free-form generation and teacher-relative quality,
 not merely candidate ranking or a package-owned answer table. LayerCake
 product ingestion remains a separate acceptance gate.

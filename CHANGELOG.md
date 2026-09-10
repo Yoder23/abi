@@ -12,6 +12,9 @@
 - Froze one measured v2 repair for question mood, negative polarity, future
   tense, and standard uncontracted negative-question order without changing
   the compiler, package, data split, controls, or exact gates.
+- Preserved the v2 failure at 67/72 extraction and 47/48 evaluation exactness.
+  The exact-template branch is closed; no ABI compiler or LayerCake result is
+  inferred from this source-interface failure.
 
 ## R16 bounded factual acquisition and segregation - 2026-09-10
 

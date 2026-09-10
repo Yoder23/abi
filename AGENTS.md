@@ -298,6 +298,12 @@ arbitrary teacher.
     tense, and an unnatural negative-question order. Do not change the 24
     signatures, lexical split, compiler, controls, or gates. If v2 fails the
     120/120 source gate, close this interface branch.
+16. R17 v2 reached 67/72 extraction and 47/48 evaluation source exactness, so
+    the registered 120/120 gate failed and the exact-template branch is closed.
+    Preserve all rows. Do not run another prompt-wording, sample-count, or
+    exact-template variant. A successor must score functional meaning,
+    grammaticality, and teacher-relative quality separately and use a
+    materially different package representation.
 
 Do not claim the ABI moonshot until those acquisition and external-quality
 gates are supported by their own evidence.
