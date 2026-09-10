@@ -250,6 +250,16 @@ failure is controlling. Teacher self-labeling also remains failed; the passing
 registered-ontology label control is not autonomous discovery. See
 `docs/R21_LABEL_SEPARATED_GENERATIVE_TRANSFER_RESULT.md`.
 
+R22 status: `R22_NORMALIZED_SOURCE_FAILED`
+
+R22 preserved the 600 R21 raw responses and registered labels and made exactly
+600 preregistered GPU calls for explicit task-and-field normalization. The
+source gate failed at 520/600 functional and 255/600 exact-field outputs,
+despite 600/600 non-hallucinating and non-collapsed outputs. No student was
+trained and LayerCake was not invoked. Unconstrained teacher rewriting is
+closed as a nearby repair; the next bounded test must use a preregistered
+semantic-equivalence contract and a new hidden split.
+
 ## What R7 proves
 
 R7 proves one bounded capability ABI result: four immutable packages execute
@@ -299,6 +309,7 @@ The blind reviewer returned `VERDICT: PASS` for this exact scope.
 | General teacher-derived English capability | OPEN; R19 is supplied-slot surface realization only |
 | Instruction-conditioned supplied-content realization | FAILED R20 source/compiler prerequisite; no package or LayerCake run |
 | Label-separated generative supplied-content transfer | PUBLIC PASS, HIDDEN FAIL R21; 113/120 hidden but summary 13/20 below gate |
+| Teacher-side semantic-plan normalization | FAIL R22 SOURCE; 520/600 functional, 255/600 exact-field, no student/LayerCake run |
 | Exact foreign-teacher behavioral transplantation | OPEN; separate Track A |
 
 ## Current objective

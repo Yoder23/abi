@@ -31,6 +31,7 @@ fresh blind Codex review. Human quality and independent hardware remain open.
 | Teacher-derived compositional surface realization | Bounded replicated local pass; R19 96/96 disclosed plus 48/48 fresh hidden, strict/live/22-case hostile verification |
 | Raw-instruction supplied-content structural realization | Failed R20 source/compiler prerequisite; 10/72 extraction and 19/120 evaluation exact, no package |
 | Label-separated generative supplied-content transfer | R21 public prerequisite passed and fresh hidden replication failed; hidden factor 113/120, summary 13/20 below 15/20 gate |
+| Teacher-side semantic-plan normalization | Failed R22 source prerequisite; 520/600 functional, 255/600 exact-field, no student or LayerCake run |
 | Pre-existing open-weight English/domain extraction | Open |
 | LoRA/distillation superiority | Unproven |
 
@@ -130,6 +131,14 @@ preserving programs. This isolates an ABI representation/source-interface
 limit; LayerCake was not exercised. The next valid path requires a generative
 artifact and multi-axis semantic quality evaluation rather than another exact-
 template prompt repair.
+
+R22 tested that normalization hypothesis directly and failed before student
+training. The pinned source returned 600/600 grounded, non-collapsed outputs,
+but only 520/600 passed the frozen functional contract and only 255/600 carried
+all three values verbatim once and in order. The failure was concentrated in
+summary, clarification, and abstention, while email and bullets were 100/100
+functional. This rules out another nearby unconstrained rewrite prompt. See
+[R22_SEMANTIC_PLAN_NORMALIZATION_RESULT.md](R22_SEMANTIC_PLAN_NORMALIZATION_RESULT.md).
 
 Historical campaign records remain available in `evidence/current/`,
 `results/`, and the research-history branch. Later evidence supersedes a claim

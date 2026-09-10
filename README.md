@@ -224,6 +224,14 @@ labeling also failed; the successful registered-ontology classifier is not
 autonomous discovery. See
 [`docs/R21_LABEL_SEPARATED_GENERATIVE_TRANSFER_RESULT.md`](docs/R21_LABEL_SEPARATED_GENERATIVE_TRANSFER_RESULT.md).
 
+R22 then tested one explicit semantic-plan normalization call for each of the
+600 preserved R21 training responses. It failed before student training:
+520/600 targets passed functional scoring and 255/600 preserved every field
+verbatim once, although all 600 remained grounded and non-collapsed. LayerCake
+was not invoked. This closes unconstrained teacher rewriting as the immediate
+repair path and preserves the ABI-versus-LayerCake failure boundary. See
+[`docs/R22_SEMANTIC_PLAN_NORMALIZATION_RESULT.md`](docs/R22_SEMANTIC_PLAN_NORMALIZATION_RESULT.md).
+
 ## R7 at a glance
 
 | Evidence | Result |

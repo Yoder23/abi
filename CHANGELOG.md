@@ -1,5 +1,16 @@
 # Changelog
 
+## R22 semantic-plan normalization failure - 2026-09-10
+
+- Froze a 600-row, no-retry GPU normalization prerequisite before any new
+  source call or student training.
+- Preserved all raw R21 responses and labels while requesting task-aware,
+  exact-field normalized targets from the pinned source.
+- Failed at 520/600 functional and 255/600 exact-field targets; grounding and
+  non-collapse were both 600/600.
+- Correctly blocked student training and LayerCake execution. The failure is
+  isolated to the ABI acquisition/source interface, not the LayerCake host.
+
 ## R21 label-separated generative transfer - 2026-09-10
 
 - Replaced exact-template compilation with three-seed generative LayerCake

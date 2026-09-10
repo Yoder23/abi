@@ -16,6 +16,12 @@ locked task floor: 113/120 overall and above the 107/120 teacher, but 13/20
 summary versus the required 15/20. R21 therefore does not certify general
 English or change the controlling R7 release.
 
+R22 tested whether one explicit semantic-plan rewrite could repair that
+boundary before retraining. The preregistered source gate failed at 520/600
+functional and 255/600 exact-field targets, despite 600/600 grounded and
+non-collapsed outputs. Student training and LayerCake execution were correctly
+blocked. This is an ABI source-interface failure, not a LayerCake failure.
+
 The additive R8 native-neural-transfer falsification campaign is complete at
 Level 0. Exact canonical extraction succeeded, but the same acquired state did
 not create capability-level behavior in the first frozen recipient. The raw
@@ -90,11 +96,13 @@ Public release:
    research.
 8. R21 label-separated generative transfer: public prerequisite passed, fresh
    hidden replication failed the summary task minimum.
-9. R8 native cross-model neural transfer: failed public prerequisite; any
+9. R22 semantic-plan normalization: failed the source prerequisite; no student
+   or LayerCake run was performed.
+10. R8 native cross-model neural transfer: failed public prerequisite; any
    successor requires a new additive mechanism and preregistration.
-10. R9 neural-ISA recipient realization: capability-specific recipient-state
+11. R9 neural-ISA recipient realization: capability-specific recipient-state
    GRU branch failed; universal backend remains closed.
-11. R11 foreign-teacher front end: the ABI-native construction passes, but
+12. R11 foreign-teacher front end: the ABI-native construction passes, but
     extraction of a capability already encoded in an independently trained
     open-weight model remains open.
 
@@ -119,6 +127,9 @@ claims require separate acquisition and quality evidence.
   experiment around only the missing foreign-teacher extractor and require
   held-out teacher-relative behavior, zero recipient optimization, and exact
   frozen-package replay.
+- Replace free-text normalization with a preregistered semantic-equivalence
+  contract derived from public source behavior, then test it on a newly
+  committed hidden split without retraining the frozen R21 packages.
 
 ## Storage and repository health
 

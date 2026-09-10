@@ -279,3 +279,13 @@ labeler is a registered-ontology control, not autonomous discovery. R21 does
 not support claims of general English, arbitrary-domain extraction,
 minimality, hidden replication, or superiority to LoRA/distillation. See
 [R21_LABEL_SEPARATED_GENERATIVE_TRANSFER_RESULT.md](R21_LABEL_SEPARATED_GENERATIVE_TRANSFER_RESULT.md).
+
+## Additive R22 semantic-plan normalization
+
+R22 adds no positive claim. Its frozen teacher-side normalization prerequisite
+failed at 520/600 functional and 255/600 exact-field targets. Grounding and
+non-collapse were both 600/600, and registered labels remained 600/600. The
+failure blocked all student training and LayerCake execution, so it is
+specifically an ABI acquisition/source-interface failure. It does not weaken
+the prior LayerCake host evidence or promote R21. See
+[R22_SEMANTIC_PLAN_NORMALIZATION_RESULT.md](R22_SEMANTIC_PLAN_NORMALIZATION_RESULT.md).
