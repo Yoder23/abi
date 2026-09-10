@@ -49,7 +49,55 @@ def apply_program(start: int, program: tuple[int, ...]) -> int:
     return value
 
 
-def build_rows(*, rows_per_depth: int, seed: int) -> list[dict[str, Any]]:
+def _render_prompt(start: int, program: tuple[int, ...], *, style: str) -> str:
+    if style == "instructions":
+        operation_text = "; then ".join(OPERATION_TEXT[index] for index in program)
+        return (
+            "Work in integers modulo 8. Start with "
+            f"{start}. Apply these operations in order: {operation_text}. "
+            "What is the final value? Reply with exactly one digit from 0 to 7."
+        )
+    if style in {"expression", "expression_reasoning"}:
+        expression = str(start)
+        for operator in program:
+            if operator == 0:
+                expression = f"(({expression} + 1) % 8)"
+            elif operator == 1:
+                expression = f"((3 * {expression}) % 8)"
+            else:
+                expression = f"(({expression} - 1) % 8)"
+        if style == "expression":
+            return (
+                "Evaluate the following integer expression, where % is the modulo "
+                f"remainder operator. Reply with exactly one digit: {expression} ="
+            )
+        return (
+            "Evaluate this integer expression, where % is the modulo remainder "
+            "operator. Show the intermediate calculation, then end your response "
+            f"with FINAL: followed by one digit. Expression: {expression}"
+        )
+    if style == "indexed_steps":
+        lines = ["Compute this state sequence in integers modulo 8.", f"x0 = {start}"]
+        for step, operator in enumerate(program, start=1):
+            prior = f"x{step - 1}"
+            if operator == 0:
+                expression = f"({prior} + 1) % 8"
+            elif operator == 1:
+                expression = f"(3 * {prior}) % 8"
+            else:
+                expression = f"({prior} - 1) % 8"
+            lines.append(f"x{step} = {expression}")
+        lines.append(
+            "Return each computed x value on one short line and end exactly "
+            f"with FINAL: followed by the one-digit value of x{len(program)}."
+        )
+        return "\n".join(lines)
+    raise QualificationError(f"unknown public prompt style: {style}")
+
+
+def build_rows(
+    *, rows_per_depth: int, seed: int, prompt_style: str = "instructions"
+) -> list[dict[str, Any]]:
     if rows_per_depth < 32:
         raise QualificationError("at least 32 public rows per depth are required")
     generator = random.Random(int(seed))
@@ -69,12 +117,7 @@ def build_rows(*, rows_per_depth: int, seed: int) -> list[dict[str, Any]]:
             if key in seen:
                 continue
             seen.add(key)
-            operation_text = "; then ".join(OPERATION_TEXT[index] for index in program)
-            prompt = (
-                "Work in integers modulo 8. Start with "
-                f"{start}. Apply these operations in order: {operation_text}. "
-                "What is the final value? Reply with exactly one digit from 0 to 7."
-            )
+            prompt = _render_prompt(start, program, style=prompt_style)
             identity = {"depth": depth, "start": start, "program": list(program)}
             rows.append(
                 {
@@ -238,10 +281,19 @@ def main() -> None:
     parser.add_argument("--seed", type=int, default=1515001)
     parser.add_argument("--model-id", default=MODEL_ID)
     parser.add_argument("--model-revision", default=MODEL_REVISION)
+    parser.add_argument(
+        "--prompt-style",
+        choices=("instructions", "expression", "expression_reasoning", "indexed_steps"),
+        default="instructions",
+    )
     args = parser.parse_args()
     if args.output.exists():
         raise QualificationError(f"immutable output already exists: {args.output}")
-    rows = build_rows(rows_per_depth=args.rows_per_depth, seed=args.seed)
+    rows = build_rows(
+        rows_per_depth=args.rows_per_depth,
+        seed=args.seed,
+        prompt_style=args.prompt_style,
+    )
     observations, summary = evaluate(
         rows,
         batch_size=args.batch_size,
@@ -259,6 +311,7 @@ def main() -> None:
             "operations": [item[0] for item in OPERATIONS],
         },
         "depths": list(DEPTHS),
+        "prompt_style": args.prompt_style,
         "behavior_space_at_max_depth": 8 * 3 ** max(DEPTHS),
         "row_generation": {
             "seed": args.seed,

@@ -1,9 +1,21 @@
+import pytest
+import torch
+
+from experiments.preexisting_representation_r15b.generation_qualification import (
+    parse_final_digit,
+)
 from experiments.preexisting_representation_r15b.public_qualification import (
     DEPTHS,
     OPERATIONS,
     apply_program,
     build_rows,
     wilson_lower,
+)
+from experiments.preexisting_representation_r15b.representation import (
+    RepresentationError,
+    decode_labels,
+    decode_transition,
+    labels_to_operations,
 )
 
 
@@ -27,6 +39,52 @@ def test_public_rows_are_deterministic_unique_and_correct() -> None:
     assert all(row["answer"] == apply_program(row["start"], tuple(row["program"])) for row in first)
 
 
+def test_expression_prompt_is_a_distinct_public_formulation() -> None:
+    instructions = build_rows(rows_per_depth=32, seed=1515001)
+    expressions = build_rows(rows_per_depth=32, seed=1515001, prompt_style="expression")
+    assert [row["answer"] for row in instructions] == [row["answer"] for row in expressions]
+    assert [row["prompt_sha256"] for row in instructions] != [
+        row["prompt_sha256"] for row in expressions
+    ]
+    reasoning = build_rows(
+        rows_per_depth=32,
+        seed=1515001,
+        prompt_style="expression_reasoning",
+    )
+    assert all("FINAL:" in row["prompt"] for row in reasoning)
+    indexed = build_rows(
+        rows_per_depth=32,
+        seed=1515001,
+        prompt_style="indexed_steps",
+    )
+    assert all("x0 =" in row["prompt"] and "FINAL:" in row["prompt"] for row in indexed)
+
+
 def test_wilson_lower_is_fail_closed_and_monotonic() -> None:
     assert wilson_lower(0, 100) < 1e-15
     assert wilson_lower(80, 100) < wilson_lower(90, 100) < wilson_lower(100, 100)
+
+
+def test_final_digit_parser_is_strict_and_uses_last_marked_answer() -> None:
+    assert parse_final_digit("reasoning\nFINAL: 6") == 6
+    assert parse_final_digit("FINAL: 2\ncorrection FINAL: 5.") == 5
+    assert parse_final_digit("answer is 6") is None
+    assert parse_final_digit("FINAL: 9") is None
+
+
+def test_representation_decoder_recovers_affine_transition() -> None:
+    output_rows = torch.eye(8)
+    labels = [1, 2, 0, 3, 7, 0]
+    residuals = torch.eye(8)[labels].reshape(3, 2, 8)
+    assert decode_labels(residuals, output_rows) == labels
+    assert labels_to_operations(labels) == [(1, 1), (3, 0), (1, 7)]
+    transition = decode_transition(residuals, output_rows)
+    assert transition.shape == (3, 8, 8)
+    assert torch.equal(transition.sum(dim=-1), torch.ones(3, 8))
+
+
+def test_representation_decoder_rejects_non_affine_labels() -> None:
+    output_rows = torch.eye(8)
+    residuals = torch.eye(8)[[0, 2, 0, 3, 7, 0]].reshape(3, 2, 8)
+    with pytest.raises((RepresentationError, RuntimeError)):
+        decode_transition(residuals, output_rows)

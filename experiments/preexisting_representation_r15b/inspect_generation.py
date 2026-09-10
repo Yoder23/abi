@@ -16,6 +16,11 @@ def main() -> None:
     parser.add_argument("--model-id", default=MODEL_ID)
     parser.add_argument("--model-revision", default=MODEL_REVISION)
     parser.add_argument("--rows", type=int, default=8)
+    parser.add_argument(
+        "--prompt-style",
+        choices=("instructions", "expression", "expression_reasoning", "indexed_steps"),
+        default="instructions",
+    )
     args = parser.parse_args()
     os.environ["HF_HUB_OFFLINE"] = "1"
     os.environ["TRANSFORMERS_OFFLINE"] = "1"
@@ -36,7 +41,15 @@ def main() -> None:
         dtype=torch.float16,
     ).to("cuda")
     model.eval()
-    rows = [row for row in build_rows(rows_per_depth=32, seed=1515001) if row["depth"] == 1]
+    rows = [
+        row
+        for row in build_rows(
+            rows_per_depth=32,
+            seed=1515001,
+            prompt_style=args.prompt_style,
+        )
+        if row["depth"] == 1
+    ]
     for row in rows[: args.rows]:
         prompt = _chat_prompt(tokenizer, str(row["prompt"]))
         encoded = tokenizer(prompt, return_tensors="pt", add_special_tokens=False).to("cuda")
@@ -51,7 +64,7 @@ def main() -> None:
             generated[0, encoded["input_ids"].shape[1] :],
             skip_special_tokens=True,
         )
-        print(f"expected={row['answer']} completion={completion!r}")
+        print(f"prompt={row['prompt']!r} expected={row['answer']} completion={completion!r}")
 
 
 if __name__ == "__main__":
