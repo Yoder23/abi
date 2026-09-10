@@ -1,0 +1,53 @@
+{
+  "compiler_authorized": true,
+  "evidence_sha256": "59a5532d021efd0b3dd7f03a028ac12189c6cabb798c4f8ae606009f4c236148",
+  "format": "abi-r18-heldout-source-strict-verification/1",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "raw_source_prompts": 120,
+    "rendered_prompt_token_instances": 20740,
+    "rendered_prompt_utf8_bytes": 96516,
+    "teacher_generated_tokens": 1298,
+    "teacher_output_bytes": 4947
+  },
+  "layercake_invoked": false,
+  "metrics": {
+    "evaluation_functional_exact": 45,
+    "evaluation_rows": 48,
+    "extraction_functional_exact": 65,
+    "extraction_rows": 72,
+    "minimum_parseable_per_signature": 3,
+    "parseable_by_signature": {
+      "declarative|future|negative|plural": 3,
+      "declarative|future|negative|singular": 3,
+      "declarative|future|positive|plural": 3,
+      "declarative|future|positive|singular": 3,
+      "declarative|past|negative|plural": 3,
+      "declarative|past|negative|singular": 3,
+      "declarative|past|positive|plural": 3,
+      "declarative|past|positive|singular": 3,
+      "declarative|present|negative|plural": 3,
+      "declarative|present|negative|singular": 3,
+      "declarative|present|positive|plural": 3,
+      "declarative|present|positive|singular": 3,
+      "question|future|negative|plural": 3,
+      "question|future|negative|singular": 3,
+      "question|future|positive|plural": 3,
+      "question|future|positive|singular": 3,
+      "question|past|negative|plural": 3,
+      "question|past|negative|singular": 3,
+      "question|past|positive|plural": 3,
+      "question|past|positive|singular": 3,
+      "question|present|negative|plural": 3,
+      "question|present|negative|singular": 3,
+      "question|present|positive|plural": 3,
+      "question|present|positive|singular": 3
+    },
+    "source_functional_exact": 110,
+    "source_rows": 120
+  },
+  "receipt_sha256": "e712d8ec82dffcc962245933a1a9b80a6da4b957c5484f08953d0397f045c5f6",
+  "source_rows_sha256": "a4d82c180c280b21e1e15137d8646ed52e4c7631168537fa80190acb281fcc4e",
+  "source_rows_verified": 120,
+  "verdict": "PASS_SOURCE_COMPILABILITY"
+}

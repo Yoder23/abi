@@ -1,0 +1,74 @@
+{
+  "artifacts": {
+    "source_rows": {
+      "path": "source_observations.jsonl",
+      "sha256": "a4d82c180c280b21e1e15137d8646ed52e4c7631168537fa80190acb281fcc4e"
+    }
+  },
+  "compiler_authorized": true,
+  "config_sha256": "71b05661a8e2e16922a53906aa75df8f6dbed919d66a45c7f807394a6d24da31",
+  "evidence_sha256": "6dfd4ab5b45056da94d64a2cb563eb636c94f4f139fc24ef443cd9ac3065473f",
+  "format": "abi-r18-heldout-source-acquisition/1",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "elapsed_seconds": 103.03129350001109,
+    "frozen_source_parameters_copied": 0,
+    "hidden_activations_stored": 0,
+    "logits_stored": 0,
+    "peak_gpu_memory_bytes": 15325391872,
+    "raw_source_prompts": 120,
+    "rendered_prompt_token_instances": 20740,
+    "rendered_prompt_utf8_bytes": 96516,
+    "source_parameters": 7615616512,
+    "teacher_generated_tokens": 1298,
+    "teacher_output_bytes": 4947
+  },
+  "metrics": {
+    "evaluation_functional_exact": 45,
+    "evaluation_rows": 48,
+    "extraction_functional_exact": 65,
+    "extraction_rows": 72,
+    "minimum_parseable_per_signature": 3,
+    "parseable_by_signature": {
+      "declarative|future|negative|plural": 3,
+      "declarative|future|negative|singular": 3,
+      "declarative|future|positive|plural": 3,
+      "declarative|future|positive|singular": 3,
+      "declarative|past|negative|plural": 3,
+      "declarative|past|negative|singular": 3,
+      "declarative|past|positive|plural": 3,
+      "declarative|past|positive|singular": 3,
+      "declarative|present|negative|plural": 3,
+      "declarative|present|negative|singular": 3,
+      "declarative|present|positive|plural": 3,
+      "declarative|present|positive|singular": 3,
+      "question|future|negative|plural": 3,
+      "question|future|negative|singular": 3,
+      "question|future|positive|plural": 3,
+      "question|future|positive|singular": 3,
+      "question|past|negative|plural": 3,
+      "question|past|negative|singular": 3,
+      "question|past|positive|plural": 3,
+      "question|past|positive|singular": 3,
+      "question|present|negative|plural": 3,
+      "question|present|negative|singular": 3,
+      "question|present|positive|plural": 3,
+      "question|present|positive|singular": 3
+    },
+    "source_functional_exact": 110,
+    "source_rows": 120
+  },
+  "protocol_sha256": "963c110d6f8f9c39717042d27efb7edada676d4ff08c23baf46ef1ede9075b4c",
+  "reveal_sha256": "69b050a929ec147f6ce7c407f7f371e5931571d4d864dd4b4053ea11bd5c06b2",
+  "source": {
+    "device": "cuda",
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "parameters": 7615616512,
+    "present_at_compilation": false,
+    "present_at_package_execution": false,
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "snapshot_path_name": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "training_steps": 0
+  },
+  "verdict": "PASS_SOURCE_COMPILABILITY"
+}
