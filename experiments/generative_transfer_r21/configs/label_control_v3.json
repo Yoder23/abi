@@ -1,0 +1,35 @@
+{
+  "autonomous_ontology_claim_authorized": false,
+  "base_config": {
+    "path": "experiments/generative_transfer_r21/configs/public_v1.json",
+    "sha256": "4d304b8d85e4267d0cd2f54a471a9b65e5b15035faaf7501554a14693555f99a"
+  },
+  "code_sha256": {
+    "experiments/foreign_capability_r14/core.py": "ade41e81c0087c9d56f484c1e7c6f8e57a726a31150a42c92b448c1d0eec4816",
+    "experiments/generative_transfer_r21/LABEL_CONTROL_PROTOCOL.md": "0fbdc52d7853067d9f3046077a9f58c4d55e192833d0ade440649aeb92bc1ba2",
+    "experiments/generative_transfer_r21/binding.py": "00965da70cc735466110c401fe085e2d776445d3166587c692478eb6baa1447c",
+    "experiments/generative_transfer_r21/derive_labels_v3.py": "e062b41abe19ad8222275cb8e6a3ea80a30e125ed4627274de5ee65077c7c63f",
+    "experiments/generative_transfer_r21/freeze_label_control.py": "35677d56c28b75660a4e5fbcfb0de3917b1e3f315752b3ab562c56c43e5bb488",
+    "experiments/generative_transfer_r21/label_control_binding.py": "dc1938f3bf58e775cec1ea588dce4b08f4e2cff6bb9ec79f5b28c7135da8e97b",
+    "experiments/generative_transfer_r21/protocol.py": "76fd0d3a45ba094511dba78357832be78996435ae4070362c4706a503f756a18",
+    "experiments/generative_transfer_r21/run.py": "d8fe7648cca96a090e48dae007604ba2839c6aa7c3717a31fc7293daf08d9e32",
+    "experiments/generative_transfer_r21/run_v3.py": "17b22df0fb77fad78affc672b0f525403c163a4c50c076284709410781aa7463",
+    "experiments/generative_transfer_r21/verify.py": "0e85f13f2742a11bf27dc2e37e3ea187bba8978a06f44553b6071830f9e6ffd4",
+    "experiments/generative_transfer_r21/verify_v3.py": "1187e04cebfab5443f9b445135135b069a8fc6d6005ed7601e8625d3aacfbf90"
+  },
+  "evaluation_access_authorized": false,
+  "failed_source_receipt": {
+    "path": "results/generative_transfer_r21/public_v1_source/receipt.json",
+    "sha256": "642b60972139ef261b7aa39cda15bea56b9a1c62ca50c98afecf9d00ba24ca5c"
+  },
+  "failed_source_rows": {
+    "path": "results/generative_transfer_r21/public_v1_source/source_observations.jsonl",
+    "sha256": "4c148d7ccd262ce8767b2b11266d959236811d9a6b032186bf825dcca5d9f4c1"
+  },
+  "format": "abi-r21-label-control-config/1",
+  "implementation_freeze_commit": "25c69686381220826901e95a196b0a5d5374fcff",
+  "required_training_exact": 600,
+  "response_regeneration_authorized": false,
+  "teacher_side_labeling": false,
+  "unique_registered_seed_pairs": 36
+}
