@@ -1,5 +1,14 @@
 # Changelog
 
+## R16 public factual prerequisite v1 - 2026-09-10
+
+- Added a two-domain public factual-acquisition and semantic-segregation
+  protocol that captures source state before any assistant token is emitted.
+- Preserved a failed first screen: 15/16 open answers, 43/48 shuffled-choice
+  selections, 13/16 consistent extracted facts, and 48/48 semantic labels.
+- Diagnosed one Unicode-normalization mismatch and five chemistry
+  choice-interface errors. No held-out R16 run is authorized from this result.
+
 ## R15B bounded pre-existing representation recovery - 2026-09-10
 
 - Used an unchanged Qwen2-7B-Instruct source with zero source training and a

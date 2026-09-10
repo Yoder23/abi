@@ -134,9 +134,19 @@ and 10/10 hostile mutations passed. The labels were externally registered and
 the source failed deep Track A behavior. A fresh blind review passed with zero
 critical/high findings; additive repair now compares regenerated tensors with
 all four committed bundles exactly and hash-inventories the complete pinned
-source snapshot. English/domain extraction,
-autonomous labeling, teacher cloning, and LoRA/distillation superiority remain
-open. R7 remains the controlling published release.
+source snapshot. English/domain extraction, autonomous labeling, teacher
+cloning, and LoRA/distillation superiority remain open. R7 remains the
+controlling published release.
+
+R16 public status: `PUBLIC_FACTUAL_PREREQUISITE_V1_FAILED`
+
+The first broader factual/segregation probe used 16 public chemistry and
+geography facts. Semantic segregation was 48/48, but the unchanged source
+reached only 15/16 open answers, 43/48 shuffled-choice answers, and 13/16
+three-view-consistent facts. The accented `Brasília` open answer was a
+normalization miss; the other five misses were a chemistry letter-selection
+interface failure. Preserve v1 and replace that interface before any held-out
+R16 certification.
 
 ## What R7 proves
 

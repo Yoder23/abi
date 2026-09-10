@@ -1,0 +1,63 @@
+{
+  "artifacts": {
+    "extracted_facts": {
+      "path": "extracted_facts.json",
+      "sha256": "d2788ed76b33ad6b297deb7987ed286fbf587f8c3805c0e3029a59a8d050dbde"
+    },
+    "observations": {
+      "path": "observations.jsonl",
+      "sha256": "a92dcd5d68b347621149c93efb88d702aa00ea64d8d81b5bd0693da6fb83f48d"
+    },
+    "representations": {
+      "path": "prompt_end_representations.safetensors",
+      "sha256": "d7f0ae4a7a15696179f2fa4c03fefc6145652e1c85ce7c611ef8c1bd4743517c"
+    }
+  },
+  "claim_ceiling": "PUBLIC_SOURCE_PREREQUISITE_ONLY",
+  "evidence_sha256": "5d5fbd66accb58989358d7179ee246a9ccf4630dd5d3699a7d6b76155b55ee3d",
+  "fact_registry_sha256": "bf9e215c25b488a2d66f40c407e31f2029236360a59974daaa39054e7569cbb1",
+  "format": "abi-r16-public-factual-qualification/1",
+  "information_accounting": {
+    "bundle_bytes": 745808,
+    "elapsed_seconds": 22.89350099999865,
+    "output_head_bytes": 57344,
+    "output_head_values": 14336,
+    "peak_gpu_memory_bytes": 15321210368,
+    "raw_prompts": 64,
+    "residual_bytes": 688128,
+    "residual_values": 172032,
+    "teacher_generated_tokens": 141,
+    "teacher_output_bytes": 110
+  },
+  "metrics": {
+    "choice_generated_exact": 43,
+    "choice_generated_total": 48,
+    "choice_projected_exact": 43,
+    "choice_projected_total": 48,
+    "facts_extracted_exact": 13,
+    "facts_total": 16,
+    "open_exact": 15,
+    "open_total": 16,
+    "semantic_exact": 48,
+    "semantic_total": 48
+  },
+  "protocol_sha256": "e43a5c17229ca5309125f0efae88b7757e9da9a88524e627bb15c76d3e371c58",
+  "source": {
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "parameters": 7615616512,
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "snapshot_path_name": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "trainable_parameters": 0,
+    "training_steps": 0
+  },
+  "unproven": [
+    "held-out factual extraction",
+    "autonomous open-world labeling",
+    "teacher-free package execution",
+    "LayerCake ingestion",
+    "English transfer",
+    "global minimality",
+    "superiority to LoRA or distillation"
+  ],
+  "verdict": "FAIL"
+}

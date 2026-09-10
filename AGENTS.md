@@ -249,6 +249,12 @@ arbitrary teacher.
     shortcuts by extracting a broader pre-existing capability whose held-out
     behavior and semantic segregation are independently scored. Do not call
     R15B English or arbitrary-domain extraction.
+12. Preserve R16 public v1 as a source-interface failure: 15/16 open answers,
+    43/48 shuffled-choice selections, 13/16 consistent extracted facts, and
+    48/48 semantic labels. Do not delete failing chemistry facts or lower the
+    exact gate. A public successor may replace choice-letter prediction with
+    answer-free generation plus registered candidate-sequence scoring before
+    any held-out commitment.
 
 Do not claim the ABI moonshot until those acquisition and external-quality
 gates are supported by their own evidence.

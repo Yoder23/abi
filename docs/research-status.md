@@ -82,6 +82,11 @@ open. Fresh blind review passed the bounded claim with zero critical/high
 findings; the repaired live verifier binds the full pinned source snapshot and
 bit-compares regenerated representation tensors.
 
+R16 public v1 began the next factual/semantic stage and failed its exact source
+prerequisite: 15/16 open answers, 43/48 shuffled-choice answers, 13/16
+three-view-consistent facts, and 48/48 semantic labels. This is development
+evidence only. No held-out factual extraction claim has been opened.
+
 Historical campaign records remain available in `evidence/current/`,
 `results/`, and the research-history branch. Later evidence supersedes a claim
 only where explicitly stated; negative results are never rewritten as passes.
