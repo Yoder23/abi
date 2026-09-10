@@ -1,0 +1,34 @@
+{
+  "code_sha256": {
+    "experiments/foreign_capability_r14/core.py": "ade41e81c0087c9d56f484c1e7c6f8e57a726a31150a42c92b448c1d0eec4816",
+    "experiments/generative_transfer_r21/HASH_ASSURANCE_PROTOCOL.md": "dddc40b907e3110b5426c7faa57d5923091b66bcf4a3c88d8a2c871e4e869b9f",
+    "experiments/generative_transfer_r21/freeze_hash_assurance.py": "1d10f9d661283597171c0caa5f02a59bcf0a776e24bca6eb8bbc7d41b565fdb7",
+    "experiments/generative_transfer_r21/hash_assurance_binding.py": "f1915f3c95256b52edd6140a126ad2eec88d235794be2b76934faaa3b1995e8a",
+    "experiments/generative_transfer_r21/run_v4.py": "e0cee60d500bcd2156b0f72956d54200751672ff88da3e6787e18b9d8e386351",
+    "experiments/generative_transfer_r21/verify_v4.py": "9f6c75dc21f35654ed05df79533f91bef3190afde2ce4ddd48ca9ad5eb902b88"
+  },
+  "data_changes_authorized": false,
+  "format": "abi-r21-hash-assurance-config/1",
+  "gate_changes_authorized": false,
+  "implementation_freeze_commit": "a1c99c096e228e864ba193cee87f2c12d09690df",
+  "label_control_config": {
+    "path": "experiments/generative_transfer_r21/configs/label_control_v3.json",
+    "sha256": "5cf37031f8002aee31daad92dfb780d8530f94162e414091b2c25a3fdc18d998"
+  },
+  "positive_stored-evidence_promotion_authorized": false,
+  "removed_fields": [
+    "evidence_sha256"
+  ],
+  "source_labeler": {
+    "path": "results/generative_transfer_r21/public_v3_source/labeler.json",
+    "sha256": "a6e9886c50dae39e05d3230aacb6aadb14ab070fdf513c7a18cc28628457a35d"
+  },
+  "source_receipt": {
+    "path": "results/generative_transfer_r21/public_v3_source/receipt.json",
+    "sha256": "1bbad508456b0cf62902ad755e16812e3f75815af94af5537753417be5c1a74a"
+  },
+  "source_rows": {
+    "path": "results/generative_transfer_r21/public_v3_source/source_observations.jsonl",
+    "sha256": "15e9a3d5c65edb9db459bdab1a4651f26d8e88e05d921b08c6c7f24a77fa0467"
+  }
+}
