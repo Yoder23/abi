@@ -157,8 +157,10 @@ This is a structured closed-candidate memory result with a registered ontology
 and candidate vocabulary. It is not autonomous open-world discovery, fluent
 English extraction, teacher-quality free generation, native neural
 transplantation, production LayerCake ingestion, minimality, or superiority to
-LoRA/distillation. A clean replication binding the repaired public protocol,
-followed by public reconstruction, remains open.
+LoRA/distillation. A second preregistered 16-fact selection, bound to the
+repaired public protocol before reveal, independently repeated every gate and
+expanded combined held-out coverage to 27 distinct facts. Final blind review
+and public reconstruction of that replicated seal remain open.
 The full ABI moonshot therefore remains open, and R7 remains the controlling
 published release.
 

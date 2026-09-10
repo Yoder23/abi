@@ -173,9 +173,10 @@ The teacher was absent at execution, source training was zero, and the generic
 package executor required no training. The candidate vocabularies and two-domain ontology were registered,
 so autonomous discovery, fluent English transfer, LayerCake ingestion,
 minimality, and LoRA/distillation superiority remain open. Blind review passed
-with no Critical or High finding. A clean replication binding the repaired
-public protocol and durable public reconstruction remain pending; R7 remains
-the controlling release.
+v1 with no Critical or High finding. A clean second selection bound to the
+repaired public protocol before reveal repeated every gate and expanded
+combined coverage to 27 facts. Final blind review and durable public
+reconstruction remain pending; R7 remains the controlling release.
 
 ## What R7 proves
 
@@ -220,7 +221,7 @@ The blind reviewer returned `VERDICT: PASS` for this exact scope.
 | Non-exhaustive synthetic capability recovery | FAILED; R14 recovered 1/3 fresh capabilities |
 | Foreign learned-weight-delta capability recovery | BOUNDED LOCAL PASS; R15A recovered 8/8 and passed strict/live/hostile verification |
 | Pre-existing representation capability recovery | BOUNDED BLIND-REVIEWED LOCAL PASS; R15B recovered 4/4 secret arithmetic mappings with zero source training |
-| Pre-existing bounded factual extraction and segregation | BOUNDED LOCAL PASS; R16, 16/16 facts in two registered namespaces |
+| Pre-existing bounded factual extraction and segregation | BOUNDED REPLICATED LOCAL PASS; two R16 selections, 32/32 selected instances and 27 distinct facts |
 | Pre-existing English/domain knowledge extraction | OPEN; R16 is closed-candidate structured memory, not fluent English or arbitrary domains |
 | Exact foreign-teacher behavioral transplantation | OPEN; separate Track A |
 

@@ -144,7 +144,8 @@ only bounded structured factual extraction and segregation. The registered
 candidate vocabularies and ontology prevent claims of autonomous discovery,
 fluent English transfer, arbitrary domains, LayerCake ingestion, minimality,
 or LoRA/distillation superiority. A clean preregistered replication bound to
-the repaired public protocol and public reconstruction remain open.
+the repaired public protocol repeated every gate on a second selection; final
+blind review and public reconstruction remain open.
 
 ## Exact proven scope
 
@@ -283,9 +284,10 @@ arbitrary teacher.
     exact other-domain/removal abstention, 0/48 rotated-score control, exact
     live replay, and 21/21 hostile cases after additive assurance repair. Blind
     review passed the bounded claim with no Critical or High finding. Before
-    promotion beyond local scope, require a clean replication bound to the
-    corrected public protocol, durable publication, and reconstruction. A
-    successor must test free-form linguistic realization or
+    clean replication bound to the corrected public protocol has now repeated
+    every gate on a second selection (27 distinct facts across both runs).
+    Before promotion beyond local scope, require final blind review, durable
+    publication, and reconstruction. A successor must test free-form linguistic realization or
     a non-enumerable specialist capability; do not rerun nearby fact-count,
     prompt, candidate-set, or ontology variants.
 

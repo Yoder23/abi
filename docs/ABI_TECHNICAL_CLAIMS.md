@@ -220,3 +220,9 @@ discovery, fluent English or arbitrary-domain extraction, teacher-quality
 free-form generation, native neural transplantation, LayerCake product
 ingestion, global minimality, or LoRA/distillation superiority. See
 [R16_FACTUAL_SEMANTIC_RESULT.md](R16_FACTUAL_SEMANTIC_RESULT.md).
+
+After the blind review exposed a missing historical public-protocol artifact,
+ABI preserved v1 and ran a clean second selection whose corrected public
+receipt was bound before reveal. The replication repeated every exact gate;
+the two selections cover 27 distinct facts. This upgrades the bounded claim to
+a replicated local pass, but does not broaden its closed-candidate scope.

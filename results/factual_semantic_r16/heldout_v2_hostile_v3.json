@@ -1,0 +1,36 @@
+{
+  "base_strict_evidence_sha256": "9638e9e5b76966ec474687c6d6d1e8532515f2f4eb7267bf71661f7c75bd52fe",
+  "cases_passed": 21,
+  "cases_total": 21,
+  "evidence_sha256": "736ba85dd06088087aa3022d2eaa4b7694b9c97a9526d2303befa8a28e638b25",
+  "format": "abi-r16-hostile-audit/3",
+  "inherited_v2_cases_passed": 15,
+  "v3_cases": [
+    {
+      "case": "missing_actual_live_file",
+      "rejected": true
+    },
+    {
+      "case": "corrupt_actual_live_package",
+      "rejected": true
+    },
+    {
+      "case": "corrupt_actual_live_extraction_result",
+      "rejected": true
+    },
+    {
+      "case": "missing_public_requalification_artifact",
+      "rejected": true
+    },
+    {
+      "case": "corrupt_public_requalification_residual",
+      "rejected": true
+    },
+    {
+      "case": "hash_consistent_forged_public_metrics",
+      "rejected": true
+    }
+  ],
+  "v3_cases_passed": 6,
+  "verdict": "PASS"
+}

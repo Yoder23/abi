@@ -27,7 +27,7 @@ fresh blind Codex review. Human quality and independent hardware remain open.
 | R11 ABI-native neural copy/paste construction | Passed 90,112 rows, exact frozen-package replay, 7/7 hostile controls |
 | Conventional open-weight learned-delta extraction into R11 ABI | Bounded local pass; R15A 8/8 with strict/live/hostile verification |
 | Pre-existing source representation extraction into R11 ABI | Bounded blind-reviewed local pass; R15B 4/4 with zero source training and strict/live/hostile verification |
-| Pre-existing structured factual extraction and segregation | Bounded local pass; R16 16/16 held-out facts, two namespaces, strict/live/hostile verification |
+| Pre-existing structured factual extraction and segregation | Bounded replicated local pass; two R16 16/16 selections, 27 distinct facts, strict/live/hostile verification |
 | Pre-existing open-weight English/domain extraction | Open |
 | LoRA/distillation superiority | Unproven |
 
@@ -105,9 +105,9 @@ the teacher is absent during execution. Because the candidate vocabularies and
 two-domain ontology are registered, this does not prove autonomous discovery,
 fluent English transfer, arbitrary-domain extraction, native neural
 transplantation, LayerCake acceptance, minimality, or LoRA/distillation
-superiority. Fresh blind review passed with no Critical or High finding. A
-clean replication bound to the corrected public protocol and public
-reconstruction remain open.
+superiority. Fresh blind review passed v1 with no Critical or High finding. A
+clean second selection bound to the corrected public protocol before reveal
+repeated every gate; final blind review and public reconstruction remain open.
 
 Historical campaign records remain available in `evidence/current/`,
 `results/`, and the research-history branch. Later evidence supersedes a claim

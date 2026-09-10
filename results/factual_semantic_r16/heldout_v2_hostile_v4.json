@@ -1,0 +1,45 @@
+{
+  "base_audit_evidence_sha256": "736ba85dd06088087aa3022d2eaa4b7694b9c97a9526d2303befa8a28e638b25",
+  "base_strict_evidence_sha256": "9638e9e5b76966ec474687c6d6d1e8532515f2f4eb7267bf71661f7c75bd52fe",
+  "cases_passed": 21,
+  "cases_total": 21,
+  "evidence_sha256": "fa998884df7237647f1a85d9de4be614025ebccdc5ec606975d7318922534ea2",
+  "format": "abi-r16-hostile-audit/4",
+  "inherited_v2_cases_passed": 15,
+  "strict_v4_evidence_sha256": "4741e36b8b09db6905900939d58138727057f096748a480449b3487d66d4f0d6",
+  "v3_cases": [
+    {
+      "case": "missing_actual_live_file",
+      "rejected": true
+    },
+    {
+      "case": "corrupt_actual_live_package",
+      "rejected": true
+    },
+    {
+      "case": "corrupt_actual_live_extraction_result",
+      "rejected": true
+    },
+    {
+      "case": "missing_public_requalification_artifact",
+      "rejected": true
+    },
+    {
+      "case": "corrupt_public_requalification_residual",
+      "rejected": true
+    },
+    {
+      "case": "hash_consistent_forged_public_metrics",
+      "rejected": true
+    }
+  ],
+  "v3_cases_passed": 6,
+  "verdict": "PASS",
+  "verified_identity": {
+    "config_sha256": "97652ad8ef66eb23ce3172a9da80c11ac68d993f0476af13df94ceb4539a80d5",
+    "live_receipt_sha256": "3e4e74b714949d20a818429c3809fcba643e97b5359d01c7bf745b6e49f6fadb",
+    "public_requalification_receipt_sha256": "10e7cd6a014d6dd6e283225934c83c2bf64bd8c3ff583c86d39331dfd1d881d4",
+    "reveal_sha256": "b2a0cd0c70aebeade130607697aec614bbfbbb53f67d3b847cdbad2f94f14e89",
+    "run_receipt_sha256": "4db7f748a0a9caa5b2b6fbb47f8d057ba9b61d64b6a6feb5dee508ffd4182a9e"
+  }
+}

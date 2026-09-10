@@ -1,0 +1,31 @@
+{
+  "actual_live_files_rehashed": 7,
+  "candidate_boundary": "The correct answer string is present once in each registered 12-candidate set; no field labels which candidate is the oracle answer.",
+  "claim": "BOUNDED_FACTUAL_EXTRACTION_AND_SEMANTIC_SEGREGATION",
+  "claim_ceiling": "NOT_ENGLISH_OR_OPEN_WORLD_DOMAIN_EXTRACTION",
+  "correct_answer_present_once_in_candidate_rows": 48,
+  "declared_artifacts_verified": 13,
+  "evaluation_rows_exact": 48,
+  "evidence_sha256": "9638e9e5b76966ec474687c6d6d1e8532515f2f4eb7267bf71661f7c75bd52fe",
+  "explicit_labeled_answer_fields_in_compiler_bundle": 0,
+  "facts_exact": 16,
+  "format": "abi-r16-strict-verification/3",
+  "historical_public_protocol_declared_sha256": "4e5a60e1f3c2f5a5208f91b1f565a228b4a24fcbbe8957ab64fb4894d787156b",
+  "historical_public_protocol_matches_current_file": false,
+  "live_files_verified": 7,
+  "namespaces": [
+    "chemistry/periodic-table",
+    "geography/national-capitals"
+  ],
+  "physical_extraction_trees_verified": 4,
+  "physical_package_files_verified": 8,
+  "public_requalification_artifacts_verified": 3,
+  "public_requalification_protocol_sha256": "4b62aba12deb2fd5622e22e427f73b3568d532673c9ab11b230d9c77d10e3ea6",
+  "source_residual_rows_verified": 48,
+  "source_snapshot_bytes_rehashed": 15242778262,
+  "source_snapshot_evidence_sha256": "bdb164548ca29e580e465f520df01fce77524eeec01e807c413443751b4f004b",
+  "source_snapshot_files_rehashed": 10,
+  "source_training_steps": 0,
+  "teacher_present_at_package_execution": false,
+  "verdict": "PASS"
+}

@@ -238,3 +238,12 @@ coverage, free-form teacher-quality generation, production LayerCake
 ingestion, native neural transplantation, minimality, and superiority to LoRA
 or distillation remain open. See
 [R16_FACTUAL_SEMANTIC_RESULT.md](R16_FACTUAL_SEMANTIC_RESULT.md).
+
+The blind review found no Critical or High blocker but identified an
+unpreserved public-protocol digest. The original result and all findings remain
+historical. A new secret selection was then preregistered against the corrected
+public receipt before reveal. That clean replication again passed 16/16 facts,
+all 48-row source/package/segregation gates, exact live replay, direct source
+rehashing, and 21/21 hostile controls. The two selections cover 27 distinct
+facts. Final blind review of the repaired seal and public reconstruction remain
+open.

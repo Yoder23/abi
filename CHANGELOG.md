@@ -25,6 +25,10 @@
   and three Low findings, repaired rendered-prompt accounting and actual-file
   verification, disclosed that the correct answer appears among 12 candidates,
   and reproduced the public prerequisite under the committed protocol.
+- Froze the repairs and corrected public receipt before preregistering a new
+  hidden selection. The clean replication again passed 16/16 facts and every
+  48-row quality, segregation, removal, live, and 21-case hostile gate. Across
+  v1 and v2, 32 selected instances cover 27 distinct held-out facts.
 
 ## R16 public factual prerequisite v1 - 2026-09-10
 

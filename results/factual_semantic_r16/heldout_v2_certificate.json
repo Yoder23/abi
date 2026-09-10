@@ -1,0 +1,109 @@
+{
+  "candidate_boundary": "The correct answer string is present once in each registered 12-candidate set; no field labels which candidate is the oracle answer.",
+  "chronology": {
+    "implementation_freeze_commit": "a3255e0dfdb4b61b6dc344e5aa3c6c421662873b",
+    "preregistration_commit": "ec765cf35a4652cb8dac1bb48d5904ca9dee19b3",
+    "reveal_commit": "4eb64ba432661bbf349be8c8bc8388d6e8d812f5"
+  },
+  "claim": "BOUNDED_FACTUAL_EXTRACTION_AND_SEMANTIC_SEGREGATION",
+  "claim_ceiling": "NOT_ENGLISH_OR_OPEN_WORLD_DOMAIN_EXTRACTION",
+  "evidence": {
+    "accounting_v3_sha256": "1cdbe88cd05c2962a3a7b91c3ceea4150d919f0195dd9f0da9b22155e74e7cfc",
+    "config_sha256": "97652ad8ef66eb23ce3172a9da80c11ac68d993f0476af13df94ceb4539a80d5",
+    "hostile_v4_sha256": "46615f571967f6f28ab43463ae5568be5ba63f9fc4b68726d565fb6f1efbfd08",
+    "live_receipt_sha256": "3e4e74b714949d20a818429c3809fcba643e97b5359d01c7bf745b6e49f6fadb",
+    "prior_certificate_evidence_sha256": "b089b538ca444d3b3ae62995cc87064e98fc76e70c72f05f3df422ecac8d203c",
+    "prior_certificate_sha256": "16a39e2417cee95d0307ce8dd7d295163146c0f9298255f66b189dcf9e70c27f",
+    "public_requalification_receipt_sha256": "10e7cd6a014d6dd6e283225934c83c2bf64bd8c3ff583c86d39331dfd1d881d4",
+    "reveal_sha256": "b2a0cd0c70aebeade130607697aec614bbfbbb53f67d3b847cdbad2f94f14e89",
+    "run_receipt_sha256": "4db7f748a0a9caa5b2b6fbb47f8d057ba9b61d64b6a6feb5dee508ffd4182a9e",
+    "strict_v4_sha256": "935b50e58c93a0d7a822492dbeec618402b7207ade7142119ab7b92808763e41"
+  },
+  "evidence_sha256": "068388facd7c9793656a98acdad1ff4cb949ee6aea055a624f2f4c1e04867320",
+  "format": "abi-r16-bounded-replication-certificate/1",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "base_accounting_evidence_sha256": "002b24bb0e79e83b8306793c9bb476378a5944da5c41d9bda40d1f73dc0f2116",
+    "bridge_parameters_trained": 0,
+    "candidate_score_values_imported": 576,
+    "candidate_string_instances": 576,
+    "candidate_string_utf8_bytes": 2514,
+    "candidate_token_instances_scored": 1173,
+    "claim_ceiling": "R16_BOUNDED_FACTUAL_ACQUISITION_ONLY",
+    "end_to_end_acquisition_seconds": 69.94068960000004,
+    "evidence_sha256": "963d05b9e9485b8b2d55ddd7e9912a81f6a2b3447b53287529bd81ad95633cc0",
+    "external_hardware_used": false,
+    "final_package_disk_bytes": 1240,
+    "final_structured_fact_records": 16,
+    "format": "abi-r16-imported-information-accounting/3",
+    "frozen_source_parameters_in_final_packages": 0,
+    "gpu_used": true,
+    "hidden_activation_bytes_stored_for_evidence": 688128,
+    "hidden_activation_values_stored_for_evidence": 172032,
+    "hidden_activations_consumed_by_compiler": 0,
+    "legacy_recomputation_evidence_sha256": "cb358512d1000b88dcb93fc41521a53a4b39537fe35494520916e345b2125457",
+    "measurement_note": "first accounting receipt for this replication uses exact rendered prompts",
+    "peak_cpu_ram_bytes": "NOT_MEASURED",
+    "peak_gpu_memory_bytes": 15327108096,
+    "raw_question_utf8_bytes": 4150,
+    "raw_source_prompt_instances": 96,
+    "raw_source_prompt_utf8_bytes": 18358,
+    "repair_of": null,
+    "source_bundle_disk_bytes": 34332,
+    "source_inference_seconds": "NOT_SEPARATELY_MEASURED",
+    "source_prompt_token_instances": 3212,
+    "source_residual_evidence_disk_bytes": 688216,
+    "source_training_steps": 0,
+    "teacher_generated_output_bytes": 462,
+    "teacher_generated_tokens": 306,
+    "unique_candidate_string_utf8_bytes": 209,
+    "unique_candidate_strings": 48,
+    "unique_question_utf8_bytes": 4150,
+    "unique_source_prompt_utf8_bytes": 18358,
+    "unique_source_prompts": 96,
+    "verified_identity": {
+      "run_receipt_sha256": "4db7f748a0a9caa5b2b6fbb47f8d057ba9b61d64b6a6feb5dee508ffd4182a9e"
+    }
+  },
+  "packages": [
+    {
+      "bytes": 583,
+      "facts": 8,
+      "namespace": "chemistry/periodic-table",
+      "path": "packages/sha256-c3358ddb31386602ede787628c6e6b3e791e53ed647fe73d64db25f2ba60e9c4.abipkg",
+      "sha256": "c3358ddb31386602ede787628c6e6b3e791e53ed647fe73d64db25f2ba60e9c4"
+    },
+    {
+      "bytes": 657,
+      "facts": 8,
+      "namespace": "geography/national-capitals",
+      "path": "packages/sha256-12a590b908aa2e82ca6344a613f8843a2d69e9ca5d2d6162d94448c8a4b5286c.abipkg",
+      "sha256": "12a590b908aa2e82ca6344a613f8843a2d69e9ca5d2d6162d94448c8a4b5286c"
+    }
+  ],
+  "replication_of": "results/factual_semantic_r16/heldout_v1_certificate_v4_revision_002.json",
+  "results": {
+    "actual_live_files_rehashed": 7,
+    "evaluation_rows_exact": 48,
+    "facts_exact": 16,
+    "hostile_cases_rejected": 21,
+    "namespaces": [
+      "chemistry/periodic-table",
+      "geography/national-capitals"
+    ],
+    "package_bytes": 1240,
+    "packages": 2,
+    "physical_extraction_trees_verified": 4,
+    "source_snapshot_files_rehashed": 10,
+    "source_training_steps": 0,
+    "teacher_present_at_package_execution": false
+  },
+  "unproven": [
+    "autonomous open-world discovery",
+    "English transfer",
+    "production LayerCake ingestion",
+    "global minimality",
+    "superiority to LoRA or distillation"
+  ],
+  "verdict": "PASS"
+}

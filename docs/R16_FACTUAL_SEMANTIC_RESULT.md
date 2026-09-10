@@ -1,6 +1,6 @@
 # R16 bounded factual acquisition and semantic segregation
 
-Status: `BOUNDED_LOCAL_PASS; BLIND REVIEW PASS; CLEAN REPLICATION PENDING`
+Status: `BOUNDED_LOCAL_REPLICATED_PASS; FINAL BLIND REVIEW PENDING`
 
 R16 is the first ABI campaign to extract factual content already present in an
 unchanged open-weight teacher, assign that content to registered semantic
@@ -145,6 +145,39 @@ R16 does not establish:
 - native neural transplantation; or
 - superiority to LoRA, distillation, or fine-tuning.
 
+## Clean replication
+
+The post-review repair and corrected public prerequisite were frozen in
+`a3255e0`. A new secret commitment was preregistered without the reveal in
+`ec765cf`; the reveal followed in `4eb64ba`. Nineteen code/protocol hashes and
+the corrected public receipt were bound before reveal.
+
+The clean replication independently passed the same gates on a new 16-fact
+selection. It shared five facts with v1 and expanded the combined held-out
+coverage to 27 distinct facts. Its source/package metrics were again exact:
+
+| Replication gate | Result |
+| --- | ---: |
+| Selected facts | 16 |
+| Extraction generation / candidate / label | 48/48 each |
+| Evaluation source / package / agreement | 48/48 each |
+| Target-only / other-only / removed | 48/48 each |
+| Rotated-score control | 0/48 |
+| Live files byte-exact and reopened | 7/7 |
+| Physical extraction trees / package files | 4/4 / 8/8 |
+| Hostile mutations rejected | 21/21 |
+| Source snapshot directly rehashed | 10 files / 15,242,778,262 bytes |
+
+The replication emitted 1,240 package bytes, consumed 96 rendered source
+prompts (18,358 UTF-8 bytes; 3,212 input tokens), 306 generated tokens, 462
+output bytes, and 576 candidate scores. It stored 172,032 residual values only
+for audit and supplied none to the compiler.
+
+The replication certificate is
+`results/factual_semantic_r16/heldout_v2_certificate.json`, evidence SHA-256
+`068388facd7c9793656a98acdad1ff4cb949ee6aea055a624f2f4c1e04867320`.
+It remains bounded to the same registered closed-candidate claim.
+
 The full ABI moonshot remains open. R7 remains the controlling public release
-until R16 receives a clean preregistered replication, durable publication, and
-clean external reconstruction within this bounded claim.
+until the replicated R16 seal receives final blind review, durable publication,
+and clean external reconstruction within this bounded claim.
