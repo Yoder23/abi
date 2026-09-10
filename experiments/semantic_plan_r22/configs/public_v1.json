@@ -1,0 +1,62 @@
+{
+  "base_training_config": {
+    "bytes": 3518,
+    "path": "experiments/generative_transfer_r21/configs/public_v1.json",
+    "sha256": "4d304b8d85e4267d0cd2f54a471a9b65e5b15035faaf7501554a14693555f99a"
+  },
+  "code_sha256": {
+    "experiments/factual_semantic_r16/public_qualification.py": "c54da43b8cf0f592247101aa8a6b6511795272802ed3ebb606aad1fd1c2e7361",
+    "experiments/foreign_capability_r14/core.py": "ade41e81c0087c9d56f484c1e7c6f8e57a726a31150a42c92b448c1d0eec4816",
+    "experiments/generative_transfer_r21/hash_assurance_binding.py": "f1915f3c95256b52edd6140a126ad2eec88d235794be2b76934faaa3b1995e8a",
+    "experiments/generative_transfer_r21/protocol.py": "76fd0d3a45ba094511dba78357832be78996435ae4070362c4706a503f756a18",
+    "experiments/generative_transfer_r21/run.py": "d8fe7648cca96a090e48dae007604ba2839c6aa7c3717a31fc7293daf08d9e32",
+    "experiments/generative_transfer_r21/verify.py": "0e85f13f2742a11bf27dc2e37e3ea187bba8978a06f44553b6071830f9e6ffd4",
+    "experiments/semantic_plan_r22/PROTOCOL.md": "4891485896042eabe50f0e40d03bac38153926e70085533fa419da6a479f99b6",
+    "experiments/semantic_plan_r22/binding.py": "010aaf932932742060d0ea5d4f08d62c7dd5ab617d1ede62124903a4012622a1",
+    "experiments/semantic_plan_r22/freeze_config.py": "c078f557438d992baf2f1272066720fdf9b4077e4ec7a5e34e39fe5d173d5300",
+    "experiments/semantic_plan_r22/normalize.py": "723bde9839d75fbafe0c74702548607c4a05c1e1606277179e14551d8531ac4a",
+    "experiments/semantic_plan_r22/protocol.py": "0abc1c798ca0d18ded9459b6a713ce2f20aa587e14771f2186d2520651fcb0eb",
+    "experiments/semantic_plan_r22/run.py": "8a001592d285c91667e5930fd42feb2572a5de6b85e6f557dfc4d03fd4407fba",
+    "experiments/semantic_plan_r22/verify.py": "5bd4510c36f13bf534259b65f36a088cc7e738b2ea131f2fd0a590f572cc6c14"
+  },
+  "evaluation_access_authorized": false,
+  "format": "abi-r22-config/1",
+  "gates": {
+    "minimum_functional": 594,
+    "minimum_non_collapsed": 594,
+    "minimum_non_hallucinating": 600,
+    "required_fields_verbatim_once": 600,
+    "required_label_exact": 600
+  },
+  "implementation_freeze_commit": "c2b2fba90c6e1905485025b6f1ab18f5befb6c6b",
+  "normalization_calls": 600,
+  "r21_hidden_result": {
+    "bytes": 7337,
+    "path": "results/generative_transfer_r21/hidden_v1_result/result.json",
+    "sha256": "6f63eeb990707f534176afdfb8c6bf807f2c3c1b4632e782cea764caadf514a9"
+  },
+  "r21_hidden_verification": {
+    "bytes": 1165,
+    "path": "results/generative_transfer_r21/hidden_v1_result/strict_verification.json",
+    "sha256": "be79ac57e32c197c50d0c9d4f51f9631bf947faced0311df85729d8961373dd1"
+  },
+  "raw_source_receipt": {
+    "bytes": 1694,
+    "path": "results/generative_transfer_r21/public_v3_source/receipt.json",
+    "sha256": "1bbad508456b0cf62902ad755e16812e3f75815af94af5537753417be5c1a74a"
+  },
+  "raw_source_rows": {
+    "bytes": 914561,
+    "path": "results/generative_transfer_r21/public_v3_source/source_observations.jsonl",
+    "sha256": "15e9a3d5c65edb9db459bdab1a4651f26d8e88e05d921b08c6c7f24a77fa0467"
+  },
+  "retry_authorized": false,
+  "rows": 600,
+  "source": {
+    "device": "cuda",
+    "max_new_tokens": 128,
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c"
+  },
+  "student_training_before_source_pass": false
+}
