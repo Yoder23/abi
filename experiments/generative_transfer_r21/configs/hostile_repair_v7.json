@@ -1,0 +1,26 @@
+{
+  "candidate_changes_authorized": false,
+  "code_sha256": {
+    "experiments/generative_transfer_r21/HOSTILE_REPAIR_PROTOCOL.md": "679d15a4e4baf9aafa830e34ef00f3ca628f7d8e4ca6dfb8d7e9f38b8a70562c",
+    "experiments/generative_transfer_r21/freeze_hostile_repair.py": "0835895fd69165d163c990bd2faac88d3a9b67180dfddccb03b18ad81d73a82e",
+    "experiments/generative_transfer_r21/hostile_repair_binding.py": "c3cd68463479555c25bd1373662c6ad25c9599c3757dc06ae80981a68ada5d47",
+    "experiments/generative_transfer_r21/live_verify_v7.py": "576dbce8e9ec924d98fc535fbb7880f3e8c0ab633c9b062231e0cf7a25e0ff0a",
+    "experiments/generative_transfer_r21/verify_live_v7.py": "557a67c6799d4278b72ac6013e1ceeff31fdf962b1d77f66054133a78c613c09"
+  },
+  "failed_verifier_record": {
+    "bytes": 746,
+    "path": "results/generative_transfer_r21/public_v6_live_verification/verifier_failure.json",
+    "sha256": "ced79eeb31be0b61cb26857479b7b06499d57bf06e885771f22deb2d0fa47fc8"
+  },
+  "format": "abi-r21-hostile-repair-config/1",
+  "full_replay_required": true,
+  "gate_changes_authorized": false,
+  "implementation_freeze_commit": "c76867f80e0bbf452c8bfae56a3aa37adcc908da",
+  "live_verification_config": {
+    "bytes": 44569,
+    "path": "experiments/generative_transfer_r21/configs/live_verification_v6.json",
+    "sha256": "30e39f753cf634c877b6e87d2053c55baea6d1c209df9cd29a243f3f048db2cf"
+  },
+  "new_mutation": "middle_byte_of_tensors.safetensors",
+  "old_mutation": "final_tar_padding_byte"
+}
