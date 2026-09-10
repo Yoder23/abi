@@ -317,5 +317,13 @@ arbitrary teacher.
     extraction, LayerCake ingestion, minimality, or LoRA/distillation
     superiority.
 
+18. R19's same-number polarity-contrast mechanism passes both disclosed
+    development sets at 96/96 total functional rows with zero regressions,
+    0/96 controls, 96/96 removal, strict verification, 12/12 hostile rejection,
+    and byte-exact live replay. Preserve all operational/protocol failures that
+    preceded the complete result. This is development evidence because the R18
+    failure was disclosed. Only a new preregistered hidden lexical replication
+    can promote the bounded mechanism.
+
 Do not claim the ABI moonshot until those acquisition and external-quality
 gates are supported by their own evidence.

@@ -1,5 +1,16 @@
 # Changelog
 
+## R19 contrastive realization development prerequisite - 2026-09-10
+
+- Replaced unsafe R18 cross-number pooling with a structural, same-number
+  positive/negative contrast learned without hard-coded English surface tokens.
+- Passed both disclosed evidence sets at 48/48 each, with zero source-correct
+  regressions, 0/96 total controls, and 96/96 removal abstentions.
+- Preserved the v1 control-compilation failure, v2 evidence-binding gap,
+  cross-filesystem publication race, and hostile-harness operational aborts.
+- Passed strict recomputation, 12/12 hostile mutations, and fresh physical
+  byte-exact replay. A new hidden replication remains required.
+
 ## R18 public factorized English realization - 2026-09-10
 
 - Froze a feature-factorized compiler at `de8e54b` before its public verdict.

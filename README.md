@@ -187,6 +187,15 @@ public prerequisite, not a certified realization mechanism, unrestricted
 English, or the ABI moonshot. See
 [`docs/R18_FACTORIZED_REALIZATION_RESULT.md`](docs/R18_FACTORIZED_REALIZATION_RESULT.md).
 
+R19 is a materially different successor: it learns same-number structural
+contrasts between positive and negative forms instead of pooling across number.
+On the disclosed R17 and failed-R18 evidence sets it scored 96/96 total
+functional rows with zero source-correct regressions, 0/96 controls, and 96/96
+removal abstentions. Strict verification, 12/12 hostile mutations, and fresh
+physical byte-exact replay passed. A new hidden replication is still required;
+R19 is not yet a certified English mechanism. See
+[`docs/R19_CONTRASTIVE_REALIZATION_RESULT.md`](docs/R19_CONTRASTIVE_REALIZATION_RESULT.md).
+
 ## R7 at a glance
 
 | Evidence | Result |

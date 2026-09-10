@@ -1,0 +1,103 @@
+{
+  "claim": "DISCLOSED_DEVELOPMENT_CONTRASTIVE_REALIZATION_PREREQUISITE",
+  "claim_ceiling": "NOT_HELD_OUT_OR_UNRESTRICTED_ENGLISH",
+  "datasets": {
+    "r17_public_v2": {
+      "control": {
+        "evidence": {
+          "path": "control_rejection.json",
+          "sha256": "921178f2b41efcac2687c8d27a0eb133b43f4e14068a14e5e58e85f537549fc2"
+        },
+        "package_emitted": false,
+        "runtime_behavior": "ABSTAIN",
+        "status": "REJECTED_NO_STRUCTURE_COMPATIBLE_POLARITY_CONTRAST"
+      },
+      "control_bundle": {
+        "path": "mood_permutation_bundle.json",
+        "sha256": "238fc3556788e9524ee16201182b52cb03832620269759996d149e2a9d28d897"
+      },
+      "evaluation": {
+        "path": "evaluation.jsonl",
+        "sha256": "d2bbad6629c6feda0975516be7b9ee3af0e92280f490fe29b4b6eb5a87221212"
+      },
+      "extraction_result_sha256": "3e322579de5233b6c353ee82664fd904d5e3b865d00b4f9070b4f24d6d0d7a4c",
+      "metrics": {
+        "control_functional_exact": 0,
+        "evaluation_rows": 48,
+        "extraction_rows": 72,
+        "independent_modal_functional_exact": 46,
+        "package_functional_exact": 48,
+        "package_source_exact": 47,
+        "removed_abstain": 48,
+        "source_exact_regressions": 0,
+        "source_functional_exact": 47,
+        "source_rows": 120
+      },
+      "package": {
+        "bytes": 4263,
+        "path": "extraction\\packages\\sha256-7672fc7d026a6101d4c07eb7f5c04899f88ca3b64dbcf885f38fe679b32d90a5.abipkg",
+        "sha256": "7672fc7d026a6101d4c07eb7f5c04899f88ca3b64dbcf885f38fe679b32d90a5"
+      },
+      "source_bundle": {
+        "path": "source_bundle.json",
+        "sha256": "57fa1c80b6e98f45a177007738a05c9bb8fe044ff0f44b420bbd3626a195d8dc"
+      },
+      "source_rows_sha256": "1c00b360003b6624087f8ba3c3f3bacb3176d7b715badd5a92e28528d3925fd5",
+      "verdict": "PASS"
+    },
+    "r18_failed_hidden": {
+      "control": {
+        "evidence": {
+          "path": "control_rejection.json",
+          "sha256": "6efcc66e67be3517cb9e69edf2a529757ceff403b70f5ff08d5b3c1d8a3bdd4e"
+        },
+        "package_emitted": false,
+        "runtime_behavior": "ABSTAIN",
+        "status": "REJECTED_NO_STRUCTURE_COMPATIBLE_POLARITY_CONTRAST"
+      },
+      "control_bundle": {
+        "path": "mood_permutation_bundle.json",
+        "sha256": "bf9c9b839e29b65ae1bf06d2bbb469a5acf152cc4b79c78d289d9515ab8a0c89"
+      },
+      "evaluation": {
+        "path": "evaluation.jsonl",
+        "sha256": "080ca1b27c893bebe08cd4311cb74217b62817a596d965e0df013639c3dc60ea"
+      },
+      "extraction_result_sha256": "1cff01a66e97042e427c10cb3819bde2634c0ecbc9953f370001166e0cc29e73",
+      "metrics": {
+        "control_functional_exact": 0,
+        "evaluation_rows": 48,
+        "extraction_rows": 72,
+        "independent_modal_functional_exact": 46,
+        "package_functional_exact": 48,
+        "package_source_exact": 45,
+        "removed_abstain": 48,
+        "source_exact_regressions": 0,
+        "source_functional_exact": 45,
+        "source_rows": 120
+      },
+      "package": {
+        "bytes": 4263,
+        "path": "extraction\\packages\\sha256-2a097ec1f0e7aa50966a12db2de581ce6d829b039c0ef89fa70958d92551f856.abipkg",
+        "sha256": "2a097ec1f0e7aa50966a12db2de581ce6d829b039c0ef89fa70958d92551f856"
+      },
+      "source_bundle": {
+        "path": "source_bundle.json",
+        "sha256": "ba2877d9e099b5bf22382f86581b8321bc4e01598af288095e4f66807afbb320"
+      },
+      "source_rows_sha256": "a4d82c180c280b21e1e15137d8646ed52e4c7631168537fa80190acb281fcc4e",
+      "verdict": "PASS"
+    }
+  },
+  "evidence_sha256": "8ee720e7067e7b630acee1b6be4f049a84966cccbe2b36f92d5ff7b68cb4fb86",
+  "format": "abi-r19-disclosed-development-qualification/1",
+  "full_abi_moonshot": "OPEN",
+  "host_training_steps": 0,
+  "physical_control_attempts": 2,
+  "physical_primary_extractions": 2,
+  "protocol_sha256": "a2921c858d7deb333f3902458cab20758f4e90bb28a3949e1a6c1a7d36f672b0",
+  "source_training_steps": 0,
+  "teacher_present_at_compilation": false,
+  "teacher_present_at_package_execution": false,
+  "verdict": "PASS"
+}

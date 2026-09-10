@@ -1,0 +1,59 @@
+{
+  "cases": [
+    {
+      "case": "missing_receipt",
+      "rejected": true
+    },
+    {
+      "case": "tampered_receipt",
+      "rejected": true
+    },
+    {
+      "case": "hash_consistent_forged_metrics",
+      "rejected": true
+    },
+    {
+      "case": "missing_source_bundle",
+      "rejected": true
+    },
+    {
+      "case": "corrupt_primary_package",
+      "rejected": true
+    },
+    {
+      "case": "missing_primary_package",
+      "rejected": true
+    },
+    {
+      "case": "missing_control_rejection",
+      "rejected": true
+    },
+    {
+      "case": "hash_consistent_forged_control_rejection",
+      "rejected": true
+    },
+    {
+      "case": "invented_control_package",
+      "rejected": true
+    },
+    {
+      "case": "missing_evaluation",
+      "rejected": true
+    },
+    {
+      "case": "corrupt_manifest",
+      "rejected": true
+    },
+    {
+      "case": "missing_mountinfo",
+      "rejected": true
+    }
+  ],
+  "cases_passed": 12,
+  "cases_total": 12,
+  "evidence_sha256": "aa61610191b32fb99e145ee08248ece7b0bccb0af2306a31b43f8a55274de2c0",
+  "format": "abi-r19-development-hostile-audit/1",
+  "full_abi_moonshot": "OPEN",
+  "preverified_source_strict_evidence_sha256": "2a87d84e10a292e1b648cab0a1a8c850a7808fec735340edf14ffd884d265c2b",
+  "verdict": "PASS"
+}

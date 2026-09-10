@@ -207,6 +207,17 @@ capture, failed package, 0/48 control, 48/48 removal, and strict negative
 verification are preserved. R18 is not certified. A successor must change the
 factorization architecture, not rerun this selection or tune another prompt.
 
+R19 development status:
+`R19_DISCLOSED_CONTRASTIVE_PREREQUISITE_PASSED_FRESH_HOLDOUT_OPEN`
+
+R19 removes cross-number pooling and learns same-number polarity contrasts
+without hard-coded English surface tokens. It scored 48/48 on both disclosed
+development sets, versus teacher scores of 47/48 and 45/48 and modal scores of
+46/48 on each; regressions were zero. Both controls were fail-closed at 0/48
+and removal was 96/96. Strict recomputation, 12/12 hostile mutations, and a
+fresh byte-exact physical replay passed. This is not held-out evidence; it
+authorizes only a new preregistered lexical replication.
+
 ## What R7 proves
 
 R7 proves one bounded capability ABI result: four immutable packages execute
@@ -253,6 +264,7 @@ The blind reviewer returned `VERDICT: PASS` for this exact scope.
 | Pre-existing bounded factual extraction and segregation | BOUNDED REPLICATED LOCAL PASS; two R16 selections, 32/32 selected instances and 27 distinct facts |
 | Pre-existing English/domain knowledge extraction | OPEN; R16 is closed-candidate structured memory, not fluent English or arbitrary domains |
 | Bounded teacher-derived grammar realization | OPEN; R18 public 48/48, hidden replication failed 46/48 |
+| Contrastive realization successor | DISCLOSED DEVELOPMENT PASS; R19 96/96, fresh hidden replication open |
 | Exact foreign-teacher behavioral transplantation | OPEN; separate Track A |
 
 ## Current objective

@@ -1,0 +1,7 @@
+{
+  "format": "abi-r19-hostile-operational-abort/1",
+  "verdict": "NOT_RUN",
+  "reason": "The source-hoisted hostile audit completed and removed its temporary mutation tree but again spun during TemporaryDirectory cleanup/interpreter teardown without writing a receipt. The agent-launched process was stopped after five minutes.",
+  "scientific_claim_changed": false,
+  "successor": "Use an explicit short-path work directory retained for inspection so cleanup cannot block receipt creation. Run the same 12 mutations and candidate verifier."
+}

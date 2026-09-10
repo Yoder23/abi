@@ -1,0 +1,7 @@
+{
+  "format": "abi-r19-hostile-operational-abort/1",
+  "verdict": "NOT_RUN",
+  "cases_completed_before_abort": 7,
+  "reason": "The retained-work audit rejected its first seven mutations, then Windows path length prevented copying the eighth case because the descriptive case name was embedded in the work path.",
+  "successor": "Use two-digit work-directory IDs while retaining descriptive case names only in the result rows. Mutation set and verifier remain unchanged."
+}
