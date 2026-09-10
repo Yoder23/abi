@@ -1,0 +1,32 @@
+{
+  "candidate_changes_authorized": false,
+  "code_sha256": {
+    "experiments/semantic_replication_r23/LIVE_REPAIR_PROTOCOL.md": "98e650e2315a0470fc51c48b9f09f6948f02f60fc807043cb947854ca3d63e42",
+    "experiments/semantic_replication_r23/freeze_live_repair.py": "8f9d411bb2d3c1f506f2c0cbedface3b4263bb5cecafe94514019f2310b5553e",
+    "experiments/semantic_replication_r23/live_repair_binding.py": "ddfce0a6f5c2505f203e634383e5fb2328829db89e8a6870facac425ce1f0e8c",
+    "experiments/semantic_replication_r23/live_verify_v2.py": "3557fe2129f0d18d564e1e30774452106e041594de338524966c1dbf8b541bec",
+    "experiments/semantic_replication_r23/verify_live_v2.py": "30a5559a4811b4a858cf4df608bccfb07481124e69e84365d594f5bd01258e66"
+  },
+  "failed_attempt": {
+    "bytes": 805,
+    "path": "results/semantic_replication_r23/live_v1_failed_attempt.json",
+    "sha256": "6dff71282f8db4e6c1d778b0ca8b85e96ffbe1987d28b99d72bb6dfbf85521d0"
+  },
+  "format": "abi-r23-live-repair-config/1",
+  "full_replay_required": true,
+  "gate_changes_authorized": false,
+  "implementation_freeze_commit": "e03aa423a6a32e812823e1cb5d9aaf63e3e5f89d",
+  "live_config": {
+    "bytes": 4153,
+    "path": "experiments/semantic_replication_r23/configs/live_v1.json",
+    "sha256": "f0caa3eadca9a61764eb5ae9bdb4865da5f91b5ec7c80d7651e36e5871a6e910"
+  },
+  "package_changes_authorized": false,
+  "r23_config": {
+    "bytes": 11271,
+    "path": "experiments/semantic_replication_r23/configs/hidden_v1.json",
+    "sha256": "2a6de05869d4709739b1d0583af692ae3c97853dd751e6bf0a99686a11caf5fc"
+  },
+  "scorer_changes_authorized": false,
+  "systems_source": "frozen_public_candidate_engine"
+}
