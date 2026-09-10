@@ -1,0 +1,58 @@
+{
+  "compiler_authorized": false,
+  "evidence_sha256": "91ab236e0e435a797f756f156b27fd1e91ec4b7e568721ce8e166fae8c5bf3b8",
+  "format": "abi-r20-public-source-strict-verification/1",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "bridge_parameters_trained": 0,
+    "cpu_process_hours": 0.09603732638888889,
+    "cpu_process_seconds": 345.734375,
+    "elapsed_seconds": 345.379408400011,
+    "external_hardware_used": false,
+    "final_imported_substrate_parameters": 0,
+    "frozen_source_parameters_copied": 0,
+    "gpu_name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "hidden_activations_stored": 0,
+    "logits_stored": 0,
+    "peak_cpu_rss_bytes_observed": 19406278656,
+    "peak_gpu_memory_bytes": 15305564672,
+    "raw_source_prompt_utf8_bytes": 30550,
+    "raw_source_prompts": 192,
+    "rendered_prompt_token_instances": 16196,
+    "rendered_prompt_utf8_bytes": 73942,
+    "source_inference_seconds": 335.46811050002,
+    "source_load_seconds": 9.696623800002271,
+    "source_model_inference_hours": 0.09318558625000554,
+    "source_observation_artifact_bytes": 182799,
+    "source_parameters": 7615616512,
+    "source_snapshot_disk_bytes": 15242778262,
+    "source_snapshot_files": 10,
+    "teacher_generated_tokens": 6057,
+    "teacher_output_bytes": 22088,
+    "unique_source_prompt_utf8_bytes": 30550,
+    "unique_teacher_output_utf8_bytes": 21150
+  },
+  "layercake_invoked": false,
+  "metrics": {
+    "compiler_diagnostics": {
+      "error": "insufficient teacher support for six output programs"
+    },
+    "evaluation_exact_by_task": {
+      "abstention": 0,
+      "bullets": 8,
+      "clarification": 0,
+      "email": 0,
+      "prose": 11,
+      "summary": 0
+    },
+    "evaluation_functional_exact": 19,
+    "evaluation_rows": 120,
+    "extraction_functional_exact": 10,
+    "extraction_rows": 72,
+    "source_rows": 192
+  },
+  "receipt_sha256": "1eb14d5c9a37d9d1b0309555639ba12993fe60e0b5e74d85d8ccfb6b4ecb6d9a",
+  "source_rows_sha256": "e073ec675454a85f2d6cfcee2aae64a02513cfd8bf47aad97ea22138c4465af1",
+  "source_rows_verified": 192,
+  "verdict": "FAIL_SOURCE_COMPILABILITY"
+}
