@@ -321,9 +321,14 @@ arbitrary teacher.
     development sets at 96/96 total functional rows with zero regressions,
     0/96 controls, 96/96 removal, strict verification, 12/12 hostile rejection,
     and byte-exact live replay. Preserve all operational/protocol failures that
-    preceded the complete result. This is development evidence because the R18
-    failure was disclosed. Only a new preregistered hidden lexical replication
-    can promote the bounded mechanism.
+    preceded the complete result. Its separately committed fresh lexical
+    replication also passes at 48/48 package functional rows versus 43/48
+    teacher and 48/48 modal, with zero regressions, 0/48 control, 48/48
+    removal, 22/22 hostile rejection, and byte-exact live replay. This promotes
+    only the registered supplied-slot 24-signature realization family. Do not
+    run another nearby lexical, prompt, template, or signature variant. A
+    successor must materially broaden the representation and free-form English
+    behavior.
 
 Do not claim the ABI moonshot until those acquisition and external-quality
 gates are supported by their own evidence.

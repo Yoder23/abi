@@ -1,0 +1,31 @@
+{
+  "datasets_replayed": 1,
+  "evaluation_rows_replayed": 48,
+  "evidence_sha256": "4fa0d911675327885ff1148620f247332be6123057c59edb467911c5dc016cac",
+  "files_replayed_byte_exact": [
+    {
+      "path": "hidden/source_bundle.json",
+      "sha256": "e8beaa03bcb31c2c42a43fce57989a27091f279fe9c4a47d72775668b15cb907"
+    },
+    {
+      "path": "hidden/mood_permutation_bundle.json",
+      "sha256": "b4209c68a27b8856a2f63be06001fd391f18c102891e8330bd94cdc591f32ee1"
+    },
+    {
+      "path": "hidden/evaluation.jsonl",
+      "sha256": "cd49381f57df524de431809360bc51d734e8fb4ce687ab743208aea67037dde0"
+    },
+    {
+      "path": "hidden/extraction/packages/sha256-97566bbcd2315c1007a211dcd270ca259eb746cfd695ae3bdbfaec445ba1d5f2.abipkg",
+      "sha256": "97566bbcd2315c1007a211dcd270ca259eb746cfd695ae3bdbfaec445ba1d5f2"
+    }
+  ],
+  "format": "abi-r19-heldout-live-verification/1",
+  "full_abi_moonshot": "OPEN",
+  "host_training_steps": 0,
+  "physical_control_rejections_replayed": 1,
+  "physical_primary_extractions_replayed": 1,
+  "source_training_steps": 0,
+  "teacher_present_at_package_execution": false,
+  "verdict": "PASS"
+}

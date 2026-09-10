@@ -247,3 +247,25 @@ all 48-row source/package/segregation gates, exact live replay, direct source
 rehashing, and 21/21 hostile controls. The two selections cover 27 distinct
 facts. Blind review of exact replication commit `26fb029` passed with zero
 findings. Durable publication and public reconstruction remain open.
+
+## Additive R17-R19 linguistic-realization result
+
+R17's exact-template source prerequisite failed twice and was closed. R18's
+factorized successor passed its disclosed prerequisite at 48/48 but failed its
+hidden replication at 46/48 because cross-number pooling produced two plural-
+question regressions. Both failures remain authoritative.
+
+R19 materially replaces that pooling rule with same-number polarity contrasts.
+It passed 96/96 disclosed development rows and then passed a separately
+committed fresh lexical replication at 48/48, versus 43/48 for the unchanged
+teacher and 48/48 for independent modal consensus. It had zero teacher-correct
+regressions, a 0/48 rejected control, and 48/48 removal abstention. The 4,263-
+byte package contains no source, host, or bridge parameters. Strict
+recomputation, 22/22 hostile mutations, and a fresh byte-exact physical replay
+passed.
+
+This is a bounded supplied-slot, 24-signature English surface-realization
+result. It is not unrestricted English, autonomous prompt understanding,
+conversation, summarization, arbitrary-domain extraction, LayerCake product
+ingestion, global minimality, or superiority to LoRA/distillation. See
+[R19_CONTRASTIVE_REALIZATION_RESULT.md](R19_CONTRASTIVE_REALIZATION_RESULT.md).

@@ -1,0 +1,99 @@
+{
+  "baseline_strict_evidence_sha256": "5976684df3987c4ca74e9732181bddb3f3597a1bc8f6dd1a4baa611e84949c79",
+  "cases": [
+    {
+      "case": "missing_config",
+      "rejected": true
+    },
+    {
+      "case": "altered_config",
+      "rejected": true
+    },
+    {
+      "case": "missing_reveal",
+      "rejected": true
+    },
+    {
+      "case": "corrupt_reveal",
+      "rejected": true
+    },
+    {
+      "case": "missing_source_receipt",
+      "rejected": true
+    },
+    {
+      "case": "missing_source_rows",
+      "rejected": true
+    },
+    {
+      "case": "corrupt_source_rows",
+      "rejected": true
+    },
+    {
+      "case": "missing_source_strict",
+      "rejected": true
+    },
+    {
+      "case": "hash_consistent_forged_source_metrics",
+      "rejected": true
+    },
+    {
+      "case": "missing_receipt",
+      "rejected": true
+    },
+    {
+      "case": "tampered_receipt",
+      "rejected": true
+    },
+    {
+      "case": "hash_consistent_forged_metrics",
+      "rejected": true
+    },
+    {
+      "case": "hash_consistent_forged_accounting",
+      "rejected": true
+    },
+    {
+      "case": "missing_source_bundle",
+      "rejected": true
+    },
+    {
+      "case": "missing_primary_package",
+      "rejected": true
+    },
+    {
+      "case": "corrupt_primary_package",
+      "rejected": true
+    },
+    {
+      "case": "missing_control_rejection",
+      "rejected": true
+    },
+    {
+      "case": "hash_consistent_forged_control_rejection",
+      "rejected": true
+    },
+    {
+      "case": "invented_control_package",
+      "rejected": true
+    },
+    {
+      "case": "missing_evaluation",
+      "rejected": true
+    },
+    {
+      "case": "corrupt_manifest",
+      "rejected": true
+    },
+    {
+      "case": "missing_mountinfo",
+      "rejected": true
+    }
+  ],
+  "cases_passed": 22,
+  "cases_total": 22,
+  "evidence_sha256": "7ae096545acca0a36a478f363ab8689d479f52db594c6f579870a84050fefc28",
+  "format": "abi-r19-heldout-hostile-audit/1",
+  "full_abi_moonshot": "OPEN",
+  "verdict": "PASS"
+}

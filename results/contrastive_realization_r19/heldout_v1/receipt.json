@@ -1,0 +1,114 @@
+{
+  "claim": "BOUNDED_REPLICATED_CONTRASTIVE_ENGLISH_REALIZATION",
+  "claim_ceiling": "NOT_UNRESTRICTED_ENGLISH_OR_LAYERCAKE_ACCEPTANCE",
+  "config_sha256": "78aa3d3f018f8ac04f8d42afae5ff8be65d7193503a85d0681be122d29c5ae6f",
+  "dataset": {
+    "control": {
+      "evidence": {
+        "path": "control_rejection.json",
+        "sha256": "cef2c681504643f5168f03c495ede73058f840bf3d18adc407f119c076a774d8"
+      },
+      "package_emitted": false,
+      "runtime_behavior": "ABSTAIN",
+      "status": "REJECTED_NO_STRUCTURE_COMPATIBLE_POLARITY_CONTRAST"
+    },
+    "control_bundle": {
+      "path": "mood_permutation_bundle.json",
+      "sha256": "b4209c68a27b8856a2f63be06001fd391f18c102891e8330bd94cdc591f32ee1"
+    },
+    "evaluation": {
+      "path": "evaluation.jsonl",
+      "sha256": "cd49381f57df524de431809360bc51d734e8fb4ce687ab743208aea67037dde0"
+    },
+    "extraction_result_sha256": "73f7a55f37436696b271865f3b683d4397951e2abac731095e6205d8a2b26bed",
+    "metrics": {
+      "control_functional_exact": 0,
+      "evaluation_rows": 48,
+      "extraction_rows": 72,
+      "independent_modal_functional_exact": 48,
+      "package_functional_exact": 48,
+      "package_source_exact": 43,
+      "removed_abstain": 48,
+      "source_exact_regressions": 0,
+      "source_functional_exact": 43,
+      "source_rows": 120
+    },
+    "package": {
+      "bytes": 4263,
+      "path": "extraction\\packages\\sha256-97566bbcd2315c1007a211dcd270ca259eb746cfd695ae3bdbfaec445ba1d5f2.abipkg",
+      "sha256": "97566bbcd2315c1007a211dcd270ca259eb746cfd695ae3bdbfaec445ba1d5f2"
+    },
+    "source_bundle": {
+      "path": "source_bundle.json",
+      "sha256": "e8beaa03bcb31c2c42a43fce57989a27091f279fe9c4a47d72775668b15cb907"
+    },
+    "source_rows_sha256": "f5042a52c985c4ba29183e0c9d75b26edeb02516a84817a8b7f94ea4339f7487",
+    "verdict": "PASS"
+  },
+  "evidence_sha256": "7c5d331a7c8689a1f69b3b64c65a651f8a48bc9b16e57b94abb53d466cb1b462",
+  "format": "abi-r19-heldout-contrastive-realization/1",
+  "full_abi_moonshot": "OPEN",
+  "host_training_steps": 0,
+  "information_accounting": {
+    "bridge_parameters_trained": 0,
+    "compiler_cpu_process_hours": 2.170138888888889e-05,
+    "compiler_cpu_process_seconds": 0.078125,
+    "compiler_elapsed_seconds": 3.615796300000511,
+    "compiler_evidence_bytes_excluding_receipt": 93411,
+    "compiler_source_bundle_bytes": 26858,
+    "compiler_source_records": 72,
+    "cpu_process_hours": 0.03122829861111111,
+    "cpu_process_seconds": 112.421875,
+    "elapsed_seconds": 100.54288739999174,
+    "external_hardware_used": false,
+    "final_imported_substrate_parameters": 0,
+    "final_package_bytes": 4263,
+    "final_templates": 24,
+    "frozen_source_parameters_copied": 0,
+    "frozen_source_parameters_in_package": 0,
+    "gpu_name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "hidden_activations_stored": 0,
+    "host_parameters_in_package": 0,
+    "host_training_steps": 0,
+    "logits_stored": 0,
+    "peak_cpu_rss_bytes_observed": 19408756736,
+    "peak_gpu_memory_bytes": 15325257216,
+    "raw_source_prompt_utf8_bytes": 71158,
+    "raw_source_prompts": 120,
+    "rendered_prompt_token_instances": 20745,
+    "rendered_prompt_utf8_bytes": 95998,
+    "source_acquisition_receipt_bytes": 3606,
+    "source_inference_seconds": 89.23458570000366,
+    "source_load_seconds": 11.095905599999242,
+    "source_model_inference_hours": 0.024787384916667685,
+    "source_observation_artifact_bytes": 160505,
+    "source_parameters": 7615616512,
+    "source_snapshot_disk_bytes": 15242778262,
+    "source_snapshot_files": 10,
+    "source_strict_evidence_bytes": 3070,
+    "source_training_steps": 0,
+    "teacher_generated_tokens": 1325,
+    "teacher_output_bytes": 4758,
+    "unique_source_prompt_utf8_bytes": 71158,
+    "unique_teacher_output_utf8_bytes": 4758
+  },
+  "physical_control_attempts": 1,
+  "physical_primary_extractions": 1,
+  "protocol_sha256": "b0c837c4b228b542007c1012e2377dcf16e9937b08955c34dde0e75be192e370",
+  "reveal_sha256": "1cdc46705bc33ee52f13e9143f387b679cebda778f6be88f0a3ea0c5e16c0031",
+  "source_receipt_sha256": "ebd94ea7d358fcfc1f3e6296eac366a3d2146914db8491783835e3468c0be2ee",
+  "source_strict_sha256": "4a7285d6cf8abd8d0f0ac59e422ea13ef8d4e924335cf0c88c0748270cf6cc7f",
+  "source_training_steps": 0,
+  "teacher_present_at_compilation": false,
+  "teacher_present_at_package_execution": false,
+  "unproven": [
+    "unrestricted English fluency",
+    "prompt understanding or conversation",
+    "autonomous capability discovery or labeling",
+    "arbitrary-domain extraction",
+    "production LayerCake ingestion",
+    "global minimality",
+    "superiority to LoRA or distillation"
+  ],
+  "verdict": "PASS"
+}

@@ -1,6 +1,6 @@
 # R19 contrastive English realization
 
-Status: `DISCLOSED_DEVELOPMENT_PREREQUISITE_PASSED; FRESH HOLDOUT OPEN`
+Status: `BOUNDED_REPLICATED_CONTRASTIVE_REALIZATION_PASSED_LOCAL`
 
 R19 is the evidence-supported successor to failed R18. It removes unsafe
 cross-number pooling. For questions and future declaratives, it jointly selects
@@ -28,8 +28,44 @@ failure, a v2 evidence-binding gap, a cross-filesystem publication race, and
 three hostile-harness operational aborts before the complete audit. None is
 silently overwritten or counted as a scientific pass.
 
-This is not held-out evidence for R19. It authorizes only a newly committed and
-revealed lexical replication under the frozen mechanism. Even a pass would be
-bounded surface realization, not unrestricted English, prompt understanding,
-conversation, reasoning, autonomous labeling, domain extraction, LayerCake
-ingestion, minimality, or superiority to LoRA/distillation.
+## Fresh hidden replication
+
+The implementation was frozen at `173ed0b`. The 256-bit selection commitment
+was then committed at `4380a83`, the reveal followed at `65d4b8f`, and all 120
+raw GPU teacher rows plus their strict source verification were sealed at
+`c2100ec` before compilation. The 20-item lexical bank is exact-field disjoint
+from the R17 and R18 banks.
+
+| Hidden measure | Result |
+| --- | ---: |
+| Source rows | 120 |
+| Extraction / evaluation | 72 / 48 |
+| Parseable support | at least 2/3 for all 24 signatures |
+| Teacher functional evaluation | 43/48 |
+| Independent modal functional evaluation | 48/48 |
+| R19 package functional evaluation | 48/48 |
+| Regressions on teacher-correct rows | 0 |
+| Mood-permutation control | 0/48; compiler rejected, no package |
+| Removed-package abstention | 48/48 |
+| Package size | 4,263 bytes |
+| Source / host / bridge parameters in package | 0 / 0 / 0 |
+| Hostile mutations rejected | 22/22 |
+| Fresh physical replay | byte-exact package, bundles, and evaluation |
+
+Teacher acquisition used the pinned unchanged Qwen2-7B-Instruct revision on
+the RTX 3080 Laptop GPU. It consumed 120 prompts, 20,745 rendered input-token
+instances, 1,325 generated teacher tokens, and 4,758 teacher-output bytes. The
+source inference itself took 89.23 seconds; the final package stores no logits,
+hidden activations, or copied source parameters. The compiler and its control
+ran in separate Linux pivot-root/no-network capsules with the prompts,
+evaluation rows, source model, reveal, expected outputs, and success IDs
+physically absent.
+
+R19 therefore promotes only the registered bounded compositional surface-
+realization claim. It demonstrates that ABI can compile a tiny teacher-derived,
+teacher-absent realization package and replicate its functional behavior on a
+fresh lexical split. It does not establish unrestricted English, prompt
+understanding, conversation, summarization, reasoning, autonomous labeling,
+arbitrary-domain extraction, production LayerCake ingestion, global
+minimality, or superiority to LoRA/distillation. The full ABI moonshot remains
+open.

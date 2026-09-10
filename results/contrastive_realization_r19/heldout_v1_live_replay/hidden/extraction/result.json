@@ -1,0 +1,23 @@
+{
+  "bundle_evidence_sha256": "64c3bba88bba4ac16c7c02e1858d17cd7157a6210b890c6e690923dd0b18617f",
+  "capsule_manifest_evidence_sha256": "a618354acabcb46f1019b153574ada69c1874f42dcdc4c9d0265cc9c465d771b",
+  "evaluation_rows_consumed": 0,
+  "evidence_sha256": "65bfbc9a97255f25d0fc9b361d88d1dd3bdae4c51cb395d44ec91b6dd9df9893",
+  "format": "abi-r19-isolated-contrastive-extraction/1",
+  "mountinfo_sha256": "62d31995b33b1a2cbe414e61e2903d05cd0c3f91095650bf382296e36f42ac07",
+  "network_namespace_isolated": true,
+  "old_root_present": false,
+  "oracle_fields_consumed": 0,
+  "package": {
+    "bytes": 4263,
+    "path": "packages/sha256-97566bbcd2315c1007a211dcd270ca259eb746cfd695ae3bdbfaec445ba1d5f2.abipkg",
+    "sha256": "97566bbcd2315c1007a211dcd270ca259eb746cfd695ae3bdbfaec445ba1d5f2"
+  },
+  "parseable_records": 71,
+  "records_consumed": 72,
+  "rejected_record_ids": [
+    "r19-heldout-f3266ba1985dc84f14ed"
+  ],
+  "templates_learned": 24,
+  "windows_mount_present": false
+}

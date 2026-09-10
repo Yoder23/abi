@@ -226,3 +226,25 @@ ABI preserved v1 and ran a clean second selection whose corrected public
 receipt was bound before reveal. The replication repeated every exact gate;
 the two selections cover 27 distinct facts. This upgrades the bounded claim to
 a replicated local pass, but does not broaden its closed-candidate scope.
+
+## Additive R19 bounded linguistic-realization result
+
+R19 supports one additional bounded claim: teacher-generated examples can be
+compiled into a teacher-absent compositional surface-realization package for
+the registered supplied-slot, 24-signature family. Its same-number polarity-
+contrast mechanism passed 96/96 disclosed development rows and 48/48 rows on a
+separately committed, lexically disjoint hidden replication. The hidden teacher
+scored 43/48 and independent modal consensus scored 48/48; R19 regressed on no
+teacher-correct row. Removal abstained 48/48 and the structurally invalid
+control emitted no package and scored 0/48.
+
+The final package is 4,263 bytes and contains no source, host, or bridge
+parameters. The teacher was absent from compilation and execution. Strict
+recomputation, 22/22 hostile mutations, and a fresh byte-exact physical replay
+passed.
+
+R19 does not support claims of unrestricted English fluency, autonomous prompt
+understanding, conversation, summarization, reasoning, open-world labeling,
+arbitrary-domain extraction, LayerCake product acceptance, global minimality,
+teacher-behavior equality, or superiority to LoRA/distillation. See
+[R19_CONTRASTIVE_REALIZATION_RESULT.md](R19_CONTRASTIVE_REALIZATION_RESULT.md).

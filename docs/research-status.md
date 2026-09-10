@@ -28,6 +28,7 @@ fresh blind Codex review. Human quality and independent hardware remain open.
 | Conventional open-weight learned-delta extraction into R11 ABI | Bounded local pass; R15A 8/8 with strict/live/hostile verification |
 | Pre-existing source representation extraction into R11 ABI | Bounded blind-reviewed local pass; R15B 4/4 with zero source training and strict/live/hostile verification |
 | Pre-existing structured factual extraction and segregation | Bounded replicated local pass; two R16 16/16 selections, 27 distinct facts, strict/live/hostile verification |
+| Teacher-derived compositional surface realization | Bounded replicated local pass; R19 96/96 disclosed plus 48/48 fresh hidden, strict/live/22-case hostile verification |
 | Pre-existing open-weight English/domain extraction | Open |
 | LoRA/distillation superiority | Unproven |
 
@@ -109,6 +110,16 @@ superiority. Fresh blind review passed v1 with no Critical or High finding. A
 clean second selection bound to the corrected public protocol before reveal
 repeated every gate, and blind review of exact commit `26fb029` passed with no
 findings; public publication and reconstruction remain open.
+
+R19 now passes the separately preregistered bounded surface-realization claim.
+Its same-number polarity contrasts generalized from 72 hidden extraction rows
+to all 48 lexically disjoint functional rows, versus 43/48 for the unchanged
+teacher, without regressing any teacher-correct row. The 4,263-byte package,
+control rejection, removal behavior, 22 hostile mutations, and fresh physical
+replay all verified. The task supplies semantic slots and one of 24 registered
+feature signatures, so this is not general English extraction, autonomous
+prompt understanding, conversation, summarization, arbitrary-domain labeling,
+or LayerCake acceptance.
 
 Historical campaign records remain available in `evidence/current/`,
 `results/`, and the research-history branch. Later evidence supersedes a claim

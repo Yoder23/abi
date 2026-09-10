@@ -191,9 +191,16 @@ R19 is a materially different successor: it learns same-number structural
 contrasts between positive and negative forms instead of pooling across number.
 On the disclosed R17 and failed-R18 evidence sets it scored 96/96 total
 functional rows with zero source-correct regressions, 0/96 controls, and 96/96
-removal abstentions. Strict verification, 12/12 hostile mutations, and fresh
-physical byte-exact replay passed. A new hidden replication is still required;
-R19 is not yet a certified English mechanism. See
+removal abstentions. Its separately committed 20-lexeme hidden replication then
+scored 48/48, versus 43/48 for the unchanged teacher and 48/48 for independent
+modal consensus, with zero teacher-correct regressions, 0/48 control behavior,
+and 48/48 removal abstention. The 4,263-byte package contains no source or host
+parameters; 22/22 hostile mutations were rejected and a fresh physical run
+reproduced the package and evaluation byte-for-byte. R19 therefore passes only
+the registered bounded surface-realization claim. It is not unrestricted
+English, prompt understanding, conversation, autonomous labeling, arbitrary-
+domain extraction, LayerCake ingestion, minimality, or LoRA/distillation
+superiority. See
 [`docs/R19_CONTRASTIVE_REALIZATION_RESULT.md`](docs/R19_CONTRASTIVE_REALIZATION_RESULT.md).
 
 ## R7 at a glance

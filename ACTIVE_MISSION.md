@@ -207,16 +207,21 @@ capture, failed package, 0/48 control, 48/48 removal, and strict negative
 verification are preserved. R18 is not certified. A successor must change the
 factorization architecture, not rerun this selection or tune another prompt.
 
-R19 development status:
-`R19_DISCLOSED_CONTRASTIVE_PREREQUISITE_PASSED_FRESH_HOLDOUT_OPEN`
+R19 status:
+`R19_BOUNDED_REPLICATED_CONTRASTIVE_REALIZATION_PASSED_LOCAL`
 
 R19 removes cross-number pooling and learns same-number polarity contrasts
 without hard-coded English surface tokens. It scored 48/48 on both disclosed
 development sets, versus teacher scores of 47/48 and 45/48 and modal scores of
 46/48 on each; regressions were zero. Both controls were fail-closed at 0/48
 and removal was 96/96. Strict recomputation, 12/12 hostile mutations, and a
-fresh byte-exact physical replay passed. This is not held-out evidence; it
-authorizes only a new preregistered lexical replication.
+fresh byte-exact physical replay passed. The fresh preregistered lexical
+replication then scored 48/48, versus 43/48 teacher and 48/48 modal, with zero
+regressions, 0/48 control, 48/48 removal, 22/22 hostile rejection, and byte-
+exact fresh physical replay. Its 4,263-byte package contains no source, host,
+or bridge parameters. This certifies only the registered supplied-slot 24-
+signature realization family, not general English, LayerCake acceptance, or
+the ABI moonshot.
 
 ## What R7 proves
 
@@ -263,8 +268,8 @@ The blind reviewer returned `VERDICT: PASS` for this exact scope.
 | Pre-existing representation capability recovery | BOUNDED BLIND-REVIEWED LOCAL PASS; R15B recovered 4/4 secret arithmetic mappings with zero source training |
 | Pre-existing bounded factual extraction and segregation | BOUNDED REPLICATED LOCAL PASS; two R16 selections, 32/32 selected instances and 27 distinct facts |
 | Pre-existing English/domain knowledge extraction | OPEN; R16 is closed-candidate structured memory, not fluent English or arbitrary domains |
-| Bounded teacher-derived grammar realization | OPEN; R18 public 48/48, hidden replication failed 46/48 |
-| Contrastive realization successor | DISCLOSED DEVELOPMENT PASS; R19 96/96, fresh hidden replication open |
+| Bounded teacher-derived grammar realization | BOUNDED REPLICATED LOCAL PASS; R19 96/96 disclosed plus 48/48 fresh hidden |
+| General teacher-derived English capability | OPEN; R19 is supplied-slot surface realization only |
 | Exact foreign-teacher behavioral transplantation | OPEN; separate Track A |
 
 ## Current objective
@@ -279,13 +284,13 @@ Preserve and externally review R7 without changing its artifacts:
 4. verify the returned packets fail closed; and
 5. only then update the corresponding external gates.
 
-Teacher extraction and minimization belong to additive campaigns. R16 now
-supplies the first bounded held-out factual extraction/segregation pass, but
-only for registered closed candidate sets and a two-domain ontology. The
-immediate additive work is to publicly reconstruct the blind-reviewed R16
-seal and test a newly preregistered polarity-contrast successor to R18's
-failed number-pooling mechanism. LayerCake product ingestion remains a
-separate acceptance gate.
+Teacher extraction and minimization belong to additive campaigns. R16 supplies
+the first bounded held-out factual extraction/segregation pass, and R19 now
+supplies a replicated bounded surface-realization pass. The immediate additive
+work is to test a materially broader English representation with free-form,
+teacher-relative behavior; another nearby lexical, prompt, template, or
+signature variant is not evidence-supported. LayerCake product ingestion
+remains a separate acceptance gate.
 
 Any R8/R9/R10 successor must start with a new additive preregistration and a
 materially different canonical IR or recipient injection architecture. It must

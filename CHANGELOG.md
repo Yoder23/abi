@@ -1,5 +1,22 @@
 # Changelog
 
+## R19 hidden contrastive realization replication - 2026-09-10
+
+- Froze the implementation at `173ed0b`, committed the 256-bit lexical
+  selection before reveal, and sealed 120 raw GPU teacher rows before
+  compilation.
+- Passed the fresh hidden split at 48/48 package functional rows versus 43/48
+  teacher and 48/48 modal, with zero source-correct regressions, 0/48 control,
+  and 48/48 removal.
+- Emitted a 4,263-byte teacher-absent package containing zero source, host, or
+  bridge parameters and recorded prompt, token, byte, time, memory, model, and
+  artifact accounting.
+- Rejected 22/22 hostile mutations and reproduced the exact package, bundles,
+  and evaluation in a fresh physical pivot-root/no-network execution.
+- Promoted only bounded replicated surface realization. General English,
+  LayerCake ingestion, autonomous labeling, minimality, teacher parity, and
+  LoRA/distillation superiority remain open.
+
 ## R19 contrastive realization development prerequisite - 2026-09-10
 
 - Replaced unsafe R18 cross-number pooling with a structural, same-number
