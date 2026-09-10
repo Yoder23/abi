@@ -1,0 +1,9 @@
+{
+  "format": "abi-r19-development-failure/1",
+  "verdict": "FAIL_CONTROL_COMPILATION",
+  "frozen_implementation_commit": "9cc6eab650e61f25f4af584682b7ac78ba212021",
+  "completed_primary_extractions": 1,
+  "completed_evaluation_rows": 0,
+  "reason": "The mood-permuted control contained no structure-compatible polarity contrast and the fail-closed compiler rejected it. The v1 runner did not define compiler rejection as a control outcome.",
+  "successor": "One v2 runner-only repair may treat this specific structural rejection as package absence and score every control execution as abstention. Primary compiler, package, data, evaluator, and quality gates remain unchanged."
+}

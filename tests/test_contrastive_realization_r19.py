@@ -7,6 +7,7 @@ from experiments.contrastive_realization_r19.compiler import (
 from experiments.contrastive_realization_r19.isolated_worker import (
     infer_templates as infer_isolated,
 )
+from experiments.functional_realization_r18.run_public import _control
 from experiments.functional_realization_r18.verify import _fill
 from experiments.linguistic_realization_r17.frames_v2 import public_rows_v2
 
@@ -45,3 +46,21 @@ def test_contrastive_selection_rejects_noisy_unpaired_majority() -> None:
     )
     isolated_templates, _ = infer_isolated(records, list(templates))
     assert isolated_templates == templates
+
+
+def test_mood_permutation_fails_closed_without_package() -> None:
+    import pytest
+
+    from experiments.contrastive_realization_r19.compiler import R19CompilerError
+
+    records = [
+        {
+            "record_id": row["record_id"],
+            "signature": row["signature"],
+            "slots": row["slots"],
+            "output": row["expected"],
+        }
+        for row in public_rows_v2("extraction")
+    ]
+    with pytest.raises(R19CompilerError, match="no structure-compatible"):
+        infer_templates(_control(records))

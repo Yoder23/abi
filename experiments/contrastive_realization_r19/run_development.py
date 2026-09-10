@@ -28,7 +28,7 @@ from experiments.functional_realization_r18.verify_heldout_source import (
 )
 from experiments.linguistic_realization_r17.verify_source import verify_source as verify_r17_source
 
-from .isolation import run_wsl_isolated_extraction
+from .isolation import R19IsolationError, run_wsl_isolated_extraction
 from .package import load_package, realize
 
 
@@ -54,11 +54,27 @@ def _compile_dataset(
     primary = run_wsl_isolated_extraction(root, bundle_path, destination / "extraction")
     control_bundle = destination / "mood_permutation_bundle.json"
     _bundle(control_bundle, _control(records))
-    control = run_wsl_isolated_extraction(root, control_bundle, destination / "control_extraction")
+    control = None
+    control_rejection = None
+    try:
+        control = run_wsl_isolated_extraction(
+            root, control_bundle, destination / "control_extraction"
+        )
+    except R19IsolationError as exc:
+        if "no structure-compatible polarity contrast" not in str(exc):
+            raise
+        control_rejection = {
+            "status": "REJECTED_NO_STRUCTURE_COMPATIBLE_POLARITY_CONTRAST",
+            "package_emitted": False,
+            "runtime_behavior": "ABSTAIN",
+        }
     package_path = destination / "extraction" / primary["result"]["package"]["path"]
-    control_path = destination / "control_extraction" / control["result"]["package"]["path"]
     package = load_package(package_path)
-    control_package = load_package(control_path)
+    control_path = None
+    control_package = None
+    if control is not None:
+        control_path = destination / "control_extraction" / control["result"]["package"]["path"]
+        control_package = load_package(control_path)
     modal = _independent_modal(records)
     evaluation = []
     for row in rows:
@@ -131,15 +147,17 @@ def _compile_dataset(
             "bytes": package_path.stat().st_size,
             "sha256": sha256_file(package_path),
         },
-        "control_package": {
-            "path": str(control_path.relative_to(destination)),
-            "bytes": control_path.stat().st_size,
-            "sha256": sha256_file(control_path),
+        "control": control_rejection
+        or {
+            "status": "PACKAGE_EMITTED",
+            "package": {
+                "path": str(control_path.relative_to(destination)),
+                "bytes": control_path.stat().st_size,
+                "sha256": sha256_file(control_path),
+            },
+            "extraction_result_sha256": sha256_file(destination / "control_extraction/result.json"),
         },
         "extraction_result_sha256": sha256_file(destination / "extraction/result.json"),
-        "control_extraction_result_sha256": sha256_file(
-            destination / "control_extraction/result.json"
-        ),
     }
 
 
@@ -180,13 +198,14 @@ def run(
         "verdict": "PASS" if passed else "FAIL",
         "claim": "DISCLOSED_DEVELOPMENT_CONTRASTIVE_REALIZATION_PREREQUISITE",
         "claim_ceiling": "NOT_HELD_OUT_OR_UNRESTRICTED_ENGLISH",
-        "protocol_sha256": sha256_file(Path(__file__).with_name("PUBLIC_PROTOCOL.md")),
+        "protocol_sha256": sha256_file(Path(__file__).with_name("PUBLIC_PROTOCOL_V2.md")),
         "datasets": datasets,
         "source_training_steps": 0,
         "host_training_steps": 0,
         "teacher_present_at_compilation": False,
         "teacher_present_at_package_execution": False,
-        "physical_extractions": 4,
+        "physical_primary_extractions": 2,
+        "physical_control_attempts": 2,
         "full_abi_moonshot": "OPEN",
     }
     receipt["evidence_sha256"] = evidence_hash(receipt)
