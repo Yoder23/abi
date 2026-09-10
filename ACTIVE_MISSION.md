@@ -148,6 +148,16 @@ normalization miss; the other five misses were a chemistry letter-selection
 interface failure. Preserve v1 and replace that interface before any held-out
 R16 certification.
 
+R16 public v2 status: `PUBLIC_FACTUAL_PREREQUISITE_PASSED`
+
+The materially different answer-free/candidate-sequence interface passed all
+registered public gates: 48/48 open generations, 48/48 candidate selections,
+16/16 cross-view fact extractions, and 48/48 semantic labels. It used every v1
+fact and template and did not lower a gate. This authorizes only a new
+preregistered held-out factual/segregation test; package execution, LayerCake
+ingestion, English transfer, minimality, and LoRA/distillation superiority
+remain open.
+
 ## What R7 proves
 
 R7 proves one bounded capability ABI result: four immutable packages execute

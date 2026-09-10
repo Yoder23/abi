@@ -8,6 +8,10 @@
   selections, 13/16 consistent extracted facts, and 48/48 semantic labels.
 - Diagnosed one Unicode-normalization mismatch and five chemistry
   choice-interface errors. No held-out R16 run is authorized from this result.
+- Preserved a fail-closed v2 revision-001 receipt-key defect, then reran the
+  complete source workload after a unit-tested aggregation-only repair.
+- R16 public v2 revision 002 passed 48/48 answer-free generations, 48/48
+  candidate selections, 16/16 cross-view facts, and 48/48 semantic labels.
 
 ## R15B bounded pre-existing representation recovery - 2026-09-10
 

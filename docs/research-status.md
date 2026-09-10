@@ -87,6 +87,12 @@ prerequisite: 15/16 open answers, 43/48 shuffled-choice answers, 13/16
 three-view-consistent facts, and 48/48 semantic labels. This is development
 evidence only. No held-out factual extraction claim has been opened.
 
+R16 public v2 replaced only the failed letter-selection interface and Unicode
+normalization. Its answer-free prompt and candidate-sequence scoring path
+passed 48/48 source generations, 48/48 score selections, 16/16 cross-view fact
+extractions, and 48/48 registered semantic labels. This clears a public
+prerequisite, not a held-out or product claim.
+
 Historical campaign records remain available in `evidence/current/`,
 `results/`, and the research-history branch. Later evidence supersedes a claim
 only where explicitly stated; negative results are never rewritten as passes.

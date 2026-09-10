@@ -143,6 +143,13 @@ package's deep generalization comes from the registered affine inductive bias.
 The full ABI moonshot therefore remains open, and R7 remains the controlling
 published release.
 
+R16 public development has now cleared the source prerequisite for the next
+factual stage. After preserving a failed shuffled-letter interface, an
+answer-free candidate-sequence formulation passed 48/48 source generations,
+48/48 score selections, 16/16 cross-view facts, and 48/48 registered chemistry
+and geography labels. No held-out R16 package has yet been certified, so this
+does not expand the published claim ceiling.
+
 ## R7 at a glance
 
 | Evidence | Result |

@@ -5,6 +5,7 @@ from experiments.factual_semantic_r16.facts import (
     question,
     render_multiple_choice,
 )
+from experiments.factual_semantic_r16.public_sequence_scoring import _gates_pass, normalized_text
 
 
 def test_public_fact_registry_has_two_balanced_namespaces() -> None:
@@ -37,3 +38,24 @@ def test_semantic_classifier_uses_question_relation() -> None:
     for fact in PUBLIC_FACTS:
         for view in range(3):
             assert namespace_from_question(question(fact, view)) == fact.namespace
+
+
+def test_v2_normalizer_accepts_diacritic_equivalence_not_wrong_values() -> None:
+    assert normalized_text("Brasília.") == normalized_text("Brasilia")
+    assert normalized_text("Berlin") != normalized_text("Paris")
+
+
+def test_v2_gate_uses_registered_fact_total() -> None:
+    metrics = {
+        "open_exact": 48,
+        "open_total": 48,
+        "candidate_scored_exact": 48,
+        "candidate_scored_total": 48,
+        "semantic_exact": 48,
+        "semantic_total": 48,
+        "facts_extracted_exact": 16,
+        "facts_total": 16,
+    }
+    assert _gates_pass(metrics)
+    metrics["facts_extracted_exact"] = 15
+    assert not _gates_pass(metrics)

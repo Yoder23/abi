@@ -255,6 +255,13 @@ arbitrary teacher.
     exact gate. A public successor may replace choice-letter prediction with
     answer-free generation plus registered candidate-sequence scoring before
     any held-out commitment.
+13. R16 public v2 passed 48/48 answer-free generations, 48/48 candidate
+    selections, 16/16 cross-view facts, and 48/48 registered semantic labels.
+    A held-out successor must freeze its extractor, package schema, physical
+    isolation, factual universe, label ontology, exact gates, and evaluation
+    paraphrases before committing or revealing a secret selection. It must
+    keep structured factual extraction separate from English transfer and
+    LoRA/distillation comparisons.
 
 Do not claim the ABI moonshot until those acquisition and external-quality
 gates are supported by their own evidence.
