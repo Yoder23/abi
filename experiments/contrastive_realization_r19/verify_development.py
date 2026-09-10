@@ -214,6 +214,8 @@ def _verify_dataset(
     source_rows: Path,
     seed: int,
     stored: dict[str, Any],
+    *,
+    require_pass: bool = True,
 ) -> dict[str, Any]:
     rows = _rows(source_rows)
     records = _compiler_records(rows)
@@ -280,19 +282,22 @@ def _verify_dataset(
         "control_functional_exact": 0,
         "removed_abstain": len(evaluation),
     }
+    passed = (
+        metrics["package_functional_exact"] == 48
+        and metrics["source_exact_regressions"] == 0
+        and metrics["package_functional_exact"] >= metrics["independent_modal_functional_exact"]
+        and metrics["removed_abstain"] == 48
+        and metrics["control_functional_exact"] / 48 <= 0.10
+    )
     if (
         stored.get("metrics") != metrics
-        or stored.get("verdict") != "PASS"
+        or stored.get("verdict") != ("PASS" if passed else "FAIL")
         or stored.get("source_rows_sha256") != sha256_file(source_rows)
         or stored.get("package", {}).get("sha256") != sha256_file(package_path)
         or stored.get("package", {}).get("bytes") != package_path.stat().st_size
         or stored.get("extraction_result_sha256")
         != sha256_file(directory / "extraction/result.json")
-        or metrics["package_functional_exact"] != 48
-        or metrics["source_exact_regressions"] != 0
-        or metrics["package_functional_exact"] < metrics["independent_modal_functional_exact"]
-        or metrics["removed_abstain"] != 48
-        or metrics["control_functional_exact"] / 48 > 0.10
+        or (require_pass and not passed)
     ):
         raise R14Error("R19 development scientific gate failed")
     return metrics
