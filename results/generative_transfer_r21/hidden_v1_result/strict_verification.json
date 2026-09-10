@@ -1,0 +1,29 @@
+{
+  "claim_ceiling": "NOT_UNRESTRICTED_ENGLISH_OR_ABI_MOONSHOT",
+  "config_sha256": "ec2f4dc0eda8279d91475a90977a3ec6737808a7b19412b6b1cb55e5415b450c",
+  "cpu_rows_recomputed": 54,
+  "evidence_sha256": "b79de3942090078672da2581b8f47e604ab9528de96b90c09363df1cc36b8d7b",
+  "format": "abi-r21-hidden-strict-verification/1",
+  "full_abi_moonshot": "OPEN",
+  "gates": {
+    "all_packages_frozen": true,
+    "cpu_gpu_rows_complete": true,
+    "each_seed_each_task": false,
+    "each_seed_no_worse_than_controls": true,
+    "each_seed_no_worse_than_teacher": true,
+    "each_seed_non_collapsed": true,
+    "each_seed_non_hallucinating": true,
+    "gpu_rows_complete": true,
+    "label_exact": true,
+    "student_retraining_zero": true,
+    "teacher_absent_at_execution": true
+  },
+  "label_exact": 120,
+  "packages_rebound": 24,
+  "result_sha256": "6f63eeb990707f534176afdfb8c6bf807f2c3c1b4632e782cea764caadf514a9",
+  "rows_recomputed": 1080,
+  "scientific_verdict": "FAIL_HIDDEN_REPLICATION",
+  "source_receipt_sha256": "008fc3e28819de8ab842c6066277db15b0427291161afbdc44c6eadf2629de89",
+  "status": "PASS_VERIFIED_NEGATIVE_HIDDEN_RESULT",
+  "teacher_functional": 107
+}
