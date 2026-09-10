@@ -1,0 +1,71 @@
+{
+  "candidate_changes_authorized": false,
+  "candidate_cpu_observations": {
+    "bytes": 10143,
+    "path": "results/semantic_replication_r23/hidden_v1_result/engine/cpu_observations.jsonl",
+    "sha256": "edce7ce3abb9634456e123ec0ab38b8251b0c68e31385fcb1c2bea71ffaf53aa"
+  },
+  "candidate_engine": {
+    "bytes": 7275,
+    "path": "results/semantic_replication_r23/hidden_v1_result/engine/result.json",
+    "sha256": "576d9d908905623a2bcc234a29beffe1b64ebf400afa88bc1d671497c1336c15"
+  },
+  "candidate_observations": {
+    "bytes": 887694,
+    "path": "results/semantic_replication_r23/hidden_v1_result/engine/observations.jsonl",
+    "sha256": "3dfe71bcec653f401692556f80d6a995e38d240baf179941ac0338c1ba557693"
+  },
+  "candidate_wrapper": {
+    "bytes": 1137,
+    "path": "results/semantic_replication_r23/hidden_v1_result/result.json",
+    "sha256": "ccd09e9629c8e31909c3f72eb058ee29bde0235765304bef7c690f9d57013633"
+  },
+  "code_sha256": {
+    "experiments/foreign_capability_r14/core.py": "ade41e81c0087c9d56f484c1e7c6f8e57a726a31150a42c92b448c1d0eec4816",
+    "experiments/generative_transfer_r21/hash_assurance_binding.py": "f1915f3c95256b52edd6140a126ad2eec88d235794be2b76934faaa3b1995e8a",
+    "experiments/generative_transfer_r21/live_verify_v7.py": "576dbce8e9ec924d98fc535fbb7880f3e8c0ab633c9b062231e0cf7a25e0ff0a",
+    "experiments/generative_transfer_r21/protocol.py": "76fd0d3a45ba094511dba78357832be78996435ae4070362c4706a503f756a18",
+    "experiments/generative_transfer_r21/run.py": "d8fe7648cca96a090e48dae007604ba2839c6aa7c3717a31fc7293daf08d9e32",
+    "experiments/semantic_replication_r23/LIVE_PROTOCOL.md": "6ab0d531eed282fc852fb504a2046fd5013c5e0ee46e7cc786300a36dced9849",
+    "experiments/semantic_replication_r23/acquire.py": "f3f193deaf97b9ac0826ab3745b55487ed45312cee236f4cf1fdc748cd478d75",
+    "experiments/semantic_replication_r23/binding.py": "09bdd82021cbf31f88007b9eb23fcf62806708d8367a1064b1e2a4c8a68a1443",
+    "experiments/semantic_replication_r23/freeze_live.py": "72e792e4374facabd6679a94fe2d27183ce57b8b310af9123993528d3206d19c",
+    "experiments/semantic_replication_r23/live_binding.py": "0d7e8645fbbe1f25ab7897f3c95195778e130edb1ff2e0b5f6c6af1f48a749ee",
+    "experiments/semantic_replication_r23/live_verify.py": "bd775681a076b61fcfd1783eebc38849a38d5bb5df09b47c2b7207939a681c84",
+    "experiments/semantic_replication_r23/protocol.py": "8000127ceefb4fe48ba9e8f582cc966caae989e71212fcc15975e198478c8039",
+    "experiments/semantic_replication_r23/verify.py": "55f52b135a1bb1bd2a7ab8f3fce51bfab919d1318bb5b4deb48904284ac26d71",
+    "experiments/semantic_replication_r23/verify_live.py": "2c2c6f822e0117c1a041b3915e2815d0666b7956abc1b50bc066c29424756dbc"
+  },
+  "cpu_task_cover_required": true,
+  "format": "abi-r23-live-config/1",
+  "full_gpu_replay_required": true,
+  "gate_changes_authorized": false,
+  "implementation_freeze_commit": "8820dbef2f90007cacaeae32b172e973b2d4cd89",
+  "lifecycle_replay_required": true,
+  "r23_config": {
+    "bytes": 11271,
+    "path": "experiments/semantic_replication_r23/configs/hidden_v1.json",
+    "sha256": "2a6de05869d4709739b1d0583af692ae3c97853dd751e6bf0a99686a11caf5fc"
+  },
+  "seed_reveal": {
+    "bytes": 129,
+    "path": "experiments/semantic_replication_r23/configs/hidden_v1_reveal.json",
+    "sha256": "10ff19b234c2ed6082259cf163f1dd8b2f2c5288d171855d80495fdda4e570f4"
+  },
+  "source_receipt": {
+    "bytes": 1533,
+    "path": "results/semantic_replication_r23/hidden_v1_source/receipt.json",
+    "sha256": "c4c3d37bb5a68d518fdca707078d44282cf251567b05eac989f3d46602d15856"
+  },
+  "source_rows": {
+    "bytes": 142808,
+    "path": "results/semantic_replication_r23/hidden_v1_source/source_observations.jsonl",
+    "sha256": "f24acf1f1e49b16bbe33c2b7bca945b09bf78ff4a31c944937e204e73fce3ee4"
+  },
+  "stored_strict_verification": {
+    "bytes": 2478,
+    "path": "results/semantic_replication_r23/hidden_v1_result/strict_verification.json",
+    "sha256": "465d7f3d04a7266fc25a2b26a4ac3b13dba2f8279adda00e877aa317c77a5115"
+  },
+  "targeted_corruption": "middle_byte_of_tensors.safetensors"
+}
