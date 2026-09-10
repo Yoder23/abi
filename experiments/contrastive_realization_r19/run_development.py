@@ -63,10 +63,27 @@ def _compile_dataset(
     except R19IsolationError as exc:
         if "no structure-compatible polarity contrast" not in str(exc):
             raise
+        rejection_path = destination / "control_rejection.json"
+        rejection = {
+            "format": "abi-r19-control-rejection/1",
+            "reason": "NO_STRUCTURE_COMPATIBLE_POLARITY_CONTRAST",
+            "exception": str(exc),
+            "source_bundle_sha256": sha256_file(control_bundle),
+            "isolated_worker_sha256": sha256_file(
+                root / "experiments/contrastive_realization_r19/isolated_worker.py"
+            ),
+            "packages_emitted": 0,
+        }
+        rejection["evidence_sha256"] = evidence_hash(rejection)
+        write_json_once(rejection_path, rejection)
         control_rejection = {
             "status": "REJECTED_NO_STRUCTURE_COMPATIBLE_POLARITY_CONTRAST",
             "package_emitted": False,
             "runtime_behavior": "ABSTAIN",
+            "evidence": {
+                "path": rejection_path.name,
+                "sha256": sha256_file(rejection_path),
+            },
         }
     package_path = destination / "extraction" / primary["result"]["package"]["path"]
     package = load_package(package_path)
@@ -198,7 +215,7 @@ def run(
         "verdict": "PASS" if passed else "FAIL",
         "claim": "DISCLOSED_DEVELOPMENT_CONTRASTIVE_REALIZATION_PREREQUISITE",
         "claim_ceiling": "NOT_HELD_OUT_OR_UNRESTRICTED_ENGLISH",
-        "protocol_sha256": sha256_file(Path(__file__).with_name("PUBLIC_PROTOCOL_V2.md")),
+        "protocol_sha256": sha256_file(Path(__file__).with_name("PUBLIC_PROTOCOL_V3.md")),
         "datasets": datasets,
         "source_training_steps": 0,
         "host_training_steps": 0,

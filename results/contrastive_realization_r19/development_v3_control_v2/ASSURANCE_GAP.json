@@ -1,0 +1,7 @@
+{
+  "format": "abi-r19-assurance-gap/1",
+  "scientific_verdict": "PASS",
+  "promotion_verdict": "NOT_PROMOTED",
+  "reason": "The receipt records the control compiler rejection but v2 did not preserve a separately hash-bound raw rejection record. The primary package metrics remain valid, but hidden promotion waits for additive evidence repair and rerun.",
+  "frozen_runner_commit": "59af9b8"
+}
