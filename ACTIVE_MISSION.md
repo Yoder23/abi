@@ -119,6 +119,8 @@ source/extractor/recipient replay, and 9/9 hostile mutations passed. R15A is a
 bounded local pass for deliberately learned synthetic capabilities, not
 pretrained English/domain extraction. R7 remains the controlling public
 release until R15A assets receive durable publication and clean reconstruction.
+A fresh blind review of the exact R15A evidence commit returned `PASS` with no
+critical or high-severity blocker and preserved that claim ceiling.
 
 ## What R7 proves
 

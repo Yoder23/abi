@@ -161,6 +161,13 @@ recipient rows across frozen Pythia, Qwen2, and T5; delta controls were at most
 fresh live source/extractor replay, byte-identical recipient replay, and 9/9
 hostile mutations passed.
 
+A fresh blind red-team of the exact R15A evidence commit returned `PASS` with
+no critical or high-severity blocker. It independently checked chronology,
+commitments, package and evidence hashes, regenerated oracle evaluation,
+frontend retraining, isolation, recipient causality, strict/live verification,
+and focused tests. Its report is preserved at
+`results/foreign_neural_state_r15/blind_redteam_v5.md`.
+
 R15A does not support extraction of knowledge already present in a pretrained
 teacher. Each source capability was deliberately installed using all 24 atomic
 constraints, and ABI consumed the resulting before/after delta. It therefore

@@ -20,6 +20,10 @@
   0.17578125.
 - Passed strict recomputation, fresh live source/extractor execution,
   byte-identical recipient replay, and 9/9 hostile mutation cases.
+- Passed a fresh blind Codex red-team of the exact evidence commit with no
+  critical or high-severity blocker; the reviewer independently rechecked the
+  preregistration chronology, commitments, hashes, package behavior, frontend
+  retraining, isolation design, recipient causality, and 12/12 focused tests.
 - Sealed only bounded recovery of a deliberately learned synthetic capability
   from a foreign before/after delta. Pretrained English/domain extraction,
   semantic labeling, teacher-quality generation, after-only extraction,

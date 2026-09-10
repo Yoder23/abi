@@ -7,6 +7,12 @@ model's learned neural change into the unchanged R11 portable package and
 recipient boundary. It is a material prerequisite for the ABI moonshot, not
 completion of it.
 
+A fresh blind Codex red-team of commit
+`36ad0dba5778fbdc60955c4df7d91ab7f9153606` returned `PASS` with no critical
+or high-severity blocker for this bounded claim. The review explicitly rejects
+any interpretation as teacher-behavior cloning or pre-existing English/domain
+extraction.
+
 ## What was tested
 
 Eight fresh hidden affine capabilities were each learned by an ordinary
@@ -98,3 +104,5 @@ claimed from R15A.
   `results/foreign_neural_state_r15/heldout_v5_hostile_audit.json`
 - Protocol and append-only ledger:
   `experiments/foreign_neural_state_r15/`
+- Fresh blind red-team:
+  `results/foreign_neural_state_r15/blind_redteam_v5.md`
