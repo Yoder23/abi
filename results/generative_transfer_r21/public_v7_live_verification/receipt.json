@@ -1,0 +1,225 @@
+{
+  "candidate_engine_sha256": "2d0632975a09e3b5b59f2802140dec05f4b273411ec2bcf61b1c163060602732",
+  "candidate_observations_sha256": "ba80ce040875f5afef208af5559b9958d2e419ef886523e4ac47efe341e78757",
+  "claim_ceiling": "NOT_UNRESTRICTED_ENGLISH_OR_ABI_MOONSHOT",
+  "config_sha256": "30e39f753cf634c877b6e87d2053c55baea6d1c209df9cd29a243f3f048db2cf",
+  "corrupt_packages_rejected": 24,
+  "cpu_observations": {
+    "path": "cpu_observations.jsonl",
+    "rows": 54,
+    "sha256": "4ce592ff92d8ff08da20a15fe66e999f39920cbc03c70617a0752a5afc1d4b42"
+  },
+  "elapsed_seconds": 90.88422750000609,
+  "evidence_sha256": "71d8ba6b769371e3a202f607af9d711cc297d0a5397a2380f6f721ccc9cca425",
+  "format": "abi-r21-fresh-live-verification/1",
+  "full_abi_moonshot": "OPEN",
+  "lifecycle_observations": {
+    "path": "lifecycle_observations.jsonl",
+    "rows": 24,
+    "sha256": "743c60666ae1d353e32d9f7d70578faf71af2bd64dbe4b1c772e8d7203274d60"
+  },
+  "live_observations": {
+    "path": "live_observations.jsonl",
+    "rows": 1080,
+    "sha256": "26cbd421dbc2ae1a8994cbb6c76d00c2825e6bca9e8250638a9cab39a5f7299b"
+  },
+  "next_action": "preregister fresh hidden replication",
+  "package_removals": 24,
+  "package_restorations": 24,
+  "packages_signature_verified": 24,
+  "recomputed_aggregates": {
+    "abi_factorized:21021": {
+      "adherent": 120,
+      "functional": 116,
+      "functional_by_task": {
+        "abstention": 20,
+        "bullets": 20,
+        "clarification": 20,
+        "email": 20,
+        "prose": 20,
+        "summary": 16
+      },
+      "mean_teacher_lexical_f1": 0.6525749685543184,
+      "non_collapsed": 120,
+      "non_hallucinating": 120,
+      "rows": 120,
+      "semantic": 116
+    },
+    "abi_factorized:21022": {
+      "adherent": 120,
+      "functional": 116,
+      "functional_by_task": {
+        "abstention": 20,
+        "bullets": 20,
+        "clarification": 20,
+        "email": 20,
+        "prose": 20,
+        "summary": 16
+      },
+      "mean_teacher_lexical_f1": 0.6506619920097524,
+      "non_collapsed": 120,
+      "non_hallucinating": 120,
+      "rows": 120,
+      "semantic": 116
+    },
+    "abi_factorized:21023": {
+      "adherent": 120,
+      "functional": 116,
+      "functional_by_task": {
+        "abstention": 20,
+        "bullets": 20,
+        "clarification": 20,
+        "email": 20,
+        "prose": 20,
+        "summary": 16
+      },
+      "mean_teacher_lexical_f1": 0.6483114032334684,
+      "non_collapsed": 120,
+      "non_hallucinating": 120,
+      "rows": 120,
+      "semantic": 116
+    },
+    "labeled_monolith:21021": {
+      "adherent": 112,
+      "functional": 95,
+      "functional_by_task": {
+        "abstention": 12,
+        "bullets": 20,
+        "clarification": 5,
+        "email": 20,
+        "prose": 20,
+        "summary": 18
+      },
+      "mean_teacher_lexical_f1": 0.6353341143687323,
+      "non_collapsed": 120,
+      "non_hallucinating": 119,
+      "rows": 120,
+      "semantic": 95
+    },
+    "labeled_monolith:21022": {
+      "adherent": 117,
+      "functional": 94,
+      "functional_by_task": {
+        "abstention": 17,
+        "bullets": 20,
+        "clarification": 2,
+        "email": 20,
+        "prose": 18,
+        "summary": 17
+      },
+      "mean_teacher_lexical_f1": 0.6339337572993896,
+      "non_collapsed": 120,
+      "non_hallucinating": 117,
+      "rows": 120,
+      "semantic": 95
+    },
+    "labeled_monolith:21023": {
+      "adherent": 110,
+      "functional": 99,
+      "functional_by_task": {
+        "abstention": 10,
+        "bullets": 20,
+        "clarification": 14,
+        "email": 20,
+        "prose": 19,
+        "summary": 16
+      },
+      "mean_teacher_lexical_f1": 0.6243876709308775,
+      "non_collapsed": 120,
+      "non_hallucinating": 120,
+      "rows": 120,
+      "semantic": 99
+    },
+    "raw_sequence:21021": {
+      "adherent": 105,
+      "functional": 73,
+      "functional_by_task": {
+        "abstention": 8,
+        "bullets": 8,
+        "clarification": 11,
+        "email": 20,
+        "prose": 18,
+        "summary": 8
+      },
+      "mean_teacher_lexical_f1": 0.6015662116051156,
+      "non_collapsed": 120,
+      "non_hallucinating": 104,
+      "rows": 120,
+      "semantic": 83
+    },
+    "raw_sequence:21022": {
+      "adherent": 111,
+      "functional": 80,
+      "functional_by_task": {
+        "abstention": 12,
+        "bullets": 16,
+        "clarification": 9,
+        "email": 20,
+        "prose": 15,
+        "summary": 8
+      },
+      "mean_teacher_lexical_f1": 0.5624795950355405,
+      "non_collapsed": 119,
+      "non_hallucinating": 110,
+      "rows": 120,
+      "semantic": 88
+    },
+    "raw_sequence:21023": {
+      "adherent": 100,
+      "functional": 71,
+      "functional_by_task": {
+        "abstention": 8,
+        "bullets": 16,
+        "clarification": 12,
+        "email": 16,
+        "prose": 15,
+        "summary": 4
+      },
+      "mean_teacher_lexical_f1": 0.5348263535058522,
+      "non_collapsed": 120,
+      "non_hallucinating": 107,
+      "rows": 120,
+      "semantic": 82
+    }
+  },
+  "recomputed_comparisons": {
+    "abi_minus_labeled_monolith": {
+      "bootstrap_samples": 10000,
+      "ci95_high": 0.25833333333333336,
+      "ci95_low": 0.10833333333333334,
+      "mean_difference": 0.18333333333333332
+    },
+    "abi_minus_raw_sequence": {
+      "bootstrap_samples": 10000,
+      "ci95_high": 0.38333333333333336,
+      "ci95_low": 0.21666666666666667,
+      "mean_difference": 0.3
+    },
+    "abi_minus_teacher": {
+      "bootstrap_samples": 10000,
+      "ci95_high": 0.24166666666666667,
+      "ci95_low": 0.1,
+      "mean_difference": 0.16666666666666666
+    }
+  },
+  "recomputed_gates": {
+    "all_packages_signed": true,
+    "causal_lifecycle": true,
+    "cpu_gpu_execution": true,
+    "factor_parameter_budget": true,
+    "headline_each_task": true,
+    "headline_non_collapsed": true,
+    "headline_non_hallucinating": true,
+    "label_exact": true,
+    "no_worse_than_labeled_monolith": true,
+    "no_worse_than_raw_sequence": true,
+    "no_worse_than_teacher": true,
+    "receiver_training_steps_zero": true,
+    "row_exposure_exact": true,
+    "source_parameters_in_packages_zero": true,
+    "teacher_absent_at_execution": true
+  },
+  "scientific_claim": "R21_BOUNDED_PUBLIC_LABEL_SEPARATED_GENERATIVE_TRANSFER",
+  "source_software_loaded": false,
+  "status": "PASS_FRESH_LIVE_PUBLIC_PREREQUISITE"
+}
