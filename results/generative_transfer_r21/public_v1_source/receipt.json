@@ -1,0 +1,58 @@
+{
+  "artifacts": {
+    "source_rows": {
+      "path": "source_observations.jsonl",
+      "sha256": "4c148d7ccd262ce8767b2b11266d959236811d9a6b032186bf825dcca5d9f4c1"
+    }
+  },
+  "config_sha256": "4d304b8d85e4267d0cd2f54a471a9b65e5b15035faaf7501554a14693555f99a",
+  "evidence_sha256": "1677089fc1c7fd968e4c81c56884e941237c3d5b609b06fc530deec7fad22669",
+  "format": "abi-r21-public-source-acquisition/1",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "cpu_process_seconds": 1253.71875,
+    "elapsed_seconds": 1307.3775539000053,
+    "external_hardware_used": false,
+    "frozen_source_parameters_copied": 0,
+    "gpu_name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "hidden_activations_stored": 0,
+    "logits_stored": 0,
+    "peak_cpu_rss_bytes_observed": 2171404288,
+    "peak_gpu_memory_bytes": 15305872384,
+    "raw_source_prompt_utf8_bytes": 189872,
+    "raw_source_prompts": 1200,
+    "rendered_prompt_token_instances": 104996,
+    "rendered_prompt_utf8_bytes": 457472,
+    "source_inference_seconds": 1297.5698412999918,
+    "source_load_seconds": 9.611057800007984,
+    "source_model_inference_hours": 0.36043606702777553,
+    "source_parameters": 7615616512,
+    "source_snapshot_disk_bytes": 15242778262,
+    "source_snapshot_files": 10,
+    "teacher_generated_tokens": 21399,
+    "teacher_label_bytes": 4836,
+    "teacher_label_tokens": 1717,
+    "teacher_output_bytes": 73866,
+    "unique_source_prompt_utf8_bytes": 94936,
+    "unique_teacher_label_utf8_bytes": 60,
+    "unique_teacher_output_utf8_bytes": 70733
+  },
+  "metrics": {
+    "exact_labels": 583,
+    "rows": 600,
+    "teacher_functional": 491,
+    "teacher_non_collapsed": 600,
+    "teacher_non_hallucinating": 594,
+    "valid_labels": 583
+  },
+  "source": {
+    "device": "cuda",
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "parameters": 7615616512,
+    "present_at_package_execution": false,
+    "present_at_student_training": false,
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "training_steps": 0
+  },
+  "verdict": "FAIL_SOURCE"
+}
