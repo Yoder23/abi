@@ -1,0 +1,140 @@
+{
+  "code_sha256": {
+    "experiments/factual_semantic_r16/facts.py": "c83374c4741bddc96862d9fc866d20c0cd9713294a1bf7a0636a6b003f1d6406",
+    "experiments/foreign_capability_r14/core.py": "ade41e81c0087c9d56f484c1e7c6f8e57a726a31150a42c92b448c1d0eec4816",
+    "experiments/generative_transfer_r21/hash_assurance_binding.py": "f1915f3c95256b52edd6140a126ad2eec88d235794be2b76934faaa3b1995e8a",
+    "experiments/generative_transfer_r21/live_verify_v7.py": "576dbce8e9ec924d98fc535fbb7880f3e8c0ab633c9b062231e0cf7a25e0ff0a",
+    "experiments/generative_transfer_r21/protocol.py": "76fd0d3a45ba094511dba78357832be78996435ae4070362c4706a503f756a18",
+    "experiments/generative_transfer_r21/run.py": "d8fe7648cca96a090e48dae007604ba2839c6aa7c3717a31fc7293daf08d9e32",
+    "experiments/layercake_composition_r24/PROTOCOL.md": "f985d93669a6283b465580ea33bb03d659b8f6c6138c4d19adf178508446c5a1",
+    "experiments/layercake_composition_r24/binding.py": "d3cce23ae6d1540dd1ccb98863c77ef59b304fccb574fc8d6ab7095dbb34f0c6",
+    "experiments/layercake_composition_r24/freeze_config.py": "df37b55968680d00dfd275df5702825365fb920c70f9a61e5b48f876169b8986",
+    "experiments/layercake_composition_r24/protocol.py": "b1154bee6d05b9b51ff4557442288088244624f0ec27c084ab3a1451f1d89755",
+    "experiments/layercake_composition_r24/run.py": "b50b0dc691c02306391316707c3e81221ca4077e7529ae31ca5a9209039f0386",
+    "experiments/layercake_composition_r24/verify.py": "aab0ecb5ed94217a0ae40c7ae0f5fe919394464ccebefc3bce9021ecd40faec3",
+    "experiments/semantic_replication_r23/protocol.py": "8000127ceefb4fe48ba9e8f582cc966caae989e71212fcc15975e198478c8039"
+  },
+  "english_package_changes_authorized": false,
+  "english_packages": [
+    {
+      "bytes": 369435,
+      "cake_id": "abi-r21-abi-factorized-abstention-seed21022",
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-abstention-seed21022.cake",
+      "sha256": "bc7103222f0b00c6164bab96ea7f8e82264eb86c72b5ec42bd2a8a223e576930"
+    },
+    {
+      "bytes": 339370,
+      "cake_id": "abi-r21-abi-factorized-bullets-seed21022",
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-bullets-seed21022.cake",
+      "sha256": "db6b3155cbcbc431027e722b542833529508517817fbedf4781002a39e690533"
+    },
+    {
+      "bytes": 364268,
+      "cake_id": "abi-r21-abi-factorized-clarification-seed21022",
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-clarification-seed21022.cake",
+      "sha256": "a348ad4100945733ba4c49b77f1b24570fe64ebdbdbac94d9d103b42519e406d"
+    },
+    {
+      "bytes": 397897,
+      "cake_id": "abi-r21-abi-factorized-email-seed21022",
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-email-seed21022.cake",
+      "sha256": "2c6981207cba458dfb584e8453b2b6632772aef043ef6ee2aae8a965e2048dc7"
+    },
+    {
+      "bytes": 337776,
+      "cake_id": "abi-r21-abi-factorized-prose-seed21022",
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-prose-seed21022.cake",
+      "sha256": "1baa1211fd022f8c7852cc9145e9ee882ef4dc55584f98e987429fc2fb181d7b"
+    },
+    {
+      "bytes": 362255,
+      "cake_id": "abi-r21-abi-factorized-summary-seed21022",
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-summary-seed21022.cake",
+      "sha256": "af197344c75653990820577579e7a5e42863f07351abe5bff61a191e66b5fceb"
+    }
+  ],
+  "evaluation_training_authorized": false,
+  "format": "abi-r24-config/1",
+  "gates": {
+    "cpu_gpu_exact_per_seed": 48,
+    "domain_exact_per_seed": 48,
+    "english_core_target_answers": 0,
+    "english_rows_immutable_per_seed": 120,
+    "namespace_route_exact": 48,
+    "other_domain_target_answers": 0,
+    "package_lifecycle_exact": 6,
+    "packages_signed": 6,
+    "targeted_corruptions_rejected": 6
+  },
+  "implementation_freeze_commit": "94a78e31280504f18686016d346e91558f767f3e",
+  "model": {
+    "attention_heads": 4,
+    "decoder_layers": 1,
+    "dropout": 0.0,
+    "encoder_layers": 1,
+    "feedforward_width": 128,
+    "maximum_source_lexemes": 128,
+    "maximum_target_actions": 32,
+    "model_width": 48,
+    "pointer_width": 24
+  },
+  "namespaces": [
+    "chemistry/periodic-table",
+    "geography/national-capitals"
+  ],
+  "new_source_calls_authorized": false,
+  "r16_receipt": {
+    "bytes": 3288,
+    "path": "results/factual_semantic_r16/heldout_v2/receipt.json",
+    "sha256": "4db7f748a0a9caa5b2b6fbb47f8d057ba9b61d64b6a6feb5dee508ffd4182a9e"
+  },
+  "r16_source_rows": {
+    "bytes": 49130,
+    "path": "results/factual_semantic_r16/heldout_v2/source_observations.jsonl",
+    "sha256": "30258c908e161ff3812fdedc571e6ccf6eddf60267e091a5d5ac305de8285581"
+  },
+  "r16_strict_verification": {
+    "bytes": 2046,
+    "path": "results/factual_semantic_r16/heldout_v2_strict_v4.json",
+    "sha256": "935b50e58c93a0d7a822492dbeec618402b7207ade7142119ab7b92808763e41"
+  },
+  "r23_config": {
+    "bytes": 11271,
+    "path": "experiments/semantic_replication_r23/configs/hidden_v1.json",
+    "sha256": "2a6de05869d4709739b1d0583af692ae3c97853dd751e6bf0a99686a11caf5fc"
+  },
+  "r23_engine": {
+    "bytes": 7275,
+    "path": "results/semantic_replication_r23/hidden_v1_result/engine/result.json",
+    "sha256": "576d9d908905623a2bcc234a29beffe1b64ebf400afa88bc1d671497c1336c15"
+  },
+  "r23_hidden_rows": {
+    "bytes": 887694,
+    "path": "results/semantic_replication_r23/hidden_v1_result/engine/observations.jsonl",
+    "sha256": "3dfe71bcec653f401692556f80d6a995e38d240baf179941ac0338c1ba557693"
+  },
+  "r23_live_verification": {
+    "bytes": 1566,
+    "path": "results/semantic_replication_r23/hidden_v2_live/strict_verification.json",
+    "sha256": "b34dba88709d98c614d922a51157a460c8708a5d9c9b374770dca32612269261"
+  },
+  "r23_reveal": {
+    "bytes": 129,
+    "path": "experiments/semantic_replication_r23/configs/hidden_v1_reveal.json",
+    "sha256": "10ff19b234c2ed6082259cf163f1dd8b2f2c5288d171855d80495fdda4e570f4"
+  },
+  "seeds": [
+    24021,
+    24022,
+    24023
+  ],
+  "training": {
+    "batch_size": 8,
+    "device": "cuda",
+    "gradient_clip_norm": 1.0,
+    "learning_rate": 0.0008,
+    "row_exposure_per_package": 16000,
+    "steps": 2000,
+    "weight_decay": 0.01
+  }
+}
