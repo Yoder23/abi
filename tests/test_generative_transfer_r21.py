@@ -15,6 +15,7 @@ from experiments.generative_transfer_r21.protocol import (
     score_output,
     training_rows,
 )
+from experiments.generative_transfer_r21.run_v5 import run as run_manifest_repair
 
 
 def test_r21_public_matrix_is_distinct_and_complete():
@@ -70,3 +71,7 @@ def test_r21_self_hash_assurance_removes_only_the_self_field():
     stored = selfless_evidence_hash(unsigned)
     signed = {**unsigned, "evidence_sha256": stored}
     assert selfless_evidence_hash(signed) == stored
+
+
+def test_r21_manifest_repair_entrypoint_is_distinct():
+    assert callable(run_manifest_repair)

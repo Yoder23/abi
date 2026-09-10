@@ -1,0 +1,18 @@
+{
+  "format": "abi-r21-operational-failure/1",
+  "scientific_result": "NOT_REACHED",
+  "stage": "first_live_layercake_generation",
+  "cause": "generated package input_contract omitted mode=direct_selected_portable_decoder",
+  "exception": "ValueError: package is not a direct neural decoder",
+  "training_completed": {
+    "seeds": 3,
+    "methods_per_seed": 3,
+    "signed_packages": 24,
+    "package_bytes": 20039331
+  },
+  "evaluation_rows_completed": 0,
+  "data_changes": 0,
+  "model_changes": 0,
+  "gate_changes": 0,
+  "authorized_repair": "add the required manifest input-contract mode and rerun unchanged training because in-memory training histories and cost measurements were not persisted before the host rejected the package"
+}
