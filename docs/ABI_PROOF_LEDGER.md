@@ -20,6 +20,7 @@ registered evidence.
 | ABI-C4g | An unchanged teacher can supply bounded pre-existing facts that ABI segregates into immutable domain packages and executes without the teacher | R16: two 16/16 selections (27 distinct facts), 96/96 total package/source rows per run, exact namespace/removal controls, byte-exact live replays, 21/21 hostile cases, clean blind review | Bounded replicated blind-reviewed structured-factual local pass |
 | ABI-C4h | ABI can extract teacher-derived compositional English realization into a teacher-absent package | R19: 96/96 disclosed development plus 48/48 fresh hidden functional rows; zero regressions; 0/48 hidden control; 48/48 removal; 22/22 hostile; byte-exact live replay | Bounded replicated local pass |
 | ABI-C4i | ABI can extend bounded realization to raw natural instructions and broader supplied-content behaviors with a structural program package | R20 source: 10/72 extraction and 19/120 evaluation registered-exact; insufficient six-program support; no package or host run | Failed for tested exact delexicalized-program representation |
+| ABI-C4j | ABI can transfer six semantic supplied-content behaviors into factorized signed LayerCake packages that generalize prospectively without teacher or receiver training at inference | R23: 120/120 fresh hidden on all three seeds versus 96/120 teacher; 1,080 GPU, 54 CPU, and 24 lifecycle/corruption fresh replays | Bounded strictly verified local pass |
 | ABI-C4 | End-to-end foreign-teacher behavior copy/paste into frozen heterogeneous hosts with zero host training | R12 strict gate failed; R13-B canonicalized the capability but matched only 372/2,048 source outputs | Open |
 | ABI-C5 | The recipient's native neural computation internalizes the foreign capability | R8 and R9 recipient realization failures | Failed for tested mechanisms |
 | ABI-C6 | ABI extracts and segregates fluent English and arbitrary domains from an open-weight LLM | No sufficient evidence | Open |
@@ -111,6 +112,17 @@ the exact delexicalized-template route for broader English. It does not
 invalidate R19's narrower pass, and it supplies no evidence about LayerCake
 because no R20 package or host execution occurred.
 
+R21 replaced the structural program with generative LayerCake packages and
+passed its public prerequisite, but its frozen lexical hidden gate failed at
+13/20 summary rows. R22 then rejected unconstrained teacher-side normalization
+as a repair. R23 prospectively froze a semantic contract and a new hidden split
+without changing the R21 package bytes. All factorized seeds scored 120/120,
+and a separate live process reproduced the complete GPU/CPU and package
+lifecycle matrix. This promotes ABI-C4j only. The prompts still supply three
+semantic fields and use a registered six-class ontology, so it is not broad
+English extraction, autonomous labeling, arbitrary-domain segregation, or
+teacher-model transplantation.
+
 ### Teacher-quality English/domain extraction
 
 An open-weight source is diagnosed, English and domain knowledge are separated,
@@ -125,8 +137,8 @@ the bounded synthetic neural-ABI construction. R13-B promotes ABI-C3 and
 ABI-C4c only for local, exhaustively enumerable capability canonicalization.
 R14 promotes no claim because its registered three-capability gate failed.
 R15A promotes ABI-C4e only, R15B promotes ABI-C4f only, R16 promotes ABI-C4g
-only, and R19 promotes ABI-C4h only for its bounded replicated realization
-family. None promotes
+only, R19 promotes ABI-C4h only for its bounded replicated realization family,
+and R23 promotes ABI-C4j only for its six supplied-content behaviors. None promotes
 ABI-C4 teacher-behavior copying,
 ABI-C5, ABI-C6, ABI-C7, or ABI-C8. Foreign-teacher behavioral transplantation
 and English/domain quality remain separate registered lines.
