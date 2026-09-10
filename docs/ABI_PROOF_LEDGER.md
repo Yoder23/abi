@@ -1,6 +1,6 @@
 # ABI proof ledger
 
-Updated: 2026-09-09
+Updated: 2026-09-10
 
 This ledger separates software portability from neural transplantation. A
 result in one row must never be promoted into another row without its own
@@ -17,6 +17,7 @@ registered evidence.
 | ABI-C4d | A conventional source can support reliable non-exhaustive capability recovery from mixed behavior | R14: one of three fresh programs recovered; two latent selections failed | Failed for tested output-probability frontend |
 | ABI-C4e | A generic frontend can recover a fresh deliberately learned synthetic capability from an anonymous foreign before/after weight delta and emit an exact portable package | R15A: 8/8 held-out recoveries, 88,000 exact oracle rows, three recipients, strict/live/hostile PASS | Bounded local pass |
 | ABI-C4f | A generic frontend can recover a bounded pre-existing capability from anonymous internal source representations without source training | R15B: 4/4 secret mappings, 40,000 exact package rows, three recipients, strict/live/hostile PASS | Bounded local pass |
+| ABI-C4g | An unchanged teacher can supply bounded pre-existing facts that ABI segregates into immutable domain packages and executes without the teacher | R16: 16/16 held-out facts, 48/48 package/source agreement, exact namespace/removal controls, byte-exact live replay, 15/15 hostile cases | Bounded structured-factual local pass |
 | ABI-C4 | End-to-end foreign-teacher behavior copy/paste into frozen heterogeneous hosts with zero host training | R12 strict gate failed; R13-B canonicalized the capability but matched only 372/2,048 source outputs | Open |
 | ABI-C5 | The recipient's native neural computation internalizes the foreign capability | R8 and R9 recipient realization failures | Failed for tested mechanisms |
 | ABI-C6 | ABI extracts and segregates fluent English and arbitrary domains from an open-weight LLM | No sufficient evidence | Open |
@@ -75,6 +76,15 @@ operations, source reasoning states the answer before the captured position,
 and labels are externally registered. It does not establish autonomous
 discovery, English/domain transfer, or teacher-behavior equality.
 
+R16 establishes ABI-C4g for a registered two-domain factual workload. The
+source received zero training; answer-free generations and candidate-sequence
+scores were compiled in a physical capsule into two structured packages; and
+package execution matched 48/48 disjoint teacher questions with causal
+namespace and removal controls. Candidate vocabularies and semantic namespaces
+were registered in advance. This does not establish autonomous open-world
+discovery, fluent English transfer, arbitrary-domain completeness, native
+neural transplantation, or teacher-quality free generation.
+
 ### Teacher-quality English/domain extraction
 
 An open-weight source is diagnosed, English and domain knowledge are separated,
@@ -88,7 +98,8 @@ R10 promotes only ABI-C4a, the bounded runtime component. R11 promotes ABI-C4b,
 the bounded synthetic neural-ABI construction. R13-B promotes ABI-C3 and
 ABI-C4c only for local, exhaustively enumerable capability canonicalization.
 R14 promotes no claim because its registered three-capability gate failed.
-R15A promotes ABI-C4e only, and R15B promotes ABI-C4f only. None promotes
+R15A promotes ABI-C4e only, R15B promotes ABI-C4f only, and R16 promotes
+ABI-C4g only. None promotes
 ABI-C4 teacher-behavior copying,
 ABI-C5, ABI-C6, ABI-C7, or ABI-C8. Foreign-teacher behavioral transplantation
 and English/domain quality remain separate registered lines.

@@ -158,6 +158,22 @@ preregistered held-out factual/segregation test; package execution, LayerCake
 ingestion, English transfer, minimality, and LoRA/distillation superiority
 remain open.
 
+R16 held-out status:
+`R16_BOUNDED_FACTUAL_ACQUISITION_AND_SEGREGATION_PASSED_LOCAL`
+
+The preregistered held-out run selected 16 facts across chemistry and
+geography. The unchanged source passed 48/48 answer-free generations and
+48/48 candidate-sequence selections. Physically isolated compilation emitted
+1,222 total package bytes containing 16 structured fact records. Package,
+source-agreement, and target-only evaluation were 48/48; other-domain and
+removed conditions abstained 48/48; the rotated-score control was 0/48. A
+complete live rerun was byte-exact and 15/15 hostile mutations failed closed.
+The teacher was absent at execution and neither source nor recipient was
+trained. The candidate vocabularies and two-domain ontology were registered,
+so autonomous discovery, fluent English transfer, LayerCake ingestion,
+minimality, and LoRA/distillation superiority remain open. Blind review and
+durable public reconstruction are pending; R7 remains the controlling release.
+
 ## What R7 proves
 
 R7 proves one bounded capability ABI result: four immutable packages execute
@@ -201,12 +217,13 @@ The blind reviewer returned `VERDICT: PASS` for this exact scope.
 | Non-exhaustive synthetic capability recovery | FAILED; R14 recovered 1/3 fresh capabilities |
 | Foreign learned-weight-delta capability recovery | BOUNDED LOCAL PASS; R15A recovered 8/8 and passed strict/live/hostile verification |
 | Pre-existing representation capability recovery | BOUNDED BLIND-REVIEWED LOCAL PASS; R15B recovered 4/4 secret arithmetic mappings with zero source training |
-| Pre-existing English/domain knowledge extraction | OPEN; not established by R15A or R15B |
+| Pre-existing bounded factual extraction and segregation | BOUNDED LOCAL PASS; R16, 16/16 facts in two registered namespaces |
+| Pre-existing English/domain knowledge extraction | OPEN; R16 is closed-candidate structured memory, not fluent English or arbitrary domains |
 | Exact foreign-teacher behavioral transplantation | OPEN; separate Track A |
 
 ## Current objective
 
-Prepare and execute external review without changing the R7 artifacts:
+Preserve and externally review R7 without changing its artifacts:
 
 1. give the frozen human packet to three independent raters;
 2. give the public archive and external reproduction checklist to an
@@ -216,10 +233,14 @@ Prepare and execute external review without changing the R7 artifacts:
 4. verify the returned packets fail closed; and
 5. only then update the corresponding external gates.
 
-Teacher extraction and minimization belong to additive campaigns. R11 supplies
-the construction prerequisite, and R12-A supplies one bounded public
-conventional-teacher frontend construction. Exact teacher-relative and
-held-out transfer must not be inferred from either result.
+Teacher extraction and minimization belong to additive campaigns. R16 now
+supplies the first bounded held-out factual extraction/segregation pass, but
+only for registered closed candidate sets and a two-domain ontology. The
+immediate additive work is to blind-review and publicly reconstruct the exact
+R16 seal, then preregister a materially broader linguistic-capability test. It
+must require answer-free free-form generation and teacher-relative quality,
+not merely candidate ranking or a package-owned answer table. LayerCake
+product ingestion remains a separate acceptance gate.
 
 Any R8/R9/R10 successor must start with a new additive preregistration and a
 materially different canonical IR or recipient injection architecture. It must
@@ -227,15 +248,13 @@ fit a public capability-specific control before attempting a capability-blind
 backend. More static-prefix, package-gated LoRA, recipient-state GRU, nearby
 width/rank, or step-count sweeps are not evidence-supported.
 
-The next foreign-teacher experiment must leave R11's package/executor/host
-boundary fixed and materially improve source acquisition or teacher
-formulation enough to pass exact public behavior before any held-out run. It
-must then extract a capability that already exists in an independently trained
-open-weight model and require held-out teacher-relative behavior through the
-same package bytes. Another nearby learning-rate, step-count, data-size, or
-LoRA sweep is not evidence-supported. Memorized answer tables,
-capability-specific recipient training, and package-owned executable solvers
-do not qualify.
+R16 has now extracted and segregated pre-existing facts, but only through a
+registered closed-candidate structured-memory package. A successor must
+materially broaden the capability representation and require teacher-relative
+free-form behavior. Another nearby prompt, candidate-set, fact-count, or
+ontology sweep is not evidence-supported. Capability-specific recipient
+training and claims that a structured lookup package is fluent English do not
+qualify.
 
 R13-B is the passed local Track B finite-table control. Preserve all 1,676
 source/package disagreements and do not treat the pass as resolution of the
@@ -252,15 +271,13 @@ controlled foreign neural-state access (for example weights, activations,
 residual representations, or training deltas) while keeping the R11 backend
 fixed. Track A teacher-output equality remains separately open.
 
-R15A passed that neural-state pivot and is now frozen as the bounded
-construction prerequisite. Do not rerun nearby affine, LoRA-rank, step-count,
-or delta-decoder variants. The next registered acquisition stage must test a
-pre-existing non-enumerable capability in an independently trained open-weight
-source, preregister a contamination-resistant semantic label and holdout, and
-keep the R11 package/executor/recipient boundary fixed. Activation or residual
-access may be tested before after-weights-only extraction, but imported
-information must be fully accounted. Track A teacher-output equality and Track
-B capability quality retain separate verdicts.
+R15A remains the learned-delta construction prerequisite and R15B the narrow
+pre-existing-representation prerequisite. R16 advances the next factual stage
+for 16 held-out facts and two registered namespaces. Preserve all three. The
+next stage must test linguistic realization or a non-enumerable specialist
+capability with contamination-resistant holdouts, free-form teacher-relative
+quality, and complete imported-information accounting. Track A teacher-output
+equality and Track B capability quality retain separate verdicts.
 
 ## Historical failures that remain authoritative
 

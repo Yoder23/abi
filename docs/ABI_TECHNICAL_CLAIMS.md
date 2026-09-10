@@ -194,3 +194,26 @@ position, and semantic labels are externally registered. R15B therefore does
 not support English/domain discovery, autonomous labeling, minimality,
 LayerCake product ingestion, or LoRA/distillation superiority. See
 [R15B_PREEXISTING_REPRESENTATION_RESULT.md](R15B_PREEXISTING_REPRESENTATION_RESULT.md).
+
+## Additive R16 bounded factual/semantic result
+
+R16 supports one further bounded claim: an unchanged Qwen2-7B-Instruct source
+can provide pre-existing facts that ABI compiles into immutable,
+namespace-separated structured packages and executes without the teacher. On a
+preregistered selection, all 16 facts and 48 disjoint evaluation answers were
+exact. Target-only behavior was exact, other-domain and removed-package
+conditions abstained exactly, the rotated-score control failed all 48 answers,
+live replay was byte-exact, and 15/15 hostile mutations were rejected.
+
+The physical compiler received answer-free question/subject strings,
+registered candidate strings, and source sequence scores. It did not receive
+answers, fact IDs, secrets, oracle fields, the teacher, or the development
+tree. The two packages contain 16 structured records in 1,222 bytes and no
+source parameters. The source and recipients received zero training.
+
+This is closed-candidate structured factual memory under a registered
+chemistry/geography ontology. It does not support autonomous open-world
+discovery, fluent English or arbitrary-domain extraction, teacher-quality
+free-form generation, native neural transplantation, LayerCake product
+ingestion, global minimality, or LoRA/distillation superiority. See
+[R16_FACTUAL_SEMANTIC_RESULT.md](R16_FACTUAL_SEMANTIC_RESULT.md).

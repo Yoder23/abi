@@ -211,3 +211,28 @@ open-world domain extraction, autonomous labeling, minimality, teacher-quality
 generation, production LayerCake ingestion, or superiority over LoRA or
 distillation. See
 [R15B_PREEXISTING_REPRESENTATION_RESULT.md](R15B_PREEXISTING_REPRESENTATION_RESULT.md).
+
+## Additive R16 held-out result
+
+R16 passes a preregistered bounded local claim for factual extraction and
+semantic segregation. An unchanged Qwen2-7B-Instruct source supplied 16 hidden
+facts across registered chemistry and geography namespaces. Two physically
+isolated compilers emitted immutable packages totaling 1,222 bytes. The
+packages matched the source on 48/48 disjoint evaluation questions, while
+other-domain and removed-package conditions abstained 48/48 and a rotated-
+score control scored 0/48.
+
+The complete run and fresh live rerun agree byte-for-byte on all 96 source
+rows, 48 evaluation rows, source bundles, and package bytes. Expanded strict
+verification binds all 13 declared artifacts and 48 residual rows to the
+complete pinned source snapshot. All 15 hostile mutations failed closed. No
+source or recipient training occurred, no source parameters are in the final
+packages, and the teacher was absent during package execution.
+
+The result remains a structured closed-candidate memory test. Candidate
+vocabularies and the two-domain ontology were registered, and the package is
+not a fluent neural English substrate. Autonomous discovery, arbitrary-domain
+coverage, free-form teacher-quality generation, production LayerCake
+ingestion, native neural transplantation, minimality, and superiority to LoRA
+or distillation remain open. See
+[R16_FACTUAL_SEMANTIC_RESULT.md](R16_FACTUAL_SEMANTIC_RESULT.md).

@@ -1,5 +1,27 @@
 # Changelog
 
+## R16 bounded factual acquisition and segregation - 2026-09-10
+
+- Froze implementation and protocol before committing and revealing a hidden
+  16-fact chemistry/geography selection.
+- Extracted 16/16 pre-existing facts from unchanged Qwen2-7B-Instruct with
+  48/48 answer-free generations and 48/48 candidate-sequence selections.
+- Emitted two immutable structured packages totaling 1,222 bytes in physical
+  pivot-root/no-network compiler capsules; the teacher and source parameters
+  are absent at execution.
+- Passed 48/48 package/source agreement, target-only execution, other-domain
+  abstention, and removed-package abstention; the rotated-score causal control
+  scored 0/48.
+- Reproduced all declared source, evaluation, bundle, and package artifacts in
+  a fresh live run, verified all 48 stored residual rows, and rejected 15/15
+  hostile mutations.
+- Added explicit imported-information accounting: 96 unique source prompts,
+  276 generated tokens, 576 candidate scores, and 16 final records. Audit-only
+  hidden activations were measured separately and were not compiler inputs.
+- Preserved the claim ceiling: this is registered closed-candidate structured
+  factual memory, not fluent English transfer, autonomous discovery, arbitrary
+  domains, LayerCake ingestion, minimality, or LoRA/distillation superiority.
+
 ## R16 public factual prerequisite v1 - 2026-09-10
 
 - Added a two-domain public factual-acquisition and semantic-segregation

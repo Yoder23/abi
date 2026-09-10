@@ -130,6 +130,21 @@ ontology. Deep teacher behavior, English/domain discovery, autonomous
 labeling, LayerCake ingestion, minimality, and LoRA/distillation superiority
 remain open.
 
+The additive R16 factual/semantic campaign is a bounded local pass and does
+not alter the R7 public release. On a preregistered hidden selection, an
+unchanged Qwen2-7B-Instruct source exposed 16/16 facts across registered
+chemistry and geography namespaces. A physically isolated compiler received
+answer-free questions, candidate strings, and source sequence scores and
+emitted two immutable structured packages totaling 1,222 bytes. Source,
+package, and target-only evaluation were 48/48 exact; other-domain and removed
+conditions abstained 48/48; a rotated-score control was 0/48. Live evidence
+replayed byte-exactly and 15/15 hostile mutations failed closed. This proves
+only bounded structured factual extraction and segregation. The registered
+candidate vocabularies and ontology prevent claims of autonomous discovery,
+fluent English transfer, arbitrary domains, LayerCake ingestion, minimality,
+or LoRA/distillation superiority. Blind review and public reconstruction remain
+open.
+
 ## Exact proven scope
 
 The four published immutable capability packages execute through the canonical
@@ -262,6 +277,14 @@ arbitrary teacher.
     paraphrases before committing or revealing a secret selection. It must
     keep structured factual extraction separate from English transfer and
     LoRA/distillation comparisons.
+14. Preserve the R16 held-out pass as bounded structured factual extraction:
+    16/16 facts, 48/48 package/source agreement, exact target-only behavior,
+    exact other-domain/removal abstention, 0/48 rotated-score control, exact
+    live replay, and 15/15 hostile cases. Before promotion beyond local scope,
+    require a fresh blind review, durable hash-addressed publication, and clean
+    reconstruction. A successor must test free-form linguistic realization or
+    a non-enumerable specialist capability; do not rerun nearby fact-count,
+    prompt, candidate-set, or ontology variants.
 
 Do not claim the ABI moonshot until those acquisition and external-quality
 gates are supported by their own evidence.

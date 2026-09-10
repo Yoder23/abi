@@ -143,12 +143,22 @@ package's deep generalization comes from the registered affine inductive bias.
 The full ABI moonshot therefore remains open, and R7 remains the controlling
 published release.
 
-R16 public development has now cleared the source prerequisite for the next
-factual stage. After preserving a failed shuffled-letter interface, an
-answer-free candidate-sequence formulation passed 48/48 source generations,
-48/48 score selections, 16/16 cross-view facts, and 48/48 registered chemistry
-and geography labels. No held-out R16 package has yet been certified, so this
-does not expand the published claim ceiling.
+R16 now passes a preregistered bounded local factual-acquisition and semantic-
+segregation test. From an unchanged Qwen2-7B-Instruct source it recovered 16/16
+held-out facts across chemistry and geography, emitted two immutable packages,
+and matched 48/48 disjoint evaluation questions with the teacher absent.
+Target-only execution was 48/48, other-domain and removed-package conditions
+abstained 48/48, a rotated-score control scored 0/48, live evidence replayed
+byte-exactly, and 15/15 hostile mutations failed closed. See
+[`docs/R16_FACTUAL_SEMANTIC_RESULT.md`](docs/R16_FACTUAL_SEMANTIC_RESULT.md).
+
+This is a structured closed-candidate memory result with a registered ontology
+and candidate vocabulary. It is not autonomous open-world discovery, fluent
+English extraction, teacher-quality free generation, native neural
+transplantation, production LayerCake ingestion, minimality, or superiority to
+LoRA/distillation. Blind review and public reconstruction of R16 remain open.
+The full ABI moonshot therefore remains open, and R7 remains the controlling
+published release.
 
 ## R7 at a glance
 
@@ -294,6 +304,11 @@ See `docs/ABI_TECHNICAL_CLAIMS.md`, `docs/ABI_FINAL_RESULTS.md`, and the
 - `results/preexisting_representation_r15b/` — compact R15B certificate and
   local evidence lineage; bulk recipient replay rows are intentionally
   excluded from Git.
+- `experiments/factual_semantic_r16/` — R16 public qualification,
+  preregistered held-out protocol, isolated structured-fact compiler, and
+  fail-closed verifiers.
+- `results/factual_semantic_r16/` — R16 raw held-out/live evidence, immutable
+  chemistry/geography packages, accounting, and local certificates.
 - `external_reproduction/` — independent-operator workflow and environment
   lock.
 - `review_packet/` — ordered technical and external-review handoff.

@@ -1,6 +1,6 @@
 # Research status
 
-Updated: 2026-09-09
+Updated: 2026-09-10
 
 ## Current certification boundary
 
@@ -27,6 +27,7 @@ fresh blind Codex review. Human quality and independent hardware remain open.
 | R11 ABI-native neural copy/paste construction | Passed 90,112 rows, exact frozen-package replay, 7/7 hostile controls |
 | Conventional open-weight learned-delta extraction into R11 ABI | Bounded local pass; R15A 8/8 with strict/live/hostile verification |
 | Pre-existing source representation extraction into R11 ABI | Bounded blind-reviewed local pass; R15B 4/4 with zero source training and strict/live/hostile verification |
+| Pre-existing structured factual extraction and segregation | Bounded local pass; R16 16/16 held-out facts, two namespaces, strict/live/hostile verification |
 | Pre-existing open-weight English/domain extraction | Open |
 | LoRA/distillation superiority | Unproven |
 
@@ -92,6 +93,19 @@ normalization. Its answer-free prompt and candidate-sequence scoring path
 passed 48/48 source generations, 48/48 score selections, 16/16 cross-view fact
 extractions, and 48/48 registered semantic labels. This clears a public
 prerequisite, not a held-out or product claim.
+
+R16 held-out v1 now passes its preregistered bounded factual claim. Sixteen
+hidden chemistry/geography facts were recovered from an unchanged
+Qwen2-7B-Instruct source and compiled into two immutable structured packages.
+Package/source agreement was 48/48 on disjoint paraphrases; target-only,
+other-domain, removal, and rotated-score controls behaved exactly as
+registered. A full live rerun was byte-exact and the expanded hostile verifier
+rejected 15/15 mutations. The final packages contain no source parameters and
+the teacher is absent during execution. Because the candidate vocabularies and
+two-domain ontology are registered, this does not prove autonomous discovery,
+fluent English transfer, arbitrary-domain extraction, native neural
+transplantation, LayerCake acceptance, minimality, or LoRA/distillation
+superiority. Fresh blind review and public reconstruction remain open.
 
 Historical campaign records remain available in `evidence/current/`,
 `results/`, and the research-history branch. Later evidence supersedes a claim

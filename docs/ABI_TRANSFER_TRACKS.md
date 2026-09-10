@@ -57,7 +57,7 @@ For an enumerable family, the report must state whether probes exhaust the
 capability specification. Such a result is a bounded behavioral-compilation
 proof, not evidence of general English or domain extraction.
 
-Status: `R13-B ENUMERABLE PASS; R14 OUTPUT-ONLY FAILURE; R15A LEARNED-DELTA PASS; R15B PRETRAINED-REPRESENTATION PASS`.
+Status: `R13-B ENUMERABLE PASS; R14 OUTPUT-ONLY FAILURE; R15A LEARNED-DELTA PASS; R15B PRETRAINED-REPRESENTATION PASS; R16 BOUNDED FACTUAL PASS`.
 
 R13-B passed this track for four held-out finite transition tables. The result
 does not advance Track A: package/source agreement on long compositions was
@@ -90,6 +90,14 @@ Track A stages. Fresh blind review passed this bounded claim with zero
 critical/high findings; additive verification now binds the full source
 snapshot and bit-compares regenerated bundles.
 
+R16 passes stage 3 only for a bounded registered structured-factual workload.
+It extracted 16 held-out chemistry/geography facts from an unchanged source,
+emitted two domain packages, matched 48/48 disjoint evaluation questions, and
+passed namespace, removal, rotated-score, live-replay, and hostile controls.
+Its candidate vocabularies and semantic ontology were preregistered. It does
+not pass autonomous discovery, linguistic realization, arbitrary specialist
+domains, Track A free-form equality, or LayerCake product acceptance.
+
 ## Progression beyond the finite-table control
 
 Track B must advance through separately registered stages:
@@ -98,7 +106,8 @@ Track B must advance through separately registered stages:
 2. non-exhaustive synthetic capability with genuine generalization (bounded
    learned-delta prerequisite passed in R15A and narrow pretrained-
    representation prerequisite passed in R15B);
-3. factual or specialist knowledge with contamination-resistant evaluation;
+3. factual or specialist knowledge with contamination-resistant evaluation
+   (bounded structured-factual prerequisite passed in R16);
 4. linguistic and reasoning behavior; and
 5. cross-family replication and LayerCake product acceptance.
 
