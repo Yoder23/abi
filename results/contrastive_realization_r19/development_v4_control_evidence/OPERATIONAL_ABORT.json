@@ -1,0 +1,7 @@
+{
+  "format": "abi-r19-operational-abort/1",
+  "verdict": "NOT_RUN",
+  "scientific_datasets_completed": 1,
+  "reason": "The second WSL extraction returned successfully and its result and package later appeared byte-complete, but the Windows caller attempted package loading before the package became visible through the WSL/NT filesystem boundary.",
+  "successor": "Add a bounded publication-completeness wait that validates declared package bytes and SHA-256 before returning from physical isolation. Compiler, package, data, controls, and gates remain unchanged."
+}

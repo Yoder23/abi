@@ -1,0 +1,9 @@
+{
+  "evidence_sha256": "15c37aec45de80579b7192becc794a78644585540ed464ade348d0ea550a05d8",
+  "exception": "physical R19 extraction failed (1): Traceback (most recent call last):\n  File \"/capsule/isolated_worker.py\", line 301, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/capsule/isolated_worker.py\", line 296, in main\n    run(Path(args.capsule))\n  File \"/capsule/isolated_worker.py\", line 262, in run\n    package, extraction = _compile(capsule)\n                          ^^^^^^^^^^^^^^^^^\n  File \"/capsule/isolated_worker.py\", line 232, in _compile\n    templates, diagnostics = infer_templates(records, signatures)\n                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/capsule/isolated_worker.py\", line 142, in infer_templates\n    raise IsolatedR19Error(\"no structure-compatible polarity contrast\")\nIsolatedR19Error: no structure-compatible polarity contrast\n",
+  "format": "abi-r19-control-rejection/1",
+  "isolated_worker_sha256": "a7ec490a886913a13f0b4a629565ea931082926b461cbfec84b40867ff072ce4",
+  "packages_emitted": 0,
+  "reason": "NO_STRUCTURE_COMPATIBLE_POLARITY_CONTRAST",
+  "source_bundle_sha256": "238fc3556788e9524ee16201182b52cb03832620269759996d149e2a9d28d897"
+}

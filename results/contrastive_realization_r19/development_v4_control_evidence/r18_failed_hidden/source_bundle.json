@@ -1,0 +1,870 @@
+{
+  "evidence_sha256": "c11383b1f9a8f232748ded0bfc2471f45c5ca5ee1ab6b24f37d343217aba0173",
+  "format": "abi-r19-anonymous-teacher-realizations/1",
+  "records": [
+    {
+      "output": "Does Tova not verify the coastal map?",
+      "record_id": "r18-heldout-a74bd723c2c2673c4681",
+      "signature": "question|present|negative|singular",
+      "slots": {
+        "object": "the coastal map",
+        "subject": "Tova",
+        "verb_3sg": "verifies",
+        "verb_base": "verify",
+        "verb_past": "verified"
+      }
+    },
+    {
+      "output": "Fara and Quin did not review the bronze diagram.",
+      "record_id": "r18-heldout-7faa3f92c50dfc12a84e",
+      "signature": "declarative|past|negative|plural",
+      "slots": {
+        "object": "the bronze diagram",
+        "subject": "Fara and Quin",
+        "verb_3sg": "reviews",
+        "verb_base": "review",
+        "verb_past": "reviewed"
+      }
+    },
+    {
+      "output": "Pema and Joss do not secure the woven basket.",
+      "record_id": "r18-heldout-b62108fabad4c384f7d3",
+      "signature": "declarative|present|negative|plural",
+      "slots": {
+        "object": "the woven basket",
+        "subject": "Pema and Joss",
+        "verb_3sg": "secures",
+        "verb_base": "secure",
+        "verb_past": "secured"
+      }
+    },
+    {
+      "output": "Will Ulan and Nia not wash the cotton screen?",
+      "record_id": "r18-heldout-16701bd034e356a93482",
+      "signature": "question|future|negative|plural",
+      "slots": {
+        "object": "the cotton screen",
+        "subject": "Ulan and Nia",
+        "verb_3sg": "washes",
+        "verb_base": "wash",
+        "verb_past": "washed"
+      }
+    },
+    {
+      "output": "Vina will anchor the narrow bridge.",
+      "record_id": "r18-heldout-54823d7a65269fd755eb",
+      "signature": "declarative|future|positive|singular",
+      "slots": {
+        "object": "the narrow bridge",
+        "subject": "Vina",
+        "verb_3sg": "anchors",
+        "verb_base": "anchor",
+        "verb_past": "anchored"
+      }
+    },
+    {
+      "output": "Fara and Quin reviewed the bronze diagram.",
+      "record_id": "r18-heldout-9310394d0c2cbfda4c30",
+      "signature": "declarative|past|positive|plural",
+      "slots": {
+        "object": "the bronze diagram",
+        "subject": "Fara and Quin",
+        "verb_3sg": "reviews",
+        "verb_base": "review",
+        "verb_past": "reviewed"
+      }
+    },
+    {
+      "output": "Did Vina not anchor the narrow bridge?",
+      "record_id": "r18-heldout-7ed03a1bd31c26be3ed4",
+      "signature": "question|past|negative|singular",
+      "slots": {
+        "object": "the narrow bridge",
+        "subject": "Vina",
+        "verb_3sg": "anchors",
+        "verb_base": "anchor",
+        "verb_past": "anchored"
+      }
+    },
+    {
+      "output": "Orin records the lunar pattern.",
+      "record_id": "r18-heldout-c214d8a2e0cc916bdd7c",
+      "signature": "declarative|present|positive|singular",
+      "slots": {
+        "object": "the lunar pattern",
+        "subject": "Orin",
+        "verb_3sg": "records",
+        "verb_base": "record",
+        "verb_past": "recorded"
+      }
+    },
+    {
+      "output": "Lior and Faye do not gather the paper lantern.",
+      "record_id": "r18-heldout-c206d5c7240c56508fd2",
+      "signature": "declarative|present|negative|plural",
+      "slots": {
+        "object": "the paper lantern",
+        "subject": "Lior and Faye",
+        "verb_3sg": "gathers",
+        "verb_base": "gather",
+        "verb_past": "gathered"
+      }
+    },
+    {
+      "output": "Cora and Jalen will not balance the crimson ledger.",
+      "record_id": "r18-heldout-ce55f0d181f63236c3fa",
+      "signature": "declarative|future|negative|plural",
+      "slots": {
+        "object": "the crimson ledger",
+        "subject": "Cora and Jalen",
+        "verb_3sg": "balances",
+        "verb_base": "balance",
+        "verb_past": "balanced"
+      }
+    },
+    {
+      "output": "Lior will gather the paper lantern.",
+      "record_id": "r18-heldout-01715f6e3c0e57d37282",
+      "signature": "declarative|future|positive|singular",
+      "slots": {
+        "object": "the paper lantern",
+        "subject": "Lior",
+        "verb_3sg": "gathers",
+        "verb_base": "gather",
+        "verb_past": "gathered"
+      }
+    },
+    {
+      "output": "Did Mara and Gino position the velvet cushion?",
+      "record_id": "r18-heldout-aad6d86b93b21187120e",
+      "signature": "question|past|positive|plural",
+      "slots": {
+        "object": "the velvet cushion",
+        "subject": "Mara and Gino",
+        "verb_3sg": "positions",
+        "verb_base": "position",
+        "verb_past": "positioned"
+      }
+    },
+    {
+      "output": "Sela uncovers the hidden mosaic.",
+      "record_id": "r18-heldout-2291333969a11d765168",
+      "signature": "declarative|present|positive|singular",
+      "slots": {
+        "object": "the hidden mosaic",
+        "subject": "Sela",
+        "verb_3sg": "uncovers",
+        "verb_base": "uncover",
+        "verb_past": "uncovered"
+      }
+    },
+    {
+      "output": "Will Tova and Miro verify the coastal map?",
+      "record_id": "r18-heldout-60c2cf0212179b04b28b",
+      "signature": "question|future|positive|plural",
+      "slots": {
+        "object": "the coastal map",
+        "subject": "Tova and Miro",
+        "verb_3sg": "verifies",
+        "verb_base": "verify",
+        "verb_past": "verified"
+      }
+    },
+    {
+      "output": "Did Jora assemble the wooden lattice?",
+      "record_id": "r18-heldout-5f9e14bf6e161c4fe7ea",
+      "signature": "question|past|positive|singular",
+      "slots": {
+        "object": "the wooden lattice",
+        "subject": "Jora",
+        "verb_3sg": "assembles",
+        "verb_base": "assemble",
+        "verb_past": "assembled"
+      }
+    },
+    {
+      "output": "Sela uncovered the hidden mosaic not yesterday.",
+      "record_id": "r18-heldout-7788c4addb297fe8cf93",
+      "signature": "declarative|past|negative|singular",
+      "slots": {
+        "object": "the hidden mosaic",
+        "subject": "Sela",
+        "verb_3sg": "uncovers",
+        "verb_base": "uncover",
+        "verb_past": "uncovered"
+      }
+    },
+    {
+      "output": "Fara will not review the bronze diagram.",
+      "record_id": "r18-heldout-c9dab62be00acb30fcd2",
+      "signature": "declarative|future|negative|singular",
+      "slots": {
+        "object": "the bronze diagram",
+        "subject": "Fara",
+        "verb_3sg": "reviews",
+        "verb_base": "review",
+        "verb_past": "reviewed"
+      }
+    },
+    {
+      "output": "Kato and Dena examined the coral pendant.",
+      "record_id": "r18-heldout-3b49be5997cf8959f3db",
+      "signature": "declarative|past|positive|plural",
+      "slots": {
+        "object": "the coral pendant",
+        "subject": "Kato and Dena",
+        "verb_3sg": "examines",
+        "verb_base": "examine",
+        "verb_past": "examined"
+      }
+    },
+    {
+      "output": "Pema and Joss will secure the woven basket.",
+      "record_id": "r18-heldout-60f12b815cf5e9954150",
+      "signature": "declarative|future|positive|plural",
+      "slots": {
+        "object": "the woven basket",
+        "subject": "Pema and Joss",
+        "verb_3sg": "secures",
+        "verb_base": "secure",
+        "verb_past": "secured"
+      }
+    },
+    {
+      "output": "Isla and Vero will not catalog the granite marker.",
+      "record_id": "r18-heldout-da7c893da815ba2334da",
+      "signature": "declarative|future|negative|plural",
+      "slots": {
+        "object": "the granite marker",
+        "subject": "Isla and Vero",
+        "verb_3sg": "catalogs",
+        "verb_base": "catalog",
+        "verb_past": "cataloged"
+      }
+    },
+    {
+      "output": "Fara and Quin do not review the bronze diagram.",
+      "record_id": "r18-heldout-335015fe135be402aa56",
+      "signature": "declarative|present|negative|plural",
+      "slots": {
+        "object": "the bronze diagram",
+        "subject": "Fara and Quin",
+        "verb_3sg": "reviews",
+        "verb_base": "review",
+        "verb_past": "reviewed"
+      }
+    },
+    {
+      "output": "Dev polished the marble tablet.",
+      "record_id": "r18-heldout-f6c432cd29f85746bc23",
+      "signature": "declarative|past|positive|singular",
+      "slots": {
+        "object": "the marble tablet",
+        "subject": "Dev",
+        "verb_3sg": "polishes",
+        "verb_base": "polish",
+        "verb_past": "polished"
+      }
+    },
+    {
+      "output": "Have Vina and Olek anchored the narrow bridge?",
+      "record_id": "r18-heldout-3931538e9840b48f4b74",
+      "signature": "question|present|positive|plural",
+      "slots": {
+        "object": "the narrow bridge",
+        "subject": "Vina and Olek",
+        "verb_3sg": "anchors",
+        "verb_base": "anchor",
+        "verb_past": "anchored"
+      }
+    },
+    {
+      "output": "Orin and Inez record the lunar pattern.",
+      "record_id": "r18-heldout-69d3a5c1a503de36846b",
+      "signature": "declarative|present|positive|plural",
+      "slots": {
+        "object": "the lunar pattern",
+        "subject": "Orin and Inez",
+        "verb_3sg": "records",
+        "verb_base": "record",
+        "verb_past": "recorded"
+      }
+    },
+    {
+      "output": "Did Fara and Quin review the bronze diagram?",
+      "record_id": "r18-heldout-30a4c20349f6e593a8ed",
+      "signature": "question|past|positive|plural",
+      "slots": {
+        "object": "the bronze diagram",
+        "subject": "Fara and Quin",
+        "verb_3sg": "reviews",
+        "verb_base": "review",
+        "verb_past": "reviewed"
+      }
+    },
+    {
+      "output": "Evan arranges the linen banner.",
+      "record_id": "r18-heldout-30721fbd744389d149ec",
+      "signature": "declarative|present|positive|singular",
+      "slots": {
+        "object": "the linen banner",
+        "subject": "Evan",
+        "verb_3sg": "arranges",
+        "verb_base": "arrange",
+        "verb_past": "arranged"
+      }
+    },
+    {
+      "output": "Galen did not deliver the glass vessel.",
+      "record_id": "r18-heldout-c5661a4e01c413c4eab2",
+      "signature": "declarative|past|negative|singular",
+      "slots": {
+        "object": "the glass vessel",
+        "subject": "Galen",
+        "verb_3sg": "delivers",
+        "verb_base": "deliver",
+        "verb_past": "delivered"
+      }
+    },
+    {
+      "output": "Lior and Faye will not gather the paper lantern.",
+      "record_id": "r18-heldout-aae0cc07ae4889c0b835",
+      "signature": "declarative|future|negative|plural",
+      "slots": {
+        "object": "the paper lantern",
+        "subject": "Lior and Faye",
+        "verb_3sg": "gathers",
+        "verb_base": "gather",
+        "verb_past": "gathered"
+      }
+    },
+    {
+      "output": "Did Isla catalog the granite marker?",
+      "record_id": "r18-heldout-3200953bbc6323a802ef",
+      "signature": "question|past|positive|singular",
+      "slots": {
+        "object": "the granite marker",
+        "subject": "Isla",
+        "verb_3sg": "catalogs",
+        "verb_base": "catalog",
+        "verb_past": "cataloged"
+      }
+    },
+    {
+      "output": "Did Orin and Inez not record the lunar pattern?",
+      "record_id": "r18-heldout-04f2869608392bcec9f2",
+      "signature": "question|past|negative|plural",
+      "slots": {
+        "object": "the lunar pattern",
+        "subject": "Orin and Inez",
+        "verb_3sg": "records",
+        "verb_base": "record",
+        "verb_past": "recorded"
+      }
+    },
+    {
+      "output": "Did Jora and Cian not assemble the wooden lattice?",
+      "record_id": "r18-heldout-f56f8d039e306a4d843f",
+      "signature": "question|past|negative|plural",
+      "slots": {
+        "object": "the wooden lattice",
+        "subject": "Jora and Cian",
+        "verb_3sg": "assembles",
+        "verb_base": "assemble",
+        "verb_past": "assembled"
+      }
+    },
+    {
+      "output": "Do Nell and Hugo prepare the ceramic bowl?",
+      "record_id": "r18-heldout-8ac7040a3d84559ff3b6",
+      "signature": "question|present|positive|plural",
+      "slots": {
+        "object": "the ceramic bowl",
+        "subject": "Nell and Hugo",
+        "verb_3sg": "prepares",
+        "verb_base": "prepare",
+        "verb_past": "prepared"
+      }
+    },
+    {
+      "output": "Kato will not examine the coral pendant.",
+      "record_id": "r18-heldout-28219ad9cf3ec81338bf",
+      "signature": "declarative|future|negative|singular",
+      "slots": {
+        "object": "the coral pendant",
+        "subject": "Kato",
+        "verb_3sg": "examines",
+        "verb_base": "examine",
+        "verb_past": "examined"
+      }
+    },
+    {
+      "output": "Do Nell and Hugo not prepare the ceramic bowl?",
+      "record_id": "r18-heldout-3a9e616011824133871e",
+      "signature": "question|present|negative|plural",
+      "slots": {
+        "object": "the ceramic bowl",
+        "subject": "Nell and Hugo",
+        "verb_3sg": "prepares",
+        "verb_base": "prepare",
+        "verb_past": "prepared"
+      }
+    },
+    {
+      "output": "Does Galen deliver the glass vessel?",
+      "record_id": "r18-heldout-c2686b949e8eaeb90d2d",
+      "signature": "question|present|positive|singular",
+      "slots": {
+        "object": "the glass vessel",
+        "subject": "Galen",
+        "verb_3sg": "delivers",
+        "verb_base": "deliver",
+        "verb_past": "delivered"
+      }
+    },
+    {
+      "output": "Does Nell not prepare the ceramic bowl?",
+      "record_id": "r18-heldout-ad646ed85c577b9cf982",
+      "signature": "question|present|negative|singular",
+      "slots": {
+        "object": "the ceramic bowl",
+        "subject": "Nell",
+        "verb_3sg": "prepares",
+        "verb_base": "prepare",
+        "verb_past": "prepared"
+      }
+    },
+    {
+      "output": "Lior and Faye gathered the paper lantern.",
+      "record_id": "r18-heldout-fd0a8d5427afa3e52a5e",
+      "signature": "declarative|past|positive|plural",
+      "slots": {
+        "object": "the paper lantern",
+        "subject": "Lior and Faye",
+        "verb_3sg": "gathers",
+        "verb_base": "gather",
+        "verb_past": "gathered"
+      }
+    },
+    {
+      "output": "Will Tova and Miro not verify the coastal map?",
+      "record_id": "r18-heldout-8e87169ac6d1acb86085",
+      "signature": "question|future|negative|plural",
+      "slots": {
+        "object": "the coastal map",
+        "subject": "Tova and Miro",
+        "verb_3sg": "verifies",
+        "verb_base": "verify",
+        "verb_past": "verified"
+      }
+    },
+    {
+      "output": "Ulan and Nia will wash the cotton screen.",
+      "record_id": "r18-heldout-07f0d271176bd0e6a7c9",
+      "signature": "declarative|future|positive|plural",
+      "slots": {
+        "object": "the cotton screen",
+        "subject": "Ulan and Nia",
+        "verb_3sg": "washes",
+        "verb_base": "wash",
+        "verb_past": "washed"
+      }
+    },
+    {
+      "output": "Isla not catalog the granite marker?",
+      "record_id": "r18-heldout-3f1058ea4717e2f083af",
+      "signature": "question|present|negative|singular",
+      "slots": {
+        "object": "the granite marker",
+        "subject": "Isla",
+        "verb_3sg": "catalogs",
+        "verb_base": "catalog",
+        "verb_past": "cataloged"
+      }
+    },
+    {
+      "output": "Does Jora assemble the wooden lattice?",
+      "record_id": "r18-heldout-734e0865b51bd5762eb8",
+      "signature": "question|present|positive|singular",
+      "slots": {
+        "object": "the wooden lattice",
+        "subject": "Jora",
+        "verb_3sg": "assembles",
+        "verb_base": "assemble",
+        "verb_past": "assembled"
+      }
+    },
+    {
+      "output": "Did Kato not examine the coral pendant?",
+      "record_id": "r18-heldout-4d9d36dbd30c1952b1ed",
+      "signature": "question|past|negative|singular",
+      "slots": {
+        "object": "the coral pendant",
+        "subject": "Kato",
+        "verb_3sg": "examines",
+        "verb_base": "examine",
+        "verb_past": "examined"
+      }
+    },
+    {
+      "output": "Mara and Gino position the velvet cushion.",
+      "record_id": "r18-heldout-ddf06b6f36d04fb6a859",
+      "signature": "declarative|present|positive|plural",
+      "slots": {
+        "object": "the velvet cushion",
+        "subject": "Mara and Gino",
+        "verb_3sg": "positions",
+        "verb_base": "position",
+        "verb_past": "positioned"
+      }
+    },
+    {
+      "output": "Does Cora balance the crimson ledger?",
+      "record_id": "r18-heldout-2a23d741cc6d2af979ce",
+      "signature": "question|present|positive|singular",
+      "slots": {
+        "object": "the crimson ledger",
+        "subject": "Cora",
+        "verb_3sg": "balances",
+        "verb_base": "balance",
+        "verb_past": "balanced"
+      }
+    },
+    {
+      "output": "Will Rian not trace the golden outline?",
+      "record_id": "r18-heldout-d203bf9e53707c6dc423",
+      "signature": "question|future|negative|singular",
+      "slots": {
+        "object": "the golden outline",
+        "subject": "Rian",
+        "verb_3sg": "traces",
+        "verb_base": "trace",
+        "verb_past": "traced"
+      }
+    },
+    {
+      "output": "Will Nell prepare the ceramic bowl?",
+      "record_id": "r18-heldout-9a29a6dc38105b990525",
+      "signature": "question|future|positive|singular",
+      "slots": {
+        "object": "the ceramic bowl",
+        "subject": "Nell",
+        "verb_3sg": "prepares",
+        "verb_base": "prepare",
+        "verb_past": "prepared"
+      }
+    },
+    {
+      "output": "Cora and Jalen did not balance the crimson ledger.",
+      "record_id": "r18-heldout-6a18032f5f0af5e483a3",
+      "signature": "declarative|past|negative|plural",
+      "slots": {
+        "object": "the crimson ledger",
+        "subject": "Cora and Jalen",
+        "verb_3sg": "balances",
+        "verb_base": "balance",
+        "verb_past": "balanced"
+      }
+    },
+    {
+      "output": "Galen does not deliver the glass vessel.",
+      "record_id": "r18-heldout-e97ed9744644d4337016",
+      "signature": "declarative|present|negative|singular",
+      "slots": {
+        "object": "the glass vessel",
+        "subject": "Galen",
+        "verb_3sg": "delivers",
+        "verb_base": "deliver",
+        "verb_past": "delivered"
+      }
+    },
+    {
+      "output": "Isla will not catalog the granite marker.",
+      "record_id": "r18-heldout-3707271de90a273a0802",
+      "signature": "declarative|future|negative|singular",
+      "slots": {
+        "object": "the granite marker",
+        "subject": "Isla",
+        "verb_3sg": "catalogs",
+        "verb_base": "catalog",
+        "verb_past": "cataloged"
+      }
+    },
+    {
+      "output": "Dev does not polish the marble tablet.",
+      "record_id": "r18-heldout-43a77201c19f17d8e1c9",
+      "signature": "declarative|present|negative|singular",
+      "slots": {
+        "object": "the marble tablet",
+        "subject": "Dev",
+        "verb_3sg": "polishes",
+        "verb_base": "polish",
+        "verb_past": "polished"
+      }
+    },
+    {
+      "output": "Will Cora and Jalen balance the crimson ledger?",
+      "record_id": "r18-heldout-b4a251394a757d5c4c44",
+      "signature": "question|future|positive|plural",
+      "slots": {
+        "object": "the crimson ledger",
+        "subject": "Cora and Jalen",
+        "verb_3sg": "balances",
+        "verb_base": "balance",
+        "verb_past": "balanced"
+      }
+    },
+    {
+      "output": "Will Cora not balance the crimson ledger in the future?",
+      "record_id": "r18-heldout-51fbaf977cacb30a7f7c",
+      "signature": "question|future|negative|singular",
+      "slots": {
+        "object": "the crimson ledger",
+        "subject": "Cora",
+        "verb_3sg": "balances",
+        "verb_base": "balance",
+        "verb_past": "balanced"
+      }
+    },
+    {
+      "output": "Did Evan not arrange the linen banner?",
+      "record_id": "r18-heldout-2abbb6010a0137859901",
+      "signature": "question|past|negative|singular",
+      "slots": {
+        "object": "the linen banner",
+        "subject": "Evan",
+        "verb_3sg": "arranges",
+        "verb_base": "arrange",
+        "verb_past": "arranged"
+      }
+    },
+    {
+      "output": "Mara positioned the velvet cushion.",
+      "record_id": "r18-heldout-4ec4dddf8b3248a389de",
+      "signature": "declarative|past|positive|singular",
+      "slots": {
+        "object": "the velvet cushion",
+        "subject": "Mara",
+        "verb_3sg": "positions",
+        "verb_base": "position",
+        "verb_past": "positioned"
+      }
+    },
+    {
+      "output": "Jora did not assemble the wooden lattice.",
+      "record_id": "r18-heldout-1cd4205fe637601333f6",
+      "signature": "declarative|past|negative|singular",
+      "slots": {
+        "object": "the wooden lattice",
+        "subject": "Jora",
+        "verb_3sg": "assembles",
+        "verb_base": "assemble",
+        "verb_past": "assembled"
+      }
+    },
+    {
+      "output": "Do Ulan and Nia not wash the cotton screen?",
+      "record_id": "r18-heldout-e48344b126bc3a63e6a5",
+      "signature": "question|present|negative|plural",
+      "slots": {
+        "object": "the cotton screen",
+        "subject": "Ulan and Nia",
+        "verb_3sg": "washes",
+        "verb_base": "wash",
+        "verb_past": "washed"
+      }
+    },
+    {
+      "output": "Will Orin and Inez not record the lunar pattern?",
+      "record_id": "r18-heldout-3801abd1a6f4d8fc6fe4",
+      "signature": "question|future|negative|plural",
+      "slots": {
+        "object": "the lunar pattern",
+        "subject": "Orin and Inez",
+        "verb_3sg": "records",
+        "verb_base": "record",
+        "verb_past": "recorded"
+      }
+    },
+    {
+      "output": "Did Rian and Kora not trace the golden outline?",
+      "record_id": "r18-heldout-a6371d0b10485fee243b",
+      "signature": "question|present|negative|plural",
+      "slots": {
+        "object": "the golden outline",
+        "subject": "Rian and Kora",
+        "verb_3sg": "traces",
+        "verb_base": "trace",
+        "verb_past": "traced"
+      }
+    },
+    {
+      "output": "Did Fara review the bronze diagram?",
+      "record_id": "r18-heldout-6c3d0f189eed333b4458",
+      "signature": "question|past|positive|singular",
+      "slots": {
+        "object": "the bronze diagram",
+        "subject": "Fara",
+        "verb_3sg": "reviews",
+        "verb_base": "review",
+        "verb_past": "reviewed"
+      }
+    },
+    {
+      "output": "Have Rian and Kora traced the golden outline?",
+      "record_id": "r18-heldout-3fe239896ad47d3089ff",
+      "signature": "question|present|positive|plural",
+      "slots": {
+        "object": "the golden outline",
+        "subject": "Rian and Kora",
+        "verb_3sg": "traces",
+        "verb_base": "trace",
+        "verb_past": "traced"
+      }
+    },
+    {
+      "output": "Wynn and Pavo will compare the satin ribbon.",
+      "record_id": "r18-heldout-c39b1a67eef060faddbc",
+      "signature": "declarative|future|positive|plural",
+      "slots": {
+        "object": "the satin ribbon",
+        "subject": "Wynn and Pavo",
+        "verb_3sg": "compares",
+        "verb_base": "compare",
+        "verb_past": "compared"
+      }
+    },
+    {
+      "output": "Will Lior and Faye gather the paper lantern?",
+      "record_id": "r18-heldout-77b0ed7355f541695247",
+      "signature": "question|future|positive|plural",
+      "slots": {
+        "object": "the paper lantern",
+        "subject": "Lior and Faye",
+        "verb_3sg": "gathers",
+        "verb_base": "gather",
+        "verb_past": "gathered"
+      }
+    },
+    {
+      "output": "Did Galen and Wren deliver the glass vessel?",
+      "record_id": "r18-heldout-3ceb6bfc858e8dae2d84",
+      "signature": "question|past|positive|plural",
+      "slots": {
+        "object": "the glass vessel",
+        "subject": "Galen and Wren",
+        "verb_3sg": "delivers",
+        "verb_base": "deliver",
+        "verb_past": "delivered"
+      }
+    },
+    {
+      "output": "Will Evan arrange the linen banner?",
+      "record_id": "r18-heldout-0717a886f44c045c503b",
+      "signature": "question|future|positive|singular",
+      "slots": {
+        "object": "the linen banner",
+        "subject": "Evan",
+        "verb_3sg": "arranges",
+        "verb_base": "arrange",
+        "verb_past": "arranged"
+      }
+    },
+    {
+      "output": "Mara and Gino did not position the velvet cushion?",
+      "record_id": "r18-heldout-ce9293cebe788bb57e3c",
+      "signature": "question|past|negative|plural",
+      "slots": {
+        "object": "the velvet cushion",
+        "subject": "Mara and Gino",
+        "verb_3sg": "positions",
+        "verb_base": "position",
+        "verb_past": "positioned"
+      }
+    },
+    {
+      "output": "Rian does not trace the golden outline.",
+      "record_id": "r18-heldout-1e4f602698b51ae85490",
+      "signature": "declarative|present|negative|singular",
+      "slots": {
+        "object": "the golden outline",
+        "subject": "Rian",
+        "verb_3sg": "traces",
+        "verb_base": "trace",
+        "verb_past": "traced"
+      }
+    },
+    {
+      "output": "Mara will position the velvet cushion.",
+      "record_id": "r18-heldout-321523bb64a2a348c9a5",
+      "signature": "declarative|future|positive|singular",
+      "slots": {
+        "object": "the velvet cushion",
+        "subject": "Mara",
+        "verb_3sg": "positions",
+        "verb_base": "position",
+        "verb_past": "positioned"
+      }
+    },
+    {
+      "output": "Isla cataloged the granite marker.",
+      "record_id": "r18-heldout-1320add1d59a74ebac99",
+      "signature": "declarative|past|positive|singular",
+      "slots": {
+        "object": "the granite marker",
+        "subject": "Isla",
+        "verb_3sg": "catalogs",
+        "verb_base": "catalog",
+        "verb_past": "cataloged"
+      }
+    },
+    {
+      "output": "Will Ulan wash the cotton screen?",
+      "record_id": "r18-heldout-3abb66be6295510a9c12",
+      "signature": "question|future|positive|singular",
+      "slots": {
+        "object": "the cotton screen",
+        "subject": "Ulan",
+        "verb_3sg": "washes",
+        "verb_base": "wash",
+        "verb_past": "washed"
+      }
+    },
+    {
+      "output": "Will Hana not protect the woolen journal?",
+      "record_id": "r18-heldout-3b36c2e351f932b66c72",
+      "signature": "question|future|negative|singular",
+      "slots": {
+        "object": "the woolen journal",
+        "subject": "Hana",
+        "verb_3sg": "protects",
+        "verb_base": "protect",
+        "verb_past": "protected"
+      }
+    },
+    {
+      "output": "Dev and Luma polish the marble tablet.",
+      "record_id": "r18-heldout-c1cb31414c2cda38a1cc",
+      "signature": "declarative|present|positive|plural",
+      "slots": {
+        "object": "the marble tablet",
+        "subject": "Dev and Luma",
+        "verb_3sg": "polishes",
+        "verb_base": "polish",
+        "verb_past": "polished"
+      }
+    },
+    {
+      "output": "Nell and Hugo did not prepare the ceramic bowl.",
+      "record_id": "r18-heldout-1bf85a6f81e57f471621",
+      "signature": "declarative|past|negative|plural",
+      "slots": {
+        "object": "the ceramic bowl",
+        "subject": "Nell and Hugo",
+        "verb_3sg": "prepares",
+        "verb_base": "prepare",
+        "verb_past": "prepared"
+      }
+    }
+  ]
+}

@@ -1,0 +1,870 @@
+{
+  "evidence_sha256": "e1b75b9d36a5fedd6bf402f6564afcfae6252970fc0d430b274a26d15cbc3b66",
+  "format": "abi-r19-anonymous-teacher-realizations/1",
+  "records": [
+    {
+      "output": "Do Mira and Niko inspect the quiet alcove?",
+      "record_id": "r17-public-extraction-13-0",
+      "signature": "declarative|present|positive|plural",
+      "slots": {
+        "object": "the quiet alcove",
+        "subject": "Mira and Niko",
+        "verb_3sg": "inspects",
+        "verb_base": "inspect",
+        "verb_past": "inspected"
+      }
+    },
+    {
+      "output": "Zara does not repair the silver compass.",
+      "record_id": "r17-public-extraction-02-1",
+      "signature": "question|present|negative|singular",
+      "slots": {
+        "object": "the silver compass",
+        "subject": "Zara",
+        "verb_3sg": "repairs",
+        "verb_base": "repair",
+        "verb_past": "repaired"
+      }
+    },
+    {
+      "output": "Do Zara and Ivo repair the silver compass?",
+      "record_id": "r17-public-extraction-13-2",
+      "signature": "declarative|present|positive|plural",
+      "slots": {
+        "object": "the silver compass",
+        "subject": "Zara and Ivo",
+        "verb_3sg": "repairs",
+        "verb_base": "repair",
+        "verb_past": "repaired"
+      }
+    },
+    {
+      "output": "Did Kian follow the narrow pathway?",
+      "record_id": "r17-public-extraction-16-1",
+      "signature": "declarative|past|positive|singular",
+      "slots": {
+        "object": "the narrow pathway",
+        "subject": "Kian",
+        "verb_3sg": "follows",
+        "verb_base": "follow",
+        "verb_past": "followed"
+      }
+    },
+    {
+      "output": "Ava and Bo admired the amber lantern.",
+      "record_id": "r17-public-extraction-05-1",
+      "signature": "question|past|positive|plural",
+      "slots": {
+        "object": "the amber lantern",
+        "subject": "Ava and Bo",
+        "verb_3sg": "admires",
+        "verb_base": "admire",
+        "verb_past": "admired"
+      }
+    },
+    {
+      "output": "Kian and Esme do not follow the narrow pathway.",
+      "record_id": "r17-public-extraction-03-2",
+      "signature": "question|present|negative|plural",
+      "slots": {
+        "object": "the narrow pathway",
+        "subject": "Kian and Esme",
+        "verb_3sg": "follows",
+        "verb_base": "follow",
+        "verb_past": "followed"
+      }
+    },
+    {
+      "output": "Ava admired the amber lantern?",
+      "record_id": "r17-public-extraction-16-2",
+      "signature": "declarative|past|positive|singular",
+      "slots": {
+        "object": "the amber lantern",
+        "subject": "Ava",
+        "verb_3sg": "admires",
+        "verb_base": "admire",
+        "verb_past": "admired"
+      }
+    },
+    {
+      "output": "Did Kian and Esme follow the narrow pathway?",
+      "record_id": "r17-public-extraction-17-0",
+      "signature": "declarative|past|positive|plural",
+      "slots": {
+        "object": "the narrow pathway",
+        "subject": "Kian and Esme",
+        "verb_3sg": "follows",
+        "verb_base": "follow",
+        "verb_past": "followed"
+      }
+    },
+    {
+      "output": "Mira inspects the quiet alcove.",
+      "record_id": "r17-public-extraction-00-1",
+      "signature": "question|present|positive|singular",
+      "slots": {
+        "object": "the quiet alcove",
+        "subject": "Mira",
+        "verb_3sg": "inspects",
+        "verb_base": "inspect",
+        "verb_past": "inspected"
+      }
+    },
+    {
+      "output": "Will Zara repair the silver compass?",
+      "record_id": "r17-public-extraction-20-1",
+      "signature": "declarative|future|positive|singular",
+      "slots": {
+        "object": "the silver compass",
+        "subject": "Zara",
+        "verb_3sg": "repairs",
+        "verb_base": "repair",
+        "verb_past": "repaired"
+      }
+    },
+    {
+      "output": "Does Mira inspect the quiet alcove?",
+      "record_id": "r17-public-extraction-12-1",
+      "signature": "declarative|present|positive|singular",
+      "slots": {
+        "object": "the quiet alcove",
+        "subject": "Mira",
+        "verb_3sg": "inspects",
+        "verb_base": "inspect",
+        "verb_past": "inspected"
+      }
+    },
+    {
+      "output": "Will Tari carry the violet parcel?",
+      "record_id": "r17-public-extraction-20-0",
+      "signature": "declarative|future|positive|singular",
+      "slots": {
+        "object": "the violet parcel",
+        "subject": "Tari",
+        "verb_3sg": "carries",
+        "verb_base": "carry",
+        "verb_past": "carried"
+      }
+    },
+    {
+      "output": "Zara will repair the silver compass.",
+      "record_id": "r17-public-extraction-08-1",
+      "signature": "question|future|positive|singular",
+      "slots": {
+        "object": "the silver compass",
+        "subject": "Zara",
+        "verb_3sg": "repairs",
+        "verb_base": "repair",
+        "verb_past": "repaired"
+      }
+    },
+    {
+      "output": "Lena and Oren do not observe the cedar doorway.",
+      "record_id": "r17-public-extraction-03-1",
+      "signature": "question|present|negative|plural",
+      "slots": {
+        "object": "the cedar doorway",
+        "subject": "Lena and Oren",
+        "verb_3sg": "observes",
+        "verb_base": "observe",
+        "verb_past": "observed"
+      }
+    },
+    {
+      "output": "Kian and Esme will follow the narrow pathway.",
+      "record_id": "r17-public-extraction-09-2",
+      "signature": "question|future|positive|plural",
+      "slots": {
+        "object": "the narrow pathway",
+        "subject": "Kian and Esme",
+        "verb_3sg": "follows",
+        "verb_base": "follow",
+        "verb_past": "followed"
+      }
+    },
+    {
+      "output": "Ava and Bo will not admire the amber lantern.",
+      "record_id": "r17-public-extraction-11-1",
+      "signature": "question|future|negative|plural",
+      "slots": {
+        "object": "the amber lantern",
+        "subject": "Ava and Bo",
+        "verb_3sg": "admires",
+        "verb_base": "admire",
+        "verb_past": "admired"
+      }
+    },
+    {
+      "output": "Did Mira and Niko not inspect the quiet alcove?",
+      "record_id": "r17-public-extraction-19-0",
+      "signature": "declarative|past|negative|plural",
+      "slots": {
+        "object": "the quiet alcove",
+        "subject": "Mira and Niko",
+        "verb_3sg": "inspects",
+        "verb_base": "inspect",
+        "verb_past": "inspected"
+      }
+    },
+    {
+      "output": "Do Lena and Oren not observe the cedar doorway?",
+      "record_id": "r17-public-extraction-15-1",
+      "signature": "declarative|present|negative|plural",
+      "slots": {
+        "object": "the cedar doorway",
+        "subject": "Lena and Oren",
+        "verb_3sg": "observes",
+        "verb_base": "observe",
+        "verb_past": "observed"
+      }
+    },
+    {
+      "output": "Tari did not carry the violet parcel.",
+      "record_id": "r17-public-extraction-06-2",
+      "signature": "question|past|negative|singular",
+      "slots": {
+        "object": "the violet parcel",
+        "subject": "Tari",
+        "verb_3sg": "carries",
+        "verb_base": "carry",
+        "verb_past": "carried"
+      }
+    },
+    {
+      "output": "Will Lena not observe the cedar doorway in the future?",
+      "record_id": "r17-public-extraction-22-0",
+      "signature": "declarative|future|negative|singular",
+      "slots": {
+        "object": "the cedar doorway",
+        "subject": "Lena",
+        "verb_3sg": "observes",
+        "verb_base": "observe",
+        "verb_past": "observed"
+      }
+    },
+    {
+      "output": "Zara and Ivo will repair the silver compass.",
+      "record_id": "r17-public-extraction-09-0",
+      "signature": "question|future|positive|plural",
+      "slots": {
+        "object": "the silver compass",
+        "subject": "Zara and Ivo",
+        "verb_3sg": "repairs",
+        "verb_base": "repair",
+        "verb_past": "repaired"
+      }
+    },
+    {
+      "output": "Will Lena and Oren observe the cedar doorway?",
+      "record_id": "r17-public-extraction-21-1",
+      "signature": "declarative|future|positive|plural",
+      "slots": {
+        "object": "the cedar doorway",
+        "subject": "Lena and Oren",
+        "verb_3sg": "observes",
+        "verb_base": "observe",
+        "verb_past": "observed"
+      }
+    },
+    {
+      "output": "Did Tari and Uma not carry the violet parcel?",
+      "record_id": "r17-public-extraction-19-1",
+      "signature": "declarative|past|negative|plural",
+      "slots": {
+        "object": "the violet parcel",
+        "subject": "Tari and Uma",
+        "verb_3sg": "carries",
+        "verb_base": "carry",
+        "verb_past": "carried"
+      }
+    },
+    {
+      "output": "Tari carries the violet parcel.",
+      "record_id": "r17-public-extraction-00-2",
+      "signature": "question|present|positive|singular",
+      "slots": {
+        "object": "the violet parcel",
+        "subject": "Tari",
+        "verb_3sg": "carries",
+        "verb_base": "carry",
+        "verb_past": "carried"
+      }
+    },
+    {
+      "output": "Lena and Oren will observe the cedar doorway.",
+      "record_id": "r17-public-extraction-09-1",
+      "signature": "question|future|positive|plural",
+      "slots": {
+        "object": "the cedar doorway",
+        "subject": "Lena and Oren",
+        "verb_3sg": "observes",
+        "verb_base": "observe",
+        "verb_past": "observed"
+      }
+    },
+    {
+      "output": "Kian and Esme will not follow the narrow pathway.",
+      "record_id": "r17-public-extraction-11-0",
+      "signature": "question|future|negative|plural",
+      "slots": {
+        "object": "the narrow pathway",
+        "subject": "Kian and Esme",
+        "verb_3sg": "follows",
+        "verb_base": "follow",
+        "verb_past": "followed"
+      }
+    },
+    {
+      "output": "Did Mira and Niko inspect the quiet alcove?",
+      "record_id": "r17-public-extraction-17-2",
+      "signature": "declarative|past|positive|plural",
+      "slots": {
+        "object": "the quiet alcove",
+        "subject": "Mira and Niko",
+        "verb_3sg": "inspects",
+        "verb_base": "inspect",
+        "verb_past": "inspected"
+      }
+    },
+    {
+      "output": "Did Ava and Bo admire the amber lantern?",
+      "record_id": "r17-public-extraction-17-1",
+      "signature": "declarative|past|positive|plural",
+      "slots": {
+        "object": "the amber lantern",
+        "subject": "Ava and Bo",
+        "verb_3sg": "admires",
+        "verb_base": "admire",
+        "verb_past": "admired"
+      }
+    },
+    {
+      "output": "Will Kian and Esme not follow the narrow pathway?",
+      "record_id": "r17-public-extraction-23-0",
+      "signature": "declarative|future|negative|plural",
+      "slots": {
+        "object": "the narrow pathway",
+        "subject": "Kian and Esme",
+        "verb_3sg": "follows",
+        "verb_base": "follow",
+        "verb_past": "followed"
+      }
+    },
+    {
+      "output": "Kian and Esme followed the narrow pathway.",
+      "record_id": "r17-public-extraction-05-0",
+      "signature": "question|past|positive|plural",
+      "slots": {
+        "object": "the narrow pathway",
+        "subject": "Kian and Esme",
+        "verb_3sg": "follows",
+        "verb_base": "follow",
+        "verb_past": "followed"
+      }
+    },
+    {
+      "output": "Will Ava and Bo not admire the amber lantern?",
+      "record_id": "r17-public-extraction-23-1",
+      "signature": "declarative|future|negative|plural",
+      "slots": {
+        "object": "the amber lantern",
+        "subject": "Ava and Bo",
+        "verb_3sg": "admires",
+        "verb_base": "admire",
+        "verb_past": "admired"
+      }
+    },
+    {
+      "output": "Did Ava not admire the amber lantern?",
+      "record_id": "r17-public-extraction-18-0",
+      "signature": "declarative|past|negative|singular",
+      "slots": {
+        "object": "the amber lantern",
+        "subject": "Ava",
+        "verb_3sg": "admires",
+        "verb_base": "admire",
+        "verb_past": "admired"
+      }
+    },
+    {
+      "output": "Lena observed the cedar doorway?",
+      "record_id": "r17-public-extraction-16-0",
+      "signature": "declarative|past|positive|singular",
+      "slots": {
+        "object": "the cedar doorway",
+        "subject": "Lena",
+        "verb_3sg": "observes",
+        "verb_base": "observe",
+        "verb_past": "observed"
+      }
+    },
+    {
+      "output": "Kian will not follow the narrow pathway.",
+      "record_id": "r17-public-extraction-10-1",
+      "signature": "question|future|negative|singular",
+      "slots": {
+        "object": "the narrow pathway",
+        "subject": "Kian",
+        "verb_3sg": "follows",
+        "verb_base": "follow",
+        "verb_past": "followed"
+      }
+    },
+    {
+      "output": "Tari and Uma did not carry the violet parcel.",
+      "record_id": "r17-public-extraction-07-1",
+      "signature": "question|past|negative|plural",
+      "slots": {
+        "object": "the violet parcel",
+        "subject": "Tari and Uma",
+        "verb_3sg": "carries",
+        "verb_base": "carry",
+        "verb_past": "carried"
+      }
+    },
+    {
+      "output": "Do Kian and Esme not follow the narrow pathway?",
+      "record_id": "r17-public-extraction-15-2",
+      "signature": "declarative|present|negative|plural",
+      "slots": {
+        "object": "the narrow pathway",
+        "subject": "Kian and Esme",
+        "verb_3sg": "follows",
+        "verb_base": "follow",
+        "verb_past": "followed"
+      }
+    },
+    {
+      "output": "Kian followed the narrow pathway.",
+      "record_id": "r17-public-extraction-04-1",
+      "signature": "question|past|positive|singular",
+      "slots": {
+        "object": "the narrow pathway",
+        "subject": "Kian",
+        "verb_3sg": "follows",
+        "verb_base": "follow",
+        "verb_past": "followed"
+      }
+    },
+    {
+      "output": "Lena observed the cedar doorway.",
+      "record_id": "r17-public-extraction-04-0",
+      "signature": "question|past|positive|singular",
+      "slots": {
+        "object": "the cedar doorway",
+        "subject": "Lena",
+        "verb_3sg": "observes",
+        "verb_base": "observe",
+        "verb_past": "observed"
+      }
+    },
+    {
+      "output": "Lena will not observe the cedar doorway.",
+      "record_id": "r17-public-extraction-10-0",
+      "signature": "question|future|negative|singular",
+      "slots": {
+        "object": "the cedar doorway",
+        "subject": "Lena",
+        "verb_3sg": "observes",
+        "verb_base": "observe",
+        "verb_past": "observed"
+      }
+    },
+    {
+      "output": "Will Kian not follow the narrow pathway?",
+      "record_id": "r17-public-extraction-22-1",
+      "signature": "declarative|future|negative|singular",
+      "slots": {
+        "object": "the narrow pathway",
+        "subject": "Kian",
+        "verb_3sg": "follows",
+        "verb_base": "follow",
+        "verb_past": "followed"
+      }
+    },
+    {
+      "output": "Lena will observe the cedar doorway.",
+      "record_id": "r17-public-extraction-08-2",
+      "signature": "question|future|positive|singular",
+      "slots": {
+        "object": "the cedar doorway",
+        "subject": "Lena",
+        "verb_3sg": "observes",
+        "verb_base": "observe",
+        "verb_past": "observed"
+      }
+    },
+    {
+      "output": "Zara and Ivo did not repair the silver compass.",
+      "record_id": "r17-public-extraction-07-2",
+      "signature": "question|past|negative|plural",
+      "slots": {
+        "object": "the silver compass",
+        "subject": "Zara and Ivo",
+        "verb_3sg": "repairs",
+        "verb_base": "repair",
+        "verb_past": "repaired"
+      }
+    },
+    {
+      "output": "Does Tari not carry the violet parcel?",
+      "record_id": "r17-public-extraction-14-0",
+      "signature": "declarative|present|negative|singular",
+      "slots": {
+        "object": "the violet parcel",
+        "subject": "Tari",
+        "verb_3sg": "carries",
+        "verb_base": "carry",
+        "verb_past": "carried"
+      }
+    },
+    {
+      "output": "Mira did not inspect the quiet alcove.",
+      "record_id": "r17-public-extraction-06-1",
+      "signature": "question|past|negative|singular",
+      "slots": {
+        "object": "the quiet alcove",
+        "subject": "Mira",
+        "verb_3sg": "inspects",
+        "verb_base": "inspect",
+        "verb_past": "inspected"
+      }
+    },
+    {
+      "output": "Did Tari not carry the violet parcel?",
+      "record_id": "r17-public-extraction-18-2",
+      "signature": "declarative|past|negative|singular",
+      "slots": {
+        "object": "the violet parcel",
+        "subject": "Tari",
+        "verb_3sg": "carries",
+        "verb_base": "carry",
+        "verb_past": "carried"
+      }
+    },
+    {
+      "output": "Will Kian and Esme follow the narrow pathway?",
+      "record_id": "r17-public-extraction-21-2",
+      "signature": "declarative|future|positive|plural",
+      "slots": {
+        "object": "the narrow pathway",
+        "subject": "Kian and Esme",
+        "verb_3sg": "follows",
+        "verb_base": "follow",
+        "verb_past": "followed"
+      }
+    },
+    {
+      "output": "Have Zara and Ivo not repaired the silver compass?",
+      "record_id": "r17-public-extraction-15-0",
+      "signature": "declarative|present|negative|plural",
+      "slots": {
+        "object": "the silver compass",
+        "subject": "Zara and Ivo",
+        "verb_3sg": "repairs",
+        "verb_base": "repair",
+        "verb_past": "repaired"
+      }
+    },
+    {
+      "output": "Does Tari carry the violet parcel?",
+      "record_id": "r17-public-extraction-12-2",
+      "signature": "declarative|present|positive|singular",
+      "slots": {
+        "object": "the violet parcel",
+        "subject": "Tari",
+        "verb_3sg": "carries",
+        "verb_base": "carry",
+        "verb_past": "carried"
+      }
+    },
+    {
+      "output": "Ava admires the amber lantern.",
+      "record_id": "r17-public-extraction-00-0",
+      "signature": "question|present|positive|singular",
+      "slots": {
+        "object": "the amber lantern",
+        "subject": "Ava",
+        "verb_3sg": "admires",
+        "verb_base": "admire",
+        "verb_past": "admired"
+      }
+    },
+    {
+      "output": "Lena does not observe the cedar doorway.",
+      "record_id": "r17-public-extraction-02-2",
+      "signature": "question|present|negative|singular",
+      "slots": {
+        "object": "the cedar doorway",
+        "subject": "Lena",
+        "verb_3sg": "observes",
+        "verb_base": "observe",
+        "verb_past": "observed"
+      }
+    },
+    {
+      "output": "Tari will carry the violet parcel.",
+      "record_id": "r17-public-extraction-08-0",
+      "signature": "question|future|positive|singular",
+      "slots": {
+        "object": "the violet parcel",
+        "subject": "Tari",
+        "verb_3sg": "carries",
+        "verb_base": "carry",
+        "verb_past": "carried"
+      }
+    },
+    {
+      "output": "Did Zara and Ivo not repair the silver compass?",
+      "record_id": "r17-public-extraction-19-2",
+      "signature": "declarative|past|negative|plural",
+      "slots": {
+        "object": "the silver compass",
+        "subject": "Zara and Ivo",
+        "verb_3sg": "repairs",
+        "verb_base": "repair",
+        "verb_past": "repaired"
+      }
+    },
+    {
+      "output": "Mira and Niko inspected the quiet alcove.",
+      "record_id": "r17-public-extraction-05-2",
+      "signature": "question|past|positive|plural",
+      "slots": {
+        "object": "the quiet alcove",
+        "subject": "Mira and Niko",
+        "verb_3sg": "inspects",
+        "verb_base": "inspect",
+        "verb_past": "inspected"
+      }
+    },
+    {
+      "output": "Do Tari and Uma carry the violet parcel?",
+      "record_id": "r17-public-extraction-13-1",
+      "signature": "declarative|present|positive|plural",
+      "slots": {
+        "object": "the violet parcel",
+        "subject": "Tari and Uma",
+        "verb_3sg": "carries",
+        "verb_base": "carry",
+        "verb_past": "carried"
+      }
+    },
+    {
+      "output": "Will Lena observe the cedar doorway?",
+      "record_id": "r17-public-extraction-20-2",
+      "signature": "declarative|future|positive|singular",
+      "slots": {
+        "object": "the cedar doorway",
+        "subject": "Lena",
+        "verb_3sg": "observes",
+        "verb_base": "observe",
+        "verb_past": "observed"
+      }
+    },
+    {
+      "output": "Does Ava admire the amber lantern?",
+      "record_id": "r17-public-extraction-12-0",
+      "signature": "declarative|present|positive|singular",
+      "slots": {
+        "object": "the amber lantern",
+        "subject": "Ava",
+        "verb_3sg": "admires",
+        "verb_base": "admire",
+        "verb_past": "admired"
+      }
+    },
+    {
+      "output": "Mira and Niko will not inspect the quiet alcove.",
+      "record_id": "r17-public-extraction-11-2",
+      "signature": "question|future|negative|plural",
+      "slots": {
+        "object": "the quiet alcove",
+        "subject": "Mira and Niko",
+        "verb_3sg": "inspects",
+        "verb_base": "inspect",
+        "verb_past": "inspected"
+      }
+    },
+    {
+      "output": "Zara and Ivo repair the silver compass.",
+      "record_id": "r17-public-extraction-01-2",
+      "signature": "question|present|positive|plural",
+      "slots": {
+        "object": "the silver compass",
+        "subject": "Zara and Ivo",
+        "verb_3sg": "repairs",
+        "verb_base": "repair",
+        "verb_past": "repaired"
+      }
+    },
+    {
+      "output": "Mira and Niko inspect the quiet alcove.",
+      "record_id": "r17-public-extraction-01-0",
+      "signature": "question|present|positive|plural",
+      "slots": {
+        "object": "the quiet alcove",
+        "subject": "Mira and Niko",
+        "verb_3sg": "inspects",
+        "verb_base": "inspect",
+        "verb_past": "inspected"
+      }
+    },
+    {
+      "output": "Will Ava not admire the amber lantern?",
+      "record_id": "r17-public-extraction-22-2",
+      "signature": "declarative|future|negative|singular",
+      "slots": {
+        "object": "the amber lantern",
+        "subject": "Ava",
+        "verb_3sg": "admires",
+        "verb_base": "admire",
+        "verb_past": "admired"
+      }
+    },
+    {
+      "output": "Zara and Ivo do not repair the silver compass.",
+      "record_id": "r17-public-extraction-03-0",
+      "signature": "question|present|negative|plural",
+      "slots": {
+        "object": "the silver compass",
+        "subject": "Zara and Ivo",
+        "verb_3sg": "repairs",
+        "verb_base": "repair",
+        "verb_past": "repaired"
+      }
+    },
+    {
+      "output": "Tari and Uma carry the violet parcel.",
+      "record_id": "r17-public-extraction-01-1",
+      "signature": "question|present|positive|plural",
+      "slots": {
+        "object": "the violet parcel",
+        "subject": "Tari and Uma",
+        "verb_3sg": "carries",
+        "verb_base": "carry",
+        "verb_past": "carried"
+      }
+    },
+    {
+      "output": "Ava did not admire the amber lantern.",
+      "record_id": "r17-public-extraction-06-0",
+      "signature": "question|past|negative|singular",
+      "slots": {
+        "object": "the amber lantern",
+        "subject": "Ava",
+        "verb_3sg": "admires",
+        "verb_base": "admire",
+        "verb_past": "admired"
+      }
+    },
+    {
+      "output": "Did Mira not inspect the quiet alcove?",
+      "record_id": "r17-public-extraction-18-1",
+      "signature": "declarative|past|negative|singular",
+      "slots": {
+        "object": "the quiet alcove",
+        "subject": "Mira",
+        "verb_3sg": "inspects",
+        "verb_base": "inspect",
+        "verb_past": "inspected"
+      }
+    },
+    {
+      "output": "Ava admired the amber lantern.",
+      "record_id": "r17-public-extraction-04-2",
+      "signature": "question|past|positive|singular",
+      "slots": {
+        "object": "the amber lantern",
+        "subject": "Ava",
+        "verb_3sg": "admires",
+        "verb_base": "admire",
+        "verb_past": "admired"
+      }
+    },
+    {
+      "output": "Does Lena not observe the cedar doorway?",
+      "record_id": "r17-public-extraction-14-2",
+      "signature": "declarative|present|negative|singular",
+      "slots": {
+        "object": "the cedar doorway",
+        "subject": "Lena",
+        "verb_3sg": "observes",
+        "verb_base": "observe",
+        "verb_past": "observed"
+      }
+    },
+    {
+      "output": "Is Zara not repairing the silver compass?",
+      "record_id": "r17-public-extraction-14-1",
+      "signature": "declarative|present|negative|singular",
+      "slots": {
+        "object": "the silver compass",
+        "subject": "Zara",
+        "verb_3sg": "repairs",
+        "verb_base": "repair",
+        "verb_past": "repaired"
+      }
+    },
+    {
+      "output": "Will Zara and Ivo repair the silver compass?",
+      "record_id": "r17-public-extraction-21-0",
+      "signature": "declarative|future|positive|plural",
+      "slots": {
+        "object": "the silver compass",
+        "subject": "Zara and Ivo",
+        "verb_3sg": "repairs",
+        "verb_base": "repair",
+        "verb_past": "repaired"
+      }
+    },
+    {
+      "output": "Ava will not admire the amber lantern.",
+      "record_id": "r17-public-extraction-10-2",
+      "signature": "question|future|negative|singular",
+      "slots": {
+        "object": "the amber lantern",
+        "subject": "Ava",
+        "verb_3sg": "admires",
+        "verb_base": "admire",
+        "verb_past": "admired"
+      }
+    },
+    {
+      "output": "Mira and Niko did not inspect the quiet alcove.",
+      "record_id": "r17-public-extraction-07-0",
+      "signature": "question|past|negative|plural",
+      "slots": {
+        "object": "the quiet alcove",
+        "subject": "Mira and Niko",
+        "verb_3sg": "inspects",
+        "verb_base": "inspect",
+        "verb_past": "inspected"
+      }
+    },
+    {
+      "output": "Will Mira and Niko not inspect the quiet alcove?",
+      "record_id": "r17-public-extraction-23-2",
+      "signature": "declarative|future|negative|plural",
+      "slots": {
+        "object": "the quiet alcove",
+        "subject": "Mira and Niko",
+        "verb_3sg": "inspects",
+        "verb_base": "inspect",
+        "verb_past": "inspected"
+      }
+    },
+    {
+      "output": "Tari does not carry the violet parcel.",
+      "record_id": "r17-public-extraction-02-0",
+      "signature": "question|present|negative|singular",
+      "slots": {
+        "object": "the violet parcel",
+        "subject": "Tari",
+        "verb_3sg": "carries",
+        "verb_base": "carry",
+        "verb_past": "carried"
+      }
+    }
+  ]
+}
