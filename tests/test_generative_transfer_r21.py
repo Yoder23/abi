@@ -7,6 +7,7 @@ from experiments.generative_transfer_r21.hash_assurance_binding import (
     selfless_evidence_hash,
 )
 from experiments.generative_transfer_r21.live_verify_v6 import _package_for
+from experiments.generative_transfer_r21.live_verify_v7 import targeted_tensor_corruption
 from experiments.generative_transfer_r21.protocol import (
     LABELS,
     WordLabeler,
@@ -85,3 +86,16 @@ def test_r21_live_factor_selection_is_exact():
     assert _package_for(system, "abi_factorized", 21021, "email")["cake_id"].endswith(
         "-email-seed21021"
     )
+
+
+def test_r21_targeted_corruption_changes_signed_tensor_member():
+    from pathlib import Path
+
+    package = next(
+        Path("results/generative_transfer_r21/public_v5_bakeoff/engine/packages").glob("*.cake")
+    )
+    final_byte_mutated = bytearray(package.read_bytes())
+    final_byte_mutated[-1] ^= 1
+    targeted = targeted_tensor_corruption(final_byte_mutated)
+    assert targeted != package.read_bytes()
+    assert targeted[-1] == package.read_bytes()[-1]
