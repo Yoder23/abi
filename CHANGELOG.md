@@ -13,14 +13,18 @@
   abstention, and removed-package abstention; the rotated-score causal control
   scored 0/48.
 - Reproduced all declared source, evaluation, bundle, and package artifacts in
-  a fresh live run, verified all 48 stored residual rows, and rejected 15/15
-  hostile mutations.
+  a fresh live run, verified all 48 stored residual rows, and rejected 21/21
+  hostile mutations after additive verifier repair.
 - Added explicit imported-information accounting: 96 unique source prompts,
   276 generated tokens, 576 candidate scores, and 16 final records. Audit-only
   hidden activations were measured separately and were not compiler inputs.
 - Preserved the claim ceiling: this is registered closed-candidate structured
   factual memory, not fluent English transfer, autonomous discovery, arbitrary
   domains, LayerCake ingestion, minimality, or LoRA/distillation superiority.
+- Passed blind review with zero Critical/High findings. Preserved three Medium
+  and three Low findings, repaired rendered-prompt accounting and actual-file
+  verification, disclosed that the correct answer appears among 12 candidates,
+  and reproduced the public prerequisite under the committed protocol.
 
 ## R16 public factual prerequisite v1 - 2026-09-10
 

@@ -167,12 +167,15 @@ geography. The unchanged source passed 48/48 answer-free generations and
 1,222 total package bytes containing 16 structured fact records. Package,
 source-agreement, and target-only evaluation were 48/48; other-domain and
 removed conditions abstained 48/48; the rotated-score control was 0/48. A
-complete live rerun was byte-exact and 15/15 hostile mutations failed closed.
-The teacher was absent at execution and neither source nor recipient was
-trained. The candidate vocabularies and two-domain ontology were registered,
+complete live rerun was byte-exact and the expanded verifier rejected 21/21
+hostile mutations.
+The teacher was absent at execution, source training was zero, and the generic
+package executor required no training. The candidate vocabularies and two-domain ontology were registered,
 so autonomous discovery, fluent English transfer, LayerCake ingestion,
-minimality, and LoRA/distillation superiority remain open. Blind review and
-durable public reconstruction are pending; R7 remains the controlling release.
+minimality, and LoRA/distillation superiority remain open. Blind review passed
+with no Critical or High finding. A clean replication binding the repaired
+public protocol and durable public reconstruction remain pending; R7 remains
+the controlling release.
 
 ## What R7 proves
 

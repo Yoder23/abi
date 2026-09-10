@@ -149,14 +149,16 @@ held-out facts across chemistry and geography, emitted two immutable packages,
 and matched 48/48 disjoint evaluation questions with the teacher absent.
 Target-only execution was 48/48, other-domain and removed-package conditions
 abstained 48/48, a rotated-score control scored 0/48, live evidence replayed
-byte-exactly, and 15/15 hostile mutations failed closed. See
+byte-exactly, and the expanded verifier rejected 21/21 hostile mutations. A
+blind review passed with no Critical or High finding. See
 [`docs/R16_FACTUAL_SEMANTIC_RESULT.md`](docs/R16_FACTUAL_SEMANTIC_RESULT.md).
 
 This is a structured closed-candidate memory result with a registered ontology
 and candidate vocabulary. It is not autonomous open-world discovery, fluent
 English extraction, teacher-quality free generation, native neural
 transplantation, production LayerCake ingestion, minimality, or superiority to
-LoRA/distillation. Blind review and public reconstruction of R16 remain open.
+LoRA/distillation. A clean replication binding the repaired public protocol,
+followed by public reconstruction, remains open.
 The full ABI moonshot therefore remains open, and R7 remains the controlling
 published release.
 

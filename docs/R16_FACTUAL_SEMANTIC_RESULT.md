@@ -1,6 +1,6 @@
 # R16 bounded factual acquisition and semantic segregation
 
-Status: `BOUNDED_LOCAL_PASS; BLIND REVIEW PENDING`
+Status: `BOUNDED_LOCAL_PASS; BLIND REVIEW PASS; CLEAN REPLICATION PENDING`
 
 R16 is the first ABI campaign to extract factual content already present in an
 unchanged open-weight teacher, assign that content to registered semantic
@@ -24,10 +24,12 @@ The implementation was frozen before the held-out selection was revealed:
 
 The hidden selection contained 16 facts: eight chemistry atomic-number facts
 and eight geography national-capital facts. Extraction and evaluation used
-three disjoint paraphrases per fact. Source prompts did not include the
-answers. The registered ontology and a 12-answer candidate vocabulary per fact
-were supplied by the protocol, so the experiment does not test autonomous
-ontology or candidate discovery.
+three disjoint paraphrases per fact. Free-generation prompts did not include
+the answer. The compiler did receive a registered 12-value candidate set with
+the correct answer present exactly once, plus the teacher score for each
+candidate; no field labeled the correct value. The registered ontology and
+candidate vocabulary mean the experiment does not test autonomous ontology or
+candidate discovery.
 
 ## Result
 
@@ -47,15 +49,17 @@ ontology or candidate discovery.
 | Live evaluation rows replayed | 48/48 byte-exact |
 | Source residual rows verified | 48/48 |
 | Declared artifacts verified | 13/13 |
-| Hostile mutations rejected | 15/15 |
+| Hostile mutations rejected | 21/21 |
 | Source training | 0 steps |
 | Teacher present at package execution | No |
 
 The physical compiler ran as a pure-standard-library worker in a Linux
 pivot-root, no-network capsule. It received question/subject strings,
-candidate strings, and teacher sequence scores. Capability archives, answers,
-fact IDs, secret/reveal files, oracle fields, success IDs, the teacher, and the
-development tree were absent. The compiler emitted two canonical packages:
+candidate strings, and teacher sequence scores. Capability archives, labeled
+answer/oracle fields, fact IDs, secret/reveal files, success IDs, the teacher,
+and the development tree were absent. The correct value was nevertheless one
+of the candidates, as required by this closed-candidate protocol. The compiler
+emitted two canonical packages:
 
 | Namespace | Facts | Bytes | SHA-256 |
 | --- | ---: | ---: | --- |
@@ -72,9 +76,12 @@ closed-candidate workload.
 | Item | Measured value |
 | --- | ---: |
 | Raw / unique source prompts | 96 / 96 |
-| Unique prompt UTF-8 bytes | 4,126 |
+| Rendered source-prompt UTF-8 bytes | 18,334 |
+| Rendered source-prompt token instances | 3,206 |
+| Question-only UTF-8 bytes | 4,126 |
 | Teacher-generated tokens | 276 |
 | Teacher output bytes | 372 |
+| Candidate string / token instances scored | 576 / 1,146 |
 | Candidate score values imported | 576 |
 | Source bundle | 33,971 bytes |
 | Final packages | 1,222 bytes |
@@ -97,15 +104,26 @@ The complete local evidence is under
 source, evaluation, package, and bundle artifact byte-for-byte. The expanded
 strict verifier binds all declared artifacts, the complete pinned Qwen source
 snapshot, the live replay, and every residual row. It passed. The expanded
-hostile audit rejected all 15 missing, corrupt, stale, and hash-consistent
-forgery cases.
+hostile audit rejected all 21 missing, corrupt, stale, and hash-consistent
+forgery cases. Strict-v3 opens the seven live files, verifies all four physical
+extraction trees, and directly rehashes the 10-file source snapshot.
 
-The final local certificate is
-`results/factual_semantic_r16/heldout_v1_certificate_v3.json`, evidence SHA-256
-`147a0a204e93916e14a98875d16b9e3fc387147c32386a9516850b1fc3f65703`.
+The controlling repaired local certificate is
+`results/factual_semantic_r16/heldout_v1_certificate_v4_revision_002.json`,
+evidence SHA-256
+`b089b538ca444d3b3ae62995cc87064e98fc76e70c72f05f3df422ecac8d203c`.
 Earlier certificates and verifier receipts remain preserved as historical
-evidence; the v3 certificate adds accounting and stronger verification rather
-than rewriting them.
+evidence. The blind review of commit `b63bd55` passed with zero Critical or
+High findings; its three Medium and three Low findings are preserved in
+`results/factual_semantic_r16/blind_redteam_b63bd55.md`. The additive repairs
+are described in [R16_POST_REVEAL_ASSURANCE_AMENDMENT.md](R16_POST_REVEAL_ASSURANCE_AMENDMENT.md).
+
+The historical public-v2 receipt refers to a protocol digest whose file was
+not committed. A post-reveal requalification under the available committed
+protocol reproduced every public artifact and gate byte-for-byte. That is
+assurance evidence, not a retroactive chronology repair. A new hidden
+replication bound to the corrected public receipt is therefore required before
+R16 is promoted beyond its current local claim.
 
 ## Claim boundary
 
@@ -128,5 +146,5 @@ R16 does not establish:
 - superiority to LoRA, distillation, or fine-tuning.
 
 The full ABI moonshot remains open. R7 remains the controlling public release
-until R16 receives blind review, durable publication, and clean external
-reconstruction within this bounded claim.
+until R16 receives a clean preregistered replication, durable publication, and
+clean external reconstruction within this bounded claim.

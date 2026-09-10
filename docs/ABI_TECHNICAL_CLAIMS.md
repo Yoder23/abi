@@ -203,13 +203,16 @@ namespace-separated structured packages and executes without the teacher. On a
 preregistered selection, all 16 facts and 48 disjoint evaluation answers were
 exact. Target-only behavior was exact, other-domain and removed-package
 conditions abstained exactly, the rotated-score control failed all 48 answers,
-live replay was byte-exact, and 15/15 hostile mutations were rejected.
+live replay was byte-exact, and the expanded verifier rejected 21/21 hostile
+mutations. Blind review passed with no Critical or High finding.
 
 The physical compiler received answer-free question/subject strings,
-registered candidate strings, and source sequence scores. It did not receive
-answers, fact IDs, secrets, oracle fields, the teacher, or the development
-tree. The two packages contain 16 structured records in 1,222 bytes and no
-source parameters. The source and recipients received zero training.
+registered candidate strings, and source sequence scores. The correct answer
+string was present once in each candidate set, but no field labeled it as the
+answer. The compiler did not receive fact IDs, secrets, oracle fields, the
+teacher, or the development tree. The two packages contain 16 structured records in 1,222 bytes and no
+source parameters. Source training was zero and the generic package executor
+required no training.
 
 This is closed-candidate structured factual memory under a registered
 chemistry/geography ontology. It does not support autonomous open-world

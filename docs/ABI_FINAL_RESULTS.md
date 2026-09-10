@@ -225,9 +225,11 @@ score control scored 0/48.
 The complete run and fresh live rerun agree byte-for-byte on all 96 source
 rows, 48 evaluation rows, source bundles, and package bytes. Expanded strict
 verification binds all 13 declared artifacts and 48 residual rows to the
-complete pinned source snapshot. All 15 hostile mutations failed closed. No
-source or recipient training occurred, no source parameters are in the final
-packages, and the teacher was absent during package execution.
+complete pinned source snapshot. The expanded verifier rejected all 21 hostile
+mutations. Source training was zero, the generic package executor required no
+training, no source parameters are in the final packages, and the teacher was
+absent during package execution. Blind review passed with no Critical or High
+finding.
 
 The result remains a structured closed-candidate memory test. Candidate
 vocabularies and the two-domain ontology were registered, and the package is

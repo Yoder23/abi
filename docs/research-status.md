@@ -100,12 +100,14 @@ Qwen2-7B-Instruct source and compiled into two immutable structured packages.
 Package/source agreement was 48/48 on disjoint paraphrases; target-only,
 other-domain, removal, and rotated-score controls behaved exactly as
 registered. A full live rerun was byte-exact and the expanded hostile verifier
-rejected 15/15 mutations. The final packages contain no source parameters and
+rejected 21/21 mutations. The final packages contain no source parameters and
 the teacher is absent during execution. Because the candidate vocabularies and
 two-domain ontology are registered, this does not prove autonomous discovery,
 fluent English transfer, arbitrary-domain extraction, native neural
 transplantation, LayerCake acceptance, minimality, or LoRA/distillation
-superiority. Fresh blind review and public reconstruction remain open.
+superiority. Fresh blind review passed with no Critical or High finding. A
+clean replication bound to the corrected public protocol and public
+reconstruction remain open.
 
 Historical campaign records remain available in `evidence/current/`,
 `results/`, and the research-history branch. Later evidence supersedes a claim

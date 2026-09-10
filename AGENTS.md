@@ -138,12 +138,13 @@ answer-free questions, candidate strings, and source sequence scores and
 emitted two immutable structured packages totaling 1,222 bytes. Source,
 package, and target-only evaluation were 48/48 exact; other-domain and removed
 conditions abstained 48/48; a rotated-score control was 0/48. Live evidence
-replayed byte-exactly and 15/15 hostile mutations failed closed. This proves
+replayed byte-exactly and the expanded verifier rejected 21/21 hostile
+mutations. A blind review passed with no Critical or High finding. This proves
 only bounded structured factual extraction and segregation. The registered
 candidate vocabularies and ontology prevent claims of autonomous discovery,
 fluent English transfer, arbitrary domains, LayerCake ingestion, minimality,
-or LoRA/distillation superiority. Blind review and public reconstruction remain
-open.
+or LoRA/distillation superiority. A clean preregistered replication bound to
+the repaired public protocol and public reconstruction remain open.
 
 ## Exact proven scope
 
@@ -280,9 +281,11 @@ arbitrary teacher.
 14. Preserve the R16 held-out pass as bounded structured factual extraction:
     16/16 facts, 48/48 package/source agreement, exact target-only behavior,
     exact other-domain/removal abstention, 0/48 rotated-score control, exact
-    live replay, and 15/15 hostile cases. Before promotion beyond local scope,
-    require a fresh blind review, durable hash-addressed publication, and clean
-    reconstruction. A successor must test free-form linguistic realization or
+    live replay, and 21/21 hostile cases after additive assurance repair. Blind
+    review passed the bounded claim with no Critical or High finding. Before
+    promotion beyond local scope, require a clean replication bound to the
+    corrected public protocol, durable publication, and reconstruction. A
+    successor must test free-form linguistic realization or
     a non-enumerable specialist capability; do not rerun nearby fact-count,
     prompt, candidate-set, or ontology variants.
 
