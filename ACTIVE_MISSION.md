@@ -191,6 +191,19 @@ invoked. This exact-template branch is closed; a successor must use a
 materially different functional and teacher-relative language boundary rather
 than another prompt or exact-string sweep.
 
+R18 public status:
+`R18_PUBLIC_FACTORIZED_REALIZATION_PREREQUISITE_PASSED`
+
+The compiler was frozen at `de8e54b` and reused all R17-v2 teacher evidence.
+Its 3,881-byte, 24-template package scored 48/48 on lexically disjoint
+functional realizations, compared with 47/48 for the source and 46/48 for
+independent per-signature consensus. It regressed on zero source-correct rows;
+the mood-permutation control was 0/48 and removal abstained 48/48. Strict
+recomputation, a fresh byte-exact physical replay, and 12/12 hostile mutations
+passed. This authorizes only a preregistered lexically hidden replication; it
+does not establish unrestricted English, LayerCake acceptance, minimality, or
+LoRA/distillation superiority.
+
 ## What R7 proves
 
 R7 proves one bounded capability ABI result: four immutable packages execute
@@ -236,6 +249,7 @@ The blind reviewer returned `VERDICT: PASS` for this exact scope.
 | Pre-existing representation capability recovery | BOUNDED BLIND-REVIEWED LOCAL PASS; R15B recovered 4/4 secret arithmetic mappings with zero source training |
 | Pre-existing bounded factual extraction and segregation | BOUNDED REPLICATED LOCAL PASS; two R16 selections, 32/32 selected instances and 27 distinct facts |
 | Pre-existing English/domain knowledge extraction | OPEN; R16 is closed-candidate structured memory, not fluent English or arbitrary domains |
+| Bounded teacher-derived grammar realization | PUBLIC PREREQUISITE PASS; R18 48/48 functional, hidden replication open |
 | Exact foreign-teacher behavioral transplantation | OPEN; separate Track A |
 
 ## Current objective
@@ -254,9 +268,7 @@ Teacher extraction and minimization belong to additive campaigns. R16 now
 supplies the first bounded held-out factual extraction/segregation pass, but
 only for registered closed candidate sets and a two-domain ontology. The
 immediate additive work is to publicly reconstruct the blind-reviewed R16
-seal and design the post-R17 functional linguistic representation. It
-must require answer-free free-form generation and teacher-relative quality,
-not merely candidate ranking or a package-owned answer table. LayerCake
+seal and run the preregistered hidden R18 lexical replication. LayerCake
 product ingestion remains a separate acceptance gate.
 
 Any R8/R9/R10 successor must start with a new additive preregistration and a

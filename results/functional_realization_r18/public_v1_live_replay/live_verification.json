@@ -1,0 +1,36 @@
+{
+  "evaluation_rows_replayed": 48,
+  "evidence_sha256": "d1c56d6bcbdb796cdca66da74fec9165afa4d278662d098b8432b23de8ed90c6",
+  "files_replayed_byte_exact": [
+    {
+      "path": "source_bundle.json",
+      "sha256": "a565d0d204c46e0ef14209ebfd6f478e1b059931ab97e21cff42d57d9a3697bc"
+    },
+    {
+      "path": "mood_permutation_bundle.json",
+      "sha256": "5183bed3aa3ce14eb6bd69d1fb1110c22cada3a1228b670626284b73722ea89b"
+    },
+    {
+      "path": "evaluation.jsonl",
+      "sha256": "328d1db34f00f551afaa451a86479474725129d45ca2c9a8504e7e3b4dfb7436"
+    },
+    {
+      "path": "extraction\\packages\\sha256-3f5182e09d91f88fbf0c54c4c1a9de6253d556f6d7facffa81484918623a20d0.abipkg",
+      "sha256": "3f5182e09d91f88fbf0c54c4c1a9de6253d556f6d7facffa81484918623a20d0"
+    },
+    {
+      "path": "control_extraction\\packages\\sha256-b6b684cd6452a8c5742447994c62418b110730cbef665bb52b6ea89ad4d49271.abipkg",
+      "sha256": "b6b684cd6452a8c5742447994c62418b110730cbef665bb52b6ea89ad4d49271"
+    }
+  ],
+  "format": "abi-r18-live-verification/1",
+  "full_abi_moonshot": "OPEN",
+  "host_training_steps": 0,
+  "packages_replayed": 2,
+  "physical_extractions_replayed": 2,
+  "source_rows_reverified": 120,
+  "source_training_steps": 0,
+  "teacher_present_at_compilation": false,
+  "teacher_present_at_package_execution": false,
+  "verdict": "PASS"
+}

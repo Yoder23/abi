@@ -174,6 +174,17 @@ or LayerCake was invoked. The exact-template branch is closed; its successor
 must separate functional language quality from raw string identity. See
 [`docs/R17_LINGUISTIC_REALIZATION_RESULT.md`](docs/R17_LINGUISTIC_REALIZATION_RESULT.md).
 
+R18 replaces that exact-string boundary with a frozen feature-factorized
+grammar package. Reusing the same R17-v2 teacher outputs, its 3,881-byte
+package scored 48/48 on lexically disjoint functional realizations, versus
+47/48 for the teacher and 46/48 for independent per-signature consensus. It
+had zero regressions on teacher-correct rows, a 0/48 mood-permutation control,
+and 48/48 removal abstentions. Strict recomputation, 12/12 hostile mutations,
+and a fresh byte-exact physical replay passed. This is a bounded public
+surface-realization prerequisite, not unrestricted English or the ABI
+moonshot. See
+[`docs/R18_FACTORIZED_REALIZATION_RESULT.md`](docs/R18_FACTORIZED_REALIZATION_RESULT.md).
+
 ## R7 at a glance
 
 | Evidence | Result |

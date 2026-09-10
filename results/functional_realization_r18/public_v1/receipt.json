@@ -1,0 +1,82 @@
+{
+  "artifacts": {
+    "control_bundle": {
+      "path": "mood_permutation_bundle.json",
+      "sha256": "5183bed3aa3ce14eb6bd69d1fb1110c22cada3a1228b670626284b73722ea89b"
+    },
+    "control_extraction_result_sha256": "9e402b4de538069b5967546606cf0bd97f70dcd339a1644b2ea5b995c291032c",
+    "evaluation": {
+      "path": "evaluation.jsonl",
+      "sha256": "328d1db34f00f551afaa451a86479474725129d45ca2c9a8504e7e3b4dfb7436"
+    },
+    "extraction_result_sha256": "54e6e9956d8803a721c24c6ecc0295c70b7b670ef0b59decd1916b322cd94eb6",
+    "inherited_source_rows_sha256": "1c00b360003b6624087f8ba3c3f3bacb3176d7b715badd5a92e28528d3925fd5",
+    "inherited_strict_source_sha256": "12a303c53e09393bddc6bb4536ad6eaa90dc8e4e8d5c8d374528a51b41877efa",
+    "source_bundle": {
+      "path": "source_bundle.json",
+      "sha256": "a565d0d204c46e0ef14209ebfd6f478e1b059931ab97e21cff42d57d9a3697bc"
+    }
+  },
+  "claim": "PUBLIC_BOUNDED_FACTORIZED_ENGLISH_REALIZATION_PREREQUISITE",
+  "claim_ceiling": "NOT_UNRESTRICTED_ENGLISH_OR_LAYERCAKE_ACCEPTANCE",
+  "control_package": {
+    "bytes": 3881,
+    "path": "control_extraction\\packages\\sha256-b6b684cd6452a8c5742447994c62418b110730cbef665bb52b6ea89ad4d49271.abipkg",
+    "sha256": "b6b684cd6452a8c5742447994c62418b110730cbef665bb52b6ea89ad4d49271"
+  },
+  "evidence_sha256": "46658ec14e8d8f3bfae520238cc1a4814f02b1c89af8cc3570cb6c98826352a8",
+  "format": "abi-r18-public-factorized-realization/1",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "bridge_parameters_trained": 0,
+    "compiler_elapsed_seconds": 3.425421699997969,
+    "compiler_source_bundle_bytes": 26673,
+    "compiler_source_records": 72,
+    "final_package_bytes": 3881,
+    "final_templates": 24,
+    "frozen_source_parameters_in_package": 0,
+    "host_training_steps": 0,
+    "raw_source_prompts": 120,
+    "rendered_prompt_token_instances": 20736,
+    "rendered_prompt_utf8_bytes": 96310,
+    "source_training_steps": 0,
+    "teacher_generated_tokens": 1312,
+    "teacher_output_bytes": 4820
+  },
+  "metrics": {
+    "control_functional_exact": 0,
+    "evaluation_rows": 48,
+    "independent_modal_functional_exact": 46,
+    "package_functional_exact": 48,
+    "package_source_exact": 47,
+    "removed_abstain": 48,
+    "source_exact_regressions": 0,
+    "source_extraction_rows": 72,
+    "source_functional_exact": 47
+  },
+  "package": {
+    "bytes": 3881,
+    "path": "extraction\\packages\\sha256-3f5182e09d91f88fbf0c54c4c1a9de6253d556f6d7facffa81484918623a20d0.abipkg",
+    "sha256": "3f5182e09d91f88fbf0c54c4c1a9de6253d556f6d7facffa81484918623a20d0",
+    "templates": 24
+  },
+  "protocol_sha256": "57526c69fe70d80d327f14c419148837fac51e2ccadb8a7dad0b4429b38b2d09",
+  "source": {
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "parameters": 7615616512,
+    "present_at_compilation": false,
+    "present_at_package_execution": false,
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "snapshot_path_name": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "training_steps": 0
+  },
+  "unproven": [
+    "unrestricted English fluency",
+    "autonomous capability discovery",
+    "arbitrary-domain extraction",
+    "production LayerCake ingestion",
+    "global minimality",
+    "superiority to LoRA or distillation"
+  ],
+  "verdict": "PASS"
+}

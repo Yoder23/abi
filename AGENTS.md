@@ -304,6 +304,13 @@ arbitrary teacher.
     exact-template variant. A successor must score functional meaning,
     grammaticality, and teacher-relative quality separately and use a
     materially different package representation.
+17. R18's frozen factorized representation passed its public prerequisite:
+    48/48 functional evaluation rows versus 47/48 for the source and 46/48
+    for independent modal consensus, with zero regressions, 0/48 control,
+    48/48 removal, strict verification, byte-exact live replay, and 12/12
+    hostile rejection. It authorizes only a preregistered hidden lexical
+    replication. Do not call it unrestricted English, autonomous extraction,
+    LayerCake ingestion, minimality, or LoRA/distillation superiority.
 
 Do not claim the ABI moonshot until those acquisition and external-quality
 gates are supported by their own evidence.

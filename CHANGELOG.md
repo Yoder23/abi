@@ -1,5 +1,19 @@
 # Changelog
 
+## R18 public factorized English realization - 2026-09-10
+
+- Froze a feature-factorized compiler at `de8e54b` before its public verdict.
+- Reused all preserved R17-v2 outputs; no teacher rerun or prompt tuning was
+  performed.
+- Emitted a 3,881-byte teacher-absent package that scored 48/48 functional
+  rows, versus 47/48 for the teacher and 46/48 for independent modal
+  templates, with zero regressions on source-correct rows.
+- Passed 0/48 mood-permutation, 48/48 removal, strict recomputation, a
+  byte-exact fresh physical replay, and 12/12 hostile mutations.
+- Kept unrestricted English, autonomous labeling, LayerCake ingestion,
+  minimality, and LoRA/distillation superiority explicitly open. A
+  preregistered hidden lexical replication is authorized.
+
 ## R17 public compositional English prerequisite - 2026-09-10
 
 - Froze a 24-signature teacher-derived surface-realization compiler before
