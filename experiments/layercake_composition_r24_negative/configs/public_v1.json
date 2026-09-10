@@ -1,0 +1,77 @@
+{
+  "candidate_changes": 0,
+  "code_sha256": {
+    "experiments/layercake_composition_r24_negative/PROTOCOL.md": "02be7d18ecb911a1f10e10e404c4a1d3c4bf5eb9eaf6dbc7102f75967da8e1c2",
+    "experiments/layercake_composition_r24_negative/binding.py": "e8a467d2b1e2f54647b98a6718d40448a048e8c3ce33b2f4dda113b8977ef2f4",
+    "experiments/layercake_composition_r24_negative/freeze_config.py": "af8701db749cd606ec5a29663a41b84f61aa0775b92f25a8a294c039e6b02af0",
+    "experiments/layercake_composition_r24_negative/verify.py": "9406d12bd32d47fc2da6ddd26e2669c10764d2115dc64fd1c44e9ba49bcd935d"
+  },
+  "format": "abi-r24-negative-verification-config/1",
+  "gate_changes": 0,
+  "implementation_freeze_commit": "cda3fe397b031efc24ede41334b61c847ea03301",
+  "original_config": [
+    {
+      "bytes": 6467,
+      "path": "experiments/layercake_composition_r24/configs/public_v1.json",
+      "sha256": "d0c102b6c26383eaa448df0ba9fddadce6ed652469550bef1346753b9e26dd32"
+    }
+  ],
+  "result_inventory": [
+    {
+      "bytes": 52879,
+      "path": "results/layercake_composition_r24/public_v1/domain_observations.jsonl",
+      "sha256": "bb2a4ff998d539c1255154f624244092e804667830a53f78bd16269f31346dcc"
+    },
+    {
+      "bytes": 148920,
+      "path": "results/layercake_composition_r24/public_v1/english_immutability.jsonl",
+      "sha256": "7c28825b9fdeb26696f1c4206ef1f9ff0c34fb33c498612ffdeddf451f28d610"
+    },
+    {
+      "bytes": 127226,
+      "path": "results/layercake_composition_r24/public_v1/english_leakage.jsonl",
+      "sha256": "ee9c774df78fcdaf3b65769951d64128fbe2aae68b896d246a0a0f3de0651117"
+    },
+    {
+      "bytes": 3447,
+      "path": "results/layercake_composition_r24/public_v1/lifecycle.jsonl",
+      "sha256": "f11582a38902e2a46d3689596eed50ce27105e49436c9b976ee22d4cd68aa46d"
+    },
+    {
+      "bytes": 288396,
+      "path": "results/layercake_composition_r24/public_v1/packages/chemistry-periodic-table-seed24021.cake",
+      "sha256": "ce7f3b34ce686ca889ca5071ed1486ff10ff22386022095791fbbd7d47d7c98b"
+    },
+    {
+      "bytes": 288396,
+      "path": "results/layercake_composition_r24/public_v1/packages/chemistry-periodic-table-seed24022.cake",
+      "sha256": "da58180b0d9ea30b0e7b2cba8034d5583f04ea18ccea4b2caf004a32f514c92f"
+    },
+    {
+      "bytes": 288396,
+      "path": "results/layercake_composition_r24/public_v1/packages/chemistry-periodic-table-seed24023.cake",
+      "sha256": "0a545d7fffe934d55c8255bc78af070bf0fae6cadaff6495b413a2fb05c99d07"
+    },
+    {
+      "bytes": 288480,
+      "path": "results/layercake_composition_r24/public_v1/packages/geography-national-capitals-seed24021.cake",
+      "sha256": "3e25de2ff3d2995c2ce7f9e0046d89b32492fb6ac249fa1f12c223b621b50259"
+    },
+    {
+      "bytes": 288480,
+      "path": "results/layercake_composition_r24/public_v1/packages/geography-national-capitals-seed24022.cake",
+      "sha256": "c823141e999ef84211c4b2690c97e47a73c5637264b5e74485a32b1764caa8bb"
+    },
+    {
+      "bytes": 288480,
+      "path": "results/layercake_composition_r24/public_v1/packages/geography-national-capitals-seed24023.cake",
+      "sha256": "f251a0623297b3e0d8f7a398b1d700ad24b0305b7f001ad94455d2b7e118acc2"
+    },
+    {
+      "bytes": 19659,
+      "path": "results/layercake_composition_r24/public_v1/result.json",
+      "sha256": "b5535d829184160cdeb3432f9eaa1c81db7e9d31949d347fd245a2ab4cba332b"
+    }
+  ],
+  "scorer_changes": 0
+}
