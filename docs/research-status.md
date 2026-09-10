@@ -32,6 +32,7 @@ fresh blind Codex review. Human quality and independent hardware remain open.
 | Raw-instruction supplied-content structural realization | Failed R20 source/compiler prerequisite; 10/72 extraction and 19/120 evaluation exact, no package |
 | Label-separated generative supplied-content transfer | R21 public prerequisite passed and fresh hidden replication failed; hidden factor 113/120, summary 13/20 below 15/20 gate |
 | Teacher-side semantic-plan normalization | Failed R22 source prerequisite; 520/600 functional, 255/600 exact-field, no student or LayerCake run |
+| Fresh semantic supplied-content replication | Strictly verified R23 pass; factor 120/120 all seeds, teacher 96/120, 1,080 GPU and 54 CPU fresh rows |
 | Pre-existing open-weight English/domain extraction | Open |
 | LoRA/distillation superiority | Unproven |
 
@@ -139,6 +140,15 @@ all three values verbatim once and in order. The failure was concentrated in
 summary, clarification, and abstention, while email and bullets were 100/100
 functional. This rules out another nearby unconstrained rewrite prompt. See
 [R22_SEMANTIC_PLAN_NORMALIZATION_RESULT.md](R22_SEMANTIC_PLAN_NORMALIZATION_RESULT.md).
+
+R23 repaired the evaluation boundary prospectively rather than rescoring the
+failed R21 split. Its scorer, thresholds, and new-row generator were committed
+before seed generation. The unchanged factorized packages scored 120/120 on
+all three seeds versus 96/120 live teacher and both controls. Fresh execution
+reproduced 1,080 GPU and 54 CPU outputs and passed all 24 package lifecycle and
+targeted tensor-corruption controls. This certifies only bounded semantic
+supplied-content behavior. See
+[R23_SEMANTIC_REPLICATION_RESULT.md](R23_SEMANTIC_REPLICATION_RESULT.md).
 
 Historical campaign records remain available in `evidence/current/`,
 `results/`, and the research-history branch. Later evidence supersedes a claim

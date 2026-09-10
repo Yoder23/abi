@@ -354,5 +354,22 @@ arbitrary teacher.
     requires a materially broader semantic-plan representation and a
     proposition-level evaluator frozen before a new hidden selection.
 
+21. Preserve R22 as a failed teacher-normalization prerequisite: 520/600
+    functional and 255/600 exact-field targets, despite 600/600 grounded and
+    non-collapsed outputs. No student training or LayerCake execution occurred.
+    Do not retry nearby rewrite prompts or reinterpret this as a LayerCake
+    failure.
+
+22. Preserve R23 as a strictly verified bounded semantic supplied-content
+    pass. On a new seed committed after evaluator freeze, the exact 24 R21
+    package bytes scored 120/120 on all three factorized seeds versus 96/120
+    live teacher and both controls. Fresh replay regenerated 1,080 GPU and 54
+    CPU outputs, passed all 24 removal/restoration controls, and rejected 24/24
+    targeted tensor corruptions. Preserve the zero-row live-launch failure and
+    its metadata-only repair. Do not call R23 unrestricted English, autonomous
+    discovery or labeling, arbitrary-domain extraction, global minimality, or
+    LoRA/distillation superiority. A successor must materially expand beyond
+    supplied three-field behavior and retain prospective semantic evaluation.
+
 Do not claim the ABI moonshot until those acquisition and external-quality
 gates are supported by their own evidence.

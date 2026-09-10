@@ -1,5 +1,19 @@
 # Changelog
 
+## R23 fresh semantic replication pass - 2026-09-10
+
+- Committed a task-aware semantic contract before generating and revealing a
+  new hidden seed; no failed R21 row was rescored or promoted.
+- Reused the exact 24 frozen R21 package bytes with zero student retraining and
+  scored ABI factorized 120/120 on all three seeds versus teacher 96/120,
+  labeled monolith 99-110, and raw sequence 27-32.
+- Freshly replayed 1,080/1,080 GPU and 54/54 CPU outputs byte-exactly and passed
+  24/24 signed removal, restoration, and targeted tensor-corruption controls.
+- Preserved a zero-row live-launch failure and froze a metadata-binding-only
+  repair before successful replay.
+- Promoted only the bounded six-task supplied-content semantic transfer claim;
+  the full ABI moonshot remains open.
+
 ## R22 semantic-plan normalization failure - 2026-09-10
 
 - Froze a 600-row, no-retry GPU normalization prerequisite before any new

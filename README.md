@@ -232,6 +232,15 @@ was not invoked. This closes unconstrained teacher rewriting as the immediate
 repair path and preserves the ABI-versus-LayerCake failure boundary. See
 [`docs/R22_SEMANTIC_PLAN_NORMALIZATION_RESULT.md`](docs/R22_SEMANTIC_PLAN_NORMALIZATION_RESULT.md).
 
+R23 then evaluated the unchanged R21 package bytes on a new committed hidden
+split with a public-corpus-supported semantic contract. All three factorized
+seeds scored 120/120 versus 96/120 teacher, 99-110 labeled monolith, and 27-32
+raw sequence. A fresh replay reproduced 1,080 GPU and 54 CPU outputs, passed all
+24 package removal/restoration controls, and rejected 24/24 targeted tensor
+corruptions. This certifies a bounded six-task supplied-content mechanism, not
+general English or the full ABI moonshot. See
+[`docs/R23_SEMANTIC_REPLICATION_RESULT.md`](docs/R23_SEMANTIC_REPLICATION_RESULT.md).
+
 ## R7 at a glance
 
 | Evidence | Result |

@@ -22,6 +22,13 @@ functional and 255/600 exact-field targets, despite 600/600 grounded and
 non-collapsed outputs. Student training and LayerCake execution were correctly
 blocked. This is an ABI source-interface failure, not a LayerCake failure.
 
+R23 isolated and repaired the measurement boundary on a new causally committed
+hidden split without retraining or changing the 24 R21 packages. Every
+factorized seed scored 120/120 under the semantic contract versus 96/120 live
+teacher and both controls. Fresh replay reproduced 1,080 GPU and 54 CPU rows
+and passed all 24 package lifecycle and targeted-corruption controls. This is a
+strictly verified bounded supplied-content transfer result, not general English.
+
 The additive R8 native-neural-transfer falsification campaign is complete at
 Level 0. Exact canonical extraction succeeded, but the same acquired state did
 not create capability-level behavior in the first frozen recipient. The raw
@@ -98,11 +105,13 @@ Public release:
    hidden replication failed the summary task minimum.
 9. R22 semantic-plan normalization: failed the source prerequisite; no student
    or LayerCake run was performed.
-10. R8 native cross-model neural transfer: failed public prerequisite; any
+10. R23 semantic supplied-content replication: strictly verified bounded pass;
+   general English and autonomous labeling remain open.
+11. R8 native cross-model neural transfer: failed public prerequisite; any
    successor requires a new additive mechanism and preregistration.
-11. R9 neural-ISA recipient realization: capability-specific recipient-state
+12. R9 neural-ISA recipient realization: capability-specific recipient-state
    GRU branch failed; universal backend remains closed.
-12. R11 foreign-teacher front end: the ABI-native construction passes, but
+13. R11 foreign-teacher front end: the ABI-native construction passes, but
     extraction of a capability already encoded in an independently trained
     open-weight model remains open.
 

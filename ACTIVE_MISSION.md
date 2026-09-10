@@ -260,6 +260,16 @@ trained and LayerCake was not invoked. Unconstrained teacher rewriting is
 closed as a nearby repair; the next bounded test must use a preregistered
 semantic-equivalence contract and a new hidden split.
 
+R23 status: `R23_BOUNDED_SEMANTIC_REPLICATION_PASSED`
+
+R23 prospectively froze that semantic contract and a new hidden-row generator,
+then committed a 256-bit seed before reveal. Without retraining or changing the
+24 R21 packages, every factorized seed scored 120/120 versus 96/120 live
+teacher and both controls. Fresh replay reproduced 1,080 GPU and 54 CPU rows,
+passed all 24 package lifecycle controls, and rejected 24/24 targeted tensor
+corruptions. The bounded six-task supplied-content mechanism is now strictly
+verified; general English and the ABI moonshot remain open.
+
 ## What R7 proves
 
 R7 proves one bounded capability ABI result: four immutable packages execute
@@ -310,6 +320,7 @@ The blind reviewer returned `VERDICT: PASS` for this exact scope.
 | Instruction-conditioned supplied-content realization | FAILED R20 source/compiler prerequisite; no package or LayerCake run |
 | Label-separated generative supplied-content transfer | PUBLIC PASS, HIDDEN FAIL R21; 113/120 hidden but summary 13/20 below gate |
 | Teacher-side semantic-plan normalization | FAIL R22 SOURCE; 520/600 functional, 255/600 exact-field, no student/LayerCake run |
+| Fresh semantic supplied-content replication | STRICT PASS R23; factor 120/120 all seeds, teacher 96/120, full fresh replay |
 | Exact foreign-teacher behavioral transplantation | OPEN; separate Track A |
 
 ## Current objective

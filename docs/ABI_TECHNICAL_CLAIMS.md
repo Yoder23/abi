@@ -289,3 +289,15 @@ failure blocked all student training and LayerCake execution, so it is
 specifically an ABI acquisition/source-interface failure. It does not weaken
 the prior LayerCake host evidence or promote R21. See
 [R22_SEMANTIC_PLAN_NORMALIZATION_RESULT.md](R22_SEMANTIC_PLAN_NORMALIZATION_RESULT.md).
+
+## Additive R23 semantic replication
+
+R23 adds a strictly verified bounded claim. On a fresh causally committed
+hidden split, the unchanged R21 factorized packages scored 120/120 on every
+seed versus 96/120 live teacher and both frozen controls. Fresh execution
+reproduced 1,080 GPU and 54 CPU outputs byte-exactly and passed 24/24 signed
+removal, restoration, and targeted tensor-corruption controls. This is evidence
+for six supplied-content behaviors under an explicit semantic contract. It is
+not unrestricted English, autonomous labeling, arbitrary-domain extraction,
+global minimality, or LoRA/distillation superiority. See
+[R23_SEMANTIC_REPLICATION_RESULT.md](R23_SEMANTIC_REPLICATION_RESULT.md).
