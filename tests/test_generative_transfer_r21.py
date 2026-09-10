@@ -6,6 +6,7 @@ from experiments.generative_transfer_r21.derive_labels_v3 import (
 from experiments.generative_transfer_r21.hash_assurance_binding import (
     selfless_evidence_hash,
 )
+from experiments.generative_transfer_r21.hidden_protocol import hidden_rows, seed_commitment
 from experiments.generative_transfer_r21.live_verify_v6 import _package_for
 from experiments.generative_transfer_r21.live_verify_v7 import targeted_tensor_corruption
 from experiments.generative_transfer_r21.protocol import (
@@ -99,3 +100,15 @@ def test_r21_targeted_corruption_changes_signed_tensor_member():
     targeted = targeted_tensor_corruption(final_byte_mutated)
     assert targeted != package.read_bytes()
     assert targeted[-1] == package.read_bytes()[-1]
+
+
+def test_r21_hidden_generator_is_complete_distinct_and_committed():
+    seed = "01" * 32
+    assert len(seed_commitment(seed)) == 64
+    rows = hidden_rows(seed)
+    assert len(rows) == 120
+    assert len({row["record_id"] for row in rows}) == 120
+    assert all(sum(row["task"] == task for row in rows) == 20 for task in LABELS)
+    assert not (
+        {row["record_id"] for row in rows} & {row["record_id"] for row in evaluation_rows()}
+    )
