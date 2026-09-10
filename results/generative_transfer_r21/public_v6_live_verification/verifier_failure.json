@@ -1,0 +1,13 @@
+{
+  "format": "abi-r21-live-verifier-failure/1",
+  "scientific_candidate_verdict": "PENDING",
+  "stage": "post-replay lifecycle predicate",
+  "fresh_systems_started": 9,
+  "raw_rows_persisted": 0,
+  "cause": "the hostile harness flipped the final byte of a tar archive, which is padding outside signed package members and was correctly ignored by the package loader",
+  "observed_diagnostic": "the same final-byte-mutated signed package installed successfully in a fresh registry",
+  "candidate_data_changed": false,
+  "candidate_packages_changed": false,
+  "candidate_gates_changed": false,
+  "authorized_repair": "replace only the ineffective padding mutation with a mutation inside tensors.safetensors and rerun the complete fresh verifier"
+}
