@@ -1,0 +1,91 @@
+{
+  "code_sha256": {
+    "experiments/factual_semantic_r16/public_qualification.py": "c54da43b8cf0f592247101aa8a6b6511795272802ed3ebb606aad1fd1c2e7361",
+    "experiments/foreign_capability_r14/core.py": "ade41e81c0087c9d56f484c1e7c6f8e57a726a31150a42c92b448c1d0eec4816",
+    "experiments/generative_transfer_r21/PROTOCOL.md": "e70dd75d5063eb3814d0c8a04e1431a570bd8d225f0b876996ec1c1b74f93155",
+    "experiments/generative_transfer_r21/acquire.py": "6a14594f7b061f40557b6b41244b9a91bed5afd2cd469883cba5cc0e787dcecc",
+    "experiments/generative_transfer_r21/binding.py": "00965da70cc735466110c401fe085e2d776445d3166587c692478eb6baa1447c",
+    "experiments/generative_transfer_r21/freeze_config.py": "1d0c5d86fdbd649d90eb5c595d70c6530f7b0f7e818fe0669952f026a235dd88",
+    "experiments/generative_transfer_r21/protocol.py": "76fd0d3a45ba094511dba78357832be78996435ae4070362c4706a503f756a18",
+    "experiments/generative_transfer_r21/run.py": "d8fe7648cca96a090e48dae007604ba2839c6aa7c3717a31fc7293daf08d9e32",
+    "experiments/generative_transfer_r21/verify.py": "0e85f13f2742a11bf27dc2e37e3ea187bba8978a06f44553b6071830f9e6ffd4",
+    "experiments/instructional_realization_r20/protocol.py": "54c2d41e660e66056351d3d8e6caa34613ba35000e0327bdbf9c5078befd9b8f"
+  },
+  "data": {
+    "evaluation_rows": 120,
+    "tasks": 6,
+    "training_rows": 600
+  },
+  "evaluation_teacher": {
+    "path": "results/instructional_realization_r20/public_v1_source/source_observations.jsonl",
+    "sha256": "e073ec675454a85f2d6cfcee2aae64a02513cfd8bf47aad97ea22138c4465af1"
+  },
+  "format": "abi-r21-public-config/1",
+  "gates": {
+    "bootstrap_samples": 10000,
+    "maximum_factor_to_labeled_parameters": 1.25,
+    "minimum_label_exact": 114,
+    "minimum_non_collapsed": 114,
+    "minimum_non_hallucinating": 114,
+    "minimum_task_functional": 15,
+    "require_all_three_seeds": true,
+    "require_no_worse_than_teacher_and_controls": true
+  },
+  "implementation_freeze_commit": "f0905e87aee711482b2e58b74559d7241fee0806",
+  "layercake": {
+    "abi_sha256": "de765899700aefe22bfe6c9d00ed5b0c1f87a7ef864cf7211aa8aa4491a0742a",
+    "abi_version": "lc-direct-neural-decoder/1",
+    "research_signing_seed_hex": "d4603cc928b438a43f40594f39effcd600e9b783b442ac298981cbbe258d15cd",
+    "root": "../layercake_release"
+  },
+  "methods": [
+    "raw_sequence",
+    "labeled_monolith",
+    "abi_factorized"
+  ],
+  "model": {
+    "dropout": 0.0,
+    "factor": {
+      "attention_heads": 4,
+      "decoder_layers": 1,
+      "encoder_layers": 1,
+      "feedforward_width": 128,
+      "model_width": 48,
+      "pointer_width": 24
+    },
+    "maximum_source_lexemes": 128,
+    "maximum_target_actions": 256,
+    "monolith": {
+      "attention_heads": 4,
+      "decoder_layers": 2,
+      "encoder_layers": 2,
+      "feedforward_width": 256,
+      "model_width": 96,
+      "pointer_width": 48
+    }
+  },
+  "seeds": [
+    21021,
+    21022,
+    21023
+  ],
+  "source": {
+    "device": "cuda",
+    "max_label_tokens": 4,
+    "max_new_tokens": 96,
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c"
+  },
+  "training": {
+    "device": "cuda",
+    "factor_batch_size": 10,
+    "factor_steps_per_task": 1000,
+    "gradient_clip_norm": 1.0,
+    "learning_rate": 0.0008,
+    "monolith_batch_size": 24,
+    "monolith_steps": 2500,
+    "precision": "fp32",
+    "row_exposures_per_method": 60000,
+    "weight_decay": 0.01
+  }
+}
