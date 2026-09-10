@@ -1,4 +1,8 @@
 from experiments.generative_transfer_r21.acquire_labels_v2 import SYSTEM
+from experiments.generative_transfer_r21.derive_labels_v3 import (
+    _classifier,
+    _registered_pair_count,
+)
 from experiments.generative_transfer_r21.protocol import (
     LABELS,
     WordLabeler,
@@ -47,3 +51,12 @@ def test_r21_label_repair_is_closed_and_single_token_oriented():
     assert "A=prose composition" in SYSTEM
     assert "F=safe abstention" in SYSTEM
     assert "Return only the letter" in SYSTEM
+
+
+def test_r21_registered_label_control_has_exact_fixed_budget():
+    labeler = _classifier()
+    assert _registered_pair_count() == 36
+    assert all(
+        labeler.predict(instruction_from_prompt(row["prompt"])) == row["task"]
+        for row in training_rows() + evaluation_rows()
+    )
