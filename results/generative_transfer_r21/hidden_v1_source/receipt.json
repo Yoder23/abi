@@ -1,0 +1,39 @@
+{
+  "config_sha256": "ec2f4dc0eda8279d91475a90977a3ec6737808a7b19412b6b1cb55e5415b450c",
+  "evidence_sha256": "c11a0dd4af07bfd28257ba515527de0366b5ca21b28d91994ec33cbf75fd2525",
+  "format": "abi-r21-hidden-source/1",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "gpu_name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "hidden_activations_stored": 0,
+    "logits_stored": 0,
+    "peak_cpu_rss_bytes": 2163040256,
+    "peak_gpu_memory_bytes": 15306181120,
+    "raw_prompts": 120,
+    "rendered_prompt_token_instances": 10968,
+    "source_inference_seconds": 250.59675180001068,
+    "source_load_seconds": 9.700807799992617,
+    "source_model_inference_hours": 0.0696102088333363,
+    "source_parameters_copied": 0,
+    "source_snapshot_bytes": 15242778262,
+    "source_snapshot_files": 10,
+    "teacher_generated_tokens": 4660,
+    "teacher_output_bytes": 15260,
+    "unique_prompt_bytes": 20878
+  },
+  "rows": 120,
+  "seed_reveal_sha256": "bedff462cc0d4d9699a4592a0612e662f4c0040de3053f9adb90118acd5bdecc",
+  "source": {
+    "device": "cuda",
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "parameters": 7615616512,
+    "present_at_package_execution": false,
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "training_steps": 0
+  },
+  "source_rows_sha256": "df7761455abc205407185a73d4c4c28d0a81d217d9a51ca7bae139d2834d9a94",
+  "teacher_functional": 107,
+  "teacher_non_collapsed": 120,
+  "teacher_non_hallucinating": 120,
+  "verdict": "PASS_HIDDEN_SOURCE_ACQUIRED"
+}
