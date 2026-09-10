@@ -1,6 +1,6 @@
 # ABI technical claims
 
-Updated: 2026-09-02
+Updated: 2026-09-09
 
 ## Claims supported by R7
 
@@ -142,3 +142,29 @@ and 7/7 hostile controls passed. R14 therefore demonstrates one bounded
 non-exhaustive recovery but fails the registered family-level claim. It does
 not support behavioral cloning, pre-existing knowledge extraction,
 English/domain transfer, LayerCake acceptance, or LoRA/distillation superiority.
+
+## Additive R15A foreign neural-state result
+
+R15A supports one new bounded claim: a generic frontend can recover this
+registered family of freshly learned synthetic capabilities from a foreign
+model's before/after neural delta and emit unchanged R11 packages. The frontend
+was frozen after 320 public Qwen events and passed 64/64 public development
+capabilities. On the preregistered v5 reveal it recovered 8/8 capabilities from
+anonymous 7,168-element effective output-weight deltas with zero behavioral
+queries, answers, operation tables, candidate search, or oracle calls inside
+the physical extraction environment.
+
+The eight 2,053-byte packages scored 1.0 across 80,000 unseen and 8,000
+counterfactual oracle rows. AFTER and RESTORED were 1.0 over 135,168 total
+recipient rows across frozen Pythia, Qwen2, and T5; delta controls were at most
+0.265 and recipient negative controls at most 0.17578125. Strict verification,
+fresh live source/extractor replay, byte-identical recipient replay, and 9/9
+hostile mutations passed.
+
+R15A does not support extraction of knowledge already present in a pretrained
+teacher. Each source capability was deliberately installed using all 24 atomic
+constraints, and ABI consumed the resulting before/after delta. It therefore
+does not establish English/domain discovery or labeling, after-only extraction,
+teacher-quality natural-language generation, minimality, LayerCake ingestion,
+Track A equality, or superiority over LoRA/distillation. See
+[R15_FOREIGN_NEURAL_STATE_RESULT.md](R15_FOREIGN_NEURAL_STATE_RESULT.md).

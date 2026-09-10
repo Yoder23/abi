@@ -83,3 +83,15 @@ state from its package and prompt. That diagnostic passed static verification,
 byte-identical. Those results justify v5 but do not certify v4. The v4 secret
 is never reused, and the complete run and diagnostic replay remain immutable
 locally.
+
+Heldout v5 is the first certified R15A execution. The protocol and verifier
+were frozen at `b92bd2ac6de06f43780abf55ff2b678b91c3c8b0` before reveal.
+Strict evidence `e67f8249798b42a4055db02f07d36f115aad327bf9045ac4aa7e95b9a5f15e83`
+recomputed an 8/8 exact result; live evidence
+`3b52c80570c87eb84bea0aa9a138587388ed4627dbf8fba4c11037b870f819a7`
+replayed every source and extraction condition and reproduced all recipient
+rows byte-for-byte; hostile evidence
+`6d2fe174b1ea8c0fcbb38a49ce1ba32b4a2cd5ee41381174487d4d61e1924bc7`
+rejected 9/9 mutations. The result is limited to bounded foreign learned-delta
+recovery and does not establish pre-existing knowledge or English/domain
+extraction.

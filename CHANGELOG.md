@@ -1,5 +1,31 @@
 # Changelog
 
+## R15A bounded foreign neural-state recovery - 2026-09-09
+
+- Replaced the failed R14 output-probability frontend with controlled access
+  to Qwen before/after effective output-weight deltas while leaving the R11
+  package, executor, and recipient boundary frozen.
+- Qualified one generic full-table decoder on 320 public events and 64/64
+  development capabilities before held-out reveal.
+- Preserved v1-v4 additively: one recipient accounting exception, one real
+  structure-preserving shuffle-control failure, and two subsequently reached
+  verifier-envelope/schema defects. No exposed seed was reused.
+- Passed the fresh v5 commitment on 8/8 held-out capabilities with zero
+  behavioral queries, answers, operation tables, candidate search, or oracle
+  calls inside eight pivot-root/no-network extraction capsules.
+- Emitted eight 2,053-byte R11 packages with 1.0 accuracy on 80,000 unseen and
+  8,000 counterfactual rows. Full-state delta controls were at most 0.265.
+- Executed 135,168 rows across frozen Pythia, Qwen2, and T5 recipients with
+  1.0 AFTER/RESTORED, zero recipient training, and negative controls at most
+  0.17578125.
+- Passed strict recomputation, fresh live source/extractor execution,
+  byte-identical recipient replay, and 9/9 hostile mutation cases.
+- Sealed only bounded recovery of a deliberately learned synthetic capability
+  from a foreign before/after delta. Pretrained English/domain extraction,
+  semantic labeling, teacher-quality generation, after-only extraction,
+  LayerCake ingestion, minimality, and LoRA/distillation superiority remain
+  open.
+
 ## R14 non-exhaustive capability recovery - 2026-09-02
 
 - Replaced R13's complete 24-entry atomic interface with 256 mixed, non-atomic

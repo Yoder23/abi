@@ -1,6 +1,6 @@
 # Research status
 
-Updated: 2026-08-31
+Updated: 2026-09-09
 
 ## Current certification boundary
 
@@ -25,7 +25,8 @@ fresh blind Codex review. Human quality and independent hardware remain open.
 | R10 runtime-owned synthetic copy/paste component | Passed across 61,440 recipient rows and exact live replay |
 | R10 end-to-end source-behavior copy/paste | Failed source-native generalization gate |
 | R11 ABI-native neural copy/paste construction | Passed 90,112 rows, exact frozen-package replay, 7/7 hostile controls |
-| Conventional open-weight teacher extraction into R11 ABI | Open |
+| Conventional open-weight learned-delta extraction into R11 ABI | Bounded local pass; R15A 8/8 with strict/live/hostile verification |
+| Pre-existing open-weight English/domain extraction | Open |
 | LoRA/distillation superiority | Unproven |
 
 ## Interpretation
@@ -60,6 +61,16 @@ behavior mismatch for an ABI-native synthetic teacher substrate. It does not
 show how to extract a capability already encoded in a conventional pretrained
 LLM. That foreign-teacher front end is now the measured bottleneck; the passing
 R11 package/executor/host boundary should remain fixed while it is tested.
+
+R15A now proves the first bounded foreign neural-state frontend. A generic
+publicly qualified decoder recovered 8/8 fresh synthetic capabilities directly
+from Qwen before/after effective output-weight deltas, emitted exact 2,053-byte
+R11 packages, and reproduced 135,168 recipient rows byte-for-byte across three
+frozen hosts. The full ABI moonshot remains open because the capabilities were
+deliberately taught with complete atomic supervision. Pre-existing knowledge
+discovery, semantic labeling and segregation, fluent English/domain quality,
+minimality, LayerCake ingestion, and LoRA/distillation comparisons have not yet
+been established.
 
 Historical campaign records remain available in `evidence/current/`,
 `results/`, and the research-history branch. Later evidence supersedes a claim

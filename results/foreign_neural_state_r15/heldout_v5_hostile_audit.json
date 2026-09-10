@@ -1,0 +1,55 @@
+{
+  "baseline_evidence_sha256": "e67f8249798b42a4055db02f07d36f115aad327bf9045ac4aa7e95b9a5f15e83",
+  "cases": [
+    {
+      "case": "missing_source_observations",
+      "error": "raw R15A evidence unavailable: C:\\Users\\samyo\\AppData\\Local\\Temp\\abi-r15a-hostile-9smr8n93\\run\\source_observations.jsonl",
+      "outcome": "REJECTED"
+    },
+    {
+      "case": "corrupted_source_observations",
+      "error": "raw R15A evidence unavailable: C:\\Users\\samyo\\AppData\\Local\\Temp\\abi-r15a-hostile-t0mcnqk8\\run\\source_observations.jsonl",
+      "outcome": "REJECTED"
+    },
+    {
+      "case": "missing_source_adapter",
+      "error": "R15A source neural-state artifact unavailable",
+      "outcome": "REJECTED"
+    },
+    {
+      "case": "corrupted_effective_delta",
+      "error": "R15A source neural-state artifact unavailable",
+      "outcome": "REJECTED"
+    },
+    {
+      "case": "missing_capability_package",
+      "error": "R15A package inventory changed",
+      "outcome": "REJECTED"
+    },
+    {
+      "case": "corrupted_isolated_extraction",
+      "error": "R15A isolated extraction evidence unavailable",
+      "outcome": "REJECTED"
+    },
+    {
+      "case": "missing_recipient_rows",
+      "error": "raw R15A evidence unavailable: C:\\Users\\samyo\\AppData\\Local\\Temp\\abi-r15a-hostile-blvaod2m\\run\\recipients\\pythia\\observations.jsonl",
+      "outcome": "REJECTED"
+    },
+    {
+      "case": "corrupted_recipient_rows",
+      "error": "raw R15A evidence unavailable: C:\\Users\\samyo\\AppData\\Local\\Temp\\abi-r15a-hostile-qz_kx56n\\run\\recipients\\pythia\\observations.jsonl",
+      "outcome": "REJECTED"
+    },
+    {
+      "case": "wrong_heldout_reveal",
+      "error": "R15A run identity changed",
+      "outcome": "REJECTED"
+    }
+  ],
+  "cases_passed": 9,
+  "cases_total": 9,
+  "evidence_sha256": "6d2fe174b1ea8c0fcbb38a49ce1ba32b4a2cd5ee41381174487d4d61e1924bc7",
+  "format": "abi-r15a-hostile-audit/1",
+  "verdict": "PASS"
+}

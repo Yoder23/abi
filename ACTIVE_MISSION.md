@@ -106,6 +106,20 @@ were byte-exact and 7/7 hostile controls passed. This is a bounded partial
 result, not certification, pre-existing knowledge extraction, or behavioral
 transplantation. R7 remains controlling.
 
+R15A status:
+`R15A_BOUNDED_FOREIGN_NEURAL_STATE_RECOVERY_PASSED_LOCAL`
+
+R15A replaced output-only probing with a generic frontend operating on an
+anonymous Qwen before/after effective output-weight delta. It recovered all
+8/8 fresh held-out capabilities with no behavioral queries or answers inside
+the extraction capsule. Eight 2,053-byte R11 packages were exact across 88,000
+unseen/counterfactual oracle rows and executed at 1.0 AFTER/RESTORED over
+135,168 frozen-recipient observations. Strict verification, a fresh live
+source/extractor/recipient replay, and 9/9 hostile mutations passed. R15A is a
+bounded local pass for deliberately learned synthetic capabilities, not
+pretrained English/domain extraction. R7 remains the controlling public
+release until R15A assets receive durable publication and clean reconstruction.
+
 ## What R7 proves
 
 R7 proves one bounded capability ABI result: four immutable packages execute
@@ -147,6 +161,8 @@ The blind reviewer returned `VERDICT: PASS` for this exact scope.
 | Conventional open-weight teacher to ABI package | BOUNDED PUBLIC FRONTEND PASS; exact/held-out gate failed in R12-A |
 | Held-out enumerable capability canonicalization | BOUNDED LOCAL PASS; R13-B, publication open |
 | Non-exhaustive synthetic capability recovery | FAILED; R14 recovered 1/3 fresh capabilities |
+| Foreign learned-weight-delta capability recovery | BOUNDED LOCAL PASS; R15A recovered 8/8 and passed strict/live/hostile verification |
+| Pre-existing English/domain knowledge extraction | OPEN; not established by R15A |
 | Exact foreign-teacher behavioral transplantation | OPEN; separate Track A |
 
 ## Current objective
@@ -196,6 +212,16 @@ successor must materially change the available information by registering
 controlled foreign neural-state access (for example weights, activations,
 residual representations, or training deltas) while keeping the R11 backend
 fixed. Track A teacher-output equality remains separately open.
+
+R15A passed that neural-state pivot and is now frozen as the bounded
+construction prerequisite. Do not rerun nearby affine, LoRA-rank, step-count,
+or delta-decoder variants. The next registered acquisition stage must test a
+pre-existing non-enumerable capability in an independently trained open-weight
+source, preregister a contamination-resistant semantic label and holdout, and
+keep the R11 package/executor/recipient boundary fixed. Activation or residual
+access may be tested before after-weights-only extraction, but imported
+information must be fully accounted. Track A teacher-output equality and Track
+B capability quality retain separate verdicts.
 
 ## Historical failures that remain authoritative
 

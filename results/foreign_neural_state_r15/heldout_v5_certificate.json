@@ -1,0 +1,117 @@
+{
+  "artifact_publication": "LOCAL_SEAL_PENDING_GITHUB_RELEASE",
+  "black_box_baseline": {
+    "behavioral_queries_per_capability": 256,
+    "capabilities_exact": 0,
+    "capabilities_total": 8
+  },
+  "claim": "BOUNDED_FOREIGN_NEURAL_STATE_CAPABILITY_RECOVERY",
+  "claim_ceiling": "NOT_TEACHER_BEHAVIOR_CLONING_NOT_PREEXISTING_KNOWLEDGE",
+  "config_sha256": "32602a92e83f1e044f4256d22b9a15443837b91ecd556e0229eab6fe3dfa023f",
+  "evidence_sha256": "f5dee048f2d9ec684e5bc11cd22b623ccaa8b907e7557341633da1d2b7236916",
+  "extractor_access": {
+    "answers": 0,
+    "behavioral_queries": 0,
+    "candidate_program_search": false,
+    "input": "anonymous 7168-element Qwen before/after effective output-weight delta",
+    "operation_tables": 0,
+    "oracle_calls": 0
+  },
+  "format": "abi-r15a-bounded-foreign-neural-state-certificate/1",
+  "full_abi_moonshot": "OPEN",
+  "gates": {
+    "delta_negative_control_accuracy_maximum_observed": 0.265,
+    "delta_negative_control_accuracy_maximum_required": 0.3,
+    "heldout_capabilities_exact_observed": 8,
+    "heldout_capabilities_exact_required": 8,
+    "package_counterfactual_accuracy_observed": 1.0,
+    "package_counterfactual_accuracy_required": 1.0,
+    "package_unseen_accuracy_observed": 1.0,
+    "package_unseen_accuracy_required": 1.0,
+    "recipient_after_accuracy_observed": 1.0,
+    "recipient_after_accuracy_required": 1.0,
+    "recipient_negative_accuracy_maximum_observed": 0.17578125,
+    "recipient_negative_accuracy_maximum_required": 0.3,
+    "recipient_restored_accuracy_observed": 1.0,
+    "recipient_restored_accuracy_required": 1.0,
+    "source_atomic_exact_capabilities_observed": 8,
+    "source_atomic_exact_capabilities_required": 8
+  },
+  "heldout_reveal_sha256": "d394dd83c99a3012dd9ee98755098e58302b6f49fcdef4fa55be7644b88a2734",
+  "hostile_audit": {
+    "cases_passed": 9,
+    "cases_total": 9,
+    "evidence_sha256": "6d2fe174b1ea8c0fcbb38a49ce1ba32b4a2cd5ee41381174487d4d61e1924bc7",
+    "file_sha256": "39209395cc731f9a25f76afab146f09a82b8875a1d61894942bd141487c34250",
+    "verdict": "PASS"
+  },
+  "isolation": {
+    "capability_reveals_present": 0,
+    "extractions": 8,
+    "minimum_operator_margin": 48.50900522697587,
+    "network": false,
+    "old_root_present": false,
+    "operation_tables_present": 0,
+    "policy": "linux-pivot-root-no-network/1",
+    "windows_mount_present": false
+  },
+  "package_evaluation": {
+    "counterfactual_rows": 8000,
+    "unseen_rows": 80000
+  },
+  "packages": [
+    {"bytes": 2053, "sha256": "abd7b0de53c1ab027c067fa6e67f165e9ff4a8a93b0be75f9aa818ccac2c1ce4"},
+    {"bytes": 2053, "sha256": "c7480d7056ee4f8978262096afac0a648acec09dbd6aa3f7770efdf43b0b2100"},
+    {"bytes": 2053, "sha256": "07ae1ad899812628e742068fada0e49983b4f6554a31ea035b7bccbbd9c98024"},
+    {"bytes": 2053, "sha256": "ec42ec8163ad74fdc8f5f1014bdfe26f9cb70784eaa79cbe85214a4059e7c763"},
+    {"bytes": 2053, "sha256": "53508c727027a94a545cbcba29ccea4fcb75500c93a409bb3b92fedc0cd3113f"},
+    {"bytes": 2053, "sha256": "3f4e60d712e136dab2dab42a7ad9ce5585eac1cc93411527ad4845927c6e7037"},
+    {"bytes": 2053, "sha256": "7f5e1087dc3d07e1900d5f163381b946c70b7a0412dfbbc95fddd4928d8d7ce1"},
+    {"bytes": 2053, "sha256": "90114e2850c01e8eba7a4c8e1d950d445502124ebd214a3bac8e6346c5f4ba12"}
+  ],
+  "preregistration_commit": "b92bd2ac6de06f43780abf55ff2b678b91c3c8b0",
+  "recipient_execution": {
+    "hosts": ["pythia", "qwen2", "t5"],
+    "optimizer_steps": 0,
+    "rows_by_host": 45056,
+    "rows_total": 135168,
+    "source_teacher_present": false
+  },
+  "run": {
+    "evidence_sha256": "14370a455062d590625b2f37892040b6b33b7933a23aab0b598cc633a45c0ee1",
+    "manifest_sha256": "b265fd92698b8a5054d07f6f0a071800ecc2d90c529a8bf4d7a07ce541ea8c85",
+    "raw_source_observations_sha256": "534024f2fb21af67f8d029f7932759015187c81cd5cf53e64ce6429aa0eba6e4",
+    "raw_source_rows": 19584,
+    "receipt_sha256": "4155501f4ac98b30100a9e9007fb24d00106f1fa560399f88859767f22dc9a10"
+  },
+  "source": {
+    "model_id": "Qwen/Qwen2.5-0.5B",
+    "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+    "training": "ordinary rank-16 output-head LoRA on all 24 atomic constraints per synthetic capability"
+  },
+  "strict_verification": {
+    "evidence_sha256": "e67f8249798b42a4055db02f07d36f115aad327bf9045ac4aa7e95b9a5f15e83",
+    "file_sha256": "660ac39bc5d929facea988076baecbccd909aaffe43e33f640771542124c5e91",
+    "stored_scientific_status_booleans_consumed": 0,
+    "verdict": "PASS"
+  },
+  "unproven": [
+    "pre-existing knowledge extraction from a pretrained source",
+    "English fluency or natural specialist-domain extraction",
+    "capability discovery, semantic labeling, or segregation",
+    "teacher-level natural-language generation quality",
+    "minimal English substrate",
+    "LayerCake English-core or domain-layer ingestion",
+    "superiority to LoRA, distillation, or fine-tuning",
+    "independent different-hardware reproduction"
+  ],
+  "verdict": "PASS",
+  "live_verification": {
+    "evidence_sha256": "3b52c80570c87eb84bea0aa9a138587388ed4627dbf8fba4c11037b870f819a7",
+    "file_sha256": "ce35c74c3cc593bbc67d7decd8e2651f05cf8c8da82a6c1c7d07fdf11ff92294",
+    "isolated_extractions_replayed": 8,
+    "recipient_rows_replayed_byte_exact": 135168,
+    "source_rows_replayed_exact": 19584,
+    "verdict": "PASS"
+  }
+}

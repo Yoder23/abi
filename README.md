@@ -107,6 +107,24 @@ partial result and failed certification—not a non-exhaustive extraction pass.
 See
 [`docs/R14_NON_EXHAUSTIVE_CAPABILITY_RESULT.md`](docs/R14_NON_EXHAUSTIVE_CAPABILITY_RESULT.md).
 
+R15A materially changed the frontend from behavior probing to controlled
+foreign neural-state access. A generic decoder qualified on 320 public Qwen
+learning events received only anonymous 7,168-element before/after effective
+output-weight deltas. On eight fresh committed capabilities it recovered 8/8,
+emitted eight 2,053-byte R11 packages, and scored 1.0 over 80,000 unseen plus
+8,000 counterfactual cases. The packages produced 1.0 AFTER/RESTORED behavior
+across unchanged Pythia, Qwen2, and T5 recipients; full-state controls were at
+most 0.265. Strict verification passed, fresh live execution reproduced all
+135,168 recipient rows byte-for-byte, and 9/9 hostile mutations were rejected.
+See [`docs/R15_FOREIGN_NEURAL_STATE_RESULT.md`](docs/R15_FOREIGN_NEURAL_STATE_RESULT.md).
+
+R15A is the first bounded foreign learned-state recovery pass, but it is not
+the full ABI moonshot. The source capabilities were deliberately taught with
+complete atomic supervision, and extraction used a before/after delta. The
+result does not establish extraction or labeling of pretrained English/domain
+knowledge, teacher-quality natural generation, after-only extraction,
+LayerCake English-core ingestion, minimality, or LoRA/distillation superiority.
+
 ## R7 at a glance
 
 | Evidence | Result |
@@ -240,6 +258,11 @@ See `docs/ABI_TECHNICAL_CLAIMS.md`, `docs/ABI_FINAL_RESULTS.md`, and the
   source replay, diagnosis, and hostile-verification code.
 - `results/foreign_capability_r14/` — compact R14 negative certificate and
   local artifact manifest; bulk adapters and raw replay rows are not public.
+- `experiments/foreign_neural_state_r15/` — R15A preregistration, generic
+  neural-state frontend, physical extraction, strict/live verification, and
+  hostile audit.
+- `results/foreign_neural_state_r15/` — compact R15A certificate and local
+  immutable run lineage; bulk raw observations are not yet public.
 - `external_reproduction/` — independent-operator workflow and environment
   lock.
 - `review_packet/` — ordered technical and external-review handoff.

@@ -99,6 +99,21 @@ fresh capabilities was recovered exactly; two latent selections were wrong.
 Three fresh source replay files were byte-exact and 7/7 hostile controls passed.
 R14 therefore does not certify reliable non-exhaustive extraction.
 
+The additive R15A foreign-neural-state campaign is a bounded local pass and
+does not alter the R7 public release. A generic frontend frozen after 320
+public Qwen learning events recovered 8/8 fresh held-out synthetic capabilities
+from anonymous 7,168-element effective output-weight deltas, with zero
+behavioral queries, answers, operation tables, or oracle calls at extraction.
+Eight 2,053-byte R11 packages were exact on 80,000 unseen and 8,000
+counterfactual rows and executed at 1.0 AFTER/RESTORED across frozen Pythia,
+Qwen2, and T5 recipients. Full-state controls were at most 0.265, live replay
+regenerated 19,584 source rows and reproduced 135,168 recipient rows
+byte-for-byte, and 9/9 hostile mutations failed closed. R15A proves only
+bounded recovery of a deliberately learned synthetic capability from a
+before/after foreign neural delta. Pre-existing knowledge, English/domain
+extraction, semantic labeling, teacher-quality generation, after-only
+extraction, LayerCake ingestion, and LoRA/distillation superiority remain open.
+
 ## Exact proven scope
 
 The four published immutable capability packages execute through the canonical
@@ -205,6 +220,12 @@ arbitrary teacher.
    frontend through preregistered controlled access to foreign weights,
    activations, residual representations, or training deltas while keeping R11
    frozen. It must keep capability recovery separate from Track A equality.
+10. Preserve R15A as the passed learned-weight-delta prerequisite. Its source
+    capability was deliberately installed through complete atomic supervision;
+    do not describe it as pretrained knowledge extraction. The next registered
+    stage must test pre-existing, non-enumerable source capabilities with
+    contamination-resistant labels and holdouts. Keep the R11 package and
+    recipient boundary frozen and report Track A teacher behavior separately.
 
 Do not claim the ABI moonshot until those acquisition and external-quality
 gates are supported by their own evidence.

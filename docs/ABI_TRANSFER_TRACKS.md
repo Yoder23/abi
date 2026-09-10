@@ -1,6 +1,6 @@
 # ABI foreign-transfer research tracks
 
-Updated: 2026-09-02
+Updated: 2026-09-09
 
 ABI now separates two scientific targets that must never share a verdict.
 
@@ -57,7 +57,7 @@ For an enumerable family, the report must state whether probes exhaust the
 capability specification. Such a result is a bounded behavioral-compilation
 proof, not evidence of general English or domain extraction.
 
-Status: `BOUNDED ENUMERABLE HELD-OUT PASS IN R13-B; NON-EXHAUSTIVE R14 FAILED`.
+Status: `R13-B ENUMERABLE PASS; R14 OUTPUT-ONLY FAILURE; R15A LEARNED-DELTA PASS`.
 
 R13-B passed this track for four held-out finite transition tables. The result
 does not advance Track A: package/source agreement on long compositions was
@@ -72,12 +72,20 @@ establishes a bounded one-capability partial success but does not pass stage 2.
 The next valid frontend must use materially different controlled foreign
 neural-state evidence rather than a nearby output-query or source-LoRA sweep.
 
+R15A executed that neural-state pivot. Its generic frontend recovered 8/8
+fresh capabilities from anonymous before/after Qwen output-weight deltas, and
+the packages were exact on 88,000 registered oracle cases. Strict, live, and
+hostile verification passed. This advances Track B only for a deliberately
+learned synthetic capability and a before/after delta; it does not advance
+Track A or the pre-existing factual/linguistic stages.
+
 ## Progression beyond the finite-table control
 
 Track B must advance through separately registered stages:
 
 1. exhaustively enumerable finite capability;
-2. non-exhaustive synthetic capability with genuine generalization;
+2. non-exhaustive synthetic capability with genuine generalization (bounded
+   learned-delta prerequisite passed in R15A);
 3. factual or specialist knowledge with contamination-resistant evaluation;
 4. linguistic and reasoning behavior; and
 5. cross-family replication and LayerCake product acceptance.

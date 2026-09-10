@@ -1,0 +1,64 @@
+{
+  "black_box_exact_capabilities": 0,
+  "capabilities": 8,
+  "claim": "BOUNDED_FOREIGN_NEURAL_STATE_CAPABILITY_RECOVERY",
+  "claim_ceiling": "NOT_TEACHER_BEHAVIOR_CLONING_NOT_PREEXISTING_KNOWLEDGE",
+  "evidence_sha256": "e67f8249798b42a4055db02f07d36f115aad327bf9045ac4aa7e95b9a5f15e83",
+  "extractor_answers": 0,
+  "extractor_behavioral_queries": 0,
+  "extractor_oracle_calls": 0,
+  "format": "abi-r15a-strict-verification/1",
+  "package_oracle_accuracy": {
+    "r14-r15_heldout-000-1af9745adb4c836fd1db": {
+      "counterfactual": 1.0,
+      "unseen": 1.0
+    },
+    "r14-r15_heldout-001-d71a6de5b6db03f7dfea": {
+      "counterfactual": 1.0,
+      "unseen": 1.0
+    },
+    "r14-r15_heldout-002-65e44aa45f3cb73b164f": {
+      "counterfactual": 1.0,
+      "unseen": 1.0
+    },
+    "r14-r15_heldout-003-6dd7b88b1c7383e33957": {
+      "counterfactual": 1.0,
+      "unseen": 1.0
+    },
+    "r14-r15_heldout-004-c8ac8166ef335e116abf": {
+      "counterfactual": 1.0,
+      "unseen": 1.0
+    },
+    "r14-r15_heldout-005-ca1483252296597c7bae": {
+      "counterfactual": 1.0,
+      "unseen": 1.0
+    },
+    "r14-r15_heldout-006-18ef08664d7690219e0d": {
+      "counterfactual": 1.0,
+      "unseen": 1.0
+    },
+    "r14-r15_heldout-007-9f53c2db32463efeb23c": {
+      "counterfactual": 1.0,
+      "unseen": 1.0
+    }
+  },
+  "public_frontend": {
+    "dataset_sha256": "d114e030727d22bf7f2563ee672d7049fd4db8addc26184f10b619909ec0997a",
+    "development_exact": 64,
+    "development_heads_exact": 384,
+    "events_recomputed": 320,
+    "frontend_spec_sha256": "46e91a19bf0ff13ebca8c886ddd1ebf555beb072ed2e53bf90352022350f1fef",
+    "receipt_sha256": "566d05e5c59c39b4773d789002eae12c633003fcb0b6890ac2ce387b94bc31db",
+    "tensors_sha256": "aaa88da40a1cdd4bf721c56c471867da87d8a396448936630e0d0d108b59864d"
+  },
+  "r11_freeze_evidence_sha256": "5061230e7f5bc5bc5f8fa9686d54e0216b489735a30c6bda95360124aa2affb0",
+  "recipient_hosts": [
+    "pythia",
+    "qwen2",
+    "t5"
+  ],
+  "run_evidence_sha256": "14370a455062d590625b2f37892040b6b33b7933a23aab0b598cc633a45c0ee1",
+  "source_atomic_exact_capabilities": 8,
+  "stored_scientific_status_booleans_consumed": 0,
+  "verdict": "PASS"
+}

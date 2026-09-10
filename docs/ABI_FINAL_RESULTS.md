@@ -160,3 +160,22 @@ so recipient execution correctly did not run. All 36,840 source observations
 replayed byte-for-byte across three fresh processes, and 7/7 hostile controls
 passed. See
 [R14_NON_EXHAUSTIVE_CAPABILITY_RESULT.md](R14_NON_EXHAUSTIVE_CAPABILITY_RESULT.md).
+
+## Additive R15A held-out result
+
+R15A passes its preregistered bounded local claim. A generic frontend frozen
+before reveal recovered 8/8 fresh synthetic capabilities from anonymous Qwen
+before/after effective output-weight deltas without behavioral queries or
+answers. Eight 2,053-byte packages were exact on 80,000 unseen and 8,000
+counterfactual rows and produced 1.0 AFTER/RESTORED behavior across 135,168
+Pythia, Qwen2, and T5 recipient rows. Full-state delta controls stayed at or
+below 0.265.
+
+Strict recomputation passed, a fresh live run regenerated the source and eight
+physical extraction capsules and reproduced every recipient row byte-for-byte,
+and 9/9 hostile mutations failed closed. The result is limited to a capability
+deliberately taught through complete atomic supervision and extracted from a
+before/after delta. Pre-existing English/domain extraction, labeling,
+teacher-quality generation, after-only extraction, minimality, LayerCake
+ingestion, and LoRA/distillation superiority remain open. See
+[R15_FOREIGN_NEURAL_STATE_RESULT.md](R15_FOREIGN_NEURAL_STATE_RESULT.md).
