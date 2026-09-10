@@ -1,0 +1,52 @@
+{
+  "artifacts": {
+    "source_rows": {
+      "path": "source_observations.jsonl",
+      "sha256": "477b8d19c1bdde520b9145a74a67beae74121488e5e52a60f7bd27383ef797c5"
+    }
+  },
+  "base_config_sha256": "4d304b8d85e4267d0cd2f54a471a9b65e5b15035faaf7501554a14693555f99a",
+  "evidence_sha256": "2ed4669b66ea2f80bf4f29e39753bfb119974589df42ef52d61f35ad39493ae3",
+  "format": "abi-r21-public-source-acquisition/2",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "candidate_score_values_stored": 3600,
+    "candidate_token_instances_scored": 3600,
+    "elapsed_seconds": 58.414073199994164,
+    "hidden_activations_stored": 0,
+    "label_scoring_seconds": 48.733720299991546,
+    "logits_stored": 3600,
+    "new_label_forward_passes": 600,
+    "new_teacher_generated_tokens": 0,
+    "new_teacher_output_bytes": 0,
+    "peak_cpu_rss_bytes_observed": 2098610176,
+    "peak_gpu_memory_bytes": 15321312768,
+    "rendered_label_prompt_bytes": 264136,
+    "rendered_label_prompt_tokens": 63898,
+    "source_load_seconds": 9.68035239999881,
+    "source_parameters_copied": 0,
+    "source_snapshot_files": 10,
+    "teacher_response_bytes_reused": 73866,
+    "teacher_response_tokens_reused": 21399,
+    "teacher_responses_reused": 600
+  },
+  "metrics": {
+    "exact_labels": 534,
+    "rows": 600,
+    "valid_labels": 600
+  },
+  "original_source_receipt_sha256": "642b60972139ef261b7aa39cda15bea56b9a1c62ca50c98afecf9d00ba24ca5c",
+  "original_source_rows_sha256": "4c148d7ccd262ce8767b2b11266d959236811d9a6b032186bf825dcca5d9f4c1",
+  "repair_config_sha256": "39e3976892d608ec580416fd8b47a367a8e26d5942d8619ea60f1807eac100af",
+  "response_rows_reused_byte_exact": true,
+  "source": {
+    "device": "cuda",
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "parameters": 7615616512,
+    "present_at_package_execution": false,
+    "present_at_student_training": false,
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "training_steps": 0
+  },
+  "verdict": "FAIL_SOURCE_LABEL_REPAIR"
+}
