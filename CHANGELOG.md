@@ -1,5 +1,18 @@
 # Changelog
 
+## R17 public compositional English prerequisite - 2026-09-10
+
+- Froze a 24-signature teacher-derived surface-realization compiler before
+  execution, with lexically disjoint evaluation, package removal, and
+  permuted-signature controls.
+- Preserved two zero-row operational aborts caused by concurrent 7B GPU
+  overcommit as `NOT_RUN`, not scientific failures.
+- Preserved the first complete source-interface failure: 38/72 extraction and
+  28/48 evaluation outputs exact. Compiler and LayerCake were not invoked.
+- Froze one measured v2 repair for question mood, negative polarity, future
+  tense, and standard uncontracted negative-question order without changing
+  the compiler, package, data split, controls, or exact gates.
+
 ## R16 bounded factual acquisition and segregation - 2026-09-10
 
 - Froze implementation and protocol before committing and revealing a hidden

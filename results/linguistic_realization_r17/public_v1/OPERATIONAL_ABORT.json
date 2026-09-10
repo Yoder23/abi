@@ -1,0 +1,11 @@
+{
+  "format": "abi-r17-operational-abort/1",
+  "timestamp": "2026-09-10T13:31:19.8792604-04:00",
+  "status": "ABORTED_BEFORE_ANY_SCIENTIFIC_ROWS_WERE_WRITTEN",
+  "protocol_commit": "41aba49e087e75200646f6cface59346a994efeb",
+  "reason": "A concurrent independent R16 Qwen2-7B live replay and this Qwen2-7B source run overcommitted the 16 GiB GPU and caused severe paging. The later R17 process was interrupted so the earlier blind replay could finish intact.",
+  "files_present_before_abort": 0,
+  "scientific_verdict": "NOT_RUN",
+  "promotion_eligible": false,
+  "next_action": "Rerun the unchanged frozen public prerequisite in a new immutable public_v2 directory after the R16 replay releases the GPU."
+}

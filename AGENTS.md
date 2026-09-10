@@ -291,6 +291,13 @@ arbitrary teacher.
     and reconstruction. A successor must test free-form linguistic realization or
     a non-enumerable specialist capability; do not rerun nearby fact-count,
     prompt, candidate-set, or ontology variants.
+15. Preserve R17 public interface v1 as a source prerequisite failure: 38/72
+    exact extraction outputs and 28/48 exact evaluation outputs. Compiler and
+    LayerCake were not invoked. One v2 interface/evaluator repair is authorized
+    because the raw failures isolate question mood, negative polarity, future
+    tense, and an unnatural negative-question order. Do not change the 24
+    signatures, lexical split, compiler, controls, or gates. If v2 fails the
+    120/120 source gate, close this interface branch.
 
 Do not claim the ABI moonshot until those acquisition and external-quality
 gates are supported by their own evidence.

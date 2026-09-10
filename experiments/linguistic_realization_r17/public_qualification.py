@@ -53,7 +53,7 @@ def _control_records(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 
 def _source_observations(
-    tokenizer: Any, model: Any
+    tokenizer: Any, model: Any, row_builder: Any = public_rows
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]], dict[str, int]]:
     observations = []
     compiler_records = []
@@ -65,7 +65,7 @@ def _source_observations(
         "teacher_output_bytes": 0,
     }
     for split in ("extraction", "evaluation"):
-        for row in public_rows(split):
+        for row in row_builder(split):
             rendered = _render_chat(tokenizer, SYSTEM, str(row["prompt"]))
             input_tokens = tokenizer.encode(rendered, add_special_tokens=False)
             completion, token_count = _generate(tokenizer, model, rendered, 48)
@@ -130,7 +130,15 @@ def _package_rows(
     return result
 
 
-def run(model_id: str, revision: str, output: Path) -> dict[str, Any]:
+def run(
+    model_id: str,
+    revision: str,
+    output: Path,
+    *,
+    row_builder: Any = public_rows,
+    protocol_name: str = "PUBLIC_PROTOCOL.md",
+    interface_revision: str = "v1",
+) -> dict[str, Any]:
     if output.exists():
         raise R14Error(f"immutable R17 public output exists: {output}")
     root = Path(__file__).resolve().parents[2]
@@ -139,7 +147,7 @@ def run(model_id: str, revision: str, output: Path) -> dict[str, Any]:
     started = time.perf_counter()
     tokenizer, model, snapshot = _load_source(model_id, revision)
     source_parameters = sum(parameter.numel() for parameter in model.parameters())
-    observations, compiler_records, counters = _source_observations(tokenizer, model)
+    observations, compiler_records, counters = _source_observations(tokenizer, model, row_builder)
     source_rows_path = output / "source_observations.jsonl"
     write_jsonl_once(source_rows_path, observations)
     extraction_rows = [row for row in observations if row["split"] == "extraction"]
@@ -160,6 +168,8 @@ def run(model_id: str, revision: str, output: Path) -> dict[str, Any]:
             "format": "abi-r17-public-realization-qualification/1",
             "verdict": "FAIL_SOURCE_PREREQUISITE",
             "claim_ceiling": "PUBLIC_SOURCE_INTERFACE_FAILURE_ONLY",
+            "interface_revision": interface_revision,
+            "protocol_sha256": sha256_file(Path(__file__).with_name(protocol_name)),
             "source": source_identity,
             "metrics": {
                 "extraction_source_exact": sum(row["functional_exact"] for row in extraction_rows),
@@ -227,7 +237,8 @@ def run(model_id: str, revision: str, output: Path) -> dict[str, Any]:
         "verdict": "PASS" if passed else "FAIL",
         "claim": "PUBLIC_BOUNDED_COMPOSITIONAL_ENGLISH_REALIZATION_PREREQUISITE",
         "claim_ceiling": "NOT_UNRESTRICTED_ENGLISH_OR_LAYERCAKE_ACCEPTANCE",
-        "protocol_sha256": sha256_file(Path(__file__).with_name("PUBLIC_PROTOCOL.md")),
+        "interface_revision": interface_revision,
+        "protocol_sha256": sha256_file(Path(__file__).with_name(protocol_name)),
         "source": {**source_identity, "present_at_package_execution": False},
         "metrics": metrics,
         "packages": {

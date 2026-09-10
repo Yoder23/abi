@@ -10,6 +10,7 @@ from experiments.linguistic_realization_r17.frames import (
     expected,
     public_rows,
 )
+from experiments.linguistic_realization_r17.frames_v2 import public_rows_v2
 from experiments.linguistic_realization_r17.isolated_worker import _template
 from experiments.linguistic_realization_r17.package import PACKAGE_FORMAT, realize
 
@@ -54,3 +55,21 @@ def test_public_protocol_does_not_claim_full_english() -> None:
     assert "would not establish unrestricted English" in text
     assert "superiority to LoRA or distillation" in " ".join(text.split())
     json.dumps(public_rows("evaluation"), sort_keys=True)
+
+
+def test_v2_changes_only_prompt_and_negative_question_surface_order() -> None:
+    v1 = public_rows("evaluation")
+    v2 = public_rows_v2("evaluation")
+    assert len(v1) == len(v2) == 48
+    for original, repaired in zip(v1, v2, strict=True):
+        ignored = {"prompt", "expected"}
+        assert {key: value for key, value in original.items() if key not in ignored} == {
+            key: value for key, value in repaired.items() if key not in ignored
+        }
+        mood, _tense, polarity, _number = original["signature"].split("|")
+        if mood == "question" and polarity == "negative":
+            assert original["expected"] != repaired["expected"]
+            assert " not " in repaired["expected"]
+        else:
+            assert original["expected"] == repaired["expected"]
+        assert repaired["expected"] not in repaired["prompt"]

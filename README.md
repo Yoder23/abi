@@ -165,6 +165,15 @@ public reconstruction remain open.
 The full ABI moonshot therefore remains open, and R7 remains the controlling
 published release.
 
+R17 now tests the next, explicitly separate step: teacher-derived
+compositional English surface realization rather than factual lookup. Its
+first frozen public source interface failed at 38/72 extraction and 28/48
+evaluation outputs, before ABI compilation or LayerCake was invoked. One
+evidence-driven v2 interface repair is frozen without changing the 24
+grammatical signatures, lexical split, compiler, causal controls, or exact
+gates. See
+[`docs/R17_LINGUISTIC_REALIZATION_RESULT.md`](docs/R17_LINGUISTIC_REALIZATION_RESULT.md).
+
 ## R7 at a glance
 
 | Evidence | Result |
