@@ -1,0 +1,50 @@
+{
+  "code_sha256": {
+    "experiments/factual_semantic_r16/public_qualification.py": "c54da43b8cf0f592247101aa8a6b6511795272802ed3ebb606aad1fd1c2e7361",
+    "experiments/foreign_capability_r14/core.py": "ade41e81c0087c9d56f484c1e7c6f8e57a726a31150a42c92b448c1d0eec4816",
+    "experiments/instructional_realization_r20/PUBLIC_PROTOCOL.md": "3342830ba8113b8a5c46cc51ea6f76ace0d8c312f2a5acab512f74a1e64fa8fb",
+    "experiments/instructional_realization_r20/binding.py": "7929e8291bc4d1b996c87770649149b624216ec0a4d5d87f2d3a8ff0b81ac5a9",
+    "experiments/instructional_realization_r20/compiler.py": "e0a596bcbbf30b0f731c2f94245d1b305e971c31e63966b2667a2d9bcebdb984",
+    "experiments/instructional_realization_r20/extraction_pivot_runner.sh": "3d036c6b2efb77b46bfcd4a4f1bbd4ab46371e68ccf11f31fd4f849aee862712",
+    "experiments/instructional_realization_r20/freeze_config.py": "b4a903f9aa2f5ed60fdb6f6048093bc9dc0771cc3a86d370b323abc4aca7c099",
+    "experiments/instructional_realization_r20/hostile_audit.py": "1179121449d26841990233f11dde87cafe1807a2ba8e4ec7e15638acce980234",
+    "experiments/instructional_realization_r20/isolated_worker.py": "952769015231615be0fc9ee000e60dcccbc1c624e2f9115a3a94bfa6d26660d7",
+    "experiments/instructional_realization_r20/isolation.py": "3df7754394117ac6bf8b64d23a3e374cccd0b720b902fbf42a9c0def3d9b3492",
+    "experiments/instructional_realization_r20/package.py": "382289273707bde7ed9ad1dfe24e0202101e721b8014c8ab5986d36b904cbbe8",
+    "experiments/instructional_realization_r20/protocol.py": "54c2d41e660e66056351d3d8e6caa34613ba35000e0327bdbf9c5078befd9b8f",
+    "experiments/instructional_realization_r20/run_public.py": "afff820bdf89b986c748a1390add47572bbae96649cd44a879c36158d33d2429",
+    "experiments/instructional_realization_r20/source_acquisition.py": "3cd7abedda2875de7a099982b9a56f8d85c6282da508a4775aa9561162adc70c",
+    "experiments/instructional_realization_r20/verify.py": "788ad27a1199f9b05d6992bbb59e2c2944d1fb79c8595ee8f6c0a2c43201c914",
+    "experiments/instructional_realization_r20/verify_live.py": "9151752434ae3bd5e842a7a510c204b95fe1754d02f507ba820bb58db455f973",
+    "experiments/instructional_realization_r20/verify_source.py": "768f60854c64b4e451b10a1d5163a4e70f56a104cf087b5790f3d37c89a2421e",
+    "experiments/linguistic_realization_r17/verify_source.py": "395cdde5799a6bd3fcd27b502b858422588d5b6a5079d60bc9c40b62b409a59e"
+  },
+  "data": {
+    "distinct_prompts": 192,
+    "evaluation_rows": 120,
+    "evaluation_rows_per_task": 20,
+    "extraction_rows": 72,
+    "tasks": 6
+  },
+  "format": "abi-r20-public-config/1",
+  "gates": {
+    "max_control_functional_exact": 24,
+    "max_source_exact_regressions": 0,
+    "minimum_package_exact_per_task": 19,
+    "package_functional_exact": 120,
+    "removed_abstain": 120,
+    "require_package_at_least_source": true
+  },
+  "implementation_freeze_commit": "d1e0b72ed4c172f96b1cdb9438f1d9819c51201e",
+  "physical_extraction": {
+    "distribution": "Ubuntu",
+    "policy": "linux-pivot-root-no-network/1"
+  },
+  "source": {
+    "device": "cuda",
+    "max_new_tokens": 96,
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "snapshot_evidence_sha256": "bdb164548ca29e580e465f520df01fce77524eeec01e807c413443751b4f004b"
+  }
+}
