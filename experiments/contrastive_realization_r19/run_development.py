@@ -215,7 +215,7 @@ def run(
         "verdict": "PASS" if passed else "FAIL",
         "claim": "DISCLOSED_DEVELOPMENT_CONTRASTIVE_REALIZATION_PREREQUISITE",
         "claim_ceiling": "NOT_HELD_OUT_OR_UNRESTRICTED_ENGLISH",
-        "protocol_sha256": sha256_file(Path(__file__).with_name("PUBLIC_PROTOCOL_V3.md")),
+        "protocol_sha256": sha256_file(Path(__file__).with_name("PUBLIC_PROTOCOL_V4.md")),
         "datasets": datasets,
         "source_training_steps": 0,
         "host_training_steps": 0,

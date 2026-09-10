@@ -8,6 +8,7 @@ import os
 import shutil
 import subprocess
 import tempfile
+import time
 import uuid
 from pathlib import Path
 from typing import Any
@@ -113,9 +114,22 @@ def run_wsl_isolated_extraction(
                 f"physical R19 extraction failed ({completed.returncode}): {completed.stderr[-4000:]}"
             )
         result_path = destination / "result.json"
+        deadline = time.monotonic() + 10.0
+        while not result_path.is_file() and time.monotonic() < deadline:
+            time.sleep(0.05)
         if not result_path.is_file():
             raise R19IsolationError("physical R19 extraction result missing")
         result = json.loads(result_path.read_text(encoding="utf-8"))
+        package_ref = result.get("package", {})
+        package_path = destination / str(package_ref.get("path"))
+        while not package_path.is_file() and time.monotonic() < deadline:
+            time.sleep(0.05)
+        if (
+            not package_path.is_file()
+            or package_path.stat().st_size != package_ref.get("bytes")
+            or sha256_file(package_path) != package_ref.get("sha256")
+        ):
+            raise R19IsolationError("physical R19 package publication incomplete")
         launcher = {
             "format": "abi-r19-isolated-extraction-launcher/1",
             "distribution": distribution,
