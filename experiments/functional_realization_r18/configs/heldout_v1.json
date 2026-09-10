@@ -1,0 +1,72 @@
+{
+  "code_sha256": {
+    "experiments/factual_semantic_r16/public_qualification.py": "c54da43b8cf0f592247101aa8a6b6511795272802ed3ebb606aad1fd1c2e7361",
+    "experiments/functional_realization_r18/HELDOUT_PROTOCOL.md": "963c110d6f8f9c39717042d27efb7edada676d4ff08c23baf46ef1ede9075b4c",
+    "experiments/functional_realization_r18/PUBLIC_PROTOCOL.md": "57526c69fe70d80d327f14c419148837fac51e2ccadb8a7dad0b4429b38b2d09",
+    "experiments/functional_realization_r18/acquire_heldout.py": "60c4030862f6f59a33c574892c191d61071844f56e2451117906a86b17a55ce0",
+    "experiments/functional_realization_r18/extraction_pivot_runner.sh": "4c5de53052d62d33e6929a28868800400ca8a60a7c698b4f20f6a5e47014332c",
+    "experiments/functional_realization_r18/heldout_protocol.py": "35555b96d0ef96cc206fdc41de0223611cc3e79167c27f16995b03d1ffef78cd",
+    "experiments/functional_realization_r18/hidden_frames.py": "0c3b2d570e331d6b62ed798ff5c95b8385c3ed3f0360e7ef38b891c5a86421a4",
+    "experiments/functional_realization_r18/isolated_worker.py": "9cec805647eab834e924a716e23dfa3b11e9f02704484cce0eff2d006649d05d",
+    "experiments/functional_realization_r18/isolation.py": "03d3cc895543d090d7cc0ce39ee80d188463d039c47b75b7f658c7bda583f12d",
+    "experiments/functional_realization_r18/package.py": "d2a7425e7c204347eb87296ebcc2e5a55c5c205327da99d442ba2045c12194b2",
+    "experiments/functional_realization_r18/run_heldout.py": "4ea7df710f50bec02ac2dfa82ec56bb6480f73f81459db7301f119d78cffd789",
+    "experiments/functional_realization_r18/run_public.py": "714088413c12669bbb964ba2a34599ae57f8850472c90ba6d5dc613947e85f49",
+    "experiments/functional_realization_r18/verify.py": "7ec47c3e2ed18569d042efa031b8c096786b7817844e953f4c9614a816abdaca",
+    "experiments/functional_realization_r18/verify_heldout.py": "bca808791f3189807286af4999984b70991a3abedfc5c618be7bbb5215c0e845",
+    "experiments/functional_realization_r18/verify_heldout_source.py": "8160e0e4224bdaaf4375a9c7594d66a6a2ca6088d174b230c5783d8d2ecad489",
+    "experiments/linguistic_realization_r17/frames.py": "9dafd5f510c2b9313c8952857c7ce3f9de39d947427bc0e23c17b560da2314fc",
+    "experiments/linguistic_realization_r17/frames_v2.py": "d2a84c92f063d1cade0e201219e2831e96562418dd8e8c3498937f694dac2913",
+    "experiments/linguistic_realization_r17/public_qualification.py": "1efa3e823df73c2ce563ba03f2a6ac943f4bcf084a97470c68c18d5c66f781b0",
+    "experiments/linguistic_realization_r17/verify_source.py": "395cdde5799a6bd3fcd27b502b858422588d5b6a5079d60bc9c40b62b409a59e"
+  },
+  "data": {
+    "evaluation_rows": 48,
+    "evaluation_rows_per_signature": 2,
+    "extraction_rows": 72,
+    "extraction_rows_per_signature": 3,
+    "lexeme_bank": 20,
+    "signatures": 24
+  },
+  "format": "abi-r18-heldout-config/1",
+  "gates": {
+    "max_control_accuracy": 0.1,
+    "max_source_exact_regressions": 0,
+    "minimum_parseable_per_signature": 2,
+    "package_functional_exact": 48,
+    "removed_abstain": 48,
+    "require_package_at_least_modal": true
+  },
+  "heldout_seed_commitment": "acb260d78667ba0867968f0ee45cc73c2631094dd67776b2ed19e0fc34125541",
+  "implementation_freeze_commit": "b56ef636285d503d19a2942a450c02a759fd71de",
+  "physical_extraction": {
+    "distribution": "Ubuntu",
+    "policy": "linux-pivot-root-no-network/1"
+  },
+  "public_prerequisite": {
+    "hostile": {
+      "path": "results/functional_realization_r18/public_v1/hostile_audit.json",
+      "sha256": "770a718fa8f3bb2024b6a01ccd2199ac770d27b43edee5600df92e0e63b2c06b"
+    },
+    "live": {
+      "path": "results/functional_realization_r18/public_v1_live_replay/live_verification.json",
+      "sha256": "6c3241963f28ebfd0b15dda4427faa3cd962729256e40553eca9735d20d12dbd"
+    },
+    "receipt": {
+      "path": "results/functional_realization_r18/public_v1/receipt.json",
+      "sha256": "b6ec46b811be9d9a258919edda69ffeb6afbcbe293dd28222387a83dfcfe8ed8"
+    },
+    "strict": {
+      "path": "results/functional_realization_r18/public_v1/strict_verification.json",
+      "sha256": "0d426262381eb203c497c3395e6099bbe2b68449b84ad742a5751d011f2404db"
+    }
+  },
+  "reveal_sha256": "69b050a929ec147f6ce7c407f7f371e5931571d4d864dd4b4053ea11bd5c06b2",
+  "source": {
+    "device": "cuda",
+    "max_new_tokens": 48,
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "snapshot_evidence_sha256": "bdb164548ca29e580e465f520df01fce77524eeec01e807c413443751b4f004b"
+  }
+}
