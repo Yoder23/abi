@@ -1,5 +1,18 @@
 # Changelog
 
+## R20 public instructional realization failure - 2026-09-10
+
+- Froze a materially broader six-behavior natural-instruction interface with
+  72 extraction and 120 evaluation prompts before GPU teacher execution.
+- Preserved all 192 source rows and strict verification. Registered-exact
+  source performance was 10/72 extraction and 19/120 evaluation.
+- Failed closed because six delexicalized output programs did not meet the
+  locked support requirement; compiler, package, control, and LayerCake paths
+  did not run.
+- Closed the exact-template branch for broader English. A successor must use a
+  generative representation and semantic/teacher-relative scoring, with a
+  matched distillation comparison.
+
 ## R19 hidden contrastive realization replication - 2026-09-10
 
 - Froze the implementation at `173ed0b`, committed the 256-bit lexical

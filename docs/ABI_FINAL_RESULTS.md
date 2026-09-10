@@ -269,3 +269,11 @@ result. It is not unrestricted English, autonomous prompt understanding,
 conversation, summarization, arbitrary-domain extraction, LayerCake product
 ingestion, global minimality, or superiority to LoRA/distillation. See
 [R19_CONTRASTIVE_REALIZATION_RESULT.md](R19_CONTRASTIVE_REALIZATION_RESULT.md).
+
+R20 tested the structural representation on six broader raw-instruction tasks.
+The source produced all 192 registered rows but only 10/72 extraction and
+19/120 evaluation strings exactly, and six sufficiently supported programs
+could not be recovered. The prerequisite failed before compiler, package, or
+LayerCake execution. This closes the tested exact delexicalized-program route;
+it does not alter R19's narrower pass. See
+[R20_INSTRUCTIONAL_REALIZATION_RESULT.md](R20_INSTRUCTIONAL_REALIZATION_RESULT.md).

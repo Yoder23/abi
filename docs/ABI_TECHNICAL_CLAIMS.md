@@ -248,3 +248,14 @@ understanding, conversation, summarization, reasoning, open-world labeling,
 arbitrary-domain extraction, LayerCake product acceptance, global minimality,
 teacher-behavior equality, or superiority to LoRA/distillation. See
 [R19_CONTRASTIVE_REALIZATION_RESULT.md](R19_CONTRASTIVE_REALIZATION_RESULT.md).
+
+## Additive R20 instructional-realization failure
+
+R20 does not add a positive claim. Its frozen raw-instruction source interface
+captured 192 rows across prose, summary, email, bullets, clarification, and
+abstention. Only 10/72 extraction and 19/120 evaluation outputs matched the
+registered strings, and teacher variation prevented recovery of six supported
+delexicalized programs. Compilation and LayerCake were not invoked. The tested
+exact-template representation is closed for broader English; a successor must
+use generative artifacts and independent semantic, fluency, adherence,
+hallucination, and teacher-relative scoring.

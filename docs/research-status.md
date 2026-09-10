@@ -29,6 +29,7 @@ fresh blind Codex review. Human quality and independent hardware remain open.
 | Pre-existing source representation extraction into R11 ABI | Bounded blind-reviewed local pass; R15B 4/4 with zero source training and strict/live/hostile verification |
 | Pre-existing structured factual extraction and segregation | Bounded replicated local pass; two R16 16/16 selections, 27 distinct facts, strict/live/hostile verification |
 | Teacher-derived compositional surface realization | Bounded replicated local pass; R19 96/96 disclosed plus 48/48 fresh hidden, strict/live/22-case hostile verification |
+| Raw-instruction supplied-content structural realization | Failed R20 source/compiler prerequisite; 10/72 extraction and 19/120 evaluation exact, no package |
 | Pre-existing open-weight English/domain extraction | Open |
 | LoRA/distillation superiority | Unproven |
 
@@ -120,6 +121,14 @@ replay all verified. The task supplies semantic slots and one of 24 registered
 feature signatures, so this is not general English extraction, autonomous
 prompt understanding, conversation, summarization, arbitrary-domain labeling,
 or LayerCake acceptance.
+
+R20 attempted the next structural expansion across six natural-instruction
+behaviors and failed before compilation. The teacher produced diverse,
+sometimes paraphrased or truncated outputs rather than six repeated verbatim-
+preserving programs. This isolates an ABI representation/source-interface
+limit; LayerCake was not exercised. The next valid path requires a generative
+artifact and multi-axis semantic quality evaluation rather than another exact-
+template prompt repair.
 
 Historical campaign records remain available in `evidence/current/`,
 `results/`, and the research-history branch. Later evidence supersedes a claim

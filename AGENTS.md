@@ -330,5 +330,15 @@ arbitrary teacher.
     successor must materially broaden the representation and free-form English
     behavior.
 
+19. Preserve R20 as a public source/representation failure: 10/72 extraction
+    and 19/120 evaluation outputs matched the registered strings, and the
+    compiler could not identify six sufficiently supported programs. Compiler,
+    package, and LayerCake paths were not invoked. Do not repair this by
+    hand-coding the six oracle renderers, loosening the exact gate after seeing
+    outputs, or tuning another teacher prompt. A successor must use a
+    materially generative representation and separately score semantic
+    content, fluency, adherence, hallucination, and teacher-relative quality
+    against a matched sequence-distillation baseline.
+
 Do not claim the ABI moonshot until those acquisition and external-quality
 gates are supported by their own evidence.

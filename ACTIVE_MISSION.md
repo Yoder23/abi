@@ -223,6 +223,18 @@ or bridge parameters. This certifies only the registered supplied-slot 24-
 signature realization family, not general English, LayerCake acceptance, or
 the ABI moonshot.
 
+R20 status:
+`R20_PUBLIC_SOURCE_COMPILABILITY_FAILED_TEMPLATE_BRANCH_CLOSED`
+
+R20 broadened the interface to six raw natural-instruction/supplied-content
+behaviors over 72 extraction and 120 evaluation prompts. The pinned unchanged
+teacher produced all rows but reached only 10/72 and 19/120 registered-exact
+outputs, respectively. Six output programs could not be identified with the
+locked support, so compilation, packaging, and LayerCake correctly did not
+run. The result is strictly verified and isolates an ABI representation/source
+boundary failure. A successor must be materially generative and use semantic
+and teacher-relative quality, not another exact-template or prompt variant.
+
 ## What R7 proves
 
 R7 proves one bounded capability ABI result: four immutable packages execute
@@ -270,6 +282,7 @@ The blind reviewer returned `VERDICT: PASS` for this exact scope.
 | Pre-existing English/domain knowledge extraction | OPEN; R16 is closed-candidate structured memory, not fluent English or arbitrary domains |
 | Bounded teacher-derived grammar realization | BOUNDED REPLICATED LOCAL PASS; R19 96/96 disclosed plus 48/48 fresh hidden |
 | General teacher-derived English capability | OPEN; R19 is supplied-slot surface realization only |
+| Instruction-conditioned supplied-content realization | FAILED R20 source/compiler prerequisite; no package or LayerCake run |
 | Exact foreign-teacher behavioral transplantation | OPEN; separate Track A |
 
 ## Current objective

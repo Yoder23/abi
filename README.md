@@ -203,6 +203,16 @@ domain extraction, LayerCake ingestion, minimality, or LoRA/distillation
 superiority. See
 [`docs/R19_CONTRASTIVE_REALIZATION_RESULT.md`](docs/R19_CONTRASTIVE_REALIZATION_RESULT.md).
 
+R20 then tested whether that structural approach could scale to raw natural
+instructions for prose, summary, email, bullets, clarification, and abstention.
+The frozen unchanged teacher produced all 192 rows, but reached only 10/72
+registered-exact extraction outputs and 19/120 evaluation outputs. Output
+program support was insufficient for six classes, so compilation, packaging,
+and LayerCake were not invoked. The evidence shows that exact delexicalized
+templates are not a viable bridge to broader free-form English; that branch is
+closed rather than prompt-tuned. See
+[`docs/R20_INSTRUCTIONAL_REALIZATION_RESULT.md`](docs/R20_INSTRUCTIONAL_REALIZATION_RESULT.md).
+
 ## R7 at a glance
 
 | Evidence | Result |
