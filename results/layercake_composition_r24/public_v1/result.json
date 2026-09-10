@@ -1,0 +1,568 @@
+{
+  "artifacts": {
+    "domain_observations": {
+      "path": "domain_observations.jsonl",
+      "rows": 144,
+      "sha256": "bb2a4ff998d539c1255154f624244092e804667830a53f78bd16269f31346dcc"
+    },
+    "english_immutability": {
+      "path": "english_immutability.jsonl",
+      "rows": 720,
+      "sha256": "7c28825b9fdeb26696f1c4206ef1f9ff0c34fb33c498612ffdeddf451f28d610"
+    },
+    "english_leakage": {
+      "path": "english_leakage.jsonl",
+      "rows": 288,
+      "sha256": "ee9c774df78fcdaf3b65769951d64128fbe2aae68b896d246a0a0f3de0651117"
+    },
+    "lifecycle": {
+      "path": "lifecycle.jsonl",
+      "rows": 6,
+      "sha256": "f11582a38902e2a46d3689596eed50ce27105e49436c9b976ee22d4cd68aa46d"
+    }
+  },
+  "claim": "R24_LAYERCAKE_COMPOSITION_FAILED",
+  "claim_ceiling": "NOT_AUTONOMOUS_LABELING_OR_OPEN_WORLD_DOMAINS",
+  "config_sha256": "d0c102b6c26383eaa448df0ba9fddadce6ed652469550bef1346753b9e26dd32",
+  "evidence_sha256": "ea02ddb2e337574b911cd935ae692af42fd5582f07f41079234b26e62e3eca15",
+  "format": "abi-r24-layercake-composition-result/1",
+  "full_abi_moonshot": "OPEN",
+  "gates": {
+    "cpu_gpu_exact": true,
+    "domain_exact_per_seed": false,
+    "english_core_no_domain_answer": true,
+    "english_immutable": true,
+    "host_training_steps_zero": true,
+    "namespace_route_exact": true,
+    "other_domain_isolation": true,
+    "package_lifecycle": false,
+    "packages_signed": true,
+    "source_parameters_copied_zero": true,
+    "targeted_corruption": true,
+    "teacher_absent_at_execution": true,
+    "teacher_agreement": false
+  },
+  "information_accounting": {
+    "bridge_parameters_trained": 416754,
+    "experiment_wall_seconds": 203.07868989999406,
+    "final_domain_package_bytes": 1730628,
+    "host_training_steps": 0,
+    "new_source_calls": 0,
+    "peak_gpu_memory_bytes": 20879872,
+    "source_parameters_copied": 0,
+    "teacher_evaluation_rows_reused": 48,
+    "teacher_present_at_execution": false,
+    "teacher_present_at_training": false,
+    "teacher_training_rows_reused": 48,
+    "training_seconds": 106.75472029997036
+  },
+  "metrics": {
+    "cpu_gpu_exact": 144,
+    "domain_exact": 115,
+    "domain_rows": 144,
+    "english_immutable": 720,
+    "english_leakage_target_answers": 0,
+    "namespace_route_exact": 144,
+    "other_domain_target_answers": 0,
+    "package_lifecycle_exact": 3,
+    "packages_signed": 6,
+    "targeted_corruptions_rejected": 6,
+    "teacher_agreement": 115
+  },
+  "next_action": "preserve failure and isolate the failing domain or host gate",
+  "systems": {
+    "24021": {
+      "chemistry/periodic-table": {
+        "package": {
+          "bytes": 288396,
+          "cake_id": "abi-r24-chemistry-periodic-table-seed24021",
+          "namespace": "chemistry/periodic-table",
+          "package_hash": "dfcbe9ffb3d5b4776a55d40c271e8cf58520653d12b4266feaddd224e6546cf2",
+          "parameters": 69459,
+          "path": "results/layercake_composition_r24/public_v1/packages/chemistry-periodic-table-seed24021.cake",
+          "receiver_training_steps": 0,
+          "sha256": "ce7f3b34ce686ca889ca5071ed1486ff10ff22386022095791fbbd7d47d7c98b",
+          "signed": true,
+          "source_parameters_copied": 0,
+          "teacher_at_inference": false,
+          "tensor_payload_hash": "18f52f1c61396298056ab60cc3d6a656648e17e25dde07fff5b3b7380bd12698"
+        },
+        "training": {
+          "fixed_vocabulary_size": 34,
+          "history": [
+            {
+              "action_accuracy": 0.0,
+              "gradient_norm": 3.376192331314087,
+              "loss": 3.6062629222869873,
+              "step": 1
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.0724153071641922,
+              "loss": 0.0204774159938097,
+              "step": 250
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.016631919890642166,
+              "loss": 0.005933386739343405,
+              "step": 500
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.00939660333096981,
+              "loss": 0.002961426042020321,
+              "step": 750
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.005661091301590204,
+              "loss": 0.0017528117168694735,
+              "step": 1000
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.00417243642732501,
+              "loss": 0.001188082154840231,
+              "step": 1250
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.002694102469831705,
+              "loss": 0.0008542021387256682,
+              "step": 1500
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.0020202542655169964,
+              "loss": 0.0006120780017226934,
+              "step": 1750
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.0016463887877762318,
+              "loss": 0.0004538045031949878,
+              "step": 2000
+            }
+          ],
+          "parameters": 69459,
+          "row_exposure": 16000,
+          "steps": 2000,
+          "target_action_exposure": 32000,
+          "training_rows": 24,
+          "training_seconds": 17.90628339999239
+        }
+      },
+      "geography/national-capitals": {
+        "package": {
+          "bytes": 288480,
+          "cake_id": "abi-r24-geography-national-capitals-seed24021",
+          "namespace": "geography/national-capitals",
+          "package_hash": "ff6424d7b386eca96c6674e359b4a2924dbe4c26a9e60a047edcc151b3b3ce68",
+          "parameters": 69459,
+          "path": "results/layercake_composition_r24/public_v1/packages/geography-national-capitals-seed24021.cake",
+          "receiver_training_steps": 0,
+          "sha256": "3e25de2ff3d2995c2ce7f9e0046d89b32492fb6ac249fa1f12c223b621b50259",
+          "signed": true,
+          "source_parameters_copied": 0,
+          "teacher_at_inference": false,
+          "tensor_payload_hash": "c37f5ee9c3f82c979c3234e1d63c20c2e6c1631e76258cabd85c4b23df23f4ab"
+        },
+        "training": {
+          "fixed_vocabulary_size": 34,
+          "history": [
+            {
+              "action_accuracy": 0.0,
+              "gradient_norm": 2.4792392253875732,
+              "loss": 3.636431932449341,
+              "step": 1
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.06862154603004456,
+              "loss": 0.023129902780056,
+              "step": 250
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.01740347594022751,
+              "loss": 0.0067425197921693325,
+              "step": 500
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.00950685702264309,
+              "loss": 0.0034254249185323715,
+              "step": 750
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.005784926936030388,
+              "loss": 0.002037827391177416,
+              "step": 1000
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.004056965000927448,
+              "loss": 0.0014428795548155904,
+              "step": 1250
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.002665666164830327,
+              "loss": 0.0009974209824576974,
+              "step": 1500
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.00199903454631567,
+              "loss": 0.0007177010411396623,
+              "step": 1750
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.0017249902011826634,
+              "loss": 0.0005531763308681548,
+              "step": 2000
+            }
+          ],
+          "parameters": 69459,
+          "row_exposure": 16000,
+          "steps": 2000,
+          "target_action_exposure": 39998,
+          "training_rows": 24,
+          "training_seconds": 17.82153620000463
+        }
+      }
+    },
+    "24022": {
+      "chemistry/periodic-table": {
+        "package": {
+          "bytes": 288396,
+          "cake_id": "abi-r24-chemistry-periodic-table-seed24022",
+          "namespace": "chemistry/periodic-table",
+          "package_hash": "4b9163ec90b2b09fc5ac557ac1f2196c1f09e2293bf6afaeb990efe677a1589f",
+          "parameters": 69459,
+          "path": "results/layercake_composition_r24/public_v1/packages/chemistry-periodic-table-seed24022.cake",
+          "receiver_training_steps": 0,
+          "sha256": "da58180b0d9ea30b0e7b2cba8034d5583f04ea18ccea4b2caf004a32f514c92f",
+          "signed": true,
+          "source_parameters_copied": 0,
+          "teacher_at_inference": false,
+          "tensor_payload_hash": "7cf0d9778cac808f925cd9b5e9b2f85480fd8fb043fa648050cffa4a4bacbdb3"
+        },
+        "training": {
+          "fixed_vocabulary_size": 34,
+          "history": [
+            {
+              "action_accuracy": 0.0,
+              "gradient_norm": 3.306962490081787,
+              "loss": 3.800931930541992,
+              "step": 1
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.059067245572805405,
+              "loss": 0.02023785561323166,
+              "step": 250
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.01989675499498844,
+              "loss": 0.005989261902868748,
+              "step": 500
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.008567551150918007,
+              "loss": 0.002801603637635708,
+              "step": 750
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.0055937375873327255,
+              "loss": 0.001753920572809875,
+              "step": 1000
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.0033993867691606283,
+              "loss": 0.001144454232417047,
+              "step": 1250
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.002738890703767538,
+              "loss": 0.0007883538492023945,
+              "step": 1500
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.0018999167950823903,
+              "loss": 0.0006038844585418701,
+              "step": 1750
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.0016277317190542817,
+              "loss": 0.0004623511340469122,
+              "step": 2000
+            }
+          ],
+          "parameters": 69459,
+          "row_exposure": 16000,
+          "steps": 2000,
+          "target_action_exposure": 32000,
+          "training_rows": 24,
+          "training_seconds": 16.94585809999262
+        }
+      },
+      "geography/national-capitals": {
+        "package": {
+          "bytes": 288480,
+          "cake_id": "abi-r24-geography-national-capitals-seed24022",
+          "namespace": "geography/national-capitals",
+          "package_hash": "b2ed5f701096115ce5270d72557bf5d5a571943df5935592913a2d15e6cff40a",
+          "parameters": 69459,
+          "path": "results/layercake_composition_r24/public_v1/packages/geography-national-capitals-seed24022.cake",
+          "receiver_training_steps": 0,
+          "sha256": "c823141e999ef84211c4b2690c97e47a73c5637264b5e74485a32b1764caa8bb",
+          "signed": true,
+          "source_parameters_copied": 0,
+          "teacher_at_inference": false,
+          "tensor_payload_hash": "03996bd98297719bcdaf862f7e625ce8e00433e1e7c946376bc9a9039f838f37"
+        },
+        "training": {
+          "fixed_vocabulary_size": 34,
+          "history": [
+            {
+              "action_accuracy": 0.04545454680919647,
+              "gradient_norm": 2.4324569702148438,
+              "loss": 3.615429162979126,
+              "step": 1
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.06220342591404915,
+              "loss": 0.023657958954572678,
+              "step": 250
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.024152332916855812,
+              "loss": 0.007132397964596748,
+              "step": 500
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.009203001856803894,
+              "loss": 0.0035268105566501617,
+              "step": 750
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.005637519061565399,
+              "loss": 0.0020473450422286987,
+              "step": 1000
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.0037519282195717096,
+              "loss": 0.0013791769742965698,
+              "step": 1250
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.002899502869695425,
+              "loss": 0.001003819634206593,
+              "step": 1500
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.0019157357746735215,
+              "loss": 0.000713168759830296,
+              "step": 1750
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.0017914979252964258,
+              "loss": 0.0005443434347398579,
+              "step": 2000
+            }
+          ],
+          "parameters": 69459,
+          "row_exposure": 16000,
+          "steps": 2000,
+          "target_action_exposure": 40000,
+          "training_rows": 24,
+          "training_seconds": 17.512352399993688
+        }
+      }
+    },
+    "24023": {
+      "chemistry/periodic-table": {
+        "package": {
+          "bytes": 288396,
+          "cake_id": "abi-r24-chemistry-periodic-table-seed24023",
+          "namespace": "chemistry/periodic-table",
+          "package_hash": "ca5f3c8a1f657882ce857d18ae3595616100f138c11359e024e26948bd35bcea",
+          "parameters": 69459,
+          "path": "results/layercake_composition_r24/public_v1/packages/chemistry-periodic-table-seed24023.cake",
+          "receiver_training_steps": 0,
+          "sha256": "0a545d7fffe934d55c8255bc78af070bf0fae6cadaff6495b413a2fb05c99d07",
+          "signed": true,
+          "source_parameters_copied": 0,
+          "teacher_at_inference": false,
+          "tensor_payload_hash": "68d9fdfdd7f1d4f6fb9ec623abaab26b171d877a740648a1ecb6a204a7550bd7"
+        },
+        "training": {
+          "fixed_vocabulary_size": 34,
+          "history": [
+            {
+              "action_accuracy": 0.0,
+              "gradient_norm": 3.3226206302642822,
+              "loss": 3.497572898864746,
+              "step": 1
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.0611533559858799,
+              "loss": 0.02129288762807846,
+              "step": 250
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.01961713470518589,
+              "loss": 0.00637375982478261,
+              "step": 500
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.009394335560500622,
+              "loss": 0.0031500672921538353,
+              "step": 750
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.006245823577046394,
+              "loss": 0.0019386622589081526,
+              "step": 1000
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.004125081934034824,
+              "loss": 0.0012520694872364402,
+              "step": 1250
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.0031692064367234707,
+              "loss": 0.0008610325749032199,
+              "step": 1500
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.0020138046238571405,
+              "loss": 0.0006381116691045463,
+              "step": 1750
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.0015848722541704774,
+              "loss": 0.0004909472190774977,
+              "step": 2000
+            }
+          ],
+          "parameters": 69459,
+          "row_exposure": 16000,
+          "steps": 2000,
+          "target_action_exposure": 32000,
+          "training_rows": 24,
+          "training_seconds": 17.906229499989422
+        }
+      },
+      "geography/national-capitals": {
+        "package": {
+          "bytes": 288480,
+          "cake_id": "abi-r24-geography-national-capitals-seed24023",
+          "namespace": "geography/national-capitals",
+          "package_hash": "65a2d57e824e14a5723922aa69b73d54efe5815ecdcdf734aa039ff4a3b10dc5",
+          "parameters": 69459,
+          "path": "results/layercake_composition_r24/public_v1/packages/geography-national-capitals-seed24023.cake",
+          "receiver_training_steps": 0,
+          "sha256": "f251a0623297b3e0d8f7a398b1d700ad24b0305b7f001ad94455d2b7e118acc2",
+          "signed": true,
+          "source_parameters_copied": 0,
+          "teacher_at_inference": false,
+          "tensor_payload_hash": "3277d2f0697de0b4afa7f02e594bbe2105885647337c921e76b1ac3d863cc9a1"
+        },
+        "training": {
+          "fixed_vocabulary_size": 34,
+          "history": [
+            {
+              "action_accuracy": 0.0,
+              "gradient_norm": 2.500199317932129,
+              "loss": 3.4615776538848877,
+              "step": 1
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.06014624238014221,
+              "loss": 0.023889699950814247,
+              "step": 250
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.01933913864195347,
+              "loss": 0.0072035761550068855,
+              "step": 500
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.009133262559771538,
+              "loss": 0.0035983810666948557,
+              "step": 750
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.005940294358879328,
+              "loss": 0.0021518925204873085,
+              "step": 1000
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.003910953179001808,
+              "loss": 0.0014193837996572256,
+              "step": 1250
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.0030021925922483206,
+              "loss": 0.0009732934413477778,
+              "step": 1500
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.0021145010832697153,
+              "loss": 0.0007284398889169097,
+              "step": 1750
+            },
+            {
+              "action_accuracy": 1.0,
+              "gradient_norm": 0.0016287878388538957,
+              "loss": 0.0005756384925916791,
+              "step": 2000
+            }
+          ],
+          "parameters": 69459,
+          "row_exposure": 16000,
+          "steps": 2000,
+          "target_action_exposure": 40000,
+          "training_rows": 24,
+          "training_seconds": 18.66246069999761
+        }
+      }
+    }
+  },
+  "verdict": "FAIL_BOUNDED_COMPOSITION"
+}
