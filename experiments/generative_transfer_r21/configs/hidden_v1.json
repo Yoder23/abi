@@ -1,0 +1,205 @@
+{
+  "base_config": {
+    "bytes": 3518,
+    "path": "experiments/generative_transfer_r21/configs/public_v1.json",
+    "sha256": "4d304b8d85e4267d0cd2f54a471a9b65e5b15035faaf7501554a14693555f99a"
+  },
+  "code_sha256": {
+    "experiments/factual_semantic_r16/public_qualification.py": "c54da43b8cf0f592247101aa8a6b6511795272802ed3ebb606aad1fd1c2e7361",
+    "experiments/foreign_capability_r14/core.py": "ade41e81c0087c9d56f484c1e7c6f8e57a726a31150a42c92b448c1d0eec4816",
+    "experiments/generative_transfer_r21/HIDDEN_PROTOCOL.md": "8feb500b7a77a30fa03294f5a1b7d29859a5a5271d2f18809e8d7643a7d4eec8",
+    "experiments/generative_transfer_r21/acquire.py": "6a14594f7b061f40557b6b41244b9a91bed5afd2cd469883cba5cc0e787dcecc",
+    "experiments/generative_transfer_r21/acquire_hidden.py": "c4ae33e04deebc2d801930a6da806156acbf23940b0bde26fbc5ec9472c55366",
+    "experiments/generative_transfer_r21/evaluate_hidden.py": "1e7517ad0de0a617c2b6be0ad3e83d1ca38467a8e487b591ea482660c4c8783d",
+    "experiments/generative_transfer_r21/freeze_hidden.py": "edb9209f66add10da4be8cc8df07c9a9d992eeafc38ceb97350a0688161358a6",
+    "experiments/generative_transfer_r21/hash_assurance_binding.py": "f1915f3c95256b52edd6140a126ad2eec88d235794be2b76934faaa3b1995e8a",
+    "experiments/generative_transfer_r21/hidden_binding.py": "2d7163e2e6e773d4231ff29c6bae74632e2a3526245e9fde63a1a37292694a76",
+    "experiments/generative_transfer_r21/hidden_protocol.py": "3f53d31427350f0af48a27106d52e45540a4ca775b8043c600bda511f5349cbf",
+    "experiments/generative_transfer_r21/protocol.py": "76fd0d3a45ba094511dba78357832be78996435ae4070362c4706a503f756a18",
+    "experiments/generative_transfer_r21/run.py": "d8fe7648cca96a090e48dae007604ba2839c6aa7c3717a31fc7293daf08d9e32",
+    "experiments/generative_transfer_r21/verify_hidden.py": "f82997f62fddf2d52dd92f4eb4381e50bffe4cf9d44f9bbc7775da04d6930650",
+    "experiments/instructional_realization_r20/protocol.py": "54c2d41e660e66056351d3d8e6caa34613ba35000e0327bdbf9c5078befd9b8f"
+  },
+  "format": "abi-r21-hidden-config/1",
+  "gates": {
+    "bootstrap_samples": 10000,
+    "minimum_label_exact": 114,
+    "minimum_non_collapsed_per_seed": 114,
+    "minimum_non_hallucinating_per_seed": 114,
+    "minimum_task_functional_per_seed": 15,
+    "require_each_seed_no_worse_than_controls": true,
+    "require_each_seed_no_worse_than_teacher": true
+  },
+  "implementation_freeze_commit": "30466db1e8bd7f1827477fb7f208477c0e7d6e0f",
+  "methods": [
+    "raw_sequence",
+    "labeled_monolith",
+    "abi_factorized"
+  ],
+  "packages": [
+    {
+      "bytes": 369435,
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-abstention-seed21021.cake",
+      "sha256": "64252feaf500ab74cfc57ae6b843ad4309037f8b68cceb41d8ae6108249f5831"
+    },
+    {
+      "bytes": 369435,
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-abstention-seed21022.cake",
+      "sha256": "bc7103222f0b00c6164bab96ea7f8e82264eb86c72b5ec42bd2a8a223e576930"
+    },
+    {
+      "bytes": 369435,
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-abstention-seed21023.cake",
+      "sha256": "5057a30d8632da1d85e782ea36b8a27055a9012b15368164cc7016a32cc012c9"
+    },
+    {
+      "bytes": 339370,
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-bullets-seed21021.cake",
+      "sha256": "d7c89eea6d7f725122cf6c82b82e5d0204f182ea10b0e6e1b07573da7fd982b2"
+    },
+    {
+      "bytes": 339370,
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-bullets-seed21022.cake",
+      "sha256": "db6b3155cbcbc431027e722b542833529508517817fbedf4781002a39e690533"
+    },
+    {
+      "bytes": 339370,
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-bullets-seed21023.cake",
+      "sha256": "a6c6be5e0784727146254356e9f7db31af1dafe1abeab1f75a64157def946c62"
+    },
+    {
+      "bytes": 364268,
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-clarification-seed21021.cake",
+      "sha256": "8e59a4c30b73a10b5b5765df88bc104f7cc411e00700278198bc8873b533f035"
+    },
+    {
+      "bytes": 364268,
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-clarification-seed21022.cake",
+      "sha256": "a348ad4100945733ba4c49b77f1b24570fe64ebdbdbac94d9d103b42519e406d"
+    },
+    {
+      "bytes": 364268,
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-clarification-seed21023.cake",
+      "sha256": "20a08fba0911ed8c855d1bac911d7e6a7b79f76aa89887cc08912b4d4d23b400"
+    },
+    {
+      "bytes": 397897,
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-email-seed21021.cake",
+      "sha256": "dd7bcf0d26388c6c4358adebea74bdfab0e8044a100f0d1b54e94f922393e48a"
+    },
+    {
+      "bytes": 397897,
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-email-seed21022.cake",
+      "sha256": "2c6981207cba458dfb584e8453b2b6632772aef043ef6ee2aae8a965e2048dc7"
+    },
+    {
+      "bytes": 397897,
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-email-seed21023.cake",
+      "sha256": "a2a1af86765a1487ed6c56d9b3d4f5721aeab8c9eed9077bea1c945b5e9730b8"
+    },
+    {
+      "bytes": 337776,
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-prose-seed21021.cake",
+      "sha256": "ee4cb2335f35ce0fbd837712647026500f355976f97060cfbbcf65eb1eb9254b"
+    },
+    {
+      "bytes": 337776,
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-prose-seed21022.cake",
+      "sha256": "1baa1211fd022f8c7852cc9145e9ee882ef4dc55584f98e987429fc2fb181d7b"
+    },
+    {
+      "bytes": 337776,
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-prose-seed21023.cake",
+      "sha256": "e5cf7f68b672c8bbba17155b96b1ae39253488b8f9053313fd43bf6784ce04e2"
+    },
+    {
+      "bytes": 362255,
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-summary-seed21021.cake",
+      "sha256": "625a1e182b93023351f383339a7a255db9425b01eec2d36f81e2162d1b3f7e6e"
+    },
+    {
+      "bytes": 362255,
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-summary-seed21022.cake",
+      "sha256": "af197344c75653990820577579e7a5e42863f07351abe5bff61a191e66b5fceb"
+    },
+    {
+      "bytes": 362255,
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-summary-seed21023.cake",
+      "sha256": "8a543029ca9d5aa526f99d02a5d2b7744e047cb027cf947fe17cd5cd329b8893"
+    },
+    {
+      "bytes": 2254560,
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/labeled_monolith-seed21021.cake",
+      "sha256": "624e38a4192b8ebf52684c4a8c7d0f0a99aeb1ab4f449b19183fed1687da014c"
+    },
+    {
+      "bytes": 2254560,
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/labeled_monolith-seed21022.cake",
+      "sha256": "4de9be5e57c17460eae04783afbbdd41815d83d901191fb1ce9de2511f80fe25"
+    },
+    {
+      "bytes": 2254560,
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/labeled_monolith-seed21023.cake",
+      "sha256": "301bc5ae8d236bcfc8a74600aa817b223b79f05543417b64c69e2ad9d46d2b4a"
+    },
+    {
+      "bytes": 2254552,
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/raw_sequence-seed21021.cake",
+      "sha256": "18f584fa44a7fa00d6e1c670b77850b47d24b09f303d2d3f29a12858044a6dc9"
+    },
+    {
+      "bytes": 2254552,
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/raw_sequence-seed21022.cake",
+      "sha256": "908083f7c0b13bc221c20f1af123af8570932499e8557bcd6ead88fa7f3b53c2"
+    },
+    {
+      "bytes": 2254552,
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/raw_sequence-seed21023.cake",
+      "sha256": "6a97fcfd5b7b6dcbcbacc38a02b34277a77850a80aba3e69a454f450d5c67976"
+    }
+  ],
+  "public_candidate_engine": {
+    "bytes": 83855,
+    "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/result.json",
+    "sha256": "2d0632975a09e3b5b59f2802140dec05f4b273411ec2bcf61b1c163060602732"
+  },
+  "public_candidate_labeler": {
+    "bytes": 5055,
+    "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/labeler.json",
+    "sha256": "a6e9886c50dae39e05d3230aacb6aadb14ab070fdf513c7a18cc28628457a35d"
+  },
+  "public_candidate_wrapper": {
+    "bytes": 1103,
+    "path": "results/generative_transfer_r21/public_v5_bakeoff/result.json",
+    "sha256": "c673b11a53c05ac79299dd521dfb0661a8f18c29550bb8606aa092956a6dc655"
+  },
+  "public_live_receipt": {
+    "bytes": 6379,
+    "path": "results/generative_transfer_r21/public_v7_live_verification/receipt.json",
+    "sha256": "ab873f553972f085a5655fa4dd74f143ce4133b357c24b757beda3268799d28b"
+  },
+  "public_strict_verification": {
+    "bytes": 808,
+    "path": "results/generative_transfer_r21/public_v7_live_verification/strict_verification.json",
+    "sha256": "7defaee39add71da3a54c7db6fc1b6ce96d65bfc098b45ce0fc4ff30f54b9c3a"
+  },
+  "rows": {
+    "per_task": 20,
+    "tasks": 6,
+    "total": 120
+  },
+  "second_reveal_authorized": false,
+  "seed_commitment": "cd54e4f9a720cd5e5c497f5353ac54d9eba37fd3750ee4813e2e8e13c5d23135",
+  "seeds": [
+    21021,
+    21022,
+    21023
+  ],
+  "source": {
+    "device": "cuda",
+    "max_new_tokens": 96,
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c"
+  },
+  "student_retraining_authorized": false
+}
