@@ -1,0 +1,31 @@
+{
+  "candidate_changes": 0,
+  "claim_ceiling": "NOT_UNRESTRICTED_ENGLISH_OR_ABI_MOONSHOT",
+  "evidence_sha256": "97c7064c1d5631bdfd6e16e4412bd7425781d09311d25dd07cb33d01680991fa",
+  "format": "abi-r23-live-repair-strict-verification/1",
+  "full_abi_moonshot": "OPEN",
+  "gate_changes": 0,
+  "live_receipt_sha256": "01b9f6cdbb9c104d500622c8c92254ada192423fe57fec0ff28ed440ef55b406",
+  "package_changes": 0,
+  "repair_binding_sha256": "c93534972c46636aec3288f4b362fa33c19f3040f07e0cfca9bb8917c0f2170e",
+  "repair_config_sha256": "83da5cf90cff307b94f1510f2a9b8f373bb97399f93e1875feec0786a4026136",
+  "scientific_claim": "R23_BOUNDED_FRESH_SEMANTIC_SUPPLIED_CONTENT_TRANSFER",
+  "scorer_changes": 0,
+  "status": "PASS_STRICTLY_VERIFIED_SEMANTIC_REPLICATION",
+  "systems_joins": 1,
+  "underlying_verification": {
+    "claim_ceiling": "NOT_UNRESTRICTED_ENGLISH_OR_ABI_MOONSHOT",
+    "cpu_rows_recomputed": 54,
+    "evidence_sha256": "afe7f7d8e733c204e287cebfb588a202fbb1ad9aed49dcc6442c96a17cfb54a7",
+    "format": "abi-r23-live-strict-verification/1",
+    "full_abi_moonshot": "OPEN",
+    "lifecycle_rows_recomputed": 24,
+    "live_config_sha256": "f0caa3eadca9a61764eb5ae9bdb4865da5f91b5ec7c80d7651e36e5871a6e910",
+    "live_receipt_sha256": "01b9f6cdbb9c104d500622c8c92254ada192423fe57fec0ff28ed440ef55b406",
+    "live_rows_recomputed": 1080,
+    "packages_recomputed": 24,
+    "scientific_claim": "R23_BOUNDED_FRESH_SEMANTIC_SUPPLIED_CONTENT_TRANSFER",
+    "status": "PASS_STRICTLY_VERIFIED_SEMANTIC_REPLICATION",
+    "stored_scientific_booleans_trusted": false
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "candidate_engine_sha256": "576d9d908905623a2bcc234a29beffe1b64ebf400afa88bc1d671497c1336c15",
+  "candidate_observations_sha256": "3dfe71bcec653f401692556f80d6a995e38d240baf179941ac0338c1ba557693",
+  "claim_ceiling": "NOT_UNRESTRICTED_ENGLISH_OR_ABI_MOONSHOT",
+  "config_sha256": "f0caa3eadca9a61764eb5ae9bdb4865da5f91b5ec7c80d7651e36e5871a6e910",
+  "cpu_observations": {
+    "path": "cpu_observations.jsonl",
+    "rows": 54,
+    "sha256": "edce7ce3abb9634456e123ec0ab38b8251b0c68e31385fcb1c2bea71ffaf53aa"
+  },
+  "elapsed_seconds": 97.76574150001397,
+  "evidence_sha256": "c1eff62581afb5dd0a12abded3429c50c192ee5e9e57e612ef2f932d7fcf4ecf",
+  "execution_pid": 23504,
+  "format": "abi-r23-fresh-live-verification/1",
+  "full_abi_moonshot": "OPEN",
+  "lifecycle_observations": {
+    "path": "lifecycle_observations.jsonl",
+    "rows": 24,
+    "sha256": "ecef12e9672b287521a80be2769ca7cd7af39471732628b51fd6cdcfa7345d6e"
+  },
+  "live_observations": {
+    "path": "live_observations.jsonl",
+    "rows": 1080,
+    "sha256": "2e2bd890f2a7696339c88e2b618f41ec1aac254be008d9ee06f98d9cdb9a2ac9"
+  },
+  "package_removals": 24,
+  "package_restorations": 24,
+  "packages_signature_verified": 24,
+  "receiver_training_steps": 0,
+  "recomputed_aggregates": {
+    "abi_factorized:21021": {
+      "adherent": 120,
+      "functional": 120,
+      "functional_by_task": {
+        "abstention": 20,
+        "bullets": 20,
+        "clarification": 20,
+        "email": 20,
+        "prose": 20,
+        "summary": 20
+      },
+      "mean_teacher_lexical_f1": 0.64927896005958,
+      "non_collapsed": 120,
+      "non_hallucinating": 120,
+      "rows": 120,
+      "semantic": 120
+    },
+    "abi_factorized:21022": {
+      "adherent": 120,
+      "functional": 120,
+      "functional_by_task": {
+        "abstention": 20,
+        "bullets": 20,
+        "clarification": 20,
+        "email": 20,
+        "prose": 20,
+        "summary": 20
+      },
+      "mean_teacher_lexical_f1": 0.6549015961902206,
+      "non_collapsed": 120,
+      "non_hallucinating": 120,
+      "rows": 120,
+      "semantic": 120
+    },
+    "abi_factorized:21023": {
+      "adherent": 120,
+      "functional": 120,
+      "functional_by_task": {
+        "abstention": 20,
+        "bullets": 20,
+        "clarification": 20,
+        "email": 20,
+        "prose": 20,
+        "summary": 20
+      },
+      "mean_teacher_lexical_f1": 0.6474301052764708,
+      "non_collapsed": 120,
+      "non_hallucinating": 120,
+      "rows": 120,
+      "semantic": 120
+    },
+    "labeled_monolith:21021": {
+      "adherent": 114,
+      "functional": 99,
+      "functional_by_task": {
+        "abstention": 14,
+        "bullets": 20,
+        "clarification": 5,
+        "email": 20,
+        "prose": 20,
+        "summary": 20
+      },
+      "mean_teacher_lexical_f1": 0.6687975578192743,
+      "non_collapsed": 120,
+      "non_hallucinating": 120,
+      "rows": 120,
+      "semantic": 99
+    },
+    "labeled_monolith:21022": {
+      "adherent": 119,
+      "functional": 100,
+      "functional_by_task": {
+        "abstention": 19,
+        "bullets": 20,
+        "clarification": 4,
+        "email": 20,
+        "prose": 20,
+        "summary": 17
+      },
+      "mean_teacher_lexical_f1": 0.6614888407726096,
+      "non_collapsed": 120,
+      "non_hallucinating": 120,
+      "rows": 120,
+      "semantic": 100
+    },
+    "labeled_monolith:21023": {
+      "adherent": 112,
+      "functional": 110,
+      "functional_by_task": {
+        "abstention": 12,
+        "bullets": 20,
+        "clarification": 18,
+        "email": 20,
+        "prose": 20,
+        "summary": 20
+      },
+      "mean_teacher_lexical_f1": 0.6603174995475413,
+      "non_collapsed": 120,
+      "non_hallucinating": 120,
+      "rows": 120,
+      "semantic": 110
+    },
+    "raw_sequence:21021": {
+      "adherent": 85,
+      "functional": 32,
+      "functional_by_task": {
+        "abstention": 10,
+        "bullets": 5,
+        "clarification": 2,
+        "email": 15,
+        "prose": 0,
+        "summary": 0
+      },
+      "mean_teacher_lexical_f1": 0.44856181781914795,
+      "non_collapsed": 120,
+      "non_hallucinating": 87,
+      "rows": 120,
+      "semantic": 46
+    },
+    "raw_sequence:21022": {
+      "adherent": 71,
+      "functional": 32,
+      "functional_by_task": {
+        "abstention": 11,
+        "bullets": 5,
+        "clarification": 1,
+        "email": 15,
+        "prose": 0,
+        "summary": 0
+      },
+      "mean_teacher_lexical_f1": 0.42758650790038855,
+      "non_collapsed": 120,
+      "non_hallucinating": 99,
+      "rows": 120,
+      "semantic": 42
+    },
+    "raw_sequence:21023": {
+      "adherent": 66,
+      "functional": 27,
+      "functional_by_task": {
+        "abstention": 10,
+        "bullets": 5,
+        "clarification": 2,
+        "email": 10,
+        "prose": 0,
+        "summary": 0
+      },
+      "mean_teacher_lexical_f1": 0.4445353113385518,
+      "non_collapsed": 119,
+      "non_hallucinating": 113,
+      "rows": 120,
+      "semantic": 38
+    }
+  },
+  "recomputed_gates": {
+    "all_packages_frozen": true,
+    "cpu_gpu_rows_complete": true,
+    "each_seed_each_task": true,
+    "each_seed_no_worse_than_controls": true,
+    "each_seed_no_worse_than_teacher": true,
+    "each_seed_non_collapsed": true,
+    "each_seed_non_hallucinating": true,
+    "gpu_rows_complete": true,
+    "label_exact": true,
+    "student_retraining_zero": true,
+    "teacher_absent_at_execution": true
+  },
+  "scientific_claim": "R23_BOUNDED_FRESH_SEMANTIC_SUPPLIED_CONTENT_TRANSFER",
+  "source_parameters_in_packages": 0,
+  "source_software_loaded": false,
+  "status": "PASS_FRESH_LIVE_SEMANTIC_REPLICATION",
+  "targeted_corruptions_rejected": 24
+}
