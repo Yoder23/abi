@@ -1,0 +1,18 @@
+{
+  "format": "abi-r23-live-failed-attempt/1",
+  "verdict": "FAIL_CLOSED_BEFORE_EXECUTION",
+  "launch_commit": "927aa90c687852d5388de1625086950f90e9041a",
+  "live_config_sha256": "f0caa3eadca9a61764eb5ae9bdb4865da5f91b5ec7c80d7651e36e5871a6e910",
+  "live_verifier_sha256": "bd775681a076b61fcfd1783eebc38849a38d5bb5df09b47c2b7207939a681c84",
+  "exception_type": "KeyError",
+  "exception_message": "systems",
+  "failed_operation": "read package systems from hidden-result summary",
+  "candidate_rows_executed": 0,
+  "candidate_changes": 0,
+  "package_changes": 0,
+  "scorer_changes": 0,
+  "gate_changes": 0,
+  "repair_scope": "join package systems from frozen public-candidate engine",
+  "full_abi_moonshot": "OPEN",
+  "evidence_sha256": "1da7cd41ee9a83a3cc7efcc49ee8c65e3ab6a9470e1f2b9d1fca39a58221cfed"
+}
