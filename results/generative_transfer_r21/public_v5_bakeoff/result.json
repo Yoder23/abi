@@ -1,0 +1,20 @@
+{
+  "autonomous_ontology_discovery": false,
+  "base_config_sha256": "4d304b8d85e4267d0cd2f54a471a9b65e5b15035faaf7501554a14693555f99a",
+  "claim_ceiling": "NOT_UNRESTRICTED_ENGLISH_OR_ABI_MOONSHOT",
+  "control_config_sha256": "5cf37031f8002aee31daad92dfb780d8530f94162e414091b2c25a3fdc18d998",
+  "control_source_receipt_sha256": "1bbad508456b0cf62902ad755e16812e3f75815af94af5537753417be5c1a74a",
+  "control_source_rows_sha256": "15e9a3d5c65edb9db459bdab1a4651f26d8e88e05d921b08c6c7f24a77fa0467",
+  "engine_result": {
+    "evidence_sha256": "74a1418179075eb0a3adb5c6904df1ab4c6aaec8104b3a7c7d833c0d8b030fa4",
+    "path": "engine/result.json",
+    "sha256": "2d0632975a09e3b5b59f2802140dec05f4b273411ec2bcf61b1c163060602732"
+  },
+  "evidence_sha256": "528752e2dc69f121d99cb5c68e307b13451ac2355572db00e1554cda57a79750",
+  "format": "abi-r21-label-control-bakeoff-result/1",
+  "full_abi_moonshot": "OPEN",
+  "response_regeneration_performed": false,
+  "scientific_claim": "R21_BOUNDED_PUBLIC_LABEL_SEPARATED_GENERATIVE_TRANSFER",
+  "teacher_side_labeling": false,
+  "verdict": "PASS_PUBLIC_PREREQUISITE"
+}
