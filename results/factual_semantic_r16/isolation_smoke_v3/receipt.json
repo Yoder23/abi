@@ -1,0 +1,23 @@
+{
+  "evidence_sha256": "d9f4f9e57f36aaf9027626a706fa9ed3c96255e44d2da5ddfe4b17770153f02b",
+  "format": "abi-r16-physical-isolation-smoke/1",
+  "launcher_sha256": "b9f2eb1a5b8d1cb6fc38da09b2dc6126c2fa87e2af3450d4b257b49828a174af",
+  "packages": [
+    {
+      "bytes": 157,
+      "facts": 1,
+      "namespace": "chemistry/periodic-table",
+      "path": "packages/sha256-fcc89562d65e4a8bedecc93fcba82dac331d1960178b5690e77aeeb8b52afcb1.abipkg",
+      "sha256": "fcc89562d65e4a8bedecc93fcba82dac331d1960178b5690e77aeeb8b52afcb1"
+    },
+    {
+      "bytes": 165,
+      "facts": 1,
+      "namespace": "geography/national-capitals",
+      "path": "packages/sha256-868d4d2eca434e2964e9b07dd944258cc5a71bc5606c7a1daad3281aad5c3704.abipkg",
+      "sha256": "868d4d2eca434e2964e9b07dd944258cc5a71bc5606c7a1daad3281aad5c3704"
+    }
+  ],
+  "result_sha256": "a03808721d469f4d562c86064f29124da9ff0da17ef0ed62df326a493a689ff4",
+  "verdict": "PASS"
+}

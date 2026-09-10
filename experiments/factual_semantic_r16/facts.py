@@ -36,16 +36,73 @@ PUBLIC_FACTS = (
     Fact("geo-nigeria", "geography/national-capitals", "national_capital", "Nigeria", "Abuja"),
 )
 
+HELDOUT_FACTS = (
+    Fact("chem-helium", "chemistry/periodic-table", "atomic_number", "helium", "2"),
+    Fact("chem-lithium", "chemistry/periodic-table", "atomic_number", "lithium", "3"),
+    Fact("chem-beryllium", "chemistry/periodic-table", "atomic_number", "beryllium", "4"),
+    Fact("chem-boron", "chemistry/periodic-table", "atomic_number", "boron", "5"),
+    Fact("chem-fluorine", "chemistry/periodic-table", "atomic_number", "fluorine", "9"),
+    Fact("chem-neon", "chemistry/periodic-table", "atomic_number", "neon", "10"),
+    Fact("chem-magnesium", "chemistry/periodic-table", "atomic_number", "magnesium", "12"),
+    Fact("chem-aluminum", "chemistry/periodic-table", "atomic_number", "aluminum", "13"),
+    Fact("chem-silicon", "chemistry/periodic-table", "atomic_number", "silicon", "14"),
+    Fact("chem-phosphorus", "chemistry/periodic-table", "atomic_number", "phosphorus", "15"),
+    Fact("chem-sulfur", "chemistry/periodic-table", "atomic_number", "sulfur", "16"),
+    Fact("chem-argon", "chemistry/periodic-table", "atomic_number", "argon", "18"),
+    Fact("chem-potassium", "chemistry/periodic-table", "atomic_number", "potassium", "19"),
+    Fact("chem-calcium", "chemistry/periodic-table", "atomic_number", "calcium", "20"),
+    Fact("chem-nickel", "chemistry/periodic-table", "atomic_number", "nickel", "28"),
+    Fact("chem-copper", "chemistry/periodic-table", "atomic_number", "copper", "29"),
+    Fact("chem-zinc", "chemistry/periodic-table", "atomic_number", "zinc", "30"),
+    Fact("chem-krypton", "chemistry/periodic-table", "atomic_number", "krypton", "36"),
+    Fact("chem-tin", "chemistry/periodic-table", "atomic_number", "tin", "50"),
+    Fact("chem-iodine", "chemistry/periodic-table", "atomic_number", "iodine", "53"),
+    Fact("chem-platinum", "chemistry/periodic-table", "atomic_number", "platinum", "78"),
+    Fact("chem-mercury", "chemistry/periodic-table", "atomic_number", "mercury", "80"),
+    Fact("chem-lead", "chemistry/periodic-table", "atomic_number", "lead", "82"),
+    Fact("chem-uranium", "chemistry/periodic-table", "atomic_number", "uranium", "92"),
+    Fact("geo-italy", "geography/national-capitals", "national_capital", "Italy", "Rome"),
+    Fact("geo-spain", "geography/national-capitals", "national_capital", "Spain", "Madrid"),
+    Fact("geo-portugal", "geography/national-capitals", "national_capital", "Portugal", "Lisbon"),
+    Fact("geo-china", "geography/national-capitals", "national_capital", "China", "Beijing"),
+    Fact("geo-india", "geography/national-capitals", "national_capital", "India", "New Delhi"),
+    Fact("geo-argentina", "geography/national-capitals", "national_capital", "Argentina", "Buenos Aires"),
+    Fact("geo-kenya", "geography/national-capitals", "national_capital", "Kenya", "Nairobi"),
+    Fact("geo-thailand", "geography/national-capitals", "national_capital", "Thailand", "Bangkok"),
+    Fact("geo-vietnam", "geography/national-capitals", "national_capital", "Vietnam", "Hanoi"),
+    Fact("geo-norway", "geography/national-capitals", "national_capital", "Norway", "Oslo"),
+    Fact("geo-sweden", "geography/national-capitals", "national_capital", "Sweden", "Stockholm"),
+    Fact("geo-finland", "geography/national-capitals", "national_capital", "Finland", "Helsinki"),
+    Fact("geo-greece", "geography/national-capitals", "national_capital", "Greece", "Athens"),
+    Fact("geo-austria", "geography/national-capitals", "national_capital", "Austria", "Vienna"),
+    Fact("geo-poland", "geography/national-capitals", "national_capital", "Poland", "Warsaw"),
+    Fact("geo-mexico", "geography/national-capitals", "national_capital", "Mexico", "Mexico City"),
+    Fact("geo-peru", "geography/national-capitals", "national_capital", "Peru", "Lima"),
+    Fact("geo-chile", "geography/national-capitals", "national_capital", "Chile", "Santiago"),
+    Fact("geo-cuba", "geography/national-capitals", "national_capital", "Cuba", "Havana"),
+    Fact("geo-iceland", "geography/national-capitals", "national_capital", "Iceland", "Reykjavik"),
+    Fact("geo-ireland", "geography/national-capitals", "national_capital", "Ireland", "Dublin"),
+    Fact("geo-switzerland", "geography/national-capitals", "national_capital", "Switzerland", "Bern"),
+    Fact("geo-turkey", "geography/national-capitals", "national_capital", "Turkey", "Ankara"),
+    Fact("geo-new-zealand", "geography/national-capitals", "national_capital", "New Zealand", "Wellington"),
+)
+
 TEMPLATES = {
     "atomic_number": (
         "What is the atomic number of {entity}?",
         "Identify {entity}'s atomic number.",
         "Which atomic number belongs to the element {entity}?",
+        "State the atomic number assigned to {entity}.",
+        "In periodic-table notation, what atomic number identifies {entity}?",
+        "Give the proton-count atomic number for {entity}.",
     ),
     "national_capital": (
         "What is the national capital of {entity}?",
         "Identify {entity}'s capital city.",
         "Which city is the capital of {entity}?",
+        "Name the seat-of-government capital of {entity}.",
+        "For {entity}, give the national capital.",
+        "State the capital city associated with {entity}.",
     ),
 }
 
@@ -70,7 +127,7 @@ def question(fact: Fact, view: int) -> str:
 
 def namespace_from_question(text: str) -> str:
     lowered = canonical_answer(text)
-    chemistry = "atomic number" in lowered
+    chemistry = "atomic number" in lowered or "proton-count" in lowered
     geography = "capital" in lowered
     if chemistry == geography:
         raise R16FactError("R16 semantic classifier is ambiguous")

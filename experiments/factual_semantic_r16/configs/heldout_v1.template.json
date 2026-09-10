@@ -1,0 +1,29 @@
+{
+  "code_sha256": "POPULATE_AFTER_IMPLEMENTATION_FREEZE",
+  "data": {
+    "candidate_budget": 12,
+    "evaluation_views": [3, 4, 5],
+    "extraction_views": [0, 1, 2],
+    "facts_per_namespace": 8
+  },
+  "format": "abi-r16-heldout-config/1",
+  "gates": {
+    "max_control_accuracy": 0.1
+  },
+  "heldout_seed_commitment": "POPULATE_AFTER_IMPLEMENTATION_FREEZE",
+  "physical_extraction": {
+    "distribution": "Ubuntu",
+    "policy": "linux-pivot-root-no-network/1"
+  },
+  "public_prerequisite": {
+    "receipt": "results/factual_semantic_r16/public_v2_revision_002/receipt.json",
+    "sha256": "67c1832c2a323e8ae07ae0fe55e9c41489331364c1ae63b9c6f2ffdef0915826"
+  },
+  "reveal_sha256": "POPULATE_AFTER_PREREGISTRATION",
+  "source": {
+    "max_new_tokens": 12,
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "snapshot_evidence_sha256": "bdb164548ca29e580e465f520df01fce77524eeec01e807c413443751b4f004b"
+  }
+}
