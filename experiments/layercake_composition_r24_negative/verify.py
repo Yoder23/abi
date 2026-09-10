@@ -132,7 +132,8 @@ def verify(repair_config_path: Path) -> dict[str, Any]:
     if (
         result.get("metrics") != metrics
         or result.get("gates") != gates
-        or failed != ["domain_exact_per_seed", "package_lifecycle"]
+        or failed
+        != ["domain_exact_per_seed", "package_lifecycle", "teacher_agreement"]
         or result.get("verdict") != "FAIL_BOUNDED_COMPOSITION"
         or result.get("claim") != "R24_LAYERCAKE_COMPOSITION_FAILED"
         or result.get("full_abi_moonshot") != "OPEN"
