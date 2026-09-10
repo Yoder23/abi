@@ -1,0 +1,23 @@
+{
+  "format": "abi-r21-operational-failure/1",
+  "scientific_result": "NOT_REACHED",
+  "stage": "first_package_custody_path_recording",
+  "cause": "relative output path was passed to a packager that records paths relative to the absolute repository root",
+  "exception": "ValueError: destination is not in the subpath of repository root because one path is relative and the other is absolute",
+  "data_changes": 0,
+  "model_changes": 0,
+  "gate_changes": 0,
+  "preserved_partial_artifacts": [
+    {
+      "path": "engine/labeler.json",
+      "bytes": 5055,
+      "sha256": "a6e9886c50dae39e05d3230aacb6aadb14ab070fdf513c7a18cc28628457a35d"
+    },
+    {
+      "path": "engine/packages/raw_sequence-seed21021.cake",
+      "bytes": 2254510,
+      "sha256": "9e0dfd873e26bf5f078bd5477c1bda914a0ae4cf45a2b2f004bc5c652bf0864f"
+    }
+  ],
+  "authorized_relaunch": "same frozen command with an absolute output path into a new immutable directory"
+}
