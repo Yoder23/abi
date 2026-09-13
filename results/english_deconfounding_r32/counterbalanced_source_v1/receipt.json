@@ -1,0 +1,210 @@
+{
+  "artifacts": {
+    "accepted_rows": {
+      "bytes": 19312,
+      "path": "accepted_rows.jsonl",
+      "sha256": "2d18ff7e64031b95b7e12c9861f2a2b76203f8b8f5f599bd553e481fdcd00675"
+    },
+    "attempts": {
+      "bytes": 21986,
+      "path": "attempts.jsonl",
+      "sha256": "44c2cae1d242dbb4db559143369a519804ef1ad3815b8b9399a91b978b82eaaa"
+    },
+    "quarantine": {
+      "bytes": 4515,
+      "path": "quarantine.jsonl",
+      "sha256": "270fb0c4d924d9fd93ab148dfb96aa1d354abe21e77013d8fcad86699da11489"
+    }
+  },
+  "claim_ceiling": "COUNTERBALANCED_SUPPLIED_CONTENT_SOURCE_NOT_GENERAL_ENGLISH",
+  "design": {
+    "accepted_by_cell": {
+      "abstention": {
+        "instruction-0/detail-0": 0,
+        "instruction-0/detail-1": 0,
+        "instruction-0/detail-2": 0,
+        "instruction-1/detail-0": 0,
+        "instruction-1/detail-1": 0,
+        "instruction-1/detail-2": 0,
+        "instruction-2/detail-0": 0,
+        "instruction-2/detail-1": 0,
+        "instruction-2/detail-2": 0
+      },
+      "bullets": {
+        "instruction-0/detail-0": 0,
+        "instruction-0/detail-1": 0,
+        "instruction-0/detail-2": 0,
+        "instruction-1/detail-0": 0,
+        "instruction-1/detail-1": 0,
+        "instruction-1/detail-2": 0,
+        "instruction-2/detail-0": 0,
+        "instruction-2/detail-1": 0,
+        "instruction-2/detail-2": 0
+      },
+      "clarification": {
+        "instruction-0/detail-0": 0,
+        "instruction-0/detail-1": 0,
+        "instruction-0/detail-2": 0,
+        "instruction-1/detail-0": 0,
+        "instruction-1/detail-1": 0,
+        "instruction-1/detail-2": 0,
+        "instruction-2/detail-0": 0,
+        "instruction-2/detail-1": 0,
+        "instruction-2/detail-2": 0
+      },
+      "comparison": {
+        "instruction-0/detail-0": 0,
+        "instruction-0/detail-1": 0,
+        "instruction-0/detail-2": 0,
+        "instruction-1/detail-0": 0,
+        "instruction-1/detail-1": 0,
+        "instruction-1/detail-2": 0,
+        "instruction-2/detail-0": 0,
+        "instruction-2/detail-1": 0,
+        "instruction-2/detail-2": 0
+      },
+      "conversation": {
+        "instruction-0/detail-0": 0,
+        "instruction-0/detail-1": 0,
+        "instruction-0/detail-2": 0,
+        "instruction-1/detail-0": 0,
+        "instruction-1/detail-1": 0,
+        "instruction-1/detail-2": 0,
+        "instruction-2/detail-0": 0,
+        "instruction-2/detail-1": 0,
+        "instruction-2/detail-2": 0
+      },
+      "email": {
+        "instruction-0/detail-0": 0,
+        "instruction-0/detail-1": 0,
+        "instruction-0/detail-2": 0,
+        "instruction-1/detail-0": 0,
+        "instruction-1/detail-1": 0,
+        "instruction-1/detail-2": 0,
+        "instruction-2/detail-0": 0,
+        "instruction-2/detail-1": 0,
+        "instruction-2/detail-2": 0
+      },
+      "planning": {
+        "instruction-0/detail-0": 0,
+        "instruction-0/detail-1": 0,
+        "instruction-0/detail-2": 0,
+        "instruction-1/detail-0": 0,
+        "instruction-1/detail-1": 0,
+        "instruction-1/detail-2": 0,
+        "instruction-2/detail-0": 0,
+        "instruction-2/detail-1": 0,
+        "instruction-2/detail-2": 0
+      },
+      "prose": {
+        "instruction-0/detail-0": 2,
+        "instruction-0/detail-1": 2,
+        "instruction-0/detail-2": 2,
+        "instruction-1/detail-0": 2,
+        "instruction-1/detail-1": 2,
+        "instruction-1/detail-2": 2,
+        "instruction-2/detail-0": 2,
+        "instruction-2/detail-1": 2,
+        "instruction-2/detail-2": 2
+      },
+      "reasoning": {
+        "instruction-0/detail-0": 0,
+        "instruction-0/detail-1": 0,
+        "instruction-0/detail-2": 0,
+        "instruction-1/detail-0": 0,
+        "instruction-1/detail-1": 0,
+        "instruction-1/detail-2": 0,
+        "instruction-2/detail-0": 0,
+        "instruction-2/detail-1": 0,
+        "instruction-2/detail-2": 0
+      },
+      "rewrite": {
+        "instruction-0/detail-0": 0,
+        "instruction-0/detail-1": 0,
+        "instruction-0/detail-2": 0,
+        "instruction-1/detail-0": 0,
+        "instruction-1/detail-1": 0,
+        "instruction-1/detail-2": 0,
+        "instruction-2/detail-0": 0,
+        "instruction-2/detail-1": 0,
+        "instruction-2/detail-2": 0
+      },
+      "summary": {
+        "instruction-0/detail-0": 2,
+        "instruction-0/detail-1": 1,
+        "instruction-0/detail-2": 0,
+        "instruction-1/detail-0": 0,
+        "instruction-1/detail-1": 0,
+        "instruction-1/detail-2": 0,
+        "instruction-2/detail-0": 0,
+        "instruction-2/detail-1": 0,
+        "instruction-2/detail-2": 0
+      },
+      "tone": {
+        "instruction-0/detail-0": 0,
+        "instruction-0/detail-1": 0,
+        "instruction-0/detail-2": 0,
+        "instruction-1/detail-0": 0,
+        "instruction-1/detail-1": 0,
+        "instruction-1/detail-2": 0,
+        "instruction-2/detail-0": 0,
+        "instruction-2/detail-1": 0,
+        "instruction-2/detail-2": 0
+      }
+    },
+    "detail_cycles": 3,
+    "instruction_wordings": 3,
+    "max_candidates_per_cell": 6,
+    "rows_per_cell": 2
+  },
+  "evidence_sha256": "2669146003c31a19d12ace75d185ea39376eafcb74c63898a63f21de9198a7a3",
+  "format": "abi-r32-counterbalanced-source/1",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "elapsed_seconds": 109.0598164999974,
+    "external_hardware_used": false,
+    "hidden_activations_stored": 0,
+    "logits_stored": 0,
+    "peak_cpu_rss_bytes": 2165977088,
+    "peak_gpu_memory_bytes": 15311012864,
+    "raw_source_prompts": 42,
+    "rendered_prompt_tokens": 4509,
+    "source_load_seconds": 9.709192399983294,
+    "source_parameters_copied": 0,
+    "teacher_generated_tokens": 1857,
+    "teacher_output_bytes_all_attempts": 5816,
+    "unique_candidate_prompt_bytes": 6277,
+    "unique_candidate_prompts": 28
+  },
+  "metrics": {
+    "accepted_by_attempt": {
+      "1": 21,
+      "2": 0,
+      "3": 0
+    },
+    "accepted_by_task": {
+      "abstention": 0,
+      "bullets": 0,
+      "clarification": 0,
+      "comparison": 0,
+      "conversation": 0,
+      "email": 0,
+      "planning": 0,
+      "prose": 18,
+      "reasoning": 0,
+      "rewrite": 0,
+      "summary": 3,
+      "tone": 0
+    },
+    "accepted_rows": 21,
+    "quarantined_candidates": 7,
+    "teacher_calls": 42
+  },
+  "source": {
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "snapshot": "C:\\Users\\samyo\\.cache\\huggingface\\hub\\models--Qwen--Qwen2-7B-Instruct\\snapshots\\f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "teacher_training_steps": 0
+  },
+  "verdict": "FAIL_COUNTERBALANCED_SOURCE"
+}
