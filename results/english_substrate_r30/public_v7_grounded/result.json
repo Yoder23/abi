@@ -1,0 +1,1213 @@
+{
+  "artifacts": {
+    "evaluation": {
+      "bytes": 95453,
+      "path": "evaluation.jsonl",
+      "sha256": "d95c114a957a824a7c5848134b85537a9cd1294b4a4368ddabfdccc0da9d76cb"
+    }
+  },
+  "claim_ceiling": "PUBLIC_DISCLOSED_PARAPHRASE_PILOT_NOT_GENERAL_ENGLISH",
+  "diagnosis_sha256": "ee4403f4f9b85b2d44ea92cf989adc20470858529db56ec0aa24e6c003e90a39",
+  "evidence_sha256": "0455b9992fe8eb3e1e218126951a2a74922229ae2cd882451d4f2502b19702fb",
+  "format": "abi-r30-grounded-pointer-layercake-packages/7",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "deployed_parameters": 3089856,
+    "elapsed_seconds": 295.13492539996514,
+    "hidden_activations_in_packages": 0,
+    "logits_stored": 0,
+    "maximum_active_parameters": 292232,
+    "package_bytes": 12577470,
+    "peak_cpu_rss_bytes": 933150720,
+    "peak_gpu_memory_bytes": 73622528,
+    "source_parameters_copied": 0,
+    "teacher_present_during_execution": false,
+    "teacher_present_during_training": false,
+    "training_rows": 288,
+    "training_steps_total": 19200
+  },
+  "metrics": {
+    "by_task": {
+      "abstention": {
+        "functional": 8,
+        "rows": 12,
+        "teacher_functional": 8
+      },
+      "bullets": {
+        "functional": 12,
+        "rows": 12,
+        "teacher_functional": 12
+      },
+      "clarification": {
+        "functional": 12,
+        "rows": 12,
+        "teacher_functional": 12
+      },
+      "comparison": {
+        "functional": 12,
+        "rows": 12,
+        "teacher_functional": 6
+      },
+      "conversation": {
+        "functional": 12,
+        "rows": 12,
+        "teacher_functional": 0
+      },
+      "email": {
+        "functional": 2,
+        "rows": 12,
+        "teacher_functional": 10
+      },
+      "planning": {
+        "functional": 0,
+        "rows": 12,
+        "teacher_functional": 7
+      },
+      "prose": {
+        "functional": 9,
+        "rows": 12,
+        "teacher_functional": 10
+      },
+      "reasoning": {
+        "functional": 12,
+        "rows": 12,
+        "teacher_functional": 2
+      },
+      "rewrite": {
+        "functional": 8,
+        "rows": 12,
+        "teacher_functional": 2
+      },
+      "summary": {
+        "functional": 8,
+        "rows": 12,
+        "teacher_functional": 7
+      },
+      "tone": {
+        "functional": 8,
+        "rows": 12,
+        "teacher_functional": 1
+      }
+    },
+    "evaluation_rows": 144,
+    "functional": 103,
+    "packages": 12,
+    "removal_rejections": 12,
+    "route_exact": 144,
+    "teacher_functional": 77,
+    "validator_corrections_train": 48
+  },
+  "packages": [
+    {
+      "bytes": 1017854,
+      "cake_id": "abi-r30-v7-capability-1804ef5e49f4",
+      "cluster": "capability-1804ef5e49f4",
+      "parameters": 250178,
+      "relative_path": "packages/capability-1804ef5e49f4.cake",
+      "sha256": "abca2ff8e0b832ab863c69260c2b34bbe13fc3be6bc3bcf87b3a9cf6e72ba013",
+      "tensor_payload_hash": "11239f296de60b3ae23fe993265345420f22397932852fa6611f9b3e4eeb8750",
+      "training": {
+        "fixed_vocabulary_size": 129,
+        "history": [
+          {
+            "accuracy": 0.0041841003112494946,
+            "gradient_norm": 3.16896915435791,
+            "loss": 5.739397048950195,
+            "seconds": 0.23368930001743138,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.022451356053352356,
+            "loss": 0.005611105356365442,
+            "seconds": 5.614742100005969,
+            "step": 400
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.0064647565595805645,
+            "loss": 0.0015139104798436165,
+            "seconds": 11.492709300015122,
+            "step": 800
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.0031560140196233988,
+            "loss": 0.0007271930808201432,
+            "seconds": 18.267741100047715,
+            "step": 1200
+          },
+          {
+            "accuracy": 0.9999999403953552,
+            "gradient_norm": 0.0017337931785732508,
+            "loss": 0.0004078085767105222,
+            "seconds": 24.81099790002918,
+            "step": 1600
+          }
+        ],
+        "parameters": 250178,
+        "rows": 24,
+        "seconds": 24.819460900034755,
+        "steps": 1600
+      }
+    },
+    {
+      "bytes": 1039735,
+      "cake_id": "abi-r30-v7-capability-660267e0e217",
+      "cluster": "capability-660267e0e217",
+      "parameters": 255467,
+      "relative_path": "packages/capability-660267e0e217.cake",
+      "sha256": "b01c79631d1ff665b95f912685c7ed871a721778971295a1cc7449d53ff3a613",
+      "tensor_payload_hash": "0974b471411450529f99b9e4e4d8d71188b75c824b187dfb402b6164d0440113",
+      "training": {
+        "fixed_vocabulary_size": 170,
+        "history": [
+          {
+            "accuracy": 0.0,
+            "gradient_norm": 1.8450003862380981,
+            "loss": 5.819004535675049,
+            "seconds": 0.020616199995856732,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.03117905929684639,
+            "loss": 0.0230385884642601,
+            "seconds": 6.4846573999966495,
+            "step": 400
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.008577565662562847,
+            "loss": 0.005066805053502321,
+            "seconds": 13.289128599979449,
+            "step": 800
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.004148069769144058,
+            "loss": 0.0022033483255654573,
+            "seconds": 19.003584299993236,
+            "step": 1200
+          },
+          {
+            "accuracy": 0.9999999403953552,
+            "gradient_norm": 0.0024428190663456917,
+            "loss": 0.0012575892033055425,
+            "seconds": 24.25912870001048,
+            "step": 1600
+          }
+        ],
+        "parameters": 255467,
+        "rows": 24,
+        "seconds": 24.26329979998991,
+        "steps": 1600
+      }
+    },
+    {
+      "bytes": 1191516,
+      "cake_id": "abi-r30-v7-capability-663bb9820de9",
+      "cluster": "capability-663bb9820de9",
+      "parameters": 292232,
+      "relative_path": "packages/capability-663bb9820de9.cake",
+      "sha256": "2bdf26614065c16d9c0279862b0bbfec8542ff1ece3d915a86bd2ac0448114fa",
+      "tensor_payload_hash": "c4812726ac8815c522130b6704d2c1498707a31f5dffd3929683fe4dcd7bb14d",
+      "training": {
+        "fixed_vocabulary_size": 455,
+        "history": [
+          {
+            "accuracy": 0.0017321016639471054,
+            "gradient_norm": 1.651569128036499,
+            "loss": 6.423147678375244,
+            "seconds": 0.02202250005211681,
+            "step": 1
+          },
+          {
+            "accuracy": 0.9994199275970459,
+            "gradient_norm": 0.16585898399353027,
+            "loss": 0.0785798504948616,
+            "seconds": 5.4911358000244945,
+            "step": 400
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.011953450739383698,
+            "loss": 0.008674586191773415,
+            "seconds": 10.875564600049984,
+            "step": 800
+          },
+          {
+            "accuracy": 0.9999999403953552,
+            "gradient_norm": 0.005181514658033848,
+            "loss": 0.003643936710432172,
+            "seconds": 16.489497400005348,
+            "step": 1200
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.0028369149658828974,
+            "loss": 0.0018839151598513126,
+            "seconds": 22.380098399997223,
+            "step": 1600
+          }
+        ],
+        "parameters": 292232,
+        "rows": 24,
+        "seconds": 22.38422820001142,
+        "steps": 1600
+      }
+    },
+    {
+      "bytes": 994818,
+      "cake_id": "abi-r30-v7-capability-68a9963f947e",
+      "cluster": "capability-68a9963f947e",
+      "parameters": 244502,
+      "relative_path": "packages/capability-68a9963f947e.cake",
+      "sha256": "8867ace69c2de73de2e283e972e07ea705dce0d05b63ac73c8fc351e5b57c751",
+      "tensor_payload_hash": "3b931b58bb75bd0069c99a27750b0f4edfaf22525ae241c10cbd7e0959c6721d",
+      "training": {
+        "fixed_vocabulary_size": 85,
+        "history": [
+          {
+            "accuracy": 0.032967034727334976,
+            "gradient_norm": 2.676393508911133,
+            "loss": 4.996882438659668,
+            "seconds": 0.019768400001339614,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.020304957404732704,
+            "loss": 0.006550439167767763,
+            "seconds": 6.630540800048038,
+            "step": 400
+          },
+          {
+            "accuracy": 0.9999999403953552,
+            "gradient_norm": 0.006312627345323563,
+            "loss": 0.0021282394882291555,
+            "seconds": 13.147358600050211,
+            "step": 800
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.0031313642393797636,
+            "loss": 0.0009612638386897743,
+            "seconds": 19.51789280003868,
+            "step": 1200
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.0016967420233413577,
+            "loss": 0.0005424700793810189,
+            "seconds": 26.010301700036507,
+            "step": 1600
+          }
+        ],
+        "parameters": 244502,
+        "rows": 24,
+        "seconds": 26.015374600014184,
+        "steps": 1600
+      }
+    },
+    {
+      "bytes": 1027438,
+      "cake_id": "abi-r30-v7-capability-6a05ac87d84b",
+      "cluster": "capability-6a05ac87d84b",
+      "parameters": 252500,
+      "relative_path": "packages/capability-6a05ac87d84b.cake",
+      "sha256": "1752831184f0c3a1bd003047f78374d0fec102ac9ade01a6953a7a156c671d30",
+      "tensor_payload_hash": "586ef75b9e7bca45520defa1e2de20ba8e2d7f505adf32f18dac73bdc91997d7",
+      "training": {
+        "fixed_vocabulary_size": 147,
+        "history": [
+          {
+            "accuracy": 0.0,
+            "gradient_norm": 2.5456855297088623,
+            "loss": 5.8849196434021,
+            "seconds": 0.02088920003734529,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.025481875985860825,
+            "loss": 0.009754394181072712,
+            "seconds": 5.657671900000423,
+            "step": 400
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.00756676122546196,
+            "loss": 0.0026276351418346167,
+            "seconds": 11.038993299996946,
+            "step": 800
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.0037591196596622467,
+            "loss": 0.0012571793049573898,
+            "seconds": 16.414233700023033,
+            "step": 1200
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.002195319626480341,
+            "loss": 0.0007095060427673161,
+            "seconds": 21.807121600024402,
+            "step": 1600
+          }
+        ],
+        "parameters": 252500,
+        "rows": 24,
+        "seconds": 21.81116219999967,
+        "steps": 1600
+      }
+    },
+    {
+      "bytes": 1010027,
+      "cake_id": "abi-r30-v7-capability-77540ff46ac4",
+      "cluster": "capability-77540ff46ac4",
+      "parameters": 248243,
+      "relative_path": "packages/capability-77540ff46ac4.cake",
+      "sha256": "5a38173d17bc8c1be31f7ced93469abafe1148c5453344d789cf52179ed06a0d",
+      "tensor_payload_hash": "ab96a05cef0a943044be2a8533541f777f48a377c54226284ca00d16e31c30c2",
+      "training": {
+        "fixed_vocabulary_size": 114,
+        "history": [
+          {
+            "accuracy": 0.0,
+            "gradient_norm": 3.438781261444092,
+            "loss": 5.87011194229126,
+            "seconds": 0.01521169999614358,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.020923126488924026,
+            "loss": 0.005124557763338089,
+            "seconds": 5.477009599970188,
+            "step": 400
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.006889765616506338,
+            "loss": 0.001788326888345182,
+            "seconds": 10.96491739997873,
+            "step": 800
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.002976561663672328,
+            "loss": 0.0006800071569159627,
+            "seconds": 16.25125749997096,
+            "step": 1200
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.0019395439885556698,
+            "loss": 0.0004950426518917084,
+            "seconds": 21.584981699998025,
+            "step": 1600
+          }
+        ],
+        "parameters": 248243,
+        "rows": 24,
+        "seconds": 21.58877420000499,
+        "steps": 1600
+      }
+    },
+    {
+      "bytes": 1031640,
+      "cake_id": "abi-r30-v7-capability-781f838d49a2",
+      "cluster": "capability-781f838d49a2",
+      "parameters": 253532,
+      "relative_path": "packages/capability-781f838d49a2.cake",
+      "sha256": "4fd77dbe2c52d93c2cc1f65ef3ce38e7e0d6da5ac816156f3bd79d3a5f8c6ab0",
+      "tensor_payload_hash": "bb250adc55869b3f19420cc098d8f87f8ea05a94622c6d8e1ceac46756f73935",
+      "training": {
+        "fixed_vocabulary_size": 155,
+        "history": [
+          {
+            "accuracy": 0.0026315790601074696,
+            "gradient_norm": 2.5343852043151855,
+            "loss": 6.063369274139404,
+            "seconds": 0.015773799968883395,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.03293110802769661,
+            "loss": 0.013166668824851513,
+            "seconds": 5.408323299954645,
+            "step": 400
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.007592016831040382,
+            "loss": 0.0031360776629298925,
+            "seconds": 10.758262699993793,
+            "step": 800
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.003623661119490862,
+            "loss": 0.0013878120807930827,
+            "seconds": 16.22404209995875,
+            "step": 1200
+          },
+          {
+            "accuracy": 0.9999999403953552,
+            "gradient_norm": 0.0020718337036669254,
+            "loss": 0.0007977052009664476,
+            "seconds": 21.531067599949893,
+            "step": 1600
+          }
+        ],
+        "parameters": 253532,
+        "rows": 24,
+        "seconds": 21.534746199962683,
+        "steps": 1600
+      }
+    },
+    {
+      "bytes": 1142654,
+      "cake_id": "abi-r30-v7-capability-8f722f34058c",
+      "cluster": "capability-8f722f34058c",
+      "parameters": 280364,
+      "relative_path": "packages/capability-8f722f34058c.cake",
+      "sha256": "9cee03501ee5fae4b6e4c2e886cae0c6ba38c834a914931dca9e69af8eec4bff",
+      "tensor_payload_hash": "49fc89cbb340c101aef3b07a1aa366afad761b9098006c4a4d58afad86f88c49",
+      "training": {
+        "fixed_vocabulary_size": 363,
+        "history": [
+          {
+            "accuracy": 0.0015710919396951795,
+            "gradient_norm": 1.7437005043029785,
+            "loss": 6.26112174987793,
+            "seconds": 0.015536299964878708,
+            "step": 1
+          },
+          {
+            "accuracy": 0.9959183931350708,
+            "gradient_norm": 0.16616195440292358,
+            "loss": 0.0700368881225586,
+            "seconds": 5.58358729997417,
+            "step": 400
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.011215033940970898,
+            "loss": 0.006451481021940708,
+            "seconds": 11.057763499964494,
+            "step": 800
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.0044271135702729225,
+            "loss": 0.0030207654926925898,
+            "seconds": 16.396615599980578,
+            "step": 1200
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.0022788550704717636,
+            "loss": 0.001536809140816331,
+            "seconds": 21.78487440000754,
+            "step": 1600
+          }
+        ],
+        "parameters": 280364,
+        "rows": 24,
+        "seconds": 21.788482400006615,
+        "steps": 1600
+      }
+    },
+    {
+      "bytes": 1046001,
+      "cake_id": "abi-r30-v7-capability-9c14f5ea0d08",
+      "cluster": "capability-9c14f5ea0d08",
+      "parameters": 257015,
+      "relative_path": "packages/capability-9c14f5ea0d08.cake",
+      "sha256": "bb8e845d74a9236f7e876ae8f681de6bc84da395d8cf47894beef4f5ec935f8e",
+      "tensor_payload_hash": "feb5b7355defd7b0326d21b1dace4d80e22279fede93712ae6da1254419df5b2",
+      "training": {
+        "fixed_vocabulary_size": 182,
+        "history": [
+          {
+            "accuracy": 0.0,
+            "gradient_norm": 1.9801967144012451,
+            "loss": 5.693235397338867,
+            "seconds": 0.021086599968839437,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.02906160056591034,
+            "loss": 0.015311168506741524,
+            "seconds": 5.493113899952732,
+            "step": 400
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.007939889095723629,
+            "loss": 0.003909997642040253,
+            "seconds": 10.846561099984683,
+            "step": 800
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.0038093882612884045,
+            "loss": 0.001785793574526906,
+            "seconds": 16.112231599981897,
+            "step": 1200
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.0023399549536406994,
+            "loss": 0.0010887386742979288,
+            "seconds": 21.370046600000933,
+            "step": 1600
+          }
+        ],
+        "parameters": 257015,
+        "rows": 24,
+        "seconds": 21.374070499965455,
+        "steps": 1600
+      }
+    },
+    {
+      "bytes": 1055170,
+      "cake_id": "abi-r30-v7-capability-afba74547ae1",
+      "cluster": "capability-afba74547ae1",
+      "parameters": 259208,
+      "relative_path": "packages/capability-afba74547ae1.cake",
+      "sha256": "840bcd335391df777cd727103ba44286f612046953fa1ddb96c72c5d6a1780d0",
+      "tensor_payload_hash": "f34706c46a449e8bb938771a56ad098a164d3fc923b1100f4971dd7a780effad",
+      "training": {
+        "fixed_vocabulary_size": 199,
+        "history": [
+          {
+            "accuracy": 0.006637168116867542,
+            "gradient_norm": 1.7822422981262207,
+            "loss": 5.672640800476074,
+            "seconds": 0.016116000013425946,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.0644969493150711,
+            "loss": 0.018617762252688408,
+            "seconds": 5.3442156000528485,
+            "step": 400
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.007250097580254078,
+            "loss": 0.0034592514857649803,
+            "seconds": 10.554626199998893,
+            "step": 800
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.003529176115989685,
+            "loss": 0.0016904983203858137,
+            "seconds": 15.969907400023658,
+            "step": 1200
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.0022544232197105885,
+            "loss": 0.0012781987898051739,
+            "seconds": 21.274993900035042,
+            "step": 1600
+          }
+        ],
+        "parameters": 259208,
+        "rows": 24,
+        "seconds": 21.279621800000314,
+        "steps": 1600
+      }
+    },
+    {
+      "bytes": 1001591,
+      "cake_id": "abi-r30-v7-capability-defbdf34a3d4",
+      "cluster": "capability-defbdf34a3d4",
+      "parameters": 246179,
+      "relative_path": "packages/capability-defbdf34a3d4.cake",
+      "sha256": "61ec94e3c6a01a651e6692f28d9a7888411bc255a58c0e69f374dbf5bf04914f",
+      "tensor_payload_hash": "358e03c43ccaa25b3b234b5cd8dc5e4ded0efbd18fe4045f8caee58b54ee0ba6",
+      "training": {
+        "fixed_vocabulary_size": 98,
+        "history": [
+          {
+            "accuracy": 0.0,
+            "gradient_norm": 2.9131624698638916,
+            "loss": 5.369640827178955,
+            "seconds": 0.016827500017825514,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.020114168524742126,
+            "loss": 0.0051315524615347385,
+            "seconds": 5.538765400007833,
+            "step": 400
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.005944905336946249,
+            "loss": 0.001472736825235188,
+            "seconds": 10.830565500014927,
+            "step": 800
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.0028671398758888245,
+            "loss": 0.0007030005217529833,
+            "seconds": 16.138773799990304,
+            "step": 1200
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.0016884466167539358,
+            "loss": 0.00040841507143341005,
+            "seconds": 21.739280899986625,
+            "step": 1600
+          }
+        ],
+        "parameters": 246179,
+        "rows": 24,
+        "seconds": 21.745961699984036,
+        "steps": 1600
+      }
+    },
+    {
+      "bytes": 1019026,
+      "cake_id": "abi-r30-v7-capability-ebc97d41c4c9",
+      "cluster": "capability-ebc97d41c4c9",
+      "parameters": 250436,
+      "relative_path": "packages/capability-ebc97d41c4c9.cake",
+      "sha256": "0b24f465a16833baa2770574522600711c86a4b78fec3fca8e292142a1798b3e",
+      "tensor_payload_hash": "a12beb67922421755bc9b408660f77e40427fc8da188c10027a12785c3e02ed5",
+      "training": {
+        "fixed_vocabulary_size": 131,
+        "history": [
+          {
+            "accuracy": 0.0,
+            "gradient_norm": 3.554640531539917,
+            "loss": 6.024779796600342,
+            "seconds": 0.02014540001982823,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.021646633744239807,
+            "loss": 0.004960794933140278,
+            "seconds": 6.876240800018422,
+            "step": 400
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.006644714158028364,
+            "loss": 0.0014956529485061765,
+            "seconds": 13.45124450000003,
+            "step": 800
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.00325995241291821,
+            "loss": 0.0007295013056136668,
+            "seconds": 20.031051800004207,
+            "step": 1200
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.0019277626415714622,
+            "loss": 0.0004288093186914921,
+            "seconds": 27.053195299988147,
+            "step": 1600
+          }
+        ],
+        "parameters": 250436,
+        "rows": 24,
+        "seconds": 27.059223400021438,
+        "steps": 1600
+      }
+    }
+  ],
+  "router": {
+    "counts": {
+      "capability-1804ef5e49f4": {
+        "a": 1,
+        "as": 1,
+        "bullet": 3,
+        "convert": 1,
+        "details": 1,
+        "each": 1,
+        "exactly": 1,
+        "for": 1,
+        "into": 1,
+        "item": 1,
+        "items": 1,
+        "list": 1,
+        "material": 1,
+        "of": 1,
+        "one": 1,
+        "points": 1,
+        "present": 1,
+        "return": 1,
+        "supplied": 3,
+        "the": 3,
+        "three": 3
+      },
+      "capability-660267e0e217": {
+        "adding": 1,
+        "adjust": 1,
+        "content": 1,
+        "express": 1,
+        "facts": 1,
+        "in": 1,
+        "meaning": 1,
+        "message": 1,
+        "preserving": 1,
+        "requested": 2,
+        "rewrite": 1,
+        "specified": 1,
+        "supplied": 2,
+        "the": 6,
+        "to": 1,
+        "tone": 3,
+        "using": 1,
+        "while": 1,
+        "without": 1,
+        "wording": 1
+      },
+      "capability-663bb9820de9": {
+        "a": 4,
+        "and": 1,
+        "concise": 1,
+        "detail": 1,
+        "draft": 1,
+        "email": 3,
+        "every": 1,
+        "from": 1,
+        "includes": 1,
+        "into": 1,
+        "material": 1,
+        "notes": 1,
+        "professional": 2,
+        "short": 1,
+        "signoff": 1,
+        "subject": 1,
+        "supplied": 3,
+        "that": 1,
+        "the": 2,
+        "turn": 1,
+        "with": 1,
+        "write": 1
+      },
+      "capability-68a9963f947e": {
+        "abstain": 1,
+        "an": 1,
+        "answer": 2,
+        "be": 1,
+        "because": 1,
+        "cannot": 1,
+        "context": 1,
+        "decline": 1,
+        "fact": 2,
+        "from": 1,
+        "in": 1,
+        "inventing": 1,
+        "is": 1,
+        "knowledge": 1,
+        "material": 1,
+        "not": 1,
+        "or": 1,
+        "outside": 1,
+        "provided": 1,
+        "rather": 1,
+        "requested": 1,
+        "state": 1,
+        "supplied": 2,
+        "than": 1,
+        "that": 1,
+        "the": 4,
+        "to": 1,
+        "unsupported": 1,
+        "using": 1
+      },
+      "capability-6a05ac87d84b": {
+        "a": 1,
+        "adding": 1,
+        "compact": 1,
+        "concise": 1,
+        "condense": 1,
+        "every": 1,
+        "important": 1,
+        "in": 1,
+        "information": 1,
+        "material": 1,
+        "one": 1,
+        "paragraph": 1,
+        "passage": 1,
+        "point": 1,
+        "retaining": 1,
+        "summarize": 1,
+        "summary": 1,
+        "supplied": 3,
+        "the": 2,
+        "without": 1,
+        "write": 1
+      },
+      "capability-77540ff46ac4": {
+        "a": 1,
+        "ask": 1,
+        "clarification": 1,
+        "clarifies": 1,
+        "clear": 1,
+        "concise": 1,
+        "detail": 2,
+        "grounded": 1,
+        "in": 1,
+        "missing": 2,
+        "one": 3,
+        "question": 3,
+        "request": 1,
+        "situation": 1,
+        "supplied": 2,
+        "that": 1,
+        "the": 3,
+        "with": 1,
+        "write": 1
+      },
+      "capability-781f838d49a2": {
+        "a": 1,
+        "as": 1,
+        "combine": 1,
+        "details": 1,
+        "express": 1,
+        "grammatical": 1,
+        "into": 2,
+        "material": 1,
+        "natural": 1,
+        "notes": 1,
+        "one": 2,
+        "prose": 1,
+        "provided": 1,
+        "sentence": 3,
+        "single": 1,
+        "supplied": 2,
+        "the": 3,
+        "turn": 1
+      },
+      "capability-8f722f34058c": {
+        "a": 2,
+        "and": 1,
+        "concise": 1,
+        "constraint": 1,
+        "create": 1,
+        "exactly": 1,
+        "from": 1,
+        "goal": 1,
+        "information": 1,
+        "into": 1,
+        "material": 1,
+        "only": 1,
+        "ordered": 1,
+        "plan": 2,
+        "practical": 1,
+        "resources": 1,
+        "step": 2,
+        "steps": 1,
+        "supplied": 3,
+        "the": 3,
+        "three": 3,
+        "turn": 1,
+        "using": 1,
+        "write": 1
+      },
+      "capability-9c14f5ea0d08": {
+        "changing": 1,
+        "clarity": 1,
+        "clear": 1,
+        "complete": 1,
+        "english": 1,
+        "for": 1,
+        "improve": 1,
+        "in": 1,
+        "its": 1,
+        "meaning": 2,
+        "natural": 1,
+        "paraphrase": 1,
+        "preserving": 1,
+        "rewrite": 1,
+        "sentence": 1,
+        "supplied": 3,
+        "text": 1,
+        "the": 4,
+        "while": 1,
+        "without": 1,
+        "wording": 1
+      },
+      "capability-afba74547ae1": {
+        "a": 1,
+        "and": 1,
+        "background": 1,
+        "brief": 1,
+        "conversational": 1,
+        "conversationally": 1,
+        "facts": 1,
+        "grounded": 1,
+        "helpfully": 1,
+        "inventing": 1,
+        "message": 2,
+        "naturally": 1,
+        "only": 1,
+        "reply": 1,
+        "respond": 1,
+        "response": 1,
+        "situation": 1,
+        "supplied": 2,
+        "the": 3,
+        "to": 2,
+        "using": 1,
+        "without": 1,
+        "write": 1
+      },
+      "capability-defbdf34a3d4": {
+        "and": 2,
+        "by": 2,
+        "conclusion": 3,
+        "explain": 1,
+        "fictional": 1,
+        "from": 1,
+        "give": 1,
+        "grounded": 1,
+        "implied": 1,
+        "invented": 1,
+        "observations": 1,
+        "only": 1,
+        "premises": 1,
+        "reason": 1,
+        "rule": 2,
+        "state": 1,
+        "supplied": 3,
+        "supported": 1,
+        "synthetic": 1,
+        "the": 6
+      },
+      "capability-ebc97d41c4c9": {
+        "a": 1,
+        "and": 1,
+        "both": 1,
+        "choices": 1,
+        "compare": 1,
+        "comparison": 1,
+        "concise": 1,
+        "contrast": 1,
+        "criterion": 1,
+        "facts": 1,
+        "grounded": 1,
+        "in": 1,
+        "introducing": 1,
+        "measure": 1,
+        "only": 1,
+        "options": 2,
+        "outside": 1,
+        "provided": 1,
+        "supplied": 3,
+        "the": 3,
+        "two": 1,
+        "using": 1,
+        "without": 1,
+        "write": 1
+      }
+    },
+    "format": "abi-r30-word-router/1",
+    "labels": [
+      "capability-1804ef5e49f4",
+      "capability-660267e0e217",
+      "capability-663bb9820de9",
+      "capability-68a9963f947e",
+      "capability-6a05ac87d84b",
+      "capability-77540ff46ac4",
+      "capability-781f838d49a2",
+      "capability-8f722f34058c",
+      "capability-9c14f5ea0d08",
+      "capability-afba74547ae1",
+      "capability-defbdf34a3d4",
+      "capability-ebc97d41c4c9"
+    ],
+    "totals": {
+      "capability-1804ef5e49f4": 29,
+      "capability-660267e0e217": 29,
+      "capability-663bb9820de9": 31,
+      "capability-68a9963f947e": 35,
+      "capability-6a05ac87d84b": 24,
+      "capability-77540ff46ac4": 28,
+      "capability-781f838d49a2": 25,
+      "capability-8f722f34058c": 33,
+      "capability-9c14f5ea0d08": 27,
+      "capability-afba74547ae1": 28,
+      "capability-defbdf34a3d4": 32,
+      "capability-ebc97d41c4c9": 29
+    },
+    "vocabulary": [
+      "a",
+      "abstain",
+      "adding",
+      "adjust",
+      "an",
+      "and",
+      "answer",
+      "as",
+      "ask",
+      "background",
+      "be",
+      "because",
+      "both",
+      "brief",
+      "bullet",
+      "by",
+      "cannot",
+      "changing",
+      "choices",
+      "clarification",
+      "clarifies",
+      "clarity",
+      "clear",
+      "combine",
+      "compact",
+      "compare",
+      "comparison",
+      "complete",
+      "concise",
+      "conclusion",
+      "condense",
+      "constraint",
+      "content",
+      "context",
+      "contrast",
+      "conversational",
+      "conversationally",
+      "convert",
+      "create",
+      "criterion",
+      "decline",
+      "detail",
+      "details",
+      "draft",
+      "each",
+      "email",
+      "english",
+      "every",
+      "exactly",
+      "explain",
+      "express",
+      "fact",
+      "facts",
+      "fictional",
+      "for",
+      "from",
+      "give",
+      "goal",
+      "grammatical",
+      "grounded",
+      "helpfully",
+      "implied",
+      "important",
+      "improve",
+      "in",
+      "includes",
+      "information",
+      "into",
+      "introducing",
+      "invented",
+      "inventing",
+      "is",
+      "item",
+      "items",
+      "its",
+      "knowledge",
+      "list",
+      "material",
+      "meaning",
+      "measure",
+      "message",
+      "missing",
+      "natural",
+      "naturally",
+      "not",
+      "notes",
+      "observations",
+      "of",
+      "one",
+      "only",
+      "options",
+      "or",
+      "ordered",
+      "outside",
+      "paragraph",
+      "paraphrase",
+      "passage",
+      "plan",
+      "point",
+      "points",
+      "practical",
+      "premises",
+      "present",
+      "preserving",
+      "professional",
+      "prose",
+      "provided",
+      "question",
+      "rather",
+      "reason",
+      "reply",
+      "request",
+      "requested",
+      "resources",
+      "respond",
+      "response",
+      "retaining",
+      "return",
+      "rewrite",
+      "rule",
+      "sentence",
+      "short",
+      "signoff",
+      "single",
+      "situation",
+      "specified",
+      "state",
+      "step",
+      "steps",
+      "subject",
+      "summarize",
+      "summary",
+      "supplied",
+      "supported",
+      "synthetic",
+      "text",
+      "than",
+      "that",
+      "the",
+      "three",
+      "to",
+      "tone",
+      "turn",
+      "two",
+      "unsupported",
+      "using",
+      "while",
+      "with",
+      "without",
+      "wording",
+      "write"
+    ]
+  },
+  "source_rows_sha256": "01f4f11ca70e9ff5d98b5d7573ef71a8a28a67e6351dc3e71b816d8bc3dd45da",
+  "v6_result_sha256": "213dbe9f3f71175f65e738131501e89f839b887d44ce27d49b5f50e60545e69a",
+  "verdict": "FAIL_PUBLIC_GROUNDED_POINTER_PILOT"
+}
