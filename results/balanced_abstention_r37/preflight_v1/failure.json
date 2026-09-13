@@ -1,0 +1,17 @@
+{
+  "schema": "abi.r37.source_preflight.failure.v1",
+  "verdict": "FAIL_MISSING_REGISTERED_SOURCE_STRATUM",
+  "terminal": true,
+  "stage": "training_only_source_coverage_preflight",
+  "source_counts": {
+    "chemical_boiling_point": 32,
+    "national_independence_day": 0,
+    "python_program_result": 16
+  },
+  "selection_performed": false,
+  "training_performed": false,
+  "evaluation_accessed": false,
+  "teacher_calls": 0,
+  "promotion_allowed": false,
+  "next_authorized_action": "Acquire only eight missing national-independence-day abstention rows under a new additive preregistration."
+}
