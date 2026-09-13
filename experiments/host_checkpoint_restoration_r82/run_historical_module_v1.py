@@ -29,8 +29,11 @@ def main() -> int:
         raise HistoricalLauncherError("historical acquisition module is absent")
     if "abi" in sys.modules:
         raise HistoricalLauncherError("ABI package was imported before snapshot isolation")
+    historical_arguments = list(args.arguments)
+    if historical_arguments[:1] == ["--"]:
+        historical_arguments = historical_arguments[1:]
     sys.path.insert(0, str(snapshot))
-    sys.argv = [str(module_path), *args.arguments]
+    sys.argv = [str(module_path), *historical_arguments]
     runpy.run_module("abi.layercake_full_core_acquisition", run_name="__main__")
     return 0
 
