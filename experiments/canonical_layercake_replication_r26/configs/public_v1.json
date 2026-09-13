@@ -1,0 +1,53 @@
+{
+  "candidate_changes_from_r25": 0,
+  "code_sha256": {
+    "experiments/canonical_layercake_replication_r26/PROTOCOL.md": "95e0d5ec19e0efc2c719cf01e550b7d70ab9355cea9d326d352bad86e5b14f61",
+    "experiments/canonical_layercake_replication_r26/binding.py": "d879c2f3250c06cc1297bebd6bc9912ce28249cb4d3ac6bfd4a75830536f988d",
+    "experiments/canonical_layercake_replication_r26/freeze_config.py": "e0007da16880d517e2f346cb4c48c61404150e4a37cbf3923dd9b5022c406eff",
+    "experiments/canonical_layercake_replication_r26/prepare_import_config.py": "c20dbc00005b0ca80b9fc4514506082e37aaa4eb2549d1e23e599f2578e1ea15",
+    "experiments/canonical_layercake_replication_r26/prepare_source.py": "01c04b6f9f42d018ec74ce8883b365ea16a07a5a7775f6bb3cd090e8a852b773",
+    "experiments/canonical_layercake_replication_r26/run.py": "c6cef703599a19890312c24030cea0d8fc165b666ab107dbaeea33200a6ea089",
+    "experiments/canonical_layercake_replication_r26/verify.py": "771a292be18916ec4a86263bf42fba7feceb3088e5b777fbf6518ca01a5443e2",
+    "experiments/factual_semantic_r16/public_sequence_scoring.py": "96e51a30f2953dd5434c381bfcb85628d27c737c691ef8c38214c82137fe6269"
+  },
+  "format": "abi-r26-config/1",
+  "gate_changes_from_r25": 0,
+  "import_config": {
+    "bytes": 7955,
+    "path": "experiments/canonical_layercake_replication_r26/configs/import_v1.json",
+    "sha256": "9b320b9817b76349c58335eeac052d8c3ea9a48ce8665b406c703d7230b73a57"
+  },
+  "prospective_scorer": "r16-normalized-text",
+  "protocol_freeze_commit": "dd1c77cc50c9a11c61bfd9e515437f5b83f1a39c",
+  "r25_implementation_config": {
+    "bytes": 7949,
+    "path": "experiments/canonical_layercake_import_r25/configs/public_v1.json",
+    "sha256": "5202c676e480e16c55c5a54be001b3edfd62c99b09bbc4172bd97874442d8d00"
+  },
+  "r25_posthoc_repair": {
+    "bytes": 2074,
+    "path": "results/canonical_layercake_import_r25/semantic_repair_v2.json",
+    "sha256": "619edc6568ef28fa40055d70d8d778df0d74c96fd84c7110d5cdcc24f00469d0"
+  },
+  "source_config": {
+    "bytes": 3747,
+    "path": "experiments/factual_semantic_r16/configs/r26_fresh_v1.json",
+    "sha256": "4d7f0191aed4d08dfee948465ca5a4daf72fbbc9a4457102c25564e86db31433"
+  },
+  "source_receipt": {
+    "bytes": 3288,
+    "path": "results/factual_semantic_r16/r26_fresh_v1/receipt.json",
+    "sha256": "0f244f92a1bc1db2a5a1d2ab38b84ed4fe2d349dd8fccca2511db905fcb9cf65"
+  },
+  "source_reveal": {
+    "bytes": 216,
+    "path": "experiments/factual_semantic_r16/reveals/r26_fresh_v1.json",
+    "sha256": "cd6315f655b4852f0e9889f421446c2d858c0a9acfb85f8ba9c52a42ee16de61"
+  },
+  "source_selection_generated_after_protocol_freeze": true,
+  "source_strict_verification": {
+    "bytes": 510,
+    "path": "results/factual_semantic_r16/r26_fresh_v1_strict.json",
+    "sha256": "2d58175f389b803630f2dde1bee0aefa323d68d405e99cd7209eb6912413fdec"
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "build_initializations": [
+    25101,
+    25102,
+    25103
+  ],
+  "code_sha256": {
+    "experiments/canonical_layercake_import_r25/PROTOCOL.md": "a990391bb37e2a8fd12d9237f264fcfe3bf434a87e946a89abacdc44eda56439",
+    "experiments/canonical_layercake_import_r25/binding.py": "7b6ec72ef0a7594b3e4701d8b6fd39ad51a6ab6365496f7e2aad9eeb67542dcd",
+    "experiments/canonical_layercake_import_r25/freeze_config.py": "66036e81c0e05ff3cd24b28ecbaa7e2077d75342ecb639131d1172f418931579",
+    "experiments/canonical_layercake_import_r25/protocol.py": "457e205398033fec1ff743ccad3872e40fe4ecaf32771e03f5225c15fa3f45ab",
+    "experiments/canonical_layercake_import_r25/run.py": "1eb2fa837dd1e9c630ba56fa96fc2051e32c8dbd489488fa152903e404ec9e60",
+    "experiments/canonical_layercake_import_r25/verify.py": "ab517c62fe115d030bdfa958113e5acd571cc7311ec13b83b433819cedd735dc",
+    "experiments/factual_semantic_r16/package.py": "a05caf3df0c8a162cb102f00e1c79fac29d52c53d13e6247921e66c05c70c682",
+    "experiments/foreign_capability_r14/core.py": "ade41e81c0087c9d56f484c1e7c6f8e57a726a31150a42c92b448c1d0eec4816",
+    "experiments/generative_transfer_r21/hash_assurance_binding.py": "f1915f3c95256b52edd6140a126ad2eec88d235794be2b76934faaa3b1995e8a",
+    "experiments/generative_transfer_r21/live_verify_v7.py": "576dbce8e9ec924d98fc535fbb7880f3e8c0ab633c9b062231e0cf7a25e0ff0a",
+    "experiments/generative_transfer_r21/protocol.py": "76fd0d3a45ba094511dba78357832be78996435ae4070362c4706a503f756a18",
+    "experiments/generative_transfer_r21/run.py": "d8fe7648cca96a090e48dae007604ba2839c6aa7c3717a31fc7293daf08d9e32",
+    "experiments/layercake_composition_r24/protocol.py": "b1154bee6d05b9b51ff4557442288088244624f0ec27c084ab3a1451f1d89755",
+    "experiments/semantic_replication_r23/protocol.py": "8000127ceefb4fe48ba9e8f582cc966caae989e71212fcc15975e198478c8039"
+  },
+  "english_packages": [
+    {
+      "bytes": 369435,
+      "cake_id": "abi-r21-abi-factorized-abstention-seed21022",
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-abstention-seed21022.cake",
+      "sha256": "bc7103222f0b00c6164bab96ea7f8e82264eb86c72b5ec42bd2a8a223e576930"
+    },
+    {
+      "bytes": 339370,
+      "cake_id": "abi-r21-abi-factorized-bullets-seed21022",
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-bullets-seed21022.cake",
+      "sha256": "db6b3155cbcbc431027e722b542833529508517817fbedf4781002a39e690533"
+    },
+    {
+      "bytes": 364268,
+      "cake_id": "abi-r21-abi-factorized-clarification-seed21022",
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-clarification-seed21022.cake",
+      "sha256": "a348ad4100945733ba4c49b77f1b24570fe64ebdbdbac94d9d103b42519e406d"
+    },
+    {
+      "bytes": 397897,
+      "cake_id": "abi-r21-abi-factorized-email-seed21022",
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-email-seed21022.cake",
+      "sha256": "2c6981207cba458dfb584e8453b2b6632772aef043ef6ee2aae8a965e2048dc7"
+    },
+    {
+      "bytes": 337776,
+      "cake_id": "abi-r21-abi-factorized-prose-seed21022",
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-prose-seed21022.cake",
+      "sha256": "1baa1211fd022f8c7852cc9145e9ee882ef4dc55584f98e987429fc2fb181d7b"
+    },
+    {
+      "bytes": 362255,
+      "cake_id": "abi-r21-abi-factorized-summary-seed21022",
+      "path": "results/generative_transfer_r21/public_v5_bakeoff/engine/packages/abi-factorized-summary-seed21022.cake",
+      "sha256": "af197344c75653990820577579e7a5e42863f07351abe5bff61a191e66b5fceb"
+    }
+  ],
+  "format": "abi-r25-config/1",
+  "gates": {
+    "cpu_gpu_exact": 144,
+    "domain_exact": 144,
+    "english_core_target_answers": 0,
+    "english_immutable": 720,
+    "namespace_route_exact": 144,
+    "other_domain_target_answers": 0,
+    "package_lifecycle_exact": 6,
+    "receiver_training_steps": 0,
+    "reproducible_package_builds": 6,
+    "source_parameters_copied": 0,
+    "source_records_exact": 16,
+    "targeted_corruptions_rejected": 6,
+    "teacher_agreement": 144
+  },
+  "host_initializations": [
+    25021,
+    25022,
+    25023
+  ],
+  "implementation_freeze_commit": "75b17a3b7c2855894aeb04b51c1030cceea5e028",
+  "layercake_abi": {
+    "abi_sha256": "de765899700aefe22bfe6c9d00ed5b0c1f87a7ef864cf7211aa8aa4491a0742a",
+    "abi_version": "lc-direct-neural-decoder/1",
+    "research_signing_seed_hex": "d4603cc928b438a43f40594f39effcd600e9b783b442ac298981cbbe258d15cd"
+  },
+  "layercake_code_sha256": {
+    "layercake/cake/installer.py": "7c011c6a0514c6ee7b233a5c75cf6f94f427ce39fb46684f4af3e1c07efea59c",
+    "layercake/cake/manifest.py": "9c2d237bc91bd7ca398464d7101c00af580129e4247eab9700818b8ca71b5557",
+    "layercake/cake/package.py": "405043c99e52817709aec21cbeb906a8de651f3e9d68850a5b1f18c1294be0dc",
+    "layercake/cake/registry.py": "bc1201a81c9d2032f987f9f6ea60f053d9e45073b34f22622ea1200ab64f38ce",
+    "layercake/models/canonical_factual.py": "a9a1634025b0e38bd059c6da5e86d544fe246ccb175d15cb74f947d7a7c3a1f8",
+    "layercake/models/direct_cake_host.py": "61466545b226412fb68dbf3be8e9d31e78abe270a8fa85150f38972fe403c050",
+    "layercake/models/portable_decoder.py": "014c410d562022f060c324ce496e4a1a16a70b5d44ed741acb9607e5635864eb"
+  },
+  "layercake_commit": "2170c78b7ae901eb4e99ec93ad59d573b2c75941",
+  "namespaces": [
+    "chemistry/periodic-table",
+    "geography/national-capitals"
+  ],
+  "new_source_calls_authorized": false,
+  "package_mutation_authorized": false,
+  "r16_packages": [
+    {
+      "bytes": 576,
+      "facts": 8,
+      "namespace": "chemistry/periodic-table",
+      "path": "results/factual_semantic_r16/r26_fresh_v1/extraction/packages/sha256-78b79d98861327dc6276e65f0dc85601bc823350dabbd8aced2f22f69c67d1f7.abipkg",
+      "sha256": "78b79d98861327dc6276e65f0dc85601bc823350dabbd8aced2f22f69c67d1f7"
+    },
+    {
+      "bytes": 652,
+      "facts": 8,
+      "namespace": "geography/national-capitals",
+      "path": "results/factual_semantic_r16/r26_fresh_v1/extraction/packages/sha256-58e3ba3ad3e6ef3bf1295c75f75ecb3630b9021894392bc0df0c9b9d51f8bcd5.abipkg",
+      "sha256": "58e3ba3ad3e6ef3bf1295c75f75ecb3630b9021894392bc0df0c9b9d51f8bcd5"
+    }
+  ],
+  "r16_receipt": {
+    "bytes": 3288,
+    "path": "results/factual_semantic_r16/r26_fresh_v1/receipt.json",
+    "sha256": "0f244f92a1bc1db2a5a1d2ab38b84ed4fe2d349dd8fccca2511db905fcb9cf65"
+  },
+  "r16_source_rows": {
+    "bytes": 48920,
+    "path": "results/factual_semantic_r16/r26_fresh_v1/source_observations.jsonl",
+    "sha256": "9af1ba333ba6d99a69117e2ac95a4101f70d012760bea8128445400d0dc2efd5"
+  },
+  "r16_strict_verification": {
+    "bytes": 510,
+    "path": "results/factual_semantic_r16/r26_fresh_v1_strict.json",
+    "sha256": "2d58175f389b803630f2dde1bee0aefa323d68d405e99cd7209eb6912413fdec"
+  },
+  "r23_config": {
+    "bytes": 11271,
+    "path": "experiments/semantic_replication_r23/configs/hidden_v1.json",
+    "sha256": "2a6de05869d4709739b1d0583af692ae3c97853dd751e6bf0a99686a11caf5fc"
+  },
+  "r23_hidden_rows": {
+    "bytes": 887694,
+    "path": "results/semantic_replication_r23/hidden_v1_result/engine/observations.jsonl",
+    "sha256": "3dfe71bcec653f401692556f80d6a995e38d240baf179941ac0338c1ba557693"
+  },
+  "r23_live_verification": {
+    "bytes": 1566,
+    "path": "results/semantic_replication_r23/hidden_v2_live/strict_verification.json",
+    "sha256": "b34dba88709d98c614d922a51157a460c8708a5d9c9b374770dca32612269261"
+  },
+  "r23_reveal": {
+    "bytes": 129,
+    "path": "experiments/semantic_replication_r23/configs/hidden_v1_reveal.json",
+    "sha256": "10ff19b234c2ed6082259cf163f1dd8b2f2c5288d171855d80495fdda4e570f4"
+  },
+  "training_authorized": false
+}
