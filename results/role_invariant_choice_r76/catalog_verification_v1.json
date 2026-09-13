@@ -1,0 +1,92 @@
+{
+  "candidate_accessed": false,
+  "catalog_sha256": {
+    "r76": "b7bf96a48d2c51fc08948ff1f92a5211c22fd24e0f83d5749a61523c22ee2387",
+    "r77": "b89a473da82b66297f0cd9f7796b341f873d1bb3d1b2c7f82e94255b5b61330a"
+  },
+  "checks": {
+    "r76": {
+      "destination_display_positions": {
+        "0": 2800,
+        "1": 2800,
+        "2": 2800
+      },
+      "expected_stems": {
+        "BIC": 700,
+        "HUP": 700,
+        "JUV": 700,
+        "LOV": 700,
+        "LUP": 700,
+        "NAP": 700,
+        "NUR": 700,
+        "RIV": 700,
+        "SAV": 700,
+        "TAL": 700,
+        "VOM": 700,
+        "YEP": 700
+      },
+      "families": {
+        "f0": 1200,
+        "f1": 1200,
+        "f2": 1200,
+        "f3": 1200,
+        "f4": 1200,
+        "f5": 1200,
+        "f6": 1200
+      },
+      "prompt_set_sha256": "8bf03ae214eb1920d2d47e13b0c493287c63ba0f69422b13e6c0055d56231070",
+      "rows": 8400,
+      "unique_prompts": 8400
+    },
+    "r77": {
+      "destination_display_positions": {
+        "0": 465,
+        "1": 469,
+        "2": 466
+      },
+      "expected_stems": {
+        "AJO": 66,
+        "APR": 65,
+        "CAV": 68,
+        "CEX": 68,
+        "CUN": 68,
+        "DOR": 68,
+        "DUM": 65,
+        "EKS": 66,
+        "EPR": 66,
+        "EVI": 67,
+        "EZO": 65,
+        "FIZ": 67,
+        "FOQ": 65,
+        "FUM": 68,
+        "IBO": 67,
+        "IXA": 68,
+        "JOT": 68,
+        "OBE": 67,
+        "OJU": 68,
+        "UDO": 65,
+        "UVI": 65
+      },
+      "families": {
+        "f0": 200,
+        "f1": 200,
+        "f2": 200,
+        "f3": 200,
+        "f4": 200,
+        "f5": 200,
+        "f6": 200
+      },
+      "prompt_set_sha256": "cf1ed3838b83b6d4aee404cd7c619775a7fa5411deaef1ad6278e5b1975f2f91",
+      "rows": 1400,
+      "unique_prompts": 1400
+    }
+  },
+  "evidence_sha256": "146b03ffe343c41701155efa778428790db4f03252f9f04fd1eedcdacd5bf456",
+  "format": "abi-r76-r77-role-invariant-catalog-verification/1",
+  "full_abi_moonshot": "OPEN",
+  "lexical_stem_overlap": 0,
+  "prior_exact_prompt_overlap": 0,
+  "r76_r77_exact_prompt_overlap": 0,
+  "source_accessed": false,
+  "verdict": "PASS_CATALOGS_FROZEN_BEFORE_SOURCE_OR_CANDIDATE_ACCESS"
+}
