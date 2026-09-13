@@ -1,0 +1,20 @@
+{
+  "accepted_result_verdicts": [
+    "FAIL_R76_SOURCE"
+  ],
+  "allow_selective_packaging": true,
+  "campaign": "r76",
+  "catalog_sha256": "b7bf96a48d2c51fc08948ff1f92a5211c22fd24e0f83d5749a61523c22ee2387",
+  "descriptor_sha256": "9fa1823dde13de6087827dbb33655393db5c1b687d49589bd60fe06cfb89e190",
+  "minimum_packaged_rows": 8000,
+  "minimum_packaged_rows_per_family": 900,
+  "raw_scores_sha256": "7866ecba2026be86c1840efb3b236fb4953d4cb19a2288290a40eaaa21100d42",
+  "result_evidence_sha256": "841a1a7205d228543fd3416781660312c379cc2d1b587faf13aa5b290176276f",
+  "result_file_sha256": "f01dced22dc3a4469d41677f178e8735e19e0d6e16d301da4fc1342b30771d10",
+  "result_format": "abi-role-invariant-conditional-choice-source-score/1",
+  "schema_version": "abi-conditional-choice-artifact-descriptor/2",
+  "scientific_interpretation": "R76 failed its broad family floor. This descriptor authorizes only the 8,129 independently correct source selections as disclosed development training material; it does not reinterpret R76 as a source pass.",
+  "source_archive_sha256": "82d1ab8a3ee7b4aa351b5c74b4a229d75e845313047065780227e8e403363150",
+  "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310",
+  "source_rows": 8400
+}
