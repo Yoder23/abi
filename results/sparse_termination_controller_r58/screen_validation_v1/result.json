@@ -1,0 +1,179 @@
+{
+  "artifacts": {
+    "evaluation": {
+      "bytes": 2462652,
+      "path": "evaluation.jsonl",
+      "sha256": "902a82d3c8ba2107a0f874ff03d3cbea6bdaaa23099e7b41531c2b14e5ac5511"
+    }
+  },
+  "candidate_checkpoint_sha256": "4f302650a86964042996db1990e753388c84af7326253088f2a4bbeb698f1be6",
+  "candidate_metadata_sha256": "262fa8994dad29b8ded7039c5ce52a6e32af5ec91e2581b1bce220f06682b4ae",
+  "evidence_sha256": "606399c8b514b68cd598740ed42ee91590282ecfbff372f3670d8eabfb398240",
+  "format": "abi-r58-sparse-termination-controller-development-screen/1",
+  "full_abi_moonshot": "OPEN",
+  "gates": {
+    "artifacts_unchanged": true,
+    "functional": false,
+    "matrix": true,
+    "parent_nondegradation": false,
+    "per_capability": true,
+    "physical_sparse": true,
+    "route_exact": true,
+    "source_noninferior_point": true,
+    "source_retention": false,
+    "zero_collapse": false,
+    "zero_generation_error": true
+  },
+  "metrics": {
+    "by_capability": {
+      "abstention": {
+        "collapses": 0,
+        "functional": 95,
+        "regressions": 5,
+        "source_functional": 100
+      },
+      "cake_output_realization": {
+        "collapses": 4,
+        "functional": 75,
+        "regressions": 0,
+        "source_functional": 69
+      },
+      "clarification": {
+        "collapses": 0,
+        "functional": 99,
+        "regressions": 1,
+        "source_functional": 100
+      },
+      "coherence": {
+        "collapses": 0,
+        "functional": 99,
+        "regressions": 1,
+        "source_functional": 100
+      },
+      "conversation": {
+        "collapses": 0,
+        "functional": 90,
+        "regressions": 7,
+        "source_functional": 88
+      },
+      "domain_independent_reasoning": {
+        "collapses": 2,
+        "functional": 75,
+        "regressions": 25,
+        "source_functional": 100
+      },
+      "email_drafting": {
+        "collapses": 4,
+        "functional": 73,
+        "regressions": 20,
+        "source_functional": 75
+      },
+      "format_control": {
+        "collapses": 0,
+        "functional": 100,
+        "regressions": 0,
+        "source_functional": 88
+      },
+      "grammar": {
+        "collapses": 0,
+        "functional": 100,
+        "regressions": 0,
+        "source_functional": 100
+      },
+      "instruction_following": {
+        "collapses": 0,
+        "functional": 94,
+        "regressions": 1,
+        "source_functional": 85
+      },
+      "prompt_grounding": {
+        "collapses": 0,
+        "functional": 76,
+        "regressions": 24,
+        "source_functional": 100
+      },
+      "rewriting": {
+        "collapses": 0,
+        "functional": 100,
+        "regressions": 0,
+        "source_functional": 71
+      },
+      "summarization": {
+        "collapses": 1,
+        "functional": 89,
+        "regressions": 6,
+        "source_functional": 83
+      },
+      "tone_control": {
+        "collapses": 1,
+        "functional": 71,
+        "regressions": 4,
+        "source_functional": 61
+      }
+    },
+    "candidate_minus_source": {
+      "lower_95": -0.008571428571428572,
+      "point": 0.011428571428571429,
+      "replicates": 5000,
+      "upper_95": 0.03142857142857143
+    },
+    "collapses": 12,
+    "functional": 1236,
+    "generation_errors": 0,
+    "generation_wall_seconds": 299.31317510001827,
+    "parent_functional": 1277,
+    "physical_sparse_rows": 1400,
+    "route_correct": 1400,
+    "rows": 1400,
+    "source_functional": 1220,
+    "source_passing_regressions": 94,
+    "source_retention": 0.9229508196721311
+  },
+  "planner_calls": 0,
+  "prospective_promotion_eligible": false,
+  "router": {
+    "accuracy": 1.0,
+    "correct": 1400,
+    "predictions_sha256": "5f6e5f5a6cb2ac2939d699dabc163379e153c148eaa67f4569674a1779a88e78",
+    "rotated_accuracy": 0.0,
+    "rotated_correct": 0,
+    "rows": 1400
+  },
+  "router_sha256": "ba88cf2a18ada898d739aa14a25805dae1c5212ffdcb4bfbfbd99c1c43b682db",
+  "source_identities": [
+    {
+      "archive_sha256": "85abf114ffd6455d589d8b55b740becd920bc2e4dd4f3f62fddffe4b1708af2c",
+      "manifest_sha256": "e9c6508d5c5c9cefe2ed637cbc938e7bbfbe393c3c5c95d7625e2d8e5322671d",
+      "path_at_evaluation": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_moonshot\\segregated_acquisition_v3\\phi3-natural-v2-search-validation-survey.abix"
+    },
+    {
+      "archive_sha256": "fe9af246e28efdf57e234e9384fa04c21974f997fe753ac0975d67b1d0c6ecea",
+      "manifest_sha256": "f78c84f30d1741fdce483ea0d689f2aef4bf36f3536d1de085a7c2d3a5e07055",
+      "path_at_evaluation": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_moonshot\\segregated_acquisition_v3\\phi3-natural-v3-abstention-coherence-survey.abix"
+    }
+  ],
+  "source_inventory": {
+    "available": 1600,
+    "missing": 0,
+    "selected": 1400,
+    "surplus_ids_sha256": "f635223c4e16c1007ebb13166c3e5f4a8aeb33fd0f086be20b58454f2b3467d6",
+    "surplus_not_evaluated": 200
+  },
+  "split": "validation",
+  "symbolic_output_calls": 0,
+  "teacher_calls_during_screen": 0,
+  "teacher_present_at_inference": false,
+  "termination_controller": {
+    "artifact_sha256": "3c9a7f5bc45b3a5eb5183ec29cd994c083b3d4fbfdfcb3898c17f82848b9ee22",
+    "controller_stops": 1364,
+    "decisions": 36891,
+    "language_model_eos_stops": 24,
+    "maximum_active_routes_per_decision": 1,
+    "metadata_sha256": "0de887077a3feee10e01f27e6d98e253e0ae87062bece6bce991ee43c92cc5b8",
+    "selected_route_exact": true,
+    "token_logits_modified": false,
+    "tokens_selected_or_rewritten": false
+  },
+  "training_steps_during_screen": 0,
+  "verdict": "FAIL_R58_DISCLOSED_SCREEN"
+}
