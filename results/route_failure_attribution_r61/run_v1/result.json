@@ -1,0 +1,98 @@
+{
+  "artifacts": {
+    "evaluation": {
+      "bytes": 1423466,
+      "path": "evaluation.jsonl",
+      "sha256": "8f0bac830dc8eb27724f5c7f94420633b8ff599fa6743823e1a74769226023cc"
+    }
+  },
+  "evidence_sha256": "0eb09f9079a2eac40eab34ca4b69194bb521a591bba7fe56c437f3918dfb1473",
+  "format": "abi-r61-route-failure-attribution/1",
+  "full_abi_moonshot": "OPEN",
+  "metrics": {
+    "baseline_format_control": 0,
+    "baseline_functional": 813,
+    "by_capability": {
+      "abstention": {
+        "changed_rows": 0,
+        "functional": 0
+      },
+      "cake_output_realization": {
+        "changed_rows": 0,
+        "functional": 70
+      },
+      "clarification": {
+        "changed_rows": 0,
+        "functional": 80
+      },
+      "coherence": {
+        "changed_rows": 0,
+        "functional": 35
+      },
+      "conversation": {
+        "changed_rows": 0,
+        "functional": 94
+      },
+      "domain_independent_reasoning": {
+        "changed_rows": 0,
+        "functional": 0
+      },
+      "email_drafting": {
+        "changed_rows": 0,
+        "functional": 78
+      },
+      "format_control": {
+        "changed_rows": 90,
+        "functional": 0
+      },
+      "grammar": {
+        "changed_rows": 0,
+        "functional": 81
+      },
+      "instruction_following": {
+        "changed_rows": 0,
+        "functional": 75
+      },
+      "prompt_grounding": {
+        "changed_rows": 0,
+        "functional": 87
+      },
+      "rewriting": {
+        "changed_rows": 0,
+        "functional": 74
+      },
+      "summarization": {
+        "changed_rows": 0,
+        "functional": 84
+      },
+      "tone_control": {
+        "changed_rows": 0,
+        "functional": 55
+      }
+    },
+    "changed_rows_executed_live": 90,
+    "final_collapses": 3,
+    "forced_route_format_control": 0,
+    "forced_route_functional": 813,
+    "functional_delta": 0,
+    "physical_sparse_rows": 1400,
+    "rows": 1400,
+    "unchanged_rows_bound_to_r60_live_receipt": 1310,
+    "wall_seconds": 18.805133300018497
+  },
+  "promotion_eligible": false,
+  "runtime_telemetry_changed_rows": {
+    "accepted_tokens": 2273,
+    "candidate_transitions_checked": 2273,
+    "inherited_r55_lexical_truncations": 25,
+    "language_model_eos_stops": 59,
+    "rejected_boundary_tokens": 0,
+    "rejections_by_condition": {
+      "maximum_identical_token_run": 0,
+      "repeated_novel_lexical_fourgrams": 0
+    }
+  },
+  "teacher_calls": 0,
+  "training_steps": 0,
+  "verdict": "PASS_R61_ROUTE_EFFECT_QUANTIFIED"
+}
