@@ -1,0 +1,27 @@
+{
+  "format": "abi-r70-reasoning-source-acquisition-result/1",
+  "verdict": "FAIL_R70_CLOSE_FREE_GENERATION_REASONING_ACQUISITION",
+  "promotion_eligible": false,
+  "full_abi_moonshot": "OPEN",
+  "catalog_sha256": "d4ec9697f1ea256a3ae93b4cfda4d845a55153ef3165b485ae63feed078c2ecc",
+  "source_archive": {
+    "path": "phi3_two_step_choice_reasoning_search_survey_v1.abix",
+    "sha256": "6ade0cfb70bdf56e61e50d1225e2ccbc469cc780810ea0cfc961e0b3c28df1fb",
+    "bytes": 5131180,
+    "manifest_sha256": "516758531792c70a0b5874f3f271c4ace958b58710a1e9173a52081810ca9bb8"
+  },
+  "source_receipt_sha256": "8294ebd2a8e17705dc15f27c3044702f070254f7992131d99c1d7f9e7f457ad4",
+  "metrics": {
+    "rows": 2000,
+    "passing": 713,
+    "pass_rate": 0.3565,
+    "teacher_tokens": 24785,
+    "passing_teacher_tokens": 4633,
+    "rows_at_16_token_ceiling": 1247,
+    "failed_rows_at_16_token_ceiling": 1243
+  },
+  "locked_gate": {"minimum_passing": 1800, "passed": false},
+  "measured_failure": "Explicit choices did not stop free-generation narration; 1,243 failed rows exhausted the 16-token ceiling before a terminal code.",
+  "decision": "Close free-generation prompt engineering. Directly score the three candidate completions under the frozen source weights."
+}
+
