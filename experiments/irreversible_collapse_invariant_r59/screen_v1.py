@@ -20,6 +20,10 @@ from experiments.isolated_capability_cakes_r53 import fit_router
 
 MAXIMUM_IDENTICAL_TOKEN_RUN = 6
 REPEATED_NOVEL_LEXICAL_FOURGRAMS = 4
+CANDIDATE_SHA256 = r55.CANDIDATE_SHA256
+METADATA_SHA256 = r55.METADATA_SHA256
+ROUTER_SHA256 = r55.ROUTER_SHA256
+PARENT_COUNTS = r55.PARENT_COUNTS
 
 
 def _completed_output_words(output: str) -> list[str]:
