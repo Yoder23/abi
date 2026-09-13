@@ -63,7 +63,7 @@ class DepthSharedBridge(nn.Module):
             selected = normalized.index_select(0, rows)
             low = F.linear(selected, self.down.weight[start:stop])
             delta = F.linear(F.silu(low), self.up.weight[:, start:stop])
-            output.index_copy_(0, rows, delta)
+            output.index_copy_(0, rows, delta.to(hidden.dtype))
         return hidden + output
 
 

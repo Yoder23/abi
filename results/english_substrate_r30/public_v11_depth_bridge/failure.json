@@ -1,0 +1,9 @@
+{
+  "format": "abi-r30-operational-failure/1",
+  "stage": "first_training_forward",
+  "status": "FAIL_OPERATIONAL",
+  "exception": "RuntimeError: index_copy_ source and destination dtypes differed under CUDA autocast",
+  "scientific_rows_emitted": 0,
+  "artifact_emitted": false,
+  "repair_scope": "Cast the autocast residual delta back to the frozen hidden-state dtype before indexed placement; preserve all scientific settings."
+}

@@ -21,3 +21,7 @@ This is a bounded external-bridge control.  It is structurally adapter-like and
 does not establish ABI superiority, general English, or minimality even if it
 passes.  Failure closes nearby depth-shared rank/step/learning-rate sweeps.
 
+The first launch failed on its first forward pass because CUDA autocast made
+the residual delta fp16 while indexed placement expected the frozen fp32 hidden
+dtype.  The failure is preserved.  The sole v11b repair casts that delta to the
+hidden dtype before placement; no scientific setting changes.
