@@ -1,0 +1,176 @@
+{
+  "artifacts": {
+    "evaluation": {
+      "path": "evaluation.jsonl",
+      "sha256": "2178cf46df7c6646e577d4c97cbf158a2b92a5c1e800670137fd4e75085331e9"
+    },
+    "public_key": {
+      "path": "research_public_key.pem",
+      "sha256": "7a01cbddee7572e5f7d496ec32cf27eb51196f6a576d09ff8dc4622e6d7309b2"
+    },
+    "state": {
+      "path": "models/english_core.safetensors",
+      "sha256": "c48e3e3a656f21e379f5d7929081f101dfcca2660cc861b32a69814bbed0715d"
+    },
+    "tokenizer": {
+      "path": "models/english_core.tokenizer.json",
+      "semantic_sha256": "b117f0c8ae7462d15f4b2793c1ddf92ded782de4beb607e84b5d6d6e2e64ab94",
+      "sha256": "5f54ffae5fffd5cb0598f6062829d99f93ad2e1d094f4ecdaad2ce65023be4d8"
+    },
+    "training_rows": {
+      "path": "training_rows.jsonl",
+      "sha256": "744197407309b98f2fb909a629e4cc73635a0bb1010c3f3bc03060605e00c3e0"
+    },
+    "zero_state": {
+      "path": "models/zero_state.safetensors",
+      "sha256": "65ce4a5b154bdc1bdf4eee96a9661fb021c1e78c65a961ab28de7cc0235f6266"
+    }
+  },
+  "claim_ceiling": "COMPACT_SHARED_SUPPLIED_CONTENT_ENGLISH_CORE_DEVELOPMENT_NOT_HIDDEN_OR_UNRESTRICTED_ENGLISH",
+  "evidence_sha256": "2c229a22095814775536fdd9db08e983c18bd85c4cbfa4a228bd70d438c46ea6",
+  "format": "abi-r42-shared-english-core-development/1",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "elapsed_seconds": 423.1918054000125,
+    "new_teacher_calls": 0,
+    "peak_cpu_rss_bytes": 947159040,
+    "peak_cuda_memory_bytes": 383877120,
+    "receiver_training_steps_after_packaging": 0,
+    "selected_teacher_outputs": 282,
+    "teacher_activations_stored": 0,
+    "teacher_logits_stored": 0,
+    "teacher_output_bytes": 39418,
+    "teacher_output_tokens": 12278,
+    "teacher_parameters_copied": 0,
+    "teacher_present_at_execution": false,
+    "unique_source_prompt_bytes": 63842
+  },
+  "inputs": {
+    "r31_rows": "5ff7691d67b0e8271439acfbfe25540c7d42c06918b58b9257873c6f7ca9f05d",
+    "r36": "1830a0a1be9b520376ce228fd50514e79f9b3a8224d56f7a1b36e0338d03d5bd",
+    "r38_rows": "9c9411aa10080aa65ce4088d99fb1306c709af0284084f50af03505ea3b57c04",
+    "r39": "eee143b1f35038ed518cbd4a9a8aa034da03e0799fea39a9498e76b7bed242f0",
+    "r40": "50c6a5aabb8e416ec7e959919591246eca1193b36c0c6b707ad0c217f7f324d6",
+    "r41": "d964ef7d591788211a6d54911b126c1e392a0b535fd2af8bc3027a6811f427c4"
+  },
+  "lifecycle": {
+    "generation_rejected": true,
+    "reinstalled_status": "INSTALLED",
+    "removed_status": "REMOVED",
+    "restored_exact": true,
+    "restored_output_sha256": "5ade2c739ff12e7aceb39af8568e6906c2fb52d93262c4feded51338ea438774"
+  },
+  "metrics": {
+    "candidate_by_device_task": {
+      "cpu": {
+        "abstention": 12,
+        "bullets": 12,
+        "clarification": 12,
+        "comparison": 12,
+        "conversation": 12,
+        "email": 12,
+        "planning": 10,
+        "prose": 12,
+        "reasoning": 12,
+        "rewrite": 12,
+        "summary": 12,
+        "tone": 9
+      },
+      "cuda": {
+        "abstention": 12,
+        "bullets": 12,
+        "clarification": 12,
+        "comparison": 12,
+        "conversation": 12,
+        "email": 12,
+        "planning": 10,
+        "prose": 12,
+        "reasoning": 12,
+        "rewrite": 12,
+        "summary": 12,
+        "tone": 9
+      }
+    },
+    "candidate_contract_exact": 288,
+    "candidate_cpu_cuda_exact": 144,
+    "candidate_cpu_functional": 139,
+    "candidate_cuda_functional": 139,
+    "candidate_noncollapsed": 288,
+    "candidate_package_bytes": 1201572,
+    "candidate_parameters": 295006,
+    "candidate_representation_errors": 0,
+    "candidate_route_exact": 288,
+    "package_ratio_to_r41": 0.09750014545030238,
+    "r41_candidate_package_bytes": 12323797,
+    "training_rows": 282,
+    "zero_candidate_exact_by_device": {
+      "cpu": 0,
+      "cuda": 0
+    },
+    "zero_functional_by_device": {
+      "cpu": 0,
+      "cuda": 0
+    }
+  },
+  "packages": {
+    "candidate": {
+      "package_hash": "46cb0b864e2da81d0f3852b4d7388f3a852bdcfd8791abaacc73dbaf6fb3f815",
+      "path": "packages/english_core.cake",
+      "payload_hash": "b3a033067979f5f33973c52c6931a9de39fdc152c9b8eec869c93bc31520aa2b",
+      "sha256": "df56ee43689bb49f8e2f746374be5e19781a06720df377693e29bd2a8bb1ad8a"
+    },
+    "zero_state": {
+      "package_hash": "370740e95a1d2c1e5299fb9e3090042b810672196526dc919ebaf9cebf807c3d",
+      "path": "packages/zero_state.cake",
+      "payload_hash": "44d508f65f940de87fece9ce68727a3d471fc5a54dca9988c7f10b4590248408",
+      "sha256": "cf06c64e77bf8c7d704e7eb594da33b4b2ff1e4ab7efcd680385ccabff38480f"
+    }
+  },
+  "training": {
+    "batch_size": 48,
+    "fixed_vocabulary_size": 413,
+    "history": [
+      {
+        "accuracy": 0.0018066847696900368,
+        "gradient_norm": 1.900524616241455,
+        "loss": 6.312355995178223,
+        "seconds": 0.2500518999877386,
+        "step": 1
+      },
+      {
+        "accuracy": 0.9937378168106079,
+        "gradient_norm": 0.061942052096128464,
+        "loss": 0.01652984879910946,
+        "seconds": 44.073586000013165,
+        "step": 1599
+      },
+      {
+        "accuracy": 0.9932688474655151,
+        "gradient_norm": 0.04013890400528908,
+        "loss": 0.0138250682502985,
+        "seconds": 87.42460600001505,
+        "step": 3198
+      },
+      {
+        "accuracy": 0.9947242140769958,
+        "gradient_norm": 0.025751307606697083,
+        "loss": 0.012401578016579151,
+        "seconds": 130.9144333000295,
+        "step": 4797
+      },
+      {
+        "accuracy": 0.9921836853027344,
+        "gradient_norm": 0.04647873342037201,
+        "loss": 0.01717105694115162,
+        "seconds": 174.8591119000339,
+        "step": 6396
+      }
+    ],
+    "parameters": 295006,
+    "seconds": 174.85951260000002,
+    "seed": 42001,
+    "steps": 6396,
+    "total_example_exposures": 307008
+  },
+  "verdict": "FAIL_R42_SHARED_CORE_DEVELOPMENT"
+}
