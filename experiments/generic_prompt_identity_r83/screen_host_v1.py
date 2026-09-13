@@ -106,6 +106,8 @@ def _preflight(
     pointer = acquired.get("prompt_identity_carriage") or {}
     architecture = metadata.get("architecture", {})
     recovery = training.get("self_generated_prefix_recovery", {})
+    amendments = metadata.get("r83_preobservation_amendments", [])
+    amendment_path = Path(__file__).with_name("AMENDMENT_1.md")
     if (
         _manifest_sha(unsigned) != manifest_sha
         or metadata.get("status")
@@ -142,6 +144,13 @@ def _preflight(
         or pointer.get("parent_state_preserved_exact") is not True
         or acquired.get("physical_sparse_topology_preserved") is not True
         or acquired.get("maximum_active_task_cakes_per_sequence") != 1
+        or len(amendments) != 1
+        or amendments[0].get("format")
+        != "abi-r83-preobservation-instrumentation-amendment/1"
+        or amendments[0].get("sha256") != _sha256_file(amendment_path)
+        or amendments[0].get("candidate_outputs_observed_before_amendment") != 0
+        or amendments[0].get("parent_outputs_observed_before_amendment") != 0
+        or amendments[0].get("candidate_checkpoint_changed") is not False
     ):
         raise ScreenError("R83 acquisition or deployment contract changed")
     return metadata
@@ -329,10 +338,12 @@ def run(
     )
     metadata = _preflight(candidate, parent, binding)
     source_result = json.loads(source_result_path.read_text(encoding="utf-8"))
+    unsigned_source_result = dict(source_result)
+    unsigned_source_result.pop("evidence_sha256", None)
     if (
         source_result.get("verdict") != "PASS_R81_SOURCE"
         or source_result.get("evidence_sha256") != SOURCE_EVIDENCE_SHA256
-        or evidence_hash(source_result) != SOURCE_EVIDENCE_SHA256
+        or evidence_hash(unsigned_source_result) != SOURCE_EVIDENCE_SHA256
         or source_result.get("metrics", {}).get("prior_corrected_passing") != 1_382
         or source_result.get("artifacts", {}).get("prior_corrected_scores", {}).get("sha256")
         != SOURCE_RAW_SHA256

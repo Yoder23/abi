@@ -44,3 +44,10 @@ new conditioning path. Any failure closes R83.
 This is bounded nonce relation/copy acquisition. Passing would prove a useful
 teacher-to-ABI-to-LayerCake causal bridge on this task, not unrestricted English,
 domain transfer, minimality, LoRA/distillation superiority, or the ABI moonshot.
+
+## Pre-observation amendment
+
+`AMENDMENT_1.md` records a source-evidence self-hash recomputation error that
+stopped the first screen before either model loaded and before any validation
+output was observed. It changes instrumentation only; all scientific gates and
+candidate weights remain frozen.
