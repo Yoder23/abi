@@ -1,0 +1,168 @@
+{
+  "artifacts": {
+    "evaluation": {
+      "bytes": 2458879,
+      "path": "evaluation.jsonl",
+      "sha256": "477cc03797b3513962fbdfc1c523a2da564c97dec6418dd7ea22c2ec80b9dbff"
+    }
+  },
+  "candidate_checkpoint_sha256": "7929586d30d427d79471e8259d02735ec5519be46d986a684ddaa5464d6652c2",
+  "candidate_metadata_sha256": "adb116e7ef97ce36febe28361ff341afdf529588c55d5f85d987318499b4d598",
+  "evidence_sha256": "a04b29f679419e6d43569d4265983f01d3862c4a04b447059dbcc8fd5dadab1f",
+  "format": "abi-r57-terminal-balanced-adapters-development-screen/1",
+  "full_abi_moonshot": "OPEN",
+  "gates": {
+    "artifacts_unchanged": true,
+    "functional": false,
+    "matrix": true,
+    "parent_nondegradation": false,
+    "per_capability": false,
+    "physical_sparse": true,
+    "route_exact": true,
+    "source_noninferior_point": true,
+    "source_retention": true,
+    "zero_collapse": false,
+    "zero_generation_error": true
+  },
+  "metrics": {
+    "by_capability": {
+      "abstention": {
+        "collapses": 5,
+        "functional": 95,
+        "regressions": 5,
+        "source_functional": 100
+      },
+      "cake_output_realization": {
+        "collapses": 0,
+        "functional": 74,
+        "regressions": 1,
+        "source_functional": 69
+      },
+      "clarification": {
+        "collapses": 0,
+        "functional": 93,
+        "regressions": 7,
+        "source_functional": 100
+      },
+      "coherence": {
+        "collapses": 0,
+        "functional": 100,
+        "regressions": 0,
+        "source_functional": 100
+      },
+      "conversation": {
+        "collapses": 0,
+        "functional": 96,
+        "regressions": 2,
+        "source_functional": 88
+      },
+      "domain_independent_reasoning": {
+        "collapses": 0,
+        "functional": 73,
+        "regressions": 27,
+        "source_functional": 100
+      },
+      "email_drafting": {
+        "collapses": 0,
+        "functional": 69,
+        "regressions": 18,
+        "source_functional": 75
+      },
+      "format_control": {
+        "collapses": 0,
+        "functional": 100,
+        "regressions": 0,
+        "source_functional": 88
+      },
+      "grammar": {
+        "collapses": 0,
+        "functional": 100,
+        "regressions": 0,
+        "source_functional": 100
+      },
+      "instruction_following": {
+        "collapses": 0,
+        "functional": 100,
+        "regressions": 0,
+        "source_functional": 85
+      },
+      "prompt_grounding": {
+        "collapses": 0,
+        "functional": 100,
+        "regressions": 0,
+        "source_functional": 100
+      },
+      "rewriting": {
+        "collapses": 0,
+        "functional": 100,
+        "regressions": 0,
+        "source_functional": 71
+      },
+      "summarization": {
+        "collapses": 0,
+        "functional": 95,
+        "regressions": 2,
+        "source_functional": 83
+      },
+      "tone_control": {
+        "collapses": 2,
+        "functional": 61,
+        "regressions": 10,
+        "source_functional": 61
+      }
+    },
+    "candidate_minus_source": {
+      "lower_95": 0.007142857142857143,
+      "point": 0.025714285714285714,
+      "replicates": 5000,
+      "upper_95": 0.04428571428571428
+    },
+    "collapses": 7,
+    "functional": 1256,
+    "generation_errors": 0,
+    "generation_wall_seconds": 302.2269393999595,
+    "parent_functional": 1277,
+    "physical_sparse_rows": 1400,
+    "route_correct": 1400,
+    "rows": 1400,
+    "source_functional": 1220,
+    "source_passing_regressions": 72,
+    "source_retention": 0.940983606557377
+  },
+  "planner_calls": 0,
+  "prospective_promotion_eligible": false,
+  "router": {
+    "accuracy": 1.0,
+    "correct": 1400,
+    "predictions_sha256": "5f6e5f5a6cb2ac2939d699dabc163379e153c148eaa67f4569674a1779a88e78",
+    "rotated_accuracy": 0.0,
+    "rotated_correct": 0,
+    "rows": 1400
+  },
+  "router_sha256": "ba88cf2a18ada898d739aa14a25805dae1c5212ffdcb4bfbfbd99c1c43b682db",
+  "source_identities": [
+    {
+      "archive_sha256": "85abf114ffd6455d589d8b55b740becd920bc2e4dd4f3f62fddffe4b1708af2c",
+      "manifest_sha256": "e9c6508d5c5c9cefe2ed637cbc938e7bbfbe393c3c5c95d7625e2d8e5322671d",
+      "path_at_evaluation": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_moonshot\\segregated_acquisition_v3\\phi3-natural-v2-search-validation-survey.abix"
+    },
+    {
+      "archive_sha256": "fe9af246e28efdf57e234e9384fa04c21974f997fe753ac0975d67b1d0c6ecea",
+      "manifest_sha256": "f78c84f30d1741fdce483ea0d689f2aef4bf36f3536d1de085a7c2d3a5e07055",
+      "path_at_evaluation": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_moonshot\\segregated_acquisition_v3\\phi3-natural-v3-abstention-coherence-survey.abix"
+    }
+  ],
+  "source_inventory": {
+    "available": 1600,
+    "missing": 0,
+    "selected": 1400,
+    "surplus_ids_sha256": "f635223c4e16c1007ebb13166c3e5f4a8aeb33fd0f086be20b58454f2b3467d6",
+    "surplus_not_evaluated": 200
+  },
+  "split": "validation",
+  "symbolic_output_calls": 0,
+  "teacher_calls_during_screen": 0,
+  "teacher_present_at_inference": false,
+  "training_steps_during_screen": 0,
+  "verdict": "FAIL_R57_DISCLOSED_SCREEN"
+}
