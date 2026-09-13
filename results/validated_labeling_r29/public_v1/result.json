@@ -1,0 +1,56 @@
+{
+  "artifacts": {
+    "evaluation": {
+      "path": "evaluation.jsonl",
+      "sha256": "36f89b195b51593e5f21f75b3aa757cd73db4cb6cc6334bb508cc493be8f44d5"
+    }
+  },
+  "claim": "DISCLOSED_VALIDATOR_BACKED_MULTILABEL_COMPILER_PREREQUISITE",
+  "claim_ceiling": "NOT_FRESH_HELDOUT_OR_LAYERCAKE_IMPORT",
+  "evidence_sha256": "56f6186b95cd93f3b02a299e735b8da20de97dc927c6bf7674a13c2691e6fb91",
+  "format": "abi-r29-public-validated-qualification/1",
+  "full_abi_moonshot": "OPEN",
+  "metrics": {
+    "evaluation_rows": 36,
+    "oracle_fields_consumed": 0,
+    "package_fact_records": 13,
+    "package_oracle_exact": 36,
+    "packages": 4,
+    "source_records": 36,
+    "teacher_oracle_exact": 31,
+    "unique_facts": 12,
+    "validator_uses": 6
+  },
+  "packages": [
+    {
+      "bytes": 269,
+      "facts": 3,
+      "namespace": "teacher/chemistry",
+      "path": "packages/sha256-6763b795cdf4b32e4e98cfb22d83b81021821febad07a8dbb85688b20d723b28.abipkg",
+      "sha256": "6763b795cdf4b32e4e98cfb22d83b81021821febad07a8dbb85688b20d723b28"
+    },
+    {
+      "bytes": 294,
+      "facts": 3,
+      "namespace": "teacher/geography",
+      "path": "packages/sha256-f35a6aa27d07d2dc2146175c68af48451d7c635aa4cfb5435cbde03f2b5a5840.abipkg",
+      "sha256": "f35a6aa27d07d2dc2146175c68af48451d7c635aa4cfb5435cbde03f2b5a5840"
+    },
+    {
+      "bytes": 279,
+      "facts": 3,
+      "namespace": "teacher/mathematics",
+      "path": "packages/sha256-e57d8d0ef2e2e0f7286d0b50c74970d16ae86419a26ab6424b349dc4ef9d77fb.abipkg",
+      "sha256": "e57d8d0ef2e2e0f7286d0b50c74970d16ae86419a26ab6424b349dc4ef9d77fb"
+    },
+    {
+      "bytes": 354,
+      "facts": 4,
+      "namespace": "teacher/python",
+      "path": "packages/sha256-dbd095eeb76713370dcc8ec2ba13586d0d1047fbc01d7fb6e70cba6fe9b591a4.abipkg",
+      "sha256": "dbd095eeb76713370dcc8ec2ba13586d0d1047fbc01d7fb6e70cba6fe9b591a4"
+    }
+  ],
+  "r28_source_rows_sha256": "1b4679b596a72946c00517de9735a82e01504c9a2fe3bbe760a5565692fe0030",
+  "verdict": "PASS"
+}

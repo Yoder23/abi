@@ -1,0 +1,157 @@
+{
+  "capsule_manifest_evidence_sha256": "2a3b61d0c209ee17da3b082fe33ac670d790a0356f5c461cd1ea6824b101ffbd",
+  "evidence_sha256": "09ff9c052a4d0df121c4a3facc159e3c8398c993c82d87250b40bacbdd0b74a2",
+  "fact_ids_consumed": 0,
+  "format": "abi-r29-isolated-validated-extraction/1",
+  "mountinfo_sha256": "bfa077f063cbc2e4c6663d94c1b6b0be58c1789b9b7750521d5af4f31e7af853",
+  "network_namespace_isolated": true,
+  "old_root_present": false,
+  "oracle_fields_consumed": 0,
+  "package_fact_records": 13,
+  "packages": [
+    {
+      "bytes": 269,
+      "facts": 3,
+      "namespace": "teacher/chemistry",
+      "path": "packages/sha256-6763b795cdf4b32e4e98cfb22d83b81021821febad07a8dbb85688b20d723b28.abipkg",
+      "sha256": "6763b795cdf4b32e4e98cfb22d83b81021821febad07a8dbb85688b20d723b28"
+    },
+    {
+      "bytes": 294,
+      "facts": 3,
+      "namespace": "teacher/geography",
+      "path": "packages/sha256-f35a6aa27d07d2dc2146175c68af48451d7c635aa4cfb5435cbde03f2b5a5840.abipkg",
+      "sha256": "f35a6aa27d07d2dc2146175c68af48451d7c635aa4cfb5435cbde03f2b5a5840"
+    },
+    {
+      "bytes": 279,
+      "facts": 3,
+      "namespace": "teacher/mathematics",
+      "path": "packages/sha256-e57d8d0ef2e2e0f7286d0b50c74970d16ae86419a26ab6424b349dc4ef9d77fb.abipkg",
+      "sha256": "e57d8d0ef2e2e0f7286d0b50c74970d16ae86419a26ab6424b349dc4ef9d77fb"
+    },
+    {
+      "bytes": 354,
+      "facts": 4,
+      "namespace": "teacher/python",
+      "path": "packages/sha256-dbd095eeb76713370dcc8ec2ba13586d0d1047fbc01d7fb6e70cba6fe9b591a4.abipkg",
+      "sha256": "dbd095eeb76713370dcc8ec2ba13586d0d1047fbc01d7fb6e70cba6fe9b591a4"
+    }
+  ],
+  "records_consumed": 36,
+  "success_ids_consumed": 0,
+  "unique_facts": 12,
+  "validation": [
+    {
+      "selected_answer": "30",
+      "source_quorum": "30",
+      "subject_sha256": "f78ea752822b648940d5137187d3093feba05902b2fa1b7a099ff176c88810bb",
+      "tags": [
+        "chemistry"
+      ],
+      "validator_used": false
+    },
+    {
+      "selected_answer": "lisbon",
+      "source_quorum": "lisbon",
+      "subject_sha256": "4c7de2c3da6dc0ae8f9d13b107718a913859359bd30166d077c867577953865d",
+      "tags": [
+        "geography"
+      ],
+      "validator_used": false
+    },
+    {
+      "selected_answer": "True",
+      "source_quorum": "false",
+      "subject_sha256": "c40d9316313162c35e9e449db3467884d8bb8664ad4b38ae0541356ebe0956f4",
+      "tags": [
+        "python"
+      ],
+      "validator_used": true
+    },
+    {
+      "selected_answer": "21",
+      "source_quorum": "21",
+      "subject_sha256": "2a96632b53a3c91ca70cb7649105c80d2d35f728fa627f816618bc9b8676cd47",
+      "tags": [
+        "mathematics"
+      ],
+      "validator_used": true
+    },
+    {
+      "selected_answer": "25",
+      "source_quorum": "25",
+      "subject_sha256": "a9b726a95ed005708cfc7f4dbe2a162b7d0d07248049d3374a20d7c958e57b8d",
+      "tags": [
+        "mathematics"
+      ],
+      "validator_used": true
+    },
+    {
+      "selected_answer": "3",
+      "source_quorum": "3",
+      "subject_sha256": "14b5cc1f2283528355fa32474ebec6a024d6c46c0e9992ae35643d2e025855c8",
+      "tags": [
+        "chemistry"
+      ],
+      "validator_used": false
+    },
+    {
+      "selected_answer": "bangkok",
+      "source_quorum": "bangkok",
+      "subject_sha256": "6e49e65081b2bcb5a54e6a6a74086f42949ddf388d516ce7eb0dad7d95e80ceb",
+      "tags": [
+        "geography"
+      ],
+      "validator_used": false
+    },
+    {
+      "selected_answer": "ABC",
+      "source_quorum": "abc",
+      "subject_sha256": "1405cedd86072b587c735c064214736ef96ad83af14c9234f14e8a12f74a86e3",
+      "tags": [
+        "python"
+      ],
+      "validator_used": true
+    },
+    {
+      "selected_answer": "1024",
+      "source_quorum": "1024",
+      "subject_sha256": "baca7bab2bfd26ca6102db549f9875c6982d3cca4dbadbab268c41ac07174e36",
+      "tags": [
+        "mathematics",
+        "python"
+      ],
+      "validator_used": true
+    },
+    {
+      "selected_answer": "buenos aires",
+      "source_quorum": "buenos aires",
+      "subject_sha256": "ea0b937ea317101ee2c26b03a4843a19ceced8a2b9673c3cf409a726ca2b0fd8",
+      "tags": [
+        "geography"
+      ],
+      "validator_used": false
+    },
+    {
+      "selected_answer": "12",
+      "source_quorum": "12",
+      "subject_sha256": "9041bd65105f2c7670ad5032f308ffe7e83b7f5ae1321e50b306b46de86d80d7",
+      "tags": [
+        "chemistry"
+      ],
+      "validator_used": false
+    },
+    {
+      "selected_answer": "2",
+      "source_quorum": "2",
+      "subject_sha256": "4f25664732014924e9b8658ea634160571edb1aff4f8cb9eab151627a1929ca4",
+      "tags": [
+        "python"
+      ],
+      "validator_used": true
+    }
+  ],
+  "validator_uses": 6,
+  "windows_mount_present": false
+}
