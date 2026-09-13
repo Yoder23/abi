@@ -44,6 +44,12 @@ at least 90/100, candidate retention of source-passing rows at least 95%, zero
 candidate repetition collapse, no errors, and physical execution of only the
 reasoning route's six adapters plus one terminal cake.
 
+The untouched R47 parent is also run live on the same rows as a causal negative
+control using its canonical reasoning route. R74 additionally requires at
+least a 50 percentage-point candidate improvement over that parent. The parent
+result is descriptive outside this bounded interface and is not a claim that
+R47 lacks general reasoning.
+
 R75 is a bounded reasoning-transfer result, not general-English certification,
 minimality, independent-hardware reproduction, human review, or the complete
 ABI moonshot.
