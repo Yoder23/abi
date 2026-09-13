@@ -1,0 +1,86 @@
+{
+  "artifacts": {
+    "evaluation": {
+      "bytes": 133826,
+      "path": "evaluation.jsonl",
+      "sha256": "043814efd8483cc2a6f081f0b162a58d7ea35ddc8c44f8b0ffa1622cc8975f84"
+    }
+  },
+  "claim_ceiling": "FROZEN_LAYERCAKE_HOST_DIAGNOSTIC_NOT_ABI_EXTRACTION_OR_GENERAL_ENGLISH",
+  "diagnosis_sha256": "ee4403f4f9b85b2d44ea92cf989adc20470858529db56ec0aa24e6c003e90a39",
+  "evidence_sha256": "1718c33870e4a2f1e853f6e77235a041a70f2b75a03f5ab0a36d39c5fdddf192",
+  "format": "abi-r30-frozen-layercake-host-baseline/9",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "abi_package_present": false,
+    "elapsed_seconds": 93.54615789995296,
+    "peak_cpu_rss_bytes": 941707264,
+    "peak_gpu_memory_bytes": 279479808,
+    "teacher_present": false
+  },
+  "layercake": {
+    "checkpoint_sha256": "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1",
+    "parameter_updates": 0,
+    "parameters_active": 60756490,
+    "parameters_total": 61655050,
+    "repository_commit": "2170c78b7ae901eb4e99ec93ad59d573b2c75941",
+    "tokenizer_sha256": "1fe93b6152957cf9cfd6d89002467f789ce8b3f3e000b3a2edf27c808ddd0b9e"
+  },
+  "metrics": {
+    "by_task": {
+      "abstention": {
+        "functional": 0,
+        "rows": 12
+      },
+      "bullets": {
+        "functional": 0,
+        "rows": 12
+      },
+      "clarification": {
+        "functional": 0,
+        "rows": 12
+      },
+      "comparison": {
+        "functional": 0,
+        "rows": 12
+      },
+      "conversation": {
+        "functional": 0,
+        "rows": 12
+      },
+      "email": {
+        "functional": 0,
+        "rows": 12
+      },
+      "planning": {
+        "functional": 0,
+        "rows": 12
+      },
+      "prose": {
+        "functional": 0,
+        "rows": 12
+      },
+      "reasoning": {
+        "functional": 0,
+        "rows": 12
+      },
+      "rewrite": {
+        "functional": 0,
+        "rows": 12
+      },
+      "summary": {
+        "functional": 0,
+        "rows": 12
+      },
+      "tone": {
+        "functional": 0,
+        "rows": 12
+      }
+    },
+    "evaluation_rows": 144,
+    "functional": 0
+  },
+  "scientific_role": "RECIPIENT_SUBSTRATE_DIAGNOSTIC_NOT_ABI_TRANSFER",
+  "source_rows_sha256": "01f4f11ca70e9ff5d98b5d7573ef71a8a28a67e6351dc3e71b816d8bc3dd45da",
+  "verdict": "FAIL_FROZEN_HOST_BASELINE"
+}
