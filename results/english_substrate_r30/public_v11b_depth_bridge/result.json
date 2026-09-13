@@ -1,0 +1,224 @@
+{
+  "artifact": {
+    "bytes": 2758976,
+    "manifest": {
+      "path": "artifact_manifest.json",
+      "sha256": "f63a359d0eeb2fe8ec0164a959c72218eee6ae4942a7e98a82056cc07a987d26"
+    },
+    "parameters": 689664,
+    "path": "depth_shared_bridge.safetensors",
+    "sha256": "bfd98483c758914075e89d2b48c8c34064cef6693cec64a15fcf348078bf76b9"
+  },
+  "artifacts": {
+    "evaluation": {
+      "bytes": 65614,
+      "path": "evaluation.jsonl",
+      "sha256": "9d0b69a054db74a04811cb0e74ef1fd9b5544ebbe546394e5aae876874168f51"
+    },
+    "removal": [
+      {
+        "artifact_changes_output": true,
+        "record_id": "r30-evaluation-1f0e32efddc44b47cf72",
+        "task": "prose"
+      },
+      {
+        "artifact_changes_output": true,
+        "record_id": "r30-evaluation-ac34f2cfb3adea12462f",
+        "task": "summary"
+      },
+      {
+        "artifact_changes_output": true,
+        "record_id": "r30-evaluation-7e8666fcb90e3b939483",
+        "task": "rewrite"
+      },
+      {
+        "artifact_changes_output": true,
+        "record_id": "r30-evaluation-290798ab1c8e6fe8c3f7",
+        "task": "email"
+      },
+      {
+        "artifact_changes_output": true,
+        "record_id": "r30-evaluation-21d1a1094828efe24bbf",
+        "task": "bullets"
+      },
+      {
+        "artifact_changes_output": true,
+        "record_id": "r30-evaluation-ea29ad74e9d53985b3d3",
+        "task": "tone"
+      },
+      {
+        "artifact_changes_output": true,
+        "record_id": "r30-evaluation-9728087d86225435d156",
+        "task": "clarification"
+      },
+      {
+        "artifact_changes_output": true,
+        "record_id": "r30-evaluation-868d94687b8d752a68a3",
+        "task": "conversation"
+      },
+      {
+        "artifact_changes_output": true,
+        "record_id": "r30-evaluation-4fb5ddc9515cf05159dd",
+        "task": "planning"
+      },
+      {
+        "artifact_changes_output": true,
+        "record_id": "r30-evaluation-d5e1e6f1a8a30ce56b6b",
+        "task": "comparison"
+      },
+      {
+        "artifact_changes_output": true,
+        "record_id": "r30-evaluation-aa0f056ee88851db8b7d",
+        "task": "reasoning"
+      },
+      {
+        "artifact_changes_output": true,
+        "record_id": "r30-evaluation-e9e8dd035c3f07735899",
+        "task": "abstention"
+      }
+    ]
+  },
+  "claim_ceiling": "DISCLOSED_EXTERNAL_BRIDGE_CONTROL_NOT_GENERAL_ENGLISH_OR_ABI_SUPERIORITY",
+  "evidence_sha256": "30bc2fae7ec70b0638668e4d33694423dfdc7b5e356c3ce8030bf0ad60caadcb",
+  "format": "abi-r30-depth-shared-bridge-control/11",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "elapsed_seconds": 84.03067399997963,
+    "peak_cpu_rss_bytes": 1458716672,
+    "peak_gpu_memory_bytes": 1091006464,
+    "source_parameters_copied": 0,
+    "teacher_hidden_activations_stored": 0,
+    "teacher_logits_stored": 0,
+    "teacher_output_bytes_in_training_rows": 48499,
+    "teacher_present_during_execution": false,
+    "teacher_present_during_training": false,
+    "training_rows": 288
+  },
+  "layercake": {
+    "checkpoint_sha256": "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1",
+    "fresh_frozen_state_sha256": "d749f3d0fb1ba59af94cd709df5b3f071d564035e9d95bc30d1aaa80e38e2cbc",
+    "frozen_state_sha256_after": "d749f3d0fb1ba59af94cd709df5b3f071d564035e9d95bc30d1aaa80e38e2cbc",
+    "frozen_state_sha256_before": "d749f3d0fb1ba59af94cd709df5b3f071d564035e9d95bc30d1aaa80e38e2cbc",
+    "parameters_total": 61655050,
+    "repository_commit": "2170c78b7ae901eb4e99ec93ad59d573b2c75941",
+    "tokenizer_sha256": "1fe93b6152957cf9cfd6d89002467f789ce8b3f3e000b3a2edf27c808ddd0b9e"
+  },
+  "metrics": {
+    "by_task": {
+      "abstention": {
+        "functional": 5,
+        "rows": 12
+      },
+      "bullets": {
+        "functional": 1,
+        "rows": 12
+      },
+      "clarification": {
+        "functional": 0,
+        "rows": 12
+      },
+      "comparison": {
+        "functional": 2,
+        "rows": 12
+      },
+      "conversation": {
+        "functional": 0,
+        "rows": 12
+      },
+      "email": {
+        "functional": 2,
+        "rows": 12
+      },
+      "planning": {
+        "functional": 0,
+        "rows": 12
+      },
+      "prose": {
+        "functional": 2,
+        "rows": 12
+      },
+      "reasoning": {
+        "functional": 6,
+        "rows": 12
+      },
+      "rewrite": {
+        "functional": 2,
+        "rows": 12
+      },
+      "summary": {
+        "functional": 1,
+        "rows": 12
+      },
+      "tone": {
+        "functional": 0,
+        "rows": 12
+      }
+    },
+    "evaluation_physical_bridge_calls": 14937,
+    "evaluation_rows": 144,
+    "functional": 21,
+    "removal_causal": 12
+  },
+  "scientific_role": "EXTERNAL_BRIDGE_CONTROL_NOT_ABI_SUPERIORITY",
+  "source_rows_sha256": "01f4f11ca70e9ff5d98b5d7573ef71a8a28a67e6351dc3e71b816d8bc3dd45da",
+  "training": {
+    "batch_size": 4,
+    "history": [
+      {
+        "gradient_norm": 33.05200958251953,
+        "loss": 6.931766986846924,
+        "route": 2,
+        "seconds": 0.3361388999619521,
+        "step": 1
+      },
+      {
+        "gradient_norm": 2.100339889526367,
+        "loss": 0.15203967690467834,
+        "route": 6,
+        "seconds": 13.021133799978998,
+        "step": 600
+      },
+      {
+        "gradient_norm": 2.231109619140625,
+        "loss": 0.45027679204940796,
+        "route": 4,
+        "seconds": 25.491614700003993,
+        "step": 1200
+      },
+      {
+        "gradient_norm": 1.1764922142028809,
+        "loss": 0.10959088057279587,
+        "route": 2,
+        "seconds": 37.88326789997518,
+        "step": 1800
+      },
+      {
+        "gradient_norm": 0.14965975284576416,
+        "loss": 0.024838557466864586,
+        "route": 7,
+        "seconds": 50.707157199969515,
+        "step": 2400
+      }
+    ],
+    "learning_rate": 0.001,
+    "parameters": 689664,
+    "physical_bridge_calls": 7212,
+    "rank": 64,
+    "routes": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      9
+    ],
+    "row_examples": 9600,
+    "seconds": 50.70725799998036,
+    "seed": 30711,
+    "skipped_amp_steps": 4,
+    "steps": 2400
+  },
+  "v10_result_sha256": "bb1276a7972adc8d37dcdb2955d6e1ca4a7bbf8d931d826c1fad96a4fc063b0e",
+  "verdict": "FAIL_PUBLIC_DEPTH_SHARED_BRIDGE_CONTROL"
+}
