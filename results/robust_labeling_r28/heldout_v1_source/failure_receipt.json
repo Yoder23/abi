@@ -1,0 +1,59 @@
+{
+  "claim": "R28_QUORUM_ONLY_ARCHITECTURE_FAILED",
+  "config_sha256": "7593056b1a610e10a39e6dcdb2fe76d0d46d498b84fe0fca42bad78778fd05cb",
+  "evidence_sha256": "3c518170c5f0c8edb60e225ced3107e45c4956a2d56719ce18564c499c667808",
+  "failing_groups": [
+    {
+      "answer_quorum": "1024",
+      "answer_quorum_oracle_exact": true,
+      "answers": [
+        "1024",
+        "1024",
+        "1024"
+      ],
+      "label_quorum": null,
+      "labels": [
+        "math",
+        "programming",
+        "python"
+      ],
+      "subject": "2 ** 10"
+    },
+    {
+      "answer_quorum": "false",
+      "answer_quorum_oracle_exact": false,
+      "answers": [
+        "True",
+        "False",
+        "False"
+      ],
+      "label_quorum": "python",
+      "labels": [
+        "python",
+        "python",
+        "python"
+      ],
+      "subject": "bool([0])"
+    }
+  ],
+  "format": "abi-r28-heldout-source-failure/1",
+  "full_abi_moonshot": "OPEN",
+  "interpretation": "Unique majority voting cannot correct a confidently wrong answer and forced single labels cannot represent a math/Python-overlapping fact.",
+  "layercake_invoked": false,
+  "metrics": {
+    "answer_quorums": 12,
+    "extraction_rows": 36,
+    "label_quorums": 11,
+    "oracle_answer_exact": 65,
+    "oracle_correct_answer_quorums": 11,
+    "semantic_label_valid": 66,
+    "source_rows": 72,
+    "strict_json": 71
+  },
+  "next_architecture": "multi-label taxonomy plus independent validator-backed quarantine",
+  "packages_emitted": 0,
+  "reveal_sha256": "f1a0a7025931976caacc9120f2fa9e1df3b3e45309ba38ccdc3f2208caaf2652",
+  "source_bundle_sha256": "5206b0f315da3e65993ed609df57dda1ec65779747c431f3d072b1ddb373088a",
+  "source_rows_sha256": "1b4679b596a72946c00517de9735a82e01504c9a2fe3bbe760a5565692fe0030",
+  "verdict": "FAIL_CLOSED_BEFORE_PACKAGE_EMISSION"
+}
