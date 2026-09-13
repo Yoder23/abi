@@ -33,3 +33,10 @@ cake plus the shared pointer bridge, and contain no source model.
 
 This remains a bounded nonce reasoning/copy test, not unrestricted English or
 the complete ABI moonshot.
+
+R80 failed before host training because family 0 reached 175/200. One
+post-failure, non-promotional diagnostic is authorized: subtract each stored
+actual candidate mean log probability from a new same-order, same-candidate,
+no-relation control score. This tests candidate lexical/display prior without
+changing R80's verdict. R79 remains blocked unless a wholly new prospective
+source catalog passes a scorer frozen from this diagnostic.
