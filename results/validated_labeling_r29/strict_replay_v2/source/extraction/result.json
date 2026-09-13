@@ -1,0 +1,157 @@
+{
+  "capsule_manifest_evidence_sha256": "8c625d4a8b77f8b6012836de457f042ad8e42ea2502b71447cba423d1e15e59a",
+  "evidence_sha256": "2bb5b4f1be40c39a547181a7182085cf878ea349094383189d5361ba999af5b5",
+  "fact_ids_consumed": 0,
+  "format": "abi-r29-isolated-validated-extraction/1",
+  "mountinfo_sha256": "09f33b32ae88a66fc15b8c402286ff5693d7e6a90cecb10f4467a970646cb2f3",
+  "network_namespace_isolated": true,
+  "old_root_present": false,
+  "oracle_fields_consumed": 0,
+  "package_fact_records": 13,
+  "packages": [
+    {
+      "bytes": 274,
+      "facts": 3,
+      "namespace": "teacher/chemistry",
+      "path": "packages/sha256-791d1f2dc73df259c6015eb0761f84a57ce9e2a1f8d48f2cb7008bd78628d025.abipkg",
+      "sha256": "791d1f2dc73df259c6015eb0761f84a57ce9e2a1f8d48f2cb7008bd78628d025"
+    },
+    {
+      "bytes": 290,
+      "facts": 3,
+      "namespace": "teacher/geography",
+      "path": "packages/sha256-d198de24cc7fa4449b647a37647f24c2b7cdd94ac01b0ff84918eccf5c570d4d.abipkg",
+      "sha256": "d198de24cc7fa4449b647a37647f24c2b7cdd94ac01b0ff84918eccf5c570d4d"
+    },
+    {
+      "bytes": 277,
+      "facts": 3,
+      "namespace": "teacher/mathematics",
+      "path": "packages/sha256-11f71a52b15c86ef6be938daa3d322d4da0ac4b3e414b1461ed417633ec286b5.abipkg",
+      "sha256": "11f71a52b15c86ef6be938daa3d322d4da0ac4b3e414b1461ed417633ec286b5"
+    },
+    {
+      "bytes": 344,
+      "facts": 4,
+      "namespace": "teacher/python",
+      "path": "packages/sha256-1304cfed311b85912eed79df33c87cb9b08ac8818ee5688980e34daf008e1748.abipkg",
+      "sha256": "1304cfed311b85912eed79df33c87cb9b08ac8818ee5688980e34daf008e1748"
+    }
+  ],
+  "records_consumed": 36,
+  "success_ids_consumed": 0,
+  "unique_facts": 12,
+  "validation": [
+    {
+      "selected_answer": "16",
+      "source_quorum": "16",
+      "subject_sha256": "7e6da33aec6669e971722c5f07db8ac1922068bb02c17066b7f7b7f54ec518d1",
+      "tags": [
+        "chemistry"
+      ],
+      "validator_used": false
+    },
+    {
+      "selected_answer": "bern",
+      "source_quorum": "bern",
+      "subject_sha256": "2275583196d791405892aaca0d87743c872f3fc0cf3308a6c3ef82528918aa8a",
+      "tags": [
+        "geography"
+      ],
+      "validator_used": false
+    },
+    {
+      "selected_answer": "3",
+      "source_quorum": "3",
+      "subject_sha256": "c8b7fc45c5b80ddbd2fb0f74ae091755f7d1422f6260cc2f3e51fa932b86bc2e",
+      "tags": [
+        "python"
+      ],
+      "validator_used": true
+    },
+    {
+      "selected_answer": "[0, 1]",
+      "source_quorum": "[0, 1]",
+      "subject_sha256": "c4f46f3036afaceaadf889965622d4a45892199df3ad884708d4e63bf8564d32",
+      "tags": [
+        "python"
+      ],
+      "validator_used": true
+    },
+    {
+      "selected_answer": "True",
+      "source_quorum": "false",
+      "subject_sha256": "66f2b949d067b6ccd7673a91fec0f6f0d6fbde8e7e23268a458e9ebe9a4ec611",
+      "tags": [
+        "python"
+      ],
+      "validator_used": true
+    },
+    {
+      "selected_answer": "12",
+      "source_quorum": "12",
+      "subject_sha256": "990b4a7888ad40be3ae0499fa831bd98a66831c734c173037cb4d65674c58880",
+      "tags": [
+        "mathematics"
+      ],
+      "validator_used": true
+    },
+    {
+      "selected_answer": "182",
+      "source_quorum": "182",
+      "subject_sha256": "73cff499353535282fb7fcf2254c3880eddd61ff61e5232d11b3a75488a78250",
+      "tags": [
+        "mathematics"
+      ],
+      "validator_used": true
+    },
+    {
+      "selected_answer": "78",
+      "source_quorum": "78",
+      "subject_sha256": "43ff792d79f75890d3c5181739783889bf9ef4a9397cc8d2fc0ea543ce5a30f7",
+      "tags": [
+        "chemistry"
+      ],
+      "validator_used": false
+    },
+    {
+      "selected_answer": "stockholm",
+      "source_quorum": "stockholm",
+      "subject_sha256": "853637136575897a73cba3c5fb085e8c8a2627df22983d2bbe9ff158d11351b4",
+      "tags": [
+        "geography"
+      ],
+      "validator_used": false
+    },
+    {
+      "selected_answer": "15",
+      "source_quorum": "15",
+      "subject_sha256": "76bef035011614d4efd18a06fe6c224ee798ab49abfe562982df9976a8d4fe53",
+      "tags": [
+        "chemistry"
+      ],
+      "validator_used": false
+    },
+    {
+      "selected_answer": "3",
+      "source_quorum": "3",
+      "subject_sha256": "034488df855a1c7dfa62019fb2c59e9023e39c2dd1a982f386a03f55a92674b3",
+      "tags": [
+        "mathematics",
+        "python"
+      ],
+      "validator_used": true
+    },
+    {
+      "selected_answer": "reykjavik",
+      "source_quorum": "reykjavik",
+      "subject_sha256": "595d6d914950b8a20f65bebf7a6278b0bde5973de85c4be47950b14a3e8f74be",
+      "tags": [
+        "geography"
+      ],
+      "validator_used": false
+    }
+  ],
+  "validator_uses": 6,
+  "windows_mount_present": false
+}
