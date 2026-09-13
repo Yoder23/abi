@@ -1,0 +1,11 @@
+{
+  "format": "abi-r28-public-harness-failure/1",
+  "verdict": "FAIL_HARNESS_BEFORE_SCIENTIFIC_SCORING",
+  "cause": "The disclosed evaluator invoked R16's hard-coded chemistry/geography namespace router on arbitrary teacher labels.",
+  "compiler_completed": true,
+  "layercake_invoked": false,
+  "source_bundle_sha256": "f4c1f0598d6428ba620264ffb5c68acb42f6a345e33d2aff4f4ba9e37a32b5a9",
+  "extraction_result_sha256": "21f6743f4dcacbb52aba7ac1e580622b17a623974aa7a90f64ad27b85aeb540a",
+  "disposition": "Preserved; public V2 replaces only the evaluator router with a generic entity matcher before any hidden commitment.",
+  "full_abi_moonshot": "OPEN"
+}

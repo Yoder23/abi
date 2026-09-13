@@ -1,0 +1,56 @@
+{
+  "claim": "DISCLOSED_ERROR_CORRECTING_COMPILER_PREREQUISITE",
+  "claim_ceiling": "NOT_HELDOUT_OR_LAYERCAKE_IMPORT",
+  "evidence_sha256": "34119d298434a785800b5f59b05d600d22356d80ed7958bbfbcc078c45b67675",
+  "format": "abi-r28-public-quorum-qualification/1",
+  "full_abi_moonshot": "OPEN",
+  "metrics": {
+    "accepted_labels_consumed": 0,
+    "evaluation_exact": 24,
+    "evaluation_rows": 24,
+    "facts_accepted": 8,
+    "facts_rejected": 0,
+    "oracle_fields_consumed": 0,
+    "packages": 5,
+    "records": 24
+  },
+  "packages": [
+    {
+      "bytes": 206,
+      "facts": 2,
+      "namespace": "teacher/chemistry",
+      "path": "packages/sha256-bda1e3e41d4b5b17a58e730de30883958a582b78a4c34351b9d2ef83c8876779.abipkg",
+      "sha256": "bda1e3e41d4b5b17a58e730de30883958a582b78a4c34351b9d2ef83c8876779"
+    },
+    {
+      "bytes": 214,
+      "facts": 2,
+      "namespace": "teacher/geography",
+      "path": "packages/sha256-da3ded284b73d8983cfabb0c63b456ca4fb251cc2c7eb456e70b83e0f1549558.abipkg",
+      "sha256": "da3ded284b73d8983cfabb0c63b456ca4fb251cc2c7eb456e70b83e0f1549558"
+    },
+    {
+      "bytes": 150,
+      "facts": 1,
+      "namespace": "teacher/geometry",
+      "path": "packages/sha256-ce78a2b3e2370088a3330575290ae7f469f4375181e1b0b8fc544b73590870c4.abipkg",
+      "sha256": "ce78a2b3e2370088a3330575290ae7f469f4375181e1b0b8fc544b73590870c4"
+    },
+    {
+      "bytes": 149,
+      "facts": 1,
+      "namespace": "teacher/mathematics",
+      "path": "packages/sha256-e8a230ba4eafb25396147ec7bde1be95c2498b60a7b2522053c1cbb66a87df23.abipkg",
+      "sha256": "e8a230ba4eafb25396147ec7bde1be95c2498b60a7b2522053c1cbb66a87df23"
+    },
+    {
+      "bytes": 207,
+      "facts": 2,
+      "namespace": "teacher/python",
+      "path": "packages/sha256-6117c7839c393c96c092660f89e8f025db8368c807404ea1167d43b03290f711.abipkg",
+      "sha256": "6117c7839c393c96c092660f89e8f025db8368c807404ea1167d43b03290f711"
+    }
+  ],
+  "source_rows_sha256": "849bb16cea497ea1094ffbe700692bebc017d22378cc0e7467af9b6ecf1bbb69",
+  "verdict": "PASS"
+}

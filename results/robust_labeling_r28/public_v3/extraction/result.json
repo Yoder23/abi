@@ -1,0 +1,53 @@
+{
+  "accepted_labels_consumed": 0,
+  "capsule_manifest_evidence_sha256": "d46391c0e8cf0266c391f50dbe7470c03d36a48aa8bf1943b0fcfa29224efa74",
+  "evidence_sha256": "0939653e0c43f342a81c7d010132843256cc986b6610e6e686b81a9fb68b7393",
+  "fact_ids_consumed": 0,
+  "facts_accepted_by_quorum": 8,
+  "facts_rejected_by_quorum": 0,
+  "format": "abi-r28-isolated-quorum-extraction/1",
+  "mountinfo_sha256": "247df4e675a94095068ef5c5bc945b037cddb9c7dfe2134e6daf15c631999a42",
+  "network_namespace_isolated": true,
+  "old_root_present": false,
+  "oracle_fields_consumed": 0,
+  "packages": [
+    {
+      "bytes": 206,
+      "facts": 2,
+      "namespace": "teacher/chemistry",
+      "path": "packages/sha256-bda1e3e41d4b5b17a58e730de30883958a582b78a4c34351b9d2ef83c8876779.abipkg",
+      "sha256": "bda1e3e41d4b5b17a58e730de30883958a582b78a4c34351b9d2ef83c8876779"
+    },
+    {
+      "bytes": 214,
+      "facts": 2,
+      "namespace": "teacher/geography",
+      "path": "packages/sha256-da3ded284b73d8983cfabb0c63b456ca4fb251cc2c7eb456e70b83e0f1549558.abipkg",
+      "sha256": "da3ded284b73d8983cfabb0c63b456ca4fb251cc2c7eb456e70b83e0f1549558"
+    },
+    {
+      "bytes": 150,
+      "facts": 1,
+      "namespace": "teacher/geometry",
+      "path": "packages/sha256-ce78a2b3e2370088a3330575290ae7f469f4375181e1b0b8fc544b73590870c4.abipkg",
+      "sha256": "ce78a2b3e2370088a3330575290ae7f469f4375181e1b0b8fc544b73590870c4"
+    },
+    {
+      "bytes": 149,
+      "facts": 1,
+      "namespace": "teacher/mathematics",
+      "path": "packages/sha256-e8a230ba4eafb25396147ec7bde1be95c2498b60a7b2522053c1cbb66a87df23.abipkg",
+      "sha256": "e8a230ba4eafb25396147ec7bde1be95c2498b60a7b2522053c1cbb66a87df23"
+    },
+    {
+      "bytes": 207,
+      "facts": 2,
+      "namespace": "teacher/python",
+      "path": "packages/sha256-6117c7839c393c96c092660f89e8f025db8368c807404ea1167d43b03290f711.abipkg",
+      "sha256": "6117c7839c393c96c092660f89e8f025db8368c807404ea1167d43b03290f711"
+    }
+  ],
+  "records_consumed": 24,
+  "success_ids_consumed": 0,
+  "windows_mount_present": false
+}
