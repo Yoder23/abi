@@ -32,13 +32,18 @@ def build_catalog() -> dict:
             family = local_index % len(WRAPPERS)
             content_index = INDEX_OFFSET + capability_index * 257 + local_index
             body, evaluator, maximum = builder(content_index, family)
+            case_reference = capability_index * ROWS_PER_CAPABILITY + local_index + 1
+            prompt = (
+                f"Evaluation item {case_reference}. "
+                f"{WRAPPERS[family](body)}"
+            )
             probe = {
                 "probe_id": f"r60-{capability}-prospective-{local_index:03d}",
                 "destination_scope": "english_core",
                 "capability": capability,
                 "domain": "domain_independent",
                 "split": "final_test",
-                "prompt": WRAPPERS[family](body),
+                "prompt": prompt,
                 "max_new_tokens": maximum,
                 "temperature": 0,
                 "seed": 60_000_000 + capability_index * ROWS_PER_CAPABILITY + local_index,
@@ -85,6 +90,8 @@ def main() -> int:
     if args.output.exists():
         parser.error(f"catalog is immutable: {args.output}")
     value = build_catalog()
+    if len({probe["prompt"] for probe in value["probes"]}) != len(value["probes"]):
+        parser.error("prospective prompts are not unique")
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(
         json.dumps(value, indent=2, sort_keys=True, ensure_ascii=False) + "\n",
@@ -97,4 +104,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
