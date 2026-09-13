@@ -1,0 +1,10 @@
+{
+  "format": "abi-r29-strict-replay-operational-failure/1",
+  "verdict": "FAIL_CLOSED_BEFORE_LAYERCAKE_REPLAY",
+  "source_replay_completed": true,
+  "source_rows_byte_exact": true,
+  "layercake_replay_started": false,
+  "cause": "The verifier attempted LayerCake replay in the same interpreter that had loaded transformers for the source replay; the clean-process gate rejected it.",
+  "authorized_repair": "Launch the unchanged LayerCake import through a fresh subprocess and retain the teacher-present fail-closed check.",
+  "full_abi_moonshot": "OPEN"
+}
