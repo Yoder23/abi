@@ -1,0 +1,141 @@
+{
+  "artifacts": {
+    "evaluation": {
+      "bytes": 1868275,
+      "path": "evaluation.jsonl",
+      "sha256": "3e88ce7e914a7b011db3b70b2ae193dadbaae0582d7168b5c66e837fd7d1121a"
+    }
+  },
+  "candidate_checkpoint_sha256": "421777ed99459391cf36b528350169998f6bec67220d717212c32955591d26de",
+  "candidate_metadata_sha256": "2aee3cc21a1a248f4d91171461cbf273c2f8bae1d29ec08f3dfb0cb4f692b14b",
+  "catalog_sha256": "4b0087c9a7fa0e0fd6f607fdbd94fffbdd3cb375f5880a0588c97414583a2ad7",
+  "evidence_sha256": "775ab870fb264e3ec18f2650035a2a4943612960b222ce32fa09ce2a078dbfbe",
+  "format": "abi-r66-canonical-prompt-normalization-development-screen/1",
+  "full_abi_moonshot": "OPEN",
+  "gates": {
+    "materially_exceeds_r59_unchanged": true,
+    "matrix": true,
+    "physical_sparse": true,
+    "source_retention": false,
+    "unchanged_per_capability": false,
+    "zero_final_collapse": false
+  },
+  "metrics": {
+    "adjudicable_candidate_passes": 894,
+    "adjudicable_rows": 1200,
+    "adjudicable_source_passes": 973,
+    "by_capability": {
+      "abstention": {
+        "candidate_passes": 75,
+        "classification": "diagnostic_rescore",
+        "collapses": 0,
+        "source_passes": 75
+      },
+      "cake_output_realization": {
+        "candidate_passes": 63,
+        "classification": "unchanged",
+        "collapses": 0,
+        "source_passes": 75
+      },
+      "clarification": {
+        "candidate_passes": 93,
+        "classification": "unchanged",
+        "collapses": 0,
+        "source_passes": 100
+      },
+      "coherence": {
+        "candidate_passes": 0,
+        "classification": "censored",
+        "collapses": 0,
+        "source_passes": 0
+      },
+      "conversation": {
+        "candidate_passes": 91,
+        "classification": "unchanged",
+        "collapses": 0,
+        "source_passes": 81
+      },
+      "domain_independent_reasoning": {
+        "candidate_passes": 23,
+        "classification": "diagnostic_rescore",
+        "collapses": 0,
+        "source_passes": 82
+      },
+      "email_drafting": {
+        "candidate_passes": 72,
+        "classification": "unchanged",
+        "collapses": 0,
+        "source_passes": 53
+      },
+      "format_control": {
+        "candidate_passes": 0,
+        "classification": "incompatible_contract",
+        "collapses": 5,
+        "source_passes": 0
+      },
+      "grammar": {
+        "candidate_passes": 94,
+        "classification": "unchanged",
+        "collapses": 0,
+        "source_passes": 100
+      },
+      "instruction_following": {
+        "candidate_passes": 77,
+        "classification": "unchanged",
+        "collapses": 0,
+        "source_passes": 89
+      },
+      "prompt_grounding": {
+        "candidate_passes": 82,
+        "classification": "unchanged",
+        "collapses": 0,
+        "source_passes": 100
+      },
+      "rewriting": {
+        "candidate_passes": 82,
+        "classification": "unchanged",
+        "collapses": 0,
+        "source_passes": 89
+      },
+      "summarization": {
+        "candidate_passes": 95,
+        "classification": "unchanged",
+        "collapses": 0,
+        "source_passes": 84
+      },
+      "tone_control": {
+        "candidate_passes": 47,
+        "classification": "unchanged",
+        "collapses": 0,
+        "source_passes": 45
+      }
+    },
+    "final_collapses": 5,
+    "physical_sparse_rows": 1400,
+    "r59_unchanged_baseline": 778,
+    "rows": 1400,
+    "source_passing_regressions": 182,
+    "source_retention": 0.8129496402877698,
+    "unchanged_candidate_passes": 796,
+    "unchanged_rows": 1000,
+    "wall_seconds": 285.36831180000445
+  },
+  "normalization_receipt_sha256": "d790c8cf324ed8befcd0af3da2e389793bfe417185317628a557f8c84ec2311b",
+  "promotion_eligible": false,
+  "routing_condition": "sealed_catalog_label_oracle_not_operational_router",
+  "runtime_telemetry": {
+    "accepted_tokens": 35990,
+    "candidate_transitions_checked": 36029,
+    "inherited_r55_lexical_truncations": 91,
+    "language_model_eos_stops": 1101,
+    "rejected_boundary_tokens": 39,
+    "rejections_by_condition": {
+      "maximum_identical_token_run": 39,
+      "repeated_novel_lexical_fourgrams": 0
+    }
+  },
+  "source_outputs_sha256": "35a5a6e1035035db1663d793257274e3be2b766aab79a00a0476478d0428b596",
+  "teacher_calls": 0,
+  "training_steps_during_screen": 0,
+  "verdict": "FAIL_R66_CLOSE_NORMALIZATION_BRANCH"
+}
