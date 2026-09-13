@@ -1,0 +1,18 @@
+{
+  "failed_gates": [
+    "functional",
+    "parent_nondegradation",
+    "per_capability",
+    "zero_collapse"
+  ],
+  "format": "abi-r57_validation-strict-result-verification/1",
+  "full_abi_moonshot": "OPEN",
+  "functional": 1256,
+  "live_rows_exact": 0,
+  "raw_rows_recomputed": 1400,
+  "raw_sha256": "477cc03797b3513962fbdfc1c523a2da564c97dec6418dd7ea22c2ec80b9dbff",
+  "result_sha256": "ce21fad2c1f5596ac708bce69d7d7c294fc779320b6510dbed2bcb54788b52da",
+  "source_functional": 1220,
+  "source_retention": 0.940983606557377,
+  "verdict": "PASS_STRICT_VERIFICATION_OF_R57_VALIDATION_RESULT"
+}
