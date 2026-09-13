@@ -1,0 +1,20 @@
+{
+  "failed_gates": [
+    "functional",
+    "parent_nondegradation",
+    "per_capability",
+    "source_noninferior_point",
+    "source_retention",
+    "zero_collapse"
+  ],
+  "format": "abi-r53-strict-negative-verification/1",
+  "full_abi_moonshot": "OPEN",
+  "functional": 1186,
+  "live_rows_exact": 1400,
+  "raw_rows_recomputed": 1400,
+  "raw_sha256": "e0227caded990712bb2d5f490c5bf920376ec5162dd1fe45387716e5d0e7a473",
+  "result_sha256": "2f446c8fc90ab1d2b916e5a1673b08eec9b4dd94ffc278f801af20b6af26b344",
+  "source_functional": 1220,
+  "source_retention": 0.8803278688524591,
+  "verdict": "PASS_STRICT_VERIFICATION_OF_FAILED_R53"
+}
