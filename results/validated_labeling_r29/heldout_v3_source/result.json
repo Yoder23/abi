@@ -1,0 +1,108 @@
+{
+  "artifacts": {
+    "evaluation": {
+      "bytes": 13404,
+      "path": "evaluation.jsonl",
+      "sha256": "22a20a67a21f417c4e3632d63d2f7f0d532b7c17a5d1bce72389c7dd86eb6ab6"
+    },
+    "source_bundle": {
+      "bytes": 6217,
+      "path": "source_bundle.json",
+      "sha256": "1ea19bda029acccd3e2c28a8046f52008ae33f8e831251460fac8dc4ef805a6d"
+    },
+    "source_rows": {
+      "bytes": 25851,
+      "path": "source_rows.jsonl",
+      "sha256": "c5c2d0c236c0a0f652a53e62accf23af9d9b171f30937f78f26ff44ef84e219c"
+    }
+  },
+  "claim": "BOUNDED_VALIDATOR_BACKED_MULTILABEL_DISCOVERY_AND_COMPILATION",
+  "claim_ceiling": "NOT_EXHAUSTIVE_DIAGNOSIS_OR_FLUENT_ENGLISH_EXTRACTION",
+  "config_sha256": "0008dc31e3d45ef2be022f8a9177718afe26d642047e101caff7b9204a21d797",
+  "evidence_sha256": "d8ea10a79222b785b4a4f9c71719ec8757adb2c0c36e102124cfea6be9e871df",
+  "format": "abi-r29-heldout-validated-source-result/1",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "bridge_parameters_trained": 0,
+    "control_rotation_offset": 2,
+    "elapsed_seconds": 66.43702010001289,
+    "final_package_bytes": 1185,
+    "generated_tokens": 1070,
+    "output_bytes": 2958,
+    "package_fact_records": 13,
+    "peak_gpu_memory_bytes": 15306570240,
+    "source_bundle_bytes": 6217,
+    "source_calls": 72,
+    "source_parameters_copied": 0,
+    "unique_facts": 12
+  },
+  "isolation": {
+    "control_result_sha256": "326c552a8b859cebacef80e1690c64c65c03f75b444ba58b4dc72e6a99582f5e",
+    "launcher_sha256": "b58ba2a029f2863fb08c11624b11771b275677f87e08759e44ffed04428f99e1",
+    "result_sha256": "41ccf6f5f6648dfb8942547e4c6efb7a81ded00c5c178cd3995af0630dd0c945"
+  },
+  "metrics": {
+    "compiled_package_fact_records": 13,
+    "compiled_unique_facts": 12,
+    "control_unvalidated_exact": 0,
+    "control_validated_exact": 18,
+    "discovered_packages": 4,
+    "label_syntax_valid": 72,
+    "oracle_domain_coverage": 36,
+    "oracle_fields_consumed": 0,
+    "package_oracle_exact": 36,
+    "package_teacher_agreement": 32,
+    "parse_exact": 72,
+    "selected_facts": 12,
+    "source_answer_exact": 65,
+    "source_evaluation_oracle_exact": 32,
+    "source_rows": 72,
+    "tag_purity": 36,
+    "unauthorized_packages_abstain": 36,
+    "unvalidated_evaluation_rows": 18,
+    "unvalidated_source_answer_exact": 36,
+    "unvalidated_source_rows": 36,
+    "validated_evaluation_rows": 18,
+    "validated_source_answer_exact": 29,
+    "validated_source_rows": 36,
+    "validator_uses": 6
+  },
+  "packages": [
+    {
+      "bytes": 274,
+      "facts": 3,
+      "namespace": "teacher/chemistry",
+      "path": "extraction/packages/sha256-791d1f2dc73df259c6015eb0761f84a57ce9e2a1f8d48f2cb7008bd78628d025.abipkg",
+      "sha256": "791d1f2dc73df259c6015eb0761f84a57ce9e2a1f8d48f2cb7008bd78628d025"
+    },
+    {
+      "bytes": 290,
+      "facts": 3,
+      "namespace": "teacher/geography",
+      "path": "extraction/packages/sha256-d198de24cc7fa4449b647a37647f24c2b7cdd94ac01b0ff84918eccf5c570d4d.abipkg",
+      "sha256": "d198de24cc7fa4449b647a37647f24c2b7cdd94ac01b0ff84918eccf5c570d4d"
+    },
+    {
+      "bytes": 277,
+      "facts": 3,
+      "namespace": "teacher/mathematics",
+      "path": "extraction/packages/sha256-11f71a52b15c86ef6be938daa3d322d4da0ac4b3e414b1461ed417633ec286b5.abipkg",
+      "sha256": "11f71a52b15c86ef6be938daa3d322d4da0ac4b3e414b1461ed417633ec286b5"
+    },
+    {
+      "bytes": 344,
+      "facts": 4,
+      "namespace": "teacher/python",
+      "path": "extraction/packages/sha256-1304cfed311b85912eed79df33c87cb9b08ac8818ee5688980e34daf008e1748.abipkg",
+      "sha256": "1304cfed311b85912eed79df33c87cb9b08ac8818ee5688980e34daf008e1748"
+    }
+  ],
+  "reveal_sha256": "b5838dc3b8f48aaf7fdfc6c37f2f730a36fb4dadc54a1979bd11d73f14b5b97c",
+  "source": {
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "snapshot": "C:\\Users\\samyo\\.cache\\huggingface\\hub\\models--Qwen--Qwen2-7B-Instruct\\snapshots\\f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "training_steps": 0
+  },
+  "verdict": "PASS"
+}
