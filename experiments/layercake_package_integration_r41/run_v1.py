@@ -40,8 +40,16 @@ RESEARCH_KEY_SEED = hashlib.sha256(
 ).digest()
 
 
+def _layercake_head(root: Path) -> str:
+    return subprocess.check_output(
+        ["git", "-c", f"safe.directory={root.as_posix()}", "rev-parse", "HEAD"],
+        cwd=root,
+        text=True,
+    ).strip()
+
+
 def _layercake(root: Path) -> dict[str, Any]:
-    head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip()
+    head = _layercake_head(root)
     if not head.startswith(EXPECTED_LAYERCAKE_COMMIT):
         raise RuntimeError(f"R41 LayerCake commit changed: {head}")
     sys.path.insert(0, str(root))
@@ -492,9 +500,7 @@ def run(
         "format": "abi-r41-layercake-package-integration/1",
         "verdict": "PASS_R41_LAYERCAKE_INTEGRATION" if passed else "FAIL_R41_LAYERCAKE_INTEGRATION",
         "inputs": {
-            "layercake_commit": subprocess.check_output(
-                ["git", "rev-parse", "HEAD"], cwd=layercake_root, text=True
-            ).strip(),
+            "layercake_commit": _layercake_head(layercake_root),
             "r36_result_sha256": EXPECTED_R36,
             "r39_result_sha256": EXPECTED_R39,
             "r40_result_sha256": EXPECTED_R40,
