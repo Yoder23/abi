@@ -1,0 +1,36 @@
+{
+  "cause": "The worker required all three rows to be valid although the frozen protocol allowed up to four parse failures and specified a 2-of-3 quorum.",
+  "config_sha256": "ce4f88d83e1694090eb09e0433ad5ad1bf6b98462539ac9467c8b384f7002668",
+  "evidence_sha256": "93895dcb994d0164576059b6b2056e35f4550f91c8b29414cd8dca0384f63daa",
+  "format": "abi-r29-heldout-v1-conformance-failure/1",
+  "full_abi_moonshot": "OPEN",
+  "invalid_rows": [
+    {
+      "completion": "{\"answer\": 3, \"domain\": \"python\"}",
+      "fact_id": "python-floor",
+      "split": "extraction",
+      "view": 2
+    },
+    {
+      "completion": "{\"answer\": \"santiago\", \"domain\": \"spanish geography\"}",
+      "fact_id": "geo-chile",
+      "split": "extraction",
+      "view": 1
+    }
+  ],
+  "layercake_invoked": false,
+  "metrics": {
+    "answer_exact": 62,
+    "invalid_rows": 2,
+    "label_syntax_valid": 70,
+    "parse_exact": 70,
+    "registered_minimum_parse": 68,
+    "source_rows": 72
+  },
+  "packages_emitted": 0,
+  "reveal_sha256": "03546bb276d218e147efd20f726d89ebe332b4fcd439c222ceca2fddc28af2d0",
+  "scientific_interpretation": "Implementation/protocol mismatch; no capability package or LayerCake evidence was produced.",
+  "source_bundle_sha256": "a075f985a32be067cf4cd22f1728e0f2ce4d0c9491995462ecebf81c0735f3b3",
+  "source_rows_sha256": "7f66da841a6ce76e23ddf7026b872063836b82a6b01f651fe5e385f54f7400ed",
+  "verdict": "FAIL_CLOSED_BEFORE_PACKAGE_EMISSION"
+}
