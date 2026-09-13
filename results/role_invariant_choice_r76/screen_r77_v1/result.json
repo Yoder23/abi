@@ -1,0 +1,107 @@
+{
+  "artifacts": {
+    "evaluation": {
+      "bytes": 1821181,
+      "path": "evaluation.jsonl",
+      "sha256": "c8c1494a2a89469986ded391fcc5ff38da5ac3e8bca382f1f56ba12dd5ede29d"
+    }
+  },
+  "candidate_accessed_only_after_protocol_and_screen_code_frozen": true,
+  "candidate_binding_sha256": "3682d95d3686cfedab48638211668bd35ee7feb4ebf0de9f3a01fe164ba27089",
+  "candidate_checkpoint_sha256": "b6977f087ac42e6e4234d026b4cd83827b720d8973cca049daf18bcc8b96a64e",
+  "candidate_metadata_sha256": "1c91e94abc3f2faa9a6f7d68689451dc94098dd2330652a4713a0116c3080e0e",
+  "catalog_sha256": "b89a473da82b66297f0cd9f7796b341f873d1bb3d1b2c7f82e94255b5b61330a",
+  "claim_boundary": "Bounded causal transfer of one role-invariant conditional-weight-selected nonce reasoning capability; not unrestricted English.",
+  "evidence_sha256": "d5f47770c2c43f440c3d820f547a7d04af7dbba2d9884e160fdbcbd1feb8f881",
+  "format": "abi-r78-role-invariant-capability-host-screen/1",
+  "full_abi_moonshot": "OPEN",
+  "gates": {
+    "artifacts_unchanged": true,
+    "candidate_family_floor": false,
+    "candidate_quality": false,
+    "causal_parent_gain": false,
+    "matrix": true,
+    "physical_sparse": true,
+    "source_absent_at_inference": true,
+    "source_quality": true,
+    "source_retention": false,
+    "zero_collapse": false
+  },
+  "metrics": {
+    "by_family": {
+      "0": {
+        "candidate_passing": 6,
+        "parent_passing": 0,
+        "rows": 200,
+        "source_passing": 181
+      },
+      "1": {
+        "candidate_passing": 9,
+        "parent_passing": 0,
+        "rows": 200,
+        "source_passing": 200
+      },
+      "2": {
+        "candidate_passing": 15,
+        "parent_passing": 0,
+        "rows": 200,
+        "source_passing": 200
+      },
+      "3": {
+        "candidate_passing": 10,
+        "parent_passing": 0,
+        "rows": 200,
+        "source_passing": 189
+      },
+      "4": {
+        "candidate_passing": 20,
+        "parent_passing": 0,
+        "rows": 200,
+        "source_passing": 200
+      },
+      "5": {
+        "candidate_passing": 15,
+        "parent_passing": 0,
+        "rows": 200,
+        "source_passing": 200
+      },
+      "6": {
+        "candidate_passing": 8,
+        "parent_passing": 0,
+        "rows": 200,
+        "source_passing": 200
+      }
+    },
+    "candidate_collapses": 2,
+    "candidate_generation_seconds": 60.36373739998089,
+    "candidate_minus_parent": {
+      "lower_95": 0.047142857142857146,
+      "point": 0.05928571428571429,
+      "replicates": 5000,
+      "upper_95": 0.07214285714285715
+    },
+    "candidate_minus_source": {
+      "lower_95": -0.9335714285714286,
+      "point": -0.9192857142857143,
+      "replicates": 5000,
+      "upper_95": -0.9042857142857142
+    },
+    "candidate_passing": 83,
+    "candidate_peak_cuda_allocated_bytes": 391855616,
+    "candidate_physical_sparse_rows": 1400,
+    "parent_generation_seconds": 94.27233070001239,
+    "parent_passing": 0,
+    "process_rss_bytes": 1391972352,
+    "rows": 1400,
+    "source_passing": 1370,
+    "source_passing_retained": 82,
+    "source_retention": 0.059854014598540145
+  },
+  "parent_checkpoint_sha256": "65b1aae5e1aed947f2bc086281a3c7388b22a4260c562363aff2e8cc59f9661b",
+  "promotion_eligible": false,
+  "source_parameters_retained": 0,
+  "source_raw_sha256": "2e1f4a2f9b081fdbc0d00442bc1940f844792a7581683fc604286fa2c2df4b4b",
+  "source_result_sha256": "172646f0602f9336aa815c1ead96147e6e469711c6213b78781f0215dd70bd6e",
+  "teacher_present_at_inference": false,
+  "verdict": "FAIL_R78_HOST_TRANSFER"
+}
