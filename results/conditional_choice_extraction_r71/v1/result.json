@@ -1,0 +1,70 @@
+{
+  "accounting": {
+    "candidate_score_storage_bytes_float64_equivalent": 48000,
+    "candidate_scores_stored": 6000,
+    "full_vocabulary_logit_vectors_stored": 0,
+    "hidden_activations_stored": 0,
+    "peak_cuda_allocated_bytes": 8198960128,
+    "peak_process_rss_bytes": 994336768,
+    "source_candidate_tokens_scored": 30000,
+    "source_inference_seconds": 184.112899500411,
+    "source_load_seconds": 3.6105682000052184,
+    "total_wall_seconds": 189.62021239998285
+  },
+  "artifacts": {
+    "choice_scores": {
+      "bytes": 1671432,
+      "path": "choice_scores.jsonl",
+      "sha256": "3560123b84a519e1b41c7335da55357b9464bbb4a6bae6ecb47414acc97c68e7"
+    }
+  },
+  "candidate_accessed": false,
+  "catalog_sha256": "d4ec9697f1ea256a3ae93b4cfda4d845a55153ef3165b485ae63feed078c2ecc",
+  "evidence_sha256": "c52ff7c24f9395f503afb1cc844d4f6185c6a09eb92852783dc790355f607967",
+  "format": "abi-r71-conditional-choice-weight-interrogation/1",
+  "full_abi_moonshot": "OPEN",
+  "gates": {
+    "instruction_families": false,
+    "minimum_passing": false,
+    "premise_families": false,
+    "rows": true,
+    "zero_ties": true
+  },
+  "hardware": {
+    "cuda": "11.8",
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "machine": "Sam",
+    "python": "3.10.0",
+    "torch": "2.7.1+cu118"
+  },
+  "layercake_loaded": false,
+  "metrics": {
+    "by_instruction_family": {
+      "0": 0.25992063492063494,
+      "1": 0.5178571428571429,
+      "2": 0.9495967741935484,
+      "3": 0.7419354838709677
+    },
+    "by_premise_family": {
+      "0": 0.532,
+      "1": 0.688,
+      "2": 0.588,
+      "3": 0.504,
+      "4": 0.672,
+      "5": 0.784,
+      "6": 0.752,
+      "7": 0.404
+    },
+    "pass_rate": 0.6155,
+    "passing": 1231,
+    "rows": 2000,
+    "ties": 0
+  },
+  "promotion_eligible": false,
+  "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310",
+  "source_model": "microsoft/Phi-3-mini-4k-instruct",
+  "source_parameters_read": 3821079552,
+  "source_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+  "source_weights_copied": 0,
+  "verdict": "FAIL_R71_CONDITIONAL_CHOICE_EXTRACTION"
+}
