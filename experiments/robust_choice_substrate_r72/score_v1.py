@@ -22,7 +22,7 @@ from abi.hf_extraction import load_probe_catalog
 from experiments.foreign_capability_r14.core import evidence_hash, write_json_once, write_jsonl_once
 
 
-CATALOG_SHA256 = ""  # bound after catalog materialization
+CATALOG_SHA256 = "d179445c92a649f5ab6587c1aa71e00e7c622c326f8ea84438497542c00c2b47"
 EXPECTED_PARAMETERS = 3_821_079_552
 ROWS = 2_100
 IDENTITY = re.compile(r"r72-reasoning-f([0-6])-(\d{3})$")
