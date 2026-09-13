@@ -1,0 +1,12 @@
+{
+  "format": "abi-r29-layercake-import-operational-failure/1",
+  "verdict": "FAIL_BEFORE_HOST_EXECUTION",
+  "cause": "A relative output directory reached the frozen package-build helper, which requires an absolute repository child before recording a relative package path.",
+  "packages_built_before_failure": 1,
+  "partial_package_sha256": "f7a7ccd7806c3e5e36a941aa02de0bd940f048194d9a948ec5f446c6f32fe3db",
+  "host_rows": 0,
+  "scientific_result_emitted": false,
+  "source_candidate_changed": false,
+  "authorized_repair": "Resolve CLI input paths in an additive wrapper; do not modify the frozen source, package, gates, or host implementation.",
+  "full_abi_moonshot": "OPEN"
+}
