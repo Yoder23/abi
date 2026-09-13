@@ -1,0 +1,52 @@
+{
+  "schema": "abi.field_slot_representation.failure.v1",
+  "campaign": "R34",
+  "run": "development_v1",
+  "verdict": "FAIL_FIELD_SLOT_REPRESENTATION",
+  "terminal": true,
+  "failed_stage": "email_training_target_representation_precheck",
+  "exception_type": "ValueError",
+  "exception_message": "R34 target contains unknown lexeme: b'coordinator35'",
+  "scientific_interpretation": "The frozen teacher transformed the supplied source lexeme 'Coordinator 35' into the concatenated lowercase lexeme 'coordinator35'. The preregistered exact dynamic-slot representation could not encode that transformation without inventing an unregistered lossy normalization rule, so the run failed closed and the R34 branch is closed.",
+  "completed_evaluation": {
+    "prose": {"passed": 7, "total": 12},
+    "summary": {"passed": 12, "total": 12},
+    "rewrite": {"passed": 1, "total": 12}
+  },
+  "completed_rows": 36,
+  "partial_artifacts": [
+    {
+      "path": "models/prose.safetensors",
+      "bytes": 1027668,
+      "sha256": "30dbe6aea39ecf846e11817e40d3bd28e7c053349b4946d1fc3b490c8f0f13a0"
+    },
+    {
+      "path": "models/prose.tokenizer.json",
+      "bytes": 1835,
+      "sha256": "275a614a6211befe5e1b4877256a78695bed9766c202ac9a8de458ee91b61962"
+    },
+    {
+      "path": "models/summary.safetensors",
+      "bytes": 1031796,
+      "sha256": "bf738b6179ecd9a55af41990863f7cd2a051e04f10cdb41e0db5e6d873c140bd"
+    },
+    {
+      "path": "models/summary.tokenizer.json",
+      "bytes": 2029,
+      "sha256": "18e499c4a54a053b175a2e4c5518581aa58b1a98d09ca3ddf43515eefdacc7fc"
+    },
+    {
+      "path": "models/rewrite.safetensors",
+      "bytes": 1026636,
+      "sha256": "f2ecba3580603545d62c92c3482dd5694c0dfe1bc6a92db13491a1f9d87e6d24"
+    },
+    {
+      "path": "models/rewrite.tokenizer.json",
+      "bytes": 1933,
+      "sha256": "67fc2b9b34c5217170cb3701cee345763ce49d68775faf331c8f6ed3e1434da0"
+    }
+  ],
+  "new_teacher_calls": 0,
+  "new_teacher_tokens": 0,
+  "promotion_allowed": false
+}
