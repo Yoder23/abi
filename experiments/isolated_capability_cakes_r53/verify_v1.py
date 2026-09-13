@@ -70,6 +70,8 @@ def verify(
     layercake_root: Path,
     live: bool,
     *,
+    split: str = "validation",
+    live_source_dir: Path | None = None,
     expected_result_sha256: str = EXPECTED_RESULT_SHA256,
     expected_raw_sha256: str = EXPECTED_RAW_SHA256,
     campaign_screen: Any = screen_v1,
@@ -91,12 +93,17 @@ def verify(
     if (
         result.get("format") != expected_format
         or result.get("verdict") != expected_verdict
-        or result.get("split") != "validation"
+        or result.get("split") != split
         or result.get("full_abi_moonshot") != "OPEN"
     ):
         raise VerificationError("R53 result scope changed")
-    if tuple(_sha256_file(path) for path in source_paths) != SOURCE_SHA256:
+    if split == "validation" and (
+        tuple(_sha256_file(path) for path in source_paths) != SOURCE_SHA256
+        or live_source_dir is not None
+    ):
         raise VerificationError("R53 source bundles changed")
+    if split == "final_test" and live_source_dir is None:
+        raise VerificationError("R53 final-test live source is absent")
     frozen = (
         (candidate / "model.safetensors", campaign_screen.CANDIDATE_SHA256),
         (candidate / "metadata.json", campaign_screen.METADATA_SHA256),
@@ -118,10 +125,10 @@ def verify(
         raise VerificationError("R53 raw-row receipt changed")
 
     catalog = load_probe_catalog(catalog_path)
-    probes = [
-        dict(row) for row in catalog["probes"] if row["split"] == "validation"
-    ]
-    source, source_identities = _source_by_probe(source_paths, split="validation")
+    probes = [dict(row) for row in catalog["probes"] if row["split"] == split]
+    source, source_identities = common._source(
+        split, source_paths, live_source_dir
+    )
     rows = _jsonl(raw_path)
     if (
         len(probes) != 1_400
@@ -239,7 +246,7 @@ def verify(
     metrics = {
         "rows": len(rows),
         "functional": functional,
-        "parent_functional": campaign_screen.PARENT_COUNTS["validation"],
+        "parent_functional": campaign_screen.PARENT_COUNTS[split],
         "source_functional": source_functional,
         "source_passing_regressions": regressions,
         "source_retention": (source_functional - regressions) / source_functional,
@@ -264,7 +271,7 @@ def verify(
         "matrix": len(rows) == 1_400,
         "functional": functional >= 1_260,
         "parent_nondegradation": functional
-        >= campaign_screen.PARENT_COUNTS["validation"],
+        >= campaign_screen.PARENT_COUNTS[split],
         "per_capability": all(value["functional"] >= 65 for value in by_capability.values()),
         "source_noninferior_point": functional >= source_functional,
         "source_retention": metrics["source_retention"] >= 0.94,
