@@ -138,8 +138,20 @@ def run(
     if len(probes) != 1_400:
         raise ScreenError("R51 disclosed screen depth changed")
     source, source_identities = _source(split, source_bundles, live_source_dir)
-    if set(source) != {str(row["probe_id"]) for row in probes}:
+    selected_ids = {str(row["probe_id"]) for row in probes}
+    missing = selected_ids - set(source)
+    surplus = set(source) - selected_ids
+    if missing:
         raise ScreenError("R51 source coverage changed")
+    source_inventory = {
+        "selected": len(selected_ids),
+        "available": len(source),
+        "missing": len(missing),
+        "surplus_not_evaluated": len(surplus),
+        "surplus_ids_sha256": hashlib.sha256(
+            "\n".join(sorted(surplus)).encode("utf-8")
+        ).hexdigest(),
+    }
     router = torch.nn.Linear(r49.FEATURES, 10)
     router.load_state_dict(load_file(str(router_path), device="cpu"), strict=True)
     router.eval()
@@ -240,6 +252,7 @@ def run(
         "candidate_metadata_sha256": METADATA_SHA256,
         "router_sha256": ROUTER_SHA256,
         "source_identities": source_identities,
+        "source_inventory": source_inventory,
         "router": router_score, "metrics": metrics, "gates": gates,
         "artifacts": {"evaluation": {"path": raw_path.name, "sha256": _sha256_file(raw_path), "bytes": raw_path.stat().st_size}},
         "training_steps_during_screen": 0, "teacher_calls_during_screen": 0,
