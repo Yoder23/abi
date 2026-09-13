@@ -1,0 +1,217 @@
+{
+  "artifact": {
+    "bytes": 2798040,
+    "manifest": {
+      "path": "artifact_manifest.json",
+      "sha256": "902581ca8038e974939bf2d6b9bd41e446787dcb2f984a3ea4638afff1cb9840"
+    },
+    "parameters": 698880,
+    "path": "adapter.safetensors",
+    "sha256": "96c46dabfa78c8aa846fb2787ca74fccb12d696f970a20ea62be780752c98098"
+  },
+  "artifacts": {
+    "evaluation": {
+      "bytes": 66639,
+      "path": "evaluation.jsonl",
+      "sha256": "e821cfedf8af81346e2ccd21a0369abb3f4d7a25b7dd953ad33a37336c485457"
+    },
+    "removal": [
+      {
+        "byte_exact_v9": true,
+        "record_id": "r30-evaluation-1f0e32efddc44b47cf72"
+      },
+      {
+        "byte_exact_v9": true,
+        "record_id": "r30-evaluation-ac34f2cfb3adea12462f"
+      },
+      {
+        "byte_exact_v9": true,
+        "record_id": "r30-evaluation-7e8666fcb90e3b939483"
+      },
+      {
+        "byte_exact_v9": true,
+        "record_id": "r30-evaluation-290798ab1c8e6fe8c3f7"
+      },
+      {
+        "byte_exact_v9": true,
+        "record_id": "r30-evaluation-21d1a1094828efe24bbf"
+      },
+      {
+        "byte_exact_v9": true,
+        "record_id": "r30-evaluation-ea29ad74e9d53985b3d3"
+      },
+      {
+        "byte_exact_v9": true,
+        "record_id": "r30-evaluation-9728087d86225435d156"
+      },
+      {
+        "byte_exact_v9": true,
+        "record_id": "r30-evaluation-868d94687b8d752a68a3"
+      },
+      {
+        "byte_exact_v9": false,
+        "record_id": "r30-evaluation-4fb5ddc9515cf05159dd"
+      },
+      {
+        "byte_exact_v9": true,
+        "record_id": "r30-evaluation-d5e1e6f1a8a30ce56b6b"
+      },
+      {
+        "byte_exact_v9": true,
+        "record_id": "r30-evaluation-aa0f056ee88851db8b7d"
+      },
+      {
+        "byte_exact_v9": true,
+        "record_id": "r30-evaluation-e9e8dd035c3f07735899"
+      }
+    ]
+  },
+  "claim_ceiling": "DISCLOSED_LAYERCAKE_ADAPTER_CONTROL_NOT_GENERAL_ENGLISH_OR_ABI_SUPERIORITY",
+  "diagnosis_sha256": "ee4403f4f9b85b2d44ea92cf989adc20470858529db56ec0aa24e6c003e90a39",
+  "evidence_sha256": "476b2f8ec8bb523aa88c71683bf38ee2541d78135370f4b167570ebcc0cd6e1f",
+  "format": "abi-r30-frozen-host-sparse-adapter-control/10",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "cached_layercake_feature_values_volatile": 8547072,
+    "cached_layercake_features_persisted": false,
+    "elapsed_seconds": 46.31540670001414,
+    "peak_cpu_rss_bytes": 1363169280,
+    "peak_gpu_memory_bytes": 543329280,
+    "source_parameters_copied": 0,
+    "teacher_hidden_activations_stored": 0,
+    "teacher_logits_stored": 0,
+    "teacher_output_bytes_in_training_rows": 48499,
+    "teacher_present_during_execution": false,
+    "teacher_present_during_training": false,
+    "training_rows": 288
+  },
+  "layercake": {
+    "checkpoint_sha256": "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1",
+    "frozen_state_sha256_after": "ae05babab4d07300e501ade4599b26d41d0e2d860a343522c22b4d17040f58b9",
+    "frozen_state_sha256_before": "ae05babab4d07300e501ade4599b26d41d0e2d860a343522c22b4d17040f58b9",
+    "parameters_active_base": 60756490,
+    "parameters_total": 61655050,
+    "repository_commit": "2170c78b7ae901eb4e99ec93ad59d573b2c75941",
+    "tokenizer_sha256": "1fe93b6152957cf9cfd6d89002467f789ce8b3f3e000b3a2edf27c808ddd0b9e"
+  },
+  "metrics": {
+    "by_task": {
+      "abstention": {
+        "functional": 9,
+        "rows": 12
+      },
+      "bullets": {
+        "functional": 0,
+        "rows": 12
+      },
+      "clarification": {
+        "functional": 0,
+        "rows": 12
+      },
+      "comparison": {
+        "functional": 0,
+        "rows": 12
+      },
+      "conversation": {
+        "functional": 1,
+        "rows": 12
+      },
+      "email": {
+        "functional": 0,
+        "rows": 12
+      },
+      "planning": {
+        "functional": 0,
+        "rows": 12
+      },
+      "prose": {
+        "functional": 1,
+        "rows": 12
+      },
+      "reasoning": {
+        "functional": 0,
+        "rows": 12
+      },
+      "rewrite": {
+        "functional": 0,
+        "rows": 12
+      },
+      "summary": {
+        "functional": 0,
+        "rows": 12
+      },
+      "tone": {
+        "functional": 0,
+        "rows": 12
+      }
+    },
+    "evaluation_rows": 144,
+    "functional": 11,
+    "removal_replay_exact": 11
+  },
+  "scientific_role": "LAYERCAKE_ADAPTER_CONTROL_NOT_ABI_SUPERIORITY",
+  "source_rows_sha256": "01f4f11ca70e9ff5d98b5d7573ef71a8a28a67e6351dc3e71b816d8bc3dd45da",
+  "training": {
+    "batch_size": 128,
+    "history": [
+      {
+        "accuracy": 0.1875,
+        "gradient_norm": 4.607022762298584,
+        "loss": 6.4418182373046875,
+        "route": 2,
+        "seconds": 0.06094029999803752,
+        "step": 1
+      },
+      {
+        "accuracy": 1.0,
+        "gradient_norm": 0.06232857331633568,
+        "loss": 0.022491611540317535,
+        "route": 3,
+        "seconds": 4.063703400024679,
+        "step": 1500
+      },
+      {
+        "accuracy": 1.0,
+        "gradient_norm": 0.0046638003550469875,
+        "loss": 0.0004635708755813539,
+        "route": 5,
+        "seconds": 8.041268300032243,
+        "step": 3000
+      },
+      {
+        "accuracy": 1.0,
+        "gradient_norm": 0.025435201823711395,
+        "loss": 0.010015071369707584,
+        "route": 7,
+        "seconds": 12.032332400034647,
+        "step": 4500
+      },
+      {
+        "accuracy": 0.96875,
+        "gradient_norm": 0.9917624592781067,
+        "loss": 0.09739215672016144,
+        "route": 2,
+        "seconds": 16.00516450003488,
+        "step": 6000
+      }
+    ],
+    "learning_rate": 0.002,
+    "parameters": 698880,
+    "routes": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      9
+    ],
+    "seconds": 16.005258799996227,
+    "seed": 30610,
+    "steps": 6000,
+    "token_examples": 768000,
+    "unique_cached_target_tokens": 11129
+  },
+  "v9_result_sha256": "c6ddb1c406290b278fcab1aabc66f49d00d08679f9e7ff137cd483a98442ab4b",
+  "verdict": "FAIL_PUBLIC_SPARSE_ADAPTER_CONTROL"
+}

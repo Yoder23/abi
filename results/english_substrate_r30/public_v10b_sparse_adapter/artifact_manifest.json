@@ -1,0 +1,113 @@
+{
+  "adapter_bytes": 2798040,
+  "adapter_sha256": "96c46dabfa78c8aa846fb2787ca74fccb12d696f970a20ea62be780752c98098",
+  "base_checkpoint_sha256": "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1",
+  "base_tokenizer_sha256": "1fe93b6152957cf9cfd6d89002467f789ce8b3f3e000b3a2edf27c808ddd0b9e",
+  "diagnosis_sha256": "ee4403f4f9b85b2d44ea92cf989adc20470858529db56ec0aa24e6c003e90a39",
+  "format": "abi-r30-layercake-sparse-adapter/1",
+  "source_rows_sha256": "01f4f11ca70e9ff5d98b5d7573ef71a8a28a67e6351dc3e71b816d8bc3dd45da",
+  "task_routes": {
+    "abstention": 7,
+    "bullets": 4,
+    "clarification": 7,
+    "comparison": 3,
+    "conversation": 9,
+    "email": 4,
+    "planning": 2,
+    "prose": 9,
+    "reasoning": 5,
+    "rewrite": 9,
+    "summary": 6,
+    "tone": 4
+  },
+  "tensor_names": [
+    "task_cakes.2.down.weight",
+    "task_cakes.2.norm.bias",
+    "task_cakes.2.norm.weight",
+    "task_cakes.2.up.weight",
+    "task_cakes.3.down.weight",
+    "task_cakes.3.norm.bias",
+    "task_cakes.3.norm.weight",
+    "task_cakes.3.up.weight",
+    "task_cakes.4.down.weight",
+    "task_cakes.4.norm.bias",
+    "task_cakes.4.norm.weight",
+    "task_cakes.4.up.weight",
+    "task_cakes.5.down.weight",
+    "task_cakes.5.norm.bias",
+    "task_cakes.5.norm.weight",
+    "task_cakes.5.up.weight",
+    "task_cakes.6.down.weight",
+    "task_cakes.6.norm.bias",
+    "task_cakes.6.norm.weight",
+    "task_cakes.6.up.weight",
+    "task_cakes.7.down.weight",
+    "task_cakes.7.norm.bias",
+    "task_cakes.7.norm.weight",
+    "task_cakes.7.up.weight",
+    "task_cakes.9.down.weight",
+    "task_cakes.9.norm.bias",
+    "task_cakes.9.norm.weight",
+    "task_cakes.9.up.weight"
+  ],
+  "training": {
+    "batch_size": 128,
+    "history": [
+      {
+        "accuracy": 0.1875,
+        "gradient_norm": 4.607022762298584,
+        "loss": 6.4418182373046875,
+        "route": 2,
+        "seconds": 0.06094029999803752,
+        "step": 1
+      },
+      {
+        "accuracy": 1.0,
+        "gradient_norm": 0.06232857331633568,
+        "loss": 0.022491611540317535,
+        "route": 3,
+        "seconds": 4.063703400024679,
+        "step": 1500
+      },
+      {
+        "accuracy": 1.0,
+        "gradient_norm": 0.0046638003550469875,
+        "loss": 0.0004635708755813539,
+        "route": 5,
+        "seconds": 8.041268300032243,
+        "step": 3000
+      },
+      {
+        "accuracy": 1.0,
+        "gradient_norm": 0.025435201823711395,
+        "loss": 0.010015071369707584,
+        "route": 7,
+        "seconds": 12.032332400034647,
+        "step": 4500
+      },
+      {
+        "accuracy": 0.96875,
+        "gradient_norm": 0.9917624592781067,
+        "loss": 0.09739215672016144,
+        "route": 2,
+        "seconds": 16.00516450003488,
+        "step": 6000
+      }
+    ],
+    "learning_rate": 0.002,
+    "parameters": 698880,
+    "routes": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      9
+    ],
+    "seconds": 16.005258799996227,
+    "seed": 30610,
+    "steps": 6000,
+    "token_examples": 768000
+  }
+}
