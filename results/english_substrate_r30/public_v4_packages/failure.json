@@ -1,0 +1,21 @@
+{
+  "format": "abi-r30-package-pilot-failure/4",
+  "verdict": "FAIL_TOKENIZER_COPY_ELIGIBILITY",
+  "completed_packages": 7,
+  "failed_cluster": "capability-8f722f34058c",
+  "exception": "ValueError: target lexeme is outside fixed vocabulary: b'2'",
+  "cause": "a digit excluded globally as a dynamic pointer value was not copy-eligible in every target row where it appeared",
+  "partial_packages": [
+    {"path": "packages/capability-1804ef5e49f4.cake", "bytes": 980107, "sha256": "989ee20a8ed843358f1beec72e4e54acc494ccd235353ecb82392f19725eaa9e"},
+    {"path": "packages/capability-660267e0e217.cake", "bytes": 1018335, "sha256": "236894136207309a716effef0c9dfe8661c7924acca10f278e17270fae268087"},
+    {"path": "packages/capability-663bb9820de9.cake", "bytes": 1155933, "sha256": "78c8b45d7e08a94a67fa2f00cf2c8ce14a10f0376cdb184c614a88377ed4de91"},
+    {"path": "packages/capability-68a9963f947e.cake", "bytes": 994752, "sha256": "5f85be8841b6aeef0632d72c92c7e905d104af90dbb4521f26f76c7453a9747f"},
+    {"path": "packages/capability-6a05ac87d84b.cake", "bytes": 994578, "sha256": "7feb133bfe6ca5facb6845f94281d8daeb4f8e0c8006ebb8f1ccbb46a9f31602"},
+    {"path": "packages/capability-77540ff46ac4.cake", "bytes": 996782, "sha256": "17d94b80dab17d96655ed95c1ba4ae013ba6436e8af6da7cd912819cd28771c8"},
+    {"path": "packages/capability-781f838d49a2.cake", "bytes": 996065, "sha256": "7b57785a1afce4e6f7e69f36d23aa770f3bb0da30022b3ac8d86fb733c82995a"}
+  ],
+  "candidate_promoted": false,
+  "layercake_evaluation_started": false,
+  "full_abi_moonshot": "OPEN"
+}
+
