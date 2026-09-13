@@ -1,0 +1,97 @@
+{
+  "artifacts": {
+    "corrupted_package": {
+      "path": "corrupted_candidate.cake",
+      "sha256": "d984ae0446452fb64df5ddfa0dce641858fc15332e529a02ddeb5bee46dff624"
+    },
+    "evaluation": {
+      "path": "evaluation.jsonl",
+      "sha256": "85314b258b3f46edd42da24c717f1104ac79b525dba70aff1412d6184e3a3845"
+    },
+    "fixture": {
+      "path": "fixture.jsonl",
+      "sha256": "9409797e98fa771a3bbd62715bf33477f5db0db4e0c55b822b89805cb2ddf5c2"
+    }
+  },
+  "claim_ceiling": "PROSPECTIVE_REPLICATED_COMPACT_SUPPLIED_CONTENT_ENGLISH_CORE_NOT_UNRESTRICTED_ENGLISH",
+  "corruption": {
+    "error": "InstallationError: invalid cake ZIP container",
+    "package_sha256": "d984ae0446452fb64df5ddfa0dce641858fc15332e529a02ddeb5bee46dff624",
+    "strict_install_rejected": true
+  },
+  "evidence_sha256": "6271e8e2e6963849a26123c7caacdc3d6f97b8426a23fed9595119bd1cb68a63",
+  "format": "abi-r44-frozen-shared-core-replication/1",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "abi_local_neural_generation_calls": 0,
+    "cpu_seconds": 20.898577499960084,
+    "cuda_seconds": 25.15316950000124,
+    "elapsed_seconds": 46.49666669999715,
+    "layercake_host_generation_calls": 314,
+    "new_teacher_calls": 0,
+    "peak_cpu_rss_bytes": 719171584,
+    "peak_cuda_memory_bytes": 12598272,
+    "teacher_activations_loaded": 0,
+    "teacher_logits_loaded": 0,
+    "teacher_parameters_loaded": 0,
+    "teacher_rows_loaded": 0,
+    "training_steps": 0
+  },
+  "inputs": {
+    "candidate_package_sha256": "6ccb115de59e71b1c70efcfe2b5a1673b88d8f1478fb0059d8577ef5e2b6e6a4",
+    "candidate_state_sha256": "2fec28a3867a09313f47d36921d0ff8e463d85c9e6777da89c43d734392698e8",
+    "layercake_commit": "f8a4569508f9f4a20e4babe3b4a942ac887da147",
+    "r43_result_sha256": "72967c1ae40f6e65f49b0a7be74bb196a8b07b972ee180fe0a3de824a2325bed",
+    "zero_package_sha256": "7b674ea1d818338f962a8fb6df0bfb6b50377764008313cf5bdbdf7ec8bd6391"
+  },
+  "lifecycle": {
+    "generation_rejected": true,
+    "reinstalled_status": "INSTALLED",
+    "removed_status": "REMOVED",
+    "restored_exact": true
+  },
+  "metrics": {
+    "active_parameters": 296554,
+    "candidate_by_device_task": {
+      "cpu": {
+        "abstention": 12,
+        "bullets": 12,
+        "clarification": 12,
+        "comparison": 12,
+        "conversation": 12,
+        "email": 10,
+        "planning": 12,
+        "prose": 12,
+        "reasoning": 12,
+        "rewrite": 12,
+        "summary": 12,
+        "tone": 11
+      },
+      "cuda": {
+        "abstention": 12,
+        "bullets": 12,
+        "clarification": 12,
+        "comparison": 12,
+        "conversation": 12,
+        "email": 10,
+        "planning": 12,
+        "prose": 12,
+        "reasoning": 12,
+        "rewrite": 12,
+        "summary": 12,
+        "tone": 11
+      }
+    },
+    "candidate_cpu_functional": 141,
+    "candidate_cuda_functional": 141,
+    "contract_exact": 288,
+    "cpu_cuda_exact": 144,
+    "fixture_rows": 144,
+    "noncollapsed": 288,
+    "representation_errors": 0,
+    "route_exact": 288,
+    "zero_candidate_exact": 0,
+    "zero_functional": 0
+  },
+  "verdict": "PASS_R44_FROZEN_SHARED_CORE_REPLICATION"
+}
