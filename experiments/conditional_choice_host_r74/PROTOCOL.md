@@ -8,8 +8,10 @@ merely existing as a valid archive.
 
 - untouched R47 parent checkpoint SHA-256
   `65b1aae5e1aed947f2bc086281a3c7388b22a4260c562363aff2e8cc59f9661b`;
-- R73 main artifact SHA-256
-  `0af70b5bc4812c7a957554b14054f8561875c94977d5555bc8a899716a8dbf97`;
+- R73-v2 main artifact SHA-256
+  `3450f510430ab4402b9a052d1a6b928f594bf2b759abc6e3c5baa872e8758b54`;
+  v1 is preserved but training-ineligible because its selection declared a
+  survey rather than the exact reasoning capability subset;
 - broad-English preservation anchor SHA-256
   `82d1ab8a3ee7b4aa351b5c74b4a229d75e845313047065780227e8e403363150`;
 - unchanged canonical LayerCake ABI SHA-256
