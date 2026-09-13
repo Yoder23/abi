@@ -1,0 +1,104 @@
+{
+  "artifacts": {
+    "evaluation": {
+      "bytes": 13324,
+      "path": "evaluation.jsonl",
+      "sha256": "e7e6e5ec9979a3947d6fb50d3dad322158556a6a3a0886fcf1ba7a7b973f6417"
+    },
+    "source_bundle": {
+      "bytes": 6160,
+      "path": "source_bundle.json",
+      "sha256": "be6f1106d63454c89127bd3e9d481660eee8000db5f831f13abb14610281241e"
+    },
+    "source_rows": {
+      "bytes": 25576,
+      "path": "source_rows.jsonl",
+      "sha256": "917b7316323ce825ace24113a98778e0cc42a07ec502413974868abde824359d"
+    }
+  },
+  "claim": "BOUNDED_VALIDATOR_BACKED_MULTILABEL_DISCOVERY_AND_COMPILATION",
+  "claim_ceiling": "NOT_EXHAUSTIVE_DIAGNOSIS_OR_FLUENT_ENGLISH_EXTRACTION",
+  "config_sha256": "a2b45eade22838f0790a1515431ab2fae05bf918237a582f5e296eb868d23479",
+  "evidence_sha256": "bd3821536ebba4c116a661f2af8a7712f8e636ae1c852cbbd31da0f239e7116c",
+  "format": "abi-r29-heldout-validated-source-result/1",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "bridge_parameters_trained": 0,
+    "control_rotation_offset": 1,
+    "elapsed_seconds": 65.39136190002318,
+    "final_package_bytes": 1177,
+    "generated_tokens": 1047,
+    "output_bytes": 2924,
+    "package_fact_records": 13,
+    "peak_gpu_memory_bytes": 15306695168,
+    "source_bundle_bytes": 6160,
+    "source_calls": 72,
+    "source_parameters_copied": 0,
+    "unique_facts": 12
+  },
+  "isolation": {
+    "control_result_sha256": "45b8abb040ad34bb4afae3723e7998d9b1823630011e4ceab9a15bdfe1b80bb5",
+    "launcher_sha256": "1b66f988a1f4954b2e5ef31619c8058a8bb710e5ef1e4258bb03d2e647bf207c",
+    "result_sha256": "4c94c2ca102f3529638b51207fe385996e4a47b56311ee2be7cf6b39bc1601bb"
+  },
+  "metrics": {
+    "compiled_package_fact_records": 13,
+    "compiled_unique_facts": 12,
+    "control_unvalidated_exact": 0,
+    "control_validated_exact": 18,
+    "discovered_packages": 4,
+    "label_syntax_valid": 72,
+    "oracle_domain_coverage": 36,
+    "oracle_fields_consumed": 0,
+    "package_oracle_exact": 36,
+    "package_teacher_agreement": 27,
+    "parse_exact": 72,
+    "selected_facts": 12,
+    "source_answer_exact": 52,
+    "source_evaluation_oracle_exact": 27,
+    "source_rows": 72,
+    "tag_purity": 36,
+    "unauthorized_packages_abstain": 36,
+    "unvalidated_evaluation_rows": 18,
+    "validated_evaluation_rows": 18,
+    "validator_uses": 6
+  },
+  "packages": [
+    {
+      "bytes": 268,
+      "facts": 3,
+      "namespace": "teacher/chemistry",
+      "path": "extraction/packages/sha256-12657a404dea1a9a65fc73d3e23cca82501b1ceea5d898f1b30a3d2cfd962620.abipkg",
+      "sha256": "12657a404dea1a9a65fc73d3e23cca82501b1ceea5d898f1b30a3d2cfd962620"
+    },
+    {
+      "bytes": 285,
+      "facts": 3,
+      "namespace": "teacher/geography",
+      "path": "extraction/packages/sha256-350792bdffe020258d61ef9ba487d782083dd86762c753d5d37be86550b7a745.abipkg",
+      "sha256": "350792bdffe020258d61ef9ba487d782083dd86762c753d5d37be86550b7a745"
+    },
+    {
+      "bytes": 274,
+      "facts": 3,
+      "namespace": "teacher/mathematics",
+      "path": "extraction/packages/sha256-08a53b2517f5e61a7e49f3c6339be2590d0fac547ec65653775e8c5f1b3896e4.abipkg",
+      "sha256": "08a53b2517f5e61a7e49f3c6339be2590d0fac547ec65653775e8c5f1b3896e4"
+    },
+    {
+      "bytes": 350,
+      "facts": 4,
+      "namespace": "teacher/python",
+      "path": "extraction/packages/sha256-5722515f7269e479f0b798defa313b02f1f8e4bddf7572dfb52fee26871cdc91.abipkg",
+      "sha256": "5722515f7269e479f0b798defa313b02f1f8e4bddf7572dfb52fee26871cdc91"
+    }
+  ],
+  "reveal_sha256": "8332a39b178a88d926c91d762326f8eb605c3217f2c890d8dbfaf77cde63ba97",
+  "source": {
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "snapshot": "C:\\Users\\samyo\\.cache\\huggingface\\hub\\models--Qwen--Qwen2-7B-Instruct\\snapshots\\f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "training_steps": 0
+  },
+  "verdict": "FAIL"
+}
