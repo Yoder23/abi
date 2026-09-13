@@ -1,0 +1,62 @@
+{
+  "accounting": {
+    "candidate_score_storage_bytes_float64_equivalent": 16800,
+    "candidate_scores_stored": 2100,
+    "full_vocabulary_logit_vectors_stored": 0,
+    "hidden_activations_stored": 0,
+    "peak_cuda_allocated_bytes": 8231322624,
+    "peak_process_rss_bytes": 987602944,
+    "source_candidate_tokens_scored": 12600,
+    "source_inference_seconds": 66.69371419987874,
+    "source_load_seconds": 3.566980000003241,
+    "total_wall_seconds": 70.95837840001332
+  },
+  "artifacts": {
+    "choice_scores": {
+      "bytes": 567933,
+      "path": "choice_scores.jsonl",
+      "sha256": "1a90466b4aa1f99eb7a8aff5b99953cc43be12896d3fe55a2fdf0d7ec9903cf7"
+    }
+  },
+  "candidate_accessed": false,
+  "catalog_sha256": "e8cfc9199d05b796c7625803706a62b245b6537d2962924123fdf8d9c607f086",
+  "evidence_sha256": "9bc47160073f062ac76e60dca764df0bdec2fde9bf18f8b7ab29fcaca4ef5990",
+  "format": "abi-r75-source-conditional-choice-validation/1",
+  "full_abi_moonshot": "OPEN",
+  "gates": {
+    "family_floor": true,
+    "minimum_passing": true,
+    "rows": true,
+    "zero_ties": true
+  },
+  "hardware": {
+    "cuda": "11.8",
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "machine": "Sam",
+    "python": "3.10.0",
+    "torch": "2.7.1+cu118"
+  },
+  "layercake_loaded": false,
+  "metrics": {
+    "family_passing": {
+      "0": 92,
+      "1": 100,
+      "2": 100,
+      "3": 100,
+      "4": 100,
+      "5": 100,
+      "6": 100
+    },
+    "pass_rate": 0.9885714285714285,
+    "passing": 692,
+    "rows": 700,
+    "ties": 0
+  },
+  "promotion_eligible": false,
+  "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310",
+  "source_model": "microsoft/Phi-3-mini-4k-instruct",
+  "source_parameters_read": 3821079552,
+  "source_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+  "source_weights_copied": 0,
+  "verdict": "PASS_R75_SOURCE"
+}
