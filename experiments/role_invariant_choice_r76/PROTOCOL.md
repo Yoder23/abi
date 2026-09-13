@@ -47,3 +47,6 @@ authorized before selecting another architecture: score the same three R77
 candidates under the bound LayerCake checkpoint. This diagnostic is not
 promotion evidence. It distinguishes transferred conditional selection with a
 copy/realization failure from a failure of both selection and realization.
+The first launch produced zero rows because the bound screen-result SHA was
+transcribed as 63 characters; the additive repair inserts only the missing
+hex character and leaves the diagnostic method and thresholds unchanged.
