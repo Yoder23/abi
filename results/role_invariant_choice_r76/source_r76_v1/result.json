@@ -1,0 +1,69 @@
+{
+  "accounting": {
+    "candidate_score_storage_bytes_float64_equivalent": 201600,
+    "candidate_scores_stored": 25200,
+    "full_vocabulary_logit_vectors_stored": 0,
+    "hidden_activations_stored": 0,
+    "peak_cuda_allocated_bytes": 8428676608,
+    "peak_process_rss_bytes": 1033457664,
+    "source_candidate_tokens_scored": 203700,
+    "source_inference_seconds": 1085.6860380990547,
+    "source_load_seconds": 3.625635800010059,
+    "total_wall_seconds": 1099.1666070999927
+  },
+  "artifacts": {
+    "choice_scores": {
+      "bytes": 7192309,
+      "path": "choice_scores.jsonl",
+      "sha256": "7866ecba2026be86c1840efb3b236fb4953d4cb19a2288290a40eaaa21100d42"
+    }
+  },
+  "campaign": "r76",
+  "candidate_accessed": false,
+  "catalog_sha256": "b7bf96a48d2c51fc08948ff1f92a5211c22fd24e0f83d5749a61523c22ee2387",
+  "evidence_sha256": "841a1a7205d228543fd3416781660312c379cc2d1b587faf13aa5b290176276f",
+  "format": "abi-role-invariant-conditional-choice-source-score/1",
+  "full_abi_moonshot": "OPEN",
+  "gates": {
+    "all_destination_display_positions": true,
+    "family_floor": false,
+    "minimum_passing": true,
+    "rows": true,
+    "zero_ties": true
+  },
+  "hardware": {
+    "cuda": "11.8",
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "machine": "Sam",
+    "python": "3.10.0",
+    "torch": "2.7.1+cu118"
+  },
+  "layercake_loaded": false,
+  "metrics": {
+    "display_position_passing": {
+      "0": 2800,
+      "1": 2758,
+      "2": 2571
+    },
+    "family_passing": {
+      "0": 982,
+      "1": 1200,
+      "2": 1200,
+      "3": 1147,
+      "4": 1200,
+      "5": 1200,
+      "6": 1200
+    },
+    "pass_rate": 0.9677380952380953,
+    "passing": 8129,
+    "rows": 8400,
+    "ties": 0
+  },
+  "promotion_eligible": false,
+  "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310",
+  "source_model": "microsoft/Phi-3-mini-4k-instruct",
+  "source_parameters_read": 3821079552,
+  "source_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+  "source_weights_copied": 0,
+  "verdict": "FAIL_R76_SOURCE"
+}
