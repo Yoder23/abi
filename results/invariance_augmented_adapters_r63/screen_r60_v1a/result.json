@@ -1,0 +1,134 @@
+{
+  "artifacts": {
+    "evaluation": {
+      "bytes": 2054700,
+      "path": "evaluation.jsonl",
+      "sha256": "39012f3bae8ec26d5a17c1adeb63d6da935b229fd80d71a6c59dd91af2c0e266"
+    }
+  },
+  "augmentation_receipt_sha256": "5ca1dbf4c8436156a3a3199dd4187f6327083c6393617cbc176b614d7d4cb1d0",
+  "candidate_checkpoint_sha256": "83610a38bfe25ba5cc7b7d1970a749dd9199d4965478fc020627aa80851b87d4",
+  "candidate_metadata_sha256": "bac92bb817f62c3c7907c8dbe5c6778aaa7381afa701900c4bbd82a74ff3d0f2",
+  "catalog_sha256": "4b0087c9a7fa0e0fd6f607fdbd94fffbdd3cb375f5880a0588c97414583a2ad7",
+  "evidence_sha256": "6a9cac363f7e0f57559171350e0494442c280dc1129d4a692854bd4589a233b0",
+  "format": "abi-r63-invariance-augmented-oracle-route-development-screen/1",
+  "full_abi_moonshot": "OPEN",
+  "gates": {
+    "artifacts_unchanged": true,
+    "functional": false,
+    "material_improvement": true,
+    "matrix": true,
+    "per_capability": false,
+    "physical_sparse": true,
+    "source_noninferior_point": true,
+    "source_retention": false,
+    "zero_final_collapse": false
+  },
+  "metrics": {
+    "by_capability": {
+      "abstention": {
+        "collapses": 25,
+        "functional": 0,
+        "source_functional": 0
+      },
+      "cake_output_realization": {
+        "collapses": 0,
+        "functional": 64,
+        "source_functional": 75
+      },
+      "clarification": {
+        "collapses": 1,
+        "functional": 94,
+        "source_functional": 100
+      },
+      "coherence": {
+        "collapses": 0,
+        "functional": 45,
+        "source_functional": 0
+      },
+      "conversation": {
+        "collapses": 0,
+        "functional": 89,
+        "source_functional": 81
+      },
+      "domain_independent_reasoning": {
+        "collapses": 0,
+        "functional": 0,
+        "source_functional": 21
+      },
+      "email_drafting": {
+        "collapses": 0,
+        "functional": 76,
+        "source_functional": 53
+      },
+      "format_control": {
+        "collapses": 5,
+        "functional": 0,
+        "source_functional": 0
+      },
+      "grammar": {
+        "collapses": 0,
+        "functional": 88,
+        "source_functional": 100
+      },
+      "instruction_following": {
+        "collapses": 0,
+        "functional": 74,
+        "source_functional": 89
+      },
+      "prompt_grounding": {
+        "collapses": 0,
+        "functional": 89,
+        "source_functional": 100
+      },
+      "rewriting": {
+        "collapses": 0,
+        "functional": 73,
+        "source_functional": 89
+      },
+      "summarization": {
+        "collapses": 0,
+        "functional": 92,
+        "source_functional": 84
+      },
+      "tone_control": {
+        "collapses": 0,
+        "functional": 65,
+        "source_functional": 45
+      }
+    },
+    "candidate_minus_source": {
+      "lower_95": -0.016428571428571428,
+      "point": 0.008571428571428572,
+      "replicates": 5000,
+      "upper_95": 0.03214285714285714
+    },
+    "final_collapses": 31,
+    "functional": 849,
+    "functional_delta_from_r60": 36,
+    "physical_sparse_rows": 1400,
+    "r60_baseline_functional": 813,
+    "rows": 1400,
+    "source_functional": 837,
+    "source_passing_regressions": 143,
+    "source_retention": 0.8291517323775388,
+    "wall_seconds": 299.4979391999659
+  },
+  "promotion_eligible": false,
+  "routing_condition": "sealed_catalog_label_oracle_not_operational_router",
+  "runtime_telemetry": {
+    "accepted_tokens": 37758,
+    "candidate_transitions_checked": 37774,
+    "inherited_r55_lexical_truncations": 96,
+    "language_model_eos_stops": 1078,
+    "rejected_boundary_tokens": 16,
+    "rejections_by_condition": {
+      "maximum_identical_token_run": 16,
+      "repeated_novel_lexical_fourgrams": 0
+    }
+  },
+  "source_outputs_sha256": "35a5a6e1035035db1663d793257274e3be2b766aab79a00a0476478d0428b596",
+  "teacher_calls": 0,
+  "training_steps_during_screen": 0,
+  "verdict": "FAIL_R63_PAYLOAD_SCREEN"
+}
