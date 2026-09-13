@@ -1,0 +1,73 @@
+{
+  "anchor_archive_sha256": "f6a27cae529d990ba67f1a26bb9cd79f97ba5ca0965c9debd0fc98dab8dba820",
+  "audit_rows_sha256": "f1dd72d7eb0f5e4c8516036f0db6bc2023da5b65736c33c70937f4371bd2306d",
+  "audited_records": 24421,
+  "broad_archive_sha256": "82d1ab8a3ee7b4aa351b5c74b4a229d75e845313047065780227e8e403363150",
+  "canonical_abi_sha256": "d024de52144a2d797d0501acb7deb55575ffca7e33f72900beff599cf0a97761",
+  "checkpoint_sha256": "421777ed99459391cf36b528350169998f6bec67220d717212c32955591d26de",
+  "format": "abi-r66-complete-canonical-host-prompt-normalization/1",
+  "full_abi_moonshot": "OPEN",
+  "loader_calls": {
+    "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_moonshot\\segregated_acquisition_v3\\phi3-broad-natural-conversation-complete-search-training-v3.abix": 1,
+    "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_moonshot\\segregated_acquisition_v3\\phi3-natural-cumulative-english-search-training-v7.abix": 1
+  },
+  "metadata_sha256": "2aee3cc21a1a248f4d91171461cbf273c2f8bae1d29ec08f3dfb0cb4f692b14b",
+  "new_teacher_outputs": 0,
+  "normalization_by_capability": {
+    "broad_english_form": {
+      "coherence": 352,
+      "conversation": 1404,
+      "email_drafting": 1606,
+      "format_control": 2805,
+      "grammar": 284,
+      "instruction_following": 4957,
+      "prompt_grounding": 1980,
+      "rewriting": 1100,
+      "summarization": 928,
+      "tone_control": 3921
+    },
+    "none": {
+      "abstention": 119,
+      "clarification": 96,
+      "domain_independent_reasoning": 100
+    },
+    "supplied_text_linguistic": {
+      "cake_output_realization": 71,
+      "coherence": 109,
+      "conversation": 136,
+      "email_drafting": 84,
+      "format_control": 639,
+      "grammar": 280,
+      "instruction_following": 966,
+      "prompt_grounding": 959,
+      "rewriting": 999,
+      "summarization": 296,
+      "tone_control": 230
+    }
+  },
+  "normalization_counts": {
+    "broad_english_form": 19337,
+    "none": 315,
+    "supplied_text_linguistic": 4769
+  },
+  "normalized_prompt_hashes_sha256": "09d9ff237d2ff0d913f1f005300d2a1a2e8fdf7d7030412ea687894558426c27",
+  "original_prompt_hashes_sha256": "6f679fecd2284f386f0ddad3a63fb6071acb6caffff5bb1cf1010359a3bca2ae",
+  "parent_checkpoint_sha256": "65b1aae5e1aed947f2bc086281a3c7388b22a4260c562363aff2e8cc59f9661b",
+  "policy_suffixes": [
+    {
+      "name": "broad_english_form",
+      "rows": 19337,
+      "sha256": "31a677315092427894b1eab96ee70f08a3ab2c5ad5f17da2e1fdc3b2e03a8f25"
+    },
+    {
+      "name": "supplied_text_linguistic",
+      "rows": 4769,
+      "sha256": "07cc407a5e36a94c6471052b4a12549d19a60bdce1847c77d00cff934c88518b"
+    }
+  ],
+  "promotion_eligible": false,
+  "r60_outputs_used_for_training": 0,
+  "seed": 66001,
+  "status": "COMPLETE_UNSCREENED",
+  "teacher_calls": 0
+}
