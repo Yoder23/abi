@@ -54,7 +54,13 @@ def _candidate(task: str, instruction_index: int, detail_cycle: int, candidate: 
     }
 
 
-def run(output: Path) -> dict[str, Any]:
+def run(
+    output: Path,
+    *,
+    candidate_factory=_candidate,
+    format_version: str = "abi-r32-counterbalanced-source/1",
+    index_strategy: str = "high-offset-v1",
+) -> dict[str, Any]:
     if output.exists():
         raise RuntimeError(f"immutable R32 acquisition exists: {output}")
     if not torch.cuda.is_available():
@@ -80,7 +86,7 @@ def run(output: Path) -> dict[str, Any]:
                 for candidate_index in range(MAX_CANDIDATES_PER_CELL):
                     if cell_accepted == ROWS_PER_CELL:
                         break
-                    row = _candidate(task, instruction_index, detail_cycle, candidate_index)
+                    row = candidate_factory(task, instruction_index, detail_cycle, candidate_index)
                     chosen = None
                     row_attempts = []
                     for attempt_index, system in enumerate(SYSTEMS, 1):
@@ -162,7 +168,7 @@ def run(output: Path) -> dict[str, Any]:
     }
     passed = len(accepted) == 216 and all(count == ROWS_PER_CELL for task in cells.values() for count in task.values())
     result = {
-        "format": "abi-r32-counterbalanced-source/1",
+        "format": format_version,
         "verdict": "PASS_COUNTERBALANCED_SOURCE" if passed else "FAIL_COUNTERBALANCED_SOURCE",
         "source": {
             "model_id": MODEL_ID,
@@ -175,6 +181,7 @@ def run(output: Path) -> dict[str, Any]:
             "detail_cycles": 3,
             "rows_per_cell": ROWS_PER_CELL,
             "max_candidates_per_cell": MAX_CANDIDATES_PER_CELL,
+            "index_strategy": index_strategy,
             "accepted_by_cell": cells,
         },
         "metrics": {
