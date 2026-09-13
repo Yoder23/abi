@@ -17,12 +17,14 @@ from abi.layercake_core_loader import (
     PERSISTENT_PREFIX_LENGTH,
     PERSISTENT_PREFIX_ROUTER_BUCKETS,
     PERSISTENT_PREFIX_ROUTER_WIDTH,
+    SHARED_DEEP_CAPABILITY_ADAPTER_ARCHITECTURE,
     TASK_ROUTE_LAYERWISE_CONTROL_ARCHITECTURE,
     TASK_ROUTE_PROMPT_IDENTITY_ARCHITECTURE,
     TASK_ROUTE_SELECTIVE_PROMPT_IDENTITY_ARCHITECTURE,
     PROMPT_IDENTITY_RANK,
     SIX_BLOCK_CAPABILITY_CAKE_ARCHITECTURE,
     SIX_BLOCK_LAYERWISE_CAPABILITY_CONTROL_ARCHITECTURE,
+    SIX_BLOCK_DEEP_CAPABILITY_ADAPTER_ARCHITECTURE,
     _load_symbolic_surface_substrate,
 )
 from abi.layercake_host import _canonical_json_bytes
@@ -125,6 +127,33 @@ def test_versioned_core_config_accepts_six_block_layerwise_control() -> None:
             capability_router_width=PERSISTENT_PREFIX_ROUTER_WIDTH,
             capability_control_width=768,
             architecture_version=LAYERWISE_CAPABILITY_CONTROL_ARCHITECTURE,
+        )
+
+
+def test_versioned_core_config_accepts_six_block_deep_adapters() -> None:
+    config = ABIEnglishCoreConfig(
+        layers=6,
+        task_cakes=14,
+        capability_cake_order=CAPABILITY_CAKE_ORDER,
+        capability_cake_canonical_routes=CAPABILITY_CAKE_CANONICAL_ROUTES,
+        capability_router_buckets=PERSISTENT_PREFIX_ROUTER_BUCKETS,
+        capability_router_width=PERSISTENT_PREFIX_ROUTER_WIDTH,
+        capability_adapter_rank=DEEP_CAPABILITY_ADAPTER_RANK,
+        architecture_version=SIX_BLOCK_DEEP_CAPABILITY_ADAPTER_ARCHITECTURE,
+    )
+    assert config.layers == 6
+    assert config.capability_adapter_rank == 32
+    with pytest.raises(ValueError, match="conditioned topology"):
+        ABIEnglishCoreConfig(
+            layers=6,
+            task_cakes=14,
+            capability_cake_order=CAPABILITY_CAKE_ORDER,
+            capability_cake_canonical_routes=CAPABILITY_CAKE_CANONICAL_ROUTES,
+            capability_router_buckets=PERSISTENT_PREFIX_ROUTER_BUCKETS,
+            capability_router_width=PERSISTENT_PREFIX_ROUTER_WIDTH,
+            capability_adapter_rank=DEEP_CAPABILITY_ADAPTER_RANK,
+            capability_adapter_shared_across_layers=True,
+            architecture_version=SHARED_DEEP_CAPABILITY_ADAPTER_ARCHITECTURE,
         )
 
 

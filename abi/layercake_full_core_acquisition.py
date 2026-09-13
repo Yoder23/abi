@@ -99,6 +99,7 @@ PARENT_LOGIT_PRESERVATION_SCOPES = frozenset(
         "task_cakes_classifier",
         "capability_cakes_classifier",
         "layerwise_capability_control_cakes",
+        "deep_capability_adapter_cakes",
         TASK_ROUTE_LAYERWISE_CONTROL_SCOPE,
     }
 )

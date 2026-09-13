@@ -121,6 +121,10 @@ DEEP_CAPABILITY_ADAPTER_ARCHITECTURE = (
     "layercake-shallow-sparse-english/6-three-block-"
     "deep-rank32-capability-adapters-rank64-cakes"
 )
+SIX_BLOCK_DEEP_CAPABILITY_ADAPTER_ARCHITECTURE = (
+    "layercake-shallow-sparse-english/6-six-block-"
+    "deep-rank32-capability-adapters-rank64-cakes"
+)
 SHARED_DEEP_CAPABILITY_ADAPTER_ARCHITECTURE = (
     "layercake-shallow-sparse-english/7-three-block-"
     "shared-deep-rank32-capability-adapters-rank64-cakes"
@@ -203,7 +207,8 @@ class ABIEnglishCoreConfig:
         if self.layers == 6 and any(
             (
                 prefix_topology,
-                adapter_topology,
+                adapter_topology
+                and self.capability_adapter_shared_across_layers,
                 reused_cake_topology,
                 gated_reused_cake_topology,
             )
@@ -316,7 +321,11 @@ class ABIEnglishCoreConfig:
             else (
                 SHARED_DEEP_CAPABILITY_ADAPTER_ARCHITECTURE
                 if self.capability_adapter_shared_across_layers
-                else DEEP_CAPABILITY_ADAPTER_ARCHITECTURE
+                else (
+                    SIX_BLOCK_DEEP_CAPABILITY_ADAPTER_ARCHITECTURE
+                    if self.layers == 6
+                    else DEEP_CAPABILITY_ADAPTER_ARCHITECTURE
+                )
             )
             if adapter_topology
             else (
@@ -938,7 +947,7 @@ def install_deep_capability_adapters(
     *,
     initialize: bool,
 ) -> None:
-    """Attach three rank-32 nonlinear adapters per capability."""
+    """Attach one rank-32 nonlinear adapter per block and capability."""
 
     config = model.config
     device = model.transformer.wte.weight.device
@@ -989,7 +998,11 @@ def install_deep_capability_adapters(
         capability_router_buckets=PERSISTENT_PREFIX_ROUTER_BUCKETS,
         capability_router_width=PERSISTENT_PREFIX_ROUTER_WIDTH,
         capability_adapter_rank=DEEP_CAPABILITY_ADAPTER_RANK,
-        architecture_version=DEEP_CAPABILITY_ADAPTER_ARCHITECTURE,
+        architecture_version=(
+            SIX_BLOCK_DEEP_CAPABILITY_ADAPTER_ARCHITECTURE
+            if int(config.layers) == 6
+            else DEEP_CAPABILITY_ADAPTER_ARCHITECTURE
+        ),
     )
     model._abi_capability_cake_order = CAPABILITY_CAKE_ORDER
     model._abi_capability_cake_routes = CAPABILITY_CAKE_CANONICAL_ROUTES

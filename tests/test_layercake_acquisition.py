@@ -54,6 +54,11 @@ def test_parent_preservation_authorizes_exact_full_core_only_on_cuda():
         trainable_scope="layerwise_capability_control_cakes",
         device_name="cuda",
     )
+    assert _validate_parent_logit_preservation_configuration(
+        weight=0.5,
+        trainable_scope="deep_capability_adapter_cakes",
+        device_name="cuda",
+    )
     with pytest.raises(
         FullCoreAcquisitionError,
         match="authorized CUDA scope",
