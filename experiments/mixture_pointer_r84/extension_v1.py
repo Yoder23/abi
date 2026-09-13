@@ -159,6 +159,24 @@ def _finalize_metadata(output: Path) -> None:
         raise R84ExtensionError("sealed acquisition output changed before finalization")
     metadata["training"]["trainable_scope"] = GENERIC_SCOPE
     metadata["acquired_core"]["trainable_scope"] = GENERIC_SCOPE
+    parent_metadata_path = Path(
+        metadata["parent_layercake"]["path_at_training"]
+    ) / "metadata.json"
+    if (
+        not parent_metadata_path.is_file()
+        or _sha256_file(parent_metadata_path) != PARENT_METADATA_SHA256
+    ):
+        raise R84ExtensionError("frozen R78 parent metadata changed")
+    parent_metadata = json.loads(parent_metadata_path.read_text(encoding="utf-8"))
+    inherited_expansion = parent_metadata.get("acquired_core", {}).get(
+        "capability_cake_expansion"
+    )
+    if (
+        not isinstance(inherited_expansion, dict)
+        or inherited_expansion.get("installed_deep_adapters") != 84
+    ):
+        raise R84ExtensionError("R78 inherited adapter ledger is invalid")
+    metadata["acquired_core"]["capability_cake_expansion"] = inherited_expansion
     metadata["r84_additive_extension"] = {
         "format": "abi-r84-mixture-pointer-extension/1",
         "architecture": GENERIC_ARCHITECTURE,
@@ -176,6 +194,7 @@ def _finalize_metadata(output: Path) -> None:
         "R78 deep-adapter parent. It is a bounded candidate, not an English, "
         "domain, production, or moonshot claim."
     )
+    metadata["r84_preobservation_amendments"] = []
     metadata.pop("manifest_sha256", None)
     metadata["manifest_sha256"] = acquisition._manifest_sha(metadata)
     metadata_path.write_text(

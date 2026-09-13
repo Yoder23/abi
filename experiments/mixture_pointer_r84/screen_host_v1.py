@@ -100,6 +100,8 @@ def _preflight(
     architecture = metadata.get("architecture", {})
     recovery = training.get("self_generated_prefix_recovery", {})
     extension = metadata.get("r84_additive_extension", {})
+    amendments = metadata.get("r84_preobservation_amendments", [])
+    amendment_path = Path(__file__).with_name("AMENDMENT_1.md")
     if (
         _manifest_sha(unsigned) != manifest_sha
         or metadata.get("status")
@@ -138,6 +140,13 @@ def _preflight(
         or expansion.get("maximum_active_deep_adapters_per_sequence") != 6
         or expansion.get("maximum_active_capability_cakes_per_sequence") != 1
         or acquired.get("physical_sparse_topology_preserved") is not True
+        or len(amendments) != 1
+        or amendments[0].get("format")
+        != "abi-r84-preobservation-metadata-amendment/1"
+        or amendments[0].get("sha256") != _sha256_file(amendment_path)
+        or amendments[0].get("candidate_outputs_observed_before_amendment") != 0
+        or amendments[0].get("parent_outputs_observed_before_amendment") != 0
+        or amendments[0].get("candidate_checkpoint_changed") is not False
     ):
         raise ScreenError("R84 acquisition or deployment contract changed")
     return metadata

@@ -42,3 +42,11 @@ generation. Failure closes R84.
 Passing is bounded nonce relation/copy acquisition, not unrestricted English,
 domain transfer, minimality, LoRA/distillation superiority, or full ABI
 moonshot certification. The full ABI moonshot remains `OPEN`.
+
+## Pre-observation amendment
+
+`AMENDMENT_1.md` records a fail-closed finalization error after training but
+before binding or generation: inherited R78 adapter topology was present in the
+checkpoint but omitted from candidate metadata. The correction carries forward
+the frozen parent ledger only. Candidate weights and all scientific gates are
+unchanged.
