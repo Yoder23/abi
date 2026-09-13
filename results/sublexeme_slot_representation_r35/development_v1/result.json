@@ -1,0 +1,643 @@
+{
+  "claim_ceiling": "ABI_REPRESENTATION_DEVELOPMENT_ONLY_NOT_LAYERCAKE_PACKAGE_OR_HIDDEN_REPLICATION",
+  "evaluation": {
+    "bytes": 99893,
+    "path": "evaluation.jsonl",
+    "sha256": "8345a2154f554eebe999f0f730e03356cbe28ef27e098aa8116cfdd93f6fd8e0"
+  },
+  "evidence_sha256": "aa49030afafd41193553aef5a75527903e4bfca4e7925752471c862f63782458",
+  "format": "abi-r35-sublexeme-field-slot-feasibility/1",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "deployed_state_bytes": 12662372,
+    "elapsed_seconds": 227.82263190002413,
+    "maximum_active_parameters": 308035,
+    "new_teacher_calls": 0,
+    "new_teacher_tokens": 0,
+    "peak_cpu_rss_bytes": 948998144,
+    "peak_gpu_memory_bytes": 221918208,
+    "source_parameters_copied": 0,
+    "teacher_output_bytes": 113052,
+    "teacher_output_tokens": 31190,
+    "unique_teacher_outputs": 576
+  },
+  "inputs": {
+    "fixture_sha256": "fe31e5e7a409de456f455aa485cebdd6ad497ed4c913d394ffb9e462c10eb5f1",
+    "r31_failure_sha256": "5e447168c885649f710480d510e7b99785ce1c802386572dd53d0dcc12cc180f",
+    "r31_rows_sha256": "5ff7691d67b0e8271439acfbfe25540c7d42c06918b58b9257873c6f7ca9f05d",
+    "r33_failure_sha256": "5ce858f6af067cae0a8af3a5a1a2f7a9100806d8f7abeefe5e4a714e494e5867",
+    "r34_failure_sha256": "72ccfc0358ad16a4f530847e1980c683737afdf95e8ddaf307b52e14e298c17c"
+  },
+  "metrics": {
+    "by_task": {
+      "abstention": {
+        "functional": 0,
+        "rows": 12
+      },
+      "bullets": {
+        "functional": 12,
+        "rows": 12
+      },
+      "clarification": {
+        "functional": 12,
+        "rows": 12
+      },
+      "comparison": {
+        "functional": 12,
+        "rows": 12
+      },
+      "conversation": {
+        "functional": 12,
+        "rows": 12
+      },
+      "email": {
+        "functional": 8,
+        "rows": 12
+      },
+      "planning": {
+        "functional": 2,
+        "rows": 12
+      },
+      "prose": {
+        "functional": 7,
+        "rows": 12
+      },
+      "reasoning": {
+        "functional": 8,
+        "rows": 12
+      },
+      "rewrite": {
+        "functional": 2,
+        "rows": 12
+      },
+      "summary": {
+        "functional": 12,
+        "rows": 12
+      },
+      "tone": {
+        "functional": 12,
+        "rows": 12
+      }
+    },
+    "contract_exact": 144,
+    "evaluation_rows": 144,
+    "functional": 99,
+    "representation_failures": 22,
+    "route_exact": 144
+  },
+  "models": [
+    {
+      "cluster": "capability-781f838d49a2",
+      "state": {
+        "bytes": 1028184,
+        "path": "models/prose.safetensors",
+        "sha256": "33cd2ae065a51b51c142665c542a2763e2c79c8f5ea21bc6c2858a0dbd47b442"
+      },
+      "task": "prose",
+      "tokenizer": {
+        "bytes": 1923,
+        "path": "models/prose.tokenizer.json",
+        "semantic_sha256": "85cf47e28a4bdc40c6464f2e995c7eaf9060dff57b70fa6e0b58552a2166f645",
+        "sha256": "8017657c9a350d201765703dbdda166e036eb7051b3599ad774153bfd90cdd37"
+      },
+      "training": {
+        "batch_size": 24,
+        "fixed_vocabulary_size": 105,
+        "history": [
+          {
+            "accuracy": 0.0025597268249839544,
+            "gradient_norm": 1.8928996324539185,
+            "loss": 4.893651962280273,
+            "seconds": 0.24873760004993528,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.022096900269389153,
+            "loss": 0.008656908757984638,
+            "seconds": 8.54741570004262,
+            "step": 533
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.0035744570195674896,
+            "loss": 0.001962249167263508,
+            "seconds": 17.296825900033582,
+            "step": 1066
+          }
+        ],
+        "parameters": 255274,
+        "seconds": 17.297127199999522,
+        "steps": 1066,
+        "total_example_exposures": 25584
+      }
+    },
+    {
+      "cluster": "capability-6a05ac87d84b",
+      "state": {
+        "bytes": 1032312,
+        "path": "models/summary.safetensors",
+        "sha256": "d26ff56db9ad71bcf01cbf81ffce275e8f77c81ab1a65805ce938688ad17971e"
+      },
+      "task": "summary",
+      "tokenizer": {
+        "bytes": 2117,
+        "path": "models/summary.tokenizer.json",
+        "semantic_sha256": "4aa0da95b4f18f28e96f6f79eca37351b42077e6cdc9d8fb0464ca5e1864f8a4",
+        "sha256": "1fd8edb811100c375e1022dde23013d92c370baa69b4a3db38a053157b6c7f89"
+      },
+      "training": {
+        "batch_size": 24,
+        "fixed_vocabulary_size": 113,
+        "history": [
+          {
+            "accuracy": 0.03030303120613098,
+            "gradient_norm": 1.665495753288269,
+            "loss": 4.790724277496338,
+            "seconds": 0.02257349999854341,
+            "step": 1
+          },
+          {
+            "accuracy": 0.9897610545158386,
+            "gradient_norm": 0.08572696894407272,
+            "loss": 0.032731205224990845,
+            "seconds": 8.451233999978285,
+            "step": 533
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.003877361537888646,
+            "loss": 0.002277617808431387,
+            "seconds": 16.965692800004035,
+            "step": 1066
+          }
+        ],
+        "parameters": 256306,
+        "seconds": 16.965977699961513,
+        "steps": 1066,
+        "total_example_exposures": 25584
+      }
+    },
+    {
+      "cluster": "capability-9c14f5ea0d08",
+      "state": {
+        "bytes": 1027152,
+        "path": "models/rewrite.safetensors",
+        "sha256": "ef0be99103b4bc82e911f03d405432e35abb30e79055d9d997c5fc364ac16034"
+      },
+      "task": "rewrite",
+      "tokenizer": {
+        "bytes": 2021,
+        "path": "models/rewrite.tokenizer.json",
+        "semantic_sha256": "e3dcefbba1b0e590cdfb63e13fa436f5813e1333d3599a10e83d9b7724b9880d",
+        "sha256": "8b1bb0b8641c9c1c6df30596e394592e39e7b5c52b2a1c7e058e7589acbd606f"
+      },
+      "training": {
+        "batch_size": 24,
+        "fixed_vocabulary_size": 103,
+        "history": [
+          {
+            "accuracy": 0.0027803522534668446,
+            "gradient_norm": 1.749771237373352,
+            "loss": 5.027425289154053,
+            "seconds": 0.019150200008880347,
+            "step": 1
+          },
+          {
+            "accuracy": 0.9956408143043518,
+            "gradient_norm": 0.0705762654542923,
+            "loss": 0.018879450857639313,
+            "seconds": 7.893840699980501,
+            "step": 533
+          },
+          {
+            "accuracy": 0.9981273412704468,
+            "gradient_norm": 0.018901880830526352,
+            "loss": 0.0043178824707865715,
+            "seconds": 15.716488000005484,
+            "step": 1066
+          }
+        ],
+        "parameters": 255016,
+        "seconds": 15.716765899967868,
+        "steps": 1066,
+        "total_example_exposures": 25584
+      }
+    },
+    {
+      "cluster": "capability-663bb9820de9",
+      "state": {
+        "bytes": 1239244,
+        "path": "models/email.safetensors",
+        "sha256": "30252fe8b37809a4ca9b47e3a9320e13b2a78931d9bf206fea483c812821d799"
+      },
+      "task": "email",
+      "tokenizer": {
+        "bytes": 10771,
+        "path": "models/email.tokenizer.json",
+        "semantic_sha256": "8b163d78865baa3c862b09a32036ee91e9ed6e014ac49ba84f7be3ee91df8e4b",
+        "sha256": "c0f28369db87bd2300e106b96190bbf4ee0235f6ca0d105fa96cccdaf8542ffc"
+      },
+      "training": {
+        "batch_size": 24,
+        "fixed_vocabulary_size": 514,
+        "history": [
+          {
+            "accuracy": 0.00018758205987978727,
+            "gradient_norm": 1.5206137895584106,
+            "loss": 6.554288387298584,
+            "seconds": 0.03327109996462241,
+            "step": 1
+          },
+          {
+            "accuracy": 0.9913928508758545,
+            "gradient_norm": 0.2477477639913559,
+            "loss": 0.10527782887220383,
+            "seconds": 10.372221199970227,
+            "step": 533
+          },
+          {
+            "accuracy": 0.9996505975723267,
+            "gradient_norm": 0.021159963682293892,
+            "loss": 0.007863673381507397,
+            "seconds": 21.09274250001181,
+            "step": 1066
+          }
+        ],
+        "parameters": 308035,
+        "seconds": 21.093010300013702,
+        "steps": 1066,
+        "total_example_exposures": 25584
+      }
+    },
+    {
+      "cluster": "capability-1804ef5e49f4",
+      "state": {
+        "bytes": 1017348,
+        "path": "models/bullets.safetensors",
+        "sha256": "b06717d6de301703af674959801f7ff70d28c6b75d88233d83efe5cd5b3d5899"
+      },
+      "task": "bullets",
+      "tokenizer": {
+        "bytes": 1535,
+        "path": "models/bullets.tokenizer.json",
+        "semantic_sha256": "41fb1b6974b426a4bb4a239d404158f989ec10797827a09aa57bbaa082b2da75",
+        "sha256": "a7f0685d43a1a71720ec72b1a2a1b231015dcb5e89c4b9ff083eb4b845702139"
+      },
+      "training": {
+        "batch_size": 24,
+        "fixed_vocabulary_size": 84,
+        "history": [
+          {
+            "accuracy": 0.014965986832976341,
+            "gradient_norm": 1.8245333433151245,
+            "loss": 4.508213520050049,
+            "seconds": 0.022401300026103854,
+            "step": 1
+          },
+          {
+            "accuracy": 0.9999999403953552,
+            "gradient_norm": 0.012863975949585438,
+            "loss": 0.006205012556165457,
+            "seconds": 8.180235500039998,
+            "step": 533
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.0033311571460217237,
+            "loss": 0.0017296860460191965,
+            "seconds": 16.073223900049925,
+            "step": 1066
+          }
+        ],
+        "parameters": 252565,
+        "seconds": 16.073536100040656,
+        "steps": 1066,
+        "total_example_exposures": 25584
+      }
+    },
+    {
+      "cluster": "capability-660267e0e217",
+      "state": {
+        "bytes": 1047276,
+        "path": "models/tone.safetensors",
+        "sha256": "139f15a0bd9b06d19b8d4f9eb1f4210b47be9159d257d044dcb48b21c095980e"
+      },
+      "task": "tone",
+      "tokenizer": {
+        "bytes": 2885,
+        "path": "models/tone.tokenizer.json",
+        "semantic_sha256": "1e5d4a7abfd02b6ef9bfa775fe6436295ac612b46726a20f62c68b92be5bbcde",
+        "sha256": "35fbf544a79e08087b42d6e62e40ef8098cf69451f8c2370759f0b701892b6c4"
+      },
+      "training": {
+        "batch_size": 24,
+        "fixed_vocabulary_size": 142,
+        "history": [
+          {
+            "accuracy": 0.0028208745643496513,
+            "gradient_norm": 1.3427373170852661,
+            "loss": 5.1900153160095215,
+            "seconds": 0.018510699970647693,
+            "step": 1
+          },
+          {
+            "accuracy": 0.9901130199432373,
+            "gradient_norm": 0.07626509666442871,
+            "loss": 0.024164700880646706,
+            "seconds": 7.7682573000201955,
+            "step": 533
+          },
+          {
+            "accuracy": 0.9905020594596863,
+            "gradient_norm": 0.06185924634337425,
+            "loss": 0.026101088151335716,
+            "seconds": 15.622711099975277,
+            "step": 1066
+          }
+        ],
+        "parameters": 260047,
+        "seconds": 15.6230491999886,
+        "steps": 1066,
+        "total_example_exposures": 25584
+      }
+    },
+    {
+      "cluster": "capability-77540ff46ac4",
+      "state": {
+        "bytes": 1010124,
+        "path": "models/clarification.safetensors",
+        "sha256": "0afb9955bc39b663a3474c0b7dc675c5700de963bfb426b25fd7816cddb54ab9"
+      },
+      "task": "clarification",
+      "tokenizer": {
+        "bytes": 1439,
+        "path": "models/clarification.tokenizer.json",
+        "semantic_sha256": "2f0c4e1787737358e9cab3f43233c0a3e8b1b759fc862e1faab35967658e6682",
+        "sha256": "c979e060f8e655e23637933505ea1bfc2fdcdbf91c2052dfad11e14d8f20c6c7"
+      },
+      "training": {
+        "batch_size": 24,
+        "fixed_vocabulary_size": 70,
+        "history": [
+          {
+            "accuracy": 0.0,
+            "gradient_norm": 2.3766117095947266,
+            "loss": 4.376189231872559,
+            "seconds": 0.02515480003785342,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.007709996309131384,
+            "loss": 0.0029807419050484896,
+            "seconds": 7.671491000044625,
+            "step": 533
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.0024573749396950006,
+            "loss": 0.0008988965419121087,
+            "seconds": 15.904084600042552,
+            "step": 1066
+          }
+        ],
+        "parameters": 250759,
+        "seconds": 15.904360100044869,
+        "steps": 1066,
+        "total_example_exposures": 25584
+      }
+    },
+    {
+      "cluster": "capability-afba74547ae1",
+      "state": {
+        "bytes": 1031796,
+        "path": "models/conversation.safetensors",
+        "sha256": "a0553974f0059edf3d5233c38a653de114ce8b37b904ab2fb16ff05c3d8f5fc0"
+      },
+      "task": "conversation",
+      "tokenizer": {
+        "bytes": 2371,
+        "path": "models/conversation.tokenizer.json",
+        "semantic_sha256": "542947496ad4699d6f84c15d6adfcd9cd7ebec4de9c4d2f81cced7a51ef8b6f0",
+        "sha256": "6f8f44b4f8ac55e5097bd1546e3d63ecd88e41c4c3459000d888bcea203a4a40"
+      },
+      "training": {
+        "batch_size": 24,
+        "fixed_vocabulary_size": 112,
+        "history": [
+          {
+            "accuracy": 0.004530011210590601,
+            "gradient_norm": 1.8690383434295654,
+            "loss": 5.0628156661987305,
+            "seconds": 0.020054100023116916,
+            "step": 1
+          },
+          {
+            "accuracy": 0.9901853203773499,
+            "gradient_norm": 0.07708735764026642,
+            "loss": 0.027918899431824684,
+            "seconds": 8.315165000036359,
+            "step": 533
+          },
+          {
+            "accuracy": 0.9849187731742859,
+            "gradient_norm": 0.08974383771419525,
+            "loss": 0.0277559757232666,
+            "seconds": 16.741889199998695,
+            "step": 1066
+          }
+        ],
+        "parameters": 256177,
+        "seconds": 16.742148499994073,
+        "steps": 1066,
+        "total_example_exposures": 25584
+      }
+    },
+    {
+      "cluster": "capability-8f722f34058c",
+      "state": {
+        "bytes": 1148936,
+        "path": "models/planning.safetensors",
+        "sha256": "5c6eaf9e5d3ca70bededa302e9a790d8231d04574e82560c3b855e7a7cea71f8"
+      },
+      "task": "planning",
+      "tokenizer": {
+        "bytes": 7321,
+        "path": "models/planning.tokenizer.json",
+        "semantic_sha256": "464c4eaa4e80408c4cc5d63f6195dd9e981745017dcf1d691fc872b6bba4cb82",
+        "sha256": "7e9d736ef32f76bbbbc1c0313dcd5a2b0eada2cfaee55d17b82e03e3cba4ae42"
+      },
+      "training": {
+        "batch_size": 24,
+        "fixed_vocabulary_size": 339,
+        "history": [
+          {
+            "accuracy": 0.002426448278129101,
+            "gradient_norm": 1.697142243385315,
+            "loss": 6.0779266357421875,
+            "seconds": 0.0302143000299111,
+            "step": 1
+          },
+          {
+            "accuracy": 0.9893016815185547,
+            "gradient_norm": 0.32580333948135376,
+            "loss": 0.055532243102788925,
+            "seconds": 10.532329500012565,
+            "step": 533
+          },
+          {
+            "accuracy": 0.9982720613479614,
+            "gradient_norm": 0.08127303421497345,
+            "loss": 0.007717370055615902,
+            "seconds": 20.946039900009055,
+            "step": 1066
+          }
+        ],
+        "parameters": 285460,
+        "seconds": 20.94631050003227,
+        "steps": 1066,
+        "total_example_exposures": 25584
+      }
+    },
+    {
+      "cluster": "capability-ebc97d41c4c9",
+      "state": {
+        "bytes": 1029216,
+        "path": "models/comparison.safetensors",
+        "sha256": "b809a03f042422948ed4f154e4b894fdf73be4a78fef012acc9086cd15965d43"
+      },
+      "task": "comparison",
+      "tokenizer": {
+        "bytes": 2135,
+        "path": "models/comparison.tokenizer.json",
+        "semantic_sha256": "285c2ec8ef5dad96f1f38b47c8960d53a7b8fb212e36c68790bde0b6a64cbbf1",
+        "sha256": "e7370cceff5ec2a7e5eb3c8ebfc9a40cf7123aeda5fba4f7630d0e3910d6d903"
+      },
+      "training": {
+        "batch_size": 24,
+        "fixed_vocabulary_size": 107,
+        "history": [
+          {
+            "accuracy": 0.019594594836235046,
+            "gradient_norm": 1.7939720153808594,
+            "loss": 4.884913921356201,
+            "seconds": 0.025386399996932596,
+            "step": 1
+          },
+          {
+            "accuracy": 0.994535505771637,
+            "gradient_norm": 0.08718752861022949,
+            "loss": 0.01918235421180725,
+            "seconds": 8.546177899988834,
+            "step": 533
+          },
+          {
+            "accuracy": 0.9918808937072754,
+            "gradient_norm": 0.050902608782052994,
+            "loss": 0.016752462834119797,
+            "seconds": 16.5714050999959,
+            "step": 1066
+          }
+        ],
+        "parameters": 255532,
+        "seconds": 16.57167070003925,
+        "steps": 1066,
+        "total_example_exposures": 25584
+      }
+    },
+    {
+      "cluster": "capability-defbdf34a3d4",
+      "state": {
+        "bytes": 1010124,
+        "path": "models/reasoning.safetensors",
+        "sha256": "9b7c94c7d4baf385b5ad8ee3e68731205c67cb076b2b63d1ca2ce9cecd73eb89"
+      },
+      "task": "reasoning",
+      "tokenizer": {
+        "bytes": 1465,
+        "path": "models/reasoning.tokenizer.json",
+        "semantic_sha256": "9494bad3fbec51aab6e8b2cc707274f1728fc52b6965820cd0933d4a21f676ed",
+        "sha256": "802d128b1e0147b47e3cbc6843c370ee4b31af335278c00b1aaeca12cad1e9ea"
+      },
+      "training": {
+        "batch_size": 24,
+        "fixed_vocabulary_size": 70,
+        "history": [
+          {
+            "accuracy": 0.02133333310484886,
+            "gradient_norm": 1.7069052457809448,
+            "loss": 4.57618522644043,
+            "seconds": 0.01950410002609715,
+            "step": 1
+          },
+          {
+            "accuracy": 0.988565981388092,
+            "gradient_norm": 0.055818840861320496,
+            "loss": 0.028322074562311172,
+            "seconds": 8.05142590001924,
+            "step": 533
+          },
+          {
+            "accuracy": 0.9902486801147461,
+            "gradient_norm": 0.05500681698322296,
+            "loss": 0.02083360217511654,
+            "seconds": 15.840541500016116,
+            "step": 1066
+          }
+        ],
+        "parameters": 250759,
+        "seconds": 15.8408101000241,
+        "steps": 1066,
+        "total_example_exposures": 25584
+      }
+    },
+    {
+      "cluster": "capability-68a9963f947e",
+      "state": {
+        "bytes": 1003416,
+        "path": "models/abstention.safetensors",
+        "sha256": "80f8b7023c6045a6caa2b7b4cccdbd854e5d182c98b044c0d61a74870345265c"
+      },
+      "task": "abstention",
+      "tokenizer": {
+        "bytes": 1261,
+        "path": "models/abstention.tokenizer.json",
+        "semantic_sha256": "365b18858a6ffcb79ff6225d0c2937ce4b9388c35315bfcd28e457e35859b90a",
+        "sha256": "4abb2e736cc70b26481bbce72c98790f32a11678dba09db8b05075246eb18af9"
+      },
+      "training": {
+        "batch_size": 24,
+        "fixed_vocabulary_size": 57,
+        "history": [
+          {
+            "accuracy": 0.043478261679410934,
+            "gradient_norm": 1.8742848634719849,
+            "loss": 4.271725177764893,
+            "seconds": 0.01914400001987815,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.00845736637711525,
+            "loss": 0.0043342225253582,
+            "seconds": 7.929166299989447,
+            "step": 533
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.002669157227501273,
+            "loss": 0.001268392545171082,
+            "seconds": 15.695187899982557,
+            "step": 1066
+          }
+        ],
+        "parameters": 249082,
+        "seconds": 15.695450900006108,
+        "steps": 1066,
+        "total_example_exposures": 25584
+      }
+    }
+  ],
+  "verdict": "FAIL_SUBLEXEME_SLOT_DEVELOPMENT"
+}
