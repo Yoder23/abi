@@ -1,0 +1,159 @@
+{
+  "artifacts": {
+    "evaluation": {
+      "bytes": 4283104,
+      "path": "evaluation.jsonl",
+      "sha256": "e509484babfab685c91fee3a6165bfea0b2881213fdb7b3a71fde9266e2a25cf"
+    }
+  },
+  "candidate_checkpoint_sha256": "4f302650a86964042996db1990e753388c84af7326253088f2a4bbeb698f1be6",
+  "candidate_metadata_sha256": "262fa8994dad29b8ded7039c5ce52a6e32af5ec91e2581b1bce220f06682b4ae",
+  "catalog_sha256": "4b0087c9a7fa0e0fd6f607fdbd94fffbdd3cb375f5880a0588c97414583a2ad7",
+  "evidence_sha256": "7ede3b36e6897e558caed21bf8ac52895c8e288e173c73140cf8a00b66c80843",
+  "format": "abi-r60-prospective-frozen-endpoint-screen/1",
+  "full_abi_moonshot": "OPEN",
+  "gates": {
+    "artifacts_unchanged": true,
+    "functional": false,
+    "matrix": true,
+    "parent_nondegradation": true,
+    "parent_parity_below_boundary": true,
+    "per_capability": false,
+    "physical_sparse": true,
+    "route_exact": false,
+    "source_noninferior_bootstrap": false,
+    "source_noninferior_point": false,
+    "source_retention": false,
+    "zero_final_collapse": false,
+    "zero_generation_error": true,
+    "zero_raw_collapse": false
+  },
+  "metrics": {
+    "by_capability": {
+      "abstention": {
+        "candidate_functional": 0,
+        "parent_functional": 0,
+        "route_correct": 100,
+        "source_functional": 0
+      },
+      "cake_output_realization": {
+        "candidate_functional": 70,
+        "parent_functional": 70,
+        "route_correct": 100,
+        "source_functional": 75
+      },
+      "clarification": {
+        "candidate_functional": 80,
+        "parent_functional": 80,
+        "route_correct": 100,
+        "source_functional": 100
+      },
+      "coherence": {
+        "candidate_functional": 35,
+        "parent_functional": 35,
+        "route_correct": 100,
+        "source_functional": 0
+      },
+      "conversation": {
+        "candidate_functional": 94,
+        "parent_functional": 94,
+        "route_correct": 100,
+        "source_functional": 81
+      },
+      "domain_independent_reasoning": {
+        "candidate_functional": 0,
+        "parent_functional": 0,
+        "route_correct": 100,
+        "source_functional": 21
+      },
+      "email_drafting": {
+        "candidate_functional": 78,
+        "parent_functional": 78,
+        "route_correct": 100,
+        "source_functional": 53
+      },
+      "format_control": {
+        "candidate_functional": 0,
+        "parent_functional": 0,
+        "route_correct": 10,
+        "source_functional": 0
+      },
+      "grammar": {
+        "candidate_functional": 81,
+        "parent_functional": 81,
+        "route_correct": 100,
+        "source_functional": 100
+      },
+      "instruction_following": {
+        "candidate_functional": 75,
+        "parent_functional": 75,
+        "route_correct": 100,
+        "source_functional": 89
+      },
+      "prompt_grounding": {
+        "candidate_functional": 87,
+        "parent_functional": 87,
+        "route_correct": 100,
+        "source_functional": 100
+      },
+      "rewriting": {
+        "candidate_functional": 74,
+        "parent_functional": 74,
+        "route_correct": 100,
+        "source_functional": 89
+      },
+      "summarization": {
+        "candidate_functional": 84,
+        "parent_functional": 84,
+        "route_correct": 100,
+        "source_functional": 84
+      },
+      "tone_control": {
+        "candidate_functional": 55,
+        "parent_functional": 55,
+        "route_correct": 100,
+        "source_functional": 45
+      }
+    },
+    "candidate_final_collapses": 2,
+    "candidate_functional": 813,
+    "candidate_minus_source": {
+      "lower_95": -0.04071428571428572,
+      "point": -0.017142857142857144,
+      "replicates": 5000,
+      "upper_95": 0.007142857142857143
+    },
+    "candidate_raw_collapses": 53,
+    "generation_errors": 0,
+    "no_boundary_parent_exact": 1333,
+    "no_boundary_parent_rows": 1333,
+    "parent_functional": 813,
+    "physical_sparse_rows": 1400,
+    "route_correct": 1310,
+    "rows": 1400,
+    "runtime_boundary_stops": 67,
+    "source_functional": 837,
+    "source_passing_regressions": 153,
+    "source_retention": 0.8172043010752689,
+    "wall_seconds": 584.1540769000421
+  },
+  "prospective_promotion_eligible": false,
+  "router_sha256": "ba88cf2a18ada898d739aa14a25805dae1c5212ffdcb4bfbfbd99c1c43b682db",
+  "runtime_telemetry": {
+    "accepted_tokens": 35384,
+    "candidate_transitions_checked": 35451,
+    "inherited_r55_lexical_truncations": 72,
+    "language_model_eos_stops": 1090,
+    "rejected_boundary_tokens": 67,
+    "rejections_by_condition": {
+      "maximum_identical_token_run": 67,
+      "repeated_novel_lexical_fourgrams": 0
+    }
+  },
+  "source_outputs_sha256": "35a5a6e1035035db1663d793257274e3be2b766aab79a00a0476478d0428b596",
+  "source_receipt_sha256": "fc2384e461d5a43ba05e5abe7bcdb47220ab1acec1de990fb100d36e39505f03",
+  "teacher_calls": 0,
+  "teacher_present_at_inference": false,
+  "training_steps": 0,
+  "verdict": "FAIL_R60_PROSPECTIVE_FROZEN_ENDPOINT"
+}

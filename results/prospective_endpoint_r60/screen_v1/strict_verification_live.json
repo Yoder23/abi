@@ -1,0 +1,23 @@
+{
+  "candidate_functional": 813,
+  "failed_gates": [
+    "functional",
+    "per_capability",
+    "route_exact",
+    "source_noninferior_bootstrap",
+    "source_noninferior_point",
+    "source_retention",
+    "zero_final_collapse",
+    "zero_raw_collapse"
+  ],
+  "format": "abi-r60-live-strict-failure-verification/1",
+  "full_abi_moonshot": "OPEN",
+  "live_candidate_rows_exact": 1400,
+  "live_parent_rows_exact": 1400,
+  "raw_rows_recomputed": 1400,
+  "raw_sha256": "e509484babfab685c91fee3a6165bfea0b2881213fdb7b3a71fde9266e2a25cf",
+  "result_sha256": "755c285d52bf50b3a6826ef5112cc111346740e04b8f75f74e15fa60d6ef4140",
+  "source_functional": 837,
+  "source_retention": 0.8172043010752689,
+  "verdict": "PASS_VERIFICATION_OF_R60_PROSPECTIVE_FAILURE"
+}
