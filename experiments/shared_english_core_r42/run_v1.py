@@ -357,6 +357,9 @@ def run(
     if not torch.cuda.is_available():
         raise RuntimeError("R42 requires CUDA")
     api = r41._layercake(layercake_root)
+    from layercake.portable_token_plan import PortableTokenPlan
+
+    api["PortableTokenPlan"] = PortableTokenPlan
     selected = _selected_rows(r31_rows, r38_rows, r36_result, r39_result)
     tokenizer = _tokenizer(selected)
     output.mkdir(parents=True)

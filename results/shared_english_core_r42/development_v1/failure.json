@@ -1,0 +1,17 @@
+{
+  "format": "abi-r42-zero-step-failure/1",
+  "verdict": "FAIL_R42_SHARED_CORE_DEVELOPMENT",
+  "stage": "trainer_model_construction",
+  "optimizer_steps": 0,
+  "error_type": "KeyError",
+  "error": "PortableTokenPlan was not present in the R41 packaging/runtime API helper",
+  "training_rows": {
+    "rows": 282,
+    "sha256": "744197407309b98f2fb909a629e4cc73635a0bb1010c3f3bc03060605e00c3e0"
+  },
+  "tokenizer": {
+    "sha256": "5f54ffae5fffd5cb0598f6062829d99f93ad2e1d094f4ecdaad2ce65023be4d8"
+  },
+  "repair_boundary": "Import the public LayerCake PortableTokenPlan constructor explicitly after validating the frozen LayerCake root; change no scientific input or gate; execute in development_v2.",
+  "full_abi_moonshot": "OPEN"
+}
