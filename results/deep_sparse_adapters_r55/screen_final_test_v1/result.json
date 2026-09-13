@@ -1,0 +1,162 @@
+{
+  "artifacts": {
+    "evaluation": {
+      "bytes": 2113487,
+      "path": "evaluation.jsonl",
+      "sha256": "a4f65940a85f8d6d21ea032e53a55dfd2f40c9c18d711319df6d108cf1203866"
+    }
+  },
+  "candidate_checkpoint_sha256": "4f302650a86964042996db1990e753388c84af7326253088f2a4bbeb698f1be6",
+  "candidate_metadata_sha256": "262fa8994dad29b8ded7039c5ce52a6e32af5ec91e2581b1bce220f06682b4ae",
+  "evidence_sha256": "8055d457669d5fa60aa6b7471cd35ad9ca67b129e3c961734ceaac8baf0a662d",
+  "format": "abi-r55-deep-sparse-adapters-development-screen/1",
+  "full_abi_moonshot": "OPEN",
+  "gates": {
+    "artifacts_unchanged": true,
+    "functional": true,
+    "matrix": true,
+    "parent_nondegradation": true,
+    "per_capability": true,
+    "physical_sparse": true,
+    "route_exact": true,
+    "source_noninferior_point": true,
+    "source_retention": true,
+    "zero_collapse": false,
+    "zero_generation_error": true
+  },
+  "metrics": {
+    "by_capability": {
+      "abstention": {
+        "collapses": 1,
+        "functional": 80,
+        "regressions": 0,
+        "source_functional": 75
+      },
+      "cake_output_realization": {
+        "collapses": 0,
+        "functional": 74,
+        "regressions": 0,
+        "source_functional": 72
+      },
+      "clarification": {
+        "collapses": 0,
+        "functional": 87,
+        "regressions": 13,
+        "source_functional": 100
+      },
+      "coherence": {
+        "collapses": 0,
+        "functional": 100,
+        "regressions": 0,
+        "source_functional": 95
+      },
+      "conversation": {
+        "collapses": 0,
+        "functional": 100,
+        "regressions": 0,
+        "source_functional": 81
+      },
+      "domain_independent_reasoning": {
+        "collapses": 0,
+        "functional": 75,
+        "regressions": 25,
+        "source_functional": 100
+      },
+      "email_drafting": {
+        "collapses": 2,
+        "functional": 80,
+        "regressions": 14,
+        "source_functional": 66
+      },
+      "format_control": {
+        "collapses": 0,
+        "functional": 100,
+        "regressions": 0,
+        "source_functional": 97
+      },
+      "grammar": {
+        "collapses": 0,
+        "functional": 97,
+        "regressions": 3,
+        "source_functional": 100
+      },
+      "instruction_following": {
+        "collapses": 0,
+        "functional": 89,
+        "regressions": 6,
+        "source_functional": 76
+      },
+      "prompt_grounding": {
+        "collapses": 0,
+        "functional": 100,
+        "regressions": 0,
+        "source_functional": 100
+      },
+      "rewriting": {
+        "collapses": 0,
+        "functional": 100,
+        "regressions": 0,
+        "source_functional": 67
+      },
+      "summarization": {
+        "collapses": 0,
+        "functional": 88,
+        "regressions": 4,
+        "source_functional": 78
+      },
+      "tone_control": {
+        "collapses": 0,
+        "functional": 92,
+        "regressions": 0,
+        "source_functional": 47
+      }
+    },
+    "candidate_minus_source": {
+      "lower_95": 0.055714285714285716,
+      "point": 0.07714285714285714,
+      "replicates": 5000,
+      "upper_95": 0.09857142857142857
+    },
+    "collapses": 3,
+    "functional": 1262,
+    "generation_errors": 0,
+    "generation_wall_seconds": 306.24672049999936,
+    "parent_functional": 1261,
+    "physical_sparse_rows": 1400,
+    "route_correct": 1400,
+    "rows": 1400,
+    "source_functional": 1154,
+    "source_passing_regressions": 65,
+    "source_retention": 0.9436741767764298
+  },
+  "planner_calls": 0,
+  "prospective_promotion_eligible": false,
+  "router": {
+    "accuracy": 1.0,
+    "correct": 1400,
+    "predictions_sha256": "5f6e5f5a6cb2ac2939d699dabc163379e153c148eaa67f4569674a1779a88e78",
+    "rotated_accuracy": 0.0,
+    "rotated_correct": 0,
+    "rows": 1400
+  },
+  "router_sha256": "ba88cf2a18ada898d739aa14a25805dae1c5212ffdcb4bfbfbd99c1c43b682db",
+  "source_identities": [
+    {
+      "outputs_sha256": "8ead4c8fb110a9dff7f88122d6ce0271d9eb74c63afca485f43df4cc24213f95",
+      "receipt_sha256": "fabfeb5e151b190721054f49644ebbf285741b19db76e492f65e6d824025843e"
+    }
+  ],
+  "source_inventory": {
+    "available": 1400,
+    "missing": 0,
+    "selected": 1400,
+    "surplus_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "surplus_not_evaluated": 0
+  },
+  "split": "final_test",
+  "symbolic_output_calls": 0,
+  "teacher_calls_during_screen": 0,
+  "teacher_present_at_inference": false,
+  "training_steps_during_screen": 0,
+  "verdict": "FAIL_R55_DISCLOSED_SCREEN"
+}
