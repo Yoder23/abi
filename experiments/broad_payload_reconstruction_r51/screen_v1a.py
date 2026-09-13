@@ -91,14 +91,21 @@ def run(
     anchor_bundle: Path,
     layercake_root: Path,
     output: Path,
+    *,
+    candidate_sha256: str = CANDIDATE_SHA256,
+    metadata_sha256: str = METADATA_SHA256,
+    parent_counts: dict[str, int] = PARENT_COUNTS,
+    result_format: str = "abi-r51-broad-payload-development-screen/1",
+    campaign_name: str = "R51",
+    expected_training_seed: int = 51_001,
 ) -> dict[str, Any]:
     if output.exists():
         raise ScreenError(f"immutable R51 screen exists: {output}")
-    if split not in PARENT_COUNTS:
+    if split not in parent_counts:
         raise ScreenError("R51 screen permits validation or final_test only")
     frozen = (
-        (candidate / "model.safetensors", CANDIDATE_SHA256),
-        (candidate / "metadata.json", METADATA_SHA256),
+        (candidate / "model.safetensors", candidate_sha256),
+        (candidate / "metadata.json", metadata_sha256),
         (router_path, ROUTER_SHA256),
         (catalog_path, r49.CATALOG_SHA256),
         (broad_bundle, BROAD_SHA256),
@@ -119,7 +126,7 @@ def run(
     if (
         metadata.get("status") != "TRAINED_NOT_YET_SEMANTICALLY_OR_OPERATIONALLY_CERTIFIED"
         or training.get("successful_optimizer_steps") != 6_000
-        or training.get("seed") != 51_001
+        or training.get("seed") != expected_training_seed
         or training.get("parent_logit_preservation_weight") != 0.5
         or imported.get("archive_sha256_after") != BROAD_SHA256
         or imported.get("selected_english_records") != 24_419
@@ -214,7 +221,7 @@ def run(
     regressions = sum(row["source_passing_regression"] for row in rows)
     metrics = {
         "rows": len(rows), "functional": functional,
-        "parent_functional": PARENT_COUNTS[split], "source_functional": source_functional,
+        "parent_functional": parent_counts[split], "source_functional": source_functional,
         "source_passing_regressions": regressions,
         "source_retention": (source_functional - regressions) / source_functional,
         "candidate_minus_source": r49._bootstrap(
@@ -232,7 +239,7 @@ def run(
     }
     gates = {
         "matrix": len(rows) == 1_400, "functional": functional >= 1_260,
-        "parent_nondegradation": functional >= PARENT_COUNTS[split],
+        "parent_nondegradation": functional >= parent_counts[split],
         "per_capability": all(value["functional"] >= 65 for value in by_capability.values()),
         "source_noninferior_point": functional >= source_functional,
         "source_retention": metrics["source_retention"] >= 0.94,
@@ -245,11 +252,11 @@ def run(
         raise ScreenError("R51 screen wall time invalid")
     passed = all(gates.values())
     result = {
-        "format": "abi-r51-broad-payload-development-screen/1",
-        "verdict": "PASS_R51_DISCLOSED_SCREEN" if passed else "FAIL_R51_DISCLOSED_SCREEN",
+        "format": result_format,
+        "verdict": f"PASS_{campaign_name}_DISCLOSED_SCREEN" if passed else f"FAIL_{campaign_name}_DISCLOSED_SCREEN",
         "split": split,
-        "candidate_checkpoint_sha256": CANDIDATE_SHA256,
-        "candidate_metadata_sha256": METADATA_SHA256,
+        "candidate_checkpoint_sha256": candidate_sha256,
+        "candidate_metadata_sha256": metadata_sha256,
         "router_sha256": ROUTER_SHA256,
         "source_identities": source_identities,
         "source_inventory": source_inventory,
