@@ -1,0 +1,10 @@
+{
+  "format": "abi-r30-operational-failure/1",
+  "stage": "certificate_metadata_after_144_live_evaluations_and_12_removal_replays",
+  "status": "FAIL_OPERATIONAL",
+  "exception": "subprocess.CalledProcessError: git rev-parse HEAD rejected sandbox repository ownership",
+  "scientific_rows_emitted": 144,
+  "functional_rows_observed": 11,
+  "adapter_emitted": true,
+  "repair_scope": "Replace only the runtime Git query with the already pinned LayerCake commit literal; preserve every scientific input, training parameter, evaluator, and gate."
+}

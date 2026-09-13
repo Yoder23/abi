@@ -26,6 +26,7 @@ SEED = 30_610
 STEPS = 6_000
 BATCH_SIZE = 128
 LEARNING_RATE = 0.002
+LAYERCAKE_COMMIT = "2170c78b7ae901eb4e99ec93ad59d573b2c75941"
 
 
 def _imports(layercake_root: Path):
@@ -259,7 +260,7 @@ def run(source: Path, diagnosis: Path, v9: Path, layercake_root: Path, checkpoin
         "source_rows_sha256": sha256_file(rows_path),
         "diagnosis_sha256": sha256_file(diagnosis_path),
         "layercake": {
-            "repository_commit": __import__("subprocess").check_output(["git", "rev-parse", "HEAD"], cwd=layercake_root, text=True).strip(),
+            "repository_commit": LAYERCAKE_COMMIT,
             "checkpoint_sha256": CHECKPOINT_SHA256,
             "tokenizer_sha256": TOKENIZER_SHA256,
             "parameters_total": int(fresh_metadata["parameters"]["total"]),

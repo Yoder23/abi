@@ -25,3 +25,11 @@ A pass would prove only a bounded LayerCake sparse-adapter control.  This is
 closely related to adapter fine-tuning and therefore cannot establish ABI
 superiority over LoRA or distillation.
 
+## Operational repair
+
+The initial execution completed training, 144 live evaluations, and twelve
+removal replays, then failed while querying the LayerCake Git commit for report
+metadata because the restricted subprocess rejected repository ownership.  The
+partial evidence and failure are preserved in `public_v10_sparse_adapter/`.
+The sole v10b repair substitutes the already protocol-bound LayerCake commit
+literal.  No scientific setting or code path changes.
