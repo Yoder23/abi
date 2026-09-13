@@ -1,0 +1,683 @@
+{
+  "artifacts": {
+    "augmented_rows": {
+      "bytes": 1837107,
+      "path": "augmented_rows.jsonl",
+      "sha256": "ed6037cd0963f14dfa982f2ee9f0fc203d8e87f047414799f9b810e14d2ea49a"
+    },
+    "evaluation": {
+      "bytes": 73811,
+      "path": "evaluation.jsonl",
+      "sha256": "70d12e6cf53d02bbf122338992a702233fc96e25ecd5faf923fd65256b6d9294"
+    }
+  },
+  "claim_ceiling": "DEVELOPMENT_RESCREEN_REQUIRES_NEW_REPLICATION",
+  "evidence_sha256": "058d88f8c636f62be0e11f042258d5e97bcea6586bd8229692436a7010b14c51",
+  "format": "abi-r33-counterfactual-normalization/1",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "elapsed_seconds": 231.4409234999912,
+    "installed_package_bytes": 13351319,
+    "learner_steps_per_package": 1066,
+    "maximum_active_package_parameters": 320419,
+    "peak_cpu_rss_bytes": 943218688,
+    "peak_gpu_memory_bytes": 235193856,
+    "source_parameters_copied": 0,
+    "teacher_present_during_execution": false,
+    "teacher_present_during_training": false
+  },
+  "inputs": {
+    "development_fixture_sha256": "fe31e5e7a409de456f455aa485cebdd6ad497ed4c913d394ffb9e462c10eb5f1",
+    "r31_failure_sha256": "5e447168c885649f710480d510e7b99785ce1c802386572dd53d0dcc12cc180f",
+    "r31_rows_sha256": "5ff7691d67b0e8271439acfbfe25540c7d42c06918b58b9257873c6f7ca9f05d",
+    "r32_failure_sha256": "6c9972ba6e752f07e17fb3b30746bd6dcca94d53b332441cec57262a66a80a29"
+  },
+  "metrics": {
+    "by_task": {
+      "abstention": {
+        "functional": 12,
+        "rows": 12
+      },
+      "bullets": {
+        "functional": 12,
+        "rows": 12
+      },
+      "clarification": {
+        "functional": 12,
+        "rows": 12
+      },
+      "comparison": {
+        "functional": 10,
+        "rows": 12
+      },
+      "conversation": {
+        "functional": 12,
+        "rows": 12
+      },
+      "email": {
+        "functional": 10,
+        "rows": 12
+      },
+      "planning": {
+        "functional": 6,
+        "rows": 12
+      },
+      "prose": {
+        "functional": 12,
+        "rows": 12
+      },
+      "reasoning": {
+        "functional": 0,
+        "rows": 12
+      },
+      "rewrite": {
+        "functional": 12,
+        "rows": 12
+      },
+      "summary": {
+        "functional": 12,
+        "rows": 12
+      },
+      "tone": {
+        "functional": 12,
+        "rows": 12
+      }
+    },
+    "contract_exact": 144,
+    "evaluation_rows": 144,
+    "functional": 122,
+    "removal_rejections": 12,
+    "route_exact": 144
+  },
+  "normalization": {
+    "all_augmented_rows_functional": true,
+    "augmented_rows": 1728,
+    "method": "registered_semantic_paraphrase_counterfactual",
+    "new_teacher_calls": 0,
+    "new_teacher_tokens": 0,
+    "teacher_output_bytes": 113052,
+    "teacher_output_tokens": 31190,
+    "unique_teacher_outputs": 576
+  },
+  "packages": [
+    {
+      "bytes": 1086727,
+      "cake_id": "abi-r33-counterfactual-capability-781f838d49a2",
+      "cluster": "capability-781f838d49a2",
+      "parameters": 267013,
+      "relative_path": "packages/capability-781f838d49a2.cake",
+      "sha256": "fd61699aca40ae3278874d14ed64a9da7d27d508f221caf6ced8a65e2da62d91",
+      "task": "prose",
+      "training": {
+        "augmented_rows": 144,
+        "batch_size": 24,
+        "exposures_per_augmented_row": 177.66666666666666,
+        "exposures_per_unique_teacher_row": 533.0,
+        "fixed_vocabulary_size": 196,
+        "history": [
+          {
+            "accuracy": 0.0070859165862202644,
+            "gradient_norm": 2.4077892303466797,
+            "loss": 5.926233768463135,
+            "seconds": 0.23189920000731945,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.015997780486941338,
+            "loss": 0.005694735329598188,
+            "seconds": 8.49218490003841,
+            "step": 533
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.0045445808209478855,
+            "loss": 0.0015920347068458796,
+            "seconds": 17.034716100024525,
+            "step": 1066
+          }
+        ],
+        "parameters": 267013,
+        "seconds": 17.038590400014073,
+        "steps": 1066,
+        "total_example_exposures": 25584,
+        "unique_teacher_rows": 48
+      }
+    },
+    {
+      "bytes": 1091009,
+      "cake_id": "abi-r33-counterfactual-capability-6a05ac87d84b",
+      "cluster": "capability-6a05ac87d84b",
+      "parameters": 268045,
+      "relative_path": "packages/capability-6a05ac87d84b.cake",
+      "sha256": "aa23b46cab25b86aa82cd70990255c8fdd76ca43d01905fb9748a90b47a448dc",
+      "task": "summary",
+      "training": {
+        "augmented_rows": 144,
+        "batch_size": 24,
+        "exposures_per_augmented_row": 177.66666666666666,
+        "exposures_per_unique_teacher_row": 533.0,
+        "fixed_vocabulary_size": 204,
+        "history": [
+          {
+            "accuracy": 0.0,
+            "gradient_norm": 2.368412733078003,
+            "loss": 6.184904098510742,
+            "seconds": 0.021864900016225874,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.01939220540225506,
+            "loss": 0.006316409446299076,
+            "seconds": 8.286858599982224,
+            "step": 533
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.004288437310606241,
+            "loss": 0.0014435905031859875,
+            "seconds": 16.62372209999012,
+            "step": 1066
+          }
+        ],
+        "parameters": 268045,
+        "seconds": 16.628898499999195,
+        "steps": 1066,
+        "total_example_exposures": 25584,
+        "unique_teacher_rows": 48
+      }
+    },
+    {
+      "bytes": 1088464,
+      "cake_id": "abi-r33-counterfactual-capability-9c14f5ea0d08",
+      "cluster": "capability-9c14f5ea0d08",
+      "parameters": 267400,
+      "relative_path": "packages/capability-9c14f5ea0d08.cake",
+      "sha256": "0fd30056415659b6125fb5112727ad8573847ad9ec4aaeb89cd55bcc2cebc74b",
+      "task": "rewrite",
+      "training": {
+        "augmented_rows": 144,
+        "batch_size": 24,
+        "exposures_per_augmented_row": 177.66666666666666,
+        "exposures_per_unique_teacher_row": 533.0,
+        "fixed_vocabulary_size": 199,
+        "history": [
+          {
+            "accuracy": 0.0,
+            "gradient_norm": 2.2513539791107178,
+            "loss": 6.103250026702881,
+            "seconds": 0.022837000025901943,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.015906810760498047,
+            "loss": 0.0061107357032597065,
+            "seconds": 8.58090830000583,
+            "step": 533
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.004476473666727543,
+            "loss": 0.0017938315868377686,
+            "seconds": 17.1100182000082,
+            "step": 1066
+          }
+        ],
+        "parameters": 267400,
+        "seconds": 17.115297200041823,
+        "steps": 1066,
+        "total_example_exposures": 25584,
+        "unique_teacher_rows": 48
+      }
+    },
+    {
+      "bytes": 1307317,
+      "cake_id": "abi-r33-counterfactual-capability-663bb9820de9",
+      "cluster": "capability-663bb9820de9",
+      "parameters": 320419,
+      "relative_path": "packages/capability-663bb9820de9.cake",
+      "sha256": "1782c42dd36e3c74289d07b670f94a1cd30598f544eb3b015fa5f0a1e1e7d5fe",
+      "task": "email",
+      "training": {
+        "augmented_rows": 144,
+        "batch_size": 24,
+        "exposures_per_augmented_row": 177.66666666666666,
+        "exposures_per_unique_teacher_row": 533.0,
+        "fixed_vocabulary_size": 610,
+        "history": [
+          {
+            "accuracy": 0.001869794330559671,
+            "gradient_norm": 1.4974850416183472,
+            "loss": 6.626109600067139,
+            "seconds": 0.03297300002304837,
+            "step": 1
+          },
+          {
+            "accuracy": 0.9944384694099426,
+            "gradient_norm": 0.46169814467430115,
+            "loss": 0.09016156941652298,
+            "seconds": 10.311260500049684,
+            "step": 533
+          },
+          {
+            "accuracy": 0.9998295903205872,
+            "gradient_norm": 0.05127934366464615,
+            "loss": 0.007338368333876133,
+            "seconds": 20.67404560005525,
+            "step": 1066
+          }
+        ],
+        "parameters": 320419,
+        "seconds": 20.67800850002095,
+        "steps": 1066,
+        "total_example_exposures": 25584,
+        "unique_teacher_rows": 48
+      }
+    },
+    {
+      "bytes": 1075608,
+      "cake_id": "abi-r33-counterfactual-capability-1804ef5e49f4",
+      "cluster": "capability-1804ef5e49f4",
+      "parameters": 264304,
+      "relative_path": "packages/capability-1804ef5e49f4.cake",
+      "sha256": "919be00c36bce56c81771bf1265dc741d03d184e17958a7e5c2d9f12eb3f1ea7",
+      "task": "bullets",
+      "training": {
+        "augmented_rows": 144,
+        "batch_size": 24,
+        "exposures_per_augmented_row": 177.66666666666666,
+        "exposures_per_unique_teacher_row": 533.0,
+        "fixed_vocabulary_size": 175,
+        "history": [
+          {
+            "accuracy": 0.0,
+            "gradient_norm": 3.818838596343994,
+            "loss": 6.346866607666016,
+            "seconds": 0.016593399981502444,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.014054104685783386,
+            "loss": 0.003039445960894227,
+            "seconds": 8.090450000017881,
+            "step": 533
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.00430837320163846,
+            "loss": 0.0008977019460871816,
+            "seconds": 15.977480300003663,
+            "step": 1066
+          }
+        ],
+        "parameters": 264304,
+        "seconds": 15.981180500006303,
+        "steps": 1066,
+        "total_example_exposures": 25584,
+        "unique_teacher_rows": 48
+      }
+    },
+    {
+      "bytes": 1106596,
+      "cake_id": "abi-r33-counterfactual-capability-660267e0e217",
+      "cluster": "capability-660267e0e217",
+      "parameters": 271786,
+      "relative_path": "packages/capability-660267e0e217.cake",
+      "sha256": "5115aab1435631faef584eec2abc29edf1592e254ed8fa42afe684fe9c1bc013",
+      "task": "tone",
+      "training": {
+        "augmented_rows": 144,
+        "batch_size": 24,
+        "exposures_per_augmented_row": 177.66666666666666,
+        "exposures_per_unique_teacher_row": 533.0,
+        "fixed_vocabulary_size": 233,
+        "history": [
+          {
+            "accuracy": 0.0024721878580749035,
+            "gradient_norm": 1.5836796760559082,
+            "loss": 5.766449451446533,
+            "seconds": 0.0220594999846071,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.019850296899676323,
+            "loss": 0.012838040478527546,
+            "seconds": 8.328441699966788,
+            "step": 533
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.005229397211223841,
+            "loss": 0.0021438547410070896,
+            "seconds": 16.493285599979572,
+            "step": 1066
+          }
+        ],
+        "parameters": 271786,
+        "seconds": 16.497231299988925,
+        "steps": 1066,
+        "total_example_exposures": 25584,
+        "unique_teacher_rows": 48
+      }
+    },
+    {
+      "bytes": 1068358,
+      "cake_id": "abi-r33-counterfactual-capability-77540ff46ac4",
+      "cluster": "capability-77540ff46ac4",
+      "parameters": 262498,
+      "relative_path": "packages/capability-77540ff46ac4.cake",
+      "sha256": "9378ad8c868f842e201765b5183941b8bccd5103eaeed5d9db69c8577b740922",
+      "task": "clarification",
+      "training": {
+        "augmented_rows": 144,
+        "batch_size": 24,
+        "exposures_per_augmented_row": 177.66666666666666,
+        "exposures_per_unique_teacher_row": 533.0,
+        "fixed_vocabulary_size": 161,
+        "history": [
+          {
+            "accuracy": 0.007109005004167557,
+            "gradient_norm": 3.5587122440338135,
+            "loss": 6.10176944732666,
+            "seconds": 0.01785050000762567,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.012787959538400173,
+            "loss": 0.00309992884285748,
+            "seconds": 8.235240400012117,
+            "step": 533
+          },
+          {
+            "accuracy": 0.9999999403953552,
+            "gradient_norm": 0.003790304996073246,
+            "loss": 0.0009168313117697835,
+            "seconds": 16.801486900018062,
+            "step": 1066
+          }
+        ],
+        "parameters": 262498,
+        "seconds": 16.804983699985314,
+        "steps": 1066,
+        "total_example_exposures": 25584,
+        "unique_teacher_rows": 48
+      }
+    },
+    {
+      "bytes": 1090752,
+      "cake_id": "abi-r33-counterfactual-capability-afba74547ae1",
+      "cluster": "capability-afba74547ae1",
+      "parameters": 267916,
+      "relative_path": "packages/capability-afba74547ae1.cake",
+      "sha256": "4dc1128a0b806ba79bea0721fe462fd0e1beaf4a5f8e83fa6f1a119d73660435",
+      "task": "conversation",
+      "training": {
+        "augmented_rows": 144,
+        "batch_size": 24,
+        "exposures_per_augmented_row": 177.66666666666666,
+        "exposures_per_unique_teacher_row": 533.0,
+        "fixed_vocabulary_size": 203,
+        "history": [
+          {
+            "accuracy": 0.0,
+            "gradient_norm": 1.8886134624481201,
+            "loss": 5.891665458679199,
+            "seconds": 0.021662100043613464,
+            "step": 1
+          },
+          {
+            "accuracy": 0.9999999403953552,
+            "gradient_norm": 0.061052482575178146,
+            "loss": 0.009638465009629726,
+            "seconds": 8.464853400015272,
+            "step": 533
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.004720553755760193,
+            "loss": 0.0020614766981452703,
+            "seconds": 17.108708599989768,
+            "step": 1066
+          }
+        ],
+        "parameters": 267916,
+        "seconds": 17.112191200023517,
+        "steps": 1066,
+        "total_example_exposures": 25584,
+        "unique_teacher_rows": 48
+      }
+    },
+    {
+      "bytes": 1211715,
+      "cake_id": "abi-r33-counterfactual-capability-8f722f34058c",
+      "cluster": "capability-8f722f34058c",
+      "parameters": 297199,
+      "relative_path": "packages/capability-8f722f34058c.cake",
+      "sha256": "0bc2b56c650fd5b37ca40876bc508d2b67fa3f36c75e82ed40f5eb461cfc407c",
+      "task": "planning",
+      "training": {
+        "augmented_rows": 144,
+        "batch_size": 24,
+        "exposures_per_augmented_row": 177.66666666666666,
+        "exposures_per_unique_teacher_row": 533.0,
+        "fixed_vocabulary_size": 430,
+        "history": [
+          {
+            "accuracy": 0.002365743974223733,
+            "gradient_norm": 1.8619842529296875,
+            "loss": 6.389927864074707,
+            "seconds": 0.023279300017748028,
+            "step": 1
+          },
+          {
+            "accuracy": 0.9986941814422607,
+            "gradient_norm": 0.14026707410812378,
+            "loss": 0.04177163913846016,
+            "seconds": 10.37380810000468,
+            "step": 533
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.010754158720374107,
+            "loss": 0.004587247502058744,
+            "seconds": 20.676620199985337,
+            "step": 1066
+          }
+        ],
+        "parameters": 297199,
+        "seconds": 20.680601700034458,
+        "steps": 1066,
+        "total_example_exposures": 25584,
+        "unique_teacher_rows": 48
+      }
+    },
+    {
+      "bytes": 1113545,
+      "cake_id": "abi-r33-counterfactual-capability-ebc97d41c4c9",
+      "cluster": "capability-ebc97d41c4c9",
+      "parameters": 273463,
+      "relative_path": "packages/capability-ebc97d41c4c9.cake",
+      "sha256": "45145863286230e52519dd076ef4ae51d532ce3ac6f44d91781ea5752f31abe1",
+      "task": "comparison",
+      "training": {
+        "augmented_rows": 144,
+        "batch_size": 24,
+        "exposures_per_augmented_row": 177.66666666666666,
+        "exposures_per_unique_teacher_row": 533.0,
+        "fixed_vocabulary_size": 246,
+        "history": [
+          {
+            "accuracy": 0.003448275849223137,
+            "gradient_norm": 2.469136953353882,
+            "loss": 6.189691066741943,
+            "seconds": 0.017852899967692792,
+            "step": 1
+          },
+          {
+            "accuracy": 0.998643159866333,
+            "gradient_norm": 0.14385055005550385,
+            "loss": 0.011613215319812298,
+            "seconds": 8.160114699974656,
+            "step": 533
+          },
+          {
+            "accuracy": 0.9999999403953552,
+            "gradient_norm": 0.00567369069904089,
+            "loss": 0.0019199657253921032,
+            "seconds": 16.69837810000172,
+            "step": 1066
+          }
+        ],
+        "parameters": 273463,
+        "seconds": 16.702266399981454,
+        "steps": 1066,
+        "total_example_exposures": 25584,
+        "unique_teacher_rows": 48
+      }
+    },
+    {
+      "bytes": 1071566,
+      "cake_id": "abi-r33-counterfactual-capability-defbdf34a3d4",
+      "cluster": "capability-defbdf34a3d4",
+      "parameters": 263272,
+      "relative_path": "packages/capability-defbdf34a3d4.cake",
+      "sha256": "338ee56c3b4154afa856a0bd83147da68aa8dd42b0e5e7e6ebe55d2037e4231a",
+      "task": "reasoning",
+      "training": {
+        "augmented_rows": 144,
+        "batch_size": 24,
+        "exposures_per_augmented_row": 177.66666666666666,
+        "exposures_per_unique_teacher_row": 533.0,
+        "fixed_vocabulary_size": 167,
+        "history": [
+          {
+            "accuracy": 0.012131715193390846,
+            "gradient_norm": 2.174818754196167,
+            "loss": 6.0544753074646,
+            "seconds": 0.017519099987111986,
+            "step": 1
+          },
+          {
+            "accuracy": 0.9957514405250549,
+            "gradient_norm": 0.1069481298327446,
+            "loss": 0.016567310318350792,
+            "seconds": 8.342583499965258,
+            "step": 533
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.004095716867595911,
+            "loss": 0.0018134284764528275,
+            "seconds": 16.660342299961485,
+            "step": 1066
+          }
+        ],
+        "parameters": 263272,
+        "seconds": 16.66385650000302,
+        "steps": 1066,
+        "total_example_exposures": 25584,
+        "unique_teacher_rows": 48
+      }
+    },
+    {
+      "bytes": 1039662,
+      "cake_id": "abi-r33-counterfactual-capability-68a9963f947e",
+      "cluster": "capability-68a9963f947e",
+      "parameters": 255532,
+      "relative_path": "packages/capability-68a9963f947e.cake",
+      "sha256": "250eea10142a51d0bedc4da80689e1c2cc0c460fb2d061dc5dff2659a9d2610b",
+      "task": "abstention",
+      "training": {
+        "augmented_rows": 144,
+        "batch_size": 24,
+        "exposures_per_augmented_row": 177.66666666666666,
+        "exposures_per_unique_teacher_row": 533.0,
+        "fixed_vocabulary_size": 107,
+        "history": [
+          {
+            "accuracy": 0.007824726402759552,
+            "gradient_norm": 2.919752836227417,
+            "loss": 5.737648010253906,
+            "seconds": 0.017483900010120124,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.014483436942100525,
+            "loss": 0.004050689749419689,
+            "seconds": 8.458236099977512,
+            "step": 533
+          },
+          {
+            "accuracy": 0.9999999403953552,
+            "gradient_norm": 0.004316984675824642,
+            "loss": 0.0011785872047767043,
+            "seconds": 16.237118199991528,
+            "step": 1066
+          }
+        ],
+        "parameters": 255532,
+        "seconds": 16.241331800003536,
+        "steps": 1066,
+        "total_example_exposures": 25584,
+        "unique_teacher_rows": 48
+      }
+    }
+  ],
+  "removals": [
+    {
+      "cluster": "capability-781f838d49a2",
+      "rejected": true
+    },
+    {
+      "cluster": "capability-6a05ac87d84b",
+      "rejected": true
+    },
+    {
+      "cluster": "capability-9c14f5ea0d08",
+      "rejected": true
+    },
+    {
+      "cluster": "capability-663bb9820de9",
+      "rejected": true
+    },
+    {
+      "cluster": "capability-1804ef5e49f4",
+      "rejected": true
+    },
+    {
+      "cluster": "capability-660267e0e217",
+      "rejected": true
+    },
+    {
+      "cluster": "capability-77540ff46ac4",
+      "rejected": true
+    },
+    {
+      "cluster": "capability-afba74547ae1",
+      "rejected": true
+    },
+    {
+      "cluster": "capability-8f722f34058c",
+      "rejected": true
+    },
+    {
+      "cluster": "capability-ebc97d41c4c9",
+      "rejected": true
+    },
+    {
+      "cluster": "capability-defbdf34a3d4",
+      "rejected": true
+    },
+    {
+      "cluster": "capability-68a9963f947e",
+      "rejected": true
+    }
+  ],
+  "verdict": "FAIL_COUNTERFACTUAL_DEVELOPMENT"
+}
