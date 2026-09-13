@@ -1,0 +1,559 @@
+{
+  "artifacts": {
+    "attempts": {
+      "bytes": 101426,
+      "path": "attempts.jsonl",
+      "sha256": "ab3abe9dd76d50af034c85c9496b1ef426bf118e3df8ab61a7e3d878c2369385"
+    },
+    "fixture": {
+      "bytes": 48322,
+      "path": "fixture.jsonl",
+      "sha256": "fe31e5e7a409de456f455aa485cebdd6ad497ed4c913d394ffb9e462c10eb5f1"
+    },
+    "selected": {
+      "bytes": 83000,
+      "path": "selected.jsonl",
+      "sha256": "f14b5d556d254ad1be13f41111b07036afa959515181156971e284de76e6e0f4"
+    }
+  },
+  "claim_ceiling": "REGISTERED_SUPPLIED_CONTENT_REPLICATION_NOT_GENERAL_ENGLISH_OR_ABI_SUPERIORITY",
+  "evidence_sha256": "2cf2ff84f817a1a4584fd3a03e7af717557996a6d1e63cda29e57c2c28004fc7",
+  "format": "abi-r31-frozen-cascade-replication/4",
+  "frozen_inputs": {
+    "hidden_ordinal_start": 10000,
+    "instruction_shuffle_seed": 931031,
+    "ladder_result_sha256": "4bee74452b1c4d6e6b7aacdbc2f896df2d75b3ba3ca12b88fab3f670b8f23cd9",
+    "mdl_result_sha256": "d47286b0f10a884896f614dfd9188fab13bd3dfd85b48ec1970f5247b8bdbd51",
+    "public_cascade_sha256": "9038c59287390d137665dfed2152893c61e7a721c0c668d07adcee2d1194ea39",
+    "variant_order": [
+      "first24",
+      "first48",
+      "mdl24"
+    ]
+  },
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "device": "cuda",
+    "elapsed_seconds": 39.26747709995834,
+    "installed_package_bytes": 38936234,
+    "installed_packages": 36,
+    "maximum_active_package_parameters": 320419,
+    "peak_cpu_rss_bytes": 714711040,
+    "peak_gpu_memory_bytes": 37044736,
+    "source_parameters_copied": 0
+  },
+  "isolation": {
+    "diagnosis_artifact_input": false,
+    "public_evaluation_input": false,
+    "runtime_selection_inputs": [
+      "prompt",
+      "generated_output",
+      "registered_contract_map"
+    ],
+    "source_corpus_input": false,
+    "teacher_model_loaded": false,
+    "teacher_output_input": false,
+    "transformers_module_loaded": false
+  },
+  "metrics": {
+    "by_task": {
+      "abstention": {
+        "functional": 8,
+        "rows": 12
+      },
+      "bullets": {
+        "functional": 12,
+        "rows": 12
+      },
+      "clarification": {
+        "functional": 12,
+        "rows": 12
+      },
+      "comparison": {
+        "functional": 11,
+        "rows": 12
+      },
+      "conversation": {
+        "functional": 12,
+        "rows": 12
+      },
+      "email": {
+        "functional": 12,
+        "rows": 12
+      },
+      "planning": {
+        "functional": 8,
+        "rows": 12
+      },
+      "prose": {
+        "functional": 12,
+        "rows": 12
+      },
+      "reasoning": {
+        "functional": 8,
+        "rows": 12
+      },
+      "rewrite": {
+        "functional": 11,
+        "rows": 12
+      },
+      "summary": {
+        "functional": 12,
+        "rows": 12
+      },
+      "tone": {
+        "functional": 12,
+        "rows": 12
+      }
+    },
+    "contract_exact": 144,
+    "evaluation_rows": 144,
+    "functional": 130,
+    "live_executions": 203,
+    "mean_executions_per_prompt": 1.4097222222222223,
+    "removal_rejections": 36,
+    "route_exact": 144,
+    "selected_variants": {
+      "first24": 102,
+      "first48": 25,
+      "mdl24": 17
+    }
+  },
+  "package_inventory": [
+    {
+      "bytes": 1048126,
+      "cake_id": "abi-r31-l24-capability-1804ef5e49f4",
+      "cluster": "capability-1804ef5e49f4",
+      "sha256": "f4f51521bdf1e004878e132cab9a6ab6277b7306294dee581313f508022a3ae9",
+      "variant": "first24"
+    },
+    {
+      "bytes": 1079609,
+      "cake_id": "abi-r31-l24-capability-660267e0e217",
+      "cluster": "capability-660267e0e217",
+      "sha256": "58893fc81699a9dd6bdad25feabc362a21d476f33623422126ebe90e1db8efd5",
+      "variant": "first24"
+    },
+    {
+      "bytes": 1230310,
+      "cake_id": "abi-r31-l24-capability-663bb9820de9",
+      "cluster": "capability-663bb9820de9",
+      "sha256": "1a805bfd66b6c6ec6f6b23fd2c90b5f74c4ea5da42a12bd433a75b87875eda62",
+      "variant": "first24"
+    },
+    {
+      "bytes": 1022822,
+      "cake_id": "abi-r31-l24-capability-68a9963f947e",
+      "cluster": "capability-68a9963f947e",
+      "sha256": "ca6bf24c98827d81d4facae980ef358f7e831677c7994081ad652b7c42844c9a",
+      "variant": "first24"
+    },
+    {
+      "bytes": 1063527,
+      "cake_id": "abi-r31-l24-capability-6a05ac87d84b",
+      "cluster": "capability-6a05ac87d84b",
+      "sha256": "e17c480dc31eb66fc1b9a0e21c046b2a36d17bfb6c13b4bdb0763d03c2001b5c",
+      "variant": "first24"
+    },
+    {
+      "bytes": 1042439,
+      "cake_id": "abi-r31-l24-capability-77540ff46ac4",
+      "cluster": "capability-77540ff46ac4",
+      "sha256": "5e2dd417b00170b43fd2a96431576d11726c08f4f1ea13f600dc583055e11188",
+      "variant": "first24"
+    },
+    {
+      "bytes": 1058700,
+      "cake_id": "abi-r31-l24-capability-781f838d49a2",
+      "cluster": "capability-781f838d49a2",
+      "sha256": "581e83cc461dba995137f076f6257f9cd123f13bb5d0ae0bc9eff7b8e4c96344",
+      "variant": "first24"
+    },
+    {
+      "bytes": 1168185,
+      "cake_id": "abi-r31-l24-capability-8f722f34058c",
+      "cluster": "capability-8f722f34058c",
+      "sha256": "b0e00ad3feb70d69b414ce92b925fddae386014ff42034625fe62bc179f64ab1",
+      "variant": "first24"
+    },
+    {
+      "bytes": 1058822,
+      "cake_id": "abi-r31-l24-capability-9c14f5ea0d08",
+      "cluster": "capability-9c14f5ea0d08",
+      "sha256": "968cb52d9e0f851e79e07c135177ab4874f0ea2c8963b6146b1edc3f711c508f",
+      "variant": "first24"
+    },
+    {
+      "bytes": 1056850,
+      "cake_id": "abi-r31-l24-capability-afba74547ae1",
+      "cluster": "capability-afba74547ae1",
+      "sha256": "4755317fd42695a6a6fdbd91cc01513a533cc28f7e49a64506c0d74a13ac5fcf",
+      "variant": "first24"
+    },
+    {
+      "bytes": 1041926,
+      "cake_id": "abi-r31-l24-capability-defbdf34a3d4",
+      "cluster": "capability-defbdf34a3d4",
+      "sha256": "6c4df13d2dd33812cfda22ece02bce231a4a4d354382c13639d141e7a48caa69",
+      "variant": "first24"
+    },
+    {
+      "bytes": 1073778,
+      "cake_id": "abi-r31-l24-capability-ebc97d41c4c9",
+      "cluster": "capability-ebc97d41c4c9",
+      "sha256": "6a8c92bc85b209e8639170df090a18c9b9509497358273ea2060c2112ea95fbd",
+      "variant": "first24"
+    },
+    {
+      "bytes": 1075562,
+      "cake_id": "abi-r31-l48-capability-1804ef5e49f4",
+      "cluster": "capability-1804ef5e49f4",
+      "sha256": "87ac0a21220981d0747f9f26b8c87725dd29441b1d34d8e674f6eaf368ad3d26",
+      "variant": "first48"
+    },
+    {
+      "bytes": 1106550,
+      "cake_id": "abi-r31-l48-capability-660267e0e217",
+      "cluster": "capability-660267e0e217",
+      "sha256": "11655c9352d104957f0ce36e7fa043067144e94a6157ce659e5536807a2014fd",
+      "variant": "first48"
+    },
+    {
+      "bytes": 1307271,
+      "cake_id": "abi-r31-l48-capability-663bb9820de9",
+      "cluster": "capability-663bb9820de9",
+      "sha256": "722e2b8d4ba2d409a3c7ab42693ab8da0b78d38b033ec414786702b68a972dd0",
+      "variant": "first48"
+    },
+    {
+      "bytes": 1035907,
+      "cake_id": "abi-r31-l48-capability-68a9963f947e",
+      "cluster": "capability-68a9963f947e",
+      "sha256": "653132c231643499d41e2c96b9c200ae76b64309049650b3d9f04f20a65c9153",
+      "variant": "first48"
+    },
+    {
+      "bytes": 1090963,
+      "cake_id": "abi-r31-l48-capability-6a05ac87d84b",
+      "cluster": "capability-6a05ac87d84b",
+      "sha256": "4a5a2fa106d1eaf7e1f3413f5c2751643df4603eda86e2599d64b0ace5990ed5",
+      "variant": "first48"
+    },
+    {
+      "bytes": 1068312,
+      "cake_id": "abi-r31-l48-capability-77540ff46ac4",
+      "cluster": "capability-77540ff46ac4",
+      "sha256": "5ce79e50fbc3795e9e14b761e6f9204691def716158a5d24964fcbb4ab3788a4",
+      "variant": "first48"
+    },
+    {
+      "bytes": 1086681,
+      "cake_id": "abi-r31-l48-capability-781f838d49a2",
+      "cluster": "capability-781f838d49a2",
+      "sha256": "d5bdc54c7c47fb10288006fb239f2da78e6a8ad98163dedd012814959aceed03",
+      "variant": "first48"
+    },
+    {
+      "bytes": 1211669,
+      "cake_id": "abi-r31-l48-capability-8f722f34058c",
+      "cluster": "capability-8f722f34058c",
+      "sha256": "d652e515879aadfe8157299293a96183e6062c13848f66c467f161d469be19c5",
+      "variant": "first48"
+    },
+    {
+      "bytes": 1085757,
+      "cake_id": "abi-r31-l48-capability-9c14f5ea0d08",
+      "cluster": "capability-9c14f5ea0d08",
+      "sha256": "2f7726e528769e970bbc40a278d0ca4cfb035fefb4f9b3a76644a15ded4b098c",
+      "variant": "first48"
+    },
+    {
+      "bytes": 1090706,
+      "cake_id": "abi-r31-l48-capability-afba74547ae1",
+      "cluster": "capability-afba74547ae1",
+      "sha256": "ffdb251dcb562ffb8e18e55e22eac7cf700473c3e1a0952a63a1721a90b95d76",
+      "variant": "first48"
+    },
+    {
+      "bytes": 1068338,
+      "cake_id": "abi-r31-l48-capability-defbdf34a3d4",
+      "cluster": "capability-defbdf34a3d4",
+      "sha256": "1a2c5492c3d61fbb415dd152d94645a5ba8759ff099fd13bae8f3bf3fbf1bd7e",
+      "variant": "first48"
+    },
+    {
+      "bytes": 1113499,
+      "cake_id": "abi-r31-l48-capability-ebc97d41c4c9",
+      "cluster": "capability-ebc97d41c4c9",
+      "sha256": "331110801572b5b0a4489e1731a48e84f43ecd08c0fc068748e90153ad388053",
+      "variant": "first48"
+    },
+    {
+      "bytes": 1042854,
+      "cake_id": "abi-r31-l24-capability-1804ef5e49f4",
+      "cluster": "capability-1804ef5e49f4",
+      "sha256": "76214b0adfddb6af6ef72af255f15c99b878e842f563a07fade4d2ef1a0e69e2",
+      "variant": "mdl24"
+    },
+    {
+      "bytes": 1046254,
+      "cake_id": "abi-r31-l24-capability-660267e0e217",
+      "cluster": "capability-660267e0e217",
+      "sha256": "2cd9e1229ebd878a6a2fe9f24bc410a4fd6cac413c93f3bb9ac29ae81fdea93d",
+      "variant": "mdl24"
+    },
+    {
+      "bytes": 1163547,
+      "cake_id": "abi-r31-l24-capability-663bb9820de9",
+      "cluster": "capability-663bb9820de9",
+      "sha256": "da30da09f815244f613c0dd6b928c3f088f2affd554c5ba170091bcfb2c572ae",
+      "variant": "mdl24"
+    },
+    {
+      "bytes": 1022822,
+      "cake_id": "abi-r31-l24-capability-68a9963f947e",
+      "cluster": "capability-68a9963f947e",
+      "sha256": "c6f62e1385c1a0f41d0b52dc12ffdd828e8d423c708c46f7a0bcfdac48a3910a",
+      "variant": "mdl24"
+    },
+    {
+      "bytes": 1046092,
+      "cake_id": "abi-r31-l24-capability-6a05ac87d84b",
+      "cluster": "capability-6a05ac87d84b",
+      "sha256": "ab672bfa14e191445a771a2e20760e1a6ab5fe8ab23060002e2f95c4fe4705f2",
+      "variant": "mdl24"
+    },
+    {
+      "bytes": 1035013,
+      "cake_id": "abi-r31-l24-capability-77540ff46ac4",
+      "cluster": "capability-77540ff46ac4",
+      "sha256": "cb84cb06a080ab6c9d53925aa9e36800e9a1b9dfce11ac58718225d239a0c187",
+      "variant": "mdl24"
+    },
+    {
+      "bytes": 1051863,
+      "cake_id": "abi-r31-l24-capability-781f838d49a2",
+      "cluster": "capability-781f838d49a2",
+      "sha256": "772f8a92f8b5867baed6c6887f9fd077e634836eac077548d60dfe27e2483e5a",
+      "variant": "mdl24"
+    },
+    {
+      "bytes": 1052510,
+      "cake_id": "abi-r31-l24-capability-8f722f34058c",
+      "cluster": "capability-8f722f34058c",
+      "sha256": "3125c966e5433142c702d3c1ab9d4cbe9e33d65fb40e83794e570034ccaf6f34",
+      "variant": "mdl24"
+    },
+    {
+      "bytes": 1040281,
+      "cake_id": "abi-r31-l24-capability-9c14f5ea0d08",
+      "cluster": "capability-9c14f5ea0d08",
+      "sha256": "7cb9b9de8988259ab15ff74ccef17a5b469eb6d6d67259ed890582c5152f6892",
+      "variant": "mdl24"
+    },
+    {
+      "bytes": 1046260,
+      "cake_id": "abi-r31-l24-capability-afba74547ae1",
+      "cluster": "capability-afba74547ae1",
+      "sha256": "ca1351c0a5a9aae333ee0da71f5426babd11f6382d38cc6f56208a52c140d334",
+      "variant": "mdl24"
+    },
+    {
+      "bytes": 1031829,
+      "cake_id": "abi-r31-l24-capability-defbdf34a3d4",
+      "cluster": "capability-defbdf34a3d4",
+      "sha256": "87d1b2924ff6e30ae629ee5ec90a5d16aa0e75419045b150a6339cc386e2930c",
+      "variant": "mdl24"
+    },
+    {
+      "bytes": 1070600,
+      "cake_id": "abi-r31-l24-capability-ebc97d41c4c9",
+      "cluster": "capability-ebc97d41c4c9",
+      "sha256": "b994f60462d2bbf90d246690c930f997b4751c3dbc4f188a3106639e25d47408",
+      "variant": "mdl24"
+    }
+  ],
+  "removals": [
+    {
+      "cluster": "capability-1804ef5e49f4",
+      "rejected": true,
+      "variant": "first24"
+    },
+    {
+      "cluster": "capability-660267e0e217",
+      "rejected": true,
+      "variant": "first24"
+    },
+    {
+      "cluster": "capability-663bb9820de9",
+      "rejected": true,
+      "variant": "first24"
+    },
+    {
+      "cluster": "capability-68a9963f947e",
+      "rejected": true,
+      "variant": "first24"
+    },
+    {
+      "cluster": "capability-6a05ac87d84b",
+      "rejected": true,
+      "variant": "first24"
+    },
+    {
+      "cluster": "capability-77540ff46ac4",
+      "rejected": true,
+      "variant": "first24"
+    },
+    {
+      "cluster": "capability-781f838d49a2",
+      "rejected": true,
+      "variant": "first24"
+    },
+    {
+      "cluster": "capability-8f722f34058c",
+      "rejected": true,
+      "variant": "first24"
+    },
+    {
+      "cluster": "capability-9c14f5ea0d08",
+      "rejected": true,
+      "variant": "first24"
+    },
+    {
+      "cluster": "capability-afba74547ae1",
+      "rejected": true,
+      "variant": "first24"
+    },
+    {
+      "cluster": "capability-defbdf34a3d4",
+      "rejected": true,
+      "variant": "first24"
+    },
+    {
+      "cluster": "capability-ebc97d41c4c9",
+      "rejected": true,
+      "variant": "first24"
+    },
+    {
+      "cluster": "capability-1804ef5e49f4",
+      "rejected": true,
+      "variant": "first48"
+    },
+    {
+      "cluster": "capability-660267e0e217",
+      "rejected": true,
+      "variant": "first48"
+    },
+    {
+      "cluster": "capability-663bb9820de9",
+      "rejected": true,
+      "variant": "first48"
+    },
+    {
+      "cluster": "capability-68a9963f947e",
+      "rejected": true,
+      "variant": "first48"
+    },
+    {
+      "cluster": "capability-6a05ac87d84b",
+      "rejected": true,
+      "variant": "first48"
+    },
+    {
+      "cluster": "capability-77540ff46ac4",
+      "rejected": true,
+      "variant": "first48"
+    },
+    {
+      "cluster": "capability-781f838d49a2",
+      "rejected": true,
+      "variant": "first48"
+    },
+    {
+      "cluster": "capability-8f722f34058c",
+      "rejected": true,
+      "variant": "first48"
+    },
+    {
+      "cluster": "capability-9c14f5ea0d08",
+      "rejected": true,
+      "variant": "first48"
+    },
+    {
+      "cluster": "capability-afba74547ae1",
+      "rejected": true,
+      "variant": "first48"
+    },
+    {
+      "cluster": "capability-defbdf34a3d4",
+      "rejected": true,
+      "variant": "first48"
+    },
+    {
+      "cluster": "capability-ebc97d41c4c9",
+      "rejected": true,
+      "variant": "first48"
+    },
+    {
+      "cluster": "capability-1804ef5e49f4",
+      "rejected": true,
+      "variant": "mdl24"
+    },
+    {
+      "cluster": "capability-660267e0e217",
+      "rejected": true,
+      "variant": "mdl24"
+    },
+    {
+      "cluster": "capability-663bb9820de9",
+      "rejected": true,
+      "variant": "mdl24"
+    },
+    {
+      "cluster": "capability-68a9963f947e",
+      "rejected": true,
+      "variant": "mdl24"
+    },
+    {
+      "cluster": "capability-6a05ac87d84b",
+      "rejected": true,
+      "variant": "mdl24"
+    },
+    {
+      "cluster": "capability-77540ff46ac4",
+      "rejected": true,
+      "variant": "mdl24"
+    },
+    {
+      "cluster": "capability-781f838d49a2",
+      "rejected": true,
+      "variant": "mdl24"
+    },
+    {
+      "cluster": "capability-8f722f34058c",
+      "rejected": true,
+      "variant": "mdl24"
+    },
+    {
+      "cluster": "capability-9c14f5ea0d08",
+      "rejected": true,
+      "variant": "mdl24"
+    },
+    {
+      "cluster": "capability-afba74547ae1",
+      "rejected": true,
+      "variant": "mdl24"
+    },
+    {
+      "cluster": "capability-defbdf34a3d4",
+      "rejected": true,
+      "variant": "mdl24"
+    },
+    {
+      "cluster": "capability-ebc97d41c4c9",
+      "rejected": true,
+      "variant": "mdl24"
+    }
+  ],
+  "verdict": "FAIL_FROZEN_CASCADE_REPLICATION"
+}
