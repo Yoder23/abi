@@ -1,0 +1,975 @@
+{
+  "artifacts": {
+    "evaluation": {
+      "bytes": 90962,
+      "path": "evaluation.jsonl",
+      "sha256": "e10775a546ec426c16c9339a6f9e9965bf47fac9839bf8ceea83caeee04e4c75"
+    },
+    "normalization_ledger": {
+      "bytes": 74928,
+      "path": "normalization_ledger.jsonl",
+      "sha256": "74420856c8d700693e6ec6b7dfb0b60f19bf564841fc7f0b16d42b8fd6573813"
+    }
+  },
+  "claim_ceiling": "ABI_FIELD_ADDRESSED_DEVELOPMENT_ONLY_NOT_LAYERCAKE_PACKAGE_OR_FRESH_REPLICATION",
+  "evidence_sha256": "cf28c8dd4ae6b4b5b675e34bd88771e2320a0ecac78662c345dbfa7a0387d180",
+  "format": "abi-r36-field-addressed-plan-feasibility/1",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "deployed_state_bytes": 12581972,
+    "elapsed_seconds": 224.4879104999709,
+    "maximum_active_parameters": 285976,
+    "new_teacher_calls": 0,
+    "new_teacher_tokens": 0,
+    "peak_cpu_rss_bytes": 935514112,
+    "peak_gpu_memory_bytes": 181877760,
+    "selected_teacher_outputs": 288,
+    "source_parameters_copied": 0,
+    "source_teacher_rows_considered": 576,
+    "stored_hidden_activations": 0,
+    "stored_logits": 0
+  },
+  "inputs": {
+    "fixture_sha256": "fe31e5e7a409de456f455aa485cebdd6ad497ed4c913d394ffb9e462c10eb5f1",
+    "r31_failure_sha256": "5e447168c885649f710480d510e7b99785ce1c802386572dd53d0dcc12cc180f",
+    "r31_rows_sha256": "5ff7691d67b0e8271439acfbfe25540c7d42c06918b58b9257873c6f7ca9f05d",
+    "r35_result_sha256": "608283dffc03a577e25a005507e98c284a19435c9b58e8e455f0a559735fcea1"
+  },
+  "metrics": {
+    "by_task": {
+      "abstention": {
+        "functional": 8,
+        "rows": 12
+      },
+      "bullets": {
+        "functional": 6,
+        "rows": 12
+      },
+      "clarification": {
+        "functional": 12,
+        "rows": 12
+      },
+      "comparison": {
+        "functional": 12,
+        "rows": 12
+      },
+      "conversation": {
+        "functional": 12,
+        "rows": 12
+      },
+      "email": {
+        "functional": 11,
+        "rows": 12
+      },
+      "planning": {
+        "functional": 4,
+        "rows": 12
+      },
+      "prose": {
+        "functional": 6,
+        "rows": 12
+      },
+      "reasoning": {
+        "functional": 0,
+        "rows": 12
+      },
+      "rewrite": {
+        "functional": 12,
+        "rows": 12
+      },
+      "summary": {
+        "functional": 12,
+        "rows": 12
+      },
+      "tone": {
+        "functional": 12,
+        "rows": 12
+      }
+    },
+    "contract_exact": 144,
+    "evaluation_rows": 144,
+    "functional": 107,
+    "representation_failures": 0,
+    "route_exact": 144,
+    "selected_rows": 288
+  },
+  "models": [
+    {
+      "cluster": "capability-781f838d49a2",
+      "selected_record_ids": [
+        "r31-train-c5c5bf195b22aee09b77",
+        "r31-train-d2631b15df6ea0fe0616",
+        "r31-train-45fd14a723d84ba06f3f",
+        "r31-train-50fd9ccb5551c347c321",
+        "r31-train-7f619ec5e335fdc8702e",
+        "r31-train-9a9c61194859c2a9bac5",
+        "r31-train-eafb90127cc0cbf69feb",
+        "r31-train-f531c6f92dad6e78b889",
+        "r31-train-8b011ada02774bd73c09",
+        "r31-train-4ed236d0c2265540b044",
+        "r31-train-c153841c4e23a2edde8d",
+        "r31-train-e86d1dace28c32151190",
+        "r31-train-0ffce6f8efea1e1e5a55",
+        "r31-train-1a53abf5640ff2aac12e",
+        "r31-train-33b6ce07147525dff37d",
+        "r31-train-629857da0b9024dc7fec",
+        "r31-train-caac97c756161954853d",
+        "r31-train-d2b773059034a2ef2bd2",
+        "r31-train-3a49f957c140972d7c83",
+        "r31-train-43eafc83021460d1b304",
+        "r31-train-586d6a798e40a8085c14",
+        "r31-train-c5c57ffb33eaad083911",
+        "r31-train-b3eace28a75efe7bf60b",
+        "r31-train-93b9de36af0fb8e06c24"
+      ],
+      "selected_rows": 24,
+      "state": {
+        "bytes": 1044180,
+        "path": "models/prose.safetensors",
+        "sha256": "93e0fce57ad72445cf564cbd5e318edaae7d8ae7e9b85dcb811eb44fd390207e"
+      },
+      "task": "prose",
+      "tokenizer": {
+        "bytes": 2891,
+        "path": "models/prose.tokenizer.json",
+        "semantic_sha256": "2e02949cdaaaa68fc71996ae245fb68dca553313743b7b13bea66808585ee3b2",
+        "sha256": "4d5c5e98d39fa1d87d986d0fe10e298ef0e3742531f48ccdc6d348540d43923d"
+      },
+      "training": {
+        "batch_size": 24,
+        "fixed_vocabulary_size": 136,
+        "history": [
+          {
+            "accuracy": 0.008317929692566395,
+            "gradient_norm": 2.442725896835327,
+            "loss": 5.424419403076172,
+            "seconds": 0.23054969997610897,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.013226206414401531,
+            "loss": 0.0047738514840602875,
+            "seconds": 8.04009959998075,
+            "step": 533
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.004448603373020887,
+            "loss": 0.0016146289417520165,
+            "seconds": 16.013474399980623,
+            "step": 1066
+          }
+        ],
+        "parameters": 259273,
+        "seconds": 16.013818399980664,
+        "steps": 1066,
+        "total_example_exposures": 25584
+      }
+    },
+    {
+      "cluster": "capability-6a05ac87d84b",
+      "selected_record_ids": [
+        "r31-train-a741096af2dd7d6df3b3",
+        "r31-train-1cf522d3e8760898ac8e",
+        "r31-train-2e9705c4911b780fd9e3",
+        "r31-train-ab07064da1775d5d0f1f",
+        "r31-train-e4a2e892c87a559ec9eb",
+        "r31-train-e7da3fc0c2b00d3153ec",
+        "r31-train-f5a687fb0575690f69a3",
+        "r31-train-63806c50b6975c2b1bb3",
+        "r31-train-4f5a968a89e8cdb75256",
+        "r31-train-21c27932f982005b00a5",
+        "r31-train-643b654558f7c68db9a9",
+        "r31-train-94ff71104fa2d02253d0",
+        "r31-train-9ca6a9210a15c8fbe12d",
+        "r31-train-a1cfe03d3dec9324b095",
+        "r31-train-f98208fe1d14649ae05a",
+        "r31-train-13eee1e8db5cbcd760b6",
+        "r31-train-64e743f3ad88d2f01ef9",
+        "r31-train-2199ed2778a5ceefddc6",
+        "r31-train-d68e102da8ea512bde7f",
+        "r31-train-752097980d708924b236",
+        "r31-train-81f4c1d5b610d90a5fa4",
+        "r31-train-dba18144caa46f7a7316",
+        "r31-train-e4c537f34b2ed10842b0",
+        "r31-train-f115471ca9f8f70ebe4d"
+      ],
+      "selected_rows": 24,
+      "state": {
+        "bytes": 1038504,
+        "path": "models/summary.safetensors",
+        "sha256": "658d4601bfedcaf8c7c2724a0e5f11bff15d833dd5fbc263b5c703b46ce3c90e"
+      },
+      "task": "summary",
+      "tokenizer": {
+        "bytes": 2741,
+        "path": "models/summary.tokenizer.json",
+        "semantic_sha256": "07b51b901e7ad95a17e6bd9fdc56eb58fa13c842badf876656a1f6193a521597",
+        "sha256": "3d1825d68117761a463284c246128532cd2aa235b603834138ede8c50f7bf6b8"
+      },
+      "training": {
+        "batch_size": 24,
+        "fixed_vocabulary_size": 125,
+        "history": [
+          {
+            "accuracy": 0.02781641110777855,
+            "gradient_norm": 3.0818328857421875,
+            "loss": 5.700567245483398,
+            "seconds": 0.0189824000117369,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.0141414450481534,
+            "loss": 0.004250464029610157,
+            "seconds": 8.448062799987383,
+            "step": 533
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.004522640723735094,
+            "loss": 0.0012648259289562702,
+            "seconds": 16.91239610000048,
+            "step": 1066
+          }
+        ],
+        "parameters": 257854,
+        "seconds": 16.91266169998562,
+        "steps": 1066,
+        "total_example_exposures": 25584
+      }
+    },
+    {
+      "cluster": "capability-9c14f5ea0d08",
+      "selected_record_ids": [
+        "r31-train-8bb95c8e20960f00c533",
+        "r31-train-f1b7c84381f76d83ec07",
+        "r31-train-83899090f31a26b0c4e1",
+        "r31-train-cbdd294a6fb998525467",
+        "r31-train-d05bd824a6a3415780a8",
+        "r31-train-52311197962232bf5579",
+        "r31-train-6966d8820a11f2673cab",
+        "r31-train-6d1f339117bf7e6b82da",
+        "r31-train-818f5fefaefdc3b7a3d3",
+        "r31-train-cde11e572383b83c8aac",
+        "r31-train-dc5dec028776809b59b3",
+        "r31-train-60517d6d369f2ddffa24",
+        "r31-train-7040d7dfa3812e88908c",
+        "r31-train-257b7387c80b288970f8",
+        "r31-train-42efbc8c19a453c3ab14",
+        "r31-train-50bee86dc372b9f1bf26",
+        "r31-train-778db67ecce100beed58",
+        "r31-train-f92e88c450659966c42f",
+        "r31-train-436e70db79adfce7a218",
+        "r31-train-8fec2b0e810db9a00dbd",
+        "r31-train-d00e48dee9b1d3a621d2",
+        "r31-train-1d5af4d5ef7a56e812c3",
+        "r31-train-29e12283ec77c06a1ab1",
+        "r31-train-5bea6a778de9a2359363"
+      ],
+      "selected_rows": 24,
+      "state": {
+        "bytes": 1032828,
+        "path": "models/rewrite.safetensors",
+        "sha256": "0c87c851ef4037fb4c70641c2430b3cc64e105fd3699864824d798d53d16ccd1"
+      },
+      "task": "rewrite",
+      "tokenizer": {
+        "bytes": 2551,
+        "path": "models/rewrite.tokenizer.json",
+        "semantic_sha256": "35ef08531fcb7d1a40fbc05df2002fc5a6468ec9ffe0c4d48a68e45edbf61577",
+        "sha256": "3183adb10b6bd06c423f22a742c31e472694abaa15cb256ef968e1b669459b12"
+      },
+      "training": {
+        "batch_size": 24,
+        "fixed_vocabulary_size": 114,
+        "history": [
+          {
+            "accuracy": 0.015806110575795174,
+            "gradient_norm": 2.437927484512329,
+            "loss": 5.330844402313232,
+            "seconds": 0.020054700027685612,
+            "step": 1
+          },
+          {
+            "accuracy": 0.9999999403953552,
+            "gradient_norm": 0.01504773460328579,
+            "loss": 0.005079278256744146,
+            "seconds": 8.66972629999509,
+            "step": 533
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.004618451464921236,
+            "loss": 0.0015219236956909299,
+            "seconds": 17.513742299983278,
+            "step": 1066
+          }
+        ],
+        "parameters": 256435,
+        "seconds": 17.514000900031533,
+        "steps": 1066,
+        "total_example_exposures": 25584
+      }
+    },
+    {
+      "cluster": "capability-663bb9820de9",
+      "selected_record_ids": [
+        "r31-train-12f29fa522be7fcbd277",
+        "r31-train-62a63c7deb087c6f2714",
+        "r31-train-26054c6ca16dc5345dfe",
+        "r31-train-52a005e8c130348033c8",
+        "r31-train-556111f7f035f3f0dfd0",
+        "r31-train-7e8aa657e4ac0ae065c2",
+        "r31-train-7a051fbba99611148257",
+        "r31-train-885ad30ac9ee29f91b82",
+        "r31-train-89badf9c633773fb221c",
+        "r31-train-a1e2daac440db6675230",
+        "r31-train-bda3096f8b56e9b46531",
+        "r31-train-5270d071d8258b0c2c6e",
+        "r31-train-9039ffed8575c30b98e4",
+        "r31-train-b6f72b388f7b5a0bb5a2",
+        "r31-train-dd2338b8d328686622eb",
+        "r31-train-f164aaa853bdd328c25c",
+        "r31-train-f30708893c6ecfb5f880",
+        "r31-train-8d0097046ac6c8184153",
+        "r31-train-6164d7a4ec0148084c99",
+        "r31-train-9c58ee96c7d4ea61f16a",
+        "r31-train-68b26e23109c59e9a626",
+        "r31-train-172322e4128624c6d1e6",
+        "r31-train-f54732e98aac207cba6e",
+        "r31-train-377e047d45571723ca04"
+      ],
+      "selected_rows": 24,
+      "state": {
+        "bytes": 1151000,
+        "path": "models/email.safetensors",
+        "sha256": "07fb07f0cee4923b52b82fad1a29859a09c91d254977b0abe5e4388b195f7a6a"
+      },
+      "task": "email",
+      "tokenizer": {
+        "bytes": 7200,
+        "path": "models/email.tokenizer.json",
+        "semantic_sha256": "f2de0b88e46795e9a7dc04c31167f1241edda9325f0b9b3c4a74e0b16e0ff054",
+        "sha256": "b8b1635f69fb3bc1ffe01d9ab82b4685cb6b11ce90a4fa2524dd863ad0dd5ae3"
+      },
+      "training": {
+        "batch_size": 24,
+        "fixed_vocabulary_size": 343,
+        "history": [
+          {
+            "accuracy": 0.0002131287328666076,
+            "gradient_norm": 1.5550076961517334,
+            "loss": 6.1547017097473145,
+            "seconds": 0.030172400001902133,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.027298755943775177,
+            "loss": 0.012814446352422237,
+            "seconds": 10.319496900017839,
+            "step": 533
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.004193548113107681,
+            "loss": 0.002788991667330265,
+            "seconds": 20.64453659998253,
+            "step": 1066
+          }
+        ],
+        "parameters": 285976,
+        "seconds": 20.64482169999974,
+        "steps": 1066,
+        "total_example_exposures": 25584
+      }
+    },
+    {
+      "cluster": "capability-1804ef5e49f4",
+      "selected_record_ids": [
+        "r31-train-38c562d558dd739fa38a",
+        "r31-train-cd9876d444e1bc647b1c",
+        "r31-train-5d034d6e30fb0e7fe529",
+        "r31-train-818b0da1d54d4e5ba0e0",
+        "r31-train-8d1223b240290f215bba",
+        "r31-train-94486819015ca293035d",
+        "r31-train-bfcd002b2c54e0f19c2d",
+        "r31-train-d8819e95c305caf88635",
+        "r31-train-f4dbd76bef5a3d435402",
+        "r31-train-fe01a01d567a03382f8f",
+        "r31-train-393e241f9da55240bf10",
+        "r31-train-7a5d0caffa8ffb27605b",
+        "r31-train-aa11b3ea7925f13cc40e",
+        "r31-train-b9735c7eb6166ae0d25d",
+        "r31-train-c5694994ab517891dcb2",
+        "r31-train-c8ba0aae8181e468fd23",
+        "r31-train-e994cbc21cfc64d43816",
+        "r31-train-125d7c014e1aa6150791",
+        "r31-train-dd7efa378e673e082ce1",
+        "r31-train-02d0e46844b9e02a0f99",
+        "r31-train-1a37f139cf52d30dc355",
+        "r31-train-a03a709ab6b2beb87214",
+        "r31-train-a510a69cc4b9f7677e3b",
+        "r31-train-a77fb332a5e80bba4e6e"
+      ],
+      "selected_rows": 24,
+      "state": {
+        "bytes": 1037472,
+        "path": "models/bullets.safetensors",
+        "sha256": "066e3f0aa7148fd9bdc88e45c4c0fe3118f4927ab48428369ddb715acfa4404f"
+      },
+      "task": "bullets",
+      "tokenizer": {
+        "bytes": 2610,
+        "path": "models/bullets.tokenizer.json",
+        "semantic_sha256": "e8a56af0e661d2beed234d8f7732927f9e35ab2b8dc0cbe4e13da95faae76ac3",
+        "sha256": "75ee2fef8e3fe95b36fd22540c466c7bd609cef2945633bee39bd100c1e328ca"
+      },
+      "training": {
+        "batch_size": 24,
+        "fixed_vocabulary_size": 123,
+        "history": [
+          {
+            "accuracy": 0.0013550135772675276,
+            "gradient_norm": 2.3028078079223633,
+            "loss": 5.182535648345947,
+            "seconds": 0.01948439999250695,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.013618203811347485,
+            "loss": 0.003862611250951886,
+            "seconds": 7.950810699956492,
+            "step": 533
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.004212364088743925,
+            "loss": 0.0012161864433437586,
+            "seconds": 16.142064699961338,
+            "step": 1066
+          }
+        ],
+        "parameters": 257596,
+        "seconds": 16.14237509999657,
+        "steps": 1066,
+        "total_example_exposures": 25584
+      }
+    },
+    {
+      "cluster": "capability-660267e0e217",
+      "selected_record_ids": [
+        "r31-train-08af8ee97395e228b0e0",
+        "r31-train-e201bcd7369580d9a37c",
+        "r31-train-5bdad0a1db2ba310e506",
+        "r31-train-a171a4eac469e880f53c",
+        "r31-train-ab1767d092a209dcc045",
+        "r31-train-c5315b31ae9f41d537ae",
+        "r31-train-15c03e6fceefbcfef4df",
+        "r31-train-96c1cc472c78ca92af8b",
+        "r31-train-9ee6d1557079b2db5b06",
+        "r31-train-b0473cf1a40faa2be36e",
+        "r31-train-f2a39d365d05be812473",
+        "r31-train-f343a37c67eeacd79b97",
+        "r31-train-afb0e78c1c755101f42b",
+        "r31-train-0c2e94b8b7fbd2be74da",
+        "r31-train-63fe878ab292c1e22659",
+        "r31-train-6b6fb8790590e3cc5064",
+        "r31-train-83f62f83c90db0d12056",
+        "r31-train-df5bbb71ead1bfd4e5b6",
+        "r31-train-f2fa50e0d172cbccca4b",
+        "r31-train-18f3dc45abaccc54c716",
+        "r31-train-65e86a48cbb0f0902a97",
+        "r31-train-9ab02e9b4e61c0af32b6",
+        "r31-train-bbe3e82eb9fa7af20033",
+        "r31-train-8dae9104c6ef20090000"
+      ],
+      "selected_rows": 24,
+      "state": {
+        "bytes": 1037988,
+        "path": "models/tone.safetensors",
+        "sha256": "d68393fa62cb1034a175369f53df5d4db3c0429c051e0273e8ed9280c8b0f9e3"
+      },
+      "task": "tone",
+      "tokenizer": {
+        "bytes": 2859,
+        "path": "models/tone.tokenizer.json",
+        "semantic_sha256": "4369b8bfff44a2be3c765822b1c98413f561daf29f0a85c51153250a5e407d74",
+        "sha256": "49ca0585cbb54211bf9c2c98fa532cc99d4a60acadeaf1d0e4ca74cb120e8afa"
+      },
+      "training": {
+        "batch_size": 24,
+        "fixed_vocabulary_size": 124,
+        "history": [
+          {
+            "accuracy": 0.012195121496915817,
+            "gradient_norm": 2.178269624710083,
+            "loss": 5.640522480010986,
+            "seconds": 0.018785700027365237,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.013153619132936,
+            "loss": 0.005448510404676199,
+            "seconds": 8.011381699994672,
+            "step": 533
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.004145598970353603,
+            "loss": 0.0017020462546497583,
+            "seconds": 15.941581499995664,
+            "step": 1066
+          }
+        ],
+        "parameters": 257725,
+        "seconds": 15.941855299985036,
+        "steps": 1066,
+        "total_example_exposures": 25584
+      }
+    },
+    {
+      "cluster": "capability-77540ff46ac4",
+      "selected_record_ids": [
+        "r31-train-0362c5ea2624f867d2e6",
+        "r31-train-03707cea3ea29b300d24",
+        "r31-train-06b17e045c4baaf569a2",
+        "r31-train-11059661f400db1e6678",
+        "r31-train-198eb7bf9c91d49c7cee",
+        "r31-train-19c2171b9a99eee15a69",
+        "r31-train-1d6af4f61a6080657f21",
+        "r31-train-1dc24b130ea0af4991ad",
+        "r31-train-276bab3d6c911db55d09",
+        "r31-train-2fe49266302be8cba51e",
+        "r31-train-30899c63dd758e61e856",
+        "r31-train-3132df636f02d096c5f3",
+        "r31-train-38a824f0626d1f4900d5",
+        "r31-train-3b6102c2e3be9304b91b",
+        "r31-train-40ea7598225b9b3040fd",
+        "r31-train-4802def9e50a74abf61f",
+        "r31-train-4c0b1b43a7bf93ccc9b3",
+        "r31-train-55476c2b61abd5ddeb05",
+        "r31-train-60ae4d9ac85ee0171ef2",
+        "r31-train-6aeb96ecff431f334f85",
+        "r31-train-702309952abb67bf185f",
+        "r31-train-80559a8d9a9619cc5335",
+        "r31-train-83a95ca0f6cbc6246897",
+        "r31-train-a5ee67c05b410d595191"
+      ],
+      "selected_rows": 24,
+      "state": {
+        "bytes": 1027152,
+        "path": "models/clarification.safetensors",
+        "sha256": "4017930b9565e208a52712f6b9678c2f26887fde353b4d3372b30f3ec08509e2"
+      },
+      "task": "clarification",
+      "tokenizer": {
+        "bytes": 2356,
+        "path": "models/clarification.tokenizer.json",
+        "semantic_sha256": "a33a080ca67d4331b0e81091979b1827c636a5c9f649ca2296e00ece4dd58a2f",
+        "sha256": "a5a5ea4a14479aa1e1f8710b4429baebdc375eeb632bcf2433d8210bcf74b799"
+      },
+      "training": {
+        "batch_size": 24,
+        "fixed_vocabulary_size": 103,
+        "history": [
+          {
+            "accuracy": 0.0,
+            "gradient_norm": 3.420546293258667,
+            "loss": 5.305114269256592,
+            "seconds": 0.017457299982197583,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.013667880557477474,
+            "loss": 0.0032391224522143602,
+            "seconds": 7.791402700007893,
+            "step": 533
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.004114480689167976,
+            "loss": 0.0009564755018800497,
+            "seconds": 15.5484878999996,
+            "step": 1066
+          }
+        ],
+        "parameters": 255016,
+        "seconds": 15.548750799964182,
+        "steps": 1066,
+        "total_example_exposures": 25584
+      }
+    },
+    {
+      "cluster": "capability-afba74547ae1",
+      "selected_record_ids": [
+        "r31-train-2d7afbfe0267d2150842",
+        "r31-train-444a0ffd9afa815a91f0",
+        "r31-train-73ea2b277366661db35e",
+        "r31-train-b740d60b84fbdd215327",
+        "r31-train-e8aeb38753c330092199",
+        "r31-train-061720a8c1112ecc5481",
+        "r31-train-2e6226163da772614425",
+        "r31-train-6dd51107b7424e555fb6",
+        "r31-train-9f76c495799e07b89113",
+        "r31-train-c563a0491238878674a8",
+        "r31-train-c77abaceefcc02a9d49e",
+        "r31-train-dca850da1edea6d16aac",
+        "r31-train-e23099f0f94e4fd7c285",
+        "r31-train-e8ba32da4de2fd2ba182",
+        "r31-train-1b220df7ba2386916ca0",
+        "r31-train-2e98955df3456f3d2d9f",
+        "r31-train-3046fe9bbd5484af4aca",
+        "r31-train-b314dbc3ec219d34d4d3",
+        "r31-train-dddd7b3e22e9faef574f",
+        "r31-train-e65cbb4c47cfdbdc9453",
+        "r31-train-23b1085598fe38a48d05",
+        "r31-train-c1d40cc7545543e12cf4",
+        "r31-train-cb6e2e5f927dfa53e496",
+        "r31-train-1be470941b9a3146f4ac"
+      ],
+      "selected_rows": 24,
+      "state": {
+        "bytes": 1041084,
+        "path": "models/conversation.safetensors",
+        "sha256": "7e22b7102b75742e91cc9007b8bf58d8eb2cad5e86b069989dac0568a071fd4d"
+      },
+      "task": "conversation",
+      "tokenizer": {
+        "bytes": 2981,
+        "path": "models/conversation.tokenizer.json",
+        "semantic_sha256": "a633988bc6a4892b0b42e5c7b35a49d247e43d284e2de718832f8fee784ddab2",
+        "sha256": "27478214456e25e7af41cd44bf082e50f8cea6617a219bb070f815c102851e1c"
+      },
+      "training": {
+        "batch_size": 24,
+        "fixed_vocabulary_size": 130,
+        "history": [
+          {
+            "accuracy": 0.01026957668364048,
+            "gradient_norm": 2.51823091506958,
+            "loss": 5.314528465270996,
+            "seconds": 0.02026679995469749,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.014377779327332973,
+            "loss": 0.0058870152570307255,
+            "seconds": 8.09277759998804,
+            "step": 533
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.003930352162569761,
+            "loss": 0.0016037168679758906,
+            "seconds": 16.937467099982314,
+            "step": 1066
+          }
+        ],
+        "parameters": 258499,
+        "seconds": 16.93773639999563,
+        "steps": 1066,
+        "total_example_exposures": 25584
+      }
+    },
+    {
+      "cluster": "capability-8f722f34058c",
+      "selected_record_ids": [
+        "r31-train-4fc58e322b21b76d6a15",
+        "r31-train-b3c2b2776aa73ecca620",
+        "r31-train-4b3df75ff87e5d8b0362",
+        "r31-train-9c09dff890ea5e62b1fd",
+        "r31-train-27a5f1f71f1c7b37603b",
+        "r31-train-39e825baed6f4023b9ac",
+        "r31-train-48a76cc04a1efa96ade8",
+        "r31-train-5c788125f955485b48ea",
+        "r31-train-0632121f31ffdcebc0ae",
+        "r31-train-2154221ffd419e4e336b",
+        "r31-train-33647f5fdc7ab0226b93",
+        "r31-train-75d6595135cc5a91da9f",
+        "r31-train-9fe17f6570e227298ae3",
+        "r31-train-c42aaa57287fb8b3cca7",
+        "r31-train-e36be31ee713ba9e59fc",
+        "r31-train-e44b58cf67b56ad9ceb9",
+        "r31-train-50d04a11c4adca85b1b4",
+        "r31-train-86d3e65cc5aba36703d6",
+        "r31-train-a6f06a1c869b05a5fc66",
+        "r31-train-5e2b0d7aa93650b35c7b",
+        "r31-train-506786238d3d577c7704",
+        "r31-train-e0385a10d73921306a51",
+        "r31-train-fc42fa82c6263671c757",
+        "r31-train-1af6e6fb028c64445c72"
+      ],
+      "selected_rows": 24,
+      "state": {
+        "bytes": 1041600,
+        "path": "models/planning.safetensors",
+        "sha256": "4afb4165fbdf064de74d0a6bc59122cb2997ec5732c83532f9607f9322db9326"
+      },
+      "task": "planning",
+      "tokenizer": {
+        "bytes": 2950,
+        "path": "models/planning.tokenizer.json",
+        "semantic_sha256": "40559dee6117ea3be9e0b1882a07b675938599a5f899b1fe3845c5e53f59a8e4",
+        "sha256": "2a6ab6ca4c92aff56a328ec556044598ace907ce3ade3ae1f713d2747bd3185f"
+      },
+      "training": {
+        "batch_size": 24,
+        "fixed_vocabulary_size": 131,
+        "history": [
+          {
+            "accuracy": 0.0058823530562222,
+            "gradient_norm": 2.196849822998047,
+            "loss": 5.409053325653076,
+            "seconds": 0.02001179999206215,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.013369940221309662,
+            "loss": 0.006159787066280842,
+            "seconds": 8.924785799987148,
+            "step": 533
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.0038859229534864426,
+            "loss": 0.001571349217556417,
+            "seconds": 17.567931099969428,
+            "step": 1066
+          }
+        ],
+        "parameters": 258628,
+        "seconds": 17.568228399963118,
+        "steps": 1066,
+        "total_example_exposures": 25584
+      }
+    },
+    {
+      "cluster": "capability-ebc97d41c4c9",
+      "selected_record_ids": [
+        "r31-train-eae5809c268051302e44",
+        "r31-train-4b04e2aa81d6fcf339b6",
+        "r31-train-f85a1b8198f07cecdea4",
+        "r31-train-e9e89843c3bb4b10a57d",
+        "r31-train-f57aa12dd5709edf79b6",
+        "r31-train-3145960ec5c22fd5048d",
+        "r31-train-55e2f226d976a52ae08d",
+        "r31-train-7bce5aec8990874432f7",
+        "r31-train-f1bafbd953701f4ec6b4",
+        "r31-train-44b07ce6dd0720a544e0",
+        "r31-train-002f07222f146d5266c4",
+        "r31-train-c0e8cafc88888a5d3412",
+        "r31-train-0e66d2ff042537792fe4",
+        "r31-train-6f13fa12bfe3eb49b2af",
+        "r31-train-bc2df3a07df9758f0705",
+        "r31-train-df81a4ea9d4a9c3cc7f7",
+        "r31-train-4eb22c60eb6a2ec06f0e",
+        "r31-train-8c4d75216470c7e20852",
+        "r31-train-a5d3ff78cfa7075ea6ea",
+        "r31-train-b748ff8551aab051b85e",
+        "r31-train-2c61c9600c0fba9eda70",
+        "r31-train-8df18a1b57b1e08401b5",
+        "r31-train-ad5fab01a846f7b1f8cf",
+        "r31-train-fdb70dadfbacdb9e7886"
+      ],
+      "selected_rows": 24,
+      "state": {
+        "bytes": 1060692,
+        "path": "models/comparison.safetensors",
+        "sha256": "85e0fc860cedbad9d865938369897fe86845cd9be8530bf49e974d76305913dd"
+      },
+      "task": "comparison",
+      "tokenizer": {
+        "bytes": 3713,
+        "path": "models/comparison.tokenizer.json",
+        "semantic_sha256": "fe3de100f9ffe6794e9dd7b718e05d48344ebaf2eaf6b7acd00b6b919649a9af",
+        "sha256": "df7e25f37d56c6f9eed0ea9731c1248332c9107bada5129c2e31fe84be8f57b6"
+      },
+      "training": {
+        "batch_size": 24,
+        "fixed_vocabulary_size": 168,
+        "history": [
+          {
+            "accuracy": 0.007541478145867586,
+            "gradient_norm": 1.97115957736969,
+            "loss": 5.458253383636475,
+            "seconds": 0.02116339997155592,
+            "step": 1
+          },
+          {
+            "accuracy": 0.9999999403953552,
+            "gradient_norm": 0.01153239794075489,
+            "loss": 0.005447757430374622,
+            "seconds": 8.242646800004877,
+            "step": 533
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.003589313942939043,
+            "loss": 0.0016503995284438133,
+            "seconds": 16.4678472999949,
+            "step": 1066
+          }
+        ],
+        "parameters": 263401,
+        "seconds": 16.468133400019724,
+        "steps": 1066,
+        "total_example_exposures": 25584
+      }
+    },
+    {
+      "cluster": "capability-defbdf34a3d4",
+      "selected_record_ids": [
+        "r31-train-8f8ccd6a0d23672f13f9",
+        "r31-train-10529a0207a4635d05c4",
+        "r31-train-1b21722d6555e24efc41",
+        "r31-train-3fcc9432fb4188cae85a",
+        "r31-train-6c77623f25811c473da4",
+        "r31-train-8761e9c36b98ea0c799f",
+        "r31-train-ab86b53eaea6182774d9",
+        "r31-train-b66e527ca2a0c568d37c",
+        "r31-train-b7d7e412c5addc31050a",
+        "r31-train-cc90c41d94b180b294d1",
+        "r31-train-ce5d0e6903283c851065",
+        "r31-train-d7ffbf22684a2339cf99",
+        "r31-train-d9265d17fb691df9dd1c",
+        "r31-train-f969e15e3f3f709f63ac",
+        "r31-train-a7155a2da8ea99f23bd9",
+        "r31-train-b6dae64628e948f83974",
+        "r31-train-0562fcb5f502f88464b0",
+        "r31-train-38344d7ed02036222997",
+        "r31-train-3f79ba37177bde0bdace",
+        "r31-train-544d7ba6a9e5b667be6a",
+        "r31-train-6b45d22825034a2c2070",
+        "r31-train-84b842d2e5473de671ba",
+        "r31-train-952df3da5eefaf5b6fad",
+        "r31-train-c07954ceee32d6f8fd29"
+      ],
+      "selected_rows": 24,
+      "state": {
+        "bytes": 1025088,
+        "path": "models/reasoning.safetensors",
+        "sha256": "fd0eeb6b93d29e0e6f815d62a075693a824d6a5c50c871ea791a09969da457ba"
+      },
+      "task": "reasoning",
+      "tokenizer": {
+        "bytes": 2331,
+        "path": "models/reasoning.tokenizer.json",
+        "semantic_sha256": "6171c6ecd5cf104f700aef617437646f532afa466893a4ece3221cab2020189f",
+        "sha256": "2557dcc06acc34559e09c22d7a0c76e90c9c136d3ac13d8d4abcd546f944f7c8"
+      },
+      "training": {
+        "batch_size": 24,
+        "fixed_vocabulary_size": 99,
+        "history": [
+          {
+            "accuracy": 0.0036663610953837633,
+            "gradient_norm": 2.115137815475464,
+            "loss": 5.0324578285217285,
+            "seconds": 0.018215099989902228,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.011868227273225784,
+            "loss": 0.0056344736367464066,
+            "seconds": 8.106496299966238,
+            "step": 533
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.003393599297851324,
+            "loss": 0.0015070062363520265,
+            "seconds": 16.458208600000944,
+            "step": 1066
+          }
+        ],
+        "parameters": 254500,
+        "seconds": 16.45846969995182,
+        "steps": 1066,
+        "total_example_exposures": 25584
+      }
+    },
+    {
+      "cluster": "capability-68a9963f947e",
+      "selected_record_ids": [
+        "r31-train-005cf505459065205838",
+        "r31-train-02dada07a08eda171e83",
+        "r31-train-04a4da98c5163caecead",
+        "r31-train-0d9cb58afd72b10688ba",
+        "r31-train-137e29c21d3c06a2aa38",
+        "r31-train-2599088c9417045330dd",
+        "r31-train-2a72debb13d7d3dee48a",
+        "r31-train-2b7d7886fad7e1134036",
+        "r31-train-2bdd597fa3ca445b30fe",
+        "r31-train-2f75ec312f0432666f6d",
+        "r31-train-39c662e19792f470cb33",
+        "r31-train-5042442b735b0456423a",
+        "r31-train-6763114c664143ead4c7",
+        "r31-train-67b2682e6ee3cb016bb5",
+        "r31-train-6895a8f7bb8af1bcaa21",
+        "r31-train-6acbe256d8ff95f6c2fa",
+        "r31-train-706e45d8feadb00bc656",
+        "r31-train-711902ab0dedea94620d",
+        "r31-train-72b9d0d468b9d9a83416",
+        "r31-train-7de3eee31e021345f512",
+        "r31-train-91a4ea7dc16ee9c66e03",
+        "r31-train-9254dabc67542edfe44d",
+        "r31-train-a9a2642066940c98ad41",
+        "r31-train-b7ae32f73671d2501050"
+      ],
+      "selected_rows": 24,
+      "state": {
+        "bytes": 1007544,
+        "path": "models/abstention.safetensors",
+        "sha256": "de6ceb28c4d2c1533e10c8f6584dc29e473e36e474492b7f4ce952b49818117e"
+      },
+      "task": "abstention",
+      "tokenizer": {
+        "bytes": 1657,
+        "path": "models/abstention.tokenizer.json",
+        "semantic_sha256": "709dedcb27e3a287e260b3725899688f30f3cec6d57a5f96ab244661ec47cf5c",
+        "sha256": "2beaab50dbd5276d2891c6bddbdf3e079e36f8f749761cb8348d55570321aecc"
+      },
+      "training": {
+        "batch_size": 24,
+        "fixed_vocabulary_size": 65,
+        "history": [
+          {
+            "accuracy": 0.0029761905316263437,
+            "gradient_norm": 2.7920851707458496,
+            "loss": 4.773348331451416,
+            "seconds": 0.017101000004913658,
+            "step": 1
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.01237482950091362,
+            "loss": 0.00472037261351943,
+            "seconds": 8.465435600024648,
+            "step": 533
+          },
+          {
+            "accuracy": 1.0,
+            "gradient_norm": 0.005268988199532032,
+            "loss": 0.0014263303019106388,
+            "seconds": 16.963396100036334,
+            "step": 1066
+          }
+        ],
+        "parameters": 250114,
+        "seconds": 16.963659000000916,
+        "steps": 1066,
+        "total_example_exposures": 25584
+      }
+    }
+  ],
+  "verdict": "FAIL_FIELD_ADDRESSED_PLAN_DEVELOPMENT"
+}
