@@ -1,0 +1,29 @@
+{
+  "format": "abi-r67-reasoning-source-acquisition-result/1",
+  "verdict": "FAIL_R67_CLOSE_LONG_NONCE_64_TOKEN_CATALOG",
+  "promotion_eligible": false,
+  "full_abi_moonshot": "OPEN",
+  "catalog_sha256": "8a493e1765de2028d6649d57f6a4d2fed1d203212b4417ce28159e85b9d4b2ef",
+  "source_archive": {
+    "path": "phi3_reasoning_search_survey_v1.abix",
+    "sha256": "4bd324eeeb923a4fee9af755a272e78accf145418594460f1dd4342e7251b703",
+    "bytes": 5802446,
+    "manifest_sha256": "e1812447ccbc85a22b97991526388cd440e85c865a167a0d57b5627aa28591e4"
+  },
+  "source_receipt_sha256": "4720b305b5c9f81cb0ec9ec59539dee7f28e938a70256edd851119e0a31cc9ed",
+  "metrics": {
+    "rows": 2000,
+    "passing": 429,
+    "pass_rate": 0.2145,
+    "rows_at_64_token_ceiling": 1496,
+    "failed_rows_at_64_token_ceiling": 1496,
+    "failed_rows_below_ceiling": 75
+  },
+  "locked_gate": {
+    "minimum_passing": 1800,
+    "passed": false
+  },
+  "measured_failure": "Phi frequently emitted a chain explanation and exhausted the 64-token budget before the terminal class. Every 64-token-ceiling row failed.",
+  "decision": "Do not compose or train from R67. Preserve it, then test a distinct answer-constrained catalog with compact nonce symbols and the established 96-token reasoning ceiling."
+}
+
