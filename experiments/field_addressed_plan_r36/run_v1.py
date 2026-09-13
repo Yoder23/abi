@@ -55,7 +55,7 @@ def _fields(prompt: str) -> dict[str, str]:
 
 def _pointer_preferred(piece: bytes) -> bool:
     if DYNAMIC_NUMBER.fullmatch(piece):
-        return int(piece) > 10
+        return True
     return bool(CONTENT.fullmatch(piece)) and piece.lower() not in STOP and len(piece) >= 3
 
 
@@ -116,6 +116,8 @@ class FieldAddressedTokenizer:
             pointer = self._pointer(piece, source_lexemes)
             if pointer is not None:
                 actions.append(pointer)
+            elif DYNAMIC_NUMBER.fullmatch(piece) and int(piece) > 3:
+                raise ValueError(f"R36 non-structural number lacks one field pointer: {piece!r}")
             elif piece in self.lexeme_to_id:
                 actions.append(self.lexeme_to_id[piece])
             else:
@@ -185,7 +187,7 @@ def _build_task(rows: list[dict[str, Any]]) -> tuple[FieldAddressedTokenizer, li
 
     literals = {FieldAddressedTokenizer._marker(key) for key in schema}
     for row in selected:
-        literals.update(FieldAddressedTokenizer.split(row["prompt"]))
+        literals.update(piece for piece in FieldAddressedTokenizer.split(row["prompt"]) if not DYNAMIC_NUMBER.fullmatch(piece))
         source_lexemes = provisional.encode_source(row["prompt"])[1]
         for piece in FieldAddressedTokenizer.split(row["teacher_output"]):
             if provisional._pointer(piece, source_lexemes) is None:
