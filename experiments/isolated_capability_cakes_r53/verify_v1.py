@@ -284,8 +284,8 @@ def verify(
     if gates != result.get("gates"):
         raise VerificationError("R53 gate vector differs from raw recomputation")
     return {
-        "format": f"abi-{campaign_name.casefold()}-strict-negative-verification/1",
-        "verdict": f"PASS_STRICT_VERIFICATION_OF_FAILED_{campaign_name}",
+        "format": f"abi-{campaign_name.casefold()}-strict-result-verification/1",
+        "verdict": f"PASS_STRICT_VERIFICATION_OF_{campaign_name}_RESULT",
         "result_sha256": expected_result_sha256,
         "raw_sha256": expected_raw_sha256,
         "raw_rows_recomputed": len(rows),
