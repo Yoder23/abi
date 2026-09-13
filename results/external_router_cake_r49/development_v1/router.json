@@ -1,0 +1,98 @@
+{
+  "checkpoint_bytes": 41200,
+  "checkpoint_sha256": "20ae6562432cc59ece5b9cb552caaa16da4824323e62460c6c33feb0579df863",
+  "features": 1024,
+  "format": "abi-r49-sparse-label-router/1",
+  "learning_rate": 0.05,
+  "parameters": 10250,
+  "passed": true,
+  "response_targets": 0,
+  "search": {
+    "accuracy": 1.0,
+    "correct": 1400,
+    "predictions_sha256": "bb677efd3643713edb07694877211f0f8e4e794b6ad766fecaa9cc680604baa6",
+    "rotated_accuracy": 0.0,
+    "rotated_correct": 0,
+    "rows": 1400
+  },
+  "seed": 49001,
+  "steps": 300,
+  "teacher_calls": 0,
+  "trace": [
+    {
+      "accuracy": 0.11071428656578064,
+      "loss": 2.3025548458099365,
+      "step": 1
+    },
+    {
+      "accuracy": 1.0,
+      "loss": 0.021007519215345383,
+      "step": 25
+    },
+    {
+      "accuracy": 1.0,
+      "loss": 0.005996424704790115,
+      "step": 50
+    },
+    {
+      "accuracy": 1.0,
+      "loss": 0.004389607347548008,
+      "step": 75
+    },
+    {
+      "accuracy": 1.0,
+      "loss": 0.0036383946426212788,
+      "step": 100
+    },
+    {
+      "accuracy": 1.0,
+      "loss": 0.0030849562026560307,
+      "step": 125
+    },
+    {
+      "accuracy": 1.0,
+      "loss": 0.0026483978144824505,
+      "step": 150
+    },
+    {
+      "accuracy": 1.0,
+      "loss": 0.002298694336786866,
+      "step": 175
+    },
+    {
+      "accuracy": 1.0,
+      "loss": 0.0020153357181698084,
+      "step": 200
+    },
+    {
+      "accuracy": 1.0,
+      "loss": 0.0017830712022259831,
+      "step": 225
+    },
+    {
+      "accuracy": 1.0,
+      "loss": 0.0015905146719887853,
+      "step": 250
+    },
+    {
+      "accuracy": 1.0,
+      "loss": 0.0014291483676061034,
+      "step": 275
+    },
+    {
+      "accuracy": 1.0,
+      "loss": 0.0012925952905789018,
+      "step": 300
+    }
+  ],
+  "validation": {
+    "accuracy": 1.0,
+    "correct": 1400,
+    "predictions_sha256": "bb677efd3643713edb07694877211f0f8e4e794b6ad766fecaa9cc680604baa6",
+    "rotated_accuracy": 0.0,
+    "rotated_correct": 0,
+    "rows": 1400
+  },
+  "wall_seconds": 0.29800989996874705,
+  "weight_decay": 0.001
+}

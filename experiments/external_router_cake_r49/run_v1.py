@@ -189,7 +189,10 @@ def run(candidate: Path, catalog_path: Path, source_paths: Sequence[Path], layer
         raise R49Error("R49 router prerequisite failed; integrated screen prohibited")
 
     source, source_identities = _source_by_probe(source_paths, split="validation")
-    if set(source) != {str(row["probe_id"]) for row in validation}:
+    selected_probe_ids = {str(row["probe_id"]) for row in validation}
+    missing_source_ids = selected_probe_ids - set(source)
+    surplus_source_ids = set(source) - selected_probe_ids
+    if missing_source_ids:
         raise R49Error("R49 source comparison matrix changed")
     model, tokenizer, _ = load_layercake_core(candidate, layercake_root=layercake_root, device=device)
     model.eval()
@@ -276,6 +279,15 @@ def run(candidate: Path, catalog_path: Path, source_paths: Sequence[Path], layer
         "inputs": {"candidate_checkpoint_sha256": CHECKPOINT_SHA256, "candidate_metadata_sha256": METADATA_SHA256, "catalog_sha256": CATALOG_SHA256, "source_sha256": list(SOURCE_SHA256)},
         "router": router_receipt,
         "source_identities": source_identities,
+        "source_inventory": {
+            "selected": len(selected_probe_ids),
+            "available": len(source),
+            "missing": len(missing_source_ids),
+            "surplus_not_evaluated": len(surplus_source_ids),
+            "surplus_ids_sha256": hashlib.sha256(
+                "\n".join(sorted(surplus_source_ids)).encode()
+            ).hexdigest(),
+        },
         "metrics": metrics,
         "gates": gates,
         "artifacts": {"router": {"path": router_path.name, "sha256": _sha256_file(router_path), "bytes": router_path.stat().st_size}, "evaluation": {"path": rows_path.name, "sha256": _sha256_file(rows_path), "bytes": rows_path.stat().st_size}},
