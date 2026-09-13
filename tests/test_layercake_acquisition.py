@@ -44,6 +44,11 @@ def test_parent_preservation_authorizes_exact_full_core_only_on_cuda():
         trainable_scope="full_core",
         device_name="cuda",
     )
+    assert _validate_parent_logit_preservation_configuration(
+        weight=0.5,
+        trainable_scope="capability_cakes_classifier",
+        device_name="cuda",
+    )
     with pytest.raises(
         FullCoreAcquisitionError,
         match="authorized CUDA scope",
@@ -61,6 +66,15 @@ def test_parent_preservation_authorizes_exact_full_core_only_on_cuda():
             weight=2.0,
             trainable_scope="merged_english_core_lora",
             device_name="cuda",
+        )
+    with pytest.raises(
+        FullCoreAcquisitionError,
+        match="authorized CUDA scope",
+    ):
+        _validate_parent_logit_preservation_configuration(
+            weight=0.5,
+            trainable_scope="capability_cakes_classifier",
+            device_name="cpu",
         )
 
 

@@ -97,6 +97,7 @@ PARENT_LOGIT_PRESERVATION_SCOPES = frozenset(
     {
         "full_core",
         "task_cakes_classifier",
+        "capability_cakes_classifier",
         TASK_ROUTE_LAYERWISE_CONTROL_SCOPE,
     }
 )
