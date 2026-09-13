@@ -34,3 +34,9 @@ This can certify only the disclosed twelve-family supplied-content substrate.
 It is not general English, global data minimality, or superiority to LoRA and
 distillation.  A pass requires a later committed hidden replication.
 
+After source acquisition and before learner execution, the measured longest
+accepted target contained 319 lossless lexeme actions.  The package action
+ceiling is therefore fixed at 384 instead of R30's 256; model widths and layers
+remain unchanged.  This is a representation conformance boundary, not a
+quality-selected model change.
+
