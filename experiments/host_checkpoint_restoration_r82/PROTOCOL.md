@@ -33,3 +33,19 @@ The launcher only prepends the archived package to Python's module path while
 keeping this repository as the working root, so historical path-containment
 checks still apply to the real evidence tree. It imports no current ABI module
 before transferring control.
+
+## Outcome
+
+v6 reproduced exactly with checkpoint SHA-256
+`5bae16dec3a55759e92a8481ec5ee519a5ee8687ad1a6f019edc1df3225d092e`
+and was restored. The surviving July 30 executable produced historical curve
+values exactly.
+
+v21 could not be exactly reconstructed. The August 3 snapshot fails before
+training on a later explicit-null accounting change. Reinstating the earlier
+zero-accounting behavior matched historical step 1 exactly, but step 100 was
+`2.802673578262329` rather than historical `2.8020660877227783`; step 200 was
+`2.35526704788208` rather than `2.3564374446868896`. The run was interrupted
+at step 300 and produced no checkpoint. Therefore v21, v29, v41, and v51 were
+not restored, and R79 remains blocked. No approximate checkpoint may occupy a
+historical path.
