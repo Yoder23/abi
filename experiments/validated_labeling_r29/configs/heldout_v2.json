@@ -1,0 +1,77 @@
+{
+  "code_sha256": {
+    "experiments/autonomous_labeling_r27/binding.py": "3d5ff8020e9e95a88f87be537690521b8adda4ba4c05a3c2e8152e6894193458",
+    "experiments/autonomous_labeling_r27/facts.py": "5e630b58dd9746f60b588f54dfcdc7ddf5872b42fb1f5b5d2c3596ea14dc9fd0",
+    "experiments/autonomous_labeling_r27/import_run.py": "fc7da8e4742ebcc11b4da431aa72b02638f0041004b64ad8f7f71b2fe9c810ff",
+    "experiments/autonomous_labeling_r27/prepare_import.py": "e31d9128d10eb6eb94318ddcb98afb2d8120ccd321990e6c216e241491386dc8",
+    "experiments/autonomous_labeling_r27/public_qualification.py": "a7978de3e847551f51b28c379128625b48d187131a60e105494d1aee2f8469a4",
+    "experiments/autonomous_labeling_r27/source_run.py": "e800c1ec14a16705e104f3c31e897fc2b83d1473dc419767529d71f9fdc5d755",
+    "experiments/factual_semantic_r16/package.py": "a05caf3df0c8a162cb102f00e1c79fac29d52c53d13e6247921e66c05c70c682",
+    "experiments/factual_semantic_r16/public_qualification.py": "c54da43b8cf0f592247101aa8a6b6511795272802ed3ebb606aad1fd1c2e7361",
+    "experiments/foreign_capability_r14/core.py": "ade41e81c0087c9d56f484c1e7c6f8e57a726a31150a42c92b448c1d0eec4816",
+    "experiments/generative_transfer_r21/hash_assurance_binding.py": "f1915f3c95256b52edd6140a126ad2eec88d235794be2b76934faaa3b1995e8a",
+    "experiments/generative_transfer_r21/live_verify_v7.py": "576dbce8e9ec924d98fc535fbb7880f3e8c0ab633c9b062231e0cf7a25e0ff0a",
+    "experiments/generative_transfer_r21/protocol.py": "76fd0d3a45ba094511dba78357832be78996435ae4070362c4706a503f756a18",
+    "experiments/generative_transfer_r21/run.py": "d8fe7648cca96a090e48dae007604ba2839c6aa7c3717a31fc7293daf08d9e32",
+    "experiments/robust_labeling_r28/protocol.py": "36449708ee2c5fdc862b8149e9f323e5f2784a5f697a7ffd79606831a113d1d5",
+    "experiments/semantic_replication_r23/binding.py": "09bdd82021cbf31f88007b9eb23fcf62806708d8367a1064b1e2a4c8a68a1443",
+    "experiments/semantic_replication_r23/protocol.py": "8000127ceefb4fe48ba9e8f582cc966caae989e71212fcc15975e198478c8039",
+    "experiments/validated_labeling_r29/PROTOCOL.md": "b975cfc20cd27e0b75a847459a6d91719b5cbe18039e3569336bf04075883b23",
+    "experiments/validated_labeling_r29/binding.py": "fcdff0592d21be06b0ff4c0cf0ce7ae446e7014c30bdcbe82c65425f03532604",
+    "experiments/validated_labeling_r29/extraction_pivot_runner.sh": "c8ca9cd529fe173e622a1eea6892d43302da1f328e7a25cc52a4df624c070b78",
+    "experiments/validated_labeling_r29/facts.py": "dabb5636be709ba981ec4929e73f9aa575fe7d5751c0f3b83ffe37b725ef808a",
+    "experiments/validated_labeling_r29/import_run.py": "c0df890683f903d3b77f9565e4506801a05101415ac41c0187ceb2e9bef285a8",
+    "experiments/validated_labeling_r29/isolated_worker.py": "328f8e0eb7495ca72f50f4e9b9f126ef9d8603e267242db3e6df48e230c7b200",
+    "experiments/validated_labeling_r29/isolation.py": "be7c8ab9ab842e40627bd5a5d0c2060925fd24a14fe762aa1ea299ea06bec66f",
+    "experiments/validated_labeling_r29/prepare_secret.py": "eeef87cfc4b789ad5e6ad51baaa615b696d68b7444a0ccfc280c8b02e0ae8591",
+    "experiments/validated_labeling_r29/protocol.py": "59398e3c3307fd924bc12b7fb81e72b8a3498edd83916e0d19d88a1d0bcd9009",
+    "experiments/validated_labeling_r29/public_qualification.py": "42b1c61b93bc41526d15933b8106b10ad9f4df0d726b1ba28b4fba13c3698b85",
+    "experiments/validated_labeling_r29/source_run.py": "9ad856f12041ef153626f37a235462482db354a6d0c0ac03deb2e64cee00fb7d",
+    "experiments/validated_labeling_r29/verify.py": "69c064d4a6dc613dff068a0d205577144d402cd334d5ed57b2d366202cf2c6be",
+    "tests/test_validated_labeling_r29.py": "f9ad1ad65f72f45ca022eb0bf5062a48a0025da8e4aea96b396e0a9ac261e002"
+  },
+  "excluded_fact_ids": [
+    "chem-calcium",
+    "chem-copper",
+    "chem-iodine",
+    "geo-chile",
+    "geo-peru",
+    "geo-turkey",
+    "math-product",
+    "math-quotient",
+    "math-sum",
+    "python-floor",
+    "python-none-type",
+    "python-range"
+  ],
+  "facts_per_domain": 3,
+  "format": "abi-r29-heldout-config/2",
+  "heldout_seed_commitment": "1f5823c1ff54b31f93739c62daec9e5dc9094e87627f28b89f3816d4a820738a",
+  "implementation_freeze_commit": "07aef66bbe8e536f1cf1a60e4399f2809194d1c7",
+  "label_choices_supplied": 0,
+  "minimum_parse": 68,
+  "minimum_raw_answer_exact": 60,
+  "physical_extraction": {
+    "distribution": "Ubuntu",
+    "policy": "linux-pivot-root-no-network/1"
+  },
+  "public_prerequisite": {
+    "bytes": 1999,
+    "path": "results/validated_labeling_r29/public_v2/result.json",
+    "sha256": "6e88795b98b35dc5159bd829eab28b0e911edf605438660eb8432209eb635b58"
+  },
+  "r27_host_config": {
+    "bytes": 7744,
+    "path": "experiments/autonomous_labeling_r27/configs/heldout_v1.json",
+    "sha256": "b92bd956d61d8089e4b319566089c6469128387232f20f6638c4a9e4f0733697"
+  },
+  "reveal_sha256": "8332a39b178a88d926c91d762326f8eb605c3217f2c890d8dbfaf77cde63ba97",
+  "source": {
+    "max_new_tokens": 32,
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "training_steps": 0
+  },
+  "training_authorized": false,
+  "validator": "safe-stdlib-ast/1"
+}
