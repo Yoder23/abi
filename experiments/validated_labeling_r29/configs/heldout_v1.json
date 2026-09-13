@@ -1,0 +1,63 @@
+{
+  "code_sha256": {
+    "experiments/autonomous_labeling_r27/binding.py": "3d5ff8020e9e95a88f87be537690521b8adda4ba4c05a3c2e8152e6894193458",
+    "experiments/autonomous_labeling_r27/facts.py": "5e630b58dd9746f60b588f54dfcdc7ddf5872b42fb1f5b5d2c3596ea14dc9fd0",
+    "experiments/autonomous_labeling_r27/import_run.py": "fc7da8e4742ebcc11b4da431aa72b02638f0041004b64ad8f7f71b2fe9c810ff",
+    "experiments/autonomous_labeling_r27/prepare_import.py": "e31d9128d10eb6eb94318ddcb98afb2d8120ccd321990e6c216e241491386dc8",
+    "experiments/autonomous_labeling_r27/public_qualification.py": "a7978de3e847551f51b28c379128625b48d187131a60e105494d1aee2f8469a4",
+    "experiments/autonomous_labeling_r27/source_run.py": "e800c1ec14a16705e104f3c31e897fc2b83d1473dc419767529d71f9fdc5d755",
+    "experiments/factual_semantic_r16/package.py": "a05caf3df0c8a162cb102f00e1c79fac29d52c53d13e6247921e66c05c70c682",
+    "experiments/factual_semantic_r16/public_qualification.py": "c54da43b8cf0f592247101aa8a6b6511795272802ed3ebb606aad1fd1c2e7361",
+    "experiments/foreign_capability_r14/core.py": "ade41e81c0087c9d56f484c1e7c6f8e57a726a31150a42c92b448c1d0eec4816",
+    "experiments/generative_transfer_r21/hash_assurance_binding.py": "f1915f3c95256b52edd6140a126ad2eec88d235794be2b76934faaa3b1995e8a",
+    "experiments/generative_transfer_r21/live_verify_v7.py": "576dbce8e9ec924d98fc535fbb7880f3e8c0ab633c9b062231e0cf7a25e0ff0a",
+    "experiments/generative_transfer_r21/protocol.py": "76fd0d3a45ba094511dba78357832be78996435ae4070362c4706a503f756a18",
+    "experiments/generative_transfer_r21/run.py": "d8fe7648cca96a090e48dae007604ba2839c6aa7c3717a31fc7293daf08d9e32",
+    "experiments/robust_labeling_r28/protocol.py": "36449708ee2c5fdc862b8149e9f323e5f2784a5f697a7ffd79606831a113d1d5",
+    "experiments/semantic_replication_r23/binding.py": "09bdd82021cbf31f88007b9eb23fcf62806708d8367a1064b1e2a4c8a68a1443",
+    "experiments/semantic_replication_r23/protocol.py": "8000127ceefb4fe48ba9e8f582cc966caae989e71212fcc15975e198478c8039",
+    "experiments/validated_labeling_r29/PROTOCOL.md": "4709243efc4702b4203ac3c5a2db471ec366b48d112f50178ce2caa4a9f26ec4",
+    "experiments/validated_labeling_r29/binding.py": "b73fc0cc5171aa801ddfb4fe46a9b8bb61bd8afaecb7d54c83f09edf1b04f467",
+    "experiments/validated_labeling_r29/extraction_pivot_runner.sh": "c8ca9cd529fe173e622a1eea6892d43302da1f328e7a25cc52a4df624c070b78",
+    "experiments/validated_labeling_r29/facts.py": "dabb5636be709ba981ec4929e73f9aa575fe7d5751c0f3b83ffe37b725ef808a",
+    "experiments/validated_labeling_r29/import_run.py": "c0df890683f903d3b77f9565e4506801a05101415ac41c0187ceb2e9bef285a8",
+    "experiments/validated_labeling_r29/isolated_worker.py": "3c4c59942c6b8bf186f271c7a56f564d4865a382d088e9c1a0a640644a3d06a8",
+    "experiments/validated_labeling_r29/isolation.py": "be7c8ab9ab842e40627bd5a5d0c2060925fd24a14fe762aa1ea299ea06bec66f",
+    "experiments/validated_labeling_r29/prepare_secret.py": "fe72ec8a70348919a29950e313fdd9a4dbba90e44cf32532a5c8b36103c9f153",
+    "experiments/validated_labeling_r29/protocol.py": "f2f82e176513dc5a9dedbca3eeaeec3382daed7779617789011d639486c091a9",
+    "experiments/validated_labeling_r29/public_qualification.py": "e1f2381d09439c6d35316b9f31e9ead9820369a386038bcd8357b61b3363507d",
+    "experiments/validated_labeling_r29/source_run.py": "5298887411ad19928ca5d99353300180f7e41ca3608c38efb1fcffd70fc51b4d",
+    "experiments/validated_labeling_r29/verify.py": "69c064d4a6dc613dff068a0d205577144d402cd334d5ed57b2d366202cf2c6be",
+    "tests/test_validated_labeling_r29.py": "b99cc6118ab7dc8c566514084f835d14a34446a165b806db6835f12329a49b67"
+  },
+  "facts_per_domain": 3,
+  "format": "abi-r29-heldout-config/1",
+  "heldout_seed_commitment": "dda9fc78b6d70d093d92237c00d532e3204feffd75b93b137a682ee6816f772a",
+  "implementation_freeze_commit": "58dc80a40d9be3b1502ac1510550393dee01abd1",
+  "label_choices_supplied": 0,
+  "minimum_parse": 68,
+  "minimum_raw_answer_exact": 60,
+  "physical_extraction": {
+    "distribution": "Ubuntu",
+    "policy": "linux-pivot-root-no-network/1"
+  },
+  "public_prerequisite": {
+    "bytes": 1999,
+    "path": "results/validated_labeling_r29/public_v1/result.json",
+    "sha256": "d34de9ddd5fd1d49882204a38a3db73abbbba12e101a5a7bcf3fa0e3b154dc1f"
+  },
+  "r27_host_config": {
+    "bytes": 7744,
+    "path": "experiments/autonomous_labeling_r27/configs/heldout_v1.json",
+    "sha256": "b92bd956d61d8089e4b319566089c6469128387232f20f6638c4a9e4f0733697"
+  },
+  "reveal_sha256": "03546bb276d218e147efd20f726d89ebe332b4fcd439c222ceca2fddc28af2d0",
+  "source": {
+    "max_new_tokens": 32,
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "training_steps": 0
+  },
+  "training_authorized": false,
+  "validator": "safe-stdlib-ast/1"
+}
