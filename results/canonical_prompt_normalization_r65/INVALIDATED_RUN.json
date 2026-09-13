@@ -1,0 +1,27 @@
+{
+  "format": "abi-r65-invalidated-training-run/1",
+  "status": "INVALIDATED_AFTER_TRAINING_BY_FAIL_CLOSED_INVENTORY_CHECK",
+  "promotion_eligible": false,
+  "full_abi_moonshot": "OPEN",
+  "successful_optimizer_steps": 6000,
+  "checkpoint_path": "candidate_v1/model.safetensors",
+  "checkpoint_sha256": "74d9c04c539a0dd132e8988959e7b7b2126301d3a3446ea7262f261b377c49ff",
+  "metadata_path": "candidate_v1/metadata.json",
+  "metadata_sha256": "4242191b2ebf79ae0a124e668cea98efb65142d8280749c99d09808614552a76",
+  "observed_inventory": {
+    "records": 24421,
+    "declared_suffix_removed": 19337,
+    "unchanged": 5084
+  },
+  "preregistered_inventory": {
+    "suffix_removed": 24106,
+    "unchanged": 315
+  },
+  "root_cause": "The broad archive contains two exact ABI policy suffix variants. The frozen R65 normalizer declared and removed only the 19,337-row variant; 4,769 rows retained a second source-extraction policy.",
+  "second_suffix": {
+    "rows": 4769,
+    "sha256_without_leading_newlines": "07cc407a5e36a94c6471052b4a12549d19a60bdce1847c77d00cff934c88518b"
+  },
+  "decision": "Preserve but do not screen or promote this checkpoint. Repair the complete two-suffix inventory in a new preregistered run from untouched R47."
+}
+
