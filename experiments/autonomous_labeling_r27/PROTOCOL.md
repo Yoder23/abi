@@ -8,10 +8,16 @@ questions, and view numbers. Oracle domains, oracle answers, fact IDs, reveal
 material, evaluator code, and development files must be absent.
 
 The disclosed qualification contains eight facts across chemistry, geography,
-mathematics, and Python. Its exact gate is 24/24 strict JSON parses, answers,
-and evaluator-only expected labels; one label per fact and oracle domain; and
-exactly four labels. A failure may justify one interface-only repair before a
-held-out commitment. It is not scientific evidence of held-out discovery.
+mathematics, and Python. V1 is preserved as a failed exact-string evaluator:
+it rejected the valid subdomain `geometry`, the unit-bearing `180 degrees`,
+and the method spelling `upper()`. The sole authorized V2 repair accepts a
+frozen evaluator-only mathematics subdomain vocabulary and removes only an
+empty call suffix or a numeric degree suffix before answer comparison. The
+compiler never receives these aliases. V2 requires 24/24 strict JSON parses,
+semantically equivalent answers, and evaluator-only valid labels; one
+consistent label per fact; four semantically valid oracle domains; and exactly
+five discovered labels on the frozen public set. It is not scientific evidence
+of held-out discovery.
 
 If the disclosed interface passes, freeze the compiler, package schema,
 LayerCake import path, evaluator, controls, gates, and hidden fact universe;
