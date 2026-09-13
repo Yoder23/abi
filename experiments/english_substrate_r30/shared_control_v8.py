@@ -29,7 +29,11 @@ SEED = 30_501
 
 
 def _prompt(prompt: str, cluster: str) -> str:
-    return f"CAPABILITY {cluster}\n{prompt}"
+    raw = cluster.removeprefix("capability-")
+    marker = "Lcgroup" + raw.translate(str.maketrans("0123456789abcdef", "ghijklmnopabcdef"))
+    if not marker.isalpha() or marker.casefold() in prompt.casefold():
+        raise RuntimeError("R30 capability marker is not collision-free")
+    return f"{marker}\n{prompt}"
 
 
 def _prepare(rows: list[dict[str, Any]], mapping: dict[str, str], tokenizer_type: Any) -> tuple[list[dict[str, Any]], int]:

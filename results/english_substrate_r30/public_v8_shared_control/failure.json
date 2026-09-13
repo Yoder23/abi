@@ -1,0 +1,10 @@
+{
+  "format": "abi-r30-operational-failure/1",
+  "stage": "target_encoding_before_training",
+  "status": "FAIL_OPERATIONAL",
+  "exception": "ValueError: each copy lexeme must occur exactly once in the source",
+  "cause": "The first capability-prefix encoding split a hexadecimal identifier into numeric lexemes that duplicated grounded copy lexemes in some prompts.",
+  "scientific_rows_emitted": 0,
+  "package_emitted": false,
+  "repair_scope": "Replace only the capability prefix with one collision-checked alphabetic lexeme; preserve source rows, targets, architecture, seed, update count, evaluator, and gates."
+}

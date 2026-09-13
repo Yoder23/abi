@@ -34,3 +34,11 @@ Even a pass proves only that a compact shared sequence-distilled English
 realizer can host this disclosed synthetic supplied-content suite.  It does not
 prove ABI superiority, general English, autonomous labeling, or minimality.
 
+## Operational repair
+
+The first launch failed before training because the hexadecimal capability ID
+was lexed into numeric pieces that could duplicate grounded copy values.  The
+failure is preserved at `public_v8_shared_control/failure.json`.  The sole
+authorized v8b repair encodes each capability as one collision-checked
+alphabetic lexeme.  No scientific input, target, architecture, seed, compute,
+scorer, or gate changes.
