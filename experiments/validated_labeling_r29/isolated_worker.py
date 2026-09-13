@@ -26,7 +26,7 @@ def answer_key(text):
     if value.endswith(" degrees") and value[:-8].strip().replace(".", "", 1).isdigit(): value = value[:-8].strip()
     return value
 def quorum(values):
-    counts = Counter(answer_key(value) for value in values); top = max(counts.values(), default=0); winners = [value for value, count in counts.items() if count == top]
+    counts = Counter(answer_key(value) for value in values if answer_key(value)); top = max(counts.values(), default=0); winners = [value for value, count in counts.items() if count == top]
     return winners[0] if top >= 2 and len(winners) == 1 else None
 
 
@@ -58,7 +58,7 @@ def validated_expression(subject):
 
 
 def canonical_tags(rows, validated):
-    counts = Counter(row["label"] for row in rows); result = set()
+    counts = Counter(row["label"] for row in rows if row["label"]); result = set()
     for label, count in counts.items():
         mapped = LABELS.get(label)
         if mapped is not None: result.add(mapped)
@@ -81,7 +81,9 @@ def compile_packages(capsule):
     forbidden = {"oracle", "oracle_domain", "oracle_answer", "fact_id", "secret", "reveal", "success_id"}; groups = {}
     for row in bundle["records"]:
         if not isinstance(row, dict) or forbidden.intersection(row) or set(row) != {"subject", "question", "view", "answer", "label"}: raise IsolationError("forbidden or changed R29 row")
-        if not isinstance(row["subject"], str) or not row["subject"].strip() or not isinstance(row["question"], str) or not isinstance(row["view"], int) or not isinstance(row["answer"], str) or not row["answer"].strip() or not isinstance(row["label"], str) or re.fullmatch(r"[a-z]+", row["label"]) is None: raise IsolationError("invalid R29 row")
+        invalid_pair = row.get("answer") == "" and row.get("label") == ""
+        valid_pair = isinstance(row.get("answer"), str) and bool(row["answer"].strip()) and isinstance(row.get("label"), str) and re.fullmatch(r"[a-z]+", row["label"]) is not None
+        if not isinstance(row["subject"], str) or not row["subject"].strip() or not isinstance(row["question"], str) or not isinstance(row["view"], int) or not (invalid_pair or valid_pair): raise IsolationError("invalid R29 row")
         groups.setdefault(row["subject"], []).append(row)
     by_tag = {}; validation_rows = []
     for subject, rows in groups.items():

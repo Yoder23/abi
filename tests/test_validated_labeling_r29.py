@@ -45,6 +45,19 @@ def test_r29_compiler_validates_and_multitags(tmp_path):
     assert sum(row["validator_used"] for row in validation) == 2
 
 
+def test_r29_compiler_honors_two_valid_views_and_one_parse_sentinel(tmp_path):
+    write(tmp_path / "spec.json", {"format": "abi-r29-generic-validated-compiler/1", "views_per_fact": 3, "quorum": 2})
+    records = [
+        {"subject": "Chile", "question": f"capital q{view}", "view": view, "answer": answer, "label": label}
+        for view, (answer, label) in enumerate((("Santiago", "geography"), ("", ""), ("Santiago", "geography")))
+    ]
+    write(tmp_path / "source_bundle.json", {"format": "abi-r27-anonymous-free-label-observations/1", "records": records})
+    packages, validation, consumed = compile_packages(tmp_path)
+    assert consumed == 3
+    assert validation[0]["selected_answer"] == "santiago"
+    assert packages[0]["namespace"] == "teacher/geography"
+
+
 def test_r29_compiler_rejects_oracle_field(tmp_path):
     write(tmp_path / "spec.json", {"format": "abi-r29-generic-validated-compiler/1", "views_per_fact": 3, "quorum": 2})
     records = [{"subject": "x", "question": "q", "view": view, "answer": "a", "label": "domain", "oracle_answer": "a"} for view in range(3)]

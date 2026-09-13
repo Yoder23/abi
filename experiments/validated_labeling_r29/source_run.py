@@ -20,7 +20,7 @@ def run(config_path, reveal_path, output):
     if output.exists(): raise R14Error(f"immutable R29 output exists: {output}")
     config = load_config(root, config_path.resolve())
     if sha256_file(reveal_path) != config["reveal_sha256"]: raise R14Error("R29 reveal changed")
-    reveal = json.loads(reveal_path.read_text(encoding="utf-8")); facts = selected_facts(reveal["secret_hex"], config["heldout_seed_commitment"], config["facts_per_domain"]); output.mkdir(parents=True); tokenizer, model, snapshot = _load_source(config["source"]["model_id"], config["source"]["revision"]); torch.cuda.reset_peak_memory_stats(); started = time.perf_counter(); rows = []; bundle = []; tokens = 0; output_bytes = 0
+    reveal = json.loads(reveal_path.read_text(encoding="utf-8")); facts = selected_facts(reveal["secret_hex"], config["heldout_seed_commitment"], config["facts_per_domain"], config["excluded_fact_ids"]); output.mkdir(parents=True); tokenizer, model, snapshot = _load_source(config["source"]["model_id"], config["source"]["revision"]); torch.cuda.reset_peak_memory_stats(); started = time.perf_counter(); rows = []; bundle = []; tokens = 0; output_bytes = 0
     for fact in facts:
         for split, questions in (("extraction", fact.extraction_questions), ("evaluation", fact.evaluation_questions)):
             for view, question in enumerate(questions):

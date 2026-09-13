@@ -54,10 +54,13 @@ def load_config(root: Path, path: Path):
     except (OSError, json.JSONDecodeError) as exc:
         raise R14Error("R29 config unreadable") from exc
     if (
-        value.get("format") != "abi-r29-heldout-config/1"
+        value.get("format") != "abi-r29-heldout-config/2"
         or not re.fullmatch(r"[0-9a-f]{40}", str(value.get("implementation_freeze_commit", "")))
         or not re.fullmatch(r"[0-9a-f]{64}", str(value.get("heldout_seed_commitment", "")))
         or value.get("facts_per_domain") != 3
+        or not isinstance(value.get("excluded_fact_ids"), list)
+        or len(value["excluded_fact_ids"]) != 12
+        or len(set(value["excluded_fact_ids"])) != 12
         or value.get("label_choices_supplied") != 0
         or value.get("validator") != "safe-stdlib-ast/1"
         or value.get("minimum_parse") != 68

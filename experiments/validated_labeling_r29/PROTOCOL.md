@@ -34,3 +34,10 @@ and LayerCake-import pipeline, including bounded output better than the source
 where validation corrects it. It does not prove exhaustive source diagnosis,
 arbitrary-domain validation, fluent English extraction, global minimality, or
 superiority to LoRA/distillation.
+
+V1 subsequently exposed a protocol-conformance bug: its worker rejected two
+malformed observations even though 70/72 parses cleared the registered 68/72
+gate and two valid views remained. That failure is preserved. V2 changes only
+the worker's handling of an empty parse sentinel, demonstrates the repair
+posthoc on V1 rows, and prospectively queries the twelve facts in the frozen
+R29 universe that V1 never selected. No V1-selected fact is eligible for V2.
