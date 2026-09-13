@@ -1,0 +1,973 @@
+{
+  "claim_ceiling": "PUBLIC_DISCLOSED_MDL_SELECTION_NOT_GENERAL_ENGLISH_OR_ABI_SUPERIORITY",
+  "diagnosis_sha256": "ee4403f4f9b85b2d44ea92cf989adc20470858529db56ec0aa24e6c003e90a39",
+  "evidence_sha256": "976e75d23a72aaaa0215d3fe57b945e0f3dd05807cae52828b70c3be8d0d6edd",
+  "format": "abi-r31-minimum-description-selection/2",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "hidden_activations_stored": 0,
+    "logits_stored": 0,
+    "peak_cpu_rss_bytes": 951463936,
+    "peak_gpu_memory_bytes": 163568640,
+    "source_parameters_copied": 0,
+    "teacher_calls": 0,
+    "teacher_present_during_execution": false,
+    "teacher_present_during_training": false
+  },
+  "level": {
+    "elapsed_seconds": 127.85837630002061,
+    "evaluation": {
+      "bytes": 112162,
+      "path": "level-24/evaluation.jsonl",
+      "sha256": "8c0b769b366a37f5411b254d0d1da294f6c09c927dbbe1f5b4adf5abc1521f05"
+    },
+    "level": 24,
+    "metrics": {
+      "by_task": {
+        "abstention": {
+          "functional": 0,
+          "rows": 12
+        },
+        "bullets": {
+          "functional": 12,
+          "rows": 12
+        },
+        "clarification": {
+          "functional": 12,
+          "rows": 12
+        },
+        "comparison": {
+          "functional": 2,
+          "rows": 12
+        },
+        "conversation": {
+          "functional": 8,
+          "rows": 12
+        },
+        "email": {
+          "functional": 12,
+          "rows": 12
+        },
+        "planning": {
+          "functional": 10,
+          "rows": 12
+        },
+        "prose": {
+          "functional": 10,
+          "rows": 12
+        },
+        "reasoning": {
+          "functional": 6,
+          "rows": 12
+        },
+        "rewrite": {
+          "functional": 6,
+          "rows": 12
+        },
+        "summary": {
+          "functional": 11,
+          "rows": 12
+        },
+        "tone": {
+          "functional": 12,
+          "rows": 12
+        }
+      },
+      "functional": 101,
+      "removal_rejections": 12,
+      "route_exact": 144
+    },
+    "packages": [
+      {
+        "bytes": 1042854,
+        "cake_id": "abi-r31-l24-capability-1804ef5e49f4",
+        "cluster": "capability-1804ef5e49f4",
+        "parameters": 256435,
+        "relative_path": "packages/capability-1804ef5e49f4.cake",
+        "sha256": "76214b0adfddb6af6ef72af255f15c99b878e842f563a07fade4d2ef1a0e69e2",
+        "training": {
+          "batch_size": 24,
+          "example_exposures_per_row": 533.0,
+          "fixed_vocabulary_size": 114,
+          "history": [
+            {
+              "accuracy": 0.01014492753893137,
+              "gradient_norm": 3.139042377471924,
+              "loss": 5.9455885887146,
+              "seconds": 0.23797859996557236,
+              "step": 1
+            },
+            {
+              "accuracy": 1.0,
+              "gradient_norm": 0.04350278526544571,
+              "loss": 0.008973228745162487,
+              "seconds": 4.050484199950006,
+              "step": 266
+            },
+            {
+              "accuracy": 1.0,
+              "gradient_norm": 0.01352037861943245,
+              "loss": 0.0027533869724720716,
+              "seconds": 7.9118840000010096,
+              "step": 533
+            }
+          ],
+          "level_rows_per_cluster": 24,
+          "parameters": 256435,
+          "rows": 24,
+          "seconds": 7.916169099975377,
+          "steps": 533
+        }
+      },
+      {
+        "bytes": 1046254,
+        "cake_id": "abi-r31-l24-capability-660267e0e217",
+        "cluster": "capability-660267e0e217",
+        "parameters": 257209,
+        "relative_path": "packages/capability-660267e0e217.cake",
+        "sha256": "2cd9e1229ebd878a6a2fe9f24bc410a4fd6cac413c93f3bb9ac29ae81fdea93d",
+        "training": {
+          "batch_size": 24,
+          "example_exposures_per_row": 533.0,
+          "fixed_vocabulary_size": 120,
+          "history": [
+            {
+              "accuracy": 0.0,
+              "gradient_norm": 2.183159589767456,
+              "loss": 5.654371738433838,
+              "seconds": 0.01754060003440827,
+              "step": 1
+            },
+            {
+              "accuracy": 1.0,
+              "gradient_norm": 0.046134378761053085,
+              "loss": 0.02092231623828411,
+              "seconds": 3.900084400025662,
+              "step": 266
+            },
+            {
+              "accuracy": 0.9999999403953552,
+              "gradient_norm": 0.013950339518487453,
+              "loss": 0.0058917878195643425,
+              "seconds": 7.782388699997682,
+              "step": 533
+            }
+          ],
+          "level_rows_per_cluster": 24,
+          "parameters": 257209,
+          "rows": 24,
+          "seconds": 7.786624300002586,
+          "steps": 533
+        }
+      },
+      {
+        "bytes": 1163547,
+        "cake_id": "abi-r31-l24-capability-663bb9820de9",
+        "cluster": "capability-663bb9820de9",
+        "parameters": 285718,
+        "relative_path": "packages/capability-663bb9820de9.cake",
+        "sha256": "da30da09f815244f613c0dd6b928c3f088f2affd554c5ba170091bcfb2c572ae",
+        "training": {
+          "batch_size": 24,
+          "example_exposures_per_row": 533.0,
+          "fixed_vocabulary_size": 341,
+          "history": [
+            {
+              "accuracy": 0.0025396826677024364,
+              "gradient_norm": 1.6097995042800903,
+              "loss": 6.098222732543945,
+              "seconds": 0.02825580001808703,
+              "step": 1
+            },
+            {
+              "accuracy": 0.9757516980171204,
+              "gradient_norm": 0.4568499028682709,
+              "loss": 0.2082049399614334,
+              "seconds": 4.6030207999865524,
+              "step": 266
+            },
+            {
+              "accuracy": 1.0,
+              "gradient_norm": 0.023955155164003372,
+              "loss": 0.01634027250111103,
+              "seconds": 9.414902299991809,
+              "step": 533
+            }
+          ],
+          "level_rows_per_cluster": 24,
+          "parameters": 285718,
+          "rows": 24,
+          "seconds": 9.418452400015667,
+          "steps": 533
+        }
+      },
+      {
+        "bytes": 1022822,
+        "cake_id": "abi-r31-l24-capability-68a9963f947e",
+        "cluster": "capability-68a9963f947e",
+        "parameters": 251533,
+        "relative_path": "packages/capability-68a9963f947e.cake",
+        "sha256": "c6f62e1385c1a0f41d0b52dc12ffdd828e8d423c708c46f7a0bcfdac48a3910a",
+        "training": {
+          "batch_size": 24,
+          "example_exposures_per_row": 533.0,
+          "fixed_vocabulary_size": 76,
+          "history": [
+            {
+              "accuracy": 0.02377179078757763,
+              "gradient_norm": 2.599294424057007,
+              "loss": 5.075291633605957,
+              "seconds": 0.02258250000886619,
+              "step": 1
+            },
+            {
+              "accuracy": 1.0,
+              "gradient_norm": 0.04324476793408394,
+              "loss": 0.012368702329695225,
+              "seconds": 4.101173600007314,
+              "step": 266
+            },
+            {
+              "accuracy": 1.0,
+              "gradient_norm": 0.013631477952003479,
+              "loss": 0.003978139720857143,
+              "seconds": 8.395512000017334,
+              "step": 533
+            }
+          ],
+          "level_rows_per_cluster": 24,
+          "parameters": 251533,
+          "rows": 24,
+          "seconds": 8.399492800002918,
+          "steps": 533
+        }
+      },
+      {
+        "bytes": 1046092,
+        "cake_id": "abi-r31-l24-capability-6a05ac87d84b",
+        "cluster": "capability-6a05ac87d84b",
+        "parameters": 257209,
+        "relative_path": "packages/capability-6a05ac87d84b.cake",
+        "sha256": "ab672bfa14e191445a771a2e20760e1a6ab5fe8ab23060002e2f95c4fe4705f2",
+        "training": {
+          "batch_size": 24,
+          "example_exposures_per_row": 533.0,
+          "fixed_vocabulary_size": 120,
+          "history": [
+            {
+              "accuracy": 0.0,
+              "gradient_norm": 2.886915922164917,
+              "loss": 6.125155925750732,
+              "seconds": 0.021596600010525435,
+              "step": 1
+            },
+            {
+              "accuracy": 0.9972973465919495,
+              "gradient_norm": 0.0360807329416275,
+              "loss": 0.02295832708477974,
+              "seconds": 4.269345700042322,
+              "step": 266
+            },
+            {
+              "accuracy": 1.0,
+              "gradient_norm": 0.014845775440335274,
+              "loss": 0.003745612921193242,
+              "seconds": 8.551632400020026,
+              "step": 533
+            }
+          ],
+          "level_rows_per_cluster": 24,
+          "parameters": 257209,
+          "rows": 24,
+          "seconds": 8.555479900038335,
+          "steps": 533
+        }
+      },
+      {
+        "bytes": 1035013,
+        "cake_id": "abi-r31-l24-capability-77540ff46ac4",
+        "cluster": "capability-77540ff46ac4",
+        "parameters": 254500,
+        "relative_path": "packages/capability-77540ff46ac4.cake",
+        "sha256": "cb84cb06a080ab6c9d53925aa9e36800e9a1b9dfce11ac58718225d239a0c187",
+        "training": {
+          "batch_size": 24,
+          "example_exposures_per_row": 533.0,
+          "fixed_vocabulary_size": 99,
+          "history": [
+            {
+              "accuracy": 0.0,
+              "gradient_norm": 3.52482533454895,
+              "loss": 5.595498085021973,
+              "seconds": 0.01981029997114092,
+              "step": 1
+            },
+            {
+              "accuracy": 1.0,
+              "gradient_norm": 0.04200444743037224,
+              "loss": 0.009447045624256134,
+              "seconds": 4.172641599958297,
+              "step": 266
+            },
+            {
+              "accuracy": 1.0,
+              "gradient_norm": 0.01272617094218731,
+              "loss": 0.0028116970788687468,
+              "seconds": 8.37125719996402,
+              "step": 533
+            }
+          ],
+          "level_rows_per_cluster": 24,
+          "parameters": 254500,
+          "rows": 24,
+          "seconds": 8.374514999974053,
+          "steps": 533
+        }
+      },
+      {
+        "bytes": 1051863,
+        "cake_id": "abi-r31-l24-capability-781f838d49a2",
+        "cluster": "capability-781f838d49a2",
+        "parameters": 258628,
+        "relative_path": "packages/capability-781f838d49a2.cake",
+        "sha256": "772f8a92f8b5867baed6c6887f9fd077e634836eac077548d60dfe27e2483e5a",
+        "training": {
+          "batch_size": 24,
+          "example_exposures_per_row": 533.0,
+          "fixed_vocabulary_size": 131,
+          "history": [
+            {
+              "accuracy": 0.0,
+              "gradient_norm": 2.3647921085357666,
+              "loss": 5.700008392333984,
+              "seconds": 0.021360600017942488,
+              "step": 1
+            },
+            {
+              "accuracy": 1.0,
+              "gradient_norm": 0.04709621146321297,
+              "loss": 0.017059020698070526,
+              "seconds": 4.208326900028624,
+              "step": 266
+            },
+            {
+              "accuracy": 1.0,
+              "gradient_norm": 0.013233248144388199,
+              "loss": 0.00451265275478363,
+              "seconds": 8.464595000026748,
+              "step": 533
+            }
+          ],
+          "level_rows_per_cluster": 24,
+          "parameters": 258628,
+          "rows": 24,
+          "seconds": 8.468053100048564,
+          "steps": 533
+        }
+      },
+      {
+        "bytes": 1052510,
+        "cake_id": "abi-r31-l24-capability-8f722f34058c",
+        "cluster": "capability-8f722f34058c",
+        "parameters": 258757,
+        "relative_path": "packages/capability-8f722f34058c.cake",
+        "sha256": "3125c966e5433142c702d3c1ab9d4cbe9e33d65fb40e83794e570034ccaf6f34",
+        "training": {
+          "batch_size": 24,
+          "example_exposures_per_row": 533.0,
+          "fixed_vocabulary_size": 132,
+          "history": [
+            {
+              "accuracy": 0.011210761964321136,
+              "gradient_norm": 2.195950508117676,
+              "loss": 5.591925621032715,
+              "seconds": 0.018019800016190857,
+              "step": 1
+            },
+            {
+              "accuracy": 1.0,
+              "gradient_norm": 0.13044574856758118,
+              "loss": 0.021897559985518456,
+              "seconds": 4.202576100011356,
+              "step": 266
+            },
+            {
+              "accuracy": 1.0,
+              "gradient_norm": 0.02975100837647915,
+              "loss": 0.004655320663005114,
+              "seconds": 8.541556000011042,
+              "step": 533
+            }
+          ],
+          "level_rows_per_cluster": 24,
+          "parameters": 258757,
+          "rows": 24,
+          "seconds": 8.544951599964406,
+          "steps": 533
+        }
+      },
+      {
+        "bytes": 1040281,
+        "cake_id": "abi-r31-l24-capability-9c14f5ea0d08",
+        "cluster": "capability-9c14f5ea0d08",
+        "parameters": 255790,
+        "relative_path": "packages/capability-9c14f5ea0d08.cake",
+        "sha256": "7cb9b9de8988259ab15ff74ccef17a5b469eb6d6d67259ed890582c5152f6892",
+        "training": {
+          "batch_size": 24,
+          "example_exposures_per_row": 533.0,
+          "fixed_vocabulary_size": 109,
+          "history": [
+            {
+              "accuracy": 0.012141279876232147,
+              "gradient_norm": 2.6765201091766357,
+              "loss": 5.745805740356445,
+              "seconds": 0.020950399979483336,
+              "step": 1
+            },
+            {
+              "accuracy": 0.9999999403953552,
+              "gradient_norm": 0.04621158167719841,
+              "loss": 0.015582737512886524,
+              "seconds": 4.304783999978099,
+              "step": 266
+            },
+            {
+              "accuracy": 1.0,
+              "gradient_norm": 0.013454466126859188,
+              "loss": 0.004443292040377855,
+              "seconds": 8.60128399997484,
+              "step": 533
+            }
+          ],
+          "level_rows_per_cluster": 24,
+          "parameters": 255790,
+          "rows": 24,
+          "seconds": 8.606468699988909,
+          "steps": 533
+        }
+      },
+      {
+        "bytes": 1046260,
+        "cake_id": "abi-r31-l24-capability-afba74547ae1",
+        "cluster": "capability-afba74547ae1",
+        "parameters": 257209,
+        "relative_path": "packages/capability-afba74547ae1.cake",
+        "sha256": "ca1351c0a5a9aae333ee0da71f5426babd11f6382d38cc6f56208a52c140d334",
+        "training": {
+          "batch_size": 24,
+          "example_exposures_per_row": 533.0,
+          "fixed_vocabulary_size": 120,
+          "history": [
+            {
+              "accuracy": 0.00397351011633873,
+              "gradient_norm": 2.2090747356414795,
+              "loss": 5.421359062194824,
+              "seconds": 0.017639399971812963,
+              "step": 1
+            },
+            {
+              "accuracy": 1.0,
+              "gradient_norm": 0.040205638855695724,
+              "loss": 0.017495248466730118,
+              "seconds": 4.389256199996453,
+              "step": 266
+            },
+            {
+              "accuracy": 1.0,
+              "gradient_norm": 0.01222490705549717,
+              "loss": 0.004990296438336372,
+              "seconds": 8.500911200011615,
+              "step": 533
+            }
+          ],
+          "level_rows_per_cluster": 24,
+          "parameters": 257209,
+          "rows": 24,
+          "seconds": 8.504771700012498,
+          "steps": 533
+        }
+      },
+      {
+        "bytes": 1031829,
+        "cake_id": "abi-r31-l24-capability-defbdf34a3d4",
+        "cluster": "capability-defbdf34a3d4",
+        "parameters": 253726,
+        "relative_path": "packages/capability-defbdf34a3d4.cake",
+        "sha256": "87d1b2924ff6e30ae629ee5ec90a5d16aa0e75419045b150a6339cc386e2930c",
+        "training": {
+          "batch_size": 24,
+          "example_exposures_per_row": 533.0,
+          "fixed_vocabulary_size": 93,
+          "history": [
+            {
+              "accuracy": 0.009661835618317127,
+              "gradient_norm": 2.6724109649658203,
+              "loss": 5.4654340744018555,
+              "seconds": 0.030170399986673146,
+              "step": 1
+            },
+            {
+              "accuracy": 1.0,
+              "gradient_norm": 0.042754560708999634,
+              "loss": 0.014827646315097809,
+              "seconds": 3.976946799957659,
+              "step": 266
+            },
+            {
+              "accuracy": 0.9999999403953552,
+              "gradient_norm": 0.012057308107614517,
+              "loss": 0.003985641989856958,
+              "seconds": 7.969939899980091,
+              "step": 533
+            }
+          ],
+          "level_rows_per_cluster": 24,
+          "parameters": 253726,
+          "rows": 24,
+          "seconds": 7.973800899984781,
+          "steps": 533
+        }
+      },
+      {
+        "bytes": 1070600,
+        "cake_id": "abi-r31-l24-capability-ebc97d41c4c9",
+        "cluster": "capability-ebc97d41c4c9",
+        "parameters": 263143,
+        "relative_path": "packages/capability-ebc97d41c4c9.cake",
+        "sha256": "b994f60462d2bbf90d246690c930f997b4751c3dbc4f188a3106639e25d47408",
+        "training": {
+          "batch_size": 24,
+          "example_exposures_per_row": 533.0,
+          "fixed_vocabulary_size": 166,
+          "history": [
+            {
+              "accuracy": 0.013846153393387794,
+              "gradient_norm": 2.691936492919922,
+              "loss": 6.000425338745117,
+              "seconds": 0.01619379996554926,
+              "step": 1
+            },
+            {
+              "accuracy": 0.9976904988288879,
+              "gradient_norm": 0.0807904303073883,
+              "loss": 0.03192685917019844,
+              "seconds": 3.995817499991972,
+              "step": 266
+            },
+            {
+              "accuracy": 1.0,
+              "gradient_norm": 0.014171101152896881,
+              "loss": 0.005531838163733482,
+              "seconds": 7.987032099976204,
+              "step": 533
+            }
+          ],
+          "level_rows_per_cluster": 24,
+          "parameters": 263143,
+          "rows": 24,
+          "seconds": 7.992626399965957,
+          "steps": 533
+        }
+      }
+    ],
+    "verdict": "FAIL_LEVEL"
+  },
+  "prior_result_sha256": "4bee74452b1c4d6e6b7aacdbc2f896df2d75b3ba3ca12b88fab3f670b8f23cd9",
+  "selection": {
+    "order": [
+      "lossless_lexeme_count",
+      "utf8_bytes",
+      "record_id"
+    ],
+    "selected": [
+      {
+        "cluster": "capability-1804ef5e49f4",
+        "lexeme_count": 672,
+        "record_ids": [
+          "r31-train-38c562d558dd739fa38a",
+          "r31-train-cd9876d444e1bc647b1c",
+          "r31-train-5d034d6e30fb0e7fe529",
+          "r31-train-818b0da1d54d4e5ba0e0",
+          "r31-train-8d1223b240290f215bba",
+          "r31-train-94486819015ca293035d",
+          "r31-train-d8819e95c305caf88635",
+          "r31-train-fe01a01d567a03382f8f",
+          "r31-train-c8ba0aae8181e468fd23",
+          "r31-train-02d0e46844b9e02a0f99",
+          "r31-train-19a1c6ae82e63aded015",
+          "r31-train-540feab08a0bdf1e6b28",
+          "r31-train-76163dd85481c69aa476",
+          "r31-train-77d5130e888bc021d421",
+          "r31-train-854f8aa3c8ab4ddd1519",
+          "r31-train-b4837c14808bc6b87bb5",
+          "r31-train-bfcd002b2c54e0f19c2d",
+          "r31-train-f4dbd76bef5a3d435402",
+          "r31-train-393e241f9da55240bf10",
+          "r31-train-7a5d0caffa8ffb27605b",
+          "r31-train-aa11b3ea7925f13cc40e",
+          "r31-train-b9735c7eb6166ae0d25d",
+          "r31-train-c5694994ab517891dcb2",
+          "r31-train-e994cbc21cfc64d43816"
+        ],
+        "rows": 24,
+        "utf8_bytes": 1952
+      },
+      {
+        "cluster": "capability-660267e0e217",
+        "lexeme_count": 480,
+        "record_ids": [
+          "r31-train-08af8ee97395e228b0e0",
+          "r31-train-e201bcd7369580d9a37c",
+          "r31-train-5bdad0a1db2ba310e506",
+          "r31-train-a171a4eac469e880f53c",
+          "r31-train-ab1767d092a209dcc045",
+          "r31-train-c5315b31ae9f41d537ae",
+          "r31-train-afb0e78c1c755101f42b",
+          "r31-train-0c2e94b8b7fbd2be74da",
+          "r31-train-63fe878ab292c1e22659",
+          "r31-train-6b6fb8790590e3cc5064",
+          "r31-train-83f62f83c90db0d12056",
+          "r31-train-df5bbb71ead1bfd4e5b6",
+          "r31-train-f2fa50e0d172cbccca4b",
+          "r31-train-15c03e6fceefbcfef4df",
+          "r31-train-96c1cc472c78ca92af8b",
+          "r31-train-9ee6d1557079b2db5b06",
+          "r31-train-b0473cf1a40faa2be36e",
+          "r31-train-f2a39d365d05be812473",
+          "r31-train-f343a37c67eeacd79b97",
+          "r31-train-18f3dc45abaccc54c716",
+          "r31-train-65e86a48cbb0f0902a97",
+          "r31-train-9ab02e9b4e61c0af32b6",
+          "r31-train-bbe3e82eb9fa7af20033",
+          "r31-train-8dae9104c6ef20090000"
+        ],
+        "rows": 24,
+        "utf8_bytes": 1754
+      },
+      {
+        "cluster": "capability-663bb9820de9",
+        "lexeme_count": 4242,
+        "record_ids": [
+          "r31-train-12f29fa522be7fcbd277",
+          "r31-train-62a63c7deb087c6f2714",
+          "r31-train-26054c6ca16dc5345dfe",
+          "r31-train-52a005e8c130348033c8",
+          "r31-train-556111f7f035f3f0dfd0",
+          "r31-train-7e8aa657e4ac0ae065c2",
+          "r31-train-7a051fbba99611148257",
+          "r31-train-885ad30ac9ee29f91b82",
+          "r31-train-89badf9c633773fb221c",
+          "r31-train-a1e2daac440db6675230",
+          "r31-train-bda3096f8b56e9b46531",
+          "r31-train-9039ffed8575c30b98e4",
+          "r31-train-b6f72b388f7b5a0bb5a2",
+          "r31-train-5270d071d8258b0c2c6e",
+          "r31-train-dd2338b8d328686622eb",
+          "r31-train-f164aaa853bdd328c25c",
+          "r31-train-f30708893c6ecfb5f880",
+          "r31-train-8d0097046ac6c8184153",
+          "r31-train-6164d7a4ec0148084c99",
+          "r31-train-9c58ee96c7d4ea61f16a",
+          "r31-train-7ce9947ee28108d78436",
+          "r31-train-68b26e23109c59e9a626",
+          "r31-train-172322e4128624c6d1e6",
+          "r31-train-e909cefab588b293a437"
+        ],
+        "rows": 24,
+        "utf8_bytes": 12925
+      },
+      {
+        "cluster": "capability-68a9963f947e",
+        "lexeme_count": 608,
+        "record_ids": [
+          "r31-train-036130f85d0f9a079cf1",
+          "r31-train-214d1c73c87842d68ba2",
+          "r31-train-2dc657f1c48df69e0654",
+          "r31-train-3911b7f44c2da576a936",
+          "r31-train-3bf519a47992a3ed123c",
+          "r31-train-475d35609031166a627e",
+          "r31-train-50406601ce2bbeeec989",
+          "r31-train-55ed34300f10dc519b16",
+          "r31-train-58852d73f296fd270623",
+          "r31-train-84259412ef77fce5ee99",
+          "r31-train-899d731485edfdc242eb",
+          "r31-train-b2cec790baef8510c069",
+          "r31-train-b9ae3570135ba2992daf",
+          "r31-train-d49cfc1909feb76b824a",
+          "r31-train-e35e4159898ba59de054",
+          "r31-train-e8ab77256fb6bc6ae325",
+          "r31-train-005cf505459065205838",
+          "r31-train-02dada07a08eda171e83",
+          "r31-train-04a4da98c5163caecead",
+          "r31-train-0d9cb58afd72b10688ba",
+          "r31-train-137e29c21d3c06a2aa38",
+          "r31-train-2599088c9417045330dd",
+          "r31-train-2a72debb13d7d3dee48a",
+          "r31-train-2b7d7886fad7e1134036"
+        ],
+        "rows": 24,
+        "utf8_bytes": 2192
+      },
+      {
+        "cluster": "capability-6a05ac87d84b",
+        "lexeme_count": 689,
+        "record_ids": [
+          "r31-train-a741096af2dd7d6df3b3",
+          "r31-train-1cf522d3e8760898ac8e",
+          "r31-train-2e9705c4911b780fd9e3",
+          "r31-train-ab07064da1775d5d0f1f",
+          "r31-train-e4a2e892c87a559ec9eb",
+          "r31-train-e7da3fc0c2b00d3153ec",
+          "r31-train-f5a687fb0575690f69a3",
+          "r31-train-63806c50b6975c2b1bb3",
+          "r31-train-4f5a968a89e8cdb75256",
+          "r31-train-21c27932f982005b00a5",
+          "r31-train-643b654558f7c68db9a9",
+          "r31-train-94ff71104fa2d02253d0",
+          "r31-train-9ca6a9210a15c8fbe12d",
+          "r31-train-a1cfe03d3dec9324b095",
+          "r31-train-f98208fe1d14649ae05a",
+          "r31-train-13eee1e8db5cbcd760b6",
+          "r31-train-64e743f3ad88d2f01ef9",
+          "r31-train-2199ed2778a5ceefddc6",
+          "r31-train-d68e102da8ea512bde7f",
+          "r31-train-752097980d708924b236",
+          "r31-train-81f4c1d5b610d90a5fa4",
+          "r31-train-dba18144caa46f7a7316",
+          "r31-train-e4c537f34b2ed10842b0",
+          "r31-train-f115471ca9f8f70ebe4d"
+        ],
+        "rows": 24,
+        "utf8_bytes": 2239
+      },
+      {
+        "cluster": "capability-77540ff46ac4",
+        "lexeme_count": 384,
+        "record_ids": [
+          "r31-train-0362c5ea2624f867d2e6",
+          "r31-train-03707cea3ea29b300d24",
+          "r31-train-06b17e045c4baaf569a2",
+          "r31-train-11059661f400db1e6678",
+          "r31-train-198eb7bf9c91d49c7cee",
+          "r31-train-19c2171b9a99eee15a69",
+          "r31-train-1d6af4f61a6080657f21",
+          "r31-train-1dc24b130ea0af4991ad",
+          "r31-train-276bab3d6c911db55d09",
+          "r31-train-2fe49266302be8cba51e",
+          "r31-train-30899c63dd758e61e856",
+          "r31-train-3132df636f02d096c5f3",
+          "r31-train-38a824f0626d1f4900d5",
+          "r31-train-3b6102c2e3be9304b91b",
+          "r31-train-40ea7598225b9b3040fd",
+          "r31-train-4802def9e50a74abf61f",
+          "r31-train-4c0b1b43a7bf93ccc9b3",
+          "r31-train-55476c2b61abd5ddeb05",
+          "r31-train-60ae4d9ac85ee0171ef2",
+          "r31-train-6aeb96ecff431f334f85",
+          "r31-train-702309952abb67bf185f",
+          "r31-train-80559a8d9a9619cc5335",
+          "r31-train-83a95ca0f6cbc6246897",
+          "r31-train-a5ee67c05b410d595191"
+        ],
+        "rows": 24,
+        "utf8_bytes": 1080
+      },
+      {
+        "cluster": "capability-781f838d49a2",
+        "lexeme_count": 1042,
+        "record_ids": [
+          "r31-train-c5c5bf195b22aee09b77",
+          "r31-train-d2631b15df6ea0fe0616",
+          "r31-train-9a9c61194859c2a9bac5",
+          "r31-train-f531c6f92dad6e78b889",
+          "r31-train-45fd14a723d84ba06f3f",
+          "r31-train-50fd9ccb5551c347c321",
+          "r31-train-7f619ec5e335fdc8702e",
+          "r31-train-eafb90127cc0cbf69feb",
+          "r31-train-4ed236d0c2265540b044",
+          "r31-train-8b011ada02774bd73c09",
+          "r31-train-c153841c4e23a2edde8d",
+          "r31-train-e86d1dace28c32151190",
+          "r31-train-0ffce6f8efea1e1e5a55",
+          "r31-train-1a53abf5640ff2aac12e",
+          "r31-train-629857da0b9024dc7fec",
+          "r31-train-caac97c756161954853d",
+          "r31-train-d2b773059034a2ef2bd2",
+          "r31-train-43eafc83021460d1b304",
+          "r31-train-c5c57ffb33eaad083911",
+          "r31-train-33b6ce07147525dff37d",
+          "r31-train-3a49f957c140972d7c83",
+          "r31-train-586d6a798e40a8085c14",
+          "r31-train-b3eace28a75efe7bf60b",
+          "r31-train-93b9de36af0fb8e06c24"
+        ],
+        "rows": 24,
+        "utf8_bytes": 3087
+      },
+      {
+        "cluster": "capability-8f722f34058c",
+        "lexeme_count": 1327,
+        "record_ids": [
+          "r31-train-4fc58e322b21b76d6a15",
+          "r31-train-b3c2b2776aa73ecca620",
+          "r31-train-4b3df75ff87e5d8b0362",
+          "r31-train-9c09dff890ea5e62b1fd",
+          "r31-train-27a5f1f71f1c7b37603b",
+          "r31-train-48a76cc04a1efa96ade8",
+          "r31-train-0632121f31ffdcebc0ae",
+          "r31-train-33647f5fdc7ab0226b93",
+          "r31-train-75d6595135cc5a91da9f",
+          "r31-train-c42aaa57287fb8b3cca7",
+          "r31-train-e36be31ee713ba9e59fc",
+          "r31-train-39e825baed6f4023b9ac",
+          "r31-train-5c788125f955485b48ea",
+          "r31-train-2154221ffd419e4e336b",
+          "r31-train-9fe17f6570e227298ae3",
+          "r31-train-e44b58cf67b56ad9ceb9",
+          "r31-train-506786238d3d577c7704",
+          "r31-train-e0385a10d73921306a51",
+          "r31-train-50d04a11c4adca85b1b4",
+          "r31-train-86d3e65cc5aba36703d6",
+          "r31-train-a6f06a1c869b05a5fc66",
+          "r31-train-5e2b0d7aa93650b35c7b",
+          "r31-train-9b8fc850732be2435a3b",
+          "r31-train-fc42fa82c6263671c757"
+        ],
+        "rows": 24,
+        "utf8_bytes": 3547
+      },
+      {
+        "cluster": "capability-9c14f5ea0d08",
+        "lexeme_count": 891,
+        "record_ids": [
+          "r31-train-8bb95c8e20960f00c533",
+          "r31-train-f1b7c84381f76d83ec07",
+          "r31-train-83899090f31a26b0c4e1",
+          "r31-train-cbdd294a6fb998525467",
+          "r31-train-d05bd824a6a3415780a8",
+          "r31-train-52311197962232bf5579",
+          "r31-train-6966d8820a11f2673cab",
+          "r31-train-6d1f339117bf7e6b82da",
+          "r31-train-818f5fefaefdc3b7a3d3",
+          "r31-train-cde11e572383b83c8aac",
+          "r31-train-dc5dec028776809b59b3",
+          "r31-train-60517d6d369f2ddffa24",
+          "r31-train-7040d7dfa3812e88908c",
+          "r31-train-257b7387c80b288970f8",
+          "r31-train-42efbc8c19a453c3ab14",
+          "r31-train-50bee86dc372b9f1bf26",
+          "r31-train-778db67ecce100beed58",
+          "r31-train-f92e88c450659966c42f",
+          "r31-train-436e70db79adfce7a218",
+          "r31-train-8fec2b0e810db9a00dbd",
+          "r31-train-d00e48dee9b1d3a621d2",
+          "r31-train-1d5af4d5ef7a56e812c3",
+          "r31-train-29e12283ec77c06a1ab1",
+          "r31-train-5bea6a778de9a2359363"
+        ],
+        "rows": 24,
+        "utf8_bytes": 2708
+      },
+      {
+        "cluster": "capability-afba74547ae1",
+        "lexeme_count": 732,
+        "record_ids": [
+          "r31-train-2d7afbfe0267d2150842",
+          "r31-train-061720a8c1112ecc5481",
+          "r31-train-2e6226163da772614425",
+          "r31-train-6dd51107b7424e555fb6",
+          "r31-train-9f76c495799e07b89113",
+          "r31-train-c563a0491238878674a8",
+          "r31-train-c77abaceefcc02a9d49e",
+          "r31-train-dca850da1edea6d16aac",
+          "r31-train-e23099f0f94e4fd7c285",
+          "r31-train-e8ba32da4de2fd2ba182",
+          "r31-train-23b1085598fe38a48d05",
+          "r31-train-c1d40cc7545543e12cf4",
+          "r31-train-cb6e2e5f927dfa53e496",
+          "r31-train-444a0ffd9afa815a91f0",
+          "r31-train-73ea2b277366661db35e",
+          "r31-train-b740d60b84fbdd215327",
+          "r31-train-e8aeb38753c330092199",
+          "r31-train-1be470941b9a3146f4ac",
+          "r31-train-462ef214c1fe6c05fee0",
+          "r31-train-1b220df7ba2386916ca0",
+          "r31-train-2e98955df3456f3d2d9f",
+          "r31-train-3046fe9bbd5484af4aca",
+          "r31-train-dddd7b3e22e9faef574f",
+          "r31-train-e65cbb4c47cfdbdc9453"
+        ],
+        "rows": 24,
+        "utf8_bytes": 2343
+      },
+      {
+        "cluster": "capability-defbdf34a3d4",
+        "lexeme_count": 981,
+        "record_ids": [
+          "r31-train-8f8ccd6a0d23672f13f9",
+          "r31-train-10529a0207a4635d05c4",
+          "r31-train-1b21722d6555e24efc41",
+          "r31-train-3fcc9432fb4188cae85a",
+          "r31-train-6c77623f25811c473da4",
+          "r31-train-8761e9c36b98ea0c799f",
+          "r31-train-ab86b53eaea6182774d9",
+          "r31-train-b66e527ca2a0c568d37c",
+          "r31-train-b7d7e412c5addc31050a",
+          "r31-train-cc90c41d94b180b294d1",
+          "r31-train-ce5d0e6903283c851065",
+          "r31-train-d7ffbf22684a2339cf99",
+          "r31-train-d9265d17fb691df9dd1c",
+          "r31-train-f969e15e3f3f709f63ac",
+          "r31-train-a7155a2da8ea99f23bd9",
+          "r31-train-b6dae64628e948f83974",
+          "r31-train-0562fcb5f502f88464b0",
+          "r31-train-38344d7ed02036222997",
+          "r31-train-3f79ba37177bde0bdace",
+          "r31-train-544d7ba6a9e5b667be6a",
+          "r31-train-6b45d22825034a2c2070",
+          "r31-train-84b842d2e5473de671ba",
+          "r31-train-952df3da5eefaf5b6fad",
+          "r31-train-c07954ceee32d6f8fd29"
+        ],
+        "rows": 24,
+        "utf8_bytes": 2596
+      },
+      {
+        "cluster": "capability-ebc97d41c4c9",
+        "lexeme_count": 1275,
+        "record_ids": [
+          "r31-train-e9e89843c3bb4b10a57d",
+          "r31-train-0e66d2ff042537792fe4",
+          "r31-train-bc2df3a07df9758f0705",
+          "r31-train-df81a4ea9d4a9c3cc7f7",
+          "r31-train-4eb22c60eb6a2ec06f0e",
+          "r31-train-8c4d75216470c7e20852",
+          "r31-train-a5d3ff78cfa7075ea6ea",
+          "r31-train-b748ff8551aab051b85e",
+          "r31-train-f1bafbd953701f4ec6b4",
+          "r31-train-44b07ce6dd0720a544e0",
+          "r31-train-eae5809c268051302e44",
+          "r31-train-4b04e2aa81d6fcf339b6",
+          "r31-train-f85a1b8198f07cecdea4",
+          "r31-train-002f07222f146d5266c4",
+          "r31-train-c0e8cafc88888a5d3412",
+          "r31-train-2c61c9600c0fba9eda70",
+          "r31-train-8df18a1b57b1e08401b5",
+          "r31-train-76f0c8903f9a19c1de7f",
+          "r31-train-ab38765b41cbd5ca8967",
+          "r31-train-017badb96c8a21dbc9b9",
+          "r31-train-6b1ea5f6bf16e0500333",
+          "r31-train-bea5fc28c46ae70d434f",
+          "r31-train-c6edcd5ee6db63c9e079",
+          "r31-train-ad5fab01a846f7b1f8cf"
+        ],
+        "rows": 24,
+        "utf8_bytes": 3626
+      }
+    ]
+  },
+  "source_receipt_sha256": "de77a07debaac33855d9b0647b9f91454c8f2c11bbeecc96913bd72d694c67d7",
+  "source_rows_sha256": "5ff7691d67b0e8271439acfbfe25540c7d42c06918b58b9257873c6f7ca9f05d",
+  "verdict": "FAIL_PUBLIC_MDL_SELECTION"
+}
