@@ -1,0 +1,279 @@
+{
+  "artifacts": {
+    "evaluation": {
+      "bytes": 2490185,
+      "path": "evaluation.jsonl",
+      "sha256": "1aaa9f9b48c448e81c0f1038175c9056f069a5ef3e89d57f9fc95d1a4a1a0dc3"
+    },
+    "router": {
+      "bytes": 41200,
+      "path": "router.safetensors",
+      "sha256": "20ae6562432cc59ece5b9cb552caaa16da4824323e62460c6c33feb0579df863"
+    }
+  },
+  "claim_ceiling": "BOUNDED_LABELED_ROUTER_PLUS_NEURAL_HOST_NOT_UNRESTRICTED_ENGLISH_OR_MINIMALITY",
+  "evidence_sha256": "b7a1e1968479af883caf0477f5d06b50073b97c577d5d248c64abddb977f09e3",
+  "format": "abi-r49-external-router-cake/1",
+  "full_abi_moonshot": "OPEN",
+  "gates": {
+    "candidate_unchanged": true,
+    "functional": true,
+    "matrix": true,
+    "per_capability": true,
+    "physical_sparse": true,
+    "route_exact": true,
+    "router": true,
+    "source_noninferior_point": true,
+    "source_retention": true,
+    "zero_collapse": true,
+    "zero_generation_error": true
+  },
+  "inputs": {
+    "candidate_checkpoint_sha256": "65b1aae5e1aed947f2bc086281a3c7388b22a4260c562363aff2e8cc59f9661b",
+    "candidate_metadata_sha256": "9590374b0afd3184dd75bcf08d8b9f0876ed7bcc0db7f7ec1f4abf147093d1d6",
+    "catalog_sha256": "8992c7de94d3733d66f2083f96ec8d3cba31be3943afe1849f42220f33ff8d08",
+    "source_sha256": [
+      "85abf114ffd6455d589d8b55b740becd920bc2e4dd4f3f62fddffe4b1708af2c",
+      "fe9af246e28efdf57e234e9384fa04c21974f997fe753ac0975d67b1d0c6ecea"
+    ]
+  },
+  "metrics": {
+    "by_capability": {
+      "abstention": {
+        "collapses": 0,
+        "functional": 100,
+        "route_correct": 100,
+        "rows": 100,
+        "source_functional": 100
+      },
+      "cake_output_realization": {
+        "collapses": 0,
+        "functional": 75,
+        "route_correct": 100,
+        "rows": 100,
+        "source_functional": 69
+      },
+      "clarification": {
+        "collapses": 0,
+        "functional": 100,
+        "route_correct": 100,
+        "rows": 100,
+        "source_functional": 100
+      },
+      "coherence": {
+        "collapses": 0,
+        "functional": 100,
+        "route_correct": 100,
+        "rows": 100,
+        "source_functional": 100
+      },
+      "conversation": {
+        "collapses": 0,
+        "functional": 95,
+        "route_correct": 100,
+        "rows": 100,
+        "source_functional": 88
+      },
+      "domain_independent_reasoning": {
+        "collapses": 0,
+        "functional": 74,
+        "route_correct": 100,
+        "rows": 100,
+        "source_functional": 100
+      },
+      "email_drafting": {
+        "collapses": 0,
+        "functional": 79,
+        "route_correct": 100,
+        "rows": 100,
+        "source_functional": 75
+      },
+      "format_control": {
+        "collapses": 0,
+        "functional": 100,
+        "route_correct": 100,
+        "rows": 100,
+        "source_functional": 88
+      },
+      "grammar": {
+        "collapses": 0,
+        "functional": 100,
+        "route_correct": 100,
+        "rows": 100,
+        "source_functional": 100
+      },
+      "instruction_following": {
+        "collapses": 0,
+        "functional": 94,
+        "route_correct": 100,
+        "rows": 100,
+        "source_functional": 85
+      },
+      "prompt_grounding": {
+        "collapses": 0,
+        "functional": 100,
+        "route_correct": 100,
+        "rows": 100,
+        "source_functional": 100
+      },
+      "rewriting": {
+        "collapses": 0,
+        "functional": 99,
+        "route_correct": 100,
+        "rows": 100,
+        "source_functional": 71
+      },
+      "summarization": {
+        "collapses": 0,
+        "functional": 94,
+        "route_correct": 100,
+        "rows": 100,
+        "source_functional": 83
+      },
+      "tone_control": {
+        "collapses": 0,
+        "functional": 67,
+        "route_correct": 100,
+        "rows": 100,
+        "source_functional": 61
+      }
+    },
+    "candidate_minus_source": {
+      "lower_95": 0.02214285714285714,
+      "point": 0.04071428571428572,
+      "replicates": 5000,
+      "upper_95": 0.05928571428571429
+    },
+    "collapses": 0,
+    "functional": 1277,
+    "generation_errors": 0,
+    "generation_wall_seconds": 180.66200780001236,
+    "physical_sparse_rows": 1400,
+    "route_correct": 1400,
+    "rows": 1400,
+    "source_functional": 1220,
+    "source_passing_regressions": 61,
+    "source_retention": 0.95
+  },
+  "planner_calls": 0,
+  "router": {
+    "checkpoint_bytes": 41200,
+    "checkpoint_sha256": "20ae6562432cc59ece5b9cb552caaa16da4824323e62460c6c33feb0579df863",
+    "features": 1024,
+    "format": "abi-r49-sparse-label-router/1",
+    "learning_rate": 0.05,
+    "parameters": 10250,
+    "passed": true,
+    "response_targets": 0,
+    "search": {
+      "accuracy": 1.0,
+      "correct": 1400,
+      "predictions_sha256": "bb677efd3643713edb07694877211f0f8e4e794b6ad766fecaa9cc680604baa6",
+      "rotated_accuracy": 0.0,
+      "rotated_correct": 0,
+      "rows": 1400
+    },
+    "seed": 49001,
+    "steps": 300,
+    "teacher_calls": 0,
+    "trace": [
+      {
+        "accuracy": 0.11071428656578064,
+        "loss": 2.3025548458099365,
+        "step": 1
+      },
+      {
+        "accuracy": 1.0,
+        "loss": 0.021007519215345383,
+        "step": 25
+      },
+      {
+        "accuracy": 1.0,
+        "loss": 0.005996424704790115,
+        "step": 50
+      },
+      {
+        "accuracy": 1.0,
+        "loss": 0.004389607347548008,
+        "step": 75
+      },
+      {
+        "accuracy": 1.0,
+        "loss": 0.0036383946426212788,
+        "step": 100
+      },
+      {
+        "accuracy": 1.0,
+        "loss": 0.0030849562026560307,
+        "step": 125
+      },
+      {
+        "accuracy": 1.0,
+        "loss": 0.0026483978144824505,
+        "step": 150
+      },
+      {
+        "accuracy": 1.0,
+        "loss": 0.002298694336786866,
+        "step": 175
+      },
+      {
+        "accuracy": 1.0,
+        "loss": 0.0020153357181698084,
+        "step": 200
+      },
+      {
+        "accuracy": 1.0,
+        "loss": 0.0017830712022259831,
+        "step": 225
+      },
+      {
+        "accuracy": 1.0,
+        "loss": 0.0015905146719887853,
+        "step": 250
+      },
+      {
+        "accuracy": 1.0,
+        "loss": 0.0014291483676061034,
+        "step": 275
+      },
+      {
+        "accuracy": 1.0,
+        "loss": 0.0012925952905789018,
+        "step": 300
+      }
+    ],
+    "validation": {
+      "accuracy": 1.0,
+      "correct": 1400,
+      "predictions_sha256": "bb677efd3643713edb07694877211f0f8e4e794b6ad766fecaa9cc680604baa6",
+      "rotated_accuracy": 0.0,
+      "rotated_correct": 0,
+      "rows": 1400
+    },
+    "wall_seconds": 0.3376247000414878,
+    "weight_decay": 0.001
+  },
+  "source_identities": [
+    {
+      "archive_sha256": "85abf114ffd6455d589d8b55b740becd920bc2e4dd4f3f62fddffe4b1708af2c",
+      "manifest_sha256": "e9c6508d5c5c9cefe2ed637cbc938e7bbfbe393c3c5c95d7625e2d8e5322671d",
+      "path_at_evaluation": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_moonshot\\segregated_acquisition_v3\\phi3-natural-v2-search-validation-survey.abix"
+    },
+    {
+      "archive_sha256": "fe9af246e28efdf57e234e9384fa04c21974f997fe753ac0975d67b1d0c6ecea",
+      "manifest_sha256": "f78c84f30d1741fdce483ea0d689f2aef4bf36f3536d1de085a7c2d3a5e07055",
+      "path_at_evaluation": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_moonshot\\segregated_acquisition_v3\\phi3-natural-v3-abstention-coherence-survey.abix"
+    }
+  ],
+  "source_inventory": {
+    "available": 1600,
+    "missing": 0,
+    "selected": 1400,
+    "surplus_ids_sha256": "f635223c4e16c1007ebb13166c3e5f4a8aeb33fd0f086be20b58454f2b3467d6",
+    "surplus_not_evaluated": 200
+  },
+  "symbolic_output_calls": 0,
+  "teacher_present_at_inference": false,
+  "verdict": "PASS_R49_EXTERNAL_ROUTER_CAKE"
+}
