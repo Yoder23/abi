@@ -367,6 +367,46 @@ def test_prompt_overlap_loss_remains_finite_without_runtime_copying():
     assert logits.grad is not None
 
 
+def test_balanced_terminal_loss_gives_eos_half_of_record_mass():
+    labels = torch.tensor([[-100, 3, 4, 9]])
+    input_ids = torch.tensor([[1, 3, 4, 9]])
+    logits = torch.full((1, 4, 11), -8.0)
+    logits[0, 0, 3] = 8.0
+    logits[0, 1, 4] = 8.0
+    logits[0, 2, 9] = -8.0
+    logits[0, 2, 8] = 8.0
+    balanced = _equal_record_prompt_overlap_ce(
+        logits,
+        labels,
+        input_ids,
+        torch.tensor([1]),
+        overlap_weight=0.0,
+        terminal_token_id=9,
+        balance_terminal=True,
+    )
+    ordinary = _equal_record_prompt_overlap_ce(
+        logits,
+        labels,
+        input_ids,
+        torch.tensor([1]),
+        overlap_weight=0.0,
+    )
+    assert balanced > ordinary
+    assert balanced.item() > 7.0
+
+
+def test_balanced_terminal_loss_requires_terminal_id():
+    with pytest.raises(ValueError, match="terminal_token_id"):
+        _equal_record_prompt_overlap_ce(
+            torch.randn(1, 3, 7),
+            torch.tensor([[-100, 2, 3]]),
+            torch.tensor([[1, 2, 3]]),
+            torch.tensor([1]),
+            overlap_weight=0.0,
+            balance_terminal=True,
+        )
+
+
 def test_scheduled_sampling_keeps_teacher_targets_for_generated_prefix():
     class Tokenizer:
         pad_token_id = 0

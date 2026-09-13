@@ -1487,8 +1487,15 @@ def _equal_record_prompt_overlap_ce(
     prompt_lengths: torch.Tensor,
     *,
     overlap_weight: float,
+    terminal_token_id: int | None = None,
+    balance_terminal: bool = False,
 ) -> torch.Tensor:
-    """Increase supervision for response tokens carried by the supplied prompt."""
+    """Weight prompt-carried content and, optionally, sequence termination."""
+
+    if balance_terminal and terminal_token_id is None:
+        raise ValueError(
+            "terminal_token_id is required when terminal balancing is enabled"
+        )
 
     shifted_logits = logits[:, :-1]
     shifted_labels = labels[:, 1:]
@@ -1510,6 +1517,27 @@ def _equal_record_prompt_overlap_ce(
         weights = active.to(losses.dtype) + (
             overlap.to(losses.dtype) * float(overlap_weight)
         )
+        if balance_terminal:
+            terminal = active & targets.eq(int(terminal_token_id))
+            terminal_count = int(terminal.sum().item())
+            if terminal_count > 1:
+                raise ValueError(
+                    "each supervised record may contain at most one terminal token"
+                )
+            if terminal_count == 1:
+                content_weights = weights * (~terminal).to(weights.dtype)
+                terminal_loss = losses[index][terminal].mean()
+                if bool(content_weights.sum() > 0):
+                    content_loss = (
+                        (losses[index] * content_weights).sum()
+                        / content_weights.sum()
+                    )
+                    weighted_records.append(
+                        0.5 * content_loss + 0.5 * terminal_loss
+                    )
+                else:
+                    weighted_records.append(terminal_loss)
+                continue
         weighted_records.append(
             (losses[index] * weights).sum() / weights.sum().clamp_min(1)
         )

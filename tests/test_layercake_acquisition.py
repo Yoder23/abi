@@ -26,6 +26,7 @@ from abi.layercake_full_core_acquisition import (
     _select_trainable_parameters,
     _same_tokenizer_topk_distillation_loss,
     _same_tokenizer_representation_distillation_loss,
+    _terminal_supervision_inventory,
     _parent_layercake_topk_preservation_loss,
     _validate_parent_logit_preservation_configuration,
     _balanced_prompt_identity_supervision_loss,
@@ -36,6 +37,42 @@ from abi.layercake_full_core_acquisition import (
     TASK_ROUTE_PROMPT_IDENTITY_SCOPE,
 )
 from abi.layercake_host import PromptIdentityBridge
+
+
+def test_terminal_supervision_inventory_accounts_truncated_responses():
+    class Tokenizer:
+        eos_token_id = 9
+
+        @staticmethod
+        def encode(text):
+            return [ord(char) % 11 for char in text]
+
+    inventory = _terminal_supervision_inventory(
+        Tokenizer(),
+        [
+            {
+                "record_id": "short",
+                "capability": "grammar",
+                "prompt": "a",
+                "response": "b",
+            },
+            {
+                "record_id": "truncated",
+                "capability": "grammar",
+                "prompt": "a",
+                "response": "bcde",
+            },
+        ],
+        max_tokens=5,
+    )
+    assert inventory["rows_with_terminal_target"] == 1
+    assert (
+        inventory["rows_without_terminal_target_due_to_response_truncation"]
+        == 1
+    )
+    assert inventory["rows_with_terminal_target_by_capability"] == {
+        "grammar": 1
+    }
 
 
 def test_parent_preservation_authorizes_exact_full_core_only_on_cuda():

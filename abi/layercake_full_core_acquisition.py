@@ -1657,6 +1657,54 @@ def _filter_context_compatible_rows(
     }
 
 
+def _terminal_supervision_inventory(
+    tokenizer,
+    rows: Sequence[Mapping[str, Any]],
+    *,
+    max_tokens: int,
+) -> dict[str, Any]:
+    """Account which immutable responses expose EOS inside the train window."""
+
+    observed: list[str] = []
+    truncated: list[str] = []
+    observed_by_capability: Counter[str] = Counter()
+    truncated_by_capability: Counter[str] = Counter()
+    for row in rows:
+        prompt_tokens = len(tokenizer.encode(str(row["prompt"]) + "\n"))
+        response_tokens = len(tokenizer.encode(str(row["response"])))
+        record_id = str(row["record_id"])
+        capability = str(row["capability"])
+        if prompt_tokens + response_tokens < max_tokens:
+            observed.append(record_id)
+            observed_by_capability[capability] += 1
+        else:
+            truncated.append(record_id)
+            truncated_by_capability[capability] += 1
+    observed.sort()
+    truncated.sort()
+    return {
+        "policy": "equal_content_and_eos_mass_only_when_eos_is_in_context",
+        "terminal_token_id": int(tokenizer.eos_token_id),
+        "record_count": len(rows),
+        "rows_with_terminal_target": len(observed),
+        "rows_without_terminal_target_due_to_response_truncation": len(
+            truncated
+        ),
+        "rows_with_terminal_target_by_capability": dict(
+            sorted(observed_by_capability.items())
+        ),
+        "rows_without_terminal_target_by_capability": dict(
+            sorted(truncated_by_capability.items())
+        ),
+        "terminal_record_ids_sha256": hashlib.sha256(
+            "\n".join(observed).encode("utf-8")
+        ).hexdigest(),
+        "truncated_record_ids_sha256": hashlib.sha256(
+            "\n".join(truncated).encode("utf-8")
+        ).hexdigest(),
+    }
+
+
 def _apply_target_control(
     rows: Sequence[Mapping[str, Any]],
     *,
@@ -1748,6 +1796,7 @@ def train_full_core(
     cake_learning_rate: float = 1.0e-4,
     classifier_loss_weight: float = 0.25,
     prompt_overlap_loss_weight: float = 1.0,
+    balanced_terminal_loss: bool = False,
     max_tokens: int = 256,
     recovery_start_step: int = 400,
     recovery_interval: int = 8,
@@ -1800,6 +1849,13 @@ def train_full_core(
         raise FullCoreAcquisitionError("learning rates must be positive")
     if classifier_loss_weight < 0 or prompt_overlap_loss_weight < 0:
         raise FullCoreAcquisitionError("loss weights must be non-negative")
+    if balanced_terminal_loss and (
+        trainable_scope != "deep_capability_adapter_cakes"
+        or device_name != "cuda"
+    ):
+        raise FullCoreAcquisitionError(
+            "balanced terminal loss is bound to CUDA deep-capability-adapter training"
+        )
     if prompt_identity_loss_weight < 0:
         raise FullCoreAcquisitionError(
             "prompt-identity loss weight must be non-negative"
@@ -2643,6 +2699,32 @@ def train_full_core(
         anchor_context_compatibility[
             "parent_tokenizer_sha256"
         ] = context_compatibility["parent_tokenizer_sha256"]
+    terminal_supervision = {
+        "enabled": balanced_terminal_loss,
+        "main": _terminal_supervision_inventory(
+            tokenizer,
+            rows,
+            max_tokens=max_tokens,
+        ),
+        "anchor": (
+            _terminal_supervision_inventory(
+                tokenizer,
+                anchor_rows,
+                max_tokens=max_tokens,
+            )
+            if anchor_rows
+            else None
+        ),
+        "general_preservation": (
+            _terminal_supervision_inventory(
+                tokenizer,
+                general_rows,
+                max_tokens=max_tokens,
+            )
+            if general_rows
+            else None
+        ),
+    }
     model.train()
     student_block_capture: list[torch.Tensor | None] = [
         None for _ in model.transformer.h
@@ -2912,6 +2994,8 @@ def train_full_core(
                     ids,
                     prompt_lengths,
                     overlap_weight=prompt_overlap_loss_weight,
+                    terminal_token_id=tokenizer.eos_token_id,
+                    balance_terminal=balanced_terminal_loss,
                 )
                 classifier_loss = F.cross_entropy(
                     result["task_logits"], routes
@@ -3077,6 +3161,8 @@ def train_full_core(
                             anchor_ids,
                             anchor_prompt_lengths,
                             overlap_weight=prompt_overlap_loss_weight,
+                            terminal_token_id=tokenizer.eos_token_id,
+                            balance_terminal=balanced_terminal_loss,
                         )
                     )
                     anchor_classifier_loss = F.cross_entropy(
@@ -3150,6 +3236,8 @@ def train_full_core(
                             general_ids,
                             general_prompt_lengths,
                             overlap_weight=prompt_overlap_loss_weight,
+                            terminal_token_id=tokenizer.eos_token_id,
+                            balance_terminal=balanced_terminal_loss,
                         )
                     )
                     general_classifier_loss = F.cross_entropy(
@@ -4023,6 +4111,11 @@ def train_full_core(
             "cake_learning_rate": cake_learning_rate,
             "classifier_loss_weight": classifier_loss_weight,
             "prompt_overlap_loss_weight": prompt_overlap_loss_weight,
+            "balanced_terminal_loss": balanced_terminal_loss,
+            "terminal_loss_fraction_when_observed": (
+                0.5 if balanced_terminal_loss else 0.0
+            ),
+            "terminal_supervision_inventory": terminal_supervision,
             "source_distillation_weight": (
                 source_distillation_weight
                 if source_distillation_enabled
@@ -4251,6 +4344,14 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument("--cake-learning-rate", type=float, default=1.0e-4)
     parser.add_argument("--classifier-loss-weight", type=float, default=0.25)
     parser.add_argument("--prompt-overlap-loss-weight", type=float, default=1.0)
+    parser.add_argument(
+        "--balanced-terminal-loss",
+        action="store_true",
+        help=(
+            "Give EOS and non-EOS response content equal per-record loss mass "
+            "when EOS is present inside the training context."
+        ),
+    )
     parser.add_argument("--max-tokens", type=int, default=256)
     parser.add_argument("--recovery-start-step", type=int, default=400)
     parser.add_argument("--recovery-interval", type=int, default=8)
@@ -4357,6 +4458,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         cake_learning_rate=args.cake_learning_rate,
         classifier_loss_weight=args.classifier_loss_weight,
         prompt_overlap_loss_weight=args.prompt_overlap_loss_weight,
+        balanced_terminal_loss=args.balanced_terminal_loss,
         max_tokens=args.max_tokens,
         recovery_start_step=args.recovery_start_step,
         recovery_interval=args.recovery_interval,
