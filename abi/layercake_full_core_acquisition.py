@@ -1572,6 +1572,7 @@ def _general_preservation_rows(path: Path) -> list[dict[str, Any]]:
             raise FullCoreAcquisitionError(
                 f"general preservation task is unmapped: {task}"
             )
+        teacher_tokens = row.get("teacher_tokens")
         prepared.append(
             {
                 "record_id": f"general-preservation:{row['id']}",
@@ -1579,7 +1580,12 @@ def _general_preservation_rows(path: Path) -> list[dict[str, Any]]:
                 "route": CAPABILITY_TO_ROUTE[capability],
                 "prompt": str(row["prompt"]),
                 "response": str(row["response"]),
-                "teacher_tokens": int(row.get("teacher_tokens", 0)),
+                # Historical knowledge-light curricula use explicit JSON null
+                # when no teacher-token accounting applies. Preserve the same
+                # meaning as an absent field instead of calling int(None).
+                "teacher_tokens": (
+                    0 if teacher_tokens is None else int(teacher_tokens)
+                ),
                 "provenance": str(
                     row.get(
                         "provenance",

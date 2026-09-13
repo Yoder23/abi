@@ -1152,6 +1152,30 @@ def test_general_preservation_rows_bind_hash_checked_tasks_to_routes(
     ]
 
 
+def test_general_preservation_rows_treat_explicit_null_teacher_tokens_as_zero(
+    tmp_path,
+):
+    import hashlib
+    import json
+
+    prompt = "Summarize the supplied text."
+    response = "A concise supplied-text summary."
+    row = {
+        "id": "summary-null-accounting-1",
+        "split": "train",
+        "task": "summarization",
+        "prompt": prompt,
+        "prompt_sha256": hashlib.sha256(prompt.encode()).hexdigest(),
+        "response": response,
+        "response_sha256": hashlib.sha256(response.encode()).hexdigest(),
+        "teacher_tokens": None,
+    }
+    curriculum = tmp_path / "curriculum-null.jsonl"
+    curriculum.write_text(json.dumps(row) + "\n", encoding="utf-8")
+    prepared = _general_preservation_rows(curriculum)
+    assert prepared[0]["teacher_tokens"] == 0
+
+
 def test_oracle_general_rows_keep_direct_capability_route_and_accounting(tmp_path):
     import hashlib
     import json
