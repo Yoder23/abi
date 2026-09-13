@@ -1,0 +1,119 @@
+{
+  "artifacts": {
+    "paired_quality": {
+      "bytes": 174383,
+      "path": "paired_quality.jsonl",
+      "sha256": "035754c861b6fee0589ddaac4ec9fc9679b0929719da903a05f35854471c1e00"
+    }
+  },
+  "claim_ceiling": "SAME_PROMPT_BOUNDED_FUNCTIONAL_TEACHER_COMPARISON_NOT_HUMAN_OR_UNRESTRICTED_ENGLISH_PARITY",
+  "evidence_sha256": "d001b465360f2941fa905763635a66b12e83c0ef63ca3ba3d2ae5c795171c9fe",
+  "format": "abi-r45-teacher-relative-quality/1",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "candidate_output_bytes": 21940,
+    "candidate_regenerated": false,
+    "candidate_training_steps": 0,
+    "cuda_allocated_after_cleanup": 8519680,
+    "elapsed_seconds": 384.5191632999922,
+    "external_hardware_used": false,
+    "peak_cpu_rss_bytes": 2172575744,
+    "peak_cuda_memory_bytes": 15316461568,
+    "raw_prompt_bytes": 32906,
+    "rendered_input_tokens": 15412,
+    "source_generation_seconds": 374.58446440048283,
+    "source_load_seconds": 9.670403600030113,
+    "source_model_deleted_after_capture": true,
+    "teacher_calls": 144,
+    "teacher_generated_tokens": 7001,
+    "teacher_output_bytes": 24671
+  },
+  "inputs": {
+    "candidate_package_sha256": "6ccb115de59e71b1c70efcfe2b5a1673b88d8f1478fb0059d8577ef5e2b6e6a4",
+    "evaluation_sha256": "85314b258b3f46edd42da24c717f1104ac79b525dba70aff1412d6184e3a3845",
+    "fixture_sha256": "9409797e98fa771a3bbd62715bf33477f5db0db4e0c55b822b89805cb2ddf5c2",
+    "r44_result_sha256": "41f8625fba5b73538a572bb5bc9fe059da83f605b7933201909d76141176eec8",
+    "system_sha256": "6d5f78c347dd548eb592b2d70c8b65a2066d75c9f379e77ca45472c87b682e08"
+  },
+  "metrics": {
+    "by_task": {
+      "abstention": {
+        "candidate_functional": 12,
+        "rows": 12,
+        "teacher_functional": 6
+      },
+      "bullets": {
+        "candidate_functional": 12,
+        "rows": 12,
+        "teacher_functional": 12
+      },
+      "clarification": {
+        "candidate_functional": 12,
+        "rows": 12,
+        "teacher_functional": 12
+      },
+      "comparison": {
+        "candidate_functional": 12,
+        "rows": 12,
+        "teacher_functional": 8
+      },
+      "conversation": {
+        "candidate_functional": 12,
+        "rows": 12,
+        "teacher_functional": 11
+      },
+      "email": {
+        "candidate_functional": 10,
+        "rows": 12,
+        "teacher_functional": 11
+      },
+      "planning": {
+        "candidate_functional": 12,
+        "rows": 12,
+        "teacher_functional": 2
+      },
+      "prose": {
+        "candidate_functional": 12,
+        "rows": 12,
+        "teacher_functional": 12
+      },
+      "reasoning": {
+        "candidate_functional": 12,
+        "rows": 12,
+        "teacher_functional": 0
+      },
+      "rewrite": {
+        "candidate_functional": 12,
+        "rows": 12,
+        "teacher_functional": 5
+      },
+      "summary": {
+        "candidate_functional": 12,
+        "rows": 12,
+        "teacher_functional": 8
+      },
+      "tone": {
+        "candidate_functional": 11,
+        "rows": 12,
+        "teacher_functional": 7
+      }
+    },
+    "candidate_functional": 141,
+    "candidate_improvements": 49,
+    "candidate_noncollapsed": 144,
+    "candidate_regressions": 2,
+    "paired_rows": 144,
+    "teacher_functional": 94,
+    "teacher_noncollapsed": 144
+  },
+  "source": {
+    "attempts_per_prompt": 1,
+    "generation": "greedy",
+    "maximum_new_tokens": 192,
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "parameters": 7615616512,
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "snapshot": "C:\\Users\\samyo\\.cache\\huggingface\\hub\\models--Qwen--Qwen2-7B-Instruct\\snapshots\\f2826a00ceef68f0f2b946d945ecc0477ce4450c"
+  },
+  "verdict": "PASS_R45_BOUNDED_TEACHER_RELATIVE_QUALITY"
+}
