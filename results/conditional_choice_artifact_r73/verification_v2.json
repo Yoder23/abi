@@ -1,0 +1,36 @@
+{
+  "archive_sha256": "3450f510430ab4402b9a052d1a6b928f594bf2b759abc6e3c5baa872e8758b54",
+  "authoritative_selected_output_tokens": 12588,
+  "catalog_sha256": "d179445c92a649f5ab6587c1aa71e00e7c622c326f8ea84438497542c00c2b47",
+  "claim_boundary": "Exact verification of one bounded, source-weight-selected reasoning artifact. This is not a general-English or deployed-host result.",
+  "complete_training_consumer_rows": 2098,
+  "conditional_scores_stored": 6300,
+  "evidence_sha256": "cf02f79f1473e76f9cb28860a858570ad7a1caa24b146aefcca47789e35413e1",
+  "family_passing": {
+    "0": 300,
+    "1": 300,
+    "2": 300,
+    "3": 298,
+    "4": 300,
+    "5": 300,
+    "6": 300
+  },
+  "format": "abi-conditional-choice-source-artifact-verification/2",
+  "full_abi_moonshot": "OPEN",
+  "host_certified": false,
+  "host_consumer_rows_revalidated": 2098,
+  "hostile_zero_margin_mutation_rejected": true,
+  "layercake_training_performed": false,
+  "packaged_passing_rows": 2098,
+  "raw_scores_sha256": "5c8f8a655800612f495b20b63d3bf3dcf82dbef49c5a6eb0f22659a3f47d4e4b",
+  "receipt_file_sha256": "5c322d737882cb7c3dfd463818a7b3db0486c4e374ec341120c45f229e9b8b1a",
+  "requested_english_capabilities": [
+    "domain_independent_reasoning"
+  ],
+  "source_evidence_sha256": "81f25c0725a73f719b4e242f29ec93fcd49bdc8fc212e6f6bc78e4bc64c4005f",
+  "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310",
+  "source_rows": 2100,
+  "teacher_generated_rows": 0,
+  "v1_training_authorized": false,
+  "verdict": "PASS_R73_V2_COMPLETE_TRAINING_CONSUMER"
+}
