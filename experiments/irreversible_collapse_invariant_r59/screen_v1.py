@@ -11,6 +11,7 @@ from typing import Any, Sequence
 
 import torch
 
+from abi.layercake_host import _truncate_novel_lexical_repetition
 from experiments.broad_payload_reconstruction_r51 import screen_v1a as common
 from experiments.deep_sparse_adapters_r55 import screen_v1 as r55
 from experiments.external_router_cake_r49.run_v1 import R49Error
@@ -68,6 +69,20 @@ def _irreversible_collapse_reason(
     return None
 
 
+def _maximum_identical_token_run(token_ids: Sequence[int]) -> int:
+    maximum_run = 0
+    current_run = 0
+    previous = None
+    for token in token_ids:
+        if token == previous:
+            current_run += 1
+        else:
+            previous = token
+            current_run = 1
+        maximum_run = max(maximum_run, current_run)
+    return maximum_run
+
+
 @torch.inference_mode()
 def _generate(
     model: Any,
@@ -104,16 +119,12 @@ def _generate(
             telemetry["language_model_eos_stops"] += 1
             break
         candidate = generated + [token]
-        candidate_output = tokenizer.decode(
-            candidate,
-            skip_special_tokens=True,
-            clean_up_tokenization_spaces=False,
-        )
-        reason = _irreversible_collapse_reason(candidate, candidate_output, prompt)
         telemetry["candidate_transitions_checked"] += 1
-        if reason is not None:
+        if _maximum_identical_token_run(candidate) >= MAXIMUM_IDENTICAL_TOKEN_RUN:
             telemetry["rejected_boundary_tokens"] += 1
-            telemetry["rejections_by_condition"][reason] += 1
+            telemetry["rejections_by_condition"][
+                "maximum_identical_token_run"
+            ] += 1
             break
         generated.append(token)
         telemetry["accepted_tokens"] += 1
@@ -136,6 +147,15 @@ def _generate(
         skip_special_tokens=True,
         clean_up_tokenization_spaces=False,
     )
+    baseline_output = _truncate_novel_lexical_repetition(
+        output,
+        prompt,
+        threshold=1,
+    )
+    if baseline_output != output:
+        telemetry["inherited_r55_lexical_truncations"] += 1
+        output = baseline_output
+        generated = tokenizer.encode(output)
     return output, generated, elapsed, physical
 
 
@@ -155,7 +175,7 @@ def main() -> None:
     candidate = args.candidate.resolve()
     r55._preflight(candidate)
     telemetry: dict[str, Any] = {
-        "algorithm": "terminate_before_irreversible_collapse_transition",
+        "algorithm": "r55_greedy_plus_sixth_identical_token_circuit_breaker",
         "maximum_identical_token_run_boundary": MAXIMUM_IDENTICAL_TOKEN_RUN,
         "repeated_novel_lexical_fourgram_boundary": REPEATED_NOVEL_LEXICAL_FOURGRAMS,
         "candidate_transitions_checked": 0,
@@ -166,6 +186,8 @@ def main() -> None:
             "repeated_novel_lexical_fourgrams": 0,
         },
         "language_model_eos_stops": 0,
+        "inherited_r55_lexical_truncation_threshold": 1,
+        "inherited_r55_lexical_truncations": 0,
         "alternate_tokens_selected": 0,
         "token_logits_modified": False,
         "weights_changed": False,

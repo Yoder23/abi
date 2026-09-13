@@ -1,6 +1,7 @@
 from experiments.irreversible_collapse_invariant_r59.screen_v1 import (
     _completed_output_words,
     _irreversible_collapse_reason,
+    _maximum_identical_token_run,
 )
 
 
@@ -10,6 +11,7 @@ def test_invariant_stops_exactly_at_sixth_identical_token():
         _irreversible_collapse_reason([7] * 6, "word " * 6, "prompt")
         == "maximum_identical_token_run"
     )
+    assert _maximum_identical_token_run([1, 2, 2, 2, 3]) == 3
 
 
 def test_invariant_ignores_valid_and_prompt_copied_repetition():
