@@ -69,12 +69,19 @@ def verify(
     anchor_bundle: Path,
     layercake_root: Path,
     live: bool,
+    *,
+    expected_result_sha256: str = EXPECTED_RESULT_SHA256,
+    expected_raw_sha256: str = EXPECTED_RAW_SHA256,
+    campaign_screen: Any = screen_v1,
+    expected_format: str = "abi-r53-isolated-capability-cakes-development-screen/1",
+    expected_verdict: str = "FAIL_R53_DISCLOSED_SCREEN",
+    campaign_name: str = "R53",
 ) -> dict[str, Any]:
     result_path = run_dir / "result.json"
     raw_path = run_dir / "evaluation.jsonl"
-    if _sha256_file(result_path) != EXPECTED_RESULT_SHA256:
+    if _sha256_file(result_path) != expected_result_sha256:
         raise VerificationError("R53 frozen result changed")
-    if _sha256_file(raw_path) != EXPECTED_RAW_SHA256:
+    if _sha256_file(raw_path) != expected_raw_sha256:
         raise VerificationError("R53 frozen raw rows changed")
     result = _json(result_path)
     unsigned = dict(result)
@@ -82,9 +89,8 @@ def verify(
     if not isinstance(stored_evidence, str) or evidence_hash(unsigned) != stored_evidence:
         raise VerificationError("R53 evidence digest changed")
     if (
-        result.get("format")
-        != "abi-r53-isolated-capability-cakes-development-screen/1"
-        or result.get("verdict") != "FAIL_R53_DISCLOSED_SCREEN"
+        result.get("format") != expected_format
+        or result.get("verdict") != expected_verdict
         or result.get("split") != "validation"
         or result.get("full_abi_moonshot") != "OPEN"
     ):
@@ -92,9 +98,9 @@ def verify(
     if tuple(_sha256_file(path) for path in source_paths) != SOURCE_SHA256:
         raise VerificationError("R53 source bundles changed")
     frozen = (
-        (candidate / "model.safetensors", screen_v1.CANDIDATE_SHA256),
-        (candidate / "metadata.json", screen_v1.METADATA_SHA256),
-        (router_path, screen_v1.ROUTER_SHA256),
+        (candidate / "model.safetensors", campaign_screen.CANDIDATE_SHA256),
+        (candidate / "metadata.json", campaign_screen.METADATA_SHA256),
+        (router_path, campaign_screen.ROUTER_SHA256),
         (catalog_path, fit_router.CATALOG_SHA256),
         (broad_bundle, common.BROAD_SHA256),
         (anchor_bundle, common.ANCHOR_SHA256),
@@ -102,11 +108,11 @@ def verify(
     for path, digest in frozen:
         if not path.is_file() or _sha256_file(path) != digest:
             raise VerificationError(f"R53 frozen input changed: {path}")
-    screen_v1._preflight(candidate)
+    campaign_screen._preflight(candidate)
     artifact = result.get("artifacts", {}).get("evaluation", {})
     if (
         artifact.get("path") != raw_path.name
-        or artifact.get("sha256") != EXPECTED_RAW_SHA256
+        or artifact.get("sha256") != expected_raw_sha256
         or artifact.get("bytes") != raw_path.stat().st_size
     ):
         raise VerificationError("R53 raw-row receipt changed")
@@ -233,7 +239,7 @@ def verify(
     metrics = {
         "rows": len(rows),
         "functional": functional,
-        "parent_functional": screen_v1.PARENT_COUNTS["validation"],
+        "parent_functional": campaign_screen.PARENT_COUNTS["validation"],
         "source_functional": source_functional,
         "source_passing_regressions": regressions,
         "source_retention": (source_functional - regressions) / source_functional,
@@ -257,7 +263,8 @@ def verify(
     gates = {
         "matrix": len(rows) == 1_400,
         "functional": functional >= 1_260,
-        "parent_nondegradation": functional >= 1_277,
+        "parent_nondegradation": functional
+        >= campaign_screen.PARENT_COUNTS["validation"],
         "per_capability": all(value["functional"] >= 65 for value in by_capability.values()),
         "source_noninferior_point": functional >= source_functional,
         "source_retention": metrics["source_retention"] >= 0.94,
@@ -270,10 +277,10 @@ def verify(
     if gates != result.get("gates"):
         raise VerificationError("R53 gate vector differs from raw recomputation")
     return {
-        "format": "abi-r53-strict-negative-verification/1",
-        "verdict": "PASS_STRICT_VERIFICATION_OF_FAILED_R53",
-        "result_sha256": EXPECTED_RESULT_SHA256,
-        "raw_sha256": EXPECTED_RAW_SHA256,
+        "format": f"abi-{campaign_name.casefold()}-strict-negative-verification/1",
+        "verdict": f"PASS_STRICT_VERIFICATION_OF_FAILED_{campaign_name}",
+        "result_sha256": expected_result_sha256,
+        "raw_sha256": expected_raw_sha256,
         "raw_rows_recomputed": len(rows),
         "live_rows_exact": live_exact,
         "functional": functional,
