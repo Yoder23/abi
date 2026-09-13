@@ -1,0 +1,53 @@
+{
+  "evaluation": {
+    "bytes": 13404,
+    "path": "results/validated_labeling_r29/heldout_v3_source/evaluation.jsonl",
+    "sha256": "22a20a67a21f417c4e3632d63d2f7f0d532b7c17a5d1bce72389c7dd86eb6ab6"
+  },
+  "format": "abi-r27-import-config/1",
+  "heldout_config": {
+    "bytes": 7744,
+    "path": "experiments/autonomous_labeling_r27/configs/heldout_v1.json",
+    "sha256": "b92bd956d61d8089e4b319566089c6469128387232f20f6638c4a9e4f0733697"
+  },
+  "source_packages": [
+    {
+      "bytes": 274,
+      "facts": 3,
+      "namespace": "teacher/chemistry",
+      "path": "results/validated_labeling_r29/heldout_v3_source/extraction/packages/sha256-791d1f2dc73df259c6015eb0761f84a57ce9e2a1f8d48f2cb7008bd78628d025.abipkg",
+      "sha256": "791d1f2dc73df259c6015eb0761f84a57ce9e2a1f8d48f2cb7008bd78628d025"
+    },
+    {
+      "bytes": 290,
+      "facts": 3,
+      "namespace": "teacher/geography",
+      "path": "results/validated_labeling_r29/heldout_v3_source/extraction/packages/sha256-d198de24cc7fa4449b647a37647f24c2b7cdd94ac01b0ff84918eccf5c570d4d.abipkg",
+      "sha256": "d198de24cc7fa4449b647a37647f24c2b7cdd94ac01b0ff84918eccf5c570d4d"
+    },
+    {
+      "bytes": 277,
+      "facts": 3,
+      "namespace": "teacher/mathematics",
+      "path": "results/validated_labeling_r29/heldout_v3_source/extraction/packages/sha256-11f71a52b15c86ef6be938daa3d322d4da0ac4b3e414b1461ed417633ec286b5.abipkg",
+      "sha256": "11f71a52b15c86ef6be938daa3d322d4da0ac4b3e414b1461ed417633ec286b5"
+    },
+    {
+      "bytes": 344,
+      "facts": 4,
+      "namespace": "teacher/python",
+      "path": "results/validated_labeling_r29/heldout_v3_source/extraction/packages/sha256-1304cfed311b85912eed79df33c87cb9b08ac8818ee5688980e34daf008e1748.abipkg",
+      "sha256": "1304cfed311b85912eed79df33c87cb9b08ac8818ee5688980e34daf008e1748"
+    }
+  ],
+  "source_result": {
+    "bytes": 4068,
+    "path": "results/validated_labeling_r29/heldout_v3_source/result.json",
+    "sha256": "055d58346963c501f3d370148ec90b18bd3f76a3ae82a09d2ad35c12f3b5d173"
+  },
+  "source_rows": {
+    "bytes": 25851,
+    "path": "results/validated_labeling_r29/heldout_v3_source/source_rows.jsonl",
+    "sha256": "c5c2d0c236c0a0f652a53e62accf23af9d9b171f30937f78f26ff44ef84e219c"
+  }
+}
