@@ -1,0 +1,128 @@
+{
+  "capability_order": [
+    "grammar",
+    "coherence",
+    "prompt_grounding",
+    "instruction_following",
+    "conversation",
+    "summarization",
+    "rewriting",
+    "email_drafting",
+    "tone_control",
+    "format_control",
+    "clarification",
+    "abstention",
+    "domain_independent_reasoning",
+    "cake_output_realization"
+  ],
+  "catalog_sha256": "8992c7de94d3733d66f2083f96ec8d3cba31be3943afe1849f42220f33ff8d08",
+  "evidence_sha256": "c64da14699ddc4f3d4109128f3c967f3ee839d0a08c32dd1538502f6c5071cab",
+  "features": 1024,
+  "format": "abi-r53-capability-label-router/1",
+  "full_abi_moonshot": "OPEN",
+  "learning_rate": 0.05,
+  "parameters": 14350,
+  "passed": true,
+  "response_targets": 0,
+  "router_bytes": 57600,
+  "router_sha256": "ba88cf2a18ada898d739aa14a25805dae1c5212ffdcb4bfbfbd99c1c43b682db",
+  "scores": {
+    "final_test": {
+      "accuracy": 1.0,
+      "correct": 1400,
+      "predictions_sha256": "5f6e5f5a6cb2ac2939d699dabc163379e153c148eaa67f4569674a1779a88e78",
+      "rotated_accuracy": 0.0,
+      "rotated_correct": 0,
+      "rows": 1400
+    },
+    "search": {
+      "accuracy": 1.0,
+      "correct": 1400,
+      "predictions_sha256": "5f6e5f5a6cb2ac2939d699dabc163379e153c148eaa67f4569674a1779a88e78",
+      "rotated_accuracy": 0.0,
+      "rotated_correct": 0,
+      "rows": 1400
+    },
+    "validation": {
+      "accuracy": 1.0,
+      "correct": 1400,
+      "predictions_sha256": "5f6e5f5a6cb2ac2939d699dabc163379e153c148eaa67f4569674a1779a88e78",
+      "rotated_accuracy": 0.0,
+      "rotated_correct": 0,
+      "rows": 1400
+    }
+  },
+  "seed": 53002,
+  "steps": 300,
+  "teacher_calls": 0,
+  "trace": [
+    {
+      "accuracy": 0.0657142847776413,
+      "loss": 2.6392812728881836,
+      "step": 1
+    },
+    {
+      "accuracy": 1.0,
+      "loss": 0.020340552553534508,
+      "step": 25
+    },
+    {
+      "accuracy": 1.0,
+      "loss": 0.0055213202722370625,
+      "step": 50
+    },
+    {
+      "accuracy": 1.0,
+      "loss": 0.004133933689445257,
+      "step": 75
+    },
+    {
+      "accuracy": 1.0,
+      "loss": 0.0034879848826676607,
+      "step": 100
+    },
+    {
+      "accuracy": 1.0,
+      "loss": 0.0029972209595143795,
+      "step": 125
+    },
+    {
+      "accuracy": 1.0,
+      "loss": 0.0025997194461524487,
+      "step": 150
+    },
+    {
+      "accuracy": 1.0,
+      "loss": 0.0022748943883925676,
+      "step": 175
+    },
+    {
+      "accuracy": 1.0,
+      "loss": 0.0020076055079698563,
+      "step": 200
+    },
+    {
+      "accuracy": 1.0,
+      "loss": 0.0017858011415228248,
+      "step": 225
+    },
+    {
+      "accuracy": 1.0,
+      "loss": 0.001600062707439065,
+      "step": 250
+    },
+    {
+      "accuracy": 1.0,
+      "loss": 0.0014431457966566086,
+      "step": 275
+    },
+    {
+      "accuracy": 1.0,
+      "loss": 0.0013094258029013872,
+      "step": 300
+    }
+  ],
+  "verdict": "PASS_R53_ROUTER_PREREQUISITE",
+  "wall_seconds": 0.41079390002414584,
+  "weight_decay": 0.001
+}
