@@ -785,6 +785,15 @@ def _compose(args: argparse.Namespace) -> dict[str, Any]:
         if row.get("teacher_token_counter")
         == "authoritative_source_tokenizer_posthoc_on_contrastive_selection"
     ]
+    conditional_choice_records = [
+        row
+        for row in selected_records
+        if row.get("teacher_token_counter")
+        == (
+            "authoritative_source_tokenizer_posthoc_on_"
+            "conditional_choice_selection"
+        )
+    ]
     unsupported_counters = sorted(
         {
             str(row.get("teacher_token_counter"))
@@ -793,6 +802,10 @@ def _compose(args: argparse.Namespace) -> dict[str, Any]:
         - {
             "authoritative_generated_token_ids",
             "authoritative_source_tokenizer_posthoc_on_contrastive_selection",
+            (
+                "authoritative_source_tokenizer_posthoc_on_"
+                "conditional_choice_selection"
+            ),
         }
     )
     if unsupported_counters:
@@ -814,6 +827,13 @@ def _compose(args: argparse.Namespace) -> dict[str, Any]:
         )
         for row in contrastive_records
     }
+    unique_conditional_choice_outputs = {
+        str(row["output_sha256"]): (
+            int(row["output_utf8_bytes"]),
+            int(row["teacher_tokens"]),
+        )
+        for row in conditional_choice_records
+    }
     semantic_qualifications = [
         dict(row["semantic_qualification"])
         for row in source_ledgers
@@ -823,6 +843,11 @@ def _compose(args: argparse.Namespace) -> dict[str, Any]:
         dict(row["contrastive_qualification"])
         for row in source_ledgers
         if isinstance(row.get("contrastive_qualification"), Mapping)
+    ]
+    conditional_choice_qualifications = [
+        dict(row["conditional_choice_qualification"])
+        for row in source_ledgers
+        if isinstance(row.get("conditional_choice_qualification"), Mapping)
     ]
     ledger.update(
         {
@@ -834,7 +859,13 @@ def _compose(args: argparse.Namespace) -> dict[str, Any]:
             ),
             "teacher_token_counter": (
                 "mixed_authoritative_source_counters"
-                if generated_records and contrastive_records
+                if len(
+                    {
+                        str(row["teacher_token_counter"])
+                        for row in selected_records
+                    }
+                )
+                > 1
                 else str(selected_records[0]["teacher_token_counter"])
             ),
             "teacher_generated_output_bytes": sum(
@@ -860,6 +891,22 @@ def _compose(args: argparse.Namespace) -> dict[str, Any]:
             ),
             "duplicate_adjusted_contrastive_selected_tokens": sum(
                 value[1] for value in unique_contrastive_outputs.values()
+            ),
+            "conditional_selected_output_bytes": sum(
+                int(row["output_utf8_bytes"])
+                for row in conditional_choice_records
+            ),
+            "duplicate_adjusted_conditional_selected_output_bytes": sum(
+                value[0]
+                for value in unique_conditional_choice_outputs.values()
+            ),
+            "conditional_selected_tokens": sum(
+                int(row["teacher_tokens"])
+                for row in conditional_choice_records
+            ),
+            "duplicate_adjusted_conditional_selected_tokens": sum(
+                value[1]
+                for value in unique_conditional_choice_outputs.values()
             ),
             "logits_stored_count": sum(
                 int(row.get("logits_stored_count", 0))
@@ -908,6 +955,9 @@ def _compose(args: argparse.Namespace) -> dict[str, Any]:
             ),
             "semantic_qualifications": semantic_qualifications,
             "contrastive_qualifications": contrastive_qualifications,
+            "conditional_choice_qualifications": (
+                conditional_choice_qualifications
+            ),
             "source_qualification_accounting": [
                 {
                     "input_archive_sha256": input_archive["archive_sha256"],
@@ -916,6 +966,9 @@ def _compose(args: argparse.Namespace) -> dict[str, Any]:
                     ),
                     "contrastive_qualification": row.get(
                         "contrastive_qualification"
+                    ),
+                    "conditional_choice_qualification": row.get(
+                        "conditional_choice_qualification"
                     ),
                     "source_runtime_evidence": row.get(
                         "source_runtime_evidence"
@@ -927,7 +980,8 @@ def _compose(args: argparse.Namespace) -> dict[str, Any]:
             ],
             "claim_boundary": (
                 "This composed ledger keeps generated-text semantic evidence "
-                "and source-selected contrastive evidence separate. It is "
+                "and source-selected contrastive/conditional evidence "
+                "separate. It is "
                 "training material only and does not certify LayerCake."
             ),
         }
@@ -936,6 +990,10 @@ def _compose(args: argparse.Namespace) -> dict[str, Any]:
         ledger["semantic_qualification"] = semantic_qualifications[0]
     if len(contrastive_qualifications) == 1:
         ledger["contrastive_qualification"] = contrastive_qualifications[0]
+    if len(conditional_choice_qualifications) == 1:
+        ledger["conditional_choice_qualification"] = (
+            conditional_choice_qualifications[0]
+        )
     try:
         segregation_manifest = build_core_domain_segregation_manifest(
             selected_records,

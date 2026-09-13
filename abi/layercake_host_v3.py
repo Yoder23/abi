@@ -31,36 +31,58 @@ def _materialize_training_prompt(
     probe_result: Mapping[str, Any],
     ledger: Mapping[str, Any],
 ) -> str:
-    """Strip generated chat prompts or verify an exact raw contrastive row."""
+    """Strip generated chat prompts or verify an exact source-selected row."""
 
     prompt = str(record["prompt"])
     counter = record.get("teacher_token_counter")
-    if counter != (
+    contrastive_counter = (
         "authoritative_source_tokenizer_posthoc_on_contrastive_selection"
-    ):
+    )
+    conditional_counter = (
+        "authoritative_source_tokenizer_posthoc_on_conditional_choice_selection"
+    )
+    if counter not in {contrastive_counter, conditional_counter}:
         return legacy.strip_source_chat_template(prompt)
     evaluator = probe_result.get("evaluator")
-    qualification = ledger.get("contrastive_qualification")
+    if counter == contrastive_counter:
+        qualification_name = "contrastive_qualification"
+        expected_kind = "counterbalanced_source_preference"
+        evidence_field = "contrastive_evidence_sha256"
+        observation_field = "contrastive_observation_sha256"
+        provenance_prefix = "contrastive"
+    else:
+        qualification_name = "conditional_choice_qualification"
+        expected_kind = "conditional_source_preference"
+        evidence_field = "conditional_choice_evidence_sha256"
+        observation_field = "conditional_choice_observation_sha256"
+        provenance_prefix = "conditional-choice"
+    qualification = ledger.get(qualification_name)
     if not isinstance(evaluator, Mapping) or not isinstance(
         qualification, Mapping
     ):
         raise LayerCakeHostError(
-            "raw contrastive prompt lacks qualification evidence"
+            "raw source-selected prompt lacks qualification evidence"
         )
-    evidence_hash = str(evaluator.get("contrastive_evidence_sha256", ""))
-    observation_hash = str(
-        evaluator.get("contrastive_observation_sha256", "")
+    evidence_hash = str(evaluator.get(evidence_field, ""))
+    observation_hash = str(evaluator.get(observation_field, ""))
+    provenance = f"{provenance_prefix}:{evidence_hash}:{observation_hash}"
+    positive_evidence = (
+        float(evaluator.get("ab_margin", 0.0)) > 0.0
+        and float(evaluator.get("ba_margin", 0.0)) > 0.0
+        if counter == contrastive_counter
+        else float(
+            evaluator.get("top_margin_mean_log_probability", 0.0)
+        )
+        > 0.0
     )
-    provenance = f"contrastive:{evidence_hash}:{observation_hash}"
     if (
-        evaluator.get("kind") != "counterbalanced_source_preference"
+        evaluator.get("kind") != expected_kind
         or evaluator.get("teacher_generated_output") is not False
         or evaluator.get("prompt_contract_sha256")
         != hashlib.sha256(prompt.encode("utf-8")).hexdigest()
         or evaluator.get("selected_output_sha256")
         != record.get("output_sha256")
-        or float(evaluator.get("ab_margin", 0.0)) <= 0.0
-        or float(evaluator.get("ba_margin", 0.0)) <= 0.0
+        or not positive_evidence
         or qualification.get("evidence_sha256") != evidence_hash
         or record.get("provenance") != provenance
         or evaluator.get("source_manifest_sha256")
@@ -69,7 +91,7 @@ def _materialize_training_prompt(
         or "finish_reason" in record
     ):
         raise LayerCakeHostError(
-            "raw contrastive prompt evidence is incomplete or stale"
+            "raw source-selected prompt evidence is incomplete or stale"
         )
     return prompt
 
