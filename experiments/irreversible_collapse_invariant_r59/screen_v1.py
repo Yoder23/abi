@@ -24,6 +24,7 @@ CANDIDATE_SHA256 = r55.CANDIDATE_SHA256
 METADATA_SHA256 = r55.METADATA_SHA256
 ROUTER_SHA256 = r55.ROUTER_SHA256
 PARENT_COUNTS = r55.PARENT_COUNTS
+_preflight = r55._preflight
 
 
 def _completed_output_words(output: str) -> list[str]:

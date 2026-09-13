@@ -39,6 +39,29 @@ def main() -> None:
     parser.add_argument("--live", action="store_true")
     args = parser.parse_args()
     expected = EVIDENCE[args.split]
+    telemetry = {
+        "candidate_transitions_checked": 0,
+        "accepted_tokens": 0,
+        "rejected_boundary_tokens": 0,
+        "rejections_by_condition": {
+            "maximum_identical_token_run": 0,
+            "repeated_novel_lexical_fourgrams": 0,
+        },
+        "language_model_eos_stops": 0,
+        "inherited_r55_lexical_truncations": 0,
+    }
+
+    def generate(model, tokenizer, prompt, route, maximum, device):
+        return screen_v1._generate(
+            model,
+            tokenizer,
+            prompt,
+            route,
+            maximum,
+            device,
+            telemetry=telemetry,
+        )
+
     receipt = common.verify(
         args.run_dir.resolve(),
         args.candidate.resolve(),
@@ -59,6 +82,7 @@ def main() -> None:
         expected_format="abi-r59-irreversible-collapse-invariant-development-screen/1",
         expected_verdict="PASS_R59_DISCLOSED_SCREEN",
         campaign_name=f"R59_{args.split.upper()}",
+        generation_fn=generate,
     )
     write_json_once(args.receipt.resolve(), receipt)
     print(json.dumps(receipt, indent=2, sort_keys=True))
