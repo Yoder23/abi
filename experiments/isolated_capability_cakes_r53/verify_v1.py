@@ -78,6 +78,7 @@ def verify(
     expected_format: str = "abi-r53-isolated-capability-cakes-development-screen/1",
     expected_verdict: str = "FAIL_R53_DISCLOSED_SCREEN",
     campaign_name: str = "R53",
+    generation_fn: Any = r49._generate,
 ) -> dict[str, Any]:
     result_path = run_dir / "result.json"
     raw_path = run_dir / "evaluation.jsonl"
@@ -197,7 +198,7 @@ def verify(
         ):
             raise VerificationError(f"R53 raw row changed: {probe['probe_id']}")
         if live:
-            live_output, live_tokens, _, physical = r49._generate(
+            live_output, live_tokens, _, physical = generation_fn(
                 model,
                 tokenizer,
                 prompt,

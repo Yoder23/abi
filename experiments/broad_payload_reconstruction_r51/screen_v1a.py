@@ -133,6 +133,8 @@ def run(
     expected_training_seed: int = 51_001,
     router_sha256: str = ROUTER_SHA256,
     capability_to_route: dict[str, int] = CAPABILITY_TO_ROUTE,
+    generation_fn: Any = r49._generate,
+    extra_result_fields: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     if output.exists():
         raise ScreenError(f"immutable R51 screen exists: {output}")
@@ -215,7 +217,7 @@ def run(
     for ordinal, probe in enumerate(probes, 1):
         prompt = str(probe["prompt"])
         route = int(router(r49._feature(prompt)).argmax())
-        output_text, token_ids, latency, physical = r49._generate(
+        output_text, token_ids, latency, physical = generation_fn(
             model, tokenizer, prompt, route, int(probe["max_new_tokens"]), device
         )
         passed, score = evaluate_output(output_text, probe["evaluator"])
@@ -307,6 +309,11 @@ def run(
         "planner_calls": 0, "prospective_promotion_eligible": False,
         "full_abi_moonshot": "OPEN",
     }
+    if extra_result_fields:
+        overlap = set(result) & set(extra_result_fields)
+        if overlap:
+            raise ScreenError(f"extra result fields collide: {sorted(overlap)}")
+        result.update(extra_result_fields)
     result["evidence_sha256"] = evidence_hash(result)
     write_json_once(output / "result.json", result)
     print(json.dumps(result, indent=2, sort_keys=True))
