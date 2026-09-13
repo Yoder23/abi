@@ -1,0 +1,47 @@
+{
+  "artifacts": {
+    "raw": {
+      "bytes": 740,
+      "path": "diagnosis_raw.txt",
+      "sha256": "76636874ef3318ceb1441bc5542ed2bba69a932ed473370a31fa0b16856eddac"
+    }
+  },
+  "claim_ceiling": "PUBLIC_INSTRUCTION_SET_DIAGNOSIS_ONLY",
+  "evidence_sha256": "ee46d74caa1a9394b31ef89360cf6c85dc39564b66c2792aafcc4d00e3fe2bc6",
+  "format": "abi-r30-capability-set-diagnosis/2",
+  "full_abi_moonshot": "OPEN",
+  "groups": [],
+  "information_accounting": {
+    "elapsed_seconds": 59.946957500011194,
+    "hidden_activations_stored": 0,
+    "logits_stored": 0,
+    "peak_gpu_memory_bytes": 15871997440,
+    "rendered_prompt_bytes": 4345,
+    "source_calls": 1,
+    "source_parameters_copied": 0,
+    "teacher_generated_tokens": 561,
+    "teacher_output_bytes": 740
+  },
+  "interface": {
+    "instructions": 36,
+    "label_choices_supplied": 0,
+    "opaque_ids": 36,
+    "task_names_supplied": 0
+  },
+  "metrics": {
+    "assigned_ids": 0,
+    "groups": 0,
+    "oracle_pure_groups": 0,
+    "parse_error": "JSONDecodeError: Extra data: line 1 column 740 (char 739)",
+    "strict_parse": false
+  },
+  "source": {
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "snapshot": "C:\\Users\\samyo\\.cache\\huggingface\\hub\\models--Qwen--Qwen2-7B-Instruct\\snapshots\\f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "teacher_training_steps": 0
+  },
+  "v1_source_receipt_sha256": "a5f43e9d5ebf2a85fecbdc5f516ac67d0c5c466220122b9ac8684262509bd635",
+  "v1_source_rows_sha256": "01f4f11ca70e9ff5d98b5d7573ef71a8a28a67e6351dc3e71b816d8bc3dd45da",
+  "verdict": "FAIL_DIAGNOSIS"
+}

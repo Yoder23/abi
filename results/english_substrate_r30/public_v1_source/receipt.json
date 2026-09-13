@@ -1,0 +1,102 @@
+{
+  "artifacts": {
+    "source_rows": {
+      "path": "source_rows.jsonl",
+      "sha256": "01f4f11ca70e9ff5d98b5d7573ef71a8a28a67e6351dc3e71b816d8bc3dd45da"
+    }
+  },
+  "claim_ceiling": "PUBLIC_FALSIFICATION_ONLY_NOT_GENERAL_ENGLISH",
+  "evidence_sha256": "208ca49ec1390abdd1565ccef613a85f04473d5cc2fcce245a0c8a4130ab7732",
+  "format": "abi-r30-public-source/1",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "elapsed_seconds": 1162.6680058999918,
+    "external_hardware_used": false,
+    "hidden_activations_stored": 0,
+    "logits_stored": 0,
+    "peak_cpu_rss_bytes": 2171056128,
+    "peak_gpu_memory_bytes": 15315824128,
+    "raw_source_prompts": 720,
+    "rendered_prompt_tokens": 79493,
+    "source_load_seconds": 12.028902299993206,
+    "source_parameters_copied": 0,
+    "teacher_generated_tokens": 19513,
+    "teacher_output_bytes": 70276,
+    "unique_raw_prompt_bytes": 96256
+  },
+  "metrics": {
+    "evaluation_rows": 144,
+    "label_by_task": {
+      "abstention": {
+        "exact": 2,
+        "normalized": 2,
+        "rows": 24
+      },
+      "bullets": {
+        "exact": 0,
+        "normalized": 0,
+        "rows": 24
+      },
+      "clarification": {
+        "exact": 0,
+        "normalized": 0,
+        "rows": 24
+      },
+      "comparison": {
+        "exact": 24,
+        "normalized": 24,
+        "rows": 24
+      },
+      "conversation": {
+        "exact": 0,
+        "normalized": 0,
+        "rows": 24
+      },
+      "email": {
+        "exact": 20,
+        "normalized": 20,
+        "rows": 24
+      },
+      "planning": {
+        "exact": 16,
+        "normalized": 16,
+        "rows": 24
+      },
+      "prose": {
+        "exact": 0,
+        "normalized": 3,
+        "rows": 24
+      },
+      "reasoning": {
+        "exact": 8,
+        "normalized": 8,
+        "rows": 24
+      },
+      "rewrite": {
+        "exact": 4,
+        "normalized": 4,
+        "rows": 24
+      },
+      "summary": {
+        "exact": 21,
+        "normalized": 21,
+        "rows": 24
+      },
+      "tone": {
+        "exact": 0,
+        "normalized": 0,
+        "rows": 24
+      }
+    },
+    "label_exact": 95,
+    "rows": 432,
+    "train_rows": 288
+  },
+  "source": {
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "snapshot": "C:\\Users\\samyo\\.cache\\huggingface\\hub\\models--Qwen--Qwen2-7B-Instruct\\snapshots\\f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "teacher_training_steps": 0
+  },
+  "verdict": "FAIL_SOURCE"
+}
