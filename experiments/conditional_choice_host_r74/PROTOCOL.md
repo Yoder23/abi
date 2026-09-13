@@ -21,7 +21,9 @@ merely existing as a valid archive.
   capability-balanced anchor sampling, shared/cake learning rates 2e-5/1e-4,
   classifier weight 0.25, prompt-overlap weight 1.0, balanced terminal loss,
   parent-logit preservation weight 0.5, max 256 tokens, and autonomous prefix
-  recovery from step 400 every eight steps over horizons 8/16/32.
+  recovery from step 400 every eight steps over horizons 8/16/32. The same two
+  previously enumerated overlength rows in the broad anchor are excluded;
+  every R73 main row remains in scope.
 
 No source teacher, R72 scalar score, expected validation output, validation
 evaluator result, or prior candidate output enters training. The source model
