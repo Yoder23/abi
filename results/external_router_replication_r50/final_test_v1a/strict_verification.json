@@ -1,0 +1,25 @@
+{
+  "evidence_sha256": "1d35a5f113cdb1e8ae1cb44befd3485b88d065cc409175a64c1503d9f28e9830",
+  "failed_gates": [
+    "source_retention"
+  ],
+  "format": "abi-r50-strict-verification/1",
+  "full_abi_moonshot": "OPEN",
+  "functional": 1261,
+  "live_rows_exact": 1400,
+  "raw_rows_recomputed": 1400,
+  "result_sha256": "b9e50631736a98ee52f5155f9a90dbd49e5f71d65732a5c932a73220881d9bb9",
+  "source_functional": 1154,
+  "source_retention": 0.9358752166377816,
+  "source_verification": {
+    "batches": 177,
+    "collapses": 0,
+    "functional_passes": 1154,
+    "outputs_sha256": "8ead4c8fb110a9dff7f88122d6ce0271d9eb74c63afca485f43df4cc24213f95",
+    "raw_rows": 1400,
+    "receipt_sha256": "fabfeb5e151b190721054f49644ebbf285741b19db76e492f65e6d824025843e",
+    "teacher_tokens": 44141,
+    "verdict": "PASS_STRICT_SOURCE_CAPTURE"
+  },
+  "verdict": "PASS_STRICT_VERIFICATION_OF_FAILED_R50"
+}

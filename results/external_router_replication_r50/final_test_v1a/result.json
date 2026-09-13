@@ -1,0 +1,167 @@
+{
+  "artifacts": {
+    "evaluation": {
+      "bytes": 2210562,
+      "path": "evaluation.jsonl",
+      "sha256": "6c68b0e3e4cec3f056dcc5bc1805f8d679e01716aded85378378457dca957548"
+    }
+  },
+  "candidate_teacher_calls": 0,
+  "candidate_training_steps": 0,
+  "claim_ceiling": "SAME_MACHINE_SAME_CATALOG_HELD_SPLIT_LIVE_SOURCE_REPLICATION",
+  "evidence_sha256": "1d35a5f113cdb1e8ae1cb44befd3485b88d065cc409175a64c1503d9f28e9830",
+  "format": "abi-r50-external-router-final-test-live-source/1",
+  "full_abi_moonshot": "OPEN",
+  "gates": {
+    "artifacts_unchanged": true,
+    "functional": true,
+    "matrix": true,
+    "per_capability": true,
+    "physical_sparse": true,
+    "route_exact": true,
+    "source_noninferior_point": true,
+    "source_retention": false,
+    "zero_collapse": true,
+    "zero_generation_error": true
+  },
+  "inputs": {
+    "candidate_checkpoint_sha256": "65b1aae5e1aed947f2bc086281a3c7388b22a4260c562363aff2e8cc59f9661b",
+    "candidate_metadata_sha256": "9590374b0afd3184dd75bcf08d8b9f0876ed7bcc0db7f7ec1f4abf147093d1d6",
+    "catalog_sha256": "8992c7de94d3733d66f2083f96ec8d3cba31be3943afe1849f42220f33ff8d08",
+    "r49_result_sha256": "a9014281204b1b1c05be8df28b414c2df1c2a524b2a223609aa8fc31275446a1",
+    "router_sha256": "20ae6562432cc59ece5b9cb552caaa16da4824323e62460c6c33feb0579df863",
+    "source_outputs_sha256": "8ead4c8fb110a9dff7f88122d6ce0271d9eb74c63afca485f43df4cc24213f95",
+    "source_receipt_sha256": "fabfeb5e151b190721054f49644ebbf285741b19db76e492f65e6d824025843e"
+  },
+  "metrics": {
+    "by_capability": {
+      "abstention": {
+        "collapses": 0,
+        "functional": 85,
+        "route_correct": 100,
+        "rows": 100,
+        "source_functional": 75
+      },
+      "cake_output_realization": {
+        "collapses": 0,
+        "functional": 75,
+        "route_correct": 100,
+        "rows": 100,
+        "source_functional": 72
+      },
+      "clarification": {
+        "collapses": 0,
+        "functional": 100,
+        "route_correct": 100,
+        "rows": 100,
+        "source_functional": 100
+      },
+      "coherence": {
+        "collapses": 0,
+        "functional": 100,
+        "route_correct": 100,
+        "rows": 100,
+        "source_functional": 95
+      },
+      "conversation": {
+        "collapses": 0,
+        "functional": 90,
+        "route_correct": 100,
+        "rows": 100,
+        "source_functional": 81
+      },
+      "domain_independent_reasoning": {
+        "collapses": 0,
+        "functional": 76,
+        "route_correct": 100,
+        "rows": 100,
+        "source_functional": 100
+      },
+      "email_drafting": {
+        "collapses": 0,
+        "functional": 72,
+        "route_correct": 100,
+        "rows": 100,
+        "source_functional": 66
+      },
+      "format_control": {
+        "collapses": 0,
+        "functional": 100,
+        "route_correct": 100,
+        "rows": 100,
+        "source_functional": 97
+      },
+      "grammar": {
+        "collapses": 0,
+        "functional": 95,
+        "route_correct": 100,
+        "rows": 100,
+        "source_functional": 100
+      },
+      "instruction_following": {
+        "collapses": 0,
+        "functional": 91,
+        "route_correct": 100,
+        "rows": 100,
+        "source_functional": 76
+      },
+      "prompt_grounding": {
+        "collapses": 0,
+        "functional": 100,
+        "route_correct": 100,
+        "rows": 100,
+        "source_functional": 100
+      },
+      "rewriting": {
+        "collapses": 0,
+        "functional": 99,
+        "route_correct": 100,
+        "rows": 100,
+        "source_functional": 67
+      },
+      "summarization": {
+        "collapses": 0,
+        "functional": 91,
+        "route_correct": 100,
+        "rows": 100,
+        "source_functional": 78
+      },
+      "tone_control": {
+        "collapses": 0,
+        "functional": 87,
+        "route_correct": 100,
+        "rows": 100,
+        "source_functional": 47
+      }
+    },
+    "candidate_minus_source": {
+      "lower_95": 0.055,
+      "point": 0.07642857142857143,
+      "replicates": 5000,
+      "upper_95": 0.09928571428571428
+    },
+    "collapses": 0,
+    "functional": 1261,
+    "generation_errors": 0,
+    "generation_wall_seconds": 179.03414699999848,
+    "physical_sparse_rows": 1400,
+    "route_correct": 1400,
+    "rows": 1400,
+    "source_functional": 1154,
+    "source_passing_regressions": 74,
+    "source_retention": 0.9358752166377816
+  },
+  "planner_calls": 0,
+  "router_final_test": {
+    "accuracy": 1.0,
+    "correct": 1400,
+    "predictions_sha256": "bb677efd3643713edb07694877211f0f8e4e794b6ad766fecaa9cc680604baa6",
+    "rotated_accuracy": 0.0,
+    "rotated_correct": 0,
+    "rows": 1400
+  },
+  "source_capture_teacher_sequences": 1400,
+  "symbolic_output_calls": 0,
+  "teacher_present_at_candidate_inference": false,
+  "verdict": "FAIL_R50_HELD_SPLIT_LIVE_SOURCE"
+}
