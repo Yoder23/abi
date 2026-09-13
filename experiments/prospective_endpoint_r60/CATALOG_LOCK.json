@@ -1,0 +1,22 @@
+{
+  "format": "abi-r60-prospective-catalog-lock/1",
+  "status": "SEALED_BEFORE_SOURCE_OR_CANDIDATE_EXECUTION",
+  "endpoint_evidence_commit": "8526fbd",
+  "catalog": {
+    "path": "catalogs/prospective_endpoint_r60_v1.json",
+    "sha256": "4b0087c9a7fa0e0fd6f607fdbd94fffbdd3cb375f5880a0588c97414583a2ad7",
+    "rows": 1400,
+    "unique_prompts": 1400,
+    "exact_prior_prompt_overlap": 0
+  },
+  "catalog_verification": {
+    "path": "results/prospective_endpoint_r60/catalog_verification_v1.json",
+    "sha256": "d089be4326e8ce81f676ab80bc623c7a503e1e5230a3152c5d35b2e2e6985844"
+  },
+  "builder_sha256": "fff75c6fd4de47123bcfee46366af690845582c4730e59655e25990566ce2975",
+  "catalog_verifier_sha256": "4160b0b3ad93fa9dba8b8999444f53f3c84611ed1163ea1a77f85eb5e70652d8",
+  "protocol_sha256": "c99731eb6f3f649eff16ecc691b9397ea06681173ecdb7514ea6958386e01dbd",
+  "candidate_loaded_before_lock": false,
+  "teacher_loaded_before_lock": false,
+  "model_outputs_observed_before_lock": 0
+}
