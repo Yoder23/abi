@@ -1,0 +1,26 @@
+{
+  "format": "abi-r68-reasoning-source-acquisition-result/1",
+  "verdict": "FAIL_R68_CLOSE_CONCISE_REQUEST_96_TOKEN_CATALOG",
+  "promotion_eligible": false,
+  "full_abi_moonshot": "OPEN",
+  "catalog_sha256": "8d94771931b9c42ab27a351960524b56f1980008f8ccc9f5421e25490a4df0b4",
+  "source_archive": {
+    "path": "phi3_answer_constrained_reasoning_search_survey_v1.abix",
+    "sha256": "557b9e4d2da0710ba02ed48d288d39034293bc9217c88d00a0303b6f419a88d9",
+    "bytes": 5699571,
+    "manifest_sha256": "48ed6b8e9ac3c91a0b06a797e35c771fa15659d4a74522e73e2599d0ca3f3035"
+  },
+  "source_receipt_sha256": "6efd45eeb8db6c98d74ec97fca4eaf228c9546032f6c9b03b4029a10e38a7ab4",
+  "metrics": {
+    "rows": 2000,
+    "passing": 956,
+    "pass_rate": 0.478,
+    "rows_at_96_token_ceiling": 971,
+    "failed_rows_at_96_token_ceiling": 969,
+    "failed_rows_below_ceiling": 75
+  },
+  "locked_gate": {"minimum_passing": 1800, "passed": false},
+  "measured_failure": "Even with concise-answer wording, Phi frequently generated a long derivation and reached 96 tokens before the conclusion.",
+  "decision": "Do not compose or train from R68. Test an answer-stem source interface that leaves the derived terminal code blank and constrains generation to the completion."
+}
+
