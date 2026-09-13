@@ -1,0 +1,26 @@
+{
+  "checkpoint_sha256": "33edc8c82a25cd389d78b0e6449b23ec89af3daba8139b7e94217cba99dce62b",
+  "classifier_parameters": 7690,
+  "evidence_sha256": "1910d9baaaeb0055ad0b972cbddf2ff1afb6fe076bf9f487ccda2fe6e640947e",
+  "format": "abi-r48-router-fit-result/1",
+  "frozen_state_unchanged": true,
+  "full_abi_moonshot": "OPEN",
+  "manifest_sha256": "d26634499ca7790cb72eb7a1ade258e65abc7928428660e10c75c282c4a6ca34",
+  "search": {
+    "accuracy": 1.0,
+    "correct": 1400,
+    "prediction_sha256": "bb677efd3643713edb07694877211f0f8e4e794b6ad766fecaa9cc680604baa6",
+    "rotated_accuracy": 0.0,
+    "rotated_correct": 0,
+    "rows": 1400
+  },
+  "validation": {
+    "accuracy": 0.9821428571428571,
+    "correct": 1375,
+    "prediction_sha256": "eff0a30fe6b4519e151419ae2ea10a4e6f69f7465b2bada38d06a48e9cb5cd15",
+    "rotated_accuracy": 0.0,
+    "rotated_correct": 0,
+    "rows": 1400
+  },
+  "verdict": "FAIL_R48_ROUTER_FIT"
+}
