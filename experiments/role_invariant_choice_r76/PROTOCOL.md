@@ -41,3 +41,9 @@ prefix recovery from step 400. The only intended experimental change from
 R74 is the main artifact. The same two previously enumerated overlength broad
 anchor rows remain excluded; every R76 selected row must be context-compatible
 and observed in training.
+
+If autonomous R77 generation fails, exactly one post-failure diagnostic is
+authorized before selecting another architecture: score the same three R77
+candidates under the bound LayerCake checkpoint. This diagnostic is not
+promotion evidence. It distinguishes transferred conditional selection with a
+copy/realization failure from a failure of both selection and realization.
