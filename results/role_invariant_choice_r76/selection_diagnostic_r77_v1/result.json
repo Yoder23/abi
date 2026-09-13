@@ -1,0 +1,40 @@
+{
+  "artifacts": {
+    "candidate_choice_scores": {
+      "bytes": 1016615,
+      "path": "candidate_choice_scores.jsonl",
+      "sha256": "2ca39937c9f79e1ee789cfccd2ee4d66d12d975dfeef0fb88d03b639e73ccc9c"
+    }
+  },
+  "candidate_checkpoint_sha256": "b6977f087ac42e6e4234d026b4cd83827b720d8973cca049daf18bcc8b96a64e",
+  "catalog_sha256": "b89a473da82b66297f0cd9f7796b341f873d1bb3d1b2c7f82e94255b5b61330a",
+  "evidence_sha256": "0f611cb9a0510e96547037704a891983376a942eabe6373d768bd7d87c610e9a",
+  "format": "abi-r78-selection-versus-realization-diagnostic/1",
+  "full_abi_moonshot": "OPEN",
+  "metrics": {
+    "candidate_tokens_scored": 18273,
+    "family_selection_passing": {
+      "0": 113,
+      "1": 104,
+      "2": 103,
+      "3": 108,
+      "4": 81,
+      "5": 92,
+      "6": 82
+    },
+    "generation_pass_rate": 0.05928571428571429,
+    "generation_passing": 83,
+    "physical_sparse_forwards": 4200,
+    "rows": 1400,
+    "selection_correct_generation_failed": 637,
+    "selection_pass_rate": 0.4878571428571429,
+    "selection_passing": 683,
+    "wall_seconds": 50.35442410001997
+  },
+  "post_failure_diagnostic": true,
+  "promotion_eligible": false,
+  "screen_raw_sha256": "c8c1494a2a89469986ded391fcc5ff38da5ac3e8bca382f1f56ba12dd5ede29d",
+  "screen_result_sha256": "3322605ccd34166c0a58ba2ad9ea4a8dddbea464c2ad59979fff3a8d51a99826",
+  "source_teacher_loaded": false,
+  "verdict": "SELECTION_AND_REALIZATION_BOTH_LIMITING"
+}
