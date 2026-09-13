@@ -1,0 +1,90 @@
+{
+  "accounting": {
+    "candidate_score_storage_bytes_float64_equivalent": 50400,
+    "candidate_scores_stored": 6300,
+    "full_vocabulary_logit_vectors_stored": 0,
+    "hidden_activations_stored": 0,
+    "peak_cuda_allocated_bytes": 8231322624,
+    "peak_process_rss_bytes": 994865152,
+    "source_candidate_tokens_scored": 37800,
+    "source_inference_seconds": 202.56436289963312,
+    "source_load_seconds": 3.5665337999816984,
+    "total_wall_seconds": 208.18942599999718
+  },
+  "artifacts": {
+    "choice_scores": {
+      "bytes": 1756051,
+      "path": "choice_scores.jsonl",
+      "sha256": "5c8f8a655800612f495b20b63d3bf3dcf82dbef49c5a6eb0f22659a3f47d4e4b"
+    }
+  },
+  "candidate_accessed": false,
+  "catalog_sha256": "d179445c92a649f5ab6587c1aa71e00e7c622c326f8ea84438497542c00c2b47",
+  "evidence_sha256": "81f25c0725a73f719b4e242f29ec93fcd49bdc8fc212e6f6bc78e4bc64c4005f",
+  "format": "abi-r72-robust-conditional-choice-weight-interrogation/1",
+  "full_abi_moonshot": "OPEN",
+  "gates": {
+    "family_floor": true,
+    "minimum_passing": true,
+    "rows": true,
+    "zero_ties": true
+  },
+  "hardware": {
+    "cuda": "11.8",
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "machine": "Sam",
+    "python": "3.10.0",
+    "torch": "2.7.1+cu118"
+  },
+  "layercake_loaded": false,
+  "metrics": {
+    "by_premise_family": {
+      "0": {
+        "pass_rate": 1.0,
+        "passing": 300,
+        "rows": 300
+      },
+      "1": {
+        "pass_rate": 1.0,
+        "passing": 300,
+        "rows": 300
+      },
+      "2": {
+        "pass_rate": 1.0,
+        "passing": 300,
+        "rows": 300
+      },
+      "3": {
+        "pass_rate": 0.9933333333333333,
+        "passing": 298,
+        "rows": 300
+      },
+      "4": {
+        "pass_rate": 1.0,
+        "passing": 300,
+        "rows": 300
+      },
+      "5": {
+        "pass_rate": 1.0,
+        "passing": 300,
+        "rows": 300
+      },
+      "6": {
+        "pass_rate": 1.0,
+        "passing": 300,
+        "rows": 300
+      }
+    },
+    "pass_rate": 0.9990476190476191,
+    "passing": 2098,
+    "rows": 2100,
+    "ties": 0
+  },
+  "promotion_eligible": false,
+  "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310",
+  "source_model": "microsoft/Phi-3-mini-4k-instruct",
+  "source_parameters_read": 3821079552,
+  "source_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+  "source_weights_copied": 0,
+  "verdict": "PASS_R72_AUTHORIZE_SEGREGATED_PACKAGING"
+}
