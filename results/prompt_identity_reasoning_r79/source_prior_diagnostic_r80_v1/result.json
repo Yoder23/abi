@@ -1,0 +1,50 @@
+{
+  "artifacts": {
+    "prior_corrected_scores": {
+      "bytes": 1272167,
+      "path": "prior_corrected_scores.jsonl",
+      "sha256": "fbaf92970fc4f3b5b31b112289d971c45abc8a1ad907b10d11c3be1940f10da7"
+    }
+  },
+  "candidate_accessed": false,
+  "catalog_sha256": "5c2975520630fd6cc1b57e473c50ed89e43540fb5e810ade91fba70c9b98b894",
+  "evidence_sha256": "5cf243e9fcb32691b6f2d6098dbab530f32d487000b6fd3d08f0bec4835d64bf",
+  "format": "abi-r80-postfailure-candidate-prior-diagnostic/1",
+  "full_abi_moonshot": "OPEN",
+  "layercake_loaded": false,
+  "method": "actual_mean_log_probability_minus_same-list_no-relation-control_mean_log_probability",
+  "metrics": {
+    "failures_fixed": 17,
+    "neutral_candidate_tokens_scored": 34202,
+    "prior_corrected_family_passing": {
+      "0": 181,
+      "1": 200,
+      "2": 200,
+      "3": 188,
+      "4": 200,
+      "5": 200,
+      "6": 200
+    },
+    "prior_corrected_passing": 1369,
+    "raw_family_passing": {
+      "0": 175,
+      "1": 200,
+      "2": 200,
+      "3": 193,
+      "4": 200,
+      "5": 200,
+      "6": 200
+    },
+    "raw_passes_regressed": 16,
+    "raw_passing": 1368,
+    "rows": 1400,
+    "source_inference_seconds": 75.18932510050945,
+    "wall_seconds": 76.57487369998125
+  },
+  "post_failure_diagnostic": true,
+  "promotion_eligible": false,
+  "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310",
+  "source_raw_sha256": "53851417b06dd34ea4269a237bf59e30fafe80d1ded1aa92c31d1c6276fff5c3",
+  "source_result_sha256": "39ba2fe33f0dfb7f8f9a18092e562f0cdfb4b08e3dce1fa657b12cd0a8573653",
+  "verdict": "PRIOR_CORRECTION_SUPPORTS_PROSPECTIVE_REPLICATION"
+}

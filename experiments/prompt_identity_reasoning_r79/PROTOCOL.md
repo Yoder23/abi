@@ -40,3 +40,10 @@ actual candidate mean log probability from a new same-order, same-candidate,
 no-relation control score. This tests candidate lexical/display prior without
 changing R80's verdict. R79 remains blocked unless a wholly new prospective
 source catalog passes a scorer frozen from this diagnostic.
+
+The diagnostic completed over all 1,400 immutable R80 rows. Raw selection was
+1,368/1,400; prior-corrected selection was 1,369/1,400, with family counts
+181/200, 200/200, 200/200, 188/200, 200/200, 200/200, and 200/200. Seventeen
+raw failures were corrected and sixteen raw passes regressed. Its verdict is
+`PRIOR_CORRECTION_SUPPORTS_PROSPECTIVE_REPLICATION`; it remains explicitly
+non-promotional and does not change `FAIL_R80_SOURCE`.
