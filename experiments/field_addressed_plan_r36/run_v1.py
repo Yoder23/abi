@@ -106,7 +106,7 @@ class FieldAddressedTokenizer:
 
     def _pointer(self, piece: bytes, source_lexemes: list[bytes]) -> int | None:
         positions = [index for index, value in enumerate(source_lexemes) if value == piece]
-        if len(positions) == 1 and _pointer_preferred(piece):
+        if positions and _pointer_preferred(piece):
             return self.vocab_size + positions[0]
         return None
 
