@@ -1,0 +1,89 @@
+{
+  "candidate_changes": 0,
+  "claim_ceiling": "NOT_AUTONOMOUS_LABELING_OR_OPEN_WORLD_DOMAINS",
+  "domain_exact_by_seed_and_namespace": {
+    "24021:chemistry/periodic-table": {
+      "exact": 24,
+      "misses": 0,
+      "rows": 24
+    },
+    "24021:geography/national-capitals": {
+      "exact": 20,
+      "misses": 4,
+      "rows": 24
+    },
+    "24022:chemistry/periodic-table": {
+      "exact": 21,
+      "misses": 3,
+      "rows": 24
+    },
+    "24022:geography/national-capitals": {
+      "exact": 15,
+      "misses": 9,
+      "rows": 24
+    },
+    "24023:chemistry/periodic-table": {
+      "exact": 19,
+      "misses": 5,
+      "rows": 24
+    },
+    "24023:geography/national-capitals": {
+      "exact": 16,
+      "misses": 8,
+      "rows": 24
+    }
+  },
+  "evidence_sha256": "208fcb04406f6a80da850e671ac443dc6884bb5d57e64e117da8860f658ed8a9",
+  "failed_gates": [
+    "domain_exact_per_seed",
+    "package_lifecycle",
+    "teacher_agreement"
+  ],
+  "format": "abi-r24-strict-negative-verification/1",
+  "full_abi_moonshot": "OPEN",
+  "gate_changes": 0,
+  "gates": {
+    "cpu_gpu_exact": true,
+    "domain_exact_per_seed": false,
+    "english_core_no_domain_answer": true,
+    "english_immutable": true,
+    "host_training_steps_zero": true,
+    "namespace_route_exact": true,
+    "other_domain_isolation": true,
+    "package_lifecycle": false,
+    "packages_signed": true,
+    "source_parameters_copied_zero": true,
+    "targeted_corruption": true,
+    "teacher_absent_at_execution": true,
+    "teacher_agreement": false
+  },
+  "host_training_steps": 0,
+  "lifecycle_gate_note": "The frozen gate compared restored output with gold task output; restoration itself reproduced pre-removal package behavior.",
+  "metrics": {
+    "cpu_gpu_exact": 144,
+    "domain_exact": 115,
+    "domain_rows": 144,
+    "english_immutable": 720,
+    "english_leakage_target_answers": 0,
+    "namespace_route_exact": 144,
+    "other_domain_target_answers": 0,
+    "package_lifecycle_exact": 3,
+    "packages_signed": 6,
+    "targeted_corruptions_rejected": 6,
+    "teacher_agreement": 115
+  },
+  "original_config_sha256": "d0c102b6c26383eaa448df0ba9fddadce6ed652469550bef1346753b9e26dd32",
+  "packages_recomputed": 6,
+  "repair_config_sha256": "83b968b507196f9f145eea325495b3dde6b60698bcd0277cead64a337a12be2d",
+  "restored_behavior_exact": 6,
+  "restored_behavior_rows": 6,
+  "result_sha256": "b5535d829184160cdeb3432f9eaa1c81db7e9d31949d347fd245a2ab4cba332b",
+  "rows_live_recomputed": 1158,
+  "scientific_claim": "R24_LAYERCAKE_COMPOSITION_FAILED",
+  "scientific_verdict": "FAIL_BOUNDED_COMPOSITION",
+  "scorer_changes": 0,
+  "source_parameters_copied": 0,
+  "status": "PASS_STRICTLY_VERIFIED_NEGATIVE_DOMAIN_GENERALIZATION",
+  "stored_scientific_booleans_trusted": false,
+  "teacher_present_at_execution": false
+}
