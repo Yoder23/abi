@@ -45,6 +45,7 @@ from .layercake_core_loader import (
     CAPABILITY_CAKE_ARCHITECTURE,
     CAPABILITY_CAKE_CANONICAL_ROUTES,
     CAPABILITY_CAKE_ORDER,
+    SIX_BLOCK_CAPABILITY_CAKE_ARCHITECTURE,
     DEEP_CAPABILITY_ADAPTER_ARCHITECTURE,
     DEEP_CAPABILITY_ADAPTER_RANK,
     LAYERWISE_CAPABILITY_CONTROL_ARCHITECTURE,
@@ -1174,13 +1175,13 @@ def _expand_capability_cakes(model: torch.nn.Module) -> dict[str, Any]:
     """Split collided canonical routes into one rank-64 cake per capability."""
 
     if (
-        int(model.config.layers) != 3
+        int(model.config.layers) not in {3, 6}
         or int(model.config.task_cake_rank) != 64
         or len(model.task_cakes) != 10
         or int(model.task_classifier.out_features) != 10
     ):
         raise FullCoreAcquisitionError(
-            "capability isolation requires the three-block 10-route parent"
+            "capability isolation requires a three- or six-block 10-route parent"
         )
     parent_cakes = list(model.task_cakes)
     parent_classifier = model.task_classifier
@@ -1227,7 +1228,11 @@ def _expand_capability_cakes(model: torch.nn.Module) -> dict[str, Any]:
         capability_cake_canonical_routes=(
             CAPABILITY_CAKE_CANONICAL_ROUTES
         ),
-        architecture_version=CAPABILITY_CAKE_ARCHITECTURE,
+        architecture_version=(
+            SIX_BLOCK_CAPABILITY_CAKE_ARCHITECTURE
+            if int(model.config.layers) == 6
+            else CAPABILITY_CAKE_ARCHITECTURE
+        ),
     )
     model._abi_capability_cake_order = CAPABILITY_CAKE_ORDER
     model._abi_capability_cake_routes = (

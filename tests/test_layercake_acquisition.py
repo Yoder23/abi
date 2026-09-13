@@ -799,7 +799,8 @@ def test_expanded_task_cake_tail_preserves_parent_slices_and_shared_core():
     )
 
 
-def test_capability_cakes_copy_parent_routes_and_freeze_shared_core():
+@pytest.mark.parametrize("layers", (3, 6))
+def test_capability_cakes_copy_parent_routes_and_freeze_shared_core(layers):
     class TinyCake(torch.nn.Module):
         def __init__(self, width, rank):
             super().__init__()
@@ -820,6 +821,7 @@ def test_capability_cakes_copy_parent_routes_and_freeze_shared_core():
         def __init__(self):
             super().__init__()
             self.config = Config()
+            self.config.layers = layers
             self.shared = torch.nn.Linear(768, 768)
             self.task_classifier = torch.nn.Linear(768, 10)
             self.task_cakes = torch.nn.ModuleList(

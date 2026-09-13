@@ -89,6 +89,10 @@ CAPABILITY_CAKE_ARCHITECTURE = (
     "layercake-shallow-sparse-english/3-three-block-"
     "rank64-capability-cakes"
 )
+SIX_BLOCK_CAPABILITY_CAKE_ARCHITECTURE = (
+    "layercake-shallow-sparse-english/3-six-block-"
+    "rank64-capability-cakes"
+)
 PERSISTENT_CAPABILITY_PREFIX_ARCHITECTURE = (
     "layercake-shallow-sparse-english/4-three-block-"
     "persistent-capability-prefix-p8-rank64-cakes"
@@ -169,8 +173,7 @@ class ABIEnglishCoreConfig:
         if self.task_cakes not in {10, 14} or self.task_cake_rank not in {64, 256}:
             raise ValueError("instruction-cake topology changed")
         if capability_topology and (
-            self.layers != 3
-            or self.task_cake_rank != 64
+            self.task_cake_rank != 64
             or tuple(self.capability_cake_order) != CAPABILITY_CAKE_ORDER
             or tuple(self.capability_cake_canonical_routes)
             != CAPABILITY_CAKE_CANONICAL_ROUTES
@@ -193,6 +196,18 @@ class ABIEnglishCoreConfig:
         adapter_topology = self.capability_adapter_rank > 0
         reused_cake_topology = self.deep_reused_capability_cakes
         gated_reused_cake_topology = self.deep_cake_gate_layers > 0
+        if self.layers == 6 and any(
+            (
+                prefix_topology,
+                control_topology,
+                adapter_topology,
+                reused_cake_topology,
+                gated_reused_cake_topology,
+            )
+        ):
+            raise ValueError(
+                "six-block capability cakes do not authorize a conditioned topology"
+            )
         if self.capability_adapter_shared_across_layers and not (
             adapter_topology
         ):
@@ -308,7 +323,11 @@ class ABIEnglishCoreConfig:
                     PERSISTENT_CAPABILITY_PREFIX_ARCHITECTURE
                     if prefix_topology
                     else (
-                        CAPABILITY_CAKE_ARCHITECTURE
+                        (
+                            SIX_BLOCK_CAPABILITY_CAKE_ARCHITECTURE
+                            if self.layers == 6
+                            else CAPABILITY_CAKE_ARCHITECTURE
+                        )
                         if capability_topology
                         else (
                             "layercake-shallow-sparse-english/1-three-block-task-cakes"

@@ -20,6 +20,7 @@ from abi.layercake_core_loader import (
     TASK_ROUTE_PROMPT_IDENTITY_ARCHITECTURE,
     TASK_ROUTE_SELECTIVE_PROMPT_IDENTITY_ARCHITECTURE,
     PROMPT_IDENTITY_RANK,
+    SIX_BLOCK_CAPABILITY_CAKE_ARCHITECTURE,
     _load_symbolic_surface_substrate,
 )
 from abi.layercake_host import _canonical_json_bytes
@@ -75,6 +76,26 @@ def test_versioned_core_config_accepts_capability_isolated_rank64_cakes() -> Non
             task_cakes=14,
             capability_cake_order=CAPABILITY_CAKE_ORDER,
             capability_cake_canonical_routes=(0,) * 14,
+            architecture_version=CAPABILITY_CAKE_ARCHITECTURE,
+        )
+
+
+def test_versioned_core_config_accepts_distinct_six_block_capability_cakes() -> None:
+    config = ABIEnglishCoreConfig(
+        layers=6,
+        task_cakes=14,
+        capability_cake_order=CAPABILITY_CAKE_ORDER,
+        capability_cake_canonical_routes=CAPABILITY_CAKE_CANONICAL_ROUTES,
+        architecture_version=SIX_BLOCK_CAPABILITY_CAKE_ARCHITECTURE,
+    )
+    assert config.layers == 6
+    assert config.task_cakes == 14
+    with pytest.raises(ValueError, match="architecture version"):
+        ABIEnglishCoreConfig(
+            layers=6,
+            task_cakes=14,
+            capability_cake_order=CAPABILITY_CAKE_ORDER,
+            capability_cake_canonical_routes=CAPABILITY_CAKE_CANONICAL_ROUTES,
             architecture_version=CAPABILITY_CAKE_ARCHITECTURE,
         )
 
