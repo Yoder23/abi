@@ -1,0 +1,283 @@
+{
+  "artifacts": {
+    "representations": {
+      "bytes": 7226568,
+      "path": "instruction_representations.safetensors",
+      "sha256": "ab90c89b0e2ec2a9b663629d6ffae085ac38cab568835a42b98e3989ed4a3d85"
+    }
+  },
+  "claim_ceiling": "DISCLOSED_PUBLIC_INSTRUCTION_CLUSTERING_NOT_HELDOUT_ENGLISH",
+  "evidence_sha256": "362b08f9323ff8ea7cdd1333eebdc77fbda9e693ba98b2ea0f36f2bb7588b67f",
+  "format": "abi-r30-foreign-representation-diagnosis/3",
+  "full_abi_moonshot": "OPEN",
+  "groups": [
+    {
+      "ids": [
+        "7a168e982eca91c0",
+        "6592c600460f5c62",
+        "d1345b4ff115aedb"
+      ],
+      "name": "capability-660267e0e217",
+      "oracle_pure": true,
+      "oracle_tasks": [
+        "tone",
+        "tone",
+        "tone"
+      ]
+    },
+    {
+      "ids": [
+        "b2bc9d0928fe34de",
+        "c345bb054689d04d",
+        "d5399bd04604602e"
+      ],
+      "name": "capability-1804ef5e49f4",
+      "oracle_pure": true,
+      "oracle_tasks": [
+        "bullets",
+        "bullets",
+        "bullets"
+      ]
+    },
+    {
+      "ids": [
+        "637d4ca5006b2368",
+        "94124dd238613d37",
+        "98f226c3b62a3c94"
+      ],
+      "name": "capability-77540ff46ac4",
+      "oracle_pure": true,
+      "oracle_tasks": [
+        "clarification",
+        "clarification",
+        "clarification"
+      ]
+    },
+    {
+      "ids": [
+        "5c5ab84c6d642158",
+        "b1eb19fed0122769",
+        "4cb750b931a9403b"
+      ],
+      "name": "capability-afba74547ae1",
+      "oracle_pure": true,
+      "oracle_tasks": [
+        "conversation",
+        "conversation",
+        "conversation"
+      ]
+    },
+    {
+      "ids": [
+        "d0208902ef679b6f",
+        "10501463a21c02e6",
+        "7ba0635443ecbec8"
+      ],
+      "name": "capability-defbdf34a3d4",
+      "oracle_pure": true,
+      "oracle_tasks": [
+        "reasoning",
+        "reasoning",
+        "reasoning"
+      ]
+    },
+    {
+      "ids": [
+        "10b640c84b89b00e",
+        "83da48b6f9b129ff",
+        "509b5506a8489376"
+      ],
+      "name": "capability-6a05ac87d84b",
+      "oracle_pure": true,
+      "oracle_tasks": [
+        "summary",
+        "summary",
+        "summary"
+      ]
+    },
+    {
+      "ids": [
+        "b6d737556417a4e8",
+        "e66092b3084b9adf",
+        "b19d88af530d9a17"
+      ],
+      "name": "capability-663bb9820de9",
+      "oracle_pure": true,
+      "oracle_tasks": [
+        "email",
+        "email",
+        "email"
+      ]
+    },
+    {
+      "ids": [
+        "664643a2d5410eba",
+        "150ed19de4733e7a",
+        "da7489c6cbb462b9"
+      ],
+      "name": "capability-9c14f5ea0d08",
+      "oracle_pure": true,
+      "oracle_tasks": [
+        "rewrite",
+        "rewrite",
+        "rewrite"
+      ]
+    },
+    {
+      "ids": [
+        "d0312b1656b7bab1",
+        "cd32a8c3987be5fb",
+        "8091207d22cf9f04"
+      ],
+      "name": "capability-8f722f34058c",
+      "oracle_pure": true,
+      "oracle_tasks": [
+        "planning",
+        "planning",
+        "planning"
+      ]
+    },
+    {
+      "ids": [
+        "dd47433762fe9412",
+        "caa27618e1144878",
+        "14d01020dffbfdb3"
+      ],
+      "name": "capability-781f838d49a2",
+      "oracle_pure": true,
+      "oracle_tasks": [
+        "prose",
+        "prose",
+        "prose"
+      ]
+    },
+    {
+      "ids": [
+        "e91b65eacb3b03b7",
+        "8a5948b908c3d52a",
+        "d7b426c8d0b9b26f"
+      ],
+      "name": "capability-ebc97d41c4c9",
+      "oracle_pure": true,
+      "oracle_tasks": [
+        "comparison",
+        "comparison",
+        "comparison"
+      ]
+    },
+    {
+      "ids": [
+        "d1e4c8f8442339d5",
+        "95be7160abbb92f5",
+        "1679124e7c3ff55e"
+      ],
+      "name": "capability-68a9963f947e",
+      "oracle_pure": true,
+      "oracle_tasks": [
+        "abstention",
+        "abstention",
+        "abstention"
+      ]
+    }
+  ],
+  "information_accounting": {
+    "elapsed_seconds": 14.82689590001246,
+    "hidden_activation_bytes": 7226568,
+    "hidden_activations_stored": 1806336,
+    "peak_gpu_memory_bytes": 15311350784,
+    "source_calls": 36,
+    "source_input_tokens": 1633,
+    "source_parameters_copied": 0,
+    "teacher_generated_tokens": 0
+  },
+  "metrics": {
+    "cluster_sizes": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "clusters": 12,
+    "full_coverage": true,
+    "instructions": 36,
+    "pure_clusters": 12
+  },
+  "selection": {
+    "candidates": [
+      {
+        "silhouette": 0.46983957290649414,
+        "view": "layer24_last"
+      },
+      {
+        "silhouette": 0.45618003606796265,
+        "view": "layer28_last"
+      },
+      {
+        "silhouette": 0.4547674357891083,
+        "view": "layer20_last"
+      },
+      {
+        "silhouette": 0.37703967094421387,
+        "view": "layer16_last"
+      },
+      {
+        "silhouette": 0.28412148356437683,
+        "view": "layer12_last"
+      },
+      {
+        "silhouette": 0.2614695131778717,
+        "view": "layer16_mean"
+      },
+      {
+        "silhouette": 0.23732465505599976,
+        "view": "layer20_mean"
+      },
+      {
+        "silhouette": 0.22702820599079132,
+        "view": "layer24_mean"
+      },
+      {
+        "silhouette": 0.20647180080413818,
+        "view": "layer12_mean"
+      },
+      {
+        "silhouette": 0.20313243567943573,
+        "view": "layer28_mean"
+      },
+      {
+        "silhouette": 0.1664791852235794,
+        "view": "layer8_last"
+      },
+      {
+        "silhouette": 0.14342783391475677,
+        "view": "layer8_mean"
+      },
+      {
+        "silhouette": 0.14255481958389282,
+        "view": "layer4_last"
+      },
+      {
+        "silhouette": 0.10592232644557953,
+        "view": "layer4_mean"
+      }
+    ],
+    "rule": "maximum_unsupervised_cosine_silhouette",
+    "selected_view": "layer24_last"
+  },
+  "source": {
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "snapshot": "C:\\Users\\samyo\\.cache\\huggingface\\hub\\models--Qwen--Qwen2-7B-Instruct\\snapshots\\f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "training_steps": 0
+  },
+  "v2_result_sha256": "60213e6d9eb5a33089fa67f21956573805b90ce9ee0a3334875ecddb82663be6",
+  "verdict": "PASS_PUBLIC_NEURAL_DIAGNOSIS"
+}
