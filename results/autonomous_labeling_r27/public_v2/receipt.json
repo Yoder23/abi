@@ -1,0 +1,33 @@
+{
+  "claim": "DISCLOSED_FREE_LABEL_SOURCE_INTERFACE_ONLY",
+  "claim_ceiling": "NOT_HELDOUT_AUTONOMOUS_DISCOVERY_OR_LAYERCAKE_IMPORT",
+  "evidence_sha256": "523d703d48af36c18cd8da3279c71ad8fbc8eea472b03bb7c7e17d64152ee7ff",
+  "format": "abi-r27-public-free-label-qualification/2",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "elapsed_seconds": 20.31079509999836,
+    "generated_tokens": 341,
+    "output_bytes": 968,
+    "peak_gpu_memory_bytes": 15306944000,
+    "source_calls": 24
+  },
+  "metrics": {
+    "answer_exact": 24,
+    "distinct_labels": 5,
+    "facts_with_label_consensus": 8,
+    "label_exact": 24,
+    "oracle_domains_semantically_valid": 4,
+    "parse_exact": 24,
+    "rows": 24
+  },
+  "rows": {
+    "bytes": 7485,
+    "path": "source_rows.jsonl"
+  },
+  "source": {
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "snapshot": "C:\\Users\\samyo\\.cache\\huggingface\\hub\\models--Qwen--Qwen2-7B-Instruct\\snapshots\\f2826a00ceef68f0f2b946d945ecc0477ce4450c"
+  },
+  "verdict": "PASS"
+}
