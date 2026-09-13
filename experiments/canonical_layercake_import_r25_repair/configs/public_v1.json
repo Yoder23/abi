@@ -1,0 +1,85 @@
+{
+  "candidate_changes": 0,
+  "code_sha256": {
+    "experiments/canonical_layercake_import_r25_repair/PROTOCOL.md": "b909b959c15167c6be185a3d7ac423a75e194a1cf7419aa202f3ad75174c436e",
+    "experiments/canonical_layercake_import_r25_repair/binding.py": "f317cc9f43f01e673978a41c9161fd33465f225e81c2a59b3f9a815c0e50d3a4",
+    "experiments/canonical_layercake_import_r25_repair/freeze_config.py": "b039c8f234be28fb81375124dda33441a27d39e1fb590bdf00a58c4136ca733b",
+    "experiments/canonical_layercake_import_r25_repair/verify.py": "8e6d24f0b38ba6128b3a776ed0e0d97d4f792c993a59306180fb604ba39edb90",
+    "experiments/factual_semantic_r16/public_sequence_scoring.py": "96e51a30f2953dd5434c381bfcb85628d27c737c691ef8c38214c82137fe6269"
+  },
+  "format": "abi-r25-semantic-repair-config/1",
+  "fresh_replication_required": true,
+  "gate_changes": 0,
+  "implementation_freeze_commit": "a89d25294adb95a9d23b0f56e15b079a3ea5be8a",
+  "original_config": [
+    {
+      "bytes": 7949,
+      "path": "experiments/canonical_layercake_import_r25/configs/public_v1.json",
+      "sha256": "5202c676e480e16c55c5a54be001b3edfd62c99b09bbc4172bd97874442d8d00"
+    }
+  ],
+  "result_inventory": [
+    {
+      "bytes": 3313,
+      "path": "results/canonical_layercake_import_r25/public_v1/builds/25101/chemistry-periodic-table.cake",
+      "sha256": "9d805976bd8ae07534006269494b2da2a38cf068548cb40e41071dc010a839af"
+    },
+    {
+      "bytes": 3399,
+      "path": "results/canonical_layercake_import_r25/public_v1/builds/25101/geography-national-capitals.cake",
+      "sha256": "b24e3ac5aaefbe341eb48dc5c1a17e999578f3f922cca480fdf4dde2e444386e"
+    },
+    {
+      "bytes": 3313,
+      "path": "results/canonical_layercake_import_r25/public_v1/builds/25102/chemistry-periodic-table.cake",
+      "sha256": "9d805976bd8ae07534006269494b2da2a38cf068548cb40e41071dc010a839af"
+    },
+    {
+      "bytes": 3399,
+      "path": "results/canonical_layercake_import_r25/public_v1/builds/25102/geography-national-capitals.cake",
+      "sha256": "b24e3ac5aaefbe341eb48dc5c1a17e999578f3f922cca480fdf4dde2e444386e"
+    },
+    {
+      "bytes": 3313,
+      "path": "results/canonical_layercake_import_r25/public_v1/builds/25103/chemistry-periodic-table.cake",
+      "sha256": "9d805976bd8ae07534006269494b2da2a38cf068548cb40e41071dc010a839af"
+    },
+    {
+      "bytes": 3399,
+      "path": "results/canonical_layercake_import_r25/public_v1/builds/25103/geography-national-capitals.cake",
+      "sha256": "b24e3ac5aaefbe341eb48dc5c1a17e999578f3f922cca480fdf4dde2e444386e"
+    },
+    {
+      "bytes": 40743,
+      "path": "results/canonical_layercake_import_r25/public_v1/domain_observations.jsonl",
+      "sha256": "6b45b57a68499a76fd7bbedcd136b5ff630c8ff1effd6835758d3ad58a93c78d"
+    },
+    {
+      "bytes": 235026,
+      "path": "results/canonical_layercake_import_r25/public_v1/english_immutability.jsonl",
+      "sha256": "a7e76a641ae06695ae0b3d542a4095b1501ce779279d2c18c58552cee9951c2e"
+    },
+    {
+      "bytes": 119162,
+      "path": "results/canonical_layercake_import_r25/public_v1/english_leakage.jsonl",
+      "sha256": "056d873376d3f1e095a033c08bff24b79c6c49fcda8d65a3865cca2e59630711"
+    },
+    {
+      "bytes": 3114,
+      "path": "results/canonical_layercake_import_r25/public_v1/lifecycle.jsonl",
+      "sha256": "f0749322ca900f616c0861897bdf466097091b1ff9482f5a70d9e485f4afb937"
+    },
+    {
+      "bytes": 2226,
+      "path": "results/canonical_layercake_import_r25/public_v1/package_builds.jsonl",
+      "sha256": "e7eb7ce916fd84984fdbbe45bd8c5a2bc2b71cf462e2a69d6f9df531bddba8a4"
+    },
+    {
+      "bytes": 9057,
+      "path": "results/canonical_layercake_import_r25/public_v1/result.json",
+      "sha256": "5e0d700b05c18d914161e94adbefb8921215686a4e0b718a09fe8700c9313ae0"
+    }
+  ],
+  "scorer_change": "teacher agreement uses the pre-existing R16 normalized_text",
+  "scorer_changes": 1
+}
