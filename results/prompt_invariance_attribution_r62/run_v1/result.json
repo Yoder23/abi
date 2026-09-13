@@ -1,0 +1,88 @@
+{
+  "artifacts": {
+    "evaluation": {
+      "bytes": 3475960,
+      "path": "evaluation.jsonl",
+      "sha256": "be1b8349c72cd2c58f6945907f9c1013ed19c2422bba3a7d25456185e1d74f99"
+    }
+  },
+  "evidence_sha256": "219bc532d627306f0ae21e78af0bac33b37daca07cb26aa5dcbb71ca0b92bc4e",
+  "format": "abi-r62-prompt-invariance-attribution/1",
+  "full_abi_moonshot": "OPEN",
+  "promotion_eligible": false,
+  "r60_baseline_functional": 813,
+  "summaries": {
+    "body_only": {
+      "by_capability": {
+        "abstention": 0,
+        "cake_output_realization": 75,
+        "clarification": 95,
+        "coherence": 45,
+        "conversation": 100,
+        "domain_independent_reasoning": 0,
+        "email_drafting": 84,
+        "format_control": 0,
+        "grammar": 90,
+        "instruction_following": 89,
+        "prompt_grounding": 86,
+        "rewriting": 75,
+        "summarization": 89,
+        "tone_control": 66
+      },
+      "final_collapses": 6,
+      "functional": 894,
+      "physical_sparse_rows": 1400,
+      "rows": 1400
+    },
+    "new_wrapper_only": {
+      "by_capability": {
+        "abstention": 0,
+        "cake_output_realization": 74,
+        "clarification": 85,
+        "coherence": 45,
+        "conversation": 85,
+        "domain_independent_reasoning": 0,
+        "email_drafting": 88,
+        "format_control": 0,
+        "grammar": 96,
+        "instruction_following": 89,
+        "prompt_grounding": 90,
+        "rewriting": 81,
+        "summarization": 88,
+        "tone_control": 84
+      },
+      "final_collapses": 0,
+      "functional": 905,
+      "physical_sparse_rows": 1400,
+      "rows": 1400
+    }
+  },
+  "teacher_calls": 0,
+  "telemetry": {
+    "body_only": {
+      "accepted_tokens": 37711,
+      "candidate_transitions_checked": 37737,
+      "inherited_r55_lexical_truncations": 109,
+      "language_model_eos_stops": 1092,
+      "rejected_boundary_tokens": 26,
+      "rejections_by_condition": {
+        "maximum_identical_token_run": 26,
+        "repeated_novel_lexical_fourgrams": 0
+      }
+    },
+    "new_wrapper_only": {
+      "accepted_tokens": 36510,
+      "candidate_transitions_checked": 36517,
+      "inherited_r55_lexical_truncations": 87,
+      "language_model_eos_stops": 1160,
+      "rejected_boundary_tokens": 7,
+      "rejections_by_condition": {
+        "maximum_identical_token_run": 7,
+        "repeated_novel_lexical_fourgrams": 0
+      }
+    }
+  },
+  "training_steps": 0,
+  "verdict": "PASS_R62_PROMPT_EFFECT_QUANTIFIED",
+  "wall_seconds": 589.3872581999749
+}
