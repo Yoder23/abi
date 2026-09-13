@@ -1,0 +1,53 @@
+{
+  "candidate_accessed": false,
+  "catalog_sha256": "5c2975520630fd6cc1b57e473c50ed89e43540fb5e810ade91fba70c9b98b894",
+  "checks": {
+    "destination_display_positions": {
+      "0": 465,
+      "1": 469,
+      "2": 466
+    },
+    "expected_stems": {
+      "BOL": 67,
+      "GEC": 68,
+      "HIN": 68,
+      "JAR": 65,
+      "KUM": 66,
+      "LIR": 68,
+      "MOF": 67,
+      "NEP": 65,
+      "PEN": 68,
+      "PIR": 68,
+      "QAZ": 68,
+      "QOV": 68,
+      "RUT": 67,
+      "SIV": 68,
+      "SUT": 67,
+      "VEK": 66,
+      "WEX": 65,
+      "WIM": 65,
+      "YAG": 65,
+      "YUM": 65,
+      "ZOP": 66
+    },
+    "families": {
+      "f0": 200,
+      "f1": 200,
+      "f2": 200,
+      "f3": 200,
+      "f4": 200,
+      "f5": 200,
+      "f6": 200
+    },
+    "prompt_set_sha256": "7c7bbf150c4c1b25e31db2a38b8921f680b62ba954e3b346956b9ed22874a1b4",
+    "rows": 1400,
+    "unique_prompts": 1400
+  },
+  "evidence_sha256": "da7935139adf0b1b6e8c4b425700df3ad71b8ad5563daecdb7494750d086826d",
+  "format": "abi-r80-prospective-catalog-verification/1",
+  "full_abi_moonshot": "OPEN",
+  "prior_exact_prompt_overlap": 0,
+  "prior_lexical_stem_overlap": 0,
+  "source_accessed": false,
+  "verdict": "PASS_R80_FROZEN_BEFORE_SOURCE_OR_CANDIDATE_ACCESS"
+}
