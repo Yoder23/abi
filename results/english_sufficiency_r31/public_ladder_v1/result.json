@@ -1,0 +1,1143 @@
+{
+  "claim_ceiling": "PUBLIC_DISCLOSED_MINIMUM_BRACKET_NOT_GENERAL_ENGLISH_OR_ABI_SUPERIORITY",
+  "diagnosis_sha256": "ee4403f4f9b85b2d44ea92cf989adc20470858529db56ec0aa24e6c003e90a39",
+  "evidence_sha256": "0f67253c6ffa18a8f58e9ba9fd73bf02bd13f31f03d10c41fd705ee1a9b92452",
+  "format": "abi-r31-english-sufficiency-ladder/1",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "elapsed_seconds": 348.8137411000207,
+    "evaluation_rows": 144,
+    "hidden_activations_in_packages": 0,
+    "logits_stored": 0,
+    "peak_cpu_rss_bytes": 966701056,
+    "peak_gpu_memory_bytes": 238522880,
+    "source_parameters_copied": 0,
+    "teacher_present_during_execution": false,
+    "teacher_present_during_training": false,
+    "training_rows_available": 576
+  },
+  "levels": [
+    {
+      "elapsed_seconds": 123.24530860001687,
+      "evaluation": {
+        "bytes": 99941,
+        "path": "level-24/evaluation.jsonl",
+        "sha256": "442fe4e216a6bb3a343a47d29967efbda6d5a37118cd0d9c24af1d33b9112ec4"
+      },
+      "level": 24,
+      "metrics": {
+        "by_task": {
+          "abstention": {
+            "functional": 12,
+            "rows": 12
+          },
+          "bullets": {
+            "functional": 12,
+            "rows": 12
+          },
+          "clarification": {
+            "functional": 12,
+            "rows": 12
+          },
+          "comparison": {
+            "functional": 1,
+            "rows": 12
+          },
+          "conversation": {
+            "functional": 12,
+            "rows": 12
+          },
+          "email": {
+            "functional": 7,
+            "rows": 12
+          },
+          "planning": {
+            "functional": 6,
+            "rows": 12
+          },
+          "prose": {
+            "functional": 9,
+            "rows": 12
+          },
+          "reasoning": {
+            "functional": 12,
+            "rows": 12
+          },
+          "rewrite": {
+            "functional": 12,
+            "rows": 12
+          },
+          "summary": {
+            "functional": 11,
+            "rows": 12
+          },
+          "tone": {
+            "functional": 10,
+            "rows": 12
+          }
+        },
+        "functional": 116,
+        "removal_rejections": 12,
+        "route_exact": 144
+      },
+      "packages": [
+        {
+          "bytes": 1048126,
+          "cake_id": "abi-r31-l24-capability-1804ef5e49f4",
+          "cluster": "capability-1804ef5e49f4",
+          "parameters": 257725,
+          "relative_path": "packages/capability-1804ef5e49f4.cake",
+          "sha256": "f4f51521bdf1e004878e132cab9a6ab6277b7306294dee581313f508022a3ae9",
+          "training": {
+            "batch_size": 24,
+            "example_exposures_per_row": 533.0,
+            "fixed_vocabulary_size": 124,
+            "history": [
+              {
+                "accuracy": 0.0,
+                "gradient_norm": 2.8512444496154785,
+                "loss": 5.666721820831299,
+                "seconds": 0.23573280003620312,
+                "step": 1
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.04586898908019066,
+                "loss": 0.010022384114563465,
+                "seconds": 4.358168300008401,
+                "step": 266
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.014038530178368092,
+                "loss": 0.002968612825497985,
+                "seconds": 8.545474799990188,
+                "step": 533
+              }
+            ],
+            "level_rows_per_cluster": 24,
+            "parameters": 257725,
+            "rows": 24,
+            "seconds": 8.55024280003272,
+            "steps": 533
+          }
+        },
+        {
+          "bytes": 1079609,
+          "cake_id": "abi-r31-l24-capability-660267e0e217",
+          "cluster": "capability-660267e0e217",
+          "parameters": 265336,
+          "relative_path": "packages/capability-660267e0e217.cake",
+          "sha256": "58893fc81699a9dd6bdad25feabc362a21d476f33623422126ebe90e1db8efd5",
+          "training": {
+            "batch_size": 24,
+            "example_exposures_per_row": 533.0,
+            "fixed_vocabulary_size": 183,
+            "history": [
+              {
+                "accuracy": 0.0,
+                "gradient_norm": 1.8739663362503052,
+                "loss": 5.611546516418457,
+                "seconds": 0.016967999981716275,
+                "step": 1
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.04911566153168678,
+                "loss": 0.02754705585539341,
+                "seconds": 4.030495500017423,
+                "step": 266
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.014204900711774826,
+                "loss": 0.008862009271979332,
+                "seconds": 8.032045200001448,
+                "step": 533
+              }
+            ],
+            "level_rows_per_cluster": 24,
+            "parameters": 265336,
+            "rows": 24,
+            "seconds": 8.03642120002769,
+            "steps": 533
+          }
+        },
+        {
+          "bytes": 1230310,
+          "cake_id": "abi-r31-l24-capability-663bb9820de9",
+          "cluster": "capability-663bb9820de9",
+          "parameters": 301843,
+          "relative_path": "packages/capability-663bb9820de9.cake",
+          "sha256": "1a805bfd66b6c6ec6f6b23fd2c90b5f74c4ea5da42a12bd433a75b87875eda62",
+          "training": {
+            "batch_size": 24,
+            "example_exposures_per_row": 533.0,
+            "fixed_vocabulary_size": 466,
+            "history": [
+              {
+                "accuracy": 0.0005506607703864574,
+                "gradient_norm": 1.4672375917434692,
+                "loss": 6.519468784332275,
+                "seconds": 0.026001499965786934,
+                "step": 1
+              },
+              {
+                "accuracy": 0.9271735548973083,
+                "gradient_norm": 1.1001628637313843,
+                "loss": 0.48102444410324097,
+                "seconds": 4.968469100014772,
+                "step": 266
+              },
+              {
+                "accuracy": 0.9998037815093994,
+                "gradient_norm": 0.02511131949722767,
+                "loss": 0.018444737419486046,
+                "seconds": 9.935699699970428,
+                "step": 533
+              }
+            ],
+            "level_rows_per_cluster": 24,
+            "parameters": 301843,
+            "rows": 24,
+            "seconds": 9.939294199983124,
+            "steps": 533
+          }
+        },
+        {
+          "bytes": 1022822,
+          "cake_id": "abi-r31-l24-capability-68a9963f947e",
+          "cluster": "capability-68a9963f947e",
+          "parameters": 251533,
+          "relative_path": "packages/capability-68a9963f947e.cake",
+          "sha256": "ca6bf24c98827d81d4facae980ef358f7e831677c7994081ad652b7c42844c9a",
+          "training": {
+            "batch_size": 24,
+            "example_exposures_per_row": 533.0,
+            "fixed_vocabulary_size": 76,
+            "history": [
+              {
+                "accuracy": 0.012539184652268887,
+                "gradient_norm": 2.4847733974456787,
+                "loss": 5.0628533363342285,
+                "seconds": 0.015789999975822866,
+                "step": 1
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.044419702142477036,
+                "loss": 0.012805171310901642,
+                "seconds": 3.855638600012753,
+                "step": 266
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.013424402102828026,
+                "loss": 0.003815221134573221,
+                "seconds": 7.791706399992108,
+                "step": 533
+              }
+            ],
+            "level_rows_per_cluster": 24,
+            "parameters": 251533,
+            "rows": 24,
+            "seconds": 7.795039899996482,
+            "steps": 533
+          }
+        },
+        {
+          "bytes": 1063527,
+          "cake_id": "abi-r31-l24-capability-6a05ac87d84b",
+          "cluster": "capability-6a05ac87d84b",
+          "parameters": 261466,
+          "relative_path": "packages/capability-6a05ac87d84b.cake",
+          "sha256": "e17c480dc31eb66fc1b9a0e21c046b2a36d17bfb6c13b4bdb0763d03c2001b5c",
+          "training": {
+            "batch_size": 24,
+            "example_exposures_per_row": 533.0,
+            "fixed_vocabulary_size": 153,
+            "history": [
+              {
+                "accuracy": 0.004459308926016092,
+                "gradient_norm": 2.917250871658325,
+                "loss": 6.283723831176758,
+                "seconds": 0.01855119998799637,
+                "step": 1
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.05323069542646408,
+                "loss": 0.022537194192409515,
+                "seconds": 3.9430684999679215,
+                "step": 266
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.01490080263465643,
+                "loss": 0.005273856688290834,
+                "seconds": 8.144255899998825,
+                "step": 533
+              }
+            ],
+            "level_rows_per_cluster": 24,
+            "parameters": 261466,
+            "rows": 24,
+            "seconds": 8.148346700007096,
+            "steps": 533
+          }
+        },
+        {
+          "bytes": 1042439,
+          "cake_id": "abi-r31-l24-capability-77540ff46ac4",
+          "cluster": "capability-77540ff46ac4",
+          "parameters": 256306,
+          "relative_path": "packages/capability-77540ff46ac4.cake",
+          "sha256": "5e2dd417b00170b43fd2a96431576d11726c08f4f1ea13f600dc583055e11188",
+          "training": {
+            "batch_size": 24,
+            "example_exposures_per_row": 533.0,
+            "fixed_vocabulary_size": 113,
+            "history": [
+              {
+                "accuracy": 0.0,
+                "gradient_norm": 3.7356557846069336,
+                "loss": 5.868985176086426,
+                "seconds": 0.022776199970394373,
+                "step": 1
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.04365940019488335,
+                "loss": 0.010403639636933804,
+                "seconds": 4.078852400009055,
+                "step": 266
+              },
+              {
+                "accuracy": 0.9999999403953552,
+                "gradient_norm": 0.013876225799322128,
+                "loss": 0.003342432901263237,
+                "seconds": 8.352231099968776,
+                "step": 533
+              }
+            ],
+            "level_rows_per_cluster": 24,
+            "parameters": 256306,
+            "rows": 24,
+            "seconds": 8.356301799998619,
+            "steps": 533
+          }
+        },
+        {
+          "bytes": 1058700,
+          "cake_id": "abi-r31-l24-capability-781f838d49a2",
+          "cluster": "capability-781f838d49a2",
+          "parameters": 260305,
+          "relative_path": "packages/capability-781f838d49a2.cake",
+          "sha256": "581e83cc461dba995137f076f6257f9cd123f13bb5d0ae0bc9eff7b8e4c96344",
+          "training": {
+            "batch_size": 24,
+            "example_exposures_per_row": 533.0,
+            "fixed_vocabulary_size": 144,
+            "history": [
+              {
+                "accuracy": 0.009865470230579376,
+                "gradient_norm": 2.283217191696167,
+                "loss": 5.6732964515686035,
+                "seconds": 0.0174059999990277,
+                "step": 1
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.046130452305078506,
+                "loss": 0.015922725200653076,
+                "seconds": 4.2756718000164255,
+                "step": 266
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.01288207434117794,
+                "loss": 0.004581293556839228,
+                "seconds": 8.437490200041793,
+                "step": 533
+              }
+            ],
+            "level_rows_per_cluster": 24,
+            "parameters": 260305,
+            "rows": 24,
+            "seconds": 8.44072110002162,
+            "steps": 533
+          }
+        },
+        {
+          "bytes": 1168185,
+          "cake_id": "abi-r31-l24-capability-8f722f34058c",
+          "cluster": "capability-8f722f34058c",
+          "parameters": 286750,
+          "relative_path": "packages/capability-8f722f34058c.cake",
+          "sha256": "b0e00ad3feb70d69b414ce92b925fddae386014ff42034625fe62bc179f64ab1",
+          "training": {
+            "batch_size": 24,
+            "example_exposures_per_row": 533.0,
+            "fixed_vocabulary_size": 349,
+            "history": [
+              {
+                "accuracy": 0.0018070928053930402,
+                "gradient_norm": 1.8824262619018555,
+                "loss": 6.199819087982178,
+                "seconds": 0.027742600010242313,
+                "step": 1
+              },
+              {
+                "accuracy": 0.9605444669723511,
+                "gradient_norm": 0.8742363452911377,
+                "loss": 0.30692845582962036,
+                "seconds": 5.228532399982214,
+                "step": 266
+              },
+              {
+                "accuracy": 0.9998007416725159,
+                "gradient_norm": 0.0297921784222126,
+                "loss": 0.01729634590446949,
+                "seconds": 10.44411109999055,
+                "step": 533
+              }
+            ],
+            "level_rows_per_cluster": 24,
+            "parameters": 286750,
+            "rows": 24,
+            "seconds": 10.448644999996759,
+            "steps": 533
+          }
+        },
+        {
+          "bytes": 1058822,
+          "cake_id": "abi-r31-l24-capability-9c14f5ea0d08",
+          "cluster": "capability-9c14f5ea0d08",
+          "parameters": 260305,
+          "relative_path": "packages/capability-9c14f5ea0d08.cake",
+          "sha256": "968cb52d9e0f851e79e07c135177ab4874f0ea2c8963b6146b1edc3f711c508f",
+          "training": {
+            "batch_size": 24,
+            "example_exposures_per_row": 533.0,
+            "fixed_vocabulary_size": 144,
+            "history": [
+              {
+                "accuracy": 0.016274865716695786,
+                "gradient_norm": 2.104429006576538,
+                "loss": 5.477076530456543,
+                "seconds": 0.017219699977431446,
+                "step": 1
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.04644699767231941,
+                "loss": 0.01944681629538536,
+                "seconds": 4.259339699987322,
+                "step": 266
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.013550647534430027,
+                "loss": 0.005373069550842047,
+                "seconds": 8.500184800010175,
+                "step": 533
+              }
+            ],
+            "level_rows_per_cluster": 24,
+            "parameters": 260305,
+            "rows": 24,
+            "seconds": 8.506606600014493,
+            "steps": 533
+          }
+        },
+        {
+          "bytes": 1056850,
+          "cake_id": "abi-r31-l24-capability-afba74547ae1",
+          "cluster": "capability-afba74547ae1",
+          "parameters": 259789,
+          "relative_path": "packages/capability-afba74547ae1.cake",
+          "sha256": "4755317fd42695a6a6fdbd91cc01513a533cc28f7e49a64506c0d74a13ac5fcf",
+          "training": {
+            "batch_size": 24,
+            "example_exposures_per_row": 533.0,
+            "fixed_vocabulary_size": 140,
+            "history": [
+              {
+                "accuracy": 0.014134276658296585,
+                "gradient_norm": 2.0859315395355225,
+                "loss": 5.526134967803955,
+                "seconds": 0.015622800041455775,
+                "step": 1
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.04799626022577286,
+                "loss": 0.023003360256552696,
+                "seconds": 4.220848300028592,
+                "step": 266
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.01361893955618143,
+                "loss": 0.006034266669303179,
+                "seconds": 8.30597069999203,
+                "step": 533
+              }
+            ],
+            "level_rows_per_cluster": 24,
+            "parameters": 259789,
+            "rows": 24,
+            "seconds": 8.309496400004718,
+            "steps": 533
+          }
+        },
+        {
+          "bytes": 1041926,
+          "cake_id": "abi-r31-l24-capability-defbdf34a3d4",
+          "cluster": "capability-defbdf34a3d4",
+          "parameters": 256177,
+          "relative_path": "packages/capability-defbdf34a3d4.cake",
+          "sha256": "6c4df13d2dd33812cfda22ece02bce231a4a4d354382c13639d141e7a48caa69",
+          "training": {
+            "batch_size": 24,
+            "example_exposures_per_row": 533.0,
+            "fixed_vocabulary_size": 112,
+            "history": [
+              {
+                "accuracy": 0.0,
+                "gradient_norm": 2.3153812885284424,
+                "loss": 5.517815113067627,
+                "seconds": 0.017402600031346083,
+                "step": 1
+              },
+              {
+                "accuracy": 0.999443769454956,
+                "gradient_norm": 0.08620960265398026,
+                "loss": 0.024248652160167694,
+                "seconds": 4.102905600040685,
+                "step": 266
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.012458370998501778,
+                "loss": 0.005320870317518711,
+                "seconds": 8.316260799998417,
+                "step": 533
+              }
+            ],
+            "level_rows_per_cluster": 24,
+            "parameters": 256177,
+            "rows": 24,
+            "seconds": 8.321409500029404,
+            "steps": 533
+          }
+        },
+        {
+          "bytes": 1073778,
+          "cake_id": "abi-r31-l24-capability-ebc97d41c4c9",
+          "cluster": "capability-ebc97d41c4c9",
+          "parameters": 263917,
+          "relative_path": "packages/capability-ebc97d41c4c9.cake",
+          "sha256": "6a8c92bc85b209e8639170df090a18c9b9509497358273ea2060c2112ea95fbd",
+          "training": {
+            "batch_size": 24,
+            "example_exposures_per_row": 533.0,
+            "fixed_vocabulary_size": 172,
+            "history": [
+              {
+                "accuracy": 0.0019697966054081917,
+                "gradient_norm": 2.5874056816101074,
+                "loss": 6.0596208572387695,
+                "seconds": 0.01852289994712919,
+                "step": 1
+              },
+              {
+                "accuracy": 0.9993377923965454,
+                "gradient_norm": 0.08489218354225159,
+                "loss": 0.039813220500946045,
+                "seconds": 4.147617399983574,
+                "step": 266
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.015080966986715794,
+                "loss": 0.006782111246138811,
+                "seconds": 8.260786099999677,
+                "step": 533
+              }
+            ],
+            "level_rows_per_cluster": 24,
+            "parameters": 263917,
+            "rows": 24,
+            "seconds": 8.264230099972337,
+            "steps": 533
+          }
+        }
+      ],
+      "verdict": "FAIL_LEVEL"
+    },
+    {
+      "elapsed_seconds": 225.54034490004415,
+      "evaluation": {
+        "bytes": 98853,
+        "path": "level-48/evaluation.jsonl",
+        "sha256": "dda29108ad7335c8d894d00172282f65e2cba2d106635ac2a70af6bf7c3fcef2"
+      },
+      "level": 48,
+      "metrics": {
+        "by_task": {
+          "abstention": {
+            "functional": 0,
+            "rows": 12
+          },
+          "bullets": {
+            "functional": 12,
+            "rows": 12
+          },
+          "clarification": {
+            "functional": 12,
+            "rows": 12
+          },
+          "comparison": {
+            "functional": 10,
+            "rows": 12
+          },
+          "conversation": {
+            "functional": 12,
+            "rows": 12
+          },
+          "email": {
+            "functional": 8,
+            "rows": 12
+          },
+          "planning": {
+            "functional": 10,
+            "rows": 12
+          },
+          "prose": {
+            "functional": 10,
+            "rows": 12
+          },
+          "reasoning": {
+            "functional": 12,
+            "rows": 12
+          },
+          "rewrite": {
+            "functional": 12,
+            "rows": 12
+          },
+          "summary": {
+            "functional": 11,
+            "rows": 12
+          },
+          "tone": {
+            "functional": 10,
+            "rows": 12
+          }
+        },
+        "functional": 119,
+        "removal_rejections": 12,
+        "route_exact": 144
+      },
+      "packages": [
+        {
+          "bytes": 1075562,
+          "cake_id": "abi-r31-l48-capability-1804ef5e49f4",
+          "cluster": "capability-1804ef5e49f4",
+          "parameters": 264304,
+          "relative_path": "packages/capability-1804ef5e49f4.cake",
+          "sha256": "87ac0a21220981d0747f9f26b8c87725dd29441b1d34d8e674f6eaf368ad3d26",
+          "training": {
+            "batch_size": 24,
+            "example_exposures_per_row": 533.0,
+            "fixed_vocabulary_size": 175,
+            "history": [
+              {
+                "accuracy": 0.0,
+                "gradient_norm": 3.432399034500122,
+                "loss": 6.191371917724609,
+                "seconds": 0.016680500004440546,
+                "step": 1
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.015119265764951706,
+                "loss": 0.003244013525545597,
+                "seconds": 7.930865000002086,
+                "step": 533
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.004657850135117769,
+                "loss": 0.0009683455573394895,
+                "seconds": 15.75239669997245,
+                "step": 1066
+              }
+            ],
+            "level_rows_per_cluster": 48,
+            "parameters": 264304,
+            "rows": 48,
+            "seconds": 15.756542299990542,
+            "steps": 1066
+          }
+        },
+        {
+          "bytes": 1106550,
+          "cake_id": "abi-r31-l48-capability-660267e0e217",
+          "cluster": "capability-660267e0e217",
+          "parameters": 271786,
+          "relative_path": "packages/capability-660267e0e217.cake",
+          "sha256": "11655c9352d104957f0ce36e7fa043067144e94a6157ce659e5536807a2014fd",
+          "training": {
+            "batch_size": 24,
+            "example_exposures_per_row": 533.0,
+            "fixed_vocabulary_size": 233,
+            "history": [
+              {
+                "accuracy": 0.0,
+                "gradient_norm": 1.7909564971923828,
+                "loss": 5.993724822998047,
+                "seconds": 0.01858969999011606,
+                "step": 1
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.013437474146485329,
+                "loss": 0.006650469731539488,
+                "seconds": 8.064101099967957,
+                "step": 533
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.00801139883697033,
+                "loss": 0.0030461607966572046,
+                "seconds": 16.31235739996191,
+                "step": 1066
+              }
+            ],
+            "level_rows_per_cluster": 48,
+            "parameters": 271786,
+            "rows": 48,
+            "seconds": 16.31645139999455,
+            "steps": 1066
+          }
+        },
+        {
+          "bytes": 1307271,
+          "cake_id": "abi-r31-l48-capability-663bb9820de9",
+          "cluster": "capability-663bb9820de9",
+          "parameters": 320419,
+          "relative_path": "packages/capability-663bb9820de9.cake",
+          "sha256": "722e2b8d4ba2d409a3c7ab42693ab8da0b78d38b033ec414786702b68a972dd0",
+          "training": {
+            "batch_size": 24,
+            "example_exposures_per_row": 533.0,
+            "fixed_vocabulary_size": 610,
+            "history": [
+              {
+                "accuracy": 0.0006889424985274673,
+                "gradient_norm": 1.5523912906646729,
+                "loss": 6.764698505401611,
+                "seconds": 0.0216198000125587,
+                "step": 1
+              },
+              {
+                "accuracy": 0.9980785846710205,
+                "gradient_norm": 0.4690850079059601,
+                "loss": 0.08401085436344147,
+                "seconds": 10.7028474000399,
+                "step": 533
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.010560599155724049,
+                "loss": 0.006022369954735041,
+                "seconds": 21.42961460002698,
+                "step": 1066
+              }
+            ],
+            "level_rows_per_cluster": 48,
+            "parameters": 320419,
+            "rows": 48,
+            "seconds": 21.434203500044532,
+            "steps": 1066
+          }
+        },
+        {
+          "bytes": 1035907,
+          "cake_id": "abi-r31-l48-capability-68a9963f947e",
+          "cluster": "capability-68a9963f947e",
+          "parameters": 254629,
+          "relative_path": "packages/capability-68a9963f947e.cake",
+          "sha256": "653132c231643499d41e2c96b9c200ae76b64309049650b3d9f04f20a65c9153",
+          "training": {
+            "batch_size": 24,
+            "example_exposures_per_row": 533.0,
+            "fixed_vocabulary_size": 100,
+            "history": [
+              {
+                "accuracy": 0.0,
+                "gradient_norm": 2.848043203353882,
+                "loss": 5.569042205810547,
+                "seconds": 0.02424070000415668,
+                "step": 1
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.013275395147502422,
+                "loss": 0.004015719518065453,
+                "seconds": 8.59400620002998,
+                "step": 533
+              },
+              {
+                "accuracy": 0.9999999403953552,
+                "gradient_norm": 0.004110054578632116,
+                "loss": 0.0011733286082744598,
+                "seconds": 16.845288900018204,
+                "step": 1066
+              }
+            ],
+            "level_rows_per_cluster": 48,
+            "parameters": 254629,
+            "rows": 48,
+            "seconds": 16.848890400025994,
+            "steps": 1066
+          }
+        },
+        {
+          "bytes": 1090963,
+          "cake_id": "abi-r31-l48-capability-6a05ac87d84b",
+          "cluster": "capability-6a05ac87d84b",
+          "parameters": 268045,
+          "relative_path": "packages/capability-6a05ac87d84b.cake",
+          "sha256": "4a5a2fa106d1eaf7e1f3413f5c2751643df4603eda86e2599d64b0ace5990ed5",
+          "training": {
+            "batch_size": 24,
+            "example_exposures_per_row": 533.0,
+            "fixed_vocabulary_size": 204,
+            "history": [
+              {
+                "accuracy": 0.0,
+                "gradient_norm": 2.623262643814087,
+                "loss": 6.312750339508057,
+                "seconds": 0.016451000003144145,
+                "step": 1
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.014580139890313148,
+                "loss": 0.004815993364900351,
+                "seconds": 7.987427399959415,
+                "step": 533
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.004135045688599348,
+                "loss": 0.0013678367249667645,
+                "seconds": 16.02892819995759,
+                "step": 1066
+              }
+            ],
+            "level_rows_per_cluster": 48,
+            "parameters": 268045,
+            "rows": 48,
+            "seconds": 16.037703699956182,
+            "steps": 1066
+          }
+        },
+        {
+          "bytes": 1068312,
+          "cake_id": "abi-r31-l48-capability-77540ff46ac4",
+          "cluster": "capability-77540ff46ac4",
+          "parameters": 262498,
+          "relative_path": "packages/capability-77540ff46ac4.cake",
+          "sha256": "5ce79e50fbc3795e9e14b761e6f9204691def716158a5d24964fcbb4ab3788a4",
+          "training": {
+            "batch_size": 24,
+            "example_exposures_per_row": 533.0,
+            "fixed_vocabulary_size": 161,
+            "history": [
+              {
+                "accuracy": 0.0,
+                "gradient_norm": 3.5457279682159424,
+                "loss": 6.165849685668945,
+                "seconds": 0.016169100010301918,
+                "step": 1
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.013520743697881699,
+                "loss": 0.003168287919834256,
+                "seconds": 7.870074999984354,
+                "step": 533
+              },
+              {
+                "accuracy": 0.9999999403953552,
+                "gradient_norm": 0.004152307752519846,
+                "loss": 0.0009674092289060354,
+                "seconds": 16.204108399979305,
+                "step": 1066
+              }
+            ],
+            "level_rows_per_cluster": 48,
+            "parameters": 262498,
+            "rows": 48,
+            "seconds": 16.207481099991128,
+            "steps": 1066
+          }
+        },
+        {
+          "bytes": 1086681,
+          "cake_id": "abi-r31-l48-capability-781f838d49a2",
+          "cluster": "capability-781f838d49a2",
+          "parameters": 267013,
+          "relative_path": "packages/capability-781f838d49a2.cake",
+          "sha256": "d5bdc54c7c47fb10288006fb239f2da78e6a8ad98163dedd012814959aceed03",
+          "training": {
+            "batch_size": 24,
+            "example_exposures_per_row": 533.0,
+            "fixed_vocabulary_size": 196,
+            "history": [
+              {
+                "accuracy": 0.0018450184725224972,
+                "gradient_norm": 2.2827959060668945,
+                "loss": 6.180752277374268,
+                "seconds": 0.02500640001380816,
+                "step": 1
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.013003886677324772,
+                "loss": 0.004701150581240654,
+                "seconds": 8.579793200013228,
+                "step": 533
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.004084280226379633,
+                "loss": 0.0014544872101396322,
+                "seconds": 17.086041499977,
+                "step": 1066
+              }
+            ],
+            "level_rows_per_cluster": 48,
+            "parameters": 267013,
+            "rows": 48,
+            "seconds": 17.089833799982443,
+            "steps": 1066
+          }
+        },
+        {
+          "bytes": 1211669,
+          "cake_id": "abi-r31-l48-capability-8f722f34058c",
+          "cluster": "capability-8f722f34058c",
+          "parameters": 297199,
+          "relative_path": "packages/capability-8f722f34058c.cake",
+          "sha256": "d652e515879aadfe8157299293a96183e6062c13848f66c467f161d469be19c5",
+          "training": {
+            "batch_size": 24,
+            "example_exposures_per_row": 533.0,
+            "fixed_vocabulary_size": 430,
+            "history": [
+              {
+                "accuracy": 0.0005920663243159652,
+                "gradient_norm": 1.7903474569320679,
+                "loss": 6.348948001861572,
+                "seconds": 0.02457379997940734,
+                "step": 1
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.10424908995628357,
+                "loss": 0.030951274558901787,
+                "seconds": 10.440689300012309,
+                "step": 533
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.007549094967544079,
+                "loss": 0.0039055089000612497,
+                "seconds": 20.543310899985954,
+                "step": 1066
+              }
+            ],
+            "level_rows_per_cluster": 48,
+            "parameters": 297199,
+            "rows": 48,
+            "seconds": 20.54704320000019,
+            "steps": 1066
+          }
+        },
+        {
+          "bytes": 1085757,
+          "cake_id": "abi-r31-l48-capability-9c14f5ea0d08",
+          "cluster": "capability-9c14f5ea0d08",
+          "parameters": 266755,
+          "relative_path": "packages/capability-9c14f5ea0d08.cake",
+          "sha256": "2f7726e528769e970bbc40a278d0ca4cfb035fefb4f9b3a76644a15ded4b098c",
+          "training": {
+            "batch_size": 24,
+            "example_exposures_per_row": 533.0,
+            "fixed_vocabulary_size": 194,
+            "history": [
+              {
+                "accuracy": 0.0,
+                "gradient_norm": 2.383315324783325,
+                "loss": 5.895175933837891,
+                "seconds": 0.016878800000995398,
+                "step": 1
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.015741100534796715,
+                "loss": 0.005802054889500141,
+                "seconds": 7.799689700012095,
+                "step": 533
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.004314458463340998,
+                "loss": 0.0016538123600184917,
+                "seconds": 15.903733900049701,
+                "step": 1066
+              }
+            ],
+            "level_rows_per_cluster": 48,
+            "parameters": 266755,
+            "rows": 48,
+            "seconds": 15.907840100000612,
+            "steps": 1066
+          }
+        },
+        {
+          "bytes": 1090706,
+          "cake_id": "abi-r31-l48-capability-afba74547ae1",
+          "cluster": "capability-afba74547ae1",
+          "parameters": 267916,
+          "relative_path": "packages/capability-afba74547ae1.cake",
+          "sha256": "ffdb251dcb562ffb8e18e55e22eac7cf700473c3e1a0952a63a1721a90b95d76",
+          "training": {
+            "batch_size": 24,
+            "example_exposures_per_row": 533.0,
+            "fixed_vocabulary_size": 203,
+            "history": [
+              {
+                "accuracy": 0.00730816088616848,
+                "gradient_norm": 2.1060972213745117,
+                "loss": 5.610229015350342,
+                "seconds": 0.016347099968697876,
+                "step": 1
+              },
+              {
+                "accuracy": 0.9999999403953552,
+                "gradient_norm": 0.014929577708244324,
+                "loss": 0.00794772244989872,
+                "seconds": 8.286026799993124,
+                "step": 533
+              },
+              {
+                "accuracy": 0.9999999403953552,
+                "gradient_norm": 0.003478250466287136,
+                "loss": 0.0015366269508376718,
+                "seconds": 16.562679099966772,
+                "step": 1066
+              }
+            ],
+            "level_rows_per_cluster": 48,
+            "parameters": 267916,
+            "rows": 48,
+            "seconds": 16.56690370000433,
+            "steps": 1066
+          }
+        },
+        {
+          "bytes": 1068338,
+          "cake_id": "abi-r31-l48-capability-defbdf34a3d4",
+          "cluster": "capability-defbdf34a3d4",
+          "parameters": 262498,
+          "relative_path": "packages/capability-defbdf34a3d4.cake",
+          "sha256": "1a2c5492c3d61fbb415dd152d94645a5ba8759ff099fd13bae8f3bf3fbf1bd7e",
+          "training": {
+            "batch_size": 24,
+            "example_exposures_per_row": 533.0,
+            "fixed_vocabulary_size": 161,
+            "history": [
+              {
+                "accuracy": 0.017332691699266434,
+                "gradient_norm": 2.1352646350860596,
+                "loss": 5.5208420753479,
+                "seconds": 0.017935500014573336,
+                "step": 1
+              },
+              {
+                "accuracy": 0.9999999403953552,
+                "gradient_norm": 0.012351187877357006,
+                "loss": 0.005291379522532225,
+                "seconds": 8.641716600046493,
+                "step": 533
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.0035868603736162186,
+                "loss": 0.0014605968026444316,
+                "seconds": 17.080340999993496,
+                "step": 1066
+              }
+            ],
+            "level_rows_per_cluster": 48,
+            "parameters": 262498,
+            "rows": 48,
+            "seconds": 17.083909400040284,
+            "steps": 1066
+          }
+        },
+        {
+          "bytes": 1113499,
+          "cake_id": "abi-r31-l48-capability-ebc97d41c4c9",
+          "cluster": "capability-ebc97d41c4c9",
+          "parameters": 273463,
+          "relative_path": "packages/capability-ebc97d41c4c9.cake",
+          "sha256": "331110801572b5b0a4489e1731a48e84f43ecd08c0fc068748e90153ad388053",
+          "training": {
+            "batch_size": 24,
+            "example_exposures_per_row": 533.0,
+            "fixed_vocabulary_size": 246,
+            "history": [
+              {
+                "accuracy": 0.0050409575924277306,
+                "gradient_norm": 2.669557571411133,
+                "loss": 6.330684661865234,
+                "seconds": 0.01654209999833256,
+                "step": 1
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.016715213656425476,
+                "loss": 0.007540338672697544,
+                "seconds": 8.428085599967744,
+                "step": 533
+              },
+              {
+                "accuracy": 1.0,
+                "gradient_norm": 0.004979663994163275,
+                "loss": 0.0018669676501303911,
+                "seconds": 16.94846069999039,
+                "step": 1066
+              }
+            ],
+            "level_rows_per_cluster": 48,
+            "parameters": 273463,
+            "rows": 48,
+            "seconds": 16.95174709998537,
+            "steps": 1066
+          }
+        }
+      ],
+      "verdict": "FAIL_LEVEL"
+    }
+  ],
+  "minimum_passing_rows_per_cluster": null,
+  "source_receipt_sha256": "de77a07debaac33855d9b0647b9f91454c8f2c11bbeecc96913bd72d694c67d7",
+  "source_rows_sha256": "5ff7691d67b0e8271439acfbfe25540c7d42c06918b58b9257873c6f7ca9f05d",
+  "verdict": "FAIL_PUBLIC_SUFFICIENCY_LADDER"
+}
