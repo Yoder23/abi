@@ -1,0 +1,209 @@
+{
+  "artifacts": {
+    "domain_observations": {
+      "bytes": 40410,
+      "path": "domain_observations.jsonl",
+      "rows": 144,
+      "sha256": "f995cfc387a1130f3246055b12fbe03a17471efb03a66a5d31847e2c04faafbe"
+    },
+    "english_immutability": {
+      "bytes": 235026,
+      "path": "english_immutability.jsonl",
+      "rows": 720,
+      "sha256": "a7e76a641ae06695ae0b3d542a4095b1501ce779279d2c18c58552cee9951c2e"
+    },
+    "english_leakage": {
+      "bytes": 118898,
+      "path": "english_leakage.jsonl",
+      "rows": 288,
+      "sha256": "d155a92d6680e2fb2ba4ea2bda48f433ed477a085a9ab56891a25677dcffb246"
+    },
+    "lifecycle": {
+      "bytes": 3096,
+      "path": "lifecycle.jsonl",
+      "rows": 6,
+      "sha256": "613ea96292eb4d6c741476f1c37273f03a003b0fd9fa8611aa54de4f4cb90762"
+    },
+    "package_builds": {
+      "bytes": 2298,
+      "path": "package_builds.jsonl",
+      "rows": 6,
+      "sha256": "d5383b46963cc96264c30fbac563742f70b58ce1ba736f4d715a4bb809385c37"
+    }
+  },
+  "builds": {
+    "25101": {
+      "chemistry/periodic-table": {
+        "bytes": 3306,
+        "cake_id": "abi-r25-chemistry-periodic-table",
+        "facts_sha256": "111ca18374b87ab1c7228bff111500fa68f49ef2420a8e903eddcf8c7f729fab",
+        "namespace": "chemistry/periodic-table",
+        "package_hash": "71bf2dda4aaa36dc8b3e8da8eb123d82eaab827b7b1ceef3a4cf747a015c29f3",
+        "parameters": 0,
+        "path": "results/canonical_layercake_replication_r26/public_v1/engine/builds/25101/chemistry-periodic-table.cake",
+        "records": 8,
+        "sha256": "7b2a42fefa199fddb1267364cfb4ee8338b4f95ccd71ecfac8463d2cf65c400b",
+        "signed": true,
+        "state_bytes": 32,
+        "tensor_payload_hash": "c4008401ec766dc129be648658989cf0af0edc9fcc39c79a7042ed63b643440f"
+      },
+      "geography/national-capitals": {
+        "bytes": 3394,
+        "cake_id": "abi-r25-geography-national-capitals",
+        "facts_sha256": "531004f0f1d97093d5b16207f651eb5671f6e559835b32b78a644c3613358c24",
+        "namespace": "geography/national-capitals",
+        "package_hash": "4d9e10585a12962e483a5f89a2edef1c9a1c17b67bd31bd3b6f102f2b9f3e54f",
+        "parameters": 0,
+        "path": "results/canonical_layercake_replication_r26/public_v1/engine/builds/25101/geography-national-capitals.cake",
+        "records": 8,
+        "sha256": "da278a8674a28c73e46512c240f4cee6f676f5ae9bda85581a3c762851442522",
+        "signed": true,
+        "state_bytes": 32,
+        "tensor_payload_hash": "20dd201e943aadf76eb798be7ba24ca5e1d42dce210a1d84b2489b8fda170ab8"
+      }
+    },
+    "25102": {
+      "chemistry/periodic-table": {
+        "bytes": 3306,
+        "cake_id": "abi-r25-chemistry-periodic-table",
+        "facts_sha256": "111ca18374b87ab1c7228bff111500fa68f49ef2420a8e903eddcf8c7f729fab",
+        "namespace": "chemistry/periodic-table",
+        "package_hash": "71bf2dda4aaa36dc8b3e8da8eb123d82eaab827b7b1ceef3a4cf747a015c29f3",
+        "parameters": 0,
+        "path": "results/canonical_layercake_replication_r26/public_v1/engine/builds/25102/chemistry-periodic-table.cake",
+        "records": 8,
+        "sha256": "7b2a42fefa199fddb1267364cfb4ee8338b4f95ccd71ecfac8463d2cf65c400b",
+        "signed": true,
+        "state_bytes": 32,
+        "tensor_payload_hash": "c4008401ec766dc129be648658989cf0af0edc9fcc39c79a7042ed63b643440f"
+      },
+      "geography/national-capitals": {
+        "bytes": 3394,
+        "cake_id": "abi-r25-geography-national-capitals",
+        "facts_sha256": "531004f0f1d97093d5b16207f651eb5671f6e559835b32b78a644c3613358c24",
+        "namespace": "geography/national-capitals",
+        "package_hash": "4d9e10585a12962e483a5f89a2edef1c9a1c17b67bd31bd3b6f102f2b9f3e54f",
+        "parameters": 0,
+        "path": "results/canonical_layercake_replication_r26/public_v1/engine/builds/25102/geography-national-capitals.cake",
+        "records": 8,
+        "sha256": "da278a8674a28c73e46512c240f4cee6f676f5ae9bda85581a3c762851442522",
+        "signed": true,
+        "state_bytes": 32,
+        "tensor_payload_hash": "20dd201e943aadf76eb798be7ba24ca5e1d42dce210a1d84b2489b8fda170ab8"
+      }
+    },
+    "25103": {
+      "chemistry/periodic-table": {
+        "bytes": 3306,
+        "cake_id": "abi-r25-chemistry-periodic-table",
+        "facts_sha256": "111ca18374b87ab1c7228bff111500fa68f49ef2420a8e903eddcf8c7f729fab",
+        "namespace": "chemistry/periodic-table",
+        "package_hash": "71bf2dda4aaa36dc8b3e8da8eb123d82eaab827b7b1ceef3a4cf747a015c29f3",
+        "parameters": 0,
+        "path": "results/canonical_layercake_replication_r26/public_v1/engine/builds/25103/chemistry-periodic-table.cake",
+        "records": 8,
+        "sha256": "7b2a42fefa199fddb1267364cfb4ee8338b4f95ccd71ecfac8463d2cf65c400b",
+        "signed": true,
+        "state_bytes": 32,
+        "tensor_payload_hash": "c4008401ec766dc129be648658989cf0af0edc9fcc39c79a7042ed63b643440f"
+      },
+      "geography/national-capitals": {
+        "bytes": 3394,
+        "cake_id": "abi-r25-geography-national-capitals",
+        "facts_sha256": "531004f0f1d97093d5b16207f651eb5671f6e559835b32b78a644c3613358c24",
+        "namespace": "geography/national-capitals",
+        "package_hash": "4d9e10585a12962e483a5f89a2edef1c9a1c17b67bd31bd3b6f102f2b9f3e54f",
+        "parameters": 0,
+        "path": "results/canonical_layercake_replication_r26/public_v1/engine/builds/25103/geography-national-capitals.cake",
+        "records": 8,
+        "sha256": "da278a8674a28c73e46512c240f4cee6f676f5ae9bda85581a3c762851442522",
+        "signed": true,
+        "state_bytes": 32,
+        "tensor_payload_hash": "20dd201e943aadf76eb798be7ba24ca5e1d42dce210a1d84b2489b8fda170ab8"
+      }
+    }
+  },
+  "canonical_packages": {
+    "chemistry/periodic-table": {
+      "bytes": 3306,
+      "cake_id": "abi-r25-chemistry-periodic-table",
+      "facts_sha256": "111ca18374b87ab1c7228bff111500fa68f49ef2420a8e903eddcf8c7f729fab",
+      "namespace": "chemistry/periodic-table",
+      "package_hash": "71bf2dda4aaa36dc8b3e8da8eb123d82eaab827b7b1ceef3a4cf747a015c29f3",
+      "parameters": 0,
+      "path": "results/canonical_layercake_replication_r26/public_v1/engine/builds/25101/chemistry-periodic-table.cake",
+      "records": 8,
+      "sha256": "7b2a42fefa199fddb1267364cfb4ee8338b4f95ccd71ecfac8463d2cf65c400b",
+      "signed": true,
+      "state_bytes": 32,
+      "tensor_payload_hash": "c4008401ec766dc129be648658989cf0af0edc9fcc39c79a7042ed63b643440f"
+    },
+    "geography/national-capitals": {
+      "bytes": 3394,
+      "cake_id": "abi-r25-geography-national-capitals",
+      "facts_sha256": "531004f0f1d97093d5b16207f651eb5671f6e559835b32b78a644c3613358c24",
+      "namespace": "geography/national-capitals",
+      "package_hash": "4d9e10585a12962e483a5f89a2edef1c9a1c17b67bd31bd3b6f102f2b9f3e54f",
+      "parameters": 0,
+      "path": "results/canonical_layercake_replication_r26/public_v1/engine/builds/25101/geography-national-capitals.cake",
+      "records": 8,
+      "sha256": "da278a8674a28c73e46512c240f4cee6f676f5ae9bda85581a3c762851442522",
+      "signed": true,
+      "state_bytes": 32,
+      "tensor_payload_hash": "20dd201e943aadf76eb798be7ba24ca5e1d42dce210a1d84b2489b8fda170ab8"
+    }
+  },
+  "claim": "R25_REGISTERED_FACTUAL_DIRECT_IMPORT_AND_COMPOSITION",
+  "claim_ceiling": "NOT_AUTONOMOUS_LABELING_OR_OPEN_WORLD_DOMAINS",
+  "config_sha256": "9b320b9817b76349c58335eeac052d8c3ea9a48ce8665b406c703d7230b73a57",
+  "evidence_sha256": "7b6ac57b8468a44459b14368891486cf0d6c8f1f090f63464516c3cc554d77de",
+  "format": "abi-r25-canonical-layercake-import-result/1",
+  "full_abi_moonshot": "OPEN",
+  "gates": {
+    "cpu_gpu_exact": true,
+    "domain_exact": true,
+    "english_core_target_answers": true,
+    "english_immutable": true,
+    "namespace_route_exact": true,
+    "other_domain_target_answers": true,
+    "package_lifecycle_exact": true,
+    "receiver_training_steps": true,
+    "reproducible_package_builds": true,
+    "source_parameters_copied": true,
+    "source_records_exact": true,
+    "targeted_corruptions_rejected": true,
+    "teacher_absent_at_execution": true,
+    "teacher_agreement": true
+  },
+  "information_accounting": {
+    "active_parameters": 0,
+    "all_reproduction_package_bytes": 20100,
+    "experiment_wall_seconds": 77.65632809995441,
+    "final_package_bytes": 6700,
+    "imported_records": 16,
+    "new_source_calls": 0,
+    "receiver_training_steps": 0,
+    "source_parameters_copied": 0,
+    "state_bytes_per_selected_package": 32,
+    "teacher_present_at_build": false,
+    "teacher_present_at_execution": false
+  },
+  "layercake_commit": "2170c78b7ae901eb4e99ec93ad59d573b2c75941",
+  "metrics": {
+    "cpu_gpu_exact": 144,
+    "domain_exact": 144,
+    "english_core_target_answers": 0,
+    "english_immutable": 720,
+    "namespace_route_exact": 144,
+    "other_domain_target_answers": 0,
+    "package_lifecycle_exact": 6,
+    "receiver_training_steps": 0,
+    "reproducible_package_builds": 6,
+    "source_parameters_copied": 0,
+    "source_records_exact": 16,
+    "targeted_corruptions_rejected": 6,
+    "teacher_agreement": 144
+  },
+  "next_action": "strict live verification then expand autonomous labeling",
+  "verdict": "PASS_BOUNDED_DIRECT_IMPORT"
+}
