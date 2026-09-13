@@ -1,0 +1,48 @@
+{
+  "claim": "R27_V1_OPEN_LABEL_COMPILER_PREREQUISITE_FAILED",
+  "config_sha256": "b92bd956d61d8089e4b319566089c6469128387232f20f6638c4a9e4f0733697",
+  "evidence_sha256": "e10b70890102a3c1266c50b1a49e62ae97ca0deccb33ecf9f495774c670a5e14",
+  "format": "abi-r27-heldout-source-failure/1",
+  "full_abi_moonshot": "OPEN",
+  "inconsistent_groups": [
+    {
+      "answer_consensus": true,
+      "answer_keys": [
+        "256"
+      ],
+      "label_consensus": false,
+      "labels": [
+        "math",
+        "mathematics"
+      ],
+      "subject": "2 to the eighth power"
+    },
+    {
+      "answer_consensus": false,
+      "answer_keys": [
+        "1",
+        "5"
+      ],
+      "label_consensus": true,
+      "labels": [
+        "mathematics"
+      ],
+      "subject": "29 modulo 6"
+    }
+  ],
+  "interpretation": "Teacher view inconsistency in an answer and a free label prevented fail-closed isolated compilation; this is an ABI acquisition/labeling failure, not a LayerCake host result.",
+  "layercake_invoked": false,
+  "metrics": {
+    "extraction_rows": 36,
+    "inconsistent_extraction_facts": 2,
+    "oracle_answer_exact": 68,
+    "semantic_label_valid": 70,
+    "source_rows": 72,
+    "strict_json": 71
+  },
+  "packages_emitted": 0,
+  "reveal_sha256": "2a5c48b4944974ec4200e79d52de92d5ad87a7db209484b852b3d54ec84e0d7d",
+  "source_bundle_sha256": "428231a208770e00df7af9b848c9a60f4659ec33fd949c3250c43f45f027b512",
+  "source_rows_sha256": "f9fc50c380e677c039c91d7db897c7584016f51c9ef8319bcbf009365751c62d",
+  "verdict": "FAIL_CLOSED_BEFORE_PACKAGE_EMISSION"
+}
