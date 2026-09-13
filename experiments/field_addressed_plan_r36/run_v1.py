@@ -56,7 +56,7 @@ def _fields(prompt: str) -> dict[str, str]:
 def _pointer_preferred(piece: bytes) -> bool:
     if DYNAMIC_NUMBER.fullmatch(piece):
         return int(piece) > 10
-    return bool(CONTENT.fullmatch(piece)) and piece.casefold() not in STOP and len(piece) >= 3
+    return bool(CONTENT.fullmatch(piece)) and piece.lower() not in STOP and len(piece) >= 3
 
 
 class FieldAddressedTokenizer:
