@@ -22,3 +22,9 @@ at least 180/200 in every premise family, and zero corrected-score ties. Source
 failure blocks R79 host training. Source success authorizes exactly the
 preregistered R79 prompt-identity bridge run; it does not certify unrestricted
 reasoning, English transfer, domain transfer, minimization, or the ABI moonshot.
+
+The prospective run passed at 1,382/1,400 corrected selections, with family
+counts 184/200, 200/200, 200/200, 198/200, 200/200, 200/200, and 200/200,
+zero corrected ties, and all display positions represented. Raw selection was
+1,384/1,400. Verdict: `PASS_R81_SOURCE`. This authorizes the single R79 host
+run specified above and nothing broader.
