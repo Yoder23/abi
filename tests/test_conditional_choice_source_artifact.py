@@ -14,7 +14,11 @@ from abi.conditional_choice_source_artifact import (
     build_conditional_choice_artifact,
 )
 from abi.hf_extraction import load_probe_catalog
-from abi.layercake_host_v3 import LayerCakeHostError, _materialize_training_prompt
+from abi.layercake_host_v3 import (
+    LayerCakeHostError,
+    _materialize_training_prompt,
+    load_english_training_rows,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -53,6 +57,11 @@ def test_r73_artifact_is_segregated_and_consumer_bound(tmp_path: Path) -> None:
     bundle = read_extraction_bundle(output)
     assert bundle["verification"]["domain_segregation_verified"] is True
     assert {row["teacher_token_counter"] for row in bundle["records"]} == {COUNTER}
+    training_rows, _, _ = load_english_training_rows(output, budget_index=-1)
+    assert len(training_rows) == 2_098
+    assert {row["capability"] for row in training_rows} == {
+        "domain_independent_reasoning"
+    }
     record = bundle["records"][0]
     result = next(row for row in bundle["probe_results"] if row["record_id"] == record["record_id"])
     assert _materialize_training_prompt(record=record, probe_result=result, ledger=bundle["ledger"]) == record["prompt"]

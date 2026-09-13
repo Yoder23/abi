@@ -20,7 +20,7 @@ from .capability_pipeline import (
     SEGREGATED_TRAINING_ARTIFACT_ROLE,
     build_capability_inventory,
     build_extraction_bundle,
-    build_inventory_survey_plan,
+    build_user_selection_plan,
     build_nested_teacher_budgets,
     build_probe_result,
     read_extraction_bundle,
@@ -349,7 +349,14 @@ def build_conditional_choice_artifact(
     )
     if inventory["available_entry_count"] != 1:
         raise ConditionalChoiceArtifactError("reasoning inventory did not qualify")
-    selection = build_inventory_survey_plan(inventory)
+    selection = build_user_selection_plan(
+        [inventory],
+        include_english_core=True,
+        english_capabilities=("domain_independent_reasoning",),
+        domains=(),
+        source_policy="best_evidence",
+        allow_unverified_development_selection=True,
+    )
     unique_outputs = {
         str(row["output_sha256"]): (int(row["output_utf8_bytes"]), int(row["teacher_tokens"]))
         for row in records
