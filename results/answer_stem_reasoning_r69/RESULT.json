@@ -1,0 +1,27 @@
+{
+  "format": "abi-r69-reasoning-source-acquisition-result/1",
+  "verdict": "FAIL_R69_CLOSE_ANSWER_STEM_CATALOG",
+  "promotion_eligible": false,
+  "full_abi_moonshot": "OPEN",
+  "catalog_sha256": "64f1743680f3bbb71005acae47a9619449716611f57b3be85bf28db5cfa2b6c5",
+  "source_archive": {
+    "path": "phi3_answer_stem_reasoning_search_survey_v1.abix",
+    "sha256": "9bd0b83bf7041e966c200b3c5018304d4787cd02b9c1534f772ca9480ddc0e47",
+    "bytes": 5043569,
+    "manifest_sha256": "6b22f1ca63115ce6ebe7f9cd2d44dce6cca7f0c6db227f9578b4c374db864b27"
+  },
+  "source_receipt_sha256": "15973162a9d17c136424f15b81228bde9e40fe634bafcf44ad17b72ee0845435",
+  "metrics": {
+    "rows": 2000,
+    "passing": 1123,
+    "pass_rate": 0.5615,
+    "teacher_tokens": 31042,
+    "passing_teacher_tokens": 12644,
+    "rows_at_24_token_ceiling": 634,
+    "failed_rows_at_24_token_ceiling": 634
+  },
+  "locked_gate": {"minimum_passing": 1800, "passed": false},
+  "measured_failure": "The answer stem reduced verbosity, but Phi still often selected the starting A-code rather than the terminal C-code, and 634 failures reached the ceiling.",
+  "decision": "Do not compose or train from R69. Test an explicit exactly-two-rule candidate-choice interface to remove terminal-class ambiguity."
+}
+
