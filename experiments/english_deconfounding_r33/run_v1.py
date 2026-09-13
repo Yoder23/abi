@@ -148,7 +148,7 @@ def _package(api, model, tokenizer, task, cluster, output, source_hash, public_p
         output_contract={"external": "UTF-8 bytes", "role": "english-core", "composition": "one-counterfactual-capability"},
         architecture=api["portable_token_plan_manifest_architecture"](artifact["spec"]),
         supported_precisions=("fp32",),
-        supported_backends=("pytorch", "cuda", "cpu"),
+        supported_backends=("pytorch", "cuda"),
         minimum_host_capabilities={"features": ["byte_input", "safe_tensors", "incremental"]},
         tensor_payload_hash="",
         tensor_shapes=api["tensor_specs"](state),

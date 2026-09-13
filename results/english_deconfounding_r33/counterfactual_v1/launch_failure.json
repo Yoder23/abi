@@ -1,0 +1,15 @@
+{
+  "format": "abi-r33-operational-failure/1",
+  "scientific_rows_executed": 0,
+  "stage": "first_package_manifest_construction",
+  "error_type": "layercake.cake.manifest.ManifestError",
+  "error": "supported_backends contains an unsupported value",
+  "cause": "The preregistered manifest listed cpu as a backend value although the LayerCake schema represents CPU through pytorch.",
+  "repair_scope": "Remove only the unsupported cpu enumeration; retain pytorch and cuda. Training, data, architecture, seeds, steps, packages, fixture, evaluator, and gates are unchanged.",
+  "partial_artifact": {
+    "path": "augmented_rows.jsonl",
+    "sha256": "ed6037cd0963f14dfa982f2ee9f0fc203d8e87f047414799f9b810e14d2ea49a",
+    "bytes": 1837107
+  },
+  "verdict": "NO_SCIENTIFIC_VERDICT"
+}
