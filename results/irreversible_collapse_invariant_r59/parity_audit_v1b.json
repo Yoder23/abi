@@ -1,0 +1,41 @@
+{
+  "finding": "R55 postprocessed token re-encoding undercounted raw runtime token runs; R59 changed no functional verdict.",
+  "format": "abi-r59-disclosed-parity-audit/1",
+  "full_abi_moonshot": "OPEN",
+  "splits": {
+    "final_test": {
+      "changed_historical_collapses": 3,
+      "changed_outputs": 12,
+      "changed_probe_ids": [
+        "natural-abstention-final_test-020-v3",
+        "natural-abstention-final_test-059-v3",
+        "natural-abstention-final_test-088-v3",
+        "natural-clarification-final_test-002-v2",
+        "natural-clarification-final_test-018-v2",
+        "natural-clarification-final_test-038-v2",
+        "natural-clarification-final_test-058-v2",
+        "natural-clarification-final_test-062-v2",
+        "natural-clarification-final_test-078-v2",
+        "natural-clarification-final_test-098-v2",
+        "natural-email_drafting-final_test-020-v2",
+        "natural-email_drafting-final_test-080-v2"
+      ],
+      "functional_verdict_changes": 0,
+      "new_collapses": 0,
+      "r55_raw_sha256": "a4f65940a85f8d6d21ea032e53a55dfd2f40c9c18d711319df6d108cf1203866",
+      "r59_raw_sha256": "063ccf9b89ab1a14f559433773579256515ff55cdeeaebd658bd6ed7c5ef85f1",
+      "rows": 1400
+    },
+    "validation": {
+      "changed_historical_collapses": 0,
+      "changed_outputs": 0,
+      "changed_probe_ids": [],
+      "functional_verdict_changes": 0,
+      "new_collapses": 0,
+      "r55_raw_sha256": "426f0885ea0dfea5bbd9054729ff45543d4f17ba857250c7bd67a625631913ec",
+      "r59_raw_sha256": "056bfe0516c59820cf8d4a4ad58d3efb702aac9dd59c987b4f2e26ece20c1934",
+      "rows": 1400
+    }
+  },
+  "verdict": "PASS_R59_PARITY_AUDIT"
+}
