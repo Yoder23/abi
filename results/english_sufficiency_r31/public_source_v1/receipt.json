@@ -1,0 +1,90 @@
+{
+  "artifacts": {
+    "accepted_rows": {
+      "bytes": 677061,
+      "path": "accepted_rows.jsonl",
+      "sha256": "5ff7691d67b0e8271439acfbfe25540c7d42c06918b58b9257873c6f7ca9f05d"
+    },
+    "attempts": {
+      "bytes": 874669,
+      "path": "attempts.jsonl",
+      "sha256": "d8268232b38bff348b0d5f07600bceee4e43f7bda6d48c26c4022fb5f2ddb967"
+    },
+    "quarantine": {
+      "bytes": 154456,
+      "path": "quarantine.jsonl",
+      "sha256": "d9c3dfbc445c372b6d3d6d54941b61ccc84d22eb4ee3f22de07b78d9eba402ee"
+    }
+  },
+  "claim_ceiling": "VALIDATOR_SELECTED_DISCLOSED_SUPPLIED_CONTENT_NOT_GENERAL_ENGLISH",
+  "evidence_sha256": "937e417cafd053badebaffde2de7a5af048e9c0a1f4cae8d58b8600d39688e2e",
+  "format": "abi-r31-validator-selected-source/1",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "elapsed_seconds": 3743.68382700003,
+    "external_hardware_used": false,
+    "hidden_activations_stored": 0,
+    "logits_stored": 0,
+    "peak_cpu_rss_bytes": 2169614336,
+    "peak_gpu_memory_bytes": 15317220864,
+    "raw_source_prompts": 1604,
+    "rendered_prompt_tokens": 170621,
+    "source_load_seconds": 9.44283280003583,
+    "source_parameters_copied": 0,
+    "teacher_generated_tokens": 69504,
+    "teacher_output_bytes_all_attempts": 253330,
+    "unique_candidate_prompt_bytes": 221097,
+    "unique_candidate_prompts": 968
+  },
+  "metrics": {
+    "accepted_by_attempt": {
+      "1": 615,
+      "2": 70,
+      "3": 35
+    },
+    "accepted_by_split_task": {
+      "evaluation": {
+        "abstention": 12,
+        "bullets": 12,
+        "clarification": 12,
+        "comparison": 12,
+        "conversation": 12,
+        "email": 12,
+        "planning": 12,
+        "prose": 12,
+        "reasoning": 12,
+        "rewrite": 12,
+        "summary": 12,
+        "tone": 12
+      },
+      "train": {
+        "abstention": 48,
+        "bullets": 48,
+        "clarification": 48,
+        "comparison": 48,
+        "conversation": 48,
+        "email": 48,
+        "planning": 48,
+        "prose": 48,
+        "reasoning": 48,
+        "rewrite": 48,
+        "summary": 48,
+        "tone": 48
+      }
+    },
+    "accepted_rows": 720,
+    "quarantined_candidates": 248,
+    "teacher_calls": 1604
+  },
+  "quotas": {
+    "evaluation": 12,
+    "train": 48
+  },
+  "source": {
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "snapshot": "C:\\Users\\samyo\\.cache\\huggingface\\hub\\models--Qwen--Qwen2-7B-Instruct\\snapshots\\f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "teacher_training_steps": 0
+  },
+  "verdict": "PASS_NORMALIZED_SOURCE"
+}
