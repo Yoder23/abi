@@ -1,0 +1,143 @@
+{
+  "artifact": {
+    "bytes": 246627944,
+    "parameters": 61655050,
+    "path": "derived_full_model.safetensors",
+    "publish": false,
+    "sha256": "a30c0c50a48e7fa6f7823ab70ef89ea7628f6bc8e8415b762ebfdb73584bce09"
+  },
+  "artifacts": {
+    "evaluation": {
+      "bytes": 64365,
+      "path": "evaluation.jsonl",
+      "sha256": "d7fa2274fbba629fc6037ca9b3909660364d43b6aa2319fe5b5db140a7378126"
+    }
+  },
+  "claim_ceiling": "NONPROMOTABLE_FULL_HOST_LEARNABILITY_CONTROL_NOT_ABI_TRANSFER",
+  "evidence_sha256": "7c87f7ba2082b2b92468088388811da185f1265739d7f18730098226a60dab12",
+  "format": "abi-r30-full-layercake-upper-bound/12",
+  "full_abi_moonshot": "OPEN",
+  "information_accounting": {
+    "elapsed_seconds": 119.89888809999684,
+    "peak_cpu_rss_bytes": 1442312192,
+    "peak_gpu_memory_bytes": 1581306880,
+    "teacher_output_bytes_in_training_rows": 48499,
+    "teacher_present_during_execution": false,
+    "teacher_present_during_training": false,
+    "training_rows": 288
+  },
+  "layercake": {
+    "base_checkpoint_sha256": "9e0e6b9add32b4c460f7b570a32584f380e59bf6d631e313ff813069d24e09e1",
+    "base_state_sha256": "d749f3d0fb1ba59af94cd709df5b3f071d564035e9d95bc30d1aaa80e38e2cbc",
+    "derived_state_sha256": "5ef023bd5029a0eb037780cd7a748cd08f7ba6b20b5d3781241a542778543f96",
+    "fresh_loaded_state_sha256": "5ef023bd5029a0eb037780cd7a748cd08f7ba6b20b5d3781241a542778543f96",
+    "parameters_total": 61655050,
+    "repository_commit": "2170c78b7ae901eb4e99ec93ad59d573b2c75941",
+    "tokenizer_sha256": "1fe93b6152957cf9cfd6d89002467f789ce8b3f3e000b3a2edf27c808ddd0b9e"
+  },
+  "metrics": {
+    "by_task": {
+      "abstention": {
+        "functional": 8,
+        "rows": 12
+      },
+      "bullets": {
+        "functional": 3,
+        "rows": 12
+      },
+      "clarification": {
+        "functional": 2,
+        "rows": 12
+      },
+      "comparison": {
+        "functional": 0,
+        "rows": 12
+      },
+      "conversation": {
+        "functional": 9,
+        "rows": 12
+      },
+      "email": {
+        "functional": 0,
+        "rows": 12
+      },
+      "planning": {
+        "functional": 0,
+        "rows": 12
+      },
+      "prose": {
+        "functional": 1,
+        "rows": 12
+      },
+      "reasoning": {
+        "functional": 1,
+        "rows": 12
+      },
+      "rewrite": {
+        "functional": 10,
+        "rows": 12
+      },
+      "summary": {
+        "functional": 7,
+        "rows": 12
+      },
+      "tone": {
+        "functional": 2,
+        "rows": 12
+      }
+    },
+    "evaluation_rows": 144,
+    "functional": 43
+  },
+  "scientific_role": "FULL_HOST_SEQUENCE_TRAINING_CONTROL_NEVER_PROMOTION_ELIGIBLE",
+  "source_rows_sha256": "01f4f11ca70e9ff5d98b5d7573ef71a8a28a67e6351dc3e71b816d8bc3dd45da",
+  "training": {
+    "batch_size": 4,
+    "history": [
+      {
+        "gradient_norm": 71.13816833496094,
+        "loss": 7.50589656829834,
+        "route": 2,
+        "seconds": 0.4094770000083372,
+        "step": 1
+      },
+      {
+        "gradient_norm": 2.7622220516204834,
+        "loss": 0.026596756651997566,
+        "route": 6,
+        "seconds": 25.64439329999732,
+        "step": 600
+      },
+      {
+        "gradient_norm": 2.8586552143096924,
+        "loss": 0.02432308718562126,
+        "route": 4,
+        "seconds": 50.83233409997774,
+        "step": 1200
+      },
+      {
+        "gradient_norm": 1.3971524238586426,
+        "loss": 0.03153470531105995,
+        "route": 2,
+        "seconds": 76.20668840000872,
+        "step": 1800
+      },
+      {
+        "gradient_norm": 0.007520589511841536,
+        "loss": 7.84511721576564e-05,
+        "route": 7,
+        "seconds": 101.41428750002524,
+        "step": 2400
+      }
+    ],
+    "learning_rate": 2e-05,
+    "parameters_updated": 61655050,
+    "row_examples": 9600,
+    "seconds": 101.41453369997907,
+    "seed": 30812,
+    "skipped_amp_steps": 4,
+    "steps": 2400
+  },
+  "v11_result_sha256": "c5cceef0a83b52fccb96fa4acc8bdc81a9f3d41489418da9f92537a5d088de0c",
+  "verdict": "FAIL_NONPROMOTABLE_FULL_HOST_UPPER_BOUND"
+}
