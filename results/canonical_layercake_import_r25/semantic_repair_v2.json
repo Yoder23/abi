@@ -1,0 +1,56 @@
+{
+  "candidate_changes": 0,
+  "changed_metrics": {
+    "teacher_agreement": {
+      "after": 144,
+      "before": 135
+    }
+  },
+  "claim_ceiling": "NOT_PROMOTED_WITHOUT_FRESH_PREREGISTERED_REPLICATION",
+  "corrected_gates": {
+    "cpu_gpu_exact": true,
+    "domain_exact": true,
+    "english_core_target_answers": true,
+    "english_immutable": true,
+    "namespace_route_exact": true,
+    "other_domain_target_answers": true,
+    "package_lifecycle_exact": true,
+    "receiver_training_steps": true,
+    "reproducible_package_builds": true,
+    "source_parameters_copied": true,
+    "source_records_exact": true,
+    "targeted_corruptions_rejected": true,
+    "teacher_absent_at_execution": true,
+    "teacher_agreement": true
+  },
+  "corrected_metrics": {
+    "cpu_gpu_exact": 144,
+    "domain_exact": 144,
+    "english_core_target_answers": 0,
+    "english_immutable": 720,
+    "namespace_route_exact": 144,
+    "other_domain_target_answers": 0,
+    "package_lifecycle_exact": 6,
+    "receiver_training_steps": 0,
+    "reproducible_package_builds": 6,
+    "source_parameters_copied": 0,
+    "source_records_exact": 16,
+    "targeted_corruptions_rejected": 6,
+    "teacher_agreement": 144
+  },
+  "evidence_sha256": "26542b4405a257d2809b21c299071014274d8beb3d3576466112166bba49d1e1",
+  "format": "abi-r25-semantic-repair-verification/1",
+  "fresh_replication_required": true,
+  "full_abi_moonshot": "OPEN",
+  "gate_changes": 0,
+  "original_config_sha256": "5202c676e480e16c55c5a54be001b3edfd62c99b09bbc4172bd97874442d8d00",
+  "packages_recomputed": 6,
+  "repair_config_sha256": "985428c339e66e1ffb41a91da1c15e273034121af32ae5cc67843e211773056b",
+  "replay_result_sha256": "2af3a3c971da7d06287b2a28fe6bc93c9e099882a7ad487fa6eae4d8c878b226",
+  "rows_live_recomputed": 1164,
+  "scientific_claim": "R25_POSTHOC_NORMALIZED_TEACHER_AGREEMENT",
+  "scorer_changes": 1,
+  "status": "PASS_POSTHOC_SCORER_REPAIR_REQUIRES_FRESH_REPLICATION",
+  "stored_result_sha256": "5e0d700b05c18d914161e94adbefb8921215686a4e0b718a09fe8700c9313ae0",
+  "stored_scientific_booleans_trusted": false
+}
