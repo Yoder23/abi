@@ -1,0 +1,26 @@
+{
+  "format": "abi-r30-package-pilot-failure/5",
+  "verdict": "FAIL_DIRECT_HOST_MANIFEST_CONFORMANCE",
+  "completed_packages": 12,
+  "evaluation_rows_completed": 0,
+  "exception": "ValueError: package is not a direct capability decoder",
+  "cause": "input_contract omitted mode=direct_selected_portable_decoder",
+  "candidate_tensors_trained": true,
+  "candidate_quality_measured": false,
+  "package_inventory": [
+    {"path":"packages/capability-1804ef5e49f4.cake","bytes":984255,"sha256":"4c9731df49055443ac278e882bd98d8adc78b135aea4c4a297b2f0ea1d42f5d8"},
+    {"path":"packages/capability-660267e0e217.cake","bytes":1017794,"sha256":"08240eb20b3eed3d2336f99e80c2a80584cbf32562c57747eabc62b3566e7e33"},
+    {"path":"packages/capability-663bb9820de9.cake","bytes":1160081,"sha256":"c16270756bfc7b35ae71a21afbd2c2844d94d1aa59d420c63e55192535aa2ce6"},
+    {"path":"packages/capability-68a9963f947e.cake","bytes":994752,"sha256":"e5ad638b2c15133d4087be62d0d8747ab43d8ce433e04cd8bd9c27a93e3b56b1"},
+    {"path":"packages/capability-6a05ac87d84b.cake","bytes":998726,"sha256":"a9ddcfff0ca0869ae88baa778db77c823527259832e0016581802a5e084f10da"},
+    {"path":"packages/capability-77540ff46ac4.cake","bytes":996762,"sha256":"1263b08f9fe2045aaf05f58e3d0e2ea4f89fa3e1ba103eceb9a949cf931af35b"},
+    {"path":"packages/capability-781f838d49a2.cake","bytes":1000213,"sha256":"305e04d515b9a79815099ca5073771028fae0b9ac947eec6ffcca3902054974c"},
+    {"path":"packages/capability-8f722f34058c.cake","bytes":1122594,"sha256":"da2714f89c954c905e7a3aeb92b0606c8be13a9aa18b21493bf1b8411b76aeb4"},
+    {"path":"packages/capability-9c14f5ea0d08.cake","bytes":1015632,"sha256":"02e2577a890240285a1bfa40ae577abf0b78ad6c534765db21902a81c6b03e1a"},
+    {"path":"packages/capability-afba74547ae1.cake","bytes":1030466,"sha256":"3bce0cbe93974815404d7188a86cb26e52fbf102eeb04b5928361146aabb3cb4"},
+    {"path":"packages/capability-defbdf34a3d4.cake","bytes":988877,"sha256":"1c6eeb0cae9d55420cfe9d1ebeb64cf4c7191995d59318b939530443b5202ac9"},
+    {"path":"packages/capability-ebc97d41c4c9.cake","bytes":980081,"sha256":"a3a9804a713c19e46f2897a5d10593d97ae36194461d1573e64718460feb0012"}
+  ],
+  "full_abi_moonshot": "OPEN"
+}
+
