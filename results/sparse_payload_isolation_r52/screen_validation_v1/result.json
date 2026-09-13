@@ -1,0 +1,168 @@
+{
+  "artifacts": {
+    "evaluation": {
+      "bytes": 2455905,
+      "path": "evaluation.jsonl",
+      "sha256": "d4490ddcdc1d810a8ad9829325357bba9336da5e881d6ba2e186e6bd688f0cbe"
+    }
+  },
+  "candidate_checkpoint_sha256": "5ef352f6638f17d3df96e8dae3be160648726f371caf54d29afa1ec835edd58b",
+  "candidate_metadata_sha256": "b18882aaba781e3bef0f5b7a29d6b1e0668c7c9fdf900f34b30fcf7e39687e4c",
+  "evidence_sha256": "052001bc1bc7fe8225c881d655e455a57b4939eeb92a9021014b272734a79ad5",
+  "format": "abi-r52-sparse-payload-development-screen/1",
+  "full_abi_moonshot": "OPEN",
+  "gates": {
+    "artifacts_unchanged": true,
+    "functional": false,
+    "matrix": true,
+    "parent_nondegradation": false,
+    "per_capability": false,
+    "physical_sparse": true,
+    "route_exact": true,
+    "source_noninferior_point": true,
+    "source_retention": false,
+    "zero_collapse": false,
+    "zero_generation_error": true
+  },
+  "metrics": {
+    "by_capability": {
+      "abstention": {
+        "collapses": 0,
+        "functional": 80,
+        "regressions": 20,
+        "source_functional": 100
+      },
+      "cake_output_realization": {
+        "collapses": 0,
+        "functional": 72,
+        "regressions": 3,
+        "source_functional": 69
+      },
+      "clarification": {
+        "collapses": 1,
+        "functional": 84,
+        "regressions": 16,
+        "source_functional": 100
+      },
+      "coherence": {
+        "collapses": 0,
+        "functional": 99,
+        "regressions": 1,
+        "source_functional": 100
+      },
+      "conversation": {
+        "collapses": 0,
+        "functional": 94,
+        "regressions": 2,
+        "source_functional": 88
+      },
+      "domain_independent_reasoning": {
+        "collapses": 0,
+        "functional": 78,
+        "regressions": 22,
+        "source_functional": 100
+      },
+      "email_drafting": {
+        "collapses": 0,
+        "functional": 77,
+        "regressions": 17,
+        "source_functional": 75
+      },
+      "format_control": {
+        "collapses": 0,
+        "functional": 100,
+        "regressions": 0,
+        "source_functional": 88
+      },
+      "grammar": {
+        "collapses": 0,
+        "functional": 100,
+        "regressions": 0,
+        "source_functional": 100
+      },
+      "instruction_following": {
+        "collapses": 0,
+        "functional": 99,
+        "regressions": 1,
+        "source_functional": 85
+      },
+      "prompt_grounding": {
+        "collapses": 0,
+        "functional": 100,
+        "regressions": 0,
+        "source_functional": 100
+      },
+      "rewriting": {
+        "collapses": 0,
+        "functional": 99,
+        "regressions": 1,
+        "source_functional": 71
+      },
+      "summarization": {
+        "collapses": 0,
+        "functional": 94,
+        "regressions": 3,
+        "source_functional": 83
+      },
+      "tone_control": {
+        "collapses": 0,
+        "functional": 64,
+        "regressions": 9,
+        "source_functional": 61
+      }
+    },
+    "candidate_minus_source": {
+      "lower_95": -0.005714285714285714,
+      "point": 0.014285714285714285,
+      "replicates": 5000,
+      "upper_95": 0.035
+    },
+    "collapses": 1,
+    "functional": 1240,
+    "generation_errors": 0,
+    "generation_wall_seconds": 184.9917265000404,
+    "parent_functional": 1277,
+    "physical_sparse_rows": 1400,
+    "route_correct": 1400,
+    "rows": 1400,
+    "source_functional": 1220,
+    "source_passing_regressions": 95,
+    "source_retention": 0.9221311475409836
+  },
+  "planner_calls": 0,
+  "prospective_promotion_eligible": false,
+  "router": {
+    "accuracy": 1.0,
+    "correct": 1400,
+    "predictions_sha256": "bb677efd3643713edb07694877211f0f8e4e794b6ad766fecaa9cc680604baa6",
+    "rotated_accuracy": 0.0,
+    "rotated_correct": 0,
+    "rows": 1400
+  },
+  "router_sha256": "20ae6562432cc59ece5b9cb552caaa16da4824323e62460c6c33feb0579df863",
+  "source_identities": [
+    {
+      "archive_sha256": "85abf114ffd6455d589d8b55b740becd920bc2e4dd4f3f62fddffe4b1708af2c",
+      "manifest_sha256": "e9c6508d5c5c9cefe2ed637cbc938e7bbfbe393c3c5c95d7625e2d8e5322671d",
+      "path_at_evaluation": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_moonshot\\segregated_acquisition_v3\\phi3-natural-v2-search-validation-survey.abix"
+    },
+    {
+      "archive_sha256": "fe9af246e28efdf57e234e9384fa04c21974f997fe753ac0975d67b1d0c6ecea",
+      "manifest_sha256": "f78c84f30d1741fdce483ea0d689f2aef4bf36f3536d1de085a7c2d3a5e07055",
+      "path_at_evaluation": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_moonshot\\segregated_acquisition_v3\\phi3-natural-v3-abstention-coherence-survey.abix"
+    }
+  ],
+  "source_inventory": {
+    "available": 1600,
+    "missing": 0,
+    "selected": 1400,
+    "surplus_ids_sha256": "f635223c4e16c1007ebb13166c3e5f4a8aeb33fd0f086be20b58454f2b3467d6",
+    "surplus_not_evaluated": 200
+  },
+  "split": "validation",
+  "symbolic_output_calls": 0,
+  "teacher_calls_during_screen": 0,
+  "teacher_present_at_inference": false,
+  "training_steps_during_screen": 0,
+  "verdict": "FAIL_R52_DISCLOSED_SCREEN"
+}
