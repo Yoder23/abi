@@ -856,6 +856,32 @@ def _make_deep_adapter_hook(adapters):
         routes = getattr(module, "_abi_selected_capability_routes", None)
         if routes is None:
             raise RuntimeError("deep capability adapter route was not selected")
+        unique_routes = torch.unique(routes)
+        module._abi_last_deep_adapter_routes = tuple(
+            int(value) for value in unique_routes.detach().cpu()
+        )
+        # Runtime inference and cached decoding use one route per invocation.
+        # Select that adapter before touching any parameter tensor so inactive
+        # capability weights are physically absent from the executed graph.
+        if unique_routes.numel() == 1:
+            adapter = adapters[int(unique_routes.item())]
+            mean = hidden.mean(dim=-1, keepdim=True)
+            variance = (hidden - mean).square().mean(dim=-1, keepdim=True)
+            normalized = (hidden - mean) * torch.rsqrt(variance + 1.0e-5)
+            normalized = (
+                normalized * adapter.norm.weight[None, None]
+                + adapter.norm.bias[None, None]
+            )
+            down_weight = adapter.down.weight.unsqueeze(0).expand(
+                hidden.shape[0], -1, -1
+            )
+            up_weight = adapter.up.weight.unsqueeze(0).expand(
+                hidden.shape[0], -1, -1
+            )
+            low = torch.bmm(normalized, down_weight.transpose(1, 2))
+            update = torch.bmm(F.silu(low), up_weight.transpose(1, 2))
+            return (hidden + update, *args[1:]), kwargs
+        # Mixed-route training batches retain the established vectorized path.
         norm_weight = torch.stack(
             [adapter.norm.weight for adapter in adapters]
         ).index_select(0, routes)
