@@ -27,3 +27,9 @@ Expected chain:
 Restoration does not alter historical metadata or retroactively create new
 evidence. Reproduction outputs and per-stage restoration receipts are retained.
 R79 remains blocked until all five hashes reproduce exactly.
+
+Historical packages execute unchanged through `run_historical_module_v1.py`.
+The launcher only prepends the archived package to Python's module path while
+keeping this repository as the working root, so historical path-containment
+checks still apply to the real evidence tree. It imports no current ABI module
+before transferring control.
