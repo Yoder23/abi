@@ -78,7 +78,7 @@ def _live_evaluate(
         task = row["oracle_task"]
         routed = _infer_task(row["prompt"])
         generated = host.generate(
-            f"abi-r41-{routed}", row["prompt"], maximum_actions=96
+            f"abi-r41-{routed}", row["prompt"], maximum_actions=384
         ).output.decode("utf-8", errors="strict")
         inferred, score = _runtime_score(row["prompt"], generated)
         rows.append(

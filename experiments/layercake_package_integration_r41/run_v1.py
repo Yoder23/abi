@@ -131,7 +131,11 @@ def _components(
     return components, expected, document
 
 
-def _model_config(tokenizer: Any) -> dict[str, Any]:
+def _model_config(tokenizer: Any, state: dict[str, torch.Tensor]) -> dict[str, Any]:
+    source_positions = state.get("source_position.weight")
+    target_positions = state.get("target_position.weight")
+    if source_positions is None or target_positions is None:
+        raise RuntimeError("R41 checkpoint lacks authoritative position tensors")
     return {
         "fixed_vocab_size": tokenizer.vocab_size,
         "model_width": 64,
@@ -141,8 +145,8 @@ def _model_config(tokenizer: Any) -> dict[str, Any]:
         "feedforward_width": 192,
         "pointer_width": 32,
         "dropout": 0.0,
-        "maximum_source_lexemes": 128,
-        "maximum_target_actions": 96,
+        "maximum_source_lexemes": int(source_positions.shape[0]),
+        "maximum_target_actions": int(target_positions.shape[0]),
     }
 
 
@@ -174,7 +178,7 @@ def _make_packages(
         state = load_file(components[task]["state"])
         before = {name: tensor.detach().cpu().clone() for name, tensor in state.items()}
         architecture = api["field_addressed_token_plan_manifest_architecture"](
-            model=_model_config(tokenizer),
+            model=_model_config(tokenizer, state),
             tokenizer=tokenizer_document,
             tokenizer_sha256=tokenizer.hash(),
         )
@@ -286,7 +290,7 @@ def _evaluate(
         error = None
         try:
             generated = host.generate(
-                f"abi-r41-{routed}", row["prompt"], maximum_actions=96
+                f"abi-r41-{routed}", row["prompt"], maximum_actions=384
             ).output.decode("utf-8", errors="strict")
         except (ValueError, UnicodeDecodeError) as exc:
             generated, error = "", str(exc)

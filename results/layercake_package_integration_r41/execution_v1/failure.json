@@ -1,0 +1,19 @@
+{
+  "format": "abi-r41-pre-execution-failure/1",
+  "verdict": "FAIL_R41_LAYERCAKE_INTEGRATION",
+  "stage": "first_live_cpu_host_module_load",
+  "scientific_outputs_generated": 0,
+  "packages_built": 12,
+  "packages_installed_before_failure": 12,
+  "error_type": "RuntimeError",
+  "error": "size mismatch for target_position.weight: frozen checkpoint shape [384, 64], declared host model shape [96, 64]",
+  "cause": "The R41 adapter hard-coded a 96-action runtime limit instead of using the frozen checkpoint-authoritative 384-action target-position geometry.",
+  "repair_boundary": "Change only the declared maximum_target_actions and live generation limit to 384; preserve all packages and partial registry as negative evidence; use a new execution directory.",
+  "inputs": {
+    "layercake_commit": "f8a4569",
+    "r36_result_sha256": "1830a0a1be9b520376ce228fd50514e79f9b3a8224d56f7a1b36e0338d03d5bd",
+    "r39_result_sha256": "eee143b1f35038ed518cbd4a9a8aa034da03e0799fea39a9498e76b7bed242f0",
+    "r40_result_sha256": "50c6a5aabb8e416ec7e959919591246eca1193b36c0c6b707ad0c217f7f324d6"
+  },
+  "full_abi_moonshot": "OPEN"
+}
