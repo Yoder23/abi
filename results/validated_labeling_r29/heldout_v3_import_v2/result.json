@@ -1,0 +1,130 @@
+{
+  "artifacts": {
+    "domain_observations": {
+      "bytes": 56826,
+      "path": "domain_observations.jsonl",
+      "rows": 108,
+      "sha256": "5dd620a410e2c4b099d165860a813986bc6ee88f2348abe8fd83f5125f36ae43"
+    },
+    "english_immutability": {
+      "bytes": 162426,
+      "path": "english_immutability.jsonl",
+      "rows": 720,
+      "sha256": "cb2c990e043ccd40452d441157c00db551fc1fdc3d4e26be05638bcfae15a0e8"
+    },
+    "english_leakage": {
+      "bytes": 57379,
+      "path": "english_leakage.jsonl",
+      "rows": 216,
+      "sha256": "4b4199fb4c854f7eefe1cc61a6b6168fd21acb1c848f0197131bfee402090d48"
+    },
+    "lifecycle": {
+      "bytes": 3939,
+      "path": "lifecycle.jsonl",
+      "rows": 12,
+      "sha256": "cecf53680ca5b6e38621ff7f89a72b80e94735f12067a69b77f84bd2c3f64ef3"
+    },
+    "package_builds": {
+      "bytes": 4278,
+      "path": "package_builds.jsonl",
+      "rows": 12,
+      "sha256": "c1f0e2eadbeace20627b8ffa9e90d0d97c7bc8474ba43e2fae3faa1ec2b814a6"
+    }
+  },
+  "canonical_packages": {
+    "teacher/chemistry": {
+      "bytes": 2973,
+      "cake_id": "abi-r27-teacher-chemistry",
+      "namespace": "teacher/chemistry",
+      "package_hash": "b9a62c7f870bceea7d6b9de3df3b91503aade80df77a8ebfd0b77407c363cfa4",
+      "parameters": 0,
+      "path": "results/validated_labeling_r29/heldout_v3_import_v2/builds/27101/teacher-chemistry.cake",
+      "records": 3,
+      "sha256": "f7a7ccd7806c3e5e36a941aa02de0bd940f048194d9a948ec5f446c6f32fe3db",
+      "signed": true,
+      "state_bytes": 32
+    },
+    "teacher/geography": {
+      "bytes": 2989,
+      "cake_id": "abi-r27-teacher-geography",
+      "namespace": "teacher/geography",
+      "package_hash": "7ee84c5825e922ba4187222197df22ad61b7b8447db1489bd6826036879df571",
+      "parameters": 0,
+      "path": "results/validated_labeling_r29/heldout_v3_import_v2/builds/27101/teacher-geography.cake",
+      "records": 3,
+      "sha256": "5e77fb9af29dbf87e6400396e731f192651b16df30d02eb784f2099ed17aff80",
+      "signed": true,
+      "state_bytes": 32
+    },
+    "teacher/mathematics": {
+      "bytes": 2984,
+      "cake_id": "abi-r27-teacher-mathematics",
+      "namespace": "teacher/mathematics",
+      "package_hash": "5282d2bff320f1fe3301a25402b798744b573878c64ac1d893c86c65ebab9d11",
+      "parameters": 0,
+      "path": "results/validated_labeling_r29/heldout_v3_import_v2/builds/27101/teacher-mathematics.cake",
+      "records": 3,
+      "sha256": "d74fb104be83d85bd87cb985354e1cf294267f1f02c9c621fd8cecb564a0800b",
+      "signed": true,
+      "state_bytes": 32
+    },
+    "teacher/python": {
+      "bytes": 3031,
+      "cake_id": "abi-r27-teacher-python",
+      "namespace": "teacher/python",
+      "package_hash": "2479129a753a93bd23ab6317056a4d9426fe0b82912a7a76d0a37652715db145",
+      "parameters": 0,
+      "path": "results/validated_labeling_r29/heldout_v3_import_v2/builds/27101/teacher-python.cake",
+      "records": 4,
+      "sha256": "e16654910e4bad648d5db73c9429939f56213f63c63f24b170e2127ce74f2b49",
+      "signed": true,
+      "state_bytes": 32
+    }
+  },
+  "claim": "BOUNDED_VALIDATED_MULTITAG_CAPABILITIES_IMPORTED_INTO_LAYERCAKE",
+  "claim_ceiling": "NOT_EXHAUSTIVE_DIAGNOSIS_OR_FLUENT_ENGLISH_EXTRACTION",
+  "evidence_sha256": "3190e67b3a1d9902deb32423c670b30cb922214ca5d4b2496e86b61934f60820",
+  "format": "abi-r29-layercake-multitag-import-result/1",
+  "full_abi_moonshot": "OPEN",
+  "gates": {
+    "builds": true,
+    "corruption": true,
+    "cpu_gpu": true,
+    "domain": true,
+    "english_immutable": true,
+    "english_no_domain_answers": true,
+    "lifecycle": true,
+    "teacher": true,
+    "teacher_absent": true,
+    "unauthorized_abstain": true,
+    "zero_copy_training": true
+  },
+  "host_config_sha256": "b92bd956d61d8089e4b319566089c6469128387232f20f6638c4a9e4f0733697",
+  "import_config_sha256": "cab3010e4df2d5beba4ccad2ae3b76736640e12228bfe15dbfa4aeb2e09de254",
+  "information_accounting": {
+    "active_parameters": 0,
+    "experiment_wall_seconds": 72.69847599999048,
+    "final_package_bytes": 11977,
+    "receiver_training_steps": 0,
+    "source_parameters_copied": 0,
+    "state_bytes_per_selected_package": 32,
+    "teacher_present_at_execution": false
+  },
+  "layercake_commit": "2170c78b7ae901eb4e99ec93ad59d573b2c75941",
+  "metrics": {
+    "corruptions_rejected": 12,
+    "cpu_gpu_exact": 108,
+    "domain_oracle_exact": 108,
+    "english_core_target_answers": 0,
+    "english_immutable": 720,
+    "lifecycle_exact": 12,
+    "packages": 4,
+    "receiver_training_steps": 0,
+    "reproducible_builds": 12,
+    "source_parameters_copied": 0,
+    "teacher_agreement": 96,
+    "unauthorized_packages_abstain": 108
+  },
+  "source_result_sha256": "055d58346963c501f3d370148ec90b18bd3f76a3ae82a09d2ad35c12f3b5d173",
+  "verdict": "PASS"
+}
