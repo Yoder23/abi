@@ -80,6 +80,39 @@ def _source(
     return source, identities
 
 
+def _router_matrix(
+    rows: Sequence[dict[str, Any]],
+    capability_to_route: dict[str, int],
+) -> tuple[torch.Tensor, torch.Tensor]:
+    inputs = torch.stack([r49._feature(str(row["prompt"])) for row in rows])
+    labels = torch.tensor(
+        [capability_to_route[str(row["capability"])] for row in rows],
+        dtype=torch.long,
+    )
+    return inputs, labels
+
+
+def _router_score(
+    router: torch.nn.Linear,
+    inputs: torch.Tensor,
+    labels: torch.Tensor,
+) -> dict[str, Any]:
+    with torch.inference_mode():
+        predictions = router(inputs).argmax(dim=-1)
+    correct = int((predictions == labels).sum())
+    rotated = (labels + 1) % int(router.out_features)
+    return {
+        "rows": len(labels),
+        "correct": correct,
+        "accuracy": correct / len(labels),
+        "rotated_correct": int((predictions == rotated).sum()),
+        "rotated_accuracy": float((predictions == rotated).float().mean()),
+        "predictions_sha256": hashlib.sha256(
+            bytes(int(value) for value in predictions.cpu())
+        ).hexdigest(),
+    }
+
+
 def run(
     candidate: Path,
     router_path: Path,
@@ -98,6 +131,8 @@ def run(
     result_format: str = "abi-r51-broad-payload-development-screen/1",
     campaign_name: str = "R51",
     expected_training_seed: int = 51_001,
+    router_sha256: str = ROUTER_SHA256,
+    capability_to_route: dict[str, int] = CAPABILITY_TO_ROUTE,
 ) -> dict[str, Any]:
     if output.exists():
         raise ScreenError(f"immutable R51 screen exists: {output}")
@@ -106,7 +141,7 @@ def run(
     frozen = (
         (candidate / "model.safetensors", candidate_sha256),
         (candidate / "metadata.json", metadata_sha256),
-        (router_path, ROUTER_SHA256),
+        (router_path, router_sha256),
         (catalog_path, r49.CATALOG_SHA256),
         (broad_bundle, BROAD_SHA256),
         (anchor_bundle, ANCHOR_SHA256),
@@ -159,11 +194,16 @@ def run(
             "\n".join(sorted(surplus)).encode("utf-8")
         ).hexdigest(),
     }
-    router = torch.nn.Linear(r49.FEATURES, 10)
+    route_count = len(set(capability_to_route.values()))
+    if set(capability_to_route) != {
+        str(probe["capability"]) for probe in probes
+    } or set(capability_to_route.values()) != set(range(route_count)):
+        raise ScreenError("R51 capability-route mapping changed")
+    router = torch.nn.Linear(r49.FEATURES, route_count)
     router.load_state_dict(load_file(str(router_path), device="cpu"), strict=True)
     router.eval()
-    features, labels = r49._matrix(probes)
-    router_score = r49._score(router, features, labels)
+    features, labels = _router_matrix(probes, capability_to_route)
+    router_score = _router_score(router, features, labels)
     if router_score["accuracy"] != 1.0 or router_score["rotated_correct"] != 0:
         raise ScreenError("R51 external router prerequisite failed")
 
@@ -187,8 +227,8 @@ def run(
             "output_sha256": hashlib.sha256(output_text.encode()).hexdigest(),
             "output_token_ids": token_ids, "functional_pass": bool(passed),
             "functional_score": float(score), "route": route,
-            "expected_route": CAPABILITY_TO_ROUTE[str(probe["capability"])],
-            "route_correct": route == CAPABILITY_TO_ROUTE[str(probe["capability"])],
+            "expected_route": capability_to_route[str(probe["capability"])],
+            "route_correct": route == capability_to_route[str(probe["capability"])],
             "maximum_cakes_called_per_model_invocation": max(map(len, physical)),
             "all_calls_selected_only": all(value == (route,) for value in physical),
             "latency_seconds": latency,
@@ -214,7 +254,7 @@ def run(
             "regressions": sum(row["capability"] == capability and row["source_passing_regression"] for row in rows),
             "collapses": sum(row["capability"] == capability and row["collapse"]["collapse_detected"] for row in rows),
         }
-        for capability in sorted(CAPABILITY_TO_ROUTE)
+        for capability in sorted(capability_to_route)
     }
     functional = sum(row["functional_pass"] for row in rows)
     source_functional = sum(row["source"]["passed"] for row in rows)
@@ -257,7 +297,7 @@ def run(
         "split": split,
         "candidate_checkpoint_sha256": candidate_sha256,
         "candidate_metadata_sha256": metadata_sha256,
-        "router_sha256": ROUTER_SHA256,
+        "router_sha256": router_sha256,
         "source_identities": source_identities,
         "source_inventory": source_inventory,
         "router": router_score, "metrics": metrics, "gates": gates,
