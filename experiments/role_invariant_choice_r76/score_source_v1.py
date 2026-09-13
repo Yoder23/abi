@@ -42,6 +42,13 @@ SPECS = {
         "minimum": 1_330,
         "family_minimum": 180,
     },
+    "r80": {
+        "sha256": "5c2975520630fd6cc1b57e473c50ed89e43540fb5e810ade91fba70c9b98b894",
+        "rows": 1_400,
+        "split": "validation",
+        "minimum": 1_330,
+        "family_minimum": 180,
+    },
 }
 
 
