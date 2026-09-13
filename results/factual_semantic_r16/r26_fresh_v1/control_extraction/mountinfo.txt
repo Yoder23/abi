@@ -1,0 +1,10 @@
+561 275 0:82 / / rw,relatime - tmpfs tmpfs rw,size=65536k,mode=700
+562 561 8:48 /usr /usr ro,relatime - ext4 /dev/sdd rw,discard,errors=remount-ro,data=ordered
+563 561 0:83 / /etc ro,relatime - tmpfs tmpfs ro,size=4096k,mode=755
+564 561 0:84 / /dev rw,relatime - tmpfs tmpfs rw,size=16384k,mode=755
+565 564 0:5 /null /dev/null ro,relatime - devtmpfs none rw,size=16367284k,nr_inodes=4091821,mode=755
+566 564 0:5 /zero /dev/zero ro,relatime - devtmpfs none rw,size=16367284k,nr_inodes=4091821,mode=755
+567 564 0:5 /random /dev/random ro,relatime - devtmpfs none rw,size=16367284k,nr_inodes=4091821,mode=755
+568 564 0:5 /urandom /dev/urandom ro,relatime - devtmpfs none rw,size=16367284k,nr_inodes=4091821,mode=755
+569 561 8:48 /tmp/abi-r16-extraction-cec19d70719b4b0396e7bd8fd525b3a6 /capsule rw,relatime - ext4 /dev/sdd rw,discard,errors=remount-ro,data=ordered
+577 561 0:85 / /proc rw,nosuid,nodev,noexec,relatime - proc proc rw

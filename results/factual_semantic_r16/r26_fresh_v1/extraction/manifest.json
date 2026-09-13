@@ -1,0 +1,26 @@
+{
+  "evidence_sha256": "beb88ed2178a0ffdf774751fa5e549a5b2acac11e1c0c3fbdb5ae3675965a658",
+  "fact_ids_included": 0,
+  "files": [
+    {
+      "bytes": 8188,
+      "path": "isolated_worker.py",
+      "sha256": "fd2d84b3361a9bdc4d28b07a65e5942ee5dc4996f88f95ce84940307e62e6280"
+    },
+    {
+      "bytes": 34308,
+      "path": "source_bundle.json",
+      "sha256": "0cb690947f01872f242e30911409057de79b05cc8da51862fc5b42e9fa10105b"
+    },
+    {
+      "bytes": 339,
+      "path": "spec.json",
+      "sha256": "5e6c1387a216440d41b3571c14882841948022443ba9f6475d747dbf724bf47c"
+    }
+  ],
+  "format": "abi-r16-isolated-factual-capsule/1",
+  "network": false,
+  "oracle_fields_included": 0,
+  "reveal_files_included": 0,
+  "success_ids_included": 0
+}
