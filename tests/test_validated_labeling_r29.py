@@ -30,6 +30,9 @@ def test_r29_selection_is_balanced_and_subjects_are_present():
     assert len(facts) == 12
     assert all(sum(fact.oracle_domain == domain for fact in facts) == 3 for domain in {fact.oracle_domain for fact in HIDDEN_FACTS})
     assert all(fact.subject.casefold() in question.casefold() for fact in HIDDEN_FACTS for question in fact.extraction_questions + fact.evaluation_questions)
+    excluded = [fact.fact_id for fact in HIDDEN_FACTS[:24]]
+    fresh = selected_facts(secret.hex(), hashlib.sha256(secret).hexdigest(), 3, excluded)
+    assert not {fact.fact_id for fact in fresh}.intersection(excluded)
 
 
 def test_r29_compiler_validates_and_multitags(tmp_path):

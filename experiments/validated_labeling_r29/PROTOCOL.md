@@ -41,3 +41,11 @@ gate and two valid views remained. That failure is preserved. V2 changes only
 the worker's handling of an empty parse sentinel, demonstrates the repair
 posthoc on V1 rows, and prospectively queries the twelve facts in the frozen
 R29 universe that V1 never selected. No V1-selected fact is eligible for V2.
+
+V2 then passed every final package, label, isolation, and control condition but
+failed its global 60/72 raw-teacher gate at 52/72. Because all misses in the
+validated stratum are superseded rather than imported, V3 preregisters
+provenance-stratified gates: at least 32/36 source-correct observations in the
+unvalidated chemistry/geography stratum, exact independent validation in the
+math/Python stratum, and exact final packages. V3 draws only from 24 new facts
+that were not eligible or observed in V1/V2.

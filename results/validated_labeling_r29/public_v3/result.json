@@ -1,0 +1,59 @@
+{
+  "artifacts": {
+    "evaluation": {
+      "path": "evaluation.jsonl",
+      "sha256": "bda242723805d2525c001989cd8efa290ad5510f52395f3f768c77d04fb16054"
+    }
+  },
+  "claim": "DISCLOSED_STRATIFIED_PROVENANCE_SCORER",
+  "claim_ceiling": "POSTHOC_ON_V2_ROWS_NOT_FRESH_HELDOUT_OR_LAYERCAKE_IMPORT",
+  "evidence_sha256": "eca127f04895633131f08d314f82137b8c1e2664f6574e8be4ab208c83d7f4e0",
+  "format": "abi-r29-public-stratified-qualification/3",
+  "full_abi_moonshot": "OPEN",
+  "metrics": {
+    "all_source_rows": 72,
+    "evaluation_rows": 36,
+    "oracle_fields_consumed": 0,
+    "package_fact_records": 13,
+    "package_oracle_exact": 36,
+    "packages": 4,
+    "source_records": 36,
+    "teacher_oracle_exact": 27,
+    "unique_facts": 12,
+    "unvalidated_source_exact": 35,
+    "unvalidated_source_rows": 36,
+    "validator_uses": 6
+  },
+  "packages": [
+    {
+      "bytes": 268,
+      "facts": 3,
+      "namespace": "teacher/chemistry",
+      "path": "packages/sha256-12657a404dea1a9a65fc73d3e23cca82501b1ceea5d898f1b30a3d2cfd962620.abipkg",
+      "sha256": "12657a404dea1a9a65fc73d3e23cca82501b1ceea5d898f1b30a3d2cfd962620"
+    },
+    {
+      "bytes": 285,
+      "facts": 3,
+      "namespace": "teacher/geography",
+      "path": "packages/sha256-350792bdffe020258d61ef9ba487d782083dd86762c753d5d37be86550b7a745.abipkg",
+      "sha256": "350792bdffe020258d61ef9ba487d782083dd86762c753d5d37be86550b7a745"
+    },
+    {
+      "bytes": 274,
+      "facts": 3,
+      "namespace": "teacher/mathematics",
+      "path": "packages/sha256-08a53b2517f5e61a7e49f3c6339be2590d0fac547ec65653775e8c5f1b3896e4.abipkg",
+      "sha256": "08a53b2517f5e61a7e49f3c6339be2590d0fac547ec65653775e8c5f1b3896e4"
+    },
+    {
+      "bytes": 350,
+      "facts": 4,
+      "namespace": "teacher/python",
+      "path": "packages/sha256-5722515f7269e479f0b798defa313b02f1f8e4bddf7572dfb52fee26871cdc91.abipkg",
+      "sha256": "5722515f7269e479f0b798defa313b02f1f8e4bddf7572dfb52fee26871cdc91"
+    }
+  ],
+  "r29_v2_source_rows_sha256": "917b7316323ce825ace24113a98778e0cc42a07ec502413974868abde824359d",
+  "verdict": "PASS"
+}
