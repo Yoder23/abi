@@ -1,0 +1,180 @@
+{
+  "artifacts": {
+    "row_audit": {
+      "bytes": 1394828,
+      "path": "row_audit.jsonl",
+      "sha256": "ffb8da948e73a17d165122a29722341b991cb4dff01c03cc988bc8e946d6917a"
+    }
+  },
+  "by_capability": {
+    "abstention": {
+      "diagnostic_rescore": {
+        "r59_passes": 80,
+        "r59_rows": 100,
+        "r63_passes": 68,
+        "r63_rows": 100,
+        "source_passes": 75,
+        "source_rows": 100
+      }
+    },
+    "cake_output_realization": {
+      "unchanged": {
+        "r59_passes": 70,
+        "r59_rows": 100,
+        "r63_passes": 64,
+        "r63_rows": 100,
+        "source_passes": 75,
+        "source_rows": 100
+      }
+    },
+    "clarification": {
+      "unchanged": {
+        "r59_passes": 80,
+        "r59_rows": 100,
+        "r63_passes": 94,
+        "r63_rows": 100,
+        "source_passes": 100,
+        "source_rows": 100
+      }
+    },
+    "conversation": {
+      "unchanged": {
+        "r59_passes": 94,
+        "r59_rows": 100,
+        "r63_passes": 89,
+        "r63_rows": 100,
+        "source_passes": 81,
+        "source_rows": 100
+      }
+    },
+    "domain_independent_reasoning": {
+      "diagnostic_rescore": {
+        "r59_passes": 20,
+        "r59_rows": 100,
+        "r63_passes": 8,
+        "r63_rows": 100,
+        "source_passes": 82,
+        "source_rows": 100
+      }
+    },
+    "email_drafting": {
+      "unchanged": {
+        "r59_passes": 78,
+        "r59_rows": 100,
+        "r63_passes": 76,
+        "r63_rows": 100,
+        "source_passes": 53,
+        "source_rows": 100
+      }
+    },
+    "grammar": {
+      "unchanged": {
+        "r59_passes": 81,
+        "r59_rows": 100,
+        "r63_passes": 88,
+        "r63_rows": 100,
+        "source_passes": 100,
+        "source_rows": 100
+      }
+    },
+    "instruction_following": {
+      "unchanged": {
+        "r59_passes": 75,
+        "r59_rows": 100,
+        "r63_passes": 74,
+        "r63_rows": 100,
+        "source_passes": 89,
+        "source_rows": 100
+      }
+    },
+    "prompt_grounding": {
+      "unchanged": {
+        "r59_passes": 87,
+        "r59_rows": 100,
+        "r63_passes": 89,
+        "r63_rows": 100,
+        "source_passes": 100,
+        "source_rows": 100
+      }
+    },
+    "rewriting": {
+      "unchanged": {
+        "r59_passes": 74,
+        "r59_rows": 100,
+        "r63_passes": 73,
+        "r63_rows": 100,
+        "source_passes": 89,
+        "source_rows": 100
+      }
+    },
+    "summarization": {
+      "unchanged": {
+        "r59_passes": 84,
+        "r59_rows": 100,
+        "r63_passes": 92,
+        "r63_rows": 100,
+        "source_passes": 84,
+        "source_rows": 100
+      }
+    },
+    "tone_control": {
+      "unchanged": {
+        "r59_passes": 55,
+        "r59_rows": 100,
+        "r63_passes": 65,
+        "r63_rows": 100,
+        "source_passes": 45,
+        "source_rows": 100
+      }
+    }
+  },
+  "classification_counts": {
+    "censored": 100,
+    "diagnostic_rescore": 200,
+    "incompatible_contract": 100,
+    "unchanged": 1000
+  },
+  "format": "abi-r64-evaluator-lineage-audit/1",
+  "frozen_inputs": {
+    "catalogs/prospective_endpoint_r60_v1.json": "4b0087c9a7fa0e0fd6f607fdbd94fffbdd3cb375f5880a0588c97414583a2ad7",
+    "results/invariance_augmented_adapters_r63/screen_r60_v1a/evaluation.jsonl": "39012f3bae8ec26d5a17c1adeb63d6da935b229fd80d71a6c59dd91af2c0e266",
+    "results/prospective_endpoint_r60/live_source_v1/source_outputs.jsonl": "35a5a6e1035035db1663d793257274e3be2b766aab79a00a0476478d0428b596",
+    "results/prospective_endpoint_r60/screen_v1/evaluation.jsonl": "e509484babfab685c91fee3a6165bfea0b2881213fdb7b3a71fde9266e2a25cf"
+  },
+  "full_abi_moonshot": "OPEN",
+  "limitations": [
+    "The diagnostic rescore is post-hoc development evidence only.",
+    "Coherence is censored by the obsolete 40-token ceiling.",
+    "Format control changed task contracts and is not rescorable.",
+    "The artificial Evaluation-item prefix remains an R60 prompt defect."
+  ],
+  "metrics": {
+    "censored": {
+      "probes": 100
+    },
+    "diagnostic_rescore": {
+      "probes": 200,
+      "r59_passes": 100,
+      "r59_rows": 200,
+      "r63_passes": 76,
+      "r63_rows": 200,
+      "source_passes": 157,
+      "source_rows": 200
+    },
+    "incompatible_contract": {
+      "probes": 100
+    },
+    "unchanged": {
+      "probes": 1000,
+      "r59_passes": 778,
+      "r59_rows": 1000,
+      "r63_passes": 804,
+      "r63_rows": 1000,
+      "source_passes": 816,
+      "source_rows": 1000
+    }
+  },
+  "promotion_eligible": false,
+  "rows": 1400,
+  "verdict": "R60_NOT_PROMOTION_VALID_EVALUATOR_LINEAGE_DEFECT_CONFIRMED"
+}
