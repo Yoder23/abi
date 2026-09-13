@@ -1,4 +1,5 @@
 from experiments.irreversible_collapse_invariant_r59.screen_v1 import (
+    _completed_output_words,
     _irreversible_collapse_reason,
 )
 
@@ -30,3 +31,12 @@ def test_invariant_stops_at_locked_novel_lexical_boundary():
         _irreversible_collapse_reason(list(range(30)), output, "Different prompt")
         == "repeated_novel_lexical_fourgrams"
     )
+
+
+def test_incomplete_final_lexical_item_is_not_counted():
+    assert _completed_output_words("alpha beta gam") == ["alpha", "beta"]
+    assert _completed_output_words("alpha beta gamma ") == [
+        "alpha",
+        "beta",
+        "gamma",
+    ]

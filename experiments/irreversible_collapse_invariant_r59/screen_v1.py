@@ -21,6 +21,13 @@ MAXIMUM_IDENTICAL_TOKEN_RUN = 6
 REPEATED_NOVEL_LEXICAL_FOURGRAMS = 4
 
 
+def _completed_output_words(output: str) -> list[str]:
+    matches = list(re.finditer(r"[\w']+", output.casefold()))
+    if matches and matches[-1].end() == len(output):
+        matches = matches[:-1]
+    return [match.group() for match in matches]
+
+
 def _irreversible_collapse_reason(
     token_ids: Sequence[int],
     output: str,
@@ -39,7 +46,9 @@ def _irreversible_collapse_reason(
     if maximum_run >= MAXIMUM_IDENTICAL_TOKEN_RUN:
         return "maximum_identical_token_run"
 
-    output_words = re.findall(r"[\w']+", output.casefold())
+    # A decoded prefix may end midway through a BPE-composed word. That last
+    # lexical item is not irreversible until a delimiter closes it.
+    output_words = _completed_output_words(output)
     prompt_words = re.findall(r"[\w']+", prompt.casefold())
     prompt_fourgrams = {
         tuple(prompt_words[index : index + 4])
