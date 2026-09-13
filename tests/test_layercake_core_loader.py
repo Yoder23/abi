@@ -10,6 +10,7 @@ from abi.layercake_core_loader import (
     CAPABILITY_CAKE_ARCHITECTURE,
     CAPABILITY_CAKE_CANONICAL_ROUTES,
     CAPABILITY_CAKE_ORDER,
+    LAYERWISE_CAPABILITY_CONTROL_ARCHITECTURE,
     DEEP_CAPABILITY_ADAPTER_ARCHITECTURE,
     DEEP_CAPABILITY_ADAPTER_RANK,
     PERSISTENT_CAPABILITY_PREFIX_ARCHITECTURE,
@@ -21,6 +22,7 @@ from abi.layercake_core_loader import (
     TASK_ROUTE_SELECTIVE_PROMPT_IDENTITY_ARCHITECTURE,
     PROMPT_IDENTITY_RANK,
     SIX_BLOCK_CAPABILITY_CAKE_ARCHITECTURE,
+    SIX_BLOCK_LAYERWISE_CAPABILITY_CONTROL_ARCHITECTURE,
     _load_symbolic_surface_substrate,
 )
 from abi.layercake_host import _canonical_json_bytes
@@ -97,6 +99,32 @@ def test_versioned_core_config_accepts_distinct_six_block_capability_cakes() -> 
             capability_cake_order=CAPABILITY_CAKE_ORDER,
             capability_cake_canonical_routes=CAPABILITY_CAKE_CANONICAL_ROUTES,
             architecture_version=CAPABILITY_CAKE_ARCHITECTURE,
+        )
+
+
+def test_versioned_core_config_accepts_six_block_layerwise_control() -> None:
+    config = ABIEnglishCoreConfig(
+        layers=6,
+        task_cakes=14,
+        capability_cake_order=CAPABILITY_CAKE_ORDER,
+        capability_cake_canonical_routes=CAPABILITY_CAKE_CANONICAL_ROUTES,
+        capability_router_buckets=PERSISTENT_PREFIX_ROUTER_BUCKETS,
+        capability_router_width=PERSISTENT_PREFIX_ROUTER_WIDTH,
+        capability_control_width=768,
+        architecture_version=SIX_BLOCK_LAYERWISE_CAPABILITY_CONTROL_ARCHITECTURE,
+    )
+    assert config.layers == 6
+    assert config.capability_control_width == 768
+    with pytest.raises(ValueError, match="architecture version"):
+        ABIEnglishCoreConfig(
+            layers=6,
+            task_cakes=14,
+            capability_cake_order=CAPABILITY_CAKE_ORDER,
+            capability_cake_canonical_routes=CAPABILITY_CAKE_CANONICAL_ROUTES,
+            capability_router_buckets=PERSISTENT_PREFIX_ROUTER_BUCKETS,
+            capability_router_width=PERSISTENT_PREFIX_ROUTER_WIDTH,
+            capability_control_width=768,
+            architecture_version=LAYERWISE_CAPABILITY_CONTROL_ARCHITECTURE,
         )
 
 

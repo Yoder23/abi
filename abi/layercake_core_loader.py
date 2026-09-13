@@ -101,6 +101,10 @@ LAYERWISE_CAPABILITY_CONTROL_ARCHITECTURE = (
     "layercake-shallow-sparse-english/5-three-block-"
     "layerwise-capability-control-rank64-cakes"
 )
+SIX_BLOCK_LAYERWISE_CAPABILITY_CONTROL_ARCHITECTURE = (
+    "layercake-shallow-sparse-english/5-six-block-"
+    "layerwise-capability-control-rank64-cakes"
+)
 TASK_ROUTE_LAYERWISE_CONTROL_ARCHITECTURE = (
     "layercake-shallow-sparse-english/10-three-block-"
     "task-route-layerwise-control-rank64-cakes"
@@ -199,7 +203,6 @@ class ABIEnglishCoreConfig:
         if self.layers == 6 and any(
             (
                 prefix_topology,
-                control_topology,
                 adapter_topology,
                 reused_cake_topology,
                 gated_reused_cake_topology,
@@ -317,7 +320,11 @@ class ABIEnglishCoreConfig:
             )
             if adapter_topology
             else (
-                LAYERWISE_CAPABILITY_CONTROL_ARCHITECTURE
+                (
+                    SIX_BLOCK_LAYERWISE_CAPABILITY_CONTROL_ARCHITECTURE
+                    if self.layers == 6
+                    else LAYERWISE_CAPABILITY_CONTROL_ARCHITECTURE
+                )
                 if control_topology
                 else (
                     PERSISTENT_CAPABILITY_PREFIX_ARCHITECTURE
@@ -606,7 +613,7 @@ def install_layerwise_capability_control(
     *,
     initialize: bool,
 ) -> None:
-    """Attach three physically selected controls and the hashed router."""
+    """Attach one physically selected control per block and the hashed router."""
 
     config = model.config
     device = model.transformer.wte.weight.device
@@ -654,7 +661,11 @@ def install_layerwise_capability_control(
         capability_router_buckets=PERSISTENT_PREFIX_ROUTER_BUCKETS,
         capability_router_width=PERSISTENT_PREFIX_ROUTER_WIDTH,
         capability_control_width=int(config.width),
-        architecture_version=LAYERWISE_CAPABILITY_CONTROL_ARCHITECTURE,
+        architecture_version=(
+            SIX_BLOCK_LAYERWISE_CAPABILITY_CONTROL_ARCHITECTURE
+            if int(config.layers) == 6
+            else LAYERWISE_CAPABILITY_CONTROL_ARCHITECTURE
+        ),
     )
     model._abi_capability_cake_order = CAPABILITY_CAKE_ORDER
     model._abi_capability_cake_routes = CAPABILITY_CAKE_CANONICAL_ROUTES
