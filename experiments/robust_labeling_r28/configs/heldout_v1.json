@@ -1,0 +1,55 @@
+{
+  "code_sha256": {
+    "experiments/autonomous_labeling_r27/facts.py": "5e630b58dd9746f60b588f54dfcdc7ddf5872b42fb1f5b5d2c3596ea14dc9fd0",
+    "experiments/autonomous_labeling_r27/protocol.py": "3dceffca66730465f0132f9f6d7cc8fff3b34494baaceb692d9f128ddbf97b70",
+    "experiments/autonomous_labeling_r27/public_qualification.py": "a7978de3e847551f51b28c379128625b48d187131a60e105494d1aee2f8469a4",
+    "experiments/autonomous_labeling_r27/source_run.py": "e800c1ec14a16705e104f3c31e897fc2b83d1473dc419767529d71f9fdc5d755",
+    "experiments/factual_semantic_r16/package.py": "a05caf3df0c8a162cb102f00e1c79fac29d52c53d13e6247921e66c05c70c682",
+    "experiments/factual_semantic_r16/public_qualification.py": "c54da43b8cf0f592247101aa8a6b6511795272802ed3ebb606aad1fd1c2e7361",
+    "experiments/foreign_capability_r14/core.py": "ade41e81c0087c9d56f484c1e7c6f8e57a726a31150a42c92b448c1d0eec4816",
+    "experiments/generative_transfer_r21/hash_assurance_binding.py": "f1915f3c95256b52edd6140a126ad2eec88d235794be2b76934faaa3b1995e8a",
+    "experiments/robust_labeling_r28/PROTOCOL.md": "76daa2c41acacafda311f4c1e3949db2df7f23f614c1e083ffb6072bb43b856a",
+    "experiments/robust_labeling_r28/binding.py": "dbd619ddfdffaac4a6afb028d76d259c989942c2b50a11e4b6905c9fa2404a23",
+    "experiments/robust_labeling_r28/extraction_pivot_runner.sh": "20b560ccd6164758f36195457aa7932a15c055860c5d84fc53259a6d9b40079f",
+    "experiments/robust_labeling_r28/facts.py": "004e07c44571f919271e0dd628e71f98e8c5e290a750324f026e3b20888b2d5c",
+    "experiments/robust_labeling_r28/isolated_worker.py": "06776212cf61a63578bb7bbb15a99377b9e9541d93ea859ca2d1c78e121c2ed1",
+    "experiments/robust_labeling_r28/isolation.py": "f0a281dafc84bce6d14727dd68306611e48a25ce6068a6ac7c1f9e90cc3ca375",
+    "experiments/robust_labeling_r28/prepare_secret.py": "6225e2a1b17eda17d4636a12f8e606f8ef0896d37aa29f398bddb891ec7d2a1b",
+    "experiments/robust_labeling_r28/protocol.py": "36449708ee2c5fdc862b8149e9f323e5f2784a5f697a7ffd79606831a113d1d5",
+    "experiments/robust_labeling_r28/public_qualification.py": "e591df473155ff86059970f724932fe81de86219cf04ced8b0fe0fa8439668a0",
+    "experiments/robust_labeling_r28/source_run.py": "fdcbb38f4898f9f67c9967b36c18f71ac603773f381a0d9d74f697df4b8c83bd",
+    "experiments/robust_labeling_r28/verify.py": "ef1201b3e993049a029dbe57a6017198695e05881133f60a299434858459c4a6",
+    "tests/test_robust_labeling_r28.py": "f9e98ea4dab52939d3dc38d608b3ec18bfa06d8a58b6f59955b95de398bc4a05"
+  },
+  "facts_per_domain": 3,
+  "format": "abi-r28-heldout-config/1",
+  "heldout_seed_commitment": "57b705f55b067a3e874a08059d75ecc24744cdd81d2884fb9d47a1391bfde981",
+  "implementation_freeze_commit": "9c9e71c4b4bce76758a2050cf49164da3c486801",
+  "label_choices_supplied": 0,
+  "max_control_accuracy": 0.1,
+  "minimum_raw_exact": 68,
+  "minimum_teacher_agreement": 32,
+  "physical_extraction": {
+    "distribution": "Ubuntu",
+    "policy": "linux-pivot-root-no-network/1"
+  },
+  "public_prerequisite": {
+    "bytes": 2049,
+    "path": "results/robust_labeling_r28/public_v3/result.json",
+    "sha256": "b2f0fc7c4e3f048588dba63971f6df2baea4db53129385186154abf55226b9c9"
+  },
+  "quorum": 2,
+  "r27_host_config": {
+    "bytes": 7744,
+    "path": "experiments/autonomous_labeling_r27/configs/heldout_v1.json",
+    "sha256": "b92bd956d61d8089e4b319566089c6469128387232f20f6638c4a9e4f0733697"
+  },
+  "reveal_sha256": "f1a0a7025931976caacc9120f2fa9e1df3b3e45309ba38ccdc3f2208caaf2652",
+  "source": {
+    "max_new_tokens": 32,
+    "model_id": "Qwen/Qwen2-7B-Instruct",
+    "revision": "f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "training_steps": 0
+  },
+  "training_authorized": false
+}
