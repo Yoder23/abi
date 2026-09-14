@@ -10,3 +10,8 @@ The bounded repair removes the compact punctuation-only relation form and
 replaces it with a whitespace-delimited natural-language form carrying the
 same two-hop semantics. All registered counts, training steps, inputs, and
 scientific gates remain unchanged. The preflight must pass before training.
+
+A second preflight after commit `8ea0abc` found the same class of boundary
+failure in the compact colon-separated successor form, again before training.
+That form is likewise replaced by explicit whitespace-delimited successor
+language. Both failed preflights are retained here rather than hidden.

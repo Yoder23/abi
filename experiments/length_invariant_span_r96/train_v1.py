@@ -67,7 +67,7 @@ def _relation(form: int, a: str, b: str, c: str, subject: str) -> str:
         f"Trace this classification: {subject} begins under {a}; the next broader type is {b}; the type broader than {b} is {c}.",
         f"Record {subject} under {a}. The parent of {a} is {b}; the parent of {b} is {c}.",
         f"Taxonomy entries state {subject} in {a}, then {a} in {b}, then {b} in {c}.",
-        f"Starting at {subject}:{a}, follow successor {a}:{b} and successor {b}:{c}.",
+        f"Starting with {subject} at {a}, follow the successor from {a} to {b} and then from {b} to {c}.",
         f"The type path for {subject} reads {a}, then {b}, then {c}.",
         f"Inclusions are {subject} within {a}, {a} within {b}, and {b} within {c}.",
         f"Classification table: {subject} => {a}; {a} => {b}; {b} => {c}.",
