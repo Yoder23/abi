@@ -75,7 +75,7 @@ def _relation(form: int, a: str, b: str, c: str, subject: str) -> str:
         f"For this ontology, {subject} occupies {a}; {a} descends from {b}; {b} descends from {c}.",
         f"The chain attached to {subject} is {a} / {b} / {c}, ordered from narrow to broad.",
         f"{subject} matches {a}. Anything matching {a} matches {b}; anything matching {b} matches {c}.",
-        f"Resolve links {subject}--{a}, {a}--{b}, and {b}--{c} in that order.",
+        f"Resolve the link from {subject} to {a}, then from {a} to {b}, and finally from {b} to {c}.",
         f"Closed type facts: {subject} has {a}; {a} implies {b}; {b} implies {c}.",
     )
     return forms[form]
