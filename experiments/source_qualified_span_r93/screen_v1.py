@@ -30,6 +30,16 @@ PARENT_SHA256 = "b6977f087ac42e6e4234d026b4cd83827b720d8973cca049daf18bcc8b96a64
 PARENT_METADATA_SHA256 = "1c91e94abc3f2faa9a6f7d68689451dc94098dd2330652a4713a0116c3080e0e"
 ARTIFACT_SHA256 = "292ba40ced84db5a28ef3c8214ac7645623db5e0f047218f5f7bf7c2ce0b10cc"
 ROWS = 1_400
+CAMPAIGN = "r93"
+BINDING_FORMAT = "abi-r93-source-qualified-candidate-binding/1"
+SOURCE_VERDICT = "PASS_R93_SOURCE"
+SOURCE_PASS_FIELD = "prior_corrected_passed"
+FAMILIES = 4
+FAMILY_FLOOR = 315
+SEED_BASE = 93_000
+RESULT_FORMAT = "abi-r93-source-qualified-prospective-screen/1"
+PASS_VERDICT = "PASS_R93_BOUNDED_PROSPECTIVE_TRANSFER"
+FAIL_VERDICT = "FAIL_R93_PROSPECTIVE_TRANSFER"
 
 
 class R93Error(RuntimeError):
@@ -40,7 +50,7 @@ def _load_binding(path: Path, root: Path) -> tuple[dict[str, Any], dict[str, Pat
     value = json.loads(path.read_text(encoding="utf-8"))
     claimed = value.get("binding_sha256")
     unsigned = {key: item for key, item in value.items() if key != "binding_sha256"}
-    if value.get("format") != "abi-r93-source-qualified-candidate-binding/1" or claimed != _canonical_sha(unsigned) or value.get("candidate_observations_before_binding") != 0 or value.get("candidate_retrained_after_r91_development") is not False:
+    if value.get("format") != BINDING_FORMAT or claimed != _canonical_sha(unsigned) or value.get("candidate_observations_before_binding") != 0 or value.get("candidate_retrained_after_r91_development") is not False:
         raise R93Error("R93 binding is invalid")
     paths = {}
     for name, item in value.get("files", {}).items():
@@ -61,7 +71,7 @@ def run(*, binding_path: Path, parent: Path, artifact: Path, layercake_root: Pat
     source_result = json.loads(files["source_result"].read_text(encoding="utf-8"))
     unsigned_source = dict(source_result)
     source_claim = unsigned_source.pop("evidence_sha256", None)
-    if source_result.get("verdict") != "PASS_R93_SOURCE" or source_claim != binding.get("source_evidence_sha256") or source_claim != evidence_hash(unsigned_source) or not all(source_result.get("gates", {}).values()):
+    if source_result.get("verdict") != SOURCE_VERDICT or source_claim != binding.get("source_evidence_sha256") or source_claim != evidence_hash(unsigned_source) or not all(source_result.get("gates", {}).values()):
         raise R93Error("R93 source authorization failed")
     probes = list(load_probe_catalog(files["catalog"])["probes"])
     source_rows = {str(row["probe_id"]): row for row in _jsonl(files["source_raw"])}
@@ -78,7 +88,7 @@ def run(*, binding_path: Path, parent: Path, artifact: Path, layercake_root: Pat
     model, tokenizer, _ = load_layercake_core(parent, layercake_root=layercake_root, device=device)
     model.eval()
     trained, metadata = load_package(files["candidate_checkpoint"].parent, device=device)
-    torch.manual_seed(93_002)
+    torch.manual_seed(SEED_BASE + 2)
     random_bridge = JointSpanBridge().to(device).eval()
     observed = {str(row["probe_id"]): {} for row in probes}
     parent_started = time.perf_counter()
@@ -108,14 +118,14 @@ def run(*, binding_path: Path, parent: Path, artifact: Path, layercake_root: Pat
         candidate = observed[probe_id]["candidate"]
         rows.append({
             "probe_id": probe_id, "premise_family": int(source["premise_family"]),
-            "prompt_sha256": source["prompt_sha256"], "source_passed": bool(source["prior_corrected_passed"]),
+            "prompt_sha256": source["prompt_sha256"], "source_passed": bool(source[SOURCE_PASS_FIELD]),
             "parent_output": parent_row["output"], "parent_passed": parent_row["passed"],
             "candidate_output": candidate["output"], "candidate_token_ids": candidate["token_ids"],
             "candidate_start": candidate["start"], "candidate_end": candidate["end"],
             "candidate_passed": candidate["passed"], "candidate_collapse": candidate["collapse"],
             "random_output": candidate["random_output"], "random_passed": candidate["random_passed"],
             "candidate_physical_sparse": candidate["physical_sparse"],
-            "source_passing_retained": bool(source["prior_corrected_passed"] and candidate["passed"]),
+            "source_passing_retained": bool(source[SOURCE_PASS_FIELD] and candidate["passed"]),
             "candidate_model_invocations": 1, "candidate_task_cake_invocations": 1,
             "candidate_deep_adapter_invocations": 6, "candidate_joint_span_bridge_invocations": 1,
         })
@@ -132,7 +142,7 @@ def run(*, binding_path: Path, parent: Path, artifact: Path, layercake_root: Pat
         "candidate_passing": sum(row["premise_family"] == index and row["candidate_passed"] for row in rows),
         "parent_passing": sum(row["premise_family"] == index and row["parent_passed"] for row in rows),
         "random_passing": sum(row["premise_family"] == index and row["random_passed"] for row in rows),
-    } for index in range(4)}
+    } for index in range(FAMILIES)}
     metrics = {
         "rows": len(rows), "source_passing": source_passing, "candidate_passing": candidate_passing,
         "parent_passing": parent_passing, "random_bridge_passing": random_passing,
@@ -140,9 +150,9 @@ def run(*, binding_path: Path, parent: Path, artifact: Path, layercake_root: Pat
         "candidate_collapses": sum(row["candidate_collapse"]["collapse_detected"] for row in rows),
         "candidate_physical_sparse_rows": sum(row["candidate_physical_sparse"] for row in rows),
         "by_family": families,
-        "candidate_minus_source": _bootstrap([row["candidate_passed"] for row in rows], [row["source_passed"] for row in rows], 93_001),
-        "candidate_minus_parent": _bootstrap([row["candidate_passed"] for row in rows], [row["parent_passed"] for row in rows], 93_002),
-        "candidate_minus_random": _bootstrap([row["candidate_passed"] for row in rows], [row["random_passed"] for row in rows], 93_003),
+        "candidate_minus_source": _bootstrap([row["candidate_passed"] for row in rows], [row["source_passed"] for row in rows], SEED_BASE + 1),
+        "candidate_minus_parent": _bootstrap([row["candidate_passed"] for row in rows], [row["parent_passed"] for row in rows], SEED_BASE + 2),
+        "candidate_minus_random": _bootstrap([row["candidate_passed"] for row in rows], [row["random_passed"] for row in rows], SEED_BASE + 3),
         "parent_generation_seconds": parent_seconds, "candidate_and_random_generation_seconds": candidate_seconds,
         "candidate_peak_cuda_allocated_bytes": int(torch.cuda.max_memory_allocated()),
         "process_rss_bytes": int(process.memory_info().rss),
@@ -150,7 +160,7 @@ def run(*, binding_path: Path, parent: Path, artifact: Path, layercake_root: Pat
     gates = {
         "matrix": len(rows) == ROWS, "source_quality": source_passing >= 1_330,
         "candidate_quality": candidate_passing >= 1_330,
-        "candidate_family_floor": min(value["candidate_passing"] for value in families.values()) >= 315,
+        "candidate_family_floor": min(value["candidate_passing"] for value in families.values()) >= FAMILY_FLOOR,
         "source_retention": metrics["source_retention"] >= 0.95,
         "causal_parent_gain": (candidate_passing - parent_passing) / ROWS >= 0.50,
         "random_bridge_fails": random_passing <= 500,
@@ -164,8 +174,10 @@ def run(*, binding_path: Path, parent: Path, artifact: Path, layercake_root: Pat
         raise R93Error("R93 timing is non-finite")
     passed = all(gates.values())
     result = {
-        "format": "abi-r93-source-qualified-prospective-screen/1",
-        "verdict": "PASS_R93_BOUNDED_PROSPECTIVE_TRANSFER" if passed else "FAIL_R93_PROSPECTIVE_TRANSFER",
+        "format": RESULT_FORMAT,
+        "campaign": CAMPAIGN,
+        "source_pass_field": SOURCE_PASS_FIELD,
+        "verdict": PASS_VERDICT if passed else FAIL_VERDICT,
         "binding_sha256": binding["binding_sha256"],
         "candidate_checkpoint_sha256": binding["files"]["candidate_checkpoint"]["sha256"],
         "candidate_metadata_sha256": binding["files"]["candidate_metadata"]["sha256"],
