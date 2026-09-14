@@ -1,0 +1,100 @@
+{
+  "artifacts": {
+    "evaluation": {
+      "bytes": 1338875,
+      "path": "evaluation.jsonl",
+      "sha256": "5ce41125219a7f7cac2dcfce692e6aaea6d7404a1bab107ad16bab6e7d215832"
+    }
+  },
+  "binding_sha256": "f5fe4512b157a53f97688e9d9fc0f4d2fd836849956ad8e377e42d7cc0aefcde",
+  "campaign": "r95",
+  "candidate_checkpoint_sha256": "04b350e0a7f22ac4facb380f6bf99edfc0022697a312248972491434234a4fba",
+  "candidate_metadata_sha256": "d4d413549b09b37869e51a1bb406971cdcfacd4116421d6d98b96385f78a82e3",
+  "candidate_retrained_or_calibrated": false,
+  "catalog_sha256": "d2caaeec89abefc40ae319c2c9ebfb9ca117c4f32308b215a230bd2a9433f681",
+  "claim_boundary": "Bounded prospective direct paired teacher-derived two-hop reasoning transfer only.",
+  "evidence_sha256": "3eb47d306780130a750dedc6ec19036c208c0b130fd4d4ce801203f4db8bd241",
+  "format": "abi-r95-direct-teacher-prospective-screen/1",
+  "full_abi_moonshot": "OPEN",
+  "gates": {
+    "artifacts_unchanged": true,
+    "candidate_at_least_source_point": false,
+    "candidate_family_floor": false,
+    "candidate_quality": false,
+    "candidate_source_noninferior_bootstrap": false,
+    "causal_parent_gain": true,
+    "matrix": true,
+    "physical_sparse": true,
+    "random_bridge_fails": true,
+    "source_quality": true,
+    "source_retention": false,
+    "teacher_absent": true,
+    "trained_beats_random": true,
+    "zero_collapse": true
+  },
+  "imported_artifact_sha256": "292ba40ced84db5a28ef3c8214ac7645623db5e0f047218f5f7bf7c2ce0b10cc",
+  "metrics": {
+    "by_family": {
+      "0": {
+        "candidate_passing": 326,
+        "parent_passing": 6,
+        "random_passing": 0,
+        "source_passing": 346
+      },
+      "1": {
+        "candidate_passing": 345,
+        "parent_passing": 0,
+        "random_passing": 0,
+        "source_passing": 346
+      },
+      "2": {
+        "candidate_passing": 310,
+        "parent_passing": 1,
+        "random_passing": 0,
+        "source_passing": 350
+      },
+      "3": {
+        "candidate_passing": 347,
+        "parent_passing": 1,
+        "random_passing": 0,
+        "source_passing": 350
+      }
+    },
+    "candidate_and_random_generation_seconds": 15.475049400003627,
+    "candidate_collapses": 0,
+    "candidate_minus_parent": {
+      "ci95_high": 0.955,
+      "ci95_low": 0.93,
+      "mean": 0.9428571428571428
+    },
+    "candidate_minus_random": {
+      "ci95_high": 0.96,
+      "ci95_low": 0.9371428571428572,
+      "mean": 0.9485714285714286
+    },
+    "candidate_minus_source": {
+      "ci95_high": -0.03357142857142857,
+      "ci95_low": -0.05857142857142857,
+      "mean": -0.045714285714285714
+    },
+    "candidate_passing": 1328,
+    "candidate_peak_cuda_allocated_bytes": 394739712,
+    "candidate_physical_sparse_rows": 1400,
+    "parent_generation_seconds": 78.69467170001008,
+    "parent_passing": 8,
+    "process_rss_bytes": 1035399168,
+    "random_bridge_passing": 0,
+    "rows": 1400,
+    "source_passing": 1392,
+    "source_passing_retained": 1320,
+    "source_retention": 0.9482758620689655
+  },
+  "parent_checkpoint_sha256": "b6977f087ac42e6e4234d026b4cd83827b720d8973cca049daf18bcc8b96a64e",
+  "promotion_eligible": false,
+  "source_parameters_retained": 0,
+  "source_pass_field": "raw_passed",
+  "source_raw_sha256": "77aa6a70dd092c63450b2f8b2a83b144fadf89489c4de3a4b900d81d329b9716",
+  "source_result_sha256": "dd0d7ed8c8d09fd5a09df4adc69ba9a7bedb1a407725a8704d99d774fe47a150",
+  "teacher_present_at_inference": false,
+  "verdict": "FAIL_R95_DIRECT_TEACHER_TRANSFER"
+}
