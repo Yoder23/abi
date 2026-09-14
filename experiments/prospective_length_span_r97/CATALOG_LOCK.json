@@ -1,0 +1,35 @@
+{
+  "format": "abi-r97-prospective-catalog-lock/1",
+  "status": "SEALED_BEFORE_FRESH_SOURCE_OR_CANDIDATE_EXECUTION",
+  "catalog": {
+    "path": "catalogs/prospective_length_span_r97_v1.json",
+    "sha256": "1fb192d66203fe3c5e29cae5d9533d2758902bd1e74f58bcaec324adafa2006b",
+    "bytes": 2067894,
+    "rows": 1400,
+    "unique_prompts": 1400,
+    "exact_prior_prompt_overlap": 0
+  },
+  "candidate": {
+    "checkpoint_sha256": "9d3d6b38b1d437b5cbbed50c1470b4df1aa0371ffa51b1abd2adefbb645806e4",
+    "metadata_sha256": "1cfd15fe838b903ede7e59417f837a1bf00b3664e6deb29bd02876750bcabcb9",
+    "frozen_commit": "f4e2dc1",
+    "executed_on_r97_before_lock": false
+  },
+  "gates": {
+    "candidate_minimum_passing": 1330,
+    "candidate_family_minimum": 315,
+    "source_retention_minimum": 0.95,
+    "candidate_at_least_source_point": true,
+    "paired_bootstrap_ci95_low_minimum": -0.02
+  },
+  "builder_sha256": "f567cb3bacb97429a4519163bd2439d65085891b67658648a3b255d1176e6494",
+  "catalog_verifier_sha256": "2f615a0e71bea4de0cf689b04e0dc58bd81010d41aac2e09ddfe6cea8a5d60ae",
+  "source_scorer_sha256": "4ab45b6e9adac719caa2e72f93f6d6bdf739f0f8a4b34261780efe8f2122dc7a",
+  "binding_builder_sha256": "986052f3dd1c7d77c04606a3cca6c06cbff362e0b1a7f483d1862853aa0f1739",
+  "screen_wrapper_sha256": "565d9ec731ee84eec3de1c7ba4b28a6f6eed859c6e7a7619652d582808da5ded",
+  "shared_screen_sha256": "316e74c5feaca4efd66eafe4b3a0879c22d8cda0bd240e7a696a47d309870c5f",
+  "protocol_sha256": "0b5c6689d02ae7d493811d2b32248bd209fd718027e5dbd19cb2cee67bf3b5be",
+  "candidate_outputs_observed": 0,
+  "fresh_source_outputs_observed": 0,
+  "teacher_loaded": false
+}

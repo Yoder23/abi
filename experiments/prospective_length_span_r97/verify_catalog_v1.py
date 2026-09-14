@@ -5,7 +5,7 @@ import argparse, hashlib, json
 from pathlib import Path
 from abi.hf_extraction import load_probe_catalog
 
-CATALOG_SHA256 = "TO_BE_SEALED"
+CATALOG_SHA256 = "1fb192d66203fe3c5e29cae5d9533d2758902bd1e74f58bcaec324adafa2006b"
 
 def main() -> int:
     p=argparse.ArgumentParser(description=__doc__); p.add_argument("--catalog",required=True,type=Path); p.add_argument("--search-root",required=True,type=Path); a=p.parse_args(); catalog=a.catalog.resolve()

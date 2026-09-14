@@ -7,7 +7,7 @@ from pathlib import Path
 from experiments.foreign_capability_r14.core import evidence_hash
 import experiments.prompt_identity_reasoning_r81.score_source_corrected_v1 as scorer
 
-CATALOG_SHA256="TO_BE_SEALED"
+CATALOG_SHA256="1fb192d66203fe3c5e29cae5d9533d2758902bd1e74f58bcaec324adafa2006b"
 SCORER_SHA256="54ded3d1e1afbbd016b1d4a9a837777d24bfe313241a4f9f76a4e915b4b9116c"
 
 def main()->int:
