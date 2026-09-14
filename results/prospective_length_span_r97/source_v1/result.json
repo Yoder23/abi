@@ -1,0 +1,82 @@
+{
+  "accounting": {
+    "candidate_score_storage_bytes_float64_equivalent": 67200,
+    "full_vocabulary_logit_vectors_stored": 0,
+    "hidden_activations_stored": 0,
+    "peak_cuda_allocated_bytes": 9507998208,
+    "peak_process_rss_bytes": 1474740224,
+    "scalar_candidate_scores_stored": 8400,
+    "source_candidate_tokens_scored": 88800,
+    "source_inference_seconds": 420.27570810006,
+    "source_load_seconds": 3.6672323999810033,
+    "total_wall_seconds": 427.52024630003143
+  },
+  "artifacts": {
+    "prior_corrected_scores": {
+      "bytes": 1712534,
+      "path": "prior_corrected_scores.jsonl",
+      "sha256": "8a7de8be5f84249f2e00224363793a0ad20d92d197c2e1621ddc17a3d3443802"
+    }
+  },
+  "authorization_score": "capture_integrity_only",
+  "campaign": "r97",
+  "candidate_accessed": false,
+  "captured_display_position_rows": {
+    "0": 465,
+    "1": 468,
+    "2": 467
+  },
+  "catalog_sha256": "1fb192d66203fe3c5e29cae5d9533d2758902bd1e74f58bcaec324adafa2006b",
+  "evidence_sha256": "c1f45da421a4453141d94d406b72bd13ceff5d586e245c7f15066ad92f8155b1",
+  "format": "abi-r97-live-source-capture/1",
+  "full_abi_moonshot": "OPEN",
+  "gates": {
+    "all_destination_display_positions_captured": true,
+    "raw_artifact_complete": true,
+    "rows": true,
+    "zero_native_ties": true
+  },
+  "hardware": {
+    "cuda": "11.8",
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "machine": "Sam",
+    "python": "3.10.0",
+    "torch": "2.7.1+cu118"
+  },
+  "layercake_loaded": false,
+  "method": "native_mean_conditional_log_likelihood; neutral_prior_scores_retained_as_diagnostic",
+  "metrics": {
+    "prior_corrected_display_position_passing": {
+      "0": 309,
+      "1": 285,
+      "2": 453
+    },
+    "prior_corrected_family_passing": {
+      "0": 335,
+      "1": 126,
+      "2": 325,
+      "3": 261
+    },
+    "prior_corrected_pass_rate": 0.7478571428571429,
+    "prior_corrected_passing": 1047,
+    "prior_corrected_ties": 0,
+    "raw_family_passing": {
+      "0": 344,
+      "1": 131,
+      "2": 337,
+      "3": 276
+    },
+    "raw_pass_rate": 0.7771428571428571,
+    "raw_passing": 1088,
+    "raw_ties": 0,
+    "rows": 1400
+  },
+  "promotion_eligible": false,
+  "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310",
+  "source_model": "microsoft/Phi-3-mini-4k-instruct",
+  "source_parameters_read": 3821079552,
+  "source_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+  "source_scoring_implementation_sha256": "54ded3d1e1afbbd016b1d4a9a837777d24bfe313241a4f9f76a4e915b4b9116c",
+  "source_weights_copied": 0,
+  "verdict": "PASS_R97_SOURCE_CAPTURE"
+}
