@@ -1,6 +1,6 @@
 # ABI technical claims
 
-Updated: 2026-09-09
+Updated: 2026-09-14
 
 ## Claims supported by R7
 
@@ -38,6 +38,24 @@ Updated: 2026-09-09
 
 Human review remains at `0/21,000`. Claims may expand only after the frozen
 protocols produce independently auditable evidence.
+
+## Additive R97 bounded reasoning-transfer result
+
+R97 supports one new bounded claim outside R7: a 530,050-parameter
+teacher-derived neural bridge, frozen before the R97 prompt surface existed,
+created correct two-hop nonce-reasoning behavior in the frozen LayerCake host
+on 1,399/1,400 prompts. The live pinned teacher scored 1,088, the unchanged
+parent 60, and a seeded random bridge 17. The candidate retained 1,087/1,088
+teacher-correct rows, with a paired candidate-minus-teacher 95% bootstrap
+interval of [0.20071, 0.24429], zero collapse, and 1,400/1,400 registered sparse
+executions. Strict raw recomputation, 12/12 hostile mutations, and a
+byte-identical live replay passed.
+
+R97 does not support broad English extraction, arbitrary-domain discovery or
+segregation, a globally minimal artifact, cross-hardware reproduction,
+heterogeneous-host execution of this neural bridge, human quality, or a
+universal claim over LoRA/distillation. The R7 public release remains
+controlling.
 
 ## Additive R8 falsification result
 

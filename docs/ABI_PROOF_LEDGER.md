@@ -1,6 +1,6 @@
 # ABI proof ledger
 
-Updated: 2026-09-10
+Updated: 2026-09-14
 
 This ledger separates software portability from neural transplantation. A
 result in one row must never be promoted into another row without its own
@@ -21,6 +21,7 @@ registered evidence.
 | ABI-C4h | ABI can extract teacher-derived compositional English realization into a teacher-absent package | R19: 96/96 disclosed development plus 48/48 fresh hidden functional rows; zero regressions; 0/48 hidden control; 48/48 removal; 22/22 hostile; byte-exact live replay | Bounded replicated local pass |
 | ABI-C4i | ABI can extend bounded realization to raw natural instructions and broader supplied-content behaviors with a structural program package | R20 source: 10/72 extraction and 19/120 evaluation registered-exact; insufficient six-program support; no package or host run | Failed for tested exact delexicalized-program representation |
 | ABI-C4j | ABI can transfer six semantic supplied-content behaviors into factorized signed LayerCake packages that generalize prospectively without teacher or receiver training at inference | R23: 120/120 fresh hidden on all three seeds versus 96/120 teacher; 1,080 GPU, 54 CPU, and 24 lifecycle/corruption fresh replays | Bounded strictly verified local pass |
+| ABI-C4k | A compact teacher-derived neural capability can causally create prospective reasoning behavior in a frozen LayerCake host and outperform its live teacher on the same unseen surface | R97: 1,399/1,400 candidate versus 1,088 teacher, 60 parent, and 17 random; paired teacher advantage CI [0.20071, 0.24429]; 1,400/1,400 sparse; strict/hostile/live replay pass | Bounded strictly verified local pass |
 | ABI-C4 | End-to-end foreign-teacher behavior copy/paste into frozen heterogeneous hosts with zero host training | R12 strict gate failed; R13-B canonicalized the capability but matched only 372/2,048 source outputs | Open |
 | ABI-C5 | The recipient's native neural computation internalizes the foreign capability | R8 and R9 recipient realization failures | Failed for tested mechanisms |
 | ABI-C6 | ABI extracts and segregates fluent English and arbitrary domains from an open-weight LLM | No sufficient evidence | Open |
@@ -123,6 +124,18 @@ semantic fields and use a registered six-class ontology, so it is not broad
 English extraction, autonomous labeling, arbitrary-domain segregation, or
 teacher-model transplantation.
 
+R97 promotes ABI-C4k after preserved R90/R92/R93/R94/R95 negative evidence
+and one bounded repair. Its candidate was frozen before R97 existed, source
+rows were captured and committed before candidate binding, and the unchanged
+package passed the absolute, per-family, teacher-retention, paired-comparison,
+causality, sparse, and collapse gates. Strict recomputation trusts no stored
+scientific boolean; 12 hostile shadow-tree mutations failed closed; live replay
+was byte-identical at the raw-row level. This is a neural
+teacher-to-ABI-to-LayerCake transfer result for a bounded nonce two-hop
+reasoning family. It does not imply general English, open-world domains,
+heterogeneous-host execution of this neural package, global minimality, or
+universal method superiority.
+
 ### Teacher-quality English/domain extraction
 
 An open-weight source is diagnosed, English and domain knowledge are separated,
@@ -138,7 +151,8 @@ ABI-C4c only for local, exhaustively enumerable capability canonicalization.
 R14 promotes no claim because its registered three-capability gate failed.
 R15A promotes ABI-C4e only, R15B promotes ABI-C4f only, R16 promotes ABI-C4g
 only, R19 promotes ABI-C4h only for its bounded replicated realization family,
-and R23 promotes ABI-C4j only for its six supplied-content behaviors. None promotes
+R23 promotes ABI-C4j only for its six supplied-content behaviors, and R97
+promotes ABI-C4k only for bounded prospective two-hop reasoning. None promotes
 ABI-C4 teacher-behavior copying,
 ABI-C5, ABI-C6, ABI-C7, or ABI-C8. Foreign-teacher behavioral transplantation
 and English/domain quality remain separate registered lines.

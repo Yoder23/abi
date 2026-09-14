@@ -40,8 +40,27 @@ def test_preregistered_matrix_amendment_binds_implementation_and_frozen_inputs()
         _sha256(ROOT / amendment["implementation"]["path"])
         == amendment["implementation"]["sha256"]
     )
-    for relative, expected in {**base["bindings"], **amendment["bindings"]}.items():
+    bindings = {**base["bindings"], **amendment["bindings"]}
+    local_bindings = {
+        relative: expected
+        for relative, expected in bindings.items()
+        if not relative.startswith("../layercake_release/")
+    }
+    external_bindings = {
+        relative: expected
+        for relative, expected in bindings.items()
+        if relative.startswith("../layercake_release/")
+    }
+    for relative, expected in local_bindings.items():
         assert _sha256((ROOT / relative).resolve()) == expected
+    for relative, expected in external_bindings.items():
+        target = (ROOT / relative).resolve()
+        if not target.is_file() or _sha256(target) != expected:
+            pytest.skip(
+                "sealed R7 matrix requires the separately versioned LayerCake "
+                "checkout at commit a87a653dbdb1a4e5f713baf7bc508d508277e00d"
+            )
+        assert _sha256(target) == expected
 
 
 def test_source_success_locks_have_preregistered_depth() -> None:

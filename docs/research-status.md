@@ -1,6 +1,6 @@
 # Research status
 
-Updated: 2026-09-10
+Updated: 2026-09-14
 
 ## Current certification boundary
 
@@ -33,6 +33,7 @@ fresh blind Codex review. Human quality and independent hardware remain open.
 | Label-separated generative supplied-content transfer | R21 public prerequisite passed and fresh hidden replication failed; hidden factor 113/120, summary 13/20 below 15/20 gate |
 | Teacher-side semantic-plan normalization | Failed R22 source prerequisite; 520/600 functional, 255/600 exact-field, no student or LayerCake run |
 | Fresh semantic supplied-content replication | Strictly verified R23 pass; factor 120/120 all seeds, teacher 96/120, 1,080 GPU and 54 CPU fresh rows |
+| Prospective teacher-derived reasoning transfer into LayerCake | Strictly verified R97 bounded pass; candidate 1,399/1,400, teacher 1,088, parent 60, random 17; 12/12 hostile; byte-identical replay |
 | Pre-existing open-weight English/domain extraction | Open |
 | LoRA/distillation superiority | Unproven |
 
@@ -43,6 +44,17 @@ establish that ABI can inspect any open-weight teacher, isolate a minimal pure
 English substrate, segregate all domain knowledge, or reproduce teacher
 generation quality in LayerCake. Those are the next scientific questions and
 must receive their own preregistered comparisons and evidence lineage.
+
+R97 establishes a new, separate causal boundary. The unchanged R96 bridge was
+frozen before the R97 catalog existed and then passed every prospective
+absolute, per-family, teacher-retention, paired-comparison, causality,
+collapse, and sparse-execution gate. Strict verification recomputed all 1,400
+rows without trusting stored status booleans, 12 hostile mutations failed
+closed, and live replay was byte-identical. This proves a bounded neural
+reasoning capability can be transferred from teacher-derived ABI evidence into
+LayerCake. It does not prove broad English, arbitrary domains, global
+minimality, heterogeneous-host execution of this neural package, or general
+superiority over LoRA/distillation.
 
 R8 and R9 narrow the immediate technical bottleneck. Exact extraction of the
 registered synthetic transition state was possible, but neither a generic

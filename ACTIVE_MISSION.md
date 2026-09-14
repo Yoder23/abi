@@ -1,5 +1,7 @@
 # Active mission
 
+Updated: 2026-09-14
+
 ## Status
 
 `R7_BOUNDED_TECHNICAL_VALIDATION_PASSED_EXTERNAL_REVIEW_OPEN`
@@ -270,6 +272,23 @@ passed all 24 package lifecycle controls, and rejected 24/24 targeted tensor
 corruptions. The bounded six-task supplied-content mechanism is now strictly
 verified; general English and the ABI moonshot remain open.
 
+Additive R97 status:
+`R97_BOUNDED_PROSPECTIVE_REASONING_TRANSFER_PASSED_LOCAL`
+
+R95 directly compared the frozen R91 LayerCake bridge with a live pinned
+teacher and correctly failed at 1,328/1,400. Its seven-digit and family-2
+failures motivated one bounded R96 length/structure repair. The frozen
+530,050-parameter R96 bridge then faced the separately sealed R97 catalog and
+scored 1,399/1,400 versus 1,088 for the live teacher, 60 for the unchanged
+LayerCake parent, and 17 for a seeded random bridge. It retained 1,087/1,088
+teacher-correct rows; its paired teacher advantage interval was [0.20071,
+0.24429]; all 1,400 rows were physically sparse and collapse-free. Strict raw
+recomputation passed, 12/12 hostile mutations were rejected, and a second live
+execution reproduced the evaluation JSONL byte-for-byte. R97 proves bounded
+prospective teacher-derived two-hop reasoning transfer into LayerCake. It is
+not broad English, arbitrary-domain extraction, a global minimum, an
+independent-hardware result, or a general ABI-over-LoRA/distillation claim.
+
 ## What R7 proves
 
 R7 proves one bounded capability ABI result: four immutable packages execute
@@ -321,6 +340,7 @@ The blind reviewer returned `VERDICT: PASS` for this exact scope.
 | Label-separated generative supplied-content transfer | PUBLIC PASS, HIDDEN FAIL R21; 113/120 hidden but summary 13/20 below gate |
 | Teacher-side semantic-plan normalization | FAIL R22 SOURCE; 520/600 functional, 255/600 exact-field, no student/LayerCake run |
 | Fresh semantic supplied-content replication | STRICT PASS R23; factor 120/120 all seeds, teacher 96/120, full fresh replay |
+| Prospective teacher-derived reasoning transfer | STRICT PASS R97; 1,399/1,400 candidate, 1,088 teacher, 60 parent, 17 random; 12/12 hostile; byte-identical live replay |
 | Exact foreign-teacher behavioral transplantation | OPEN; separate Track A |
 
 ## Current objective

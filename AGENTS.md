@@ -147,6 +147,17 @@ or LoRA/distillation superiority. A clean preregistered replication bound to
 the repaired public protocol repeated every gate on a second selection; final
 blind review and public reconstruction remain open.
 
+The additive R97 reasoning campaign is a bounded strictly verified local pass
+and does not alter the R7 public release. The frozen 530,050-parameter R96
+bridge scored 1,399/1,400 on a separately sealed prospective catalog, versus
+1,088 for the live pinned teacher, 60 for the unchanged LayerCake parent, and
+17 for random. It passed all gates, strict raw recomputation, 12/12 hostile
+mutations, and byte-identical live replay. Preserve R90/R92/R93/R94/R95 as
+negative evidence. R97 proves only teacher-derived two-hop nonce reasoning
+transfer into LayerCake; broad English, arbitrary domains, global minimality,
+heterogeneous-host execution of this neural package, independent hardware,
+and universal ABI-over-LoRA/distillation claims remain open.
+
 ## Exact proven scope
 
 The four published immutable capability packages execute through the canonical

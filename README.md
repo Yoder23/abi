@@ -28,6 +28,19 @@ from any teacher. Human ratings, different-hardware reproduction, registered
 minimum-information certification, teacher-extraction quality, and comparison
 with LoRA/distillation remain open.
 
+The latest additive local result is R97. A frozen 530,050-parameter
+teacher-derived reasoning bridge scored 1,399/1,400 on a separately sealed
+prospective catalog, versus 1,088 for the live pinned teacher, 60 for the
+unchanged LayerCake parent, and 17 for a randomized bridge. It retained
+1,087/1,088 teacher-correct rows, executed the registered sparse path on every
+row, showed zero collapse, passed strict raw recomputation and 12/12 hostile
+mutations, and reproduced its raw evaluation byte-for-byte in a second live
+run. See
+[`experiments/prospective_length_span_r97/CERTIFICATE.md`](experiments/prospective_length_span_r97/CERTIFICATE.md).
+R97 is a bounded two-hop reasoning transfer result; it is not evidence of a
+complete fluent English substrate, arbitrary-domain extraction, or universal
+superiority over LoRA/distillation.
+
 The additive R8 native-neural-transfer campaign is a Level 0 negative result.
 Its strongest package-only recipient interface produced AFTER−BASE +0.001953
 across 1,024 paired Pythia rows (95% bootstrap CI -0.019531 to +0.024414).
@@ -390,6 +403,10 @@ See `docs/ABI_TECHNICAL_CLAIMS.md`, `docs/ABI_FINAL_RESULTS.md`, and the
   fail-closed verifiers.
 - `results/factual_semantic_r16/` — R16 raw held-out/live evidence, immutable
   chemistry/geography packages, accounting, and local certificates.
+- `experiments/prospective_length_span_r97/` — frozen prospective reasoning
+  protocol, strict verifier, hostile audit, and bounded certificate.
+- `results/prospective_length_span_r97/` — source capture, bindings, raw rows,
+  verification receipts, and byte-identical live replay.
 - `external_reproduction/` — independent-operator workflow and environment
   lock.
 - `review_packet/` — ordered technical and external-review handoff.

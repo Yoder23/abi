@@ -1,11 +1,19 @@
 # Current project status
 
-Updated: 2026-09-10
+Updated: 2026-09-14
 
 ## Executive status
 
 ABI R7 has passed bounded technical validation and public reproducibility on
 the development hardware. Human and different-hardware review are open.
+
+Additive R97 now supplies the strongest direct causal transfer evidence in the
+repository. A 530,050-parameter teacher-derived bridge, frozen before its
+prospective surface existed, scored 1,399/1,400 on R97 versus 1,088 for the
+live pinned teacher, 60 for the unchanged LayerCake parent, and 17 for the
+random bridge. It passed every locked gate, strict raw recomputation, 12/12
+hostile mutations, and byte-identical live replay. Its scope is bounded
+two-hop nonce reasoning, not fluent general English or arbitrary domains.
 
 The additive R21 campaign now supplies a strictly verified bounded public
 generative-transfer prerequisite: six signed LayerCake factors scored 116/120
@@ -96,7 +104,8 @@ Public release:
 1. Human preference validation: `0/21,000` judgments.
 2. Independent different-hardware reproduction: not executed.
 3. Registered minimum-information certification: not executed.
-4. Teacher-to-ABI acquisition: broader research, not proven by R7.
+4. Teacher-to-ABI acquisition: bounded reasoning transfer passes in R97;
+   broad English and arbitrary capabilities remain open.
 5. Semantic labeling/segregation completeness: broader research.
 6. Compact fluent English extraction: broader research.
 7. Matched quality comparison against teacher, LoRA, and distillation: broader
@@ -114,6 +123,9 @@ Public release:
 13. R11 foreign-teacher front end: the ABI-native construction passes, but
     extraction of a capability already encoded in an independently trained
     open-weight model remains open.
+14. R97 prospective reasoning transfer: strictly verified bounded pass;
+    general English, heterogeneous-host neural execution, and external
+    reproduction remain open.
 
 ## Scientific interpretation
 

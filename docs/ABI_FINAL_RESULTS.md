@@ -1,6 +1,6 @@
 # ABI R7 final technical results
 
-Updated: 2026-09-02
+Updated: 2026-09-14
 
 R7 passes the frozen, bounded capability-runtime and host-conformance protocol.
 It does not yet pass human quality, independent-hardware, teacher-extraction, or
@@ -55,6 +55,23 @@ end-to-end generation benchmarks and not evidence of ABI inference dominance.
 
 See [R7_PUBLIC_VALIDATION.md](R7_PUBLIC_VALIDATION.md) for the public and blind
 reproduction record.
+
+## Additive R97 result
+
+R97 is a bounded prospective local pass and does not replace R7. The frozen
+R96 neural bridge scored 1,399/1,400 on a catalog created only after its
+checkpoint was committed, versus 1,088 for the live pinned teacher, 60 for the
+unchanged LayerCake parent, and 17 for a seeded random bridge. Its four family
+scores were 350, 350, 349, and 350; teacher-correct retention was 1,087/1,088;
+the paired teacher-advantage interval was [0.20071, 0.24429]; collapse was zero;
+and physical sparse execution was 1,400/1,400.
+
+The strict verifier recomputed raw spans, tokenization, evaluator outcomes,
+collapses, invocation counts, aggregates, confidence intervals, and gates. A
+12-case hostile shadow-tree audit rejected all mutations, and the second live
+execution reproduced the raw JSONL byte-for-byte. The result proves bounded
+teacher-derived two-hop reasoning transfer into LayerCake only. The full ABI
+moonshot and external Phase 2/8 gates remain open.
 
 ## Additive R8 result
 

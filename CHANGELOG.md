@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-09-13
+
+- Added the frozen R95 direct teacher comparison and preserved its correctly
+  failed 1,328/1,400 result.
+- Added the bounded R96 length/structure-invariant 530,050-parameter bridge
+  repair with complete imported-information and training accounting.
+- Added R97 prospective evidence: 1,399/1,400 candidate versus 1,088 teacher,
+  60 parent, and 17 random; strict raw recomputation; 12/12 hostile rejection;
+  and byte-identical live replay.
+- Added direct R97 repository tests and an additive V6 segregation
+  implementation certificate after a later committed `abi/moonshot.py` change
+  made the V5 current-tree binding stale. V5 remains immutable.
+- Qualified four positive R7 integration tests when the exact published R7
+  ABI/LayerCake transitive tree is not assembled; unexpected verifier failures
+  still fail, and current R97 verification runs in the supported suite.
+- Updated public claim documentation while retaining R7 as the controlling
+  release and keeping human, independent-hardware, broad-English,
+  arbitrary-domain, and universal-superiority claims open.
+
 ## R23 fresh semantic replication pass - 2026-09-10
 
 - Committed a task-aware semantic contract before generating and revealing a
