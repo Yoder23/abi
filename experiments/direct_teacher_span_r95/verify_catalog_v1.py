@@ -10,7 +10,7 @@ from pathlib import Path
 from abi.hf_extraction import load_probe_catalog
 
 
-CATALOG_SHA256 = "TO_BE_SEALED_AFTER_PREREGISTRATION"
+CATALOG_SHA256 = "d2caaeec89abefc40ae319c2c9ebfb9ca117c4f32308b215a230bd2a9433f681"
 
 
 def main() -> int:

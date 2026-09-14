@@ -1,0 +1,36 @@
+{
+  "format": "abi-r95-direct-teacher-catalog-lock/1",
+  "status": "SEALED_BEFORE_FRESH_SOURCE_OR_CANDIDATE_EXECUTION",
+  "comparison": {
+    "source_role": "live_paired_reference",
+    "source_admission": "capture_integrity_only",
+    "candidate_minimum_passing": 1330,
+    "candidate_at_least_source_point": true,
+    "paired_bootstrap_difference_ci95_low_minimum": -0.02,
+    "r92_r93_r94_rescored_or_promoted": false
+  },
+  "catalog": {
+    "path": "catalogs/direct_teacher_span_r95_v1.json",
+    "sha256": "d2caaeec89abefc40ae319c2c9ebfb9ca117c4f32308b215a230bd2a9433f681",
+    "bytes": 2093290,
+    "rows": 1400,
+    "unique_prompts": 1400,
+    "exact_prior_prompt_overlap": 0
+  },
+  "candidate": {
+    "checkpoint_sha256": "04b350e0a7f22ac4facb380f6bf99edfc0022697a312248972491434234a4fba",
+    "metadata_sha256": "d4d413549b09b37869e51a1bb406971cdcfacd4116421d6d98b96385f78a82e3",
+    "executed_on_r95_before_lock": false
+  },
+  "builder_sha256": "4ddeefa1129b3bb7b5a99396ed12ec812bd068725fa899d1b7aa876fd07f7497",
+  "catalog_verifier_sha256": "ba1d60bec67d86bc7ba1a926c3d37bd8177aaf2fa2fb33081592f0e4a13a2cd1",
+  "source_scorer_sha256": "e834982b92f184e92d12a6851fb6e4adc65dddce24f161600638e9a717dfe249",
+  "source_base_scorer_sha256": "54ded3d1e1afbbd016b1d4a9a837777d24bfe313241a4f9f76a4e915b4b9116c",
+  "binding_builder_sha256": "a8820e0ca04d75eb3dd79c20c5f6700a7ce3e32d58cb32d18b4a4138f28831c3",
+  "shared_screen_sha256": "0d6cd31f9867ade58b77a8ddca7bb418caf4adb15bf7150d67e77dec4fb3441e",
+  "screen_wrapper_sha256": "c25e0370e0e2a80fe30ff628fb6005dc804b92dbfe0d742240337769aadeafc2",
+  "protocol_sha256": "0efd21a350cba40658dd66895d1b9761b786d1646d97e1150d4c8cbfeb64129e",
+  "candidate_outputs_observed": 0,
+  "fresh_source_outputs_observed": 0,
+  "teacher_loaded": false
+}

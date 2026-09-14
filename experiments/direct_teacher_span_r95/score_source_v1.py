@@ -12,7 +12,7 @@ from experiments.foreign_capability_r14.core import evidence_hash
 import experiments.prompt_identity_reasoning_r81.score_source_corrected_v1 as scorer
 
 
-CATALOG_SHA256 = "TO_BE_SEALED_AFTER_PREREGISTRATION"
+CATALOG_SHA256 = "d2caaeec89abefc40ae319c2c9ebfb9ca117c4f32308b215a230bd2a9433f681"
 SCORER_SHA256 = "54ded3d1e1afbbd016b1d4a9a837777d24bfe313241a4f9f76a4e915b4b9116c"
 
 
