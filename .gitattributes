@@ -6,7 +6,7 @@
 *.xml text eol=lf
 *.pub text eol=lf
 *.onnx binary
-*.cake filter=lfs diff=lfs merge=lfs -text
+*.cake binary
 results/** binary !eol
 results/abi_final_mile/**/*.json -binary diff merge text eol=lf
 results/abi_final_mile/**/*.md -binary diff merge text eol=lf
@@ -42,6 +42,7 @@ results/role_invariant_choice_r76/candidate_v1/metadata.json -binary diff merge 
 results/role_invariant_choice_r76/candidate_v1/special_tokens_map.json -binary diff merge text eol=lf whitespace=-blank-at-eol
 results/role_invariant_choice_r76/candidate_v1/tokenizer_config.json -binary diff merge text eol=lf whitespace=-blank-at-eol
 results/abi_capability_compiler_phase7_integrated/materialized_v1052/result.json -binary diff merge text eol=lf
+results/abi_capability_compiler_phase7_integrated/materialized_v1052/phase7-final-english-core.cake filter=lfs diff=lfs merge=lfs -text
 results/abi_capability_compiler_phase7_integrated/verify_v1067/result.json -binary diff merge text eol=lf
 results/abi_capability_compiler_phase8/readiness_v1073/manifest.json -binary diff merge text eol=lf
 *.safetensors filter=lfs diff=lfs merge=lfs -text
