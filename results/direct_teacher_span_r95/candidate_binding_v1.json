@@ -1,0 +1,81 @@
+{
+  "binding_sha256": "f5fe4512b157a53f97688e9d9fc0f4d2fd836849956ad8e377e42d7cc0aefcde",
+  "candidate_observations_before_binding": 0,
+  "candidate_retrained_after_r91_development": false,
+  "files": {
+    "builder": {
+      "bytes": 5602,
+      "path": "experiments/direct_teacher_span_r95/build_catalog_v1.py",
+      "sha256": "4ddeefa1129b3bb7b5a99396ed12ec812bd068725fa899d1b7aa876fd07f7497"
+    },
+    "candidate_checkpoint": {
+      "bytes": 2123440,
+      "path": "results/structural_span_r91/candidate_v1/bridge.safetensors",
+      "sha256": "04b350e0a7f22ac4facb380f6bf99edfc0022697a312248972491434234a4fba"
+    },
+    "candidate_core": {
+      "bytes": 2493,
+      "path": "experiments/structural_span_r91/core_v1.py",
+      "sha256": "8ed2ca0fdf4b87e15637799792a84c5079032626a5cacd34fbbb84a825e1e3d2"
+    },
+    "candidate_development_binding": {
+      "bytes": 1133,
+      "path": "results/structural_span_r91/candidate_binding_v1.json",
+      "sha256": "144f15c9e1884f1c6039afcd530332898e5176f1e3348bd0c6450fd61c432f38"
+    },
+    "candidate_metadata": {
+      "bytes": 10121,
+      "path": "results/structural_span_r91/candidate_v1/metadata.json",
+      "sha256": "d4d413549b09b37869e51a1bb406971cdcfacd4116421d6d98b96385f78a82e3"
+    },
+    "candidate_protocol": {
+      "bytes": 2034,
+      "path": "experiments/structural_span_r91/PROTOCOL.md",
+      "sha256": "46e8acd2ef85a44786db48e7c5fd16bf9e67fd0246db6479ec260638cd8e2135"
+    },
+    "candidate_trainer": {
+      "bytes": 18454,
+      "path": "experiments/structural_span_r91/train_v1.py",
+      "sha256": "c1bdfde4995d2a3ab6dcf5748dfcaa286ee3a9f3b5d60c832fd96193be674ca0"
+    },
+    "catalog": {
+      "bytes": 2093290,
+      "path": "catalogs/direct_teacher_span_r95_v1.json",
+      "sha256": "d2caaeec89abefc40ae319c2c9ebfb9ca117c4f32308b215a230bd2a9433f681"
+    },
+    "protocol": {
+      "bytes": 1798,
+      "path": "experiments/direct_teacher_span_r95/PROTOCOL.md",
+      "sha256": "0efd21a350cba40658dd66895d1b9761b786d1646d97e1150d4c8cbfeb64129e"
+    },
+    "screen_wrapper": {
+      "bytes": 928,
+      "path": "experiments/direct_teacher_span_r95/screen_v1.py",
+      "sha256": "c25e0370e0e2a80fe30ff628fb6005dc804b92dbfe0d742240337769aadeafc2"
+    },
+    "shared_screen": {
+      "bytes": 13400,
+      "path": "experiments/source_qualified_span_r93/screen_v1.py",
+      "sha256": "0d6cd31f9867ade58b77a8ddca7bb418caf4adb15bf7150d67e77dec4fb3441e"
+    },
+    "source_raw": {
+      "bytes": 1689096,
+      "path": "results/direct_teacher_span_r95/source_v1/prior_corrected_scores.jsonl",
+      "sha256": "77aa6a70dd092c63450b2f8b2a83b144fadf89489c4de3a4b900d81d329b9716"
+    },
+    "source_result": {
+      "bytes": 2693,
+      "path": "results/direct_teacher_span_r95/source_v1/result.json",
+      "sha256": "dd0d7ed8c8d09fd5a09df4adc69ba9a7bedb1a407725a8704d99d774fe47a150"
+    },
+    "source_scorer": {
+      "bytes": 2726,
+      "path": "experiments/direct_teacher_span_r95/score_source_v1.py",
+      "sha256": "e834982b92f184e92d12a6851fb6e4adc65dddce24f161600638e9a717dfe249"
+    }
+  },
+  "format": "abi-r95-direct-teacher-candidate-binding/1",
+  "full_abi_moonshot": "OPEN",
+  "source_evidence_sha256": "8218b5bc897c61689e6ec2c3e47fb5e7bd2e5a0aa0b4c112214ca7ed1d76e952",
+  "source_pass_field": "raw_passed"
+}
