@@ -1,0 +1,18 @@
+{
+  "format": "abi-r97-live-replay-receipt/1",
+  "verdict": "PASS_R97_LIVE_REPLAY",
+  "primary_raw_sha256": "b4a4999228af61a509a7d22f8f6906b3075ce649a52e531b959646fbbdb40b8c",
+  "replay_raw_sha256": "b4a4999228af61a509a7d22f8f6906b3075ce649a52e531b959646fbbdb40b8c",
+  "replay_result_sha256": "6ea9601dd868527f53074873f621f14443581442e4f63d572252fac76c6d24c5",
+  "replay_evidence_sha256": "1a0d6a6cb895389d2077c983539290b315d7b4c6e34736ec1e3f226859f2bba5",
+  "rows": 1400,
+  "candidate_passing": 1399,
+  "source_passing": 1088,
+  "parent_passing": 60,
+  "random_bridge_passing": 17,
+  "raw_rows_byte_identical": true,
+  "runtime_fields_expected_to_vary": true,
+  "evidence_sha256": "0e79d9e59b2830f1e2af89021c270d2a0b6f8440ebf4a62b5a9f0ac6d90d7be5",
+  "full_abi_moonshot": "OPEN",
+  "claim_boundary": "Live reproducibility of bounded R97 reasoning evidence only."
+}

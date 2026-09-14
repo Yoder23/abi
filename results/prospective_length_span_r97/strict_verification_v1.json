@@ -1,0 +1,21 @@
+{
+  "candidate_checkpoint_sha256": "9d3d6b38b1d437b5cbbed50c1470b4df1aa0371ffa51b1abd2adefbb645806e4",
+  "claim_boundary": "Strict verification of bounded R97 reasoning transfer only.",
+  "evidence_sha256": "c3ed0704ba113f309fc17955aee0b9d1d45723889610b6e33de2f823d6ecc9ae",
+  "format": "abi-r97-strict-raw-recomputation/1",
+  "full_abi_moonshot": "OPEN",
+  "metrics": {
+    "candidate_collapses": 0,
+    "candidate_passing": 1399,
+    "parent_passing": 60,
+    "random_passing": 17,
+    "raw_sha256": "b4a4999228af61a509a7d22f8f6906b3075ce649a52e531b959646fbbdb40b8c",
+    "result_sha256": "e50c92e0da7f70ddcbc4b93a1e716b0c5fdf0ca1cdab8b45b5e10c1b7eb34f14",
+    "rows": 1400,
+    "source_passing": 1088,
+    "source_retained": 1087,
+    "sparse_rows": 1400
+  },
+  "stored_scientific_booleans_trusted": false,
+  "verdict": "PASS_R97_STRICT_RECOMPUTATION"
+}
