@@ -22,7 +22,7 @@ from experiments.joint_span_r88.core_v1 import (
     FEEDFORWARD_WIDTH, HEADS, LAYERS, MAX_SPAN_TOKENS, MAX_TOKENS, WIDTH,
     JointSpanBridge, bridge_parameter_count, joint_span_scores,
 )
-from experiments.stateful_span_r85.train_candidate_v1 import _batch, _span_example
+from experiments.stateful_span_r85.train_candidate_v1 import _batch
 from .core_v1 import ARCHITECTURE, PACKAGE_FORMAT, validate_metadata
 
 
@@ -38,6 +38,54 @@ LIST_PLACEMENTS = 4
 
 class R91TrainingError(RuntimeError):
     pass
+
+
+def _span_example(tokenizer: Any, row: dict[str, Any]) -> dict[str, Any]:
+    prompt = str(row["prompt"])
+    response = str(row["response"])
+    rendered = prompt + "\n"
+    encoded = tokenizer(
+        rendered, add_special_tokens=False, return_offsets_mapping=True
+    )
+    ids = [int(value) for value in encoded["input_ids"]]
+    offsets = [tuple(int(part) for part in pair) for pair in encoded["offset_mapping"]]
+    character_starts = [
+        index for index in range(len(prompt)) if prompt.startswith(response, index)
+    ]
+    spans: list[tuple[int, int]] = []
+    for character_start in character_starts:
+        character_end = character_start + len(response)
+        selected = [
+            index for index, (start, end) in enumerate(offsets)
+            if start < character_end and end > character_start
+        ]
+        if not selected:
+            continue
+        start = min(selected)
+        length = max(selected) - start + 1
+        decoded = tokenizer.decode(
+            ids[start:start + length], skip_special_tokens=True,
+            clean_up_tokenization_spaces=False,
+        ).strip()
+        if decoded == response:
+            spans.append((start, length))
+    spans = sorted(set(spans))
+    if (
+        not character_starts
+        or len(spans) != len(character_starts)
+        or len({length for _, length in spans}) != 1
+        or not 1 <= spans[0][1] <= MAX_SPAN_TOKENS
+        or len(ids) > MAX_TOKENS
+    ):
+        raise R91TrainingError(f"record is not an exact extractive span: {row['record_id']}")
+    return {
+        "record_id": str(row["record_id"]), "input_ids": ids,
+        "valid_starts": [start for start, _ in spans],
+        "span_length": spans[0][1],
+        "prompt_utf8_bytes": len(rendered.encode("utf-8")),
+        "response_utf8_bytes": len(response.encode("utf-8")),
+        "teacher_tokens": int(row["teacher_tokens"]),
+    }
 
 
 def _stem(value: int) -> str:
