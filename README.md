@@ -28,6 +28,36 @@ from any teacher. Human ratings, different-hardware reproduction, registered
 minimum-information certification, teacher-extraction quality, and comparison
 with LoRA/distillation remain open.
 
+## Later local compiler campaign
+
+The controlling public release is still R7, but it is not the end of the local
+research record. The separately sealed V1089 compiler campaign has completed
+all currently registered machine work through Phase 7 and a clean same-machine
+Phase 8 export rehearsal:
+
+| Phase | Local evidence status |
+| --- | --- |
+| 0-1 | Complete |
+| 2 | Machine evidence and blinded handoff complete; 0/21,000 independent-human preferences |
+| 3 | All registered machine gates pass; unconditional certification remains dependent on Phase 2 |
+| 4 | B40 is the smallest stable passing tested budget among B20/B40 for the exact five-route host |
+| 5 | Three-domain selective reconstruction and behavioral exclusion certified |
+| 6 | Three-package composition, portability, and provenance certified on three fresh host initializations |
+| 7 | Same exact integrated product certified on the registered CPU and CUDA device |
+| 8 | Clean same-machine export rehearsal certified; independent operator and different hardware still required |
+
+The B40 English host passed the registered machine-quality contract in all
+three 1,400-observation screens (4,200 observations total). The exact
+seed-104729 core later used by the Phase 7 product scored 1,381/1,400 across fourteen
+capabilities with zero collapse, and its paired advantage over the teacher was
+10.29 percentage points (95% bootstrap lower bound 8.64 points). The integrated
+Phase 7 product retained the same core and three packages while measuring
+13.24x the optimized CPU-transformer throughput and 13.51x the registered GPU
+comparator throughput. These are bounded same-machine results, not human,
+arbitrary-hardware, global-minimum, deployed-multi-source, or universal
+ABI-over-LoRA/distillation claims. The authoritative state is
+[`evidence/current/ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1089.json`](evidence/current/ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1089.json).
+
 The latest additive local result is R97. A frozen 530,050-parameter
 teacher-derived reasoning bridge scored 1,399/1,400 on a separately sealed
 prospective catalog, versus 1,088 for the live pinned teacher, 60 for the

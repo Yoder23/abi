@@ -56,6 +56,34 @@ end-to-end generation benchmarks and not evidence of ABI inference dominance.
 See [R7_PUBLIC_VALIDATION.md](R7_PUBLIC_VALIDATION.md) for the public and blind
 reproduction record.
 
+## Later V1089 local compiler campaign
+
+The post-R7 compiler campaign conditionally completes its registered machine
+gates through Phase 7. Phase 4 establishes B40 as the smallest stable passing
+tested budget among B20/B40 for the exact five-route architecture: all three
+1,400-observation screens pass the machine-quality contract (4,200 observations
+total), using 4,112 record memberships, 4,005 unique source attempts, and
+123,167 authoritative teacher-output tokens. At the same exact B40 information
+budget, the registered L0, L1, and D0 controls do not pass the all-seed quality
+contract.
+
+Phase 5 certifies 300/300 selected-domain results and 300/300 missing-domain
+abstentions per seed for chemistry, civics, and Python, with unchanged English
+outputs. Phase 6 certifies all three packages simultaneously across three fresh
+host initializations: 900/900 selected specialist rows, 900/900 structured
+components, 300/300 quarantined conflicts, zero collapse, and zero receiver
+training. Phase 7 binds that exact quality/composition lineage to one product:
+13.24x optimized CPU-transformer throughput and 13.51x registered GPU-comparator
+throughput, 244 cross-device identities, lower active memory, and no teacher at
+inference.
+
+Phase 8 has only a local clean-export certificate. The exact 281,108,851-byte
+handoff was reconstructed and replayed from detached source trees on the
+development machine, but an independent operator and different CPU/CUDA
+hardware have not run it. Phase 2 also remains at 0/21,000 human preferences.
+Accordingly, V1089 is strong bounded machine evidence, not an unconditional
+release, human-quality result, global minimum, or universal superiority claim.
+
 ## Additive R97 result
 
 R97 is a bounded prospective local pass and does not replace R7. The frozen

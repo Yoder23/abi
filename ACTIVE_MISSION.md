@@ -6,6 +6,8 @@ Updated: 2026-09-14
 
 `R7_BOUNDED_TECHNICAL_VALIDATION_PASSED_EXTERNAL_REVIEW_OPEN`
 
+`V1089_LOCAL_COMPILER_PHASES_0_TO_7_MACHINE_COMPLETE_PHASE8_EXTERNAL_BLOCKED`
+
 ABI R7 has passed local strict validation, pre-public hostile validation,
 durable public publication, clean public-manifest reconstruction, post-public
 hostile replay, and a fresh blind Codex red-team. The public release is:
@@ -13,6 +15,15 @@ hostile replay, and a fresh blind Codex red-team. The public release is:
 <https://github.com/Yoder23/abi/releases/tag/abi-final-validation-v2-repaired-r7-2026-08-30>
 
 This opens human and independent-hardware review. It does not complete them.
+
+The later V1089 compiler campaign is also part of the current local evidence
+lineage. Its Phase 4 B40 host passes the complete 4,200-row, three-seed machine
+quality contract; Phases 5 and 6 certify bounded three-domain exclusion and
+composition; Phase 7 certifies the same integrated English-plus-three-domain
+product on the registered CPU and CUDA device; and Phase 8 reconstructs it
+from detached clean source trees on the same machine. Phase 2 remains at
+0/21,000 human preferences and Phase 8 still lacks an independent operator and
+different hardware, so neither the campaign nor the release is unconditional.
 
 Additive R8 status:
 `R8_LEVEL_0_PUBLIC_PREREQUISITE_FAILED_HELDOUT_UNREVEALED`

@@ -39,6 +39,29 @@ Updated: 2026-09-14
 Human review remains at `0/21,000`. Claims may expand only after the frozen
 protocols produce independently auditable evidence.
 
+## Claims supported by the later V1089 local campaign
+
+- The exact five-route B40 ABI/LayerCake English host passes the locked machine
+  quality contract on three paired seeds; B20 fails on all three.
+- B40 is the smallest stable passing budget among the tested B20/B40 points,
+  not a proven global minimum.
+- At identical B40 sequence information, the registered LoRA and distillation
+  controls do not pass the all-seed quality contract. This is a bounded tested
+  frontier, not universal method superiority.
+- Signed chemistry, civics, and Python packages support exact selected-domain
+  behavior, explicit missing-domain abstention, three-package composition,
+  provenance, and immutable English outputs in the registered workload.
+- The same integrated product passes CPU and CUDA execution on the development
+  laptop, with 13.24x and 13.51x registered throughput ratios respectively,
+  lower active memory, zero receiver training, and no teacher at inference.
+- A detached clean same-machine export replay passes; genuinely independent
+  hardware and operator evidence do not yet exist.
+
+These claims remain conditional on the unresolved Phase 2 human gate for an
+unconditional campaign certificate. They do not establish arbitrary teachers
+or domains, latent semantic purity, global minimality, deployed multi-source
+quality, or universal ABI superiority.
+
 ## Additive R97 bounded reasoning-transfer result
 
 R97 supports one new bounded claim outside R7: a 530,050-parameter

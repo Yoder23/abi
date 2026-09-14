@@ -7,6 +7,27 @@ Updated: 2026-09-14
 ABI R7 has passed bounded technical validation and public reproducibility on
 the development hardware. Human and different-hardware review are open.
 
+The subsequent V1089 compiler campaign has finished its registered local
+machine program through Phase 7 and a same-machine Phase 8 clean-export
+rehearsal. This later campaign is not yet a public release certificate:
+
+| Phase | Status |
+| --- | --- |
+| 0-1 | Complete |
+| 2 | Machine and handoff ready; 0/21,000 human preferences |
+| 3 | Machine gates pass, conditional on Phase 2 |
+| 4 | Certified bounded B20/B40 information frontier; B40 passes all three seeds |
+| 5 | Certified bounded chemistry/civics/Python selection and exclusion |
+| 6 | Certified bounded three-package composition on three fresh hosts |
+| 7 | Certified bounded same-machine CPU/CUDA integrated product |
+| 8 | Local clean export certified; independent operator/hardware required |
+
+The Phase 7 product contains the exact B40 English core and three signed domain
+packages, has no teacher at inference and zero receiver-training steps, and
+records 13.24x CPU and 13.51x GPU throughput ratios against its registered
+comparators. These ratios do not authorize arbitrary-hardware or universal
+superiority claims.
+
 Additive R97 now supplies the strongest direct causal transfer evidence in the
 repository. A 530,050-parameter teacher-derived bridge, frozen before its
 prospective surface existed, scored 1,399/1,400 on R97 versus 1,088 for the

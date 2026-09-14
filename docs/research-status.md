@@ -16,6 +16,11 @@ fresh blind Codex review. Human quality and independent hardware remain open.
 | Isolation and hostile fail-closed behavior | Passed |
 | Durable public release and clean reconstruction | Passed |
 | Fresh blind technical red-team | Passed |
+| V1089 Phase 4 English host | Bounded machine pass; three 1,400-observation screens pass at B40 |
+| V1089 Phase 5 domain selection/exclusion | Bounded machine pass for chemistry, civics, and Python |
+| V1089 Phase 6 multi-package composition | Bounded machine pass on three fresh host initializations |
+| V1089 Phase 7 integrated CPU/CUDA product | Bounded same-machine pass; 13.24x CPU and 13.51x GPU registered ratios |
+| V1089 Phase 8 clean export | Same-machine rehearsal pass; independent operator/hardware open |
 | Human preference/quality | Open, 0/21,000 |
 | Independent hardware | Open |
 | Registered minimum-information proof | Open |

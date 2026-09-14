@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-09-14
+
+- Reconciled the public-facing status documents with the sealed V1089 local
+  compiler campaign: conditional machine completion through Phase 7, bounded
+  B40 English quality, three-domain exclusion/composition, integrated CPU/CUDA
+  performance, and the same-machine Phase 8 clean-export rehearsal.
+- Kept the two decisive external gates explicit: 0/21,000 independent-human
+  preferences and no genuinely independent different-hardware execution.
+- Preserved R7 as the controlling public release and retained all limits on
+  global-minimum, arbitrary-domain, deployed-multi-source, and universal
+  ABI-over-LoRA/distillation claims.
+
 ## 2026-09-13
 
 - Added the frozen R95 direct teacher comparison and preserved its correctly

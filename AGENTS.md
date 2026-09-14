@@ -29,6 +29,19 @@ R7 passes bounded technical validation. Human review, different-hardware
 reproduction, and registered minimum-information certification are now open,
 not complete.
 
+The later V1089 compiler campaign is a separate local machine-evidence line,
+not a replacement public release. Phases 0-1 are complete; Phase 2 is
+machine/handoff ready but has 0/21,000 human preferences; Phase 3 machine gates
+pass conditionally; Phases 4-7 have bounded machine certificates; and Phase 8
+has a same-machine clean-export rehearsal only. Its exact B40 core passes the
+quality contract across 4,200 observations and three seeds, its
+chemistry/civics/Python packages pass the
+registered exclusion and composition gates, and the integrated Phase 7 product
+records 13.24x CPU and 13.51x GPU throughput ratios against registered
+comparators. Do not call this an unconditional campaign pass, independent
+reproduction, global minimum, deployed multi-source result, or universal
+ABI-over-LoRA/distillation result.
+
 The additive R8 native-neural-transfer campaign is a Level 0 negative result,
 not a new release line. Its v10 package-only hypernetwork failed the public
 Pythia prerequisite: AFTER−BASE was +0.001953 across 1,024 paired rows (95%
