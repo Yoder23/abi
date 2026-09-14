@@ -1,0 +1,85 @@
+{
+  "accounting": {
+    "candidate_score_storage_bytes_float64_equivalent": 67200,
+    "full_vocabulary_logit_vectors_stored": 0,
+    "hidden_activations_stored": 0,
+    "peak_cuda_allocated_bytes": 9363990016,
+    "peak_process_rss_bytes": 2653290496,
+    "scalar_candidate_scores_stored": 8400,
+    "source_candidate_tokens_scored": 76400,
+    "source_inference_seconds": 530.895354999695,
+    "source_load_seconds": 4.362350499955937,
+    "total_wall_seconds": 539.2237479999894
+  },
+  "artifacts": {
+    "prior_corrected_scores": {
+      "bytes": 1689367,
+      "path": "prior_corrected_scores.jsonl",
+      "sha256": "fcde27a945e7652d42fc4aeeec90a0aebb7a266358cf2c73b82c7ddb7f634d25"
+    }
+  },
+  "campaign": "r93",
+  "candidate_accessed": false,
+  "catalog_sha256": "2547b847a2768fbfa410c1b9c49ead79d5ab906b6491c320968aa11f215680cb",
+  "evidence_sha256": "f5fe7eb9ed9d0a5e8ab48e64211c05ad1dad1c08954155d2677567d2687e5710",
+  "format": "abi-r93-prior-corrected-source-score/1",
+  "full_abi_moonshot": "OPEN",
+  "gates": {
+    "all_destination_display_positions": true,
+    "minimum_prior_corrected_passing": false,
+    "rows": true,
+    "zero_prior_corrected_ties": true
+  },
+  "hardware": {
+    "cuda": "11.8",
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "machine": "Sam",
+    "python": "3.10.0",
+    "torch": "2.7.1+cu118"
+  },
+  "layercake_loaded": false,
+  "method": "actual_mean_log_probability_minus_same-list_no-relation-control_mean_log_probability",
+  "metrics": {
+    "prior_corrected_display_position_passing": {
+      "0": 427,
+      "1": 420,
+      "2": 462
+    },
+    "prior_corrected_family_passing": {
+      "0": 301,
+      "1": 328,
+      "2": 348,
+      "3": 332
+    },
+    "prior_corrected_pass_rate": 0.935,
+    "prior_corrected_passing": 1309,
+    "prior_corrected_ties": 0,
+    "raw_family_passing": {
+      "0": 322,
+      "1": 346,
+      "2": 350,
+      "3": 340
+    },
+    "raw_pass_rate": 0.97,
+    "raw_passing": 1358,
+    "raw_ties": 0,
+    "rows": 1400
+  },
+  "promotion_eligible": false,
+  "source_family_diagnostic": {
+    "authorization_role": "reported_nonblocking_teacher_ceiling_diagnostic",
+    "family_passing": {
+      "0": 301,
+      "1": 328,
+      "2": 348,
+      "3": 332
+    }
+  },
+  "source_manifest_sha256": "3bac528a1825e77dcb35963f5c78946fb14400e1cd832e0db40c2d964360c310",
+  "source_model": "microsoft/Phi-3-mini-4k-instruct",
+  "source_parameters_read": 3821079552,
+  "source_revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+  "source_scoring_implementation_sha256": "54ded3d1e1afbbd016b1d4a9a837777d24bfe313241a4f9f76a4e915b4b9116c",
+  "source_weights_copied": 0,
+  "verdict": "FAIL_R93_SOURCE"
+}
