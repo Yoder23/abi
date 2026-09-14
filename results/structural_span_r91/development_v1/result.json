@@ -1,0 +1,61 @@
+{
+  "artifacts": {
+    "evaluation": {
+      "bytes": 83290,
+      "path": "evaluation.jsonl",
+      "sha256": "3515848c16105be51ec046271a781ba4bb884f73deea41bc20fd66836a679659"
+    }
+  },
+  "candidate_binding_sha256": "4297089ea19a2acc39ea6ff2d941d927410d6a89a983b02ec14413abb5a416e1",
+  "candidate_checkpoint_sha256": "04b350e0a7f22ac4facb380f6bf99edfc0022697a312248972491434234a4fba",
+  "candidate_metadata_sha256": "d4d413549b09b37869e51a1bb406971cdcfacd4116421d6d98b96385f78a82e3",
+  "candidate_retrained_or_calibrated_during_screen": false,
+  "catalog_sha256": "4b0087c9a7fa0e0fd6f607fdbd94fffbdd3cb375f5880a0588c97414583a2ad7",
+  "claim_boundary": "Disclosed R60 reasoning development screen only.",
+  "evidence_sha256": "53fb783e4c97e18e68df42ac5bc78cf0fa3ddbd055faaaad4743e293a6b3e8df",
+  "format": "abi-r91-structure-invariant-development-screen/1",
+  "full_abi_moonshot": "OPEN",
+  "gates": {
+    "artifacts_unchanged": true,
+    "candidate_quality": true,
+    "matrix": true,
+    "physical_sparse": true,
+    "r60_gain": true,
+    "random_bridge_fails": true,
+    "source_retention": true,
+    "teacher_absent": true,
+    "zero_collapse": true
+  },
+  "imported_artifact_sha256": "292ba40ced84db5a28ef3c8214ac7645623db5e0f047218f5f7bf7c2ce0b10cc",
+  "metrics": {
+    "candidate_collapses": 0,
+    "candidate_minus_r60": {
+      "ci95_high": 0.99,
+      "ci95_low": 0.9,
+      "mean": 0.95
+    },
+    "candidate_minus_random": {
+      "ci95_high": 0.99,
+      "ci95_low": 0.9,
+      "mean": 0.95
+    },
+    "candidate_passing": 95,
+    "candidate_physical_sparse_rows": 100,
+    "generation_seconds": 1.5928320999955758,
+    "peak_cuda_allocated_bytes": 396321280,
+    "process_rss_bytes": 1370890240,
+    "r60_endpoint_passing": 0,
+    "random_bridge_passing": 0,
+    "rows": 100,
+    "source_passing": 21,
+    "source_passing_retained": 21,
+    "source_retention": 1.0
+  },
+  "parent_checkpoint_sha256": "b6977f087ac42e6e4234d026b4cd83827b720d8973cca049daf18bcc8b96a64e",
+  "promotion_eligible": false,
+  "prospective_test_authorized": true,
+  "r60_raw_sha256": "e509484babfab685c91fee3a6165bfea0b2881213fdb7b3a71fde9266e2a25cf",
+  "source_parameters_retained": 0,
+  "teacher_present_at_inference": false,
+  "verdict": "PASS_R91_DEVELOPMENT"
+}
