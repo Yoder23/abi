@@ -40,6 +40,10 @@ SEED_BASE = 93_000
 RESULT_FORMAT = "abi-r93-source-qualified-prospective-screen/1"
 PASS_VERDICT = "PASS_R93_BOUNDED_PROSPECTIVE_TRANSFER"
 FAIL_VERDICT = "FAIL_R93_PROSPECTIVE_TRANSFER"
+SOURCE_QUALITY_FLOOR = 1_330
+REQUIRE_SOURCE_POINT_NONINFERIOR = False
+SOURCE_NONINFERIOR_CI95_FLOOR = -1.0
+CLAIM_BOUNDARY = "Bounded source-qualified prospective two-hop reasoning transfer only."
 
 
 class R93Error(RuntimeError):
@@ -158,7 +162,7 @@ def run(*, binding_path: Path, parent: Path, artifact: Path, layercake_root: Pat
         "process_rss_bytes": int(process.memory_info().rss),
     }
     gates = {
-        "matrix": len(rows) == ROWS, "source_quality": source_passing >= 1_330,
+        "matrix": len(rows) == ROWS, "source_quality": source_passing >= SOURCE_QUALITY_FLOOR,
         "candidate_quality": candidate_passing >= 1_330,
         "candidate_family_floor": min(value["candidate_passing"] for value in families.values()) >= FAMILY_FLOOR,
         "source_retention": metrics["source_retention"] >= 0.95,
@@ -170,6 +174,11 @@ def run(*, binding_path: Path, parent: Path, artifact: Path, layercake_root: Pat
         "teacher_absent": metadata["source_boundary"]["teacher_present_at_inference"] is False,
         "artifacts_unchanged": all(_sha256_file(root / item["path"]) == item["sha256"] for item in binding["files"].values()),
     }
+    if REQUIRE_SOURCE_POINT_NONINFERIOR:
+        gates["candidate_at_least_source_point"] = candidate_passing >= source_passing
+        gates["candidate_source_noninferior_bootstrap"] = (
+            metrics["candidate_minus_source"]["ci95_low"] >= SOURCE_NONINFERIOR_CI95_FLOOR
+        )
     if not all(math.isfinite(float(value)) for value in (parent_seconds, candidate_seconds)):
         raise R93Error("R93 timing is non-finite")
     passed = all(gates.values())
@@ -190,7 +199,7 @@ def run(*, binding_path: Path, parent: Path, artifact: Path, layercake_root: Pat
         "candidate_retrained_or_calibrated": False, "teacher_present_at_inference": False,
         "source_parameters_retained": 0, "promotion_eligible": False,
         "full_abi_moonshot": "OPEN",
-        "claim_boundary": "Bounded source-qualified prospective two-hop reasoning transfer only.",
+        "claim_boundary": CLAIM_BOUNDARY,
     }
     result["evidence_sha256"] = evidence_hash(result)
     write_json_once(output / "result.json", result)
