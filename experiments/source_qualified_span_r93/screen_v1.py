@@ -44,6 +44,8 @@ SOURCE_QUALITY_FLOOR = 1_330
 REQUIRE_SOURCE_POINT_NONINFERIOR = False
 SOURCE_NONINFERIOR_CI95_FLOOR = -1.0
 CLAIM_BOUNDARY = "Bounded source-qualified prospective two-hop reasoning transfer only."
+PACKAGE_LOADER = load_package
+EXPECTED_RETRAINED_AFTER_R91 = False
 
 
 class R93Error(RuntimeError):
@@ -54,7 +56,7 @@ def _load_binding(path: Path, root: Path) -> tuple[dict[str, Any], dict[str, Pat
     value = json.loads(path.read_text(encoding="utf-8"))
     claimed = value.get("binding_sha256")
     unsigned = {key: item for key, item in value.items() if key != "binding_sha256"}
-    if value.get("format") != BINDING_FORMAT or claimed != _canonical_sha(unsigned) or value.get("candidate_observations_before_binding") != 0 or value.get("candidate_retrained_after_r91_development") is not False:
+    if value.get("format") != BINDING_FORMAT or claimed != _canonical_sha(unsigned) or value.get("candidate_observations_before_binding") != 0 or value.get("candidate_retrained_after_r91_development") is not EXPECTED_RETRAINED_AFTER_R91:
         raise R93Error("R93 binding is invalid")
     paths = {}
     for name, item in value.get("files", {}).items():
@@ -91,7 +93,7 @@ def run(*, binding_path: Path, parent: Path, artifact: Path, layercake_root: Pat
     process = psutil.Process()
     model, tokenizer, _ = load_layercake_core(parent, layercake_root=layercake_root, device=device)
     model.eval()
-    trained, metadata = load_package(files["candidate_checkpoint"].parent, device=device)
+    trained, metadata = PACKAGE_LOADER(files["candidate_checkpoint"].parent, device=device)
     torch.manual_seed(SEED_BASE + 2)
     random_bridge = JointSpanBridge().to(device).eval()
     observed = {str(row["probe_id"]): {} for row in probes}
