@@ -1,0 +1,24 @@
+{
+  "format": "abi-r92-prospective-catalog-lock/1",
+  "status": "SEALED_BEFORE_SOURCE_OR_CANDIDATE_EXECUTION",
+  "catalog": {
+    "path": "catalogs/prospective_structural_span_r92_v1.json",
+    "sha256": "ae5686361a74f1539571f03568883532b17d139c65e77ba245cdea67b1ee6fee",
+    "bytes": 2050601,
+    "rows": 1400,
+    "unique_prompts": 1400,
+    "exact_prior_prompt_overlap": 0
+  },
+  "candidate": {
+    "checkpoint_sha256": "04b350e0a7f22ac4facb380f6bf99edfc0022697a312248972491434234a4fba",
+    "metadata_sha256": "d4d413549b09b37869e51a1bb406971cdcfacd4116421d6d98b96385f78a82e3",
+    "executed_on_r92_before_lock": false
+  },
+  "builder_sha256": "ba09d1f342f8f8852978fc33e48ae9f99030e2d6e9157e3be95ad6969f29c8f0",
+  "catalog_verifier_sha256": "0818b614e2718ca3e1f9330e0da1e62deb175dbf83b8148013bb6630982144a4",
+  "source_scorer_sha256": "f63ddbdb84cab8131e3005829a78e244511f99085134e403452c3d160cbaa999",
+  "protocol_sha256": "fd31e75929bdacbd1c55bebd7f21df6be7f0a4becaca6b3b9ab50b46846ac5f8",
+  "candidate_outputs_observed": 0,
+  "source_outputs_observed": 0,
+  "teacher_loaded": false
+}

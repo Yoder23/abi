@@ -10,12 +10,17 @@ from pathlib import Path
 from abi.hf_extraction import load_probe_catalog
 
 
+CATALOG_SHA256 = "ae5686361a74f1539571f03568883532b17d139c65e77ba245cdea67b1ee6fee"
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--catalog", required=True, type=Path)
     parser.add_argument("--search-root", required=True, type=Path)
     args = parser.parse_args()
     catalog = args.catalog.resolve()
+    if hashlib.sha256(catalog.read_bytes()).hexdigest() != CATALOG_SHA256:
+        parser.error("R92 catalog hash changed")
     probes = list(load_probe_catalog(catalog)["probes"])
     prompts = {str(row["prompt"]) for row in probes}
     old_prompts = set()
