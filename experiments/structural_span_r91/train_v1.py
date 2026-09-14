@@ -105,11 +105,11 @@ def _transition_text(form: int, a: str, b: str, c: str, subject: str) -> str:
         f"Two links are supplied: {a} -> {b} and {b} -> {c}. {subject} starts at {a}.",
         f"Place {subject} in {a}; include each {a} within {b}; include each {b} within {c}.",
         f"The first relation sends {a} into {b}. The next sends {b} into {c}. {subject} begins in {a}.",
-        f"Given {subject}:{a}, and the chain {a}:{b}, {b}:{c}, follow both relations.",
+        f"Given {subject} : {a}, and the chain {a} : {b}, {b} : {c}, follow both relations.",
         f"Initial membership for {subject} is {a}. One hop reaches {b}; a second hop reaches {c}.",
         f"{a} objects qualify as {b} objects, and {b} objects qualify as {c} objects. {subject} qualifies as {a}.",
         f"Read {a} <= {b} and {b} <= {c} as containment. The item {subject} is contained by {a}.",
-        f"For {subject}, start label={a}. Apply label({a})={b}, followed by label({b})={c}.",
+        f"For {subject}, start label = {a}. Apply label ( {a} ) = {b}, followed by label ( {b} ) = {c}.",
     )
     return forms[form]
 
