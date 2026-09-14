@@ -382,5 +382,17 @@ arbitrary teacher.
     LoRA/distillation superiority. A successor must materially expand beyond
     supplied three-field behavior and retain prospective semantic evaluation.
 
+23. Preserve R97 as the passed prospective two-hop nonce-reasoning endpoint:
+    1,399/1,400 candidate versus 1,088 teacher, 60 unchanged parent, and 17
+    random; 1,087/1,088 teacher-correct retention; zero collapse; 1,400/1,400
+    sparse execution; strict recomputation; 12/12 hostile rejection; and
+    byte-identical live replay. Do not run a nearby label-length, wrapper,
+    optimizer, seed, or reasoning-family variant. A local successor must
+    materially broaden to fluent English or a non-enumerable specialist
+    capability, use a separately sealed prospective evaluation, and include
+    matched LoRA and sequence-distillation controls under explicit information
+    and compute budgets. Human quality and independent hardware remain external
+    gates and cannot be replaced by self-ratings or same-machine reruns.
+
 Do not claim the ABI moonshot until those acquisition and external-quality
 gates are supported by their own evidence.
