@@ -1,0 +1,32 @@
+{
+  "campaigns": {
+    "r88": {
+      "candidate_passing": 1400,
+      "collapses": 0,
+      "parent_passing": 174,
+      "random_passing": 0,
+      "raw_sha256": "758643dd8eb2384f7aa8db757f0da82f69bbeea62816a34425cd4be0bc326dbb",
+      "result_sha256": "99ec04026397510656500762f8c57a29dfe605065a49d4245c26fd6c73d8b853",
+      "rows": 1400,
+      "source_passing": 1379
+    },
+    "r89": {
+      "candidate_passing": 1400,
+      "collapses": 0,
+      "parent_passing": 209,
+      "random_passing": 0,
+      "raw_sha256": "23dd0fd2b02a2526498255d72a2639eb2242a3d99a52816777a2c6550a9e7708",
+      "result_sha256": "63b8b632184a021c33fe5fb72b7af322d20400eda8fc356e6589936316df5616",
+      "rows": 1400,
+      "source_passing": 1353
+    }
+  },
+  "candidate_checkpoint_sha256": "15c28bdceea49e61e771092ce74be1cc30233e8bef53d87171d36f5a2487372f",
+  "candidate_metadata_sha256": "d98c53ff713ead136b9a659743553b40fed2fa709d0127b93550f8fef7bfaabe",
+  "claim_boundary": "Strict verification of the bounded R88/R89 joint-span results only.",
+  "evidence_sha256": "d7d4d96612e67e3bb2815be48cf2f366e83ab5fb3b8b7e517d1cb978615fbecd",
+  "format": "abi-r88-r89-strict-raw-recomputation/1",
+  "full_abi_moonshot": "OPEN",
+  "stored_scientific_booleans_trusted": false,
+  "verdict": "PASS_R88_R89_STRICT_RECOMPUTATION"
+}

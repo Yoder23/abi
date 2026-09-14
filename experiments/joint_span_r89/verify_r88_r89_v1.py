@@ -49,6 +49,13 @@ CANDIDATE_METADATA_SHA256 = "d98c53ff713ead136b9a659743553b40fed2fa709d0127b9355
 PARENT_SHA256 = "b6977f087ac42e6e4234d026b4cd83827b720d8973cca049daf18bcc8b96a64e"
 PARENT_METADATA_SHA256 = "1c91e94abc3f2faa9a6f7d68689451dc94098dd2330652a4713a0116c3080e0e"
 ARTIFACT_SHA256 = "292ba40ced84db5a28ef3c8214ac7645623db5e0f047218f5f7bf7c2ce0b10cc"
+PARENT_TOKENIZER_FILES = {
+    "merges.txt": (456_318, "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5"),
+    "special_tokens_map.json": (494, "fee4e5d22631d2d4598132f059304af341ff9c5ed7a5bde94be6a7f47a1a3817"),
+    "tokenizer.json": (3_557_680, "1fe93b6152957cf9cfd6d89002467f789ce8b3f3e000b3a2edf27c808ddd0b9e"),
+    "tokenizer_config.json": (534, "c8e5a90723b23e61d70174aeaa0d3688716f6a4b5a9ddf4cc1027b978e187899"),
+    "vocab.json": (798_156, "3ba3c3109ff33976c4bd966589c11ee14fcaa1f4c9e5e154c2ed7f99d80709e7"),
+}
 
 
 class VerificationError(RuntimeError):
@@ -81,6 +88,14 @@ def _verify_candidate(root: Path) -> dict[str, Any]:
         or _sha256_file(artifact) != ARTIFACT_SHA256
     ):
         raise VerificationError("frozen R88 candidate bytes changed")
+    for name, (expected_bytes, expected_sha256) in PARENT_TOKENIZER_FILES.items():
+        path = parent / name
+        if (
+            not path.is_file()
+            or path.stat().st_size != expected_bytes
+            or _sha256_file(path) != expected_sha256
+        ):
+            raise VerificationError(f"frozen parent tokenizer file changed: {name}")
     metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
     validate_metadata(metadata, candidate)
     if (
@@ -188,8 +203,8 @@ def _verify_campaign(root: Path, campaign: str, tokenizer: Any) -> dict[str, Any
     source_rows = {str(row["probe_id"]): row for row in _jsonl(source_raw_path)}
     probe_by_id = {str(row["probe_id"]): row for row in probes}
     if (
-        len(rows) != len(probes) != 1_400
-        or len(rows) != 1_400
+        len(rows) != 1_400
+        or len(probes) != 1_400
         or len({str(row["probe_id"]) for row in rows}) != 1_400
         or set(source_rows) != set(probe_by_id)
     ):

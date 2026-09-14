@@ -1,0 +1,99 @@
+{
+  "baseline": {
+    "receipt_created": true,
+    "returncode": 0,
+    "stderr_sha256": "ebcf5ede15720446e52e6b81cd36c8764420756ec6f2ac85eb51374757fb8ea2",
+    "stdout_sha256": "6aafd8837abf1870e5fe13b97cd834da7c71a656b350ab7f0b98d642116dc00d"
+  },
+  "cases": [
+    {
+      "case": "missing_r88_raw",
+      "receipt_created": false,
+      "rejected": true,
+      "returncode": 1,
+      "stderr_sha256": "6bd9e551fbfa6e3d560215e4d220c78299ce03e5312d87064606f7b223c8e320",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "dropped_r88_row",
+      "receipt_created": false,
+      "rejected": true,
+      "returncode": 1,
+      "stderr_sha256": "f6c996c41d0b279e7b8ba5f427e5063d7cd9326d81f367b54a48daf93389a6a6",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "forged_r89_gate",
+      "receipt_created": false,
+      "rejected": true,
+      "returncode": 1,
+      "stderr_sha256": "04b3ee67b1003033ea1db906f3c9ddc7fff15601cb60bc6086f1cef4d83045f8",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "mutated_candidate_checkpoint",
+      "receipt_created": false,
+      "rejected": true,
+      "returncode": 1,
+      "stderr_sha256": "48bec5b74ecae2901bd826893c11c457d9fd613ffe930ea599b6de768bcd9208",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "mutated_parent_checkpoint",
+      "receipt_created": false,
+      "rejected": true,
+      "returncode": 1,
+      "stderr_sha256": "48bec5b74ecae2901bd826893c11c457d9fd613ffe930ea599b6de768bcd9208",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "mutated_imported_artifact",
+      "receipt_created": false,
+      "rejected": true,
+      "returncode": 1,
+      "stderr_sha256": "48bec5b74ecae2901bd826893c11c457d9fd613ffe930ea599b6de768bcd9208",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "mutated_candidate_binding",
+      "receipt_created": false,
+      "rejected": true,
+      "returncode": 1,
+      "stderr_sha256": "803871499e9534f754bb4665fb99fca25b0f1deb414c668b0ee4301e0c755e4c",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "mutated_holdout_screen",
+      "receipt_created": false,
+      "rejected": true,
+      "returncode": 1,
+      "stderr_sha256": "2d88811fa1f4244df38b5825f43aa3b549b47511c7981ddbf501e24a6d42b6a8",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "mutated_r89_catalog",
+      "receipt_created": false,
+      "rejected": true,
+      "returncode": 1,
+      "stderr_sha256": "b217c7e43ad5e5bf382b5308668ec4b4a6a0b5c7ce76a52ca1e39e33620b63a5",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "missing_tokenizer",
+      "receipt_created": false,
+      "rejected": true,
+      "returncode": 1,
+      "stderr_sha256": "46dcc98413e92d4aa6a0b93eb1f47c95357d7cf30b3379470abdbb20cea7086a",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "claim_boundary": "Fail-closed audit of the bounded R88/R89 verifier only.",
+  "copy_method": "same-volume-hardlinks-with-unlink-before-mutation",
+  "evidence_sha256": "8498195c3cd4cf50a73e1a55fffd6484cf7052097d33f9382121cb9f3ca22f4b",
+  "format": "abi-r88-r89-hostile-audit/1",
+  "full_abi_moonshot": "OPEN",
+  "hostile_cases": 10,
+  "hostile_cases_rejected": 10,
+  "original_evidence_changed": false,
+  "verdict": "PASS_R88_R89_HOSTILE_AUDIT"
+}

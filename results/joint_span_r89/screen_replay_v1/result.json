@@ -1,0 +1,114 @@
+{
+  "artifacts": {
+    "evaluation": {
+      "bytes": 1102999,
+      "path": "evaluation.jsonl",
+      "sha256": "23dd0fd2b02a2526498255d72a2639eb2242a3d99a52816777a2c6550a9e7708"
+    }
+  },
+  "candidate_binding_sha256": "129f5023187f2d4f1d82b6e30f83297ee8d52de44f9e1184dfd20c9be3892112",
+  "candidate_checkpoint_sha256": "15c28bdceea49e61e771092ce74be1cc30233e8bef53d87171d36f5a2487372f",
+  "candidate_metadata_sha256": "d98c53ff713ead136b9a659743553b40fed2fa709d0127b93550f8fef7bfaabe",
+  "candidate_retrained_or_calibrated": false,
+  "catalog_sha256": "e21bf7e3a2f3c72d5b82307009fb05c3e1e0623208d9023a13baeaf1e265a118",
+  "claim_boundary": "Frozen R88 package holdout under new seven-digit nonce identities only.",
+  "evidence_sha256": "19fcb67fb889e2bd0afdd9364d0702fb2ae1c30fd6aad549784d82dbb6cec5a2",
+  "format": "abi-r89-frozen-r88-package-holdout-screen/1",
+  "full_abi_moonshot": "OPEN",
+  "gates": {
+    "artifacts_unchanged": true,
+    "candidate_family_floor": true,
+    "candidate_quality": true,
+    "causal_parent_gain": true,
+    "matrix": true,
+    "physical_sparse": true,
+    "random_bridge_fails": true,
+    "source_quality": true,
+    "source_retention": true,
+    "teacher_absent": true,
+    "trained_beats_random": true,
+    "zero_collapse": true
+  },
+  "holdout_binding_sha256": "71e7066a54428200bb6448c87a6e1bc40c909089574aa7872313ec1f8a3dc1d7",
+  "metrics": {
+    "by_family": {
+      "0": {
+        "candidate_passing": 200,
+        "parent_passing": 30,
+        "random_passing": 0,
+        "source_passing": 172
+      },
+      "1": {
+        "candidate_passing": 200,
+        "parent_passing": 34,
+        "random_passing": 0,
+        "source_passing": 200
+      },
+      "2": {
+        "candidate_passing": 200,
+        "parent_passing": 26,
+        "random_passing": 0,
+        "source_passing": 200
+      },
+      "3": {
+        "candidate_passing": 200,
+        "parent_passing": 40,
+        "random_passing": 0,
+        "source_passing": 183
+      },
+      "4": {
+        "candidate_passing": 200,
+        "parent_passing": 35,
+        "random_passing": 0,
+        "source_passing": 199
+      },
+      "5": {
+        "candidate_passing": 200,
+        "parent_passing": 20,
+        "random_passing": 0,
+        "source_passing": 199
+      },
+      "6": {
+        "candidate_passing": 200,
+        "parent_passing": 24,
+        "random_passing": 0,
+        "source_passing": 200
+      }
+    },
+    "candidate_and_random_generation_seconds": 19.355170399998315,
+    "candidate_collapses": 0,
+    "candidate_minus_parent": {
+      "ci95_high": 0.8692857142857143,
+      "ci95_low": 0.8321428571428572,
+      "mean": 0.8507142857142858
+    },
+    "candidate_minus_random": {
+      "ci95_high": 1.0,
+      "ci95_low": 1.0,
+      "mean": 1.0
+    },
+    "candidate_minus_source": {
+      "ci95_high": 0.04357142857142857,
+      "ci95_low": 0.024285714285714285,
+      "mean": 0.03357142857142857
+    },
+    "candidate_passing": 1400,
+    "candidate_peak_cuda_allocated_bytes": 394170368,
+    "candidate_physical_sparse_rows": 1400,
+    "parent_generation_seconds": 75.74670299998252,
+    "parent_passing": 209,
+    "process_rss_bytes": 1037799424,
+    "random_bridge_passing": 0,
+    "rows": 1400,
+    "source_passing": 1353,
+    "source_passing_retained": 1353,
+    "source_retention": 1.0
+  },
+  "parent_checkpoint_sha256": "b6977f087ac42e6e4234d026b4cd83827b720d8973cca049daf18bcc8b96a64e",
+  "promotion_eligible": false,
+  "source_parameters_retained": 0,
+  "source_raw_sha256": "70850638029b6e238a25ba63543ad8111b586fc0a69926863fdf7831b0628994",
+  "source_result_sha256": "8384d590e5d66a12fdab938f776b8fa0fa5cf091fe40778b17a5e0d20b47fdbb",
+  "teacher_present_at_inference": false,
+  "verdict": "PASS_R89_FROZEN_PACKAGE_HOLDOUT"
+}

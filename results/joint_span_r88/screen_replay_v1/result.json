@@ -1,0 +1,112 @@
+{
+  "artifacts": {
+    "evaluation": {
+      "bytes": 1323661,
+      "path": "evaluation.jsonl",
+      "sha256": "758643dd8eb2384f7aa8db757f0da82f69bbeea62816a34425cd4be0bc326dbb"
+    }
+  },
+  "candidate_binding_sha256": "129f5023187f2d4f1d82b6e30f83297ee8d52de44f9e1184dfd20c9be3892112",
+  "candidate_checkpoint_sha256": "15c28bdceea49e61e771092ce74be1cc30233e8bef53d87171d36f5a2487372f",
+  "candidate_metadata_sha256": "d98c53ff713ead136b9a659743553b40fed2fa709d0127b93550f8fef7bfaabe",
+  "catalog_sha256": "5dba762eec849f2e6531f5f1283417d38e9470a9b37ca69cf3576bb25286a177",
+  "claim_boundary": "Bounded extractive teacher-to-ABI-to-joint-span-package-to-LayerCake transfer only.",
+  "evidence_sha256": "867cfb6b9d0bbd9b1001a44859edd793dcd48e55499980a4d4a0b7b19a06eb2f",
+  "format": "abi-r88-joint-span-host-screen/1",
+  "full_abi_moonshot": "OPEN",
+  "gates": {
+    "artifacts_unchanged": true,
+    "candidate_family_floor": true,
+    "candidate_quality": true,
+    "causal_parent_gain": true,
+    "matrix": true,
+    "physical_sparse": true,
+    "random_bridge_fails": true,
+    "source_quality": true,
+    "source_retention": true,
+    "teacher_absent": true,
+    "trained_beats_random": true,
+    "zero_collapse": true
+  },
+  "metrics": {
+    "by_family": {
+      "0": {
+        "candidate_passing": 200,
+        "parent_passing": 17,
+        "random_passing": 0,
+        "source_passing": 191
+      },
+      "1": {
+        "candidate_passing": 200,
+        "parent_passing": 30,
+        "random_passing": 0,
+        "source_passing": 200
+      },
+      "2": {
+        "candidate_passing": 200,
+        "parent_passing": 12,
+        "random_passing": 0,
+        "source_passing": 200
+      },
+      "3": {
+        "candidate_passing": 200,
+        "parent_passing": 28,
+        "random_passing": 0,
+        "source_passing": 188
+      },
+      "4": {
+        "candidate_passing": 200,
+        "parent_passing": 28,
+        "random_passing": 0,
+        "source_passing": 200
+      },
+      "5": {
+        "candidate_passing": 200,
+        "parent_passing": 24,
+        "random_passing": 0,
+        "source_passing": 200
+      },
+      "6": {
+        "candidate_passing": 200,
+        "parent_passing": 35,
+        "random_passing": 0,
+        "source_passing": 200
+      }
+    },
+    "candidate_and_random_generation_seconds": 16.784660699951928,
+    "candidate_collapses": 0,
+    "candidate_minus_parent": {
+      "ci95_high": 0.8928571428571429,
+      "ci95_low": 0.8578571428571429,
+      "mean": 0.8757142857142857
+    },
+    "candidate_minus_random": {
+      "ci95_high": 1.0,
+      "ci95_low": 1.0,
+      "mean": 1.0
+    },
+    "candidate_minus_source": {
+      "ci95_high": 0.02142857142857143,
+      "ci95_low": 0.008571428571428572,
+      "mean": 0.015
+    },
+    "candidate_passing": 1400,
+    "candidate_peak_cuda_allocated_bytes": 392443904,
+    "candidate_physical_sparse_rows": 1400,
+    "parent_generation_seconds": 68.64310330001172,
+    "parent_passing": 174,
+    "process_rss_bytes": 1040060416,
+    "random_bridge_passing": 0,
+    "rows": 1400,
+    "source_passing": 1379,
+    "source_passing_retained": 1379,
+    "source_retention": 1.0
+  },
+  "parent_checkpoint_sha256": "b6977f087ac42e6e4234d026b4cd83827b720d8973cca049daf18bcc8b96a64e",
+  "promotion_eligible": false,
+  "source_parameters_retained": 0,
+  "source_raw_sha256": "08245820235fe4c553be5c7c961dda2ec8c21938374f241b84fc0a94a9123868",
+  "source_result_sha256": "facac7a81732805ad7c2dece8160ce22e74532805d5b5da4fe2f8a8aec1baf4e",
+  "teacher_present_at_inference": false,
+  "verdict": "PASS_R88_BOUNDED_JOINT_SPAN_TRANSFER"
+}
