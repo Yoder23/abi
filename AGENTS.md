@@ -29,8 +29,17 @@ R7 passes bounded technical validation. Human review, different-hardware
 reproduction, and registered minimum-information certification are now open,
 not complete.
 
+The independent audit preserved at
+`reviews/independent_2026-09-14/` returned
+`FULL_MOONSHOT_NOT_PROVEN`; treat that as the controlling whole-moonshot
+verdict. The later replay-surface repair is a repository/reproducibility fix,
+not a scientific promotion. Never combine measurements from R7, V1089, and
+R97 as though they describe one final artifact. Never mark Phase 5 clean
+replay complete unless the six exact baseline tensors named in the review
+manifest are restored or the phase is prospectively rerun and resealed.
+
 The later V1089 compiler campaign is a separate local machine-evidence line,
-not a replacement public release. Phases 0-1 are complete; Phase 2 is
+not a replacement public release. Phase 0 and Phase 1 are complete; Phase 2 is
 machine/handoff ready but has 0/21,000 human preferences; Phase 3 machine gates
 pass conditionally; Phases 4-7 have bounded machine certificates; and Phase 8
 has a same-machine clean-export rehearsal only. Its exact B40 core passes the

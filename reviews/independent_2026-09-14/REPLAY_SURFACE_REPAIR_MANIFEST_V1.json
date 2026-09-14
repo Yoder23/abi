@@ -1,0 +1,55 @@
+{
+  "format": "abi-independent-review-replay-surface-repair/1",
+  "created": "2026-09-14",
+  "basis_commit": "a0ea58b613f6f51b7d382298698a42d536cf84ae",
+  "status": "READY_FOR_BOUNDED_REVIEW_FULL_MOONSHOT_NOT_PROVEN",
+  "claim_boundary": "Repository replay and publication repair only. This manifest does not promote a scientific claim, combine R7/V1089/R97 lineages, or complete external gates.",
+  "preserved_audit": [
+    {"path": "reviews/independent_2026-09-14/ABI_MOONSHOT_INDEPENDENT_AUDIT_2026-09-14.md", "bytes": 45047, "sha256": "c024ec812b16da7d7e58f3d26764cb34fddbb8ed6b87125449db383f52bb2570"},
+    {"path": "reviews/independent_2026-09-14/ABI_MOONSHOT_INDEPENDENT_AUDIT_2026-09-14.json", "bytes": 15297, "sha256": "95b5d5254ffaf591b332e8f9825d7b505ea4c1cec9cbe468c8d7a89c356b029e"},
+    {"path": "reviews/independent_2026-09-14/audit_outputs/r97-strict-independent.json", "bytes": 857, "sha256": "59438fbff7e07a2d81f78b9c9905d473b09678892026b33cbd30cc0a02dfe30c"},
+    {"path": "reviews/independent_2026-09-14/audit_outputs/r97-hostile-independent.json", "bytes": 1832, "sha256": "cc34388e3b5ebcc11935da2a6f147df2247ebb61724b84957874b5354f1fb12e"},
+    {"path": "reviews/independent_2026-09-14/audit_outputs/phase4-frontier-independent.json", "bytes": 51262, "sha256": "07975fe6f09e053184a9d0bbae35831e1c583ba35d8338738817e1dbf36e1a73"},
+    {"path": "reviews/independent_2026-09-14/audit_outputs/r7-public-reconstruction.json", "bytes": 5300, "sha256": "3f0689159a0ec91a63f8080d6dda481af6f202e4b7e26c4213ba06aef1f8a514"}
+  ],
+  "compatibility_copies": [
+    {"path": "ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json", "source": "evidence/current/ABI_CAPABILITY_COMPILER_PHASE0_CERTIFICATE_V1.json", "bytes": 3560, "sha256": "3d95779cdaaa9f71dc0434df5942474fe635e7bf42a95f300924a411e7473884"},
+    {"path": "ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json", "source": "evidence/current/ABI_CAPABILITY_COMPILER_PHASE1_CERTIFICATE_V1.json", "bytes": 5508, "sha256": "da0c69d53b9b3cf7604ba3e56812f3e9468dcbf293bb14a75576c02d4dc87735"},
+    {"path": "ABI_TEACHER_RECORD_LABELING_PHASE2_CERTIFICATE_V89.json", "source": "evidence/current/ABI_TEACHER_RECORD_LABELING_PHASE2_CERTIFICATE_V89.json", "bytes": 5679, "sha256": "7522ac2e20bf4f48a1c71653a9e10e4920033b1126a30117881eabffee583307"},
+    {"path": "ABI_CAPABILITY_COMPILER_PHASE4_CERTIFICATE_V1.json", "source": "evidence/current/ABI_CAPABILITY_COMPILER_PHASE4_CERTIFICATE_V1.json", "bytes": 3488, "sha256": "6d3c81b40a21b08806368e34416ec2d9422594f00c68dc899fcee2e1586cf6eb"},
+    {"path": "ABI_CAPABILITY_COMPILER_PHASE5_CERTIFICATE_V1.json", "source": "evidence/current/ABI_CAPABILITY_COMPILER_PHASE5_CERTIFICATE_V1.json", "bytes": 4007, "sha256": "93265064268f697cf4bfc348551186dc53c7e780be5420c41a74844888c723b6"},
+    {"path": "ABI_CAPABILITY_COMPILER_PHASE6_CERTIFICATE_V1.json", "source": "evidence/current/ABI_CAPABILITY_COMPILER_PHASE6_CERTIFICATE_V1.json", "bytes": 4356, "sha256": "6ae934c164a46800a1f7224ad5c32433854eb572b89899e135a0272035d20d70"},
+    {"path": "ABI_CAPABILITY_COMPILER_PHASE7_CERTIFICATE_V1.json", "source": "evidence/current/ABI_CAPABILITY_COMPILER_PHASE7_CERTIFICATE_V1.json", "bytes": 5808, "sha256": "c0b07a8748d7ee84b0e99c6482585a95d7d9483b49d49248071b397b8b47f77b"},
+    {"path": "catalogs/english_and_first_domains_certification_v6.json", "source": "evidence/current/segregation/english_and_first_domains_certification_v6.json", "bytes": 6287076, "sha256": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052"}
+  ],
+  "publication_payloads": [
+    {"path": "results/role_invariant_choice_r76/candidate_v1/merges.txt", "bytes": 456318, "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5"},
+    {"path": "results/role_invariant_choice_r76/candidate_v1/metadata.json", "bytes": 60821, "sha256": "1c91e94abc3f2faa9a6f7d68689451dc94098dd2330652a4713a0116c3080e0e"},
+    {"path": "results/role_invariant_choice_r76/candidate_v1/model.safetensors", "bytes": 350891472, "sha256": "b6977f087ac42e6e4234d026b4cd83827b720d8973cca049daf18bcc8b96a64e"},
+    {"path": "results/role_invariant_choice_r76/candidate_v1/special_tokens_map.json", "bytes": 494, "sha256": "fee4e5d22631d2d4598132f059304af341ff9c5ed7a5bde94be6a7f47a1a3817"},
+    {"path": "results/role_invariant_choice_r76/candidate_v1/tokenizer.json", "bytes": 3557680, "sha256": "1fe93b6152957cf9cfd6d89002467f789ce8b3f3e000b3a2edf27c808ddd0b9e"},
+    {"path": "results/role_invariant_choice_r76/candidate_v1/tokenizer_config.json", "bytes": 534, "sha256": "c8e5a90723b23e61d70174aeaa0d3688716f6a4b5a9ddf4cc1027b978e187899"},
+    {"path": "results/role_invariant_choice_r76/candidate_v1/vocab.json", "bytes": 798156, "sha256": "3ba3c3109ff33976c4bd966589c11ee14fcaa1f4c9e5e154c2ed7f99d80709e7"},
+    {"path": "results/abi_capability_compiler_phase8/readiness_v1073/manifest.json", "bytes": 16199, "sha256": "b0e0c8f1ffcc52fc7464d52840ab7a086313fa90747158b0b9cff29d0abc8d86"},
+    {"path": "results/abi_capability_compiler_phase7_integrated/materialized_v1052/phase7-final-english-core.cake", "bytes": 253216208, "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d"},
+    {"path": "results/abi_capability_compiler_phase7_integrated/materialized_v1052/result.json", "bytes": 1419, "sha256": "d22684e34aabe39c4b590e3d22a547709a75cb8d17386700d410ca407ca6ee8c"},
+    {"path": "results/abi_capability_compiler_phase7_integrated/verify_v1067/result.json", "bytes": 5524, "sha256": "e34c01e02552866893e6f6c9b07be389675d63debb1ce5f85968cc98954ddf92"}
+  ],
+  "unresolved_phase5_payloads": [
+    {"path": "results/abi_capability_compiler_phase4_b40_baselines/headline_v997/D0_lr3e-5_exp4_seed104729/student.safetensors", "bytes": 44246000, "sha256": "93877f47b872ef90103b2e24527e8c3b6f28e409ed1f12292688c11dac7a0ca6"},
+    {"path": "results/abi_capability_compiler_phase4_b40_baselines/headline_v997/D0_lr3e-5_exp4_seed130363/student.safetensors", "bytes": 44246000, "sha256": "93363466c021d4b34682202d68520d91ef0a5b868efa6934d0539c1312eba5d7"},
+    {"path": "results/abi_capability_compiler_phase4_b40_baselines/headline_v997/D0_lr3e-5_exp4_seed155921/student.safetensors", "bytes": 44246000, "sha256": "28534f6dfd5d996ea35d75440753e563c6aeba24c2851b7b0fd938511361cdbc"},
+    {"path": "results/abi_capability_compiler_phase4_b40_baselines/headline_v997/L1_r8_lr1e-4_exp4_seed104729/adapters.safetensors", "bytes": 352780568, "sha256": "e9710e772491867f6be152977f4ae7064e9d5f83cdfb74de0c975ffe90c29e0f"},
+    {"path": "results/abi_capability_compiler_phase4_b40_baselines/headline_v997/L1_r8_lr1e-4_exp4_seed130363/adapters.safetensors", "bytes": 352780568, "sha256": "df66186b07771d4a799b51d8b21a0a795d61a22c0f490bb416a4433e3399b5bb"},
+    {"path": "results/abi_capability_compiler_phase4_b40_baselines/headline_v997/L1_r8_lr1e-4_exp4_seed155921/adapters.safetensors", "bytes": 352780568, "sha256": "f28732c25c6eaa85e8ac4a64e942f95bbd39c1a55111f9009dc198ef8401d920"}
+  ],
+  "cleanup_manifest": {"path": "results/storage_cleanup_2026-08-29.manifest.json", "sha256": "66ebbb586d814d293a395e88c1107b3ac892db44f377f7ca2407c90d2ae7da36"},
+  "external_gates_remaining": [
+    "21000 blinded human preference judgments",
+    "independent operator on different CPU and CUDA hardware",
+    "one coherent final-artifact lineage",
+    "broad open-ended English and automatic discovery",
+    "latent English/domain purity and global minimality",
+    "equal-compute and matched-quality LoRA/distillation comparisons"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "format": "abi-capability-compiler-phase0-certificate/1",
+  "certificate_id": "abi-capability-compiler-phase0-v1",
+  "status": "PASS",
+  "certified_date": "2026-08-03",
+  "implementation_commit": "0da0901d4f5b5e8a318e68b922a40416c9356e29",
+  "immutable_parent_commit": "709fc1ae2934e12276e7cbdb7d0c5a848e68d6dc",
+  "immutable_parent_tag": "abi-v89-pre-compiler-phase0-lineage",
+  "historical_evidence_changed": false,
+  "new_training_performed": false,
+  "implementation_locks": {
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json": "0189e2e41a0ca4942508597be1667851b74bce21125524db45d50387800473dd",
+    "ABI_CAPABILITY_COMPILER_PHASE0_PROTOCOL_V1.json": "cd37444a61a861b21b2e171456f39679eb79d39f2ff8a0436abd7f4cf1ca415c",
+    "ABI_CAPABILITY_COMPILER_PHASE0_ENVIRONMENT_V1.json": "55af7af9071a40db12b3876cb1eb8dea800e0ab9f15c33e78e6f3c0786e4674e",
+    "abi/capability_compiler_phase0.py": "ed47bbb6f5fc33fe63f7bbc69b3392e9c4421c407cd905931683dc3747ce76fa",
+    "tests/test_capability_compiler_phase0.py": "64913dfb551a238172a2ad37c2578a0e9e47927d74ac37b1eb178c5560363b5c",
+    "ABI_LOCAL_RESEARCH_ARTIFACTS_MANIFEST_V1.json": "3df8388d2141da88d92d17e821d31219e8b67f1b870932b9ee52480140c3175f"
+  },
+  "verification": {
+    "phase0_protocol_verifier": "PASS",
+    "implementation_commit_full_test_suite": {
+      "passed": 426,
+      "failed": 0,
+      "warnings": 2,
+      "warnings_scope": "SWIG deprecation warnings only"
+    },
+    "certification_tree_full_test_suite": {
+      "passed": 431,
+      "failed": 0,
+      "warnings": 2,
+      "warnings_scope": "SWIG deprecation warnings only"
+    },
+    "root_json_documents_parsed": 738,
+    "root_json_parse_failures": 0,
+    "certification_tree_root_json_documents_parsed": 739,
+    "implementation_commit_clean_before_certificate": true,
+    "diff_check": "PASS"
+  },
+  "research_ledger": {
+    "preservation_commit": "709fc1ae2934e12276e7cbdb7d0c5a848e68d6dc",
+    "preservation_commit_files": 488,
+    "large_catalog_manifest_artifacts": 58,
+    "large_catalog_manifest_bytes": 537888545,
+    "large_catalogs_tracked": 12,
+    "large_catalogs_local_only": 46,
+    "local_artifact_deletion_authorized": false
+  },
+  "phase0_established": [
+    "one pinned initial teacher and one immutable LayerCake host",
+    "fourteen-capability English boundary and fact-free reasoning rule",
+    "eleven mandatory systems including strong LoRA, routed LoRA, distillation, ABI, and causal ablations",
+    "three mandatory fairness views",
+    "disjoint data boundaries and minimum evidence depths",
+    "numeric quality, isolation, deployment, and product-superiority gates",
+    "paired statistical methods, three seeds, and runtime observation depths",
+    "complete imported-information and resource accounting fields",
+    "bounded development grids and one-repair stop rules"
+  ],
+  "not_established": [
+    "a normalized Phase 1 acquisition artifact",
+    "a trained or passing LoRA baseline",
+    "a trained or passing distillation baseline",
+    "a reliable ABI teacher-to-LayerCake acquisition",
+    "the sufficient-information frontier",
+    "ABI superiority over LoRA or distillation",
+    "a LayerCake stronger than its teacher",
+    "generalization to teachers other than the pinned initial source"
+  ],
+  "phase_transition": {
+    "phase0": "COMPLETE",
+    "phase1": "OPEN",
+    "phase2_through_phase8": "LOCKED",
+    "next_action": "Construct and certify the provenance-bound normalized acquisition IR without training any baseline or LayerCake candidate."
+  },
+  "moonshot_complete": false
+}

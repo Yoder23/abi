@@ -1,0 +1,99 @@
+{
+  "format": "abi-capability-compiler-phase7-certificate/1",
+  "certificate_id": "ABI_CAPABILITY_COMPILER_PHASE7_CERTIFICATE_V1",
+  "status": "CERTIFIED_BOUNDED_SAME_MACHINE_CPU_CUDA_INTEGRATED_PRODUCT",
+  "status_date": "2026-08-16",
+  "phase": 7,
+  "scope": "One exact signed seed-104729 B40 English core plus the exact signed chemistry, civics, and Python packages on the registered Windows laptop CPU and NVIDIA CUDA device, with Phase 4 quality, Phase 5 isolation, Phase 6 composition, and repaired allocation-bounded LayerCake package verification bound to the same immutable product lineage.",
+  "product": {
+    "manifest": "ABI_CAPABILITY_COMPILER_PHASE7_PRODUCT_MANIFEST_V1.json",
+    "runtime_host_overlay": "ABI_CAPABILITY_COMPILER_PHASE7_RUNTIME_HOST_OVERLAY_V1.json",
+    "core_archive_sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+    "core_payload_sha256": "18ad787696cf8737578253035ad84b7e0145d995f028c6392ba338b6117d5aba",
+    "layercake_runtime_commit": "662c5a9b7264a1a5478c9dfb656f35c450e2504f",
+    "teacher_present_at_inference": false,
+    "receiver_training_steps": 0
+  },
+  "independent_verification": {
+    "protocol": "ABI_CAPABILITY_COMPILER_PHASE7_VERIFY_PROTOCOL_V1064.json",
+    "protocol_sha256": "ee0c79966cc410e41d9a8625d452d55c0fa38c2ff4d0f88411b114b1ac8b30ed",
+    "preflight": "ABI_CAPABILITY_COMPILER_PHASE7_VERIFY_PREFLIGHT_V1065.json",
+    "result": "results/abi_capability_compiler_phase7_integrated/verify_v1067/result.json",
+    "result_sha256": "e34c01e02552866893e6f6c9b07be389675d63debb1ce5f85968cc98954ddf92",
+    "evidence_sha256": "0310a601832a555249635e8f2a1725f2b45cd35e5f245a1c44b95754c73df7a4",
+    "status": "PASS_INDEPENDENTLY_VERIFIED_PHASE7_BOUNDED_MACHINE_PRODUCT"
+  },
+  "adversarial_verification": {
+    "path": "results/abi_capability_compiler_phase7_integrated/adversarial_v1066.xml",
+    "sha256": "d62251dce824e2f57bcf0300b0e65981148a189c4e7922a471eba07523f0bde6",
+    "tests": 16,
+    "failures": 0,
+    "errors": 0
+  },
+  "layercake_patch_verification": {
+    "path": "results/abi_capability_compiler_phase7_integrated/allocation_bounded_verify_v1063/layercake_patch_tests.xml",
+    "sha256": "9a8d1bf4ede4725a3fee03957ccf56746cf8633dc38dcbe8224f799040c88f50",
+    "tests": 42,
+    "failures": 0,
+    "errors": 0,
+    "active_verify_tensor_deserialization": false
+  },
+  "certified_results": {
+    "cross_device_output_and_token_identities": 244,
+    "core_runtime_observations_per_device": 120,
+    "distinct_core_prompts_per_device": 100,
+    "domain_runtime_observations_per_device": 120,
+    "distinct_domain_prompts_per_device": 100,
+    "repetition_collapses_v2": 0,
+    "selected_only_domain_executions_per_device": 123,
+    "integrated_active_tensor_bytes": 255916588,
+    "cpu": {
+      "median_core_bytes_per_second": 274.3192565137695,
+      "optimized_transformer_median_bytes_per_second": 20.7209959400831,
+      "throughput_ratio": 13.238710016979493,
+      "phase4_same_core_throughput_retention": 1.0139390696414392,
+      "cold_ttft_seconds": 3.120949700009078,
+      "optimized_transformer_cold_ttft_seconds": 5.064102100004675,
+      "peak_process_rss_delta_bytes": 545308672,
+      "optimized_transformer_peak_process_rss_bytes": 602959872
+    },
+    "cuda": {
+      "median_core_bytes_per_second": 881.3583356320248,
+      "registered_l1_median_bytes_per_second": 65.21887456417592,
+      "throughput_ratio": 13.513853796492008,
+      "phase4_same_core_throughput_retention": 0.9783749033284567,
+      "cold_ttft_seconds": 3.3489479999698233,
+      "registered_l1_cold_ttft_seconds": 11.414970200014068,
+      "peak_process_rss_delta_bytes": 518238208,
+      "registered_l1_peak_process_rss_bytes": 5031067648,
+      "peak_cuda_allocated_bytes": 505427456,
+      "registered_l1_peak_cuda_allocated_bytes": 7812537856
+    }
+  },
+  "quality_and_composition_lineage": {
+    "phase4": "CERTIFIED_BOUNDED_MACHINE_DEVELOPMENT_SCOPE",
+    "phase5": "CERTIFIED_BOUNDED_THREE_DOMAIN_SELECTIVE_RECONSTRUCTION_AND_BEHAVIORAL_EXCLUSION",
+    "phase6": "CERTIFIED_BOUNDED_THREE_PACKAGE_COMPOSITION_PORTABILITY_AND_PROVENANCE",
+    "same_exact_integrated_core_archive": true,
+    "same_exact_three_domain_package_archives": true
+  },
+  "preserved_negative_evidence": [
+    "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_RESULT_V1043.json",
+    "ABI_CAPABILITY_COMPILER_PHASE7_RSS_PROFILE_RESULT_V1046.json",
+    "ABI_CAPABILITY_COMPILER_PHASE7_RSS_REPLICATION_RESULT_V1049.json",
+    "ABI_CAPABILITY_COMPILER_PHASE7_DIRECT_ARTIFACT_RESULT_V1056.json",
+    "ABI_CAPABILITY_COMPILER_PHASE7_STREAMING_HOST_RESULT_V1060.json"
+  ],
+  "repair_boundary": "The successful repair changed only LayerCake package loading and active integrity verification. Model tensors, signed archives, ABI, prompts, expected outputs, routing, quality logic, comparators, and thresholds remained unchanged. Active verification still authenticates archive, canonical manifest, tensor payload, package content, signature, and host compatibility but no longer deserializes a second resident tensor mapping.",
+  "phase7_machine_certified": true,
+  "phase8_status": "OPEN_EXTERNAL_INDEPENDENT_REPRODUCTION_ONLY",
+  "unresolved_prerequisites": {
+    "phase2_external_human_preferences_complete": false,
+    "completed_preferences": 0,
+    "required_preferences": 21000,
+    "phase8_independent_operator_complete": false,
+    "phase8_independent_hardware_complete": false,
+    "unconditional_release_claims_allowed": false
+  },
+  "claim_limits": "This is a bounded same-machine product certificate. It does not establish human preference, independent hardware reproduction, release readiness, arbitrary-hardware dominance, deployed multi-source quality, a global minimum, or universal ABI superiority over LoRA or distillation."
+}

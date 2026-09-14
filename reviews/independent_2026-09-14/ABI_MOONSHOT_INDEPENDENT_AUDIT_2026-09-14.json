@@ -1,0 +1,303 @@
+{
+  "format": "abi-independent-moonshot-audit/1",
+  "audit_date": "2026-09-14",
+  "executive_verdict": "FULL_MOONSHOT_NOT_PROVEN",
+  "novelty_verdict": "NOT_ASSESSED_AND_NOT_ESTABLISHED",
+  "strongest_exact_claim": {
+    "scope": "bounded local prospective two-hop nonce-reasoning transfer into one frozen compatible LayerCake parent",
+    "verdict": "BOUNDED_PASS_LOCAL",
+    "public_verdict": "UNVERIFIABLE",
+    "rows": 1400,
+    "candidate_passing": 1399,
+    "live_teacher_passing": 1088,
+    "unchanged_parent_passing": 60,
+    "random_bridge_passing": 17,
+    "teacher_correct_retained": 1087,
+    "teacher_correct_total": 1088,
+    "candidate_minus_teacher": {
+      "point": 0.22214285714285714,
+      "ci95_low": 0.2007142857142857,
+      "ci95_high": 0.24428571428571427
+    },
+    "collapses": 0,
+    "physical_sparse_rows": 1400,
+    "teacher_present_at_inference": false,
+    "receiver_parent_frozen": true,
+    "candidate_bridge_parameters": 530050,
+    "candidate_checkpoint_sha256": "9d3d6b38b1d437b5cbbed50c1470b4df1aa0371ffa51b1abd2adefbb645806e4",
+    "raw_sha256": "b4a4999228af61a509a7d22f8f6906b3075ce649a52e531b959646fbbdb40b8c",
+    "raw_bytes": 1338609,
+    "strict_receipt_sha256": "59438fbff7e07a2d81f78b9c9905d473b09678892026b33cbd30cc0a02dfe30c",
+    "limitations": [
+      "not broad English",
+      "not open-ended generation",
+      "not automatic discovery",
+      "not arbitrary-teacher support",
+      "not arbitrary-host transfer",
+      "not human validation",
+      "not systems superiority",
+      "not global information minimality"
+    ]
+  },
+  "strongest_public_claim": {
+    "scope": "R7 bounded capability-runtime and conformance reconstruction",
+    "verdict": "BOUNDED_PASS",
+    "release_tag": "abi-final-validation-v2-repaired-r7-2026-08-30",
+    "abi_commit": "3f82a9f4d67dda5c8ea13bd59b2d8f1bbd3dd128",
+    "layercake_commit": "a87a653dbdb1a4e5f713baf7bc508d508277e00d",
+    "manifest_sha256": "3691f73624f88c6bfadfaf0d9571e1eaa15fbada834d42af7dda5e4b4279d559",
+    "archive_sha256": "fc50f423986149b5d4670ec9e28698540f64be96034efa26e5704c4469921e88",
+    "archive_bytes": 844018841,
+    "strict_certificate_identity_exact": true,
+    "trusted_scientific_booleans_consumed": 0,
+    "focused_tests_passed": 17,
+    "reconstruction_status": "PASS_PUBLIC_MANIFEST_ONLY_RECONSTRUCTION",
+    "receipt_sha256": "3f0689159a0ec91a63f8080d6dda481af6f202e4b7e26c4213ba06aef1f8a514"
+  },
+  "repository_identity": {
+    "abi": {
+      "remote": "https://github.com/Yoder23/abi.git",
+      "branch": "master",
+      "current_commit": "a0ea58b613f6f51b7d382298698a42d536cf84ae",
+      "ahead": 0,
+      "behind": 0,
+      "working_tree_clean": true,
+      "tracked_files": 4040,
+      "untracked_files": 0,
+      "ignored_paths": 24077,
+      "lfs_fsck": "PASS",
+      "submodules": []
+    },
+    "layercake": {
+      "remote": "https://github.com/Yoder23/layercake.git",
+      "branch": "master",
+      "local_commit": "f8a4569508f9f4a20e4babe3b4a942ac887da147",
+      "origin_master_commit": "71c56d3",
+      "ahead": 3,
+      "behind": 0,
+      "working_tree_clean": true,
+      "v1089_bound_commit": "662c5a9b7264a1a5478c9dfb656f35c450e2504f",
+      "r7_bound_commit": "a87a653dbdb1a4e5f713baf7bc508d508277e00d",
+      "r97_exact_repository_commit_bound": false
+    }
+  },
+  "phase_verdicts": [
+    {"phase": 0, "verdict": "PASS", "reason": "definitions, metrics, thresholds, splits, seeds, stops, and artifact identities frozen before results"},
+    {"phase": 1, "verdict": "PASS", "reason": "bounded provenance-bound normalized acquisition artifact certified"},
+    {"phase": 2, "verdict": "CONDITIONAL", "reason": "machine packet ready but human evidence is 0/21000 and final mandatory baseline coverage is incomplete"},
+    {"phase": 3, "verdict": "CONDITIONAL", "reason": "stored machine gates pass but Phase 2 prerequisite is incomplete"},
+    {"phase": 4, "verdict": "BOUNDED_PASS", "reason": "B40 passes and B20 fails for the registered five-route, three-seed machine campaign; not global and not all fairness views"},
+    {"phase": 5, "verdict": "BOUNDED_PASS", "reason": "three-domain behavioral exclusion and lifecycle; not latent purity"},
+    {"phase": 6, "verdict": "BOUNDED_PASS", "reason": "same-machine three-package composition on fresh compatible initializations; not arbitrary host or deployed multi-source"},
+    {"phase": 7, "verdict": "BOUNDED_PASS", "reason": "same-machine integrated CPU/CUDA evidence with cold-TTFT and RSS-method caveats"},
+    {"phase": 8, "verdict": "NOT_EXECUTED", "reason": "no independent operator on different CPU and CUDA hardware"}
+  ],
+  "losslessness": {
+    "artifact_losslessness": "BOUNDED_PASS",
+    "foreign_teacher_capability_preservation": "FAIL_GENERAL_CLAIM"
+  },
+  "moonshot_claims": {
+    "pre_existing_teacher_knowledge_extraction": "BOUNDED_PASS",
+    "non_enumerable_capability_extraction": "FAIL",
+    "broad_english_fluency": "FAIL",
+    "open_ended_generation": "FAIL",
+    "prompt_grounding": "BOUNDED_PASS",
+    "instruction_following": "BOUNDED_PASS",
+    "conversation": "CONDITIONAL",
+    "supplied_text_summarization": "BOUNDED_PASS",
+    "rewriting": "BOUNDED_PASS",
+    "email_drafting": "BOUNDED_PASS",
+    "tone_and_format_control": "BOUNDED_PASS",
+    "clarification": "BOUNDED_PASS",
+    "abstention": "BOUNDED_PASS",
+    "domain_independent_reasoning": "BOUNDED_PASS_R97",
+    "automatic_capability_discovery": "FAIL",
+    "semantic_labeling": "FAIL_GENERAL_CLAIM",
+    "english_domain_segregation": "BOUNDED_PASS_BEHAVIORAL",
+    "latent_core_purity": "FAIL",
+    "selectable_domain_packaging": "BOUNDED_PASS",
+    "package_composition": "BOUNDED_PASS",
+    "package_removal_and_restoration": "BOUNDED_PASS",
+    "package_provenance_and_immutability": "BOUNDED_PASS",
+    "arbitrary_teacher_support": "FAIL",
+    "layercake_ingestion": "BOUNDED_PASS",
+    "teacher_free_deployment": "BOUNDED_PASS",
+    "host_independence": "BOUNDED_PASS",
+    "different_hardware_portability": "NOT_EXECUTED",
+    "global_information_minimality": "FAIL",
+    "bounded_information_frontier": "BOUNDED_PASS",
+    "teacher_relative_quality": "BOUNDED_PASS_R97",
+    "cpu_systems": "BOUNDED_PASS",
+    "gpu_systems": "BOUNDED_PASS",
+    "human_perceived_quality": "NOT_EXECUTED",
+    "public_clean_clone_reproducibility": "BOUNDED_PASS_R7_UNVERIFIABLE_R97_V1089"
+  },
+  "causal_chain": [
+    {"id": 1, "requirement": "capability in independently trained open-weight teacher", "verdict": "BOUNDED_PASS"},
+    {"id": 2, "requirement": "information causally originating in teacher", "verdict": "BOUNDED_PASS"},
+    {"id": 3, "requirement": "no hidden answers or complete capability enumeration", "verdict": "CONDITIONAL"},
+    {"id": 4, "requirement": "labels generated without post-hoc leakage", "verdict": "FAIL_GENERAL_CHAIN"},
+    {"id": 5, "requirement": "English and specialist information segregated", "verdict": "BOUNDED_PASS_BEHAVIORAL_FAIL_LATENT"},
+    {"id": 6, "requirement": "package produced before prospective evaluation", "verdict": "PASS_R97"},
+    {"id": 7, "requirement": "LayerCake consumed exact package", "verdict": "PASS_R97"},
+    {"id": 8, "requirement": "unchanged LayerCake parent could not perform task", "verdict": "PASS_R97"},
+    {"id": 9, "requirement": "complete causal control matrix", "verdict": "CONDITIONAL"},
+    {"id": 10, "requirement": "teacher absent at inference", "verdict": "PASS_BOUNDED"},
+    {"id": 11, "requirement": "no recipient capability-specific relearning substituted", "verdict": "BOUNDED_PASS_ONE_HOST_FAMILY"},
+    {"id": 12, "requirement": "same final artifact supplies quality and performance evidence", "verdict": "FAIL_FULL_CHAIN"},
+    {"id": 13, "requirement": "prospective prompt-disjoint generalization", "verdict": "PASS_R97"},
+    {"id": 14, "requirement": "live replay", "verdict": "PASS_R97"},
+    {"id": 15, "requirement": "hostile mutations fail closed", "verdict": "PASS_BOUNDED"}
+  ],
+  "r97": {
+    "verdict": "BOUNDED_PASS_LOCAL_UNVERIFIABLE_PUBLIC",
+    "by_family": {
+      "0": {"rows": 350, "candidate": 350, "teacher": 344, "parent": 18, "random": 6, "retained": 344},
+      "1": {"rows": 350, "candidate": 350, "teacher": 131, "parent": 19, "random": 8, "retained": 131},
+      "2": {"rows": 350, "candidate": 349, "teacher": 337, "parent": 15, "random": 3, "retained": 336},
+      "3": {"rows": 350, "candidate": 350, "teacher": 276, "parent": 8, "random": 0, "retained": 276}
+    },
+    "live_replay_byte_identical": true,
+    "hostile_mutations_rejected": 12,
+    "hostile_mutations_accepted": 0,
+    "candidate_observations_before_binding": 0,
+    "post_catalog_retraining_or_calibration": false,
+    "source_capture_preceded_candidate_binding": true,
+    "public_missing_parent_checkpoint": {
+      "path": "results/role_invariant_choice_r76/candidate_v1/model.safetensors",
+      "bytes": 350891472,
+      "sha256": "b6977f087ac42e6e4234d026b4cd83827b720d8973cca049daf18bcc8b96a64e"
+    }
+  },
+  "v1089": {
+    "verdict": "BOUNDED_PHASE4_TO_PHASE7_PHASE8_NOT_EXECUTED",
+    "state_sha256": "b95eabb47cd737014701b71aedaa14d218da54b6f3d1c9ca3370ad835e3c6d23",
+    "b20_all_registered_seeds_fail": true,
+    "b40": {
+      "104729": {"passing": 1381, "rows": 1400, "candidate_minus_teacher": 0.102857, "ci95_low": 0.086429, "ci95_high": 0.118571},
+      "130363": {"passing": 1383, "rows": 1400, "candidate_minus_teacher": 0.104286, "ci95_low": 0.087857, "ci95_high": 0.12},
+      "155921": {"passing": 1377, "rows": 1400, "candidate_minus_teacher": 0.1, "ci95_low": 0.083571, "ci95_high": 0.116429}
+    },
+    "information": {
+      "record_memberships": 4112,
+      "unique_source_attempts": 4005,
+      "teacher_input_tokens": 348372,
+      "teacher_output_tokens": 123167,
+      "unique_raw_prompt_bytes": 1100756,
+      "unique_teacher_output_bytes": 379416,
+      "packed_input_tokens": 469742,
+      "packed_response_tokens": 130885,
+      "stored_logits": 0,
+      "stored_hidden_activations": 0,
+      "copied_source_parameters": 0
+    },
+    "phase5": {
+      "abi_selected_per_seed": [300, 300, 300],
+      "abi_missing_abstentions_per_seed": [300, 300, 300],
+      "l1_selected_per_seed": [252, 198, 192],
+      "d0_selected_per_seed": [0, 0, 0],
+      "behavioral_not_latent": true
+    },
+    "phase6": {
+      "fresh_host_initializations": 3,
+      "selected_passes": 900,
+      "selected_observations": 900,
+      "composed_components_passed": 900,
+      "conflicts_quarantined": 300,
+      "deployed_source_count": 1,
+      "deployed_source": "microsoft/Phi-3-mini-4k-instruct"
+    },
+    "phase7": {
+      "cross_device_identities": 244,
+      "runtime_observations_per_category_device": 120,
+      "distinct_prompts_per_category_device": 100,
+      "active_tensor_bytes": 255916588,
+      "receiver_training_steps": 0,
+      "teacher_present": false,
+      "cpu": {"abi_bytes_per_second": 274.3192565137695, "control_bytes_per_second": 20.7209959400831, "abi_ttft_seconds": 3.120949700009078, "control_ttft_seconds": 5.064102100004675},
+      "cuda": {"abi_bytes_per_second": 881.3583356320248, "control_bytes_per_second": 65.21887456417592, "abi_ttft_seconds": 3.3489479999698233, "control_ttft_seconds": 11.414970200014068, "abi_peak_cuda_bytes": 505427456, "control_peak_cuda_bytes": 7812537856},
+      "os_filesystem_cache_purged": false,
+      "rss_endpoint_symmetric": false
+    },
+    "phase8": {
+      "independent_operator": false,
+      "different_cpu_cuda_hardware": false,
+      "same_machine_rehearsal_only": true,
+      "phase8_certified": false,
+      "release_certified": false
+    }
+  },
+  "fairness_views": {
+    "equal_imported_information": "BOUNDED_PASS_L0_L1_D0",
+    "equal_training_compute": "FAIL_INSUFFICIENT_ACCOUNTING",
+    "matched_achieved_quality": "NOT_EXECUTED",
+    "universal_lora_distillation_superiority": false
+  },
+  "public_missing_artifacts": [
+    {
+      "path": "results/abi_capability_compiler_phase7_integrated/materialized_v1052/result.json",
+      "bytes": 1419,
+      "sha256": "d22684e34aabe39c4b590e3d22a547709a75cb8d17386700d410ca407ca6ee8c",
+      "tracked": false
+    },
+    {
+      "path": "results/abi_capability_compiler_phase7_integrated/verify_v1067/result.json",
+      "bytes": 5524,
+      "sha256": "e34c01e02552866893e6f6c9b07be389675d63debb1ce5f85968cc98954ddf92",
+      "tracked": false
+    },
+    {
+      "path": "results/role_invariant_choice_r76/candidate_v1/model.safetensors",
+      "bytes": 350891472,
+      "sha256": "b6977f087ac42e6e4234d026b4cd83827b720d8973cca049daf18bcc8b96a64e",
+      "tracked": false
+    }
+  ],
+  "phase8_manifest": {
+    "path": "results/abi_capability_compiler_phase8/readiness_v1073/manifest.json",
+    "sha256": "b0e0c8f1ffcc52fc7464d52840ab7a086313fa90747158b0b9cff29d0abc8d86",
+    "files": 52,
+    "bytes": 281108851,
+    "tracked_false_count": 3
+  },
+  "verification": {
+    "full_pytest": {"passed": 84, "skipped": 4, "failed": 0, "warning": 1},
+    "isolated_selected_tests": {"passed": 16, "skipped": 9, "failed": 2, "order_or_materialization_dependent": true},
+    "r97_strict": "PASS",
+    "r97_hostile": "PASS_12_OF_12_REJECTED",
+    "phase4_frontier": "PASS",
+    "r7_public_reconstruction": "PASS",
+    "current_phase5_verifier": "FAIL_STALE_IMPLEMENTATION_BINDING",
+    "current_phase6_verifier": "FAIL_STALE_OR_ABSENT_ROOT_BINDING",
+    "current_phase7_verifier": "FAIL_STALE_OR_ABSENT_ROOT_BINDING",
+    "current_phase8_verifiers": "FAIL_STALE_OR_ABSENT_ROOT_BINDINGS"
+  },
+  "blockers": [
+    {"kind": "failed_scientific_gate", "id": "NO_COHERENT_FINAL_ARTIFACT"},
+    {"kind": "external_human_requirement", "id": "HUMAN_PREFERENCES_0_OF_21000"},
+    {"kind": "independent_hardware_requirement", "id": "PHASE8_NOT_EXECUTED"},
+    {"kind": "missing_public_artifact", "id": "R97_PARENT_CHECKPOINT"},
+    {"kind": "missing_public_artifact", "id": "V1089_PHASE7_RESULTS"},
+    {"kind": "implementation_defect", "id": "CURRENT_VERIFIER_BINDINGS_AND_TEST_ORDER"},
+    {"kind": "failed_scientific_gate", "id": "BROAD_OPEN_ENDED_ENGLISH"},
+    {"kind": "failed_scientific_gate", "id": "AUTOMATIC_DISCOVERY_AND_LATENT_PURITY"},
+    {"kind": "failed_scientific_gate", "id": "EQUAL_COMPUTE_AND_MATCHED_QUALITY_FAIRNESS"},
+    {"kind": "overbroad_claim", "id": "UNIVERSAL_SUPERIORITY_GLOBAL_MINIMUM_ARBITRARY_SUPPORT"}
+  ],
+  "clean_reviewer_reproducibility": {
+    "r7_bounded_runtime_conformance": "YES",
+    "r97": "NO_UNVERIFIABLE_PUBLIC",
+    "v1089_phase4": "PARTIAL_PUBLIC_YES_LOCAL",
+    "v1089_phase5_to_phase7": "NO_CLEAN_CURRENT_REPLAY",
+    "phase8": "NO_NOT_EXECUTED",
+    "human_quality": "NO_NOT_EXECUTED",
+    "full_moonshot": "NO_NOT_PROVEN"
+  },
+  "audit_receipts": [
+    {"path": "audit_outputs/r97-strict-independent.json", "sha256": "59438fbff7e07a2d81f78b9c9905d473b09678892026b33cbd30cc0a02dfe30c"},
+    {"path": "audit_outputs/r97-hostile-independent.json", "sha256": "cc34388e3b5ebcc11935da2a6f147df2247ebb61724b84957874b5354f1fb12e"},
+    {"path": "audit_outputs/phase4-frontier-independent.json", "sha256": "07975fe6f09e053184a9d0bbae35831e1c583ba35d8338738817e1dbf36e1a73"},
+    {"path": "audit_outputs/r7-public-reconstruction.json", "sha256": "3f0689159a0ec91a63f8080d6dda481af6f202e4b7e26c4213ba06aef1f8a514"}
+  ],
+  "source_or_evidence_modified": false
+}

@@ -1,0 +1,73 @@
+{
+  "accepted_cases": 0,
+  "claim_boundary": "Fail-closed audit of bounded R97 evidence only.",
+  "evidence_sha256": "eccc624fcb9a47825c5877715555404fb2cb996690c4de75f35653331bd7df42",
+  "format": "abi-r97-hostile-verifier-audit/1",
+  "full_abi_moonshot": "OPEN",
+  "hostile_cases": 12,
+  "observations": [
+    {
+      "case": "missing_result",
+      "error_type": "VerificationError",
+      "verdict": "REJECTED"
+    },
+    {
+      "case": "tampered_result_boolean",
+      "error_type": "VerificationError",
+      "verdict": "REJECTED"
+    },
+    {
+      "case": "missing_raw_rows",
+      "error_type": "VerificationError",
+      "verdict": "REJECTED"
+    },
+    {
+      "case": "truncated_raw_rows",
+      "error_type": "VerificationError",
+      "verdict": "REJECTED"
+    },
+    {
+      "case": "missing_source_result",
+      "error_type": "VerificationError",
+      "verdict": "REJECTED"
+    },
+    {
+      "case": "tampered_source_evidence",
+      "error_type": "VerificationError",
+      "verdict": "REJECTED"
+    },
+    {
+      "case": "missing_source_raw",
+      "error_type": "VerificationError",
+      "verdict": "REJECTED"
+    },
+    {
+      "case": "tampered_binding",
+      "error_type": "VerificationError",
+      "verdict": "REJECTED"
+    },
+    {
+      "case": "missing_candidate_checkpoint",
+      "error_type": "VerificationError",
+      "verdict": "REJECTED"
+    },
+    {
+      "case": "missing_tokenizer",
+      "error_type": "VerificationError",
+      "verdict": "REJECTED"
+    },
+    {
+      "case": "tampered_catalog",
+      "error_type": "VerificationError",
+      "verdict": "REJECTED"
+    },
+    {
+      "case": "missing_bound_adapter",
+      "error_type": "VerificationError",
+      "verdict": "REJECTED"
+    }
+  ],
+  "pristine_rows": 1400,
+  "rejected_cases": 12,
+  "verdict": "PASS_R97_HOSTILE_AUDIT"
+}

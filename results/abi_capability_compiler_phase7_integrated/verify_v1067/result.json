@@ -1,0 +1,129 @@
+{
+  "claim_boundary": "Independent same-machine CPU/CUDA certification of one exact integrated product. Phase 2 human preference, independent hardware, release, arbitrary-model, and universal ABI-superiority claims remain open.",
+  "cross_device_output_identities": 244,
+  "devices": {
+    "cpu": {
+      "cold_ttft_seconds": 3.120949700009078,
+      "median_core_bytes_per_second": 274.3192565137695,
+      "peak_cuda_allocated_bytes": 0,
+      "peak_process_rss_delta_bytes": 545308672,
+      "throughput_ratio": 13.238710016979493,
+      "throughput_retention": 1.0139390696414392,
+      "verified_gates": {
+        "cold_single_request_and_ttft_recomputed": true,
+        "core_identity_exact_and_unchanged": true,
+        "core_metrics_recomputed_exact": true,
+        "core_schedule_and_reference_exact": true,
+        "declared_gates_all_pass": true,
+        "domain_metrics_recomputed_exact": true,
+        "domain_schedule_reference_and_function_exact": true,
+        "domain_selected_only_recomputed": true,
+        "lifecycle_repair_exact": true,
+        "memory_gates_recomputed": true,
+        "package_identity_exact": true,
+        "persistent_incremental_state_recomputed": true,
+        "raw_depth_partition_exact": true,
+        "result_evidence_hash": true,
+        "result_format_status_device_protocol": true,
+        "teacher_training_receiver_learning_absent": true,
+        "throughput_gates_recomputed": true,
+        "throughput_ratios_recomputed_exact": true,
+        "zero_repetition_collapse_recomputed": true
+      }
+    },
+    "cuda": {
+      "cold_ttft_seconds": 3.3489479999698233,
+      "median_core_bytes_per_second": 881.3583356320248,
+      "peak_cuda_allocated_bytes": 505427456,
+      "peak_process_rss_delta_bytes": 518238208,
+      "throughput_ratio": 13.513853796492008,
+      "throughput_retention": 0.9783749033284567,
+      "verified_gates": {
+        "cold_single_request_and_ttft_recomputed": true,
+        "core_identity_exact_and_unchanged": true,
+        "core_metrics_recomputed_exact": true,
+        "core_schedule_and_reference_exact": true,
+        "declared_gates_all_pass": true,
+        "domain_metrics_recomputed_exact": true,
+        "domain_schedule_reference_and_function_exact": true,
+        "domain_selected_only_recomputed": true,
+        "lifecycle_repair_exact": true,
+        "memory_gates_recomputed": true,
+        "package_identity_exact": true,
+        "persistent_incremental_state_recomputed": true,
+        "raw_depth_partition_exact": true,
+        "result_evidence_hash": true,
+        "result_format_status_device_protocol": true,
+        "teacher_training_receiver_learning_absent": true,
+        "throughput_gates_recomputed": true,
+        "throughput_ratios_recomputed_exact": true,
+        "zero_repetition_collapse_recomputed": true
+      }
+    }
+  },
+  "evidence_sha256": "0310a601832a555249635e8f2a1725f2b45cd35e5f245a1c44b95754c73df7a4",
+  "format": "abi-capability-compiler-phase7-independent-verify-result/1",
+  "gates": {
+    "all_negative_evidence_preserved": true,
+    "allocation_bounded_verify_implementation_present": true,
+    "both_devices_independently_recomputed": true,
+    "cross_device_active_tensor_identity": true,
+    "cross_device_all_244_outputs_and_tokens_exact": true,
+    "human_phase2_prerequisite_still_open": true,
+    "layercake_patch_tests_pass": true,
+    "materialized_product_exact": true,
+    "model_inference_absent_from_verifier": true,
+    "prerequisite_machine_certificates_exact": true,
+    "runtime_host_overlay_exact": true,
+    "training_absent": true
+  },
+  "layercake_patch_tests": {
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "tests": 42
+  },
+  "model_inference_performed": false,
+  "mutations": {
+    "core_swap_rejected": true,
+    "cpu_raw_byte_mutation_rejected": true,
+    "cross_device_output_mutation_rejected": true,
+    "cross_device_token_mutation_rejected": true,
+    "cuda_raw_byte_mutation_rejected": true,
+    "false_declared_gate_rejected": true,
+    "junit_failure_rejected": true,
+    "lifecycle_relabel_rejected": true,
+    "materialized_archive_mutation_rejected": true,
+    "package_swap_rejected": true,
+    "result_digest_mutation_rejected": true,
+    "rss_boundary_rejected": true,
+    "speed_relabel_rejected": true,
+    "teacher_presence_rejected": true,
+    "training_presence_rejected": true
+  },
+  "phase2_human_prerequisite_complete": false,
+  "phase7_machine_certified": true,
+  "phase8_independent_hardware_complete": false,
+  "product": {
+    "core_archive_sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+    "core_payload_sha256": "18ad787696cf8737578253035ad84b7e0145d995f028c6392ba338b6117d5aba",
+    "packages": {
+      "chemistry": {
+        "archive_sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+        "cake_id": "abi-chemistry-token-plan"
+      },
+      "civics": {
+        "archive_sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+        "cake_id": "abi-civics-token-plan"
+      },
+      "python": {
+        "archive_sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+        "cake_id": "abi-python-token-plan"
+      }
+    }
+  },
+  "product_protocol_sha256": "7d0b8f480024cdb06872779cd26654ca4404a7e7ccaa94e8b87da3c9b1d139f5",
+  "protocol_sha256": "ee0c79966cc410e41d9a8625d452d55c0fa38c2ff4d0f88411b114b1ac8b30ed",
+  "status": "PASS_INDEPENDENTLY_VERIFIED_PHASE7_BOUNDED_MACHINE_PRODUCT",
+  "training_performed": false
+}

@@ -8,6 +8,8 @@ Updated: 2026-09-14
 
 `V1089_LOCAL_COMPILER_PHASES_0_TO_7_MACHINE_COMPLETE_PHASE8_EXTERNAL_BLOCKED`
 
+`INDEPENDENT_AUDIT_FULL_MOONSHOT_NOT_PROVEN_REPLAY_SURFACE_REPAIRED`
+
 ABI R7 has passed local strict validation, pre-public hostile validation,
 durable public publication, clean public-manifest reconstruction, post-public
 hostile replay, and a fresh blind Codex red-team. The public release is:
@@ -15,6 +17,17 @@ hostile replay, and a fresh blind Codex red-team. The public release is:
 <https://github.com/Yoder23/abi/releases/tag/abi-final-validation-v2-repaired-r7-2026-08-30>
 
 This opens human and independent-hardware review. It does not complete them.
+
+Phase 0 and Phase 1 of V1089 are complete within their registered bounded
+contracts. That does not make later conditional or external phases complete.
+
+The 2026-09-14 independent audit is now first-class repository evidence. Its
+whole-moonshot rejection is accepted. The review repair preserves the audit,
+restores exact historical certificate/catalog paths needed by Phase 6-8,
+widens the default supported test surface, and stages the retained R97/V1089
+payloads for Git-LFS publication. It does not hide the unrecoverable Phase 5
+baseline tensors, manufacture human/hardware evidence, or merge the distinct
+R7, V1089, and R97 lineages.
 
 The later V1089 compiler campaign is also part of the current local evidence
 lineage. Its Phase 4 B40 host passes the complete 4,200-row, three-seed machine

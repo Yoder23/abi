@@ -1,10 +1,10 @@
 {
   "format": "abi-proof-ledger/1",
-  "updated": "2026-09-10",
+  "updated": "2026-09-14",
   "claims": [
     {"id": "ABI-C1", "claim": "immutable package identity and canonical semantics", "state": "BOUNDED_PASS_R7"},
     {"id": "ABI-C2", "claim": "shared-runtime execution on compatible declared hosts", "state": "BOUNDED_PASS_R7"},
-    {"id": "ABI-C3", "claim": "source learning event to canonical package", "state": "BOUNDED_SYNTHETIC_PASS_R8"},
+    {"id": "ABI-C3", "claim": "source learning event to canonical package", "state": "BOUNDED_ENUMERABLE_LOCAL_PASS_R13B"},
     {"id": "ABI-C4a", "claim": "identical source-extracted canonical-IR package copy/paste, removal, and restoration through a shared runtime on frozen heterogeneous hosts", "state": "BOUNDED_SYNTHETIC_COMPONENT_PASS_R10"},
     {"id": "ABI-C4b", "claim": "learned ABI-native neural-state package copy/paste through frozen heterogeneous native output heads with zero recipient training", "state": "BOUNDED_SYNTHETIC_CONSTRUCTION_PASS_R11"},
     {"id": "ABI-C4c", "claim": "complete enumerable capability canonicalization from a conventional source", "state": "BOUNDED_ENUMERABLE_LOCAL_PASS_R13B"},
@@ -15,6 +15,7 @@
     {"id": "ABI-C4h", "claim": "teacher-derived compositional English realization in a teacher-absent package", "state": "BOUNDED_REPLICATED_LOCAL_PASS_R19"},
     {"id": "ABI-C4i", "claim": "raw-instruction structural-program supplied-content realization", "state": "FAILED_TESTED_R20_REPRESENTATION"},
     {"id": "ABI-C4j", "claim": "semantic six-task supplied-content transfer into signed LayerCake packages", "state": "BOUNDED_STRICTLY_VERIFIED_LOCAL_PASS_R23"},
+    {"id": "ABI-C4k", "claim": "compact teacher-derived neural capability causally creates prospective reasoning behavior in one frozen LayerCake host", "state": "BOUNDED_STRICTLY_VERIFIED_LOCAL_PASS_R97"},
     {"id": "ABI-C4", "claim": "end-to-end foreign-teacher behavior copy/paste on frozen heterogeneous hosts with zero host training", "state": "OPEN_FOREIGN_TEACHER_FRONT_END"},
     {"id": "ABI-C5", "claim": "native neural transplantation into a foreign recipient", "state": "FAILED_TESTED_R8_R9_MECHANISMS"},
     {"id": "ABI-C6", "claim": "fluent English and arbitrary-domain extraction and segregation", "state": "OPEN"},
@@ -30,6 +31,7 @@
     "r16_promoted": ["ABI-C4g"],
     "r19_promoted": ["ABI-C4h"],
     "r23_promoted": ["ABI-C4j"],
+    "r97_promoted": ["ABI-C4k"],
     "still_open": ["ABI-C4", "ABI-C5", "ABI-C6", "ABI-C7", "ABI-C8"]
   }
 }

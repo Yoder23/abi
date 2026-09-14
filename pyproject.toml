@@ -90,5 +90,11 @@ python_files = [
   "test_capability_pipeline.py",
   "test_capability_segregation.py",
   "test_abi_v2_*.py",
+  "test_capability_compiler_phase0.py",
+  "test_capability_compiler_phase6_verify.py",
+  "test_capability_compiler_phase7_verify.py",
+  "test_capability_compiler_phase8_release_readiness.py",
+  "test_capability_compiler_phase8_local_rehearsal_verify.py",
+  "test_independent_audit_replay_surface.py",
   "test_prospective_length_span_r97.py",
 ]

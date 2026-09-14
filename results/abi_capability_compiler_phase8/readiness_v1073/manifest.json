@@ -1,0 +1,389 @@
+{
+  "blocked_on": [
+    "independent human operator",
+    "independent CPU and CUDA hardware",
+    "publication or transfer of the two exact repository commits and untracked content-addressed payloads"
+  ],
+  "claim_boundary": "Local content-addressed handoff readiness only. This manifest deliberately records every external gate as incomplete and cannot certify Phase 8 or release.",
+  "development_hardware": {
+    "cuda": {
+      "compute_capability": [
+        8,
+        6
+      ],
+      "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+      "torch_cuda_version": "11.8",
+      "total_memory_bytes": 17179344896
+    },
+    "fingerprint_sha256": "2deae6043290bb50a87b17e799b7772af1df02356f3f954c6c755bb85782f02a",
+    "format": "abi-capability-compiler-hardware-fingerprint/1",
+    "logical_cpu_count": 20,
+    "machine_architecture": "AMD64",
+    "operating_system": "Windows",
+    "operating_system_release": "10",
+    "physical_cpu_count": 14,
+    "total_ram_bytes": 68473409536
+  },
+  "evidence_sha256": "694748dc1c8e58a1bd1be17d2b63b546f4beae61e24b6dcbbc58cece771712c6",
+  "external_commands": {
+    "capture_hardware": "C:\\Python310\\python.exe -m abi.capability_compiler_phase8_release_readiness --protocol ABI_CAPABILITY_COMPILER_PHASE8_RELEASE_READINESS_PROTOCOL_V1070.json --capture-hardware phase8_external/hardware.json",
+    "run_cpu": "C:\\Python310\\python.exe -m abi.capability_compiler_phase7_direct_artifact_runtime --protocol ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json --device cpu --output-dir results/abi_capability_compiler_phase7_integrated/allocation_bounded_verify_v1063/cpu",
+    "run_cuda": "C:\\Python310\\python.exe -m abi.capability_compiler_phase7_direct_artifact_runtime --protocol ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json --device cuda --output-dir results/abi_capability_compiler_phase7_integrated/allocation_bounded_verify_v1063/cuda",
+    "verify_manifest": "C:\\Python310\\python.exe -m abi.capability_compiler_phase8_release_readiness --protocol ABI_CAPABILITY_COMPILER_PHASE8_RELEASE_READINESS_PROTOCOL_V1070.json --verify-manifest results/abi_capability_compiler_phase8/readiness_v1073/manifest.json"
+  },
+  "external_gates": {
+    "external_hostile_verification_complete": false,
+    "fresh_cpu_result_complete": false,
+    "fresh_cuda_result_complete": false,
+    "independent_hardware_complete": false,
+    "independent_operator_complete": false
+  },
+  "file_count": 52,
+  "files": {
+    "../layercake_release/layercake/cake/installer.py": {
+      "bytes": 7032,
+      "repository": "layercake",
+      "sha256": "7c011c6a0514c6ee7b233a5c75cf6f94f427ce39fb46684f4af3e1c07efea59c",
+      "tracked": true
+    },
+    "../layercake_release/layercake/cake/package.py": {
+      "bytes": 15153,
+      "repository": "layercake",
+      "sha256": "405043c99e52817709aec21cbeb906a8de651f3e9d68850a5b1f18c1294be0dc",
+      "tracked": true
+    },
+    "../layercake_release/layercake/routing/catalog_router.py": {
+      "bytes": 13168,
+      "repository": "layercake",
+      "sha256": "f1b724ecba5daed33348e6f5988bbd5bba0258763c659988e12794d253f24398",
+      "tracked": true
+    },
+    "../layercake_release/layercake/routing/direct_orchestrator.py": {
+      "bytes": 8845,
+      "repository": "layercake",
+      "sha256": "fbc1be560f6c756da6c7b30bbed5478a9b3088059902282b22c78d0bdd286edf",
+      "tracked": true
+    },
+    "../layercake_release/layercake_extensions/authoritative_destination_control.py": {
+      "bytes": 7340,
+      "repository": "layercake",
+      "sha256": "6db81b67329843a161aeb85522103b2dca8da8e237fe8f21a288bb29493e40d9",
+      "tracked": true
+    },
+    "../layercake_release/layercake_extensions/route_isolated_clarification_core_v25.py": {
+      "bytes": 13330,
+      "repository": "layercake",
+      "sha256": "7b176f21e6a86f3aaded724462d37149f8f8be48370bcdd163fe44c49e3464ce",
+      "tracked": true
+    },
+    "../layercake_release/moonshot/canonical_route_isolated_clarification_core_abi_v25.json": {
+      "bytes": 2840,
+      "repository": "layercake",
+      "sha256": "6d0fea2697fc7af74e9f3cfaee591d658b3244acfb10502048a4105c010b6908",
+      "tracked": true
+    },
+    "../layercake_release/tests/cake/test_installer.py": {
+      "bytes": 3663,
+      "repository": "layercake",
+      "sha256": "3e9424b4eaec7b177273d60a3f9efad7780672f5eb3b641e12488653a54ff5fe",
+      "tracked": true
+    },
+    "../layercake_release/tests/cake/test_package_security.py": {
+      "bytes": 5562,
+      "repository": "layercake",
+      "sha256": "d8b720706fdc2d372f8c21ed3465f5fb9f54507bf8182ec436c1487c35c0cd31",
+      "tracked": true
+    },
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1039.json": {
+      "bytes": 2697,
+      "repository": "abi",
+      "sha256": "21a73fc664ef96c3690d3917208ef84e3f7a9e2c49b39e700a1ac9804cc964d1",
+      "tracked": true
+    },
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1069.json": {
+      "bytes": 2750,
+      "repository": "abi",
+      "sha256": "2444d5a6ead8a9dd89054545784937d767d31b59ec03035e28f456b9fc09118f",
+      "tracked": true
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE4_B40_V25_PRODUCT_CONFORMANCE_PROTOCOL_V960.json": {
+      "bytes": 15574,
+      "repository": "abi",
+      "sha256": "ab7ca91e2516c2c431a24df05100cae3408dfed23b5ad592f6619a098dc74f30",
+      "tracked": true
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE4_B50_CPU_RUNTIME_PROTOCOL_V859.json": {
+      "bytes": 7566,
+      "repository": "abi",
+      "sha256": "99d2ceb76ef47230af54ca1e430ea0dacbb87abe97bc06dd0ba33b5dbbb8122b",
+      "tracked": true
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE4_CERTIFICATE_V1.json": {
+      "bytes": 3488,
+      "repository": "abi",
+      "sha256": "6d3c81b40a21b08806368e34416ec2d9422594f00c68dc899fcee2e1586cf6eb",
+      "tracked": true
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE5_CERTIFICATE_V1.json": {
+      "bytes": 4007,
+      "repository": "abi",
+      "sha256": "93265064268f697cf4bfc348551186dc53c7e780be5420c41a74844888c723b6",
+      "tracked": true
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE6_CERTIFICATE_V1.json": {
+      "bytes": 4356,
+      "repository": "abi",
+      "sha256": "6ae934c164a46800a1f7224ad5c32433854eb572b89899e135a0272035d20d70",
+      "tracked": true
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json": {
+      "bytes": 4541,
+      "repository": "abi",
+      "sha256": "7d0b8f480024cdb06872779cd26654ca4404a7e7ccaa94e8b87da3c9b1d139f5",
+      "tracked": true
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE7_CERTIFICATE_V1.json": {
+      "bytes": 5808,
+      "repository": "abi",
+      "sha256": "c0b07a8748d7ee84b0e99c6482585a95d7d9483b49d49248071b397b8b47f77b",
+      "tracked": true
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json": {
+      "bytes": 11358,
+      "repository": "abi",
+      "sha256": "531b7ee35cf79c13eb706626b276cc29be7e08b7c2153ca5d430298b51ee5d05",
+      "tracked": true
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE7_PRODUCT_MANIFEST_V1.json": {
+      "bytes": 3345,
+      "repository": "abi",
+      "sha256": "dbbfbc1c994f9fff2ca3a37c5ec22e9c517080f325a50a9b27fe7a0072a919ff",
+      "tracked": true
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE7_PRODUCT_MATERIALIZATION_PROTOCOL_V1050.json": {
+      "bytes": 2333,
+      "repository": "abi",
+      "sha256": "636f2423fc8548e3aa3af7a142c60e417acd24a7e859e2802e6aa466fc912b81",
+      "tracked": true
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE7_STREAMING_HOST_RESULT_V1060.json": {
+      "bytes": 2807,
+      "repository": "abi",
+      "sha256": "c754616c27dc9142cb038c7d33791c4872122181c5da6edcfb6522e12f52d00a",
+      "tracked": true
+    },
+    "ABI_CAPABILITY_COMPILER_PHASE7_VERIFY_PROTOCOL_V1064.json": {
+      "bytes": 6604,
+      "repository": "abi",
+      "sha256": "ee0c79966cc410e41d9a8625d452d55c0fa38c2ff4d0f88411b114b1ac8b30ed",
+      "tracked": true
+    },
+    "PHASE8_EXTERNAL_OPERATOR_ATTESTATION_TEMPLATE_V1.json": {
+      "bytes": 916,
+      "repository": "abi",
+      "sha256": "7ae77c758e8b07bf43fcea951d2ae06fdc4dc08c2a2549f3f252bafbe4780da3",
+      "tracked": true
+    },
+    "abi/capability_compiler_phase7_direct_artifact_runtime.py": {
+      "bytes": 10519,
+      "repository": "abi",
+      "sha256": "eb69980efd756b5ea8c50f6c4791144251d08d5d91de9c6677867bc881d16fdf",
+      "tracked": true
+    },
+    "abi/capability_compiler_phase7_integrated_runtime.py": {
+      "bytes": 24130,
+      "repository": "abi",
+      "sha256": "9968e4f5c85bfed1a51df12c12b5de0085ab6ec0d19ac316389602e16d16d358",
+      "tracked": true
+    },
+    "abi/capability_compiler_phase8_release_readiness.py": {
+      "bytes": 12926,
+      "repository": "abi",
+      "sha256": "0866bbb628249bfb3ee009fa140c0704e9b2bd5aad6af59ac15b8a2f6a00ed26",
+      "tracked": true
+    },
+    "catalogs/capability_compiler_phase1_frozen_v1.json": {
+      "bytes": 17631486,
+      "repository": "abi",
+      "sha256": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+      "tracked": true
+    },
+    "catalogs/english_and_first_domains_certification_v6.json": {
+      "bytes": 6287076,
+      "repository": "abi",
+      "sha256": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052",
+      "tracked": true
+    },
+    "docs/PHASE8_EXTERNAL_REPRODUCTION_V1.md": {
+      "bytes": 3616,
+      "repository": "abi",
+      "sha256": "d17542cec3671087c25080a681fb2fe2d1b950e64c6920ec23debba9b15f19fd",
+      "tracked": true
+    },
+    "results/abi_capability_compiler_phase4_b40_v25_cpu_runtime/run_v975/engine/result.json": {
+      "bytes": 9714,
+      "repository": "abi",
+      "sha256": "adfed69c5eb96d8573f31a5246881a12989b40921be7aa78e15e2c1d6afa998a",
+      "tracked": true
+    },
+    "results/abi_capability_compiler_phase4_b40_v25_gpu_runtime/run_v974/engine/result.json": {
+      "bytes": 4580,
+      "repository": "abi",
+      "sha256": "de88e2291f6cd16de4a906d6deeea69da9a2671be9d117da7fbfa03dd0267c8d",
+      "tracked": true
+    },
+    "results/abi_capability_compiler_phase4_b40_v25_product_conformance/run_v962/seed104729_outputs.jsonl": {
+      "bytes": 1838512,
+      "repository": "abi",
+      "sha256": "36e739460509e82ccd0b593ac6857fa1bfedc8aa6ee044f3a0d364c71e89453f",
+      "tracked": true
+    },
+    "results/abi_capability_compiler_phase4_b40_v25_runtime_verify/run_v984/result.json": {
+      "bytes": 2810,
+      "repository": "abi",
+      "sha256": "f3d0c2c89af061d46dcfc19392ac24134e9b39871914f12519347542c2d0d1e1",
+      "tracked": true
+    },
+    "results/abi_capability_compiler_phase4_clarification_route_replication/B40-seed104729-v927/evaluation/result.json": {
+      "bytes": 5327,
+      "repository": "abi",
+      "sha256": "e1ebbfda3fc99599bd957fc9d03574bd84c49bcca4329269c19747075ea5f951",
+      "tracked": true
+    },
+    "results/abi_capability_compiler_phase5_selective_product/verify_v1029/result.json": {
+      "bytes": 4124,
+      "repository": "abi",
+      "sha256": "6d316f962d2383fe1904e41445e6b0fb330d89203198cf89a2a5b344d57a3a26",
+      "tracked": true
+    },
+    "results/abi_capability_compiler_phase6_composition/run_v1032/seed104729/observations.jsonl": {
+      "bytes": 407530,
+      "repository": "abi",
+      "sha256": "3b177777bd1d032cf3aef447578cf4620194ce664f3a4f5cc51633b512333535",
+      "tracked": true
+    },
+    "results/abi_capability_compiler_phase6_composition/run_v1032/seed104729/result.json": {
+      "bytes": 8572,
+      "repository": "abi",
+      "sha256": "bf31d1812da0c68b745e55c235f756e81dcfc2eed34a91039195e7720c0e58e2",
+      "tracked": true
+    },
+    "results/abi_capability_compiler_phase6_composition/verify_v1038/result.json": {
+      "bytes": 3224,
+      "repository": "abi",
+      "sha256": "5b03132574547b411f0fae6d18b0c38c98377a32501572f00c86aae3f2307ad4",
+      "tracked": true
+    },
+    "results/abi_capability_compiler_phase7_integrated/materialized_v1052/phase7-final-english-core.cake": {
+      "bytes": 253216208,
+      "repository": "abi",
+      "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+      "tracked": false
+    },
+    "results/abi_capability_compiler_phase7_integrated/materialized_v1052/result.json": {
+      "bytes": 1419,
+      "repository": "abi",
+      "sha256": "d22684e34aabe39c4b590e3d22a547709a75cb8d17386700d410ca407ca6ee8c",
+      "tracked": false
+    },
+    "results/abi_capability_compiler_phase7_integrated/verify_v1067/result.json": {
+      "bytes": 5524,
+      "repository": "abi",
+      "sha256": "e34c01e02552866893e6f6c9b07be389675d63debb1ce5f85968cc98954ddf92",
+      "tracked": false
+    },
+    "results/abi_moonshot/domain_cakes/package-certification-validation.json": {
+      "bytes": 15230,
+      "repository": "abi",
+      "sha256": "11f786e106f639089500115ec233a9bad75a0563e48a41abddf0ff3ebca5f5f3",
+      "tracked": true
+    },
+    "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.cake": {
+      "bytes": 510981,
+      "repository": "abi",
+      "sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+      "tracked": true
+    },
+    "results/abi_moonshot/packages/abi-chemistry-token-plan-seed9824.pub": {
+      "bytes": 113,
+      "repository": "abi",
+      "sha256": "8c585e5e993a22962cd1196b0d4fbb666b5a022e0c72525f6c37a23ea915efef",
+      "tracked": true
+    },
+    "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.cake": {
+      "bytes": 495919,
+      "repository": "abi",
+      "sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+      "tracked": true
+    },
+    "results/abi_moonshot/packages/abi-civics-token-plan-seed9824.pub": {
+      "bytes": 113,
+      "repository": "abi",
+      "sha256": "aaa8655fe76714e4b99f7dfc4084ed78f475e8aa699214fac8006a887c6611f4",
+      "tracked": true
+    },
+    "results/abi_moonshot/packages/abi-python-token-plan-seed9824.cake": {
+      "bytes": 448404,
+      "repository": "abi",
+      "sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+      "tracked": true
+    },
+    "results/abi_moonshot/packages/abi-python-token-plan-seed9824.pub": {
+      "bytes": 113,
+      "repository": "abi",
+      "sha256": "6fa980c963b60208877b5df19ed2f07f793f8b63e2af8f613264c3fe0e160099",
+      "tracked": true
+    },
+    "tests/test_capability_compiler_phase7_direct_artifact_runtime.py": {
+      "bytes": 237,
+      "repository": "abi",
+      "sha256": "42ed6e975fe2ae872760f401776b16a5c9a4931d9fd6c445132fe8c2fbea6338",
+      "tracked": true
+    },
+    "tests/test_capability_compiler_phase7_integrated_runtime.py": {
+      "bytes": 1448,
+      "repository": "abi",
+      "sha256": "cdfe41e4ed45e4be9e5d8f2f09650131fac1c42bc683e3db5bcec6349d406cc0",
+      "tracked": true
+    },
+    "tests/test_capability_compiler_phase8_release_readiness.py": {
+      "bytes": 3913,
+      "repository": "abi",
+      "sha256": "1edab9e8fbd1b1994b1201956f15d220dd90ad3acb143d2699a1ada46e0cb63d",
+      "tracked": true
+    }
+  },
+  "format": "abi-capability-compiler-phase8-release-readiness-result/1",
+  "gates": {
+    "abi_phase7_seal_ancestor": true,
+    "byte_count_exact": true,
+    "development_hardware_bound": true,
+    "external_hardware_not_self_attested": true,
+    "external_operator_not_self_attested": true,
+    "file_count_exact": true,
+    "file_inventory_exact": true,
+    "format_exact": true,
+    "layercake_commit_exact": true,
+    "local_status_exact": true,
+    "phase8_not_certified_locally": true
+  },
+  "model_inference_performed": false,
+  "phase8_certified": false,
+  "protocol_sha256": "a6df3e67ad8e823e774a06092b90d818343d2dd63a0abc2450cc21e83ea6e4be",
+  "required_external_records": [
+    "different hardware fingerprint",
+    "signed independent-operator attestation",
+    "fresh CPU result and raw observations",
+    "fresh CUDA result and raw observations",
+    "stdout and stderr logs",
+    "dependency inventory"
+  ],
+  "source": {
+    "abi_packet_source_commit": "4b0004bd7b71654a6014d96c634d4418b957d861",
+    "abi_phase7_seal_commit": "6499cb0e91ec0f2eae6158b2d987a163377259cc",
+    "layercake_commit": "662c5a9b7264a1a5478c9dfb656f35c450e2504f"
+  },
+  "status": "PASS_PHASE8_LOCAL_RELEASE_READINESS",
+  "total_bytes": 281108851,
+  "training_performed": false
+}

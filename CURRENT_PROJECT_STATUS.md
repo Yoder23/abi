@@ -13,7 +13,8 @@ rehearsal. This later campaign is not yet a public release certificate:
 
 | Phase | Status |
 | --- | --- |
-| 0-1 | Complete |
+| Phase 0 | Complete |
+| Phase 1 | Complete |
 | 2 | Machine and handoff ready; 0/21,000 human preferences |
 | 3 | Machine gates pass, conditional on Phase 2 |
 | 4 | Certified bounded B20/B40 information frontier; B40 passes all three seeds |
@@ -35,6 +36,27 @@ live pinned teacher, 60 for the unchanged LayerCake parent, and 17 for the
 random bridge. It passed every locked gate, strict raw recomputation, 12/12
 hostile mutations, and byte-identical live replay. Its scope is bounded
 two-hop nonce reasoning, not fluent general English or arbitrary domains.
+
+## Independent audit and replay repair
+
+The preserved 2026-09-14 independent audit verdict is
+`FULL_MOONSHOT_NOT_PROVEN`. It correctly identifies missing external evidence,
+separate R7/V1089/R97 lineages, incomplete public payloads, and unproved broad
+claims. Its reported test-order dependence was more specifically a collection
+configuration defect: the default `pytest` patterns excluded the historical
+Phase 0 and Phase 5-8 verifier modules. Exact historical root bindings have
+now been restored, and supported Phase 6-8 verifier modules are explicitly in
+the default suite.
+
+This repair does not rewrite history or promote a claim. The old Phase 5
+verifier still fails closed because three D0 student and three L1 adapter
+tensors were intentionally removed in the content-addressed 2026-08-29
+cleanup. Their paths, sizes, and hashes are retained in the cleanup and review
+manifests. R97 and V1089 locally retained publication payloads are included in
+the review surface, subject to successful Git-LFS publication. Full review
+still requires one coherent final-artifact lineage, human ratings, independent
+hardware, broad English/discovery/purity evidence, and fair matched-quality
+comparisons.
 
 The additive R21 campaign now supplies a strictly verified bounded public
 generative-transfer prerequisite: six signed LayerCake factors scored 116/120

@@ -15,6 +15,15 @@ The repositories have deliberately separate responsibilities:
 
 ## Current release status
 
+An independent audit dated 2026-09-14 returned
+`FULL_MOONSHOT_NOT_PROVEN`. That is the controlling whole-moonshot verdict.
+The untouched audit, its machine-readable summary, and its four receipts are
+preserved under
+[`reviews/independent_2026-09-14/`](reviews/independent_2026-09-14/).
+R97 is the strongest bounded local transfer result; R7 remains the strongest
+publicly reconstructed release. Neither may be combined with V1089 to claim
+one coherent final-artifact proof.
+
 The latest technical validation is R7:
 
 <https://github.com/Yoder23/abi/releases/tag/abi-final-validation-v2-repaired-r7-2026-08-30>
@@ -37,7 +46,8 @@ Phase 8 export rehearsal:
 
 | Phase | Local evidence status |
 | --- | --- |
-| 0-1 | Complete |
+| Phase 0 | Complete |
+| Phase 1 | Complete |
 | 2 | Machine evidence and blinded handoff complete; 0/21,000 independent-human preferences |
 | 3 | All registered machine gates pass; unconditional certification remains dependent on Phase 2 |
 | 4 | B40 is the smallest stable passing tested budget among B20/B40 for the exact five-route host |
@@ -70,6 +80,16 @@ run. See
 R97 is a bounded two-hop reasoning transfer result; it is not evidence of a
 complete fluent English substrate, arbitrary-domain extraction, or universal
 superiority over LoRA/distillation.
+
+The independent-audit response restores exact root-relative compatibility
+copies of historical certificates and the V6 catalog so the frozen Phase 6-8
+verifiers replay without relying on test order. It also puts the exact local
+R97 parent and V1089 Phase 7 handoff payloads on the Git-LFS publication
+surface. Phase 5 clean replay remains blocked: six baseline tensors totaling
+1,191,079,704 bytes were deleted during the recorded 2026-08-29 storage
+cleanup and were not recoverable from local LFS or other working copies. This
+gap is explicit in the review manifest; no verifier is weakened around it.
+See [`docs/INDEPENDENT_REVIEW_HANDOFF_2026-09-14.md`](docs/INDEPENDENT_REVIEW_HANDOFF_2026-09-14.md).
 
 The additive R8 native-neural-transfer campaign is a Level 0 negative result.
 Its strongest package-only recipient interface produced AFTER−BASE +0.001953

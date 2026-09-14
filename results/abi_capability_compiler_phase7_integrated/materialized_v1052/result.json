@@ -1,0 +1,30 @@
+{
+  "archive": "results/abi_capability_compiler_phase7_integrated/materialized_v1052/phase7-final-english-core.cake",
+  "archive_bytes": 253216208,
+  "archive_sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+  "claim_boundary": "One-time deterministic materialization of the already-certified exact core. Serving screens must run in new processes and may only consume this hash-bound archive.",
+  "component_parameters": {
+    "model": 61655050,
+    "residual": 124416,
+    "router": 1058040
+  },
+  "evidence_sha256": "58b968c85825ed6b655615695cca531a9116d6b40e6c69faf85596f6bbd908ba",
+  "format": "abi-capability-compiler-phase7-product-materialization-result/1",
+  "gates": {
+    "archive_identity_exact": true,
+    "content_change_absent": true,
+    "core_component_inventory_exact": true,
+    "payload_identity_exact": true,
+    "teacher_absent": true,
+    "training_absent": true
+  },
+  "materialization_seconds": 4.745390900003258,
+  "model_artifact_mutated": false,
+  "package_hash": "b372a321f948c5f6be0a7a58bc4b6c23e27f3d72c3c6af4ecfab19864dc8e9af",
+  "protocol_sha256": "636f2423fc8548e3aa3af7a142c60e417acd24a7e859e2802e6aa466fc912b81",
+  "status": "PASS_PHASE7_PRODUCT_MATERIALIZATION",
+  "teacher_model_loaded": false,
+  "tensor_payload_sha256": "18ad787696cf8737578253035ad84b7e0145d995f028c6392ba338b6117d5aba",
+  "total_parameters": 62837506,
+  "training_performed": false
+}

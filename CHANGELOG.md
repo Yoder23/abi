@@ -2,6 +2,23 @@
 
 ## 2026-09-14
 
+- Preserved the independent moonshot audit and all four external receipts
+  byte-for-byte under `reviews/independent_2026-09-14/`; its controlling
+  verdict remains `FULL_MOONSHOT_NOT_PROVEN`.
+- Restored exact historical root-relative certificate and V6-catalog bindings
+  so the frozen Phase 6-8 verifier modules replay independently of default
+  suite materialization.
+- Corrected the audit's inferred order-dependence diagnosis: the configured
+  `python_files` list had excluded the historical modules. Added the supported
+  Phase 0 and Phase 6-8 modules plus a fail-closed review-surface verifier to
+  the default suite.
+- Kept the Phase 5 replay gap explicit. Six exact D0/L1 baseline tensors were
+  deleted in the recorded 2026-08-29 cleanup and could not be recovered; no
+  evidence-only bypass or trusted scientific boolean was added.
+- Added the retained R97 parent/tokenizer payload and V1089 Phase 7 handoff
+  payload to the Git-LFS publication surface, and synchronized the JSON proof
+  ledger with the bounded R13-B and R97 claims.
+
 - Reconciled the public-facing status documents with the sealed V1089 local
   compiler campaign: conditional machine completion through Phase 7, bounded
   B40 English quality, three-domain exclusion/composition, integrated CPU/CUDA
