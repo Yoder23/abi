@@ -11,7 +11,7 @@ from experiments.foreign_capability_r14.core import evidence_hash
 import experiments.prompt_identity_reasoning_r81.score_source_corrected_v1 as scorer
 
 
-CATALOG_SHA256 = "__FILL_AFTER_MATERIALIZATION__"
+CATALOG_SHA256 = "2547b847a2768fbfa410c1b9c49ead79d5ab906b6491c320968aa11f215680cb"
 SCORER_SHA256 = "54ded3d1e1afbbd016b1d4a9a837777d24bfe313241a4f9f76a4e915b4b9116c"
 
 

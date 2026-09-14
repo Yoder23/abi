@@ -10,7 +10,7 @@ from pathlib import Path
 from abi.hf_extraction import load_probe_catalog
 
 
-CATALOG_SHA256 = "__FILL_AFTER_MATERIALIZATION__"
+CATALOG_SHA256 = "2547b847a2768fbfa410c1b9c49ead79d5ab906b6491c320968aa11f215680cb"
 
 
 def main() -> int:
