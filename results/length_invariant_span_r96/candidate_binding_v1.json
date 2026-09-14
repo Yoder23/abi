@@ -1,0 +1,35 @@
+{
+  "binding_sha256": "97f45c6cfb5398586ed5a27b49d580fe34530a4791a9cd78f031e3779566d2c1",
+  "candidate_generation_observations_before_binding": 0,
+  "files": {
+    "checkpoint": {
+      "bytes": 2123440,
+      "path": "results/length_invariant_span_r96/candidate_v1/bridge.safetensors",
+      "sha256": "9d3d6b38b1d437b5cbbed50c1470b4df1aa0371ffa51b1abd2adefbb645806e4"
+    },
+    "core": {
+      "bytes": 2643,
+      "path": "experiments/length_invariant_span_r96/core_v1.py",
+      "sha256": "b6cb6f1ec94eec2b630119320b9378a541b531743394f3619be120a8754ff563"
+    },
+    "metadata": {
+      "bytes": 8861,
+      "path": "results/length_invariant_span_r96/candidate_v1/metadata.json",
+      "sha256": "1cfd15fe838b903ede7e59417f837a1bf00b3664e6deb29bd02876750bcabcb9"
+    },
+    "protocol": {
+      "bytes": 1362,
+      "path": "experiments/length_invariant_span_r96/PROTOCOL.md",
+      "sha256": "49e7ae50ba199799224db3fe366a961fa9977b9fe11c75535b96bc25616180d9"
+    },
+    "trainer": {
+      "bytes": 16343,
+      "path": "experiments/length_invariant_span_r96/train_v1.py",
+      "sha256": "dcd7eecbf18f508fdbf8ad994d373d16ec7a56c145d62a1288077b7438e67fe7"
+    }
+  },
+  "format": "abi-r96-frozen-candidate-binding/1",
+  "full_abi_moonshot": "OPEN",
+  "promotion_eligible": false,
+  "r95_outputs_used_for_training": 0
+}
