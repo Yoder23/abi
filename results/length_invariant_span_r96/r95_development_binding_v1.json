@@ -1,0 +1,67 @@
+{
+  "binding_sha256": "fc0509232ebe4b23ca16d8888c6520dcd72d726d0577b493f64c301d13384655",
+  "candidate_observations_before_binding": 0,
+  "candidate_retrained_after_r91_development": true,
+  "files": {
+    "candidate_checkpoint": {
+      "bytes": 2123440,
+      "path": "results/length_invariant_span_r96/candidate_v1/bridge.safetensors",
+      "sha256": "9d3d6b38b1d437b5cbbed50c1470b4df1aa0371ffa51b1abd2adefbb645806e4"
+    },
+    "candidate_core": {
+      "bytes": 2643,
+      "path": "experiments/length_invariant_span_r96/core_v1.py",
+      "sha256": "b6cb6f1ec94eec2b630119320b9378a541b531743394f3619be120a8754ff563"
+    },
+    "candidate_freeze_binding": {
+      "bytes": 1322,
+      "path": "results/length_invariant_span_r96/candidate_binding_v1.json",
+      "sha256": "6e32708745a77f93b6e9ff83761003ec978bcda34cf14ba11701396039e98970"
+    },
+    "candidate_metadata": {
+      "bytes": 8861,
+      "path": "results/length_invariant_span_r96/candidate_v1/metadata.json",
+      "sha256": "1cfd15fe838b903ede7e59417f837a1bf00b3664e6deb29bd02876750bcabcb9"
+    },
+    "candidate_protocol": {
+      "bytes": 1362,
+      "path": "experiments/length_invariant_span_r96/PROTOCOL.md",
+      "sha256": "49e7ae50ba199799224db3fe366a961fa9977b9fe11c75535b96bc25616180d9"
+    },
+    "candidate_trainer": {
+      "bytes": 16343,
+      "path": "experiments/length_invariant_span_r96/train_v1.py",
+      "sha256": "dcd7eecbf18f508fdbf8ad994d373d16ec7a56c145d62a1288077b7438e67fe7"
+    },
+    "catalog": {
+      "bytes": 2093290,
+      "path": "catalogs/direct_teacher_span_r95_v1.json",
+      "sha256": "d2caaeec89abefc40ae319c2c9ebfb9ca117c4f32308b215a230bd2a9433f681"
+    },
+    "screen_wrapper": {
+      "bytes": 1057,
+      "path": "experiments/length_invariant_span_r96/screen_r95_development_v1.py",
+      "sha256": "8f4f5e4b2a51ebf26f90dd123ca91173b4758509fbea98d0bfac30aca5845be8"
+    },
+    "shared_screen": {
+      "bytes": 13492,
+      "path": "experiments/source_qualified_span_r93/screen_v1.py",
+      "sha256": "316e74c5feaca4efd66eafe4b3a0879c22d8cda0bd240e7a696a47d309870c5f"
+    },
+    "source_raw": {
+      "bytes": 1689096,
+      "path": "results/direct_teacher_span_r95/source_v1/prior_corrected_scores.jsonl",
+      "sha256": "77aa6a70dd092c63450b2f8b2a83b144fadf89489c4de3a4b900d81d329b9716"
+    },
+    "source_result": {
+      "bytes": 2693,
+      "path": "results/direct_teacher_span_r95/source_v1/result.json",
+      "sha256": "dd0d7ed8c8d09fd5a09df4adc69ba9a7bedb1a407725a8704d99d774fe47a150"
+    }
+  },
+  "format": "abi-r96-r95-development-binding/1",
+  "full_abi_moonshot": "OPEN",
+  "promotion_eligible": false,
+  "source_evidence_sha256": "8218b5bc897c61689e6ec2c3e47fb5e7bd2e5a0aa0b4c112214ca7ed1d76e952",
+  "source_pass_field": "raw_passed"
+}
