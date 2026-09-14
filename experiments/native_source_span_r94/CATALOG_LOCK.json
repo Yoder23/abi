@@ -1,0 +1,32 @@
+{
+  "format": "abi-r94-native-source-catalog-lock/1",
+  "status": "SEALED_BEFORE_FRESH_SOURCE_OR_CANDIDATE_EXECUTION",
+  "source_measurement": {
+    "authorization_score": "native_mean_conditional_log_likelihood",
+    "minimum_passing": 1330,
+    "neutral_prior_correction": "nonblocking_diagnostic",
+    "r93_rescored_or_promoted": false
+  },
+  "catalog": {
+    "path": "catalogs/native_source_span_r94_v1.json",
+    "sha256": "c4821ae0118f2b04aa0b856f631a9a9fe592e5bed6f5b0b06efafb453a4fc067",
+    "bytes": 2065571,
+    "rows": 1400,
+    "unique_prompts": 1400,
+    "exact_prior_prompt_overlap": 0
+  },
+  "candidate": {
+    "checkpoint_sha256": "04b350e0a7f22ac4facb380f6bf99edfc0022697a312248972491434234a4fba",
+    "metadata_sha256": "d4d413549b09b37869e51a1bb406971cdcfacd4116421d6d98b96385f78a82e3",
+    "executed_on_r94_before_lock": false
+  },
+  "builder_sha256": "fa73460dcdede7ea88b51e30868838ea895a6c04cc33cdb9b475c059c3f47431",
+  "catalog_verifier_sha256": "43051514026e624dba66d35a96022dd69e6deb6cbb7922d44459dea3836434e2",
+  "source_scorer_sha256": "f932bcaf9638cab6ea85a214cec1da7690b29803a04e7a642addd9b64b8f06e0",
+  "protocol_sha256": "0d70d7066bfec61fc1e2324c63643edfd1f2a41bb3baa8930681a68e6da64ac5",
+  "shared_screen_sha256": "946889f22f4c75945ad17c6afab0ca71f3de1e173299ace46d963469564eca64",
+  "screen_wrapper_sha256": "07c636d1f610332c543deef96a2e3fe14584ae0bd7f1fcf0587f5161546a9649",
+  "candidate_outputs_observed": 0,
+  "fresh_source_outputs_observed": 0,
+  "teacher_loaded": false
+}
