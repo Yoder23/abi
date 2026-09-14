@@ -17,7 +17,7 @@ neural bridge makes its selection.
 Fresh prospective validation was generated before candidate training:
 
 - catalog: `catalogs/stateful_span_validation_r85_v1.json`
-- catalog SHA-256: `ed2876026551cac8243fe4a15a78e884de913d31dda181524b44553fbc0b7c6d`
+- catalog SHA-256: `8ad899dfb15f120ae3ffdbde6b6d8dcb06bbb265883665bcecdeff048eaafc4c`
 - rows: 1,400, 200 in each of seven families
 - numeric namespace: 970000–971399
 - subject prefix: `NODE`

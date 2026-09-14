@@ -46,8 +46,8 @@ def main() -> int:
     ):
         parser.error("R85 fresh-catalog identity or coverage changed")
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(
-        json.dumps(value, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    args.output.write_bytes(
+        (json.dumps(value, indent=2, sort_keys=True) + "\n").encode("utf-8")
     )
     load_probe_catalog(args.output)
     print(args.output)

@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def test_r85_catalog_is_fresh_complete_and_frozen() -> None:
     path = ROOT / "catalogs/stateful_span_validation_r85_v1.json"
     assert hashlib.sha256(path.read_bytes()).hexdigest() == (
-        "ed2876026551cac8243fe4a15a78e884de913d31dda181524b44553fbc0b7c6d"
+        "8ad899dfb15f120ae3ffdbde6b6d8dcb06bbb265883665bcecdeff048eaafc4c"
     )
     value = json.loads(path.read_text(encoding="utf-8"))
     probes = value["probes"]
