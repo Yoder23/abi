@@ -28,6 +28,44 @@ def _git_show(repository_root: Path, commit: str, path: str) -> bytes:
     return completed.stdout
 
 
+def _locked_content(
+    repository_root: Path,
+    commit: str,
+    path: str,
+    expected_hash: object,
+) -> bytes:
+    """Resolve a certificate lock from Git or the compact public fallback.
+
+    The development repository retained the Phase 0 commit under a private
+    archive ref that ordinary public clones do not fetch. The fallback carries
+    only the exact hash-bound bytes needed by this certificate; it does not
+    accept current files merely because they have the same name.
+    """
+
+    try:
+        return _git_show(repository_root, commit, path)
+    except ValueError:
+        candidates = (
+            repository_root / path,
+            repository_root
+            / "evidence/historical/phase0_0da0901/implementation_locks"
+            / path,
+        )
+        for candidate in candidates:
+            if not candidate.is_file():
+                continue
+            content = candidate.read_bytes()
+            if hashlib.sha256(content).hexdigest() == expected_hash:
+                return content
+        for candidate in candidates:
+            if candidate.is_file():
+                return candidate.read_bytes()
+        raise ValueError(
+            f"cannot read hash-bound {path} from implementation commit {commit} "
+            "or compact public fallback"
+        )
+
+
 def validate_certificate(
     certificate: Mapping[str, object],
     repository_root: Path,
@@ -51,7 +89,12 @@ def validate_certificate(
     else:
         for relative_path, expected_hash in locks.items():
             try:
-                content = _git_show(repository_root, commit, str(relative_path))
+                content = _locked_content(
+                    repository_root,
+                    commit,
+                    str(relative_path),
+                    expected_hash,
+                )
             except ValueError as exc:
                 errors.append(str(exc))
                 continue

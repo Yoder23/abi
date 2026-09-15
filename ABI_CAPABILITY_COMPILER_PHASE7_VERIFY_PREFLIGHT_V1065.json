@@ -1,0 +1,18 @@
+{
+  "format": "abi-capability-compiler-phase7-independent-verify-preflight/1",
+  "status": "PASS_PHASE7_INDEPENDENT_VERIFY_PREFLIGHT",
+  "status_date": "2026-08-16",
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE7_VERIFY_PROTOCOL_V1064.json",
+  "protocol_sha256": "ee0c79966cc410e41d9a8625d452d55c0fa38c2ff4d0f88411b114b1ac8b30ed",
+  "product_protocol_sha256": "7d0b8f480024cdb06872779cd26654ca4404a7e7ccaa94e8b87da3c9b1d139f5",
+  "gates": {
+    "adversarial_output_absent": true,
+    "cpu_and_cuda_results_pass": true,
+    "model_inference_absent": true,
+    "output_absent": true,
+    "product_protocol_exact": true,
+    "runtime_host_overlay_exact": true,
+    "training_absent": true
+  },
+  "claim_boundary": "Read-only verifier preflight only; no Phase 7 conclusion is established."
+}

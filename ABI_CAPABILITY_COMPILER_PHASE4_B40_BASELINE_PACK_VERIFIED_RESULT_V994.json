@@ -1,0 +1,33 @@
+{
+  "format": "abi-capability-compiler-phase4-b40-baseline-pack-verified-summary/1",
+  "version": 994,
+  "status_date": "2026-08-15",
+  "status": "PASS_INDEPENDENT_EXACT_B40_BASELINE_PACK_VERIFICATION",
+  "historical_evidence_changed": false,
+  "protocol": {
+    "path": "ABI_CAPABILITY_COMPILER_PHASE4_B40_BASELINE_PACK_VERIFY_PROTOCOL_V992.json",
+    "sha256": "8122aef75c7a57b7d0166e7bf7cc5007d9b442ef53a0ce32ccb0da973363b2bd"
+  },
+  "result": {
+    "path": "results/abi_capability_compiler_phase4_b40_baselines/verify_v993/result.json",
+    "sha256": "0980492b5ffc781aef1d02955684f27561a44f263a8e4ab4d795dafd01b3f88c",
+    "evidence_sha256": "803b0155136ff56e92fce61c51d1e3765b4cfb338b40c46c1ef99a0fa3eb7138"
+  },
+  "verified": {
+    "record_memberships": 4112,
+    "packed_sequences": 693,
+    "unique_source_attempts": 4005,
+    "authoritative_teacher_output_tokens": 123167,
+    "canonical_record_bytes_exact": true,
+    "pack_reconstruction_exact": true,
+    "all_substantive_gates_pass": true,
+    "all_mutations_rejected": true
+  },
+  "model_inference_performed": false,
+  "training_performed": false,
+  "teacher_model_loaded": false,
+  "final_test_accessed": false,
+  "phase4_certified": false,
+  "decision": "The exact B40 equal-sequence pack is independently verified and may now be used for preregistered matched-information LoRA and sequence-distillation baselines.",
+  "claim_boundary": "Independent B40 equal-sequence pack verification only. No matched-baseline result, final-test result, Phase 4 certification, or ABI-superiority claim."
+}

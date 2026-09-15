@@ -1,0 +1,1449 @@
+{
+  "abi_superiority_certified": false,
+  "adversarial_test_evidence": {
+    "errors": 0,
+    "failures": 0,
+    "path": "results/abi_capability_compiler_phase4_b40_frontier/frontier_adversarial_v1012.xml",
+    "sha256": "2d985e493affc806b7e3a9b8148c9533ea308c65ce5887af0ca15e8979c2b2e7",
+    "skipped": 0,
+    "tests": 15
+  },
+  "baseline_quality": {
+    "D0": {
+      "all_seeds_pass_locked_absolute_quality": false,
+      "runs": [
+        {
+          "active_parameters": 11060800,
+          "complete_installed_parameters": 11060800,
+          "functional_passes_v1": 22,
+          "functional_passes_v2": 41,
+          "gates": {
+            "critical_capabilities": false,
+            "per_capability_functional": false,
+            "zero_repetition_collapse_v2": false
+          },
+          "passes_locked_absolute_quality": false,
+          "peak_cuda_allocated_bytes": 595063296,
+          "peak_process_rss_bytes": 1100042240,
+          "per_capability": {
+            "abstention": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 19,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 4,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "clarification": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 1,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "coherence": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 18,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "conversation": {
+              "observations": 100,
+              "passes_v1": 22,
+              "passes_v2": 22,
+              "point_v1": 0.22,
+              "repetition_collapses_v2": 1,
+              "wilson_lower_95_v1": 0.150012823846054
+            },
+            "email_drafting_from_notes": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "fact_free_reasoning": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 7,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "fluent_realization": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "format_control": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "grammar": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "instruction_following": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "prompt_grounding": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 2,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "rewriting": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 3,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "supplied_text_summarization": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 1,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "tone_control": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            }
+          },
+          "repetition_collapses_v2": 37,
+          "run_wall_seconds": 380.99249089998193,
+          "seed": 104729,
+          "source_base_present_at_inference": false,
+          "training_seconds": 52.99118119999184
+        },
+        {
+          "active_parameters": 11060800,
+          "complete_installed_parameters": 11060800,
+          "functional_passes_v1": 62,
+          "functional_passes_v2": 90,
+          "gates": {
+            "critical_capabilities": false,
+            "per_capability_functional": false,
+            "zero_repetition_collapse_v2": false
+          },
+          "passes_locked_absolute_quality": false,
+          "peak_cuda_allocated_bytes": 595685376,
+          "peak_process_rss_bytes": 1099067392,
+          "per_capability": {
+            "abstention": {
+              "observations": 100,
+              "passes_v1": 7,
+              "passes_v2": 35,
+              "point_v1": 0.07,
+              "repetition_collapses_v2": 37,
+              "wilson_lower_95_v1": 0.03431926106727268
+            },
+            "clarification": {
+              "observations": 100,
+              "passes_v1": 13,
+              "passes_v2": 13,
+              "point_v1": 0.13,
+              "repetition_collapses_v2": 54,
+              "wilson_lower_95_v1": 0.07757167427240512
+            },
+            "coherence": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 12,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "conversation": {
+              "observations": 100,
+              "passes_v1": 42,
+              "passes_v2": 42,
+              "point_v1": 0.42,
+              "repetition_collapses_v2": 40,
+              "wilson_lower_95_v1": 0.3279838267435473
+            },
+            "email_drafting_from_notes": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 8,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "fact_free_reasoning": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "fluent_realization": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 28,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "format_control": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 6,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "grammar": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 27,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "instruction_following": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "prompt_grounding": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 5,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "rewriting": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 2,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "supplied_text_summarization": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 56,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "tone_control": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            }
+          },
+          "repetition_collapses_v2": 275,
+          "run_wall_seconds": 495.9285670000245,
+          "seed": 130363,
+          "source_base_present_at_inference": false,
+          "training_seconds": 55.67798150001909
+        },
+        {
+          "active_parameters": 11060800,
+          "complete_installed_parameters": 11060800,
+          "functional_passes_v1": 0,
+          "functional_passes_v2": 20,
+          "gates": {
+            "critical_capabilities": false,
+            "per_capability_functional": false,
+            "zero_repetition_collapse_v2": false
+          },
+          "passes_locked_absolute_quality": false,
+          "peak_cuda_allocated_bytes": 595146240,
+          "peak_process_rss_bytes": 1097367552,
+          "per_capability": {
+            "abstention": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 20,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 2,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "clarification": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 19,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "coherence": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 1,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "conversation": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 18,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "email_drafting_from_notes": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 1,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "fact_free_reasoning": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 26,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "fluent_realization": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "format_control": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "grammar": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 9,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "instruction_following": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 10,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "prompt_grounding": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 2,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "rewriting": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "supplied_text_summarization": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 4,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            },
+            "tone_control": {
+              "observations": 100,
+              "passes_v1": 0,
+              "passes_v2": 0,
+              "point_v1": 0.0,
+              "repetition_collapses_v2": 1,
+              "wilson_lower_95_v1": 3.469446951953614e-18
+            }
+          },
+          "repetition_collapses_v2": 93,
+          "run_wall_seconds": 326.0126894999994,
+          "seed": 155921,
+          "source_base_present_at_inference": false,
+          "training_seconds": 49.87433880000026
+        }
+      ]
+    },
+    "L0": {
+      "all_seeds_pass_locked_absolute_quality": false,
+      "runs": [
+        {
+          "active_parameters": 3846245376,
+          "complete_installed_parameters": 4173401088,
+          "functional_passes_v1": 1367,
+          "functional_passes_v2": 1392,
+          "gates": {
+            "critical_capabilities": false,
+            "per_capability_functional": false,
+            "zero_repetition_collapse_v2": false
+          },
+          "passes_locked_absolute_quality": false,
+          "peak_cuda_allocated_bytes": 8406356480,
+          "peak_process_rss_bytes": 1953689600,
+          "per_capability": {
+            "abstention": {
+              "observations": 100,
+              "passes_v1": 75,
+              "passes_v2": 100,
+              "point_v1": 0.75,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.656955364519384
+            },
+            "clarification": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "coherence": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "conversation": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "email_drafting_from_notes": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "fact_free_reasoning": {
+              "observations": 100,
+              "passes_v1": 95,
+              "passes_v2": 95,
+              "point_v1": 0.95,
+              "repetition_collapses_v2": 5,
+              "wilson_lower_95_v1": 0.8882495307680808
+            },
+            "fluent_realization": {
+              "observations": 100,
+              "passes_v1": 97,
+              "passes_v2": 97,
+              "point_v1": 0.97,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9154806357094724
+            },
+            "format_control": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "grammar": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "instruction_following": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "prompt_grounding": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "rewriting": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "supplied_text_summarization": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "tone_control": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            }
+          },
+          "repetition_collapses_v2": 5,
+          "run_wall_seconds": 4939.320727199985,
+          "seed": 104729,
+          "source_base_present_at_inference": true,
+          "training_seconds": 2747.830850899976
+        },
+        {
+          "active_parameters": 3846245376,
+          "complete_installed_parameters": 4173401088,
+          "functional_passes_v1": 1362,
+          "functional_passes_v2": 1393,
+          "gates": {
+            "critical_capabilities": false,
+            "per_capability_functional": false,
+            "zero_repetition_collapse_v2": true
+          },
+          "passes_locked_absolute_quality": false,
+          "peak_cuda_allocated_bytes": 8406557184,
+          "peak_process_rss_bytes": 1954938880,
+          "per_capability": {
+            "abstention": {
+              "observations": 100,
+              "passes_v1": 74,
+              "passes_v2": 100,
+              "point_v1": 0.74,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.6462901055081282
+            },
+            "clarification": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "coherence": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "conversation": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "email_drafting_from_notes": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "fact_free_reasoning": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "fluent_realization": {
+              "observations": 100,
+              "passes_v1": 99,
+              "passes_v2": 99,
+              "point_v1": 0.99,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9455138038212946
+            },
+            "format_control": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "grammar": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "instruction_following": {
+              "observations": 100,
+              "passes_v1": 99,
+              "passes_v2": 99,
+              "point_v1": 0.99,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9455138038212946
+            },
+            "prompt_grounding": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "rewriting": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "supplied_text_summarization": {
+              "observations": 100,
+              "passes_v1": 99,
+              "passes_v2": 100,
+              "point_v1": 0.99,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9455138038212946
+            },
+            "tone_control": {
+              "observations": 100,
+              "passes_v1": 91,
+              "passes_v2": 95,
+              "point_v1": 0.91,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.837737871472837
+            }
+          },
+          "repetition_collapses_v2": 0,
+          "run_wall_seconds": 4627.87461530001,
+          "seed": 130363,
+          "source_base_present_at_inference": true,
+          "training_seconds": 2646.207249400002
+        },
+        {
+          "active_parameters": 3846245376,
+          "complete_installed_parameters": 4173401088,
+          "functional_passes_v1": 1352,
+          "functional_passes_v2": 1394,
+          "gates": {
+            "critical_capabilities": false,
+            "per_capability_functional": false,
+            "zero_repetition_collapse_v2": false
+          },
+          "passes_locked_absolute_quality": false,
+          "peak_cuda_allocated_bytes": 8406479360,
+          "peak_process_rss_bytes": 1960476672,
+          "per_capability": {
+            "abstention": {
+              "observations": 100,
+              "passes_v1": 61,
+              "passes_v2": 100,
+              "point_v1": 0.61,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.5120301704584073
+            },
+            "clarification": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "coherence": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "conversation": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "email_drafting_from_notes": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "fact_free_reasoning": {
+              "observations": 100,
+              "passes_v1": 95,
+              "passes_v2": 95,
+              "point_v1": 0.95,
+              "repetition_collapses_v2": 5,
+              "wilson_lower_95_v1": 0.8882495307680808
+            },
+            "fluent_realization": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "format_control": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "grammar": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "instruction_following": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "prompt_grounding": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "rewriting": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "supplied_text_summarization": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "tone_control": {
+              "observations": 100,
+              "passes_v1": 96,
+              "passes_v2": 99,
+              "point_v1": 0.96,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9016292856411208
+            }
+          },
+          "repetition_collapses_v2": 5,
+          "run_wall_seconds": 4690.585620600003,
+          "seed": 155921,
+          "source_base_present_at_inference": true,
+          "training_seconds": 2638.408496900025
+        }
+      ]
+    },
+    "L1": {
+      "all_seeds_pass_locked_absolute_quality": false,
+      "runs": [
+        {
+          "active_parameters": 3833719808,
+          "complete_installed_parameters": 3997297664,
+          "functional_passes_v1": 1395,
+          "functional_passes_v2": 1395,
+          "gates": {
+            "critical_capabilities": true,
+            "per_capability_functional": true,
+            "zero_repetition_collapse_v2": true
+          },
+          "passes_locked_absolute_quality": true,
+          "peak_cuda_allocated_bytes": 8330547712,
+          "peak_process_rss_bytes": 1592688640,
+          "per_capability": {
+            "abstention": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "clarification": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "coherence": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "conversation": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "email_drafting_from_notes": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "fact_free_reasoning": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "fluent_realization": {
+              "observations": 100,
+              "passes_v1": 97,
+              "passes_v2": 97,
+              "point_v1": 0.97,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9154806357094724
+            },
+            "format_control": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "grammar": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "instruction_following": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "prompt_grounding": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "rewriting": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "supplied_text_summarization": {
+              "observations": 100,
+              "passes_v1": 98,
+              "passes_v2": 98,
+              "point_v1": 0.98,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.929988209271456
+            },
+            "tone_control": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            }
+          },
+          "repetition_collapses_v2": 0,
+          "run_wall_seconds": 4941.610252999992,
+          "seed": 104729,
+          "source_base_present_at_inference": true,
+          "training_seconds": 2840.377449899999
+        },
+        {
+          "active_parameters": 3833719808,
+          "complete_installed_parameters": 3997297664,
+          "functional_passes_v1": 1375,
+          "functional_passes_v2": 1400,
+          "gates": {
+            "critical_capabilities": false,
+            "per_capability_functional": false,
+            "zero_repetition_collapse_v2": true
+          },
+          "passes_locked_absolute_quality": false,
+          "peak_cuda_allocated_bytes": 8330764800,
+          "peak_process_rss_bytes": 1585295360,
+          "per_capability": {
+            "abstention": {
+              "observations": 100,
+              "passes_v1": 75,
+              "passes_v2": 100,
+              "point_v1": 0.75,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.656955364519384
+            },
+            "clarification": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "coherence": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "conversation": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "email_drafting_from_notes": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "fact_free_reasoning": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "fluent_realization": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "format_control": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "grammar": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "instruction_following": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "prompt_grounding": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "rewriting": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "supplied_text_summarization": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "tone_control": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            }
+          },
+          "repetition_collapses_v2": 0,
+          "run_wall_seconds": 4769.382863100007,
+          "seed": 130363,
+          "source_base_present_at_inference": true,
+          "training_seconds": 2699.3976177999866
+        },
+        {
+          "active_parameters": 3833719808,
+          "complete_installed_parameters": 3997297664,
+          "functional_passes_v1": 1366,
+          "functional_passes_v2": 1396,
+          "gates": {
+            "critical_capabilities": false,
+            "per_capability_functional": false,
+            "zero_repetition_collapse_v2": true
+          },
+          "passes_locked_absolute_quality": false,
+          "peak_cuda_allocated_bytes": 8329747968,
+          "peak_process_rss_bytes": 1598476288,
+          "per_capability": {
+            "abstention": {
+              "observations": 100,
+              "passes_v1": 70,
+              "passes_v2": 100,
+              "point_v1": 0.7,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.6041514536665332
+            },
+            "clarification": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "coherence": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "conversation": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "email_drafting_from_notes": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "fact_free_reasoning": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "fluent_realization": {
+              "observations": 100,
+              "passes_v1": 97,
+              "passes_v2": 97,
+              "point_v1": 0.97,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9154806357094724
+            },
+            "format_control": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "grammar": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "instruction_following": {
+              "observations": 100,
+              "passes_v1": 99,
+              "passes_v2": 99,
+              "point_v1": 0.99,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9455138038212946
+            },
+            "prompt_grounding": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "rewriting": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "supplied_text_summarization": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            },
+            "tone_control": {
+              "observations": 100,
+              "passes_v1": 100,
+              "passes_v2": 100,
+              "point_v1": 1.0,
+              "repetition_collapses_v2": 0,
+              "wilson_lower_95_v1": 0.9630065017930143
+            }
+          },
+          "repetition_collapses_v2": 0,
+          "run_wall_seconds": 4749.360997299984,
+          "seed": 155921,
+          "source_base_present_at_inference": true,
+          "training_seconds": 2695.3727288000227
+        }
+      ]
+    }
+  },
+  "claim_boundary": "Bounded exact-B20/B40 machine-development Phase 4 certificate. No global minimum, external-human completion, final-test result, Phase 7 integrated superiority, Phase 8 release, or universal ABI-over-LoRA/distillation claim.",
+  "decision": "B40 is the smallest tested stable exact five-route V25 ABI budget among B20 and B40, and ABI is the only route that passes the locked all-seed quality contract at equal B40 sequence information. L1 is the strongest comparator but fails two abstention seeds, retains its source base, uses materially more active memory, and is materially slower on GPU. This certifies only the bounded machine Phase 4 frontier and opens Phase 5; it does not waive human or final-test gates or establish universal ABI superiority.",
+  "evidence_sha256": "d322a6bd7f2eb5b8f8383270ad671bb442a8f8177a364f795df577af0efab555",
+  "external_human_review_complete": false,
+  "fairness_views": {
+    "equal_final_deployment_constraint": {
+      "abi_active_tensor_bytes": 254495764,
+      "abi_over_l1_gpu_throughput_ratio": 13.812551559241278,
+      "abi_teacher_absent_at_inference": true,
+      "l1_active_tensor_bytes": 7667325120,
+      "l1_infeasible_under_abi_active_tensor_envelope": true,
+      "l1_infeasible_under_abi_latency_envelope": true,
+      "l1_over_abi_active_tensor_ratio": 30.1275156784142,
+      "l1_over_abi_gpu_ttft_ratio": 5.317515983076766,
+      "l1_source_base_present_at_inference": true
+    },
+    "equal_imported_information": {
+      "D0_all_three_seeds_pass": false,
+      "L0_all_three_seeds_pass": false,
+      "L1_all_three_seeds_pass": false,
+      "abi_all_three_seeds_pass": true,
+      "authoritative_teacher_output_tokens": 123167,
+      "only_abi_passes_locked_all_seed_quality": true,
+      "record_memberships": 4112,
+      "stored_hidden_activations": 0,
+      "stored_logits": 0,
+      "unique_source_attempts": 4005
+    },
+    "matched_quality_frontier": {
+      "D0_reaches_locked_quality_at_B40": false,
+      "L0_reaches_locked_quality_at_B40": false,
+      "L1_reaches_locked_quality_at_B40": false,
+      "abi_is_only_quality_qualified_tested_route": true,
+      "abi_reaches_locked_quality_at_B40": true,
+      "baseline_cost_to_matched_quality": "NOT_REACHED_WITHIN_REGISTERED_EXACT_B40_CAMPAIGN"
+    }
+  },
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase4-b40-frontier-verification/1",
+  "gates": {
+    "adjacent_lower_and_three_seed_minimum": true,
+    "b20_adjacent_lower_all_seed_failure": true,
+    "b40_all_seed_product_pass_and_tested_minimum": true,
+    "b40_baseline_tree_pass": true,
+    "b40_cpu_gpu_runtime_pass": true,
+    "b40_equal_sequence_pack_pass": true,
+    "cpu_speed_gate_preserved": true,
+    "equal_deployment_view_complete": true,
+    "equal_information_view_complete": true,
+    "final_test_not_accessed": true,
+    "human_gate_not_misrepresented": true,
+    "l1_runtime_harness_pass": true,
+    "matched_quality_view_complete": true,
+    "receiver_learning_zero": true,
+    "same_quality_and_runtime_artifact": true
+  },
+  "global_minimum_claimed": false,
+  "model_inference_performed": false,
+  "phase4_certificate_scope": "BOUNDED_MACHINE_DEVELOPMENT_EVIDENCE_ONLY",
+  "phase4_certified": true,
+  "phase5_open": true,
+  "protocol_sha256": "b1c8e289572c5e2ab13123829f07be74feb504a6a1c911ff8750ca03ba82bebb",
+  "runtime_recomputed": {
+    "ABI": {
+      "active_tensor_bytes": 254495764,
+      "cold": {
+        "authoritative_output_tokens": 10,
+        "bytes_per_second": 220.35374748578087,
+        "capability": "grammar",
+        "characters_per_second": 220.35374748578087,
+        "cold_definition": "model-residency cold; exactly one generation request after host/model load; operating-system filesystem cache was not purged",
+        "execution": {
+          "active_residual_routes": 0,
+          "guard_terminated": false,
+          "persistent_state_created": true,
+          "route_correct": true,
+          "routed_capability": "grammar"
+        },
+        "model_load_seconds": 1.6691350000037346,
+        "output": "Mira walks through the quiet room every Monday.",
+        "output_characters": 47,
+        "output_token_ids": [
+          44,
+          8704,
+          11114,
+          832,
+          262,
+          5897,
+          2119,
+          790,
+          3321,
+          13
+        ],
+        "output_utf8_bytes": 47,
+        "probe_id": "phase1-validation-grammar-0000-v2",
+        "retokenized_output_token_ids": [
+          44,
+          8704,
+          11114,
+          832,
+          262,
+          5897,
+          2119,
+          790,
+          3321,
+          13
+        ],
+        "single_cold_request": true,
+        "time_to_first_output_from_cold_start_seconds": 1.844912500004284,
+        "time_to_first_output_seconds": 0.17577750000054948,
+        "token_accounting": "completed_response_retokenization",
+        "total_from_cold_start_seconds": 1.882679600006668,
+        "total_seconds": 0.21329339998192154
+      },
+      "metrics": {
+        "median_bytes_per_second": 900.8390675533694,
+        "median_characters_per_second": 900.8390675533694,
+        "median_time_to_first_output_seconds": 0.012561099996673875,
+        "median_total_seconds": 0.07601164998777676,
+        "observations": 120,
+        "p05_bytes_per_second": 494.80877419333194,
+        "p05_characters_per_second": 494.80877419333194,
+        "p95_supported": true,
+        "p95_time_to_first_output_seconds": 0.021439154997642616,
+        "p95_total_seconds": 0.37962869001203214,
+        "p99_supported": false,
+        "p99_time_to_first_output_seconds": null,
+        "p99_total_seconds": null
+      }
+    },
+    "L1": {
+      "active_tensor_bytes": 7667325120,
+      "cold": {
+        "authoritative_output_tokens": 10,
+        "bytes_per_second": 66.95256837910253,
+        "capability": "grammar",
+        "characters_per_second": 66.95256837910253,
+        "cold_definition": "model-residency cold; exactly one generation request after host/model load; operating-system filesystem cache was not purged",
+        "execution": {
+          "route_correct": true,
+          "routed_capability": "grammar"
+        },
+        "model_load_seconds": 11.17028510000091,
+        "output": "Mira walks through the quiet room every Monday.",
+        "output_characters": 47,
+        "output_token_ids": [
+          29422,
+          17042,
+          2039,
+          1549,
+          278,
+          11813,
+          5716,
+          1432,
+          27822,
+          29889,
+          32007
+        ],
+        "output_utf8_bytes": 47,
+        "probe_id": "phase1-validation-grammar-0000-v2",
+        "retokenized_output_token_ids": [
+          29422,
+          17042,
+          2039,
+          1549,
+          278,
+          11813,
+          5716,
+          1432,
+          27822,
+          29889
+        ],
+        "single_cold_request": true,
+        "time_to_first_output_from_cold_start_seconds": 11.414970200014068,
+        "time_to_first_output_seconds": 0.24468510001315735,
+        "token_accounting": "completed_response_retokenization",
+        "total_from_cold_start_seconds": 11.872582799987867,
+        "total_seconds": 0.7019894999975804
+      },
+      "metrics": {
+        "median_bytes_per_second": 65.21887456417592,
+        "median_characters_per_second": 65.21887456417592,
+        "median_time_to_first_output_seconds": 0.06679384999733884,
+        "median_total_seconds": 0.9847645999980159,
+        "observations": 120,
+        "p05_bytes_per_second": 34.258441191056235,
+        "p05_characters_per_second": 34.258441191056235,
+        "p95_supported": true,
+        "p95_time_to_first_output_seconds": 0.09525672999589005,
+        "p95_total_seconds": 3.7723905750011895,
+        "p99_supported": false,
+        "p99_time_to_first_output_seconds": null,
+        "p99_total_seconds": null
+      }
+    },
+    "ratios": {
+      "abi_over_l1_median_bytes_per_second": 13.812551559241278,
+      "l1_over_abi_active_tensor_bytes": 30.1275156784142,
+      "l1_over_abi_cold_ttft": 6.187269152324331,
+      "l1_over_abi_median_ttft": 5.317515983076766
+    }
+  },
+  "status": "PASS_BOUNDED_MACHINE_PHASE4_SUFFICIENT_INFORMATION_PARETO_FRONTIER",
+  "tested_budgets": [
+    "B20",
+    "B40"
+  ],
+  "tested_minimum": {
+    "adjacent_lower_all_three_seeds_fail": true,
+    "adjacent_lower_budget": "B20",
+    "architecture": "exact five-route LayerCake v25",
+    "global_minimum_claimed": false,
+    "passing_budget": "B40",
+    "passing_budget_all_three_seeds_pass": true,
+    "smallest_tested_stable_budget_among_B20_B40": "B40"
+  },
+  "tested_systems": [
+    "ABI",
+    "L0",
+    "L1",
+    "D0"
+  ],
+  "training_performed": false,
+  "universal_superiority_claimed": false
+}

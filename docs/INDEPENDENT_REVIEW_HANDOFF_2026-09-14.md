@@ -2,23 +2,26 @@
 
 ## Review status
 
-This repository is ready for a fresh bounded-evidence review after the
-2026-09-14 audit response. It is not certified as the full ABI moonshot.
+This repository is a repaired candidate for a fresh bounded-evidence review.
+It is not certified as the full ABI moonshot, and repository reproducibility
+must be re-established from a new public clone.
 
 The prior independent verdict is preserved unchanged at
 [`../reviews/independent_2026-09-14/ABI_MOONSHOT_INDEPENDENT_AUDIT_2026-09-14.md`](../reviews/independent_2026-09-14/ABI_MOONSHOT_INDEPENDENT_AUDIT_2026-09-14.md).
 Its machine-readable companion and receipts are in the same directory. The
-repair manifest pins every byte that was added to the public review surface.
+later `bf674f8` fresh-clone failure and its repair criteria are preserved there
+as `FRESH_CLONE_REPRODUCIBILITY_AUDIT_BF674F8.md`.
 
 ## What changed after the audit
 
-1. Exact historical certificates and the V6 catalog were restored at the
-   root-relative locations expected by frozen verifiers. The curated originals
-   remain under `evidence/current/`; the test requires byte identity.
-2. Default pytest collection now includes the supported Phase 0 and Phase 6-8
-   verifier modules. The earlier 84-test pass did not run those historical
-   modules; that was exclusion by `python_files`, not demonstrated test-order
-   dependence.
+1. Exact retained Phase 0-8 protocols, manifests, catalogs, raw rows,
+   certificates, and compact package bytes were force-added at the paths and
+   hashes expected by the frozen evidence. Historical evidence was not
+   regenerated.
+2. Default pytest collection now includes the Phase 0 certificate, bounded
+   Phase 4 frontier, Phase 6-8 verifiers, R97 replay, and a real V1089 Phase 8
+   manifest integration test. The integration test reads all 52 entries and
+   verifies exact ABI and LayerCake Git objects plus published LFS payloads.
 3. The retained R97 parent/tokenizer and V1089 Phase 7 handoff files were
    added to the Git-LFS review surface.
 4. The JSON proof ledger now matches the Markdown ledger for R13-B and R97.
@@ -30,9 +33,11 @@ repair manifest pins every byte that was added to the public review surface.
 
 - Clone with Git LFS enabled and run `git lfs pull`.
 - Use Python 3.10 and install the project test dependencies.
-- Place a clean LayerCake clone beside ABI as `../layercake_release` when a
-  replay explicitly requires that repository; verify the requested commit for
-  the evidence lineage being tested.
+- For the default repaired-surface suite, place a full, non-sparse LayerCake
+  checkout beside ABI as `../layercake_release` and detach it at
+  `662c5a9b7264a1a5478c9dfb656f35c450e2504f`. The R7 archive reconstruction
+  separately binds LayerCake `a87a653dbdb1a4e5f713baf7bc508d508277e00d`;
+  use a separate worktree for that lineage rather than swapping evidence.
 - Do not reuse caches, ignored development files, or another checkout's
   generated evidence.
 - Treat missing artifacts, hashes, raw rows, packages, or independent records
@@ -45,15 +50,25 @@ git status --short
 git lfs fsck
 C:\Python310\python.exe -m pytest -q
 C:\Python310\python.exe -m pytest -q tests/test_independent_audit_replay_surface.py
+C:\Python310\python.exe -m pytest -q tests/test_capability_compiler_phase4_b40_frontier_verify.py
 C:\Python310\python.exe -m pytest -q tests/test_capability_compiler_phase6_verify.py
 C:\Python310\python.exe -m pytest -q tests/test_capability_compiler_phase7_verify.py
-C:\Python310\python.exe -m pytest -q tests/test_capability_compiler_phase8_release_readiness.py tests/test_capability_compiler_phase8_local_rehearsal_verify.py
+C:\Python310\python.exe -m pytest -q tests/test_capability_compiler_phase8_release_readiness.py tests/test_capability_compiler_phase8_local_rehearsal_verify.py tests/test_capability_compiler_phase8_manifest_integration.py
 C:\Python310\python.exe -m pytest -q tests/test_capability_compiler_phase5_verify.py
 ```
 
 The last command is expected to fail until the six exact Phase 5 baseline
 tensors are restored or Phase 5 is prospectively rerun and resealed. If it
 passes without those tensors, treat that as a verifier regression.
+
+The local branch-only sterile rehearsal for this repair used ABI and LayerCake
+as clean sibling checkouts and produced 173 passed, 3 skipped in the default
+suite plus 76/76 in the focused replay group. The manual Phase 5 command
+produced 13 expected setup failures, all beginning at the same first disclosed
+tensor:
+`headline_v997/L1_r8_lr1e-4_exp4_seed104729/adapters.safetensors`.
+These local counts are navigation aids, not a substitute for the fresh public
+clone requested here.
 
 ## Required verdict vocabulary
 
@@ -82,11 +97,17 @@ under reviews/independent_2026-09-14/. Verify every cited SHA-256 yourself.
 
 Clone with Git LFS enabled. Work in a new short-path directory with no ignored
 development assets. Run git status, git lfs fsck, the default pytest suite,
-the review-surface test, Phase 6-8 verifier tests, and the Phase 5 verifier
+the review-surface test, Phase 4 and Phase 6-8 verifier tests, the real Phase 8
+manifest integration test, and the Phase 5 verifier
 command exactly as specified in the handoff. Independently inspect
 pyproject.toml collection rules. Confirm whether the earlier discrepancy was
 test exclusion, order dependence, or both. Do not accept a stored scientific
 boolean when raw evidence can be recomputed.
+
+Use a full non-sparse LayerCake sibling detached at
+662c5a9b7264a1a5478c9dfb656f35c450e2504f for the default/V1089 replay. Use a
+separate LayerCake worktree at a87a653dbdb1a4e5f713baf7bc508d508277e00d for
+R7 reconstruction. Never treat one checkout as both lineages.
 
 For R7, V1089, and R97, build separate causal/evidence tables. Do not combine
 quality, speed, memory, portability, human, or public-reconstruction evidence

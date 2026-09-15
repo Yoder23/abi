@@ -1,0 +1,59 @@
+{
+  "format": "abi-capability-compiler-phase8-local-clean-rehearsal/1",
+  "protocol_id": "abi-capability-compiler-phase8-local-clean-rehearsal-collection-path-repair-v1083",
+  "status": "PREREGISTERED_PHASE8_LOCAL_CLEAN_REHEARSAL_COLLECTION_PATH_REPAIR",
+  "status_date": "2026-08-16",
+  "historical_evidence_changed": false,
+  "repair_of": "ABI_CAPABILITY_COMPILER_PHASE8_LOCAL_CLEAN_REHEARSAL_REPAIR_PROTOCOL_V1079.json",
+  "repair_scope": "WINDOWS_MAX_PATH_COLLECTION_ROOT_SHORTENING_ONLY",
+  "preserved_failure": "results/abi_capability_compiler_phase8/local_clean_rehearsal_v1078/collection_attempt_failure_v1082.json",
+  "inference_reexecution_authorized": false,
+  "objective": "Collect the six already-produced clean-rehearsal evidence files without rerunning either device. Change only the destination root from the 266-character failing path to a preregistered short root below the active Win32 file-open boundary. Preserve source-relative paths, bytes, hashes, worktrees, artifacts, results, and all scientific gates.",
+  "clean_parent": "C:/tmp/abi_phase8_local_clean_v1078",
+  "abi_packet_source_commit": "4b0004bd7b71654a6014d96c634d4418b957d861",
+  "layercake_commit": "662c5a9b7264a1a5478c9dfb656f35c450e2504f",
+  "development_hardware_fingerprint_sha256": "2deae6043290bb50a87b17e799b7772af1df02356f3f954c6c755bb85782f02a",
+  "release_readiness_protocol": "ABI_CAPABILITY_COMPILER_PHASE8_RELEASE_READINESS_PROTOCOL_V1070.json",
+  "release_manifest": "results/abi_capability_compiler_phase8/readiness_v1073/manifest.json",
+  "release_manifest_sha256": "b0e0c8f1ffcc52fc7464d52840ab7a086313fa90747158b0b9cff29d0abc8d86",
+  "product_protocol": "ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json",
+  "clean_runtime_preflight": "results/abi_capability_compiler_phase7_integrated/allocation_bounded_verify_v1063/clean_runtime_preflight.json",
+  "clean_device_outputs": {
+    "cpu": "results/abi_capability_compiler_phase7_integrated/allocation_bounded_verify_v1063/cpu",
+    "cuda": "results/abi_capability_compiler_phase7_integrated/allocation_bounded_verify_v1063/cuda"
+  },
+  "clean_layercake_junit": "results/abi_capability_compiler_phase7_integrated/allocation_bounded_verify_v1063/layercake_patch_tests.xml",
+  "collection_root": "results/p8r_v1083",
+  "collection_output": "results/p8r_v1083/collection.json",
+  "verification_output": "results/p8r_v1083/verify_v1087/result.json",
+  "collect_files": [
+    "results/abi_capability_compiler_phase7_integrated/allocation_bounded_verify_v1063/clean_runtime_preflight.json",
+    "results/abi_capability_compiler_phase7_integrated/allocation_bounded_verify_v1063/layercake_patch_tests.xml",
+    "results/abi_capability_compiler_phase7_integrated/allocation_bounded_verify_v1063/cpu/result.json",
+    "results/abi_capability_compiler_phase7_integrated/allocation_bounded_verify_v1063/cpu/observations.jsonl",
+    "results/abi_capability_compiler_phase7_integrated/allocation_bounded_verify_v1063/cuda/result.json",
+    "results/abi_capability_compiler_phase7_integrated/allocation_bounded_verify_v1063/cuda/observations.jsonl"
+  ],
+  "model_inference_authorized": false,
+  "training_authorized": false,
+  "teacher_query_authorized": false,
+  "artifact_mutation_authorized": false,
+  "phase8_certification_authorized": false,
+  "bindings": {
+    "abi/capability_compiler_phase8_local_rehearsal.py": "381f3e8a41e150ef84ebd9b4cfe17ed3d75712b6c95bfb9b94156d14fa464741",
+    "tests/test_capability_compiler_phase8_local_rehearsal.py": "a3ba2b92cc21ecda6a620faa149f4cf7d2fdb46633b1177204baa05535fa7aff",
+    "ABI_CAPABILITY_COMPILER_PHASE8_LOCAL_CLEAN_REHEARSAL_REPAIR_PROTOCOL_V1079.json": "241527f2025d38ac805ebefa1a355245623680bddb8135407de329c5a9f19256",
+    "results/abi_capability_compiler_phase8/local_clean_rehearsal_v1078/collection_attempt_failure_v1082.json": "9ae6f5fd855c4f380ab42522bf2a3652ad1fcb1644df21b1730c200451d059dd",
+    "results/abi_capability_compiler_phase8/local_clean_rehearsal_v1078/preparation_repair_v1081.json": "0f441dfe33780c237368ae6dd0cbab5ccbb206263e431d8146a4dda81ca67d96",
+    "ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json": "7d0b8f480024cdb06872779cd26654ca4404a7e7ccaa94e8b87da3c9b1d139f5"
+  },
+  "execution_order": [
+    "Commit this exact path-only repair and preserved collection failure.",
+    "Run preflight and require both already-produced device results, exact prepared worktrees, absent short-root collection output, and inference_reexecution_authorized=false.",
+    "Copy and hash the existing six files once into results/p8r_v1083.",
+    "Hash-lock the collection and preregister the already-frozen read-only verifier before interpreting results."
+  ],
+  "decision_rule": "Collection passes only if zero model processes are launched, both clean worktree commits and tracked diffs remain exact, the six source files already exist, every destination is below 260 characters, all six copied hashes match their sources, both recorded device statuses are pass, and the result keeps phase8_certified=false.",
+  "stop_rule": "Any source change, evidence mismatch, pre-existing short-root destination, missing device result, or attempted inference closes the repair negatively.",
+  "claim_boundary": "Windows collection-path repair only. It cannot change or strengthen the clean-rehearsal scientific claim and cannot satisfy independent operation, independent hardware, Phase 8, release, or human preference."
+}

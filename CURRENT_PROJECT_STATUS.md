@@ -18,10 +18,10 @@ rehearsal. This later campaign is not yet a public release certificate:
 | 2 | Machine and handoff ready; 0/21,000 human preferences |
 | 3 | Machine gates pass, conditional on Phase 2 |
 | 4 | Certified bounded B20/B40 information frontier; B40 passes all three seeds |
-| 5 | Certified bounded chemistry/civics/Python selection and exclusion |
+| 5 | Bounded certificate retained; clean replay blocked on six deleted baseline tensors |
 | 6 | Certified bounded three-package composition on three fresh hosts |
 | 7 | Certified bounded same-machine CPU/CUDA integrated product |
-| 8 | Local clean export certified; independent operator/hardware required |
+| 8 | Historical same-machine clean export passed; public reconstruction and independent operator/hardware required |
 
 The Phase 7 product contains the exact B40 English core and three signed domain
 packages, has no teacher at inference and zero receiver-training steps, and
@@ -37,9 +37,9 @@ random bridge. It passed every locked gate, strict raw recomputation, 12/12
 hostile mutations, and byte-identical live replay. Its scope is bounded
 two-hop nonce reasoning, not fluent general English or arbitrary domains.
 
-## Independent audit and replay repair
+## Independent audits and replay repair
 
-The preserved 2026-09-14 independent audit verdict is
+The preserved 2026-09-14 whole-project audit verdict is
 `FULL_MOONSHOT_NOT_PROVEN`. It correctly identifies missing external evidence,
 separate R7/V1089/R97 lineages, incomplete public payloads, and unproved broad
 claims. Its reported test-order dependence was more specifically a collection
@@ -48,12 +48,28 @@ Phase 0 and Phase 5-8 verifier modules. Exact historical root bindings have
 now been restored, and supported Phase 6-8 verifier modules are explicitly in
 the default suite.
 
+A second independent fresh-clone audit at `bf674f8` returned
+`REPOSITORY_NOT_REPRODUCIBLE`: the development checkout still contained
+ignored Phase 0-7 protocols, raw rows, and manifests that had never reached
+Git. That report is preserved at
+`reviews/independent_2026-09-14/FRESH_CLONE_REPRODUCIBILITY_AUDIT_BF674F8.md`.
+The current repair publishes those exact retained bytes, adds Phase 0 and
+Phase 4 to default collection, and adds an integration test that hashes all 52
+entries of the real V1089 Phase 8 manifest against its exact ABI and LayerCake
+source commits. It must still pass a new sterile public-clone review.
+
+A branch-only local sterile rehearsal with a full LayerCake sibling at the
+exact V1089 commit now passes 173 tests with 3 skips; the 76-test focused replay
+group also passes. This proves the candidate no longer needs ignored files in
+the development checkout. It does not replace an external clone from the
+published GitHub commit.
+
 This repair does not rewrite history or promote a claim. The old Phase 5
 verifier still fails closed because three D0 student and three L1 adapter
 tensors were intentionally removed in the content-addressed 2026-08-29
 cleanup. Their paths, sizes, and hashes are retained in the cleanup and review
-manifests. R97 and V1089 locally retained publication payloads are included in
-the review surface, subject to successful Git-LFS publication. Full review
+manifests. R97 and V1089 retained publication payloads are included in the
+Git-LFS review surface. Full review
 still requires one coherent final-artifact lineage, human ratings, independent
 hardware, broad English/discovery/purity evidence, and fair matched-quality
 comparisons.

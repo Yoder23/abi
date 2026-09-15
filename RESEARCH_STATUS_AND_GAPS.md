@@ -131,99 +131,56 @@ prospectively rerun and resealed.
     inherits no quality evidence; the remaining blocker is still acquisition
     planning/generalization and must be localized on sealed checkpoints.
 
-## Open scientific questions
+## Current open scientific questions
 
-### 1. Can independent human ratings confirm the machine baseline picture?
+1. **Can independent human ratings confirm quality?** The frozen packet has
+   21,000 rows and zero completed preferences. No local process may substitute
+   for three genuine independent raters.
+2. **Can the result reproduce on independent hardware?** V1088 is a
+   same-machine rehearsal. Phase 8 still requires a signed independent run on
+   materially different CPU and CUDA hardware.
+3. **Can one coherent artifact carry every claim?** R7, V1089, and R97 answer
+   different bounded questions. Quality, controls, portability, systems
+   performance, public reconstruction, and external evidence have not been
+   demonstrated on one immutable final artifact.
+4. **Can ABI transfer broad open-ended English?** R97 proves a bounded
+   prospective reasoning family; R23 proves bounded supplied-content
+   realization. Neither proves unrestricted conversation, summarization,
+   rewriting, instruction following, or long-form generation.
+5. **Can ABI discover and label capabilities automatically?** Existing
+   positive results use declared capabilities, ontologies, namespaces, or
+   structural families. Ontology-free discovery and labeling remain open.
+6. **How pure and minimal are the artifacts?** Phase 4 establishes the
+   smallest passing *tested* V1089 budget, not a global minimum. Behavioral
+   exclusion cannot prove that weights contain literally no domain knowledge.
+7. **Does ABI beat LoRA and distillation fairly?** Equal-information,
+   equal-compute, multi-seed, matched-quality deployment comparisons remain
+   unexecuted. No universal superiority claim is authorized.
+8. **Can multi-source provenance and licensing compose safely?** Conflict
+   policy, source-specific deletion lineage, confidence, and license-aware
+   composition remain research questions.
 
-The machine baseline matrix is complete. Phase 2 still requires 21,000 blinded
-counterbalanced judgments from three independent raters. Until those ratings
-are locked and verified, no final Phase 2 certificate exists.
+## Current repository priority
 
-This is now the only phase-closing blocker: all 21,000 form rows exist, but 0
-preferences are filled. Because Phase 3 depends on Phase 2, Phase 4 remains
-locked even though every Phase 3 machine gate passes.
+First make the bounded evidence handoff reproduce from a fresh public clone.
+The 2026-09-14 clean-clone audit found omitted ignored protocols, raw rows, and
+manifest inputs. Restore only their exact historical bytes, keep the six
+deleted Phase 5 tensors explicitly unresolved, and require the default suite
+and real-manifest integration test to pass from Git/LFS alone.
 
-The former tooling ambiguity is closed. The exact custody, lock, scoring, and
-verification steps are frozen in `docs/PHASE2_HUMAN_RATING_HANDOFF_V1.md` and
-`ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_SCORING_PROTOCOL_V1.json`. The remaining
-uncertainty is genuinely external: software cannot establish that a declared
-identity is human or exclude off-system collusion.
+After repository reconstruction passes, the next scientific work is external:
+complete the frozen human packet and independent-hardware packet. A later
+registered experiment may pursue one coherent broad-English artifact and fair
+LoRA/distillation controls. Do not revive the closed V23/V24 pointer branch or
+reinterpret its historical failures as the current priority.
 
-### 2. What is the smallest sufficient imported-information budget?
+## Historical note
 
-The current V480-derived artifact is sufficient for the registered Phase 3
-machine endpoint, but Phase 4 has not measured the smallest passing tested
-budget paired with an adjacent lower failure. That question remains locked
-until Phase 2 and the unconditional Phase 3 prerequisite both pass.
-
-### 3. Can pointer-supervised ABI targets preserve prompt identity?
-
-The direct-core host construct now exists. V23's fixed-action targets did not
-use its source-pointer action space, and raw outputs substituted or duplicated
-names, dates, and places. One deterministic pointer-supervised representation
-screen can test that measured acquisition bottleneck. It must not be described
-as a LayerCake repair or a V23 hyperparameter sweep.
-
-### 4. What is the sufficient-information frontier?
-
-The smallest passing tested budget is unknown. Only preregistered nested
-budgets with an adjacent lower failure can establish a bounded frontier. A
-global minimum cannot be inferred.
-
-### 5. How robust is English/domain segregation?
-
-The Phase 1 English artifact excludes declared specialist records, but finite
-corpus checks cannot prove that future learned weights contain literally no
-world knowledge. Phase 5 must test bounded behavioral exclusion, selective
-installation, removal, restoration, and adversarial label spoofing.
-
-### 6. How should failed domain references be repaired?
-
-The mathematics reference source outputs failed 0/100. They cannot be used as
-positive acquisition evidence. Any successor requires a new preregistered
-source or method and must retain the failures.
-
-### 7. How are multiple teachers and licenses reconciled?
-
-Multi-source work still needs source-specific provenance, license and deletion
-lineage, contradiction detection, confidence, preference rules, and fail-
-closed conflict handling.
-
-### 8. Can one final integrated candidate meet the product contract?
-
-Quality, teacher absence, package identity, isolation, selected-only
-execution, memory, TTFT, CPU/GPU performance, and reproducibility must be
-measured on the same lineage. Evidence may not be borrowed from another model
-or repository.
-
-### 9. Can the research release reproduce independently?
-
-Phase 8 still requires a clean content-addressed release, aggregate
-recomputation from raw evidence, hostile mutation testing, independent
-hardware reproduction, and external replication.
-
-## Immediate research priority
-
-Preserve every completed failed Phase 3 branch and keep final data unopened.
-Do not tune V23 data, steps, seeds, ranks, or fixed-action targets. Preregister
-one deterministic pointer-supervised representation screen against the same
-absolute gates. Run controls and additional seeds only if that initial candidate
-passes every gate. Phase 2 and Phase 3 remain uncertified, and Phase 4 remains
-locked. When independent raters become available, the Phase 2 packet must still
-be completed before certification.
-
-That V24 screen is now hash-bound. Its preflight uses 44,336 source-pointer
-actions and reconstructs every training target exactly. The completed run
-failed and is closed. No additional pointer-core training is authorized. The
-next work is a separate LayerCake UTF-8 validity audit, followed by a new ABI
-bottleneck decision rather than a nearby variant.
-
-The external host audit and v2 construct are complete. The read-only V23/V24
-fit/generalization diagnostic completed as V26/V27. It assigns insufficient
-ABI training fit as the primary failure and held-out representability and
-generalization as secondary failures. Do not train a successor until one
-preregistered, no-training Unicode-atomic open-vocabulary bake-off losslessly
-represents all 7,000 training and 1,400 development teacher targets.
+Earlier revisions of this document described Phase 4 as locked and V23/V24 as
+the immediate experiment. Those statements were correct before the later
+V1089 machine campaign, but are superseded. They remain available in Git
+history; the current status is the bounded Phase 4-7 machine evidence and open
+external/full-moonshot gates described above.
 
 See `CURRENT_PROJECT_STATUS.md` for the current claim boundary and
 `ABI_CAPABILITY_COMPILER_CAMPAIGN_CONTRACT_V1.json` for controlling gates.

@@ -1,0 +1,68 @@
+{
+  "evidence_sha256": "748612b2593feeea5e073588160a04b582033f5dea2546cfe44be15920f11ee4",
+  "final_test_accessed": false,
+  "format": "abi-capability-compiler-phase3-final-certificate-audit/1",
+  "historical_evidence_changed": false,
+  "hostile_mutations_rejected": [
+    "artifact_accounting_mutation",
+    "verifier_quality_mutation",
+    "replication_gate_mutation",
+    "runtime_ratio_mutation",
+    "host_checkpoint_mutation"
+  ],
+  "hostile_mutations_rejected_count": 5,
+  "incremental_state_microcheck": {
+    "canonical_attach_handles": 3,
+    "canonical_interface_unchanged": true,
+    "first_cache_present": true,
+    "one_token_increment_consumed": true,
+    "persistent_incremental_state": true,
+    "same_task_route": true,
+    "second_cache_present": true,
+    "second_logits_shape": [
+      1,
+      1,
+      50257
+    ]
+  },
+  "machine_evidence_complete": true,
+  "machine_gates": {
+    "artifact_provenance_and_accounting": true,
+    "exact_fully_cpu_runtime": true,
+    "final_test_not_accessed": true,
+    "independent_one_seed_hostile_reconstruction": true,
+    "persistent_state_and_canonical_interface": true,
+    "physically_route_isolated_sparse_execution": true,
+    "same_final_checkpoint_quality_runtime_hosts": true,
+    "teacher_and_source_absent_at_inference": true,
+    "three_host_exact_reproduction": true,
+    "three_seed_causal_replication": true
+  },
+  "phase2_human_ratings": {
+    "complete": false,
+    "filled_preferences": 0,
+    "manifest_status": "AWAITING_THREE_INDEPENDENT_HUMAN_RATERS",
+    "required_preferences": 21000,
+    "rows": 21000
+  },
+  "phase3_certified": false,
+  "phase4_open": false,
+  "physical_sparse_microcheck": {
+    "active_experts_per_token": 1,
+    "active_rank": 16,
+    "physical_experts": 4,
+    "selected_expert_affects_route": true,
+    "selected_expert_mutation_max_abs_delta": 7.301568984985352e-07,
+    "unselected_expert_cannot_affect_route": true,
+    "unselected_expert_mutation_max_abs_delta": 0.0
+  },
+  "prerequisite_gates": {
+    "phase0_complete": true,
+    "phase1_complete": true,
+    "phase2_complete": false,
+    "phase3_machine_gates_complete": true
+  },
+  "protocol_sha256": "84a376d5b3f39f325e526b1c4b7dd11eb3a4b54de4bf45311fdb3c8b4cb43c70",
+  "status": "PASS_PHASE3_MACHINE_EVIDENCE_COMPLETE_BLOCKED_PHASE2_HUMAN_RATINGS",
+  "teacher_present_at_inference": false
+}

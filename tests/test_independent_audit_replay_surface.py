@@ -2,6 +2,11 @@ import hashlib
 import json
 from pathlib import Path
 
+import pytest
+
+from abi.capability_compiler_phase3 import Phase3Error
+from abi.capability_compiler_phase5_selective_product import load_protocol
+
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = (
     ROOT
@@ -65,6 +70,24 @@ def test_phase5_gap_is_physically_absent_and_bound_to_cleanup_manifest() -> None
         cleanup_entry = targets[entry["path"]]
         assert cleanup_entry["size_bytes"] == entry["bytes"]
         assert cleanup_entry["sha256"] == entry["sha256"]
+
+
+def test_phase5_verifier_reaches_the_declared_tensor_boundary() -> None:
+    protocol = ROOT / (
+        "ABI_CAPABILITY_COMPILER_PHASE5_SELECTIVE_PRODUCT_REPAIR_PROTOCOL_V1026.json"
+    )
+    base_protocol = ROOT / (
+        "ABI_CAPABILITY_COMPILER_PHASE5_SELECTIVE_PRODUCT_PROTOCOL_V1023.json"
+    )
+    assert protocol.is_file()
+    assert base_protocol.is_file()
+    first_missing = (
+        "results/abi_capability_compiler_phase4_b40_baselines/headline_v997/"
+        "L1_r8_lr1e-4_exp4_seed104729/adapters.safetensors"
+    )
+    with pytest.raises(Phase3Error, match="Phase 5 selective-product binding changed") as error:
+        load_protocol(ROOT, protocol)
+    assert first_missing in str(error.value)
 
 
 def test_full_moonshot_is_not_claimed_by_repair_manifest() -> None:

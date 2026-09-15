@@ -46,15 +46,16 @@ def test_certificate_rejects_failed_certification_suite():
     assert "certification tree full suite did not pass" in errors
 
 
-def test_current_documents_record_phase3_branch_failure_and_phase4_locked():
+def test_current_documents_record_the_present_claim_boundary():
     status = (ROOT / "CURRENT_PROJECT_STATUS.md").read_text(encoding="utf-8")
     mission = (ROOT / "ACTIVE_MISSION.md").read_text(encoding="utf-8")
     roadmap = (ROOT / "ROADMAP.md").read_text(encoding="utf-8")
     for document in (status, mission, roadmap):
         assert "Phase 1" in document
-    assert "Phase 0 is **COMPLETE**" in status
-    assert "Phase 1 is **COMPLETE**" in status
-    assert "Phase 2" in status and "**BLOCKED_EXTERNAL_HUMAN_RATINGS**" in status
-    assert "Phase 3" in status and "COMPLETE_FAILED" in status
-    assert "Phase 4" in status and "locked" in status.lower()
-    assert "not certified" in status.lower()
+    assert "| Phase 0 | Complete |" in status
+    assert "| Phase 1 | Complete |" in status
+    assert "0/21,000 human preferences" in status
+    assert "Certified bounded B20/B40 information frontier" in status
+    assert "FULL_MOONSHOT_NOT_PROVEN" in status
+    assert "R7, V1089, and R97" in mission
+    assert "BLOCKED ON INDEPENDENT OPERATOR" in roadmap

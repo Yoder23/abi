@@ -1,0 +1,103 @@
+{
+  "format": "abi-capability-compiler-phase4-b50-cpu-runtime/1",
+  "protocol_id": "abi-capability-compiler-phase4-b50-cpu-runtime-v859",
+  "status": "PREREGISTERED_SAME_ARTIFACT_B50_V22_CPU_RUNTIME",
+  "status_date": "2026-08-15",
+  "historical_evidence_changed": false,
+  "authorization": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V857.json",
+  "objective": "Measure the exact signed seed-104729 LayerCake v22 B50 product and its ordinary persistent-state path on one laptop CPU against pinned optimized CPU-only Qwen, using 100 distinct prompts plus 20 paired repeats, genuine one-request cold starts, primary UTF-8 throughput, authoritative completed-output token counts, physical RSS, sparse execution, output identity to the locked quality artifact, and no inherited speed from another checkpoint.",
+  "development_catalog": "catalogs/capability_compiler_phase1_frozen_v1.json",
+  "candidate_screen_protocol": "ABI_CAPABILITY_COMPILER_PHASE4_V22_B50_RESCREEN_PROTOCOL_V795.json",
+  "matched_quality_result": "ABI_CAPABILITY_COMPILER_PHASE4_B50_MATCHED_QUALITY_RESULT_V856.json",
+  "systems": {
+    "ABI": {
+      "seed": 104729,
+      "quality_reference_outputs": "results/abi_capability_compiler_phase4_v22_b50_rescreen/run_v796/seed104729_outputs.jsonl",
+      "quality_reference_sha256": "48f3321aba623518dc15a0480229c1ce8f9457eda2f60c040e0baaaafe521442",
+      "archive_sha256": "db85b8bfbb0335d59274734cffa48ae568a33fdfbde8770eadae7c0d7494498f",
+      "archive_bytes": 253117674,
+      "tensor_payload_hash": "625389ca7c8eb39e281ae089c534166266e9445c156cdb195c51cea91b60e56f",
+      "total_parameters": 62812930
+    }
+  },
+  "runtime": {
+    "device": "cpu",
+    "torch_threads": 1,
+    "torch_interop_threads": 1,
+    "ollama_num_gpu": 0,
+    "distinct_prompts": 100,
+    "repeated_observations": 20,
+    "observations_per_system": 120,
+    "warmup_observations": 3,
+    "keep_alive": "10m",
+    "schedule_sha256": "c2fe47c8a5759c5a8e36b01fab505b9e4a6e1332d945cc2dcc38657105207d9a",
+    "primary_throughput": "completed response UTF-8 bytes per total request second",
+    "secondary_throughput": "completed response Unicode characters per total request second",
+    "candidate_tokens": "retokenize the complete returned response with the active package tokenizer",
+    "qwen_tokens": "Ollama eval_count from the completed streaming response",
+    "candidate_cold": "one deterministic package build excluded from inference timing, then one host load followed by its first and only cold generation request; model load, first output, and total derive from that request lineage",
+    "qwen_cold": "explicit unload followed by one streaming num_gpu=0 request; load duration, first output, and total derive from that single request",
+    "p95_minimum_observations": 100,
+    "p99_minimum_observations": 1000
+  },
+  "transformer_baseline": {
+    "runtime": "Ollama optimized CPU",
+    "base_url": "http://localhost:11434",
+    "model": "qwen2.5:0.5b",
+    "digest": "a8b0c51577010a279d933d14c2a8ab4b268079d44c5c8830c0a93900f1827c67",
+    "format": "gguf",
+    "quantization": "Q4_K_M",
+    "parameters": "494.03M",
+    "model_file_bytes": 397821319
+  },
+  "locked_phase2_runtime": {
+    "result": "results/abi_capability_compiler_phase3_route_isolated_cpu_runtime/runtime_v540/result.json",
+    "median_bytes_per_second": 264.1520422011913,
+    "candidate_checkpoint_sha256": "1649e110338904f69fafc0f5ff110e2c8d99f4f8366eb133442fb4938fa3c390"
+  },
+  "statistics": {
+    "method": "paired prompt-level median throughput-ratio percentile bootstrap plus paired prompt-level quality-difference bootstrap",
+    "bootstrap_replicates": 10000,
+    "throughput_bootstrap_seed": 240859,
+    "quality_bootstrap_seed": 240860
+  },
+  "gates": {
+    "cpu_throughput_ratio_minimum": 2.0,
+    "paired_bootstrap_lower_minimum": 2.0,
+    "phase2_host_throughput_retention_minimum": 0.95,
+    "quality_relative_lower_minimum": -0.05,
+    "ttft_ratio_maximum": 1.0,
+    "candidate_active_tensor_bytes_less_than_transformer_model_file": true,
+    "candidate_peak_active_rss_delta_less_than_transformer": true,
+    "candidate_runtime_outputs_exact_to_quality_reference": true,
+    "optimized_transformer_size_vram_bytes": 0,
+    "candidate_cuda_allocated_bytes": 0
+  },
+  "training_authorized": false,
+  "teacher_query_generation_authorized": false,
+  "candidate_construction_authorized": false,
+  "deterministic_package_rebuild_authorized": true,
+  "final_test_access": "PROHIBITED",
+  "bindings": {
+    "abi/capability_compiler_phase4_b50_cpu_runtime.py": "15be3cda9aa67a46d99989579d8b664b02509c16af793c4ad1324eb1155179a1",
+    "tests/test_capability_compiler_phase4_b50_cpu_runtime.py": "f87c561ac022e6d2a1bd5a60b43673aff71f0ef2c3205bd025271e016031028a",
+    "abi/capability_compiler_phase4_b50_gpu_runtime.py": "df9bf9d9e2a44cf7cc6a6a3ac594168639fbd32280523df7781dcbfc963ca36b",
+    "abi/capability_compiler_phase4_v22_b50_rescreen.py": "ed9fe592f61ba7c0644ca01a7bb21ad5f644351a0dde0c307efcf79e84f8f6ec",
+    "abi/capability_compiler_phase3_cpu_runtime.py": "c32649896b82924fc6dbe792256d7df171a6cc359ddf138dd5c2034369130342",
+    "abi/capability_compiler_phase3_cpu_runtime_v2.py": "01182a9f2042ef830b00ef5c46a559c1aa86ab0d15d79eb32dec34ca4c109adb",
+    "abi/capability_compiler_phase3_qwen_rss_audit.py": "5c4df90c0b8b94b3f70f92d00b6bf5aaf405e1a6cf71e39ea951322905b066ee",
+    "abi/capability_compiler_phase4_v19_cpu_runtime.py": "0364a9f69400815400993755365299800493b80b56fa58e623dea22db6c469f0",
+    "abi/capability_compiler_phase4_v19_frontier_rescreen.py": "9bb840b0397d9fb47ef5c873685b2ec4d4f7b31202e62bd89efbfbe3e7c67199",
+    "abi/capability_compiler_phase2_common.py": "8093ec2016d685f0327c87640042c8373bc141d76351fd641b21a44d018b6c92",
+    "abi/capability_compiler_functional_v2.py": "1755ceded6de7c8228ed91e5be6bf86452b6c5f02466f8fda150317775abd4af",
+    "abi/capability_compiler_repetition_v2.py": "8a7516efc0dd23360f3051b349d5d1b01180fe6966884f8d343044018b53eed7",
+    "abi/capability_compiler_phase3.py": "5d490989e088f42aba4bd2ca96fbe70ea2db211890369dd6f431dd781390c77b",
+    "ABI_CAPABILITY_COMPILER_PHASE4_B50_MATCHED_QUALITY_RESULT_V856.json": "d87459d197358d504a1490a2373ed14a17ddcc92aff207d33353a4daf442d87d",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V857.json": "5812f88fc6b779f8c5f5e785f94d79e9f496384b4a4fae35a4f88189904b5e9b",
+    "ABI_CAPABILITY_COMPILER_PHASE4_V22_B50_RESCREEN_PROTOCOL_V795.json": "6e4e667643f3e19e64f8f4829b3e71cb8f36785f91da88fa0c1cee1e572a4f32",
+    "catalogs/capability_compiler_phase1_frozen_v1.json": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a",
+    "results/abi_capability_compiler_phase3_route_isolated_cpu_runtime/runtime_v540/result.json": "a94a792baf9c406d65645aaf564e49f7d03d62f0add9e6e1e0adb053f3b33ed3"
+  },
+  "decision_rule": "The exact signed ABI artifact must preserve locked quality outputs, both functional evaluators, zero repetition collapse, at least 2x median and paired-lower-bound CPU byte throughput versus pinned CPU-only Qwen, at least 95% ordinary-host Phase 2 throughput, TTFT and cold-start advantage, lower active tensors and peak active RSS, CPU-only execution, authoritative token accounting, persistent state, routing, and physical sparse execution. Preserve every miss and prohibit Phase 4 certification on any failed gate.",
+  "claim_boundary": "Prospectively sealed same-artifact development CPU product comparison only. No final test, matched training-efficiency claim, stable imported-information minimum, Phase 4 certificate, or unconditional ABI-superiority claim."
+}

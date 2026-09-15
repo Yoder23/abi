@@ -1,0 +1,22 @@
+{
+  "format": "abi-capability-compiler-phase7-rss-profile-decision/1",
+  "version": 1046,
+  "status_date": "2026-08-16",
+  "status": "FAIL_PEAK_REPRODUCTION_REPLICATION_REQUIRED",
+  "historical_evidence_changed": false,
+  "protocol": "ABI_CAPABILITY_COMPILER_PHASE7_RSS_PROFILE_PROTOCOL_V1044.json",
+  "result": "results/abi_capability_compiler_phase7_integrated/rss_profile_v1045/result.json",
+  "result_sha256": "c6b0d3dd1459354cffe0f2e17fbae22850c1472e84abb2d3d84d5822cb25346c",
+  "evidence_sha256": "86d654d182762ef03b3a18edb20e8d9027695de5a715a24080f7c92c057079f5",
+  "replayed_outputs_exact": 244,
+  "failed_run_peak_rss_delta_bytes": 813330432,
+  "profile_largest_peak_rss_delta_bytes": 526364672,
+  "profile_largest_peak_stage": "complete_120_observation_core_runtime",
+  "profile_core_activation_peak_rss_delta_bytes": 506580992,
+  "profile_domain_schedule_peak_rss_delta_bytes": 302825472,
+  "optimized_transformer_peak_rss_bytes": 602959872,
+  "diagnosis": "The stage profile did not reproduce the failed run's 813330432-byte delta within the preregistered 10% tolerance. Its maximum was 526364672 bytes during the English-core schedule, consistent with the prior exact-core 516718592-byte result and below the frozen comparator. First domain loads and the complete specialist schedule were not the maximum. The single failed peak is therefore not yet attributable to persistent domain residency, but it remains valid negative evidence.",
+  "decision": "Do not reinterpret either result. Preregister three fresh-process CPU replications of the unchanged full integrated workload with the same continuous peak monitor, artifacts, prompts, thresholds, and throughput gates. Require every replication to pass RSS and all other gates. If any replication fails, stop measurement repetition and implement a measured activation-lifecycle or runtime-memory repair.",
+  "phase7_certified": false,
+  "claim_boundary": "Attribution failure only. It authorizes one three-replication confirmation matrix, not a threshold change, evidence deletion, or Phase 7 pass."
+}

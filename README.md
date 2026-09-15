@@ -20,6 +20,11 @@ An independent audit dated 2026-09-14 returned
 The untouched audit, its machine-readable summary, and its four receipts are
 preserved under
 [`reviews/independent_2026-09-14/`](reviews/independent_2026-09-14/).
+A later sterile-clone audit at `bf674f8` returned
+`REPOSITORY_NOT_REPRODUCIBLE` because required historical inputs were still
+ignored rather than published. Its preserved summary and repair criteria are
+in the same directory. The current checkout is a repair candidate and must be
+reviewed again from a new public clone.
 R97 is the strongest bounded local transfer result; R7 remains the strongest
 publicly reconstructed release. Neither may be combined with V1089 to claim
 one coherent final-artifact proof.
@@ -51,10 +56,10 @@ Phase 8 export rehearsal:
 | 2 | Machine evidence and blinded handoff complete; 0/21,000 independent-human preferences |
 | 3 | All registered machine gates pass; unconditional certification remains dependent on Phase 2 |
 | 4 | B40 is the smallest stable passing tested budget among B20/B40 for the exact five-route host |
-| 5 | Three-domain selective reconstruction and behavioral exclusion certified |
+| 5 | Bounded certificate retained; clean replay blocked on six deleted baseline tensors |
 | 6 | Three-package composition, portability, and provenance certified on three fresh host initializations |
 | 7 | Same exact integrated product certified on the registered CPU and CUDA device |
-| 8 | Clean same-machine export rehearsal certified; independent operator and different hardware still required |
+| 8 | Historical same-machine export rehearsal passed; public reconstruction plus independent operator and different hardware remain required |
 
 The B40 English host passed the registered machine-quality contract in all
 three 1,400-observation screens (4,200 observations total). The exact
@@ -81,11 +86,11 @@ R97 is a bounded two-hop reasoning transfer result; it is not evidence of a
 complete fluent English substrate, arbitrary-domain extraction, or universal
 superiority over LoRA/distillation.
 
-The independent-audit response restores exact root-relative compatibility
-copies of historical certificates and the V6 catalog so the frozen Phase 6-8
-verifiers replay without relying on test order. It also puts the exact local
-R97 parent and V1089 Phase 7 handoff payloads on the Git-LFS publication
-surface. Phase 5 clean replay remains blocked: six baseline tensors totaling
+The independent-audit response publishes the exact retained protocols,
+catalogs, raw rows, certificates, R97 parent, and V1089 Phase 7 handoff
+payloads needed by the supported replay surface. The default suite includes
+Phase 0, the Phase 4 frontier, Phases 6-8, R97, and a real 52-entry V1089
+manifest integration test. Phase 5 clean replay remains blocked: six baseline tensors totaling
 1,191,079,704 bytes were deleted during the recorded 2026-08-29 storage
 cleanup and were not recoverable from local LFS or other working copies. This
 gap is explicit in the review manifest; no verifier is weakened around it.

@@ -1,0 +1,61 @@
+{
+  "format": "abi-capability-compiler-phase7-product-manifest/1",
+  "product_id": "abi-layercake-b40-seed104729-english-chemistry-civics-python-v1",
+  "status": "FROZEN_EXACT_PHASE7_PRODUCT_IDENTITY",
+  "status_date": "2026-08-16",
+  "composition": "One signed B40 English core plus three separately signed optional domain packages under the additive authoritative-destination control. Components remain independently immutable; this manifest does not merge or rewrite them.",
+  "english_core": {
+    "seed": 104729,
+    "runtime_interface": "lc-direct-neural-core/25",
+    "archive_sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+    "tensor_payload_sha256": "18ad787696cf8737578253035ad84b7e0145d995f028c6392ba338b6117d5aba",
+    "archive_bytes": 253216208,
+    "active_tensor_bytes_before_domain_packages": 254495764,
+    "teacher_present_at_inference": false,
+    "source_transformer_blocks_retained": 0
+  },
+  "domain_packages": {
+    "chemistry": {
+      "cake_id": "abi-chemistry-token-plan",
+      "runtime_interface": "lc-direct-neural-decoder/1",
+      "archive_sha256": "f9c9b2668fda5ef6b92844c1b7097fbdf8ff0daaae51f5b86f72d4a49000abeb",
+      "tensor_payload_sha256": "b70dec838c5d3d119333e0f12ccc26392fad56b97cb4841045d0780cfb5f96a2",
+      "archive_bytes": 510981
+    },
+    "civics": {
+      "cake_id": "abi-civics-token-plan",
+      "runtime_interface": "lc-direct-neural-decoder/1",
+      "archive_sha256": "634ce66958859ec36dc1fbdf5ef34d6d2a9949d10cf2348a68c245d8c325d604",
+      "tensor_payload_sha256": "531f4cf14ae8823314cec77c919eba27fe136ba57ea7f4467ac53a69276a38dd",
+      "archive_bytes": 495919
+    },
+    "python": {
+      "cake_id": "abi-python-token-plan",
+      "runtime_interface": "lc-direct-neural-decoder/1",
+      "archive_sha256": "f1defaef2771ced336a332572a2d2f0e1e542399c877d182c48a6cd2e199231d",
+      "tensor_payload_sha256": "ac58835feee49441aef5fdfddd315523458ac95c53be8f41b8f309a086383242",
+      "archive_bytes": 448404
+    }
+  },
+  "control_plane": {
+    "domain_abi_version": "lc-direct-neural-decoder/1",
+    "domain_abi_sha256": "de765899700aefe22bfe6c9d00ed5b0c1f87a7ef864cf7211aa8aa4491a0742a",
+    "authoritative_destination_control_sha256": "6db81b67329843a161aeb85522103b2dca8da8e237fe8f21a288bb29493e40d9",
+    "direct_orchestrator_sha256": "fbc1be560f6c756da6c7b30bbed5478a9b3088059902282b22c78d0bdd286edf",
+    "catalog_router_sha256": "f1b724ecba5daed33348e6f5988bbd5bba0258763c659988e12794d253f24398"
+  },
+  "layercake_host": {
+    "repository": "https://github.com/Yoder23/layercake",
+    "local_commit": "a87a653dbdb1a4e5f713baf7bc508d508277e00d",
+    "core_extension_sha256": "7b176f21e6a86f3aaded724462d37149f8f8be48370bcdd163fe44c49e3464ce",
+    "canonical_core_abi_sha256": "6d0fea2697fc7af74e9f3cfaee591d658b3244acfb10502048a4105c010b6908"
+  },
+  "deployment": {
+    "teacher_required": false,
+    "source_base_required": false,
+    "component_mutation_allowed": false,
+    "dynamic_selected_only_domain_activation": true,
+    "english_and_domain_interfaces_are_separate": true
+  },
+  "claim_boundary": "This is a content-addressed bill of materials for one exact integrated product, not a new package or new quality claim. Every Phase 7 conclusion must independently prove that its evidence resolves to these exact component and host identities."
+}

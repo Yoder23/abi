@@ -1,0 +1,68 @@
+{
+  "format": "abi-capability-compiler-phase8-release-readiness/1",
+  "protocol_id": "abi-capability-compiler-phase8-release-readiness-v1070",
+  "status": "PREREGISTERED_PHASE8_LOCAL_RELEASE_READINESS",
+  "status_date": "2026-08-16",
+  "historical_evidence_changed": false,
+  "objective": "Build and hostile-test a minimal content-addressed reproduction handoff for the exact Phase 7 product. This local work may prove packet completeness and fail-closed verification, but it may not self-attest an independent operator, independent hardware, Phase 8, or release.",
+  "abi_phase7_seal_commit": "6499cb0e91ec0f2eae6158b2d987a163377259cc",
+  "layercake_commit": "662c5a9b7264a1a5478c9dfb656f35c450e2504f",
+  "development_hardware_fingerprint_sha256": "2deae6043290bb50a87b17e799b7772af1df02356f3f954c6c755bb85782f02a",
+  "product_protocol": "ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json",
+  "output": "results/abi_capability_compiler_phase8/readiness_v1073/manifest.json",
+  "adversarial_output": "results/abi_capability_compiler_phase8/adversarial_v1072.xml",
+  "minimum_adversarial_tests": 16,
+  "model_inference_authorized": false,
+  "training_authorized": false,
+  "artifact_mutation_authorized": false,
+  "external_self_attestation_authorized": false,
+  "additional_release_files": [
+    "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json",
+    "ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json",
+    "ABI_CAPABILITY_COMPILER_PHASE7_VERIFY_PROTOCOL_V1064.json",
+    "ABI_CAPABILITY_COMPILER_PHASE7_CERTIFICATE_V1.json",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1069.json",
+    "results/abi_capability_compiler_phase7_integrated/verify_v1067/result.json",
+    "abi/capability_compiler_phase8_release_readiness.py",
+    "tests/test_capability_compiler_phase8_release_readiness.py",
+    "PHASE8_EXTERNAL_OPERATOR_ATTESTATION_TEMPLATE_V1.json",
+    "docs/PHASE8_EXTERNAL_REPRODUCTION_V1.md"
+  ],
+  "bindings": {
+    "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json": "531b7ee35cf79c13eb706626b276cc29be7e08b7c2153ca5d430298b51ee5d05",
+    "ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json": "7d0b8f480024cdb06872779cd26654ca4404a7e7ccaa94e8b87da3c9b1d139f5",
+    "ABI_CAPABILITY_COMPILER_PHASE7_VERIFY_PROTOCOL_V1064.json": "ee0c79966cc410e41d9a8625d452d55c0fa38c2ff4d0f88411b114b1ac8b30ed",
+    "ABI_CAPABILITY_COMPILER_PHASE7_CERTIFICATE_V1.json": "c0b07a8748d7ee84b0e99c6482585a95d7d9483b49d49248071b397b8b47f77b",
+    "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1069.json": "2444d5a6ead8a9dd89054545784937d767d31b59ec03035e28f456b9fc09118f",
+    "results/abi_capability_compiler_phase7_integrated/verify_v1067/result.json": "e34c01e02552866893e6f6c9b07be389675d63debb1ce5f85968cc98954ddf92",
+    "abi/capability_compiler_phase8_release_readiness.py": "0866bbb628249bfb3ee009fa140c0704e9b2bd5aad6af59ac15b8a2f6a00ed26",
+    "tests/test_capability_compiler_phase8_release_readiness.py": "1edab9e8fbd1b1994b1201956f15d220dd90ad3acb143d2699a1ada46e0cb63d",
+    "PHASE8_EXTERNAL_OPERATOR_ATTESTATION_TEMPLATE_V1.json": "7ae77c758e8b07bf43fcea951d2ae06fdc4dc08c2a2549f3f252bafbe4780da3",
+    "docs/PHASE8_EXTERNAL_REPRODUCTION_V1.md": "d17542cec3671087c25080a681fb2fe2d1b950e64c6920ec23debba9b15f19fd"
+  },
+  "external_commands": {
+    "verify_manifest": "C:\\Python310\\python.exe -m abi.capability_compiler_phase8_release_readiness --protocol ABI_CAPABILITY_COMPILER_PHASE8_RELEASE_READINESS_PROTOCOL_V1070.json --verify-manifest results/abi_capability_compiler_phase8/readiness_v1073/manifest.json",
+    "capture_hardware": "C:\\Python310\\python.exe -m abi.capability_compiler_phase8_release_readiness --protocol ABI_CAPABILITY_COMPILER_PHASE8_RELEASE_READINESS_PROTOCOL_V1070.json --capture-hardware phase8_external/hardware.json",
+    "run_cpu": "C:\\Python310\\python.exe -m abi.capability_compiler_phase7_direct_artifact_runtime --protocol ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json --device cpu --output-dir results/abi_capability_compiler_phase7_integrated/allocation_bounded_verify_v1063/cpu",
+    "run_cuda": "C:\\Python310\\python.exe -m abi.capability_compiler_phase7_direct_artifact_runtime --protocol ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json --device cuda --output-dir results/abi_capability_compiler_phase7_integrated/allocation_bounded_verify_v1063/cuda"
+  },
+  "required_external_records": [
+    "different hardware fingerprint",
+    "signed independent-operator attestation",
+    "fresh CPU result and raw observations",
+    "fresh CUDA result and raw observations",
+    "stdout and stderr logs",
+    "dependency inventory"
+  ],
+  "execution_order": [
+    "Commit this exact protocol, readiness implementation, hostile tests, handoff guide, and attestation template.",
+    "Run and preserve preflight while both registered outputs are absent.",
+    "Run at least 16 hostile local tests and preserve JUnit evidence.",
+    "Build the immutable content-addressed release manifest without model inference or training.",
+    "Verify the produced manifest read-only.",
+    "Seal the local handoff as blocked on an independent operator and different CPU/CUDA hardware.",
+    "Do not issue a Phase 8 certificate until the returned external packet is preregistered and independently recomputed."
+  ],
+  "decision_rule": "Local readiness passes only if every transitive product, evidence, runtime, test, package, catalog, guide, and attestation-template byte resolves to its registered hash; both repository sources are exact; the development hardware fingerprint is exact; all hostile tests pass; and every external and Phase 8 certification field remains false. This protocol can make the external experiment reproducible but cannot satisfy it.",
+  "claim_boundary": "No local result from this protocol is an independent reproduction, Phase 8 certificate, human-preference completion, release certificate, arbitrary-hardware result, or universal ABI superiority claim."
+}

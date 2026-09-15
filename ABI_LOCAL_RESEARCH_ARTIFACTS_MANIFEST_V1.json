@@ -1,0 +1,484 @@
+{
+  "format": "abi-local-research-artifacts-manifest/1",
+  "status_date": "2026-08-03",
+  "status": "LOCAL_ARTIFACTS_PRESERVED_AND_CONTENT_ADDRESSED",
+  "scope": "JSON catalogs at or above the declared byte threshold",
+  "threshold_bytes": 1048576,
+  "artifact_count": 58,
+  "total_bytes": 537888545,
+  "tracked_artifact_count": 12,
+  "local_only_artifact_count": 46,
+  "git_policy": {
+    "deletion_authorized": false,
+    "new_large_generated_catalogs": "LOCAL_ONLY_AND_CONTENT_ADDRESSED",
+    "previously_tracked_large_catalogs": "PRESERVED_WITHOUT_HISTORY_REWRITE",
+    "protocols_generators_decisions_and_compact_manifests_tracked": true,
+    "restore_requires_exact_sha256": true
+  },
+  "artifacts": [
+    {
+      "path": "catalogs/broad_corpus_grounded_english_v1.json",
+      "bytes": 17555479,
+      "sha256": "51073cd7f1554f91d00f09077e8161106e843da1792751d5cedbf2e2c9ecf1ea",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v1.json",
+      "bytes": 50486325,
+      "sha256": "428cdf68e79af9ea5783b994a8c838d4a990525fccbf4b083f2497309edcafdb",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v2.json",
+      "bytes": 50096005,
+      "sha256": "d83c8359c578b7738534f0c01e854061e54635c271a5a1886f2c99244add62b6",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v2_shards16/broad_natural_conversation_search_v2_shard_01_of_16.json",
+      "bytes": 3148344,
+      "sha256": "0603dc42ceab387f217b0dd576b327f9cd4edc264d65261a1ba167ba8e172a97",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v2_shards16/broad_natural_conversation_search_v2_shard_02_of_16.json",
+      "bytes": 3150797,
+      "sha256": "cdf98d2f40db69333ac0648afa4c4f34d010d3850d71de8297e8474af4bf3b60",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v2_shards16/broad_natural_conversation_search_v2_shard_03_of_16.json",
+      "bytes": 3138499,
+      "sha256": "5f4d04705b644b659be2961c4335f39543afb5ef75ab69b6bc01ffb5dc02d54b",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v2_shards16/broad_natural_conversation_search_v2_shard_04_of_16.json",
+      "bytes": 3138042,
+      "sha256": "f747d2a0ef61f216094ff2afb595a9acf2eb31da09788ce7745611be6f7675cd",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v2_shards16/broad_natural_conversation_search_v2_shard_05_of_16.json",
+      "bytes": 3137710,
+      "sha256": "beea2ed067b0db83cc9656139b6b4efbdebea4b5970b87614c0f8d7a46cf8358",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v2_shards16/broad_natural_conversation_search_v2_shard_06_of_16.json",
+      "bytes": 3133713,
+      "sha256": "c028b5aede03c04ac522b3dc8a7abc880da19a1c3edf2b14b8b71282c608ea6d",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v2_shards16/broad_natural_conversation_search_v2_shard_07_of_16.json",
+      "bytes": 3134150,
+      "sha256": "7b29e8e474dfe76f683bc06c8cdb6827898a5c00da8a89476108d8e78392ef3f",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v2_shards16/broad_natural_conversation_search_v2_shard_08_of_16.json",
+      "bytes": 3139263,
+      "sha256": "4499a8ca9ffda51d9864485eaaacf98e2b431eca0bd437f8d417c7401b37846d",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v2_shards16/broad_natural_conversation_search_v2_shard_09_of_16.json",
+      "bytes": 3140560,
+      "sha256": "61b6786ce7cbeecafad25c3681ad6694317607528c4dc7fdafa408e1a10a3b15",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v2_shards16/broad_natural_conversation_search_v2_shard_10_of_16.json",
+      "bytes": 3132985,
+      "sha256": "36a03143d5dd632b9490045b6002744115ba4359fb4e3a81dd64dee78cedf109",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v2_shards16/broad_natural_conversation_search_v2_shard_11_of_16.json",
+      "bytes": 3127002,
+      "sha256": "a8f9ed684e940da29e3c4bb19db3bf9a53c087919c0b693ba7c2807ab1489433",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v2_shards16/broad_natural_conversation_search_v2_shard_12_of_16.json",
+      "bytes": 3129730,
+      "sha256": "27b834f6d3c42dee1b65cbc58032183c83f9b0b7a2ffe6170e1a0b22b795ad55",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v2_shards16/broad_natural_conversation_search_v2_shard_13_of_16.json",
+      "bytes": 3128524,
+      "sha256": "e8b0b95a1428d7a6adaa1267f17071f6fb0e95b06a1b3e6712bc04de05d9849b",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v2_shards16/broad_natural_conversation_search_v2_shard_14_of_16.json",
+      "bytes": 3129818,
+      "sha256": "46ec1af65db91c0496220c141721b1edbbff4037d15628c0c4926136dbf28440",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v2_shards16/broad_natural_conversation_search_v2_shard_15_of_16.json",
+      "bytes": 3124490,
+      "sha256": "ca052ba62a8877fd557d684782636443c79a53edd62e4f35ae62a64bfbb9a4c4",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v2_shards16/broad_natural_conversation_search_v2_shard_16_of_16.json",
+      "bytes": 3125503,
+      "sha256": "b05ae343a84dfecc3e0e86ee0ff9f26098e85d1a2bf232802e9e91b8f24757b3",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v3.json",
+      "bytes": 49878733,
+      "sha256": "4b43dbadbca0a0d52b5e7c0e60b249ed377a95fa89464ab2479db96eb809a081",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v3_shards16/broad_natural_conversation_search_v3_shard_01_of_16.json",
+      "bytes": 3134712,
+      "sha256": "354b4b1b72a691851f04ddb9ae64c8caf091a48b285a111e272d8c0defd317b5",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v3_shards16/broad_natural_conversation_search_v3_shard_02_of_16.json",
+      "bytes": 3137177,
+      "sha256": "ffe5116650f7ee4f8e2fadb4b181fc892e4855542597c143373b06c698c56308",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v3_shards16/broad_natural_conversation_search_v3_shard_03_of_16.json",
+      "bytes": 3124891,
+      "sha256": "2223438d0cf70710e980633e56deb8f2e219fa55d37de7fbb0c75e30b48cfad9",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v3_shards16/broad_natural_conversation_search_v3_shard_04_of_16.json",
+      "bytes": 3124434,
+      "sha256": "babdb0b6a4753b8ed0b66d7ed94583ed2c64f21615039a253298d0f5803059c5",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v3_shards16/broad_natural_conversation_search_v3_shard_05_of_16.json",
+      "bytes": 3124102,
+      "sha256": "ff8d4533c1399e321792329708c9b47e595dae4adfdbc8c23cb4229b8b95e57b",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v3_shards16/broad_natural_conversation_search_v3_shard_06_of_16.json",
+      "bytes": 3120105,
+      "sha256": "41a58672c9548daf3ad0164b2cbc6f2e07b3ee3f95f63821ae2ba3cac0ae7a58",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v3_shards16/broad_natural_conversation_search_v3_shard_07_of_16.json",
+      "bytes": 3120554,
+      "sha256": "560f71ed445364a463b6b9b0ac26de55d78911b79c113181b29d733a7ae82e11",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v3_shards16/broad_natural_conversation_search_v3_shard_08_of_16.json",
+      "bytes": 3125667,
+      "sha256": "45b6185d0c563ea7cbae10e14e5c30aa7d38bdc00478229a0baa16aa232d3cd5",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v3_shards16/broad_natural_conversation_search_v3_shard_09_of_16.json",
+      "bytes": 3126988,
+      "sha256": "658799d1c6e29283c2d25c6074e12af33b7785cee918155db2d76109ad601129",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v3_shards16/broad_natural_conversation_search_v3_shard_10_of_16.json",
+      "bytes": 3119413,
+      "sha256": "8fc9584abe12a5abc6cd8ab76f092866cbf1f04e6764173c3c18d4e52a6f2f5a",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v3_shards16/broad_natural_conversation_search_v3_shard_11_of_16.json",
+      "bytes": 3113442,
+      "sha256": "65ee8dfd3c9a6e68d806efc5218a4efe41aae65ea5bca1b0fb0ec8085a55e653",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v3_shards16/broad_natural_conversation_search_v3_shard_12_of_16.json",
+      "bytes": 3116182,
+      "sha256": "e1674c3b0fafbc9fed3d97df54cc84d6b465334d728084ba293c6fb5fa4d1623",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v3_shards16/broad_natural_conversation_search_v3_shard_13_of_16.json",
+      "bytes": 3114988,
+      "sha256": "693a1afc4179bfc56423c8a6fb95451a74cee9363dda585efdc7e097b44448db",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v3_shards16/broad_natural_conversation_search_v3_shard_14_of_16.json",
+      "bytes": 3116282,
+      "sha256": "58d70110823c183aa3a1f1e2ba8f34b361e1484e1053d1e8f2681d7dd13ec2f9",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v3_shards16/broad_natural_conversation_search_v3_shard_15_of_16.json",
+      "bytes": 3110954,
+      "sha256": "19a4043872511c2227b2933579ec2bcbfd4c4a30372e839265e91847829b3a50",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/broad_natural_conversation_search_v3_shards16/broad_natural_conversation_search_v3_shard_16_of_16.json",
+      "bytes": 3111967,
+      "sha256": "8df95bf774eea762106187a6333d244ec96a9f62f32217da46da3c521dcdd158",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/english_and_first_domains_certification_v1.json",
+      "bytes": 3458582,
+      "sha256": "4f6cf7a56241454a4b4e7b80baf5b08ec2757d23ba2740abc8428057c7fb3c6e",
+      "classification": "historical_generated_catalog",
+      "git_state": "TRACKED",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/english_and_first_domains_certification_v2.json",
+      "bytes": 3843400,
+      "sha256": "bab3c54cf65590a5b91dda787d2a7f608910756e770b7bc7b664e38dea5fb2b5",
+      "classification": "historical_generated_catalog",
+      "git_state": "TRACKED",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/english_and_first_domains_certification_v3.json",
+      "bytes": 4013990,
+      "sha256": "d666de8c036ed8c1e4e68af9ef52e3c7c9fb6c2a8e4bd5408a867f54cdead0d3",
+      "classification": "historical_generated_catalog",
+      "git_state": "TRACKED",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/english_and_first_domains_certification_v4.json",
+      "bytes": 3999280,
+      "sha256": "11f504280776b69f6fb64c2350e48f2a1c69e34a6c396d6ba7e61ada45f1e3ad",
+      "classification": "historical_generated_catalog",
+      "git_state": "TRACKED",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/english_and_first_domains_certification_v5.json",
+      "bytes": 3993880,
+      "sha256": "15feb7765c5987c859a6e139161882d56a3cf28211e1e2ff4febef802550f39c",
+      "classification": "historical_generated_catalog",
+      "git_state": "TRACKED",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/english_and_first_domains_certification_v6.json",
+      "bytes": 6287076,
+      "sha256": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052",
+      "classification": "historical_generated_catalog",
+      "git_state": "TRACKED",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/english_distinct_context_scale_v1.json",
+      "bytes": 95252344,
+      "sha256": "1ca59044e5d7229b138c12d17fc1342423ccb3d5173fb4fc9786614e6ea7a91f",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/english_realization_scale_v6.json",
+      "bytes": 3012162,
+      "sha256": "6a69f126ad427921ccc3c39df4df46d976494f002fb33b6268da3cbbf8c45072",
+      "classification": "historical_generated_catalog",
+      "git_state": "TRACKED",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/grounded_english_reference_search_validation_v1.json",
+      "bytes": 4566095,
+      "sha256": "3900e2a8fed8f7527dcf1b91c8ec011d114258dd1c1bf9f9fd11f1ba73d5d867",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/grounded_english_reference_search_validation_v2.json",
+      "bytes": 4397762,
+      "sha256": "e9e37071161aeaab6d5f803629c8262860fa7033cd91d900a6d4ff7e35b10fac",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/grounded_english_reference_search_validation_v3.json",
+      "bytes": 4787213,
+      "sha256": "055a6482669953c6283d93bebf87e1cef6b7db278b3b2e3849df51dab2d011ab",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/intrinsic_english_search_validation_v83.json",
+      "bytes": 15986449,
+      "sha256": "b85694db539e11867b511fff27f29cfef7b066ecd89d0066e22a72cd55ddafe4",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/intrinsic_english_search_validation_v83_rejected_label_method.json",
+      "bytes": 16037969,
+      "sha256": "c3d53e3fc696c8bacba21eca8844b23008ac6f49967124fd76c400e4c4964054",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/natural_domain_filtered_instruction_search_v1.json",
+      "bytes": 10060037,
+      "sha256": "8751ccd1c912b1e7607eb852699e540f06ae80224b64e68e974903494ce9c161",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/natural_english_acquisition_v1.json",
+      "bytes": 5073167,
+      "sha256": "9b9dc63ca9bed3761787d504f63260503ad43e176f1ae6f4f08585f2efb142c0",
+      "classification": "historical_generated_catalog",
+      "git_state": "TRACKED",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/natural_english_acquisition_v2.json",
+      "bytes": 5087162,
+      "sha256": "1c93608b9bc30a2efc9929164f62648bf87d15388fb2ed05638ce828c29b1bc1",
+      "classification": "historical_generated_catalog",
+      "git_state": "TRACKED",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/natural_english_acquisition_v2_v3.json",
+      "bytes": 5146343,
+      "sha256": "8992c7de94d3733d66f2083f96ec8d3cba31be3943afe1849f42220f33ff8d08",
+      "classification": "historical_generated_catalog",
+      "git_state": "TRACKED",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/natural_english_acquisition_v3.json",
+      "bytes": 5149548,
+      "sha256": "f5fcca82f2df98ad79e9db19bf4df5212e9eede72c4b537252dcb7503db95d78",
+      "classification": "historical_generated_catalog",
+      "git_state": "TRACKED",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/natural_english_successor_final_v4.json",
+      "bytes": 1730081,
+      "sha256": "04be0e1b00f3c6ee8c3c70141b69f2eefcb1bad75382b1030feefc6d311e0cb3",
+      "classification": "historical_generated_catalog",
+      "git_state": "TRACKED",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/natural_prompt_grounding_expansion_search_validation_v76.json",
+      "bytes": 49075899,
+      "sha256": "4dbe01cfd019dc5ec48bccc0d281aea34ae6d4cc16f642adbe8b2a38d9eeda4a",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/supplied_context_deterministic_qualified_search_validation_v78.json",
+      "bytes": 9166988,
+      "sha256": "d24fc0da0f8ae590813d0a0dbd215c1602cc4b04bde5ec5d69bda9399217f716",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    },
+    {
+      "path": "catalogs/supplied_context_natural_candidates_search_validation_v77.json",
+      "bytes": 9645588,
+      "sha256": "028896c3afb28530cb3b84be61369927ebd0845f648f66ed3e77ccbb65663d61",
+      "classification": "historical_generated_catalog",
+      "git_state": "LOCAL_ONLY",
+      "retention": "PRESERVED_AND_CONTENT_ADDRESSED"
+    }
+  ]
+}

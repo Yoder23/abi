@@ -1,0 +1,49 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "state_id": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1039",
+  "status_date": "2026-08-16",
+  "campaign_status": "OPEN",
+  "active_phase": "PHASE_7_INTEGRATED_TEACHER_RELATIVE_AND_SYSTEMS_CERTIFICATION",
+  "active_phase_status": "OPEN_PREREGISTRATION_REQUIRED_MACHINE_SCOPE_EXTERNAL_HUMAN_GATE_PENDING",
+  "phase_status": {
+    "phase_0": "COMPLETE",
+    "phase_1": "COMPLETE",
+    "phase_2": "MACHINE_AND_HANDOFF_READY_EXTERNAL_HUMAN_RATINGS_PENDING",
+    "phase_3": "MACHINE_GATES_PASS_CONDITIONAL_ON_PHASE_2",
+    "phase_4": "CERTIFIED_BOUNDED_MACHINE_DEVELOPMENT_SCOPE",
+    "phase_5": "CERTIFIED_BOUNDED_THREE_DOMAIN_BEHAVIORAL_EXCLUSION",
+    "phase_6": "CERTIFIED_BOUNDED_THREE_PACKAGE_COMPOSITION_PORTABILITY_AND_PROVENANCE",
+    "phase_7": "OPEN_PREREGISTRATION_REQUIRED_MACHINE_SCOPE_EXTERNAL_HUMAN_GATE_PENDING",
+    "phase_8": "LOCKED_BEHIND_PHASE_7_AND_INDEPENDENT_HARDWARE"
+  },
+  "phase6_authority": {
+    "certificate": "ABI_CAPABILITY_COMPILER_PHASE6_CERTIFICATE_V1.json",
+    "verified_result": "results/abi_capability_compiler_phase6_composition/verify_v1038/result.json"
+  },
+  "next_required_action": "Audit whether one exact Phase 6 integrated product identity already binds the Phase 4 teacher-relative English quality, Phase 5 isolation, Phase 6 domain composition, and exact CPU/GPU systems evidence. Preregister only missing same-product measurements; do not retrain, re-extract, or substitute evidence across lineages.",
+  "phase7_required_outcomes": [
+    "one exact teacher-free final LayerCake identity for every integrated claim",
+    "English and installed-domain functional quality with zero repetition collapse",
+    "bounded isolation and conflict quarantine",
+    "CPU and GPU identity and throughput",
+    "one genuinely cold streaming request with model load, TTFT, and total latency",
+    "active tensor memory and process RSS below the optimized transformer baseline",
+    "persistent incremental state and selected-only physical sparse execution",
+    "three-seed or host-initialization reproducibility",
+    "explicit separation of machine completion from the pending Phase 2 human gate"
+  ],
+  "prohibited_until_preregistered": [
+    "new Phase 7 model training or teacher extraction",
+    "new final-test access outside a hash-bound missing-evidence protocol",
+    "Phase 8 release work",
+    "ABI product or method superiority claims"
+  ],
+  "permanent_claim_limits": {
+    "universal_abi_superiority": false,
+    "global_minimum": false,
+    "latent_semantic_purity": false,
+    "deployed_multi_source_quality": false,
+    "phase2_human_complete": false,
+    "release_certified": false
+  }
+}

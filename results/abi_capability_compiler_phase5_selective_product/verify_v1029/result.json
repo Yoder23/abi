@@ -1,0 +1,108 @@
+{
+  "adversarial_junit": {
+    "errors": 0,
+    "failures": 0,
+    "path": "results/abi_capability_compiler_phase5_selective_product/adversarial_v1028.xml",
+    "sha256": "963e3d9adb5758fabbce1b409feeb12fd7ac450a4d3bfd1c046ad7ff08b00a74",
+    "skipped": 0,
+    "tests": 13
+  },
+  "aggregates": {
+    "ABI": {
+      "explicit_abstentions_per_seed": [
+        300,
+        300,
+        300
+      ],
+      "specialist_functional_passes_per_seed": [
+        300,
+        300,
+        300
+      ]
+    },
+    "D0": {
+      "explicit_abstentions_per_seed": [
+        0,
+        23,
+        0
+      ],
+      "specialist_functional_passes_per_seed": [
+        0,
+        0,
+        0
+      ]
+    },
+    "L1": {
+      "explicit_abstentions_per_seed": [
+        0,
+        0,
+        0
+      ],
+      "specialist_functional_passes_per_seed": [
+        252,
+        198,
+        192
+      ]
+    }
+  },
+  "claim_boundary": "Independent read-only recomputation of the bounded three-domain Phase 5 matrix. Behavioral exclusion is certified at the immutable authoritative-label control plane; latent semantic purity, exhaustive domain discovery, completed human review, Phase 6, release, and universal ABI superiority remain unproved.",
+  "evidence_hashes": {
+    "ABI/104729": {
+      "observations_sha256": "02f406c1b31ffc65e1d0ebb998900a0464905e4efdb1458ed9750b96ffb1b2cc",
+      "result_sha256": "4423c6465e1fe2c078d5d4ef911ff855aa2fb58cf3ac4d7406ae0397a4c260a7"
+    },
+    "ABI/130363": {
+      "observations_sha256": "b207b0ea7a168b6a020ed0b8ac633fb1579c69558de3518011d5f2a58462f096",
+      "result_sha256": "e20c5346bd9c8893a57159de8e5b77517626f9f5e3f5b49f329ecb85c39ca30b"
+    },
+    "ABI/155921": {
+      "observations_sha256": "5ca8960c1074009f0fd7cc7a5aeb01e73f4a84584c8d38e3ca16f9294b3e2fbb",
+      "result_sha256": "90e51fa3494a0f57cf951bfef256d672ef03e5174cf60c73e10b3b3455b7fe38"
+    },
+    "D0/104729": {
+      "observations_sha256": "cb3232744854da9a7b12a5fef3c266ff0ad1fb924e810da195ec2e706a478b98",
+      "result_sha256": "1c03782e8c79abc2f2609439f26dd15b4fc7878ea0f7314712261346cf7e95c7"
+    },
+    "D0/130363": {
+      "observations_sha256": "d503ab262d6e295c50417d60d6dc3352ba1038697a38d9f333592a11f398330a",
+      "result_sha256": "8aa6a52021192e967a0ef268e9ac8cb9ffb6305f06e02b533c328efe3ad0214e"
+    },
+    "D0/155921": {
+      "observations_sha256": "f042276d0215b16ae35f6b102ad394b1186102c8909d6fb852e62a7d9c02b639",
+      "result_sha256": "f7c8dc011c035766b0c152760428321ab76c35ba61aa105a2e65fa58de4f9052"
+    },
+    "L1/104729": {
+      "observations_sha256": "06a3c0c5204351e57e226d1dfd5a5ab0be147a2b775eb4d211826ec28cedb2f1",
+      "result_sha256": "ef6a93ed86e8feab7c8d718c8bbe4834ca50aae5010db1a81124529956d1693a"
+    },
+    "L1/130363": {
+      "observations_sha256": "31f9f87950f49d4817d391c7ea97a7664f34a5f245738c13a6227735380b12d3",
+      "result_sha256": "fc2e0a072a3c4f4b97f36f0acf02c5965e05bc1673dc9f10f4679cd33aba2e82"
+    },
+    "L1/155921": {
+      "observations_sha256": "4103d74b5bf7ec0d2d5f6ffda16813426e8bb2be10dc55aa5bcdc390b6fbd294",
+      "result_sha256": "03740abdca594ddd2f34e712884feafec840a06924a484aafea00cda30aa409e"
+    }
+  },
+  "evidence_sha256": "1ccecf20ec06742852c156341165a1ef309c06e35d0e12937311c77d2202dd28",
+  "format": "abi-capability-compiler-phase5-independent-verify-result/1",
+  "gates": {
+    "abi_missing_abstention_all_seed": true,
+    "abi_selected_recovery_all_seed": true,
+    "adversarial_tests_pass": true,
+    "all_row_gates_pass": true,
+    "d0_residual_control_complete": true,
+    "l1_residual_control_complete": true,
+    "model_inference_absent": true,
+    "nine_rows_independently_recomputed": true,
+    "teacher_query_absent": true,
+    "training_absent": true
+  },
+  "model_inference_performed": false,
+  "phase5_certified": true,
+  "product_protocol_sha256": "bd7d2338f521ee742982f8b3f338aacbb4e1685c068532daed8ab233cc9b4020",
+  "protocol_sha256": "0b59c59f489feb7e387da6acfe8a8fd1b0846f4da1752ecf819cee802a06d596",
+  "status": "PASS_INDEPENDENTLY_VERIFIED_PHASE5_BOUNDED_EXCLUSION",
+  "teacher_query_performed": false,
+  "training_performed": false
+}

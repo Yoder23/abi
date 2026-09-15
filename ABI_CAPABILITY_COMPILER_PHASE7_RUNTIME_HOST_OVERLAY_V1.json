@@ -1,0 +1,33 @@
+{
+  "format": "abi-capability-compiler-phase7-runtime-host-overlay/1",
+  "status": "FROZEN_ALLOCATION_BOUNDED_VERIFICATION_HOST_OVERLAY",
+  "status_date": "2026-08-16",
+  "base_product_manifest": "ABI_CAPABILITY_COMPILER_PHASE7_PRODUCT_MANIFEST_V1.json",
+  "base_product_manifest_sha256": "dbbfbc1c994f9fff2ca3a37c5ec22e9c517080f325a50a9b27fe7a0072a919ff",
+  "base_product_bytes_changed": false,
+  "layercake_repository": "https://github.com/Yoder23/layercake",
+  "layercake_base_commit": "a87a653dbdb1a4e5f713baf7bc508d508277e00d",
+  "layercake_runtime_commit": "662c5a9b7264a1a5478c9dfb656f35c450e2504f",
+  "changed_runtime_files": {
+    "layercake/cake/package.py": "405043c99e52817709aec21cbeb906a8de651f3e9d68850a5b1f18c1294be0dc",
+    "layercake/cake/installer.py": "7c011c6a0514c6ee7b233a5c75cf6f94f427ce39fb46684f4af3e1c07efea59c"
+  },
+  "unchanged_core_extension": {
+    "path": "layercake_extensions/route_isolated_clarification_core_v25.py",
+    "sha256": "7b176f21e6a86f3aaded724462d37149f8f8be48370bcdd163fe44c49e3464ce"
+  },
+  "unchanged_canonical_core_abi": {
+    "path": "moonshot/canonical_route_isolated_clarification_core_abi_v25.json",
+    "sha256": "6d0fea2697fc7af74e9f3cfaee591d658b3244acfb10502048a4105c010b6908"
+  },
+  "repair": {
+    "package_load": "Hash the archive incrementally and read ZIP members directly from the file.",
+    "active_verify": "Stream archive, canonical manifest, tensor payload, package-content hash, and signature verification without deserializing a second tensor mapping.",
+    "initial_activation": "Still performs complete safe-tensor deserialization, shape validation, signature validation, strict assignment, and artifact identity checks.",
+    "model_or_package_bytes_changed": false,
+    "abi_changed": false,
+    "quality_logic_changed": false,
+    "routing_logic_changed": false
+  },
+  "claim_boundary": "Additive exact-host overlay for a runtime memory repair only. It does not rewrite the frozen product manifest or authorize any new product-quality claim."
+}

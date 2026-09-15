@@ -1,0 +1,50 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "state_id": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1069",
+  "status_date": "2026-08-16",
+  "campaign_status": "OPEN_EXTERNAL_GATES",
+  "active_phase": "PHASE_8_INDEPENDENT_HOSTILE_VERIFICATION_AND_RELEASE",
+  "active_phase_status": "OPEN_REPRODUCIBILITY_PACKAGE_REQUIRED_THEN_EXTERNAL_OPERATOR_AND_HARDWARE",
+  "phase_status": {
+    "phase_0": "COMPLETE",
+    "phase_1": "COMPLETE",
+    "phase_2": "MACHINE_AND_HANDOFF_READY_EXTERNAL_HUMAN_RATINGS_PENDING",
+    "phase_3": "MACHINE_GATES_PASS_CONDITIONAL_ON_PHASE_2",
+    "phase_4": "CERTIFIED_BOUNDED_MACHINE_DEVELOPMENT_SCOPE",
+    "phase_5": "CERTIFIED_BOUNDED_THREE_DOMAIN_BEHAVIORAL_EXCLUSION",
+    "phase_6": "CERTIFIED_BOUNDED_THREE_PACKAGE_COMPOSITION_PORTABILITY_AND_PROVENANCE",
+    "phase_7": "CERTIFIED_BOUNDED_SAME_MACHINE_CPU_CUDA_INTEGRATED_PRODUCT",
+    "phase_8": "OPEN_EXTERNAL_INDEPENDENT_OPERATOR_AND_HARDWARE_REQUIRED"
+  },
+  "phase7_authority": {
+    "certificate": "ABI_CAPABILITY_COMPILER_PHASE7_CERTIFICATE_V1.json",
+    "verified_result": "results/abi_capability_compiler_phase7_integrated/verify_v1067/result.json",
+    "runtime_host_overlay": "ABI_CAPABILITY_COMPILER_PHASE7_RUNTIME_HOST_OVERLAY_V1.json"
+  },
+  "next_required_action": "Build and locally hostile-test a hash-bound Phase 8 reproduction bundle and clean-environment verifier. Then transfer it to an independent operator on independent CPU and CUDA hardware. Do not self-attest independent reproduction from this development machine.",
+  "phase8_required_outcomes": [
+    "clean clone or exported source tree at exact ABI and LayerCake commits",
+    "independent operator identity and signed attestation",
+    "independent CPU and CUDA hardware inventory",
+    "exact artifact and evidence hash verification before execution",
+    "fresh CPU and CUDA execution of the registered product protocol",
+    "independent recomputation of every Phase 7 gate",
+    "hostile evidence, accounting, label, identity, teacher-absence, and claim-language audit",
+    "release certificate only if all external results pass without threshold changes"
+  ],
+  "prohibited": [
+    "calling local reruns independent verification",
+    "self-signing the independent-operator attestation",
+    "changing product bytes, prompts, gates, comparators, or thresholds",
+    "unconditional ABI superiority or release claims while Phase 2 and Phase 8 external gates remain open"
+  ],
+  "permanent_claim_limits": {
+    "universal_abi_superiority": false,
+    "global_minimum": false,
+    "latent_semantic_purity": false,
+    "deployed_multi_source_quality": false,
+    "phase2_human_complete": false,
+    "phase8_external_complete": false,
+    "release_certified": false
+  }
+}

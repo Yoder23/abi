@@ -1,0 +1,106 @@
+{
+  "abi_head": "4b0004bd7b71654a6014d96c634d4418b957d861",
+  "clean_abi_root": "C:\\tmp\\abi_phase8_local_clean_v1078\\abi_release",
+  "clean_layercake_root": "C:\\tmp\\abi_phase8_local_clean_v1078\\layercake_release",
+  "clean_runtime_preflight": {
+    "format": "abi-capability-compiler-phase7-direct-artifact-preflight/1",
+    "gates": {
+      "cuda_available": true,
+      "direct_artifact_lifecycle_registered": true,
+      "exact_core_archive_lineage": true,
+      "exact_core_payload_lineage": true,
+      "layercake_patch_test_output_absent": true,
+      "layercake_streaming_host_patch_bound": true,
+      "materialized_archive_exact": true,
+      "materialized_payload_exact": true,
+      "package_lineage_exact": true,
+      "registered_outputs_absent": true,
+      "same_process_reconstruction_absent": true,
+      "teacher_absent": true,
+      "training_absent": true
+    },
+    "protocol_sha256": "7d0b8f480024cdb06872779cd26654ca4404a7e7ccaa94e8b87da3c9b1d139f5",
+    "status": "PASS_PHASE7_DIRECT_ARTIFACT_PREFLIGHT"
+  },
+  "evidence_sha256": "fb85f66398166c8c49a2aafe37d4743bb7979a1bf844e46f8de93f23c337c263",
+  "format": "abi-capability-compiler-phase8-local-clean-rehearsal-preparation/1",
+  "gates": {
+    "abi_commit_exact": true,
+    "clean_runtime_preflight_pass": true,
+    "development_hardware_exact": true,
+    "independent_hardware_claimed": false,
+    "layercake_commit_exact": true,
+    "manifest_verification_pass": true,
+    "registered_outputs_absent": true,
+    "teacher_absent": true,
+    "tracked_inventory_exact": true,
+    "training_absent": true,
+    "untracked_inventory_exact": true
+  },
+  "hardware": {
+    "cuda": {
+      "compute_capability": [
+        8,
+        6
+      ],
+      "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+      "torch_cuda_version": "11.8",
+      "total_memory_bytes": 17179344896
+    },
+    "fingerprint_sha256": "2deae6043290bb50a87b17e799b7772af1df02356f3f954c6c755bb85782f02a",
+    "format": "abi-capability-compiler-hardware-fingerprint/1",
+    "logical_cpu_count": 20,
+    "machine_architecture": "AMD64",
+    "operating_system": "Windows",
+    "operating_system_release": "10",
+    "physical_cpu_count": 14,
+    "total_ram_bytes": 68473409536
+  },
+  "layercake_head": "662c5a9b7264a1a5478c9dfb656f35c450e2504f",
+  "manifest_verification": {
+    "format": "abi-capability-compiler-phase8-release-manifest-verification/1",
+    "gates": {
+      "abi_phase7_seal_ancestor": true,
+      "byte_count_exact": true,
+      "development_hardware_bound": true,
+      "external_hardware_not_self_attested": true,
+      "external_operator_not_self_attested": true,
+      "file_count_exact": true,
+      "file_inventory_exact": true,
+      "format_exact": true,
+      "layercake_commit_exact": true,
+      "layercake_head_exact": true,
+      "local_status_exact": true,
+      "manifest_evidence_hash": true,
+      "manifest_protocol_exact": true,
+      "phase8_not_certified_locally": true
+    },
+    "manifest_sha256": "b0e0c8f1ffcc52fc7464d52840ab7a086313fa90747158b0b9cff29d0abc8d86",
+    "phase8_certified": false,
+    "protocol_sha256": "a6df3e67ad8e823e774a06092b90d818343d2dd63a0abc2450cc21e83ea6e4be",
+    "status": "PASS_PHASE8_RELEASE_MANIFEST_VERIFICATION"
+  },
+  "model_inference_performed": false,
+  "phase8_certified": false,
+  "protocol_sha256": "c14a9c898258fbb5dbf46f181ce0e66dadd2e5b0d54e1c3ae4412771ceee0ee6",
+  "status": "FAIL_PHASE8_LOCAL_CLEAN_REHEARSAL_PREPARATION",
+  "tracked_files_verified": 49,
+  "training_performed": false,
+  "untracked_files_copied": [
+    {
+      "bytes": 253216208,
+      "path": "results/abi_capability_compiler_phase7_integrated/materialized_v1052/phase7-final-english-core.cake",
+      "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d"
+    },
+    {
+      "bytes": 1419,
+      "path": "results/abi_capability_compiler_phase7_integrated/materialized_v1052/result.json",
+      "sha256": "d22684e34aabe39c4b590e3d22a547709a75cb8d17386700d410ca407ca6ee8c"
+    },
+    {
+      "bytes": 5524,
+      "path": "results/abi_capability_compiler_phase7_integrated/verify_v1067/result.json",
+      "sha256": "e34c01e02552866893e6f6c9b07be389675d63debb1ce5f85968cc98954ddf92"
+    }
+  ]
+}

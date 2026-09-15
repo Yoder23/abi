@@ -1,0 +1,46 @@
+{
+  "format": "abi-capability-compiler-campaign-state/1",
+  "state_id": "ABI_CAPABILITY_COMPILER_CAMPAIGN_STATE_V1030",
+  "status_date": "2026-08-16",
+  "campaign_status": "OPEN",
+  "active_phase": "PHASE_6_COMPOSITION_PORTABILITY_AND_MULTI_SOURCE_PROVENANCE",
+  "active_phase_status": "OPEN_PREREGISTRATION_REQUIRED",
+  "phase_status": {
+    "phase_0": "COMPLETE",
+    "phase_1": "COMPLETE",
+    "phase_2": "MACHINE_AND_HANDOFF_READY_EXTERNAL_HUMAN_RATINGS_PENDING",
+    "phase_3": "MACHINE_GATES_PASS_CONDITIONAL_ON_PHASE_2",
+    "phase_4": "CERTIFIED_BOUNDED_MACHINE_DEVELOPMENT_SCOPE",
+    "phase_5": "CERTIFIED_BOUNDED_THREE_DOMAIN_BEHAVIORAL_EXCLUSION",
+    "phase_6": "OPEN_PREREGISTRATION_REQUIRED",
+    "phase_7": "LOCKED_BEHIND_PHASE_6_AND_EXTERNAL_PREREQUISITES",
+    "phase_8": "LOCKED_BEHIND_PHASE_7"
+  },
+  "phase5_authority": {
+    "certificate": "ABI_CAPABILITY_COMPILER_PHASE5_CERTIFICATE_V1.json",
+    "verified_result": "results/abi_capability_compiler_phase5_selective_product/verify_v1029/result.json"
+  },
+  "next_required_action": "Inventory and hash-bind the exact three-domain packages, B40 English cores, compatible independent LayerCake hosts, provenance/license records, multi-domain orchestration interface, and physical execution telemetry; then preregister Phase 6 before composition inference.",
+  "phase6_required_outcomes": [
+    "simultaneous installation and composition without English or domain quality collapse",
+    "exact package-byte and installed-payload portability across independent compatible hosts",
+    "selected-only physical execution with inactive packages at zero neural execution",
+    "conflict quarantine under a frozen policy",
+    "record-level source, transformation, license, and deletion lineage",
+    "scaling and interference comparison against routed LoRA or adapters",
+    "multiple pinned source provenance when an independently qualified second source artifact exists"
+  ],
+  "prohibited_until_preregistered": [
+    "Phase 6 promoted composition evaluation",
+    "new teacher extraction or training",
+    "Phase 7 work",
+    "ABI product or method superiority claims"
+  ],
+  "permanent_claim_limits": {
+    "universal_abi_superiority": false,
+    "global_minimum": false,
+    "latent_semantic_purity": false,
+    "phase2_human_complete": false,
+    "release_certified": false
+  }
+}
