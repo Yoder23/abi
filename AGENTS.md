@@ -1,5 +1,18 @@
 # ABI repository contract
 
+## Read this first
+
+Use [`README.md`](README.md) for the public entry point,
+[`docs/README.md`](docs/README.md) for task-oriented navigation, and
+[`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md) for the concise current
+state. This file governs repository work and preserves campaign constraints;
+it is not the recommended first read for users.
+
+The controlling whole-moonshot verdict is `FULL_MOONSHOT_NOT_PROVEN`.
+Documentation, a passing unit test, or a new development commit cannot promote
+that verdict. Keep R7, V1089, R97, and later additive experiments as separate
+evidence lineages.
+
 ABI owns acquisition and packaging of capabilities from foreign open-weight
 teachers: source qualification, probing, semantic labeling, quarantine,
 normalization, provenance, information accounting, minimization research,

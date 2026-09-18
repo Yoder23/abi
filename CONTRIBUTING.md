@@ -23,8 +23,15 @@ python -m pytest -q tests/test_public_release.py \
   tests/test_capability_pipeline.py tests/test_capability_segregation.py
 python -m ruff check abi/__init__.py abi/__main__.py \
   tests/test_public_release.py examples/segregate_capabilities.py
+python scripts/check_docs.py
 python -m build
 ```
+
+The commands above validate the supported alpha surface. Changes to research
+evidence or exact-lineage verifiers must also run the applicable protocol tests
+and the review commands in
+`docs/INDEPENDENT_REVIEW_HANDOFF_2026-09-14.md`. Never weaken a verifier to
+make a missing artifact pass.
 
 Do not autoformat an evidence-bound source file. Supersede its certificate or
 place new behavior behind a new module and verifier.

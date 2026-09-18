@@ -6,6 +6,11 @@ This repository is a repaired candidate for a fresh bounded-evidence review.
 It is not certified as the full ABI moonshot, and repository reproducibility
 must be re-established from a new public clone.
 
+The intended immutable review identity is the annotated tag
+`abi-peer-review-candidate-v1-2026-09-18`. Resolve and record its peeled commit
+before running any command. The tag does not supersede R7 as the controlling
+public scientific release.
+
 The prior independent verdict is preserved unchanged at
 [`../reviews/independent_2026-09-14/ABI_MOONSHOT_INDEPENDENT_AUDIT_2026-09-14.md`](../reviews/independent_2026-09-14/ABI_MOONSHOT_INDEPENDENT_AUDIT_2026-09-14.md).
 Its machine-readable companion and receipts are in the same directory. The
@@ -28,6 +33,10 @@ as `FRESH_CLONE_REPRODUCIBILITY_AUDIT_BF674F8.md`.
 5. The exact Phase 5 replay deficit is machine-readable. Six baseline tensors
    were deleted in the recorded storage cleanup and are not locally
    recoverable. The original verifier continues to fail closed.
+6. An additive V2 repair replaces one stale, non-scientific human-workflow
+   binding to `pyproject.toml` with direct bindings to the scorer, evidence
+   verifier, sealed packet, and test. The human protocol is otherwise
+   unchanged and all 21,000 rows remain blind and unrated.
 
 ## Fresh reviewer prerequisites
 
@@ -61,9 +70,11 @@ The last command is expected to fail until the six exact Phase 5 baseline
 tensors are restored or Phase 5 is prospectively rerun and resealed. If it
 passes without those tensors, treat that as a verifier regression.
 
-The local branch-only sterile rehearsal for this repair used ABI and LayerCake
-as clean sibling checkouts and produced 173 passed, 3 skipped in the default
-suite plus 76/76 in the focused replay group. The manual Phase 5 command
+The earlier branch-only sterile rehearsal used ABI and LayerCake as clean
+sibling checkouts and produced 173 passed, 3 skipped in the default suite plus
+76/76 in the focused replay group. The current review candidate locally
+produces 174 passed and 4 declared skips; its human workflow/binding group
+produces 16/16 passes. The manual Phase 5 command
 produced 13 expected setup failures, all beginning at the same first disclosed
 tensor:
 `headline_v997/L1_r8_lr1e-4_exp4_seed104729/adapters.safetensors`.

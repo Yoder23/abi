@@ -1,6 +1,6 @@
 # ABI claim ledger
 
-Status date: 2026-09-14
+Status date: 2026-09-18
 
 Documentation cannot widen a machine-readable certificate. Each claim below is
 limited to its exact source, artifact, implementation, benchmark, and evidence
@@ -491,8 +491,8 @@ ABI has not yet established:
 - robust multi-source knowledge merging;
 - preservation of LayerCake's sealed CPU/GPU advantages by an ABI-derived core;
 - external laboratory reproduction; or
-- a clean public release containing the staged R97/V1089 review payloads until
-  the audit-response commit and its Git-LFS objects are durably pushed;
+- one coherent public final artifact whose quality, runtime, portability, and
+  external-review evidence all come from the same lineage;
 - Assumption-free theorem-level mathematical proof over all possible models.
 - Automatic transfer to a new target model without an ABI compatibility certificate.
 

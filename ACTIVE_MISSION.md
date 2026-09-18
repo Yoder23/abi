@@ -1,6 +1,10 @@
 # Active mission
 
-Updated: 2026-09-14
+Updated: 2026-09-18
+
+New readers should use [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md) for
+the concise dashboard and [`docs/README.md`](docs/README.md) for navigation.
+This file retains the detailed campaign mission and constraints.
 
 ## Status
 
@@ -9,6 +13,8 @@ Updated: 2026-09-14
 `V1089_LOCAL_COMPILER_PHASES_0_TO_7_MACHINE_COMPLETE_PHASE8_EXTERNAL_BLOCKED`
 
 `INDEPENDENT_AUDIT_FULL_MOONSHOT_NOT_PROVEN_PUBLIC_CLONE_REPAIR_PENDING_REVIEW`
+
+`PEER_REVIEW_CANDIDATE_BINDING_REPAIR_READY_HUMAN_RATINGS_ZERO_OF_21000`
 
 ABI R7 has passed local strict validation, pre-public hostile validation,
 durable public publication, clean public-manifest reconstruction, post-public

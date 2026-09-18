@@ -1,11 +1,17 @@
 # Current project status
 
-Updated: 2026-09-14
+Updated: 2026-09-18
+
+For a concise dashboard, start with
+[`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md). This longer document keeps
+the detailed campaign interpretation and disclosed replay limitations.
 
 ## Executive status
 
 ABI R7 has passed bounded technical validation and public reproducibility on
-the development hardware. Human and different-hardware review are open.
+the development hardware. The current default branch is a later peer-review
+candidate. Human and different-hardware review are open, and the controlling
+whole-moonshot verdict remains `FULL_MOONSHOT_NOT_PROVEN`.
 
 The subsequent V1089 compiler campaign has finished its registered local
 machine program through Phase 7 and a same-machine Phase 8 clean-export

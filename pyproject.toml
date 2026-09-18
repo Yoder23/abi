@@ -54,6 +54,9 @@ dev = [
 
 [project.urls]
 Repository = "https://github.com/Yoder23/abi"
+Documentation = "https://github.com/Yoder23/abi/tree/master/docs"
+Changelog = "https://github.com/Yoder23/abi/blob/master/CHANGELOG.md"
+Issues = "https://github.com/Yoder23/abi/issues"
 
 [project.scripts]
 abi = "abi.__main__:main"

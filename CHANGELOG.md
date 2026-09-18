@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-09-18
+
+- Added a task-oriented documentation front door, concise project dashboard,
+  tested getting-started guide, and fail-closed Markdown link checker.
+- Reduced the root README to the supported alpha API, current evidence
+  lineages, exact claim ceiling, and reviewer/user entry points; the detailed
+  research record remains preserved under `docs/`, `results/`, and `reviews/`.
+- Added an additive V2 repair for the still-unexecuted Phase 2 human-scoring
+  implementation binding. It removes only the stale non-scientific
+  `pyproject.toml` byte binding while preserving the sealed packet and every
+  custody, scoring, threshold, validation, interpretation, and seed rule.
+- Reconfirmed that the human packet contains 21,000 blind, unrated rows. This
+  repair creates no human-quality, Phase 2, Phase 8, release, or moonshot pass.
+- Documented the intended immutable peer-review candidate tag without changing
+  the controlling R7 release or combining R7, V1089, R97, and R21-R23 evidence.
+
 ## 2026-09-14
 
 - Preserved the independent moonshot audit and all four external receipts

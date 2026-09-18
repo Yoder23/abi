@@ -1,6 +1,13 @@
 # Research status
 
-Updated: 2026-09-14
+Updated: 2026-09-18
+
+The concise dashboard is [`PROJECT_STATUS.md`](PROJECT_STATUS.md). This file
+retains the detailed interpretation of later research lineages.
+
+The still-unexecuted 21,000-row human protocol now has an additive V2
+implementation-binding repair. The sealed packet and scientific protocol are
+unchanged, and completed preferences remain 0/21,000.
 
 ## Current certification boundary
 
