@@ -99,6 +99,7 @@ external_reproduction/raw/
 # and may remain in a local checkout without appearing as untracked files.
 /catalogs/
 /*.json
+!/ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_SCORING_BINDING_REPAIR_V2.json
 /*.py
 /*.md
 !/README.md

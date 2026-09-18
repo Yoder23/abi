@@ -16,20 +16,34 @@ from abi.capability_compiler_phase2_human_ratings import (
     verify_scored_manifest,
 )
 
-
 CANDIDATES = ("L0", "L1", "D0", "D1", "D2")
 
 
 def test_human_scoring_preregistration_bindings_and_zero_ratings():
     root = Path(__file__).resolve().parents[1]
-    protocol = json.loads(
-        (root / "ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_SCORING_PROTOCOL_V1.json").read_text(
-            encoding="utf-8"
-        )
-    )
-    assert protocol["status"] == "PREREGISTERED_BEFORE_ANY_HUMAN_RATING_WAS_COMPLETED"
-    for relative, expected in protocol["implementation_bindings"].items():
+    protocol_path = root / "ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_SCORING_PROTOCOL_V1.json"
+    repair_path = root / "ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_SCORING_BINDING_REPAIR_V2.json"
+    protocol = json.loads(protocol_path.read_text(encoding="utf-8"))
+    repair = json.loads(repair_path.read_text(encoding="utf-8"))
+    assert repair["status"] == "PREREGISTERED_BINDING_REPAIR_BEFORE_ANY_HUMAN_RATING"
+    assert sha256_file(protocol_path) == repair["base_protocol_sha256"]
+    assert repair["scientific_protocol_changed"] is False
+    assert repair["sealed_packet_changed"] is False
+    assert repair["completed_preferences_before_repair"] == 0
+    assert repair["superseded_non_scientific_binding"] == {
+        "path": "pyproject.toml",
+        "reason": "repository test collection is not part of human scoring semantics",
+        "original_sha256": protocol["implementation_bindings"]["pyproject.toml"],
+    }
+    for relative, expected in repair["effective_implementation_bindings"].items():
         assert sha256_file(root / relative) == expected
+    assert repair["preserved_scoring_contract"] == {
+        "validation": protocol["validation"],
+        "scoring": protocol["scoring"],
+        "interpretation": protocol["interpretation"],
+        "custody": protocol["custody"],
+    }
+    assert protocol["status"] == "PREREGISTERED_BEFORE_ANY_HUMAN_RATING_WAS_COMPLETED"
     packet = root / protocol["sealed_packet"]["path"]
     assert sha256_file(packet) == protocol["sealed_packet"]["sha256"]
     packet_dir = packet.parent

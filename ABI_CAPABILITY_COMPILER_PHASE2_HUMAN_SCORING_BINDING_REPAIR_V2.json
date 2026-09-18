@@ -1,0 +1,78 @@
+{
+  "format": "abi-capability-compiler-phase2-human-scoring-binding-repair/2",
+  "status": "PREREGISTERED_BINDING_REPAIR_BEFORE_ANY_HUMAN_RATING",
+  "effective_date": "2026-09-16",
+  "base_protocol": "ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_SCORING_PROTOCOL_V1.json",
+  "base_protocol_sha256": "5e53df940a518c04f4f90f9561500880c3389258392c7f9894f7328415ad7a64",
+  "completed_preferences_before_repair": 0,
+  "scientific_protocol_changed": false,
+  "sealed_packet_changed": false,
+  "repair_scope": "Replace one non-scientific repository test-collection binding with direct scoring, evidence, packet, and verifier bindings. Preserve the original protocol and every custody, validation, scoring, interpretation, threshold, seed, and sealed-packet rule.",
+  "preserved_failure": {
+    "test": "tests/test_capability_compiler_phase2_human_ratings.py::test_human_scoring_preregistration_bindings_and_zero_ratings",
+    "observed": "The V1 protocol bound pyproject.toml by raw workspace SHA-256. Later additive test-collection changes and platform line-ending materialization changed that hash without changing human scoring semantics.",
+    "disposition": "FAIL_CLOSED_AND_VERSIONED_REPAIR"
+  },
+  "superseded_non_scientific_binding": {
+    "path": "pyproject.toml",
+    "reason": "repository test collection is not part of human scoring semantics",
+    "original_sha256": "1b3053bfc6cb7aa319e0752d736b5508ef8a28b139e9d5406207d3953fccfb18"
+  },
+  "effective_implementation_bindings": {
+    "abi/capability_compiler_phase2_human_ratings.py": "91d98dc85e4a11f96b3b0799db987332176219b62f2d36ff7a0092c8de5bb2ce",
+    "abi/capability_compiler_phase2_evidence.py": "3512f1a3af45b1686175c13cc57362b732aac7c87c062672ad1050c310265409",
+    "tests/test_capability_compiler_phase2_human_ratings.py": "ab1810c6b07ea6eb411597db3c45633960738d521e6c5126c02befdc8bdb7b6a",
+    "results/abi_capability_compiler_phase2/human_rating_packet_v1/manifest.json": "06c1e9e0f8f4f938cd020686fff7ac8470e8cff4a3d3fe294a0b0c003e2c69aa"
+  },
+  "preserved_scoring_contract": {
+    "validation": {
+      "non_rating_fields_must_equal_sealed_template": true,
+      "no_added_or_removed_fields": true,
+      "preference_values": ["A", "B", "TIE", "BOTH_UNACCEPTABLE"],
+      "all_fluency_and_grounding_scores_required": true,
+      "score_range_inclusive": [1, 5],
+      "all_repetition_flags_required_boolean": true,
+      "comments_optional_text_or_null": true,
+      "post_lock_form_or_attestation_change_rejected": true,
+      "unblinding_before_valid_lock_rejected": true
+    },
+    "scoring": {
+      "candidate_win_credit": 1.0,
+      "tie_credit": 0.5,
+      "reference_win_credit": 0.0,
+      "both_unacceptable_credit": 0.0,
+      "cluster_unit": "candidate_prompt_pair_mean_across_three_raters",
+      "stratification": "equal_mean_across_fourteen_English_capabilities",
+      "bootstrap": "paired_prompt_level_cluster_bootstrap_with_replacement_within_capability",
+      "bootstrap_resamples": 10000,
+      "bootstrap_seed": 1729,
+      "confidence_level": 0.95,
+      "interval": "empirical_percentile_2.5_and_97.5",
+      "candidate_preference_lower_bound_minimum": 0.45,
+      "diagnostics": [
+        "candidate_and_reference_mean_fluency",
+        "candidate_and_reference_mean_grounding_and_adherence",
+        "candidate_and_reference_repetition_or_collapse_rate",
+        "raw_preference_counts"
+      ]
+    },
+    "interpretation": {
+      "workflow_pass": "All 21000 ratings are valid, independently attested, locked while blinded, reproducibly unblinded, and reproducibly scored.",
+      "system_thresholds_reported_individually": true,
+      "weak_baseline_below_threshold_does_not_invalidate_measurement": true,
+      "no_ABI_superiority_claim_authorized": true,
+      "phase2_certificate_requires_workflow_pass_and_all_other_existing_phase2_gates": true
+    },
+    "custody": {
+      "one_complete_form_per_human": true,
+      "distinct_humans_required": 3,
+      "answer_key_hidden_until_all_forms_locked": true,
+      "cross_rater_ratings_hidden_until_all_forms_locked": true,
+      "completed_forms_preserved_separately_from_templates": true,
+      "distinct_rater_identifiers_and_attestations_required": true,
+      "custodian_must_verify_three_distinct_people": true,
+      "machine_limit": "Software can verify declarations, distinct identifiers, hashes, schema, completeness, and lock ordering. It cannot independently prove that a declared identity is a human or that off-system collusion did not occur; the named custodian owns that evidence."
+    }
+  },
+  "claim_boundary": "This repair establishes a portable implementation binding for the still-unexecuted human protocol. It creates no ratings, human-quality result, Phase 2 pass, Phase 8 pass, release certification, or full-moonshot claim."
+}
