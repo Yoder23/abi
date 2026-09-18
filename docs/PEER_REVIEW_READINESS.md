@@ -59,7 +59,7 @@ release certification, or full-moonshot claim.
 
 ## Immutable review identity
 
-The intended tag is `abi-peer-review-candidate-v1-2026-09-18`. Before review,
+The intended tag is `abi-peer-review-candidate-v2-2026-09-18`. Before review,
 verify that the annotated tag is public, resolve its peeled commit, clone it
 into a new directory, pull Git LFS, and follow the exact lineage-specific host
 requirements in the independent-review handoff.
@@ -74,3 +74,9 @@ requirements in the independent-review handoff.
 6. [`PHASE2_HUMAN_RATING_HANDOFF_V1.md`](PHASE2_HUMAN_RATING_HANDOFF_V1.md)
 7. [`PHASE8_EXTERNAL_REPRODUCTION_V1.md`](PHASE8_EXTERNAL_REPRODUCTION_V1.md)
 8. [`../ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_SCORING_BINDING_REPAIR_V2.json`](../ABI_CAPABILITY_COMPILER_PHASE2_HUMAN_SCORING_BINDING_REPAIR_V2.json)
+
+The earlier `abi-peer-review-candidate-v1-2026-09-18` tag is retained
+immutably. A Windows clone exposed three historical JSON blobs whose stored
+CRLF bytes conflicted with later `eol=lf` path overrides. V2 removes only those
+three overrides, preserves the evidence bytes, and checks the files out
+without a false dirty-worktree signal.

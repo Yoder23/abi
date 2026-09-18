@@ -7,7 +7,7 @@ It is not certified as the full ABI moonshot, and repository reproducibility
 must be re-established from a new public clone.
 
 The intended immutable review identity is the annotated tag
-`abi-peer-review-candidate-v1-2026-09-18`. Resolve and record its peeled commit
+`abi-peer-review-candidate-v2-2026-09-18`. Resolve and record its peeled commit
 before running any command. The tag does not supersede R7 as the controlling
 public scientific release.
 

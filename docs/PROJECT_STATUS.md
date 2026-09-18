@@ -53,7 +53,7 @@ scientific promotion.
 ## Review identity
 
 The intended review tag for this documentation and binding repair is
-`abi-peer-review-candidate-v1-2026-09-18`. Reviewers must verify the tag's
+`abi-peer-review-candidate-v2-2026-09-18`. Reviewers must verify the tag's
 peeled commit, fetch Git LFS, use the exact sibling LayerCake commits specified
 by the handoff, and report missing assets as failures.
 

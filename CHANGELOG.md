@@ -15,6 +15,10 @@
   repair creates no human-quality, Phase 2, Phase 8, release, or moonshot pass.
 - Documented the intended immutable peer-review candidate tag without changing
   the controlling R7 release or combining R7, V1089, R97, and R21-R23 evidence.
+- Preserved the first review tag after a public Windows clone exposed three
+  historical CRLF JSON blobs with conflicting `eol=lf` overrides. Review
+  candidate V2 removes only those overrides; evidence bytes are unchanged and
+  fresh Windows checkout no longer reports false content modifications.
 
 ## 2026-09-14
 
