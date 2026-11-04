@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-11-04
+
+- Preregistered and launched the additive R98 GPU English-acquisition pilot,
+  with matched source information, seed, sample order and padded training
+  workload for ABI planning, sequence distillation and conventional LoRA.
+- Froze 192 training and 48 development prompts and 695 input file identities
+  before source capture. Added 13 focused tests and default test collection.
+- Recorded the full inherited parent footprint and distinct ABI source,
+  acquisition, and host-integration failure boundaries. Preserved the first
+  empty sandbox launch and the successful persistent launch.
+- Kept English fluency, human quality, production host acceptance and all
+  whole-moonshot claims open pending their own evidence.
+
 ## 2026-09-18
 
 - Added a task-oriented documentation front door, concise project dashboard,

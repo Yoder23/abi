@@ -1,12 +1,23 @@
 # ABI claim ledger
 
-Status date: 2026-09-18
+Status date: 2026-11-04
 
 Documentation cannot widen a machine-readable certificate. Each claim below is
 limited to its exact source, artifact, implementation, benchmark, and evidence
 identity.
 
 ## Current claims
+
+### R98 active acquisition pilot: no new quality claim
+
+The [R98 protocol](experiments/plan_english_r98/PROTOCOL.md) and
+[launch record](docs/R98_ENGLISH_PILOT.md) register a bounded plan-supervised
+English experiment against matched LoRA and sequence-distillation controls.
+The unchanged parent passed a cached/full-forward mechanics check; live source
+acquisition has started. These facts establish neither a fluent English core
+nor ABI superiority. The inherited 87,710,428-parameter parent counts in full.
+Mechanical lexical/format screening cannot substitute for human fluency,
+semantic entailment, same-artifact CPU gates or a successor LayerCake seal.
 
 ### Controlling whole-moonshot verdict
 

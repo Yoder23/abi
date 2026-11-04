@@ -10,6 +10,8 @@ weight accounting. Its [protocol](../experiments/plan_english_r98/PROTOCOL.md)
 requires source qualification before training and keeps mechanical content
 screens separate from human fluency. Results are additive; no prior campaign
 gate or whole-moonshot verdict is promoted by starting this work.
+The [R98 launch record](R98_ENGLISH_PILOT.md) identifies the frozen inputs,
+passed parent mechanics, live GPU acquisition, and progress files.
 
 ## Verdict
 

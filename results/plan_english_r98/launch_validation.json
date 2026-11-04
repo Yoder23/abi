@@ -1,0 +1,23 @@
+{
+  "format": "abi-r98-launch-validation-observation/1",
+  "date": "2026-11-04",
+  "scope": "Operator record of launch and test commands; not a scientific certificate",
+  "focused_tests": {"passed": 13, "failed": 0},
+  "ruff_changed_files": "PASS",
+  "default_suite_cpu_only": {"passed": 169, "skipped": 4, "failed": 2, "setup_errors": 16},
+  "sandbox_permission_failure_rerun": {"module": "tests/test_capability_pipeline.py", "passed": 10, "failed": 0},
+  "historical_phase7_binding_errors": {
+    "count": 16,
+    "path": "../layercake_release/layercake/cake/package.py",
+    "expected_sha256": "405043c99e52817709aec21cbeb906a8de651f3e9d68850a5b1f18c1294be0dc",
+    "current_sha256": "48367e0469ca816cd5016e44750b2ad48b5fc3cab0e113615d96b71ac74009ef",
+    "historical_evidence_modified": false
+  },
+  "launch_attempts": [
+    {"pid": 18412, "outcome": "exited before launch evidence", "logs": ["pilot.stdout.log", "pilot.stderr.log"]},
+    {"pid": 20972, "outcome": "parent mechanics passed; live source capture observed", "logs": ["pilot.attempt2.stdout.log", "pilot.attempt2.stderr.log"]}
+  ],
+  "full_default_suite_pass_claimed": false,
+  "english_quality_claimed": false,
+  "full_moonshot_proven": false
+}

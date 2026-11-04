@@ -18,6 +18,8 @@ goal rather than reading the campaign archive in filename order.
 
 - [Active R98 English pilot](../experiments/plan_english_r98/PROTOCOL.md) defines
   the current bounded experiment and its matched acquisition controls.
+- [R98 launch record](R98_ENGLISH_PILOT.md) gives exact identities and monitoring
+  commands for the new experiment.
 - [Project status](PROJECT_STATUS.md) is the concise state dashboard.
 - [Claims](../CLAIMS.md) defines what the evidence does and does not support.
 - [Architecture](architecture.md) explains the compiler/host boundary.
