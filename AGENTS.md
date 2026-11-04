@@ -262,6 +262,13 @@ arbitrary teacher.
 
 ## Next authorized work
 
+Active user authorization (2026-11-04): execute only the bounded R98
+plan-supervised English pilot in `experiments/plan_english_r98/PROTOCOL.md`,
+with matched LoRA and sequence-distillation controls. Freeze code/data before
+capture; stop at failed prerequisites; preserve every result. It is an additive
+ABI acquisition experiment, with no LayerCake source changes and no inherited
+release claims. An automatic machine screen cannot certify English fluency.
+
 1. Execute the frozen human-rating packet with three independent raters.
 2. Run the external reproduction packet on genuinely different hardware.
 3. Execute registered minimum-information certification.

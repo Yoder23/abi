@@ -16,6 +16,8 @@ goal rather than reading the campaign archive in filename order.
 
 ## Canonical current documents
 
+- [Active R98 English pilot](../experiments/plan_english_r98/PROTOCOL.md) defines
+  the current bounded experiment and its matched acquisition controls.
 - [Project status](PROJECT_STATUS.md) is the concise state dashboard.
 - [Claims](../CLAIMS.md) defines what the evidence does and does not support.
 - [Architecture](architecture.md) explains the compiler/host boundary.

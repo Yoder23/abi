@@ -1,6 +1,15 @@
 # ABI project status
 
-Status date: 2026-09-18
+Status date: 2026-11-04
+
+## Active work
+
+R98 is the newly authorized bounded GPU pilot for plan-supervised English
+acquisition, with matched LoRA/distillation controls and explicit inherited-
+weight accounting. Its [protocol](../experiments/plan_english_r98/PROTOCOL.md)
+requires source qualification before training and keeps mechanical content
+screens separate from human fluency. Results are additive; no prior campaign
+gate or whole-moonshot verdict is promoted by starting this work.
 
 ## Verdict
 

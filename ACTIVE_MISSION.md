@@ -1,6 +1,19 @@
 # Active mission
 
-Updated: 2026-09-18
+Updated: 2026-11-04
+
+## Active bounded experiment: R98
+
+The user authorized one new GPU English-acquisition pilot. The controlling
+protocol is [R98](experiments/plan_english_r98/PROTOCOL.md): learned supplied-
+proposition planning followed by autonomous English generation, compared with
+matched direct sequence distillation, conventional LoRA, and an unchanged
+LayerCake parent. All inherited weights and information are accounted for.
+Source qualification precedes training. Mechanical language proxies cannot
+certify fluency; broad English, human quality, CPU gates and production host
+acceptance remain open. Preserve failed prerequisites and attribute them to
+the measured source/acquisition/integration boundary. No LayerCake source
+changes or larger follow-on campaigns are authorized by this pilot.
 
 New readers should use [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md) for
 the concise dashboard and [`docs/README.md`](docs/README.md) for navigation.
