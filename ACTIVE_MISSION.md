@@ -2,7 +2,15 @@
 
 Updated: 2026-11-05
 
-## Latest bounded experiment: R99-FP32 closed, no candidate promoted
+## Active diagnostic: R99-D1; R99-FP32 remains closed
+
+The continuation starts with the preregistered
+[fit/grounding diagnostic](experiments/grounded_english_r99/FIT_AUDIT.md):
+24 balanced training examples and all 48 existing development examples, all
+three final learners and unchanged parent. No new optimization or teacher
+queries. Separate teacher-forced token prediction from autonomous generation
+before selecting the next representation. This is not a new quality test or
+permission to resume the failed JSON-plan mechanism.
 
 The user authorized continued bounded research and versioned publication.
 [R98](experiments/plan_english_r98/PROTOCOL.md) stopped at its source gate:

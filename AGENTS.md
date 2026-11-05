@@ -287,6 +287,14 @@ failures, with a fresh preregistration and evaluation; do not automatically
 scale this mechanism. No candidate is promoted. An automatic machine screen
 cannot certify English fluency.
 
+Continuation authorization (2026-11-05): before another learner, execute only
+the additive `experiments/grounded_english_r99/FIT_AUDIT.md` diagnostic. It
+compares autonomous training-example generation with teacher-forced response
+and supplied-fact token prediction on the frozen checkpoints, with zero new
+training or teacher queries. It cannot reopen the generated-plan branch or
+promote an oracle-prefix score as autonomous quality. A successor still needs
+a new representation, fresh prospective evaluation and matched controls.
+
 1. Execute the frozen human-rating packet with three independent raters.
 2. Run the external reproduction packet on genuinely different hardware.
 3. Execute registered minimum-information certification.
