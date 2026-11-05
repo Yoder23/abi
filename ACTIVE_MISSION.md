@@ -2,6 +2,15 @@
 
 Updated: 2026-11-05
 
+## Active bounded diagnostic: R101
+
+The user authorized the next diagnostic and publication. Follow
+[R101](experiments/execution_continuation_r101/PROTOCOL.md): fixed checkpoints,
+zero training/teacher calls, raw-logit execution-path comparisons and paired
+oracle-prefix continuation. Keep assisted diagnostics separate from autonomous
+quality and ABI integration separate from native LayerCake defects. Preserve
+all negative evidence. Broad English and the full moonshot remain unproven.
+
 ## Latest completed control: R100 negative; R99-FP32 remains closed
 
 The continuation starts with the preregistered

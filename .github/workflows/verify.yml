@@ -33,4 +33,5 @@ jobs:
           tests/test_grounded_english_r99.py
           tests/test_r99_fit_audit.py
           tests/test_acquisition_capacity_r100.py
+          tests/test_execution_continuation_r101.py
       - run: python -m build

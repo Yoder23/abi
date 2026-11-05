@@ -315,6 +315,15 @@ The next proposal must prospectively distinguish acquisition data, optimization,
 parent suitability and autonomous realization, with matched controls and no
 historical gate changes. This control certifies no product or moonshot claim.
 
+New user authorization (2026-11-05): run one bounded diagnostic to isolate the
+acquisition failure, document and publish it. R101 is governed by
+`experiments/execution_continuation_r101/PROTOCOL.md`: no training or teacher
+queries; test full/padded/cached path agreement and correct-prefix continuation
+on fixed full-model, LoRA, distillation and parent checkpoints. Oracle-assisted
+outputs cannot count as autonomous English. Path disagreement is an integration
+finding requiring localization, not automatically a native LayerCake defect.
+No historical changes, new parameter sweep or automatic training follow-on.
+
 1. Execute the frozen human-rating packet with three independent raters.
 2. Run the external reproduction packet on genuinely different hardware.
 3. Execute registered minimum-information certification.
