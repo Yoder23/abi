@@ -1,0 +1,13 @@
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|##5       | 1/4 [00:01<00:03,  1.21s/it]Loading checkpoint shards:  50%|#####     | 2/4 [00:02<00:02,  1.21s/it]Loading checkpoint shards:  75%|#######5  | 3/4 [00:03<00:01,  1.30s/it]Loading checkpoint shards: 100%|##########| 4/4 [00:05<00:00,  1.30s/it]Loading checkpoint shards: 100%|##########| 4/4 [00:05<00:00,  1.28s/it]
+Traceback (most recent call last):
+  File "C:\Python310\lib\runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Python310\lib\runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "C:\Python310\layercake_merged_nextgen_perfectA_option1_full_ready\abi_release\experiments\grounded_english_r99\run.py", line 436, in <module>
+    main()
+  File "C:\Python310\layercake_merged_nextgen_perfectA_option1_full_ready\abi_release\experiments\grounded_english_r99\run.py", line 419, in main
+    engine.student(args.arm)
+  File "C:\Python310\layercake_merged_nextgen_perfectA_option1_full_ready\abi_release\experiments\plan_english_r98\run.py", line 379, in student
+    raise RuntimeError(
+RuntimeError: ABI_OPTIMIZATION_FAILURE: non-finite gradients; no unpaired retries
