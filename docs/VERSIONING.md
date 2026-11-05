@@ -58,6 +58,6 @@ not live inference, human ratings or independent-hardware reproduction.
 - Publish exact raw evidence and required artifacts before claiming public replay.
 - Require scientific gates separately from tests, tags, builds and CI status.
 
-R7, V1089, R97 and R98/C1 remain distinct lineages. The whole-moonshot verdict
+R7, V1089, R97, R98/C1 and R99 remain distinct lineages. The whole-moonshot verdict
 is `FULL_MOONSHOT_NOT_PROVEN`. [LayerCake](https://github.com/Yoder23/layercake)
 owns host certification; ABI does not inherit its runtime certificates.

@@ -21,9 +21,15 @@ is counted; no earlier LayerCake performance certificate is inherited.
 
 `FULL_MOONSHOT_NOT_PROVEN`
 
-The repository is ready to be sealed as a bounded peer-review candidate after
-its current tests, build, and clean-clone checks pass. That readiness is not a
-scientific promotion.
+The November bounded research snapshot is published as
+[`abi-research-2026-11-05`](https://github.com/Yoder23/abi/releases/tag/abi-research-2026-11-05).
+Its local review suites passed 219 tests with four documented skips; package
+builds, documentation checks and GitHub CI passed. Fresh public clones then
+matched all 738 frozen inputs and 50 required assets, recomputed the negative
+result, and passed 45 focused/adversarial tests. See the
+[reconstruction receipt](R99_REVIEW.md#published-reconstruction).
+This same-machine evidence replay is not a scientific promotion, fresh model
+training, live generation replication, or independent-hardware validation.
 
 ## Evidence dashboard
 
@@ -69,10 +75,16 @@ scientific promotion.
 
 ## Review identity
 
-The intended review tag for this documentation and binding repair is
-`abi-peer-review-candidate-v3-2026-09-18`. Reviewers must verify the tag's
-peeled commit, fetch Git LFS, use the exact sibling LayerCake commits specified
-by the handoff, and report missing assets as failures.
+The current bounded English review tag is `abi-research-2026-11-05`, peeled
+commit `e230fe298d46db2894680b6d518fa0bf98751c41`. Follow
+[the R99 reproduction packet](R99_REVIEW.md), fetch its required Git LFS
+objects, and report missing assets as failures. Its expected verdict is
+`ABI_ACQUISITION_PILOT_FAILED`.
+
+The historical documentation/binding-repair tag
+`abi-peer-review-candidate-v3-2026-09-18` remains unchanged. Its independent
+review handoff and lineage-specific LayerCake revisions do not become R99
+evidence merely because they share this repository.
 
 For full detail, continue with [CLAIMS.md](../CLAIMS.md), [research
 status](research-status.md), and the [independent-review

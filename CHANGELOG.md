@@ -17,6 +17,10 @@
   continue to fail closed.
 - Added explicit package/interface/review-tag versioning and current research
   navigation. No full-moonshot, fluent-core or universal superiority claim.
+- Published `abi-research-2026-11-05` with all required final checkpoints.
+  Fresh public clones matched 738 frozen inputs and 50 review assets,
+  recomputed the negative result, and passed 45 focused/adversarial tests.
+  Published the same-machine reconstruction receipt without moving the tag.
 
 ## 2026-11-04
 

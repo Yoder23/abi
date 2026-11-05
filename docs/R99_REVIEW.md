@@ -50,6 +50,32 @@ research commands. Do not run them into existing evidence paths. A new live
 replication requires a new output namespace and a separately recorded lineage;
 the commands above recompute retained evidence, not independent hardware.
 
+## Published reconstruction
+
+On 2026-11-05, new public Git clones of this review tag and
+`layercake-review-2026-11-05` were reconstructed without copying development
+assets. The latter tag has the same bound host Python bytes as `a244588`;
+its later changes are documentation-only. Required checkpoint objects were
+downloaded separately from GitHub LFS.
+
+All 50 manifest assets matched their exact hashes and sizes (1,419,854,427
+bytes); all 738 frozen inputs matched. C1 audit, R99 source verification and
+the full FP32 evidence verifier succeeded, reproducing
+`ABI_ACQUISITION_PILOT_FAILED`. Both checkouts remained clean, documentation
+checks passed, and 45 focused/adversarial tests passed in the public checkout.
+
+- [Machine-readable reconstruction receipt](https://github.com/Yoder23/abi/releases/download/abi-research-2026-11-05/public_reconstruction_receipt.json)
+  SHA-256: `e82458a4257c09f9a3e00ec9c9aab2bdf80d235c96d42164884b9492ff42bbb7`.
+- [Reconstruction script](https://github.com/Yoder23/abi/releases/download/abi-research-2026-11-05/verify_public_review.py).
+- [Focused test receipt](https://github.com/Yoder23/abi/releases/download/abi-research-2026-11-05/public-focused-tests.xml).
+
+Scope: the same Windows machine, installed Python dependencies and cached
+pinned public teacher tokenizer were reused. This proves public availability
+and raw-evidence recomputation for the bounded negative pilot, not a fresh
+training run, live generation replication, a dependency-isolated environment,
+independent hardware or full-campaign reproduction. The receipt was added to
+the release after publication; the annotated source tag was not changed.
+
 ## What to challenge
 
 - Every source span must come from the stored teacher response.

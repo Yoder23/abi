@@ -4,7 +4,7 @@ Status date: 2026-11-05
 
 ## Verdict
 
-`READY_FOR_BOUNDED_PEER_REVIEW_AFTER_TAG_PUBLICATION`
+`BOUNDED_RESEARCH_REVIEW_TAG_PUBLISHED`
 
 `FULL_MOONSHOT_NOT_PROVEN`
 
@@ -19,6 +19,15 @@ the exact-source test runner, and [R99](R99_ENGLISH_PILOT.md) for the latest
 acquisition experiment. Source qualification, numerical validation and model
 quality are reported separately. No current research snapshot supersedes R7's
 bounded technical release or promotes whole-moonshot certification.
+
+The November tag is public. Its review suites passed 219 tests with four
+documented skips; its sdist/wheel, documentation checks and GitHub CI passed.
+The three failed final learner checkpoints are retained through Git LFS.
+Fresh public clones matched 738 frozen inputs and all 50 required assets,
+recomputed the negative result, and passed 45 focused/adversarial tests. The
+[public receipt](R99_REVIEW.md#published-reconstruction) records the shared
+machine, installed dependencies and cached pinned public tokenizer. This is
+not independent hardware, live generation replication or human English quality.
 
 ## Historical September candidate checks
 
@@ -67,10 +76,17 @@ release certification, or full-moonshot claim.
 
 ## Immutable review identity
 
-The intended tag is `abi-peer-review-candidate-v3-2026-09-18`. Before review,
-verify that the annotated tag is public, resolve its peeled commit, clone it
-into a new directory, pull Git LFS, and follow the exact lineage-specific host
-requirements in the independent-review handoff.
+The current research tag is
+[`abi-research-2026-11-05`](https://github.com/Yoder23/abi/releases/tag/abi-research-2026-11-05),
+peeled commit `e230fe298d46db2894680b6d518fa0bf98751c41`. Follow
+[R99_REVIEW.md](R99_REVIEW.md) for the negative English pilot. Clone the tag
+into a new directory, pull the required Git LFS objects, and use its exact
+host sources and tokenizer. Do not substitute a pointer file for a checkpoint.
+
+`abi-peer-review-candidate-v3-2026-09-18` is the historical September
+documentation/binding repair, not the current English pilot. Its earlier
+independent-review handoff retains its own exact lineage-specific host
+requirements.
 
 ## Reviewer entry points
 
