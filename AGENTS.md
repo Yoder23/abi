@@ -305,6 +305,16 @@ distillation capacity control, unchanged parent/data/seed/update count, matched
 retained controls and new prospective development prompts. It cannot promote
 an ABI product and authorizes no sweep or subsequent automatic run.
 
+R100 completed and failed every registered screen: full-model control 20/48,
+LoRA 20/48, adapter distillation 14/48, ABI plan 6/48, parent 0/48; full-control
+training fit 17/24. The full optimizer intervention changed 86,969,088 parameter
+elements, but did not establish a strictly positive paired training gain over
+both response-only controls. Preserve all evidence. Do not repeat full-scope
+or generated-plan variants or infer data insufficiency/host incapacity as proven.
+The next proposal must prospectively distinguish acquisition data, optimization,
+parent suitability and autonomous realization, with matched controls and no
+historical gate changes. This control certifies no product or moonshot claim.
+
 1. Execute the frozen human-rating packet with three independent raters.
 2. Run the external reproduction packet on genuinely different hardware.
 3. Execute registered minimum-information certification.

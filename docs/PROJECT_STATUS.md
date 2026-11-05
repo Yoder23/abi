@@ -8,9 +8,12 @@ The additive [R99-D1 fit audit](../experiments/grounded_english_r99/FIT_AUDIT.md
 completed without changing any model: training-example passes were 7/24 ABI
 plan, 12/24 distillation, 13/24 LoRA and 0/24 parent. Correct-prefix fact-token
 accuracy was high but visible-response fit remained limited. The next bounded
-[R100 control](../experiments/acquisition_capacity_r100/PROTOCOL.md) changes only
-optimizer parameter scope to all model parameters, with new development prompts.
-It tests an acquisition constraint, not ABI superiority or a host rewrite.
+[R100 control](R100_ACQUISITION_CAPACITY.md) changed only optimizer parameter
+scope to all model parameters, with new development prompts. It completed at
+20/48, equal to retained LoRA; adapter distillation reached 14/48, ABI plan
+6/48 and parent 0/48. The required score stayed 44/48. Its training fit was
+17/24 versus a required 22/24. All registered screens failed. No ABI product,
+host regression, or simple parameter-scope explanation is established.
 
 [R98 and its completion follow-up](R98_ENGLISH_PILOT.md) are preserved source
 failures: 206/240 and 226/240 mechanical passes, respectively. Neither trained
@@ -83,7 +86,11 @@ training, live generation replication, or independent-hardware validation.
 
 ## Review identity
 
-The current bounded English review tag is `abi-research-2026-11-05`, peeled
+The current diagnostic/control review tag is `abi-research-r100-2026-11-05`.
+Use [the R100 result and reproduction commands](R100_ACQUISITION_CAPACITY.md)
+and its hash-addressed public manifest; this tag certifies no product.
+
+The preceding bounded English review tag is `abi-research-2026-11-05`, peeled
 commit `e230fe298d46db2894680b6d518fa0bf98751c41`. Follow
 [the R99 reproduction packet](R99_REVIEW.md), fetch its required Git LFS
 objects, and report missing assets as failures. Its expected verdict is

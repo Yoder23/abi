@@ -31,4 +31,6 @@ jobs:
           tests/test_capability_segregation.py
           tests/test_plan_english_r98_completion.py
           tests/test_grounded_english_r99.py
+          tests/test_r99_fit_audit.py
+          tests/test_acquisition_capacity_r100.py
       - run: python -m build

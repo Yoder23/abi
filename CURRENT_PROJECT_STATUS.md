@@ -12,6 +12,13 @@ qualification, but the matched FP32 learner comparison failed after the numerica
 repair: ABI plan 10/48, distillation 20/48 and LoRA 27/48. None promotes broad
 English or the full moonshot. The plan branch is closed, not scaled further.
 
+The [R99 fit audit and R100 capacity control](docs/R100_ACQUISITION_CAPACITY.md)
+are now complete. R100 qualified its normalized source but failed all control
+screens: full-model fine-tuning 20/48, retained LoRA 20/48, adapter distillation
+14/48, ABI plan 6/48 and parent 0/48 on fresh prompts. Training fit was 17/24.
+Neither merely increasing trainable scope nor the prior generated plan supplies
+a qualified core. The acquisition bottleneck is not yet causally isolated.
+
 ## Executive status
 
 ABI R7 has passed bounded technical validation and public reproducibility on

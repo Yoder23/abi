@@ -14,6 +14,7 @@ CANONICAL_DOCUMENTS = (
     "docs/R98_ENGLISH_PILOT.md",
     "docs/R99_ENGLISH_PILOT.md",
     "docs/R99_REVIEW.md",
+    "docs/R100_ACQUISITION_CAPACITY.md",
     "CURRENT_PROJECT_STATUS.md",
     "ACTIVE_MISSION.md",
     "CLAIMS.md",

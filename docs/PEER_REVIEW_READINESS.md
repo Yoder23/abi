@@ -14,6 +14,11 @@ final-artifact proof.
 
 ## Current bounded research review
 
+The latest [R100 control](R100_ACQUISITION_CAPACITY.md) failed all registered
+screens. Its research tag is `abi-research-r100-2026-11-05`, not a product
+release. Local review passed 236 tests with four declared skips; the supported
+CI test list passed 57. Wheel and source distribution builds passed.
+
 See [versioning](VERSIONING.md) for the November annotated review snapshot and
 the exact-source test runner, and [R99](R99_ENGLISH_PILOT.md) for the latest
 acquisition experiment. Source qualification, numerical validation and model
@@ -76,7 +81,10 @@ release certification, or full-moonshot claim.
 
 ## Immutable review identity
 
-The current research tag is
+The latest diagnostic/control tag is `abi-research-r100-2026-11-05`; use
+[the R100 packet](R100_ACQUISITION_CAPACITY.md) for that negative result.
+
+The preceding research tag is
 [`abi-research-2026-11-05`](https://github.com/Yoder23/abi/releases/tag/abi-research-2026-11-05),
 peeled commit `e230fe298d46db2894680b6d518fa0bf98751c41`. Follow
 [R99_REVIEW.md](R99_REVIEW.md) for the negative English pilot. Clone the tag

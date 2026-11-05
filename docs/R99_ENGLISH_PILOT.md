@@ -2,6 +2,9 @@
 
 Status: 2026-11-05. **No fluent-English core has been certified.**
 
+The additive [R99-D1 fit diagnostic and R100 capacity control](R100_ACQUISITION_CAPACITY.md)
+follow this preserved failure. They do not edit or replace its result.
+
 ## What changed and why
 
 R98 and C1 could not qualify raw source emails. C1 resolved truncation but

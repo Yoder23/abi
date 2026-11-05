@@ -8,6 +8,17 @@ identity.
 
 ## Current claims
 
+### R99-D1 / R100: bounded diagnostic negatives, no product promotion
+
+The [fit diagnostic and full-scope control](docs/R100_ACQUISITION_CAPACITY.md)
+distinguish correct-prefix prediction from autonomous generation. The single
+R100 full-model control completed 384 finite updates but scored 20/48 on fresh
+development prompts, equal to retained LoRA, and 17/24 on training examples.
+All registered quality/fit/scope-sensitivity screens failed. This does not prove
+a LayerCake runtime regression, insufficient data, fundamental host incapacity
+or ABI superiority. Source qualification and successful optimization are not
+English-quality certification. No new artifact is promoted.
+
 ### R98/R99 acquisition pilots: no new model-quality claim
 
 The [R98 protocol](experiments/plan_english_r98/PROTOCOL.md) and

@@ -4,7 +4,8 @@
 | --- | --- | --- |
 | Python package | `0.4.0a1` | Supported alpha compiler API |
 | Controlling technical release | `abi-final-validation-v2-repaired-r7-2026-08-30` | Bounded R7 runtime/conformance proof |
-| Research review snapshot | `abi-research-2026-11-05` | R98/R99 research and review tooling; not a new scientific release |
+| Latest research review snapshot | `abi-research-r100-2026-11-05` | R99-D1/R100 diagnostics and negative capacity control; not a scientific promotion |
+| Previous research snapshot | `abi-research-2026-11-05` | Preserved R98/R99 research and public reconstruction |
 | Default branch | `master` | Moving development and research history |
 
 The package API has not changed in this research update, so its package version
@@ -18,8 +19,8 @@ a local tag as published:
 
 ```bash
 git fetch origin --tags
-git show --no-patch abi-research-2026-11-05
-git rev-parse 'abi-research-2026-11-05^{commit}'
+git show --no-patch abi-research-r100-2026-11-05
+git rev-parse 'abi-research-r100-2026-11-05^{commit}'
 git lfs pull
 git lfs fsck
 ```
@@ -44,11 +45,17 @@ and never checks out or modifies the live sibling. Missing Git objects, payloads
 or hashes fail closed. Direct `pytest` against a newer sibling still rejects
 stale Phase 7 bindings; this is intentional, not a gate to relax.
 
-November local review: 203 tests pass with four declared skips, plus 16/16
+R99 snapshot local review: 203 tests pass with four declared skips, plus 16/16
 historical Phase 7 tests in their exact-source fixture. See the
 [default receipt](../results/review_2026_11_05/abi-seal-default.xml) and
 [Phase 7 receipt](../results/review_2026_11_05/abi-seal-phase7.xml). These checks are
 not live inference, human ratings or independent-hardware reproduction.
+
+R100 local review: 220 default tests pass with four declared skips, plus 16/16
+historical Phase 7 tests. See the [default receipt](../results/review_2026_11_05/r100-preflight-default.xml),
+[Phase 7 receipt](../results/review_2026_11_05/r100-preflight-phase7.xml) and
+[57-test supported CI surface](../results/review_2026_11_05/r100-ci-surface.xml).
+The package version is unchanged because no supported API changed.
 
 ## Promotion policy
 
@@ -58,6 +65,6 @@ not live inference, human ratings or independent-hardware reproduction.
 - Publish exact raw evidence and required artifacts before claiming public replay.
 - Require scientific gates separately from tests, tags, builds and CI status.
 
-R7, V1089, R97, R98/C1 and R99 remain distinct lineages. The whole-moonshot verdict
+R7, V1089, R97, R98/C1, R99 and R100 remain distinct lineages. The whole-moonshot verdict
 is `FULL_MOONSHOT_NOT_PROVEN`. [LayerCake](https://github.com/Yoder23/layercake)
 owns host certification; ABI does not inherit its runtime certificates.

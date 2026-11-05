@@ -2,7 +2,7 @@
 
 Updated: 2026-11-05
 
-## Active control: R100; R99-FP32 remains closed
+## Latest completed control: R100 negative; R99-FP32 remains closed
 
 The continuation starts with the preregistered
 [fit/grounding diagnostic](experiments/grounded_english_r99/FIT_AUDIT.md):
@@ -19,6 +19,15 @@ was only 76-80% in the restricted learners despite 97-99% fact-token accuracy.
 optimizer-scope control under the same parent, training examples, seed and
 update count, with fresh development prompts and the retained controls.
 It is conventional fine-tuning for diagnosis, not a renamed ABI breakthrough.
+
+R100 completed: full-model control 20/48, retained LoRA 20/48, adapter
+distillation 14/48, ABI plan 6/48, parent 0/48. The full control's training fit
+was 17/24; useful-quality, training-fit and scope-sensitivity screens all failed.
+The source gate passed 232/240 and all 384 optimization steps were finite.
+Preserve the checkpoint and every negative row. Do not repeat full-unfreezing
+or JSON-plan variants. Data coverage, parent suitability, optimization adequacy
+and autonomous-realization drift remain unresolved; any next study must
+discriminate them prospectively, not assert a cause from this control.
 
 The user authorized continued bounded research and versioned publication.
 [R98](experiments/plan_english_r98/PROTOCOL.md) stopped at its source gate:

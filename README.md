@@ -40,6 +40,11 @@ public technical release remains
 [`abi-final-validation-v2-repaired-r7-2026-08-30`](https://github.com/Yoder23/abi/releases/tag/abi-final-validation-v2-repaired-r7-2026-08-30).
 The current default branch is a later peer-review candidate.
 
+The [R100 acquisition-capacity control](docs/R100_ACQUISITION_CAPACITY.md)
+also failed: full-model fine-tuning scored 20/48, equal to retained LoRA and
+below the unchanged 44/48 gate. More trainable weights alone did not solve this
+bounded acquisition problem. No new core or ABI superiority is promoted.
+
 Read the [project status](docs/PROJECT_STATUS.md) and [claim
 ledger](CLAIMS.md) before citing a result.
 

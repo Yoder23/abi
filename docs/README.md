@@ -16,6 +16,8 @@ goal rather than reading the campaign archive in filename order.
 
 ## Canonical current documents
 
+- [R100 capacity control and R99 fit audit](R100_ACQUISITION_CAPACITY.md)
+  separate acquisition fit from autonomous generation and host attribution.
 - [R98 result and history](R98_ENGLISH_PILOT.md) records the failed source
   prerequisite, exact identities, costs and preserved raw evidence.
 - [R98-C1 protocol](../experiments/plan_english_r98_completion/PROTOCOL.md)

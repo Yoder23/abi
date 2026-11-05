@@ -2,6 +2,14 @@
 
 ## 2026-11-05
 
+- Completed R99-D1 without training: autonomous fit remained limited even on
+  training examples, despite high correct-prefix fact-token accuracy.
+- Preregistered and completed R100's one full-model acquisition control on new
+  development prompts. It failed at 20/48, equal to retained LoRA; all quality,
+  training-fit and scope-sensitivity screens failed. Preserved every raw row and
+  final checkpoint. No ABI or LayerCake product claim changed.
+- Added 17 diagnostic/control tests and exact CI coverage. The full review now
+  passes 236 tests with four documented skips; the supported CI list passes 57.
 - Preserved R98 and C1 as failed source prerequisites with complete raw text,
   source token counts, hashes and negative-evidence audits. No student was
   trained by either run; neither failure is a LayerCake quality regression.
