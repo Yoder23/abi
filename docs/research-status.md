@@ -1,9 +1,14 @@
 # Research status
 
-Updated: 2026-09-18
+Updated: 2026-11-05
 
 The concise dashboard is [`PROJECT_STATUS.md`](PROJECT_STATUS.md). This file
 retains the detailed interpretation of later research lineages.
+
+The current acquisition series is documented in [R98/C1](R98_ENGLISH_PILOT.md)
+and [R99](R99_ENGLISH_PILOT.md). Source failures, source-normalization success,
+numerical failures and learner quality are separate outcomes. No broad-English
+or LoRA/distillation superiority claim is added by this series so far.
 
 The still-unexecuted 21,000-row human protocol now has an additive V2
 implementation-binding repair. The sealed packet and scientific protocol are

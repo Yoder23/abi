@@ -1,7 +1,49 @@
 # R98 English acquisition pilot
 
-Launch record: 2026-11-04. This page documents a running bounded experiment,
-not a fluent-core or release certificate.
+Launched 2026-11-04; reviewed 2026-11-05. R98 is closed at a failed source
+prerequisite, not a fluent-core or release certificate.
+
+## Completed result
+
+The frozen teacher produced 206/240 mechanical passes, including only 2/30
+emails. Thirty emails and one tone-control response reached the 144-token cap;
+the gate forbids any truncation. No student training or student generation
+evaluation occurred. This is an ABI source-acquisition failure, not a measured
+LayerCake language-quality failure.
+
+The [raw responses](../results/plan_english_r98/source/rows.jsonl),
+[source accounting](../results/plan_english_r98/source/result.json),
+[stop record](../results/plan_english_r98/stop.json), and additive
+[recomputed audit](../results/plan_english_r98_review/source_audit.json) are
+preserved. Source inference took 843.919 seconds (877.394 seconds total),
+generated 15,551 tokens, and peaked at 15,322,043,904 allocated CUDA bytes.
+There was zero observed repetition collapse. No teacher logits, activations
+or weights were imported.
+
+[R98-C1](../experiments/plan_english_r98_completion/PROTOCOL.md) is a separately
+frozen, one-pass completion-budget diagnostic. It does not change this result.
+The evaluator's known lexical false positives remain disclosed and unchanged;
+this corpus cannot certify semantic quality or fluency.
+
+## Completed C1 result
+
+All 31 completions reproduced their original token prefixes exactly and ended
+without truncation. The corpus reached 226/240, but emails were 22/30, below
+the unchanged 75% gate (at least 23). Seven emails exceeded 180 words and one
+triggered the confirmation check. No student training was authorized.
+
+The original orchestration also encountered an offline tokenizer metadata
+lookup error. That error and its stop record remain unchanged. The additive
+`python scripts/audit_r98_completion.py` uses the already-pinned local tokenizer
+snapshot and recomputes the negative result, token/text identity, provenance and
+information counts without new inference or altered thresholds. Its
+[audit](../results/plan_english_r98_completion_review/audit.json) and 10 hostile
+mutation tests preserve the distinction between operational and scientific
+failure. Total source generation including repeated prefixes was 22,198 tokens;
+the completed corpus contains 17,734 output tokens across 240 unique prompts.
+
+The source-cap branch is closed. [R99](R99_ENGLISH_PILOT.md) tests a different
+compiler-side normalization mechanism, not another source prompt or cap.
 
 ## What is being tested
 
@@ -36,7 +78,7 @@ three paired seeds, signed host acceptance and CPU certification remain open.
 - Frozen population: 192 training and 48 development prompts.
 - Training order: LoRA, distillation, ABI plan; one paired seed, 384 updates/arm.
 
-## Launch evidence and monitoring
+## Historical launch evidence
 
 The parent mechanics check passed on the RTX 3080 Laptop GPU with cached/full
 logit maximum absolute difference `0.0000133514404296875`, below `0.001`.
@@ -46,7 +88,7 @@ The first sandbox background launch exited before creating `launch.json` or
 any scientific observations. Its two empty logs remain preserved. The second
 launch started the six-hour-bounded orchestrator (PID recorded in
 `results/plan_english_r98/launch.json`), passed parent mechanics, and began live
-GPU source capture. It writes each teacher response before the next request.
+GPU source capture. It wrote each teacher response before the next request.
 
 Read progress without modifying the experiment:
 
@@ -56,7 +98,7 @@ Get-Content results/plan_english_r98/pilot.attempt2.stderr.log -Tail 10
 Get-ChildItem results/plan_english_r98
 ```
 
-The source prerequisite must pass before any student training. A failure writes
+The source prerequisite had to pass before any student training. A failure writes
 `results/plan_english_r98/stop.json` and blocks subsequent stages. A completed
 three-arm comparison writes `decision.json`. No automatic larger run follows.
 Use `python -m experiments.plan_english_r98.run verify` only for completed
@@ -64,7 +106,7 @@ three-arm evidence; incomplete or failed-source evidence rejects certification.
 
 Source capture runs in a separate process that exits before training and
 student evaluation. The full teacher is absent from those inference processes.
-Model checkpoints are local research artifacts; publication and production
+No R98 learner checkpoint was produced. In general, publication and production
 package acceptance require a separate reviewed result.
 
 ## Validation at launch
@@ -88,5 +130,12 @@ The historical verifier correctly refuses substitution. R98 changes neither
 file nor certificate. The full default suite is therefore **not green against
 this sibling checkout**; use the historical exact host for those replay tests.
 This is not a new LayerCake language-quality failure or an R98 result.
+
+Additive review repair (2026-11-05): `python scripts/run_review_tests.py`
+reconstructs 46 exact historical files in a temporary fixture using the pinned
+LayerCake Git object. The unchanged Phase 7 test file then passes all 16 tests.
+The remaining default tests pass 180 with four declared skips. No verifier,
+source binding, historical test, or live sibling checkout is modified. This is
+raw-evidence recomputation, not fresh model execution or independent hardware.
 
 The controlling whole-moonshot verdict remains `FULL_MOONSHOT_NOT_PROVEN`.

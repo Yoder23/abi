@@ -5,6 +5,10 @@ packaging, and verifying bounded capabilities from open-weight teacher models.
 It produces immutable, provenance-bound artifacts for a separate host such as
 [LayerCake](https://github.com/Yoder23/layercake).
 
+[Get started](docs/GETTING_STARTED.md) | [Documentation](docs/README.md) |
+[Current status](docs/PROJECT_STATUS.md) | [Versions](docs/VERSIONING.md) |
+[Changelog](CHANGELOG.md)
+
 ABI and LayerCake have deliberately separate jobs:
 
 - **ABI** qualifies teachers, probes bounded capabilities, labels and
@@ -29,6 +33,7 @@ LoRA and distillation.
 | V1089 local campaign | Bounded machine evidence through Phase 7 and a same-machine Phase 8 rehearsal | One coherent public final artifact, Phase 5 clean replay, external review |
 | R97 | Prospective two-hop reasoning transfer: 1,399/1,400 with causal controls and byte-identical replay | Broad English, arbitrary capabilities, independent reproduction |
 | R21-R23 | Bounded label-separated supplied-content generation and prospective semantic replication | General English and autonomous discovery |
+| R98 / C1 / R99 | Two source failures preserved; R99 data qualified, but its ABI-plan learner scored 10/48 vs LoRA 27/48 and distillation 20/48 | Failed bounded learning pilot; no fluent-English core promoted |
 
 These lineages must not be combined into one certification. The controlling
 public technical release remains

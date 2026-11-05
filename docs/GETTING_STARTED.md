@@ -102,6 +102,9 @@ python -m build
 The complete default research suite is intentionally stricter and requires
 Git LFS payloads plus exact LayerCake sibling commits. Follow the
 [independent-review handoff](INDEPENDENT_REVIEW_HANDOFF_2026-09-14.md).
+For a current development sibling, `python scripts/run_review_tests.py` keeps
+historical Phase 7 replay in an isolated exact-source fixture without modifying
+either checkout. See [versioning and review checks](VERSIONING.md).
 
 ## Human review
 

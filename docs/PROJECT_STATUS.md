@@ -1,17 +1,21 @@
 # ABI project status
 
-Status date: 2026-11-04
+Status date: 2026-11-05
 
 ## Active work
 
-R98 is the newly authorized bounded GPU pilot for plan-supervised English
-acquisition, with matched LoRA/distillation controls and explicit inherited-
-weight accounting. Its [protocol](../experiments/plan_english_r98/PROTOCOL.md)
-requires source qualification before training and keeps mechanical content
-screens separate from human fluency. Results are additive; no prior campaign
-gate or whole-moonshot verdict is promoted by starting this work.
-The [R98 launch record](R98_ENGLISH_PILOT.md) identifies the frozen inputs,
-passed parent mechanics, live GPU acquisition, and progress files.
+[R98 and its completion follow-up](R98_ENGLISH_PILOT.md) are preserved source
+failures: 206/240 and 226/240 mechanical passes, respectively. Neither trained
+a student. C1 removed truncation but still missed the email family gate.
+
+[R99](R99_ENGLISH_PILOT.md) introduces source-substring sentence selection and
+a separately frozen prospective development population. Normalized source
+qualification passed 230/240 (30/30 emails). The first learner then stopped on
+loss-scale overflow. A bounded numerical audit isolated that failure. The
+matched FP32 comparison then completed: ABI plan 10/48, distillation 20/48,
+LoRA 27/48, parent 0/48, versus the required 44/48. No learner passed; the
+autoregressive-plan branch is closed. The entire 87,710,428-parameter parent
+is counted; no earlier LayerCake performance certificate is inherited.
 
 ## Verdict
 
@@ -33,6 +37,8 @@ scientific promotion.
 | R21 | Public prerequisite pass; hidden summary gate failed | Not promoted to general generation |
 | R22 | Source normalization prerequisite failed | No student or LayerCake run |
 | R23 | Prospective bounded semantic supplied-content pass | Not broad English or autonomous discovery |
+| R98 / C1 | Source gates failed; immutable negative evidence | No student quality evaluation |
+| R99 | Normalized data qualified; matched FP32 learner comparison failed | ABI plan underperformed both trained controls; no fluent core promoted |
 | Independent hardware | Not executed | Open |
 | Minimum-information proof | Not executed | Open |
 | General teacher-to-LayerCake English extraction | Not established | Open |

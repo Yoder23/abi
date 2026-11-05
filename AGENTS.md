@@ -279,7 +279,13 @@ gradient elements at step two, while unit-scale FP16 and FP32 stayed finite.
 Only the separately frozen `experiments/grounded_english_r99_fp32/PROTOCOL.md`
 restart of all three arms is authorized next; it retains the original R99
 deadline and every quality gate. No further numerical or optimizer sweep.
-An automatic machine screen cannot certify English fluency.
+The restart has now completed and failed: ABI plan 10/48, distillation 20/48,
+LoRA 27/48, unchanged parent 0/48; the gate was 44/48. Preserve all final
+checkpoints and raw rows. Close the autoregressive-JSON-plan branch. A successor
+must materially address measured grounding/fact-retention and plan-validity
+failures, with a fresh preregistration and evaluation; do not automatically
+scale this mechanism. No candidate is promoted. An automatic machine screen
+cannot certify English fluency.
 
 1. Execute the frozen human-rating packet with three independent raters.
 2. Run the external reproduction packet on genuinely different hardware.

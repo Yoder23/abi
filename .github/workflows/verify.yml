@@ -29,4 +29,6 @@ jobs:
           tests/test_public_release.py
           tests/test_capability_pipeline.py
           tests/test_capability_segregation.py
+          tests/test_plan_english_r98_completion.py
+          tests/test_grounded_english_r99.py
       - run: python -m build

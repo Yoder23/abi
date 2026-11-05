@@ -1,10 +1,16 @@
 # Current project status
 
-Updated: 2026-09-18
+Updated: 2026-11-05
 
 For a concise dashboard, start with
 [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md). This longer document keeps
 the detailed campaign interpretation and disclosed replay limitations.
+
+Current acquisition work: [R98/C1](docs/R98_ENGLISH_PILOT.md) failed their
+source prerequisites; [R99](docs/R99_ENGLISH_PILOT.md) passed normalized-data
+qualification, but the matched FP32 learner comparison failed after the numerical
+repair: ABI plan 10/48, distillation 20/48 and LoRA 27/48. None promotes broad
+English or the full moonshot. The plan branch is closed, not scaled further.
 
 ## Executive status
 

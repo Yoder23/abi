@@ -1,6 +1,6 @@
 # ABI peer-review readiness
 
-Status date: 2026-09-18
+Status date: 2026-11-05
 
 ## Verdict
 
@@ -12,7 +12,15 @@ Independent reviewers can evaluate R7, V1089, R97, and R21-R23 as separate
 bounded evidence lineages. They must not combine those lineages into a single
 final-artifact proof.
 
-## Recomputed candidate checks
+## Current bounded research review
+
+See [versioning](VERSIONING.md) for the November annotated review snapshot and
+the exact-source test runner, and [R99](R99_ENGLISH_PILOT.md) for the latest
+acquisition experiment. Source qualification, numerical validation and model
+quality are reported separately. No current research snapshot supersedes R7's
+bounded technical release or promotes whole-moonshot certification.
+
+## Historical September candidate checks
 
 - `python -m abi status --json`: 18/18 internal readiness gates; human ratings
   remain 0/21,000.

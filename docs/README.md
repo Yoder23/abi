@@ -16,10 +16,16 @@ goal rather than reading the campaign archive in filename order.
 
 ## Canonical current documents
 
-- [Active R98 English pilot](../experiments/plan_english_r98/PROTOCOL.md) defines
-  the current bounded experiment and its matched acquisition controls.
-- [R98 launch record](R98_ENGLISH_PILOT.md) gives exact identities and monitoring
-  commands for the new experiment.
+- [R98 result and history](R98_ENGLISH_PILOT.md) records the failed source
+  prerequisite, exact identities, costs and preserved raw evidence.
+- [R98-C1 protocol](../experiments/plan_english_r98_completion/PROTOCOL.md)
+  defines the completed, failed one-pass completion-budget follow-up.
+- [R99 English pilot](R99_ENGLISH_PILOT.md) follows source normalization,
+  precision diagnosis and the matched ABI/LoRA/distillation comparison.
+- [R99 reproduction packet](R99_REVIEW.md) lists exact artifacts, dependencies,
+  verification commands and the expected negative result.
+- [Versioning and review checks](VERSIONING.md) distinguishes API versions,
+  immutable source snapshots and scientific certification.
 - [Project status](PROJECT_STATUS.md) is the concise state dashboard.
 - [Claims](../CLAIMS.md) defines what the evidence does and does not support.
 - [Architecture](architecture.md) explains the compiler/host boundary.

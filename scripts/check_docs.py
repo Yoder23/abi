@@ -10,6 +10,10 @@ from urllib.parse import unquote
 ROOT = Path(__file__).resolve().parents[1]
 CANONICAL_DOCUMENTS = (
     "README.md",
+    "docs/VERSIONING.md",
+    "docs/R98_ENGLISH_PILOT.md",
+    "docs/R99_ENGLISH_PILOT.md",
+    "docs/R99_REVIEW.md",
     "CURRENT_PROJECT_STATUS.md",
     "ACTIVE_MISSION.md",
     "CLAIMS.md",

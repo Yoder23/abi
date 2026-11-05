@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-11-05
+
+- Preserved R98 and C1 as failed source prerequisites with complete raw text,
+  source token counts, hashes and negative-evidence audits. No student was
+  trained by either run; neither failure is a LayerCake quality regression.
+- Preregistered R99 source-substring normalization and fresh development data.
+  Its normalized source passed 230/240; the first learner then failed from
+  FP16 loss-scale overflow. Preserved that failure and a six-step numerical
+  audit; froze one matched FP32 restart with unchanged data and quality gates.
+- Completed all three FP32 arms: ABI plan 10/48, distillation 20/48 and LoRA
+  27/48 versus a required 44/48. Closed the plan branch and preserved every
+  checkpoint and raw output; no candidate or moonshot claim was promoted.
+- Added isolated historical Phase 7 review fixtures without modifying the
+  frozen verifier, tests, bindings, or current sibling host. Missing inputs
+  continue to fail closed.
+- Added explicit package/interface/review-tag versioning and current research
+  navigation. No full-moonshot, fluent-core or universal superiority claim.
+
 ## 2026-11-04
 
 - Preregistered and launched the additive R98 GPU English-acquisition pilot,

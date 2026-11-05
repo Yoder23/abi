@@ -2,7 +2,7 @@
 
 Updated: 2026-11-05
 
-## Active bounded experiment: R99-FP32
+## Latest bounded experiment: R99-FP32 closed, no candidate promoted
 
 The user authorized continued bounded research and versioned publication.
 [R98](experiments/plan_english_r98/PROTOCOL.md) stopped at its source gate:
@@ -32,6 +32,14 @@ isolated loss-scale overflow without any quality evaluation. The
 three arms from the unchanged parent, with the identical data, seed, sample
 order, hyperparameters and gates, within the original R99 wall deadline. No
 failed checkpoint is resumed and no other precision/optimizer sweep follows.
+
+The restart completed all three arms: ABI plan 10/48, distillation 20/48,
+LoRA 27/48, unchanged parent 0/48; the candidate gate was 44/48. The plan arm
+also had five collapse cases and 22 invalid plans. Close this serial-JSON-plan
+branch. The measured next target is supplied-fact retention and autonomous
+realization, not more nearby steps or a larger run of the same mechanism.
+Any successor needs a new bounded preregistration, fresh evaluation and matched
+controls. No current candidate is a production English core.
 
 New readers should use [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md) for
 the concise dashboard and [`docs/README.md`](docs/README.md) for navigation.

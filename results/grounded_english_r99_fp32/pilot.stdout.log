@@ -1,0 +1,269 @@
+{"format": "abi-r98-parent-mechanics/1", "max_cached_logit_error": 1.33514404296875e-05, "tolerance": 0.001, "parameters": 87710428, "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU", "torch": "2.7.1+cu118", "python": "3.10.0", "disk_free": 156032036864, "source_snapshot": "C:\\Users\\samyo\\.cache\\huggingface\\hub\\models--Qwen--Qwen2-7B-Instruct\\snapshots\\f2826a00ceef68f0f2b946d945ecc0477ce4450c", "scope": "existing ABI loader mechanics; no English or LayerCake release claim"}
+{"verified_normalized_rows": 240, "source_gate": true}
+{"verified_normalized_rows": 240, "source_gate": true}
+{"elapsed_seconds":0.47198709985241294,"gradient_norm":4.827685832977295,"loss":2.8783321380615234,"loss_tokens":106,"sample_ids":["r98-train-rewriting-10","r98-train-summarization-1"],"stage":"distillation","step":1}
+{"elapsed_seconds":5.961832900065929,"gradient_norm":2.414830207824707,"loss":2.3187448978424072,"loss_tokens":172,"sample_ids":["r98-train-conversation-9","r98-train-conversation-23"],"stage":"distillation","step":32}
+{"elapsed_seconds":11.605534699978307,"gradient_norm":2.653059959411621,"loss":1.1376490592956543,"loss_tokens":74,"sample_ids":["r98-train-summarization-15","r98-train-format_control-4"],"stage":"distillation","step":64}
+{"elapsed_seconds":17.186133899958804,"gradient_norm":1.9632399082183838,"loss":1.4954566955566406,"loss_tokens":139,"sample_ids":["r98-train-tone_control-23","r98-train-conversation-0"],"stage":"distillation","step":96}
+{"elapsed_seconds":22.813059699954465,"gradient_norm":2.933736801147461,"loss":1.9272040128707886,"loss_tokens":169,"sample_ids":["r98-train-email_drafting-12","r98-train-tone_control-14"],"stage":"distillation","step":128}
+{"elapsed_seconds":28.461465900065377,"gradient_norm":2.242513418197632,"loss":1.4209569692611694,"loss_tokens":141,"sample_ids":["r98-train-tone_control-5","r98-train-conversation-4"],"stage":"distillation","step":160}
+{"elapsed_seconds":34.030824299901724,"gradient_norm":3.053481340408325,"loss":1.6640783548355103,"loss_tokens":108,"sample_ids":["r98-train-summarization-6","r98-train-tone_control-15"],"stage":"distillation","step":192}
+{"elapsed_seconds":39.64490479999222,"gradient_norm":4.805307388305664,"loss":0.7447072863578796,"loss_tokens":69,"sample_ids":["r98-train-summarization-18","r98-train-clarification-10"],"stage":"distillation","step":224}
+{"elapsed_seconds":45.301651400048286,"gradient_norm":3.8584532737731934,"loss":0.876476526260376,"loss_tokens":81,"sample_ids":["r98-train-summarization-11","r98-train-summarization-14"],"stage":"distillation","step":256}
+{"elapsed_seconds":50.95330789987929,"gradient_norm":4.450057506561279,"loss":0.5972318053245544,"loss_tokens":63,"sample_ids":["r98-train-format_control-10","r98-train-abstention-18"],"stage":"distillation","step":288}
+{"elapsed_seconds":56.566480699926615,"gradient_norm":3.183891773223877,"loss":0.9516680240631104,"loss_tokens":102,"sample_ids":["r98-train-rewriting-18","r98-train-conversation-22"],"stage":"distillation","step":320}
+{"elapsed_seconds":62.23966580000706,"gradient_norm":5.478471755981445,"loss":1.3548636436462402,"loss_tokens":111,"sample_ids":["r98-train-summarization-17","r98-train-conversation-5"],"stage":"distillation","step":352}
+{"elapsed_seconds":67.89496239996515,"gradient_norm":2.22784423828125,"loss":0.0890965387225151,"loss_tokens":66,"sample_ids":["r98-train-format_control-23","r98-train-abstention-16"],"stage":"distillation","step":384}
+{"verified_normalized_rows": 240, "source_gate": true}
+{"elapsed_seconds":0.4423985001631081,"gradient_norm":2.392702102661133,"loss":2.8783321380615234,"loss_tokens":106,"sample_ids":["r98-train-rewriting-10","r98-train-summarization-1"],"stage":"lora","step":1}
+{"elapsed_seconds":6.33316560019739,"gradient_norm":1.9051967859268188,"loss":2.07615327835083,"loss_tokens":172,"sample_ids":["r98-train-conversation-9","r98-train-conversation-23"],"stage":"lora","step":32}
+{"elapsed_seconds":12.585089500062168,"gradient_norm":2.4340176582336426,"loss":0.9769409894943237,"loss_tokens":74,"sample_ids":["r98-train-summarization-15","r98-train-format_control-4"],"stage":"lora","step":64}
+{"elapsed_seconds":18.934957400197163,"gradient_norm":2.4616148471832275,"loss":1.0811182260513306,"loss_tokens":139,"sample_ids":["r98-train-tone_control-23","r98-train-conversation-0"],"stage":"lora","step":96}
+{"elapsed_seconds":25.266532600158826,"gradient_norm":2.895998001098633,"loss":1.8180279731750488,"loss_tokens":169,"sample_ids":["r98-train-email_drafting-12","r98-train-tone_control-14"],"stage":"lora","step":128}
+{"elapsed_seconds":31.591574600199237,"gradient_norm":2.8033008575439453,"loss":1.2103347778320312,"loss_tokens":141,"sample_ids":["r98-train-tone_control-5","r98-train-conversation-4"],"stage":"lora","step":160}
+{"elapsed_seconds":37.87138760020025,"gradient_norm":3.5329954624176025,"loss":1.3583539724349976,"loss_tokens":108,"sample_ids":["r98-train-summarization-6","r98-train-tone_control-15"],"stage":"lora","step":192}
+{"elapsed_seconds":44.1990982000716,"gradient_norm":3.2945456504821777,"loss":0.5599002838134766,"loss_tokens":69,"sample_ids":["r98-train-summarization-18","r98-train-clarification-10"],"stage":"lora","step":224}
+{"elapsed_seconds":50.458548500202596,"gradient_norm":3.6385250091552734,"loss":0.7505515217781067,"loss_tokens":81,"sample_ids":["r98-train-summarization-11","r98-train-summarization-14"],"stage":"lora","step":256}
+{"elapsed_seconds":56.91407090006396,"gradient_norm":3.2957026958465576,"loss":0.5863224267959595,"loss_tokens":63,"sample_ids":["r98-train-format_control-10","r98-train-abstention-18"],"stage":"lora","step":288}
+{"elapsed_seconds":63.189978800015524,"gradient_norm":2.999584913253784,"loss":0.7802020907402039,"loss_tokens":102,"sample_ids":["r98-train-rewriting-18","r98-train-conversation-22"],"stage":"lora","step":320}
+{"elapsed_seconds":69.42479720013216,"gradient_norm":5.023897647857666,"loss":1.1989645957946777,"loss_tokens":111,"sample_ids":["r98-train-summarization-17","r98-train-conversation-5"],"stage":"lora","step":352}
+{"elapsed_seconds":75.72581330011599,"gradient_norm":2.4762728214263916,"loss":0.08773690462112427,"loss_tokens":66,"sample_ids":["r98-train-format_control-23","r98-train-abstention-16"],"stage":"lora","step":384}
+{"verified_normalized_rows": 240, "source_gate": true}
+{"elapsed_seconds":0.4542424997780472,"gradient_norm":3.9970836639404297,"loss":2.329745054244995,"loss_tokens":309,"sample_ids":["r98-train-rewriting-10","r98-train-summarization-1"],"stage":"abi_plan","step":1}
+{"elapsed_seconds":5.980484199943021,"gradient_norm":2.4323179721832275,"loss":1.727557897567749,"loss_tokens":406,"sample_ids":["r98-train-conversation-9","r98-train-conversation-23"],"stage":"abi_plan","step":32}
+{"elapsed_seconds":11.617305299965665,"gradient_norm":1.467933177947998,"loss":1.007155179977417,"loss_tokens":285,"sample_ids":["r98-train-summarization-15","r98-train-format_control-4"],"stage":"abi_plan","step":64}
+{"elapsed_seconds":17.259937199996784,"gradient_norm":1.2401797771453857,"loss":1.0172336101531982,"loss_tokens":357,"sample_ids":["r98-train-tone_control-23","r98-train-conversation-0"],"stage":"abi_plan","step":96}
+{"elapsed_seconds":22.903502999804914,"gradient_norm":1.6585485935211182,"loss":1.063171148300171,"loss_tokens":373,"sample_ids":["r98-train-email_drafting-12","r98-train-tone_control-14"],"stage":"abi_plan","step":128}
+{"elapsed_seconds":28.57098459987901,"gradient_norm":1.1818854808807373,"loss":0.7240923643112183,"loss_tokens":359,"sample_ids":["r98-train-tone_control-5","r98-train-conversation-4"],"stage":"abi_plan","step":160}
+{"elapsed_seconds":34.29444839991629,"gradient_norm":2.244638204574585,"loss":0.677730143070221,"loss_tokens":318,"sample_ids":["r98-train-summarization-6","r98-train-tone_control-15"],"stage":"abi_plan","step":192}
+{"elapsed_seconds":39.95048649981618,"gradient_norm":1.4758045673370361,"loss":0.23759935796260834,"loss_tokens":270,"sample_ids":["r98-train-summarization-18","r98-train-clarification-10"],"stage":"abi_plan","step":224}
+{"elapsed_seconds":45.61863879999146,"gradient_norm":1.2791707515716553,"loss":0.30010509490966797,"loss_tokens":289,"sample_ids":["r98-train-summarization-11","r98-train-summarization-14"],"stage":"abi_plan","step":256}
+{"elapsed_seconds":51.29436109983362,"gradient_norm":1.0956034660339355,"loss":0.15404796600341797,"loss_tokens":270,"sample_ids":["r98-train-format_control-10","r98-train-abstention-18"],"stage":"abi_plan","step":288}
+{"elapsed_seconds":57.00716279982589,"gradient_norm":1.0668095350265503,"loss":0.38990700244903564,"loss_tokens":301,"sample_ids":["r98-train-rewriting-18","r98-train-conversation-22"],"stage":"abi_plan","step":320}
+{"elapsed_seconds":62.70940679986961,"gradient_norm":1.7431061267852783,"loss":0.44356098771095276,"loss_tokens":338,"sample_ids":["r98-train-summarization-17","r98-train-conversation-5"],"stage":"abi_plan","step":352}
+{"elapsed_seconds":68.44481199979782,"gradient_norm":2.287503242492676,"loss":0.045122310519218445,"loss_tokens":286,"sample_ids":["r98-train-format_control-23","r98-train-abstention-16"],"stage":"abi_plan","step":384}
+{"verified_normalized_rows": 240, "source_gate": true}
+{"stage": "evaluate", "arm": "parent", "rows": 8, "passes": 0}
+{"stage": "evaluate", "arm": "parent", "rows": 16, "passes": 0}
+{"stage": "evaluate", "arm": "parent", "rows": 24, "passes": 0}
+{"stage": "evaluate", "arm": "parent", "rows": 32, "passes": 0}
+{"stage": "evaluate", "arm": "parent", "rows": 40, "passes": 0}
+{"stage": "evaluate", "arm": "parent", "rows": 48, "passes": 0}
+{"verified_normalized_rows": 240, "source_gate": true}
+{"stage": "evaluate", "arm": "distillation", "rows": 8, "passes": 4}
+{"stage": "evaluate", "arm": "distillation", "rows": 16, "passes": 7}
+{"stage": "evaluate", "arm": "distillation", "rows": 24, "passes": 8}
+{"stage": "evaluate", "arm": "distillation", "rows": 32, "passes": 13}
+{"stage": "evaluate", "arm": "distillation", "rows": 40, "passes": 16}
+{"stage": "evaluate", "arm": "distillation", "rows": 48, "passes": 20}
+{"verified_normalized_rows": 240, "source_gate": true}
+{"stage": "evaluate", "arm": "lora", "rows": 8, "passes": 5}
+{"stage": "evaluate", "arm": "lora", "rows": 16, "passes": 10}
+{"stage": "evaluate", "arm": "lora", "rows": 24, "passes": 13}
+{"stage": "evaluate", "arm": "lora", "rows": 32, "passes": 18}
+{"stage": "evaluate", "arm": "lora", "rows": 40, "passes": 21}
+{"stage": "evaluate", "arm": "lora", "rows": 48, "passes": 27}
+{"verified_normalized_rows": 240, "source_gate": true}
+{"stage": "evaluate", "arm": "abi_plan", "rows": 8, "passes": 3}
+{"stage": "evaluate", "arm": "abi_plan", "rows": 16, "passes": 4}
+{"stage": "evaluate", "arm": "abi_plan", "rows": 24, "passes": 4}
+{"stage": "evaluate", "arm": "abi_plan", "rows": 32, "passes": 6}
+{"stage": "evaluate", "arm": "abi_plan", "rows": 40, "passes": 7}
+{"stage": "evaluate", "arm": "abi_plan", "rows": 48, "passes": 10}
+{"verified_normalized_rows": 240, "source_gate": true}
+{
+  "format": "abi-r98-pilot-decision/1",
+  "verdict": "ABI_ACQUISITION_PILOT_FAILED",
+  "summaries": {
+    "abi_plan": {
+      "rows": 48,
+      "passing": 10,
+      "collapses": 5,
+      "per_task": {
+        "summarization": {
+          "rows": 6,
+          "passing": 1
+        },
+        "rewriting": {
+          "rows": 6,
+          "passing": 0
+        },
+        "email_drafting": {
+          "rows": 6,
+          "passing": 0
+        },
+        "conversation": {
+          "rows": 6,
+          "passing": 0
+        },
+        "format_control": {
+          "rows": 6,
+          "passing": 4
+        },
+        "tone_control": {
+          "rows": 6,
+          "passing": 0
+        },
+        "clarification": {
+          "rows": 6,
+          "passing": 1
+        },
+        "abstention": {
+          "rows": 6,
+          "passing": 4
+        }
+      }
+    },
+    "distillation": {
+      "rows": 48,
+      "passing": 20,
+      "collapses": 4,
+      "per_task": {
+        "summarization": {
+          "rows": 6,
+          "passing": 3
+        },
+        "rewriting": {
+          "rows": 6,
+          "passing": 0
+        },
+        "email_drafting": {
+          "rows": 6,
+          "passing": 0
+        },
+        "conversation": {
+          "rows": 6,
+          "passing": 1
+        },
+        "format_control": {
+          "rows": 6,
+          "passing": 6
+        },
+        "tone_control": {
+          "rows": 6,
+          "passing": 0
+        },
+        "clarification": {
+          "rows": 6,
+          "passing": 4
+        },
+        "abstention": {
+          "rows": 6,
+          "passing": 6
+        }
+      }
+    },
+    "lora": {
+      "rows": 48,
+      "passing": 27,
+      "collapses": 0,
+      "per_task": {
+        "summarization": {
+          "rows": 6,
+          "passing": 5
+        },
+        "rewriting": {
+          "rows": 6,
+          "passing": 2
+        },
+        "email_drafting": {
+          "rows": 6,
+          "passing": 1
+        },
+        "conversation": {
+          "rows": 6,
+          "passing": 1
+        },
+        "format_control": {
+          "rows": 6,
+          "passing": 6
+        },
+        "tone_control": {
+          "rows": 6,
+          "passing": 3
+        },
+        "clarification": {
+          "rows": 6,
+          "passing": 3
+        },
+        "abstention": {
+          "rows": 6,
+          "passing": 6
+        }
+      }
+    },
+    "parent": {
+      "rows": 48,
+      "passing": 0,
+      "collapses": 2,
+      "per_task": {
+        "summarization": {
+          "rows": 6,
+          "passing": 0
+        },
+        "rewriting": {
+          "rows": 6,
+          "passing": 0
+        },
+        "email_drafting": {
+          "rows": 6,
+          "passing": 0
+        },
+        "conversation": {
+          "rows": 6,
+          "passing": 0
+        },
+        "format_control": {
+          "rows": 6,
+          "passing": 0
+        },
+        "tone_control": {
+          "rows": 6,
+          "passing": 0
+        },
+        "clarification": {
+          "rows": 6,
+          "passing": 0
+        },
+        "abstention": {
+          "rows": 6,
+          "passing": 0
+        }
+      }
+    }
+  },
+  "comparisons": {
+    "teacher": {
+      "difference": -0.6875,
+      "ci95": [
+        -0.8125,
+        -0.5625
+      ]
+    },
+    "parent": {
+      "difference": 0.20833333333333334,
+      "ci95": [
+        0.10416666666666667,
+        0.3333333333333333
+      ]
+    },
+    "distillation": {
+      "difference": -0.20833333333333334,
+      "ci95": [
+        -0.3333333333333333,
+        -0.10416666666666667
+      ]
+    },
+    "lora": {
+      "difference": -0.3541666666666667,
+      "ci95": [
+        -0.5,
+        -0.22916666666666666
+      ]
+    }
+  },
+  "human_fluency": "UNASSESSED",
+  "full_moonshot": "NOT_PROVEN",
+  "layercake_regression_established": false,
+  "scope": "Mechanical supplied-content proxies and matched acquisition pilot; no fluent-core certificate"
+}
