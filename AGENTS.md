@@ -273,7 +273,13 @@ source-substring sentence selection to address measured email verbosity,
 fresh prospectively frozen development prompts, then matched ABI-plan,
 LoRA and distillation learners only if normalized-data qualification passes.
 No threshold or optimizer sweep, no LayerCake source changes and no inherited
-release claims. An automatic machine screen cannot certify English fluency.
+release claims. R99's normalized source passed 230/240, but scaled FP16 failed
+after one update. The bounded numerical audit reproduced 50,688 non-finite
+gradient elements at step two, while unit-scale FP16 and FP32 stayed finite.
+Only the separately frozen `experiments/grounded_english_r99_fp32/PROTOCOL.md`
+restart of all three arms is authorized next; it retains the original R99
+deadline and every quality gate. No further numerical or optimizer sweep.
+An automatic machine screen cannot certify English fluency.
 
 1. Execute the frozen human-rating packet with three independent raters.
 2. Run the external reproduction packet on genuinely different hardware.

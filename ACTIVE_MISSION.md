@@ -2,7 +2,7 @@
 
 Updated: 2026-11-05
 
-## Active bounded experiment: R99
+## Active bounded experiment: R99-FP32
 
 The user authorized continued bounded research and versioned publication.
 [R98](experiments/plan_english_r98/PROTOCOL.md) stopped at its source gate:
@@ -24,6 +24,14 @@ the measured source/acquisition/integration boundary. No LayerCake source
 changes or larger follow-on campaigns are authorized by this pilot. R98/C1's
 development set is known; R99's fresh population is frozen before capture.
 Neither supports unrestricted-English certification from lexical screens.
+
+R99's normalized data qualified at 230/240, including 30/30 emails. Its first
+FP16 learner stopped after one successful update. A six-step numerical audit
+isolated loss-scale overflow without any quality evaluation. The
+[FP32 restart](experiments/grounded_english_r99_fp32/PROTOCOL.md) repeats all
+three arms from the unchanged parent, with the identical data, seed, sample
+order, hyperparameters and gates, within the original R99 wall deadline. No
+failed checkpoint is resumed and no other precision/optimizer sweep follows.
 
 New readers should use [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md) for
 the concise dashboard and [`docs/README.md`](docs/README.md) for navigation.
