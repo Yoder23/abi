@@ -75,6 +75,6 @@ or product-quality gates. No package version change is warranted.
 - Publish exact raw evidence and required artifacts before claiming public replay.
 - Require scientific gates separately from tests, tags, builds and CI status.
 
-R7, V1089, R97, R98/C1, R99 and R100 remain distinct lineages. The whole-moonshot verdict
+R7, V1089, R97, R98/C1, R99, R100 and R101 retain separate claim scopes. The whole-moonshot verdict
 is `FULL_MOONSHOT_NOT_PROVEN`. [LayerCake](https://github.com/Yoder23/layercake)
 owns host certification; ABI does not inherit its runtime certificates.

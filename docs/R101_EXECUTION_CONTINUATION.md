@@ -137,7 +137,10 @@ registered or authorized automatically by R101.
 
 ## Versioned public review
 
-Research tag: `abi-research-r101-2026-11-05` (not a product release).
+Published [research tag](https://github.com/Yoder23/abi/releases/tag/abi-research-r101-2026-11-05):
+`abi-research-r101-2026-11-05` (not a product release).
+Peeled source commit: `e311451c1d3e634c64c215c8ac7389a7b9dc827c`;
+annotated tag object: `790f4da14ae0a8c90cb1dd6d823f1de222c36ae8`.
 The [required artifact manifest](../results/review_2026_11_05/r101_manifest.json)
 contains 35 assets totaling 1,714,292,449 bytes, including four inherited
 checkpoints and all new raw parity tensors. Manifest SHA-256:
@@ -145,9 +148,27 @@ checkpoints and all new raw parity tensors. Manifest SHA-256:
 
 Use sibling public checkouts named `abi_release` and `layercake_release`.
 The host checkout is `865a2b9e59e6221caa1185f9b64479d2077953f3`; its Python
-bytes match the registered host binding. Pull required Git LFS objects:
-the R76 parent, R99 LoRA/distillation, R100 full-model checkpoint, and four
-R101 `parity.safetensors` files. Unresolved pointers fail verification.
+bytes match the registered host binding. The 35-asset inventory covers direct
+diagnostic artifacts, not every transitive historical input. The unchanged
+813-input freeze also binds the old ABI-plan checkpoint and numerical-failure
+payload. They are required for verification, not new R101 experimental arms.
+
+The additive [complete LFS dependency manifest](https://github.com/Yoder23/abi/releases/download/abi-research-r101-2026-11-05/r101_lfs_manifest.json)
+enumerates all ten direct/transitive payloads, totaling 2,063,459,968 bytes.
+Its SHA-256 is
+`a99ecc0a0967329145681fbd2e75e6e25966a4bd4cf6f66e61080b4ec2274645`.
+Download those paths from Git LFS; unresolved pointers fail verification.
+This supplement does not replace the original inventory or move the tag.
+
+Place that downloaded manifest beside the two checkouts. From `abi_release`,
+PowerShell can select exactly the necessary objects without fetching unrelated
+research payloads:
+
+```powershell
+$r101Manifest = Get-Content ../r101_lfs_manifest.json -Raw | ConvertFrom-Json
+$r101PayloadPaths = $r101Manifest.files.PSObject.Properties.Name -join ','
+git lfs pull --include=$r101PayloadPaths --exclude=''
+```
 
 At the exact tagged ABI commit, the [public-review helper](../scripts/review_r101_public.py)
 checks identities, clean source trees, every manifest asset, all 813 frozen
@@ -156,5 +177,25 @@ the pinned manifest digest and exact peeled tag commit through its required
 arguments; write its receipt outside either checkout. This is evidence
 recomputation, not a repeat of GPU inference or independent hardware.
 
+```powershell
+python scripts/review_r101_public.py --abi-commit e311451c1d3e634c64c215c8ac7389a7b9dc827c --manifest-sha256 eeca42d8c1550cd4ec6ec0f16a059470758d5f78e55d112c2f40f057d2d7602f --output ../public_r101_reconstruction.json
+```
+
 The original GPU execution and all prior checkpoints remain unchanged.
 Later documentation may record public reconstruction without moving this tag.
+
+### Published reconstruction
+
+The public-only sibling checkouts previously used for R99/R100 were fetched to
+the R101 tag; the four new raw-logit tensors were downloaded from GitHub LFS.
+No development assets were copied. All 35 direct assets and 813 frozen bindings
+matched, strict recomputation returned the same decision, and 43 focused tests
+passed. Both checkouts remained clean. GitHub CI passed on Python 3.10-3.12.
+
+The [public reconstruction receipt](https://github.com/Yoder23/abi/releases/download/abi-research-r101-2026-11-05/public_r101_reconstruction.json)
+has SHA-256
+`cbbc481e01101e133b6f78e72f4a7f9c01533a0a936d4fa56d0ac35625b2cade`.
+Its verdict is `BOUNDED_DIAGNOSTIC_EVIDENCE_RECOMPUTED`.
+This reused public checkout directories, the same machine and installed Python
+dependencies. It is not a brand-new clone, another live GPU-generation run,
+independent hardware, human review or whole-moonshot certification.

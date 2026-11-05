@@ -19,6 +19,11 @@ execution-path agreement and a null primary continuation contrast. All raw
 logit matrices and generation rows are retained. Local review passed 262 tests
 with four declared skips; the supported CI list passed 83, including 26 new
 diagnostic tests. Builds passed. No English-core or full-moonshot promotion.
+Public-only checkouts matched all 35 direct assets and 813 frozen bindings,
+strictly recomputed R101 and passed 43 focused tests. The
+[published receipt](R101_EXECUTION_CONTINUATION.md#published-reconstruction)
+records the reused public checkouts and same-machine scope. The complete
+transitive LFS inventory is attached to the release.
 
 The preceding [R100 control](R100_ACQUISITION_CAPACITY.md) failed all registered
 screens. Its research tag is `abi-research-r100-2026-11-05`, not a product

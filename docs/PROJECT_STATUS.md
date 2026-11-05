@@ -44,6 +44,11 @@ The R101 diagnostic review is versioned as `abi-research-r101-2026-11-05`.
 Its local review passed 262 tests with four documented skips; the supported
 CI surface passed 83 and package builds passed. Use the
 [R101 review packet](R101_EXECUTION_CONTINUATION.md) for its exact claim limits.
+Public-only checkouts matched 35 direct assets and 813 frozen bindings,
+strictly recomputed the result and passed 43 focused tests. The
+[receipt](R101_EXECUTION_CONTINUATION.md#published-reconstruction) discloses
+reused public directories and same-machine evidence reconstruction; no
+independent hardware or new live inference run is claimed.
 
 The preceding R100 bounded research snapshot is published as
 [`abi-research-r100-2026-11-05`](https://github.com/Yoder23/abi/releases/tag/abi-research-r100-2026-11-05).

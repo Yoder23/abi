@@ -8,6 +8,12 @@
   oracle-prefix remaining-fact contrast was null. No host defect or fluent core
   is claimed. Added 26 tests; local review passed 262 with four declared skips,
   supported CI surface passed 83, and package builds passed.
+- Added a complete ten-payload R101 LFS dependency manifest: inherited ABI-plan
+  and numerical-failure payloads remain necessary for transitive verification,
+  despite not being new diagnostic arms. Preserved the original inventory/tag.
+- Reconstructed R101 from public-only checkouts: 35 direct assets and 813
+  bindings matched, strict recomputation and 43 focused tests passed. Published
+  the receipt with explicit reused-checkout and same-machine limitations.
 - Completed R99-D1 without training: autonomous fit remained limited even on
   training examples, despite high correct-prefix fact-token accuracy.
 - Preregistered and completed R100's one full-model acquisition control on new
