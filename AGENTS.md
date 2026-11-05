@@ -295,6 +295,16 @@ training or teacher queries. It cannot reopen the generated-plan branch or
 promote an oracle-prefix score as autonomous quality. A successor still needs
 a new representation, fresh prospective evaluation and matched controls.
 
+R99-D1 completed: autonomous training-example passes were 7/24 ABI plan,
+12/24 adapter distillation, 13/24 LoRA and 0/24 parent. The restricted learners'
+correct-prefix fact-token accuracy was 97-99%, but visible-response accuracy
+was only 76-80%. Preserve the diagnostic; do not describe this as an isolated
+novel-identifier or LayerCake runtime failure. The next bounded intervention is
+`experiments/acquisition_capacity_r100/PROTOCOL.md`: one conventional full-model
+distillation capacity control, unchanged parent/data/seed/update count, matched
+retained controls and new prospective development prompts. It cannot promote
+an ABI product and authorizes no sweep or subsequent automatic run.
+
 1. Execute the frozen human-rating packet with three independent raters.
 2. Run the external reproduction packet on genuinely different hardware.
 3. Execute registered minimum-information certification.

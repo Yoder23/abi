@@ -5,9 +5,12 @@ Status date: 2026-11-05
 ## Active work
 
 The additive [R99-D1 fit audit](../experiments/grounded_english_r99/FIT_AUDIT.md)
-is preregistered to distinguish training fit, autonomous realization and novel-
-identifier generalization without changing any model. It is diagnostic only;
-the failed learner comparison below remains unchanged.
+completed without changing any model: training-example passes were 7/24 ABI
+plan, 12/24 distillation, 13/24 LoRA and 0/24 parent. Correct-prefix fact-token
+accuracy was high but visible-response fit remained limited. The next bounded
+[R100 control](../experiments/acquisition_capacity_r100/PROTOCOL.md) changes only
+optimizer parameter scope to all model parameters, with new development prompts.
+It tests an acquisition constraint, not ABI superiority or a host rewrite.
 
 [R98 and its completion follow-up](R98_ENGLISH_PILOT.md) are preserved source
 failures: 206/240 and 226/240 mechanical passes, respectively. Neither trained

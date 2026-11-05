@@ -2,7 +2,7 @@
 
 Updated: 2026-11-05
 
-## Active diagnostic: R99-D1; R99-FP32 remains closed
+## Active control: R100; R99-FP32 remains closed
 
 The continuation starts with the preregistered
 [fit/grounding diagnostic](experiments/grounded_english_r99/FIT_AUDIT.md):
@@ -11,6 +11,14 @@ three final learners and unchanged parent. No new optimization or teacher
 queries. Separate teacher-forced token prediction from autonomous generation
 before selecting the next representation. This is not a new quality test or
 permission to resume the failed JSON-plan mechanism.
+
+R99-D1 completed: training-example free-generation passes were 7/24 ABI plan,
+12/24 distillation, 13/24 LoRA and 0/24 parent. Teacher-forced response accuracy
+was only 76-80% in the restricted learners despite 97-99% fact-token accuracy.
+[R100](experiments/acquisition_capacity_r100/PROTOCOL.md) tests one full-model
+optimizer-scope control under the same parent, training examples, seed and
+update count, with fresh development prompts and the retained controls.
+It is conventional fine-tuning for diagnosis, not a renamed ABI breakthrough.
 
 The user authorized continued bounded research and versioned publication.
 [R98](experiments/plan_english_r98/PROTOCOL.md) stopped at its source gate:
