@@ -2,6 +2,12 @@
 
 ## 2026-11-05
 
+- Completed preregistered R101 with zero training/source queries. Published raw
+  full/padded/cached logit comparisons and all 864 generation rows. Measured
+  paths agreed and 288 unassisted sequences replayed exactly; the primary
+  oracle-prefix remaining-fact contrast was null. No host defect or fluent core
+  is claimed. Added 26 tests; local review passed 262 with four declared skips,
+  supported CI surface passed 83, and package builds passed.
 - Completed R99-D1 without training: autonomous fit remained limited even on
   training examples, despite high correct-prefix fact-token accuracy.
 - Preregistered and completed R100's one full-model acquisition control on new

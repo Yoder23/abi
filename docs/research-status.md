@@ -5,6 +5,12 @@ Updated: 2026-11-05
 The concise dashboard is [`PROJECT_STATUS.md`](PROJECT_STATUS.md). This file
 retains the detailed interpretation of later research lineages.
 
+The latest [R101 diagnostic](R101_EXECUTION_CONTINUATION.md) completed with
+measured execution agreement and exact unassisted replay, but a null primary
+oracle-prefix remaining-fact contrast. It authorizes no product promotion or
+native LayerCake failure attribution. Acquisition fit/generalization remains
+the next controlled question; no new training run follows automatically.
+
 The current acquisition series is documented in [R98/C1](R98_ENGLISH_PILOT.md),
 [R99](R99_ENGLISH_PILOT.md), and the completed
 [R99-D1/R100 fit and capacity controls](R100_ACQUISITION_CAPACITY.md). The R100

@@ -14,7 +14,13 @@ final-artifact proof.
 
 ## Current bounded research review
 
-The latest [R100 control](R100_ACQUISITION_CAPACITY.md) failed all registered
+The latest [R101 diagnostic](R101_EXECUTION_CONTINUATION.md) completed with
+execution-path agreement and a null primary continuation contrast. All raw
+logit matrices and generation rows are retained. Local review passed 262 tests
+with four declared skips; the supported CI list passed 83, including 26 new
+diagnostic tests. Builds passed. No English-core or full-moonshot promotion.
+
+The preceding [R100 control](R100_ACQUISITION_CAPACITY.md) failed all registered
 screens. Its research tag is `abi-research-r100-2026-11-05`, not a product
 release. Local review passed 236 tests with four declared skips; the supported
 CI test list passed 57. Wheel and source distribution builds passed.
@@ -86,8 +92,10 @@ release certification, or full-moonshot claim.
 
 ## Immutable review identity
 
-The latest diagnostic/control tag is `abi-research-r100-2026-11-05`; use
-[the R100 packet](R100_ACQUISITION_CAPACITY.md) for that negative result.
+The latest diagnostic tag is `abi-research-r101-2026-11-05`; use
+[the R101 packet](R101_EXECUTION_CONTINUATION.md) for the measured agreement
+and null intervention result. The preceding capacity-control tag is
+`abi-research-r100-2026-11-05`; its negative evidence remains unchanged.
 
 The preceding research tag is
 [`abi-research-2026-11-05`](https://github.com/Yoder23/abi/releases/tag/abi-research-2026-11-05),

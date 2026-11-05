@@ -2,6 +2,13 @@
 
 Updated: 2026-11-05
 
+Latest result: [R101](docs/R101_EXECUTION_CONTINUATION.md) completed and strictly
+recomputed. Four checkpoints passed measured full/padded/cached comparisons and
+288 unassisted token sequences replayed exactly. The primary oracle-prefix
+remaining-fact contrast was null, not an acquisition fix. No native LayerCake
+defect or English-core promotion follows; data/generalization, optimization fit
+and parent suitability remain open.
+
 For a concise dashboard, start with
 [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md). This longer document keeps
 the detailed campaign interpretation and disclosed replay limitations.

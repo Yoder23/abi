@@ -4,8 +4,9 @@
 | --- | --- | --- |
 | Python package | `0.4.0a1` | Supported alpha compiler API |
 | Controlling technical release | `abi-final-validation-v2-repaired-r7-2026-08-30` | Bounded R7 runtime/conformance proof |
-| Latest research review snapshot | `abi-research-r100-2026-11-05` | R99-D1/R100 diagnostics and negative capacity control; not a scientific promotion |
-| Previous research snapshot | `abi-research-2026-11-05` | Preserved R98/R99 research and public reconstruction |
+| Latest research review snapshot | `abi-research-r101-2026-11-05` | Execution/continuation diagnostic; no English-core promotion |
+| Previous research snapshot | `abi-research-r100-2026-11-05` | Preserved R99-D1/R100 negative capacity control and public reconstruction |
+| Earlier research snapshot | `abi-research-2026-11-05` | Preserved R98/R99 research and public reconstruction |
 | Default branch | `master` | Moving development and research history |
 
 The package API has not changed in this research update, so its package version
@@ -20,7 +21,8 @@ a local tag as published:
 ```bash
 git fetch origin --tags
 git show --no-patch abi-research-r100-2026-11-05
-git rev-parse 'abi-research-r100-2026-11-05^{commit}'
+git show --no-patch abi-research-r101-2026-11-05
+git rev-parse 'abi-research-r101-2026-11-05^{commit}'
 git lfs pull
 git lfs fsck
 ```
@@ -58,6 +60,14 @@ historical Phase 7 tests. See the [default receipt](../results/review_2026_11_05
 The package version is unchanged because no supported API changed.
 
 ## Promotion policy
+
+R101 local review: 246 default tests pass with four declared skips, plus 16/16
+exact historical Phase 7 tests. The supported CI list passes 83. See the
+[R101 packet](R101_EXECUTION_CONTINUATION.md), [default report](../results/review_2026_11_05/r101-default.xml),
+[Phase 7 report](../results/review_2026_11_05/r101-phase7.xml) and
+[CI-surface report](../results/review_2026_11_05/r101-ci-surface.xml).
+These checks and the same-machine diagnostic do not fill independent external
+or product-quality gates. No package version change is warranted.
 
 - Change the package version for supported API changes and describe migration.
 - Assign a new artifact/interface identity for incompatible execution contracts.

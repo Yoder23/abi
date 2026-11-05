@@ -4,6 +4,14 @@ Status date: 2026-11-05
 
 ## Active work
 
+[R101](R101_EXECUTION_CONTINUATION.md) is complete and strictly recomputed:
+sampled full/padded/cached execution agreed across four checkpoints, and all
+288 unassisted sequences replayed exactly. Its primary oracle-prefix
+remaining-fact contrast was null (24/34 before and after; 95% CI [-0.14706,
+0.14706]). The full-model reference-token fit was 91.44% on training and 78.91%
+on development. This narrows the next question toward acquisition fit and
+generalization without proving data insufficiency or a native LayerCake defect.
+
 The additive [R99-D1 fit audit](../experiments/grounded_english_r99/FIT_AUDIT.md)
 completed without changing any model: training-example passes were 7/24 ABI
 plan, 12/24 distillation, 13/24 LoRA and 0/24 parent. Correct-prefix fact-token
@@ -32,7 +40,12 @@ is counted; no earlier LayerCake performance certificate is inherited.
 
 `FULL_MOONSHOT_NOT_PROVEN`
 
-The latest bounded research snapshot is published as
+The R101 diagnostic review is versioned as `abi-research-r101-2026-11-05`.
+Its local review passed 262 tests with four documented skips; the supported
+CI surface passed 83 and package builds passed. Use the
+[R101 review packet](R101_EXECUTION_CONTINUATION.md) for its exact claim limits.
+
+The preceding R100 bounded research snapshot is published as
 [`abi-research-r100-2026-11-05`](https://github.com/Yoder23/abi/releases/tag/abi-research-r100-2026-11-05).
 Its local review passed 236 tests with four documented skips; the supported
 57-test CI surface, package builds and documentation checks passed. See the
@@ -67,6 +80,7 @@ training, live generation replication, or independent-hardware validation.
 | R98 / C1 | Source gates failed; immutable negative evidence | No student quality evaluation |
 | R99 | Normalized data qualified; matched FP32 learner comparison failed | ABI plan underperformed both trained controls; no fluent core promoted |
 | R99-D1 / R100 | Limited autonomous training fit; full-model control 20/48 on fresh prompts, equal to LoRA | Parameter unfreezing alone did not solve this bounded recipe; cause remains unresolved |
+| R101 | Measured execution-path agreement and exact unassisted replay; null primary continuation contrast | No autonomous gain, native host defect, or sole acquisition cause established |
 | Independent hardware | Not executed | Open |
 | Minimum-information proof | Not executed | Open |
 | General teacher-to-LayerCake English extraction | Not established | Open |

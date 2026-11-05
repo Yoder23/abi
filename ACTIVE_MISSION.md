@@ -2,7 +2,7 @@
 
 Updated: 2026-11-05
 
-## Active bounded diagnostic: R101
+## Latest completed diagnostic: R101
 
 The user authorized the next diagnostic and publication. Follow
 [R101](experiments/execution_continuation_r101/PROTOCOL.md): fixed checkpoints,
@@ -10,6 +10,15 @@ zero training/teacher calls, raw-logit execution-path comparisons and paired
 oracle-prefix continuation. Keep assisted diagnostics separate from autonomous
 quality and ABI integration separate from native LayerCake defects. Preserve
 all negative evidence. Broad English and the full moonshot remain unproven.
+
+R101 is complete and strictly verified. All four checkpoints passed measured
+full/padded/cached comparisons; 288 unassisted token sequences replayed exactly.
+The primary 50%-prefix remaining-fact contrast was null (24/34 versus 24/34,
+95% interval -0.14706 to +0.14706). Assisted joined-response gains are not
+autonomous quality. The full-model reference-token fit was 91.44% training and
+78.91% development. Preserve raw tensors and all 864 generation rows; the next
+proposal should separate data coverage/generalization from optimization fit.
+No native LayerCake defect, fluent core or new product certificate is established.
 
 ## Latest completed control: R100 negative; R99-FP32 remains closed
 

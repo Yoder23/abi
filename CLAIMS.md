@@ -8,6 +8,18 @@ identity.
 
 ## Current claims
 
+### R101: bounded execution agreement; null continuation contrast
+
+[R101](docs/R101_EXECUTION_CONTINUATION.md) found zero tolerance violations or
+argmax disagreements on the registered full/padded/cached logit comparisons,
+and exactly replayed 288 unassisted sequences. This is measured-path agreement,
+not universal LayerCake correctness. Supplying half the correct response did
+not improve full-model remaining-fact coverage (24/34 before and after; paired
+95% CI [-0.14706, 0.14706]). Assisted joined-response gains cannot be promoted
+as autonomous quality. Training/development reference-fit differences warrant
+further acquisition controls but do not prove a sole cause. No new product or
+moonshot certificate is issued.
+
 ### R99-D1 / R100: bounded diagnostic negatives, no product promotion
 
 The [fit diagnostic and full-scope control](docs/R100_ACQUISITION_CAPACITY.md)

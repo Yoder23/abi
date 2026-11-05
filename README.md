@@ -35,6 +35,7 @@ LoRA and distillation.
 | R21-R23 | Bounded label-separated supplied-content generation and prospective semantic replication | General English and autonomous discovery |
 | R98 / C1 / R99 | Two source failures preserved; R99 data qualified, but its ABI-plan learner scored 10/48 vs LoRA 27/48 and distillation 20/48 | Failed bounded learning pilot; no fluent-English core promoted |
 | R99-D1 / R100 | Fit audit completed; one full-model control scored 20/48 on fresh prompts, equal to retained LoRA | Quality and fit gates failed; acquisition bottleneck not yet isolated |
+| R101 | Sampled execution paths agree; 288 exact unassisted replays; primary oracle-prefix continuation contrast is null | Data/generalization, optimizer fit and parent suitability remain unresolved |
 
 These lineages must not be combined into one certification. The controlling
 public technical release remains
@@ -45,6 +46,11 @@ The [R100 acquisition-capacity control](docs/R100_ACQUISITION_CAPACITY.md)
 also failed: full-model fine-tuning scored 20/48, equal to retained LoRA and
 below the unchanged 44/48 gate. More trainable weights alone did not solve this
 bounded acquisition problem. No new core or ABI superiority is promoted.
+
+The [R101 diagnostic](docs/R101_EXECUTION_CONTINUATION.md) found no measured
+cached/padded execution disagreement. Correct answer prefixes did not improve
+the primary remaining-fact coverage contrast. Assisted scores are not an
+English-core breakthrough; the next acquisition question is still open.
 
 Read the [project status](docs/PROJECT_STATUS.md) and [claim
 ledger](CLAIMS.md) before citing a result.

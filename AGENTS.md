@@ -324,6 +324,15 @@ outputs cannot count as autonomous English. Path disagreement is an integration
 finding requiring localization, not automatically a native LayerCake defect.
 No historical changes, new parameter sweep or automatic training follow-on.
 
+R101 completed with measured execution-path agreement and exact replay of all
+288 unassisted sequences. Its primary remaining-fact intervention was null:
+24/34 before and after 50% oracle-prefix assistance, paired CI [-0.14706, 0.14706].
+The full-model correct-prefix response-token accuracy was 91.44% on training
+examples versus 78.91% on development. Preserve the complete raw-logit and token
+evidence. Do not call joined oracle-assisted scores autonomous English or blame
+native LayerCake. Data coverage/generalization, optimization fit and parent
+suitability still require prospective discrimination. No automatic next run.
+
 1. Execute the frozen human-rating packet with three independent raters.
 2. Run the external reproduction packet on genuinely different hardware.
 3. Execute registered minimum-information certification.
