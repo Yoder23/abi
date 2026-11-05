@@ -2,14 +2,18 @@
 
 Updated: 2026-11-05
 
-## Active bounded experiment: R98-C1
+## Active bounded experiment: R99
 
 The user authorized continued bounded research and versioned publication.
 [R98](experiments/plan_english_r98/PROTOCOL.md) stopped at its source gate:
 206/240 mechanical passes, 31 truncated outputs, and zero student training.
 The additive [C1 protocol](experiments/plan_english_r98_completion/PROTOCOL.md)
-permits one exact-prefix completion pass with unchanged source thresholds.
-Only a passing corpus opens the original learner comparison: learned supplied-
+also failed: 226/240, with 22/30 emails, despite exact completion prefixes and
+zero truncation. Seven emails exceeded the word limit. Both failures remain
+unchanged. [R99](experiments/grounded_english_r99/PROTOCOL.md) introduces only
+source-sentence selection for email normalization, with a fresh prospective
+development population. Only a qualified normalized corpus opens the learner
+comparison: learned supplied-
 proposition planning followed by autonomous English generation, compared with
 matched direct sequence distillation, conventional LoRA, and an unchanged
 LayerCake parent. All inherited weights and information are accounted for.
@@ -17,8 +21,9 @@ Source qualification precedes training. Mechanical language proxies cannot
 certify fluency; broad English, human quality, CPU gates and production host
 acceptance remain open. Preserve failed prerequisites and attribute them to
 the measured source/acquisition/integration boundary. No LayerCake source
-changes or larger follow-on campaigns are authorized by this pilot. Its known
-development set is not a hidden test; do not promote it to a fluent-core proof.
+changes or larger follow-on campaigns are authorized by this pilot. R98/C1's
+development set is known; R99's fresh population is frozen before capture.
+Neither supports unrestricted-English certification from lexical screens.
 
 New readers should use [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md) for
 the concise dashboard and [`docs/README.md`](docs/README.md) for navigation.

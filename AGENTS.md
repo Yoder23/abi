@@ -265,12 +265,15 @@ arbitrary teacher.
 Active user authorization (2026-11-05): continue bounded evidence-led research
 and publish versioned, clearly documented updates to both repositories. R98
 stopped at its source prerequisite (206/240; 31 truncated responses), with no
-student training. Preserve that failure unchanged. The next bounded step is
-R98-C1 in `experiments/plan_english_r98_completion/PROTOCOL.md`: one length-only
-completion pass with exact prefix checks and unchanged source gates, followed
-only on success by the matched LoRA/distillation/ABI pilot. No prompt, threshold,
-seed or optimizer sweep; no LayerCake source changes or inherited release
-claims. An automatic machine screen cannot certify English fluency.
+student training. R98-C1 removed truncation with 31/31 exact token-prefix
+matches but still failed (226/240; emails 22/30). Preserve both failures and
+the C1 offline-tokenizer operational error. No further cap or prompt sweep.
+The next bounded step is `experiments/grounded_english_r99/PROTOCOL.md`:
+source-substring sentence selection to address measured email verbosity,
+fresh prospectively frozen development prompts, then matched ABI-plan,
+LoRA and distillation learners only if normalized-data qualification passes.
+No threshold or optimizer sweep, no LayerCake source changes and no inherited
+release claims. An automatic machine screen cannot certify English fluency.
 
 1. Execute the frozen human-rating packet with three independent raters.
 2. Run the external reproduction packet on genuinely different hardware.

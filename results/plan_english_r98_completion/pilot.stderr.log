@@ -1,0 +1,35 @@
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|##5       | 1/4 [00:01<00:03,  1.18s/it]Loading checkpoint shards:  50%|#####     | 2/4 [00:02<00:02,  1.17s/it]Loading checkpoint shards:  75%|#######5  | 3/4 [00:03<00:01,  1.25s/it]Loading checkpoint shards: 100%|##########| 4/4 [00:04<00:00,  1.26s/it]Loading checkpoint shards: 100%|##########| 4/4 [00:04<00:00,  1.24s/it]
+Traceback (most recent call last):
+  File "C:\Python310\lib\runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Python310\lib\runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "C:\Python310\layercake_merged_nextgen_perfectA_option1_full_ready\abi_release\experiments\plan_english_r98_completion\run.py", line 367, in <module>
+    main()
+  File "C:\Python310\layercake_merged_nextgen_perfectA_option1_full_ready\abi_release\experiments\plan_english_r98_completion\run.py", line 355, in main
+    {
+  File "C:\Python310\layercake_merged_nextgen_perfectA_option1_full_ready\abi_release\experiments\plan_english_r98_completion\run.py", line 225, in verify_source
+    tokenizer = AutoTokenizer.from_pretrained(c.SOURCE, revision=c.REVISION, local_files_only=True)
+  File "C:\Python310\lib\site-packages\transformers\models\auto\tokenization_auto.py", line 1156, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+  File "C:\Python310\lib\site-packages\transformers\tokenization_utils_base.py", line 2113, in from_pretrained
+    return cls._from_pretrained(
+  File "C:\Python310\lib\site-packages\transformers\tokenization_utils_base.py", line 2395, in _from_pretrained
+    tokenizer = cls._patch_mistral_regex(
+  File "C:\Python310\lib\site-packages\transformers\tokenization_utils_base.py", line 2438, in _patch_mistral_regex
+    if _is_local or is_base_mistral(pretrained_model_name_or_path):
+  File "C:\Python310\lib\site-packages\transformers\tokenization_utils_base.py", line 2432, in is_base_mistral
+    model = model_info(model_id)
+  File "C:\Python310\lib\site-packages\huggingface_hub\utils\_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "C:\Python310\lib\site-packages\huggingface_hub\hf_api.py", line 2660, in model_info
+    r = get_session().get(path, headers=headers, timeout=timeout, params=params)
+  File "C:\Python310\lib\site-packages\requests\sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+  File "C:\Python310\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Python310\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Python310\lib\site-packages\huggingface_hub\utils\_http.py", line 106, in send
+    raise OfflineModeIsEnabled(
+huggingface_hub.errors.OfflineModeIsEnabled: Cannot reach https://huggingface.co/api/models/Qwen/Qwen2-7B-Instruct: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.
