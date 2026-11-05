@@ -34,6 +34,7 @@ LoRA and distillation.
 | R97 | Prospective two-hop reasoning transfer: 1,399/1,400 with causal controls and byte-identical replay | Broad English, arbitrary capabilities, independent reproduction |
 | R21-R23 | Bounded label-separated supplied-content generation and prospective semantic replication | General English and autonomous discovery |
 | R98 / C1 / R99 | Two source failures preserved; R99 data qualified, but its ABI-plan learner scored 10/48 vs LoRA 27/48 and distillation 20/48 | Failed bounded learning pilot; no fluent-English core promoted |
+| R99-D1 / R100 | Fit audit completed; one full-model control scored 20/48 on fresh prompts, equal to retained LoRA | Quality and fit gates failed; acquisition bottleneck not yet isolated |
 
 These lineages must not be combined into one certification. The controlling
 public technical release remains

@@ -32,7 +32,17 @@ is counted; no earlier LayerCake performance certificate is inherited.
 
 `FULL_MOONSHOT_NOT_PROVEN`
 
-The November bounded research snapshot is published as
+The latest bounded research snapshot is published as
+[`abi-research-r100-2026-11-05`](https://github.com/Yoder23/abi/releases/tag/abi-research-r100-2026-11-05).
+Its local review passed 236 tests with four documented skips; the supported
+57-test CI surface, package builds and documentation checks passed. See the
+[R100 review packet](R100_ACQUISITION_CAPACITY.md).
+Public-only checkouts then matched 52 assets and 784 frozen inputs,
+recomputed both negative decisions and passed 62 focused tests; see the
+[bounded reconstruction receipt](R100_ACQUISITION_CAPACITY.md#published-reconstruction).
+No live generation or different-hardware replication is claimed.
+
+The preceding R99 snapshot is published as
 [`abi-research-2026-11-05`](https://github.com/Yoder23/abi/releases/tag/abi-research-2026-11-05).
 Its local review suites passed 219 tests with four documented skips; package
 builds, documentation checks and GitHub CI passed. Fresh public clones then
@@ -56,6 +66,7 @@ training, live generation replication, or independent-hardware validation.
 | R23 | Prospective bounded semantic supplied-content pass | Not broad English or autonomous discovery |
 | R98 / C1 | Source gates failed; immutable negative evidence | No student quality evaluation |
 | R99 | Normalized data qualified; matched FP32 learner comparison failed | ABI plan underperformed both trained controls; no fluent core promoted |
+| R99-D1 / R100 | Limited autonomous training fit; full-model control 20/48 on fresh prompts, equal to LoRA | Parameter unfreezing alone did not solve this bounded recipe; cause remains unresolved |
 | Independent hardware | Not executed | Open |
 | Minimum-information proof | Not executed | Open |
 | General teacher-to-LayerCake English extraction | Not established | Open |

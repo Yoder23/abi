@@ -142,3 +142,50 @@ Broad English and human quality, isolation from specialist knowledge, compactnes
 three paired seeds, immutable signed host acceptance, and the same final
 artifact's CPU speed, TTFT and memory advantages remain open. Neither a passing
 software suite nor this full-model control can fill those gates.
+
+## Public review identity
+
+The immutable [research release](https://github.com/Yoder23/abi/releases/tag/abi-research-r100-2026-11-05)
+is a negative-evidence review packet, not an English-core product release.
+
+- Annotated tag: `abi-research-r100-2026-11-05`.
+- Peeled source commit: `6ec9ba1603c24bf7eb73effa994e4d2a7bca7e57`.
+- Tag object: `4ee825b230672c7c2641647b9476f55aca444597`.
+- Sibling host checkout: `865a2b9e59e6221caa1185f9b64479d2077953f3`;
+  its Python bytes match the frozen host binding.
+- [Required asset manifest](../results/review_2026_11_05/r100_manifest.json):
+  52 assets, 1,762,396,016 bytes; SHA-256
+  `77349039c92e85ba8a5cf3291abaaa6e7483e054411835b36a8d6f88ad73fa5f`.
+
+Use sibling directories named `abi_release` and `layercake_release` at those
+exact commits. Required model payloads are the R76 parent, the three final R99
+FP32 checkpoints, and the final R100 checkpoint. Fetch their Git LFS objects
+from GitHub; the manifest rejects unresolved pointers and missing payloads.
+The review helper attached to the release checks both source identities,
+every required asset and frozen input, both recomputed decisions, and focused
+tests. It does not rerun training or generation. Use the recorded dependencies
+and pinned public tokenizer; never substitute development-only assets.
+
+Later documentation commits may record reconstruction results without moving
+this tag or changing its frozen research inputs.
+
+### Published reconstruction
+
+Public-only checkouts originally cloned for R99 were fetched to the R100 tag;
+the new final checkpoint was downloaded from public Git LFS. No development
+assets were copied. All 52 assets and 784 frozen bindings matched, both the
+diagnostic and capacity-control decisions recomputed, and 62 focused tests
+passed. Both checkouts remained clean. The release's GitHub lint and supported
+verification workflows also passed.
+
+- [Reconstruction helper](https://github.com/Yoder23/abi/releases/download/abi-research-r100-2026-11-05/verify_public_r100.py),
+  SHA-256 `b72f75ab4cdd89adb8bddc2be2463be898ccbc901c87461bbd3379b44349c3ea`.
+- [Machine-readable receipt](https://github.com/Yoder23/abi/releases/download/abi-research-r100-2026-11-05/public_r100_reconstruction.json),
+  SHA-256 `5695791b95cc42eaa37266bfd4924e5a4709f140e5f32383809ecfce2c8aa350`.
+- [62-test report](https://github.com/Yoder23/abi/releases/download/abi-research-r100-2026-11-05/public-r100-tests.xml),
+  SHA-256 `21f5117cfce361b402b1937aedcc09eebb05b2f956541a4fd37810bad0960040`.
+
+This used the same machine, installed dependencies and pinned public tokenizer
+cache. It is not a brand-new R100 clone, live training/generation replication,
+independent hardware, human evaluation, or a scientific promotion. The result
+is explicitly `PASS_FOR_R99_D1_AND_R100_NEGATIVE_EVIDENCE_ONLY`.

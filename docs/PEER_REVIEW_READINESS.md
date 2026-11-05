@@ -18,14 +18,19 @@ The latest [R100 control](R100_ACQUISITION_CAPACITY.md) failed all registered
 screens. Its research tag is `abi-research-r100-2026-11-05`, not a product
 release. Local review passed 236 tests with four declared skips; the supported
 CI test list passed 57. Wheel and source distribution builds passed.
+Public-only checkouts matched all 52 required assets and 784 frozen bindings,
+recomputed both negative decisions, and passed 62 focused tests. The
+[published receipt](R100_ACQUISITION_CAPACITY.md#published-reconstruction)
+discloses reused public checkouts, same hardware and shared dependencies;
+it is not live generation replication or independent review.
 
 See [versioning](VERSIONING.md) for the November annotated review snapshot and
-the exact-source test runner, and [R99](R99_ENGLISH_PILOT.md) for the latest
-acquisition experiment. Source qualification, numerical validation and model
+the exact-source test runner, and [R99](R99_ENGLISH_PILOT.md) for the preceding
+acquisition pilot. Source qualification, numerical validation and model
 quality are reported separately. No current research snapshot supersedes R7's
 bounded technical release or promotes whole-moonshot certification.
 
-The November tag is public. Its review suites passed 219 tests with four
+The preceding R99 November tag is public. Its review suites passed 219 tests with four
 documented skips; its sdist/wheel, documentation checks and GitHub CI passed.
 The three failed final learner checkpoints are retained through Git LFS.
 Fresh public clones matched 738 frozen inputs and all 50 required assets,

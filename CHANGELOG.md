@@ -10,6 +10,11 @@
   final checkpoint. No ABI or LayerCake product claim changed.
 - Added 17 diagnostic/control tests and exact CI coverage. The full review now
   passes 236 tests with four documented skips; the supported CI list passes 57.
+- Published immutable `abi-research-r100-2026-11-05` and its final control
+  checkpoint. Public-only checkouts matched 52 assets and 784 frozen inputs,
+  recomputed both negative decisions and passed 62 focused tests. Published
+  the reconstruction helper and receipts; no live or independent-hardware
+  replication, product promotion, or tag replacement.
 - Preserved R98 and C1 as failed source prerequisites with complete raw text,
   source token counts, hashes and negative-evidence audits. No student was
   trained by either run; neither failure is a LayerCake quality regression.

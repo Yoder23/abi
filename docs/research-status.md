@@ -5,10 +5,13 @@ Updated: 2026-11-05
 The concise dashboard is [`PROJECT_STATUS.md`](PROJECT_STATUS.md). This file
 retains the detailed interpretation of later research lineages.
 
-The current acquisition series is documented in [R98/C1](R98_ENGLISH_PILOT.md)
-and [R99](R99_ENGLISH_PILOT.md). Source failures, source-normalization success,
-numerical failures and learner quality are separate outcomes. No broad-English
-or LoRA/distillation superiority claim is added by this series so far.
+The current acquisition series is documented in [R98/C1](R98_ENGLISH_PILOT.md),
+[R99](R99_ENGLISH_PILOT.md), and the completed
+[R99-D1/R100 fit and capacity controls](R100_ACQUISITION_CAPACITY.md). The R100
+full-model control failed at 20/48, equal to retained LoRA, with no promotion.
+Source failures, source-normalization success, numerical failures, learner fit
+and autonomous quality remain separate outcomes. No broad-English or
+LoRA/distillation superiority claim is added by this series so far.
 
 The still-unexecuted 21,000-row human protocol now has an additive V2
 implementation-binding repair. The sealed packet and scientific protocol are
