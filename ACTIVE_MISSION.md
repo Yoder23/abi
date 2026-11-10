@@ -13,6 +13,13 @@ R98-R101 evidence and keep LayerCake source unchanged. Publication is pending
 the user's current privacy preference; continue local preregistration and
 bounded execution without assuming permission to publish new work.
 
+The first corpus freeze failed before GPU work after 317 aliases. Preserve
+`results/coverage_exposure_r102_preflight_v1/`. The prospective
+[A1 preflight repair](experiments/coverage_exposure_r102/PREFLIGHT_A1.md) selects
+token-compatible components from the same bounded proposal pool; it does not
+relax matching or scientific gates. A new successful freeze is required before
+any model execution. This construction result is not an acquisition pass.
+
 ## Latest completed diagnostic: R101
 
 The user authorized the next diagnostic and publication. Follow

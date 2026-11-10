@@ -37,7 +37,7 @@ def freeze():
     if dev_ids & original_ids:
         raise RuntimeError("Development identifiers overlap prior populations")
     occupied = original_ids | dev_ids
-    aliases = [c.construct_alias(row, source_rows[row["id"]]["teacher_output"], alias, tokenizer, occupied)
+    aliases = [c.construct_profiled_alias(row, source_rows[row["id"]]["teacher_output"], alias, tokenizer, occupied)
                for row in training for alias in range(4)]
     if len({r["row"]["prompt"] for r in aliases}) != 768:
         raise RuntimeError("Aliased population has duplicates")
@@ -50,13 +50,15 @@ def freeze():
     order = c.trajectories()
     random.Random(102003).shuffle(order)
     files = dict(c.read(prior_diagnostic.OUT / "freeze.json")["files"])
-    paths = list(c.HERE.glob("*.py")) + [c.HERE / "PROTOCOL.md",
+    paths = list(c.HERE.glob("*.py")) + [c.HERE / "PROTOCOL.md", c.HERE / "PREFLIGHT_A1.md",
         c.ROOT / "tests/test_coverage_exposure_r102.py", prior_diagnostic.OUT / "freeze.json", prior_diagnostic.OUT / "decision.json",
         c.previous.OUT / "source/raw.jsonl", c.previous.OUT / "source/rows.jsonl", c.previous.OUT / "source/result.json",
         c.previous.r99.OUT / "source/result.json"] + list(c.OUT.glob("*.json"))
+    paths += list((c.ROOT / "results/coverage_exposure_r102_preflight_v1").glob("*"))
     files.update({os.path.relpath(p, c.ROOT).replace("\\", "/"): c.sha(p) for p in paths})
     c.write_once(c.OUT / "freeze.json", {
-        "format": "r102-coverage-exposure-freeze/1", "client_date": "2026-11-10", "files": files,
+        "format": "r102-coverage-exposure-freeze/2", "client_date": "2026-11-10", "files": files,
+        "construction_amendment": "PREFLIGHT_A1",
         "abi_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=c.ROOT, text=True).strip(),
         "trajectory_order": order, "endpoints": c.ENDPOINTS, "teacher_queries": 96,
         "training_steps": 6144, "budget_seconds": 10800,
@@ -150,7 +152,7 @@ def verify_aliases(tokenizer):
     source_rows = {r["id"]: r for r in c.rows(c.previous.OUT / "source/rows.jsonl")}
     old_dev = c.read(c.previous.OUT / "development.json") + c.read(c.previous.baseline.OUT / "development.json")
     occupied = {name for row in training + development + old_dev for name in c.entities(row)}
-    expected = [c.construct_alias(row, source_rows[row["id"]]["teacher_output"], alias, tokenizer, occupied)
+    expected = [c.construct_profiled_alias(row, source_rows[row["id"]]["teacher_output"], alias, tokenizer, occupied)
                 for row in training for alias in range(4)]
     if aliases != expected:
         raise RuntimeError("Alias provenance, length matching or deterministic selection changed")

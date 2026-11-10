@@ -51,6 +51,31 @@ def test_literal_replacement_does_not_replace_substrings():
     assert c.replace_literals("NOTET0000 NOTET00001", {"NOTET0000": "NOTEX1234"}) == "NOTEX1234 NOTET00001"
 
 
+def test_profiled_constructor_combines_same_pool_without_relaxing_lengths(monkeypatch):
+    row, answer = fixture()
+    calls = []
+
+    def proposal(row, rng):
+        index = len(calls)
+        calls.append(index)
+        if index % 2 == 0:
+            return {"NOTET0000": "NOTEQ1111", "PersonT0000A": "PersonY22222A", "PersonT0000B": "PersonY22222B"}
+        return {"NOTET0000": "NOTEQ33333", "PersonT0000A": "PersonY4444A", "PersonT0000B": "PersonY4444B"}
+
+    monkeypatch.setattr(c, "alias_mapping", proposal)
+    with pytest.raises(RuntimeError):
+        c.construct_alias(row, answer, 0, Tokenizer(), set(c.entities(row)))
+    assert len(calls) == 4096
+    calls.clear()
+    result = c.construct_profiled_alias(row, answer, 0, Tokenizer(), set(c.entities(row)))
+    assert len(calls) == 2
+    assert result["component_attempts"] == {"NOTE": 0, "Person": 1}
+    assert result["mapping"]["NOTET0000"] == "NOTEQ1111"
+    assert result["mapping"]["PersonT0000A"] == "PersonY4444A"
+    assert result["target_tokens"] == len(answer)
+    assert result["prompt_tokens"] == len(c.model_prompt(row, "distillation"))
+
+
 def test_development_is_balanced_and_disjoint():
     dev = c.development_catalog()
     assert dev == c.development_catalog() and len(dev) == 96

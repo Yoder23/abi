@@ -97,6 +97,42 @@ def construct_alias(row, answer, alias, tokenizer, occupied):
     raise RuntimeError(f"No token-matched alias within bound: {row['id']} / {alias}")
 
 
+def construct_profiled_alias(row, answer, alias, tokenizer, occupied):
+    """A1: choose compatible components from the same bounded proposal stream."""
+    seed = int.from_bytes(hashlib.sha256(f"r102:{row['id']}:{alias}".encode()).digest()[:8], "big")
+    rng = random.Random(seed)
+    pc = len(tokenizer.encode(model_prompt(row, "distillation"), add_special_tokens=False))
+    tc = len(tokenizer.encode(answer, add_special_tokens=False))
+    selected = {}
+    for attempt in range(4096):
+        proposal = alias_mapping(row, rng)
+        for kind in ("NOTE", "Person"):
+            if kind in selected:
+                continue
+            component = {k: v for k, v in proposal.items() if k.startswith(kind)}
+            if not component or set(component.values()) & occupied or len(set(component.values())) != len(component):
+                continue
+            derived, target = transform(row, component), replace_literals(answer, component)
+            if (len(tokenizer.encode(model_prompt(derived, "distillation"), add_special_tokens=False)) == pc
+                    and len(tokenizer.encode(target, add_special_tokens=False)) == tc):
+                selected[kind] = {"attempt": attempt, "mapping": component}
+        if len(selected) == 2:
+            mapping = {**selected["NOTE"]["mapping"], **selected["Person"]["mapping"]}
+            derived, target = transform(row, mapping), replace_literals(answer, mapping)
+            inverse = {v: k for k, v in mapping.items()}
+            if (len(tokenizer.encode(model_prompt(derived, "distillation"), add_special_tokens=False)) != pc
+                    or len(tokenizer.encode(target, add_special_tokens=False)) != tc
+                    or transform(derived, inverse) != row or replace_literals(target, inverse) != answer
+                    or screen(derived, target) != screen(row, answer)):
+                raise RuntimeError("Combined profiled alias violates original constraints")
+            occupied.update(mapping.values())
+            return {"original_id": row["id"], "alias": alias, "mapping": mapping,
+                    "attempt": attempt, "component_attempts": {k: v["attempt"] for k, v in selected.items()},
+                    "construction": "profiled_same_pool_A1", "row": derived, "target": target,
+                    "prompt_tokens": pc, "target_tokens": tc}
+    raise RuntimeError(f"No profiled alias within bound: {row['id']} / {alias}")
+
+
 def training_schedule():
     rng = random.Random(SEED)
     order = list(range(192))

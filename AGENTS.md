@@ -343,6 +343,13 @@ evaluation inputs before GPU work. Keep native LayerCake untouched. A local
 Git freeze is required; hold external publication pending the user's answer to
 whether this run should be published as before or kept local for review.
 
+R102 preflight A1: the first joint sampler stopped before source/model execution.
+Preserve its 4,096-proposal rejection trace and same-pool component analysis.
+`PREFLIGHT_A1.md` prospectively registers an implementation repair before the
+first successful input freeze: component token-profile matching in the same
+bounded proposal stream. No scientific threshold, training budget, data factor
+or evaluator is changed. The initial sampler and negative evidence stay intact.
+
 1. Execute the frozen human-rating packet with three independent raters.
 2. Run the external reproduction packet on genuinely different hardware.
 3. Execute registered minimum-information certification.

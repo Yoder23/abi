@@ -12,6 +12,9 @@ compatible project-ID components and 69 compatible person-ID components in
 that same pool; combining recorded proposals 40 and 144 preserves the exact
 119 prompt / 44 target token counts and inverse text identity. This is a sampler
 construction issue, not student failure, data insufficiency or host incapacity.
+The [A1 construction amendment](../experiments/coverage_exposure_r102/PREFLIGHT_A1.md)
+prospectively registers component-profile selection from the same bounded
+proposal stream, with all token/identity constraints and scientific gates intact.
 No successful R102 freeze or GPU experiment exists yet.
 
 ## Question
