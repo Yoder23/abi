@@ -343,6 +343,12 @@ evaluation inputs before GPU work. Keep native LayerCake untouched. A local
 Git freeze is required; hold external publication pending the user's answer to
 whether this run should be published as before or kept local for review.
 
+Publication clarification (2026-11-10): the user explicitly answered "Publish
+as before." The temporary privacy hold is lifted. Publish the sealed R102 tag,
+complete required evidence and an additive public-reconstruction receipt without
+moving the tag, modifying its historical local-only fields or promoting its
+negative scientific result. This publication step authorizes no new model run.
+
 R102 preflight A1: the first joint sampler stopped before source/model execution.
 Preserve its 4,096-proposal rejection trace and same-pool component analysis.
 `PREFLIGHT_A1.md` prospectively registers an implementation repair before the
