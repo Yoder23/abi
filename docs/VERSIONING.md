@@ -5,7 +5,7 @@
 | Python package | `0.4.0a1` | Supported alpha compiler API |
 | Controlling technical release | `abi-final-validation-v2-repaired-r7-2026-08-30` | Bounded R7 runtime/conformance proof |
 | Latest public research review snapshot | `abi-research-r101-2026-11-05` | Execution/continuation diagnostic; no English-core promotion |
-| Current local research study | R102, intended tag `abi-research-r102-2026-11-10` | Negative coverage/exposure factorial; publication awaiting user choice |
+| Current local research snapshot | `abi-research-r102-2026-11-10` | Negative coverage/exposure factorial; locally sealed, not published |
 | Previous research snapshot | `abi-research-r100-2026-11-05` | Preserved R99-D1/R100 negative capacity control and public reconstruction |
 | Earlier research snapshot | `abi-research-2026-11-05` | Preserved R98/R99 research and public reconstruction |
 | Default branch | `master` | Moving development and research history |
@@ -59,6 +59,14 @@ historical Phase 7 tests. See the [default receipt](../results/review_2026_11_05
 [Phase 7 receipt](../results/review_2026_11_05/r100-preflight-phase7.xml) and
 [57-test supported CI surface](../results/review_2026_11_05/r100-ci-surface.xml).
 The package version is unchanged because no supported API changed.
+
+R102 local review: 271 default tests pass with four declared skips, plus 16/16
+exact historical Phase 7 tests. The supported CI list passes 108 locally. The
+annotated local tag points to `d5a8957b152ce883779436103bd61a7ba4cd2f35`; its
+tag-object identity is `1ef35b43aa14c23e1f3836e07009dcf0bd5ee1b5`. See the
+[R102 packet](R102_COVERAGE_EXPOSURE.md) for complete dependency custody and
+the negative scientific result. This tag is not yet published; R101 remains
+the latest public review snapshot. No package API or LayerCake source changed.
 
 ## Promotion policy
 

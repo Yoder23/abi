@@ -231,3 +231,24 @@ recorded separately. Manifest SHA-256:
 This is a local custody inventory, not a claim that R102 has been uploaded,
 reconstructed publicly or independently reproduced. Publication must include
 the complete transitive payload set before a public-replay claim can be made.
+
+### Pinned local seal
+
+- Annotated tag: `abi-research-r102-2026-11-10` (local only).
+- Scientific/evidence commit: `d5a8957b152ce883779436103bd61a7ba4cd2f35`.
+- Tag object: `1ef35b43aa14c23e1f3836e07009dcf0bd5ee1b5`.
+- [Local custody receipt](../results/review_2026_11_10/r102_git_custody.json):
+  `fd979867b81840717c5a3ca220ec0a34e67e490c1b87498700448d2d0a8fe745`.
+
+The read-only check matched all 768 ordinary Git blobs, 14 LFS paths and 182
+external host-source blobs to their recorded hashes at the pinned identities.
+Local `git lfs fsck` also passed. This receipt establishes local object custody,
+not a public clone, live generation replication or independent-hardware result.
+The receipt and this explanation are additive post-tag records; the sealed tag
+and scientific decision have not been moved or rewritten.
+
+```powershell
+python scripts/check_r102_git_custody.py --revision abi-research-r102-2026-11-10 --output results/review_2026_11_10/r102_git_custody_recheck.json
+```
+
+Use a new output path for each check; existing receipts are not overwritten.

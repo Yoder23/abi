@@ -15,6 +15,11 @@
 - Added a clearly post-run error inventory and five tests. Corrected the
   interpretation of the original-example panel: it is retention, not in-sample
   fit, for augmented learners. Historical fields and gates are unchanged.
+- Sealed local annotated tag `abi-research-r102-2026-11-10` with all eight
+  checkpoints. Local review passed 287 tests with four declared skips; the
+  supported CI list passed 108. Complete local custody verified 768 Git blobs,
+  14 LFS paths and 182 external host-source blobs. The receipt is additive;
+  nothing was pushed and no public/independent reconstruction is claimed.
 
 ## 2026-11-05
 

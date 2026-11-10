@@ -8,6 +8,9 @@ Status date: 2026-11-10
 
 `FULL_MOONSHOT_NOT_PROVEN`
 
+The published-review status refers to R101 and earlier releases. R102 is a
+separately sealed local review snapshot, not a public release.
+
 Independent reviewers can evaluate R7, V1089, R97, and R21-R23 as separate
 bounded evidence lineages. They must not combine those lineages into a single
 final-artifact proof.
@@ -18,6 +21,10 @@ The completed [R102 factorial](R102_COVERAGE_EXPOSURE.md) is local only while
 publication awaits the user's privacy preference. All quality screens failed
 and neither primary factor was supported. Local review passed 287 tests with
 four declared skips, including five explicitly post-run error-audit checks.
+The supported CI test list passed 108 locally. The immutable local tag's
+complete inventory matched 768 Git blobs, 14 LFS paths and 182 external host
+source blobs; the [custody receipt](R102_COVERAGE_EXPOSURE.md#pinned-local-seal)
+is additive and does not move the tag.
 Do not describe this as a public reconstruction, independent review or product
 certification. All earlier public release identities remain unchanged.
 
