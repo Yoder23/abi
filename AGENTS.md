@@ -333,6 +333,16 @@ evidence. Do not call joined oracle-assisted scores autonomous English or blame
 native LayerCake. Data coverage/generalization, optimization fit and parent
 suitability still require prospective discrimination. No automatic next run.
 
+User continuation (2026-11-10): preregister one R102 entity-coverage versus
+optimization-exposure factorial, using conventional LoRA and adapter distillation,
+under `experiments/coverage_exposure_r102/PROTOCOL.md`. Four fixed trajectories,
+two fixed endpoints; no full-model/JSON-plan variant or learning-rate search.
+Entity renaming is conventional provenance-preserving augmentation, not ABI
+novelty or broad semantic coverage. Freeze all synthetic targets and prospective
+evaluation inputs before GPU work. Keep native LayerCake untouched. A local
+Git freeze is required; hold external publication pending the user's answer to
+whether this run should be published as before or kept local for review.
+
 1. Execute the frozen human-rating packet with three independent raters.
 2. Run the external reproduction packet on genuinely different hardware.
 3. Execute registered minimum-information certification.

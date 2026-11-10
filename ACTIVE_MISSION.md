@@ -1,6 +1,17 @@
 # Active mission
 
-Updated: 2026-11-05
+Updated: 2026-11-10
+
+## Active bounded study: R102
+
+The [R102 protocol](experiments/coverage_exposure_r102/PROTOCOL.md) separates
+entity-coverage augmentation from optimization exposure using matched LoRA and
+adapter-distillation trajectories, fixed 384/1,536-update endpoints, and 96
+prospective supplied-content prompts. This is a conventional acquisition
+diagnostic, not an ABI invention or broad-English certificate. Preserve all
+R98-R101 evidence and keep LayerCake source unchanged. Publication is pending
+the user's current privacy preference; continue local preregistration and
+bounded execution without assuming permission to publish new work.
 
 ## Latest completed diagnostic: R101
 

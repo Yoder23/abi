@@ -34,4 +34,5 @@ jobs:
           tests/test_r99_fit_audit.py
           tests/test_acquisition_capacity_r100.py
           tests/test_execution_continuation_r101.py
+          tests/test_coverage_exposure_r102.py
       - run: python -m build
