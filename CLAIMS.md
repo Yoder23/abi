@@ -1,12 +1,25 @@
 # ABI claim ledger
 
-Status date: 2026-11-05
+Status date: 2026-11-10
 
 Documentation cannot widen a machine-readable certificate. Each claim below is
 limited to its exact source, artifact, implementation, benchmark, and evidence
 identity.
 
 ## Current claims
+
+### R102: negative matched factorial, local evidence only
+
+The [R102 study](docs/R102_COVERAGE_EXPOSURE.md) completed 6,144 finite updates
+and all fixed evaluations. Neither the renaming-policy contrast nor the
+repeated-data exposure contrast had positive 97.5% cluster-bootstrap lower
+bounds in both controls. No checkpoint passed the quality screen. The source
+qualified at 282/288 normalized passes and the new development references were
+95/96 normalized, but source adequacy is not student acquisition success.
+The renaming policy changes distributions, not just data quantity; its original-
+example panel is not in-sample for augmented learners. No generic data/compute
+law, native LayerCake defect, fluent core, ABI novelty or product pass follows.
+Publication awaits the user's current privacy preference.
 
 ### R101: bounded execution agreement; null continuation contrast
 

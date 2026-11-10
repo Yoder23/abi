@@ -4,12 +4,13 @@ Status date: 2026-11-10
 
 ## Active work
 
-The local [R102 study](R102_COVERAGE_EXPOSURE.md) has frozen all inputs and is
-qualifying its source before any learner training. It compares entity-renamed
-coverage against fixed optimization exposure using LoRA and adapter-distillation
-controls. The failed initial corpus sampler and prospective A1 repair are both
-preserved. No R102 quality result exists yet; publication is pending the user's
-privacy preference.
+The local [R102 study](R102_COVERAGE_EXPOSURE.md) completed and strictly
+recomputed its matched factorial. Neither registered factor met its support
+criterion and no checkpoint passed quality. Repeat-data LoRA scored 51 -> 46/96
+and adapters 32 -> 39/96; renamed data scored 14 -> 34 and 10 -> 24.
+The source, eight states, raw generations, failed preflight and descriptive
+error audit are preserved. No native LayerCake defect or new English core is
+established. Publication is pending the user's privacy preference.
 
 [R101](R101_EXECUTION_CONTINUATION.md) is complete and strictly recomputed:
 sampled full/padded/cached execution agreed across four checkpoints, and all
@@ -93,6 +94,7 @@ training, live generation replication, or independent-hardware validation.
 | R99 | Normalized data qualified; matched FP32 learner comparison failed | ABI plan underperformed both trained controls; no fluent core promoted |
 | R99-D1 / R100 | Limited autonomous training fit; full-model control 20/48 on fresh prompts, equal to LoRA | Parameter unfreezing alone did not solve this bounded recipe; cause remains unresolved |
 | R101 | Measured execution-path agreement and exact unassisted replay; null primary continuation contrast | No autonomous gain, native host defect, or sole acquisition cause established |
+| R102 (local) | Completed matched renaming/exposure factorial; all quality screens failed | No further same-recipe sweep or product promotion; recipient/interface suitability remains open |
 | Independent hardware | Not executed | Open |
 | Minimum-information proof | Not executed | Open |
 | General teacher-to-LayerCake English extraction | Not established | Open |

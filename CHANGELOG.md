@@ -8,7 +8,13 @@
   model execution. A prospective same-pool component-profile repair produced
   all 768 token-matched, invertible variants without changing scientific gates.
 - Committed the 833-input freeze and 20 passing focused tests before starting
-  source qualification. No learner result or product promotion is claimed yet.
+  source qualification. Source passed at 282/288 normalized responses.
+- Completed all four fixed trajectories and ten evaluation endpoints. Neither
+  primary factor was supported and all quality screens failed. Preserved the
+  eight checkpoints, raw outputs and clustered comparisons; no product promotion.
+- Added a clearly post-run error inventory and five tests. Corrected the
+  interpretation of the original-example panel: it is retention, not in-sample
+  fit, for augmented learners. Historical fields and gates are unchanged.
 
 ## 2026-11-05
 

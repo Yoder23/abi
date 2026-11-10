@@ -2,7 +2,7 @@
 
 Updated: 2026-11-10
 
-## Active bounded study: R102
+## Latest completed local study: R102
 
 The [R102 protocol](experiments/coverage_exposure_r102/PROTOCOL.md) separates
 entity-coverage augmentation from optimization exposure using matched LoRA and
@@ -19,9 +19,19 @@ The first corpus freeze failed before GPU work after 317 aliases. Preserve
 token-compatible components from the same bounded proposal pool; it does not
 relax matching or scientific gates. A new successful freeze is required before
 any model execution. This construction result is not an acquisition pass.
-The successful 833-input freeze is now committed at `935a41d`; all 768 aliases
-passed exact length and inverse-identity checks. The GPU source stage is running.
-No source qualification, learner result or product claim is yet established.
+The successful 833-input freeze is committed at `935a41d`; all 768 aliases
+passed exact length and inverse-identity checks. Source qualification passed
+282/288 normalized versus 272/288 raw, without collapse/truncation. All four
+fixed training trajectories completed; the ten-endpoint evaluation matrix and
+strict recomputation are complete. Both repeat-policy 384-step checkpoints
+match the original R99 bytes. Repeat-data LoRA scored 51 -> 46/96 and adapters
+32 -> 39/96 with more updates; renamed-data controls scored 14 -> 34 and
+10 -> 24. Neither registered factor met its joint support criterion; no
+checkpoint passed quality. Preserve every failure and do not extend this
+alias/step-count sweep. The next proposal must test recipient/interface
+suitability and content grounding against a qualified English positive control.
+No native LayerCake defect or product promotion is established. Publication
+is still pending the user's privacy preference.
 
 ## Latest completed diagnostic: R101
 

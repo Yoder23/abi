@@ -350,6 +350,17 @@ first successful input freeze: component token-profile matching in the same
 bounded proposal stream. No scientific threshold, training budget, data factor
 or evaluator is changed. The initial sampler and negative evidence stay intact.
 
+R102 completed and strictly recomputed locally. Neither primary factor met its
+support criterion; all quality screens failed. Repeat-data LoRA was 51 -> 46/96
+and adapters 32 -> 39/96; renamed-data controls were 14 -> 34 and 10 -> 24.
+The low-exposure repeated checkpoints exactly reproduce R99. Preserve all eight
+states and the failed preflight. The original-example panel is not in-sample
+for augmented data; do not mislabel it as augmented training-fit failure.
+Do not run more same-recipe alias/step-count variants. A successor requires a
+prospective recipient/interface positive control and grounded-content diagnosis,
+not an assumption that native LayerCake is broken or already English-qualified.
+No teacher-quality English, ABI novelty or product certificate is promoted.
+
 1. Execute the frozen human-rating packet with three independent raters.
 2. Run the external reproduction packet on genuinely different hardware.
 3. Execute registered minimum-information certification.

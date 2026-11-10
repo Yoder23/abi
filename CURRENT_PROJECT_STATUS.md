@@ -2,14 +2,16 @@
 
 Updated: 2026-11-10
 
-Active local work: [R102](docs/R102_COVERAGE_EXPOSURE.md), a preregistered
+Latest local result: [R102](docs/R102_COVERAGE_EXPOSURE.md), a preregistered
 entity-coverage versus optimization-exposure factorial. Its first corpus
 construction failure is preserved; the prospective A1 repair passed the
-token-matched freeze before GPU work. Source qualification is running. No
-R102 learner, host, product or moonshot claim is yet established. Publication
+token-matched freeze before GPU work. Source qualification passed and all four
+fixed training trajectories completed. Strict recomputation rejected all quality
+screens and neither primary factor met its support rule. No qualified
+R102 learner, native host defect, product or moonshot claim is established. Publication
 awaits the user's current privacy preference.
 
-Latest result: [R101](docs/R101_EXECUTION_CONTINUATION.md) completed and strictly
+Previous public result: [R101](docs/R101_EXECUTION_CONTINUATION.md) completed and strictly
 recomputed. Four checkpoints passed measured full/padded/cached comparisons and
 288 unassisted token sequences replayed exactly. The primary oracle-prefix
 remaining-fact contrast was null, not an acquisition fix. No native LayerCake

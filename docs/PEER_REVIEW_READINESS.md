@@ -1,6 +1,6 @@
 # ABI peer-review readiness
 
-Status date: 2026-11-05
+Status date: 2026-11-10
 
 ## Verdict
 
@@ -14,7 +14,14 @@ final-artifact proof.
 
 ## Current bounded research review
 
-The latest [R101 diagnostic](R101_EXECUTION_CONTINUATION.md) completed with
+The completed [R102 factorial](R102_COVERAGE_EXPOSURE.md) is local only while
+publication awaits the user's privacy preference. All quality screens failed
+and neither primary factor was supported. Local review passed 287 tests with
+four declared skips, including five explicitly post-run error-audit checks.
+Do not describe this as a public reconstruction, independent review or product
+certification. All earlier public release identities remain unchanged.
+
+The latest public [R101 diagnostic](R101_EXECUTION_CONTINUATION.md) completed with
 execution-path agreement and a null primary continuation contrast. All raw
 logit matrices and generation rows are retained. Local review passed 262 tests
 with four declared skips; the supported CI list passed 83, including 26 new

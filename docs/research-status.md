@@ -1,9 +1,16 @@
 # Research status
 
-Updated: 2026-11-05
+Updated: 2026-11-10
 
 The concise dashboard is [`PROJECT_STATUS.md`](PROJECT_STATUS.md). This file
 retains the detailed interpretation of later research lineages.
+
+The latest local [R102 factorial](R102_COVERAGE_EXPOSURE.md) completed with no
+qualified checkpoint and no supported primary factor. The exact lower-budget
+repeat controls reproduced R99; more exposure and this renaming policy did not
+solve the functional acquisition gate. Its post-run error inventory remains
+descriptive, not a new quality score. Publication is pending the user's privacy
+preference; R101 remains the latest public research snapshot.
 
 The latest [R101 diagnostic](R101_EXECUTION_CONTINUATION.md) completed with
 measured execution agreement and exact unassisted replay, but a null primary

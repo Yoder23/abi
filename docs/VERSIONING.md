@@ -4,7 +4,8 @@
 | --- | --- | --- |
 | Python package | `0.4.0a1` | Supported alpha compiler API |
 | Controlling technical release | `abi-final-validation-v2-repaired-r7-2026-08-30` | Bounded R7 runtime/conformance proof |
-| Latest research review snapshot | `abi-research-r101-2026-11-05` | Execution/continuation diagnostic; no English-core promotion |
+| Latest public research review snapshot | `abi-research-r101-2026-11-05` | Execution/continuation diagnostic; no English-core promotion |
+| Current local research study | R102, intended tag `abi-research-r102-2026-11-10` | Negative coverage/exposure factorial; publication awaiting user choice |
 | Previous research snapshot | `abi-research-r100-2026-11-05` | Preserved R99-D1/R100 negative capacity control and public reconstruction |
 | Earlier research snapshot | `abi-research-2026-11-05` | Preserved R98/R99 research and public reconstruction |
 | Default branch | `master` | Moving development and research history |
@@ -75,6 +76,6 @@ or product-quality gates. No package version change is warranted.
 - Publish exact raw evidence and required artifacts before claiming public replay.
 - Require scientific gates separately from tests, tags, builds and CI status.
 
-R7, V1089, R97, R98/C1, R99, R100 and R101 retain separate claim scopes. The whole-moonshot verdict
+R7, V1089, R97, R98/C1, R99, R100, R101 and R102 retain separate claim scopes. The whole-moonshot verdict
 is `FULL_MOONSHOT_NOT_PROVEN`. [LayerCake](https://github.com/Yoder23/layercake)
 owns host certification; ABI does not inherit its runtime certificates.
