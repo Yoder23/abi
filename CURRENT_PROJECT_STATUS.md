@@ -2,6 +2,10 @@
 
 Updated: 2026-11-10
 
+Active bounded work: [R103](docs/R103_RECIPIENT_INTERFACE.md), a preregistered
+zero-training recipient/interface comparison. Control qualification precedes
+recipient evaluation. No result is claimed before execution and verification.
+
 Latest public result: [R102](docs/R102_COVERAGE_EXPOSURE.md), a preregistered
 entity-coverage versus optimization-exposure factorial. Its first corpus
 construction failure is preserved; the prospective A1 repair passed the

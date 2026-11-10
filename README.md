@@ -42,6 +42,10 @@ public technical release remains
 [`abi-final-validation-v2-repaired-r7-2026-08-30`](https://github.com/Yoder23/abi/releases/tag/abi-final-validation-v2-repaired-r7-2026-08-30).
 The current default branch is a later peer-review candidate.
 
+The next bounded [R103 diagnostic](docs/R103_RECIPIENT_INTERFACE.md) tests
+recipient/interface suitability against a separately qualified English control,
+with zero new training. It has no result yet.
+
 The published [R102 study](docs/R102_COVERAGE_EXPOSURE.md) completed its matched
 entity-renaming/exposure controls. Neither primary factor was supported and no
 checkpoint passed quality. The evidence is preserved; no new fluent core or

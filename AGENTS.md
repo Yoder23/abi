@@ -367,6 +367,15 @@ prospective recipient/interface positive control and grounded-content diagnosis,
 not an assumption that native LayerCake is broken or already English-qualified.
 No teacher-quality English, ABI novelty or product certificate is promoted.
 
+New user authorization (2026-11-10): execute one bounded recipient/interface
+diagnostic and publish its results. R103 is controlled by
+`experiments/recipient_interface_r103/PROTOCOL.md`: first qualify the pinned
+external English control on raw outputs, then compare raw/native versus the
+historical Task/Response interface on four unchanged research checkpoints.
+No training, new checkpoint, prompt sweep or native LayerCake source change.
+Qualification failure stops comparisons; keep control, acquisition/interface
+and host failures separate. Preserve every output and preregistered threshold.
+
 1. Execute the frozen human-rating packet with three independent raters.
 2. Run the external reproduction packet on genuinely different hardware.
 3. Execute registered minimum-information certification.

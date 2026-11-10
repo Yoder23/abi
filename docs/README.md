@@ -16,8 +16,10 @@ goal rather than reading the campaign archive in filename order.
 
 ## Canonical current documents
 
+- [R103 recipient/interface suitability](R103_RECIPIENT_INTERFACE.md) is the
+  current zero-training diagnostic; external control qualification comes first.
 - [R102 entity coverage versus optimization exposure](R102_COVERAGE_EXPOSURE.md)
-  is the current bounded acquisition-control study, not an ABI novelty claim.
+  preserves the completed negative acquisition-control study, not an ABI novelty claim.
 - [R101 execution and continuation diagnostic](R101_EXECUTION_CONTINUATION.md)
   tests runtime-path agreement and explicitly oracle-assisted continuation.
 - [R100 capacity control and R99 fit audit](R100_ACQUISITION_CAPACITY.md)
