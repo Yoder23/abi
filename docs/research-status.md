@@ -5,6 +5,12 @@ Updated: 2026-11-10
 The concise dashboard is [`PROJECT_STATUS.md`](PROJECT_STATUS.md). This file
 retains the detailed interpretation of later research lineages.
 
+The newest [R103 diagnostic](R103_RECIPIENT_INTERFACE.md) failed its raw-control
+prerequisite at 41/48; the recipient matrix was not run. It identifies a control/
+evaluation prerequisite problem, not an ABI-transfer or native LayerCake failure.
+The observed temporal contradiction false-positive remains disclosed under the
+unchanged scorer and does not alter the negative decision.
+
 The latest public [R102 factorial](R102_COVERAGE_EXPOSURE.md) completed with no
 qualified checkpoint and no supported primary factor. The exact lower-budget
 repeat controls reproduced R99; more exposure and this renaming policy did not

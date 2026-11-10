@@ -1,6 +1,7 @@
 # R103 recipient and interface suitability
 
-Status: preregistered 2026-11-10; no new model result yet.
+Status: completed 2026-11-10; control qualification failed at 41/48.
+The registered recipient/interface comparison was not executed.
 `FULL_MOONSHOT_NOT_PROVEN` remains controlling.
 
 R102 did not qualify any English core or support its two registered primary
@@ -71,3 +72,91 @@ tests with four declared skips outside the Windows sandbox. The initial sandbox
 run's two temporary-file rename permission failures remain in the
 [operational record](../results/review_2026_11_10/r103_preflight_operations.md)
 and separate failed JUnit receipt. No model-result claim follows from these checks.
+
+## Completed qualification result
+
+The pinned native-chat control produced all 48 raw responses. Strict verification
+returned `CONTROL_QUALIFICATION_FAILED`: 41/48 passed versus the locked 44/48
+minimum, and three tasks missed their 5/6 floors. There was zero collapse and
+zero truncation. No recipient model was evaluated, no optimizer step ran, and no
+checkpoint or native LayerCake source changed.
+
+| Task | Raw passes / 6 |
+| --- | ---: |
+| Summarization | 5 |
+| Rewriting | 6 |
+| Email drafting | 4 |
+| Conversation | 6 |
+| Format control | 4 |
+| Tone control | 4 |
+| Clarification | 6 |
+| Abstention | 6 |
+
+The seven failed rows include three required-literal omissions, two bullet-line
+format failures, one overlength response, and one flagged approval contradiction.
+The identifier error overlaps one omission. These counts are mechanical proxy
+outputs, not independent human judgments of English fluency.
+
+### Evaluator limitation found after the run
+
+The contradiction regex flags `as soon as the details are confirmed` in
+`r103-qualification-020-tone_control`. That is a future condition, not an assertion
+that approval already exists. This is an observed limitation of the literal
+proxy, preserved in an additive regression test. The response may have other
+unmeasured adherence issues; no new semantic score is assigned to it.
+
+The frozen evaluator and 41/48 result remain unchanged. Even disregarding that
+one flag cannot reach 44/48, and email/format task floors still fail. This
+post-run sensitivity observation is not a repaired or promoted quality result.
+Do not claim that this control cannot speak fluent English, that recipient
+interfaces were compared, or that ABI transfer or native LayerCake failed.
+
+The next bounded proposal should validate the evaluator's semantic boundaries
+and establish a genuinely qualified control before resuming recipient attribution.
+No new prompt, source substitution, model run or gate change is authorized by R103.
+
+## Identity and costs
+
+- Preregistration: `2c62b74`; successful freeze commit: `aac5f08`.
+- [725-input freeze](../results/recipient_interface_r103/freeze.json):
+  `709b4c6a5da6802a53ea53d64041d60db0786b984aeceb4cc2d3425c8df8b31a`.
+- [Decision](../results/recipient_interface_r103/decision.json):
+  `3420c88c6e608b32801bdc144031ac011abaf085af6f6c3861efa4afda1b31bc`.
+- [Raw responses](../results/recipient_interface_r103/qualification/control/raw.jsonl):
+  `d05ac3f2bd344c87acbd397f631ebb102f30823087d289a620504207e75658bd`.
+
+The external control used 48 requests, 8,690 input tokens and 4,190 generated
+tokens (including terminal tokens); unique rendered prompts contain 39,285 UTF-8
+bytes and outputs 17,895 bytes. Generation time was 248.01 seconds; the complete
+control process recorded 415.51 seconds wall and 408.64 CPU-process seconds,
+including identity checks and loading. These are diagnostic costs, not CPU
+inference benchmarks or acquisition-efficiency claims.
+
+The 7,615,616,512-parameter control used local GPU FP16, with peak CUDA allocation
+15,330,695,680 bytes and sampled peak RSS 2,328,981,504 bytes. Sampled RSS is not
+an OS high-water guarantee. Its parameters were not copied into any recipient.
+The four inherited 87,710,428-parameter research checkpoints remain bound inputs,
+not newly acquired or English-qualified cores. Their previous acquisition costs
+are not erased. There are no new checkpoints, imported logits/hidden activations,
+trained bridges, or training tokens from this diagnostic.
+
+## Final local assurance
+
+The supported review passed 297 default tests with four declared skips plus
+16/16 exact historical Phase 7 tests (313 total). Separately, 12 additive
+completed-evidence checks passed in 453.81 seconds: the actual failure recomputed,
+ten hostile mutations failed closed, and the observed temporal-regex limitation
+was reproduced. Tampered copies were used; the original study files did not change.
+The [hostile-test receipt](../results/review_2026_11_10/r103-completed-hostile.xml)
+is separate from the original preregistered 20-test scientific surface.
+
+Documentation checks, focused lint and source/wheel builds passed. Package API
+version remains `0.4.0a1`. Software success does not qualify the control or fill
+the unexecuted recipient matrix. Public reconstruction is reported separately.
+
+The [complete review manifest](../results/review_2026_11_10/r103_manifest.json)
+inventories 560 repository assets and all four required inherited LFS checkpoint
+paths, with external host bindings recorded separately. SHA-256:
+`6a9cf5a7c46d02ea48331828cfd643209624b72b8c9215ebb6ce68c1d96dddc7`.
+Unlike an inference replication, raw evidence recomputation needs only the five
+listed control tokenizer/config files, not the source's full model weights.

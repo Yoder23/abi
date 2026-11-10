@@ -2,6 +2,12 @@
 
 ## 2026-11-10
 
+- Preregistered R103 recipient/interface suitability with a separately gated
+  native-chat control and zero training. The 725-input freeze preceded every
+  model call. Control qualification failed at 41/48, so no recipient ran.
+- Preserved all 48 control outputs, the negative decision and measured costs.
+  Documented one temporal false-positive in the frozen contradiction proxy
+  without rescoring it. No ABI-transfer, LayerCake-defect or product claim follows.
 - Preregistered the bounded R102 entity-coverage/exposure factorial with four
   conventional training trajectories and eight fixed checkpoints.
 - Preserved the initial 4,096-proposal corpus-construction failure before any

@@ -2,9 +2,11 @@
 
 Updated: 2026-11-10
 
-Active bounded work: [R103](docs/R103_RECIPIENT_INTERFACE.md), a preregistered
-zero-training recipient/interface comparison. Control qualification precedes
-recipient evaluation. No result is claimed before execution and verification.
+Latest completed bounded work: [R103](docs/R103_RECIPIENT_INTERFACE.md). Control
+qualification failed at 41/48 against 44/48; email, format and tone were each 4/6.
+The planned recipient comparison did not run. The frozen contradiction proxy
+has a documented temporal false-positive, but that single issue cannot rescue
+the overall or task-floor failure. No new ABI-transfer or LayerCake failure is established.
 
 Latest public result: [R102](docs/R102_COVERAGE_EXPOSURE.md), a preregistered
 entity-coverage versus optimization-exposure factorial. Its first corpus

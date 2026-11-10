@@ -2,14 +2,19 @@
 
 Updated: 2026-11-10
 
-## Current bounded diagnostic: R103
+## Latest completed bounded diagnostic: R103
 
 The user authorized [R103](experiments/recipient_interface_r103/PROTOCOL.md)
 and publication. Test the measured raw-prompt versus Task/Response interface
 difference on unchanged recipient checkpoints, against a separately qualified
 native-chat control. Freeze before new model calls; zero training. Qualification
 failure stops the comparison, and no outcome alone certifies English or proves
-a native LayerCake defect. See the [current packet](docs/R103_RECIPIENT_INTERFACE.md).
+a native LayerCake defect. R103 has now stopped as registered: the native-chat
+control passed 41/48, with email/format/tone at 4/6 each. No recipient evaluation
+or training ran. Preserve the literal scorer's observed temporal false-positive
+without rescoring the gate. The next proposal must validate evaluation boundaries
+and qualify a control before attributing recipient failure. See the
+[current packet](docs/R103_RECIPIENT_INTERFACE.md).
 
 ## Latest completed study: R102
 

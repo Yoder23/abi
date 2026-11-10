@@ -8,6 +8,15 @@ identity.
 
 ## Current claims
 
+### R103: control prerequisite failed; recipient attribution not tested
+
+The [R103 diagnostic](docs/R103_RECIPIENT_INTERFACE.md) recorded 41/48 raw control
+passes against 44/48, and three tasks missed their floors. The planned recipient
+comparison was not executed. A future-conditional false-positive in the frozen
+contradiction proxy is disclosed without changing any score. Neither a qualified
+English control, interface rescue, ABI-transfer failure nor native LayerCake defect
+is established. These mechanical screens do not determine broad English fluency.
+
 ### R102: negative matched factorial; public evidence recomputation
 
 The [R102 study](docs/R102_COVERAGE_EXPOSURE.md) completed 6,144 finite updates

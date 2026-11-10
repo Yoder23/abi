@@ -4,6 +4,12 @@ Status date: 2026-11-10
 
 ## Active work
 
+[R103](R103_RECIPIENT_INTERFACE.md) stopped at raw control qualification: 41/48
+against 44/48, with three task-floor failures. No recipient comparison or training
+ran. An observed temporal false-positive in the locked contradiction proxy is
+documented, not silently repaired. Control/evaluator validity must be established
+before drawing the intended recipient/interface conclusions.
+
 The published [R102 study](R102_COVERAGE_EXPOSURE.md) completed and strictly
 recomputed its matched factorial. Neither registered factor met its support
 criterion and no checkpoint passed quality. Repeat-data LoRA scored 51 -> 46/96

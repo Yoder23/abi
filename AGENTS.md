@@ -376,6 +376,14 @@ No training, new checkpoint, prompt sweep or native LayerCake source change.
 Qualification failure stops comparisons; keep control, acquisition/interface
 and host failures separate. Preserve every output and preregistered threshold.
 
+R103 completed at the qualification stop: 41/48 raw passes versus 44/48, with
+email/format/tone each 4/6 versus 5/6. No recipient comparison or training ran.
+The contradiction proxy flags a future conditional in one row; preserve that
+limitation and every locked score, rather than silently rescoring the study.
+Even disregarding that flag does not clear qualification. A successor requires
+prospective evaluation-validity and control qualification work before recipient
+attribution; do not infer native LayerCake failure or launch a substitute run.
+
 1. Execute the frozen human-rating packet with three independent raters.
 2. Run the external reproduction packet on genuinely different hardware.
 3. Execute registered minimum-information certification.

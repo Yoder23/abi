@@ -17,7 +17,7 @@ goal rather than reading the campaign archive in filename order.
 ## Canonical current documents
 
 - [R103 recipient/interface suitability](R103_RECIPIENT_INTERFACE.md) is the
-  current zero-training diagnostic; external control qualification comes first.
+  completed control-qualification failure; recipient comparisons did not run.
 - [R102 entity coverage versus optimization exposure](R102_COVERAGE_EXPOSURE.md)
   preserves the completed negative acquisition-control study, not an ABI novelty claim.
 - [R101 execution and continuation diagnostic](R101_EXECUTION_CONTINUATION.md)
