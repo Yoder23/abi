@@ -8,7 +8,7 @@ identity.
 
 ## Current claims
 
-### R102: negative matched factorial, local evidence only
+### R102: negative matched factorial; public evidence recomputation
 
 The [R102 study](docs/R102_COVERAGE_EXPOSURE.md) completed 6,144 finite updates
 and all fixed evaluations. Neither the renaming-policy contrast nor the
@@ -19,7 +19,10 @@ qualified at 282/288 normalized passes and the new development references were
 The renaming policy changes distributions, not just data quantity; its original-
 example panel is not in-sample for augmented learners. No generic data/compute
 law, native LayerCake defect, fluent core, ABI novelty or product pass follows.
-Publication awaits the user's current privacy preference.
+The user authorized publication. Fresh public-only clones matched 782 assets
+and 833 frozen bindings, recomputed the identical negative decision, and passed
+42 focused tests. This establishes public evidence availability and same-machine
+recomputation, not independent hardware, human quality or fresh live generation.
 
 ### R101: bounded execution agreement; null continuation contrast
 
