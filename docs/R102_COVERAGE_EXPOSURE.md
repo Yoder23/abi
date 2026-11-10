@@ -4,6 +4,16 @@ Status: 2026-11-10. Preregistration/preflight; no R102 quality result yet.
 `FULL_MOONSHOT_NOT_PROVEN` remains controlling. Publication awaits the user's
 current privacy preference; this document does not imply a new public release.
 
+The initial corpus freeze stopped before any teacher call or optimizer step.
+After 317 aliases, variant 1 of `r98-train-summarization-20` exhausted its
+4,096-proposal bound. The [preserved rejection trace](../results/coverage_exposure_r102_preflight_v1/candidates.jsonl)
+contains no jointly length-matched candidate. A read-only analysis found 46
+compatible project-ID components and 69 compatible person-ID components in
+that same pool; combining recorded proposals 40 and 144 preserves the exact
+119 prompt / 44 target token counts and inverse text identity. This is a sampler
+construction issue, not student failure, data insufficiency or host incapacity.
+No successful R102 freeze or GPU experiment exists yet.
+
 ## Question
 
 [R101](R101_EXECUTION_CONTINUATION.md) found measured execution-path agreement,
