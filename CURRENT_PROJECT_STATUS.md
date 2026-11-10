@@ -2,14 +2,17 @@
 
 Updated: 2026-11-10
 
-Latest local result: [R102](docs/R102_COVERAGE_EXPOSURE.md), a preregistered
+Latest public result: [R102](docs/R102_COVERAGE_EXPOSURE.md), a preregistered
 entity-coverage versus optimization-exposure factorial. Its first corpus
 construction failure is preserved; the prospective A1 repair passed the
 token-matched freeze before GPU work. Source qualification passed and all four
 fixed training trajectories completed. Strict recomputation rejected all quality
 screens and neither primary factor met its support rule. No qualified
-R102 learner, native host defect, product or moonshot claim is established. Publication
-awaits the user's current privacy preference.
+R102 learner, native host defect, product or moonshot claim is established. The
+immutable research tag, required checkpoints and review manifest are public.
+Fresh public-only clones matched 782 assets and 833 frozen bindings, recomputed
+the same negative decision, and passed 42 focused tests. This is same-machine
+evidence reconstruction, not live model replication or independent hardware.
 
 Previous public result: [R101](docs/R101_EXECUTION_CONTINUATION.md) completed and strictly
 recomputed. Four checkpoints passed measured full/padded/cached comparisons and

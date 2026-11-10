@@ -2,8 +2,8 @@
 
 Status: 2026-11-10. Completed and strictly recomputed locally. Neither registered
 factor met its support criterion, and no checkpoint passed the quality screen.
-`FULL_MOONSHOT_NOT_PROVEN` remains controlling. Publication awaits the user's
-current privacy preference; this document does not imply a new public release.
+`FULL_MOONSHOT_NOT_PROVEN` remains controlling. The user authorized publication;
+the same sealed tag and required payloads are now a public research prerelease.
 
 The initial corpus freeze stopped before any teacher call or optimizer step.
 After 317 aliases, variant 1 of `r98-train-summarization-20` exhausted its
@@ -32,7 +32,8 @@ failed attempt and every rejection remain unchanged.
   teacher-generated knowledge. The inherited parent and teacher costs still count.
 - Twenty focused tests passed before model execution, including the failed
   joint-pairing regression and non-mutating LoRA checkpoint serialization.
-- These commits and the completed run are local; no new public release is claimed.
+- These commits and the completed run were originally sealed locally. Subsequent
+  publication is recorded separately below, without changing the tag or evidence.
 
 ## Question
 
@@ -215,7 +216,7 @@ python scripts/run_review_tests.py
 ```
 
 The raw rows, checkpoints, operation logs, failed preflight, and descriptive
-audit are retained locally. Publication remains pending the user's privacy choice.
+audit are preserved and published under the unchanged research tag.
 
 ### Complete local inventory
 
@@ -228,13 +229,13 @@ External LayerCake source bindings and the pinned source-tokenizer inventory are
 recorded separately. Manifest SHA-256:
 `45a03f18d0f567e8a5c06fc08f40c31cbc0adb6ce5baf0c3d0b7e9cf4e1a39be`.
 
-This is a local custody inventory, not a claim that R102 has been uploaded,
-reconstructed publicly or independently reproduced. Publication must include
-the complete transitive payload set before a public-replay claim can be made.
+The manifest was created as a local custody inventory. Its historical
+`publication_state_at_creation` remains unchanged. Public availability and
+reconstruction require separate records; they do not follow from local custody.
 
 ### Pinned local seal
 
-- Annotated tag: `abi-research-r102-2026-11-10` (local only).
+- Annotated tag: `abi-research-r102-2026-11-10` (subsequently published unchanged).
 - Scientific/evidence commit: `d5a8957b152ce883779436103bd61a7ba4cd2f35`.
 - Tag object: `1ef35b43aa14c23e1f3836e07009dcf0bd5ee1b5`.
 - [Local custody receipt](../results/review_2026_11_10/r102_git_custody.json):
@@ -252,3 +253,77 @@ python scripts/check_r102_git_custody.py --revision abi-research-r102-2026-11-10
 ```
 
 Use a new output path for each check; existing receipts are not overwritten.
+
+## Public release and reconstruction
+
+The user subsequently authorized publication. The unchanged
+[R102 research prerelease](https://github.com/Yoder23/abi/releases/tag/abi-research-r102-2026-11-10)
+provides the complete manifest and additive review helper. All required checkpoint
+paths are published through Git LFS. The tag is still the original scientific
+commit; later documentation and operational corrections do not replace it.
+
+For a new review, use empty sibling destinations named `abi_release` and
+`layercake_release`, Git LFS, and the Python dependencies recorded in the manifest.
+The tested procedure below is PowerShell. It recomputes existing evidence; it
+does not retrain or regenerate model outputs.
+
+```powershell
+$env:GIT_LFS_SKIP_SMUDGE = '1'
+git clone --config core.longpaths=true --filter=blob:none --no-checkout https://github.com/Yoder23/abi.git abi_release
+git clone --config core.longpaths=true --filter=blob:none --no-checkout https://github.com/Yoder23/layercake.git layercake_release
+git -C abi_release checkout --detach abi-research-r102-2026-11-10
+git -C layercake_release checkout --detach 865a2b9e59e6221caa1185f9b64479d2077953f3
+gh release download abi-research-r102-2026-11-10 --repo Yoder23/abi --pattern r102_manifest.json --pattern review_r102_public.py --dir .
+Get-FileHash -Algorithm SHA256 r102_manifest.json,review_r102_public.py
+$r102Manifest = Get-Content r102_manifest.json -Raw | ConvertFrom-Json
+$r102PayloadPaths = $r102Manifest.lfs_paths -join ','
+git -C abi_release lfs pull --include=$r102PayloadPaths --exclude=
+```
+
+Before executing the downloaded helper, require manifest SHA-256
+`45a03f18d0f567e8a5c06fc08f40c31cbc0adb6ce5baf0c3d0b7e9cf4e1a39be`
+and helper SHA-256
+`6941e8e4507329535456499db72a3e64fea888531ab14f9b6a67f3bc790d5ab6`.
+The helper is an additive release asset, not a file silently inserted into the
+already sealed scientific tag.
+
+Raw token/text verification also needs the five source-tokenizer files named
+in the manifest, not the 7B teacher weights. To avoid Windows symlink privileges,
+download ordinary public files into a new, separate cache:
+
+```powershell
+$env:HF_HOME = (Join-Path (Get-Location) 'hf_cache_copy')
+python -c "import os; from pathlib import Path; from huggingface_hub import snapshot_download; rev='f2826a00ceef68f0f2b946d945ecc0477ce4450c'; dest=Path(os.environ['HF_HOME'])/'hub/models--Qwen--Qwen2-7B-Instruct/snapshots'/rev; snapshot_download('Qwen/Qwen2-7B-Instruct', revision=rev, allow_patterns=['config.json','tokenizer.json','tokenizer_config.json','vocab.json','merges.txt'], local_dir=dest)"
+python review_r102_public.py --abi-root abi_release --abi-commit d5a8957b152ce883779436103bd61a7ba4cd2f35 --manifest-sha256 45a03f18d0f567e8a5c06fc08f40c31cbc0adb6ce5baf0c3d0b7e9cf4e1a39be --output public_r102_reconstruction.json
+```
+
+The frozen verifier hashes the tokenizer files before using them. Existing
+receipts are never overwritten. The [operational record](../results/review_2026_11_10/r102_publication_operations.md)
+preserves the initial Windows path/symlink failures and the missing CI research
+dependency. Those failures are not hidden or counted as scientific successes.
+
+### Published reconstruction result
+
+Brand-new public-only sibling clones matched all 782 inventoried assets,
+including all 14 LFS paths, and all 833 frozen bindings. The unchanged verifier
+recomputed the same decision hash and all failed scientific screens; 42 focused
+tests passed. Both source checkouts remained clean. The five pinned tokenizer
+files came from a separate fresh public download cache; no development model
+assets were copied.
+
+The [public reconstruction receipt](https://github.com/Yoder23/abi/releases/download/abi-research-r102-2026-11-10/public_r102_reconstruction.json)
+has SHA-256
+`7d19d8a936d2c311faab3f71c846ae86033a1a87bc53cecf76ce72bb7886c347`
+and verdict `BOUNDED_NEGATIVE_FACTORIAL_EVIDENCE_RECOMPUTED`.
+This used the same physical machine and installed Python dependencies, not
+independent hardware, a new virtual environment, human ratings or fresh model
+generation. It proves public evidence availability and recomputation, not a
+qualified English core or the moonshot.
+
+The initial tag/helper CI runs failed because the workflow omitted required
+research-test dependencies. They remain visible. Additive commit `48b7b19`
+installed the pinned dependencies without changing or skipping the frozen test;
+[workflow 42866690013](https://github.com/Yoder23/abi/actions/runs/42866690013)
+then passed on Python 3.10, 3.11 and 3.12. The updated local review passed
+293 tests with four declared skips, and source/wheel builds passed. Later
+documentation commits do not move the scientific tag.

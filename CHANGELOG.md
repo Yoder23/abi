@@ -1,6 +1,6 @@
 # Changelog
 
-## 2026-11-10 (local work; publication pending)
+## 2026-11-10
 
 - Preregistered the bounded R102 entity-coverage/exposure factorial with four
   conventional training trajectories and eight fixed checkpoints.
@@ -19,7 +19,18 @@
   checkpoints. Local review passed 287 tests with four declared skips; the
   supported CI list passed 108. Complete local custody verified 768 Git blobs,
   14 LFS paths and 182 external host-source blobs. The receipt is additive;
-  nothing was pushed and no public/independent reconstruction is claimed.
+  that local seal alone claimed no public/independent reconstruction.
+- Following explicit user authorization, published the unchanged R102 tag and
+  six new unique checkpoint payloads (2.1 GB), plus the complete manifest and
+  additive public-review helper. No scientific promotion or tag replacement.
+- Added six fail-closed publication-helper tests. The updated local review
+  passes 293 tests with four declared skips; package builds pass.
+- Preserved the first public CI failure (missing Transformers research-test
+  dependency); an additive dependency-only correction passes on Python 3.10-3.12.
+- Published fresh public-only reconstruction: 782 assets and 833 bindings
+  matched, strict negative-result recomputation and 42 focused tests passed.
+  Published the receipt and Windows setup-failure record. This uses the same
+  hardware and installed dependencies; no live-generation or independent claim.
 
 ## 2026-11-05
 

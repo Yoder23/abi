@@ -4,9 +4,9 @@
 | --- | --- | --- |
 | Python package | `0.4.0a1` | Supported alpha compiler API |
 | Controlling technical release | `abi-final-validation-v2-repaired-r7-2026-08-30` | Bounded R7 runtime/conformance proof |
-| Latest public research review snapshot | `abi-research-r101-2026-11-05` | Execution/continuation diagnostic; no English-core promotion |
-| Current local research snapshot | `abi-research-r102-2026-11-10` | Negative coverage/exposure factorial; locally sealed, not published |
-| Previous research snapshot | `abi-research-r100-2026-11-05` | Preserved R99-D1/R100 negative capacity control and public reconstruction |
+| Latest public research review snapshot | `abi-research-r102-2026-11-10` | Negative coverage/exposure factorial; no English-core promotion |
+| Previous research snapshot | `abi-research-r101-2026-11-05` | Execution/continuation diagnostic; no English-core promotion |
+| Earlier capacity snapshot | `abi-research-r100-2026-11-05` | Preserved R99-D1/R100 negative capacity control and public reconstruction |
 | Earlier research snapshot | `abi-research-2026-11-05` | Preserved R98/R99 research and public reconstruction |
 | Default branch | `master` | Moving development and research history |
 
@@ -65,8 +65,9 @@ exact historical Phase 7 tests. The supported CI list passes 108 locally. The
 annotated local tag points to `d5a8957b152ce883779436103bd61a7ba4cd2f35`; its
 tag-object identity is `1ef35b43aa14c23e1f3836e07009dcf0bd5ee1b5`. See the
 [R102 packet](R102_COVERAGE_EXPOSURE.md) for complete dependency custody and
-the negative scientific result. This tag is not yet published; R101 remains
-the latest public review snapshot. No package API or LayerCake source changed.
+the negative scientific result. The user subsequently authorized publication;
+the same tag and complete payload set are now public. Original inventory fields
+retain their historical local-only state. No package API or LayerCake source changed.
 
 ## Promotion policy
 

@@ -54,3 +54,22 @@ for reconstruction commands, receipts and later publication checks. Original
 freeze and inventory fields describing local-only status preserve the state at
 their creation; the user subsequently authorized public release. No historical
 evidence, source decision or tag is rewritten.
+
+## Public reconstruction completed
+
+Fresh public-only sibling clones matched all 782 assets and 833 frozen bindings,
+strictly recomputed the identical negative decision, and passed 42 focused tests.
+All 14 LFS paths were downloaded from GitHub; the five tokenizer files were
+downloaded separately from their pinned public source into a fresh cache. Both
+checkouts remained clean. This reused the same machine and installed Python
+dependencies, not development assets, independent hardware or fresh model runs.
+
+Receipt SHA-256:
+`7d19d8a936d2c311faab3f71c846ae86033a1a87bc53cecf76ce72bb7886c347`.
+The receipt and operational record are attached as additive release assets.
+
+The first tag/helper CI runs exposed a missing Transformers dependency. The
+original failure remains visible; additive commit `48b7b19` installs pinned
+research-test dependencies without changing/skipping tests. Its GitHub matrix
+passes on Python 3.10, 3.11 and 3.12. Updated local review passes 293 tests with
+four declared skips. This does not change the negative scientific verdict.

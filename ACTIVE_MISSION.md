@@ -2,16 +2,18 @@
 
 Updated: 2026-11-10
 
-## Latest completed local study: R102
+## Latest completed study: R102
 
 The [R102 protocol](experiments/coverage_exposure_r102/PROTOCOL.md) separates
 entity-coverage augmentation from optimization exposure using matched LoRA and
 adapter-distillation trajectories, fixed 384/1,536-update endpoints, and 96
 prospective supplied-content prompts. This is a conventional acquisition
 diagnostic, not an ABI invention or broad-English certificate. Preserve all
-R98-R101 evidence and keep LayerCake source unchanged. Publication is pending
-the user's current privacy preference; continue local preregistration and
-bounded execution without assuming permission to publish new work.
+R98-R101 evidence and keep LayerCake source unchanged. The user explicitly
+authorized publication. The sealed R102 tag, checkpoint payloads and manifest
+are now public. Fresh public-only reconstruction matched 782 assets and 833
+bindings, recomputed the negative decision and passed 42 focused tests without
+changing the scientific tag. Independent hardware and English qualification remain open.
 
 The first corpus freeze failed before GPU work after 317 aliases. Preserve
 `results/coverage_exposure_r102_preflight_v1/`. The prospective
@@ -30,8 +32,8 @@ match the original R99 bytes. Repeat-data LoRA scored 51 -> 46/96 and adapters
 checkpoint passed quality. Preserve every failure and do not extend this
 alias/step-count sweep. The next proposal must test recipient/interface
 suitability and content grounding against a qualified English positive control.
-No native LayerCake defect or product promotion is established. Publication
-is still pending the user's privacy preference.
+No native LayerCake defect or product promotion is established. The public
+[R102 packet](docs/R102_COVERAGE_EXPOSURE.md) records publication and review scope.
 
 ## Latest completed diagnostic: R101
 

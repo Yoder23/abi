@@ -8,8 +8,8 @@ Status date: 2026-11-10
 
 `FULL_MOONSHOT_NOT_PROVEN`
 
-The published-review status refers to R101 and earlier releases. R102 is a
-separately sealed local review snapshot, not a public release.
+The published-review status includes the separately sealed R102 research
+prerelease. It is not a qualified English-core or production release.
 
 Independent reviewers can evaluate R7, V1089, R97, and R21-R23 as separate
 bounded evidence lineages. They must not combine those lineages into a single
@@ -17,18 +17,23 @@ final-artifact proof.
 
 ## Current bounded research review
 
-The completed [R102 factorial](R102_COVERAGE_EXPOSURE.md) is local only while
-publication awaits the user's privacy preference. All quality screens failed
+The completed [R102 factorial](R102_COVERAGE_EXPOSURE.md) is now published with
+its complete manifest and required checkpoint payloads. All quality screens failed
 and neither primary factor was supported. Local review passed 287 tests with
 four declared skips, including five explicitly post-run error-audit checks.
 The supported CI test list passed 108 locally. The immutable local tag's
 complete inventory matched 768 Git blobs, 14 LFS paths and 182 external host
 source blobs; the [custody receipt](R102_COVERAGE_EXPOSURE.md#pinned-local-seal)
 is additive and does not move the tag.
-Do not describe this as a public reconstruction, independent review or product
-certification. All earlier public release identities remain unchanged.
+That local custody receipt alone is not public reconstruction, independent
+review or product certification. The separate public-only reconstruction now
+matches all 782 assets and 833 bindings, recomputes the same negative decision
+and passes 42 focused tests. Its [receipt and limits](R102_COVERAGE_EXPOSURE.md#published-reconstruction-result)
+record fresh clones and a fresh tokenizer cache, but the same machine and
+installed dependencies. The initial CI dependency failure is preserved; the
+additive repair passes on Python 3.10-3.12. All earlier release identities remain unchanged.
 
-The latest public [R101 diagnostic](R101_EXECUTION_CONTINUATION.md) completed with
+The preceding public [R101 diagnostic](R101_EXECUTION_CONTINUATION.md) completed with
 execution-path agreement and a null primary continuation contrast. All raw
 logit matrices and generation rows are retained. Local review passed 262 tests
 with four declared skips; the supported CI list passed 83, including 26 new

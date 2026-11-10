@@ -42,10 +42,11 @@ public technical release remains
 [`abi-final-validation-v2-repaired-r7-2026-08-30`](https://github.com/Yoder23/abi/releases/tag/abi-final-validation-v2-repaired-r7-2026-08-30).
 The current default branch is a later peer-review candidate.
 
-The local [R102 study](docs/R102_COVERAGE_EXPOSURE.md) completed its matched
+The published [R102 study](docs/R102_COVERAGE_EXPOSURE.md) completed its matched
 entity-renaming/exposure controls. Neither primary factor was supported and no
 checkpoint passed quality. The evidence is preserved; no new fluent core or
-ABI superiority is claimed. R102 publication is awaiting the user's privacy choice.
+ABI superiority is claimed. Its immutable research tag, checkpoints and review
+manifest are [public](https://github.com/Yoder23/abi/releases/tag/abi-research-r102-2026-11-10).
 
 The [R100 acquisition-capacity control](docs/R100_ACQUISITION_CAPACITY.md)
 also failed: full-model fine-tuning scored 20/48, equal to retained LoRA and
