@@ -62,7 +62,7 @@ This diagnostic does not certify or disprove the underlying host architecture.
 
 ```powershell
 python -m experiments.recipient_interface_r103.run verify
-python -m pytest -q tests/test_recipient_interface_r103.py
+python -m pytest -q tests/test_recipient_interface_r103.py tests/test_r103_completed_verifier.py
 ```
 
 The verifier is for completed evidence, not permission to overwrite a run.
@@ -160,3 +160,56 @@ paths, with external host bindings recorded separately. SHA-256:
 `6a9cf5a7c46d02ea48331828cfd643209624b72b8c9215ebb6ce68c1d96dddc7`.
 Unlike an inference replication, raw evidence recomputation needs only the five
 listed control tokenizer/config files, not the source's full model weights.
+
+## Versioned public review
+
+The [research prerelease](https://github.com/Yoder23/abi/releases/tag/abi-research-r103-2026-11-10)
+is `abi-research-r103-2026-11-10`, source commit
+`cc6b59cd8b0b72730a0ae847015c42a9c7a22ab5`, annotated tag object
+`db1d4b999e6351b28e552115603516a3d3f1c1fc`. No earlier tag was moved.
+
+Use sibling public checkouts named `abi_release` and `layercake_release`, with
+the host at `865a2b9e59e6221caa1185f9b64479d2077953f3`. Windows users should
+enable Git's `core.longpaths` only in their review clones. Install the Python
+dependencies named in the manifest and obtain the five pinned public Qwen
+tokenizer/config files. The [R102 cache setup](R102_COVERAGE_EXPOSURE.md#public-release-and-reconstruction)
+uses the same source revision and avoids Windows symlink privileges.
+
+Download `r103_manifest.json` and `review_r103_public.py` from the release outside
+the checkouts. Require manifest SHA-256
+`6a9cf5a7c46d02ea48331828cfd643209624b72b8c9215ebb6ce68c1d96dddc7`
+and helper SHA-256
+`11f309d9749bf2099e2084a5aa36b6886c1c7d50aa2397e481130c9455820fb8`.
+Hydrate exactly the manifest's four LFS paths, then run the helper:
+
+```powershell
+$r103Manifest = Get-Content r103_manifest.json -Raw | ConvertFrom-Json
+$r103PayloadPaths = $r103Manifest.lfs_paths -join ','
+git -C abi_release lfs pull --include=$r103PayloadPaths --exclude=
+python review_r103_public.py --abi-root abi_release --abi-commit cc6b59cd8b0b72730a0ae847015c42a9c7a22ab5 --manifest-sha256 6a9cf5a7c46d02ea48331828cfd643209624b72b8c9215ebb6ce68c1d96dddc7 --output public_r103_reconstruction.json
+```
+
+Set `HF_HOME` to the public tokenizer cache before running this command. Existing
+receipts are never overwritten. This recomputes raw evidence and runs 32 focused
+checks; it does not run a teacher, evaluate a recipient, or train anything.
+
+### Published reconstruction result
+
+Public-only sibling checkouts matched all 560 inventoried assets, including the
+four inherited LFS paths, and all 725 frozen bindings. The unchanged verifier
+recomputed `CONTROL_QUALIFICATION_FAILED` with the identical decision hash;
+32 focused tests passed. Both source checkouts remained clean. GitHub verification
+passed on Python 3.10, 3.11 and 3.12 for the sealed source revision.
+
+The [public reconstruction receipt](https://github.com/Yoder23/abi/releases/download/abi-research-r103-2026-11-10/public_r103_reconstruction.json)
+has SHA-256
+`e224006dfe1a19c0eab10bfb185d41502d5ca181b1bb256a934cf3b1f3f22306`
+and verdict `BOUNDED_CONTROL_QUALIFICATION_FAILURE_RECOMPUTED`.
+
+This reused the public-only R102 checkout directories, their already downloaded
+public LFS objects and public tokenizer cache, the same physical machine and
+installed Python dependencies. The R103 tag and helper/manifest were fetched
+from GitHub; no development artifacts were copied into those checkouts. This
+was not a brand-new clone, live generation replay, independent hardware or
+human quality review. It does not qualify the control or establish recipient
+quality. The receipt is additive; the scientific tag and frozen scores are unchanged.

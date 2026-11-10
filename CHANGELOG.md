@@ -8,6 +8,10 @@
 - Preserved all 48 control outputs, the negative decision and measured costs.
   Documented one temporal false-positive in the frozen contradiction proxy
   without rescoring it. No ABI-transfer, LayerCake-defect or product claim follows.
+- Published immutable R103 and its complete 560-asset/four-payload manifest.
+  Public-only reconstruction matched all 725 bindings and passed 32 focused
+  checks. The receipt discloses reused public checkouts/cache and same-machine
+  scope. The scientific tag and locked scores are unchanged; GitHub CI passes.
 - Preregistered the bounded R102 entity-coverage/exposure factorial with four
   conventional training trajectories and eight fixed checkpoints.
 - Preserved the initial 4,096-proposal corpus-construction failure before any

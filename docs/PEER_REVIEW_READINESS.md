@@ -8,7 +8,7 @@ Status date: 2026-11-10
 
 `FULL_MOONSHOT_NOT_PROVEN`
 
-The published-review status includes the separately sealed R102 research
+The published-review status includes the separately sealed R103 research
 prerelease. It is not a qualified English-core or production release.
 
 Independent reviewers can evaluate R7, V1089, R97, and R21-R23 as separate
@@ -16,6 +16,17 @@ bounded evidence lineages. They must not combine those lineages into a single
 final-artifact proof.
 
 ## Current bounded research review
+
+The latest [R103 prerequisite result](R103_RECIPIENT_INTERFACE.md) is public.
+Its native-chat control passed 41/48 against 44/48, and three task floors failed.
+The recipient comparison did not run. One temporal contradiction-proxy limitation
+is disclosed without changing the score. Local supported review passed 313 tests
+with four declared skips; 12 separate completed-evidence checks passed, including
+ten hostile mutations. Neither control fluency nor a native host defect is inferred.
+Public-only reconstruction matched 560 assets and 725 bindings, recomputed the
+same failure and passed 32 focused checks. The [receipt](R103_RECIPIENT_INTERFACE.md#published-reconstruction-result)
+discloses reused public checkouts/cache and the same machine, not live inference
+or independent hardware. The sealed source's GitHub Python 3.10-3.12 checks pass.
 
 The completed [R102 factorial](R102_COVERAGE_EXPOSURE.md) is now published with
 its complete manifest and required checkpoint payloads. All quality screens failed

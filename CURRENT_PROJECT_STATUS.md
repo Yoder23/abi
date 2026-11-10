@@ -2,13 +2,16 @@
 
 Updated: 2026-11-10
 
-Latest completed bounded work: [R103](docs/R103_RECIPIENT_INTERFACE.md). Control
+Latest public bounded result: [R103](docs/R103_RECIPIENT_INTERFACE.md). Control
 qualification failed at 41/48 against 44/48; email, format and tone were each 4/6.
 The planned recipient comparison did not run. The frozen contradiction proxy
 has a documented temporal false-positive, but that single issue cannot rescue
 the overall or task-floor failure. No new ABI-transfer or LayerCake failure is established.
+Public-only reconstruction matched 560 assets and 725 bindings and passed 32
+focused checks. It reused public checkouts/cache on the same machine; no live
+recipient comparison or independent-hardware result is implied.
 
-Latest public result: [R102](docs/R102_COVERAGE_EXPOSURE.md), a preregistered
+Previous public result: [R102](docs/R102_COVERAGE_EXPOSURE.md), a preregistered
 entity-coverage versus optimization-exposure factorial. Its first corpus
 construction failure is preserved; the prospective A1 repair passed the
 token-matched freeze before GPU work. Source qualification passed and all four
@@ -20,7 +23,7 @@ Fresh public-only clones matched 782 assets and 833 frozen bindings, recomputed
 the same negative decision, and passed 42 focused tests. This is same-machine
 evidence reconstruction, not live model replication or independent hardware.
 
-Previous public result: [R101](docs/R101_EXECUTION_CONTINUATION.md) completed and strictly
+Earlier public result: [R101](docs/R101_EXECUTION_CONTINUATION.md) completed and strictly
 recomputed. Four checkpoints passed measured full/padded/cached comparisons and
 288 unassisted token sequences replayed exactly. The primary oracle-prefix
 remaining-fact contrast was null, not an acquisition fix. No native LayerCake

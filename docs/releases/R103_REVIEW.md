@@ -46,3 +46,14 @@ The complete `r103_manifest.json` inventories 560 assets and four inherited LFS
 paths. Its SHA-256 is
 `6a9cf5a7c46d02ea48331828cfd643209624b72b8c9215ebb6ce68c1d96dddc7`.
 Download every manifest-listed checkpoint path before strict recomputation.
+
+## Public reconstruction
+
+The public-only review matched all 560 assets and 725 frozen bindings, recomputed
+the identical negative decision, and passed 32 focused checks. Its receipt is
+attached with SHA-256
+`e224006dfe1a19c0eab10bfb185d41502d5ca181b1bb256a934cf3b1f3f22306`.
+This reused the public R102 checkout directories, public LFS/tokenizer cache,
+the same machine and installed dependencies. No development assets were copied;
+no new teacher/recipient inference or independent-hardware review occurred.
+GitHub CI passes on Python 3.10, 3.11 and 3.12 for the sealed source revision.

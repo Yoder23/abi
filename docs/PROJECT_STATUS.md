@@ -104,6 +104,7 @@ training, live generation replication, or independent-hardware validation.
 | R99-D1 / R100 | Limited autonomous training fit; full-model control 20/48 on fresh prompts, equal to LoRA | Parameter unfreezing alone did not solve this bounded recipe; cause remains unresolved |
 | R101 | Measured execution-path agreement and exact unassisted replay; null primary continuation contrast | No autonomous gain, native host defect, or sole acquisition cause established |
 | R102 (public research) | Completed matched renaming/exposure factorial; all quality screens failed | No further same-recipe sweep or product promotion; recipient/interface suitability remains open |
+| R103 (public prerequisite) | Control qualification failed at 41/48; no recipient or training run | Validate evaluator boundaries and qualify a control before recipient attribution |
 | Independent hardware | Not executed | Open |
 | Minimum-information proof | Not executed | Open |
 | General teacher-to-LayerCake English extraction | Not established | Open |

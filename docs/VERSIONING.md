@@ -4,8 +4,9 @@
 | --- | --- | --- |
 | Python package | `0.4.0a1` | Supported alpha compiler API |
 | Controlling technical release | `abi-final-validation-v2-repaired-r7-2026-08-30` | Bounded R7 runtime/conformance proof |
-| Latest public research review snapshot | `abi-research-r102-2026-11-10` | Negative coverage/exposure factorial; no English-core promotion |
-| Previous research snapshot | `abi-research-r101-2026-11-05` | Execution/continuation diagnostic; no English-core promotion |
+| Latest public research review snapshot | `abi-research-r103-2026-11-10` | Raw control qualification failed; recipient comparison not run |
+| Previous research snapshot | `abi-research-r102-2026-11-10` | Negative coverage/exposure factorial; no English-core promotion |
+| Earlier diagnostic snapshot | `abi-research-r101-2026-11-05` | Execution/continuation diagnostic; no English-core promotion |
 | Earlier capacity snapshot | `abi-research-r100-2026-11-05` | Preserved R99-D1/R100 negative capacity control and public reconstruction |
 | Earlier research snapshot | `abi-research-2026-11-05` | Preserved R98/R99 research and public reconstruction |
 | Default branch | `master` | Moving development and research history |
@@ -71,6 +72,13 @@ retain their historical local-only state. No package API or LayerCake source cha
 
 ## Promotion policy
 
+R103 is sealed at source commit `cc6b59cd8b0b72730a0ae847015c42a9c7a22ab5`,
+annotated tag object `db1d4b999e6351b28e552115603516a3d3f1c1fc`. Its local
+supported review passes 313 tests with four declared skips; 12 additive
+completed-evidence checks pass separately. The [R103 packet](R103_RECIPIENT_INTERFACE.md)
+records the 41/48 prerequisite failure and complete public manifest. No recipient
+ran, no new model checkpoint was made, and the package API remains unchanged.
+
 R101 local review: 246 default tests pass with four declared skips, plus 16/16
 exact historical Phase 7 tests. The supported CI list passes 83. See the
 [R101 packet](R101_EXECUTION_CONTINUATION.md), [default report](../results/review_2026_11_05/r101-default.xml),
@@ -85,6 +93,6 @@ or product-quality gates. No package version change is warranted.
 - Publish exact raw evidence and required artifacts before claiming public replay.
 - Require scientific gates separately from tests, tags, builds and CI status.
 
-R7, V1089, R97, R98/C1, R99, R100, R101 and R102 retain separate claim scopes. The whole-moonshot verdict
+R7, V1089, R97, R98/C1, R99, R100, R101, R102 and R103 retain separate claim scopes. The whole-moonshot verdict
 is `FULL_MOONSHOT_NOT_PROVEN`. [LayerCake](https://github.com/Yoder23/layercake)
 owns host certification; ABI does not inherit its runtime certificates.

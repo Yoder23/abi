@@ -36,6 +36,8 @@ LoRA and distillation.
 | R98 / C1 / R99 | Two source failures preserved; R99 data qualified, but its ABI-plan learner scored 10/48 vs LoRA 27/48 and distillation 20/48 | Failed bounded learning pilot; no fluent-English core promoted |
 | R99-D1 / R100 | Fit audit completed; one full-model control scored 20/48 on fresh prompts, equal to retained LoRA | Quality and fit gates failed; acquisition bottleneck not yet isolated |
 | R101 | Sampled execution paths agree; 288 exact unassisted replays; primary oracle-prefix continuation contrast is null | Data/generalization, optimizer fit and parent suitability remain unresolved |
+| R102 | Matched renaming/exposure factorial completed; neither primary factor supported and no quality gate passed | Recipient/interface suitability remains unresolved |
+| R103 | Raw control qualification failed at 41/48; all evidence preserved | Recipient/interface comparison not executed; control/evaluator validity remains unresolved |
 
 These lineages must not be combined into one certification. The controlling
 public technical release remains
@@ -46,6 +48,8 @@ The bounded [R103 diagnostic](docs/R103_RECIPIENT_INTERFACE.md) stopped at contr
 qualification: 41/48 raw passes versus the required 44/48. Recipient comparisons
 and training did not run. A temporal false-positive in the frozen contradiction
 proxy is documented without changing the result. No native LayerCake defect follows.
+The [sealed research release](https://github.com/Yoder23/abi/releases/tag/abi-research-r103-2026-11-10)
+includes the complete manifest and public-review helper.
 
 The published [R102 study](docs/R102_COVERAGE_EXPOSURE.md) completed its matched
 entity-renaming/exposure controls. Neither primary factor was supported and no
