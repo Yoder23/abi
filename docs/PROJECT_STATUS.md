@@ -1,8 +1,15 @@
 # ABI project status
 
-Status date: 2026-11-05
+Status date: 2026-11-10
 
 ## Active work
+
+The local [R102 study](R102_COVERAGE_EXPOSURE.md) has frozen all inputs and is
+qualifying its source before any learner training. It compares entity-renamed
+coverage against fixed optimization exposure using LoRA and adapter-distillation
+controls. The failed initial corpus sampler and prospective A1 repair are both
+preserved. No R102 quality result exists yet; publication is pending the user's
+privacy preference.
 
 [R101](R101_EXECUTION_CONTINUATION.md) is complete and strictly recomputed:
 sampled full/padded/cached execution agreed across four checkpoints, and all

@@ -1,6 +1,6 @@
 # R102 entity coverage and optimization exposure
 
-Status: 2026-11-10. Preregistration/preflight; no R102 quality result yet.
+Status: 2026-11-10. Inputs frozen; source qualification running. No R102 quality result yet.
 `FULL_MOONSHOT_NOT_PROVEN` remains controlling. Publication awaits the user's
 current privacy preference; this document does not imply a new public release.
 
@@ -15,7 +15,23 @@ construction issue, not student failure, data insufficiency or host incapacity.
 The [A1 construction amendment](../experiments/coverage_exposure_r102/PREFLIGHT_A1.md)
 prospectively registers component-profile selection from the same bounded
 proposal stream, with all token/identity constraints and scientific gates intact.
-No successful R102 freeze or GPU experiment exists yet.
+The repaired constructor subsequently produced all 768 exact-length,
+inverse-verified aliases. The first successful input freeze is now complete;
+source qualification began only after that freeze was committed. The original
+failed attempt and every rejection remain unchanged.
+
+## Local preregistration identity
+
+- Original preregistration: `b647de0`; preserved preflight diagnosis: `1fcefbb`.
+- A1 pre-execution amendment: `8549782`; successful input freeze: `935a41d`.
+- [833-input manifest](../results/coverage_exposure_r102/freeze.json), SHA-256
+  `81787684eb335149fc196e8ff6bcd9ada4c564e1ba82c4068fbf70c597360f25`.
+- 768 synthetic targets; 401,848 unique synthetic prompt UTF-8 bytes and
+  200,984 unique synthetic target UTF-8 bytes. These are derived data, not new
+  teacher-generated knowledge. The inherited parent and teacher costs still count.
+- Twenty focused tests passed before model execution, including the failed
+  joint-pairing regression and non-mutating LoRA checkpoint serialization.
+- These commits and the ongoing run are local; no new public release is claimed.
 
 ## Question
 

@@ -19,6 +19,9 @@ The first corpus freeze failed before GPU work after 317 aliases. Preserve
 token-compatible components from the same bounded proposal pool; it does not
 relax matching or scientific gates. A new successful freeze is required before
 any model execution. This construction result is not an acquisition pass.
+The successful 833-input freeze is now committed at `935a41d`; all 768 aliases
+passed exact length and inverse-identity checks. The GPU source stage is running.
+No source qualification, learner result or product claim is yet established.
 
 ## Latest completed diagnostic: R101
 

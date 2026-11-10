@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-11-10 (local work; publication pending)
+
+- Preregistered the bounded R102 entity-coverage/exposure factorial with four
+  conventional training trajectories and eight fixed checkpoints.
+- Preserved the initial 4,096-proposal corpus-construction failure before any
+  model execution. A prospective same-pool component-profile repair produced
+  all 768 token-matched, invertible variants without changing scientific gates.
+- Committed the 833-input freeze and 20 passing focused tests before starting
+  source qualification. No learner result or product promotion is claimed yet.
+
 ## 2026-11-05
 
 - Completed preregistered R101 with zero training/source queries. Published raw

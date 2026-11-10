@@ -1,6 +1,13 @@
 # Current project status
 
-Updated: 2026-11-05
+Updated: 2026-11-10
+
+Active local work: [R102](docs/R102_COVERAGE_EXPOSURE.md), a preregistered
+entity-coverage versus optimization-exposure factorial. Its first corpus
+construction failure is preserved; the prospective A1 repair passed the
+token-matched freeze before GPU work. Source qualification is running. No
+R102 learner, host, product or moonshot claim is yet established. Publication
+awaits the user's current privacy preference.
 
 Latest result: [R101](docs/R101_EXECUTION_CONTINUATION.md) completed and strictly
 recomputed. Four checkpoints passed measured full/padded/cached comparisons and

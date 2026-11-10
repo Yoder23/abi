@@ -42,6 +42,10 @@ public technical release remains
 [`abi-final-validation-v2-repaired-r7-2026-08-30`](https://github.com/Yoder23/abi/releases/tag/abi-final-validation-v2-repaired-r7-2026-08-30).
 The current default branch is a later peer-review candidate.
 
+The local [R102 study](docs/R102_COVERAGE_EXPOSURE.md) is testing entity coverage
+against optimization exposure with matched conventional controls. Its inputs
+are frozen and execution is in progress; no new quality result is claimed.
+
 The [R100 acquisition-capacity control](docs/R100_ACQUISITION_CAPACITY.md)
 also failed: full-model fine-tuning scored 20/48, equal to retained LoRA and
 below the unchanged 44/48 gate. More trainable weights alone did not solve this
