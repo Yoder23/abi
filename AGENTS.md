@@ -384,6 +384,16 @@ Even disregarding that flag does not clear qualification. A successor requires
 prospective evaluation-validity and control qualification work before recipient
 attribution; do not infer native LayerCake failure or launch a substitute run.
 
+User continuation (2026-11-10): R104 may validate the evaluator, qualify one
+pinned English control, then conditionally run the bounded recipient/interface
+matrix and publish. Follow `experiments/evaluator_control_r104/PROTOCOL.md`.
+Preserve R103; no historical rescoring. Keep 44/48 and 5/6 floors, zero collapse
+and truncation. Finite author-specified scorer fixtures are not human fluency
+validation. No new training, prompt/model sweep, native LayerCake change or
+weight-editing backend is authorized. Keep prerequisite, acquisition/interface
+and host defects separate. The weight-space research note is roadmap context,
+not an experimental superiority result.
+
 1. Execute the frozen human-rating packet with three independent raters.
 2. Run the external reproduction packet on genuinely different hardware.
 3. Execute registered minimum-information certification.

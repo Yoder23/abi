@@ -40,4 +40,5 @@ jobs:
           tests/test_r102_error_audit.py
           tests/test_r102_public_review.py
           tests/test_recipient_interface_r103.py
+          tests/test_evaluator_control_r104.py
       - run: python -m build

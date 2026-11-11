@@ -2,6 +2,17 @@
 
 Updated: 2026-11-10
 
+## Current bounded diagnostic: R104
+
+The user authorized [R104](experiments/evaluator_control_r104/PROTOCOL.md):
+validate finite evaluator obligations, qualify a raw English control, then run
+the paired recipient/interface comparison only if qualification passes. All
+gates are retained or strengthened; no training or native LayerCake changes.
+Freeze before execution, preserve failures and publish results. The
+[weight-space research assessment](docs/WEIGHT_SPACE_RESEARCH_2026_11.md) keeps
+direct weight editing as a possible future competitor, not a new experimental
+arm or evidence of ABI superiority. Broad English and the moonshot remain open.
+
 ## Latest completed bounded diagnostic: R103
 
 The user authorized [R103](experiments/recipient_interface_r103/PROTOCOL.md)
