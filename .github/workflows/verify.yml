@@ -42,4 +42,5 @@ jobs:
           tests/test_recipient_interface_r103.py
           tests/test_evaluator_control_r104.py
           tests/test_evaluator_scope_r105.py
+          tests/test_grammar_interface_r106.py
       - run: python -m build

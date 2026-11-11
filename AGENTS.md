@@ -418,6 +418,15 @@ verifier; the frozen stage verifier alone permits an absent replay directory.
 Preserve that hostile-audit failure and the repaired full-study checks. No
 post-hoc label inversion, model/threshold sweep or English-control promotion.
 
+User continuation (2026-11-11): R106 is a separately preregistered diagnostic
+under `experiments/grammar_interface_r106/PROTOCOL.md`. Use externally labeled
+grammatical minimal pairs and exact conditional likelihood, not a replacement
+NLI judge. Qualify only a narrow grammatical-discrimination control before the
+conditional frozen-recipient/interface comparison. All target tokens are supplied;
+this cannot qualify free generation, reopen R104's matrix, or certify an English
+core. Preserve the original generation gates and negative evidence. No training,
+model/route/prompt sweep or native LayerCake modification. Publish bounded results.
+
 1. Execute the frozen human-rating packet with three independent raters.
 2. Run the external reproduction packet on genuinely different hardware.
 3. Execute registered minimum-information certification.
