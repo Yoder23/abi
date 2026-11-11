@@ -20,6 +20,9 @@ repaired in place; even removing every approval flag permits at most 30/48 on
 the registered screen. No recipient comparison or training ran. Evaluator validity
 and control qualification remain unresolved; see [the result](docs/R104_EVALUATOR_CONTROL.md).
 No automatic substitute model, prompt sweep, training or host change follows.
+The immutable R104 research release and review assets are public. Same-machine
+public reconstruction matches 566 assets and 729 bindings and passes 43 focused
+checks; the tagged source's GitHub CI passes. No scientific gate is promoted.
 
 ## Latest completed bounded diagnostic: R103
 

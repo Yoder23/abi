@@ -8,7 +8,7 @@ Status date: 2026-11-10
 
 `FULL_MOONSHOT_NOT_PROVEN`
 
-The published-review status includes the separately sealed R103 research
+The published-review status includes the separately sealed R104 research
 prerelease. It is not a qualified English-core or production release.
 
 Independent reviewers can evaluate R7, V1089, R97, and R21-R23 as separate
@@ -22,8 +22,9 @@ control gate and additional evaluator-scope limitations after 155 finite cases
 passed. No recipient matrix or training ran. The focused completed-evidence
 audit passes 43 checks, including missing-data/hash, forged-score, stale-decision,
 evaluator and forbidden-comparison mutations. General semantic evaluation and
-English-control qualification remain open. Publication/reconstruction is recorded
-in the packet separately from local testing.
+English-control qualification remain open. Public-only reconstruction matched
+566 assets and 729 bindings and passed 43 focused checks. The packet discloses
+reused public checkouts/cache and the same machine; tagged GitHub CI passes.
 
 The previous [R103 prerequisite result](R103_RECIPIENT_INTERFACE.md) is public.
 Its native-chat control passed 41/48 against 44/48, and three task floors failed.

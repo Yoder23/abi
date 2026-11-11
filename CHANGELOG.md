@@ -10,6 +10,10 @@
   historical score, model checkpoint or native LayerCake source was modified.
 - Added a cited weight-space research assessment and future competing-method
   design. No weight-editing backend, superiority or product claim is added.
+- Published immutable R104, complete 566-asset/four-payload manifest and review
+  helper. Same-machine public recomputation matched 729 bindings and passed 43
+  focused checks; tagged Python3.10-3.12 CI passed. The additive receipt preserves
+  the failed scientific decision and discloses reused public checkouts/cache.
 
 - Preregistered R103 recipient/interface suitability with a separately gated
   native-chat control and zero training. The 725-input freeze preceded every

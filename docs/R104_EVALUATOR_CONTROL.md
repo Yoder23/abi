@@ -148,8 +148,27 @@ and 729 frozen bindings (including the separately pinned host source). Manifest
 SHA-256: `4be7dfc63be3204876da8aae6ceed8a9f90860f085da467e26f174a8149b7af4`.
 Public-review helper SHA-256:
 `4ea260b812cfbe5f438d4bd30d8d0e2e37d5fb7df1c311ded31841e78b45f9f7`.
-The planned immutable research tag is `abi-research-r104-2026-11-10`; public
-reconstruction is a separate subsequent receipt, not implied by this local seal.
+The immutable [research release](https://github.com/Yoder23/abi/releases/tag/abi-research-r104-2026-11-10)
+is public. Its tag `abi-research-r104-2026-11-10` resolves to source commit
+`f9bff9ae52499145f083b526b32aa2ac59eeb4ea`, with annotated tag object
+`e2f170d684d8b32f2347d5a523cd1c4026803cca`. GitHub lint and verification succeeded
+for both branch and tag; the supported matrix passes on Python3.10, 3.11 and3.12.
+
+## Published reconstruction
+
+The [public receipt](../results/review_2026_11_10/public_r104_reconstruction.json)
+records `BOUNDED_R104_DECISION_RECOMPUTED`: all 566 assets, four LFS paths and
+729 bindings matched; the identical negative decision and descriptive audit
+recomputed; all 43 focused checks passed. Both public checkouts stayed clean.
+Receipt SHA-256:
+`017b84072a2d0e04c79426c12e72d9f002099d06785b660ab2de656d62e9d696`.
+
+This reused the public-only sibling checkouts and tokenizer cache originally
+created for R102, fetched the new R104 tag and downloaded the manifest/helper
+from GitHub. No development assets were copied into the review checkout. It is
+the same machine and installed Python dependencies, not a brand-new clone,
+fresh environment, live-generation replication, human review or independent
+hardware. The additive receipt/docs commit does not move the scientific tag.
 
 ## Attribution and next decision
 

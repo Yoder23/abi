@@ -30,6 +30,20 @@ files. It checks custody, recomputes the decision and error inventory, and runs
 43 focused checks. It does not run a model or claim independent hardware.
 It must write its receipt outside both checkouts and never overwrite a receipt.
 
+## Published reconstruction
+
+Source commit: `f9bff9ae52499145f083b526b32aa2ac59eeb4ea`.
+Manifest SHA-256: `4be7dfc63be3204876da8aae6ceed8a9f90860f085da467e26f174a8149b7af4`.
+The additive `public_r104_reconstruction.json` receipt matches 566 assets,
+four inherited LFS payload paths and 729 frozen bindings; the same decision and
+error inventory recompute and 43 focused checks pass. Receipt SHA-256:
+`017b84072a2d0e04c79426c12e72d9f002099d06785b660ab2de656d62e9d696`.
+
+Public-only checkouts and public tokenizer cache were reused on the same machine.
+This is not a fresh clone/environment, live model rerun, independent hardware or
+human review. Sealed-tag GitHub CI passes Python3.10-3.12 plus lint. The receipt
+and updated notes are additive; the scientific tag is unchanged.
+
 The [weight-space research assessment](../WEIGHT_SPACE_RESEARCH_2026_11.md) treats
 direct editing as a future competing acquisition mechanism. No backend or
 LayerCake package-contract change is bundled here. R7 and all older tags remain

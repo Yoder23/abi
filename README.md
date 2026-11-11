@@ -51,6 +51,9 @@ but still fails the clarification task floor. Two scorer-scope limitations are
 preserved, not patched after observing outputs. No recipient ran and no native
 LayerCake defect follows. See also the [weight-space research assessment](docs/WEIGHT_SPACE_RESEARCH_2026_11.md):
 direct editing is a future competitor, not an ABI superiority result.
+The [R104 research release](https://github.com/Yoder23/abi/releases/tag/abi-research-r104-2026-11-10)
+is public; same-machine public recomputation matched 566 assets and 729 bindings
+and passed 43 focused checks. No scientific claim is promoted by publication.
 
 The preceding [R103 diagnostic](docs/R103_RECIPIENT_INTERFACE.md) stopped at control
 qualification: 41/48 raw passes versus the required 44/48. Recipient comparisons

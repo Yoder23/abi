@@ -12,6 +12,9 @@ clarification floor. No recipients or training ran. The requested qualified
 control and recipient comparison remain unmet; native LayerCake is unchanged.
 The [weight-space note](WEIGHT_SPACE_RESEARCH_2026_11.md) keeps competing acquisition
 methods in view without claiming superiority or adding a new host contract.
+The sealed R104 release is public. Same-machine public reconstruction matches
+566 assets and 729 bindings and passes 43 focused checks; tagged GitHub CI passes.
+Publication does not change the negative scientific verdict.
 
 [R103](R103_RECIPIENT_INTERFACE.md) stopped at raw control qualification: 41/48
 against 44/48, with three task-floor failures. No recipient comparison or training

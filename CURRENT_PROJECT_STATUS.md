@@ -2,12 +2,16 @@
 
 Updated: 2026-11-10
 
-Latest completed bounded result: [R104](docs/R104_EVALUATOR_CONTROL.md).
+Latest public bounded result: [R104](docs/R104_EVALUATOR_CONTROL.md).
 155 finite evaluator cases pass, but the control fails 29/48 and four task floors.
 Two live scorer limitations are preserved; removing all approval flags yields
 only a 30/48 ceiling. No recipient comparison/training ran. This does not
 attribute failure to ABI transfer or native LayerCake. Broad evaluator validation
 and control qualification remain open. No sweep follows automatically.
+Its public tag and complete review manifest are available. Public-only
+reconstruction matched 566 assets and 729 bindings, recomputed the identical
+negative decision and passed 43 focused checks. Reused public caches/checkouts,
+same machine, no live generation or independent-hardware claim. Tagged CI passes.
 
 Previous public bounded result: [R103](docs/R103_RECIPIENT_INTERFACE.md). Control
 qualification failed at 41/48 against 44/48; email, format and tone were each 4/6.
