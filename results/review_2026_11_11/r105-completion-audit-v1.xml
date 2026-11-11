@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="7.825" timestamp="2026-11-11T05:35:40.939022-05:00" hostname="Sam"><testcase classname="tests.test_r105_completed_verifier" name="test_actual_verifier_rejects_hostile_evidence[missing_replay_directory]" time="7.440"><failure message="Failed: DID NOT RAISE any of (&lt;class 'RuntimeError'&gt;, &lt;class 'FileNotFoundError'&gt;)">evidence = WindowsPath('C:/Users/samyo/AppData/Local/Temp/pytest-of-samyo/pytest-34/test_actual_verifier_rejects_h0/evidence')
+mutation = 'missing_replay_directory'
+
+    @pytest.mark.parametrize('mutation', ['missing_raw', 'missing_receipt', 'missing_replay', 'missing_replay_directory', 'raw_hash',
+        'drop_row', 'duplicate', 'token', 'prediction', 'logit_nan', 'decision', 'catalog',
+        'resource', 'batch', 'training', 'freeze', 'stop', 'replay_drift'])
+    def test_actual_verifier_rejects_hostile_evidence(evidence, mutation):
+        path, rp = c.OUT/'initial/raw.jsonl', c.OUT/'initial/receipt.json'
+        receipt = c.read(rp)
+        if mutation == 'missing_replay_directory':
+            (c.OUT/'replay').rename(c.OUT/'replay.absent')
+        elif mutation in ('missing_raw', 'missing_receipt', 'missing_replay'):
+            target = {'missing_raw': path, 'missing_receipt': rp, 'missing_replay': c.OUT/'replay/raw.jsonl'}[mutation]
+            target.rename(target.with_suffix('.absent'))
+        elif mutation == 'raw_hash':
+            receipt['raw_sha256'] = '0'*64
+        elif mutation in ('drop_row', 'duplicate', 'token', 'prediction', 'logit_nan', 'replay_drift'):
+            observed = c.rows(path)
+            if mutation == 'drop_row':
+                observed.pop()
+            elif mutation == 'duplicate':
+                observed[1] = observed[0]
+            elif mutation == 'token':
+                observed[0]['input_ids'][0] = -1
+            elif mutation == 'prediction':
+                observed[0]['prediction'] = 'FORCED_CORRECT'
+            elif mutation == 'logit_nan':
+                observed[0]['logits'][0] = float('nan')
+            else:
+                observed[0]['logits'][0] += .000001
+            path.write_bytes(b''.join(c.canonical(r) for r in observed))
+            receipt['raw_sha256'] = c.sha(path)
+        elif mutation == 'decision':
+            dp = c.OUT/'decision.json'
+            value = c.read(dp)
+            value['verdict'] = 'FORCED_PASS'
+            dp.write_bytes(c.canonical(value))
+        elif mutation == 'catalog':
+            cp = c.OUT/'catalog.json'
+            value = c.read(cp)
+            value[0]['gold_label'] = 'contradiction'
+            cp.write_bytes(c.canonical(value))
+        elif mutation == 'resource':
+            receipt['wall_seconds'] = float('nan')
+        elif mutation == 'batch':
+            receipt['batch_receipts'].pop()
+        elif mutation == 'training':
+            receipt['optimizer_steps'] = 1
+        elif mutation == 'freeze':
+            receipt['freeze_sha256'] = '0'*64
+        elif mutation == 'stop':
+            c.write_once(c.OUT/'stop.json', {'reason': 'interrupted'})
+        if mutation != 'missing_receipt':
+            rp.write_bytes(c.canonical(receipt))
+&gt;       with pytest.raises((RuntimeError, FileNotFoundError)):
+E       Failed: DID NOT RAISE any of (&lt;class 'RuntimeError'&gt;, &lt;class 'FileNotFoundError'&gt;)
+
+tests\test_r105_completed_verifier.py:77: Failed</failure></testcase></testsuite></testsuites>

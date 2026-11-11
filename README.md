@@ -39,13 +39,19 @@ LoRA and distillation.
 | R102 | Matched renaming/exposure factorial completed; neither primary factor supported and no quality gate passed | Recipient/interface suitability remains unresolved |
 | R103 | Raw control qualification failed at 41/48; all evidence preserved | Recipient/interface comparison not executed; control/evaluator validity remains unresolved |
 | R104 | 155 finite scorer cases passed; raw control failed 29/48, with additional scorer-scope limits disclosed | No recipient comparison; general evaluator validity and control qualification remain open |
+| R105 | A frozen NLI evaluator failed external scope labels: 779/1,200; exact live replay | Rejected as a judge; no English-control or acquisition promotion |
 
 These lineages must not be combined into one certification. The controlling
 public technical release remains
 [`abi-final-validation-v2-repaired-r7-2026-08-30`](https://github.com/Yoder23/abi/releases/tag/abi-final-validation-v2-repaired-r7-2026-08-30).
 The current default branch is a later peer-review candidate.
 
-The latest [R104 diagnostic](docs/R104_EVALUATOR_CONTROL.md) stopped at its control
+The latest [R105 evaluator falsification](docs/R105_EVALUATOR_SCOPE.md) rejected
+an off-the-shelf semantic judge on external gold labels, with exact live replay.
+This is a measured evaluation limitation, not an ABI or LayerCake breakthrough.
+No recipient ran, and earlier English-control gates remain closed.
+
+The preceding [R104 diagnostic](docs/R104_EVALUATOR_CONTROL.md) stopped at its control
 gate: 29/48 under strengthened instruction checks. The legacy screen gives 44/48
 but still fails the clarification task floor. Two scorer-scope limitations are
 preserved, not patched after observing outputs. No recipient ran and no native

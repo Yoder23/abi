@@ -1,12 +1,21 @@
 # ABI claim ledger
 
-Status date: 2026-11-10
+Status date: 2026-11-11
 
 Documentation cannot widen a machine-readable certificate. Each claim below is
 limited to its exact source, artifact, implementation, benchmark, and evidence
 identity.
 
 ## Current claims
+
+### R105: external-label evaluator rejected, not an acquisition result
+
+[R105](docs/R105_EVALUATOR_SCOPE.md) scores 779/1,200 external scope cases and
+62/64 author-specified approval cases. Both registered gates fail. Initial and
+fresh-process raw replay are byte-identical. The additive completion verifier
+requires all replay evidence; the weaker frozen stage-checker limitation and
+its hostile failure are preserved. This is not general evaluator qualification,
+English fluency, human review, acquisition superiority or a LayerCake defect.
 
 ### R104: finite evaluator tests pass; control qualification still fails
 

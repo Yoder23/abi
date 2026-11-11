@@ -4,7 +4,8 @@
 | --- | --- | --- |
 | Python package | `0.4.0a1` | Supported alpha compiler API |
 | Controlling technical release | `abi-final-validation-v2-repaired-r7-2026-08-30` | Bounded R7 runtime/conformance proof |
-| Latest public research review snapshot | `abi-research-r104-2026-11-10` | Finite evaluator tests; failed control gate; recipient comparison not run |
+| Current research review snapshot | `abi-research-r105-2026-11-11` | External-label evaluator rejection; no acquisition or host promotion |
+| Previous public research review snapshot | `abi-research-r104-2026-11-10` | Finite evaluator tests; failed control gate; recipient comparison not run |
 | Previous research review snapshot | `abi-research-r103-2026-11-10` | Raw control qualification failed; recipient comparison not run |
 | Previous research snapshot | `abi-research-r102-2026-11-10` | Negative coverage/exposure factorial; no English-core promotion |
 | Earlier diagnostic snapshot | `abi-research-r101-2026-11-05` | Execution/continuation diagnostic; no English-core promotion |

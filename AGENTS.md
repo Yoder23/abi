@@ -404,11 +404,19 @@ LayerCake remains untouched. No prompt/model sweep or automatic successor.
 
 User continuation (2026-11-11): prove prerequisites before claiming a breakthrough.
 R105 is one frozen external-label evaluator falsification under
-`experiments/evaluator_scope_r105/PROTOCOL.md`: conventional NLI, all1,200 ScoNe
-test rows plus64 approval-scope cases, one live replay, zero training/teacher/
+`experiments/evaluator_scope_r105/PROTOCOL.md`: conventional NLI, all 1,200 ScoNe
+test rows plus 64 approval-scope cases, one live replay, zero training/teacher/
 recipient calls. External gold is not new human ratings; overlap is disclosed.
 Do not substitute evaluator success for an English-control qualification or
 relax any existing gate. Preserve R104 and keep native LayerCake unchanged.
+
+R105 completed and rejected the conventional evaluator: 779/1,200 external gold
+and 62/64 approval cases. Its two single-scoped-negation families score 4/200 and
+5/200; raw replay is byte-identical. This is evaluator failure, not acquisition
+or native LayerCake failure. Use the additive `evaluator_scope_r105.complete`
+verifier; the frozen stage verifier alone permits an absent replay directory.
+Preserve that hostile-audit failure and the repaired full-study checks. No
+post-hoc label inversion, model/threshold sweep or English-control promotion.
 
 1. Execute the frozen human-rating packet with three independent raters.
 2. Run the external reproduction packet on genuinely different hardware.

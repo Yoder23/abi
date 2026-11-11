@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-11-11
+
+- Preregistered R105 external semantic-scope falsification: one pinned NLI model,
+  1,200 externally labeled cases plus 64 approval cases, zero training/teacher/
+  recipient calls. Rejected at 779/1,200 and 62/64; fresh-process raw replay exact.
+- Preserved the pre-inference initializer-path failure and the post-run missing-
+  replay completion-check failure. Added a full-study fail-closed wrapper without
+  modifying frozen code, outputs or gates. No English-core promotion follows.
+
 ## 2026-11-10
 
 - Preregistered and froze R104: 729 input bindings, 155 finite evaluator cases,

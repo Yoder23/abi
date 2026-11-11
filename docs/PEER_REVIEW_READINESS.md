@@ -1,6 +1,6 @@
 # ABI peer-review readiness
 
-Status date: 2026-11-10
+Status date: 2026-11-11
 
 ## Verdict
 
@@ -16,6 +16,12 @@ bounded evidence lineages. They must not combine those lineages into a single
 final-artifact proof.
 
 ## Current bounded research review
+
+[R105](R105_EVALUATOR_SCOPE.md) rejects one frozen NLI evaluator on external
+gold labels, with exact live replay. This is not English-control qualification
+or an ABI acquisition result. Its full-study wrapper closes a preserved missing-
+replay audit failure; 41 focused checks pass, including 23 hostile cases. The
+publication/reconstruction packet is distinct from the scientific verdict.
 
 The current [R104 packet](R104_EVALUATOR_CONTROL.md) preserves a failed 29/48
 control gate and additional evaluator-scope limitations after 155 finite cases

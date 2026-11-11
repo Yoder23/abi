@@ -1,8 +1,15 @@
 # ABI project status
 
-Status date: 2026-11-10
+Status date: 2026-11-11
 
 ## Active work
+
+[R105](R105_EVALUATOR_SCOPE.md) rejected one frozen conventional NLI evaluator:
+779/1,200 external scope cases and 62/64 approval cases, below both registered
+gates. Initial/replay raw logits are byte-identical. Full-study verification
+requires both executions after a preserved missing-replay hostile-audit finding.
+No teacher/recipient/training calls occurred. English-control qualification and
+the compact-core breakthrough remain open; native LayerCake is unchanged.
 
 [R104](R104_EVALUATOR_CONTROL.md) completed with 155 finite evaluator cases
 passing but raw control qualification failing at 29/48. Four task floors fail;

@@ -16,6 +16,9 @@ goal rather than reading the campaign archive in filename order.
 
 ## Canonical current documents
 
+- [R105 external scope falsification](R105_EVALUATOR_SCOPE.md) rejects a frozen
+  conventional evaluator on pre-existing external gold labels; no acquisition ran.
+
 - [R104 evaluator and control qualification](R104_EVALUATOR_CONTROL.md) preserves
   the failed prerequisite and additional evaluator limits; no recipient ran.
 - [Weight-space research assessment](WEIGHT_SPACE_RESEARCH_2026_11.md) separates

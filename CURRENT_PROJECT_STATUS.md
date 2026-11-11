@@ -1,8 +1,13 @@
 # Current project status
 
-Updated: 2026-11-10
+Updated: 2026-11-11
 
-Latest public bounded result: [R104](docs/R104_EVALUATOR_CONTROL.md).
+Latest completed bounded result: [R105](docs/R105_EVALUATOR_SCOPE.md), a rejection
+of one conventional NLI evaluator on external gold scope labels. It scored
+779/1,200 and 62/64 on approval cases; exact live replay passed. No English
+control, ABI-acquired core or native LayerCake claim is promoted.
+
+Previous public bounded result: [R104](docs/R104_EVALUATOR_CONTROL.md).
 155 finite evaluator cases pass, but the control fails 29/48 and four task floors.
 Two live scorer limitations are preserved; removing all approval flags yields
 only a 30/48 ceiling. No recipient comparison/training ran. This does not

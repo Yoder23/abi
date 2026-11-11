@@ -1,9 +1,13 @@
 # Research status
 
-Updated: 2026-11-10
+Updated: 2026-11-11
 
 The concise dashboard is [`PROJECT_STATUS.md`](PROJECT_STATUS.md). This file
 retains the detailed interpretation of later research lineages.
+
+[R105](R105_EVALUATOR_SCOPE.md) completed an external-label evaluator challenge:
+779/1,200 and 62/64 approval cases, with exact raw replay. It rejects the chosen
+conventional NLI judge; no English-control, acquisition or host promotion follows.
 
 The newest [R104 diagnostic](R104_EVALUATOR_CONTROL.md) passed finite evaluator
 fixtures but failed qualification at 29/48. Live scope limitations remain; no
