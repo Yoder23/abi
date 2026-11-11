@@ -72,11 +72,16 @@ def freeze():
     for row in records:
         if len(tok(row['premise'], row['hypothesis'], truncation=False)['input_ids']) > 512:
             raise RuntimeError('Input exceeds untruncated context')
-    c.write_once(c.OUT/'catalog.json', records)
-    files = [*c.HERE.glob('*.py'), c.HERE/'PROTOCOL.md', c.ROOT/'tests/test_evaluator_scope_r105.py',
-             c.ROOT/'experiments/__init__.py', c.ROOT/'experiments/plan_english_r98/__init__.py',
+    catalog_path = c.OUT/'catalog.json'
+    if catalog_path.exists():
+        if c.read(catalog_path) != records:
+            raise RuntimeError('Prior preflight catalog changed')
+    else:
+        c.write_once(catalog_path, records)
+    files = [*c.HERE.glob('*.py'), *c.HERE.glob('*.md'), c.ROOT/'tests/test_evaluator_scope_r105.py',
              c.ROOT/'experiments/plan_english_r98/core.py', c.OUT/'catalog.json', c.OUT/'preparation.json',
              *(c.OUT/'sources').iterdir()]
+    files += [p for p in (c.ROOT/'experiments/__init__.py', c.ROOT/'experiments/plan_english_r98/__init__.py') if p.is_file()]
     c.write_once(c.OUT/'freeze.json', {'format': 'r105-freeze/1', 'model_files': prepared['model_files'],
         'files': {p.relative_to(c.ROOT).as_posix(): c.sha(p) for p in files},
         'abi_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=c.ROOT, text=True).strip(),
