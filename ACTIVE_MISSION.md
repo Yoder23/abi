@@ -2,6 +2,16 @@
 
 Updated: 2026-11-11
 
+## Current bounded diagnostic: R106
+
+[R106](experiments/grammar_interface_r106/PROTOCOL.md) separates grammatical
+discrimination from autonomous generation. Its external BLiMP labels support
+direct sentence-likelihood comparisons without the rejected R105 NLI judge.
+Qualification (200 pairs) precedes any frozen-recipient/interface comparison
+(400 separate pairs). All target tokens are supplied; a positive result cannot
+qualify free generation or pass the English-core product gates. No training,
+new model, route sweep or native LayerCake change. Publication remains authorized.
+
 ## Latest completed bounded prerequisite: R105
 
 [R105](experiments/evaluator_scope_r105/PROTOCOL.md) tests one frozen conventional
