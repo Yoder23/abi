@@ -16,6 +16,11 @@ goal rather than reading the campaign archive in filename order.
 
 ## Canonical current documents
 
+- [R104 evaluator and control qualification](R104_EVALUATOR_CONTROL.md) preserves
+  the failed prerequisite and additional evaluator limits; no recipient ran.
+- [Weight-space research assessment](WEIGHT_SPACE_RESEARCH_2026_11.md) separates
+  externally reported editing results from ABI evidence and future comparisons.
+
 - [R103 recipient/interface suitability](R103_RECIPIENT_INTERFACE.md) is the
   completed control-qualification failure; recipient comparisons did not run.
 - [R102 entity coverage versus optimization exposure](R102_COVERAGE_EXPOSURE.md)

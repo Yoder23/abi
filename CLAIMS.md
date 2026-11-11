@@ -8,6 +8,17 @@ identity.
 
 ## Current claims
 
+### R104: finite evaluator tests pass; control qualification still fails
+
+[R104](docs/R104_EVALUATOR_CONTROL.md) records 155 exact formal-obligation fixtures
+and 48 raw generations. The control scores 29/48; four task floors fail. Additional
+approval-scope limitations mean general semantic evaluator validity is NOT proven.
+Removing all approval flags yields at most 30/48, not a new qualification score.
+The old screen's 44/48 also fails a task floor. No recipients/training ran; no
+ABI-transfer, LayerCake-defect or product claim follows. The separate
+[weight-space review](docs/WEIGHT_SPACE_RESEARCH_2026_11.md) reports external work
+and a possible future control design, not our own reproduction or superiority.
+
 ### R103: control prerequisite failed; recipient attribution not tested
 
 The [R103 diagnostic](docs/R103_RECIPIENT_INTERFACE.md) recorded 41/48 raw control

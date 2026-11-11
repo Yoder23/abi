@@ -2,6 +2,15 @@
 
 ## 2026-11-10
 
+- Preregistered and froze R104: 729 input bindings, 155 finite evaluator cases,
+  one raw-control attempt, unchanged overall/task floors and stronger adherence
+  checks. The control failed 29/48; no recipient comparison or training followed.
+- Preserved both legacy/new raw screens, two additional evaluator-scope limits
+  and a descriptive 30/48 upper bound after removing all approval flags. No
+  historical score, model checkpoint or native LayerCake source was modified.
+- Added a cited weight-space research assessment and future competing-method
+  design. No weight-editing backend, superiority or product claim is added.
+
 - Preregistered R103 recipient/interface suitability with a separately gated
   native-chat control and zero training. The 725-input freeze preceded every
   model call. Control qualification failed at 41/48, so no recipient ran.

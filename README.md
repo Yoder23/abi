@@ -38,13 +38,21 @@ LoRA and distillation.
 | R101 | Sampled execution paths agree; 288 exact unassisted replays; primary oracle-prefix continuation contrast is null | Data/generalization, optimizer fit and parent suitability remain unresolved |
 | R102 | Matched renaming/exposure factorial completed; neither primary factor supported and no quality gate passed | Recipient/interface suitability remains unresolved |
 | R103 | Raw control qualification failed at 41/48; all evidence preserved | Recipient/interface comparison not executed; control/evaluator validity remains unresolved |
+| R104 | 155 finite scorer cases passed; raw control failed 29/48, with additional scorer-scope limits disclosed | No recipient comparison; general evaluator validity and control qualification remain open |
 
 These lineages must not be combined into one certification. The controlling
 public technical release remains
 [`abi-final-validation-v2-repaired-r7-2026-08-30`](https://github.com/Yoder23/abi/releases/tag/abi-final-validation-v2-repaired-r7-2026-08-30).
 The current default branch is a later peer-review candidate.
 
-The bounded [R103 diagnostic](docs/R103_RECIPIENT_INTERFACE.md) stopped at control
+The latest [R104 diagnostic](docs/R104_EVALUATOR_CONTROL.md) stopped at its control
+gate: 29/48 under strengthened instruction checks. The legacy screen gives 44/48
+but still fails the clarification task floor. Two scorer-scope limitations are
+preserved, not patched after observing outputs. No recipient ran and no native
+LayerCake defect follows. See also the [weight-space research assessment](docs/WEIGHT_SPACE_RESEARCH_2026_11.md):
+direct editing is a future competitor, not an ABI superiority result.
+
+The preceding [R103 diagnostic](docs/R103_RECIPIENT_INTERFACE.md) stopped at control
 qualification: 41/48 raw passes versus the required 44/48. Recipient comparisons
 and training did not run. A temporal false-positive in the frozen contradiction
 proxy is documented without changing the result. No native LayerCake defect follows.

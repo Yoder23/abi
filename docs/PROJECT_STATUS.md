@@ -4,6 +4,15 @@ Status date: 2026-11-10
 
 ## Active work
 
+[R104](R104_EVALUATOR_CONTROL.md) completed with 155 finite evaluator cases
+passing but raw control qualification failing at 29/48. Four task floors fail;
+two additional approval-scope limitations are disclosed. Even removing all
+approval flags yields at most 30/48. The legacy score of 44/48 also misses the
+clarification floor. No recipients or training ran. The requested qualified
+control and recipient comparison remain unmet; native LayerCake is unchanged.
+The [weight-space note](WEIGHT_SPACE_RESEARCH_2026_11.md) keeps competing acquisition
+methods in view without claiming superiority or adding a new host contract.
+
 [R103](R103_RECIPIENT_INTERFACE.md) stopped at raw control qualification: 41/48
 against 44/48, with three task-floor failures. No recipient comparison or training
 ran. An observed temporal false-positive in the locked contradiction proxy is

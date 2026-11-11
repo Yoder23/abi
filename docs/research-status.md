@@ -5,7 +5,12 @@ Updated: 2026-11-10
 The concise dashboard is [`PROJECT_STATUS.md`](PROJECT_STATUS.md). This file
 retains the detailed interpretation of later research lineages.
 
-The newest [R103 diagnostic](R103_RECIPIENT_INTERFACE.md) failed its raw-control
+The newest [R104 diagnostic](R104_EVALUATOR_CONTROL.md) passed finite evaluator
+fixtures but failed qualification at 29/48. Live scope limitations remain; no
+recipient comparison ran. Even the descriptive legacy 44/48 misses a task floor.
+Neither broad semantic evaluation, English acquisition nor host failure is proven.
+
+The preceding [R103 diagnostic](R103_RECIPIENT_INTERFACE.md) failed its raw-control
 prerequisite at 41/48; the recipient matrix was not run. It identifies a control/
 evaluation prerequisite problem, not an ABI-transfer or native LayerCake failure.
 The observed temporal contradiction false-positive remains disclosed under the

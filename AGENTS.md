@@ -394,6 +394,14 @@ weight-editing backend is authorized. Keep prerequisite, acquisition/interface
 and host defects separate. The weight-space research note is roadmap context,
 not an experimental superiority result.
 
+R104 completed at its prerequisite: 29/48, with summary 2/6, email/tone 0/6,
+clarification 4/6. All 155 finite author-specified fixtures passed, but two live
+approval-scope limitations remain; do not call this general semantic validation.
+Removing every approval flag yields at most 30/48, not a passing repaired score.
+The legacy screen's 44/48 also misses the clarification floor. Preserve all
+negative evidence and both scores. Recipients and training did not run; native
+LayerCake remains untouched. No prompt/model sweep or automatic successor.
+
 1. Execute the frozen human-rating packet with three independent raters.
 2. Run the external reproduction packet on genuinely different hardware.
 3. Execute registered minimum-information certification.

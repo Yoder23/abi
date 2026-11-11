@@ -2,7 +2,7 @@
 
 Updated: 2026-11-10
 
-## Current bounded diagnostic: R104
+## Latest completed bounded diagnostic: R104
 
 The user authorized [R104](experiments/evaluator_control_r104/PROTOCOL.md):
 validate finite evaluator obligations, qualify a raw English control, then run
@@ -12,6 +12,14 @@ Freeze before execution, preserve failures and publish results. The
 [weight-space research assessment](docs/WEIGHT_SPACE_RESEARCH_2026_11.md) keeps
 direct weight editing as a possible future competitor, not a new experimental
 arm or evidence of ABI superiority. Broad English and the moonshot remain open.
+
+R104 completed: 155 finite evaluator cases passed, but the raw control scored
+29/48 and failed four task floors. The old scorer gives 44/48 on the same outputs,
+but clarification still fails 4/6. Two new scope limitations are disclosed, not
+repaired in place; even removing every approval flag permits at most 30/48 on
+the registered screen. No recipient comparison or training ran. Evaluator validity
+and control qualification remain unresolved; see [the result](docs/R104_EVALUATOR_CONTROL.md).
+No automatic substitute model, prompt sweep, training or host change follows.
 
 ## Latest completed bounded diagnostic: R103
 

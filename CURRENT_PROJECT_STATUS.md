@@ -2,7 +2,14 @@
 
 Updated: 2026-11-10
 
-Latest public bounded result: [R103](docs/R103_RECIPIENT_INTERFACE.md). Control
+Latest completed bounded result: [R104](docs/R104_EVALUATOR_CONTROL.md).
+155 finite evaluator cases pass, but the control fails 29/48 and four task floors.
+Two live scorer limitations are preserved; removing all approval flags yields
+only a 30/48 ceiling. No recipient comparison/training ran. This does not
+attribute failure to ABI transfer or native LayerCake. Broad evaluator validation
+and control qualification remain open. No sweep follows automatically.
+
+Previous public bounded result: [R103](docs/R103_RECIPIENT_INTERFACE.md). Control
 qualification failed at 41/48 against 44/48; email, format and tone were each 4/6.
 The planned recipient comparison did not run. The frozen contradiction proxy
 has a documented temporal false-positive, but that single issue cannot rescue

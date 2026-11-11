@@ -17,7 +17,15 @@ final-artifact proof.
 
 ## Current bounded research review
 
-The latest [R103 prerequisite result](R103_RECIPIENT_INTERFACE.md) is public.
+The current [R104 packet](R104_EVALUATOR_CONTROL.md) preserves a failed 29/48
+control gate and additional evaluator-scope limitations after 155 finite cases
+passed. No recipient matrix or training ran. The focused completed-evidence
+audit passes 43 checks, including missing-data/hash, forged-score, stale-decision,
+evaluator and forbidden-comparison mutations. General semantic evaluation and
+English-control qualification remain open. Publication/reconstruction is recorded
+in the packet separately from local testing.
+
+The previous [R103 prerequisite result](R103_RECIPIENT_INTERFACE.md) is public.
 Its native-chat control passed 41/48 against 44/48, and three task floors failed.
 The recipient comparison did not run. One temporal contradiction-proxy limitation
 is disclosed without changing the score. Local supported review passed 313 tests
