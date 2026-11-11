@@ -8,6 +8,10 @@
 - Preserved the pre-inference initializer-path failure and the post-run missing-
   replay completion-check failure. Added a full-study fail-closed wrapper without
   modifying frozen code, outputs or gates. No English-core promotion follows.
+- Published the immutable R105 tag, manifest, review helper and additive public
+  reconstruction receipt: 40 repository assets and eight evaluator files match,
+  the negative verdict recomputes and 41 focused checks pass. Tagged CI passes
+  on Python 3.10-3.12 plus lint. Same-machine/reused-environment limits remain.
 
 ## 2026-11-10
 

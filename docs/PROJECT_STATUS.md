@@ -10,6 +10,9 @@ gates. Initial/replay raw logits are byte-identical. Full-study verification
 requires both executions after a preserved missing-replay hostile-audit finding.
 No teacher/recipient/training calls occurred. English-control qualification and
 the compact-core breakthrough remain open; native LayerCake is unchanged.
+The immutable research prerelease is public. Same-machine public reconstruction
+matches 40 evidence assets and eight evaluator files, recomputes the rejection
+and passes 41 focused checks. Tagged CI passes; independent review remains open.
 
 [R104](R104_EVALUATOR_CONTROL.md) completed with 155 finite evaluator cases
 passing but raw control qualification failing at 29/48. Four task floors fail;

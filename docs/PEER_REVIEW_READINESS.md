@@ -8,7 +8,7 @@ Status date: 2026-11-11
 
 `FULL_MOONSHOT_NOT_PROVEN`
 
-The published-review status includes the separately sealed R104 research
+The published-review status includes the separately sealed R105 research
 prerelease. It is not a qualified English-core or production release.
 
 Independent reviewers can evaluate R7, V1089, R97, and R21-R23 as separate
@@ -22,8 +22,12 @@ gold labels, with exact live replay. This is not English-control qualification
 or an ABI acquisition result. Its full-study wrapper closes a preserved missing-
 replay audit failure; 41 focused checks pass, including 23 hostile cases. The
 publication/reconstruction packet is distinct from the scientific verdict.
+Public recomputation matched 40 repository assets and eight evaluator files and
+passed all 41 focused checks. The packet discloses the reused public checkout,
+installed dependencies and same machine. Tagged CI passes; no English core is
+qualified by these verification checks.
 
-The current [R104 packet](R104_EVALUATOR_CONTROL.md) preserves a failed 29/48
+The previous [R104 packet](R104_EVALUATOR_CONTROL.md) preserves a failed 29/48
 control gate and additional evaluator-scope limitations after 155 finite cases
 passed. No recipient matrix or training ran. The focused completed-evidence
 audit passes 43 checks, including missing-data/hash, forged-score, stale-decision,

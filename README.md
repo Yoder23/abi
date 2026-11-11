@@ -51,6 +51,11 @@ an off-the-shelf semantic judge on external gold labels, with exact live replay.
 This is a measured evaluation limitation, not an ABI or LayerCake breakthrough.
 No recipient ran, and earlier English-control gates remain closed.
 
+Its [research prerelease](https://github.com/Yoder23/abi/releases/tag/abi-research-r105-2026-11-11)
+and reconstruction receipt are public: 40 evidence assets, eight evaluator files
+and 41 focused checks verified on the same machine. This publishes the rejection,
+not an English-core breakthrough.
+
 The preceding [R104 diagnostic](docs/R104_EVALUATOR_CONTROL.md) stopped at its control
 gate: 29/48 under strengthened instruction checks. The legacy screen gives 44/48
 but still fails the clarification task floor. Two scorer-scope limitations are

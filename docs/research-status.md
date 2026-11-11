@@ -9,7 +9,7 @@ retains the detailed interpretation of later research lineages.
 779/1,200 and 62/64 approval cases, with exact raw replay. It rejects the chosen
 conventional NLI judge; no English-control, acquisition or host promotion follows.
 
-The newest [R104 diagnostic](R104_EVALUATOR_CONTROL.md) passed finite evaluator
+The preceding [R104 diagnostic](R104_EVALUATOR_CONTROL.md) passed finite evaluator
 fixtures but failed qualification at 29/48. Live scope limitations remain; no
 recipient comparison ran. Even the descriptive legacy 44/48 misses a task floor.
 Neither broad semantic evaluation, English acquisition nor host failure is proven.
@@ -20,14 +20,14 @@ evaluation prerequisite problem, not an ABI-transfer or native LayerCake failure
 The observed temporal contradiction false-positive remains disclosed under the
 unchanged scorer and does not alter the negative decision.
 
-The latest public [R102 factorial](R102_COVERAGE_EXPOSURE.md) completed with no
+The earlier public [R102 factorial](R102_COVERAGE_EXPOSURE.md) completed with no
 qualified checkpoint and no supported primary factor. The exact lower-budget
 repeat controls reproduced R99; more exposure and this renaming policy did not
 solve the functional acquisition gate. Its post-run error inventory remains
 descriptive, not a new quality score. Its immutable tag, checkpoint payloads and
 complete review manifest are public. R101 remains a separate historical diagnostic.
 
-The latest [R101 diagnostic](R101_EXECUTION_CONTINUATION.md) completed with
+The earlier [R101 diagnostic](R101_EXECUTION_CONTINUATION.md) completed with
 measured execution agreement and exact unassisted replay, but a null primary
 oracle-prefix remaining-fact contrast. It authorizes no product promotion or
 native LayerCake failure attribution. Acquisition fit/generalization remains

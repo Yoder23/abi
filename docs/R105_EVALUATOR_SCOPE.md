@@ -126,7 +126,40 @@ external model-file hashes. No sibling LayerCake checkout is needed for R105.
 The publication manifest binds 40 repository assets and eight upstream model
 files. Its SHA-256 is
 `1f651c13866164009630f523735a959e24284c230cc694b59e3a5de06a25e2f5`.
-Public reconstruction remains a separate post-publication operation.
+Public reconstruction is a separate post-publication operation, recorded below.
+
+## Published reconstruction
+
+The [research prerelease](https://github.com/Yoder23/abi/releases/tag/abi-research-r105-2026-11-11)
+is public. The immutable annotated tag resolves to source commit
+`711f5a480bfab843ef7b2b1323bcc3a3aaef19f6`; its tag object is
+`e39cb03632ee584d0a7370cddbc4ab6186908cac`. Branch and tag CI passed supported
+verification on Python 3.10-3.12 and lint.
+
+The [public receipt](../results/review_2026_11_11/public_r105_reconstruction.json)
+records `REJECTED_EVALUATOR_EVIDENCE_RECOMPUTED`: all 40 repository assets and
+eight upstream evaluator files matched; the negative decision and descriptive
+audit recomputed; all 41 focused checks passed; the checkout remained clean.
+Receipt SHA-256:
+`1c994c811b835f76ac54fbe6a064cbc55bec51dd6ac8753bb5086a05d73f2e80`.
+
+This reused the public-only checkout from R102 on the same machine, fetched the
+R105 tag, downloaded the manifest/helper from GitHub, and downloaded the eight
+evaluator files from their pinned upstream revision into a previously absent
+model directory. No development assets were copied into that checkout. The
+installed Python dependencies were reused. This is not a brand-new environment,
+live model rerun, independent hardware or human review. The earlier two live
+executions are separately recorded in the sealed raw evidence.
+
+With the repository's research dependencies installed, the release helper can
+be run against a clean checkout of the exact source commit:
+
+```bash
+python scripts/review_r105_public.py review --root . --commit 711f5a480bfab843ef7b2b1323bcc3a3aaef19f6 --manifest-sha256 1f651c13866164009630f523735a959e24284c230cc694b59e3a5de06a25e2f5 --output ../my_r105_review.json --fetch-model
+```
+
+The output path must not exist and must be outside the checkout. This additive
+receipt/documentation update does not move the scientific tag or change scores.
 
 ## What remains necessary
 

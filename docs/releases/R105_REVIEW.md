@@ -28,5 +28,15 @@ English acquisition remain open. `FULL_MOONSHOT_NOT_PROVEN` remains authoritativ
 
 Manifest: 40 repository assets and eight upstream model files.
 SHA-256: `1f651c13866164009630f523735a959e24284c230cc694b59e3a5de06a25e2f5`.
-Public reconstruction is recorded additively after publication; this source
-snapshot itself does not attest that later operation.
+Public reconstruction is recorded additively after publication, without moving
+the source tag at `711f5a480bfab843ef7b2b1323bcc3a3aaef19f6`.
+
+The release's `public_r105_reconstruction.json` receipt matches all 40 assets
+and eight model files, recomputes the negative decision, and passes 41 focused
+checks. Receipt SHA-256:
+`1c994c811b835f76ac54fbe6a064cbc55bec51dd6ac8753bb5086a05d73f2e80`.
+The public-only checkout and installed dependencies were reused on the same
+machine; evaluator files were downloaded from the pinned public upstream.
+No development assets were copied. This is not a brand-new environment, live
+inference replication or independent-hardware review. Tagged CI passes on
+Python 3.10-3.12 plus lint. See the result packet for exact replay instructions.

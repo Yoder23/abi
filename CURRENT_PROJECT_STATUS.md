@@ -6,6 +6,9 @@ Latest completed bounded result: [R105](docs/R105_EVALUATOR_SCOPE.md), a rejecti
 of one conventional NLI evaluator on external gold scope labels. It scored
 779/1,200 and 62/64 on approval cases; exact live replay passed. No English
 control, ABI-acquired core or native LayerCake claim is promoted.
+The research tag and public reconstruction receipt are published. All 40 evidence
+assets and eight upstream evaluator files matched; 41 focused checks and tagged
+CI passed. This is same-machine recomputation, not independent hardware.
 
 Previous public bounded result: [R104](docs/R104_EVALUATOR_CONTROL.md).
 155 finite evaluator cases pass, but the control fails 29/48 and four task floors.

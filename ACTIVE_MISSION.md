@@ -16,8 +16,12 @@ failing both gates. Fresh-process logits/tokens/predictions replay byte-identica
 The full-study verifier closes the preserved missing-replay audit gap without
 changing frozen results. [R105 packet](docs/R105_EVALUATOR_SCOPE.md). No training,
 English-control qualification, recipient comparison or LayerCake failure follows.
+The immutable R105 research tag and public reconstruction receipt are published:
+40 evidence assets, eight upstream evaluator files and 41 focused checks verify.
+The same-machine public checkout/dependencies were reused; this is not independent
+hardware or another live inference run. No automatic evaluator sweep follows.
 
-## Latest completed bounded diagnostic: R104
+## Previous completed bounded diagnostic: R104
 
 The user authorized [R104](experiments/evaluator_control_r104/PROTOCOL.md):
 validate finite evaluator obligations, qualify a raw English control, then run
