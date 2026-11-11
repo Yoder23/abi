@@ -8,6 +8,15 @@ identity.
 
 ## Current claims
 
+### R106: narrow grammatical-discrimination control failed
+
+[R106](docs/R106_GRAMMAR_INTERFACE.md) scored 178/200 versus 190/200 on four
+external BLiMP families, with exact fresh-process raw replay. It performed no
+recipient comparison or training. A likelihood ranking with supplied target
+tokens is not autonomous English; no historical generation gate is replaced.
+Apparent external-label issues are preserved, not used for post-hoc promotion.
+No ABI acquisition, native LayerCake defect or English-core claim follows.
+
 ### R105: external-label evaluator rejected, not an acquisition result
 
 [R105](docs/R105_EVALUATOR_SCOPE.md) scores 779/1,200 external scope cases and

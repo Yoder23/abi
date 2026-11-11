@@ -2,6 +2,14 @@
 
 ## 2026-11-11
 
+- Preregistered R106's distinct grammatical-discrimination diagnostic on external
+  BLiMP labels; froze 742 inputs and all existing checkpoints before GPU scoring.
+  The control failed 178/200 against 190/200; exact raw replay passed. No recipient
+  or training run followed, and no generation-quality gate was replaced.
+- Preserved upstream-label limitations and all raw numeric evidence. Completed
+  52 focused checks (25 hostile cases) and the supported 364+16 suite, four skips.
+  Public source metadata matches all four pinned Qwen weight-shard hashes.
+
 - Preregistered R105 external semantic-scope falsification: one pinned NLI model,
   1,200 externally labeled cases plus 64 approval cases, zero training/teacher/
   recipient calls. Rejected at 779/1,200 and 62/64; fresh-process raw replay exact.

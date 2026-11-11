@@ -2,7 +2,13 @@
 
 Updated: 2026-11-11
 
-Latest completed bounded result: [R105](docs/R105_EVALUATOR_SCOPE.md), a rejection
+Latest completed bounded result: [R106](docs/R106_GRAMMAR_INTERFACE.md) failed
+its separate grammatical-discrimination control at 178/200 against 190/200.
+Exact raw replay passed; no recipient calls or training ran. External-label
+limitations are disclosed without rescoring. This teacher-forced diagnostic does
+not qualify free generation, prove an ABI breakthrough or identify a host defect.
+
+Previous completed bounded result: [R105](docs/R105_EVALUATOR_SCOPE.md), a rejection
 of one conventional NLI evaluator on external gold scope labels. It scored
 779/1,200 and 62/64 on approval cases; exact live replay passed. No English
 control, ABI-acquired core or native LayerCake claim is promoted.

@@ -2,7 +2,7 @@
 
 Updated: 2026-11-11
 
-## Current bounded diagnostic: R106
+## Latest completed bounded diagnostic: R106
 
 [R106](experiments/grammar_interface_r106/PROTOCOL.md) separates grammatical
 discrimination from autonomous generation. Its external BLiMP labels support
@@ -12,7 +12,13 @@ Qualification (200 pairs) precedes any frozen-recipient/interface comparison
 qualify free generation or pass the English-core product gates. No training,
 new model, route sweep or native LayerCake change. Publication remains authorized.
 
-## Latest completed bounded prerequisite: R105
+Completed at the control stop: 178/200 versus 190/200; irregular participles
+37/50 versus 45/50. Fresh-process raw replay is exact. No recipients or training
+ran. The [result packet](docs/R106_GRAMMAR_INTERFACE.md) preserves all scores,
+source identities and a disclosed upstream label anomaly. No free-generation
+qualification or product claim follows; no nearby sweep is authorized.
+
+## Previous completed bounded prerequisite: R105
 
 [R105](experiments/evaluator_scope_r105/PROTOCOL.md) tests one frozen conventional
 NLI evaluator against externally labeled negation-scope data and prospective

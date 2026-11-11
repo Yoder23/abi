@@ -4,6 +4,12 @@ Status date: 2026-11-11
 
 ## Active work
 
+[R106](R106_GRAMMAR_INTERFACE.md) completed at its narrow grammar-control stop:
+178/200 versus 190/200, exact live raw replay. No recipients or training ran.
+This supplied-token likelihood diagnostic is distinct from autonomous generation;
+its negative result and external-label limitations do not promote an English core
+or establish a native LayerCake defect. The full acquisition breakthrough remains open.
+
 [R105](R105_EVALUATOR_SCOPE.md) rejected one frozen conventional NLI evaluator:
 779/1,200 external scope cases and 62/64 approval cases, below both registered
 gates. Initial/replay raw logits are byte-identical. Full-study verification

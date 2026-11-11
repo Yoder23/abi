@@ -17,6 +17,11 @@ final-artifact proof.
 
 ## Current bounded research review
 
+[R106](R106_GRAMMAR_INTERFACE.md) failed the registered grammatical-discrimination
+control at 178/200. Exact raw replay and 52 focused checks pass, including 25
+hostile cases. The packet separates likelihood ranking from autonomous English,
+discloses external-label limitations and leaves all acquisition claims open.
+
 [R105](R105_EVALUATOR_SCOPE.md) rejects one frozen NLI evaluator on external
 gold labels, with exact live replay. This is not English-control qualification
 or an ABI acquisition result. Its full-study wrapper closes a preserved missing-

@@ -427,6 +427,13 @@ this cannot qualify free generation, reopen R104's matrix, or certify an English
 core. Preserve the original generation gates and negative evidence. No training,
 model/route/prompt sweep or native LayerCake modification. Publish bounded results.
 
+R106 completed at its narrow control stop: 178/200, including irregular verbs
+37/50 against 45/50. Raw replay is byte-identical. Recipients and training did
+not run. Preserve the apparent upstream label reversal and judgment limitations
+without rescoring. Sentence likelihood is not autonomous fluency; no generation
+gate, ABI acquisition or native LayerCake claim is promoted. Do not run an easier
+subset, normalization/prompt/model sweep or automatic successor.
+
 1. Execute the frozen human-rating packet with three independent raters.
 2. Run the external reproduction packet on genuinely different hardware.
 3. Execute registered minimum-information certification.

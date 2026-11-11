@@ -40,13 +40,20 @@ LoRA and distillation.
 | R103 | Raw control qualification failed at 41/48; all evidence preserved | Recipient/interface comparison not executed; control/evaluator validity remains unresolved |
 | R104 | 155 finite scorer cases passed; raw control failed 29/48, with additional scorer-scope limits disclosed | No recipient comparison; general evaluator validity and control qualification remain open |
 | R105 | A frozen NLI evaluator failed external scope labels: 779/1,200; exact live replay | Rejected as a judge; no English-control or acquisition promotion |
+| R106 | Separate grammatical-discrimination control failed 178/200; exact live replay | No recipient comparison or training; supplied-token ranking is not fluent generation |
 
 These lineages must not be combined into one certification. The controlling
 public technical release remains
 [`abi-final-validation-v2-repaired-r7-2026-08-30`](https://github.com/Yoder23/abi/releases/tag/abi-final-validation-v2-repaired-r7-2026-08-30).
 The current default branch is a later peer-review candidate.
 
-The latest [R105 evaluator falsification](docs/R105_EVALUATOR_SCOPE.md) rejected
+The latest [R106 diagnostic](docs/R106_GRAMMAR_INTERFACE.md) failed its narrow
+grammar control at 178/200 against 190/200. It uses external sentence-pair labels,
+not the rejected NLI judge; all target tokens are supplied. No recipient or
+training run followed. Source-label limitations and exact replay are preserved;
+this does not qualify English generation or promote a product claim.
+
+The preceding [R105 evaluator falsification](docs/R105_EVALUATOR_SCOPE.md) rejected
 an off-the-shelf semantic judge on external gold labels, with exact live replay.
 This is a measured evaluation limitation, not an ABI or LayerCake breakthrough.
 No recipient ran, and earlier English-control gates remain closed.

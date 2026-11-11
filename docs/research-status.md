@@ -5,6 +5,11 @@ Updated: 2026-11-11
 The concise dashboard is [`PROJECT_STATUS.md`](PROJECT_STATUS.md). This file
 retains the detailed interpretation of later research lineages.
 
+[R106](R106_GRAMMAR_INTERFACE.md) failed its separate grammatical-discrimination
+control at 178/200. Exact replay passed; recipients and training did not run.
+Benchmark label limitations are disclosed without rescoring. This does not repair
+semantic evaluation or substitute likelihood ranking for autonomous English.
+
 [R105](R105_EVALUATOR_SCOPE.md) completed an external-label evaluator challenge:
 779/1,200 and 62/64 approval cases, with exact raw replay. It rejects the chosen
 conventional NLI judge; no English-control, acquisition or host promotion follows.

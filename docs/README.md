@@ -16,6 +16,8 @@ goal rather than reading the campaign archive in filename order.
 
 ## Canonical current documents
 
+- [R106 grammar/interface diagnostic](R106_GRAMMAR_INTERFACE.md) failed its separate
+  external grammatical-discrimination control; no recipient or training run.
 - [R105 external scope falsification](R105_EVALUATOR_SCOPE.md) rejects a frozen
   conventional evaluator on pre-existing external gold labels; no acquisition ran.
 
