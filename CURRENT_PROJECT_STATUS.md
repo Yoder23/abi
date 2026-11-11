@@ -7,6 +7,9 @@ its separate grammatical-discrimination control at 178/200 against 190/200.
 Exact raw replay passed; no recipient calls or training ran. External-label
 limitations are disclosed without rescoring. This teacher-forced diagnostic does
 not qualify free generation, prove an ABI breakthrough or identify a host defect.
+Its immutable research tag and public reconstruction receipt are published:
+581 assets match, 52 focused checks and tagged CI pass. Public checkouts/cache
+and the same machine were reused; this is not independent hardware or human review.
 
 Previous completed bounded result: [R105](docs/R105_EVALUATOR_SCOPE.md), a rejection
 of one conventional NLI evaluator on external gold scope labels. It scored

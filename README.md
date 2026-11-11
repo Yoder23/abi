@@ -53,6 +53,11 @@ not the rejected NLI judge; all target tokens are supplied. No recipient or
 training run followed. Source-label limitations and exact replay are preserved;
 this does not qualify English generation or promote a product claim.
 
+The [R106 research release](https://github.com/Yoder23/abi/releases/tag/abi-research-r106-2026-11-11)
+and additive receipt are public. Same-machine reconstruction matched all 581
+evidence assets and passed 52 focused checks; tagged CI is green. Publication
+does not change the negative scientific decision.
+
 The preceding [R105 evaluator falsification](docs/R105_EVALUATOR_SCOPE.md) rejected
 an off-the-shelf semantic judge on external gold labels, with exact live replay.
 This is a measured evaluation limitation, not an ABI or LayerCake breakthrough.

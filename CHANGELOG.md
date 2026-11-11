@@ -9,6 +9,9 @@
 - Preserved upstream-label limitations and all raw numeric evidence. Completed
   52 focused checks (25 hostile cases) and the supported 364+16 suite, four skips.
   Public source metadata matches all four pinned Qwen weight-shard hashes.
+- Published R106's immutable tag and additive reconstruction receipt: 581 assets,
+  182 host bindings, four LFS paths and ten source files match; 52 focused checks
+  and tagged CI pass. Public checkouts/cache and same-machine limits are disclosed.
 
 - Preregistered R105 external semantic-scope falsification: one pinned NLI model,
   1,200 externally labeled cases plus 64 approval cases, zero training/teacher/

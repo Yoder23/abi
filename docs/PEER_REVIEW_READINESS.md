@@ -8,7 +8,7 @@ Status date: 2026-11-11
 
 `FULL_MOONSHOT_NOT_PROVEN`
 
-The published-review status includes the separately sealed R105 research
+The published-review status includes the separately sealed R106 research
 prerelease. It is not a qualified English-core or production release.
 
 Independent reviewers can evaluate R7, V1089, R97, and R21-R23 as separate
@@ -21,6 +21,9 @@ final-artifact proof.
 control at 178/200. Exact raw replay and 52 focused checks pass, including 25
 hostile cases. The packet separates likelihood ranking from autonomous English,
 discloses external-label limitations and leaves all acquisition claims open.
+Public recomputation matches 581 assets, 182 host bindings, four LFS payload
+paths and ten source files; all 52 focused checks pass. Reused public checkouts,
+source cache and same-machine limitations are explicit; tagged CI passes.
 
 [R105](R105_EVALUATOR_SCOPE.md) rejects one frozen NLI evaluator on external
 gold labels, with exact live replay. This is not English-control qualification

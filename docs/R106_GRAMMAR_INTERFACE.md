@@ -125,6 +125,38 @@ files. Manifest SHA-256:
 `3e0b15e1368cd71e9e51cdd4e28f3a9aac973bc618ea67fd7ff5398288d30233`.
 No new model checkpoint is published by R106.
 
+## Published reconstruction
+
+The [research prerelease](https://github.com/Yoder23/abi/releases/tag/abi-research-r106-2026-11-11)
+is public. Its immutable tag resolves to `615e23f2ac6e6d24cc8fc642de280b2b6ae987bf`,
+with annotated tag object `a688066e567a87c1302b1406694060548b674cd7`.
+The sealed branch/tag checks passed Python 3.10-3.12 verification and lint.
+
+The [public receipt](../results/review_2026_11_11/public_r106_reconstruction.json)
+records `R106_NEGATIVE_CONTROL_RECOMPUTED`: all 581 assets, 182 host bindings,
+four inherited LFS paths and ten source files matched; the identical failure
+and descriptive inventory recomputed; all 52 focused checks passed. Both
+checkouts remained clean. Receipt SHA-256:
+`f704771f27952bfbe8f1b2da02914de386f609ed0df2b14e34cbd046d60a1101`.
+
+This reused the public-only sibling checkouts, published LFS payloads, installed
+dependencies and pinned public Qwen cache on the same machine. It fetched the
+new tag and downloaded the manifest/helper from GitHub. No development assets
+were copied into the review checkouts. This is not a new environment, live model
+rerun, independent-hardware reproduction or human review. The raw live replay
+is the separate frozen two-process experiment above.
+
+After installing the declared dependencies and restoring the four manifest LFS
+paths and pinned sibling host, run against the exact source commit:
+
+```bash
+python scripts/review_r106_public.py review --root . --commit 615e23f2ac6e6d24cc8fc642de280b2b6ae987bf --manifest-sha256 3e0b15e1368cd71e9e51cdd4e28f3a9aac973bc618ea67fd7ff5398288d30233 --output ../my_r106_review.json --fetch-control
+```
+
+The output must be a new path outside both checkouts. `--fetch-control` restores
+only the ten declared public source files when absent; it does no model inference.
+The additive receipt/documentation commit does not move the scientific tag.
+
 ## Next decision
 
 Do not scale learners, choose an easier grammar subset, switch probability

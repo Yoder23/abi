@@ -17,6 +17,10 @@ Completed at the control stop: 178/200 versus 190/200; irregular participles
 ran. The [result packet](docs/R106_GRAMMAR_INTERFACE.md) preserves all scores,
 source identities and a disclosed upstream label anomaly. No free-generation
 qualification or product claim follows; no nearby sweep is authorized.
+The immutable research tag and reconstruction receipt are public: 581 evidence
+assets, 182 host bindings, four LFS paths and ten source files match; 52 focused
+checks and tagged CI pass. Reused public checkouts/cache and same-machine limits
+are explicit. The scientific result and tag are unchanged.
 
 ## Previous completed bounded prerequisite: R105
 

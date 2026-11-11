@@ -28,3 +28,13 @@ handling, not English quality. Public reconstruction is additive after publicati
 Manifest: 581 repository assets, four inherited LFS paths, 182 sibling-host
 bindings and ten pinned source files. SHA-256:
 `3e0b15e1368cd71e9e51cdd4e28f3a9aac973bc618ea67fd7ff5398288d30233`.
+
+Published source: `615e23f2ac6e6d24cc8fc642de280b2b6ae987bf`. Tagged CI passes
+Python 3.10-3.12 verification and lint. The additive release receipt
+`public_r106_reconstruction.json` recomputes the same negative decision, matches
+all manifest identities and passes 52 focused checks. Receipt SHA-256:
+`f704771f27952bfbe8f1b2da02914de386f609ed0df2b14e34cbd046d60a1101`.
+Public-only checkouts, published LFS payloads, dependencies and the pinned public
+Qwen cache were reused on the same machine. No development assets were copied;
+this is not independent hardware, live-model replay or a fresh environment.
+The scientific tag is unchanged. Exact commands are in the result packet.

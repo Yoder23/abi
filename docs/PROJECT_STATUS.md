@@ -9,6 +9,8 @@ Status date: 2026-11-11
 This supplied-token likelihood diagnostic is distinct from autonomous generation;
 its negative result and external-label limitations do not promote an English core
 or establish a native LayerCake defect. The full acquisition breakthrough remains open.
+Its research tag and reconstruction receipt are public: 581 assets match and
+52 focused checks pass. Tagged CI is green; same-machine/cache limitations remain.
 
 [R105](R105_EVALUATOR_SCOPE.md) rejected one frozen conventional NLI evaluator:
 779/1,200 external scope cases and 62/64 approval cases, below both registered
