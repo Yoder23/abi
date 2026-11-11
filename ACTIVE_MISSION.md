@@ -1,6 +1,15 @@
 # Active mission
 
-Updated: 2026-11-10
+Updated: 2026-11-11
+
+## Current bounded prerequisite: R105
+
+[R105](experiments/evaluator_scope_r105/PROTOCOL.md) tests one frozen conventional
+NLI evaluator against externally labeled negation-scope data and prospective
+approval-scope obligations. No new regex patch, English teacher retry, training
+or native LayerCake change. Freeze before scoring; publish both successes and
+failures. This is evaluator suitability, not an ABI breakthrough or English-core
+certificate. The recipient matrix stays closed pending genuine qualification.
 
 ## Latest completed bounded diagnostic: R104
 

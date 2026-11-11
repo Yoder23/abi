@@ -402,6 +402,14 @@ The legacy screen's 44/48 also misses the clarification floor. Preserve all
 negative evidence and both scores. Recipients and training did not run; native
 LayerCake remains untouched. No prompt/model sweep or automatic successor.
 
+User continuation (2026-11-11): prove prerequisites before claiming a breakthrough.
+R105 is one frozen external-label evaluator falsification under
+`experiments/evaluator_scope_r105/PROTOCOL.md`: conventional NLI, all1,200 ScoNe
+test rows plus64 approval-scope cases, one live replay, zero training/teacher/
+recipient calls. External gold is not new human ratings; overlap is disclosed.
+Do not substitute evaluator success for an English-control qualification or
+relax any existing gate. Preserve R104 and keep native LayerCake unchanged.
+
 1. Execute the frozen human-rating packet with three independent raters.
 2. Run the external reproduction packet on genuinely different hardware.
 3. Execute registered minimum-information certification.
