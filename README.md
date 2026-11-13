@@ -29,6 +29,7 @@ LoRA and distillation.
 
 | Evidence line | What is established | What remains open |
 | --- | --- | --- |
+| R107 | No-training residual intervention and exact live replay; modest natural-text loss interference, with a repetition trade-off | No fluent core, trained-route retention or native-host promotion |
 | R7 public release | Bounded capability runtime/conformance across three named environments; public reconstruction passed | Human ratings and independent hardware |
 | V1089 local campaign | Bounded machine evidence through Phase 7 and a same-machine Phase 8 rehearsal | One coherent public final artifact, Phase 5 clean replay, external review |
 | R97 | Prospective two-hop reasoning transfer: 1,399/1,400 with causal controls and byte-identical replay | Broad English, arbitrary capabilities, independent reproduction |

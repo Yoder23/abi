@@ -1,12 +1,22 @@
 # ABI claim ledger
 
-Status date: 2026-11-11
+Status date: 2026-11-13
 
 Documentation cannot widen a machine-readable certificate. Each claim below is
 limited to its exact source, artifact, implementation, benchmark, and evidence
 identity.
 
 ## Current claims
+
+### R107: bounded retention diagnosis, not an acquisition breakthrough
+
+[R107](docs/R107_RETENTION_INTERVENTION.md) completed nine active/neutral/reference
+cells and their exact fresh-process replays. The primary parent's residuals raise
+natural-text loss by +0.03224 passage BPB (95% CI [+0.02064, +0.04419]), but removing
+them worsens parent repetition. Distillation matches parent behavior on a fixed
+route not trained in R99; this cannot establish trained-route retention or
+superiority. No optimizer steps, new artifacts, fluent core, CPU/GPU advantage,
+native-host defect or product promotion follows. Historical gates are unchanged.
 
 ### R106: narrow grammatical-discrimination control failed
 

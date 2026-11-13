@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-11-13
+
+- Completed R107's no-training natural-text residual intervention: 18 executions,
+  exact raw replay, primary +0.03224 BPB effect with 95% CI [+0.02064, +0.04419].
+  Parent neutralization increases repetition; no model or product is promoted.
+- Preserved the two rate-limited preparation failures and the overbroad input
+  inventory. The live freeze requires only published runtime dependencies.
+- Added independent checkpoint-derived parameter custody and an explicit
+  untrained-coherence-route limitation. Matched LoRA/distillation histories and
+  every prior quality gate remain unchanged; native LayerCake code is untouched.
+
 ## 2026-11-11
 
 - Preregistered R106's distinct grammatical-discrimination diagnostic on external

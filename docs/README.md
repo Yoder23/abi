@@ -16,8 +16,8 @@ goal rather than reading the campaign archive in filename order.
 
 ## Canonical current documents
 
-- [R107 retention/intervention protocol](../experiments/retention_intervention_r107/PROTOCOL.md)
-  isolates natural-text retention from task acquisition without retraining.
+- [R107 retention/intervention result](R107_RETENTION_INTERVENTION.md) separates
+  predictive-loss interference, repetitive generation and untrained-route retention.
 
 - [R106 grammar/interface diagnostic](R106_GRAMMAR_INTERFACE.md) failed its separate
   external grammatical-discrimination control; no recipient or training run.

@@ -1,0 +1,611 @@
+{
+  "cell": "lora_neutral",
+  "cpu_seconds": 87.328125,
+  "device": "NVIDIA GeForce RTX 3080 Laptop GPU",
+  "forwards": 1056,
+  "freeze_sha256": "cb65401effddb1caddb25bbd2b577a96eada19ab1c331515c2bedc2aab591cf7",
+  "intervention": {
+    "tensors": [
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "b24520849dc0648ddefae85cf00a2c41e6e613eedd58ac90e2e7c77ab2ad9e64",
+        "elements": 24576,
+        "name": "capability_layer_adapters.0.0.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "ce90475a6e63deabb0953d3acd8a85fc903b03d3a71e22a3dcd886fb14307e63",
+        "elements": 24576,
+        "name": "capability_layer_adapters.0.1.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "73297d604762a51604c873b146537dfd27abeca824c413db2b9dfb854764b09f",
+        "elements": 24576,
+        "name": "capability_layer_adapters.0.10.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "f55a9951a209e9dfba18004e87045fc724f98fa1c6b96a2b5484619590a79306",
+        "elements": 24576,
+        "name": "capability_layer_adapters.0.11.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "afb27baf6114e5fe724f27f57242db8e04d6375560eedfe93b404227b8a68b13",
+        "elements": 24576,
+        "name": "capability_layer_adapters.0.12.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "226ce7d4f2a2d44d0a74f76aa9947a22400e5070fd9a652cdce8e668db92f764",
+        "elements": 24576,
+        "name": "capability_layer_adapters.0.13.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "83c391ca799472aaaf9cddc3a498d2cc813b9ae3d2726dbd4a8329d518d88953",
+        "elements": 24576,
+        "name": "capability_layer_adapters.0.2.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "b3eb91baffd22083ae3c6204415232b5486147b266b21af46c9823f3ef5850c2",
+        "elements": 24576,
+        "name": "capability_layer_adapters.0.3.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "6bff0028d9a2ac797ef3abbea9c1c2bb8d59d1624cae1f3236d213b13617c5c8",
+        "elements": 24576,
+        "name": "capability_layer_adapters.0.4.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "8d11c647253363c8c17e7432b01772d062c5c71ea8a78e8832cf8aaf1d51f496",
+        "elements": 24576,
+        "name": "capability_layer_adapters.0.5.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "0d7eabbb13c487d2becc0ea15af940811718638a74abc89cceb6747bc9d39159",
+        "elements": 24576,
+        "name": "capability_layer_adapters.0.6.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "04819cd499b3d12521468176e0efcca02d488c9e7348a3c765cea0838ca640c5",
+        "elements": 24576,
+        "name": "capability_layer_adapters.0.7.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "6915cfa984c98d677f7aaa3de21dd0e3f9971c93173131131a9990a78df8a018",
+        "elements": 24576,
+        "name": "capability_layer_adapters.0.8.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "0e486b285d8f39673261955f605a9873480c578b2ef5138e1c60e2b5fac16815",
+        "elements": 24576,
+        "name": "capability_layer_adapters.0.9.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "26fa601e895f8713856d868bd0cc51dfee87b18b2411d29ab160ab2f6b3bef67",
+        "elements": 24576,
+        "name": "capability_layer_adapters.1.0.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "bb345b88780f212d3f45e65a14044b6a71f60dc7c1a08f6928399da20f8d35d2",
+        "elements": 24576,
+        "name": "capability_layer_adapters.1.1.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "a8079e76205ef8a03936d74fe5fc32f985a01c9ef0c1bcde4041d2f7d532f408",
+        "elements": 24576,
+        "name": "capability_layer_adapters.1.10.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "f789b7f0c4a3a8477232ec293139a77d4035c7050c9829f3d07b53aa9ef7fad9",
+        "elements": 24576,
+        "name": "capability_layer_adapters.1.11.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "984981531cb0f265aef11da8378274a55434e6ba22ec21460b70ef62956d29e0",
+        "elements": 24576,
+        "name": "capability_layer_adapters.1.12.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "f58ce4cf7f33fc70a04b2d845441ab2b97968333cff42af3d76f490cdf1715b8",
+        "elements": 24576,
+        "name": "capability_layer_adapters.1.13.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "c889d0df8046b5d9146d667c783aec92d352f0271d72bb7e5cee4bdb2f9d2bfe",
+        "elements": 24576,
+        "name": "capability_layer_adapters.1.2.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "ea1f7d40f37ebb9c71c46129e6931e45ed8c70a0de9e55d33495a70e76674b06",
+        "elements": 24576,
+        "name": "capability_layer_adapters.1.3.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "87eaf7ee75447f5cd41ab3653dec52acb0603a3380d2bd79b3e77ef3112da34e",
+        "elements": 24576,
+        "name": "capability_layer_adapters.1.4.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "b68c094989684f219bd92ecd9f9ca32b87da60f67293b098d7cda0b8252e9ab4",
+        "elements": 24576,
+        "name": "capability_layer_adapters.1.5.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "c085265b703da061b3eaf2e2f516dce6022d0e8b9e6b5f46ca5213ec64b880ed",
+        "elements": 24576,
+        "name": "capability_layer_adapters.1.6.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "c0c68de22a809b297c4cb77dbcabf8105ffef52a97c3fb8e60de22f4e4df977d",
+        "elements": 24576,
+        "name": "capability_layer_adapters.1.7.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "8474240eba581bf363aa5bdb6ea173b042a736d473581830e376d1303ae7a2cb",
+        "elements": 24576,
+        "name": "capability_layer_adapters.1.8.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "d1c65f23e16a8f538a145b62c59ce827df194c77e310246da57b896b2e9248d5",
+        "elements": 24576,
+        "name": "capability_layer_adapters.1.9.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "a1df76dd95dc9f7a2baed0d0beaa77d507cd6789e4d23dff1a95c00641a4cecb",
+        "elements": 24576,
+        "name": "capability_layer_adapters.2.0.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "6d6817075515a4637274ecd9633967435c86f62d35b111416808882ae6a2cb42",
+        "elements": 24576,
+        "name": "capability_layer_adapters.2.1.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "7d7e603e934328689f1dbf574dd12fc30574889710f3b594a8f79d952cbe8886",
+        "elements": 24576,
+        "name": "capability_layer_adapters.2.10.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "b67031f4c7c73bf2e96ed393e42106b91be4bdefab6d0638efe9eb3b5d7b16ed",
+        "elements": 24576,
+        "name": "capability_layer_adapters.2.11.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "225c46b805058ad9e3bdaa762c93c5299200b032bdbc29267cdf3a005d87ce98",
+        "elements": 24576,
+        "name": "capability_layer_adapters.2.12.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "6ca857552bfe2a498f7db693f96d5867166b119cf5cd92a0a3d34288f36889b3",
+        "elements": 24576,
+        "name": "capability_layer_adapters.2.13.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "b7c482fa11f9bd4cde7780af7e82a17ef6f2150e7b7f15fd7de1a36d3b241942",
+        "elements": 24576,
+        "name": "capability_layer_adapters.2.2.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "dbd47f10dcfe8a1da8478e84cfc274122648c32cd5dff093d6fd3236b871547c",
+        "elements": 24576,
+        "name": "capability_layer_adapters.2.3.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "1b5145bf4aaedc9344ab480ea044640b6aa5621b86695afa49b1d2b8b07054c0",
+        "elements": 24576,
+        "name": "capability_layer_adapters.2.4.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "9819b5602d3149343a34bbf660989e8c811bceee5e5700f25498f4c51510b37e",
+        "elements": 24576,
+        "name": "capability_layer_adapters.2.5.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "490d82cbaefb00e7209153197738bf500ce85a5ae192991b0b575baea73b1795",
+        "elements": 24576,
+        "name": "capability_layer_adapters.2.6.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "e0597d5917cc2ab99d8f38b71b8217bccd719c56db382517a178946e6a20d228",
+        "elements": 24576,
+        "name": "capability_layer_adapters.2.7.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "88ebce3b28d511d9f63b66350d24465de2a514bb4f6fc21992aa1361d1b6b8c7",
+        "elements": 24576,
+        "name": "capability_layer_adapters.2.8.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "86825e76767247ba99a28ff0d2b7105009d47046b345f0cc58be9e943e9cb943",
+        "elements": 24576,
+        "name": "capability_layer_adapters.2.9.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "bd4f2c4437ebb233d90d5d4bdd556be9702229497f031d95bb3ef9fa218719d3",
+        "elements": 24576,
+        "name": "capability_layer_adapters.3.0.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "ab463ab45885f637a4f55f3ec000b7ee8965c8b2d828fda1199de8cc8e090b94",
+        "elements": 24576,
+        "name": "capability_layer_adapters.3.1.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "69cb82674b6f22380e3d751dcdeeb537f78d3d82dcb8e77585baeb5fc0613d1b",
+        "elements": 24576,
+        "name": "capability_layer_adapters.3.10.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "5ba26c9e5012c891b94e31b5be8b09e88142484729672b0c19e328017d0b7916",
+        "elements": 24576,
+        "name": "capability_layer_adapters.3.11.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "93180401057ecd805b0ea5d2c593ec97f8bd19980d953055076bc98b6409934d",
+        "elements": 24576,
+        "name": "capability_layer_adapters.3.12.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "6d95a3b03c9fa4eccd41a5e1d378f30dfc53f7db6ae77077201533533c42c784",
+        "elements": 24576,
+        "name": "capability_layer_adapters.3.13.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "230968f4419ae6e588699277f731bc8f4c866eecf0bc8e71b8f744fede011505",
+        "elements": 24576,
+        "name": "capability_layer_adapters.3.2.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "0b4af666158126ebefb51e105de35bce9ab465d2dc10502f49d6912413313479",
+        "elements": 24576,
+        "name": "capability_layer_adapters.3.3.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "d20ac628873f0e0823ef7946df2ffd589788d946ab7b453e4d39211602e44e83",
+        "elements": 24576,
+        "name": "capability_layer_adapters.3.4.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "505a6847858ed0afa9d7049836024c02f0228c97e3e300ad679d8c1220bd4b77",
+        "elements": 24576,
+        "name": "capability_layer_adapters.3.5.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "a483a604d5c9d10239624b4ad7e7f6f4bdf83d1b9df20a04d670599c047245f1",
+        "elements": 24576,
+        "name": "capability_layer_adapters.3.6.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "a1638a6cb79e594b899040eb54760670f86b4dc5ff4adfa54ebe373680a901cf",
+        "elements": 24576,
+        "name": "capability_layer_adapters.3.7.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "727752329063163f6c9014487224f25ce783ff0506fd04311f9786b05a2b9a91",
+        "elements": 24576,
+        "name": "capability_layer_adapters.3.8.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "4b55f63172fe156ae652d0c727d676ce27bf1ba343b6f5ce534a69e2de3d5115",
+        "elements": 24576,
+        "name": "capability_layer_adapters.3.9.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "be5619fb5e8221ccb3154d863697f57cb5a42226e4424b77194eb1af599b0d63",
+        "elements": 24576,
+        "name": "capability_layer_adapters.4.0.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "3564143d8f46a7508a2b85ecc540b88d9cf5a3550de9411706800ce63d0e1712",
+        "elements": 24576,
+        "name": "capability_layer_adapters.4.1.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "a455cdfd2a87e1c957f5ea3593449e06e293bc6c08e02228a47c083eee276462",
+        "elements": 24576,
+        "name": "capability_layer_adapters.4.10.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "c0959dfe3d8021863bdf2764579dcb02aa1269e424acb69370b01255613e2e20",
+        "elements": 24576,
+        "name": "capability_layer_adapters.4.11.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "7883e39e6067b4b5c7da6ab6b902c3f518609095416a0ad28a3bfb23ee565faf",
+        "elements": 24576,
+        "name": "capability_layer_adapters.4.12.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "0cf89aba7c18a77f631c9f551449c83e65ab94d4232aa3cdb28649685378517b",
+        "elements": 24576,
+        "name": "capability_layer_adapters.4.13.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "b5b17889265a9467f2fe49b9810cb8d7efce3f49f025130b2671b10253916676",
+        "elements": 24576,
+        "name": "capability_layer_adapters.4.2.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "f1c43f49877d18c2dcc0609a4f7aa629b6ea810b1f4e0b65d88fd616f1da52d5",
+        "elements": 24576,
+        "name": "capability_layer_adapters.4.3.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "6d1135aa9ae864e28fd41f7553c8f562dfa81cda8ab7c9d4e32890ddd981ffed",
+        "elements": 24576,
+        "name": "capability_layer_adapters.4.4.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "7aafdf4330a1a542ac1af8ee655291083662cfb67802ef8c46078830b9a4950c",
+        "elements": 24576,
+        "name": "capability_layer_adapters.4.5.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "f10aa22eea4f9768333894fcef5d5a6615a12ccf23b4052fd73881325fa9262c",
+        "elements": 24576,
+        "name": "capability_layer_adapters.4.6.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "bb80f807f9e1d08f81d38de91556b9e36e9c65ce08dea387b06976acbb8c86d1",
+        "elements": 24576,
+        "name": "capability_layer_adapters.4.7.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "251a087da5b620cd57038d05ce474bb09a1b2a151374e5e0b9d5b40c86c8252e",
+        "elements": 24576,
+        "name": "capability_layer_adapters.4.8.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "7fb8939df952b2deed9c7328c92159ae939cc41232aed015252fb5cce2bd863d",
+        "elements": 24576,
+        "name": "capability_layer_adapters.4.9.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "5e0f6666798607d2e0d097590f9bccb1d6c029def44b016254a16b2d06184db2",
+        "elements": 24576,
+        "name": "capability_layer_adapters.5.0.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "f6259fe7c0964ce4d78228790158e0aa89cee746339d85083a7f5d24d55329c3",
+        "elements": 24576,
+        "name": "capability_layer_adapters.5.1.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "e52ecee2fb066088f7bbd96457d614129cf5b406af91a40ea915de11835ec196",
+        "elements": 24576,
+        "name": "capability_layer_adapters.5.10.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "6d2109040b9728050536d2be82c2a740bc737c341fcb787980e8f35b10d42fbb",
+        "elements": 24576,
+        "name": "capability_layer_adapters.5.11.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "ea86a531b3405ffad36c2d21bcd93b04f10c39c9d02a7e5530535ca5f4a196bd",
+        "elements": 24576,
+        "name": "capability_layer_adapters.5.12.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "9ed9f523bdff9674da2914d39c3a792ac0bc44364954db6e1c83b0c03e12251b",
+        "elements": 24576,
+        "name": "capability_layer_adapters.5.13.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "a14ea9d708485ddc220f1dd87fa08d2324d806c334a53bf92a48af99147c4148",
+        "elements": 24576,
+        "name": "capability_layer_adapters.5.2.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "a2a0f3c3eb12986d7784a14e831fc97e964a8c8ad23bc9f8f20358342aed755c",
+        "elements": 24576,
+        "name": "capability_layer_adapters.5.3.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "f1da96e690703e959fe598799b58948be3918ae651a6ac22d1d5660ca4d5b4f9",
+        "elements": 24576,
+        "name": "capability_layer_adapters.5.4.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "39cf19e522ad5a6d116b58d364e0a8c3deedd80f75cd03f6ae49f2924a424253",
+        "elements": 24576,
+        "name": "capability_layer_adapters.5.5.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "5cd2e0121e6492d3a79f14ef61f99aefe58161f532278a395bd90138e7feb305",
+        "elements": 24576,
+        "name": "capability_layer_adapters.5.6.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "25946f649418a11b5776ba5698e86631224a173f113cec24aea53af4dc58c14f",
+        "elements": 24576,
+        "name": "capability_layer_adapters.5.7.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "61893eb6900b0968b121b12f2a477b8dfbdc5c400b1045aefb6c3633d9f9ea88",
+        "elements": 24576,
+        "name": "capability_layer_adapters.5.8.up.weight"
+      },
+      {
+        "after": "3a3ed164e42500a1c5b2d0093f0a813d27dc50d038f330cc100a7e70ece2e6e4",
+        "before": "aa0692bed68a67006940ab58ebd8092a47eb67ffd87af6431073f223127041e5",
+        "elements": 24576,
+        "name": "capability_layer_adapters.5.9.up.weight"
+      },
+      {
+        "after": "3381de4ca9f3a477f25989dfc8b744e7916046b7aa369f61a9a2f7dc0963ec9e",
+        "before": "6ea69666fdc21cf9dcc0e898b1acd49474fdf0a7ba9dcc2ba0d5b09df160c377",
+        "elements": 49152,
+        "name": "task_cakes.0.up.weight"
+      },
+      {
+        "after": "3381de4ca9f3a477f25989dfc8b744e7916046b7aa369f61a9a2f7dc0963ec9e",
+        "before": "3ace09392696e285b94027c514efee995ea1e11133dfd3695722dd59d701f49d",
+        "elements": 49152,
+        "name": "task_cakes.1.up.weight"
+      },
+      {
+        "after": "3381de4ca9f3a477f25989dfc8b744e7916046b7aa369f61a9a2f7dc0963ec9e",
+        "before": "4899049b8526ca59f206b721b3bf75637c6c0e5c41527015a64a9d0a946e1cf4",
+        "elements": 49152,
+        "name": "task_cakes.10.up.weight"
+      },
+      {
+        "after": "3381de4ca9f3a477f25989dfc8b744e7916046b7aa369f61a9a2f7dc0963ec9e",
+        "before": "7b60fcef60f062d4abcfd3f1bc69085dd799634e74427a56b1923c3516963483",
+        "elements": 49152,
+        "name": "task_cakes.11.up.weight"
+      },
+      {
+        "after": "3381de4ca9f3a477f25989dfc8b744e7916046b7aa369f61a9a2f7dc0963ec9e",
+        "before": "60c40963ab77721621d90c5a43624961c1be05d74e85c1f27a89863cbb6f6ace",
+        "elements": 49152,
+        "name": "task_cakes.12.up.weight"
+      },
+      {
+        "after": "3381de4ca9f3a477f25989dfc8b744e7916046b7aa369f61a9a2f7dc0963ec9e",
+        "before": "01fb49cb3918d6323118a284958662bd1ceddf6cb7d0e4ba08153d0e912051e9",
+        "elements": 49152,
+        "name": "task_cakes.13.up.weight"
+      },
+      {
+        "after": "3381de4ca9f3a477f25989dfc8b744e7916046b7aa369f61a9a2f7dc0963ec9e",
+        "before": "ea14061f95864871cfd26455eb6f2a4b1469b1a13d508c856eb58a4d31cfa153",
+        "elements": 49152,
+        "name": "task_cakes.2.up.weight"
+      },
+      {
+        "after": "3381de4ca9f3a477f25989dfc8b744e7916046b7aa369f61a9a2f7dc0963ec9e",
+        "before": "f253abe46fbec62e3678e7d994eb5e0b459adb4d1c1aecc1c26c567885332b27",
+        "elements": 49152,
+        "name": "task_cakes.3.up.weight"
+      },
+      {
+        "after": "3381de4ca9f3a477f25989dfc8b744e7916046b7aa369f61a9a2f7dc0963ec9e",
+        "before": "8906fdcbfacf16f50850cce030dd3320cc7330543c8c39ce2499eb56c45e408f",
+        "elements": 49152,
+        "name": "task_cakes.4.up.weight"
+      },
+      {
+        "after": "3381de4ca9f3a477f25989dfc8b744e7916046b7aa369f61a9a2f7dc0963ec9e",
+        "before": "7aab1b862563657fadd55ddb0e2315350f28af3a8037925faa819abd8a022d91",
+        "elements": 49152,
+        "name": "task_cakes.5.up.weight"
+      },
+      {
+        "after": "3381de4ca9f3a477f25989dfc8b744e7916046b7aa369f61a9a2f7dc0963ec9e",
+        "before": "46b61cb313b8133d1c542f9aea66b2eca798957d52a4bcf130b2ea8edf22a2c8",
+        "elements": 49152,
+        "name": "task_cakes.6.up.weight"
+      },
+      {
+        "after": "3381de4ca9f3a477f25989dfc8b744e7916046b7aa369f61a9a2f7dc0963ec9e",
+        "before": "53e3add57f6407b84be3d922832fd4a626a9578198495609cd757464db5fdb92",
+        "elements": 49152,
+        "name": "task_cakes.7.up.weight"
+      },
+      {
+        "after": "3381de4ca9f3a477f25989dfc8b744e7916046b7aa369f61a9a2f7dc0963ec9e",
+        "before": "9e8d02ec024896748e8b595aa94eaa7c8e8ca6a1504629c2e315584ef9c6fc10",
+        "elements": 49152,
+        "name": "task_cakes.8.up.weight"
+      },
+      {
+        "after": "3381de4ca9f3a477f25989dfc8b744e7916046b7aa369f61a9a2f7dc0963ec9e",
+        "before": "bb24d1084e570fd3f03c4f5bf44c98098fe0ff6be543a8b93f41560c97c8532a",
+        "elements": 49152,
+        "name": "task_cakes.9.up.weight"
+      }
+    ],
+    "untouched_sha256": "a64b30f84fe563977784a9681871835ff764588bee76b6d947b8a95fa68d4565"
+  },
+  "new_capability_packages": 0,
+  "optimizer_steps": 0,
+  "parameters": 87710428,
+  "peak_cuda_allocated_bytes": 426620928,
+  "raw_sha256": "fdabdcfc84b8e9308a78cb842cf9ae89c4d16776284f80a819f42c5d6f4df07c",
+  "repeat": "replay",
+  "sampled_peak_rss_bytes": 1384267776,
+  "source_parameters_retained": null,
+  "state_sha256": "0e0c0e8f1fa99deaf42b9427c5b0bc4958fd16df0d1daf6536e28806ca31a7c8",
+  "trained_parameters": 0,
+  "wall_seconds": 88.8505465000053
+}

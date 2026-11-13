@@ -1,9 +1,16 @@
 # Research status
 
-Updated: 2026-11-11
+Updated: 2026-11-13
 
 The concise dashboard is [`PROJECT_STATUS.md`](PROJECT_STATUS.md). This file
 retains the detailed interpretation of later research lineages.
+
+[R107](R107_RETENTION_INTERVENTION.md) is a no-training natural-text retention
+intervention, with all nine raw cells reproduced exactly. Removing parent
+residuals improves likelihood but worsens repetitive continuation. The fixed
+coherence route was not an R99 training task; retained behavior there is not
+trained-route English qualification. This supports a narrow diagnostic, not
+an ABI or LayerCake product breakthrough.
 
 [R106](R106_GRAMMAR_INTERFACE.md) failed its separate grammatical-discrimination
 control at 178/200. Exact replay passed; recipients and training did not run.

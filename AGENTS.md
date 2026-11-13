@@ -33,6 +33,15 @@ It preserves all R103-R106 gates, uses zero training, and must not promote a
 neutralized model or call WikiText likelihood a fluent-English certificate.
 No automatic acquisition follow-on is authorized by a diagnostic result.
 
+R107 completed all 18 executions with exact raw replay. Its primary parent
+interference contrast is +0.03224 passage BPB, CI [+0.02064, +0.04419], but
+neutralization worsens parent repetition. Do not promote a neutralized state.
+The fixed coherence route was untrained in R99: adapter distillation preserves
+its selected tensors and all 64 active rows exactly, unlike the historical
+shared-weight controls. This does not establish trained-route fluency or
+superiority over route-local LoRA. Preserve the negative generation evidence,
+all historical gates, and the separation from native host certification.
+
 The controlling technical release is R7:
 
 - public tag: `abi-final-validation-v2-repaired-r7-2026-08-30`

@@ -1,6 +1,6 @@
 # Active mission
 
-Updated: 2026-11-11
+Updated: 2026-11-13
 
 ## Current bounded diagnostic: R107
 
@@ -11,6 +11,14 @@ recipient lineages (including matched LoRA/distillation) each run active/neutral
 plus the unchanged ancestral DistilGPT2 reference. This does NOT qualify an
 English control, reopen the stopped R103-R106 matrices or relax their gates.
 Freeze before execution; one bounded audit and fresh-process replay, then publish.
+
+All 18 executions now completed with exact raw replay. The primary parent
+residual effect is +0.03224 BPB, 95% CI [+0.02064, +0.04419], supporting interference
+on the fixed natural-text panel. Neutralization worsens parent repetition; it is
+not a qualified core. Coherence was untrained in R99, so matching distillation
+retention there is not a trained-route or superiority claim. See the
+[R107 result](docs/R107_RETENTION_INTERVENTION.md). No new training follows
+automatically; acquisition quality and native-host conformance remain separate.
 
 ## Latest completed bounded diagnostic: R106
 

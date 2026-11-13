@@ -1,14 +1,16 @@
 # ABI project status
 
-Status date: 2026-11-11
+Status date: 2026-11-13
 
 ## Active work
 
-[R107](../experiments/retention_intervention_r107/PROTOCOL.md) is registered as a
-no-training natural-text retention/intervention diagnostic. It compares existing
-recipients with residuals active versus neutralized only in memory. All prior
-quality gates remain unchanged; this is not English-control qualification or
-new LayerCake product evidence. The matched LoRA/distillation lineages remain.
+[R107](R107_RETENTION_INTERVENTION.md) completed 18 no-training executions with
+exact raw replay. The primary residual-neutralization contrast supports modest
+parent interference on natural text (+0.03224 BPB, 95% CI [+0.02064, +0.04419]),
+but neutralization increases parent repetition. The fixed coherence route was
+untrained in R99; distillation's matching parent behavior there does not prove
+trained-route fluency or ABI superiority. All quality/product gates remain
+unchanged. This is an acquisition-lineage diagnostic, not a native host defect.
 
 [R106](R106_GRAMMAR_INTERFACE.md) completed at its narrow grammar-control stop:
 178/200 versus 190/200, exact live raw replay. No recipients or training ran.
