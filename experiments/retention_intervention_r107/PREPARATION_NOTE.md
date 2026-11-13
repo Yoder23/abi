@@ -11,3 +11,12 @@ The pre-freeze preparation implementation now reads the small public Git-LFS
 pointers at the exact same revisions and requires exact local SHA-256 AND byte
 size matches. Both pointers/URLs are retained in provenance.json. No source,
 dataset, selection rule, scoring rule or scientific gate changed.
+
+The first local inventory also included nine unused `trainable-step*.safetensors`
+files via a broad directory inventory. Publication preflight identified this
+before any inference. Preserve `results/retention_intervention_r107/input_inventory_preflight.json`
+and its original code at commit `a069c52`. The final live-run freeze uses exactly
+seven required model/metadata/tokenizer files per recipient, not intermediate
+optimizer snapshots or unused historical outputs. All actual input hashes and
+experimental choices are unchanged. The protocol was drafted November 11;
+registration and resumed execution occur November 13, as recorded by Git.

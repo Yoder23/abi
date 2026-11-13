@@ -89,7 +89,8 @@ def freeze():
              c.OUT/'population.json', *(c.OUT/'sources').iterdir(),
              *(c.ROOT/'abi').rglob('*.py'), *(c.HOST/'layercake').rglob('*.py')]
     for arm in c.ARMS:
-        paths += [p for p in c.checkpoint(arm).iterdir() if p.is_file()]
+        paths += [c.checkpoint(arm)/name for name in ('metadata.json', 'model.safetensors',
+                  'tokenizer.json', 'tokenizer_config.json', 'special_tokens_map.json', 'vocab.json', 'merges.txt')]
     files = {os.path.relpath(p, c.ROOT).replace('\\', '/'): c.sha(p) for p in paths}
     source_files = inventory(snapshot())
     if source_files != c.read(c.OUT/'sources/provenance.json')['source_files']:
