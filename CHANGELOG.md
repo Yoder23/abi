@@ -10,6 +10,9 @@
 - Added independent checkpoint-derived parameter custody and an explicit
   untrained-coherence-route limitation. Matched LoRA/distillation histories and
   every prior quality gate remain unchanged; native LayerCake code is untouched.
+- Published the immutable R107 tag and public reconstruction receipt: 585 assets,
+  182 host bindings, four published LFS checkpoints and seven source files match;
+  55 focused checks and tagged CI pass. Same-machine/reused-cache limits remain.
 
 ## 2026-11-11
 

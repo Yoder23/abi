@@ -19,6 +19,11 @@ not a qualified core. Coherence was untrained in R99, so matching distillation
 retention there is not a trained-route or superiority claim. See the
 [R107 result](docs/R107_RETENTION_INTERVENTION.md). No new training follows
 automatically; acquisition quality and native-host conformance remain separate.
+The immutable tag and [public reconstruction receipt](docs/R107_PUBLIC_RECONSTRUCTION.md)
+are published. All 585 assets and 182 host bindings match; 55 focused checks and
+tagged CI pass. No live inference or independent hardware is claimed by that
+public-only reconstruction. No qualified English artifact is available for host
+acceptance yet.
 
 ## Latest completed bounded diagnostic: R106
 

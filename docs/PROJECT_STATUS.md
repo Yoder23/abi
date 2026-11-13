@@ -11,6 +11,9 @@ but neutralization increases parent repetition. The fixed coherence route was
 untrained in R99; distillation's matching parent behavior there does not prove
 trained-route fluency or ABI superiority. All quality/product gates remain
 unchanged. This is an acquisition-lineage diagnostic, not a native host defect.
+Its [public reconstruction](R107_PUBLIC_RECONSTRUCTION.md) matches 585 assets
+and passes 55 focused checks; tagged CI passes. The scientific tag is immutable.
+Same-machine/reused-environment limits remain explicit.
 
 [R106](R106_GRAMMAR_INTERFACE.md) completed at its narrow grammar-control stop:
 178/200 versus 190/200, exact live raw replay. No recipients or training ran.

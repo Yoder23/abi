@@ -18,6 +18,8 @@ goal rather than reading the campaign archive in filename order.
 
 - [R107 retention/intervention result](R107_RETENTION_INTERVENTION.md) separates
   predictive-loss interference, repetitive generation and untrained-route retention.
+  Its [public reconstruction receipt](R107_PUBLIC_RECONSTRUCTION.md) verifies the
+  published tagged packet without promoting it to English quality.
 
 - [R106 grammar/interface diagnostic](R106_GRAMMAR_INTERFACE.md) failed its separate
   external grammatical-discrimination control; no recipient or training run.

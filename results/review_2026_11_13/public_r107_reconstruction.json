@@ -1,0 +1,152 @@
+{
+  "assets": 585,
+  "commands": [
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\abi_release",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "e87212bd731aebc9486d08d4aa15f1402b034d4c\n"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\abi_release",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "git",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\abi_release",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "https://github.com/Yoder23/abi.git\n"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\layercake_release",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "865a2b9e59e6221caa1185f9b64479d2077953f3\n"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\layercake_release",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "git",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\layercake_release",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "https://github.com/Yoder23/layercake.git\n"
+    },
+    {
+      "command": [
+        "C:\\Python310\\python.exe",
+        "-m",
+        "experiments.retention_intervention_r107.complete"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\abi_release",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"decision_sha256\": \"1fb26fc10a5f945b8259078926a78fe133a715244545d4dc141d1d73303b2760\", \"format\": \"r107-complete-custody/1\", \"freeze_sha256\": \"cb65401effddb1caddb25bbd2b577a96eada19ab1c331515c2bedc2aab591cf7\", \"outcome\": \"PARENT_RESIDUAL_INTERFERENCE_SUPPORTED\", \"raw_files\": {\"distillation_active/initial/raw.jsonl\": \"507a50b5a353ec4d642d86e54194aa5eb643eebc9ab123202a50f0aa8a9e8551\", \"distillation_active/replay/raw.jsonl\": \"507a50b5a353ec4d642d86e54194aa5eb643eebc9ab123202a50f0aa8a9e8551\", \"distillation_neutral/initial/raw.jsonl\": \"ab3ef584cf6419b8f7ff5a701ab6dcf5f39426db6b46bedbe626e9692bf635ea\", \"distillation_neutral/replay/raw.jsonl\": \"ab3ef584cf6419b8f7ff5a701ab6dcf5f39426db6b46bedbe626e9692bf635ea\", \"full_model_active/initial/raw.jsonl\": \"dca6fbcc7f8eb50171672ce7f2313d18d799e0c9395449fb743c5801119c78bb\", \"full_model_active/replay/raw.jsonl\": \"dca6fbcc7f8eb50171672ce7f2313d18d799e0c9395449fb743c5801119c78bb\", \"full_model_neutral/initial/raw.jsonl\": \"f9651c44c7c996f5c940bf6d7cf4582cf1235eee4825f768c52c983bfb78b67e\", \"full_model_neutral/replay/raw.jsonl\": \"f9651c44c7c996f5c940bf6d7cf4582cf1235eee4825f768c52c983bfb78b67e\", \"lora_active/initial/raw.jsonl\": \"e1dc8facd53c76821de30258bb4c47c98014db50cd8e2bae077c755d1162ca42\", \"lora_active/replay/raw.jsonl\": \"e1dc8facd53c76821de30258bb4c47c98014db50cd8e2bae077c755d1162ca42\", \"lora_neutral/initial/raw.jsonl\": \"fdabdcfc84b8e9308a78cb842cf9ae89c4d16776284f80a819f42c5d6f4df07c\", \"lora_neutral/replay/raw.jsonl\": \"fdabdcfc84b8e9308a78cb842cf9ae89c4d16776284f80a819f42c5d6f4df07c\", \"parent_active/initial/raw.jsonl\": \"5360b7a9fbfaad8fa751e2a502b9910604d114ec9411adf924eeebe1a7a2d01a\", \"parent_active/replay/raw.jsonl\": \"5360b7a9fbfaad8fa751e2a502b9910604d114ec9411adf924eeebe1a7a2d01a\", \"parent_neutral/initial/raw.jsonl\": \"5dcfc63c2276ac03d70aa2e6b9685bf7e4a0498774ac5936c4091b8df9aa0eb2\", \"parent_neutral/replay/raw.jsonl\": \"5dcfc63c2276ac03d70aa2e6b9685bf7e4a0498774ac5936c4091b8df9aa0eb2\", \"source/initial/raw.jsonl\": \"7771e6b2699eaef435f0c7f9fa1f995315aa78bf0eb4ed3e700fea4f4ce5949d\", \"source/replay/raw.jsonl\": \"7771e6b2699eaef435f0c7f9fa1f995315aa78bf0eb4ed3e700fea4f4ce5949d\"}, \"recipient_states\": {\"distillation\": {\"active\": \"1d5f1b7ab16bee5d1fa912dd0038dacc0dcf61069743d0103b93bf98ad694154\", \"neutral\": \"7e6bc6104dc57dd76588d9ead69479f09b1c4dc5ced0de439011598833d126bb\", \"parameters\": 87710428}, \"full_model\": {\"active\": \"f5942770dae7d00b75350408fcb88d3fee72f5c520256933160988156ed321af\", \"neutral\": \"2dd2378aa2f41cb71b9af17f92007887e4ae2eadc95c2dfb7c828c73724b9f91\", \"parameters\": 87710428}, \"lora\": {\"active\": \"4cd46a8d8ad68c9851605ebe6a41746cc2b0e851fa6a51acb5865625633838ea\", \"neutral\": \"0e0c0e8f1fa99deaf42b9427c5b0bc4958fd16df0d1daf6536e28806ca31a7c8\", \"parameters\": 87710428}, \"parent\": {\"active\": \"a4d5bf71edb4ae8b76d485ea4a297166f69da2503f2cbbdf27062ae59c53ecb9\", \"neutral\": \"34668e81c877aaf78b25cfc14e00e5519f5d9bf4db156cb9c67801bb75cf928d\", \"parameters\": 87710428}}}\n"
+    },
+    {
+      "command": [
+        "C:\\Python310\\python.exe",
+        "-m",
+        "experiments.retention_intervention_r107.describe"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\abi_release",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"distillation\": {\"active_bpb_minus_parent\": 0.0, \"active_rows_identical_to_parent_except_cell\": 64, \"selected_changed_tensors\": 0}, \"full_model\": {\"active_bpb_minus_parent\": 0.21335608934809125, \"active_rows_identical_to_parent_except_cell\": 0, \"selected_changed_tensors\": 100}, \"lora\": {\"active_bpb_minus_parent\": 0.10542184330013482, \"active_rows_identical_to_parent_except_cell\": 0, \"selected_changed_tensors\": 24}, \"parent\": {\"active_bpb_minus_parent\": 0.0, \"active_rows_identical_to_parent_except_cell\": 64, \"selected_changed_tensors\": 0}}\n"
+    },
+    {
+      "command": [
+        "C:\\Python310\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_retention_intervention_r107.py",
+        "tests/test_r107_completed_verifier.py"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\abi_release",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ".......................................................                  [100%]\n55 passed in 22.88s\n"
+    },
+    {
+      "command": [
+        "C:\\Python310\\python.exe",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\abi_release",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "DOCS_OK: 28 canonical documents and all tracked Markdown links checked\n"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\abi_release",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\layercake_release",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  ],
+  "complete_sha256": "fe1fb416fa699c448601b38b58323082fa95df93baf77fc7ccc6a5c9b219a28c",
+  "decision_sha256": "1fb26fc10a5f945b8259078926a78fe133a715244545d4dc141d1d73303b2760",
+  "end_unix": 1794594389.3142445,
+  "format": "r107-public-reconstruction/1",
+  "host_inputs": 182,
+  "lfs_paths": 4,
+  "manifest_sha256": "f74f1e073141690db25887c9e45c634a9d46d64d260045195a6015b77cf07236",
+  "scope": "Same-machine reused public checkouts/cache; no live inference or independent hardware",
+  "source_files": 7,
+  "start_unix": 1794594327.2815406,
+  "verdict": "R107_RAW_AND_PARAMETER_CUSTODY_RECOMPUTED"
+}
