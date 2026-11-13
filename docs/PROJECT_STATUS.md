@@ -4,6 +4,12 @@ Status date: 2026-11-11
 
 ## Active work
 
+[R107](../experiments/retention_intervention_r107/PROTOCOL.md) is registered as a
+no-training natural-text retention/intervention diagnostic. It compares existing
+recipients with residuals active versus neutralized only in memory. All prior
+quality gates remain unchanged; this is not English-control qualification or
+new LayerCake product evidence. The matched LoRA/distillation lineages remain.
+
 [R106](R106_GRAMMAR_INTERFACE.md) completed at its narrow grammar-control stop:
 178/200 versus 190/200, exact live raw replay. No recipients or training ran.
 This supplied-token likelihood diagnostic is distinct from autonomous generation;

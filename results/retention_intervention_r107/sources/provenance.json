@@ -1,0 +1,29 @@
+{
+  "dataset": "Salesforce/wikitext",
+  "dataset_file": "wikitext-103-raw-v1/validation-00000-of-00001.parquet",
+  "dataset_public_pointer": {
+    "pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:204929b7ff9d6184953f867dedb860e40aa69c078fc1e54b3baaa8fb28511c4c\nsize 657209\n",
+    "sha256": "204929b7ff9d6184953f867dedb860e40aa69c078fc1e54b3baaa8fb28511c4c",
+    "url": "https://huggingface.co/datasets/Salesforce/wikitext/raw/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-103-raw-v1/validation-00000-of-00001.parquet"
+  },
+  "dataset_revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+  "dataset_sha256": "204929b7ff9d6184953f867dedb860e40aa69c078fc1e54b3baaa8fb28511c4c",
+  "license": "CC-BY-SA-3.0/GFDL",
+  "source_files": {
+    "config.json": "4ec5947c1d59fee6212cdf3b0ec1a53eac02092554c5ff0a733488cbd2c64f3a",
+    "generation_config.json": "b90eadacf585a743a30ea51e8b5c88b8d282a2a34dc0c7e556d0987cdbd68805",
+    "merges.txt": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+    "model.safetensors": "e1ff18884359fe8beb795a5f414feb85a6ce3d929ad019c0d958c039d2b94a1b",
+    "tokenizer.json": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+    "tokenizer_config.json": "5e04eb606e3a1583530a42e36c2a6b6615c86f34fe77e44d9ddeb43ff940931f",
+    "vocab.json": "196139668be63f3b5d6574427317ae82f612a97c5d1cdaf36ed2256dbf636783"
+  },
+  "source_model": "distilgpt2",
+  "source_public_pointer": {
+    "pointer": "version https://git-lfs.github.com/spec/v1\noid sha256:e1ff18884359fe8beb795a5f414feb85a6ce3d929ad019c0d958c039d2b94a1b\nsize 352824413\n",
+    "sha256": "e1ff18884359fe8beb795a5f414feb85a6ce3d929ad019c0d958c039d2b94a1b",
+    "url": "https://huggingface.co/distilbert/distilgpt2/raw/2290a62682d06624634c1f46a6ad5be0f47f38aa/model.safetensors"
+  },
+  "source_revision": "2290a62682d06624634c1f46a6ad5be0f47f38aa",
+  "url": "https://huggingface.co/datasets/Salesforce/wikitext/blob/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-103-raw-v1/validation-00000-of-00001.parquet"
+}

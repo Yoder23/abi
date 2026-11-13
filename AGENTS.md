@@ -26,6 +26,13 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+The user authorized continued bounded progress after R106. R107 is a distinct
+natural-text retention/intervention audit, not another control-qualification
+sweep. Its preregistration is `experiments/retention_intervention_r107/PROTOCOL.md`.
+It preserves all R103-R106 gates, uses zero training, and must not promote a
+neutralized model or call WikiText likelihood a fluent-English certificate.
+No automatic acquisition follow-on is authorized by a diagnostic result.
+
 The controlling technical release is R7:
 
 - public tag: `abi-final-validation-v2-repaired-r7-2026-08-30`

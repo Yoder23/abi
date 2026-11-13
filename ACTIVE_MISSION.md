@@ -2,6 +2,16 @@
 
 Updated: 2026-11-11
 
+## Current bounded diagnostic: R107
+
+[R107](experiments/retention_intervention_r107/PROTOCOL.md) tests natural-text
+retention with a causal in-memory residual-neutralization intervention. Preserve
+all checkpoints; no training, new package or native-host change. Four existing
+recipient lineages (including matched LoRA/distillation) each run active/neutral,
+plus the unchanged ancestral DistilGPT2 reference. This does NOT qualify an
+English control, reopen the stopped R103-R106 matrices or relax their gates.
+Freeze before execution; one bounded audit and fresh-process replay, then publish.
+
 ## Latest completed bounded diagnostic: R106
 
 [R106](experiments/grammar_interface_r106/PROTOCOL.md) separates grammatical
