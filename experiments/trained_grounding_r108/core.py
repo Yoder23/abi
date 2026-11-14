@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import copy
+import hashlib
 import math
 import re
 from pathlib import Path
@@ -25,6 +26,38 @@ SOURCE_FILES = ('LICENSE', 'README.md', 'config.json', 'generation_config.json',
                 'merges.txt', 'model-00001-of-00003.safetensors',
                 'model-00002-of-00003.safetensors', 'model-00003-of-00003.safetensors',
                 'model.safetensors.index.json', 'tokenizer.json', 'tokenizer_config.json', 'vocab.json')
+
+
+def training_provenance():
+    """Recompute matched historical exposure, not matched trainable parameter counts."""
+    root = ROOT/'results/grounded_english_r99_fp32'
+    train = read(root/'train.json')
+    tasks = {r['id']: r['task'] for r in train}
+    if len(tasks) != 192 or set(tasks.values()) != set(TASKS):
+        raise RuntimeError('Wrong historical training population')
+    output, orders = {}, []
+    for arm in ('lora', 'distillation'):
+        folder = checkpoint(arm)
+        receipt, log = read(folder/'training_result.json'), rows(folder/'training.jsonl')
+        order = [v for r in log for v in r['sample_ids']]
+        digest = hashlib.sha256(''.join(v+'\n' for v in order).encode()).hexdigest()
+        if (len(log) != 384 or [r['step'] for r in log] != list(range(1, 385)) or len(order) != 768
+                or set(order) != set(tasks) or any(order.count(v) != 4 for v in tasks)
+                or receipt['sample_order_sha256'] != digest or receipt['training_log_sha256'] != sha(folder/'training.jsonl')
+                or receipt['checkpoint_sha256'] != sha(folder/'model.safetensors')
+                or receipt['source_rows_sha256'] != sha(root/'source/rows.jsonl')
+                or receipt['loss_tokens'] != sum(r['loss_tokens'] for r in log)
+                or receipt['successful_steps'] != 384 or receipt['training_rows'] != 192
+                or any(not math.isfinite(r[k]) for r in log for k in ('loss', 'gradient_norm'))):
+            raise RuntimeError('Unrecomputable historical matched exposure')
+        output[arm] = {'training_rows': 192, 'steps': 384, 'loss_tokens': receipt['loss_tokens'],
+                       'sample_order_sha256': digest, 'source_rows_sha256': receipt['source_rows_sha256'],
+                       'trained_task_rows': {t: sum(v == t for v in tasks.values()) for t in TASKS},
+                       'trainable_parameters_historical': receipt['trainable_parameters']}
+        orders.append(order)
+    if orders[0] != orders[1] or output['lora']['loss_tokens'] != output['distillation']['loss_tokens']:
+        raise RuntimeError('Controls not exposure matched')
+    return output
 
 
 def catalog():

@@ -102,6 +102,7 @@ def freeze():
         raise RuntimeError('Changed source preparation')
     c.write(c.OUT/'population.json', population)
     c.write(c.OUT/'evaluator_audit.json', audit)
+    c.write(c.OUT/'matched_training_provenance.json', c.training_provenance())
     tracked = git('ls-files', 'abi/*.py').splitlines()
     files = {p: c.sha(c.ROOT/p) for p in tracked}
     inherited = c.read(c.ROOT/'results/retention_intervention_r107/freeze.json')['files']
@@ -112,6 +113,8 @@ def freeze():
              *[c.ROOT/f'experiments/evaluator_control_r104/{n}' for n in ('core.py', 'run.py', 'evaluator_cases.py')],
              *c.OUT.glob('*.json')]
     paths += [c.checkpoint(a)/n for a in c.ARMS for n in c.FILES]
+    paths += [c.checkpoint(a)/n for a in ('lora', 'distillation') for n in ('training_result.json', 'training.jsonl')]
+    paths += [c.ROOT/'results/grounded_english_r99_fp32'/n for n in ('train.json', 'source/rows.jsonl')]
     paths += [p for p in (c.ROOT/'experiments/__init__.py', c.ROOT/'experiments/plan_english_r98/__init__.py') if p.is_file()]
     files.update({os.path.relpath(p, c.ROOT).replace('\\', '/'): c.sha(p) for p in paths})
     c.write(c.OUT/'freeze.json', {'format': 'r108-freeze/1', 'files': files, 'source_model': c.SOURCE,
@@ -224,6 +227,8 @@ def verify_arm(arm):
 
 def derive():
     frozen = c.binding()
+    if c.read(c.OUT/'matched_training_provenance.json') != c.training_provenance():
+        raise RuntimeError('Changed matched-control history')
     if (c.OUT/'stop.json').exists():
         raise RuntimeError('Interrupted run cannot be complete')
     if inventory(snapshot()) != frozen['source_files']:

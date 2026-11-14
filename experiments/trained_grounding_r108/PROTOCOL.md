@@ -21,6 +21,9 @@ sampling recommendation. No second source, prompt rewrite, or rescue is allowed.
 Keep the R76 parent, R100 full-model diagnostic, and R99 FP32 LoRA and
 adapter-distillation final checkpoints unchanged. LoRA/distillation retain their
 original matched data/update budgets; they were NOT trained by this new control.
+Recompute the retained history: 192 training rows (24 per task), 384 updates,
+768 sample observations in identical order and 43,208 loss-token observations.
+Trainable parameter counts were different; do not call them parameter-matched.
 The larger control is a feasibility ceiling, not a matched-size/training baseline.
 No R99 plan branch reopening, new training, residual neutralization, or host edit.
 
