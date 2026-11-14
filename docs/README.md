@@ -20,6 +20,8 @@ goal rather than reading the campaign archive in filename order.
   resource-budget stop, not an English qualification. Its
   [review packet](releases/R108_REVIEW.md) distinguishes interruption verification
   from the unchanged complete scientific verifier.
+  The [public reconstruction receipt](R108_PUBLIC_RECONSTRUCTION.md) records
+  `REPRODUCED_RESOURCE_STOP`, not a generation-quality pass.
 
 - [R107 retention/intervention result](R107_RETENTION_INTERVENTION.md) separates
   predictive-loss interference, repetitive generation and untrained-route retention.

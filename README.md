@@ -54,6 +54,8 @@ control-process budget under reported GPU power/thermal throttling. Only 13/96
 initial responses completed; no replay, recipients or training ran. The complete
 verifier rejects it. This is a resource-limited prerequisite, not an English
 quality failure, acquisition result or native LayerCake defect.
+The [public reconstruction receipt](docs/R108_PUBLIC_RECONSTRUCTION.md) verifies
+the preserved interruption and confirms that the complete verifier still rejects it.
 
 The earlier [R106 diagnostic](docs/R106_GRAMMAR_INTERFACE.md) failed its narrow
 grammar control at 178/200 against 190/200. It uses external sentence-pair labels,

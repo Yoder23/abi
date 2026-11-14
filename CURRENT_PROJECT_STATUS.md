@@ -7,6 +7,8 @@ fixed 25-minute control-process budget under reported GPU power/thermal
 throttling. Only 13/96 initial responses completed; no replay, recipients or
 training ran. The complete verifier rejects qualification. This is not an ABI
 quality failure or native LayerCake defect; the operating constraint needs review.
+The [public reconstruction receipt](docs/R108_PUBLIC_RECONSTRUCTION.md) verifies
+the interruption only; it does not convert the incomplete run into qualification.
 
 Latest completed diagnostic: [R107](docs/R107_RETENTION_INTERVENTION.md) measured
 bounded natural-text residual interference with exact replay and a repetition

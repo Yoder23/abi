@@ -13,6 +13,10 @@
   Resource evidence is not an ABI acquisition or native LayerCake quality result.
 - Updated discovery/status/version documents, including the previously missing
   R107 entries in the root status and version map. No supported API version change.
+- Published the immutable resource-stop tag and additive public reconstruction
+  receipt: 565 assets, 182 host bindings, four LFS paths and 12 control files
+  match; 49 focused checks pass. The complete verifier rejects qualification as
+  expected. Same-machine/public-cache reuse and the missing live replay remain explicit.
 
 ## 2026-11-13
 

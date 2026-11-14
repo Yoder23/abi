@@ -10,6 +10,9 @@ default, 210 MHz). It preserves 13/96 initial responses, no replay, no recipient
 and zero training. Matched R99 LoRA/distillation checkpoints remain unchanged.
 The complete verifier rejects qualification. This is a resource prerequisite,
 not a measured acquisition-quality failure or native LayerCake defect.
+Its immutable [research tag and public reconstruction receipt](R108_PUBLIC_RECONSTRUCTION.md)
+are published: 565 assets and 182 host bindings match; 49 focused checks pass.
+The complete scientific verifier still rejects the interrupted attempt.
 
 [R107](R107_RETENTION_INTERVENTION.md) completed 18 no-training executions with
 exact raw replay. The primary residual-neutralization contrast supports modest

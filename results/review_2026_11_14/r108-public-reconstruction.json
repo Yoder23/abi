@@ -1,0 +1,178 @@
+{
+  "assets": 565,
+  "commands": [
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\abi_release",
+      "expected_returncode": 0,
+      "expected_stderr": null,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "2efde06bcf3b374435f76147614fd806026fc4a5\n"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\abi_release",
+      "expected_returncode": 0,
+      "expected_stderr": null,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "git",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\abi_release",
+      "expected_returncode": 0,
+      "expected_stderr": null,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "https://github.com/Yoder23/abi.git\n"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\layercake_release",
+      "expected_returncode": 0,
+      "expected_stderr": null,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "2c3c03fd749616d253798bd33bdb01dc8cc02b01\n"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\layercake_release",
+      "expected_returncode": 0,
+      "expected_stderr": null,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "git",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\layercake_release",
+      "expected_returncode": 0,
+      "expected_stderr": null,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "https://github.com/Yoder23/layercake.git\n"
+    },
+    {
+      "command": [
+        "C:\\Python310\\python.exe",
+        "-m",
+        "experiments.trained_grounding_r108.interruption"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\abi_release",
+      "expected_returncode": 0,
+      "expected_stderr": null,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"format\": \"r108-interruption/1\", \"status\": \"RESOURCE_BUDGET_STOP_NOT_QUALIFIED\", \"freeze_sha256\": \"b8c58cb2d2809df0f92ab4ba321b5b8edaf2821017abdfa43baf531c29f3509d\", \"stop_sha256\": \"8f6e5b84b8730e6ed1eacbc3c9f1174856f6d00df2e00cda41079a27777ed4c7\", \"launch_sha256\": \"319509b9316966f18b1599e4a9d09d3b6fb252b6df4b6165b82e3f467061ebfd\", \"raw_sha256\": \"f08e43760a3cdd0f1db291c1a425ab567b1f586895041aff472d311acf37c666\", \"completed_initial_rows\": 13, \"required_initial_rows\": 96, \"completed_replay_rows\": 0, \"initial_output_tokens_observed\": 1343, \"initial_generation_seconds_observed\": 1407.4623206000542, \"initial_output_utf8_bytes_observed\": 4846, \"pilot_elapsed_seconds_at_stop\": 1500.1720000000205, \"resource_observations\": {\"initial\": {\"record_sha256\": \"9e21b0727a091c159c2c0300a503f08d7fcc1910db480d6b19b1df30767885f9\", \"requested_power_limit_watts\": 10.0, \"default_power_limit_watts\": 80.0, \"gpu_clock_summary_raw\": \"NVIDIA GeForce RTX 3080 Laptop GPU, 9091 MiB, 16384 MiB, 100 %, 210 MHz, 24.23 W, 51\", \"completed_rows\": 2, \"battery\": {\"percent\": 97, \"power_plugged\": true, \"secsleft\": -2}, \"free_disk_bytes\": 30853390336}, \"final\": {\"record_sha256\": \"f70f7574992d8350e972896c7ab048ade4a00835435601f9a637c4ba1bd148da\", \"requested_power_limit_watts\": 10.0, \"default_power_limit_watts\": 80.0, \"gpu_clock_summary_raw\": \"NVIDIA GeForce RTX 3080 Laptop GPU, 1066 MiB, 16384 MiB, 5 %, 210 MHz, 16.73 W, 50\", \"completed_rows\": 13, \"battery\": {\"percent\": 97, \"power_plugged\": true, \"secsleft\": -2}, \"free_disk_bytes\": 30309642240}}, \"source_preparation_sha256\": \"a8e583b7d2cd12b901b85249436758eab444981092d9bf26c3ae4c2d9b291886\", \"new_training_steps\": 0, \"recipient_executions\": 0, \"qualification\": \"NOT_ESTABLISHED\", \"native_layercake_defect\": \"NOT_ESTABLISHED\", \"abi_acquisition_quality\": \"NOT_TESTED\", \"product_promotion\": \"NONE\", \"full_moonshot\": \"NOT_PROVEN\", \"scope\": \"Verified incomplete prefix and resource-budget timeout, not a completed scientific experiment; no partial pass rate promoted\"}\n"
+    },
+    {
+      "command": [
+        "C:\\Python310\\python.exe",
+        "-m",
+        "experiments.trained_grounding_r108.run",
+        "verify"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\abi_release",
+      "expected_returncode": 1,
+      "expected_stderr": "Interrupted run cannot be complete",
+      "returncode": 1,
+      "stderr": "Traceback (most recent call last):\n  File \"C:\\Python310\\lib\\runpy.py\", line 196, in _run_module_as_main\n    return _run_code(code, main_globals, None,\n  File \"C:\\Python310\\lib\\runpy.py\", line 86, in _run_code\n    exec(code, run_globals)\n  File \"C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\abi_release\\experiments\\trained_grounding_r108\\run.py\", line 323, in <module>\n    {'prepare': prepare_source, 'freeze': freeze, 'pilot': pilot, 'verify': verify}[args.command]()\n  File \"C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\abi_release\\experiments\\trained_grounding_r108\\run.py\", line 268, in verify\n    result = derive()\n  File \"C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\abi_release\\experiments\\trained_grounding_r108\\run.py\", line 233, in derive\n    raise RuntimeError('Interrupted run cannot be complete')\nRuntimeError: Interrupted run cannot be complete\n",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "C:\\Python310\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_trained_grounding_r108.py",
+        "tests/test_r108_interruption.py"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\abi_release",
+      "expected_returncode": 0,
+      "expected_stderr": null,
+      "returncode": 0,
+      "stderr": "Exception ignored in: <function Console.__del__ at 0x0000025FE0628AF0>\nTraceback (most recent call last):\n  File \"C:\\Python310\\lib\\site-packages\\pyreadline3\\console\\console.py\", line 255, in __del__\nOSError: [WinError -1073741816] Windows Error 0xc0000008\n",
+      "stdout": ".................................................                        [100%]\n49 passed in 26.56s\n"
+    },
+    {
+      "command": [
+        "C:\\Python310\\python.exe",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\abi_release",
+      "expected_returncode": 0,
+      "expected_stderr": null,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "DOCS_OK: 30 canonical documents and all tracked Markdown links checked\n"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\abi_release",
+      "expected_returncode": 0,
+      "expected_stderr": null,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\layercake_release",
+      "expected_returncode": 0,
+      "expected_stderr": null,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  ],
+  "commit": "2efde06bcf3b374435f76147614fd806026fc4a5",
+  "evidence_mode": "resource-stop",
+  "finished_unix": 1794653434.7716513,
+  "format": "r108-public-reconstruction/1",
+  "host_inputs": 182,
+  "lfs_paths": 4,
+  "manifest_sha256": "2f51d7693f54d457f3ddf9161d0251ec8459e0c224d321d015e6c01f56230eff",
+  "result_sha256": "9dd3ee4ea96cb14ba237dc3dc9167a8206cd08db35c86da3fd71aa8ca8d3e5b6",
+  "scope": "Same-machine reused public checkouts/cache; no live inference or independent hardware",
+  "source_files": 12,
+  "start_unix": 1794653364.6549942,
+  "status": "REPRODUCED_RESOURCE_STOP"
+}
