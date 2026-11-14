@@ -16,6 +16,9 @@ goal rather than reading the campaign archive in filename order.
 
 ## Canonical current documents
 
+- [R108 trained-task grounding](R108_TRAINED_GROUNDING.md) records the bounded
+  counterfactual-generation protocol, matched controls and failure boundaries.
+
 - [R107 retention/intervention result](R107_RETENTION_INTERVENTION.md) separates
   predictive-loss interference, repetitive generation and untrained-route retention.
   Its [public reconstruction receipt](R107_PUBLIC_RECONSTRUCTION.md) verifies the

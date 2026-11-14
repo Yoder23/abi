@@ -1,8 +1,13 @@
 # ABI project status
 
-Status date: 2026-11-13
+Status date: 2026-11-14
 
 ## Active work
+
+[R108](R108_TRAINED_GROUNDING.md) is preregistered to qualify autonomous grounded
+generation on the eight trained task families. It preserves the matched R99
+LoRA/distillation histories and all prior gates. One preselected control must
+qualify before recipients run. Preparation is in progress; no result is claimed.
 
 [R107](R107_RETENTION_INTERVENTION.md) completed 18 no-training executions with
 exact raw replay. The primary residual-neutralization contrast supports modest
