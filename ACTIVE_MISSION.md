@@ -1,8 +1,17 @@
 # Active mission
 
-Updated: 2026-11-13
+Updated: 2026-11-14
 
-## Current bounded diagnostic: R107
+## Current bounded diagnostic: R108
+
+[R108](experiments/trained_grounding_r108/PROTOCOL.md) evaluates autonomous
+grounded generation on eight trained task families, using 48 fixed counterfactual
+pairs. One preselected external control must qualify before the four retained
+recipient lineages run. R99 LoRA/distillation retain their matched historical
+budgets; the new control is not their teacher. No training, gate relaxation,
+native-host change, or broad-English claim. Preserve and publish every outcome.
+
+## Previous completed bounded diagnostic: R107
 
 [R107](experiments/retention_intervention_r107/PROTOCOL.md) tests natural-text
 retention with a causal in-memory residual-neutralization intervention. Preserve

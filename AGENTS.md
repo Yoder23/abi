@@ -26,6 +26,14 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+The user authorized R108 on 2026-11-14: one trained-task grounded-generation
+qualification attempt with a preselected Qwen3-4B-Instruct-2507 control, then
+the retained matched R99 LoRA/distillation and parent/full-model diagnostics
+only if that control qualifies. Follow
+`experiments/trained_grounding_r108/PROTOCOL.md`. Freeze the paired inputs and
+all gates before inference. No training, model/prompt sweep, native host edits,
+or broad-English certification. Failure ownership remains explicitly separated.
+
 The user authorized continued bounded progress after R106. R107 is a distinct
 natural-text retention/intervention audit, not another control-qualification
 sweep. Its preregistration is `experiments/retention_intervention_r107/PROTOCOL.md`.
