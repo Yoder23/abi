@@ -1,9 +1,15 @@
 # Research status
 
-Updated: 2026-11-13
+Updated: 2026-11-14
 
 The concise dashboard is [`PROJECT_STATUS.md`](PROJECT_STATUS.md). This file
 retains the detailed interpretation of later research lineages.
+
+[R108](R108_TRAINED_GROUNDING.md) preserves a resource-limited incomplete attempt:
+13/96 initial control rows, no replay, no recipients and zero training. The
+25-minute process budget expired under reported GPU throttling. No scorer or
+gate was relaxed; the complete verifier still rejects the run. Acquisition
+quality and native-host failure are not established by an operating constraint.
 
 [R107](R107_RETENTION_INTERVENTION.md) is a no-training natural-text retention
 intervention, with all nine raw cells reproduced exactly. Removing parent

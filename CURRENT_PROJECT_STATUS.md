@@ -1,8 +1,20 @@
 # Current project status
 
-Updated: 2026-11-11
+Updated: 2026-11-14
 
-Latest completed bounded result: [R106](docs/R106_GRAMMAR_INTERFACE.md) failed
+Latest bounded attempt: [R108](docs/R108_TRAINED_GROUNDING.md) stopped at its
+fixed 25-minute control-process budget under reported GPU power/thermal
+throttling. Only 13/96 initial responses completed; no replay, recipients or
+training ran. The complete verifier rejects qualification. This is not an ABI
+quality failure or native LayerCake defect; the operating constraint needs review.
+
+Latest completed diagnostic: [R107](docs/R107_RETENTION_INTERVENTION.md) measured
+bounded natural-text residual interference with exact replay and a repetition
+trade-off. The fixed coherence route was not trained in R99, so it did not
+qualify acquired-task generation. Its immutable tag and public reconstruction
+are published; no fluent English core or product was promoted.
+
+Earlier completed bounded result: [R106](docs/R106_GRAMMAR_INTERFACE.md) failed
 its separate grammatical-discrimination control at 178/200 against 190/200.
 Exact raw replay passed; no recipient calls or training ran. External-label
 limitations are disclosed without rescoring. This teacher-forced diagnostic does

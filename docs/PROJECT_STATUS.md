@@ -4,10 +4,12 @@ Status date: 2026-11-14
 
 ## Active work
 
-[R108](R108_TRAINED_GROUNDING.md) is preregistered to qualify autonomous grounded
-generation on the eight trained task families. It preserves the matched R99
-LoRA/distillation histories and all prior gates. One preselected control must
-qualify before recipients run. Preparation is in progress; no result is claimed.
+[R108](R108_TRAINED_GROUNDING.md) ended incomplete at its fixed 25-minute control
+budget, under reported GPU power/thermal throttling (requested 10 W versus 80 W
+default, 210 MHz). It preserves 13/96 initial responses, no replay, no recipients
+and zero training. Matched R99 LoRA/distillation checkpoints remain unchanged.
+The complete verifier rejects qualification. This is a resource prerequisite,
+not a measured acquisition-quality failure or native LayerCake defect.
 
 [R107](R107_RETENTION_INTERVENTION.md) completed 18 no-training executions with
 exact raw replay. The primary residual-neutralization contrast supports modest

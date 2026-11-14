@@ -1,12 +1,17 @@
 # ABI proof ledger
 
-Updated: 2026-11-13
+Updated: 2026-11-14
 
 This ledger separates software portability from neural transplantation. A
 result in one row must never be promoted into another row without its own
 registered evidence.
 
-Latest acquisition diagnostic: [R107](R107_RETENTION_INTERVENTION.md) supports
+Latest attempt: [R108](R108_TRAINED_GROUNDING.md) ended at its fixed control
+process budget, with 13/96 initial rows and no replay or recipients. Recorded
+GPU throttling does not establish any acquisition or host-quality result.
+Its complete verifier rejects qualification; no claim below is promoted.
+
+Previous completed acquisition diagnostic: [R107](R107_RETENTION_INTERVENTION.md) supports
 bounded natural-text residual interference with exact live replay, but no fluent
 core is qualified. Its untrained-route retention and repetition trade-off do not
 promote ABI-C6, ABI-C7 or ABI-C8 below. Historical bounded passes remain separate.

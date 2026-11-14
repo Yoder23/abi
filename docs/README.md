@@ -16,8 +16,10 @@ goal rather than reading the campaign archive in filename order.
 
 ## Canonical current documents
 
-- [R108 trained-task grounding](R108_TRAINED_GROUNDING.md) records the bounded
-  counterfactual-generation protocol, matched controls and failure boundaries.
+- [R108 trained-task grounding](R108_TRAINED_GROUNDING.md) preserves an incomplete
+  resource-budget stop, not an English qualification. Its
+  [review packet](releases/R108_REVIEW.md) distinguishes interruption verification
+  from the unchanged complete scientific verifier.
 
 - [R107 retention/intervention result](R107_RETENTION_INTERVENTION.md) separates
   predictive-loss interference, repetitive generation and untrained-route retention.

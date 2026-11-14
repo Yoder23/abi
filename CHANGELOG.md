@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-11-14
+
+- Preregistered R108's paired trained-task generation test and published the
+  exact input freeze before inference. Preserved the matched historical LoRA/
+  distillation exposure and all earlier gates and checkpoints.
+- Prepared and hash-verified one pinned Qwen3-4B control. Its initial process
+  hit the fixed 25-minute deadline after 13/96 responses under reported GPU
+  power/thermal throttling. No replay, recipient comparison or training ran.
+- Added a separate interruption observer and hostile tests without modifying
+  frozen execution/scoring. The complete verifier still rejects qualification.
+  Resource evidence is not an ABI acquisition or native LayerCake quality result.
+- Updated discovery/status/version documents, including the previously missing
+  R107 entries in the root status and version map. No supported API version change.
+
 ## 2026-11-13
 
 - Completed R107's no-training natural-text residual intervention: 18 executions,

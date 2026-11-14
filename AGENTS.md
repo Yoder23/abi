@@ -34,6 +34,13 @@ only if that control qualifies. Follow
 all gates before inference. No training, model/prompt sweep, native host edits,
 or broad-English certification. Failure ownership remains explicitly separated.
 
+R108 ended incomplete at its registered control-process timeout: 13/96 initial
+rows, no replay or recipients. Keep the frozen complete verifier rejecting it.
+The additive interruption observer is evidence preservation, not qualification.
+Recorded GPU power/thermal throttling requires an operating-mode check before a
+separately authorized retry; do not override thermal protections, lower gates,
+extend the expired deadline, or overwrite the interrupted evidence.
+
 The user authorized continued bounded progress after R106. R107 is a distinct
 natural-text retention/intervention audit, not another control-qualification
 sweep. Its preregistration is `experiments/retention_intervention_r107/PROTOCOL.md`.

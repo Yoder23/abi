@@ -29,7 +29,7 @@ LoRA and distillation.
 
 | Evidence line | What is established | What remains open |
 | --- | --- | --- |
-| R108 | Preregistered trained-task counterfactual generation qualification; execution pending | No new English-core or acquisition claim |
+| R108 | Pinned inputs and preserved resource-budget stop: 13/96 initial responses, no replay or recipients | Control qualification and trained-task comparison remain incomplete |
 | R107 | No-training residual intervention and exact live replay; modest natural-text loss interference, with a repetition trade-off | No fluent core, trained-route retention or native-host promotion |
 | R7 public release | Bounded capability runtime/conformance across three named environments; public reconstruction passed | Human ratings and independent hardware |
 | V1089 local campaign | Bounded machine evidence through Phase 7 and a same-machine Phase 8 rehearsal | One coherent public final artifact, Phase 5 clean replay, external review |
@@ -49,10 +49,11 @@ public technical release remains
 [`abi-final-validation-v2-repaired-r7-2026-08-30`](https://github.com/Yoder23/abi/releases/tag/abi-final-validation-v2-repaired-r7-2026-08-30).
 The current default branch is a later peer-review candidate.
 
-The current [R108 study](docs/R108_TRAINED_GROUNDING.md) tests grounded generation
-on trained task families. A single preselected external control must qualify
-before the retained, historically matched LoRA/distillation controls run.
-No new training, native-host change or broad-English promotion is authorized.
+The latest [R108 attempt](docs/R108_TRAINED_GROUNDING.md) hit its fixed 25-minute
+control-process budget under reported GPU power/thermal throttling. Only 13/96
+initial responses completed; no replay, recipients or training ran. The complete
+verifier rejects it. This is a resource-limited prerequisite, not an English
+quality failure, acquisition result or native LayerCake defect.
 
 The earlier [R106 diagnostic](docs/R106_GRAMMAR_INTERFACE.md) failed its narrow
 grammar control at 178/200 against 190/200. It uses external sentence-pair labels,

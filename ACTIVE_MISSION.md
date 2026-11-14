@@ -11,6 +11,14 @@ recipient lineages run. R99 LoRA/distillation retain their matched historical
 budgets; the new control is not their teacher. No training, gate relaxation,
 native-host change, or broad-English claim. Preserve and publish every outcome.
 
+The attempt ended at its registered 1,500-second control-process timeout:
+13/96 initial responses, no replay, no recipients, zero training. Recorded NVIDIA
+telemetry shows a requested 10 W limit (80 W default), 210 MHz clocks and active
+power/thermal throttling. No hardware setting was changed. The complete verifier
+still rejects the run. [R108 result](docs/R108_TRAINED_GROUNDING.md). Resolve the
+operating constraint before an authorized separately recorded retry; do not
+change gates, overwrite this prefix, or infer a quality/host failure.
+
 ## Previous completed bounded diagnostic: R107
 
 [R107](experiments/retention_intervention_r107/PROTOCOL.md) tests natural-text

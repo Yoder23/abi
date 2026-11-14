@@ -1,12 +1,22 @@
 # ABI claim ledger
 
-Status date: 2026-11-13
+Status date: 2026-11-14
 
 Documentation cannot widen a machine-readable certificate. Each claim below is
 limited to its exact source, artifact, implementation, benchmark, and evidence
 identity.
 
 ## Current claims
+
+### R108: resource-budget stop, no qualification or recipient result
+
+[R108](docs/R108_TRAINED_GROUNDING.md) timed out after 13/96 initial control
+responses under recorded GPU power/thermal throttling. No replay, recipient
+comparison or training ran. The original complete verifier rejects the run;
+the additive interruption record verifies only preservation/recomputation of
+the incomplete prefix and timeout. It establishes neither English-control
+qualification, acquisition success/failure, ABI superiority nor a LayerCake defect.
+No partial pass rate or product claim is promoted.
 
 ### R107: bounded retention diagnosis, not an acquisition breakthrough
 

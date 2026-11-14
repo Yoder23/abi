@@ -22,15 +22,22 @@ def sha(path):
     return h.hexdigest()
 
 
-def inventory():
+def inventory(mode):
     sys.path.insert(0, str(ROOT))
     from experiments.trained_grounding_r108 import core as c
-    from experiments.trained_grounding_r108.run import verify
+    if mode == 'resource-stop':
+        from experiments.trained_grounding_r108.interruption import verify
+        result_path = 'results/trained_grounding_r108/interruption.json'
+    else:
+        from experiments.trained_grounding_r108.run import verify
+        result_path = 'results/trained_grounding_r108/decision.json'
     verify()
     frozen = c.binding()
     files = {p for p in frozen['files'] if not p.startswith('../')}
     files.update(p.relative_to(ROOT).as_posix() for p in c.OUT.rglob('*') if p.is_file())
+    files.update(p.relative_to(ROOT).as_posix() for p in c.HERE.glob('*.py'))
     files.update(('scripts/review_r108_public.py', 'tests/test_r108_completed_verifier.py',
+                  'scripts/inspect_r108_resources.py', 'tests/test_r108_interruption.py',
                   'docs/R108_TRAINED_GROUNDING.md', 'docs/releases/R108_REVIEW.md'))
     files.update(p.relative_to(ROOT).as_posix() for p in (ROOT/'results/review_2026_11_14').glob('r108-*.xml'))
     tracked = set(subprocess.check_output(['git', 'ls-files'], cwd=ROOT, text=True).splitlines())
@@ -42,7 +49,8 @@ def inventory():
         'host_inputs': {p: h for p, h in frozen['files'].items() if p.startswith('../')},
         'host_revision': frozen['host_revision'], 'source_model': c.SOURCE, 'source_revision': c.REVISION,
         'source_files': frozen['source_files'], 'lfs_paths': sorted(lfs), 'packages': frozen['packages'],
-        'tag': 'abi-research-r108-2026-11-14', 'decision_sha256': sha(c.OUT/'decision.json')}
+        'tag': 'abi-research-r108' + ('-resource-stop' if mode == 'resource-stop' else '') + '-2026-11-14',
+        'evidence_mode': mode, 'result_path': result_path, 'result_sha256': sha(ROOT/result_path)}
     c.write(ROOT/MANIFEST, value)
     print(json.dumps({'assets': len(files), 'host_inputs': len(value['host_inputs']), 'lfs_paths': len(lfs),
                       'manifest_sha256': sha(ROOT/MANIFEST)}), flush=True)
@@ -58,12 +66,13 @@ def review(args):
     env = dict(os.environ, HF_HUB_OFFLINE='1', TRANSFORMERS_OFFLINE='1')
     env.pop('PYTHONPATH', None)
 
-    def command(argv, folder=root):
+    def command(argv, folder=root, expected_returncode=0, expected_stderr=None):
         done = subprocess.run(argv, cwd=folder, env=env, capture_output=True, text=True, timeout=1800)
         receipt['commands'].append({'command': argv, 'cwd': str(folder), 'returncode': done.returncode,
+                                    'expected_returncode': expected_returncode, 'expected_stderr': expected_stderr,
                                     'stdout': done.stdout, 'stderr': done.stderr})
         print(json.dumps({'command': argv, 'returncode': done.returncode}), flush=True)
-        if done.returncode:
+        if done.returncode != expected_returncode or (expected_stderr is not None and expected_stderr not in done.stderr):
             raise RuntimeError('Public reconstruction command failed')
         return done.stdout.strip()
     try:
@@ -86,16 +95,28 @@ def review(args):
             path = (root/relative).resolve()
             if not path.is_relative_to(host) or sha(path) != digest:
                 raise RuntimeError(f'Changed host binding: {relative}')
-        command([sys.executable, '-m', 'experiments.trained_grounding_r108.run', 'verify'])
-        command([sys.executable, '-m', 'pytest', '-q', 'tests/test_trained_grounding_r108.py', 'tests/test_r108_completed_verifier.py'])
+        if manifest['evidence_mode'] == 'complete':
+            command([sys.executable, '-m', 'experiments.trained_grounding_r108.run', 'verify'])
+            packet_test = 'tests/test_r108_completed_verifier.py'
+        elif manifest['evidence_mode'] == 'resource-stop':
+            command([sys.executable, '-m', 'experiments.trained_grounding_r108.interruption'])
+            command([sys.executable, '-m', 'experiments.trained_grounding_r108.run', 'verify'],
+                    expected_returncode=1, expected_stderr='Interrupted run cannot be complete')
+            packet_test = 'tests/test_r108_interruption.py'
+        else:
+            raise RuntimeError('Unregistered evidence mode')
+        if sha(root/manifest['result_path']) != manifest['result_sha256']:
+            raise RuntimeError('Changed result')
+        command([sys.executable, '-m', 'pytest', '-q', 'tests/test_trained_grounding_r108.py', packet_test])
         command([sys.executable, 'scripts/check_docs.py'])
         for folder in (root, host):
             if command(['git', 'status', '--porcelain'], folder):
                 raise RuntimeError('Review modified a checkout')
-        receipt.update(status='PASS', commit=args.commit, manifest_sha256=args.manifest_sha256,
+        receipt.update(status='REPRODUCED_RESOURCE_STOP' if manifest['evidence_mode'] == 'resource-stop' else 'PASS',
+                       evidence_mode=manifest['evidence_mode'], commit=args.commit, manifest_sha256=args.manifest_sha256,
                        assets=len(manifest['files']), host_inputs=len(manifest['host_inputs']),
                        lfs_paths=len(manifest['lfs_paths']), source_files=len(manifest['source_files']),
-                       decision_sha256=manifest['decision_sha256'])
+                       result_sha256=manifest['result_sha256'])
     except Exception as error:
         receipt.update(status='FAIL', error=repr(error))
         raise
@@ -115,10 +136,11 @@ if __name__ == '__main__':
     parser.add_argument('--commit')
     parser.add_argument('--manifest-sha256')
     parser.add_argument('--output', type=Path)
+    parser.add_argument('--mode', choices=('complete', 'resource-stop'), default='complete')
     args = parser.parse_args()
     if args.command == 'review':
         if not all((args.commit, args.manifest_sha256, args.output)):
             parser.error('review requires --commit, --manifest-sha256 and --output')
         review(args)
     else:
-        inventory()
+        inventory(args.mode)
