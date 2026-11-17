@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-17 — R109 preregistration (no scientific promotion)
+
+- Register one resource-policy-only replication of R108 with unchanged GPU
+  settings, scientific functions, quality gates and matched historical controls.
+- Preserve R108's timeout and all checkpoints. Resolve the disk-full preflight
+  only through user-authorized, verified retirement of two old review checkouts.
+- No completed R109 result, English-core acceptance or moonshot claim yet.
+
 ## 2026-11-14
 
 - Preregistered R108's paired trained-task generation test and published the

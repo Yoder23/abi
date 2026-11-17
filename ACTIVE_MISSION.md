@@ -1,8 +1,22 @@
 # Active mission
 
-Updated: 2026-11-14
+Updated: 2026-11-17
 
-## Current bounded diagnostic: R108
+## Current authorized replication: R109
+
+[R109 protocol](experiments/trained_grounding_r109/PROTOCOL.md) repeats R108's
+exact paired population, evaluator, model settings and retained matched controls
+with a prospectively enlarged resource budget. Four hours per control process,
+one hour per recipient process, 16.5 hours total; no automatic extension. GPU
+settings stay unchanged. R108 remains incomplete and immutable. The disk-full
+preflight precedes all R109 inference; only the two user-approved older review
+checkouts may be retired, with verified retained artifacts and all unique evidence
+preserved. [Current R109 status](docs/R109_TRAINED_GROUNDING.md).
+
+No result is claimed before execution and strict raw replay/recomputation. No
+training, gate relaxation, broad-English certificate, or native-host promotion.
+
+## Preserved interrupted diagnostic: R108
 
 [R108](experiments/trained_grounding_r108/PROTOCOL.md) evaluates autonomous
 grounded generation on eight trained task families, using 48 fixed counterfactual

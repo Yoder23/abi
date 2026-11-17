@@ -1,6 +1,9 @@
 # ABI proof ledger
 
-Updated: 2026-11-14
+Updated: 2026-11-17
+
+Current preregistration: [R109](R109_TRAINED_GROUNDING.md), a resource-policy-only
+replication. No claim below is promoted by registration, cleanup or unit tests.
 
 This ledger separates software portability from neural transplantation. A
 result in one row must never be promoted into another row without its own

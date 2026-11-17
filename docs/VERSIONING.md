@@ -3,6 +3,7 @@
 | Identity | Current value | Scope |
 | --- | --- | --- |
 | Python package | `0.4.0a1` | Supported alpha compiler API |
+| Current preregistration | R109 | Resource-policy replication; no result or research tag yet |
 | Controlling technical release | `abi-final-validation-v2-repaired-r7-2026-08-30` | Bounded R7 runtime/conformance proof |
 | Current research review snapshot | `abi-research-r108-resource-stop-2026-11-14` | Incomplete resource-budget stop; no English qualification or recipient result |
 | Previous completed diagnostic snapshot | `abi-research-r107-2026-11-13` | Natural-text residual intervention; no trained-route fluency or product promotion |

@@ -45,4 +45,5 @@ jobs:
           tests/test_grammar_interface_r106.py
           tests/test_retention_intervention_r107.py
           tests/test_trained_grounding_r108.py
+          tests/test_trained_grounding_r109.py
       - run: python -m build

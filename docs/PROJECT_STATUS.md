@@ -1,6 +1,10 @@
 # ABI project status
 
-Status date: 2026-11-14
+Status date: 2026-11-17
+
+[R109](R109_TRAINED_GROUNDING.md) is the new bounded resource-policy replication.
+Its scientific inputs, quality gates, matched controls and GPU settings remain
+unchanged. Preregistration/preflight is not a completed result.
 
 ## Active work
 

@@ -1,6 +1,10 @@
 # Current project status
 
-Updated: 2026-11-14
+Updated: 2026-11-17
+
+Current preregistration: [R109](docs/R109_TRAINED_GROUNDING.md) repeats R108 with
+unchanged scientific gates, GPU settings and matched controls, but a new bounded
+resource budget. No new result is claimed before execution and verification.
 
 Latest bounded attempt: [R108](docs/R108_TRAINED_GROUNDING.md) stopped at its
 fixed 25-minute control-process budget under reported GPU power/thermal

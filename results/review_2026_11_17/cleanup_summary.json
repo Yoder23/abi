@@ -1,0 +1,20 @@
+{
+  "format": "r109-prerequisite-cleanup/1",
+  "completed_utc": "2026-11-17T18:48:20.9528238Z",
+  "scope": "Only _public1105/abi_release and _public1105/layercake_release retired with user approval",
+  "preservation_relative_to_workspace": "_public1105/preservation_20261117",
+  "local_plan_sha256": "b480265dd8ebbd32e800616fa5f001c034e9910e878dadaf594f3e6e09840fe2",
+  "local_completion_sha256": "39933a6c0be31333d9dd30022a8b412ba294c90ab816a38affafffc4669f046e",
+  "git_objects_verified_in_primary": {"abi_release": 11232, "layercake_release": 5362},
+  "primary_git_fsck_exit_codes": {"abi_release": 0, "layercake_release": 0},
+  "non_object_files_hashed": 7754,
+  "unique_files_preserved": 70,
+  "unique_bytes_preserved": 1653698,
+  "root_receipts_scripts_preserved": 7,
+  "bootstrap_duplicate_bytes_removed": 350891472,
+  "bootstrap_retained_checkpoint": "results/grounded_english_r99_fp32/lora/model.safetensors",
+  "bootstrap_checkpoint_sha256": "f370385cac214f89760a1d9f98f568c6d1e20269933078260d07b569d02c9610",
+  "free_bytes_after": 12309544960,
+  "gpu_setting_changes": [],
+  "scientific_promotion": "NONE"
+}

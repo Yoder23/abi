@@ -1,6 +1,9 @@
 # ABI claim ledger
 
-Status date: 2026-11-14
+Status date: 2026-11-17
+
+[R109](docs/R109_TRAINED_GROUNDING.md) is a preregistered resource-policy replication,
+not a scientific promotion. No R109 result or English-core claim is available yet.
 
 Documentation cannot widen a machine-readable certificate. Each claim below is
 limited to its exact source, artifact, implementation, benchmark, and evidence

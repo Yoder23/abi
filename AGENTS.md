@@ -26,6 +26,17 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+User continuation (2026-11-17): execute only the new bounded R109 resource-policy
+replication under `experiments/trained_grounding_r109/PROTOCOL.md`. Keep GPU
+settings unchanged. The larger time budget does not amend R108 or relax any
+quality gate. Preserve the complete R108 packet, matched historical controls,
+and exact scientific functions. Retire only the two explicitly approved older
+`_public1105` checkouts after content verification and unique-evidence retention.
+Freeze and publish before inference. A resource stop is incomplete, not a quality
+failure. A control failure stops recipients. No further sweep, training, host
+source change, or automatic follow-on; publish the actual outcome. Reviewer
+handoff and full-moonshot promotion remain closed without their own evidence.
+
 The user authorized R108 on 2026-11-14: one trained-task grounded-generation
 qualification attempt with a preselected Qwen3-4B-Instruct-2507 control, then
 the retained matched R99 LoRA/distillation and parent/full-model diagnostics
