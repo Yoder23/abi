@@ -2,8 +2,12 @@
 
 Status date: 2026-11-17
 
-[R109](docs/R109_TRAINED_GROUNDING.md) is a preregistered resource-policy replication,
-not a scientific promotion. No R109 result or English-core claim is available yet.
+[R109](docs/R109_TRAINED_GROUNDING.md) is a completed resource-policy replication,
+not a scientific promotion. It failed the control gate at 32/48 paired outcomes
+versus 44, with exact live replay. Twenty sentence-count failures remain decisive
+even under an optimistic ceiling ignoring all seven approval flags. Those flags
+have disclosed scope errors. No recipient ran; no acquisition or host defect,
+fluent-English core, superiority or new product claim is established.
 
 Documentation cannot widen a machine-readable certificate. Each claim below is
 limited to its exact source, artifact, implementation, benchmark, and evidence

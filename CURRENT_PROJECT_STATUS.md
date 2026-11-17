@@ -2,11 +2,13 @@
 
 Updated: 2026-11-17
 
-Current preregistration: [R109](docs/R109_TRAINED_GROUNDING.md) repeats R108 with
-unchanged scientific gates, GPU settings and matched controls, but a new bounded
-resource budget. No new result is claimed before execution and verification.
+Latest completed result: [R109](docs/R109_TRAINED_GROUNDING.md) failed control
+qualification with exact replay: 35/48 and 34/48 panels, 32/48 paired versus 44.
+There were 20 sentence-count failures and seven approval flags with disclosed
+scope errors. Even a maximally favorable treatment of those seven flags still
+fails. No recipient ran; ABI acquisition and native LayerCake are not implicated.
 
-Latest bounded attempt: [R108](docs/R108_TRAINED_GROUNDING.md) stopped at its
+Preserved interrupted attempt: [R108](docs/R108_TRAINED_GROUNDING.md) stopped at its
 fixed 25-minute control-process budget under reported GPU power/thermal
 throttling. Only 13/96 initial responses completed; no replay, recipients or
 training ran. The complete verifier rejects qualification. This is not an ABI
@@ -14,7 +16,7 @@ quality failure or native LayerCake defect; the operating constraint needs revie
 The [public reconstruction receipt](docs/R108_PUBLIC_RECONSTRUCTION.md) verifies
 the interruption only; it does not convert the incomplete run into qualification.
 
-Latest completed diagnostic: [R107](docs/R107_RETENTION_INTERVENTION.md) measured
+Earlier completed diagnostic: [R107](docs/R107_RETENTION_INTERVENTION.md) measured
 bounded natural-text residual interference with exact replay and a repetition
 trade-off. The fixed coherence route was not trained in R99, so it did not
 qualify acquired-task generation. Its immutable tag and public reconstruction

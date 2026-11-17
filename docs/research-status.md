@@ -2,9 +2,11 @@
 
 Updated: 2026-11-17
 
-[R109](R109_TRAINED_GROUNDING.md) is preregistered to repeat the frozen R108 panel
-with unchanged gates and controls under a larger, finite runtime budget. No
-scientific result is available yet; hardware settings will not be changed.
+[R109](R109_TRAINED_GROUNDING.md) completed the frozen R108 panel and exact replay
+under a separately registered runtime budget. It failed at 32/48 paired passes
+against 44. Sentence-count adherence and detector scope errors are separately
+reported; even removing every approval flag cannot qualify the control. No
+recipient ran, no settings or quality gates changed, and no host defect is proven.
 
 The concise dashboard is [`PROJECT_STATUS.md`](PROJECT_STATUS.md). This file
 retains the detailed interpretation of later research lineages.

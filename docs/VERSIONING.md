@@ -3,9 +3,9 @@
 | Identity | Current value | Scope |
 | --- | --- | --- |
 | Python package | `0.4.0a1` | Supported alpha compiler API |
-| Current preregistration | R109 | Resource-policy replication; no result or research tag yet |
+| Current research review snapshot | `abi-research-r109-2026-11-17` | Complete negative control qualification with exact replay; no recipient or host promotion |
 | Controlling technical release | `abi-final-validation-v2-repaired-r7-2026-08-30` | Bounded R7 runtime/conformance proof |
-| Current research review snapshot | `abi-research-r108-resource-stop-2026-11-14` | Incomplete resource-budget stop; no English qualification or recipient result |
+| Previous interrupted review snapshot | `abi-research-r108-resource-stop-2026-11-14` | Incomplete resource-budget stop; no English qualification or recipient result |
 | Previous completed diagnostic snapshot | `abi-research-r107-2026-11-13` | Natural-text residual intervention; no trained-route fluency or product promotion |
 | Earlier research review snapshot | `abi-research-r106-2026-11-11` | Failed narrow grammar control; no recipient comparison or English promotion |
 | Previous research review snapshot | `abi-research-r105-2026-11-11` | External-label evaluator rejection; no acquisition or host promotion |

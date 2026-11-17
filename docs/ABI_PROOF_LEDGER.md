@@ -2,14 +2,16 @@
 
 Updated: 2026-11-17
 
-Current preregistration: [R109](R109_TRAINED_GROUNDING.md), a resource-policy-only
-replication. No claim below is promoted by registration, cleanup or unit tests.
+Latest completed attempt: [R109](R109_TRAINED_GROUNDING.md) failed control
+qualification at 32/48 pairs versus 44, with exact replay. The recipient gate
+remained closed. Detector scope limitations do not rescue its sentence-count
+failures; no acquisition or native-host claim below is promoted.
 
 This ledger separates software portability from neural transplantation. A
 result in one row must never be promoted into another row without its own
 registered evidence.
 
-Latest attempt: [R108](R108_TRAINED_GROUNDING.md) ended at its fixed control
+Preserved interrupted attempt: [R108](R108_TRAINED_GROUNDING.md) ended at its fixed control
 process budget, with 13/96 initial rows and no replay or recipients. Recorded
 GPU throttling does not establish any acquisition or host-quality result.
 Its complete verifier rejects qualification; no claim below is promoted.

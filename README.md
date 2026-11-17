@@ -29,7 +29,7 @@ LoRA and distillation.
 
 | Evidence line | What is established | What remains open |
 | --- | --- | --- |
-| R109 | Authorized resource-policy replication of R108, with unchanged quality gates and matched controls | Preregistration/preflight; no new result yet |
+| R109 | Complete control execution and exact replay; 32/48 paired passes versus 44 required | Recipient gate closed; adherence failures and evaluator scope limits, not an acquisition or host result |
 | R108 | Pinned inputs and preserved resource-budget stop: 13/96 initial responses, no replay or recipients | Control qualification and trained-task comparison remain incomplete |
 | R107 | No-training residual intervention and exact live replay; modest natural-text loss interference, with a repetition trade-off | No fluent core, trained-route retention or native-host promotion |
 | R7 public release | Bounded capability runtime/conformance across three named environments; public reconstruction passed | Human ratings and independent hardware |
@@ -50,9 +50,12 @@ public technical release remains
 [`abi-final-validation-v2-repaired-r7-2026-08-30`](https://github.com/Yoder23/abi/releases/tag/abi-final-validation-v2-repaired-r7-2026-08-30).
 The current default branch is a later peer-review candidate.
 
-The current [R109 replication](docs/R109_TRAINED_GROUNDING.md) keeps GPU settings,
-quality gates and matched controls unchanged, with a new bounded time budget.
-It is not a completed result or a breakthrough claim.
+The completed [R109 replication](docs/R109_TRAINED_GROUNDING.md) kept GPU settings,
+quality gates and matched controls unchanged. The control failed at 35/48 and
+34/48 per panel, 32/48 paired, with exact replay and no collapse/truncation.
+Twenty responses missed the sentence-count instruction; seven approval flags
+include disclosed scope errors. Even granting all seven a pass cannot qualify
+the control. No recipient ran, and no acquisition or native-host claim is promoted.
 
 The preserved [R108 attempt](docs/R108_TRAINED_GROUNDING.md) hit its fixed 25-minute
 control-process budget under reported GPU power/thermal throttling. Only 13/96

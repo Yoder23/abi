@@ -2,9 +2,11 @@
 
 Status date: 2026-11-17
 
-[R109](R109_TRAINED_GROUNDING.md) is the new bounded resource-policy replication.
-Its scientific inputs, quality gates, matched controls and GPU settings remain
-unchanged. Preregistration/preflight is not a completed result.
+[R109](R109_TRAINED_GROUNDING.md) completed with exact replay but failed the
+unchanged control gate: 35/48 and 34/48 panels, 32/48 pairs versus 44. Its 20
+sentence-count failures remain decisive even under an optimistic ceiling for
+all seven approval flags (which include scope errors). GPU settings stayed
+unchanged; no recipient or training run occurred. No ABI/host claim is promoted.
 
 ## Active work
 

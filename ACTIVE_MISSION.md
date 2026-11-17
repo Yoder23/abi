@@ -2,7 +2,7 @@
 
 Updated: 2026-11-17
 
-## Current authorized replication: R109
+## Completed bounded replication: R109
 
 [R109 protocol](experiments/trained_grounding_r109/PROTOCOL.md) repeats R108's
 exact paired population, evaluator, model settings and retained matched controls
@@ -13,8 +13,13 @@ preflight precedes all R109 inference; only the two user-approved older review
 checkouts may be retired, with verified retained artifacts and all unique evidence
 preserved. [Current R109 status](docs/R109_TRAINED_GROUNDING.md).
 
-No result is claimed before execution and strict raw replay/recomputation. No
-training, gate relaxation, broad-English certificate, or native-host promotion.
+R109 completed with exact replay but failed qualification: 35/48 and 34/48 panels,
+32/48 paired against 44/48. Twenty sentence-count failures remain decisive even
+after an optimistic ceiling removes all seven approval flags (including detected
+scope errors). No recipient ran. No training, gate relaxation, broad-English
+certificate or native-host promotion. Preserve all evidence; no automatic next
+model/prompt sweep. Any successor needs separately registered evaluator-validity
+and adherence work, not an assumption of ABI acquisition or LayerCake failure.
 
 ## Preserved interrupted diagnostic: R108
 

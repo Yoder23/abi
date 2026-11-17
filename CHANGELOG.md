@@ -1,12 +1,17 @@
 # Changelog
 
-## 2026-11-17 — R109 preregistration (no scientific promotion)
+## 2026-11-17 — R109 completed prerequisite failure (no scientific promotion)
 
 - Register one resource-policy-only replication of R108 with unchanged GPU
   settings, scientific functions, quality gates and matched historical controls.
 - Preserve R108's timeout and all checkpoints. Resolve the disk-full preflight
   only through user-authorized, verified retirement of two old review checkouts.
-- No completed R109 result, English-core acceptance or moonshot claim yet.
+- Complete all 192 control calls with exact replay. Qualification fails at
+  35/48 and 34/48 panels, 32/48 pairs; no recipient or training run follows.
+- Separate 20 sentence-count failures from seven approval flags with disclosed
+  scope errors. An optimistic ceiling still fails; no frozen score is changed.
+- Add fail-closed full-packet audits and public reconstruction instructions.
+  No English-core acceptance, ABI superiority, native-host defect or moonshot claim.
 
 ## 2026-11-14
 

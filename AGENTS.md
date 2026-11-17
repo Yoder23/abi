@@ -37,6 +37,15 @@ failure. A control failure stops recipients. No further sweep, training, host
 source change, or automatic follow-on; publish the actual outcome. Reviewer
 handoff and full-moonshot promotion remain closed without their own evidence.
 
+R109 completed with exact 96-row replay and failed qualification: panels 35/48
+and 34/48, paired 32/48 versus 44. No recipients or training ran. Preserve the
+20 sentence-count failures and seven approval flags, including disclosed
+negative/conditional-scope errors. The post-result optimistic ceiling granting
+all seven flags a pass still fails (39/48, 37/48 panels; 37/48 pairs). Never
+replace the registered score with that ceiling. No acquisition-quality or
+native-host defect is established. No automatic prompt/model or training sweep;
+a successor must prospectively address validity and adherence with fixed gates.
+
 The user authorized R108 on 2026-11-14: one trained-task grounded-generation
 qualification attempt with a preselected Qwen3-4B-Instruct-2507 control, then
 the retained matched R99 LoRA/distillation and parent/full-model diagnostics

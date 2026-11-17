@@ -17,7 +17,9 @@ goal rather than reading the campaign archive in filename order.
 ## Canonical current documents
 
 - [R109 trained-task replication](R109_TRAINED_GROUNDING.md) keeps R108's scientific
-  gates and matched controls fixed under a new bounded resource policy.
+  gates and matched controls fixed under a new bounded resource policy. Its
+  completed control failed qualification with exact replay; no recipient ran.
+  [Review instructions](releases/R109_REVIEW.md) preserve that negative result.
 
 - [R108 trained-task grounding](R108_TRAINED_GROUNDING.md) preserves an incomplete
   resource-budget stop, not an English qualification. Its
