@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-11-17 — R110 implementation (not executed)
+
+- Implement the conservative three-way approval-scope evaluator, independent
+  challenge construction, paired analysis, write-once driver and fail-closed
+  verifiers under the unchanged registration. Preserve both scorers on new rows.
+- Add development and hostile tests, including all 164 historical fixtures and
+  seven disclosed regressions. Do not score the prospective challenge before its
+  published implementation/input freezes.
+- Record the unmet 10 GiB storage prerequisite without deleting evidence or
+  launching models. R109, GPU settings, quality gates and LayerCake stay unchanged.
+
 ## 2026-11-17 — R110 preregistration only
 
 - Register a versioned approval-scope prerequisite and one fixed, input-only

@@ -2,10 +2,10 @@
 
 Status date: 2026-11-17
 
-[R110](docs/R110_SCOPE_ADHERENCE.md) is preregistration only. Input/schema tests
+[R110](docs/R110_SCOPE_ADHERENCE.md) is implemented but unexecuted. Software tests
 cannot establish evaluator validity, adherence improvement, English qualification,
-ABI acquisition or host acceptance. Its live experiment has not been implemented
-or run; no claim below is promoted.
+ABI acquisition or host acceptance. Its prospective challenge and live study have
+not run; the storage prerequisite is unmet. No claim below is promoted.
 
 [R109](docs/R109_TRAINED_GROUNDING.md) is a completed resource-policy replication,
 not a scientific promotion. It failed the control gate at 32/48 paired outcomes

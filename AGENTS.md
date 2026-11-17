@@ -26,6 +26,16 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+User continuation (2026-11-17): implement and publish one R110 execution freeze,
+then execute only if its unchanged storage and evaluator prerequisites pass.
+`experiments/scope_adherence_r110/IMPLEMENTATION.md` operationalizes the immutable
+registration. Keep all R109 bytes, GPU settings, quality gates and LayerCake
+unchanged. Publish the implementation, then the content-seeded challenge before
+scoring. The first challenge failure closes GPU execution; no repairs/retries
+under this registration. Storage below 10 GiB blocks stages without authorizing
+deletions. Preserve blocked preflights and every negative/incomplete outcome.
+Software development tests are not the prospective challenge or scientific proof.
+
 User continuation (2026-11-17): preregister and publish R110 under
 `experiments/scope_adherence_r110/PROTOCOL.md`. This authorization is registration
 and deterministic input/testing work only, not a new GPU run. Preserve R109 and

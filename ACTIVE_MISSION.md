@@ -2,7 +2,7 @@
 
 Updated: 2026-11-17
 
-## Current preregistration: R110 (not executed)
+## Current implementation: R110 (not executed)
 
 [R110](docs/R110_SCOPE_ADHERENCE.md) addresses the two measured prerequisite
 issues separately: finite approval-scope classification and sentence-count
@@ -12,11 +12,14 @@ permit only one source-interface contrast after a 600-case evaluator prerequisit
 Twenty-four sentence-limited inputs change; 72 remain identical as negative
 controls. Raw, unedited outputs alone may qualify. No GPU settings may change.
 
-This turn registers the design and exact input population, with zero new model
-calls. The evaluator, challenge generator and live driver are not implemented
-or execution-frozen. A later explicit execution request and published code/input
-freeze are required before challenge evaluation or inference. No recipient,
-training, ABI acquisition or LayerCake certification is authorized by registration.
+The user now authorizes implementation/freeze and conditional execution. The
+finite evaluator, independent label-by-construction generator, fail-closed
+verifier and write-once driver are implemented. Publish the implementation freeze,
+then the actual challenge before scoring; do not score it during development.
+Storage is currently below the unchanged 10 GiB floor. Preserve preflight evidence
+and start no experiment stage until the floor is met. No deletion is authorized.
+No new model, recipient or training calls; no acquisition or LayerCake certificate.
+See the [implementation contract](experiments/scope_adherence_r110/IMPLEMENTATION.md).
 
 ## Completed bounded replication: R109
 

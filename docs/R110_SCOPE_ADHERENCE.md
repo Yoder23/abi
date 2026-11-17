@@ -1,9 +1,11 @@
 # R110 — scope and adherence preregistration
 
-Status: **preregistered, not executed**. No new model calls, training, recipient
-execution or GPU setting changes. The live evaluator, challenge generator and
-driver are not yet implemented or execution-frozen. This is a plan with exact
-inputs and integrity checks, not a scientific certificate.
+Status: **implemented, not executed**. No new model calls, training, recipient
+execution or GPU setting changes. The user authorized implementation/freeze and
+conditional execution. The evaluator, challenge generator, driver and verifiers
+now exist under the [implementation contract](../experiments/scope_adherence_r110/IMPLEMENTATION.md).
+The unchanged 10 GiB storage floor is currently unmet. Development tests are not
+the prospective challenge, and implementation is not a scientific certificate.
 
 ## Why this study
 
@@ -16,8 +18,8 @@ every R109 score and raw file; it neither blames nor changes LayerCake.
 
 | Stage | Required evidence | Stop rule |
 | --- | --- | --- |
-| Registration (current) | Protocol, numeric contract, 96 exact task inputs, 192 renderings and tokenizer IDs, R109 hashes | Missing or changed inputs fail integrity checks; no execution follows automatically |
-| Implementation freeze (future) | New scope classifier, complete challenge generator, verifier, live driver and tests published before challenge scoring | No code/input freeze, no challenge or GPU execution |
+| Registration (preserved) | Protocol, numeric contract, 96 exact task inputs, 192 renderings and tokenizer IDs, R109 hashes | Missing or changed inputs fail integrity checks; no execution follows automatically |
+| Implementation freeze (current) | New scope classifier, complete challenge generator, verifier, live driver and tests published before challenge scoring | No code/input freeze or storage floor, no challenge or GPU execution |
 | Scope challenge (future) | All 164 historical fixtures, seven known regressions, then 600 constructed cases with fresh-process replay | Any challenge error stops R110 before GPU work; no retry or seed selection |
 | Source comparison (conditional) | Plain versus one fixed response-contract interface, 96 prompts each plus replay | Any resource/integrity failure stops; quality failure cannot promote a control |
 
@@ -90,6 +92,6 @@ python -m pytest -q tests/test_scope_adherence_r110.py
 The registration verifier uses the pinned local source cache and retained R109
 dependencies. It hashes payloads and tokenizes inputs; it does not generate text.
 Its successful status is `REGISTRATION_INTEGRITY_ONLY`, never a scientific pass.
-Do not rerun the write-once `seal` command over published inputs. A later task
-must explicitly authorize implementation/execution before the prospective
-challenge and conditional live study can proceed.
+Do not rerun the write-once `seal` command over published inputs. Implementation
+and conditional execution are now authorized, but the published freezes, storage
+floor and prospective evaluator prerequisite must all pass before GPU work.

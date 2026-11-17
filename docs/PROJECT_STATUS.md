@@ -2,10 +2,11 @@
 
 Status date: 2026-11-17
 
-Current preregistration: [R110](R110_SCOPE_ADHERENCE.md), separating approval-scope
+Current implementation: [R110](R110_SCOPE_ADHERENCE.md), separating approval-scope
 validation from one response-contract adherence contrast. Exact inputs and
-thresholds are registered; the evaluator/challenge/live driver and execution
-remain future gates. Zero new model calls; no acquisition or host promotion.
+thresholds are registered; the evaluator/challenge/live driver are implemented.
+Prospective execution requires published freezes and the unchanged storage floor,
+which is currently unmet. Zero new model calls; no acquisition or host promotion.
 
 [R109](R109_TRAINED_GROUNDING.md) completed with exact replay but failed the
 unchanged control gate: 35/48 and 34/48 panels, 32/48 pairs versus 44. Its 20

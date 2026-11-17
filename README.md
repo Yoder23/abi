@@ -29,7 +29,7 @@ LoRA and distillation.
 
 | Evidence line | What is established | What remains open |
 | --- | --- | --- |
-| R110 preregistration | Fixed scope-evaluator prerequisite and one response-contract input contrast; R109 preserved | Not executed; evaluator/challenge/live implementation and validation remain open |
+| R110 implementation | Registered scope evaluator and single response-contract driver implemented; R109 preserved | Not executed; storage floor and prospective evaluator qualification remain open |
 | R109 | Complete control execution and exact replay; 32/48 paired passes versus 44 required | Recipient gate closed; adherence failures and evaluator scope limits, not an acquisition or host result |
 | R108 | Pinned inputs and preserved resource-budget stop: 13/96 initial responses, no replay or recipients | Control qualification and trained-task comparison remain incomplete |
 | R107 | No-training residual intervention and exact live replay; modest natural-text loss interference, with a repetition trade-off | No fluent core, trained-route retention or native-host promotion |
@@ -51,9 +51,11 @@ public technical release remains
 [`abi-final-validation-v2-repaired-r7-2026-08-30`](https://github.com/Yoder23/abi/releases/tag/abi-final-validation-v2-repaired-r7-2026-08-30).
 The current default branch is a later peer-review candidate.
 
-The next [R110 study](docs/R110_SCOPE_ADHERENCE.md) is **preregistered, not executed**.
+The next [R110 study](docs/R110_SCOPE_ADHERENCE.md) is **implemented, not executed**.
 It separates approval-scope errors from sentence-count adherence, keeps the
 quality gates fixed, and permits no edited outputs, new training or host changes.
+Storage must reach the registered floor before the prospective challenge or GPU
+study starts. Implementation tests are not a qualification or breakthrough.
 
 The completed [R109 replication](docs/R109_TRAINED_GROUNDING.md) kept GPU settings,
 quality gates and matched controls unchanged. The control failed at 35/48 and
