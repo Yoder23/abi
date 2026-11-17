@@ -60,7 +60,27 @@ packages and seals are untouched, and its existing handoff status remains valid.
 
 ## Registration integrity, not experiment verification
 
-After the registration packet is published, its integrity can be recomputed:
+The sealed [registration](../results/scope_adherence_r110/preregistration/registration.json)
+binds 767 files, including the preserved historical dependencies,
+[96 task inputs](../results/scope_adherence_r110/preregistration/population.json)
+and [192 exact renderings/token sequences](../results/scope_adherence_r110/preregistration/rendered_inputs.json).
+Its SHA-256 is
+`a689dc73219d2783e4129e2cf92dc4af3e5c6363441197094d0fa7ecdbd47697`.
+The design commit is `8bd821a381533e5d0b132e57ca59d2539148fa2f`;
+the publication tag is `abi-prereg-r110-2026-11-17`.
+The largest plain and response-contract inputs are respectively 232 and 302
+tokens; both leave the complete, unchanged 640-token generation allowance.
+
+Local checks passed 43 R110 registration tests and 32 preserved R109 tests.
+The final supported suite passed 492 tests with four declared skips, followed
+by 16 exact historical Phase 7 checks. The
+[supported-suite receipt](../results/review_2026_11_17/r110-final-default.xml)
+and [historical-check receipt](../results/review_2026_11_17/r110-final-phase7.xml)
+are software-check evidence, not evaluator validation or scientific promotion.
+R109's decision remains byte-identical at SHA-256
+`57126b03256ca20623e6a527d9b2f38110f755ff003f0ccf170b3042e1762725`.
+
+Registration integrity can be recomputed:
 
 ```powershell
 python -m experiments.scope_adherence_r110.register verify
