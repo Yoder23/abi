@@ -3,6 +3,7 @@
 | Identity | Current value | Scope |
 | --- | --- | --- |
 | Python package | `0.4.0a1` | Supported alpha compiler API |
+| Current preregistration snapshot | `abi-prereg-r110-2026-11-17` | Scope/adherence design and exact inputs only; no new scientific result |
 | Current research review snapshot | `abi-research-r109-2026-11-17` | Complete negative control qualification with exact replay; no recipient or host promotion |
 | Controlling technical release | `abi-final-validation-v2-repaired-r7-2026-08-30` | Bounded R7 runtime/conformance proof |
 | Previous interrupted review snapshot | `abi-research-r108-resource-stop-2026-11-14` | Incomplete resource-budget stop; no English qualification or recipient result |

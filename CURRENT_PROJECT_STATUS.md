@@ -2,6 +2,11 @@
 
 Updated: 2026-11-17
 
+Current preregistration: [R110](docs/R110_SCOPE_ADHERENCE.md). The fixed design
+tests approval-scope validity first, then conditionally compares one input-only
+response contract with the existing source interface. No new model call or
+scientific result; no change to R109, quality thresholds, GPU settings or hosts.
+
 Latest completed result: [R109](docs/R109_TRAINED_GROUNDING.md) failed control
 qualification with exact replay: 35/48 and 34/48 panels, 32/48 paired versus 44.
 There were 20 sentence-count failures and seven approval flags with disclosed

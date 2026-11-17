@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-11-17 — R110 preregistration only
+
+- Register a versioned approval-scope prerequisite and one fixed, input-only
+  response-contract comparison for sentence-count adherence. Keep quality gates,
+  source settings and R109 evidence unchanged; permit no output repair or sweep.
+- Materialize 96 new identifier/day instantiations of known templates and both
+  exact input renderings. Preserve 72 identical messages as execution controls.
+- Register a 600-case challenge, fixed primary endpoint and finite resource limits.
+  No new model, training or recipient calls; no evaluator or English qualification.
+- Keep implementation freeze and execution authorization as explicit future gates.
+
 ## 2026-11-17 — R109 completed prerequisite failure (no scientific promotion)
 
 - Register one resource-policy-only replication of R108 with unchanged GPU

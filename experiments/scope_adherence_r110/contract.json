@@ -1,0 +1,86 @@
+{
+  "format": "r110-preregistration-contract/1",
+  "scope": "Prerequisite evaluator validity and one source-input contract contrast; no acquisition or host certification",
+  "source": {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "precision": "bfloat16",
+    "generation_seed": 108001,
+    "maximum_new_tokens": 640,
+    "context_tokens": 1024,
+    "cpu_threads": 4,
+    "greedy": true,
+    "tf32": false
+  },
+  "population": {
+    "seed": 110001,
+    "rows": 96,
+    "counterfactual_pairs": 48,
+    "tasks": 8,
+    "pairs_per_task": 6,
+    "scope": "New identifier/day instantiations of the same known task templates, not a new semantic-family holdout"
+  },
+  "interfaces": ["plain", "response_contract"],
+  "intervention_tasks": ["summarization", "tone_control"],
+  "source_process_order": [
+    ["plain", "initial"],
+    ["response_contract", "initial"],
+    ["response_contract", "replay"],
+    ["plain", "replay"]
+  ],
+  "quality_gates": {
+    "panel_rows": 48,
+    "panel_minimum_passes": 44,
+    "task_rows_per_panel": 6,
+    "task_minimum_passes": 5,
+    "pair_rows": 48,
+    "pair_minimum_both_passes": 44,
+    "task_pair_minimum_both_passes": 5,
+    "maximum_collapses": 0,
+    "maximum_truncations": 0,
+    "exact_scientific_replay_required": true,
+    "maximum_words": 120,
+    "minimum_words": 3,
+    "sentence_range": [2, 3],
+    "exact_literal_case_required": true
+  },
+  "evaluator_gate": {
+    "historical_fixtures": 164,
+    "known_r109_scope_regressions": 7,
+    "challenge_classes": ["direct_assertion", "scoped_negation", "conditional", "conditional_then_assertion", "scope_trap", "unresolved"],
+    "challenge_rows_per_class": 100,
+    "challenge_rows": 600,
+    "maximum_errors_in_each_class": 0,
+    "maximum_false_safe_assertions": 0,
+    "unresolved_is_a_pass": false,
+    "first_challenge_failure_stops_study": true,
+    "labels_are_independent_human_ratings": false
+  },
+  "analysis": {
+    "primary": "response_contract minus plain sentence-count adherence on 12 paired clusters across the two intervention tasks",
+    "bootstrap_draws": 10000,
+    "bootstrap_seed": 108001,
+    "confidence_level": 0.95,
+    "support_requires_lower_bound_strictly_above": 0,
+    "all_task_quality_noninferiority_lower_bound": -0.1,
+    "unchanged_interface_rows_must_match_tokens": 72,
+    "score_both_frozen_legacy_and_new_evaluators": true,
+    "secondary_quality_contrast_scope": "Noninferiority safeguard and descriptive effect only, not a secondary superiority claim"
+  },
+  "resources": {
+    "offline_evaluator_seconds": 1800,
+    "source_process_seconds": 14400,
+    "source_process_count": 4,
+    "model_process_seconds": 57600,
+    "controller_seconds": 59400,
+    "maximum_generation_calls": 384,
+    "maximum_generated_tokens": 245760,
+    "minimum_free_bytes": 10737418240,
+    "maximum_evidence_bytes": 1073741824,
+    "maximum_new_download_bytes": 0,
+    "gpu_setting_changes": [],
+    "automatic_retries": 0
+  },
+  "prohibited": ["historical_rescoring", "output_repair", "sentence_truncation", "forced_eos", "best_of_sampling", "model_sweep", "prompt_sweep", "training", "recipient_execution", "native_host_changes", "automatic_follow_on"],
+  "qualification_scope": "Finite mechanical control qualification only; no broad English, ABI superiority, recipient quality or LayerCake promotion"
+}

@@ -2,6 +2,11 @@
 
 Updated: 2026-11-17
 
+[R110](R110_SCOPE_ADHERENCE.md) is the next preregistration, not a completed
+experiment. It fixes a scope-validation prerequisite, one response-contract
+contrast, all quality gates and failure ownership before new source outputs.
+Registration/input tests do not certify the evaluator or an English control.
+
 [R109](R109_TRAINED_GROUNDING.md) completed the frozen R108 panel and exact replay
 under a separately registered runtime budget. It failed at 32/48 paired passes
 against 44. Sentence-count adherence and detector scope errors are separately

@@ -26,6 +26,17 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+User continuation (2026-11-17): preregister and publish R110 under
+`experiments/scope_adherence_r110/PROTOCOL.md`. This authorization is registration
+and deterministic input/testing work only, not a new GPU run. Preserve R109 and
+all quality thresholds; keep GPU settings unchanged. R110 separates a versioned
+approval-scope challenge from one fixed response-contract input contrast for
+sentence-limited tasks. No output repair, historical rescoring, model/prompt
+sweep, training, recipient execution or native-host changes. The classifier,
+challenge generator and live driver require a later published implementation
+freeze and separate execution authorization. First challenge failure closes the
+GPU gate. Registration tests are not semantic validation or a scientific result.
+
 User continuation (2026-11-17): execute only the new bounded R109 resource-policy
 replication under `experiments/trained_grounding_r109/PROTOCOL.md`. Keep GPU
 settings unchanged. The larger time budget does not amend R108 or relax any
