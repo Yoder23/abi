@@ -1,0 +1,177 @@
+{
+  "assets": 589,
+  "commands": [
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\abi_release",
+      "expected_returncode": 0,
+      "expected_stderr": null,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "15570c2ef788b14770781b50984bd07217a7a38f\n"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\abi_release",
+      "expected_returncode": 0,
+      "expected_stderr": null,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "git",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\abi_release",
+      "expected_returncode": 0,
+      "expected_stderr": null,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "https://github.com/Yoder23/abi.git\n"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\layercake_release",
+      "expected_returncode": 0,
+      "expected_stderr": null,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "763e6da3cca1aa7564e6bce4b64dbee4effa552d\n"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\layercake_release",
+      "expected_returncode": 0,
+      "expected_stderr": null,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "git",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\layercake_release",
+      "expected_returncode": 0,
+      "expected_stderr": null,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "https://github.com/Yoder23/layercake.git\n"
+    },
+    {
+      "command": [
+        "C:\\Python310\\python.exe",
+        "-m",
+        "experiments.trained_grounding_r109.run",
+        "verify"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\abi_release",
+      "expected_returncode": 0,
+      "expected_stderr": null,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"verdict\": \"CONTROL_QUALIFICATION_FAILED\", \"cells\": {\"control\": {\"rows\": 48, \"passing\": 32, \"collapses\": 0, \"per_task\": {\"summarization\": {\"rows\": 6, \"passing\": 1}, \"rewriting\": {\"rows\": 6, \"passing\": 6}, \"email_drafting\": {\"rows\": 6, \"passing\": 3}, \"conversation\": {\"rows\": 6, \"passing\": 4}, \"format_control\": {\"rows\": 6, \"passing\": 6}, \"tone_control\": {\"rows\": 6, \"passing\": 0}, \"clarification\": {\"rows\": 6, \"passing\": 6}, \"abstention\": {\"rows\": 6, \"passing\": 6}}}}, \"decision_sha256\": \"57126b03256ca20623e6a527d9b2f38110f755ff003f0ccf170b3042e1762725\"}\n"
+    },
+    {
+      "command": [
+        "C:\\Python310\\python.exe",
+        "scripts/audit_r109_scope.py"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\abi_release",
+      "expected_returncode": 0,
+      "expected_stderr": null,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"verdict\": \"CONTROL_QUALIFICATION_FAILED\", \"cells\": {\"control\": {\"rows\": 48, \"passing\": 32, \"collapses\": 0, \"per_task\": {\"summarization\": {\"rows\": 6, \"passing\": 1}, \"rewriting\": {\"rows\": 6, \"passing\": 6}, \"email_drafting\": {\"rows\": 6, \"passing\": 3}, \"conversation\": {\"rows\": 6, \"passing\": 4}, \"format_control\": {\"rows\": 6, \"passing\": 6}, \"tone_control\": {\"rows\": 6, \"passing\": 0}, \"clarification\": {\"rows\": 6, \"passing\": 6}, \"abstention\": {\"rows\": 6, \"passing\": 6}}}}, \"decision_sha256\": \"57126b03256ca20623e6a527d9b2f38110f755ff003f0ccf170b3042e1762725\"}\n{\"flagged_rows\": 7, \"sentence_count_failures\": 20, \"optimistic_panels\": {\"a\": 39, \"b\": 37}, \"optimistic_pairs\": 37, \"optimistic_qualification\": false}\n"
+    },
+    {
+      "command": [
+        "C:\\Python310\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_trained_grounding_r109.py",
+        "tests/test_r109_completed_verifier.py"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\abi_release",
+      "expected_returncode": 0,
+      "expected_stderr": null,
+      "returncode": 0,
+      "stderr": "Exception ignored in: <function Console.__del__ at 0x000002246E168AF0>\nTraceback (most recent call last):\n  File \"C:\\Python310\\lib\\site-packages\\pyreadline3\\console\\console.py\", line 255, in __del__\nOSError: [WinError -1073741816] Windows Error 0xc0000008\n",
+      "stdout": "...................................................................      [100%]\n67 passed in 45.36s\n"
+    },
+    {
+      "command": [
+        "C:\\Python310\\python.exe",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\abi_release",
+      "expected_returncode": 0,
+      "expected_stderr": null,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "DOCS_OK: 30 canonical documents and all tracked Markdown links checked\n"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\abi_release",
+      "expected_returncode": 0,
+      "expected_stderr": null,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "cwd": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\layercake_release",
+      "expected_returncode": 0,
+      "expected_stderr": null,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  ],
+  "commit": "15570c2ef788b14770781b50984bd07217a7a38f",
+  "evidence_mode": "complete",
+  "finished_unix": 1794943028.9183908,
+  "format": "r109-public-reconstruction/1",
+  "host_inputs": 182,
+  "lfs_paths": 4,
+  "manifest_sha256": "109bba3f6d8962437f0a8e889a1bb191fc794f57ee447872cfb11c445b9e345d",
+  "result_sha256": "57126b03256ca20623e6a527d9b2f38110f755ff003f0ccf170b3042e1762725",
+  "scope": "Same-machine reused public checkouts/cache; no live inference or independent hardware",
+  "source_files": 12,
+  "start_unix": 1794942921.2855136,
+  "status": "REPRODUCED_COMPLETE_BOUNDED_RESULT"
+}

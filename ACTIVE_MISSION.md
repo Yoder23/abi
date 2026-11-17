@@ -21,6 +21,11 @@ certificate or native-host promotion. Preserve all evidence; no automatic next
 model/prompt sweep. Any successor needs separately registered evaluator-validity
 and adherence work, not an assumption of ABI acquisition or LayerCake failure.
 
+The immutable R109 research tag and [public reconstruction receipt](docs/R109_PUBLIC_RECONSTRUCTION.md)
+are published: 589 assets, 182 host bindings, 12 source files and 67 focused
+checks verified. This is same-machine raw recomputation with reused caches,
+not independent hardware, human review, or a qualification pass.
+
 ## Preserved interrupted diagnostic: R108
 
 [R108](experiments/trained_grounding_r108/PROTOCOL.md) evaluates autonomous

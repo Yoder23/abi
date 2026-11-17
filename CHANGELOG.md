@@ -12,6 +12,9 @@
   scope errors. An optimistic ceiling still fails; no frozen score is changed.
 - Add fail-closed full-packet audits and public reconstruction instructions.
   No English-core acceptance, ABI superiority, native-host defect or moonshot claim.
+- Published immutable R109 research evidence and its additive public reconstruction
+  receipt: 589 assets, 182 host bindings and 67 focused checks. The reproduced
+  scientific verdict remains negative; the tag and original evidence are unchanged.
 
 ## 2026-11-14
 

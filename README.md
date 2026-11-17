@@ -56,6 +56,8 @@ quality gates and matched controls unchanged. The control failed at 35/48 and
 Twenty responses missed the sentence-count instruction; seven approval flags
 include disclosed scope errors. Even granting all seven a pass cannot qualify
 the control. No recipient ran, and no acquisition or native-host claim is promoted.
+Its [public reconstruction receipt](docs/R109_PUBLIC_RECONSTRUCTION.md) verifies
+the complete negative result, not an English-quality pass.
 
 The preserved [R108 attempt](docs/R108_TRAINED_GROUNDING.md) hit its fixed 25-minute
 control-process budget under reported GPU power/thermal throttling. Only 13/96
