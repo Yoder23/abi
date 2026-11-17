@@ -1,11 +1,39 @@
-# R110 — scope and adherence preregistration
+# R110 — scope and adherence (execution pending)
 
-Status: **implemented, not executed**. No new model calls, training, recipient
+Status: **implementation frozen, not executed**. No new model calls, training, recipient
 execution or GPU setting changes. The user authorized implementation/freeze and
 conditional execution. The evaluator, challenge generator, driver and verifiers
 now exist under the [implementation contract](../experiments/scope_adherence_r110/IMPLEMENTATION.md).
 The unchanged 10 GiB storage floor is currently unmet. Development tests are not
 the prospective challenge, and implementation is not a scientific certificate.
+
+## Execution freeze and storage block
+
+The immutable implementation code commit is
+`7e8496df219171827a2d7586f73766eafefcffba`. Its
+[freeze manifest](../results/scope_adherence_r110/execution/implementation_freeze.json)
+has SHA-256
+`b7958188919f7b2b572ebba37661898b6d5ada48685b737e5f03f9998671d0d1`.
+The publication tag is `abi-r110-implementation-2026-11-17`; the earlier
+preregistration tag remains unchanged. No challenge packet has been materialized
+or scored, and no model has run under this implementation.
+
+The [first storage preflight](../results/scope_adherence_r110/execution/preflights/1794945749670695600.json)
+observed 10,634,899,456 free bytes versus the required 10,737,418,240 bytes.
+This is `BLOCKED_STORAGE_BEFORE_EXECUTION`, not a launched/failed scientific
+attempt. No files were deleted. Recheck the floor before materialization, scope
+evaluation and every source prompt; do not lower it to get a result.
+The [post-freeze preflight](../results/scope_adherence_r110/execution/preflights/1794945943081190100.json)
+remained blocked at 10,555,985,920 free bytes, 181,432,320 bytes below the floor.
+
+Development checks passed 63 new implementation tests, including the historical
+164 fixtures and seven known regressions, plus 75 preserved registration/R109
+tests (138 focused tests total). The full local suite passed 555 tests with four
+declared skips and 16 exact historical Phase 7 checks. See the
+[focused receipt](../results/review_2026_11_17/r110-implementation-development-a2.xml),
+[full-suite receipt](../results/review_2026_11_17/r110-implementation-final-default.xml)
+and [historical receipt](../results/review_2026_11_17/r110-implementation-final-phase7.xml).
+None scores the prospective challenge or qualifies English generation.
 
 ## Why this study
 

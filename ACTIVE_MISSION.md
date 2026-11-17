@@ -14,8 +14,9 @@ controls. Raw, unedited outputs alone may qualify. No GPU settings may change.
 
 The user now authorizes implementation/freeze and conditional execution. The
 finite evaluator, independent label-by-construction generator, fail-closed
-verifier and write-once driver are implemented. Publish the implementation freeze,
-then the actual challenge before scoring; do not score it during development.
+verifier and write-once driver are frozen at code commit `7e8496d`. The release
+tag is `abi-r110-implementation-2026-11-17`. Publish the actual challenge before
+scoring; do not score it during development.
 Storage is currently below the unchanged 10 GiB floor. Preserve preflight evidence
 and start no experiment stage until the floor is met. No deletion is authorized.
 No new model, recipient or training calls; no acquisition or LayerCake certificate.

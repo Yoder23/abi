@@ -3,6 +3,7 @@
 | Identity | Current value | Scope |
 | --- | --- | --- |
 | Python package | `0.4.0a1` | Supported alpha compiler API |
+| Current implementation freeze | `abi-r110-implementation-2026-11-17` | R110 evaluator/driver and blocked storage preflight; prospective challenge and generation unexecuted |
 | Current preregistration snapshot | `abi-prereg-r110-2026-11-17` | Scope/adherence design and exact inputs only; no new scientific result |
 | Current research review snapshot | `abi-research-r109-2026-11-17` | Complete negative control qualification with exact replay; no recipient or host promotion |
 | Controlling technical release | `abi-final-validation-v2-repaired-r7-2026-08-30` | Bounded R7 runtime/conformance proof |

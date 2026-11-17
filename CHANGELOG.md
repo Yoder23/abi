@@ -1,6 +1,6 @@
 # Changelog
 
-## 2026-11-17 — R110 implementation (not executed)
+## 2026-11-17 — R110 implementation freeze (not executed)
 
 - Implement the conservative three-way approval-scope evaluator, independent
   challenge construction, paired analysis, write-once driver and fail-closed
@@ -10,6 +10,9 @@
   published implementation/input freezes.
 - Record the unmet 10 GiB storage prerequisite without deleting evidence or
   launching models. R109, GPU settings, quality gates and LayerCake stay unchanged.
+- Seal the code at `7e8496d` with an additive implementation manifest; retain
+  the original preregistration/tag. Pass 555 local tests (four skips) and 16
+  historical Phase 7 checks. These are software checks, not challenge results.
 
 ## 2026-11-17 — R110 preregistration only
 
