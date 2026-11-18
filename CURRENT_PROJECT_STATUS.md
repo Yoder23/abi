@@ -1,18 +1,19 @@
 # Current project status
 
-Updated: 2026-11-17
+Updated: 2026-11-18
 
-Current implementation: [R110](docs/R110_SCOPE_ADHERENCE.md). The fixed design
-tests approval-scope validity first, then conditionally compares one input-only
-response contract with the existing source interface. No new model call or
-scientific result; no change to R109, quality thresholds, GPU settings or hosts.
-The evaluator/driver are frozen. [Verified cleanup](docs/R110_CLEANUP.md) restored
-the storage floor; the prospective challenge is materialized for publication
-before scoring. Its finite scope prerequisite now passed 600/600 with exact replay;
-the registered source-interface comparison is pending. This is not general semantic
-validation, acquisition proof or native LayerCake certification.
+Latest completed result: [R110](docs/R110_SCOPE_ADHERENCE.md). Its finite scope
+challenge passed 600/600, but the complete 384-call source comparison failed
+qualification: plain 31/48 pairs and contract 28/48 against 44. Exact scientific
+replay and all 72 unchanged-input controls passed. The sentence-count effect is
+not supported, and live scope-grammar abstentions remain disclosed. No change to
+R109, quality thresholds, GPU settings or hosts; no recipients or training ran.
+[Verified cleanup](docs/R110_CLEANUP.md) restored storage while preserving all
+differing evidence. The [review packet](docs/releases/R110_REVIEW.md) is a negative
+prerequisite result, not broad semantic validation, acquisition proof or a host
+certificate. No automatic follow-on is authorized.
 
-Latest completed result: [R109](docs/R109_TRAINED_GROUNDING.md) failed control
+Previous completed result: [R109](docs/R109_TRAINED_GROUNDING.md) failed control
 qualification with exact replay: 35/48 and 34/48 panels, 32/48 paired versus 44.
 There were 20 sentence-count failures and seven approval flags with disclosed
 scope errors. Even a maximally favorable treatment of those seven flags still

@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-11-18 — R110 complete negative source comparison
+
+- Complete all four source processes: 384 calls, 35,514 generated tokens, exact
+  scientific replay, and 72/72 unchanged-input token matches.
+- Preserve failed qualification: plain 33/48 and 34/48 panels, 31/48 pairs;
+  response contract 31/48 and 34/48 panels, 28/48 pairs, versus the fixed 44/48.
+- Report the unsupported sentence-count effect (+0.08333, paired 95% CI
+  [-0.20833, +0.37500]), 18/16 sentence failures and 14/24 unresolved scope outputs.
+  No scorer repair, gate change, training, recipient call or GPU setting change.
+- Add a write-once publication index and raw-recomputation receipt, a review
+  guide, and five publication-custody tests. Final supported checks pass 555
+  tests (four skips), plus 16 exact historical Phase 7 tests.
+- Keep the finite scope pass, source prerequisite failure, ABI acquisition and
+  native LayerCake evidence separate. No product promotion or automatic next run.
+
 ## 2026-11-18 — Verified cleanup and prospective R110 challenge
 
 - Retire only two redundant public-review checkouts after SHA-256 comparison,

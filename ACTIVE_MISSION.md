@@ -2,7 +2,7 @@
 
 Updated: 2026-11-18
 
-## Current experiment: R110 (scope passed; source comparison pending)
+## Latest completed experiment: R110 (control qualification failed)
 
 [R110](docs/R110_SCOPE_ADHERENCE.md) addresses the two measured prerequisite
 issues separately: finite approval-scope classification and sentence-count
@@ -12,19 +12,24 @@ permit only one source-interface contrast after a 600-case evaluator prerequisit
 Twenty-four sentence-limited inputs change; 72 remain identical as negative
 controls. Raw, unedited outputs alone may qualify. No GPU settings may change.
 
-The user now authorizes implementation/freeze and conditional execution. The
-finite evaluator, independent label-by-construction generator, fail-closed
-verifier and write-once driver are frozen at code commit `7e8496d`. The release
-tag is `abi-r110-implementation-2026-11-17`. Publish the actual challenge before
-scoring; do not score it during development.
+The finite evaluator, independent label-by-construction generator, fail-closed
+verifier and write-once driver remain frozen at code commit `7e8496d`, tag
+`abi-r110-implementation-2026-11-17`. The challenge and passing scope packet
+were published before their respective next stages.
 The [verified cleanup](docs/R110_CLEANUP.md) restored the unchanged 10 GiB floor:
 two redundant review checkouts were retired, with 416 differing files preserved
 and all Git objects retained in primary repositories. The actual 600-case
 challenge was published before scoring and passed all 600 cases, all 171 known
-development cases, and exact fresh-process replay. Publish that complete packet
-before the fixed four-process source comparison. Keep all earlier blocked
-preflights and require the storage guard at every subsequent stage/prompt.
-No new model, recipient or training calls; no acquisition or LayerCake certificate.
+development cases, and exact fresh-process replay. All four source processes now
+completed: 384 calls, exact scientific replay and 72/72 unchanged-input matches.
+Plain scored 33/48 and 34/48 panels, 31/48 pairs; contract scored 31/48 and 34/48,
+28/48 pairs. Both miss the 44/48 gates. The sentence-count effect is unsupported:
++0.08333, CI [-0.20833, +0.37500]. Preserve 18/16 sentence failures and 14/24
+unresolved scope outputs. The finite challenge is not general semantic validation.
+Keep every blocked preflight and all raw rows. No recipients, training or host
+changes ran. The research snapshot is `abi-research-r110-2026-11-18`; no control,
+acquisition or LayerCake certificate is promoted. Any successor requires separate
+prospective authorization; do not restart or silently repair R110.
 See the [implementation contract](experiments/scope_adherence_r110/IMPLEMENTATION.md).
 
 ## Completed bounded replication: R109
@@ -91,7 +96,7 @@ tagged CI pass. No live inference or independent hardware is claimed by that
 public-only reconstruction. No qualified English artifact is available for host
 acceptance yet.
 
-## Latest completed bounded diagnostic: R106
+## Earlier completed bounded diagnostic: R106
 
 [R106](experiments/grammar_interface_r106/PROTOCOL.md) separates grammatical
 discrimination from autonomous generation. Its external BLiMP labels support
@@ -152,7 +157,7 @@ The immutable R104 research release and review assets are public. Same-machine
 public reconstruction matches 566 assets and 729 bindings and passes 43 focused
 checks; the tagged source's GitHub CI passes. No scientific gate is promoted.
 
-## Latest completed bounded diagnostic: R103
+## Earlier completed bounded diagnostic: R103
 
 The user authorized [R103](experiments/recipient_interface_r103/PROTOCOL.md)
 and publication. Test the measured raw-prompt versus Task/Response interface
@@ -166,7 +171,7 @@ without rescoring the gate. The next proposal must validate evaluation boundarie
 and qualify a control before attributing recipient failure. See the
 [current packet](docs/R103_RECIPIENT_INTERFACE.md).
 
-## Latest completed study: R102
+## Earlier completed study: R102
 
 The [R102 protocol](experiments/coverage_exposure_r102/PROTOCOL.md) separates
 entity-coverage augmentation from optimization exposure using matched LoRA and
@@ -199,7 +204,7 @@ suitability and content grounding against a qualified English positive control.
 No native LayerCake defect or product promotion is established. The public
 [R102 packet](docs/R102_COVERAGE_EXPOSURE.md) records publication and review scope.
 
-## Latest completed diagnostic: R101
+## Earlier completed diagnostic: R101
 
 The user authorized the next diagnostic and publication. Follow
 [R101](experiments/execution_continuation_r101/PROTOCOL.md): fixed checkpoints,
@@ -217,7 +222,7 @@ autonomous quality. The full-model reference-token fit was 91.44% training and
 proposal should separate data coverage/generalization from optimization fit.
 No native LayerCake defect, fluent core or new product certificate is established.
 
-## Latest completed control: R100 negative; R99-FP32 remains closed
+## Earlier completed control: R100 negative; R99-FP32 remains closed
 
 The continuation starts with the preregistered
 [fit/grounding diagnostic](experiments/grounded_english_r99/FIT_AUDIT.md):

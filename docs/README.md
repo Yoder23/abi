@@ -16,10 +16,11 @@ goal rather than reading the campaign archive in filename order.
 
 ## Canonical current documents
 
-- [R110 scope/adherence study](R110_SCOPE_ADHERENCE.md) defines the next bounded
-  prerequisite study. Its finite challenge passed 600/600 with exact replay;
-  source comparison is pending. [Verified cleanup](R110_CLEANUP.md) restored
-  storage while preserving unique evidence. No product promotion or R109 change.
+- [R110 scope/adherence study](R110_SCOPE_ADHERENCE.md) completed: finite challenge
+  600/600, but both source interfaces failed qualification with exact replay.
+  [Review packet](releases/R110_REVIEW.md) and [verified cleanup](R110_CLEANUP.md)
+  document the result, dependency custody and recovered storage. No product
+  promotion, R109 change or native LayerCake result.
 
 - [R109 trained-task replication](R109_TRAINED_GROUNDING.md) keeps R108's scientific
   gates and matched controls fixed under a new bounded resource policy. Its

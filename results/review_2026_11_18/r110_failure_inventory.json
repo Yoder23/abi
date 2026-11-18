@@ -1,0 +1,104 @@
+{
+  "format": "r110-descriptive-failure-inventory/1",
+  "interfaces": {
+    "plain": {
+      "approval_class_counts": {
+        "FORBIDDEN_ASSERTION": 1,
+        "NO_FORBIDDEN_ASSERTION": 81,
+        "UNRESOLVED": 14
+      },
+      "raw_sha256": "b32666a66ea3d70de3dca41741bd5c618fe2198f869fae904dfa2085c238a674",
+      "sentence_count_failures": [
+        "r110-011-a",
+        "r110-011-b",
+        "r110-012-a",
+        "r110-012-b",
+        "r110-013-a",
+        "r110-013-b",
+        "r110-017-a",
+        "r110-017-b",
+        "r110-024-a",
+        "r110-024-b",
+        "r110-025-a",
+        "r110-025-b",
+        "r110-026-a",
+        "r110-026-b",
+        "r110-032-a",
+        "r110-032-b",
+        "r110-043-a",
+        "r110-043-b"
+      ],
+      "sentence_limited_rows": 24,
+      "unresolved_rows": [
+        "r110-001-b",
+        "r110-006-a",
+        "r110-011-a",
+        "r110-013-b",
+        "r110-016-a",
+        "r110-016-b",
+        "r110-023-b",
+        "r110-026-a",
+        "r110-028-a",
+        "r110-031-a",
+        "r110-031-b",
+        "r110-035-a",
+        "r110-035-b",
+        "r110-046-a"
+      ]
+    },
+    "response_contract": {
+      "approval_class_counts": {
+        "NO_FORBIDDEN_ASSERTION": 72,
+        "UNRESOLVED": 24
+      },
+      "raw_sha256": "b877bf0b3b3f9d63ca4d92d8a778c738c90efa30edf932fd38b072d47ad2e62d",
+      "sentence_count_failures": [
+        "r110-010-a",
+        "r110-011-a",
+        "r110-011-b",
+        "r110-012-a",
+        "r110-013-a",
+        "r110-017-a",
+        "r110-021-a",
+        "r110-021-b",
+        "r110-024-a",
+        "r110-024-b",
+        "r110-026-b",
+        "r110-032-a",
+        "r110-032-b",
+        "r110-034-a",
+        "r110-043-a",
+        "r110-043-b"
+      ],
+      "sentence_limited_rows": 24,
+      "unresolved_rows": [
+        "r110-001-b",
+        "r110-006-a",
+        "r110-010-a",
+        "r110-011-a",
+        "r110-012-a",
+        "r110-012-b",
+        "r110-013-a",
+        "r110-013-b",
+        "r110-016-a",
+        "r110-016-b",
+        "r110-017-a",
+        "r110-021-a",
+        "r110-023-b",
+        "r110-024-b",
+        "r110-025-a",
+        "r110-025-b",
+        "r110-026-b",
+        "r110-028-a",
+        "r110-031-a",
+        "r110-031-b",
+        "r110-034-a",
+        "r110-035-a",
+        "r110-035-b",
+        "r110-046-a"
+      ]
+    }
+  },
+  "result_sha256": "b29a4855de20f1fd23d3712720492bfad2f15826e3273b773803b95c343c5fa2",
+  "scope": "Post-result counts from unchanged scoring; initial observations only, no rescoring or new gate"
+}

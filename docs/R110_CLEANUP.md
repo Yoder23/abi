@@ -59,5 +59,6 @@ stage/prompt must still recheck the floor; this is not a permanent space guarant
 The public plan and completion are byte-identical copies of the local custody
 records. Preserved checkout metadata is retained locally, not indiscriminately
 published. This is storage/custody evidence, not an ABI or LayerCake quality result.
-Continue only the [frozen R110 study](R110_SCOPE_ADHERENCE.md); no new experiment,
-prompt sweep, training or gate relaxation follows from successful cleanup.
+The [frozen R110 study](R110_SCOPE_ADHERENCE.md) subsequently completed all 384
+source calls but failed control qualification. No new experiment, prompt sweep,
+training or gate relaxation follows from successful cleanup or that negative result.

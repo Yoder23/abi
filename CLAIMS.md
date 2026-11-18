@@ -1,12 +1,15 @@
 # ABI claim ledger
 
-Status date: 2026-11-17
+Status date: 2026-11-18
 
 [R110](docs/R110_SCOPE_ADHERENCE.md) passed its finite, author-constructed scope
-prerequisite (600/600 and exact replay), not general semantic validation. Software tests
-cannot establish evaluator validity, adherence improvement, English qualification,
-ABI acquisition or host acceptance. Its source-interface study is still pending;
-verified cleanup restored storage. No product claim below is promoted.
+challenge (600/600 and exact replay), not general semantic validation. Its source
+comparison completed 384 calls and exact scientific replay but failed both
+interfaces' unchanged qualification gates: 31/48 and 28/48 paired passes against
+44. No sentence-adherence improvement is supported. Live grammar abstentions
+remain non-passes and are not proof of actual contradictions. No training,
+recipient execution, ABI acquisition or native-host result follows. Verified
+cleanup restored storage; no product claim below is promoted.
 
 [R109](docs/R109_TRAINED_GROUNDING.md) is a completed resource-policy replication,
 not a scientific promotion. It failed the control gate at 32/48 paired outcomes

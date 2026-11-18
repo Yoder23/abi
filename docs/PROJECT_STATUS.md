@@ -1,13 +1,15 @@
 # ABI project status
 
-Status date: 2026-11-17
+Status date: 2026-11-18
 
-Current implementation: [R110](R110_SCOPE_ADHERENCE.md), separating approval-scope
-validation from one response-contract adherence contrast. Exact inputs and
-thresholds are registered; the evaluator/challenge/live driver are implemented.
-The [verified cleanup](R110_CLEANUP.md) restored the unchanged storage floor.
-The prospectively published 600-case challenge passed all cases with exact replay.
-Zero new model calls so far; source qualification remains open, with no host promotion.
+Latest result: [R110](R110_SCOPE_ADHERENCE.md) completed 384 source calls with exact
+scientific replay. Its finite scope challenge passed 600/600, but plain and
+contract qualification failed at 31/48 and 28/48 pairs against 44. The primary
+sentence-count effect is unsupported. All 72 unchanged-input controls match;
+live grammar abstentions remain disclosed non-passes. The
+[verified cleanup](R110_CLEANUP.md) restored the unchanged storage floor.
+No training, recipient call, GPU setting or native-host change; no product promotion.
+See the [review packet](releases/R110_REVIEW.md).
 
 [R109](R109_TRAINED_GROUNDING.md) completed with exact replay but failed the
 unchanged control gate: 35/48 and 34/48 panels, 32/48 pairs versus 44. Its 20

@@ -3,9 +3,12 @@
 | Identity | Current value | Scope |
 | --- | --- | --- |
 | Python package | `0.4.0a1` | Supported alpha compiler API |
-| Current implementation freeze | `abi-r110-implementation-2026-11-17` | R110 evaluator/driver and blocked storage preflight; prospective challenge and generation unexecuted |
-| Current preregistration snapshot | `abi-prereg-r110-2026-11-17` | Scope/adherence design and exact inputs only; no new scientific result |
-| Current research review snapshot | `abi-research-r109-2026-11-17` | Complete negative control qualification with exact replay; no recipient or host promotion |
+| Current research review snapshot | `abi-research-r110-2026-11-18` | Finite scope pass; complete source qualification failure with exact replay; no recipient or host promotion |
+| Passing finite prerequisite snapshot | `abi-r110-scope-2026-11-18` | Complete author-constructed scope packet, published before source execution |
+| Challenge publication snapshot | `abi-r110-challenge-2026-11-18` | Actual content-seeded challenge published before scoring; verified cleanup |
+| Current implementation freeze | `abi-r110-implementation-2026-11-17` | Immutable R110 evaluator/driver and historical blocked storage preflights |
+| Current preregistration snapshot | `abi-prereg-r110-2026-11-17` | Immutable scope/adherence design and exact inputs; registration alone is not a result |
+| Previous research review snapshot | `abi-research-r109-2026-11-17` | Complete negative control qualification with exact replay; no recipient or host promotion |
 | Controlling technical release | `abi-final-validation-v2-repaired-r7-2026-08-30` | Bounded R7 runtime/conformance proof |
 | Previous interrupted review snapshot | `abi-research-r108-resource-stop-2026-11-14` | Incomplete resource-budget stop; no English qualification or recipient result |
 | Previous completed diagnostic snapshot | `abi-research-r107-2026-11-13` | Natural-text residual intervention; no trained-route fluency or product promotion |

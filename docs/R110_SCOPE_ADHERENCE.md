@@ -1,7 +1,7 @@
-# R110 — scope and adherence (execution pending)
+# R110 — scope and sentence adherence
 
-Status: **finite evaluator prerequisite passed; source comparison pending**.
-No new model calls, training, recipient execution or GPU setting changes yet.
+Status: **completed — `CONTROL_QUALIFICATION_FAILED`**.
+No training, recipient execution or GPU setting changes.
 The user authorized implementation/freeze and
 conditional execution. The evaluator, challenge generator, driver and verifiers
 now exist under the [implementation contract](../experiments/scope_adherence_r110/IMPLEMENTATION.md).
@@ -28,7 +28,64 @@ assertions. The two fresh-process raw streams are byte-identical at SHA-256
 `56f773cc70da8cbf31f0f079a4b1d03a78b3b1565ff68bfa8c32cbbac3a7e82d`.
 This is `FINITE_SCOPE_PREREQUISITE_PASSED`, not general semantic validation,
 English qualification, ABI acquisition or LayerCake certification. Human ratings
-remain unchanged. Publish the complete prerequisite packet before source execution.
+remain unchanged. The complete prerequisite packet was published at
+`abi-r110-scope-2026-11-18` before source execution.
+
+## Completed source comparison
+
+The [immutable decision](../results/scope_adherence_r110/execution/live/decision.json)
+recomputes all four executions, exact scientific replay and every registered
+quality gate. Its SHA-256 is
+`b29a4855de20f1fd23d3712720492bfad2f15826e3273b773803b95c343c5fa2`.
+The research snapshot is `abi-research-r110-2026-11-18`; see the
+[review guide](releases/R110_REVIEW.md). This negative prerequisite result is not
+an ABI acquisition or native LayerCake failure.
+
+| Registered mechanical measure | Plain | Response contract | Required |
+| --- | --- | --- | --- |
+| Panel A | 33/48 | 31/48 | At least 44/48 |
+| Panel B | 34/48 | 34/48 | At least 44/48 |
+| Both members of a pair pass | 31/48 | 28/48 | At least 44/48 |
+| Sentence-limited rows meeting 2–3 sentences | 6/24 | 8/24 | Obligation on every qualifying row |
+| Collapse / generation-budget stops | 0 / 0 | 0 / 0 | Zero |
+
+The primary sentence-count effect is +0.08333 (8.33 percentage points), with
+paired 95% bootstrap CI [-0.20833, +0.37500] across 12 pair clusters. Its lower
+bound is not positive. The all-task quality difference is -0.02083, CI
+[-0.08333, +0.03125] across 48 pair clusters: it clears the -0.10 noninferiority
+safeguard but does not demonstrate improvement or clear absolute quality gates.
+The 72 unchanged-input token comparisons have zero mismatches.
+
+The finite grammar leaves 14 plain and 24 response-contract outputs
+`UNRESOLVED`; plain also has one `FORBIDDEN_ASSERTION`. Unresolved does not mean
+a proven semantic contradiction, and it cannot pass. For example,
+`r110-011-a` in the contract arm includes "Approval is still pending and has not
+been confirmed." The subjectless second conjunct is outside the recognized
+grammar; its `confirmed` span is unresolved. That same response has five
+sentences and independently violates the fixed sentence limit. The prospective
+finite challenge pass therefore does not establish coverage of live prose.
+
+Sentence-count failures alone (18 plain, 16 contract) prevent reaching the
+minimum combined 88/96 panel passes, even if all other checks were satisfied.
+This arithmetic is not an alternative score or a post-hoc rescue. Tone control
+is 0/6 in both panels for both interfaces; no candidate qualifies. Legacy scoring
+on these new outputs is reported separately: plain 35/48, 36/48 and 34/48 pairs;
+contract 34/48, 39/48 and 32/48 pairs. R109 is never rescored.
+
+All 384 calls completed, producing 35,514 tokens. The four worker wall times
+sum to 3,646.14 seconds and CPU times to 3,518.06 seconds; maximum sampled RSS
+was 4,653,031,424 bytes and CUDA allocation 8,211,492,352 bytes. The controller's
+recorded four-process loop took 4,420.094 seconds. That field excludes the final
+offline derivation. Workers include source hashing and prior-cell checks, so
+their unequal wall times are not a matched inference-speed benchmark. Separate
+publication recomputation time is recorded in the review receipt. No new weights,
+downloads, training, recipient calls or hardware-setting changes occurred.
+
+The scope replay is byte-identical. Live scientific replay excludes only timing
+and free-space observations (`wall_seconds`, `storage_before`), not outputs,
+tokens, prompts, scores or identity. Whole live raw-file bytes differ as expected.
+No automatic follow-on, gate relaxation, post-hoc scorer repair or broader
+English-core claim is authorized by completing this bounded study.
 
 The [first storage preflight](../results/scope_adherence_r110/execution/preflights/1794945749670695600.json)
 observed 10,634,899,456 free bytes versus the required 10,737,418,240 bytes.
@@ -59,9 +116,9 @@ every R109 score and raw file; it neither blames nor changes LayerCake.
 | Stage | Required evidence | Stop rule |
 | --- | --- | --- |
 | Registration (preserved) | Protocol, numeric contract, 96 exact task inputs, 192 renderings and tokenizer IDs, R109 hashes | Missing or changed inputs fail integrity checks; no execution follows automatically |
-| Implementation freeze (current) | New scope classifier, complete challenge generator, verifier, live driver and tests published before challenge scoring | No code/input freeze or storage floor, no challenge or GPU execution |
-| Scope challenge (future) | All 164 historical fixtures, seven known regressions, then 600 constructed cases with fresh-process replay | Any challenge error stops R110 before GPU work; no retry or seed selection |
-| Source comparison (conditional) | Plain versus one fixed response-contract interface, 96 prompts each plus replay | Any resource/integrity failure stops; quality failure cannot promote a control |
+| Implementation freeze (sealed) | New scope classifier, complete challenge generator, verifier, live driver and tests published before challenge scoring | No code/input freeze or storage floor, no challenge or GPU execution |
+| Scope challenge (passed) | All 164 historical fixtures, seven known regressions, then 600 constructed cases with fresh-process replay | Any challenge error stops R110 before GPU work; no retry or seed selection |
+| Source comparison (completed, failed qualification) | Plain versus one fixed response-contract interface, 96 prompts each plus replay | Any resource/integrity failure stops; quality failure cannot promote a control |
 
 The response contract changes only the 24 summarization/tone inputs. It repeats
 existing obligations in explicit metadata; it deletes no notes and supplies no
@@ -133,5 +190,7 @@ The registration verifier uses the pinned local source cache and retained R109
 dependencies. It hashes payloads and tokenizes inputs; it does not generate text.
 Its successful status is `REGISTRATION_INTEGRITY_ONLY`, never a scientific pass.
 Do not rerun the write-once `seal` command over published inputs. Implementation
-and conditional execution are now authorized, but the published freezes, storage
-floor and prospective evaluator prerequisite must all pass before GPU work.
+and execution have completed under the published freezes and unchanged storage
+floor. Do not rerun write-once commands over this evidence. Full raw recomputation
+uses `python -m experiments.scope_adherence_r110.run verify`; it makes no model
+calls and requires the exact dependencies described in the review guide.

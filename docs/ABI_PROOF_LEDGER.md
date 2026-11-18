@@ -1,12 +1,15 @@
 # ABI proof ledger
 
-Updated: 2026-11-17
+Updated: 2026-11-18
 
-R110's [finite scope prerequisite](R110_SCOPE_ADHERENCE.md) passed 600/600 with
-exact replay. This is not general semantic validation or adherence improvement;
-the fixed source comparison remains pending. No product proof-ledger state changes.
+R110's [finite scope prerequisite](R110_SCOPE_ADHERENCE.md) passed 600/600. Its
+384-call source comparison completed with exact scientific replay but failed
+qualification: plain 31/48 pairs, contract 28/48 against 44. The sentence-count
+effect is unsupported; all 72 unchanged-input controls match. Live scope abstentions
+remain disclosed non-passes. No general semantic, acquired-English or native-host
+claim follows, and no product proof-ledger state changes.
 
-Latest completed attempt: [R109](R109_TRAINED_GROUNDING.md) failed control
+Previous completed attempt: [R109](R109_TRAINED_GROUNDING.md) failed control
 qualification at 32/48 pairs versus 44, with exact replay. The recipient gate
 remained closed. Detector scope limitations do not rescue its sentence-count
 failures; no acquisition or native-host claim below is promoted.

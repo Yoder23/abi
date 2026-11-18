@@ -26,6 +26,19 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+R110 completed on 2026-11-18 after verified cleanup. The finite scope challenge
+passed 600/600, all 171 known cases and byte-identical replay. The four source
+processes completed 384 calls with exact scientific replay, but qualification
+failed: plain panels 33/48 and 34/48, 31/48 pairs; contract panels 31/48 and
+34/48, 28/48 pairs. The primary sentence-count effect is +0.08333, paired CI
+[-0.20833, +0.37500], not supported. All 72 unchanged-input controls match.
+Preserve 18/16 sentence failures and 14/24 unresolved scope classifications;
+finite syntactic validation is not broad live-prose coverage. No ABI acquisition,
+native LayerCake, training, GPU setting, gate or historical evidence changed.
+No control or English artifact is promoted and no automatic follow-on is
+authorized. A successor needs separate prospective authorization and must not
+silently repair, rerun or rescore this closed experiment.
+
 User continuation (2026-11-18): perform targeted, content-verified cleanup to
 restore R110 storage headroom, preserve every unique artifact, then continue the
 unchanged frozen R110. Candidate cleanup is restricted to redundant public-review

@@ -1,14 +1,15 @@
 # Research status
 
-Updated: 2026-11-17
+Updated: 2026-11-18
 
-[R110](R110_SCOPE_ADHERENCE.md) is implemented, not a completed
-experiment. It fixes a scope-validation prerequisite, one response-contract
-contrast, all quality gates and failure ownership before new source outputs.
-Development/input tests do not certify the evaluator or an English control.
-Its prospective finite scope challenge passed 600/600 with exact replay. The live
-source comparison is pending. Verified cleanup restored storage; R109 and LayerCake
-are unchanged. This prerequisite is not general semantic validation.
+[R110](R110_SCOPE_ADHERENCE.md) completed with a finite scope pass and a source
+qualification failure. The 600-case challenge and all 384 source calls replayed
+exactly within their declared scope. Plain scored 31/48 pairs and contract 28/48
+against 44; the sentence-count effect's CI includes zero. All 72 unchanged-input
+controls agree. The parser still abstains on some live prose, and those outputs
+remain non-passes. Verified cleanup restored storage; R109, quality thresholds,
+GPU settings and LayerCake are unchanged. Neither broad semantic validation nor
+ABI acquisition or host qualification follows. No automatic successor is authorized.
 
 [R109](R109_TRAINED_GROUNDING.md) completed the frozen R108 panel and exact replay
 under a separately registered runtime budget. It failed at 32/48 paired passes

@@ -29,7 +29,7 @@ LoRA and distillation.
 
 | Evidence line | What is established | What remains open |
 | --- | --- | --- |
-| R110 | Finite scope prerequisite passed 600/600 with exact replay; storage restored with evidence preserved | Fixed source-interface comparison pending; no acquired English core or host promotion |
+| R110 | Finite scope challenge 600/600; complete 384-call source comparison with exact replay; evidence-preserving cleanup | Control qualification failed: plain 31/48 pairs, contract 28/48 versus 44; no acquired core or host promotion |
 | R109 | Complete control execution and exact replay; 32/48 paired passes versus 44 required | Recipient gate closed; adherence failures and evaluator scope limits, not an acquisition or host result |
 | R108 | Pinned inputs and preserved resource-budget stop: 13/96 initial responses, no replay or recipients | Control qualification and trained-task comparison remain incomplete |
 | R107 | No-training residual intervention and exact live replay; modest natural-text loss interference, with a repetition trade-off | No fluent core, trained-route retention or native-host promotion |
@@ -51,12 +51,14 @@ public technical release remains
 [`abi-final-validation-v2-repaired-r7-2026-08-30`](https://github.com/Yoder23/abi/releases/tag/abi-final-validation-v2-repaired-r7-2026-08-30).
 The current default branch is a later peer-review candidate.
 
-The [R110 study](docs/R110_SCOPE_ADHERENCE.md) has **passed its finite evaluator prerequisite**.
-It separates approval-scope errors from sentence-count adherence, keeps the
-quality gates fixed, and permits no edited outputs, new training or host changes.
-The [verified cleanup](docs/R110_CLEANUP.md) restored the registered storage floor.
-The prospective challenge passed 600/600 with exact replay; source comparison is pending.
-Implementation tests and successful cleanup are not a qualification or breakthrough.
+The [R110 study](docs/R110_SCOPE_ADHERENCE.md) **completed but failed control qualification**.
+Its finite evaluator challenge passed 600/600; the source comparison produced
+384 calls with exact scientific replay, but neither interface met the unchanged
+quality gates. The response-contract sentence effect was not statistically
+supported. Live scope-grammar limitations are disclosed, not silently repaired.
+[Verified cleanup](docs/R110_CLEANUP.md) restored storage while preserving evidence.
+The [review guide](docs/releases/R110_REVIEW.md) explains the negative result and
+exact dependency requirements. No acquired English core or LayerCake promotion follows.
 
 The completed [R109 replication](docs/R109_TRAINED_GROUNDING.md) kept GPU settings,
 quality gates and matched controls unchanged. The control failed at 35/48 and
