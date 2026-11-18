@@ -26,6 +26,17 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+User continuation (2026-11-18): preregister and execute one bounded R111 under
+`experiments/scope_revision_r111/PROTOCOL.md`, targeting sentence adherence and
+R110's unresolved scope constructions. Preserve R110 and every quality gate;
+GPU hardware settings remain unchanged. A new finite parser must first pass its
+published challenge. Only then compare a raw draft with one unconditional model
+revision, with no scorer feedback or answer supplied. Account for the extra call
+and declared 2048-token input envelope; do not label this one-pass or efficient
+acquisition. No training, recipient, native-host change, sweep or automatic next
+run. Freeze and publish before challenge scoring and source generation; retain
+negative/resource outcomes and separate evaluator, prerequisite, ABI and host.
+
 R110 completed on 2026-11-18 after verified cleanup. The finite scope challenge
 passed 600/600, all 171 known cases and byte-identical replay. The four source
 processes completed 384 calls with exact scientific replay, but qualification
