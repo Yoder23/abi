@@ -2,7 +2,7 @@
 
 Updated: 2026-11-18
 
-## Current bounded experiment: R111 (implementation, before execution)
+## Current bounded experiment: R111 (implementation frozen, before execution)
 
 [R111](docs/R111_SCOPE_REVISION.md) targets the measured sentence and scope gaps.
 The [preregistration](experiments/scope_revision_r111/PROTOCOL.md) is published at
@@ -10,6 +10,10 @@ The [preregistration](experiments/scope_revision_r111/PROTOCOL.md) is published 
 challenge before source execution. Then compare a raw draft with exactly one
 unconditional model revision: original request and own draft only, no scorer
 feedback, answer, output repair or best-of selection. Both outputs are preserved.
+
+The implementation is frozen at `80dc070`, published as
+`abi-r111-implementation-2026-11-18`; 623 supported tests and 16 exact historical
+checks pass. The actual prospective challenge has not yet been scored.
 
 All quality gates and GPU hardware settings stay unchanged. The two-call workflow
 uses a declared 2048-token input envelope to retain the full draft, not a relaxed
