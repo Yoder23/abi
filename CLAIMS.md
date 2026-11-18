@@ -2,6 +2,11 @@
 
 Status date: 2026-11-18
 
+[R111](docs/R111_SCOPE_REVISION.md) is preregistered, not a scientific result. Its
+planned parser challenge and conventional two-call revision workflow cannot by
+themselves establish ABI novelty, single-pass fluency, acquisition efficiency or
+LayerCake capability. Unchanged gates and explicit failure ownership apply.
+
 [R110](docs/R110_SCOPE_ADHERENCE.md) passed its finite, author-constructed scope
 challenge (600/600 and exact replay), not general semantic validation. Its source
 comparison completed 384 calls and exact scientific replay but failed both

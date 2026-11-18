@@ -48,4 +48,5 @@ jobs:
           tests/test_trained_grounding_r109.py
           tests/test_scope_adherence_r110.py
           tests/test_scope_adherence_r110_execution.py
+          tests/test_scope_revision_r111.py
       - run: python -m build

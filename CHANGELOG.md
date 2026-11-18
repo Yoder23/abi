@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-11-18 — R111 preregistration and implementation
+
+- Publish a bounded finite scope-coverage challenge and unconditional one-revision
+  source workflow before execution. Preserve R110 and every quality threshold.
+- Version the parser for observed perfect-negation, reduced-conditional and
+  provisional-status constructions; keep ambiguous forms unresolved/non-passing.
+- Retain raw drafts and revisions, no scorer feedback, no best-of selection,
+  and explicitly account for the second call and 2048-token input envelope.
+- Add write-once execution, strict token/receipt/custody validation and hostile
+  development tests. No new model, recipient or training call at this stage.
+
 ## 2026-11-18 — R110 complete negative source comparison
 
 - Complete all four source processes: 384 calls, 35,514 generated tokens, exact

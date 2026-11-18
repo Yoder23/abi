@@ -29,6 +29,7 @@ LoRA and distillation.
 
 | Evidence line | What is established | What remains open |
 | --- | --- | --- |
+| R111 | Published bounded design; finite parser and one unconditional revision workflow under development checks | Fresh 800-case prerequisite and source execution pending; no acquisition or host result |
 | R110 | Finite scope challenge 600/600; complete 384-call source comparison with exact replay; evidence-preserving cleanup | Control qualification failed: plain 31/48 pairs, contract 28/48 versus 44; no acquired core or host promotion |
 | R109 | Complete control execution and exact replay; 32/48 paired passes versus 44 required | Recipient gate closed; adherence failures and evaluator scope limits, not an acquisition or host result |
 | R108 | Pinned inputs and preserved resource-budget stop: 13/96 initial responses, no replay or recipients | Control qualification and trained-task comparison remain incomplete |
@@ -50,6 +51,11 @@ These lineages must not be combined into one certification. The controlling
 public technical release remains
 [`abi-final-validation-v2-repaired-r7-2026-08-30`](https://github.com/Yoder23/abi/releases/tag/abi-final-validation-v2-repaired-r7-2026-08-30).
 The current default branch is a later peer-review candidate.
+
+Current bounded work is [R111](docs/R111_SCOPE_REVISION.md): a new finite scope
+challenge, then one unconditional source revision only if the challenge passes.
+All quality gates remain unchanged; the extra call and larger input envelope
+are accounted for. No fresh scientific outcome is claimed by implementation.
 
 The [R110 study](docs/R110_SCOPE_ADHERENCE.md) **completed but failed control qualification**.
 Its finite evaluator challenge passed 600/600; the source comparison produced

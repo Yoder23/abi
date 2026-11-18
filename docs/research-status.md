@@ -2,6 +2,12 @@
 
 Updated: 2026-11-18
 
+[R111](R111_SCOPE_REVISION.md) prospectively targets the measured scope and sentence
+gaps with a finite construction challenge and one unconditional model revision.
+Implementation is not qualification; source execution is conditional on the
+published challenge. It introduces extra inference cost, not ABI novelty or
+training efficiency, and leaves all gates and historical evidence unchanged.
+
 [R110](R110_SCOPE_ADHERENCE.md) completed with a finite scope pass and a source
 qualification failure. The 600-case challenge and all 384 source calls replayed
 exactly within their declared scope. Plain scored 31/48 pairs and contract 28/48

@@ -2,6 +2,22 @@
 
 Updated: 2026-11-18
 
+## Current bounded experiment: R111 (implementation, before execution)
+
+[R111](docs/R111_SCOPE_REVISION.md) targets the measured sentence and scope gaps.
+The [preregistration](experiments/scope_revision_r111/PROTOCOL.md) is published at
+`abi-prereg-r111-2026-11-18`. A versioned finite parser must pass its new 800-case
+challenge before source execution. Then compare a raw draft with exactly one
+unconditional model revision: original request and own draft only, no scorer
+feedback, answer, output repair or best-of selection. Both outputs are preserved.
+
+All quality gates and GPU hardware settings stay unchanged. The two-call workflow
+uses a declared 2048-token input envelope to retain the full draft, not a relaxed
+output gate. Extra cost is explicit; no one-pass, ABI-novelty or efficiency claim.
+Freeze implementation and publish the actual challenge before scoring. No training,
+recipient, native LayerCake change, automatic retry or follow-on experiment.
+Keep evaluator failures, source prerequisites, acquisition and host results separate.
+
 ## Latest completed experiment: R110 (control qualification failed)
 
 [R110](docs/R110_SCOPE_ADHERENCE.md) addresses the two measured prerequisite

@@ -2,6 +2,11 @@
 
 Status date: 2026-11-18
 
+Active study: [R111](R111_SCOPE_REVISION.md) is preregistered and being implemented.
+Finite scope validation must pass before one draft/revision source comparison.
+No fresh scientific result yet; unchanged quality gates and GPU settings, explicit
+two-call/context costs, and no ABI acquisition or native-host execution.
+
 Latest result: [R110](R110_SCOPE_ADHERENCE.md) completed 384 source calls with exact
 scientific replay. Its finite scope challenge passed 600/600, but plain and
 contract qualification failed at 31/48 and 28/48 pairs against 44. The primary

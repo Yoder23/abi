@@ -2,6 +2,10 @@
 
 Updated: 2026-11-18
 
+[R111](R111_SCOPE_REVISION.md) is a preregistered follow-up, not a proof-ledger
+promotion. Its finite scope challenge and two-call source workflow are not yet
+executed. ABI acquisition and native LayerCake remain out of scope.
+
 R110's [finite scope prerequisite](R110_SCOPE_ADHERENCE.md) passed 600/600. Its
 384-call source comparison completed with exact scientific replay but failed
 qualification: plain 31/48 pairs, contract 28/48 against 44. The sentence-count

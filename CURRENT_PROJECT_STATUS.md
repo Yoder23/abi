@@ -2,6 +2,12 @@
 
 Updated: 2026-11-18
 
+Current authorized work: [R111](docs/R111_SCOPE_REVISION.md), a preregistered finite
+scope-coverage challenge followed conditionally by a draft/one-revision source
+comparison. Implementation is being tested; no fresh challenge or model result
+exists yet. Quality gates, GPU settings, R110 and LayerCake are unchanged. The
+extra call and 2048-token input allowance are disclosed, not an efficiency claim.
+
 Latest completed result: [R110](docs/R110_SCOPE_ADHERENCE.md). Its finite scope
 challenge passed 600/600, but the complete 384-call source comparison failed
 qualification: plain 31/48 pairs and contract 28/48 against 44. Exact scientific

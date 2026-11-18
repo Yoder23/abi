@@ -16,6 +16,9 @@ goal rather than reading the campaign archive in filename order.
 
 ## Canonical current documents
 
+- [R111 scope/revision study](R111_SCOPE_REVISION.md): current preregistered
+  follow-up; finite challenge first, then one unconditional revision. No result yet.
+
 - [R110 scope/adherence study](R110_SCOPE_ADHERENCE.md) completed: finite challenge
   600/600, but both source interfaces failed qualification with exact replay.
   [Review packet](releases/R110_REVIEW.md) and [verified cleanup](R110_CLEANUP.md)

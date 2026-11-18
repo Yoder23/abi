@@ -3,6 +3,7 @@
 | Identity | Current value | Scope |
 | --- | --- | --- |
 | Python package | `0.4.0a1` | Supported alpha compiler API |
+| Current preregistration | `abi-prereg-r111-2026-11-18` | Scope-coverage and unconditional revision design; no fresh result |
 | Current research review snapshot | `abi-research-r110-2026-11-18` | Finite scope pass; complete source qualification failure with exact replay; no recipient or host promotion |
 | Passing finite prerequisite snapshot | `abi-r110-scope-2026-11-18` | Complete author-constructed scope packet, published before source execution |
 | Challenge publication snapshot | `abi-r110-challenge-2026-11-18` | Actual content-seeded challenge published before scoring; verified cleanup |
