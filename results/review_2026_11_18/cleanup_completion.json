@@ -1,0 +1,103 @@
+{
+  "format": "r110-targeted-cleanup-completion/1",
+  "utc": "2026-11-18T18:19:10.3059136Z",
+  "plan_sha256": "78abc5a544f8d0ce690a4f65370541a1d6caac66ae4754e410471055d6e5d941",
+  "removed_checkouts": [
+    "abi_release",
+    "layercake_release"
+  ],
+  "preserved_unique_files": 416,
+  "preserved_unique_bytes": 46481806.0,
+  "free_bytes_after": 17860808704,
+  "root_receipts_unchanged": [
+    {
+      "path": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\public_r102_reconstruction.json",
+      "sha256": "7d19d8a936d2c311faab3f71c846ae86033a1a87bc53cecf76ce72bb7886c347",
+      "bytes": 3969
+    },
+    {
+      "path": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\public_r103_reconstruction.json",
+      "sha256": "e224006dfe1a19c0eab10bfb185d41502d5ca181b1bb256a934cf3b1f3f22306",
+      "bytes": 3927
+    },
+    {
+      "path": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\public_r104_reconstruction.json",
+      "sha256": "017b84072a2d0e04c79426c12e72d9f002099d06785b660ab2de656d62e9d696",
+      "bytes": 4468
+    },
+    {
+      "path": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\public_r105_reconstruction.json",
+      "sha256": "1c994c811b835f76ac54fbe6a064cbc55bec51dd6ac8753bb5086a05d73f2e80",
+      "bytes": 8321
+    },
+    {
+      "path": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\public_r106_reconstruction.json",
+      "sha256": "f704771f27952bfbe8f1b2da02914de386f609ed0df2b14e34cbd046d60a1101",
+      "bytes": 14721
+    },
+    {
+      "path": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\r102_manifest.json",
+      "sha256": "45a03f18d0f567e8a5c06fc08f40c31cbc0adb6ce5baf0c3d0b7e9cf4e1a39be",
+      "bytes": 151936
+    },
+    {
+      "path": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\r103_manifest.json",
+      "sha256": "6a9cf5a7c46d02ea48331828cfd643209624b72b8c9215ebb6ce68c1d96dddc7",
+      "bytes": 116036
+    },
+    {
+      "path": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\r104_manifest.json",
+      "sha256": "4be7dfc63be3204876da8aae6ceed8a9f90860f085da467e26f174a8149b7af4",
+      "bytes": 116986
+    },
+    {
+      "path": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\r105_manifest.json",
+      "sha256": "1f651c13866164009630f523735a959e24284c230cc694b59e3a5de06a25e2f5",
+      "bytes": 7167
+    },
+    {
+      "path": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\r106_manifest.json",
+      "sha256": "3e0b15e1368cd71e9e51cdd4e28f3a9aac973bc618ea67fd7ff5398288d30233",
+      "bytes": 109920
+    },
+    {
+      "path": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\r108_public_reconstruction.json",
+      "sha256": "d0b7618c9b5d0bdc3629f6c2c4a48d77710b82f3df98198e5bb580dffa956e54",
+      "bytes": 8988
+    },
+    {
+      "path": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\r109_public_reconstruction.json",
+      "sha256": "74368fd6e9d8f3514a0a836a5062231f4f4ed64232c19c779c6c299bff3d6c5f",
+      "bytes": 7013
+    },
+    {
+      "path": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\review_r102_public.py",
+      "sha256": "6941e8e4507329535456499db72a3e64fea888531ab14f9b6a67f3bc790d5ab6",
+      "bytes": 5390
+    },
+    {
+      "path": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\review_r103_public.py",
+      "sha256": "11f309d9749bf2099e2084a5aa36b6886c1c7d50aa2397e481130c9455820fb8",
+      "bytes": 4657
+    },
+    {
+      "path": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\review_r104_public.py",
+      "sha256": "4ea260b812cfbe5f438d4bd30d8d0e2e37d5fb7df1c311ded31841e78b45f9f7",
+      "bytes": 4721
+    },
+    {
+      "path": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\review_r105_public.py",
+      "sha256": "349c98286cf637518efc83607a23a7fef1e5c9cf5159208ded1a5049f8fb12af",
+      "bytes": 7030
+    },
+    {
+      "path": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\review_r106_public.py",
+      "sha256": "6534b49393bdcd725267ee640daadf3057e151866b83bfcfa63697a6730a69cc",
+      "bytes": 7990
+    }
+  ],
+  "retained_cache_directories": [
+    "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\hf_cache",
+    "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\_public_r102_20261110\\hf_cache_copy"
+  ]
+}

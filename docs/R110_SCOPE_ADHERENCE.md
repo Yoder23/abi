@@ -4,10 +4,11 @@ Status: **implementation frozen, not executed**. No new model calls, training, r
 execution or GPU setting changes. The user authorized implementation/freeze and
 conditional execution. The evaluator, challenge generator, driver and verifiers
 now exist under the [implementation contract](../experiments/scope_adherence_r110/IMPLEMENTATION.md).
-The unchanged 10 GiB storage floor is currently unmet. Development tests are not
+The unchanged 10 GiB storage floor was restored by the authorized
+[verified cleanup](R110_CLEANUP.md) on 2026-11-18. Development tests are not
 the prospective challenge, and implementation is not a scientific certificate.
 
-## Execution freeze and storage block
+## Execution freeze and preserved storage blocks
 
 The immutable implementation code commit is
 `7e8496df219171827a2d7586f73766eafefcffba`. Its
@@ -15,8 +16,11 @@ The immutable implementation code commit is
 has SHA-256
 `b7958188919f7b2b572ebba37661898b6d5ada48685b737e5f03f9998671d0d1`.
 The publication tag is `abi-r110-implementation-2026-11-17`; the earlier
-preregistration tag remains unchanged. No challenge packet has been materialized
-or scored, and no model has run under this implementation.
+preregistration tag remains unchanged. The one content-derived 600-case challenge
+is now [materialized](../results/scope_adherence_r110/execution/challenge.json),
+SHA-256 `3af120c5be55f441732314033b8b38afdf5b384aef52c7bb4554f9e4c2107023`.
+It must be published before scoring. No challenge score or model call is claimed
+by this input publication.
 
 The [first storage preflight](../results/scope_adherence_r110/execution/preflights/1794945749670695600.json)
 observed 10,634,899,456 free bytes versus the required 10,737,418,240 bytes.

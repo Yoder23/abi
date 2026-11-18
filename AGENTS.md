@@ -26,6 +26,17 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+User continuation (2026-11-18): perform targeted, content-verified cleanup to
+restore R110 storage headroom, preserve every unique artifact, then continue the
+unchanged frozen R110. Candidate cleanup is restricted to redundant public-review
+checkouts under `_public_r102_20261110`; primary repositories, shared source cache,
+root reconstruction receipts and unique evidence must survive. Verify all Git
+objects in the primary repositories, hash duplicate files, relocate unique files
+outside deletion targets, and record the exact audit/retirement. No GPU setting,
+quality gate, scientific code or historical evidence change is authorized.
+Publish the challenge before scoring and preserve the first result, including
+any negative or resource-limited outcome. No automatic follow-on experiment.
+
 User continuation (2026-11-17): implement and publish one R110 execution freeze,
 then execute only if its unchanged storage and evaluator prerequisites pass.
 `experiments/scope_adherence_r110/IMPLEMENTATION.md` operationalizes the immutable

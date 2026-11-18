@@ -1,6 +1,6 @@
 # Active mission
 
-Updated: 2026-11-17
+Updated: 2026-11-18
 
 ## Current implementation: R110 (not executed)
 
@@ -17,8 +17,11 @@ finite evaluator, independent label-by-construction generator, fail-closed
 verifier and write-once driver are frozen at code commit `7e8496d`. The release
 tag is `abi-r110-implementation-2026-11-17`. Publish the actual challenge before
 scoring; do not score it during development.
-Storage is currently below the unchanged 10 GiB floor. Preserve preflight evidence
-and start no experiment stage until the floor is met. No deletion is authorized.
+The [verified cleanup](docs/R110_CLEANUP.md) restored the unchanged 10 GiB floor:
+two redundant review checkouts were retired, with 416 differing files preserved
+and all Git objects retained in primary repositories. The actual 600-case
+challenge is materialized; publish it before scoring. Keep all earlier blocked
+preflights and require the storage guard at every subsequent stage/prompt.
 No new model, recipient or training calls; no acquisition or LayerCake certificate.
 See the [implementation contract](experiments/scope_adherence_r110/IMPLEMENTATION.md).
 

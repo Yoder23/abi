@@ -6,8 +6,9 @@ Current implementation: [R110](docs/R110_SCOPE_ADHERENCE.md). The fixed design
 tests approval-scope validity first, then conditionally compares one input-only
 response contract with the existing source interface. No new model call or
 scientific result; no change to R109, quality thresholds, GPU settings or hosts.
-The evaluator/driver are implemented; prospective execution waits for the
-registered storage floor and published implementation/challenge freezes.
+The evaluator/driver are frozen. [Verified cleanup](docs/R110_CLEANUP.md) restored
+the storage floor; the prospective challenge is materialized for publication
+before scoring. No scientific gate has yet been passed by this implementation.
 
 Latest completed result: [R109](docs/R109_TRAINED_GROUNDING.md) failed control
 qualification with exact replay: 35/48 and 34/48 panels, 32/48 paired versus 44.

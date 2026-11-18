@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-11-18 — Verified cleanup and prospective R110 challenge
+
+- Retire only two redundant public-review checkouts after SHA-256 comparison,
+  Git object retention/integrity checks, and relocation of 416 differing files.
+  Preserve 17 root receipts/scripts, caches, primary repositories and R109.
+- Observe about 16.24 GiB net free-space recovery. The registered 10 GiB R110
+  storage guard now passes without changing GPU settings or scientific gates.
+- Materialize the single 600-case, content-seeded challenge for publication
+  before scoring. No challenge pass or model result is implied by this commit.
+- After cleanup, 555 local tests pass (four skips), plus 16 historical checks.
+
 ## 2026-11-17 — R110 implementation freeze (not executed)
 
 - Implement the conservative three-way approval-scope evaluator, independent

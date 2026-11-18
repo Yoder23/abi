@@ -17,8 +17,9 @@ goal rather than reading the campaign archive in filename order.
 ## Canonical current documents
 
 - [R110 scope/adherence study](R110_SCOPE_ADHERENCE.md) defines the next bounded
-  prerequisite study. Its evaluator and driver are implemented but unexecuted;
-  the registered storage floor is unmet. No new scientific result or R109 change.
+  prerequisite study. Its evaluator and driver are frozen; the challenge is
+  materialized but unscored. [Verified cleanup](R110_CLEANUP.md) restored storage
+  while preserving unique evidence. No new scientific result or R109 change.
 
 - [R109 trained-task replication](R109_TRAINED_GROUNDING.md) keeps R108's scientific
   gates and matched controls fixed under a new bounded resource policy. Its
