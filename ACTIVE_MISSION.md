@@ -2,7 +2,7 @@
 
 Updated: 2026-11-18
 
-## Current bounded experiment: R111 (finite scope passed, source execution next)
+## Latest completed experiment: R111 (partial gain, qualification failed)
 
 [R111](docs/R111_SCOPE_REVISION.md) targets the measured sentence and scope gaps.
 The [preregistration](experiments/scope_revision_r111/PROTOCOL.md) is published at
@@ -16,16 +16,22 @@ The implementation is frozen at `80dc070`, published as
 checks pass. The published prospective challenge passed 800/800 cases and all
 793 development obligations with byte-identical replay and no false-safe result.
 This finite author-constructed prerequisite is not general semantic validation.
-Publish the scope packet before the registered source execution.
+The scope packet was published before source execution. All 384 calls completed
+with exact scientific replay. Draft panels scored 39/48 and 38/48, 37/48 pairs;
+revision panels scored 42/48 and 44/48, 41/48 pairs, against the unchanged 44/48.
+Sentence adherence rose 7/24 to 15/24 (paired CI +0.16667 to +0.50), but absolute
+and summary/tone gates still fail. Three scope-unresolved outputs remain per arm.
+Preserve this partial gain and overall negative result; no control or artifact
+is promoted. [Review packet](docs/releases/R111_REVIEW.md).
 
 All quality gates and GPU hardware settings stay unchanged. The two-call workflow
 uses a declared 2048-token input envelope to retain the full draft, not a relaxed
 output gate. Extra cost is explicit; no one-pass, ABI-novelty or efficiency claim.
-Freeze implementation and publish the actual challenge before scoring. No training,
+Implementation and actual challenge were published before scoring. No training,
 recipient, native LayerCake change, automatic retry or follow-on experiment.
 Keep evaluator failures, source prerequisites, acquisition and host results separate.
 
-## Latest completed experiment: R110 (control qualification failed)
+## Previous completed experiment: R110 (control qualification failed)
 
 [R110](docs/R110_SCOPE_ADHERENCE.md) addresses the two measured prerequisite
 issues separately: finite approval-scope classification and sentence-count

@@ -2,12 +2,15 @@
 
 Status date: 2026-11-18
 
-Active study: [R111](R111_SCOPE_REVISION.md) is preregistered and being implemented.
-Finite scope validation must pass before one draft/revision source comparison.
-No fresh scientific result yet; unchanged quality gates and GPU settings, explicit
-two-call/context costs, and no ABI acquisition or native-host execution.
+Latest result: [R111](R111_SCOPE_REVISION.md) completed with exact 384-call replay.
+Sentence adherence improves 7/24 to 15/24 (paired CI +0.16667 to +0.50), but
+qualification fails: revision 41/48 pairs versus 44, panels 42/48 and 44/48, with
+summary/tone floors missed. Three scope-unresolved outputs remain per arm despite
+the finite 800-case prerequisite pass. Gates, GPU settings and historical evidence
+are unchanged; two-call/context costs are explicit. No ABI acquisition, native-host
+execution or artifact promotion. [Review packet](releases/R111_REVIEW.md).
 
-Latest result: [R110](R110_SCOPE_ADHERENCE.md) completed 384 source calls with exact
+Previous result: [R110](R110_SCOPE_ADHERENCE.md) completed 384 source calls with exact
 scientific replay. Its finite scope challenge passed 600/600, but plain and
 contract qualification failed at 31/48 and 28/48 pairs against 44. The primary
 sentence-count effect is unsupported. All 72 unchanged-input controls match;

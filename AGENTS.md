@@ -26,6 +26,17 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+R111 completed on 2026-11-18: finite scope passed 800 new and 793 development
+cases with byte-identical replay; all 384 source calls have exact scientific
+replay. Sentence adherence improves 7/24 to 15/24 (paired CI +0.16667 to +0.50),
+but absolute qualification fails: draft 37/48 pairs, revision 41/48 versus 44;
+revision panels 42/48 and 44/48, with summary/tone floors missed. Preserve the
+nine revised sentence failures and three unresolved scope outputs per arm.
+No combined endpoint, qualified English control, ABI acquisition or host claim
+is promoted. No training, recipient call, GPU setting change or historical
+rewrite occurred. Keep R111 closed to repairs/retries; any successor requires
+new prospective authorization and must retain failure ownership boundaries.
+
 User continuation (2026-11-18): preregister and execute one bounded R111 under
 `experiments/scope_revision_r111/PROTOCOL.md`, targeting sentence adherence and
 R110's unresolved scope constructions. Preserve R110 and every quality gate;

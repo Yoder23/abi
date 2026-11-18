@@ -4,9 +4,13 @@ Updated: 2026-11-18
 
 [R111](R111_SCOPE_REVISION.md) prospectively targets the measured scope and sentence
 gaps with a finite construction challenge and one unconditional model revision.
-Implementation is not qualification; source execution is conditional on the
-published challenge. It introduces extra inference cost, not ABI novelty or
-training efficiency, and leaves all gates and historical evidence unchanged.
+The finite prerequisite passed 800 new and 793 development cases, and all 384
+source calls replay exactly. Sentence adherence improves 7/24 to 15/24 (paired CI
++0.16667 to +0.50), but qualification fails: revision 41/48 pairs versus 44, with
+summary/tone floors missed and three unresolved scope outputs per arm. This is
+partial prerequisite progress, not a combined-endpoint pass, broad semantic
+validation, acquired English or native-host result. Extra inference cost is
+explicit; every gate and historical evidence packet remains unchanged.
 
 [R110](R110_SCOPE_ADHERENCE.md) completed with a finite scope pass and a source
 qualification failure. The 600-case challenge and all 384 source calls replayed

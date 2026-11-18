@@ -2,14 +2,17 @@
 
 Updated: 2026-11-18
 
-Current authorized work: [R111](docs/R111_SCOPE_REVISION.md), a preregistered finite
-scope-coverage challenge followed conditionally by a draft/one-revision source
-comparison. The frozen parser passed 800/800 new finite cases and 793 development
-obligations with exact replay; no model result exists yet. This is not independent
-semantic validation. Quality gates, GPU settings, R110 and LayerCake are unchanged. The
-extra call and 2048-token input allowance are disclosed, not an efficiency claim.
+Latest completed result: [R111](docs/R111_SCOPE_REVISION.md). Its finite scope
+prerequisite passed 800/800 new cases and 793 development obligations with exact
+replay. All 384 source calls completed with exact scientific replay. Sentence
+adherence improved 7/24 to 15/24 (paired CI +0.16667 to +0.50), but qualification
+failed: draft 37/48 pairs, revision 41/48 versus 44. Revision panels are 42/48 and
+44/48, with summary/tone task floors also missed; three scope abstentions remain
+per arm. No qualified control, ABI acquisition, host result or English artifact.
+Quality gates, GPU settings, R110 and LayerCake stay unchanged. Extra call/context
+costs are explicit. [Review packet](docs/releases/R111_REVIEW.md); no automatic next run.
 
-Latest completed result: [R110](docs/R110_SCOPE_ADHERENCE.md). Its finite scope
+Previous completed result: [R110](docs/R110_SCOPE_ADHERENCE.md). Its finite scope
 challenge passed 600/600, but the complete 384-call source comparison failed
 qualification: plain 31/48 pairs and contract 28/48 against 44. Exact scientific
 replay and all 72 unchanged-input controls passed. The sentence-count effect is

@@ -2,10 +2,14 @@
 
 Status date: 2026-11-18
 
-[R111](docs/R111_SCOPE_REVISION.md) is preregistered, not a scientific result. Its
-planned parser challenge and conventional two-call revision workflow cannot by
-themselves establish ABI novelty, single-pass fluency, acquisition efficiency or
-LayerCake capability. Unchanged gates and explicit failure ownership apply.
+[R111](docs/R111_SCOPE_REVISION.md) passed its finite, author-constructed scope
+challenge: 800 new cases and 793 development obligations, exact replay, no
+false-safe decisions. Its 384 source calls replay exactly. The primary sentence
+gain is supported (7/24 to 15/24; CI +0.16667 to +0.50), but the combined endpoint
+and absolute qualification fail: revision 41/48 pairs versus 44, summary/tone
+floors missed, and three unresolved outputs per arm. No qualified control, ABI
+novelty, single-pass fluency, acquisition efficiency or LayerCake capability
+follows. Unchanged gates and explicit prerequisite failure ownership apply.
 
 [R110](docs/R110_SCOPE_ADHERENCE.md) passed its finite, author-constructed scope
 challenge (600/600 and exact replay), not general semantic validation. Its source

@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-11-18 — R111 complete: sentence gain, qualification failed
+
+- Complete 384 source calls and exact scientific replay with unchanged settings
+  and gates. Draft panels 39/48 and 38/48, 37/48 pairs; revision panels 42/48 and
+  44/48, 41/48 pairs, below the unchanged 44/48 pair floor.
+- Support the primary sentence-adherence gain: 7/24 to 15/24, paired 95% CI
+  [+0.16667, +0.50]. Preserve nine revision sentence failures, missed summary/tone
+  task floors and three unresolved scope outputs per arm. The combined endpoint
+  and absolute qualification fail despite the relative gain.
+- Record 34,694 generated tokens, both calls' costs, raw token/output evidence,
+  receipts and exact dependencies. No training, recipients, new checkpoint,
+  GPU-setting change, R110 rewrite or native LayerCake change.
+- Add a write-once publication/archive helper and custody tests. Keep source
+  prerequisites distinct from ABI acquisition and host evidence; no promotion.
+- Pass 630 supported tests (four declared skips) and 16 historical checks with
+  unchanged tests. Preserve two Windows temporary-path failure receipts and the
+  direct short-path confirmation; no scientific-code repair or rerun.
+
+## 2026-11-18 — R111 finite prerequisite passed
+
+- Publish the exact 800-case challenge before scoring, then preserve all 800/800
+  passing cases and 793/793 development obligations with byte-identical replay.
+  No false-safe decision; finite author-constructed scope only, not general
+  semantic validation.
+- Publish the complete scope packet before starting the registered source run.
+  No GPU setting, quality gate, R110 evidence or native LayerCake change.
+
 ## 2026-11-18 — R111 preregistration and implementation
 
 - Publish a bounded finite scope-coverage challenge and unconditional one-revision
