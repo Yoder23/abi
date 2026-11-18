@@ -6,8 +6,10 @@
 | Current preregistration | `abi-prereg-r111-2026-11-18` | Scope-coverage and unconditional revision design; no fresh result |
 | Current implementation freeze | `abi-r111-implementation-2026-11-18` | Immutable parser, challenge generator and bounded two-call driver; no fresh result |
 | Current research review snapshot | `abi-research-r110-2026-11-18` | Finite scope pass; complete source qualification failure with exact replay; no recipient or host promotion |
-| Passing finite prerequisite snapshot | `abi-r110-scope-2026-11-18` | Complete author-constructed scope packet, published before source execution |
-| Challenge publication snapshot | `abi-r110-challenge-2026-11-18` | Actual content-seeded challenge published before scoring; verified cleanup |
+| Passing finite prerequisite snapshot | `abi-r111-scope-2026-11-18` | 800 new cases and 793 development obligations, exact replay; finite scope only |
+| Challenge publication snapshot | `abi-r111-challenge-2026-11-18` | Actual content-seeded challenge published before scoring |
+| Preserved finite prerequisite snapshot | `abi-r110-scope-2026-11-18` | Complete author-constructed scope packet, published before source execution |
+| Preserved challenge snapshot | `abi-r110-challenge-2026-11-18` | Actual content-seeded challenge published before scoring; verified cleanup |
 | Preserved implementation freeze | `abi-r110-implementation-2026-11-17` | Immutable R110 evaluator/driver and historical blocked storage preflights |
 | Preserved preregistration snapshot | `abi-prereg-r110-2026-11-17` | Immutable scope/adherence design and exact inputs; registration alone is not a result |
 | Previous research review snapshot | `abi-research-r109-2026-11-17` | Complete negative control qualification with exact replay; no recipient or host promotion |

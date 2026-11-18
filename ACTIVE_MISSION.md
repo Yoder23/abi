@@ -2,7 +2,7 @@
 
 Updated: 2026-11-18
 
-## Current bounded experiment: R111 (implementation frozen, before execution)
+## Current bounded experiment: R111 (finite scope passed, source execution next)
 
 [R111](docs/R111_SCOPE_REVISION.md) targets the measured sentence and scope gaps.
 The [preregistration](experiments/scope_revision_r111/PROTOCOL.md) is published at
@@ -13,7 +13,10 @@ feedback, answer, output repair or best-of selection. Both outputs are preserved
 
 The implementation is frozen at `80dc070`, published as
 `abi-r111-implementation-2026-11-18`; 623 supported tests and 16 exact historical
-checks pass. The actual prospective challenge has not yet been scored.
+checks pass. The published prospective challenge passed 800/800 cases and all
+793 development obligations with byte-identical replay and no false-safe result.
+This finite author-constructed prerequisite is not general semantic validation.
+Publish the scope packet before the registered source execution.
 
 All quality gates and GPU hardware settings stay unchanged. The two-call workflow
 uses a declared 2048-token input envelope to retain the full draft, not a relaxed

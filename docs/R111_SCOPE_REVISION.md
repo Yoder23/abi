@@ -1,7 +1,7 @@
 # R111 — scope coverage and unconditional revision
 
-Status: implementation frozen; prospective challenge and source execution pending.
-No model calls, gate changes or GPU setting changes. [R110](R110_SCOPE_ADHERENCE.md) remains
+Status: finite scope prerequisite passed; source execution pending.
+No model calls, gate changes or GPU setting changes yet. [R110](R110_SCOPE_ADHERENCE.md) remains
 an immutable negative prerequisite result, not an ABI acquisition or host test.
 
 The [protocol](../experiments/scope_revision_r111/PROTOCOL.md) separates a new
@@ -18,6 +18,15 @@ replay (384 calls maximum). No training, recipient execution, native LayerCake
 change or automatic follow-on. All existing matched controls are preserved.
 
 ## Implementation and custody
+
+The published 800-case challenge passed all eight classes (100/100 each), plus
+793 development obligations: 164 historical fixtures, seven regressions, 600
+R110 cases and 22 disclosed R110 clauses. Fresh-process raw replay is byte-identical,
+with no errors or false-safe decisions. This is finite author-constructed scope
+validation, not independent semantic validation or English qualification.
+The [scope decision](../results/scope_revision_r111/scope/decision.json) is published
+under `abi-r111-scope-2026-11-18` before any GPU execution.
+The actual challenge was published at `abi-r111-challenge-2026-11-18`.
 
 The implementation code commit is `80dc070`; the publication tag is
 `abi-r111-implementation-2026-11-18`. The [freeze](../results/scope_revision_r111/freeze.json)
