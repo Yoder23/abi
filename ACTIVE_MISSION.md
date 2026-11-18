@@ -2,7 +2,7 @@
 
 Updated: 2026-11-18
 
-## Current implementation: R110 (not executed)
+## Current experiment: R110 (scope passed; source comparison pending)
 
 [R110](docs/R110_SCOPE_ADHERENCE.md) addresses the two measured prerequisite
 issues separately: finite approval-scope classification and sentence-count
@@ -20,7 +20,9 @@ scoring; do not score it during development.
 The [verified cleanup](docs/R110_CLEANUP.md) restored the unchanged 10 GiB floor:
 two redundant review checkouts were retired, with 416 differing files preserved
 and all Git objects retained in primary repositories. The actual 600-case
-challenge is materialized; publish it before scoring. Keep all earlier blocked
+challenge was published before scoring and passed all 600 cases, all 171 known
+development cases, and exact fresh-process replay. Publish that complete packet
+before the fixed four-process source comparison. Keep all earlier blocked
 preflights and require the storage guard at every subsequent stage/prompt.
 No new model, recipient or training calls; no acquisition or LayerCake certificate.
 See the [implementation contract](experiments/scope_adherence_r110/IMPLEMENTATION.md).

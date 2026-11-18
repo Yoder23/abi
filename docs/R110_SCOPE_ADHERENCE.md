@@ -1,7 +1,8 @@
 # R110 — scope and adherence (execution pending)
 
-Status: **implementation frozen, not executed**. No new model calls, training, recipient
-execution or GPU setting changes. The user authorized implementation/freeze and
+Status: **finite evaluator prerequisite passed; source comparison pending**.
+No new model calls, training, recipient execution or GPU setting changes yet.
+The user authorized implementation/freeze and
 conditional execution. The evaluator, challenge generator, driver and verifiers
 now exist under the [implementation contract](../experiments/scope_adherence_r110/IMPLEMENTATION.md).
 The unchanged 10 GiB storage floor was restored by the authorized
@@ -19,8 +20,15 @@ The publication tag is `abi-r110-implementation-2026-11-17`; the earlier
 preregistration tag remains unchanged. The one content-derived 600-case challenge
 is now [materialized](../results/scope_adherence_r110/execution/challenge.json),
 SHA-256 `3af120c5be55f441732314033b8b38afdf5b384aef52c7bb4554f9e4c2107023`.
-It must be published before scoring. No challenge score or model call is claimed
-by this input publication.
+It was published at `abi-r110-challenge-2026-11-18` before scoring.
+The [scope decision](../results/scope_adherence_r110/execution/scope/decision.json)
+recomputes 600/600 correct prospective cases (100 in each of six classes), all
+164 historical fixtures and seven known regressions, with zero false-safe
+assertions. The two fresh-process raw streams are byte-identical at SHA-256
+`56f773cc70da8cbf31f0f079a4b1d03a78b3b1565ff68bfa8c32cbbac3a7e82d`.
+This is `FINITE_SCOPE_PREREQUISITE_PASSED`, not general semantic validation,
+English qualification, ABI acquisition or LayerCake certification. Human ratings
+remain unchanged. Publish the complete prerequisite packet before source execution.
 
 The [first storage preflight](../results/scope_adherence_r110/execution/preflights/1794945749670695600.json)
 observed 10,634,899,456 free bytes versus the required 10,737,418,240 bytes.

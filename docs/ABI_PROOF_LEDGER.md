@@ -2,9 +2,9 @@
 
 Updated: 2026-11-17
 
-R110 is [implemented but unexecuted](R110_SCOPE_ADHERENCE.md). No proof-ledger
-state changes: neither prospective evaluator validity nor adherence improvement
-has been tested. Development fixtures are not the prospective challenge.
+R110's [finite scope prerequisite](R110_SCOPE_ADHERENCE.md) passed 600/600 with
+exact replay. This is not general semantic validation or adherence improvement;
+the fixed source comparison remains pending. No product proof-ledger state changes.
 
 Latest completed attempt: [R109](R109_TRAINED_GROUNDING.md) failed control
 qualification at 32/48 pairs versus 44, with exact replay. The recipient gate

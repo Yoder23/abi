@@ -10,6 +10,10 @@
 - Materialize the single 600-case, content-seeded challenge for publication
   before scoring. No challenge pass or model result is implied by this commit.
 - After cleanup, 555 local tests pass (four skips), plus 16 historical checks.
+- After publishing the exact challenge, complete both fresh scope processes:
+  600/600 prospective cases, 164/164 historical fixtures and 7/7 known regressions;
+  zero false-safe assertions and byte-identical raw replay. Source study pending;
+  no general semantic, acquired-English or native-host claim follows.
 
 ## 2026-11-17 — R110 implementation freeze (not executed)
 

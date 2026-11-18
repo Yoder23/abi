@@ -29,7 +29,7 @@ LoRA and distillation.
 
 | Evidence line | What is established | What remains open |
 | --- | --- | --- |
-| R110 implementation | Frozen evaluator/driver; verified cleanup restored storage; prospective challenge materialized | Challenge qualification and source comparison not yet complete; no scientific promotion |
+| R110 | Finite scope prerequisite passed 600/600 with exact replay; storage restored with evidence preserved | Fixed source-interface comparison pending; no acquired English core or host promotion |
 | R109 | Complete control execution and exact replay; 32/48 paired passes versus 44 required | Recipient gate closed; adherence failures and evaluator scope limits, not an acquisition or host result |
 | R108 | Pinned inputs and preserved resource-budget stop: 13/96 initial responses, no replay or recipients | Control qualification and trained-task comparison remain incomplete |
 | R107 | No-training residual intervention and exact live replay; modest natural-text loss interference, with a repetition trade-off | No fluent core, trained-route retention or native-host promotion |
@@ -51,11 +51,11 @@ public technical release remains
 [`abi-final-validation-v2-repaired-r7-2026-08-30`](https://github.com/Yoder23/abi/releases/tag/abi-final-validation-v2-repaired-r7-2026-08-30).
 The current default branch is a later peer-review candidate.
 
-The next [R110 study](docs/R110_SCOPE_ADHERENCE.md) is **implemented, not executed**.
+The [R110 study](docs/R110_SCOPE_ADHERENCE.md) has **passed its finite evaluator prerequisite**.
 It separates approval-scope errors from sentence-count adherence, keeps the
 quality gates fixed, and permits no edited outputs, new training or host changes.
 The [verified cleanup](docs/R110_CLEANUP.md) restored the registered storage floor.
-The prospective challenge must be published and pass before GPU work.
+The prospective challenge passed 600/600 with exact replay; source comparison is pending.
 Implementation tests and successful cleanup are not a qualification or breakthrough.
 
 The completed [R109 replication](docs/R109_TRAINED_GROUNDING.md) kept GPU settings,

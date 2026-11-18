@@ -8,7 +8,9 @@ response contract with the existing source interface. No new model call or
 scientific result; no change to R109, quality thresholds, GPU settings or hosts.
 The evaluator/driver are frozen. [Verified cleanup](docs/R110_CLEANUP.md) restored
 the storage floor; the prospective challenge is materialized for publication
-before scoring. No scientific gate has yet been passed by this implementation.
+before scoring. Its finite scope prerequisite now passed 600/600 with exact replay;
+the registered source-interface comparison is pending. This is not general semantic
+validation, acquisition proof or native LayerCake certification.
 
 Latest completed result: [R109](docs/R109_TRAINED_GROUNDING.md) failed control
 qualification with exact replay: 35/48 and 34/48 panels, 32/48 paired versus 44.

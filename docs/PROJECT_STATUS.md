@@ -6,8 +6,8 @@ Current implementation: [R110](R110_SCOPE_ADHERENCE.md), separating approval-sco
 validation from one response-contract adherence contrast. Exact inputs and
 thresholds are registered; the evaluator/challenge/live driver are implemented.
 The [verified cleanup](R110_CLEANUP.md) restored the unchanged storage floor.
-The 600-case challenge is materialized for publication before scoring. Zero new
-model calls; prospective qualification remains open, with no host promotion.
+The prospectively published 600-case challenge passed all cases with exact replay.
+Zero new model calls so far; source qualification remains open, with no host promotion.
 
 [R109](R109_TRAINED_GROUNDING.md) completed with exact replay but failed the
 unchanged control gate: 35/48 and 34/48 panels, 32/48 pairs versus 44. Its 20

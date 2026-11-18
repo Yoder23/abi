@@ -6,8 +6,9 @@ Updated: 2026-11-17
 experiment. It fixes a scope-validation prerequisite, one response-contract
 contrast, all quality gates and failure ownership before new source outputs.
 Development/input tests do not certify the evaluator or an English control.
-Its prospective challenge and live study remain unexecuted pending publication
-and scoring. Verified cleanup restored storage; R109 and LayerCake are unchanged.
+Its prospective finite scope challenge passed 600/600 with exact replay. The live
+source comparison is pending. Verified cleanup restored storage; R109 and LayerCake
+are unchanged. This prerequisite is not general semantic validation.
 
 [R109](R109_TRAINED_GROUNDING.md) completed the frozen R108 panel and exact replay
 under a separately registered runtime budget. It failed at 32/48 paired passes
