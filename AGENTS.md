@@ -26,6 +26,11 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+R112 implementation is frozen at source commit `fae959c9b0b3f0fee510b3c7d8f710acf9a1968a`;
+freeze SHA-256 `6204639907ed39eeb50f7614eef6a4b64a4bb2c255117f2cc1f990a98b09b43b`.
+Preserve every frozen source/test/input byte. Publish this freeze, then the exact
+content-seeded challenge before scoring. No model call has occurred.
+
 R112 implementation development (2026-11-19): 606 historical copies now use
 verified read-only NTFS hard links; every path and byte remains. The third
 preflight is above 10 GiB and rechecks the complete R111 indexed closure. Keep

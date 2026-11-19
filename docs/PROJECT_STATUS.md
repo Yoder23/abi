@@ -6,7 +6,7 @@ Current registration: [R112](R112_COUNT_FEEDBACK.md). One count-feedback contras
 and finite scope prerequisite are implemented and pass 120 focused checks.
 [Verified cleanup](R112_CLEANUP.md) restored the unchanged floor via exact duplicate
 retirement and 606 verified read-only hard links; all unique bytes and R111 remain.
-No new challenge or model execution; implementation freeze/publication and the
+No new challenge or model execution; the implementation is frozen at `fae959c` and the
 prospective scope gate remain required. No GPU setting, gate or LayerCake code change.
 
 Latest result: [R111](R111_SCOPE_REVISION.md) completed with exact 384-call replay.

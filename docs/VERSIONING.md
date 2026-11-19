@@ -5,7 +5,7 @@
 | Python package | `0.4.0a1` | Supported alpha compiler API |
 | Current preregistration | `abi-prereg-r112-2026-11-19` | Count-feedback design; storage-blocked before implementation/execution |
 | Storage/custody snapshot | `abi-r112-cleanup-2026-11-19` | Verified duplicate retirement; still storage-blocked, no scientific execution |
-| Current experiment implementation | R112 developed/tested; freeze pending | 120 focused checks; no new challenge or generation result |
+| Current experiment implementation | `abi-r112-implementation-2026-11-19` (source `fae959c`) | Immutable evaluator/generator/driver/verifier; 120 focused checks; no challenge or generation result yet |
 | Latest completed implementation freeze | `abi-r111-implementation-2026-11-18` | Immutable parser, challenge generator and bounded two-call driver, frozen before execution |
 | Preserved preregistration | `abi-prereg-r111-2026-11-18` | Design-only snapshot; completed result is separately sealed below |
 | Current research review snapshot | `abi-research-r111-2026-11-18` | Supported sentence gain, but absolute source qualification failed; exact replay, no acquisition or host promotion |

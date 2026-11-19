@@ -8,8 +8,9 @@ revision contrast plus finite scope validation. Its new implementation passes
 [Verified cleanup](docs/R112_CLEANUP.md) retired 61 duplicate paths with recovery
 copies and consolidated 606 further copies with read-only hard links, preserving
 all those paths. The third preflight is above 10 GiB. Earlier blocks, R111, GPU
-settings, quality gates and native LayerCake code are unchanged. Freeze/publication
-and the prospective scope prerequisite remain required before source execution.
+settings, quality gates and native LayerCake code are unchanged. The implementation
+is frozen at `fae959c`; publication and the prospective scope prerequisite remain
+required before source execution.
 
 Latest completed result: [R111](docs/R111_SCOPE_REVISION.md). Its finite scope
 prerequisite passed 800/800 new cases and 793 development obligations with exact

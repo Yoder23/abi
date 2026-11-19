@@ -29,7 +29,7 @@ LoRA and distillation.
 
 | Evidence line | What is established | What remains open |
 | --- | --- | --- |
-| R112 | Count-feedback implementation passes 120 focused checks; verified cleanup restores storage; R111 preserved | Implementation freeze/publication and prospective scope prerequisite pending; no new challenge or generation result |
+| R112 | Count-feedback implementation frozen after 120 focused checks; verified cleanup restores storage; R111 preserved | Prospective scope prerequisite pending; no new challenge or generation result |
 | R111 | Finite scope passed 800/800; all 384 source calls replay exactly; sentence adherence improves 7/24 to 15/24 | Qualification failed: revision 41/48 pairs versus 44, summary/tone floors missed; no acquisition or host result |
 | R110 | Finite scope challenge 600/600; complete 384-call source comparison with exact replay; evidence-preserving cleanup | Control qualification failed: plain 31/48 pairs, contract 28/48 versus 44; no acquired core or host promotion |
 | R109 | Complete control execution and exact replay; 32/48 paired passes versus 44 required | Recipient gate closed; adherence failures and evaluator scope limits, not an acquisition or host result |

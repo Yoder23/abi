@@ -1,6 +1,12 @@
 # R112 — sentence-count feedback and remaining scope cases
 
-Status: **implementation developed/tested; scientific execution not started**.
+Status: **implementation frozen; scientific execution not started**.
+
+Source commit: `fae959c9b0b3f0fee510b3c7d8f710acf9a1968a`.
+[Freeze](../results/count_feedback_r112/freeze.json) SHA-256:
+`6204639907ed39eeb50f7614eef6a4b64a4bb2c255117f2cc1f990a98b09b43b`.
+The publication tag is `abi-r112-implementation-2026-11-19`. The actual challenge
+must be published before its first scoring; no scientific outcome is implied.
 The unchanged execution floor is 10 GiB free. The original preflight found less
 than 300 MiB on the only available local volume; no scope challenge or model
 call ran. The write-once observation is **288,468,992 bytes free (275.11 MiB)**,
@@ -80,7 +86,7 @@ The separate registration-verifier invocation reproduced the recorded blocked
 verdict. This checks custody and recorded arithmetic, not a new scientific replay.
 
 The parser, challenge generator, live driver and scientific verifier are now
-**implemented and unit-tested, not yet frozen or scientifically executed**.
+**implemented, unit-tested and frozen, not yet scientifically executed**.
 Full local supported testing is deferred under tight storage; the new focused
 checks are not a quality claim. The write-once registrar itself still contains
 no model runner and its immutable source set is unchanged.
@@ -100,7 +106,7 @@ over the preserved directory.
 Restore at least 10 GiB free on the experiment volume without destroying unique
 evidence. The third preflight meets this floor, but later stages must recheck it.
 Unique payloads remain protected; approved hard-link consolidation is complete.
-Next publish the complete implementation/input freeze,
+Next publish the frozen implementation/input packet,
 publish the new challenge before scoring, and publish a passing scope packet
 before any GPU execution. Preserve the first failed/incomplete outcome. No sweep,
 new source, training, recipient, host modification or automatic follow-on.
