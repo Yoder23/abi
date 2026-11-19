@@ -2,20 +2,20 @@
 
 Updated: 2026-11-19
 
-## Active registration: R112 (storage-blocked, not executed)
+## Active registration: R112 (implementation tested, not executed)
 
 [R112](docs/R112_COUNT_FEEDBACK.md) registers one shared-draft comparison of
 ordinary revision versus explicit sentence-count feedback, after a new finite
 scope prerequisite. All quality gates, GPU settings and R111 evidence stay fixed.
 The counter-assisted workflow is not evaluator-independent English or ABI novelty.
-Only design/input/custody work is complete; the new evaluator and live driver are
-not implemented/frozen. After [verified duplicate cleanup](docs/R112_CLEANUP.md),
-the second preflight records 5.45 GiB free, still below the unchanged 10 GiB floor.
-The 61 removed copies have hash-identical retained originals and recovery mappings;
-R111's complete indexed dependencies remain unchanged. No challenge, model,
-training or recipient ran. Further consolidation of primary evidence paths is
-awaiting a user decision about hard links. Restore storage before implementation/
-execution; publish and pass every registered prerequisite. No automatic successor.
+The additive evaluator and live driver now pass 120 focused checks, including
+all 1,598 disclosed development obligations. [Verified cleanup](docs/R112_CLEANUP.md)
+retired 61 duplicate paths with retained recovery copies, then user-approved
+hard links preserved all paths for another 606 copies. The third preflight is
+above the unchanged 10 GiB floor; R111's indexed dependencies remain unchanged.
+No new challenge, model, training or recipient ran. Commit/freeze/publish the
+implementation, publish the actual challenge before scoring, and pass every
+registered prerequisite. First scope failure closes GPU execution. No automatic successor.
 
 ## Latest completed experiment: R111 (partial gain, qualification failed)
 

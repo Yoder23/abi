@@ -26,6 +26,26 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+R112 implementation development (2026-11-19): 606 historical copies now use
+verified read-only NTFS hard links; every path and byte remains. The third
+preflight is above 10 GiB and rechecks the complete R111 indexed closure. Keep
+the sandbox-denied first link attempt and both earlier resource blocks. New
+code is in `experiments/count_feedback_r112/execution/`; the preregistration
+source set is unchanged. All 120 focused registration/execution/custody tests
+pass, including all 1,598 disclosed scope obligations. This is not the new
+challenge result. Commit/freeze/publish implementation, publish the actual
+challenge before scoring, and stop GPU execution on its first failure. Do not
+change the implementation once frozen or launch any unregistered follow-on.
+
+User approval (2026-11-19): consolidate SHA-256-identical historical payloads
+with NTFS hard links while keeping every original path and byte. R111 and its
+dependency closure, source caches and Git metadata must remain untouched. Record
+an exact plan, verify both files before linking, verify physical link identity
+afterward, and make shared historical payloads read-only. Preserve rollback
+copies until each link is verified. This is storage deduplication only, not a
+scientific or implementation change. Resume unchanged R112 only after its
+registered storage and publication prerequisites are met.
+
 R112 cleanup update (2026-11-19): 61 exact duplicate historical copies were
 removed under a hash-bound plan and journal; every retained copy was rehashed.
 All 693 R111 repository dependencies and 182 host bindings still match. The

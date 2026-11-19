@@ -1,8 +1,10 @@
 # R112 storage cleanup and remaining blocker
 
 Date: 2026-11-19. This is storage/custody work, not a scientific experiment result.
-R112 remains `RESOURCE_BLOCKED_BEFORE_IMPLEMENTATION`. GPU settings, quality
-gates, R111, and the LayerCake codebase are unchanged.
+The first two preflights were blocked. User-approved hard-link consolidation
+restored the floor in the third observation; implementation development is now
+tested, but scientific execution still requires its registered publication and
+scope prerequisites. GPU settings, quality gates, R111, and LayerCake code are unchanged.
 
 ## Completed removal
 
@@ -66,21 +68,46 @@ compact records but cannot pretend to verify the original disk's physical state.
 The `deleted_paths` field in the second preflight concerns that observation
 itself; the linked cleanup journal explicitly records the earlier 61 removals.
 
-## Remaining storage decision
+## Approved hard-link consolidation
 
 The follow-up read-only scan considered 3,122 files of at least 1 MiB and hashed
 1,696 files with matching sizes, finding 240 duplicate-content groups. Many are
 at historical scientific evidence paths that should remain available. The scan
 is **not a deletion plan** and does not prove every duplicate path dispensable.
 
-NTFS hard-link consolidation has been proposed, not performed: retain every path
-and byte while storing identical historical content once. Linked paths would
-share storage and must be treated as immutable. R111 dependencies, source caches
-and Git metadata would remain untouched. This needs the user's decision and a
-separate exact plan before execution. Do not erase evidence paths or relax the
-10 GiB gate to force a launch.
+The user subsequently approved NTFS hard links. Two exact plans consolidated
+**537 + 69 = 606 copies**, removing **5,870,357,993 logical duplicate bytes**
+without removing an original evidence path. Already-linked files were excluded
+from claimed new savings. Every link was verified by SHA-256, filesystem identity
+and read-only status. No R111 dependency, source cache or Git metadata was linked
+or removed. Historical tracked bytes remain unchanged; the LayerCake worktree is clean.
 
-Once storage is restored, implement, test and publish the unchanged
+The first sandboxed creation was denied and rolled back; its one-row journal is
+preserved. The same main plan then completed with elevated filesystem permission.
+This was an operational retry, not a scientific retry. Rollback copies were
+removed only after each new link was verified. Shared payloads are now read-only;
+do not edit them in place. To restore separate storage, copy a payload into a new
+file and replace one linked path only after verifying its hash.
+
+- [Main plan](../results/review_2026_11_19/r112_hardlink_plan.json),
+  [successful action journal](../results/review_2026_11_19/r112_hardlink_retry_actions.jsonl),
+  [completion](../results/review_2026_11_19/r112_hardlink_retry_complete.json).
+- [Preserved denied attempt](../results/review_2026_11_19/r112_hardlink_actions.jsonl)
+  and [permission retry receipt](../results/review_2026_11_19/r112_hardlink_retry_authorization.json).
+- [Auxiliary review-copy plan](../results/review_2026_11_19/r112_hardlink_aux_plan.json),
+  [actions](../results/review_2026_11_19/r112_hardlink_aux_actions.jsonl),
+  [completion](../results/review_2026_11_19/r112_hardlink_aux_complete.json).
+- [Third preflight](../results/count_feedback_r112/preflight_003.json):
+  **11,009,318,912 bytes free**, above the unchanged **10,737,418,240-byte** floor.
+  All 693 indexed R111 files and 182 host bindings rechecked successfully.
+
+This is one observed disk state, not a promise of later free space. Every
+scientific stage and generation call must independently meet the original floor.
+The new implementation's first unit-test receipt preserves one stale 384-call
+expectation; it was corrected to the registered 576 before freezing anything.
+[All 120 focused tests then passed](../results/review_2026_11_19/r112-implementation-a2.xml).
+
+Next, freeze and publish the unchanged
 [R112 protocol](../experiments/count_feedback_r112/PROTOCOL.md), then publish and
 pass its finite scope prerequisite before any source generation. Failure ownership
-is currently **RESOURCE**; ABI acquisition and native LayerCake remain **NOT_TESTED**.
+remains separated; ABI acquisition and native LayerCake remain **NOT_TESTED**.

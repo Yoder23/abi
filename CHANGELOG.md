@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-11-19 — R112 hard-link recovery and tested implementation
+
+- Consolidate 606 verified historical copies with read-only NTFS hard links,
+  preserving every path/byte and leaving R111 dependencies, source caches and
+  Git metadata untouched. Preserve the denied/rolled-back sandbox attempt.
+- Record a third preflight above the unchanged 10 GiB floor and rehash all 693
+  R111 indexed files plus 182 host bindings. Earlier blocked observations stay intact.
+- Implement the additive finite parser, independent challenge construction,
+  three-stage source driver and strict raw verifier under `execution/`, without
+  changing preregistration inputs or gates. All 120 focused checks pass; preserve
+  the initial stale call-count unit assertion. No new challenge or model run yet.
+
 ## 2026-11-19 — R112 duplicate cleanup; storage still blocked
 
 - Remove 61 SHA-256-identical historical copies (5,925,099,441 logical bytes),

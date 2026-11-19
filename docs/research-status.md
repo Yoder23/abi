@@ -5,10 +5,10 @@ Updated: 2026-11-19
 [R112](R112_COUNT_FEEDBACK.md) preregisters explicit sentence-count feedback
 against ordinary revision from a shared draft. It is a conventional evaluator-
 assisted workflow, not ABI novelty. New finite scope validation must precede
-generation. The unchanged 10 GiB storage floor blocks execution; only lightweight
-design/input/custody work is complete. [Duplicate cleanup](R112_CLEANUP.md)
-retired 61 verified copies; the second preflight still has only 5.45 GiB free.
-No quality or host conclusion follows.
+generation. [Verified cleanup](R112_CLEANUP.md) restored the unchanged 10 GiB floor
+after two preserved blocked preflights. Its additive implementation passes 120
+focused checks, but no new challenge or source generation has run. Implementation
+publication and prospective scope validation remain required. No quality or host conclusion follows.
 
 [R111](R111_SCOPE_REVISION.md) prospectively targets the measured scope and sentence
 gaps with a finite construction challenge and one unconditional model revision.

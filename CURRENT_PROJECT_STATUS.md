@@ -3,12 +3,13 @@
 Updated: 2026-11-19
 
 Current registration: [R112](docs/R112_COUNT_FEEDBACK.md), a bounded count-feedback
-revision contrast plus finite scope validation. Execution is resource-blocked:
-5.45 GiB free in the post-cleanup preflight versus the unchanged 10 GiB floor.
-[Verified cleanup](docs/R112_CLEANUP.md) removed 61 duplicate copies, retained every
-unique payload and rechecked all R111 dependencies. No fresh scope or model
-result; implementation freeze remains pending. R111, GPU settings, quality gates
-and native LayerCake are unchanged. Hard-link consolidation is proposed, not done.
+revision contrast plus finite scope validation. Its new implementation passes
+120 focused checks, but no fresh challenge or model result exists yet.
+[Verified cleanup](docs/R112_CLEANUP.md) retired 61 duplicate paths with recovery
+copies and consolidated 606 further copies with read-only hard links, preserving
+all those paths. The third preflight is above 10 GiB. Earlier blocks, R111, GPU
+settings, quality gates and native LayerCake code are unchanged. Freeze/publication
+and the prospective scope prerequisite remain required before source execution.
 
 Latest completed result: [R111](docs/R111_SCOPE_REVISION.md). Its finite scope
 prerequisite passed 800/800 new cases and 793 development obligations with exact

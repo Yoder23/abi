@@ -1,6 +1,6 @@
 # R112 — sentence-count feedback and remaining scope cases
 
-Status: **preregistered, resource-blocked before implementation/execution**.
+Status: **implementation developed/tested; scientific execution not started**.
 The unchanged execution floor is 10 GiB free. The original preflight found less
 than 300 MiB on the only available local volume; no scope challenge or model
 call ran. The write-once observation is **288,468,992 bytes free (275.11 MiB)**,
@@ -9,8 +9,11 @@ That original observation is preserved. The later user-authorized
 [duplicate cleanup](R112_CLEANUP.md) removed 61 byte-identical historical copies,
 with every retained copy rehashed and recovery paths recorded. The second
 preflight found **5,854,650,368 bytes free (5.45 GiB)**, still **4,882,767,872 bytes
-(4.55 GiB) short**. This remains a resource blocker, not an English-quality,
-ABI acquisition or native LayerCake result. No GPU settings changed.
+(4.55 GiB) short**. User-approved hard links then consolidated 606 additional
+historical copies while preserving every path and byte. The third preflight
+records **11,009,318,912 bytes free**, above 10 GiB. Earlier blocks remain
+historical, not English-quality, ABI acquisition or native LayerCake results.
+No GPU settings changed; every later execution stage must recheck the floor.
 
 The [protocol](../experiments/count_feedback_r112/PROTOCOL.md) and
 [machine-readable contract](../results/count_feedback_r112/contract.json) define
@@ -56,6 +59,12 @@ success can replace those gates.
 - [Post-cleanup blocked preflight](../results/count_feedback_r112/preflight_002.json)
   and [cleanup/recovery evidence](R112_CLEANUP.md). The original observation is
   not overwritten or relabeled as current.
+- [Post-hardlink preflight](../results/count_feedback_r112/preflight_003.json)
+  and [implementation contract](../experiments/count_feedback_r112/IMPLEMENTATION.md).
+- The additive evaluator, independent challenge generator, bounded source driver
+  and raw verifier under `execution/`. All 120 focused checks pass, including
+  1,598 disclosed scope obligations; [receipt](../results/review_2026_11_19/r112-implementation-a2.xml).
+  Preserve the [initial stale call-count test expectation](../results/review_2026_11_19/r112-implementation-a1.xml).
 - Twenty-four lightweight design/custody tests, including unchanged gates,
   matched inputs, complete-draft retention, resource rejection and missing/
   changed parent dependencies. [Receipt](../results/review_2026_11_19/r112-registration-a2.xml).
@@ -70,10 +79,11 @@ preflight SHA-256:
 The separate registration-verifier invocation reproduced the recorded blocked
 verdict. This checks custody and recorded arithmetic, not a new scientific replay.
 
-The new parser, challenge generator, live driver and scientific verifier are
-**not implemented or frozen**. Full local supported testing is deferred under
-the storage constraint; no release-readiness or quality claim is implied by
-registration checks. The write-once registrar contains no model runner.
+The parser, challenge generator, live driver and scientific verifier are now
+**implemented and unit-tested, not yet frozen or scientifically executed**.
+Full local supported testing is deferred under tight storage; the new focused
+checks are not a quality claim. The write-once registrar itself still contains
+no model runner and its immutable source set is unchanged.
 
 ```powershell
 # Recompute the registration and recorded resource verdict; no model calls:
@@ -88,10 +98,9 @@ over the preserved directory.
 ## Resume conditions
 
 Restore at least 10 GiB free on the experiment volume without destroying unique
-evidence. Only verified duplicates were authorized for removal; unique payloads
-remain protected. Consolidating primary historical files with hard links is a
-proposed next storage action awaiting the user's decision, not an executed one.
-Then implement and test the registered design, publish the complete implementation/input freeze,
+evidence. The third preflight meets this floor, but later stages must recheck it.
+Unique payloads remain protected; approved hard-link consolidation is complete.
+Next publish the complete implementation/input freeze,
 publish the new challenge before scoring, and publish a passing scope packet
 before any GPU execution. Preserve the first failed/incomplete outcome. No sweep,
 new source, training, recipient, host modification or automatic follow-on.

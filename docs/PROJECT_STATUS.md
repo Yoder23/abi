@@ -3,11 +3,11 @@
 Status date: 2026-11-19
 
 Current registration: [R112](R112_COUNT_FEEDBACK.md). One count-feedback contrast
-and finite scope prerequisite are specified. [Verified cleanup](R112_CLEANUP.md)
-retired 61 duplicate copies with every original retained. The second preflight
-records 5.45 GiB free versus the unchanged 10 GiB floor. No challenge or model
-execution; implementation freeze pending. No GPU setting, gate, R111 evidence
-or LayerCake code change. Hard-link consolidation remains proposed, not executed.
+and finite scope prerequisite are implemented and pass 120 focused checks.
+[Verified cleanup](R112_CLEANUP.md) restored the unchanged floor via exact duplicate
+retirement and 606 verified read-only hard links; all unique bytes and R111 remain.
+No new challenge or model execution; implementation freeze/publication and the
+prospective scope gate remain required. No GPU setting, gate or LayerCake code change.
 
 Latest result: [R111](R111_SCOPE_REVISION.md) completed with exact 384-call replay.
 Sentence adherence improves 7/24 to 15/24 (paired CI +0.16667 to +0.50), but

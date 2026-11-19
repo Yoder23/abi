@@ -1,0 +1,8 @@
+{
+  "format": "r112-hardlink-permission-retry/1",
+  "plan_sha256": "2bb5c4949eb98f1f590a7143a77b76ab27de175e6260023fe900d4c822b111fb",
+  "prior_journal_sha256": "056f7027ad522233238c4afeb476a59df114078f23a4d91fe6314929ca0917c7",
+  "script_sha256": "0526336a1f01d5b6a9d18c43fba7413a66f889054beed34c4c7662521b977f78",
+  "reason": "First New-Item HardLink denied by sandbox; original file restored by rollback; same plan retried with approved elevated filesystem permission",
+  "recorded_utc": "2026-11-19T20:01:55.7214816Z"
+}

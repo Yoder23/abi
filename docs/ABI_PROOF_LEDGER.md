@@ -2,12 +2,13 @@
 
 Updated: 2026-11-19
 
-[R112](R112_COUNT_FEEDBACK.md) is a storage-blocked preregistration, not a proof
+[R112](R112_COUNT_FEEDBACK.md) is a tested implementation, not a proof
 promotion. No new scope challenge, source generation, acquisition or host test
 ran. Preserve R111 and every existing gate; resource blockage proves no quality
 success or failure.
 The [duplicate cleanup](R112_CLEANUP.md) is operational custody work only: 61
-copies removed, all R111 dependencies preserved, storage still below 10 GiB.
+copies removed, 606 further copies hard-linked with paths preserved, and the
+third preflight above 10 GiB. All R111 dependencies remain unchanged.
 
 [R111](R111_SCOPE_REVISION.md) is a preregistered follow-up, not a product
 proof-ledger promotion. Finite scope passed 800 new and 793 development cases;

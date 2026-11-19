@@ -2,11 +2,11 @@
 
 Status date: 2026-11-19
 
-[R112](docs/R112_COUNT_FEEDBACK.md) is registration-only and storage-blocked before
-implementation/execution. Its planned count-assisted revision explicitly uses
+[R112](docs/R112_COUNT_FEEDBACK.md) is implemented/unit-tested but has no new
+challenge or model execution result. Its planned count-assisted revision explicitly uses
 a mechanical evaluator statistic, not an answer or semantic score. No new
 quality, acquisition, host, efficiency or superiority claim follows. R111 and
-all quality gates remain unchanged; a resource block is not a quality failure.
+all quality gates remain unchanged; preserved resource blocks are not quality failures.
 The [verified duplicate cleanup](docs/R112_CLEANUP.md) is storage/custody work,
 not scientific progress or a qualification claim. No unique evidence was removed.
 
