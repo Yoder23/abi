@@ -1,4 +1,4 @@
-# R112 storage cleanup and remaining blocker
+# R112 storage cleanup and evidence custody
 
 Date: 2026-11-19. This is storage/custody work, not a scientific experiment result.
 The first two preflights were blocked. User-approved hard-link consolidation
@@ -107,7 +107,31 @@ The new implementation's first unit-test receipt preserves one stale 384-call
 expectation; it was corrected to the registered 576 before freezing anything.
 [All 120 focused tests then passed](../results/review_2026_11_19/r112-implementation-a2.xml).
 
-Next, freeze and publish the unchanged
-[R112 protocol](../experiments/count_feedback_r112/PROTOCOL.md), then publish and
-pass its finite scope prerequisite before any source generation. Failure ownership
-remains separated; ABI acquisition and native LayerCake remain **NOT_TESTED**.
+The unchanged implementation and challenge were subsequently published, and the
+finite scope prerequisite passed 800 new cases plus all 1,598 known obligations
+with exact replay. That packet is published at `abi-r112-scope-2026-11-19`.
+Failure ownership remains separated; ABI acquisition and native LayerCake remain
+**NOT_TESTED**.
+
+## Final smaller-file hard-link batch
+
+A separate read-only audit of smaller historical files identified another exact
+plan: **790 copies / 432,326,392 logical bytes**. All original paths remain;
+R111's full dependency closure, source caches, Git metadata and current R112
+evidence were excluded. As before, SHA-256 and physical link identity are checked,
+shared payloads become read-only, and rollback copies are removed only after
+verification. The completion observed 10,718,302,208 free bytes before and
+11,126,280,192 after; these are observations, not guaranteed future headroom.
+
+- [Smaller-file inventory](../results/review_2026_11_19/r112_small_duplicate_audit.json).
+- [Exact plan](../results/review_2026_11_19/r112_hardlink_small_plan.json), SHA-256
+  `d3d04db85a4ad280ffe7d6a92a00218cca81ebf7f8ddacc77926210ace0e64f6`.
+- [Action journal](../results/review_2026_11_19/r112_hardlink_small_actions.jsonl)
+  and [completion](../results/review_2026_11_19/r112_hardlink_small_complete.json).
+
+Total hard-link consolidation: **1,396 historical copies**, preserving every
+path and byte while eliminating **6,302,684,385 logical duplicate bytes (5.87 GiB)**.
+This is separate from the earlier 61 removed duplicate paths with retained
+recovery copies. No unique evidence was removed. Do not modify hard-linked
+historical files in place. The unchanged 10 GiB floor still applies before each
+scientific stage and call.

@@ -11,11 +11,12 @@ The counter-assisted workflow is not evaluator-independent English or ABI novelt
 The additive evaluator and live driver now pass 120 focused checks, including
 all 1,598 disclosed development obligations. [Verified cleanup](docs/R112_CLEANUP.md)
 retired 61 duplicate paths with retained recovery copies, then user-approved
-hard links preserved all paths for another 606 copies. The third preflight is
+hard links preserved all paths for another 1,396 copies (6,302,684,385 logical
+duplicate bytes). The third preflight is
 above the unchanged 10 GiB floor; R111's indexed dependencies remain unchanged.
 The implementation is frozen at `fae959c`; implementation and actual challenge
 were published before scoring. Scope now passes all 800 new and 1,598 development
-cases with exact fresh replay. Publish that packet before the single registered
+cases with exact fresh replay. That packet is published before the single registered
 576-call source study. No model, training or recipient has run. No automatic successor.
 
 ## Latest completed experiment: R111 (partial gain, qualification failed)

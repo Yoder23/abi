@@ -32,6 +32,9 @@ historical copies while preserving every path and byte. The third preflight
 records **11,009,318,912 bytes free**, above 10 GiB. Earlier blocks remain
 historical, not English-quality, ABI acquisition or native LayerCake results.
 No GPU settings changed; every later execution stage must recheck the floor.
+A final smaller-file batch consolidated another 790 copies without removing any
+path: 1,396 total hard links / 6,302,684,385 logical duplicate bytes eliminated.
+The complete plans and recovery guidance are in the linked cleanup report.
 
 The [protocol](../experiments/count_feedback_r112/PROTOCOL.md) and
 [machine-readable contract](../results/count_feedback_r112/contract.json) define

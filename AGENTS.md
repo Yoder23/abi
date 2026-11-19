@@ -26,6 +26,14 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+Final R112 storage consolidation (2026-11-19): 790 additional historical copies
+now share verified read-only storage, bringing hard-linked copies to 1,396 and
+logical duplicate bytes eliminated to 6,302,684,385. All paths remain. Exclude
+R111/dependencies, source caches and Git metadata; never edit shared historical
+payloads in place. Preserve every cleanup plan/journal and resource observation.
+Scope evidence is published; execute only the frozen single R112 source study
+after checking current storage. No GPU setting, gate or scientific code change.
+
 R112 finite scope prerequisite passed: 800 new cases and all 1,598 disclosed
 development obligations, zero errors/false-safe decisions, byte-identical fresh
 replay (`da8ff7f60370cc5081130de3088020c10a9cec77181ee4310464c5aba8beb544`).
