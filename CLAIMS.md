@@ -2,8 +2,9 @@
 
 Status date: 2026-11-19
 
-[R112](docs/R112_COUNT_FEEDBACK.md) is implemented/unit-tested but has no new
-challenge or model execution result. Its planned count-assisted revision explicitly uses
+[R112](docs/R112_COUNT_FEEDBACK.md) passes its finite scope prerequisite (800 new
+and 1,598 development cases, exact replay), but source generation has not run.
+Its planned count-assisted revision explicitly uses
 a mechanical evaluator statistic, not an answer or semantic score. No new
 quality, acquisition, host, efficiency or superiority claim follows. R111 and
 all quality gates remain unchanged; preserved resource blocks are not quality failures.

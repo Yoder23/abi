@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-19 — R112 finite scope prerequisite passed
+
+- Publish the frozen implementation and exact content-seeded challenge before
+  scoring. All 800 new cases and 1,598 development obligations pass, with zero
+  errors/false-safe decisions and byte-identical fresh-process replay.
+- Keep the finite, author-constructed scope boundary explicit. No model calls,
+  broad-English qualification, ABI acquisition or native-host promotion yet.
+
 ## 2026-11-19 — R112 hard-link recovery and tested implementation
 
 - Consolidate 606 verified historical copies with read-only NTFS hard links,

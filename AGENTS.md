@@ -26,6 +26,13 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+R112 finite scope prerequisite passed: 800 new cases and all 1,598 disclosed
+development obligations, zero errors/false-safe decisions, byte-identical fresh
+replay (`da8ff7f60370cc5081130de3088020c10a9cec77181ee4310464c5aba8beb544`).
+Publish the complete packet before the single registered source study. No
+generation has occurred yet. This finite construction test is not general
+semantic certification or permission for a recipient/acquisition experiment.
+
 R112 implementation is frozen at source commit `fae959c9b0b3f0fee510b3c7d8f710acf9a1968a`;
 freeze SHA-256 `6204639907ed39eeb50f7614eef6a4b64a4bb2c255117f2cc1f990a98b09b43b`.
 Preserve every frozen source/test/input byte. Publish this freeze, then the exact

@@ -17,7 +17,7 @@ goal rather than reading the campaign archive in filename order.
 ## Canonical current documents
 
 - [R112 count-feedback registration](R112_COUNT_FEEDBACK.md): planned matched
-  revision contrast and scope prerequisite; implementation tested, not executed.
+  revision contrast; finite scope passed with exact replay, source study next.
   [Verified cleanup and recovery](R112_CLEANUP.md): 61 duplicate copies removed;
   606 further copies hard-linked with paths preserved; third preflight above 10 GiB.
 

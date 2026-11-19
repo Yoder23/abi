@@ -1,6 +1,13 @@
 # R112 — sentence-count feedback and remaining scope cases
 
-Status: **implementation frozen; scientific execution not started**.
+Status: **finite scope prerequisite passed; source generation not started**.
+
+The [scope decision](../results/count_feedback_r112/scope/decision.json) derives
+800/800 prospective cases and all 1,598 disclosed obligations correct, with zero
+errors or false-safe decisions and byte-identical fresh-process replay. Both raw
+files have SHA-256 `da8ff7f60370cc5081130de3088020c10a9cec77181ee4310464c5aba8beb544`.
+Publication tag: `abi-r112-scope-2026-11-19`. This is finite author-constructed
+validation, not general semantic or English certification. No model has run yet.
 
 Source commit: `fae959c9b0b3f0fee510b3c7d8f710acf9a1968a`.
 [Freeze](../results/count_feedback_r112/freeze.json) SHA-256:
@@ -9,7 +16,7 @@ The publication tag is `abi-r112-implementation-2026-11-19`. The actual challeng
 must be published before its first scoring; no scientific outcome is implied.
 
 The [actual 800-case challenge](../results/count_feedback_r112/challenge.json)
-has been materialized without scoring. SHA-256:
+was materialized and published before scoring. SHA-256:
 `73511ddee6f7de84be0a65553c661a5cdfdb45b103e0d7c7cbcb8eb0be708a8f`.
 Its publication tag is `abi-r112-challenge-2026-11-19`.
 The unchanged execution floor is 10 GiB free. The original preflight found less
@@ -91,7 +98,8 @@ The separate registration-verifier invocation reproduced the recorded blocked
 verdict. This checks custody and recorded arithmetic, not a new scientific replay.
 
 The parser, challenge generator, live driver and scientific verifier are now
-**implemented, unit-tested and frozen, not yet scientifically executed**.
+**implemented, unit-tested and frozen**. The finite scope stage has passed;
+the source-generation comparison has not yet run.
 Full local supported testing is deferred under tight storage; the new focused
 checks are not a quality claim. The write-once registrar itself still contains
 no model runner and its immutable source set is unchanged.

@@ -3,8 +3,9 @@
 Updated: 2026-11-19
 
 [R112](R112_COUNT_FEEDBACK.md) is a tested implementation, not a proof
-promotion. No new scope challenge, source generation, acquisition or host test
-ran. Preserve R111 and every existing gate; resource blockage proves no quality
+promotion. Its finite scope challenge passed 800 new and 1,598 development cases
+with exact replay. Source generation, acquisition and host testing have not run.
+Preserve R111 and every existing gate; resource blockage proves no quality
 success or failure.
 The [duplicate cleanup](R112_CLEANUP.md) is operational custody work only: 61
 copies removed, 606 further copies hard-linked with paths preserved, and the

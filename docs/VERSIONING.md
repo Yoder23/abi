@@ -7,6 +7,7 @@
 | Storage/custody snapshot | `abi-r112-cleanup-2026-11-19` | Verified duplicate retirement; still storage-blocked, no scientific execution |
 | Current experiment implementation | `abi-r112-implementation-2026-11-19` (source `fae959c`) | Immutable evaluator/generator/driver/verifier; 120 focused checks; no challenge or generation result yet |
 | R112 challenge publication | `abi-r112-challenge-2026-11-19` | Actual 800-case packet, published before scoring |
+| R112 finite scope prerequisite | `abi-r112-scope-2026-11-19` | 800 new and 1,598 development cases, exact replay; not general semantics |
 | Latest completed implementation freeze | `abi-r111-implementation-2026-11-18` | Immutable parser, challenge generator and bounded two-call driver, frozen before execution |
 | Preserved preregistration | `abi-prereg-r111-2026-11-18` | Design-only snapshot; completed result is separately sealed below |
 | Current research review snapshot | `abi-research-r111-2026-11-18` | Supported sentence gain, but absolute source qualification failed; exact replay, no acquisition or host promotion |

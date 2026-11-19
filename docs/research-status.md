@@ -7,8 +7,9 @@ against ordinary revision from a shared draft. It is a conventional evaluator-
 assisted workflow, not ABI novelty. New finite scope validation must precede
 generation. [Verified cleanup](R112_CLEANUP.md) restored the unchanged 10 GiB floor
 after two preserved blocked preflights. Its additive implementation passes 120
-focused checks, but no new challenge or source generation has run. Implementation
-publication and prospective scope validation remain required. No quality or host conclusion follows.
+focused checks. Published finite scope validation passes 800 new and 1,598
+development cases with exact replay. Source generation has not run; publish the
+scope packet before that stage. No English-quality or host conclusion follows.
 
 [R111](R111_SCOPE_REVISION.md) prospectively targets the measured scope and sentence
 gaps with a finite construction challenge and one unconditional model revision.

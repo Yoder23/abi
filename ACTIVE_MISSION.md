@@ -2,7 +2,7 @@
 
 Updated: 2026-11-19
 
-## Active registration: R112 (implementation frozen, not executed)
+## Active registration: R112 (finite scope passed, source study next)
 
 [R112](docs/R112_COUNT_FEEDBACK.md) registers one shared-draft comparison of
 ordinary revision versus explicit sentence-count feedback, after a new finite
@@ -13,9 +13,10 @@ all 1,598 disclosed development obligations. [Verified cleanup](docs/R112_CLEANU
 retired 61 duplicate paths with retained recovery copies, then user-approved
 hard links preserved all paths for another 606 copies. The third preflight is
 above the unchanged 10 GiB floor; R111's indexed dependencies remain unchanged.
-No new challenge, model, training or recipient ran. The implementation is frozen
-at `fae959c`; publish the freeze and actual challenge before scoring, and pass every
-registered prerequisite. First scope failure closes GPU execution. No automatic successor.
+The implementation is frozen at `fae959c`; implementation and actual challenge
+were published before scoring. Scope now passes all 800 new and 1,598 development
+cases with exact fresh replay. Publish that packet before the single registered
+576-call source study. No model, training or recipient has run. No automatic successor.
 
 ## Latest completed experiment: R111 (partial gain, qualification failed)
 
