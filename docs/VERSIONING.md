@@ -4,6 +4,7 @@
 | --- | --- | --- |
 | Python package | `0.4.0a1` | Supported alpha compiler API |
 | Current preregistration | `abi-prereg-r112-2026-11-19` | Count-feedback design; storage-blocked before implementation/execution |
+| Storage/custody snapshot | `abi-r112-cleanup-2026-11-19` | Verified duplicate retirement; still storage-blocked, no scientific execution |
 | Current experiment implementation | Pending for R112 | No new evaluator/driver freeze or execution result |
 | Latest completed implementation freeze | `abi-r111-implementation-2026-11-18` | Immutable parser, challenge generator and bounded two-call driver, frozen before execution |
 | Preserved preregistration | `abi-prereg-r111-2026-11-18` | Design-only snapshot; completed result is separately sealed below |

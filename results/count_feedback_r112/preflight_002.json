@@ -1,0 +1,43 @@
+{
+  "abi_acquisition": "NOT_TESTED",
+  "cleanup": {
+    "evidence_sha256": {
+      "r112_cleanup_actions.jsonl": "316afe53ceabe2eae7894e3c022b336ba40a904028abcd718a40a60d5905bd45",
+      "r112_cleanup_complete.json": "467a9d71b0cee021b7884a813042d0f96cb0dfdf38518bda67b69a7790f07c35",
+      "r112_cleanup_plan.json": "3d09bacb6059ceec83a479d74a3cc8bc575e6102557806ef44220c8928c76d23",
+      "r112_remaining_duplicate_audit.json": "2eea09c52caec9a54eaf8d85138eb73830e56695310d7fda9dd4c7cec24f6aca"
+    },
+    "parent_custody": {
+      "decision_sha256": "2a26b2ec4751e81835a7d0c47fa2aed9ad96786f7b710247a48516b52e7f22ce",
+      "host_bindings_checked": 182,
+      "manifest_sha256": "13a93229d5d9f13f19df38a8eeb60017d57e6a6ebc42ccd226647304287e0f76",
+      "repository_files_checked": 693,
+      "scope": "Byte custody only; not a new scientific replay or source-cache audit"
+    },
+    "remaining_audit_groups": 240,
+    "removed_files": 61,
+    "removed_logical_bytes": 5925099441,
+    "scope": "Custody arithmetic only; no reconstruction of past physical disk observations",
+    "verifier_sha256": "2ad72917dda297ef273e00c45959113d4d35b934e5f0528f4721decfddfa27e9"
+  },
+  "deficit_bytes": 4882767872,
+  "deleted_paths": [],
+  "failure_owner": "RESOURCE",
+  "format": "r112-post-cleanup-preflight/1",
+  "free_bytes": 5854650368,
+  "gpu_setting_changes": [],
+  "implementation_frozen": false,
+  "measurement": "shutil.disk_usage(observed_path).free",
+  "minimum_free_bytes": 10737418240,
+  "model_calls": 0,
+  "native_layercake": "NOT_TESTED",
+  "observed_path": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release",
+  "observed_utc": "2026-11-19T19:44:31.523428+00:00",
+  "quality_gate_changes": [],
+  "recipient_calls": 0,
+  "registration_sha256": "82788fa350c8c80f561c4d6ab55595b78ab2a09645ee64513c70b2e3a7929704",
+  "scope": "New storage/custody observation only; no implementation freeze or scientific execution",
+  "scope_challenge_executed": false,
+  "training_steps": 0,
+  "verdict": "RESOURCE_BLOCKED_BEFORE_IMPLEMENTATION"
+}

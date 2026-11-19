@@ -26,6 +26,25 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+R112 cleanup update (2026-11-19): 61 exact duplicate historical copies were
+removed under a hash-bound plan and journal; every retained copy was rehashed.
+All 693 R111 repository dependencies and 182 host bindings still match. The
+second preflight records 5,854,650,368 bytes free, still 4,882,767,872 bytes below
+the unchanged 10 GiB floor. No implementation freeze, challenge or model run.
+The remaining workspace audit is read-only, not deletion authority for primary
+evidence paths. Hard-link consolidation was proposed to preserve those paths,
+but has not been authorized or performed. Preserve both preflights and the
+initial custody-test timestamp parsing failure. See `docs/R112_CLEANUP.md`.
+
+User continuation (2026-11-19): audit and remove only verified duplicates to
+restore R112 storage, preserving every unique artifact and R111. Record exact
+removal-to-retained-copy SHA-256 mappings before deletion. Protect primary tracked
+files, R111 dependencies, source caches and unique checkpoints. Then implement,
+freeze, publish and execute the unchanged R112 design. No GPU setting or quality
+gate change, historical rewrite, automatic retry or follow-on. Cleanup authority
+is additive; do not rewrite the original preregistration's historical no-deletion
+statement. Keep resource, evaluator, source prerequisite, ABI and host separate.
+
 User continuation (2026-11-19): preregister and run one bounded R112 under
 `experiments/count_feedback_r112/PROTOCOL.md`, targeting R111's remaining sentence
 and scope failures. Preserve R111 and every quality/hardware gate. R112 contrasts

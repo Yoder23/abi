@@ -18,6 +18,8 @@ goal rather than reading the campaign archive in filename order.
 
 - [R112 count-feedback registration](R112_COUNT_FEEDBACK.md): planned matched
   revision contrast and scope prerequisite; storage-blocked, not executed.
+  [Verified cleanup and recovery](R112_CLEANUP.md): 61 duplicate copies removed;
+  second preflight still below the unchanged 10 GiB floor.
 
 - [R111 scope/revision study](R111_SCOPE_REVISION.md): finite prerequisite passed
   800 new and 793 development cases; all source calls replay exactly. Sentence

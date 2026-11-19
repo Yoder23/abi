@@ -1,0 +1,394 @@
+{
+  "format": "r112-exact-duplicate-cleanup/1",
+  "created_utc": "2026-11-19T19:36:00.6130367Z",
+  "workspace": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready",
+  "target_roots": [
+    "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\layercakeogwithdecoder",
+    "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run",
+    "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\.release-build",
+    "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.strict-hostile-r3-a",
+    "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.strict-hostile-r3-b",
+    "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.reexec",
+    "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.archive-audit",
+    "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.red-team"
+  ],
+  "minimum_candidate_bytes": 16777216,
+  "script_sha256": "23efbed5ffdb0b8dc1cc420355affc5a7db177224791c5557e5b17719c720690",
+  "candidate_files": 192,
+  "hashed_files": 156,
+  "duplicate_files_found": 61,
+  "selected_files": 61,
+  "selected_logical_bytes": 5925099441,
+  "free_bytes_before": 122712064,
+  "target_free_bytes": 12884901888,
+  "protected_paths": 7885,
+  "deletions": [
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\public_assets_r6\\abi-final-validation-v2-r6-2026-08-30.zip",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\dist_r6_technical\\abi-final-validation-v2-r6-2026-08-30.zip",
+      "bytes": 670484481,
+      "sha256": "4561bbe972ee33cf3b49e363c6b89f538c21f1a3642371a58e9e48b12c824c2a"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_tag.tar",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_tag.tar",
+      "bytes": 455936000,
+      "sha256": "4e3fa08a9b11212e394eeff6d918f979a75657bd3abd05715baf5ce3fe0a79ae"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\public_assets_r5\\phase7-final-english-core.cake",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\.git\\lfs\\objects\\ac\\b7\\acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+      "bytes": 253216208,
+      "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\results\\abi_capability_compiler_phase7_integrated\\materialized_v1052\\phase7-final-english-core.cake",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\.git\\lfs\\objects\\ac\\b7\\acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+      "bytes": 253216208,
+      "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_capability_compiler_phase7_integrated\\materialized_v1052\\phase7-final-english-core.cake",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\.git\\lfs\\objects\\ac\\b7\\acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+      "bytes": 253216208,
+      "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_capability_compiler_phase7_integrated\\materialized_v1052\\phase7-final-english-core.cake",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\.git\\lfs\\objects\\ac\\b7\\acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+      "bytes": 253216208,
+      "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_capability_compiler_phase7_integrated\\materialized_v1052\\phase7-final-english-core.cake",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\.git\\lfs\\objects\\ac\\b7\\acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+      "bytes": 253216208,
+      "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.strict-hostile-r3-b\\abi_release\\results\\abi_capability_compiler_phase7_integrated\\materialized_v1052\\phase7-final-english-core.cake",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\.git\\lfs\\objects\\ac\\b7\\acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+      "bytes": 253216208,
+      "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.strict-hostile-r3-a\\abi_release\\results\\abi_capability_compiler_phase7_integrated\\materialized_v1052\\phase7-final-english-core.cake",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\.git\\lfs\\objects\\ac\\b7\\acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+      "bytes": 253216208,
+      "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.reexec\\abi-v2-clean-room\\abi_release\\results\\abi_capability_compiler_phase7_integrated\\materialized_v1052\\phase7-final-english-core.cake",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\.git\\lfs\\objects\\ac\\b7\\acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+      "bytes": 253216208,
+      "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.archive-audit\\abi-v2-clean-room\\abi_release\\results\\abi_capability_compiler_phase7_integrated\\materialized_v1052\\phase7-final-english-core.cake",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\.git\\lfs\\objects\\ac\\b7\\acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+      "bytes": 253216208,
+      "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\public_assets_r6\\phase7-final-english-core.cake",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\.git\\lfs\\objects\\ac\\b7\\acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d",
+      "bytes": 253216208,
+      "sha256": "acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r7_tar_bound\\qwen2\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r7_tar_bound\\qwen2\\reachable-filesystem-inventory.jsonl",
+      "bytes": 54326776,
+      "sha256": "71f8f811341cb77d467edf371aae71840b17a2d3e25efe794c6eba375fc7cf25"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r6_full_stream_bound\\qwen2\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r6_full_stream_bound\\qwen2\\reachable-filesystem-inventory.jsonl",
+      "bytes": 54326776,
+      "sha256": "4b3fe52f50e660de361d4717b77d40fd016635b68700001084b09ff7bea795d6"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound\\qwen2\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound\\qwen2\\reachable-filesystem-inventory.jsonl",
+      "bytes": 54326733,
+      "sha256": "3c453683a31784b319b198d6d2d8568aaec5352a1b2cb6614fb58311d436c6dc"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound\\qwen2\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound\\qwen2\\reachable-filesystem-inventory.jsonl",
+      "bytes": 54326733,
+      "sha256": "3c453683a31784b319b198d6d2d8568aaec5352a1b2cb6614fb58311d436c6dc"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound\\qwen2\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound\\qwen2\\reachable-filesystem-inventory.jsonl",
+      "bytes": 54326733,
+      "sha256": "3c453683a31784b319b198d6d2d8568aaec5352a1b2cb6614fb58311d436c6dc"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound\\qwen2\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound\\qwen2\\reachable-filesystem-inventory.jsonl",
+      "bytes": 54326733,
+      "sha256": "3c453683a31784b319b198d6d2d8568aaec5352a1b2cb6614fb58311d436c6dc"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r7_tar_bound\\pythia\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r7_tar_bound\\pythia\\reachable-filesystem-inventory.jsonl",
+      "bytes": 54325673,
+      "sha256": "61cee51af1249a453e2dc37970b6cf681931c4fb22d2b47ef056c539010f52c0"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r6_full_stream_bound\\pythia\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r6_full_stream_bound\\pythia\\reachable-filesystem-inventory.jsonl",
+      "bytes": 54325673,
+      "sha256": "c26abad912047399b7065865dd89dcb50bf3375a161ce96032f6e1544adf7e7b"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound\\pythia\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound\\pythia\\reachable-filesystem-inventory.jsonl",
+      "bytes": 54325630,
+      "sha256": "c7d25f62d92b3b95bc3a9ded13ece199f87099c19141f854a1b0af51d8405f6f"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound\\pythia\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound\\pythia\\reachable-filesystem-inventory.jsonl",
+      "bytes": 54325630,
+      "sha256": "c7d25f62d92b3b95bc3a9ded13ece199f87099c19141f854a1b0af51d8405f6f"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound\\pythia\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound\\pythia\\reachable-filesystem-inventory.jsonl",
+      "bytes": 54325630,
+      "sha256": "c7d25f62d92b3b95bc3a9ded13ece199f87099c19141f854a1b0af51d8405f6f"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound\\pythia\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound\\pythia\\reachable-filesystem-inventory.jsonl",
+      "bytes": 54325630,
+      "sha256": "c7d25f62d92b3b95bc3a9ded13ece199f87099c19141f854a1b0af51d8405f6f"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r7_tar_bound\\layercake\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r7_tar_bound\\layercake\\reachable-filesystem-inventory.jsonl",
+      "bytes": 54323498,
+      "sha256": "44bb88ad6616062b412d725612531da005b43925899804baf28ae66ebe571629"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\.hostile-backups\\filesystem-inventory.backup",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r7_tar_bound\\layercake\\reachable-filesystem-inventory.jsonl",
+      "bytes": 54323498,
+      "sha256": "44bb88ad6616062b412d725612531da005b43925899804baf28ae66ebe571629"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r6_full_stream_bound\\layercake\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r6_full_stream_bound\\layercake\\reachable-filesystem-inventory.jsonl",
+      "bytes": 54323498,
+      "sha256": "cf3ddd4c4a91bdec7fa3a3b40718182a0b92c0a61ddc9f9955bab8df5ff120a5"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\.hostile-backups\\filesystem-inventory.backup",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r6_full_stream_bound\\layercake\\reachable-filesystem-inventory.jsonl",
+      "bytes": 54323498,
+      "sha256": "cf3ddd4c4a91bdec7fa3a3b40718182a0b92c0a61ddc9f9955bab8df5ff120a5"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound\\layercake\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound_attempt1_timing_noise\\layercake\\reachable-filesystem-inventory.jsonl",
+      "bytes": 54323455,
+      "sha256": "9ce8d2590834e1126fecc838867cc53f45b7291a5b832c5e117f980d3f313bf1"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_inherited_backup_history\\filesystem-inventory.backup",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound_attempt1_timing_noise\\layercake\\reachable-filesystem-inventory.jsonl",
+      "bytes": 54323455,
+      "sha256": "9ce8d2590834e1126fecc838867cc53f45b7291a5b832c5e117f980d3f313bf1"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound\\layercake\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound_attempt1_timing_noise\\layercake\\reachable-filesystem-inventory.jsonl",
+      "bytes": 54323455,
+      "sha256": "9ce8d2590834e1126fecc838867cc53f45b7291a5b832c5e117f980d3f313bf1"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\.hostile-backups\\filesystem-inventory.backup",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound_attempt1_timing_noise\\layercake\\reachable-filesystem-inventory.jsonl",
+      "bytes": 54323455,
+      "sha256": "9ce8d2590834e1126fecc838867cc53f45b7291a5b832c5e117f980d3f313bf1"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound\\layercake\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound_attempt1_timing_noise\\layercake\\reachable-filesystem-inventory.jsonl",
+      "bytes": 54323455,
+      "sha256": "9ce8d2590834e1126fecc838867cc53f45b7291a5b832c5e117f980d3f313bf1"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound_attempt1_timing_noise\\layercake\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound_attempt1_timing_noise\\layercake\\reachable-filesystem-inventory.jsonl",
+      "bytes": 54323455,
+      "sha256": "9ce8d2590834e1126fecc838867cc53f45b7291a5b832c5e117f980d3f313bf1"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound\\layercake\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound_attempt1_timing_noise\\layercake\\reachable-filesystem-inventory.jsonl",
+      "bytes": 54323455,
+      "sha256": "9ce8d2590834e1126fecc838867cc53f45b7291a5b832c5e117f980d3f313bf1"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound_attempt1_timing_noise\\layercake\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound_attempt1_timing_noise\\layercake\\reachable-filesystem-inventory.jsonl",
+      "bytes": 54323455,
+      "sha256": "9ce8d2590834e1126fecc838867cc53f45b7291a5b832c5e117f980d3f313bf1"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound_attempt1_timing_noise\\layercake\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r5_recursive_bound_attempt1_timing_noise\\layercake\\reachable-filesystem-inventory.jsonl",
+      "bytes": 54323455,
+      "sha256": "9ce8d2590834e1126fecc838867cc53f45b7291a5b832c5e117f980d3f313bf1"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\qwen2\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\qwen2\\reachable-filesystem-inventory.jsonl",
+      "bytes": 47960467,
+      "sha256": "5c40246b35e4d7d5d64a5e9d72c63215a2000b1a60cdf46a1a7c3a8e274fe878"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\qwen2\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\qwen2\\reachable-filesystem-inventory.jsonl",
+      "bytes": 47960467,
+      "sha256": "5c40246b35e4d7d5d64a5e9d72c63215a2000b1a60cdf46a1a7c3a8e274fe878"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\qwen2\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\qwen2\\reachable-filesystem-inventory.jsonl",
+      "bytes": 47960467,
+      "sha256": "5c40246b35e4d7d5d64a5e9d72c63215a2000b1a60cdf46a1a7c3a8e274fe878"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\qwen2\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\qwen2\\reachable-filesystem-inventory.jsonl",
+      "bytes": 47960467,
+      "sha256": "5c40246b35e4d7d5d64a5e9d72c63215a2000b1a60cdf46a1a7c3a8e274fe878"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.strict-hostile-r3-a\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\qwen2\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\qwen2\\reachable-filesystem-inventory.jsonl",
+      "bytes": 47960467,
+      "sha256": "5c40246b35e4d7d5d64a5e9d72c63215a2000b1a60cdf46a1a7c3a8e274fe878"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\pythia\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\pythia\\reachable-filesystem-inventory.jsonl",
+      "bytes": 47959506,
+      "sha256": "53d83d86b4ca006ee517b0806c115ec81e2406cd773ae1c15a137b7486d6002e"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.strict-hostile-r3-a\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\pythia\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\pythia\\reachable-filesystem-inventory.jsonl",
+      "bytes": 47959506,
+      "sha256": "53d83d86b4ca006ee517b0806c115ec81e2406cd773ae1c15a137b7486d6002e"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\pythia\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\pythia\\reachable-filesystem-inventory.jsonl",
+      "bytes": 47959506,
+      "sha256": "53d83d86b4ca006ee517b0806c115ec81e2406cd773ae1c15a137b7486d6002e"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\pythia\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\pythia\\reachable-filesystem-inventory.jsonl",
+      "bytes": 47959506,
+      "sha256": "53d83d86b4ca006ee517b0806c115ec81e2406cd773ae1c15a137b7486d6002e"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\pythia\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\pythia\\reachable-filesystem-inventory.jsonl",
+      "bytes": 47959506,
+      "sha256": "53d83d86b4ca006ee517b0806c115ec81e2406cd773ae1c15a137b7486d6002e"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\layercake\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\layercake\\reachable-filesystem-inventory.jsonl",
+      "bytes": 47957615,
+      "sha256": "f09a81ca4a4485675fbccc46a96ffa440a7732154e89076e697ca91a2ae42026"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\layercake\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\layercake\\reachable-filesystem-inventory.jsonl",
+      "bytes": 47957615,
+      "sha256": "f09a81ca4a4485675fbccc46a96ffa440a7732154e89076e697ca91a2ae42026"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\layercake\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\layercake\\reachable-filesystem-inventory.jsonl",
+      "bytes": 47957615,
+      "sha256": "f09a81ca4a4485675fbccc46a96ffa440a7732154e89076e697ca91a2ae42026"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\layercake\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\layercake\\reachable-filesystem-inventory.jsonl",
+      "bytes": 47957615,
+      "sha256": "f09a81ca4a4485675fbccc46a96ffa440a7732154e89076e697ca91a2ae42026"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.strict-hostile-r3-a\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\layercake\\reachable-filesystem-inventory.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\layercake\\reachable-filesystem-inventory.jsonl",
+      "bytes": 47957615,
+      "sha256": "f09a81ca4a4485675fbccc46a96ffa440a7732154e89076e697ca91a2ae42026"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.strict-hostile-r3-a\\abi_release\\.hostile-backups\\filesystem-inventory.backup",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\isolated_certification_strict_r4_content_bound\\layercake\\reachable-filesystem-inventory.jsonl",
+      "bytes": 47957615,
+      "sha256": "f09a81ca4a4485675fbccc46a96ffa440a7732154e89076e697ca91a2ae42026"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.reexec\\abi-v2-clean-room\\abi_release\\catalogs\\capability_compiler_phase1_frozen_v1.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\catalogs\\capability_compiler_phase1_frozen_v1.json",
+      "bytes": 17631486,
+      "sha256": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.strict-hostile-r3-a\\abi_release\\catalogs\\capability_compiler_phase1_frozen_v1.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\catalogs\\capability_compiler_phase1_frozen_v1.json",
+      "bytes": 17631486,
+      "sha256": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.strict-hostile-r3-b\\abi_release\\catalogs\\capability_compiler_phase1_frozen_v1.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\catalogs\\capability_compiler_phase1_frozen_v1.json",
+      "bytes": 17631486,
+      "sha256": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\catalogs\\capability_compiler_phase1_frozen_v1.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\catalogs\\capability_compiler_phase1_frozen_v1.json",
+      "bytes": 17631486,
+      "sha256": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\catalogs\\capability_compiler_phase1_frozen_v1.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\catalogs\\capability_compiler_phase1_frozen_v1.json",
+      "bytes": 17631486,
+      "sha256": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\catalogs\\capability_compiler_phase1_frozen_v1.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\catalogs\\capability_compiler_phase1_frozen_v1.json",
+      "bytes": 17631486,
+      "sha256": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\catalogs\\capability_compiler_phase1_frozen_v1.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\catalogs\\capability_compiler_phase1_frozen_v1.json",
+      "bytes": 17631486,
+      "sha256": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a"
+    },
+    {
+      "remove": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.archive-audit\\abi-v2-clean-room\\abi_release\\catalogs\\capability_compiler_phase1_frozen_v1.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\catalogs\\capability_compiler_phase1_frozen_v1.json",
+      "bytes": 17631486,
+      "sha256": "076f83f5aa54a4bc746cc4cf7167fcbe26b96f5f88bc6d973e02ed4e7f6af88a"
+    }
+  ],
+  "scope": "Only exact SHA-256 duplicates; retain every unique file and all primary tracked/R111 dependencies; no recursive deletion"
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="11" time="0.728" timestamp="2026-11-19T14:44:02.772099-05:00" hostname="Sam"><testcase classname="tests.test_r112_cleanup_custody" name="test_cleanup_packet" time="0.004"><failure message="ValueError: Invalid isoformat string: '2026-11-19T19:38:14.2294915Z'">def test_cleanup_packet():
+        plan, complete, journal, audit = packet()
+&gt;       result = c.verify_documents(plan, complete, journal, audit)
+
+tests\test_r112_cleanup_custody.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+plan = {'candidate_files': 192, 'created_utc': '2026-11-19T19:36:00.6130367Z', 'deletions': [{'bytes': 670484481, 'remove': '... 'sha256': 'acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d'}, ...], 'duplicate_files_found': 61, ...}
+complete = {'completed_utc': '2026-11-19T19:38:31.3570700Z', 'format': 'r112-exact-duplicate-cleanup-complete/1', 'free_bytes_after': 6045646848, 'free_bytes_before': 121327616, ...}
+journal = [{'action': 'verified_before_remove', 'bytes': 670484481, 'remove': 'C:\\Python310\\layercake_merged_nextgen_perfectA_...a256': 'acb787b3ffa0153c57d88cd37ba81c3f00b370d4ca4937e659cd4c775851f25d', 'utc': '2026-11-19T19:38:16.4028496Z'}, ...]
+audit = {'caution': 'Read-only candidates, NOT a deletion plan. Primary paths, Git objects, source caches, dependency bindings...: '2026-11-19T19:41:58.2657907Z', 'files_considered': 3122, 'format': 'r112-readonly-remaining-duplicate-audit/1', ...}
+
+    def verify_documents(plan, complete, journal, audit):
+        """Check raw custody records, not physical free space in the past."""
+        deletions = plan['deletions']
+        targets = {r['remove'] for r in deletions}
+        if (len(targets) != len(deletions) or len(deletions) != plan['selected_files']
+                or sum(r['bytes'] for r in deletions) != plan['selected_logical_bytes']
+                or complete['removed_files'] != len(deletions)
+                or complete['removed_logical_bytes'] != plan['selected_logical_bytes']
+                or complete['plan_sha256'] != ANCHORS['r112_cleanup_plan.json']
+                or complete['journal_sha256'] != ANCHORS['r112_cleanup_actions.jsonl']
+                or len(journal) != 2 * len(deletions)):
+            raise RuntimeError('Missing/inconsistent cleanup custody records')
+        for i, row in enumerate(deletions):
+            before, after = journal[2*i:2*i+2]
+            if (row['retain'] in targets or before != {
+                    'action': 'verified_before_remove', 'remove': row['remove'],
+                    'retain': row['retain'], 'sha256': row['sha256'], 'bytes': row['bytes']}
+                    or after['action'] != 'removed' or after['remove'] != row['remove']
+                    or after['retained_sha256'] != row['sha256']):
+                raise RuntimeError('Changed/reordered cleanup action')
+&gt;           datetime.fromisoformat(after['utc'])
+E           ValueError: Invalid isoformat string: '2026-11-19T19:38:14.2294915Z'
+
+scripts\r112_cleanup_receipt.py:43: ValueError</failure></testcase><testcase classname="tests.test_r112_cleanup_custody" name="test_tampered_custody_rejected[missing-row]" time="0.009" /><testcase classname="tests.test_r112_cleanup_custody" name="test_tampered_custody_rejected[missing-journal]" time="0.008" /><testcase classname="tests.test_r112_cleanup_custody" name="test_tampered_custody_rejected[stale-plan]" time="0.007" /><testcase classname="tests.test_r112_cleanup_custody" name="test_tampered_custody_rejected[changed-hash]" time="0.007" /><testcase classname="tests.test_r112_cleanup_custody" name="test_tampered_custody_rejected[retained-is-removed]" time="0.007" /><testcase classname="tests.test_r112_cleanup_custody" name="test_tampered_custody_rejected[wrong-bytes]" time="0.007" /><testcase classname="tests.test_r112_cleanup_custody" name="test_tampered_custody_rejected[wrong-count]" time="0.007" /><testcase classname="tests.test_r112_cleanup_custody" name="test_tampered_custody_rejected[reordered-journal]" time="0.018" /><testcase classname="tests.test_r112_cleanup_custody" name="test_tampered_custody_rejected[changed-audit]" time="0.007" /><testcase classname="tests.test_r112_cleanup_custody" name="test_tampered_custody_rejected[malformed-audit]" time="0.006" /></testsuite></testsuites>

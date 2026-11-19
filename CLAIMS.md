@@ -7,6 +7,8 @@ implementation/execution. Its planned count-assisted revision explicitly uses
 a mechanical evaluator statistic, not an answer or semantic score. No new
 quality, acquisition, host, efficiency or superiority claim follows. R111 and
 all quality gates remain unchanged; a resource block is not a quality failure.
+The [verified duplicate cleanup](docs/R112_CLEANUP.md) is storage/custody work,
+not scientific progress or a qualification claim. No unique evidence was removed.
 
 [R111](docs/R111_SCOPE_REVISION.md) passed its finite, author-constructed scope
 challenge: 800 new cases and 793 development obligations, exact replay, no

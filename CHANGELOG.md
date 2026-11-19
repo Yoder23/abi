@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-11-19 — R112 duplicate cleanup; storage still blocked
+
+- Remove 61 SHA-256-identical historical copies (5,925,099,441 logical bytes),
+  with per-file retained-copy mappings, write-once action journal and post-delete
+  hash verification. No unique legacy checkpoint matched; none was removed.
+- Recheck all 693 R111 indexed files and 182 host bindings plus the unchanged R112
+  registration. Preserve both resource preflights; the second records 5.45 GiB
+  free versus the unchanged 10 GiB floor. No challenge, model or training run.
+- Audit 3,122 remaining files of at least 1 MiB, hash 1,696 size-matched files,
+  and record 240 duplicate groups. This inventory is not a deletion plan.
+  Proposed hard-link consolidation of primary evidence paths is not performed.
+- Add independent custody checks: 11 pass, including 10 tamper cases. Preserve
+  the initial Python 3.10/.NET timestamp parsing failure and corrected rerun.
+  No ABI/host or English-quality claim; GPU settings and all gates unchanged.
+
 ## 2026-11-19 — R112 preregistration, resource-blocked
 
 - Register one shared-draft, ordinary-revision versus sentence-count-feedback

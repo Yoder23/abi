@@ -44,3 +44,4 @@ results/abi_capability_compiler_phase7_integrated/verify_v1067/result.json -bina
 results/abi_capability_compiler_phase8/readiness_v1073/manifest.json -binary diff merge text eol=lf
 *.safetensors filter=lfs diff=lfs merge=lfs -text
 evidence/current/** binary
+scripts/r112_*.ps1 -text

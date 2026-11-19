@@ -1,12 +1,16 @@
 # R112 — sentence-count feedback and remaining scope cases
 
 Status: **preregistered, resource-blocked before implementation/execution**.
-The unchanged execution floor is 10 GiB free. The local preflight found less
+The unchanged execution floor is 10 GiB free. The original preflight found less
 than 300 MiB on the only available local volume; no scope challenge or model
 call ran. The write-once observation is **288,468,992 bytes free (275.11 MiB)**,
 which is **10,448,949,248 bytes (9.731 GiB) short** of the execution floor.
-This is a resource blocker, not an English-quality, ABI acquisition
-or native LayerCake result. No files were deleted and no GPU settings changed.
+That original observation is preserved. The later user-authorized
+[duplicate cleanup](R112_CLEANUP.md) removed 61 byte-identical historical copies,
+with every retained copy rehashed and recovery paths recorded. The second
+preflight found **5,854,650,368 bytes free (5.45 GiB)**, still **4,882,767,872 bytes
+(4.55 GiB) short**. This remains a resource blocker, not an English-quality,
+ABI acquisition or native LayerCake result. No GPU settings changed.
 
 The [protocol](../experiments/count_feedback_r112/PROTOCOL.md) and
 [machine-readable contract](../results/count_feedback_r112/contract.json) define
@@ -49,6 +53,9 @@ success can replace those gates.
   [five disclosed scope cases](../results/count_feedback_r112/known_scope_cases.json).
 - [Registration and parent custody](../results/count_feedback_r112/registration.json).
 - [Write-once blocked preflight](../results/count_feedback_r112/preflight_001.json).
+- [Post-cleanup blocked preflight](../results/count_feedback_r112/preflight_002.json)
+  and [cleanup/recovery evidence](R112_CLEANUP.md). The original observation is
+  not overwritten or relabeled as current.
 - Twenty-four lightweight design/custody tests, including unchanged gates,
   matched inputs, complete-draft retention, resource rejection and missing/
   changed parent dependencies. [Receipt](../results/review_2026_11_19/r112-registration-a2.xml).
@@ -81,8 +88,10 @@ over the preserved directory.
 ## Resume conditions
 
 Restore at least 10 GiB free on the experiment volume without destroying unique
-evidence. This task does not authorize further cleanup/deletion. Then implement
-and test the registered design, publish the complete implementation/input freeze,
+evidence. Only verified duplicates were authorized for removal; unique payloads
+remain protected. Consolidating primary historical files with hard links is a
+proposed next storage action awaiting the user's decision, not an executed one.
+Then implement and test the registered design, publish the complete implementation/input freeze,
 publish the new challenge before scoring, and publish a passing scope packet
 before any GPU execution. Preserve the first failed/incomplete outcome. No sweep,
 new source, training, recipient, host modification or automatic follow-on.

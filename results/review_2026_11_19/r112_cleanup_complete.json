@@ -1,0 +1,11 @@
+{
+  "format": "r112-exact-duplicate-cleanup-complete/1",
+  "plan_sha256": "3d09bacb6059ceec83a479d74a3cc8bc575e6102557806ef44220c8928c76d23",
+  "removed_files": 61,
+  "removed_logical_bytes": 5925099441,
+  "free_bytes_before": 121327616,
+  "free_bytes_after": 6045646848,
+  "journal_sha256": "316afe53ceabe2eae7894e3c022b336ba40a904028abcd718a40a60d5905bd45",
+  "completed_utc": "2026-11-19T19:38:31.3570700Z",
+  "recovery": "Copy the retained file to its original remove path using the plan; all retained bytes hash-identical"
+}
