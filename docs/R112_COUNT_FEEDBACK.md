@@ -1,13 +1,14 @@
 # R112 — sentence-count feedback and remaining scope cases
 
-Status: **finite scope prerequisite passed; source generation not started**.
+Status: **finite scope prerequisite passed; frozen source study running**.
 
 The [scope decision](../results/count_feedback_r112/scope/decision.json) derives
 800/800 prospective cases and all 1,598 disclosed obligations correct, with zero
 errors or false-safe decisions and byte-identical fresh-process replay. Both raw
 files have SHA-256 `da8ff7f60370cc5081130de3088020c10a9cec77181ee4310464c5aba8beb544`.
 Publication tag: `abi-r112-scope-2026-11-19`. This is finite author-constructed
-validation, not general semantic or English certification. No model has run yet.
+validation, not general semantic or English certification. The single registered
+source study is running; no quality result or qualification is claimed yet.
 
 Source commit: `fae959c9b0b3f0fee510b3c7d8f710acf9a1968a`.
 [Freeze](../results/count_feedback_r112/freeze.json) SHA-256:
@@ -35,6 +36,10 @@ No GPU settings changed; every later execution stage must recheck the floor.
 A final smaller-file batch consolidated another 790 copies without removing any
 path: 1,396 total hard links / 6,302,684,385 logical duplicate bytes eliminated.
 The complete plans and recovery guidance are in the linked cleanup report.
+Two further historical-only plans completed during initial generation. Across all
+five plans, 2,915 distinct target paths remain intact; all links and the full R111
+closure rechecked successfully. These operations overlapped the first worker, so
+timings are observed costs, not an isolated performance benchmark.
 
 The [protocol](../experiments/count_feedback_r112/PROTOCOL.md) and
 [machine-readable contract](../results/count_feedback_r112/contract.json) define

@@ -1,0 +1,11 @@
+{
+  "format": "r112-hardlink-complete/1",
+  "plan_sha256": "0091c4f853e3e1b34023b71e571a7481a9513aef0b595fe097d5d81aa1b38950",
+  "completed_files": 114,
+  "logical_duplicate_bytes": 599002134.0,
+  "free_bytes_before": 10821763072,
+  "free_bytes_after": 11306225664,
+  "journal_sha256": "4b4926f7a46d2ae2fbc4bf05ab235ac108c975de3f3596b777df84e6f48a7e59",
+  "completed_utc": "2026-11-19T20:37:27.5967216Z",
+  "recovery": "Every original path remains. To restore independent storage, copy a linked payload to a new file and replace one path after verifying its hash; never modify shared historical bytes in place."
+}

@@ -1,0 +1,1056 @@
+{
+  "format": "r112-hardlink-plan/1",
+  "created_utc": "2026-11-19T20:36:32.7421331Z",
+  "workspace": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready",
+  "target_roots": [
+    "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results",
+    "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\layercake_release\\artifacts",
+    "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\layercake_release\\runs_experiment",
+    "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run",
+    "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\evidence",
+    "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\catalogs",
+    "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.strict-hostile-r3-a",
+    "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.strict-hostile-r3-b",
+    "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.reexec",
+    "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.archive-audit",
+    "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.red-team",
+    "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.blind-redteam-r2-tag-a",
+    "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_public_r3_tag_clone",
+    "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_public_r4_tag_clone"
+  ],
+  "script_sha256": "6e96415bff8f0c8518da44bf937699243772d8a2bde1fc891d0cbfe2051b1885",
+  "source_audit_sha256": "2eea09c52caec9a54eaf8d85138eb73830e56695310d7fda9dd4c7cec24f6aca",
+  "r111_manifest_sha256": "13a93229d5d9f13f19df38a8eeb60017d57e6a6ebc42ccd226647304287e0f76",
+  "free_bytes_before": 10840137728,
+  "files": 114,
+  "logical_duplicate_bytes": 599002134.0,
+  "actions": [
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\host_checkpoint_restoration_r82\\v6_reproduction\\model.safetensors",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_moonshot\\segregated_acquisition_v3\\three-block-realization-scale-preservation-seed9824-steps4000-v6\\model.safetensors",
+      "bytes": 246627944,
+      "sha256": "5bae16dec3a55759e92a8481ec5ee519a5ee8687ad1a6f019edc1df3225d092e",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-09-13T22:40:00.6966845Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\host_checkpoint_restoration_r82\\v6_reproduction\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\evidence\\current\\segregation\\intrinsic_english_search_validation_v83.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\evidence\\current\\segregation\\intrinsic_english_search_validation_v83.json",
+      "bytes": 15986449,
+      "sha256": "b85694db539e11867b511fff27f29cfef7b066ecd89d0066e22a72cd55ddafe4",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:17:45.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\evidence\\current\\segregation\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\evidence\\current\\segregation\\intrinsic_english_search_validation_v83.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\evidence\\current\\segregation\\intrinsic_english_search_validation_v83.json",
+      "bytes": 15986449,
+      "sha256": "b85694db539e11867b511fff27f29cfef7b066ecd89d0066e22a72cd55ddafe4",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:21:17.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\evidence\\current\\segregation\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\evidence\\current\\segregation\\intrinsic_english_search_validation_v83.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\evidence\\current\\segregation\\intrinsic_english_search_validation_v83.json",
+      "bytes": 15986449,
+      "sha256": "b85694db539e11867b511fff27f29cfef7b066ecd89d0066e22a72cd55ddafe4",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\evidence\\current\\segregation\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\evidence\\current\\segregation\\intrinsic_english_search_validation_v83.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\evidence\\current\\segregation\\intrinsic_english_search_validation_v83.json",
+      "bytes": 15986449,
+      "sha256": "b85694db539e11867b511fff27f29cfef7b066ecd89d0066e22a72cd55ddafe4",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\evidence\\current\\segregation\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.blind-redteam-r2-tag-a\\evidence\\current\\segregation\\intrinsic_english_search_validation_v83.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\evidence\\current\\segregation\\intrinsic_english_search_validation_v83.json",
+      "bytes": 15986449,
+      "sha256": "b85694db539e11867b511fff27f29cfef7b066ecd89d0066e22a72cd55ddafe4",
+      "original_attributes": "ReadOnly, Archive",
+      "original_last_write_utc": "2026-08-25T22:17:24.4075875Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.blind-redteam-r2-tag-a\\evidence\\current\\segregation\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.red-team\\abi-fresh-20260825\\evidence\\current\\segregation\\intrinsic_english_search_validation_v83.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\evidence\\current\\segregation\\intrinsic_english_search_validation_v83.json",
+      "bytes": 15986449,
+      "sha256": "b85694db539e11867b511fff27f29cfef7b066ecd89d0066e22a72cd55ddafe4",
+      "original_attributes": "ReadOnly, Archive",
+      "original_last_write_utc": "2026-08-25T22:17:24.4075875Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.red-team\\abi-fresh-20260825\\evidence\\current\\segregation\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.red-team\\final-validation-replay\\evidence\\current\\segregation\\intrinsic_english_search_validation_v83.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\evidence\\current\\segregation\\intrinsic_english_search_validation_v83.json",
+      "bytes": 15986449,
+      "sha256": "b85694db539e11867b511fff27f29cfef7b066ecd89d0066e22a72cd55ddafe4",
+      "original_attributes": "ReadOnly, Archive",
+      "original_last_write_utc": "2026-08-25T22:17:24.4075875Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.red-team\\final-validation-replay\\evidence\\current\\segregation\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_public_r3_tag_clone\\evidence\\current\\segregation\\intrinsic_english_search_validation_v83.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\evidence\\current\\segregation\\intrinsic_english_search_validation_v83.json",
+      "bytes": 15986449,
+      "sha256": "b85694db539e11867b511fff27f29cfef7b066ecd89d0066e22a72cd55ddafe4",
+      "original_attributes": "ReadOnly, Archive",
+      "original_last_write_utc": "2026-08-25T22:17:24.4075875Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_public_r3_tag_clone\\evidence\\current\\segregation\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_public_r4_tag_clone\\evidence\\current\\segregation\\intrinsic_english_search_validation_v83.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\evidence\\current\\segregation\\intrinsic_english_search_validation_v83.json",
+      "bytes": 15986449,
+      "sha256": "b85694db539e11867b511fff27f29cfef7b066ecd89d0066e22a72cd55ddafe4",
+      "original_attributes": "ReadOnly, Archive",
+      "original_last_write_utc": "2026-08-25T22:17:24.4075875Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_public_r4_tag_clone\\evidence\\current\\segregation\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\evidence\\current\\segregation\\english_and_first_domains_certification_v6.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\catalogs\\english_and_first_domains_certification_v6.json",
+      "bytes": 6287076,
+      "sha256": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-07-30T12:55:13.0594703Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\evidence\\current\\segregation\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\evidence\\current\\segregation\\english_and_first_domains_certification_v6.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\catalogs\\english_and_first_domains_certification_v6.json",
+      "bytes": 6287076,
+      "sha256": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:17:45.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\evidence\\current\\segregation\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\evidence\\current\\segregation\\english_and_first_domains_certification_v6.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\catalogs\\english_and_first_domains_certification_v6.json",
+      "bytes": 6287076,
+      "sha256": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:21:17.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\evidence\\current\\segregation\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\evidence\\current\\segregation\\english_and_first_domains_certification_v6.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\catalogs\\english_and_first_domains_certification_v6.json",
+      "bytes": 6287076,
+      "sha256": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\evidence\\current\\segregation\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\evidence\\current\\segregation\\english_and_first_domains_certification_v6.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\catalogs\\english_and_first_domains_certification_v6.json",
+      "bytes": 6287076,
+      "sha256": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\evidence\\current\\segregation\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\evidence\\current\\segregation\\english_and_first_domains_certification_v6.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\catalogs\\english_and_first_domains_certification_v6.json",
+      "bytes": 6287076,
+      "sha256": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-07-30T12:55:13.0594703Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\evidence\\current\\segregation\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.archive-audit\\abi-v2-clean-room\\abi_release\\evidence\\current\\segregation\\english_and_first_domains_certification_v6.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\catalogs\\english_and_first_domains_certification_v6.json",
+      "bytes": 6287076,
+      "sha256": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052",
+      "original_attributes": "ReadOnly, Archive",
+      "original_last_write_utc": "2026-08-24T04:00:00.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.archive-audit\\abi-v2-clean-room\\abi_release\\evidence\\current\\segregation\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.blind-redteam-r2-tag-a\\evidence\\current\\segregation\\english_and_first_domains_certification_v6.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\catalogs\\english_and_first_domains_certification_v6.json",
+      "bytes": 6287076,
+      "sha256": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052",
+      "original_attributes": "ReadOnly, Archive",
+      "original_last_write_utc": "2026-08-24T04:00:00.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.blind-redteam-r2-tag-a\\evidence\\current\\segregation\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.red-team\\abi-fresh-20260825\\evidence\\current\\segregation\\english_and_first_domains_certification_v6.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\catalogs\\english_and_first_domains_certification_v6.json",
+      "bytes": 6287076,
+      "sha256": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052",
+      "original_attributes": "ReadOnly, Archive",
+      "original_last_write_utc": "2026-08-24T04:00:00.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.red-team\\abi-fresh-20260825\\evidence\\current\\segregation\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.red-team\\final-validation-replay\\evidence\\current\\segregation\\english_and_first_domains_certification_v6.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\catalogs\\english_and_first_domains_certification_v6.json",
+      "bytes": 6287076,
+      "sha256": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052",
+      "original_attributes": "ReadOnly, Archive",
+      "original_last_write_utc": "2026-08-24T04:00:00.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.red-team\\final-validation-replay\\evidence\\current\\segregation\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.reexec\\abi-v2-clean-room\\abi_release\\evidence\\current\\segregation\\english_and_first_domains_certification_v6.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\catalogs\\english_and_first_domains_certification_v6.json",
+      "bytes": 6287076,
+      "sha256": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052",
+      "original_attributes": "ReadOnly, Archive",
+      "original_last_write_utc": "2026-08-24T04:00:00.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.reexec\\abi-v2-clean-room\\abi_release\\evidence\\current\\segregation\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.strict-hostile-r3-a\\abi_release\\evidence\\current\\segregation\\english_and_first_domains_certification_v6.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\catalogs\\english_and_first_domains_certification_v6.json",
+      "bytes": 6287076,
+      "sha256": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052",
+      "original_attributes": "ReadOnly, Archive",
+      "original_last_write_utc": "2026-08-24T04:00:00.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.strict-hostile-r3-a\\abi_release\\evidence\\current\\segregation\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.strict-hostile-r3-b\\abi_release\\evidence\\current\\segregation\\english_and_first_domains_certification_v6.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\catalogs\\english_and_first_domains_certification_v6.json",
+      "bytes": 6287076,
+      "sha256": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052",
+      "original_attributes": "ReadOnly, Archive",
+      "original_last_write_utc": "2026-08-24T04:00:00.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\.strict-hostile-r3-b\\abi_release\\evidence\\current\\segregation\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_public_r3_tag_clone\\evidence\\current\\segregation\\english_and_first_domains_certification_v6.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\catalogs\\english_and_first_domains_certification_v6.json",
+      "bytes": 6287076,
+      "sha256": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052",
+      "original_attributes": "ReadOnly, Archive",
+      "original_last_write_utc": "2026-08-24T04:00:00.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_public_r3_tag_clone\\evidence\\current\\segregation\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_public_r4_tag_clone\\evidence\\current\\segregation\\english_and_first_domains_certification_v6.json",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\catalogs\\english_and_first_domains_certification_v6.json",
+      "bytes": 6287076,
+      "sha256": "0ada3ea0b11fb7e664a7899d13bd2ff1c669a6d6989b1629b889ac3ab39ad052",
+      "original_attributes": "ReadOnly, Archive",
+      "original_last_write_utc": "2026-08-24T04:00:00.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_public_r4_tag_clone\\evidence\\current\\segregation\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\.hostile-backups\\causal-observations.backup",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r7_source_bound\\qwen2\\observations.jsonl",
+      "bytes": 1561477,
+      "sha256": "43a3e2084afbd2970e5fe1e5aea1480ffc86c451cc5661c5d2cbf6d46e27aecb",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T09:29:45.5663415Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\.hostile-backups\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\.hostile-backups\\raw-row.backup",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r7_source_bound\\qwen2\\observations.jsonl",
+      "bytes": 1561477,
+      "sha256": "43a3e2084afbd2970e5fe1e5aea1480ffc86c451cc5661c5d2cbf6d46e27aecb",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T09:29:45.5663415Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\.hostile-backups\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\results\\abi_final_validation_v2\\live_causality_r7_source_bound\\qwen2\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r7_source_bound\\qwen2\\observations.jsonl",
+      "bytes": 1561477,
+      "sha256": "43a3e2084afbd2970e5fe1e5aea1480ffc86c451cc5661c5d2cbf6d46e27aecb",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T09:29:45.5663415Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\results\\abi_final_validation_v2\\live_causality_r7_source_bound\\qwen2\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\.hostile-backups\\causal-observations.backup",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r6_source_bound\\qwen2\\observations.jsonl",
+      "bytes": 1561425,
+      "sha256": "a6eb2b9d052a9a19bc03574d01304834533863dd4e1291a6e8c3068d53f086b6",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T07:36:13.6661594Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\.hostile-backups\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\.hostile-backups\\raw-row.backup",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r6_source_bound\\qwen2\\observations.jsonl",
+      "bytes": 1561425,
+      "sha256": "a6eb2b9d052a9a19bc03574d01304834533863dd4e1291a6e8c3068d53f086b6",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T07:36:13.6661594Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\.hostile-backups\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality_r6_source_bound\\qwen2\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r6_source_bound\\qwen2\\observations.jsonl",
+      "bytes": 1561425,
+      "sha256": "a6eb2b9d052a9a19bc03574d01304834533863dd4e1291a6e8c3068d53f086b6",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T07:36:13.6661594Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality_r6_source_bound\\qwen2\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\results\\abi_final_validation_v2\\live_causality_r7_source_bound\\pythia\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r7_source_bound\\pythia\\observations.jsonl",
+      "bytes": 1537679,
+      "sha256": "cf5f2899a326cb6df96a4eff8209737b88acd822c8f55702d6de3690c3b994fe",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T09:26:46.4645989Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\results\\abi_final_validation_v2\\live_causality_r7_source_bound\\pythia\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality_r6_source_bound\\pythia\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r6_source_bound\\pythia\\observations.jsonl",
+      "bytes": 1537545,
+      "sha256": "536e51a23fbcd84668e4a92557e082f22ea23de1ac988cbfbf02c4d264b7b983",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T07:43:01.3124740Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality_r6_source_bound\\pythia\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_capability_compiler_phase4_clarification_route_replication\\B40-seed104729-v927\\evaluation\\development_outputs.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_capability_compiler_phase4_clarification_route_replication\\B40-seed104729-v927\\evaluation\\development_outputs.jsonl",
+      "bytes": 1527017,
+      "sha256": "b2aeab680a6b1a17a6f8332b5d1c5571b4eda72a51b2d191e67509aaeedb6196",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-15T16:02:32.5292632Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_capability_compiler_phase4_clarification_route_replication\\B40-seed104729-v927\\evaluation\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_capability_compiler_phase4_clarification_route_replication\\B40-seed104729-v927\\evaluation\\development_outputs.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_capability_compiler_phase4_clarification_route_replication\\B40-seed104729-v927\\evaluation\\development_outputs.jsonl",
+      "bytes": 1527017,
+      "sha256": "b2aeab680a6b1a17a6f8332b5d1c5571b4eda72a51b2d191e67509aaeedb6196",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-15T16:02:32.5292632Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_capability_compiler_phase4_clarification_route_replication\\B40-seed104729-v927\\evaluation\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_capability_compiler_phase4_clarification_route_replication\\B40-seed104729-v927\\evaluation\\development_outputs.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_capability_compiler_phase4_clarification_route_replication\\B40-seed104729-v927\\evaluation\\development_outputs.jsonl",
+      "bytes": 1527017,
+      "sha256": "b2aeab680a6b1a17a6f8332b5d1c5571b4eda72a51b2d191e67509aaeedb6196",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-15T16:02:32.5292632Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_capability_compiler_phase4_clarification_route_replication\\B40-seed104729-v927\\evaluation\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\results\\abi_capability_compiler_phase4_clarification_route_replication\\B40-seed104729-v927\\evaluation\\development_outputs.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_capability_compiler_phase4_clarification_route_replication\\B40-seed104729-v927\\evaluation\\development_outputs.jsonl",
+      "bytes": 1527017,
+      "sha256": "b2aeab680a6b1a17a6f8332b5d1c5571b4eda72a51b2d191e67509aaeedb6196",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-15T16:02:32.5292632Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\results\\abi_capability_compiler_phase4_clarification_route_replication\\B40-seed104729-v927\\evaluation\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_v2\\capability_matrix\\layercake_repaired\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_v2\\capability_matrix\\layercake_repaired\\observations.jsonl",
+      "bytes": 1352830,
+      "sha256": "e21806af4732f359c51e3658e619ccff30882abc1284e0f3c49dc3a33b12e463",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:17:45.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_v2\\capability_matrix\\layercake_repaired\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_v2\\capability_matrix\\layercake_repaired\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_v2\\capability_matrix\\layercake_repaired\\observations.jsonl",
+      "bytes": 1352830,
+      "sha256": "e21806af4732f359c51e3658e619ccff30882abc1284e0f3c49dc3a33b12e463",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:21:17.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_v2\\capability_matrix\\layercake_repaired\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_v2\\capability_matrix\\layercake_repaired\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_v2\\capability_matrix\\layercake_repaired\\observations.jsonl",
+      "bytes": 1352830,
+      "sha256": "e21806af4732f359c51e3658e619ccff30882abc1284e0f3c49dc3a33b12e463",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_v2\\capability_matrix\\layercake_repaired\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_v2\\capability_matrix\\layercake_repaired\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_v2\\capability_matrix\\layercake_repaired\\observations.jsonl",
+      "bytes": 1352830,
+      "sha256": "e21806af4732f359c51e3658e619ccff30882abc1284e0f3c49dc3a33b12e463",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_v2\\capability_matrix\\layercake_repaired\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\results\\abi_v2\\capability_matrix\\layercake_repaired\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_v2\\capability_matrix\\layercake_repaired\\observations.jsonl",
+      "bytes": 1352830,
+      "sha256": "e21806af4732f359c51e3658e619ccff30882abc1284e0f3c49dc3a33b12e463",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-24T20:45:35.0132878Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\results\\abi_v2\\capability_matrix\\layercake_repaired\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_v2\\capability_matrix\\layercake\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_v2\\capability_matrix\\layercake\\observations.jsonl",
+      "bytes": 1352808,
+      "sha256": "f0212a2f1e7723fb07e68819a2e6a6c43c1077149030c4497f7e807d18d186fd",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:17:45.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_v2\\capability_matrix\\layercake\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_v2\\capability_matrix\\layercake\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_v2\\capability_matrix\\layercake\\observations.jsonl",
+      "bytes": 1352808,
+      "sha256": "f0212a2f1e7723fb07e68819a2e6a6c43c1077149030c4497f7e807d18d186fd",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:21:17.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_v2\\capability_matrix\\layercake\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_v2\\capability_matrix\\layercake\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_v2\\capability_matrix\\layercake\\observations.jsonl",
+      "bytes": 1352808,
+      "sha256": "f0212a2f1e7723fb07e68819a2e6a6c43c1077149030c4497f7e807d18d186fd",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_v2\\capability_matrix\\layercake\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_v2\\capability_matrix\\layercake\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_v2\\capability_matrix\\layercake\\observations.jsonl",
+      "bytes": 1352808,
+      "sha256": "f0212a2f1e7723fb07e68819a2e6a6c43c1077149030c4497f7e807d18d186fd",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_v2\\capability_matrix\\layercake\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_v2\\capability_matrix\\pythia\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_v2\\capability_matrix\\pythia\\observations.jsonl",
+      "bytes": 1347182,
+      "sha256": "8afca24fc10f384c8a2e054b76eef902d6f4c085bdaf245dde10cf50fbce7786",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:17:45.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_v2\\capability_matrix\\pythia\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_v2\\capability_matrix\\pythia\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_v2\\capability_matrix\\pythia\\observations.jsonl",
+      "bytes": 1347182,
+      "sha256": "8afca24fc10f384c8a2e054b76eef902d6f4c085bdaf245dde10cf50fbce7786",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:21:17.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_v2\\capability_matrix\\pythia\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_v2\\capability_matrix\\pythia\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_v2\\capability_matrix\\pythia\\observations.jsonl",
+      "bytes": 1347182,
+      "sha256": "8afca24fc10f384c8a2e054b76eef902d6f4c085bdaf245dde10cf50fbce7786",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_v2\\capability_matrix\\pythia\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_v2\\capability_matrix\\pythia\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_v2\\capability_matrix\\pythia\\observations.jsonl",
+      "bytes": 1347182,
+      "sha256": "8afca24fc10f384c8a2e054b76eef902d6f4c085bdaf245dde10cf50fbce7786",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_v2\\capability_matrix\\pythia\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\results\\abi_v2\\capability_matrix\\pythia\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_v2\\capability_matrix\\pythia\\observations.jsonl",
+      "bytes": 1347182,
+      "sha256": "8afca24fc10f384c8a2e054b76eef902d6f4c085bdaf245dde10cf50fbce7786",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-24T20:54:10.7297324Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\results\\abi_v2\\capability_matrix\\pythia\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_v2\\capability_matrix\\qwen2\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_v2\\capability_matrix\\qwen2\\observations.jsonl",
+      "bytes": 1342127,
+      "sha256": "c236c4177841bf8e3d70e24c535fa0e1e9ef77bda70e4baaadf63e80882fafee",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:17:45.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_v2\\capability_matrix\\qwen2\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_v2\\capability_matrix\\qwen2\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_v2\\capability_matrix\\qwen2\\observations.jsonl",
+      "bytes": 1342127,
+      "sha256": "c236c4177841bf8e3d70e24c535fa0e1e9ef77bda70e4baaadf63e80882fafee",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:21:17.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_v2\\capability_matrix\\qwen2\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_v2\\capability_matrix\\qwen2\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_v2\\capability_matrix\\qwen2\\observations.jsonl",
+      "bytes": 1342127,
+      "sha256": "c236c4177841bf8e3d70e24c535fa0e1e9ef77bda70e4baaadf63e80882fafee",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_v2\\capability_matrix\\qwen2\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_v2\\capability_matrix\\qwen2\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_v2\\capability_matrix\\qwen2\\observations.jsonl",
+      "bytes": 1342127,
+      "sha256": "c236c4177841bf8e3d70e24c535fa0e1e9ef77bda70e4baaadf63e80882fafee",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_v2\\capability_matrix\\qwen2\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\results\\abi_v2\\capability_matrix\\qwen2\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_v2\\capability_matrix\\qwen2\\observations.jsonl",
+      "bytes": 1342127,
+      "sha256": "c236c4177841bf8e3d70e24c535fa0e1e9ef77bda70e4baaadf63e80882fafee",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-24T20:49:53.7829611Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_r7_20260830\\abi_release\\results\\abi_v2\\capability_matrix\\qwen2\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\live_causality\\qwen2\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality\\qwen2\\observations.jsonl",
+      "bytes": 1330130,
+      "sha256": "0e0961b6f9c351d9dafcc8499e0cbcda1badc283aa89dab7c4564dac6a8d0719",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:17:45.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\live_causality\\qwen2\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\live_causality\\qwen2\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality\\qwen2\\observations.jsonl",
+      "bytes": 1330130,
+      "sha256": "0e0961b6f9c351d9dafcc8499e0cbcda1badc283aa89dab7c4564dac6a8d0719",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:21:17.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\live_causality\\qwen2\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality\\qwen2\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality\\qwen2\\observations.jsonl",
+      "bytes": 1330130,
+      "sha256": "0e0961b6f9c351d9dafcc8499e0cbcda1badc283aa89dab7c4564dac6a8d0719",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality\\qwen2\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality\\qwen2\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality\\qwen2\\observations.jsonl",
+      "bytes": 1330130,
+      "sha256": "0e0961b6f9c351d9dafcc8499e0cbcda1badc283aa89dab7c4564dac6a8d0719",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality\\qwen2\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\qwen2\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_git_normalization_history\\qwen2\\observations.jsonl",
+      "bytes": 1330021,
+      "sha256": "a815444114e7eac072cedf354b88aab9f28377edb8e1bb85c3f663d8119bd273",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:17:45.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\qwen2\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\qwen2\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_git_normalization_history\\qwen2\\observations.jsonl",
+      "bytes": 1330021,
+      "sha256": "a815444114e7eac072cedf354b88aab9f28377edb8e1bb85c3f663d8119bd273",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:21:17.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\qwen2\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_git_normalization_history\\qwen2\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_git_normalization_history\\qwen2\\observations.jsonl",
+      "bytes": 1330021,
+      "sha256": "a815444114e7eac072cedf354b88aab9f28377edb8e1bb85c3f663d8119bd273",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_git_normalization_history\\qwen2\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_git_normalization_history\\qwen2\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_git_normalization_history\\qwen2\\observations.jsonl",
+      "bytes": 1330021,
+      "sha256": "a815444114e7eac072cedf354b88aab9f28377edb8e1bb85c3f663d8119bd273",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_git_normalization_history\\qwen2\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\.hostile-backups\\causal-observations.backup",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\qwen2\\observations.jsonl",
+      "bytes": 1329993,
+      "sha256": "f309ed66be652c6d27be1e55439bb11c7754e86b8f5a5da99b31978ccfccdbc7",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\.hostile-backups\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\.hostile-backups\\raw-row.backup",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\qwen2\\observations.jsonl",
+      "bytes": 1329993,
+      "sha256": "f309ed66be652c6d27be1e55439bb11c7754e86b8f5a5da99b31978ccfccdbc7",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\.hostile-backups\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\qwen2\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\qwen2\\observations.jsonl",
+      "bytes": 1329993,
+      "sha256": "f309ed66be652c6d27be1e55439bb11c7754e86b8f5a5da99b31978ccfccdbc7",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\qwen2\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_inherited_backup_history\\causal-observations.backup",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\qwen2\\observations.jsonl",
+      "bytes": 1329993,
+      "sha256": "f309ed66be652c6d27be1e55439bb11c7754e86b8f5a5da99b31978ccfccdbc7",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_inherited_backup_history\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_inherited_backup_history\\raw-row.backup",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\qwen2\\observations.jsonl",
+      "bytes": 1329993,
+      "sha256": "f309ed66be652c6d27be1e55439bb11c7754e86b8f5a5da99b31978ccfccdbc7",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_inherited_backup_history\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\qwen2\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\qwen2\\observations.jsonl",
+      "bytes": 1329993,
+      "sha256": "f309ed66be652c6d27be1e55439bb11c7754e86b8f5a5da99b31978ccfccdbc7",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\qwen2\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\qwen2\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\qwen2\\observations.jsonl",
+      "bytes": 1329849,
+      "sha256": "7046d04211adf5b46e1f4492f6ba918280f250acf49763e63615daeb268efafd",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:17:45.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\qwen2\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\qwen2\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\qwen2\\observations.jsonl",
+      "bytes": 1329849,
+      "sha256": "7046d04211adf5b46e1f4492f6ba918280f250acf49763e63615daeb268efafd",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:21:17.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\qwen2\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\qwen2\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\qwen2\\observations.jsonl",
+      "bytes": 1329849,
+      "sha256": "7046d04211adf5b46e1f4492f6ba918280f250acf49763e63615daeb268efafd",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\qwen2\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\qwen2\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\qwen2\\observations.jsonl",
+      "bytes": 1329849,
+      "sha256": "7046d04211adf5b46e1f4492f6ba918280f250acf49763e63615daeb268efafd",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\qwen2\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_eof_hygiene_history\\qwen2\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_eof_hygiene_history\\qwen2\\observations.jsonl",
+      "bytes": 1329844,
+      "sha256": "e9bfcf9eb01156782138380ece4bea3ede844bd2d9b44c37b1375356e9c5ebe2",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:17:45.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_eof_hygiene_history\\qwen2\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_eof_hygiene_history\\qwen2\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_eof_hygiene_history\\qwen2\\observations.jsonl",
+      "bytes": 1329844,
+      "sha256": "e9bfcf9eb01156782138380ece4bea3ede844bd2d9b44c37b1375356e9c5ebe2",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:21:17.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_eof_hygiene_history\\qwen2\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_eof_hygiene_history\\qwen2\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_eof_hygiene_history\\qwen2\\observations.jsonl",
+      "bytes": 1329844,
+      "sha256": "e9bfcf9eb01156782138380ece4bea3ede844bd2d9b44c37b1375356e9c5ebe2",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_eof_hygiene_history\\qwen2\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_eof_hygiene_history\\qwen2\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_eof_hygiene_history\\qwen2\\observations.jsonl",
+      "bytes": 1329844,
+      "sha256": "e9bfcf9eb01156782138380ece4bea3ede844bd2d9b44c37b1375356e9c5ebe2",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_eof_hygiene_history\\qwen2\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\live_causality\\pythia\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality\\pythia\\observations.jsonl",
+      "bytes": 1215788,
+      "sha256": "303da26a9c7fe07cfb1e1781b8c99eaf0486c4026c84ceceb3d25aa957e0c5ea",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:17:45.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\live_causality\\pythia\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\live_causality\\pythia\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality\\pythia\\observations.jsonl",
+      "bytes": 1215788,
+      "sha256": "303da26a9c7fe07cfb1e1781b8c99eaf0486c4026c84ceceb3d25aa957e0c5ea",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:21:17.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\live_causality\\pythia\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality\\pythia\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality\\pythia\\observations.jsonl",
+      "bytes": 1215788,
+      "sha256": "303da26a9c7fe07cfb1e1781b8c99eaf0486c4026c84ceceb3d25aa957e0c5ea",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality\\pythia\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality\\pythia\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality\\pythia\\observations.jsonl",
+      "bytes": 1215788,
+      "sha256": "303da26a9c7fe07cfb1e1781b8c99eaf0486c4026c84ceceb3d25aa957e0c5ea",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality\\pythia\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\pythia\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\pythia\\observations.jsonl",
+      "bytes": 1215636,
+      "sha256": "afc6d78a7be67d82472e3342ce5fcccea694c50644c446fc59d8078535017f1f",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\pythia\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\pythia\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\pythia\\observations.jsonl",
+      "bytes": 1215636,
+      "sha256": "afc6d78a7be67d82472e3342ce5fcccea694c50644c446fc59d8078535017f1f",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\pythia\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\pythia\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_git_normalization_history\\pythia\\observations.jsonl",
+      "bytes": 1215632,
+      "sha256": "feb0f5dc96df4f0e8e6e5cf162ec8f8aa461014d243dc4bdce54619837268029",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:17:45.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\pythia\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\pythia\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_git_normalization_history\\pythia\\observations.jsonl",
+      "bytes": 1215632,
+      "sha256": "feb0f5dc96df4f0e8e6e5cf162ec8f8aa461014d243dc4bdce54619837268029",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:21:17.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\pythia\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_git_normalization_history\\pythia\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_git_normalization_history\\pythia\\observations.jsonl",
+      "bytes": 1215632,
+      "sha256": "feb0f5dc96df4f0e8e6e5cf162ec8f8aa461014d243dc4bdce54619837268029",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_git_normalization_history\\pythia\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_git_normalization_history\\pythia\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_git_normalization_history\\pythia\\observations.jsonl",
+      "bytes": 1215632,
+      "sha256": "feb0f5dc96df4f0e8e6e5cf162ec8f8aa461014d243dc4bdce54619837268029",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_git_normalization_history\\pythia\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\pythia\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\pythia\\observations.jsonl",
+      "bytes": 1215503,
+      "sha256": "2c4b52da34d4f39c5290f630f4956ee5aa117ec2ce01c624020c33fdea5a75f1",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:17:45.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\pythia\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\pythia\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\pythia\\observations.jsonl",
+      "bytes": 1215503,
+      "sha256": "2c4b52da34d4f39c5290f630f4956ee5aa117ec2ce01c624020c33fdea5a75f1",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:21:17.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\pythia\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\pythia\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\pythia\\observations.jsonl",
+      "bytes": 1215503,
+      "sha256": "2c4b52da34d4f39c5290f630f4956ee5aa117ec2ce01c624020c33fdea5a75f1",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\pythia\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\pythia\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\pythia\\observations.jsonl",
+      "bytes": 1215503,
+      "sha256": "2c4b52da34d4f39c5290f630f4956ee5aa117ec2ce01c624020c33fdea5a75f1",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\pythia\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_eof_hygiene_history\\pythia\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_eof_hygiene_history\\pythia\\observations.jsonl",
+      "bytes": 1215495,
+      "sha256": "5abbac656c7dd7dd5dc7278ec474b843f47bd25e9a0c1323c42e482963bf6681",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:17:45.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_eof_hygiene_history\\pythia\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_eof_hygiene_history\\pythia\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_eof_hygiene_history\\pythia\\observations.jsonl",
+      "bytes": 1215495,
+      "sha256": "5abbac656c7dd7dd5dc7278ec474b843f47bd25e9a0c1323c42e482963bf6681",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:21:17.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_eof_hygiene_history\\pythia\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_eof_hygiene_history\\pythia\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_eof_hygiene_history\\pythia\\observations.jsonl",
+      "bytes": 1215495,
+      "sha256": "5abbac656c7dd7dd5dc7278ec474b843f47bd25e9a0c1323c42e482963bf6681",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_eof_hygiene_history\\pythia\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_eof_hygiene_history\\pythia\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_eof_hygiene_history\\pythia\\observations.jsonl",
+      "bytes": 1215495,
+      "sha256": "5abbac656c7dd7dd5dc7278ec474b843f47bd25e9a0c1323c42e482963bf6681",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_eof_hygiene_history\\pythia\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\live_causality\\layercake\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality\\layercake\\observations.jsonl",
+      "bytes": 1048812,
+      "sha256": "d9aba07f26a53b9b42db3fa62525539944960d10fd7674f13ac4b9505c1d31ab",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:17:45.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\live_causality\\layercake\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\live_causality\\layercake\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality\\layercake\\observations.jsonl",
+      "bytes": 1048812,
+      "sha256": "d9aba07f26a53b9b42db3fa62525539944960d10fd7674f13ac4b9505c1d31ab",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:21:17.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\live_causality\\layercake\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality\\layercake\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality\\layercake\\observations.jsonl",
+      "bytes": 1048812,
+      "sha256": "d9aba07f26a53b9b42db3fa62525539944960d10fd7674f13ac4b9505c1d31ab",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality\\layercake\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality\\layercake\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality\\layercake\\observations.jsonl",
+      "bytes": 1048812,
+      "sha256": "d9aba07f26a53b9b42db3fa62525539944960d10fd7674f13ac4b9505c1d31ab",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality\\layercake\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\layercake\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_git_normalization_history\\layercake\\observations.jsonl",
+      "bytes": 1048641,
+      "sha256": "e0b7510c045a90baed915ebef73c9d632749a20e63c392526451700ab556c03a",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:17:45.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\layercake\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\layercake\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_git_normalization_history\\layercake\\observations.jsonl",
+      "bytes": 1048641,
+      "sha256": "e0b7510c045a90baed915ebef73c9d632749a20e63c392526451700ab556c03a",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:21:17.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\layercake\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_git_normalization_history\\layercake\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_git_normalization_history\\layercake\\observations.jsonl",
+      "bytes": 1048641,
+      "sha256": "e0b7510c045a90baed915ebef73c9d632749a20e63c392526451700ab556c03a",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_git_normalization_history\\layercake\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_git_normalization_history\\layercake\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_git_normalization_history\\layercake\\observations.jsonl",
+      "bytes": 1048641,
+      "sha256": "e0b7510c045a90baed915ebef73c9d632749a20e63c392526451700ab556c03a",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_git_normalization_history\\layercake\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pid_reuse_history\\layercake\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pid_reuse_history\\layercake\\observations.jsonl",
+      "bytes": 1048614,
+      "sha256": "9dcba9e9b12c412093e56060e0e4c255dcebf0b56a5abc42146723b25010fd79",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:17:45.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pid_reuse_history\\layercake\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pid_reuse_history\\layercake\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pid_reuse_history\\layercake\\observations.jsonl",
+      "bytes": 1048614,
+      "sha256": "9dcba9e9b12c412093e56060e0e4c255dcebf0b56a5abc42146723b25010fd79",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:21:17.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pid_reuse_history\\layercake\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pid_reuse_history\\layercake\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pid_reuse_history\\layercake\\observations.jsonl",
+      "bytes": 1048614,
+      "sha256": "9dcba9e9b12c412093e56060e0e4c255dcebf0b56a5abc42146723b25010fd79",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pid_reuse_history\\layercake\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pid_reuse_history\\layercake\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pid_reuse_history\\layercake\\observations.jsonl",
+      "bytes": 1048614,
+      "sha256": "9dcba9e9b12c412093e56060e0e4c255dcebf0b56a5abc42146723b25010fd79",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pid_reuse_history\\layercake\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\layercake\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\layercake\\observations.jsonl",
+      "bytes": 1048607,
+      "sha256": "48b41b8bed5a888d21c501b76299900cce69b7eb9d23b0c8b5d3e88f49c5fb87",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\layercake\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\layercake\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\layercake\\observations.jsonl",
+      "bytes": 1048607,
+      "sha256": "48b41b8bed5a888d21c501b76299900cce69b7eb9d23b0c8b5d3e88f49c5fb87",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_source_bound\\layercake\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\layercake\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\layercake\\observations.jsonl",
+      "bytes": 1048581,
+      "sha256": "0b56761cbf2a05e427af492e07fee0fd3042508dc864794415ffc62365fcdc07",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:17:45.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5b\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\layercake\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\layercake\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\layercake\\observations.jsonl",
+      "bytes": 1048581,
+      "sha256": "0b56761cbf2a05e427af492e07fee0fd3042508dc864794415ffc62365fcdc07",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:21:17.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5c\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\layercake\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\layercake\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\layercake\\observations.jsonl",
+      "bytes": 1048581,
+      "sha256": "0b56761cbf2a05e427af492e07fee0fd3042508dc864794415ffc62365fcdc07",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r5d\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\layercake\\.r112-link-backup"
+    },
+    {
+      "target": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\layercake\\observations.jsonl",
+      "retain": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\layercake\\observations.jsonl",
+      "bytes": 1048581,
+      "sha256": "0b56761cbf2a05e427af492e07fee0fd3042508dc864794415ffc62365fcdc07",
+      "original_attributes": "Archive",
+      "original_last_write_utc": "2026-08-30T04:59:59.0000000Z",
+      "backup": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release\\clean_run\\hostile_fixture_r6_pre_public\\abi_release\\results\\abi_final_validation_v2\\live_causality_r5_pre_lint_freeze_history\\layercake\\.r112-link-backup"
+    }
+  ],
+  "scope": "Keep every path and byte; historical payloads only; no R111 dependency, source cache or Git metadata; shared payloads become read-only"
+}

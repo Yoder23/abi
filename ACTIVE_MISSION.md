@@ -2,7 +2,7 @@
 
 Updated: 2026-11-19
 
-## Active registration: R112 (finite scope passed, source study next)
+## Active registration: R112 (finite scope passed, source study running)
 
 [R112](docs/R112_COUNT_FEEDBACK.md) registers one shared-draft comparison of
 ordinary revision versus explicit sentence-count feedback, after a new finite
@@ -11,13 +11,15 @@ The counter-assisted workflow is not evaluator-independent English or ABI novelt
 The additive evaluator and live driver now pass 120 focused checks, including
 all 1,598 disclosed development obligations. [Verified cleanup](docs/R112_CLEANUP.md)
 retired 61 duplicate paths with retained recovery copies, then user-approved
-hard links preserved all paths for another 1,396 copies (6,302,684,385 logical
-duplicate bytes). The third preflight is
+hard links preserved 2,915 distinct historical target paths across 2,961 operations.
+The final custody audit rechecked all five plans and the R111 closure. The third preflight is
 above the unchanged 10 GiB floor; R111's indexed dependencies remain unchanged.
 The implementation is frozen at `fae959c`; implementation and actual challenge
 were published before scoring. Scope now passes all 800 new and 1,598 development
 cases with exact fresh replay. That packet is published before the single registered
-576-call source study. No model, training or recipient has run. No automatic successor.
+576-call source study, now running from the unchanged freeze. No training or
+recipient call is authorized. Cleanup overlapped the first worker; its costs are
+not an isolated performance benchmark. No automatic successor.
 
 ## Latest completed experiment: R111 (partial gain, qualification failed)
 

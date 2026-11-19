@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-11-19 — R112 final custody audit and source execution
+
+- Complete all five approved historical hard-link plans: 2,961 operations on
+  2,915 distinct target paths. Every path/byte remains; recheck actual physical
+  identity, read-only flags and all 693 R111 files plus 182 host bindings.
+- Record 6.46 GiB of summed observed free-space gains, separately from logical
+  target sizes and earlier duplicate removals. Preserve every plan and journal.
+- Start only the frozen, preregistered R112 source study after scope publication.
+  No GPU setting or gate change, training, recipient or scientific promotion.
+  Cleanup overlaps the first worker; costs are not an isolated speed benchmark.
+
 ## 2026-11-19 — R112 finite scope prerequisite passed
 
 - Publish the frozen implementation and exact content-seeded challenge before

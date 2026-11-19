@@ -26,6 +26,14 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+R112 source generation is running from frozen code after the published scope
+pass. All five approved hard-link plans are complete: 2,961 operations on 2,915
+distinct historical target paths, all preserved. The final physical custody
+audit rechecks every link and all 693 R111 files plus 182 host bindings. Cleanup
+overlapped the first source worker; observed costs are not isolated benchmarks.
+Do not expand cleanup, change GPU settings/gates, retry or launch a successor.
+Finish the registered initial/replay workers and publish the actual outcome.
+
 Final R112 storage consolidation (2026-11-19): 790 additional historical copies
 now share verified read-only storage, bringing hard-linked copies to 1,396 and
 logical duplicate bytes eliminated to 6,302,684,385. All paths remain. Exclude

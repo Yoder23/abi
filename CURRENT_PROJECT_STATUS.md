@@ -5,12 +5,14 @@ Updated: 2026-11-19
 Current registration: [R112](docs/R112_COUNT_FEEDBACK.md), a bounded count-feedback
 revision contrast plus finite scope validation. Its new implementation passes
 120 focused checks. The prospective scope gate passes 800 new and 1,598 disclosed
-cases with exact replay; source generation has not run yet.
+cases with exact replay; the single frozen source study is now running.
 [Verified cleanup](docs/R112_CLEANUP.md) retired 61 duplicate paths with recovery
-copies and consolidated 606 further copies with read-only hard links, preserving
-all those paths. The third preflight is above 10 GiB. Earlier blocks, R111, GPU
+copies and preserved 2,915 distinct historical target paths through read-only
+hard links. All five plans and R111 custody rechecked successfully. The third
+preflight is above 10 GiB. Earlier blocks, R111, GPU
 settings, quality gates and native LayerCake code are unchanged. The implementation
-is frozen at `fae959c`; publish the complete passing scope packet before source execution.
+is frozen at `fae959c`; the complete passing scope packet was published before
+source execution. Cleanup overlapped initial generation; costs are observational.
 
 Latest completed result: [R111](docs/R111_SCOPE_REVISION.md). Its finite scope
 prerequisite passed 800/800 new cases and 793 development obligations with exact

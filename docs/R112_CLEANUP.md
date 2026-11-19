@@ -135,3 +135,33 @@ This is separate from the earlier 61 removed duplicate paths with retained
 recovery copies. No unique evidence was removed. Do not modify hard-linked
 historical files in place. The unchanged 10 GiB floor still applies before each
 scientific stage and call.
+
+## Final custody audit and additional headroom
+
+While the first source worker was running, continued machine disk use reduced
+headroom. Two further hash-bound plans consolidated old clean-room/evidence
+copies (114 operations) and smaller historical copies (1,451 operations), under
+the same user approval and exclusions. Every path and byte remains. Their plans,
+journals and completion receipts are public evidence:
+
+- [Clean-room plan](../results/review_2026_11_19/r112_hardlink_cleanroom_plan.json),
+  [journal](../results/review_2026_11_19/r112_hardlink_cleanroom_actions.jsonl),
+  [completion](../results/review_2026_11_19/r112_hardlink_cleanroom_complete.json).
+- [Reserve plan](../results/review_2026_11_19/r112_hardlink_reserve_plan.json),
+  [journal](../results/review_2026_11_19/r112_hardlink_reserve_actions.jsonl),
+  [completion](../results/review_2026_11_19/r112_hardlink_reserve_complete.json).
+- [Final physical custody audit](../results/review_2026_11_19/r112_hardlink_final_custody.json).
+
+Across all five plans there are **2,961 link operations on 2,915 distinct target
+paths**. Some already-shared historical groups were joined to another canonical
+copy, so operations must not be mistaken for distinct files or physical savings.
+The logical target-byte sum is 7,140,903,614; the sum of observed before/after
+free-space deltas is **6,932,373,504 bytes (6.46 GiB)**. Concurrent disk activity
+affects these deltas. This is separate from the earlier 61 duplicate-path removals.
+
+The final audit rechecks all physical identities, read-only attributes, byte
+hashes, journals, absent rollback files and the complete 693-file/182-host-binding
+R111 closure. It observed 11,304,566,784 free bytes. No source cache or Git metadata
+was modified by cleanup. GPU settings and quality gates remain unchanged.
+Filesystem cleanup overlapped initial generation: timing is observed cost, not
+an isolated performance benchmark. No further cleanup expansion is planned.

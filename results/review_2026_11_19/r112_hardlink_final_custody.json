@@ -1,0 +1,64 @@
+{
+  "format": "r112-final-hardlink-custody/1",
+  "free_bytes_now": 11304566784,
+  "linked_path_operations": 2961,
+  "logical_target_bytes": 7140903614.0,
+  "observed_utc": "2026-11-19T20:46:35.007217+00:00",
+  "plans": [
+    {
+      "evidence": {
+        "r112_hardlink_plan.json": "2bb5c4949eb98f1f590a7143a77b76ab27de175e6260023fe900d4c822b111fb",
+        "r112_hardlink_retry_actions.jsonl": "319ee4f4b9ad03bb131864fd5961ccf2000cee3d4d4f94daa8c1e1df6bb18f28",
+        "r112_hardlink_retry_complete.json": "bced8c74808be4b1768055b4340c7fc544c92dbdffc416a077fff449ab2cad99"
+      },
+      "files": 537,
+      "logical_duplicate_bytes": 5540581586.0
+    },
+    {
+      "evidence": {
+        "r112_hardlink_aux_actions.jsonl": "b923583cd4cbcb44eb73efdf591b38542d59ff55e1d08fe158573201a455e676",
+        "r112_hardlink_aux_complete.json": "b24e03cc9d36b0fbd24395ef183492e1b8219a368098cecc2aa293ad260d43e3",
+        "r112_hardlink_aux_plan.json": "b44f3c66ae8264b9e91399fe327cf6366179c1cea3489142fe62f807cc5e0667"
+      },
+      "files": 69,
+      "logical_duplicate_bytes": 329776407.0
+    },
+    {
+      "evidence": {
+        "r112_hardlink_small_actions.jsonl": "cb850e7ab47ab19f36f23c06de827d9cc5d16fe19180209a95b436f7fde0bdb8",
+        "r112_hardlink_small_complete.json": "ab6323f760bf820fc744a5c9df6c9476b457a70c4eb7d38eb0ddc7494d4782a8",
+        "r112_hardlink_small_plan.json": "d3d04db85a4ad280ffe7d6a92a00218cca81ebf7f8ddacc77926210ace0e64f6"
+      },
+      "files": 790,
+      "logical_duplicate_bytes": 432326392.0
+    },
+    {
+      "evidence": {
+        "r112_hardlink_cleanroom_actions.jsonl": "4b4926f7a46d2ae2fbc4bf05ab235ac108c975de3f3596b777df84e6f48a7e59",
+        "r112_hardlink_cleanroom_complete.json": "4b3f089eec15524c9af8494ea3bb5b70efe61000144eebd62650a45433ed31e9",
+        "r112_hardlink_cleanroom_plan.json": "0091c4f853e3e1b34023b71e571a7481a9513aef0b595fe097d5d81aa1b38950"
+      },
+      "files": 114,
+      "logical_duplicate_bytes": 599002134.0
+    },
+    {
+      "evidence": {
+        "r112_hardlink_reserve_actions.jsonl": "11a583764d78abf18f2c8f491bff90cbb359dc1841d81c07398d30e23a6a5be5",
+        "r112_hardlink_reserve_complete.json": "34e06370c029a3403b78602361264841a754f1c8d9cc8892fac3e28eb71e26e0",
+        "r112_hardlink_reserve_plan.json": "77b1790e15ad34c0fdc83f4533f5b77dff6a2b01e2ba3047ba46e2d78bbad306"
+      },
+      "files": 1451,
+      "logical_duplicate_bytes": 239217095.0
+    }
+  ],
+  "r111_custody": {
+    "decision_sha256": "2a26b2ec4751e81835a7d0c47fa2aed9ad96786f7b710247a48516b52e7f22ce",
+    "host_bindings_checked": 182,
+    "manifest_sha256": "13a93229d5d9f13f19df38a8eeb60017d57e6a6ebc42ccd226647304287e0f76",
+    "repository_files_checked": 693,
+    "scope": "Byte custody only; not a new scientific replay or source-cache audit"
+  },
+  "scope": "Physical identity, read-only flags and byte custody only. Logical target bytes are not measured physical savings; free-space deltas include concurrent disk activity. Cleanup overlapped initial R112 generation, whose timings are not an isolated performance benchmark. No scientific or host promotion.",
+  "script_sha256": "bc7ec42ad83d74444a806aa69b684b7cb75576f8dc79e3f9d0453bc252e01881",
+  "sum_observed_free_space_deltas": 6932373504
+}
