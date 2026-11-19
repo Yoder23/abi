@@ -1,6 +1,11 @@
 # ABI proof ledger
 
-Updated: 2026-11-18
+Updated: 2026-11-19
+
+[R112](R112_COUNT_FEEDBACK.md) is a storage-blocked preregistration, not a proof
+promotion. No new scope challenge, source generation, acquisition or host test
+ran. Preserve R111 and every existing gate; resource blockage proves no quality
+success or failure.
 
 [R111](R111_SCOPE_REVISION.md) is a preregistered follow-up, not a product
 proof-ledger promotion. Finite scope passed 800 new and 793 development cases;

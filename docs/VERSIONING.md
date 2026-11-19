@@ -3,8 +3,10 @@
 | Identity | Current value | Scope |
 | --- | --- | --- |
 | Python package | `0.4.0a1` | Supported alpha compiler API |
-| Current preregistration | `abi-prereg-r111-2026-11-18` | Design-only snapshot; completed result is separately sealed below |
-| Current implementation freeze | `abi-r111-implementation-2026-11-18` | Immutable parser, challenge generator and bounded two-call driver, frozen before execution |
+| Current preregistration | `abi-prereg-r112-2026-11-19` | Count-feedback design; storage-blocked before implementation/execution |
+| Current experiment implementation | Pending for R112 | No new evaluator/driver freeze or execution result |
+| Latest completed implementation freeze | `abi-r111-implementation-2026-11-18` | Immutable parser, challenge generator and bounded two-call driver, frozen before execution |
+| Preserved preregistration | `abi-prereg-r111-2026-11-18` | Design-only snapshot; completed result is separately sealed below |
 | Current research review snapshot | `abi-research-r111-2026-11-18` | Supported sentence gain, but absolute source qualification failed; exact replay, no acquisition or host promotion |
 | Previous research review snapshot | `abi-research-r110-2026-11-18` | Finite scope pass; complete source qualification failure with exact replay; no recipient or host promotion |
 | Passing finite prerequisite snapshot | `abi-r111-scope-2026-11-18` | 800 new cases and 793 development obligations, exact replay; finite scope only |

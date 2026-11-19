@@ -26,6 +26,17 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+User continuation (2026-11-19): preregister and run one bounded R112 under
+`experiments/count_feedback_r112/PROTOCOL.md`, targeting R111's remaining sentence
+and scope failures. Preserve R111 and every quality/hardware gate. R112 contrasts
+ordinary self-revision with explicit deterministic sentence-count feedback from
+the same draft; disclose the evaluator assistance and both calls' costs. A new
+finite scope prerequisite must pass first. No training, recipient, host change,
+sweep, automatic retry or follow-on. Storage preflight is below 10 GiB: only
+low-footprint registration/custody work is possible now. Do not delete evidence,
+launch models or claim a completed implementation freeze. Restoring storage does
+not waive implementation tests, prepublication or scope/quality gates.
+
 R111 completed on 2026-11-18: finite scope passed 800 new and 793 development
 cases with byte-identical replay; all 384 source calls have exact scientific
 replay. Sentence adherence improves 7/24 to 15/24 (paired CI +0.16667 to +0.50),

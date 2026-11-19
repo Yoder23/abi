@@ -1,0 +1,24 @@
+{
+  "client_date": "2026-11-19",
+  "files": {
+    "experiments/count_feedback_r112/PROTOCOL.md": "35a491544bbe5caa46ac228e66aa001747a54598c846d6f3ac2d9b080338a17a",
+    "experiments/count_feedback_r112/__init__.py": "44ef75aabd3f6a3562162cb8d40bed192849585bfe618be3b2f5d1d4b6458421",
+    "experiments/count_feedback_r112/design.py": "936aecfc123332bc0437d748f681914f5f8502c216151404d1968d45e920c214",
+    "experiments/count_feedback_r112/register.py": "7d0e244e11f1da243d54349417a3754551cfd8ca9db019271966d366de2222cb",
+    "results/count_feedback_r112/contract.json": "0c243c48d295837695f05aa2e5113b391df0fc809d29590f04b6833873b8708a",
+    "results/count_feedback_r112/known_scope_cases.json": "73be551b1570bc89a1b286da40200ece77e3c3b9377bdf30f8044806c278a4e3",
+    "results/count_feedback_r112/population.json": "28f37b4e90f72022f6a08d248e9d8c72e62e1feea9986bd3a5210802518c3fab",
+    "tests/test_count_feedback_r112_registration.py": "634a78c15ad46f3c69805e697cde0de93179c4bd5ea33a708a3684281946cb3d"
+  },
+  "format": "r112-preregistration/1",
+  "parent_commit": "cf8ba2e1e6c6d309e7322df6d16bce79c3092e4c",
+  "parent_custody": {
+    "decision_sha256": "2a26b2ec4751e81835a7d0c47fa2aed9ad96786f7b710247a48516b52e7f22ce",
+    "host_bindings_checked": 182,
+    "manifest_sha256": "13a93229d5d9f13f19df38a8eeb60017d57e6a6ebc42ccd226647304287e0f76",
+    "repository_files_checked": 693,
+    "scope": "Byte custody only; not a new scientific replay or source-cache audit"
+  },
+  "recorded_utc": "2026-11-19T14:47:19.142111+00:00",
+  "scope": "Design/input commitment, not an implementation freeze or qualification"
+}

@@ -16,6 +16,9 @@ goal rather than reading the campaign archive in filename order.
 
 ## Canonical current documents
 
+- [R112 count-feedback registration](R112_COUNT_FEEDBACK.md): planned matched
+  revision contrast and scope prerequisite; storage-blocked, not executed.
+
 - [R111 scope/revision study](R111_SCOPE_REVISION.md): finite prerequisite passed
   800 new and 793 development cases; all source calls replay exactly. Sentence
   adherence improves, but revision qualification fails at 41/48 pairs versus 44.

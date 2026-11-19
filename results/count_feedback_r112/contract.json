@@ -1,0 +1,80 @@
+{
+  "automatic_follow_on": false,
+  "automatic_retries": 0,
+  "bootstrap_draws": 10000,
+  "bootstrap_seed": 108001,
+  "controller_seconds": 30600,
+  "feedback": "sentence count only on 24 sentence-limited inputs; no semantic feedback",
+  "format": "r112-contract/1",
+  "gpu_setting_changes": [],
+  "maximum_calls": 576,
+  "maximum_evidence_bytes": 1073741824,
+  "maximum_output_tokens": 368640,
+  "maximum_scope_errors": 0,
+  "minimum_free_bytes": 10737418240,
+  "new_download_bytes": 0,
+  "pairs": 48,
+  "population_seed": 112001,
+  "primary": "count_feedback minus revision sentence adherence; 12 paired clusters",
+  "primary_lower_bound_strictly_greater_than": 0,
+  "quality_gates": {
+    "exact_literal_case_required": true,
+    "exact_scientific_replay_required": true,
+    "maximum_collapses": 0,
+    "maximum_truncations": 0,
+    "maximum_words": 120,
+    "minimum_words": 3,
+    "pair_minimum_both_passes": 44,
+    "pair_rows": 48,
+    "panel_minimum_passes": 44,
+    "panel_rows": 48,
+    "sentence_range": [
+      2,
+      3
+    ],
+    "task_minimum_passes": 5,
+    "task_pair_minimum_both_passes": 5,
+    "task_rows_per_panel": 6
+  },
+  "quality_noninferiority_lower_bound": -0.1,
+  "recipient_calls": 0,
+  "repeats": [
+    "initial",
+    "replay"
+  ],
+  "required_unchanged_token_matches_per_repeat": 72,
+  "revision_selection": "always emit the designated arm, never best-of",
+  "rows": 96,
+  "scope_cases_per_class": 100,
+  "scope_classes": [
+    "bare_nonfinal",
+    "negation_placement",
+    "purpose_modifiers",
+    "process_and_prerequisite",
+    "affirmative_traps",
+    "negated_nonfinal",
+    "mixed_scope",
+    "ambiguity"
+  ],
+  "scope_seconds": 1800,
+  "shared_draft": true,
+  "source": {
+    "context_tokens": 2048,
+    "cpu_threads": 4,
+    "generation_seed": 108001,
+    "greedy": true,
+    "maximum_new_tokens": 640,
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "precision": "bfloat16",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "tf32": false
+  },
+  "stages": [
+    "draft",
+    "revision",
+    "count_feedback"
+  ],
+  "training_steps": 0,
+  "unchanged_input_controls": 72,
+  "worker_seconds": 14400
+}

@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-11-19 — R112 preregistration, resource-blocked
+
+- Register one shared-draft, ordinary-revision versus sentence-count-feedback
+  contrast, with 72 unchanged-input controls and unchanged absolute quality gates.
+- Specify a new 800-case finite scope prerequisite for five disclosed R111
+  construction gaps. No new challenge scored, parser/driver freeze or model run.
+- Record storage below 300 MiB versus the existing 10 GiB floor. Preserve R111,
+  historical dependencies, all checkpoints and GPU settings; no deletion.
+- Add fixed inputs, write-once registration/resource evidence, and 24 lightweight
+  design/custody tests. Full local supported testing and scientific execution
+  remain pending; no new quality, ABI acquisition or native-host claim.
+
 ## 2026-11-18 — R111 complete: sentence gain, qualification failed
 
 - Complete 384 source calls and exact scientific replay with unchanged settings

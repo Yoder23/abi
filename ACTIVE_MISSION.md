@@ -1,6 +1,18 @@
 # Active mission
 
-Updated: 2026-11-18
+Updated: 2026-11-19
+
+## Active registration: R112 (storage-blocked, not executed)
+
+[R112](docs/R112_COUNT_FEEDBACK.md) registers one shared-draft comparison of
+ordinary revision versus explicit sentence-count feedback, after a new finite
+scope prerequisite. All quality gates, GPU settings and R111 evidence stay fixed.
+The counter-assisted workflow is not evaluator-independent English or ABI novelty.
+Only design/input/custody work is complete; the new evaluator and live driver are
+not implemented/frozen. The machine preflight found less than 300 MiB free,
+below the unchanged 10 GiB floor. No challenge, model, training or recipient ran.
+No deletion is authorized. Restore storage before implementation/execution;
+publish and pass every registered prerequisite. No automatic successor.
 
 ## Latest completed experiment: R111 (partial gain, qualification failed)
 

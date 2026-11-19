@@ -1,0 +1,22 @@
+{
+  "abi_acquisition": "NOT_TESTED",
+  "deficit_bytes": 10448949248,
+  "deleted_paths": [],
+  "failure_owner": "RESOURCE",
+  "format": "r112-resource-preflight/1",
+  "free_bytes": 288468992,
+  "gpu_setting_changes": [],
+  "implementation_frozen": false,
+  "measurement": "shutil.disk_usage(observed_path).free",
+  "minimum_free_bytes": 10737418240,
+  "model_calls": 0,
+  "native_layercake": "NOT_TESTED",
+  "observed_path": "C:\\Python310\\layercake_merged_nextgen_perfectA_option1_full_ready\\abi_release",
+  "observed_utc": "2026-11-19T14:47:19.230584+00:00",
+  "quality_gate_changes": [],
+  "recipient_calls": 0,
+  "registration_sha256": "82788fa350c8c80f561c4d6ab55595b78ab2a09645ee64513c70b2e3a7929704",
+  "scope_challenge_executed": false,
+  "training_steps": 0,
+  "verdict": "RESOURCE_BLOCKED_BEFORE_IMPLEMENTATION"
+}

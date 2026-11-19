@@ -1,6 +1,12 @@
 # ABI claim ledger
 
-Status date: 2026-11-18
+Status date: 2026-11-19
+
+[R112](docs/R112_COUNT_FEEDBACK.md) is registration-only and storage-blocked before
+implementation/execution. Its planned count-assisted revision explicitly uses
+a mechanical evaluator statistic, not an answer or semantic score. No new
+quality, acquisition, host, efficiency or superiority claim follows. R111 and
+all quality gates remain unchanged; a resource block is not a quality failure.
 
 [R111](docs/R111_SCOPE_REVISION.md) passed its finite, author-constructed scope
 challenge: 800 new cases and 793 development obligations, exact replay, no

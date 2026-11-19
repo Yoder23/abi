@@ -1,6 +1,12 @@
 # Current project status
 
-Updated: 2026-11-18
+Updated: 2026-11-19
+
+Current registration: [R112](docs/R112_COUNT_FEEDBACK.md), a bounded count-feedback
+revision contrast plus finite scope validation. Execution is resource-blocked:
+less than 300 MiB free versus the unchanged 10 GiB floor. No fresh scope or model
+result; only registration/design checks. Implementation freeze remains pending.
+R111, GPU settings, quality gates and native LayerCake are unchanged. No deletions.
 
 Latest completed result: [R111](docs/R111_SCOPE_REVISION.md). Its finite scope
 prerequisite passed 800/800 new cases and 793 development obligations with exact

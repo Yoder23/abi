@@ -50,4 +50,5 @@ jobs:
           tests/test_scope_adherence_r110_execution.py
           tests/test_scope_revision_r111.py
           tests/test_r111_publication.py
+          tests/test_count_feedback_r112_registration.py
       - run: python -m build
