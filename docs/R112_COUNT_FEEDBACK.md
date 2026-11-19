@@ -7,6 +7,11 @@ Source commit: `fae959c9b0b3f0fee510b3c7d8f710acf9a1968a`.
 `6204639907ed39eeb50f7614eef6a4b64a4bb2c255117f2cc1f990a98b09b43b`.
 The publication tag is `abi-r112-implementation-2026-11-19`. The actual challenge
 must be published before its first scoring; no scientific outcome is implied.
+
+The [actual 800-case challenge](../results/count_feedback_r112/challenge.json)
+has been materialized without scoring. SHA-256:
+`73511ddee6f7de84be0a65553c661a5cdfdb45b103e0d7c7cbcb8eb0be708a8f`.
+Its publication tag is `abi-r112-challenge-2026-11-19`.
 The unchanged execution floor is 10 GiB free. The original preflight found less
 than 300 MiB on the only available local volume; no scope challenge or model
 call ran. The write-once observation is **288,468,992 bytes free (275.11 MiB)**,
