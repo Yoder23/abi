@@ -8,8 +8,11 @@ assisted workflow, not ABI novelty. New finite scope validation must precede
 generation. [Verified cleanup](R112_CLEANUP.md) restored the unchanged 10 GiB floor
 after two preserved blocked preflights. Its additive implementation passes 120
 focused checks. Published finite scope validation passes 800 new and 1,598
-development cases with exact replay. Source generation has not run; publish the
-scope packet before that stage. No English-quality or host conclusion follows.
+development cases with exact replay. After scope publication, generation stopped
+at the unchanged 10 GiB floor: 288 initial plus 242/288 replay calls. The prefix
+matches exactly but the frozen complete verifier rejects qualification. This is
+`RESOURCE_INCOMPLETE_NOT_QUALIFIED`, not a source-quality, ABI or host result.
+All raw evidence is preserved in the [review packet](releases/R112_REVIEW.md).
 
 [R111](R111_SCOPE_REVISION.md) prospectively targets the measured scope and sentence
 gaps with a finite construction challenge and one unconditional model revision.

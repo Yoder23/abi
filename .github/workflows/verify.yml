@@ -54,4 +54,6 @@ jobs:
           tests/test_count_feedback_r112_execution.py
           tests/test_r112_cleanup_custody.py
           tests/test_r112_publication.py
+          tests/test_r112_interruption.py
+          tests/test_r112_interruption_publication.py
       - run: python -m build

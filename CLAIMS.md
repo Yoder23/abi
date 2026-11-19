@@ -3,8 +3,11 @@
 Status date: 2026-11-19
 
 [R112](docs/R112_COUNT_FEEDBACK.md) passes its finite scope prerequisite (800 new
-and 1,598 development cases, exact replay), but source generation has not run.
-Its planned count-assisted revision explicitly uses
+and 1,598 development cases, exact replay). Source generation stopped at the
+unchanged 10 GiB floor after 530/576 calls: 288 initial plus 242 replay. The
+prefix is scientifically exact, but incomplete replay cannot qualify; the frozen
+complete verifier rejects it. This is a RESOURCE outcome, not a quality failure.
+Its count-assisted revision explicitly uses
 a mechanical evaluator statistic, not an answer or semantic score. No new
 quality, acquisition, host, efficiency or superiority claim follows. R111 and
 all quality gates remain unchanged; preserved resource blocks are not quality failures.

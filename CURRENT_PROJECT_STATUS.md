@@ -5,7 +5,11 @@ Updated: 2026-11-19
 Current registration: [R112](docs/R112_COUNT_FEEDBACK.md), a bounded count-feedback
 revision contrast plus finite scope validation. Its new implementation passes
 120 focused checks. The prospective scope gate passes 800 new and 1,598 disclosed
-cases with exact replay; the single frozen source study is now running.
+cases with exact replay. The source study stopped at the unchanged 10 GiB disk
+floor after 530/576 calls (288 initial, 242 replay). The preserved replay prefix
+is exact, but the complete verifier rejects qualification. Verdict:
+`RESOURCE_INCOMPLETE_NOT_QUALIFIED`, not source-quality, ABI or LayerCake failure.
+[Review packet](docs/releases/R112_REVIEW.md). No automatic restart or successor.
 [Verified cleanup](docs/R112_CLEANUP.md) retired 61 duplicate paths with recovery
 copies and preserved 2,915 distinct historical target paths through read-only
 hard links. All five plans and R111 custody rechecked successfully. The third

@@ -16,10 +16,11 @@ goal rather than reading the campaign archive in filename order.
 
 ## Canonical current documents
 
-- [R112 count-feedback registration](R112_COUNT_FEEDBACK.md): planned matched
-  revision contrast; finite scope passed with exact replay, source study next.
+- [R112 count-feedback study](R112_COUNT_FEEDBACK.md): finite scope passed;
+  source study stopped at the disk floor after 530/576 calls. See the
+  [resource-incomplete review packet](releases/R112_REVIEW.md).
   [Verified cleanup and recovery](R112_CLEANUP.md): 61 duplicate copies removed;
-  606 further copies hard-linked with paths preserved; third preflight above 10 GiB.
+  2,915 distinct historical target paths preserved with hard links and full R111 custody rechecked.
 
 - [R111 scope/revision study](R111_SCOPE_REVISION.md): finite prerequisite passed
   800 new and 793 development cases; all source calls replay exactly. Sentence

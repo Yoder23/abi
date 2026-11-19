@@ -2,7 +2,17 @@
 
 Updated: 2026-11-19
 
-## Active registration: R112 (finite scope passed, source study running)
+## R112 outcome: resource-incomplete, not qualified
+
+R112 stopped at the unchanged 10 GiB floor after 530/576 calls: all 288 initial
+calls and 242 replay calls. The preserved replay prefix matches exactly, but
+partial replay is not completion. The frozen verifier rejects qualification.
+The [review packet](docs/releases/R112_REVIEW.md) preserves raw evidence, measured
+storage exceptions and post-stop custody checks. No ABI acquisition or native
+LayerCake ran; no quality failure or breakthrough is inferred. No retry or
+successor is authorized. Publish this outcome without altering any frozen byte.
+
+### Execution history
 
 [R112](docs/R112_COUNT_FEEDBACK.md) registers one shared-draft comparison of
 ordinary revision versus explicit sentence-count feedback, after a new finite
@@ -17,7 +27,7 @@ above the unchanged 10 GiB floor; R111's indexed dependencies remain unchanged.
 The implementation is frozen at `fae959c`; implementation and actual challenge
 were published before scoring. Scope now passes all 800 new and 1,598 development
 cases with exact fresh replay. That packet is published before the single registered
-576-call source study, now running from the unchanged freeze. No training or
+576-call source study, subsequently stopped as recorded above. No training or
 recipient call is authorized. Cleanup overlapped the first worker; its costs are
 not an isolated performance benchmark. No automatic successor.
 

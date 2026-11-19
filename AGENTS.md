@@ -26,6 +26,16 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+R112 stopped at the unchanged 10 GiB disk floor after 530/576 calls: 288 initial,
+242 replay. The preserved replay prefix is scientifically exact, but 46 calls,
+the replay receipt and final completion are absent. The frozen complete verifier
+rejects qualification. The additive post-stop observer certifies custody only:
+`RESOURCE_INCOMPLETE_NOT_QUALIFIED`, failure owner RESOURCE. Keep finite scope
+pass separate from incomplete source qualification; ABI and LayerCake remain
+NOT_TESTED. No restart, resume, repair, floor change or successor is authorized.
+Publish the complete negative/resource packet and documentation. The execution
+updates below are historical; they do not override this stopping outcome.
+
 R112 source generation is running from frozen code after the published scope
 pass. All five approved hard-link plans are complete: 2,961 operations on 2,915
 distinct historical target paths, all preserved. The final physical custody

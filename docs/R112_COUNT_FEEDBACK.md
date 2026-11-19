@@ -1,14 +1,27 @@
 # R112 — sentence-count feedback and remaining scope cases
 
-Status: **finite scope prerequisite passed; frozen source study running**.
+Status: **`RESOURCE_INCOMPLETE_NOT_QUALIFIED`**.
+
+The source study stopped at the unchanged 10 GiB floor after **530/576 calls**:
+288 initial and 242 replay. The worker measured 10,729,582,592 free bytes; the
+controller then measured 10,726,658,048, both below 10,737,418,240. New R112 evidence
+was only about 7.1 MB at the stop. The 242-row replay prefix is scientifically
+exact, but the missing 46 calls and replay receipt prevent qualification. The
+frozen complete verifier rejects it. No partial pass rate, confidence interval,
+source qualification or ABI/host promotion is substituted for completion.
+
+The [post-stop observation](../results/count_feedback_r112/interruption.json)
+checks frozen inputs, the full initial rows, exact replay prefix, raw hashes and
+measured storage exceptions. It is custody only, not a replacement certification.
+See the [review packet](releases/R112_REVIEW.md). No restart or successor is authorized.
 
 The [scope decision](../results/count_feedback_r112/scope/decision.json) derives
 800/800 prospective cases and all 1,598 disclosed obligations correct, with zero
 errors or false-safe decisions and byte-identical fresh-process replay. Both raw
 files have SHA-256 `da8ff7f60370cc5081130de3088020c10a9cec77181ee4310464c5aba8beb544`.
 Publication tag: `abi-r112-scope-2026-11-19`. This is finite author-constructed
-validation, not general semantic or English certification. The single registered
-source study is running; no quality result or qualification is claimed yet.
+validation, not general semantic or English certification. The source study is
+incomplete as recorded above; no quality result or qualification is claimed.
 
 Source commit: `fae959c9b0b3f0fee510b3c7d8f710acf9a1968a`.
 [Freeze](../results/count_feedback_r112/freeze.json) SHA-256:
@@ -107,9 +120,9 @@ verdict. This checks custody and recorded arithmetic, not a new scientific repla
 
 The parser, challenge generator, live driver and scientific verifier are now
 **implemented, unit-tested and frozen**. The finite scope stage has passed;
-the source-generation comparison has not yet run.
-Full local supported testing is deferred under tight storage; the new focused
-checks are not a quality claim. The write-once registrar itself still contains
+the source-generation comparison is resource-incomplete, not qualified.
+The final offline software checks are recorded in the review packet; they are
+not a quality claim. The write-once registrar itself still contains
 no model runner and its immutable source set is unchanged.
 
 ```powershell
@@ -122,15 +135,14 @@ or independent hardware. Its verifier checks byte custody, input recomputation
 and arithmetic, not retrospective physical disk state. Do not rerun `register`
 over the preserved directory.
 
-## Resume conditions
+## Closed execution; no automatic resume
 
-Restore at least 10 GiB free on the experiment volume without destroying unique
-evidence. The third preflight meets this floor, but later stages must recheck it.
-Unique payloads remain protected; approved hard-link consolidation is complete.
-Next publish the frozen implementation/input packet,
-publish the new challenge before scoring, and publish a passing scope packet
-before any GPU execution. Preserve the first failed/incomplete outcome. No sweep,
-new source, training, recipient, host modification or automatic follow-on.
+All publication prerequisites were met before the single authorized run. Its
+resource stop is preserved, not erased by later disk recovery. Any completion
+attempt needs separate prospective authorization and adequate storage headroom;
+do not overwrite or silently continue the stopped workers. Unique evidence,
+R111, source caches and all gates remain protected. No sweep, training, recipient,
+native-host change or automatic follow-on is authorized.
 
 Failure ownership remains explicit: resource, evaluator, experimental prerequisite;
 ABI acquisition and native LayerCake are `NOT_TESTED`. The whole moonshot remains

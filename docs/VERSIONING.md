@@ -10,7 +10,8 @@
 | R112 finite scope prerequisite | `abi-r112-scope-2026-11-19` | 800 new and 1,598 development cases, exact replay; not general semantics |
 | Latest completed implementation freeze | `abi-r111-implementation-2026-11-18` | Immutable parser, challenge generator and bounded two-call driver, frozen before execution |
 | Preserved preregistration | `abi-prereg-r111-2026-11-18` | Design-only snapshot; completed result is separately sealed below |
-| Current research review snapshot | `abi-research-r111-2026-11-18` | Supported sentence gain, but absolute source qualification failed; exact replay, no acquisition or host promotion |
+| Current research review snapshot | `abi-research-r112-2026-11-19` | Resource-incomplete: 530/576 calls, exact partial replay, complete qualification rejected |
+| Previous completed research snapshot | `abi-research-r111-2026-11-18` | Supported sentence gain, but absolute source qualification failed; exact replay, no acquisition or host promotion |
 | Previous research review snapshot | `abi-research-r110-2026-11-18` | Finite scope pass; complete source qualification failure with exact replay; no recipient or host promotion |
 | Passing finite prerequisite snapshot | `abi-r111-scope-2026-11-18` | 800 new cases and 793 development obligations, exact replay; finite scope only |
 | Challenge publication snapshot | `abi-r111-challenge-2026-11-18` | Actual content-seeded challenge published before scoring |

@@ -29,7 +29,7 @@ LoRA and distillation.
 
 | Evidence line | What is established | What remains open |
 | --- | --- | --- |
-| R112 | Finite scope passes 800 new and 1,598 development cases with exact replay; frozen implementation and verified cleanup | Source count-feedback comparison not run yet; no English, acquisition or host qualification |
+| R112 | Finite scope passes 800 new and 1,598 development cases; verified cleanup; 530 preserved source calls | Disk-floor stop: 288 initial + 242/288 replay; exact prefix, incomplete qualification; no ABI/host result |
 | R111 | Finite scope passed 800/800; all 384 source calls replay exactly; sentence adherence improves 7/24 to 15/24 | Qualification failed: revision 41/48 pairs versus 44, summary/tone floors missed; no acquisition or host result |
 | R110 | Finite scope challenge 600/600; complete 384-call source comparison with exact replay; evidence-preserving cleanup | Control qualification failed: plain 31/48 pairs, contract 28/48 versus 44; no acquired core or host promotion |
 | R109 | Complete control execution and exact replay; 32/48 paired passes versus 44 required | Recipient gate closed; adherence failures and evaluator scope limits, not an acquisition or host result |
@@ -58,7 +58,9 @@ sentence and scope failures without changing quality gates. Its additive
 implementation passes 120 focused checks. [Verified cleanup](docs/R112_CLEANUP.md)
 restored the storage floor; both prior blocked preflights remain. The published
 finite scope prerequisite now passes 800 new and 1,598 development cases with
-exact replay. Source generation has not run yet; finite scope is not English qualification.
+exact replay. Source generation then stopped at the unchanged disk floor after
+530/576 calls. Its exact partial replay does not qualify the control; see the
+[resource-incomplete review](docs/releases/R112_REVIEW.md). Finite scope is not English qualification.
 
 Latest bounded result: [R111](docs/R111_SCOPE_REVISION.md) **completed but failed
 control qualification**. One revision improves sentence adherence from 7/24 to

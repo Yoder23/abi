@@ -1,6 +1,10 @@
 # R112 storage cleanup and evidence custody
 
 Date: 2026-11-19. This is storage/custody work, not a scientific experiment result.
+All five hard-link plans and the final custody audit are complete. R112 later
+stopped at its unchanged reserve floor after 530/576 calls; see the
+[resource-incomplete review packet](releases/R112_REVIEW.md). The observations
+below are chronological history, not a claim of current available space.
 The first two preflights were blocked. User-approved hard-link consolidation
 restored the floor in the third observation; implementation development is now
 tested, but scientific execution still requires its registered publication and

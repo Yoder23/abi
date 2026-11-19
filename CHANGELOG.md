@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-11-19 — R112 resource stop, incomplete qualification
+
+- Preserve 530/576 calls: 288 initial and 242 replay. The registered 10 GiB
+  free-space floor stops both worker and controller; GPU settings and gates stay fixed.
+- Recompute all initial raw rows and the exact preserved replay prefix. Confirm
+  the frozen complete verifier rejects the interruption; no partial quality pass.
+- Add a separate, tested post-stop custody observer and publication index, not
+  a relaxed scientific verifier. Keep ABI and LayerCake NOT_TESTED; no retry.
+
 ## 2026-11-19 — R112 final custody audit and source execution
 
 - Complete all five approved historical hard-link plans: 2,961 operations on

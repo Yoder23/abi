@@ -4,12 +4,14 @@ Updated: 2026-11-19
 
 [R112](R112_COUNT_FEEDBACK.md) is a tested implementation, not a proof
 promotion. Its finite scope challenge passed 800 new and 1,598 development cases
-with exact replay. Source generation, acquisition and host testing have not run.
+with exact replay. Source generation stopped at the unchanged disk floor after
+530/576 calls (288 initial, 242 replay). The preserved prefix is exact, but the
+frozen complete verifier rejects qualification. Acquisition and host testing did not run.
 Preserve R111 and every existing gate; resource blockage proves no quality
 success or failure.
 The [duplicate cleanup](R112_CLEANUP.md) is operational custody work only: 61
-copies removed, 606 further copies hard-linked with paths preserved, and the
-third preflight above 10 GiB. All R111 dependencies remain unchanged.
+copies removed with retained recovery copies; 2,915 distinct historical target
+paths preserved through hard links. All R111 dependencies remain unchanged.
 
 [R111](R111_SCOPE_REVISION.md) is a preregistered follow-up, not a product
 proof-ledger promotion. Finite scope passed 800 new and 793 development cases;
