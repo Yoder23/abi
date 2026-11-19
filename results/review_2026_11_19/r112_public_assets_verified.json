@@ -1,0 +1,26 @@
+{
+  "format": "r112-public-asset-custody/1",
+  "release_url": "https://github.com/Yoder23/abi/releases/tag/abi-research-r112-2026-11-19",
+  "tag": "abi-research-r112-2026-11-19",
+  "tagged_commit": "c49ccd175e23d123ba3fc604b3c494520037b273",
+  "release_published_utc": "2026-11-19T21:24:24Z",
+  "release_type": "prerelease",
+  "method": "Fresh gh release download into a previously absent directory; SHA-256 equality against sealed originals; every archive member checked against the downloaded manifest and archive inventory",
+  "assets": {
+    "r112_interruption_archive.json": {
+      "bytes": 2086,
+      "sha256": "1a53c3bb89fee4c03a564aed38402c1a2862472fe64051a9a971020218ce889d"
+    },
+    "r112_interruption_evidence.zip": {
+      "bytes": 351383,
+      "sha256": "3432b4b59017df9e146c6bc6d8d2b14c8bb405ca1936818b8100d45104048d40"
+    },
+    "r112_interruption_manifest.json": {
+      "bytes": 164046,
+      "sha256": "dc02f3335f5b20643bb00b170a9686a034c9c8e540b304d737bf0bcb07f78654"
+    }
+  },
+  "archive_members_checked": 30,
+  "new_model_calls": 0,
+  "scope": "Public byte custody only; no fresh source checkout, dependency reconstruction, complete scientific replay, independent hardware or qualification. The tagged incomplete packet is unchanged."
+}
