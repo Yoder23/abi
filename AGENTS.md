@@ -26,6 +26,12 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+R115 finite scope passed 800 prospective and 3,217 development obligations with
+zero errors/false-safe outcomes and byte-identical fresh-process replay. Source
+`df547e9ccf061ca77e2038f70adf04d9247df6a3` and its full freeze are immutable.
+Publish the complete passing packet before the registered GPU comparison.
+No general semantic or English qualification follows from this finite pass.
+
 User continuation (2026-11-20): execute one R115 under
 `experiments/structural_decode_r115/PROTOCOL.md`. Freeze and publish before
 prospective scope scoring; only a passing published prerequisite opens the

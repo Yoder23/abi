@@ -2,9 +2,9 @@
 
 Status date: 2026-11-20
 
-[R115](docs/R115_STRUCTURAL_DECODING.md) is preregistered and in development:
-same-prompt constrained decoding plus prospective scope falsification. No new
-scientific result, ABI acquisition or LayerCake claim follows from software tests.
+[R115](docs/R115_STRUCTURAL_DECODING.md) passed finite scope: 800 prospective and
+3,217 development cases, zero errors/false-safe decisions, exact fresh replay.
+This is not general semantics. Generation is next; ABI/LayerCake remain untested.
 
 [R114](docs/R114_SENTENCE_STRUCTURE.md) completes 576 calls with exact scientific
 replay, but no control qualifies. Ordinary revision reaches 44/48 pairs while

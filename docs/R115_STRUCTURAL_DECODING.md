@@ -1,11 +1,15 @@
 # R115 — structural decoding and prospective scope validation
 
-Status: implementation frozen; prospective execution not yet started (2026-11-20).
+Status: finite scope passed; publish before GPU execution (2026-11-20).
 
 Source commit: `df547e9ccf061ca77e2038f70adf04d9247df6a3`.
 Freeze SHA-256: `1c4a35bd21f3ff394a7a22c5123dfc04fd440fa9a9295c956e8affbee8c50713`.
 No model calls have occurred. Frozen code, tests, protocol and inputs are immutable.
-Publish this freeze, then the actual content-seeded cases before scoring them.
+The freeze and exact challenge were published before scoring. All 800 new and
+3,217 development cases passed with zero errors or false-safe outcomes and
+byte-identical fresh-process replay. Raw SHA-256:
+`60bb9f842c2ee770c3a0ee34647e987128fb1d8fd43fecc1e0eb92302955355b`.
+This finite construction test is not general semantic validation.
 
 The 119 core development tests and six publication tests pass. Four disclosed
 fixtures also pass through the actual pinned tokenizer, including UTF-8 and

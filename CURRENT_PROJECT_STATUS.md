@@ -2,9 +2,9 @@
 
 Updated: 2026-11-20
 
-Active: [R115](docs/R115_STRUCTURAL_DECODING.md), preregistered structural
-decoding with prospective scope validation first. Implementation is in software
-testing; no freeze, prospective result or GPU generation yet. Gates/GPU unchanged.
+Active: [R115](docs/R115_STRUCTURAL_DECODING.md), frozen structural decoding.
+Finite scope passed 800 new plus 3,217 development cases with zero errors and
+exact replay. Publish the prerequisite before GPU generation. Gates/GPU unchanged.
 
 Latest completed: [R114](docs/R114_SENTENCE_STRUCTURE.md), 576 calls and exact
 scientific replay. Qualification fails: ordinary revision 44/48 pairs but tone

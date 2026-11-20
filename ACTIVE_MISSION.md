@@ -4,10 +4,11 @@ Updated: 2026-11-20
 
 ## Active: R115 structural decoding
 
-Preregister [R115](docs/R115_STRUCTURAL_DECODING.md), implement/test/freeze, then
-publish prospective scope cases before scoring. Only a pass opens the identical-
-prompt structural-decoding contrast. Preserve R114 and every gate/GPU setting;
-no acquisition, training or LayerCake work. Publish negative outcomes as well.
+[R115](docs/R115_STRUCTURAL_DECODING.md) is frozen and its finite scope prerequisite
+passed: 800 new plus 3,217 development cases, zero errors, byte-identical replay.
+Publish that packet before the single 576-call identical-prompt decoding contrast.
+Preserve R114, every gate/GPU setting and matched controls; no acquisition,
+training or LayerCake work. Publish the actual outcome; no automatic successor.
 
 ## Latest completed: R114 qualification failed
 

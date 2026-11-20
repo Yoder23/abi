@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-20 — R115 finite scope prerequisite
+
+- Freeze implementation/inputs, then publish exact content-seeded cases before scoring.
+- Pass 800 prospective and 3,217 development cases with zero errors/false-safe
+  outcomes and byte-identical fresh-process replay; not general semantics.
+- Publish this prerequisite before the bounded GPU structural-decoding contrast.
+
 ## 2026-11-20 — R115 preregistration
 
 - Register prospective scope falsification then a matched structural-decoding

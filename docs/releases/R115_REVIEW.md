@@ -1,6 +1,6 @@
 # R115 review — structural decoding and prospective scope validation
 
-Status: pre-freeze validation; no prospective scope or generation result yet.
+Status: frozen; finite scope passed, no generation result yet.
 Whole moonshot: **FULL_MOONSHOT_NOT_PROVEN**.
 
 ## Design and claim boundary
@@ -8,6 +8,13 @@ Whole moonshot: **FULL_MOONSHOT_NOT_PROVEN**.
 Read the [preregistered protocol](../../experiments/structural_decode_r115/PROTOCOL.md)
 and [experiment guide](../R115_STRUCTURAL_DECODING.md). Preregistration commit:
 `fb4c07366ed91c5a00b103ac4755780dd713da5d`.
+
+Implementation `df547e9ccf061ca77e2038f70adf04d9247df6a3`; freeze
+`1c4a35bd21f3ff394a7a22c5123dfc04fd440fa9a9295c956e8affbee8c50713`.
+Published freeze/challenge commits: `24853cd` / `1ec0ad9`, before scoring.
+All 800 prospective and 3,217 development scope cases passed, zero errors or
+false-safe outcomes, byte-identical replay in distinct processes. Raw hash:
+`60bb9f842c2ee770c3a0ee34647e987128fb1d8fd43fecc1e0eb92302955355b`.
 
 One conventional structural-decoding comparison, not a new ABI extraction
 mechanism. The same complete draft conditions two independent revisions with
