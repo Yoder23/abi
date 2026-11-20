@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-11-20 — R115 bounded structural-decoding pass
+
+- Complete all 576 calls with exact scientific replay, 72 unchanged controls per
+  worker, 3,558 recomputed mask steps and 15/15 actual-row hostile rejections.
+- Constrained revision meets mechanical gates: 47/48 and 46/48 panels, 45/48
+  pairs, every task >=5/6. Sentence adherence rises 9/24 -> 24/24 with positive
+  paired CI; all-task quality passes noninferiority. No collapse or truncation.
+- Preserve all three unresolved failures, evaluator-version dependence and an
+  unscored unsupported progress assertion; no broad semantic/core/ABI promotion.
+- Keep R114, matched controls, GPU settings and gates unchanged. No training,
+  recipient or LayerCake changes. [Review and costs](docs/releases/R115_REVIEW.md).
+- Final focused post-run suite: 125 passed. No automatic successor.
+
 ## 2026-11-20 — R115 finite scope prerequisite
 
 - Freeze implementation/inputs, then publish exact content-seeded cases before scoring.

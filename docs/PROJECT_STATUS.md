@@ -2,11 +2,15 @@
 
 Status date: 2026-11-20
 
-Active: [R115](R115_STRUCTURAL_DECODING.md), frozen; finite scope passed all 800
-new and 3,217 development cases with exact replay. The same-prompt decoding
-comparison is next. All gates/GPU settings and R114 remain unchanged.
+Latest: [R115](R115_STRUCTURAL_DECODING.md), complete bounded mechanical pass.
+Constrained revision: 45/48 pairs, 24/24 sentences, every task >=5/6; supported
+paired gain, quality noninferiority, exact 576-call replay, 15/15 hostile rejection.
+Finite scope: 800 new + 3,217 development cases. Semantic coverage remains
+incomplete, including an unscored unsupported progress assertion. No acquired
+English artifact or ABI/LayerCake promotion. [Review](releases/R115_REVIEW.md).
+R114, gates and GPU settings remain unchanged; no automatic successor.
 
-Latest completed: [R114](R114_SENTENCE_STRUCTURE.md), 576 calls and exact
+Preserved: [R114](R114_SENTENCE_STRUCTURE.md), 576 calls and exact
 scientific replay. Ordinary revision reaches 44/48 pairs but misses tone at 2/6
 against 5. Structured revision reaches 39/48, with 12 invalid arrays and no
 supported sentence gain; quality noninferiority fails. Finite scope passes

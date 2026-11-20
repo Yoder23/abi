@@ -5,10 +5,11 @@ goal rather than reading the campaign archive in filename order.
 
 ## Reading paths
 
-Active: [R115 structural decoding](R115_STRUCTURAL_DECODING.md), frozen with a
-passing finite scope prerequisite. The matched generation contrast is next.
+Latest: [R115 structural decoding](R115_STRUCTURAL_DECODING.md), complete bounded
+mechanical pass. [Review and limitations](releases/R115_REVIEW.md): supported
+sentence gain, exact replay, remaining semantic coverage gaps; no acquired core.
 
-Latest experiment: [R114 scope and sentence structure](R114_SENTENCE_STRUCTURE.md)
+Preserved experiment: [R114 scope and sentence structure](R114_SENTENCE_STRUCTURE.md)
 (complete, qualification failed). [Review guide](releases/R114_REVIEW.md) separates
 sentence serialization, evaluator limitations and untested acquisition/host paths.
 
@@ -22,6 +23,10 @@ sentence serialization, evaluator limitations and untested acquisition/host path
 | Contributor | [Repository map](repository-layout.md) -> [Contributing](../CONTRIBUTING.md) -> [Repository contract](../AGENTS.md) |
 
 ## Canonical current documents
+
+- [R115 structural decoding](R115_STRUCTURAL_DECODING.md): 45/48 constrained pairs,
+  24/24 sentences, supported gain and exact replay. Mechanical qualification
+  only; [review](releases/R115_REVIEW.md) documents unscored semantic limitations.
 
 - [R114 scope and sentence structure](R114_SENTENCE_STRUCTURE.md): all 576 calls
   and exact replay; revision reaches 44/48 pairs but misses the tone floor;

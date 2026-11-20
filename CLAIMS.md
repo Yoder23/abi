@@ -2,9 +2,14 @@
 
 Status date: 2026-11-20
 
-[R115](docs/R115_STRUCTURAL_DECODING.md) passed finite scope: 800 prospective and
-3,217 development cases, zero errors/false-safe decisions, exact fresh replay.
-This is not general semantics. Generation is next; ABI/LayerCake remain untested.
+[R115](docs/R115_STRUCTURAL_DECODING.md) passes its bounded mechanical source
+workflow: 45/48 constrained pairs, 24/24 sentences versus 9/24, positive paired
+CI, quality noninferiority, exact 576-call replay and 15/15 hostile rejection.
+Finite scope passes 800 new + 3,217 development cases. Three unresolved failures,
+four evaluator-version-dependent passes and an unscored unsupported progress
+assertion are disclosed in the [review](docs/releases/R115_REVIEW.md). Do not
+claim general semantic correctness, fluent-English acquisition, ABI novelty,
+teacher removal or LayerCake performance; those were not tested.
 
 [R114](docs/R114_SENTENCE_STRUCTURE.md) completes 576 calls with exact scientific
 replay, but no control qualifies. Ordinary revision reaches 44/48 pairs while

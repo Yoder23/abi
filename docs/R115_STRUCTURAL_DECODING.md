@@ -1,10 +1,35 @@
 # R115 — structural decoding and prospective scope validation
 
-Status: finite scope passed; publish before GPU execution (2026-11-20).
+Status: complete — **BOUNDED_CONSTRAINED_REVISION_IMPROVEMENT** (2026-11-20).
+
+All 576 calls completed with exact scientific replay and 72/72 unchanged-input
+controls per worker. Constrained revision passes the registered **mechanical**
+workflow gates: 47/48 and 46/48 panels, 45/48 pairs (floor 44), every task >=5/6,
+no collapse/truncation. This is not broad fluent-English or acquisition certification.
+
+| Arm | Panel A | Panel B | Both pass | Sentence adherence | Invalid codec |
+| --- | --- | --- | --- | --- | --- |
+| Draft | 40/48 | 38/48 | 37/48 | 7/24 | 0 |
+| Same-prompt unconstrained revision | 40/48 | 38/48 | 37/48 | 9/24 | 15 |
+| Structurally constrained revision | 47/48 | 46/48 | 45/48 | 24/24 | 0 |
+
+Primary paired sentence effect: +0.625, 95% bootstrap CI [+0.33333, +0.875].
+All-task row-quality effect: +0.15625, CI [+0.0625, +0.26042], passing the locked
+-0.10 noninferiority margin. Twelve and 48 paired clusters respectively;
+replays are not extra independent prompts. All 15 actual-row hostile mutations
+reject, including altered grammar traces. Post-run focused tests: 125 passed.
+
+Three constrained outputs remain failed/unresolved; none was repaired. R114's
+evaluator applied descriptively to these new outputs gives 41/48 constrained
+pairs, not 45: four rows depend on the preregistered scope corrections. A
+same-agent reading also flags unscored semantics: `r115-012-a` says the review
+is "underway as scheduled," which the supplied notes do not establish. The
+finite evaluator does not certify all factual entailment, warmth or fluency.
+See the [review](releases/R115_REVIEW.md) for exact boundaries and costs.
 
 Source commit: `df547e9ccf061ca77e2038f70adf04d9247df6a3`.
 Freeze SHA-256: `1c4a35bd21f3ff394a7a22c5123dfc04fd440fa9a9295c956e8affbee8c50713`.
-No model calls have occurred. Frozen code, tests, protocol and inputs are immutable.
+Frozen code, tests, protocol and inputs are immutable.
 The freeze and exact challenge were published before scoring. All 800 new and
 3,217 development cases passed with zero errors or false-safe outcomes and
 byte-identical fresh-process replay. Raw SHA-256:

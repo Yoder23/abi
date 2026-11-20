@@ -2,11 +2,14 @@
 
 Updated: 2026-11-20
 
-Active: [R115](docs/R115_STRUCTURAL_DECODING.md), frozen structural decoding.
-Finite scope passed 800 new plus 3,217 development cases with zero errors and
-exact replay. Publish the prerequisite before GPU generation. Gates/GPU unchanged.
+Latest: [R115](docs/R115_STRUCTURAL_DECODING.md) completed with a bounded
+mechanical workflow pass: constrained 45/48 pairs and 24/24 sentence adherence,
+all tasks >=5/6, exact 576-call replay, 15/15 hostile rejection. Finite scope
+passes 800 + 3,217 cases. Three unresolved failures and an unscored progress
+assertion remain disclosed; no broad semantic, ABI or LayerCake claim. Gates/GPU
+unchanged. [Review](docs/releases/R115_REVIEW.md). No automatic successor.
 
-Latest completed: [R114](docs/R114_SENTENCE_STRUCTURE.md), 576 calls and exact
+Preserved: [R114](docs/R114_SENTENCE_STRUCTURE.md), 576 calls and exact
 scientific replay. Qualification fails: ordinary revision 44/48 pairs but tone
 2/6 against 5; structured revision 39/48 pairs and 12 invalid one-string arrays.
 Sentence adherence 18/24 -> 12/24 has no supported gain; all-task quality fails

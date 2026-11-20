@@ -8,7 +8,7 @@
 | Preserved preregistration | `abi-prereg-r113-2026-11-20` | Storage-recovered exposed-panel replication; completed result below |
 | Preserved preregistration | `abi-prereg-r112-2026-11-19` | Count-feedback design; later closed resource-incomplete |
 | Storage/custody snapshot | `abi-r112-cleanup-2026-11-19` | Verified duplicate retirement; still storage-blocked, no scientific execution |
-| Current experiment implementation | `abi-r115-implementation-2026-11-20` (source `df547e9`) | Frozen same-prompt structural decoding and prospective scope validation; no result yet |
+| Current experiment implementation | `abi-r115-implementation-2026-11-20` (source `df547e9`) | Frozen same-prompt structural decoding and prospective scope validation; complete bounded result below |
 | Preserved experiment implementation | `abi-r114-implementation-2026-11-20` (source `ab161c4`) | Frozen scope grammar and sentence-array workflow; completed result below |
 | Current challenge publication | `abi-r115-challenge-2026-11-20` | Actual 800-case packet, published before scoring |
 | Current finite scope prerequisite | `abi-r115-scope-2026-11-20` | 800 new + 3,217 development cases, exact replay; not general semantics |
@@ -20,7 +20,8 @@
 | R112 finite scope prerequisite | `abi-r112-scope-2026-11-19` | 800 new and 1,598 development cases, exact replay; not general semantics |
 | Previous completed implementation freeze | `abi-r111-implementation-2026-11-18` | Immutable parser, challenge generator and bounded two-call driver, frozen before execution |
 | Preserved preregistration | `abi-prereg-r111-2026-11-18` | Design-only snapshot; completed result is separately sealed below |
-| Current research review snapshot | `abi-research-r114-2026-11-20` | Complete 576-call comparison, exact replay; revision misses tone and structured fails noninferiority |
+| Current research review snapshot | `abi-research-r115-2026-11-20` | Bounded constrained-workflow mechanical pass, 45/48 pairs; exact replay, semantic limitations, no acquisition/host claim |
+| Previous research review snapshot | `abi-research-r114-2026-11-20` | Complete 576-call comparison, exact replay; revision misses tone and structured fails noninferiority |
 | Previous research review snapshot | `abi-research-r113-2026-11-20` | Complete 576-call replication, exact replay; feedback fails 40/48 pairs versus 44 |
 | Preserved interrupted review snapshot | `abi-research-r112-2026-11-19` | Resource-incomplete: 530/576 calls, exact partial replay, complete qualification rejected |
 | Previous completed research snapshot | `abi-research-r111-2026-11-18` | Supported sentence gain, but absolute source qualification failed; exact replay, no acquisition or host promotion |

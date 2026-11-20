@@ -2,15 +2,19 @@
 
 Updated: 2026-11-20
 
-## Active: R115 structural decoding
+## Latest completed: R115 bounded structural-decoding pass
 
-[R115](docs/R115_STRUCTURAL_DECODING.md) is frozen and its finite scope prerequisite
-passed: 800 new plus 3,217 development cases, zero errors, byte-identical replay.
-Publish that packet before the single 576-call identical-prompt decoding contrast.
-Preserve R114, every gate/GPU setting and matched controls; no acquisition,
-training or LayerCake work. Publish the actual outcome; no automatic successor.
+[R115](docs/R115_STRUCTURAL_DECODING.md) completed all 576 calls with exact
+scientific replay and 72 unchanged controls per worker. Constrained revision
+passes the registered mechanical gates: 47/48 and 46/48 panels, 45/48 pairs,
+all tasks >=5/6. Sentence adherence rises 9/24 to 24/24 with a positive paired
+CI; quality passes noninferiority. Finite scope passes 800 + 3,217 cases.
+Three unresolved rows and an unscored unsupported progress assertion remain
+disclosed. This is not general semantics, fluent-English or ABI certification.
+Preserve R114, every gate/GPU setting and matched controls. No acquisition,
+training, LayerCake work or automatic successor. See the [review](docs/releases/R115_REVIEW.md).
 
-## Latest completed: R114 qualification failed
+## Preserved: R114 qualification failed
 
 [R114](docs/R114_SENTENCE_STRUCTURE.md) completed 576 calls with exact scientific
 replay and 72 unchanged-input controls per worker. Ordinary revision scores

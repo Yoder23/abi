@@ -26,6 +26,17 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+R115 is complete: BOUNDED_CONSTRAINED_REVISION_IMPROVEMENT, all 576 calls and
+exact scientific replay, 72 unchanged controls per worker, 15/15 targeted hostile
+rejections. Constrained panels 47/48 and 46/48, paired 45/48, every task >=5/6;
+sentence adherence 24/24 versus 9/24 with positive CI and quality noninferiority.
+Preserve the three unresolved failures and the review's unscored "underway as
+scheduled" semantic coverage gap. This is a finite mechanical source-workflow
+pass, not full grounding/fluency, acquisition, teacher removal or host promotion.
+R114, gates, GPU settings and matched controls remain unchanged. No automatic
+successor: any future semantic/recipient test needs a new bounded registration.
+The execution directives below are historical and do not reopen completed paths.
+
 R115 finite scope passed 800 prospective and 3,217 development obligations with
 zero errors/false-safe outcomes and byte-identical fresh-process replay. Source
 `df547e9ccf061ca77e2038f70adf04d9247df6a3` and its full freeze are immutable.

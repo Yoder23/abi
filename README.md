@@ -19,9 +19,10 @@ ABI and LayerCake have deliberately separate jobs:
 
 ## Current status
 
-Active: [R115 structural decoding](docs/R115_STRUCTURAL_DECODING.md) is frozen.
-Finite scope passed 800 new and 3,217 development cases with exact replay; the
-matched with/without-grammar comparison is next. R114 and all gates are intact.
+Latest: [R115 structural decoding](docs/R115_STRUCTURAL_DECODING.md) passes its
+bounded mechanical source-workflow gates: 45/48 paired passes and 24/24 sentence
+adherence, with exact replay. Semantic coverage gaps remain; no acquired English
+core, ABI transfer or LayerCake promotion follows. R114 and all gates are intact.
 
 **Whole-moonshot verdict: `FULL_MOONSHOT_NOT_PROVEN`.**
 
@@ -33,6 +34,7 @@ LoRA and distillation.
 
 | Evidence line | What is established | What remains open |
 | --- | --- | --- |
+| R115 | Finite scope passes; constrained source workflow scores 45/48 pairs and 24/24 sentences; supported paired gain, exact 576-call replay | Mechanical scope only; three unresolved failures and an unscored progress assertion; no English artifact, acquisition or host claim |
 | R114 | Finite scope passes; all 576 source calls have exact scientific replay | Revision reaches 44/48 pairs but tone fails 2/6; structured scores 39/48 and fails quality noninferiority; no acquisition/host claim |
 | R113 | Complete 576-call replication, exact replay, 14/14 hostile rejection | Feedback fails: 40/48 pairs versus 44; tone/conversation floors missed; no acquisition or host claim |
 | R112 | Finite scope passes 800 new and 1,598 development cases; verified cleanup; 530 preserved source calls | Disk-floor stop: 288 initial + 242/288 replay; exact prefix, incomplete qualification; no ABI/host result |
@@ -59,7 +61,17 @@ public technical release remains
 [`abi-final-validation-v2-repaired-r7-2026-08-30`](https://github.com/Yoder23/abi/releases/tag/abi-final-validation-v2-repaired-r7-2026-08-30).
 The current default branch is a later peer-review candidate.
 
-Latest result: [R114](docs/R114_SENTENCE_STRUCTURE.md) **completed but failed
+Latest result: [R115](docs/R115_STRUCTURAL_DECODING.md) **bounded mechanical
+workflow pass**. Constrained revision scores 45/48 pairs versus 37/48 for the
+same-prompt unconstrained arm; sentence adherence is 24/24 versus 9/24, with
+positive paired confidence bounds. All 576 calls replay exactly. The finite
+scope prerequisite passes 800 new and 3,217 development cases. The
+[review](docs/releases/R115_REVIEW.md) preserves unresolved failures, evaluator
+version dependence, and an unscored unsupported "underway" assertion. This is
+conventional decoding, not an ABI breakthrough or broad English certificate.
+No training, recipient test, hardware/gate change or automatic successor.
+
+Preserved result: [R114](docs/R114_SENTENCE_STRUCTURE.md) **completed but failed
 qualification**. Ordinary revision reaches 44/48 paired passes but tone fails
 at 2/6 against 5. Sentence-array revision reaches 39/48; 12 arrays incorrectly
 contain one multi-sentence string. Sentence adherence is 12/24 versus ordinary
