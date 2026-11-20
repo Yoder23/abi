@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-20 — R113 public custody
+
+- Published the immutable R113 research tag, manifest and evidence archive.
+- Fresh downloads match all three asset hashes and all 17 ZIP members; the
+  additive receipt does not move the tag or change its failed qualification.
+- See [publication details](docs/releases/R113_PUBLICATION.md). Public byte
+  custody is not independent scientific reproduction.
+
 ## 2026-11-20 — R113 completed, qualification failed
 
 - Complete 576 new calls with exact scientific replay and 72 unchanged-input

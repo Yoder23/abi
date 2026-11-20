@@ -61,6 +61,9 @@ rises 15/24 to 18/24 but its CI crosses zero. Remaining sentence failures and
 evaluator scope limitations are preserved separately, not rescored. Inputs,
 model, evaluator, gates and GPU settings stay unchanged. [Review guide](docs/releases/R113_REVIEW.md).
 No acquired English core or ABI/LayerCake breakthrough is claimed.
+The [R113 public research release](https://github.com/Yoder23/abi/releases/tag/abi-research-r113-2026-11-20)
+includes the evidence ZIP and manifests; [fresh-download verification](docs/releases/R113_PUBLICATION.md)
+confirms their bytes, not independent scientific reproduction.
 
 Preserved registration: [R112](docs/R112_COUNT_FEEDBACK.md) targets remaining
 sentence and scope failures without changing quality gates. Its additive
