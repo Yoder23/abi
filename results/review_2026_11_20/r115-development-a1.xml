@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="1" failures="0" skipped="0" tests="1" time="0.875" timestamp="2026-11-20T16:05:05.934979-05:00" hostname="Sam"><testcase classname="" name="tests.test_structural_decode_r115" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Python310\layercake_merged_nextgen_perfectA_option1_full_ready\abi_release\tests\test_structural_decode_r115.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+tests\test_structural_decode_r115.py:11: in &lt;module&gt;
+    from experiments.structural_decode_r115 import evaluator as e
+experiments\structural_decode_r115\evaluator.py:6: in &lt;module&gt;
+    from experiments.sentence_structure_r115 import evaluator as old
+E   ModuleNotFoundError: No module named 'experiments.sentence_structure_r115'</error></testcase></testsuite></testsuites>

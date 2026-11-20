@@ -2,6 +2,10 @@
 
 Status date: 2026-11-20
 
+[R115](docs/R115_STRUCTURAL_DECODING.md) is preregistered and in development:
+same-prompt constrained decoding plus prospective scope falsification. No new
+scientific result, ABI acquisition or LayerCake claim follows from software tests.
+
 [R114](docs/R114_SENTENCE_STRUCTURE.md) completes 576 calls with exact scientific
 replay, but no control qualifies. Ordinary revision reaches 44/48 pairs while
 tone fails at 2/6 against 5; structured revision reaches 39/48, with 12 invalid

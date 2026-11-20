@@ -2,6 +2,10 @@
 
 Status date: 2026-11-20
 
+Active: [R115](R115_STRUCTURAL_DECODING.md), preregistered and in development.
+Prospective scope must pass before the same-prompt structural-decoding comparison.
+All gates/GPU settings and R114 remain unchanged; no new scientific result yet.
+
 Latest completed: [R114](R114_SENTENCE_STRUCTURE.md), 576 calls and exact
 scientific replay. Ordinary revision reaches 44/48 pairs but misses tone at 2/6
 against 5. Structured revision reaches 39/48, with 12 invalid arrays and no

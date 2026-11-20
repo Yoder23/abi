@@ -2,6 +2,10 @@
 
 Updated: 2026-11-20
 
+Active: [R115](docs/R115_STRUCTURAL_DECODING.md), preregistered structural
+decoding with prospective scope validation first. Implementation is in software
+testing; no freeze, prospective result or GPU generation yet. Gates/GPU unchanged.
+
 Latest completed: [R114](docs/R114_SENTENCE_STRUCTURE.md), 576 calls and exact
 scientific replay. Qualification fails: ordinary revision 44/48 pairs but tone
 2/6 against 5; structured revision 39/48 pairs and 12 invalid one-string arrays.

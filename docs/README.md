@@ -5,6 +5,9 @@ goal rather than reading the campaign archive in filename order.
 
 ## Reading paths
 
+Active: [R115 structural decoding](R115_STRUCTURAL_DECODING.md), preregistered
+and in software development; no prospective result yet.
+
 Latest experiment: [R114 scope and sentence structure](R114_SENTENCE_STRUCTURE.md)
 (complete, qualification failed). [Review guide](releases/R114_REVIEW.md) separates
 sentence serialization, evaluator limitations and untested acquisition/host paths.

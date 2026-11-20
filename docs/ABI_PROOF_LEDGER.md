@@ -2,6 +2,10 @@
 
 Updated: 2026-11-20
 
+[R115](R115_STRUCTURAL_DECODING.md) is a new preregistered structural-decoding
+and finite-scope study. Development checks are not prospective scope or generation
+evidence. Acquisition and LayerCake remain outside this bounded experiment.
+
 [R114](R114_SENTENCE_STRUCTURE.md) completed 576 calls with exact scientific
 replay, but qualification fails. Revision 44/48 pairs misses the tone floor
 (2/6 vs 5); structured revision scores 39/48, with 12 invalid arrays. Its primary
