@@ -29,6 +29,7 @@ LoRA and distillation.
 
 | Evidence line | What is established | What remains open |
 | --- | --- | --- |
+| R113 | Registered storage-recovered replication of R112 with unchanged inputs/gates | Not executed; exposed panel, no acquisition or host claim |
 | R112 | Finite scope passes 800 new and 1,598 development cases; verified cleanup; 530 preserved source calls | Disk-floor stop: 288 initial + 242/288 replay; exact prefix, incomplete qualification; no ABI/host result |
 | R111 | Finite scope passed 800/800; all 384 source calls replay exactly; sentence adherence improves 7/24 to 15/24 | Qualification failed: revision 41/48 pairs versus 44, summary/tone floors missed; no acquisition or host result |
 | R110 | Finite scope challenge 600/600; complete 384-call source comparison with exact replay; evidence-preserving cleanup | Control qualification failed: plain 31/48 pairs, contract 28/48 versus 44; no acquired core or host promotion |
@@ -53,7 +54,11 @@ public technical release remains
 [`abi-final-validation-v2-repaired-r7-2026-08-30`](https://github.com/Yoder23/abi/releases/tag/abi-final-validation-v2-repaired-r7-2026-08-30).
 The current default branch is a later peer-review candidate.
 
-Current registration: [R112](docs/R112_COUNT_FEEDBACK.md) targets remaining
+Current registration: [R113](docs/R113_STORAGE_RECOVERED_REPLICATION.md) repeats
+the interrupted comparison in a new namespace after storage recovery. It preserves
+the exposed panel, model, evaluator, gates and GPU settings; no new result yet.
+
+Preserved registration: [R112](docs/R112_COUNT_FEEDBACK.md) targets remaining
 sentence and scope failures without changing quality gates. Its additive
 implementation passes 120 focused checks. [Verified cleanup](docs/R112_CLEANUP.md)
 restored the storage floor; both prior blocked preflights remain. The published

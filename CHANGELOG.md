@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-20 — R113 registered after storage recovery
+
+- Register one complete replication of interrupted R112 in a new namespace.
+- Preserve all inputs, gates, GPU settings and historical evidence; explicitly
+  disclose the reused exposed panel. No old-row splicing or automatic follow-on.
+- Keep source qualification separate from ABI acquisition and LayerCake hosting.
+
 ## 2026-11-19 — R112 resource stop, incomplete qualification
 
 - Preserve 530/576 calls: 288 initial and 242 replay. The registered 10 GiB

@@ -1,6 +1,11 @@
 # ABI project status
 
-Status date: 2026-11-19
+Status date: 2026-11-20
+
+Active registration: [R113](R113_STORAGE_RECOVERED_REPLICATION.md), a new
+storage-recovered replication of the unchanged R112 comparison. Two fresh workers
+must complete; exposed-panel replication is not new blind evidence. Freeze and
+publish before inference; no training, acquisition or LayerCake change.
 
 Current outcome: [R112](R112_COUNT_FEEDBACK.md) is resource-incomplete. Finite scope
 passed 800 new and 1,598 development cases with exact replay, but the source study

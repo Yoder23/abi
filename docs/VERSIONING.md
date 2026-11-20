@@ -3,7 +3,8 @@
 | Identity | Current value | Scope |
 | --- | --- | --- |
 | Python package | `0.4.0a1` | Supported alpha compiler API |
-| Current preregistration | `abi-prereg-r112-2026-11-19` | Count-feedback design; storage-blocked before implementation/execution |
+| Current preregistration | `abi-prereg-r113-2026-11-20` | Storage-recovered, exposed-panel replication; no result yet |
+| Preserved preregistration | `abi-prereg-r112-2026-11-19` | Count-feedback design; later closed resource-incomplete |
 | Storage/custody snapshot | `abi-r112-cleanup-2026-11-19` | Verified duplicate retirement; still storage-blocked, no scientific execution |
 | Current experiment implementation | `abi-r112-implementation-2026-11-19` (source `fae959c`) | Immutable evaluator/generator/driver/verifier; 120 focused checks; no challenge or generation result yet |
 | R112 challenge publication | `abi-r112-challenge-2026-11-19` | Actual 800-case packet, published before scoring |

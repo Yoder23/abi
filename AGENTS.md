@@ -26,6 +26,15 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+User continuation (2026-11-20): after evidence-preserving storage cleanup,
+preregister and execute one R113 resource-recovered replication under
+`experiments/count_feedback_r113/PROTOCOL.md`. This new authorization does not
+resume or amend R112. Use the exact exposed R112 panel, scientific functions,
+source and gates; two new complete workers, no old-row splicing. Revalidate the
+inherited scope prerequisite and publish the freeze before inference. No GPU
+setting change, training, recipient, host modification or automatic successor.
+Preserve matched controls and keep prerequisite, ABI and LayerCake claims apart.
+
 R112 stopped at the unchanged 10 GiB disk floor after 530/576 calls: 288 initial,
 242 replay. The preserved replay prefix is scientifically exact, but 46 calls,
 the replay receipt and final completion are absent. The frozen complete verifier

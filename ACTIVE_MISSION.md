@@ -1,6 +1,16 @@
 # Active mission
 
-Updated: 2026-11-19
+Updated: 2026-11-20
+
+## Active: R113 storage-recovered replication
+
+The user authorized bounded continuation after cleanup restored about 22.5 GiB
+free. [R113](docs/R113_STORAGE_RECOVERED_REPLICATION.md) repeats the unchanged
+R112 comparison in a new evidence namespace, with two complete fresh workers.
+Publish protocol and implementation/input freeze before inference. Recompute the
+inherited finite scope prerequisite; do not call this new blind validation.
+No gate/GPU change, training, recipient or host run. Keep all historical evidence,
+matched controls and claim boundaries. No automatic successor after this attempt.
 
 ## R112 outcome: resource-incomplete, not qualified
 
