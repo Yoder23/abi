@@ -1,6 +1,14 @@
 # R114 — scope and sentence-structured revision
 
-Status: implementation frozen; prospective challenge not yet scored (2026-11-20).
+Status: finite scope passed; source comparison pending execution (2026-11-20).
+
+All 800 prospective construction cases and 2,411 development obligations pass,
+with zero errors/false-safe classifications and byte-identical fresh-process
+replay. Raw SHA-256: `d96fe902d2bcd72d290507356970ab9b5e95214dcbd01fc1ee6f9d9e4a30da51`.
+The [scope decision](../results/sentence_structure_r114/scope/decision.json) and
+complete packet are published at `abi-r114-scope-2026-11-20` before GPU work.
+This is finite author-constructed scope validation, not general semantic or
+English qualification. Only the single registered 576-call comparison may proceed.
 
 Source commit: `ab161c4f734799adae7e69d305a8a0aeb8bdbe94`.
 Freeze SHA-256: `69ffc52a25b63bbbfb4173960bc1c8f3c9db6dc56ca08a0aac6a3012c92c1e01`.
@@ -22,7 +30,8 @@ Preserved pre-freeze failures: the first development run found an `as soon as`
 scope regression and a missing test-fixture binding; the third run found another
 test-fixture binding error. Both fixtures and the parser were corrected before
 freezing; every failed receipt remains in `results/review_2026_11_20/r114-*.xml`.
-No prospective challenge has been scored and no model has been run.
+Those development failures preceded the frozen prospective pass above. No model
+generation had occurred when the passing scope packet was published.
 
 Implementation entry points: [design and codec](../experiments/sentence_structure_r114/design.py),
 [scope grammar](../experiments/sentence_structure_r114/evaluator.py),

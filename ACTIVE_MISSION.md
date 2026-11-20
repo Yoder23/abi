@@ -4,6 +4,10 @@ Updated: 2026-11-20
 
 ## Active: R114 scope and sentence-structured revision
 
+Finite scope passed all 800 new and 2,411 development cases with exact fresh
+replay. Publish that packet, then execute only the frozen 576-call source study
+with unchanged GPU settings/gates. No English-control or ABI/host result yet.
+
 Execute the newly authorized [R114](docs/R114_SENTENCE_STRUCTURE.md), publishing
 protocol and tested implementation before execution. Finite scope must pass
 before GPU work. Contrast prose revision with strict sentence arrays; no repair

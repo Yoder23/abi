@@ -4,7 +4,8 @@ Updated: 2026-11-20
 
 Active: [R114](docs/R114_SENTENCE_STRUCTURE.md), one newly authorized scope and
 sentence-structured revision experiment. Implementation/input freeze is published;
-the prospective challenge is being published before scoring. No new quality or host result.
+finite scope passed 800 new + 2,411 development cases with exact replay. The
+registered source comparison is next; no generation-quality or host result yet.
 
 Latest completed: [R113](docs/R113_STORAGE_RECOVERED_REPLICATION.md), all 576 calls
 with exact replay. Feedback fails qualification at 40/48 pairs versus 44; tone

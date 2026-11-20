@@ -4,7 +4,8 @@ Status date: 2026-11-20
 
 [R114](docs/R114_SENTENCE_STRUCTURE.md) is a newly registered finite-scope and
 sentence-serialization study with a tested, published implementation freeze.
-No prospective result yet; no acquisition or host claim.
+Finite scope passes 800 new + 2,411 development cases with exact replay, not
+general semantics. Source comparison is next; no acquisition or host claim.
 
 [R113](docs/R113_STORAGE_RECOVERED_REPLICATION.md) completes all 576 calls with
 exact replay and 14/14 hostile rejection. Feedback still fails: 40/48 pairs vs 44,

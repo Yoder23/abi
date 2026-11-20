@@ -29,7 +29,7 @@ LoRA and distillation.
 
 | Evidence line | What is established | What remains open |
 | --- | --- | --- |
-| R114 | Tested implementation and input freeze; 920 software tests pass | Prospective scope/source not executed; unchanged gates, no English artifact or ABI/host claim |
+| R114 | Finite scope passes 800 new + 2,411 development cases with exact replay | Source comparison pending; unchanged gates, no English artifact or ABI/host claim |
 | R113 | Complete 576-call replication, exact replay, 14/14 hostile rejection | Feedback fails: 40/48 pairs versus 44; tone/conversation floors missed; no acquisition or host claim |
 | R112 | Finite scope passes 800 new and 1,598 development cases; verified cleanup; 530 preserved source calls | Disk-floor stop: 288 initial + 242/288 replay; exact prefix, incomplete qualification; no ABI/host result |
 | R111 | Finite scope passed 800/800; all 384 source calls replay exactly; sentence adherence improves 7/24 to 15/24 | Qualification failed: revision 41/48 pairs versus 44, summary/tone floors missed; no acquisition or host result |
@@ -55,8 +55,9 @@ public technical release remains
 [`abi-final-validation-v2-repaired-r7-2026-08-30`](https://github.com/Yoder23/abi/releases/tag/abi-final-validation-v2-repaired-r7-2026-08-30).
 The current default branch is a later peer-review candidate.
 
-Active: [R114](docs/R114_SENTENCE_STRUCTURE.md), preregistered scope falsification
-and strict sentence-array revision. It has no result yet and does not relax gates.
+Active: [R114](docs/R114_SENTENCE_STRUCTURE.md), finite scope passed, followed by
+the single frozen strict sentence-array revision comparison. No generation
+qualification yet; no gate is relaxed.
 
 Latest result: [R113](docs/R113_STORAGE_RECOVERED_REPLICATION.md) completes all
 576 calls with exact replay but **fails qualification**. Feedback scores 40/48

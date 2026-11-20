@@ -4,7 +4,8 @@ Updated: 2026-11-20
 
 [R114](R114_SENTENCE_STRUCTURE.md) has a published implementation/input freeze:
 evaluator falsification then conditional sentence-array revision. It supplies no
-prospective certificate or host result yet.
+English or host result. Its finite scope prerequisite passes 800 new + 2,411
+development cases with exact replay; the source comparison is next.
 
 [R113](R113_STORAGE_RECOVERED_REPLICATION.md) completed 576 calls with exact replay
 and 14/14 hostile rejection, but feedback qualification fails (40/48 pairs vs 44).

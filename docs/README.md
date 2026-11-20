@@ -6,7 +6,7 @@ goal rather than reading the campaign archive in filename order.
 ## Reading paths
 
 Active experiment: [R114 scope and sentence structure](R114_SENTENCE_STRUCTURE.md)
-(preregistered, not executed). R113 remains the latest completed result.
+(finite scope passed; source study next). R113 remains the latest completed source study.
 
 | Audience | Read in this order |
 | --- | --- |

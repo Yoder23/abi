@@ -26,6 +26,12 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+R114 finite scope passes 800/800 new cases plus 2,411 development obligations,
+zero errors/false-safe outcomes and byte-identical fresh replay. Publish the
+complete packet before the single frozen 576-call GPU comparison. Do not change
+code, gates or GPU settings, repair outputs, train recipients or modify LayerCake.
+This finite pass is not general semantics, English qualification or ABI transfer.
+
 R114 implementation is frozen at `ab161c4f734799adae7e69d305a8a0aeb8bdbe94`;
 freeze SHA-256 `69ffc52a25b63bbbfb4173960bc1c8f3c9db6dc56ca08a0aac6a3012c92c1e01`.
 920 combined tests pass, four existing skips, plus 16 exact historical-host tests.

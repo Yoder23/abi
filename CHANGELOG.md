@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-20 — R114 finite scope pass
+
+- 800 prospective construction cases and 2,411 disclosed development obligations
+  pass with zero errors/false-safe outcomes and byte-identical fresh replay.
+- Publish the complete packet before source execution. This is not general
+  semantics, English qualification or an ABI/LayerCake result.
+
 ## 2026-11-20 — R114 implementation freeze
 
 - Freeze source `ab161c4`, exact new inputs and the complete R113 dependency
