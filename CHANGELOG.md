@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-11-20 — R114 completed, qualification failed
+
+- Complete all 576 calls with exact scientific replay and 72 unchanged-input
+  controls per worker; preserve R113 and every historical gate.
+- Ordinary revision reaches 44/48 pairs but tone fails at 2/6 against 5.
+  Sentence-array revision scores 39/48; 12 one-string arrays fail the strict codec.
+- Sentence adherence is 18/24 versus 12/24; no supported gain, and quality
+  noninferiority fails. Retain live scope limitations and the apparent
+  `no changes are confirmed` false positive without repairing scores.
+- Separate prerequisite/evaluator findings from untested ABI and LayerCake.
+  No training, recipient, GPU-setting or host change. See the
+  [review guide](docs/releases/R114_REVIEW.md); no automatic successor.
+
 ## 2026-11-20 — R114 finite scope pass
 
 - 800 prospective construction cases and 2,411 disclosed development obligations

@@ -2,10 +2,14 @@
 
 Status date: 2026-11-20
 
-[R114](docs/R114_SENTENCE_STRUCTURE.md) is a newly registered finite-scope and
-sentence-serialization study with a tested, published implementation freeze.
-Finite scope passes 800 new + 2,411 development cases with exact replay, not
-general semantics. Source comparison is next; no acquisition or host claim.
+[R114](docs/R114_SENTENCE_STRUCTURE.md) completes 576 calls with exact scientific
+replay, but no control qualifies. Ordinary revision reaches 44/48 pairs while
+tone fails at 2/6 against 5; structured revision reaches 39/48, with 12 invalid
+arrays. Sentence adherence 18/24 -> 12/24 has no supported gain; quality fails
+noninferiority. Finite scope passes 800 new + 2,411 development cases, not general
+semantics: live scope gaps and an apparent negation false positive remain.
+No acquired English, ABI/LayerCake defect, efficiency or superiority is established.
+Gates, GPU settings, R113 and historical matched controls remain unchanged.
 
 [R113](docs/R113_STORAGE_RECOVERED_REPLICATION.md) completes all 576 calls with
 exact replay and 14/14 hostile rejection. Feedback still fails: 40/48 pairs vs 44,

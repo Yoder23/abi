@@ -2,10 +2,13 @@
 
 Updated: 2026-11-20
 
-[R114](R114_SENTENCE_STRUCTURE.md) has a published implementation/input freeze:
-evaluator falsification then conditional sentence-array revision. It supplies no
-English or host result. Its finite scope prerequisite passes 800 new + 2,411
-development cases with exact replay; the source comparison is next.
+[R114](R114_SENTENCE_STRUCTURE.md) completed 576 calls with exact scientific
+replay, but qualification fails. Revision 44/48 pairs misses the tone floor
+(2/6 vs 5); structured revision scores 39/48, with 12 invalid arrays. Its primary
+sentence CI crosses zero and quality noninferiority fails. Finite scope passes
+800 new + 2,411 development cases while live-prose coverage remains incomplete.
+Preserve the apparent quantified-negation false positive without rescoring.
+No English artifact, ABI acquisition, LayerCake test or superiority claim follows.
 
 [R113](R113_STORAGE_RECOVERED_REPLICATION.md) completed 576 calls with exact replay
 and 14/14 hostile rejection, but feedback qualification fails (40/48 pairs vs 44).

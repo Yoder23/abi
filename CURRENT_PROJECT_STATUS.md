@@ -2,12 +2,16 @@
 
 Updated: 2026-11-20
 
-Active: [R114](docs/R114_SENTENCE_STRUCTURE.md), one newly authorized scope and
-sentence-structured revision experiment. Implementation/input freeze is published;
-finite scope passed 800 new + 2,411 development cases with exact replay. The
-registered source comparison is next; no generation-quality or host result yet.
+Latest completed: [R114](docs/R114_SENTENCE_STRUCTURE.md), 576 calls and exact
+scientific replay. Qualification fails: ordinary revision 44/48 pairs but tone
+2/6 against 5; structured revision 39/48 pairs and 12 invalid one-string arrays.
+Sentence adherence 18/24 -> 12/24 has no supported gain; all-task quality fails
+noninferiority. Finite scope passes 800 new + 2,411 development cases, but live
+scope limitations persist. No acquisition or LayerCake testing, training, GPU
+setting change or gate relaxation. [Review guide](docs/releases/R114_REVIEW.md).
+No automatic successor; R113 remains unchanged.
 
-Latest completed: [R113](docs/R113_STORAGE_RECOVERED_REPLICATION.md), all 576 calls
+Preserved result: [R113](docs/R113_STORAGE_RECOVERED_REPLICATION.md), all 576 calls
 with exact replay. Feedback fails qualification at 40/48 pairs versus 44; tone
 3/6 and conversation 4/6 versus 5. The sentence gain is unsupported. Preserve
 remaining sentence failures and evaluator scope limits, without rescoring.

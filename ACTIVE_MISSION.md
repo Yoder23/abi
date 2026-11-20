@@ -2,19 +2,23 @@
 
 Updated: 2026-11-20
 
-## Active: R114 scope and sentence-structured revision
+## Latest completed: R114 qualification failed
 
-Finite scope passed all 800 new and 2,411 development cases with exact fresh
-replay. Publish that packet, then execute only the frozen 576-call source study
-with unchanged GPU settings/gates. No English-control or ABI/host result yet.
+[R114](docs/R114_SENTENCE_STRUCTURE.md) completed 576 calls with exact scientific
+replay and 72 unchanged-input controls per worker. Ordinary revision scores
+44/48 pairs but tone fails at 2/6 against 5; structured revision scores 39/48.
+Twelve one-string arrays fail the strict codec. Sentence adherence falls from
+18/24 to 12/24; the primary CI crosses zero and quality noninferiority fails.
+Finite scope passes 800 new + 2,411 development cases but live-prose limitations
+remain, including an apparent quantified-negation false positive. No rescore.
 
-Execute the newly authorized [R114](docs/R114_SENTENCE_STRUCTURE.md), publishing
-protocol and tested implementation before execution. Finite scope must pass
-before GPU work. Contrast prose revision with strict sentence arrays; no repair
-or relaxed gates. Preserve R113, GPU settings and all historical evidence.
-No training, recipient or native host work. Publish failures; no automatic successor.
+Publish the complete result and review packet. Preserve R113, every gate, GPU
+settings and historical matched controls. No acquisition, training or LayerCake
+work ran. A future proposal must distinguish structural decoding from evaluator
+coverage, not repeat a wording sweep or infer an ABI/host defect. No automatic
+successor. [Review guide](docs/releases/R114_REVIEW.md).
 
-## Latest completed: R113 qualification failed
+## Preserved result: R113 qualification failed
 
 [R113](docs/R113_STORAGE_RECOVERED_REPLICATION.md) completed all 576 calls with
 exact replay, but feedback passes 40/48 pairs versus 44; tone 3/6 and conversation

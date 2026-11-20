@@ -2,11 +2,15 @@
 
 Status date: 2026-11-20
 
-Active: [R114](R114_SENTENCE_STRUCTURE.md), preregistered evaluator falsification
-then conditional sentence-array generation. Finite scope passes 800 new and
-2,411 development cases with exact replay; source study next, unchanged gates/GPU.
+Latest completed: [R114](R114_SENTENCE_STRUCTURE.md), 576 calls and exact
+scientific replay. Ordinary revision reaches 44/48 pairs but misses tone at 2/6
+against 5. Structured revision reaches 39/48, with 12 invalid arrays and no
+supported sentence gain; quality noninferiority fails. Finite scope passes
+800 new + 2,411 development cases, not general semantics. Live scope limitations
+remain. No acquired core, training, ABI/host test, GPU or gate change.
+[Review guide](releases/R114_REVIEW.md). No automatic successor.
 
-Latest result: [R113](R113_STORAGE_RECOVERED_REPLICATION.md) completes 576 calls
+Preserved result: [R113](R113_STORAGE_RECOVERED_REPLICATION.md) completes 576 calls
 with exact replay and 14/14 hostile rejection, but feedback fails at 40/48 pairs
 versus 44; tone 3/6 and conversation 4/6 versus 5. The sentence-adherence effect
 has a CI crossing zero. Genuine sentence failures and evaluator scope limits

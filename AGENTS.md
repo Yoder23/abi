@@ -26,17 +26,23 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
-R114 finite scope passes 800/800 new cases plus 2,411 development obligations,
-zero errors/false-safe outcomes and byte-identical fresh replay. Publish the
-complete packet before the single frozen 576-call GPU comparison. Do not change
-code, gates or GPU settings, repair outputs, train recipients or modify LayerCake.
-This finite pass is not general semantics, English qualification or ABI transfer.
+R114 completed 576 calls with exact scientific replay and 72/72 unchanged-input
+controls per worker. Qualification fails: draft/revision/structured pairs are
+38/48, 44/48 and 39/48. Revision reaches the aggregate floors but tone is 2/6
+against 5. Structured sentence adherence is 12/24 versus revision 18/24; its
+primary CI crosses zero and all-task quality fails noninferiority. Preserve all
+12 rejected one-string arrays, six ordinary-revision sentence violations, and
+scope limitations, including the apparent `no changes are confirmed` false
+positive. Finite scope passed 800 new plus 2,411 development cases, not general
+semantics. No rescore, repair, retry or automatic successor. ABI and LayerCake
+remain NOT_TESTED; no English artifact, training or hardware/gate change.
 
 R114 implementation is frozen at `ab161c4f734799adae7e69d305a8a0aeb8bdbe94`;
 freeze SHA-256 `69ffc52a25b63bbbfb4173960bc1c8f3c9db6dc56ca08a0aac6a3012c92c1e01`.
 920 combined tests pass, four existing skips, plus 16 exact historical-host tests.
-Preserve all frozen code/tests and failed development receipts. Publish freeze,
-then the actual content-seeded challenge before scoring. No model call yet.
+Preserve all frozen code/tests and failed development receipts. Freeze, actual
+content-seeded challenge and passing scope packet were published in sequence
+before their dependent stages. Do not reopen this completed experiment.
 
 User continuation (2026-11-20): preregister and run one R114 under
 `experiments/sentence_structure_r114/PROTOCOL.md`. Falsify the new finite scope

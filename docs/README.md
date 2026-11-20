@@ -5,8 +5,9 @@ goal rather than reading the campaign archive in filename order.
 
 ## Reading paths
 
-Active experiment: [R114 scope and sentence structure](R114_SENTENCE_STRUCTURE.md)
-(finite scope passed; source study next). R113 remains the latest completed source study.
+Latest experiment: [R114 scope and sentence structure](R114_SENTENCE_STRUCTURE.md)
+(complete, qualification failed). [Review guide](releases/R114_REVIEW.md) separates
+sentence serialization, evaluator limitations and untested acquisition/host paths.
 
 | Audience | Read in this order |
 | --- | --- |
@@ -18,6 +19,10 @@ Active experiment: [R114 scope and sentence structure](R114_SENTENCE_STRUCTURE.m
 | Contributor | [Repository map](repository-layout.md) -> [Contributing](../CONTRIBUTING.md) -> [Repository contract](../AGENTS.md) |
 
 ## Canonical current documents
+
+- [R114 scope and sentence structure](R114_SENTENCE_STRUCTURE.md): all 576 calls
+  and exact replay; revision reaches 44/48 pairs but misses the tone floor;
+  structured revision scores 39/48 and fails quality noninferiority.
 
 - [R113 storage-recovered replication](R113_STORAGE_RECOVERED_REPLICATION.md):
   all 576 calls and exact replay; feedback fails at 40/48 pairs versus 44.
