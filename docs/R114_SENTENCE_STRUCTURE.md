@@ -1,6 +1,14 @@
 # R114 — scope and sentence-structured revision
 
-Status: implementation tested, awaiting published freeze and challenge (2026-11-20).
+Status: implementation frozen; prospective challenge not yet scored (2026-11-20).
+
+Source commit: `ab161c4f734799adae7e69d305a8a0aeb8bdbe94`.
+Freeze SHA-256: `69ffc52a25b63bbbfb4173960bc1c8f3c9db6dc56ca08a0aac6a3012c92c1e01`.
+Publication tag: `abi-r114-implementation-2026-11-20`. The freeze binds the full
+R113 closure, new scientific code/tests, exact inputs, source files and package
+versions. Its current preflight measures 21.53 GiB free. R113 recomputes unchanged;
+an old R112 storage-block line printed during ancestry verification is historical,
+not a current block. The actual new challenge must be published before scoring.
 
 The combined offline suite passes 920 tests with four existing skips; all 16
 historical-host tests pass in their exact fixture. The 91 focused R114 checks

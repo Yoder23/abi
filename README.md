@@ -29,7 +29,7 @@ LoRA and distillation.
 
 | Evidence line | What is established | What remains open |
 | --- | --- | --- |
-| R114 | Registered scope falsification and sentence-array revision design | Not executed; unchanged gates, no English artifact or ABI/host claim |
+| R114 | Tested implementation and input freeze; 920 software tests pass | Prospective scope/source not executed; unchanged gates, no English artifact or ABI/host claim |
 | R113 | Complete 576-call replication, exact replay, 14/14 hostile rejection | Feedback fails: 40/48 pairs versus 44; tone/conversation floors missed; no acquisition or host claim |
 | R112 | Finite scope passes 800 new and 1,598 development cases; verified cleanup; 530 preserved source calls | Disk-floor stop: 288 initial + 242/288 replay; exact prefix, incomplete qualification; no ABI/host result |
 | R111 | Finite scope passed 800/800; all 384 source calls replay exactly; sentence adherence improves 7/24 to 15/24 | Qualification failed: revision 41/48 pairs versus 44, summary/tone floors missed; no acquisition or host result |

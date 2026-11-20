@@ -26,6 +26,12 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+R114 implementation is frozen at `ab161c4f734799adae7e69d305a8a0aeb8bdbe94`;
+freeze SHA-256 `69ffc52a25b63bbbfb4173960bc1c8f3c9db6dc56ca08a0aac6a3012c92c1e01`.
+920 combined tests pass, four existing skips, plus 16 exact historical-host tests.
+Preserve all frozen code/tests and failed development receipts. Publish freeze,
+then the actual content-seeded challenge before scoring. No model call yet.
+
 User continuation (2026-11-20): preregister and run one R114 under
 `experiments/sentence_structure_r114/PROTOCOL.md`. Falsify the new finite scope
 evaluator first; only after a published pass compare prose and strict

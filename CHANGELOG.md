@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-20 — R114 implementation freeze
+
+- Freeze source `ab161c4`, exact new inputs and the complete R113 dependency
+  closure; preserve all failed development receipts and historical evidence.
+- 920 combined offline tests pass (four existing skips), plus 16 exact
+  historical-host checks. This is not a prospective scope or generation result.
+
 ## 2026-11-20 — R114 preregistration
 
 - Register finite scope falsification and conditional sentence-array revision;
