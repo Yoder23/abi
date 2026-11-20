@@ -8,7 +8,9 @@ Publication tag: `abi-r114-implementation-2026-11-20`. The freeze binds the full
 R113 closure, new scientific code/tests, exact inputs, source files and package
 versions. Its current preflight measures 21.53 GiB free. R113 recomputes unchanged;
 an old R112 storage-block line printed during ancestry verification is historical,
-not a current block. The actual new challenge must be published before scoring.
+not a current block. All 1,026 bound file identities passed. The actual 800-case
+challenge is published before scoring at `abi-r114-challenge-2026-11-20`:
+SHA-256 `e855fb6ba904e51011ad0f3ec8322a5271c91d8f4f3c963305f50c885bb7afde`.
 
 The combined offline suite passes 920 tests with four existing skips; all 16
 historical-host tests pass in their exact fixture. The 91 focused R114 checks
