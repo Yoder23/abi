@@ -40,3 +40,17 @@ def test_changed_archive_bytes_rejected(tmp_path, monkeypatch):
     p.r.write(p.MANIFEST, {'files': {'results/count_feedback_r113/test.json': {'sha256': '0' * 64, 'bytes': 2}}})
     with pytest.raises(RuntimeError, match='Changed'):
         p.archive()
+
+
+def test_public_verification_preserves_prior_download(tmp_path, monkeypatch):
+    monkeypatch.setattr(p, 'OUT', tmp_path)
+    (tmp_path / 'r113_public_download').mkdir()
+    with pytest.raises(RuntimeError, match='Preserve'):
+        p.public_verify()
+
+
+def test_public_verification_rejects_missing_downloads(tmp_path, monkeypatch):
+    monkeypatch.setattr(p, 'OUT', tmp_path)
+    monkeypatch.setattr(p.subprocess, 'run', lambda *a, **kw: None)
+    with pytest.raises(RuntimeError, match='asset membership'):
+        p.public_verify()

@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-11-20 — R113 completed, qualification failed
+
+- Complete 576 new calls with exact scientific replay and 72 unchanged-input
+  controls per worker. Preserve R112 as resource-incomplete; no old-row splicing.
+- Record feedback 43/48 in both panels, 40/48 paired against 44; tone 3/6 and
+  conversation 4/6 miss 5. Sentence adherence 15/24 -> 18/24 has CI crossing zero.
+- Preserve six sentence failures and all scope flags, including an apparent
+  imperative false positive. No rescore, training, acquisition or host change.
+- Reject 14/14 actual-row hostile mutations; publish the raw negative evidence.
+
 ## 2026-11-20 — R113 registered after storage recovery
 
 - Freeze implementation `5efaf9f` and 983 input/dependency paths after focused,

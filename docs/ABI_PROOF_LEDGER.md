@@ -2,9 +2,11 @@
 
 Updated: 2026-11-20
 
-[R113](R113_STORAGE_RECOVERED_REPLICATION.md) is registered to complete a new
-replication after storage recovery. No new proof yet; R112 remains incomplete.
-The known panel and scientific functions are unchanged, not a fresh blind test.
+[R113](R113_STORAGE_RECOVERED_REPLICATION.md) completed 576 calls with exact replay
+and 14/14 hostile rejection, but feedback qualification fails (40/48 pairs vs 44).
+Tone/conversation floors fail and the primary CI crosses zero. Sentence failures
+and finite evaluator-scope limits coexist. No acquired English core, ABI novelty
+or host result; R112 remains incomplete. This is an exposed-panel replication.
 
 [R112](R112_COUNT_FEEDBACK.md) is a tested implementation, not a proof
 promotion. Its finite scope challenge passed 800 new and 1,598 development cases

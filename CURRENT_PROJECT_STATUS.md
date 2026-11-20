@@ -2,11 +2,12 @@
 
 Updated: 2026-11-20
 
-Active: [R113](docs/R113_STORAGE_RECOVERED_REPLICATION.md), one separately
-registered storage-recovered replication. It reuses the exact exposed R112
-panel/functions and unchanged gates, without resuming or amending R112. Publish
-the implementation/input freeze before the two complete fresh workers. No
-acquisition, training, host changes or new quality result are claimed yet.
+Latest completed: [R113](docs/R113_STORAGE_RECOVERED_REPLICATION.md), all 576 calls
+with exact replay. Feedback fails qualification at 40/48 pairs versus 44; tone
+3/6 and conversation 4/6 versus 5. The sentence gain is unsupported. Preserve
+remaining sentence failures and evaluator scope limits, without rescoring.
+All 14 raw-data hostile mutations reject. No acquisition, training or host change;
+R112 remains incomplete. [Review guide](docs/releases/R113_REVIEW.md).
 
 Preserved registration: [R112](docs/R112_COUNT_FEEDBACK.md), a bounded count-feedback
 revision contrast plus finite scope validation. Its new implementation passes
@@ -24,7 +25,7 @@ settings, quality gates and native LayerCake code are unchanged. The implementat
 is frozen at `fae959c`; the complete passing scope packet was published before
 source execution. Cleanup overlapped initial generation; costs are observational.
 
-Latest completed result: [R111](docs/R111_SCOPE_REVISION.md). Its finite scope
+Previous completed result: [R111](docs/R111_SCOPE_REVISION.md). Its finite scope
 prerequisite passed 800/800 new cases and 793 development obligations with exact
 replay. All 384 source calls completed with exact scientific replay. Sentence
 adherence improved 7/24 to 15/24 (paired CI +0.16667 to +0.50), but qualification

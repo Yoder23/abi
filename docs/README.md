@@ -17,7 +17,8 @@ goal rather than reading the campaign archive in filename order.
 ## Canonical current documents
 
 - [R113 storage-recovered replication](R113_STORAGE_RECOVERED_REPLICATION.md):
-  new complete execution of the unchanged, exposed R112 panel; no gate changes.
+  all 576 calls and exact replay; feedback fails at 40/48 pairs versus 44.
+  [Review guide](releases/R113_REVIEW.md) separates adherence and evaluator limits.
 
 - [R112 count-feedback study](R112_COUNT_FEEDBACK.md): finite scope passed;
   source study stopped at the disk floor after 530/576 calls. See the

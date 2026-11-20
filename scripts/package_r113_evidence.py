@@ -45,9 +45,10 @@ def package():
     names = {n for n in frozen['files'] if not n.startswith('../')}
     names.update(r.relative(p) for p in r.OUT.rglob('*') if p.is_file())
     names.update(r.relative(p) for p in OUT.glob('r113-*.xml'))
-    names.update(('scripts/package_r113_evidence.py', 'scripts/r113_hostile_audit.py',
+    names.update(('scripts/package_r113_evidence.py', 'scripts/r113_hostile_audit.py', 'scripts/r113_error_audit.py',
                   'tests/test_r113_publication.py', 'docs/R113_STORAGE_RECOVERED_REPLICATION.md',
-                  'docs/releases/R113_REVIEW.md', r.relative(OUT / 'r113_hostile.json')))
+                  'docs/releases/R113_REVIEW.md', r.relative(OUT / 'r113_hostile.json'),
+                  r.relative(OUT / 'r113_error_audit.json')))
     tracked = set(subprocess.check_output(['git', 'ls-files'], cwd=ROOT, text=True).splitlines())
     if names - tracked:
         raise RuntimeError(f'Stage required custody files first: {sorted(names - tracked)}')
@@ -99,8 +100,44 @@ def archive():
     print(json.dumps(r.read(RECEIPT)), flush=True)
 
 
+def public_verify():
+    """Download the three published assets and verify bytes and ZIP members."""
+    folder = OUT / 'r113_public_download'
+    receipt = OUT / 'r113_public_assets_verified.json'
+    if folder.exists() or receipt.exists():
+        raise RuntimeError('Preserve prior public verification')
+    folder.mkdir()
+    names = (MANIFEST.name, ARCHIVE.name, RECEIPT.name)
+    argv = ['gh', 'release', 'download', 'abi-research-r113-2026-11-20',
+            '--repo', 'Yoder23/abi', '--dir', str(folder)]
+    for name in names:
+        argv += ['--pattern', name]
+    subprocess.run(argv, cwd=ROOT, check=True)
+    observed = {}
+    if {p.name for p in folder.iterdir()} != set(names):
+        raise RuntimeError('Unexpected public asset membership')
+    for name in names:
+        downloaded, local = folder / name, OUT / name
+        if r.sha(downloaded) != r.sha(local) or downloaded.stat().st_size != local.stat().st_size:
+            raise RuntimeError('Public asset byte mismatch')
+        observed[name] = {'sha256': r.sha(downloaded), 'bytes': downloaded.stat().st_size}
+    index, archive_receipt = r.read(folder / MANIFEST.name), r.read(folder / RECEIPT.name)
+    with zipfile.ZipFile(folder / ARCHIVE.name) as bundle:
+        if bundle.namelist() != archive_receipt['members']:
+            raise RuntimeError('Public ZIP member mismatch')
+        for name in bundle.namelist():
+            payload = bundle.read(name)
+            entry = index['files'][name]
+            if len(payload) != entry['bytes'] or hashlib.sha256(payload).hexdigest() != entry['sha256']:
+                raise RuntimeError('Public ZIP content mismatch')
+    r.write(receipt, {'format': 'r113-public-assets-verification/1', 'assets': observed,
+        'verified_archive_members': len(archive_receipt['members']),
+        'scope': 'Fresh public asset byte/member custody, not a clean-clone scientific or independent-hardware reproduction'})
+    print(json.dumps(r.read(receipt)), flush=True)
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command', choices=('package', 'archive'))
+    parser.add_argument('command', choices=('package', 'archive', 'public-verify'))
     args = parser.parse_args()
-    {'package': package, 'archive': archive}[args.command]()
+    {'package': package, 'archive': archive, 'public-verify': public_verify}[args.command]()

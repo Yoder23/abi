@@ -2,7 +2,17 @@
 
 Updated: 2026-11-20
 
-## Active: R113 storage-recovered replication
+## Latest completed: R113 qualification failed
+
+[R113](docs/R113_STORAGE_RECOVERED_REPLICATION.md) completed all 576 calls with
+exact replay, but feedback passes 40/48 pairs versus 44; tone 3/6 and conversation
+4/6 versus 5. Sentence adherence 15/24 -> 18/24 has a CI crossing zero. Preserve
+six sentence failures and all scope limits, including an apparent imperative
+false positive; no historical rescore. All 14 actual-row hostile mutations reject.
+ABI acquisition and LayerCake remain NOT_TESTED. Publish the outcome; no automatic
+successor or training. [Review guide](docs/releases/R113_REVIEW.md).
+
+### R113 execution history
 
 The user authorized bounded continuation after cleanup restored about 22.5 GiB
 free. [R113](docs/R113_STORAGE_RECOVERED_REPLICATION.md) repeats the unchanged

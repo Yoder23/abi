@@ -2,9 +2,12 @@
 
 Status date: 2026-11-20
 
-[R113](docs/R113_STORAGE_RECOVERED_REPLICATION.md) is an authorized replication
-after storage recovery, not a new result. It keeps R112 incomplete and preserves
-the exposed inputs, model, evaluator and gates. No acquisition/host promotion.
+[R113](docs/R113_STORAGE_RECOVERED_REPLICATION.md) completes all 576 calls with
+exact replay and 14/14 hostile rejection. Feedback still fails: 40/48 pairs vs 44,
+tone 3/6 and conversation 4/6 vs 5. Its primary CI crosses zero. Preserve genuine
+sentence failures and evaluator scope limitations separately; do not silently
+rescore or infer ABI/LayerCake defects. No acquisition or host ran. R112 remains
+incomplete; exposed-panel replication is not new blind evidence or a breakthrough.
 
 [R112](docs/R112_COUNT_FEEDBACK.md) passes its finite scope prerequisite (800 new
 and 1,598 development cases, exact replay). Source generation stopped at the

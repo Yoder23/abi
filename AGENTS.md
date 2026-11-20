@@ -26,6 +26,17 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+R113 completed on 2026-11-20: all 576 calls, exact scientific replay, 72 unchanged
+controls per worker and 14/14 actual-row hostile rejections. Qualification fails:
+draft/revision/feedback pairs 36/48, 38/48, 40/48 versus 44; feedback tone 3/6 and
+conversation 4/6 versus 5. Sentence adherence 15/24 -> 18/24 has CI [-0.08333,
++0.33333], not a supported gain. Preserve six feedback sentence failures and five
+overlapping scope flags, including an apparent imperative false positive; no
+silent rescore. ABI and LayerCake remain NOT_TESTED, matched controls preserved,
+GPU/gates unchanged, R112 incomplete. No automatic successor: future proposals
+must separate evaluator validity from sentence-structured generation on fresh
+cases, not scale the counter-reminder or start a training sweep.
+
 User continuation (2026-11-20): after evidence-preserving storage cleanup,
 preregister and execute one R113 resource-recovered replication under
 `experiments/count_feedback_r113/PROTOCOL.md`. This new authorization does not

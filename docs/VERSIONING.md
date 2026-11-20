@@ -3,16 +3,17 @@
 | Identity | Current value | Scope |
 | --- | --- | --- |
 | Python package | `0.4.0a1` | Supported alpha compiler API |
-| Current preregistration | `abi-prereg-r113-2026-11-20` | Storage-recovered, exposed-panel replication; no result yet |
+| Current preregistration | `abi-prereg-r113-2026-11-20` | Storage-recovered exposed-panel replication; completed result below |
 | Preserved preregistration | `abi-prereg-r112-2026-11-19` | Count-feedback design; later closed resource-incomplete |
 | Storage/custody snapshot | `abi-r112-cleanup-2026-11-19` | Verified duplicate retirement; still storage-blocked, no scientific execution |
-| Current experiment implementation | `abi-r113-implementation-2026-11-20` (source `5efaf9f`) | New wrapper around unchanged R112 scientific functions; 983 bound paths; no generation result yet |
+| Current experiment implementation | `abi-r113-implementation-2026-11-20` (source `5efaf9f`) | Frozen wrapper around unchanged R112 scientific functions; 983 bound paths |
 | Preserved experiment implementation | `abi-r112-implementation-2026-11-19` (source `fae959c`) | Immutable evaluator/generator/driver/verifier; later resource-incomplete |
 | R112 challenge publication | `abi-r112-challenge-2026-11-19` | Actual 800-case packet, published before scoring |
 | R112 finite scope prerequisite | `abi-r112-scope-2026-11-19` | 800 new and 1,598 development cases, exact replay; not general semantics |
-| Latest completed implementation freeze | `abi-r111-implementation-2026-11-18` | Immutable parser, challenge generator and bounded two-call driver, frozen before execution |
+| Previous completed implementation freeze | `abi-r111-implementation-2026-11-18` | Immutable parser, challenge generator and bounded two-call driver, frozen before execution |
 | Preserved preregistration | `abi-prereg-r111-2026-11-18` | Design-only snapshot; completed result is separately sealed below |
-| Current research review snapshot | `abi-research-r112-2026-11-19` | Resource-incomplete: 530/576 calls, exact partial replay, complete qualification rejected |
+| Current research review snapshot | `abi-research-r113-2026-11-20` | Complete 576-call replication, exact replay; feedback fails 40/48 pairs versus 44 |
+| Preserved interrupted review snapshot | `abi-research-r112-2026-11-19` | Resource-incomplete: 530/576 calls, exact partial replay, complete qualification rejected |
 | Previous completed research snapshot | `abi-research-r111-2026-11-18` | Supported sentence gain, but absolute source qualification failed; exact replay, no acquisition or host promotion |
 | Previous research review snapshot | `abi-research-r110-2026-11-18` | Finite scope pass; complete source qualification failure with exact replay; no recipient or host promotion |
 | Passing finite prerequisite snapshot | `abi-r111-scope-2026-11-18` | 800 new cases and 793 development obligations, exact replay; finite scope only |

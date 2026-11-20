@@ -2,12 +2,14 @@
 
 Status date: 2026-11-20
 
-Active registration: [R113](R113_STORAGE_RECOVERED_REPLICATION.md), a new
-storage-recovered replication of the unchanged R112 comparison. Two fresh workers
-must complete; exposed-panel replication is not new blind evidence. Freeze and
-publish before inference; no training, acquisition or LayerCake change.
+Latest result: [R113](R113_STORAGE_RECOVERED_REPLICATION.md) completes 576 calls
+with exact replay and 14/14 hostile rejection, but feedback fails at 40/48 pairs
+versus 44; tone 3/6 and conversation 4/6 versus 5. The sentence-adherence effect
+has a CI crossing zero. Genuine sentence failures and evaluator scope limits
+coexist; no rescore, training, acquisition or LayerCake change. R112 stays
+incomplete. [Review guide](releases/R113_REVIEW.md). No automatic successor.
 
-Current outcome: [R112](R112_COUNT_FEEDBACK.md) is resource-incomplete. Finite scope
+Preserved outcome: [R112](R112_COUNT_FEEDBACK.md) is resource-incomplete. Finite scope
 passed 800 new and 1,598 development cases with exact replay, but the source study
 stopped at its unchanged 10 GiB floor after 288 initial and 242/288 replay calls.
 The preserved prefix is exact; the frozen complete verifier rejects qualification.
@@ -16,7 +18,7 @@ cleanup preserved 2,915 distinct historical target paths and rechecked all R111
 dependencies; source caches, GPU settings and gates remain unchanged.
 [Review packet](releases/R112_REVIEW.md). No retry or automatic successor.
 
-Latest result: [R111](R111_SCOPE_REVISION.md) completed with exact 384-call replay.
+Previous result: [R111](R111_SCOPE_REVISION.md) completed with exact 384-call replay.
 Sentence adherence improves 7/24 to 15/24 (paired CI +0.16667 to +0.50), but
 qualification fails: revision 41/48 pairs versus 44, panels 42/48 and 44/48, with
 summary/tone floors missed. Three scope-unresolved outputs remain per arm despite
