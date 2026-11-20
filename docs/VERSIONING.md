@@ -8,7 +8,8 @@
 | Preserved preregistration | `abi-prereg-r113-2026-11-20` | Storage-recovered exposed-panel replication; completed result below |
 | Preserved preregistration | `abi-prereg-r112-2026-11-19` | Count-feedback design; later closed resource-incomplete |
 | Storage/custody snapshot | `abi-r112-cleanup-2026-11-19` | Verified duplicate retirement; still storage-blocked, no scientific execution |
-| Current experiment implementation | `abi-r114-implementation-2026-11-20` (source `ab161c4`) | Frozen scope grammar and sentence-array workflow; completed result below |
+| Current experiment implementation | `abi-r115-implementation-2026-11-20` (source `df547e9`) | Frozen same-prompt structural decoding and prospective scope validation; no result yet |
+| Preserved experiment implementation | `abi-r114-implementation-2026-11-20` (source `ab161c4`) | Frozen scope grammar and sentence-array workflow; completed result below |
 | Current challenge publication | `abi-r114-challenge-2026-11-20` | Actual 800-case packet, published before scoring |
 | Current finite scope prerequisite | `abi-r114-scope-2026-11-20` | 800 new + 2,411 development cases, exact replay; not general semantics |
 | Preserved experiment implementation | `abi-r113-implementation-2026-11-20` (source `5efaf9f`) | Frozen wrapper around unchanged R112 scientific functions; 983 bound paths |
