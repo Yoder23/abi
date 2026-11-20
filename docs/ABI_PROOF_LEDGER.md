@@ -1,6 +1,10 @@
 # ABI proof ledger
 
-Updated: 2026-11-19
+Updated: 2026-11-20
+
+[R113](R113_STORAGE_RECOVERED_REPLICATION.md) is registered to complete a new
+replication after storage recovery. No new proof yet; R112 remains incomplete.
+The known panel and scientific functions are unchanged, not a fresh blind test.
 
 [R112](R112_COUNT_FEEDBACK.md) is a tested implementation, not a proof
 promotion. Its finite scope challenge passed 800 new and 1,598 development cases

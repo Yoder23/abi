@@ -1,8 +1,14 @@
 # Current project status
 
-Updated: 2026-11-19
+Updated: 2026-11-20
 
-Current registration: [R112](docs/R112_COUNT_FEEDBACK.md), a bounded count-feedback
+Active: [R113](docs/R113_STORAGE_RECOVERED_REPLICATION.md), one separately
+registered storage-recovered replication. It reuses the exact exposed R112
+panel/functions and unchanged gates, without resuming or amending R112. Publish
+the implementation/input freeze before the two complete fresh workers. No
+acquisition, training, host changes or new quality result are claimed yet.
+
+Preserved registration: [R112](docs/R112_COUNT_FEEDBACK.md), a bounded count-feedback
 revision contrast plus finite scope validation. Its new implementation passes
 120 focused checks. The prospective scope gate passes 800 new and 1,598 disclosed
 cases with exact replay. The source study stopped at the unchanged 10 GiB disk

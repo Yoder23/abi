@@ -1,6 +1,10 @@
 # ABI claim ledger
 
-Status date: 2026-11-19
+Status date: 2026-11-20
+
+[R113](docs/R113_STORAGE_RECOVERED_REPLICATION.md) is an authorized replication
+after storage recovery, not a new result. It keeps R112 incomplete and preserves
+the exposed inputs, model, evaluator and gates. No acquisition/host promotion.
 
 [R112](docs/R112_COUNT_FEEDBACK.md) passes its finite scope prerequisite (800 new
 and 1,598 development cases, exact replay). Source generation stopped at the

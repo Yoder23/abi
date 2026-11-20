@@ -16,6 +16,9 @@ goal rather than reading the campaign archive in filename order.
 
 ## Canonical current documents
 
+- [R113 storage-recovered replication](R113_STORAGE_RECOVERED_REPLICATION.md):
+  new complete execution of the unchanged, exposed R112 panel; no gate changes.
+
 - [R112 count-feedback study](R112_COUNT_FEEDBACK.md): finite scope passed;
   source study stopped at the disk floor after 530/576 calls. See the
   [resource-incomplete review packet](releases/R112_REVIEW.md).

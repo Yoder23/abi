@@ -1,0 +1,1233 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="16" failures="0" skipped="0" tests="16" time="9.429" timestamp="2026-11-20T11:03:01.306760-05:00" hostname="Sam"><testcase classname="tests.test_capability_compiler_phase7_verify" name="test_exact_phase7_cpu_document_recomputes_cleanly" time="0.479"><error message="failed on setup with &quot;abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py&quot;">@pytest.fixture(scope="module")
+    def exact_fixture():
+&gt;       protocol, protocol_sha = load_protocol(ROOT, PRODUCT_PROTOCOL)
+
+tests\test_capability_compiler_phase7_verify.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release')
+path = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json')
+
+    def load_protocol(root: Path, path: Path) -&gt; tuple[dict[str, Any], str]:
+        document = _json(path)
+        base_path = (root / str(document.get("base_protocol", ""))).resolve()
+        if (
+            document.get("format") != base.FORMAT
+            or document.get("status") != LIFECYCLE_STATUS
+            or not base_path.is_file()
+            or sha256_file(base_path) != document.get("base_protocol_sha256")
+        ):
+            raise Phase3Error("Phase 7 direct-artifact base governance changed")
+        inherited = _json(base_path)
+        protocol = {
+            **inherited,
+            **document,
+            "bindings": {
+                **inherited.get("bindings", {}),
+                **document.get("bindings", {}),
+            },
+        }
+        protocol_sha = sha256_file(path)
+        direct_lifecycle = (
+            protocol.get("repair_scope")
+            == "DIRECT_HASH_BOUND_CORE_ARTIFACT_ACTIVATION_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_RSS_REPLICATION_RESULT_V1049.json"
+        )
+        streaming_host = (
+            protocol.get("repair_scope")
+            == "STREAMING_LAYERCAKE_PACKAGE_LOAD_AND_VERIFY_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_DIRECT_ARTIFACT_RESULT_V1056.json"
+            and protocol.get("layercake_commit")
+            == "8f49fe1a31938c2f9b59a576a494b99abdf538a7"
+        )
+        integrity_verify = (
+            protocol.get("repair_scope")
+            == "STREAMING_CRYPTOGRAPHIC_ACTIVE_VERIFY_WITHOUT_TENSOR_RELOAD"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_STREAMING_HOST_RESULT_V1060.json"
+            and protocol.get("layercake_commit")
+            == "662c5a9b7264a1a5478c9dfb656f35c450e2504f"
+        )
+        if (
+            int(protocol.get("seed", -1)) != base.SEED
+            or protocol.get("devices") != ["cpu", "cuda"]
+            or int(protocol.get("core_distinct_prompts", 0)) != 100
+            or int(protocol.get("core_repeated_observations", 0)) != 20
+            or int(protocol.get("domain_distinct_prompts", 0)) != 100
+            or int(protocol.get("domain_repeated_observations", 0)) != 20
+            or protocol.get("training_authorized") is not False
+            or protocol.get("teacher_query_authorized") is not False
+            or protocol.get("artifact_mutation_authorized") is not False
+            or protocol.get("repair_of")
+            != "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json"
+            or not (direct_lifecycle or streaming_host or integrity_verify)
+            or protocol.get("materialization_status")
+            != "PASS_PHASE7_PRODUCT_MATERIALIZATION"
+        ):
+            raise Phase3Error("Phase 7 direct-artifact lifecycle governance changed")
+        for relative, expected in protocol["bindings"].items():
+            target = (root / relative).resolve()
+            if not target.is_file() or sha256_file(target) != expected:
+&gt;               raise Phase3Error(
+                    f"Phase 7 direct-artifact binding changed: {relative}"
+                )
+E               abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py
+
+abi\capability_compiler_phase7_direct_artifact_runtime.py:86: Phase3Error</error></testcase><testcase classname="tests.test_capability_compiler_phase7_verify" name="test_adversarial_phase7_mutations_fail_closed[&lt;lambda&gt;-raw_depth_partition_exact]" time="0.000"><error message="failed on setup with &quot;abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py&quot;">@pytest.fixture(scope="module")
+    def exact_fixture():
+&gt;       protocol, protocol_sha = load_protocol(ROOT, PRODUCT_PROTOCOL)
+
+tests\test_capability_compiler_phase7_verify.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release')
+path = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json')
+
+    def load_protocol(root: Path, path: Path) -&gt; tuple[dict[str, Any], str]:
+        document = _json(path)
+        base_path = (root / str(document.get("base_protocol", ""))).resolve()
+        if (
+            document.get("format") != base.FORMAT
+            or document.get("status") != LIFECYCLE_STATUS
+            or not base_path.is_file()
+            or sha256_file(base_path) != document.get("base_protocol_sha256")
+        ):
+            raise Phase3Error("Phase 7 direct-artifact base governance changed")
+        inherited = _json(base_path)
+        protocol = {
+            **inherited,
+            **document,
+            "bindings": {
+                **inherited.get("bindings", {}),
+                **document.get("bindings", {}),
+            },
+        }
+        protocol_sha = sha256_file(path)
+        direct_lifecycle = (
+            protocol.get("repair_scope")
+            == "DIRECT_HASH_BOUND_CORE_ARTIFACT_ACTIVATION_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_RSS_REPLICATION_RESULT_V1049.json"
+        )
+        streaming_host = (
+            protocol.get("repair_scope")
+            == "STREAMING_LAYERCAKE_PACKAGE_LOAD_AND_VERIFY_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_DIRECT_ARTIFACT_RESULT_V1056.json"
+            and protocol.get("layercake_commit")
+            == "8f49fe1a31938c2f9b59a576a494b99abdf538a7"
+        )
+        integrity_verify = (
+            protocol.get("repair_scope")
+            == "STREAMING_CRYPTOGRAPHIC_ACTIVE_VERIFY_WITHOUT_TENSOR_RELOAD"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_STREAMING_HOST_RESULT_V1060.json"
+            and protocol.get("layercake_commit")
+            == "662c5a9b7264a1a5478c9dfb656f35c450e2504f"
+        )
+        if (
+            int(protocol.get("seed", -1)) != base.SEED
+            or protocol.get("devices") != ["cpu", "cuda"]
+            or int(protocol.get("core_distinct_prompts", 0)) != 100
+            or int(protocol.get("core_repeated_observations", 0)) != 20
+            or int(protocol.get("domain_distinct_prompts", 0)) != 100
+            or int(protocol.get("domain_repeated_observations", 0)) != 20
+            or protocol.get("training_authorized") is not False
+            or protocol.get("teacher_query_authorized") is not False
+            or protocol.get("artifact_mutation_authorized") is not False
+            or protocol.get("repair_of")
+            != "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json"
+            or not (direct_lifecycle or streaming_host or integrity_verify)
+            or protocol.get("materialization_status")
+            != "PASS_PHASE7_PRODUCT_MATERIALIZATION"
+        ):
+            raise Phase3Error("Phase 7 direct-artifact lifecycle governance changed")
+        for relative, expected in protocol["bindings"].items():
+            target = (root / relative).resolve()
+            if not target.is_file() or sha256_file(target) != expected:
+&gt;               raise Phase3Error(
+                    f"Phase 7 direct-artifact binding changed: {relative}"
+                )
+E               abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py
+
+abi\capability_compiler_phase7_direct_artifact_runtime.py:86: Phase3Error</error></testcase><testcase classname="tests.test_capability_compiler_phase7_verify" name="test_adversarial_phase7_mutations_fail_closed[&lt;lambda&gt;-core_schedule_and_reference_exact]" time="0.000"><error message="failed on setup with &quot;abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py&quot;">@pytest.fixture(scope="module")
+    def exact_fixture():
+&gt;       protocol, protocol_sha = load_protocol(ROOT, PRODUCT_PROTOCOL)
+
+tests\test_capability_compiler_phase7_verify.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release')
+path = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json')
+
+    def load_protocol(root: Path, path: Path) -&gt; tuple[dict[str, Any], str]:
+        document = _json(path)
+        base_path = (root / str(document.get("base_protocol", ""))).resolve()
+        if (
+            document.get("format") != base.FORMAT
+            or document.get("status") != LIFECYCLE_STATUS
+            or not base_path.is_file()
+            or sha256_file(base_path) != document.get("base_protocol_sha256")
+        ):
+            raise Phase3Error("Phase 7 direct-artifact base governance changed")
+        inherited = _json(base_path)
+        protocol = {
+            **inherited,
+            **document,
+            "bindings": {
+                **inherited.get("bindings", {}),
+                **document.get("bindings", {}),
+            },
+        }
+        protocol_sha = sha256_file(path)
+        direct_lifecycle = (
+            protocol.get("repair_scope")
+            == "DIRECT_HASH_BOUND_CORE_ARTIFACT_ACTIVATION_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_RSS_REPLICATION_RESULT_V1049.json"
+        )
+        streaming_host = (
+            protocol.get("repair_scope")
+            == "STREAMING_LAYERCAKE_PACKAGE_LOAD_AND_VERIFY_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_DIRECT_ARTIFACT_RESULT_V1056.json"
+            and protocol.get("layercake_commit")
+            == "8f49fe1a31938c2f9b59a576a494b99abdf538a7"
+        )
+        integrity_verify = (
+            protocol.get("repair_scope")
+            == "STREAMING_CRYPTOGRAPHIC_ACTIVE_VERIFY_WITHOUT_TENSOR_RELOAD"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_STREAMING_HOST_RESULT_V1060.json"
+            and protocol.get("layercake_commit")
+            == "662c5a9b7264a1a5478c9dfb656f35c450e2504f"
+        )
+        if (
+            int(protocol.get("seed", -1)) != base.SEED
+            or protocol.get("devices") != ["cpu", "cuda"]
+            or int(protocol.get("core_distinct_prompts", 0)) != 100
+            or int(protocol.get("core_repeated_observations", 0)) != 20
+            or int(protocol.get("domain_distinct_prompts", 0)) != 100
+            or int(protocol.get("domain_repeated_observations", 0)) != 20
+            or protocol.get("training_authorized") is not False
+            or protocol.get("teacher_query_authorized") is not False
+            or protocol.get("artifact_mutation_authorized") is not False
+            or protocol.get("repair_of")
+            != "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json"
+            or not (direct_lifecycle or streaming_host or integrity_verify)
+            or protocol.get("materialization_status")
+            != "PASS_PHASE7_PRODUCT_MATERIALIZATION"
+        ):
+            raise Phase3Error("Phase 7 direct-artifact lifecycle governance changed")
+        for relative, expected in protocol["bindings"].items():
+            target = (root / relative).resolve()
+            if not target.is_file() or sha256_file(target) != expected:
+&gt;               raise Phase3Error(
+                    f"Phase 7 direct-artifact binding changed: {relative}"
+                )
+E               abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py
+
+abi\capability_compiler_phase7_direct_artifact_runtime.py:86: Phase3Error</error></testcase><testcase classname="tests.test_capability_compiler_phase7_verify" name="test_adversarial_phase7_mutations_fail_closed[&lt;lambda&gt;-zero_repetition_collapse_recomputed]" time="0.000"><error message="failed on setup with &quot;abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py&quot;">@pytest.fixture(scope="module")
+    def exact_fixture():
+&gt;       protocol, protocol_sha = load_protocol(ROOT, PRODUCT_PROTOCOL)
+
+tests\test_capability_compiler_phase7_verify.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release')
+path = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json')
+
+    def load_protocol(root: Path, path: Path) -&gt; tuple[dict[str, Any], str]:
+        document = _json(path)
+        base_path = (root / str(document.get("base_protocol", ""))).resolve()
+        if (
+            document.get("format") != base.FORMAT
+            or document.get("status") != LIFECYCLE_STATUS
+            or not base_path.is_file()
+            or sha256_file(base_path) != document.get("base_protocol_sha256")
+        ):
+            raise Phase3Error("Phase 7 direct-artifact base governance changed")
+        inherited = _json(base_path)
+        protocol = {
+            **inherited,
+            **document,
+            "bindings": {
+                **inherited.get("bindings", {}),
+                **document.get("bindings", {}),
+            },
+        }
+        protocol_sha = sha256_file(path)
+        direct_lifecycle = (
+            protocol.get("repair_scope")
+            == "DIRECT_HASH_BOUND_CORE_ARTIFACT_ACTIVATION_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_RSS_REPLICATION_RESULT_V1049.json"
+        )
+        streaming_host = (
+            protocol.get("repair_scope")
+            == "STREAMING_LAYERCAKE_PACKAGE_LOAD_AND_VERIFY_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_DIRECT_ARTIFACT_RESULT_V1056.json"
+            and protocol.get("layercake_commit")
+            == "8f49fe1a31938c2f9b59a576a494b99abdf538a7"
+        )
+        integrity_verify = (
+            protocol.get("repair_scope")
+            == "STREAMING_CRYPTOGRAPHIC_ACTIVE_VERIFY_WITHOUT_TENSOR_RELOAD"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_STREAMING_HOST_RESULT_V1060.json"
+            and protocol.get("layercake_commit")
+            == "662c5a9b7264a1a5478c9dfb656f35c450e2504f"
+        )
+        if (
+            int(protocol.get("seed", -1)) != base.SEED
+            or protocol.get("devices") != ["cpu", "cuda"]
+            or int(protocol.get("core_distinct_prompts", 0)) != 100
+            or int(protocol.get("core_repeated_observations", 0)) != 20
+            or int(protocol.get("domain_distinct_prompts", 0)) != 100
+            or int(protocol.get("domain_repeated_observations", 0)) != 20
+            or protocol.get("training_authorized") is not False
+            or protocol.get("teacher_query_authorized") is not False
+            or protocol.get("artifact_mutation_authorized") is not False
+            or protocol.get("repair_of")
+            != "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json"
+            or not (direct_lifecycle or streaming_host or integrity_verify)
+            or protocol.get("materialization_status")
+            != "PASS_PHASE7_PRODUCT_MATERIALIZATION"
+        ):
+            raise Phase3Error("Phase 7 direct-artifact lifecycle governance changed")
+        for relative, expected in protocol["bindings"].items():
+            target = (root / relative).resolve()
+            if not target.is_file() or sha256_file(target) != expected:
+&gt;               raise Phase3Error(
+                    f"Phase 7 direct-artifact binding changed: {relative}"
+                )
+E               abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py
+
+abi\capability_compiler_phase7_direct_artifact_runtime.py:86: Phase3Error</error></testcase><testcase classname="tests.test_capability_compiler_phase7_verify" name="test_adversarial_phase7_mutations_fail_closed[&lt;lambda&gt;-domain_selected_only_recomputed]" time="0.000"><error message="failed on setup with &quot;abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py&quot;">@pytest.fixture(scope="module")
+    def exact_fixture():
+&gt;       protocol, protocol_sha = load_protocol(ROOT, PRODUCT_PROTOCOL)
+
+tests\test_capability_compiler_phase7_verify.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release')
+path = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json')
+
+    def load_protocol(root: Path, path: Path) -&gt; tuple[dict[str, Any], str]:
+        document = _json(path)
+        base_path = (root / str(document.get("base_protocol", ""))).resolve()
+        if (
+            document.get("format") != base.FORMAT
+            or document.get("status") != LIFECYCLE_STATUS
+            or not base_path.is_file()
+            or sha256_file(base_path) != document.get("base_protocol_sha256")
+        ):
+            raise Phase3Error("Phase 7 direct-artifact base governance changed")
+        inherited = _json(base_path)
+        protocol = {
+            **inherited,
+            **document,
+            "bindings": {
+                **inherited.get("bindings", {}),
+                **document.get("bindings", {}),
+            },
+        }
+        protocol_sha = sha256_file(path)
+        direct_lifecycle = (
+            protocol.get("repair_scope")
+            == "DIRECT_HASH_BOUND_CORE_ARTIFACT_ACTIVATION_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_RSS_REPLICATION_RESULT_V1049.json"
+        )
+        streaming_host = (
+            protocol.get("repair_scope")
+            == "STREAMING_LAYERCAKE_PACKAGE_LOAD_AND_VERIFY_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_DIRECT_ARTIFACT_RESULT_V1056.json"
+            and protocol.get("layercake_commit")
+            == "8f49fe1a31938c2f9b59a576a494b99abdf538a7"
+        )
+        integrity_verify = (
+            protocol.get("repair_scope")
+            == "STREAMING_CRYPTOGRAPHIC_ACTIVE_VERIFY_WITHOUT_TENSOR_RELOAD"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_STREAMING_HOST_RESULT_V1060.json"
+            and protocol.get("layercake_commit")
+            == "662c5a9b7264a1a5478c9dfb656f35c450e2504f"
+        )
+        if (
+            int(protocol.get("seed", -1)) != base.SEED
+            or protocol.get("devices") != ["cpu", "cuda"]
+            or int(protocol.get("core_distinct_prompts", 0)) != 100
+            or int(protocol.get("core_repeated_observations", 0)) != 20
+            or int(protocol.get("domain_distinct_prompts", 0)) != 100
+            or int(protocol.get("domain_repeated_observations", 0)) != 20
+            or protocol.get("training_authorized") is not False
+            or protocol.get("teacher_query_authorized") is not False
+            or protocol.get("artifact_mutation_authorized") is not False
+            or protocol.get("repair_of")
+            != "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json"
+            or not (direct_lifecycle or streaming_host or integrity_verify)
+            or protocol.get("materialization_status")
+            != "PASS_PHASE7_PRODUCT_MATERIALIZATION"
+        ):
+            raise Phase3Error("Phase 7 direct-artifact lifecycle governance changed")
+        for relative, expected in protocol["bindings"].items():
+            target = (root / relative).resolve()
+            if not target.is_file() or sha256_file(target) != expected:
+&gt;               raise Phase3Error(
+                    f"Phase 7 direct-artifact binding changed: {relative}"
+                )
+E               abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py
+
+abi\capability_compiler_phase7_direct_artifact_runtime.py:86: Phase3Error</error></testcase><testcase classname="tests.test_capability_compiler_phase7_verify" name="test_adversarial_phase7_mutations_fail_closed[&lt;lambda&gt;-core_metrics_recomputed_exact]" time="0.000"><error message="failed on setup with &quot;abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py&quot;">@pytest.fixture(scope="module")
+    def exact_fixture():
+&gt;       protocol, protocol_sha = load_protocol(ROOT, PRODUCT_PROTOCOL)
+
+tests\test_capability_compiler_phase7_verify.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release')
+path = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json')
+
+    def load_protocol(root: Path, path: Path) -&gt; tuple[dict[str, Any], str]:
+        document = _json(path)
+        base_path = (root / str(document.get("base_protocol", ""))).resolve()
+        if (
+            document.get("format") != base.FORMAT
+            or document.get("status") != LIFECYCLE_STATUS
+            or not base_path.is_file()
+            or sha256_file(base_path) != document.get("base_protocol_sha256")
+        ):
+            raise Phase3Error("Phase 7 direct-artifact base governance changed")
+        inherited = _json(base_path)
+        protocol = {
+            **inherited,
+            **document,
+            "bindings": {
+                **inherited.get("bindings", {}),
+                **document.get("bindings", {}),
+            },
+        }
+        protocol_sha = sha256_file(path)
+        direct_lifecycle = (
+            protocol.get("repair_scope")
+            == "DIRECT_HASH_BOUND_CORE_ARTIFACT_ACTIVATION_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_RSS_REPLICATION_RESULT_V1049.json"
+        )
+        streaming_host = (
+            protocol.get("repair_scope")
+            == "STREAMING_LAYERCAKE_PACKAGE_LOAD_AND_VERIFY_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_DIRECT_ARTIFACT_RESULT_V1056.json"
+            and protocol.get("layercake_commit")
+            == "8f49fe1a31938c2f9b59a576a494b99abdf538a7"
+        )
+        integrity_verify = (
+            protocol.get("repair_scope")
+            == "STREAMING_CRYPTOGRAPHIC_ACTIVE_VERIFY_WITHOUT_TENSOR_RELOAD"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_STREAMING_HOST_RESULT_V1060.json"
+            and protocol.get("layercake_commit")
+            == "662c5a9b7264a1a5478c9dfb656f35c450e2504f"
+        )
+        if (
+            int(protocol.get("seed", -1)) != base.SEED
+            or protocol.get("devices") != ["cpu", "cuda"]
+            or int(protocol.get("core_distinct_prompts", 0)) != 100
+            or int(protocol.get("core_repeated_observations", 0)) != 20
+            or int(protocol.get("domain_distinct_prompts", 0)) != 100
+            or int(protocol.get("domain_repeated_observations", 0)) != 20
+            or protocol.get("training_authorized") is not False
+            or protocol.get("teacher_query_authorized") is not False
+            or protocol.get("artifact_mutation_authorized") is not False
+            or protocol.get("repair_of")
+            != "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json"
+            or not (direct_lifecycle or streaming_host or integrity_verify)
+            or protocol.get("materialization_status")
+            != "PASS_PHASE7_PRODUCT_MATERIALIZATION"
+        ):
+            raise Phase3Error("Phase 7 direct-artifact lifecycle governance changed")
+        for relative, expected in protocol["bindings"].items():
+            target = (root / relative).resolve()
+            if not target.is_file() or sha256_file(target) != expected:
+&gt;               raise Phase3Error(
+                    f"Phase 7 direct-artifact binding changed: {relative}"
+                )
+E               abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py
+
+abi\capability_compiler_phase7_direct_artifact_runtime.py:86: Phase3Error</error></testcase><testcase classname="tests.test_capability_compiler_phase7_verify" name="test_adversarial_phase7_mutations_fail_closed[&lt;lambda&gt;-throughput_ratios_recomputed_exact]" time="0.000"><error message="failed on setup with &quot;abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py&quot;">@pytest.fixture(scope="module")
+    def exact_fixture():
+&gt;       protocol, protocol_sha = load_protocol(ROOT, PRODUCT_PROTOCOL)
+
+tests\test_capability_compiler_phase7_verify.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release')
+path = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json')
+
+    def load_protocol(root: Path, path: Path) -&gt; tuple[dict[str, Any], str]:
+        document = _json(path)
+        base_path = (root / str(document.get("base_protocol", ""))).resolve()
+        if (
+            document.get("format") != base.FORMAT
+            or document.get("status") != LIFECYCLE_STATUS
+            or not base_path.is_file()
+            or sha256_file(base_path) != document.get("base_protocol_sha256")
+        ):
+            raise Phase3Error("Phase 7 direct-artifact base governance changed")
+        inherited = _json(base_path)
+        protocol = {
+            **inherited,
+            **document,
+            "bindings": {
+                **inherited.get("bindings", {}),
+                **document.get("bindings", {}),
+            },
+        }
+        protocol_sha = sha256_file(path)
+        direct_lifecycle = (
+            protocol.get("repair_scope")
+            == "DIRECT_HASH_BOUND_CORE_ARTIFACT_ACTIVATION_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_RSS_REPLICATION_RESULT_V1049.json"
+        )
+        streaming_host = (
+            protocol.get("repair_scope")
+            == "STREAMING_LAYERCAKE_PACKAGE_LOAD_AND_VERIFY_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_DIRECT_ARTIFACT_RESULT_V1056.json"
+            and protocol.get("layercake_commit")
+            == "8f49fe1a31938c2f9b59a576a494b99abdf538a7"
+        )
+        integrity_verify = (
+            protocol.get("repair_scope")
+            == "STREAMING_CRYPTOGRAPHIC_ACTIVE_VERIFY_WITHOUT_TENSOR_RELOAD"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_STREAMING_HOST_RESULT_V1060.json"
+            and protocol.get("layercake_commit")
+            == "662c5a9b7264a1a5478c9dfb656f35c450e2504f"
+        )
+        if (
+            int(protocol.get("seed", -1)) != base.SEED
+            or protocol.get("devices") != ["cpu", "cuda"]
+            or int(protocol.get("core_distinct_prompts", 0)) != 100
+            or int(protocol.get("core_repeated_observations", 0)) != 20
+            or int(protocol.get("domain_distinct_prompts", 0)) != 100
+            or int(protocol.get("domain_repeated_observations", 0)) != 20
+            or protocol.get("training_authorized") is not False
+            or protocol.get("teacher_query_authorized") is not False
+            or protocol.get("artifact_mutation_authorized") is not False
+            or protocol.get("repair_of")
+            != "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json"
+            or not (direct_lifecycle or streaming_host or integrity_verify)
+            or protocol.get("materialization_status")
+            != "PASS_PHASE7_PRODUCT_MATERIALIZATION"
+        ):
+            raise Phase3Error("Phase 7 direct-artifact lifecycle governance changed")
+        for relative, expected in protocol["bindings"].items():
+            target = (root / relative).resolve()
+            if not target.is_file() or sha256_file(target) != expected:
+&gt;               raise Phase3Error(
+                    f"Phase 7 direct-artifact binding changed: {relative}"
+                )
+E               abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py
+
+abi\capability_compiler_phase7_direct_artifact_runtime.py:86: Phase3Error</error></testcase><testcase classname="tests.test_capability_compiler_phase7_verify" name="test_adversarial_phase7_mutations_fail_closed[&lt;lambda&gt;-memory_gates_recomputed]" time="0.000"><error message="failed on setup with &quot;abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py&quot;">@pytest.fixture(scope="module")
+    def exact_fixture():
+&gt;       protocol, protocol_sha = load_protocol(ROOT, PRODUCT_PROTOCOL)
+
+tests\test_capability_compiler_phase7_verify.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release')
+path = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json')
+
+    def load_protocol(root: Path, path: Path) -&gt; tuple[dict[str, Any], str]:
+        document = _json(path)
+        base_path = (root / str(document.get("base_protocol", ""))).resolve()
+        if (
+            document.get("format") != base.FORMAT
+            or document.get("status") != LIFECYCLE_STATUS
+            or not base_path.is_file()
+            or sha256_file(base_path) != document.get("base_protocol_sha256")
+        ):
+            raise Phase3Error("Phase 7 direct-artifact base governance changed")
+        inherited = _json(base_path)
+        protocol = {
+            **inherited,
+            **document,
+            "bindings": {
+                **inherited.get("bindings", {}),
+                **document.get("bindings", {}),
+            },
+        }
+        protocol_sha = sha256_file(path)
+        direct_lifecycle = (
+            protocol.get("repair_scope")
+            == "DIRECT_HASH_BOUND_CORE_ARTIFACT_ACTIVATION_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_RSS_REPLICATION_RESULT_V1049.json"
+        )
+        streaming_host = (
+            protocol.get("repair_scope")
+            == "STREAMING_LAYERCAKE_PACKAGE_LOAD_AND_VERIFY_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_DIRECT_ARTIFACT_RESULT_V1056.json"
+            and protocol.get("layercake_commit")
+            == "8f49fe1a31938c2f9b59a576a494b99abdf538a7"
+        )
+        integrity_verify = (
+            protocol.get("repair_scope")
+            == "STREAMING_CRYPTOGRAPHIC_ACTIVE_VERIFY_WITHOUT_TENSOR_RELOAD"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_STREAMING_HOST_RESULT_V1060.json"
+            and protocol.get("layercake_commit")
+            == "662c5a9b7264a1a5478c9dfb656f35c450e2504f"
+        )
+        if (
+            int(protocol.get("seed", -1)) != base.SEED
+            or protocol.get("devices") != ["cpu", "cuda"]
+            or int(protocol.get("core_distinct_prompts", 0)) != 100
+            or int(protocol.get("core_repeated_observations", 0)) != 20
+            or int(protocol.get("domain_distinct_prompts", 0)) != 100
+            or int(protocol.get("domain_repeated_observations", 0)) != 20
+            or protocol.get("training_authorized") is not False
+            or protocol.get("teacher_query_authorized") is not False
+            or protocol.get("artifact_mutation_authorized") is not False
+            or protocol.get("repair_of")
+            != "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json"
+            or not (direct_lifecycle or streaming_host or integrity_verify)
+            or protocol.get("materialization_status")
+            != "PASS_PHASE7_PRODUCT_MATERIALIZATION"
+        ):
+            raise Phase3Error("Phase 7 direct-artifact lifecycle governance changed")
+        for relative, expected in protocol["bindings"].items():
+            target = (root / relative).resolve()
+            if not target.is_file() or sha256_file(target) != expected:
+&gt;               raise Phase3Error(
+                    f"Phase 7 direct-artifact binding changed: {relative}"
+                )
+E               abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py
+
+abi\capability_compiler_phase7_direct_artifact_runtime.py:86: Phase3Error</error></testcase><testcase classname="tests.test_capability_compiler_phase7_verify" name="test_adversarial_phase7_mutations_fail_closed[&lt;lambda&gt;-core_identity_exact_and_unchanged]" time="0.000"><error message="failed on setup with &quot;abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py&quot;">@pytest.fixture(scope="module")
+    def exact_fixture():
+&gt;       protocol, protocol_sha = load_protocol(ROOT, PRODUCT_PROTOCOL)
+
+tests\test_capability_compiler_phase7_verify.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release')
+path = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json')
+
+    def load_protocol(root: Path, path: Path) -&gt; tuple[dict[str, Any], str]:
+        document = _json(path)
+        base_path = (root / str(document.get("base_protocol", ""))).resolve()
+        if (
+            document.get("format") != base.FORMAT
+            or document.get("status") != LIFECYCLE_STATUS
+            or not base_path.is_file()
+            or sha256_file(base_path) != document.get("base_protocol_sha256")
+        ):
+            raise Phase3Error("Phase 7 direct-artifact base governance changed")
+        inherited = _json(base_path)
+        protocol = {
+            **inherited,
+            **document,
+            "bindings": {
+                **inherited.get("bindings", {}),
+                **document.get("bindings", {}),
+            },
+        }
+        protocol_sha = sha256_file(path)
+        direct_lifecycle = (
+            protocol.get("repair_scope")
+            == "DIRECT_HASH_BOUND_CORE_ARTIFACT_ACTIVATION_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_RSS_REPLICATION_RESULT_V1049.json"
+        )
+        streaming_host = (
+            protocol.get("repair_scope")
+            == "STREAMING_LAYERCAKE_PACKAGE_LOAD_AND_VERIFY_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_DIRECT_ARTIFACT_RESULT_V1056.json"
+            and protocol.get("layercake_commit")
+            == "8f49fe1a31938c2f9b59a576a494b99abdf538a7"
+        )
+        integrity_verify = (
+            protocol.get("repair_scope")
+            == "STREAMING_CRYPTOGRAPHIC_ACTIVE_VERIFY_WITHOUT_TENSOR_RELOAD"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_STREAMING_HOST_RESULT_V1060.json"
+            and protocol.get("layercake_commit")
+            == "662c5a9b7264a1a5478c9dfb656f35c450e2504f"
+        )
+        if (
+            int(protocol.get("seed", -1)) != base.SEED
+            or protocol.get("devices") != ["cpu", "cuda"]
+            or int(protocol.get("core_distinct_prompts", 0)) != 100
+            or int(protocol.get("core_repeated_observations", 0)) != 20
+            or int(protocol.get("domain_distinct_prompts", 0)) != 100
+            or int(protocol.get("domain_repeated_observations", 0)) != 20
+            or protocol.get("training_authorized") is not False
+            or protocol.get("teacher_query_authorized") is not False
+            or protocol.get("artifact_mutation_authorized") is not False
+            or protocol.get("repair_of")
+            != "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json"
+            or not (direct_lifecycle or streaming_host or integrity_verify)
+            or protocol.get("materialization_status")
+            != "PASS_PHASE7_PRODUCT_MATERIALIZATION"
+        ):
+            raise Phase3Error("Phase 7 direct-artifact lifecycle governance changed")
+        for relative, expected in protocol["bindings"].items():
+            target = (root / relative).resolve()
+            if not target.is_file() or sha256_file(target) != expected:
+&gt;               raise Phase3Error(
+                    f"Phase 7 direct-artifact binding changed: {relative}"
+                )
+E               abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py
+
+abi\capability_compiler_phase7_direct_artifact_runtime.py:86: Phase3Error</error></testcase><testcase classname="tests.test_capability_compiler_phase7_verify" name="test_adversarial_phase7_mutations_fail_closed[&lt;lambda&gt;-package_identity_exact]" time="0.000"><error message="failed on setup with &quot;abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py&quot;">@pytest.fixture(scope="module")
+    def exact_fixture():
+&gt;       protocol, protocol_sha = load_protocol(ROOT, PRODUCT_PROTOCOL)
+
+tests\test_capability_compiler_phase7_verify.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release')
+path = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json')
+
+    def load_protocol(root: Path, path: Path) -&gt; tuple[dict[str, Any], str]:
+        document = _json(path)
+        base_path = (root / str(document.get("base_protocol", ""))).resolve()
+        if (
+            document.get("format") != base.FORMAT
+            or document.get("status") != LIFECYCLE_STATUS
+            or not base_path.is_file()
+            or sha256_file(base_path) != document.get("base_protocol_sha256")
+        ):
+            raise Phase3Error("Phase 7 direct-artifact base governance changed")
+        inherited = _json(base_path)
+        protocol = {
+            **inherited,
+            **document,
+            "bindings": {
+                **inherited.get("bindings", {}),
+                **document.get("bindings", {}),
+            },
+        }
+        protocol_sha = sha256_file(path)
+        direct_lifecycle = (
+            protocol.get("repair_scope")
+            == "DIRECT_HASH_BOUND_CORE_ARTIFACT_ACTIVATION_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_RSS_REPLICATION_RESULT_V1049.json"
+        )
+        streaming_host = (
+            protocol.get("repair_scope")
+            == "STREAMING_LAYERCAKE_PACKAGE_LOAD_AND_VERIFY_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_DIRECT_ARTIFACT_RESULT_V1056.json"
+            and protocol.get("layercake_commit")
+            == "8f49fe1a31938c2f9b59a576a494b99abdf538a7"
+        )
+        integrity_verify = (
+            protocol.get("repair_scope")
+            == "STREAMING_CRYPTOGRAPHIC_ACTIVE_VERIFY_WITHOUT_TENSOR_RELOAD"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_STREAMING_HOST_RESULT_V1060.json"
+            and protocol.get("layercake_commit")
+            == "662c5a9b7264a1a5478c9dfb656f35c450e2504f"
+        )
+        if (
+            int(protocol.get("seed", -1)) != base.SEED
+            or protocol.get("devices") != ["cpu", "cuda"]
+            or int(protocol.get("core_distinct_prompts", 0)) != 100
+            or int(protocol.get("core_repeated_observations", 0)) != 20
+            or int(protocol.get("domain_distinct_prompts", 0)) != 100
+            or int(protocol.get("domain_repeated_observations", 0)) != 20
+            or protocol.get("training_authorized") is not False
+            or protocol.get("teacher_query_authorized") is not False
+            or protocol.get("artifact_mutation_authorized") is not False
+            or protocol.get("repair_of")
+            != "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json"
+            or not (direct_lifecycle or streaming_host or integrity_verify)
+            or protocol.get("materialization_status")
+            != "PASS_PHASE7_PRODUCT_MATERIALIZATION"
+        ):
+            raise Phase3Error("Phase 7 direct-artifact lifecycle governance changed")
+        for relative, expected in protocol["bindings"].items():
+            target = (root / relative).resolve()
+            if not target.is_file() or sha256_file(target) != expected:
+&gt;               raise Phase3Error(
+                    f"Phase 7 direct-artifact binding changed: {relative}"
+                )
+E               abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py
+
+abi\capability_compiler_phase7_direct_artifact_runtime.py:86: Phase3Error</error></testcase><testcase classname="tests.test_capability_compiler_phase7_verify" name="test_adversarial_phase7_mutations_fail_closed[&lt;lambda&gt;-lifecycle_repair_exact]" time="0.000"><error message="failed on setup with &quot;abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py&quot;">@pytest.fixture(scope="module")
+    def exact_fixture():
+&gt;       protocol, protocol_sha = load_protocol(ROOT, PRODUCT_PROTOCOL)
+
+tests\test_capability_compiler_phase7_verify.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release')
+path = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json')
+
+    def load_protocol(root: Path, path: Path) -&gt; tuple[dict[str, Any], str]:
+        document = _json(path)
+        base_path = (root / str(document.get("base_protocol", ""))).resolve()
+        if (
+            document.get("format") != base.FORMAT
+            or document.get("status") != LIFECYCLE_STATUS
+            or not base_path.is_file()
+            or sha256_file(base_path) != document.get("base_protocol_sha256")
+        ):
+            raise Phase3Error("Phase 7 direct-artifact base governance changed")
+        inherited = _json(base_path)
+        protocol = {
+            **inherited,
+            **document,
+            "bindings": {
+                **inherited.get("bindings", {}),
+                **document.get("bindings", {}),
+            },
+        }
+        protocol_sha = sha256_file(path)
+        direct_lifecycle = (
+            protocol.get("repair_scope")
+            == "DIRECT_HASH_BOUND_CORE_ARTIFACT_ACTIVATION_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_RSS_REPLICATION_RESULT_V1049.json"
+        )
+        streaming_host = (
+            protocol.get("repair_scope")
+            == "STREAMING_LAYERCAKE_PACKAGE_LOAD_AND_VERIFY_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_DIRECT_ARTIFACT_RESULT_V1056.json"
+            and protocol.get("layercake_commit")
+            == "8f49fe1a31938c2f9b59a576a494b99abdf538a7"
+        )
+        integrity_verify = (
+            protocol.get("repair_scope")
+            == "STREAMING_CRYPTOGRAPHIC_ACTIVE_VERIFY_WITHOUT_TENSOR_RELOAD"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_STREAMING_HOST_RESULT_V1060.json"
+            and protocol.get("layercake_commit")
+            == "662c5a9b7264a1a5478c9dfb656f35c450e2504f"
+        )
+        if (
+            int(protocol.get("seed", -1)) != base.SEED
+            or protocol.get("devices") != ["cpu", "cuda"]
+            or int(protocol.get("core_distinct_prompts", 0)) != 100
+            or int(protocol.get("core_repeated_observations", 0)) != 20
+            or int(protocol.get("domain_distinct_prompts", 0)) != 100
+            or int(protocol.get("domain_repeated_observations", 0)) != 20
+            or protocol.get("training_authorized") is not False
+            or protocol.get("teacher_query_authorized") is not False
+            or protocol.get("artifact_mutation_authorized") is not False
+            or protocol.get("repair_of")
+            != "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json"
+            or not (direct_lifecycle or streaming_host or integrity_verify)
+            or protocol.get("materialization_status")
+            != "PASS_PHASE7_PRODUCT_MATERIALIZATION"
+        ):
+            raise Phase3Error("Phase 7 direct-artifact lifecycle governance changed")
+        for relative, expected in protocol["bindings"].items():
+            target = (root / relative).resolve()
+            if not target.is_file() or sha256_file(target) != expected:
+&gt;               raise Phase3Error(
+                    f"Phase 7 direct-artifact binding changed: {relative}"
+                )
+E               abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py
+
+abi\capability_compiler_phase7_direct_artifact_runtime.py:86: Phase3Error</error></testcase><testcase classname="tests.test_capability_compiler_phase7_verify" name="test_adversarial_phase7_mutations_fail_closed[&lt;lambda&gt;-teacher_training_receiver_learning_absent]" time="0.000"><error message="failed on setup with &quot;abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py&quot;">@pytest.fixture(scope="module")
+    def exact_fixture():
+&gt;       protocol, protocol_sha = load_protocol(ROOT, PRODUCT_PROTOCOL)
+
+tests\test_capability_compiler_phase7_verify.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release')
+path = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json')
+
+    def load_protocol(root: Path, path: Path) -&gt; tuple[dict[str, Any], str]:
+        document = _json(path)
+        base_path = (root / str(document.get("base_protocol", ""))).resolve()
+        if (
+            document.get("format") != base.FORMAT
+            or document.get("status") != LIFECYCLE_STATUS
+            or not base_path.is_file()
+            or sha256_file(base_path) != document.get("base_protocol_sha256")
+        ):
+            raise Phase3Error("Phase 7 direct-artifact base governance changed")
+        inherited = _json(base_path)
+        protocol = {
+            **inherited,
+            **document,
+            "bindings": {
+                **inherited.get("bindings", {}),
+                **document.get("bindings", {}),
+            },
+        }
+        protocol_sha = sha256_file(path)
+        direct_lifecycle = (
+            protocol.get("repair_scope")
+            == "DIRECT_HASH_BOUND_CORE_ARTIFACT_ACTIVATION_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_RSS_REPLICATION_RESULT_V1049.json"
+        )
+        streaming_host = (
+            protocol.get("repair_scope")
+            == "STREAMING_LAYERCAKE_PACKAGE_LOAD_AND_VERIFY_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_DIRECT_ARTIFACT_RESULT_V1056.json"
+            and protocol.get("layercake_commit")
+            == "8f49fe1a31938c2f9b59a576a494b99abdf538a7"
+        )
+        integrity_verify = (
+            protocol.get("repair_scope")
+            == "STREAMING_CRYPTOGRAPHIC_ACTIVE_VERIFY_WITHOUT_TENSOR_RELOAD"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_STREAMING_HOST_RESULT_V1060.json"
+            and protocol.get("layercake_commit")
+            == "662c5a9b7264a1a5478c9dfb656f35c450e2504f"
+        )
+        if (
+            int(protocol.get("seed", -1)) != base.SEED
+            or protocol.get("devices") != ["cpu", "cuda"]
+            or int(protocol.get("core_distinct_prompts", 0)) != 100
+            or int(protocol.get("core_repeated_observations", 0)) != 20
+            or int(protocol.get("domain_distinct_prompts", 0)) != 100
+            or int(protocol.get("domain_repeated_observations", 0)) != 20
+            or protocol.get("training_authorized") is not False
+            or protocol.get("teacher_query_authorized") is not False
+            or protocol.get("artifact_mutation_authorized") is not False
+            or protocol.get("repair_of")
+            != "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json"
+            or not (direct_lifecycle or streaming_host or integrity_verify)
+            or protocol.get("materialization_status")
+            != "PASS_PHASE7_PRODUCT_MATERIALIZATION"
+        ):
+            raise Phase3Error("Phase 7 direct-artifact lifecycle governance changed")
+        for relative, expected in protocol["bindings"].items():
+            target = (root / relative).resolve()
+            if not target.is_file() or sha256_file(target) != expected:
+&gt;               raise Phase3Error(
+                    f"Phase 7 direct-artifact binding changed: {relative}"
+                )
+E               abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py
+
+abi\capability_compiler_phase7_direct_artifact_runtime.py:86: Phase3Error</error></testcase><testcase classname="tests.test_capability_compiler_phase7_verify" name="test_adversarial_phase7_mutations_fail_closed[&lt;lambda&gt;-declared_gates_all_pass]" time="0.000"><error message="failed on setup with &quot;abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py&quot;">@pytest.fixture(scope="module")
+    def exact_fixture():
+&gt;       protocol, protocol_sha = load_protocol(ROOT, PRODUCT_PROTOCOL)
+
+tests\test_capability_compiler_phase7_verify.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release')
+path = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json')
+
+    def load_protocol(root: Path, path: Path) -&gt; tuple[dict[str, Any], str]:
+        document = _json(path)
+        base_path = (root / str(document.get("base_protocol", ""))).resolve()
+        if (
+            document.get("format") != base.FORMAT
+            or document.get("status") != LIFECYCLE_STATUS
+            or not base_path.is_file()
+            or sha256_file(base_path) != document.get("base_protocol_sha256")
+        ):
+            raise Phase3Error("Phase 7 direct-artifact base governance changed")
+        inherited = _json(base_path)
+        protocol = {
+            **inherited,
+            **document,
+            "bindings": {
+                **inherited.get("bindings", {}),
+                **document.get("bindings", {}),
+            },
+        }
+        protocol_sha = sha256_file(path)
+        direct_lifecycle = (
+            protocol.get("repair_scope")
+            == "DIRECT_HASH_BOUND_CORE_ARTIFACT_ACTIVATION_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_RSS_REPLICATION_RESULT_V1049.json"
+        )
+        streaming_host = (
+            protocol.get("repair_scope")
+            == "STREAMING_LAYERCAKE_PACKAGE_LOAD_AND_VERIFY_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_DIRECT_ARTIFACT_RESULT_V1056.json"
+            and protocol.get("layercake_commit")
+            == "8f49fe1a31938c2f9b59a576a494b99abdf538a7"
+        )
+        integrity_verify = (
+            protocol.get("repair_scope")
+            == "STREAMING_CRYPTOGRAPHIC_ACTIVE_VERIFY_WITHOUT_TENSOR_RELOAD"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_STREAMING_HOST_RESULT_V1060.json"
+            and protocol.get("layercake_commit")
+            == "662c5a9b7264a1a5478c9dfb656f35c450e2504f"
+        )
+        if (
+            int(protocol.get("seed", -1)) != base.SEED
+            or protocol.get("devices") != ["cpu", "cuda"]
+            or int(protocol.get("core_distinct_prompts", 0)) != 100
+            or int(protocol.get("core_repeated_observations", 0)) != 20
+            or int(protocol.get("domain_distinct_prompts", 0)) != 100
+            or int(protocol.get("domain_repeated_observations", 0)) != 20
+            or protocol.get("training_authorized") is not False
+            or protocol.get("teacher_query_authorized") is not False
+            or protocol.get("artifact_mutation_authorized") is not False
+            or protocol.get("repair_of")
+            != "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json"
+            or not (direct_lifecycle or streaming_host or integrity_verify)
+            or protocol.get("materialization_status")
+            != "PASS_PHASE7_PRODUCT_MATERIALIZATION"
+        ):
+            raise Phase3Error("Phase 7 direct-artifact lifecycle governance changed")
+        for relative, expected in protocol["bindings"].items():
+            target = (root / relative).resolve()
+            if not target.is_file() or sha256_file(target) != expected:
+&gt;               raise Phase3Error(
+                    f"Phase 7 direct-artifact binding changed: {relative}"
+                )
+E               abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py
+
+abi\capability_compiler_phase7_direct_artifact_runtime.py:86: Phase3Error</error></testcase><testcase classname="tests.test_capability_compiler_phase7_verify" name="test_adversarial_phase7_mutations_fail_closed[&lt;lambda&gt;-cold_single_request_and_ttft_recomputed]" time="0.000"><error message="failed on setup with &quot;abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py&quot;">@pytest.fixture(scope="module")
+    def exact_fixture():
+&gt;       protocol, protocol_sha = load_protocol(ROOT, PRODUCT_PROTOCOL)
+
+tests\test_capability_compiler_phase7_verify.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release')
+path = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json')
+
+    def load_protocol(root: Path, path: Path) -&gt; tuple[dict[str, Any], str]:
+        document = _json(path)
+        base_path = (root / str(document.get("base_protocol", ""))).resolve()
+        if (
+            document.get("format") != base.FORMAT
+            or document.get("status") != LIFECYCLE_STATUS
+            or not base_path.is_file()
+            or sha256_file(base_path) != document.get("base_protocol_sha256")
+        ):
+            raise Phase3Error("Phase 7 direct-artifact base governance changed")
+        inherited = _json(base_path)
+        protocol = {
+            **inherited,
+            **document,
+            "bindings": {
+                **inherited.get("bindings", {}),
+                **document.get("bindings", {}),
+            },
+        }
+        protocol_sha = sha256_file(path)
+        direct_lifecycle = (
+            protocol.get("repair_scope")
+            == "DIRECT_HASH_BOUND_CORE_ARTIFACT_ACTIVATION_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_RSS_REPLICATION_RESULT_V1049.json"
+        )
+        streaming_host = (
+            protocol.get("repair_scope")
+            == "STREAMING_LAYERCAKE_PACKAGE_LOAD_AND_VERIFY_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_DIRECT_ARTIFACT_RESULT_V1056.json"
+            and protocol.get("layercake_commit")
+            == "8f49fe1a31938c2f9b59a576a494b99abdf538a7"
+        )
+        integrity_verify = (
+            protocol.get("repair_scope")
+            == "STREAMING_CRYPTOGRAPHIC_ACTIVE_VERIFY_WITHOUT_TENSOR_RELOAD"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_STREAMING_HOST_RESULT_V1060.json"
+            and protocol.get("layercake_commit")
+            == "662c5a9b7264a1a5478c9dfb656f35c450e2504f"
+        )
+        if (
+            int(protocol.get("seed", -1)) != base.SEED
+            or protocol.get("devices") != ["cpu", "cuda"]
+            or int(protocol.get("core_distinct_prompts", 0)) != 100
+            or int(protocol.get("core_repeated_observations", 0)) != 20
+            or int(protocol.get("domain_distinct_prompts", 0)) != 100
+            or int(protocol.get("domain_repeated_observations", 0)) != 20
+            or protocol.get("training_authorized") is not False
+            or protocol.get("teacher_query_authorized") is not False
+            or protocol.get("artifact_mutation_authorized") is not False
+            or protocol.get("repair_of")
+            != "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json"
+            or not (direct_lifecycle or streaming_host or integrity_verify)
+            or protocol.get("materialization_status")
+            != "PASS_PHASE7_PRODUCT_MATERIALIZATION"
+        ):
+            raise Phase3Error("Phase 7 direct-artifact lifecycle governance changed")
+        for relative, expected in protocol["bindings"].items():
+            target = (root / relative).resolve()
+            if not target.is_file() or sha256_file(target) != expected:
+&gt;               raise Phase3Error(
+                    f"Phase 7 direct-artifact binding changed: {relative}"
+                )
+E               abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py
+
+abi\capability_compiler_phase7_direct_artifact_runtime.py:86: Phase3Error</error></testcase><testcase classname="tests.test_capability_compiler_phase7_verify" name="test_adversarial_phase7_mutations_fail_closed[&lt;lambda&gt;-persistent_incremental_state_recomputed]" time="0.000"><error message="failed on setup with &quot;abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py&quot;">@pytest.fixture(scope="module")
+    def exact_fixture():
+&gt;       protocol, protocol_sha = load_protocol(ROOT, PRODUCT_PROTOCOL)
+
+tests\test_capability_compiler_phase7_verify.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release')
+path = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json')
+
+    def load_protocol(root: Path, path: Path) -&gt; tuple[dict[str, Any], str]:
+        document = _json(path)
+        base_path = (root / str(document.get("base_protocol", ""))).resolve()
+        if (
+            document.get("format") != base.FORMAT
+            or document.get("status") != LIFECYCLE_STATUS
+            or not base_path.is_file()
+            or sha256_file(base_path) != document.get("base_protocol_sha256")
+        ):
+            raise Phase3Error("Phase 7 direct-artifact base governance changed")
+        inherited = _json(base_path)
+        protocol = {
+            **inherited,
+            **document,
+            "bindings": {
+                **inherited.get("bindings", {}),
+                **document.get("bindings", {}),
+            },
+        }
+        protocol_sha = sha256_file(path)
+        direct_lifecycle = (
+            protocol.get("repair_scope")
+            == "DIRECT_HASH_BOUND_CORE_ARTIFACT_ACTIVATION_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_RSS_REPLICATION_RESULT_V1049.json"
+        )
+        streaming_host = (
+            protocol.get("repair_scope")
+            == "STREAMING_LAYERCAKE_PACKAGE_LOAD_AND_VERIFY_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_DIRECT_ARTIFACT_RESULT_V1056.json"
+            and protocol.get("layercake_commit")
+            == "8f49fe1a31938c2f9b59a576a494b99abdf538a7"
+        )
+        integrity_verify = (
+            protocol.get("repair_scope")
+            == "STREAMING_CRYPTOGRAPHIC_ACTIVE_VERIFY_WITHOUT_TENSOR_RELOAD"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_STREAMING_HOST_RESULT_V1060.json"
+            and protocol.get("layercake_commit")
+            == "662c5a9b7264a1a5478c9dfb656f35c450e2504f"
+        )
+        if (
+            int(protocol.get("seed", -1)) != base.SEED
+            or protocol.get("devices") != ["cpu", "cuda"]
+            or int(protocol.get("core_distinct_prompts", 0)) != 100
+            or int(protocol.get("core_repeated_observations", 0)) != 20
+            or int(protocol.get("domain_distinct_prompts", 0)) != 100
+            or int(protocol.get("domain_repeated_observations", 0)) != 20
+            or protocol.get("training_authorized") is not False
+            or protocol.get("teacher_query_authorized") is not False
+            or protocol.get("artifact_mutation_authorized") is not False
+            or protocol.get("repair_of")
+            != "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json"
+            or not (direct_lifecycle or streaming_host or integrity_verify)
+            or protocol.get("materialization_status")
+            != "PASS_PHASE7_PRODUCT_MATERIALIZATION"
+        ):
+            raise Phase3Error("Phase 7 direct-artifact lifecycle governance changed")
+        for relative, expected in protocol["bindings"].items():
+            target = (root / relative).resolve()
+            if not target.is_file() or sha256_file(target) != expected:
+&gt;               raise Phase3Error(
+                    f"Phase 7 direct-artifact binding changed: {relative}"
+                )
+E               abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py
+
+abi\capability_compiler_phase7_direct_artifact_runtime.py:86: Phase3Error</error></testcase><testcase classname="tests.test_capability_compiler_phase7_verify" name="test_adversarial_phase7_mutations_fail_closed[&lt;lambda&gt;-result_format_status_device_protocol]" time="0.000"><error message="failed on setup with &quot;abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py&quot;">@pytest.fixture(scope="module")
+    def exact_fixture():
+&gt;       protocol, protocol_sha = load_protocol(ROOT, PRODUCT_PROTOCOL)
+
+tests\test_capability_compiler_phase7_verify.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release')
+path = WindowsPath('C:/Python310/layercake_merged_nextgen_perfectA_option1_full_ready/abi_release/ABI_CAPABILITY_COMPILER_PHASE7_ALLOCATION_BOUNDED_VERIFY_PROTOCOL_V1061.json')
+
+    def load_protocol(root: Path, path: Path) -&gt; tuple[dict[str, Any], str]:
+        document = _json(path)
+        base_path = (root / str(document.get("base_protocol", ""))).resolve()
+        if (
+            document.get("format") != base.FORMAT
+            or document.get("status") != LIFECYCLE_STATUS
+            or not base_path.is_file()
+            or sha256_file(base_path) != document.get("base_protocol_sha256")
+        ):
+            raise Phase3Error("Phase 7 direct-artifact base governance changed")
+        inherited = _json(base_path)
+        protocol = {
+            **inherited,
+            **document,
+            "bindings": {
+                **inherited.get("bindings", {}),
+                **document.get("bindings", {}),
+            },
+        }
+        protocol_sha = sha256_file(path)
+        direct_lifecycle = (
+            protocol.get("repair_scope")
+            == "DIRECT_HASH_BOUND_CORE_ARTIFACT_ACTIVATION_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_RSS_REPLICATION_RESULT_V1049.json"
+        )
+        streaming_host = (
+            protocol.get("repair_scope")
+            == "STREAMING_LAYERCAKE_PACKAGE_LOAD_AND_VERIFY_ONLY"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_DIRECT_ARTIFACT_RESULT_V1056.json"
+            and protocol.get("layercake_commit")
+            == "8f49fe1a31938c2f9b59a576a494b99abdf538a7"
+        )
+        integrity_verify = (
+            protocol.get("repair_scope")
+            == "STREAMING_CRYPTOGRAPHIC_ACTIVE_VERIFY_WITHOUT_TENSOR_RELOAD"
+            and protocol.get("preserved_failure")
+            == "ABI_CAPABILITY_COMPILER_PHASE7_STREAMING_HOST_RESULT_V1060.json"
+            and protocol.get("layercake_commit")
+            == "662c5a9b7264a1a5478c9dfb656f35c450e2504f"
+        )
+        if (
+            int(protocol.get("seed", -1)) != base.SEED
+            or protocol.get("devices") != ["cpu", "cuda"]
+            or int(protocol.get("core_distinct_prompts", 0)) != 100
+            or int(protocol.get("core_repeated_observations", 0)) != 20
+            or int(protocol.get("domain_distinct_prompts", 0)) != 100
+            or int(protocol.get("domain_repeated_observations", 0)) != 20
+            or protocol.get("training_authorized") is not False
+            or protocol.get("teacher_query_authorized") is not False
+            or protocol.get("artifact_mutation_authorized") is not False
+            or protocol.get("repair_of")
+            != "ABI_CAPABILITY_COMPILER_PHASE7_INTEGRATED_RUNTIME_PROTOCOL_V1040.json"
+            or not (direct_lifecycle or streaming_host or integrity_verify)
+            or protocol.get("materialization_status")
+            != "PASS_PHASE7_PRODUCT_MATERIALIZATION"
+        ):
+            raise Phase3Error("Phase 7 direct-artifact lifecycle governance changed")
+        for relative, expected in protocol["bindings"].items():
+            target = (root / relative).resolve()
+            if not target.is_file() or sha256_file(target) != expected:
+&gt;               raise Phase3Error(
+                    f"Phase 7 direct-artifact binding changed: {relative}"
+                )
+E               abi.capability_compiler_phase3.Phase3Error: Phase 7 direct-artifact binding changed: ../layercake_release/layercake/cake/package.py
+
+abi\capability_compiler_phase7_direct_artifact_runtime.py:86: Phase3Error</error></testcase></testsuite></testsuites>
