@@ -58,4 +58,6 @@ jobs:
           tests/test_r112_interruption_publication.py
           tests/test_count_feedback_r113.py
           tests/test_r113_publication.py
+          tests/test_sentence_structure_r114.py
+          tests/test_r114_publication.py
       - run: python -m build
