@@ -12,7 +12,8 @@ Twelve one-string arrays fail the strict codec. Sentence adherence falls from
 Finite scope passes 800 new + 2,411 development cases but live-prose limitations
 remain, including an apparent quantified-negation false positive. No rescore.
 
-Publish the complete result and review packet. Preserve R113, every gate, GPU
+The complete result, review packet and hash-verified assets are
+[published](docs/releases/R114_PUBLICATION.md). Preserve R113, every gate, GPU
 settings and historical matched controls. No acquisition, training or LayerCake
 work ran. A future proposal must distinguish structural decoding from evaluator
 coverage, not repeat a wording sweep or infer an ABI/host defect. No automatic

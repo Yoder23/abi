@@ -64,6 +64,9 @@ scope passes, but live evaluator limitations remain. Full replay is exact;
 R113, GPU settings and gates are unchanged. No acquisition or host ran.
 [Review guide](docs/releases/R114_REVIEW.md). No automatic successor or acquired
 English-core claim follows.
+The [R114 research release](https://github.com/Yoder23/abi/releases/tag/abi-research-r114-2026-11-20)
+publishes the three evidence assets; [fresh-download verification](docs/releases/R114_PUBLICATION.md)
+confirms their hashes and all 27 archive members, not independent reproduction.
 
 Preserved result: [R113](docs/R113_STORAGE_RECOVERED_REPLICATION.md) completes all
 576 calls with exact replay but **fails qualification**. Feedback scores 40/48

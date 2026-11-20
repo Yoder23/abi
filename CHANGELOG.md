@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-20 — R114 public custody
+
+- Push the immutable research tag and publish manifest, evidence ZIP and archive
+  receipt. Fresh downloads match all hashes; all 27 ZIP members verify.
+- Add [publication details](docs/releases/R114_PUBLICATION.md) without moving
+  the research tag or rewriting its bound files. Public byte custody is not an
+  independent scientific reproduction or a promotion of the failed endpoint.
+
 ## 2026-11-20 — R114 completed, qualification failed
 
 - Complete all 576 calls with exact scientific replay and 72 unchanged-input

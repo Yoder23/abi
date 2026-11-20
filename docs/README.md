@@ -23,6 +23,7 @@ sentence serialization, evaluator limitations and untested acquisition/host path
 - [R114 scope and sentence structure](R114_SENTENCE_STRUCTURE.md): all 576 calls
   and exact replay; revision reaches 44/48 pairs but misses the tone floor;
   structured revision scores 39/48 and fails quality noninferiority.
+  [Public evidence and download verification](releases/R114_PUBLICATION.md).
 
 - [R113 storage-recovered replication](R113_STORAGE_RECOVERED_REPLICATION.md):
   all 576 calls and exact replay; feedback fails at 40/48 pairs versus 44.
