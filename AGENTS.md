@@ -26,6 +26,15 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+User continuation (2026-11-20): preregister and run one R114 under
+`experiments/sentence_structure_r114/PROTOCOL.md`. Falsify the new finite scope
+evaluator first; only after a published pass compare prose and strict
+sentence-array revisions from a shared draft on fresh known-template instances.
+The codec only joins valid unmodified strings; invalid arrays fail, no repair.
+Keep gates, GPU settings, matched controls, R113 and historical evidence intact.
+No training, recipient or LayerCake changes. Publish actual outcomes, separate
+failure owners, freeze before scoring/execution, and launch no automatic successor.
+
 R113 completed on 2026-11-20: all 576 calls, exact scientific replay, 72 unchanged
 controls per worker and 14/14 actual-row hostile rejections. Qualification fails:
 draft/revision/feedback pairs 36/48, 38/48, 40/48 versus 44; feedback tone 3/6 and

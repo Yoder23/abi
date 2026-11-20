@@ -2,6 +2,9 @@
 
 Updated: 2026-11-20
 
+[R114](R114_SENTENCE_STRUCTURE.md) is design-only: evaluator falsification then
+conditional sentence-array revision. It supplies no new certificate or host result.
+
 [R113](R113_STORAGE_RECOVERED_REPLICATION.md) completed 576 calls with exact replay
 and 14/14 hostile rejection, but feedback qualification fails (40/48 pairs vs 44).
 Tone/conversation floors fail and the primary CI crosses zero. Sentence failures

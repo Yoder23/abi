@@ -2,6 +2,9 @@
 
 Status date: 2026-11-20
 
+Active: [R114](R114_SENTENCE_STRUCTURE.md), preregistered evaluator falsification
+then conditional sentence-array generation. No result yet; unchanged gates/GPU.
+
 Latest result: [R113](R113_STORAGE_RECOVERED_REPLICATION.md) completes 576 calls
 with exact replay and 14/14 hostile rejection, but feedback fails at 40/48 pairs
 versus 44; tone 3/6 and conversation 4/6 versus 5. The sentence-adherence effect

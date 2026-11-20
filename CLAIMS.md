@@ -2,6 +2,9 @@
 
 Status date: 2026-11-20
 
+[R114](docs/R114_SENTENCE_STRUCTURE.md) is a newly registered finite-scope and
+sentence-serialization study. No result yet; no acquisition or host claim.
+
 [R113](docs/R113_STORAGE_RECOVERED_REPLICATION.md) completes all 576 calls with
 exact replay and 14/14 hostile rejection. Feedback still fails: 40/48 pairs vs 44,
 tone 3/6 and conversation 4/6 vs 5. Its primary CI crosses zero. Preserve genuine

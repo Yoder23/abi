@@ -5,6 +5,9 @@ goal rather than reading the campaign archive in filename order.
 
 ## Reading paths
 
+Active experiment: [R114 scope and sentence structure](R114_SENTENCE_STRUCTURE.md)
+(preregistered, not executed). R113 remains the latest completed result.
+
 | Audience | Read in this order |
 | --- | --- |
 | New user | [Project README](../README.md) -> [Getting started](GETTING_STARTED.md) -> [Architecture](architecture.md) |

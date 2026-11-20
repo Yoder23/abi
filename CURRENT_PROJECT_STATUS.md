@@ -2,6 +2,9 @@
 
 Updated: 2026-11-20
 
+Active: [R114](docs/R114_SENTENCE_STRUCTURE.md), one newly authorized scope and
+sentence-structured revision experiment. Design only; no new result or host work.
+
 Latest completed: [R113](docs/R113_STORAGE_RECOVERED_REPLICATION.md), all 576 calls
 with exact replay. Feedback fails qualification at 40/48 pairs versus 44; tone
 3/6 and conversation 4/6 versus 5. The sentence gain is unsupported. Preserve

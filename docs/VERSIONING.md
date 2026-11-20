@@ -3,7 +3,8 @@
 | Identity | Current value | Scope |
 | --- | --- | --- |
 | Python package | `0.4.0a1` | Supported alpha compiler API |
-| Current preregistration | `abi-prereg-r113-2026-11-20` | Storage-recovered exposed-panel replication; completed result below |
+| Current preregistration | `abi-prereg-r114-2026-11-20` | Scope falsification and sentence-array revision; design only |
+| Preserved preregistration | `abi-prereg-r113-2026-11-20` | Storage-recovered exposed-panel replication; completed result below |
 | Preserved preregistration | `abi-prereg-r112-2026-11-19` | Count-feedback design; later closed resource-incomplete |
 | Storage/custody snapshot | `abi-r112-cleanup-2026-11-19` | Verified duplicate retirement; still storage-blocked, no scientific execution |
 | Current experiment implementation | `abi-r113-implementation-2026-11-20` (source `5efaf9f`) | Frozen wrapper around unchanged R112 scientific functions; 983 bound paths |

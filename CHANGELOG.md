@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-20 — R114 preregistration
+
+- Register finite scope falsification and conditional sentence-array revision;
+  unchanged quality/resource gates and GPU settings, no training or host work.
+- Preserve R113 and all historical evidence. No new scientific result yet.
+
 ## 2026-11-20 — R113 public custody
 
 - Published the immutable R113 research tag, manifest and evidence archive.

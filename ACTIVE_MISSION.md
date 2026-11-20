@@ -2,6 +2,14 @@
 
 Updated: 2026-11-20
 
+## Active: R114 scope and sentence-structured revision
+
+Execute the newly authorized [R114](docs/R114_SENTENCE_STRUCTURE.md), publishing
+protocol and tested implementation before execution. Finite scope must pass
+before GPU work. Contrast prose revision with strict sentence arrays; no repair
+or relaxed gates. Preserve R113, GPU settings and all historical evidence.
+No training, recipient or native host work. Publish failures; no automatic successor.
+
 ## Latest completed: R113 qualification failed
 
 [R113](docs/R113_STORAGE_RECOVERED_REPLICATION.md) completed all 576 calls with
