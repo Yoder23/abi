@@ -27,6 +27,7 @@ sentence serialization, evaluator limitations and untested acquisition/host path
 - [R115 structural decoding](R115_STRUCTURAL_DECODING.md): 45/48 constrained pairs,
   24/24 sentences, supported gain and exact replay. Mechanical qualification
   only; [review](releases/R115_REVIEW.md) documents unscored semantic limitations.
+  [Public evidence and download verification](releases/R115_PUBLICATION.md).
 
 - [R114 scope and sentence structure](R114_SENTENCE_STRUCTURE.md): all 576 calls
   and exact replay; revision reaches 44/48 pairs but misses the tone floor;

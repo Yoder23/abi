@@ -13,6 +13,8 @@ Three unresolved rows and an unscored unsupported progress assertion remain
 disclosed. This is not general semantics, fluent-English or ABI certification.
 Preserve R114, every gate/GPU setting and matched controls. No acquisition,
 training, LayerCake work or automatic successor. See the [review](docs/releases/R115_REVIEW.md).
+The immutable research tag and all three public evidence assets are
+[published and freshly hash-verified](docs/releases/R115_PUBLICATION.md).
 
 ## Preserved: R114 qualification failed
 

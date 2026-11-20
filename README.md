@@ -71,6 +71,10 @@ version dependence, and an unscored unsupported "underway" assertion. This is
 conventional decoding, not an ABI breakthrough or broad English certificate.
 No training, recipient test, hardware/gate change or automatic successor.
 
+The [R115 research release](https://github.com/Yoder23/abi/releases/tag/abi-research-r115-2026-11-20)
+publishes the evidence and manifest; [fresh-download verification](docs/releases/R115_PUBLICATION.md)
+confirms all three assets and 27 ZIP members, not independent reproduction.
+
 Preserved result: [R114](docs/R114_SENTENCE_STRUCTURE.md) **completed but failed
 qualification**. Ordinary revision reaches 44/48 paired passes but tone fails
 at 2/6 against 5. Sentence-array revision reaches 39/48; 12 arrays incorrectly

@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-20 — R115 public custody
+
+- Publish immutable research tag `abi-research-r115-2026-11-20` and three release assets.
+- Fresh downloads match all hashes/byte counts and all 27 new evidence ZIP members.
+- Add [publication details](docs/releases/R115_PUBLICATION.md) without moving
+  the tag or editing manifest-bound review documents. Public custody is not
+  independent scientific reproduction or broader English qualification.
+
 ## 2026-11-20 — R115 bounded structural-decoding pass
 
 - Complete all 576 calls with exact scientific replay, 72 unchanged controls per
