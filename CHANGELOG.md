@@ -2,6 +2,9 @@
 
 ## 2026-11-20 — R113 registered after storage recovery
 
+- Freeze implementation `5efaf9f` and 983 input/dependency paths after focused,
+  supported-suite and exact historical-fixture tests. Preserve the rejected
+  direct historical-host invocations; no generation has occurred at freeze.
 - Register one complete replication of interrupted R112 in a new namespace.
 - Preserve all inputs, gates, GPU settings and historical evidence; explicitly
   disclose the reused exposed panel. No old-row splicing or automatic follow-on.

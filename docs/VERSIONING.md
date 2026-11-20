@@ -6,7 +6,8 @@
 | Current preregistration | `abi-prereg-r113-2026-11-20` | Storage-recovered, exposed-panel replication; no result yet |
 | Preserved preregistration | `abi-prereg-r112-2026-11-19` | Count-feedback design; later closed resource-incomplete |
 | Storage/custody snapshot | `abi-r112-cleanup-2026-11-19` | Verified duplicate retirement; still storage-blocked, no scientific execution |
-| Current experiment implementation | `abi-r112-implementation-2026-11-19` (source `fae959c`) | Immutable evaluator/generator/driver/verifier; 120 focused checks; no challenge or generation result yet |
+| Current experiment implementation | `abi-r113-implementation-2026-11-20` (source `5efaf9f`) | New wrapper around unchanged R112 scientific functions; 983 bound paths; no generation result yet |
+| Preserved experiment implementation | `abi-r112-implementation-2026-11-19` (source `fae959c`) | Immutable evaluator/generator/driver/verifier; later resource-incomplete |
 | R112 challenge publication | `abi-r112-challenge-2026-11-19` | Actual 800-case packet, published before scoring |
 | R112 finite scope prerequisite | `abi-r112-scope-2026-11-19` | 800 new and 1,598 development cases, exact replay; not general semantics |
 | Latest completed implementation freeze | `abi-r111-implementation-2026-11-18` | Immutable parser, challenge generator and bounded two-call driver, frozen before execution |

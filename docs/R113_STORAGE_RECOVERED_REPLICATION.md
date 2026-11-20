@@ -1,6 +1,19 @@
 # R113 — storage-recovered count-feedback replication
 
-Status: **PREREGISTERED; not yet executed** (2026-11-20).
+Status: **IMPLEMENTATION AND INPUTS FROZEN; no generation yet** (2026-11-20).
+
+Source implementation: `5efaf9f`. Freeze SHA-256:
+`54b113c52f9dbb1b3a344cee9a10567d3d46c157a9f06a0150c3e70144529bdc`.
+The freeze binds 983 repository/host paths plus the complete pinned source cache.
+Inherited scope recomputation and exact input-token identity pass. Before launch,
+publish the freeze at `abi-r113-implementation-2026-11-20`.
+
+Software checks: 823 supported tests pass with four existing skips, four separate
+publication checks pass, and all 16 historical Phase 7 tests pass in their exact
+46-file fixture. The two direct Phase 7 invocations correctly rejected the newer
+host's stale historical bindings; their failed receipts are preserved. No host
+bytes, historical verifier or quality gate was changed. Focused execution tests
+pass 133 checks; lint and documentation links pass. These are not model results.
 
 [Protocol](../experiments/count_feedback_r113/PROTOCOL.md). This separately
 authorized attempt repeats the frozen R112 comparison from the beginning in two
