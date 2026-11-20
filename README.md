@@ -19,6 +19,10 @@ ABI and LayerCake have deliberately separate jobs:
 
 ## Current status
 
+Active: [R115 structural decoding](docs/R115_STRUCTURAL_DECODING.md) is
+preregistered, not executed. It separates prospective scope validation from a
+matched with/without-grammar comparison; R114 and all historical gates are intact.
+
 **Whole-moonshot verdict: `FULL_MOONSHOT_NOT_PROVEN`.**
 
 ABI has strong bounded results, but it has not yet proved automatic extraction

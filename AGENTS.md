@@ -26,6 +26,14 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+User continuation (2026-11-20): execute one R115 under
+`experiments/structural_decode_r115/PROTOCOL.md`. Freeze and publish before
+prospective scope scoring; only a passing published prerequisite opens the
+matched structural-decoding GPU contrast. Same revision prompt, with/without
+token grammar; no semantic masking or output repair. Preserve R114, GPU settings,
+quality gates and historical matched controls. No training, recipient or
+LayerCake changes. Publish actual outcomes; no automatic successor.
+
 R114 completed 576 calls with exact scientific replay and 72/72 unchanged-input
 controls per worker. Qualification fails: draft/revision/structured pairs are
 38/48, 44/48 and 39/48. Revision reaches the aggregate floors but tone is 2/6

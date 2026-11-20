@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-20 — R115 preregistration
+
+- Register prospective scope falsification then a matched structural-decoding
+  contrast. Same revision prompts, no semantic constraints or output repair.
+- Preserve R114, all quality/resource gates, GPU settings and matched controls.
+  No training, recipient or LayerCake changes. No result claimed yet.
+
 ## 2026-11-20 — R114 public custody
 
 - Push the immutable research tag and publish manifest, evidence ZIP and archive
