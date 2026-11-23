@@ -64,4 +64,8 @@ jobs:
           tests/test_progress_grounding_r116.py
           tests/test_r116_public_review.py
           tests/test_r115_publication.py
+          tests/test_r117_method.py
+          tests/test_r117_custody.py
+      - name: Recompute sealed R117 from public raw evidence (no weights)
+        run: python scripts/review_r117.py
       - run: python -m build

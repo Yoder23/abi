@@ -1,6 +1,6 @@
 # ABI peer-review readiness
 
-Status date: 2026-11-11
+Status date: 2026-11-23
 
 ## Verdict
 
@@ -8,14 +8,25 @@ Status date: 2026-11-11
 
 `FULL_MOONSHOT_NOT_PROVEN`
 
-The published-review status includes the separately sealed R106 research
-prerelease. It is not a qualified English-core or production release.
+The latest [research prerelease](https://github.com/Yoder23/abi/releases/tag/abi-research-r117-2026-11-23)
+is R117. Neither it nor earlier research prereleases are a qualified
+English-core or production release.
 
 Independent reviewers can evaluate R7, V1089, R97, and R21-R23 as separate
 bounded evidence lineages. They must not combine those lineages into a single
 final-artifact proof.
 
 ## Current bounded research review
+
+[R117 review](releases/R117_REVIEW.md): grounded normalization failed on
+milestone status. The public evidence ZIP is 666,208 bytes, SHA-256
+`8bc4f105f70c7887b21801ea8b2ea8376ed74ddc2aec23543a4a52f3ac0c7eaa`.
+The downloaded asset reproduced WP1_FAIL and the sealed decision digest in
+an empty directory. Run `python scripts/review_r117.py` after extracting it
+with Python and NumPy 2.2.6 available. This rechecks the reported result;
+it does not independently validate the investigator's English judgments.
+
+## Historical bounded research review
 
 [R106](R106_GRAMMAR_INTERFACE.md) failed the registered grammatical-discrimination
 control at 178/200. Exact raw replay and 52 focused checks pass, including 25
