@@ -8,8 +8,8 @@ Status date: 2026-11-23
 
 `FULL_MOONSHOT_NOT_PROVEN`
 
-The latest [research prerelease](https://github.com/Yoder23/abi/releases/tag/abi-research-r118-2026-11-23)
-is R118. Neither it nor earlier research prereleases are a qualified
+The latest [research prerelease](https://github.com/Yoder23/abi/releases/tag/abi-research-r119-2026-11-23)
+is R119. Neither it nor earlier research prereleases are a qualified
 English-core or production release.
 
 Independent reviewers can evaluate R7, V1089, R97, and R21-R23 as separate
@@ -17,6 +17,15 @@ bounded evidence lineages. They must not combine those lineages into a single
 final-artifact proof.
 
 ## Current bounded research review
+
+[R119 review](releases/R119_REVIEW.md): inspect matched success by voice, not
+swap rejection alone. Run `python scripts/review_r119.py --paired` after
+extracting the evidence ZIP. No teacher, host, GPU or development cache is
+needed for score recomputation. ZIP: 4,345,770 bytes; SHA-256
+`1f5e8b92df494aa3c964be6964601056ba1f804244cf50418b98cdf0596a2d22`.
+Live labels are not independent human ratings.
+
+## Previous role-guard review
 
 [R118 review](releases/R118_REVIEW.md): method, prospective wording and
 investigator labels were frozen in sequence. Run `python scripts/review_r118.py`

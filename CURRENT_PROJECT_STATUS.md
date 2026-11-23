@@ -2,6 +2,9 @@
 
 Updated: 2026-11-23
 
+[R119](docs/releases/R119_REVIEW.md): 202/288 contexts with all three valid/swap
+pairs correct (status-only control: 206). WP2 remains closed; R118 is preserved.
+
 [R118](docs/releases/R118_REVIEW.md): status-only rejected all authored status
 changes; the combined guard lost half the valid paraphrases. No usable corpus
 qualified and WP2 is closed.

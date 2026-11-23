@@ -2,7 +2,10 @@
 
 Updated: 2026-11-23
 
-Current: [R118](releases/R118_REVIEW.md) separates status rejection from
+Current: [R119](releases/R119_REVIEW.md) tests voice- and perspective-preserving
+filtering against the exact R118 status-only control. WP2 stays closed.
+
+Preserved: [R118](releases/R118_REVIEW.md) separates status rejection from
 valid role paraphrase retention. The combined filter did not qualify.
 
 Preserved: [R117](releases/R117_REVIEW.md) failed its prospective grounded

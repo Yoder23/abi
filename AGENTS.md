@@ -26,6 +26,11 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+[R119](docs/releases/R119_REVIEW.md) is R119_NOT_QUALIFIED. Do not promote
+zero swap admissions as role understanding: the alias-only control made the
+same decisions; all valid rental converses were withheld. Preserve R118,
+R119 and all gates. WP2 remains CLOSED; no training or host change follows.
+
 [R118](docs/releases/R118_REVIEW.md) is R118_NOT_QUALIFIED: new status guards
 removed wrong-status admissions; the combined filter discarded half the valid
 authored wording. Keep every R117/R118 gate and all evidence. WP2 stays CLOSED.

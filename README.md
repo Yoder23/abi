@@ -19,7 +19,12 @@ ABI and LayerCake have deliberately separate jobs:
 
 ## Current status
 
-Latest: [R118 modality and actor swaps](docs/releases/R118_REVIEW.md) rejected
+Latest: [R119 voice and converse pairs](docs/releases/R119_REVIEW.md) admitted
+no true swaps, but only 202/288 contexts retained all three valid forms and
+rejected all three swaps (R118 status-only: 206/288). No corpus qualified;
+WP2 stays closed. [Evidence ZIP and review](https://github.com/Yoder23/abi/releases/tag/abi-research-r119-2026-11-23).
+
+Preserved: [R118 modality and actor swaps](docs/releases/R118_REVIEW.md) rejected
 all 576 wrong-status claims on fresh wording, but kept only 144/288 valid
 paraphrases. The prior filter already rejected every pure actor swap. Neither
 the source nor the combined filter qualified. WP2 is closed.
@@ -51,6 +56,7 @@ LoRA and distillation.
 
 | Evidence line | What is established | What remains open |
 | --- | --- | --- |
+| R119 | 250/288 active, 276/288 passive, 204/288 converse matched pairs; zero authored swap admissions | 18/48 complete clusters, only 40/209 valid live answers retained, no demonstrated superiority |
 | R118 | No authored status substitutions admitted; 6/48 complete clusters, exact replay | Half of authored valid paraphrases lost; no qualified corpus, recipient run or superiority |
 | R117 | 145/148 valid live responses retained; 32/48 authored clusters correct, exact replay | Eight unusable live responses admitted; no qualified training data, host result or promotion |
 | R116 | Counterfactual source recognition: 33/48 clusters versus 44 required, byte-identical replay | Source did not qualify; no recipient comparison or external host acceptance |

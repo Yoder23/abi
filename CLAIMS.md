@@ -2,6 +2,11 @@
 
 Status date: 2026-11-23
 
+[R119](docs/releases/R119_REVIEW.md) rejected every sampled pure actor swap
+but did not improve paired task success over R118 status-only. The tested
+swap-margin criterion added no incremental rejection. No qualified English
+data, recipient result or broader role-understanding claim follows.
+
 [R118](docs/releases/R118_REVIEW.md) supports fewer authored status errors on
 a bounded panel, not general role understanding: ordered-role checking lost
 84 valid paraphrases versus status-only without preventing another error.

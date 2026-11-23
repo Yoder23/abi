@@ -2,6 +2,11 @@
 
 Updated: 2026-11-23
 
+[R119](releases/R119_REVIEW.md): 730/864 authored paraphrases retained and
+0/864 pure swaps admitted, versus 736/864 and 8/864 for frozen R118 status-only.
+Only 202/288 contexts passed all three pairs. Neither qualification nor
+superiority; no host or training result.
+
 [R118](releases/R118_REVIEW.md): 6/48 complete clusters. Combined guards
 rejected every authored invalid but retained only 144/288 valid paraphrases.
 No live acceptance changes versus R117 on this new panel. No WP2 or host run.

@@ -2,7 +2,15 @@
 
 Updated: 2026-11-23
 
-## R118 complete: distinguish rejection from understanding
+## R119 complete: matched voice and converse pairs
+
+[R119](docs/releases/R119_REVIEW.md) did not qualify: 18/48 clusters versus
+44 required and only 40/209 valid live outputs retained. The new contrast
+made no decisions beyond its alias-only control. R118 remains sealed and
+WP2 closed. A future proposal can isolate project-prefix sensitivity and
+test direction on fresh rental converses; no automatic successor.
+
+## Preserved: R118 role and status guards
 
 [The new panel](docs/releases/R118_REVIEW.md) produced 0/576 wrong-status
 admissions, but only 144/288 valid authored paraphrases retained, 6/48 complete

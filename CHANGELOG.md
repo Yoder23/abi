@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-23 — R119 matched active, passive and converse paraphrases
+
+- Preregistered the paired task and R118 status-only control; published
+  method, inputs and blind labels before dependent scoring.
+- [Result and audit](docs/releases/R119_REVIEW.md): both alias arms made
+  identical decisions, with 18/48 complete clusters. R118 and gates remain
+  unchanged. No WP2 execution, training or host promotion.
+
 ## 2026-11-23 — R118 modality and actor swaps
 
 - Published the registration, tested method, fresh prospective inputs and

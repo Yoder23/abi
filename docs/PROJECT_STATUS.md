@@ -2,7 +2,12 @@
 
 Status date: 2026-11-23
 
-Latest: [R118 status and roles](releases/R118_REVIEW.md): 0/576 wrong-status
+Latest: [R119 matched voices and converses](releases/R119_REVIEW.md): 18/48
+complete clusters. R119 accepted no true role swaps, including eight that
+status-only admitted, but did not retain any valid rental converse. No corpus
+qualified; no WP2 or LayerCake experiment.
+
+Preserved: [R118 status and roles](releases/R118_REVIEW.md): 0/576 wrong-status
 admissions but only 144/288 valid authored paraphrases retained. Frozen R117
 already rejected 288/288 actor swaps. Live source supplied 153/288 usable
 answers; the combined filter retained 89. No qualified corpus; WP2 closed.
