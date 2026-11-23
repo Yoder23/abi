@@ -26,6 +26,11 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+[R117](docs/releases/R117_REVIEW.md) is sealed WP1_FAIL: the prospective
+normalizer admitted unsupported modality changes. No qualified corpus or
+recipient permission. Preserve R116 and all gates. The registered WP2 design
+remains frozen and CLOSED; no host or acquisition run follows from R117.
+
 R116 closed at its prospective source gate: 33/48 four-judgment clusters
 (44 required), 20 unsupported endorsements, exact repeat. Preserve the failed
 control and unopened recipient arms. This is a source/interface recognition

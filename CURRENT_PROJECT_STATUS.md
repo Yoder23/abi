@@ -2,6 +2,10 @@
 
 Updated: 2026-11-23
 
+[R117](docs/releases/R117_REVIEW.md): WP1 failed the unchanged acceptance
+gates, despite retaining 192/192 authored and 145/148 live valid proposals.
+WP2 was frozen before scoring; it is closed and unexecuted.
+
 [R116](docs/releases/R116_REVIEW.md): 33/48 source clusters; 20/96 false
 endorsements in evidence-present foil cells, 0/96 errors with notes withheld.
 Exact replay, no training or recipient calls. Host acceptance remains open.

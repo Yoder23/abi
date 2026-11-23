@@ -5,7 +5,10 @@ goal rather than reading the campaign archive in filename order.
 
 ## Reading paths
 
-Latest: [R116 semantic grounding review](releases/R116_REVIEW.md), a failed
+Latest: [R117 normalization review and evidence audit](releases/R117_REVIEW.md).
+The filter retained paraphrases but failed to reject every unsupported claim.
+
+Preserved: [R116 semantic grounding review](releases/R116_REVIEW.md), a failed
 source prerequisite, with a standard-library evidence verifier. No recipient test.
 
 Preserved: [R115 structural decoding](R115_STRUCTURAL_DECODING.md), complete bounded

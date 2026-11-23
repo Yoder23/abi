@@ -1,6 +1,10 @@
 # Research status
 
-Updated: 2026-11-19
+Updated: 2026-11-23
+
+Current: [R117](releases/R117_REVIEW.md) failed its prospective grounded
+normalization test; no qualified corpus. See [project status](PROJECT_STATUS.md)
+for the sequence through R116. Earlier entries below are historical.
 
 [R112](R112_COUNT_FEEDBACK.md) preregisters explicit sentence-count feedback
 against ordinary revision from a shared draft. It is a conventional evaluator-

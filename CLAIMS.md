@@ -2,6 +2,11 @@
 
 Status date: 2026-11-23
 
+[R117](docs/releases/R117_REVIEW.md) establishes a bounded reduction in
+invalid admissions versus the ordinary entailment control, not qualification:
+32 authored wrong-status and eight unusable live responses still passed.
+No training corpus, recipient result or registered superiority claim.
+
 [R116](docs/releases/R116_REVIEW.md) establishes a **negative source-control
 result**, not negative transfer. The model accepted 20 unsupported claims;
 33/48 complete clusters did not meet 44/48. No R99 recipient or LayerCake

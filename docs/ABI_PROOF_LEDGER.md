@@ -2,6 +2,10 @@
 
 Updated: 2026-11-23
 
+[R117](releases/R117_REVIEW.md): WP1 failed. The subject-bound bidirectional
+filter accepted 32/864 authored negatives versus 266/864 for one-way entailment,
+but the absolute gate was zero. No acquisition, host or WP2 result.
+
 [R116](releases/R116_REVIEW.md) completed 576 single-row forwards and exact
 source replay: 33/48 clusters, 20 false endorsements and two missed actual
 milestones. This falsifies qualification of that source/probe interface. It

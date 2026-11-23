@@ -2,11 +2,19 @@
 
 Updated: 2026-11-23
 
-## R116 complete: source did not qualify
+## R117 complete: the normalization gate failed
+
+[WP1 evidence and decision](docs/releases/R117_REVIEW.md): 192/192 authored
+valid paraphrases retained, 32/192 wrong-status claims admitted, 32/48 complete
+clusters. Eight unusable live responses admitted. No data qualified.
+[WP2 design](experiments/grounded_normalization_r117/WP2_DESIGN.md) was frozen
+before scoring, remains closed and did not run. No change to product gates.
+
+## Preserved: R116 source did not qualify
 
 [The counterfactual progress test](docs/releases/R116_REVIEW.md) scored 33/48
 complete clusters, not the required 44. Zero recipient forwards, no artifact
-and no recalibration. Next decision: test whether independently grounded
+and no recalibration. Its follow-up question was whether independently grounded
 propositions can be preserved during teacher-to-English normalization, including
 coverage of valid paraphrases. Do not use teacher self-ratings, discard hard
 evaluation families, or treat historical matched learners as tested here.

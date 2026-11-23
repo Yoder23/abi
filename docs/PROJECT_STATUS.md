@@ -2,7 +2,11 @@
 
 Status date: 2026-11-23
 
-Latest: [R116 progress grounding](releases/R116_REVIEW.md). The control scored
+Latest: [R117 normalization](releases/R117_REVIEW.md): 32/48 complete clusters;
+all authored paraphrases retained, but 32 wrong-status claims and eight
+unusable live responses admitted. No corpus or recipient run.
+
+Preserved: [R116 progress grounding](releases/R116_REVIEW.md). The control scored
 33/48 on paired projects (44 required). Its blank-note behavior was correct,
 but it did not reliably distinguish planning or permission from actual progress.
 The recipient comparison did not run; neither ABI nor LayerCake failed this test.

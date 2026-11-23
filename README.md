@@ -19,7 +19,13 @@ ABI and LayerCake have deliberately separate jobs:
 
 ## Current status
 
-Latest: [R116 progress grounding](docs/releases/R116_REVIEW.md) stopped before
+Latest: [R117 grounded normalization](docs/releases/R117_REVIEW.md) retained
+192/192 authored paraphrases but admitted 32 unsupported milestone changes.
+No training data qualified; the recipient experiment remains closed.
+[Download the small evidence-review bundle](https://github.com/Yoder23/abi/releases/tag/abi-research-r117-2026-11-23)
+to recompute the result without the training environment.
+
+Preserved: [R116 progress grounding](docs/releases/R116_REVIEW.md) stopped before
 recipient inference. The source got 96/96 blank-note controls right but endorsed
 20/96 unsupported claims in paired project notes (33/48 complete clusters).
 The raw evidence and lightweight audit are public. No acquired English core.
@@ -39,6 +45,7 @@ LoRA and distillation.
 
 | Evidence line | What is established | What remains open |
 | --- | --- | --- |
+| R117 | 145/148 valid live responses retained; 32/48 authored clusters correct, exact replay | Eight unusable live responses admitted; no qualified training data, host result or promotion |
 | R116 | Counterfactual source recognition: 33/48 clusters versus 44 required, byte-identical replay | Source did not qualify; no recipient comparison or external host acceptance |
 | R115 | Finite scope passes; constrained source workflow scores 45/48 pairs and 24/24 sentences; supported paired gain, exact 576-call replay | Mechanical scope only; three unresolved failures and an unscored progress assertion; no English artifact, acquisition or host claim |
 | R114 | Finite scope passes; all 576 source calls have exact scientific replay | Revision reaches 44/48 pairs but tone fails 2/6; structured scores 39/48 and fails quality noninferiority; no acquisition/host claim |

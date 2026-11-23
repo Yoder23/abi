@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-23 — R117 grounded normalization
+
+- Published WP1 and a conditional WP2 design before scoring, then separately
+  froze the filter, prospective inputs, and investigator labels.
+- [Full review](docs/releases/R117_REVIEW.md): all four arms reproduced; 32
+  wrong-status authored admissions and eight unusable live admissions. WP1
+  failed. No WP2 run, qualified corpus, LayerCake change or product release.
+
 ## 2026-11-23 — R116 counterfactual progress grounding
 
 - Published protocol, code and 288 inputs before the frozen source run.
