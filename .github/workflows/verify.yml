@@ -62,5 +62,6 @@ jobs:
           tests/test_r114_publication.py
           tests/test_structural_decode_r115.py
           tests/test_progress_grounding_r116.py
+          tests/test_r116_public_review.py
           tests/test_r115_publication.py
       - run: python -m build

@@ -1,6 +1,11 @@
 # ABI claim ledger
 
-Status date: 2026-11-20
+Status date: 2026-11-23
+
+[R116](docs/releases/R116_REVIEW.md) establishes a **negative source-control
+result**, not negative transfer. The model accepted 20 unsupported claims;
+33/48 complete clusters did not meet 44/48. No R99 recipient or LayerCake
+artifact ran. No historical English-quality or package score was changed.
 
 [R115](docs/R115_STRUCTURAL_DECODING.md) passes its bounded mechanical source
 workflow: 45/48 constrained pairs, 24/24 sentences versus 9/24, positive paired

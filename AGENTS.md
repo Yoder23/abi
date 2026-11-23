@@ -26,6 +26,12 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+R116 closed at its prospective source gate: 33/48 four-judgment clusters
+(44 required), 20 unsupported endorsements, exact repeat. Preserve the failed
+control and unopened recipient arms. This is a source/interface recognition
+result, not a change to R115 or to an ABI/LayerCake certificate. See
+[the review](docs/releases/R116_REVIEW.md) before new work.
+
 R115 is complete: BOUNDED_CONSTRAINED_REVISION_IMPROVEMENT, all 576 calls and
 exact scientific replay, 72 unchanged controls per worker, 15/15 targeted hostile
 rejections. Constrained panels 47/48 and 46/48, paired 45/48, every task >=5/6;

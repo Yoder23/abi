@@ -1,8 +1,13 @@
 # ABI project status
 
-Status date: 2026-11-20
+Status date: 2026-11-23
 
-Latest: [R115](R115_STRUCTURAL_DECODING.md), complete bounded mechanical pass.
+Latest: [R116 progress grounding](releases/R116_REVIEW.md). The control scored
+33/48 on paired projects (44 required). Its blank-note behavior was correct,
+but it did not reliably distinguish planning or permission from actual progress.
+The recipient comparison did not run; neither ABI nor LayerCake failed this test.
+
+Preserved: [R115](R115_STRUCTURAL_DECODING.md), complete bounded mechanical pass.
 Constrained revision: 45/48 pairs, 24/24 sentences, every task >=5/6; supported
 paired gain, quality noninferiority, exact 576-call replay, 15/15 hostile rejection.
 Finite scope: 800 new + 3,217 development cases. Semantic coverage remains

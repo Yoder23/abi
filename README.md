@@ -19,7 +19,12 @@ ABI and LayerCake have deliberately separate jobs:
 
 ## Current status
 
-Latest: [R115 structural decoding](docs/R115_STRUCTURAL_DECODING.md) passes its
+Latest: [R116 progress grounding](docs/releases/R116_REVIEW.md) stopped before
+recipient inference. The source got 96/96 blank-note controls right but endorsed
+20/96 unsupported claims in paired project notes (33/48 complete clusters).
+The raw evidence and lightweight audit are public. No acquired English core.
+
+Preserved: [R115 structural decoding](docs/R115_STRUCTURAL_DECODING.md) passes its
 bounded mechanical source-workflow gates: 45/48 paired passes and 24/24 sentence
 adherence, with exact replay. Semantic coverage gaps remain; no acquired English
 core, ABI transfer or LayerCake promotion follows. R114 and all gates are intact.
@@ -34,6 +39,7 @@ LoRA and distillation.
 
 | Evidence line | What is established | What remains open |
 | --- | --- | --- |
+| R116 | Counterfactual source recognition: 33/48 clusters versus 44 required, byte-identical replay | Source did not qualify; no recipient comparison or external host acceptance |
 | R115 | Finite scope passes; constrained source workflow scores 45/48 pairs and 24/24 sentences; supported paired gain, exact 576-call replay | Mechanical scope only; three unresolved failures and an unscored progress assertion; no English artifact, acquisition or host claim |
 | R114 | Finite scope passes; all 576 source calls have exact scientific replay | Revision reaches 44/48 pairs but tone fails 2/6; structured scores 39/48 and fails quality noninferiority; no acquisition/host claim |
 | R113 | Complete 576-call replication, exact replay, 14/14 hostile rejection | Feedback fails: 40/48 pairs versus 44; tone/conversation floors missed; no acquisition or host claim |
@@ -61,7 +67,7 @@ public technical release remains
 [`abi-final-validation-v2-repaired-r7-2026-08-30`](https://github.com/Yoder23/abi/releases/tag/abi-final-validation-v2-repaired-r7-2026-08-30).
 The current default branch is a later peer-review candidate.
 
-Latest result: [R115](docs/R115_STRUCTURAL_DECODING.md) **bounded mechanical
+Prior result: [R115](docs/R115_STRUCTURAL_DECODING.md) **bounded mechanical
 workflow pass**. Constrained revision scores 45/48 pairs versus 37/48 for the
 same-prompt unconstrained arm; sentence adherence is 24/24 versus 9/24, with
 positive paired confidence bounds. All 576 calls replay exactly. The finite

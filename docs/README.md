@@ -5,7 +5,10 @@ goal rather than reading the campaign archive in filename order.
 
 ## Reading paths
 
-Latest: [R115 structural decoding](R115_STRUCTURAL_DECODING.md), complete bounded
+Latest: [R116 semantic grounding review](releases/R116_REVIEW.md), a failed
+source prerequisite, with a standard-library evidence verifier. No recipient test.
+
+Preserved: [R115 structural decoding](R115_STRUCTURAL_DECODING.md), complete bounded
 mechanical pass. [Review and limitations](releases/R115_REVIEW.md): supported
 sentence gain, exact replay, remaining semantic coverage gaps; no acquired core.
 

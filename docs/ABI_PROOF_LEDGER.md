@@ -1,6 +1,11 @@
 # ABI proof ledger
 
-Updated: 2026-11-20
+Updated: 2026-11-23
+
+[R116](releases/R116_REVIEW.md) completed 576 single-row forwards and exact
+source replay: 33/48 clusters, 20 false endorsements and two missed actual
+milestones. This falsifies qualification of that source/probe interface. It
+neither tests nor invalidates the ABI-plan, LoRA, distillation or native host.
 
 [R115](R115_STRUCTURAL_DECODING.md) passes bounded mechanical source-workflow
 qualification: constrained 45/48 paired passes and 24/24 sentences versus 9/24,

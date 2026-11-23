@@ -3,7 +3,9 @@
 | Identity | Current value | Scope |
 | --- | --- | --- |
 | Python package | `0.4.0a1` | Supported alpha compiler API |
-| Current preregistration | `abi-prereg-r115-2026-11-20` | Same-prompt structural decoding and prospective scope falsification; design only |
+| Current preregistration | `abi-prereg-r116-2026-11-23` | Progress grounding, entered before freeze and prospective assembly |
+| R116 freeze and input publication | `abi-freeze-r116-2026-11-23`, `abi-inputs-r116-2026-11-23` | Tested code then actual 288 cases, before inference |
+| Preserved preregistration | `abi-prereg-r115-2026-11-20` | Same-prompt structural decoding and prospective scope falsification; design only |
 | Preserved preregistration | `abi-prereg-r114-2026-11-20` | Scope falsification and sentence-array revision; completed negative result below |
 | Preserved preregistration | `abi-prereg-r113-2026-11-20` | Storage-recovered exposed-panel replication; completed result below |
 | Preserved preregistration | `abi-prereg-r112-2026-11-19` | Count-feedback design; later closed resource-incomplete |
@@ -20,7 +22,8 @@
 | R112 finite scope prerequisite | `abi-r112-scope-2026-11-19` | 800 new and 1,598 development cases, exact replay; not general semantics |
 | Previous completed implementation freeze | `abi-r111-implementation-2026-11-18` | Immutable parser, challenge generator and bounded two-call driver, frozen before execution |
 | Preserved preregistration | `abi-prereg-r111-2026-11-18` | Design-only snapshot; completed result is separately sealed below |
-| Current research review snapshot | `abi-research-r115-2026-11-20` | Bounded constrained-workflow mechanical pass, 45/48 pairs; exact replay, semantic limitations, no acquisition/host claim |
+| Current research review snapshot | `abi-research-r116-2026-11-23` | Source progress-recognition prerequisite failed; recipient comparison did not run |
+| Previous research review snapshot | `abi-research-r115-2026-11-20` | Bounded constrained-workflow mechanical pass, 45/48 pairs; exact replay, semantic limitations, no acquisition/host claim |
 | Previous research review snapshot | `abi-research-r114-2026-11-20` | Complete 576-call comparison, exact replay; revision misses tone and structured fails noninferiority |
 | Previous research review snapshot | `abi-research-r113-2026-11-20` | Complete 576-call replication, exact replay; feedback fails 40/48 pairs versus 44 |
 | Preserved interrupted review snapshot | `abi-research-r112-2026-11-19` | Resource-incomplete: 530/576 calls, exact partial replay, complete qualification rejected |

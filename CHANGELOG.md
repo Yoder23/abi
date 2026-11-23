@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-23 — R116 counterfactual progress grounding
+
+- Published protocol, code and 288 inputs before the frozen source run.
+- Source replay was exact: 33/48 complete clusters, 20 false endorsements,
+  two missed actual events and zero blank-note errors. Stopped as registered.
+- Added [raw evidence review and reproduction](docs/releases/R116_REVIEW.md);
+  preserved R115, matched checkpoints, hardware settings and product gates.
+
 ## 2026-11-20 — R115 public custody
 
 - Publish immutable research tag `abi-research-r115-2026-11-20` and three release assets.

@@ -1,8 +1,12 @@
 # Current project status
 
-Updated: 2026-11-20
+Updated: 2026-11-23
 
-Latest: [R115](docs/R115_STRUCTURAL_DECODING.md) completed with a bounded
+[R116](docs/releases/R116_REVIEW.md): 33/48 source clusters; 20/96 false
+endorsements in evidence-present foil cells, 0/96 errors with notes withheld.
+Exact replay, no training or recipient calls. Host acceptance remains open.
+
+Preserved: [R115](docs/R115_STRUCTURAL_DECODING.md) completed with a bounded
 mechanical workflow pass: constrained 45/48 pairs and 24/24 sentence adherence,
 all tasks >=5/6, exact 576-call replay, 15/15 hostile rejection. Finite scope
 passes 800 + 3,217 cases. Three unresolved failures and an unscored progress

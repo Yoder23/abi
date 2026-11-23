@@ -1,8 +1,17 @@
 # Active mission
 
-Updated: 2026-11-20
+Updated: 2026-11-23
 
-## Latest completed: R115 bounded structural-decoding pass
+## R116 complete: source did not qualify
+
+[The counterfactual progress test](docs/releases/R116_REVIEW.md) scored 33/48
+complete clusters, not the required 44. Zero recipient forwards, no artifact
+and no recalibration. Next decision: test whether independently grounded
+propositions can be preserved during teacher-to-English normalization, including
+coverage of valid paraphrases. Do not use teacher self-ratings, discard hard
+evaluation families, or treat historical matched learners as tested here.
+
+## Preserved: R115 bounded structural-decoding pass
 
 [R115](docs/R115_STRUCTURAL_DECODING.md) completed all 576 calls with exact
 scientific replay and 72 unchanged controls per worker. Constrained revision
