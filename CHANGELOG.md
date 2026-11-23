@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-23 — R118 modality and actor swaps
+
+- Published the registration, tested method, fresh prospective inputs and
+  investigator labels as separate milestones before dependent stages.
+- [Results and reproducible audit](docs/releases/R118_REVIEW.md): no authored
+  status or actor-swap admissions, but valid retention failed. R117 preserved;
+  WP2 closed. No training, host work or product promotion.
+
 ## 2026-11-23 — R117 grounded normalization
 
 - Published WP1 and a conditional WP2 design before scoring, then separately

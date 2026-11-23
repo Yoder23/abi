@@ -2,6 +2,11 @@
 
 Status date: 2026-11-23
 
+[R118](docs/releases/R118_REVIEW.md) supports fewer authored status errors on
+a bounded panel, not general role understanding: ordered-role checking lost
+84 valid paraphrases versus status-only without preventing another error.
+The absolute gate and relative superiority both failed. WP2 remains closed.
+
 [R117](docs/releases/R117_REVIEW.md) establishes a bounded reduction in
 invalid admissions versus the ordinary entailment control, not qualification:
 32 authored wrong-status and eight unusable live responses still passed.

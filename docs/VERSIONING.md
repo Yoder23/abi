@@ -3,7 +3,9 @@
 | Identity | Current value | Scope |
 | --- | --- | --- |
 | Python package | `0.4.0a1` | Supported alpha compiler API |
-| Current preregistration | `abi-prereg-r117-2026-11-23` | WP1 gate and conditional WP2 design, before scoring |
+| Current preregistration | `abi-prereg-r118-2026-11-23` | Fresh actor swaps and three-way modality; WP2 closed unconditionally |
+| R118 publication sequence | `abi-method-r118-2026-11-23`, `abi-inputs-r118-2026-11-23`, `abi-gold-r118-2026-11-23` | Method before wording, stimuli before inference, live labels before classification |
+| Preserved preregistration | `abi-prereg-r117-2026-11-23` | WP1 gate and conditional WP2 design, before scoring |
 | R117 publication sequence | `abi-method-r117-2026-11-23`, `abi-inputs-r117-2026-11-23`, `abi-gold-r117-2026-11-23` | Method before panel; actual inputs before generation; live labels before predictions |
 | Preserved preregistration | `abi-prereg-r116-2026-11-23` | Progress grounding, entered before freeze and prospective assembly |
 | R116 freeze and input publication | `abi-freeze-r116-2026-11-23`, `abi-inputs-r116-2026-11-23` | Tested code then actual 288 cases, before inference |
@@ -24,7 +26,8 @@
 | R112 finite scope prerequisite | `abi-r112-scope-2026-11-19` | 800 new and 1,598 development cases, exact replay; not general semantics |
 | Previous completed implementation freeze | `abi-r111-implementation-2026-11-18` | Immutable parser, challenge generator and bounded two-call driver, frozen before execution |
 | Preserved preregistration | `abi-prereg-r111-2026-11-18` | Design-only snapshot; completed result is separately sealed below |
-| Current research review snapshot | `abi-research-r117-2026-11-23` | Grounded normalization failed; WP2 closed, no trained corpus |
+| Current research review snapshot | `abi-research-r118-2026-11-23` | Modality and role guard failed coverage; WP2 closed |
+| Previous research review snapshot | `abi-research-r117-2026-11-23` | Grounded normalization failed; WP2 closed, no trained corpus |
 | Previous research review snapshot | `abi-research-r116-2026-11-23` | Source progress-recognition prerequisite failed; recipient comparison did not run |
 | Previous research review snapshot | `abi-research-r115-2026-11-20` | Bounded constrained-workflow mechanical pass, 45/48 pairs; exact replay, semantic limitations, no acquisition/host claim |
 | Previous research review snapshot | `abi-research-r114-2026-11-20` | Complete 576-call comparison, exact replay; revision misses tone and structured fails noninferiority |

@@ -2,6 +2,10 @@
 
 Updated: 2026-11-23
 
+[R118](releases/R118_REVIEW.md): 6/48 complete clusters. Combined guards
+rejected every authored invalid but retained only 144/288 valid paraphrases.
+No live acceptance changes versus R117 on this new panel. No WP2 or host run.
+
 [R117](releases/R117_REVIEW.md): WP1 failed. The subject-bound bidirectional
 filter accepted 32/864 authored negatives versus 266/864 for one-way entailment,
 but the absolute gate was zero. No acquisition, host or WP2 result.

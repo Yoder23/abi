@@ -26,6 +26,10 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+[R118](docs/releases/R118_REVIEW.md) is R118_NOT_QUALIFIED: new status guards
+removed wrong-status admissions; the combined filter discarded half the valid
+authored wording. Keep every R117/R118 gate and all evidence. WP2 stays CLOSED.
+
 [R117](docs/releases/R117_REVIEW.md) is sealed WP1_FAIL: the prospective
 normalizer admitted unsupported modality changes. No qualified corpus or
 recipient permission. Preserve R116 and all gates. The registered WP2 design

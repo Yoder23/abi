@@ -2,7 +2,12 @@
 
 Status date: 2026-11-23
 
-Latest: [R117 normalization](releases/R117_REVIEW.md): 32/48 complete clusters;
+Latest: [R118 status and roles](releases/R118_REVIEW.md): 0/576 wrong-status
+admissions but only 144/288 valid authored paraphrases retained. Frozen R117
+already rejected 288/288 actor swaps. Live source supplied 153/288 usable
+answers; the combined filter retained 89. No qualified corpus; WP2 closed.
+
+Preserved: [R117 normalization](releases/R117_REVIEW.md): 32/48 complete clusters;
 all authored paraphrases retained, but 32 wrong-status claims and eight
 unusable live responses admitted. No corpus or recipient run.
 

@@ -2,7 +2,10 @@
 
 Updated: 2026-11-23
 
-Current: [R117](releases/R117_REVIEW.md) failed its prospective grounded
+Current: [R118](releases/R118_REVIEW.md) separates status rejection from
+valid role paraphrase retention. The combined filter did not qualify.
+
+Preserved: [R117](releases/R117_REVIEW.md) failed its prospective grounded
 normalization test; no qualified corpus. See [project status](PROJECT_STATUS.md)
 for the sequence through R116. Earlier entries below are historical.
 

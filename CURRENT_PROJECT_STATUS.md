@@ -2,6 +2,10 @@
 
 Updated: 2026-11-23
 
+[R118](docs/releases/R118_REVIEW.md): status-only rejected all authored status
+changes; the combined guard lost half the valid paraphrases. No usable corpus
+qualified and WP2 is closed.
+
 [R117](docs/releases/R117_REVIEW.md): WP1 failed the unchanged acceptance
 gates, despite retaining 192/192 authored and 145/148 live valid proposals.
 WP2 was frozen before scoring; it is closed and unexecuted.

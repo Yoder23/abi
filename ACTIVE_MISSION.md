@@ -2,7 +2,14 @@
 
 Updated: 2026-11-23
 
-## R117 complete: the normalization gate failed
+## R118 complete: distinguish rejection from understanding
+
+[The new panel](docs/releases/R118_REVIEW.md) produced 0/576 wrong-status
+admissions, but only 144/288 valid authored paraphrases retained, 6/48 complete
+clusters, and no gain over frozen R117 on live decisions. Research only. WP2
+remains closed and unexecuted. No corpus, host changes or automatic successor.
+
+## Preserved: R117 normalization gate failed
 
 [WP1 evidence and decision](docs/releases/R117_REVIEW.md): 192/192 authored
 valid paraphrases retained, 32/192 wrong-status claims admitted, 32/48 complete

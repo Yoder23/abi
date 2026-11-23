@@ -19,7 +19,13 @@ ABI and LayerCake have deliberately separate jobs:
 
 ## Current status
 
-Latest: [R117 grounded normalization](docs/releases/R117_REVIEW.md) retained
+Latest: [R118 modality and actor swaps](docs/releases/R118_REVIEW.md) rejected
+all 576 wrong-status claims on fresh wording, but kept only 144/288 valid
+paraphrases. The prior filter already rejected every pure actor swap. Neither
+the source nor the combined filter qualified. WP2 is closed.
+[R118 evidence bundle](https://github.com/Yoder23/abi/releases/tag/abi-research-r118-2026-11-23).
+
+Preserved: [R117 grounded normalization](docs/releases/R117_REVIEW.md) retained
 192/192 authored paraphrases but admitted 32 unsupported milestone changes.
 No training data qualified; the recipient experiment remains closed.
 [Download the small evidence-review bundle](https://github.com/Yoder23/abi/releases/tag/abi-research-r117-2026-11-23)
@@ -45,6 +51,7 @@ LoRA and distillation.
 
 | Evidence line | What is established | What remains open |
 | --- | --- | --- |
+| R118 | No authored status substitutions admitted; 6/48 complete clusters, exact replay | Half of authored valid paraphrases lost; no qualified corpus, recipient run or superiority |
 | R117 | 145/148 valid live responses retained; 32/48 authored clusters correct, exact replay | Eight unusable live responses admitted; no qualified training data, host result or promotion |
 | R116 | Counterfactual source recognition: 33/48 clusters versus 44 required, byte-identical replay | Source did not qualify; no recipient comparison or external host acceptance |
 | R115 | Finite scope passes; constrained source workflow scores 45/48 pairs and 24/24 sentences; supported paired gain, exact 576-call replay | Mechanical scope only; three unresolved failures and an unscored progress assertion; no English artifact, acquisition or host claim |

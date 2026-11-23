@@ -8,8 +8,8 @@ Status date: 2026-11-23
 
 `FULL_MOONSHOT_NOT_PROVEN`
 
-The latest [research prerelease](https://github.com/Yoder23/abi/releases/tag/abi-research-r117-2026-11-23)
-is R117. Neither it nor earlier research prereleases are a qualified
+The latest [research prerelease](https://github.com/Yoder23/abi/releases/tag/abi-research-r118-2026-11-23)
+is R118. Neither it nor earlier research prereleases are a qualified
 English-core or production release.
 
 Independent reviewers can evaluate R7, V1089, R97, and R21-R23 as separate
@@ -17,6 +17,15 @@ bounded evidence lineages. They must not combine those lineages into a single
 final-artifact proof.
 
 ## Current bounded research review
+
+[R118 review](releases/R118_REVIEW.md): method, prospective wording and
+investigator labels were frozen in sequence. Run `python scripts/review_r118.py`
+on the tag or its small standalone ZIP to recompute the failed qualification;
+no GPU, host or weights needed. ZIP: 1,446,176 bytes, SHA-256
+`a021d2764a606b6c4a2065bc7de0eec20076cc9acd0e402c80ef02290a2213fd`.
+Human semantic validation remains open.
+
+## Previous normalization review
 
 [R117 review](releases/R117_REVIEW.md): grounded normalization failed on
 milestone status. The public evidence ZIP is 666,208 bytes, SHA-256

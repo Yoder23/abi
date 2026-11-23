@@ -66,6 +66,11 @@ jobs:
           tests/test_r115_publication.py
           tests/test_r117_method.py
           tests/test_r117_custody.py
+          tests/test_r118_method.py
+          tests/test_r118_panel.py
+          tests/test_r118_custody.py
       - name: Recompute sealed R117 from public raw evidence (no weights)
         run: python scripts/review_r117.py
+      - name: Recompute R118 modality and actor-swap evidence (no weights)
+        run: python scripts/review_r118.py
       - run: python -m build

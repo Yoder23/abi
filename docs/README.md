@@ -5,7 +5,10 @@ goal rather than reading the campaign archive in filename order.
 
 ## Reading paths
 
-Latest: [R117 normalization review and evidence audit](releases/R117_REVIEW.md).
+Latest: [R118 modality/actor-swap review and evidence audit](releases/R118_REVIEW.md).
+The absolute gate failed: rejecting status swaps cost valid paraphrases.
+
+Preserved: [R117 normalization review and evidence audit](releases/R117_REVIEW.md).
 The filter retained paraphrases but failed to reject every unsupported claim.
 
 Preserved: [R116 semantic grounding review](releases/R116_REVIEW.md), a failed
