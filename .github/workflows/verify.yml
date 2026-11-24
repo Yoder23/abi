@@ -75,6 +75,8 @@ jobs:
           tests/test_r120_method.py
           tests/test_r120_panel.py
           tests/test_r120_custody.py
+          tests/test_source_ceiling_r121.py
+          tests/test_r121_custody.py
       - name: Recompute sealed R117 from public raw evidence (no weights)
         run: python scripts/review_r117.py
       - name: Recompute R118 modality and actor-swap evidence (no weights)
@@ -83,4 +85,6 @@ jobs:
         run: python scripts/review_r119.py
       - name: Recompute R120 separated identifier/meaning evidence (no weights)
         run: python scripts/review_r120.py
+      - name: Recompute R121 paired source ceilings (no weights)
+        run: python scripts/review_r121.py
       - run: python -m build

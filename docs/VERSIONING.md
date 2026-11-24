@@ -3,7 +3,9 @@
 | Identity | Current value | Scope |
 | --- | --- | --- |
 | Python package | `0.4.0a1` | Supported alpha compiler API |
-| Current preregistration | `abi-prereg-r120-2026-11-24` | Separate identity and meaning; wrong-ID twins and fresh rental swaps; WP2 closed |
+| Current preregistration | `abi-prereg-r121-2026-11-24` | Direct vs record-first source-only ceiling; neither passing stops this recipe |
+| R121 public freezes | `abi-inputs-r121-2026-11-24`, `abi-votes-r121-2026-11-24`, `abi-labels-r121-2026-11-24` | Actual inputs before generation; votes before scoring; labels bound to exact fresh replay |
+| Preserved preregistration | `abi-prereg-r120-2026-11-24` | Separate identity and meaning; wrong-ID twins and fresh rental swaps; WP2 closed |
 | R120 publication sequence | `abi-method-r120-2026-11-24`, `abi-inputs-r120-2026-11-24`, `abi-gold-r120-2026-11-24` | Method before wording; inputs before generation; annotations before scoring |
 | Preserved preregistration | `abi-prereg-r119-2026-11-23` | Matched active/passive/converse paraphrases and swaps against frozen R118 status-only; WP2 closed |
 | R119 publication sequence | `abi-method-r119-2026-11-23`, `abi-inputs-r119-2026-11-23`, `abi-gold-r119-2026-11-23` | Method before wording; stimuli before generation; live labels before filter predictions |
@@ -30,7 +32,8 @@
 | R112 finite scope prerequisite | `abi-r112-scope-2026-11-19` | 800 new and 1,598 development cases, exact replay; not general semantics |
 | Previous completed implementation freeze | `abi-r111-implementation-2026-11-18` | Immutable parser, challenge generator and bounded two-call driver, frozen before execution |
 | Preserved preregistration | `abi-prereg-r111-2026-11-18` | Design-only snapshot; completed result is separately sealed below |
-| Current research review snapshot | `abi-research-r120-2026-11-24` | [Identifier/meaning separation](releases/R120_REVIEW.md); bounded research, WP2 closed |
+| Current research review snapshot | `abi-research-r121-2026-11-24` | [Source supply, no filter or recipient](releases/R121_REVIEW.md); WP2 closed |
+| Previous research review snapshot | `abi-research-r120-2026-11-24` | [Identifier/meaning separation](releases/R120_REVIEW.md); bounded research, WP2 closed |
 | Previous research review snapshot | `abi-research-r119-2026-11-23` | [Matched voice and converse review](releases/R119_REVIEW.md); no qualified corpus; WP2 closed |
 | Previous research review snapshot | `abi-research-r118-2026-11-23` | Modality and role guard failed coverage; WP2 closed |
 | Previous research review snapshot | `abi-research-r117-2026-11-23` | Grounded normalization failed; WP2 closed, no trained corpus |

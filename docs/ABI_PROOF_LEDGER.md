@@ -2,6 +2,11 @@
 
 Updated: 2026-11-24
 
+[R121](releases/R121_REVIEW.md) compares teacher interfaces, not students.
+Direct: 143/192 and 144/192 valid in the two windows (144 each required),
+40/48 sufficient cells. Record-first: 0/288 valid final answers. No label,
+filter or downstream package improvement follows; STOP_SOURCE_RECIPE.
+
 [R120](releases/R120_REVIEW.md): 552/576 valid changes of project header
 retained versus 156/576 using the identical binding check on raw text.
 Neither accepted a wrong-ID twin. On new rentals only 36/144 valid/reversed

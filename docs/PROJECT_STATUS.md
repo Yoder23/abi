@@ -2,7 +2,11 @@
 
 Status date: 2026-11-24
 
-Latest: [R120 project binding and fresh rental reversals](releases/R120_REVIEW.md).
+Latest: [R121 source ceiling](releases/R121_REVIEW.md). Direct met the overall
+floor but missed eight required cells and one original window. Record-first
+failed all 48 cells. Decision: stop this recipe; no acquisition or host run.
+
+Preserved: [R120 project binding and fresh rental reversals](releases/R120_REVIEW.md).
 The body-only scorer kept 396 additional valid header changes without accepting
 a wrong-ID twin. Source and filter qualification still failed; no host tested.
 

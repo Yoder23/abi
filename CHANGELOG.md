@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-24 — R121 source supply before filtering
+
+- [Preregistered source-only comparison and verified evidence](docs/releases/R121_REVIEW.md).
+  Both arms failed the unchanged source ceilings; stop the recipe, keep WP2
+  closed. All 576 paired-arm rows reproduced in a second GPU process.
+
 ## 2026-11-24 — R120 project IDs versus event meaning
 
 - Published registration, tested method, fresh input bank and prediction-blind

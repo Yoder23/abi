@@ -2,7 +2,14 @@
 
 Updated: 2026-11-24
 
-## R120 complete: separate identity from meaning
+## R121 complete: stop this source recipe
+
+[R121](docs/releases/R121_REVIEW.md) failed even under perfect selection:
+235/288 direct, 0/288 record-first, neither passed all supply gates. No
+further nearby prompts or filter changes. Preserve the negative evidence;
+a materially different acquisition route requires a new proposal. WP2 CLOSED.
+
+## Preserved: R120 separated identity from meaning
 
 [R120](docs/releases/R120_REVIEW.md) recovered valid wording with an explicit
 project header. It did not qualify as an English-data filter. Preserve R119,

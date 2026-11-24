@@ -26,6 +26,11 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+[R121](docs/releases/R121_REVIEW.md) sealed STOP_SOURCE_RECIPE. No rescue
+by merging workspace and final text, selecting arms per case or weakening
+cell/window gates. The tested source/prompt route is closed; no new filter,
+training, host test or WP2 authorization. Preserve R120.
+
 [R120](docs/releases/R120_REVIEW.md) isolates prefix handling, not general
 semantic equivalence. On this panel the raw-text control also rejected every
 wrong-ID twin. Do not attribute an incremental rejection gain to the ID parser.

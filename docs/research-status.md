@@ -2,7 +2,10 @@
 
 Updated: 2026-11-24
 
-Current: [R120](releases/R120_REVIEW.md) isolated header sensitivity in the
+Current: [R121](releases/R121_REVIEW.md) failed on source supply even with a
+perfect selector. No further variants on this route; WP2 stays closed.
+
+Preserved: [R120](releases/R120_REVIEW.md) isolated header sensitivity in the
 semantic scorer on a prospective panel. The prefix result does not extend to
 all rental reversals, nor does it qualify a training corpus. WP2 remains closed.
 

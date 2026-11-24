@@ -19,7 +19,13 @@ ABI and LayerCake have deliberately separate jobs:
 
 ## Current status
 
-Latest: [R120 separated project IDs from event meaning](docs/releases/R120_REVIEW.md).
+Latest: [R121 source-only verdict: stop this recipe](docs/releases/R121_REVIEW.md).
+Direct restatement retained the facts on 235/288 fresh cases but missed eight
+required cells. Record-first delivered 0/288 complete final answers. Neither
+could qualify under perfect selection. WP2 remains closed; no host tested.
+[Evidence ZIP and replay](https://github.com/Yoder23/abi/releases/tag/abi-research-r121-2026-11-24).
+
+Preserved: [R120 separated project IDs from event meaning](docs/releases/R120_REVIEW.md).
 With the ID check held fixed, the filter kept 552/576 valid prefix changes,
 up from 156/576, and admitted no wrong-ID twin. It retained only 36/144
 valid rental converses. No corpus qualified; WP2 stays closed.

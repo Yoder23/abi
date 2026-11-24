@@ -2,6 +2,10 @@
 
 Status date: 2026-11-24
 
+[R121](docs/releases/R121_REVIEW.md) rules out perfect selection as a rescue
+for these two source recipes on this panel. It tests final-answer fidelity,
+not latent teacher knowledge, recipient learning or LayerCake execution.
+
 [R120](docs/releases/R120_REVIEW.md) supports a bounded gain on two explicit
 project headers, not arbitrary ID recognition or rental-role understanding.
 Wrong-ID acceptance was already zero for the matched raw-text control. No

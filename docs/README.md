@@ -5,7 +5,10 @@ goal rather than reading the campaign archive in filename order.
 
 ## Reading paths
 
-Latest: [R120 project IDs, prefix twins and rental reversals](releases/R120_REVIEW.md).
+Latest: [R121: could a perfect selector recover enough faithful English?](releases/R121_REVIEW.md)
+This is an upstream teacher-output experiment, not a filter, training or host test.
+
+Preserved: [R120 project IDs, prefix twins and rental reversals](releases/R120_REVIEW.md).
 The primary comparison holds the ID check fixed and varies what the semantic scorer reads.
 
 Preserved: [R119 active, passive and converse paraphrases](releases/R119_REVIEW.md).

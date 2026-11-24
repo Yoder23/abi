@@ -8,8 +8,8 @@ Status date: 2026-11-24
 
 `FULL_MOONSHOT_NOT_PROVEN`
 
-The latest [research prerelease](https://github.com/Yoder23/abi/releases/tag/abi-research-r120-2026-11-24)
-is R120. Neither it nor earlier research prereleases are a qualified
+The latest [research prerelease](https://github.com/Yoder23/abi/releases/tag/abi-research-r121-2026-11-24)
+is R121. Neither it nor earlier research prereleases are a qualified
 English-core or production release.
 
 Independent reviewers can evaluate R7, V1089, R97, and R21-R23 as separate
@@ -17,6 +17,16 @@ bounded evidence lineages. They must not combine those lineages into a single
 final-artifact proof.
 
 ## Current bounded research review
+
+[R121 source ceiling](releases/R121_REVIEW.md) compares direct and record-first
+generation. Review the masked final-English judgments, both source windows
+and all 48 cells; no selection filter or recipient was tested.
+Download the [standalone evidence ZIP](https://github.com/Yoder23/abi/releases/download/abi-research-r121-2026-11-24/r121_evidence.zip)
+(217,535 bytes; SHA-256 `cfe3fd6bb7935c1279b134f765fc597d753d0b40bd56e8a2602a4d04f3628237`).
+Extract into an empty directory and run `python scripts/review_r121.py --diagnostics`.
+Expected: `STOP_SOURCE_RECIPE`, 235 versus zero valid final answers, WP2 CLOSED.
+
+## Previous project-ID review
 
 [R120 review](releases/R120_REVIEW.md): recompute prefix-only gains and
 rental-direction pair success separately. The evidence reader runs with

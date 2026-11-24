@@ -2,6 +2,10 @@
 
 Updated: 2026-11-24
 
+[R121](docs/releases/R121_REVIEW.md): direct retained 235/288; the weakest
+cells all concerned reported events. Record-first omitted the ID in every
+final and introduced 85 unsupported claims. No eligible corpus or host test.
+
 [R120](docs/releases/R120_REVIEW.md): the ABI filter retained 204 of 228
 valid live answers and none of the 60 unusable ones. Six teacher cells also
 missed their own supply minimum. These are distinct upstream limitations;
