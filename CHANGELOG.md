@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-24 — R120 project IDs versus event meaning
+
+- Published registration, tested method, fresh input bank and prediction-blind
+  live labels in separate Git milestones before classifier execution.
+- [Result and reproduction](docs/releases/R120_REVIEW.md): separate ID binding
+  recovered prefix-only positives; fresh rental reversals still limit the filter.
+  No corpus or host promotion; WP2 remains closed.
+
 ## 2026-11-23 — R119 matched active, passive and converse paraphrases
 
 - Preregistered the paired task and R118 status-only control; published

@@ -5,7 +5,10 @@ goal rather than reading the campaign archive in filename order.
 
 ## Reading paths
 
-Latest: [R119 active, passive and converse paraphrases](releases/R119_REVIEW.md).
+Latest: [R120 project IDs, prefix twins and rental reversals](releases/R120_REVIEW.md).
+The primary comparison holds the ID check fixed and varies what the semantic scorer reads.
+
+Preserved: [R119 active, passive and converse paraphrases](releases/R119_REVIEW.md).
 Each valid sentence has a true actor-swap control on the same note.
 
 Preserved: [R118 modality/actor-swap review and evidence audit](releases/R118_REVIEW.md).

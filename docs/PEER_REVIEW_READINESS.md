@@ -1,6 +1,6 @@
 # ABI peer-review readiness
 
-Status date: 2026-11-23
+Status date: 2026-11-24
 
 ## Verdict
 
@@ -8,8 +8,8 @@ Status date: 2026-11-23
 
 `FULL_MOONSHOT_NOT_PROVEN`
 
-The latest [research prerelease](https://github.com/Yoder23/abi/releases/tag/abi-research-r119-2026-11-23)
-is R119. Neither it nor earlier research prereleases are a qualified
+The latest [research prerelease](https://github.com/Yoder23/abi/releases/tag/abi-research-r120-2026-11-24)
+is R120. Neither it nor earlier research prereleases are a qualified
 English-core or production release.
 
 Independent reviewers can evaluate R7, V1089, R97, and R21-R23 as separate
@@ -17,6 +17,18 @@ bounded evidence lineages. They must not combine those lineages into a single
 final-artifact proof.
 
 ## Current bounded research review
+
+[R120 review](releases/R120_REVIEW.md): recompute prefix-only gains and
+rental-direction pair success separately. The evidence reader runs with
+Python and NumPy and does not need the teacher or a LayerCake checkout.
+Download [the standalone evidence ZIP](https://github.com/Yoder23/abi/releases/download/abi-research-r120-2026-11-24/r120_evidence.zip)
+(8,863,480 bytes; SHA-256
+`8a6d4a3483febdd37722e9dd1ca022ed74a8bbb0534f49958a6cd122864a6a57`).
+Extract into an empty directory and run `python scripts/review_r120.py --paired`.
+Expected: `R120_NOT_QUALIFIED; WP2 CLOSED; 6/48 complete clusters`. The
+bounded prefix test passed; the conclusions do not extend to a qualified corpus.
+
+## Previous voice and converse review
 
 [R119 review](releases/R119_REVIEW.md): inspect matched success by voice, not
 swap rejection alone. Run `python scripts/review_r119.py --paired` after

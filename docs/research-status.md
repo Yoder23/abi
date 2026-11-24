@@ -1,8 +1,12 @@
 # Research status
 
-Updated: 2026-11-23
+Updated: 2026-11-24
 
-Current: [R119](releases/R119_REVIEW.md) tests voice- and perspective-preserving
+Current: [R120](releases/R120_REVIEW.md) isolated header sensitivity in the
+semantic scorer on a prospective panel. The prefix result does not extend to
+all rental reversals, nor does it qualify a training corpus. WP2 remains closed.
+
+Preserved: [R119](releases/R119_REVIEW.md) tests voice- and perspective-preserving
 filtering against the exact R118 status-only control. WP2 stays closed.
 
 Preserved: [R118](releases/R118_REVIEW.md) separates status rejection from

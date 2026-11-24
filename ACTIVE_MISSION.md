@@ -1,8 +1,14 @@
 # Active mission
 
-Updated: 2026-11-23
+Updated: 2026-11-24
 
-## R119 complete: matched voice and converse pairs
+## R120 complete: separate identity from meaning
+
+[R120](docs/releases/R120_REVIEW.md) recovered valid wording with an explicit
+project header. It did not qualify as an English-data filter. Preserve R119,
+all gates and the frozen WP2 design. No training or LayerCake run is authorized.
+
+## Preserved: R119 matched voice and converse pairs
 
 [R119](docs/releases/R119_REVIEW.md) did not qualify: 18/48 clusters versus
 44 required and only 40/209 valid live outputs retained. The new contrast

@@ -72,10 +72,15 @@ jobs:
           tests/test_r119_method.py
           tests/test_r119_panel.py
           tests/test_r119_custody.py
+          tests/test_r120_method.py
+          tests/test_r120_panel.py
+          tests/test_r120_custody.py
       - name: Recompute sealed R117 from public raw evidence (no weights)
         run: python scripts/review_r117.py
       - name: Recompute R118 modality and actor-swap evidence (no weights)
         run: python scripts/review_r118.py
       - name: Recompute R119 matched active/passive/converse evidence (no weights)
         run: python scripts/review_r119.py
+      - name: Recompute R120 separated identifier/meaning evidence (no weights)
+        run: python scripts/review_r120.py
       - run: python -m build

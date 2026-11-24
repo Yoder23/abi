@@ -19,7 +19,13 @@ ABI and LayerCake have deliberately separate jobs:
 
 ## Current status
 
-Latest: [R119 voice and converse pairs](docs/releases/R119_REVIEW.md) admitted
+Latest: [R120 separated project IDs from event meaning](docs/releases/R120_REVIEW.md).
+With the ID check held fixed, the filter kept 552/576 valid prefix changes,
+up from 156/576, and admitted no wrong-ID twin. It retained only 36/144
+valid rental converses. No corpus qualified; WP2 stays closed.
+[Evidence and replay](https://github.com/Yoder23/abi/releases/tag/abi-research-r120-2026-11-24).
+
+Preserved: [R119 voice and converse pairs](docs/releases/R119_REVIEW.md) admitted
 no true swaps, but only 202/288 contexts retained all three valid forms and
 rejected all three swaps (R118 status-only: 206/288). No corpus qualified;
 WP2 stays closed. [Evidence ZIP and review](https://github.com/Yoder23/abi/releases/tag/abi-research-r119-2026-11-23).

@@ -1,8 +1,12 @@
 # ABI project status
 
-Status date: 2026-11-23
+Status date: 2026-11-24
 
-Latest: [R119 matched voices and converses](releases/R119_REVIEW.md): 18/48
+Latest: [R120 project binding and fresh rental reversals](releases/R120_REVIEW.md).
+The body-only scorer kept 396 additional valid header changes without accepting
+a wrong-ID twin. Source and filter qualification still failed; no host tested.
+
+Preserved: [R119 matched voices and converses](releases/R119_REVIEW.md): 18/48
 complete clusters. R119 accepted no true role swaps, including eight that
 status-only admitted, but did not retain any valid rental converse. No corpus
 qualified; no WP2 or LayerCake experiment.

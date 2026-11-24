@@ -26,6 +26,11 @@ represent LayerCake research as ABI evidence.
 
 ## Controlling release line
 
+[R120](docs/releases/R120_REVIEW.md) isolates prefix handling, not general
+semantic equivalence. On this panel the raw-text control also rejected every
+wrong-ID twin. Do not attribute an incremental rejection gain to the ID parser.
+Preserve R119, the unchanged absolute gates, and WP2 CLOSED. No LayerCake test.
+
 [R119](docs/releases/R119_REVIEW.md) is R119_NOT_QUALIFIED. Do not promote
 zero swap admissions as role understanding: the alias-only control made the
 same decisions; all valid rental converses were withheld. Preserve R118,

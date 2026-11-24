@@ -1,6 +1,11 @@
 # ABI proof ledger
 
-Updated: 2026-11-23
+Updated: 2026-11-24
+
+[R120](releases/R120_REVIEW.md): 552/576 valid changes of project header
+retained versus 156/576 using the identical binding check on raw text.
+Neither accepted a wrong-ID twin. On new rentals only 36/144 valid/reversed
+pairs passed together. No English corpus or LayerCake claim.
 
 [R119](releases/R119_REVIEW.md): 730/864 authored paraphrases retained and
 0/864 pure swaps admitted, versus 736/864 and 8/864 for frozen R118 status-only.

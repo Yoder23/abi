@@ -1,6 +1,11 @@
 # ABI claim ledger
 
-Status date: 2026-11-23
+Status date: 2026-11-24
+
+[R120](docs/releases/R120_REVIEW.md) supports a bounded gain on two explicit
+project headers, not arbitrary ID recognition or rental-role understanding.
+Wrong-ID acceptance was already zero for the matched raw-text control. No
+acquisition, English fluency, LayerCake or end-to-end superiority result.
 
 [R119](docs/releases/R119_REVIEW.md) rejected every sampled pure actor swap
 but did not improve paired task success over R118 status-only. The tested
